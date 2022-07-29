@@ -9,6 +9,7 @@
 #include "../date_time.h"
 #include "../ustring.h"
 #include "file_attributes.h"
+#include "file_permissions.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -568,6 +569,9 @@ namespace xtd {
       /// @remarks For a directory, xtd::io::file_system_info::name returns only the name of the parent directory, such as dir, not c:\dir. For a subdirectory, xtd::io::file_system_info::name returns only the name of the subdirectory, such as sub1, not c:\dir\sub1.
       /// @remarks For a file, xtd::io::file_system_info::name returns only the file name and file name extension, such as my_file.txt, not c:\dir\my_file.txt.
       virtual xtd::ustring name() const = 0;
+      
+      xtd::io::file_permissions permissions() const;
+      xtd::io::file_system_info& permissions(xtd::io::file_permissions value);
       /// @}
       
       /// @name Methods
@@ -614,6 +618,7 @@ namespace xtd {
       xtd::date_time creation_time_;
       xtd::date_time last_access_time_;
       xtd::date_time last_write_time_;
+      xtd::io::file_permissions permissions_ = xtd::io::file_permissions::none;
     };
   }
 }

@@ -195,6 +195,7 @@ add_sources(
   include/xtd/io/file_info.h
   include/xtd/io/file_load_exception.h
   include/xtd/io/file_not_found_exception.h
+  include/xtd/io/file_permissions.h
   include/xtd/io/file_system_info.h
   include/xtd/io/io_exception.h
   include/xtd/io/path.h

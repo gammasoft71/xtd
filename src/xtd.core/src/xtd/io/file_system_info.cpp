@@ -16,8 +16,8 @@ file_attributes file_system_info::attributes() const {
 }
 
 file_system_info& file_system_info::attributes(file_attributes value) {
-  auto result = native::file_system::set_file_attributes(full_path_, static_cast<int32_t>(value));
-  if (result != -1) throw platform_not_supported_exception(csf_);
+  auto result = native::file_system::set_attributes(full_path_, static_cast<int32_t>(value));
+  if (result == -1) throw platform_not_supported_exception(csf_);
   if (result != 0) throw io_exception(csf_);
   attributes_ = value;
   return *this;
@@ -29,7 +29,7 @@ const date_time& file_system_info::creation_time() const {
 
 file_system_info& file_system_info::creation_time(const date_time& value) {
   auto result = native::file_system::set_creation_time(full_path_, value.to_time_t());
-  if (result != -1) throw platform_not_supported_exception(csf_);
+  if (result == -1) throw platform_not_supported_exception(csf_);
   if (result != 0) throw io_exception(csf_);
   creation_time_ = value;
   return *this;
@@ -57,7 +57,7 @@ const date_time& file_system_info::last_access_time() const {
 
 file_system_info& file_system_info::last_access_time(const date_time& value) {
   auto result = native::file_system::set_last_access_time(full_path_, value.to_time_t());
-  if (result != -1) throw platform_not_supported_exception(csf_);
+  if (result == -1) throw platform_not_supported_exception(csf_);
   if (result != 0) throw io_exception(csf_);
   last_access_time_ = value;
   return *this;
@@ -77,7 +77,7 @@ const date_time& file_system_info::last_write_time() const {
 
 file_system_info& file_system_info::last_write_time(const date_time& value) {
   auto result = native::file_system::set_last_write_time(full_path_, value.to_time_t());
-  if (result != -1) throw platform_not_supported_exception(csf_);
+  if (result == -1) throw platform_not_supported_exception(csf_);
   if (result != 0) throw io_exception(csf_);
   last_write_time_ = value;
   return *this;
@@ -91,6 +91,18 @@ xtd::io::file_system_info& file_system_info::last_write_time_utc(const xtd::date
   return last_write_time(value.to_local_time());
 }
 
+file_permissions file_system_info::permissions() const {
+  return permissions_;
+}
+
+file_system_info& file_system_info::permissions(file_permissions value) {
+  auto result = native::file_system::set_permissions(full_path_, static_cast<int32_t>(value));
+  if (result == -1) throw platform_not_supported_exception(csf_);
+  if (result != 0) throw io_exception(csf_);
+  permissions_ = value;
+  return *this;
+}
+
 void file_system_info::refresh() {
   full_path_ = native::file_system::get_full_path(original_path_);
   if (native::file_system::is_path_too_long(full_path_)) throw path_too_long_exception(csf_);
@@ -102,6 +114,8 @@ void file_system_info::refresh() {
     creation_time_ = date_time::from_time_t(creation_time, date_time_kind::local);
     last_access_time_ = date_time::from_time_t(last_access_time, date_time_kind::local);
     last_write_time_ = date_time::from_time_t(last_write_time, date_time_kind::local);
+    int32_t permissions = static_cast<int32_t>(file_permissions::unknown);
+    if (native::file_system::get_permissions(full_path_, permissions) == 0) permissions_ = static_cast<xtd::io::file_permissions>(permissions);
   }
 }
 

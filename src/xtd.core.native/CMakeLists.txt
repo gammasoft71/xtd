@@ -25,6 +25,7 @@ add_sources(
   include/xtd/native/environment_variable_target.h
   include/xtd/native/file.h
   include/xtd/native/file_attribute.h
+  include/xtd/native/file_permission.h
   include/xtd/native/file_system.h
   include/xtd/native/guid.h
   include/xtd/native/interlocked.h

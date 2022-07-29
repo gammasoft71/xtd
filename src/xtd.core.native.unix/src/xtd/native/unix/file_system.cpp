@@ -2,12 +2,14 @@
 #include <xtd/native/file_system.h>
 #include <xtd/native/directory.h>
 #include <xtd/native/file_attribute.h>
+#include <xtd/native/file_permission.h>
 #include <xtd/native/path.h>
 #include "../../../../include/xtd/native/unix/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cstring>
 #include <unistd.h>
 #include <sys/stat.h>
+#include <utime.h>
 #if !__APPLE__
 #include <linux/limits.h>
 #endif
@@ -19,7 +21,7 @@ int32_t file_system::get_attributes(const std::string& path, int32_t& attributes
   struct system_attribute_to_file_attribute_converter {
     int32_t operator()(int32_t attribute) {
       int32_t file_attributes = 0;
-      if ((attribute & S_IRUSR) == S_IRUSR && (attribute & S_IWUSR) == 0) file_attributes |= FILE_ATTRIBUTE_READONLY;
+      if ((attribute & S_IRUSR) == S_IRUSR && (attribute & S_IWUSR) != S_IWUSR) file_attributes |= FILE_ATTRIBUTE_READONLY;
       if ((attribute & S_IFSOCK) == S_IFSOCK || (attribute & S_IFIFO) == S_IFIFO) file_attributes |= FILE_ATTRIBUTE_SYSTEM;
       if ((attribute & S_IFDIR) == S_IFDIR) file_attributes |= FILE_ATTRIBUTE_DIRECTORY;
       if ((attribute & S_IFREG) == S_IFREG) file_attributes |= FILE_ATTRIBUTE_ARCHIVE;
@@ -29,9 +31,9 @@ int32_t file_system::get_attributes(const std::string& path, int32_t& attributes
     }
   };
   struct stat status;
-  int32_t ret_value = stat(path.c_str(), &status);
+  if (stat(path.c_str(), &status) != 0) return -1;
   attributes = system_attribute_to_file_attribute_converter()(status.st_mode);
-  return ret_value;
+  return 0;
 }
 
 #if !__APPLE__
@@ -66,6 +68,37 @@ string file_system::get_full_path(const string& relative_path) {
   return full_path;
 }
 
+int32_t file_system::get_permissions(const std::string& path, int32_t& permissions) {
+  struct system_permission_to_file_permission_converter {
+    int32_t operator()(mode_t permission) {
+      int32_t file_permissions = 0;
+      if ((permission & S_IRUSR) == S_IRUSR) file_permissions |= FILE_PERMISSIONS_OWNER_READ;
+      if ((permission & S_IWUSR) == S_IWUSR) file_permissions |= FILE_PERMISSIONS_OWNER_WRITE;
+      if ((permission & S_IXUSR) == S_IXUSR) file_permissions |= FILE_PERMISSIONS_OWNER_EXECUTE;
+      
+      if ((permission & S_IRGRP) == S_IRGRP) file_permissions |= FILE_PERMISSIONS_GROUP_READ;
+      if ((permission & S_IXGRP) == S_IXGRP) file_permissions |= FILE_PERMISSIONS_GROUP_WRITE;
+      if ((permission & S_IXGRP) == S_IXGRP) file_permissions |= FILE_PERMISSIONS_GROUP_EXECUTE;
+      
+      if ((permission & S_IROTH) == S_IROTH) file_permissions |= FILE_PERMISSIONS_OTHERS_READ;
+      if ((permission & S_IWOTH) == S_IWOTH) file_permissions |= FILE_PERMISSIONS_OTHERS_WRITE;
+      if ((permission & S_IXOTH) == S_IXOTH) file_permissions |= FILE_PERMISSIONS_OTHERS_EXECUTE;
+      
+      if ((permission & S_ISUID) == S_ISUID) file_permissions |= FILE_PERMISSIONS_SET_UID;
+      if ((permission & S_ISGID) == S_ISGID) file_permissions |= FILE_PERMISSIONS_SET_GID;
+      if ((permission & S_ISVTX) == S_ISVTX) file_permissions |= FILE_PERMISSIONS_STICKY_BIT;
+      
+      if (file_permissions == 0) file_permissions = FILE_PERMISSIONS_UNKNOWN;
+      
+      return file_permissions;
+    }
+  };
+  struct stat s;
+  int32_t ret_value = stat(path.c_str(), &s);
+  permissions = system_permission_to_file_permission_converter()(s.st_mode);
+  return ret_value;
+}
+
 bool file_system::is_path_too_long(const std::string& path) {
   if (path.size() > PATH_MAX) return true;
   
@@ -75,18 +108,70 @@ bool file_system::is_path_too_long(const std::string& path) {
   return file_name.size() > NAME_MAX;
 }
 
-int32_t file_system::set_creation_time(const std::string& path, time_t creation_time) {
-  return -1;
+int32_t file_system::set_attributes(const std::string& path, int32_t attributes) {
+  struct stat s;
+  if (stat(path.c_str(), &s) != 0) return -1;
+  
+  if ((attributes & FILE_ATTRIBUTE_READONLY) != FILE_ATTRIBUTE_READONLY)
+    s.st_mode |= S_IWUSR;
+  else if ((attributes & FILE_ATTRIBUTE_READONLY) == FILE_ATTRIBUTE_READONLY)
+    s.st_mode &= ~S_IWUSR;
+  
+  // The other attributes can be modified under linux.
+  
+  return chmod(path.c_str(), s.st_mode);
 }
 
-int32_t file_system::set_file_attributes(const std::string& path, int32_t attributes) {
-  return -1;
+int32_t file_system::set_creation_time(const std::string& path, time_t creation_time) {
+  // There is no creation time on linux so we update the last modification time instead...
+  utimbuf times;
+  time_t creation_time_old, last_access_time, last_write_time;
+  get_file_times(path, creation_time_old, last_access_time, last_write_time);
+  times.actime = last_access_time;
+  times.modtime = creation_time;
+  return utime(path.c_str(), &times);
 }
 
 int32_t file_system::set_last_access_time(const std::string& path, time_t last_access_time) {
-  return -1;
+  utimbuf times;
+  time_t creation_time, last_access_time_old, last_write_time;
+  get_file_times(path, creation_time, last_access_time_old, last_write_time);
+  times.actime = last_access_time;
+  times.modtime = last_write_time;
+  return utime(path.c_str(), &times);
 }
 
 int32_t file_system::set_last_write_time(const std::string& path, time_t last_write_time) {
-  return -1;
+  utimbuf times;
+  time_t creation_time, last_access_time, last_write_time_old;
+  get_file_times(path, creation_time, last_access_time, last_write_time_old);
+  times.actime = last_access_time;
+  times.modtime = last_write_time;
+  return utime(path.c_str(), &times);
+}
+
+int32_t file_system::set_permissions(const std::string& path, int32_t permissions) {
+  struct file_permission_to_system_permission_converter {
+    mode_t operator()(int32_t permission) {
+      int32_t system_permissions = 0;
+      if ((permission & FILE_PERMISSIONS_OWNER_READ) == FILE_PERMISSIONS_OWNER_READ) system_permissions |= S_IRUSR;
+      if ((permission & FILE_PERMISSIONS_OWNER_WRITE) == FILE_PERMISSIONS_OWNER_WRITE) system_permissions |= S_IWUSR;
+      if ((permission & FILE_PERMISSIONS_OWNER_EXECUTE) == FILE_PERMISSIONS_OWNER_EXECUTE) system_permissions |= S_IXUSR;
+      
+      if ((permission & FILE_PERMISSIONS_GROUP_READ) == FILE_PERMISSIONS_GROUP_READ) system_permissions |= S_IRGRP;
+      if ((permission & FILE_PERMISSIONS_GROUP_WRITE) == FILE_PERMISSIONS_GROUP_WRITE) system_permissions |= S_IWGRP;
+      if ((permission & FILE_PERMISSIONS_GROUP_EXECUTE) == FILE_PERMISSIONS_GROUP_EXECUTE) system_permissions |= S_IXGRP;
+      
+      if ((permission & FILE_PERMISSIONS_OTHERS_READ) == FILE_PERMISSIONS_OTHERS_READ) system_permissions |= S_IROTH;
+      if ((permission & FILE_PERMISSIONS_OTHERS_WRITE) == FILE_PERMISSIONS_OTHERS_WRITE) system_permissions |= S_IWOTH;
+      if ((permission & FILE_PERMISSIONS_OTHERS_EXECUTE) == FILE_PERMISSIONS_OTHERS_EXECUTE) system_permissions |= S_IXOTH;
+      
+      if ((permission & FILE_PERMISSIONS_SET_UID) == FILE_PERMISSIONS_SET_UID) system_permissions |= S_ISUID;
+      if ((permission & FILE_PERMISSIONS_SET_GID) == FILE_PERMISSIONS_SET_GID) system_permissions |= S_ISGID;
+      if ((permission & FILE_PERMISSIONS_STICKY_BIT) == FILE_PERMISSIONS_STICKY_BIT) system_permissions |= S_ISVTX;
+
+      return system_permissions;
+    }
+  };
+  return chmod(path.c_str(), file_permission_to_system_permission_converter()(permissions)) == 0 ? 0 : -1;
 }

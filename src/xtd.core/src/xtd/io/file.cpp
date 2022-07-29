@@ -120,6 +120,17 @@ date_time file::get_last_write_time(const xtd::ustring& path) {
   return date_time::from_time_t(last_write_time, date_time_kind::local);
 }
 
+file_permissions file::get_permissions(const ustring& path) {
+  if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) throw argument_exception(csf_);
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
+  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
+  if (!(exists(path) || directory::exists(path))) throw file_not_found_exception(csf_);
+  
+  int32_t permission = 0;
+  if (native::file_system::get_permissions(path, permission) != 0) throw file_not_found_exception(csf_);
+  return static_cast<file_permissions>(permission);
+}
+
 void file::move(const ustring& src, const ustring& dest) {
   move(src, dest, false);
 }
@@ -234,6 +245,51 @@ void file::replace(const ustring& source_file_name, const ustring& destination_f
   if (!exists(source_file_name) || !exists(destination_file_name)) throw file_not_found_exception(csf_);
   if (destination_backup_file_name != "") copy(destination_file_name, destination_backup_file_name);
   move(source_file_name, destination_file_name, true);
+}
+
+void file::set_attributes(const xtd::ustring& path, xtd::io::file_attributes attributes) {
+  if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) throw argument_exception(csf_);
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
+  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
+  if (!(exists(path) || directory::exists(path))) throw file_not_found_exception(csf_);
+  
+  if (native::file_system::set_attributes(path, static_cast<int32_t>(attributes)) != 0) throw io_exception(csf_);
+}
+
+void file::set_creation_time(const xtd::ustring& path, const xtd::date_time& creation_time) {
+  if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) throw argument_exception(csf_);
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
+  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
+  if (!(exists(path) || directory::exists(path))) throw file_not_found_exception(csf_);
+  
+  if (native::file_system::set_creation_time(path, creation_time.to_time_t()) != 0) throw io_exception(csf_);
+}
+
+void file::set_last_access_time(const xtd::ustring& path, const xtd::date_time& last_access_time) {
+  if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) throw argument_exception(csf_);
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
+  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
+  if (!(exists(path) || directory::exists(path))) throw file_not_found_exception(csf_);
+  
+  if (native::file_system::set_last_access_time(path, last_access_time.to_time_t()) != 0) throw io_exception(csf_);
+}
+
+void file::set_last_write_time(const xtd::ustring& path, const xtd::date_time& last_write_time) {
+  if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) throw argument_exception(csf_);
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
+  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
+  if (!(exists(path) || directory::exists(path))) throw file_not_found_exception(csf_);
+  
+  if (native::file_system::set_last_write_time(path, last_write_time.to_time_t()) != 0) throw io_exception(csf_);
+}
+
+void file::set_permissions(const xtd::ustring& path, xtd::io::file_permissions permissions) {
+  if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) throw argument_exception(csf_);
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
+  if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
+  if (!(exists(path) || directory::exists(path))) throw file_not_found_exception(csf_);
+  
+  if (native::file_system::set_permissions(path, static_cast<int32_t>(permissions)) != 0) throw io_exception(csf_);
 }
 
 ofstream file::write_text(const ustring& path) {
