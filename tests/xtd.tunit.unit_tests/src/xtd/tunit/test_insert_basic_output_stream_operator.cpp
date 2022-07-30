@@ -21,7 +21,7 @@
 
 //namespace xtd::tunit::tests {
 namespace tunit::tests {
-  void test_(test_insert_basic_output_stream_operator, test_bool) {
+  void test_(insert_basic_output_stream_operator_tests, test_bool) {
     bool b = true;
     std::stringstream ss;
     ss << std::boolalpha << b;
@@ -31,210 +31,210 @@ namespace tunit::tests {
     assert_value_("1", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_int) {
+  void test_(insert_basic_output_stream_operator_tests, test_int) {
     int i = 42;
     std::stringstream ss;
     ss << i;
     assert_value_("42", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_const_char_pointer) {
+  void test_(insert_basic_output_stream_operator_tests, test_const_char_pointer) {
     const char* s = "42";
     std::stringstream ss;
     ss << s;
     assert_value_("42", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_string) {
+  void test_(insert_basic_output_stream_operator_tests, test_string) {
     std::string s = "42";
     std::stringstream ss;
     ss << s;
     assert_value_("42", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_exception) {
+  void test_(insert_basic_output_stream_operator_tests, test_exception) {
     std::exception e;
     std::stringstream ss;
     ss << e;
     assert_value_(0U, ss.str().find("exception: "));
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_optional_without_value) {
+  void test_(insert_basic_output_stream_operator_tests, test_optional_without_value) {
     std::optional<int> o;
     std::stringstream ss;
     ss << o;
     assert_value_("(null)", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_optional_with_value) {
+  void test_(insert_basic_output_stream_operator_tests, test_optional_with_value) {
     std::optional<int> o = 42;
     std::stringstream ss;
     ss << o;
     assert_value_("(42)", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_pair) {
+  void test_(insert_basic_output_stream_operator_tests, test_pair) {
     auto p = std::make_pair("string", 42);
     std::stringstream ss;
     ss << p;
     assert_value_("(string, 42)", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_tuple) {
+  void test_(insert_basic_output_stream_operator_tests, test_tuple) {
     auto t = std::make_tuple("string", 42);
     std::stringstream ss;
     ss << t;
     assert_value_("(string, 42)", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_array) {
+  void test_(insert_basic_output_stream_operator_tests, test_array) {
     std::array<int, 4> a = {1, 2, 3, 4};
     std::stringstream ss;
     ss << a;
     assert_value_("[1, 2, 3, 4]", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_array_with_const_char_pointer) {
+  void test_(insert_basic_output_stream_operator_tests, test_array_with_const_char_pointer) {
     std::array<const char*, 4> a = {"1", "2", "3", "4"};
     std::stringstream ss;
     ss << a;
     assert_value_("[1, 2, 3, 4]", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_array_with_string) {
+  void test_(insert_basic_output_stream_operator_tests, test_array_with_string) {
     std::array<std::string, 4> a = {"1", "2", "3", "4"};
     std::stringstream ss;
     ss << a;
     assert_value_("[1, 2, 3, 4]", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_deque) {
+  void test_(insert_basic_output_stream_operator_tests, test_deque) {
     std::deque d = {1, 2, 3, 4};
     std::stringstream ss;
     ss << d;
     assert_value_("[1, 2, 3, 4]", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_deque_with_const_char_pointer) {
+  void test_(insert_basic_output_stream_operator_tests, test_deque_with_const_char_pointer) {
     std::deque d = {"1", "2", "3", "4"};
     std::stringstream ss;
     ss << d;
     assert_value_("[1, 2, 3, 4]", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_deque_with_string) {
+  void test_(insert_basic_output_stream_operator_tests, test_deque_with_string) {
     std::deque<std::string> d = {"1", "2", "3", "4"};
     std::stringstream ss;
     ss << d;
     assert_value_("[1, 2, 3, 4]", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_forward_list) {
+  void test_(insert_basic_output_stream_operator_tests, test_forward_list) {
     std::forward_list fl = {1, 2, 3, 4};
     std::stringstream ss;
     ss << fl;
     assert_value_("[1, 2, 3, 4]", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_forward_list_with_const_char_pointer) {
+  void test_(insert_basic_output_stream_operator_tests, test_forward_list_with_const_char_pointer) {
     std::forward_list fl = {"1", "2", "3", "4"};
     std::stringstream ss;
     ss << fl;
     assert_value_("[1, 2, 3, 4]", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_forward_list_with_string) {
+  void test_(insert_basic_output_stream_operator_tests, test_forward_list_with_string) {
     std::forward_list<std::string> fl = {"1", "2", "3", "4"};
     std::stringstream ss;
     ss << fl;
     assert_value_("[1, 2, 3, 4]", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_List) {
+  void test_(insert_basic_output_stream_operator_tests, test_List) {
     std::list l = {1, 2, 3, 4};
     std::stringstream ss;
     ss << l;
     assert_value_("[1, 2, 3, 4]", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_list_with_const_char_pointer) {
+  void test_(insert_basic_output_stream_operator_tests, test_list_with_const_char_pointer) {
     std::list l = {"1", "2", "3", "4"};
     std::stringstream ss;
     ss << l;
     assert_value_("[1, 2, 3, 4]", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_list_with_string) {
+  void test_(insert_basic_output_stream_operator_tests, test_list_with_string) {
     std::list<std::string> l = {"1", "2", "3", "4"};
     std::stringstream ss;
     ss << l;
     assert_value_("[1, 2, 3, 4]", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_vector) {
+  void test_(insert_basic_output_stream_operator_tests, test_vector) {
     std::vector v = {1, 2, 3, 4};
     std::stringstream ss;
     ss << v;
     assert_value_("[1, 2, 3, 4]", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_vector_with_const_char_pointer) {
+  void test_(insert_basic_output_stream_operator_tests, test_vector_with_const_char_pointer) {
     std::vector v = {"1", "2", "3", "4"};
     std::stringstream ss;
     ss << v;
     assert_value_("[1, 2, 3, 4]", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_vector_with_string) {
+  void test_(insert_basic_output_stream_operator_tests, test_vector_with_string) {
     std::vector<std::string> v = {"1", "2", "3", "4"};
     std::stringstream ss;
     ss << v;
     assert_value_("[1, 2, 3, 4]", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_map) {
+  void test_(insert_basic_output_stream_operator_tests, test_map) {
     std::map<int, int> m = {{1, 10}, {2, 20}, {3, 30}, {4, 40}};
     std::stringstream ss;
     ss << m;
     assert_value_("{(1, 10), (2, 20), (3, 30), (4, 40)}", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_map_with_const_char_pointer) {
+  void test_(insert_basic_output_stream_operator_tests, test_map_with_const_char_pointer) {
     std::map<int, const char*> m = {{1, "10"}, {2, "20"}, {3, "30"}, {4, "40"}};
     std::stringstream ss;
     ss << m;
     assert_value_("{(1, 10), (2, 20), (3, 30), (4, 40)}", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_map_with_string) {
+  void test_(insert_basic_output_stream_operator_tests, test_map_with_string) {
     std::map<int, std::string> m = {{1, "10"}, {2, "20"}, {3, "30"}, {4, "40"}};
     std::stringstream ss;
     ss << m;
     assert_value_("{(1, 10), (2, 20), (3, 30), (4, 40)}", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_multimap) {
+  void test_(insert_basic_output_stream_operator_tests, test_multimap) {
     std::multimap<int, int> m = {{1, 10}, {2, 20}, {3, 30}, {4, 40}};
     std::stringstream ss;
     ss << m;
     assert_value_("{(1, 10), (2, 20), (3, 30), (4, 40)}", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_multimap_with_const_char_pointer) {
+  void test_(insert_basic_output_stream_operator_tests, test_multimap_with_const_char_pointer) {
     std::multimap<int, const char*> m = {{1, "10"}, {2, "20"}, {3, "30"}, {4, "40"}};
     std::stringstream ss;
     ss << m;
     assert_value_("{(1, 10), (2, 20), (3, 30), (4, 40)}", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_multimap_with_string) {
+  void test_(insert_basic_output_stream_operator_tests, test_multimap_with_string) {
     std::multimap<int, std::string> m = {{1, "10"}, {2, "20"}, {3, "30"}, {4, "40"}};
     std::stringstream ss;
     ss << m;
     assert_value_("{(1, 10), (2, 20), (3, 30), (4, 40)}", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_multiset) {
+  void test_(insert_basic_output_stream_operator_tests, test_multiset) {
     std::multiset<int> s = {1, 2, 3, 4};
     std::stringstream ss;
     ss << s;
@@ -250,7 +250,7 @@ namespace tunit::tests {
     assert_value_('}', ss.str()[11]);
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_multiset_with_const_char_pointer) {
+  void test_(insert_basic_output_stream_operator_tests, test_multiset_with_const_char_pointer) {
     std::multiset<const char*> s = {"1", "2", "3", "4"};
     std::stringstream ss;
     ss << s;
@@ -266,7 +266,7 @@ namespace tunit::tests {
     assert_value_('}', ss.str()[11]);
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_multiset_with_string) {
+  void test_(insert_basic_output_stream_operator_tests, test_multiset_with_string) {
     std::multiset<std::string> s = {"1", "2", "3", "4"};
     std::stringstream ss;
     ss << s;
@@ -282,7 +282,7 @@ namespace tunit::tests {
     assert_value_('}', ss.str()[11]);
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_set) {
+  void test_(insert_basic_output_stream_operator_tests, test_set) {
     std::set s = {1, 2, 3, 4};
     std::stringstream ss;
     ss << s;
@@ -298,7 +298,7 @@ namespace tunit::tests {
     assert_value_('}', ss.str()[11]);
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_set_with_const_char_pointer) {
+  void test_(insert_basic_output_stream_operator_tests, test_set_with_const_char_pointer) {
     std::set s = {"1", "2", "3", "4"};
     std::stringstream ss;
     ss << s;
@@ -314,7 +314,7 @@ namespace tunit::tests {
     assert_value_('}', ss.str()[11]);
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_set_with_string) {
+  void test_(insert_basic_output_stream_operator_tests, test_set_with_string) {
     std::set<std::string> s = {"1", "2", "3", "4"};
     std::stringstream ss;
     ss << s;
@@ -341,7 +341,7 @@ namespace tunit::tests {
     int value_ = 0;
   };
   
-  void test_(test_insert_basic_output_stream_operator, test_class_without_insert_stream_operator) {
+  void test_(insert_basic_output_stream_operator_tests, test_class_without_insert_stream_operator) {
     class_without_insert_stream_operator c(42);
     std::stringstream ss;
     ss << c;
@@ -363,7 +363,7 @@ namespace tunit::tests {
     int value_ = 0;
   };
   
-  void test_(test_insert_basic_output_stream_operator, test_class_with_insert_stream_operator) {
+  void test_(insert_basic_output_stream_operator_tests, test_class_with_insert_stream_operator) {
     class_with_insert_stream_operator c(42);
     std::stringstream ss;
     ss << c;

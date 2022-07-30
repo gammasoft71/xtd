@@ -2,28 +2,28 @@
 #include <xtd/xtd.tunit>
 
 namespace xtd::tunit::tests {
-  class test_class_(test_assert_abort_aborted) {
+  class test_class_(assert_abort_aborted_tests) {
   public:
     void test_method_(test_case_aborted) {
-      xtd::tunit::assert::abort(xtd::diagnostics::stack_frame {"test_assert_abort_aborted.cpp", 8});
+      xtd::tunit::assert::abort(xtd::diagnostics::stack_frame {"assert_abort_aborted_tests.cpp", 8});
     }
   };
 }
 
-void test_(test_assert_abort_aborted, test_output) {
+void test_(assert_abort_aborted_tests, test_output) {
   xtd::tunit::settings::default_settings().exit_status(0);
-  xtd::tunit::settings::default_settings().filter_tests("test_assert_abort_aborted.*");
+  xtd::tunit::settings::default_settings().filter_tests("assert_abort_aborted_tests.*");
   std::stringstream ss;
   xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
   assert_value_("Start 1 test from 1 test case\n"
-    "  ABORTED test_assert_abort_aborted.test_case_aborted\n"
+    "  ABORTED assert_abort_aborted_tests.test_case_aborted\n"
     "    Test aborted\n"
     "End 1 test from 1 test case ran.\n", ss.str());
 }
 
-void test_(test_assert_abort_aborted, test_result) {
+void test_(assert_abort_aborted_tests, test_result) {
   xtd::tunit::settings::default_settings().exit_status(0);
-  xtd::tunit::settings::default_settings().filter_tests("test_assert_abort_aborted.*");
+  xtd::tunit::settings::default_settings().filter_tests("assert_abort_aborted_tests.*");
   std::stringstream ss;
   assert_value_(0, xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run());
 }
