@@ -1,4 +1,5 @@
 #include "../../../include/xtd/tunit/unit_test.h"
+#include <xtd/system_exception.h>
 
 #if defined(_WIN32)
 __declspec(dllimport) extern int __argc;
@@ -17,5 +18,9 @@ namespace {
 }
 #endif
 
-xtd::tunit::unit_test::unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener) noexcept : arguments(__tunit_argv == nullptr ? 0 : __tunit_argv + 1, __tunit_argv == nullptr ? 0 : __tunit_argv + __tunit_argc), name_(__tunit_argv == nullptr ? "(unknown)" : get_filename(__tunit_argv[0])), event_listener_(std::move(event_listener)) {
+xtd::tunit::unit_test::unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener) noexcept : unit_test(std::move(event_listener), __tunit_argc, __tunit_argv) {
+}
+
+xtd::tunit::unit_test::unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener, int argc, char* argv[]) noexcept : arguments(argv == nullptr ? 0 : argv + 1, argv == nullptr ? 0 : argv + argc), name_(get_filename(argv[0])), event_listener_(std::move(event_listener)) {
+  system_exception::enable_stack_trace(false);
 }

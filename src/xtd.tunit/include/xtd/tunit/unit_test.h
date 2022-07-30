@@ -31,9 +31,16 @@ namespace xtd {
     /// @ingroup xtd_tunit tunit
     class tunit_export_ unit_test {
     public:
+      /// @brief Initializes a new instance of xtd::tunit::unit_test with specified xtd::tunit::event_listener.
+      /// @param event_listener The event listener associate to the unit tests.
+      /// @remarks The arguments of the unit test application are detected automatically.
       explicit unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener) noexcept;
       
-      unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener, int argc, char* argv[]) noexcept : arguments(argv + 1, argv + argc), name_(get_filename(argv[0])), event_listener_(std::move(event_listener)) {}
+      /// @brief Initializes a new instance of xtd::tunit::unit_test with specified xtd::tunit::event_listener, argument counts and arguments array.
+      /// @param event_listener The event listener associate to the unit tests.
+      /// @param argc Argument count from main method.
+      /// @param argv Arguments array from main method.
+      unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener, int argc, char* argv[]) noexcept;
       
       /// @cond
       virtual ~unit_test() {}
