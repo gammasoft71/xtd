@@ -50,6 +50,12 @@ namespace xtd {
     /// @param random_device A random device value.
     explicit random(std::random_device& random_device) : generator_(random_device()) {}
     /// @}
+
+    /// @cond
+    random(random&&) = default;
+    random(const random&) = default;
+    random& operator=(const random&) = default;
+    /// @endcond
     
     /// @name Properties
     
