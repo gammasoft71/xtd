@@ -7,7 +7,17 @@ using namespace xtd::tunit;
 
 namespace xtd::io::tests {
   class test_class_(end_of_stream_exception_tests) {
+    inline static bool stack_trace_enabled = false;
   public:
+    void test_initialize_(test_initialize) {
+      stack_trace_enabled = system_exception::enable_stack_trace();
+      system_exception::enable_stack_trace(false);
+    }
+    
+    void test_cleanup_(test_cleanup) {
+      system_exception::enable_stack_trace(stack_trace_enabled);
+    }
+
     void test_method_(default_creator) {
       end_of_stream_exception e;
       assert::are_equal(std::system_category(), e.error_code().category(), csf_);
