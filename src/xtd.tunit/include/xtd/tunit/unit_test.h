@@ -65,7 +65,7 @@ namespace xtd {
         
         xtd::system_exception::enable_stack_trace(settings::default_settings().enable_stack_trace());
 
-        xtd::random random(xtd::tunit::settings::default_settings().random_seed() == 0U ? static_cast<uint32_t>(environment::tick_count().count()) : xtd::tunit::settings::default_settings().random_seed());
+        auto random = xtd::tunit::settings::default_settings().random_seed() ? xtd::random(xtd::tunit::settings::default_settings().random_seed()) : xtd::random();
 
         for (repeat_iteration_ = 1; repeat_iteration_ <= xtd::tunit::settings::default_settings().repeat_test() || xtd::tunit::settings::default_settings().repeat_test() < 0; ++repeat_iteration_) {
           if (xtd::tunit::settings::default_settings().shuffle_test())
