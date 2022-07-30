@@ -51,6 +51,14 @@ namespace xtd {
     explicit random(std::random_device& random_device) : generator_(random_device()) {}
     /// @}
     
+    /// @name Properties
+    
+    /// @{
+    /// @brief Gets the underlying generator
+    /// @return The underlying generator.
+    std::default_random_engine generator() const {return generator_;}
+    /// @}
+    
     /// @name Methods
     
     /// @{
