@@ -7,7 +7,9 @@
 #include "event_listener.h"
 #include "registered_test_class.h"
 #include "settings.h"
+#include <xtd/convert.h>
 #include <xtd/date_time.h>
+#include <xtd/random.h>
 #include <xtd/system_exception.h>
 #include <iomanip>
 #include <fstream>
@@ -63,13 +65,12 @@ namespace xtd {
         
         xtd::system_exception::enable_stack_trace(settings::default_settings().enable_stack_trace());
 
-        if (xtd::tunit::settings::default_settings().shuffle_test()) {
-          std::random_device rd;
-          std::mt19937 g = xtd::tunit::settings::default_settings().random_seed() == 0 ? std::mt19937(rd()) : std::mt19937(xtd::tunit::settings::default_settings().random_seed());
-          std::shuffle(test_classes().begin(), test_classes().end(), g);
-        }
-        
+        xtd::random random(xtd::tunit::settings::default_settings().random_seed() == 0U ? environment::tick_count().count() : xtd::tunit::settings::default_settings().random_seed());
+
         for (repeat_iteration_ = 1; repeat_iteration_ <= xtd::tunit::settings::default_settings().repeat_test() || xtd::tunit::settings::default_settings().repeat_test() < 0; ++repeat_iteration_) {
+          if (xtd::tunit::settings::default_settings().shuffle_test())
+            std::shuffle(test_classes().begin(), test_classes().end(), random.generator());
+
           try {
             event_listener_->on_unit_test_start(xtd::tunit::tunit_event_args(*this));
             
@@ -209,10 +210,10 @@ namespace xtd {
           else if (arg.find("--output_xml") == 0) {
             xtd::tunit::settings::default_settings().output_xml(true);
             if (arg[12] == '=') xtd::tunit::settings::default_settings().output_xml_path(arg.substr(13));
-          } else if (arg.find("--random_seed=") == 0) xtd::tunit::settings::default_settings().random_seed(std::stoi(arg.substr(14)));
+          } else if (arg.find("--random_seed=") == 0) xtd::tunit::settings::default_settings().random_seed(convert::to_uint32(arg.substr(14)));
           else if (arg == "--enable_stack_trace=true") xtd::tunit::settings::default_settings().enable_stack_trace(true);
           else if (arg == "--enable_stack_trace=false") xtd::tunit::settings::default_settings().enable_stack_trace(false);
-          else if (arg.find("--repeat_tests=") == 0) xtd::tunit::settings::default_settings().repeat_tests(std::stoi(arg.substr(15)));
+          else if (arg.find("--repeat_tests=") == 0) xtd::tunit::settings::default_settings().repeat_tests(convert::to_int32(arg.substr(15)));
           else if (arg == "--show_duration=true") xtd::tunit::settings::default_settings().show_duration(true);
           else if (arg == "--show_duration=false") xtd::tunit::settings::default_settings().show_duration(false);
           else if (arg == "--shuffle_tests") xtd::tunit::settings::default_settings().shuffle_test(true);

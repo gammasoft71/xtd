@@ -110,12 +110,12 @@ namespace xtd {
       /// @brief Gets random seed value.
       /// @return Random seed value.
       /// @remarks By default is set to 0 (no seed).
-      int random_seed() const noexcept {return random_seed_;}
+      unsigned int random_seed() const noexcept {return random_seed_;}
       
       /// @brief Sets random seed value.
       /// @param random_seed Random seed value.
       /// @remarks By default is set to 0 (no seed).
-      void random_seed(int random_seed) noexcept {random_seed_ = random_seed;}
+      void random_seed(unsigned int random_seed) noexcept {random_seed_ = random_seed;}
       
       /// @brief Gets repeat tests count.
       /// @return Repeat test count.
@@ -176,7 +176,7 @@ namespace xtd {
       std::string output_xml_path_ = "tests.xml";
       bool show_duration_ = true;
       bool shuffle_tests_ = false;
-      int random_seed_ = 0;
+      unsigned int random_seed_ = 0;
       int repeat_tests_ = 1;
       bool enable_stack_trace_ = false;
       xtd::date_time start_time_;
