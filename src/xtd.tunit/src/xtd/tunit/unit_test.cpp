@@ -1,5 +1,4 @@
 #include "../../../include/xtd/tunit/unit_test.h"
-#include <xtd/system_exception.h>
 
 #if defined(_WIN32)
 __declspec(dllimport) extern int __argc;
@@ -22,5 +21,4 @@ xtd::tunit::unit_test::unit_test(std::unique_ptr<xtd::tunit::event_listener> eve
 }
 
 xtd::tunit::unit_test::unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener, int argc, char* argv[]) noexcept : arguments(argv == nullptr ? 0 : argv + 1, argv == nullptr ? 0 : argv + argc), name_(get_filename(argv[0])), event_listener_(std::move(event_listener)) {
-  system_exception::enable_stack_trace(settings::default_settings().stack_trace_enabled());
 }

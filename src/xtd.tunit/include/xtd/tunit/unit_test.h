@@ -8,6 +8,7 @@
 #include "registered_test_class.h"
 #include "settings.h"
 #include <xtd/date_time.h>
+#include <xtd/system_exception.h>
 #include <iomanip>
 #include <fstream>
 #include <memory>
@@ -60,6 +61,8 @@ namespace xtd {
           return list_tests(tests);
         }
         
+        xtd::system_exception::enable_stack_trace(settings::default_settings().enable_stack_trace());
+
         if (xtd::tunit::settings::default_settings().shuffle_test()) {
           std::random_device rd;
           std::mt19937 g = xtd::tunit::settings::default_settings().random_seed() == 0 ? std::mt19937(rd()) : std::mt19937(xtd::tunit::settings::default_settings().random_seed());
@@ -207,6 +210,8 @@ namespace xtd {
             xtd::tunit::settings::default_settings().output_xml(true);
             if (arg[12] == '=') xtd::tunit::settings::default_settings().output_xml_path(arg.substr(13));
           } else if (arg.find("--random_seed=") == 0) xtd::tunit::settings::default_settings().random_seed(std::stoi(arg.substr(14)));
+          else if (arg == "--enable_stack_trace=true") xtd::tunit::settings::default_settings().enable_stack_trace(true);
+          else if (arg == "--enable_stack_trace=false") xtd::tunit::settings::default_settings().enable_stack_trace(false);
           else if (arg.find("--repeat_tests=") == 0) xtd::tunit::settings::default_settings().repeat_tests(std::stoi(arg.substr(15)));
           else if (arg == "--show_duration=true") xtd::tunit::settings::default_settings().show_duration(true);
           else if (arg == "--show_duration=false") xtd::tunit::settings::default_settings().show_duration(false);
