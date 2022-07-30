@@ -91,6 +91,13 @@ namespace xtd {
         os_ << __reset_color();
         os_ << "      Random number seed to use for shuffling test order. (any number" << std::endl;
         os_ << "      or 0 to use a seed based on the current time)." << std::endl;
+        os_ << __foreground_color(__console_color::green);
+        os_ << "  --enable_stack_trace=";
+        os_ << __reset_color();
+        os_ << __foreground_color(__console_color::yellow);
+        os_ << "(true|false)" << std::endl;
+        os_ << __reset_color();
+        os_ << "      Enable/disable stack trace (disable by default to speed up execution)." << std::endl;
         os_ << std::endl;
         os_ << "Test output:" << std::endl;
         os_ << __foreground_color(__console_color::green);

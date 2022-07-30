@@ -146,12 +146,12 @@ namespace xtd {
       /// @brief Gets stack trace enabled.
       /// @return true if stack trace enabled; otherwise false.
       /// @remarks The default value is false for increase the unit test execution.
-      bool stack_trace_enabled() const noexcept {return stack_trace_enabled_;}
+      bool enable_stack_trace() const noexcept {return enable_stack_trace_;}
       
       /// @brief Sets stack trace enabled.
-      /// @param show_duration true if stack trace enabled; otherwise false.
+      /// @param enable_stack_trace true if stack trace enabled; otherwise false.
       /// @remarks The default value is false for increase the unit test execution.
-      void stack_trace_enabled(bool stack_trace_enabled) noexcept {stack_trace_enabled_ = stack_trace_enabled;}
+      void enable_stack_trace(bool enable_stack_trace) noexcept {enable_stack_trace_ = enable_stack_trace;}
 
     private:
       friend class unit_test;
@@ -178,7 +178,7 @@ namespace xtd {
       bool shuffle_tests_ = false;
       int random_seed_ = 0;
       int repeat_tests_ = 1;
-      bool stack_trace_enabled_ = false;
+      bool enable_stack_trace_ = false;
       xtd::date_time start_time_;
       xtd::date_time end_time_;
     };
