@@ -1,6 +1,6 @@
 | [Home](home.md) | [News](news.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Support](support.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-#Support
+# Support
 
 First of all, thank you for your attention to xtd.​ This project is an open source project. The developers who participate do so on their own time. But nevertheless we will try to answer your request as soon as possible.
 ​
@@ -13,7 +13,8 @@ Your contributions are welcome.
 * [Fork](https://github.com/gammasoft71/xtd/fork) the project and use a pull request for adding your contribution.
 * If you face any problems feel free to open an issue at the [issues tracker](https://github.com/gammasoft71/xtd/issues), if you feel like there is a missing feature, please raise a ticket on [Github](https://github.com/gammasoft71/xtd). Pull request are also welcome.
 ​​
-*Your feedback is important for the evolution of the project.*
+
+**Your feedback is important for the evolution of the project.**
 ​
 ______________________________________________________________________________________________
 
