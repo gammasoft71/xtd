@@ -4,6 +4,7 @@
 
 ![0.2.0](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/version_0_2_0.png) (beta) Not yet planned
 
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] wxNotificationMessage never triggers event callbacks (regarding #180) - [#181](https://github.com/gammasoft71/xtd/issues/181)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - popup_panel - [#177](https://github.com/gammasoft71/xtd/issues/177)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - interlocked - [#176](https://github.com/gammasoft71/xtd/issues/176)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.drawing - graphics - [#175](https://github.com/gammasoft71/xtd/issues/175)
@@ -15,6 +16,7 @@
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.drawing - conical_gradient_brush - [#169](https://github.com/gammasoft71/xtd/issues/169)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - folder_browser_box - [#139](https://github.com/gammasoft71/xtd/issues/139)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - tool_bar_renderer - [#130](https://github.com/gammasoft71/xtd/issues/130)
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - status_bar_renderer - [#129](https://github.com/gammasoft71/xtd/issues/129)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - user_control_renderer - [#100](https://github.com/gammasoft71/xtd/issues/100)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - tool_bar - [#99](https://github.com/gammasoft71/xtd/issues/99)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - toggle_button_renderer - [#98](https://github.com/gammasoft71/xtd/issues/98)
