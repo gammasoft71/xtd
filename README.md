@@ -1,4 +1,4 @@
- [Home](docs/home.md) | [News](docs/news.md) | [Gallery](docs/gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Support](support.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
+ [Home](docs/home.md) | [News](docs/news.md) | [Gallery](docs/gallery.md) | [Examples](docs/examples.md) | [Downloads](docs/downloads.md) | [Documentation](docs/documentation.md) | [Support](docs/support.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](docs/gammasoft.md) |
 
 # xtd
 
