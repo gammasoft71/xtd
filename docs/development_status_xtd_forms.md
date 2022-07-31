@@ -275,7 +275,7 @@
 | [splitter_panel_renderer](../src/xtd.forms/include/xtd/forms/splitter_panel_renderer.h)                                       | static class | ![progress](pictures/progress0.png)   |
 | [splitter_renderer](../src/xtd.forms/include/xtd/forms/splitter_renderer.h)                                                   | static class | ![progress](pictures/progress0.png)   |
 | [splitter_style](../src/xtd.forms/include/xtd/forms/splitter_style.h)                                                         | enumeration  | ![progress](pictures/progress100.png) |
-| [status_bar](../src/xtd.forms/include/xtd/forms/status_bar.h)                                                                 | class        | ![progress](pictures/progress0.png)   |
+| [status_bar](../src/xtd.forms/include/xtd/forms/status_bar.h)                                                                 | class        | ![progress](pictures/progress50.png)  |
 | [status_strip](../src/xtd.forms/include/xtd/forms/status_strip.h)                                                             | class        | ![progress](pictures/progress0.png)   |
 | [switch_button](../src/xtd.forms/include/xtd/forms/switch_button.h)                                                           | class        | ![progress](pictures/progress100.png) |
 | [switch_buttonl_renderer](../src/xtd.forms/include/xtd/forms/switch_button_renderer.h)                                        | static class | ![progress](pictures/progress50.png)  |
