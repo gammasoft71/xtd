@@ -179,7 +179,7 @@ cd xtd_path_name
 
 # Support
 
-If you need support, don't hesitate to contact us on the [support](https://github.com/gammasoft71/xtd/issues) page.
+If you face any problems feel free to open an issue at the [issues tracker](https://github.com/gammasoft71/xtd/issues), If you feel like there is a missing feature, please raise a ticket on Github. Pull request are also welcome.
 
 ______________________________________________________________________________________________
 
