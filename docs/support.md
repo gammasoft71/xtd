@@ -6,7 +6,7 @@ First of all, thank you for your attention to xtd.​ This project is an open so
 ​
 * [Issues traker](https://github.com/gammasoft71/xtd/issues) provides the best way to get help on xtd.
 * [Discord](https://discordapp.com/users/gammasoft#9288) provides a discussion channel.
-* [Contact](contact.md) provides a form to contact us. 
+* [Contact](contact.md) provides email address to contact us. 
 
 Your contributions are welcome.
 * First read [Code of conduct](https://github.com/gammasoft71/xtd/blob/master/CODE_OF_CONDUCT.md) and the [design guidelines](design_guidelines.md) to make sure your contribution follows the rules.
