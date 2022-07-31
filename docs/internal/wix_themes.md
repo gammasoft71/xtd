@@ -1,3 +1,5 @@
+| [Home](home.md) | [News](news.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Support](support.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
+
 # Wix Themes (**Internal use only**)
 
 | Website    | Heading 1                  | Heading 2                  | Heading 3                  | Heading 4                  | Heading 5                  | Heading 6                  | Paragraph 1                | Paragraph 2                | Paragraph 3                |
