@@ -1,5 +1,3 @@
- [Home](docs/home.md) | [News](docs/news.md) | [Gallery](docs/gallery.md) | [Examples](docs/examples.md) | [Downloads](docs/downloads.md) | [Documentation](docs/documentation.md) | [Support](docs/support.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](docs/gammasoft.md) |
-
 # xtd
 
 **Modern C++17/20 framework to create console (CLI), forms (GUI like WinForms) and tunit (unit tests like Microsoft Unit Testing Framework) applications on Windows, macOS, Linux, iOS and android (*).**
