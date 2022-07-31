@@ -4,6 +4,7 @@
 
 ![0.2.0](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/version_0_2_0.png) (beta) Not yet planned
 
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] can not build - [#182](https://github.com/gammasoft71/xtd/issues/182)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] wxNotificationMessage never triggers event callbacks (regarding #180) - [#181](https://github.com/gammasoft71/xtd/issues/181)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - popup_panel - [#177](https://github.com/gammasoft71/xtd/issues/177)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - interlocked - [#176](https://github.com/gammasoft71/xtd/issues/176)
