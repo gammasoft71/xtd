@@ -94,7 +94,7 @@ see [Issues 0.2.0](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label
 | [#91](https://github.com/gammasoft71/xtd/issues/91)      | xtd.forms   | sixteen_segment_display_renderer  | Gammasoft |                                                 |
 | [#92](https://github.com/gammasoft71/xtd/issues/92)      | xtd.forms   | split_container                   | Gammasoft |                                                 |
 | [#93](https://github.com/gammasoft71/xtd/issues/93)      | xtd.forms   | status_bar                        | Gammasoft | ![status](pictures/releases/status/started.png) |
-| [#129](https://github.com/gammasoft71/xtd/issues/129)    | xtd.forms   | status_bar_renderer               | Gammasoft | ![status](pictures/releases/status/started.png) |
+| [#129](https://github.com/gammasoft71/xtd/issues/129)    | xtd.forms   | status_bar_renderer               | Gammasoft | ![status](pictures/releases/status/done.png)    |
 | [#94](https://github.com/gammasoft71/xtd/issues/94)      | xtd.forms   | style_sheets                      | Gammasoft | ![status](pictures/releases/status/started.png) |
 | [#95](https://github.com/gammasoft71/xtd/issues/95)      | xtd.forms   | switch_button_renderer            | Gammasoft |                                                 |
 | [#96](https://github.com/gammasoft71/xtd/issues/96)      | xtd.forms   | text_renderer                     | Gammasoft | ![status](pictures/releases/status/done.png)    |
