@@ -177,6 +177,10 @@ cd xtd_path_name
 ./uninstall
 ```
 
+# Support
+
+If you need support, don't hesitate to contact us on this [Support](https://github.com/gammasoft71/xtd/issues) page.
+
 ______________________________________________________________________________________________
 
 © 2022 Gammasoft.
