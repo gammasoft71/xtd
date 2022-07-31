@@ -4,6 +4,30 @@
 
 ![0.2.0](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/version_0_2_0.png) (beta) Not yet planned
 
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - xtd::forms::message_notifier - [#180](https://github.com/gammasoft71/xtd/issues/180)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - themes - [#97](https://github.com/gammasoft71/xtd/issues/97)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - switch_button_renderer - [#95](https://github.com/gammasoft71/xtd/issues/95)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - style_sheets - [#94](https://github.com/gammasoft71/xtd/issues/94)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - status_bar - [#93](https://github.com/gammasoft71/xtd/issues/93)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - split_container - [#92](https://github.com/gammasoft71/xtd/issues/92)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - sixteen_segment_display_renderer - [#91](https://github.com/gammasoft71/xtd/issues/91)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - seven_segment_display_renderer - [#90](https://github.com/gammasoft71/xtd/issues/90)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - radio_button_renderer - [#86](https://github.com/gammasoft71/xtd/issues/86)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - nine_segment_display_renderer - [#82](https://github.com/gammasoft71/xtd/issues/82)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - notify_icon - [#81](https://github.com/gammasoft71/xtd/issues/81)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - light_button_renderer - [#78](https://github.com/gammasoft71/xtd/issues/78)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - lcd_label_renderer - [#76](https://github.com/gammasoft71/xtd/issues/76)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - fourteen_segment_display_renderer - [#73](https://github.com/gammasoft71/xtd/issues/73)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - font_picker_renderer - [#71](https://github.com/gammasoft71/xtd/issues/71)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - dot_matrix_display_renderer - [#67](https://github.com/gammasoft71/xtd/issues/67)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - command_link_button_renderer - [#63](https://github.com/gammasoft71/xtd/issues/63)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - color_picker_rendererer - [#62](https://github.com/gammasoft71/xtd/issues/62)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - collapsible_panel_renderer - [#61](https://github.com/gammasoft71/xtd/issues/61)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - collapsible_panel - [#60](https://github.com/gammasoft71/xtd/issues/60)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - check_box_renderer - [#53](https://github.com/gammasoft71/xtd/issues/53)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd - iOS platforms - [#51](https://github.com/gammasoft71/xtd/issues/51)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.core - time_zone_info - [#50](https://github.com/gammasoft71/xtd/issues/50)
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] File drop feature request - [#5](https://github.com/gammasoft71/xtd/issues/5)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] can not build - [#182](https://github.com/gammasoft71/xtd/issues/182)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] wxNotificationMessage never triggers event callbacks (regarding #180) - [#181](https://github.com/gammasoft71/xtd/issues/181)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - popup_panel - [#177](https://github.com/gammasoft71/xtd/issues/177)
@@ -399,7 +423,7 @@ ________________________________________________________________________________
 ## Remarks
 
 * After 3 years of development, we are happy to release the first beta version of xtd. This version contains a lot of functionalities. It is the first of a long serie.
-* The essentials are listed below. For more information about all functionalities read the [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html).
+* The essentials are listed above. For more information about all functionalities read the [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html).
 
 ______________________________________________________________________________________________
 
