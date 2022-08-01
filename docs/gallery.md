@@ -38,6 +38,10 @@
 
 [painting](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/painting/README.md) is a simple cross-platform painting example.
 
+## Remarks
+
+Your projects are welcome. If you want to add your project in this gallery, just send an email to [gammasoft71@gmail.com](gammasoft71@gmail.com) with the screenshot of your project and the project links to find it.
+
 ______________________________________________________________________________________________
 
 © 2022 Gammasoft.
