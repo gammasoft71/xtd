@@ -5,7 +5,7 @@ if [ -z ${xtd_version+x} ]; then
   exit 1
 fi
 
-WXWIDGETS_VERSION=v3.1.6
+WXWIDGETS_VERSION=v3.2.0
 
 echo "Install xtd libraries version $xtd_version, copyright Gammasoft, 2022"
 echo ""
