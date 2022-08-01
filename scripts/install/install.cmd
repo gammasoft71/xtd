@@ -5,7 +5,7 @@ if "%xtd_version%"== "" (
   exit /B 1
 )
 
-set WXWIDGETS_VERSION=v3.1.6
+set WXWIDGETS_VERSION=v3.2.0
 
 echo Install xtd libraries version %xtd_version%, copyright Gammasoft, 2022
 echo.
