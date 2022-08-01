@@ -181,7 +181,7 @@ Test results:
 End 2 tests from 1 test case ran. (0 ms total)
 ```
 
-Click [here](../examples/README.md) to see more [examples](../examples/README.md) grouped by package about xtd:
+Click [here](../examples/README.md) to see more [examples](../examples/README.md) about xtd:
 * [xtd.core](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.core.examples/README.md)
 * [xtd.drawing](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.drawing.examples/README.md)
 * [xtd.forms](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/README.md)
