@@ -14,6 +14,24 @@ using namespace xtd::native;
 #undef max
 #undef min
 
+namespace {
+  static FILETIME time_t_to_file_time(time_t time) {
+    FILETIME file_time;
+    ULARGE_INTEGER time_value;
+    time_value.QuadPart = (time * 10000000LL) + 116444736000000000LL;
+    file_time.dwLowDateTime = time_value.LowPart;
+    file_time.dwHighDateTime = time_value.HighPart;
+    return file_time;
+  }
+
+  static time_t file_time_to_time_t(FILETIME const& time) {
+    ULARGE_INTEGER time_value;
+    time_value.LowPart = time.dwLowDateTime;
+    time_value.HighPart = time.dwHighDateTime;
+    return (time_value.QuadPart - 116444736000000000LL) / 10000000LL;
+  }
+}
+
 int32_t file_system::get_attributes(const string& path, int32_t& attributes) {
   auto attrib = GetFileAttributes(win32::strings::to_wstring(path).c_str());
   if (attrib != INVALID_FILE_ATTRIBUTES) attributes = static_cast<int32_t>(attrib);
@@ -21,20 +39,28 @@ int32_t file_system::get_attributes(const string& path, int32_t& attributes) {
 }
 
 int32_t file_system::get_file_times(const string& path, time_t& creation_time, time_t& last_access_time, time_t& last_write_time) {
-  /// @todo Use GetFileTime : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getfiletime
-  struct stat file_stat;
-  if (stat(path.c_str(), &file_stat) != 0)
-    return -1;
-  creation_time = static_cast<time_t>(file_stat.st_ctime);
-  last_access_time = static_cast<time_t>(file_stat.st_atime);
-  last_write_time = static_cast<time_t>(file_stat.st_mtime);
-  return 0;
+  HANDLE file_handle = CreateFile(win32::strings::to_wstring(path).c_str(), 0, 0, nullptr, OPEN_EXISTING, 0, nullptr);
+  if (file_handle == INVALID_HANDLE_VALUE) file_handle = CreateFile(win32::strings::to_wstring(path).c_str(), 0, 0, nullptr, OPEN_EXISTING, FILE_FLAG_BACKUP_SEMANTICS, nullptr);
+  if (file_handle == INVALID_HANDLE_VALUE) return 1;
+
+  FILETIME creation_time_file_time = time_t_to_file_time(creation_time);
+  FILETIME last_access_time_file_time = time_t_to_file_time(last_access_time);
+  FILETIME last_write_time_time = time_t_to_file_time(last_write_time);
+
+  auto result = GetFileTime(file_handle, &creation_time_file_time, &last_access_time_file_time, &last_write_time_time);
+  CloseHandle(file_handle);
+
+  creation_time = file_time_to_time_t(creation_time_file_time);
+  last_access_time = file_time_to_time_t(last_access_time_file_time);
+  last_write_time = file_time_to_time_t(last_write_time_time);
+
+  return result == TRUE ? 0 : 2;
 }
 
 string file_system::get_full_path(const string& relative_path) {
-  /// @todo Use GetFullPathName : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getfullpathnamea
-  char full_path[MAX_PATH + 1];
-  return _fullpath(full_path, relative_path.c_str(), MAX_PATH) ? full_path : "";
+  wchar_t full_path[4096];
+  if (GetFullPathName(win32::strings::to_wstring(relative_path).c_str(), 4096, full_path, nullptr) == 0) return "";
+  return win32::strings::to_string(full_path);
 }
 
 int32_t file_system::get_permissions(const std::string& path, int32_t& permissions) {
@@ -71,23 +97,43 @@ bool file_system::is_path_too_long(const string& path) {
 }
 
 int32_t file_system::set_attributes(const std::string& path, int32_t attributes) {
-  /// @todo SetFileAttributes : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfileattributesa
-  return -1;
+ return SetFileAttributes(win32::strings::to_wstring(path).c_str(), attributes) == TRUE ? 0 : -1;
 }
 
 int32_t file_system::set_creation_time(const string& path, time_t creation_time) {
-  /// @todo SetFileTime : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfiletime
-  return -1;
+  HANDLE file_handle = CreateFile(win32::strings::to_wstring(path).c_str(), 0, 0, nullptr, OPEN_EXISTING, 0, nullptr);
+  if (file_handle == INVALID_HANDLE_VALUE) file_handle = CreateFile(win32::strings::to_wstring(path).c_str(), 0, 0, nullptr, OPEN_EXISTING, FILE_FLAG_BACKUP_SEMANTICS, nullptr);
+  if (file_handle == INVALID_HANDLE_VALUE) return 1;
+  FILETIME creation_time_file_time, last_access_time_file_time, last_write_time_file_time;
+  auto result = GetFileTime(file_handle, &creation_time_file_time, &last_access_time_file_time, &last_write_time_file_time);
+  creation_time_file_time = time_t_to_file_time(creation_time);
+  if (result == TRUE) result = SetFileTime(file_handle, &creation_time_file_time, &last_access_time_file_time, &last_write_time_file_time);
+  CloseHandle(file_handle);
+  return result == TRUE ? 0 : 2;
 }
 
 int32_t file_system::set_last_access_time(const string& path, time_t last_access_time) {
-  /// @todo SetFileTime : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfiletime
-  return -1;
+  HANDLE file_handle = CreateFile(win32::strings::to_wstring(path).c_str(), 0, 0, nullptr, OPEN_EXISTING, 0, nullptr);
+  if (file_handle == INVALID_HANDLE_VALUE) file_handle = CreateFile(win32::strings::to_wstring(path).c_str(), 0, 0, nullptr, OPEN_EXISTING, FILE_FLAG_BACKUP_SEMANTICS, nullptr);
+  if (file_handle == 0) return 1;
+  FILETIME creation_time_file_time, last_access_time_file_time, last_write_time_file_time;
+  auto result = GetFileTime(file_handle, &creation_time_file_time, &last_access_time_file_time, &last_write_time_file_time);
+  last_write_time_file_time = time_t_to_file_time(last_access_time);
+  if (result == TRUE) result = SetFileTime(file_handle, &creation_time_file_time, &last_access_time_file_time, &last_write_time_file_time);
+  CloseHandle(file_handle);
+  return result == TRUE ? 0 : 2;
 }
 
 int32_t file_system::set_last_write_time(const string& path, time_t last_write_time) {
-  /// @todo SetFileTime : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfiletime
-  return -1;
+  HANDLE file_handle = CreateFile(win32::strings::to_wstring(path).c_str(), 0, 0, nullptr, OPEN_EXISTING, 0, nullptr);
+  if (file_handle == INVALID_HANDLE_VALUE) file_handle = CreateFile(win32::strings::to_wstring(path).c_str(), 0, 0, nullptr, OPEN_EXISTING, FILE_FLAG_BACKUP_SEMANTICS, nullptr);
+  if (file_handle == 0) return 1;
+  FILETIME creation_time_file_time, last_access_time_file_time, last_write_time_file_time;
+  auto result = GetFileTime(file_handle, &creation_time_file_time, &last_access_time_file_time, &last_write_time_file_time);
+  last_write_time_file_time = time_t_to_file_time(last_write_time);
+  if (result == TRUE) result = SetFileTime(file_handle, &creation_time_file_time, &last_access_time_file_time, &last_write_time_file_time);
+  CloseHandle(file_handle);
+  return result == TRUE ? 0 : 2;
 }
 
 int32_t file_system::set_permissions(const std::string& path, int32_t permissions) {
