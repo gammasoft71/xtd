@@ -23,7 +23,6 @@ The xtd guides provide an explanation on how to use the important features of th
   * [Box model](guide_style_sheets_box_model.md)
 
 ## See also
-​
 * [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
