@@ -2,25 +2,25 @@
 
 # External tools used:
 
-| Product                           | Copyright                                  | Description                       | Release |
-|-----------------------------------|--------------------------------------------|-----------------------------------|---------|
-| [cmake](https://www.cmake.org)    | Kitware, Inc., Insight Software Consortium | Cross Platform Makefile Generator | 3.19    |
-| [Doxygen](http://www.doxygen.org) | Dimitri van Heesch                         | Documentation generator           | 1.8.20  |
+| Product                           | Copyright          | Description                       | Release |
+|-----------------------------------|--------------------|-----------------------------------|---------|
+| [cmake](https://www.cmake.org)    | Kitware            | Cross Platform Makefile Generator | 3.19    |
+| [Doxygen](http://www.doxygen.org) | Dimitri van Heesch | Documentation generator           | 1.8.20  |
 
 # External libraries used:
 
-| Product                                                                        | Copyright       | Description                               | Release |
-|--------------------------------------------------------------------------------|-----------------|-------------------------------------------|---------|
+| Product                                                                         | Copyright       | Description                               | Release |
+|---------------------------------------------------------------------------------|-----------------|-------------------------------------------|---------|
 | [StackWalker](https://www.codeproject.com/Articles/11132/Walking-the-callstack) | Jochen Kalmbach | Walking the callstack                     | v5      |
-| [StackTrace](http://stacktrace.sourceforge.net/)                              | Fredrik Orderud | Provides information about the call stack | 2009    |
+| [StackTrace](http://stacktrace.sourceforge.net/)                                | Fredrik Orderud | Provides information about the call stack | 2009    |
 
-# External toolkit used:
+# External toolkits used:
 
 At this time only wxWidgets toolkit is supported.
 
 | Product                                                      | Copyright          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Release |
 |--------------------------------------------------------------|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
-| [wxWidgets](https://wxwidgets.org)                           | The wxWidgets team | wxWidgets is a C++ library that lets developers create applications for Windows, macOS, Linux and other platforms with a single code base. It has popular language bindings for Python, Perl, Ruby and many other languages, and unlike other cross-platform toolkits, wxWidgets gives applications a truly native look and feel because it uses the platform's native API rather than emulating the GUI. It's also extensive, free, open-source and mature. | 3.1.15  |
+| [wxWidgets](https://wxwidgets.org)                           | The wxWidgets team | wxWidgets is a C++ library that lets developers create applications for Windows, macOS, Linux and other platforms with a single code base. It has popular language bindings for Python, Perl, Ruby and many other languages, and unlike other cross-platform toolkits, wxWidgets gives applications a truly native look and feel because it uses the platform's native API rather than emulating the GUI. It's also extensive, free, open-source and mature. | 3.2.0   |
 
 # External toolkits will be used in the future:
 
@@ -29,10 +29,9 @@ At this time only wxWidgets toolkit is supported.
 | [Cocoa](https://developer.apple.com/documentation)           | Apple              | Apple Developer Documentation                                                                                                                                                                                                                                                                                                                                                                                                                                | /       |
 | [FLTK](http://www.fltk.org)                                  | The FLTK Team      | FLTK (pronounced "fulltick") is a cross-platform C++ GUI toolkit for UNIX®/Linux® (X11), Microsoft® Windows®, and MacOS® X. FLTK provides modern GUI functionality without the bloat and supports 3D graphics via OpenGL® and its built-in GLUT emulation.                                                                                                                                                                                                   | 3.1.5   |
 | [Qt6](http://www.qt.io)                                      | Qt                 | One framework. One codebase. Any platform.                                                                                                                                                                                                                                                                                                                                                                                                                   | 6.2     |
-| [gtk+3](http://www.gnome.org/gtk3)                           | The GNOME project  | This document is for the GTK 3 library.                                                                                                                                                                                                                                                                                                                                                                                                                      | 3.24.23 |
-| [gtk+4](http://www.gnome.org/gtk4)                           | The GNOME project  | This document is for the GTK 4 library.                                                                                                                                                                                                                                                                                                                                                                                                                      | 3.98.5  |
+| [gtk+4](http://www.gnome.org)                                | The GNOME project  | This document is for the GTK 4 library.                                                                                                                                                                                                                                                                                                                                                                                                                      | 4.6.6   |
 | [Win32 API](https://docs.microsoft.com/en-us/windows/win32/) | Microsoft          | Build desktop Windows apps using the Win32 API.                                                                                                                                                                                                                                                                                                                                                                                                              | /       |
-| [wxWidgets](https://wxwidgets.org)                           | The wxWidgets team | wxWidgets is a C++ library that lets developers create applications for Windows, macOS, Linux and other platforms with a single code base. It has popular language bindings for Python, Perl, Ruby and many other languages, and unlike other cross-platform toolkits, wxWidgets gives applications a truly native look and feel because it uses the platform's native API rather than emulating the GUI. It's also extensive, free, open-source and mature. | 3.1.15  |
+| [wxWidgets](https://wxwidgets.org)                           | The wxWidgets team | wxWidgets is a C++ library that lets developers create applications for Windows, macOS, Linux and other platforms with a single code base. It has popular language bindings for Python, Perl, Ruby and many other languages, and unlike other cross-platform toolkits, wxWidgets gives applications a truly native look and feel because it uses the platform's native API rather than emulating the GUI. It's also extensive, free, open-source and mature. | 3.2.0   |
 
 ______________________________________________________________________________________________
 
