@@ -10,11 +10,11 @@
  
 # Latest news
 
-* [Release xtd 0.1.0 (beta) - October 10, 2021](news.md#release-xtd-010-beta-october-10-2021) 
+* [Release xtd 0.1.0 (beta) - October 10, 2021](https://gammasoft71.wixsite.com/xtdpro/news) 
 
 ## Features
 
-* Free and open-source ([MIT License](https://gammasoft71.wixsite.com/xtdpro/news));
+* Free and open-source ([MIT License](https://gammasoft71.wixsite.com/xtdpro/license));
 * a collection of native C++ classes libraries, to complete std;
 * API close to the .net API with a modern C++ approach and full integration with the std standard;
 * xtd is designed to manage GUI controls and dialogs in pure [native mode](https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_control_appearance.md) or with [CSS styles](https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md).
