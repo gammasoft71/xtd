@@ -6,7 +6,7 @@
 
 (*) See [portability](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list) for more information.
 
-[![License](https://img.shields.io/github/license/gammasoft71/xtd)](https://github.com/gammasoft71/xtd/blob/master/docs/license.md) [![Language](https://img.shields.io/badge/language-C++17/20-004080.svg)](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#c++17) [![web](https://img.shields.io/badge/website-xtd-004080.svg)](https://gammasoft71.wixsite.com/xtdpro) [![Reference Guide](https://img.shields.io/badge/code-reference%20guide-004080.svg)](https://codedocs.xyz/gammasoft71/xtd/index.html) [![wiki](https://img.shields.io/badge/wiki-documentation-004080.svg)](https://github.com/gammasoft71/xtd/blob/master/docs/home.md) [![discord](https://img.shields.io/badge/discord-gammasoft-7289DA.svg)](https://discordapp.com/users/gammasoft#9288) [![Download xtd](https://img.shields.io/sourceforge/dt/xtdpro.svg)](https://sourceforge.net/projects/xtdpro/files/latest/download)
+[![License](https://img.shields.io/github/license/gammasoft71/xtd)](https://gammasoft71.wixsite.com/xtdpro/license) [![Language](https://img.shields.io/badge/language-C++17/20-004080.svg)](https://gammasoft71.wixsite.com/xtdpro/portability) [![web](https://img.shields.io/badge/website-xtd-004080.svg)](https://gammasoft71.wixsite.com/xtdpro) [![Reference Guide](https://img.shields.io/badge/code-reference%20guide-004080.svg)](https://codedocs.xyz/gammasoft71/xtd/index.html) [![wiki](https://img.shields.io/badge/wiki-documentation-004080.svg)](https://github.com/gammasoft71/xtd/blob/master/docs/home.md) [![discord](https://img.shields.io/badge/discord-gammasoft-7289DA.svg)](https://discordapp.com/users/gammasoft#9288) [![Download xtd](https://img.shields.io/sourceforge/dt/xtdpro.svg)](https://sourceforge.net/projects/xtdpro/files/latest/download)
  
 # Latest news
 
@@ -14,16 +14,16 @@
 
 ## Features
 
-* Free and open-source ([MIT License](https://github.com/gammasoft71/xtd/blob/master/docs/license.md));
+* Free and open-source ([MIT License](https://gammasoft71.wixsite.com/xtdpro/news));
 * a collection of native C++ classes libraries, to complete std;
 * API close to the .net API with a modern C++ approach and full integration with the std standard;
 * xtd is designed to manage GUI controls and dialogs in pure [native mode](https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_control_appearance.md) or with [CSS styles](https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md).
 * written in efficient, modern C++17 / C++20 with [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom;
-* and [highly portable](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list) and available on [many different platforms](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#operating-system-supported);
+* and [highly portable](https://gammasoft71.wixsite.com/xtdpro/portability) and available on [many different platforms](https://gammasoft71.wixsite.com/xtdpro/portability);
 
 ## xtd libraries architecture
 
-[![architecture_logo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/block_diagram_onion.png)](https://github.com/gammasoft71/xtd/blob/master/docs/hierarchy.md)
+[![architecture_logo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/block_diagram_onion.png)](https://gammasoft71.wixsite.com/xtdpro/hierarchy)
 
 xtd is composed of several libraries.
 
@@ -49,8 +49,8 @@ The [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) lib
 
 ## Getting Started
 
-* [Installation](https://github.com/gammasoft71/xtd/blob/master/docs/downloads.md) provides download, install and uninstall documentation.
-* [Guides](https://github.com/gammasoft71/xtd/blob/master/docs/guides.md) provides xtd guides and tutorials.
+* [Installation](https://gammasoft71.wixsite.com/xtdpro/download) provides download, install and uninstall documentation.
+* [Guides](https://gammasoft71.wixsite.com/xtdpro/guides) provides xtd guides and tutorials.
 * [Examples](https://github.com/gammasoft71/xtd/blob/master/examples/README.md) provides some examples.
 
 ## Development status
@@ -82,7 +82,7 @@ At each commit, a build and unit tests are performed for the following configura
 | iOS (**)         | Coming soon...                                                                                                                                                                              | Coming soon...                                                                                                                                                                                          |
 | Android (**)     | Coming soon...                                                                                                                                                                              | Coming soon...                                                                                                                                                                                          |
 
- (**) [xtd.core and xtd.tunit only](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list).
+ (**) [xtd.core and xtd.tunit only](https://gammasoft71.wixsite.com/xtdpro/portability).
 
 ## Issues status
 
