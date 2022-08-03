@@ -87,12 +87,12 @@ Actually xtd run on Windows, macOS, Linux, iOS and Android Operating System.
 
 ## The xtd libraries portability list
 
-| Library     | Windows | macOS | Linux | iOS   | Android |
-|-------------|---------|-------|-------|-------|---------|
-| xtd.core    | ✔️      | ✔️    | ✔️    | ✔️    | ✔️      |
-| xtd.drawing | ✔️      | ✔️    | ✔️    | ❌    | ❌      |
-| xtd.forms   | ✔️      | ✔️    | ✔️    | ❌    | ❌      |
-| xtd.tunit   | ✔️      | ✔️    | ✔️    | ✔️    | ✔️      |
+| Library                                                                      | Windows | macOS | Linux | iOS   | Android |
+|------------------------------------------------------------------------------|---------|-------|-------|-------|---------|
+| [xtd.core](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html)       | ✔️      | ✔️    | ✔️    | ✔️    | ✔️      |
+| [xtd.drawing](https://codedocs.xyz/gammasoft71/xtd/group__xtd__drawing.html) | ✔️      | ✔️    | ✔️    | ❌    | ❌      |
+| [xtd.forms](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html)     | ✔️      | ✔️    | ✔️    | ❌    | ❌      |
+| [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html)     | ✔️      | ✔️    | ✔️    | ✔️    | ✔️      |
 
 ## Tests and coverage
 
