@@ -39,7 +39,7 @@ Here are some commonly used reader and writer classes:
 
 ## Compression
 
-Coming soon...
+Not yet implemented...
 
 ## See also
 

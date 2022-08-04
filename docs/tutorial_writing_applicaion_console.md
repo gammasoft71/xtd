@@ -157,7 +157,7 @@ target_type(CONSOLE_APPLICATION)
 
 ## See also
 
-* [Writing applications](writing_applications.md)
+* [tutorials](tutorials.md)
 * [Documentation](documentation.md)
 
 ______________________________________________________________________________________________

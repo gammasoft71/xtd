@@ -186,7 +186,6 @@ For add a new Operating System, you juste have to implement native api for the n
 
 ## See also
 
-* [Getting Started](getting_started.md)
 * [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
