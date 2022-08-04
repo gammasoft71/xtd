@@ -11,6 +11,10 @@ The xtd guides provide an explanation on how to use the important features of th
 * How to install
   * [Read download, install and uninstall](downloads.md)
   * [How to check xtd version](guide_check_version.md)
+* Common I/O tasks
+  * [Common I/O tasks​](common_io_tasks.md)
+  * [How to: Read Text from a File](common_io_tasks_read_text_from_a_file.md)
+  * [How to: Write Text to a File](common_io_tasks_write_text_to_a_file.md)
 * Delegates and lambdas
   * [Overview](guide_delegates_and_lambdas.md)
 * Event

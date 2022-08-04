@@ -32,7 +32,7 @@ namespace xtd {
     /// * "c:\\MyDir"
     /// * "MyDir\\MySubdir"
     /// * "\\\\MyServer\\MyShare"
-    /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
+    /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/common_io_tasks.md">Common I/O Tasks</a>.
     /// @par Examples
     /// The following example shows how to loop through all the files and directories, querying some information about each entry.
     /// @code
@@ -240,7 +240,7 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the file or directory exists.
       /// @return true if the file or directory exists; otherwise, false.
-      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/common_io_tasks.md">Common I/O Tasks</a>.
       virtual bool exists() const = 0;
       
       /// @brief Gets the extension part of the file name, including the leading dot . even if it is the entire file name, or an empty string if no extension is present.
@@ -254,9 +254,9 @@ namespace xtd {
       /// @remarks
       /// | To do this...                                 | See the example in this topic...                                                                                                               |
       /// |-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-      /// | Create a text file.                           | <a ref="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks_write_text_to_a_file.md">How to: Write Text to a File</a> |
-      /// | Write to a text file.                         | <a ref="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks_write_text_to_a_file.md">How to: Write Text to a File</a> |
-      /// | Read from a text file.                        | <a ref="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks_read_text_from_a_file.md">How to: Read Text to a File</a> |
+      /// | Create a text file.                           | <a ref="https://github.com/gammasoft71/xtd/blob/master/docs/common_io_tasks_write_text_to_a_file.md">How to: Write Text to a File</a> |
+      /// | Write to a text file.                         | <a ref="https://github.com/gammasoft71/xtd/blob/master/docs/common_io_tasks_write_text_to_a_file.md">How to: Write Text to a File</a> |
+      /// | Read from a text file.                        | <a ref="https://github.com/gammasoft71/xtd/blob/master/docs/common_io_tasks_read_text_from_a_file.md">How to: Read Text to a File</a> |
       /// | Retrieve the fully qualified path of a file.  | xtd::io::path::get_full_path                                                                                                                   |
       /// | Retrieve only the file name a path.           | xtd::io::path::get_file_name_without_extension                                                                                                 |
       /// | Retrieve only the directory name from a path. | xtd::io::path::get_directory_name                                                                                                              |
@@ -281,7 +281,7 @@ namespace xtd {
       ///   }
       /// @endcode
       /// @remarks For example, for a file c:\new_file.txt, this property returns "c:\new_file.txt".
-      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/common_io_tasks.md">Common I/O Tasks</a>.
       xtd::ustring full_name() const;
       
       /// @brief Gets the time the current file or directory was last accessed.
@@ -407,7 +407,7 @@ namespace xtd {
       /// * xtd::io::directory_info::enumerate_file_system_infos
       /// * To get the latest value, call the xtd::io::file_system_info::refresh method.
       /// * If the file described in the xtd::io::file_system_info object does not exist, this property returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC).
-      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/common_io_tasks.md">Common I/O Tasks</a>.
       xtd::date_time last_access_time_utc() const;
       /// @brief Sets the time, in coordinated universal time (UTC), that the current file or directory was last accessed.
       /// @param vvalue The UTC time that the current file or directory was last accessed.
@@ -422,7 +422,7 @@ namespace xtd {
       /// * xtd::io::directory_info::enumerate_file_system_infos
       /// * To get the latest value, call the xtd::io::file_system_info::refresh method.
       /// * If the file described in the xtd::io::file_system_info object does not exist, this property returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC).
-      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks.md">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/common_io_tasks.md">Common I/O Tasks</a>.
       /// @note This method may set an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system.
       xtd::io::file_system_info& last_access_time_utc(const xtd::date_time& value);
       
@@ -600,7 +600,7 @@ namespace xtd {
       
       /// @brief Deletes a file or directory.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid; for example, it is on an unmapped drive.
-      /// @exception xtd::io::io_exception There is an open handle on the file or directory, and the operating system is Windows XP or earlier. This open handle can result from enumerating directories and files. For more information, see <a ref="https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_common_io_tasks_enumerate_directories_and_files.mdd">How to: Enumerate Directories and Files</a>.
+      /// @exception xtd::io::io_exception There is an open handle on the file or directory, and the operating system is Windows XP or earlier. This open handle can result from enumerating directories and files. For more information, see <a ref="https://github.com/gammasoft71/xtd/blob/master/docs/common_io_tasks_enumerate_directories_and_files.mdd">How to: Enumerate Directories and Files</a>.
       virtual void remove() const = 0;
       
       /// @brief Returns the original path. Use the xtd::io::file_system_info::full_name or xtd::io::file_system_info::name properties for the full path or file/directory name.

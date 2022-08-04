@@ -115,15 +115,15 @@ add_sources(
   translations_status.md
   tutorials.md
   tutorial_ambient_properties.md
-  tutorial_common_io_tasks.md
-  tutorial_common_io_tasks_copy_directories.md
-  tutorial_common_io_tasks_enumerate_directories_and_files.md
-  tutorial_common_io_tasks_file_and_stream_io.md
-  tutorial_common_io_tasks_open_and_append_to_a_log_file.md
-  tutorial_common_io_tasks_read_and_write_to_a_newly_created_data_file.md
-  tutorial_common_io_tasks_read_text_from_a_file.md
-  tutorial_common_io_tasks_write_a_text_file.md
-  tutorial_common_io_tasks_write_text_to_a_file.md
+  common_io_tasks.md
+  common_io_tasks_copy_directories.md
+  common_io_tasks_enumerate_directories_and_files.md
+  common_io_tasks_file_and_stream_io.md
+  common_io_tasks_open_and_append_to_a_log_file.md
+  common_io_tasks_read_and_write_to_a_newly_created_data_file.md
+  common_io_tasks_read_text_from_a_file.md
+  common_io_tasks_write_a_text_file.md
+  common_io_tasks_write_text_to_a_file.md
   tutorial_date_time.md
   tutorial_delegates.md
   tutorial_ebook.md
