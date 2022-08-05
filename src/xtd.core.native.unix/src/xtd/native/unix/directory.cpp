@@ -32,7 +32,7 @@ struct directory::directory_iterator::data {
 directory::directory_iterator::directory_iterator(const std::string& path, const std::string& pattern) {
   data_ = make_shared<data>(path, pattern);
   data_->handle_ = opendir(data_->path_.c_str());
-  ++(*this);
+  if (data_->handle_) ++(*this);
 }
 
 directory::directory_iterator::directory_iterator() {
@@ -102,7 +102,7 @@ struct directory::file_iterator::data {
 directory::file_iterator::file_iterator(const std::string& path, const std::string& pattern) {
   data_ = make_shared<data>(path, pattern);
   data_->handle_ = opendir(data_->path_.c_str());
-  ++(*this);
+  if (data_->handle_) ++(*this);
 }
 
 directory::file_iterator::file_iterator() {
