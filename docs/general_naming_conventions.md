@@ -38,21 +38,22 @@ For example, a method converting to int64_t should be named to_int64, not to_lon
 
 The following table presents several base data types using the **cstdint** type names (as well as the corresponding type names for all platform).
 
-| C++                | cstdint  | xtd     | Size in bytes |
-|--------------------|----------|---------|---------------|
-| char               | uint8_t  | sbyte   | 1             |
-| unsigned char      | int8_t   | byte    | 1             |
-| short              | int16_t  | int16   | 2             |
-| unsigned short     | uint16_t | uint16  | 2             |
-| int                | int32_t  | int32   | 4             |
-| unsigned int       | uint32_t | uint32  | 4             |
-| long long          | int64_t  | int64   | 8             |
-| unsigned long long | uint64_t | uint64  | 8             |
-| float              | float    | float   | 4             |
-| double             | double   | double  | 8             |
-| bool               | bool     | bool    | 1             |
-| wchar_t            | wchar_t  | wcchar  | 4             |
-| char*              | string   | ustring | variable      |
+| C++                | cstdint     | xtd     | Size in bytes |
+|--------------------|-------------|---------|---------------|
+| char               | uint8_t     | sbyte   | 1             |
+| unsigned char      | int8_t      | byte    | 1             |
+| short              | int16_t     | int16   | 2             |
+| unsigned short     | uint16_t    | uint16  | 2             |
+| int                | int32_t     | int32   | 4             |
+| unsigned int       | uint32_t    | uint32  | 4             |
+| long long          | int64_t     | int64   | 8             |
+| unsigned long long | uint64_t    | uint64  | 8             |
+| float              | float       | float   | 4             |
+| double             | double      | double  | 8             |
+| long double        | long double | decimal | 16            |
+| bool               | bool        | bool    | 1             |
+| wchar_t            | wchar_t     | wcchar  | 4             |
+| char*              | string      | ustring | variable      |
 
 **✔️ DO** use a common name, such as value or item, rather than repeating the type name, in the rare cases when an identifier has no semantic meaning and the type of the parameter is not important.
 
