@@ -24,6 +24,7 @@ The xtd guides provide an explanation on how to use the important features of th
   * Common I/O tasks
     * [Common I/O tasks​](common_io_tasks.md)
     * [How to: Copy Directories](common_io_tasks_copy_directories.md)
+    * [How to: Enumerate Directories and Files](common_io_tasks_enumerate_directories_and_files.md)
     * [How to: Read Text from a File](common_io_tasks_read_text_from_a_file.md)
     * [How to: Write Text to a File](common_io_tasks_write_text_to_a_file.md)
   * Delegates and lambdas
