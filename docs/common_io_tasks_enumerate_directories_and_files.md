@@ -90,6 +90,65 @@ public:
 
 startup_(program);
 ```
+
+The following example uses the [directory_info::enumerate_files](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a) method to list all files whose [length](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1file__info.html#a7bbc1abbd603c19f70d687770961d195) exceeds 10MB. 
+This example first enumerates the top-level directories, to catch possible unauthorized access exceptions, and then enumerates the files. 
+
+```c++
+#include <xtd/xtd>
+
+using namespace std;
+using namespace xtd;
+using namespace xtd::io;
+
+class program {
+public:
+  static void main() {
+    // Set a variable to the Documents path.
+    ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
+    
+    directory_info di_top(doc_path);
+    
+    try {
+      for (auto fi : di_top.enumerate_files()) {
+        try {
+          // Display each file over 10 MB;
+          if (fi.length() > 10000000) {
+            console::write_line("{}\t\t{:N0}", fi.full_name(), fi.length());
+          }
+        } catch (const unauthorized_access_exception& un_auth_top) {
+          console::write_line(un_auth_top.message());
+        }
+      }
+      
+      for (auto di : di_top.enumerate_directories("*")) {
+        try {
+          for (auto fi : di.enumerate_files("*")) {
+            try {
+              // Display each file over 10 MB;
+              if (fi.length() > 10000000) {
+                console::write_line("{}\t\t{:N0}", fi.full_name(), fi.length());
+              }
+            } catch (const unauthorized_access_exception& un_auth_file) {
+              console::write_line(un_auth_file.message());
+            }
+          }
+        } catch (const unauthorized_access_exception& un_auth_sub_dir) {
+          console::write_line(un_auth_sub_dir.message());
+        }
+      }
+    } catch (const directory_not_found_exception& dir_not_found) {
+      console::write_line("{}", dir_not_found.message());
+    } catch (const unauthorized_access_exception& un_auth_dir) {
+      console::write_line("un_auth_dir: {}", un_auth_dir.message());
+    } catch (const path_too_long_exception& long_path) {
+      console::write_line("{}", long_path.message());
+    }
+  }
+};
+
+startup_(program);
+```
  
 ## See also
 
