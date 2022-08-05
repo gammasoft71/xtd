@@ -19,7 +19,7 @@ ofstream file::append_text(const ustring& path) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
-  if (!exists(path)) throw file_not_found_exception(csf_);
+  if (!exists(path)) create_text(path);
   if ((get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception(csf_);
   
   ofstream stream(path, ios::out | ios::app);
