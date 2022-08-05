@@ -224,7 +224,7 @@ Unlike a component, a control always has a graphic interface.
 
 ![image](pictures/diagrams/uml/xtd_forms/control.png)
 
-The control class provides all properties, functions and [events](tutorial_events.md) common to the different controls. It also provides some static functions to manipulate the controls.
+The control class provides all properties, functions and [events](events.md) common to the different controls. It also provides some static functions to manipulate the controls.
 
 ### Control objects
 
@@ -254,7 +254,7 @@ You can retrieve or assign a parent to a control using the [xtd::forms::control:
 
 A collection of controls is a particular collection, it is an [xtd::froms::layout::arranged_element_collection](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/layout/arranged_element_collection.h).
 
-This collection has the particularity to have [events](tutorial_events.md) on which we can connect:
+This collection has the particularity to have [events](events.md) on which we can connect:
 
 * item_added : occurs when an item is added to the collection.
 * item_updated : occurs when an item is updated in the collection.
@@ -274,7 +274,7 @@ Or
 my_form.controls().push_back(my_button);
 ```
 
-Globally behind the function **my_button.parent(my_form)**, we call the function : **my_form.controls().push_back(my_button)**. And an **item_added** [event](tutorial_events.md) will be generated.
+Globally behind the function **my_button.parent(my_form)**, we call the function : **my_form.controls().push_back(my_button)**. And an **item_added** [event](events.md) will be generated.
 
 #### Remove parent
 
@@ -290,7 +290,7 @@ or
 my_form.controls().erase(my_button);
 ```
 
-Globally behind the function **my_button.parent(nullptr)**, we call the function : **my_form.controls().erase(my_button)**. And an **item_removed** [event](tutorial_events.md) will be generated.
+Globally behind the function **my_button.parent(nullptr)**, we call the function : **my_form.controls().erase(my_button)**. And an **item_removed** [event](events.md) will be generated.
 
 #### Update parent
 
@@ -314,7 +314,7 @@ or this :
 my_dialog.controls().push_back(my_button)
 ```
 
-Globally behind the function **my_button.parent(my_dialog)**, we call the function : **my_form.controls().erase(my_button)**, and **my_dialog.controls().push_back(my_button)**. An **item_removed** [event](tutorial_events.md) will be generated for **my_form** and an **item_added** event for my_dialog.
+Globally behind the function **my_button.parent(my_dialog)**, we call the function : **my_form.controls().erase(my_button)**, and **my_dialog.controls().push_back(my_button)**. An **item_removed** [event](events.md) will be generated for **my_form** and an **item_added** event for my_dialog.
 
 ### Control operations
 
@@ -362,7 +362,7 @@ When the handle is created (when the native control is created), there will be a
 Then, it's the turn of the specialized control to send its specific properties via the specialized API to [xtd::forms::native](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms.native/include/xtd/forms/native).
 For example [xtd::forms::list_box](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/list_box.h) will send the list of strings contained in the control to the corresponding API [xtd::forms::native::list_box](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms.native/include/xtd/forms/native/list_box.h), etc.
 
-The **parent_changed** and **control_added** [events](tutorial_events.md) are only sent for a child control, in the case of a [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h), these [events](tutorial_events.md) are not sent.
+The **parent_changed** and **control_added** [events](events.md) are only sent for a child control, in the case of a [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h), these [events](events.md) are not sent.
 
 When a control is created, it will automatically create all its child controls.
 
@@ -674,7 +674,7 @@ Xtd.forms is an event library. Indeed, for each action performed an event is ass
 
 There are local events and system events.
 
-For more information about delegates and events see [delegates](https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_delegates.md) and [events](https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_events.md) tutorials.
+For more information about delegates and events see [delegates](https://github.com/gammasoft71/xtd/blob/master/docs/delegates.md) and [events](https://github.com/gammasoft71/xtd/blob/master/docs/events.md) tutorials.
 
 ### Local events
 

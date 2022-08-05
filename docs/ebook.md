@@ -6,19 +6,19 @@ This is [xtd](https://github.com/gammasoft71/xtd) tutorial for the [C++](c++.md)
 
 ## Table of contents
 
-* [Introduction to xtd](tutorial_ebook_introduction.md)
-* [console classes](tutorial_ebook_console_classes.md)
-* [unit testing classes](tutorial_ebook_unit_testing_classes.md)
-* [First programs](tutorial_ebook_first_programs.md)
-* [Menus and toolbars](tutorial_ebook_menus_and_toolbars.md)
-* [layout_management](tutorial_ebook_layout_management.md)
-* [Events](tutorial_ebook_events.md)
-* [Dialogs](tutorial_ebook_dialogs.md)
-* [controls](tutorial_ebook_controls.md)
-* [drag & drop](tutorial_ebook_drag_and_drop.md)
-* [Graphics](tutorial_ebook_graphics.md)
-* [custom_controls](tutorial_ebook_custom_controls.md)
-* [tetris](tutorial_ebook_tetris.md)
+* [Introduction to xtd](ebook_introduction.md)
+* [console classes](ebook_console_classes.md)
+* [unit testing classes](ebook_unit_testing_classes.md)
+* [First programs](ebook_first_programs.md)
+* [Menus and toolbars](ebook_menus_and_toolbars.md)
+* [layout_management](ebook_layout_management.md)
+* [Events](ebook_events.md)
+* [Dialogs](ebook_dialogs.md)
+* [controls](ebook_controls.md)
+* [drag & drop](ebook_drag_and_drop.md)
+* [Graphics](ebook_graphics.md)
+* [custom_controls](ebook_custom_controls.md)
+* [tetris](ebook_tetris.md)
 
 ## xtd
 

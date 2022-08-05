@@ -28,7 +28,7 @@ Here is the list of these different sizes and locations :
 * **top** : defines the distance, in pixels, between the top edge of the control and the top edge of its container's client area.
 * **width** : defines the width of the control.
 
-For more oinformation see [Position and layout of controls](tutorial_position_and_layout_of_controls.md)
+For more oinformation see [Position and layout of controls](position_and_layout_of_controls.md)
 
 ## See also
 

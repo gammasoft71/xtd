@@ -22,7 +22,7 @@ So it is you who will have to delete the label instance. The [xtd.forms](https:/
 
 # Copy of control
 
-Because of the [events](https://github.com/gammasoft71/xtd/blob/master/docs/tutorial_events.md), the controls cannot be copied.
+Because of the [events](https://github.com/gammasoft71/xtd/blob/master/docs/events.md), the controls cannot be copied.
 
 Imagine a control that responds to a [click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event like this:
 
