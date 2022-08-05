@@ -48,6 +48,9 @@ public:
 };
 
 startup_(program);
+
+// The example creates a file named "Test.data" and writes the integers 0 through 10 to it in binary format.
+// It then writes the contents of Test.data to the console with each integer on a separate line.
 ```
  
 ## See also
