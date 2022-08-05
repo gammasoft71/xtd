@@ -23,7 +23,7 @@ public:
     
     // Check if the source directory exists
     if (!dir.exists())
-      throw directory_not_found_exception(ustring::format("Source directory not found: {}", dir.full_name()));
+      throw directory_not_found_exception(ustring::format("Source directory not found: {}", dir.full_name()), csf_);
     
     // Cache directories before we start copying
     vector<directory_info> dirs = dir.get_directories();
@@ -32,14 +32,14 @@ public:
     directory::create_directory(destination_dir);
     
     // Get the files in the source directory and copy to the destination directory
-    for (file_info file : dir.get_files()) {
+    for (const file_info& file : dir.get_files()) {
       ustring target_file_path = path::combine(destination_dir, file.name());
       file.copy_to(target_file_path);
     }
     
     // If recursive and copying subdirectories, recursively call this method
     if (recursive) {
-      for (directory_info sub_dir : dirs) {
+      for (const directory_info& sub_dir : dirs) {
         ustring new_destination_dir = path::combine(destination_dir, sub_dir.name());
         copy_directory(sub_dir.full_name(), new_destination_dir, true);
       }
