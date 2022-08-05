@@ -56,6 +56,41 @@ public:
 startup_(program);
 ```
  
+## Examples: Use the directory_info class
+
+The following example uses the [directory_info::enumerate_directories](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1directory__info.html#ad0818557e5fbc58db748458c7e907c4b) method to list a collection of top-level directories whose [creation_time](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1file__system__info.html#a970dfefd830a4edfdc36f72153c9d811) is not earlier than a certain [date_time](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html) value.
+ 
+ ```c++
+ #include <xtd/xtd>
+
+using namespace std;
+using namespace xtd;
+using namespace xtd::io;
+
+class program {
+public:
+  static void main() {
+    // Set a variable to the Documents path.
+    ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
+    
+    directory_info dir_programs(doc_path);
+    date_time start_of_2021(2021, 1, 1);
+    vector<directory_info> dirs;
+    
+    for (auto dir : dir_programs.enumerate_directories()) {
+      if (dir.creation_time() >= start_of_2021)
+        dirs.push_back(dir);
+    };
+    
+    for (auto di : dirs) {
+      console::write_line("{}", di.name());
+    }
+  }
+};
+
+startup_(program);
+```
+ 
 ## See also
 
 * [Common I/O Tasks](common_io_tasks.md)
