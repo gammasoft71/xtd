@@ -50,6 +50,8 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Extending test](writing_applicaion_extending_test.md)
 
 ## See also
+
+* [Getting started](getting_started.md)
 * [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
