@@ -16,20 +16,38 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Writing console application](writing_applicaion_console.md)
     * [Writing GUI application](writing_applicaion_gui.md)
     * [Writing test application](writing_applicaion_test.md)
-* Common I/O tasks
-  * [Common I/O tasks​](common_io_tasks.md)
-  * [How to: Read Text from a File](common_io_tasks_read_text_from_a_file.md)
-  * [How to: Write Text to a File](common_io_tasks_write_text_to_a_file.md)
-* Delegates and lambdas
-  * [Overview](guide_delegates_and_lambdas.md)
-* Event
-  * [Overview](guide_handle_and_raise_events.md)
-  * [Raise and consume events](guide_raise_and_consume_events.md)
-  * [Observer Design Pattern](guide_observer_design_pattern.md)
-* Style sheets
-  * [Overview](guide_style_sheets_overview.md)
-  * [Reference](guide_style_sheets_reference.md)
-  * [Box model](guide_style_sheets_box_model.md)
+* xtd.core
+  * Overview
+    * [Delegates](delegates.md)
+    * [Events](events.md)
+  * Common I/O tasks
+    * [Common I/O tasks​](common_io_tasks.md)
+    * [How to: Read Text from a File](common_io_tasks_read_text_from_a_file.md)
+    * [How to: Write Text to a File](common_io_tasks_write_text_to_a_file.md)
+  * Delegates and lambdas
+    * [Overview](guide_delegates_and_lambdas.md)
+  * Event
+    * [Overview](guide_handle_and_raise_events.md)
+    * [Raise and consume events](guide_raise_and_consume_events.md)
+    * [Observer Design Pattern](guide_observer_design_pattern.md)
+* xtd.forms
+  * Overview
+    * [Overview](xtd_forms_explanations.md)
+    * [Controls management](controls_management.md)
+    * [Control appearance](control_appearance.md)
+    * [How to make thread-safe calls](thread_safe_control_call.md)
+  * Properties
+    * [Size and location properties](size_and_location_properties.md)
+    * [Ambient properties](ambient_properties.md)
+    * [Position and layout of controls](position_and_layout_of_controls.md)
+  * Style sheets
+    * [Overview](guide_style_sheets_overview.md)
+    * [Reference](guide_style_sheets_reference.md)
+    * [Box model](guide_style_sheets_box_model.md)
+* xtd.tunit
+  * Overview
+    * [Running test](writing_applicaion_running_test.md)
+    * [Extending test](writing_applicaion_extending_test.md)
 
 ## See also
 * [Documentation](documentation.md)
