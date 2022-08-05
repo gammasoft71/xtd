@@ -11,6 +11,11 @@ The xtd guides provide an explanation on how to use the important features of th
 * How to install
   * [Read download, install and uninstall](downloads.md)
   * [How to check xtd version](guide_check_version.md)
+* Overview
+  * Tutorials
+    * [Writing console application](writing_applicaion_console.md)
+    * [Writing GUI application](writing_applicaion_gui.md)
+    * [Writing test application](writing_applicaion_test.md)
 * Common I/O tasks
   * [Common I/O tasks​](common_io_tasks.md)
   * [How to: Read Text from a File](common_io_tasks_read_text_from_a_file.md)
