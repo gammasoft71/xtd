@@ -6,7 +6,7 @@ The xtd guides provide an explanation on how to use the important features of th
 
 * Get started
   * [Hello World](guide_hello_world.md)
-  * [Get strated tutorials](tutorials.md)
+  * [Get started tutorials](tutorials.md)
   * [Follow by looking at examples of xtd](../examples/README.md)
 * How to install
   * [Read download, install and uninstall](downloads.md)
