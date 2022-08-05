@@ -6,10 +6,9 @@ include(../scripts/cmake/xtd_commands.cmake)
 include(../scripts/cmake/xtd_version.cmake)
 
 add_sources(
-  README.md
-  abstractions_abstract_types_and_interfaces.md
   abstract_class_design.md
   abstract_factory.md
+  abstractions_abstract_types_and_interfaces.md
   adapter.md
   architecture.md
   base_classes_for_implementing_abstractions.md
@@ -30,10 +29,9 @@ add_sources(
   csf.md
   decorator.md
   dependencies.md
-  designing_for_extensibility.md
-  design_guidelines.md
   design_guidelines_for_exception.md
-  development_status.md
+  design_guidelines.md
+  designing_for_extensibility.md
   development_status_cmake.md
   development_status_themes.md
   development_status_toolkits.md
@@ -42,14 +40,15 @@ add_sources(
   development_status_xtd_drawing.md
   development_status_xtd_forms.md
   development_status_xtd_tunit.md
+  development_status.md
   documentation.md
   downloads.md
   enum_design.md
-  events_and_callbacks.md
   event_design.md
+  events_and_callbacks.md
   examples.md
-  exceptions_and_performance.md
   exception_throwing.md
+  exceptions_and_performance.md
   external_tools_libraries_and_toolkits.md
   facade.md
   factory_method.md
@@ -60,13 +59,16 @@ add_sources(
   gammasoft.md
   general_naming_conventions.md
   getting_started.md
-  guides.md
   guide_check_version.md
   guide_delegates_and_lambdas.md
   guide_handle_and_raise_events.md
   guide_hello_world.md
   guide_observer_design_pattern.md
   guide_raise_and_consume_events.md
+  guide_style_sheets_box_model.md
+  guide_style_sheets_overview.md
+  guide_style_sheets_reference.md
+  guides.md
   hierarchy.md
   home.md
   ignore_test_method.md
@@ -98,6 +100,7 @@ add_sources(
   protected_members.md
   prototype.md
   proxy.md
+  README.md
   release_notes.md
   roadmap.md
   singleton.md
@@ -105,6 +108,7 @@ add_sources(
   static_class_design.md
   strategy.md
   struct_design.md
+  support.md
   template_method.md
   test_class.md
   test_cleanup.md
@@ -113,9 +117,6 @@ add_sources(
   themes.md
   tools.md
   translations_status.md
-  tutorials.md
-  tutorial_ambient_properties.md
-  common_io_tasks.md
   common_io_tasks_copy_directories.md
   common_io_tasks_enumerate_directories_and_files.md
   common_io_tasks_file_and_stream_io.md
@@ -124,38 +125,44 @@ add_sources(
   common_io_tasks_read_text_from_a_file.md
   common_io_tasks_write_a_text_file.md
   common_io_tasks_write_text_to_a_file.md
-  tutorial_date_time.md
-  tutorial_delegates.md
-  tutorial_ebook.md
-  tutorial_ebook_console_classes.md
-  tutorial_ebook_controls.md
-  tutorial_ebook_custom_controls.md
-  tutorial_ebook_dialogs.md
-  tutorial_ebook_drag_and_drop.md
-  tutorial_ebook_events.md
-  tutorial_ebook_first_programs.md
-  tutorial_ebook_graphics.md
-  tutorial_ebook_introduction.md
-  tutorial_ebook_layout_management.md
-  tutorial_ebook_menus_and_toolbars.md
-  tutorial_ebook_tetris.md
-  tutorial_ebook_unit_testing_classes.md
-  tutorial_events.md
-  tutorial_form.md
-  tutorial_position_and_layout_of_controls.md
-  tutorial_size_and_location_properties.md
-  tutorial_thread_safe_control_call.md
-  tutorial_writing_applicaion_console.md
-  tutorial_writing_applicaion_extending_test.md
-  tutorial_writing_applicaion_gui.md
-  tutorial_writing_applicaion_running_test.md
-  tutorial_writing_applicaion_test.md
-  tutorial_writing_applications.md
+  common_io_tasks.md
+  ambient_properties.md
+  control_appearance.md
+  controls_management.md
+  date_time.md
+  delegates.md
+  ebook_console_classes.md
+  ebook_controls.md
+  ebook_custom_controls.md
+  ebook_dialogs.md
+  ebook_drag_and_drop.md
+  ebook_events.md
+  ebook_first_programs.md
+  ebook_graphics.md
+  ebook_introduction.md
+  ebook_layout_management.md
+  ebook_menus_and_toolbars.md
+  ebook_tetris.md
+  ebook_unit_testing_classes.md
+  ebook.md
+  events.md
+  form.md
+  position_and_layout_of_controls.md
+  size_and_location_properties.md
+  thread_safe_control_call.md
+  writing_applicaion_console.md
+  writing_applicaion_extending_test.md
+  writing_applicaion_gui.md
+  writing_applicaion_running_test.md
+  writing_applicaion_test.md
+  writing_applications.md
+  tutorials.md
   type_design_guidelines.md
   usage_guidelines.md
   using_standard_exception_types.md
   virtual_members.md
   visitor.md
+  xtd_forms_explanations.md
 )
 add_sources(
   ../AUTHORS.md

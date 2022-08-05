@@ -15,7 +15,7 @@ The object that triggers the event is called the event sender.
 The event sender does not know which object or method will receive (process) the events it raises. 
 The event is usually a member of the event sender; for example, the [click](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html) event is a member of the [xtd::forms::control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html) class, and the [progress_changed event](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1background__worker.html) is a member of the class that implements the [xtd::forms::background_worker](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1background__worker.html) class.
 
-To define an event, you use the [xtd::event](tutorial_events.md) class in your [event](tutorial_events.md) class signature, and you specify the delegate type for the event. 
+To define an event, you use the [xtd::event](events.md) class in your [event](events.md) class signature, and you specify the delegate type for the event. 
 Delegates are described in the next section.
 
 In general, to trigger an event, you add a method marked as ```protected``` and ```virtual```. Name this method ```on_```event_name; for example, ```on_data_received```. 
@@ -139,7 +139,7 @@ Static event handlers are in effect for the lifetime of the class whose events t
 Dynamic event handlers are explicitly turned on and off during program execution, usually in response to conditional program logic. 
 For example, they can be used if event notifications are only needed under certain conditions or if an application provides multiple event handlers and the runtime conditions define which one to use. 
 The example in the previous section shows how to dynamically add an event handler. 
-For more information, see [Events](tutorial_events.md).
+For more information, see [Events](events.md).
 
 # See also
 ​
