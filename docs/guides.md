@@ -17,6 +17,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Writing console application](writing_applicaion_console.md)
     * [Writing GUI application](writing_applicaion_gui.md)
     * [Writing test application](writing_applicaion_test.md)
+    * [Some useful git commands](git.md)
     * [More tutorials](tutorials.md)
 * xtd.core
   * Overview
