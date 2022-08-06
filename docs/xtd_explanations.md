@@ -119,7 +119,7 @@ So I had to create a framework (threads, diagnostics, sockets, web sockets, io, 
 * Qt's API is old C++ and doesn't match the modern C++ canon and I don't like that.
 * wxWidgets API is convoluted and old c++.
 * FLTK is closer to C than to modern C++. Even if I find it attractive for its lightness and its ease of use.
-* JUICE is close to a modern c++ API as we would like but unfortunately has a paid license if we don't want to have a splash screen.
+* JUCE is close to a modern c++ API as we would like but unfortunately has a paid license if we don't want to have a splash screen.
 * ...
 
 My choice was naturally for the .Net Framework API.
