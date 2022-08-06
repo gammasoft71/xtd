@@ -47,13 +47,13 @@
 What are the criteria for a modern C++ framework in 2019 :
 
 * C++17/20 modern
-* [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization)
+* [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom.
 * Use of namespace and no prefix
 * No defines for constants and no macros for functions or event logging.
 * All classes must be in namespaces.
 * No global but rather static classes.
 * No functions outside of classes except for extend std.
-* Native controls if no theme defined. However, controls must be able to support predefined themes or themes created by the developer himself.
+* Native controls if no theme defined. However, controls must be able to support predefined CSS themes or CSS themes created by the developer himself.
 * Controls can be drawing by the user.
 * Close to the std.
 * Denomination of classes and functions according to std and boost standard.
@@ -117,8 +117,10 @@ So I had to create a framework (threads, diagnostics, sockets, web sockets, io, 
 * The MFC API is not consistant and old.
 * The .Net Framework is consistant and close to WIn32 API and events but is CSharp or managed C++ with garbage collector.
 * JavaFX is not close to Win32 API and events but is Java with garbage collector.
-* Qt API is old C++ and i don't like it.
+* Qt's API is old C++ and doesn't match the modern C++ canon and I don't like that.
 * wxWidgets API is convoluted and old c++.
+* FLTK is closer to C than to modern C++. Even if I find it attractive for its lightness and its ease of use.
+* JUICE is close to a modern c++ API as we would like but unfortunately has a paid license if we don't want to have a splash screen.
 * ...
 
 My choice was naturally for the .Net Framework API.
@@ -139,12 +141,12 @@ My choice was naturally for the .Net Framework API.
 
 See [architecture diagram](https://github.com/gammasoft71/xtd/blob/master/docs/hierarchy.md).
 
-These libraries are grouped by theme :
+xtd is composed of several libraries.
 
-* system : The xtd.core library is modern C++20 libraries of classes, interfaces, and value types that provide access to system functionality. It is the foundation on which c++ applications, components, and controls are built.
-* drawing : The xtd.drawing library contains types that support basic GDI+ graphics functionality. Child namespaces support advanced two-dimensional and vector graphics functionality, advanced imaging functionality, and print-related and typographical services. A child namespace also contains types that extend design-time user-interface logic and drawing.
-* forms : The xtd.forms library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows, Apple macOS and linux base operating system.
-* tunit : The xtd.tunit library is a unit-testing framework for modern C++20. Initially ported from [Microsoft.VisualStudio.TestTools.Cpp](https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference).
+* xtd.core : The xtd.core library is modern C++20 libraries of classes, interfaces, and value types that provide access to system functionality. It is the foundation on which c++ applications, components, and controls are built.
+* xtd.drawing : The xtd.drawing library contains types that support basic GDI+ graphics functionality. Child namespaces support advanced two-dimensional and vector graphics functionality, advanced imaging functionality, and print-related and typographical services. A child namespace also contains types that extend design-time user-interface logic and drawing.
+* xtd.forms : The xtd.forms library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows, Apple macOS and linux base operating system.
+* xtd.tunit : The xtd.tunit library is a unit-testing framework for modern C++20. Initially ported from [Microsoft.VisualStudio.TestTools.Cpp](https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference).
 
 ### Dependency
 
