@@ -59,6 +59,7 @@ add_sources(
   gammasoft.md
   general_naming_conventions.md
   getting_started.md
+  git.md
   guide_check_version.md
   guide_delegates_and_lambdas.md
   guide_handle_and_raise_events.md
@@ -162,6 +163,7 @@ add_sources(
   using_standard_exception_types.md
   virtual_members.md
   visitor.md
+  xtd_explanations.md
   xtd_forms_explanations.md
 )
 add_sources(

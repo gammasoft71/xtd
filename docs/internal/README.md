@@ -7,11 +7,6 @@
 * Internal use only
 * These documents are internal. They serve as *documentations*, *tips*, *how to*, *...* for xtd developers.
 
-## xtd explanations
-
-* [xtd explanations](xtd_explanations.md) provides xtd explanations.
-* [xtd.forms explanations](xtd_forms_explanations.md) provides xtd forms explanations.
-
 ## Development tips
 
 * [Computer Guid](computer_guid.md) provides information about about computer guid.
@@ -29,10 +24,6 @@
 
 * [Speed up build](speedup_build.md) provides investigations to speed up the build of xtd.
 * [ios_build](ios_build.md) provides information about iOS build.
-
-## Git
-
-* [Some useful git commands](git.md) provides some useful git commands.
 
 ## Externals tips
 
