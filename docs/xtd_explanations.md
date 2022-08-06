@@ -171,7 +171,7 @@ This library is high level API that has access only to the std and xtd.core.nati
 
 #### Some Rules
 
-* In no case xtd.core should do precompilation tests (#if defined ... #endif) on the compiler or lOS.
+* Under no circumstances should xtd.core, xtd.drawing, xtd.forms or xtd.tunit do any precompilation tests (#if defined ... #endif) on the compiler or the OS.
 Some cases like debug or release (NDEBUG) for diagnostic components. But otherwise that's all. 
 If there is a possible difference between OS or compilers, you have to use the xtd.core.native interface. 
 * In the same way, if you use an external library, you have to use the xtd.core.native interface. 
