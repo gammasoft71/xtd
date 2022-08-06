@@ -2,6 +2,28 @@
 
 # Download
 
+## In this section
+
+* [Download the latest stable xtd version](#download-the-latest-stable-xtd-version)
+* [Clone the latest xtd commit](#clone-the-latest-xtd-commit)
+* [Libraries dependency](#libraries-dependency)
+* [Installation](#installation)
+  * [Windows 10 or later](#windows-10-or-later)
+  * [macOS 10.15 or later](#macos-10-15-or-later)
+  * [CentOS 7, Debian 9.7, Elementary OS 5.0, Fedora 29, LinuxMint 19.1, openSUSE Tumbleweed, RedHat 7.5 and Ubuntu 19.04 or later](#centos-7-debian-9-7-elementary-os-5-0-fedora-29-linuxmint-19-1-opensuse-tumbleweed-edHat-7-5-and-ubuntu-19-04-or-later)
+  * [Other linux Distribution](#Other-linux-distribution)
+* [Build and run your first xtd application](#build-and-run-your-first-xtd-application)
+  * [xtdc-gui (gui)](#xtdc-gui-gui)
+  * [xtdc (console)](#xtdc-console)
+  * [Remarks](#remarks)
+* [Uninstall](#uninstall)
+  * [Windows](#windows)
+  * [macOS or linux](#macos-or-linux)
+* [Download logo](#download-logo)
+  * [xtd](#xtd)
+  * [Gammasoft](#gammasoft)
+* [Support](#support)
+
 ## Download the latest stable xtd version
 
 You can download latest stable version on [SourceForge](https://sourceforge.net/projects/xtdpro/).
@@ -26,9 +48,9 @@ xtd is currently in development mode and the only [xtd.forms.native.wxwidgets](h
 
 In the future xtd.forms will use [xtd.forms.native.win32](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.win32/README.md) on Windows, [xtd.forms.native.cocoa](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.cocoa/README.md) on macOS and [xtd.forms.native.gtk4](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.gtk4/README.md) on linux. Other backend like [xtd.forms.native.qt5](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.qt5/README.md) will be ported too.
 
-# Installation
+## Installation
 
-## Windows 10 or later
+### Windows 10 or later
 
 1. Install Microsoft Visual Studio 2019 Community or later
   
@@ -49,8 +71,7 @@ install
 
 4. Create as many applications as you want with xtd.
 
-
-## macOS 10.15 (OS X Catalina) or later
+### macOS 10.15 or later
 
 1. Install Xcode 11.6 or later
   
@@ -75,7 +96,7 @@ cd xtd_path_name
 
 4. Create as many applications as you want with xtd.
 
-## CentOS 7, Debian 9.7, Elementary OS 5.0, Fedora 29, LinuxMint 19.1, openSUSE Tumbleweed, RedHat 7.5 and Ubuntu 19.04 (or later)
+### CentOS 7, Debian 9.7, Elementary OS 5.0, Fedora 29, LinuxMint 19.1, openSUSE Tumbleweed, RedHat 7.5 and Ubuntu 19.04 or later
 
 1. Do the following in "Terminal" to Build and install xtd :
 
@@ -88,8 +109,7 @@ cd xtd_path_name
 
 2. Create as many applications as you want with xtd.
 
-
-## Other linux Distribution
+### Other linux Distribution
 
 1. Install g++ 9 or later
   
@@ -122,11 +142,11 @@ cd xtd_path_name
 
 4. Create as many applications as you want with xtd.
 
-# Build and run your first xtd application
+## Build and run your first xtd application
 
 Use internal tools installed with xtd.
 
-## xtdc-gui (gui)
+### xtdc-gui (gui)
 
 Let the gui tool drive you for create your new project.
 
@@ -136,7 +156,7 @@ Let the gui tool drive you for create your new project.
 
 ![xtdc-gui](pictures/xtdc-gui.gif)
 
-## xtdc (console)
+### xtdc (console)
 
 Create your new project with a simple command line tools.
 
@@ -149,17 +169,17 @@ xtdc open
 ```
 "xtdc" command line tool for creating hello_world gui application, generate Visual Studio solution if you running it on Windows, Xcode project if you are on macOS or Code::Blocks project if you are on Linux. If you are on Windows, Visual Studio will be running with your new project. If you are on macOS, Xcode will be running with your new project. If you are on Linux, Code::Blocks will be running with your project.
 
-## Remarks
+### Remarks
 
 See [xtdc-gui](../tools/xtdc-gui/README.md) for more info.
 
 See [xtdc](../tools/xtdc/README.md) for more info.
 
-# Uninstall
+## Uninstall
 
 Since the version 0.2.0 you can easily uninstall xtd with one command.
 
-## Windows
+### Windows
 
 * Do the following in "Command Prompt" to uninstall xtd :
 
@@ -168,7 +188,7 @@ cd xtd_path_name
 uninstall
 ```
 
-## macOS or linux
+### macOS or linux
 
 * Do the following in "Terminal" to uninstall xtd :
 
@@ -177,7 +197,13 @@ cd xtd_path_name
 ./uninstall
 ```
 
-# Support
+## Download logo
+
+### xtd
+
+### gammasoft
+
+## Support
 
 If you face any problems feel free to open an issue at the [issues tracker](https://github.com/gammasoft71/xtd/issues), If you feel like there is a missing feature, please raise a ticket on Github. Pull request are also welcome.
 
