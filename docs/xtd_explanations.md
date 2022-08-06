@@ -40,7 +40,6 @@
 * [Continuous integration builds](#continuous-integration-builds)
 * [Test coverage](#test-coverage)
 * [xtd documentation](#xtd-documentation)
-* [My everyday development machines and tools](#my-everyday-development-machines-and-tools)
 
 ## Motivations
 
@@ -418,41 +417,3 @@ There are two guides:
 ### Notes
 
 For the offline documentation use doxygen command or doxygen gui.
-
-## My everyday development machines and tools
-
-### macOS (my main development machine) 
-
-* IDE : [Xcode 12](https://developer.apple.com/xcode/)
-* Git : [GitHub Desktop](https://desktop.github.com) and sometimes git command in the terminal.
-* CMake : [CMake-gui](https://cmake.org) and sometimes cmake command in the terminal.
-* Text editor : [CotEditor](https://coteditor.com)
-* Documentations : [Doxygen gui](https://www.doxygen.nl/index.html) and sometimes doxygen command in the terminal. (to generate local reference guide and local developer guide).
-* Markdown viewer/editor : [Typora](https://typora.io)
-* Image editor : [Gimp](https://www.gimp.org)
-* Diagram editor : [Draw.IO Desktop](https://chrome.google.com/webstore/detail/drawio-desktop/pebppomjfocnoigkeepgbmcifnnlndla?hl=en-GB)
-* UML Diagram : [plantUML](http://plantuml.com)
-
-### Windows 10 (my secondary development machine) and Windows 11 preview (virtual machine)
-
-* IDE : [VisualStudio Community 2019](https://visualstudio.microsoft.com)
-* Git : [GitHub Desktop](https://desktop.github.com) and sometimes git command in the terminal.
-* CMake : [CMake-gui](https://cmake.org) and sometimes cmake command in th cmake command in th terminal.
-* Text editor : [Notepad++](https://notepad-plus-plus.org)
-* Documentations : [Doxygen gui](https://www.doxygen.nl/index.html) and sometimes doxygen command in the terminal. (to generate local reference guide and local developer guide).
-* Markdown viewer/editor : [Typora](https://typora.io)
-* Image editor : [Gimp](https://www.gimp.org)
-* Diagram editor : [Draw.IO Desktop](https://chrome.google.com/webstore/detail/drawio-desktop/pebppomjfocnoigkeepgbmcifnnlndla?hl=en-GB)
-* UML Diagram : [plantUML](http://plantuml.com)
-
-### Ubuntu 20.04 with GNOME (virtual machine) and KUbuntu 20.4 with KDE (virtual machines)
-
-* IDE : [Qt](https://qt.io)
-* Git : [GitHub Desktop](https://desktop.github.com) (beta version with manual installation) and sometimes git command in the terminal.
-* CMake : [CMake-gui](https://cmake.org) and sometimes cmake command in th terminal.
-* Text editor : [gedit](https://wiki.gnome.org/Apps/Gedit)
-* Documentations : [Doxygen gui](https://www.doxygen.nl/index.html) and sometimes doxygen command in the terminal. (to generate local reference guide and local developer guide).
-* Markdown viewer/editor : [Typora](https://typora.io)
-* Image editor : [Gimp](https://www.gimp.org)
-* Diagram editor : [Draw.IO Desktop](https://chrome.google.com/webstore/detail/drawio-desktop/pebppomjfocnoigkeepgbmcifnnlndla?hl=en-GB)
-* UML Diagram : [plantUML](http://plantuml.com)
