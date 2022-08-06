@@ -86,7 +86,7 @@ But other operating systems can be added in the future or earlier if needed by i
 For the moment there is an implementation of the APIs xtd.drawing.native and xtd.forms.native :
 * xtd.drawing.native.wxwidgets and xtd.forms.native.wxwidgets : wxWidgets toolkit.
 
-But other graphical interfaces can be added by implementing the xtd.drawing.native and xtd.forms.native APIs as per rexamples :
+But in the futur, other graphical interfaces can be added by implementing the xtd.drawing.native and xtd.forms.native APIs as per rexamples :
 * xtd.drawing.native.cocoa and xtd.forms.native.cocoa : macOS appkit. (macOS native API)
 * xtd.drawing.native.gtk and xtd.forms.native.gtk : linux Gtk API. (native linux Gnome API)
 * xtd.drawing.native.qt6 and xtd.forms.native.qt6 : Qt toolkit. (API "native" Kdde linux)
