@@ -134,7 +134,7 @@ My choice was naturally for the .Net Framework API.
 * [xtd.core](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core) contains some components from mscorelib, System, System.Core libraries of the .Net Framework and of Mono.
 * [xtd.drawing](https://github.com/gammasoft71/xtd/blob/master/src/xtd.drawing) contains some components from System.Drawing library of the .Net Framework and of Mono.
 * [xtd.forms](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms) contains some components from System.Windows.Forms library of the .Net Framework and of Mono.
-* [xtd.tunit](https://github.com/gammasoft71/xtd/blob/master/src/xtd.tunit) contains some ecomponents from Microsoft.VisualStudio.TestTools.Cpp and support [xUnit](https://en.wikipedia.org/wiki/XUnit) standard.
+* [xtd.tunit](https://github.com/gammasoft71/xtd/blob/master/src/xtd.tunit) contains some components from Microsoft.VisualStudio.TestTools.Cpp and support [xUnit](https://en.wikipedia.org/wiki/XUnit) standard.
 
 ## xtd architecture
 
