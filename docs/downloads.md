@@ -9,8 +9,8 @@
 * [Libraries dependency](#libraries-dependency)
 * [Installation](#installation)
   * [Windows 10 or later](#windows-10-or-later)
-  * [macOS 10.15 or later](#macos-10.15-or-later)
-  * [CentOS 7, Debian 9.7, Elementary OS 5.0, Fedora 29, LinuxMint 19.1, openSUSE Tumbleweed, RedHat 7.5 and Ubuntu 19.04 or later](#centos-7-debian-9.7-elementary-os-5.0-fedora-29-linuxmint-19.1-opensuse-tumbleweed-edHat-7.5-and-ubuntu-19.04-or-later)
+  * [macOS 10.15 or later](#macos-10%2E15-or-later)
+  * [CentOS 7, Debian 9.7, Elementary OS 5.0, Fedora 29, LinuxMint 19.1, openSUSE Tumbleweed, RedHat 7.5 and Ubuntu 19.04 or later](#centos-7-debian-9-7-elementary-os-5-0-fedora-29-linuxmint-19-1-opensuse-tumbleweed-edHat-7-5-and-ubuntu-19-04-or-later)
   * [Other linux Distribution](#Other-linux-distribution)
 * [Build and run your first xtd application](#build-and-run-your-first-xtd-application)
   * [xtdc-gui (gui)](#xtdc-gui-gui)
@@ -21,7 +21,7 @@
   * [macOS or linux](#macos-or-linux)
 * [Download logo](#download-logo)
   * [xtd](#xtd)
-  * [Gammasoft](#gammasoft)
+  * [Gammasoft](#)
 * [Support](#support)
 
 ## Download the latest stable xtd version
