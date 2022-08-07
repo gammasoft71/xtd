@@ -324,7 +324,7 @@ start xtd.sln
 cd xtd
 mkdir build && cd build
 cmake .. -G "Xcode"
-open xtdd.xcoddeproj
+open xtd.xcoddeproj
 ```
 
 * On Linux :
@@ -332,7 +332,7 @@ open xtdd.xcoddeproj
 cd xtd
 mkdir build && cd build
 cmake ..
-make all
+cmake all
 ```
 
 #### Notes for Windows developer
