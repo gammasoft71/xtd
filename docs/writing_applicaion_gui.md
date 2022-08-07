@@ -26,7 +26,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 ```
 
-2. Declare a class named **form1** that inherits from the **form** class.
+2. Declare a class named **form1** that inherits from the [form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) class.
 
 ```c++
 class form1 : public form
@@ -91,17 +91,18 @@ xtdc run
 
 ## Adding a Control and Handling an Event
 
-The previous procedure steps demonstrated how to just create a basic GUI that compiles and runs. The next procedure will show you how to create and add a control to the form, and handle an event for the control.
+The previous procedure steps demonstrated how to just create a basic GUI that compiles and runs. 
+The next procedure will show you how to create and add a [control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html) to the [form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html), and handle an event for the [control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html).
 
 In addition to understanding how to create GUI applications, you should understand event-based programming and how to handle user input.
 
 ### To declare a button control and handle its click event
 
-1. Declare a button control named button1.
-2. In the constructor, create the button and set its **size**, **location** and **text** properties.
-3. Add the button to the form.
+1. Declare a [button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control named button1.
+2. In the constructor, create the [button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) and set its [size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a2a9c3b512b6748c8330fe2231839c4cb), [location](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a704049ab20aa16e25dca51911b0ba13b) and [text](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a3f3bc021d22dff6f3a32a8dae0e7bbe9) properties.
+3. Add the [button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) to the [form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html).
 
-The following code example demonstrates how to declare the button control.
+The following code example demonstrates how to declare the [button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control.
 
 ```c++
   private:
@@ -117,10 +118,10 @@ The following code example demonstrates how to declare the button control.
     }
 ```
 
-4. Create a method to handle the Click event for the button.
-5. In the click event handler, display a MessageBox with the message, "Hello World".
+4. Create a method to handle the [click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event for the [button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html).
+5. In the [click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event handler, display a [message_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1message__box.html) with the message, "Hello World".
 
-The following code example demonstrates how to handle the button control's click event.
+The following code example demonstrates how to handle the [button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control's click event.
 
 ```c++
   private:
@@ -129,7 +130,7 @@ The following code example demonstrates how to handle the button control's click
     }
 ```
 
-6. Associate the Click event with the method you created.
+6. Associate the [click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event with the method you created.
 
 The following code example demonstrates how to associate the event with the method.
 
@@ -192,7 +193,7 @@ target_type(GUI_APPLICATION)
 
 ## See also
 
-* [Writing applications](writing_applications.md)
+* [Tutorial](tutorial.md)
 * [Documentation](documentation.md)
 
 ______________________________________________________________________________________________
