@@ -21,8 +21,7 @@
   * [macOS or linux](#macos-or-linux)
 * [Download logo](#download-logo)
   * [xtd](#xtd)
-  * [Gammasoft](#)
-* [Support](#support)
+  * [Gammasoft](#gammasoft)
 
 ## Download the latest stable xtd version
 
@@ -213,12 +212,7 @@ cd xtd_path_name
 
 ### gammasoft
 
-
 [gammasoft](gammasoft_logo.md)
-
-## Support
-
-If you face any problems feel free to open an issue at the [issues tracker](https://github.com/gammasoft71/xtd/issues), If you feel like there is a missing feature, please raise a ticket on Github. Pull request are also welcome.
 
 ______________________________________________________________________________________________
 
