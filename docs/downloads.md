@@ -201,7 +201,20 @@ cd xtd_path_name
 
 ### xtd
 
+[xtd](xtd_logo.md)
+
+[xtd.core](xtd_core_logo.md)
+
+[xtd.drawing](xtd_drawing_logo.md)
+
+[xtd.forms](xtd_forms_logo.md)
+
+[xtd.tunit](xtd_tunit_logo.md)
+
 ### gammasoft
+
+
+[gammasoft](gammasoft_logo.md)
 
 ## Support
 
