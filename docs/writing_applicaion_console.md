@@ -45,7 +45,7 @@ Create an instance of the **console1**.
 
 ```c++
 int main() {
-  console1();
+  console1 {};
 }
 ```
 
@@ -140,7 +140,7 @@ public:
 };
 
 int main() {
-  console1();
+  console1 {};
 }
 ```
 
