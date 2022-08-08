@@ -36,10 +36,10 @@ std::unordered_map<std::type_index, std::function<std::string(std::any const&)>>
   //__to_any_stringer__<const char8_t*>([](auto value)->std::string {return ustring::format("{}", value);}),
   __to_any_stringer__<const char16_t*>([](auto value)->std::string {return ustring::format("{}", value);}),
   __to_any_stringer__<const char32_t*>([](auto value)->std::string {return ustring::format("{}", value);}),
-  __to_any_stringer__<const wchar_t*>([](auto value)->std::string {return ustring::format("{}", value);}),
+  //__to_any_stringer__<const wchar_t*>([](auto value)->std::string {return ustring::format("{}", value);}),
   __to_any_stringer__<char*>([](auto value)->std::string {return ustring::format("{}", value);}),
   //__to_any_stringer__<char8_t*>([](auto value)->std::string {return ustring::format("{}", value);}),
   __to_any_stringer__<char16_t*>([](auto value)->std::string {return ustring::format("{}", value);}),
   __to_any_stringer__<char32_t*>([](auto value)->std::string {return ustring::format("{}", value);}),
-  __to_any_stringer__<wchar_t*>([](auto value)->std::string {return ustring::format("{}", value);}),
+  //__to_any_stringer__<wchar_t*>([](auto value)->std::string {return ustring::format("{}", value);}),
 };
