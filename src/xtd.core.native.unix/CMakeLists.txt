@@ -8,7 +8,7 @@ add_include_directories(include)
 
 # add external packages
 if (APPLE)
-  add_references("-framework Foundation -framework Cocoa")
+  add_references("-framework Foundation -framework Cocoa -framework AudioUnit")
 elseif (NOT ANDROID)
   find_package(PkgConfig REQUIRED)
 
