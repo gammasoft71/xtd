@@ -22,7 +22,6 @@ The following procedures describe the basic steps that you must complete to crea
 #include <xtd/xtd>
 
 using namespace xtd;
-using namespace xtd::drawing;
 using namespace xtd::forms;
 ```
 
@@ -110,11 +109,11 @@ The following code example demonstrates how to declare the [button](https://code
 
   public:
     Form1() {
-      button1.size({40, 40});
-      button1.location({30, 30});
+      button1.size(drawing::size {40, 40});
+      button1.location(drawing::point {30, 30});
       button1.text("Click\nme");
       controls().push_back(button1);
-      button1.click += event_handler(*this, &form1::button1_click);
+      button1.click += event_handler {*this, &form1::button1_click};
     }
 ```
 
@@ -135,7 +134,7 @@ The following code example demonstrates how to handle the [button](https://coded
 The following code example demonstrates how to associate the event with the method.
 
 ```c++
-button1.click += event_handler(*this, &form1::button1_click);
+button1.click += event_handler {*this, &form1::button1_click};
 ```
 
 7. Compile and run the application.
@@ -154,17 +153,16 @@ form1.cpp:
 #include <xtd/xtd.forms>
 
 using namespace xtd;
-using namespace xtd::drawing;
 using namespace xtd::forms;
 
 class form1 : public form {  
 public:
   form1() {
-    button1.size({40, 40});
-    button1.location({30, 30});
+    button1.size(drawing::size {40, 40});
+    button1.location(drawing::point {30, 30});
     button1.text("Click\nme");
     controls().push_back(button1);
-    button1.click += event_handler(*this, &form1::button1_click);
+    button1.click += event_handler {*this, &form1::button1_click};
   }
 
 private:
