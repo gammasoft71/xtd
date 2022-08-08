@@ -287,5 +287,5 @@ private:
 
 int main() {
   application::enable_light_mode();
-  application::run(form1());
+  application::run(form1 {});
 }

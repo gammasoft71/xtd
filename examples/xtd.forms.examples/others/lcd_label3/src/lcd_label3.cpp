@@ -7,7 +7,7 @@ using namespace xtd::windows::forms;
 class form1 : public form {
 public:
   static void main() {
-    application::run(form1());
+    application::run(form1 {});
   }
   
   form1() {

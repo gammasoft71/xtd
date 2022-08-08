@@ -12,12 +12,12 @@ namespace tutorial {
       button_quit.image(xtd::forms::theme_images::current_theme().from_name("application-exit", xtd::drawing::size(16, 16)));
       button_quit.image_align(xtd::forms::content_alignment::middle_left);
       button_quit.text("&Quit");
-      button_quit.location(xtd::drawing::point(20, 20));
-      button_quit.click += xtd::event_handler(*this, &form_button::on_quit);
+      button_quit.location(xtd::drawing::point {20, 20});
+      button_quit.click += xtd::event_handler {*this, &form_button::on_quit};
     }
     
     static void main() {
-      xtd::forms::application::run(form_button());
+      xtd::forms::application::run(form_button {});
     }
     
   private:

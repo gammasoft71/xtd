@@ -32,7 +32,7 @@ public:
   }
   
   static void main() {
-    application::run(form1());
+    application::run(form1 {});
   }
   
 private:
