@@ -35,5 +35,5 @@ int main() {
     message_box::show(ustring::format("Make sure russian locale is installed on your system :\n\n{}", e.what()), "Exception");
     return -1;
   }
-  application::run(form1());
+  application::run(form1 {});
 }

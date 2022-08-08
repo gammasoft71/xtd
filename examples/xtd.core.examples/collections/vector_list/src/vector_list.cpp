@@ -15,10 +15,10 @@ void print_values(const collection_t& my_list) {
 int main() {
   // Creates and initializes a new vector_list.
   vector_list my_vl;
-  my_vl.emplace_back("Hello"s);
+  my_vl.emplace_back("Hello");
   my_vl.emplace_back("World"s);
-  my_vl.emplace_back("!"s);
-  
+  my_vl.emplace_back("!"_s);
+
   // Displays the properties and values of the vector_list.
   console::write_line("my_vl");
   console::write_line("    size:    {0}", my_vl.size());

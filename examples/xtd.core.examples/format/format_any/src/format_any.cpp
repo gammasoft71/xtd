@@ -24,12 +24,16 @@ int main() {
   value = make_any<ustring>("Star Trek: The Next Generation");
   cout << ustring::format("{}", value) << endl;
   
-  value = character("Jean-Luc Picard", "Captain");
-  cout << ustring::format("{}", value) << endl;
-  
-  register_any_stringer<character>([](character value) {return value.to_string();});
-  cout << ustring::format("{}", value) << endl;
+  value = make_any<character>("Jean-Luc Picard", "Captain");
+  cout << "Before register_any_stringer : " << ustring::format("{}", value) << endl;
+
+  register_any_stringer<character>([](auto value) {return value.to_string();});
+  cout << "After register_any_stringer  : " << ustring::format("{}", value) << endl;
 }
 
 // This code produces the following output :
 //
+// 42
+// Star Trek: The Next Generation
+// Before register_any_stringer : (unregistered)
+// After register_any_stringer  : Jean-Luc Picard (Captain)

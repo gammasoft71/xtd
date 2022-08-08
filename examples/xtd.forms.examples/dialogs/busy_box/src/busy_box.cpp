@@ -27,5 +27,5 @@ private:
 };
 
 int main() {
-  xtd::forms::application::run(form1());
+  xtd::forms::application::run(form1 {});
 }

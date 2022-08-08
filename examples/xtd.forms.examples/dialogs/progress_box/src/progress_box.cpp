@@ -32,5 +32,5 @@ private:
 };
 
 int main() {
-  application::run(form1());
+  application::run(form1 {});
 }

@@ -57,5 +57,5 @@ public:
 
 int main() {
   trace_form trace_form;
-  application::run(form1());
+  application::run(form1 {});
 }

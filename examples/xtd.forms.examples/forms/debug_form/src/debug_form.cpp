@@ -28,5 +28,5 @@ int main() {
   debug_form.back_color(xtd::drawing::color::black);
   debug_form.fore_color(xtd::drawing::color::lime);
   
-  application::run(form1());
+  application::run(form1 {});
 }

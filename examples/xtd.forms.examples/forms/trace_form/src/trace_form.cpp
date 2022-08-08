@@ -27,5 +27,5 @@ int main() {
   trace_form trace_form;
   trace_form.back_color(xtd::drawing::color::navy);
   trace_form.fore_color(xtd::drawing::color::white);
-  application::run(form1());
+  application::run(form1 {});
 }
