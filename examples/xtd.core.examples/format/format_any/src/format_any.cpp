@@ -28,7 +28,10 @@ int main() {
   cout << "Before register_any_stringer : " << ustring::format("{}", value) << endl;
 
   register_any_stringer<character>([](auto value) {return value.to_string();});
-  cout << "After register_any_stringer  : " << ustring::format("{}", value) << endl;
+  cout << "After register_any_stringer : " << ustring::format("{}", value) << endl;
+
+  unregister_any_stringer<character>();
+  cout << "After unregister_any_stringer : " << ustring::format("{}", value) << endl;
 }
 
 // This code produces the following output :
