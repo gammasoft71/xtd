@@ -114,7 +114,7 @@ The following code example demonstrates how to declare the [button](https://code
       button1.location({30, 30});
       button1.text("Click\nme");
       controls().push_back(button1);
-      button1.click += {*this, &form1::button1_click};
+      button1.click += event_handler(*this, &form1::button1_click);
     }
 ```
 
@@ -125,7 +125,7 @@ The following code example demonstrates how to handle the [button](https://coded
 
 ```c++
   private:
-    void button1_click(const control& sender, const event_args& e) {
+    void button1_click(object& sender, const event_args& e) {
       message_box::show("Hello World");
     }
 ```
@@ -135,7 +135,7 @@ The following code example demonstrates how to handle the [button](https://coded
 The following code example demonstrates how to associate the event with the method.
 
 ```c++
-button1.click += {*this, &form1::button1_click};
+button1.click += event_handler(*this, &form1::button1_click);
 ```
 
 7. Compile and run the application.
@@ -164,13 +164,13 @@ public:
     button1.location({30, 30});
     button1.text("Click\nme");
     controls().push_back(button1);
-    button1.click += {*this, &form1::button1_click};
+    button1.click += event_handler(*this, &form1::button1_click);
   }
 
 private:
   button button1;
 
-  void button1_click(const control& sender, const event_args& e) {
+  void button1_click(object& sender, const event_args& e) {
     message_box::show("Hello World");
   }
 };
