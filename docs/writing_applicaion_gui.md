@@ -46,7 +46,7 @@ Create an instance of the **form1** and run it.
 
 ```c++
 int main() {
-  application::run(form1());
+  application::run(form1 {});
 }
 ```
 
@@ -174,7 +174,7 @@ private:
 };
 
 int main() {
-  application::run(form1());
+  application::run(form1 {});
 }
 ```
 
