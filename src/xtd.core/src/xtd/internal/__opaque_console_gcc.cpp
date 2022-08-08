@@ -575,86 +575,72 @@ bool __opaque_console::beep(unsigned int frequency, unsigned int duration) {
   return true;
 }
 #elif __APPLE__
-// From https://github.com/zserge/beep
 namespace {
+  // Create from From https://github.com/zserge/beep
   class audio {
   public:
-    static void beep(unsigned int frequency, unsigned int duration) {
-      audio::init();
-      dispatch_semaphore_wait(stopped, DISPATCH_TIME_FOREVER);
-      beep_freq = frequency;
-      beep_samples = duration * 8;
-      dispatch_semaphore_signal(playing);
-      dispatch_semaphore_wait(done, DISPATCH_TIME_FOREVER);
+    static bool beep(unsigned int frequency, unsigned int duration) {
+      dispatch_semaphore_wait(idle_semaphore, DISPATCH_TIME_FOREVER);
 
+      AudioUnit audio_unit;
+      AudioComponentDescription audio_component_description {kAudioUnitType_Output, kAudioUnitSubType_DefaultOutput, kAudioUnitManufacturer_Apple, 0, 0};
+      AudioComponentInstanceNew(AudioComponentFindNext(nullptr, &audio_component_description), &audio_unit);
+
+      AURenderCallbackStruct au_render_callback_struct {&audio::au_renderer_proc, nullptr};
+      AudioUnitSetProperty(audio_unit, kAudioUnitProperty_SetRenderCallback, kAudioUnitScope_Input, 0, &au_render_callback_struct, sizeof(au_render_callback_struct));
+
+      AudioStreamBasicDescription audio_stream_basic_description {simple_rate, kAudioFormatLinearPCM, 0, 1, 1, 1, 1, bits_per_channel, 0};
+      AudioUnitSetProperty(audio_unit, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &audio_stream_basic_description, sizeof(audio_stream_basic_description));
+
+      AudioUnitInitialize(audio_unit);
+      AudioOutputUnitStart(audio_unit);
+
+      beep_freq = frequency;
+      beep_samples = duration * bits_per_channel;
+
+      dispatch_semaphore_signal(start_playing_semaphore);
+
+      dispatch_semaphore_wait(end_playing_semaphore, DISPATCH_TIME_FOREVER);
+
+      AudioOutputUnitStop(audio_unit);
+      AudioUnitUninitialize(audio_unit);
+      dispatch_semaphore_signal(idle_semaphore);
+      return true;
     }
     
   private:
-    static void init() {
-      static int initialized = 0;
-      if (!initialized) {
-        initialized = 1;
-        
-        stopped = dispatch_semaphore_create(1);
-        playing = dispatch_semaphore_create(0);
-        done = dispatch_semaphore_create(0);
-        
-        AudioComponentDescription descr;
-        descr.componentType = kAudioUnitType_Output;
-        descr.componentSubType = kAudioUnitSubType_DefaultOutput;
-        descr.componentManufacturer = kAudioUnitManufacturer_Apple;
-        
-        AURenderCallbackStruct cb;
-        cb.inputProc = tone_cb;
-        
-        AudioStreamBasicDescription stream;
-        stream.mFormatID = kAudioFormatLinearPCM;
-        stream.mFormatFlags = 0;
-        stream.mSampleRate = 8000;
-        stream.mBitsPerChannel = 8;
-        stream.mChannelsPerFrame = 1;
-        stream.mFramesPerPacket = 1;
-        stream.mBytesPerFrame = 1;
-        stream.mBytesPerPacket = 1;
-        
-        AudioComponent output = AudioComponentFindNext(nullptr, &descr);
-        AudioUnit unit;
-        AudioComponentInstanceNew(output, &unit);
-        AudioUnitSetProperty(unit, kAudioUnitProperty_SetRenderCallback, kAudioUnitScope_Input, 0, &cb, sizeof(cb));
-        AudioUnitSetProperty(unit, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &stream, sizeof(stream));
-        AudioUnitInitialize(unit);
-        AudioOutputUnitStart(unit);
-      }
-    }
-    
-    static OSStatus tone_cb(void *inRefCon, AudioUnitRenderActionFlags *ioActionFlags, const AudioTimeStamp *inTimeStamp, unsigned int inBusNumber, unsigned int inNumberFrames, AudioBufferList *ioData) {
+    static OSStatus au_renderer_proc(void* in_ref_con, AudioUnitRenderActionFlags* io_action_flags, const AudioTimeStamp* in_time_stamp, unsigned int in_bus_number, unsigned int in_number_frames, AudioBufferList* io_data) {
       static int counter = 0;
-      unsigned char* buf = reinterpret_cast<unsigned char*>(ioData->mBuffers[0].mData);
-      static unsigned char theta = 0;
-      
-      for (unsigned int i = 0; i < inNumberFrames; i++) {
-        while (counter == 0) {
-          dispatch_semaphore_wait(playing, DISPATCH_TIME_FOREVER);
-          counter = beep_samples;
-        }
-        buf[i] = beep_freq > 0 ? (beep_freq * 255 * theta++ / 8000) : 0;
+      while (counter == 0) {
+        dispatch_semaphore_wait(start_playing_semaphore, DISPATCH_TIME_FOREVER);
+        counter = beep_samples;
+      }
+
+      for (unsigned int i = 0; i < in_number_frames; i++) {
+        static unsigned char theta = 0;
+        reinterpret_cast<unsigned char*>(io_data->mBuffers[0].mData)[i] = beep_freq > 0 ? (beep_freq * 255 * theta++ / simple_rate) : 0;
         if (--counter == 0) {
-          dispatch_semaphore_signal(done);
-          dispatch_semaphore_signal(stopped);
+          theta = 0;
+          counter = 0;
+          dispatch_semaphore_signal(end_playing_semaphore);
+          break;
         }
       }
       return 0;
     }
   
-    inline static dispatch_semaphore_t stopped, playing, done;
-    inline static long beep_freq;
-    inline static int beep_samples;
+    inline static constexpr const int simple_rate = 8000;
+    inline static constexpr const int bits_per_channel = 8;
+    inline static dispatch_semaphore_t idle_semaphore = dispatch_semaphore_create(1);
+    inline static dispatch_semaphore_t start_playing_semaphore = dispatch_semaphore_create(0);
+    inline static dispatch_semaphore_t end_playing_semaphore = dispatch_semaphore_create(0);
+    inline static long beep_freq = 0;
+    inline static int beep_samples = 0;
   };
 }
 
 bool __opaque_console::beep(unsigned int frequency, unsigned int duration) {
-  audio::beep(frequency, duration);
-  return true;
+  return audio::beep(frequency, duration);
 }
 
 #endif
