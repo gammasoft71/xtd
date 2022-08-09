@@ -602,9 +602,9 @@ namespace {
         counter = beep_samples;
       }
 
-      for (unsigned int i = 0; i < in_number_frames; i++) {
+      for (unsigned int frames_index = 0; frames_index < in_number_frames; ++frames_index) {
         static unsigned char theta = 0;
-        reinterpret_cast<unsigned char*>(io_data->mBuffers[0].mData)[i] = beep_freq > 0 ? (beep_freq * 255 * theta++ / simple_rate) : 0;
+        reinterpret_cast<unsigned char*>(io_data->mBuffers[0].mData)[frames_index] = beep_freq > 0 ? (beep_freq * 255 * theta++ / simple_rate) : 0;
         if (--counter == 0) {
           theta = 0;
           counter = 0;
@@ -634,24 +634,20 @@ bool __opaque_console::beep(unsigned int frequency, unsigned int duration) {
 bool __opaque_console::beep(unsigned int frequency, unsigned int duration) {
   if (frequency < 37 || frequency > 32767) return false;
   
-  static snd_pcm_t* pcm = nullptr;
-  if (pcm == nullptr) {
-    if (snd_pcm_open(&pcm, "default", SND_PCM_STREAM_PLAYBACK, 0)) {
-      std::cout << "\a" << std::flush;
-      return false;
-    }
-    snd_pcm_set_params(pcm, SND_PCM_FORMAT_U8, SND_PCM_ACCESS_RW_INTERLEAVED, 1, 8000, 1, 20000);
+  static constexpr const unsigned int simple_rate = 8000;
+  static snd_pcm_t* pcm_handle = nullptr;
+  if (pcm_handle == nullptr) {
+    if (snd_pcm_open(&pcm_handle, "default", SND_PCM_STREAM_PLAYBACK, 0)) return false;
+    snd_pcm_set_params(pcm_handle, SND_PCM_FORMAT_U8, SND_PCM_ACCESS_RW_INTERLEAVED, 1, simple_rate, 1, 20000);
   }
-  unsigned char buf[2400];
-  for (unsigned int i = 0; i < duration / 100; i++) {
-    snd_pcm_prepare(pcm);
-    for (unsigned int j = 0; j < sizeof(buf); j++) {
-      buf[j] = frequency > 0 ? (255 * j * frequency / 8000) : 0;
-    }
-    int r = snd_pcm_writei(pcm, buf, sizeof(buf));
-    if (r < 0) {
-      snd_pcm_recover(pcm, r, 0);
-    }
+  
+  unsigned char buffer[2400];
+  for (unsigned int duration_index = 0; duration_index < duration / 200; ++duration_index) {
+    snd_pcm_prepare(pcm_handle);
+    for (unsigned int buffer_index = 0; buffer_index < sizeof(buffer); ++buffer_index)
+      buffer[buffer_index] = frequency > 0 ? (255 * buffer_index * frequency / simple_rate) : 0;
+    snd_pcm_sframes_t written_frames = snd_pcm_writei(pcm_handle, buffer, sizeof(buffer));
+    if (written_frames < 0) snd_pcm_recover(pcm_handle, written_frames, 0);
   }
   return true;
 }
