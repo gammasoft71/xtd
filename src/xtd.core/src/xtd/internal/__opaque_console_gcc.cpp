@@ -19,6 +19,8 @@
 #if __APPLE__
 #include <AudioUnit/AudioUnit.h>
 #else
+#define ALSA_PCM_NEW_HW_PARAMS_API
+#include <alsa/asoundlib.h>
 #include <linux/kd.h>
 #endif
 
@@ -632,17 +634,24 @@ bool __opaque_console::beep(unsigned int frequency, unsigned int duration) {
 bool __opaque_console::beep(unsigned int frequency, unsigned int duration) {
   if (frequency < 37 || frequency > 32767) return false;
   
-  int fd = open("/dev/console", O_WRONLY);
-  if (fd == -1)
-    std::cout << "\a" << std::flush;
-  else {
-    if (ioctl(fd, KIOCSOUND, (int)(1193180 / frequency)) < 0)
+  static snd_pcm_t* pcm = nullptr;
+  if (pcm == nullptr) {
+    if (snd_pcm_open(&pcm, "default", SND_PCM_STREAM_PLAYBACK, 0)) {
       std::cout << "\a" << std::flush;
-    else {
-      usleep(1000 * duration);
-      ioctl(fd, KIOCSOUND, 0);
+      return false;
     }
-    close(fd);
+    snd_pcm_set_params(pcm, SND_PCM_FORMAT_U8, SND_PCM_ACCESS_RW_INTERLEAVED, 1, 8000, 1, 20000);
+  }
+  unsigned char buf[2400];
+  for (unsigned int i = 0; i < duration / 100; i++) {
+    snd_pcm_prepare(pcm);
+    for (unsigned int j = 0; j < sizeof(buf); j++) {
+      buf[j] = frequency > 0 ? (255 * j * frequency / 8000) : 0;
+    }
+    int r = snd_pcm_writei(pcm, buf, sizeof(buf));
+    if (r < 0) {
+      snd_pcm_recover(pcm, r, 0);
+    }
   }
   return true;
 }
