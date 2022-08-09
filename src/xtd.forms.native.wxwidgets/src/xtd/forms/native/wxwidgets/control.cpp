@@ -522,7 +522,7 @@ void control::resume_layout(intptr_t control) {
   }
   
   if (!reinterpret_cast<control_handler*>(control)->LayoutSuspended())
-    suspend_layout(control);
+    return;
 
   reinterpret_cast<control_handler*>(control)->control()->Thaw();
   reinterpret_cast<control_handler*>(control)->LayoutSuspended(false);
