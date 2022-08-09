@@ -555,28 +555,8 @@ bool __opaque_console::background_color(xtd::console_color color) {
   return true;
 }
 
-#if __linux__
-bool __opaque_console::beep(unsigned int frequency, unsigned int duration) {
-  if (frequency < 37 || frequency > 32767)
-    return false;
-    
-  int fd = open("/dev/console", O_WRONLY);
-  if (fd == -1)
-    std::cout << "\a" << std::flush;
-  else {
-    if (ioctl(fd, KIOCSOUND, (int)(1193180 / frequency)) < 0)
-      std::cout << "\a" << std::flush;
-    else {
-      usleep(1000 * duration);
-      ioctl(fd, KIOCSOUND, 0);
-    }
-    close(fd);
-  }
-  return true;
-}
-#elif __APPLE__
+#if __APPLE__
 namespace {
-  // Create from From https://github.com/zserge/beep
   class audio {
   public:
     static bool beep(unsigned int frequency, unsigned int duration) {
@@ -642,7 +622,25 @@ namespace {
 bool __opaque_console::beep(unsigned int frequency, unsigned int duration) {
   return audio::beep(frequency, duration);
 }
-
+#else
+bool __opaque_console::beep(unsigned int frequency, unsigned int duration) {
+  if (frequency < 37 || frequency > 32767)
+    return false;
+  
+  int fd = open("/dev/console", O_WRONLY);
+  if (fd == -1)
+    std::cout << "\a" << std::flush;
+  else {
+    if (ioctl(fd, KIOCSOUND, (int)(1193180 / frequency)) < 0)
+      std::cout << "\a" << std::flush;
+    else {
+      usleep(1000 * duration);
+      ioctl(fd, KIOCSOUND, 0);
+    }
+    close(fd);
+  }
+  return true;
+}
 #endif
 
 int __opaque_console::buffer_height() {
