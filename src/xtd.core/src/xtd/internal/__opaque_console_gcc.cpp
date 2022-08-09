@@ -560,6 +560,8 @@ namespace {
   class audio {
   public:
     static bool beep(unsigned int frequency, unsigned int duration) {
+      if (frequency < 37 || frequency > 32767) return false;
+      
       dispatch_semaphore_wait(idle_semaphore, DISPATCH_TIME_FOREVER);
 
       AudioUnit audio_unit;
@@ -624,8 +626,7 @@ bool __opaque_console::beep(unsigned int frequency, unsigned int duration) {
 }
 #else
 bool __opaque_console::beep(unsigned int frequency, unsigned int duration) {
-  if (frequency < 37 || frequency > 32767)
-    return false;
+  if (frequency < 37 || frequency > 32767) return false;
   
   int fd = open("/dev/console", O_WRONLY);
   if (fd == -1)
