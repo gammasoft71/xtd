@@ -102,8 +102,9 @@ namespace xtd {
           control_->Show(visible);
         }
         
-        bool LayoutSuspended() const noexcept {return suspended_;}
-        void LayoutSuspended(bool value) noexcept {suspended_ = value;}
+        int32_t LayoutSuspendedCount() const noexcept {return suspended_count_;}
+        void IncrementLayoutSuspended() noexcept {++suspended_count_;}
+        void DecrementLayoutSuspended() noexcept {if (suspended_count_ > 0) --suspended_count_;}
 
         static long common_window_style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = 0;
@@ -131,7 +132,7 @@ namespace xtd {
         
       private:
         wxWindow* control_ = nullptr;
-        bool suspended_ = false;
+        int32_t suspended_count_ = 0;
       };
     }
   }

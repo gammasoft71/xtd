@@ -520,12 +520,10 @@ void control::resume_layout(intptr_t control) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  
-  if (!reinterpret_cast<control_handler*>(control)->LayoutSuspended())
-    return;
 
-  reinterpret_cast<control_handler*>(control)->control()->Thaw();
-  reinterpret_cast<control_handler*>(control)->LayoutSuspended(false);
+  if (reinterpret_cast<control_handler*>(control)->LayoutSuspendedCount() == 0) return;
+  if (reinterpret_cast<control_handler*>(control)->LayoutSuspendedCount() == 1) reinterpret_cast<control_handler*>(control)->control()->Thaw();
+  reinterpret_cast<control_handler*>(control)->DecrementLayoutSuspended();
 }
 
 void control::unregister_wnd_proc(intptr_t control) {
@@ -562,6 +560,6 @@ void control::suspend_layout(intptr_t control) {
     return;
   }
   
-  reinterpret_cast<control_handler*>(control)->control()->Freeze();
-  reinterpret_cast<control_handler*>(control)->LayoutSuspended(true);
+  if (reinterpret_cast<control_handler*>(control)->LayoutSuspendedCount() == 0) reinterpret_cast<control_handler*>(control)->control()->Freeze();
+  reinterpret_cast<control_handler*>(control)->IncrementLayoutSuspended();
 }
