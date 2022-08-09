@@ -564,18 +564,20 @@ namespace {
       
       dispatch_semaphore_wait(idle_semaphore, DISPATCH_TIME_FOREVER);
 
-      AudioUnit audio_unit;
-      AudioComponentDescription audio_component_description {kAudioUnitType_Output, kAudioUnitSubType_DefaultOutput, kAudioUnitManufacturer_Apple, 0, 0};
-      AudioComponentInstanceNew(AudioComponentFindNext(nullptr, &audio_component_description), &audio_unit);
+      if (!initialized) {
+        initialized = true;
+        AudioComponentDescription audio_component_description {kAudioUnitType_Output, kAudioUnitSubType_DefaultOutput, kAudioUnitManufacturer_Apple, 0, 0};
+        AudioComponentInstanceNew(AudioComponentFindNext(nullptr, &audio_component_description), &audio_unit);
 
-      AURenderCallbackStruct au_render_callback_struct {&audio::au_renderer_proc, nullptr};
-      AudioUnitSetProperty(audio_unit, kAudioUnitProperty_SetRenderCallback, kAudioUnitScope_Input, 0, &au_render_callback_struct, sizeof(au_render_callback_struct));
+        AURenderCallbackStruct au_render_callback_struct {&audio::au_renderer_proc, nullptr};
+        AudioUnitSetProperty(audio_unit, kAudioUnitProperty_SetRenderCallback, kAudioUnitScope_Input, 0, &au_render_callback_struct, sizeof(au_render_callback_struct));
 
-      AudioStreamBasicDescription audio_stream_basic_description {simple_rate, kAudioFormatLinearPCM, 0, 1, 1, 1, 1, bits_per_channel, 0};
-      AudioUnitSetProperty(audio_unit, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &audio_stream_basic_description, sizeof(audio_stream_basic_description));
+        AudioStreamBasicDescription audio_stream_basic_description {simple_rate, kAudioFormatLinearPCM, 0, 1, 1, 1, 1, bits_per_channel, 0};
+        AudioUnitSetProperty(audio_unit, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &audio_stream_basic_description, sizeof(audio_stream_basic_description));
 
-      AudioUnitInitialize(audio_unit);
-      AudioOutputUnitStart(audio_unit);
+        AudioUnitInitialize(audio_unit);
+        AudioOutputUnitStart(audio_unit);
+      }
 
       beep_freq = frequency;
       beep_samples = duration * bits_per_channel;
@@ -584,8 +586,8 @@ namespace {
 
       dispatch_semaphore_wait(end_playing_semaphore, DISPATCH_TIME_FOREVER);
 
-      AudioOutputUnitStop(audio_unit);
-      AudioUnitUninitialize(audio_unit);
+      //AudioOutputUnitStop(audio_unit);
+      //AudioUnitUninitialize(audio_unit);
       dispatch_semaphore_signal(idle_semaphore);
       return true;
     }
@@ -616,6 +618,8 @@ namespace {
     inline static dispatch_semaphore_t idle_semaphore = dispatch_semaphore_create(1);
     inline static dispatch_semaphore_t start_playing_semaphore = dispatch_semaphore_create(0);
     inline static dispatch_semaphore_t end_playing_semaphore = dispatch_semaphore_create(0);
+    inline static bool initialized = false;
+    inline static AudioUnit audio_unit;
     inline static long beep_freq = 0;
     inline static int beep_samples = 0;
   };
