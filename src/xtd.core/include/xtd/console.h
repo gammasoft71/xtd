@@ -21,8 +21,8 @@ namespace xtd {
   /// @ingroup xtd_core system
   /// @par Examples
   /// The following example demonstrates how to read data from, and write data to, the standard input and output streams. Note that these streams can be redirected by using the set_in and set_out methods.
-  /// @include console1.cpp
-  /// @include console_out.cpp
+  /// @include console_read_line.cpp
+  /// @include console_in_out.cpp
   class console final static_ {
   public:
     /// @name Fields
