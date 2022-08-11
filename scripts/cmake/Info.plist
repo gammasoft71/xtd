@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleExecutable</key>
-	<string>xtd</string>
+	<string>Contents/Resources/bin/xtdc-gui.app/Contents/MacOS/xtdc-gui</string>
 	<key>CFBundleGetInfoString</key>
 	<string>Free open-source modern C++17 / C++20 framework to create console, forms (GUI like WinForms) and unit test applications on Microsoft Windows, Apple macOS and Linux.</string>
 	<key>CFBundleIconFile</key>

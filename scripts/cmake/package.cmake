@@ -27,7 +27,7 @@ set(CPACK_RESOURCE_FILE_README "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
 #_______________________________________________________________________________
 #                                                                         Bundle
 
-set(CPACK_BUNDLE_ICON "${CMAKE_CURRENT_SOURCE_DIR}/scripts/cmake/xtd.icns")
+set(CPACK_BUNDLE_ICON "${CMAKE_CURRENT_SOURCE_DIR}/resources/icons/xtd.icns")
 set(CPACK_BUNDLE_NAME ${PROJECT_NAME})
 set(CPACK_BUNDLE_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/scripts/cmake/Info.plist")
 
