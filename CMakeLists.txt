@@ -50,11 +50,12 @@ set(ASTYLE_SOURCE_FILES
 
 set(CPPCHECK_SOURCE_ROOTS ${CMAKE_SOURCE_DIR}/src)
 
-# incldue xtd_commands
+# incldue xtd cmake scripts
 include(scripts/cmake/xtd_commands.cmake)
 include(scripts/cmake/xtd_version.cmake)
 include(scripts/cmake/update_export.cmake)
 include(scripts/cmake/update_version_number.cmake)
+include(scripts/cmake/package.cmake)
 
 # Graphic toolkits definitions
 if (WIN32)
