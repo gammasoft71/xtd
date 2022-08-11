@@ -26,8 +26,8 @@ namespace xtd {
       class wxPopup : public wxPopupTransientWindow {
         friend xtd::forms::native::wx_popup_panel;
       public:
-        wxPopup(wxWindow* parent, int styles) {
-          Create(parent, styles);
+        wxPopup(wxWindow* parent, long styles) {
+          Create(parent, static_cast<int>(styles));
         }
         
         void Popup(wxWindow* focus = nullptr) override {
