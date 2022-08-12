@@ -269,9 +269,9 @@ control& form::visible(bool visible) {
     window_state(current_window_state.value());
   if (visible) {
     internal_set_window_state();
+    closed_ = false;
     if (accept_button_.has_value()) accept_button_.value().get().notify_default(true);
   }
-  closed_ = false;
   return *this;
 }
 
@@ -442,6 +442,7 @@ void form::wm_close(message& message) {
   on_form_closing(event_args);
   message.result(event_args.cancel() == true);
   if (event_args.cancel() != true) {
+    closed_ = true;
     if (!get_state(state::modal))
       hide();
     else {
@@ -452,7 +453,6 @@ void form::wm_close(message& message) {
       set_state(state::modal, false);
       post_recreate_handle();
     }
-    closed_ = true;
     on_form_closed(form_closed_event_args());
   }
 }
