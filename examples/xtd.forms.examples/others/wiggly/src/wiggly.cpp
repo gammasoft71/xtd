@@ -66,5 +66,5 @@ namespace examples {
 }
 
 int main() {
-  application::run(examples::form1());
+  application::run(examples::form1 {});
 }

@@ -34,5 +34,5 @@ namespace font_family_example {
 }
 
 int main() {
-  application::run(font_family_example::form1());
+  application::run(font_family_example::form1 {});
 }

@@ -112,5 +112,5 @@ namespace example {
 int main() {
   //application::enable_light_mode();
   //application::enable_dark_mode();
-  application::run(example::form1());
+  application::run(example::form1 {});
 }

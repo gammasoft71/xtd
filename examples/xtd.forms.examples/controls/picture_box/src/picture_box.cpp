@@ -37,5 +37,5 @@ namespace picture_box {
 }
 
 int main() {
-  application::run(::picture_box::form1());
+  application::run(::picture_box::form1 {});
 }
