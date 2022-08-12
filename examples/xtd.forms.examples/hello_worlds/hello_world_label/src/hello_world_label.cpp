@@ -12,7 +12,7 @@ namespace examples {
       controls().push_back(label);
       
       label.dock(dock_style::fill);
-      label.font(drawing::font(label.font(), 32, font_style::bold | font_style::italic));
+      label.font(drawing::font {label.font(), 32, font_style::bold | font_style::italic});
       label.fore_color(color::green);
       label.shadow(true);
       label.text("Hello, World!");
@@ -25,5 +25,5 @@ namespace examples {
 }
 
 int main() {
-  application::run(examples::main_form());
+  application::run(examples::main_form {});
 }
