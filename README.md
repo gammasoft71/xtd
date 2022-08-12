@@ -166,7 +166,7 @@ private:
 };
 
 int main() {
-  application::run(main_form());
+  application::run(main_form {});
 }
 ```
 
