@@ -38,8 +38,8 @@
 /// The <a href="https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html">xtd.tunit</a> library is a unit-testing framework for modern C++17/20 inspired by <a href="https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference">Microsoft.VisualStudio.TestTools.Cpp</a>.
 ///
 /// @section GettingStartedSection Getting Started
-///  * <a href="https://github.com/gammasoft71/xtd/blob/master/docs/downloads.md">Installation</a> provides download, install and uninstall documentation.
-///  * <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guides.md">Guide</a> provides xtd guides and tutorials.
+///  * <a href="https://gammasoft71.wixsite.com/xtdpro/download">Installation</a> provides download, install and uninstall documentation.
+///  * <a href="https://gammasoft71.wixsite.com/xtdpro/guides">Guide</a> provides xtd guides and tutorials.
 ///  * <a href="https://github.com/gammasoft71/xtd/blob/master/examples/README.md">Examples</a> provides some examples.
 ///
 /// @section ExamplesSection Examples
