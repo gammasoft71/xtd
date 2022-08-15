@@ -11,6 +11,8 @@
 * [button3](button3/README.md) demonstrates the use of [xtd::forms::button](../../../src/xtd.forms/include/xtd/forms/button.h) control.
 * [button4](button4/README.md) demonstrates the use of [xtd::forms::button](../../../src/xtd.forms/include/xtd/forms/button.h) control.
 * [calculator](calculator/README.md) demonstrates the use of [xtd::forms::button](../../../src/xtd.forms/include/xtd/forms/button.h) control.
+* [change_parent](change_parent/README.md) demonstrates the use of [xtd::forms::control](../../../../src/xtd.forms/include/xtd/forms/control.h) parent properties.
+* [change_color](change_color/README.md) demonstrated the use of [xtd::forms::control](../../../../src/xtd.forms/include/xtd/forms/control.h) parent property.
 * [clock](clock/README.md) demonstrates the use of [xtd::forms::lcd_label](../../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
 * [colored_forms](colored_forms/README.md) demonstrates the use of [xtd::forms::form](../../../src/xtd.forms/include/xtd/forms/form.h) control and xtd::drawing::color class.
 * [colored_tab_pages](colored_tab_pages/README.md) demonstrates the use of [xtd::forms::tab_control](../../../src/xtd.forms/include/xtd/forms/tab_control.h) and colored [xtd::forms::tab_page](../../../src/xtd.forms/include/xtd/forms/tab_page.h) controls.
