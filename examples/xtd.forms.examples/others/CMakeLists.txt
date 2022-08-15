@@ -14,6 +14,7 @@ add_projects(
   button3
   button4
   calculator
+  change_color
   change_parent
   clock
   colored_forms
