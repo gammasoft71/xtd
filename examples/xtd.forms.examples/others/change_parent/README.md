@@ -1,6 +1,7 @@
 # change_parent
 
-demonstrates the use of [xtd::forms::control](../../../../src/xtd.forms/include/xtd/forms/control.h) back_color and fore_color properties.
+demonstrates the use of [xtd::forms::control](../../../../src/xtd.forms/include/xtd/forms/control.h) parent properties.
+
 # Sources
 
 * [src/change_parent.cpp](src/change_parent.cpp)
