@@ -1,7 +1,6 @@
 # change_parent
 
-represents a window or dialog box that makes up an application's user interface.
-
+demonstrates the use of [xtd::forms::control](../../../src/xtd.forms/include/xtd/forms/control.h) back_color and fore_color properties.
 # Sources
 
 * [src/change_parent.cpp](src/change_parent.cpp)
