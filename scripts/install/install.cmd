@@ -37,9 +37,9 @@ mkdir build
 cd build
 mkdir cmake_install_prefix
 cd cmake_install_prefix
-cmake ..\..\scripts\install\cmake_install_prefix "$@"
-popd
-popd
+cmake ..\..\scripts\install\cmake_install_prefix %*
+cd ..
+cd ..
 set /p cmake_install_prefix=<build\cmake_install_prefix\cmake_install_prefix.txt
 echo cmake_install_prefix="%cmake_install_prefix%"
 
@@ -65,7 +65,7 @@ if not exist "build\test_wxwidgets\wxwidgets.lck" (
   echo.
   echo Press ENTER to continue or CTRL-C to stop and install wxWidgets manually...
   pause > nul 2>&1
-  call install_wxwidgets.cmd %*
+  call scripts\install\install_wxwidgets.cmd %*
 )
 
 ::______________________________________________________________________________
