@@ -1048,6 +1048,7 @@ void control::on_handle_created(const event_args& e) {
   
   if (!get_state(control::state::recreate) && parent().has_value()) parent().value().get().perform_layout();
   if (!get_state(control::state::recreate)) perform_layout();
+  if (parent().has_value()) parent().value().get().update();
 }
 
 void control::on_handle_destroyed(const event_args& e) {
