@@ -82,7 +82,7 @@ cd ..
 ::                    create gui tools shortcut in system operating applications
 set xtd_program_path=%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\xtd
 if not exist "%xtd_program_path%" mkdir "%xtd_program_path%"
-call scripts\install\shortcut.cmd "%xtd_program_path%\keycode.lnk" "%cmake_install_prefix%\xtd\bin\keycode.exe"
+call scripts\install\shortcut.cmd "%xtd_program_path%\keycodes.lnk" "%cmake_install_prefix%\xtd\bin\keycodes.exe"
 call scripts\install\shortcut.cmd "%xtd_program_path%\xtdc-gui.lnk" "%cmake_install_prefix%\xtd\bin\xtdc-gui.exe"
 call scripts\install\shortcut.cmd "%xtd_program_path%\guidgen-gui.lnk" "%cmake_install_prefix%\xtd\bin\guidgen-gui.exe"
 
