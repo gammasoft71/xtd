@@ -11,7 +11,7 @@ public:
   
   form1() {
     client_size({600, 450});
-    minimum_size(size());
+    minimum_client_size(client_size());
     text("Change parent control example");
     
     top_panel.parent(*this);
@@ -50,7 +50,7 @@ public:
     
     tab_control1.parent(left_panel);
     tab_control1.location({10, 210});
-    tab_control1.size({260, 150});
+    tab_control1.size({260, 160});
     
     tab_page1.parent(tab_control1);
     tab_page1.text("Page 1");
