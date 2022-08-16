@@ -6,9 +6,9 @@ if "%xtd_version%"== "" (
 )
 
 echo Uninstall xtd libraries version %xtd_version%, copyright Gammasoft, 2022
-echo.
 
-:: check if administrator mode
+::______________________________________________________________________________
+::                                                   Check if administrator mode
 whoami /Groups | find "12288" > nul 2>&1
 if %ERRORLEVEL% neq 0 (
   echo You are not in administrator mode!
@@ -16,13 +16,20 @@ if %ERRORLEVEL% neq 0 (
   exit /B 1
 )
 
-echo WARNING : You will unsinstall xtd.
+echo.
+echo ---------------------------------------------------------------
+echo.
+echo WARNING : You will unsinstall xtd!
+echo.
+echo ---------------------------------------------------------------
+echo.
 echo Press ENTER to continue or CTRL-C to stop...
 pause > nul 2>&1
 
-echo Removing wxwidgets files...
+::______________________________________________________________________________
+::                                                                Removing files
+echo Removing files...
 del /F /S /Q "%ProgramFiles(x86)%\wxwidgets" > nul 2>&1
-echo Removing xtd files...
 del /F /S /Q "%ProgramFiles(x86)%\xtd" > nul 2>&1
 del /F /S /Q "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\xtd" > nul 2>&1
 

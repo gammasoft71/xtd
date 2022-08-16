@@ -1,9 +1,9 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.3)
 project(test_wxwidgets)
 
-find_package(wxWidgets)
+find_package(wxWidgets 3.2.0)
 if (wxWidgets_FOUND)
-  file(WRITE wxwidgets.lck)
+  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/wxwidgets.lck)
 else()
-  file(REMOVE wxwidgets.lck)
+  file(REMOVE ${CMAKE_CURRENT_BINARY_DIR}/wxwidgets.lck)
 endif()
