@@ -1,6 +1,6 @@
 # change_parent
 
-demonstrates the use of [xtd::forms::control](../../../../src/xtd.forms/include/xtd/forms/control.h) parent properties.
+demonstrates the use of [xtd::forms::control](../../../../src/xtd.forms/include/xtd/forms/control.h) parent property.
 
 # Sources
 
