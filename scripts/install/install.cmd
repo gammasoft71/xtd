@@ -92,10 +92,10 @@ echo.%path%|findstr /C:"xtd\bin" >nul 2>&1
 if not errorlevel 1 (
   echo The environment variable path already contains xtd.
 ) else (
-  set path=%cmake_install_prefix%\xtd\bin;%path%
-  call :strlen path_length path
-  if  %path_length% LSS 1024 (
-    setx path "%path%"
+  set new_path="%cmake_install_prefix%\xtd\bin;%path%"
+  call :strlen new_path path_length
+  if %path_length% LSS 1024 (
+    setx path %new_path%
   ) else (
     echo.
     echo ---------------------------------------------------------------
@@ -122,23 +122,15 @@ goto :eof
 :: Gets the length of specified string.
 :: param result_var That will cantains the length of the specified string.
 :: param string_var The string to compute length.
-:strlen <result_var> <string_var> (   
+:strlen  StrVar  [RtnVar]
   setlocal EnableDelayedExpansion
-  (set^ tmp=!%~2!)
-  if defined tmp (
-    set "len=1"
-    for %%P in (4096 2048 1024 512 256 128 64 32 16 8 4 2 1) do (
-      if "!tmp:~%%P,1!" NEQ "" ( 
-        set /a "len+=%%P"
-        set "tmp=!tmp:~%%P!"
-      )
+  set "s=#!%~1!"
+  set "len=0"
+  for %%N in (4096 2048 1024 512 256 128 64 32 16 8 4 2 1) do (
+    if "!s:~%%N,1!" neq "" (
+      set /a "len+=%%N"
+      set "s=!s:~%%N!"
     )
-  ) else (
-    set len=0
   )
-)
-( 
-  endlocal
-  set "%~1=%len%"
-  exit /b
-)
+  endlocal&if "%~2" neq "" (set %~2=%len%) else echo %len%
+exit /b
