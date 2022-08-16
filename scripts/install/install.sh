@@ -84,7 +84,7 @@ if [ ! -f "build/test_wxwidgets/wxwidgets.lck" ]; then
   echo "---------------------------------------------------------------"
   echo ""
   read -p "Press ENTER to continue or CTRL-C to stop and install wxWidgets manually..."
-  ./install_wxwidgets.sh "$@"
+  scripts/install/install_wxwidgets.sh "$@"
 fi
 
 #_______________________________________________________________________________
