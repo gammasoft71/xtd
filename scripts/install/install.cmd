@@ -1,40 +1,62 @@
 @echo off
 
 if "%xtd_version%"== "" (
-  echo "ERROR : Use install.cmd from root folder"
+  echo ---------------------------------------------------------------
+  echo.
+  echo ERROR : Use install.cmd from root folder!
+  echo.
+  echo ---------------------------------------------------------------
+  echo.
   exit /B 1
 )
-
-set WXWIDGETS_VERSION=v3.2.0
 
 echo Install xtd libraries version %xtd_version%, copyright Gammasoft, 2022
 echo.
-
 echo   Operating System is Windows
 
-:: check if administrator mode
+::______________________________________________________________________________
+::                                                   Check if administrator mode
 whoami /Groups | find "12288" > nul 2>&1
 if %ERRORLEVEL% neq 0 (
-  echo You are not in administrator mode!
+  echo.
+  echo ---------------------------------------------------------------
+  echo.
+  echo ERROR : You are not in administrator mode!
+  echo.
   echo Run cmd as administrator before executing install.
+  echo.
+  echo ---------------------------------------------------------------
+  echo.
   exit /B 1
 )
 
-echo Downloading and installing wxwidgets...
-mkdir build\3rdparty
-cd build\3rdparty
-git clone https://github.com/wxWidgets/wxWidgets.git -b %WXWIDGETS_VERSION% --depth 1
-cd wxwidgets
-git submodule update --init
-cd..
-mkdir wxwidgets\build_cmake
-cd wxwidgets\build_cmake
-cmake .. -DwxBUILD_SHARED=OFF %*
-cmake --build . --target install --config Debug
-cmake --build . --target install --config Release
-cd ..\..\..\..
+::______________________________________________________________________________
+::                                                   Check and install wxWidgets
+echo "Checks wxWidgets..."
+mkdir build
+cd build
+mkdir test_wxwidgets
+cd test_wxwidgets
+cmake ..\..\scripts\install\test_wxwidgets %*
+cd ..
+cd ..
+if not exist "build\test_wxwidgets\wxwidgets.lck" (
+  echo.
+  echo ---------------------------------------------------------------
+  echo.
+  echo WARNING : wxWidgets is not already installed!
+  echo.
+  echo If you continue wxWidgets will be downloaded, built and installed automatically.
+  echo.
+  echo ---------------------------------------------------------------
+  echo.
+  echo Press ENTER to continue or CTRL-C to stop and install wxWidgets manually...
+  pause > nul 2>&1
+  call install_wxwidgets.cmd %*
+)
 
-:: generate, build and install xtd
+::______________________________________________________________________________
+::                                               Generate, build and install xtd
 echo Installing xtd...
 mkdir build
 cd build
@@ -43,14 +65,16 @@ cmake --build . --target install --config Debug
 cmake --build . --target install --config Release
 cd ..
 
-:: create gui tools shortcut in system operating applications
+::______________________________________________________________________________
+::                    create gui tools shortcut in system operating applications
 set xtd_program_path=%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\xtd
 if not exist "%xtd_program_path%" mkdir "%xtd_program_path%"
 call scripts\install\shortcut.cmd "%xtd_program_path%\keycode.lnk" "%ProgramFiles(x86)%\xtd\bin\keycode.exe"
 call scripts\install\shortcut.cmd "%xtd_program_path%\xtdc-gui.lnk" "%ProgramFiles(x86)%\xtd\bin\xtdc-gui.exe"
 call scripts\install\shortcut.cmd "%xtd_program_path%\guidgen-gui.lnk" "%ProgramFiles(x86)%\xtd\bin\guidgen-gui.exe"
 
-:: add xtdc-gui path
+::______________________________________________________________________________
+::                                                             Add xtdc-gui path
 echo.%path%|findstr /C:"xtd\bin" >nul 2>&1
 if not errorlevel 1 (
   echo The environment variable path already contains xtd.
@@ -63,26 +87,25 @@ if not errorlevel 1 (
     echo.
     echo ---------------------------------------------------------------
     echo.
-    color 47
-    echo WARNING
-    echo -------
-    color
+    echo WARNING : The path is greater than 1024.
     echo.
-    echo The path is greater than 1024. setx will not work correctly with a path greater than 1024.
+    echo setx will not work correctly with a path greater than 1024.
     echo Manually add "%ProgramFiles(x86)%\xtd\bin" in your path.
     echo.
     echo ---------------------------------------------------------------
+    echo.
     pause
   )
 )
 
-:: launch xtdc-gui
+::______________________________________________________________________________
+::                                                               launch xtdc-gui
 echo Launching xtdc-gui...
 start "xtdc-gui" "%ProgramFiles(x86)%\xtd\bin\xtdc-gui.exe"
 
 goto :eof
 
-:: -----------------------------------------------------------------------
+::______________________________________________________________________________
 :: Gets the length of specified string.
 :: param result_var That will cantains the length of the specified string.
 :: param string_var The string to compute length.

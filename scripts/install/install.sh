@@ -1,16 +1,21 @@
 #!/usr/bin/env bash
 
 if [ -z ${xtd_version+x} ]; then
-  echo "ERROR : Use ./install from root folder"
+  echo ""
+  echo "---------------------------------------------------------------"
+  echo ""
+  echo "ERROR : Use ./install from root folder!"
+  echo ""
+  echo "---------------------------------------------------------------"
+  echo ""
   exit 1
 fi
-
-WXWIDGETS_VERSION=v3.2.0
 
 echo "Install xtd libraries version $xtd_version, copyright Gammasoft, 2022"
 echo ""
 
-# detecting linux distribution
+#_______________________________________________________________________________
+#                                                   Detecting linux distribution
 echo "Detecting operating system..."
 OSTYPE=`uname -a`
 if [[ "$OSTYPE" == *"Linux"* ]]; then
@@ -20,15 +25,14 @@ fi
 if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
   echo "  Operating System is Windows"
 elif [[ "$OSTYPE" == *"Darwin"* ]]; then
-  echo "  Operating System is macOS"
-else
+  echo "  Operating System is macOS"; else
   echo "  Operating System is linux"
 fi
 
-# check the number of cores
+#_______________________________________________________________________________
+#                                                      Check the number of cores
 if [[ "$OSTYPE" == *"Darwin"* ]]; then
-  build_cores=$(sysctl -n hw.ncpu)
-else
+  build_cores=$(sysctl -n hw.ncpu); else
   build_cores=$(nproc)
 fi
 if [[ $build_cores -ne 1 ]]; then
@@ -36,40 +40,43 @@ if [[ $build_cores -ne 1 ]]; then
 fi
 echo  "Using up to ${build_cores} build cores"
 
-# install needed packages and libraries for known distribution
+#_______________________________________________________________________________
+#                   Install needed packages and libraries for known distribution
 echo "Installing needed packages and libraries..."
 case "$OSTYPE" in
-  *"Darwin"*) brew update; brew install cmake;;
+  *"Darwin"*) brew update; brew install cmake wxwidgets;;
   *"Debian"* | *"elementary"* | *"LinuxMint"* | *"Ubuntu"*) sudo apt update; sudo apt install build-essential codeblocks doxygen libasound2-dev libgsound-dev libgtk-3-dev cmake -y;;
   *"openSUSE"*) sudo zypper update; sudo zypper install -y -t pattern devel_basis; sudo zypper install -y alsa-devel doxygen gsound-devel gtk3-devel cmake;;
   *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum install alsa-lib-devel cmake gsound-devel gtk3-devel -y;;
 esac
 
-echo "Downloading and installing wxwidgets..."
-mkdir -p build/3rdparty/
-pushd build/3rdparty
-git clone https://github.com/wxwidgets/wxwidgets.git -b $WXWIDGETS_VERSION --depth 1
-pushd wxwidgets
-git submodule update --init
-popd
-mkdir -p wxwidgets/build_cmake
-pushd wxwidgets/build_cmake
-mkdir Debug && mkdir Release
-pushd Release
-cmake ../.. -DCMAKE_BUILD_TYPE=Release -DwxBUILD_SHARED=OFF "$@"
-cmake --build . -- -j$build_cores
-sudo cmake --build . --target install
-popd
-pushd Debug
-cmake ../.. -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF "$@"
-cmake --build . -- -j$build_cores
-sudo cmake --build . --target install
+#_______________________________________________________________________________
+#                                                    Check and install wxWidgets
+echo "Checks wxWidgets..."
+mkdir build
+pushd build
+mkdir test_wxwidgets
+pushd test_wxwidgets
+cmake ../../scripts/install/test_wxwidgets "$@"
 popd
 popd
-popd
+if [ ! -f "build/test_wxwidgets/wxwidgets.lck" ]; then
+  echo ""
+  echo "---------------------------------------------------------------"
+  echo ""
+  echo "WARNING : wxWidgets is not already installed!"
+  echo ""
+  echo "If you continue wxWidgets will be downloaded, built and installed automatically."
+  echo ""
+  echo "---------------------------------------------------------------"
+  echo ""
+  read -p "Press ENTER to continue or CTRL-C to stop and install wxWidgets manually..."
+  ./install_wxwidgets.sh "$@"
+fi
 
-# generate, build and install xtd
-echo "Installing xtd..."
+#_______________________________________________________________________________
+#                                                Generate, build and install xtd
+echo "Installing xtd $xtd_version..."
 mkdir build
 pushd build
 mkdir Release && mkdir Debug
@@ -85,7 +92,8 @@ sudo cmake --build . --target install
 popd
 popd
 
-# create gui tools shortcut in system operating applications
+#_______________________________________________________________________________
+#                     Create gui tools shortcut in system operating applications
 if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then 
   xtd_program_path="$USERPROFILE/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/xtd"
   if [ ! -d "$xtd_program_path" ]; then mkdir -p "$xtd_program_path"; fi
@@ -101,18 +109,19 @@ elif [[ "$OSTYPE" == *"Darwin"* ]]; then
   ln -s "/usr/local/bin/guidgen-gui.app" "/Applications/guidgen-gui"
 fi
 
-# copy install manifest files to xtd share directory
+#_______________________________________________________________________________
+#                             Copy install manifest files to xtd share directory
 sudo cp build/3rdparty/wxwidgets/build_cmake/Release/install_manifest.txt /usr/local/share/xtd/wxwidgets_release_install_manifest.txt
 sudo cp build/3rdparty/wxwidgets/build_cmake/Debug/install_manifest.txt /usr/local/share/xtd/wxwidgets_debug_install_manifest.txt
 sudo cp build/Release/install_manifest.txt /usr/local/share/xtd/xtd_release_install_manifest.txt
 sudo cp build/Debug/install_manifest.txt /usr/local/share/xtd/xtd_debug_install_manifest.txt
 
-# launch xtd-gui
+#_______________________________________________________________________________
+#                                                                 Launch xtd-gui
 echo "Launching xtdc-gui..."
 if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
   start "C:\Program Files (x86)\xtd\bin\xtdc-gui.exe"
 elif [[ "$OSTYPE" == *"Darwin"* ]]; then
-  open /usr/local/bin/xtdc-gui.app
-else
+  open /usr/local/bin/xtdc-gui.app; else
   /usr/local/bin/xtdc-gui &>/dev/null &
 fi

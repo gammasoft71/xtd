@@ -6,14 +6,20 @@ if [ -z ${xtd_version+x} ]; then
 fi
 
 echo "Uninstall xtd libraries version $xtd_version, copyright Gammasoft, 2022"
-echo ""
 
-echo "WARNING : You will unsinstall xtd."
+echo ""
+echo "---------------------------------------------------------------"
+echo ""
+echo "WARNING : You will unsinstall xtd!"
+echo ""
+echo "---------------------------------------------------------------"
+echo ""
 read -p "Press ENTER to continue or CTRL-C to stop..."
 
+#_______________________________________________________________________________
+#                                                                 Removing files
+echo "Removing files..."
 manifest_files=("/usr/local/share/xtd/wxwidgets_release_install_manifest.txt" "/usr/local/share/xtd/wxwidgets_debug_install_manifest.txt" "/usr/local/share/xtd/xtd_release_install_manifest.txt" "/usr/local/share/xtd/xtd_debug_install_manifest.txt")
-
-# removing files
 for manifest_file in ${manifest_files[@]}; do
   if test -f "$manifest_file"; then
     input="$manifest_file"
