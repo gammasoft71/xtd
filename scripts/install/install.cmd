@@ -31,6 +31,19 @@ if %ERRORLEVEL% neq 0 (
 )
 
 ::______________________________________________________________________________
+::                                                      Get cmake_install_prefix
+echo "Get cmake_install_prefix..."
+mkdir build
+cd build
+mkdir cmake_install_prefix
+cd cmake_install_prefix
+cmake ..\..\scripts\install\cmake_install_prefix "$@"
+popd
+popd
+set /p cmake_install_prefix=<build\cmake_install_prefix\cmake_install_prefix.txt
+echo cmake_install_prefix="%cmake_install_prefix%"
+
+::______________________________________________________________________________
 ::                                                   Check and install wxWidgets
 echo "Checks wxWidgets..."
 mkdir build
@@ -69,9 +82,9 @@ cd ..
 ::                    create gui tools shortcut in system operating applications
 set xtd_program_path=%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\xtd
 if not exist "%xtd_program_path%" mkdir "%xtd_program_path%"
-call scripts\install\shortcut.cmd "%xtd_program_path%\keycode.lnk" "%ProgramFiles(x86)%\xtd\bin\keycode.exe"
-call scripts\install\shortcut.cmd "%xtd_program_path%\xtdc-gui.lnk" "%ProgramFiles(x86)%\xtd\bin\xtdc-gui.exe"
-call scripts\install\shortcut.cmd "%xtd_program_path%\guidgen-gui.lnk" "%ProgramFiles(x86)%\xtd\bin\guidgen-gui.exe"
+call scripts\install\shortcut.cmd "%xtd_program_path%\keycode.lnk" "%cmake_install_prefix%\xtd\bin\keycode.exe"
+call scripts\install\shortcut.cmd "%xtd_program_path%\xtdc-gui.lnk" "%cmake_install_prefix%\xtd\bin\xtdc-gui.exe"
+call scripts\install\shortcut.cmd "%xtd_program_path%\guidgen-gui.lnk" "%cmake_install_prefix%\xtd\bin\guidgen-gui.exe"
 
 ::______________________________________________________________________________
 ::                                                             Add xtdc-gui path
@@ -79,7 +92,7 @@ echo.%path%|findstr /C:"xtd\bin" >nul 2>&1
 if not errorlevel 1 (
   echo The environment variable path already contains xtd.
 ) else (
-  set path=%ProgramFiles(x86)%\xtd\bin;%path%
+  set path=%cmake_install_prefix%\xtd\bin;%path%
   call :strlen path_length path
   if  %path_length% LSS 1024 (
     setx path "%path%"
@@ -90,7 +103,7 @@ if not errorlevel 1 (
     echo WARNING : The path is greater than 1024.
     echo.
     echo setx will not work correctly with a path greater than 1024.
-    echo Manually add "%ProgramFiles(x86)%\xtd\bin" in your path.
+    echo Manually add "%cmake_install_prefix%\xtd\bin" in your path.
     echo.
     echo ---------------------------------------------------------------
     echo.
@@ -101,7 +114,7 @@ if not errorlevel 1 (
 ::______________________________________________________________________________
 ::                                                               launch xtdc-gui
 echo Launching xtdc-gui...
-start "xtdc-gui" "%ProgramFiles(x86)%\xtd\bin\xtdc-gui.exe"
+start "xtdc-gui" "%cmake_install_prefix%\xtd\bin\xtdc-gui.exe"
 
 goto :eof
 
