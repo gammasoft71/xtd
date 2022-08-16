@@ -51,6 +51,19 @@ case "$OSTYPE" in
 esac
 
 #_______________________________________________________________________________
+#                                                       Get cmake_install_prefix
+echo "Get cmake_install_prefix..."
+mkdir build
+pushd build
+mkdir cmake_install_prefix
+pushd cmake_install_prefix
+cmake ../../scripts/install/cmake_install_prefix "$@"
+popd
+popd
+cmake_install_prefix=`cat build/cmake_install_prefix/cmake_install_prefix.txt`
+echo "cmake_install_prefix=\"$cmake_install_prefix\""
+
+#_______________________________________________________________________________
 #                                                    Check and install wxWidgets
 echo "Checks wxWidgets..."
 mkdir build
@@ -102,19 +115,19 @@ if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
   scripts/install/shortcut.sh "$USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\xtd\xguidgen-gui.lnk" "C:\Program Files (x86)\xtd\bin\guidgen-gui.exe"  
 elif [[ "$OSTYPE" == *"Darwin"* ]]; then
   if [ -d "/Applications/keycode" ]; then rm "/Applications/keycode"; fi
-  ln -s "/usr/local/bin/keycode.app" "/Applications/keycode"
+  ln -s "$cmake_install_prefix/bin/keycode.app" "/Applications/keycode"
   if [ -d "/Applications/xtdc-gui" ]; then rm "/Applications/xtdc-gui"; fi
-  ln -s "/usr/local/bin/xtdc-gui.app" "/Applications/xtdc-gui"
+  ln -s "$cmake_install_prefix/bin/xtdc-gui.app" "/Applications/xtdc-gui"
   if [ -d "/Applications/guidgen-gui" ]; then rm "/Applications/guidgen-gui"; fi
-  ln -s "/usr/local/bin/guidgen-gui.app" "/Applications/guidgen-gui"
+  ln -s "$cmake_install_prefix/bin/guidgen-gui.app" "/Applications/guidgen-gui"
 fi
 
 #_______________________________________________________________________________
 #                             Copy install manifest files to xtd share directory
-sudo cp build/3rdparty/wxwidgets/build_cmake/Release/install_manifest.txt /usr/local/share/xtd/wxwidgets_release_install_manifest.txt
-sudo cp build/3rdparty/wxwidgets/build_cmake/Debug/install_manifest.txt /usr/local/share/xtd/wxwidgets_debug_install_manifest.txt
-sudo cp build/Release/install_manifest.txt /usr/local/share/xtd/xtd_release_install_manifest.txt
-sudo cp build/Debug/install_manifest.txt /usr/local/share/xtd/xtd_debug_install_manifest.txt
+sudo cp build/3rdparty/wxwidgets/build_cmake/Release/install_manifest.txt $cmake_install_prefix/share/xtd/wxwidgets_release_install_manifest.txt
+sudo cp build/3rdparty/wxwidgets/build_cmake/Debug/install_manifest.txt $cmake_install_prefix/share/xtd/wxwidgets_debug_install_manifest.txt
+sudo cp build/Release/install_manifest.txt $cmake_install_prefix/share/xtd/xtd_release_install_manifest.txt
+sudo cp build/Debug/install_manifest.txt $cmake_install_prefix/share/xtd/xtd_debug_install_manifest.txt
 
 #_______________________________________________________________________________
 #                                                                 Launch xtd-gui
@@ -122,6 +135,6 @@ echo "Launching xtdc-gui..."
 if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
   start "C:\Program Files (x86)\xtd\bin\xtdc-gui.exe"
 elif [[ "$OSTYPE" == *"Darwin"* ]]; then
-  open /usr/local/bin/xtdc-gui.app; else
-  /usr/local/bin/xtdc-gui &>/dev/null &
+  open $cmake_install_prefix/bin/xtdc-gui.app; else
+  $cmake_install_prefix/bin/xtdc-gui &>/dev/null &
 fi
