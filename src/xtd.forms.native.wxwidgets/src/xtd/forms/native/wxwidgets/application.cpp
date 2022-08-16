@@ -14,9 +14,9 @@
 #include <xtd/drawing/system_colors.h>
 #include <wx/aboutdlg.h>
 #include <wx/sysopt.h>
-#include <wx/msw/registry.h>
 
 #if defined(__WXMSW__)
+#include <wx/msw/registry.h>
 extern drawing_native_export_ int __xtd_win32_enable_dark_mode__;
 static wxTimer* __system_color_detection_timer__;
 static bool __is_dark_mode__ = false;
