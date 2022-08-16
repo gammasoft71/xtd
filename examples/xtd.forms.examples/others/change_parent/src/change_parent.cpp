@@ -10,7 +10,7 @@ public:
   }
   
   form1() {
-    client_size({600, 400});
+    client_size({600, 450});
     minimum_size(size());
     text("Change parent control example");
     
@@ -33,21 +33,24 @@ public:
     label1.location({10, 12});
     label1.auto_size(true);
     
-    list_box1.parent(left_panel);
-    list_box1.location({10, 40});
-    list_box1.items().push_back_range({"Apple", "Orange", "Banana", "Strawberry"});
-    
-    toggle_button1.parent(left_panel);
-    toggle_button1.text("Toggle 1");
-    toggle_button1.location({10, 150});
-    
     text_box1.parent(left_panel);
     text_box1.text("Test box 1");
     text_box1.location({100, 10});
+    text_box1.width(170);
+
+    list_box1.parent(left_panel);
+    list_box1.location({10, 50});
+    list_box1.size({260, 100});
+    list_box1.items().push_back_range({"Apple", "Orange", "Banana", "Strawberry"});
+    list_box1.selected_index(0);
+    
+    toggle_button1.parent(left_panel);
+    toggle_button1.text("Toggle 1");
+    toggle_button1.location({10, 160});
     
     tab_control1.parent(left_panel);
-    tab_control1.location({10, 190});
-    tab_control1.size({260, 140});
+    tab_control1.location({10, 210});
+    tab_control1.size({260, 150});
     
     tab_page1.parent(tab_control1);
     tab_page1.text("Page 1");
