@@ -1,6 +1,6 @@
 # line_info
 
-Shows how to use [xtd::tunit::line_info](../../../../src/xtd.tunit/include/xtd/line_info.h) class and [line_info_](../../../../src/xtd.tunit/include/xtd/line_info.h) keyword.
+Shows how to use [xtd::diagnostics::stack_frame](../../../../src/xtd.core/include/xtd/diagnostics/stack_frame.h) class and [csf_](../../../../src/xtd.core/include/xtd/diagnostics/stack_frame.h) keyword.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # collection_assert_all_items_are_instances_of
 
-Shows how to use [xtd::tunit::collection_assert::all_items_are_instances_of](../../../../src/xtd.tunit/include/xtd/collection_assert.h) method.
+Shows how to use [xtd::tunit::collection_assert::all_items_are_instances_of](../../../../src/xtd.tunit/include/xtd/tunit/collection_assert.h) method.
 
 ## Sources
 

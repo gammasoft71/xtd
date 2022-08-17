@@ -1,6 +1,6 @@
 # assert_is_empty
 
-Shows how to use [xtd::tunit::assert::is_empty](../../../../src/xtd.tunit/include/xtd/assert.h) method.
+Shows how to use [xtd::tunit::assert::is_empty](../../../../src/xtd.tunit/include/xtd/tunit/assert.h) method.
 
 ## Sources
 

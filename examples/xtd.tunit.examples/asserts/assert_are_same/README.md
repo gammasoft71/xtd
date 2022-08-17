@@ -1,6 +1,6 @@
 # assert_are_same
 
-Shows how to use [xtd::tunit::assert::are_same](../../../../src/xtd.tunit/include/xtd/assert.h) method.
+Shows how to use [xtd::tunit::assert::are_same](../../../../src/xtd.tunit/include/xtd/tunit/assert.h) method.
 
 ## Sources
 
