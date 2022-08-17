@@ -16,13 +16,15 @@ namespace example {
       client_size({676, 350});
       controls().push_back_range({choice_theme, choice_context, picture_16, picture_32, picture_64, picture_128, picture_256, label_picture_name, button_previous, button_next});
       
-      choice_theme.bounds({10, 10, 280, 25});
+      choice_theme.location({10, 10});
+      choice_theme.width(323);
       choice_theme.items().push_back("default_theme");
       choice_theme.items().push_back_range(theme::theme_names());
       choice_theme.selected_index(0);
       choice_theme.selected_index_changed += event_handler(*this, &form1::update_form);
       
-      choice_context.bounds({300, 10, 280, 25});
+      choice_context.location({343, 10});
+      choice_context.width(323);
       choice_context.items().push_back_range(system_images::contexts());
       choice_context.selected_index(0);
       choice_context.selected_index_changed += [&] {
