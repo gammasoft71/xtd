@@ -1,6 +1,6 @@
 # assert_is_negative
 
-Shows how to use [xtd::tunit::assert::is_negative](../../../../src/xtd.tunit/include/xtd/assert.h) method.
+Shows how to use [xtd::tunit::assert::is_negative](../../../../src/xtd.tunit/include/xtd/tunit/assert.h) method.
 
 ## Sources
 

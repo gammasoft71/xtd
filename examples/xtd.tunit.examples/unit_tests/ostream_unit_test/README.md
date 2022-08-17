@@ -1,6 +1,6 @@
 # ostream_unit_test
 
-Shows how to use generic [xtd::tunit::ostream_unit_test](../../../../src/xtd.tunit/include/xtd/ostream_unit_test.h) class.
+Shows how to use generic [xtd::tunit::ostream_unit_test](../../../../src/xtd.tunit/include/xtd/tunit/ostream_unit_test.h) class.
 
 ## Sources
 

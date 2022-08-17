@@ -1,6 +1,6 @@
 # assert
 
-Shows how to use [xtd::tunit::assert](../../../../src/xtd.tunit/include/xtd/assert.h) class.
+Shows how to use [xtd::tunit::assert](../../../../src/xtd.tunit/include/xtd/tunit/assert.h) class.
 
 ## Sources
 

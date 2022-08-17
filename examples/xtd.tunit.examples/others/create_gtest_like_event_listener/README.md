@@ -1,6 +1,6 @@
 # create_gtest_like_event_listener
 
-Shows how to create your own [xtd::tunit::event_listener](../../../../src/xtd.tunit/include/xtd/event_listener.h) class.
+Shows how to create your own [xtd::tunit::event_listener](../../../../src/xtd.tunit/include/xtd/tunit/event_listener.h) class.
 
 ## Sources
 

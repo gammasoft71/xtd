@@ -10,3 +10,4 @@ This file lists all persons who contributed to xtd (in order of appearance). If 
 ## Contributors
 * [bigplayszn](https://github.com/bigplayszn) - Contributor
 * [niansa](https://github.com/niansa) - Contributor
+* [jimorc](https://github.com/jimorc) - Contributor
