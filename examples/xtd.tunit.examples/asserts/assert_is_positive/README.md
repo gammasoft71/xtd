@@ -1,6 +1,6 @@
 # assert_is_positive
 
-Shows how to use [xtd::tunit::assert::is_positive](../../../../src/xtd.tunit/include/xtd/assert.h) method.
+Shows how to use [xtd::tunit::assert::is_positive](../../../../src/xtd.tunit/include/xtd/tunit/assert.h) method.
 
 ## Sources
 
