@@ -1,6 +1,6 @@
 # assert_does_not_throw
 
-Shows how to use [xtd::tunit::does_not_throw](../../../../src/xtd.tunit/include/xtd/assert.h) method.
+Shows how to use [xtd::tunit::does_not_throw](../../../../src/xtd.tunit/include/xtd/tunit/assert.h) method.
 
 ## Sources
 

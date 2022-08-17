@@ -1,6 +1,6 @@
 # string_assert_are_equal_ignoring_case
 
-Shows how to use [xtd::tunit::string_assert::are_equal_ignoring_case](../../../../src/xtd.tunit/include/xtd/string_assert.h) method.
+Shows how to use [xtd::tunit::string_assert::are_equal_ignoring_case](../../../../src/xtd.tunit/include/xtd/tunit/string_assert.h) method.
 
 ## Sources
 

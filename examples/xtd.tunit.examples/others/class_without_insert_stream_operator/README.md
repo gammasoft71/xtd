@@ -1,6 +1,6 @@
 # class_without_insert_stream_operator
 
-Shows how to use [xtd::tunit::assert](../../../../src/xtd.tunit/include/xtd/assert.h) class with a class to test that does not contain insert stream operator.
+Shows how to use [xtd::tunit::assert](../../../../src/xtd.tunit/include/xtd/tunit/assert.h) class with a class to test that does not contain insert stream operator.
 
 ## Sources
 

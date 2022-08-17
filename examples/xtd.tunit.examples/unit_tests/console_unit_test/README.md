@@ -1,6 +1,6 @@
 # console_unit_test
 
-Shows how to use generic [xtd::tunit::console_unit_test](../../../../src/xtd.tunit/include/xtd/console_unit_test.h) class.
+Shows how to use generic [xtd::tunit::console_unit_test](../../../../src/xtd.tunit/include/xtd/tunit/console_unit_test.h) class.
 
 ## Sources
 
