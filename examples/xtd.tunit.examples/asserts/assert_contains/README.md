@@ -1,6 +1,6 @@
 # assert_contains
 
-Shows how to use [xtd::tunit::contains](../../../../src/xtd.tunit/include/xtd/assert.h) method.
+Shows how to use [xtd::tunit::contains](../../../../src/xtd.tunit/include/xtd/tunit/collection_assert.h) method.
 
 ## Sources
 
