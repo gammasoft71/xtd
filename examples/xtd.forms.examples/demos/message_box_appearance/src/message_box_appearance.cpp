@@ -15,7 +15,7 @@ public:
     label_caption.location({10, 13});
     label_caption.parent(*this);
     
-    text_caption.text("xtd_forms");
+    text_caption.text("xtd.forms");
     text_caption.location({90, 10});
     text_caption.parent(*this);
     text_caption.width(200);
