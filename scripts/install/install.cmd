@@ -33,6 +33,7 @@ if %ERRORLEVEL% neq 0 (
 ::______________________________________________________________________________
 ::                                                      Get cmake_install_prefix
 echo "Get cmake_install_prefix..."
+if exist "build" rd /S /Q "build"
 mkdir build
 cd build
 mkdir cmake_install_prefix
