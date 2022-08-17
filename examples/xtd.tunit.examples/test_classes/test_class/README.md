@@ -1,6 +1,6 @@
 # test_class
 
-Shows how to use [xtd::tunit::test_class](../../../../src/xtd.tunit/include/xtd/test_class.h) class.
+Shows how to use [xtd::tunit::test_class](../../../../src/xtd.tunit/include/xtd/tunit/test_class.h) class.
 
 ## Sources
 
