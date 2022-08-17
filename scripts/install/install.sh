@@ -44,7 +44,7 @@ echo  "Using up to ${build_cores} build cores"
 #                   Install needed packages and libraries for known distribution
 echo "Installing needed packages and libraries..."
 case "$OSTYPE" in
-  *"Darwin"*) brew update; brew install cmake wxwidgets;;
+  *"Darwin"*) brew update; brew install cmake;;
   *"Debian"* | *"elementary"* | *"LinuxMint"* | *"Ubuntu"*) sudo apt update; sudo apt install build-essential codeblocks doxygen libasound2-dev libgsound-dev libgtk-3-dev cmake -y;;
   *"openSUSE"*) sudo zypper update; sudo zypper install -y -t pattern devel_basis; sudo zypper install -y alsa-devel doxygen gsound-devel gtk3-devel cmake;;
   *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum install alsa-lib-devel cmake gsound-devel gtk3-devel -y;;
@@ -66,6 +66,7 @@ echo "cmake_install_prefix=\"$cmake_install_prefix\""
 #_______________________________________________________________________________
 #                                                    Check and install wxWidgets
 echo "Checks wxWidgets..."
+if [ -d "build" ]; then rm -rf "build"; fi
 mkdir build
 pushd build
 mkdir test_wxwidgets
