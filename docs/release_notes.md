@@ -29,6 +29,7 @@
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.core - time_zone_info - [#50](https://github.com/gammasoft71/xtd/issues/50)
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] File drop feature request - [#5](https://github.com/gammasoft71/xtd/issues/5)
 
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] xtd.tunit - Invalid links in xtd/examples/xtd.tunit.examples/README.md - [#183](https://github.com/gammasoft71/xtd/issues/183)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] can not build - [#182](https://github.com/gammasoft71/xtd/issues/182)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] wxNotificationMessage never triggers event callbacks (regarding #180) - [#181](https://github.com/gammasoft71/xtd/issues/181)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - popup_panel - [#177](https://github.com/gammasoft71/xtd/issues/177)
