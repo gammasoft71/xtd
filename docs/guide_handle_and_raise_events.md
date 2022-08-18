@@ -80,7 +80,7 @@ For example, the [dialog_closed_event_handler](https://codedocs.xyz/gammasoft71/
 
 The [xtd::event_args](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1event__args.htmlhttps://codedocs.xyz/gammasoft71/xtd/classxtd_1_1event__args.html) class is the base type for all event data classes. 
 [xtd:event_args](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1event__args.html) is also the class you use when an event is not associated with any data.
-When you create an event that is only intended to inform other classes that something has happened and does not need to pass any data, include the xtdd:event_args class as the second parameter in the delegate. 
+When you create an event that is only intended to inform other classes that something has happened and does not need to pass any data, include the xtd:event_args class as the second parameter in the delegate. 
 You can pass the value [xtd::event_args::empty](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1event__args.html) when no data is provided. 
 The [xtd::event_handler](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate includes the [xtd:event_args](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1event__args.html) class as a parameter.
 

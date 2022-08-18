@@ -95,5 +95,6 @@ namespace examples {
 }
 
 int main() {
+  application::style_sheet(application::get_style_sheet_from_name("macOS (light)"));
   application::run(examples::form1 {});
 }

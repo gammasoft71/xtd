@@ -57,7 +57,7 @@ public:
       else button_demo.image(button_images::from_name(choice_image.selected_item().value()));
     };
     choice_image.items().push_back("none");
-    choice_image.items().push_back_range(system_images::names());
+    choice_image.items().push_back_range(images::names());
     choice_image.selected_index(0);
     choice_image.location({100, 80});
     choice_image.width(200);

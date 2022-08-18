@@ -71,7 +71,7 @@ int main() {
   
   label image_label;
   image_label.location({580, 40});
-  //image_label.image(system_images::from_name("folder-home", {16, 16}));
+  //image_label.image(images::from_name("folder-home", {16, 16}));
   //image_label.image_align(content_alignment::middle_left);
   image_label.parent(tab_page_labels);
   image_label.text("Home");
