@@ -1,23 +1,34 @@
 #include <xtd/xtd>
 
+using namespace std;
+using namespace xtd;
 using namespace xtd::forms;
 
 class form1 : public form {
 public:
+  static void main() {
+    application::run(form1 {});
+  }
+  
   form1() {
-    client_size({650, 460});
+    client_size({800, 600});
     text("Themes example");
     
-    tab_control_controls.parent(*this);
-    tab_control_controls.location({10, 10});
-    tab_control_controls.size({630, 400});
-    tab_control_controls.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
+    main_panel.parent(*this);
+    main_panel.location({10, 10});
+    main_panel.size({780, 520});
+    main_panel.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
+    main_panel.padding(10);
     
+    tab_control_controls.parent(main_panel);
+    tab_control_controls.dock(dock_style::fill);
+    tab_control_controls.selected_index_changed +=  {*this, &form1::update_status_bar_text};
+
     tab_page_buttons.parent(tab_control_controls);
     tab_page_buttons.auto_scroll(true);
     tab_page_buttons.text("Buttons");
-    tab_page_pickers.auto_scroll(true);
     tab_page_pickers.parent(tab_control_controls);
+    tab_page_pickers.auto_scroll(true);
     tab_page_pickers.text("Pickers");
     tab_page_texts.parent(tab_control_controls);
     tab_page_texts.auto_scroll(true);
@@ -84,13 +95,13 @@ public:
     
     check_box1.parent(tab_page_buttons);
     check_box1.auto_size(true);
+    check_box1.three_state(true);
     check_box1.checked(true);
     check_box1.location({10, 170});
     check_box1.text("Check 1");
     
     check_box2.parent(tab_page_buttons);
     check_box2.auto_size(true);
-    check_box2.three_state(true);
     check_box2.location({130, 170});
     check_box2.text("Check 2");
     
@@ -103,9 +114,13 @@ public:
     switch_button2.rounded(false);
     switch_button2.location({130, 210});
     
+    command_link_button1.parent(tab_page_buttons);
+    command_link_button1.texts("Command link button", "Information");
+    command_link_button1.location({10, 250});
+    
     up_down_button1.parent(tab_page_buttons);
-    up_down_button1.location({10, 250});
-
+    up_down_button1.location({10, 320});
+    
     color_picker1.parent(tab_page_pickers);
     color_picker1.location({10, 10});
     color_picker1.text("Colors...");
@@ -202,6 +217,7 @@ public:
     track_bar1.parent(tab_page_progress_and_track_bars);
     track_bar1.location({10, 10});
     track_bar1.maximum(100);
+    track_bar1.tick_frequency(10);
     track_bar1.width(350);
     track_bar1.value_changed += [&] {
       progress_bar1.value(track_bar1.value());
@@ -225,14 +241,25 @@ public:
     loading_indicator1.location({10, 10});
     loading_indicator1.start();
     
+    menu(*main_menu1);
+    
+    tool_bar(tool_bar1);
+    tool_bar1.parent(*this);
+    tool_bar1.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});
+    tool_bar1.buttons().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, help_tool_bar_button});
+    tool_bar1.button_click += {*this, &form1::tool_bar_button_click};
+    
+    status_bar1.parent(*this);
+    update_status_bar_text();
+    
     themes_label.parent(*this);
     themes_label.auto_size(true);
-    themes_label.location({10, 423});
+    themes_label.location({10, 533});
     themes_label.anchor(anchor_styles::left | anchor_styles::bottom);
     themes_label.text("Theme");
     
     themes_choice.parent(*this);
-    themes_choice.location({70, 420});
+    themes_choice.location({70, 530});
     themes_choice.width(560);
     themes_choice.anchor(anchor_styles::left | anchor_styles::right | anchor_styles::bottom);
     themes_choice.items().push_back_range({"GNOME (dark)", "GNOME (light)", "KDE (dark)", "KDE (light)", "macOS (dark)", "macOS (light)", "Windows (dark)", "Windows (light)", "default"});
@@ -242,7 +269,44 @@ public:
     themes_choice.selected_item(style_sheets::style_sheet::system_style_sheet().theme().name());
   }
   
+protected:
+  void on_form_closing(form_closing_event_args& e) override {
+    e.cancel(message_box::show(*this, "Are you sure you want exit?", "Close Form", message_box_buttons::yes_no, message_box_icon::question) == dialog_result::no);
+  };
+  
 private:
+  void menu_click(object& sender, const event_args& e) {
+    ustring file_name;
+    if (*menu_items[2] == sender) open_file_box::show(file_name, *this);
+    if (*menu_items[4] == sender) save_file_box::show(file_name, *this);
+    if (*menu_items[5] == sender) save_file_box::show(file_name, *this, "Save as...");
+    if (*menu_items[10] == sender) application::exit();
+    if (*menu_items[28] == sender) about_box::show(*this, "Shows some controls with theme", "Themes example", xtd::drawing::system_icons::xtd_logo(), environment::version().to_string(2), environment::version().to_string(), "Copygight (c) 2022 Gammasoft.", "https://gammasoft71.wixsite.com/xtdpro", "xtd");
+  }
+  
+  void tool_bar_button_click(object& sender, const tool_bar_button_click_event_args& e) {
+    ustring file_name;
+    if (e.button() == open_tool_bar_button) open_file_box::show(file_name, *this);
+    if (e.button() == save_tool_bar_button) save_file_box::show(file_name, *this);
+    if (e.button() == help_tool_bar_button) about_box::show(*this, "Shows some controls with theme", "Themes example", xtd::drawing::system_icons::xtd_logo(), environment::version().to_string(2), environment::version().to_string(), "Copygight (c) 2022 Gammasoft.", "https://gammasoft71.wixsite.com/xtdpro", "xtd");
+  }
+  
+  void update_status_bar_text() {
+    switch (tab_control_controls.selected_index()) {
+      case 0: status_bar1.text("Shows button controls"); break;
+      case 1: status_bar1.text("Shows picker controls"); break;
+      case 2: status_bar1.text("Shows text controls"); break;
+      case 3: status_bar1.text("Shows LCD controls"); break;
+      case 4: status_bar1.text("Shows choice controls"); break;
+      case 5: status_bar1.text("Shows list controls"); break;
+      case 6: status_bar1.text("Shows progress controls"); break;
+      case 7: status_bar1.text("Shows scroll controls"); break;
+      case 8: status_bar1.text("Shows animation controls"); break;
+      default: break;
+    }
+  }
+  
+  panel main_panel;
   tab_control tab_control_controls;
   tab_page tab_page_buttons;
   tab_page tab_page_pickers;
@@ -260,12 +324,13 @@ private:
   button image_button1;
   switch_button switch_button1;
   switch_button switch_button2;
+  toggle_button toggle_button1;
   light_button light_button1;
   radio_button radio_button1;
   radio_button radio_button2;
   check_box check_box1;
   check_box check_box2;
-  toggle_button toggle_button1;
+  command_link_button command_link_button1;
   up_down_button up_down_button1;
   
   color_picker color_picker1;
@@ -300,10 +365,25 @@ private:
   
   loading_indicator loading_indicator1;
   
+  vector<unique_ptr<menu_item>> menu_items;
+  unique_ptr<main_menu> main_menu1 = main_menu::create_standard_items(menu_items, {*this, &form1::menu_click});
+  
+  xtd::forms::tool_bar tool_bar1;
+  tool_bar_button new_tool_bar_button = tool_bar_button::create_push_button(system_texts::new_(), 0);
+  tool_bar_button open_tool_bar_button = tool_bar_button::create_push_button(system_texts::open(), 1);
+  tool_bar_button save_tool_bar_button = tool_bar_button::create_push_button(system_texts::save(), 2);
+  tool_bar_button print_tool_bar_button = tool_bar_button::create_push_button(system_texts::print(), 3);
+  tool_bar_button tool_bar1_separator1 = tool_bar_button::create_separator();
+  tool_bar_button cut_tool_bar_button = tool_bar_button::create_push_button(system_texts::cut(), 4);
+  tool_bar_button copy_tool_bar_button = tool_bar_button::create_push_button(system_texts::copy(), 5);
+  tool_bar_button paste_tool_bar_button = tool_bar_button::create_push_button(system_texts::paste(), 6);
+  tool_bar_button tool_bar1_separator2 = tool_bar_button::create_stretchable_separator();
+  tool_bar_button help_tool_bar_button = tool_bar_button::create_push_button(system_texts::help(), 7);
+  
+  forms::status_bar status_bar1;
+  
   label themes_label;
   choice themes_choice;
 };
 
-int main() {
-  application::run(form1 {});
-}
+startup_(form1);
