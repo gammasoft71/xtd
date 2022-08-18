@@ -12,7 +12,7 @@ namespace example {
   class form1 : public form {
   public:
     form1() {
-      text("System images example");
+      text("Images example");
       client_size({430, 530});
       controls().push_back_range({choice_theme, choice_context, choice_size, picture, label_picture_name, button_previous, button_next});
       
@@ -28,7 +28,7 @@ namespace example {
       choice_theme.selected_index_changed += event_handler(*this, &form1::update_form);
       
       choice_context.bounds({75, 55, 280, 25});
-      choice_context.items().push_back_range(system_images::contexts());
+      choice_context.items().push_back_range(images::contexts());
       choice_context.selected_index(0);
       choice_context.selected_index_changed += [&] {
         current_image_index = 0;
@@ -36,7 +36,7 @@ namespace example {
       };
       
       choice_size.bounds({75, 85, 280, 25});
-      for (auto size  : system_images::sizes())
+      for (auto size  : images::sizes())
         if (size.width() <= picture.width() && size.height() <= picture.height())
           choice_size.items().push_back({ustring::format("{}x{} pixels", size.width(), size.height()), size});
       choice_size.selected_index(7);
@@ -62,7 +62,7 @@ namespace example {
       button_next.text(system_texts::next());
       button_next.bounds({230, 460, 125, 40});
       button_next.click += [&] {
-        if (current_image_index < system_images::names(choice_context.selected_item().value()).size()) ++current_image_index;
+        if (current_image_index < images::names(choice_context.selected_item().value()).size()) ++current_image_index;
         update_form();
       };
       
@@ -71,10 +71,10 @@ namespace example {
     
   private:
     void update_form() {
-      picture.image(system_images::from_name(choice_theme.selected_item().value(), system_images::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())) != drawing::image::empty ? system_images::from_name(choice_theme.selected_index() == 0 ? theme::default_theme_name() : choice_theme.selected_item().value(), system_images::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())) : system_images::from_name("image-missing",  any_cast<drawing::size>(choice_size.selected_item().tag())));
-      label_picture_name.text(system_images::names(choice_context.selected_item().value())[current_image_index]);
+      picture.image(images::from_name(choice_theme.selected_item().value(), images::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())) != drawing::image::empty ? images::from_name(choice_theme.selected_index() == 0 ? theme::default_theme_name() : choice_theme.selected_item().value(), images::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())) : images::from_name("image-missing",  any_cast<drawing::size>(choice_size.selected_item().tag())));
+      label_picture_name.text(images::names(choice_context.selected_item().value())[current_image_index]);
       button_previous.enabled(current_image_index > 0);
-      button_next.enabled(current_image_index < system_images::names(choice_context.selected_item().value()).size() - 1);
+      button_next.enabled(current_image_index < images::names(choice_context.selected_item().value()).size() - 1);
     }
     
     size_t current_image_index = 0;

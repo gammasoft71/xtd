@@ -12,7 +12,7 @@ namespace example {
   class form1 : public form {
   public:
     form1() {
-      text("System images 2 example");
+      text("Images 2 example");
       client_size({880, 820});
       controls().push_back_range({label_picture_kde_theme, label_picture_gnome_theme, label_picture_macos_theme, label_picture_symbolic_theme, label_picture_windows_theme, label_picture_xtd_theme, picture_kde_theme, picture_gnome_theme, picture_macos_theme, picture_symbolic_theme, picture_windows_theme, picture_xtd_theme, panel_separator_line, label_picture_context, label_picture_name, label_picture_size, button_context_previous, button_context_next, button_name_previous, button_name_next, button_decrease, button_increase});
       
@@ -176,21 +176,21 @@ namespace example {
     
   private:
     void update_form() {
-      picture_kde_theme.image(system_images::from_name("kde", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]) != image::empty ? system_images::from_name("kde", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]) : system_images::image_missing({256, 256}));
-      picture_gnome_theme.image(system_images::from_name("gnome", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]) != image::empty ? system_images::from_name("gnome", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]) : system_images::image_missing({256, 256}));
-      picture_macos_theme.image(system_images::from_name("macos", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]) != image::empty ? system_images::from_name("macos", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]) : system_images::image_missing({256, 256}));
-      picture_symbolic_theme.image(system_images::from_name("symbolic", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]) != image::empty ? system_images::from_name("symbolic", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]) : system_images::image_missing({256, 256}));
-      picture_windows_theme.image(system_images::from_name("windows", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]) != image::empty ? system_images::from_name("windows", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]) : system_images::image_missing({256, 256}));
-      picture_xtd_theme.image(system_images::from_name("xtd", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]) != image::empty ? system_images::from_name("xtd", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]) : system_images::image_missing({256, 256}));
-      label_picture_context.text(system_images::contexts()[current_context_index]);
-      label_picture_name.text(system_images::names(system_images::contexts()[current_context_index])[current_name_index]);
-      label_picture_size.text(ustring::format("{}x{} pixels", system_images::sizes()[current_size_index].width(), system_images::sizes()[current_size_index].height()));
+      picture_kde_theme.image(images::from_name("kde", images::names(images::contexts()[current_context_index])[current_name_index], images::sizes()[current_size_index]) != image::empty ? images::from_name("kde", images::names(images::contexts()[current_context_index])[current_name_index], images::sizes()[current_size_index]) : images::image_missing({256, 256}));
+      picture_gnome_theme.image(images::from_name("gnome", images::names(images::contexts()[current_context_index])[current_name_index], images::sizes()[current_size_index]) != image::empty ? images::from_name("gnome", images::names(images::contexts()[current_context_index])[current_name_index], images::sizes()[current_size_index]) : images::image_missing({256, 256}));
+      picture_macos_theme.image(images::from_name("macos", images::names(images::contexts()[current_context_index])[current_name_index], images::sizes()[current_size_index]) != image::empty ? images::from_name("macos", images::names(images::contexts()[current_context_index])[current_name_index], images::sizes()[current_size_index]) : images::image_missing({256, 256}));
+      picture_symbolic_theme.image(images::from_name("symbolic", images::names(images::contexts()[current_context_index])[current_name_index], images::sizes()[current_size_index]) != image::empty ? images::from_name("symbolic", images::names(images::contexts()[current_context_index])[current_name_index], images::sizes()[current_size_index]) : images::image_missing({256, 256}));
+      picture_windows_theme.image(images::from_name("windows", images::names(images::contexts()[current_context_index])[current_name_index], images::sizes()[current_size_index]) != image::empty ? images::from_name("windows", images::names(images::contexts()[current_context_index])[current_name_index], images::sizes()[current_size_index]) : images::image_missing({256, 256}));
+      picture_xtd_theme.image(images::from_name("xtd", images::names(images::contexts()[current_context_index])[current_name_index], images::sizes()[current_size_index]) != image::empty ? images::from_name("xtd", images::names(images::contexts()[current_context_index])[current_name_index], images::sizes()[current_size_index]) : images::image_missing({256, 256}));
+      label_picture_context.text(images::contexts()[current_context_index]);
+      label_picture_name.text(images::names(images::contexts()[current_context_index])[current_name_index]);
+      label_picture_size.text(ustring::format("{}x{} pixels", images::sizes()[current_size_index].width(), images::sizes()[current_size_index].height()));
       button_context_previous.enabled(current_context_index > 0);
-      button_context_next.enabled(current_context_index < system_images::contexts().size() - 1);
+      button_context_next.enabled(current_context_index < images::contexts().size() - 1);
       button_name_previous.enabled(current_name_index > 0);
-      button_name_next.enabled(current_name_index < system_images::names(system_images::contexts()[current_context_index]).size() - 1);
+      button_name_next.enabled(current_name_index < images::names(images::contexts()[current_context_index]).size() - 1);
       button_decrease.enabled(current_size_index > 0);
-      button_increase.enabled(current_size_index < system_images::sizes().size() - 1);
+      button_increase.enabled(current_size_index < images::sizes().size() - 1);
     }
     
     size_t current_context_index = 0;

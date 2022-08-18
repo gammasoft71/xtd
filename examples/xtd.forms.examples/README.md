@@ -157,6 +157,7 @@
 * **file_system_watcher** listens to the file system change notifications and raises events when a directory, or file in a directory, changes.
 * **help_provider** provides pop-up or online Help for controls.
 * [image_list](components/image_list/README.md) provides methods to manage a collection of Image objects. This class cannot be inherited.
+* [images](components/images/README.md) demonstrates the use of [xtd::forms::images](../../src/xtd.forms/include/xtd/forms/images.h) class.
 * **message_queue** provides access to a queue on a Message Queuing server.
 * **performance_counter** represents a Windows NT performance counter component.
 * [process](components/process_form/README.md) provides access to local and remote processes and enables you to start and stop local system processes.
@@ -165,7 +166,6 @@
 * [settings](components/settings_example/README.md) represents settings application.
 * **serial_port** represents a serial port resource.
 * **service_controler** represents a Windows service and allows you to connect to a running or stopped service, manipulate it, or get information about it.
-* [system_images](components/system_images/README.md) demonstrates the use of **xtd::drawing::system_images** class.
 * [texts](components/texts/README.md) shows how to used [xtd::forms::texts](../../src/xtd.forms/include/xtd/forms/texts.h) collection.
 * [timer](components/timer/README.md) implements a timer that raises an event at user-defined intervals. This timer is optimized for use in Windows Forms applications and must be used in a window.
 * [translator](components/translator/README.md) demonstrates the use of [xtd::forms::translator](../../src/xtd.core/include/xtd/translator.h) strings.
