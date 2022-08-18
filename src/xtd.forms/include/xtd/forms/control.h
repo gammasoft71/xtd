@@ -355,12 +355,12 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether to catch calls on the wrong thread that access a xtd::forms::contrtol::handle property when an application is being debugged.
       /// @return true if calls on the wrong thread are caught; otherwise, false.
-      /// @remarks When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the xtdd::forms::control::handle property. Set xtd::forms::control::check_for_illegal_cross_thread_calls to true to find and diagnose this thread activity more easily while debugging.
+      /// @remarks When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the xtd::forms::control::handle property. Set xtd::forms::control::check_for_illegal_cross_thread_calls to true to find and diagnose this thread activity more easily while debugging.
       /// @warning Be careful, some OS don't support cross-thread UI operations!
       static bool check_for_illegal_cross_thread_calls();
       /// @brief Sets a value indicating whether to catch calls on the wrong thread that access a xtd::forms::contrtol::handle property when an application is being debugged.
       /// @param value true if calls on the wrong thread are caught; otherwise, false.
-      /// @remarks When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the xtdd::forms::control::handle property. Set xtd::forms::control::check_for_illegal_cross_thread_calls to true to find and diagnose this thread activity more easily while debugging.
+      /// @remarks When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the xtd::forms::control::handle property. Set xtd::forms::control::check_for_illegal_cross_thread_calls to true to find and diagnose this thread activity more easily while debugging.
       /// @warning Be careful, some OS don't support cross-thread UI operations!
       static void check_for_illegal_cross_thread_calls(bool value);
       

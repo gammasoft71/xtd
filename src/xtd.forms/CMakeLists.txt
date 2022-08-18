@@ -137,6 +137,7 @@ add_sources(
   include/xtd/forms/image_layout.h
   include/xtd/forms/image_list.h
   include/xtd/forms/image_renderer.h
+  include/xtd/forms/images.h
   include/xtd/forms/imessage_filter.h
   include/xtd/forms/input_box.h
   include/xtd/forms/input_box_style.h
@@ -391,6 +392,7 @@ add_sources(
   src/xtd/forms/h_scroll_bar.cpp
   src/xtd/forms/image_list.cpp
   src/xtd/forms/image_renderer.cpp
+  src/xtd/forms/images.cpp
   src/xtd/forms/input_dialog.cpp
   src/xtd/forms/label.cpp
   src/xtd/forms/label_renderer.cpp
@@ -448,7 +450,7 @@ add_sources(
   src/xtd/forms/text_renderer.cpp
   src/xtd/forms/theme.cpp
   src/xtd/forms/theme_base.cpp
- src/xtd/forms/theme_images.cpp
+  src/xtd/forms/theme_images.cpp
   src/xtd/forms/theme_renderers.cpp
   src/xtd/forms/timer.cpp
   src/xtd/forms/toggle_button.cpp

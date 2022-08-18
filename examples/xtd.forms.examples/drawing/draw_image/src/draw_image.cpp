@@ -19,7 +19,7 @@ protected:
   }
   
 private:
-  xtd::drawing::image image = system_images::from_name("system-file-manager", xtd::drawing::size {1024, 1024});
+  xtd::drawing::image image = images::from_name("system-file-manager", xtd::drawing::size {1024, 1024});
 };
 
 int main() {

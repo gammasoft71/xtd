@@ -54,7 +54,7 @@ public:
     open_gammasoft_png_file_button.image_align(content_alignment::middle_left);
     open_gammasoft_png_file_button.text("Open \"gammasoft.png\" file...");
     open_gammasoft_png_file_button.click += [] {
-      drawing::system_images::from_name("gammasoft", drawing::size(512, 512)).save(path::combine(path::get_temp_path(), "gammasoft.png"));
+      images::from_name("gammasoft", drawing::size(512, 512)).save(path::combine(path::get_temp_path(), "gammasoft.png"));
       process::start(process_start_info("gammasoft.png").working_directory(path::get_temp_path()));
     };
     
