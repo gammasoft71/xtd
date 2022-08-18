@@ -288,13 +288,6 @@ namespace xtd {
       /// @include application.cpp
       static void run(const form& main_form);
       
-      /// @cond
-      static void theme(const xtd::ustring& theme_name);
-      static void theme(const xtd::forms::theme& theme);
-      static const xtd::forms::theme& theme();
-      static const std::vector<xtd::ustring>& theme_names();
-      /// @endcond
-      
       /*
       /// @brief Instructs the application how to respond to unhandled exceptions.
       /// @param mode An unhandled_exception_mode value describing how the application should behave if an exception is thrown without being caught.

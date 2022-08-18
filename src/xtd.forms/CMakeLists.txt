@@ -263,7 +263,6 @@ add_sources(
   include/xtd/forms/text_renderer.h
   include/xtd/forms/theme.h
   include/xtd/forms/theme_base.h
-  include/xtd/forms/theme_colors.h
   include/xtd/forms/theme_images.h
   include/xtd/forms/theme_renderers.h
   include/xtd/forms/theme_style.h
@@ -449,8 +448,7 @@ add_sources(
   src/xtd/forms/text_renderer.cpp
   src/xtd/forms/theme.cpp
   src/xtd/forms/theme_base.cpp
-  src/xtd/forms/theme_colors.cpp
-  src/xtd/forms/theme_images.cpp
+ src/xtd/forms/theme_images.cpp
   src/xtd/forms/theme_renderers.cpp
   src/xtd/forms/timer.cpp
   src/xtd/forms/toggle_button.cpp

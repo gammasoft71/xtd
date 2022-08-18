@@ -1,7 +1,6 @@
 #include "../../../include/xtd/forms/light_button.h"
 #include "../../../include/xtd/forms/button_renderer.h"
 #include "../../../include/xtd/forms/form.h"
-#include "../../../include/xtd/forms/theme_colors.h"
 #include "../../../include/xtd/forms/theme_renderers.h"
 #include <xtd/drawing/pen.h>
 #include <xtd/drawing/solid_brush.h>
@@ -144,9 +143,9 @@ void light_button::on_handle_created(const event_args& e) {
 void light_button::on_paint(paint_event_args& e) {
   if (flat_style() != xtd::forms::flat_style::system) {
     text_format_flags flags = to_text_format_flags(text_align());
-    if (flat_style() == xtd::forms::flat_style::flat) button_renderer::draw_flat_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), to_push_button_style(data_->state), !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color(), flat_appearance());
-    else if (flat_style() == xtd::forms::flat_style::popup) button_renderer::draw_popup_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), to_push_button_style(data_->state), !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color(), flat_appearance());
-    else theme_renderers::current_theme().draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), to_push_button_style(data_->state), !get_back_color().has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : get_fore_color());
+    if (flat_style() == xtd::forms::flat_style::flat) button_renderer::draw_flat_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), to_push_button_style(data_->state), !get_back_color().has_value() && back_color() != application::style_sheet().system_colors().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != application::style_sheet().system_colors().control_text() ? fore_color() : get_fore_color(), flat_appearance());
+    else if (flat_style() == xtd::forms::flat_style::popup) button_renderer::draw_popup_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), to_push_button_style(data_->state), !get_back_color().has_value() && back_color() != application::style_sheet().system_colors().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != application::style_sheet().system_colors().control_text() ? fore_color() : get_fore_color(), flat_appearance());
+    else theme_renderers::current_theme().draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), to_push_button_style(data_->state), !get_back_color().has_value() && back_color() != application::style_sheet().system_colors().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != application::style_sheet().system_colors().control_text() ? fore_color() : get_fore_color());
     
     drawing::color light_color = light_off_color();
     if (data_->check_state == check_state::checked) light_color = light_on_color();

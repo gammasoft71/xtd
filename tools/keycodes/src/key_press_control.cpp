@@ -14,7 +14,7 @@ key_press_control::key_press_control() {
   key_event_label_.text("Key press"_t);
   
   key_char_label_.auto_size(true);
-  key_char_label_.fore_color(application::theme().theme_colors().gray_text());
+  key_char_label_.fore_color(application::style_sheet().system_colors().gray_text());
   key_char_label_.location({30, 30});
   key_char_label_.parent(*this);
   key_char_label_.text("Key char"_t);

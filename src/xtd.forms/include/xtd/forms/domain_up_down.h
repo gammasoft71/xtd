@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "up_down_base.h"
+#include "application.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -158,9 +159,9 @@ namespace xtd {
       /// @}
       
     protected:
-      drawing::color default_back_color() const override {return xtd::forms::theme_colors::current_theme().window();}
+      drawing::color default_back_color() const override {return application::style_sheet().system_colors().window();}
       
-      drawing::color default_fore_color() const override {return xtd::forms::theme_colors::current_theme().window_text();}
+      drawing::color default_fore_color() const override {return application::style_sheet().system_colors().window_text();}
       
       void on_handle_created(const event_args& e) override;
       

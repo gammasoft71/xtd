@@ -42,7 +42,6 @@
 #include "padding.h"
 #include "paint_event_handler.h"
 #include "message.h"
-#include "theme_colors.h"
 #include "timer.h"
 #include "style_sheets/style_sheet.h"
 #include "visual_styles/control_state.h"

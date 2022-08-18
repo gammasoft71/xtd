@@ -184,7 +184,7 @@ void link_label::on_paint(paint_event_args& e) {
         if (enabled())
           e.graphics().draw_string(text, font(), solid_brush(fore_color()), {text_location, size_text});
         else
-          e.graphics().draw_string(text, font(), solid_brush(application::theme().theme_colors().gray_text()), {text_location, size_text});
+          e.graphics().draw_string(text, font(), solid_brush(application::style_sheet().system_colors().gray_text()), {text_location, size_text});
         text_location.x(text_location.x() + size_text.width());
         line_index += text.length();
       }
@@ -194,7 +194,7 @@ void link_label::on_paint(paint_event_args& e) {
         if (enabled())
           e.graphics().draw_string(text, link_font(), solid_brush(color), {text_location, size_text});
         else
-          e.graphics().draw_string(text, link_font(), solid_brush(application::theme().theme_colors().gray_text()), {text_location, size_text});
+          e.graphics().draw_string(text, link_font(), solid_brush(application::style_sheet().system_colors().gray_text()), {text_location, size_text});
         text_location.x(text_location.x() + size_text.width());
         line_index = link.start() - index + text.length();
       }
@@ -206,7 +206,7 @@ void link_label::on_paint(paint_event_args& e) {
       if (enabled())
         e.graphics().draw_string(text, font(), solid_brush(fore_color()), {text_location, size_text});
       else
-        e.graphics().draw_string(text, font(), solid_brush(application::theme().theme_colors().gray_text()), {text_location, size_text});
+        e.graphics().draw_string(text, font(), solid_brush(style_sheet().system_colors().gray_text()), {text_location, size_text});
       line_index = line.length();
     }
     index += line_index + 1;

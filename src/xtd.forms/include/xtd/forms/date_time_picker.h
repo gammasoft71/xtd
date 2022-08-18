@@ -4,6 +4,7 @@
 #pragma once
 #include <chrono>
 #include <xtd/date_time.h>
+#include "application.h"
 #include "control.h"
 #include "date_time_picker_format.h"
 
@@ -80,8 +81,8 @@ namespace xtd {
       
       /// @{
       forms::create_params create_params() const override;
-      drawing::color default_back_color() const override {return xtd::forms::theme_colors::current_theme().window();}
-      drawing::color default_fore_color() const override {return xtd::forms::theme_colors::current_theme().window_text();}
+      drawing::color default_back_color() const override {return application::style_sheet().system_colors().window();}
+      drawing::color default_fore_color() const override {return application::style_sheet().system_colors().window_text();}
       
       /// @brief Raises the date_time_picker::value_changed event.
       /// @param e An event_args that contains the event data.

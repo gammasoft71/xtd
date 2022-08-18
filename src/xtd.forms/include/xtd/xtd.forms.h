@@ -258,7 +258,6 @@
 #include "xtd/forms/text_format_flags.h"
 #include "xtd/forms/text_renderer.h"
 #include "xtd/forms/theme_base.h"
-#include "xtd/forms/theme_colors.h"
 #include "xtd/forms/theme_images.h"
 #include "xtd/forms/theme_renderers.h"
 #include "xtd/forms/theme_style.h"

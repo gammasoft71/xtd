@@ -2,6 +2,7 @@
 /// @brief Contains xtd::forms::list_control control.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
+#include "application.h"
 #include "control.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -148,8 +149,8 @@ namespace xtd {
       /// @return true if the list enables list item selection; otherwise, false. The default is true.
       virtual bool allow_selection() {return true;}
       
-      virtual drawing::color default_back_color() const override {return xtd::forms::theme_colors::current_theme().window();}
-      virtual drawing::color default_fore_color() const override {return xtd::forms::theme_colors::current_theme().window_text();}
+      virtual drawing::color default_back_color() const override {return application::style_sheet().system_colors().window();}
+      virtual drawing::color default_fore_color() const override {return application::style_sheet().system_colors().window_text();}
       
       /// @brief Raises the list_control::selected_index_changed event.
       virtual void on_selected_index_changed(const event_args& e) {selected_index_changed(*this, e);}

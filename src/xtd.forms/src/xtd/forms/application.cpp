@@ -306,42 +306,6 @@ void application::run(const form& form) {
   application::run(context);
 }
 
-void application::theme(const xtd::ustring& theme_name) {
-  application::theme(xtd::forms::theme::theme_from_name(theme_name));
-}
-
-void application::theme(const xtd::forms::theme& theme) {
-  xtd::forms::theme::current_theme(theme);
-  
-  std::function<void(xtd::forms::control&)> update_control = [&](xtd::forms::control & control) {
-    //control.back_color(nullptr);
-    //control.fore_color(nullptr);
-    control.back_color(control.default_back_color());
-    control.fore_color(control.default_fore_color());
-    for (auto& child_control : control.controls())
-      update_control(child_control.get());
-  };
-  
-  for (auto form : open_forms()) {
-    //form.get().back_color(theme_colors::current_theme().control());
-    //form.get().fore_color(theme_colors::current_theme().control_text());
-    form.get().back_color(form.get().default_back_color());
-    form.get().fore_color(form.get().default_fore_color());
-    for (auto& child_control : form.get().controls())
-      update_control(child_control.get());
-    form.get().invalidate(true);
-    form.get().refresh();
-  }
-}
-
-const xtd::forms::theme& application::theme() {
-  return xtd::forms::theme::current_theme();
-}
-
-const std::vector<xtd::ustring>& application::theme_names() {
-  return theme::theme_names();
-}
-
 bool application::close_open_forms() {
   for (auto open_form : application::open_forms()) {
     form_closing_event_args closing_args;

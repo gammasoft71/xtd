@@ -13,7 +13,7 @@ key_control::key_control() {
   key_event_.parent(*this);
   
   key_code_label_.auto_size(true);
-  key_code_label_.fore_color(application::theme().theme_colors().gray_text());
+  key_code_label_.fore_color(application::style_sheet().system_colors().gray_text());
   key_code_label_.location({30, 30});
   key_code_label_.parent(*this);
   key_code_label_.text("Key code"_t);
@@ -23,7 +23,7 @@ key_control::key_control() {
   key_code_.parent(*this);
   
   key_data_label_.auto_size(true);
-  key_data_label_.fore_color(application::theme().theme_colors().gray_text());
+  key_data_label_.fore_color(application::style_sheet().system_colors().gray_text());
   key_data_label_.location({30, 50});
   key_data_label_.parent(*this);
   key_data_label_.text("Key data"_t);
@@ -33,7 +33,7 @@ key_control::key_control() {
   key_data_.parent(*this);
   
   key_value_label_.auto_size(true);
-  key_value_label_.fore_color(application::theme().theme_colors().gray_text());
+  key_value_label_.fore_color(application::style_sheet().system_colors().gray_text());
   key_value_label_.location({30, 70});
   key_value_label_.parent(*this);
   key_value_label_.text("Value"_t);
@@ -43,7 +43,7 @@ key_control::key_control() {
   key_value_.parent(*this);
   
   key_modfiers_label_.auto_size(true);
-  key_modfiers_label_.fore_color(application::theme().theme_colors().gray_text());
+  key_modfiers_label_.fore_color(application::style_sheet().system_colors().gray_text());
   key_modfiers_label_.parent(*this);
   key_modfiers_label_.location({30, 90});
   key_modfiers_label_.text("Modifiers"_t);
@@ -53,7 +53,7 @@ key_control::key_control() {
   key_modfiers_.parent(*this);
   
   line_.dock(dock_style::top);
-  line_.back_color(application::theme().theme_colors().gray_text());
+  line_.back_color(application::style_sheet().system_colors().gray_text());
   line_.height(2);
   line_.parent(*this);
   line_.visible(false);
