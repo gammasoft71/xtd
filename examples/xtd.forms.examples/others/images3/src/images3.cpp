@@ -18,8 +18,10 @@ namespace example {
       
       choice_theme.location({10, 10});
       choice_theme.width(323);
-      choice_theme.items().push_back("default_theme");
-      choice_theme.items().push_back_range(theme::theme_names());
+      choice_theme.items().push_back("current theme");
+      auto names = application::style_sheet_names();
+      sort(names.begin(), names.end());
+      choice_theme.items().push_back_range(names);
       choice_theme.selected_index(0);
       choice_theme.selected_index_changed += event_handler(*this, &form1::update_form);
       
@@ -85,7 +87,7 @@ namespace example {
     
   private:
     void update_form() {
-      auto theme = choice_theme.selected_index() == 0 ? theme::default_theme_name() : choice_theme.selected_item().value();
+      auto theme = choice_theme.selected_index() == 0 ? application::style_sheet().theme().name() : choice_theme.selected_item().value();
       picture_16.image(images::from_name(theme, images::names(choice_context.selected_item().value())[current_image_index], drawing::size {16, 16}));
       picture_32.image(images::from_name(theme, images::names(choice_context.selected_item().value())[current_image_index], drawing::size {32, 32}));
       picture_64.image(images::from_name(theme, images::names(choice_context.selected_item().value())[current_image_index], drawing::size {64, 64}));

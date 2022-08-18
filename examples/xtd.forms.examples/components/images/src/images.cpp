@@ -22,8 +22,10 @@ namespace example {
       picture.size_mode(picture_box_size_mode::center_image);
       
       choice_theme.bounds({75, 25, 280, 25});
-      choice_theme.items().push_back("default_theme");
-      choice_theme.items().push_back_range(theme::theme_names());
+      choice_theme.items().push_back("current theme");
+      auto names = application::style_sheet_names();
+      sort(names.begin(), names.end());
+      choice_theme.items().push_back_range(names);
       choice_theme.selected_index(0);
       choice_theme.selected_index_changed += event_handler(*this, &form1::update_form);
       
@@ -71,7 +73,7 @@ namespace example {
     
   private:
     void update_form() {
-      picture.image(images::from_name(choice_theme.selected_item().value(), images::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())) != drawing::image::empty ? images::from_name(choice_theme.selected_index() == 0 ? theme::default_theme_name() : choice_theme.selected_item().value(), images::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())) : images::from_name("image-missing",  any_cast<drawing::size>(choice_size.selected_item().tag())));
+      picture.image(images::from_name(choice_theme.selected_item().value(), images::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())) != drawing::image::empty ? images::from_name(choice_theme.selected_index() == 0 ? application::style_sheet().theme().name() : choice_theme.selected_item().value(), images::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())) : images::from_name("image-missing",  any_cast<drawing::size>(choice_size.selected_item().tag())));
       label_picture_name.text(images::names(choice_context.selected_item().value())[current_image_index]);
       button_previous.enabled(current_image_index > 0);
       button_next.enabled(current_image_index < images::names(choice_context.selected_item().value()).size() - 1);
