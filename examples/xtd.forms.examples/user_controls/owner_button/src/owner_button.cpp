@@ -11,8 +11,8 @@ namespace examples {
       auto accentuate_color = [](const color & c, float percent) {
         return application::dark_mode_enabled() ? control_paint::light(c, percent) : control_paint::dark(c, percent);
       };
-      auto background_color = get_back_color().value_or(theme_colors::current_theme().control());
-      auto foreground_color = get_fore_color().value_or(theme_colors::current_theme().control_text());
+      auto background_color = get_back_color().value_or(application::style_sheet().system_colors().control());
+      auto foreground_color = get_fore_color().value_or(application::style_sheet().system_colors().control_text());
       auto button_color = accentuate_color(background_color, .05);
       auto border_color = accentuate_color(background_color, .15);
       auto text_color = foreground_color;
@@ -27,7 +27,7 @@ namespace examples {
         text_color =  accentuate_color(foreground_color, .30);
       } else if (state() == visual_styles::push_button_state::disabled) {
         border_color = button_color = color::from_argb(85, 85, 55);
-        text_color = theme_colors::current_theme().gray_text();
+        text_color = application::style_sheet().system_colors().gray_text();
       }
       
       e.graphics().fill_rounded_rectangle(drawing2d::linear_gradient_brush(point {e.clip_rectangle().x(), e.clip_rectangle().top()}, point {e.clip_rectangle().x(), e.clip_rectangle().bottom()}, control_paint::light(button_color, .2), control_paint::dark(button_color)), e.clip_rectangle().x(), e.clip_rectangle().y(), e.clip_rectangle().width(), e.clip_rectangle().height(), e.clip_rectangle().height() / 2);
