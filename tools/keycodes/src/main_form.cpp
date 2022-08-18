@@ -29,7 +29,7 @@ main_form::main_form() {
   main_panel_.dock(dock_style::fill);
   main_panel_.parent(*this);
   
-  line_panel_.back_color(application::theme().theme_colors().gray_text());
+  line_panel_.back_color(application::style_sheet().system_colors().gray_text());
   line_panel_.dock(dock_style::top);
   line_panel_.height(2);
   line_panel_.parent(*this);

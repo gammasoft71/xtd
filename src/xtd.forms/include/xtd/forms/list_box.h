@@ -58,9 +58,9 @@ namespace xtd {
       /// @return Current list_box.
       virtual list_box& border_style(forms::border_style border_style);
       
-      drawing::color default_back_color() const override {return xtd::forms::theme_colors::current_theme().window();}
+      drawing::color default_back_color() const override {return application::style_sheet().system_colors().window();}
       
-      drawing::color default_fore_color() const override {return xtd::forms::theme_colors::current_theme().window_text();}
+      drawing::color default_fore_color() const override {return application::style_sheet().system_colors().window_text();}
       
       /// @brief Gets the items of the list_box.
       /// @return An list_box::object_collection representing the items in the list_box.

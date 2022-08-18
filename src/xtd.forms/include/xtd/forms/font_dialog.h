@@ -270,7 +270,7 @@ namespace xtd {
       bool get_option(size_t flag) const {return (options_ & flag) == flag;}
       void set_option(size_t flag, bool value) {options_ = value ? options_ | flag : options_ & ~flag;}
       
-      drawing::color color_ = xtd::forms::theme_colors::current_theme().control_text();
+      drawing::color color_ = application::style_sheet().system_colors().control_text();
       drawing::font font_ = drawing::system_fonts::default_font();
       size_t max_size_ = 0;
       size_t min_size_ = 0;

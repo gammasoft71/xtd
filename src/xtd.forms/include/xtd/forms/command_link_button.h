@@ -2,6 +2,7 @@
 /// @brief Contains xtd::forms::command_link_button control.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/environment.h>
 #include "button_base.h"
 #include "dialog_result.h"
 #include "ibutton_control.h"

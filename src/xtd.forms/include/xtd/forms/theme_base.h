@@ -37,7 +37,7 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      static xtd::ustring default_theme_name() {return xtd::environment::os_version().desktop_environment() == "" ? fallback_theme_name() :  xtd::environment::os_version().desktop_environment();}
+      static xtd::ustring default_theme_name();
       
       static xtd::ustring fallback_theme_name() {return "symbolic";}
       

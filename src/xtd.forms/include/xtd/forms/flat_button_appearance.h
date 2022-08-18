@@ -5,7 +5,6 @@
 #include <optional>
 #include <xtd/object.h>
 #include <xtd/drawing/color.h>
-#include "theme_colors.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

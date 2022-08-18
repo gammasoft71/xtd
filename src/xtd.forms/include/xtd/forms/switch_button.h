@@ -49,7 +49,7 @@ namespace xtd {
       
       /// @brief Gets the checked background color for the control.
       /// @return A xtd::drawing::color that represents the checked background color of the control. The default is the value of the xtd::forms::theme_colors::current_theme::accent color.
-      virtual xtd::drawing::color checked_back_color() const {return checked_back_color_.value_or(xtd::forms::theme_colors::current_theme().accent());}
+      virtual xtd::drawing::color checked_back_color() const {return checked_back_color_.value_or(application::style_sheet().system_colors().accent());}
       /// @brief Sets the checked background color for the control.
       /// @param color A xtd::drawing::color that represents the checked background color of the control. The default is the value of the xtd::forms::theme_colors::current_theme::accent color.
       virtual switch_button& checked_back_color(const xtd::drawing::color& color) {
@@ -174,7 +174,7 @@ namespace xtd {
       }
       
       void on_paint(paint_event_args& e) override {
-        drawing::color button_back_color = checked_ ? checked_back_color() : xtd::forms::theme_colors::current_theme().gray_text();
+        drawing::color button_back_color = checked_ ? checked_back_color() : application::style_sheet().system_colors().gray_text();
         drawing::color text_color = checked_ ? fore_color() : drawing::color::average(button_back_color, fore_color(), .33);
         drawing::color slider_color = this->slider_color();
         xtd::ustring text = checked_ ? "ON" : "OFF";
