@@ -34,6 +34,8 @@ add_projects(
   form_window_state
   group_box_and_check_box
   group_box_and_radio_button
+  images2
+  images3
   input_dialog_multiline
   input_dialog_password
   labels_and_unicode_text
@@ -53,8 +55,6 @@ add_projects(
   some_controls
   status_bar_without_panels
   stopwatch_form
-  system_images2
-  system_images3
   system_report
   system_sound
   text_box_multiline

@@ -12,7 +12,7 @@ namespace example {
   class form1 : public form {
   public:
     form1() {
-      text("System images example");
+      text("Images 3 example");
       client_size({676, 350});
       controls().push_back_range({choice_theme, choice_context, picture_16, picture_32, picture_64, picture_128, picture_256, label_picture_name, button_previous, button_next});
       
@@ -25,7 +25,7 @@ namespace example {
       
       choice_context.location({343, 10});
       choice_context.width(323);
-      choice_context.items().push_back_range(system_images::contexts());
+      choice_context.items().push_back_range(images::contexts());
       choice_context.selected_index(0);
       choice_context.selected_index_changed += [&] {
         current_image_index = 0;
@@ -76,7 +76,7 @@ namespace example {
       button_next.text(system_texts::next());
       button_next.bounds({165, 300, 125, 40});
       button_next.click += [&] {
-        if (current_image_index < system_images::names(choice_context.selected_item().value()).size()) ++current_image_index;
+        if (current_image_index < images::names(choice_context.selected_item().value()).size()) ++current_image_index;
         update_form();
       };
       
@@ -86,15 +86,15 @@ namespace example {
   private:
     void update_form() {
       auto theme = choice_theme.selected_index() == 0 ? theme::default_theme_name() : choice_theme.selected_item().value();
-      picture_16.image(system_images::from_name(theme, system_images::names(choice_context.selected_item().value())[current_image_index], drawing::size {16, 16}));
-      picture_32.image(system_images::from_name(theme, system_images::names(choice_context.selected_item().value())[current_image_index], drawing::size {32, 32}));
-      picture_64.image(system_images::from_name(theme, system_images::names(choice_context.selected_item().value())[current_image_index], drawing::size {64, 64}));
-      picture_128.image(system_images::from_name(theme, system_images::names(choice_context.selected_item().value())[current_image_index], drawing::size {128, 128}));
-      picture_256.image(system_images::from_name(theme, system_images::names(choice_context.selected_item().value())[current_image_index], drawing::size {256, 256}));
+      picture_16.image(images::from_name(theme, images::names(choice_context.selected_item().value())[current_image_index], drawing::size {16, 16}));
+      picture_32.image(images::from_name(theme, images::names(choice_context.selected_item().value())[current_image_index], drawing::size {32, 32}));
+      picture_64.image(images::from_name(theme, images::names(choice_context.selected_item().value())[current_image_index], drawing::size {64, 64}));
+      picture_128.image(images::from_name(theme, images::names(choice_context.selected_item().value())[current_image_index], drawing::size {128, 128}));
+      picture_256.image(images::from_name(theme, images::names(choice_context.selected_item().value())[current_image_index], drawing::size {256, 256}));
       
-      label_picture_name.text(system_images::names(choice_context.selected_item().value())[current_image_index]);
+      label_picture_name.text(images::names(choice_context.selected_item().value())[current_image_index]);
       button_previous.enabled(current_image_index > 0);
-      button_next.enabled(current_image_index < system_images::names(choice_context.selected_item().value()).size() - 1);
+      button_next.enabled(current_image_index < images::names(choice_context.selected_item().value()).size() - 1);
     }
     
     size_t current_image_index = 0;

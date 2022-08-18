@@ -13,11 +13,11 @@ add_projects(
   emoticons
   enable_debug
   image_list
+  images
   process_form
   radio_button_renderer
   screen
   settings_example
-  system_images
   texts
   timer
   translator
