@@ -1117,49 +1117,54 @@ namespace xtd {
       /// @return The 32-bit ARGB value of this xtd::drawing::color.
       /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
       /// @par Examples
-      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgs, which is a parameter of the Paint event handler. The code performs the following actions:
-      /// * Creates an instance of a xtd::drawing::color structure, redShade, to be used for comparisons.
-      /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have the same lightness as redShade. The iterations are terminated when 15 matches are found or the value of the loop counter is greater than the last xtd::drawing::known_color element.
-      /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
+      /// The following code example is designed for use with Windows Forms, and it requires xtd::forms::paint_event_args e, which is a parameter of the xtd::forms::control::paint event handler. The code performs the following actions:
+      /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have a non-zero green component and a zero-value red component, and that are not system colors.
+      /// * During each iteration, saves the xtd::drawing::known_color element - if it matches the criteria - in an array.
       /// * Uses a brush to paint rectangles.
-      /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
+      /// Each of the rectangles is painted a xtd::drawing::known_color that matches the criteria stated in the first bullet. The name of the xtd::drawing::known_color and its component values are also displayed.
+      /// This example displays certain known colors, the names of the colors, and their four component values. The xtd::drawing::color::to_argb method is used as a preliminary step to display the component values.
       /// @code
-      /// void known_color_brightness_example2(paint_event_args& e) {
+      /// void to_argb_to_string_example1(paint_event_args& e) {
       ///   graphics g = e.graphics();
-      ///
-      ///   // xtd::drawing::color structures. One is a variable used for temporary storage. The other is a constant used for comparisons.
-      ///   xtd::drawing::color some_color = xtd::drawing::color::from_argb(0);
-      ///   xtd::drawing::color red_shade = xtd::drawing::color::from_argb(255, 200, 0, 100);
-      ///
-      ///   // Array to store xtd::drawing::known_color values that match the hue of the redShade color.
-      ///   std::vector<xtd::drawing::known_color> color_matches(15);
-      ///
-      ///   // Number of matches found.
-      ///   int count = 0;
-      ///
-      ///   // Iterate through the xtd::drawing::known_color enums until 15 matches are found.
-      ///   for (xtd::drawing::known_color enum_value = 0; enum_value <= xtd::drawing::known_color::yellow_green && count < 15; enum_value = known_color(int(enum_value) + 1)) {
-      ///     some_color = xtd::drawing::color::from_known_color(enum_value);
-      ///     if (some_color.get_brightness() == red_shade.get_brightness())
-      ///       color_matches[count++] = enum_value;
+      ///   ///
+      ///   // Color structure used for temporary storage.
+      ///   color some_color = color::from_argb(0);
+      ///   ///
+      ///   // Vector to store known_color values that match the criteria.
+      ///   std::vector<known_color> color_matches;
+      ///   ///
+      ///   // Iterate through the KnownColor enums to find all corresponding colors
+      ///   // that have a nonzero green component and zero-value red component and
+      ///   // that are not system colors.
+      ///   for (int enum_value = 0; enum_value <= static_cast<int>(known_color::yellow_green); ++enum_value) {
+      ///     some_color = color::from_known_color(static_cast<known_color>(enum_value));
+      ///     if (some_color.g() != 0 && some_color.r() == 0 && !some_color.is_system_color())
+      ///       color_matches.emplace_back(static_cast<known_color>(enum_value));
       ///   }
-      ///
-      ///   // Display the redShade color and its argb value.
-      ///   solid_brush  my_brush1(red_shade);
-      ///   font my_font("Arial", 12);
-      ///   int x = 20;
-      ///   int y = 20;
-      ///   some_color = red_shade;
-      ///   g.fill_rectangle(my_brush1, x, y, 100, 30);
-      ///   g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
-      ///
-      ///   // Iterate through the matches that were found and display each color that corresponds with the enum value in the array. also display the name of the xtd::drawing::known_color.
-      ///   for (int i = 0; i < count; i++) {
+      ///   solid_brush my_brush1 {some_color};
+      ///   font my_font {"Arial", 9};
+      ///   int x = 40;
+      ///   int y = 40;
+      ///   ///
+      ///   // Iterate through the matches that were found and display each color that
+      ///   // corresponds with the enum value in the array. also display the name of
+      ///   // the known_color and the ARGB components.
+      ///   for (size_t i = 0; i < color_matches.size(); ++i) {
+      ///     // Display the color.
+      ///     some_color = color::from_known_color(color_matches[i]);
+      ///     my_brush1.color(some_color);
+      ///     g.fill_rectangle(my_brush1, x, y, 50, 30);
+      ///     ///
+      ///     // Display known_color name and the four component values. To display the
+      ///     // component values:  Use the to_argb method to get the 32-bit ARGB value
+      ///     // of some_color, which was created from a known_color. Then create a
+      ///     // color structure from the 32-bit ARGB value and set some_color equal to
+      ///     // this new color structure. Then use the to_string method to convert it to
+      ///     // a string.
+      ///     g.draw_string(some_color.to_string(), my_font, brushes::black(), x + 55, y);
+      ///     some_color = color::from_argb(some_color.to_argb());
+      ///     g.draw_string(some_color.to_string(), my_font, brushes::black(), x + 55, y + 15);
       ///     y += 40;
-      ///     some_color = xtd::drawing::color::from_known_color(color_matches[i]);
-      ///     my_brush1.xtd::drawing::color = some_color;
-      ///     g.fill_rectangle(my_brush1, x, y, 100, 30);
-      ///     g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
       ///   }
       /// }
       /// @endcode
