@@ -17,10 +17,12 @@ namespace examples {
       choice_theme.parent(*this);
       choice_theme.location({10, 10});
       choice_theme.items().push_back("default theme");
-      choice_theme.items().push_back_range(theme::theme_names());
+      auto names = application::style_sheet_names();
+      sort(names.begin(), names.end());
+      choice_theme.items().push_back_range(names);
       choice_theme.selected_index(0);
       choice_theme.selected_index_changed += [&] {
-        application::theme(choice_theme.selected_index() == 0 ? theme::default_theme_name() : choice_theme.selected_item().value());
+        application::style_sheet(choice_theme.selected_index() == 0 ? application::system_style_sheet() : application::get_style_sheet_from_name(choice_theme.selected_item().value()));
         color_picker_background.color(back_color());
         color_picker_foreground.color(fore_color());
         bcolor.reset();
@@ -32,7 +34,7 @@ namespace examples {
       };
       
       color_picker_background.parent(*this);
-      color_picker_background.location({140, 10});
+      color_picker_background.location({180, 10});
       color_picker_background.color(back_color());
       color_picker_background.color_changed += [&] {
         bcolor = color_picker_background.color();
@@ -41,7 +43,7 @@ namespace examples {
       };
       
       color_picker_foreground.parent(*this);
-      color_picker_foreground.location({250, 10});
+      color_picker_foreground.location({290, 10});
       color_picker_foreground.color(fore_color());
       color_picker_foreground.color_changed += [&] {
         fcolor = color_picker_foreground.color();
