@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "theme_base.h"
-#include "theme_renderers.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -23,7 +22,6 @@ namespace xtd {
       theme() = default;
       explicit theme(const xtd::ustring& name) : theme(name, xtd::forms::theme_style::system_auto, false) {}
       theme(const xtd::ustring& name, xtd::forms::theme_style theme_style) : theme(name, theme_style, false) {}
-      theme(const xtd::ustring& name, xtd::forms::theme_style theme_style, const xtd::forms::theme_renderers& theme_renderers) : theme_base(name, theme_style), theme_renderers_(theme_renderers) {}
       /// @}
       
       /// @cond
@@ -35,23 +33,6 @@ namespace xtd {
       
       /// @name properties
       
-      /// @{
-      /*
-      const xtd::forms::theme_colors& theme_colors() const {return theme_colors_;}
-      xtd::forms::theme_colors& theme_colors() {return theme_colors_;}
-      theme& theme_colors(const xtd::forms::theme_colors& theme_colors) {
-        theme_colors_ = theme_colors;
-        return *this;
-      }*/
-      
-      const xtd::forms::theme_renderers& theme_renderers() const {return theme_renderers_;}
-      xtd::forms::theme_renderers& theme_renderers() {return theme_renderers_;}
-      theme& theme_renderers(const xtd::forms::theme_renderers& theme_renderers) {
-        theme_renderers_ = theme_renderers;
-        return *this;
-      }
-      /// @}
-      
       /// @name Methods
       
       /// @{
@@ -61,7 +42,6 @@ namespace xtd {
       }
       static void current_theme(const theme& theme) {
         current_theme_ = theme;
-        theme_renderers::current_theme(current_theme_.theme_renderers_);
       }
       static void current_theme(const xtd::ustring& name) {current_theme(theme_from_name(name));}
       
@@ -71,8 +51,7 @@ namespace xtd {
       /// @}
       
     private:
-      theme(const xtd::ustring& name, xtd::forms::theme_style theme_style, bool is_default) : theme_base(name, theme_style, is_default), theme_renderers_(theme_renderers::theme_from_name(name)) {}
-      xtd::forms::theme_renderers theme_renderers_ = xtd::forms::theme_renderers::current_theme();
+      theme(const xtd::ustring& name, xtd::forms::theme_style theme_style, bool is_default) : theme_base(name, theme_style, is_default) {}
       static theme current_theme_;
     };
   }

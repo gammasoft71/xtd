@@ -19,7 +19,6 @@
 #include <xtd/drawing/system_fonts.h>
 #include "flat_button_appearance.h"
 #include "text_format_flags.h"
-#include "theme_renderers.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
