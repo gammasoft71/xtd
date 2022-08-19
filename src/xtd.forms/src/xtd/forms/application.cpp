@@ -17,7 +17,6 @@
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/exception_box.h"
 #include "../../../include/xtd/forms/message_box.h"
-#include "../../../include/xtd/forms/theme.h"
 
 using namespace std;
 using namespace std::chrono;
