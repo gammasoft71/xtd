@@ -293,8 +293,6 @@
 | [text_format_flags](../src/xtd.forms/include/xtd/forms/text_format_flags.h)                                                   | enumeration  | ![progress](pictures/progress100.png) |
 | [theme](../src/xtd.forms/include/xtd/forms/theme.h)                                                                           | class        | ![progress](pictures/progress25.png)  |
 | [theme_base](../src/xtd.forms/include/xtd/forms/theme_base.h)                                                                 | class        | ![progress](pictures/progress25.png)  |
-| [theme_colors](../src/xtd.forms/include/xtd/forms/theme_colors.h)                                                             | class        | ![progress](pictures/progress25.png)  |
-| [theme_images](../src/xtd.forms/include/xtd/forms/theme_images.h)                                                             | class        | ![progress](pictures/progress25.png)  |
 | [theme_renderers](../src/xtd.forms/include/xtd/forms/theme_renderers.h)                                                       | class        | ![progress](pictures/progress25.png)  |
 | [theme_style](../src/xtd.forms/include/xtd/forms/theme_style.h)                                                               | enumeration  | ![progress](pictures/progress100.png) |
 | [tick_style](../src/xtd.forms/include/xtd/forms/tick_style.h)                                                                 | enumeration  | ![progress](pictures/progress100.png) |
