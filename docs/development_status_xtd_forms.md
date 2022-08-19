@@ -291,10 +291,6 @@
 | [text_box_renderer](../src/xtd.forms/include/xtd/forms/text_box_renderer.h)                                                   | static class | ![progress](pictures/progress0.png)   |
 | [text_box_base](../src/xtd.forms/include/xtd/forms/text_box_base.h)                                                           | class        | ![progress](pictures/progress75.png)  |
 | [text_format_flags](../src/xtd.forms/include/xtd/forms/text_format_flags.h)                                                   | enumeration  | ![progress](pictures/progress100.png) |
-| [theme](../src/xtd.forms/include/xtd/forms/theme.h)                                                                           | class        | ![progress](pictures/progress25.png)  |
-| [theme_base](../src/xtd.forms/include/xtd/forms/theme_base.h)                                                                 | class        | ![progress](pictures/progress25.png)  |
-| [theme_renderers](../src/xtd.forms/include/xtd/forms/theme_renderers.h)                                                       | class        | ![progress](pictures/progress25.png)  |
-| [theme_style](../src/xtd.forms/include/xtd/forms/theme_style.h)                                                               | enumeration  | ![progress](pictures/progress100.png) |
 | [tick_style](../src/xtd.forms/include/xtd/forms/tick_style.h)                                                                 | enumeration  | ![progress](pictures/progress100.png) |
 | [timer](../src/xtd.forms/include/xtd/forms/timer.h)                                                                           | class        | ![progress](pictures/progress100.png) |
 | [toggle_button](../src/xtd.forms/include/xtd/forms/toggle_button.h)                                                           | class        | ![progress](pictures/progress100.png) |

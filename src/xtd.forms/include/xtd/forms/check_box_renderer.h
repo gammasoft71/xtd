@@ -12,7 +12,6 @@
 #include <xtd/drawing/system_fonts.h>
 #include "../forms_export.h"
 #include "text_format_flags.h"
-#include "theme_renderers.h"
 #include "application.h"
 #include "visual_styles/check_box_state.h"
 
@@ -68,7 +67,7 @@ namespace xtd {
       /// @}
       
     private:
-      static xtd::ustring default_theme() {return theme_renderers::current_theme().name();}
+      static xtd::ustring default_theme() {return application::style_sheet().theme().name();}
       static void draw_check_box_kde(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color);
       static void draw_check_box_kde_dark(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color);
       static void draw_check_box_kde_light(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color);
