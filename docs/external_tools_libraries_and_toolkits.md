@@ -2,10 +2,11 @@
 
 # External tools used:
 
-| Product                           | Copyright          | Description                       | Release |
-|-----------------------------------|--------------------|-----------------------------------|---------|
-| [cmake](https://www.cmake.org)    | Kitware            | Cross Platform Makefile Generator | 3.19    |
-| [Doxygen](http://www.doxygen.org) | Dimitri van Heesch | Documentation generator           | 1.8.20  |
+| Product                                                           | Copyright          | Description                       | Release |
+|-------------------------------------------------------------------|--------------------|-----------------------------------|---------|
+| [cmake](https://www.cmake.org)                                    | Kitware            | Cross Platform Makefile Generator | 3.19    |
+| [Doxygen](http://www.doxygen.org)                                 | Dimitri van Heesch | Documentation generator           | 1.8.20  |
+| [Doxygen Awesome](https://jothepro.github.io/doxygen-awesome-css) | jothepro           | Modern Doxygen theme              | 2.0.3   |
 
 # External libraries used:
 
