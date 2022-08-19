@@ -5,29 +5,20 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cstring>
 #include <unistd.h>
+#include <fstream>
 #include <sys/stat.h>
 
+using namespace std;
 using namespace xtd::native;
 
 int32_t file::copy(const std::string& source_file, const std::string& target_file) {
-  FILE* source = fopen(source_file.c_str(), "rb");
-  if (source == nullptr) return -1;
-  
-  FILE* target = fopen(target_file.c_str(), "wb");
-  if (target == nullptr) {
-    fclose(source);
-    return -1;
-  }
-  
-  size_t count = 0;
-  do {
-    uint8_t buffer[1024];
-    count = fread(buffer, 1, 1024, source);
-    if (count > 0) fwrite(buffer, 1, count, target);
-  } while (count == 1024);
-  
-  fclose(source);
-  fclose(target);
+  ifstream ifs {source_file, ios::binary};
+  if (!ifs) return -1;
+  ofstream ofs {target_file, ios::trunc | ios::binary};
+  if (!ofs) return -2;
+  ofs << ifs.rdbuf();
+  ifs.close();
+  ofs.close();
   return 0;
 }
 
