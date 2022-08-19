@@ -6,7 +6,6 @@
 #include <vector>
 #include "menu_item.h"
 #include "message.h"
-#include "theme_images.h"
 #include <xtd/drawing/size.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -200,45 +199,6 @@ namespace xtd {
       /// | 27       | help separator1    |
       /// | 28       | help about         |
       static std::unique_ptr<xtd::forms::main_menu> create_standard_items(std::vector<std::unique_ptr<menu_item>>& menu_items, const xtd::ustring& theme, const xtd::drawing::size& size, const xtd::event_handler& on_click);
-      /// @brief A factory to create a main menu with specified theme, image size and on click event handler.
-      /// @param menu_items an array xtd::forms::menu_item which will contain the created menu items.
-      /// @param theme The theme of menu item image.
-      /// @param image_size A xtd::drawing::size that represent the menu item image size.
-      /// @param on_click an event handler to respond on lick event.
-      /// @return new main menu instance.
-      /// @remarks The following table shows the items contained in the menu_items array :
-      /// | Position | menu item          |
-      /// |----------|--------------------|
-      /// | 0        | file               |
-      /// | 1        | file new           |
-      /// | 2        | file open          |
-      /// | 3        | file separator1    |
-      /// | 4        | file save          |
-      /// | 5        | file save_as       |
-      /// | 6        | file separator2    |
-      /// | 7        | file print         |
-      /// | 8        | file print_preview |
-      /// | 9        | file separator3    |
-      /// | 10       | file exit          |
-      /// | 11       | edit               |
-      /// | 12       | edit undo          |
-      /// | 13       | edit redo          |
-      /// | 14       | edit separator1    |
-      /// | 15       | edit cut           |
-      /// | 16       | edit copy          |
-      /// | 17       | edit paste         |
-      /// | 18       | edit separator2    |
-      /// | 19       | edit select_all    |
-      /// | 20       | tools              |
-      /// | 21       | tools customize    |
-      /// | 22       | tools options      |
-      /// | 23       | help               |
-      /// | 24       | help contents      |
-      /// | 25       | help index         |
-      /// | 26       | help search        |
-      /// | 27       | help separator1    |
-      /// | 28       | help about         |
-      static std::unique_ptr<xtd::forms::main_menu> create_standard_items(std::vector<std::unique_ptr<menu_item>>& menu_items, const xtd::forms::theme_images& theme, const xtd::drawing::size& size, const xtd::event_handler& on_click);
       /// @}
       
       /// @cond
@@ -250,8 +210,6 @@ namespace xtd {
       static std::unique_ptr<xtd::forms::main_menu> create_standard_items(std::vector<std::unique_ptr<menu_item>>& menu_items, const xtd::ustring& theme, on_click_type on_click) {return create_standard_items(menu_items, theme, xtd::event_handler(on_click));}
       template<typename on_click_type>
       static std::unique_ptr<xtd::forms::main_menu> create_standard_items(std::vector<std::unique_ptr<menu_item>>& menu_items, const xtd::ustring& theme, const xtd::drawing::size& size, on_click_type on_click) {return create_standard_items(menu_items, theme, size, xtd::event_handler(on_click));}
-      template<typename on_click_type>
-      static std::unique_ptr<xtd::forms::main_menu> create_standard_items(std::vector<std::unique_ptr<menu_item>>& menu_items, const xtd::forms::theme_images& theme, const xtd::drawing::size& size, on_click_type on_click) {return create_standard_items(menu_items, theme, size, xtd::event_handler(on_click));}
       /// @endcond
       
     protected:

@@ -1,6 +1,7 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/main_menu.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/menu_item.h"
 #include "../../../include/xtd/forms/main_menu.h"
 #include "../../../include/xtd/forms/menu_images.h"
@@ -58,22 +59,18 @@ void main_menu::wm_click(message& message) {
 }
 
 unique_ptr<main_menu> main_menu::create_standard_items(vector<unique_ptr<menu_item>>& menu_items, const xtd::event_handler& on_click) {
-  return create_standard_items(menu_items, theme_images::current_theme(), menu_images::size(), on_click);
+  return create_standard_items(menu_items, application::style_sheet().theme().name(), menu_images::size(), on_click);
 }
 
 unique_ptr<xtd::forms::main_menu> main_menu::create_standard_items(vector<unique_ptr<menu_item>>& menu_items, const drawing::size& size, const xtd::event_handler& on_click) {
-  return create_standard_items(menu_items, theme_images::current_theme(), size, on_click);
+  return create_standard_items(menu_items, application::style_sheet().theme().name(), size, on_click);
 }
 
 unique_ptr<xtd::forms::main_menu> main_menu::create_standard_items(vector<unique_ptr<menu_item>>& menu_items, const xtd::ustring& theme, const xtd::event_handler& on_click) {
-  return create_standard_items(menu_items, theme_images::current_theme(), menu_images::size(), on_click);
+  return create_standard_items(menu_items, application::style_sheet().theme().name(), menu_images::size(), on_click);
 }
 
 unique_ptr<xtd::forms::main_menu> main_menu::create_standard_items(vector<unique_ptr<menu_item>>& menu_items, const xtd::ustring& theme, const drawing::size& size, const xtd::event_handler& on_click) {
-  return create_standard_items(menu_items, theme_images::theme_from_name(theme), size, on_click);
-}
-
-unique_ptr<xtd::forms::main_menu> main_menu::create_standard_items(vector<unique_ptr<menu_item>>& menu_items, const xtd::forms::theme_images& theme, const drawing::size& size, const xtd::event_handler& on_click) {
   auto file_new_menu_item = make_unique<menu_item>(system_texts::new_(), on_click, menu_images::file_new(theme, size), shortcut::cmd_n);
   auto file_open_menu_item = make_unique<menu_item>(system_texts::open(), on_click, menu_images::file_open(theme, size), shortcut::cmd_o);
   auto file_separator1_menu_item = make_unique<menu_item>("-");
