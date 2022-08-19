@@ -1,7 +1,7 @@
 #include <xtd/io/path.h>
 #include "../../../include/xtd/forms/country.h"
 #include "../../../include/xtd/forms/countries.h"
-#include "../../../include/xtd/forms/theme_images.h"
+#include "../../../include/xtd/forms/images.h"
 
 using namespace std;
 using namespace xtd;
@@ -20,7 +20,7 @@ const image country::flag() const {
 }
 
 const image country::flag_squared() const {
-  return theme_images::current_theme().from_name(ustring::format("flag-{}", alpha_2_code().to_lower()), drawing::size {1024, 1024});
+  return images::from_name(ustring::format("flag-{}", alpha_2_code().to_lower()), drawing::size {1024, 1024});
 }
 
 country country::from_name(const xtd::ustring& name) {
