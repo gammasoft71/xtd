@@ -475,7 +475,7 @@ namespace xtd {
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF9ACD32. This field is constant.
       static const xtd::drawing::color yellow_green;
       
-      /// @Brief Represent the lightness threshold.
+      /// @brief Represent the lightness threshold.
       /// @remarks If color::get_lightness() less than lightness_threshold is dark color; otherwise is light color.
       static constexpr double lightness_threshold = 0.5;
       /// @}
@@ -558,7 +558,7 @@ namespace xtd {
       /// @remarks For internal use only, needed for system_colors.
       intptr_t handle() const {return handle_;}
       
-      /// @Brief Gets a value indicating wheter this xtd::drawing::color structure is dark color.
+      /// @brief Gets a value indicating wheter this xtd::drawing::color structure is dark color.
       /// @remarks return true if dark color; otherwise false.
       bool is_dark() const {return get_lightness() < lightness_threshold;}
       
@@ -571,7 +571,7 @@ namespace xtd {
       /// @remarks This property does not do a comparison of the ARGB values. Therefore, when the is_known_color property is applied to a xtd::drawing::color structure that is created by using the xtd::drawing::color::from_argb method, is_known_color returns false, even if the ARGB value matches the ARGB value of a predefined color.
       bool is_known_color() const {return known_color_ != (xtd::drawing::known_color)0;}
       
-      /// @Brief Gets a value indicating wheter this xtd::drawing::color structure is light color.
+      /// @brief Gets a value indicating wheter this xtd::drawing::color structure is light color.
       /// @remarks return true if light color; otherwise false.
       bool is_light() const {return get_lightness() >= lightness_threshold;}
       
