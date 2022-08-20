@@ -23,7 +23,7 @@ namespace xtd {
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing drawing
-      /// @remarks The following illustration shows an ellipse filled with a horizontal hatch pattern.
+      /// @remarks The following illustration shows a rectangle filled with a diagonal brick hatch pattern.
       /// @image html hatch_brush.png
       /// @par Examples
       /// The following code example demonstrates the use of hatch_brush class.
