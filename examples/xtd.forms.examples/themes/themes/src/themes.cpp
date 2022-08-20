@@ -277,11 +277,11 @@ protected:
   void on_style_sheet_changed(const event_args& e) override {
     form::on_style_sheet_changed(e);
     diagnostics::debug::write_line(ustring::format("Style sheet changed : {}", application::style_sheet().theme().name()));
-    // Refresh menu to set style sheet images
+    // Refreshes the menu to use the images of the current style sheet
     menu(nullptr);
     main_menu1 = main_menu::create_standard_items(menu_items, {*this, &form1::menu_click});
     menu(*main_menu1);
-    // Refresh tool_bar to set style sheet images
+    // Refreshes the toolbar to use the images of the current style sheet
     tool_bar1.image_list().images().clear();
     tool_bar1.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});
     tool_bar1.buttons().clear();
