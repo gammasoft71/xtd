@@ -77,13 +77,17 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected methods
+      /// @name Protetced properties
       
       /// @{
       forms::create_params create_params() const override;
-      drawing::color default_back_color() const override {return application::style_sheet().system_colors().window();}
-      drawing::color default_fore_color() const override {return application::style_sheet().system_colors().window_text();}
+      drawing::color default_back_color() const override;
+      drawing::color default_fore_color() const override;
+      /// @}
+
+      /// @name Protected methods
       
+      /// @{
       /// @brief Raises the date_time_picker::value_changed event.
       /// @param e An event_args that contains the event data.
       virtual void on_value_changed(const event_args& e);

@@ -137,13 +137,7 @@ namespace xtd {
       /// @return Current domain_up_down.
       virtual domain_up_down& wrap(bool value);
       /// @}
-      
-      /// @name Methods
-      
-      /// @{
-      forms::create_params create_params() const override;
-      /// @}
-      
+            
       /// @name Events
       
       /// @{
@@ -159,10 +153,17 @@ namespace xtd {
       /// @}
       
     protected:
-      drawing::color default_back_color() const override {return application::style_sheet().system_colors().window();}
+      /// @name Protetced properties
       
-      drawing::color default_fore_color() const override {return application::style_sheet().system_colors().window_text();}
+      /// @{
+      forms::create_params create_params() const override;
+      drawing::color default_back_color() const override;
+      drawing::color default_fore_color() const override;
+      /// @}
+
+      /// @name Protected methods
       
+      /// @{
       void on_handle_created(const event_args& e) override;
       
       /// @brief Raises the domain_up_down::selected_item_changed event.
@@ -170,7 +171,8 @@ namespace xtd {
       virtual void on_selected_item_changed(const event_args& e);
       
       void on_text_changed(const event_args& e) override;
-      
+      /// @}
+
       /// @cond
       object_collection items_;
       size_t selected_index_ = npos;

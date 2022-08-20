@@ -36,8 +36,6 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      drawing::size default_size() const override {return {150, 100};}
-      
       /// @brief Gets a value indicating the horizontal or vertical orientation of the split_container panels.
       /// @return One of the orientation values. The default is vertical.
       virtual xtd::forms::orientation orientation() const {return orientation_;}
@@ -111,6 +109,12 @@ namespace xtd {
       /// @}
       
     protected:
+      /// @name Protected methods
+      
+      /// @{
+      drawing::size default_size() const override {return {150, 100};}
+      /// @}
+
       /// @name Protected methods
       
       /// @{

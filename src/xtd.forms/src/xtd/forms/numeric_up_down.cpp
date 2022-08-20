@@ -14,16 +14,6 @@ numeric_up_down::numeric_up_down() {
   control_appearance(forms::control_appearance::system);
 }
 
-forms::create_params numeric_up_down::create_params() const {
-  forms::create_params create_params = up_down_base::create_params();
-  
-  create_params.class_name("numericupdown");
-  
-  if (wrapped_) create_params.style(create_params.style() | UDS_WRAP);
-  
-  return create_params;
-}
-
 numeric_up_down& numeric_up_down::decimal_place(int32_t value) {
   if (decimal_place_ != value) {
     decimal_place_ = value;
@@ -77,6 +67,24 @@ numeric_up_down& numeric_up_down::wrapped(bool value) {
     post_recreate_handle();
   }
   return *this;
+}
+
+drawing::color numeric_up_down::default_back_color() const {
+  return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().window();
+}
+
+drawing::color numeric_up_down::default_fore_color() const {
+  return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().window_text();
+}
+
+forms::create_params numeric_up_down::create_params() const {
+  forms::create_params create_params = up_down_base::create_params();
+  
+  create_params.class_name("numericupdown");
+  
+  if (wrapped_) create_params.style(create_params.style() | UDS_WRAP);
+  
+  return create_params;
 }
 
 void numeric_up_down::on_handle_created(const event_args& e) {

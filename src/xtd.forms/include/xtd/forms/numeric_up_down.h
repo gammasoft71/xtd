@@ -120,13 +120,17 @@ namespace xtd {
       /// @}
       
     protected:
+      /// @name Protected properties
+      
+      /// @{
+      forms::create_params create_params() const override;
+      drawing::color default_back_color() const override;
+      drawing::color default_fore_color() const override;
+      /// @}
+
       /// @name Protected methods
       
       /// @{
-      drawing::color default_back_color() const override {return application::style_sheet().system_colors().window();}
-      drawing::color default_fore_color() const override {return application::style_sheet().system_colors().window_text();}
-      forms::create_params create_params() const override;
-      
       /// @brief Overrides control::on_handle_created(const event_args&)
       /// @param e A EventArgs that contains the event data.
       void on_handle_created(const event_args& e) override;

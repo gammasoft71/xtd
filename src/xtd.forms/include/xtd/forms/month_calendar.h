@@ -408,13 +408,17 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected methods
+      /// @name Protected properties
       
       /// @{
       xtd::forms::create_params create_params() const override;
-      xtd::drawing::color default_back_color() const override {return xtd::forms::application::style_sheet().system_colors().window();}
-      xtd::drawing::color default_fore_color() const override {return xtd::forms::application::style_sheet().system_colors().window_text();}
+      xtd::drawing::color default_back_color() const override;
+      xtd::drawing::color default_fore_color() const override;
+      /// @}
+
+      /// @name Protected methods
       
+      /// @{
       /// @brief Raises the xtd::forms::month_calendar::date_changed event.
       /// @param e A xtd::forms::date_range_event_args that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate. For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.

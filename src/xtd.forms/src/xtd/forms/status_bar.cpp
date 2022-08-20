@@ -74,14 +74,6 @@ control& status_bar::dock(dock_style dock) {
   return *this;
 }
 
-xtd::drawing::font status_bar::default_font() const {
-  return xtd::drawing::system_fonts::status_font();
-}
-
-drawing::size status_bar::default_size() const {
-  return native::control::default_size("toolbar");
-}
-
 const status_bar::status_bar_panel_collection& status_bar::panels() const {
   return data_->panels;
 }
@@ -140,6 +132,14 @@ forms::create_params status_bar::create_params() const {
   if (data_->sizing_grip) create_params.style(create_params.style() | SBARS_SIZEGRIP);
   
   return create_params;
+}
+
+xtd::drawing::font status_bar::default_font() const {
+  return xtd::drawing::system_fonts::status_font();
+}
+
+drawing::size status_bar::default_size() const {
+  return native::control::default_size("toolbar");
 }
 
 void status_bar::on_control_appearance_changed(const xtd::event_args&) {

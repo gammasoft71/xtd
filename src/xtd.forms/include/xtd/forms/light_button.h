@@ -162,6 +162,8 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
+      forms::create_params create_params() const override;
+
       /// @brief Gets state.
       /// @return One of xtd::forms::visual_styles::push_button_state values.
       xtd::forms::visual_styles::check_box_state state() const noexcept {return data_->state;}
@@ -170,8 +172,6 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      forms::create_params create_params() const override;
-      
       drawing::size measure_control() const override;
       
       /// @brief Raises the light_button::checked_changed event.

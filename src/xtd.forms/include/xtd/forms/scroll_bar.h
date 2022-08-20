@@ -97,11 +97,15 @@ namespace xtd {
       scroll_bar() = default;
       /// @}
       
-      /// @name Protected methods
+      /// @name Protected properties
       
       /// @{
       xtd::forms::create_params create_params() const override;
+      /// @}
+
+      /// @name Protected methods
       
+      /// @{
       void on_handle_created(const event_args& e) override;
       
       /// @brief Raises the xtd::forms::scroll_bar::scroll event.

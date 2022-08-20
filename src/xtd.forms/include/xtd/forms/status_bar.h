@@ -65,10 +65,6 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      xtd::drawing::font default_font() const override;
-      
-      drawing::size default_size() const override;
-      
       dock_style dock() const override;
       control& dock(dock_style dock) override;
       
@@ -135,7 +131,9 @@ namespace xtd {
       
       /// @{
       forms::create_params create_params() const override;
-      /// @}
+      xtd::drawing::font default_font() const override;
+      drawing::size default_size() const override;      
+     /// @}
       
       /// @name Protetced methods
       

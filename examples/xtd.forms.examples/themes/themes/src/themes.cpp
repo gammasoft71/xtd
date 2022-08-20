@@ -274,6 +274,20 @@ protected:
     e.cancel(message_box::show(*this, "Are you sure you want exit?", "Close Form", message_box_buttons::yes_no, message_box_icon::question) == dialog_result::no);
   };
   
+  void on_style_sheet_changed(const event_args& e) override {
+    form::on_style_sheet_changed(e);
+    diagnostics::debug::write_line(ustring::format("Style sheet changed : {}", application::style_sheet().theme().name()));
+    // Refresh menu to set style sheet images
+    menu(nullptr);
+    main_menu1 = main_menu::create_standard_items(menu_items, {*this, &form1::menu_click});
+    menu(*main_menu1);
+    // Refresh tool_bar to set style sheet images
+    tool_bar1.image_list().images().clear();
+    tool_bar1.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});
+    tool_bar1.buttons().clear();
+    tool_bar1.buttons().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, help_tool_bar_button});
+  }
+  
 private:
   void menu_click(object& sender, const event_args& e) {
     ustring file_name;

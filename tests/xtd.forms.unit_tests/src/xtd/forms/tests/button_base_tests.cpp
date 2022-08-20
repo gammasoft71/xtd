@@ -10,12 +10,25 @@ using namespace xtd::tunit;
 
 namespace xtd::forms::tests {
   class test_class_(button_base_tests) {
+    class button_base_for_test : public button_base {
+    public:
+      button_base_for_test() = default;
+
+      bool on_image_changed_raised = false;
+      void on_image_changed(const xtd::event_args &e) override {
+        button_base::on_image_changed(e);
+        on_image_changed_raised = true;
+      }
+
+      using button_base::default_back_color;
+      using button_base::default_cursor;
+      using button_base::default_font;
+      using button_base::default_fore_color;
+      using button_base::default_size;
+    };
+
   public:
     void test_method_(constructor) {
-      class button_base_for_test : public button_base {
-      public:
-        button_base_for_test() = default;
-      };
       button_base_for_test button;
       assert::are_equal(anchor_styles::left | anchor_styles::top, button.anchor(), csf_);
       assert::are_equal(drawing::point::empty, button.auto_scroll_point(), csf_);
@@ -93,20 +106,12 @@ namespace xtd::forms::tests {
     }
     
     void test_method_(auto_elipsis_without_parent) {
-      class button_base_for_test : public button_base {
-      public:
-        button_base_for_test() = default;
-      };
       button_base_for_test button;
       button.auto_ellipsis(true);
       assert::is_true(button.auto_ellipsis(), csf_);
     }
     
     void test_method_(auto_elipsis_with_parent) {
-      class button_base_for_test : public button_base {
-      public:
-        button_base_for_test() = default;
-      };
       forms::form form;
       button_base_for_test button;
       button.parent(form);
@@ -115,20 +120,12 @@ namespace xtd::forms::tests {
     }
     
     void test_method_(auto_size_without_parent) {
-      class button_base_for_test : public button_base {
-      public:
-        button_base_for_test() = default;
-      };
       button_base_for_test button;
       button.auto_size(true);
       assert::is_true(button.auto_size(), csf_);
     }
     
     void test_method_(auto_size_with_parent) {
-      class button_base_for_test : public button_base {
-      public:
-        button_base_for_test() = default;
-      };
       forms::form form;
       button_base_for_test button;
       button.parent(form);
@@ -137,10 +134,6 @@ namespace xtd::forms::tests {
     }
     
     void test_method_(control_appearance_without_parent) {
-      class button_base_for_test : public button_base {
-      public:
-        button_base_for_test() = default;
-      };
       button_base_for_test button;
       button.control_appearance(xtd::forms::control_appearance::system);
       assert::are_equal(xtd::forms::control_appearance::system, button.control_appearance(), csf_);
@@ -152,10 +145,6 @@ namespace xtd::forms::tests {
     }
     
     void test_method_(control_appearance_with_parent) {
-      class button_base_for_test : public button_base {
-      public:
-        button_base_for_test() = default;
-      };
       forms::form form;
       button_base_for_test button;
       button.parent(form);
@@ -169,10 +158,6 @@ namespace xtd::forms::tests {
     }
 
     void test_method_(flat_appearance_without_parent) {
-      class button_base_for_test : public button_base {
-      public:
-        button_base_for_test() = default;
-      };
       button_base_for_test button;
       auto appearance = flat_button_appearance().border_color(drawing::color::spring_green);
       button.flat_appearance(appearance);
@@ -181,10 +166,6 @@ namespace xtd::forms::tests {
     }
     
     void test_method_(flat_appearance_with_parent) {
-      class button_base_for_test : public button_base {
-      public:
-        button_base_for_test() = default;
-      };
       forms::form form;
       button_base_for_test button;
       button.parent(form);
@@ -195,10 +176,6 @@ namespace xtd::forms::tests {
     }
 
     void test_method_(flat_style_without_parent) {
-      class button_base_for_test : public button_base {
-      public:
-        button_base_for_test() = default;
-      };
       button_base_for_test button;
       button.flat_style(xtd::forms::flat_style::flat);
       assert::are_equal(xtd::forms::flat_style::flat, button.flat_style(), csf_);
@@ -210,10 +187,6 @@ namespace xtd::forms::tests {
     }
     
     void test_method_(flat_style_with_parent) {
-      class button_base_for_test : public button_base {
-      public:
-        button_base_for_test() = default;
-      };
       forms::form form;
       button_base_for_test button;
       button.parent(form);
@@ -228,10 +201,6 @@ namespace xtd::forms::tests {
 
     void test_method_(image_changed) {
       bool image_changed_raised = false;
-      class button_base_for_test : public button_base {
-      public:
-        button_base_for_test() = default;
-      };
       button_base_for_test button;
       button.image_changed += [&]() {
         image_changed_raised = true;
@@ -244,15 +213,6 @@ namespace xtd::forms::tests {
     }
     
     void test_method_(on_image_changed) {
-      class button_base_for_test : public button_base {
-      public:
-        button_base_for_test() = default;
-        bool on_image_changed_raised = false;
-        void on_image_changed(const xtd::event_args &e) override {
-          button_base::on_image_changed(e);
-          on_image_changed_raised = true;
-        }
-      };
       button_base_for_test button;
       
       button.image(image::empty);

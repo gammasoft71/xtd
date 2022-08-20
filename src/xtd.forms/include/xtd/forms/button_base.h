@@ -133,13 +133,24 @@ namespace xtd {
       /// @}
       
     protected:
+      /// @name Protected constructor
+      
+      /// @{
       /// @brief Initializes a new instance of the ButtonBase class.
       button_base();
+      /// @}
+
+      /// @name Protected properties
       
+      /// @{
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
       forms::create_params create_params() const override;
+      /// @}
+
+      /// @name Protected methods
       
+      /// @{
       /// @brief Measure this control.
       /// @return The drawing::size size of this control.
       /// @remarks This method is used when auto_size is true.
@@ -211,7 +222,8 @@ namespace xtd {
         if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
         control::on_text_changed(e);
       }
-      
+      /// @}
+
       /// @cond
       text_format_flags to_text_format_flags(content_alignment text_align);
       xtd::drawing::rectangle compute_image_bounds() {return compute_image_bounds({0, 0, width(), height()});}

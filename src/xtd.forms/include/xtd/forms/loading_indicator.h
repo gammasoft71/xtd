@@ -59,10 +59,15 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected method
+      /// @name Protected properties
       
       /// @{
       xtd::forms::create_params create_params() const override;
+      /// @}
+
+      /// @name Protected method
+      
+      /// @{
       xtd::drawing::size measure_control() const override;
       void on_handle_created(const event_args& e) override;
       void on_paint(xtd::forms::paint_event_args& e) override;

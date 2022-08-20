@@ -45,7 +45,7 @@ namespace xtd {
       up_down_base() = default;
       /// @}
       
-      /// @name Protected methods
+      /// @name Protected properties
       
       /// @{
       forms::create_params create_params() const override;

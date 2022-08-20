@@ -9,9 +9,20 @@ using namespace xtd::tunit;
 
 namespace xtd::forms::tests {
   class test_class_(radio_button_tests) {
+    class radio_button_for_test : public radio_button {
+    public:
+      radio_button_for_test() = default;
+      
+      using radio_button::default_back_color;
+      using radio_button::default_cursor;
+      using radio_button::default_font;
+      using radio_button::default_fore_color;
+      using radio_button::default_size;
+    };
+    
   public:
     void test_method_(constructor) {
-      forms::radio_button radio_button;
+      radio_button_for_test radio_button;
       assert::are_equal(anchor_styles::left | anchor_styles::top, radio_button.anchor(), csf_);
       assert::are_equal(drawing::point::empty, radio_button.auto_scroll_point(), csf_);
       assert::is_false(radio_button.auto_size(), csf_);

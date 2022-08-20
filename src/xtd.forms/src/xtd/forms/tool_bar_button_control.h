@@ -16,8 +16,6 @@ public:
     }
   }
   
-  xtd::drawing::font default_font() const override {return xtd::drawing::system_fonts::tool_font();}
-  
   void drop_down_menu(xtd::forms::context_menu* value) {
     if (data_->drop_down_menu != value) {
       data_->drop_down_menu = value;
@@ -122,6 +120,8 @@ public:
   void tool_bar_button(tool_bar_button_ref value) {data_->tool_bar_button = value;}
   
 protected:
+  xtd::drawing::font default_font() const override {return xtd::drawing::system_fonts::tool_font();}
+  
   void on_click(const xtd::event_args& e) override {
     button::on_click(e);
     if (data_->style == tool_bar_button_style::drop_down_button && drop_down_rectangle().contains(point_to_client(mouse_position()))) {

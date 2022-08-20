@@ -9,9 +9,20 @@ using namespace xtd::tunit;
 
 namespace xtd::forms::tests {
   class test_class_(check_box_tests) {
+    class check_box_for_test : public check_box {
+    public:
+      check_box_for_test() = default;
+      
+      using check_box::default_back_color;
+      using check_box::default_cursor;
+      using check_box::default_font;
+      using check_box::default_fore_color;
+      using check_box::default_size;
+    };
+    
   public:
     void test_method_(constructor) {
-      forms::check_box check_box;
+      check_box_for_test check_box;
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor(), csf_);
       assert::are_equal(drawing::point::empty, check_box.auto_scroll_point(), csf_);
       assert::is_false(check_box.auto_size(), csf_);
@@ -89,7 +100,7 @@ namespace xtd::forms::tests {
     
     void test_method_(set_client_size) {
       form form;
-      check_box check_box;
+      check_box_for_test check_box;
       check_box.parent(form);
       check_box.client_size({100, 50});
       assert::are_equal(size(100, 50), check_box.client_size(), csf_);
@@ -97,7 +108,7 @@ namespace xtd::forms::tests {
     
     void test_method_(set_size) {
       form form;
-      check_box check_box;
+      check_box_for_test check_box;
       check_box.parent(form);
       check_box.size({100, 50});
       assert::are_equal(size(100, 50), check_box.size(), csf_);

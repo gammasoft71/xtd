@@ -89,11 +89,15 @@ namespace xtd {
       scrollable_control();
       /// @}
       
-      /// @name Protected methods
+      /// @name Protected properties
       
       /// @{
       forms::create_params create_params() const override;
+      /// @}
+
+      /// @name Protected methods
       
+      /// @{
       void on_layout(const event_args& e) override {
         control::on_layout(e);
         if (auto_scroll_) {

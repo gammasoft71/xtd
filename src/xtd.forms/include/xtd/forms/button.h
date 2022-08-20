@@ -143,6 +143,8 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
+      forms::create_params create_params() const override;
+
       /// @brief Gets state.
       /// @return One of xtd::forms::visual_styles::push_button_state values.
       xtd::forms::visual_styles::push_button_state state() const noexcept {return data_->state;}
@@ -151,8 +153,6 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      forms::create_params create_params() const override;
-      
       drawing::size measure_control() const override;
       
       void on_click(const event_args& e) override;

@@ -66,9 +66,7 @@ namespace xtd {
         }
         return *this;
       }
-      
-      drawing::size default_size() const override {return {13, 25};}
-      
+            
       /// @brief Gets a value indicate if background segments are shown.
       /// @return true if background segments are shown; otherwise false
       virtual bool show_back_segment() const {return show_back_segment_;}
@@ -139,6 +137,12 @@ namespace xtd {
       /// @}
       
     protected:
+      /// @name Protected properties
+      
+      /// @{
+      drawing::size default_size() const override {return {13, 25};}
+      /// @}
+
       /// @name Protected methods
       
       /// @{

@@ -63,10 +63,15 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected methodds
+      /// @name Protected properties
       
       /// @{
       forms::create_params create_params() const override;
+      /// @}
+
+      /// @name Protected methodds
+      
+      /// @{
       void on_layout(const event_args& e) override;
       void on_paint(paint_event_args& e) override;
       /// @}

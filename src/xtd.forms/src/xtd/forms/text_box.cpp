@@ -81,6 +81,14 @@ text_box& text_box::use_system_password_char(bool value) {
   return *this;
 }
 
+drawing::color text_box::default_back_color() const {
+  return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().text_box();
+}
+
+drawing::color text_box::default_fore_color() const {
+  return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().text_box_text();
+}
+
 forms::create_params text_box::create_params() const {
   forms::create_params create_params = text_box_base::create_params();
   

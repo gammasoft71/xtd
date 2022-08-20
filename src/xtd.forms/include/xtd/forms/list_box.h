@@ -58,10 +58,6 @@ namespace xtd {
       /// @return Current list_box.
       virtual list_box& border_style(forms::border_style border_style);
       
-      drawing::color default_back_color() const override {return application::style_sheet().system_colors().window();}
-      
-      drawing::color default_fore_color() const override {return application::style_sheet().system_colors().window_text();}
-      
       /// @brief Gets the items of the list_box.
       /// @return An list_box::object_collection representing the items in the list_box.
       /// @remarks This property enables you to obtain a reference to the list of items that are currently stored in the list_box. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
@@ -146,11 +142,18 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protetced methods
+      /// @name Protetced properties
       
       /// @{
       bool allow_selection() override {return data_->selection_mode != forms::selection_mode::none;}
       forms::create_params create_params() const override;
+      drawing::color default_back_color() const override;
+      drawing::color default_fore_color() const override;
+      /// @}
+      ///
+      /// @name Protetced methods
+      
+      /// @{
       void on_handle_created(const event_args& e) override;
       void on_selected_value_changed(const event_args& e) override;
       void wnd_proc(message& message) override;

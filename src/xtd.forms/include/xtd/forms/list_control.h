@@ -142,15 +142,19 @@ namespace xtd {
       list_control();
       /// @}
       
+      /// @name Protetced properties
+      
+      /// @{
+      drawing::color default_back_color() const override;
+      drawing::color default_fore_color() const override;
+      /// @}
+      
       /// @name Protected methods
       
       /// @{
       /// @brief Gets a value indicating whether the list enables selection of list items.
       /// @return true if the list enables list item selection; otherwise, false. The default is true.
       virtual bool allow_selection() {return true;}
-      
-      virtual drawing::color default_back_color() const override {return application::style_sheet().system_colors().window();}
-      virtual drawing::color default_fore_color() const override {return application::style_sheet().system_colors().window_text();}
       
       /// @brief Raises the list_control::selected_index_changed event.
       virtual void on_selected_index_changed(const event_args& e) {selected_index_changed(*this, e);}
