@@ -262,11 +262,15 @@ public:
     themes_choice.location({70, 530});
     themes_choice.width(560);
     themes_choice.anchor(anchor_styles::left | anchor_styles::right | anchor_styles::bottom);
-    themes_choice.items().push_back_range({"GNOME (dark)", "GNOME (light)", "KDE (dark)", "KDE (light)", "macOS (dark)", "macOS (light)", "Windows (dark)", "Windows (light)", "default"});
+    themes_choice.items().push_back("current theme");
+    auto names = application::style_sheet_names();
+    sort(names.begin(), names.end());
+    themes_choice.items().push_back_range(names);
     themes_choice.selected_index_changed += [&] {
-      application::style_sheet(application::get_style_sheet_from_name(themes_choice.selected_item().value()));
+      if (themes_choice.selected_index() == 0) application::style_sheet(application::system_style_sheet());
+      else application::style_sheet(application::get_style_sheet_from_name(themes_choice.selected_item().value()));
     };
-    themes_choice.selected_item(style_sheets::style_sheet::system_style_sheet().theme().name());
+    themes_choice.selected_index(0);
   }
   
 protected:
@@ -276,7 +280,7 @@ protected:
   
   void on_style_sheet_changed(const event_args& e) override {
     form::on_style_sheet_changed(e);
-    diagnostics::debug::write_line(ustring::format("Style sheet changed : {}", application::style_sheet().theme().name()));
+    diagnostics::debug::write_line(ustring::format("The style sheet has been changed to : {}", application::style_sheet().theme().name()));
     // Refreshes the menu to use the images of the current style sheet
     menu(nullptr);
     main_menu1 = main_menu::create_standard_items(menu_items, {*this, &form1::menu_click});
