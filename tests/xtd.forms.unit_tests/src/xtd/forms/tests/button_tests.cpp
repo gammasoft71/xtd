@@ -9,9 +9,20 @@ using namespace xtd::tunit;
 
 namespace xtd::forms::tests {
   class test_class_(button_tests) {
+    class button_for_test : public button {
+    public:
+      button_for_test() = default;
+      
+      using button::default_back_color;
+      using button::default_cursor;
+      using button::default_font;
+      using button::default_fore_color;
+      using button::default_size;
+    };
+    
   public:
     void test_method_(constructor) {
-      forms::button button;
+      button_for_test button;
       assert::are_equal(anchor_styles::left | anchor_styles::top, button.anchor(), csf_);
       assert::are_equal(drawing::point::empty, button.auto_scroll_point(), csf_);
       assert::is_false(button.auto_size(), csf_);
@@ -89,7 +100,7 @@ namespace xtd::forms::tests {
 
     void test_method_(perform_click_form_button) {
       form form;
-      forms::button button;
+      button_for_test button;
       button.parent(form);
       int click_control_check = 0;
       button.click += [&] {
@@ -116,7 +127,7 @@ namespace xtd::forms::tests {
     
     void test_method_(set_client_size) {
       form form;
-      forms::button button;
+      button_for_test button;
       button.parent(form);
       button.client_size({100, 50});
       assert::are_equal(size(100, 50), button.client_size(), csf_);
@@ -124,7 +135,7 @@ namespace xtd::forms::tests {
     
     void test_method_(set_size) {
       form form;
-      forms::button button;
+      button_for_test button;
       button.parent(form);
       button.size({100, 50});
       assert::are_equal(size(100, 50), button.size(), csf_);

@@ -321,6 +321,14 @@ void month_calendar::update_bolded_dates() {
   native::month_calendar::monthly_bolded_dates(handle(), data_->bolded_dates);
 }
 
+xtd::drawing::color month_calendar::default_back_color() const {
+  return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().window();
+}
+
+xtd::drawing::color month_calendar::default_fore_color() const {
+  return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().window_text();
+}
+
 forms::create_params month_calendar::create_params() const {
   forms::create_params create_params = control::create_params();
   create_params.class_name("monthcalendar");

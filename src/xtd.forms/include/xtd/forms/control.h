@@ -53,7 +53,10 @@ namespace xtd {
     /// @cond
     class application;
     class context_menu;
+    class horizontal_layout_panel;
     class screen;
+    class vertical_layout_panel;
+
     /// @endcond
     
     /// @brief Defines the base class for controls, which are components with visual representation.
@@ -195,7 +198,7 @@ namespace xtd {
       /// @param text The text displayed by the control.
       /// @remarks The xtd::forms::control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the control constructor sets the initial xtd::forms::control::text property value to the text parameter value. The constructor also adds the control to the parent control's control::control_collection.
-      explicit control(const control& parent, const xtd::ustring& text) : control() {
+      control(const control& parent, const xtd::ustring& text) : control() {
         this->parent(parent);
         this->text(text);
       }
@@ -207,7 +210,7 @@ namespace xtd {
       /// @param height The height of the control, in pixels. The value is assigned to the height property.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the control constructor sets the initial xtd::forms::control::text property value to the text parameter value. The initial xtd::forms::control::size and xtd::forms::control::location of the control are determined by the left, top, width and height parameter values.
-      explicit control(const xtd::ustring& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
+      control(const xtd::ustring& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
         this->text(text);
         this->left(left);
         this->top(top);
@@ -223,7 +226,7 @@ namespace xtd {
       /// @param height The height of the control, in pixels. The value is assigned to the xtd::forms::control::height property.
       /// @remarks The xtd::forms::control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the xtd::forms::control constructor sets the initial xtd::forms::control::text property value to the text parameter value. The constructor also adds the control to the xtd::forms::control::parent control's control::control_collection. The initial xtd::forms::control::size and xtd::forms::control::location of the control are determined by the left, top, width and height parameter values.
-      explicit control(const control& parent, const xtd::ustring& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
+      control(const control& parent, const xtd::ustring& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
         this->parent(parent);
         this->text(text);
         this->left(left);
@@ -439,27 +442,6 @@ namespace xtd {
       /// @cond
       virtual control& cursor(std::nullptr_t);
       /// @endcond
-      
-      /// @brief Gets the default background color of the control.
-      /// @return The default background color of the control. The default is control.
-      /// @remarks This is the default back_color property value of a generic top-level control. Derived classes can have different defaults.
-      virtual drawing::color default_back_color() const {return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().control();}
-      
-      /// @brief Gets the default cursor for the control.
-      /// @return An object of type xtd::forms::cursor representing the current default cursor.
-      virtual forms::cursor default_cursor() const {return cursors::default_cursor();}
-      
-      /// @brief Gets the default font of the control.
-      /// @return The default font of the control. The value returned will vary depending on the user's operating system the local culture setting of their system.
-      virtual drawing::font default_font() const;
-      
-      /// @brief Gets the default foreground color of the control.
-      /// @return The default foreground color of the control. The default is control_text.
-      virtual drawing::color default_fore_color() const {return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().control_text();}
-      
-      /// @brief Gets the default size of the control.
-      /// @return The default size of the control.
-      virtual drawing::size default_size() const;
       
       /// @brief Gets the rectangle that represents the display area of the control.
       /// @return A rectangle that represents the display area of the control.
@@ -716,7 +698,11 @@ namespace xtd {
       /// @param value The xtd::forms::style_sheets::style-sheet style sheet associate to this current instance of xtd::forms::control.
       /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
       virtual control& style_sheet(const xtd::ustring& value);
-      
+      /// @brief Resets the contol style sheet.
+      /// @param value The xtd::forms::style_sheets::style-sheet style sheet associate to this current instance of xtd::forms::control.
+      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+      virtual control& style_sheet(std::nullptr_t);
+
       /// @brief Gets a value indicating whether the user can give the focus to this control using the TAB key.
       /// @return true if the user can give the focus to the control using the TAB key; otherwise, false. The default is true.
       /// @note Note: This property will always return true for an instance of the xtd::forms::form class.
@@ -1550,6 +1536,12 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> size_changed;
       
+      /// @brief Occurs when the value of the xtd::forms::control::style_sheet property changes or when xtd::application::style_sheet property changes.
+      /// @ingroup events
+      /// @remarks This event is raised if the xtd::forms::control::style_sheet property is changed or when xtd::application::style_sheet property is changed by either a programmatic modification or user interaction.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      event<control, event_handler> style_sheet_changed;
+
       /// @brief Occurs when the xtd::forms::control::tab_stop property value changes.
       /// @ingroup events
       /// @remarks This event is raised if the xtd::forms::control::tab_stop property is changed by either a programmatic modification or user interaction.
@@ -1572,9 +1564,12 @@ namespace xtd {
     protected:
       friend class application;
       friend class context_menu;
+      friend class horizontal_layout_panel;
       friend class paint_event_args;
       friend class screen;
-      
+      friend class vertical_layout_panel;
+      friend class style_sheets::style_sheet;
+
       /// @name Protected properties
       
       /// @{
@@ -1588,6 +1583,27 @@ namespace xtd {
       /// @par Notes for inheritors
       /// When overriding the create_params property in a derived class, use the base class's create_params property to extend the base implementation. Otherwise, you must provide all the implementation.
       virtual forms::create_params create_params() const;
+      
+      /// @brief Gets the default background color of the control.
+      /// @return The default background color of the control. The default is control.
+      /// @remarks This is the default back_color property value of a generic top-level control. Derived classes can have different defaults.
+      virtual drawing::color default_back_color() const;
+      
+      /// @brief Gets the default cursor for the control.
+      /// @return An object of type xtd::forms::cursor representing the current default cursor.
+      virtual forms::cursor default_cursor() const;
+      
+      /// @brief Gets the default font of the control.
+      /// @return The default font of the control. The value returned will vary depending on the user's operating system the local culture setting of their system.
+      virtual drawing::font default_font() const;
+      
+      /// @brief Gets the default foreground color of the control.
+      /// @return The default foreground color of the control. The default is control_text.
+      virtual drawing::color default_fore_color() const;
+      
+      /// @brief Gets the default size of the control.
+      /// @return The default size of the control.
+      virtual drawing::size default_size() const;
       /// @}
 
       /// @name Protected methods
@@ -1853,6 +1869,11 @@ namespace xtd {
       /// @ingroup events
       virtual void on_size_changed(const event_args& e);
       
+      /// @brief Raises the xtd::forms::control::style_sheet_changed event.
+      /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
+      virtual void on_style_sheet_changed(const event_args& e);
+      
       /// @brief Raises the xtd::forms::control::tab_stop_changed event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
@@ -1967,7 +1988,8 @@ namespace xtd {
       void wm_show(message& message);
       void wm_size(message& message);
       void wm_sizing(message& message);
-      
+      void wm_style_sheet_changed(message& message);
+
       struct data {
         anchor_styles anchor = anchor_styles::top | anchor_styles::left;
         forms::padding anchoring;

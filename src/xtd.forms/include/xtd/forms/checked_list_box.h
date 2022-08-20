@@ -235,13 +235,12 @@ namespace xtd {
       
       /// @{
       bool allow_selection() override {return selection_mode() != forms::selection_mode::none;}
+      forms::create_params create_params() const override;
       /// @}
       
       /// @name Protected methods
       
       /// @{
-      forms::create_params create_params() const override;
-      
       void on_handle_created(const event_args& e) override;
       
       /// @brief Raises the checked_list_box::item_check event.

@@ -58,10 +58,6 @@ namespace xtd {
       /// @remarks You can use the character_casing property to change the case of characters as required by your application. For example, you could change the case of all characters entered in a text_box control used for password entry to uppercase or lowercase to enforce a policy for passwords.
       virtual text_box& character_casing(xtd::forms::character_casing value);
       
-      drawing::color default_back_color() const override {return application::style_sheet().system_colors().text_box();}
-      
-      drawing::color default_fore_color() const override {return application::style_sheet().system_colors().text_box_text();}
-      
       /// @brief Gets the character used to mask characters of a password in a single-line TextBox control.
       /// @return The character used to mask characters entered in a single-line text_box control. Set the value of this property to '0' (U+0000) if you do not want the control to mask characters as they are typed. The default value is '0' (U+0000).
       /// @remarks The use_system_password_char property has precedence over the password_char property. Whenever the use_system_password_char is set to true, the default system password character is used and any character set by password_char is ignored.
@@ -117,10 +113,17 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected methods
+      /// @name Protected properties
       
       /// @{
       forms::create_params create_params() const override;
+      drawing::color default_back_color() const override;
+      drawing::color default_fore_color() const override;
+      /// @}
+
+      /// @name Protected methods
+      
+      /// @{
       drawing::size measure_control() const override;
       
       /// @brief Raises the text_box::accepts_return_changed event.

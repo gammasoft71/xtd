@@ -237,10 +237,15 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected methods
+      /// @name Protected properties
       
       /// @{
       drawing::size default_size() const override;
+      /// @}
+
+      /// @name Protected methods
+      
+      /// @{
       drawing::size measure_control() const override;
       void on_back_color_changed(const event_args& e) override;
       void on_fore_color_changed(const event_args& e) override;

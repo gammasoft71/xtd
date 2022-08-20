@@ -58,11 +58,15 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected methods
+      /// @name Protected properties
       
       /// @{
       forms::create_params create_params() const override;
+      /// @}
+
+      /// @name Protected methods
       
+      /// @{
       /// @brief Raises the font_changed event.
       /// @param e An event_args that contains the event data.
       void on_font_changed(const event_args& e) override;

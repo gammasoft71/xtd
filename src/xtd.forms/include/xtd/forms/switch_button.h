@@ -69,10 +69,6 @@ namespace xtd {
       }
       /// @endcond
       
-      /// @brief Gets the default size of the control.
-      /// @return The default size.
-      drawing::size default_size() const override {return {50, 25};}
-      
       /// @brief Gets the slider color for the control.
       /// @return A xtd::drawing::color that represents the slider color of the control. The default is the value of the xtd::switch_button::back_color property.
       virtual xtd::drawing::color slider_color() const {return slider_color_.value_or(back_color());}
@@ -149,6 +145,14 @@ namespace xtd {
       /// @}
       
     protected:
+      /// @name Protected properties
+      
+      /// @{
+      /// @brief Gets the default size of the control.
+      /// @return The default size.
+      drawing::size default_size() const override {return {50, 25};}
+      /// @}
+
       /// @name Protected methods
       
       /// @{

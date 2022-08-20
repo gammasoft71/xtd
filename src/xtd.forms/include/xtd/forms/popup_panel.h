@@ -38,13 +38,16 @@ namespace xtd {
       popup_panel& ignore_mouse_messages(bool value);
       /// @}
       
-      /// @name Metthods
-      
     protected:
-      /// @name Protected methods
+      /// @name Protected properties
       
       /// @{
       forms::create_params create_params() const override;
+      /// @}
+
+      /// @name Protected methods
+      
+      /// @{
       void on_handle_created(const event_args& e) override;
       void on_layout(const event_args& e) override;
       void on_region_changed(const event_args& e) override;

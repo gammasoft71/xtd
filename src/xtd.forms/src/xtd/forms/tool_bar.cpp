@@ -141,14 +141,6 @@ control& tool_bar::dock(dock_style dock) {
   return *this;
 }
 
-xtd::drawing::font tool_bar::default_font() const {
-  return xtd::drawing::system_fonts::tool_font();
-}
-
-drawing::size tool_bar::default_size() const {
-  return native::control::default_size("toolbar");
-}
-
 bool tool_bar::drop_down_arrows() const {
   return data_->drop_down_arrows;
 }
@@ -271,6 +263,14 @@ forms::create_params tool_bar::create_params() const {
   if (data_->wrappable) create_params.style(create_params.style() | TBSTYLE_WRAPABLE);
   
   return create_params;
+}
+
+xtd::drawing::font tool_bar::default_font() const {
+  return xtd::drawing::system_fonts::tool_font();
+}
+
+drawing::size tool_bar::default_size() const {
+  return native::control::default_size("toolbar");
 }
 
 void tool_bar::on_button_click(const xtd::forms::tool_bar_button_click_event_args& e) {

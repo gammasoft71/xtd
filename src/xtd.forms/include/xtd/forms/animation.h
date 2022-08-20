@@ -32,8 +32,6 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      drawing::size default_size() const override;
-      
       /// @brief Gets the elapsed time for the current frame, in milliseconds.
       /// @return A long integer representing the elapsed time for the current frame, in milliseconds.
       virtual int64_t elapsed_milliseconds() const;
@@ -75,6 +73,12 @@ namespace xtd {
       /// @}
       
     protected:
+      /// @name Protected properties
+      
+      /// @{
+      drawing::size default_size() const override;
+      /// @}
+
       /// @name Protected methods
       
       /// @{

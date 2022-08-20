@@ -175,6 +175,9 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
+      /// @brief Gets the required creation parameters when the control handle is created.
+      /// @return A create_params that contains the required creation parameters when the handle to the control is created.
+      forms::create_params create_params() const override;
       /// @brief Gets state.
       /// @return One of xtd::forms::visual_styles::check_box_state values.
       xtd::forms::visual_styles::check_box_state state() const noexcept {return data_->state;}
@@ -183,10 +186,6 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      /// @brief Gets the required creation parameters when the control handle is created.
-      /// @return A create_params that contains the required creation parameters when the handle to the control is created.
-      forms::create_params create_params() const override;
-      
       /// @brief Measure this control.
       /// @return The drawing::size size of this control.
       /// @remarks This method is not relevant for this class.

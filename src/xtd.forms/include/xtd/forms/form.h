@@ -103,9 +103,7 @@ namespace xtd {
       /// @param value true if the form displays a control box in the upper-right corner of the form; otherwise, false. The default is true.
       /// @return Current form.
       virtual form& control_box(bool value);
-      
-      drawing::size default_size() const override {return {300, 300};}
-      
+            
       /// @brief Gets the dialog result for the form.
       /// @return A dialog_result that represents the result of the form when used as a dialog box.
       virtual forms::dialog_result dialog_result() const {return dialog_result_;}
@@ -354,11 +352,16 @@ namespace xtd {
     protected:
       friend class application;
       
-      /// @name Protected methods
+      /// @name Protected properties
       
       /// @{
       forms::create_params create_params() const override;
+      drawing::size default_size() const override {return {300, 300};}
+      /// @}
+
+      /// @name Protected methods
       
+      /// @{
       /// @brief Raises the form::activated event.
       /// @param e An event_args that contains the event data.
       virtual void on_activated(const event_args& e) {activated(*this, e);}

@@ -77,11 +77,16 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected methods
+      /// @name Protected properties
       
       /// @{
       forms::create_params create_params() const override;
+      /// @}
+
+    protected:
+      /// @name Protected methods
       
+      /// @{
       /// @brief Overrides the on_handle_created(const event_args&) method.
       /// @param e An event_args that contains the event data.
       void on_handle_created(const event_args& e) override;

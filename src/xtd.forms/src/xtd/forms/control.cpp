@@ -337,14 +337,6 @@ control& control::cursor(std::nullptr_t) {
   return *this;
 }
 
-drawing::font control::default_font() const {
-  return system_fonts::default_font();
-}
-
-drawing::size control::default_size() const {
-  return native::control::default_size(create_params().class_name());
-}
-
 drawing::rectangle control::display_rectangle() const {
   return client_rectangle();
 }
@@ -657,8 +649,20 @@ style_sheets::style_sheet control::style_sheet() const {
 }
 
 control& control::style_sheet(const style_sheets::style_sheet& value) {
-  data_->style_sheet = value;
-  if (data_->style_sheet.data_->theme.name().empty()) data_->style_sheet.data_->theme.name("-- user style sheet --");
+  if (data_->style_sheet != value) {
+    data_->style_sheet = value;
+    if (data_->style_sheet.data_->theme.name().empty()) data_->style_sheet.data_->theme.name("-- user style sheet --");
+    on_style_sheet_changed(event_args::empty);
+  }
+  return *this;
+}
+
+control& control::style_sheet(std::nullptr_t) {
+  if (data_->style_sheet != style_sheets::style_sheet()) {
+    data_->style_sheet = style_sheets::style_sheet();
+    on_style_sheet_changed(event_args::empty);
+  }
+
   return *this;
 }
 
@@ -910,6 +914,27 @@ forms::create_params control::create_params() const {
   
   return create_params;
 }
+
+drawing::color control::default_back_color() const {
+  return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().control();
+}
+
+forms::cursor control::default_cursor() const {
+  return cursors::default_cursor();
+}
+
+drawing::font control::default_font() const {
+  return system_fonts::default_font();
+}
+
+drawing::color control::default_fore_color() const {
+  return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().control_text();
+}
+
+drawing::size control::default_size() const {
+  return native::control::default_size(create_params().class_name());
+}
+
 bool control::get_state(control::state flag) const {
   return ((int32_t)data_->state & (int32_t)flag) == (int32_t)flag;
 }
@@ -1243,6 +1268,14 @@ void control::on_size_changed(const event_args& e) {
   if (can_raise_events()) size_changed(*this, e);
 }
 
+void control::on_style_sheet_changed(const event_args& e) {
+  back_color(default_back_color());
+  fore_color(default_fore_color());
+  invalidate(true);
+  refresh();
+  if (can_raise_events()) style_sheet_changed(*this, e);
+}
+
 void control::on_tab_stop_changed(const event_args& e) {
   post_recreate_handle();
   if (can_raise_events()) tab_stop_changed(*this, e);
@@ -1432,6 +1465,7 @@ void control::wnd_proc(message& message) {
     case WM_SHOWWINDOW: wm_show(message); break;
     case WM_SIZE: wm_size(message); break;
     case WM_SIZING: wm_sizing(message); break;
+    case WM_STYLE_SHEET_CHANGED: wm_style_sheet_changed(message); break;
     case WM_HSCROLL:
     case WM_VSCROLL: wm_scroll(message); break;
     case WM_ENTERIDLE: wm_enter_idle(message); break;
@@ -1833,4 +1867,9 @@ void control::wm_size(message& message) {
 
 void control::wm_sizing(message& message) {
   def_wnd_proc(message);
+}
+
+void control::wm_style_sheet_changed(message& message) {
+  def_wnd_proc(message);
+  on_style_sheet_changed(event_args::empty);
 }

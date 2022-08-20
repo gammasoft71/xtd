@@ -149,15 +149,19 @@ namespace xtd {
       ///@}
       
     protected:
-      /// @name Protected methods
+      /// @name Protected properties
       
       /// @{
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
       forms::create_params create_params() const override;
-      
+
       drawing::size default_size() const override;
+      /// @}
       
+      /// @name Protected methods
+      
+      /// @{
       /// @brief Overrides control::on_handle_created(const event_args&)
       /// @param e A EventArgs that contains the event data.
       void on_handle_created(const event_args& e) override;

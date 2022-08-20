@@ -9,9 +9,20 @@ using namespace xtd::tunit;
 
 namespace xtd::forms::tests {
   class test_class_(toggle_button_tests) {
+    class toggle_button_for_test : public toggle_button {
+    public:
+      toggle_button_for_test() = default;
+      
+      using toggle_button::default_back_color;
+      using toggle_button::default_cursor;
+      using toggle_button::default_font;
+      using toggle_button::default_fore_color;
+      using toggle_button::default_size;
+    };
+    
   public:
     void test_method_(constructor) {
-      forms::toggle_button toggle_button;
+      toggle_button_for_test toggle_button;
       assert::are_equal(anchor_styles::left | anchor_styles::top, toggle_button.anchor(), csf_);
       assert::are_equal(drawing::point::empty, toggle_button.auto_scroll_point(), csf_);
       assert::is_false(toggle_button.auto_size(), csf_);

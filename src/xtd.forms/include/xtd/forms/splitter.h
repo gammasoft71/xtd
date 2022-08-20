@@ -33,10 +33,6 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      forms::cursor default_cursor() const override {return dock() == dock_style::left || dock() == dock_style::right ? xtd::forms::cursors::vsplit() : xtd::forms::cursors::hsplit();}
-      
-      drawing::size default_size() const override {return {3, 3};}
-      
       using xtd::forms::control::dock;
       /// @brief Sets or sets which control borders are docked to its parent control and determines how a control is resized with its parent.
       /// @param dock One of the dock_style values. The default is none.
@@ -80,6 +76,13 @@ namespace xtd {
       /// @}
       
     protected:
+      /// @name Protected properties
+      
+      /// @{
+      forms::cursor default_cursor() const override;
+      drawing::size default_size() const override;
+      /// @}
+
       /// @name Protected methods
       
       /// @{

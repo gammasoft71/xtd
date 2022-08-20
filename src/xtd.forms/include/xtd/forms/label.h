@@ -157,10 +157,15 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected methods
+      /// @name Protected properties
       
       /// @{
       xtd::forms::create_params create_params() const override;
+      /// @}
+
+      /// @name Protected methods
+      
+      /// @{
       xtd::drawing::size measure_control() const override;
       void on_font_changed(const xtd::event_args& e) override;
       

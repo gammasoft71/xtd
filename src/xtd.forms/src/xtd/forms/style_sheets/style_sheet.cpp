@@ -1,10 +1,11 @@
 #include "../../../../include/xtd/forms/style_sheets/style_sheet.h"
+#include "../../../../include/xtd/forms/application.h"
 #include <xtd/as.h>
 #include <xtd/is.h>
 #include <xtd/environment.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/drawing/drawing2d/linear_gradient_brush.h>
-#include <xtd/forms/application.h>
+#include <xtd/forms/window_messages.h>
 #include <xtd/io/directory.h>
 #include <xtd/io/file.h>
 #include <xtd/io/directory_not_found_exception.h>
@@ -721,24 +722,8 @@ white_space style_sheet::white_space_from_css(const xtd::ustring& css_text, cons
 }
 
 void style_sheet::on_style_sheet_changed(const xtd::event_args& e) {
-  /*
-  std::function<void(xtd::forms::control&)> update_control = [&](xtd::forms::control & control) {
-    control.back_color(control.default_back_color());
-    control.fore_color(control.default_fore_color());
-    for (auto& child_control : control.controls())
-      update_control(child_control.get());
-  };*/
-  
-  for (auto form : application::open_forms()) {
-    form.get().back_color(current_style_sheet().system_colors().window());
-    form.get().fore_color(current_style_sheet().system_colors().window_text());
-    form.get().back_color(form.get().default_back_color());
-    form.get().fore_color(form.get().default_fore_color());
-    //for (auto& child_control : form.get().controls())
-    //  update_control(child_control.get());
-    form.get().invalidate(true);
-    form.get().refresh();
-  }
+  for (auto handle : xtd::forms::control::handles_)
+    handle.second->send_message(handle.first, WM_STYLE_SHEET_CHANGED, 0, 0);
   style_sheet_changed(current_style_sheet_, e);
 }
 

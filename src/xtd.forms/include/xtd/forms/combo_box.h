@@ -111,11 +111,15 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected methods
+      /// @name Protected properties
       
       /// @{
       forms::create_params create_params() const override;
+      /// @}
+
+      /// @name Protected methods
       
+      /// @{
       /// @brief Raises the combo_box::drop_down_style_changed event.
       virtual void on_drop_down_style_changed(const event_args& e);
       

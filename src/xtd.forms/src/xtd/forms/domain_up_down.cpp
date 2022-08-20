@@ -91,6 +91,14 @@ forms::create_params domain_up_down::create_params() const {
   return create_params;
 }
 
+drawing::color domain_up_down::default_back_color() const {
+  return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().window();
+}
+
+drawing::color domain_up_down::default_fore_color() const {
+  return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().window_text();
+}
+
 void domain_up_down::on_handle_created(const event_args& e) {
   scrollable_control::on_handle_created(e);
   for (size_t index = 0; index < items_.size(); ++index)

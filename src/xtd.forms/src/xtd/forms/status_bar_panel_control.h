@@ -23,8 +23,6 @@ public:
     }
   }
   
-  xtd::drawing::font default_font() const override {return xtd::drawing::system_fonts::tool_font();}
-  
   using xtd::forms::label::image;
   label& image(const xtd::drawing::image& value) override {
     if (image() != value) {
@@ -85,7 +83,9 @@ public:
   
   void status_bar_panel(status_bar_panel_ref value) {data_->status_bar_panel = value;}
   
-protected:
+protected:  
+  xtd::drawing::font default_font() const override {return xtd::drawing::system_fonts::tool_font();}
+
   void on_paint(paint_event_args& e) override {
     if (data_->style == status_bar_panel_style::text) draw_panel(e);
     else if (data_->style == status_bar_panel_style::control) draw_control(e);
