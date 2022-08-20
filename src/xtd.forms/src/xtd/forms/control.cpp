@@ -1269,8 +1269,10 @@ void control::on_size_changed(const event_args& e) {
 }
 
 void control::on_style_sheet_changed(const event_args& e) {
-  back_color(default_back_color());
-  fore_color(default_fore_color());
+  if (!data_->back_color) back_color(default_back_color());
+  if (!data_->cursor) cursor(default_cursor());
+  if (!data_->font) font(default_font());
+  if (!data_->fore_color) fore_color(default_fore_color());
   invalidate(true);
   refresh();
   if (can_raise_events()) style_sheet_changed(*this, e);
