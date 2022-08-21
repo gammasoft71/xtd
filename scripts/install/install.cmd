@@ -121,8 +121,8 @@ goto :eof
 
 ::______________________________________________________________________________
 :: Gets the length of specified string.
-:: param result_var That will cantains the length of the specified string.
 :: param string_var The string to compute length.
+:: param result_var That will cantains the length of the specified string.
 :strlen  StrVar  [RtnVar]
   setlocal EnableDelayedExpansion
   set "s=#!%~1!"
