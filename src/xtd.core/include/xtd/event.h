@@ -75,6 +75,11 @@ namespace xtd {
     handler_t& operator-=(fn_t function) noexcept {
       return handler_t::operator-=(function);
     }
+
+    /// @brief Clear event.
+    void clear() noexcept {
+      handler_t::clear();
+    }
     /// @}
   };
 }
