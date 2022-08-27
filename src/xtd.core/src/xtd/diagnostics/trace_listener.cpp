@@ -38,11 +38,11 @@ void trace_listener::name(const ustring& name) {
   name_ = name;
 }
 
-const trace_options& trace_listener::trace_output_options() const {
+trace_options trace_listener::trace_output_options() const {
   return trace_output_options_;
 }
 
-void trace_listener::trace_output_options(const trace_options& trace_output_options) {
+void trace_listener::trace_output_options(trace_options trace_output_options) {
   trace_output_options_ = trace_output_options;
 }
 
