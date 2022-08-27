@@ -193,7 +193,7 @@ namespace xtd {
         /// @param handle The handle on specific operating system data
         /// @return The result of def_wnd_proc message.
         /// @warning Internal use only
-        static intptr_t def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle);
+        static intptr_t def_wnd_proc(intptr_t control, intptr_t hwnd, uint32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle);
         
         /// @brief Gets the default height and default width for the specified class name.
         /// @param class_name The name of the Windows class to derive the control from.

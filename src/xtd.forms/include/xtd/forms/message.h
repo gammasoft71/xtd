@@ -53,10 +53,10 @@ namespace xtd {
       
       /// @brief Gets the ID number for the message.
       /// @return The ID number for the message.
-      int32_t msg() const {return msg_;}
+      uint32_t msg() const {return msg_;}
       /// @brief Sets the ID number for the message.
       /// @param value The ID number for the message.
-      void msg(int32_t value) {msg_ = value;}
+      void msg(uint32_t value) {msg_ = value;}
       
       /// @brief Gets the value that is returned to Windows in response to handling the message.
       /// @return The return value of the message.
@@ -121,7 +121,7 @@ namespace xtd {
       message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) : hwnd_(hwnd), msg_(msg), wparam_(wparam), lparam_(lparam), result_(result), handle_(handle) {counter_++;}
       
       intptr_t hwnd_ = 0;
-      int32_t msg_ = 0;
+      uint32_t msg_ = 0;
       intptr_t wparam_ = 0;
       intptr_t lparam_ = 0;
       intptr_t result_ = 0;

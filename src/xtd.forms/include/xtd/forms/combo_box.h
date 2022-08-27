@@ -104,6 +104,14 @@ namespace xtd {
       /// @name Events
       
       /// @{
+      /// @brief Occurs when the drop-down portion of a xtd::forms::combo_box is shown.
+      /// @ingroup events
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      event<combo_box, event_handler> drop_down;
+      /// @brief Occurs when the drop-down portion of the xtd::forms::combo_box is no longer visible.
+      /// @ingroup events
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      event<combo_box, event_handler> drop_down_closed;
       /// @brief Occurs when the drop_down_style property has changed.
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
@@ -120,7 +128,19 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      /// @brief Raises the combo_box::drop_down_style_changed event.
+      /// @brief Raises the xtd::forms::combo_box::drop_down event.
+      /// @remarks This event is raised each time the drop-down is displayed.
+      /// @remarks Raising an event invokes the event handler through a delegate. For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks The xtd::forms::combo_box::on_drop_down method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
+      virtual void on_drop_down(const event_args& e);
+      /// @brief Raises the xtd::forms::combo_box::drop_down_closed event.
+      /// @remarks Raising an event invokes the event handler through a delegate. For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarksThe xtd::forms::combo_box::on_drop_down_closed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
+      virtual void on_drop_down_closed(const event_args& e);
+      /// @brief Raises the xtd::forms::combo_box::drop_down_style_changed event.
+      /// @remarks This event is raised when you set xtd::forms::combo_box::drop_down_style to a new value.
+      /// @remarks Raising an event invokes the event handler through a delegate. For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks The xtd::forms::combo_box::on_drop_down_style_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
       virtual void on_drop_down_style_changed(const event_args& e);
       
       void on_handle_created(const event_args& e) override;
@@ -128,7 +148,7 @@ namespace xtd {
       void set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) override;
       void set_client_size_core(int32_t width, int32_t height) override;
       void wnd_proc(message& message) override;
-      
+
       /// @brief Processes the command message the list_box control receives from the top-level window.
       /// @param message The message the top-level window sent to the list_box control.
       virtual void wm_reflect_command(message& message);
