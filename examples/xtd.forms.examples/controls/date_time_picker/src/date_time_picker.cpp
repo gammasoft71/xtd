@@ -20,7 +20,7 @@ public:
     picker1.min_date(picker1.value().add(months(-3)));
     
     label1.location({30, 70});
-    label1.size({380, 340});
+    label1.size({380, 30});
     
     picker2.location({30, 110});
     picker2.format(date_time_picker_format::time);
@@ -32,7 +32,7 @@ public:
     picker2.min_date(picker2.value().add(hours(-3)));
     
     label2.location({30, 150});
-    label2.size({380, 340});
+    label2.size({380, 30});
   }
   
 private:
