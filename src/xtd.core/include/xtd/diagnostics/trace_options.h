@@ -16,7 +16,7 @@ namespace xtd {
     /// xtd::diagnostics
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core diagnostics
     /// @remarks This enumeration is used by trace listeners to determine which options, or elements, should be included in the trace output. Trace listeners store the trace options in the trace_output_options property.
     enum class trace_options {
       /// @brief Do not write any elements.
