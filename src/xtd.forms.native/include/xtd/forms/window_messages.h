@@ -1813,7 +1813,7 @@ constexpr uint32_t BN_SETFOCUS = 6;
 constexpr uint32_t BN_KILLFOCUS = 7;
 
 // Combo box notifications
-constexpr uint32_t CBN_ERRSPACE = -1;
+constexpr uint32_t CBN_ERRSPACE = static_cast<uint32_t>(-1);
 constexpr uint32_t CBN_SELCHANGE = 1;
 constexpr uint32_t CBN_DBLCLK = 2;
 constexpr uint32_t CBN_SETFOCUS = 3;
@@ -1849,7 +1849,7 @@ constexpr uint32_t EN_BEFORE_PASTE = 0x0800;
 constexpr uint32_t EN_AFTER_PASTE = 0x0801;
 
 // List box notifications
-constexpr uint32_t LBN_ERRSPACE = -2;
+constexpr uint32_t LBN_ERRSPACE = static_cast<uint32_t>(-2);
 constexpr uint32_t LBN_SELCHANGE = 1;
 constexpr uint32_t LBN_DBLCLK = 2;
 constexpr uint32_t LBN_SELCANCEL = 3;
