@@ -1832,7 +1832,7 @@ constexpr uint32_t DTN_FORMATQUERY = DTN_FIRST - 2;
 constexpr uint32_t DTN_FORMAT = DTN_FIRST - 3;
 constexpr uint32_t DTN_WMKEYDOWN = DTN_FIRST - 4;
 constexpr uint32_t DTN_USERSTRING = DTN_FIRST - 5;
-constexpr uint32_t DTN_DATETIMECHANGE = DTN_FIRST - 6; // the systemtime has changed, -759
+constexpr uint32_t DTN_DATETIMECHANGE = DTN_FIRST2 - 6; // the systemtime has changed, -759
 
 // Text box notifications
 constexpr uint32_t EN_SETFOCUS = 0x0100;
@@ -1857,10 +1857,10 @@ constexpr uint32_t LBN_SETFOCUS = 4;
 constexpr uint32_t LBN_KILLFOCUS = 5;
 
 // Month calendar notifications
-constexpr uint32_t MCN_VIEWCHANGE = 0U - 750U; // MCN_SELECT -4  - give state of calendar view
-constexpr uint32_t MCN_SELCHANGE = (0U - 750U) + 1U;
-constexpr uint32_t MCN_GETDAYSTATE = (0U - 750U) + 3U;
-constexpr uint32_t MCN_SELECT = (0U - 750U) + 4U;
+constexpr uint32_t MCN_VIEWCHANGE = MCN_FIRST - 4;
+constexpr uint32_t MCN_SELCHANGE = MCN_FIRST - 3;
+constexpr uint32_t MCN_GETDAYSTATE = MCN_FIRST - 1;
+constexpr uint32_t MCN_SELECT = MCN_FIRST;
 
 // Window notifications
 constexpr uint32_t NM_OUTOFMEMORY = NM_FIRST-1;
@@ -1886,8 +1886,11 @@ constexpr uint32_t NM_FONTCHANGED = NM_FIRST-23;
 constexpr uint32_t NM_CUSTOMTEXT = NM_FIRST-24; // uses NMCUSTOMTEXT struct
 constexpr uint32_t NM_TVSTATEIMAGECHANGING = NM_FIRST-24; // uses NMTVSTATEIMAGECHANGING struct, defined after HTREEITEM
 
-constexpr int32_t HELPINFO_MENUITEM = 0;
-constexpr int32_t HELPINFO_WINDOW = 1;
+// Up down notifications
+constexpr int32_t UDN_DELTAPOS = UDN_FIRST - 1;
+
+constexpr int32_t HELPINFO_WINDOW = 0x0001;
+constexpr int32_t HELPINFO_MENUITEM = 0x0002;
 
 struct NMHDR {
   HWND hwndFrom;
@@ -1939,7 +1942,6 @@ inline uint8_t HIBYTE(type_t value) {
   return static_cast<uint8_t>((static_cast<uint32_t>(value) >> 8) & 0xFF);
 }
 
-constexpr int32_t UDN_DELTAPOS = -722;
 #endif
 
 constexpr uint32_t WM_REFLECT = WM_USER + 0x1C00;
