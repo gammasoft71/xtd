@@ -121,7 +121,7 @@ namespace xtd::forms::tests {
       button.click += [&] {
         click_control_check += 1;
       };
-      send_message(button.handle(), WM_COMMAND, BN_CLICKED, button.handle());
+      send_message(button.handle(), WM_COMMAND, HIWORD(BN_CLICKED), button.handle());
       assert::are_equal(1, click_control_check, csf_);
     }*/
     

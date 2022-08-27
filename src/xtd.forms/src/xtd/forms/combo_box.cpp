@@ -115,6 +115,14 @@ forms::create_params combo_box::create_params() const {
   return create_params;
 }
 
+void combo_box::on_drop_down(const event_args& e) {
+  drop_down(*this, e);
+}
+
+void combo_box::on_drop_down_closed(const event_args& e) {
+  drop_down_closed(*this, e);
+}
+
 void combo_box::on_drop_down_style_changed(const event_args& e) {
   drop_down_style_changed(*this, e);
 }
@@ -183,7 +191,14 @@ void combo_box::wm_mouse_up(message& message) {
 }
 
 void combo_box::wm_reflect_command(message& message) {
-  def_wnd_proc(message);
-  selected_index(native::combo_box::selected_index(handle()));
-  if (selected_index() != npos) selected_item(items_[selected_index()]);
+  switch (HIWORD(message.wparam())) {
+    case CBN_DROPDOWN: on_drop_down(event_args::empty); break;
+    case CBN_CLOSEUP: on_drop_down_closed(event_args::empty); break;
+    case CBN_SELCHANGE:
+      def_wnd_proc(message);
+      selected_index(native::combo_box::selected_index(handle()));
+      if (selected_index() != npos) selected_item(items_[selected_index()]);
+      break;
+    default: break;
+  }
 }
