@@ -658,7 +658,7 @@ namespace xtd {
       
       /// @brief Creates a xtd::drawing::color class from a 32-bit ARGB value.
       /// @param argb A value specifying the 32-bit ARGB value
-      /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
+      /// @return The xtd::drawing::color structure that this method creates.
       /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
       /// @par Examples
       /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgs e, which is a parameter of the Paint event handler. The code performs the following actions:
@@ -1226,10 +1226,6 @@ namespace xtd {
       /// @endcode
       xtd::ustring to_string() const noexcept override;
       /// @}
-      
-      /// @cond
-      xtd::drawing::known_color __known_color__() const noexcept {return known_color_;}
-      /// @endcond
       
     private:
       explicit color(uint32_t argb) : argb_(argb), name_(argb ? ustring::format("{:X8}", argb) : "0"), empty_(false) {}
