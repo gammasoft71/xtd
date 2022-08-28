@@ -33,11 +33,11 @@ namespace xtd {
     /// @code
     /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
     ///   color slate_blue = xtd::drawing::color::from_name("slate blue");
-    ///   byte g = slate_blue.g();
-    ///   byte b = slate_blue.b();
-    ///   byte r = slate_blue.r();
-    ///   byte a = slate_blue.a();
-    ///   string text = xtd::ustring::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+    ///   byte_t a = slate_blue.a();
+    ///   byte_t r = slate_blue.r();
+    ///   byte_t g = slate_blue.g();
+    ///   byte_t b = slate_blue.b();
+    ///   string text = xtd::ustring::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green:{2}, blue:{3}", a, r, g, b);
     ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
     /// }
     /// @endcode
@@ -1226,6 +1226,10 @@ namespace xtd {
       /// @endcode
       xtd::ustring to_string() const noexcept override;
       /// @}
+      
+      /// @cond
+      xtd::drawing::known_color __known_color__() const noexcept {return known_color_;}
+      /// @endcond
       
     private:
       explicit color(uint32_t argb) : argb_(argb), name_(argb ? ustring::format("{:X8}", argb) : "0"), empty_(false) {}
