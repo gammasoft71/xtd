@@ -4,6 +4,7 @@
 #pragma once
 #include "menu.h"
 #include "message.h"
+#include <xtd/drawing/point.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
