@@ -17,10 +17,10 @@
 ## [Application](applications/README.md)
 
 * [application](applications/application/README.md) shows how to create an application with [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) class.
-* [application_and_assert](applications/application_and_assert/README.md) shows how to create an application with [xtd::forms::application](../../src/xtd_forms/include/xtd/forms/application.hpp) class and hot to manage assert.
-* [application_and_exception](applications/application_and_exception/README.md) shows how to create an application with [xtd::forms::application](../../src/xtd_forms/include/xtd/forms/application.hpp) class and hot to manage exception.
+* [application_and_assert](applications/application_and_assert/README.md) shows how to create an application with [xtd::forms::application](../../src/xtd_forms/include/xtd/forms/application.h) class and hot to manage assert.
+* [application_and_exception](applications/application_and_exception/README.md) shows how to create an application with [xtd::forms::application](../../src/xtd_forms/include/xtd/forms/application.h) class and hot to manage exception.
 * [application_context](applications/application_context/README.md) shows how to create an application with [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) class with [xtd::forms::application_context](../../src/xtd.forms/include/xtd/forms/application_context.h) class.
-* [application_restart](applications/application_restart/README.md) shows how to restart application with [xtd::forms::application::restart](../../src/xtd_forms/include/xtd/forms/application.hpp) method.
+* [application_restart](applications/application_restart/README.md) shows how to restart application with [xtd::forms::application::restart](../../src/xtd_forms/include/xtd/forms/application.h) method.
 * [application_use_wait_cursor](applications/application_use_wait_cursor/README.md) shows how to show and hide wait cursor application with [xtd::forms::application::use_wait_cursor](../../src/xtd.forms/include/xtd/forms/application.h) method.
 * [application_with_cmake_assembly_info](applications/application_with_cmake_assembly_info/README.md) demonstrates the use of [xtd::reflection::assembly](../../src/xtd.core/include/xtd/refelction/assembly_info.h) attrubutes, [xtd::forms::form](../../../src/xtd.forms/include/xtd/forms/form.h) and [xtd::forms::application](../../../src/xtd.forms/include/xtd/forms/application.h) classes.
 * [application_with_manual_assembly_info](applications/application_with_manual_assembly_info/README.md) demonstrates the use of [xtd::reflection::assembly](../../src/xtd.core/include/xtd/refelction/assembly_info.h) attrubutes, [xtd::forms::form](../../../src/xtd.forms/include/xtd/forms/form.h) and [xtd::forms::application](../../../src/xtd.forms/include/xtd/forms/application.h) classes.
@@ -60,7 +60,7 @@
 
 * [circular_form](forms/circular_form/README.md) demonstrates the use of [xtd::control::region](../../src/xtd_forms/include/xtd/forms/control.h) property for create a circular form.
 * [debug_form](forms/debug_form/README.md) represents a form that trace all written debug with xtd::diagnosticts::debug class.
-* [dialog](forms/dialog/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd_forms/include/xtd/forms/form.hpp) container as dialog.
+* [dialog](forms/dialog/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd_forms/include/xtd/forms/form.h) container as dialog.
 * [form](forms/form/README.md) represents a window or dialog box that makes up an application's user interface.
 * [popup_form](forms/popup_form/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd_forms/include/xtd/forms/form.h) container as popup form.
 * [trace_form](forms/trace_form/README.md) represents a form that trace all written trace with xtd::diagnosticts::trace class.
@@ -191,7 +191,7 @@
 
 * [application_enable_dark_mode](themes/application_enable_dark_mode/README.md) shows how to enable dark mode with [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) class with [xtd::forms::application_context](../../src/xtd.forms/include/xtd/forms/application_context.h) class.
 * [application_enable_light_mode](themes/application_enable_light_mode/README.md) shows how to enable light mode with [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) class with [xtd::forms::application_context](../../src/xtd.forms/include/xtd/forms/application_context.h) class.
-* [themes](themes/themes/README.md) shows how to use [xtd::forms::theme](../../src/xtd_forms/include/xtd/forms/theme.hpp) class.
+* [themes](themes/themes/README.md) shows how to use [xtd::forms::theme](../../src/xtd_forms/include/xtd/forms/theme.h) class.
 
 ## [Events](events/README.md)
 
@@ -273,7 +273,7 @@
 * [lcd_label2](others/lcd_label2/README.md) representsthe use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
 * [lcd_label3](others/lcd_label3/README.md) representsthe use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
 * [painting](others/painting/README.md) demonstrates the use of xtd::forms::form, xtd::forms::panel, [xtd::forms::track_bar](../../src/xtd.forms/include/xtd/forms/track_bar.h) and [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) controls with mouse_down, mouse_move and paint events..
-* [screen_informations](others/screen_informations/README.md) shows how to get screen information of [xtd::forms::screen](../../src/xtd_forms/include/xtd/forms/screen.hpp) control.
+* [screen_informations](others/screen_informations/README.md) shows how to get screen information of [xtd::forms::screen](../../src/xtd_forms/include/xtd/forms/screen.h) control.
 * [settings2](others/settings_example2/README.md) represents settings application.
 * [smileys](others/smileys/README.md) demonstrates the use of [xtd::forms::label](../../src/xtd.forms/include/xtd/forms/label.h) control.
 * [some_controls](others/some_controls/README.md) demonstrates the use of some controls.
@@ -281,7 +281,7 @@
 * [stopwatch_form](others/stopwatch_form/README.md) demonstrates the use of stopwatch class, [xtd::forms::label](../../src/xtd.forms/include/xtd/forms/label.h) and [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) controls.
 * [system_images2](others/system_images2/README.md) demonstrates the use of **xtd::drawing::system_images** class.
 * [system_images3](others/system_images3/README.md) demonstrates the use of **xtd::drawing::system_images** class.
-* [system_report](others/system_report/README.md) shows system_repoort with [xtd::forms::text_box](../../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
+* [system_report](others/system_report/README.md) shows system_repoort with [xtd::forms::text_box](../../src/xtd_forms/include/xtd/forms/text_box.h) control.
 * [system_sound](others/system_sound/README.md) demonstrates the use of xtd::media::system_sound component.
 * [text_box_multiline](others/text_box_multiline/README.md) represents a Windows [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) control.
 * [text_box_password](others/text_box_password/README.md) represents a Windows [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) control.
