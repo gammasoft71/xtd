@@ -111,7 +111,7 @@ namespace xtdc_command {
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Build project aborted.";
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? (build_path() / (release ? "Release" : "Debug")) : build_path()};
       if (xtd::environment::os_version().is_windows_platform() || xtd::environment::os_version().is_macos_platform())
-        launch_and_wait_process("cmake", xtd::ustring::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::ustring::format(" --target {}", target), clean_first ? " --clean-first {}" : ""));
+        launch_and_wait_process("cmake", xtd::ustring::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::ustring::format(" --target {}", target), clean_first ? " --clean-first {}" : ""), true);
       else
         launch_and_wait_process("cmake", xtd::ustring::format("--build {}{}", build_path() / (release ? "Release" : "Debug"), target.empty() ? "" : xtd::ustring::format(" --target {}", target), clean_first ? " --clean-first {}" : ""));
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Build project aborted.";
