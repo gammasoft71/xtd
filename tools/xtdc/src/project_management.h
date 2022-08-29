@@ -9,6 +9,7 @@
 #include <xtd/bit_converter.h>
 #include <xtd/environment.h>
 #include <xtd/action.h>
+#include <xtd/console.h>
 #include <xtd/diagnostics/process.h>
 #include <xtd/io/file.h>
 #include <xtd/io/path.h>
@@ -162,7 +163,8 @@ namespace xtdc_command {
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? (build_path() / (release ? "Release" : "Debug")) : build_path()};
       auto target_path = target.empty() ? get_first_target_path(release) : get_target_path(target, release);
       if (target_path.empty()) return "The target does not exist! Run project aborted.";
-      
+
+      xtd::console::clear();
       xtd::diagnostics::process process;
       process.start_info(xtd::diagnostics::process_start_info(target_path));
       process.start_info().use_shell_execute(is_gui(std::filesystem::path(target_path.c_str())));
@@ -281,10 +283,15 @@ namespace xtdc_command {
     
     std::vector<xtd::ustring>& get_system_information() const {
       static std::vector<xtd::ustring> system_information;
-      if (system_information.size() == 0) {
+      static bool exception_throwed = false;
+      if (!exception_throwed && system_information.size() == 0) {
         if (!std::filesystem::exists(build_path() / "xtd_si.txt")) {
           change_current_directory current_directory {build_path().string()};
-          launch_and_wait_process("cmake", xtd::ustring("--system-information xtd_si.txt"), xtd::environment::os_version().is_macos_platform());
+          try {
+            launch_and_wait_process("cmake", "--system-information xtd_si.txt", xtd::environment::os_version().is_macos_platform());
+          } catch (...) {
+            exception_throwed = true;
+          }
         }
         if (std::filesystem::exists(build_path() / "xtd_si.txt"))
           system_information = xtd::io::file::read_all_lines((build_path() / "xtd_si.txt").string());
