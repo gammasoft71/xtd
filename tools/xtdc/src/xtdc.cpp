@@ -237,6 +237,7 @@ namespace xtdc_command {
         "  -d, --debug         run debug config.",
         "  -r, --release       run release config.",
         "  -t, --target        run a specified target project.",
+        "  -w, --wait          wait until the execution is finished.",
         "",
         "path:",
         "  Project path location. If no path is specified, the current path is used.",
@@ -563,9 +564,10 @@ namespace xtdc_command {
       bool show_help = false;
       string invalid_option;
       bool release = true;
+      bool wait = false;
       string target;
       string path;
-      if (!process_run_arguments(args, show_help, release, target, path, invalid_option)) {
+      if (!process_run_arguments(args, show_help, release, wait, target, path, invalid_option)) {
         if (!invalid_option.empty())
           cout << ustring::format("Unknown option: {0}", invalid_option) << endl;
         else
@@ -577,7 +579,7 @@ namespace xtdc_command {
         cout << ustring::join("\n", get_run_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
-        cout << project_management(filesystem::absolute(filesystem::path(path))).run(target, release) << endl;
+        cout << project_management(filesystem::absolute(filesystem::path(path))).run(target, release, wait) << endl;
       }
       return 0;
     }
@@ -825,7 +827,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_run_arguments(const vector<ustring>& args, bool& show_help, bool& release, string& target, string& path, string& invalid_option) {
+    static bool process_run_arguments(const vector<ustring>& args, bool& show_help, bool& release, bool& wait, string& target, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -835,6 +837,8 @@ namespace xtdc_command {
           release = true;
         else if (args[i] == "-t" || args[i] == "--target")
           target = args[++i];
+        else if (args[i] == "-w" || args[i] == "--wait")
+          wait = true;
         else if (path.empty())
           path = args[i];
         else if (args[i].starts_with('-')) {
