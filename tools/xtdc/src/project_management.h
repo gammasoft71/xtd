@@ -283,7 +283,7 @@ namespace xtdc_command {
       if (system_information.size() == 0) {
         if (!std::filesystem::exists(build_path() / "xtd_si.txt")) {
           change_current_directory current_directory {build_path().string()};
-          launch_and_wait_process("cmake", "--system-information xtd_si.txt");
+          launch_and_wait_process("cmake", xtd::ustring("--system-information xtd_si.txt"));
         }
         if (std::filesystem::exists(build_path() / "xtd_si.txt"))
           system_information = xtd::io::file::read_all_lines((build_path() / "xtd_si.txt").string());
