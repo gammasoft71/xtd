@@ -110,8 +110,10 @@ namespace xtdc_command {
       else generate();
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Build project aborted.";
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? (build_path() / (release ? "Release" : "Debug")) : build_path()};
-      if (xtd::environment::os_version().is_windows_platform() || xtd::environment::os_version().is_macos_platform())
-        launch_and_wait_process("cmake", xtd::ustring::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::ustring::format(" --target {}", target), clean_first ? " --clean-first {}" : ""), true);
+      if (xtd::environment::os_version().is_windows_platform())
+        launch_and_wait_process("cmake", xtd::ustring::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::ustring::format(" --target {}", target), clean_first ? xtd::ustring::format(" --clean-first {}", target) : ""), false);
+      else if (xtd::environment::os_version().is_macos_platform())
+        launch_and_wait_process("cmake", xtd::ustring::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::ustring::format(" --target {}", target), clean_first ? xtd::ustring::format(" --clean-first {}", target) : ""), true);
       else
         launch_and_wait_process("cmake", xtd::ustring::format("--build {}{}", build_path() / (release ? "Release" : "Debug"), target.empty() ? "" : xtd::ustring::format(" --target {}", target), clean_first ? " --clean-first {}" : ""));
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Build project aborted.";
@@ -281,9 +283,10 @@ namespace xtdc_command {
       if (system_information.size() == 0) {
         if (!std::filesystem::exists(build_path() / "xtd_si.txt")) {
           change_current_directory current_directory {build_path().string()};
-          launch_and_wait_process("cmake", xtd::ustring::format("--system-information xtd_si.txt"));
+          launch_and_wait_process("cmake", "--system-information xtd_si.txt");
         }
-        system_information = xtd::io::file::read_all_lines((build_path() / "xtd_si.txt").string());
+        if (std::filesystem::exists(build_path() / "xtd_si.txt"))
+          system_information = xtd::io::file::read_all_lines((build_path() / "xtd_si.txt").string());
       }
       return system_information;
     }
@@ -2949,9 +2952,12 @@ namespace xtdc_command {
       std::filesystem::create_directories(build_path());
       change_current_directory current_directory {build_path()};
       if (!first_generation && name.empty()) name = get_name();
-      if (xtd::environment::os_version().is_windows_platform() && (first_generation || !std::filesystem::exists(build_path() / xtd::ustring::format("{}.sln", name).c_str())))
-        launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {}", path_, build_path()));
-      else if (xtd::environment::os_version().is_macos_platform() && (first_generation || !std::filesystem::exists(build_path() / xtd::ustring::format("{}.xcodeproj", name).c_str())))
+      if (xtd::environment::os_version().is_windows_platform() && (first_generation || !std::filesystem::exists(build_path() / xtd::ustring::format("{}.sln", name).c_str()))) {
+        // patch for arch ARM64 and cmake version 3.24 or later.
+        // Build c++ on ARM is not supported now. We need to build for x64.
+        xtd::ustring architecture_parameter = xtd::environment::get_environment_variable("PROCESSOR_ARCHITECTURE").contains("64") ? "-A \"x64\"" : "";
+        launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} {}", path_, build_path(), architecture_parameter));
+      } else if (xtd::environment::os_version().is_macos_platform() && (first_generation || !std::filesystem::exists(build_path() / xtd::ustring::format("{}.xcodeproj", name).c_str())))
         launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"Xcode\"", path_, build_path()));
       else if (xtd::environment::os_version().is_unix_platform()) {
         if (first_generation || !std::filesystem::exists(build_path() / "Debug" / xtd::ustring::format("{}.cbp", name).c_str())) {
