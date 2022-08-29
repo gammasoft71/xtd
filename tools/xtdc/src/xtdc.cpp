@@ -402,7 +402,7 @@ namespace xtdc_command {
       bool show_help = false;
       string invalid_option;
       bool clean_first = false;
-      bool release = false;
+      bool release = true;
       string target;
       string path;
       if (!process_build_arguments(args, show_help, clean_first, release, target, path, invalid_option)) {
@@ -425,7 +425,7 @@ namespace xtdc_command {
     static int clean(const vector<ustring>& args) {
       bool show_help = false;
       string invalid_option;
-      bool release = false;
+      bool release = true;
       string path;
       if (!process_clean_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
@@ -452,7 +452,7 @@ namespace xtdc_command {
     static int install(const vector<ustring>& args) {
       bool show_help = false;
       string invalid_option;
-      bool release = false;
+      bool release = true;
       string path;
       if (!process_install_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
@@ -518,7 +518,7 @@ namespace xtdc_command {
     static int open(const vector<ustring>& args) {
       bool show_help = false;
       string invalid_option;
-      bool release = false;
+      bool release = true;
       string path;
       if (!process_open_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
@@ -562,7 +562,7 @@ namespace xtdc_command {
     static int run(const vector<ustring>& args) {
       bool show_help = false;
       string invalid_option;
-      bool release = false;
+      bool release = true;
       string target;
       string path;
       if (!process_run_arguments(args, show_help, release, target, path, invalid_option)) {
@@ -606,7 +606,7 @@ namespace xtdc_command {
     static int test(const vector<ustring>& args) {
       bool show_help = false;
       string invalid_option;
-      bool release = false;
+      bool release = true;
       string path;
       if (!process_test_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
@@ -628,7 +628,7 @@ namespace xtdc_command {
     static int uninstall(const vector<ustring>& args) {
       bool show_help = false;
       string invalid_option;
-      bool release = false;
+      bool release = true;
       string path;
       if (!process_uninstall_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
