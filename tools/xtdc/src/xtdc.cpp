@@ -101,8 +101,8 @@ namespace xtdc_command {
         "",
         "Exemples:",
         "    xtdc build",
-        "    xtdc build -p my_apps",
-        "    xtdc build -p my_apps -t my_app1",
+        "    xtdc build my_apps",
+        "    xtdc build my_apps -t my_app1",
         "    xtdc build --help"
       };
     }
@@ -123,7 +123,7 @@ namespace xtdc_command {
         "",
         "Exemples:",
         "    xtdc clean",
-        "    xtdc clean -p my_app",
+        "    xtdc clean my_app",
         "    xtdc clean --help",
       };
     }
@@ -144,7 +144,7 @@ namespace xtdc_command {
         "",
         "Exemples:",
         "    xtdc install",
-        "    xtdc install -p my_app",
+        "    xtdc install my_app",
         "    xtdc install --help",
       };
     }
@@ -165,7 +165,7 @@ namespace xtdc_command {
         "",
         "Exemples:",
         "    xtdc open",
-        "    xtdc open -p my_app",
+        "    xtdc open my_app",
         "    xtdc open --help",
       };
     }
@@ -201,7 +201,7 @@ namespace xtdc_command {
         "",
         "Exemples:",
         "    xtdc new console",
-        "    xtdc new gui -p my_app",
+        "    xtdc new gui my_app",
         "    xtdc new --help",
       };
     }
@@ -221,8 +221,8 @@ namespace xtdc_command {
         "",
         "Exemples:",
         "    xtdc update",
-        "    xtdc update -p my_apps",
-        "    xtdc update -p my_apps -t my_app1",
+        "    xtdc update my_apps",
+        "    xtdc update my_apps -t my_app1",
         "    xtdc update --help",
       };
     }
@@ -245,8 +245,8 @@ namespace xtdc_command {
         "",
         "Exemples:",
         "    xtdc run",
-        "    xtdc run -p my_apps",
-        "    xtdc run -p my_apps -t my_app1",
+        "    xtdc run my_apps",
+        "    xtdc run my_apps -t my_app1",
         "    xtdc run --help",
       };
     }
@@ -265,7 +265,7 @@ namespace xtdc_command {
         "",
         "Exemples:",
         "    xtdc list",
-        "    xtdc list -p my_app",
+        "    xtdc list my_app",
         "    xtdc list --help",
       };
     }
@@ -286,7 +286,7 @@ namespace xtdc_command {
         "",
         "Exemples:",
         "    xtdc test",
-        "    xtdc test -p my_app",
+        "    xtdc test my_app",
         "    xtdc test --help",
       };
     }
@@ -307,7 +307,7 @@ namespace xtdc_command {
         "",
         "Exemples:",
         "    xtdc uninstall",
-        "    xtdc uninstall -p my_app",
+        "    xtdc uninstall my_app",
         "    xtdc uninstall --help",
       };
     }
