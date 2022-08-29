@@ -156,7 +156,7 @@ namespace xtdc_command {
       return "";
     }
     
-    xtd::ustring run(const xtd::ustring& target, bool release) const {
+    xtd::ustring run(const xtd::ustring& target, bool release, bool wait_process) const {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Run project aborted.", path_);
       build(target, false, release);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Run project aborted.";
@@ -169,7 +169,7 @@ namespace xtdc_command {
       process.start_info(xtd::diagnostics::process_start_info(target_path));
       process.start_info().use_shell_execute(is_gui(std::filesystem::path(target_path.c_str())));
       process.start();
-      if (!is_gui(std::filesystem::path(target_path.c_str()))) process.wait_for_exit();
+      if (wait_process) process.wait_for_exit();
       return "";
     }
     
