@@ -41,7 +41,24 @@ namespace xtdc_command {
     }
     
   private:
-    static string get_base_path() noexcept {return __XTD_RESOURCES_PATH__;}
+    static ustring get_full_path() noexcept {return __XTD_RESOURCES_PATH__;}
+
+    static ustring get_project_full_path_from_path(const xtd::ustring& path) noexcept {
+      if (path.empty() || path == ".") return environment::current_directory();
+      else if (path == "..") {
+        auto directories = environment::current_directory().split({io::path::directory_separator_char()});
+        if (directories.size() < 2) return "";
+        directories.erase(directories.begin() + directories.size() - 2);
+        return io::path::combine(directories);
+      }
+      return io::path::get_full_path(path);
+    }
+    
+    static ustring get_project_name_from_path(const xtd::ustring& path) noexcept {
+      auto directories = get_project_full_path_from_path(path).split({io::path::directory_separator_char()});
+      if (directories.size() == 0) return "";
+      return directories[directories.size() - 1];
+    }
     
     static vector<ustring> get_help() noexcept {
       return {
@@ -383,18 +400,31 @@ namespace xtdc_command {
         cout << ustring::join("\n", get_add_help()) << endl;
         return -1;
       }
-      if (type.empty()) type = "gui";
-      if (sdk.empty()) sdk = "xtd";
-      if (name.empty()) name = filesystem::path(path).stem().string();
-      if (path.empty()) path = environment::current_directory();
       
       if (show_help)
         cout << ustring::join("\n", get_add_help()) << endl;
       else {
+        if (type.empty()) type = "gui";
+        if (sdk.empty()) sdk = "xtd";
+        if (name.empty()) name = filesystem::path(path).stem().string();
+
+        if (name.empty()) {
+          cout << "The name is empty." << endl;
+          return -1;
+        }
+        if (std::find_if(name.begin(), name.end(), [](auto c) {return !(isalnum(c) || c == '_');}) != name.end()) {
+          cout << "The name : \"" << name << "\" contains invalid charaters." << endl;
+          return -1;
+        }
+        if (name.size() > 128) {
+          cout << "The size of the name is invalid, the size must be less than or equal to 128." << endl;
+          return -1;
+        }
+
         xtdc_command::project_type project_type = map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
         xtdc_command::project_sdk project_sdk = map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}} [sdk];
         xtdc_command::project_language project_language = map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
-        cout << project_management(filesystem::absolute(filesystem::path(path))).add(name, project_type, project_sdk, project_language) << endl;
+        cout << project_management(filesystem::path(get_project_full_path_from_path(path))).add(name, project_type, project_sdk, project_language) << endl;
       }
       return 0;
     }
@@ -416,10 +446,8 @@ namespace xtdc_command {
       }
       if (show_help)
         cout << ustring::join("\n", get_build_help()) << endl;
-      else {
-        if (path.empty()) path = environment::current_directory();
-        cout << project_management(filesystem::absolute(filesystem::path(path))).build(target, clean_first, release) << endl;
-      }
+      else
+        cout << project_management(filesystem::path(get_project_full_path_from_path(path))).build(target, clean_first, release) << endl;
       return 0;
     }
     
@@ -438,10 +466,8 @@ namespace xtdc_command {
       }
       if (show_help)
         cout << ustring::join("\n", get_clean_help()) << endl;
-      else {
-        if (path.empty()) path = environment::current_directory();
-        cout << project_management(filesystem::absolute(filesystem::path(path))).clean(release) << endl;
-      }
+      else
+        cout << project_management(filesystem::path(get_project_full_path_from_path(path))).clean(release) << endl;
       return 0;
     }
     
@@ -465,10 +491,8 @@ namespace xtdc_command {
       }
       if (show_help)
         cout << ustring::join("\n", get_install_help()) << endl;
-      else {
-        if (path.empty()) path = environment::current_directory();
-        cout << project_management(filesystem::absolute(filesystem::path(path))).install(release) << endl;
-      }
+      else
+        cout << project_management(filesystem::path(get_project_full_path_from_path(path))).install(release) << endl;
       return 0;
     }
     
@@ -487,14 +511,13 @@ namespace xtdc_command {
         cout << ustring::join("\n", get_new_help()) << endl;
         return -1;
       }
-      if (type.empty()) type = "gui";
-      if (sdk.empty()) sdk = "xtd";
-      if (name.empty()) name = filesystem::path(path).stem().string();
-      if (path.empty()) path = environment::current_directory();
-      
       if (show_help)
         cout << ustring::join("\n", get_new_help()) << endl;
       else {
+        if (type.empty()) type = "gui";
+        if (sdk.empty()) sdk = "xtd";
+        if (name.empty()) name = get_project_name_from_path(path);
+
         if (name.empty()) {
           cout << "The name is empty." << endl;
           return -1;
@@ -511,7 +534,7 @@ namespace xtdc_command {
         xtdc_command::project_type project_type = map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
         xtdc_command::project_sdk project_sdk = map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}} [sdk];
         xtdc_command::project_language project_language = map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
-        cout << project_management(filesystem::absolute(filesystem::path(path))).create(name, project_type, project_sdk, project_language) << endl;
+        cout << project_management(filesystem::path(get_project_full_path_from_path(path))).create(name, project_type, project_sdk, project_language) << endl;
       }
       return 0;
     }
@@ -531,10 +554,8 @@ namespace xtdc_command {
       }
       if (show_help)
         cout << ustring::join("\n", get_open_help()) << endl;
-      else {
-        if (path.empty()) path = environment::current_directory();
-        cout << project_management(filesystem::absolute(filesystem::path(path))).open(release) << endl;
-      }
+      else
+        cout << project_management(filesystem::path(get_project_full_path_from_path(path))).open(release) << endl;
       return 0;
     }
     
@@ -553,10 +574,8 @@ namespace xtdc_command {
       }
       if (show_help)
         cout << ustring::join("\n", get_update_help()) << endl;
-      else {
-        if (path.empty()) path = environment::current_directory();
-        cout << project_management(filesystem::absolute(filesystem::path(path))).update(target) << endl;
-      }
+      else
+        cout << project_management(filesystem::path(get_project_full_path_from_path(path))).update(target) << endl;
       return 0;
     }
     
@@ -577,10 +596,8 @@ namespace xtdc_command {
       }
       if (show_help)
         cout << ustring::join("\n", get_run_help()) << endl;
-      else {
-        if (path.empty()) path = environment::current_directory();
-        cout << project_management(filesystem::absolute(filesystem::path(path))).run(target, release, wait) << endl;
-      }
+      else
+        cout << project_management(filesystem::path(get_project_full_path_from_path(path))).run(target, release, wait) << endl;
       return 0;
     }
     
@@ -598,10 +615,8 @@ namespace xtdc_command {
       }
       if (show_help)
         cout << ustring::join("\n", get_targets_help()) << endl;
-      else {
-        if (path.empty()) path = environment::current_directory();
-        cout << xtd::ustring::join(", ", project_management(filesystem::absolute(filesystem::path(path))).targets()) << endl;
-      }
+      else
+        cout << xtd::ustring::join(", ", project_management(filesystem::path(get_project_full_path_from_path(path))).targets()) << endl;
       return 0;
     }
     
@@ -620,10 +635,8 @@ namespace xtdc_command {
       }
       if (show_help)
         cout << ustring::join("\n", get_test_help()) << endl;
-      else {
-        if (path.empty()) path = environment::current_directory();
-        cout << project_management(filesystem::absolute(filesystem::path(path))).test(release) << endl;
-      }
+      else
+        cout << project_management(filesystem::path(get_project_full_path_from_path(path))).test(release) << endl;
       return 0;
     }
     
@@ -642,10 +655,8 @@ namespace xtdc_command {
       }
       if (show_help)
         cout << ustring::join("\n", get_uninstall_help()) << endl;
-      else {
-        if (path.empty()) path = environment::current_directory();
-        cout << project_management(filesystem::absolute(filesystem::path(path))).uninstall(release) << endl;
-      }
+      else
+        cout << project_management(filesystem::path(get_project_full_path_from_path(path))).uninstall(release) << endl;
       return 0;
     }
     
