@@ -79,7 +79,7 @@ namespace xtdc_command {
         "  documentation    Open xtd documentation.",
         "  examples         Open xtd examples.",
         "  guide            Open xtd reference guide.",
-        "  web              Open Gammasoft website.",
+        "  web              Open xtd website.",
         "  help             Show help.",
         "",
         "Run 'xtdc command --help' for more information on a command.",
@@ -90,7 +90,35 @@ namespace xtdc_command {
     static vector<ustring> get_add_help() noexcept {
       return {
         "Add new project to project.",
-        "Usage: add [options]",
+        "Usage: add [template-short-name] [path] [<options>]",
+        "",
+        "template-short-name:",
+        "  A template short name of the following table. If no short name specified, gui is used.",
+        "  Templates               Short Name     SDK/Language                      ",
+        "  -------------------------------------------------------------------------",
+        "  GUI Application         gui            [xtd], cocoa, fltk, gtk+2, gtk+3, ",
+        "                                         gtkmm, wxwidgets, qt5, win32,     ",
+        "                                         winforms, wpf                     ",
+        "  Console Application     console        [xtd], c++, c, c#, objective-c    ",
+        "  Shared library          sharedlib      [xtd], c++, c, c#, objective-c    ",
+        "  Static library          staticlib      [xtd], c++, c, c#, objective-c    ",
+        "  Unit Test Project       test           [xtd], gtest, catch2              ",
+        "  Solution File           sln            [xtd]                             ",
+        "",
+        "path:",
+        "  Location to place the generated output. If no path is specified, the current path is used.",
+        "",
+        "options:",
+        "  -h, --help          Displays help for this command.",
+        "  -n, --name          The name for the project. If no name is specified, the name of the specified path or of the current directory is used.",
+        "  --type              Filters templates based on available types. Predefined values are \"project\", \"item\" or \"other\".",
+        "  -s , --sdk          Filters templates based on SDK/language and specifies the SDK/language of the template to create.",
+        "",
+        "",
+        "Exemples:",
+        "    xtdc add console",
+        "    xtdc add gui my_app",
+        "    xtdc add --help",
       };
     }
     
@@ -206,7 +234,6 @@ namespace xtdc_command {
         "  -n, --name          The name for the project. If no name is specified, the name of the specified path or of the current directory is used.",
         "  --type              Filters templates based on available types. Predefined values are \"project\", \"item\" or \"other\".",
         "  -s , --sdk          Filters templates based on SDK/language and specifies the SDK/language of the template to create.",
-        "  --force             Forces content to be generated even if it would change existing files.",
         "",
         "",
         "Exemples:",
@@ -648,7 +675,7 @@ namespace xtdc_command {
     }
     
     static int documentation(const vector<ustring>& args) {
-      process::start("https://github.com/gammasoft71/xtd/blob/master/docs/home.md").wait_for_exit();
+      process::start("https://gammasoft71.wixsite.com/xtdpro/documentation").wait_for_exit();
       return 0;
     }
     
@@ -663,7 +690,7 @@ namespace xtdc_command {
     }
     
     static int web(const vector<ustring>& args) {
-      process::start("https://gammasoft71.wixsite.com/gammasoft").wait_for_exit();
+      process::start("https://gammasoft71.wixsite.com/xtdpro").wait_for_exit();
       return 0;
     }
     
