@@ -2,14 +2,6 @@
 
 #include <xtd/xtd.core>
 #include <xtd/system_report.h>
-#include <chrono>
-#include <ctype.h>
-#include <filesystem>
-#include <iostream>
-
-#if !defined(WIN32)
-#include <unistd.h>
-#endif
 
 using namespace std;
 using namespace xtd;
