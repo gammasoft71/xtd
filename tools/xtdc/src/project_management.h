@@ -3,14 +3,14 @@
 #include <iostream>
 #include <filesystem>
 #include <map>
-#include <string>
-#include <vector>
 #include <xtd/argument_exception.h>
 #include <xtd/bit_converter.h>
 #include <xtd/environment.h>
 #include <xtd/action.h>
 #include <xtd/console.h>
+#include <xtd/ustring.h>
 #include <xtd/diagnostics/process.h>
+#include <xtd/io/directory.h>
 #include <xtd/io/file.h>
 #include <xtd/io/path.h>
 
@@ -22,9 +22,9 @@ namespace xtdc_command {
   class project_management {
     class change_current_directory {
     public:
-      change_current_directory(const std::filesystem::path& current_directory) {
-        if (!xtd::io::file::exists(current_directory.string())) std::filesystem::create_directories(std::filesystem::path(current_directory));
-        xtd::environment::current_directory(current_directory.string());
+      change_current_directory(const xtd::ustring& current_directory) {
+        if (!xtd::io::file::exists(current_directory)) xtd::io::directory::create_directory(current_directory);
+        xtd::environment::current_directory(current_directory);
       }
       ~change_current_directory() {xtd::environment::current_directory(previous_current_directoy_);}
     private:
@@ -32,7 +32,7 @@ namespace xtdc_command {
     };
     
   public:
-    explicit project_management(const std::filesystem::path& output) : path_(output) {}
+    explicit project_management(const xtd::ustring& output) : path_(output.c_str()) {}
     
     static std::vector<project_sdk> get_valid_sdks(project_type type) {
       switch (type) {
@@ -72,15 +72,15 @@ namespace xtdc_command {
       if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return "The sdk param not valid with type param! Create project aborted.";
       auto languages = get_valid_languages(sdk);
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return "The language param not valid with sdk param! Create project aborted.";
-      if (is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} already exists and not empty! Create project aborted.", path_);
+      if (is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} already exists and not empty! Create project aborted.", std::filesystem::path(path_.c_str()));
       if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return "Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix! Create project aborted.";
-      std::filesystem::create_directories(std::filesystem::path {path_} / "build");
+      std::filesystem::create_directories(std::filesystem::path {std::filesystem::path(path_.c_str())} / "build");
       create_doxygen_txt(name);
       create_readme_md(name);
       std::map<project_type, xtd::action<const xtd::ustring&, project_sdk, project_language, bool>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}} [type](name, sdk, language, true);
       generate(name);
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Create project aborted.";
-      return xtd::ustring::format("Project {} created", path_);
+      return xtd::ustring::format("{0}Project {1} created{0}", xtd::environment::new_line(), path_);
     }
     
     xtd::ustring add(const xtd::ustring& name, project_type type, project_sdk sdk, project_language language) const {
@@ -88,29 +88,29 @@ namespace xtdc_command {
       if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return "The sdk param not valid with type param! Add project aborted.";
       auto languages = get_valid_languages(sdk);
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return "The language param not valid with sdk param! Add project aborted.";
-      if (is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} already exists and not empty! Add project aborted.", path_);
+      if (is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} already exists and not empty! Add project aborted.", std::filesystem::path(path_.c_str()));
       if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return "Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix! Add project aborted.";
-      if (!std::filesystem::exists(path_.parent_path() / "CMakeLists.txt")) return xtd::ustring::format("Parent directory \"{}\", is not a known project! Add project aborted.", path_.parent_path().string());
-      auto lines  = xtd::io::file::read_all_lines((path_.parent_path() / "CMakeLists.txt").string());
+      if (!std::filesystem::exists(std::filesystem::path(path_.c_str()).parent_path() / "CMakeLists.txt")) return xtd::ustring::format("Parent directory \"{}\", is not a known project! Add project aborted.", std::filesystem::path(path_.c_str()).parent_path().string());
+      auto lines  = xtd::io::file::read_all_lines((std::filesystem::path(path_.c_str()).parent_path() / "CMakeLists.txt").string());
       if (std::find_if(lines.begin(), lines.end(), [](const xtd::ustring & value) {return value.contains("find_package(xtd");}) != lines.end() && sdk != project_sdk::xtd) return "The sdk param not valid with current project sdk! Add project aborted.";
       if (std::find_if(lines.begin(), lines.end(), [](const xtd::ustring & value) {return value.contains("find_package(xtd");}) == lines.end() && sdk == project_sdk::xtd) return "The sdk param not valid with current project sdk! Add project aborted.";
       
-      lines.push_back(xtd::ustring::format("{}({})", std::find_if(lines.begin(), lines.end(), [](const xtd::ustring & value) {return value.contains("find_package(xtd");}) != lines.end() ? "add_projects" : "add_subdirectory", path_.stem().string()));
+      lines.push_back(xtd::ustring::format("{}({})", std::find_if(lines.begin(), lines.end(), [](const xtd::ustring & value) {return value.contains("find_package(xtd");}) != lines.end() ? "add_projects" : "add_subdirectory", std::filesystem::path(path_.c_str()).stem().string()));
       std::map<project_type, xtd::action<const xtd::ustring&, project_sdk, project_language, bool>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}} [type](name, sdk, language, false);
-      auto project_path = path_;
-      path_ = path_.parent_path();
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      auto project_path = std::filesystem::path(path_.c_str());
+      std::filesystem::path(path_.c_str()) = std::filesystem::path(path_.c_str()).parent_path();
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
       generate(name);
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Add project aborted.";
-      return xtd::ustring::format("Project {} added", project_path);
+      return xtd::ustring::format("{0}Project {1} added{0}", xtd::environment::new_line(), project_path.string());
     }
     
     xtd::ustring build(const xtd::ustring& target, bool clean_first, bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Build project aborted.", path_);
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Build project aborted.", std::filesystem::path(path_.c_str()));
       if (clean_first) clean(release);
       else generate();
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Build project aborted.";
-      change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? (build_path() / (release ? "Release" : "Debug")) : build_path()};
+      change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? (build_path() / (release ? "Release" : "Debug")).string() : build_path().string()};
       if (xtd::environment::os_version().is_windows_platform())
         launch_and_wait_process("cmake", xtd::ustring::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::ustring::format(" --target {}", target), clean_first ? xtd::ustring::format(" --clean-first {}", target) : ""), false);
       else if (xtd::environment::os_version().is_macos_platform())
@@ -118,49 +118,49 @@ namespace xtdc_command {
       else
         launch_and_wait_process("cmake", xtd::ustring::format("--build {}{}", build_path() / (release ? "Release" : "Debug"), target.empty() ? "" : xtd::ustring::format(" --target {}", target), clean_first ? " --clean-first {}" : ""));
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Build project aborted.";
-      return xtd::ustring::format("Project {} builded", path_);
+      return xtd::ustring::format("{0}Project {1} builded{0}", xtd::environment::new_line(), path_);
     }
     
     xtd::ustring clean(bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Clean project aborted.", path_);
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Clean project aborted.", std::filesystem::path(path_.c_str()));
       std::filesystem::remove_all(xtd::environment::os_version().is_unix_platform() ? (build_path() / (release ? "Release" : "Debug")) : build_path());
       generate();
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Clean project aborted.";
-      return xtd::ustring::format("Project {} cleaned", path_);
+      return xtd::ustring::format("{0}Project {1} cleaned{0}", xtd::environment::new_line(), path_);
     }
     
     xtd::ustring install(bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Install project aborted.", path_);
-      change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? (build_path() / (release ? "Release" : "Debug")) : build_path()};
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Install project aborted.", std::filesystem::path(path_.c_str()));
+      change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? (build_path() / (release ? "Release" : "Debug")).string() : build_path().string()};
       build("install", false, release);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Install project aborted.";
-      return xtd::ustring::format("Project {} installed", path_);
+      return xtd::ustring::format("{0}Project {1} installed{0}", xtd::environment::new_line(), path_);
     }
     
     xtd::ustring open(bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Open project aborted.", path_);
-      change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? (build_path() / (release ? "Release" : "Debug")) : build_path()};
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Open project aborted.", std::filesystem::path(path_.c_str()));
+      change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? (build_path() / (release ? "Release" : "Debug")).string() : build_path().string()};
       generate();
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Open project aborted.";
       if (xtd::environment::os_version().is_windows_platform()) launch_and_wait_process(xtd::ustring::format("{}.sln", (build_path() / get_name().c_str()).string()), true);
       else if (xtd::environment::os_version().is_macos_platform()) launch_and_wait_process(xtd::ustring::format("{}.xcodeproj", (build_path() / get_name().c_str()).string()), true);
       else launch_and_wait_process(xtd::ustring::format("{}.cbp", (build_path() / (release ? "Release" : "Debug") / get_name().c_str()).string()), true);
-      return xtd::ustring::format("Project {} opened", get_name());
+      return xtd::ustring::format("{0}Project {1} opened{0}", xtd::environment::new_line(), get_name());
     }
     
     xtd::ustring update(const xtd::ustring& target) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Update project aborted.", path_);
-      change_current_directory current_directory {build_path()};
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Update project aborted.", std::filesystem::path(path_.c_str()));
+      change_current_directory current_directory {build_path().string()};
       generate(target);
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Update project aborted.";
-      return "";
+      return xtd::ustring::format("{0}Project {1} updated{0}", xtd::environment::new_line(), get_name());
     }
     
     xtd::ustring run(const xtd::ustring& target, bool release, bool wait_process) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Run project aborted.", path_);
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Run project aborted.", std::filesystem::path(path_.c_str()));
       build(target, false, release);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Run project aborted.";
-      change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? (build_path() / (release ? "Release" : "Debug")) : build_path()};
+      change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? (build_path() / (release ? "Release" : "Debug")).string() : build_path().string()};
       auto target_path = target.empty() ? get_first_target_path(release) : get_target_path(target, release);
       if (target_path.empty()) return "The target does not exist! Run project aborted.";
 
@@ -183,18 +183,18 @@ namespace xtdc_command {
     }
     
     xtd::ustring test(bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Test project aborted.", path_);
-      change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? (build_path() / (release ? "Release" : "Debug")) : build_path()};
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Test project aborted.", std::filesystem::path(path_.c_str()));
+      change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? (build_path() / (release ? "Release" : "Debug")).string() : build_path().string()};
       build("", false, release);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Test project aborted.";
       launch_and_wait_process("ctest", xtd::ustring::format("--output-on-failure --build-config {}", release ? "release" : "debug"));
-      return xtd::ustring::format("Project {} tested", path_);
+      return xtd::ustring::format("{0}Project {1} tested{0}", xtd::environment::new_line(), path_);
     }
     
     xtd::ustring uninstall(bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Uninstall project aborted.", path_);
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Uninstall project aborted.", std::filesystem::path(path_.c_str()));
       if (!std::filesystem::exists((xtd::environment::os_version().is_unix_platform() ? (build_path() / (release ? "Release" : "Debug")) : build_path()) / "install_manifest.txt")) return xtd::ustring::format("File {} does not exists! Uninstall project aborted.", ((xtd::environment::os_version().is_unix_platform() ? (build_path() / (release ? "Release" : "Debug")) : build_path()) / "install_manifest.txt").string());
-      change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? (build_path() / (release ? "Release" : "Debug")) : build_path()};
+      change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? (build_path() / (release ? "Release" : "Debug")).string() : build_path().string()};
       
       std::filesystem::path app_path;
       for (auto file : xtd::io::file::read_all_lines(((xtd::environment::os_version().is_unix_platform() ? (build_path() / (release ? "Release" : "Debug")) : build_path()) / "install_manifest.txt").string())) {
@@ -206,7 +206,7 @@ namespace xtdc_command {
       
       std::filesystem::remove((xtd::environment::os_version().is_unix_platform() ? (build_path() / (release ? "Release" : "Debug")) : build_path()) / "install_manifest.txt");
       if (!app_path.empty()) std::filesystem::remove_all(app_path);
-      return xtd::ustring::format("Project {} uninstalled", path_);
+      return xtd::ustring::format("{0}Project {1} uninstalled{0}", xtd::environment::new_line(), path_);
     }
     
   private:
@@ -222,7 +222,7 @@ namespace xtdc_command {
           }
         }
       }
-      if (name.empty()) name = path_.filename().string();
+      if (name.empty()) name = std::filesystem::path(path_.c_str()).filename().string();
       return name;
     }
     
@@ -237,8 +237,8 @@ namespace xtdc_command {
       for (const auto& line : get_system_information())
         if (line.index_of("_BINARY_DIR:STATIC=") != xtd::ustring::npos)
           return make_platform_target_path({line.replace(xtd::ustring::format("{}_BINARY_DIR:STATIC=", line.substring(0, line.index_of("_BINARY_DIR:STATIC="))), "").c_str()}, line.substring(0, line.index_of("_BINARY_DIR:STATIC=")), release);
-      if (xtd::environment::os_version().is_windows_platform()) return (build_path() / path_.filename() / (release ? "Release" : "Debug") / path_.filename()).string();
-      return (build_path() / (release ? "Release" : "Debug") / path_.filename() / path_.filename()).string();
+      if (xtd::environment::os_version().is_windows_platform()) return (build_path() / std::filesystem::path(path_.c_str()).filename() / (release ? "Release" : "Debug") / std::filesystem::path(path_.c_str()).filename()).string();
+      return (build_path() / (release ? "Release" : "Debug") / std::filesystem::path(path_.c_str()).filename() / std::filesystem::path(path_.c_str()).filename()).string();
     }
     
     xtd::ustring make_platform_target_path(const std::filesystem::path& path, const xtd::ustring& target, bool release) const {
@@ -299,8 +299,8 @@ namespace xtdc_command {
       return system_information;
     }
     
-    std::filesystem::path build_path() const {return path_ / "build";}
-    std::filesystem::path working_dir() const {return path_ / "build";}
+    std::filesystem::path build_path() const {return std::filesystem::path(path_.c_str()) / "build";}
+    std::filesystem::path working_dir() const {return std::filesystem::path(path_.c_str()) / "build";}
     int32_t last_exit_code() const {return last_exit_code_;}
     
     void create_blank_solution(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) {
@@ -323,7 +323,7 @@ namespace xtdc_command {
         "",
         "# Projects"
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_xtd_blank_solution(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) {
@@ -343,7 +343,7 @@ namespace xtdc_command {
         "",
         "# Projects"
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_console(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
@@ -354,10 +354,10 @@ namespace xtdc_command {
     }
     
     void create_c_console(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_c_console_solution_cmakelists_txt(name);
-      create_c_console_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_c_console_source(name, create_solution ? path_ / name.c_str() : path_);
+      create_c_console_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_c_console_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_c_console_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -368,7 +368,7 @@ namespace xtdc_command {
         xtd::ustring::format("project({})", name),
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_c_console_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -426,10 +426,10 @@ namespace xtdc_command {
     }
     
     void create_cpp_console(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_cpp_console_solution_cmakelists_txt(name);
-      create_cpp_console_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_cpp_console_source(name, create_solution ? path_ / name.c_str() : path_);
+      create_cpp_console_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_cpp_console_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_cpp_console_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -440,7 +440,7 @@ namespace xtdc_command {
         xtd::ustring::format("project({})", name),
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_cpp_console_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -482,10 +482,10 @@ namespace xtdc_command {
     }
     
     void create_csharp_console(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_csharp_console_solution_cmakelists_txt(name);
-      create_csharp_console_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_csharp_console_source(name, create_solution ? path_ / name.c_str() : path_);
+      create_csharp_console_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_csharp_console_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_csharp_console_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -496,7 +496,7 @@ namespace xtdc_command {
         xtd::ustring::format("project({})", name),
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_csharp_console_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -543,10 +543,10 @@ namespace xtdc_command {
     }
     
     void create_objectivec_console(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_objectivec_console_solution_cmakelists_txt(name);
-      create_objectivec_console_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_objectivec_console_source(name, create_solution ? path_ / name.c_str() : path_);
+      create_objectivec_console_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_objectivec_console_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_objectivec_console_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -557,7 +557,7 @@ namespace xtdc_command {
         xtd::ustring::format("project({})", name),
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_objectivec_console_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -598,13 +598,13 @@ namespace xtdc_command {
     }
     
     void create_xtd_console(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "properties" : path_ / "properties");
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "properties" : std::filesystem::path(path_.c_str()) / "properties");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_xtd_console_solution_cmakelists_txt(name);
-      create_xtd_console_application_properties(name, create_solution ? path_ / name.c_str() : path_);
-      create_xtd_console_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_xtd_console_include(name, create_solution ? path_ / name.c_str() : path_);
-      create_xtd_console_source(name, create_solution ? path_ / name.c_str() : path_);
+      create_xtd_console_application_properties(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_xtd_console_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_xtd_console_include(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_xtd_console_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_xtd_console_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -621,7 +621,7 @@ namespace xtdc_command {
         "# Install",
         "install_package()",
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_xtd_console_application_properties(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -698,12 +698,12 @@ namespace xtdc_command {
     }
     
     void create_cocoa_gui(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_cocoa_gui_solution_cmakelists_txt(name);
-      create_cocoa_gui_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_cocoa_gui_include(name, create_solution ? path_ / name.c_str() : path_);
-      create_cocoa_gui_source(name, create_solution ? path_ / name.c_str() : path_);
-      create_cocoa_gui_main(name, create_solution ? path_ / name.c_str() : path_);
+      create_cocoa_gui_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_cocoa_gui_include(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_cocoa_gui_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_cocoa_gui_main(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_cocoa_gui_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -714,7 +714,7 @@ namespace xtdc_command {
         xtd::ustring::format("project({})", name),
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_cocoa_gui_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -801,12 +801,12 @@ namespace xtdc_command {
     }
     
     void create_fltk_gui(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_fltk_gui_solution_cmakelists_txt(name);
-      create_fltk_gui_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_fltk_gui_include(name, create_solution ? path_ / name.c_str() : path_);
-      create_fltk_gui_source(name, create_solution ? path_ / name.c_str() : path_);
-      create_fltk_gui_main(name, create_solution ? path_ / name.c_str() : path_);
+      create_fltk_gui_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_fltk_gui_include(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_fltk_gui_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_fltk_gui_main(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_fltk_gui_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -817,7 +817,7 @@ namespace xtdc_command {
         xtd::ustring::format("project({})", name),
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt).string()").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt).string()").string(), lines);
     }
     
     void create_fltk_gui_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -900,10 +900,10 @@ namespace xtdc_command {
     }
     
     void create_gtk2_gui(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_gtk2_gui_solution_cmakelists_txt(name);
-      create_gtk2_gui_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_gtk2_gui_source(name, create_solution ? path_ / name.c_str() : path_);
+      create_gtk2_gui_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_gtk2_gui_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_gtk2_gui_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -914,7 +914,7 @@ namespace xtdc_command {
         xtd::ustring::format("project({})", name),
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_gtk2_gui_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -966,10 +966,10 @@ namespace xtdc_command {
     }
     
     void create_gtk3_gui(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_gtk3_gui_solution_cmakelists_txt(name);
-      create_gtk3_gui_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_gtk3_gui_source(name, create_solution ? path_ / name.c_str() : path_);
+      create_gtk3_gui_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_gtk3_gui_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_gtk3_gui_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -980,7 +980,7 @@ namespace xtdc_command {
         xtd::ustring::format("project({})", name),
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_gtk3_gui_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -1032,12 +1032,12 @@ namespace xtdc_command {
     }
     
     void create_gtkmm_gui(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_gtkmm_gui_solution_cmakelists_txt(name);
-      create_gtkmm_gui_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_gtkmm_gui_include(name, create_solution ? path_ / name.c_str() : path_);
-      create_gtkmm_gui_source(name, create_solution ? path_ / name.c_str() : path_);
-      create_gtkmm_gui_main(name, create_solution ? path_ / name.c_str() : path_);
+      create_gtkmm_gui_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_gtkmm_gui_include(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_gtkmm_gui_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_gtkmm_gui_main(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_gtkmm_gui_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -1048,7 +1048,7 @@ namespace xtdc_command {
         xtd::ustring::format("project({})", name),
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_gtkmm_gui_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -1137,16 +1137,16 @@ namespace xtdc_command {
     }
     
     void create_qt5_gui(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) {
         create_qt5_gui_solution_cmakelists_txt(name);
         create_qt5_gui_solution_qmake_pro(name);
       }
-      create_qt5_gui_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_qt5_gui_qmake_pro(name, create_solution ? path_ / name.c_str() : path_);
-      create_qt5_gui_include(name, create_solution ? path_ / name.c_str() : path_);
-      create_qt5_gui_source(name, create_solution ? path_ / name.c_str() : path_);
-      create_qt5_gui_main(name, create_solution ? path_ / name.c_str() : path_);
+      create_qt5_gui_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_qt5_gui_qmake_pro(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_qt5_gui_include(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_qt5_gui_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_qt5_gui_main(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_qt5_gui_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -1157,7 +1157,7 @@ namespace xtdc_command {
         xtd::ustring::format("project({})", name),
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_qt5_gui_solution_qmake_pro(const xtd::ustring& name) const {
@@ -1165,7 +1165,7 @@ namespace xtdc_command {
         "TEMPLATE = subdirs",
         xtd::ustring::format("SUBDIRS = {}", name),
       };
-      xtd::io::file::write_all_lines((path_ / xtd::ustring::format("{}.pro", name).c_str()).string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / xtd::ustring::format("{}.pro", name).c_str()).string(), lines);
     }
     
     void create_qt5_gui_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -1266,10 +1266,10 @@ namespace xtdc_command {
     }
     
     void create_win32_gui(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_win32_gui_solution_cmakelists_txt(name);
-      create_win32_gui_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_win32_gui_source(name, create_solution ? path_ / name.c_str() : path_);
+      create_win32_gui_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_win32_gui_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_win32_gui_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -1280,7 +1280,7 @@ namespace xtdc_command {
         xtd::ustring::format("project({})", name),
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_win32_gui_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -1340,10 +1340,10 @@ namespace xtdc_command {
     }
     
     void create_winforms_gui(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_winforms_gui_solution_cmakelists_txt(name);
-      create_winforms_gui_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_winforms_gui_source(name, create_solution ? path_ / name.c_str() : path_);
+      create_winforms_gui_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_winforms_gui_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_winforms_gui_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -1354,7 +1354,7 @@ namespace xtdc_command {
         xtd::ustring::format("project({})", name),
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_winforms_gui_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -1417,14 +1417,14 @@ namespace xtdc_command {
     }
     
     void create_wpf_gui(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_wpf_gui_solution_cmakelists_txt(name);
-      create_wpf_gui_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_wpf_gui_source(name, create_solution ? path_ / name.c_str() : path_);
-      create_wpf_gui_window1_xaml(name, create_solution ? path_ / name.c_str() : path_);
-      create_wpf_gui_application_config(name, create_solution ? path_ / name.c_str() : path_);
-      create_wpf_gui_application_source(name, create_solution ? path_ / name.c_str() : path_);
-      create_wpf_gui_application_xaml(name, create_solution ? path_ / name.c_str() : path_);
+      create_wpf_gui_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_wpf_gui_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_wpf_gui_window1_xaml(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_wpf_gui_application_config(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_wpf_gui_application_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_wpf_gui_application_xaml(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_wpf_gui_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -1435,7 +1435,7 @@ namespace xtdc_command {
         xtd::ustring::format("project({})", name),
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_wpf_gui_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -1556,12 +1556,12 @@ namespace xtdc_command {
     }
     
     void create_wxwidgets_gui(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_wxwidgets_gui_solution_cmakelists_txt(name);
-      create_wxwidgets_gui_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_wxwidgets_gui_include(name, create_solution ? path_ / name.c_str() : path_);
-      create_wxwidgets_gui_source(name, create_solution ? path_ / name.c_str() : path_);
-      create_wxwidgets_gui_main(name, create_solution ? path_ / name.c_str() : path_);
+      create_wxwidgets_gui_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_wxwidgets_gui_include(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_wxwidgets_gui_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_wxwidgets_gui_main(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_wxwidgets_gui_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -1572,7 +1572,7 @@ namespace xtdc_command {
         xtd::ustring::format("project({})", name),
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_wxwidgets_gui_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -1659,17 +1659,17 @@ namespace xtdc_command {
     }
     
     void create_xtd_gui(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "properties" : path_ / "properties");
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "resources" : path_ / "resources");
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
-      std::filesystem::copy(get_base_path() / "icons" / "xtd_forms.icns", path_ / (create_solution ? name.c_str() : "") / "resources" / xtd::ustring::format("{}.icns", name).c_str());
-      std::filesystem::copy(get_base_path() / "icons" / "xtd_forms.ico", path_ / (create_solution ? name.c_str() : "") / "resources" / xtd::ustring::format("{}.ico", name).c_str());
-      std::filesystem::copy(get_base_path() / "icons" / "xtd_forms.png", path_ / (create_solution ? name .c_str() : "") / "resources" / xtd::ustring::format("{}.png", name).c_str());
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "properties" : std::filesystem::path(path_.c_str()) / "properties");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "resources" : std::filesystem::path(path_.c_str()) / "resources");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
+      std::filesystem::copy(get_base_path() / "icons" / "xtd_forms.icns", std::filesystem::path(path_.c_str()) / (create_solution ? name.c_str() : "") / "resources" / xtd::ustring::format("{}.icns", name).c_str());
+      std::filesystem::copy(get_base_path() / "icons" / "xtd_forms.ico", std::filesystem::path(path_.c_str()) / (create_solution ? name.c_str() : "") / "resources" / xtd::ustring::format("{}.ico", name).c_str());
+      std::filesystem::copy(get_base_path() / "icons" / "xtd_forms.png", std::filesystem::path(path_.c_str()) / (create_solution ? name .c_str() : "") / "resources" / xtd::ustring::format("{}.png", name).c_str());
       if (create_solution) create_xtd_gui_solution_cmakelists_txt(name);
-      create_xtd_gui_application_properties(name, create_solution ? path_ / name.c_str() : path_);
-      create_xtd_gui_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_xtd_gui_include(name, create_solution ? path_ / name.c_str() : path_);
-      create_xtd_gui_source(name, create_solution ? path_ / name.c_str() : path_);
+      create_xtd_gui_application_properties(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_xtd_gui_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_xtd_gui_include(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_xtd_gui_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_xtd_gui_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -1686,7 +1686,7 @@ namespace xtdc_command {
         "# Install",
         "install_package()",
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_xtd_gui_application_properties(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -1772,13 +1772,13 @@ namespace xtdc_command {
     }
     
     void create_c_shared_library(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "include" : path_ / "include");
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "include" : std::filesystem::path(path_.c_str()) / "include");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_c_shared_library_solution_cmakelists_txt(name);
-      create_c_shared_library_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_c_shared_library_export(name, create_solution ? path_ / name.c_str() : path_);
-      create_c_shared_library_include(name, create_solution ? path_ / name.c_str() : path_);
-      create_c_shared_library_source(name, create_solution ? path_ / name.c_str() : path_);
+      create_c_shared_library_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_c_shared_library_export(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_c_shared_library_include(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_c_shared_library_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_c_shared_library_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -1789,7 +1789,7 @@ namespace xtdc_command {
         xtd::ustring::format("project({})", name),
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_c_shared_library_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -1898,13 +1898,13 @@ namespace xtdc_command {
     }
     
     void create_cpp_shared_library(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "include" : path_ / "include");
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "include" : std::filesystem::path(path_.c_str()) / "include");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_cpp_shared_library_solution_cmakelists_txt(name);
-      create_cpp_shared_library_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_cpp_shared_library_include(name, create_solution ? path_ / name.c_str() : path_);
-      create_cpp_shared_library_export(name, create_solution ? path_ / name.c_str() : path_);
-      create_cpp_shared_library_source(name, create_solution ? path_ / name.c_str() : path_);
+      create_cpp_shared_library_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_cpp_shared_library_include(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_cpp_shared_library_export(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_cpp_shared_library_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_cpp_shared_library_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -1915,7 +1915,7 @@ namespace xtdc_command {
         xtd::ustring::format("project({})", name),
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_cpp_shared_library_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -2027,10 +2027,10 @@ namespace xtdc_command {
     }
     
     void create_csharp_shared_library(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_csharp_shared_library_solution_cmakelists_txt(name);
-      create_csharp_shared_library_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_csharp_shared_library_source(name, create_solution ? path_ / name.c_str() : path_);
+      create_csharp_shared_library_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_csharp_shared_library_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_csharp_shared_library_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -2041,7 +2041,7 @@ namespace xtdc_command {
         xtd::ustring::format("project({})", name),
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_csharp_shared_library_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -2105,13 +2105,13 @@ namespace xtdc_command {
     }
     
     void create_objectivec_shared_library(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "include" : path_ / "include");
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "include" : std::filesystem::path(path_.c_str()) / "include");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_objectivec_shared_library_solution_cmakelists_txt(name);
-      create_objectivec_shared_library_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_objectivec_shared_library_header(name, create_solution ? path_ / name.c_str() : path_);
-      create_objectivec_shared_library_export(name, create_solution ? path_ / name.c_str() : path_);
-      create_objectivec_shared_library_source(name, create_solution ? path_ / name.c_str() : path_);
+      create_objectivec_shared_library_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_objectivec_shared_library_header(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_objectivec_shared_library_export(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_objectivec_shared_library_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_objectivec_shared_library_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -2122,7 +2122,7 @@ namespace xtdc_command {
         xtd::ustring::format("project({})", name),
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_objectivec_shared_library_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -2208,15 +2208,15 @@ namespace xtdc_command {
     }
     
     void create_xtd_shared_library(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "include" : path_ / "include");
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "properties" : path_ / "properties");
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "include" : std::filesystem::path(path_.c_str()) / "include");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "properties" : std::filesystem::path(path_.c_str()) / "properties");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_xtd_shared_library_solution_cmakelists_txt(name);
-      create_xtd_shared_library_application_properties(name, create_solution ? path_ / name.c_str() : path_);
-      create_xtd_shared_library_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_xtd_shared_library_include(name, create_solution ? path_ / name.c_str() : path_);
-      create_xtd_shared_library_export(name, create_solution ? path_ / name.c_str() : path_);
-      create_xtd_shared_library_source(name, create_solution ? path_ / name.c_str() : path_);
+      create_xtd_shared_library_application_properties(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_xtd_shared_library_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_xtd_shared_library_include(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_xtd_shared_library_export(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_xtd_shared_library_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_xtd_shared_library_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -2233,7 +2233,7 @@ namespace xtdc_command {
         "# Install",
         "install_package()",
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_xtd_shared_library_application_properties(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -2336,12 +2336,12 @@ namespace xtdc_command {
     }
     
     void create_c_static_library(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "include" : path_ / "include");
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "include" : std::filesystem::path(path_.c_str()) / "include");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_c_static_library_solution_cmakelists_txt(name);
-      create_c_static_library_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_c_static_library_include(name, create_solution ? path_ / name.c_str() : path_);
-      create_c_static_library_source(name, create_solution ? path_ / name.c_str() : path_);
+      create_c_static_library_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_c_static_library_include(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_c_static_library_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_c_static_library_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -2355,7 +2355,7 @@ namespace xtdc_command {
         "# Install",
         "set(INSTALL_PROJECT_NAME ${PROJECT_NAME})",
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_c_static_library_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -2436,12 +2436,12 @@ namespace xtdc_command {
     }
     
     void create_cpp_static_library(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "include" : path_ / "include");
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "include" : std::filesystem::path(path_.c_str()) / "include");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_cpp_static_library_solution_cmakelists_txt(name);
-      create_cpp_static_library_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_cpp_static_library_include(name, create_solution ? path_ / name.c_str() : path_);
-      create_cpp_static_library_source(name, create_solution ? path_ / name.c_str() : path_);
+      create_cpp_static_library_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_cpp_static_library_include(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_cpp_static_library_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_cpp_static_library_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -2452,7 +2452,7 @@ namespace xtdc_command {
         xtd::ustring::format("project({})", name),
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_cpp_static_library_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -2539,12 +2539,12 @@ namespace xtdc_command {
     }
     
     void create_objectivec_static_library(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "include" : path_ / "include");
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "include" : std::filesystem::path(path_.c_str()) / "include");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_objectivec_static_library_solution_cmakelists_txt(name);
-      create_objectivec_static_library_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_objectivec_static_library_header(name, create_solution ? path_ / name.c_str() : path_);
-      create_objectivec_static_library_source(name, create_solution ? path_ / name.c_str() : path_);
+      create_objectivec_static_library_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_objectivec_static_library_header(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_objectivec_static_library_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_objectivec_static_library_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -2555,7 +2555,7 @@ namespace xtdc_command {
         xtd::ustring::format("project({})", name),
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_objectivec_static_library_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -2625,14 +2625,14 @@ namespace xtdc_command {
     }
     
     void create_xtd_static_library(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "include" : path_ / "include");
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "properties" : path_ / "properties");
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "include" : std::filesystem::path(path_.c_str()) / "include");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "properties" : std::filesystem::path(path_.c_str()) / "properties");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_xtd_static_library_solution_cmakelists_txt(name);
-      create_xtd_static_library_application_properties(name, create_solution ? path_ / name.c_str() : path_);
-      create_xtd_static_library_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_xtd_static_library_include(name, create_solution ? path_ / name.c_str() : path_);
-      create_xtd_static_library_source(name, create_solution ? path_ / name.c_str() : path_);
+      create_xtd_static_library_application_properties(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_xtd_static_library_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_xtd_static_library_include(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_xtd_static_library_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_xtd_static_library_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -2649,7 +2649,7 @@ namespace xtdc_command {
         "# Install",
         "install_package()",
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_xtd_static_library_application_properties(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -2721,11 +2721,11 @@ namespace xtdc_command {
     }
     
     void create_catch2_unit_test_application(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_catch2_unit_test_application_solution_cmakelists_txt(name);
-      create_catch2_unit_test_application_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_catch2_unit_test_application_source(name, create_solution ? path_ / name.c_str() : path_);
-      create_catch2_unit_test_application_main(name, create_solution ? path_ / name.c_str() : path_);
+      create_catch2_unit_test_application_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_catch2_unit_test_application_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_catch2_unit_test_application_main(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_catch2_unit_test_application_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -2737,7 +2737,7 @@ namespace xtdc_command {
         "enable_testing()",
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_catch2_unit_test_application_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -2793,10 +2793,10 @@ namespace xtdc_command {
     }
     
     void create_gtest_unit_test_application(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_gtest_unit_test_application_solution_cmakelists_txt(name);
-      create_gtest_unit_test_application_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_gtest_unit_test_application_source(name, create_solution ? path_ / name.c_str() : path_);
+      create_gtest_unit_test_application_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_gtest_unit_test_application_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_gtest_unit_test_application_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -2808,7 +2808,7 @@ namespace xtdc_command {
         "enable_testing()",
         xtd::ustring::format("add_subdirectory({})", name)
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_gtest_unit_test_application_cmakelists_txt(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -2869,12 +2869,12 @@ namespace xtdc_command {
     }
     
     void create_xtd_unit_test_application(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "properties" : path_ / "properties");
-      std::filesystem::create_directories(create_solution ? path_ / name.c_str() / "src" : path_ / "src");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "properties" : std::filesystem::path(path_.c_str()) / "properties");
+      std::filesystem::create_directories(create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() / "src" : std::filesystem::path(path_.c_str()) / "src");
       if (create_solution) create_xtd_unit_test_application_solution_cmakelists_txt(name);
-      create_xtd_unit_test_application_application_properties(name, create_solution ? path_ / name.c_str() : path_);
-      create_xtd_unit_test_application_cmakelists_txt(name, create_solution ? path_ / name.c_str() : path_);
-      create_xtd_unit_test_application_source(name, create_solution ? path_ / name.c_str() : path_);
+      create_xtd_unit_test_application_application_properties(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_xtd_unit_test_application_cmakelists_txt(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
+      create_xtd_unit_test_application_source(name, create_solution ? std::filesystem::path(path_.c_str()) / name.c_str() : std::filesystem::path(path_.c_str()));
     }
     
     void create_xtd_unit_test_application_solution_cmakelists_txt(const xtd::ustring& name) const {
@@ -2891,7 +2891,7 @@ namespace xtdc_command {
         "# Install",
         "install_package()",
       };
-      xtd::io::file::write_all_lines((path_ / "CMakeLists.txt").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string(), lines);
     }
     
     void create_xtd_unit_test_application_application_properties(const xtd::ustring& name, const std::filesystem::path& path) const {
@@ -2943,50 +2943,50 @@ namespace xtdc_command {
     }
     
     void create_doxygen_txt(const xtd::ustring& name) const {
-      xtd::io::file::write_all_text((path_ / ".doxygen.txt").string(), xtd::io::path::combine(__XTD_RESOURCES_PATH__, "texts", "doxygen.txt"));
+      xtd::io::file::write_all_text((std::filesystem::path(path_.c_str()) / ".doxygen.txt").string(), xtd::io::path::combine(__XTD_RESOURCES_PATH__, "texts", "doxygen.txt"));
     }
     
     void create_readme_md(const xtd::ustring& name) const {
       std::vector<xtd::ustring> lines {
         xtd::ustring::format("# {}", name),
       };
-      xtd::io::file::write_all_lines((path_ / "README.md").string(), lines);
+      xtd::io::file::write_all_lines((std::filesystem::path(path_.c_str()) / "README.md").string(), lines);
     }
     
-    void generate() const {generate(path_.filename().string());}
+    void generate() const {generate(std::filesystem::path(path_.c_str()).filename().string());}
     
     void generate(xtd::ustring name) const {
       bool first_generation = !std::filesystem::exists(build_path());
       std::filesystem::create_directories(build_path());
-      change_current_directory current_directory {build_path()};
+      change_current_directory current_directory {build_path().string()};
       if (!first_generation && name.empty()) name = get_name();
       if (xtd::environment::os_version().is_windows_platform() && (first_generation || !std::filesystem::exists(build_path() / xtd::ustring::format("{}.sln", name).c_str()))) {
         // patch for arch ARM64 and cmake version 3.24 or later.
         // Build c++ on ARM is not supported now. We need to build for x64.
         xtd::ustring architecture_parameter = xtd::environment::get_environment_variable("PROCESSOR_ARCHITECTURE").contains("64") ? "-A \"x64\"" : "";
-        launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} {}", path_, build_path(), architecture_parameter));
+        launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} {}", std::filesystem::path(path_.c_str()), build_path(), architecture_parameter));
       } else if (xtd::environment::os_version().is_macos_platform() && (first_generation || !std::filesystem::exists(build_path() / xtd::ustring::format("{}.xcodeproj", name).c_str())))
-        launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"Xcode\"", path_, build_path()));
+        launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"Xcode\"", std::filesystem::path(path_.c_str()), build_path()), true);
       else if (xtd::environment::os_version().is_unix_platform()) {
         if (first_generation || !std::filesystem::exists(build_path() / "Debug" / xtd::ustring::format("{}.cbp", name).c_str())) {
-          change_current_directory current_directory_debug {build_path() / "Debug"};
+          change_current_directory current_directory_debug {(build_path() / "Debug").string()};
           std::filesystem::create_directories(build_path() / "Debug");
-          launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, build_path() / "Debug"));
+          launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", std::filesystem::path(path_.c_str()), build_path() / "Debug"));
           patch_cbp_file(name, "Debug");
         }
         if (first_generation || !std::filesystem::exists(build_path() / "Release" / xtd::ustring::format("{}.cbp", name).c_str())) {
-          change_current_directory current_directory_release {build_path() / "Release"};
+          change_current_directory current_directory_release {(build_path() / "Release").string()};
           std::filesystem::create_directories(build_path() / "Release");
-          launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, build_path() / "Release"));
+          launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", std::filesystem::path(path_.c_str()), build_path() / "Release"));
           patch_cbp_file(name, "Release");
         }
       }
     }
     
-    bool is_path_already_exist_and_not_empty(const std::filesystem::path& path) const {
-      if (!std::filesystem::exists({path_})) return false;
-      if (std::filesystem::is_empty({path_})) return false;
-      if (xtd::environment::os_version().is_macos_platform() && std::count_if(std::filesystem::directory_iterator(path_), std::filesystem::directory_iterator(), [](auto item) {return item.path().filename().string() != ".DS_Store";}) == 0) return false;
+    bool is_path_already_exist_and_not_empty(const xtd::ustring& path) const {
+      if (!xtd::io::directory::exists(path_)) return false;
+      if (xtd::io::directory::get_file_system_entries(path_).size() == 0) return false;
+      if (xtd::environment::os_version().is_macos_platform() && xtd::io::directory::get_file_system_entries(path_).size() == 1 && xtd::io::directory::get_file_system_entries(path_, ".DS_Store").size() == 1) return false;
       return true;
     }
     
@@ -3012,7 +3012,7 @@ namespace xtdc_command {
     }
     
     void patch_cbp_file(const xtd::ustring& name, const xtd::ustring& build_config) const {
-      if (xtd::io::file::read_all_text(std::filesystem::exists((path_ / name.c_str() / "CMakeLists.txt").string()) ? (path_ / name.c_str() / "CMakeLists.txt").string() : (path_ / "CMakeLists.txt").string()).contains("GUI_APPLICATION")) {
+      if (xtd::io::file::read_all_text(std::filesystem::exists((std::filesystem::path(path_.c_str()) / name.c_str() / "CMakeLists.txt").string()) ? (std::filesystem::path(path_.c_str()) / name.c_str() / "CMakeLists.txt").string() : (std::filesystem::path(path_.c_str()) / "CMakeLists.txt").string()).contains("GUI_APPLICATION")) {
         auto cbp_file_lines = xtd::io::file::read_all_lines((build_path() / build_config.c_str() / xtd::ustring::format("{}.cbp", name).c_str()).string());
         for (auto iterator = std::find(cbp_file_lines.begin(), cbp_file_lines.end(), xtd::ustring::format("\t\t\t<Target title=\"{}\">", name)); iterator != cbp_file_lines.end(); ++iterator) {
           if (*iterator == "\t\t\t\t<Option type=\"1\"/>") {
@@ -3024,7 +3024,7 @@ namespace xtdc_command {
       }
     }
     
-    mutable std::filesystem::path path_ {xtd::environment::current_directory().c_str()};
+    mutable xtd::ustring path_ = xtd::environment::current_directory();
     mutable int32_t last_exit_code_ = EXIT_SUCCESS;
   };
 }
