@@ -64,7 +64,7 @@ or
 ```bash
 mkdir my_xtd_project
 cd my_xtd_project
-xtdc new gui .
+xtdc new gui
 xtdc run
 ```
 
