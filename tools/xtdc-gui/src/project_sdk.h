@@ -10,6 +10,7 @@ namespace xtdc_gui {
     gtkmm,
     wxwidgets,
     qt5,
+    qt6,
     win32,
     winforms,
     wpf,
