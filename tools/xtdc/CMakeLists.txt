@@ -6,10 +6,51 @@ include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_references(xtd)
 add_sources(
+  src/base_project.h
+  src/blank_solution_project.h
+  src/c_console_project.h
+  src/c_shared_library_project.h
+  src/c_static_library_project.h
+  src/catch2_unit_test_application_project.h
+  src/cocoa_gui_project.h
+  src/cpp_console_project.h
+  src/cpp_shared_library_project.h
+  src/cpp_static_library_project.h
+  src/csharp_console_project.h
+  src/csharp_shared_library_project.h
+  src/csharp_static_library_project.h
+  src/fltk_gui_project.h
+  src/gtest_unit_test_application_project.h
+  src/gtk2_gui_project.h
+  src/gtk3_gui_project.h
+  src/gtk4_gui_project.h
+  src/gtkmm_gui_project.h
+  src/objectivec_console_project.h
+  src/objectivec_shared_library_project.h
+  src/objectivec_static_library_project.h
   src/project_language.h
   src/project_management.h
   src/project_sdk.h
   src/project_type.h
+  src/qt5_gui_project.h
+  src/qt6_gui_project.h
+  src/win32_gui_project.h
+  src/winforms_gui_project.h
+  src/wpf_gui_project.h
+  src/wxwidgets_gui_project.h
+  src/xtd_gui_project.h
+  src/xtd_blank_solution_project.h
+  src/xtd_c_blank_solution_project.h
+  src/xtd_c_console_project.h
+  src/xtd_c_gui_project.h
+  src/xtd_c_shared_library_project.h
+  src/xtd_c_static_library_project.h
+  src/xtd_c_unit_test_application_project.h
+  src/xtd_console_project.h
+  src/xtd_gui_project.h
+  src/xtd_shared_library_project.h
+  src/xtd_static_library_project.h
+  src/xtd_unit_test_application_project.h
   src/xtdc.cpp
 )
 target_type(CONSOLE_APPLICATION)
