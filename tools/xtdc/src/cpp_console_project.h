@@ -8,13 +8,13 @@ namespace xtdc_command {
 
     void create(const xtd::ustring& name, bool create_solution) const {
       xtd::io::directory::create_directory(create_solution ? xtd::io::path::combine(current_path(), name, "src") : xtd::io::path::combine(current_path(), "src"));
-      if (create_solution) create_cpp_console_solution_cmakelists_txt(name);
+      if (create_solution) create_cmakelists_txt(name);
       create_cpp_console_cmakelists_txt(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
       create_cpp_console_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
     }
     
   private:
-    void create_cpp_console_solution_cmakelists_txt(const xtd::ustring& name) const {
+    void create_cmakelists_txt(const xtd::ustring& name) const {
       std::vector<xtd::ustring> lines {
         "cmake_minimum_required(VERSION 3.3)",
         "",

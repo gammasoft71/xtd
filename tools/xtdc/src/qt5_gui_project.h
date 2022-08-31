@@ -9,17 +9,17 @@ namespace xtdc_command {
     void create(const xtd::ustring& name, bool create_solution) const {
       xtd::io::directory::create_directory(create_solution ? xtd::io::path::combine(current_path(), name, "src") : xtd::io::path::combine(current_path(), "src"));
       if (create_solution) {
-        create_qt5_gui_solution_cmakelists_txt(name);
-        create_qt5_gui_solution_qmake_pro(name);
+        create_solution_cmakelists_txt(name);
+        create_solution_qmake_pro(name);
       }
-      create_qt5_gui_cmakelists_txt(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_qt5_gui_qmake_pro(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_qt5_gui_include(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_qt5_gui_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_qt5_gui_main(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
+      create_cmakelists_txt(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
+      create_qmake_pro(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
+      create_include(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
+      create_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
+      create_main(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
     }
     
-    void create_qt5_gui_solution_cmakelists_txt(const xtd::ustring& name) const {
+    void create_solution_cmakelists_txt(const xtd::ustring& name) const {
       std::vector<xtd::ustring> lines {
         "cmake_minimum_required(VERSION 3.8)",
         "",
@@ -30,7 +30,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(current_path(), "CMakeLists.txt"), lines);
     }
     
-    void create_qt5_gui_solution_qmake_pro(const xtd::ustring& name) const {
+    void create_solution_qmake_pro(const xtd::ustring& name) const {
       std::vector<xtd::ustring> lines {
         "TEMPLATE = subdirs",
         xtd::ustring::format("SUBDIRS = {}", name),
@@ -38,7 +38,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(current_path(), xtd::ustring::format("{}.pro", name)), lines);
     }
     
-    void create_qt5_gui_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
+    void create_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
         "cmake_minimum_required(VERSION 3.8)",
         "",
@@ -68,7 +68,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
     
-    void create_qt5_gui_qmake_pro(const xtd::ustring& name, const xtd::ustring& path) const {
+    void create_qmake_pro(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
         "CONFIG += c++17",
         "QT = widgets",
@@ -79,7 +79,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", xtd::ustring::format("{}.pro", name)), lines);
     }
     
-    void create_qt5_gui_include(const xtd::ustring& name, const xtd::ustring& path) const {
+    void create_include(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
         "/// @file",
         "/// @brief Contains Window1 class.",
@@ -100,7 +100,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Window1.h"), lines);
     }
     
-    void create_qt5_gui_source(const xtd::ustring& name, const xtd::ustring& path) const {
+    void create_source(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
         "#include \"Window1.h\"",
         "",
@@ -116,7 +116,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Window1.cpp"), lines);
     }
     
-    void create_qt5_gui_main(const xtd::ustring& name, const xtd::ustring& path) const {
+    void create_main(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
         "#include \"Window1.h\"",
         "#include <QApplication>",

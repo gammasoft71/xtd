@@ -13,16 +13,16 @@ namespace xtdc_command {
       xtd::io::file::copy(xtd::io::path::combine(get_base_path(), "icons", "xtd_forms.icns"), xtd::io::path::combine(current_path(), (create_solution ? name : ""), "resources", xtd::ustring::format("{}.icns", name)));
       xtd::io::file::copy(xtd::io::path::combine(get_base_path(), "icons", "xtd_forms.ico"), xtd::io::path::combine(current_path(), (create_solution ? name : ""), "resources", xtd::ustring::format("{}.ico", name)));
       xtd::io::file::copy(xtd::io::path::combine(get_base_path(), "icons", "xtd_forms.png"), xtd::io::path::combine(current_path(), (create_solution ? name : ""), "resources", xtd::ustring::format("{}.png", name)));
-      if (create_solution) create_xtd_c_gui_solution_cmakelists_txt(name);
-      create_xtd_c_gui_application_properties(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_xtd_c_gui_cmakelists_txt(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_xtd_c_gui_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
+      if (create_solution) create_solution_cmakelists_txt(name);
+      create_application_properties(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
+      create_cmakelists_txt(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
+      create_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
     }
     
   private:
     static xtd::ustring get_base_path() noexcept {return __XTD_RESOURCES_PATH__;}
     
-    void create_xtd_c_gui_solution_cmakelists_txt(const xtd::ustring& name) const {
+    void create_solution_cmakelists_txt(const xtd::ustring& name) const {
       std::vector<xtd::ustring> lines {
         "cmake_minimum_required(VERSION 3.3)",
         "",
@@ -39,7 +39,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(current_path(), "CMakeLists.txt"), lines);
     }
     
-    void create_xtd_c_gui_application_properties(const xtd::ustring& name, const xtd::ustring& path) const {
+    void create_application_properties(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines{
         xtd::ustring::format("target_icon(resources/{})", name),
         xtd::ustring::format("target_name(\"{}\")", name),
@@ -48,7 +48,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "properties", "target_properties.cmake"), lines);
     }
     
-    void create_xtd_c_gui_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
+    void create_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
         "cmake_minimum_required(VERSION 3.3)",
         "",
@@ -67,7 +67,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
     
-    void create_xtd_c_gui_source(const xtd::ustring& name, const xtd::ustring& path) const {
+    void create_source(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
         "#include <xtd_c/xtdc.h>",
         "",
