@@ -74,7 +74,7 @@ namespace xtdc_command {
         "int main() {",
         "  xtd_forms_control* form1 = xtd_forms_form_create();",
         "  xtd_forms_control_set_text(form1, \"form1\");",
-        "  xtd_forms_control_set_client_size(form1, (xtd_drawing_size){800, 450});",
+        "  xtd_forms_control_set_client_size(form1, (xtd_drawing_size){.width=800, .height=450});",
         "",
         "  xtd_forms_application_run(XTD_FORMS_FORM(form1));",
         "",
