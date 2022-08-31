@@ -10,15 +10,15 @@ namespace xtdc_command {
       xtd::io::directory::create_directory(create_solution ? xtd::io::path::combine(current_path(), name, "include") : xtd::io::path::combine(current_path(), "include"));
       xtd::io::directory::create_directory(create_solution ? xtd::io::path::combine(current_path(), name, "properties") : xtd::io::path::combine(current_path(), "properties"));
       xtd::io::directory::create_directory(create_solution ? xtd::io::path::combine(current_path(), name, "src") : xtd::io::path::combine(current_path(), "src"));
-      if (create_solution) create_xtd_static_library_solution_cmakelists_txt(name);
-      create_xtd_static_library_application_properties(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_xtd_static_library_cmakelists_txt(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_xtd_static_library_include(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_xtd_static_library_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
+      if (create_solution) create_solution_cmakelists_txt(name);
+      create_application_properties(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
+      create_cmakelists_txt(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
+      create_include(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
+      create_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
     }
     
   private:
-    void create_xtd_static_library_solution_cmakelists_txt(const xtd::ustring& name) const {
+    void create_solution_cmakelists_txt(const xtd::ustring& name) const {
       std::vector<xtd::ustring> lines {
         "cmake_minimum_required(VERSION 3.3)",
         "",
@@ -35,7 +35,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(current_path(), "CMakeLists.txt"), lines);
     }
     
-    void create_xtd_static_library_application_properties(const xtd::ustring& name, const xtd::ustring& path) const {
+    void create_application_properties(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines{
         xtd::ustring::format("target_default_namespace(\"{}\")", name),
         xtd::ustring::format("target_name(\"{}\")", name),
@@ -44,7 +44,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "properties", "target_properties.cmake"), lines);
     }
     
-    void create_xtd_static_library_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
+    void create_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
         "cmake_minimum_required(VERSION 3.3)",
         "",
@@ -66,7 +66,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
     
-    void create_xtd_static_library_include(const xtd::ustring& name, const xtd::ustring& path) const {
+    void create_include(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
         "/// @file",
         "/// @brief Contains class1 class.",
@@ -86,7 +86,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "include", "class1.h"), lines);
     }
     
-    void create_xtd_static_library_source(const xtd::ustring& name, const xtd::ustring& path) const {
+    void create_source(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
         "#include \"../include/class1.h\"",
         "",
