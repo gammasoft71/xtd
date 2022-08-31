@@ -132,7 +132,7 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Program.cpp.cpp"), lines);
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Program.cpp"), lines);
     }
   };
 }
