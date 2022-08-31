@@ -70,7 +70,7 @@ namespace xtdc_command {
         case project_type::unknown: return {project_sdk::none};
         case project_type::blank_solution: return {project_sdk::xtd, project_sdk::xtd_c};
         case project_type::console: return {project_sdk::none, project_sdk::xtd, project_sdk::xtd_c};
-        case project_type::gui: return {project_sdk::cocoa, project_sdk::fltk, project_sdk::gtk2, project_sdk::gtk3, project_sdk::gtkmm, project_sdk::qt5, project_sdk::win32, project_sdk::winforms, project_sdk::wpf, project_sdk::wxwidgets, project_sdk::xtd, project_sdk::xtd_c};
+        case project_type::gui: return {project_sdk::cocoa, project_sdk::fltk, project_sdk::gtk2, project_sdk::gtk3, project_sdk::gtkmm, project_sdk::qt5, project_sdk::qt6, project_sdk::win32, project_sdk::winforms, project_sdk::wpf, project_sdk::wxwidgets, project_sdk::xtd, project_sdk::xtd_c};
         case project_type::shared_library: return {project_sdk::none, project_sdk::xtd, project_sdk::xtd_c};
         case project_type::static_library: return {project_sdk::none, project_sdk::xtd, project_sdk::xtd_c};
         case project_type::unit_test_application: return {project_sdk::catch2, project_sdk::gtest, project_sdk::xtd, project_sdk::xtd_c};
