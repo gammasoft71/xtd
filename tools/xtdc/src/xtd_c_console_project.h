@@ -36,7 +36,6 @@ namespace xtdc_command {
     void create_application_properties(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines{
         xtd::ustring::format("target_name(\"{}\")", name),
-        xtd::ustring::format("target_startup(\"{}::program\" src/program.h)", name),
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "properties", "target_properties.cmake"), lines);
@@ -67,7 +66,7 @@ namespace xtdc_command {
         "",
         "int main() {",
         "  xtd_console_write_line(\"Hello, World!\");",
-        "  return EXIT_SUCCESS;"
+        "  return EXIT_SUCCESS;",
         "}",
       };
       

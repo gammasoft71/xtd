@@ -94,16 +94,16 @@ namespace xtdc_command {
         "",
         "template-short-name:",
         "  A template short name of the following table. If no short name specified, gui is used.",
-        "  Templates               Short Name     SDK/Language                      ",
-        "  -------------------------------------------------------------------------",
-        "  GUI Application         gui            [xtd], cocoa, fltk, gtk+2, gtk+3, ",
-        "                                         gtkmm, wxwidgets, qt5, win32,     ",
-        "                                         winforms, wpf                     ",
-        "  Console Application     console        [xtd], c++, c, c#, objective-c    ",
-        "  Shared library          sharedlib      [xtd], c++, c, c#, objective-c    ",
-        "  Static library          staticlib      [xtd], c++, c, c#, objective-c    ",
-        "  Unit Test Project       test           [xtd], gtest, catch2              ",
-        "  Solution File           sln            [xtd]                             ",
+        "  Templates               Short Name     SDK/Language                         ",
+        "  ----------------------------------------------------------------------------",
+        "  GUI Application         gui            [xtd], xtd_c, cocoa, fltk, gtk+2,",
+        "                                         gtk+3, gtkmm, wxwidgets, qt5, win32,",
+        "                                         winforms, wpf",
+        "  Console Application     console        [xtd], xtd_c, c++, c, c#, objective-c",
+        "  Shared library          sharedlib      [xtd], xtd_c, c++, c, c#, objective-c",
+        "  Static library          staticlib      [xtd], xtd_c, c++, c, c#, objective-c",
+        "  Unit Test Project       test           [xtd], xtd_c, gtest, catch2",
+        "  Solution File           sln            [xtd], xtd_c",
         "",
         "path:",
         "  Location to place the generated output. If no path is specified, the current path is used.",
@@ -215,16 +215,16 @@ namespace xtdc_command {
         "",
         "template-short-name:",
         "  A template short name of the following table. If no short name specified, gui is used.",
-        "  Templates               Short Name     SDK/Language                      ",
-        "  -------------------------------------------------------------------------",
-        "  GUI Application         gui            [xtd], cocoa, fltk, gtk+2, gtk+3, ",
-        "                                         gtkmm, wxwidgets, qt5, win32,     ",
-        "                                         winforms, wpf                     ",
-        "  Console Application     console        [xtd], c++, c, c#, objective-c    ",
-        "  Shared library          sharedlib      [xtd], c++, c, c#, objective-c    ",
-        "  Static library          staticlib      [xtd], c++, c, c#, objective-c    ",
-        "  Unit Test Project       test           [xtd], gtest, catch2              ",
-        "  Solution File           sln            [xtd]                             ",
+        "  Templates               Short Name     SDK/Language                         ",
+        "  ----------------------------------------------------------------------------",
+        "  GUI Application         gui            [xtd], xtd_c, cocoa, fltk, gtk+2,",
+        "                                         gtk+3, gtkmm, wxwidgets, qt5, win32,",
+        "                                         winforms, wpf",
+        "  Console Application     console        [xtd], xtd_c, c++, c, c#, objective-c",
+        "  Shared library          sharedlib      [xtd], xtd_c, c++, c, c#, objective-c",
+        "  Static library          staticlib      [xtd], xtd_c, c++, c, c#, objective-c",
+        "  Unit Test Project       test           [xtd], xtd_c, gtest, catch2",
+        "  Solution File           sln            [xtd], xtd_c",
         "",
         "path:",
         "  Location to place the generated output. If no path is specified, the current path is used.",
@@ -543,8 +543,8 @@ namespace xtdc_command {
         }
         
         xtdc_command::project_type project_type = map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
-        xtdc_command::project_sdk project_sdk = map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}} [sdk];
-        xtdc_command::project_language project_language = map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
+        xtdc_command::project_sdk project_sdk = map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}, {"xtd_c", xtdc_command::project_sdk::xtd_c}} [sdk];
+        xtdc_command::project_language project_language = map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"xtd_c", xtdc_command::project_language::c}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
         console::write_line(project_management(get_project_full_path_from_path(path)).create(name, project_type, project_sdk, project_language));
       }
       return 0;
