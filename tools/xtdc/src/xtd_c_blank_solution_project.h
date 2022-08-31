@@ -7,11 +7,11 @@ namespace xtdc_command {
     explicit xtd_c_blank_solution_project(const xtd::ustring& path) : base_project(path) {}
 
     void create(const xtd::ustring& name, bool create_solution) const {
-      create_cmakelists_txt(name);
+      create_solution_cmakelists_txt(name);
     }
     
   private:
-    void create_cmakelists_txt(const xtd::ustring& name) const {
+    void create_solution_cmakelists_txt(const xtd::ustring& name) const {
       std::vector<xtd::ustring> lines {
         "cmake_minimum_required(VERSION 3.3)",
         "",
