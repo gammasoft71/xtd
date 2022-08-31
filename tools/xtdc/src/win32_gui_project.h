@@ -1,0 +1,84 @@
+#pragma once
+#include "base_project.h"
+
+namespace xtdc_command {
+  class win32_gui_project : public base_project {
+  public:
+    explicit win32_gui_project(const xtd::ustring& path) : base_project(path) {}
+
+    void create(const xtd::ustring& name, bool create_solution) const {
+      xtd::io::directory::create_directory(create_solution ? xtd::io::path::combine(current_path(), name, "src") : xtd::io::path::combine(current_path(), "src"));
+      if (create_solution) create_win32_gui_solution_cmakelists_txt(name);
+      create_win32_gui_cmakelists_txt(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
+      create_win32_gui_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
+    }
+    
+  private:
+    void create_win32_gui_solution_cmakelists_txt(const xtd::ustring& name) const {
+      std::vector<xtd::ustring> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Solution",
+        xtd::ustring::format("project({})", name),
+        xtd::ustring::format("add_subdirectory({})", name)
+      };
+      xtd::io::file::write_all_lines(xtd::io::path::combine(current_path(), "CMakeLists.txt"), lines);
+    }
+    
+    void create_win32_gui_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
+      std::vector<xtd::ustring> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Project",
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
+        "set(SOURCES",
+        "  src/Program.c",
+        ")",
+        "source_group(src FILES ${SOURCES})",
+        "",
+        "# Options",
+        "set(CMAKE_C_STANDARD 11)",
+        "set(CMAKE_C_STANDARD_REQUIRED ON)",
+        "set(CMAKE_EXE_LINKER_FLAGS \"${CMAKE_EXE_LINKER_FLAGS} /ENTRY:wmainCRTStartup\")",
+        "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
+        "add_definitions(-DUNICODE)",
+        "",
+        "# Application properties",
+        "add_executable(${PROJECT_NAME} WIN32 ${SOURCES})",
+      };
+      
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
+    }
+    
+    void create_win32_gui_source(const xtd::ustring& name, const xtd::ustring& path) const {
+      std::vector<xtd::ustring> lines {
+        "#pragma comment(linker,\"\\\"/manifestdependency:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\\\"\")",
+        "",
+        "#include <Windows.h>",
+        "",
+        "HWND window1 = NULL;",
+        "WNDPROC defWndProc = NULL;",
+        "",
+        "LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {",
+        "  if (message == WM_CLOSE && hwnd == window1)",
+        "    PostQuitMessage(0);",
+        "  return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);",
+        "}",
+        "",
+        "int wmain(int argc, wchar_t* argv[]) {",
+        "  window1 = CreateWindowEx(0, WC_DIALOG, L\"Window1\", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 800, 450, NULL, NULL, NULL, NULL);",
+        "",
+        "  defWndProc = (WNDPROC)SetWindowLongPtr(window1, GWLP_WNDPROC, (LONG_PTR)WndProc);",
+        "  ShowWindow(window1, SW_SHOW);",
+        "",
+        "  MSG message;",
+        "  while (GetMessage(&message, NULL, 0, 0))",
+        "    DispatchMessage(&message);",
+        "  return (int)message.wParam;",
+        "}",
+      };
+      
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Program.c"), lines);
+    }
+  };
+}

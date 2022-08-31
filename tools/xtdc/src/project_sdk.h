@@ -9,12 +9,15 @@ namespace xtdc_command {
     gtest,
     gtk2,
     gtk3,
+    gtk4,
     gtkmm,
     qt5,
+    qt6,
     win32,
     winforms,
     wpf,
     wxwidgets,
     xtd,
+    xtd_c,
   };
 }
