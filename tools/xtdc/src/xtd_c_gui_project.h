@@ -69,17 +69,17 @@ namespace xtdc_command {
     
     void create_source(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
-        "#include <xtd_c/xtdc.h>",
+        "#include <xtd_c/xtd_c.h>",
         "",
         "int main() {",
         "  xtd_forms_control* form1 = xtd_forms_form_create();",
-        "  xtd_forms_control_text(form1, \"form1\");",
-        "  xtd_forms_control_client_size(form1, (xtd_drawing_size){800, 450});",
+        "  xtd_forms_control_set_text(form1, \"form1\");",
+        "  xtd_forms_control_set_client_size(form1, (xtd_drawing_size){800, 450});",
         "",
         "  xtd_forms_application_run(XTD_FORMS_FORM(form1));",
         "",
         "  xtd_forms_control_destroy(form1);",
-        "  return EXIT_SUCCESS;"
+        "  return EXIT_SUCCESS;",
         "}",
       };
       
