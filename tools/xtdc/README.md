@@ -13,6 +13,7 @@ xtdc contains many project template. All project listed below are created with C
 ## GUI Application sdk :
 
 * xtd (c++)
+* xtd_c (c)
 * cocoa (objective-c)
 * fltk (c++)
 * Gtk+ 2 (c)
@@ -28,6 +29,7 @@ xtdc contains many project template. All project listed below are created with C
 ## Console Application SDK/language :
 
 * xtd (c++)
+* xtd_c (c)
 * c++
 * c
 * c#
@@ -36,6 +38,7 @@ xtdc contains many project template. All project listed below are created with C
 ## Shared or static library SDK/language :
 
 * xtd (c++)
+* xtd_c (c)
 * c++
 * c
 * c#
@@ -44,6 +47,7 @@ xtdc contains many project template. All project listed below are created with C
 ## Unit Test project SDK/language :
 
 * xtd (c++)
+* xtd_c (c)
 * gtest (c++)
 * catch2 (c++)
 
