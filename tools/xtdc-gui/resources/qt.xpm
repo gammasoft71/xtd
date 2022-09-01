@@ -1,6 +1,6 @@
 #pragma once
 /* XPM */
-static const char *qt5_icon[] = {
+static const char *qt_icon[] = {
 /* columns rows colors chars-per-pixel */
 "40 40 253 2 ",
 "   c #0000C4BF0000",
