@@ -44,20 +44,20 @@ namespace xtdc_gui {
     
   private:
     void add_to_create_recent_projects(size_t create_project_items_index);
-    void add_to_open_recent_projects(const std::string& project_path);
+    void add_to_open_recent_projects(const xtd::ustring& project_path);
     void delete_from_create_recent_projects(size_t create_project_items_index);
-    void delete_from_open_recent_projects(const std::string& project_path);
+    void delete_from_open_recent_projects(const xtd::ustring& project_path);
     void init();
     void init_create_create_recent_projects_list_box();
     void init_startup_open_recent_projects_list_box();
     void new_project();
-    void new_project(const std::string& project_path, size_t project_type_items_index);
-    void new_project(const std::string& project_path, project_type type, project_language language, project_sdk sdk);
+    void new_project(const xtd::ustring& project_path, size_t project_type_items_index);
+    void new_project(const xtd::ustring& project_path, project_type type, project_language language, project_sdk sdk);
     void open_project();
-    void open_project(const std::string& project_path);
+    void open_project(const xtd::ustring& project_path);
     void open_xtd_examples();
     void run_project();
-    void run_project(const std::string& project_path);
+    void run_project(const xtd::ustring& project_path);
     void set_auto_close();
     void show_about_dialog();
     

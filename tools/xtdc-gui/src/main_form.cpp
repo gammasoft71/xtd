@@ -5,22 +5,47 @@
 #include "main_form.h"
 #include <ctype.h>
 #include <list>
-#include <filesystem>
 #include <xtd/environment.h>
 #include <xtd/system_exception.h>
+#include <xtd/diagnostics/debug.h>
 #include <xtd/diagnostics/process.h>
 #include <xtd/drawing/system_icons.h>
 #include <xtd/forms/application.h>
 #include <xtd/forms/folder_browser_dialog.h>
 #include <xtd/forms/images.h>
 #include <xtd/forms/message_box.h>
+#include <xtd/io/directory.h>
+#include <xtd/io/path.h>
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::drawing;
 using namespace xtd::forms;
+using namespace xtd::io;
 using namespace xtdc_gui;
+
+namespace {
+  static void copy_directory(const ustring& source_dir, const ustring& destination_dir, bool recursive) {
+    auto dir = directory_info(source_dir);
+    if (!dir.exists()) throw directory_not_found_exception(ustring::format("Source directory not found: {}", dir.full_name()), csf_);
+    
+    directory::create_directory(destination_dir);
+    
+    for (const file_info& file : dir.get_files()) {
+      ustring target_file_path = path::combine(destination_dir, file.name());
+      file.copy_to(target_file_path);
+    }
+
+    if (recursive) {
+      vector<directory_info> dirs = dir.get_directories();
+      for (const directory_info& sub_dir : dirs) {
+        ustring new_destination_dir = path::combine(destination_dir, sub_dir.name());
+        copy_directory(sub_dir.full_name(), new_destination_dir, true);
+      }
+    }
+  }
+}
 
 main_form::main_form() {
   if (properties::settings::default_settings().menu_visible())
@@ -37,7 +62,7 @@ main_form::main_form() {
   
   startup_panel_.auto_scroll(true);
   startup_panel_.parent(*this);
-  startup_panel_.size(client_size() - xtd::drawing::size {0, 100});
+  startup_panel_.size(client_size() - drawing::size {0, 100});
   startup_panel_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   
   startup_title_label_.parent(startup_panel_);
@@ -63,7 +88,7 @@ main_form::main_form() {
   
   startup_open_recent_projects_list_box_.double_click += [&] {
     if (startup_open_recent_projects_list_box_.selected_index() != startup_open_recent_projects_list_box_.npos) {
-      if (!std::filesystem::exists(properties::settings::default_settings().open_recent_propjects().split({';'})[startup_open_recent_projects_list_box_.selected_index()].c_str())) message_box::show(*this, xtd::ustring::format("Project \"{}\" does not exists!", properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]), "Open project", message_box_buttons::ok, message_box_icon::error);
+      if (!directory::exists(properties::settings::default_settings().open_recent_propjects().split({';'})[startup_open_recent_projects_list_box_.selected_index()].c_str())) message_box::show(*this, ustring::format("Project \"{}\" does not exists!", properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]), "Open project", message_box_buttons::ok, message_box_icon::error);
       else open_project(properties::settings::default_settings().open_recent_propjects().split({';'})[startup_open_recent_projects_list_box_.selected_index()]);
     }
   };
@@ -77,7 +102,7 @@ main_form::main_form() {
   
   startup_open_project_button_.parent(startup_panel_);
   startup_open_project_button_.image(images::from_name("document-open", drawing::size {48, 48}));
-  startup_open_project_button_.image(xtd::drawing::bitmap(xtd_open_icon));
+  startup_open_project_button_.image(bitmap(xtd_open_icon));
   startup_open_project_button_.image_align(content_alignment::middle_left);
   startup_open_project_button_.text("Open a project or solution");
   startup_open_project_button_.location({startup_panel_.size().width() - 400, 175});
@@ -88,7 +113,7 @@ main_form::main_form() {
   
   startup_run_project_button_.parent(startup_panel_);
   startup_run_project_button_.image(images::from_name("system-run", drawing::size {48, 48}));
-  startup_run_project_button_.image(xtd::drawing::bitmap(xtd_run_icon));
+  startup_run_project_button_.image(bitmap(xtd_run_icon));
   startup_run_project_button_.image_align(content_alignment::middle_left);
   startup_run_project_button_.text("Run a project");
   startup_run_project_button_.location({startup_panel_.size().width() - 400, 285});
@@ -99,7 +124,7 @@ main_form::main_form() {
   
   startup_new_project_button_.parent(startup_panel_);
   startup_new_project_button_.image(images::from_name("document-new", drawing::size {48, 48}));
-  startup_new_project_button_.image(xtd::drawing::bitmap(xtd_new_icon));
+  startup_new_project_button_.image(bitmap(xtd_new_icon));
   startup_new_project_button_.image_align(content_alignment::middle_left);
   startup_new_project_button_.text("Create a new project");
   startup_new_project_button_.location({startup_panel_.size().width() - 400, 395});
@@ -110,7 +135,7 @@ main_form::main_form() {
   
   startup_open_xtd_examples_button_.parent(startup_panel_);
   startup_open_xtd_examples_button_.image(images::from_name("xtd", drawing::size {48, 48}));
-  startup_open_xtd_examples_button_.image(xtd::drawing::bitmap(xtd_open_examples_icon));
+  startup_open_xtd_examples_button_.image(bitmap(xtd_open_examples_icon));
   startup_open_xtd_examples_button_.image_align(content_alignment::middle_left);
   startup_open_xtd_examples_button_.text("Open xtd examples");
   startup_open_xtd_examples_button_.location({startup_panel_.size().width() - 400, 505});
@@ -120,7 +145,7 @@ main_form::main_form() {
   startup_open_xtd_examples_button_.click += {*this, &main_form::open_xtd_examples};
   
   open_xtd_examples_panel_.parent(*this);
-  open_xtd_examples_panel_.size(client_size() - xtd::drawing::size {0, 100});
+  open_xtd_examples_panel_.size(client_size() - drawing::size {0, 100});
   open_xtd_examples_panel_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   open_xtd_examples_panel_.visible(false);
   
@@ -187,22 +212,22 @@ main_form::main_form() {
   open_xtd_example_core_picture_box_.parent(open_xtd_example_core_tab_page_);
   open_xtd_example_core_picture_box_.location({30, 30});
   open_xtd_example_core_picture_box_.size({40, 40});
-  open_xtd_example_core_picture_box_.image(drawing::bitmap(xtd_console_icon));
+  open_xtd_example_core_picture_box_.image(bitmap(xtd_console_icon));
   
   open_xtd_example_forms_picture_box_.parent(open_xtd_example_forms_tab_page_);
   open_xtd_example_forms_picture_box_.location({30, 30});
   open_xtd_example_forms_picture_box_.size({40, 40});
-  open_xtd_example_forms_picture_box_.image(drawing::bitmap(xtd_gui_icon));
+  open_xtd_example_forms_picture_box_.image(bitmap(xtd_gui_icon));
   
   open_xtd_example_tunit_picture_box_.parent(open_xtd_example_tunit_tab_page_);
   open_xtd_example_tunit_picture_box_.location({30, 30});
   open_xtd_example_tunit_picture_box_.size({40, 40});
-  open_xtd_example_tunit_picture_box_.image(drawing::bitmap(xtd_tunit_icon));
+  open_xtd_example_tunit_picture_box_.image(bitmap(xtd_tunit_icon));
   
   open_xtd_example_cmake_picture_box_.parent(open_xtd_example_cmake_tab_page_);
   open_xtd_example_cmake_picture_box_.location({30, 30});
   open_xtd_example_cmake_picture_box_.size({40, 40});
-  open_xtd_example_cmake_picture_box_.image(drawing::bitmap(xtd_cmake_icon));
+  open_xtd_example_cmake_picture_box_.image(bitmap(xtd_cmake_icon));
   
   open_xtd_example_core_title_label_.parent(open_xtd_example_core_tab_page_);
   open_xtd_example_core_title_label_.text("xtd Console Application (c++)");
@@ -230,15 +255,15 @@ main_form::main_form() {
   
   open_xtd_example_core_list_box_.parent(open_xtd_example_core_tab_page_);
   open_xtd_example_core_list_box_.location({30, 110});
-  open_xtd_example_core_list_box_.size(open_xtd_example_core_tab_page_.size() - xtd::drawing::size {60, 140});
+  open_xtd_example_core_list_box_.size(open_xtd_example_core_tab_page_.size() - drawing::size {60, 140});
   open_xtd_example_core_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   for (auto item : xtd_example_item::get_core_examples())
     open_xtd_example_core_list_box_.items().push_back({item.name(), item});
   open_xtd_example_core_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_core_list_box_.selected_index() != open_xtd_example_core_list_box_.npos) {
       current_open_xtd_example_core_list_box_index_ = open_xtd_example_core_list_box_.selected_index();
-      open_xtd_examples_information_text_box_.text(std::any_cast<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag()).description());
-      open_xtd_examples_information_picture_box_.image(std::any_cast<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag()).picture());
+      open_xtd_examples_information_text_box_.text(any_cast<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag()).description());
+      open_xtd_examples_information_picture_box_.image(any_cast<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag()).picture());
     }
   };
   open_xtd_example_core_list_box_.double_click += [&] {
@@ -247,15 +272,15 @@ main_form::main_form() {
   
   open_xtd_example_forms_list_box_.parent(open_xtd_example_forms_tab_page_);
   open_xtd_example_forms_list_box_.location({30, 110});
-  open_xtd_example_forms_list_box_.size(open_xtd_example_forms_tab_page_.size() - xtd::drawing::size {60, 140});
+  open_xtd_example_forms_list_box_.size(open_xtd_example_forms_tab_page_.size() - drawing::size {60, 140});
   open_xtd_example_forms_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   for (auto item : xtd_example_item::get_forms_examples())
     open_xtd_example_forms_list_box_.items().push_back({item.name(), item});
   open_xtd_example_forms_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_forms_list_box_.selected_index() != open_xtd_example_forms_list_box_.npos) {
       current_open_xtd_example_forms_list_box_index_ = open_xtd_example_forms_list_box_.selected_index();
-      open_xtd_examples_information_text_box_.text(std::any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()).description());
-      open_xtd_examples_information_picture_box_.image(std::any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()).picture());
+      open_xtd_examples_information_text_box_.text(any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()).description());
+      open_xtd_examples_information_picture_box_.image(any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()).picture());
     }
   };
   open_xtd_example_forms_list_box_.double_click += [&] {
@@ -264,15 +289,15 @@ main_form::main_form() {
   
   open_xtd_example_tunit_list_box_.parent(open_xtd_example_tunit_tab_page_);
   open_xtd_example_tunit_list_box_.location({30, 110});
-  open_xtd_example_tunit_list_box_.size(open_xtd_example_tunit_tab_page_.size() - xtd::drawing::size {60, 140});
+  open_xtd_example_tunit_list_box_.size(open_xtd_example_tunit_tab_page_.size() - drawing::size {60, 140});
   open_xtd_example_tunit_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   for (auto item : xtd_example_item::get_tunit_examples())
     open_xtd_example_tunit_list_box_.items().push_back({item.name(), item});
   open_xtd_example_tunit_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_tunit_list_box_.selected_index() != open_xtd_example_tunit_list_box_.npos) {
       current_open_xtd_example_tunit_list_box_index_ = open_xtd_example_tunit_list_box_.selected_index();
-      open_xtd_examples_information_text_box_.text(std::any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()).description());
-      open_xtd_examples_information_picture_box_.image(std::any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()).picture());
+      open_xtd_examples_information_text_box_.text(any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()).description());
+      open_xtd_examples_information_picture_box_.image(any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()).picture());
     }
   };
   open_xtd_example_tunit_list_box_.double_click += [&] {
@@ -281,15 +306,15 @@ main_form::main_form() {
   
   open_xtd_example_cmake_list_box_.parent(open_xtd_example_cmake_tab_page_);
   open_xtd_example_cmake_list_box_.location({30, 110});
-  open_xtd_example_cmake_list_box_.size(open_xtd_example_core_tab_page_.size() - xtd::drawing::size {60, 140});
+  open_xtd_example_cmake_list_box_.size(open_xtd_example_core_tab_page_.size() - drawing::size {60, 140});
   open_xtd_example_cmake_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   for (auto item : xtd_example_item::get_cmake_examples())
     open_xtd_example_cmake_list_box_.items().push_back({item.name(), item});
   open_xtd_example_cmake_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_cmake_list_box_.selected_index() != open_xtd_example_cmake_list_box_.npos) {
       current_open_xtd_example_cmake_list_box_index_ = open_xtd_example_cmake_list_box_.selected_index();
-      open_xtd_examples_information_text_box_.text(std::any_cast<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag()).description());
-      open_xtd_examples_information_picture_box_.image(std::any_cast<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag()).picture());
+      open_xtd_examples_information_text_box_.text(any_cast<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag()).description());
+      open_xtd_examples_information_picture_box_.image(any_cast<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag()).picture());
     }
   };
   open_xtd_example_cmake_list_box_.double_click += [&] {
@@ -297,7 +322,7 @@ main_form::main_form() {
   };
   
   create_panel_.parent(*this);
-  create_panel_.size(client_size() - xtd::drawing::size {0, 100});
+  create_panel_.size(client_size() - drawing::size {0, 100});
   create_panel_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   create_panel_.visible(false);
   
@@ -322,7 +347,7 @@ main_form::main_form() {
       next_button_.enabled(false);
     else {
       create_project_type_items_control_.selected_index(create_project_type_items_control_.npos);
-      current_project_type_index_ = xtd::parse<size_t>(properties::settings::default_settings().create_recent_propjects().split({';'})[create_create_recent_projects_list_box_.selected_index()]);
+      current_project_type_index_ = parse<size_t>(properties::settings::default_settings().create_recent_propjects().split({';'})[create_create_recent_projects_list_box_.selected_index()]);
       next_button_.enabled(true);
     }
   };
@@ -331,7 +356,7 @@ main_form::main_form() {
   };
   create_create_recent_projects_list_box_.key_down += [&](object & sender, key_event_args & e) {
     if (e.key_code() == keys::del && create_create_recent_projects_list_box_.selected_index() != create_create_recent_projects_list_box_.npos)
-      delete_from_create_recent_projects(xtd::parse<size_t>(properties::settings::default_settings().create_recent_propjects().split({';'})[create_create_recent_projects_list_box_.selected_index()]));
+      delete_from_create_recent_projects(parse<size_t>(properties::settings::default_settings().create_recent_propjects().split({';'})[create_create_recent_projects_list_box_.selected_index()]));
   };
   
   create_language_choice_.parent(create_panel_);
@@ -389,7 +414,7 @@ main_form::main_form() {
   
   configure_panel_.auto_scroll(true);
   configure_panel_.parent(*this);
-  configure_panel_.size(client_size() - xtd::drawing::size {0, 100});
+  configure_panel_.size(client_size() - drawing::size {0, 100});
   configure_panel_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   configure_panel_.visible(false);
   
@@ -414,7 +439,7 @@ main_form::main_form() {
   configure_project_name_text_box_.location({50, 210});
   configure_project_name_text_box_.width(550);
   configure_project_name_text_box_.key_press += [&](object & sender, key_press_event_args & e) {
-    e.handled(configure_project_name_text_box_.text().size() >= 128 || !(std::isalnum(e.key_char()) || e.key_char() == U'_' || e.key_char() == U'-'));
+    e.handled(configure_project_name_text_box_.text().size() >= 128 || !(isalnum(e.key_char()) || e.key_char() == U'_' || e.key_char() == U'-'));
   };
   configure_project_name_text_box_.key_up += [&](object & sender, key_event_args & e) {
     next_button_.enabled(configure_project_name_text_box_.text().size() != 0 && configure_project_location_text_box_.text().size() != 0);
@@ -451,7 +476,7 @@ main_form::main_form() {
   previous_button_.parent(*this);
   previous_button_.text("&Back");
   previous_button_.visible(false);
-  previous_button_.location(point(client_size() - xtd::drawing::size {215, 75}));
+  previous_button_.location(point(client_size() - drawing::size {215, 75}));
   previous_button_.anchor(anchor_styles::bottom | anchor_styles::right);
   previous_button_.click += [&] {
     if (open_xtd_examples_panel_.visible()) {
@@ -490,22 +515,22 @@ main_form::main_form() {
   next_button_.text("&Next");
   next_button_.visible(false);
   next_button_.enabled(false);
-  next_button_.location(point(client_size() - xtd::drawing::size {125, 75}));
+  next_button_.location(point(client_size() - drawing::size {125, 75}));
   next_button_.anchor(anchor_styles::bottom | anchor_styles::right);
   next_button_.click += [&] {
     if (create_panel_.visible()) {
       configure_project_type_title_label_.text(create_project_type_items_control_.project_type_items()[current_project_type_index_].name());
-      auto project_name = std::map<project_type, std::string> {{project_type::gui, "gui_app"}, {project_type::console, "console_app"}, {project_type::shared_library, "class_library"}, {project_type::static_library, "class_library"}, {project_type::unit_tests_project, "unit_test_project"}, {project_type::solution_file, "solution_file"}} [create_project_type_items_control_.project_type_items()[current_project_type_index_].project_type()];
+      auto project_name = map<project_type, ustring> {{project_type::gui, "gui_app"}, {project_type::console, "console_app"}, {project_type::shared_library, "class_library"}, {project_type::static_library, "class_library"}, {project_type::unit_tests_project, "unit_test_project"}, {project_type::solution_file, "solution_file"}} [create_project_type_items_control_.project_type_items()[current_project_type_index_].project_type()];
       auto index = 1;
-      while (std::filesystem::exists(std::filesystem::path {std::string(configure_project_location_text_box_.text())} / xtd::ustring::format("{}{}", project_name, index).c_str())) index++;
-      configure_project_name_text_box_.text(xtd::ustring::format("{}{}", project_name, index));
+      while (directory::exists(path::combine(configure_project_location_text_box_.text(), ustring::format("{}{}", project_name, index)))) index++;
+      configure_project_name_text_box_.text(ustring::format("{}{}", project_name, index));
       previous_button_.text("&Back");
       next_button_.text("&Create");
       create_panel_.visible(false);
       configure_panel_.visible(true);
     } else if (configure_panel_.visible()) {
-      auto project_path = std::filesystem::path {std::filesystem::path {std::string(configure_project_location_text_box_.text())} / std::string(configure_project_name_text_box_.text())}.string();
-      if (std::filesystem::exists(project_path)) message_box::show(*this, xtd::ustring::format("Project \"{}\" already exists!", project_path), "Create project", message_box_buttons::ok, message_box_icon::error);
+      auto project_path = path::combine(configure_project_location_text_box_.text(), configure_project_name_text_box_.text());
+      if (directory::exists(project_path)) message_box::show(*this, ustring::format("Project \"{}\" already exists!", project_path), "Create project", message_box_buttons::ok, message_box_icon::error);
       else {
         new_project(project_path, current_project_type_index_);
         startup_panel_.visible(true);
@@ -516,37 +541,36 @@ main_form::main_form() {
       }
     } else if (open_xtd_examples_panel_.visible()) {
       auto xtd_example = xtd_example_item();
-      std::string exemple_subproject_path;
+      ustring exemple_subproject_path;
       if (open_xtd_example_tab_control_.selected_index() == 0) {
-        xtd_example = std::any_cast<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag());
+        xtd_example = any_cast<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag());
         exemple_subproject_path = "xtd.core.examples";
       } else if (open_xtd_example_tab_control_.selected_index() == 1) {
-        xtd_example = std::any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag());
+        xtd_example = any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag());
         exemple_subproject_path = "xtd.forms.examples";
       } else if (open_xtd_example_tab_control_.selected_index() == 2) {
-        xtd_example = std::any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag());
+        xtd_example = any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag());
         exemple_subproject_path = "xtd.tunit.examples";
       } else if (open_xtd_example_tab_control_.selected_index() == 3) {
-        xtd_example = std::any_cast<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag());
+        xtd_example = any_cast<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag());
         exemple_subproject_path = "xtd.cmake.examples";
       }
       
-      auto target_path = std::filesystem::temp_directory_path() / "xtd_examples" / exemple_subproject_path / xtd_example.path().stem();
-      if (std::filesystem::exists(target_path)) std::filesystem::remove_all(target_path);
-      std::filesystem::create_directories(target_path);
-      for (auto file : std::filesystem::directory_iterator(xtd_example.path()))
-        std::filesystem::copy(file, target_path / file.path().filename());
+      auto target_path = path::combine(path::get_temp_path(), exemple_subproject_path, path::get_file_name(xtd_example.path()));
+      if (directory::exists(target_path)) directory::remove(target_path, true);
+      directory::create_directory(target_path);
+      copy_directory(xtd_example.path(), target_path, true);
       //message_box::show(*this, ustring::format("Open example \"{}\" in {}.", xtd_example.name(), target_path.string()));
-      background_worker_ = std::make_unique<background_worker>();
+      background_worker_ = make_unique<background_worker>();
       background_worker_->do_work += [&](object & sender, do_work_event_args & e) {
         begin_invoke([&] {
-          progress_dialog_ = std::make_unique<progress_dialog>();
-          progress_dialog_->text(ustring::format("Opening {} example", std::any_cast<std::filesystem::path>(e.argument()).filename()));
+          progress_dialog_ = make_unique<progress_dialog>();
+          progress_dialog_->text(ustring::format("Opening {} example", path::get_file_name(any_cast<ustring>(e.argument()))));
           progress_dialog_->message("Please wait...");
           progress_dialog_->marquee(true);
           progress_dialog_->show_sheet_dialog(*this);
         });
-        process::start(process_start_info().file_name("xtdc").arguments(ustring::format("open {}", std::any_cast<std::filesystem::path>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+        process::start(process_start_info().file_name("xtdc").arguments(ustring::format("open {}", any_cast<ustring>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
       };
       background_worker_->run_worker_completed += [&] {
         begin_invoke([&] {
@@ -565,7 +589,7 @@ main_form::main_form() {
   busy_box::hide();
 }
 
-void main_form::on_system_colors_changed(const xtd::event_args& e) {
+void main_form::on_system_colors_changed(const event_args& e) {
   form::on_system_colors_changed(e);
   create_project_type_items_control_.on_system_colors_changed(e);
   
@@ -579,16 +603,16 @@ void main_form::on_system_colors_changed(const xtd::event_args& e) {
 
 void main_form::delete_from_create_recent_projects(size_t create_project_items_index) {
   auto create_recent_projects = properties::settings::default_settings().create_recent_propjects().split({';'});
-  create_recent_projects.erase(std::find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)));
-  properties::settings::default_settings().create_recent_propjects(xtd::ustring::join(";", create_recent_projects));
+  create_recent_projects.erase(find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)));
+  properties::settings::default_settings().create_recent_propjects(ustring::join(";", create_recent_projects));
   properties::settings::default_settings().save();
   init_create_create_recent_projects_list_box();
 }
 
-void main_form::delete_from_open_recent_projects(const std::string& project_path) {
+void main_form::delete_from_open_recent_projects(const ustring& project_path) {
   auto open_recent_projects = properties::settings::default_settings().open_recent_propjects().split({';'});
-  open_recent_projects.erase(std::find(open_recent_projects.begin(), open_recent_projects.end(), project_path));
-  properties::settings::default_settings().open_recent_propjects(xtd::ustring::join(";", open_recent_projects));
+  open_recent_projects.erase(find(open_recent_projects.begin(), open_recent_projects.end(), project_path));
+  properties::settings::default_settings().open_recent_propjects(ustring::join(";", open_recent_projects));
   properties::settings::default_settings().save();
   init_startup_open_recent_projects_list_box();
 }
@@ -603,38 +627,38 @@ void main_form::init_create_create_recent_projects_list_box() {
   auto project_type_items = create_project_type_items_control_.project_type_items();
   create_create_recent_projects_list_box_.items().clear();
   for (auto item : properties::settings::default_settings().create_recent_propjects().split({';'}))
-    create_create_recent_projects_list_box_.items().push_back(project_type_items[xtd::parse<size_t>(item)].name());
+    create_create_recent_projects_list_box_.items().push_back(project_type_items[parse<size_t>(item)].name());
   create_create_recent_projects_list_box_.selected_index(create_create_recent_projects_list_box_.items().size() == 0 ? -1 : 0);
 }
 
 void main_form::init_startup_open_recent_projects_list_box() {
   startup_open_recent_projects_list_box_.items().clear();
   for (auto item : properties::settings::default_settings().open_recent_propjects().split({';'}))
-    startup_open_recent_projects_list_box_.items().push_back(xtd::ustring::format("{} ({})", std::filesystem::path(item.c_str()).stem().string(), item));
+    startup_open_recent_projects_list_box_.items().push_back(ustring::format("{} ({})", path::get_file_name(item), item));
   startup_open_recent_projects_list_box_.selected_index(startup_open_recent_projects_list_box_.items().size() == 0 ? -1 : 0);
 }
 
 void main_form::add_to_create_recent_projects(size_t create_project_items_index) {
   auto create_recent_projects_from_settings = properties::settings::default_settings().create_recent_propjects().split({';'});
-  std::list<std::string> create_recent_projects {create_recent_projects_from_settings.begin(), create_recent_projects_from_settings.end()};
-  if (std::find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)) != create_recent_projects.end())
-    create_recent_projects.erase(std::find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)));
+  list<ustring> create_recent_projects {create_recent_projects_from_settings.begin(), create_recent_projects_from_settings.end()};
+  if (find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)) != create_recent_projects.end())
+    create_recent_projects.erase(find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)));
     
   create_recent_projects.push_front(std::to_string(create_project_items_index));
-  properties::settings::default_settings().create_recent_propjects(xtd::ustring::join(";", std::vector<std::string> {create_recent_projects.begin(), create_recent_projects.end()}));
+  properties::settings::default_settings().create_recent_propjects(ustring::join(";", vector<ustring> {create_recent_projects.begin(), create_recent_projects.end()}));
   properties::settings::default_settings().save();
   
   init_create_create_recent_projects_list_box();
 }
 
-void main_form::add_to_open_recent_projects(const std::string& project_path) {
+void main_form::add_to_open_recent_projects(const ustring& project_path) {
   auto open_recent_projects_from_settings = properties::settings::default_settings().open_recent_propjects().split({';'});
-  std::list<std::string> open_recent_projects {open_recent_projects_from_settings.begin(), open_recent_projects_from_settings.end()};
-  if (std::find(open_recent_projects.begin(), open_recent_projects.end(), project_path) != open_recent_projects.end())
-    open_recent_projects.erase(std::find(open_recent_projects.begin(), open_recent_projects.end(), project_path));
+  list<ustring> open_recent_projects {open_recent_projects_from_settings.begin(), open_recent_projects_from_settings.end()};
+  if (find(open_recent_projects.begin(), open_recent_projects.end(), project_path) != open_recent_projects.end())
+    open_recent_projects.erase(find(open_recent_projects.begin(), open_recent_projects.end(), project_path));
     
   open_recent_projects.push_front(project_path);
-  properties::settings::default_settings().open_recent_propjects(xtd::ustring::join(";", std::vector<std::string> {open_recent_projects.begin(), open_recent_projects.end()}));
+  properties::settings::default_settings().open_recent_propjects(ustring::join(";", vector<ustring> {open_recent_projects.begin(), open_recent_projects.end()}));
   properties::settings::default_settings().open_propject_folder(project_path);
   properties::settings::default_settings().save();
   
@@ -654,26 +678,26 @@ void main_form::new_project() {
   next_button_.visible(true);
 }
 
-void main_form::new_project(const std::string& project_path, size_t project_type_items_index) {
+void main_form::new_project(const ustring& project_path, size_t project_type_items_index) {
   auto current_project_type = create_project_type_items_control_.project_type_items()[current_project_type_index_];
   add_to_create_recent_projects(project_type_items_index);
   new_project(project_path, current_project_type.project_type(), current_project_type.project_language(), current_project_type.project_sdk());
 }
 
-void main_form::new_project(const std::string& project_path, project_type type, project_language language, project_sdk sdk) {
+void main_form::new_project(const ustring& project_path, project_type type, project_language language, project_sdk sdk) {
   add_to_open_recent_projects(project_path);
-  background_worker_ = std::make_unique<background_worker>();
+  background_worker_ = make_unique<background_worker>();
   background_worker_->do_work += [&](object & sender, do_work_event_args & e) {
-    std::tuple<std::string, std::string, std::filesystem::path> new_project = std::any_cast<std::tuple<std::string, std::string, std::filesystem::path>>(e.argument());
+    tuple<ustring, ustring, ustring> new_project = any_cast<tuple<ustring, ustring, ustring>>(e.argument());
     begin_invoke([&] {
-      progress_dialog_ = std::make_unique<progress_dialog>();
-      progress_dialog_->text(ustring::format("Creating {} project", std::get<2>(new_project).filename()));
+      progress_dialog_ = make_unique<progress_dialog>();
+      progress_dialog_->text(ustring::format("Creating {} project", path::get_file_name(get<2>(new_project))));
       progress_dialog_->message("Please wait...");
       progress_dialog_->marquee(true);
       progress_dialog_->show_sheet_dialog(*this);
     });
-    process::start(process_start_info().file_name("xtdc").arguments(ustring::format("new {} -s {} {}", std::get<0>(new_project), std::get<1>(new_project), std::get<2>(new_project)).c_str()).use_shell_execute(false).create_no_window(true)).wait_for_exit();
-    process::start(process_start_info().file_name("xtdc").arguments(ustring::format("open {}", std::get<2>(new_project)).c_str()).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(ustring::format("new {} -s {} {}", get<0>(new_project), get<1>(new_project), get<2>(new_project)).c_str()).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(ustring::format("open {}", get<2>(new_project)).c_str()).use_shell_execute(false).create_no_window(true)).wait_for_exit();
   };;
   background_worker_->run_worker_completed += [&] {
     begin_invoke([&] {
@@ -683,7 +707,7 @@ void main_form::new_project(const std::string& project_path, project_type type, 
       if (properties::settings::default_settings().auto_close()) close();
     });
   };
-  background_worker_->run_worker_async(std::make_tuple(std::map<project_type, std::string> {{project_type::gui, "gui"}, {project_type::console, "console"}, {project_type::shared_library, "sharedlib"}, {project_type::static_library, "staticlib"}, {project_type::unit_tests_project, "test"}, {project_type::solution_file, "sln"}} [type], (sdk == project_sdk::none ? std::map<project_language, std::string> {{project_language::xtd, "xtd"}, {project_language::xtd_c, "xtd_c"}, {project_language::cpp, "c++"}, {project_language::c, "c"}, {project_language::csharp, "c#"}, {project_language::objectivec, "objective-c"}} [language] : std::map<project_sdk, std::string> {{project_sdk::cocoa, "cocoa"}, {project_sdk::fltk, "fltk"}, {project_sdk::gtk2, "gtk+2"}, {project_sdk::gtk3, "gtk+3"}, {project_sdk::gtk4, "gtk+4"}, {project_sdk::gtkmm, "gtkmm"}, {project_sdk::wxwidgets, "wxwidgets"}, {project_sdk::qt5, "qt5"}, {project_sdk::qt6, "qt6"}, {project_sdk::win32, "win32"}, {project_sdk::winforms, "winforms"}, {project_sdk::wpf, "wpf"}, {project_sdk::gtest, "gtest"}, {project_sdk::catch2, "catch2"}} [sdk]), std::filesystem::path(project_path)));
+  background_worker_->run_worker_async(make_tuple(map<project_type, ustring> {{project_type::gui, "gui"}, {project_type::console, "console"}, {project_type::shared_library, "sharedlib"}, {project_type::static_library, "staticlib"}, {project_type::unit_tests_project, "test"}, {project_type::solution_file, "sln"}} [type], (sdk == project_sdk::none ? map<project_language, ustring> {{project_language::xtd, "xtd"}, {project_language::xtd_c, "xtd_c"}, {project_language::cpp, "c++"}, {project_language::c, "c"}, {project_language::csharp, "c#"}, {project_language::objectivec, "objective-c"}} [language] : map<project_sdk, ustring> {{project_sdk::cocoa, "cocoa"}, {project_sdk::fltk, "fltk"}, {project_sdk::gtk2, "gtk+2"}, {project_sdk::gtk3, "gtk+3"}, {project_sdk::gtk4, "gtk+4"}, {project_sdk::gtkmm, "gtkmm"}, {project_sdk::wxwidgets, "wxwidgets"}, {project_sdk::qt5, "qt5"}, {project_sdk::qt6, "qt6"}, {project_sdk::win32, "win32"}, {project_sdk::winforms, "winforms"}, {project_sdk::wpf, "wpf"}, {project_sdk::gtest, "gtest"}, {project_sdk::catch2, "catch2"}} [sdk]), project_path));
 }
 
 void main_form::open_project() {
@@ -692,18 +716,18 @@ void main_form::open_project() {
   if (dialog.show_sheet_dialog(*this) == dialog_result::ok) open_project(dialog.selected_path());
 }
 
-void main_form::open_project(const std::string& project_path) {
+void main_form::open_project(const ustring& project_path) {
   add_to_open_recent_projects(project_path);
-  background_worker_ = std::make_unique<background_worker>();
+  background_worker_ = make_unique<background_worker>();
   background_worker_->do_work += [&](object & sender, do_work_event_args & e) {
     begin_invoke([&] {
-      progress_dialog_ = std::make_unique<progress_dialog>();
-      progress_dialog_->text(ustring::format("Opening {} project", std::any_cast<std::filesystem::path>(e.argument()).filename()));
+      progress_dialog_ = make_unique<progress_dialog>();
+      progress_dialog_->text(ustring::format("Opening {} project", path::get_file_name(any_cast<ustring>(e.argument()))));
       progress_dialog_->message("Please wait...");
       progress_dialog_->marquee(true);
       progress_dialog_->show_sheet_dialog(*this);
     });
-    process::start(process_start_info().file_name("xtdc").arguments(ustring::format("open {}", std::any_cast<std::filesystem::path>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(ustring::format("open {}", any_cast<ustring>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
   };
   background_worker_->run_worker_completed += [&] {
     begin_invoke([&] {
@@ -713,7 +737,7 @@ void main_form::open_project(const std::string& project_path) {
       if (properties::settings::default_settings().auto_close()) close();
     });
   };
-  background_worker_->run_worker_async(std::filesystem::path(project_path));
+  background_worker_->run_worker_async(project_path);
 }
 
 void main_form::open_xtd_examples() {
@@ -736,18 +760,18 @@ void main_form::run_project() {
   if (dialog.show_sheet_dialog(*this) == dialog_result::ok) run_project(dialog.selected_path());
 }
 
-void main_form::run_project(const std::string& project_path) {
+void main_form::run_project(const ustring& project_path) {
   add_to_open_recent_projects(project_path);
-  background_worker_ = std::make_unique<background_worker>();
+  background_worker_ = make_unique<background_worker>();
   background_worker_->do_work += [&](object & sender, do_work_event_args & e) {
     begin_invoke([&] {
-      progress_dialog_ = std::make_unique<progress_dialog>();
-      progress_dialog_->text(ustring::format("Running {} project", std::any_cast<std::filesystem::path>(e.argument()).filename()));
+      progress_dialog_ = make_unique<progress_dialog>();
+      progress_dialog_->text(ustring::format("Running {} project", path::get_file_name(any_cast<ustring>(e.argument()))));
       progress_dialog_->message("Please wait...");
       progress_dialog_->marquee(true);
       progress_dialog_->show_sheet_dialog(*this);
     });
-    process::start(process_start_info().file_name("xtdc").arguments(ustring::format("run {}", std::any_cast<std::filesystem::path>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(ustring::format("run {}", any_cast<ustring>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
   };
   background_worker_->run_worker_completed += [&] {
     begin_invoke([&] {
@@ -757,7 +781,7 @@ void main_form::run_project(const std::string& project_path) {
       if (properties::settings::default_settings().auto_close()) close();
     });
   };
-  background_worker_->run_worker_async(std::filesystem::path(project_path));
+  background_worker_->run_worker_async(project_path);
 }
 
 void main_form::set_auto_close() {

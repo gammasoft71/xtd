@@ -20,11 +20,11 @@ namespace xtdc_gui {
     bool operator!=(const project_type_item& value) const {return !operator==(value);}
     
     /// @brief Initializes a new instance of the project_type_item class.
-    project_type_item(const xtd::drawing::image& icon, const std::string& name, const std::string& description, xtdc_gui::project_language project_language, xtdc_gui::project_sdk project_sdk, xtdc_gui::project_platform project_platform, xtdc_gui::project_type project_type) : icon_(icon), name_(name), description_(description), project_language_(project_language), project_platform_(project_platform), project_sdk_(project_sdk), project_type_(project_type) {}
+    project_type_item(const xtd::drawing::image& icon, const xtd::ustring& name, const xtd::ustring& description, xtdc_gui::project_language project_language, xtdc_gui::project_sdk project_sdk, xtdc_gui::project_platform project_platform, xtdc_gui::project_type project_type) : icon_(icon), name_(name), description_(description), project_language_(project_language), project_platform_(project_platform), project_sdk_(project_sdk), project_type_(project_type) {}
     
     const xtd::drawing::image& icon() const {return icon_;}
-    const std::string& name() const {return name_;}
-    const std::string& description() const {return description_;}
+    const xtd::ustring& name() const {return name_;}
+    const xtd::ustring& description() const {return description_;}
     xtdc_gui::project_language project_language() const {return project_language_;}
     xtdc_gui::project_platform project_platform() const {return project_platform_;}
     xtdc_gui::project_sdk project_sdk() const {return project_sdk_;}
@@ -32,8 +32,8 @@ namespace xtdc_gui {
     
   private:
     xtd::drawing::image icon_ = xtd::drawing::image::empty;
-    std::string name_;
-    std::string description_;
+    xtd::ustring name_;
+    xtd::ustring description_;
     xtdc_gui::project_language project_language_ = xtdc_gui::project_language::all;
     xtdc_gui::project_platform project_platform_ = xtdc_gui::project_platform::all;
     xtdc_gui::project_sdk project_sdk_ = xtdc_gui::project_sdk::none;
