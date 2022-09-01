@@ -11,7 +11,6 @@ namespace xtdc_command {
       if (create_solution) create_solution_cmakelists_txt(name);
       create_cmakelists_txt(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
       create_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_main(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
     }
     
   private:
@@ -35,7 +34,6 @@ namespace xtdc_command {
         xtd::ustring::format("project({} VERSION 1.0.0)", name),
         "find_package(Catch2 REQUIRED)",
         "set(SOURCES",
-        "  src/main.cpp",
         "  src/unit_test1.cpp",
         ")",
         "source_group(src FILES ${SOURCES})",
@@ -47,7 +45,7 @@ namespace xtdc_command {
         "",
         "# Application properties",
         "add_executable(${PROJECT_NAME} ${SOURCES})",
-        "target_link_libraries(${PROJECT_NAME} Catch2::Catch2)",
+        "target_link_libraries(${PROJECT_NAME} Catch2::Catch2WithMain)",
         "",
         "add_test(NAME ${PROJECT_NAME} COMMAND $<TARGET_FILE_NAME:${PROJECT_NAME}> WORKING_DIRECTORY $<TARGET_FILE_DIR:${PROJECT_NAME}>)",
       };
@@ -57,7 +55,7 @@ namespace xtdc_command {
     
     void create_source(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
-        "#include <catch2/catch.hpp>",
+        "#include <catch2/catch_test_macros.hpp>",
         "",
         xtd::ustring::format("namespace {} {{", name),
         "  TEST_CASE(\"unit_test1::test_method1\") {",
@@ -68,15 +66,6 @@ namespace xtdc_command {
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "unit_test1.cpp"), lines);
-    }
-    
-    void create_main(const xtd::ustring& name, const xtd::ustring& path) const {
-      std::vector<xtd::ustring> lines {
-        "#define CATCH_CONFIG_MAIN",
-        "#include <catch2/catch.hpp>",
-      };
-      
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "main.cpp"), lines);
     }
   };
 }
