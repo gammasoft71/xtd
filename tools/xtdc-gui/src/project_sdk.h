@@ -7,6 +7,7 @@ namespace xtdc_gui {
     fltk,
     gtk2,
     gtk3,
+    gtk4,
     gtkmm,
     wxwidgets,
     qt5,
