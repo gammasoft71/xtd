@@ -90,7 +90,7 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", xtd::ustring::format("{}.cpp", name)), lines);
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Window1.cpp"), lines);
     }
     
     void create_main(const xtd::ustring& name, const xtd::ustring& path) const {
