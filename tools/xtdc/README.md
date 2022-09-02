@@ -113,9 +113,9 @@ The following tables, organized by project, show the availability of SDKs and la
 
 ## Console Application
 
-short name       : console
-Default language : c++
-Default SDK      : xtd
+* short name : console
+* Default language : c++
+* Default SDK : xtd
 
 | SDK      | c++ | c | c# | objective-c |
 |----------|-----|---|----|-------------|
@@ -137,9 +137,9 @@ Default SDK      : xtd
 
 ## GUI Application
 
-short name       : gui
-Default language : c++
-Default SDK      : xtd
+* short name : gui
+* Default language : c++
+* Default SDK : xtd
 
 | SDK      | c++ | c | c# | objective-c |
 |----------|-----|---|----|-------------|
@@ -160,9 +160,9 @@ Default SDK      : xtd
 
 ## Shared library
 
-short name       : sharelib
-Default language : c++
-Default SDK      : xtd
+* short name : sharelib
+* Default language : c++
+* Default SDK : xtd
 
 | SDK      | c++ | c | c# | objective-c |
 |----------|-----|---|----|-------------|
@@ -184,9 +184,9 @@ Default SDK      : xtd
 
 ## Solution file
 
-short name       : sln
-Default language : c++
-Default SDK      : xtd
+* short name : sln
+* Default language : c++
+* Default SDK : xtd
 
 | SDK      | c++ | c | c# | objective-c |
 |----------|-----|---|----|-------------|
@@ -208,9 +208,9 @@ Default SDK      : xtd
 
 ## Static library
 
-short name       : staticlib
-Default language : c++
-Default SDK      : xtd
+* short name : staticlib
+* Default language : c++
+* Default SDK : xtd
 
 | SDK      | c++ | c | c# | objective-c |
 |----------|-----|---|----|-------------|
@@ -232,9 +232,9 @@ Default SDK      : xtd
 
 ## Unit Test Project
 
-short name       : test
-Default language : c++
-Default SDK      : xtd
+* short name : test
+* Default language : c++
+* Default SDK : xtd
 
 | SDK      | c++ | c | c# | objective-c |
 |----------|-----|---|----|-------------|
