@@ -115,7 +115,7 @@ The following tables, organized by project, show the availability of SDKs and la
 
 ## Console Application
 
-* short name : console
+* short name : **console**
 
 | SDK      | c++ | c | c# | objective-c | Default language |
 |----------|-----|---|----|-------------|------------------|
@@ -137,7 +137,7 @@ The following tables, organized by project, show the availability of SDKs and la
 
 ## GUI Application
 
-* short name : gui
+* short name : **gui**
 
 | SDK      | c++ | c | c# | objective-c | Default language |
 |----------|-----|---|----|-------------|------------------|
@@ -159,7 +159,7 @@ The following tables, organized by project, show the availability of SDKs and la
 
 ## Shared library
 
-* short name : sharelib
+* short name : **sharelib**
 
 | SDK      | c++ | c | c# | objective-c | Default language |
 |----------|-----|---|----|-------------|------------------|
@@ -181,7 +181,7 @@ The following tables, organized by project, show the availability of SDKs and la
 
 ## Solution file
 
-* short name : sln
+* short name : **sln**
 
 | SDK      | c++ | c | c# | objective-c | Default language |
 |----------|-----|---|----|-------------|------------------|
@@ -203,7 +203,7 @@ The following tables, organized by project, show the availability of SDKs and la
 
 ## Static library
 
-* short name : staticlib
+* short name : **staticlib**
 
 | SDK      | c++ | c | c# | objective-c | Default language |
 |----------|-----|---|----|-------------|------------------|
@@ -225,7 +225,7 @@ The following tables, organized by project, show the availability of SDKs and la
 
 ## Unit Test Project
 
-* short name : test
+* short name : **test**
 
 | SDK      | c++ | c | c# | objective-c | Default language |
 |----------|-----|---|----|-------------|------------------|
