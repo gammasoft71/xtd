@@ -8,7 +8,7 @@
 #include <codecvt>
 #include <xtd/argument_exception.h>
 #include <xtd/drawing/system_colors.h>
-#include <xtd/forms/create_params.h>
+#include <xtd/forms/native/create_params.h>
 #include <xtd/forms/native/static_styles.h>
 #include <wx/panel.h>
 #include <wx/popupwin.h>
@@ -101,11 +101,11 @@ namespace xtd {
         friend xtd::forms::native::control;
         friend xtd::forms::native::popup_panel;
       private:
-        explicit wx_popup_panel(const forms::create_params& create_params) {
-          if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
-          control_handler::create<wxPopup>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), popup_panel_style_to_wx_style(create_params.style(), create_params.ex_style()));
-          SetPosition({create_params.x(), create_params.y()});
-          control()->SetSize(create_params.width(), create_params.height());
+        explicit wx_popup_panel(const xtd::forms::native::create_params& create_params) {
+          if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
+          control_handler::create<wxPopup>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), popup_panel_style_to_wx_style(create_params.style, create_params.ex_style));
+          SetPosition({create_params.location.x(), create_params.location.y()});
+          control()->SetSize(create_params.size.width(), create_params.size.height());
           #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
@@ -118,7 +118,7 @@ namespace xtd {
           }
           #endif
           boxSizer_ = new wxBoxSizer(wxVERTICAL);
-          panel_ = new wxPopupPanel(this, control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, panel_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
+          panel_ = new wxPopupPanel(this, control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, panel_style_to_wx_style(create_params.style, create_params.ex_style, create_params.class_style));
           boxSizer_->Add(panel_, wxSizerFlags().Proportion(-1).Expand());
           control()->SetSizerAndFit(boxSizer_);
           #if defined(__WIN32__)

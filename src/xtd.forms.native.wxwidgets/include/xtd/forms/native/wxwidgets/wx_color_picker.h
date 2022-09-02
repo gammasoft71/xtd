@@ -7,7 +7,7 @@
 
 #include <xtd/argument_exception.h>
 #include <xtd/drawing/system_colors.h>
-#include <xtd/forms/create_params.h>
+#include <xtd/forms/native/create_params.h>
 #include <xtd/forms/choose_color_flags.h>
 #include <wx/clrpicker.h>
 #include "control_handler.h"
@@ -21,11 +21,11 @@ namespace xtd {
         friend xtd::forms::native::color_picker;
         friend xtd::forms::native::control;
       private:
-        explicit wx_color_picker(const xtd::forms::create_params& create_params) {
-          if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
+        explicit wx_color_picker(const xtd::forms::native::create_params& create_params) {
+          if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
           int style = wxCLRP_DEFAULT_STYLE;
-          if ((create_params.style() & CC_ALPHACOLOR) == CC_ALPHACOLOR) style |= wxCLRP_SHOW_ALPHA;
-          control_handler::create<wxColourPickerCtrl>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxColour(0, 0, 0), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style);
+          if ((create_params.style & CC_ALPHACOLOR) == CC_ALPHACOLOR) style |= wxCLRP_SHOW_ALPHA;
+          control_handler::create<wxColourPickerCtrl>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxColour(0, 0, 0), wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()), style);
           #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             static_cast<wxColourPickerCtrl*>(control())->GetPickerCtrl()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::button_face().r(), xtd::drawing::system_colors::button_face().g(), xtd::drawing::system_colors::button_face().b(), xtd::drawing::system_colors::button_face().a()));

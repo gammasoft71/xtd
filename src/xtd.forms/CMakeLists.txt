@@ -71,6 +71,7 @@ add_sources(
   include/xtd/forms/control_trace_listener.h
   include/xtd/forms/countries.h
   include/xtd/forms/country.h
+  include/xtd/forms/create_params.h
   include/xtd/forms/cursor.h
   include/xtd/forms/cursors.h
   include/xtd/forms/date_range_event_args.h

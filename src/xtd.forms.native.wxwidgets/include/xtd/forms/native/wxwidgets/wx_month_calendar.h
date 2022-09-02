@@ -9,7 +9,7 @@
 #include <xtd/argument_exception.h>
 #include <xtd/date_time.h>
 #include <xtd/drawing/system_colors.h>
-#include <xtd/forms/create_params.h>
+#include <xtd/forms/native/create_params.h>
 #include <xtd/forms/native/month_calendar_styles.h>
 #include "control_handler.h"
 #include <wx/calctrl.h>
@@ -38,11 +38,11 @@ namespace xtd {
         friend xtd::forms::native::control;
         friend xtd::forms::native::month_calendar;
       private:
-        explicit wx_month_calendar(const xtd::forms::create_params& create_params) {
-          if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, csf_);
-          control_handler::create<wxMonthCalendar>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxPoint(create_params.location().x(), create_params.location().y()), wxSize(create_params.size().width(), create_params.size().height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
-          if ((create_params.style() & MCS_NOTODAY) == MCS_NOTODAY) show_today = false;
-          if ((create_params.style() & MCS_NOTODAYCIRCLE) == MCS_NOTODAYCIRCLE) show_today_circle = false;
+        explicit wx_month_calendar(const xtd::forms::native::create_params& create_params) {
+          if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, csf_);
+          control_handler::create<wxMonthCalendar>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()), style_to_wx_style(create_params.style, create_params.ex_style));
+          if ((create_params.style & MCS_NOTODAY) == MCS_NOTODAY) show_today = false;
+          if ((create_params.style & MCS_NOTODAYCIRCLE) == MCS_NOTODAYCIRCLE) show_today_circle = false;
           static_cast<wxMonthCalendar*>(control())->calendarCtrl->Bind(wxEVT_CALENDAR_PAGE_CHANGED, &wx_month_calendar::on_page_changed, this);
           static_cast<wxMonthCalendar*>(control())->calendarCtrl->Bind(wxEVT_CALENDAR_YEAR_CHANGED, &wx_month_calendar::on_year_changed, this);
           #if defined(__WIN32__)

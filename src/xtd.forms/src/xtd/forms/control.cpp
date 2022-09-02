@@ -14,6 +14,7 @@
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/class_styles.h>
 #include <xtd/forms/native/control.h>
+#include <xtd/forms/native/create_params.h>
 #include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/mouse_key.h>
 #include <xtd/forms/native/window_styles.h>
@@ -1479,7 +1480,18 @@ void control::create_handle() {
   set_state(state::creating_handle, true);
   auto params = create_params();
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::creation), ustring::format("create handle {} with params {}", *this, params));
-  data_->handle = native::control::create(params);
+  
+  native::create_params cp;
+  cp.caption = params.caption();
+  cp.class_name = params.class_name();
+  cp.class_style = params.class_style();
+  cp.ex_style = params.ex_style();
+  cp.location = params.location();
+  cp.param = params.param();
+  cp.parent = params.parent();
+  cp.style = params.style();
+  cp.size = params.size();
+  data_->handle = native::control::create(cp);
   suspend_layout();
   handles_[handle()] = this;
   native::control::register_wnd_proc(handle(), {*this, &control::wnd_proc_});

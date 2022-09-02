@@ -123,43 +123,43 @@ intptr_t control::user_context_menu(intptr_t control, intptr_t context_menu, con
   return static_cast<intptr_t>(reinterpret_cast<control_handler*>(control)->control()->GetPopupMenuSelectionFromUser(*reinterpret_cast<wxMenu*>(context_menu), pos.x(), pos.y()));
 }
 
-intptr_t control::create(const forms::create_params& create_params) {
+intptr_t control::create(const forms::native::create_params& create_params) {
   application::initialize(); // Must be first
-  if (create_params.class_name() == "button") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_button(create_params)));
-  if (create_params.class_name() == "checkbox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_check_box(create_params)));
-  if (create_params.class_name() == "checkedlistbox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_checked_list_box(create_params)));
-  if (create_params.class_name() == "choice") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_choice(create_params)));
-  if (create_params.class_name() == "collapsiblepanel") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_collapsible_panel(create_params)));
-  if (create_params.class_name() == "colorpicker") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_color_picker(create_params)));
-  if (create_params.class_name() == "combobox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_combo_box(create_params)));
-  if (create_params.class_name() == "commandlinkbutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_command_link_button(create_params)));
-  if (create_params.class_name() == "datetimepicker") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_date_time_picker(create_params)));
-  if (create_params.class_name() == "domainupdown") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_domain_up_down(create_params)));
-  if (create_params.class_name() == "fontpicker") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_font_picker(create_params)));
-  if (create_params.class_name() == "form") return set_form_extra_options(reinterpret_cast<intptr_t>(new wx_form(create_params)));
-  if (create_params.class_name() == "groupbox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_group_box(create_params)));
-  if (create_params.class_name() == "label") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_label(create_params)));
-  if (create_params.class_name() == "lightbutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_light_button(create_params)));
-  if (create_params.class_name() == "listbox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_list_box(create_params)));
-  if (create_params.class_name() == "loadingindicator") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_loading_indicator(create_params)));
-  if (create_params.class_name() == "monthcalendar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_month_calendar(create_params)));
-  if (create_params.class_name() == "numericupdown") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_numeric_up_down(create_params)));
-  if (create_params.class_name() == "panel") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_panel(create_params)));
-  if (create_params.class_name() == "picturebox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_picture_box(create_params)));
-  if (create_params.class_name() == "popuppanel") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_popup_panel(create_params)));
-  if (create_params.class_name() == "progressbar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_progress_bar(create_params)));
-  if (create_params.class_name() == "radiobutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_radio_button(create_params)));
-  if (create_params.class_name() == "scrollbar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_scroll_bar(create_params)));
-  if (create_params.class_name() == "statusbar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_status_bar(create_params)));
-  if (create_params.class_name() == "switchbutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_switch_button(create_params)));
-  if (create_params.class_name() == "tabcontrol") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_tab_control(create_params)));
-  if (create_params.class_name() == "tabpage") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_tab_page(create_params)));
-  if (create_params.class_name() == "textbox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_text_box(create_params)));
-  if (create_params.class_name() == "togglebutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_toggle_button(create_params)));
-  if (create_params.class_name() == "toolbar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_tool_bar(create_params)));
-  if (create_params.class_name() == "trackbar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_track_bar(create_params)));
-  if (create_params.class_name() == "updownbutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_up_down_button(create_params)));
-  if (create_params.class_name() == "usercontrol") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_user_control(create_params)));
+  if (create_params.class_name == "button") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_button(create_params)));
+  if (create_params.class_name == "checkbox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_check_box(create_params)));
+  if (create_params.class_name == "checkedlistbox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_checked_list_box(create_params)));
+  if (create_params.class_name == "choice") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_choice(create_params)));
+  if (create_params.class_name == "collapsiblepanel") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_collapsible_panel(create_params)));
+  if (create_params.class_name == "colorpicker") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_color_picker(create_params)));
+  if (create_params.class_name == "combobox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_combo_box(create_params)));
+  if (create_params.class_name == "commandlinkbutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_command_link_button(create_params)));
+  if (create_params.class_name == "datetimepicker") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_date_time_picker(create_params)));
+  if (create_params.class_name == "domainupdown") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_domain_up_down(create_params)));
+  if (create_params.class_name == "fontpicker") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_font_picker(create_params)));
+  if (create_params.class_name == "form") return set_form_extra_options(reinterpret_cast<intptr_t>(new wx_form(create_params)));
+  if (create_params.class_name == "groupbox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_group_box(create_params)));
+  if (create_params.class_name == "label") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_label(create_params)));
+  if (create_params.class_name == "lightbutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_light_button(create_params)));
+  if (create_params.class_name == "listbox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_list_box(create_params)));
+  if (create_params.class_name == "loadingindicator") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_loading_indicator(create_params)));
+  if (create_params.class_name == "monthcalendar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_month_calendar(create_params)));
+  if (create_params.class_name == "numericupdown") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_numeric_up_down(create_params)));
+  if (create_params.class_name == "panel") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_panel(create_params)));
+  if (create_params.class_name == "picturebox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_picture_box(create_params)));
+  if (create_params.class_name == "popuppanel") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_popup_panel(create_params)));
+  if (create_params.class_name == "progressbar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_progress_bar(create_params)));
+  if (create_params.class_name == "radiobutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_radio_button(create_params)));
+  if (create_params.class_name == "scrollbar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_scroll_bar(create_params)));
+  if (create_params.class_name == "statusbar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_status_bar(create_params)));
+  if (create_params.class_name == "switchbutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_switch_button(create_params)));
+  if (create_params.class_name == "tabcontrol") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_tab_control(create_params)));
+  if (create_params.class_name == "tabpage") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_tab_page(create_params)));
+  if (create_params.class_name == "textbox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_text_box(create_params)));
+  if (create_params.class_name == "togglebutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_toggle_button(create_params)));
+  if (create_params.class_name == "toolbar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_tool_bar(create_params)));
+  if (create_params.class_name == "trackbar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_track_bar(create_params)));
+  if (create_params.class_name == "updownbutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_up_down_button(create_params)));
+  if (create_params.class_name == "usercontrol") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_user_control(create_params)));
   return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_control(create_params)));
 }
 
