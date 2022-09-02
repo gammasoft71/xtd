@@ -107,6 +107,153 @@ For example to view help on open command :
 xtdc open --help
 ```
 
+# Projects    
+
+The following tables, organized by project, show the availability of SDKs and languages.
+
+## Console Application
+
+short name       : console
+Default language : c++
+Default SDK      : xtd
+
+| SDK      | c++ | c | c# | objective-c |
+|----------|-----|---|----|-------------|
+| none     | ✔️  | ✔️ | ✔️  | ✔️           |
+| catch2   | ❌  | ❌ | ❌  | ❌           |
+| cocoa    | ✔️  | ❌ | ❌  | ✔️           |
+| fltk     | ✔️  | ❌ | ❌  | ❌           |
+| gtest    | ❌  | ❌ | ❌  | ❌           |
+| gtk+2    | ✔️  | ✔️ | ❌  | ❌           |
+| gtk+3    | ✔️  | ✔️ | ❌  | ❌           |
+| gtk+4    | ✔️  | ✔️ | ❌  | ❌           |
+| gtkmm    | ✔️  | ❌ | ❌  | ❌           |
+| qt5      | ✔️  | ❌ | ❌  | ❌           |
+| qt6      | ✔️  | ❌ | ❌  | ❌           |
+| win32    | ✔️  | ✔️ | ❌  | ❌           |
+| winforms | ❌  | ❌ | ✔️  | ❌           |
+| wpf      | ❌  | ❌ | ✔️  | ❌           |
+| xtd      | ✔️  | ✔️ | ❌  | ❌           |
+
+## GUI Application
+
+short name       : gui
+Default language : c++
+Default SDK      : xtd
+
+| SDK      | c++ | c | c# | objective-c |
+|----------|-----|---|----|-------------|
+| none     | ❌  | ❌ | ❌  | ❌           |
+| catch2   | ❌  | ❌ | ❌  | ❌           |
+| cocoa    | ✔️  | ❌ | ❌  | ✔️           |
+| fltk     | ✔️  | ❌ | ❌  | ❌           |
+| gtest    | ❌  | ❌ | ❌  | ❌           |
+| gtk+2    | ✔️  | ✔️ | ❌  | ❌           |
+| gtk+3    | ✔️  | ✔️ | ❌  | ❌           |
+| gtk+4    | ✔️  | ✔️ | ❌  | ❌           |
+| gtkmm    | ✔️  | ❌ | ❌  | ❌           |
+| qt5      | ✔️  | ❌ | ❌  | ❌           |
+| qt6      | ✔️  | ❌ | ❌  | ❌           |
+| win32    | ✔️  | ✔️ | ❌  | ❌           |
+| winforms | ❌  | ❌ | ✔️  | ❌           |
+| wpf      | ❌  | ❌ | ✔️  | ❌           |
+
+## Shared library
+
+short name       : sharelib
+Default language : c++
+Default SDK      : xtd
+
+| SDK      | c++ | c | c# | objective-c |
+|----------|-----|---|----|-------------|
+| none     | ✔️  | ✔️ | ✔️  | ✔️           |
+| catch2   | ❌  | ❌ | ❌  | ❌           |
+| cocoa    | ✔️  | ❌ | ❌  | ✔️           |
+| fltk     | ✔️  | ❌ | ❌  | ❌           |
+| gtest    | ❌  | ❌ | ❌  | ❌           |
+| gtk+2    | ✔️  | ✔️ | ❌  | ❌           |
+| gtk+3    | ✔️  | ✔️ | ❌  | ❌           |
+| gtk+4    | ✔️  | ✔️ | ❌  | ❌           |
+| gtkmm    | ✔️  | ❌ | ❌  | ❌           |
+| qt5      | ✔️  | ❌ | ❌  | ❌           |
+| qt6      | ✔️  | ❌ | ❌  | ❌           |
+| win32    | ✔️  | ✔️ | ❌  | ❌           |
+| winforms | ❌  | ❌ | ✔️  | ❌           |
+| wpf      | ❌  | ❌ | ✔️  | ❌           |
+| xtd      | ✔️  | ✔️ | ❌  | ❌           |
+
+## Solution file
+
+short name       : sln
+Default language : c++
+Default SDK      : xtd
+
+| SDK      | c++ | c | c# | objective-c |
+|----------|-----|---|----|-------------|
+| none     | ❌  | ❌ | ❌  | ❌           |
+| catch2   | ❌  | ❌ | ❌  | ❌           |
+| cocoa    | ❌  | ❌ | ❌  | ❌           |
+| fltk     | ❌  | ❌ | ❌  | ❌           |
+| gtest    | ❌  | ❌ | ❌  | ❌           |
+| gtk+2    | ❌  | ❌ | ❌  | ❌           |
+| gtk+3    | ❌  | ❌ | ❌  | ❌           |
+| gtk+4    | ❌  | ❌ | ❌  | ❌           |
+| gtkmm    | ❌  | ❌ | ❌  | ❌           |
+| qt5      | ❌  | ❌ | ❌  | ❌           |
+| qt6      | ❌  | ❌ | ❌  | ❌           |
+| win32    | ❌  | ❌ | ❌  | ❌           |
+| winforms | ❌  | ❌ | ❌  | ❌           |
+| wpf      | ❌  | ❌ | ❌  | ❌           |
+| xtd      | ✔️  | ✔️ | ❌  | ❌           |
+
+## Static library
+
+short name       : staticlib
+Default language : c++
+Default SDK      : xtd
+
+| SDK      | c++ | c | c# | objective-c |
+|----------|-----|---|----|-------------|
+| none     | ✔️  | ✔️ | ✔️  | ✔️           |
+| catch2   | ❌  | ❌ | ❌  | ❌           |
+| cocoa    | ✔️  | ❌ | ❌  | ✔️           |
+| fltk     | ✔️  | ❌ | ❌  | ❌           |
+| gtest    | ❌  | ❌ | ❌  | ❌           |
+| gtk+2    | ✔️  | ✔️ | ❌  | ❌           |
+| gtk+3    | ✔️  | ✔️ | ❌  | ❌           |
+| gtk+4    | ✔️  | ✔️ | ❌  | ❌           |
+| gtkmm    | ✔️  | ❌ | ❌  | ❌           |
+| qt5      | ✔️  | ❌ | ❌  | ❌           |
+| qt6      | ✔️  | ❌ | ❌  | ❌           |
+| win32    | ✔️  | ✔️ | ❌  | ❌           |
+| winforms | ❌  | ❌ | ✔️  | ❌           |
+| wpf      | ❌  | ❌ | ✔️  | ❌           |
+| xtd      | ✔️  | ✔️ | ❌  | ❌           |
+
+## Unit Test Project
+
+short name       : test
+Default language : c++
+Default SDK      : xtd
+
+| SDK      | c++ | c | c# | objective-c |
+|----------|-----|---|----|-------------|
+| none     | ❌  | ❌ | ❌  | ❌           |
+| catch2   | ✔️  | ❌ | ❌  | ❌           |
+| cocoa    | ❌  | ❌ | ❌  | ❌           |
+| fltk     | ❌  | ❌ | ❌  | ❌           |
+| gtest    | ❌  | ❌ | ❌  | ❌           |
+| gtk+2    | ❌  | ❌ | ❌  | ❌           |
+| gtk+3    | ❌  | ❌ | ❌  | ❌           |
+| gtk+4    | ❌  | ❌ | ❌  | ❌           |
+| gtkmm    | ❌  | ❌ | ❌  | ❌           |
+| qt5      | ✔️  | ❌ | ❌  | ❌           |
+| qt6      | ✔️  | ❌ | ❌  | ❌           |
+| win32    | ✔️  | ✔️ | ❌  | ❌           |
+| winforms | ❌  | ❌ | ❌  | ❌           |
+| wpf      | ❌  | ❌ | ❌  | ❌           |
+| xtd      | ✔️  | ✔️ | ❌  | ❌           |
+
 ______________________________________________________________________________________________
 
 © 2021 Gammasoft.
