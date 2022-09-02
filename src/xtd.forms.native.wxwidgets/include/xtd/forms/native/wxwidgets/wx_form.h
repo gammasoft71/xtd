@@ -8,7 +8,7 @@
 #include <xtd/cdebug.h>
 #include <xtd/convert_string.h>
 #include <xtd/drawing/system_colors.h>
-#include <xtd/forms/create_params.h>
+#include <xtd/forms/native/create_params.h>
 #include <xtd/forms/native/class_styles.h>
 #include <xtd/forms/native/extended_window_styles.h>
 #include <xtd/forms/native/window_styles.h>
@@ -80,13 +80,13 @@ namespace xtd {
 #endif
         
       public:
-        explicit wx_form(const forms::create_params& create_params) {
-          wxPoint location = wxPoint(create_params.x(), create_params.y());
-          wxSize size = wxSize(create_params.width(), create_params.height());
+        explicit wx_form(const xtd::forms::native::create_params& create_params) {
+          wxPoint location = wxPoint(create_params.location.x(), create_params.location.y());
+          wxSize size = wxSize(create_params.size.width(), create_params.size.height());
           if (size.GetWidth() > -1 && size.GetWidth() < min_width) size.SetWidth(min_width);
           if (size.GetHeight() > -1 && size.GetHeight() < min_height) size.SetHeight(min_height);
-          if ((create_params.ex_style() & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW || (create_params.ex_style() & WS_EX_DLGMODALFRAME) == WS_EX_DLGMODALFRAME) control_handler::create<wxDialog>(create_params.parent() ? (reinterpret_cast<control_handler*>(create_params.parent())->control()) : nullptr, wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption())), location, size, form_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style(), create_params.parent()));
-          else control_handler::create<wxFrame>(create_params.parent() && (create_params.ex_style() & WS_EX_TOPMOST) != WS_EX_TOPMOST ? (reinterpret_cast<control_handler*>(create_params.parent())->control()) : nullptr, wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption())), location, size, form_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style(), create_params.parent()));
+          if ((create_params.ex_style & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW || (create_params.ex_style & WS_EX_DLGMODALFRAME) == WS_EX_DLGMODALFRAME) control_handler::create<wxDialog>(create_params.parent ? (reinterpret_cast<control_handler*>(create_params.parent)->control()) : nullptr, wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption)), location, size, form_style_to_wx_style(create_params.style, create_params.ex_style, create_params.class_style, create_params.parent));
+          else control_handler::create<wxFrame>(create_params.parent && (create_params.ex_style & WS_EX_TOPMOST) != WS_EX_TOPMOST ? (reinterpret_cast<control_handler*>(create_params.parent)->control()) : nullptr, wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption)), location, size, form_style_to_wx_style(create_params.style, create_params.ex_style, create_params.class_style, create_params.parent));
           #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
@@ -143,7 +143,7 @@ namespace xtd {
             e.Skip();
           });
           
-          fixed = (create_params.style() & WS_THICKFRAME) != WS_THICKFRAME;
+          fixed = (create_params.style & WS_THICKFRAME) != WS_THICKFRAME;
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
             control()->SetForegroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
@@ -157,10 +157,10 @@ namespace xtd {
           });
           #endif
           
-          if ((create_params.ex_style() & WS_EX_CONTEXTHELP) == WS_EX_CONTEXTHELP) control()->SetExtraStyle(control()->GetExtraStyle() | wxDIALOG_EX_CONTEXTHELP);
+          if ((create_params.ex_style & WS_EX_CONTEXTHELP) == WS_EX_CONTEXTHELP) control()->SetExtraStyle(control()->GetExtraStyle() | wxDIALOG_EX_CONTEXTHELP);
           SetPosition(location);
           boxSizer_ = new wxBoxSizer(wxVERTICAL);
-          panel_ = new wxMainPanel(this, control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, panel_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
+          panel_ = new wxMainPanel(this, control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, panel_style_to_wx_style(create_params.style, create_params.ex_style, create_params.class_style));
           boxSizer_->Add(panel_, wxSizerFlags().Proportion(-1).Expand());
           control()->SetSizerAndFit(boxSizer_);
           #if defined(__WIN32__)

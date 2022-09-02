@@ -9,7 +9,6 @@ add_sources(
   include/xtd/xtd.forms.native
   include/xtd/xtd.forms.native.h
   include/xtd/forms/browser_info_flags.h
-  include/xtd/forms/create_params.h
   include/xtd/forms/choose_color_flags.h
   include/xtd/forms/choose_font_flags.h
   include/xtd/forms/open_file_name_flags.h
@@ -35,6 +34,7 @@ add_sources(
   include/xtd/forms/native/context_menu.h
   include/xtd/forms/native/content_alignment.h
   include/xtd/forms/native/control.h
+  include/xtd/forms/native/create_params.h
   include/xtd/forms/native/cursor.h
   include/xtd/forms/native/cursors.h
   include/xtd/forms/native/date_time_picker.h

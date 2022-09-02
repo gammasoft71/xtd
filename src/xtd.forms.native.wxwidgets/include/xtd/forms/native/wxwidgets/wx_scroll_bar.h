@@ -8,7 +8,7 @@
 #include <codecvt>
 #include <xtd/argument_exception.h>
 #include <xtd/drawing/system_colors.h>
-#include <xtd/forms/create_params.h>
+#include <xtd/forms/native/create_params.h>
 #include <xtd/forms/native/scroll_bar_styles.h>
 #include <wx/scrolbar.h>
 #include "control_handler.h"
@@ -22,9 +22,9 @@ namespace xtd {
         friend xtd::forms::native::control;
         friend xtd::forms::native::scroll_bar;
       private:
-        explicit wx_scroll_bar(const forms::create_params& create_params) {
-          if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
-          control_handler::create<wxScrollBar>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), (create_params.style() & SBS_VERT) == SBS_VERT ? wxSB_VERTICAL : wxSB_HORIZONTAL);
+        explicit wx_scroll_bar(const xtd::forms::native::create_params& create_params) {
+          if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
+          control_handler::create<wxScrollBar>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()), (create_params.style & SBS_VERT) == SBS_VERT ? wxSB_VERTICAL : wxSB_HORIZONTAL);
           #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));

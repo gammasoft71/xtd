@@ -9,7 +9,7 @@
 #include <xtd/argument_exception.h>
 #include <xtd/convert_string.h>
 #include <xtd/drawing/system_colors.h>
-#include <xtd/forms/create_params.h>
+#include <xtd/forms/native/create_params.h>
 #include <xtd/forms/native/tool_bar_styles.h>
 #include <wx/artprov.h>
 #include <wx/toolbar.h>
@@ -26,9 +26,9 @@ namespace xtd {
         friend xtd::forms::native::control;
         friend xtd::forms::native::label;
       private:
-        explicit wx_tool_bar(const forms::create_params& create_params) {
-          if (!create_params.parent()) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
-          control_handler::create<wxToolBar>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, style_to_wx_style(create_params.style(), create_params.ex_style()));
+        explicit wx_tool_bar(const xtd::forms::native::create_params& create_params) {
+          if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
+          control_handler::create<wxToolBar>(reinterpret_cast<control_handler*>(create_params.parent)->control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, style_to_wx_style(create_params.style, create_params.ex_style));
           // On Windows the default size icon of toolbar is 16x16, on macOS is 32x32 and on gtk is 24x24...
           if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") static_cast<wxToolBar*>(control())->SetToolBitmapSize({16, 16});
           else if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") static_cast<wxToolBar*>(control())->SetToolBitmapSize({32, 32});

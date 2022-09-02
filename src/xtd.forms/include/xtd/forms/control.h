@@ -18,7 +18,6 @@
 #include <xtd/drawing/point.h>
 #include <xtd/drawing/rectangle.h>
 #include <xtd/drawing/size.h>
-#include <xtd/forms/create_params.h>
 
 #include "../forms_export.h"
 #include "layout/arranged_element_collection.h"
@@ -31,6 +30,7 @@
 #include "control_event_handler.h"
 #include "control_ref.h"
 #include "control_styles.h"
+#include "create_params.h"
 #include "cursors.h"
 #include "dock_style.h"
 #include "help_event_handler.h"
