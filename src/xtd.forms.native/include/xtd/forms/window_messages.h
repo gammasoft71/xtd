@@ -1946,10 +1946,12 @@ inline uint8_t HIBYTE(type_t value) {
 
 constexpr uint32_t WM_REFLECT = WM_USER + 0x1C00;
 
-constexpr uint32_t WM_MOUSEENTER = WM_USER + 0x0001;
+constexpr uint32_t WM_APPIDLE = WM_USER + 0x0001;
 
-constexpr uint32_t WM_RECREATE = WM_USER + 0x0002;
+constexpr uint32_t WM_STYLE_SHEET_CHANGED = WM_USER + 0x0002;
 
-constexpr uint32_t WM_STYLE_SHEET_CHANGED = WM_USER + 0x0003;
+constexpr uint32_t WM_MOUSEENTER = WM_USER + 0x0003;
+
+constexpr uint32_t WM_RECREATE = WM_USER + 0x0004;
 
 intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam);

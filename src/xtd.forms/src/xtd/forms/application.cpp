@@ -258,8 +258,8 @@ xtd::forms::style_sheets::style_sheet application::get_style_sheet_from_name(con
 
 void application::raise_idle(const event_args& e) {
   raise_idle_ = true;
-  auto message = forms::message::create(0, WM_ENTERIDLE, 0, 0);
-  wm_enter_idle(message);
+  auto message = forms::message::create(0, WM_APPIDLE, 0, 0);
+  wm_app_idle(message);
 }
 
 void application::register_message_loop_callback(message_loop_callback callback) {
@@ -349,7 +349,7 @@ intptr_t application::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, int
 void application::wnd_proc(message& message) {
   switch (message.msg()) {
     case WM_ACTIVATEAPP: wm_activate_app(message); break;
-    case WM_ENTERIDLE: wm_enter_idle(message); break;
+    case WM_APPIDLE: wm_app_idle(message); break;
     case WM_QUIT: wm_quit(message); break;
     default: break;
   }
@@ -360,7 +360,7 @@ void application::wm_activate_app(message& message) {
     form.get().send_message(form.get().handle(), message.msg(), message.wparam(), message.lparam());
 }
 
-void application::wm_enter_idle(message& message) {
+void application::wm_app_idle(message& message) {
   static date_time last_idle_time;
   if (raise_idle_ || duration_cast<milliseconds>((date_time::now() - last_idle_time).ticks()) >= chrono::milliseconds(100)) {
     last_idle_time = date_time::now();

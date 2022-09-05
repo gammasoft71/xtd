@@ -367,7 +367,7 @@ namespace xtd {
       static intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
       static void wnd_proc(message& message);
       static void wm_activate_app(message& message);
-      static void wm_enter_idle(message& message);
+      static void wm_app_idle(message& message);
       static void wm_quit(message& message);
       
       static bool use_visual_styles_;
