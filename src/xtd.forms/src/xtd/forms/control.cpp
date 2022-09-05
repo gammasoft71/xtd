@@ -1428,7 +1428,6 @@ void control::wnd_proc(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::events), ustring::format("({}) receive message [{}]", *this, message));
   switch (message.msg()) {
     // keyboard:
-    case WM_CREATE: wm_create(message); break;
     case WM_CHAR:
     case WM_KEYDOWN:
     case WM_KEYUP:
@@ -1451,26 +1450,28 @@ void control::wnd_proc(message& message) {
     case WM_MOUSEMOVE: wm_mouse_move(message); break;
     case WM_MOUSEENTER: wm_mouse_enter(message); break;
     case WM_MOUSELEAVE: wm_mouse_leave(message); break;
-    case WM_CHILDACTIVATE: wm_child_activate(message); break;
-    case WM_SETFOCUS: wm_set_focus(message); break;
-    case WM_KILLFOCUS: wm_kill_focus(message); break;
     case WM_MOUSEHWHEEL:
     case WM_MOUSEWHEEL: wm_mouse_wheel(message); break;
+    // Scrolling events
+    case WM_HSCROLL:
+    case WM_VSCROLL: wm_scroll(message); break;
     // System events
+    case WM_CHILDACTIVATE: wm_child_activate(message); break;
     case WM_COMMAND: wm_command(message); break;
+    case WM_CREATE: wm_create(message); break;
     case WM_ERASEBKGND: wm_erase_background(message); break;
     case WM_HELP: wm_help(message); break;
-    case WM_PAINT: wm_paint(message); break;
+    case WM_KILLFOCUS: wm_kill_focus(message); break;
     case WM_MENUCOMMAND: wm_menu_command(message); break;
     case WM_MOVE: wm_move(message);  break;
     case WM_NOTIFY: wm_notify(message);  break;
+    case WM_PAINT: wm_paint(message); break;
+    case WM_SETFOCUS: wm_set_focus(message); break;
     case WM_SETTEXT: wm_set_text(message); break;
     case WM_SHOWWINDOW: wm_show(message); break;
     case WM_SIZE: wm_size(message); break;
     case WM_SIZING: wm_sizing(message); break;
     case WM_STYLE_SHEET_CHANGED: wm_style_sheet_changed(message); break;
-    case WM_HSCROLL:
-    case WM_VSCROLL: wm_scroll(message); break;
     case WM_ENTERIDLE: wm_enter_idle(message); break;
     default: def_wnd_proc(message); break;
   }
