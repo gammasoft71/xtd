@@ -837,7 +837,7 @@ ustring ustring::replace(const ustring& old_string, const ustring& new_string) c
     if (old_size == new_size) result.replace(index, old_size, new_string);
     else {
       result.erase(index, old_string.size());
-      result.basic_string<value_type>::insert(index, new_string);
+      result.insert(index, new_string);
     }
     index += new_string.size();
   }
