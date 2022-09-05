@@ -23,15 +23,15 @@ namespace xtd {
       /// @brief Specifies that the top edge of the control is defined.
       y = 0b10,
       /// @brief Specifies that both the x and y coordinates of the control are defined.
-      location = 0b11,
+      location = x | y,
       /// @brief Specifies that the width of the control is defined.
       width = 0b100,
       /// @brief Specifies that the height of the control is defined.
       height = 0b1000,
       /// @brief Specifies that both the width and height property values of the control are defined.
-      size = 0b1100,
+      size = width | height,
       /// @brief Specifies that both the location and size property values are defined.
-      all = 0b1111,
+      all = location | size,
     };
     
     /// @cond
