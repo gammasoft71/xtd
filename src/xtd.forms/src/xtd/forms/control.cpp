@@ -1472,7 +1472,7 @@ void control::wnd_proc(message& message) {
     case WM_SIZE: wm_size(message); break;
     case WM_SIZING: wm_sizing(message); break;
     case WM_STYLE_SHEET_CHANGED: wm_style_sheet_changed(message); break;
-    case WM_ENTERIDLE: wm_enter_idle(message); break;
+    case WM_APPIDLE: wm_app_idle(message); break;
     default: def_wnd_proc(message); break;
   }
 }
@@ -1690,7 +1690,7 @@ void control::wm_command(message& message) {
     from_handle(message.lparam()).value().get().send_message(message.hwnd(), WM_REFLECT + message.msg(), message.wparam(), message.lparam());
 }
 
-void control::wm_enter_idle(message& message) {
+void control::wm_app_idle(message& message) {
   def_wnd_proc(message);
   for (auto control : controls())
     control.get().wnd_proc(message);

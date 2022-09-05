@@ -20,8 +20,8 @@ namespace xtd {
       class wx_application : public wxApp {
         #ifndef WM_ACTIVATEAPP
         static constexpr int32_t WM_ACTIVATEAPP = 0x001C;
-        static constexpr int32_t WM_ENTERIDLE = 0x0121;
         #endif
+        static constexpr int32_t WM_APPIDLE = 0x0401;
       public:
         wx_application() = default;
         
@@ -47,7 +47,7 @@ namespace xtd {
             wxActivateEvent& activate_event = static_cast<wxActivateEvent&>(event);
             send_message(0, WM_ACTIVATEAPP, activate_event.GetActive(), 0, reinterpret_cast<intptr_t>(&event));
           } else if (event.GetEventType() == wxEVT_IDLE)
-            send_message(0, WM_ENTERIDLE, 0, 0, reinterpret_cast<intptr_t>(&event));
+            send_message(0, WM_APPIDLE, 0, 0, reinterpret_cast<intptr_t>(&event));
           //else if (event.GetEventType() == wxEVT_END_SESSION)
           //  send_message(0, WM_QUIT, 0, 0, reinterpret_cast<intptr_t>(&event));
           return wxApp::ProcessEvent(event);

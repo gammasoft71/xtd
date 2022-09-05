@@ -1966,7 +1966,7 @@ namespace xtd {
       void wm_child_activate(message& message);
       void wm_create(message& message);
       void wm_command(message& message);
-      void wm_enter_idle(message& message);
+      void wm_app_idle(message& message);
       void wm_key_char(message& message);
       void wm_kill_focus(message& message);
       void wm_menu_command(message& message);
