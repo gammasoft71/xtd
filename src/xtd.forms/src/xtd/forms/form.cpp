@@ -448,7 +448,6 @@ void form::wm_close(message& message) {
     else {
       if (dialog_result_ == forms::dialog_result::none) dialog_result_ = forms::dialog_result::cancel;
       native::form::end_dialog(handle(), static_cast<int32_t>(dialog_result_));
-      application::raise_leave_thread_modal(event_args::empty);
       set_parent(parent_before_show_dialog_);
       set_state(state::modal, false);
       post_recreate_handle();

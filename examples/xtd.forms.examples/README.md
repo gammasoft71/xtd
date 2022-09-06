@@ -195,7 +195,8 @@
 
 ## [Events](events/README.md)
 
-* [application_idle](events/application_idle/README.md) shows how to create an application with [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) class and [idle](../../src/xtd.forms/include/xtd/forms/application.h) event.
+* [application_events](events/application_events/README.md) demonstrates the use of [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) events.
+* [application_idle](events/application_idle/README.md) demonstrates the use of [xtd::forms::application::idle](../../src/xtd.forms/include/xtd/forms/application.h) event.
 * [key_events](events/key_events/README.md) demonstrates the use of key events.
 * [mouse_events](events/mouse_events/README.md) demonstrates the use of mouse events.
 * [enable_changed_event](events/enable_changed_event/README.md) demonstrates the use of [enable_changed](../../src/xtd.forms/include/xtd/forms/control.h) event.
