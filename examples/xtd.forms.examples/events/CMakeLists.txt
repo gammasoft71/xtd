@@ -4,6 +4,7 @@ project(events)
 find_package(xtd REQUIRED)
 
 add_projects(
+  application_events
   application_idle
   enable_changed_event
   font_changed_event

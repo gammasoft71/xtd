@@ -2,7 +2,8 @@
 
 [This folder](.) contains xtd.forms event examples.
 
-* [application_idle](application_idle/README.md) shows how to create an application with [xtd::forms::application](../../../src/xtd.forms/include/xtd/forms/application.h) class and [idle](../../../src/xtd.forms/include/xtd/forms/application.h) event.
+* [application_events](application_events/README.md) demonstrates the use of [xtd::forms::application](../../../src/xtd.forms/include/xtd/forms/application.h) events.
+* [application_idle](application_idle/README.md) demonstrates the use of [xtd::forms::application::idle](../../../src/xtd.forms/include/xtd/forms/application.h) event.
 * [enable_changed_event](enable_changed_event/README.md) demonstrates the use of [enable_changed](../../../src/xtd.forms/include/xtd/forms/control.h) event.
 * [font_changed_event](font_changed_event/README.md) demonstrates the use of [font_changed](../../../src/xtd.forms/include/xtd/forms/control.h) event.
 * [form_click](form_click/README.md) demonstrates the use of [xtd::forms::form](../../../src/xtd.forms/include/xtd/forms/form.h) control and [click](../../../src/xtd.forms/include/xtd/forms/control.h) event.
