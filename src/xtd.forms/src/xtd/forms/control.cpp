@@ -1401,6 +1401,11 @@ void control::update() const {
   if (is_handle_created()) native::control::update(handle());
 }
 
+void control::reflect_message(intptr_t handle, message& message) {
+  if (handle != 0 && from_handle(handle).has_value())
+    from_handle(handle).value().get().send_message(handle, WM_REFLECT + message.msg(), message.wparam(), message.lparam());
+}
+
 intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
   //try {
   message message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
@@ -1452,19 +1457,28 @@ void control::wnd_proc(message& message) {
     case WM_MOUSELEAVE: wm_mouse_leave(message); break;
     case WM_MOUSEHWHEEL:
     case WM_MOUSEWHEEL: wm_mouse_wheel(message); break;
+    // Color events
+    //case WM_CTLCOLORDLG: /// @todo to process
+    //case WM_CTLCOLORMSGBOX: /// @todo to process
+    case WM_CTLCOLOR:
+    case WM_CTLCOLORBTN:
+    case WM_CTLCOLORSCROLLBAR:
+    case WM_CTLCOLOREDIT:
+    case WM_CTLCOLORLISTBOX:
+    case WM_CTLCOLORSTATIC: reflect_message(message.lparam(), message); break;
+    case WM_ERASEBKGND: wm_erase_background(message); break;
     // Scrolling events
     case WM_HSCROLL:
-    case WM_VSCROLL: wm_scroll(message); break;
+    case WM_VSCROLL: reflect_message(message.lparam(), message); break;
     // System events
     case WM_CHILDACTIVATE: wm_child_activate(message); break;
-    case WM_COMMAND: wm_command(message); break;
+    case WM_COMMAND: reflect_message(message.lparam(), message); break;
     case WM_CREATE: wm_create(message); break;
-    case WM_ERASEBKGND: wm_erase_background(message); break;
     case WM_HELP: wm_help(message); break;
     case WM_KILLFOCUS: wm_kill_focus(message); break;
     case WM_MENUCOMMAND: wm_menu_command(message); break;
     case WM_MOVE: wm_move(message);  break;
-    case WM_NOTIFY: wm_notify(message);  break;
+    case WM_NOTIFY: reflect_message(reinterpret_cast<intptr_t>(reinterpret_cast<NMHDR*>(message.lparam())->hwndFrom), message); break;
     case WM_PAINT: wm_paint(message); break;
     case WM_SETFOCUS: wm_set_focus(message); break;
     case WM_SETTEXT: wm_set_text(message); break;
@@ -1473,6 +1487,17 @@ void control::wnd_proc(message& message) {
     case WM_SIZING: wm_sizing(message); break;
     case WM_STYLE_SHEET_CHANGED: wm_style_sheet_changed(message); break;
     case WM_APPIDLE: wm_app_idle(message); break;
+    // Reflect events
+    case WM_REFLECT + WM_CTLCOLOR:
+    case WM_REFLECT + WM_CTLCOLORBTN:
+    case WM_REFLECT + WM_CTLCOLORSCROLLBAR:
+    case WM_REFLECT + WM_CTLCOLOREDIT:
+    case WM_REFLECT + WM_CTLCOLORLISTBOX:
+    case WM_REFLECT + WM_CTLCOLORSTATIC: return wm_ctlcolor(message); break;
+    case WM_REFLECT + WM_COMMAND: return wm_command(message); break;
+    case WM_REFLECT + WM_NOTIFY: wm_notify(message);  break;
+    case WM_REFLECT + WM_HSCROLL:
+    case WM_REFLECT + WM_VSCROLL: wm_scroll(message); break;
     default: def_wnd_proc(message); break;
   }
 }
@@ -1684,10 +1709,13 @@ void control::wm_child_activate(message& message) {
   def_wnd_proc(message);
 }
 
+void control::wm_ctlcolor(message& message) {
+  def_wnd_proc(message);
+}
+
 void control::wm_command(message& message) {
   def_wnd_proc(message);
-  if (message.lparam() != 0 && from_handle(message.lparam()).has_value())
-    from_handle(message.lparam()).value().get().send_message(message.hwnd(), WM_REFLECT + message.msg(), message.wparam(), message.lparam());
+  //on_click(event_args::empty);
 }
 
 void control::wm_app_idle(message& message) {
@@ -1812,11 +1840,6 @@ void control::wm_mouse_wheel(message& message) {
 
 void control::wm_notify(message& message) {
   def_wnd_proc(message);
-  if (message.lparam() != 0) {
-    NMHDR* nmhdr = reinterpret_cast<NMHDR*>(message.lparam());
-    if (from_handle(reinterpret_cast<intptr_t>(nmhdr->hwndFrom)).has_value())
-      from_handle(reinterpret_cast<intptr_t>(nmhdr->hwndFrom)).value().get().send_message(message.hwnd(), WM_REFLECT + message.msg(), message.wparam(), message.lparam());
-  }
 }
 
 void control::wm_paint(const message& message) {
@@ -1844,8 +1867,6 @@ void control::wm_help(message& message) {
 
 void control::wm_scroll(message& message) {
   def_wnd_proc(message);
-  if (message.lparam() != 0 && from_handle(message.lparam()).has_value())
-    from_handle(message.lparam()).value().get().send_message(message.hwnd(), WM_REFLECT + message.msg(), message.wparam(), message.lparam());
 }
 
 void control::wm_set_focus(message& message) {

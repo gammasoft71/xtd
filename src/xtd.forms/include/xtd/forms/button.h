@@ -191,15 +191,7 @@ namespace xtd {
       
       void on_paint(paint_event_args& e) override;
       
-      /// @brief Processes Windows messages.
-      /// @param m The Windows Message to process.
-      /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.
-      //void wnd_proc(message& message) override;
-      /// @}
-      
     private:
-      //void wm_click(message& message);
-      //void wm_mouse_up(message& message);
       struct data {
         bool auto_repeat = false;
         timer auto_repeat_timer;
