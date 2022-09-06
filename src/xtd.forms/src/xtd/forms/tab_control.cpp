@@ -86,12 +86,12 @@ void tab_control::on_handle_created(const event_args& e) {
 
 void tab_control::wnd_proc(message& message) {
   switch (message.msg()) {
-    case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
+    case WM_REFLECT + WM_COMMAND: wm_command(message); break;
     default: control::wnd_proc(message);
   }
 }
 
-void tab_control::wm_reflect_command(message& message) {
+void tab_control::wm_command(message& message) {
   def_wnd_proc(message);
   selected_index(native::tab_control::selected_index(handle()));
 }

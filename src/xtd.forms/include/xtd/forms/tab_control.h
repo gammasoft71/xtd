@@ -118,7 +118,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      virtual void wm_reflect_command(message& message);
+      virtual void wm_command(message& message);
       
       friend class tab_page;
       size_t get_child_index(intptr_t page) {

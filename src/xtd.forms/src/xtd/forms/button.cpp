@@ -82,31 +82,6 @@ void button::on_paint(paint_event_args& e) {
   button_base::on_paint(e);
 }
 
-/*
-void button::wnd_proc(message &message) {
-  switch (message.msg()) {
-    case WM_REFLECT + WM_COMMAND: wm_click(message); break;
-    case WM_LBUTTONUP:
-    case WM_MBUTTONUP:
-    case WM_RBUTTONUP:
-    case WM_XBUTTONUP: wm_mouse_up(message); break;
-    default: control::wnd_proc(message);
-  }
-}
-
-void button::wm_click(message& message) {
-  def_wnd_proc(message);
-  on_click(event_args::empty);
-}
-
-void button::wm_mouse_up(message& message) {
-  def_wnd_proc(message);
-  mouse_event_args e = mouse_event_args::create(message);
-  on_mouse_click(e);
-  on_mouse_up(e);
-}
- */
-
 drawing::size button::measure_control() const {
   drawing::size size = button_base::measure_control();
   if (size.height() < default_size().height()) size.height(default_size().height());
