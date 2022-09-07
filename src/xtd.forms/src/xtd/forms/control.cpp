@@ -581,11 +581,12 @@ std::optional<control_ref> control::parent() const {
 }
 
 control& control::parent(const control& value) {
-  if (value.handle() == handle()) return *this;
-  if (value.handle() != data_->parent) parent(nullptr);
-  else on_parent_changed(event_args::empty);
-  data_->parent = value.handle();
-  const_cast<control&>(value).data_->controls.push_back(*this);
+  if (value.data_->handle != data_->parent) {
+    if (this->parent().has_value()) this->parent(nullptr);
+    else on_parent_changed(event_args::empty);
+    if (value.handle()) const_cast<control&>(value).data_->controls.push_back(*this);
+  } else if (value.data_->handle == 0)
+    const_cast<control&>(value).data_->controls.push_back(*this);
   return *this;
 }
 
