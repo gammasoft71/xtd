@@ -71,15 +71,14 @@ namespace xtd {
         /// @warning Internal use only
         static intptr_t from_hrgn(intptr_t hrgn);
         
-        /// @brief Gets a rectangle that represents a rectangle that bounds the region on the drawing surface of a graphics.
+        /// @brief Gets a rectangle that represents a rectangle that bounds in pixels the region.
         /// @param handle The region handle.
-        /// @param grpahics The graphics handle on which the region is drawn.
-        /// @param x The x-coordinate of rectangle that represents the bounding rectangle for the region on the specified drawing surface.
-        /// @param y The y-coordinate of rectangle that represents the bounding rectangle for the region on the specified drawing surface.
-        /// @param width The width of rectangle that represents the bounding rectangle for the region on the specified drawing surface.
-        /// @param heightThe height of rectangle that represents the bounding rectangle for the region on the specified drawing surface.
+        /// @param x The x-coordinate of rectangle that represents the bounding rectangle in pixels for the region.
+        /// @param y The y-coordinate of rectangle that represents the bounding rectangle in pixels for the region.
+        /// @param width The width of rectangle that represents the bounding rectangle in pixels for the region.
+        /// @param height The height of rectangle that represents the bounding rectangle in pixels for the region.
         /// @warning Internal use only
-        static void get_bounds(intptr_t handle, intptr_t grpahics, float& x, float& y, float& width, float& height);
+        static void get_bounds(intptr_t handle, float& x, float& y, float& width, float& height);
         
         /// @brief Returns a Windows handle to the region in the specified graphics context.
         /// @param handle The region handle.
