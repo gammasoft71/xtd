@@ -19,6 +19,7 @@
 #include <xtd/drawing/color.h>
 #include <xtd/drawing/font.h>
 #include <xtd/drawing/rectangle.h>
+#include <xtd/drawing/region.h>
 #include <xtd/ustring.h>
 #include <xtd/forms_native_export.h>
 #include "../window_messages.h"
@@ -292,10 +293,17 @@ namespace xtd {
         /// @brief Invalidates the entire surface of the control and causes the control to be redrawn.
         /// @param control Control window handle.
         /// @param rect A xtd::drawing::rectangle that represents the region to invalidate.
-        /// @param erase_background true to erase background control; otherwise, false.
+        /// @param invalidate_children true to invalidate the control's child controls; otherwise, false.
         /// @warning Internal use only
-        static void invalidate(intptr_t control, const drawing::rectangle& rect, bool erase_background);
+        static void invalidate(intptr_t control, const drawing::rectangle& rec, bool invalidate_children);
         
+        /// @brief Invalidates the entire surface of the control and causes the control to be redrawn.
+        /// @param control Control window handle.
+        /// @param region A xtd::drawing::region that represents the region to invalidate.
+        /// @param invalidate_children true to invalidate the control's child controls; otherwise, false.
+        /// @warning Internal use only
+        static void invalidate(intptr_t control, const drawing::region& region, bool invalidate_children);
+
         /// @brief Executes the specified delegate, on the thread that owns the control's underlying window handle, with the specified list of arguments and mutex.
         /// @param control Control window handle.
         /// @param invoker A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
