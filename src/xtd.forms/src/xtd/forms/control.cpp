@@ -1400,6 +1400,7 @@ void control::update() const {
 }
 
 void control::reflect_message(intptr_t handle, message& message) {
+  def_wnd_proc(message);
   if (handle != 0 && from_handle(handle).has_value())
     from_handle(handle).value().get().send_message(handle, WM_REFLECT + message.msg(), message.wparam(), message.lparam());
 }
