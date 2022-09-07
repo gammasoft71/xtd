@@ -959,6 +959,17 @@ namespace xtd {
       /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
       virtual void invalidate(const drawing::rectangle& rect, bool invalidate_children) const;
       
+      /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control.
+      /// @param region A xtd::drawing::region that represents the region to invalidate.
+      /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
+      virtual void invalidate(const drawing::region& region) const;
+      
+      /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control. Optionally, invalidates the child controls assigned to the control.
+      /// @param region A xtd::drawing::region that represents the region to invalidate.
+      /// @param invalidate_children true to invalidate the control's child controls; otherwise, false.
+      /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
+      virtual void invalidate(const drawing::region& region, bool invalidate_children) const;
+
       /// @brief Executes the specified delegate on the thread that owns the control's underlying window handle.
       /// @param value A delegate that contains a method to be called in the control's thread context.
       void invoke(delegate<void()> value);

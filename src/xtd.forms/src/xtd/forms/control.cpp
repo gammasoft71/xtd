@@ -864,11 +864,11 @@ void control::hide() {
 }
 
 void control::invalidate() const {
-  invalidate(drawing::rectangle({ 0, 0 }, client_size()), false);
+  invalidate(client_rectangle(), false);
 }
 
 void control::invalidate(bool invalidate_children) const {
-  invalidate(drawing::rectangle({ 0, 0 }, client_size()), invalidate_children);
+  invalidate(client_rectangle(), invalidate_children);
 }
 
 void control::invalidate(const drawing::rectangle& rect) const {
@@ -876,10 +876,15 @@ void control::invalidate(const drawing::rectangle& rect) const {
 }
 
 void control::invalidate(const drawing::rectangle& rect, bool invalidate_children) const {
-  if (invalidate_children)
-    for (auto child : data_->controls)
-      child.get().invalidate(rect, invalidate_children);
-  if (is_handle_created()) native::control::invalidate(handle(), rect, true);
+  if (is_handle_created()) native::control::invalidate(handle(), rect, invalidate_children);
+}
+
+void control::invalidate(const drawing::region& region) const {
+  invalidate(region, false);
+}
+
+void control::invalidate(const drawing::region& region, bool invalidate_children) const {
+  if (is_handle_created()) native::control::invalidate(handle(), region, invalidate_children);
 }
 
 void control::invoke(delegate<void()> value) {

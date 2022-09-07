@@ -496,13 +496,24 @@ void control::visible(intptr_t control, bool visible) {
   reinterpret_cast<control_handler*>(control)->Show(visible);
 }
 
-void control::invalidate(intptr_t control, const drawing::rectangle& rect, bool erase_background) {
+void control::invalidate(intptr_t control, const drawing::rectangle& rect, bool invalidate_children) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  reinterpret_cast<control_handler*>(control)->main_control()->RefreshRect(wxRect(rect.left(), rect.top(), rect.width(), rect.height()), erase_background);
+  reinterpret_cast<control_handler*>(control)->main_control()->RefreshRect(wxRect(rect.left(), rect.top(), rect.width(), rect.height()));
+  
+  if (invalidate_children) {
+    for (auto child : reinterpret_cast<control_handler*>(control)->main_control()->GetChildren()) {
+      auto intersect_rect = xtd::drawing::rectangle::make_intersect(rect, {child->GetRect().x, child->GetRect().y, child->GetRect().width, child->GetRect().height});
+      child->RefreshRect({intersect_rect.x(), intersect_rect.y(), intersect_rect.width(), intersect_rect.height()});
+    }
+  }
+}
+
+void control::invalidate(intptr_t control, const drawing::region& region, bool invalidate_children) {
+  invalidate(control, rectangle::round(region.get_bounds()), invalidate_children);
 }
 
 void control::register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
