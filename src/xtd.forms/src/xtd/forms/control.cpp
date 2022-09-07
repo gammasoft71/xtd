@@ -580,31 +580,25 @@ std::optional<control_ref> control::parent() const {
   return from_handle(data_->parent);
 }
 
-control& control::parent(const control& parent) {
-  if (parent.data_->handle != data_->parent) {
-    if (this->parent().has_value())
-      this->parent(nullptr);
-    else {
-      set_state(control::state::created, false);
-      on_parent_changed(event_args::empty);
-    }
-    if (parent.handle()) const_cast<control&>(parent).data_->controls.push_back(*this);
-  } else if (parent.data_->handle == 0)
-    const_cast<control&>(parent).data_->controls.push_back(*this);
+control& control::parent(const control& value) {
+  if (value.handle() == handle()) return *this;
+  if (value.handle() != data_->parent) parent(nullptr);
+  else on_parent_changed(event_args::empty);
+  data_->parent = value.handle();
+  const_cast<control&>(value).data_->controls.push_back(*this);
   return *this;
 }
 
 control& control::parent(std::nullptr_t) {
-  if (parent().has_value()) {
+  if (!is_handle_created() || data_->parent == 0) return *this;
+  auto current_parent = from_handle(data_->parent);
+  for (auto it = current_parent.value().get().data_->controls.begin(); it != current_parent.value().get().data_->controls.end(); ++it) {
+    if (it->get().handle() != handle()) continue;
+    auto prev_parent = parent();
     on_parent_changed(event_args::empty);
-    for (size_t index = 0; index < parent().value().get().data_->controls.size(); index++) {
-      if (parent().value().get().data_->controls[index].get().handle() == handle()) {
-        auto prev_parent = parent();
-        parent().value().get().data_->controls.erase_at(index);
-        if (!get_state(state::destroying) && !prev_parent.value().get().get_state(state::destroying)) prev_parent.value().get().refresh();
-        break;
-      }
-    }
+    parent().value().get().data_->controls.erase(it);
+    if (!get_state(state::destroying) && !prev_parent.value().get().get_state(state::destroying)) prev_parent.value().get().refresh();
+    break;
   }
   return *this;
 }
@@ -773,34 +767,32 @@ void control::create_control() {
     set_state(state::creating, true);
     create_handle();
     send_message(handle(), WM_CREATE, 0, handle());
+    set_state(state::created, is_handle_created());
     set_state(state::creating, false);
-    set_state(state::created, true);
   }
 }
 
 void control::destroy_control() {
-  if (get_state(state::created)) {
-    set_state(state::created, false);
-    set_state(state::destroying, true);
-    if (is_handle_created()) {
-      if (parent().has_value() && !parent().value().get().get_state(state::destroying)) {
-        auto parent_prev = parent();
-        parent_prev.value().get().suspend_layout();
-        parent(nullptr);
-        parent_prev.value().get().resume_layout(false);
-      } else {
-        for (size_t index = 0; index < top_level_controls_.size(); index++) {
-          if (top_level_controls_[index].get().handle() == handle()) {
-            top_level_controls_.erase_at(index);
-            break;
-          }
-        }
+  if (!get_state(state::created)) return;
+  if (!is_handle_created()) return;
+  set_state(state::created, false);
+  set_state(state::destroying, true);
+  if (parent().has_value() && !parent().value().get().get_state(state::destroying)) {
+    auto parent_prev = parent();
+    parent_prev.value().get().suspend_layout();
+    parent(nullptr);
+    parent_prev.value().get().resume_layout(false);
+  } else {
+    for (size_t index = 0; index < top_level_controls_.size(); index++) {
+      if (top_level_controls_[index].get().handle() == handle()) {
+        top_level_controls_.erase_at(index);
+        break;
       }
-      destroy_handle();
     }
-    set_state(state::destroying, false);
-    set_state(state::destroyed, true);
   }
+  destroy_handle();
+  set_state(state::destroyed, true);
+  set_state(state::destroying, false);
 }
 
 graphics control::create_graphics() const {
@@ -1364,7 +1356,7 @@ void control::set_bounds(int32_t x, int32_t y, int32_t width, int32_t height, bo
 }
 
 void control::set_state(control::state flag, bool value) {
-  data_->state = value ? (control::state)((int32_t)data_->state | (int32_t)flag) : (control::state)((int32_t)data_->state & ~(int32_t)flag);
+  data_->state = static_cast<control::state>(value ? (static_cast<int32_t>(data_->state) | static_cast<int32_t>(flag)) : (static_cast<int32_t>(data_->state) & ~ static_cast<int32_t>(flag)));
 }
 
 void control::set_can_focus(bool value) {
