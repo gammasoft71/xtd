@@ -45,7 +45,7 @@ forms::create_params button::create_params() const {
   
   create_params.class_name("button");
   
-  create_params.style(create_params.style() | BS_PUSHBUTTON);
+  create_params.style(create_params.style() | BS_PUSHBUTTON | BS_MULTILINE | BS_CENTER | BS_VCENTER);
   
   return create_params;
 }
