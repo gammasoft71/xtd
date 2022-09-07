@@ -813,9 +813,9 @@ optional<reference_wrapper<control>> control::from_child_handle(intptr_t handle)
     auto it = handles_.find(handle);
     if (it != handles_.end())
       return it->second->parent();
-    return optional<reference_wrapper<control>>();
+    return nullopt;
   } catch (...) {
-    return optional<reference_wrapper<control>>();
+    return nullopt;
   }
 }
 
