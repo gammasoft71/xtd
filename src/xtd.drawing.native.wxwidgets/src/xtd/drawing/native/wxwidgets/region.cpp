@@ -65,7 +65,7 @@ intptr_t region::from_hrgn(intptr_t hrgn) {
   #endif
 }
 
-void region::get_bounds(intptr_t handle, intptr_t graphics, float& x, float& y, float& width, float& height) {
+void region::get_bounds(intptr_t handle, float& x, float& y, float& width, float& height) {
   auto wx_region = reinterpret_cast<wxRegion*>(handle);
   x = as<int32_t>(wx_region->GetBox().x);
   y = as<int32_t>(wx_region->GetBox().y);

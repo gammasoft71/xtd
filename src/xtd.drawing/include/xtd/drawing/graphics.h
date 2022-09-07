@@ -42,6 +42,7 @@ namespace xtd {
     class control;
     class control_paint;
     class paint_event_args;
+    class region;
     class screen;
   }
 }
@@ -1295,6 +1296,7 @@ namespace xtd {
       
     private:
       friend xtd::drawing::image;
+      friend xtd::drawing::region;
       float to_page_unit(float value) const;
       static float to_page_unit(float value, xtd::drawing::graphics_unit page_unit, float page_scale, float dpi);
       float to_pixels(float value) const;

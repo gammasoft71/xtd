@@ -102,10 +102,15 @@ namespace xtd {
       
       /// @brief Gets a xtd::drawing::rectangle_f structure that represents a rectangle that bounds this xtd::drawing::region on the drawing surface of a xtd::drawing::graphics object.
       /// @param g The xtd::drawing::graphics on which this xtd::drawing::region is drawn.
+      /// @return A xtd::drawing::rectangle_f structure that represents the bounding rectangle for this xtd::drawing::region in pixels.
+      /// @remarks The current transformation of the graphics context is used to compute the region interior on the drawing surface. The bounding rectangle is not always the smallest possible bounding rectangle depending on the current transformation.
+      xtd::drawing::rectangle_f get_bounds() const;
+      /// @brief Gets a xtd::drawing::rectangle_f structure that represents a rectangle that bounds this xtd::drawing::region on the drawing surface of a xtd::drawing::graphics object.
+      /// @param g The xtd::drawing::graphics on which this xtd::drawing::region is drawn.
       /// @return A xtd::drawing::rectangle_f structure that represents the bounding rectangle for this xtd::drawing::region on the specified drawing surface.
       /// @remarks The current transformation of the graphics context is used to compute the region interior on the drawing surface. The bounding rectangle is not always the smallest possible bounding rectangle depending on the current transformation.
       xtd::drawing::rectangle_f get_bounds(const xtd::drawing::graphics& g) const;
-      
+
       /// @brief Returns a Windows handle to this xtd::drawing::region in the specified graphics context.
       /// @param g The xtd::drawing::graphics on which this xtd::drawing::region is drawn.
       /// @return A Windows handle to this xtd::drawing::region.
