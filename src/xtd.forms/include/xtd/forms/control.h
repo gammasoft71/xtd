@@ -1975,13 +1975,13 @@ namespace xtd {
       void show_context_menu(xtd::forms::context_menu& menu, const xtd::drawing::point& pos) const;
       void reflect_message(intptr_t handle, message& message);
       intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
+      void wm_app_idle(message& message);
       void wm_child_activate(message& message);
-      void wm_create(message& message);
-      void wm_ctlcolor(message& message);
-      void wm_ctlcolor_control(message& message);
       void wm_command(message& message);
       void wm_command_control(message& message);
-      void wm_app_idle(message& message);
+      void wm_ctlcolor(message& message);
+      void wm_ctlcolor_control(message& message);
+      void wm_create(message& message);
       void wm_key_char(message& message);
       void wm_kill_focus(message& message);
       void wm_menu_command(message& message);

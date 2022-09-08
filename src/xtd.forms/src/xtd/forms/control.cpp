@@ -1699,20 +1699,15 @@ void control::do_layout_with_auto_size_mode() {
   }
 }
 
-void control::wm_create(message& message) {
-  on_create_control();
+void control::wm_app_idle(message& message) {
+  def_wnd_proc(message);
+  for (auto control : controls())
+    control.get().wnd_proc(message);
+  if (data_->recreate_handle_posted)
+    recreate_handle();
 }
 
 void control::wm_child_activate(message& message) {
-  def_wnd_proc(message);
-}
-
-void control::wm_ctlcolor(message& message) {
-  def_wnd_proc(message);
-  reflect_message(message.lparam(), message);
-}
-
-void control::wm_ctlcolor_control(message& message) {
   def_wnd_proc(message);
 }
 
@@ -1725,12 +1720,17 @@ void control::wm_command_control(message& message) {
   def_wnd_proc(message);
 }
 
-void control::wm_app_idle(message& message) {
+void control::wm_ctlcolor(message& message) {
   def_wnd_proc(message);
-  for (auto control : controls())
-    control.get().wnd_proc(message);
-  if (data_->recreate_handle_posted)
-    recreate_handle();
+  reflect_message(message.lparam(), message);
+}
+
+void control::wm_ctlcolor_control(message& message) {
+  def_wnd_proc(message);
+}
+
+void control::wm_create(message& message) {
+  on_create_control();
 }
 
 void control::wm_key_char(message& message) {
