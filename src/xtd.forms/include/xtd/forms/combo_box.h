@@ -145,8 +145,6 @@ namespace xtd {
       
       void on_handle_created(const event_args& e) override;
       void on_selected_value_changed(const event_args& e) override;
-      void set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) override;
-      void set_client_size_core(int32_t width, int32_t height) override;
       void wnd_proc(message& message) override;
 
       /// @brief Processes the command message the list_box control receives from the top-level window.
