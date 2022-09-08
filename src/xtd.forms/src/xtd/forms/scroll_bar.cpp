@@ -89,12 +89,12 @@ void scroll_bar::on_value_changed(const event_args& e) {
 void scroll_bar::wnd_proc(message& message) {
   switch (message.msg()) {
     case WM_REFLECT + WM_HSCROLL:
-    case WM_REFLECT + WM_VSCROLL: wm_scroll(message); break;
+    case WM_REFLECT + WM_VSCROLL: wm_scroll_control(message); break;
     default: control::wnd_proc(message);
   }
 }
 
-void scroll_bar::wm_scroll(message& message) {
+void scroll_bar::wm_scroll_control(message& message) {
   on_scroll(event_args::empty);
   on_value_changed(event_args::empty);
 }

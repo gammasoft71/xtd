@@ -440,7 +440,7 @@ namespace xtd {
       /// @}
       
     private:
-      void wm_notify(xtd::forms::message& message);
+      void wm_notify_control(xtd::forms::message& message);
       void wm_date_selected(xtd::forms::message& message);
       void wm_date_changed(xtd::forms::message& message);
       void wm_view_changed(xtd::forms::message& message);

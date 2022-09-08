@@ -91,12 +91,12 @@ void up_down_button::on_value_changed(const event_args& e) {
 void up_down_button::wnd_proc(message& message) {
   switch (message.msg()) {
     case WM_REFLECT + WM_HSCROLL:
-    case WM_REFLECT + WM_VSCROLL: wm_scroll(message); break;
+    case WM_REFLECT + WM_VSCROLL: wm_scroll_control(message); break;
     default: control::wnd_proc(message);
   }
 }
 
-void up_down_button::wm_scroll(message& message) {
+void up_down_button::wm_scroll_control(message& message) {
   if (message.wparam() == SB_LINEDOWN) value_ = value_ > minimum_ ? value_ - 1 : maximum_;
   if (message.wparam() == SB_LINEUP) value_ = value_ < maximum_ ? value_ + 1 : minimum_;
   on_scroll(event_args::empty);

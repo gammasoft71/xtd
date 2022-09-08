@@ -140,7 +140,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      void wm_scroll(message& message);
+      void wm_scroll_control(message& message);
     };
   }
 }

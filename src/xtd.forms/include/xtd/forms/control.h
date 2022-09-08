@@ -1978,7 +1978,9 @@ namespace xtd {
       void wm_child_activate(message& message);
       void wm_create(message& message);
       void wm_ctlcolor(message& message);
+      void wm_ctlcolor_control(message& message);
       void wm_command(message& message);
+      void wm_command_control(message& message);
       void wm_app_idle(message& message);
       void wm_key_char(message& message);
       void wm_kill_focus(message& message);
@@ -1992,10 +1994,12 @@ namespace xtd {
       void wm_move(message& message);
       void wm_mouse_wheel(message& message);
       void wm_notify(message& message);
+      void wm_notify_control(message& message);
       void wm_paint(const message& message);
       void wm_erase_background(const message& message);
       void wm_help(message& message);
       void wm_scroll(message& message);
+      void wm_scroll_control(message& message);
       void wm_set_focus(message& message);
       void wm_set_text(message& message);
       void wm_show(message& message);

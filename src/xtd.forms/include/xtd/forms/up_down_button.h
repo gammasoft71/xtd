@@ -149,7 +149,7 @@ namespace xtd {
       /// @}
       
     private:
-      void wm_scroll(message& message);
+      void wm_scroll_control(message& message);
       
       bool wrapped_ = false;
       int32_t maximum_ = 100;
