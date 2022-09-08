@@ -1704,6 +1704,11 @@ namespace xtd {
       /// @ingroup events
       virtual void on_cursor_changed(const event_args& e);
       
+      /// @brief Raises the xtd::forms::control::destroy_control event.
+      /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
+      virtual void on_destroy_control();
+
       /// @brief Raises the xtd::forms::control::dock_changed event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
@@ -1982,6 +1987,7 @@ namespace xtd {
       void wm_ctlcolor(message& message);
       void wm_ctlcolor_control(message& message);
       void wm_create(message& message);
+      void wm_destroy(message& message);
       void wm_key_char(message& message);
       void wm_kill_focus(message& message);
       void wm_menu_command(message& message);

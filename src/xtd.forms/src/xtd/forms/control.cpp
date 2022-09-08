@@ -1009,6 +1009,10 @@ void control::on_cursor_changed(const event_args& e) {
   if (can_raise_events()) cursor_changed(*this, e);
 }
 
+void control::on_destroy_control() {
+  /// @todo destroy childs here...
+}
+
 void control::on_dock_changed(const event_args& e) {
   if (parent().has_value()) parent().value().get().perform_layout();
   perform_layout();
@@ -1430,7 +1434,7 @@ void control::show_context_menu(xtd::forms::context_menu& menu, const xtd::drawi
 void control::wnd_proc(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::events), ustring::format("({}) receive message [{}]", *this, message));
   switch (message.msg()) {
-    // keyboard:
+    // keyboard events
     case WM_CHAR:
     case WM_KEYDOWN:
     case WM_KEYUP:
@@ -1456,8 +1460,8 @@ void control::wnd_proc(message& message) {
     case WM_MOUSEHWHEEL:
     case WM_MOUSEWHEEL: wm_mouse_wheel(message); break;
     // Color events
-    //case WM_CTLCOLORDLG: /// @todo to process
-    //case WM_CTLCOLORMSGBOX: /// @todo to process
+    case WM_CTLCOLORDLG:
+    case WM_CTLCOLORMSGBOX:
     case WM_CTLCOLOR:
     case WM_CTLCOLORBTN:
     case WM_CTLCOLORSCROLLBAR:
@@ -1472,6 +1476,7 @@ void control::wnd_proc(message& message) {
     case WM_CHILDACTIVATE: wm_child_activate(message); break;
     case WM_COMMAND: wm_command(message); break;
     case WM_CREATE: wm_create(message); break;
+    case WM_DESTROY: wm_destroy(message); break;
     case WM_HELP: wm_help(message); break;
     case WM_KILLFOCUS: wm_kill_focus(message); break;
     case WM_MENUCOMMAND: wm_menu_command(message); break;
@@ -1486,6 +1491,8 @@ void control::wnd_proc(message& message) {
     case WM_STYLE_SHEET_CHANGED: wm_style_sheet_changed(message); break;
     case WM_APPIDLE: wm_app_idle(message); break;
     // Reflect events
+    case WM_REFLECT + WM_CTLCOLORDLG:
+    case WM_REFLECT + WM_CTLCOLORMSGBOX:
     case WM_REFLECT + WM_CTLCOLOR:
     case WM_REFLECT + WM_CTLCOLORBTN:
     case WM_REFLECT + WM_CTLCOLORSCROLLBAR:
@@ -1729,10 +1736,6 @@ void control::wm_ctlcolor_control(message& message) {
   def_wnd_proc(message);
 }
 
-void control::wm_create(message& message) {
-  on_create_control();
-}
-
 void control::wm_key_char(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::key_events), ustring::format("({}) receive message [{}]", *this, message));
   if (message.msg() == WM_KEYDOWN || message.msg() == WM_SYSKEYDOWN) {
@@ -1756,6 +1759,14 @@ void control::wm_key_char(message& message) {
     def_wnd_proc(message);
 }
 
+void control::wm_create(message& message) {
+  on_create_control();
+}
+
+void control::wm_destroy(message& message) {
+  on_destroy_control();
+}
+
 void control::wm_kill_focus(message& message) {
   def_wnd_proc(message);
   data_->focused = false;
@@ -1775,7 +1786,9 @@ void control::wm_mouse_double_click(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), ustring::format("({}) receive message [{}]", *this, message));
   def_wnd_proc(message);
   set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
-  on_double_click(event_args::empty);
+  
+  if (get_state(control::state::double_click_fired) && get_style(control_styles::standard_double_click))
+    on_double_click(event_args::empty);
   on_mouse_double_click(mouse_event_args::create(message, get_state(state::double_click_fired)));
 }
 
@@ -1798,7 +1811,7 @@ void control::wm_mouse_up(message& message) {
   def_wnd_proc(message);
   mouse_event_args e = mouse_event_args::create(message);
   mouse_buttons_ &= ~e.button();
-  if (client_rectangle().contains(e.location())) {
+  if (client_rectangle().contains(e.location()) && get_style(control_styles::standard_click)) {
     on_click(event_args::empty);
     on_mouse_click(e);
   }
