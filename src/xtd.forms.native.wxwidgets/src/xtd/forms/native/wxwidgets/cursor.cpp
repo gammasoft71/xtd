@@ -8,6 +8,7 @@
 
 #if defined(__WXMSW__)
 #include <Windows.h>
+#include <Windowsx.h>
 #undef max
 #undef min
 #endif
