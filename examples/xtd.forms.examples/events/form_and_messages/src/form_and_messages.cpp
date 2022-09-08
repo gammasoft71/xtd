@@ -19,11 +19,13 @@ protected:
       case WM_ACTIVATE: ctrace << ustring::format("WM_ACTIVATE [activate={}]", as<bool>(message.lparam())) << endl; break;
       case WM_ACTIVATEAPP: ctrace << ustring::format("WM_ACTIVATEAPP [activate={}, threat={}]", as<bool>(message.wparam()), message.lparam()) << endl; break;
       case WM_CANCELMODE: ctrace << "WM_CANCELMODE" << endl; break;
+      case WM_CHILDACTIVATE: ctrace << "WM_CHILDACTIVATE" << endl; break;
       case WM_CLOSE: ctrace << "WM_CLOSE" << endl; break;
       case WM_COMMAND: ctrace << ustring::format("WM_COMMAND [type=0x{:X8}, control={}]", message.wparam(), message.lparam()) << endl; break;
       case WM_CREATE: ctrace << ustring::format("WM_CREATE [CREATESTRUCT={}]", message.lparam()) << endl; break;
       case WM_DESTROY: ctrace << "WM_DESTROY" << endl; break;
       case WM_ENTERSIZEMOVE: ctrace << "WM_ENTERSIZEMOVE" << endl; break;
+      case WM_ERASEBKGND: ctrace << "WM_ERASEBKGNDT" << endl; break;
       case WM_EXITSIZEMOVE: ctrace << "WM_EXITSIZEMOVE" << endl; break;
       case WM_GETTEXT: ctrace << ustring::format("WM_GETTEXT [size={}, buffer={}]", message.wparam(), message.lparam()) << endl; break;
       case WM_GETTEXTLENGTH: ctrace << "WM_GETTEXTLENGTH" << endl; break;
@@ -51,6 +53,7 @@ protected:
       case WM_XBUTTONDBLCLK: ctrace << ustring::format("WM_XBUTTONDBLCLK [Buttons={}, x={}, y={}]", message.wparam(), LOWORD(message.lparam()), HIWORD(message.lparam())) << endl; break;
       case WM_XBUTTONDOWN: ctrace << ustring::format("WM_XBUTTONDOWN [Buttons={}, x={}, y={}]", message.wparam(), LOWORD(message.lparam()), HIWORD(message.lparam())) << endl; break;
       case WM_XBUTTONUP: ctrace << ustring::format("WM_XBUTTONUP [Buttons={}, x={}, y={}]", message.wparam(), LOWORD(message.lparam()), HIWORD(message.lparam())) << endl; break;
+      case WM_APPIDLE: /*ctrace << "WM_APPIDLE" << endl;*/ break;
       default: ctrace << ustring::format("[{}]", message) << endl; break;
     }
   }
