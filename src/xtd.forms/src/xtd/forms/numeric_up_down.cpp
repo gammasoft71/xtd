@@ -103,12 +103,12 @@ void numeric_up_down::on_value_changed(const event_args& e) {
 
 void numeric_up_down::wnd_proc(message& message) {
   switch (message.msg()) {
-    case WM_COMMAND: wm_command(message); break;
+    case WM_COMMAND: wm_command_control(message); break;
     default: up_down_base::wnd_proc(message);
   }
 }
 
-void numeric_up_down::wm_command(message& message) {
+void numeric_up_down::wm_command_control(message& message) {
   def_wnd_proc(message);
   if (value_ != native::numeric_up_down::value(handle())) {
     value_ = native::numeric_up_down::value(handle());

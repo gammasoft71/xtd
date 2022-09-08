@@ -205,7 +205,7 @@ namespace xtd {
       /// @}
       
     private:
-      void wm_scroll(message& message);
+      void wm_scroll_control(message& message);
       
       int32_t large_change_ = 5;
       int32_t maximum_ = 10;

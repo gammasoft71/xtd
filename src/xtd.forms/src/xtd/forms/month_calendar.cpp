@@ -364,7 +364,7 @@ void month_calendar::on_handle_created(const event_args& e) {
 
 void month_calendar::wnd_proc(message& message) {
   switch (message.msg()) {
-    case WM_REFLECT + WM_NOTIFY: wm_notify(message); break;
+    case WM_REFLECT + WM_NOTIFY: wm_notify_control(message); break;
     case WM_LBUTTONDOWN:
     case WM_MBUTTONDOWN:
     case WM_RBUTTONDOWN:
@@ -381,7 +381,7 @@ void month_calendar::wnd_proc(message& message) {
   }
 }
 
-void month_calendar::wm_notify(message& message) {
+void month_calendar::wm_notify_control(message& message) {
   NMHDR* nmhdr = reinterpret_cast<NMHDR*>(message.lparam());
   switch (nmhdr->code) {
     case MCN_SELECT: wm_date_selected(message); break;

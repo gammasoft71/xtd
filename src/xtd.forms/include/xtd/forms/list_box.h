@@ -160,7 +160,7 @@ namespace xtd {
       
       /// @brief Processes the command message the list_box control receives from the top-level window.
       /// @param message The message the top-level window sent to the list_box control.
-      virtual void wm_command(message& message);
+      virtual void wm_command_control(message& message);
       
       /// @brief Processes the mouse double-click message the list_box control receives from the top-level window.
       /// @param message The message the top-level window sent to the list_box control.

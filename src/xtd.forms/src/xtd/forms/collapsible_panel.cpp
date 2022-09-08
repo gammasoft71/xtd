@@ -91,12 +91,12 @@ drawing::size collapsible_panel::measure_control() const {
 
 void collapsible_panel::wnd_proc(message& message) {
   switch (message.msg()) {
-    case  WM_COMMAND: wm_command(message); break;
+    case  WM_COMMAND: wm_command_control(message); break;
     default: control::wnd_proc(message);
   }
 }
 
-void collapsible_panel::wm_command(message& message) {
+void collapsible_panel::wm_command_control(message& message) {
   expanded_ = native::collapsible_panel::expanded(handle());
   size(native::control::size(handle()));
   on_expanded_changed(event_args::empty);

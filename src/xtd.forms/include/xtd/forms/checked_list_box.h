@@ -251,7 +251,7 @@ namespace xtd {
       
       void wnd_proc(message& message) override;
       
-      void wm_command(message& message) override;
+      void wm_command_control(message& message) override;
       
       void wm_mouse_double_click(message& message) override;
       

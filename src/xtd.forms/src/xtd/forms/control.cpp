@@ -1400,7 +1400,6 @@ void control::update() const {
 }
 
 void control::reflect_message(intptr_t handle, message& message) {
-  def_wnd_proc(message);
   if (handle != 0 && from_handle(handle).has_value())
     from_handle(handle).value().get().send_message(handle, WM_REFLECT + message.msg(), message.wparam(), message.lparam());
 }
@@ -1464,14 +1463,14 @@ void control::wnd_proc(message& message) {
     case WM_CTLCOLORSCROLLBAR:
     case WM_CTLCOLOREDIT:
     case WM_CTLCOLORLISTBOX:
-    case WM_CTLCOLORSTATIC: reflect_message(message.lparam(), message); break;
+    case WM_CTLCOLORSTATIC: wm_ctlcolor(message); break;
     case WM_ERASEBKGND: wm_erase_background(message); break;
     // Scrolling events
     case WM_HSCROLL:
-    case WM_VSCROLL: reflect_message(message.lparam(), message); break;
+    case WM_VSCROLL: wm_scroll(message); break;
     // System events
     case WM_CHILDACTIVATE: wm_child_activate(message); break;
-    case WM_COMMAND: reflect_message(message.lparam(), message); break;
+    case WM_COMMAND: wm_command(message); break;
     case WM_CREATE: wm_create(message); break;
     case WM_HELP: wm_help(message); break;
     case WM_KILLFOCUS: wm_kill_focus(message); break;
@@ -1492,11 +1491,11 @@ void control::wnd_proc(message& message) {
     case WM_REFLECT + WM_CTLCOLORSCROLLBAR:
     case WM_REFLECT + WM_CTLCOLOREDIT:
     case WM_REFLECT + WM_CTLCOLORLISTBOX:
-    case WM_REFLECT + WM_CTLCOLORSTATIC: return wm_ctlcolor(message); break;
-    case WM_REFLECT + WM_COMMAND: return wm_command(message); break;
-    case WM_REFLECT + WM_NOTIFY: wm_notify(message);  break;
+    case WM_REFLECT + WM_CTLCOLORSTATIC: return wm_ctlcolor_control(message); break;
+    case WM_REFLECT + WM_COMMAND: return wm_command_control(message); break;
+    case WM_REFLECT + WM_NOTIFY: wm_notify_control(message);  break;
     case WM_REFLECT + WM_HSCROLL:
-    case WM_REFLECT + WM_VSCROLL: wm_scroll(message); break;
+    case WM_REFLECT + WM_VSCROLL: wm_scroll_control(message); break;
     default: def_wnd_proc(message); break;
   }
 }
@@ -1710,11 +1709,20 @@ void control::wm_child_activate(message& message) {
 
 void control::wm_ctlcolor(message& message) {
   def_wnd_proc(message);
+  reflect_message(message.lparam(), message);
+}
+
+void control::wm_ctlcolor_control(message& message) {
+  def_wnd_proc(message);
 }
 
 void control::wm_command(message& message) {
   def_wnd_proc(message);
-  //on_click(event_args::empty);
+  reflect_message(message.lparam(), message);
+}
+
+void control::wm_command_control(message& message) {
+  def_wnd_proc(message);
 }
 
 void control::wm_app_idle(message& message) {
@@ -1839,6 +1847,11 @@ void control::wm_mouse_wheel(message& message) {
 
 void control::wm_notify(message& message) {
   def_wnd_proc(message);
+  reflect_message(reinterpret_cast<intptr_t>(reinterpret_cast<NMHDR*>(message.lparam())->hwndFrom), message);
+}
+
+void control::wm_notify_control(message& message) {
+  def_wnd_proc(message);
 }
 
 void control::wm_paint(const message& message) {
@@ -1865,6 +1878,11 @@ void control::wm_help(message& message) {
 }
 
 void control::wm_scroll(message& message) {
+  def_wnd_proc(message);
+  reflect_message(message.lparam(), message);
+}
+
+void control::wm_scroll_control(message& message) {
   def_wnd_proc(message);
 }
 

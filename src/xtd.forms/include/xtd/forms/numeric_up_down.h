@@ -143,7 +143,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      void wm_command(message& message);
+      void wm_command_control(message& message);
       /// @endcond
       
     private:

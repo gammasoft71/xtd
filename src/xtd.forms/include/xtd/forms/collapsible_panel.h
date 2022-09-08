@@ -111,7 +111,7 @@ namespace xtd {
       control& auto_size(bool auto_size) override {return control::auto_size(auto_size);}
       control& client_size(const xtd::drawing::size& client_size) override {return control::size(client_size);}
       control& size(const xtd::drawing::size& size) override {return control::size(size);}
-      void wm_command(message& message);
+      void wm_command_control(message& message);
       
       forms::border_sides border_sides_ = forms::border_sides::all;
       forms::border_style border_style_ = forms::border_style::none;
