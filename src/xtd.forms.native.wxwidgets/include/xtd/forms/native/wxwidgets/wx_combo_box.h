@@ -52,13 +52,6 @@ namespace xtd {
           
           return wx_style;
         }
-        
-        void SetClientSize(int32_t width, int32_t height) override {
-          // Do not change size when running wxW
-        }
-        
-        void SetSize(int32_t width, int32_t height) override {
-        }
       };
     }
   }

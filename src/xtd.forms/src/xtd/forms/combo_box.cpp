@@ -129,10 +129,10 @@ void combo_box::on_drop_down_style_changed(const event_args& e) {
 
 void combo_box::on_handle_created(const event_args& e) {
   list_control::on_handle_created(e);
-  
+
   drop_down_width_ = default_size().width();
   drop_down_height_ = static_cast<int32_t>(font().get_height()) * 9;
-  if (drop_down_style_ == combo_box_style::simple && size().height() == default_size().height() && size().height() < drop_down_height_)
+  if (environment::os_version().is_windows_platform() && drop_down_style_ == combo_box_style::simple && size().height() == default_size().height() && size().height() < drop_down_height_)
     size({size().width(), drop_down_height_});
     
   items_.sorted(sorted_);
@@ -145,20 +145,6 @@ void combo_box::on_handle_created(const event_args& e) {
 void combo_box::on_selected_value_changed(const event_args& e) {
   list_control::text(selected_item_.value());
   list_control::on_selected_value_changed(e);
-}
-
-void combo_box::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) {
-  drawing::size current_size = size();
-  list_control::set_bounds_core(x, y, width, height, specified);
-  if (size() != current_size)
-    post_recreate_handle();
-}
-
-void combo_box::set_client_size_core(int32_t width, int32_t height) {
-  drawing::size current_size = size();
-  list_control::set_client_size_core(width, height);
-  if (size() != current_size)
-    post_recreate_handle();
 }
 
 void combo_box::wnd_proc(message& message) {
