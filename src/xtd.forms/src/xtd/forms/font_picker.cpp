@@ -52,7 +52,7 @@ void font_picker::on_font_changed(const event_args& e) {
 
 void font_picker::wnd_proc(message& message) {
   switch (message.msg()) {
-    case WM_COMMAND: wm_click(message); break;
+    case WM_REFLECT + WM_COMMAND: wm_click(message); break;
     default: control::wnd_proc(message);
   }
 }

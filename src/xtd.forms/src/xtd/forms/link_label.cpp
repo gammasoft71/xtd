@@ -36,6 +36,7 @@ link_label::link_collection::reference link_label::link_collection::operator[](c
 
 link_label::link_label() : active_link_color_(application::dark_mode_enabled() ? color::from_argb(0xFFD03E3D) : xtd::drawing::color::red), disabled_link_color_(application::dark_mode_enabled() ? xtd::drawing::color::from_argb(0xFF858585) : xtd::drawing::color::from_argb(0xFF858585)), link_color_(application::dark_mode_enabled() ? xtd::drawing::color::dodger_blue : xtd::drawing::color::blue), override_cursor_(xtd::forms::cursors::hand()), visited_link_color_(application::dark_mode_enabled() ? xtd::drawing::color::light_sky_blue : xtd::drawing::color::purple) {
   double_buffered(true);
+  set_style(control_styles::all_painting_in_wm_paint | control_styles::optimized_double_buffer | control_styles::opaque | control_styles::user_paint | control_styles::standard_click | control_styles::resize_redraw, true);
   links_.item_added += [&] {
     if (links_.size() == 2 && links_[0].start() == 0 && links_[0].length() == text().length())
       links_.erase_at(0);

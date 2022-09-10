@@ -42,7 +42,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initialize a new instance of up_down_base class.
-      up_down_base() = default;
+      up_down_base();
       /// @}
       
       /// @name Protected properties

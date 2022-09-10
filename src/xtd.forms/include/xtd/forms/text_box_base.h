@@ -224,7 +224,10 @@ namespace xtd {
       
       /// @{
       /// @brief initializes a new instance of the text_box_base class.
-      text_box_base() = default;
+      text_box_base() {
+        set_style(control_styles::fixed_height, auto_size());
+        set_style(control_styles::standard_click | control_styles::standard_double_click | control_styles::use_text_for_accessibility | control_styles::user_paint, false);
+      }
       /// @}
       
       /// @name Protected properties

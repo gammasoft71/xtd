@@ -19,6 +19,7 @@ using namespace xtd::forms;
 
 list_box::list_box() {
   control_appearance(forms::control_appearance::system);
+  set_style(control_styles::user_paint | control_styles::standard_click | control_styles::use_text_for_accessibility, false);
   data_->items.item_added += [this](size_t index, const item & item) {
     if (is_handle_created()) native::list_box::insert_item(handle(), index, item.value());
     list_box::item selected_item;

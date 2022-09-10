@@ -34,6 +34,7 @@ namespace {
 }
 
 check_box::check_box() {
+  set_style(control_styles::standard_click | control_styles::standard_double_click, false);
   text_align(content_alignment::middle_left);
 }
 

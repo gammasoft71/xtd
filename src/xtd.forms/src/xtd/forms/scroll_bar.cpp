@@ -60,6 +60,12 @@ scroll_bar& scroll_bar::value(int32_t value) {
   return *this;
 }
 
+scroll_bar::scroll_bar() {
+  set_style(control_styles::user_paint, false);
+  set_style(control_styles::standard_click, false);
+  set_style(control_styles::use_text_for_accessibility, false);
+}
+
 forms::create_params scroll_bar::create_params() const {
   forms::create_params create_params = control::create_params();
   

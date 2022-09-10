@@ -13,6 +13,8 @@ using namespace xtd::forms;
 
 month_calendar::month_calendar() {
   control_appearance(forms::control_appearance::system);
+  set_style(control_styles::user_paint, false);
+  set_style(control_styles::standard_click, false);
 }
 
 std::vector<xtd::date_time> month_calendar::annually_bolded_dates() const {

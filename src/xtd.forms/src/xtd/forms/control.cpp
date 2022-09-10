@@ -1724,6 +1724,9 @@ void control::wm_command(message& message) {
 }
 
 void control::wm_command_control(message& message) {
+  if (HIWORD(message.wparam()) == BN_CLICKED) {
+    on_click(event_args::empty);
+  }
   def_wnd_proc(message);
 }
 
@@ -1811,8 +1814,8 @@ void control::wm_mouse_up(message& message) {
   def_wnd_proc(message);
   mouse_event_args e = mouse_event_args::create(message);
   mouse_buttons_ &= ~e.button();
-  if (client_rectangle().contains(e.location()) && get_style(control_styles::standard_click)) {
-    on_click(event_args::empty);
+  if (client_rectangle().contains(e.location())) {
+    if (get_style(control_styles::standard_click) || control_appearance() == control_appearance::standard) on_click(event_args::empty);
     on_mouse_click(e);
   }
   on_mouse_up(e);

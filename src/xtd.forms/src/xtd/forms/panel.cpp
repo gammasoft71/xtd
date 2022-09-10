@@ -17,6 +17,8 @@ using namespace xtd::forms;
 panel::panel() {
   set_auto_size_mode(forms::auto_size_mode::grow_only);
   set_can_focus(false);
+  set_style(control_styles::selectable | control_styles::all_painting_in_wm_paint, false);
+  set_style(control_styles::supports_transparent_back_color, true);
 }
 
 panel& panel::auto_size_mode(forms::auto_size_mode value) {

@@ -10,6 +10,8 @@ using namespace xtd::forms;
 
 track_bar::track_bar() {
   control_appearance(forms::control_appearance::system);
+  set_style(control_styles::user_paint, false);
+  set_style(control_styles::use_text_for_accessibility, false);
 }
 
 track_bar& track_bar::large_change(int32_t large_change) {

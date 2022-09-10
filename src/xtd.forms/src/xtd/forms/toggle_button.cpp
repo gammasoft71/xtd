@@ -13,6 +13,10 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+toggle_button::toggle_button() {
+  set_style(control_styles::standard_click | control_styles::standard_double_click, false);
+}
+
 toggle_button& toggle_button::auto_check(bool auto_check) {
   auto_check_ = auto_check;
   return *this;

@@ -9,6 +9,7 @@ using namespace xtd::forms;
 
 button_base::button_base() {
   set_auto_size_mode(forms::auto_size_mode::grow_only);
+  set_style(control_styles::user_mouse | control_styles::user_paint, control_appearance() == forms::control_appearance::standard);
 }
 
 control& button_base::control_appearance(forms::control_appearance value) {

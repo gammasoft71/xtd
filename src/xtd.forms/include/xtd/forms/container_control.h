@@ -39,7 +39,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the ContainerControl class.
-      container_control() = default;
+      container_control();
       /// @}
       
       /// @name Protected methods

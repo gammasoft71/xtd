@@ -28,6 +28,8 @@ namespace xtd {
       /// @brief Initializes a new instance of the split_container class.
       split_container() {
         set_can_focus(false);
+        set_style(control_styles::supports_transparent_back_color, true);
+        set_style(control_styles::optimized_double_buffer, true);
         controls().push_back_range({panel2_, splitter_, panel1_});
         arrange_children();
       }

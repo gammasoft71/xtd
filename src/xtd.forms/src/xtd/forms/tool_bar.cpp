@@ -47,6 +47,10 @@ tool_bar::tool_bar() {
   dock(dock_style::top);
   padding(forms::padding {2});
   set_can_focus(false);
+  set_style(control_styles::user_paint, false);
+  set_style(control_styles::fixed_height, auto_size());
+  set_style(control_styles::fixed_width, false);
+
 }
 
 xtd::forms::tool_bar_appearance tool_bar::appearance() const {
