@@ -2001,8 +2001,8 @@ namespace xtd {
       void wm_mouse_wheel(message& message);
       void wm_notify(message& message);
       void wm_notify_control(message& message);
-      void wm_paint(const message& message);
-      void wm_erase_background(const message& message);
+      void wm_paint(message& message);
+      void wm_erase_background(message& message);
       void wm_help(message& message);
       void wm_scroll(message& message);
       void wm_scroll_control(message& message);
