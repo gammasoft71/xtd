@@ -1441,6 +1441,8 @@ void control::wnd_proc(message& message) {
     case WM_SYSCHAR:
     case WM_SYSKEYDOWN:
     case WM_SYSKEYUP: wm_key_char(message); break;
+    case WM_KILLFOCUS: wm_kill_focus(message); break;
+    case WM_SETFOCUS: wm_set_focus(message); break;
     // mouse events
     case WM_LBUTTONDOWN:
     case WM_MBUTTONDOWN:
@@ -1478,12 +1480,10 @@ void control::wnd_proc(message& message) {
     case WM_CREATE: wm_create(message); break;
     case WM_DESTROY: wm_destroy(message); break;
     case WM_HELP: wm_help(message); break;
-    case WM_KILLFOCUS: wm_kill_focus(message); break;
     case WM_MENUCOMMAND: wm_menu_command(message); break;
     case WM_MOVE: wm_move(message);  break;
     case WM_NOTIFY: reflect_message(reinterpret_cast<intptr_t>(reinterpret_cast<NMHDR*>(message.lparam())->hwndFrom), message); break;
     case WM_PAINT: wm_paint(message); break;
-    case WM_SETFOCUS: wm_set_focus(message); break;
     case WM_SETTEXT: wm_set_text(message); break;
     case WM_SHOWWINDOW: wm_show(message); break;
     case WM_SIZE: wm_size(message); break;
