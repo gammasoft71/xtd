@@ -23,8 +23,5 @@ namespace {
 }
 
 mouse_event_args mouse_event_args::create(const message& message, bool double_click_fired, int32_t delta) {
-  drawing::point location((int16_t)LOWORD(message.lparam()), (int16_t)HIWORD(message.lparam()));
-  if (forms::control::from_handle(message.hwnd()).has_value())
-    location = forms::control::from_handle(message.hwnd()).value().get().point_to_client(location);
-  return mouse_event_args(message_to_mouse_buttons(message), double_click_fired  ? 2 : 1, location, delta);
+  return mouse_event_args(message_to_mouse_buttons(message), double_click_fired  ? 2 : 1, drawing::point{(int16_t)LOWORD(message.lparam()), (int16_t)HIWORD(message.lparam())}, delta);
 }
