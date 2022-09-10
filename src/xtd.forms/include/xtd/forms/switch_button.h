@@ -27,7 +27,9 @@ namespace xtd {
       
       /// @{
       /// Initialize new instance of switch_button class.
-      switch_button() = default;
+      switch_button() {
+        set_style(control_styles::standard_click | control_styles::standard_double_click, false);
+      }
       /// @}
       
       /// @name Properties

@@ -15,6 +15,9 @@ group_box::group_box() {
   set_auto_size_mode(forms::auto_size_mode::grow_only);
   set_can_focus(false);
   set_state(state::tab_stop, false);
+  set_style(control_styles::container_control, true);
+  set_style(control_styles::supports_transparent_back_color | control_styles::user_paint | control_styles::resize_redraw, control_appearance() == forms::control_appearance::standard);
+  set_style(control_styles::selectable, false);
 }
 
 group_box& group_box::auto_size_mode(forms::auto_size_mode value) {

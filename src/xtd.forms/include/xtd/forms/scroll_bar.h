@@ -94,7 +94,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of scroll_bar class.
-      scroll_bar() = default;
+      scroll_bar();
       /// @}
       
       /// @name Protected properties

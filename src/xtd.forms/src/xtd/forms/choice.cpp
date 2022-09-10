@@ -15,6 +15,7 @@ using namespace xtd::forms;
 
 choice::choice() {
   control_appearance(forms::control_appearance::system);
+  set_style(control_styles::user_paint | control_styles::use_text_for_accessibility | control_styles::standard_click, false);
   items_.item_added += [&](size_t pos, const item & item) {
     if (is_handle_created()) native::choice::insert_item(handle(), pos, item.value());
     size_t selected_index = npos;

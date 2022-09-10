@@ -65,16 +65,7 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the button class.
       /// @remarks By default the button displays no caption. To specify the caption text, set the text property.
-      button() {
-        data_->auto_repeat_timer.tick += [&] {
-          data_->auto_repeat_timer.enabled(false);
-          if (enabled()) {
-            perform_click();
-            data_->auto_repeat_timer.interval_milliseconds(data_->auto_repeat_interval);
-            data_->auto_repeat_timer.enabled(data_->auto_repeat);
-          }
-        };
-      }
+      button();
       /// @}
       
       /// @name Properties

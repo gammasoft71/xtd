@@ -9,6 +9,7 @@ using namespace xtd::forms;
 animation::animation() {
   double_buffered(true);
   set_can_focus(false);
+  set_style(control_styles::resize_redraw, true);
   data_->frames_timer.tick += {*this, &animation::on_frames_timer_tick};
 }
 

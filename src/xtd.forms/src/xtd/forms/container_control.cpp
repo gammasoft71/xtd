@@ -9,6 +9,10 @@ void container_control::active_control(const control& active_control) {
     active_control_.value().get().focus();
 }
 
+container_control::container_control() {
+  set_style(control_styles::all_painting_in_wm_paint, false);
+}
+
 drawing::size container_control::measure_control() const {
   drawing::rectangle bounds;
   for (auto item : controls()) {

@@ -23,6 +23,12 @@ up_down_base& up_down_base::border_style(forms::border_style value) {
   return *this;
 }
 
+up_down_base::up_down_base() {
+  set_style(control_styles::opaque | control_styles::fixed_height | control_styles::resize_redraw, true);
+  set_style(control_styles::standard_click, false);
+  set_style(control_styles::use_text_for_accessibility, false);
+}
+
 forms::create_params up_down_base::create_params() const {
   forms::create_params create_params = container_control::create_params();
   

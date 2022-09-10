@@ -16,6 +16,7 @@ using namespace xtd::forms;
 
 tab_control::tab_control() {
   control_appearance(forms::control_appearance::system);
+  set_style(control_styles::user_paint, false);
 }
 
 tab_control& tab_control::alignment(tab_alignment alignment) {

@@ -13,6 +13,8 @@ collapsible_panel::collapsible_panel() {
   control_appearance(forms::control_appearance::system);
   set_auto_size_mode(forms::auto_size_mode::grow_and_shrink);
   set_can_focus(false);
+  set_style(control_styles::selectable | control_styles::all_painting_in_wm_paint, false);
+  set_style(control_styles::supports_transparent_back_color, true);
 }
 
 collapsible_panel& collapsible_panel::border_sides(forms::border_sides border_sides) {

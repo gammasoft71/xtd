@@ -16,6 +16,18 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+button::button() {
+  set_style(control_styles::standard_click | control_styles::standard_double_click, false);
+  data_->auto_repeat_timer.tick += [&] {
+    data_->auto_repeat_timer.enabled(false);
+    if (enabled()) {
+      perform_click();
+      data_->auto_repeat_timer.interval_milliseconds(data_->auto_repeat_interval);
+      data_->auto_repeat_timer.enabled(data_->auto_repeat);
+    }
+  };
+}
+
 button& button::auto_size_mode(forms::auto_size_mode value) {
   set_auto_size_mode(value);
   return *this;

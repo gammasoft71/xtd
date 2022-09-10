@@ -54,6 +54,7 @@ status_bar::status_bar() {
   dock(dock_style::bottom);
   padding(forms::padding {0, 1, 0, 0});
   set_can_focus(false);
+  set_style(control_styles::user_paint | control_styles::selectable, false);
 }
 
 dock_style status_bar::dock() const {

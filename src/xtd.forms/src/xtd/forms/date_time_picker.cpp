@@ -12,6 +12,8 @@ using namespace xtd::forms;
 
 date_time_picker::date_time_picker() {
   control_appearance(forms::control_appearance::system);
+  set_style(control_styles::fixed_height, true);
+  set_style(control_styles::user_paint | control_styles::standard_click, false);  
 }
 
 control& date_time_picker::format(date_time_picker_format format) {
@@ -97,7 +99,7 @@ void date_time_picker::on_value_changed(const event_args& e) {
 
 void date_time_picker::wnd_proc(message& message) {
   switch (message.msg()) {
-    case WM_COMMAND: wm_click(message); break;
+    case WM_REFLECT + WM_COMMAND: wm_click(message); break;
     default: control::wnd_proc(message);
   }
 }

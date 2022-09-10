@@ -15,6 +15,7 @@ using namespace xtd::forms;
 
 user_control::user_control() {
   set_auto_size_mode(forms::auto_size_mode::grow_only);
+  set_style(control_styles::supports_transparent_back_color, true);
 }
 
 user_control& user_control::auto_size_mode(forms::auto_size_mode value) {

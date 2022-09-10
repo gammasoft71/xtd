@@ -10,6 +10,7 @@ using namespace xtd::forms;
 progress_bar::progress_bar() {
   control_appearance(forms::control_appearance::system);
   set_can_focus(false);
+  set_style(control_styles::user_paint | control_styles::use_text_for_accessibility | control_styles::selectable, false);
 }
 
 progress_bar& progress_bar::marquee_animation_speed(size_t marquee_animation_speed) {

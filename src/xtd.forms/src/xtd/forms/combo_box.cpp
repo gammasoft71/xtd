@@ -16,6 +16,7 @@ using namespace xtd::forms;
 
 combo_box::combo_box() {
   control_appearance(forms::control_appearance::system);
+  set_style(control_styles::user_paint | control_styles::use_text_for_accessibility | control_styles::standard_click, false);
   items_.item_added += [&](size_t pos, const item & item) {
     if (is_handle_created()) native::combo_box::insert_item(handle(), pos, item.value());
     combo_box::item selected_item;

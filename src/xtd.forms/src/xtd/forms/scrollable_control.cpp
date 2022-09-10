@@ -9,6 +9,8 @@ using namespace xtd::forms;
 
 scrollable_control::scrollable_control() {
   set_state(state::tab_stop, false);
+  set_style(control_styles::container_control, true);
+  set_style(control_styles::all_painting_in_wm_paint, false);
 }
 
 forms::create_params scrollable_control::create_params() const {

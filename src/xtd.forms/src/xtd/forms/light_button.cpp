@@ -36,6 +36,10 @@ namespace {
   }
 }
 
+light_button::light_button() {
+  set_style(control_styles::standard_click | control_styles::standard_double_click, false);
+}
+
 light_button& light_button::auto_check(bool auto_check) {
   data_->auto_check = auto_check;
   return *this;

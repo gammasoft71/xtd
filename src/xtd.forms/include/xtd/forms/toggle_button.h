@@ -39,7 +39,7 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the CheckBox class.
       /// @remarks By default, when a new toggle_button is instantiated, auto_check is set to true, checked is set to false, and appearance is set to normal.
-      toggle_button() = default;
+      toggle_button();
       /// @}
       
       /// @name Properties
