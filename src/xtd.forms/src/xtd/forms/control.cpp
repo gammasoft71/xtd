@@ -1739,6 +1739,31 @@ void control::wm_ctlcolor_control(message& message) {
   def_wnd_proc(message);
 }
 
+void control::wm_create(message& message) {
+  def_wnd_proc(message);
+  on_create_control();
+}
+
+void control::wm_destroy(message& message) {
+  def_wnd_proc(message);
+  on_destroy_control();
+}
+
+void control::wm_erase_background(message& message) {
+  def_wnd_proc(message);
+  paint_event_args e(*this, data_->client_rectangle);
+  e.message_ = message;
+  on_paint_background(e);
+}
+
+void control::wm_help(message& message) {
+  def_wnd_proc(message);
+  HELPINFO* help_info = reinterpret_cast<HELPINFO*>(message.lparam());
+  help_event_args e(point(help_info->MousePos.x, help_info->MousePos.y));
+  on_help_requested(e);
+  if (!e.handled()) def_wnd_proc(message);
+}
+
 void control::wm_key_char(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::key_events), ustring::format("({}) receive message [{}]", *this, message));
   if (message.msg() == WM_KEYDOWN || message.msg() == WM_SYSKEYDOWN) {
@@ -1762,18 +1787,16 @@ void control::wm_key_char(message& message) {
     def_wnd_proc(message);
 }
 
-void control::wm_create(message& message) {
-  on_create_control();
-}
-
-void control::wm_destroy(message& message) {
-  on_destroy_control();
-}
-
 void control::wm_kill_focus(message& message) {
   def_wnd_proc(message);
   data_->focused = false;
   on_lost_focus(event_args::empty);
+}
+
+void control::wm_menu_command(message& message) {
+  def_wnd_proc(message);
+  if (data_->context_menu.has_value())
+    on_context_menu_item_click(data_->context_menu.value().get(), message.wparam());
 }
 
 void control::wm_mouse_down(message& message) {
@@ -1809,18 +1832,6 @@ void control::wm_mouse_leave(message& message) {
   on_mouse_leave(event_args::empty);
 }
 
-void control::wm_mouse_up(message& message) {
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), ustring::format("({}) receive message [{}]", *this, message));
-  def_wnd_proc(message);
-  mouse_event_args e = mouse_event_args::create(message);
-  mouse_buttons_ &= ~e.button();
-  if (client_rectangle().contains(e.location())) {
-    if (get_style(control_styles::standard_click) || control_appearance() == control_appearance::standard) on_click(event_args::empty);
-    on_mouse_click(e);
-  }
-  on_mouse_up(e);
-}
-
 void control::wm_mouse_move(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), ustring::format("({}) receive message [{}]", *this, message));
   def_wnd_proc(message);
@@ -1838,18 +1849,16 @@ void control::wm_mouse_move(message& message) {
   on_mouse_move(e);
 }
 
-void control::wm_menu_command(message& message) {
+void control::wm_mouse_up(message& message) {
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), ustring::format("({}) receive message [{}]", *this, message));
   def_wnd_proc(message);
-  if (data_->context_menu.has_value())
-    on_context_menu_item_click(data_->context_menu.value().get(), message.wparam());
-}
-
-void control::wm_move(message& message) {
-  def_wnd_proc(message);
-  if (data_->location != native::control::location(handle())) {
-    data_->location = native::control::location(handle());
-    on_location_changed(event_args::empty);
+  mouse_event_args e = mouse_event_args::create(message);
+  mouse_buttons_ &= ~e.button();
+  if (client_rectangle().contains(e.location())) {
+    if (get_style(control_styles::standard_click) || control_appearance() == control_appearance::standard) on_click(event_args::empty);
+    on_mouse_click(e);
   }
+  on_mouse_up(e);
 }
 
 void control::wm_mouse_wheel(message& message) {
@@ -1861,6 +1870,14 @@ void control::wm_mouse_wheel(message& message) {
     on_mouse_wheel(mouse_event_args::create(message, get_state(state::double_click_fired), static_cast<int32_t>(HIWORD(message.wparam()))));
 }
 
+void control::wm_move(message& message) {
+  def_wnd_proc(message);
+  if (data_->location != native::control::location(handle())) {
+    data_->location = native::control::location(handle());
+    on_location_changed(event_args::empty);
+  }
+}
+
 void control::wm_notify(message& message) {
   def_wnd_proc(message);
   reflect_message(reinterpret_cast<intptr_t>(reinterpret_cast<NMHDR*>(message.lparam())->hwndFrom), message);
@@ -1870,27 +1887,12 @@ void control::wm_notify_control(message& message) {
   def_wnd_proc(message);
 }
 
-void control::wm_paint(const message& message) {
+void control::wm_paint(message& message) {
   paint_event_args e(*this, data_->client_rectangle);
   e.message_ = message;
   //auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
   //if (control_appearance() == forms::control_appearance::standard) control_renderer::draw_control(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt);
   on_paint(e);
-}
-
-void control::wm_erase_background(const message& message) {
-  paint_event_args e(*this, data_->client_rectangle);
-  e.message_ = message;
-  on_paint_background(e);
-}
-
-void control::wm_help(message& message) {
-  def_wnd_proc(message);
-  HELPINFO* help_info = reinterpret_cast<HELPINFO*>(message.lparam());
-  help_event_args e(point(help_info->MousePos.x, help_info->MousePos.y));
-  on_help_requested(e);
-  if (!e.handled())
-    def_wnd_proc(message);
 }
 
 void control::wm_scroll(message& message) {
