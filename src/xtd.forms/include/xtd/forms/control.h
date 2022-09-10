@@ -2051,6 +2051,7 @@ namespace xtd {
         control::state state = control::state::empty;
         control_styles style = control_styles::none;
         style_sheets::style_sheet style_sheet;
+        bool suppress_key_press = false;
         std::any tag;
         xtd::ustring text;
       };

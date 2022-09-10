@@ -1742,10 +1742,10 @@ void control::wm_key_char(message& message) {
     key_event_args key_event_args(static_cast<keys>(message.wparam()));
     modifier_keys_ = key_event_args.modifiers();
     on_key_down(key_event_args);
-    message.result(key_event_args.suppress_key_press());
+    data_->suppress_key_press = key_event_args.suppress_key_press();
     if (!key_event_args.handled()) def_wnd_proc(message);
-  } else if ((message.msg() == WM_CHAR || message.msg() == WM_SYSCHAR) && (message.wparam() > 255U || std::iscntrl(static_cast<int32_t>(message.wparam()))) == 0) {
-    key_press_event_args key_press_event_args(static_cast<int32_t>(message.wparam()));
+  } else if ((message.msg() == WM_CHAR || message.msg() == WM_SYSCHAR) && data_->suppress_key_press == false && (message.wparam() > 255U || std::iscntrl(static_cast<int32_t>(message.wparam()))) == 0) {
+    key_press_event_args key_press_event_args(static_cast<char32_t>(message.wparam()));
     on_key_press(key_press_event_args);
     message.result(key_press_event_args.handled());
     if (!key_press_event_args.handled()) def_wnd_proc(message);
