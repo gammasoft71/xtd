@@ -145,7 +145,7 @@ public:
     show_normal_button.click += [&] {
       auto dialog = control::create<form>("dialog show normal", {}, {250, 100});
       dialog->show();
-      dialogs.push_back(move(dialog));
+      dialogs.push_back(std::move(dialog));
     };
     
     show_modeless_button.location({10, 50});
@@ -154,7 +154,7 @@ public:
     show_modeless_button.click += [&] {
       auto dialog = control::create<form>("dialog show modeless", {}, {250, 100});
       dialog->owner(*this).show();
-      dialogs.push_back(move(dialog));
+      dialogs.push_back(std::move(dialog));
     };
     
     show_top_most_button.location({10, 90});
@@ -163,7 +163,7 @@ public:
     show_top_most_button.click += [&] {
       auto dialog = control::create<form>("dialog top most", {}, {250, 100});
       dialog->top_most(true).show();
-      dialogs.push_back(move(dialog));
+      dialogs.push_back(std::move(dialog));
     };
     
     show_modal_button.location({10, 130});
@@ -183,7 +183,7 @@ public:
         if (e.key_code() == keys::escape) as<form&>(control).close();
       };
       dialog->show_sheet(*this);
-      dialogs.push_back(move(dialog));
+      dialogs.push_back(std::move(dialog));
     };
     
     show_sheet_modal_button.location({10, 210});

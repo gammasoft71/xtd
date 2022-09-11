@@ -26,21 +26,21 @@ namespace example {
       button_normal.click += [&] {
         auto dialog = control::create<form>("dialog show normal", {}, {250, 100});
         dialog->show();
-        dialogs.push_back(move(dialog));
+        dialogs.push_back(std::move(dialog));
       };
       
       button_modeless.text("Show modeless");
       button_modeless.click += [&] {
         auto dialog = control::create<form>("dialog show modeless", {}, {250, 100});
         dialog->owner(*this).show();
-        dialogs.push_back(move(dialog));
+        dialogs.push_back(std::move(dialog));
       };
       
       button_top_most.text("Show top most");
       button_top_most.click += [&] {
         auto dialog = control::create<form>("dialog top most", {}, {250, 100});
         dialog->top_most(true).show();
-        dialogs.push_back(move(dialog));
+        dialogs.push_back(std::move(dialog));
       };
       
       button_modal.text("Show modal");
@@ -56,7 +56,7 @@ namespace example {
           if (e.key_code() == keys::escape) as<form&>(control).close();
         };
         dialog->show_sheet(*this);
-        dialogs.push_back(move(dialog));
+        dialogs.push_back(std::move(dialog));
       };
       
       button_sheet_modal.text("Show sheet modal");

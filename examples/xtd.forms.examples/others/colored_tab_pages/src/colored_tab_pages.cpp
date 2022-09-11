@@ -22,7 +22,7 @@ public:
       
       auto tab_page = control::create<forms::tab_page>(tab_control_colored, color.name(), drawing::point::empty, drawing::size::empty, color);
       tab_page->image_index(tab_pages.size());
-      tab_pages.push_back(move(tab_page));
+      tab_pages.push_back(std::move(tab_page));
     });
     
     tab_control_colored.image_list(image_list_);
