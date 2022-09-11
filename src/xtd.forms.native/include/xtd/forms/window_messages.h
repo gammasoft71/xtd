@@ -1954,4 +1954,9 @@ constexpr uint32_t WM_MOUSEENTER = WM_USER + 0x0003;
 
 constexpr uint32_t WM_RECREATE = WM_USER + 0x0004;
 
+constexpr uint32_t CPN_OPENED = 0;
+constexpr uint32_t CPN_SELCHANGE = 1;
+constexpr uint32_t CPN_CLOSED = 2;
+constexpr uint32_t CPN_CANCELLED = 3;
+
 intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam);

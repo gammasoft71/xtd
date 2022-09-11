@@ -79,7 +79,10 @@ namespace xtd::forms::native {
     else if (event.GetEventType() == wxEVT_CHECKLISTBOX) wx_evt_checklistbox(event);
     else if (event.GetEventType() == wxEVT_CHOICE) wx_evt_choice(event);
     else if (event.GetEventType() == wxEVT_COLLAPSIBLEPANE_CHANGED) wx_evt_collapsiblepane_changed(event);
+    else if (event.GetEventType() == wxEVT_COLOURPICKER_OPENED) wx_evt_colourpicker_opened(event);
     else if (event.GetEventType() == wxEVT_COLOURPICKER_CHANGED) wx_evt_colourpicker_changed(event);
+    else if (event.GetEventType() == wxEVT_COLOURPICKER_CURRENT_CHANGED) wx_evt_colourpicker_current_changed(event);
+    else if (event.GetEventType() == wxEVT_COLOURPICKER_DIALOG_CANCELLED) wx_evt_colourpicker_dialog_cancelled(event);
     else if (event.GetEventType() == wxEVT_COMBOBOX) wx_evt_combobox(event);
     else if (event.GetEventType() == wxEVT_COMBOBOX_DROPDOWN) wx_evt_combobox_dropdown(event);
     else if (event.GetEventType() == wxEVT_COMBOBOX_CLOSEUP) wx_evt_combobox_closeup(event);
@@ -528,17 +531,35 @@ namespace xtd::forms::native {
       event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), NM_CLICK), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
     else def_process_event(event);
   }
-  
+
+  template<typename control_t>
+  inline void control_wrapper<control_t>::wx_evt_colourpicker_opened(wxEvent& event) {
+    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
+      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), CPN_OPENED), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+    else def_process_event(event);
+  }
+
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_colourpicker_changed(wxEvent& event) {
     if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), BN_CLICKED), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), CPN_CLOSED), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
     else def_process_event(event);
-    /// @todo Define Notification like CPN_COLOR_CHANGED and use WM_NOTIFY...
-    //NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr_t>(event.GetId()), CPN_COLOR_CHANGED};
-    //event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
   }
-  
+
+  template<typename control_t>
+  inline void control_wrapper<control_t>::wx_evt_colourpicker_current_changed(wxEvent& event) {
+    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
+      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), CPN_SELCHANGE), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+    else def_process_event(event);
+  }
+
+  template<typename control_t>
+  inline void control_wrapper<control_t>::wx_evt_colourpicker_dialog_cancelled(wxEvent& event) {
+    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
+      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), CPN_CANCELLED), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+    else def_process_event(event);
+  }
+
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_combobox(wxEvent& event) {
     if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
