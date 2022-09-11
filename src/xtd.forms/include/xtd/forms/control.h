@@ -1509,6 +1509,11 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, mouse_event_handler> mouse_wheel;
       
+      /// @brief Occurs when the control is moved.
+      /// @ingroup events
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      event<control, event_handler> move;
+      
       /// @brief Occurs when the xtd::forms::control is redrawn.
       /// @ingroup events
       /// @remarks The paint event is raised when the control is redrawn. It passes an instance of paint_event_args to the method(s) that handles the paint event. The paint event is raised when the control is redrawn. It passes an instance of paint_event_args to the method(s) that handles the paint event.
@@ -1828,7 +1833,12 @@ namespace xtd {
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_mouse_wheel(const mouse_event_args& e);
-      
+
+      /// @brief Raises the xtd::forms::control::move event.
+      /// @param e An xtd::event_args that contains the event data.
+      /// @ingroup events
+      virtual void on_move(const event_args& e);
+
       /// @brief Raises the xtd::forms::control::paint event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
