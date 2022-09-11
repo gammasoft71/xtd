@@ -36,19 +36,53 @@ void color_picker::on_handle_created(const event_args& e) {
   native::color_picker::color(handle(), color_);
 }
 
+void color_picker::on_cancelled(const event_args& e) {
+  if (can_raise_events()) cancelled(*this, e);
+}
+
+void color_picker::on_closed(const event_args& e) {
+  if (can_raise_events()) closed(*this, e);
+}
+
 void color_picker::on_color_changed(const event_args& e) {
   if (can_raise_events()) color_changed(*this, e);
 }
 
+void color_picker::on_opened(const event_args& e) {
+  if (can_raise_events()) opened(*this, e);
+}
+
 void color_picker::wnd_proc(message& message) {
   switch (message.msg()) {
-    case WM_REFLECT + WM_COMMAND: wm_click(message); break;
+    case WM_REFLECT + WM_COMMAND: wm_command_control(message); break;
     default: control::wnd_proc(message);
   }
 }
 
-void color_picker::wm_click(message& message) {
-  def_wnd_proc(message);
+void color_picker::wm_command_control(message& message) {
+  control::wnd_proc(message);
+  switch (HIWORD(message.wparam())) {
+    case CPN_CANCELLED: wm_command_control_canceled(message); break;
+    case CPN_CLOSED: wm_command_control_closed(message); break;
+    case CPN_SELCHANGE: wm_command_control_selchange(message); break;
+    case CPN_OPENED: wm_command_control_opened(message); break;
+    default: break;
+  }
+}
+
+void color_picker::wm_command_control_canceled(message& message) {
+  on_cancelled(event_args::empty);
+}
+
+void color_picker::wm_command_control_closed(message& message) {
+  on_closed(event_args::empty);
+}
+
+void color_picker::wm_command_control_selchange(message& message) {
   color_ = native::color_picker::color(handle());
   on_color_changed(event_args::empty);
+}
+
+void color_picker::wm_command_control_opened(message& message) {
+  on_opened(event_args::empty);
 }

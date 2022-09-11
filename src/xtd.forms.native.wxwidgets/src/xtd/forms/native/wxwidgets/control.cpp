@@ -67,6 +67,7 @@
 #include <wx/font.h>
 #include <wx/frame.h>
 
+wxDEFINE_EVENT(wxEVT_COLOURPICKER_OPENED, wxCommandEvent);
 wxDEFINE_EVENT(wxEVT_ENTER_SIZEMOVE, wxCommandEvent);
 wxDEFINE_EVENT(wxEVT_EXIT_SIZEMOVE, wxCommandEvent);
 wxDEFINE_EVENT(wxEVT_RECREATE, wxCommandEvent);

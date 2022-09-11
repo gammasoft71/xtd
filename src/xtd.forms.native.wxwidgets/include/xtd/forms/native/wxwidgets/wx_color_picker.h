@@ -32,6 +32,20 @@ namespace xtd {
             static_cast<wxColourPickerCtrl*>(control())->GetPickerCtrl()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
           #endif
+          
+          static_cast<wxColourPickerCtrl*>(control())->GetPickerCtrl()->Bind(wxEVT_LEFT_DOWN, [&](wxEvent& event){
+            wxCommandEvent eventColourPickerOpened(wxEVT_COLOURPICKER_OPENED, event.GetId());
+            eventColourPickerOpened.SetEventObject(event.GetEventObject());
+            static_cast<wxWindow*>(event.GetEventObject())->ProcessWindowEvent(eventColourPickerOpened);
+            event.Skip();
+          });
+          
+          static_cast<wxColourPickerCtrl*>(control())->Bind(wxEVT_COLOURPICKER_CHANGED, [&](wxColourPickerEvent& event) {
+            wxColourPickerEvent eventColourPickerCurrentChanged(event.GetEventObject(), event.GetId(), event.GetColour(), wxEVT_COLOURPICKER_CURRENT_CHANGED);
+            eventColourPickerCurrentChanged.SetEventObject(event.GetEventObject());
+            static_cast<wxWindow*>(event.GetEventObject())->ProcessWindowEvent(eventColourPickerCurrentChanged);
+            event.Skip();
+          });
         }
         
         void SetBackgroundColour(const wxColour& colour) override {

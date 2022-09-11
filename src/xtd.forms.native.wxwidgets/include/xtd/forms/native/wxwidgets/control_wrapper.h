@@ -46,6 +46,9 @@
 #include <wx/timer.h>
 #include <wx/tglbtn.h>
 
+// Add wxEVT_COLOURPICKER_OPENED event for send a WM_NOTIFY event to wxColourPicker...
+wxDECLARE_EVENT(wxEVT_COLOURPICKER_OPENED, wxCommandEvent);
+
 /// @todo implement in wx_evt_event_size..
 // Add wxEVT_ENTER_SIZEMOVE event for send a WM_ENTERSIZEMOVE event to wxControl...
 wxDECLARE_EVENT(wxEVT_ENTER_SIZEMOVE, wxCommandEvent);
@@ -117,7 +120,10 @@ namespace xtd {
         void wx_evt_choice(wxEvent& event);
         void wx_evt_close_window(wxEvent& event);
         void wx_evt_collapsiblepane_changed(wxEvent& event);
+        void wx_evt_colourpicker_opened(wxEvent& event);
         void wx_evt_colourpicker_changed(wxEvent& event);
+        void wx_evt_colourpicker_current_changed(wxEvent& event);
+        void wx_evt_colourpicker_dialog_cancelled(wxEvent& event);
         void wx_evt_combobox(wxEvent& event);
         void wx_evt_combobox_dropdown(wxEvent& event);
         void wx_evt_combobox_closeup(wxEvent& event);
