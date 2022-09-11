@@ -1169,6 +1169,10 @@ void control::on_mouse_wheel(const mouse_event_args& e) {
   if (can_raise_events()) mouse_wheel(*this, e);
 }
 
+void control::on_move(const event_args& e) {
+  if (can_raise_events()) move(*this, e);
+}
+
 void control::on_paint(paint_event_args& e) {
   def_wnd_proc(e.message_);
   if (data_->background_image != xtd::drawing::image::empty) control_paint::draw_image(e.graphics(), data_->background_image, e.clip_rectangle(), data_->background_image_layout);
@@ -1876,6 +1880,7 @@ void control::wm_move(message& message) {
     data_->location = native::control::location(handle());
     on_location_changed(event_args::empty);
   }
+  on_move(event_args::empty);
 }
 
 void control::wm_notify(message& message) {
