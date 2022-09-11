@@ -50,6 +50,8 @@ add_sources(
   include/xtd/forms/color_box_styles.h
   include/xtd/forms/color_dialog.h
   include/xtd/forms/color_picker.h
+  include/xtd/forms/color_picker_event_args.h
+  include/xtd/forms/color_picker_event_handler.h
   include/xtd/forms/combo_box.h
   include/xtd/forms/combo_box_style.h
   include/xtd/forms/command_link_button.h

@@ -20,7 +20,7 @@ void color_picker::color(const drawing::color& value) {
   if (color_ != value) {
     color_ = value;
     if (is_handle_created()) native::color_picker::color(handle(), color_);
-    on_color_changed(event_args::empty);
+    on_color_changed(color_picker_event_args(color_));
   }
 }
 
@@ -44,7 +44,7 @@ void color_picker::on_closed(const event_args& e) {
   if (can_raise_events()) closed(*this, e);
 }
 
-void color_picker::on_color_changed(const event_args& e) {
+void color_picker::on_color_changed(const color_picker_event_args& e) {
   if (can_raise_events()) color_changed(*this, e);
 }
 
@@ -71,6 +71,7 @@ void color_picker::wm_command_control(message& message) {
 }
 
 void color_picker::wm_command_control_canceled(message& message) {
+  color_ = backup_color_;
   on_cancelled(event_args::empty);
 }
 
@@ -80,9 +81,10 @@ void color_picker::wm_command_control_closed(message& message) {
 
 void color_picker::wm_command_control_selchange(message& message) {
   color_ = native::color_picker::color(handle());
-  on_color_changed(event_args::empty);
+  on_color_changed(color_picker_event_args(color_));
 }
 
 void color_picker::wm_command_control_opened(message& message) {
+  backup_color_ = color_;
   on_opened(event_args::empty);
 }
