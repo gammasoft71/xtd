@@ -31,7 +31,7 @@ public:
     button_add.click += [&] {
       auto item = control::create<label>(collapsible_panel2, ustring::format("item{}", ++count));
       item->dock(dock_style::top);
-      control_items.push_back(move(item));
+      control_items.push_back(std::move(item));
     };
     
     button_remove.parent(collapsible_panel1);
