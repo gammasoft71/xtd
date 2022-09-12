@@ -36,7 +36,7 @@ date_time date_time_picker::value(intptr_t control) {
     wx_date_time = static_cast<wxTimePickerCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetValue();
   else
     wx_date_time = static_cast<wxDatePickerCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetValue();
-  return date_time(wx_date_time.GetYear(), static_cast<uint32_t>(wx_date_time.GetMonth()) + 1, wx_date_time.GetDay(), wx_date_time.GetHour(), wx_date_time.GetHour(), wx_date_time.GetMinute(), wx_date_time.GetSecond(), date_time_kind::unspecified);
+  return date_time(wx_date_time.GetYear(), static_cast<uint32_t>(wx_date_time.GetMonth()) + 1, wx_date_time.GetDay(), wx_date_time.GetHour(), wx_date_time.GetMinute(), wx_date_time.GetSecond(), date_time_kind::unspecified);
 }
 
 void date_time_picker::value(intptr_t control, date_time value) {

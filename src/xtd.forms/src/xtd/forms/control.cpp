@@ -1486,7 +1486,7 @@ void control::wnd_proc(message& message) {
     case WM_HELP: wm_help(message); break;
     case WM_MENUCOMMAND: wm_menu_command(message); break;
     case WM_MOVE: wm_move(message);  break;
-    case WM_NOTIFY: reflect_message(reinterpret_cast<intptr_t>(reinterpret_cast<NMHDR*>(message.lparam())->hwndFrom), message); break;
+    case WM_NOTIFY: wm_notify(message); break;
     case WM_PAINT: wm_paint(message); break;
     case WM_SETTEXT: wm_set_text(message); break;
     case WM_SHOWWINDOW: wm_show(message); break;
@@ -1885,11 +1885,13 @@ void control::wm_move(message& message) {
 
 void control::wm_notify(message& message) {
   def_wnd_proc(message);
+  diagnostics::debug::write_line("control::wm_notify");
   reflect_message(reinterpret_cast<intptr_t>(reinterpret_cast<NMHDR*>(message.lparam())->hwndFrom), message);
 }
 
 void control::wm_notify_control(message& message) {
   def_wnd_proc(message);
+  diagnostics::debug::write_line("control::wm_notify_control");
 }
 
 void control::wm_paint(message& message) {
