@@ -70,6 +70,14 @@ namespace xtd {
       /// @name Events
       
       /// @{
+      /// @brief Occurs when the drop-down calendar is dismissed and disappears.
+      /// @ingroup events
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      event<date_time_picker, event_handler> close_up;
+      /// @brief Occurs when the drop-down calendar is shown.
+      /// @ingroup events
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      event<date_time_picker, event_handler> drop_down;
       /// @brief Occurs when the value of the value property changes.
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
@@ -88,16 +96,25 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
+      /// @brief Raises the date_time_picker::close_up event.
+      /// @param e An event_args that contains the event data.
+      virtual void on_close_up(const event_args& e);
+      /// @brief Raises the date_time_picker::drop_down event.
+      /// @param e An event_args that contains the event data.
+      virtual void on_drop_down(const event_args& e);
       /// @brief Raises the date_time_picker::value_changed event.
       /// @param e An event_args that contains the event data.
       virtual void on_value_changed(const event_args& e);
-      
+
       void on_handle_created(const event_args& e) override;
       void wnd_proc(message& message) override;
       /// @}
       
     private:
-      void wm_click(message& message);
+      void wm_nottify_control(message& message);
+      void wm_nottify_control_closeup(message& message);
+      void wm_nottify_control_dropdown(message& message);
+      void wm_nottify_control_datetimechange(message& message);
       date_time_picker_format format_ = date_time_picker_format::long_format;
       date_time max_date_ = date_time::max_value;
       date_time min_date_ = date_time::min_value;

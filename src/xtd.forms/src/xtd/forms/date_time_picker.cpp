@@ -6,6 +6,7 @@
 #include <xtd/forms/native/window_styles.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/date_time_picker.h"
+#include <xtd/diagnostics/debug.h>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -87,6 +88,14 @@ forms::create_params date_time_picker::create_params() const {
   return create_params;
 }
 
+void date_time_picker::on_close_up(const event_args& e) {
+  if (can_raise_events()) close_up(*this, e);
+}
+
+void date_time_picker::on_drop_down(const event_args& e) {
+  if (can_raise_events()) drop_down(*this, e);
+}
+
 void date_time_picker::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   native::date_time_picker::allowable_dates(handle(), min_date_, max_date_);
@@ -99,13 +108,29 @@ void date_time_picker::on_value_changed(const event_args& e) {
 
 void date_time_picker::wnd_proc(message& message) {
   switch (message.msg()) {
-    case WM_REFLECT + WM_COMMAND: wm_click(message); break;
+    case WM_REFLECT + WM_NOTIFY: wm_nottify_control(message); break;
     default: control::wnd_proc(message);
   }
 }
 
-void date_time_picker::wm_click(message& message) {
-  def_wnd_proc(message);
+void date_time_picker::wm_nottify_control(message& message) {
+  NMHDR* nmhdr = reinterpret_cast<NMHDR*>(message.lparam());
+  switch(nmhdr->code) {
+    case DTN_CLOSEUP: wm_nottify_control_closeup(message); break;
+    case DTN_DROPDOWN: wm_nottify_control_dropdown(message); break;
+    case DTN_DATETIMECHANGE: wm_nottify_control_datetimechange(message); break;
+  }
+}
+
+void date_time_picker::wm_nottify_control_closeup(message& message) {
+  on_close_up(event_args::empty);
+}
+
+void date_time_picker::wm_nottify_control_dropdown(message& message) {
+  on_drop_down(event_args::empty);
+}
+
+void date_time_picker::wm_nottify_control_datetimechange(message& message) {
   if (native::date_time_picker::value(handle()) < min_date_) native::date_time_picker::value(handle(), min_date_);
   if (native::date_time_picker::value(handle()) > max_date_) native::date_time_picker::value(handle(), max_date_);
   if (value_ != native::date_time_picker::value(handle())) {

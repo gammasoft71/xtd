@@ -583,12 +583,10 @@ namespace xtd::forms::native {
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_date_changed(wxEvent& event) {
+    NMHDR nmhrd {reinterpret_cast<HWND>(get_control_handle_for_event(event)), static_cast<uintptr_t>(event.GetId()), DTN_DATETIMECHANGE};
     if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), DTN_DATETIMECHANGE), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
     else def_process_event(event);
-    /// @todo Add date info and use WM_NOTIFY
-    //NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr_t>(event.GetId()), DTN_DATETIMECHANGE};
-    //event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
@@ -622,7 +620,7 @@ namespace xtd::forms::native {
       event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), BN_CLICKED), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
     else def_process_event(event);
     /// @todo Define Notification like FPN_FONT_CHANGED and use WM_NOTIFY...
-    //NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr_t>(event.GetId()), FPN_FONT_CHANGED};
+    //NMHDR nmhrd {reinterpret_cast<HWND>(get_control_handle_for_event(event)), static_cast<uintptr_t>(event.GetId()), FPN_FONT_CHANGED};
     //event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
   }
   
@@ -944,12 +942,10 @@ namespace xtd::forms::native {
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_time_changed(wxEvent& event) {
+    NMHDR nmhrd {reinterpret_cast<HWND>(get_control_handle_for_event(event)), static_cast<uintptr_t>(event.GetId()), DTN_DATETIMECHANGE};
     if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), DTN_DATETIMECHANGE), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
     else def_process_event(event);
-    /// @todo Add time info and use WM_NOTIFY
-    //NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr_t>(event.GetId()), DTN_DATETIMECHANGE};
-    //event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
   }
 
   template<typename control_t>
