@@ -18,7 +18,7 @@ control& font_picker::color(const drawing::color& value) {
   if (color_ != value) {
     color_ = value;
     if (is_handle_created()) native::font_picker::color(handle(), color_);
-    on_font_changed(event_args::empty);
+    on_font_picker_changed(font_picker_event_args(font_, color_));
   }
   return *this;
 }
@@ -27,7 +27,7 @@ control& font_picker::font(const drawing::font& value) {
   if (font_ != value) {
     font_ = value;
     if (is_handle_created()) native::font_picker::font(handle(), font_);
-    on_font_changed(event_args::empty);
+    on_font_picker_changed(font_picker_event_args(font_, color_));
   }
   return *this;
 }
@@ -46,8 +46,8 @@ void font_picker::on_handle_created(const event_args& e) {
   }
 }
 
-void font_picker::on_font_changed(const event_args& e) {
-  if (can_raise_events()) font_changed(*this, e);
+void font_picker::on_font_picker_changed(const font_picker_event_args& e) {
+  if (can_raise_events()) font_picker_changed(*this, e);
 }
 
 void font_picker::wnd_proc(message& message) {
@@ -68,5 +68,5 @@ void font_picker::wm_command_control(message& message) {
 void font_picker::wm_command_control_selchange(message& message) {
   color_ = native::font_picker::color(handle());
   font_ = native::font_picker::font(handle());
-  on_font_changed(event_args::empty);
+  on_font_picker_changed(font_picker_event_args(font_, color_));
 }
