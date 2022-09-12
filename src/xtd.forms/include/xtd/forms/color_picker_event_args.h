@@ -31,15 +31,15 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the color_picker_event_args class for the specified control.
-      /// @param control The control to store in this event.
+      /// @param color The xtd::drawing::color that represent the xtd::forms::color_picker::color.
       explicit color_picker_event_args(const xtd::drawing::color& color) : color_(color) {}
       /// @}
       
       /// @name Properties
       
       /// @{
-      /// @brief Gets the control object used by this event.
-      /// @return The control used by this event.
+      /// @brief Gets the xtd::drawing::color that represent the xtd::forms::color_picker::color.
+      /// @return The xtd::drawing::color that represent the xtd::forms::color_picker::color.
       const xtd::drawing::color& color() const {return color_;}
       //// @}
       

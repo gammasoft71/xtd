@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "control.h"
+#include "font_picker_event_handler.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -54,7 +55,7 @@ namespace xtd {
       /// @brief Occurs when the value of the font property changes.
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
-      event<font_picker, event_handler> font_changed;
+      event<font_picker, font_picker_event_handler> font_picker_changed;
       /// @}
       
     protected:
@@ -69,7 +70,7 @@ namespace xtd {
       /// @{
       /// @brief Raises the font_changed event.
       /// @param e An event_args that contains the event data.
-      void on_font_changed(const event_args& e) override;
+      void on_font_picker_changed(const font_picker_event_args& e);
       
       void on_handle_created(const event_args& e) override;
       

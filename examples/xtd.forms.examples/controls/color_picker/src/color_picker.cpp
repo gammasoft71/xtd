@@ -24,7 +24,7 @@ namespace examples {
       color_picker.parent(*this);
       color_picker.color(color::red);
       color_picker.location({10, 10});
-      color_picker.color_changed += [&] {
+      color_picker.color_picker_changed += [&] {
         test_zone.invalidate();
       };
     }
