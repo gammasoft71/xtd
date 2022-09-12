@@ -1885,13 +1885,11 @@ void control::wm_move(message& message) {
 
 void control::wm_notify(message& message) {
   def_wnd_proc(message);
-  diagnostics::debug::write_line("control::wm_notify");
   reflect_message(reinterpret_cast<intptr_t>(reinterpret_cast<NMHDR*>(message.lparam())->hwndFrom), message);
 }
 
 void control::wm_notify_control(message& message) {
   def_wnd_proc(message);
-  diagnostics::debug::write_line("control::wm_notify_control");
 }
 
 void control::wm_paint(message& message) {
