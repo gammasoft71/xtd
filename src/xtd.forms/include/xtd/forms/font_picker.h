@@ -80,7 +80,8 @@ namespace xtd {
       /// @}
       
     private:
-      void wm_click(message& message);
+      void wm_command_control(message& message);
+      void wm_command_control_selchange(message& message);
       drawing::color color_;
       drawing::font font_ = default_font();
     };

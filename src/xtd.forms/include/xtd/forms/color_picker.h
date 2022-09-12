@@ -58,22 +58,10 @@ namespace xtd {
       /// @name Events
       
       /// @{
-      /// @brief Occurs when the user canels the color picke.
-      /// @ingroup events
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
-      event<color_picker, event_handler> cancelled;
-      /// @brief Occurs when the color picker is closed.
-      /// @ingroup events
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
-      event<color_picker, event_handler> closed;
       /// @brief Occurs when the value of the color property changes.
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
       event<color_picker, color_picker_event_handler> color_changed;
-      /// @brief Occurs when the color picker is opened.
-      /// @ingroup events
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
-      event<color_picker, event_handler> opened;
       /// @}
       
     protected:
@@ -86,18 +74,9 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      /// @brief Raises the cancelled event.
-      /// @param e An event_args that contains the event data.
-      void on_cancelled(const event_args& e);
-      /// @brief Raises the closed event.
-      /// @param e An event_args that contains the event data.
-      void on_closed(const event_args& e);
       /// @brief Raises the color_changed event.
       /// @param e An event_args that contains the event data.
       void on_color_changed(const color_picker_event_args& e);
-      /// @brief Raises the opened event.
-      /// @param e An event_args that contains the event data.
-      void on_opened(const event_args& e);
 
       void on_handle_created(const event_args& e) override;
       void wnd_proc(message& message) override;
@@ -105,10 +84,7 @@ namespace xtd {
       
     private:
       void wm_command_control(message& message);
-      void wm_command_control_canceled(message& message);
-      void wm_command_control_closed(message& message);
       void wm_command_control_selchange(message& message);
-      void wm_command_control_opened(message& message);
       drawing::color backup_color_;
       drawing::color color_;
       bool alpha_color_ = true;

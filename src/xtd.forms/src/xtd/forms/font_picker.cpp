@@ -52,13 +52,20 @@ void font_picker::on_font_changed(const event_args& e) {
 
 void font_picker::wnd_proc(message& message) {
   switch (message.msg()) {
-    case WM_REFLECT + WM_COMMAND: wm_click(message); break;
+    case WM_REFLECT + WM_COMMAND: wm_command_control(message); break;
     default: control::wnd_proc(message);
   }
 }
 
-void font_picker::wm_click(message& message) {
-  def_wnd_proc(message);
+void font_picker::wm_command_control(message& message) {
+  control::wnd_proc(message);
+  switch (HIWORD(message.wparam())) {
+    case FPN_SELCHANGE: wm_command_control_selchange(message); break;
+    default: break;
+  }
+}
+
+void font_picker::wm_command_control_selchange(message& message) {
   color_ = native::font_picker::color(handle());
   font_ = native::font_picker::font(handle());
   on_font_changed(event_args::empty);
