@@ -210,7 +210,7 @@ xtd::drawing::size control::default_size(const xtd::ustring& class_name) {
   if (class_name == "choice") return {130, is_gnome ? 34 : is_macos ? 26 : 23};
   if (class_name == "collapsiblepanel") return {0, 0};
   if (class_name == "colorpicker") return {100, 34};
-  if (class_name == "combobox") return {130, is_gnome ? 34 : is_macos ? 26 : 23};
+  if (class_name == "combobox") return {130, is_gnome ? 34 : is_macos ? 21 : 23};
   if (class_name == "commandlinkbutton") return {200, 60};
   if (class_name == "datetimepicker") return {100, is_gnome ? 34 : 25};
   if (class_name == "domainupdown") return {150, is_gnome ? 34 : 21};
