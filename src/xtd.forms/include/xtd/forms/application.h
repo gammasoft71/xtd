@@ -248,9 +248,13 @@ namespace xtd {
       static void enable_button_images();
       
       /// @brief Enables dark mode for the application.
+      /// @remarks By default, the dark mode is enabled automatically if the system is in dark mode.
+      /// @remarks xtd::forms::application::enable_dark_mode sets the application in dark mode even if your system is in light mode.
       static void enable_dark_mode();
       
       /// @brief Enables light mode for the application.
+      /// @remarks By default, the light mode is enabled automatically if the system is in light mode.
+      /// @remarks xtd::forms::application::enable_light_mode sets the application in light mode even if your system is in dark mode.
       static void enable_light_mode();
       
       /// @brief Enables menu images  for the application.
