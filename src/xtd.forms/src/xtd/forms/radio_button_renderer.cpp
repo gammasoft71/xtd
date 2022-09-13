@@ -38,24 +38,24 @@ namespace {
 }
 
 void radio_button_renderer::draw_radio_button(const ustring& theme, graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, radio_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
-  if (theme == "gnome") draw_radio_button_gnome(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "gnome (dark)") draw_radio_button_gnome_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "gnome (light)") draw_radio_button_gnome_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "kde") draw_radio_button_kde(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "kde (dark)") draw_radio_button_kde_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "kde (light)") draw_radio_button_kde_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "macos") draw_radio_button_macos(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "macos (dark)") draw_radio_button_macos_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "macos (light)") draw_radio_button_macos_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "symbolic") draw_radio_button_symbolic(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "symbolic (dark)") draw_radio_button_symbolic_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "symbolic (light)") draw_radio_button_symbolic_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "windows") draw_radio_button_windows(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "windows (dark)") draw_radio_button_windows_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "windows (light)") draw_radio_button_windows_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "xtd") draw_radio_button_xtd(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "xtd (dark)") draw_radio_button_xtd_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "xtd (light)") draw_radio_button_xtd_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  if (theme.to_lower() == "gnome") draw_radio_button_gnome(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "gnome (dark)") draw_radio_button_gnome_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "gnome (light)") draw_radio_button_gnome_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "kde") draw_radio_button_kde(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "kde (dark)") draw_radio_button_kde_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "kde (light)") draw_radio_button_kde_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "macos") draw_radio_button_macos(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "macos (dark)") draw_radio_button_macos_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "macos (light)") draw_radio_button_macos_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "symbolic") draw_radio_button_symbolic(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "symbolic (dark)") draw_radio_button_symbolic_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "symbolic (light)") draw_radio_button_symbolic_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "windows") draw_radio_button_windows(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "windows (dark)") draw_radio_button_windows_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "windows (light)") draw_radio_button_windows_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "xtd") draw_radio_button_xtd(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "xtd (dark)") draw_radio_button_xtd_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "xtd (light)") draw_radio_button_xtd_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else draw_radio_button_symbolic(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
@@ -169,7 +169,33 @@ void radio_button_renderer::draw_radio_button_macos_dark(graphics g, const recta
 }
 
 void radio_button_renderer::draw_radio_button_macos_light(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, radio_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
-  draw_radio_button_symbolic_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  auto foreground_color = fore_color.has_value() ? fore_color.value() : application::style_sheet().system_colors().control_text();
+  auto border_color = control_paint::dark(back_color.has_value() ? back_color.value() : application::style_sheet().system_colors().control(), 0.05);
+  auto button_color = application::style_sheet().system_colors().button_face();
+  auto text_color = control_paint::light(foreground_color, 0.1);
+  auto mark_color = control_paint::light(application::style_sheet().system_colors().accent_text(), 0.15);
+  
+  if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed)
+    button_color = control_paint::dark(application::style_sheet().system_colors().accent(), 0.15);
+  else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled) {
+    border_color = color::from_argb(85, 85, 55);
+    mark_color = text_color = application::style_sheet().system_colors().gray_text();
+    button_color = control_paint::dark(application::style_sheet().system_colors().button_face(), 0.7);
+  }
+  
+  rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 7, 16, 16};
+  if (state == xtd::forms::visual_styles::radio_button_state::unchecked_normal || state == xtd::forms::visual_styles::radio_button_state::unchecked_hot || state == xtd::forms::visual_styles::radio_button_state::unchecked_pressed || state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled) {
+    g.fill_ellipse(drawing2d::linear_gradient_brush(point {button_rectangle.x(), button_rectangle.top()}, point {button_rectangle.x(), button_rectangle.bottom()}, control_paint::dark(button_color, .5), button_color), button_rectangle);
+    g.draw_ellipse(pen(border_color, 1), rectangle::add(button_rectangle, {-1, -1}));
+  } else
+    g.fill_ellipse(solid_brush(button_color), button_rectangle);
+  rectangle string_rectangle = {bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height()};
+  if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed || state == xtd::forms::visual_styles::radio_button_state::checked_disabled) {
+    g.fill_ellipse(solid_brush(mark_color), rectangle::offset(rectangle::add(button_rectangle, {-10, -10}), {5, 5}));
+  }
+  if (image != image::empty && (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled)) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
+  else if (image != image::empty) g.draw_image(image, image_bounds.location());
+  draw_string(g, text, font, text_color, string_rectangle, flags);
 }
 
 void radio_button_renderer::draw_radio_button_symbolic(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, radio_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
