@@ -182,7 +182,7 @@ void check_box_renderer::draw_check_box_macos_light(graphics g, const rectangle&
   auto border_color = color::from_argb(200, 200, 200);
   auto button_color = back_color.has_value() ? color::from_argb(128, application::style_sheet().system_colors().control()) : application::style_sheet().system_colors().button_face();
   auto text_color = foreground_color;
-  auto mark_color = control_paint::dark(application::style_sheet().system_colors().accent_text(), 0.15);
+  auto mark_color = control_paint::light(application::style_sheet().system_colors().accent_text(), 0.15);
   
   if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::mixed_normal || state == xtd::forms::visual_styles::check_box_state::mixed_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_pressed)
     button_color = application::style_sheet().system_colors().accent();
