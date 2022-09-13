@@ -85,8 +85,7 @@ namespace xtd {
     private:
       void wm_command_control(message& message);
       void wm_command_control_selchange(message& message);
-      drawing::color backup_color_;
-      drawing::color color_;
+      drawing::color color_ = drawing::color::white;
       bool alpha_color_ = true;
     };
   }
