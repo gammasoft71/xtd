@@ -85,6 +85,14 @@ namespace xtd {
       /// @endcode
       static xtd::ustring company_name();
       
+      /// @brief Return true if dark mode is enabled for the application; otherwise return false.
+      /// @return True is dark mode enabled; otherwise false.
+      static bool dark_mode_enabled();
+      
+      /// @brief Return true if dark mode is enabled for the application; otherwise return false.
+      /// @return True is light mode enabled; otherwise false.
+      static bool light_mode_enabled();
+
       /// @brief Gets the executable name for the executable file that started the application, including the executable extension.
       /// @return The executable name and executable name for the executable file that started the application.<br><br>
       static xtd::ustring executable_name();
@@ -227,14 +235,6 @@ namespace xtd {
       /// @param The implementation of the imessage_filter interface you want to install.
       /// @remarks Use a message filter to prevent specific events from being raised or to perform special operations for an event before it is passed to an event handler. Message filters are unique to a specific thread.
       static void add_message_filter(const imessage_filter& value);
-      
-      /// @brief Return true if dark mode is enabled for the application; otherwise return false.
-      /// @return True is dark mode enabled; otherwise false.
-      static bool dark_mode_enabled();
-      
-      /// @brief Return true if dark mode is enabled for the application; otherwise return false.
-      /// @return True is light mode enabled; otherwise false.
-      static bool light_mode_enabled();
       
       /// @brief Processes all Windows messages currently in the message queue.
       /// @remarks When you run a Windows form, it creates the new form, which then waits for events to handle. Each time the form handles an event, it processes all the code associated with that event. All other events wait in the queue. While your code handles the event, your application does not respond. For example, the window does not repaint if another window is dragged on top.
