@@ -93,7 +93,6 @@ optional<control::control_collection::value_type> control::control_collection::o
 
 control::control() {
   native::application::initialize();
-  if (!application::message_loop() && cursor::current() == cursor::none) cursor::current(cursors::wait_cursor());
   set_state(state::enabled, true);
   set_state(state::visible, true);
   set_state(state::tab_stop, true);
