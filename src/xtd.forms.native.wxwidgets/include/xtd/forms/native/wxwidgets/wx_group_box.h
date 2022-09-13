@@ -35,6 +35,7 @@ namespace xtd {
           Bind(wxEVT_SIZE, [&](wxSizeEvent & event) {
             inner_panel->SetPosition(get_inner_box_position());
             inner_panel->SetSize(get_inner_box_size());
+            event.Skip();
           });
         }
         
@@ -46,7 +47,7 @@ namespace xtd {
           *height = *height - GetClientAreaOrigin().y - inner_margin;
         }
         
-        wxWindow* GetMainWindowOfCompositeControl() override {return inner_panel;}
+        //wxWindow* GetMainWindowOfCompositeControl() override {return inner_panel;}
         
       private:
         wxPoint get_inner_box_position() const {
