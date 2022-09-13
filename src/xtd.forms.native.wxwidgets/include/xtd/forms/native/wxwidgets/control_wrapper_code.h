@@ -113,6 +113,7 @@ namespace xtd::forms::native {
     else if (event.GetEventType() == wxEVT_SET_FOCUS) wx_evt_set_focus(event);
     else if (event.GetEventType() == wxEVT_SHOW) wx_evt_show(event);
     else if (event.GetEventType() == wxEVT_SIZE) wx_evt_size(event);
+    else if (event.GetEventType() == wxEVT_SYS_COLOUR_CHANGED) wx_evt_sys_color_changed(event);
     else if (event.GetEventType() == wxEVT_TEXT) wx_evt_text(event);
     else def_process_event(event);
     
