@@ -730,7 +730,7 @@ void style_sheet::on_style_sheet_changed(const xtd::event_args& e) {
 void style_sheet::on_system_colors_changed(const event_args& e) {
   if (current_style_sheet().is_system_style_sheet() && current_style_sheet().system_colors().window() != xtd::drawing::system_colors::window()) {
     system_style_sheet_ = style_sheet::empty;
-    current_style_sheet_ = system_style_sheet();
+    current_style_sheet(system_style_sheet());
   } else system_style_sheet_ = style_sheet::empty;
 }
 

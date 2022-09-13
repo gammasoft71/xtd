@@ -1275,10 +1275,12 @@ void control::on_size_changed(const event_args& e) {
 }
 
 void control::on_style_sheet_changed(const event_args& e) {
-  if (!data_->back_color) back_color(default_back_color());
-  if (!data_->cursor) cursor(default_cursor());
-  if (!data_->font) font(default_font());
-  if (!data_->fore_color) fore_color(default_fore_color());
+  if (control_appearance() == forms::control_appearance::system) {
+    back_color(default_back_color());
+    cursor(default_cursor());
+    font(default_font());
+    fore_color(default_fore_color());
+  }
   invalidate(true);
   refresh();
   if (can_raise_events()) style_sheet_changed(*this, e);
