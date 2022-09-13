@@ -172,24 +172,24 @@ namespace {
 }
 
 void button_renderer::draw_button(const ustring& theme, graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
-  if (theme == "gnome") draw_button_gnome(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "gnome (dark)") draw_button_gnome_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "gnome (light)") draw_button_gnome_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "kde") draw_button_kde(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "kde (dark)") draw_button_kde_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "kde (light)") draw_button_kde_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "macos") draw_button_macos(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "macos (dark)") draw_button_macos_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "macos (light)") draw_button_macos_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "symbolic") draw_button_symbolic(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "symbolic (dark)") draw_button_symbolic_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "symbolic (light)") draw_button_symbolic_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "windows") draw_button_windows(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "windows (dark)") draw_button_windows_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "windows (light)") draw_button_windows_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "xtd") draw_button_xtd(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "xtd (dark)") draw_button_xtd_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else if (theme == "xtd (light)") draw_button_xtd_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  if (theme.to_lower() == "gnome") draw_button_gnome(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "gnome (dark)") draw_button_gnome_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "gnome (light)") draw_button_gnome_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "kde") draw_button_kde(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "kde (dark)") draw_button_kde_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "kde (light)") draw_button_kde_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "macos") draw_button_macos(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "macos (dark)") draw_button_macos_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "macos (light)") draw_button_macos_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "symbolic") draw_button_symbolic(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "symbolic (dark)") draw_button_symbolic_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "symbolic (light)") draw_button_symbolic_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "windows") draw_button_windows(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "windows (dark)") draw_button_windows_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "windows (light)") draw_button_windows_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "xtd") draw_button_xtd(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "xtd (dark)") draw_button_xtd_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else if (theme.to_lower() == "xtd (light)") draw_button_xtd_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
   else draw_button_symbolic(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
@@ -361,14 +361,10 @@ void button_renderer::draw_button_macos_light(graphics g, const rectangle& bound
   auto background_color = back_color.has_value() ? back_color.value() : color::transparent;
   auto foreground_color = fore_color.has_value() ? fore_color.value() : application::style_sheet().system_colors().control_text();
   auto border_color = color::from_argb(200, 200, 200);
-  auto button_color = color::from_argb(128, application::style_sheet().system_colors().button_face());
+  auto button_color = application::style_sheet().system_colors().button_face();
   auto text_color = foreground_color;
   
   if (state == xtd::forms::visual_styles::push_button_state::pressed || state == xtd::forms::visual_styles::push_button_state::checked) {
-    //if (bounds.height() <= 25) {
-    //  button_color = application::style_sheet().system_colors().accent();
-    //  text_color = application::style_sheet().system_colors().accent_text();
-    //} else
     button_color = color::from_argb(240, 240, 240);
   } else if (state == xtd::forms::visual_styles::push_button_state::disabled) {
     button_color = back_color.has_value() ? color::from_argb(210, 255, 255, 255) : control_paint::dark(button_color, 0.04);
@@ -387,7 +383,7 @@ void button_renderer::draw_button_macos_light(graphics g, const rectangle& bound
   }
   
   if (background_color != color::transparent) g.fill_rounded_rectangle(solid_brush(background_color), button_rect.x(), button_rect.y() + 2, button_rect.width(), button_rect.height() - 4, 5);
-  g.fill_rounded_rectangle(drawing2d::linear_gradient_brush(point {button_rect.x(), button_rect.top()}, point {button_rect.x(), button_rect.bottom()}, button_color, control_paint::dark(button_color, .03)), button_rect.x(), button_rect.y() + 2, button_rect.width() - 1, button_rect.height() - 4, 5);
+  g.fill_rounded_rectangle(drawing2d::linear_gradient_brush(point {button_rect.x(), button_rect.top()}, point {button_rect.x(), button_rect.bottom()}, button_color, control_paint::dark(button_color, .01)), button_rect.x(), button_rect.y() + 2, button_rect.width() - 1, button_rect.height() - 4, 5);
   g.draw_rounded_rectangle(pen(border_color, 1), button_rect.x(), button_rect.y() + 2, button_rect.width() - 1, button_rect.height() - 4, 5);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) control_paint::draw_image_disabled(g, image, image_bounds.location(), button_color);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
