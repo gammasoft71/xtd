@@ -176,11 +176,11 @@ void radio_button_renderer::draw_radio_button_macos_light(graphics g, const rect
   auto mark_color = control_paint::light(application::style_sheet().system_colors().accent_text(), 0.15);
   
   if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed)
-    button_color = control_paint::dark(application::style_sheet().system_colors().accent(), 0.15);
+    button_color = application::style_sheet().system_colors().accent();
   else if (state == xtd::forms::visual_styles::radio_button_state::unchecked_disabled || state == xtd::forms::visual_styles::radio_button_state::checked_disabled) {
     border_color = color::from_argb(85, 85, 55);
     mark_color = text_color = application::style_sheet().system_colors().gray_text();
-    button_color = control_paint::dark(application::style_sheet().system_colors().button_face(), 0.7);
+    button_color = control_paint::light(application::style_sheet().system_colors().button_face(), 0.7);
   }
   
   rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 7, 16, 16};
