@@ -318,7 +318,6 @@ bool form::pre_process_message(xtd::forms::message& message) {
 }
 
 forms::dialog_result form::show_dialog() {
-  if (!application::message_loop()) cursor::current(cursors::default_cursor());
   closed_ = false;
   set_state(state::modal, true);
   previous_screen_ = std::make_shared<screen>(screen::from_control(*this));
@@ -331,7 +330,6 @@ forms::dialog_result form::show_dialog() {
 }
 
 forms::dialog_result form::show_dialog(const iwin32_window& owner) {
-  if (!application::message_loop()) cursor::current(cursors::default_cursor());
   closed_ = false;
   parent_before_show_dialog_ = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
@@ -344,7 +342,6 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
 }
 
 void form::show_sheet(const iwin32_window& owner) {
-  if (!application::message_loop()) cursor::current(cursors::default_cursor());
   closed_ = false;
   parent_before_show_dialog_ = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
@@ -357,7 +354,6 @@ void form::show_sheet(const iwin32_window& owner) {
 }
 
 forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
-  if (!application::message_loop()) cursor::current(cursors::default_cursor());
   closed_ = false;
   parent_before_show_dialog_ = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
