@@ -229,9 +229,11 @@ namespace xtd {
       static void add_message_filter(const imessage_filter& value);
       
       /// @brief Return true if dark mode is enabled for the application; otherwise return false.
+      /// @return True is dark mode enabled; otherwise false.
       static bool dark_mode_enabled();
       
       /// @brief Return true if dark mode is enabled for the application; otherwise return false.
+      /// @return True is light mode enabled; otherwise false.
       static bool light_mode_enabled();
       
       /// @brief Processes all Windows messages currently in the message queue.
