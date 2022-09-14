@@ -12,7 +12,7 @@ namespace examples {
     std::thread thread;
     ustring name;
   };
-  class my_interlocked_exchange_class : public object {
+  class my_interlocked_exchange_class {
   private:
     //0 for False, 1 for True.
     inline static int using_resource = 0;
