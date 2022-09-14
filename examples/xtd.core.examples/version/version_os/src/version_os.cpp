@@ -3,7 +3,7 @@
 using namespace xtd;
 
 namespace examples {
-  class program : public object {
+  class program {
   public:
     // The main entry point for the application.
     static void main() {

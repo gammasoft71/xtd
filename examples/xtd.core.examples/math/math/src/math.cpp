@@ -4,7 +4,7 @@ using namespace xtd;
 
 namespace examples {
   // The following class represents simple functionality of the trapezoid.
-  class math_trapezoid_sample : public object {
+  class math_trapezoid_sample {
   public:
     // The main entry point for the application.
     static void main() {

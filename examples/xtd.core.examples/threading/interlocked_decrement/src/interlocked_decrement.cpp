@@ -9,7 +9,7 @@ using namespace xtd::threading;
 namespace examples {
   class my_interlocked_decrement_class {
   private:
-    class count_class : public object {
+    class count_class {
     public:
       inline static int unsafe_instance_count = 0;
       inline static int safe_instance_count = 0;
