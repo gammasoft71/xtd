@@ -87,7 +87,7 @@ namespace {
       RefreshRect(child, xtd::drawing::rectangle::make_intersect(rect, {child->GetRect().x, child->GetRect().y, child->GetRect().width, child->GetRect().height}), invalidate_children);
   }
 
-  intptr_t init_dark_mode(intptr_t control) {
+  intptr_t init_dark_mode_control(intptr_t control) {
     allow_dark_mode_for_window(reinterpret_cast<intptr_t>(reinterpret_cast<xtd::forms::native::control_handler*>(control)->control()->GetHandle()));
     return control;
   }
@@ -136,42 +136,42 @@ intptr_t control::user_context_menu(intptr_t control, intptr_t context_menu, con
 
 intptr_t control::create(const forms::native::create_params& create_params) {
   application::initialize(); // Must be first
-  if (create_params.class_name == "button") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_button(create_params)));
-  if (create_params.class_name == "checkbox") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_check_box(create_params)));
-  if (create_params.class_name == "checkedlistbox") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_checked_list_box(create_params)));
-  if (create_params.class_name == "choice") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_choice(create_params)));
-  if (create_params.class_name == "collapsiblepanel") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_collapsible_panel(create_params)));
-  if (create_params.class_name == "colorpicker") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_color_picker(create_params)));
-  if (create_params.class_name == "combobox") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_combo_box(create_params)));
-  if (create_params.class_name == "commandlinkbutton") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_command_link_button(create_params)));
-  if (create_params.class_name == "datetimepicker") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_date_time_picker(create_params)));
-  if (create_params.class_name == "domainupdown") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_domain_up_down(create_params)));
-  if (create_params.class_name == "fontpicker") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_font_picker(create_params)));
+  if (create_params.class_name == "button") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_button(create_params)));
+  if (create_params.class_name == "checkbox") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_check_box(create_params)));
+  if (create_params.class_name == "checkedlistbox") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_checked_list_box(create_params)));
+  if (create_params.class_name == "choice") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_choice(create_params)));
+  if (create_params.class_name == "collapsiblepanel") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_collapsible_panel(create_params)));
+  if (create_params.class_name == "colorpicker") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_color_picker(create_params)));
+  if (create_params.class_name == "combobox") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_combo_box(create_params)));
+  if (create_params.class_name == "commandlinkbutton") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_command_link_button(create_params)));
+  if (create_params.class_name == "datetimepicker") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_date_time_picker(create_params)));
+  if (create_params.class_name == "domainupdown") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_domain_up_down(create_params)));
+  if (create_params.class_name == "fontpicker") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_font_picker(create_params)));
   if (create_params.class_name == "form") return init_dark_mode_form(reinterpret_cast<intptr_t>(new wx_form(create_params)));
-  if (create_params.class_name == "groupbox") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_group_box(create_params)));
-  if (create_params.class_name == "label") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_label(create_params)));
-  if (create_params.class_name == "lightbutton") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_light_button(create_params)));
-  if (create_params.class_name == "listbox") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_list_box(create_params)));
-  if (create_params.class_name == "loadingindicator") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_loading_indicator(create_params)));
-  if (create_params.class_name == "monthcalendar") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_month_calendar(create_params)));
-  if (create_params.class_name == "numericupdown") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_numeric_up_down(create_params)));
-  if (create_params.class_name == "panel") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_panel(create_params)));
-  if (create_params.class_name == "picturebox") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_picture_box(create_params)));
-  if (create_params.class_name == "popuppanel") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_popup_panel(create_params)));
-  if (create_params.class_name == "progressbar") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_progress_bar(create_params)));
-  if (create_params.class_name == "radiobutton") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_radio_button(create_params)));
-  if (create_params.class_name == "scrollbar") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_scroll_bar(create_params)));
-  if (create_params.class_name == "statusbar") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_status_bar(create_params)));
-  if (create_params.class_name == "switchbutton") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_switch_button(create_params)));
-  if (create_params.class_name == "tabcontrol") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_tab_control(create_params)));
-  if (create_params.class_name == "tabpage") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_tab_page(create_params)));
-  if (create_params.class_name == "textbox") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_text_box(create_params)));
-  if (create_params.class_name == "togglebutton") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_toggle_button(create_params)));
-  if (create_params.class_name == "toolbar") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_tool_bar(create_params)));
-  if (create_params.class_name == "trackbar") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_track_bar(create_params)));
-  if (create_params.class_name == "updownbutton") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_up_down_button(create_params)));
-  if (create_params.class_name == "usercontrol") return init_dark_mode(reinterpret_cast<intptr_t>(new wx_user_control(create_params)));
-  return init_dark_mode(reinterpret_cast<intptr_t>(new wx_control(create_params)));
+  if (create_params.class_name == "groupbox") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_group_box(create_params)));
+  if (create_params.class_name == "label") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_label(create_params)));
+  if (create_params.class_name == "lightbutton") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_light_button(create_params)));
+  if (create_params.class_name == "listbox") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_list_box(create_params)));
+  if (create_params.class_name == "loadingindicator") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_loading_indicator(create_params)));
+  if (create_params.class_name == "monthcalendar") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_month_calendar(create_params)));
+  if (create_params.class_name == "numericupdown") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_numeric_up_down(create_params)));
+  if (create_params.class_name == "panel") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_panel(create_params)));
+  if (create_params.class_name == "picturebox") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_picture_box(create_params)));
+  if (create_params.class_name == "popuppanel") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_popup_panel(create_params)));
+  if (create_params.class_name == "progressbar") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_progress_bar(create_params)));
+  if (create_params.class_name == "radiobutton") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_radio_button(create_params)));
+  if (create_params.class_name == "scrollbar") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_scroll_bar(create_params)));
+  if (create_params.class_name == "statusbar") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_status_bar(create_params)));
+  if (create_params.class_name == "switchbutton") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_switch_button(create_params)));
+  if (create_params.class_name == "tabcontrol") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_tab_control(create_params)));
+  if (create_params.class_name == "tabpage") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_tab_page(create_params)));
+  if (create_params.class_name == "textbox") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_text_box(create_params)));
+  if (create_params.class_name == "togglebutton") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_toggle_button(create_params)));
+  if (create_params.class_name == "toolbar") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_tool_bar(create_params)));
+  if (create_params.class_name == "trackbar") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_track_bar(create_params)));
+  if (create_params.class_name == "updownbutton") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_up_down_button(create_params)));
+  if (create_params.class_name == "usercontrol") return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_user_control(create_params)));
+  return init_dark_mode_control(reinterpret_cast<intptr_t>(new wx_control(create_params)));
 }
 
 intptr_t control::create_paint_graphics(intptr_t control) {
