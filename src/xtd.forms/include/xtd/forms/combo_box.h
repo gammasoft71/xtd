@@ -146,25 +146,15 @@ namespace xtd {
       void on_handle_created(const event_args& e) override;
       void on_selected_value_changed(const event_args& e) override;
       void wnd_proc(message& message) override;
-
-      /// @brief Processes the command message the list_box control receives from the top-level window.
-      /// @param message The message the top-level window sent to the list_box control.
-      virtual void wm_reflect_command(message& message);
-      
-      /// @brief Processes the mouse double-click message the list_box control receives from the top-level window.
-      /// @param message The message the top-level window sent to the list_box control.
-      virtual void wm_mouse_double_click(message& message);
-      
-      /// @brief Processes the mouse down message the list_box control receives from the top-level window.
-      /// @param message The message the top-level window sent to the list_box control.
-      virtual void wm_mouse_down(message& message);
-      
-      /// @brief Processes the mouse up message the list_box control receives from the top-level window.
-      /// @param message The message the top-level window sent to the list_box control.
-      virtual void wm_mouse_up(message& message);
       /// @}
       
     private:
+      void wm_command_control(message& message);
+      void wm_command_control_selchange(message& message);
+      void wm_mouse_double_click(message& message);
+      void wm_mouse_down(message& message);
+      void wm_mouse_up(message& message);
+
       int32_t drop_down_height_ = 0;
       combo_box_style drop_down_style_ = combo_box_style::drop_down;
       int32_t drop_down_width_ = 0;

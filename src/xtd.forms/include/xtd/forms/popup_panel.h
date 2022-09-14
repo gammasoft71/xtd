@@ -52,13 +52,11 @@ namespace xtd {
       void on_layout(const event_args& e) override;
       void on_region_changed(const event_args& e) override;
       void wnd_proc(message& message) override;
-      
-      /// @brief Processes the show window message for the control.
-      /// @param message The message sent to the control.
-      virtual void wm_show(message& message);
       /// @}
       
     private:
+      void wm_show(message& message);
+      
       bool ignore_mouse_messages_ = false;
     };
   }

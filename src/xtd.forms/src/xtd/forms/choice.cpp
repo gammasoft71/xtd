@@ -131,8 +131,17 @@ void choice::wnd_proc(message& message) {
     case WM_LBUTTONDOWN: wm_mouse_down(message); break;
     case WM_LBUTTONUP: wm_mouse_up(message); break;
     case WM_LBUTTONDBLCLK: wm_mouse_double_click(message); break;
-    case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
+    case WM_REFLECT + WM_COMMAND: wm_command_control(message); break;
     default: list_control::wnd_proc(message);
+  }
+}
+
+void choice::wm_command_control(message& message) {
+  def_wnd_proc(message);
+  if (HIWORD(message.wparam()) == LBN_SELCHANGE) {
+    selected_index(native::choice::selected_index(handle()));
+    if (selected_index() != npos) selected_item(items_[selected_index()]);
+    on_click(event_args::empty);
   }
 }
 
@@ -153,10 +162,4 @@ void choice::wm_mouse_up(message& message) {
   if (selected_index() != npos) selected_item(items_[selected_index()]);
   if (allow_selection())
     list_control::wnd_proc(message);
-}
-
-void choice::wm_reflect_command(message& message) {
-  def_wnd_proc(message);
-  selected_index(native::choice::selected_index(handle()));
-  if (selected_index() != npos) selected_item(items_[selected_index()]);
 }

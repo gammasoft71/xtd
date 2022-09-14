@@ -252,18 +252,14 @@ namespace xtd {
       }
       
       void on_paint(paint_event_args& e) override;
+      void wnd_proc(message& message) override;
       /// @}
       
-      /// @cond
-      void wnd_proc(message& message) override;
-      virtual void wm_mouse_double_click(message& message);
-      virtual void wm_mouse_down(message& message);
-      virtual void wm_mouse_up(message& message);
-      /// @endcond
-      
     private:
-      //void wm_click(message& message);
-      //void wm_mouse_up(message& message);
+      void wm_mouse_double_click(message& message);
+      void wm_mouse_down(message& message);
+      void wm_mouse_up(message& message);
+ 
       struct data {
         bool auto_check = true;
         bool three_state = 0;

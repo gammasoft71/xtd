@@ -250,17 +250,14 @@ namespace xtd {
       void on_selected_value_changed(const event_args& e) override;
       
       void wnd_proc(message& message) override;
-      
-      void wm_command_control(message& message) override;
-      
-      void wm_mouse_double_click(message& message) override;
-      
-      void wm_mouse_down(message& message) override;
-      
-      void wm_mouse_up(message& message) override;
       /// @}
       
     private:
+      void wm_command_control(message& message);
+      void wm_mouse_double_click(message& message);
+      void wm_mouse_down(message& message);
+      void wm_mouse_up(message& message);
+
       struct data {
         object_collection items;
         item selected_item;

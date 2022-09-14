@@ -153,9 +153,25 @@ void combo_box::wnd_proc(message& message) {
     case WM_LBUTTONDOWN: wm_mouse_down(message); break;
     case WM_LBUTTONUP: wm_mouse_up(message); break;
     case WM_LBUTTONDBLCLK: wm_mouse_double_click(message); break;
-    case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
+    case WM_REFLECT + WM_COMMAND: wm_command_control(message); break;
     default: list_control::wnd_proc(message);
   }
+}
+
+void combo_box::wm_command_control(message& message) {
+  on_click(event_args::empty);
+  switch (HIWORD(message.wparam())) {
+    case CBN_DROPDOWN: on_drop_down(event_args::empty); break;
+    case CBN_CLOSEUP: on_drop_down_closed(event_args::empty); break;
+    case CBN_SELCHANGE: wm_command_control_selchange(message); break;
+    default: break;
+  }
+}
+
+void combo_box::wm_command_control_selchange(message& message) {
+  def_wnd_proc(message);
+  selected_index(native::combo_box::selected_index(handle()));
+  if (selected_index() != npos) selected_item(items_[selected_index()]);
 }
 
 void combo_box::wm_mouse_double_click(message& message) {
@@ -175,17 +191,4 @@ void combo_box::wm_mouse_up(message& message) {
   if (selected_index() != npos) selected_item(items_[selected_index()]);
   if (allow_selection())
     list_control::wnd_proc(message);
-}
-
-void combo_box::wm_reflect_command(message& message) {
-  switch (HIWORD(message.wparam())) {
-    case CBN_DROPDOWN: on_drop_down(event_args::empty); break;
-    case CBN_CLOSEUP: on_drop_down_closed(event_args::empty); break;
-    case CBN_SELCHANGE:
-      def_wnd_proc(message);
-      selected_index(native::combo_box::selected_index(handle()));
-      if (selected_index() != npos) selected_item(items_[selected_index()]);
-      break;
-    default: break;
-  }
 }

@@ -118,8 +118,6 @@ namespace xtd {
       /// @}
       
       /// @cond
-      virtual void wm_command_control(message& message);
-      
       friend class tab_page;
       size_t get_child_index(intptr_t page) {
         for (size_t index = 0; index < controls().size(); ++index)
@@ -129,6 +127,8 @@ namespace xtd {
       /// @endcond
       
     private:
+      void wm_command_control(message& message);
+
       tab_alignment alignment_ = tab_alignment::top;
       forms::image_list image_list_;
       size_t selected_index_ = npos;

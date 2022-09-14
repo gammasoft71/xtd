@@ -157,25 +157,14 @@ namespace xtd {
       void on_handle_created(const event_args& e) override;
       void on_selected_value_changed(const event_args& e) override;
       void wnd_proc(message& message) override;
-      
-      /// @brief Processes the command message the list_box control receives from the top-level window.
-      /// @param message The message the top-level window sent to the list_box control.
-      virtual void wm_command_control(message& message);
-      
-      /// @brief Processes the mouse double-click message the list_box control receives from the top-level window.
-      /// @param message The message the top-level window sent to the list_box control.
-      virtual void wm_mouse_double_click(message& message);
-      
-      /// @brief Processes the mouse down message the list_box control receives from the top-level window.
-      /// @param message The message the top-level window sent to the list_box control.
-      virtual void wm_mouse_down(message& message);
-      
-      /// @brief Processes the mouse up message the list_box control receives from the top-level window.
-      /// @param message The message the top-level window sent to the list_box control.
-      virtual void wm_mouse_up(message& message);
       /// @}
       
     private:
+      void wm_command_control(message& message);
+      void wm_mouse_double_click(message& message);
+      void wm_mouse_down(message& message);
+      void wm_mouse_up(message& message);
+
       struct data {
         forms::border_sides border_sides = forms::border_sides::all;
         forms::border_style border_style = forms::border_style::fixed_single;
