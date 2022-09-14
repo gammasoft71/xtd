@@ -207,6 +207,9 @@ void list_box::wm_mouse_up(message& message) {
 
 void list_box::wm_command_control(message& message) {
   def_wnd_proc(message);
-  selected_index(native::list_box::selected_index(handle()));
-  if (selected_index() != npos) selected_item(data_->items[selected_index()]);
+  if (HIWORD(message.wparam()) == LBN_SELCHANGE) {
+    selected_index(native::list_box::selected_index(handle()));
+    if (selected_index() != npos) selected_item(data_->items[selected_index()]);
+    on_click(event_args::empty);
+  }
 }

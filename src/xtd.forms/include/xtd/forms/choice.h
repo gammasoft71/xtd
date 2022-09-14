@@ -105,30 +105,17 @@ namespace xtd {
       void set_client_size_core(int32_t width, int32_t height) override;
       
       void wnd_proc(message& message) override;
+  /// @}
       
-      /// @brief Processes the command message the choice control receives from the top-level window.
-      /// @param message The message the top-level window sent to the choice control.
-      virtual void wm_reflect_command(message& message);
-      
-      /// @brief Processes the mouse double-click message the choice control receives from the top-level window.
-      /// @param message The message the top-level window sent to the choice control.
-      virtual void wm_mouse_double_click(message& message);
-      
-      /// @brief Processes the mouse down message the choice control receives from the top-level window.
-      /// @param message The message the top-level window sent to the choice control.
-      virtual void wm_mouse_down(message& message);
-      
-      /// @brief Processes the mouse up message the choice control receives from the top-level window.
-      /// @param message The message the top-level window sent to the choice control.
-      virtual void wm_mouse_up(message& message);
-      /// @}
-      
-      /// @cond
+    private:
+      void wm_command_control(message& message);
+      void wm_mouse_double_click(message& message);
+      void wm_mouse_down(message& message);
+      void wm_mouse_up(message& message);
+
       object_collection items_;
       item selected_item_;
       bool sorted_ = false;
-      bool user_set_size_ = false;
-      /// @endcond
     };
   }
 }

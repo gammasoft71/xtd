@@ -13,6 +13,7 @@ using namespace xtd::forms;
 command_link_button::command_link_button() {
   flat_style(xtd::forms::flat_style::system);
   text_align(content_alignment::middle_left);
+  set_style(control_styles::standard_click | control_styles::standard_double_click, false);
 }
 
 command_link_button& command_link_button::auto_size_mode(forms::auto_size_mode value) {
@@ -42,31 +43,6 @@ void command_link_button::on_handle_created(const event_args& e) {
     native::control::size(handle(), size());
   }
 }
-
-/*
-void button::wnd_proc(message &message) {
-  switch (message.msg()) {
-    case WM_REFLECT + WM_COMMAND: wm_click(message); break;
-    case WM_LBUTTONUP:
-    case WM_MBUTTONUP:
-    case WM_RBUTTONUP:
-    case WM_XBUTTONUP: wm_mouse_up(message); break;
-    default: control::wnd_proc(message);
-  }
-}
-
-void button::wm_click(message& message) {
-  def_wnd_proc(message);
-  on_click(event_args::empty);
-}
-
-void button::wm_mouse_up(message& message) {
-  def_wnd_proc(message);
-  mouse_event_args e = mouse_event_args::create(message);
-  on_mouse_click(e);
-  on_mouse_up(e);
-}
- */
 
 drawing::size command_link_button::measure_control() const {
   drawing::size size = button_base::measure_control();

@@ -1729,9 +1729,7 @@ void control::wm_command(message& message) {
 }
 
 void control::wm_command_control(message& message) {
-  if (HIWORD(message.wparam()) == BN_CLICKED) {
-    on_click(event_args::empty);
-  }
+  if (HIWORD(message.wparam()) == BN_CLICKED) on_click(event_args::empty);
   def_wnd_proc(message);
 }
 

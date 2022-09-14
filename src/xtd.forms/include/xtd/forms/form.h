@@ -393,22 +393,6 @@ namespace xtd {
       
       void on_resize(const event_args& e) override;
       void wnd_proc(message& message) override;
-      
-      /// @brief Processes the active message the form control receives as the top-level window.
-      /// @param message The message sent to the top-level window.
-      virtual void wm_activate(message& message);
-      
-      /// @brief Processes the close message the form control receives as the top-level window.
-      /// @param message The message sent to the top-level window.
-      virtual void wm_close(message& message);
-      
-      /// @brief Processes the recreate window message the form control receives as the top-level window.
-      /// @param message The message sent to the top-level window.
-      virtual void wm_recreate(message& message);
-      
-      /// @brief Processes the system color change message the form control receives as the top-level window.
-      /// @param message The message sent to the top-level window.
-      virtual void wm_syscolor_change(message& message);
       /// @}
       
     private:
@@ -422,7 +406,12 @@ namespace xtd {
       void fill_in_create_params_border_styles(xtd::forms::create_params& cp) const;
       void fill_in_create_params_start_position(xtd::forms::create_params& cp) const;
       void fill_in_create_params_window_state(xtd::forms::create_params& cp) const;
-      
+
+      void wm_activate(message& message);
+      void wm_close(message& message);
+      void wm_recreate(message& message);
+      void wm_syscolor_change(message& message);
+
       std::optional<std::reference_wrapper<ibutton_control>> accept_button_;
       std::optional<std::reference_wrapper<ibutton_control>> cancel_button_;
       static std::optional<std::reference_wrapper<form>> active_form_;

@@ -415,59 +415,6 @@ forms::create_params form::create_params() const {
   return cp;
 }
 
-void form::wnd_proc(message& message) {
-  switch (message.msg()) {
-    case WM_ACTIVATE: wm_activate(message); break;
-    case WM_CLOSE: wm_close(message); break;
-    case WM_MENUCOMMAND: if (menu_.has_value()) menu_.value().get().wm_click(message); break;
-    case WM_SYSCOLORCHANGE: wm_syscolor_change(message); break;
-    case WM_RECREATE: wm_recreate(message); break;
-    default: container_control::wnd_proc(message); break;
-  }
-}
-
-void form::wm_activate(message& message) {
-  if (message.lparam() == WA_INACTIVE && active_form_.has_value() && &active_form_.value().get() == this) {
-    active_form_.reset();
-    on_deactivate(event_args::empty);
-  } else {
-    active_form_ = *this;
-    on_activated(event_args::empty);
-  }
-}
-
-void form::wm_close(message& message) {
-  if (closed_) return;
-  form_closing_event_args event_args;
-  on_form_closing(event_args);
-  message.result(event_args.cancel() == true);
-  if (event_args.cancel() != true) {
-    closed_ = true;
-    if (!get_state(state::modal))
-      hide();
-    else {
-      if (dialog_result_ == forms::dialog_result::none) dialog_result_ = forms::dialog_result::cancel;
-      native::form::end_dialog(handle(), static_cast<int32_t>(dialog_result_));
-      set_parent(parent_before_show_dialog_);
-      set_state(state::modal, false);
-      post_recreate_handle();
-    }
-    on_form_closed(form_closed_event_args());
-  }
-}
-
-void form::wm_recreate(message& message) {
-  auto current_location = location();
-  recreate_handle();
-  location(current_location);
-}
-
-void form::wm_syscolor_change(message& message) {
-  def_wnd_proc(message);
-  if (&application::open_forms()[0].get() == this) style_sheets::style_sheet::on_system_colors_changed(event_args::empty);
-  on_system_colors_changed(event_args::empty);
-}
-
 void form::on_handle_created(const event_args& e) {
   container_control::on_handle_created(e);
   if (show_icon_ && icon_ != drawing::icon::empty) native::form::icon(handle(), icon_);
@@ -520,6 +467,17 @@ void form::on_resize(const event_args& e) {
 
 void form::on_system_colors_changed(const event_args& e) {
   if (can_raise_events()) system_colors_changed(*this, e);
+}
+
+void form::wnd_proc(message& message) {
+  switch (message.msg()) {
+    case WM_ACTIVATE: wm_activate(message); break;
+    case WM_CLOSE: wm_close(message); break;
+    case WM_MENUCOMMAND: if (menu_.has_value()) menu_.value().get().wm_click(message); break;
+    case WM_SYSCOLORCHANGE: wm_syscolor_change(message); break;
+    case WM_RECREATE: wm_recreate(message); break;
+    default: container_control::wnd_proc(message); break;
+  }
 }
 
 void form::internal_set_window_state() {
@@ -661,4 +619,46 @@ void form::fill_in_create_params_window_state(xtd::forms::create_params& cp) con
     case form_window_state::minimized: cp.style(cp.style() | WS_MINIMIZE); break;
     default: break;
   }
+}
+
+void form::wm_activate(message& message) {
+  if (message.lparam() == WA_INACTIVE && active_form_.has_value() && &active_form_.value().get() == this) {
+    active_form_.reset();
+    on_deactivate(event_args::empty);
+  } else {
+    active_form_ = *this;
+    on_activated(event_args::empty);
+  }
+}
+
+void form::wm_close(message& message) {
+  if (closed_) return;
+  form_closing_event_args event_args;
+  on_form_closing(event_args);
+  message.result(event_args.cancel() == true);
+  if (event_args.cancel() != true) {
+    closed_ = true;
+    if (!get_state(state::modal))
+      hide();
+    else {
+      if (dialog_result_ == forms::dialog_result::none) dialog_result_ = forms::dialog_result::cancel;
+      native::form::end_dialog(handle(), static_cast<int32_t>(dialog_result_));
+      set_parent(parent_before_show_dialog_);
+      set_state(state::modal, false);
+      post_recreate_handle();
+    }
+    on_form_closed(form_closed_event_args());
+  }
+}
+
+void form::wm_recreate(message& message) {
+  auto current_location = location();
+  recreate_handle();
+  location(current_location);
+}
+
+void form::wm_syscolor_change(message& message) {
+  def_wnd_proc(message);
+  if (&application::open_forms()[0].get() == this) style_sheets::style_sheet::on_system_colors_changed(event_args::empty);
+  on_system_colors_changed(event_args::empty);
 }
