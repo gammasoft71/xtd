@@ -16,8 +16,8 @@
   * [Split container](#split-container)
   * [Tab control](#tab-control)
 * [User container](#user-container)
-  * [Horizontal stack layout](#horizontal-stack-layout)
-  * [Vertical stack layout](#vertical-stack-layout)
+  * [Horizontal stack panel](#horizontal-stack-panel)
+  * [Vertical stack panel](#vertical-stack-panel)
 
 ## Controls
 
@@ -213,9 +213,9 @@ Comming soon...
 
 xtd is flexible and complete enough to create your own container without much effort.
 
-### Horizontal stack layout
+### Horizontal stack panel
 
-The following example show how to make your own horizontal stack layout esasily with overloading [on_layout](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga277d5f851e0d49163d9fdecaace4d7bd) method.
+The following example show how to make your own horizontal stack panel esasily with overloading [on_layout](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga277d5f851e0d49163d9fdecaace4d7bd) method.
 
 ```c++
 #include <xtd/xtd.forms.h>
@@ -223,7 +223,7 @@ The following example show how to make your own horizontal stack layout esasily 
 using namespace xtd;
 using namespace xtd::forms;
 
-class stack_horizontal_layout_panel : public panel {
+class horizontal_stack_panel : public panel {
 protected:
   void on_layout(const event_args& e) override {
     panel::on_layout(e);
@@ -250,7 +250,7 @@ public:
   }
   
 private:
-  stack_horizontal_layout_panel panel1;
+  horizontal_stack_panel panel1;
   button button1;
   button button2;
   button button3;
@@ -262,9 +262,9 @@ int main() {
 }
 ```
 
-### Vertical stack layout
+### Vertical stack panel
 
-The following example show how to make your own vertical stack layout esasily with [dock](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#adb3febb83c715c2f7e014b47c9cb1df7) and overloading [on_control_added](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga76d3b55915e43555fe652aa4d71ae2f0) method.
+The following example show how to make your own vertical stack panel esasily with [dock](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#adb3febb83c715c2f7e014b47c9cb1df7) and overloading [on_control_added](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga76d3b55915e43555fe652aa4d71ae2f0) method.
 
 ```c++
 #include <xtd/xtd.forms.h>
@@ -272,7 +272,7 @@ The following example show how to make your own vertical stack layout esasily wi
 using namespace xtd;
 using namespace xtd::forms;
 
-class stack_vertical_layout_panel : public panel {
+class vertical_stack_panel : public panel {
 protected:
   void on_control_added(const control_event_args& e) override {
     panel::on_control_added(e);
@@ -295,7 +295,7 @@ public:
   }
   
 private:
-  stack_vertical_layout_panel panel1;
+  vertical_stack_panel panel1;
   button button1;
   button button2;
   button button3;
