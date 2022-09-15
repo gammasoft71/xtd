@@ -49,7 +49,7 @@ For more information, see [Size and location properties](https://github.com/gamm
 ## Layout containers
 
 ### Controls
-* [flow_layout_manel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1flow__layout__panel.html)
+* [flow_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1flow__layout__panel.html)
 * [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html)
 * [table_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1table__layout__panel.html)
 * [vertical_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html)
@@ -59,7 +59,7 @@ Unlike standard containers, they manage the size, position and layout of child c
 
 #### Remarks
 
-Layout containers can use the dock or anchor to position themselves in the parent control (Generally we use ```c++ dock(dock_style::fill))```. 
+Layout containers can use the dock or anchor to position themselves in the parent control (Usually we use ```c++ dock(dock_style::fill))```. 
 
 On the other hand, child controls of layout panel cannot use the dock or anchor properties because it is the layout panel that decides how to display them according to the chosen options.
 
