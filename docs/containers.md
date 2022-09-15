@@ -42,6 +42,49 @@ For more information, see [Size and location properties](https://github.com/gamm
 
 The [fixed_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1fixed__layout__panel.html) is used to group collections of fixed aligned controls.
 
+#### Example
+
+The following example demonstrates the use of [fixed_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1fixed__layout__panel.html) container.
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd::forms;
+
+class form1 : public form {
+public:
+  form1() {
+    client_size({400, 200});
+    
+    panel1.parent(*this).dock(dock_style::fill);
+    panel1.controls().push_back_range({button1, button2, button3, button4});
+    
+    button1.location({10, 10});
+    button1.text("button 1");
+
+    button2.location({10, 55});
+    button2.text("button 2");
+
+    button3.location({10, 100});
+    button3.text("button 3");
+
+    button4.location({10, 145});
+    button4.text("button 4");
+  }
+  
+private:
+  fixed_layout_panel panel1;
+  button button1;
+  button button2;
+  button button3;
+  button button4;
+};
+
+int main() {
+  application::run(form1());
+}
+```
+
 ### Group box
 
 [group_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1group__box.html) represents a Windows control that displays a frame around a group of controls with an optional caption.
@@ -50,6 +93,47 @@ The [fixed_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_
 
 [panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1panel.html) is used to group collections of controls.
 
+The following example demonstrates the use of [panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1panel.html) container.
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd::forms;
+
+class form1 : public form {
+public:
+  form1() {
+    client_size({400, 200});
+    
+    panel1.parent(*this).dock(dock_style::fill);
+    panel1.controls().push_back_range({button1, button2, button3, button4});
+    
+    button1.location({10, 10});
+    button1.text("button 1");
+
+    button2.location({10, 55});
+    button2.text("button 2");
+
+    button3.location({10, 100});
+    button3.text("button 3");
+
+    button4.location({10, 145});
+    button4.text("button 4");
+  }
+  
+private:
+  fixed_layout_panel panel1;
+  button button1;
+  button button2;
+  button button3;
+  button button4;
+};
+
+int main() {
+  application::run(form1());
+}
+```
+
 ### Popup panel
 
 [popup_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1popup__panel.html) represents a special type of panel container that can be used for [context_menu](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1context__menu.html), [combo_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1combo__box.html) popups and more.
@@ -57,6 +141,8 @@ The [fixed_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_
 ### Splitter panel
 
 [splitter_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1splitter__panel.html) represents a panel that is associated with a split_container.
+
+*Comming soon...*
 
 ### Tab page
 
