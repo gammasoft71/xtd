@@ -12,9 +12,9 @@
   * [Table layout panel](#table-layout-panel)
   * [Vertical layout panel](#vertical-layout-panel)
 * [Specific containers](#specific-containers)
-  * [collapsible_panel](#collapsible_panel)
-  * [split_container](#split_container)
-  * [tab_control](#tab_control)
+  * [Collapsible panel](#collapsible-panel)
+  * [Split container](#split-container)
+  * [Tab control](#tab-control)
 * [User container](#user-container)
   * [Horizontal stack layout](#horizontal-stack-layout)
   * [Vertical stack layout](#vertical-stack-layout)
@@ -22,7 +22,7 @@
 ## Controls
 
 Any control can be a container. Indeed a control can have several children.
-For more information, see [Parent and children](https://github.com/gammasoft71/xtd/blob/master/docs/xtd_forms_explanations.md#parent-and-childdren).
+For more information, see [Parent and children](https://github.com/gammasoft71/xtd/blob/master/docs/xtd_forms_explanations.md#parent-and-children).
 
 Even if it is possible, in general we prefer to use defined containers which have properties specific to their role.
 
@@ -38,7 +38,7 @@ Even if it is possible, in general we prefer to use defined containers which hav
 
 These containers use [location](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a704049ab20aa16e25dca51911b0ba13b), [size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a2a9c3b512b6748c8330fe2231839c4cb), [auto_size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#ad6dfcca7a2ecd41e2679d6b3085103fe), [anchor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a3908bffd315d0bfc8b2656f89e2dc42c) and [dock](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#adb3febb83c715c2f7e014b47c9cb1df7) for children controls.
 
-For more information, see [Size and location properties](https://github.com/gammasoft71/xtd/blob/master/docs/size_and_location_properties.md) and [posiiotn and layout of controls](https://github.com/gammasoft71/xtd/blob/master/docs/position_and_layout_of_controls.md).
+For more information, see [Size and location properties](https://github.com/gammasoft71/xtd/blob/master/docs/size_and_location_properties.md) and [Position and layout of controls](https://github.com/gammasoft71/xtd/blob/master/docs/position_and_layout_of_controls.md).
 
 ### Remarks
 
@@ -59,7 +59,7 @@ Unlike standard panels, they define the size, position and layout of child contr
 
 #### Remarks
 
-Layout containers can use the dock or anchor to position themselves in the parent control (Generally we use dock(dock_style::fill)). 
+Layout containers can use the dock or anchor to position themselves in the parent control (Generally we use ```c++ dock(dock_style::fill))```. 
 
 On the other hand, child controls of layout panel cannot use the dock or anchor properties because it is the layout panel that decides how to display them according to the chosen options.
 
@@ -75,34 +75,104 @@ Used to group collections of horizontally aligned controls.
 
 ### Horizontal layout panel styles
 
-#### styles
+For each child control of [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) an [horizontal_layout_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__control__layout__style.html) style is associate.
+You can specify for each chid control the layout style to the layout container by the method [control_layout_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html#a6e1ad8fe72ee251ca0c35e7316cc29fa).
+If you don't specify the layout style, it use the style by default.
 
-You must specify for each chid control the layout style to the layout container by the method vertical_layout_control_style for vertical_layout_style and horontal_layout_style for horizontal_layout_style.
+An [horizontal_layout_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__control__layout__style.html) is composed of :
+* content_alignment :	One of the [content_alignment](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) values. The default is middle_center.
+  * top_left : Content is vertically aligned at the top, and horizontally aligned on the left.
+  * top_center : Content is vertically aligned at the top, and horizontally aligned at the center.
+  * top_right : Content is vertically aligned at the top, and horizontally aligned on the right.
+  * middle_left : Content is vertically aligned in the middle, and horizontally aligned on the left.
+  * middle_center : Content is vertically aligned at the middle, and horizontally aligned at the center.
+  * middle_right : Content is vertically aligned at the middle, and horizontally aligned on the right.
+  * bottom_left : Content is vertically aligned in the bottom, and horizontally aligned on the left.
+  * bottom_center : Content is vertically aligned at the bottom, and horizontally aligned at the center.
+  * bottom_right : Content is vertically aligned at the bottom, and horizontally aligned on the right.
+* exapend : A flag indicating if control is expanded to its containing layout container. The default is false.
+* size_type : One of the [size_type](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is auto_size.
+  * auto_size : The control should be automatically sized to share space with its peers.
+  * absolute : The control should be sized to an exact number of pixels. (Style by default)
+  * percent : The control should be sized as a percentage of the parent container.
+* width : The prefered width in pixel or percent depending the size_type. The default is std::nullopt.
 
-#### width or height
+#### Example
 
-You can specify the prefered width for horizontal_layout_panel or height for vertical_lyout__panel in pixel or percent depending the size_type.
+This example shows how to create a [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) with children that have a default style.
 
-#### Exapend 
+```c++
+#include <xtd/xtd.forms.h>
 
-A flag indicating if control is expanded to its containing layout container verticaly or horizontaly depend if vertical_layout_panel or horizontal_layout_panel.
+using namespace xtd;
+using namespace xtd::forms;
 
-#### size_type
+class form1 : public form {
+public:
+  form1() {
+    client_size({400, 200});
+    
+    panel1.parent(*this).dock(dock_style::fill);
+    panel1.controls().push_back_range({button1, button2, button3, button4});
+    
+    button1.flat_style(xtd::forms::flat_style::popup).text("button 1");
+    button2.flat_style(xtd::forms::flat_style::popup).text("button 2");
+    button3.flat_style(xtd::forms::flat_style::popup).text("button 3");
+    button4.flat_style(xtd::forms::flat_style::popup).text("button 4");
+  }
+  
+private:
+  horizontal_layout_panel panel1;
+  button button1;
+  button button2;
+  button button3;
+  button button4;
+};
 
-* auto_size : The control should be automatically sized to share space with its peers.
-* absolute : The control should be sized to an exact number of pixels. (Style by default)
-* percent : The control should be sized as a percentage of the parent container.
+int main() {
+  application::run(form1());
+}
+```
 
-#### content_alignment
-* top_left : Content is vertically aligned at the top, and horizontally aligned on the left.
-* top_center : Content is vertically aligned at the top, and horizontally aligned at the center.
-* top_right : Content is vertically aligned at the top, and horizontally aligned on the right.
-* middle_left : Content is vertically aligned in the middle, and horizontally aligned on the left.
-* middle_center : Content is vertically aligned at the middle, and horizontally aligned at the center.
-* middle_right : Content is vertically aligned at the middle, and horizontally aligned on the right.
-* bottom_left : Content is vertically aligned in the bottom, and horizontally aligned on the left.
-* bottom_center : Content is vertically aligned at the bottom, and horizontally aligned at the center.
-* bottom_right : Content is vertically aligned at the bottom, and horizontally aligned on the right.
+This example shows how to create a [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) with children should be sized as a percentage of the parent container.
+
+```c++
+#include <xtd/xtd.forms.h>
+
+using namespace xtd;
+using namespace xtd::forms;
+
+class form1 : public form {
+public:
+  form1() {
+    client_size({400, 200});
+    
+    panel1.parent(*this).dock(dock_style::fill);
+    panel1.controls().push_back_range({button1, button2, button3, button4});
+    
+    panel1.control_layout_style(button1, horizontal_control_layout_style{.15f, size_type::percent});
+    panel1.control_layout_style(button2, horizontal_control_layout_style{.35f, size_type::percent});
+    panel1.control_layout_style(button3, horizontal_control_layout_style{.35f, size_type::percent});
+    panel1.control_layout_style(button4, horizontal_control_layout_style{.15f, size_type::percent});
+
+    button1.flat_style(xtd::forms::flat_style::popup).text("button 1");
+    button2.flat_style(xtd::forms::flat_style::popup).text("button 2");
+    button3.flat_style(xtd::forms::flat_style::popup).text("button 3");
+    button4.flat_style(xtd::forms::flat_style::popup).text("button 4");
+  }
+  
+private:
+  horizontal_layout_panel panel1;
+  button button1;
+  button button2;
+  button button3;
+  button button4;
+};
+
+int main() {
+  application::run(form1());
+}
+```
 
 ### Table layout panel
 
@@ -125,13 +195,19 @@ Used to group collections of verticaly aligned controls.
 
 Used to group collections of controls in a collapsible panel.
 
-### split_container
+Comming soon...
+
+### Split container
 
 Represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
+
+Comming soon...
  
-### tab_control
+### Tab control
  
 Manages a related set of tab pages.
+
+Comming soon...
 
 ## User container
 
@@ -139,7 +215,7 @@ xtd is flexible and complete enough to create your own container without much ef
 
 ### Horizontal stack layout
 
-The following example show how to make an horizontal stack layout esasily with overloading [on_layout](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga277d5f851e0d49163d9fdecaace4d7bd) method.
+The following example show how to make your own horizontal stack layout esasily with overloading [on_layout](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga277d5f851e0d49163d9fdecaace4d7bd) method.
 
 ```c++
 #include <xtd/xtd.forms.h>
@@ -147,7 +223,7 @@ The following example show how to make an horizontal stack layout esasily with o
 using namespace xtd;
 using namespace xtd::forms;
 
-class stack_horizotal_layout_panel : public panel {
+class stack_horizontal_layout_panel : public panel {
 protected:
   void on_layout(const event_args& e) override {
     panel::on_layout(e);
@@ -174,7 +250,7 @@ public:
   }
   
 private:
-  stack_horizotal_layout_panel panel1;
+  stack_horizontal_layout_panel panel1;
   button button1;
   button button2;
   button button3;
@@ -188,7 +264,7 @@ int main() {
 
 ### Vertical stack layout
 
-The following example show how to make a vertical stack layout esasily with [dock](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#adb3febb83c715c2f7e014b47c9cb1df7) and overloading [on_control_added](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga76d3b55915e43555fe652aa4d71ae2f0) method.
+The following example show how to make your own vertical stack layout esasily with [dock](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#adb3febb83c715c2f7e014b47c9cb1df7) and overloading [on_control_added](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga76d3b55915e43555fe652aa4d71ae2f0) method.
 
 ```c++
 #include <xtd/xtd.forms.h>
