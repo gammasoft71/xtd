@@ -43,13 +43,13 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Overview](xtd_forms_explanations.md)
     * [Controls management](controls_management.md)
     * [Control appearance](control_appearance.md)
+    * [Containers](containers.md)
     * [How to make thread-safe calls](thread_safe_control_call.md)
+
   * Properties
     * [Size and location properties](size_and_location_properties.md)
     * [Ambient properties](ambient_properties.md)
     * [Position and layout of controls](position_and_layout_of_controls.md)
-  * Controls
-    * [Containers](containers.md)
   * Style sheets
     * [Overview](guide_style_sheets_overview.md)
     * [Reference](guide_style_sheets_reference.md)
