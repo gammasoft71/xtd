@@ -98,6 +98,7 @@ An [horizontal_layout_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1fo
 * width : The prefered width in pixel or percent depending the size_type. The default is std::nullopt.
 
 #### Remarks
+
 If you don't set expand to true and you set the height of the control. the [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) will take this into account.
 But not the width.
 
@@ -228,12 +229,159 @@ Comming soon...
 
 Used to group collections of verticaly aligned controls.
 
+### Vertical layout panel styles
+
+For each child control of [vertical_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html) an [vertical_layout_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__control__layout__style.html) style is associate.
+You can specify for each chid control the layout style to the layout container by the method [control_layout_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html#a6e1ad8fe72ee251ca0c35e7316cc29fa).
+If you don't specify the layout style, it use the style by default.
+
+An [vertical_layout_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__control__layout__style.html) is composed of :
+* content_alignment :	One of the [content_alignment](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) values. The default is middle_center.
+  * top_left : Content is vertically aligned at the top, and horizontally aligned on the left.
+  * top_center : Content is vertically aligned at the top, and horizontally aligned at the center.
+  * top_right : Content is vertically aligned at the top, and horizontally aligned on the right.
+  * middle_left : Content is vertically aligned in the middle, and horizontally aligned on the left.
+  * middle_center : Content is vertically aligned at the middle, and horizontally aligned at the center.
+  * middle_right : Content is vertically aligned at the middle, and horizontally aligned on the right.
+  * bottom_left : Content is vertically aligned in the bottom, and horizontally aligned on the left.
+  * bottom_center : Content is vertically aligned at the bottom, and horizontally aligned at the center.
+  * bottom_right : Content is vertically aligned at the bottom, and horizontally aligned on the right.
+* exapend : A flag indicating if control is expanded to its containing layout container. The default is false.
+* size_type : One of the [size_type](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is auto_size.
+  * auto_size : The control should be automatically sized to share space with its peers.
+  * absolute : The control should be sized to an exact number of pixels. (Style by default)
+  * percent : The control should be sized as a percentage of the parent container.
+* width : The prefered width in pixel or percent depending the size_type. The default is std::nullopt.
+
+#### Remarks
+
+If you don't set expand to true and you set the width of the control. the [vertical_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html) will take this into account.
+But not the height.
+
+
+#### Examples
+
+The following example shows how to create a [vertical_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html) with children that have a default style.
+
+```c++
+#include <xtd/xtd.forms.h>
+
+using namespace xtd;
+using namespace xtd::forms;
+
+class form1 : public form {
+public:
+  form1() {
+    client_size({200, 400});
+    
+    panel1.parent(*this).dock(dock_style::fill);
+    panel1.controls().push_back_range({button1, button2, button3, button4});
+    
+    button1.flat_style(xtd::forms::flat_style::popup).text("button 1");
+    button2.flat_style(xtd::forms::flat_style::popup).text("button 2");
+    button3.flat_style(xtd::forms::flat_style::popup).text("button 3");
+    button4.flat_style(xtd::forms::flat_style::popup).text("button 4");
+  }
+  
+private:
+  vertical_layout_panel panel1;
+  button button1;
+  button button2;
+  button button3;
+  button button4;
+};
+
+int main() {
+  application::run(form1());
+}
+```
+
+The following example shows how to create a [vertical_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html) whose children must have a size corresponding to a percentage of the parent container.
+
+```c++
+#include <xtd/xtd.forms.h>
+
+using namespace xtd;
+using namespace xtd::forms;
+
+class form1 : public form {
+public:
+  form1() {
+    client_size({200, 400});
+    
+    panel1.parent(*this).dock(dock_style::fill);
+    panel1.controls().push_back_range({button1, button2, button3, button4});
+    
+    panel1.control_layout_style(button1, vertical_control_layout_style{.15f, size_type::percent});
+    panel1.control_layout_style(button2, vertical_control_layout_style{.35f, size_type::percent});
+    panel1.control_layout_style(button3, vertical_control_layout_style{.35f, size_type::percent});
+    panel1.control_layout_style(button4, vertical_control_layout_style{.15f, size_type::percent});
+
+    button1.flat_style(xtd::forms::flat_style::popup).text("button 1");
+    button2.flat_style(xtd::forms::flat_style::popup).text("button 2");
+    button3.flat_style(xtd::forms::flat_style::popup).text("button 3");
+    button4.flat_style(xtd::forms::flat_style::popup).text("button 4");
+  }
+  
+private:
+  vertical_layout_panel panel1;
+  button button1;
+  button button2;
+  button button3;
+  button button4;
+};
+
+int main() {
+  application::run(form1());
+}
+```
+
+The following example shows how to create a [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) whose children must have a size corresponding to a abosulte value in pixels and set expand to true.
+
+```c++
+#include <xtd/xtd.forms.h>
+
+using namespace xtd;
+using namespace xtd::forms;
+
+class form1 : public form {
+public:
+  form1() {
+    client_size({200, 400});
+    
+    panel1.parent(*this).dock(dock_style::fill);
+    panel1.controls().push_back_range({button1, button2, button3, button4});
+    
+    panel1.control_layout_style(button1, vertical_control_layout_style{75, size_type::absolute, true});
+    panel1.control_layout_style(button2, vertical_control_layout_style{125, size_type::absolute, true});
+    panel1.control_layout_style(button3, vertical_control_layout_style{125, size_type::absolute, true});
+    panel1.control_layout_style(button4, vertical_control_layout_style{75, size_type::absolute, true});
+
+    button1.flat_style(xtd::forms::flat_style::popup).text("button 1");
+    button2.flat_style(xtd::forms::flat_style::popup).text("button 2");
+    button3.flat_style(xtd::forms::flat_style::popup).text("button 3");
+    button4.flat_style(xtd::forms::flat_style::popup).text("button 4");
+  }
+  
+private:
+  vertical_layout_panel panel1;
+  button button1;
+  button button2;
+  button button3;
+  button button4;
+};
+
+int main() {
+  application::run(form1());
+}
+```
+
 ## Specific containers
 
 ### Controls
-* [collapsible_panel]()
-* [split_container]()
-* [tab_control]()
+* [collapsible_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1collapsible__panel.html)
+* [split_container](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1split__container.html)
+* [tab_control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__control.html)
 
 ### Collapsible panel
 
@@ -245,13 +393,19 @@ Comming soon...
 
 Represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
 
+#### Remarks
+
+The child control for the [split_container](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1split__container.html) are [splitter_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1splitter__panel.html).
+
 Comming soon...
  
 ### Tab control
  
 Manages a related set of tab pages.
 
-Comming soon...
+#### Remarks
+
+The child controls for the [tab_control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__control.html) are [tab_page](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__page.html).
 
 ## User container
 
