@@ -97,9 +97,9 @@ An [horizontal_layout_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1fo
   * percent : The control should be sized as a percentage of the parent container.
 * width : The prefered width in pixel or percent depending the size_type. The default is std::nullopt.
 
-#### Example
+#### Examples
 
-This example shows how to create a [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) with children that have a default style.
+The following example shows how to create a [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) with children that have a default style.
 
 ```c++
 #include <xtd/xtd.forms.h>
@@ -134,7 +134,7 @@ int main() {
 }
 ```
 
-This example shows how to create a [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) with children should be sized as a percentage of the parent container.
+The following example shows how to create a [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) whose children must have a size corresponding to a percentage of the parent container.
 
 ```c++
 #include <xtd/xtd.forms.h>
