@@ -26,7 +26,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of timer component.
     /// @include timer.cpp
-    class forms_export_ timer final : public component {
+    class forms_export_ timer : public component {
     public:
       /// @name Constructors
       
