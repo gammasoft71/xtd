@@ -42,7 +42,7 @@ For more information, see [Size and location properties](https://github.com/gamm
 
 The [fixed_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1fixed__layout__panel.html) is used to group collections of fixed aligned controls.
 
-### Group box]
+### Group box
 
 [group_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1group__box.html) represents a Windows control that displays a frame around a group of controls with an optional caption.
 
