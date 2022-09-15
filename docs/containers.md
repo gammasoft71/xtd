@@ -59,7 +59,7 @@ Unlike standard containers, they manage the size, position and layout of child c
 
 #### Remarks
 
-Layout containers can use the dock or anchor to position themselves in the parent control (Usually we use ```c++ dock(dock_style::fill))```. 
+Layout containers can use the dock or anchor to position themselves in the parent control (Usually we use ```dock(dock_style::fill))```. 
 
 On the other hand, child controls of layout panel cannot use the dock or anchor properties because it is the layout panel that decides how to display them according to the chosen options.
 
