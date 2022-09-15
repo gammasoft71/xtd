@@ -18,7 +18,7 @@
   * [Control type](#control-type)
   * [Control class diagram](#control-class-diagram)
   * [Control objects](#control-objects)
-  * [Parent and childdren](#parent-and-childdren)
+  * [Parent and children](#parent-and-children)
     * [Add parent](#add-parent)
     * [Remove parent](#remove-parent)
     * [Update parent](#update-parent)
@@ -237,7 +237,7 @@ The controls do not have the same completeness. They could be classified in diff
 
 An [xtd::forms::control](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/control.h) can be instantiated in the same way as another control.
 
-### Parent and childdren
+### Parent and children
 
 All controls must have a parent, except [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h) which cannot have one (An exception [xtd::invalid_operation_exception](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/invalid_operation_exception.h) will be generated if you try).
 
@@ -537,7 +537,7 @@ If he doesn't know exactly how his control will evolve, the best is to use [xtd:
 
 ## Containers
 
-Containers are a specialization of controls. Although by line any control can be a container (see [Parent and Childdren](#parent-and-childdren)).
+Containers are a specialization of controls. Although by line any control can be a container (see [Parent and children](#parent-and-children)).
 
 The base class of a container is [xtd::forms::container_control](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/container_control.h).
 
