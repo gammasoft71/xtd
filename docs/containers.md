@@ -89,6 +89,49 @@ int main() {
 
 [group_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1group__box.html) represents a Windows control that displays a frame around a group of controls with an optional caption.
 
+#### Example
+
+The following example demonstrates the use of [group_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1group__box.html) container.
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd::forms;
+
+class form1 : public form {
+public:
+  form1() {
+    client_size({400, 200});
+    
+    grouup_box1.parent(*this).dock(dock_style::fill);
+    grouup_box1.controls().push_back_range({button1, button2, button3, button4});
+    
+    button1.location({10, 10});
+    button1.text("button 1");
+
+    button2.location({10, 55});
+    button2.text("button 2");
+
+    button3.location({10, 100});
+    button3.text("button 3");
+
+    button4.location({10, 145});
+    button4.text("button 4");
+  }
+  
+private:
+  group_box grouup_box1;
+  button button1;
+  button button2;
+  button button3;
+  button button4;
+};
+
+int main() {
+  application::run(form1());
+}
+```
+
 ### Panel
 
 [panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1panel.html) is used to group collections of controls.
@@ -137,6 +180,59 @@ int main() {
 ### Popup panel
 
 [popup_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1popup__panel.html) represents a special type of panel container that can be used for [context_menu](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1context__menu.html), [combo_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1combo__box.html) popups and more.
+
+#### Example
+
+The following example demonstrates the use of [popup_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1popup__panel.html) container.
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd;
+using namespace xtd::drawing;
+using namespace xtd::forms;
+
+class form1 : public form {
+public:
+  form1() {
+    text("Popup panel example");
+    client_size({300, 100});
+    controls().push_back_range({button1, popup_panel1});
+    
+    list_box1.parent(popup_panel1);
+    list_box1.dock(dock_style::fill);
+    list_box1.items().push_back_range({{"clear", button_images::from_name("weather-clear")}, {"clear night", button_images::from_name("weather-clear-night")}, {"few clouds", button_images::from_name("weather-few-clouds")}, {"few clouds night", button_images::from_name("weather-few-clouds-night")}, {"fog", button_images::from_name("weather-fog")}, {"overcast", button_images::from_name("weather-overcast")}, {"severe alert", button_images::from_name("weather-severe-alert")}, {"showers", button_images::from_name("weather-showers")}, {"showers scattered", button_images::from_name("weather-showers-scattered")}, {"snow", button_images::from_name("weather-snow")}, {"storm", button_images::from_name("weather-storm")}});
+    list_box1.selected_index(0);
+    list_box1.click += [&] {
+      button1.text(list_box1.selected_item().value());
+      button1.image(as<image>(list_box1.selected_item().tag()));
+      popup_panel1.hide();
+    };
+    
+    button1.location({10, 10});
+    button1.size({160, 50});
+    button1.image_align(content_alignment::top_center);
+    button1.text_align(content_alignment::bottom_center);
+    button1.text(list_box1.selected_item().value());
+    button1.image(as<image>(list_box1.selected_item().tag()));
+    button1.click += [&] {
+      popup_panel1.show();
+    };
+
+    popup_panel1.location(button1.location());
+    popup_panel1.width(button1.width());
+  }
+  
+private:
+  button button1;
+  list_box list_box1;
+  popup_panel popup_panel1;
+};
+
+int main() {
+  application::run(form1 {});
+}
+```
 
 ### Splitter panel
 
