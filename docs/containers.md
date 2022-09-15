@@ -81,20 +81,20 @@ If you don't specify the layout style, it use the style by default.
 
 An [horizontal_layout_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__control__layout__style.html) is composed of :
 * content_alignment :	One of the [content_alignment](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) values. The default is middle_center.
-  * top_left : Content is vertically aligned at the top, and horizontally aligned on the left.
-  * top_center : Content is vertically aligned at the top, and horizontally aligned at the center.
-  * top_right : Content is vertically aligned at the top, and horizontally aligned on the right.
-  * middle_left : Content is vertically aligned in the middle, and horizontally aligned on the left.
-  * middle_center : Content is vertically aligned at the middle, and horizontally aligned at the center.
-  * middle_right : Content is vertically aligned at the middle, and horizontally aligned on the right.
-  * bottom_left : Content is vertically aligned in the bottom, and horizontally aligned on the left.
-  * bottom_center : Content is vertically aligned at the bottom, and horizontally aligned at the center.
-  * bottom_right : Content is vertically aligned at the bottom, and horizontally aligned on the right.
+  * [top_left](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the top, and horizontally aligned on the left.
+  * [top_center](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the top, and horizontally aligned at the center.
+  * [top_right](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the top, and horizontally aligned on the right.
+  * [middle_left](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned in the middle, and horizontally aligned on the left.
+  * [middle_center](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the middle, and horizontally aligned at the center.
+  * [middle_right](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the middle, and horizontally aligned on the right.
+  * [bottom_left](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned in the bottom, and horizontally aligned on the left.
+  * [bottom_center](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the bottom, and horizontally aligned at the center.
+  * [bottom_right](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the bottom, and horizontally aligned on the right.
 * exapend : A flag indicating if control is expanded to its containing layout container. The default is false.
 * size_type : One of the [size_type](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is auto_size.
-  * auto_size : The control should be automatically sized to share space with its peers.
-  * absolute : The control should be sized to an exact number of pixels. (Style by default)
-  * percent : The control should be sized as a percentage of the parent container.
+  * [auto_size](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be automatically sized to share space with its peers.
+  * [absolute](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be sized to an exact number of pixels. (Style by default)
+  * [percent](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be sized as a percentage of the parent container.
 * width : The prefered width in pixel or percent depending the size_type. The default is std::nullopt.
 
 #### Remarks
@@ -232,25 +232,25 @@ Used to group collections of verticaly aligned controls.
 ### Vertical layout panel styles
 
 For each child control of [vertical_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html) an [vertical_layout_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__control__layout__style.html) style is associate.
-You can specify for each chid control the layout style to the layout container by the method [control_layout_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html#a6e1ad8fe72ee251ca0c35e7316cc29fa).
+You can specify for each chid control the layout style to the layout container by the method [control_layout_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html#a059dccea939682c556eac63a4288b0ca).
 If you don't specify the layout style, it use the style by default.
 
 An [vertical_layout_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__control__layout__style.html) is composed of :
 * content_alignment :	One of the [content_alignment](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) values. The default is middle_center.
-  * top_left : Content is vertically aligned at the top, and horizontally aligned on the left.
-  * top_center : Content is vertically aligned at the top, and horizontally aligned at the center.
-  * top_right : Content is vertically aligned at the top, and horizontally aligned on the right.
-  * middle_left : Content is vertically aligned in the middle, and horizontally aligned on the left.
-  * middle_center : Content is vertically aligned at the middle, and horizontally aligned at the center.
-  * middle_right : Content is vertically aligned at the middle, and horizontally aligned on the right.
-  * bottom_left : Content is vertically aligned in the bottom, and horizontally aligned on the left.
-  * bottom_center : Content is vertically aligned at the bottom, and horizontally aligned at the center.
-  * bottom_right : Content is vertically aligned at the bottom, and horizontally aligned on the right.
+  * [top_left](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the top, and horizontally aligned on the left.
+  * [top_center](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the top, and horizontally aligned at the center.
+  * [top_right](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the top, and horizontally aligned on the right.
+  * [middle_left](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned in the middle, and horizontally aligned on the left.
+  * [middle_center](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the middle, and horizontally aligned at the center.
+  * [middle_right](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the middle, and horizontally aligned on the right.
+  * [bottom_left](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned in the bottom, and horizontally aligned on the left.
+  * [bottom_center](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the bottom, and horizontally aligned at the center.
+  * [bottom_right](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the bottom, and horizontally aligned on the right.
 * exapend : A flag indicating if control is expanded to its containing layout container. The default is false.
 * size_type : One of the [size_type](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is auto_size.
-  * auto_size : The control should be automatically sized to share space with its peers.
-  * absolute : The control should be sized to an exact number of pixels. (Style by default)
-  * percent : The control should be sized as a percentage of the parent container.
+  * [auto_size](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be automatically sized to share space with its peers.
+  * [absolute](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be sized to an exact number of pixels. (Style by default)
+  * [percent](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be sized as a percentage of the parent container.
 * width : The prefered width in pixel or percent depending the size_type. The default is std::nullopt.
 
 #### Remarks
