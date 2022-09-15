@@ -16,8 +16,8 @@
   * [Split container](#split-container)
   * [Tab control](#tab-control)
 * [User container](#user-container)
-  * [Horizontal stack panel](#horizontal-stack-panel)
-  * [Vertical stack panel](#vertical-stack-panel)
+  * [Own horizontal stack panel](#own-horizontal-stack-panel)
+  * [Own vertical stack panel](#own-vertical-stack-panel)
 
 ## Controls
 
@@ -213,7 +213,7 @@ Comming soon...
 
 xtd is flexible and complete enough to create your own container without much effort.
 
-### Horizontal stack panel
+### Own horizontal stack panel
 
 The following example show how to make your own horizontal stack panel esasily with overloading [on_layout](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga277d5f851e0d49163d9fdecaace4d7bd) method.
 
@@ -262,7 +262,7 @@ int main() {
 }
 ```
 
-### Vertical stack panel
+### Own vertical stack panel
 
 The following example show how to make your own vertical stack panel esasily with [dock](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#adb3febb83c715c2f7e014b47c9cb1df7) and overloading [on_control_added](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga76d3b55915e43555fe652aa4d71ae2f0) method.
 
