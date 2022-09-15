@@ -2,6 +2,25 @@
 
 # Containers
 
+# Table of content
+
+* [Controls](#controls)
+* [Standard containers](#standard-containers)
+* [Layout containers](#layout-containers)
+  * [Flow layout panel](#flow-layout-panel)
+  * [Horizontal layout panel](#horizontal-layout-panel)
+  * [Table layout panel](#table-layout-panel)
+  * [Vertical layout panel](#vertical-layout-panel)
+* [Specific containers](#specific-containers)
+  * [collapsible_panel](#collapsible_panel)
+  * [split_container](#split_container)
+  * [tab_control](#tab_control)
+* [User container](#user-container)
+  * [Horizontal stack layout](#horizontal-stack-layout)
+  * [Vertical stack layout](#vertical-stack-layout)
+
+## Controls
+
 Any control can be a container. Indeed a control can have several children.
 For more information, see [Parent and children](https://github.com/gammasoft71/xtd/blob/master/docs/xtd_forms_explanations.md#parent-and-childdren).
 
@@ -19,7 +38,7 @@ Even if it is possible, in general we prefer to use defined containers which hav
 
 These containers use [location](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a704049ab20aa16e25dca51911b0ba13b), [size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a2a9c3b512b6748c8330fe2231839c4cb), [auto_size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#ad6dfcca7a2ecd41e2679d6b3085103fe), [anchor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a3908bffd315d0bfc8b2656f89e2dc42c) and [dock](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#adb3febb83c715c2f7e014b47c9cb1df7) for children controls.
 
-For more information, see [Size and location properties](https://github.com/gammasoft71/xtd/blob/master/docs/size_and_location_properties.md).
+For more information, see [Size and location properties](https://github.com/gammasoft71/xtd/blob/master/docs/size_and_location_properties.md) and [posiiotn and layout of controls](https://github.com/gammasoft71/xtd/blob/master/docs/position_and_layout_of_controls.md).
 
 ### Remarks
 
@@ -113,6 +132,104 @@ Represents a control consisting of a movable bar that divides a container's disp
 ### tab_control
  
 Manages a related set of tab pages.
+
+## User container
+
+xtd is flexible and complete enough to create your own container without much effort.
+
+### Horizontal stack layout
+
+The following example show how to make an horizontal stack layout esasily with overloading [on_layout](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga277d5f851e0d49163d9fdecaace4d7bd) method.
+
+```c++
+#include <xtd/xtd.forms.h>
+
+using namespace xtd;
+using namespace xtd::forms;
+
+class stack_horizotal_layout_panel : public panel {
+protected:
+  void on_layout(const event_args& e) override {
+    panel::on_layout(e);
+    auto left = 0;
+    for (auto control : controls()) {
+      control.get().left(left).height(client_size().height());
+      left += control.get().width();
+    }
+  }
+};
+
+class form1 : public form {
+public:
+  form1() {
+    client_size({400, 200});
+    
+    panel1.parent(*this).size({300, 35});
+    panel1.controls().push_back_range({button1, button2, button3, button4});
+    
+    button1.flat_style(xtd::forms::flat_style::popup).text("button 1");
+    button2.flat_style(xtd::forms::flat_style::popup).text("button 2");
+    button3.flat_style(xtd::forms::flat_style::popup).text("button 3");
+    button4.flat_style(xtd::forms::flat_style::popup).text("button 4");
+  }
+  
+private:
+  stack_horizotal_layout_panel panel1;
+  button button1;
+  button button2;
+  button button3;
+  button button4;
+};
+
+int main() {
+  application::run(form1());
+}
+```
+
+### Vertical stack layout
+
+The following example show how to make a vertical stack layout esasily with [dock](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#adb3febb83c715c2f7e014b47c9cb1df7) and overloading [on_control_added](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga76d3b55915e43555fe652aa4d71ae2f0) method.
+
+```c++
+#include <xtd/xtd.forms.h>
+
+using namespace xtd;
+using namespace xtd::forms;
+
+class stack_vertical_layout_panel : public panel {
+protected:
+  void on_control_added(const control_event_args& e) override {
+    panel::on_control_added(e);
+    e.control().dock(dock_style::top);
+  }
+};
+
+class form1 : public form {
+public:
+  form1() {
+    client_size({400, 200});
+    
+    panel1.parent(*this).size({100, 150});
+    panel1.controls().push_back_range({button4, button3, button2, button1});
+    
+    button1.flat_style(xtd::forms::flat_style::popup).text("button 1");
+    button2.flat_style(xtd::forms::flat_style::popup).text("button 2");
+    button3.flat_style(xtd::forms::flat_style::popup).text("button 3");
+    button4.flat_style(xtd::forms::flat_style::popup).text("button 4");
+  }
+  
+private:
+  stack_vertical_layout_panel panel1;
+  button button1;
+  button button2;
+  button button3;
+  button button4;
+};
+
+int main() {
+  application::run(form1());
+}
+```
 
 # See also
 ​
