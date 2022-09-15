@@ -6,6 +6,12 @@
 
 * [Controls](#controls)
 * [Standard containers](#standard-containers)
+  * [Fixed layout panel](#fixed-layout-panel)
+  * [Group box](#group-box)
+  * [Panel](#panel)
+  * [Popup panel](#popup-panel)
+  * [Splitter panel](#splitter-panel)
+  * [Tab page](#tab-page)
 * [Layout containers](#layout-containers)
   * [Flow layout panel](#flow-layout-panel)
   * [Horizontal layout panel](#horizontal-layout-panel)
@@ -28,17 +34,33 @@ Even if it is possible, in general we prefer to use defined containers which hav
 
 ## Standard containers
 
-### Controls
-* [fixed_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1fixed__layout__panel.html)
-* [group_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1group__box.html)
-* [panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1panel.html)
-* [popup_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1popup__panel.html)
-* [splitter_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1splitter__panel.html)
-* [tab_page](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__page.html)
-
 These containers use [location](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a704049ab20aa16e25dca51911b0ba13b), [size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a2a9c3b512b6748c8330fe2231839c4cb), [auto_size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#ad6dfcca7a2ecd41e2679d6b3085103fe), [anchor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a3908bffd315d0bfc8b2656f89e2dc42c) and [dock](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#adb3febb83c715c2f7e014b47c9cb1df7) for children controls.
 
 For more information, see [Size and location properties](https://github.com/gammasoft71/xtd/blob/master/docs/size_and_location_properties.md) and [Position and layout of controls](https://github.com/gammasoft71/xtd/blob/master/docs/position_and_layout_of_controls.md).
+
+### Fixed layout panel
+
+The [fixed_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1fixed__layout__panel.html) is used to group collections of fixed aligned controls.
+
+### Group box]
+
+[group_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1group__box.html) represents a Windows control that displays a frame around a group of controls with an optional caption.
+
+### Panel
+
+[panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1panel.html) is used to group collections of controls.
+
+### Popup panel
+
+[popup_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1popup__panel.html) represents a special type of panel container that can be used for [context_menu](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1context__menu.html), [combo_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1combo__box.html) popups and more.
+
+### Splitter panel
+
+[splitter_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1splitter__panel.html) represents a panel that is associated with a split_container.
+
+### Tab page
+
+[tab_page](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__page.html) represents a single tab page in a tab_control.
 
 ### Remarks
 
@@ -47,12 +69,6 @@ For more information, see [Size and location properties](https://github.com/gamm
 * [tab_page](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__page.html) is used with [tab_control]([tab_page](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__page.html)) and is the same as [panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1panel.html).
 
 ## Layout containers
-
-### Controls
-* [flow_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1flow__layout__panel.html)
-* [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html)
-* [table_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1table__layout__panel.html)
-* [vertical_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html)
 
 The layout containers manage the layout of child controls. 
 Unlike standard containers, they manage the size, position and layout of child controls and do not use user-defined child control properties.
@@ -65,13 +81,13 @@ On the other hand, child controls of layout panel cannot use the dock or anchor 
 
 ### Flow layout panel
 
-Used to group collections of fixed aligned controls.
+[flow_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1flow__layout__panel.html) is used to group collections of fixed aligned controls.
 
 *Comming soon...*
 
 ### Horizontal layout panel
 
-Used to group collections of horizontally aligned controls.
+[horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) is used to group collections of horizontally aligned controls.
 
 ### Horizontal layout panel styles
 
@@ -221,13 +237,13 @@ int main() {
 
 ### Table layout panel
 
-Used to group collections of fixed aligned controls.
+[table_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1table__layout__panel.html) is used to group collections of fixed aligned controls.
 
 *Comming soon...*
 
 ### Vertical layout panel
 
-Used to group collections of verticaly aligned controls.
+[vertical_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html) is used to group collections of verticaly aligned controls.
 
 ### Vertical layout panel styles
 
@@ -378,20 +394,15 @@ int main() {
 
 ## Specific containers
 
-### Controls
-* [collapsible_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1collapsible__panel.html)
-* [split_container](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1split__container.html)
-* [tab_control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__control.html)
-
 ### Collapsible panel
 
-Used to group collections of controls in a collapsible panel.
+[collapsible_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1collapsible__panel.html) is used to group collections of controls in a collapsible panel.
 
 *Comming soon...*
 
 ### Split container
 
-Represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
+[split_container](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1split__container.html) represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
 
 #### Remarks
 
@@ -401,7 +412,7 @@ The child control for the [split_container](https://codedocs.xyz/gammasoft71/xtd
  
 ### Tab control
  
-Manages a related set of tab pages.
+[tab_control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__control.html) manages a related set of tab pages.
 
 #### Remarks
 
