@@ -67,7 +67,7 @@ On the other hand, child controls of layout panel cannot use the dock or anchor 
 
 Used to group collections of fixed aligned controls.
 
-Comming soon...
+*Comming soon...*
 
 ### Horizontal layout panel
 
@@ -223,7 +223,7 @@ int main() {
 
 Used to group collections of fixed aligned controls.
 
-Comming soon...
+*Comming soon...*
 
 ### Vertical layout panel
 
@@ -387,7 +387,7 @@ int main() {
 
 Used to group collections of controls in a collapsible panel.
 
-Comming soon...
+*Comming soon...*
 
 ### Split container
 
@@ -397,7 +397,7 @@ Represents a control consisting of a movable bar that divides a container's disp
 
 The child control for the [split_container](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1split__container.html) are [splitter_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1splitter__panel.html).
 
-Comming soon...
+*Comming soon...*
  
 ### Tab control
  
