@@ -54,8 +54,8 @@ For more information, see [Size and location properties](https://github.com/gamm
 * [table_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1table__layout__panel.html)
 * [vertical_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html)
 
-The role of the layout container is to manage the layout of child controls. 
-Unlike standard panels, they define the size, position and layout of child controls and do not use user-defined child control properties
+The layout containers manage the layout of child controls. 
+Unlike standard containers, they manage the size, position and layout of child controls and do not use user-defined child control properties.
 
 #### Remarks
 
@@ -96,6 +96,10 @@ An [horizontal_layout_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1fo
   * absolute : The control should be sized to an exact number of pixels. (Style by default)
   * percent : The control should be sized as a percentage of the parent container.
 * width : The prefered width in pixel or percent depending the size_type. The default is std::nullopt.
+
+#### Remarks
+If you don't set expand to true and you set the height of the control. the [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) will take this into account.
+But not the width.
 
 #### Examples
 
@@ -154,6 +158,46 @@ public:
     panel1.control_layout_style(button2, horizontal_control_layout_style{.35f, size_type::percent});
     panel1.control_layout_style(button3, horizontal_control_layout_style{.35f, size_type::percent});
     panel1.control_layout_style(button4, horizontal_control_layout_style{.15f, size_type::percent});
+
+    button1.flat_style(xtd::forms::flat_style::popup).text("button 1");
+    button2.flat_style(xtd::forms::flat_style::popup).text("button 2");
+    button3.flat_style(xtd::forms::flat_style::popup).text("button 3");
+    button4.flat_style(xtd::forms::flat_style::popup).text("button 4");
+  }
+  
+private:
+  horizontal_layout_panel panel1;
+  button button1;
+  button button2;
+  button button3;
+  button button4;
+};
+
+int main() {
+  application::run(form1());
+}
+```
+
+The following example shows how to create a [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) whose children must have a size corresponding to a abosulte value in pixels and set expand to true.
+
+```c++
+#include <xtd/xtd.forms.h>
+
+using namespace xtd;
+using namespace xtd::forms;
+
+class form1 : public form {
+public:
+  form1() {
+    client_size({400, 200});
+    
+    panel1.parent(*this).dock(dock_style::fill);
+    panel1.controls().push_back_range({button1, button2, button3, button4});
+    
+    panel1.control_layout_style(button1, horizontal_control_layout_style{75, size_type::absolute, true});
+    panel1.control_layout_style(button2, horizontal_control_layout_style{125, size_type::absolute, true});
+    panel1.control_layout_style(button3, horizontal_control_layout_style{125, size_type::absolute, true});
+    panel1.control_layout_style(button4, horizontal_control_layout_style{75, size_type::absolute, true});
 
     button1.flat_style(xtd::forms::flat_style::popup).text("button 1");
     button2.flat_style(xtd::forms::flat_style::popup).text("button 2");
