@@ -30,7 +30,7 @@
 Any control can be a container. Indeed a control can have several children.
 For more information, see [Parent and children](https://github.com/gammasoft71/xtd/blob/master/docs/xtd_forms_explanations.md#parent-and-children).
 
-Even if it is possible, in general we prefer to use defined containers which have properties specific to their role.
+While this is possible, we generally prefer to use defined containers that have specific properties to handle child controls.
 
 ## Standard containers
 
