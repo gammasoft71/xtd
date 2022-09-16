@@ -30,6 +30,7 @@
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.core - time_zone_info - [#50](https://github.com/gammasoft71/xtd/issues/50)
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] File drop feature request - [#5](https://github.com/gammasoft71/xtd/issues/5)
 
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [QUESTION] xtd.forms - Should anchor(), dock(), and control_layout_style() all give very different results? - [#197](https://github.com/gammasoft71/xtd/issues/197)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] xtd.forms - form::show_dialog called within main() has wait cursor - [#196](https://github.com/gammasoft71/xtd/issues/196)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] xtd.forms - combo_box in vertical_layout_panel produces warning on macOS - [#195](https://github.com/gammasoft71/xtd/issues/195)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] xtd.forms - combo_box very sensitive to click length - [#194](https://github.com/gammasoft71/xtd/issues/194)
