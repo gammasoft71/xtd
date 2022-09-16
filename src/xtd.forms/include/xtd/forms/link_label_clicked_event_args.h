@@ -21,7 +21,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    /// @remarks
+    /// @todo rename to link_label_link_clicked_event_args
     class link_label_clicked_event_args : public xtd::event_args {
     public:
       /// @name Constructors
