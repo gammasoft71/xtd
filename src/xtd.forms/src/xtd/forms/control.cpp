@@ -162,7 +162,7 @@ control& control::back_color(const color& color) {
 }
 
 control& control::back_color(std::nullptr_t) {
-  if (data_->back_color.has_value()) return *this;
+  if (!data_->back_color.has_value()) return *this;
   data_->back_color.reset();
   post_recreate_handle();
   for (auto& control : controls())
