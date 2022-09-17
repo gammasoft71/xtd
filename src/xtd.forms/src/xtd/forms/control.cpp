@@ -139,7 +139,7 @@ bool control::auto_size() const {
 }
 
 control& control::auto_size(bool auto_size) {
-  if (get_state(state::auto_size) == auto_size) return *thsi;
+  if (get_state(state::auto_size) == auto_size) return *this;
   set_state(state::auto_size, auto_size);
   on_auto_size_changed(event_args::empty);
   return *this;
