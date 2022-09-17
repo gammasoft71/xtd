@@ -262,7 +262,7 @@ std::optional<std::reference_wrapper<xtd::forms::context_menu>> control::context
 }
 
 control& control::context_menu(xtd::forms::context_menu& value) {
-  if (data_->context_menu.has_value() && &data_->context_menu.value().get() == &value) retrun *this;
+  if (data_->context_menu.has_value() && &data_->context_menu.value().get() == &value) return *this;
   data_->context_menu = const_cast<forms::context_menu&>(value);
   return *this;
 }
