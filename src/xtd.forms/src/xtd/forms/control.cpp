@@ -126,7 +126,7 @@ control& control::anchor(anchor_styles anchor) {
   data_->anchor = anchor;
   set_state(state::docked, false);
   if (handle() && parent()) data_->anchoring = {left(), location().y(), parent().value().get().client_size().width() - width() - left(), parent().value().get().client_size().height() - height() - top()};
-  perforé_layout();
+  perform_layout();
   return *this;
 }
 
