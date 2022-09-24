@@ -96,7 +96,7 @@ namespace xtd {
       /// @}
     };
     
-    /// Represents a null text reader.
+    /// @brief Represents a null text reader.
     /// @par Inheritance
     /// xtd::io::text_reader → xtd::io::null_text_reader
     /// @par Namespace
