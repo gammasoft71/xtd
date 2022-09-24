@@ -96,9 +96,7 @@ namespace xtd {
       /// @}
     };
     
-    /// @code
-    /// class core_export_ null_text_reader : public xtd::io::text_reader
-    /// @endcode
+    /// Represents a null text reader.
     /// @par Inheritance
     /// xtd::io::text_reader → xtd::io::null_text_reader
     /// @par Namespace
@@ -106,6 +104,9 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
+    /// @code
+    /// class core_export_ null_text_reader : public xtd::io::text_reader
+    /// @endcode
     class core_export_ null_text_reader : public xtd::io::text_reader {
     public:
       /// @name Methods
