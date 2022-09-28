@@ -192,10 +192,10 @@
 * [socket_tcp_ip_v6](network/socket_tcp_ip_v6/README.md) shows hows how to use [xtd::net::sockets::socket](../../src/xtd.core/include/xtd/net/sockets/socket.h) class.
 * [socket_udp_ip_v4](network/socket_udp_ip_v4/README.md) shows hows how to use [xtd::net::sockets::socket](../../src/xtd.core/include/xtd/net/sockets/socket.h) class.
 * [socket_udp_ip_v6](network/socket_udp_ip_v6/README.md) shows hows how to use [xtd::net::sockets::socket](../../src/xtd.core/include/xtd/net/sockets/socket.h) class.
-* [tcp_client_ip_v4](nettwork/tcp_client_ip_v4/README.md) shows hows how to use [xtd::net::sockets::tcp_client](../../src/xtd.core/include/xtd/net/sockets/tcp_client.h) class.
-* [tcp_client_ip_v6](nettwork/tcp_client_ip_v6/README.md) shows hows how to use [xtd::net::sockets::tcp_client](../../src/xtd.core/include/xtd/net/sockets/tcp_client.h) class.
-* [udp_client_ip_v4](nettwork/udp_client_ip_v4/README.md) shows hows how to use [xtd::net::sockets::udp_client](../../src/xtd.core/include/xtd/net/sockets/udp_client.h) class.
-* [udp_client_ip_v6](nettwork/udp_client_ip_v6/README.md) shows hows how to use [xtd::net::sockets::udp_client](../../src/xtd.core/include/xtd/net/sockets/udp_client.h) class.
+* [tcp_client_ip_v4](network/tcp_client_ip_v4/README.md) shows hows how to use [xtd::net::sockets::tcp_client](../../src/xtd.core/include/xtd/net/sockets/tcp_client.h) class.
+* [tcp_client_ip_v6](network/tcp_client_ip_v6/README.md) shows hows how to use [xtd::net::sockets::tcp_client](../../src/xtd.core/include/xtd/net/sockets/tcp_client.h) class.
+* [udp_client_ip_v4](network/udp_client_ip_v4/README.md) shows hows how to use [xtd::net::sockets::udp_client](../../src/xtd.core/include/xtd/net/sockets/udp_client.h) class.
+* [udp_client_ip_v6](network/udp_client_ip_v6/README.md) shows hows how to use [xtd::net::sockets::udp_client](../../src/xtd.core/include/xtd/net/sockets/udp_client.h) class.
 
 ## [Processes](processes/README.md)
 
