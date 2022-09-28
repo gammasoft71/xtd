@@ -4,6 +4,7 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/window_messages.h>
 #include "../../../include/xtd/forms/track_bar.h"
+#include <algorithm>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -76,9 +77,7 @@ track_bar& track_bar::tick_style(forms::tick_style tick_style) {
 
 track_bar& track_bar::value(int32_t value) {
   if (value_ != value) {
-    if (value > maximum_) value_ = maximum_;
-    else if (value < minimum_) value_ = minimum_;
-    else value_ = value;
+    value_ = std::clamp(value, minimum_, maximum_);
     if (is_handle_created()) native::track_bar::value(handle(), value_);
     on_value_changed(event_args::empty);
   }
