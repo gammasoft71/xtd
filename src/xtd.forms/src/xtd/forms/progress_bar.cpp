@@ -3,6 +3,7 @@
 #include <xtd/forms/native/progress_bar_styles.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/progress_bar.h"
+#include <algorithm>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -66,9 +67,7 @@ progress_bar& progress_bar::style(progress_bar_style style) {
 
 progress_bar& progress_bar::value(int32_t value) {
   if (value_ != value) {
-    if (value > maximum_) value_ = maximum_;
-    else if (value < minimum_) value_ = minimum_;
-    else value_ = value;
+    value_ = std::clamp(value, minimum_, maximum_);
     if (is_handle_created()) native::progress_bar::value(handle(), value_);
   }
   return *this;
