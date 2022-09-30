@@ -11,6 +11,7 @@
 #include "__fixed_point_formatter.h"
 #include "__format_exception.h"
 #include "__sprintf.h"
+#include <algorithm>
 
 /// @cond
 template<typename char_t, typename value_t>

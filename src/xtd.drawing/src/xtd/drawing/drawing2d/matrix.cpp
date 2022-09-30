@@ -152,7 +152,7 @@ void matrix::transform_vectors(std::vector<xtd::drawing::point>& points) {
 void matrix::transform_vectors(std::vector<xtd::drawing::point_f>& points) {
   vector<pair<float, float>> tr_points;
   for (auto point : points)
-    tr_points.push_back(make_pair(point.x(), point.y()));
+    tr_points.push_back({point.x(), point.y()});
   native::matrix::transform_vectors(handle(), tr_points);
   points.clear();
   for (auto point : tr_points)

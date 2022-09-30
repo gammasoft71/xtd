@@ -13,6 +13,7 @@
 #include "__format_stringer.h"
 #include "__natural_formatter.h"
 #include "__sprintf.h"
+#include <algorithm>
 
 /// @cond
 template<typename char_t, typename value_t>
