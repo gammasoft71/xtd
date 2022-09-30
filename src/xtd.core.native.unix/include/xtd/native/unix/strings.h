@@ -5,6 +5,7 @@
 #endif
 /// @endcond
 
+#include <algorithm>
 #include <limits>
 #include <vector>
 #include <sstream>
