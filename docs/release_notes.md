@@ -4,6 +4,7 @@
 
 ![0.2.0](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/version_0_2_0.png) (beta) Not yet planned
 
+* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [BUG] ‘xtd::forms::button’ anchor style, anchor_styles::top, is ignored when contained in a xtd::forms::group_box. - [#198](https://github.com/gammasoft71/xtd/issues/198)
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [BUG] Path not updated with xtd on Windows - [#188](https://github.com/gammasoft71/xtd/issues/188)
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - xtd::forms::message_notifier - [#180](https://github.com/gammasoft71/xtd/issues/180)
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - themes - [#97](https://github.com/gammasoft71/xtd/issues/97)
