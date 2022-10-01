@@ -1768,7 +1768,8 @@ namespace xtd {
       /// @endcode
       template<typename type_t, typename value_t>
       static void is_not_instance_of(const value_t& value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        if (dynamic_cast<const type_t*>(&value) == nullptr)
+        const type_t* instance = dynamic_cast<const type_t*>(&value);
+        if (instance == nullptr)
           succeed(message, stack_frame);
         else
           base_assert::fail("not instance of <" + __tunit_demangle(typeid(type_t).name()) + ">", "<" + __tunit_demangle(typeid(value).name()) + ">", message, stack_frame);
