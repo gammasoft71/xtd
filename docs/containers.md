@@ -103,8 +103,8 @@ public:
   form1() {
     client_size({400, 200});
     
-    grouup_box1.parent(*this).dock(dock_style::fill);
-    grouup_box1.controls().push_back_range({button1, button2, button3, button4});
+    group_box1.parent(*this).dock(dock_style::fill);
+    group_box1.controls().push_back_range({button1, button2, button3, button4});
     
     button1.location({10, 10});
     button1.text("button 1");
@@ -120,7 +120,7 @@ public:
   }
   
 private:
-  group_box grouup_box1;
+  group_box group_box1;
   button button1;
   button button2;
   button button3;
