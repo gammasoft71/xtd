@@ -110,7 +110,7 @@ Which one to choose? It had to be the one that I knew best, that was consistent 
 
 In the company I work for, a little more than 12 years ago, we had a project that had to run on the desktop, on an embedded system and on Android (the backend could not be written in Java because the embedded system could not run a JVM).
 The modern C++11 didn't exist yet, it was the beginning and it wasn't present on all compilers. 
-So I had to create a framework (threads, diagnostics, sockets, web sockets, io, unicode, ... RAII, but no GUI) to implement the shortcomings of C++ and I based myself on the .Net framewrok. 
+So I had to create a framework (threads, diagnostics, sockets, web sockets, io, unicode, ... RAII programming idiom, but no GUI) to implement the shortcomings of C++ and I based myself on the .Net framewrok. 
 
 * The Win32 API is too low level and is in pure C.
 * The MFC API is not consistant and old.
