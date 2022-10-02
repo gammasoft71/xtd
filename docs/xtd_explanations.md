@@ -89,7 +89,7 @@ For the moment there is an implementation of the APIs xtd.drawing.native and xtd
 But in the futur, other graphical interfaces can be added by implementing the xtd.drawing.native and xtd.forms.native APIs as per rexamples :
 * xtd.drawing.native.cocoa and xtd.forms.native.cocoa : macOS appkit. (macOS native API)
 * xtd.drawing.native.gtk and xtd.forms.native.gtk : linux Gtk API. (native linux Gnome API)
-* xtd.drawing.native.qt6 and xtd.forms.native.qt6 : Qt toolkit. (API "native" Kdde linux)
+* xtd.drawing.native.qt6 and xtd.forms.native.qt6 : Qt toolkit. (API "native" Kde linux)
 * xtd.drawing.native.win32 and xtd.forms.native.win32 : Microsoft win32 API. (native Windows API)
 * xtd.drawing.native.x11 and xtd.forms.native.x11 : X11 API. (generic linux API)
 * xtd.drawing.native.x11 and xtd.forms.native.fltk : Fltk API. (generic API)
