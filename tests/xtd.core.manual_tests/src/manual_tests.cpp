@@ -7,8 +7,7 @@ using namespace xtd;
 class xtd_core_manual_test {
 public:
   static void main() {
-    console::beep(800, 200);
-    console::write_line("End");
+    console::write_line("is admin = {}", environment::user_administrator());
   }
 };
 
