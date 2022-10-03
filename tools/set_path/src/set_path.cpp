@@ -13,12 +13,10 @@ namespace path_updater {
   class program final static_ {
   public:
     static int main(const vector<ustring>& args) {
-#ifdef WIN32
-      if (!environment::user_administrator()) {
+      if (environment::os_version().is_windows() && !environment::user_administrator()) {
         console::write_line("ERROR : Launch set_path in administrator mode.");
         return -1;
       }
-#endif
       ustring folder;
       bool show_version = false;
       bool show_help = false;
@@ -59,9 +57,12 @@ namespace path_updater {
         auto new_path = ustring::join(ustring::format("{}", io::path::path_separator()), paths);
         environment::set_environment_variable("PATH", new_path);
 
-        if (environment::os_version().is_windows()) return win32_write_system_path(new_path);
-        if (environment::os_version().is_macos()) return macos_write_system_path(new_path);
-        else if (environment::os_version().is_linux()) return linux_write_system_path(new_path);
+        auto result = 0;
+        if (environment::os_version().is_windows()) result = win32_write_system_path(new_path);
+        if (environment::os_version().is_macos()) result = macos_write_system_path(new_path);
+        else if (environment::os_version().is_linux()) result = linux_write_system_path(new_path);
+        if (result) return result;
+        console::write_line("New path \"{}\" written", new_path);
       }
       return 0;
     }
@@ -131,7 +132,6 @@ namespace path_updater {
         return 3;
       }
 #endif
-      console::write_line("New path \"{}\" written", path);
       return 0;
     }
   };
