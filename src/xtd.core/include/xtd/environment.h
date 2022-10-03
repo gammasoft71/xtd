@@ -313,8 +313,8 @@ namespace xtd {
     /// @return A 32-bit unsigned integer containing the amount of time in milliseconds that has passed since the last time the computer was started.
     static std::chrono::milliseconds tick_count();
 
-    /// @brief Gets a value indicating whether the current user is in administrator.
-    /// @return bool true if the current user is administrator; otherwise, false.
+    /// @brief Gets a value indicating whether the current user is an administrator.
+    /// @return bool true if the current user is an administrator; otherwise, false.
     static bool user_administrator();
     
     /// @brief Gets the network domain name associated with the current user.
