@@ -179,7 +179,9 @@ uint32_t environment::get_tick_count() {
 }
 
 bool environment::get_user_administrator() {
-  return getuid() != geteuid();
+  // https://stackoverflow.com/questions/3214297/how-can-my-c-c-application-determine-if-the-root-user-is-executing-the-command
+  //return getuid() != geteuid();
+  return !getuid();
 }
 
 std::string environment::get_user_domain_name() {
