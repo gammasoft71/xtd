@@ -178,6 +178,10 @@ uint32_t environment::get_tick_count() {
   #endif
 }
 
+bool environment::get_user_administrator() {
+  return getuid() != geteuid();
+}
+
 std::string environment::get_user_domain_name() {
   return unix::strings::trim_end(create_process("uname -n"), {'\n'});
 }

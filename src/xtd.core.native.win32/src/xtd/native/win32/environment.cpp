@@ -151,6 +151,10 @@ uint32_t environment::get_tick_count() {
   return GetTickCount();
 }
 
+bool environment::get_user_administrator() {
+  return IsUserAnAdmin();
+}
+
 std::string environment::get_user_domain_name() {
   auto name = getenv("USERDOMAIN");
   return name ? name : "";
