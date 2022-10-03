@@ -133,8 +133,16 @@ std::chrono::milliseconds environment::tick_count() {
   return std::chrono::milliseconds(native::environment::get_tick_count());
 }
 
+bool environment::user_administrator() {
+  return native::environment::get_user_administrator();
+}
+
 ustring environment::user_domain_name() {
   return native::environment::get_user_domain_name();
+}
+
+bool environment::user_interactive() {
+  return true;
 }
 
 ustring environment::user_name() {

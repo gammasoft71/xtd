@@ -312,6 +312,10 @@ namespace xtd {
     /// @brief Gets the number of milliseconds elapsed since the system started.
     /// @return A 32-bit unsigned integer containing the amount of time in milliseconds that has passed since the last time the computer was started.
     static std::chrono::milliseconds tick_count();
+
+    /// @brief Gets a value indicating whether the current user is in administrator.
+    /// @return bool true if the current user is administrator; otherwise, false.
+    static bool user_administrator();
     
     /// @brief Gets the network domain name associated with the current user.
     /// @return The network domain name associated with the current user.
@@ -322,7 +326,7 @@ namespace xtd {
     /// @remarks The user_interactive method reports false for a Os process or a service like IIS that runs without a user interface. If this property is false, do not display modal dialogs or message boxes because there is no graphical user interface for the user to interact with.
     /// @remarks Return always true for now.
     /// @todo check if process is an operating system process or service process...
-    static bool user_interactive() {return true;}
+    static bool user_interactive();
     
     /// @brief Gets the user name of the person who is currently logged on to the operating system.
     /// @return The user name of the person who is logged on to the operating system.
