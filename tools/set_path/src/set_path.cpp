@@ -138,8 +138,9 @@ namespace set_path {
         console::write_line("An error 0x{:X8} occured when reading path in registry", status);
         return ustring::empty_string();
       }
+      current_directory[size] = 0;
 #endif
-      return current_directory;
+      return convert_string::to_ustring(current_directory);
     }
 
     static int win32_write_system_path(bool system_path, const ustring& path) {
