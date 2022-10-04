@@ -4,8 +4,6 @@
 
 ![0.2.0](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/version_0_2_0.png) (beta) Not yet planned
 
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [BUG] ‘xtd::forms::button’ anchor style, anchor_styles::top, is ignored when contained in a xtd::forms::group_box. - [#198](https://github.com/gammasoft71/xtd/issues/198)
-* ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [BUG] Path not updated with xtd on Windows - [#188](https://github.com/gammasoft71/xtd/issues/188)
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - xtd::forms::message_notifier - [#180](https://github.com/gammasoft71/xtd/issues/180)
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - themes - [#97](https://github.com/gammasoft71/xtd/issues/97)
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - switch_button_renderer - [#95](https://github.com/gammasoft71/xtd/issues/95)
@@ -32,6 +30,7 @@
 * ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] File drop feature request - [#5](https://github.com/gammasoft71/xtd/issues/5)
 
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] Installing xtd in Arch Linux - [#199](https://github.com/gammasoft71/xtd/issues/199)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] ‘xtd::forms::button’ anchor style, anchor_styles::top, is ignored when contained in a xtd::forms::group_box. - [#198](https://github.com/gammasoft71/xtd/issues/198)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [QUESTION] xtd.forms - Should anchor(), dock(), and control_layout_style() all give very different results? - [#197](https://github.com/gammasoft71/xtd/issues/197)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] xtd.forms - form::show_dialog called within main() has wait cursor - [#196](https://github.com/gammasoft71/xtd/issues/196)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] xtd.forms - combo_box in vertical_layout_panel produces warning on macOS - [#195](https://github.com/gammasoft71/xtd/issues/195)
@@ -41,6 +40,7 @@
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] xtd.forms - Regression: combo_box drop_down and drop_down_closed events not firing - [#191](https://github.com/gammasoft71/xtd/issues/191)
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - xtd::forms::combo_box - added drop_down and drop_down_closed events - [#190](https://github.com/gammasoft71/xtd/issues/190)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] xtd::forms - Adding collapsible_panel::parent call results in very minimal main window - [#189](https://github.com/gammasoft71/xtd/issues/189)
+* ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] Path not updated with xtd on Windows - [#188](https://github.com/gammasoft71/xtd/issues/188)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] xtd::drawing - Example in documentation for color::to_argb does not use to_argb - [#187](https://github.com/gammasoft71/xtd/issues/187)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] “xtdc run” does not display the output of the console application on macOS - [#185](https://github.com/gammasoft71/xtd/issues/185)
 * ![fixed](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/fixed.png) [BUG] xtd.tunit - Invalid links in xtd/examples/xtd.tunit.examples/README.md - [#183](https://github.com/gammasoft71/xtd/issues/183)
