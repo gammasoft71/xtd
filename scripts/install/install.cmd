@@ -89,49 +89,14 @@ call scripts\install\shortcut.cmd "%xtd_program_path%\guidgen-gui.lnk" "%cmake_i
 
 ::______________________________________________________________________________
 ::                                                             Add xtdc-gui path
-echo.%path%|findstr /C:"xtd\bin" >nul 2>&1
-if not errorlevel 1 (
-  echo The environment variable path already contains xtd.
-) else (
-  set new_path="%cmake_install_prefix%\xtd\bin;%path%"
-  call :strlen new_path path_length
-  if %path_length% LSS 1024 (
-    setx path %new_path%
-  ) else (
-    echo.
-    echo ---------------------------------------------------------------
-    echo.
-    echo WARNING : The path is greater than 1024.
-    echo.
-    echo setx will not work correctly with a path greater than 1024.
-    echo Manually add "%cmake_install_prefix%\xtd\bin" in your path.
-    echo.
-    echo ---------------------------------------------------------------
-    echo.
-    pause
-  )
-)
+
+::______________________________________________________________________________
+::                                                             Add xtdc-gui path
+build\tools\set_path\Release\set_path "%cmake_install_prefix%\xtd\bin"
+set Path=%cmake_install_prefix%\xtd\bin;%Path%
 
 ::______________________________________________________________________________
 ::                                                               launch xtdc-gui
 echo Launching xtdc-gui...
-start "xtdc-gui" "%cmake_install_prefix%\xtd\bin\xtdc-gui.exe"
-
-goto :eof
-
-::______________________________________________________________________________
-:: Gets the length of specified string.
-:: param string_var The string to compute length.
-:: param result_var That will cantains the length of the specified string.
-:strlen  string_var  [result_var]
-  setlocal EnableDelayedExpansion
-  set "s=#!%~1!"
-  set "len=0"
-  for %%N in (4096 2048 1024 512 256 128 64 32 16 8 4 2 1) do (
-    if "!s:~%%N,1!" neq "" (
-      set /a "len+=%%N"
-      set "s=!s:~%%N!"
-    )
-  )
-  endlocal&if "%~2" neq "" (set %~2=%len%) else echo %len%
-exit /b
+::start "xtdc-gui" "%cmake_install_prefix%\xtd\bin\xtdc-gui.exe"
+start "xtdc-gui" "xtdc-gui"
