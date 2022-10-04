@@ -86,7 +86,7 @@ namespace set_path {
         "-s, --system        : Use Ssytem path. (User path by default). (*)"
         "-v, --version       : Shows version information.\n"
         "-h, --help          : Shows this help page.\n"
-        "\n",
+        "\n"
         "(*) This option is valid on Windows and you must in administrator mode.";
     }
 
