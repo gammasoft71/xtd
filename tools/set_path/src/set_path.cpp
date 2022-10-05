@@ -66,8 +66,8 @@ namespace set_path {
         else if (environment::os_version().is_macos()) result = macos_write_system_path(system_path, new_path);
         else if (environment::os_version().is_linux()) result = linux_write_system_path(system_path, new_path);
         if (result) return result;
+        console::write_line("The folder \"{}\" is {} the path", folder, remove ? "removed from" : "added to");
       }
-      console::write_line("The folder \"{}\" is {} the path", folder, remove ? "removed from" : "added to");
       return 0;
     }
 
@@ -83,11 +83,11 @@ namespace set_path {
         "\n"
         "-a, --add           : Add folder to path (set by default).\n"
         "-r, --remove        : Remove folder from path.\n"
-        "-s, --system        : Use Ssytem path. (User path by default). (*)"
+        "-s, --system        : Use Sytem path. (User path by default). (*)\n"
         "-v, --version       : Shows version information.\n"
         "-h, --help          : Shows this help page.\n"
         "\n"
-        "(*) This option is valid on Windows and you must in administrator mode.";
+        "(*) System option is valid only on Windows. You must in administrator mode.";
     }
 
     static string get_version() {
