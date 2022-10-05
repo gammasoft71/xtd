@@ -14,6 +14,7 @@ namespace examples {
       //status_bar(status_bar1);
       
       text_box1.multiline(true);
+      text_box1.read_only(true);
       text_box1.parent(*this);
       text_box1.dock(dock_style::fill);
 
