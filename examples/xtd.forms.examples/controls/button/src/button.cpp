@@ -8,16 +8,12 @@ namespace examples {
   public:
     form1() {
       text("Button example");
-      //back_color(drawing::color::dark_blue);
       
       button1.parent(*this);
       button1.text("Button 1");
       button1.location({50, 50});
       button1.click += [&] {
         label1.text(ustring::format("Button 1 clicked {} times", ++button1_clicked));
-      };
-      button1.got_focus += [&] {
-        diagnostics::debug::write_line("Got focus!!");
       };
       
       button2.parent(*this);
