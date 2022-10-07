@@ -15,5 +15,6 @@ add_projects(
   stack_trace_simple
   stopwatch
   stopwatch_constructor
+  trace
   trace_cassert
 )

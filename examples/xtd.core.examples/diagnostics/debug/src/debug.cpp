@@ -1,4 +1,4 @@
-// Specify -DDEBUG when compiling.
+// Specify -DDEBUG when compiling or add #define DEBUG in the source file.
 
 #include <xtd/xtd>
 
