@@ -92,6 +92,7 @@
 * [assert](diagnostics/assert_/README.md) shows how to use [assert_](../../src/xtd.core/include/xtd/diagnostics::debug.h) macro.
 * [assert_with_message](diagnostics/assert_with_message/README.md) shows how to use [assert_](../../src/xtd.core/include/xtd/diagnostics::debug.h) macro wth message.
 * [console_trace_listener](diagnostics/console_trace_listener/README.md) shows how to use [xtd::diagnostics/console_trace_listener](../../src/xtd.core/include/xtd/diagnostics/console_trace_listener.h) class.
+* [debug](diagnostics/debug/README.md) shows how to use [xtd::diagnostics::debug](../../src/xtd.core/include/xtd/diagnostics::debug.h) class.
 * [debug_cassert](diagnostics/debug_cassert/README.md) shows how to use [xtd::diagnostics::debug::cassert](../../src/xtd.core/include/xtd/diagnostics::debug.h) method.
 * [stack_frame](diagnostics/stack_frame/README.md) shows how to use [xtd::diagnostics/stack_frame](../../src/xtd.core/include/xtd/diagnostics/stack_frame.h) class.
 * [stack_trace](diagnostics/stack_trace/README.md) shows how to use [xtd::diagnostics/stack_trace](../../src/xtd.core/include/xtd/diagnostics/stack_trace.h) class.

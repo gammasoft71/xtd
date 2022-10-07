@@ -7,6 +7,7 @@ add_projects(
   assert_
   assert_with_message
   console_trace_listener
+  debug
   debug_cassert
   default_trace_listener
   stack_frame
