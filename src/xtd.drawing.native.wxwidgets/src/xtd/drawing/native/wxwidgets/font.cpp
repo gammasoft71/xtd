@@ -20,12 +20,12 @@ namespace {
   
   float points_to_native_font_correction(float size) {
     if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") return size / dpi() * 96.0f;
-    if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix") return size / 100.0f * 96.0f;
+    if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix") return size / dpi() * 92.0f;
     return size;
   }
   float native_font_correction_to_points(float size) {
     if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") return size / 96.0f * dpi();
-    if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix") return size / 96.0f * 100.0f;
+    if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix") return size / 92.0f * dpi();
     return size;
   }
 }
