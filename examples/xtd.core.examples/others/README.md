@@ -11,6 +11,8 @@
 * [console_color3](console_color3/README.md) shows how to use [xtd::console::background_color](../../../src/xtd.core/include/xtd/console.h) and [xtd::console::foreground_color](../../../src/xtd.core/include/xtd/console.h) methods.
 * [console_color4](console_color4/README.md) shows how to use [xtd::console::background_color](../../../src/xtd.core/include/xtd/console.h) and [xtd::console::foreground_color](../../../src/xtd.core/include/xtd/console.h) methods.
 * [console_read_line](console_read_line/README.md) shows how to use [xtd::console::in](../../../src/xtd.core/include/xtd/console.h) stream.
+* [console_song2](console_song2/README.md) shows how to use [xtd::beep](../../../src/xtd.core/include/xtd/beep.h) class.
+* [console_song3](console_song3/README.md) shows how to use [xtd::beep](../../../src/xtd.core/include/xtd/beep.h) class.
 * [fibonacci_series](fibonacci_series/README.md) shows how to use [xtd::console](../../../src/xtd.core/include/xtd/console.h) and [xtd::ustring](../../../src/xtd.core/include/xtd/ustring.h) classes.
 * [hello_world_console2](hello_world_console2/README.md) The same classic first application "Hello World" on the standard output stream with another style.
 * [hello_world_console3](hello_world_console3/README.md) The same classic first application "Hello World" on the standard output stream with another style.
