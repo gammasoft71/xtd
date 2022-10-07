@@ -1,4 +1,5 @@
 // Specify -DTRACE when compiling or add #define TRACE in the source file.
+#define DEBUG
 
 #include <xtd/xtd>
 

@@ -50,14 +50,14 @@ namespace xtd {
     /// @remarks A get operation for a Windows-based application, in which a console does not exist, returns xtd::console_color::black.
     /// @par Examples
     /// The following example saves the values of the xtd::console_color enumeration to an array and stores the current values of the xtd::console::background_color and xtd::console::foreground_color properties to variables. It then changes the foreground color to each color in the xtd::console_color enumeration except to the color that matches the current background, and it changes the background color to each color in the xtd::console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the xtd::console::reset_color method to restore the original console colors.
-    /// @include console_color4.cpp
+    /// @include console_color2.cpp
     static console_color background_color();
     /// @brief Sets the background color of the console.
     /// @param color A xtd::console_color that specifies the background color of the console; that is, the color that appears behind each character.
     /// @remarks A change to the background_color method affects only output that is written to individual character cells after the background color is changed. To change the background color of the console window as a whole, set the BackgroundColor property and call the Clear method. The following example provides an illustration.
     /// @par Examples
     /// The following example saves the values of the xtd::console_color enumeration to an array and stores the current values of the xtd::console::background_color and xtd::console::foreground_color properties to variables. It then changes the foreground color to each color in the xtd::console_color enumeration except to the color that matches the current background, and it changes the background color to each color in the xtd::console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the xtd::console::reset_color method to restore the original console colors.
-    /// @include console_color4.cpp
+    /// @include console_color2.cpp
     static void background_color(console_color color);
     
     /// @brief Gets the height of the buffer area.
