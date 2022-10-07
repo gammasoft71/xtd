@@ -1,3 +1,5 @@
+// Specify -DDEBUG when compiling.
+
 #include <xtd/xtd>
 
 using namespace std;
