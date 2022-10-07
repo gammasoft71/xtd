@@ -14,12 +14,18 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   /// @see xtd::console::reset_color method.
+  /// @par Examples
+  /// The following example saves the values of the xtd::console_color enumeration to an array and stores the current values of the xtd::background_color and xtd::foreground_color properties to variables. It then changes the foreground color to each color in the xtd::console_color enumeration except to the color that matches the current background, and it changes the background color to each color in the xtd::console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the xtd::reset_color class to restore the original console colors.
+  /// @include console_color4.cpp
   class reset_color final : public object {
   public:
     /// @name Constructors
     
     /// @{
     /// @brief Initialize a new insttance of xtd::reset_coloor class.
+    /// @par Examples
+    /// The following example saves the values of the xtd::console_color enumeration to an array and stores the current values of the xtd::background_color and xtd::foreground_color properties to variables. It then changes the foreground color to each color in the xtd::console_color enumeration except to the color that matches the current background, and it changes the background color to each color in the xtd::console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the xtd::reset_color class to restore the original console colors.
+    /// @include console_color4.cpp
     reset_color() = default;
     /// @}
     
