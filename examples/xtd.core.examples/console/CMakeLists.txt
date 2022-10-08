@@ -7,6 +7,7 @@ add_projects(
   console_background_color
   console_beep
   console_buffer
+  console_clear
   console_color
   console_cursor
   console_in_out
