@@ -170,10 +170,10 @@ namespace xtd {
     static bool is_error_redirected();
     /// @brief  Gets a value that indicates whether the input stream has been redirected from the standard input stream.
     /// @param true if input is redirected; otherwise, false.
-    static bool is_in_redirected();
+    static bool is_input_redirected();
     /// @brief  Gets a value that indicates whether the output stream has been redirected from the standard output stream.
     /// @param true if output is redirected; otherwise, false.
-    static bool is_out_redirected();
+    static bool is_output_redirected();
     
     /// @brief Gets a value indicating whether a key press is available in the input stream.
     /// @return true if a key press is available; otherwise, false.

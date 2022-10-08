@@ -113,11 +113,11 @@ bool console::is_error_redirected() {
   return error.rdbuf() != __get_err_rdbuf();
 }
 
-bool console::is_in_redirected() {
+bool console::is_input_redirected() {
   return in.rdbuf() != __get_in_rdbuf();
 }
 
-bool console::is_out_redirected() {
+bool console::is_output_redirected() {
   return out.rdbuf() != __get_out_rdbuf();
 }
 

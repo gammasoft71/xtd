@@ -10,6 +10,7 @@ add_projects(
   console_color
   console_cursor
   console_in_out
+  console_info
   console_read_line
   console_read_key
   console_song
