@@ -9,7 +9,7 @@ int main() {
   main_form->start_position(form_start_position::manual);
   
   auto back_color_picker = control::create<color_picker>(*main_form, "", {10, 10}, {75, 25});
-  back_color_picker->color_changed += [&] {
+  back_color_picker->color_picker_changed += [&] {
     main_form->back_color(back_color_picker->color());
   };
   

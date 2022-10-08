@@ -13,14 +13,14 @@ public:
     else
       console::write_line("Operations timed using the standard date time.");
       
-    long frequency = stopwatch::frequency();
+    int64 frequency = stopwatch::frequency();
     console::write_line("  Timer frequency in ticks per second = {0}", frequency);
     long nanosec_per_tick = (1000L * 1000L * 1000L) / frequency;
     console::write_line("  Timer is accurate within {0} nanoseconds", nanosec_per_tick);
   }
   
   static void time_operations() {
-    long nanosec_per_tick = (1000L * 1000L * 1000L) / stopwatch::frequency();
+    int64 nanosec_per_tick = (1000L * 1000L * 1000L) / stopwatch::frequency();
     const long num_iterations = 10000;
     
     // Define the operation title names.
@@ -45,7 +45,7 @@ public:
       // The first execution time will be tossed out, since it can skew the average time.
       
       for (int i = 0; i <= num_iterations; i++) {
-        long ticks_this_time = 0;
+        int64 ticks_this_time = 0;
         int input_num;
         stopwatch time_per_parse;
         

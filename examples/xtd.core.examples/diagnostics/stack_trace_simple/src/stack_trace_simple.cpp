@@ -21,7 +21,7 @@ private:
     void throws_exception() {
       try {
         throw system_exception("A problem was encountered.");
-      } catch (const system_exception& e) {
+      } catch (const system_exception&) {
         // Create a StackTrace that captures filename, line number and column information.
         stack_trace st(true);
         ustring stack_indent = "";

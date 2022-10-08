@@ -50,12 +50,12 @@ int main() {
   console::write_line("static_cast<byte_t>(overflow_value) = {}", static_cast<byte_t>(overflow_value)); // Overflow not detected
   try {
     console::write_line("as<byte_t>(overflow_value)          = {}", as<byte_t>(overflow_value));
-  } catch (const overflow_exception& e) {
+  } catch (const overflow_exception&) {
     console::write_line("(ERROR) as : Overflow exception");
   }
   try {
     console::write_line("convert::to_byte(overflow_value)   = {}", convert::to_byte(overflow_value));
-  } catch (const overflow_exception& e) {
+  } catch (const overflow_exception&) {
     console::write_line("(ERROR) convert::to_byte : Overflow exception");
   }
 }
