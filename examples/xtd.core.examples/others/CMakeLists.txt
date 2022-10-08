@@ -13,6 +13,8 @@ add_projects(
   console_color3
   console_color4
   console_read_line2
+  console_song2
+  console_song3
   fibonacci_series
   hello_world_console2
   hello_world_console3

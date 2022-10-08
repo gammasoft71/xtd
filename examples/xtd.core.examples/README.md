@@ -92,12 +92,14 @@
 * [assert](diagnostics/assert_/README.md) shows how to use [assert_](../../src/xtd.core/include/xtd/diagnostics::debug.h) macro.
 * [assert_with_message](diagnostics/assert_with_message/README.md) shows how to use [assert_](../../src/xtd.core/include/xtd/diagnostics::debug.h) macro wth message.
 * [console_trace_listener](diagnostics/console_trace_listener/README.md) shows how to use [xtd::diagnostics/console_trace_listener](../../src/xtd.core/include/xtd/diagnostics/console_trace_listener.h) class.
+* [debug](diagnostics/debug/README.md) shows how to use [xtd::diagnostics::debug](../../src/xtd.core/include/xtd/diagnostics::debug.h) class.
 * [debug_cassert](diagnostics/debug_cassert/README.md) shows how to use [xtd::diagnostics::debug::cassert](../../src/xtd.core/include/xtd/diagnostics::debug.h) method.
 * [stack_frame](diagnostics/stack_frame/README.md) shows how to use [xtd::diagnostics/stack_frame](../../src/xtd.core/include/xtd/diagnostics/stack_frame.h) class.
 * [stack_trace](diagnostics/stack_trace/README.md) shows how to use [xtd::diagnostics/stack_trace](../../src/xtd.core/include/xtd/diagnostics/stack_trace.h) class.
 * [stack_trace_simple](diagnostics/stack_trace_simple/README.md) demonstrates how to create a simple [xtd::diagnostics::stack_trace](../../src/xtd.core/include/xtd/diagnostics::stack_trace.h) class and iterate through its frames to obtain debugging and diagnostic information.
 * [stopwatch](diagnostics/stopwatch/README.md) shows how to use [xtd::diagnostics/stopwatch](../../src/xtd.core/include/xtd/diagnostics/stopwatch.h) class.
 * [stopwatch_constructor](diagnostics/stopwatch_constructor/README.md) initializes a [xtd::diagnostics::stopwatch](../../src/xtd.core/include/xtd/diagnostics::stopwatch.h) instance by using a simple class constructor.
+* [trace](diagnostics/trace/README.md) shows how to use [xtd::diagnostics::trace](../../src/xtd.core/include/xtd/diagnostics::trace.h) class.
 * [trace_cassert](diagnostics/trace_cassert/README.md) shows how to use [xtd::diagnostics::trace::cassert](../../src/xtd.core/include/xtd/diagnostics::trace.h) method.
 
 ## [Environment](environment/README.md)
@@ -251,6 +253,8 @@
 * [console_color3](others/console_color3/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/console.h) and [xtd::console::foreground_color](../../src/xtd.core/include/xtd/console.h) methods.
 * [console_color4](others/console_color4/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/console.h) and [xtd::console::foreground_color](../../src/xtd.core/include/xtd/console.h) methods.
 * [console_read_line](others/console_read_line/README.md) shows how to use [xtd::console::in](../../src/xtd.core/include/xtd/console.h) stream.
+* [console_song2](others/console_song2/README.md) shows how to use [xtd::beep](../../src/xtd.core/include/xtd/beep.h) class.
+* [console_song3](others/console_song3/README.md) shows how to use [xtd::beep](../../src/xtd.core/include/xtd/beep.h) class.
 * [fibonacci_series](others/fibonacci_series/README.md) shows how to use [xtd::console](../../src/xtd.core/include/xtd/console.h) and [xtd::ustring](../../../src/xtd.core/include/xtd/ustring.h) classes.
 * [hello_world_console2](others/hello_world_console2/README.md) The same classic first application "Hello World" on the standard output stream with another style.
 * [hello_world_console3](others/hello_world_console3/README.md) The same classic first application "Hello World" on the standard output stream with another style.
