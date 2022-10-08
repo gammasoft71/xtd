@@ -24,7 +24,8 @@ int main() {
   console::write_line("window_height = {}", console::window_height());
   console::write_line("window_left = {}", console::window_left());
   console::write_line("window_top = {}", console::window_top());
-  console::write_line("window_width = {}", console::window_width());}
+  console::write_line("window_width = {}", console::window_width());
+}
 
 // This code can produce the following output:
 //
