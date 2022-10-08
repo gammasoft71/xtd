@@ -44,7 +44,7 @@ namespace examples {
       
       color_picker_up_down_fore_color.location({390, 10});
       color_picker_up_down_fore_color.color(lcd_label_label.fore_color());
-      color_picker_up_down_fore_color.color_changed += [&] {
+      color_picker_up_down_fore_color.color_picker_changed += [&] {
         lcd_label_label.fore_color(color_picker_up_down_fore_color.color());
       };
       

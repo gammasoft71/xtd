@@ -13,18 +13,18 @@ namespace examples {
       };
       auto background_color = get_back_color().value_or(application::style_sheet().system_colors().control());
       auto foreground_color = get_fore_color().value_or(application::style_sheet().system_colors().control_text());
-      auto button_color = accentuate_color(background_color, .05);
-      auto border_color = accentuate_color(background_color, .15);
+      auto button_color = accentuate_color(background_color, .05F);
+      auto border_color = accentuate_color(background_color, .15F);
       auto text_color = foreground_color;
       
       if (state() == visual_styles::push_button_state::hot || state() == visual_styles::push_button_state::default_state) {
-        border_color = accentuate_color(border_color, .15);
-        button_color = accentuate_color(background_color, .15);
-        text_color = accentuate_color(foreground_color, .15);
+        border_color = accentuate_color(border_color, .15F);
+        button_color = accentuate_color(background_color, .15F);
+        text_color = accentuate_color(foreground_color, .15F);
       } else if (state() == visual_styles::push_button_state::pressed || state() == visual_styles::push_button_state::checked) {
-        border_color = accentuate_color(border_color, .30);
-        button_color = accentuate_color(background_color, .30);
-        text_color =  accentuate_color(foreground_color, .30);
+        border_color = accentuate_color(border_color, .30F);
+        button_color = accentuate_color(background_color, .30F);
+        text_color =  accentuate_color(foreground_color, .30F);
       } else if (state() == visual_styles::push_button_state::disabled) {
         border_color = button_color = color::from_argb(85, 85, 55);
         text_color = application::style_sheet().system_colors().gray_text();

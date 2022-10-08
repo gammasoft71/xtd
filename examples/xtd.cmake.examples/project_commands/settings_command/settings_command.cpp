@@ -9,7 +9,7 @@ int main() {
   auto colored_panel = control::create<panel>(*main_form, "", {10, 100});
   
   auto color_chooser = control::create<color_picker>(*main_form, "", {10, 10}, {75, 25});
-  color_chooser->color_changed += [&] {
+  color_chooser->color_picker_changed += [&] {
     colored_panel->back_color(color_chooser->color());
   };
   
