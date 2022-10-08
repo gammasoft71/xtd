@@ -26,7 +26,7 @@ int main() {
   console::write_line("window_top = {}", console::window_top());
   console::write_line("window_width = {}", console::window_width());}
 
-// This code can produces the following output:
+// This code can produce the following output:
 //
 // background_color = black
 // foreground_color = white
