@@ -32,7 +32,7 @@ namespace xtd {
     /// @remarks To activate your code if TRACE is defined, you must enclose calls to the methods of Debug in an #if defined(TRACE) ... #endif block, and add the /DTRACE option to the compiler command line or add #define TRACE to the file.
     /// @par Examples
     /// The following example uses debug to indicate the beginning and the end of a program's execution. The example also uses the debug::indent and debug::unindent methods to distinguish the tracing output.
-    /// @include debug.cpp
+    /// @include trace.cpp
     class core_export_ trace static_ {
     public:
       /// @name Alias

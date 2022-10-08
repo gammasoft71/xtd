@@ -19,7 +19,7 @@ namespace xtd {
     /// @remarks Override this class for create your own event listener.
     /// @par Examples
     /// The follow example shows how to create your own listener event for simulate gtest output.
-    /// @include create_your_own_event_listener.cpp
+    /// @include create_gtest_like_event_listener.cpp
     class event_listener {
     public:
       /// @cond
