@@ -193,6 +193,11 @@ std::string environment::get_user_name() {
   return user_name ? user_name : "";
 }
 
+bool environment::has_shutdown_started() {
+  // return always false on linux and macos.
+  return false;
+}
+
 bool environment::is_processor_arm() {
   return  unix::strings::contains(create_process("uname -m"), "arm");
 }
@@ -211,4 +216,8 @@ void environment::set_environment_variable(const std::string& name, const std::s
 
 void environment::unset_environment_variable(const std::string& name) {
   unsetenv(name.c_str());
+}
+
+int64_t environment::working_set() {
+  return 0;
 }
