@@ -24,6 +24,8 @@ namespace xtd {
     gcc,
   };
   
+  /// @cond
   inline std::ostream& operator<<(std::ostream& os, compiler_id value) {return os << to_string(value, {{compiler_id::unknown, "unknown"}, {compiler_id::microsoft_visual_studio, "microsoft_visual_studio"}, {compiler_id::clang, "clang"}, {compiler_id::gcc, "gcc"}});}
   inline std::wostream& operator<<(std::wostream& os, compiler_id value) {return os << to_string(value, {{compiler_id::unknown, L"unknown"}, {compiler_id::microsoft_visual_studio, L"microsoft_visual_studio"}, {compiler_id::clang, L"clang"}, {compiler_id::gcc, L"gcc"}});}
+  /// @endcond
 }

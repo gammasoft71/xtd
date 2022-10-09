@@ -22,6 +22,8 @@ namespace xtd {
     arm,
   };
   
+  /// @cond
   inline std::ostream& operator<<(std::ostream& os, architecture_id value) {return os << to_string(value, {{architecture_id::unknown, "unknown"}, {architecture_id::x86, "x86"}, {architecture_id::arm, "arm"}});}
   inline std::wostream& operator<<(std::wostream& os, architecture_id value) {return os << to_string(value, {{architecture_id::unknown, L"unknown"}, {architecture_id::x86, L"x86"}, {architecture_id::arm, L"arm"}});}
+  /// @endcond
 }

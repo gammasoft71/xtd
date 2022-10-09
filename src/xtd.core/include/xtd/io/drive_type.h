@@ -34,7 +34,9 @@ namespace xtd {
       ram
     };
     
+    /// @cond
     inline std::ostream& operator<<(std::ostream& os, drive_type value) {return os << to_string(value, {{drive_type::unknown, "unknown"}, {drive_type::no_root_directory, "no_root_directory"}, {drive_type::removable, "removable"}, {drive_type::fixed, "fixed"}, {drive_type::network, "network"}, {drive_type::cd_rom, "cd_rom"}, {drive_type::ram, "ram"}});}
     inline std::wostream& operator<<(std::wostream& os, drive_type value) {return os << to_string(value, {{drive_type::unknown, L"unknown"}, {drive_type::no_root_directory, L"no_root_directory"}, {drive_type::removable, L"removable"}, {drive_type::fixed, L"fixed"}, {drive_type::network, L"network"}, {drive_type::cd_rom, L"cd_rom"}, {drive_type::ram, L"ram"}});}
+    /// @endcond
   }
 }

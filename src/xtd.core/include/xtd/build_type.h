@@ -20,6 +20,8 @@ namespace xtd {
     release,
   };
   
+  /// @cond
   inline std::ostream& operator<<(std::ostream& os, build_type value) {return os << to_string(value, {{build_type::debug, "debug"}, {build_type::release, "release"}});}
   inline std::wostream& operator<<(std::wostream& os, build_type value) {return os << to_string(value, {{build_type::debug, L"debug"}, {build_type::release, L"release"}});}
+  /// @endcond
 }

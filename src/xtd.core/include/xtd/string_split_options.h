@@ -21,6 +21,7 @@ namespace xtd {
     remove_empty_entries
   };
   
+  /// @cond
   inline std::ostream& operator<<(std::ostream& os, xtd::string_split_options options) {
     switch (options) {
       case xtd::string_split_options::none: os << "none"; break;
@@ -28,4 +29,5 @@ namespace xtd {
     }
     return os;
   }
+  /// @endcond
 }
