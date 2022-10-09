@@ -2,6 +2,7 @@
 
 [This folder](.) contains environment examples used by [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/) and more.
 
+* [environment](environment/README.md) shows how to use [xtd::environment](../../../src/xtd.core/include/xtd/environment.h) class.
 * [environment_command_line](environment_command_line/README.md) shows how to use [xtd::environment::comand_line](../../../src/xtd.core/include/xtd/environment.h) method.
 * [environment_current_directory](environment_current_directory/README.md) shows how to use [xtd::environment::current_directory](../../../src/xtd.core/include/xtd/environment.h) method.
 * [environment_exit_code](environment_exit_code/README.md) shows how to use [xtd::environment::exit_code](../../../src/xtd.core/include/xtd/environment.h) method.
