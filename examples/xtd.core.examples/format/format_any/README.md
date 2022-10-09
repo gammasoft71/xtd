@@ -19,6 +19,7 @@ xtdc run
 # Output
 
 ```
+42
 Star Trek: The Next Generation
 Before register_any_stringer : (unregistered)
 After register_any_stringer : Jean-Luc Picard (Captain)
