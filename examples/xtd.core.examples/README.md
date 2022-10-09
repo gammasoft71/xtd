@@ -220,10 +220,10 @@
 * [concat](strings/concat/README.md) shows how to use [xtd::strings::concat](../../src/xtd.core/include/xtd/strings.h) method.
 * [concat_collection](strings/concat_collection/README.md) shows how to use [xtd::strings::concat](../../src/xtd.core/include/xtd/strings.h) method.
 * [contains](strings/contains/README.md) shows how to use [xtd::strings::contains](../../src/xtd.core/include/xtd/strings.h) method.
-* [format](strings/format/README.md) shows how to use [xtd::strings::format](../../src/xtd.core/include/xtd/strings.h) method.
-* [format_with_orderformat_with_order](strings/format_with_order/README.md) shows how to use [xtd::strings::format](../../src/xtd.core/include/xtd/strings.h) method.
 * [join](strings/join/README.md) shows how to use [xtd::strings::join](../../src/xtd.core/include/xtd/strings.h) method.
 * [split](strings/split/README.md) shows how to use [xtd::strings::split](../../src/xtd.core/include/xtd/strings.h) method.
+* [string_format](strings/string_format/README.md) shows how to use [xtd::strings::format](../../src/xtd.core/include/xtd/strings.h) method.
+* [string_format_with_order](strings/string_format_with_order/README.md) shows how to use [xtd::strings::format](../../src/xtd.core/include/xtd/strings.h) method.
 * [string_unicode](strings/string_unicode/README.md) shows how to use [xtd::strings](../../src/xtd.core/include/xtd/strings.h) class with unicode.
 
 ## [Threading](threading/README.md)
