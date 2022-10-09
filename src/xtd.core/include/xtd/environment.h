@@ -33,7 +33,7 @@ namespace xtd {
   /// @ingroup xtd_core system system_information
   /// @par Examples
   /// The following example demonstrates displays a list of information about the current environment.
-  /// @include environment.cpp
+  /// @include examples/xtd.core.examples/environment/environment/src/environment.cpp
   class core_export_ environment final static_ {
   public:
     /// @enum xtd::environment::special_folder
