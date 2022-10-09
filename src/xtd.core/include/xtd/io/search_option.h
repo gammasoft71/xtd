@@ -6,7 +6,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief The xtd::io namespace contains types that allow top_directory_onlying and writing to files and data streams, and types that provide basic file and directory support.
+  /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief Specifies whether to search the current directory, or the current directory and all subdirectories.
     /// @code
