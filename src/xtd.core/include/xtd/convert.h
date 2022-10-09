@@ -34,6 +34,7 @@ namespace xtd {
     /// @brief Convert bool to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
+    /// @par Examples
     /// @code
     /// bool value = true;
     /// any result = convert::to_any(value);
@@ -42,6 +43,7 @@ namespace xtd {
     /// @brief Convert byte_t to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
+    /// @par Examples
     /// @code
     /// byte_t value = 42;
     /// any result = convert::to_any(value);
@@ -50,6 +52,7 @@ namespace xtd {
     /// @brief Convert char to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
+    /// @par Examples
     /// @code
     /// char value = 'a';
     /// any result = convert::to_any(value);
@@ -59,6 +62,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
     /// @exception xtd::invalid_cast_exception throws always exception.
+    /// @par Examples
     /// @code
     /// char8_t value = u8'a';
     /// any result = convert::to_any(value);
@@ -67,6 +71,7 @@ namespace xtd {
     /// @brief Convert char16_t to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
+    /// @par Examples
     /// @code
     /// char16_t value = u'a';
     /// any result = convert::to_any(value);
@@ -75,6 +80,7 @@ namespace xtd {
     /// @brief Convert char32_t to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
+    /// @par Examples
     /// @code
     /// char32_t value = U'a';
     /// any result = convert::to_any(value);
@@ -83,6 +89,7 @@ namespace xtd {
     /// @brief Convert wchar_t to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
+    /// @par Examples
     /// @code
     /// wchar_t value = L'a';
     /// any result = convert::to_any(value);
@@ -91,6 +98,7 @@ namespace xtd {
     /// @brief Convert decimal_t to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
+    /// @par Examples
     /// @code
     /// decimal_t value = 42.50l;
     /// any result = convert::to_any(value);
@@ -254,6 +262,7 @@ namespace xtd {
     /// @brief Convert bool to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
+    /// @par Examples
     /// @code
     /// bool value = true;
     /// bool result = convert::to_boolean(value);
@@ -262,6 +271,7 @@ namespace xtd {
     /// @brief Convert byte_t to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
+    /// @par Examples
     /// @code
     /// byte_t value = 42;
     /// bool result = convert::to_boolean(value);
@@ -271,6 +281,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new bool object converted from value.
     /// @exception xtd::invalid_cast_exception throws always exception.
+    /// @par Examples
     /// @code
     /// char value = 'a';
     /// bool result = convert::to_boolean(value);
@@ -280,6 +291,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new bool object converted from value.
     /// @exception xtd::invalid_cast_exception throws always exception.
+    /// @par Examples
     /// @code
     /// char8_t value = u8'a';
     /// bool result = convert::to_boolean(value);
@@ -289,6 +301,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new bool object converted from value.
     /// @exception xtd::invalid_cast_exception throws always exception.
+    /// @par Examples
     /// @code
     /// char16_t value = u'a';
     /// bool result = convert::to_boolean(value);
@@ -298,6 +311,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new bool object converted from value.
     /// @exception xtd::invalid_cast_exception throws always exception.
+    /// @par Examples
     /// @code
     /// char32_t value = U'a';
     /// bool result = convert::to_boolean(value);
@@ -307,6 +321,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new bool object converted from value.
     /// @exception xtd::invalid_cast_exception throws always exception.
+    /// @par Examples
     /// @code
     /// wchar_t value = L'a';
     /// bool result = convert::to_boolean(value);
@@ -315,6 +330,7 @@ namespace xtd {
     /// @brief Convert decimal_t to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
+    /// @par Examples
     /// @code
     /// decimal_t value = 42.50l;
     /// bool result = convert::to_boolean(value);
