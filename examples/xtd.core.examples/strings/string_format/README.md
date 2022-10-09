@@ -1,10 +1,10 @@
-# format
+# string_format
 
 Shows how to use [xtd::strings::format](../../../../src/xtd.core/include/xtd/strings.h) method.
 
 ## Sources
 
-[src/string_format.cpp](src/string_string_format.cpp)
+[src/string_format.cpp](src/string_format.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
