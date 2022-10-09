@@ -110,5 +110,3 @@ startup_(examples::program);
 // !---OMITTED---!
 // get_folder_path: /System
 // GetLogicalDrives: /, /dev, /System/Volumes/Hardware, /System/Volumes/Update, /System/Volumes/Preboot, /System/Volumes/xarts, /System/Volumes/VM, /System/Volumes/Data, /System/Volumes/iSCPreboot, /System/Volumes/Data/home, /Volumes/Data
-
-
