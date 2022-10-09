@@ -16,19 +16,13 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output (with colors)
+# Output
 
 ```
-saturday
-0b101
-0b101
-5
-5
-saturday
-saturday
-05
-05
-0x5
-0x5
+42
+Star Trek: The Next Generation
+Before register_any_stringer : (unregistered)
+After register_any_stringer : Jean-Luc Picard (Captain)
+After unregister_any_stringer : (unregistered)
 ```
 
