@@ -36,7 +36,7 @@ namespace examples {
       color_picker_background.parent(*this);
       color_picker_background.location({180, 10});
       color_picker_background.color(back_color());
-      color_picker_background.color_changed += [&] {
+      color_picker_background.color_picker_changed += [&] {
         bcolor = color_picker_background.color();
         button_system.back_color(bcolor.value());
         button_standard.back_color(bcolor.value());
@@ -45,7 +45,7 @@ namespace examples {
       color_picker_foreground.parent(*this);
       color_picker_foreground.location({290, 10});
       color_picker_foreground.color(fore_color());
-      color_picker_foreground.color_changed += [&] {
+      color_picker_foreground.color_picker_changed += [&] {
         fcolor = color_picker_foreground.color();
         button_system.fore_color(fcolor.value());
         button_standard.fore_color(fcolor.value());
