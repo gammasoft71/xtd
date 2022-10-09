@@ -30,7 +30,9 @@ namespace xtd {
       verbose = 4,
     };
     
+    /// @cond
     inline std::ostream& operator<<(std::ostream& os, xtd::diagnostics::trace_level value) {return os << to_string(value, {{diagnostics::trace_level::off, "off"}, {diagnostics::trace_level::error, "error"}, {diagnostics::trace_level::warning, "warning"}, {diagnostics::trace_level::info, "info"}, {diagnostics::trace_level::verbose, "verbose"}});}
     inline std::wostream& operator<<(std::wostream& os, xtd::diagnostics::trace_level value) {return os << to_string(value, {{diagnostics::trace_level::off, L"off"}, {diagnostics::trace_level::error, L"error"}, {diagnostics::trace_level::warning, L"warning"}, {diagnostics::trace_level::info, L"info"}, {diagnostics::trace_level::verbose, L"verbose"}});}
+    /// @endcond
   }
 }

@@ -21,6 +21,8 @@ namespace xtd {
     machine = 2,
   };
   
+  /// @cond
   inline std::ostream& operator<<(std::ostream& os, environment_variable_target value) {return os << to_string(value, {{environment_variable_target::process, "process"}, {environment_variable_target::user, "user"}, {environment_variable_target::machine, "machine"}});}
   inline std::wostream& operator<<(std::wostream& os, environment_variable_target value) {return os << to_string(value, {{environment_variable_target::process, L"process"}, {environment_variable_target::user, L"user"}, {environment_variable_target::machine, L"machine"}});}
+  /// @endcond
 }
