@@ -81,9 +81,9 @@ startup_(examples::program);
 // secure has been omitted and marked "!---OMITTED---!".)
 //
 // -- environment members --
-// command_line: /Users/gammasoft/Projects/xtd/build/examples/xtd.core.examples/environment/environment/Debug/environment
-// get_command_line_args: /Users/gammasoft/Projects/xtd/build/examples/xtd.core.examples/environment/environment/Debug/environment
-// current_directory: /Users/gammasoft/Projects/xtd/build/examples/xtd.core.examples/environment/environment/Debug
+// command_line: !---OMITTED---!/environment ARBITRARY TEXT
+// get_command_line_args: !---OMITTED---!/environment, ARBITRARY, TEXT
+// current_directory: !---OMITTED---!/environment/environment/Debug
 // exit_code: 0
 // has_shutdown_started: false
 // machine_name: !---OMITTED---!
