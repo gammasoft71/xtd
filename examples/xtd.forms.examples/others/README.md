@@ -32,6 +32,8 @@
 * [group_box_and_check_box](group_box_and_check_box/README.md) demonstrates the use of [xtd::forms::group_box](../../../src/xtd.forms/include/xtd/forms/button.h) container and [xtd::forms::check_box](../../../src/xtd.forms/include/xtd/forms/check_box.h) control.
 * [group_box_and_radio_button](group_box_and_radio_button/README.md) demonstrates the use of [xtd::forms::group_box](../../../src/xtd.forms/include/xtd/forms/group_box.h) container and [xtd::forms::radio_button](../../../src/xtd.forms/include/xtd/forms/radio_button.h) control.
 * [hello_world_message_box2](hello_world_message_box2/README.md) The classic first application "Hello, World!" with [xtd::forms::message_box](../../src/xtd_forms/include/xtd/forms/message_box.hpp) control.
+* [images2](images2/README.md) demonstrates the use of **xtd::drawing::system_images** class.
+* [images3](images3/README.md) demonstrates the use of **xtd::drawing::system_images** class.
 * [input_dialog_multiline](input_dialog_multiline/README.md) prompts the user to input multiline text.
 * [input_dialog_password](input_dialog_password/README.md) prompts the user to input password text.
 * [labels_and_unicode_text](labels_and_unicode_text/README.md) demonstrates the use of [xtd::forms::label](../../../src/xtd.forms/include/xtd/forms/label.h) control and Unicode text.
@@ -50,8 +52,6 @@
 * [status_bar](status_bar/README.md) represents a Windows status bar control.
 * [status_bar_without_panels](status_bar_without_panels/README.md) represents a Windows status bar control without panels.
 * [stopwatch_form](stopwatch_form/README.md) demonstrates the use of stopwatch class, [xtd::forms::label](../../../src/xtd.forms/include/xtd/forms/label.h) and [xtd::forms::button](../../../src/xtd.forms/include/xtd/forms/button.h) controls.
-* [system_images2](system_images2/README.md) demonstrates the use of **xtd::drawing::system_images** class.
-* [system_images3](system_images3/README.md) demonstrates the use of **xtd::drawing::system_images** class.
 * [system_report](system_report/README.md) shows system_repoort with [xtd::forms::text_box](../../../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
 * [system_sound](system_sound/README.md) demonstrates the use of [xtd::media::system_sound](../../../src/xtd_forms/include/xtd/media/system_sound.hpp) component.
 * [text_box_multiline](text_box_multiline/README.md) represents a Windows [xtd::forms::text_box](../../../src/xtd.forms/include/xtd/forms/text_box.h) control.
