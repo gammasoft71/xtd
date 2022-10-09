@@ -95,7 +95,7 @@ public:
     
     color_picker_back_color.alpha_color(true);
     color_picker_back_color.color(button_demo.back_color());
-    color_picker_back_color.color_changed += [&] {
+    color_picker_back_color.color_picker_changed += [&] {
       button_demo.back_color(color_picker_back_color.color());
     };
     color_picker_back_color.location({100, 185});
@@ -108,7 +108,7 @@ public:
     
     color_picker_fore_color.alpha_color(true);
     color_picker_fore_color.color(button_demo.fore_color());
-    color_picker_fore_color.color_changed += [&] {
+    color_picker_fore_color.color_picker_changed += [&] {
       button_demo.fore_color(color_picker_fore_color.color());
     };
     color_picker_fore_color.location({100, 220});

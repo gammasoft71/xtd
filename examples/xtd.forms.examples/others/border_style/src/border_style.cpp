@@ -41,7 +41,7 @@ namespace examples {
       for (auto color : colors::get_colors())
         colors_chooser.items().push_back({color.name(), color});
       colors_chooser.items()[0] = {back_color().name(), back_color()}; // Replace transparent color by control color.
-      colors_chooser.bounds({120, 37, 220, colors_chooser.default_size().height()});
+      colors_chooser.bounds({120, 37, 220, colors_chooser.size().height()});
       colors_chooser.selected_index_changed += [&] {
         auto color = as<drawing::color>(colors_chooser.selected_item().tag());
         colored_panel.back_color(colors_chooser.selected_index() == 0 ? color : color.is_dark() ? color::light(color, .1) :  color::dark(color, .1));
