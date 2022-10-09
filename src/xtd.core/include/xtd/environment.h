@@ -31,6 +31,9 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system system_information
+  /// @par Examples
+  /// The following example demonstrates displays a list of information about the current environment.
+  /// @include environment.cpp
   class core_export_ environment final static_ {
   public:
     /// @enum xtd::environment::special_folder
@@ -255,6 +258,11 @@ namespace xtd {
     /// @remarks Use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present and a value of 2 to indicate that the file is in the wrong format.
     static void exit_code(int value);
     
+    /// @brief Gets a value that indicates whether the current application domain is shutting down.
+    /// @return bool true if the current application domain is shutting down; otherwise, false.
+    /// @remarks At this time the return value is always false for macOS and linux.
+    static bool has_shutdown_started();
+
     /// @brief Determines whether the current operating system is a 64-bit operating system.
     /// @return true if the operating system is 64-bit; otherwise, false.
     static bool is_64_bit_operating_system() {return os_version().is_64_bit();}
@@ -296,9 +304,7 @@ namespace xtd {
     
     /// @brief Gets current stack trace information.
     /// @return A string containing stack trace information. This value can be empty "".
-    static xtd::ustring stack_trace() {
-      return xtd::diagnostics::stack_trace(true).to_string();
-    }
+    static xtd::ustring stack_trace() {return xtd::diagnostics::stack_trace().to_string();}
     
     /// @brief Gets the fully qualified path of the system directory.
     /// @return A string containing a directory path.
@@ -335,6 +341,14 @@ namespace xtd {
     /// @brief Gets a version consisting of the major, minor, build, and revision numbers of the xtd framework.
     /// @return The version of the xtd framework.
     static xtd::version version();
+
+    /// @brief Gets the amount of physical memory mapped to the process context.
+    /// @return Int64 A 64-bit signed integer containing the number of bytes of physical memory mapped to the process context.
+    /// @remarks Windows 98, Windows Millennium Edition, Linux, macOS, Android,... Platform Note: This property always returns zero.
+    /// @par Example
+    /// The following example displays the size of the working set of the computer that runs the code example.
+    /// @include EnvironmentWorkingSet.cpp
+    static int64_t working_set();
     /// @}
     
     /// @name Methods

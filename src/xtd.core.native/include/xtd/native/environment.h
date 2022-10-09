@@ -119,6 +119,10 @@ namespace xtd {
       /// @return The user name of the person who is logged on to the operating system.
       /// @warning Internal use only
       static std::string get_user_name();
+      /// @brief Gets a value that indicates whether the current application domain is shutting down.
+      /// @return bool true if the current application domain is shutting down; otherwise, false.
+      /// @warning Internal use only
+      static bool has_shutdown_started();
       /// @brief Determines whether the current processor is arm.
       /// @return true if the processor is is arm; otherwise, false.
       /// @warning Internal use only
@@ -140,6 +144,10 @@ namespace xtd {
       /// @param variable The name of an environment variable.
       /// @warning Internal use only
       static void unset_environment_variable(const std::string& name);
+      /// @brief Gets the amount of physical memory mapped to the process context.
+      /// @return Int64 A 64-bit signed integer containing the number of bytes of physical memory mapped to the process context.
+      /// @warning Internal use only
+      static int64_t working_set();
       /// @}
     };
   }

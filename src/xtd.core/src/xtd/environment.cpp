@@ -43,6 +43,10 @@ void environment::exit_code(int value) {
   ::exit_code = value;
 }
 
+bool environment::has_shutdown_started() {
+  return native::environment::has_shutdown_started();
+}
+
 xtd::collections::specialized::string_vector environment::get_command_line_args() {
   auto args = native::environment::get_command_line_args();
   return {args.begin(), args.end()};
@@ -147,4 +151,8 @@ bool environment::user_interactive() {
 
 ustring environment::user_name() {
   return native::environment::get_user_name();
+}
+
+int64_t environment::working_set() {
+  return native::environment::working_set();
 }

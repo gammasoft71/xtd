@@ -168,6 +168,11 @@ std::string environment::get_user_name() {
   return win32::strings::to_string(user_name);
 }
 
+bool environment::has_shutdown_started() {
+  auto result = SendMessageTimeout(HWND_BROADCAST, WM_QUERYENDSESSION, 0, (LPARAM)ENDSESSION_LOGOFF, SMTO_ABORTIFHUNG, 5000, NULL);
+  return result == FALSE;
+}
+
 bool environment::is_processor_arm() {
   SYSTEM_INFO system_info {};
   GetNativeSystemInfo(&system_info);
@@ -194,4 +199,8 @@ void environment::set_environment_variable(const std::string& name, const std::s
 void environment::unset_environment_variable(const std::string& name) {
   /// @todo Use SetEnvironmentVariable : https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setenvironmentvariable
   _putenv((name + "=").c_str());
+}
+
+int64_t environment::working_set() {
+  return 0;
 }

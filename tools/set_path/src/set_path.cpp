@@ -1,7 +1,7 @@
 #include <xtd/xtd.core>
 #include <chrono>
-#define UNICODE
 #ifdef WIN32
+#define UNICODE
 #include <Windows.h>
 #endif
 
