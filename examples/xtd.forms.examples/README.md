@@ -265,6 +265,8 @@
 * [form2](others/form2/README.md) represents a window or dialog box that makes up an application's user interface.
 * [group_box_and_check_box](others/group_box_and_check_box/README.md) demonstrates the use of [xtd::forms::group_box](../../src/xtd.forms/include/xtd/forms/button.h) container and [xtd::forms::check_box](../../src/xtd.forms/include/xtd/forms/check_box.h) control.
 * [group_box_and_radio_button](others/group_box_and_radio_button/README.md) demonstrates the use of [xtd::forms::group_box](../../src/xtd.forms/include/xtd/forms/group_box.h) container and [xtd::forms::radio_button](../../src/xtd.forms/include/xtd/forms/radio_button.h) control.
+* [images2](others/images2/README.md) demonstrates the use of **xtd::drawing::system_images** class.
+* [images3](others/images3/README.md) demonstrates the use of **xtd::drawing::system_images** class.
 * [labels_and_unicode_text](others/labels_and_unicode_text/README.md) demonstrates the use of [xtd::forms::label](../../src/xtd.forms/include/xtd/forms/label.h) control and Unicode text.
 * [lcd_label_with_dot_matrix](others/lcd_label_with_dot_matrix/README.md) representsthe use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
 * [lcd_label_with_fourteen_segment](others/lcd_label_with_fourteen_segment/README.md) representsthe use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
@@ -280,8 +282,6 @@
 * [some_controls](others/some_controls/README.md) demonstrates the use of some controls.
 * [status_bar_without_panels](others/status_bar_without_panels/README.md) represents a Windows status bar control without panels.
 * [stopwatch_form](others/stopwatch_form/README.md) demonstrates the use of stopwatch class, [xtd::forms::label](../../src/xtd.forms/include/xtd/forms/label.h) and [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) controls.
-* [system_images2](others/system_images2/README.md) demonstrates the use of **xtd::drawing::system_images** class.
-* [system_images3](others/system_images3/README.md) demonstrates the use of **xtd::drawing::system_images** class.
 * [system_report](others/system_report/README.md) shows system_repoort with [xtd::forms::text_box](../../src/xtd_forms/include/xtd/forms/text_box.h) control.
 * [system_sound](others/system_sound/README.md) demonstrates the use of xtd::media::system_sound component.
 * [text_box_multiline](others/text_box_multiline/README.md) represents a Windows [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) control.
