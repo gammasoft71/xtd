@@ -1,10 +1,10 @@
-# console_info
+# console_clear
 
-Shows how to use [xtd::console::background_color](../../../../src/xtd.core/include/xtd/console.h) and  [xtd::console::foreground_color](../../../../src/xtd.core/include/xtd/console.h) methods.
+Shows how to use [xtd::console::clear](../../../../src/xtd.core/include/xtd/console.h) method.
 
 # Sources
 
-[src/console_info.cpp](src/console_info.cpp)
+[src/console_clear.cpp](src/console_clear.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -15,7 +15,3 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 ```cmake
 xtdc run
 ```
-
-# Output
-
-![Screenshot](../../../../docs/pictures/examples/console_color.png)
