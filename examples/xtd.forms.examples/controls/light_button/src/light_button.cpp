@@ -23,7 +23,7 @@ namespace examples {
         light_button2.text(ustring::format("{}", light_button2.check_state()));
       };
       light_button2.checked(true);
-      light_button2.location({30, 60});
+      light_button2.location({30, 80});
       light_button2.width(120);
       
       light_button3.auto_size(true);
@@ -32,7 +32,7 @@ namespace examples {
       };
       light_button3.check_state(forms::check_state::indeterminate);
       light_button3.three_state(true);
-      light_button3.location({30, 90});
+      light_button3.location({30, 130});
       light_button3.width(120);
     }
     
