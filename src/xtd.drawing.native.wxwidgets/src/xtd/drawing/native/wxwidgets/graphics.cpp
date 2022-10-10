@@ -236,6 +236,13 @@ void graphics::draw_line(intptr_t handle, intptr_t pen, float x1, float y1, floa
 
 void graphics::draw_lines(intptr_t handle, intptr_t pen, const std::vector<std::pair<float, float>>& points) {
   if (!handle) return;
+  
+  auto start_line = points[0];
+  for (auto it = points.begin() + 1; it != points.end(); ++it) {
+    draw_line(handle, pen, start_line.first, start_line.second, it->first, it->second);
+    start_line = *it;
+  }
+  /*
   std::vector<wxPoint2DDouble> wx_points;
   for (auto [x, y] : points)
     wx_points.push_back(wxPoint(as<double>(x), as<double>(y)));
@@ -244,6 +251,7 @@ void graphics::draw_lines(intptr_t handle, intptr_t pen, const std::vector<std::
   graphics.SetPen(wx_pen::to_graphics_pen(graphics, *reinterpret_cast<wx_pen*>(pen)));
   graphics.DrawLines(wx_points.size(), wx_points.data());
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
+   */
 }
 
 void graphics::draw_path(intptr_t handle, intptr_t pen, intptr_t graphics_path) {
