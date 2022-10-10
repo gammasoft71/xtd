@@ -18,7 +18,7 @@ namespace examples {
       domain_up_down1.selected_index(1);
       
       label1.parent(*this);
-      label1.location({10, 40});
+      label1.location({10, 50});
     }
     
   private:
