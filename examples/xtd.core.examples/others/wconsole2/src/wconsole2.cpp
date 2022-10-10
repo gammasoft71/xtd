@@ -5,14 +5,14 @@ using namespace std;
 using namespace xtd;
 
 int main() {
-  console::out << L"Hello "_s;
-  console::out << L"World!"_s << endl;
-  console::out << L"Enter your name: "_s;
+  console::out << L"Hello ";
+  console::out << L"World!" << endl;
+  console::out << L"Enter your name: ";
   ustring name;
   console::in >> name;
-  console::out << L"Good day, "_s;
+  console::out << L"Good day, ";
   console::out << name;
-  console::out << L"!"_s << endl;
+  console::out << L"!" << endl;
 }
 
 // This code produces the following output:
