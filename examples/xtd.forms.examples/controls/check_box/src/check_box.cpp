@@ -34,7 +34,6 @@ namespace examples {
       check_box3.location({30, 90});
       
       check_box4.appearance(forms::appearance::button);
-      check_box4.control_appearance(forms::control_appearance::system);
       check_box4.check_state_changed += [&] {
         check_box4.text(ustring::format("{}", check_box4.check_state()));
       };
