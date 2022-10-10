@@ -6,6 +6,22 @@
 using namespace std;
 using namespace xtd;
 
+std::ostream& operator<<(std::ostream& os, const char8_t* str) {
+  return os << ustring(str); 
+}
+
+std::ostream& operator<<(std::ostream& os, const char16_t* str) {
+  return os << ustring(str); 
+}
+
+std::ostream& operator<<(std::ostream& os, const char32_t* str) {
+  return os << ustring(str);
+}
+
+std::ostream& operator<<(std::ostream& os, const wchar_t* str) {
+  return os << ustring(str);
+}
+
 string __format_stringer_to_std_string(const char& c) {
   return string(1, c);
 }
