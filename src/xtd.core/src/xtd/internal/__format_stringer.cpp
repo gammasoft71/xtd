@@ -6,6 +6,26 @@
 using namespace std;
 using namespace xtd;
 
+string __format_stringer_to_std_string(const char& c) {
+  return string(1, c);
+}
+
+string __format_stringer_to_std_string(const char8_t& c) {
+  return ustring(u8string(1, c));
+}
+
+string __format_stringer_to_std_string(const char16_t& c) {
+  return ustring(u16string(1, c));
+}
+
+string __format_stringer_to_std_string(const char32_t& c) {
+  return ustring(u32string(1, c));
+}
+
+string __format_stringer_to_std_string(const wchar_t& c) {
+  return ustring(wstring(1, c));
+}
+
 string __format_stringer_to_std_string(const char* str) {
   return str;
 }
