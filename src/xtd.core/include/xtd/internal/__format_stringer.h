@@ -231,6 +231,11 @@ std::basic_ostream<char_t>& operator<<(std::basic_ostream<char_t>& os, const std
   return os << xtd::to_string(value, std::basic_string<char_t> {'G'}, std::locale());
 }
 
+std::ostream& operator<<(std::ostream& os, const char8_t* str);
+std::ostream& operator<<(std::ostream& os, const char16_t* str);
+std::ostream& operator<<(std::ostream& os, const char32_t* str);
+std::ostream& operator<<(std::ostream& os, const wchar_t* str);
+
 template<typename value_t>
 std::string __format_stringer_to_std_string(const value_t& value) {
   std::basic_stringstream<char> ss;
