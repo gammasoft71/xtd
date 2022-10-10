@@ -238,6 +238,11 @@ std::string __format_stringer_to_std_string(const value_t& value) {
   return ss.str();
 }
 
+std::string __format_stringer_to_std_string(const char& c);
+std::string __format_stringer_to_std_string(const char8_t& c);
+std::string __format_stringer_to_std_string(const char16_t& c);
+std::string __format_stringer_to_std_string(const char32_t& c);
+std::string __format_stringer_to_std_string(const wchar_t& c);
 std::string __format_stringer_to_std_string(const char* str);
 std::string __format_stringer_to_std_string(const char8_t* str);
 std::string __format_stringer_to_std_string(const char16_t* str);
