@@ -6,29 +6,29 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/window_messages.h>
 #include "../../../include/xtd/forms/check_box.h"
-#include "../../../include/xtd/forms/button_renderer.h"
+#include "../../../include/xtd/forms/toggle_button_renderer.h"
 #include "../../../include/xtd/forms/check_box_renderer.h"
-#include "../../../include/xtd/forms/visual_styles/push_button_state.h"
+#include "../../../include/xtd/forms/visual_styles/toggle_button_state.h"
 
 using namespace xtd;
 using namespace xtd::forms;
 
 namespace {
-  xtd::forms::visual_styles::push_button_state to_push_button_style(xtd::forms::visual_styles::check_box_state state) {
+  xtd::forms::visual_styles::toggle_button_state to_toggle_button_style(xtd::forms::visual_styles::check_box_state state) {
     switch (state) {
-      case xtd::forms::visual_styles::check_box_state::unchecked_normal: return xtd::forms::visual_styles::push_button_state::normal;
-      case xtd::forms::visual_styles::check_box_state::unchecked_hot: return xtd::forms::visual_styles::push_button_state::hot;
-      case xtd::forms::visual_styles::check_box_state::unchecked_pressed: return xtd::forms::visual_styles::push_button_state::normal;
-      case xtd::forms::visual_styles::check_box_state::unchecked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
-      case xtd::forms::visual_styles::check_box_state::checked_normal: return xtd::forms::visual_styles::push_button_state::pressed;
-      case xtd::forms::visual_styles::check_box_state::checked_hot: return xtd::forms::visual_styles::push_button_state::pressed;
-      case xtd::forms::visual_styles::check_box_state::checked_pressed: return xtd::forms::visual_styles::push_button_state::pressed;
-      case xtd::forms::visual_styles::check_box_state::checked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
-      case xtd::forms::visual_styles::check_box_state::mixed_normal: return xtd::forms::visual_styles::push_button_state::default_state;
-      case xtd::forms::visual_styles::check_box_state::mixed_hot: return xtd::forms::visual_styles::push_button_state::default_state;
-      case xtd::forms::visual_styles::check_box_state::mixed_pressed: return xtd::forms::visual_styles::push_button_state::default_state;
-      case xtd::forms::visual_styles::check_box_state::mixed_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
-      default: return xtd::forms::visual_styles::push_button_state::normal;
+      case xtd::forms::visual_styles::check_box_state::unchecked_normal: return xtd::forms::visual_styles::toggle_button_state::unchecked_normal;
+      case xtd::forms::visual_styles::check_box_state::unchecked_hot: return xtd::forms::visual_styles::toggle_button_state::unchecked_hot;
+      case xtd::forms::visual_styles::check_box_state::unchecked_pressed: return xtd::forms::visual_styles::toggle_button_state::unchecked_pressed;
+      case xtd::forms::visual_styles::check_box_state::unchecked_disabled: return xtd::forms::visual_styles::toggle_button_state::unchecked_disabled;
+      case xtd::forms::visual_styles::check_box_state::checked_normal: return xtd::forms::visual_styles::toggle_button_state::checked_normal;
+      case xtd::forms::visual_styles::check_box_state::checked_hot: return xtd::forms::visual_styles::toggle_button_state::checked_hot;
+      case xtd::forms::visual_styles::check_box_state::checked_pressed: return xtd::forms::visual_styles::toggle_button_state::checked_pressed;
+      case xtd::forms::visual_styles::check_box_state::checked_disabled: return xtd::forms::visual_styles::toggle_button_state::checked_disabled;
+      case xtd::forms::visual_styles::check_box_state::mixed_normal: return xtd::forms::visual_styles::toggle_button_state::mixed_normal;
+      case xtd::forms::visual_styles::check_box_state::mixed_hot: return xtd::forms::visual_styles::toggle_button_state::mixed_hot;
+      case xtd::forms::visual_styles::check_box_state::mixed_pressed: return xtd::forms::visual_styles::toggle_button_state::mixed_pressed;
+      case xtd::forms::visual_styles::check_box_state::mixed_disabled: return xtd::forms::visual_styles::toggle_button_state::mixed_disabled;
+      default: return xtd::forms::visual_styles::toggle_button_state::unchecked_normal;
     }
   }
 }
@@ -116,6 +116,7 @@ void check_box::on_handle_created(const event_args& e) {
 }
 
 void check_box::on_paint(paint_event_args& e) {
+  auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
   if (flat_style() != xtd::forms::flat_style::system) {
     text_format_flags flags = to_text_format_flags(text_align());
     if (data_->appearance == xtd::forms::appearance::normal) {
@@ -123,9 +124,9 @@ void check_box::on_paint(paint_event_args& e) {
       else if (flat_style() == xtd::forms::flat_style::popup) check_box_renderer::draw_popup_check_box(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds({18, 0, width(), height()}), focused(), data_->state, !get_back_color().has_value() && back_color() != application::style_sheet().system_colors().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != application::style_sheet().system_colors().control_text() ? fore_color() : get_fore_color());
       else check_box_renderer::draw_check_box(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds({18, 0, width(), height()}), focused(), data_->state, !get_back_color().has_value() && back_color() != application::style_sheet().system_colors().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != application::style_sheet().system_colors().control_text() ? fore_color() : get_fore_color());
     } else if (data_->appearance == xtd::forms::appearance::button) {
-      if (flat_style() == xtd::forms::flat_style::flat) button_renderer::draw_flat_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), to_push_button_style(data_->state), !get_back_color().has_value() && back_color() != application::style_sheet().system_colors().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != application::style_sheet().system_colors().control_text() ? fore_color() : get_fore_color(), flat_appearance());
-      else if (flat_style() == xtd::forms::flat_style::popup) button_renderer::draw_popup_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), to_push_button_style(data_->state), !get_back_color().has_value() && back_color() != application::style_sheet().system_colors().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != application::style_sheet().system_colors().control_text() ? fore_color() : get_fore_color(), flat_appearance());
-      else button_renderer::draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), to_push_button_style(data_->state), !get_back_color().has_value() && back_color() != application::style_sheet().system_colors().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != application::style_sheet().system_colors().control_text() ? fore_color() : get_fore_color());
+      if (flat_style() == xtd::forms::flat_style::flat) toggle_button_renderer::draw_flat_toggle_button(style, e.graphics(), e.clip_rectangle(), to_toggle_button_style(data_->state), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align());
+      else if (flat_style() == xtd::forms::flat_style::popup) toggle_button_renderer::draw_popup_toggle_button(style, e.graphics(), e.clip_rectangle(), to_toggle_button_style(data_->state), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align());
+      else toggle_button_renderer::draw_toggle_button(style, e.graphics(), e.clip_rectangle(), to_toggle_button_style(data_->state), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align());
     }
   }
   button_base::on_paint(e);
