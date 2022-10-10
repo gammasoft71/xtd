@@ -60,7 +60,7 @@ intptr_t system_colors::accent() {
   if (is_windows_dark_mode()) return 0xFF00A0FA;
   return 0xFFD2E8F8;
   #else
-  return menu_highlight();
+  return highlight();
   #endif
 }
 
