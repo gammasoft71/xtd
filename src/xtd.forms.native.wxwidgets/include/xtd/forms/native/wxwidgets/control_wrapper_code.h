@@ -323,8 +323,8 @@ namespace xtd::forms::native {
   }
   
   template<typename control_t>
-  inline intptr_t control_wrapper<control_t>::get_control_handle_for_event(wxEvent& event) {
-    return event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0;
+  inline intptr_t control_wrapper<control_t>::get_control_handle_for_event(wxEvent& event, control_handler* handler) {
+    return event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : reinterpret_cast<intptr_t>(handler);
   }
   
   template<typename control_t>
@@ -442,7 +442,7 @@ namespace xtd::forms::native {
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_button(wxEvent& event) {
     if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), BN_CLICKED),  get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), BN_CLICKED),  get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
     else def_process_event(event);
   }
   
@@ -494,14 +494,14 @@ namespace xtd::forms::native {
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_checkbox(wxEvent& event) {
     if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), BN_CLICKED), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), BN_CLICKED), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
     else def_process_event(event);
   }
 
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_checklistbox(wxEvent& event) {
     if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), LBN_SELCHANGE), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), LBN_SELCHANGE), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
     else def_process_event(event);
 }
   
@@ -513,7 +513,7 @@ namespace xtd::forms::native {
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_choice(wxEvent& event) {
     if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), LBN_SELCHANGE), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), LBN_SELCHANGE), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
     else def_process_event(event);
   }
   
@@ -526,41 +526,41 @@ namespace xtd::forms::native {
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_collapsiblepane_changed(wxEvent& event) {
     if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), NM_CLICK), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), NM_CLICK), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
     else def_process_event(event);
   }
 
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_colourpicker_changed(wxEvent& event) {
     if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), CPN_SELCHANGE), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), CPN_SELCHANGE), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
     else def_process_event(event);
   }
 
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_combobox(wxEvent& event) {
     if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), CBN_SELCHANGE), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), CBN_SELCHANGE), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
     else def_process_event(event);
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_combobox_dropdown(wxEvent& event) {
     if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), CBN_DROPDOWN), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), CBN_DROPDOWN), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
     else def_process_event(event);
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_combobox_closeup(wxEvent& event) {
     if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), CBN_CLOSEUP), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), CBN_CLOSEUP), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
     else def_process_event(event);
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_date_changed(wxEvent& event) {
-    NMHDR nmhrd {reinterpret_cast<HWND>(get_control_handle_for_event(event)), static_cast<uintptr_t>(event.GetId()), DTN_DATETIMECHANGE};
+    NMHDR nmhrd {reinterpret_cast<HWND>(get_control_handle_for_event(event, event_handler_)), static_cast<uintptr_t>(event.GetId()), DTN_DATETIMECHANGE};
     if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
       event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
     else def_process_event(event);
@@ -594,7 +594,7 @@ namespace xtd::forms::native {
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_fontpicker_changed(wxEvent& event) {
     if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), FPN_SELCHANGE), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), FPN_SELCHANGE), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
     else def_process_event(event);
   }
   
@@ -687,7 +687,7 @@ namespace xtd::forms::native {
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_listbox(wxEvent& event) {
     if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), LBN_SELCHANGE), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), LBN_SELCHANGE), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
     else def_process_event(event);
   }
   
@@ -766,7 +766,7 @@ namespace xtd::forms::native {
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_notebook_page_changed(wxEvent& event) {
     if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), NM_CLICK), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), NM_CLICK), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
     else def_process_event(event);
   }
   
@@ -783,7 +783,7 @@ namespace xtd::forms::native {
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_radiobutton(wxEvent& event) {
     if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), BN_CLICKED), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), BN_CLICKED), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
     else def_process_event(event);
   }
   
@@ -827,42 +827,42 @@ namespace xtd::forms::native {
 
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_scroll_bottom(wxEvent& event) {
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_BOTTOM, get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_BOTTOM, get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_scroll_linedown(wxEvent& event) {
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_LINEDOWN, get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_LINEDOWN, get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_scroll_lineup(wxEvent& event) {
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_LINEUP, get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_LINEUP, get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_scroll_pagedown(wxEvent& event) {
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_PAGEDOWN, get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_PAGEDOWN, get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_scroll_pageup(wxEvent& event) {
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_PAGEUP, get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_PAGEUP, get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_scroll_thumnbrelease(wxEvent& event) {
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_ENDSCROLL, get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_ENDSCROLL, get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_scroll_thumbtrack(wxEvent& event) {
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_THUMBTRACK, get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_THUMBTRACK, get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_scroll_top(wxEvent& event) {
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_TOP, get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_TOP, get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
 
   template<typename control_t>
@@ -883,24 +883,22 @@ namespace xtd::forms::native {
 
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_slider(wxEvent& event) {
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSL_VERTICAL) == wxSL_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_THUMBPOSITION, get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSL_VERTICAL) == wxSL_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_THUMBPOSITION, get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_spin_down(wxEvent& event) {
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_LINEDOWN, get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_LINEDOWN, get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_spin_up(wxEvent& event) {
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_LINEUP, get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_LINEUP, get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
 
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_spinctrldouble(wxEvent& event) {
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), UDN_DELTAPOS), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), UDN_DELTAPOS), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
@@ -916,7 +914,7 @@ namespace xtd::forms::native {
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_time_changed(wxEvent& event) {
-    NMHDR nmhrd {reinterpret_cast<HWND>(get_control_handle_for_event(event)), static_cast<uintptr_t>(event.GetId()), DTN_DATETIMECHANGE};
+    NMHDR nmhrd {reinterpret_cast<HWND>(get_control_handle_for_event(event, event_handler_)), static_cast<uintptr_t>(event.GetId()), DTN_DATETIMECHANGE};
     if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
       event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
     else def_process_event(event);
@@ -925,7 +923,7 @@ namespace xtd::forms::native {
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_togglebutton(wxEvent& event) {
     if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), BN_CLICKED), get_control_handle_for_event(event), reinterpret_cast<intptr_t>(&event));
+      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), BN_CLICKED), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
     else def_process_event(event);
   }
 }
