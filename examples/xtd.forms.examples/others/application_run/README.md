@@ -17,20 +17,4 @@ xtdc run
 
 # Output
 
-## Windows :
-
-![Screenshot](../../../../docs/pictures/examples/application_run_w.png)
-
-![Screenshot](../../../../docs/pictures/examples/application_run_wd.png)
-
-## macOS :
-
-![Screenshot](../../../../docs/pictures/examples/application_run_m.png)
-
-![Screenshot](../../../../docs/pictures/examples/application_run_md.png)
-
-## Gnome :
-
-![Screenshot](../../../../docs/pictures/examples/application_run_g.png)
-
-![Screenshot](../../../../docs/pictures/examples/application_run_gd.png)
+No output.
