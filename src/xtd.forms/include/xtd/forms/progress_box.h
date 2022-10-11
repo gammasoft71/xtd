@@ -335,7 +335,7 @@ namespace xtd {
         .show_elapsed_time(options & progress_box_options::show_elapsed_time)
         .show_estimated_time(options & progress_box_options::show_estimated_time)
         .show_remaining_time(options & progress_box_options::show_remaining_time);
-        owner ? dialog_->show_sheet(*owner) : dialog_->show();
+        owner ? dialog_->show(*owner) : dialog_->show();
       }
     };
   }
