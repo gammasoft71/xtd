@@ -23,6 +23,7 @@ namespace xtd {
         
         intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
           if (xtd::drawing::native::wx_application::message_filter(hwnd, msg, wparam, lparam, handle)) return call_def_wnd_proc(hwnd, msg, wparam, lparam, 1, handle);
+          if (!wnd_proc && msg == WM_DESTROY) return 0; // if wnd_proc not defined do not call def_wnd_proc when WM_DESTROY. The WM_DESTROY message occurs before the control is completely initialized
           if (!wnd_proc) return call_def_wnd_proc(hwnd, msg, wparam, lparam, 0, handle);
           return wnd_proc(hwnd, msg, wparam, lparam, handle);
         }
