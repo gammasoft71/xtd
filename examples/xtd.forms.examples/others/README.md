@@ -31,7 +31,6 @@
 * [form2](form2/README.md) represents a window or dialog box that makes up an application's user interface.
 * [group_box_and_check_box](group_box_and_check_box/README.md) demonstrates the use of [xtd::forms::group_box](../../../src/xtd.forms/include/xtd/forms/button.h) container and [xtd::forms::check_box](../../../src/xtd.forms/include/xtd/forms/check_box.h) control.
 * [group_box_and_radio_button](group_box_and_radio_button/README.md) demonstrates the use of [xtd::forms::group_box](../../../src/xtd.forms/include/xtd/forms/group_box.h) container and [xtd::forms::radio_button](../../../src/xtd.forms/include/xtd/forms/radio_button.h) control.
-* [hello_world_message_box2](hello_world_message_box2/README.md) The classic first application "Hello, World!" with [xtd::forms::message_box](../../src/xtd_forms/include/xtd/forms/message_box.hpp) control.
 * [images2](images2/README.md) demonstrates the use of **xtd::drawing::system_images** class.
 * [images3](images3/README.md) demonstrates the use of **xtd::drawing::system_images** class.
 * [input_dialog_multiline](input_dialog_multiline/README.md) prompts the user to input multiline text.
