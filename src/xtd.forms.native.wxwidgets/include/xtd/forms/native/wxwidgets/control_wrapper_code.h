@@ -324,7 +324,7 @@ namespace xtd::forms::native {
   
   template<typename control_t>
   inline intptr_t control_wrapper<control_t>::get_control_handle_for_event(wxEvent& event, control_handler* handler) {
-    return event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : reinterpret_cast<intptr_t>(handler);
+    return event.GetEventObject() != this && static_cast<wxWindow*>(event.GetEventObject())->GetClientData() != nullptr  ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : reinterpret_cast<intptr_t>(handler);
   }
   
   template<typename control_t>
