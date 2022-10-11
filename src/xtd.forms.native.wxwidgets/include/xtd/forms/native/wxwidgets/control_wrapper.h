@@ -88,7 +88,7 @@ namespace xtd {
         
         void def_process_event(wxEvent& event);
         
-        intptr_t get_control_handle_for_event(wxEvent& event);
+        intptr_t get_control_handle_for_event(wxEvent& event, control_handler* handler);
         int32_t get_virtual_keys(const wxMouseState& mouse_state);
         
         static std::string to_string(const wxEventType& eventType);
