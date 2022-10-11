@@ -221,7 +221,7 @@
 
 * [draw_ellipse](drawing/draw_ellipse/README.md) shows how to draw ellipse in paint event.
 * [draw_image](drawing/draw_image/README.md) shows how to draw image in paint event.
-* [draw_line](draw_line/README.md) shows how to draw line in paint event.
+* [draw_line](drawing/draw_line/README.md) shows how to draw line in paint event.
 * [draw_point](drawing/draw_point/README.md) shows how to draw point in paint event.
 * [draw_rectangle](drawing/draw_rectangle/README.md) shows how to draw rectangle in paint event.
 * [draw_rounded_rectangle](drawing/draw_rounded_rectangle/README.md) shows how to draw rounded rectangle in paint event.
