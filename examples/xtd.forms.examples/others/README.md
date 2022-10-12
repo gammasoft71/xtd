@@ -31,7 +31,6 @@
 * [form2](form2/README.md) represents a window or dialog box that makes up an application's user interface.
 * [group_box_and_check_box](group_box_and_check_box/README.md) demonstrates the use of [xtd::forms::group_box](../../../src/xtd.forms/include/xtd/forms/button.h) container and [xtd::forms::check_box](../../../src/xtd.forms/include/xtd/forms/check_box.h) control.
 * [group_box_and_radio_button](group_box_and_radio_button/README.md) demonstrates the use of [xtd::forms::group_box](../../../src/xtd.forms/include/xtd/forms/group_box.h) container and [xtd::forms::radio_button](../../../src/xtd.forms/include/xtd/forms/radio_button.h) control.
-* [hello_world_message_box2](hello_world_message_box2/README.md) The classic first application "Hello, World!" with [xtd::forms::message_box](../../src/xtd_forms/include/xtd/forms/message_box.hpp) control.
 * [images2](images2/README.md) demonstrates the use of **xtd::drawing::system_images** class.
 * [images3](images3/README.md) demonstrates the use of **xtd::drawing::system_images** class.
 * [input_dialog_multiline](input_dialog_multiline/README.md) prompts the user to input multiline text.
@@ -49,14 +48,13 @@
 * [settings2](settings_example2/README.md) represents settings application.
 * [smileys](smileys/README.md) demonstrates the use of [xtd::forms::label](../../../src/xtd.forms/include/xtd/forms/label.h) control.
 * [some_controls](some_controls/README.md) demonstrates the use of some controls.
-* [status_bar](status_bar/README.md) represents a Windows status bar control.
 * [status_bar_without_panels](status_bar_without_panels/README.md) represents a Windows status bar control without panels.
 * [stopwatch_form](stopwatch_form/README.md) demonstrates the use of stopwatch class, [xtd::forms::label](../../../src/xtd.forms/include/xtd/forms/label.h) and [xtd::forms::button](../../../src/xtd.forms/include/xtd/forms/button.h) controls.
 * [system_report](system_report/README.md) shows system_repoort with [xtd::forms::text_box](../../../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
 * [system_sound](system_sound/README.md) demonstrates the use of [xtd::media::system_sound](../../../src/xtd_forms/include/xtd/media/system_sound.hpp) component.
 * [text_box_multiline](text_box_multiline/README.md) represents a Windows [xtd::forms::text_box](../../../src/xtd.forms/include/xtd/forms/text_box.h) control.
 * [text_box_password](text_box_password/README.md) represents a Windows [xtd::forms::text_box](../../../src/xtd.forms/include/xtd/forms/text_box.h) control.
-* [texts](texts/README.md) demonstrates the use of [xtd::forms::texts](../../../src/xtd.forms/include/xtd/forms/texts.h) strings.
+* [text_box_password2](text_box_password2/README.md) represents a Windows [xtd::forms::text_box](../../../src/xtd.forms/include/xtd/forms/text_box.h) control.
 * [toggle_button2](toggle_button2/README.md) represents a [xtd::forms::toggle_button](../../../src/xtd.forms/include/xtd/forms/toggle_button.h) control.
 * [track_bar2](track_bar2/README.md) represents a standard Windows [xtd::forms::track_bar](../../../src/xtd.forms/include/xtd/forms/track_bar.h).
 * [wiggly](wiggly/README.md) shows how to animate a user control using timer and timer::event. In addition, the example demonstrates how to use graphics::measure_string to determine the size of text on screen.

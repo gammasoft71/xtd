@@ -23,7 +23,7 @@ public:
       label_dialog_result.text(ustring::format("dialog_result = {}", dialog.show_sheet_dialog(*this)));
     };
     
-    label_dialog_result.location({10, 45});
+    label_dialog_result.location({10, 55});
     label_dialog_result.width(200);
   }
   

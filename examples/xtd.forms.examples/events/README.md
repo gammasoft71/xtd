@@ -7,8 +7,8 @@
 * [enable_changed_event](enable_changed_event/README.md) demonstrates the use of [enable_changed](../../../src/xtd.forms/include/xtd/forms/control.h) event.
 * [font_changed_event](font_changed_event/README.md) demonstrates the use of [font_changed](../../../src/xtd.forms/include/xtd/forms/control.h) event.
 * [form_click](form_click/README.md) demonstrates the use of [xtd::forms::form](../../../src/xtd.forms/include/xtd/forms/form.h) control and [click](../../../src/xtd.forms/include/xtd/forms/control.h) event.
-* [form_and_messages](form_and_messages/README.md) demonstrates some events received by [xtd::forms::form](../../../../../src/xtd.forms/include/xtd/forms/form.h).
-* [form_paint](form_paint/README.md) demonstrates paint event with [xtd::forms::form](../../../../../src/xtd.forms/include/xtd/forms/form.h).
+* [form_and_messages](form_and_messages/README.md) demonstrates some events received by [xtd::forms::form](../../../src/xtd.forms/include/xtd/forms/form.h).
+* [form_paint](form_paint/README.md) demonstrates paint event with [xtd::forms::form](../../../src/xtd.forms/include/xtd/forms/form.h).
 * [key_events](key_events/README.md) demonstrates the use of key events.
 * [mouse_events](mouse_events/README.md) demonstrates the use of mouse events.
 * [move_form](move_form/README.md) demonstrates the use of move form events.

@@ -39,7 +39,7 @@ namespace {
       };
       
       panel_top_.location({0, 0});
-      panel_top_.size({550, 150});
+      panel_top_.size({550, 160});
       panel_top_.controls().push_back_range({picture_box_error_, label_exception_, button_details_, button_continue_, button_quit_});
       
       panel_bottom_.location({0, 150});

@@ -23,6 +23,7 @@ public:
     };
     
     caption_label.location({10, 62});
+    caption_label.auto_size(true);
     caption_label.text("caption");
     
     caption_text_box.location({110, 60});
@@ -33,6 +34,7 @@ public:
     };
     
     minimize_box_label.location({10, 112});
+    minimize_box_label.auto_size(true);
     minimize_box_label.text("Minimize box");
     
     minimize_box_switch_button.location({260, 110});
@@ -42,6 +44,7 @@ public:
     };
     
     maximize_box_label.location({10, 142});
+    maximize_box_label.auto_size(true);
     maximize_box_label.text("Maximize box");
     
     maximize_box_switch_button.location({260, 140});
@@ -51,6 +54,7 @@ public:
     };
     
     close_box_label.location({10, 172});
+    close_box_label.auto_size(true);
     close_box_label.text("Close box");
     
     close_box_switch_button.location({260, 170});
@@ -60,6 +64,7 @@ public:
     };
     
     control_box_label.location({10, 202});
+    control_box_label.auto_size(true);
     control_box_label.text("Control box");
     
     control_box_switch_button.location({260, 200});
@@ -69,6 +74,7 @@ public:
     };
     
     help_button_label.location({10, 232});
+    help_button_label.auto_size(true);
     help_button_label.text("Help button");
     
     help_button_switch_button.location({260, 230});
@@ -78,6 +84,7 @@ public:
     };
     
     show_icon_label.location({10, 262});
+    show_icon_label.auto_size(true);
     show_icon_label.text("Show icon");
     
     show_icon_switch_button.location({260, 260});
@@ -87,6 +94,7 @@ public:
     };
     
     show_in_taskbar_label.location({10, 292});
+    show_in_taskbar_label.auto_size(true);
     show_in_taskbar_label.text("Show in taskbar");
     
     show_in_taskbar_switch_button.location({260, 290});

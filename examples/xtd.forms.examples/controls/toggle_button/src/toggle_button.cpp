@@ -23,7 +23,7 @@ namespace examples {
         toggle_button2.text(ustring::format("{}", toggle_button2.check_state()));
       };
       toggle_button2.checked(true);
-      toggle_button2.location({30, 60});
+      toggle_button2.location({30, 80});
       toggle_button2.width(120);
       
       toggle_button3.auto_size(true);
@@ -32,7 +32,7 @@ namespace examples {
       };
       toggle_button3.check_state(forms::check_state::indeterminate);
       toggle_button3.three_state(true);
-      toggle_button3.location({30, 90});
+      toggle_button3.location({30, 130});
       toggle_button3.width(120);
     }
     

@@ -14,14 +14,17 @@ public:
     controls().push_back_range({company, product, version, company_name, product_name, product_version});
     client_size({350, 105});
     
+    company.auto_size(true);
     company.text("Company name");
     company.location({10, 10});
     company.text_align(content_alignment::middle_left);
     
+    product.auto_size(true);
     product.text("Product name");
     product.location({10, 40});
     product.text_align(content_alignment::middle_left);
     
+    version.auto_size(true);
     version.text("Product version");
     version.location({10, 70});
     version.text_align(content_alignment::middle_left);

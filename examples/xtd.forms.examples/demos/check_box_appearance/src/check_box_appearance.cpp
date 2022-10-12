@@ -9,7 +9,7 @@ using namespace xtd::forms;
 class form1 : public form {
 public:
   form1() {
-    text("Button appearance");
+    text("Check box appearance");
     client_size({800, 450});
     controls().push_back_range({group_box_properties, check_box_demo});
     
