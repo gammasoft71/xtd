@@ -18,14 +18,19 @@ xtdc run
 # Output
 
 ## Windows :
-TODO
-<!-- 
-![Screenshot](../../../../docs/pictures/examples/open_file_dialog_w.png)
-![Screenshot](../../../../docs/pictures/examples/open_file_dialog_wd.png)
- -->
- 
+
+![Screenshot](../../../../docs/pictures/examples/open_file_box_w.png)
+
+![Screenshot](../../../../docs/pictures/examples/open_file_box_wd.png)
+
 ## macOS :
-TODO
+
+![Screenshot](../../../../docs/pictures/examples/open_file_box_m.png)
+
+![Screenshot](../../../../docs/pictures/examples/open_file_box_md.png)
 
 ## Gnome :
-TODO
+
+![Screenshot](../../../../docs/pictures/examples/open_file_box_g.png)
+
+![Screenshot](../../../../docs/pictures/examples/open_file_box_gd.png)

@@ -17,14 +17,14 @@ namespace examples {
       };
       light_button1.location({30, 30});
       light_button1.text(ustring::format("{}", light_button1.check_state()));
-      light_button1.width(120);
+      light_button1.width(130);
       
       light_button2.check_state_changed += [&] {
         light_button2.text(ustring::format("{}", light_button2.check_state()));
       };
       light_button2.checked(true);
-      light_button2.location({30, 60});
-      light_button2.width(120);
+      light_button2.location({30, 80});
+      light_button2.width(130);
       
       light_button3.auto_size(true);
       light_button3.check_state_changed += [&] {
@@ -32,8 +32,8 @@ namespace examples {
       };
       light_button3.check_state(forms::check_state::indeterminate);
       light_button3.three_state(true);
-      light_button3.location({30, 90});
-      light_button3.width(120);
+      light_button3.location({30, 130});
+      light_button3.width(130);
     }
     
   private:

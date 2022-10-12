@@ -18,10 +18,19 @@ xtdc run
 # Output
 
 ## Windows :
-TODO
- 
+
+![Screenshot](../../../../docs/pictures/examples/font_box_w.png)
+
+![Screenshot](../../../../docs/pictures/examples/font_box_wd.png)
+
 ## macOS :
-TODO
+
+![Screenshot](../../../../docs/pictures/examples/font_box_m.png)
+
+![Screenshot](../../../../docs/pictures/examples/font_box_md.png)
 
 ## Gnome :
-TODO
+
+![Screenshot](../../../../docs/pictures/examples/font_box_g.png)
+
+![Screenshot](../../../../docs/pictures/examples/font_box_gd.png)

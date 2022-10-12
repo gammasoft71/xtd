@@ -23,7 +23,7 @@ public:
     label1.parent(*this);
     label1.text("File = ");
     label1.auto_size(true);
-    label1.location({10, 40});
+    label1.location({10, 50});
   }
   
 private:

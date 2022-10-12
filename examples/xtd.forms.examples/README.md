@@ -197,13 +197,15 @@
 
 * [application_events](events/application_events/README.md) demonstrates the use of [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) events.
 * [application_idle](events/application_idle/README.md) demonstrates the use of [xtd::forms::application::idle](../../src/xtd.forms/include/xtd/forms/application.h) event.
-* [key_events](events/key_events/README.md) demonstrates the use of key events.
-* [mouse_events](events/mouse_events/README.md) demonstrates the use of mouse events.
 * [enable_changed_event](events/enable_changed_event/README.md) demonstrates the use of [enable_changed](../../src/xtd.forms/include/xtd/forms/control.h) event.
 * [font_changed_event](events/font_changed_event/README.md) demonstrates the use of [font_changed](../../src/xtd.forms/include/xtd/forms/control.h) event.
 * [form_click](events/form_click/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) control and [click](../../src/xtd.forms/include/xtd/forms/control.h) event.
 * [form_and_messages](events/form_and_messages/README.md) demonstrates some events received by [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h).
 * [form_paint](events/form_paint/README.md) demonstrates paint event with [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h).
+* [key_events](events/key_events/README.md) demonstrates the use of key events.
+* [mouse_events](events/mouse_events/README.md) demonstrates the use of mouse events.
+* [move_form](events/move_form/README.md) demonstrates the use of move form events.
+* [send_message_to_form](events/send_message_to_form/README.md) demonstrates how to send message to form.
 * [wnd_proc](events/wnd_proc/README.md) demonstrates the use of [wnd_proc](../../src/xtd.forms/include/xtd/forms/control.h) method.
 
 ## [User Controls](user_controls/README.md)
@@ -216,12 +218,13 @@
 ## [User Dialogs](user_dialogs/README.md)
 
 * [user_dialog](user_dialogs/user_dialog/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) as dialog.
+* [user_dialog_show_sheet](user_dialogs/user_dialog_show_sheet/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) as dialog.
 
 ## [Drawing](drawing/README.md)
 
 * [draw_ellipse](drawing/draw_ellipse/README.md) shows how to draw ellipse in paint event.
 * [draw_image](drawing/draw_image/README.md) shows how to draw image in paint event.
-* [draw_line](draw_line/README.md) shows how to draw line in paint event.
+* [draw_line](drawing/draw_line/README.md) shows how to draw line in paint event.
 * [draw_point](drawing/draw_point/README.md) shows how to draw point in paint event.
 * [draw_rectangle](drawing/draw_rectangle/README.md) shows how to draw rectangle in paint event.
 * [draw_rounded_rectangle](drawing/draw_rounded_rectangle/README.md) shows how to draw rounded rectangle in paint event.
@@ -236,7 +239,7 @@
 
 ## [Others](others/README.md)
 
-* [about_dialog_system](dialogs/about_dialog_system/README.md) represents a dialog box that displays about box.
+* [about_dialog_system](others/about_dialog_system/README.md) represents a dialog box that displays about box.
 * [anchors](others/anchors/README.md) demonstrates the use of [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) container with [xtd::forms::control::anchor](../../src/xtd.forms/include/xtd/forms/control.h).
 * [auto_scroll](others/auto_scroll/README.md) demonstrates the use of [xtd::forms::panel](../../src/xtd.forms/include/xtd/forms/panel.h) container with [xtd::forms/scrollable_control::auto_scroll](../../src/xtd.forms/include/xtd/forms/scrollable_control.h).
 * [bitmap_button](others/bitmap_button/README.md) demonstrates the use of [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control with [xtd::drawing::image](../../src/xtd.drawing/include/xtd/drawing/image.h).
@@ -286,8 +289,9 @@
 * [system_sound](others/system_sound/README.md) demonstrates the use of xtd::media::system_sound component.
 * [text_box_multiline](others/text_box_multiline/README.md) represents a Windows [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) control.
 * [text_box_password](others/text_box_password/README.md) represents a Windows [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) control.
-* [texts](others/texts/README.md) demonstrates the use of [xtd::forms::texts](../../src/xtd.forms/include/xtd/forms/texts.h) strings.
+* [text_box_password2](others/text_box_password2/README.md) represents a Windows [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) control.
 * [toggle_button2](others/toggle_button2/README.md) represents a [xtd::forms::toggle_button](../../src/xtd.forms/include/xtd/forms/toggle_button.h) control.
 * [track_bar2](others/track_bar2/README.md) represents a standard Windows [xtd::forms::track_bar](../../src/xtd.forms/include/xtd/forms/track_bar.h).
 * [wiggly](others/wiggly/README.md) shows how to animate a user control using timer and timer::event. In addition, the example demonstrates how to use graphics::measure_string to determine the size of text on screen.
+
 * [All](.) You can see all examples here. 
