@@ -19,7 +19,7 @@ public:
       label_dialog_result.text(ustring::format("dialog_result = {}", result));
     };
     
-    label_dialog_result.location({10, 45});
+    label_dialog_result.location({10, 55});
     label_dialog_result.width(200);
   }
   
