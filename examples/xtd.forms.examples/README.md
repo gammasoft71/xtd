@@ -216,6 +216,7 @@
 ## [User Dialogs](user_dialogs/README.md)
 
 * [user_dialog](user_dialogs/user_dialog/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) as dialog.
+* [user_dialog_show_sheet](user_dialogs/user_dialog_show_sheet/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) as dialog.
 
 ## [Drawing](drawing/README.md)
 
