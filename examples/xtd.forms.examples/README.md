@@ -236,7 +236,7 @@
 
 ## [Others](others/README.md)
 
-* [about_dialog_system](dialogs/about_dialog_system/README.md) represents a dialog box that displays about box.
+* [about_dialog_system](others/about_dialog_system/README.md) represents a dialog box that displays about box.
 * [anchors](others/anchors/README.md) demonstrates the use of [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) container with [xtd::forms::control::anchor](../../src/xtd.forms/include/xtd/forms/control.h).
 * [auto_scroll](others/auto_scroll/README.md) demonstrates the use of [xtd::forms::panel](../../src/xtd.forms/include/xtd/forms/panel.h) container with [xtd::forms/scrollable_control::auto_scroll](../../src/xtd.forms/include/xtd/forms/scrollable_control.h).
 * [bitmap_button](others/bitmap_button/README.md) demonstrates the use of [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control with [xtd::drawing::image](../../src/xtd.drawing/include/xtd/drawing/image.h).
@@ -286,8 +286,9 @@
 * [system_sound](others/system_sound/README.md) demonstrates the use of xtd::media::system_sound component.
 * [text_box_multiline](others/text_box_multiline/README.md) represents a Windows [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) control.
 * [text_box_password](others/text_box_password/README.md) represents a Windows [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) control.
-* [texts](others/texts/README.md) demonstrates the use of [xtd::forms::texts](../../src/xtd.forms/include/xtd/forms/texts.h) strings.
+* [text_box_password2](others/text_box_password2/README.md) represents a Windows [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) control.
 * [toggle_button2](others/toggle_button2/README.md) represents a [xtd::forms::toggle_button](../../src/xtd.forms/include/xtd/forms/toggle_button.h) control.
 * [track_bar2](others/track_bar2/README.md) represents a standard Windows [xtd::forms::track_bar](../../src/xtd.forms/include/xtd/forms/track_bar.h).
 * [wiggly](others/wiggly/README.md) shows how to animate a user control using timer and timer::event. In addition, the example demonstrates how to use graphics::measure_string to determine the size of text on screen.
+
 * [All](.) You can see all examples here. 
