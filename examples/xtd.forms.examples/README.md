@@ -197,13 +197,15 @@
 
 * [application_events](events/application_events/README.md) demonstrates the use of [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) events.
 * [application_idle](events/application_idle/README.md) demonstrates the use of [xtd::forms::application::idle](../../src/xtd.forms/include/xtd/forms/application.h) event.
-* [key_events](events/key_events/README.md) demonstrates the use of key events.
-* [mouse_events](events/mouse_events/README.md) demonstrates the use of mouse events.
 * [enable_changed_event](events/enable_changed_event/README.md) demonstrates the use of [enable_changed](../../src/xtd.forms/include/xtd/forms/control.h) event.
 * [font_changed_event](events/font_changed_event/README.md) demonstrates the use of [font_changed](../../src/xtd.forms/include/xtd/forms/control.h) event.
 * [form_click](events/form_click/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) control and [click](../../src/xtd.forms/include/xtd/forms/control.h) event.
 * [form_and_messages](events/form_and_messages/README.md) demonstrates some events received by [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h).
 * [form_paint](events/form_paint/README.md) demonstrates paint event with [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h).
+* [key_events](events/key_events/README.md) demonstrates the use of key events.
+* [mouse_events](events/mouse_events/README.md) demonstrates the use of mouse events.
+* [move_form](events/move_form/README.md) demonstrates the use of move form events.
+* [send_message_to_form](events/send_message_to_form/README.md) demonstrates how to send message to form.
 * [wnd_proc](events/wnd_proc/README.md) demonstrates the use of [wnd_proc](../../src/xtd.forms/include/xtd/forms/control.h) method.
 
 ## [User Controls](user_controls/README.md)
