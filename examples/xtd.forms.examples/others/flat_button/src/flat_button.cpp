@@ -32,7 +32,7 @@ public:
     button3.image_align(content_alignment::middle_left);
     button3.text("Gammasoft");
     
-    button4.location({40, 170});
+    button4.location({40, 175});
     button4.flat_appearance(flat_button_appearance().border_size(0));
     button4.flat_style(xtd::forms::flat_style::flat);
     button4.size({70, 70});
