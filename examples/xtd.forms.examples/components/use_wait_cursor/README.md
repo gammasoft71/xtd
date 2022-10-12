@@ -21,6 +21,8 @@ xtdc run
 
 ![Screenshot](../../../../docs/pictures/examples/use_wait_cursor_w.png)
 
+![Screenshot](../../../../docs/pictures/examples/use_wait_cursor_wd.png)
+
 ## macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/use_wait_cursor_m.png)
