@@ -23,7 +23,7 @@ int main() {
   
   auto reload_button = control::create<button>(*main_form, "&Reload", {170, 10});
   reload_button->click += [&] {
-    main_form->client_size(settings.read("size", size {335, 45}));
+    main_form->client_size(settings.read("size", size {335, 55}));
     main_form->location(settings.read("location", point {100, 50}));
     main_form->back_color(settings.read("back_color", main_form->back_color()));
     back_color_picker->color(main_form->back_color());
