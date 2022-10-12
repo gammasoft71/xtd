@@ -7,7 +7,7 @@ namespace examples {
   public:
     form1() {
       text("Label example");
-      client_size({370, 360});
+      client_size({390, 360});
       
       label1.parent(*this);
       label1.text("Lorem ipsum");
