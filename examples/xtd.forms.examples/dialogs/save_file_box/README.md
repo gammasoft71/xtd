@@ -18,10 +18,27 @@ xtdc run
 # Output
 
 ## Windows :
-TODO
- 
+
+![Screenshot](../../../../docs/pictures/examples/save_file_box_w1.png)
+
+![Screenshot](../../../../docs/pictures/examples/save_file_box_wd1.png)
+
+![Screenshot](../../../../docs/pictures/examples/save_file_box_w2.png)
+
+![Screenshot](../../../../docs/pictures/examples/save_file_box_wd2.png)
+
 ## macOS :
-TODO
+
+![Screenshot](../../../../docs/pictures/examples/save_file_box_m1.png)
+
+![Screenshot](../../../../docs/pictures/examples/save_file_box_md1.png)
+
+![Screenshot](../../../../docs/pictures/examples/save_file_box_m2.png)
+
+![Screenshot](../../../../docs/pictures/examples/save_file_box_md2.png)
 
 ## Gnome :
-TODO
+
+![Screenshot](../../../../docs/pictures/examples/save_file_box_g.png)
+
+![Screenshot](../../../../docs/pictures/examples/save_file_box_gd.png)
