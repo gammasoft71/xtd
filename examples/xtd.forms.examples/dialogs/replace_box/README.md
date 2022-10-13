@@ -1,10 +1,10 @@
-# find_dialog
+# replace_box
 
-demonstrates the use of [xtd::forms::find_dialog](../../../../src/xtd.forms/include/xtd/forms/find_dialog.h) dialog.
+demonstrates the use of [xtd::forms::replace_box](../../../../src/xtd.forms/include/xtd/forms/replace_box.h) dialog.
 
 # Sources
 
-* [src/find_dialog.cpp](src/find_dialog.cpp)
+* [src/replace_box.cpp](src/replace_box.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/find_dialog_w.png)
+![Screenshot](../../../../docs/pictures/examples/replace_box_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/find_dialog_wd.png)
+![Screenshot](../../../../docs/pictures/examples/replace_box_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/find_dialog_m.png)
+![Screenshot](../../../../docs/pictures/examples/replace_box_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/find_dialog_md.png)
+![Screenshot](../../../../docs/pictures/examples/replace_box_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/find_dialog_g.png)
+![Screenshot](../../../../docs/pictures/examples/replace_box_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/find_dialog_gd.png)
+![Screenshot](../../../../docs/pictures/examples/replace_box_gd.png)
