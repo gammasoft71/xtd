@@ -29,13 +29,9 @@ xtdc run
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/save_file_dialog_m1.png)
+![Screenshot](../../../../docs/pictures/examples/save_file_dialog_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/save_file_dialog_md1.png)
-
-![Screenshot](../../../../docs/pictures/examples/save_file_dialog_m2.png)
-
-![Screenshot](../../../../docs/pictures/examples/save_file_dialog_md2.png)
+![Screenshot](../../../../docs/pictures/examples/save_file_dialog_md.png)
 
 ## Gnome :
 
