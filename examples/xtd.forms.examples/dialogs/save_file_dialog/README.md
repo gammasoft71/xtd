@@ -19,13 +19,9 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/save_file_dialog_w1.png)
+![Screenshot](../../../../docs/pictures/examples/save_file_dialog_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/save_file_dialog_wd1.png)
-
-![Screenshot](../../../../docs/pictures/examples/save_file_dialog_w2.png)
-
-![Screenshot](../../../../docs/pictures/examples/save_file_dialog_wd2.png)
+![Screenshot](../../../../docs/pictures/examples/save_file_dialog_wd.png)
 
 ## macOS :
 
