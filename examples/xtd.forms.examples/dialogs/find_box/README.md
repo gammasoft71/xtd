@@ -31,6 +31,6 @@ xtdc run
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/find_ox_g.png)
+![Screenshot](../../../../docs/pictures/examples/find_box_g.png)
 
 ![Screenshot](../../../../docs/pictures/examples/find_box_gd.png)
