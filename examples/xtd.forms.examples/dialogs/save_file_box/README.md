@@ -19,23 +19,15 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/save_file_box_w1.png)
+![Screenshot](../../../../docs/pictures/examples/save_file_box_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/save_file_box_wd1.png)
-
-![Screenshot](../../../../docs/pictures/examples/save_file_box_w2.png)
-
-![Screenshot](../../../../docs/pictures/examples/save_file_box_wd2.png)
+![Screenshot](../../../../docs/pictures/examples/save_file_box_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/save_file_box_m1.png)
+![Screenshot](../../../../docs/pictures/examples/save_file_box_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/save_file_box_md1.png)
-
-![Screenshot](../../../../docs/pictures/examples/save_file_box_m2.png)
-
-![Screenshot](../../../../docs/pictures/examples/save_file_box_md2.png)
+![Screenshot](../../../../docs/pictures/examples/save_file_box_md.png)
 
 ## Gnome :
 
