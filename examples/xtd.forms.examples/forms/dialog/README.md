@@ -21,7 +21,7 @@ xtdc run
 
 ![Screenshot](../../../../docs/pictures/examples/dialog_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/dialogwd.png)
+![Screenshot](../../../../docs/pictures/examples/dialog_wd.png)
 
 ## macOS :
 
