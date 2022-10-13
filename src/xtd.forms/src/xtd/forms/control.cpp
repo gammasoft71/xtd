@@ -1554,13 +1554,6 @@ void control::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t heigh
     data_->size.value().height(height);
   }
   
-  if ((specified & bounds_specified::x) == bounds_specified::x || (specified & bounds_specified::y) == bounds_specified::y) {
-    if (is_handle_created()) native::control::location(handle(), location());
-    on_location_changed(event_args::empty);
-    if (parent().has_value()) parent().value().get().perform_layout();
-    perform_layout();
-  }
-  
   if ((specified & bounds_specified::width) == bounds_specified::width || (specified & bounds_specified::height) == bounds_specified::height) {
     if (size().width() < minimum_size().width()) data_->size.value().width(minimum_size().width());
     if (size().height() < minimum_size().height()) data_->size.value().height(minimum_size().height());
@@ -1571,6 +1564,16 @@ void control::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t heigh
     on_client_size_changed(event_args::empty);
     on_size_changed(event_args::empty);
     on_resize(event_args::empty);
+  }
+
+  if ((specified & bounds_specified::x) == bounds_specified::x || (specified & bounds_specified::y) == bounds_specified::y) {
+    if (is_handle_created()) native::control::location(handle(), location());
+    on_location_changed(event_args::empty);
+  }
+
+  if (specified != bounds_specified::none) {
+    if (parent().has_value()) parent().value().get().perform_layout();
+    perform_layout();
   }
 }
 
