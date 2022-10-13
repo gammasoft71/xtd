@@ -22,7 +22,6 @@ xtdc run
 ![Screenshot](../../../../docs/pictures/examples/save_file_dialog_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/save_file_dialog_wd.png)
-2.png)
 
 ## macOS :
 
