@@ -27,7 +27,7 @@ xtdc run
 
 ![Screenshot](../../../../docs/pictures/examples/debug_message_box_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/debug_message_boxx_md.png)
+![Screenshot](../../../../docs/pictures/examples/debug_message_box_md.png)
 
 ## Gnome :
 
