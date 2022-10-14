@@ -128,19 +128,19 @@
 /// @subsubsection ExamplesFormsOutputSubsubsection Output
 ///
 /// Windows:
-///  @image html hello_world_message_box_w.png
+///  @image html hello_world_w.png
 /// <br>
-///  @image html hello_world_message_box_wd.png
+///  @image html hello_world_wd.png
 ///
 /// macOS:
-///  @image html hello_world_message_box_m.png
+///  @image html hello_world_m.png
 /// <br>
-///  @image html hello_world_message_box_md.png
+///  @image html hello_world_md.png
 ///
 /// Linux Gnome:
-///  @image html hello_world_message_box_g.png
+///  @image html hello_world_g.png
 /// <br>
-///  @image html hello_world_message_box_gd.png
+///  @image html hello_world_gd.png
 ///
 /// @subsection ExamplesUnitTestSubsection Unit tests
 /// hello_world_test.cpp:
