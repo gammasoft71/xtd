@@ -193,21 +193,21 @@ xtdc run
 
 ##### Windows
 
-![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/examples/hello_world_message_box_w.png)
+![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/hello_world_w.png)
 
-![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/examples/hello_world_message_box_wd.png)
+![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/hello_world_wd.png)
 
 ##### macOS
 
-![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/examples/hello_world_message_box_m.png)
+![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/hello_world_m.png)
 
-![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/examples/hello_world_message_box_md.png)
+![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/hello_world_md.png)
 
 ##### Linux Gnome
 
-![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/examples/hello_world_message_box_g.png)
+![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/hello_world_g.png)
 
-![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/examples/hello_world_message_box_gd.png)
+![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/hello_world_gd.png)
 
 ### tunit (Unit tests like Microsoft Unit Testing Framework)
 
