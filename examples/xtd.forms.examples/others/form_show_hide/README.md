@@ -21,6 +21,8 @@ xtdc run
 
 ![Screenshot](../../../../docs/pictures/examples/form_show_hide_w.png)
 
+![Screenshot](../../../../docs/pictures/examples/form_show_hide_wd.png)
+
 ## macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/form_show_hide_m.png)
