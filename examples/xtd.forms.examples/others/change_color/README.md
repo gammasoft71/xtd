@@ -21,6 +21,8 @@ xtdc run
 
 ![Screenshot](../../../../docs/pictures/examples/change_color_w.png)
 
+![Screenshot](../../../../docs/pictures/examples/change_color_wd.png)
+
 ## macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/change_color_m.png)
