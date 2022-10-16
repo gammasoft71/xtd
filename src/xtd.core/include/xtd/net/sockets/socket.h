@@ -66,6 +66,7 @@ namespace xtd {
       /// @remarks The xtd::net::sockets::socket class allows you to configure your xtd::net::sockets::socket using the xtd::net::sockets::socket::set_socket_option method. Retrieve these settings using the xtd::net::sockets::socket::get_socket_option method.
       /// @note If you are writing a relatively simple application and do not require maximum performance, consider using xtd::net::sockets::tcp_client, xtd::net::sockets::tcp_listener, and xtd::net::sockets::udp_client. These classes provide a simpler and more user-friendly interface to xtd::net::sockets::socket communications.
       class core_export_ socket : public xtd::object {
+        /// @brief Implement xtd::iasync_result that references the asynchronous Socket result.
         class async_result_socket : public xtd::object, public xtd::iasync_result {
         public:
           explicit async_result_socket(std::any async_state) : async_state_(async_state) {}
@@ -81,28 +82,33 @@ namespace xtd {
           std::exception_ptr exception_;
         };
         
+        /// @brief Implement xtd::iasync_result that references the asynchronous Socket creation result.
         class async_result_accept : public async_result_socket {
         public:
           explicit async_result_accept(std::any async_state) : async_result_socket(async_state) {}
           std::any socket_;
         };
         
+        /// @brief Implement xtd::iasync_result that references the asynchronous Socket connection result.
         class async_result_connect : public async_result_socket {
         public:
           explicit async_result_connect(std::any async_state) : async_result_socket(async_state) {}
         };
         
+        /// @brief Implement xtd::iasync_result that references the asynchronous Socket disconnection result.
         class async_result_disconnect : public async_result_socket {
         public:
           explicit async_result_disconnect(std::any async_state) : async_result_socket(async_state) {}
         };
         
+        /// @brief Implement xtd::iasync_result that references the asynchronous Socket receive result.
         class async_result_receive : public async_result_socket {
         public:
           explicit async_result_receive(std::any async_state) : async_result_socket(async_state) {}
           size_t number_of_bytes_received_ = 0;
         };
         
+        /// @brief Implement xtd::iasync_result that references the asynchronous Socket receive from result.
         class async_result_receive_from : public async_result_socket {
         public:
           explicit async_result_receive_from(std::any async_state) : async_result_socket(async_state) {}
@@ -110,6 +116,7 @@ namespace xtd {
           size_t number_of_bytes_received_ = 0;
         };
         
+        /// @brief Implement xtd::iasync_result that references the asynchronous Socket receive message result.
         class async_result_receive_message_from : public async_result_socket {
         public:
           explicit async_result_receive_message_from(std::any async_state) : async_result_socket(async_state) {}
@@ -119,12 +126,14 @@ namespace xtd {
           xtd::net::sockets::ip_packet_information ip_packet_information_;
         };
         
+        /// @brief Implement xtd::iasync_result that references the asynchronous Socket send result.
         class async_result_send : public async_result_socket {
         public:
           explicit async_result_send(std::any async_state) : async_result_socket(async_state) {}
           size_t number_of_bytes_sent_ = 0;
         };
         
+        /// @brief Implement xtd::iasync_result that references the asynchronous Socket send to result.
         class async_result_send_to : public async_result_socket {
         public:
           explicit async_result_send_to(std::any async_state) : async_result_socket(async_state) {}
