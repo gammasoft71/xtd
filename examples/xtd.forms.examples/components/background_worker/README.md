@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/components/background_worker_w.png)
+![Screenshot](../../../../docs/pictures/examples/background_worker_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/components/background_worker_wd.png)
+![Screenshot](../../../../docs/pictures/examples/background_worker_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/components/background_worker_m.png)
+![Screenshot](../../../../docs/pictures/examples/background_worker_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/components/background_worker_md.png)
+![Screenshot](../../../../docs/pictures/examples/background_worker_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/components/background_worker_g.png)
+![Screenshot](../../../../docs/pictures/examples/background_worker_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/components/background_worker_gd.png)
+![Screenshot](../../../../docs/pictures/examples/background_worker_gd.png)

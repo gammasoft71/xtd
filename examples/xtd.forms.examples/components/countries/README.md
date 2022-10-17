@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/components/countries_w.png)
+![Screenshot](../../../../docs/pictures/examples/countries_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/components/countries_wd.png)
+![Screenshot](../../../../docs/pictures/examples/countries_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/components/countries_m.png)
+![Screenshot](../../../../docs/pictures/examples/countries_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/components/countries_md.png)
+![Screenshot](../../../../docs/pictures/examples/countries_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/components/countries_g.png)
+![Screenshot](../../../../docs/pictures/examples/countries_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/components/countries_gd.png)
+![Screenshot](../../../../docs/pictures/examples/countries_gd.png)
