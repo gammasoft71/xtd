@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/containers/group_box_w.png)
+![Screenshot](../../../../docs/pictures/examples/group_box_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/containers/group_box_wd.png)
+![Screenshot](../../../../docs/pictures/examples/group_box_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/containers/group_box_m.png)
+![Screenshot](../../../../docs/pictures/examples/group_box_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/containers/group_box_md.png)
+![Screenshot](../../../../docs/pictures/examples/group_box_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/containers/group_box_g.png)
+![Screenshot](../../../../docs/pictures/examples/group_box_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/containers/group_box_gd.png)
+![Screenshot](../../../../docs/pictures/examples/group_box_gd.png)
