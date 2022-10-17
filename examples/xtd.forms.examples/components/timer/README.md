@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/timer_w.png)
+![Screenshot](../../../../docs/pictures/examples/components/timer_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/timer_wd.png)
+![Screenshot](../../../../docs/pictures/examples/components/timer_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/timer_m.png)
+![Screenshot](../../../../docs/pictures/examples/components/timer_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/timer_md.png)
+![Screenshot](../../../../docs/pictures/examples/components/timer_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/timer_g.png)
+![Screenshot](../../../../docs/pictures/examples/components/timer_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/timer_gd.png)
+![Screenshot](../../../../docs/pictures/examples/components/timer_gd.png)

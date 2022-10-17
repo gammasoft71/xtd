@@ -23,18 +23,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/translator_w.png)
+![Screenshot](../../../../docs/pictures/examples/components/translator_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/translator_wd.png)
+![Screenshot](../../../../docs/pictures/examples/components/translator_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/translator_m.png)
+![Screenshot](../../../../docs/pictures/examples/components/translator_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/translator_md.png)
+![Screenshot](../../../../docs/pictures/examples/components/translator_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/translator_g.png)
+![Screenshot](../../../../docs/pictures/examples/components/translator_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/translator_gd.png)
+![Screenshot](../../../../docs/pictures/examples/components/translator_gd.png)

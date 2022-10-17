@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/button_images_w.png)
+![Screenshot](../../../../docs/pictures/examples/components/button_images_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/button_images_wd.png)
+![Screenshot](../../../../docs/pictures/examples/components/button_images_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/button_images_m.png)
+![Screenshot](../../../../docs/pictures/examples/components/button_images_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/button_images_md.png)
+![Screenshot](../../../../docs/pictures/examples/components/button_images_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/button_images_g.png)
+![Screenshot](../../../../docs/pictures/examples/components/button_images_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/button_images_gd.png)
+![Screenshot](../../../../docs/pictures/examples/components/button_images_gd.png)
