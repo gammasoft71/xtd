@@ -9,6 +9,7 @@ namespace tutorial {
       dock(xtd::forms::dock_style::fill);
       size({150, 100});
       
+      label_.auto_size(true);
       label_.location({65, 45});
       label_.text("0");
     }
