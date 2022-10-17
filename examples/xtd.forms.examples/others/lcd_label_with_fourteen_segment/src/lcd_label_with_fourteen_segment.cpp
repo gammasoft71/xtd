@@ -6,7 +6,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 int main() {
-  auto index = 1U;
+  auto index = 0U;
   
   form form_main;
   form_main.text("Lcd label with fourteen segment example");
