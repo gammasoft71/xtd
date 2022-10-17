@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_context_w.png)
+![Screenshot](../../../../docs/pictures/examples/application_context_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_context_wd.png)
+![Screenshot](../../../../docs/pictures/examples/application_context_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_context_m.png)
+![Screenshot](../../../../docs/pictures/examples/application_context_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_context_md.png)
+![Screenshot](../../../../docs/pictures/examples/application_context_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_context_g.png)
+![Screenshot](../../../../docs/pictures/examples/application_context_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_context_gd.png)
+![Screenshot](../../../../docs/pictures/examples/application_context_gd.png)
