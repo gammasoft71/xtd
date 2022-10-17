@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/application_and_exception_w.png)
+![Screenshot](../../../../docs/pictures/examples/applications/application_and_exception_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/application_and_exception_wd.png)
+![Screenshot](../../../../docs/pictures/examples/applications/application_and_exception_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/application_and_exception_m.png)
+![Screenshot](../../../../docs/pictures/examples/applications/application_and_exception_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/application_and_exception_md.png)
+![Screenshot](../../../../docs/pictures/examples/applications/application_and_exception_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/application_and_exception_g.png)
+![Screenshot](../../../../docs/pictures/examples/applications/application_and_exception_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/application_and_exception_gd.png)
+![Screenshot](../../../../docs/pictures/examples/applications/application_and_exception_gd.png)
