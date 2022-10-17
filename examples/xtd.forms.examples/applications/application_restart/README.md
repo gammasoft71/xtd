@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_restart_w.png)
+![Screenshot](../../../../docs/pictures/examples/application_restart_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_restart_wd.png)
+![Screenshot](../../../../docs/pictures/examples/application_restart_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_restart_m.png)
+![Screenshot](../../../../docs/pictures/examples/application_restart_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_restart_md.png)
+![Screenshot](../../../../docs/pictures/examples/application_restart_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_restart_g.png)
+![Screenshot](../../../../docs/pictures/examples/application_restart_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_restart_gd.png)
+![Screenshot](../../../../docs/pictures/examples/application_restart_gd.png)

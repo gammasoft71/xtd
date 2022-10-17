@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_with_cmake_assembly_info_w.png)
+![Screenshot](../../../../docs/pictures/examples/application_with_cmake_assembly_info_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_with_cmake_assembly_info_wd.png)
+![Screenshot](../../../../docs/pictures/examples/application_with_cmake_assembly_info_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_with_cmake_assembly_info_m.png)
+![Screenshot](../../../../docs/pictures/examples/application_with_cmake_assembly_info_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_with_cmake_assembly_info_md.png)
+![Screenshot](../../../../docs/pictures/examples/application_with_cmake_assembly_info_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_with_cmake_assembly_info_g.png)
+![Screenshot](../../../../docs/pictures/examples/application_with_cmake_assembly_info_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_with_cmake_assembly_info_gd.png)
+![Screenshot](../../../../docs/pictures/examples/application_with_cmake_assembly_info_gd.png)
