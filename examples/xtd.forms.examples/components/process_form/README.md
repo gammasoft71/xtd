@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/components/process_form_w.png)
+![Screenshot](../../../../docs/pictures/examples/process_form_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/components/process_form_wd.png)
+![Screenshot](../../../../docs/pictures/examples/process_form_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/components/process_form_m.png)
+![Screenshot](../../../../docs/pictures/examples/process_form_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/components/process_form_md.png)
+![Screenshot](../../../../docs/pictures/examples/process_form_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/components/process_form_g.png)
+![Screenshot](../../../../docs/pictures/examples/process_form_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/components/process_form_gd.png)
+![Screenshot](../../../../docs/pictures/examples/process_form_gd.png)

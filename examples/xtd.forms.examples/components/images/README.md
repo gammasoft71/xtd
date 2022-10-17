@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/components/images_w.png)
+![Screenshot](../../../../docs/pictures/examples/images_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/components/images_wd.png)
+![Screenshot](../../../../docs/pictures/examples/images_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/components/images_m.png)
+![Screenshot](../../../../docs/pictures/examples/images_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/components/images_md.png)
+![Screenshot](../../../../docs/pictures/examples/images_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/components/images_g.png)
+![Screenshot](../../../../docs/pictures/examples/images_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/components/images_gd.png)
+![Screenshot](../../../../docs/pictures/examples/images_gd.png)

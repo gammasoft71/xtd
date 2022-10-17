@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/components/check_box_renderer_w.png)
+![Screenshot](../../../../docs/pictures/examples/check_box_renderer_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/components/check_box_renderer_wd.png)
+![Screenshot](../../../../docs/pictures/examples/check_box_renderer_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/components/check_box_renderer_m.png)
+![Screenshot](../../../../docs/pictures/examples/check_box_renderer_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/components/check_box_renderer_md.png)
+![Screenshot](../../../../docs/pictures/examples/check_box_renderer_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/components/check_box_renderer_g.png)
+![Screenshot](../../../../docs/pictures/examples/check_box_renderer_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/components/check_box_renderer_gd.png)
+![Screenshot](../../../../docs/pictures/examples/check_box_renderer_gd.png)
