@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/demos/lcd_label_appearance_w.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label_appearance_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/demos/lcd_label_appearance_wd.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label_appearance_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/demos/lcd_label_appearance_m.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label_appearance_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/demos/lcd_label_appearance_md.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label_appearance_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/demos/lcd_label_appearance_g.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label_appearance_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/demos/lcd_label_appearance_gd.png)
+![Screenshot](../../../../docs/pictures/examples/lcd_label_appearance_gd.png)
