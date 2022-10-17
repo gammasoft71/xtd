@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_and_assert_w.png)
+![Screenshot](../../../../docs/pictures/examples/application/application_and_assert_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_and_assert_wd.png)
+![Screenshot](../../../../docs/pictures/examples/application/application_and_assert_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_and_assert_m.png)
+![Screenshot](../../../../docs/pictures/examples/application/application_and_assert_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_and_assert_md.png)
+![Screenshot](../../../../docs/pictures/examples/application/application_and_assert_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_and_assert_g.png)
+![Screenshot](../../../../docs/pictures/examples/application/application_and_assert_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/applications/application_and_assert_gd.png)
+![Screenshot](../../../../docs/pictures/examples/application/application_and_assert_gd.png)
