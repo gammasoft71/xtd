@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/split_container_w.png)
+![Screenshot](../../../../docs/pictures/examples/containers/split_container_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/split_container_wd.png)
+![Screenshot](../../../../docs/pictures/examples/containers/split_container_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/split_container_m.png)
+![Screenshot](../../../../docs/pictures/examples/containers/split_container_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/split_container_md.png)
+![Screenshot](../../../../docs/pictures/examples/containers/split_container_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/split_container_g.png)
+![Screenshot](../../../../docs/pictures/examples/containers/split_container_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/split_container_gd.png)
+![Screenshot](../../../../docs/pictures/examples/containers/split_container_gd.png)
