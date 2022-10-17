@@ -25,7 +25,7 @@ xtdc run
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/application_with_manual_assembly_infon_m.png)
+![Screenshot](../../../../docs/pictures/examples/application_with_manual_assembly_info_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/application_with_manual_assembly_info_md.png)
 
