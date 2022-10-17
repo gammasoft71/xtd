@@ -32,13 +32,13 @@ namespace xtd {
     class lcd_label : public control {
       class idigit interface_ {
       public:
-        virtual wchar_t get_character() const = 0;
-        virtual xtd::ustring get_valid_characters() const = 0;
+        virtual char32_t get_character() const = 0;
+        virtual std::u32string get_valid_characters() const = 0;
         virtual int32_t get_thickness() const = 0;
         
         virtual void set_back_digit_color(const xtd::drawing::color& value) = 0;
         virtual void set_back_digit_opacity(double value) = 0;
-        virtual void set_character(wchar_t value) = 0;
+        virtual void set_character(char32_t value) = 0;
         virtual void set_segment_style(forms::segment_style value) = 0;
         virtual void set_dot_matrix_style(forms::dot_matrix_style value) = 0;
         virtual void set_show_back_digit(bool value) = 0;
@@ -49,100 +49,100 @@ namespace xtd {
       public:
         dot_matrix_display_digit() = default;
         
-        wchar_t get_character() const override;
-        xtd::ustring get_valid_characters() const override;
+        char32_t get_character() const override;
+        std::u32string get_valid_characters() const override;
         int32_t get_thickness() const override;
         
         void set_back_digit_color(const xtd::drawing::color& value) override;
         void set_back_digit_opacity(double value) override;
-        void set_character(wchar_t value) override;
+        void set_character(char32_t value) override;
         void set_segment_style(forms::segment_style value) override;
         void set_dot_matrix_style(forms::dot_matrix_style value) override;
         void set_show_back_digit(bool value) override;
         void set_thickness(int32_t value) override;
         
       private:
-        wchar_t character_ = ' ';
+        char32_t character_ = U' ';
       };
       
       class fourteen_segment_display_digit : public fourteen_segment_display, public idigit {
       public:
         fourteen_segment_display_digit() = default;
         
-        wchar_t get_character() const override;
-        xtd::ustring get_valid_characters() const override;
+        char32_t get_character() const override;
+        std::u32string get_valid_characters() const override;
         int32_t get_thickness() const override;
         
         void set_back_digit_color(const xtd::drawing::color& value) override;
         void set_back_digit_opacity(double value) override;
-        void set_character(wchar_t value) override;
+        void set_character(char32_t value) override;
         void set_segment_style(forms::segment_style value) override;
         void set_dot_matrix_style(forms::dot_matrix_style value) override;
         void set_show_back_digit(bool value) override;
         void set_thickness(int32_t value) override;
         
       private:
-        wchar_t character_ = ' ';
+        char32_t character_ = U' ';
       };
       
       class nine_segment_display_digit : public nine_segment_display, public idigit {
       public:
         nine_segment_display_digit() = default;
         
-        wchar_t get_character() const override;
-        xtd::ustring get_valid_characters() const override;
+        char32_t get_character() const override;
+        std::u32string get_valid_characters() const override;
         int32_t get_thickness() const override;
         
         void set_back_digit_color(const xtd::drawing::color& value) override;
         void set_back_digit_opacity(double value) override;
-        void set_character(wchar_t value) override;
+        void set_character(char32_t value) override;
         void set_segment_style(forms::segment_style value) override;
         void set_dot_matrix_style(forms::dot_matrix_style value) override;
         void set_show_back_digit(bool value) override;
         void set_thickness(int32_t value) override;
         
       private:
-        wchar_t character_ = ' ';
+        char32_t character_ = U' ';
       };
       
       class seven_segment_display_digit : public seven_segment_display, public idigit {
       public:
         seven_segment_display_digit() = default;
         
-        wchar_t get_character() const override;
-        xtd::ustring get_valid_characters() const override;
+        char32_t get_character() const override;
+        std::u32string get_valid_characters() const override;
         int32_t get_thickness() const override;
         
         void set_back_digit_color(const xtd::drawing::color& value) override;
         void set_back_digit_opacity(double value) override;
-        void set_character(wchar_t value) override;
+        void set_character(char32_t value) override;
         void set_segment_style(forms::segment_style value) override;
         void set_dot_matrix_style(forms::dot_matrix_style value) override;
         void set_show_back_digit(bool value) override;
         void set_thickness(int32_t value) override;
         
       private:
-        wchar_t character_ = ' ';
+        char32_t character_ = U' ';
       };
       
       class sixteen_segment_display_digit : public sixteen_segment_display, public idigit {
       public:
         sixteen_segment_display_digit() = default;
         
-        wchar_t get_character() const override;
-        xtd::ustring get_valid_characters() const override;
+        char32_t get_character() const override;
+        std::u32string get_valid_characters() const override;
         int32_t get_thickness() const override;
         
         void set_back_digit_color(const xtd::drawing::color& value) override;
         void set_back_digit_opacity(double value) override;
-        void set_character(wchar_t value) override;
+        void set_character(char32_t value) override;
         void set_segment_style(forms::segment_style value) override;
         void set_dot_matrix_style(forms::dot_matrix_style value) override;
         void set_show_back_digit(bool value) override;
         void set_thickness(int32_t value) override;
         
       private:
-        wchar_t character_ = ' ';
+        char32_t character_ = U' ';
       };
       
     public:
@@ -231,9 +231,9 @@ namespace xtd {
       control& text(const xtd::ustring& value) override;
       
       /// @brief Gets valid characters.
-      /// @return A string that represent valid characters.
+      /// @return A std::vector<char32_t> that represent valid characters.
       /// @remarks The valid characters are different according to lcd_style.
-      xtd::ustring valid_characters();
+      std::vector<char32_t> valid_characters();
       /// @}
       
     protected:
