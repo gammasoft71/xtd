@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/application_use_wait_cursor_w.png)
+![Screenshot](../../../../docs/pictures/examples/applications/application_use_wait_cursor_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/application_use_wait_cursor_wd.png)
+![Screenshot](../../../../docs/pictures/examples/applications/application_use_wait_cursor_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/application_use_wait_cursor_m.png)
+![Screenshot](../../../../docs/pictures/examples/applications/application_use_wait_cursor_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/application_use_wait_cursor_md.png)
+![Screenshot](../../../../docs/pictures/examples/applications/application_use_wait_cursor_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/application_use_wait_cursor_g.png)
+![Screenshot](../../../../docs/pictures/examples/applications/application_use_wait_cursor_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/application_use_wait_cursor_gd.png)
+![Screenshot](../../../../docs/pictures/examples/applications/application_use_wait_cursor_gd.png)
