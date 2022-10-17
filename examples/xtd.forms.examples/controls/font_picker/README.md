@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/controls/font_picker_w.png)
+![Screenshot](../../../../docs/pictures/examples/font_picker_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/controls/font_picker_wd.png)
+![Screenshot](../../../../docs/pictures/examples/font_picker_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/controls/font_picker_m.png)
+![Screenshot](../../../../docs/pictures/examples/font_picker_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/controls/font_picker_md.png)
+![Screenshot](../../../../docs/pictures/examples/font_picker_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/controls/font_picker_g.png)
+![Screenshot](../../../../docs/pictures/examples/font_picker_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/controls/font_picker_gd.png)
+![Screenshot](../../../../docs/pictures/examples/font_picker_gd.png)

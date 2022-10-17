@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/controls/numeric_up_down_w.png)
+![Screenshot](../../../../docs/pictures/examples/numeric_up_down_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/controls/numeric_up_down_wd.png)
+![Screenshot](../../../../docs/pictures/examples/numeric_up_down_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/controls/numeric_up_down_m.png)
+![Screenshot](../../../../docs/pictures/examples/numeric_up_down_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/controls/numeric_up_down_md.png)
+![Screenshot](../../../../docs/pictures/examples/numeric_up_down_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/controls/numeric_up_down_g.png)
+![Screenshot](../../../../docs/pictures/examples/numeric_up_down_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/controls/numeric_up_down_gd.png)
+![Screenshot](../../../../docs/pictures/examples/numeric_up_down_gd.png)
