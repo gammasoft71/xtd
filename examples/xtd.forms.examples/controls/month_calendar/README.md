@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/controls/month_calendar_w.png)
+![Screenshot](../../../../docs/pictures/examples/month_calendar_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/controls/month_calendar_wd.png)
+![Screenshot](../../../../docs/pictures/examples/month_calendar_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/controls/month_calendar_m.png)
+![Screenshot](../../../../docs/pictures/examples/month_calendar_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/controls/month_calendar_md.png)
+![Screenshot](../../../../docs/pictures/examples/month_calendar_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/controls/month_calendar_g.png)
+![Screenshot](../../../../docs/pictures/examples/month_calendar_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/controls/month_calendar_gd.png)
+![Screenshot](../../../../docs/pictures/examples/month_calendar_gd.png)

@@ -21,18 +21,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/controls/picture_box_w.png)
+![Screenshot](../../../../docs/pictures/examples/picture_box_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/controls/picture_box_wd.png)
+![Screenshot](../../../../docs/pictures/examples/picture_box_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/controls/picture_box_m.png)
+![Screenshot](../../../../docs/pictures/examples/picture_box_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/controls/picture_box_md.png)
+![Screenshot](../../../../docs/pictures/examples/picture_box_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/controls/picture_box_g.png)
+![Screenshot](../../../../docs/pictures/examples/picture_box_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/controls/picture_box_gd.png)
+![Screenshot](../../../../docs/pictures/examples/picture_box_gd.png)
