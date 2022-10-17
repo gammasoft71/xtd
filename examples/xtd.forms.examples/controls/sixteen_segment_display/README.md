@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/sixteen_segment_display_w.png)
+![Screenshot](../../../../docs/pictures/examples/controls/sixteen_segment_display_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/sixteen_segment_display_wd.png)
+![Screenshot](../../../../docs/pictures/examples/controls/sixteen_segment_display_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/sixteen_segment_display_m.png)
+![Screenshot](../../../../docs/pictures/examples/controls/sixteen_segment_display_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/sixteen_segment_display_md.png)
+![Screenshot](../../../../docs/pictures/examples/controls/sixteen_segment_display_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/sixteen_segment_display_g.png)
+![Screenshot](../../../../docs/pictures/examples/controls/sixteen_segment_display_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/sixteen_segment_display_gd.png)
+![Screenshot](../../../../docs/pictures/examples/controls/sixteen_segment_display_gd.png)

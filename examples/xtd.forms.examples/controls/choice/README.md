@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/choice_w.png)
+![Screenshot](../../../../docs/pictures/examples/controls/choice_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/choice_wd.png)
+![Screenshot](../../../../docs/pictures/examples/controls/choice_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/choice_m.png)
+![Screenshot](../../../../docs/pictures/examples/controls/choice_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/choice_md.png)
+![Screenshot](../../../../docs/pictures/examples/controls/choice_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/choice_g.png)
+![Screenshot](../../../../docs/pictures/examples/controls/choice_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/choice_gd.png)
+![Screenshot](../../../../docs/pictures/examples/controls/choice_gd.png)
