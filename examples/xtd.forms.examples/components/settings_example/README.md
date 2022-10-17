@@ -21,18 +21,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/settings_example_w.png)
+![Screenshot](../../../../docs/pictures/examples/components/settings_example_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/settings_example_wd.png)
+![Screenshot](../../../../docs/pictures/examples/components/settings_example_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/settings_example_m.png)
+![Screenshot](../../../../docs/pictures/examples/components/settings_example_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/settings_example_md.png)
+![Screenshot](../../../../docs/pictures/examples/components/settings_example_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/settings_example_g.png)
+![Screenshot](../../../../docs/pictures/examples/components/settings_example_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/settings_example_gd.png)
+![Screenshot](../../../../docs/pictures/examples/components/settings_example_gd.png)

@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/emoticons_w.png)
+![Screenshot](../../../../docs/pictures/examples/components/emoticons_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/emoticons_wd.png)
+![Screenshot](../../../../docs/pictures/examples/components/emoticons_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/emoticons_m.png)
+![Screenshot](../../../../docs/pictures/examples/components/emoticons_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/emoticons_md.png)
+![Screenshot](../../../../docs/pictures/examples/components/emoticons_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/emoticons_g.png)
+![Screenshot](../../../../docs/pictures/examples/components/emoticons_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/emoticons_gd.png)
+![Screenshot](../../../../docs/pictures/examples/components/emoticons_gd.png)
