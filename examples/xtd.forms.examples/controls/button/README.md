@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/button_w.png)
+![Screenshot](../../../../docs/pictures/examples/controls/button_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/button_wd.png)
+![Screenshot](../../../../docs/pictures/examples/controls/button_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/button_m.png)
+![Screenshot](../../../../docs/pictures/examples/controls/button_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/button_md.png)
+![Screenshot](../../../../docs/pictures/examples/controls/button_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/button_g.png)
+![Screenshot](../../../../docs/pictures/examples/controls/button_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/button_gd.png)
+![Screenshot](../../../../docs/pictures/examples/controls/button_gd.png)

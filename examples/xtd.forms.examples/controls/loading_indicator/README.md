@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/loading_indicator_w.png)
+![Screenshot](../../../../docs/pictures/examples/controls/loading_indicator_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/loading_indicator_wd.png)
+![Screenshot](../../../../docs/pictures/examples/controls/loading_indicator_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/loading_indicator_m.png)
+![Screenshot](../../../../docs/pictures/examples/controls/loading_indicator_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/loading_indicator_md.png)
+![Screenshot](../../../../docs/pictures/examples/controls/loading_indicator_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/loading_indicator_g.png)
+![Screenshot](../../../../docs/pictures/examples/controls/loading_indicator_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/loading_indicator_gd.png)
+![Screenshot](../../../../docs/pictures/examples/controls/loading_indicator_gd.png)
