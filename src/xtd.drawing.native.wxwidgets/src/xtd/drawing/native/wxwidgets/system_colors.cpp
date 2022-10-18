@@ -58,7 +58,7 @@ intptr_t system_colors::accent() {
   return __xtd__macos_system_colors_accent_control__();
   #elif defined(__WXMSW__)
   if (is_windows_dark_mode()) return 0xFF00A0FA;
-  return 0xFFD2E8F8;
+  return highlight();
   #else
   return highlight();
   #endif
