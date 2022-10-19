@@ -1,6 +1,6 @@
 # to_byte
 
-Shows how to use [xtd::convert](../../../../src/xtd.core/include/xtd/convert.h) class.
+Shows how to use [xtd::convert::to_byte](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1convert.html#a31ae0aaad2259a0d02bce9c06a5df2c1) method.
 
 # Sources
 
