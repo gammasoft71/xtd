@@ -1,6 +1,6 @@
 # vector_list
 
-Shows how to use [vector_list](../../../../src/xtd.core/include/xtd/collections/vector_list.h) class.
+Shows how to use [vector_list](https://codedocs.xyz/gammasoft71/xtd/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) class.
 
 ## Sources
 
