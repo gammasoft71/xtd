@@ -1,4 +1,4 @@
-# user_dialog_show_dialog_sheet
+# user_dialog_show_sheet
 
 demonstrates the use of [xtd::forms::form](../../../../src/xtd.forms/include/xtd/forms/form.h) as dialog.
 
@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/user_dialog_w.png)
+![Screenshot](../../../../docs/pictures/examples/user_dialog_show_sheet_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/user_dialog_wd.png)
+![Screenshot](../../../../docs/pictures/examples/user_dialog_show_sheet_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/user_dialog_m.png)
+![Screenshot](../../../../docs/pictures/examples/user_dialog_show_sheet_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/user_dialog_md.png)
+![Screenshot](../../../../docs/pictures/examples/user_dialog_show_sheet_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/user_dialog_g.png)
+![Screenshot](../../../../docs/pictures/examples/user_dialog_show_sheet_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/user_dialog_gd.png)
+![Screenshot](../../../../docs/pictures/examples/user_dialog_show_sheet_gd.png)
