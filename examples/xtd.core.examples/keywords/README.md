@@ -8,7 +8,7 @@
 * [interface](interface/README.md) shows how to use [xtd::interface](../../../src/xtd.core/include/xtd/interface.h) method.
 * [interface2](interface2/README.md) shows how to use [xtd::interface](../../../src/xtd.core/include/xtd/interface.h) method.
 * [startup](startup/README.md) shows how to use [xtd::startup](../../../src/xtd.core/include/xtd/startup.h) method.
-* [static](static/README.md) shows how to use [xtd::static](../../../src/xtd.core/include/xtd/static.h) method.
-* [static_object](static_object/README.md) shows how to use [xtd::static_object_](../../../src/xtd.core/include/xtd/static.h) keyword.
+* [static](static/README.md) shows how to use [static&#95](../../../src/xtd.core/include/xtd/static.h) keyword.
+* [static_object](static_object/README.md) shows how to use [xtd::static_object&#95](../../../src/xtd.core/include/xtd/static.h) keyword.
 * [static_object2](static_object2/README.md) shows how to use [xtd::static_object](../../../src/xtd.core/include/xtd/static.h) class.
 * [using](using/README.md) shows how to use [xtd::using](../../../src/xtd.core/include/xtd/using.h) method.
