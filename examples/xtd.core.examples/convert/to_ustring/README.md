@@ -1,6 +1,6 @@
 # to_ustring
 
-Shows how to use [xtd::convert](../../../../src/xtd.core/include/xtd/convert.h) and  [xtd::convert_string](../../../../src/xtd.core/include/xtd/convert.h) classes.
+Shows how to use [xtd::convert::to_string](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1convert.html#a1de05be36bc70b03e74ec7d9586b0199) method and [xtd::convert_string](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1convert__string.html) class.
 
 # Sources
 
