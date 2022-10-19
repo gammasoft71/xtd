@@ -1,6 +1,6 @@
 # console_info
 
-Shows how to use [xtd::console](../../../../src/xtd.core/include/xtd/console.h) class.
+Shows how to use [xtd::console](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html) class.
 
 # Sources
 

@@ -1,6 +1,6 @@
 # console_clear
 
-Shows how to use [xtd::console::clear](../../../../src/xtd.core/include/xtd/console.h) method.
+Shows how to use [xtd::console::clear](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#a8aa7128ca9254b18afa2e2155413a22a) method.
 
 # Sources
 
