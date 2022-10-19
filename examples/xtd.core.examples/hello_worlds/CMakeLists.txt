@@ -8,5 +8,5 @@ add_projects(
   hello_world_diagnostics
   hello_world_environment
   hello_world_io
-  hello_world_strings
+  hello_world_ustring
 )
