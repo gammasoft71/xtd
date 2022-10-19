@@ -1,6 +1,6 @@
 # hello_world_diagnostics
 
-The classic first application "Hello, World!" with [xtd::diagnostics::trace](../../../../src/xtd.core/include/xtd/diagnostics/trace.h) class.
+The classic first application "Hello, World!" with [xtd::diagnostics::trace](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1trace.html) class.
 
 ## Sources
 
