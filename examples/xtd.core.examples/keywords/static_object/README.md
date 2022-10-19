@@ -1,6 +1,6 @@
 # static_object
 
-Shows how to use [xtd::static](../../../../src/xtd.core/include/xtd/static.h) class.
+Shows how to use [static_object_](../../../../src/xtd.core/include/xtd/static.h) keyword.
 
 ## Sources
 
