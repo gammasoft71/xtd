@@ -4,7 +4,7 @@ Shows how to use [xtd::static](../../../../src/xtd.core/include/xtd/static.h) cl
 
 ## Sources
 
-[src/static_class2.cpp](src/static_object2.cpp)
+[src/static_object2.cpp](src/static_object2.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
