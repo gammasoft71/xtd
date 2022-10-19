@@ -19,18 +19,18 @@ xtdc run
 
 ## Windows :
 
-![Screenshot](../../../../docs/pictures/examples/folder_browser_dialog_w.png)
+![Screenshot](../../../../docs/pictures/examples/folder_browser_box_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/folder_browser_dialog_wd.png)
+![Screenshot](../../../../docs/pictures/examples/folder_browser_box_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../../docs/pictures/examples/folder_browser_dialog_m.png)
+![Screenshot](../../../../docs/pictures/examples/folder_browser_box_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/folder_browser_dialog_md.png)
+![Screenshot](../../../../docs/pictures/examples/folder_browser_box_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/folder_browser_dialog_g.png)
+![Screenshot](../../../../docs/pictures/examples/folder_browser_box_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/folder_browser_dialog_gd.png)
+![Screenshot](../../../../docs/pictures/examples/folder_browser_box_gd.png)
