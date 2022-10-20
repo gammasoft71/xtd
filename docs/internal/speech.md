@@ -14,3 +14,5 @@
 * Speech text to specified output file : `say -o hello_world.aiff  "Hello, World"`
 
 ## Linux
+
+* example [say](https://github.com/brailcom/speechd/blob/master/src/clients/say/say.c)
