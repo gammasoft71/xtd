@@ -40,7 +40,7 @@ intptr_t speech_synthesizer::create() {
 #if (__APPLE__)
   cmd_file << "say \"$*\"\n";
 #else
-  cmd_file << "spd-say \"$*\"\n");
+  cmd_file << "spd-say \"$*\"\n";
 #endif
   cmd_file.close();
   native::file_system::set_permissions(data->say_cmd_file_name, FILE_PERMISSIONS_OWNER_ALL);
