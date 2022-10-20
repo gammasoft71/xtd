@@ -266,7 +266,13 @@ add_sources(
   include/xtd/security/secure_string.h
   include/xtd/security/security_exception.h
   include/xtd/speech/synthesis/prompt.h
+  include/xtd/speech/synthesis/prompt_event_args.h
+  include/xtd/speech/synthesis/speak_completed_event_args.h
+  include/xtd/speech/synthesis/speak_completed_event_handler.h
+  include/xtd/speech/synthesis/speak_started_event_args.h
+  include/xtd/speech/synthesis/speak_started_event_handler.h
   include/xtd/speech/synthesis/speech_synthesizer.h
+  include/xtd/speech/synthesis/synthesizer_state.h
   include/xtd/threading/interlocked.h
   include/xtd/web/css/css_reader.h
   include/xtd/web/css/css_writer.h
