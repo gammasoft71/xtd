@@ -114,6 +114,9 @@
 /// @defgroup gui forms
 /// @brief All needed for GUI application.
 
+/// @defgroup synthesis synthesis
+/// @brief Contains classes for initializing and configuring a speech synthesis engine, for creating prompts, for generating speech, for responding to events, and for modifying voice characteristics.
+
 /// @defgroup style_sheets style_sheets
 /// @brief Contains various properties, states, and subcontrols that make it possible to customize the look of control.
 
