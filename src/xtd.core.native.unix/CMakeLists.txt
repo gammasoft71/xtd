@@ -44,6 +44,7 @@ add_sources(
   src/xtd/native/unix/path.cpp
   src/xtd/native/unix/process.cpp
   src/xtd/native/unix/socket.cpp
+  src/xtd/native/unix/speech_synthesizer.cpp
   src/xtd/native/unix/system_sound.cpp
   src/xtd/native/unix/translator.cpp
 )
