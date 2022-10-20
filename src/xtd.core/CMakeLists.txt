@@ -265,6 +265,8 @@ add_sources(
   include/xtd/reflection/assembly.h
   include/xtd/security/secure_string.h
   include/xtd/security/security_exception.h
+  include/xtd/speech/synthesis/prompt.h
+  include/xtd/speech/synthesis/speech_synthesizer.h
   include/xtd/threading/interlocked.h
   include/xtd/web/css/css_reader.h
   include/xtd/web/css/css_writer.h
@@ -378,6 +380,8 @@ add_sources(
   src/xtd/reflection/assembly_trademark_attribute.cpp
   src/xtd/reflection/assembly_version_attribute.cpp
   src/xtd/security/secure_string.cpp
+  src/xtd/speech/synthesis/prompt.cpp
+  src/xtd/speech/synthesis/speech_synthesizer.cpp
   src/xtd/threading/interlocked.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})

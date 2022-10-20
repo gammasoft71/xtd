@@ -220,6 +220,7 @@
 #include "reflection/assembly_version_attribute.h"
 #include "security/secure_string.h"
 #include "security/security_exception.h"
+#include "speech/synthesis/speech_synthesizer.h"
 #include "threading/interlocked.h"
 #include "web/css/css_reader.h"
 #include "web/css/css_writer.h"

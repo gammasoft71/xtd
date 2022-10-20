@@ -33,6 +33,7 @@ namespace xtd {
     class directory;
     class drive;
     class file;
+    class speech_synthesizer;
     /// @endcond
     
     /// @brief Contains file_system native API.
@@ -52,6 +53,7 @@ namespace xtd {
       friend xtd::native::directory;
       friend xtd::native::drive;
       friend xtd::native::file;
+      friend xtd::native::speech_synthesizer;
     protected:
       /// @brief Gets the attributes for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
