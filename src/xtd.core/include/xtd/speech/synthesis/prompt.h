@@ -26,7 +26,7 @@ namespace xtd {
       /// xtd::speech::synthesis
       /// @par Library
       /// xtd.core
-      /// @ingroup xtd_core speech synthesis
+      /// @ingroup xtd_core synthesis
       /// @remarks A xtd::speech::synthesis::prompt object can contain plain text, text formatted with markup language, or audio files.
       /// @remarks An empty xtd::speech::synthesis::prompt object is created with each new instance of xtd::speech::synthesis::prompt_builder. The xtd::speech::synthesis::prompt_builder class provides methods for adding content, including text, SSML markup, bookmarks, and prerecorded audio files (such as .wav files), to the empty xtd::speech::synthesis::prompt object that it contains. Typically, applications will use xtd::speech::synthesis::prompt_builder, rather than a xtd::speech::synthesis::prompt object, to create prompts and populate them with content.
       /// @remarks To generate speech from the contents of a xtd::speech::synthesis::prompt object, use the xtd::speech::synthesis::speach_synthesizer::speak method.

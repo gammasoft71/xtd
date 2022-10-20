@@ -23,7 +23,7 @@ namespace xtd {
       /// xtd::speech::synthesis
       /// @par Library
       /// xtd.core
-      /// @ingroup xtd_core speech synthesis
+      /// @ingroup xtd_core synthesis
       class core_export_ speech_synthesizer : public xtd::object {
       public:
         /// @name Constructors
