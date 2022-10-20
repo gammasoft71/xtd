@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::predicate delegate.
+/// @brief Contains xtd::speech::synthesis::prompt class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
@@ -42,15 +42,22 @@ namespace xtd {
         /// @}
         
         /// @cond
+        prompt() = default;
         prompt(const prompt&) = default;
         prompt(prompt&&) = default;
         prompt& operator=(const prompt&) = default;
         /// @endcond
 
+        /// @name Properties
+        
+        /// @{
+        bool is_completed() const;
+        /// @}
+
       private:
         struct data {
           xtd::ustring text_to_speak;
-          bool is_completed = false;
+          const speech_synthesizer* synthesizer = nullptr;
         };
         std::shared_ptr<data> data_ = std::make_shared<data>();
       };

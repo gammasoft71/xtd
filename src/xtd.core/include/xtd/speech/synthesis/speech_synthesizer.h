@@ -1,11 +1,15 @@
 /// @file
-/// @brief Contains xtd::predicate delegate.
+/// @brief Contains xtd::speech::synthesis::speech_synthesizer class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
+#include "../../event.h"
 #include "../../object.h"
 #include "../../ustring.h"
 #include "prompt.h"
+#include "speak_completed_event_handler.h"
+#include "speak_started_event_handler.h"
+#include "synthesizer_state.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -41,6 +45,7 @@ namespace xtd {
         /// @name Properties
         
         /// @{
+        synthesizer_state state() const {return data_->state;}
         /// @}
 
         /// @name Methods
@@ -49,31 +54,40 @@ namespace xtd {
         /// @brief Synchronously speaks the contents of a string.
         /// @param text_to_speak The text to speak.
         /// @remarks To asynchronously speak the contents of a xtd::speech::synthesis::prompt_builder object, use xtd::speech::synthesis::speech_synthesizer::speak_async.
-        void speak(const xtd::ustring& text_to_speak) const;
+        void speak(const xtd::ustring& text_to_speak);
         /// @brief Synchronously speaks the contents of a xtd::speech::synthesis::prompt object.
         /// @param prompt The content to speak.
         /// @remarks To asynchronously speak the contents of a xtd::speech::synthesis::prompt_builder object, use xtd::speech::synthesis::speech_synthesizer::speak_async.
-        void speak(xtd::speech::synthesis::prompt& prompt) const;
+        void speak(xtd::speech::synthesis::prompt& prompt);
         
         /// @brief Asynchronously speaks the contents of a string.
         /// @param text_to_speak The text to speak.
         /// @return Returns the object that contains the content to speak.
-        prompt speak_async(const xtd::ustring& text_to_speak) const;
+        xtd::speech::synthesis::prompt& speak_async(const xtd::ustring& text_to_speak);
         /// @brief Asynchronously speaks the contents of a xtd::speech::synthesis::prompt object.
         /// @param prompt The content to speak.
-        void speak_async(xtd::speech::synthesis::prompt& prompt) const;
+        void speak_async(xtd::speech::synthesis::prompt& prompt);
         /// @}
 
         /// @name Events
         
         /// @{
+        event<speech_synthesizer, speak_completed_event_handler> speak_completed;
+
+        event<speech_synthesizer, speak_started_event_handler> speak_started;
         /// @}
         
       private:
+        void on_speak_completed();
+        void on_speak_started();
+
         struct data {
           intptr_t handle = 0;
           int32_t rate = 0;
+          synthesizer_state state = synthesizer_state::ready;
           int32_t volume = 100;
+          xtd::speech::synthesis::prompt prompt;
+          xtd::speech::synthesis::prompt* used_prompt = &prompt;
         };
         std::shared_ptr<data> data_ = std::make_shared<data>();
       };

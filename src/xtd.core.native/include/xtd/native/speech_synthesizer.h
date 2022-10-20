@@ -10,6 +10,7 @@
 
 #include <xtd/core_native_export.h>
 #include <cstdint>
+#include <functional>
 #include <string>
 #include <vector>
 
@@ -44,11 +45,14 @@ namespace xtd {
       /// @{
       static intptr_t create();
       static void destroy(intptr_t handle);
+      static void pause(intptr_t handle);
+      static void resume(intptr_t handle);
       /// @brief Synchronously speaks the contents of a string.
       /// @return The text to speak.
       /// @warning Internal use only
       static void speak(intptr_t handle, const std::string& text_to_speak);
-      static void speak_async(intptr_t handle, const std::string& text_to_speak);
+      static void speak_async(intptr_t handle, const std::string& text_to_speak, std::function<void()> on_speak_completed);
+      static void stop(intptr_t handle);
       /// @}
     };
   }
