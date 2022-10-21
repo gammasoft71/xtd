@@ -6,7 +6,7 @@ namespace xtd::tunit::tests {
   class test_class_(assert_is_not_instance_of_succeed_tests) {
   public:
     void test_method_(test_case_succeed) {
-      std::invalid_argument e("invalid argument");;
+      std::invalid_argument e("invalid argument");
       xtd::tunit::assert::is_not_instance_of<std::bad_cast>(e);
     }
   };

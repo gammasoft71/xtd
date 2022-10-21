@@ -52,7 +52,7 @@ main_form::main_form() {
   show_key_press_check_box_.parent(top_panel_);
   show_key_press_check_box_.text("Key press"_t);
   show_key_press_check_box_.text_align(content_alignment::middle_center);
-  show_key_press_check_box_.click += {*this, &main_form::on_show_key_press_check_box_click};;
+  show_key_press_check_box_.click += {*this, &main_form::on_show_key_press_check_box_click};
   
   clear_button_.image(button_images::from_name("edit-delete"));
   clear_button_.location({230, 5});

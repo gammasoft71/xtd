@@ -333,7 +333,7 @@ void button_renderer::draw_button_macos(graphics g, const rectangle& bounds, con
 void button_renderer::draw_button_macos_dark(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
   auto border_color = xtd::drawing::color::from_argb(35, 0, 0, 0);
   auto button_color = application::style_sheet().system_colors().button_face();
-  auto text_color = fore_color.has_value() ? fore_color.value() : application::style_sheet().system_colors().control_text();;
+  auto text_color = fore_color.has_value() ? fore_color.value() : application::style_sheet().system_colors().control_text();
   
   if (state == xtd::forms::visual_styles::push_button_state::pressed || state == xtd::forms::visual_styles::push_button_state::checked)
     button_color = color::from_argb(93, application::style_sheet().system_colors().button_face());

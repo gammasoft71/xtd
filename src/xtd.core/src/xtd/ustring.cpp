@@ -289,27 +289,27 @@ ustring& ustring::operator=(ustring&& str) noexcept {
 
 ustring& ustring::operator=(value_type character) {
   *this = ustring(1, character);
-  return  *this;;
+  return  *this;
 }
 
 ustring& ustring::operator=(char8_t character) {
   *this = ustring(1, character);
-  return  *this;;
+  return  *this;
 }
 
 ustring& ustring::operator=(char16_t character) {
   *this = ustring(1, character);
-  return  *this;;
+  return  *this;
 }
 
 ustring& ustring::operator=(char32_t character) {
   *this = ustring(1, character);
-  return  *this;;
+  return  *this;
 }
 
 ustring& ustring::operator=(wchar_t character) {
   *this = ustring(1, character);
-  return  *this;;
+  return  *this;
 }
 
 ustring& ustring::operator=(const std::initializer_list<value_type>& il) {

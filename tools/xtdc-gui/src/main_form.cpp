@@ -698,7 +698,7 @@ void main_form::new_project(const ustring& project_path, project_type type, proj
     });
     process::start(process_start_info().file_name("xtdc").arguments(ustring::format("new {} -s {} {}", get<0>(new_project), get<1>(new_project), get<2>(new_project)).c_str()).use_shell_execute(false).create_no_window(true)).wait_for_exit();
     process::start(process_start_info().file_name("xtdc").arguments(ustring::format("open {}", get<2>(new_project)).c_str()).use_shell_execute(false).create_no_window(true)).wait_for_exit();
-  };;
+  };
   background_worker_->run_worker_completed += [&] {
     begin_invoke([&] {
       progress_dialog_->hide();

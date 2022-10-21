@@ -707,7 +707,7 @@ namespace xtdc_command {
           command_args = {args.begin() + i, args.end()};
           i = args.size();
         } else if (args[i].starts_with('-')) {
-          invalid_option = args[i];;
+          invalid_option = args[i];
           return false;
         }
       }
@@ -725,7 +725,7 @@ namespace xtdc_command {
           if (i + 1 >= args.size()) return false;
           sdk = args[++i];
         } else if (args[i].starts_with('-')) {
-          invalid_option = args[i];;
+          invalid_option = args[i];
           return false;
         } else if (type.empty())
           type = args[i];
@@ -752,7 +752,7 @@ namespace xtdc_command {
         else if (path.empty())
           path = args[i];
         else if (args[i].starts_with('-')) {
-          invalid_option = args[i];;
+          invalid_option = args[i];
           return false;
         }
       }
@@ -770,7 +770,7 @@ namespace xtdc_command {
         else if (path.empty())
           path = args[i];
         else if (args[i].starts_with('-')) {
-          invalid_option = args[i];;
+          invalid_option = args[i];
           return false;
         }
       }
@@ -788,7 +788,7 @@ namespace xtdc_command {
         else if (path.empty())
           path = args[i];
         else if (args[i].starts_with('-')) {
-          invalid_option = args[i];;
+          invalid_option = args[i];
           return false;
         }
       }
@@ -806,7 +806,7 @@ namespace xtdc_command {
         else if (path.empty())
           path = args[i];
         else if (args[i].starts_with('-')) {
-          invalid_option = args[i];;
+          invalid_option = args[i];
           return false;
         }
       }
@@ -824,7 +824,7 @@ namespace xtdc_command {
           if (i + 1 >= args.size()) return false;
           sdk = args[++i];
         } else if (args[i].starts_with('-')) {
-          invalid_option = args[i];;
+          invalid_option = args[i];
           return false;
         } else if (type.empty())
           type = args[i];
@@ -845,7 +845,7 @@ namespace xtdc_command {
         else if (path.empty())
           path = args[i];
         else if (args[i].starts_with('-')) {
-          invalid_option = args[i];;
+          invalid_option = args[i];
           return false;
         }
       }
@@ -867,7 +867,7 @@ namespace xtdc_command {
         else if (path.empty())
           path = args[i];
         else if (args[i].starts_with('-')) {
-          invalid_option = args[i];;
+          invalid_option = args[i];
           return false;
         }
       }
@@ -881,7 +881,7 @@ namespace xtdc_command {
         else if (path.empty())
           path = args[i];
         else if (args[i].starts_with('-')) {
-          invalid_option = args[i];;
+          invalid_option = args[i];
           return false;
         }
       }
@@ -899,7 +899,7 @@ namespace xtdc_command {
         else if (path.empty())
           path = args[i];
         else if (args[i].starts_with('-')) {
-          invalid_option = args[i];;
+          invalid_option = args[i];
           return false;
         }
       }
@@ -917,7 +917,7 @@ namespace xtdc_command {
         else if (path.empty())
           path = args[i];
         else if (args[i].starts_with('-')) {
-          invalid_option = args[i];;
+          invalid_option = args[i];
           return false;
         }
       }

@@ -114,7 +114,7 @@ namespace xtd {
       /// @brief Returns a Windows handle to this xtd::drawing::region in the specified graphics context.
       /// @param g The xtd::drawing::graphics on which this xtd::drawing::region is drawn.
       /// @return A Windows handle to this xtd::drawing::region.
-      /// @remarks You are responsible for calling the xtd;;region::release_hrgn method to free the memory used by the GDI region object.
+      /// @remarks You are responsible for calling the xtd::region::release_hrgn method to free the memory used by the GDI region object.
       intptr_t get_hrgn(const xtd::drawing::graphics& g) const;
       
       /// @brief Updates this xtd::drawing::region to the intersection of itself with the specified xtd::drawing::graphics_path.
