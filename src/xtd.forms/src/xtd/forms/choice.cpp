@@ -29,6 +29,9 @@ choice::choice() {
     size_t selected_index = npos;
     if (this->selected_index() != npos && this->selected_index() < items_.size()) selected_index = this->selected_index();
     this->selected_index(selected_index);
+    
+    if (this->items().size() == 1) // not 0! --> the item_remove occure before erase!
+      this->selected_index(npos);
   };
   
   items_.item_updated += [&](size_t pos, const item & item) {
