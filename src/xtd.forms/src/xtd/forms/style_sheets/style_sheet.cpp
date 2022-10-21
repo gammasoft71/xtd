@@ -446,7 +446,7 @@ color style_sheet::background_color_from_css(const ustring& css_text, const colo
 }
 
 background_image style_sheet::background_image_from_css(const xtd::ustring& css_text, const background_image& default_value) const noexcept {
-  background_image result;;
+  background_image result;
   if (css_text.starts_with("url(", true) && css_text.ends_with(")", true) && try_parse_uri(css_text, result.url_)) return result;
   if (css_text.starts_with("linear-gradient(", true) && css_text.ends_with(")", true) && try_parse_linear_gradient(css_text.to_lower(), result)) return result;
   return default_value;
@@ -711,7 +711,7 @@ text_transformation style_sheet::text_transformation_from_css(const ustring& css
 uri style_sheet::uri_from_css(const ustring& css_text, const uri& default_value) const noexcept {
   auto result = default_value;
   try_parse_uri(css_text, result);
-  return result;;
+  return result;
 }
 
 white_space style_sheet::white_space_from_css(const xtd::ustring& css_text, const xtd::forms::style_sheets::white_space& default_value) const noexcept {

@@ -170,7 +170,7 @@ namespace xtd {
       }
       
       void on_mouse_leave(const event_args& e) override {
-        if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = data_->default_button ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal;;
+        if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = data_->default_button ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal;
         button_base::on_mouse_leave(e);
       }
       

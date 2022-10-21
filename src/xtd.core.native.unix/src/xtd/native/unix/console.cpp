@@ -704,7 +704,7 @@ void console::set_cursor_position(int32_t left, int32_t top) {
 }
 
 std::string console::title() {
-  if (!terminal::is_ansi_supported()) return ::title;;
+  if (!terminal::is_ansi_supported()) return ::title;
   /// @todo get console get title on linux and macOS
   /*
    * Didn't work correctly!

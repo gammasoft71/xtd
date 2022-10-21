@@ -189,7 +189,7 @@ xtd::drawing::imaging::encoder_parameters image::get_encoder_parameter_list(xtd:
     if (encoder_parameter.encoder().guid() == encoder)
       result.params().push_back(encoder_parameter);
   }
-  return result;;
+  return result;
 }
 
 size_t image::get_frame_count(const xtd::drawing::imaging::frame_dimension& dimension) const {

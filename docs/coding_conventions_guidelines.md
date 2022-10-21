@@ -218,7 +218,7 @@ public:
   my_control(const my_control&) = default;
   my_control& my_control& operator=(const my_control& my_control);
   
-  const std::string base_name() const {return base_name_;;}
+  const std::string base_name() const {return base_name_;}
   intptr_t handle() const {return handle_;}
   
   xtd::event<my_control, event_handler<xtd::forms::control>> name_changed;
