@@ -41,8 +41,15 @@ namespace xtd {
           else if (event.GetEventType() == wxEVT_LEFT_UP) wxPostEvent(GetParent(), event);
           else if (event.GetEventType() == wxEVT_MIDDLE_UP) wxPostEvent(GetParent(), event);
           else if (event.GetEventType() == wxEVT_RIGHT_UP) wxPostEvent(GetParent(), event);
-          else if (event.GetEventType() == wxEVT_MOTION) wxPostEvent(GetParent(), event);
-          else if (event.GetEventType() == wxEVT_ENTER_WINDOW) wxPostEvent(GetParent(), event);
+          else if (event.GetEventType() == wxEVT_MOTION) {
+            wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
+            wxMouseState mouse_state = wxGetMouseState();
+            int32_t virtual_keys = get_virtual_keys(mouse_state);
+            auto x = mouse_state.GetX();
+            auto y = mouse_state.GetY();
+            reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
+            control_handler_->send_message(reinterpret_cast<intptr_t>(control_handler_), WM_MOUSEMOVE, virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+          } else if (event.GetEventType() == wxEVT_ENTER_WINDOW) wxPostEvent(GetParent(), event);
           else if (event.GetEventType() == wxEVT_LEAVE_WINDOW) wxPostEvent(GetParent(), event);
           else if (event.GetEventType() == wxEVT_LEFT_DCLICK) wxPostEvent(GetParent(), event);
           else if (event.GetEventType() == wxEVT_MIDDLE_DCLICK) wxPostEvent(GetParent(), event);
@@ -62,6 +69,24 @@ namespace xtd {
         }
         
         control_handler* control_handler_ = nullptr;
+        
+        int32_t get_virtual_keys(const wxMouseState& mouse_state) {
+          int32_t virtual_keys = 0;
+          
+#if defined(__APPLE__)
+          if (mouse_state.RawControlDown()) virtual_keys |= MK_COMMAND;
+          if (mouse_state.ControlDown()) virtual_keys |= MK_CONTROL;
+#else
+          if (mouse_state.ControlDown()) virtual_keys |= MK_CONTROL;
+#endif
+          if (mouse_state.ShiftDown()) virtual_keys |= MK_SHIFT;
+          if (mouse_state.LeftIsDown()) virtual_keys |= MK_LBUTTON;
+          if (mouse_state.MiddleIsDown()) virtual_keys |= MK_MBUTTON;
+          if (mouse_state.RightIsDown()) virtual_keys |= MK_RBUTTON;
+          if (mouse_state.Aux1IsDown()) virtual_keys |= MK_XBUTTON1;
+          if (mouse_state.Aux2IsDown()) virtual_keys |= MK_XBUTTON2;
+          return virtual_keys;
+        }
       };
       
       class wx_form : public control_handler {
