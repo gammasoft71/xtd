@@ -40,6 +40,18 @@ combo_box::combo_box() {
   };
 }
 
+bool combo_box::dropped_down() const {
+  return data_->drop_down;
+}
+
+combo_box& combo_box::dropped_down(bool value) {
+  if (data_->drop_down != value) {
+    data_->drop_down = value;
+    if (is_handle_created()) native::combo_box::dropped_down(handle(), data_->drop_down);
+  }
+  return *this;
+}
+
 combo_box& combo_box::drop_down_style(combo_box_style drop_down_style) {
   if (data_->drop_down_style != drop_down_style) {
     data_->drop_down_style = drop_down_style;
@@ -117,10 +129,12 @@ forms::create_params combo_box::create_params() const {
 }
 
 void combo_box::on_drop_down(const event_args& e) {
+  data_->drop_down = true;
   drop_down(*this, e);
 }
 
 void combo_box::on_drop_down_closed(const event_args& e) {
+  data_->drop_down = false;
   drop_down_closed(*this, e);
 }
 

@@ -36,6 +36,13 @@ namespace xtd {
       /// @name Porperties
       
       /// @{
+      /// @brief Gets a value indicating whether the combo box is displaying its drop-down portion.
+      /// @return true if the drop-down portion is displayed; otherwise, false. The default is false.
+      bool dropped_down() const;
+      /// @brief Sets a value indicating whether the combo box is displaying its drop-down portion.
+      /// @param value true if the drop-down portion is displayed; otherwise, false. The default is false.
+      combo_box& dropped_down(bool value);
+      
       /// @brief Gets a value specifying the style of the combo box.
       /// @return One of the combo_box_style values. The default is drop_down.
       /// @remarks The drop_down_style property specifies whether the list is always displayed or whether the list is displayed in a drop-down. The drop_down_style property also specifies whether the text portion can be edited. See combo_box_style for the available settings and their effects. There is no setting to always display the list and disallow entering a new value. To display a list to which no new values can be added, use a list_box control.
@@ -156,6 +163,7 @@ namespace xtd {
       void wm_mouse_up(message& message);
 
       struct data {
+        bool drop_down = false;
         int32_t drop_down_height = 0;
         combo_box_style drop_down_style = combo_box_style::drop_down;
         int32_t drop_down_width = 0;
