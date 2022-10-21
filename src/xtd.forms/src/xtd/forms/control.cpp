@@ -146,7 +146,7 @@ control& control::auto_size(bool auto_size) {
 }
 
 color control::back_color() const {
-  for (const control* control = this; control; control = control->parent().has_value() ? &control->parent().value().get() : nullptr)
+  for (const control* control = this; control; control = control->parent().has_value() && !control->get_state(control::state::top_level) ? &control->parent().value().get() : nullptr)
     if (control->data_->back_color.has_value()) return control->data_->back_color.value();
   return default_back_color();
 }
@@ -298,7 +298,7 @@ bool control::created() {
 }
 
 forms::cursor control::cursor() const {
-  for (const control* control = this; control; control = control->parent().has_value() ? &control->parent().value().get() : nullptr)
+  for (const control* control = this; control; control = control->parent().has_value() && !control->get_state(control::state::top_level) ? &control->parent().value().get() : nullptr)
     if (control->data_->cursor.has_value()) return control->data_->cursor.value();
   return default_cursor();
 }
@@ -367,7 +367,7 @@ bool control::focused() const {
 }
 
 drawing::font control::font() const {
-  for (const control* control = this; control; control = control->parent().has_value() ? &control->parent().value().get() : nullptr)
+  for (const control* control = this; control; control = control->parent().has_value() && !control->get_state(control::state::top_level) ? &control->parent().value().get() : nullptr)
     if (control->data_->font.has_value()) return control->data_->font.value();
   return default_font();
 }
@@ -393,7 +393,7 @@ control& control::font(std::nullptr_t) {
 }
 
 color control::fore_color() const {
-  for (const control* control = this; control; control = control->parent().has_value() ? &control->parent().value().get() : nullptr)
+  for (const control* control = this; control; control = control->parent().has_value() && !control->get_state(control::state::top_level) ? &control->parent().value().get() : nullptr)
     if (control->data_->fore_color.has_value()) return control->data_->fore_color.value();
   return default_fore_color();
 }
