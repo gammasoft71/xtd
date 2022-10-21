@@ -272,6 +272,8 @@ add_sources(
   include/xtd/speech/synthesis/speak_started_event_args.h
   include/xtd/speech/synthesis/speak_started_event_handler.h
   include/xtd/speech/synthesis/speech_synthesizer.h
+  include/xtd/speech/synthesis/state_changed_event_args.h
+  include/xtd/speech/synthesis/state_changed_event_handler.h
   include/xtd/speech/synthesis/synthesizer_state.h
   include/xtd/threading/interlocked.h
   include/xtd/web/css/css_reader.h
