@@ -32,6 +32,17 @@ void combo_box::delete_item(intptr_t control, size_t index) {
   static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->Delete(static_cast<int32_t>(index));
 }
 
+void combo_box::dropped_down(intptr_t control, bool value) {
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
+  if (value) static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->Popup();
+  else static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->Dismiss();
+}
+
+
 void combo_box::end_update(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
