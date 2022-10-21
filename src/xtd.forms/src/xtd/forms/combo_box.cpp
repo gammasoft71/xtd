@@ -17,32 +17,32 @@ using namespace xtd::forms;
 combo_box::combo_box() {
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::user_paint | control_styles::use_text_for_accessibility | control_styles::standard_click, false);
-  items_.item_added += [&](size_t pos, const item & item) {
+  data_->items.item_added += [&](size_t pos, const item & item) {
     if (is_handle_created()) native::combo_box::insert_item(handle(), pos, item.value());
     combo_box::item selected_item;
-    if (selected_index() != npos && selected_index() < items_.size()) selected_item = items_[selected_index()];
+    if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
     this->selected_item(selected_item);
   };
   
-  items_.item_removed += [&](size_t pos, const item & item) {
+  data_->items.item_removed += [&](size_t pos, const item & item) {
     if (is_handle_created()) native::combo_box::delete_item(handle(), pos);
     
     combo_box::item selected_item;
-    if (selected_index() != npos && selected_index() < items_.size()) selected_item = items_[selected_index()];
+    if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
     this->selected_item(selected_item);
   };
   
-  items_.item_updated += [&](size_t pos, const item & item) {
+  data_->items.item_updated += [&](size_t pos, const item & item) {
     if (is_handle_created()) native::combo_box::update_item(handle(), pos, item.value());
     combo_box::item selected_item;
-    if (selected_index() != npos && selected_index() < items_.size()) selected_item = items_[selected_index()];
+    if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
     this->selected_item(selected_item);
   };
 }
 
 combo_box& combo_box::drop_down_style(combo_box_style drop_down_style) {
-  if (drop_down_style_ != drop_down_style) {
-    drop_down_style_ = drop_down_style;
+  if (data_->drop_down_style != drop_down_style) {
+    data_->drop_down_style = drop_down_style;
     post_recreate_handle();
     on_drop_down_style_changed(event_args::empty);
   }
@@ -51,14 +51,14 @@ combo_box& combo_box::drop_down_style(combo_box_style drop_down_style) {
 
 list_control& combo_box::selected_index(size_t selected_index) {
   if (this->selected_index() != selected_index) {
-    if (selected_index != npos && selected_index >= items_.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, current_stack_frame_);
+    if (selected_index != npos && selected_index >= data_->items.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, current_stack_frame_);
     set_selected_index(selected_index);
     if (is_handle_created()) native::combo_box::selected_index(handle(), this->selected_index());
     
     item selected_item;
-    if (this->selected_index() != npos) selected_item = items_[this->selected_index()];
+    if (this->selected_index() != npos) selected_item = data_->items[this->selected_index()];
     //this->selected_item(selected_item);
-    selected_item_ = selected_item;
+    data_->selected_item = selected_item;
     on_selected_value_changed(event_args::empty);
     
     on_selected_index_changed(event_args::empty);
@@ -67,14 +67,14 @@ list_control& combo_box::selected_index(size_t selected_index) {
 }
 
 combo_box& combo_box::selected_item(const item& selected_item) {
-  if (selected_item_ != selected_item) {
-    auto it = std::find(items_.begin(), items_.end(), selected_item);
-    if (it == items_.end())
-      selected_item_ = selected_index() != npos ? items()[selected_index()] : "";
+  if (data_->selected_item != selected_item) {
+    auto it = std::find(data_->items.begin(), data_->items.end(), selected_item);
+    if (it == data_->items.end())
+      data_->selected_item = selected_index() != npos ? items()[selected_index()] : "";
     else {
-      size_t index = it - items_.begin();
+      size_t index = it - data_->items.begin();
       selected_index(index);
-      selected_item_ = *it;
+      data_->selected_item = *it;
       on_selected_value_changed(event_args::empty);
     }
   }
@@ -82,9 +82,9 @@ combo_box& combo_box::selected_item(const item& selected_item) {
 }
 
 combo_box& combo_box::sorted(bool sorted) {
-  if (sorted_ != sorted) {
-    sorted_ = sorted;
-    items_.sorted(sorted_);
+  if (data_->sorted != sorted) {
+    data_->sorted = sorted;
+    data_->items.sorted(data_->sorted);
   }
   return *this;
 }
@@ -103,9 +103,9 @@ forms::create_params combo_box::create_params() const {
   create_params.class_name("combobox");
   
   // Do not use native control sort
-  //if (sorted_) create_params.style(create_params.style() | CBS_SORT);
+  //if (data_->sorted) create_params.style(create_params.style() | CBS_SORT);
   
-  switch (drop_down_style_) {
+  switch (data_->drop_down_style) {
     case combo_box_style::drop_down_list: create_params.style(create_params.style() | CBS_DROPDOWNLIST); break;
     case combo_box_style::drop_down: create_params.style(create_params.style() | CBS_DROPDOWN); break;
     case combo_box_style::simple: create_params.style(create_params.style() | CBS_SIMPLE); break;
@@ -131,20 +131,20 @@ void combo_box::on_drop_down_style_changed(const event_args& e) {
 void combo_box::on_handle_created(const event_args& e) {
   list_control::on_handle_created(e);
 
-  drop_down_width_ = default_size().width();
-  drop_down_height_ = static_cast<int32_t>(font().get_height()) * 9;
-  if (environment::os_version().is_windows_platform() && drop_down_style_ == combo_box_style::simple && size().height() == default_size().height() && size().height() < drop_down_height_)
-    size({size().width(), drop_down_height_});
+  data_->drop_down_width = default_size().width();
+  data_->drop_down_height = static_cast<int32_t>(font().get_height()) * 9;
+  if (environment::os_version().is_windows_platform() && data_->drop_down_style == combo_box_style::simple && size().height() == default_size().height() && size().height() < data_->drop_down_height)
+    size({size().width(), data_->drop_down_height});
     
-  items_.sorted(sorted_);
-  for (size_t index = 0; index < items_.size(); ++index)
-    native::combo_box::insert_item(handle(), index, items_[index].value());
+  data_->items.sorted(data_->sorted);
+  for (size_t index = 0; index < data_->items.size(); ++index)
+    native::combo_box::insert_item(handle(), index, data_->items[index].value());
   native::combo_box::selected_index(handle(), selected_index());
-  if (selected_index() != npos) selected_item_ = items_[selected_index()];
+  if (selected_index() != npos) data_->selected_item = data_->items[selected_index()];
 }
 
 void combo_box::on_selected_value_changed(const event_args& e) {
-  list_control::text(selected_item_.value());
+  list_control::text(data_->selected_item.value());
   list_control::on_selected_value_changed(e);
 }
 
@@ -171,12 +171,12 @@ void combo_box::wm_command_control(message& message) {
 void combo_box::wm_command_control_selchange(message& message) {
   def_wnd_proc(message);
   selected_index(native::combo_box::selected_index(handle()));
-  if (selected_index() != npos) selected_item(items_[selected_index()]);
+  if (selected_index() != npos) selected_item(data_->items[selected_index()]);
 }
 
 void combo_box::wm_mouse_double_click(message& message) {
   selected_index(native::combo_box::selected_index(handle()));
-  if (selected_index() != npos) selected_item(items_[selected_index()]);
+  if (selected_index() != npos) selected_item(data_->items[selected_index()]);
   if (allow_selection())
     list_control::wnd_proc(message);
 }
@@ -188,7 +188,7 @@ void combo_box::wm_mouse_down(message& message) {
 
 void combo_box::wm_mouse_up(message& message) {
   selected_index(native::combo_box::selected_index(handle()));
-  if (selected_index() != npos) selected_item(items_[selected_index()]);
+  if (selected_index() != npos) selected_item(data_->items[selected_index()]);
   if (allow_selection())
     list_control::wnd_proc(message);
 }
