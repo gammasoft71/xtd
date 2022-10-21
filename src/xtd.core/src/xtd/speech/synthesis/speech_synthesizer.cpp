@@ -45,11 +45,19 @@ void speech_synthesizer::speak_async(xtd::speech::synthesis::prompt& prompt) {
 }
 
 void speech_synthesizer::on_speak_completed() {
-  data_->state = synthesizer_state::speaking;
+  set_state(synthesizer_state::ready);
   speak_completed(*this, {false, nullptr, data_->used_prompt});
 }
 
 void speech_synthesizer::on_speak_started() {
-  data_->state = synthesizer_state::ready;
+  set_state(synthesizer_state::speaking);
   speak_started(*this, {false, nullptr, data_->used_prompt});
+}
+
+void speech_synthesizer::set_state(synthesizer_state value) {
+  if (data_->state != value) {
+    auto previous_state = data_->state;
+    data_->state = value;
+    state_changed(*this, {previous_state, data_->state});
+  }
 }

@@ -9,6 +9,7 @@
 #include "prompt.h"
 #include "speak_completed_event_handler.h"
 #include "speak_started_event_handler.h"
+#include "state_changed_event_handler.h"
 #include "synthesizer_state.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -72,14 +73,24 @@ namespace xtd {
         /// @name Events
         
         /// @{
+        /// @brief Raised when the xtd::speech::synthesis::speech_synthesizer completes the speaking of a prompt.
+        /// @remarks The xtd::speech::synthesis::speech_synthesizer raises the xtd::speech::synthesis::speech_synthesizer::speak_completed event at the completion of any of the xtd::speech::synthesis::speech_synthesizer::speak, xtd::speech::synthesis::speech_synthesizer::speak_async, xtd::speech::synthesis::speech_synthesizer::speak_ssml, or xtd::speech::synthesis::speech_synthesizer::speak_ssml_async methods.
         event<speech_synthesizer, speak_completed_event_handler> speak_completed;
 
+        /// @brief Raised when the xtd::speech::synthesis::speech_synthesizer begins the speaking of a prompt.
+        /// @remarks The xtd::speech::synthesis::speech_synthesizer raises this event when it begins processing a prompt using any of the xtd::speech::synthesis::speech_synthesizer::speak, xtd::speech::synthesis::speech_synthesizer::speak_async, xtd::speech::synthesis::speech_synthesizer::speak_ssml, or xtd::speech::synthesis::speech_synthesizer::speak_ssml_async methods.
         event<speech_synthesizer, speak_started_event_handler> speak_started;
+
+        /// @brief Raised when the state of the xtd::speech::synthesis::speech_synthesizer changes.
+        /// @remarks The xtd::speech::synthesis::speech_synthesizer raises this event when its speaking xtd::speech::synthesis::speech_synthesizer::state changes. For an example and more information about data associated with the event, see xtd::speech::synthesis::state_changed_event_args.
+        /// @remarks To pause and resume speech synthesis, use the xtd::speech::synthesis::speech_synthesizer::pause and xtd::speech::synthesis::speech_synthesizer::resume methods.
+        event<speech_synthesizer, state_changed_event_handler> state_changed;
         /// @}
         
       private:
         void on_speak_completed();
         void on_speak_started();
+        void set_state(synthesizer_state value);
 
         struct data {
           intptr_t handle = 0;
