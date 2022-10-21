@@ -1,8 +1,8 @@
 #include <xtd/xtd>
 
 using namespace xtd;
-using namespace xtd::speech::synthesis;
 using namespace xtd::forms;
+using namespace xtd::speech::synthesis;
 
 class form1 : public form {
 public:
