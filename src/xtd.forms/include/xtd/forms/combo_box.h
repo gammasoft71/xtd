@@ -41,6 +41,7 @@ namespace xtd {
       bool dropped_down() const;
       /// @brief Sets a value indicating whether the combo box is displaying its drop-down portion.
       /// @param value true if the drop-down portion is displayed; otherwise, false. The default is false.
+      /// @warning This feature is not supported on macOS.
       combo_box& dropped_down(bool value);
       
       /// @brief Gets a value specifying the style of the combo box.
