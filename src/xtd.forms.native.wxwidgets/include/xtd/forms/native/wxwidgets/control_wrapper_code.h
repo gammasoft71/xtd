@@ -7,6 +7,11 @@
 
 namespace xtd::forms::native {
   template<typename control_t>
+  template<typename ...args_t>
+  inline control_wrapper<control_t>::control_wrapper(control_handler* event_handler, args_t&& ...args) : control_t(args...), event_handler_(event_handler) {
+  }
+
+  template<typename control_t>
   inline control_wrapper<control_t>::~control_wrapper() {
     if (event_handler_) event_handler_->reset_control();
   }
@@ -367,6 +372,11 @@ namespace xtd::forms::native {
       {wxEVT_HELP, "wxEVT_HELP"}, {wxEVT_DETAILED_HELP, "wxEVT_DETAILED_HELP"},};
     auto it = eventTypes.find(eventType);
     return ustring::format("{} (0x{:X})", it == eventTypes.end() ? "<Unknown>" : it->second, eventType);
+  }
+
+  template<typename control_t>
+  inline std::string control_wrapper<control_t>::to_string(const wxEvent& event) {
+    return ustring::format("{} {{type={}, id={}}}", ustring::full_class_name(event), to_string(event.GetEventType()), event.GetId());
   }
   
   template<typename control_t>
