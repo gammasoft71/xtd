@@ -26,11 +26,17 @@ bool __toggle_full_screen_frame__(wxTopLevelWindow* control);
 namespace xtd {
   namespace forms {
     namespace native {
+      template<typename control_t>
+      class control_wrapper;
+      class wxForm;
+      class wxFormDialog;
       class wx_form;
       class wxMainPanel : public wxScrolled<wxPanel> {
-        friend xtd::forms::native::wx_form;
+        friend xtd::forms::native::wxForm;
+        friend xtd::forms::native::wxFormDialog;
       private:
-        wxMainPanel(control_handler* control_handler, wxWindow* parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxScrolledWindowStyle, const wxString& name = wxPanelNameStr) : wxScrolled<wxPanel>(parent, winid, pos, size, style, name), control_handler_(control_handler) {}
+        wxMainPanel(wxWindow* parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxScrolledWindowStyle, const wxString& name = wxPanelNameStr) : wxScrolled<wxPanel>(parent, winid, pos, size, style, name) {
+        }
         
         bool ProcessEvent(wxEvent& event) override {
           bool result = wxPanel::ProcessEvent(event);
@@ -68,6 +74,10 @@ namespace xtd {
           return result;
         }
         
+        void set_control_handler(control_handler* control_handler) {
+          control_handler_ = control_handler;
+        }
+        
         control_handler* control_handler_ = nullptr;
         
         int32_t get_virtual_keys(const wxMouseState& mouse_state) {
@@ -89,6 +99,93 @@ namespace xtd {
         }
       };
       
+      class iform_control_handler interface_ {
+      public:
+        virtual void set_control_handler(control_handler* control_handler) = 0;
+
+      };
+      
+      class wxForm : public wxFrame, public iform_control_handler {
+        template<typename control_t>
+        friend class control_wrapper;
+        friend xtd::forms::native::wx_form;
+      private:
+        wxForm(wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxDEFAULT_FRAME_STYLE, const wxString& name = wxASCII_STR(wxFrameNameStr)) : wxFrame(parent, id, title, pos, size, style, name) {
+          boxSizer->Add(inner_panel, wxSizerFlags().Proportion(-1).Expand());
+          SetSizerAndFit(boxSizer);
+          
+#if defined(__WIN32__)
+          if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
+            inner_panel->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
+            inner_panel->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
+          }
+#endif
+        }
+        
+        wxWindow* GetMainWindowOfCompositeControl() override {return inner_panel;}
+
+        bool SetBackgroundColour(const wxColour& colour) override {
+#if !defined(__APPLE__)
+          inner_panel->SetBackgroundColour(colour);
+#endif
+          return wxFrame::SetBackgroundColour(colour);
+        }
+        
+        bool SetCursor(const wxCursor& cursor) override {
+          inner_panel->SetCursor(cursor);
+          return wxFrame::SetCursor(cursor);
+        }
+        
+        bool SetForegroundColour(const wxColour& colour) override {
+          inner_panel->SetForegroundColour(colour);
+          return wxFrame::SetForegroundColour(colour);
+        }
+        
+        void set_control_handler(control_handler* control_handler) override {
+          inner_panel->set_control_handler(control_handler);
+        }
+        
+        wxBoxSizer* boxSizer = new wxBoxSizer(wxVERTICAL);
+        wxMainPanel* inner_panel = new wxMainPanel(this);
+      };
+      
+      class wxFormDialog : public wxDialog, public iform_control_handler {
+        template<typename control_t>
+        friend class control_wrapper;
+        friend xtd::forms::native::wx_form;
+      private:
+        wxFormDialog(wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxDEFAULT_FRAME_STYLE, const wxString& name = wxASCII_STR(wxFrameNameStr)) : wxDialog(parent, id, title, pos, size, style, name) {
+          boxSizer->Add(inner_panel, wxSizerFlags().Proportion(-1).Expand());
+          SetSizerAndFit(boxSizer);
+        }
+        
+        wxWindow* GetMainWindowOfCompositeControl() override {return inner_panel;}
+        
+        bool SetBackgroundColour(const wxColour& colour) override {
+#if !defined(__APPLE__)
+          inner_panel->SetBackgroundColour(colour);
+#endif
+          return wxDialog::SetBackgroundColour(colour);
+        }
+        
+        bool SetCursor(const wxCursor& cursor) override {
+          inner_panel->SetCursor(cursor);
+          return wxDialog::SetCursor(cursor);
+        }
+        
+        bool SetForegroundColour(const wxColour& colour) override {
+          inner_panel->SetForegroundColour(colour);
+          return wxDialog::SetForegroundColour(colour);
+        }
+        
+        void set_control_handler(control_handler* control_handler) override {
+          inner_panel->set_control_handler(control_handler);
+        }
+
+        wxBoxSizer* boxSizer = new wxBoxSizer(wxVERTICAL);
+        wxMainPanel* inner_panel = new wxMainPanel(this);
+      };
+
       class wx_form : public control_handler {
 #if defined(__WIN32__)
         static const int32_t min_width = 122;
@@ -110,8 +207,9 @@ namespace xtd {
           wxSize size = wxSize(create_params.size.width(), create_params.size.height());
           if (size.GetWidth() > -1 && size.GetWidth() < min_width) size.SetWidth(min_width);
           if (size.GetHeight() > -1 && size.GetHeight() < min_height) size.SetHeight(min_height);
-          if ((create_params.ex_style & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW || (create_params.ex_style & WS_EX_DLGMODALFRAME) == WS_EX_DLGMODALFRAME) control_handler::create<wxDialog>(create_params.parent ? (reinterpret_cast<control_handler*>(create_params.parent)->control()) : nullptr, wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption)), location, size, form_style_to_wx_style(create_params.style, create_params.ex_style, create_params.class_style, create_params.parent));
-          else control_handler::create<wxFrame>(create_params.parent && (create_params.ex_style & WS_EX_TOPMOST) != WS_EX_TOPMOST ? (reinterpret_cast<control_handler*>(create_params.parent)->control()) : nullptr, wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption)), location, size, form_style_to_wx_style(create_params.style, create_params.ex_style, create_params.class_style, create_params.parent));
+          if ((create_params.ex_style & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW || (create_params.ex_style & WS_EX_DLGMODALFRAME) == WS_EX_DLGMODALFRAME) control_handler::create<wxFormDialog>(create_params.parent ? (reinterpret_cast<control_handler*>(create_params.parent)->control()) : nullptr, wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption)), location, size, form_style_to_wx_style(create_params.style, create_params.ex_style, create_params.class_style, create_params.parent));
+          else control_handler::create<wxForm>(create_params.parent && (create_params.ex_style & WS_EX_TOPMOST) != WS_EX_TOPMOST ? (reinterpret_cast<control_handler*>(create_params.parent)->control()) : nullptr, wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption)), location, size, form_style_to_wx_style(create_params.style, create_params.ex_style, create_params.class_style, create_params.parent));
+          dynamic_cast<iform_control_handler*>(control())->set_control_handler(this);
           #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
@@ -171,7 +269,7 @@ namespace xtd {
           fixed = (create_params.style & WS_THICKFRAME) != WS_THICKFRAME;
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
-            control()->SetForegroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
+            control()->SetForegroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNTEXT));
           }
           #endif
           
@@ -184,16 +282,6 @@ namespace xtd {
           
           if ((create_params.ex_style & WS_EX_CONTEXTHELP) == WS_EX_CONTEXTHELP) control()->SetExtraStyle(control()->GetExtraStyle() | wxDIALOG_EX_CONTEXTHELP);
           SetPosition(location);
-          boxSizer_ = new wxBoxSizer(wxVERTICAL);
-          panel_ = new wxMainPanel(this, control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, panel_style_to_wx_style(create_params.style, create_params.ex_style, create_params.class_style));
-          boxSizer_->Add(panel_, wxSizerFlags().Proportion(-1).Expand());
-          control()->SetSizerAndFit(boxSizer_);
-          #if defined(__WIN32__)
-          if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
-            panel_->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
-            panel_->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
-          }
-          #endif
         }
         
         static long form_style_to_wx_style(size_t style, size_t ex_style, size_t class_style, intptr_t parent) {
@@ -233,33 +321,12 @@ namespace xtd {
           return wx_style;
         }
         
-        wxWindow* main_control() const override {
-          return panel_;
-        }
-        
         #if defined(__WXGTK__)
         wxPoint GetPosition() const override {
           return location_;
           return control_handler::GetPosition();
         }
         #endif
-        
-        void SetBackgroundColour(const wxColour& colour) override {
-          control_handler::SetBackgroundColour(colour);
-          #if !defined(__APPLE__)
-          panel_->SetBackgroundColour(colour);
-          #endif
-        }
-        
-        void SetCursor(const wxCursor& cursor) override {
-          control_handler::SetCursor(cursor);
-          panel_->SetCursor(cursor);
-        }
-        
-        void SetForegroundColour(const wxColour& colour) override {
-          control_handler::SetForegroundColour(colour);
-          panel_->SetForegroundColour(colour);
-        }
         
         void SetClientSize(int32_t width, int32_t height) override {
           if (width < min_width) width = min_width;
@@ -353,8 +420,6 @@ namespace xtd {
         #endif
         
       private:
-        wxBoxSizer* boxSizer_;
-        wxMainPanel* panel_;
         #if defined(__WXGTK__)
         wxPoint location_;
         inline static const wxPoint invalid_location {-100000, -100000};
