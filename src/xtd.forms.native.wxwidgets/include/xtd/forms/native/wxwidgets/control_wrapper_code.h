@@ -10,7 +10,7 @@ namespace xtd::forms::native {
   template<typename ...args_t>
   inline control_wrapper<control_t>::control_wrapper(control_handler* event_handler, args_t&& ...args) : control_t(args...), event_handler_(event_handler) {
   }
-
+  
   template<typename control_t>
   inline control_wrapper<control_t>::~control_wrapper() {
     if (event_handler_) event_handler_->reset_control();
@@ -20,7 +20,7 @@ namespace xtd::forms::native {
   inline bool control_wrapper<control_t>::AcceptsFocus() const {
     return acceptsFocus.value_or(control_t::AcceptsFocus());
   }
- 
+  
   template<typename control_t>
   inline intptr_t control_wrapper<control_t>::def_wnd_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) {
     if (handle != 0 && !control_t::IsBeingDeleted()) {
@@ -36,6 +36,38 @@ namespace xtd::forms::native {
     if (event_handler_ == nullptr || event_handler_->control() == nullptr) return false;
     if (event_handler_->control()->IsBeingDeleted()) return false;
     if (static_cast<xtd::drawing::native::wx_application*>(wxTheApp)->exceptionStored) return  process_result_;
+    wxWindow* control = reinterpret_cast<wxWindow*>(event.GetEventObject());
+    static std::set<wxEventType> reflect_messages {
+      wxEVT_BUTTON,
+      wxEVT_CALENDAR_DOUBLECLICKED, wxEVT_CALENDAR_SEL_CHANGED, wxEVT_CALENDAR_PAGE_CHANGED, wxEVT_CALENDAR_WEEK_CLICKED, wxEVT_CALENDAR_WEEKDAY_CLICKED,
+      wxEVT_CHECKBOX,
+      wxEVT_CHECKLISTBOX,
+      wxEVT_CHOICE,
+      wxEVT_COMBOBOX, wxEVT_COMBOBOX_DROPDOWN, wxEVT_COMBOBOX_CLOSEUP,
+      wxEVT_COLLAPSIBLEPANE_CHANGED,
+      wxEVT_COLOURPICKER_CHANGED,
+      wxEVT_DATE_CHANGED,
+      wxEVT_FONTPICKER_CHANGED,
+      wxEVT_LISTBOX, wxEVT_LISTBOX_DCLICK,
+      wxEVT_MENU,
+      wxEVT_NOTEBOOK_PAGE_CHANGED,
+      wxEVT_RADIOBOX,
+      wxEVT_RADIOBUTTON,
+      wxEVT_SCROLL_BOTTOM, wxEVT_SCROLL_LINEDOWN, wxEVT_SCROLL_LINEUP, wxEVT_SCROLL_PAGEDOWN, wxEVT_SCROLL_PAGEUP, wxEVT_SCROLL_THUMBRELEASE, wxEVT_SCROLL_THUMBTRACK, wxEVT_SCROLL_TOP, wxEVT_SCROLLBAR,
+      wxEVT_SLIDER,
+      wxEVT_SPIN_DOWN, wxEVT_SPIN_UP, wxEVT_SPINCTRL, wxEVT_SPINCTRLDOUBLE,
+      wxEVT_VLBOX,
+      wxEVT_TEXT,
+      wxEVT_TEXT_COPY, wxEVT_TEXT_CUT, wxEVT_TEXT_PASTE,
+      wxEVT_TIME_CHANGED,
+      wxEVT_TOGGLEBUTTON,
+      wxEVT_TOOL, wxEVT_TOOL_DROPDOWN, wxEVT_TOOL_ENTER, wxEVT_TOOL_RCLICKED,
+    };
+    if (reflect_messages.find(event.GetEventType()) != reflect_messages.end() && control->GetParent() && control->GetParent()->GetMainWindowOfCompositeControl() != this->GetMainWindowOfCompositeControl())
+      return control_t::ProcessEvent(event);
+    if (reflect_messages.find(event.GetEventType()) == reflect_messages.end() && control->GetMainWindowOfCompositeControl() != this->GetMainWindowOfCompositeControl())
+      return control_t::ProcessEvent(event);
+    
     //diagnostics::debug::write_line_if(event.GetEventType() != wxEVT_UPDATE_UI && event.GetEventType() != wxEVT_IDLE, ustring::format("control_wrapper<{}>::ProcessEvent {}", ustring::full_class_name<control_t>(), to_string(event)));
     
     // keyboard events
@@ -141,7 +173,7 @@ namespace xtd::forms::native {
   inline void control_wrapper<control_t>::SetAcceptsFocus(std::nullptr_t) {
     acceptsFocus.reset();
   }
-
+  
   template<typename control_t>
   inline intptr_t control_wrapper<control_t>::convert_to_virtual_key(const wxKeyEvent& key_event) {
     intptr_t key_data = VK_NONE;
@@ -329,7 +361,7 @@ namespace xtd::forms::native {
   
   template<typename control_t>
   inline intptr_t control_wrapper<control_t>::get_control_handle_for_event(wxEvent& event, control_handler* handler) {
-    return event.GetEventObject() != this && static_cast<wxWindow*>(event.GetEventObject())->GetClientData() != nullptr  ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : reinterpret_cast<intptr_t>(handler);
+    return reinterpret_cast<wxWindow*>(event.GetEventObject())->GetMainWindowOfCompositeControl() != this->GetMainWindowOfCompositeControl() && static_cast<wxWindow*>(event.GetEventObject())->GetMainWindowOfCompositeControl()->GetClientData() != nullptr  ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetMainWindowOfCompositeControl()->GetClientData()) : reinterpret_cast<intptr_t>(handler);
   }
   
   template<typename control_t>
@@ -373,7 +405,7 @@ namespace xtd::forms::native {
     auto it = eventTypes.find(eventType);
     return ustring::format("{} (0x{:X})", it == eventTypes.end() ? "<Unknown>" : it->second, eventType);
   }
-
+  
   template<typename control_t>
   inline std::string control_wrapper<control_t>::to_string(const wxEvent& event) {
     return ustring::format("{} {{type={}, id={}}}", ustring::full_class_name(event), to_string(event.GetEventType()), event.GetId());
@@ -449,83 +481,65 @@ namespace xtd::forms::native {
     reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
     event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_XBUTTONUP, MK_XBUTTON2 | virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
   }
-
+  
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_button(wxEvent& event) {
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), BN_CLICKED),  get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), BN_CLICKED),  get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_calendar_doubleclicked(wxEvent& event) {
     NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr_t>(event.GetId()), MCN_SELECT};
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_calendar_sel_changed(wxEvent& event) {
     NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr_t>(event.GetId()), MCN_SELCHANGE};
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_calendar_page_changed(wxEvent& event) {
     NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr_t>(event.GetId()), MCN_VIEWCHANGE};
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_calendar_week_clicked(wxEvent& event) {
     NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr_t>(event.GetId()), MCN_VIEWCHANGE};
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_calendar_weekday_clicked(wxEvent& event) {
     NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr_t>(event.GetId()), MCN_VIEWCHANGE};
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_char(wxEvent& event) {
     event.Skip(!event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_CHAR, static_cast<wxKeyEvent&>(event).GetUnicodeKey(), 0, reinterpret_cast<intptr_t>(&event)));
   }
-
+  
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_checkbox(wxEvent& event) {
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), BN_CLICKED), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), BN_CLICKED), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
-
+  
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_checklistbox(wxEvent& event) {
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), LBN_SELCHANGE), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
-}
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), LBN_SELCHANGE), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
+  }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_child_focus(wxEvent& event) {
     event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_CHILDACTIVATE, 0, 0, reinterpret_cast<intptr_t>(&event));
   }
-
+  
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_choice(wxEvent& event) {
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), LBN_SELCHANGE), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), LBN_SELCHANGE), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
@@ -536,45 +550,33 @@ namespace xtd::forms::native {
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_collapsiblepane_changed(wxEvent& event) {
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), NM_CLICK), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), NM_CLICK), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
-
+  
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_colourpicker_changed(wxEvent& event) {
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), CPN_SELCHANGE), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), CPN_SELCHANGE), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
-
+  
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_combobox(wxEvent& event) {
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), CBN_SELCHANGE), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), CBN_SELCHANGE), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_combobox_dropdown(wxEvent& event) {
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), CBN_DROPDOWN), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), CBN_DROPDOWN), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_combobox_closeup(wxEvent& event) {
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), CBN_CLOSEUP), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), CBN_CLOSEUP), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_date_changed(wxEvent& event) {
     NMHDR nmhrd {reinterpret_cast<HWND>(get_control_handle_for_event(event, event_handler_)), static_cast<uintptr_t>(event.GetId()), DTN_DATETIMECHANGE};
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
@@ -601,12 +603,10 @@ namespace xtd::forms::native {
   inline void control_wrapper<control_t>::wx_evt_exit_sizemove(wxEvent& event) {
     event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_EXITSIZEMOVE, 0, 0, reinterpret_cast<intptr_t>(&event));
   }
-
+  
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_fontpicker_changed(wxEvent& event) {
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), FPN_SELCHANGE), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), FPN_SELCHANGE), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
@@ -626,7 +626,7 @@ namespace xtd::forms::native {
     help_info.MousePos = POINT{static_cast<wxHelpEvent&>(event).GetPosition().x, static_cast<wxHelpEvent&>(event).GetPosition().y};
     event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_HELP, 0, reinterpret_cast<intptr_t>(&help_info), reinterpret_cast<intptr_t>(&event));
   }
-
+  
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_iconize(wxEvent& event) {
     wxWindow* window = reinterpret_cast<wxWindow*>(event.GetEventObject());
@@ -661,7 +661,7 @@ namespace xtd::forms::native {
   inline void control_wrapper<control_t>::wx_evt_leave_window(wxEvent& event) {
     if (event.GetId() == control_t::GetId()) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MOUSELEAVE, 0, 0, reinterpret_cast<intptr_t>(&event));
   }
-
+  
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_left_dbclick(wxEvent& event) {
     wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
@@ -694,12 +694,10 @@ namespace xtd::forms::native {
     reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
     event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_LBUTTONUP, MK_LBUTTON | virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
   }
-
+  
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_listbox(wxEvent& event) {
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), LBN_SELCHANGE), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), LBN_SELCHANGE), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
@@ -740,12 +738,12 @@ namespace xtd::forms::native {
     reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
     event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MBUTTONUP, MK_MBUTTON | virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
   }
-
+  
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_menu(wxEvent& event) {
     event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MENUCOMMAND, event.GetId(), reinterpret_cast<intptr_t>(event.GetEventObject()), reinterpret_cast<intptr_t>(&event));
   }
-
+  
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_motion(wxEvent& event) {
     wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
@@ -767,7 +765,7 @@ namespace xtd::forms::native {
     reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
     event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), mouse_event.GetWheelAxis() == wxMouseWheelAxis::wxMOUSE_WHEEL_VERTICAL ? WM_MOUSEWHEEL : WM_MOUSEHWHEEL, virtual_keys + ((mouse_event.GetWheelRotation() < 0 ? -mouse_event.GetWheelDelta() : mouse_event.GetWheelDelta()) << 16), mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
   }
-
+  
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_move(wxEvent& event) {
     wxWindow* window = reinterpret_cast<wxWindow*>(event.GetEventObject());
@@ -776,9 +774,7 @@ namespace xtd::forms::native {
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_notebook_page_changed(wxEvent& event) {
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), NM_CLICK), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), NM_CLICK), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
@@ -790,19 +786,17 @@ namespace xtd::forms::native {
   inline void control_wrapper<control_t>::wx_evt_paint(wxEvent& event) {
     if (event_handler_->enable_send_paint_event()) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_PAINT, 0, 0, reinterpret_cast<intptr_t>(&event));
   }
-
+  
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_radiobutton(wxEvent& event) {
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), BN_CLICKED), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), BN_CLICKED), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_recreate(wxEvent& event) {
     event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_RECREATE, 0, 0, reinterpret_cast<intptr_t>(&event));
   }
-
+  
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_right_dbclick(wxEvent& event) {
     wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
@@ -835,7 +829,7 @@ namespace xtd::forms::native {
     reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
     event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_RBUTTONUP, MK_RBUTTON | virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
   }
-
+  
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_scroll_bottom(wxEvent& event) {
     event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_BOTTOM, get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
@@ -875,7 +869,7 @@ namespace xtd::forms::native {
   inline void control_wrapper<control_t>::wx_evt_scroll_top(wxEvent& event) {
     event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_TOP, get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
-
+  
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_set_focus(wxEvent& event) {
     event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_SETFOCUS, 0, 0, reinterpret_cast<intptr_t>(&event));
@@ -891,7 +885,7 @@ namespace xtd::forms::native {
     wxWindow* window = reinterpret_cast<wxWindow*>(event.GetEventObject());
     event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_SIZE, 0, window->GetSize().GetWidth() + (window->GetSize().GetHeight() << 16), reinterpret_cast<intptr_t>(&event));
   }
-
+  
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_slider(wxEvent& event) {
     event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSL_VERTICAL) == wxSL_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_THUMBPOSITION, get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
@@ -906,7 +900,7 @@ namespace xtd::forms::native {
   inline void control_wrapper<control_t>::wx_evt_spin_up(wxEvent& event) {
     event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_LINEUP, get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
-
+  
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_spinctrldouble(wxEvent& event) {
     event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), UDN_DELTAPOS), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
@@ -916,7 +910,7 @@ namespace xtd::forms::native {
   inline void control_wrapper<control_t>::wx_evt_sys_color_changed(wxEvent &event) {
     event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_SYSCOLORCHANGE, 0, 0, reinterpret_cast<intptr_t>(&event));
   }
-
+  
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_text(wxEvent& event) {
     if (event.GetId() == this->GetId())
@@ -926,15 +920,11 @@ namespace xtd::forms::native {
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_time_changed(wxEvent& event) {
     NMHDR nmhrd {reinterpret_cast<HWND>(get_control_handle_for_event(event, event_handler_)), static_cast<uintptr_t>(event.GetId()), DTN_DATETIMECHANGE};
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_NOTIFY, static_cast<intptr_t>(event.GetId()), reinterpret_cast<intptr_t>(&nmhrd), reinterpret_cast<intptr_t>(&event));
   }
-
+  
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_togglebutton(wxEvent& event) {
-    if ((event.GetEventObject() == event.GetPropagatedFrom() || static_cast<wxWindow*>(event.GetEventObject())->GetParent() == event.GetPropagatedFrom()))
-      event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), BN_CLICKED), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
-    else def_process_event(event);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, MAKELONG(event.GetId(), BN_CLICKED), get_control_handle_for_event(event, event_handler_), reinterpret_cast<intptr_t>(&event));
   }
 }
