@@ -109,7 +109,7 @@ namespace xtd {
         void wx_evt_calendar_sel_changed(wxEvent& event);
         void wx_evt_calendar_page_changed(wxEvent& event);
         void wx_evt_calendar_week_clicked(wxEvent& event);
-        void wx_evt_calendar_weekdey_clicked(wxEvent& event);
+        void wx_evt_calendar_weekday_clicked(wxEvent& event);
         void wx_evt_char(wxEvent& event);
         void wx_evt_checkbox(wxEvent& event);
         void wx_evt_checklistbox(wxEvent& event);
