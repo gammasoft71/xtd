@@ -66,8 +66,8 @@ namespace xtd {
       class control_wrapper : public control_t {
         friend control_handler;
       protected:
-        template<typename ...args_type>
-        control_wrapper(control_handler* event_handler, args_type&& ...args) : control_t(args...), event_handler_(event_handler) {}
+        template<typename ...args_t>
+        control_wrapper(control_handler* event_handler, args_t&& ...args);
         
         ~control_wrapper();
         
@@ -92,10 +92,7 @@ namespace xtd {
         int32_t get_virtual_keys(const wxMouseState& mouse_state);
         
         static std::string to_string(const wxEventType& eventType);
-        
-        static std::string to_string(const wxEvent& event) {
-          return ustring::format("{} {{type={}, id={}}}", ustring::full_class_name(event), to_string(event.GetEventType()), event.GetId());
-        }
+        static std::string to_string(const wxEvent& event);
         
         void wx_evt_activate(wxEvent& event);
         void wx_evt_aux1_dbclick(wxEvent& event);
