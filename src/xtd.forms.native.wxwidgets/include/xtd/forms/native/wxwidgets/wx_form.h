@@ -99,10 +99,9 @@ namespace xtd {
         }
       };
       
-      class iform_control_handler interface_ {
+      class iform_control_handler {
       public:
         virtual void set_control_handler(control_handler* control_handler) = 0;
-
       };
       
       class wxForm : public wxFrame, public iform_control_handler {
