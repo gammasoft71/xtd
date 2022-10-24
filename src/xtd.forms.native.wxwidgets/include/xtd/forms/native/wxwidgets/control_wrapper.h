@@ -5,6 +5,7 @@
 #endif
 /// @endcond
 
+#include "iwx_evt.h"
 #include <cstdint>
 #include <functional>
 #include <memory>
@@ -63,7 +64,7 @@ namespace xtd {
       class control_handler;
       
       template<typename control_t>
-      class control_wrapper : public control_t {
+      class control_wrapper : public control_t, public iwx_evt {
         friend control_handler;
       protected:
         template<typename ...args_t>
@@ -94,83 +95,83 @@ namespace xtd {
         static std::string to_string(const wxEventType& eventType);
         static std::string to_string(const wxEvent& event);
         
-        void wx_evt_activate(wxEvent& event);
-        void wx_evt_aux1_dbclick(wxEvent& event);
-        void wx_evt_aux1_down(wxEvent& event);
-        void wx_evt_aux1_up(wxEvent& event);
-        void wx_evt_aux2_dbclick(wxEvent& event);
-        void wx_evt_aux2_down(wxEvent& event);
-        void wx_evt_aux2_up(wxEvent& event);
-        void wx_evt_button(wxEvent& event);
-        void wx_evt_calendar_doubleclicked(wxEvent& event);
-        void wx_evt_calendar_sel_changed(wxEvent& event);
-        void wx_evt_calendar_page_changed(wxEvent& event);
-        void wx_evt_calendar_week_clicked(wxEvent& event);
-        void wx_evt_calendar_weekday_clicked(wxEvent& event);
-        void wx_evt_char(wxEvent& event);
-        void wx_evt_checkbox(wxEvent& event);
-        void wx_evt_checklistbox(wxEvent& event);
-        void wx_evt_child_focus(wxEvent& event);
-        void wx_evt_choice(wxEvent& event);
-        void wx_evt_close_window(wxEvent& event);
-        void wx_evt_collapsiblepane_changed(wxEvent& event);
-        void wx_evt_colourpicker_changed(wxEvent& event);
-        void wx_evt_combobox(wxEvent& event);
-        void wx_evt_combobox_dropdown(wxEvent& event);
-        void wx_evt_combobox_closeup(wxEvent& event);
-        void wx_evt_date_changed(wxEvent& event);
-        void wx_evt_destroy(wxEvent& event);
-        void wx_evt_enter_sizemove(wxEvent& event);
-        void wx_evt_enter_window(wxEvent& event);
-        void wx_evt_erase_background(wxEvent& event);
-        void wx_evt_exit_sizemove(wxEvent& event);
-        void wx_evt_fontpicker_changed(wxEvent& event);
-        void wx_evt_fullscreen(wxEvent& event);
-        void wx_evt_help(wxEvent& event);
-        void wx_evt_iconize(wxEvent& event);
-        void wx_evt_key_down(wxEvent& event);
-        void wx_evt_key_up(wxEvent& event);
-        void wx_evt_kill_focus(wxEvent& event);
-        void wx_evt_leave_window(wxEvent& event);
-        void wx_evt_left_dbclick(wxEvent& event);
-        void wx_evt_left_down(wxEvent& event);
-        void wx_evt_left_up(wxEvent& event);
-        void wx_evt_listbox(wxEvent& event);
-        void wx_evt_maximize(wxEvent& event);
-        void wx_evt_middle_dbclick(wxEvent& event);
-        void wx_evt_middle_down(wxEvent& event);
-        void wx_evt_middle_up(wxEvent& event);
-        void wx_evt_menu(wxEvent& event);
-        void wx_evt_motion(wxEvent& event);
-        void wx_evt_mousewheel(wxEvent& event);
-        void wx_evt_move(wxEvent& event);
-        void wx_evt_notebook_page_changed(wxEvent& event);
-        void wx_evt_null(wxEvent& event);
-        void wx_evt_paint(wxEvent& event);
-        void wx_evt_radiobutton(wxEvent& event);
-        void wx_evt_recreate(wxEvent& event);
-        void wx_evt_right_dbclick(wxEvent& event);
-        void wx_evt_right_down(wxEvent& event);
-        void wx_evt_right_up(wxEvent& event);
-        void wx_evt_scroll_bottom(wxEvent& event);
-        void wx_evt_scroll_linedown(wxEvent& event);
-        void wx_evt_scroll_lineup(wxEvent& event);
-        void wx_evt_scroll_pagedown(wxEvent& event);
-        void wx_evt_scroll_pageup(wxEvent& event);
-        void wx_evt_scroll_thumnbrelease(wxEvent& event);
-        void wx_evt_scroll_thumbtrack(wxEvent& event);
-        void wx_evt_scroll_top(wxEvent& event);
-        void wx_evt_show(wxEvent& event);
-        void wx_evt_set_focus(wxEvent& event);
-        void wx_evt_size(wxEvent& event);
-        void wx_evt_slider(wxEvent& event);
-        void wx_evt_spin_down(wxEvent& event);
-        void wx_evt_spin_up(wxEvent& event);
-        void wx_evt_spinctrldouble(wxEvent& event);
-        void wx_evt_sys_color_changed(wxEvent& event);
-        void wx_evt_text(wxEvent& event);
-        void wx_evt_time_changed(wxEvent& event);
-        void wx_evt_togglebutton(wxEvent& event);
+        void wx_evt_activate(wxEvent& event) override;
+        void wx_evt_aux1_dbclick(wxEvent& event) override;
+        void wx_evt_aux1_down(wxEvent& event) override;
+        void wx_evt_aux1_up(wxEvent& event) override;
+        void wx_evt_aux2_dbclick(wxEvent& event) override;
+        void wx_evt_aux2_down(wxEvent& event) override;
+        void wx_evt_aux2_up(wxEvent& event) override;
+        void wx_evt_button(wxEvent& event) override;
+        void wx_evt_calendar_doubleclicked(wxEvent& event) override;
+        void wx_evt_calendar_sel_changed(wxEvent& event) override;
+        void wx_evt_calendar_page_changed(wxEvent& event) override;
+        void wx_evt_calendar_week_clicked(wxEvent& event) override;
+        void wx_evt_calendar_weekday_clicked(wxEvent& event) override;
+        void wx_evt_char(wxEvent& event) override;
+        void wx_evt_checkbox(wxEvent& event) override;
+        void wx_evt_checklistbox(wxEvent& event) override;
+        void wx_evt_child_focus(wxEvent& event) override;
+        void wx_evt_choice(wxEvent& event) override;
+        void wx_evt_close_window(wxEvent& event) override;
+        void wx_evt_collapsiblepane_changed(wxEvent& event) override;
+        void wx_evt_colourpicker_changed(wxEvent& event) override;
+        void wx_evt_combobox(wxEvent& event) override;
+        void wx_evt_combobox_dropdown(wxEvent& event) override;
+        void wx_evt_combobox_closeup(wxEvent& event) override;
+        void wx_evt_date_changed(wxEvent& event) override;
+        void wx_evt_destroy(wxEvent& event) override;
+        void wx_evt_enter_sizemove(wxEvent& event) override;
+        void wx_evt_enter_window(wxEvent& event) override;
+        void wx_evt_erase_background(wxEvent& event) override;
+        void wx_evt_exit_sizemove(wxEvent& event) override;
+        void wx_evt_fontpicker_changed(wxEvent& event) override;
+        void wx_evt_fullscreen(wxEvent& event) override;
+        void wx_evt_help(wxEvent& event) override;
+        void wx_evt_iconize(wxEvent& event) override;
+        void wx_evt_key_down(wxEvent& event) override;
+        void wx_evt_key_up(wxEvent& event) override;
+        void wx_evt_kill_focus(wxEvent& event) override;
+        void wx_evt_leave_window(wxEvent& event) override;
+        void wx_evt_left_dbclick(wxEvent& event) override;
+        void wx_evt_left_down(wxEvent& event) override;
+        void wx_evt_left_up(wxEvent& event) override;
+        void wx_evt_listbox(wxEvent& event) override;
+        void wx_evt_maximize(wxEvent& event) override;
+        void wx_evt_middle_dbclick(wxEvent& event) override;
+        void wx_evt_middle_down(wxEvent& event) override;
+        void wx_evt_middle_up(wxEvent& event) override;
+        void wx_evt_menu(wxEvent& event) override;
+        void wx_evt_motion(wxEvent& event) override;
+        void wx_evt_mousewheel(wxEvent& event) override;
+        void wx_evt_move(wxEvent& event) override;
+        void wx_evt_notebook_page_changed(wxEvent& event) override;
+        void wx_evt_null(wxEvent& event) override;
+        void wx_evt_paint(wxEvent& event) override;
+        void wx_evt_radiobutton(wxEvent& event) override;
+        void wx_evt_recreate(wxEvent& event) override;
+        void wx_evt_right_dbclick(wxEvent& event) override;
+        void wx_evt_right_down(wxEvent& event) override;
+        void wx_evt_right_up(wxEvent& event) override;
+        void wx_evt_scroll_bottom(wxEvent& event) override;
+        void wx_evt_scroll_linedown(wxEvent& event) override;
+        void wx_evt_scroll_lineup(wxEvent& event) override;
+        void wx_evt_scroll_pagedown(wxEvent& event) override;
+        void wx_evt_scroll_pageup(wxEvent& event) override;
+        void wx_evt_scroll_thumnbrelease(wxEvent& event) override;
+        void wx_evt_scroll_thumbtrack(wxEvent& event) override;
+        void wx_evt_scroll_top(wxEvent& event) override;
+        void wx_evt_show(wxEvent& event) override;
+        void wx_evt_set_focus(wxEvent& event) override;
+        void wx_evt_size(wxEvent& event) override;
+        void wx_evt_slider(wxEvent& event) override;
+        void wx_evt_spin_down(wxEvent& event) override;
+        void wx_evt_spin_up(wxEvent& event) override;
+        void wx_evt_spinctrldouble(wxEvent& event) override;
+        void wx_evt_sys_color_changed(wxEvent& event) override;
+        void wx_evt_text(wxEvent& event) override;
+        void wx_evt_time_changed(wxEvent& event) override;
+        void wx_evt_togglebutton(wxEvent& event) override;
 
         control_handler* event_handler_;
         bool process_result_ = true;
