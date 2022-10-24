@@ -32,62 +32,41 @@ namespace xtd {
         bool ProcessEvent(wxEvent& event) override {
           bool result = wxPanel::ProcessEvent(event);
           if (!GetParent()->IsShown()) return result;
-          if (event.GetEventType() == wxEVT_LEFT_DOWN) wxPostEvent(GetParent(), event);
-          else if (event.GetEventType() == wxEVT_MIDDLE_DOWN) wxPostEvent(GetParent(), event);
-          else if (event.GetEventType() == wxEVT_RIGHT_DOWN) wxPostEvent(GetParent(), event);
-          else if (event.GetEventType() == wxEVT_LEFT_UP) wxPostEvent(GetParent(), event);
-          else if (event.GetEventType() == wxEVT_MIDDLE_UP) wxPostEvent(GetParent(), event);
-          else if (event.GetEventType() == wxEVT_RIGHT_UP) wxPostEvent(GetParent(), event);
-          else if (event.GetEventType() == wxEVT_MOTION) {
-            wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
-            wxMouseState mouse_state = wxGetMouseState();
-            int32_t virtual_keys = get_virtual_keys(mouse_state);
-            auto x = mouse_state.GetX();
-            auto y = mouse_state.GetY();
-            reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
-            control_handler_->send_message(reinterpret_cast<intptr_t>(control_handler_), WM_MOUSEMOVE, virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-          } else if (event.GetEventType() == wxEVT_ENTER_WINDOW) wxPostEvent(GetParent(), event);
-          else if (event.GetEventType() == wxEVT_LEAVE_WINDOW) wxPostEvent(GetParent(), event);
-          else if (event.GetEventType() == wxEVT_LEFT_DCLICK) wxPostEvent(GetParent(), event);
-          else if (event.GetEventType() == wxEVT_MIDDLE_DCLICK) wxPostEvent(GetParent(), event);
-          else if (event.GetEventType() == wxEVT_RIGHT_DCLICK) wxPostEvent(GetParent(), event);
-          //else if (event.GetEventType() == wxEVT_SET_FOCUS) wxPostEvent(GetParent(), event);
-          //else if (event.GetEventType() == wxEVT_KILL_FOCUS) wxPostEvent(GetParent(), event);
-          //else if (event.GetEventType() == wxEVT_CHILD_FOCUS) wxPostEvent(GetParent(), event);
-          else if (event.GetEventType() == wxEVT_MOUSEWHEEL) wxPostEvent(GetParent(), event);
-          else if (event.GetEventType() == wxEVT_AUX1_DOWN) wxPostEvent(GetParent(), event);
-          else if (event.GetEventType() == wxEVT_AUX1_UP) wxPostEvent(GetParent(), event);
-          else if (event.GetEventType() == wxEVT_AUX1_DCLICK) wxPostEvent(GetParent(), event);
-          else if (event.GetEventType() == wxEVT_KEY_DOWN) wxPostEvent(GetParent(), event);
-          else if (event.GetEventType() == wxEVT_CHAR) wxPostEvent(GetParent(), event);
-          else if (event.GetEventType() == wxEVT_KEY_UP) wxPostEvent(GetParent(), event);
-          else if (event.GetEventType() == wxEVT_PAINT) control_handler_->send_message(reinterpret_cast<intptr_t>(control_handler_), WM_PAINT, 0, 0, reinterpret_cast<intptr_t>(&event));
+          // key events
+          else if (event.GetEventType() == wxEVT_KEY_DOWN) wx_evt_->wx_evt_key_down(event);
+          else if (event.GetEventType() == wxEVT_CHAR) wx_evt_->wx_evt_char(event);
+          else if (event.GetEventType() == wxEVT_KEY_UP)  wx_evt_->wx_evt_key_up(event);
+          // mouse events
+          else if (event.GetEventType() == wxEVT_AUX1_DCLICK) wx_evt_->wx_evt_aux1_dbclick(event);
+          else if (event.GetEventType() == wxEVT_AUX1_DOWN) wx_evt_->wx_evt_aux1_down(event);
+          else if (event.GetEventType() == wxEVT_AUX1_UP) wx_evt_->wx_evt_aux1_up(event);
+          else if (event.GetEventType() == wxEVT_AUX2_DCLICK) wx_evt_->wx_evt_aux2_dbclick(event);
+          else if (event.GetEventType() == wxEVT_AUX2_DOWN) wx_evt_->wx_evt_aux2_down(event);
+          else if (event.GetEventType() == wxEVT_AUX2_UP) wx_evt_->wx_evt_aux2_up(event);
+          else if (event.GetEventType() == wxEVT_LEFT_DCLICK) wx_evt_->wx_evt_left_dbclick(event);
+          else if (event.GetEventType() == wxEVT_LEFT_DOWN) wx_evt_->wx_evt_left_down(event);
+          else if (event.GetEventType() == wxEVT_LEFT_UP) wx_evt_->wx_evt_left_up(event);
+          else if (event.GetEventType() == wxEVT_MIDDLE_DCLICK) wx_evt_->wx_evt_middle_dbclick(event);
+          else if (event.GetEventType() == wxEVT_MIDDLE_DOWN) wx_evt_->wx_evt_middle_down(event);
+          else if (event.GetEventType() == wxEVT_MIDDLE_UP) wx_evt_->wx_evt_middle_up(event);
+          else if (event.GetEventType() == wxEVT_RIGHT_DCLICK) wx_evt_->wx_evt_right_dbclick(event);
+          else if (event.GetEventType() == wxEVT_RIGHT_DOWN) wx_evt_->wx_evt_right_down(event);
+          else if (event.GetEventType() == wxEVT_RIGHT_UP) wx_evt_->wx_evt_right_up(event);
+          else if (event.GetEventType() == wxEVT_ENTER_WINDOW) wx_evt_->wx_evt_enter_window(event);
+          else if (event.GetEventType() == wxEVT_LEAVE_WINDOW) wx_evt_->wx_evt_leave_window(event);
+          else if (event.GetEventType() == wxEVT_MOTION) wx_evt_->wx_evt_motion(event);
+          else if (event.GetEventType() == wxEVT_MOUSEWHEEL) wx_evt_->wx_evt_mousewheel(event);
+          // system events
+          else if (event.GetEventType() == wxEVT_SET_FOCUS) wx_evt_->wx_evt_set_focus(event);
+          else if (event.GetEventType() == wxEVT_KILL_FOCUS) wx_evt_->wx_evt_kill_focus(event);
+          else if (event.GetEventType() == wxEVT_CHILD_FOCUS) wx_evt_->wx_evt_child_focus(event);
+          else if (event.GetEventType() == wxEVT_PAINT) wx_evt_->wx_evt_paint(event);
           return result;
         }
         
-        void set_control_handler(control_handler* control_handler) {
-          control_handler_ = control_handler;
-        }
+        void set_wx_evt(iwx_evt* wx_evt) {wx_evt_ = wx_evt;}
         
-        control_handler* control_handler_ = nullptr;
-        
-        int32_t get_virtual_keys(const wxMouseState& mouse_state) {
-          int32_t virtual_keys = 0;
-          
-#if defined(__APPLE__)
-          if (mouse_state.RawControlDown()) virtual_keys |= MK_COMMAND;
-          if (mouse_state.ControlDown()) virtual_keys |= MK_CONTROL;
-#else
-          if (mouse_state.ControlDown()) virtual_keys |= MK_CONTROL;
-#endif
-          if (mouse_state.ShiftDown()) virtual_keys |= MK_SHIFT;
-          if (mouse_state.LeftIsDown()) virtual_keys |= MK_LBUTTON;
-          if (mouse_state.MiddleIsDown()) virtual_keys |= MK_MBUTTON;
-          if (mouse_state.RightIsDown()) virtual_keys |= MK_RBUTTON;
-          if (mouse_state.Aux1IsDown()) virtual_keys |= MK_XBUTTON1;
-          if (mouse_state.Aux2IsDown()) virtual_keys |= MK_XBUTTON2;
-          return virtual_keys;
-        }
+        iwx_evt* wx_evt_ = nullptr;
       };
       
       class wxPopup : public wxPopupTransientWindow {
@@ -102,12 +81,8 @@ namespace xtd {
         }
         
         void Popup(wxWindow* focus = nullptr) override {
-          /// Workaround : with wxWidgets version <= 3.1.5 when first using the wxPopupTransientWindow, it does not respond on macOS....
+          /// Workaround : with wxWidgets version <= 3.1.5 the wxPopupTransientWindow, it does not respond on macOS....
 #if defined(__APPLE__)
-          if (first_used) {
-            first_used = false;
-            //Raise();
-          }
           Raise();
 #endif
           wxPopupTransientWindow::Popup(focus);
@@ -139,9 +114,7 @@ namespace xtd {
           return wxPopupTransientWindow::SetForegroundColour(colour);
         }
         
-        void set_control_handler(control_handler* control_handler) {
-          inner_panel->set_control_handler(control_handler);
-        }
+        void set_wx_evt(iwx_evt* wx_evt) {inner_panel->set_wx_evt(wx_evt);}
         
       protected:
         bool ProcessLeftDown(wxMouseEvent& event) override {
@@ -149,9 +122,6 @@ namespace xtd {
         }
         
       private:
-#if defined(__APPLE__)
-        bool first_used = true;
-#endif
         bool ignoreMouseMessages = false;
         wxBoxSizer* boxSizer = nullptr;
         wxPopupPanel* inner_panel = nullptr;
@@ -164,7 +134,7 @@ namespace xtd {
         explicit wx_popup_panel(const xtd::forms::native::create_params& create_params) {
           if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
           control_handler::create<wxPopup>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), popup_panel_style_to_wx_style(create_params.style, create_params.ex_style));
-          dynamic_cast<wxPopup*>(control())->set_control_handler(this);
+          dynamic_cast<wxPopup*>(control())->set_wx_evt(dynamic_cast<iwx_evt*>(control()));
           SetPosition({create_params.location.x(), create_params.location.y()});
           control()->SetSize(create_params.size.width(), create_params.size.height());
 #if defined(__WIN32__)

@@ -24,8 +24,9 @@ add_sources(
   include/xtd/xtd.forms.native.wxwidgets
   include/xtd/forms/native/wxwidgets/control_handler.h
   include/xtd/forms/native/wxwidgets/control_wrapper.h
-  include/xtd/forms/native/wxwidgets/control_wrapper_code.h
+  include/xtd/forms/native/wxwidgets/control_wrapper.hpp
   include/xtd/forms/native/wxwidgets/dark_mode.h
+  include/xtd/forms/native/wxwidgets/iwx_evt.h
   include/xtd/forms/native/wxwidgets/wx_button.h
   include/xtd/forms/native/wxwidgets/wx_check_box.h
   include/xtd/forms/native/wxwidgets/wx_checked_list_box.h
