@@ -177,7 +177,8 @@ intptr_t control::create(const forms::native::create_params& create_params) {
 intptr_t control::create_paint_graphics(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper;
-  hdc_wrapper->create<wxPaintDC>(reinterpret_cast<control_handler*>(control)->main_control());
+  //hdc_wrapper->create<wxPaintDC>(reinterpret_cast<control_handler*>(control)->main_control());
+  hdc_wrapper->create<wxPaintDC>(reinterpret_cast<control_handler*>(control)->control());
   return reinterpret_cast<intptr_t>(hdc_wrapper);
 }
 
