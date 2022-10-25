@@ -12,7 +12,8 @@ namespace examples {
     form1() {
       text("Paint example");
       client_size({640, 480});
-      
+      minimum_client_size({350, 320});
+
       paint += [](object & sender, paint_event_args & e) {
         e.graphics().clear(color::cyan);
         e.graphics().draw_string("Drawing with graphics", drawing::font("Arial", 34, font_style::regular), brushes::dark_cyan(), {20.0f, 20.0f, e.clip_rectangle().width() - 180.0f, e.clip_rectangle().height() - 40.0f});
