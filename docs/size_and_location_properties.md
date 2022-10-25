@@ -19,7 +19,7 @@ Here is the list of these different sizes and locations :
 * [default_size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#afea25438336e5354a3567089abd1aefc) : defines the default size of the control.
 * [display_rectangle](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#ad7dc3997e713bda90e9fd36aaae74c70) : defines the rectangle that represents the display area of the control.
 * [height](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#ab04d5c773779c099890ec76aaa9cfbf1) : defines the height of the control.
-* [left]https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a65e36eab48c1a42c7241384b82ff7dc6() : defines the distance, in pixels, between the left edge of the control and the left edge of its container's client area.
+* [left](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a65e36eab48c1a42c7241384b82ff7dc6) : defines the distance, in pixels, between the left edge of the control and the left edge of its container's client area.
 * [location](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#ac38df6b02cbd4bceead6d934c511f61b) : defines the coordinates of the upper-left corner of the control relative to the upper-left corner of its container.
 * [maximum_client_size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#acbb6bd24ef78d8206fe629b3fed6c44f) : defines the client size that is the upper limit that xtd::forms::control::get_preferred_size can specify.
 * [maximum_size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a41e039d0f3a5d333f6f4c4b32f6c3112) : defines the size that is the upper limit that xtd::forms::control::get_preferred_size can specify.
