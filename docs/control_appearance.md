@@ -40,7 +40,7 @@ For any control or dialog box, you can decide to use the native version in the f
   * foreground colors
   * display of associated images
   * ...
-* Not all standard controls are implemented yet, in this case the system control is used even if the property [xtd::forms::control::control_appearance](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a6acf5a01e6111bd58f198aafa3e3f39e) is set to [xtd::forms::control_appearance::standard](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a6acf5a01e6111bd58f198aafa3e3f39e).
+* Not all standard controls are implemented yet, in this case the native control is used even if the property [xtd::forms::control::control_appearance](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a6acf5a01e6111bd58f198aafa3e3f39e) is set to [xtd::forms::control_appearance::standard](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a6acf5a01e6111bd58f198aafa3e3f39e).
 
 ## See also
 
