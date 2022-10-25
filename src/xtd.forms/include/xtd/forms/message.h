@@ -36,48 +36,48 @@ namespace xtd {
       /// @brief Gets the window handle of the message.
       /// @return The window handle of the message.
       /// @remarks Window handle is a value that uniquely identifies a window on the system. This property returns a handle of the window whose window procedure receives this message. It is useful when your code need to interact with some native Windows API functions that expect window handles as parameters.
-      intptr_t hwnd() const {return hwnd_;}
+      intptr_t hwnd() const;
       /// @brief Sets the window handle of the message.
       /// @param hwnd The window handle of the message.
       /// @remarks Window handle is a value that uniquely identifies a window on the system. This property returns a handle of the window whose window procedure receives this message. It is useful when your code need to interact with some native Windows API functions that expect window handles as parameters.
-      void hwnd(intptr_t value) {hwnd_ = value;}
+      void hwnd(intptr_t value);
       
       /// @brief Gets the lparam field of the message.
       /// @return The lparam field of the message.
       /// @remarks The value of this field depends on the message. Use the lparam field to get information that is important for handling the message. lparam is typically used to store an object if it is needed by the message.
-      intptr_t lparam() const {return lparam_;}
+      intptr_t lparam() const;
       /// @brief Sets the lparam field of the message.
       /// @param value The lparam field of the message.
       /// @remarks The value of this field depends on the message. Use the lparam field to get information that is important for handling the message. lparam is typically used to store an object if it is needed by the message.
-      void lparam(intptr_t value) {lparam_ = value;}
+      void lparam(intptr_t value);
       
       /// @brief Gets the ID number for the message.
       /// @return The ID number for the message.
-      uint32_t msg() const {return msg_;}
+      uint32_t msg() const;
       /// @brief Sets the ID number for the message.
       /// @param value The ID number for the message.
-      void msg(uint32_t value) {msg_ = value;}
+      void msg(uint32_t value);
       
       /// @brief Gets the value that is returned to Windows in response to handling the message.
       /// @return The return value of the message.
-      intptr_t result() const {return result_;}
+      intptr_t result() const;
       /// @brief Sets the value that is returned to Windows in response to handling the message.
       /// @param value The return value of the message.
-      void result(intptr_t value) {result_ = value;}
+      void result(intptr_t value);
       
       /// @brief Gets the wparam field of the message.
       /// @return The wparam field of the message.
       /// @remarks The value of this field depends on the message. Use the wparam field to get information that is important to handling the message. This field is typically used to store small pieces of information, such as flags.
-      intptr_t wparam() const {return wparam_;}
+      intptr_t wparam() const;
       /// @brief Sets the wparam field of the message.
       /// @param value The wparam field of the message.
       /// @remarks The value of this field depends on the message. Use the wparam field to get information that is important to handling the message. This field is typically used to store small pieces of information, such as flags.
-      void wparam(intptr_t value) {wparam_ = value;}
+      void wparam(intptr_t value);
       /// @}
       
       /// @cond
-      intptr_t handle() const {return handle_;}
-      void handle(intptr_t value) {handle_ = value;}
+      intptr_t handle() const;
+      void handle(intptr_t value);
       /// @endcond
       
       /// @name Methods
@@ -90,18 +90,18 @@ namespace xtd {
       /// @param lparam The message lparam field.
       /// @return A xtd::forms::message that represents the message that was created.
       /// @remarks Use the xtd::message::create method to create a xtd::forms::message to wrap a message sent by Windows.
-      static message create(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) {return message(hwnd, msg, wparam, lparam);}
+      static message create(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam);
       
       /// @cond
-      static message create(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result) {return message(hwnd, msg, wparam, lparam, result);}
-      static message create(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) {return message(hwnd, msg, wparam, lparam, result, handle);}
+      static message create(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result);
+      static message create(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle);
       /// @endcond
       
       /// @brief Gets the lparam value and converts the value to an object.
       /// @tparam type The type to use to create an instance. This type must be declared as a structure type.
       /// @return An object that represents an instance of the class specified by the template parameter, with the data from the lparam field of the message.
-      template<typename type>
-      type get_lparam() { return reinterpret_cast<type>(lparam_); }
+      template<typename type_t>
+      type_t get_lparam() { return reinterpret_cast<type_t>(lparam_); }
       
       /// @brief Returns a string that represents the current message.
       /// @return A xtd::ustring that represents the current message.
@@ -109,16 +109,14 @@ namespace xtd {
       /// @}
       
       /// @cond
-      friend std::ostream& operator<<(std::ostream& os, const xtd::forms::message& message) noexcept {
-        return os << message.to_string();
-      }
+      friend std::ostream& operator<<(std::ostream& os, const xtd::forms::message& message) noexcept {return os << message.to_string();}
       /// @endcond
       
       
     private:
-      message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) : hwnd_(hwnd), msg_(msg), wparam_(wparam), lparam_(lparam) {counter_++;}
-      message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result) : hwnd_(hwnd), msg_(msg), wparam_(wparam), lparam_(lparam), result_(result) {counter_++;}
-      message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) : hwnd_(hwnd), msg_(msg), wparam_(wparam), lparam_(lparam), result_(result), handle_(handle) {counter_++;}
+      message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam);
+      message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result);
+      message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle);
       
       intptr_t hwnd_ = 0;
       uint32_t msg_ = 0;
@@ -126,7 +124,7 @@ namespace xtd {
       intptr_t lparam_ = 0;
       intptr_t result_ = 0;
       intptr_t handle_ = 0;
-      static int32_t counter_;
+      inline static int32_t id_ = 0;
     };
   }
 }
