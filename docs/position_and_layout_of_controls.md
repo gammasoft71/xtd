@@ -16,9 +16,9 @@
 
 xtd.forms has in addition to layout containers three ways to manage the size and position of a control automatically:
 
-* xtd::forms::control::auto_size
-* xtd::forms::control::dock
-* xtd::forms::control::anchor
+* [xtd::forms::control::auto_size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a571575a959ffc0ee42fd8d5426bcbd9f)
+* [xtd::forms::control::dock](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#aa42e38a902457e5f548091a379d2f693)
+* [xtd::forms::control::anchor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#aaf1b4489cf4ad56cfcba4e619c95f56c)
 
 Control placement in xtd.forms is determined not only by the control, but also by the parent of the control. This chapter describes the different settings provided by controls and the different types of parent containers that affect layout.
 
