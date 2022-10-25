@@ -92,6 +92,7 @@ namespace xtd {
         intptr_t get_control_handle_for_event(wxEvent& event, control_handler* handler);
         int32_t get_virtual_keys(const wxMouseState& mouse_state);
         
+        void send_mouse_message(uint32_t message, size_t virtual_key, wxEvent& event);
         static std::string to_string(const wxEventType& eventType);
         static std::string to_string(const wxEvent& event);
         

@@ -36,7 +36,6 @@ namespace xtd::forms::native {
     if (event_handler_ == nullptr || event_handler_->control() == nullptr) return false;
     if (event_handler_->control()->IsBeingDeleted()) return false;
     if (static_cast<xtd::drawing::native::wx_application*>(wxTheApp)->exceptionStored) return  process_result_;
-    wxWindow* control = reinterpret_cast<wxWindow*>(event.GetEventObject());
     static std::set<wxEventType> reflect_messages {
       wxEVT_BUTTON,
       wxEVT_CALENDAR_DOUBLECLICKED, wxEVT_CALENDAR_SEL_CHANGED, wxEVT_CALENDAR_PAGE_CHANGED, wxEVT_CALENDAR_WEEK_CLICKED, wxEVT_CALENDAR_WEEKDAY_CLICKED,
@@ -63,6 +62,7 @@ namespace xtd::forms::native {
       wxEVT_TOGGLEBUTTON,
       wxEVT_TOOL, wxEVT_TOOL_DROPDOWN, wxEVT_TOOL_ENTER, wxEVT_TOOL_RCLICKED,
     };
+    wxWindow* control = reinterpret_cast<wxWindow*>(event.GetEventObject());
     if (reflect_messages.find(event.GetEventType()) != reflect_messages.end() && control->GetParent() && control->GetParent()->GetMainWindowOfCompositeControl() != this->GetMainWindowOfCompositeControl())
       return control_t::ProcessEvent(event);
     if (reflect_messages.find(event.GetEventType()) == reflect_messages.end() && control->GetMainWindowOfCompositeControl() != this->GetMainWindowOfCompositeControl())
@@ -71,7 +71,7 @@ namespace xtd::forms::native {
     //diagnostics::debug::write_line_if(event.GetEventType() != wxEVT_UPDATE_UI && event.GetEventType() != wxEVT_IDLE, ustring::format("control_wrapper<{}>::ProcessEvent {}", ustring::full_class_name<control_t>(), to_string(event)));
     
     // keyboard events
-    else if (event.GetEventType() == wxEVT_CHAR) wx_evt_char(event);
+    if (event.GetEventType() == wxEVT_CHAR) wx_evt_char(event);
     else if (event.GetEventType() == wxEVT_KEY_DOWN) wx_evt_key_down(event);
     else if (event.GetEventType() == wxEVT_KEY_UP) wx_evt_key_up(event);
     // mouse events
@@ -384,6 +384,17 @@ namespace xtd::forms::native {
   }
   
   template<typename control_t>
+  inline void control_wrapper<control_t>:: send_mouse_message(uint32_t msg, size_t virtual_key, wxEvent& event) {
+    wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
+    wxMouseState mouse_state = wxGetMouseState();
+    int32_t virtual_keys = get_virtual_keys(mouse_state);
+    auto x = mouse_state.GetX();
+    auto y = mouse_state.GetY();
+    reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
+    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), msg, virtual_key | virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+  }
+  
+  template<typename control_t>
   inline std::string control_wrapper<control_t>::to_string(const wxEventType& eventType) {
     static std::map<wxEventType, std::string> eventTypes{
       {wxEVT_NULL, "EVT_NULL"},
@@ -418,68 +429,32 @@ namespace xtd::forms::native {
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_aux1_dbclick(wxEvent& event) {
-    wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
-    wxMouseState mouse_state = wxGetMouseState();
-    int32_t virtual_keys = get_virtual_keys(mouse_state);
-    auto x = mouse_state.GetX();
-    auto y = mouse_state.GetY();
-    reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_XBUTTONDBLCLK, MK_XBUTTON1 | virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+    send_mouse_message(WM_XBUTTONDBLCLK, MK_XBUTTON1, event);
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_aux1_down(wxEvent& event) {
-    wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
-    wxMouseState mouse_state = wxGetMouseState();
-    int32_t virtual_keys = get_virtual_keys(mouse_state);
-    auto x = mouse_state.GetX();
-    auto y = mouse_state.GetY();
-    reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_XBUTTONDOWN, MK_XBUTTON1 | virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+    send_mouse_message(WM_XBUTTONDOWN, MK_XBUTTON1, event);
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_aux1_up(wxEvent& event) {
-    wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
-    wxMouseState mouse_state = wxGetMouseState();
-    int32_t virtual_keys = get_virtual_keys(mouse_state);
-    auto x = mouse_state.GetX();
-    auto y = mouse_state.GetY();
-    reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_XBUTTONUP, MK_XBUTTON1 | virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+    send_mouse_message(WM_XBUTTONUP, MK_XBUTTON1, event);
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_aux2_dbclick(wxEvent& event) {
-    wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
-    wxMouseState mouse_state = wxGetMouseState();
-    int32_t virtual_keys = get_virtual_keys(mouse_state);
-    auto x = mouse_state.GetX();
-    auto y = mouse_state.GetY();
-    reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_XBUTTONDBLCLK, MK_XBUTTON2 | virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+    send_mouse_message(WM_XBUTTONDBLCLK, MK_XBUTTON2, event);
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_aux2_down(wxEvent& event) {
-    wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
-    wxMouseState mouse_state = wxGetMouseState();
-    int32_t virtual_keys = get_virtual_keys(mouse_state);
-    auto x = mouse_state.GetX();
-    auto y = mouse_state.GetY();
-    reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_XBUTTONDOWN, MK_XBUTTON2 | virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+    send_mouse_message(WM_XBUTTONDOWN, MK_XBUTTON2, event);
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_aux2_up(wxEvent& event) {
-    wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
-    wxMouseState mouse_state = wxGetMouseState();
-    int32_t virtual_keys = get_virtual_keys(mouse_state);
-    auto x = mouse_state.GetX();
-    auto y = mouse_state.GetY();
-    reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_XBUTTONUP, MK_XBUTTON2 | virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+    send_mouse_message(WM_XBUTTONUP, MK_XBUTTON2, event);
   }
   
   template<typename control_t>
@@ -664,35 +639,17 @@ namespace xtd::forms::native {
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_left_dbclick(wxEvent& event) {
-    wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
-    wxMouseState mouse_state = wxGetMouseState();
-    int32_t virtual_keys = get_virtual_keys(mouse_state);
-    auto x = mouse_state.GetX();
-    auto y = mouse_state.GetY();
-    reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_LBUTTONDBLCLK, MK_LBUTTON | virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+    send_mouse_message(WM_LBUTTONDBLCLK, MK_LBUTTON, event);
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_left_down(wxEvent& event) {
-    wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
-    wxMouseState mouse_state = wxGetMouseState();
-    int32_t virtual_keys = get_virtual_keys(mouse_state);
-    auto x = mouse_state.GetX();
-    auto y = mouse_state.GetY();
-    reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_LBUTTONDOWN, MK_LBUTTON | virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+    send_mouse_message(WM_LBUTTONDOWN, MK_LBUTTON, event);
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_left_up(wxEvent& event) {
-    wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
-    wxMouseState mouse_state = wxGetMouseState();
-    int32_t virtual_keys = get_virtual_keys(mouse_state);
-    auto x = mouse_state.GetX();
-    auto y = mouse_state.GetY();
-    reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_LBUTTONUP, MK_LBUTTON | virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+    send_mouse_message(WM_LBUTTONUP, MK_LBUTTON, event);
   }
   
   template<typename control_t>
@@ -708,35 +665,17 @@ namespace xtd::forms::native {
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_middle_dbclick(wxEvent& event) {
-    wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
-    wxMouseState mouse_state = wxGetMouseState();
-    int32_t virtual_keys = get_virtual_keys(mouse_state);
-    auto x = mouse_state.GetX();
-    auto y = mouse_state.GetY();
-    reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MBUTTONDBLCLK, MK_MBUTTON | virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+    send_mouse_message(WM_MBUTTONDBLCLK, MK_MBUTTON, event);
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_middle_down(wxEvent& event) {
-    wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
-    wxMouseState mouse_state = wxGetMouseState();
-    int32_t virtual_keys = get_virtual_keys(mouse_state);
-    auto x = mouse_state.GetX();
-    auto y = mouse_state.GetY();
-    reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MBUTTONDOWN, MK_MBUTTON | virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+    send_mouse_message(WM_MBUTTONDOWN, MK_MBUTTON, event);
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_middle_up(wxEvent& event) {
-    wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
-    wxMouseState mouse_state = wxGetMouseState();
-    int32_t virtual_keys = get_virtual_keys(mouse_state);
-    auto x = mouse_state.GetX();
-    auto y = mouse_state.GetY();
-    reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MBUTTONUP, MK_MBUTTON | virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+    send_mouse_message(WM_MBUTTONUP, MK_MBUTTON, event);
   }
   
   template<typename control_t>
@@ -746,13 +685,7 @@ namespace xtd::forms::native {
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_motion(wxEvent& event) {
-    wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
-    wxMouseState mouse_state = wxGetMouseState();
-    int32_t virtual_keys = get_virtual_keys(mouse_state);
-    auto x = mouse_state.GetX();
-    auto y = mouse_state.GetY();
-    reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MOUSEMOVE, virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+    send_mouse_message(WM_MOUSEMOVE, 0, event);
   }
   
   template<typename control_t>
@@ -799,35 +732,17 @@ namespace xtd::forms::native {
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_right_dbclick(wxEvent& event) {
-    wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
-    wxMouseState mouse_state = wxGetMouseState();
-    int32_t virtual_keys = get_virtual_keys(mouse_state);
-    auto x = mouse_state.GetX();
-    auto y = mouse_state.GetY();
-    reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_RBUTTONDBLCLK, MK_RBUTTON | virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+    send_mouse_message(WM_RBUTTONDBLCLK, MK_RBUTTON, event);
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_right_down(wxEvent& event) {
-    wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
-    wxMouseState mouse_state = wxGetMouseState();
-    int32_t virtual_keys = get_virtual_keys(mouse_state);
-    auto x = mouse_state.GetX();
-    auto y = mouse_state.GetY();
-    reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_RBUTTONDOWN, MK_RBUTTON | virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+    send_mouse_message(WM_RBUTTONDOWN, MK_RBUTTON, event);
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_right_up(wxEvent& event) {
-    wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
-    wxMouseState mouse_state = wxGetMouseState();
-    int32_t virtual_keys = get_virtual_keys(mouse_state);
-    auto x = mouse_state.GetX();
-    auto y = mouse_state.GetY();
-    reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
-    event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_RBUTTONUP, MK_RBUTTON | virtual_keys, mouse_event.GetX() + (mouse_event.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+    send_mouse_message(WM_RBUTTONUP, MK_RBUTTON, event);
   }
   
   template<typename control_t>
