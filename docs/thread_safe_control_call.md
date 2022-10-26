@@ -43,7 +43,7 @@ You need to resolve this issue, but you can disable the exception by setting the
 
 ### Warning
 
-Be careful, some OS don't support cross-thread UI operations!**
+**Be careful, some OS don't support cross-thread UI operations!**
 
 ## Safe cross-thread calls
 
