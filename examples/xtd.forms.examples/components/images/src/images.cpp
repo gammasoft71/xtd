@@ -14,22 +14,26 @@ namespace example {
     form1() {
       text("Images example");
       client_size({430, 530});
+      minimum_client_size(client_size());
       controls().push_back_range({choice_theme, choice_context, choice_size, picture, label_picture_name, button_previous, button_next});
       
       picture.back_color(system_colors::window());
       picture.border_style(forms::border_style::fixed_3d);
       picture.bounds({75, 125, 280, 280});
+      picture.anchor(anchor_styles::all);
       picture.size_mode(picture_box_size_mode::center_image);
-      
+
       choice_theme.bounds({75, 25, 280, 25});
+      choice_theme.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
       choice_theme.items().push_back("current theme");
       auto names = application::style_sheet_names();
       sort(names.begin(), names.end());
       choice_theme.items().push_back_range(names);
       choice_theme.selected_index(0);
       choice_theme.selected_index_changed += event_handler(*this, &form1::update_form);
-      
+
       choice_context.bounds({75, 55, 280, 25});
+      choice_context.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
       choice_context.items().push_back_range(images::contexts());
       choice_context.selected_index(0);
       choice_context.selected_index_changed += [&] {
@@ -38,31 +42,34 @@ namespace example {
       };
       
       choice_size.bounds({75, 85, 280, 25});
+      choice_size.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
       for (auto size  : images::sizes())
-        if (size.width() <= picture.width() && size.height() <= picture.height())
-          choice_size.items().push_back({ustring::format("{}x{} pixels", size.width(), size.height()), size});
+        choice_size.items().push_back({ustring::format("{}x{} pixels", size.width(), size.height()), size});
       choice_size.selected_index(7);
       choice_size.selected_index_changed += event_handler(*this, &form1::update_form);
-      
-      label_picture_name.text_align(content_alignment::middle_center);
+
       label_picture_name.bounds({75, 420, 280, label_picture_name.height()});
-      
+      label_picture_name.anchor(anchor_styles::bottom | anchor_styles::left | anchor_styles::right);
+      label_picture_name.text_align(content_alignment::middle_center);
+
       button_previous.auto_repeat(true);
+      button_previous.bounds({75, 460, 125, 40});
+      button_previous.anchor(anchor_styles::bottom | anchor_styles::left);
       button_previous.enabled(false);
       button_previous.image(button_images::previous());
       button_previous.image_align(content_alignment::middle_left);
       button_previous.text(system_texts::previous());
-      button_previous.bounds({75, 460, 125, 40});
       button_previous.click += [&] {
         if (current_image_index > 0) --current_image_index;
         update_form();
       };
-      
+
       button_next.auto_repeat(true);
+      button_next.bounds({230, 460, 125, 40});
+      button_next.anchor(anchor_styles::bottom | anchor_styles::right);
       button_next.image(button_images::next());
       button_next.image_align(content_alignment::middle_right);
       button_next.text(system_texts::next());
-      button_next.bounds({230, 460, 125, 40});
       button_next.click += [&] {
         if (current_image_index < images::names(choice_context.selected_item().value()).size()) ++current_image_index;
         update_form();
