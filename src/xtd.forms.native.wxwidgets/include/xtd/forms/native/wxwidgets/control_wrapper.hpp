@@ -63,9 +63,9 @@ namespace xtd::forms::native {
       wxEVT_TOOL, wxEVT_TOOL_DROPDOWN, wxEVT_TOOL_ENTER, wxEVT_TOOL_RCLICKED,
     };
     wxWindow* control = reinterpret_cast<wxWindow*>(event.GetEventObject());
-    if (reflect_messages.find(event.GetEventType()) != reflect_messages.end() && control->GetParent() && control->GetParent()->GetMainWindowOfCompositeControl() != this->GetMainWindowOfCompositeControl())
+    if (reflect_messages.find(event.GetEventType()) != reflect_messages.end() && control  && control->GetParent() && control->GetParent()->GetMainWindowOfCompositeControl() != this->GetMainWindowOfCompositeControl())
       return control_t::ProcessEvent(event);
-    if (reflect_messages.find(event.GetEventType()) == reflect_messages.end() && control->GetMainWindowOfCompositeControl() != this->GetMainWindowOfCompositeControl())
+    if (reflect_messages.find(event.GetEventType()) == reflect_messages.end() && control && control->GetMainWindowOfCompositeControl() != this->GetMainWindowOfCompositeControl())
       return control_t::ProcessEvent(event);
     
     //diagnostics::debug::write_line_if(event.GetEventType() != wxEVT_UPDATE_UI && event.GetEventType() != wxEVT_IDLE, ustring::format("control_wrapper<{}>::ProcessEvent {}", ustring::full_class_name<control_t>(), to_string(event)));
