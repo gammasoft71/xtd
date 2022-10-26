@@ -337,9 +337,9 @@ cmake all
 
 #### Notes for Windows developer
 
-When you use the install of xtd, you are in admin mode to be able to install it in the folder "c:\C:\Program Files (x86)\xtd".
+When you use the install of xtd, you are in admin mode to be able to install it in the folder "C:\Program Files\xtd".
 
-When you are in Visual, you are in user mode and you cannot write in the folder "c:\C:\Program Files (x86)\xtd".
+When you are in Visual, you are in user mode and you cannot write in the folder "C:\Program Files\xtd".
 
 CMake generates the xtd project and adds different targets like :
 
@@ -352,7 +352,7 @@ It also generates special targets like:
  - RUN_TEST : which executes the unit tests
  - ...
 
-It is thus necessary to modify the rights of permission of "c:\C:\Program Files (x86)\xtd" so that the user can install the project.
+It is thus necessary to modify the rights of permission of "C:\Program Files\xtd" so that the user can install the project.
 
 ### Specific CMake commands
 
