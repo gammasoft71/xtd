@@ -13,6 +13,7 @@
 #include <thread>
 #include <xtd/delegate.h>
 #include <xtd/object.h>
+#include <xtd/using.h>
 #include <xtd/diagnostics/debug.h>
 #include <xtd/drawing/size.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__

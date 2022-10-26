@@ -62,11 +62,11 @@ namespace xtd::forms::native {
       wxEVT_TOGGLEBUTTON,
       wxEVT_TOOL, wxEVT_TOOL_DROPDOWN, wxEVT_TOOL_ENTER, wxEVT_TOOL_RCLICKED,
     };
-    if (dynamic_cast<wxWindow*>(event.GetEventObject())) {
-      wxWindow* control = reinterpret_cast<wxWindow*>(event.GetEventObject());
-      if (reflect_messages.find(event.GetEventType()) != reflect_messages.end() && control  && control->GetParent() && control->GetParent()->GetMainWindowOfCompositeControl() != this->GetMainWindowOfCompositeControl())
+  
+    using_(auto control = dynamic_cast<wxWindow*>(event.GetEventObject())) {
+      if (control && reflect_messages.find(event.GetEventType()) != reflect_messages.end() && control->GetParent() && control->GetParent()->GetMainWindowOfCompositeControl() != this->GetMainWindowOfCompositeControl())
         return control_t::ProcessEvent(event);
-      if (reflect_messages.find(event.GetEventType()) == reflect_messages.end() && control && control->GetMainWindowOfCompositeControl() != this->GetMainWindowOfCompositeControl())
+      if (control && reflect_messages.find(event.GetEventType()) == reflect_messages.end() && control->GetMainWindowOfCompositeControl() != this->GetMainWindowOfCompositeControl())
         return control_t::ProcessEvent(event);
     }
     
