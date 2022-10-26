@@ -111,9 +111,9 @@ popd
 if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then 
   xtd_program_path="$USERPROFILE/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/xtd"
   if [ ! -d "$xtd_program_path" ]; then mkdir -p "$xtd_program_path"; fi
-  scripts/install/shortcut.sh "$USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\xtd\keycode.lnk" "C:\Program Files (x86)\xtd\bin\keycode.exe"  
-  scripts/install/shortcut.sh "$USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\xtd\xtdc-gui.lnk" "C:\Program Files (x86)\xtd\bin\xtdc-gui.exe"  
-  scripts/install/shortcut.sh "$USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\xtd\xguidgen-gui.lnk" "C:\Program Files (x86)\xtd\bin\guidgen-gui.exe"  
+  scripts/install/shortcut.sh "$USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\xtd\keycode.lnk" "$cmake_install_prefix\xtd\bin\keycode.exe"
+  scripts/install/shortcut.sh "$USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\xtd\xtdc-gui.lnk" "$cmake_install_prefix\xtd\bin\xtdc-gui.exe"
+  scripts/install/shortcut.sh "$USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\xtd\xguidgen-gui.lnk" "$cmake_install_prefix\xtd\bin\guidgen-gui.exe"
 elif [[ "$OSTYPE" == *"Darwin"* ]]; then
   if [ -d "/Applications/keycode" ]; then rm "/Applications/keycode"; fi
   ln -s "$cmake_install_prefix/bin/keycode.app" "/Applications/keycode"
@@ -134,7 +134,7 @@ sudo cp build/Debug/install_manifest.txt $cmake_install_prefix/share/xtd/xtd_deb
 #                                                                 Launch xtd-gui
 echo "Launching xtdc-gui..."
 if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
-  start "C:\Program Files (x86)\xtd\bin\xtdc-gui.exe"
+  start "$cmake_install_prefix\xtd\bin\xtdc-gui.exe"
 elif [[ "$OSTYPE" == *"Darwin"* ]]; then
   open $cmake_install_prefix/bin/xtdc-gui.app; else
   $cmake_install_prefix/bin/xtdc-gui &>/dev/null &
