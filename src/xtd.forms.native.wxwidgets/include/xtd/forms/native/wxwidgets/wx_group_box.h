@@ -115,7 +115,11 @@ namespace xtd {
           if (owner_draw_)
             control_handler::create<wxGroupBoxOwnerDraw>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption)), wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()), style_to_wx_style(create_params.style, create_params.ex_style));
           else {
-            control_handler::create<wxGroupBox>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption)), wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()), style_to_wx_style(create_params.style, create_params.ex_style));
+            auto caption = create_params.caption;
+            #if defined(__APPLE__)
+            if (ustring::is_empty(caption)) caption = " ";
+            #endif
+            control_handler::create<wxGroupBox>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(caption)), wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()), style_to_wx_style(create_params.style, create_params.ex_style));
             #if defined(__WIN32__)
             if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
               control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
@@ -128,6 +132,14 @@ namespace xtd {
         static long style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = 0;
           return wx_style;
+        }
+        
+        void SetLabel(const wxString& label) override {
+          auto caption = label;
+          #if defined(__APPLE__)
+          if (caption.IsEmpty()) caption = " ";
+          #endif
+          control_handler::SetLabel(caption);
         }
         
         bool owner_draw_ = false;
