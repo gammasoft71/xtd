@@ -16,7 +16,7 @@
 #include "control_handler.h"
 
 #if defined(__APPLE__)
-void __set_button_bezel_style__(wxButton* control, int32_t x, int32_t y, int32_t width, int32_t height);
+void __set_button_bezel_style__(wxAnyButton* control, int32_t height);
 #endif
 
 namespace xtd {
@@ -65,12 +65,10 @@ namespace xtd {
         }
         
         virtual void SetPosition(const wxPoint& pt) override {
-          control_handler::SetPosition(pt);
-          
           #if defined(__APPLE__)
-          wxSize size = control()->GetSize();
-          if (!owner_draw_) __set_button_bezel_style__((wxButton*)control(), pt.x, pt.y, size.GetWidth(), size.GetHeight());
+          if (!owner_draw_) __set_button_bezel_style__((wxAnyButton*)control(), control()->GetSize().GetHeight());
           #endif
+          control_handler::SetPosition(pt);
         }
         
         wxSize GetClientSize() const override {
@@ -82,11 +80,10 @@ namespace xtd {
         }
         
         void SetSize(int32_t width, int32_t height) override {
-          control_handler::SetSize(width, height);
           #if defined(__APPLE__)
-          wxPoint location = control()->GetPosition();
-          if (!owner_draw_) __set_button_bezel_style__((wxButton*)control(), location.x, location.y, width, height);
+          if (!owner_draw_) __set_button_bezel_style__((wxAnyButton*)control(), height);
           #endif
+          control_handler::SetSize(width, height);
         }
         
         bool owner_draw_ = false;

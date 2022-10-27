@@ -26,7 +26,6 @@ namespace examples {
       toggle_button2.location({30, 80});
       toggle_button2.width(120);
       
-      toggle_button3.auto_size(true);
       toggle_button3.check_state_changed += [&] {
         toggle_button3.text(ustring::format("{}", toggle_button3.check_state()));
       };

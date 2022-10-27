@@ -16,7 +16,7 @@
 #include "control_handler.h"
 
 #if defined(__APPLE__)
-void __set_button_bezel_style__(wxButton* control, int32_t x, int32_t y, int32_t width, int32_t height);
+void __set_button_bezel_style__(wxAnyButton* control, int32_t height);
 #endif
 
 namespace xtd {
@@ -34,12 +34,9 @@ namespace xtd {
           if (owner_draw_) {
             control_handler::create<wx_user_window>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()));
             reinterpret_cast<wx_user_window*>(control())->set_accepts_focus(wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Macintosh");
-          } else {
+          } else
             control_handler::create<wxButton>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption)), wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()), style_to_wx_style(create_params.style, create_params.ex_style));
-            #if defined(__APPLE__)
-            __set_button_bezel_style__((wxButton*)control(), create_params.location.x(), create_params.location.y(), create_params.size.width(), create_params.size.height());
-            #endif
-          }
+          SetSize(create_params.size.width(), create_params.size.height());
           #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
@@ -69,12 +66,10 @@ namespace xtd {
         }
         
         virtual void SetPosition(const wxPoint& pt) override {
-          control_handler::SetPosition(pt);
-          
           #if defined(__APPLE__)
-          wxSize size = control()->GetSize();
-          if (!owner_draw_) __set_button_bezel_style__((wxButton*)control(), pt.x, pt.y, size.GetWidth(), size.GetHeight());
+          if (!owner_draw_) __set_button_bezel_style__((wxAnyButton*)control(), control()->GetSize().GetHeight());
           #endif
+          control_handler::SetPosition(pt);
         }
         
         wxSize GetClientSize() const override {
@@ -86,11 +81,10 @@ namespace xtd {
         }
         
         void SetSize(int32_t width, int32_t height) override {
-          control_handler::SetSize(width, height);
           #if defined(__APPLE__)
-          wxPoint location = control()->GetPosition();
-          if (!owner_draw_) __set_button_bezel_style__((wxButton*)control(), location.x, location.y, width, height);
+          if (!owner_draw_) __set_button_bezel_style__((wxAnyButton*)control(), height);
           #endif
+          control_handler::SetSize(width, height);
         }
         
         bool owner_draw_ = false;
