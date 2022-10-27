@@ -112,6 +112,11 @@ namespace xtd {
       /// @return Current form.
       virtual form& dialog_result(forms::dialog_result value);
       
+      /// @cond
+      using container_control::font;
+      control& font(std::nullptr_t) override;
+      /// @endcond
+
       /// @brief Gets the border style of the form.
       /// @return A form_border_style that represents the style of border to display for the form. The default is form_border_style::sizable.
       virtual forms::form_border_style form_border_style() const {return form_border_style_;}
