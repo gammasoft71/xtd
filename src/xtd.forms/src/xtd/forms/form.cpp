@@ -95,6 +95,10 @@ form& form::dialog_result(forms::dialog_result value) {
   return *this;
 }
 
+control& form::font(std::nullptr_t) {
+  return container_control::font(system_fonts::default_font());
+}
+
 form& form::form_border_style(forms::form_border_style value) {
   if (form_border_style_ != value) {
     form_border_style_ = value;
