@@ -10,13 +10,9 @@
 using namespace xtd;
 using namespace xtd::forms::native;
 
-void __set_button_bezel_style__(wxButton* control, int32_t x, int32_t y, int32_t width, int32_t height) {
+void __set_button_bezel_style__(wxAnyButton* control, int32_t height) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (height <= 25) return;
   NSButton* button = reinterpret_cast<NSButton*>(control->GetHandle());
-  [button setWantsLayer:YES];
-  [button setBezelStyle: NSBezelStyleRegularSquare];
-  [button setFrameOrigin:NSMakePoint(x, y)];
-  [button setFrameSize:NSMakeSize(width, height)];
+  [button setBezelStyle: height <= 25 ? NSBezelStyleRounded : NSBezelStyleRegularSquare];
 }
 #endif
