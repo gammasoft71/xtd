@@ -201,47 +201,50 @@ namespace xtd {
         /// @return The default size that represents the default height and default width of the control in pixels.
         /// @remarks The class name is the same as the one used to create the control with the xtd::forms::create_params class.
         /// @remarks The following table contains the default width and height in pixels for class name :
-        /// | class name          | Width | Height |
-        /// |---------------------|-------|--------|
-        /// | "button"            | 75    | 25 *   |
-        /// | "checkbox"          | 104   | 25     |
-        /// | "checkedlistbox"    | 120   | 90     |
-        /// | "choice"            | 130   | 23 *   |
-        /// | "collapsiblepanel"  | 0     | 0      |
-        /// | "colorpicker"       | 100   | 34     |
-        /// | "combobox"          | 130   | 23 *   |
-        /// | "commandlinkbutton" | 200   | 60     |
-        /// | "datetimepicker"    | 100   | 25 *   |
-        /// | "domainupdown"      | 150   | 21 *   |
-        /// | "fontpicker"        | 100   | 34     |
-        /// | "form"              | 300   | 300    |
-        /// | "groupbox"          | 200   | 100    |
-        /// | "label"             | 100   | 23     |
-        /// | "lightbutton"       | 75    | 25 *   |
-        /// | "listbox"           | 120   | 96     |
-        /// | "loadingindicator"  | 32    | 32     |
-        /// | "monthcalendar"     | 240   | 162    |
-        /// | "numericupdown"     | 120   | 21 *   |
-        /// | "panel"             | 200   | 100    |
-        /// | "picturebox"        | 100   | 50     |
-        /// | "progressbar"       | 100   | 23     |
-        /// | "radiobutton"       | 104   | 23     |
-        /// | "scrollbar"         | 17    | 17     |
-        /// | "switchbutton"      | 50    | 25     |
-        /// | "tabcontrol"        | 200   | 100    |
-        /// | "tabpage"           | 200   | 100    |
-        /// | "textbox"           | 100   | 21 *   |
-        /// | "togglebutton"      | 104   | 25 *   |
-        /// | "toolbar"           | 300   | 300    |
-        /// | "trackbar"          | 104   | 45     |
-        /// | "updownbutton"      | 18 ** | 34     |
-        /// | "usercontrol"       | 150   | 150    |
-        /// | other               | 0     | 0      |
+        /// | class name          | Width  | Height |
+        /// |---------------------|--------|--------|
+        /// | "button"            | 75     | 25     |
+        /// | "checkbox"          | 104    | 25     |
+        /// | "checkedlistbox"    | 120    | 90     |
+        /// | "choice"            | 130    | 25     |
+        /// | "collapsiblepanel"  | 0      | 0      |
+        /// | "colorpicker"       | 104    | 25     |
+        /// | "combobox"          | 130    | 23 *   |
+        /// | "commandlinkbutton" | 200    | 60     |
+        /// | "datetimepicker"    | 104    | 25     |
+        /// | "domainupdown"      | 150    | 23 **  |
+        /// | "fontpicker"        | 104    | 23     |
+        /// | "form"              | 300    | 300    |
+        /// | "groupbox"          | 200    | 100    |
+        /// | "label"             | 100    | 23     |
+        /// | "lightbutton"       | 75     | 25     |
+        /// | "listbox"           | 120    | 96     |
+        /// | "loadingindicator"  | 32     | 32     |
+        /// | "monthcalendar"     | 240    | 162    |
+        /// | "numericupdown"     | 120    | 23 **  |
+        /// | "panel"             | 200    | 100    |
+        /// | "picturebox"        | 100    | 50     |
+        /// | "popup_panel"       | 100    | 150    |
+        /// | "progressbar"       | 100    | 23     |
+        /// | "radiobutton"       | 104    | 23     |
+        /// | "scrollbar"         | 17     | 17     |
+        /// | "statusbar"         | 100    | 23     |
+        /// | "switchbutton"      | 50     | 25     |
+        /// | "tabcontrol"        | 200    | 100    |
+        /// | "tabpage"           | 200    | 100    |
+        /// | "textbox"           | 100    | 23     |
+        /// | "togglebutton"      | 104    | 25     |
+        /// | "toolbar"           | 100    | 23     |
+        /// | "trackbar"          | 104    | 45     |
+        /// | "updownbutton"      | 18 *** | 34     |
+        /// | "usercontrol"       | 150    | 150    |
+        /// | other               | 0      | 0      |
         ///
-        /// ** is 34 on "gnome" environment
-        /// ** is 71 on "gnome" environment
-        /// @remarks On macOS "choice" and "combobox" have a height of 26.
+        /// ** is 21 on "macos" environment
+        /// *** is 34 on "gnome" environment
+        /// **** is 71 on "gnome" environment
         /// @warning Internal use only
+
         static xtd::drawing::size default_size(const xtd::ustring& class_name);
         
         /// @brief Destroys context menu.
