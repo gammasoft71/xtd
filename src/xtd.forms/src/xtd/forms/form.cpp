@@ -39,6 +39,7 @@ form::form() {
     back_color(default_back_color());
     fore_color(default_fore_color());
   }
+  font(default_font());
   create_control();
 }
 

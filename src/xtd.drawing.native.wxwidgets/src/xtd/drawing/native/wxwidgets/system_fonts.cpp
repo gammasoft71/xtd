@@ -7,12 +7,29 @@
 
 using namespace xtd::drawing::native;
 
+#if !defined(__APPLE__)
+namespace {
+#if defined(__WXGTK__)
+  static bool __change_point_size__ = true;
+#endif
+  
+  wxFont GetDefaultGuiFont() {
+    auto font = wxSystemSettings::GetFont(wxSystemFont::wxSYS_DEFAULT_GUI_FONT);
+    auto pointSize = font.GetPointSize();
+#if defined(__WXGTK__)
+    if (__change_point_size__ && pointSize > 9) pointSize = 9;
+#endif
+    return wxFont(pointSize, font.GetFamily(), font.GetStyle(), font.GetWeight(), font.GetUnderlined(), font.GetFaceName(), font.GetEncoding());
+  }
+}
+#endif
+
 intptr_t system_fonts::caption_font() {
   toolkit::initialize(); // Must be first
   #if defined(__APPLE__)
   return reinterpret_cast<intptr_t>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
   #else
-  return reinterpret_cast<intptr_t>(new wxFont(wxSystemSettings::GetFont(wxSystemFont::wxSYS_DEFAULT_GUI_FONT)));
+  return reinterpret_cast<intptr_t>(new wxFont(GetDefaultGuiFont()));
   #endif
 }
 
@@ -21,7 +38,7 @@ intptr_t system_fonts::default_font() {
   #if defined(__APPLE__)
   return reinterpret_cast<intptr_t>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
   #else
-  return reinterpret_cast<intptr_t>(new wxFont(wxSystemSettings::GetFont(wxSystemFont::wxSYS_DEFAULT_GUI_FONT)));
+  return reinterpret_cast<intptr_t>(new wxFont(GetDefaultGuiFont()));
   #endif
 }
 
@@ -30,7 +47,7 @@ intptr_t system_fonts::dialog_font() {
   #if defined(__APPLE__)
   return reinterpret_cast<intptr_t>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
   #else
-  return reinterpret_cast<intptr_t>(new wxFont(wxSystemSettings::GetFont(wxSystemFont::wxSYS_DEFAULT_GUI_FONT)));
+  return reinterpret_cast<intptr_t>(new wxFont(GetDefaultGuiFont()));
   #endif
 }
 
@@ -39,7 +56,7 @@ intptr_t system_fonts::icon_title_font() {
   #if defined(__APPLE__)
   return reinterpret_cast<intptr_t>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
   #else
-  return reinterpret_cast<intptr_t>(new wxFont(wxSystemSettings::GetFont(wxSystemFont::wxSYS_DEFAULT_GUI_FONT)));
+  return reinterpret_cast<intptr_t>(new wxFont(GetDefaultGuiFont()));
   #endif
 }
 
@@ -48,7 +65,7 @@ intptr_t system_fonts::menu_font() {
   #if defined(__APPLE__)
   return reinterpret_cast<intptr_t>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
   #else
-  return reinterpret_cast<intptr_t>(new wxFont(wxSystemSettings::GetFont(wxSystemFont::wxSYS_DEFAULT_GUI_FONT)));
+  return reinterpret_cast<intptr_t>(new wxFont(GetDefaultGuiFont()));
   #endif
 }
 
@@ -57,7 +74,7 @@ intptr_t system_fonts::message_box_font() {
   #if defined(__APPLE__)
   return reinterpret_cast<intptr_t>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
   #else
-  return reinterpret_cast<intptr_t>(new wxFont(wxSystemSettings::GetFont(wxSystemFont::wxSYS_DEFAULT_GUI_FONT)));
+  return reinterpret_cast<intptr_t>(new wxFont(GetDefaultGuiFont()));
   #endif
 }
 
@@ -66,7 +83,7 @@ intptr_t system_fonts::small_caption_font() {
   #if defined(__APPLE__)
   return reinterpret_cast<intptr_t>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
   #else
-  return reinterpret_cast<intptr_t>(new wxFont(wxSystemSettings::GetFont(wxSystemFont::wxSYS_DEFAULT_GUI_FONT)));
+  return reinterpret_cast<intptr_t>(new wxFont(GetDefaultGuiFont()));
   #endif
 }
 
@@ -75,7 +92,7 @@ intptr_t system_fonts::status_font() {
   #if defined(__APPLE__)
   return reinterpret_cast<intptr_t>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_SMALL));
   #else
-  return reinterpret_cast<intptr_t>(new wxFont(wxSystemSettings::GetFont(wxSystemFont::wxSYS_DEFAULT_GUI_FONT)));
+  return reinterpret_cast<intptr_t>(new wxFont(GetDefaultGuiFont()));
   #endif
 }
 
@@ -85,6 +102,6 @@ intptr_t system_fonts::tool_font() {
   auto font = new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_SMALL);
   return reinterpret_cast<intptr_t>(font);
   #else
-  return reinterpret_cast<intptr_t>(new wxFont(wxSystemSettings::GetFont(wxSystemFont::wxSYS_DEFAULT_GUI_FONT)));
+  return reinterpret_cast<intptr_t>(new wxFont(GetDefaultGuiFont()));
   #endif
 }
