@@ -36,40 +36,8 @@ namespace xtd::forms::native {
     if (event_handler_ == nullptr || event_handler_->control() == nullptr) return false;
     if (event_handler_->control()->IsBeingDeleted()) return false;
     if (static_cast<xtd::drawing::native::wx_application*>(wxTheApp)->exceptionStored) return  process_result_;
-    static std::set<wxEventType> reflect_messages {
-      wxEVT_BUTTON,
-      wxEVT_CALENDAR_DOUBLECLICKED, wxEVT_CALENDAR_SEL_CHANGED, wxEVT_CALENDAR_PAGE_CHANGED, wxEVT_CALENDAR_WEEK_CLICKED, wxEVT_CALENDAR_WEEKDAY_CLICKED,
-      wxEVT_CHECKBOX,
-      wxEVT_CHECKLISTBOX,
-      wxEVT_CHOICE,
-      wxEVT_COMBOBOX, wxEVT_COMBOBOX_DROPDOWN, wxEVT_COMBOBOX_CLOSEUP,
-      wxEVT_COLLAPSIBLEPANE_CHANGED,
-      wxEVT_COLOURPICKER_CHANGED,
-      wxEVT_DATE_CHANGED,
-      wxEVT_FONTPICKER_CHANGED,
-      wxEVT_LISTBOX, wxEVT_LISTBOX_DCLICK,
-      wxEVT_MENU,
-      wxEVT_NOTEBOOK_PAGE_CHANGED,
-      wxEVT_RADIOBOX,
-      wxEVT_RADIOBUTTON,
-      wxEVT_SCROLL_BOTTOM, wxEVT_SCROLL_LINEDOWN, wxEVT_SCROLL_LINEUP, wxEVT_SCROLL_PAGEDOWN, wxEVT_SCROLL_PAGEUP, wxEVT_SCROLL_THUMBRELEASE, wxEVT_SCROLL_THUMBTRACK, wxEVT_SCROLL_TOP, wxEVT_SCROLLBAR,
-      wxEVT_SLIDER,
-      wxEVT_SPIN_DOWN, wxEVT_SPIN_UP, wxEVT_SPINCTRL, wxEVT_SPINCTRLDOUBLE,
-      wxEVT_VLBOX,
-      wxEVT_TEXT,
-      wxEVT_TEXT_COPY, wxEVT_TEXT_CUT, wxEVT_TEXT_PASTE,
-      wxEVT_TIME_CHANGED,
-      wxEVT_TOGGLEBUTTON,
-      wxEVT_TOOL, wxEVT_TOOL_DROPDOWN, wxEVT_TOOL_ENTER, wxEVT_TOOL_RCLICKED,
-    };
-  
-    using_(auto control = dynamic_cast<wxWindow*>(event.GetEventObject())) {
-      if (control && reflect_messages.find(event.GetEventType()) != reflect_messages.end() && control->GetParent() && control->GetParent()->GetMainWindowOfCompositeControl() != this->GetMainWindowOfCompositeControl())
-        return control_t::ProcessEvent(event);
-      if (control && reflect_messages.find(event.GetEventType()) == reflect_messages.end() && control->GetMainWindowOfCompositeControl() != this->GetMainWindowOfCompositeControl())
-        return control_t::ProcessEvent(event);
-    }
-    
+    if (event.GetEventObject() != this) return control_t::ProcessEvent(event);
+
     //diagnostics::debug::write_line_if(event.GetEventType() != wxEVT_UPDATE_UI && event.GetEventType() != wxEVT_IDLE, ustring::format("control_wrapper<{}>::ProcessEvent {}", ustring::full_class_name<control_t>(), to_string(event)));
     
     // keyboard events
