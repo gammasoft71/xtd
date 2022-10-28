@@ -75,6 +75,8 @@ namespace xtd {
           return result;
         }
         
+        wxWindow* GetMainWindowOfCompositeControl() override {return GetParent();}
+        
         void set_wx_evt(iwx_evt* wx_evt) {
           wx_evt_ = wx_evt;
         }
@@ -105,8 +107,6 @@ namespace xtd {
 #endif
         }
         
-        wxWindow* GetMainWindowOfCompositeControl() override {return inner_panel;}
-
         bool SetBackgroundColour(const wxColour& colour) override {
 #if !defined(__APPLE__)
           inner_panel->SetBackgroundColour(colour);
@@ -303,6 +303,8 @@ namespace xtd {
           
           return wx_style;
         }
+        
+        wxWindow* main_control() const override { return control()->GetChildren()[0]; }
         
         #if defined(__WXGTK__)
         wxPoint GetPosition() const override {

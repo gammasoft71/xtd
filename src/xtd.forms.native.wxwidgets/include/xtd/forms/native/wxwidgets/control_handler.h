@@ -118,7 +118,7 @@ namespace xtd {
         }
         
         wxWindow* control() const { return control_; }
-        virtual wxWindow* main_control() const { return !control_ ? nullptr : control_->GetMainWindowOfCompositeControl(); }
+        virtual wxWindow* main_control() const { return control_; }
         
         void reset_control() { control_ = nullptr; }
         
