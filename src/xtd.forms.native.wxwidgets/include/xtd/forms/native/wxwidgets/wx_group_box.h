@@ -23,6 +23,57 @@ namespace xtd {
       class control_wrapper;
       class group_box;
       class wx_group_box;
+      
+      class wxInnerGroupBoxPanel : public wxPanel {
+      public:
+        wxInnerGroupBoxPanel(wxWindow *parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxTAB_TRAVERSAL | wxNO_BORDER, const wxString& name = wxASCII_STR(wxPanelNameStr)) : wxPanel(parent, winid, pos, size, style, name) {}
+        
+        bool ProcessEvent(wxEvent& event) override {
+          bool result = wxPanel::ProcessEvent(event);
+          if (!GetParent()->IsShown() || !wx_evt_) return result;
+          // key events
+          else if (event.GetEventType() == wxEVT_KEY_DOWN) wx_evt_->wx_evt_key_down(event);
+          else if (event.GetEventType() == wxEVT_CHAR) wx_evt_->wx_evt_char(event);
+          else if (event.GetEventType() == wxEVT_KEY_UP)  wx_evt_->wx_evt_key_up(event);
+          // mouse events
+          else if (event.GetEventType() == wxEVT_AUX1_DCLICK) wx_evt_->wx_evt_aux1_dbclick(event);
+          else if (event.GetEventType() == wxEVT_AUX1_DOWN) wx_evt_->wx_evt_aux1_down(event);
+          else if (event.GetEventType() == wxEVT_AUX1_UP) wx_evt_->wx_evt_aux1_up(event);
+          else if (event.GetEventType() == wxEVT_AUX2_DCLICK) wx_evt_->wx_evt_aux2_dbclick(event);
+          else if (event.GetEventType() == wxEVT_AUX2_DOWN) wx_evt_->wx_evt_aux2_down(event);
+          else if (event.GetEventType() == wxEVT_AUX2_UP) wx_evt_->wx_evt_aux2_up(event);
+          else if (event.GetEventType() == wxEVT_LEFT_DCLICK) wx_evt_->wx_evt_left_dbclick(event);
+          else if (event.GetEventType() == wxEVT_LEFT_DOWN) wx_evt_->wx_evt_left_down(event);
+          else if (event.GetEventType() == wxEVT_LEFT_UP) wx_evt_->wx_evt_left_up(event);
+          else if (event.GetEventType() == wxEVT_MIDDLE_DCLICK) wx_evt_->wx_evt_middle_dbclick(event);
+          else if (event.GetEventType() == wxEVT_MIDDLE_DOWN) wx_evt_->wx_evt_middle_down(event);
+          else if (event.GetEventType() == wxEVT_MIDDLE_UP) wx_evt_->wx_evt_middle_up(event);
+          else if (event.GetEventType() == wxEVT_RIGHT_DCLICK) wx_evt_->wx_evt_right_dbclick(event);
+          else if (event.GetEventType() == wxEVT_RIGHT_DOWN) wx_evt_->wx_evt_right_down(event);
+          else if (event.GetEventType() == wxEVT_RIGHT_UP) wx_evt_->wx_evt_right_up(event);
+          else if (event.GetEventType() == wxEVT_ENTER_WINDOW) wx_evt_->wx_evt_enter_window(event);
+          else if (event.GetEventType() == wxEVT_LEAVE_WINDOW) wx_evt_->wx_evt_leave_window(event);
+          else if (event.GetEventType() == wxEVT_MOTION) wx_evt_->wx_evt_motion(event);
+          else if (event.GetEventType() == wxEVT_MOUSEWHEEL) wx_evt_->wx_evt_mousewheel(event);
+          // system events
+          else if (event.GetEventType() == wxEVT_SET_FOCUS) wx_evt_->wx_evt_set_focus(event);
+          else if (event.GetEventType() == wxEVT_KILL_FOCUS) wx_evt_->wx_evt_kill_focus(event);
+          else if (event.GetEventType() == wxEVT_CHILD_FOCUS) wx_evt_->wx_evt_child_focus(event);
+#if !defined __UNIX__
+          else if (event.GetEventType() == wxEVT_PAINT) wx_evt_->wx_evt_paint(event);
+#endif
+          return result;
+        }
+
+        wxWindow* GetMainWindowOfCompositeControl() override {return GetParent();}
+        
+        void set_wx_evt(iwx_evt* wx_evt) {
+          wx_evt_ = wx_evt;
+        }
+        
+        iwx_evt* wx_evt_ = nullptr;
+      };
+      
       class wxGroupBox : public wxStaticBox {
         template<typename control_t>
         friend class control_wrapper;
@@ -46,9 +97,6 @@ namespace xtd {
           *height = *height - GetClientAreaOrigin().y - inner_margin;
         }
         
-        wxWindow* GetMainWindowOfCompositeControl() override {return inner_panel;}
-        
-      private:
         wxPoint get_inner_box_position() const {
           if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") return {0, inner_margin + extra_inner_margin_up};
           if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") return {inner_margin, inner_margin + extra_inner_margin_up};
@@ -63,9 +111,13 @@ namespace xtd {
           return GetClientSize();
         }
         
-        static constexpr int32_t inner_margin = 3;
+        
+        void set_wx_evt(iwx_evt* wx_evt) {
+          inner_panel->set_wx_evt(wx_evt);
+        }
+       static constexpr int32_t inner_margin = 3;
         static constexpr int32_t extra_inner_margin_up = 5;
-        wxPanel* inner_panel = new wxPanel(this, wxID_ANY, get_inner_box_position(), get_inner_box_size());
+        wxInnerGroupBoxPanel* inner_panel = new wxInnerGroupBoxPanel(this, wxID_ANY, get_inner_box_position(), get_inner_box_size());
       };
 
       class wxGroupBoxOwnerDraw : public wxPanel {
@@ -120,6 +172,7 @@ namespace xtd {
             if (ustring::is_empty(caption)) caption = " ";
             #endif
             control_handler::create<wxGroupBox>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(caption)), wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()), style_to_wx_style(create_params.style, create_params.ex_style));
+            dynamic_cast<wxGroupBox*>(control())->set_wx_evt(dynamic_cast<iwx_evt*>(control()));
             #if defined(__WIN32__)
             if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
               control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
@@ -133,7 +186,9 @@ namespace xtd {
           long wx_style = 0;
           return wx_style;
         }
-        
+
+        wxWindow* main_control() const override { return control()->GetChildren()[0]; }
+
         void SetLabel(const wxString& label) override {
           auto caption = label;
           #if defined(__APPLE__)
