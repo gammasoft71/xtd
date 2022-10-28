@@ -304,7 +304,56 @@ namespace examples {
   };
 }
 
+class form1 : public form {
+  public:
+    form1() {
+      mouse_down += [] {
+        diagnostics::debug::write_line("form1::mouse_down");
+      };
+      panel_.back_color(color::navy);
+      panel_.mouse_down += [] {
+        diagnostics::debug::write_line("panel_::mouse_down");
+      };
+      panel_.parent(*this);
+      panel_.size({250, 250});
+
+      panel2_.back_color(color::red);
+      panel2_.mouse_down += [] {
+        diagnostics::debug::write_line("panel2_::mouse_down");
+      };
+      panel2_.parent(panel_);
+      panel2_.size({200, 200});
+
+      group_box_.parent(panel2_);
+      group_box_.back_color(color::green);
+      group_box_.mouse_down += [] {
+        diagnostics::debug::write_line("group_box_::mouse_down");
+      };
+
+      button_.parent(group_box_);
+      button_.flat_style(xtd::forms::flat_style::system);
+      button_.mouse_down += [] {
+        diagnostics::debug::write_line("button_::mouse_down");
+      };
+      button_.click += [] {
+        diagnostics::debug::write_line("button_::click");
+      };
+
+      numeric_up_down_.parent(group_box_);
+      numeric_up_down_.top(30);
+      numeric_up_down_.value_changed += [] {
+        diagnostics::debug::write_line("numeric_up_down_::value_changed");
+      };
+    }
+  private:
+  panel panel_;
+  panel panel2_;
+  group_box group_box_;
+  button button_;
+  numeric_up_down numeric_up_down_;
+};
+
 int main() {
-  application::run(examples::form1());
+  application::run(form1());
 }
 
