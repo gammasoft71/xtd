@@ -59,7 +59,7 @@ namespace game_of_life {
       label_iterations_.text_align(xtd::forms::content_alignment::middle_right);
       label_iterations_.text(xtd::ustring::format("Iterations : {}", iterations_));
       label_iterations_.width(150);
-      label_iterations_.location({555, 15});
+      label_iterations_.location({555, 13});
       label_iterations_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
 
       label_zoom_.parent(*this);
