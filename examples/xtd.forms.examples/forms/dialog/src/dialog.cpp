@@ -6,7 +6,7 @@ class dialog : public form {
 public:
   dialog() {
     accept_button(ok_button);
-    client_size({195, 85});
+    client_size({195, 75});
     minimize_box(false);
     text("Dialog");
     
