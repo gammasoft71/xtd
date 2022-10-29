@@ -23,7 +23,7 @@ namespace {
       icon(xtd::drawing::icon::empty);
       accept_button(ok_button_);
       cancel_button(cancel_button_);
-      client_size({330, 125 + offset_multiline});
+      client_size({330, 115 + offset_multiline});
       controls().push_back_range({input_panel_, cancel_button_, ok_button_});
       maximize_box(false);
       minimize_box(false);
