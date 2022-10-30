@@ -213,7 +213,7 @@ namespace xtd {
         /// | "commandlinkbutton" | 200    | 60     |
         /// | "datetimepicker"    | 104    | 25     |
         /// | "domainupdown"      | 150    | 23 **  |
-        /// | "fontpicker"        | 104    | 23     |
+        /// | "fontpicker"        | 104    | 25     |
         /// | "form"              | 300    | 300    |
         /// | "groupbox"          | 200    | 100    |
         /// | "label"             | 100    | 23     |
@@ -226,7 +226,7 @@ namespace xtd {
         /// | "picturebox"        | 100    | 50     |
         /// | "popup_panel"       | 100    | 150    |
         /// | "progressbar"       | 100    | 23     |
-        /// | "radiobutton"       | 104    | 23     |
+        /// | "radiobutton"       | 104    | 25     |
         /// | "scrollbar"         | 17     | 17     |
         /// | "statusbar"         | 100    | 23     |
         /// | "switchbutton"      | 50     | 25     |
