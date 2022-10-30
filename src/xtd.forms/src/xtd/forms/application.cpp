@@ -232,6 +232,12 @@ void application::enable_menu_images() {
   native::application::enable_menu_images();
 }
 
+void application::enable_system_font_size() {
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_visual_styles() before application::run()"_t, current_stack_frame_);
+  application::use_visual_styles_ = true;
+  native::application::enable_system_font_size();
+}
+
 void application::enable_visual_styles() {
   if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_visual_styles() before application::run()"_t, current_stack_frame_);
   application::use_visual_styles_ = true;

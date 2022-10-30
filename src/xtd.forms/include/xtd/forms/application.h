@@ -261,6 +261,12 @@ namespace xtd {
       /// @remarks This method has an effect only on linux.
       static void enable_menu_images();
       
+      /// @brief Enables system font size for the application.
+      /// @remarks By default, xtd automatically limits the system font size to 9 points if it is larger than 9.
+      /// @remarks If you enable this option, you can use the actual font size of the system if it exceeds 9 points and at the same time the default sizes of the different controls will be adapted as well.
+      /// @remarks This method has an effect only on Gtk.
+      static void enable_system_font_size();
+
       /// @brief Enables visual styles for the application.
       /// @remarks This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, enable_visual_styles() must be called before creating any controls in the application; typically, enable_visual_styles() is the first line in the Main function. A separate manifest is not required to enable visual styles when calling enable_visual_styles().
       static void enable_visual_styles();

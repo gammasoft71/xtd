@@ -85,6 +85,9 @@ namespace xtd {
         /// @brief Enables menu images for the application.
         /// @warning Internal use only
         static void enable_menu_images();
+        /// @brief Enables system font size for the application.
+        /// @warning Internal use only
+        static void enable_system_font_size();
         /// @brief Enables visual styles for the application.
         /// @warning Internal use only
         static void enable_visual_style();
