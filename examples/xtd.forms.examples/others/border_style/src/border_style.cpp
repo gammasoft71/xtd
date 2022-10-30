@@ -35,7 +35,7 @@ namespace examples {
       control_panel.dock(dock_style::bottom);
       
       choose_color_label.auto_size(true);
-      choose_color_label.location({20, 39});
+      choose_color_label.location({20, 40});
       choose_color_label.text("Choose color");
       
       for (auto color : colors::get_colors())
@@ -52,7 +52,7 @@ namespace examples {
       colors_chooser.selected_index(0);
 
       select_sides_label.auto_size(true);
-      select_sides_label.location({380, 39});
+      select_sides_label.location({380, 40});
       select_sides_label.text("Select sides");
       
       top_side.checked(true);
