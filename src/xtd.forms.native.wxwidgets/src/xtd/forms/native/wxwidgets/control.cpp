@@ -244,7 +244,7 @@ xtd::drawing::size control::default_size(const xtd::ustring& class_name) {
   if (class_name == "picturebox") return {100, 50};
   if (class_name == "popuppanel") return {100, 150};
   if (class_name == "progressbar") return {100, 23};
-  if (class_name == "radiobutton") return {104, 23};
+  if (class_name == "radiobutton") return {104, 25};
   if (class_name == "scrollbar") return {17, 17};
   if (class_name == "statusbar") return {100, 23};
   if (class_name == "switchbutton") return {50, 25};
