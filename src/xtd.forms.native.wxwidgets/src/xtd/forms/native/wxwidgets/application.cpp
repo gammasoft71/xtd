@@ -52,6 +52,7 @@ void __xtd_macos_enable_dark_mode__();
 void __xtd_macos_enable_light_mode__();
 bool __xtd_macos_dark_mode_enabled__();
 #endif
+extern drawing_native_export_ bool __enable_system_font_size__ ;
 
 using namespace std;
 using namespace std::this_thread;
@@ -144,6 +145,13 @@ void application::enable_menu_images() {
   // This option does not work with wxWidgets...
   //__xtd_gtk_enable_menu_images__ = true;
   #endif
+}
+
+void application::enable_system_font_size() {
+  initialize(); // Must be first
+#if defined(__WXGTK__)
+  __enable_system_font_size__ = true;
+#endif
 }
 
 void application::enable_visual_style() {

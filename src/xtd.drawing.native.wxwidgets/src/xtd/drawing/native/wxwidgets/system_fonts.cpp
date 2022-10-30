@@ -7,17 +7,16 @@
 
 using namespace xtd::drawing::native;
 
+bool __enable_system_font_size__ = false;
+
 #if !defined(__APPLE__)
 namespace {
-#if defined(__WXGTK__)
-  static bool __change_point_size__ = true;
-#endif
-  
+
   wxFont GetDefaultGuiFont() {
     auto font = wxSystemSettings::GetFont(wxSystemFont::wxSYS_DEFAULT_GUI_FONT);
     auto pointSize = font.GetPointSize();
 #if defined(__WXGTK__)
-    if (__change_point_size__ && pointSize > 9) pointSize = 9;
+    if (!__enable_system_font_size__ && pointSize > 9) pointSize = 9;
 #endif
     return wxFont(pointSize, font.GetFamily(), font.GetStyle(), font.GetWeight(), font.GetUnderlined(), font.GetFaceName(), font.GetEncoding());
   }

@@ -76,6 +76,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
+extern drawing_native_export_ bool __enable_system_font_size__ ;
 extern std::vector<control_handler*> __control_handler_to_delete_items__;
 
 namespace {
@@ -220,21 +221,21 @@ xtd::drawing::size control::default_size(const xtd::ustring& class_name) {
   static auto is_gnome = environment::os_version().desktop_environment() == "gnome";
   static auto is_macos = environment::os_version().desktop_environment() == "macos";
 
-  if (class_name == "button") return {75, 25};
+  if (class_name == "button") return {75, __enable_system_font_size__ ? 34 : 25};
   if (class_name == "checkbox") return {104, 25};
   if (class_name == "checkedlistbox") return {120, 90};
-  if (class_name == "choice") return {130, 25};
+  if (class_name == "choice") return {130, __enable_system_font_size__ ? 34 : 25};
   if (class_name == "collapsiblepanel") return {0, 0};
-  if (class_name == "colorpicker") return {104, 25};
-  if (class_name == "combobox") return {130, is_macos ? 21 : 23};
+  if (class_name == "colorpicker") return {104, __enable_system_font_size__ ? 34 : 25};
+  if (class_name == "combobox") return {130, __enable_system_font_size__ ? 34 : is_macos ? 21 : 23};
   if (class_name == "commandlinkbutton") return {200, 60};
-  if (class_name == "datetimepicker") return {104, 25};
+  if (class_name == "datetimepicker") return {104, __enable_system_font_size__ ? 34:  25};
   if (class_name == "domainupdown") return {150, is_gnome ? 34 : 23};
-  if (class_name == "fontpicker") return {104, 25};
+  if (class_name == "fontpicker") return {104, __enable_system_font_size__ ? 34 : 25};
   if (class_name == "form") return {300, 300};
   if (class_name == "groupbox") return {200, 100};
   if (class_name == "label") return {100, 23};
-  if (class_name == "lightbutton") return {75, 25};
+  if (class_name == "lightbutton") return {75, __enable_system_font_size__ ? 34 : 25};
   if (class_name == "listbox") return {120, 96};
   if (class_name == "loadingindicator") return {32, 32};
   if (class_name == "monthcalendar") return {240, 162};
@@ -249,8 +250,8 @@ xtd::drawing::size control::default_size(const xtd::ustring& class_name) {
   if (class_name == "switchbutton") return {50, 25};
   if (class_name == "tabcontrol") return {200, 100};
   if (class_name == "tabpage") return {200, 100};
-  if (class_name == "textbox") return {100, 23};
-  if (class_name == "togglebutton") return {104, 25};
+  if (class_name == "textbox") return {100, __enable_system_font_size__ ? 34 : 23};
+  if (class_name == "togglebutton") return {104, __enable_system_font_size__ ? 34 : 25};
   if (class_name == "toolbar") return {100, 23};
   if (class_name == "trackbar") return {104, 45};
   if (class_name == "updownbutton") return {is_gnome ? 71 : 18, 34};
