@@ -48,10 +48,10 @@
 ///   </tr>
 /// </table>
 ///
-/// @par Color folder browser appearance
+/// @par Color appearance
 /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
-///     <td style="width:100px">xtd::forms::folder_browser_dialog</td>
+///     <td style="width:100px">xtd::forms::color_dialog</td>
 ///     <th><b>Windows</b></th>
 ///     <th><b>macOS</b></th>
 ///     <th><b>Gnome</b></th>
@@ -67,6 +67,28 @@
 ///     <td>@image html dialog_color_dialog_wd.png</td>
 ///     <td>@image html dialog_color_dialog_md.png</td>
 ///     <td>@image html dialog_color_dialog_gd.png</td>
+///   </tr>
+/// </table>
+///
+/// @par Debug message box appearance
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::debug_messag_boxe</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html dialog_debug_message_box_w.png</td>
+///     <td>@image html dialog_debug_message_box_m.png</td>
+///     <td>@image html dialog_debug_message_box_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html dialog_debug_message_box_wd.png</td>
+///     <td>@image html dialog_debug_message_box_md.png</td>
+///     <td>@image html dialog_debug_message_box_gd.png</td>
 ///   </tr>
 /// </table>
 ///
@@ -89,6 +111,28 @@
 ///     <td>@image html dialog_exception_dialog_wd.png</td>
 ///     <td>@image html dialog_exception_dialog_md.png</td>
 ///     <td>@image html dialog_exception_dialog_gd.png</td>
+///   </tr>
+/// </table>
+///
+/// @par Find dialog appearance
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::find_dialog</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html dialog_find_dialog_w.png</td>
+///     <td>@image html dialog_find_dialog_m.png</td>
+///     <td>@image html dialog_find_dialog_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html dialog_find_dialog_wd.png</td>
+///     <td>@image html dialog_find_dialog_md.png</td>
+///     <td>@image html dialog_find_dialog_gd.png</td>
 ///   </tr>
 /// </table>
 ///
@@ -155,6 +199,28 @@
 ///     <td>@image html dialog_input_dialog_wd.png</td>
 ///     <td>@image html dialog_input_dialog_md.png</td>
 ///     <td>@image html dialog_input_dialog_gd.png</td>
+///   </tr>
+/// </table>
+///
+/// @par Mesage box appearance
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::message_box</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html dialog_message_box_w.png</td>
+///     <td>@image html dialog_message_box_m.png</td>
+///     <td>@image html dialog_message_box_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html dialog_message_box_wd.png</td>
+///     <td>@image html dialog_message_box_md.png</td>
+///     <td>@image html dialog_message_box_gd.png</td>
 ///   </tr>
 /// </table>
 ///
