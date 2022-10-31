@@ -48,7 +48,7 @@
 ///   </tr>
 /// </table>
 ///
-/// @par Color appearance
+/// @par Color dialog appearance
 /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
 ///     <td style="width:100px">xtd::forms::color_dialog</td>
