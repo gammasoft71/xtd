@@ -270,8 +270,8 @@
 * [group_box_and_radio_button](others/group_box_and_radio_button/README.md) demonstrates the use of [xtd::forms::group_box](../../src/xtd.forms/include/xtd/forms/group_box.h) container and [xtd::forms::radio_button](../../src/xtd.forms/include/xtd/forms/radio_button.h) control.
 * [images2](others/images2/README.md) demonstrates the use of **xtd::drawing::system_images** class.
 * [images3](others/images3/README.md) demonstrates the use of **xtd::drawing::system_images** class.
-* [input_dialog_multiline](input_dialog_multiline/README.md) prompts the user to input multiline text.
-* [input_dialog_password](input_dialog_password/README.md) prompts the user to input password text.
+* [input_dialog_multiline](others/input_dialog_multiline/README.md) prompts the user to input multiline text.
+* [input_dialog_password](others/input_dialog_password/README.md) prompts the user to input password text.
 * [labels_and_unicode_text](others/labels_and_unicode_text/README.md) demonstrates the use of [xtd::forms::label](../../src/xtd.forms/include/xtd/forms/label.h) control and Unicode text.
 * [lcd_label_with_dot_matrix](others/lcd_label_with_dot_matrix/README.md) representsthe use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
 * [lcd_label_with_fourteen_segment](others/lcd_label_with_fourteen_segment/README.md) representsthe use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
