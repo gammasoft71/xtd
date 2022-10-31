@@ -59,13 +59,13 @@
 ///   <tr>
 ///     <td>Light</td>
 ///     <td>@image html dialog_color_dialog_w.png</td>
-///     <td>@image html dialog_color_dialog_m.png</td>
+///     <td>@image html dialog_color_dialog2_m.png</td>
 ///     <td>@image html dialog_color_dialog2_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Dark</td>
 ///     <td>@image html dialog_color_dialog_wd.png</td>
-///     <td>@image html dialog_color_dialog_md.png</td>
+///     <td>@image html dialog_color_dialog2_md.png</td>
 ///     <td>@image html dialog_color_dialog2_gd.png</td>
 ///   </tr>
 /// </table>
