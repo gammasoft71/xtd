@@ -1,9 +1,8 @@
 /// @file
-/// @brief Contains countries flags page.
+/// @brief Contains countries flags appearances page.
 
-/// @page CountriesFlagsPage Countries flags
-/// @brief Contains countries flags.
-/// Shows xtd::forms::countries flags.
+/// @page CountriesFlagsPage Countries flags appearances
+/// @brief Contains countries flags appearances.
 /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
 ///     <th><b>Name</b></th>
