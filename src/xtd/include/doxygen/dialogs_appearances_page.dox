@@ -73,7 +73,7 @@
 /// @par Debug message box appearance
 /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
-///     <td style="width:100px">xtd::forms::debug_messag_boxe</td>
+///     <td style="width:100px">xtd::forms::debug_message_box</td>
 ///     <th><b>Windows</b></th>
 ///     <th><b>macOS</b></th>
 ///     <th><b>Gnome</b></th>
