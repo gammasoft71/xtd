@@ -15,6 +15,7 @@ add_sources(
   include/doxygen/cmake_build_options_page.dox
   include/doxygen/cmake_commands_page.dox
   include/doxygen/controls_appearances_page.dox
+  include/doxygen/countries_appearances_page.dox
   include/doxygen/cursors_appearances_page.dox
   include/doxygen/dialogs_appearances_page.dox
   include/doxygen/format_page.dox
