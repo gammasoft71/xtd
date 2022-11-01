@@ -48,3 +48,47 @@
 ///   </tr>
 /// </table>
 ///
+/// @par Checked list box appearance
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::checked_list_box</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html control_checked_list_box_w.png</td>
+///     <td>@image html control_checked_list_box_m.png</td>
+///     <td>@image html control_checked_list_box_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html control_checked_list_box_wd.png</td>
+///     <td>@image html control_checked_list_box_md.png</td>
+///     <td>@image html control_checked_list_box_gd.png</td>
+///   </tr>
+/// </table>
+///
+/// @par Choice appearance
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::choice</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html control_choice_w.png</td>
+///     <td>@image html control_choice_m.png</td>
+///     <td>@image html control_choice_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html control_choice_wd.png</td>
+///     <td>@image html control_choice_md.png</td>
+///     <td>@image html control_choice_gd.png</td>
+///   </tr>
+/// </table>
+///
