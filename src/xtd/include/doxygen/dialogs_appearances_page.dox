@@ -300,15 +300,15 @@
 ///   </tr>
 ///   <tr>
 ///     <td>Light</td>
-///     <td>@image html save_file_dialog_w.png</td>
-///     <td>@image html save_file_dialog_m.png</td>
-///     <td>@image html save_file_dialog_g.png</td>
+///     <td>@image html dialog_save_file_dialog_w.png</td>
+///     <td>@image html dialog_save_file_dialog_m.png</td>
+///     <td>@image html dialog_save_file_dialog_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Dark</td>
-///     <td>@image html save_file_dialog_wd.png</td>
-///     <td>@image html save_file_dialog_md.png</td>
-///     <td>@image html save_file_dialog_gd.png</td>
+///     <td>@image html dialog_save_file_dialog_wd.png</td>
+///     <td>@image html dialog_save_file_dialog_md.png</td>
+///     <td>@image html dialog_save_file_dialog_gd.png</td>
 ///   </tr>
 /// </table>
 ///
@@ -322,15 +322,15 @@
 ///   </tr>
 ///   <tr>
 ///     <td>Light</td>
-///     <td>@image html trace_message_box_w.png</td>
-///     <td>@image html trace_message_box_m.png</td>
-///     <td>@image html trace_message_box_g.png</td>
+///     <td>@image html dialog_trace_message_box_w.png</td>
+///     <td>@image html dialog_trace_message_box_m.png</td>
+///     <td>@image html dialog_trace_message_box_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Dark</td>
-///     <td>@image html trace_message_box_wd.png</td>
-///     <td>@image html trace_message_box_md.png</td>
-///     <td>@image html trace_message_box_gd.png</td>
+///     <td>@image html dialog_trace_message_box_wd.png</td>
+///     <td>@image html dialog_trace_message_box_md.png</td>
+///     <td>@image html dialog_trace_message_box_gd.png</td>
 ///   </tr>
 /// </table>
 ///
