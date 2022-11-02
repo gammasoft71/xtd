@@ -30,6 +30,27 @@ namespace xtd {
     /// @note If the three_state property is set to true, the checked property will return true for either a checked or indeterminate state.
     /// @remarks The flat_style property determines the style and appearance of the control. If the flat_style property is set to flat_style::system, the user's operating system determines the appearance of the control.
     /// @note When the flat_style property is set to flat_style::system, the check_align property is ignored and the control is displayed using the content_alignment::middle_left or content_alignment::middle_right alignment. If the check_align property is set to one of the right alignments, the control is displayed using the content_alignment::middle_right alignment; otherwise, it is displayed using the content_alignment::middle_left alignment.
+    /// @par Appearance
+    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+    ///   <tr>
+    ///     <th style="width:100px"></th>
+    ///     <th><b>Windows</b></th>
+    ///     <th><b>macOS</b></th>
+    ///     <th><b>Gnome</b></th>
+    ///   </tr>
+    ///   <tr>
+    ///     <th>Light</th>
+    ///     <td>@image html control_light_button_w.png</td>
+    ///     <td>@image html control_light_button_m.png</td>
+    ///     <td>@image html control_light_button_g.png</td>
+    ///   </tr>
+    ///   <tr>
+    ///     <th>Dark</th>
+    ///     <td>@image html control_light_button_wd.png</td>
+    ///     <td>@image html control_light_button_md.png</td>
+    ///     <td>@image html control_light_button_gd.png</td>
+    ///   </tr>
+    /// </table>
     /// @par Examples
     /// The following code example demonstrates the use of light_button control with bitmap.
     /// @include light_button.cpp

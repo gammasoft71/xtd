@@ -23,6 +23,27 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
+    /// @par Appearance
+    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+    ///   <tr>
+    ///     <th style="width:100px"></th>
+    ///     <th><b>Windows</b></th>
+    ///     <th><b>macOS</b></th>
+    ///     <th><b>Gnome</b></th>
+    ///   </tr>
+    ///   <tr>
+    ///     <th>Light</th>
+    ///     <td>@image html control_lcd_label_w.png</td>
+    ///     <td>@image html control_lcd_label_m.png</td>
+    ///     <td>@image html control_lcd_label_g.png</td>
+    ///   </tr>
+    ///   <tr>
+    ///     <th>Dark</th>
+    ///     <td>@image html control_lcd_label_wd.png</td>
+    ///     <td>@image html control_lcd_label_md.png</td>
+    ///     <td>@image html control_lcd_label_gd.png</td>
+    ///   </tr>
+    /// </table>
     /// @par Examples
     /// The following code example demonstrates the use of lcd_label control.
     /// @include lcd_label.cpp
