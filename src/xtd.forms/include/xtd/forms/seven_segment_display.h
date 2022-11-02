@@ -140,7 +140,7 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
-      drawing::size default_size() const override {return {13, 25};}
+      drawing::size default_size() const override {return {25, 50};}
       /// @}
 
       /// @name Protected methods
