@@ -212,7 +212,7 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
-      xtd::drawing::size default_size() const override {return {25, 25};}
+      xtd::drawing::size default_size() const override {return {50, 50};}
       /// @}
 
       /// @name Protected methods
