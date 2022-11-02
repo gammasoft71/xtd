@@ -19,14 +19,35 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
-    /// @par Examples
-    /// The following code example demonstrates the use of month_calendar control.
-    /// @include month_calendar.cpp
     /// @remarks The xtd::forms::month_calendar control allows the user to select a date using a visual display. You can limit the date and times that can be selected by setting the xtd::forms::month_calendar::min_date and xtd::forms::month_calendar::max_date properties.
     /// @remarks You can change the look of the calendar portion of the control by setting the xtd::forms::month_calendar::fore_color, xtd::forms::month_calendar::font, xtd::forms::month_calendar::title_back_color, xtd::forms::month_calendar::title_fore_color, xtd::forms::month_calendar::trailing_fore_color, and xtd::forms::month_calendar::back_color properties.
     /// @note The xtd::forms::month_calendar control only supports Gregorian calendars.
     /// @remarks The xtd::forms::month_calendar control is drawn by the operating system, so the xtd::forms::month_calendar::paint event is never raised. If you need to provide a customized look to the xtd::forms::month_calendar control, you should override the xtd::forms::month_calendar::on_print method, call the base implementation of xtd::forms::control::on_print, and then perform custom painting.
     /// @remarks If you need custom date formatting and a selection limited to just one date, you might consider using a xtd::forms::month_calendar::date_time_picker control instead of a xtd::forms::month_calendar. Using the xtd::forms::month_calendar::date_time_picker eliminates much of the need for validating date/time values.
+    /// @par Appearance
+    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+    ///   <tr>
+    ///     <th style="width:100px"></th>
+    ///     <th><b>Windows</b></th>
+    ///     <th><b>macOS</b></th>
+    ///     <th><b>Gnome</b></th>
+    ///   </tr>
+    ///   <tr>
+    ///     <th>Light</th>
+    ///     <td>@image html control_month_calendar_w.png</td>
+    ///     <td>@image html control_month_calendar_m.png</td>
+    ///     <td>@image html control_month_calendar_g.png</td>
+    ///   </tr>
+    ///   <tr>
+    ///     <th>Dark</th>
+    ///     <td>@image html control_month_calendar_wd.png</td>
+    ///     <td>@image html control_month_calendar_md.png</td>
+    ///     <td>@image html control_month_calendar_gd.png</td>
+    ///   </tr>
+    /// </table>
+    /// @par Examples
+    /// The following code example demonstrates the use of month_calendar control.
+    /// @include month_calendar.cpp
     class forms_export_ month_calendar : public control {
     public:
       /// @brief Defines constants that represent areas in a xtd::forms::month_calendar control.
