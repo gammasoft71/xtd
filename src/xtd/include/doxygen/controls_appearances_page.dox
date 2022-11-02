@@ -510,3 +510,25 @@
 ///   </tr>
 /// </table>
 ///
+/// @par Progress bar appearance
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::progress_bar</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html control_progress_bar_w.png</td>
+///     <td>@image html control_progress_bar_m.png</td>
+///     <td>@image html control_progress_bar_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html control_progress_bar_wd.png</td>
+///     <td>@image html control_progress_bar_md.png</td>
+///     <td>@image html control_progress_bar_gd.png</td>
+///   </tr>
+/// </table>
+///
