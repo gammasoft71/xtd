@@ -422,3 +422,25 @@
 ///   </tr>
 /// </table>
 ///
+/// @par Month calendar appearance
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::month_calendar</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html control_month_calendar_w.png</td>
+///     <td>@image html control_month_calendar_m.png</td>
+///     <td>@image html control_month_calendar_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html control_month_calendar_wd.png</td>
+///     <td>@image html control_month_calendar_md.png</td>
+///     <td>@image html control_month_calendar_gd.png</td>
+///   </tr>
+/// </table>
+///
