@@ -598,3 +598,25 @@
 ///   </tr>
 /// </table>
 ///
+/// @par Switch button appearance
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::switch_button</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html control_switch_button_w.png</td>
+///     <td>@image html control_switch_button_m.png</td>
+///     <td>@image html control_switch_button_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html control_switch_button_wd.png</td>
+///     <td>@image html control_switch_button_md.png</td>
+///     <td>@image html control_switch_button_gd.png</td>
+///   </tr>
+/// </table>
+///
