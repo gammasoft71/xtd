@@ -28,15 +28,15 @@ namespace xtd {
     ///   </tr>
     ///   <tr>
     ///     <th>Light</th>
-    ///     <td>@image html control_switch_button_display_w.png</td>
-    ///     <td>@image html control_switch_button_display_m.png</td>
-    ///     <td>@image html control_switch_button_display_g.png</td>
+    ///     <td>@image html control_switch_button_w.png</td>
+    ///     <td>@image html control_switch_button_m.png</td>
+    ///     <td>@image html control_switch_button_g.png</td>
     ///   </tr>
     ///   <tr>
     ///     <th>Dark</th>
-    ///     <td>@image html control_switch_button_display_wd.png</td>
-    ///     <td>@image html control_switch_button_display_md.png</td>
-    ///     <td>@image html control_switch_button_display_gd.png</td>
+    ///     <td>@image html control_switch_button_wd.png</td>
+    ///     <td>@image html control_switch_button_md.png</td>
+    ///     <td>@image html control_switch_button_gd.png</td>
     ///   </tr>
     /// </table>
     /// @par Examples
