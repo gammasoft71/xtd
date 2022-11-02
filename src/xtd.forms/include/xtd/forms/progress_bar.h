@@ -25,6 +25,27 @@ namespace xtd {
     /// @remarks The value property represents the progress that the application has made toward completing the operation. The value displayed by the progress_bar only approximates the current value of the value property. Based on the size of the progress_bar, the value property determines when to display the next block or increase the size of the bar.
     /// @remarks There are a number of ways to modify the value displayed by the progress_bar other than changing the value property directly. You can use the step property to specify a specific value to increment the Value property by, and then call the perform_step method to increment the value. To vary the increment value, you can use the increment method and specify a value with which to increment the value property.
     /// @note fore_color and back_color changes for the progress_bar will not be honored.
+    /// @par Appearance
+    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+    ///   <tr>
+    ///     <th style="width:100px"></th>
+    ///     <th><b>Windows</b></th>
+    ///     <th><b>macOS</b></th>
+    ///     <th><b>Gnome</b></th>
+    ///   </tr>
+    ///   <tr>
+    ///     <th>Light</th>
+    ///     <td>@image html control_progress_bar_w.png</td>
+    ///     <td>@image html control_progress_bar_m.png</td>
+    ///     <td>@image html control_progress_bar_g.png</td>
+    ///   </tr>
+    ///   <tr>
+    ///     <th>Dark</th>
+    ///     <td>@image html control_progress_bar_wd.png</td>
+    ///     <td>@image html control_progress_bar_md.png</td>
+    ///     <td>@image html control_progress_bar_gd.png</td>
+    ///   </tr>
+    /// </table>
     /// @par Examples
     /// The following code example demonstrates the use of progress_bar control.
     /// @include progress_bar.cpp
