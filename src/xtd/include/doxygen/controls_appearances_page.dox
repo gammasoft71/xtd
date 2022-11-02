@@ -268,6 +268,28 @@
 ///   </tr>
 /// </table>
 ///
+/// @par Horizontal scroll bar appearance
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::h_scroll_bar</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html control_h_scroll_bar_w.png</td>
+///     <td>@image html control_h_scroll_bar_m.png</td>
+///     <td>@image html control_h_scroll_bar_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html control_h_scroll_bar_wd.png</td>
+///     <td>@image html control_h_scroll_bar_md.png</td>
+///     <td>@image html control_h_scroll_bar_gd.png</td>
+///   </tr>
+/// </table>
+///
 /// @par Label appearance
 /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
@@ -290,25 +312,25 @@
 ///   </tr>
 /// </table>
 ///
-/// @par Horizontal scroll bar appearance
+/// @par LCD label appearance
 /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
-///     <td style="width:100px">xtd::forms::h_scroll_bar</td>
+///     <td style="width:100px">xtd::forms::lcd_label</td>
 ///     <th><b>Windows</b></th>
 ///     <th><b>macOS</b></th>
 ///     <th><b>Gnome</b></th>
 ///   </tr>
 ///   <tr>
 ///     <td>Light</td>
-///     <td>@image html control_h_scroll_bar_w.png</td>
-///     <td>@image html control_h_scroll_bar_m.png</td>
-///     <td>@image html control_h_scroll_bar_g.png</td>
+///     <td>@image html control_lcd_label_w.png</td>
+///     <td>@image html control_lcd_label_m.png</td>
+///     <td>@image html control_lcd_label_g.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>Dark</td>
-///     <td>@image html control_h_scroll_bar_wd.png</td>
-///     <td>@image html control_h_scroll_bar_md.png</td>
-///     <td>@image html control_h_scroll_bar_gd.png</td>
+///     <td>@image html control_lcd_label_wd.png</td>
+///     <td>@image html control_lcd_label_md.png</td>
+///     <td>@image html control_lcd_label_gd.png</td>
 ///   </tr>
 /// </table>
 ///
