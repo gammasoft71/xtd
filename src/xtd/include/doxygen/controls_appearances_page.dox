@@ -444,3 +444,47 @@
 ///   </tr>
 /// </table>
 ///
+/// @par Nine segment display appearance
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::nine_segment_display</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html control_nine_segment_display_w.png</td>
+///     <td>@image html control_nine_segment_display_m.png</td>
+///     <td>@image html control_nine_segment_display_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html control_nine_segment_display_wd.png</td>
+///     <td>@image html control_nine_segment_display_md.png</td>
+///     <td>@image html control_nine_segment_display_gd.png</td>
+///   </tr>
+/// </table>
+///
+/// @par Numeric up down appearance
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::numeric_up_down</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html control_numeric_up_down_w.png</td>
+///     <td>@image html control_numeric_up_down_m.png</td>
+///     <td>@image html control_numeric_up_down_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html control_numeric_up_down_wd.png</td>
+///     <td>@image html control_numeric_up_down_md.png</td>
+///     <td>@image html control_numeric_up_down_gd.png</td>
+///   </tr>
+/// </table>
+///
