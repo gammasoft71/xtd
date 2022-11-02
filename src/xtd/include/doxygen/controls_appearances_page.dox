@@ -708,7 +708,7 @@
 ///   </tr>
 /// </table>
 ///
-/// @par Verticam scroll bar appearance
+/// @par Vertical scroll bar appearance
 /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
 ///     <td style="width:100px">xtd::forms::v_scroll_bar</td>
