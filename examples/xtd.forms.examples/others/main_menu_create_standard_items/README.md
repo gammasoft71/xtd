@@ -1,6 +1,6 @@
 # main_menu_create_standard_items
 
-demonstrates the use of [xtd::forms::main_main_menu](../../../../src/xtd.forms/include/xtd/forms/main_main_menu.h) component.
+demonstrates the use of [xtd::forms::main_menu::create_standard_items](../../../../src/xtd.forms/include/xtd/forms/main_menu.h) method.
 
 # Sources
 
