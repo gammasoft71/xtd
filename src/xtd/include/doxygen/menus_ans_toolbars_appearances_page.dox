@@ -1,0 +1,94 @@
+/// @file
+/// @brief Contains menus and tool bars appearances page.
+
+/// @page MenusAndToolbarsAppearancesPage Menus and tool bars appearances
+/// @brief Contains menus and tool bars appearances.
+///
+/// @par Context menu appearance
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::context_menu</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html menus_and_toolbars_context_menu_w.png</td>
+///     <td>@image html menus_and_toolbars_context_menu_m.png</td>
+///     <td>@image html menus_and_toolbars_context_menu_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html menus_and_toolbars_context_menu_wd.png</td>
+///     <td>@image html menus_and_toolbars_context_menu_md.png</td>
+///     <td>@image html menus_and_toolbars_context_menu_gd.png</td>
+///   </tr>
+/// </table>
+///
+/// @par Main menu appearance
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::main_menu</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html menus_and_toolbars_main_menu_w.png</td>
+///     <td>@image html menus_and_toolbars_main_menu_m.png</td>
+///     <td>@image html menus_and_toolbars_main_menu_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html menus_and_toolbars_main_menu_wd.png</td>
+///     <td>@image html menus_and_toolbars_main_menu_md.png</td>
+///     <td>@image html menus_and_toolbars_main_menu_gd.png</td>
+///   </tr>
+/// </table>
+///
+/// @par Status bar appearance
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::status_bar</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html menus_and_toolbars_status_bar_w.png</td>
+///     <td>@image html menus_and_toolbars_status_bar_m.png</td>
+///     <td>@image html menus_and_toolbars_status_bar_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html menus_and_toolbars_status_bar_wd.png</td>
+///     <td>@image html menus_and_toolbars_status_bar_md.png</td>
+///     <td>@image html menus_and_toolbars_status_bar_gd.png</td>
+///   </tr>
+/// </table>
+///
+/// @par Tool bar appearance
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::tool_bar</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html menus_and_toolbars_tool_bar_w.png</td>
+///     <td>@image html menus_and_toolbars_tool_bar_m.png</td>
+///     <td>@image html menus_and_toolbars_tool_bar_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html menus_and_toolbars_tool_bar_wd.png</td>
+///     <td>@image html menus_and_toolbars_tool_bar_md.png</td>
+///     <td>@image html menus_and_toolbars_tool_bar_gd.png</td>
+///   </tr>
+/// </table>
+///
