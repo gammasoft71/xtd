@@ -48,3 +48,25 @@
 ///   </tr>
 /// </table>
 ///
+/// @par Panel appearance
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <td style="width:100px">xtd::forms::panel</td>
+///     <th><b>Windows</b></th>
+///     <th><b>macOS</b></th>
+///     <th><b>Gnome</b></th>
+///   </tr>
+///   <tr>
+///     <td>Light</td>
+///     <td>@image html containers_panel_w.png</td>
+///     <td>@image html containers_panel_m.png</td>
+///     <td>@image html containers_panel_g.png</td>
+///   </tr>
+///   <tr>
+///     <td>Dark</td>
+///     <td>@image html containers_panel_wd.png</td>
+///     <td>@image html containers_panel_md.png</td>
+///     <td>@image html containers_panel_gd.png</td>
+///   </tr>
+/// </table>
+///
