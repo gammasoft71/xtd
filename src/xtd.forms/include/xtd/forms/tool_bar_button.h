@@ -23,7 +23,7 @@ namespace xtd {
     /// xtd::forms
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms  menus_and_toolbars
+    /// @ingroup xtd_forms menus_and_toolbars
     /// @par Examples
     /// The following code example demonstrates the use of xtd::forms::tool_bar_button control.
     /// @include tool_bar.cpp
