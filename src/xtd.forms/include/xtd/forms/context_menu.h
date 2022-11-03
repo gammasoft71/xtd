@@ -20,6 +20,30 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms menus_and_toolbars
+    /// @par Appearance
+    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+    ///   <tr>
+    ///     <th style="width:100px"></th>
+    ///     <th><b>Windows</b></th>
+    ///     <th><b>macOS</b></th>
+    ///     <th><b>Gnome</b></th>
+    ///   </tr>
+    ///   <tr>
+    ///     <th>Light</th>
+    ///     <td>@image html menus_and_toolbars_context_menu_w.png</td>
+    ///     <td>@image html menus_and_toolbars_context_menu_m.png</td>
+    ///     <td>@image html menus_and_toolbars_context_menu_g.png</td>
+    ///   </tr>
+    ///   <tr>
+    ///     <th>Dark</th>
+    ///     <td>@image html menus_and_toolbars_context_menu_wd.png</td>
+    ///     <td>@image html menus_and_toolbars_context_menu_md.png</td>
+    ///     <td>@image html menus_and_toolbars_context_menu_gd.png</td>
+    ///   </tr>
+    /// </table>
+    /// @par Examples
+    /// The following code example demonstrates the use of context menu componant.
+    /// @include context_menu.cpp
     class forms_export_ context_menu : public menu {
     public:
       /// @name Constructors
