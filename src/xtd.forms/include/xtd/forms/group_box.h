@@ -16,6 +16,27 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms containers
+    /// @par Appearance
+    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+    ///   <tr>
+    ///     <th style="width:100px"></th>
+    ///     <th><b>Windows</b></th>
+    ///     <th><b>macOS</b></th>
+    ///     <th><b>Gnome</b></th>
+    ///   </tr>
+    ///   <tr>
+    ///     <th>Light</th>
+    ///     <td>@image html containers_group_box_w.png</td>
+    ///     <td>@image html containers_group_box_m.png</td>
+    ///     <td>@image html containers_group_box_g.png</td>
+    ///   </tr>
+    ///   <tr>
+    ///     <td>Dark</td>
+    ///     <td>@image html containers_group_box_wd.png</td>
+    ///     <td>@image html containers_group_box_md.png</td>
+    ///     <td>@image html containers_group_box_gd.png</td>
+    ///   </tr>
+    /// </table>
     /// @par Examples
     /// The following code example demonstrates the use of group_box container.
     /// @include group_box.cpp
