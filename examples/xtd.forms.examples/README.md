@@ -280,7 +280,7 @@
 * [lcd_label_with_sixteen_segment](others/lcd_label_with_sixteen_segment/README.md) representsthe use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
 * [lcd_label2](others/lcd_label2/README.md) representsthe use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
 * [lcd_label3](others/lcd_label3/README.md) representsthe use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
-* [main_menu_create_standard_items](main_menu_create_standard_items/README.md) demonstrates the use of [xtd::forms::main_menu::create_standard_items](../../src/xtd.forms/include/xtd/forms/main_menu.h) method.
+* [main_menu_create_standard_items](others/main_menu_create_standard_items/README.md) demonstrates the use of [xtd::forms::main_menu::create_standard_items](../../src/xtd.forms/include/xtd/forms/main_menu.h) method.
 * [painting](others/painting/README.md) demonstrates the use of xtd::forms::form, xtd::forms::panel, [xtd::forms::track_bar](../../src/xtd.forms/include/xtd/forms/track_bar.h) and [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) controls with mouse_down, mouse_move and paint events..
 * [screen_informations](others/screen_informations/README.md) shows how to get screen information of [xtd::forms::screen](../../src/xtd_forms/include/xtd/forms/screen.h) control.
 * [settings2](others/settings_example2/README.md) represents settings application.
