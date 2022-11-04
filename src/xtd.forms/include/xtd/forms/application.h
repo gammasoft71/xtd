@@ -274,8 +274,8 @@ namespace xtd {
       static void enable_menu_images();
       
       /// @brief Enables system control for the application.
-      /// @remarks By default, xtd uses the standard control (xtd::form::control_appearance::standard) with this method you can change to force the use of system control (xtd::form::control_appearance::system) instead.
-      /// @remarks You can always change the appearance of the control on the fly with the xtd::form::control::control_appearance method.
+      /// @remarks By default, xtd uses the standard control (xtd::forms::control_appearance::standard) with this method you can change to force the use of system control (xtd::forms::control_appearance::system) instead.
+      /// @remarks You can always change the appearance of the control on the fly with the xtd::forms::control::control_appearance method.
       static void enable_system_controls();
       
       /// @brief Enables system font size for the application.

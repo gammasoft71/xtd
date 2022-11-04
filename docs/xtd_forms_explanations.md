@@ -342,11 +342,11 @@ The creation of a control is done in several steps and exchanges between the dif
 
 ##### Sequence diagram of the creation of a control
 
-The following sequence diagram shows the creation of an [xtd::form::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h).
+The following sequence diagram shows the creation of an [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h).
 
 ![image](pictures/diagrams/uml/xtd_forms/form_creation.png)
 
-The following sequence diagram shows the creation of an [xtd::form::button](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/button=;h).
+The following sequence diagram shows the creation of an [xtd::forms::button](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/button=;h).
 
 ![image](pictures/diagrams/uml/xtd_forms/control_creation.png)
 

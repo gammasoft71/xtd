@@ -178,7 +178,7 @@ The file will be named to *form_closed_event_handler.h*.
 **✔️ DO** Use two space for indentation. 
 
 ```c++
-class my_control : public xtd::form::control {
+class my_control : public xtd::forms::control {
 public:
   my_control() = default;
   my_control(const my_control&) = default;
@@ -212,7 +212,7 @@ public:
 **✔️ DO** Organize properties, events, methods and member in alphabetic order.
 
 ```c++
-class my_control : public xtd::form::control {
+class my_control : public xtd::forms::control {
 public:
   my_control() = default;
   my_control(const my_control&) = default;

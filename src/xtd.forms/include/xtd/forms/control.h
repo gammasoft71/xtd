@@ -617,8 +617,8 @@ namespace xtd {
       
       /// @brief Gets the position of the mouse cursor in screen coordinates.
       /// @return A xtd::drawing::point that contains the coordinates of the mouse cursor relative to the upper-left corner of the screen.
-      /// @remarks The xtd::form::control::mouse_position property returns a xtd::drawing::point that represents the mouse cursor position at the time the property was referenced. The coordinates indicate the position on the screen, not relative to the control, and are returned regardless of whether the cursor is positioned over the control. The coordinates of the upper-left corner of the screen are 0,0.
-      /// @remarks The xtd::form::control::mouse_position property is identical to the xtd::forms::cursor::position property.
+      /// @remarks The xtd::forms::control::mouse_position property returns a xtd::drawing::point that represents the mouse cursor position at the time the property was referenced. The coordinates indicate the position on the screen, not relative to the control, and are returned regardless of whether the cursor is positioned over the control. The coordinates of the upper-left corner of the screen are 0,0.
+      /// @remarks The xtd::forms::control::mouse_position property is identical to the xtd::forms::cursor::position property.
       static xtd::drawing::point mouse_position();
       
       /// @brief Gets the native handle that the control is bound to.
