@@ -123,4 +123,3 @@ private:
 };
 
 startup_(form_main);
-
