@@ -73,6 +73,9 @@ namespace xtd {
         /// @return true if dark mode is enabled; otherwise false.
         /// @warning Internal use only
         static bool dark_mode_enabled();
+        /// @brief Disable font size correction for the application.
+        /// @warning Internal use only
+        static void disable_font_size_correction();
         /// @brief Enables button images for the application.
         /// @warning Internal use only
         static void enable_button_images();

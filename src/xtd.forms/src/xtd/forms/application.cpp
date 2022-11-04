@@ -204,6 +204,11 @@ void application::add_message_filter(const imessage_filter& value) {
   message_filters.push_back(const_cast<imessage_filter&>(value));
 }
 
+void application::disable_font_size_correction() {
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_dark_mode() before application::run()"_t, current_stack_frame_);
+  native::application::disable_font_size_correction();
+}
+
 void application::do_events() {
   native::application::do_events();
 }

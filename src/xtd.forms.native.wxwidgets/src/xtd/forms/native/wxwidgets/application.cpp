@@ -53,6 +53,7 @@ void __xtd_macos_enable_light_mode__();
 bool __xtd_macos_dark_mode_enabled__();
 #endif
 extern drawing_native_export_ bool __enable_system_font_size__ ;
+extern bool __enable_font_size_correction__;
 
 using namespace std;
 using namespace std::this_thread;
@@ -100,6 +101,10 @@ bool application::dark_mode_enabled() {
    return __xtd_macos_dark_mode_enabled__();
    #endif
    */
+}
+
+void application::disable_font_size_correction() {
+  __enable_font_size_correction__ = false;
 }
 
 void application::do_events() {

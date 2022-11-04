@@ -10,6 +10,8 @@
 using namespace xtd;
 using namespace xtd::drawing::native;
 
+bool __enable_font_size_correction__ = true;
+
 namespace {
   int32_t dpi() {
     if (!wxTheApp) return 72;
@@ -18,12 +20,14 @@ namespace {
     return dpi.GetHeight();
   }
   
-  float points_to_native_font_correction(float size) {
+  float points_to_native_font_size_correction(float size) {
+    if (!__enable_font_size_correction__) return size;
     if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") return size / dpi() * 96.0f;
     if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix") return size / dpi() * 92.0f;
     return size;
   }
-  float native_font_correction_to_points(float size) {
+  float native_font_size_correction_to_points(float size) {
+    if (!__enable_font_size_correction__) return size;
     if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") return size / 96.0f * dpi();
     if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix") return size / 92.0f * dpi();
     return size;
@@ -32,8 +36,8 @@ namespace {
 
 intptr_t font::create(const ustring& name, float em_size, bool bold, bool italic, bool underline, bool strikeout, uint8_t gdi_char_set, bool gdi_vertical_font) {
   toolkit::initialize(); // Must be first
-  wxFont* font = new wxFont(points_to_native_font_correction(em_size), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, name == ".AppleSystemUIFont" ? L"" : convert_string::to_wstring(name));
-  font->SetPointSize(points_to_native_font_correction(em_size));
+  wxFont* font = new wxFont(points_to_native_font_size_correction(em_size), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, name == ".AppleSystemUIFont" ? L"" : convert_string::to_wstring(name));
+  font->SetPointSize(points_to_native_font_size_correction(em_size));
   font->SetStrikethrough(strikeout);
   return reinterpret_cast<intptr_t>(font);
 }
@@ -61,7 +65,7 @@ void font::get_information(intptr_t font, ustring& name, float& em_size, bool& b
   toolkit::initialize(); // Must be first
   wxFont* wx_font = reinterpret_cast<wxFont*>(font);
   name = wx_font->GetFaceName().c_str().AsWChar();
-  em_size = native_font_correction_to_points(static_cast<float>(wx_font->GetPointSize()));
+  em_size = native_font_size_correction_to_points(static_cast<float>(wx_font->GetPointSize()));
   bold = wx_font->GetWeight() > wxFontWeight::wxFONTWEIGHT_NORMAL;
   italic = wx_font->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL;
   underline = wx_font->GetUnderlined();

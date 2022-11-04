@@ -242,6 +242,12 @@ namespace xtd {
       /// @remarks Use a message filter to prevent specific events from being raised or to perform special operations for an event before it is passed to an event handler. Message filters are unique to a specific thread.
       static void add_message_filter(const imessage_filter& value);
       
+      /// @brief Disable font size correction for the application.
+      /// @remarks By default, xtd corrects the size of fonts on non-Windows operating systems so that they have the same aspect ratio as Windows.
+      /// @remarks If you disable this option, you will use the actual native font size of the operating system.
+      /// @remarks This method has an effect only on non Windows operating system.
+      static void disable_font_size_correction();
+
       /// @brief Processes all Windows messages currently in the message queue.
       /// @remarks When you run a Windows form, it creates the new form, which then waits for events to handle. Each time the form handles an event, it processes all the code associated with that event. All other events wait in the queue. While your code handles the event, your application does not respond. For example, the window does not repaint if another window is dragged on top.
       /// @remarks If you call do_events in your code, your application can handle the other events. For example, if you have a form that adds data to a list_box and add do_events to your code, your form repaints when another window is dragged over it. If you remove do_events from your code, your form will not repaint until the click event handler of the button is finished executing.
@@ -280,6 +286,7 @@ namespace xtd {
 
       /// @brief Enables visual styles for the application.
       /// @remarks This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, enable_visual_styles() must be called before creating any controls in the application; typically, enable_visual_styles() is the first line in the Main function. A separate manifest is not required to enable visual styles when calling enable_visual_styles().
+      /// @remarks This method has an effect only on Windows.
       static void enable_visual_styles();
       
       /// @brief Informs all message pumps that they must terminate, and then closes all application windows after the messages have been processed.
