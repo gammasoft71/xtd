@@ -163,6 +163,7 @@ void link_label::on_mouse_move(const mouse_event_args& e) {
 
 void link_label::on_paint(paint_event_args& e) {
   control::on_paint(e);
+  if (control_appearance() == forms::control_appearance::system) return;
   
   if (double_buffered() && !native::toolkit::is_operating_system_double_buffered())
     e.graphics().clear(back_color());
