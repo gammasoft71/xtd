@@ -47,6 +47,5 @@ namespace examples {
 }
 
 int main() {
-  application::enable_system_controls();
   application::run(examples::form1 {});
 }
