@@ -1,3 +1,4 @@
+#include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/button_base.h"
 #include <xtd/argument_exception.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
@@ -8,6 +9,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 button_base::button_base() {
+  if (application::use_system_controls()) data_->flat_style = xtd::forms::flat_style::system;
   set_auto_size_mode(forms::auto_size_mode::grow_only);
   set_style(control_styles::user_mouse | control_styles::user_paint, control_appearance() == forms::control_appearance::standard);
 }

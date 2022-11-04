@@ -5,12 +5,14 @@
 #include <xtd/forms/native/group_box.h>
 #include <xtd/forms/native/window_styles.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/group_box.h"
 
 using namespace xtd;
 using namespace xtd::forms;
 
 group_box::group_box() {
+  if (application::use_system_controls()) flat_style_ = xtd::forms::flat_style::system;
   control_appearance(forms::control_appearance::system);
   set_auto_size_mode(forms::auto_size_mode::grow_only);
   set_can_focus(false);

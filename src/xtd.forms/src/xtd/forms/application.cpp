@@ -68,7 +68,7 @@ namespace {
   }
 }
 
-
+bool application::use_system_controls_ = false;
 bool application::use_visual_styles_ = false;
 bool application::use_wait_cursor_ = false;
 bool application::message_loop_ = false;
@@ -181,6 +181,10 @@ xtd::ustring application::user_app_data_path() {
  }
  */
 
+bool application::use_system_controls() {
+  return use_system_controls_;
+}
+
 bool application::use_visual_styles() {
   return use_visual_styles_;
 }
@@ -232,9 +236,12 @@ void application::enable_menu_images() {
   native::application::enable_menu_images();
 }
 
+void application::enable_system_controls() {
+  application::use_system_controls_ = true;
+}
+
 void application::enable_system_font_size() {
   if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_visual_styles() before application::run()"_t, current_stack_frame_);
-  application::use_visual_styles_ = true;
   native::application::enable_system_font_size();
 }
 

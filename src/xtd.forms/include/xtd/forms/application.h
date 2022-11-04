@@ -160,10 +160,16 @@ namespace xtd {
        /// @remarks Data stored in this key is part of user profile that is enabled for roaming. A roaming user works on more than one computer in a network. The user profile for a roaming user is kept on a server on the network and is loaded onto a system when the user logs on. For a user profile to be considered for roaming, the operating system must support roaming profiles and it must be enabled.
        static microsoft::win32::registry_key user_app_data_registry();
        */
+
+      /// @brief Gets a value that indicates whether system controls are enabled for the application.
+      /// @return true if system_control are enabled; otherwise, false.
+      /// @remarks The system_controls can be enabled by calling enable_xtd::forms::application::system_controls.
+      static bool use_system_controls();
       
+
       /// @brief Gets a value that indicates whether visual styles are enabled for the application.
       /// @return true if visual styles are enabled; otherwise, false.
-      /// @remarks The visual styles can be enabled by calling enable_visual_styles().
+      /// @remarks The visual styles can be enabled by calling enable_xtd::forms::application::visual_styles.
       static bool use_visual_styles();
       
       /// @brief Gets whether the wait cursor is used for all open forms of the application.
@@ -260,6 +266,11 @@ namespace xtd {
       /// @brief Enables menu images  for the application.
       /// @remarks This method has an effect only on linux.
       static void enable_menu_images();
+      
+      /// @brief Enables system control for the application.
+      /// @remarks By default, xtd uses the standard control (xtd::form::control_appearance::standard) with this method you can change to force the use of system control (xtd::form::control_appearance::system) instead.
+      /// @remarks You can always change the appearance of the control on the fly with the xtd::form::control::control_appearance method.
+      static void enable_system_controls();
       
       /// @brief Enables system font size for the application.
       /// @remarks By default, xtd automatically limits the system font size to 9 points if it is larger than 9.
@@ -383,6 +394,7 @@ namespace xtd {
       static void wm_quit(message& message);
       
       static bool use_visual_styles_;
+      static bool use_system_controls_;
       static bool use_wait_cursor_;
       static bool message_loop_;
       static bool raise_idle_;
