@@ -246,6 +246,7 @@ namespace xtd {
       /// @remarks By default, xtd corrects the size of fonts on non-Windows operating systems so that they have the same aspect ratio as Windows.
       /// @remarks If you disable this option, you will use the actual native font size of the operating system.
       /// @remarks This method has an effect only on non Windows operating system.
+      /// @warning You must call this method before xtd::forms::application::run.
       static void disable_font_size_correction();
 
       /// @brief Processes all Windows messages currently in the message queue.
@@ -257,36 +258,43 @@ namespace xtd {
       
       /// @brief Enables button images for the application.
       /// @remarks This method has an effect only on linux.
+      /// @warning You must call this method before xtd::forms::application::run.
       static void enable_button_images();
       
       /// @brief Enables dark mode for the application.
       /// @remarks By default, the dark mode is enabled automatically if the system is in dark mode.
       /// @remarks xtd::forms::application::enable_dark_mode sets the application in dark mode even if your system is in light mode.
+      /// @warning You must call this method before xtd::forms::application::run.
       static void enable_dark_mode();
       
       /// @brief Enables light mode for the application.
       /// @remarks By default, the light mode is enabled automatically if the system is in light mode.
       /// @remarks xtd::forms::application::enable_light_mode sets the application in light mode even if your system is in dark mode.
+      /// @warning You must call this method before xtd::forms::application::run.
       static void enable_light_mode();
       
       /// @brief Enables menu images  for the application.
       /// @remarks This method has an effect only on linux.
+      /// @warning You must call this method before xtd::forms::application::run.
       static void enable_menu_images();
       
       /// @brief Enables system control for the application.
       /// @remarks By default, xtd uses the standard control (xtd::forms::control_appearance::standard) with this method you can change to force the use of system control (xtd::forms::control_appearance::system) instead.
       /// @remarks You can always change the appearance of the control on the fly with the xtd::forms::control::control_appearance method.
+      /// @warning You must call this method before xtd::forms::application::run.
       static void enable_system_controls();
       
       /// @brief Enables system font size for the application.
       /// @remarks By default, xtd automatically limits the system font size to 9 points if it is larger than 9.
       /// @remarks If you enable this option, you can use the actual font size of the system if it exceeds 9 points and at the same time the default sizes of the different controls will be adapted as well.
       /// @remarks This method has an effect only on Gtk.
+      /// @warning You must call this method before xtd::forms::application::run.
       static void enable_system_font_size();
 
       /// @brief Enables visual styles for the application.
       /// @remarks This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, enable_visual_styles() must be called before creating any controls in the application; typically, enable_visual_styles() is the first line in the Main function. A separate manifest is not required to enable visual styles when calling enable_visual_styles().
       /// @remarks This method has an effect only on Windows.
+      /// @warning You must call this method before xtd::forms::application::run.
       static void enable_visual_styles();
       
       /// @brief Informs all message pumps that they must terminate, and then closes all application windows after the messages have been processed.

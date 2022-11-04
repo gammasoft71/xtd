@@ -205,7 +205,7 @@ void application::add_message_filter(const imessage_filter& value) {
 }
 
 void application::disable_font_size_correction() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_dark_mode() before application::run()"_t, current_stack_frame_);
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::disable_font_size_correction() before application::run()"_t, current_stack_frame_);
   native::application::disable_font_size_correction();
 }
 
@@ -242,11 +242,12 @@ void application::enable_menu_images() {
 }
 
 void application::enable_system_controls() {
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_system_controls() before application::run()"_t, current_stack_frame_);
   application::use_system_controls_ = true;
 }
 
 void application::enable_system_font_size() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_visual_styles() before application::run()"_t, current_stack_frame_);
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_system_font_size() before application::run()"_t, current_stack_frame_);
   native::application::enable_system_font_size();
 }
 
