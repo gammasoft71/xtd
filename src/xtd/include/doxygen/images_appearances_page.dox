@@ -6,7 +6,7 @@
 ///
 /// Shows xtd::drawing::system_images appearance by context on Windows, Linux Gnome and macOS Operating Systems.
 ///
-/// @par "\"Actions\" context"
+/// @section ActionsContext "Actions" context
 ///
 /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
@@ -38,7 +38,7 @@
 ///   </tr>
 /// </table>
 ///
-/// @par "\"Animation\" context"
+/// @section AnimationsContext "Actions" Animations
 ///
 /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
