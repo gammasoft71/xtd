@@ -6,7 +6,7 @@
 ///
 /// Shows xtd::drawing::system_images appearance by context on Windows, Linux Gnome and macOS Operating Systems.
 ///
-/// @par "Actions" context
+/// @par "\"Actions\" context"
 ///
 /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
@@ -19,7 +19,7 @@
 ///     <th><b>Gnome (dark)</b></th>
 ///   </tr>
 ///   <tr>
-///     <td>"accessories-calculator"</td>
+///     <td>"address-book-new"</td>
 ///     <td>@image html system_images_address-book-new_w.png</td>
 ///     <td>@image html system_images_address-book-new_wd.png</td>
 ///     <td>@image html system_images_address-book-new_m.png</td>
@@ -38,7 +38,7 @@
 ///   </tr>
 /// </table>
 ///
-/// @par "Animation" context
+/// @par "\"Animation\" context"
 ///
 /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
@@ -51,7 +51,8 @@
 ///     <th><b>Gnome (dark)</b></th>
 ///   </tr>
 ///   <tr>
-///     <td>"accessories-calculator"</td>
+///     <td>"process-working"</td>
+///     <td>@image html system_images_process-working_w.png</td>
 ///     <td>@image html system_images_process-working_wd.png</td>
 ///     <td>@image html system_images_process-working_m.png</td>
 ///     <td>@image html system_images_process-working_md.png</td>
