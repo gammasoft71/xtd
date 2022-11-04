@@ -4,7 +4,7 @@
 /// @page ImagesAppearancesPage Images appearances
 /// @brief Contains images appearances.
 ///
-/// Shows xtd::drawing::system_images appearance by context on Windows, Linux Gnome and macOS Operating Systems.
+/// Shows xtd::forms::images appearance by context on Windows, Linux Gnome and macOS Operating Systems.
 ///
 /// @section ActionsContext "Actions" context
 ///
