@@ -15,14 +15,25 @@ using namespace xtd;
 using namespace xtd::forms;
 
 loading_indicator::loading_indicator() {
+  if (control_appearance() == forms::control_appearance::system) loading_indicator_style_ = loading_indicator_style::system;
   set_can_focus(false);
   timer_.interval_milliseconds(interval_);
   timer_.tick += {*this, &loading_indicator::on_timer_tick};
 }
 
+control& loading_indicator::control_appearance(forms::control_appearance value) {
+  control::control_appearance(value);
+  if (value == forms::control_appearance::system && loading_indicator_style_ != loading_indicator_style::system)
+    loading_indicator_style(loading_indicator_style::system);
+  else if (value == forms::control_appearance::standard && loading_indicator_style_ == loading_indicator_style::system)
+    loading_indicator_style(loading_indicator_style::standard);
+  return *this;
+}
+
 loading_indicator& loading_indicator::loading_indicator_style(xtd::forms::loading_indicator_style loading_indicator_style) {
   if (loading_indicator_style_ != loading_indicator_style) {
     loading_indicator_style_ = loading_indicator_style;
+    control_appearance(loading_indicator_style_ == loading_indicator_style::system ? forms::control_appearance::system : forms::control_appearance::standard);
     post_recreate_handle();
   }
   return *this;
