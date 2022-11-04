@@ -38,6 +38,7 @@ namespace xtd {
           } else
             control_handler::create<wxToggleButton>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption)), wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()));
           SetSize(create_params.size.width(), create_params.size.height());
+          SetPosition({create_params.location.x(), create_params.location.y()});
           #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
