@@ -1,0 +1,28 @@
+/// @file
+/// @brief Contains images appearances page.
+
+/// @page ImagesAppearancesPage Images appearances
+/// @brief Contains images appearances.
+///
+/// Shows xtd::drawing::system_images appearance on Windows, Linux Gnome and macOS Operating Systems.
+///
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <th><b>Name</b></th>
+///     <th><b>Windows (light)</b></th>
+///     <th><b>Windows (dark)</b></th>
+///     <th><b>macOS (light)</b></th>
+///     <th><b>macOS (dark)</b></th>
+///     <th><b>Gnome (light)</b></th>
+///     <th><b>Gnome (dark)</b></th>
+///   </tr>
+///   <tr>
+///     <td>"accessories-calculator"</td>
+///     <td>@image html system_images_accessories-calculator_w.png</td>
+///     <td>@image html system_images_accessories-calculator_wd.png</td>
+///     <td>@image html system_images_accessories-calculator_m.png</td>
+///     <td>@image html system_images_accessories-calculator_md.png</td>
+///     <td>@image html system_images_accessories-calculator_g.png</td>
+///     <td>@image html system_images_accessories-calculator_gd.png</td>
+///   </tr>
+/// </table>
