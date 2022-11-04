@@ -8,7 +8,7 @@
 ///
 /// @section ActionsContext "Actions" context
 ///
-/// < table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
 ///     <th><b>Name</b></th>
 ///     <th><b>Windows (light)</b></th>
@@ -1102,7 +1102,7 @@
 ///
 /// @section AnimationsContext "Animations" context
 ///
-/// < table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
 ///     <th><b>Name</b></th>
 ///     <th><b>Windows (light)</b></th>
@@ -1125,7 +1125,7 @@
 ///
 /// @section ApplicationsContext "Applications" context
 ///
-/// < table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
 ///     <th><b>Name</b></th>
 ///     <th><b>Windows (light)</b></th>
@@ -1310,7 +1310,7 @@
 ///
 /// @section CategoriesContext "Categories" context
 ///
-/// < table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
 ///     <th><b>Name</b></th>
 ///     <th><b>Windows (light)</b></th>
@@ -1495,7 +1495,7 @@
 ///
 /// @section DevicesContext "Devices" context
 ///
-/// < table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
 ///     <th><b>Name</b></th>
 ///     <th><b>Windows (light)</b></th>
@@ -1833,7 +1833,7 @@
 ///
 /// @section EmblemsContext "Emblems" context
 ///
-/// < table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
 ///     <th><b>Name</b></th>
 ///     <th><b>Windows (light)</b></th>
@@ -1991,7 +1991,7 @@
 ///
 /// @section EmotesContext "Emotes" context
 ///
-/// < table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
 ///     <th><b>Name</b></th>
 ///     <th><b>Windows (light)</b></th>
@@ -2194,7 +2194,7 @@
 ///
 /// @section MimeTypesContext "MimeTypes" context
 ///
-/// < table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
 ///     <th><b>Name</b></th>
 ///     <th><b>Windows (light)</b></th>
@@ -2352,7 +2352,7 @@
 ///
 /// @section PlacesContext "Places" context
 ///
-/// < table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
 ///     <th><b>Name</b></th>
 ///     <th><b>Windows (light)</b></th>
@@ -2681,7 +2681,7 @@
 ///
 /// @section StatusContext "Status" context
 ///
-/// < table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
 ///     <th><b>Name</b></th>
 ///     <th><b>Windows (light)</b></th>
@@ -3208,7 +3208,7 @@
 ///
 /// @section xtdContext "xtd" context
 ///
-/// < table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
 ///     <th><b>Name</b></th>
 ///     <th><b>Windows (light)</b></th>
