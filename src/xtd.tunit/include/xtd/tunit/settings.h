@@ -4,6 +4,8 @@
 #pragma once
 #include "../tunit_export.h"
 #include <xtd/date_time.h>
+#include <xtd/environment.h>
+#include <xtd/io/path.h>
 #include <cstdlib>
 #include <string>
 
@@ -155,7 +157,8 @@ namespace xtd {
 
     private:
       friend class unit_test;
-      
+      friend class ostream_unit_test;
+
       bool pattern_compare(const std::string& name, const std::string& pattern) const noexcept {
         if (pattern == "") return name == "";
         if (name == "") return false;
@@ -170,10 +173,12 @@ namespace xtd {
       bool also_run_ignored_tests_ = false;
       std::string filter_tests_ = "*.*";
       int exit_status_ = EXIT_SUCCESS;
+      bool gtest_compatibility_ = false;
       bool list_tests_ = false;
       bool output_color_ = true;
       bool output_xml_;
       std::string output_xml_path_ = "tests.xml";
+      std::string file_name_ = xtd::io::path::get_full_path(xtd::environment::get_command_line_args()[0]);
       bool show_duration_ = true;
       bool shuffle_tests_ = false;
       unsigned int random_seed_ = 0;
