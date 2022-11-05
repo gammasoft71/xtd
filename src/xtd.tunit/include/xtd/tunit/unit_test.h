@@ -201,23 +201,42 @@ namespace xtd {
       }
       
       virtual bool parse_arguments(const std::vector<std::string>& args) {
+        bool gtest_compatibility = false;
         for (auto arg : args) {
-          if (arg == "--also_run_ignored_tests") xtd::tunit::settings::default_settings().also_run_ignored_tests(true);
+          if (arg.find("--gtest") == 0) gtest_compatibility = true;
+          // Test selection :
+          if (arg == "--list_tests") xtd::tunit::settings::default_settings().list_tests(true);
+          else if (arg == "--gtest_list_tests") xtd::tunit::settings::default_settings().list_tests(true);
           else if (arg.find("--filter_tests=") == 0) xtd::tunit::settings::default_settings().filter_tests(arg.substr(15));
-          else if (arg == "--list_tests") xtd::tunit::settings::default_settings().list_tests(true);
+          else if (arg.find("--gtest_filter=") == 0) xtd::tunit::settings::default_settings().filter_tests(arg.substr(15));
+          else if (arg == "--also_run_ignored_tests") xtd::tunit::settings::default_settings().also_run_ignored_tests(true);
+          else if (arg == "--gtest_also_run_disabled_tests") xtd::tunit::settings::default_settings().also_run_ignored_tests(true);
+          // Test execution:
+          else if (arg.find("--repeat_tests=") == 0) xtd::tunit::settings::default_settings().repeat_tests(convert::to_int32(arg.substr(15)));
+          else if (arg.find("--gtest_repeat=") == 0) xtd::tunit::settings::default_settings().repeat_tests(convert::to_int32(arg.substr(15)));
+          else if (arg == "--shuffle_tests") xtd::tunit::settings::default_settings().shuffle_test(true);
+          else if (arg == "--gtest_shuffle") xtd::tunit::settings::default_settings().shuffle_test(true);
+          else if (arg.find("--random_seed=") == 0) xtd::tunit::settings::default_settings().random_seed(convert::to_uint32(arg.substr(14)));
+          else if (arg.find("--gtest_random_seed=") == 0) xtd::tunit::settings::default_settings().random_seed(convert::to_uint32(arg.substr(20)));
+          else if (arg == "--enable_stack_trace=true") xtd::tunit::settings::default_settings().enable_stack_trace(true);
+          else if (arg == "--enable_stack_trace=false") xtd::tunit::settings::default_settings().enable_stack_trace(false);
+          // Test output
           else if (arg == "--output_color=true") xtd::tunit::settings::default_settings().output_color(true);
+          else if (arg == "--gtest_color=auto" || arg == "--gtest_color=yes") xtd::tunit::settings::default_settings().output_color(true);
           else if (arg == "--output_color=false") xtd::tunit::settings::default_settings().output_color(false);
+          else if (arg == "--gtest_color=no") xtd::tunit::settings::default_settings().output_color(false);
+          else if (arg == "--show_duration=true") xtd::tunit::settings::default_settings().show_duration(true);
+          else if (arg == "--show_duration=false") xtd::tunit::settings::default_settings().show_duration(false);
+          else if (arg == "--gtest_print_time=0") xtd::tunit::settings::default_settings().show_duration(false);
           else if (arg.find("--output_xml") == 0) {
             xtd::tunit::settings::default_settings().output_xml(true);
             if (arg[12] == '=') xtd::tunit::settings::default_settings().output_xml_path(arg.substr(13));
-          } else if (arg.find("--random_seed=") == 0) xtd::tunit::settings::default_settings().random_seed(convert::to_uint32(arg.substr(14)));
-          else if (arg == "--enable_stack_trace=true") xtd::tunit::settings::default_settings().enable_stack_trace(true);
-          else if (arg == "--enable_stack_trace=false") xtd::tunit::settings::default_settings().enable_stack_trace(false);
-          else if (arg.find("--repeat_tests=") == 0) xtd::tunit::settings::default_settings().repeat_tests(convert::to_int32(arg.substr(15)));
-          else if (arg == "--show_duration=true") xtd::tunit::settings::default_settings().show_duration(true);
-          else if (arg == "--show_duration=false") xtd::tunit::settings::default_settings().show_duration(false);
-          else if (arg == "--shuffle_tests") xtd::tunit::settings::default_settings().shuffle_test(true);
+          } else if (arg.find("--gtest_output=xml") == 0) {
+            xtd::tunit::settings::default_settings().output_xml(true);
+            if (arg[18] == ':') xtd::tunit::settings::default_settings().output_xml_path(arg.substr(19));
+          }
         }
+        xtd::tunit::settings::default_settings().gtest_compatibility_ = gtest_compatibility;
         return false;
       }
       
@@ -281,9 +300,19 @@ namespace xtd {
       std::string message_to_string(const xtd::tunit::test& test) {
         std::stringstream ss;
         if (test.stack_frame() != xtd::diagnostics::stack_frame::empty())
-          ss << test.stack_frame().get_file_name() << ":" << test.stack_frame().get_file_line_number() << "&#0x0A;";
-        ss << "Expected: " << test.expect() << "&#0x0A;";
+          ss << test.stack_frame().get_file_name() << ":" << test.stack_frame().get_file_line_number() << "&#x0A;";
+        ss << "Expected: " << test.expect() << "&#x0A;";
         ss << "But was : " << test.actual();
+        return ss.str();
+      }
+      
+      std::string message_to_gtest_string(const xtd::tunit::test& test) {
+        std::stringstream ss;
+        if (test.stack_frame() != xtd::diagnostics::stack_frame::empty())
+          ss << test.stack_frame().get_file_name() << ":" << test.stack_frame().get_file_line_number() << "&#x0A;";
+        ss << "Value of: " << test.actual() << "&#x0A;";
+        ss << "  Actual: " << test.actual() << "&#x0A;";
+        ss << "Expected: " << test.expect();
         return ss.str();
       }
       
@@ -296,11 +325,21 @@ namespace xtd {
         return ss.str();
       }
       
+      std::string cdata_message_to_gtest_string(const xtd::tunit::test& test) {
+        std::stringstream ss;
+        if (test.stack_frame() != xtd::diagnostics::stack_frame::empty())
+          ss << test.stack_frame().get_file_name() << ":" << test.stack_frame().get_file_line_number() << std::endl;
+        ss << "Value of: " << test.actual() << std::endl;
+        ss << "  Actual: " << test.actual() << std::endl;
+        ss << "Expected: " << test.expect();
+        return ss.str();
+      }
+      
       void write_xml() {
-        if (xtd::tunit::settings::default_settings().output_xml()) {
+        if (xtd::tunit::settings::default_settings().output_xml() && !xtd::tunit::settings::default_settings().gtest_compatibility_) {
           std::fstream file(xtd::tunit::settings::default_settings().output_xml_path(), std::ios::out | std::ios::trunc);
           file << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" << std::endl;
-          file << "<testsuites tests=\"" << test_count() << "\" failures=\"" << failed_test_count() << "\" disabled=\"" << ignored_test_count() << "\" errors=\"" << 0 << "\" timestamp=\"" << xtd::tunit::settings::default_settings().start_time().to_string() << "\" time=\"" << to_string(elapsed_time()) << "\" name=\"" << name_ << "\">" << std::endl;
+          file << "<testsuites tests=\"" << test_count() << "\" failures=\"" << failed_test_count() << "\" disabled=\"" << ignored_test_count() << "\" errors=\"" << 0 << "\" time=\"" << to_string(elapsed_time()) << "\" timestamp=\"" << xtd::tunit::settings::default_settings().start_time().to_string("s") << "\" name=\"" << name_ << "\">" << std::endl;
           for (auto& test_class : test_classes()) {
             file << "  <testsuite name=\"" << test_class.test()->name() << "\" tests=\"" << test_class.test()->test_count() << "\" failures=\"" << test_class.test()->failed_test_count() << "\" disabled=\"" << test_class.test()->ignored_test_count() << "\" error=\"" << test_class.test()->failed_test_count() << "\" time=\"" << to_string(test_class.test()->elapsed_time()) << "\">" << std::endl;
             for (auto& test : test_class.test()->tests()) {
@@ -309,7 +348,27 @@ namespace xtd {
                 file << " />" << std::endl;
               else {
                 file << ">" << std::endl;
-                file << "      <failure message=\"" << message_to_string(test) << "\" type= \"" << "\">" << "<![CDATA[" << cdata_message_to_string(test) << "]]></failure>" << std::endl;
+                file << "      <failure message=\"" << message_to_string(test) << "\" type=\"" << "\">" << "<![CDATA[" << cdata_message_to_string(test) << "]]></failure>" << std::endl;
+                file << "    </testcase>" << std::endl;
+              }
+            }
+            file << "  </testsuite>" << std::endl;
+          }
+          file << "</testsuites>" << std::endl;
+          file.close();
+        } else if (xtd::tunit::settings::default_settings().output_xml() && xtd::tunit::settings::default_settings().gtest_compatibility_) {
+          std::fstream file(xtd::tunit::settings::default_settings().output_xml_path(), std::ios::out | std::ios::trunc);
+          file << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" << std::endl;
+          file << "<testsuites tests=\"" << test_count() << "\" failures=\"" << failed_test_count() << "\" disabled=\"" << ignored_test_count() << "\" errors=\"" << 0 << "\" time=\"" << to_string(elapsed_time()) << "\" timestamp=\"" << xtd::tunit::settings::default_settings().start_time().to_string("S") << "\" name=\"" << name_ << "\">" << std::endl;
+          for (auto& test_class : test_classes()) {
+            file << "  <testsuite name=\"" << ustring(test_class.test()->name()).replace('<', '_').replace('>', '_') << "\" tests=\"" << test_class.test()->test_count() << "\" failures=\"" << test_class.test()->failed_test_count() << "\" disabled=\"" << test_class.test()->ignored_test_count() << "\" skipped=\"" << 0 << "\" error=\"" << test_class.test()->failed_test_count() << "\" time=\"" << to_string(test_class.test()->elapsed_time()) << "\" timestamp=\"" << xtd::tunit::settings::default_settings().start_time().to_string("S") << "\">" << std::endl;
+            for (auto& test : test_class.test()->tests()) {
+              file << "    <testcase name=\"" << test.name() << "\" file=\"" << test.stack_frame().get_file_name() << "\" line=\"" << test.stack_frame().get_file_line_number() << "\" status=\"" << status_to_string(test) << "\" result=\"" << (test.ignored() ? "suppressed" : "completed") << "\" time=\"" << to_string(test.elapsed_time()) << "\" timestamp=\"" << xtd::tunit::settings::default_settings().start_time().to_string("S") << "\" classname=\"" << ustring(test_class.test()->name()).replace('<', '_').replace('>', '_') << "\"";
+              if (!test.failed())
+                file << " />" << std::endl;
+              else {
+                file << ">" << std::endl;
+                file << "      <failure message=\"" << message_to_gtest_string(test) << "\" type=\"" << "\">" << "<![CDATA[" << cdata_message_to_gtest_string(test) << "]]></failure>" << std::endl;
                 file << "    </testcase>" << std::endl;
               }
             }
@@ -318,6 +377,7 @@ namespace xtd {
           file << "</testsuites>" << std::endl;
           file.close();
         }
+
       }
       
       std::vector<std::string> arguments;
