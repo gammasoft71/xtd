@@ -64,7 +64,13 @@ string file_system::get_full_path(const string& relative_path) {
   
   if (relative_path[relative_path.size() - 1] == path::directory_separator_char())
     full_path += path::directory_separator_char();
-    
+ 
+  auto index = native::unix::strings::last_index_of(full_path, "/./");
+  while (index != full_path.npos) {
+    full_path = native::unix::strings::remove(full_path, index, 2);
+    index = native::unix::strings::last_index_of(full_path, "/./");
+  }
+  
   return full_path;
 }
 
