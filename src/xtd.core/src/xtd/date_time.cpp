@@ -464,6 +464,7 @@ ustring date_time::to_string(const ustring& format) const {
     case 'p': return ustring::format("{:D2}", minute);
     case 'P': return ustring::format("{}", minute);
     case 's': return ustring::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D7}", year, month, day, hour, minute, second, value_.count() % ticks_per_second);
+    case 'S': return ustring::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D3}", year, month, day, hour, minute, second, value_.count() % ticks_per_second / 10000);
     case 't': return ustring::format("{:D2}:{:D2}:{:D2}", hour, minute, second);
     case 'T': return ustring::format("{:D}:{:D2}:{:D2}", hour, minute, second);
     case 'u': return ustring::format("{:D}-{:D2}-{:D2} {:D2}:{:D2}:{:D2}", year, month, day, hour, minute, second);
