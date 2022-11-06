@@ -360,6 +360,7 @@ namespace xtd {
         file << "  \"errors\": " << 0  << ","<< std::endl;
         file << "  \"timestamp\": \"" << xtd::tunit::settings::default_settings().start_time().to_string("S") << "\"," << std::endl;
         file << "  \"time\": \"" << to_string(elapsed_time()) << "\"," << std::endl;
+        file << "  \"name\": \"" << name_ << "\"," << std::endl;
         file << "  \"testsuites\": [" << std::endl;
  
         for (auto& test_class : test_classes()) {
@@ -435,6 +436,7 @@ namespace xtd {
         file << "  \"errors\": " << 0  << ","<< std::endl;
         file << "  \"timestamp\": \"" << xtd::tunit::settings::default_settings().start_time().to_string("S") << "\"," << std::endl;
         file << "  \"time\": \"" << to_string(elapsed_time()) << "\"," << std::endl;
+        file << "  \"name\": \"" << name_ << "\"," << std::endl;
         file << "  \"testsuites\": [" << std::endl;
  
         for (auto& test_class : test_classes()) {
