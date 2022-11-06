@@ -14,7 +14,7 @@ void test_class::run(const unit_test& unit_test) {
   
   unit_test.event_listener_->on_class_start(xtd::tunit::class_event_args(*this, unit_test));
   
-  start_time_point = date_time::now();
+  start_time_ = date_time::now();
   for (auto& test_method : tests_)
     test_method.run(unit_test, *this);
   end_time_point = date_time::now();

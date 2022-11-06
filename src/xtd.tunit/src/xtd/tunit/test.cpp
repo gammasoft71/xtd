@@ -33,7 +33,7 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
       
       unit_test.event_listener_->on_test_start(xtd::tunit::test_event_args(*this, test_class, unit_test));
       try {
-        start_time_point = date_time::now();
+        start_time_ = date_time::now();
         method()();
         end_time_point = date_time::now();
         if (not_started()) status_ = test_status::succeed;

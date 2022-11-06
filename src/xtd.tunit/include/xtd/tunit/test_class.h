@@ -33,9 +33,9 @@ namespace xtd {
       
       std::chrono::milliseconds elapsed_time() const noexcept {
         using namespace std::chrono_literals;
-        if (start_time_point.ticks() == 0ms && end_time_point.ticks() == 0ms) return 0ms;
-        if (end_time_point.ticks() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>((date_time::now() - start_time_point).ticks());
-        return std::chrono::duration_cast<std::chrono::milliseconds>((end_time_point - start_time_point).ticks());
+        if (start_time_.ticks() == 0ms && end_time_point.ticks() == 0ms) return 0ms;
+        if (end_time_point.ticks() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>((date_time::now() - start_time_).ticks());
+        return std::chrono::duration_cast<std::chrono::milliseconds>((end_time_point - start_time_).ticks());
       }
       
       std::string name() const noexcept {return name_;}
@@ -75,6 +75,8 @@ namespace xtd {
         return count;
       }
       
+      const xtd::date_time& start_time() const noexcept {return start_time_;}
+
       const std::vector<xtd::tunit::test>& tests() const noexcept {return tests_;}
       
     protected:
@@ -110,7 +112,7 @@ namespace xtd {
       xtd::tunit::test class_initialize_;
       xtd::date_time end_time_point;
       std::string name_;
-      xtd::date_time start_time_point;
+      xtd::date_time start_time_;
       xtd::tunit::test test_cleanup_;
       xtd::tunit::test test_initialize_;
       std::vector<xtd::tunit::test> tests_;

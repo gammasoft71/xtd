@@ -51,6 +51,8 @@ namespace xtd {
       
       const xtd::diagnostics::stack_frame stack_frame() const noexcept {return stack_frame_;}
       
+      const xtd::date_time& start_time() const noexcept {return start_time_;}
+      
       std::function<void()> method() const noexcept {return method_;}
       
       const std::string& message() const noexcept {return message_;}
@@ -61,9 +63,9 @@ namespace xtd {
       
       std::chrono::milliseconds elapsed_time() const noexcept {
         using namespace std::chrono_literals;
-        if (start_time_point.ticks() == 0ms && end_time_point.ticks() == 0ms) return 0ms;
-        if (end_time_point.ticks() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>((date_time::now() - start_time_point).ticks());
-        return std::chrono::duration_cast<std::chrono::milliseconds>((end_time_point - start_time_point).ticks());
+        if (start_time_.ticks() == 0ms && end_time_point.ticks() == 0ms) return 0ms;
+        if (end_time_point.ticks() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>((date_time::now() - start_time_).ticks());
+        return std::chrono::duration_cast<std::chrono::milliseconds>((end_time_point - start_time_).ticks());
       }
       
       /// @cond
@@ -91,7 +93,7 @@ namespace xtd {
       std::string message_;
       std::function<void()> method_;
       std::string name_;
-      xtd::date_time start_time_point;
+      xtd::date_time start_time_;
       test_status status_ = test_status::not_started;
       std::string user_message_;
     };
