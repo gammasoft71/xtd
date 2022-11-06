@@ -16,9 +16,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms controls
-    /// @par Examples
-    /// The following code example demonstrates the use of loading indicator control.
-    /// @include loading_indicator.cpp
     /// @par Appearance
     /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
     ///   <tr>
@@ -41,8 +38,8 @@ namespace xtd {
     ///   </tr>
     /// </table>
     /// @par Examples
-    /// The following code example demonstrates the use of loading_indicator control.
-    /// @include hello_world_loading_indicator.cpp
+    /// The following code example demonstrates the use of loading indicator control.
+    /// @include loading_indicator.cpp
     class forms_export_ loading_indicator : public control {
     public:
       /// @name Constructors
