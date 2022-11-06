@@ -100,11 +100,16 @@ namespace xtd {
         
         xtd::tunit::settings::default_settings().end_time(xtd::date_time::now());
         
+        if (xtd::tunit::settings::default_settings().output_json()) {
+          if (xtd::tunit::settings::default_settings().gtest_compatibility_) write_gtest_json();
+          else write_json();
+        }
+        
         if (xtd::tunit::settings::default_settings().output_xml()) {
           if (xtd::tunit::settings::default_settings().gtest_compatibility_) write_gtest_xml();
           else write_xml();
         }
-        
+
         return xtd::tunit::settings::default_settings().exit_status();
       }
       
@@ -232,9 +237,15 @@ namespace xtd {
           else if (arg == "--show_duration=true") xtd::tunit::settings::default_settings().show_duration(true);
           else if (arg == "--show_duration=false") xtd::tunit::settings::default_settings().show_duration(false);
           else if (arg == "--gtest_print_time=0") xtd::tunit::settings::default_settings().show_duration(false);
-          else if (arg.find("--output_xml") == 0) {
+          else if (arg.find("--output=json") == 0) {
+            xtd::tunit::settings::default_settings().output_json(true);
+            if (arg[12] == ':') xtd::tunit::settings::default_settings().output_json_path(arg.substr(13));
+          } else if (arg.find("--gtest_output=json") == 0) {
+            xtd::tunit::settings::default_settings().output_json(true);
+            if (arg[18] == ':') xtd::tunit::settings::default_settings().output_json_path(arg.substr(19));
+          } else if (arg.find("--output=xml") == 0) {
             xtd::tunit::settings::default_settings().output_xml(true);
-            if (arg[12] == '=') xtd::tunit::settings::default_settings().output_xml_path(arg.substr(13));
+            if (arg[12] == ':') xtd::tunit::settings::default_settings().output_xml_path(arg.substr(13));
           } else if (arg.find("--gtest_output=xml") == 0) {
             xtd::tunit::settings::default_settings().output_xml(true);
             if (arg[18] == ':') xtd::tunit::settings::default_settings().output_xml_path(arg.substr(19));
@@ -339,25 +350,56 @@ namespace xtd {
         return ss.str();
       }
       
-      void write_xml() {
-        std::fstream file(xtd::tunit::settings::default_settings().output_xml_path(), std::ios::out | std::ios::trunc);
-        file << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" << std::endl;
-        file << "<testsuites tests=\"" << test_count() << "\" failures=\"" << failed_test_count() << "\" disabled=\"" << ignored_test_count() << "\" errors=\"" << 0 << "\" time=\"" << to_string(elapsed_time()) << "\" timestamp=\"" << xtd::tunit::settings::default_settings().start_time().to_string("s") << "\" name=\"" << name_ << "\">" << std::endl;
+      void write_gtest_json() {
+        std::fstream file(xtd::tunit::settings::default_settings().output_json_path(), std::ios::out | std::ios::trunc);
+        
+        file << "{" << std::endl;
+        file << "  \"tests\": " << test_count() << "," << std::endl;
+        file << "  \"failures\": " << failed_test_count() << "," << std::endl;
+        file << "  \"disabled\": " << ignored_test_count() << "," << std::endl;
+        file << "  \"errors\": " << 0  << ","<< std::endl;
+        file << "  \"timestamp\": \"" << xtd::tunit::settings::default_settings().start_time().to_string("S") << "\"," << std::endl;
+        file << "  \"time\": \"" << to_string(elapsed_time()) << "\"," << std::endl;
+        file << "  \"testsuites\": [" << std::endl;
+ 
         for (auto& test_class : test_classes()) {
-          file << "  <testsuite name=\"" << test_class.test()->name() << "\" tests=\"" << test_class.test()->test_count() << "\" failures=\"" << test_class.test()->failed_test_count() << "\" disabled=\"" << test_class.test()->ignored_test_count() << "\" errors=\"" << 0 << "\" time=\"" << to_string(test_class.test()->elapsed_time()) << "\">" << std::endl;
+          file << "    {" << std::endl;
+          file << "      \"name\": \"" << ustring(test_class.test()->name()).replace('<', '_').replace('>', '_') << "\"," << std::endl;
+          file << "      \"tests\": " << test_class.test()->test_count() << "," << std::endl;
+          file << "      \"failures\": " << test_class.test()->failed_test_count() << "," << std::endl;
+          file << "      \"disabled\": " << test_class.test()->ignored_test_count() << "," << std::endl;
+          file << "      \"errors\": " << 0 << "," << std::endl;
+          file << "      \"timestamp\": \"" << test_class.test()->start_time().to_string("S") << "\"," << std::endl;
+          file << "      \"time\": \"" << to_string(test_class.test()->elapsed_time()) << "\"," << std::endl;
+          file << "      \"testsuite\": [" << std::endl;
+
           for (auto& test : test_class.test()->tests()) {
-            file << "    <testcase name=\"" << test.name() << "\" status=\"" << status_to_string(test) << "\" time=\"" << to_string(test.elapsed_time()) << "\" classname=\"" << test_class.test()->name() << "\"";
-            if (!test.failed())
-              file << " />" << std::endl;
-            else {
-              file << ">" << std::endl;
-              file << "      <failure message=\"" << message_to_string(test) << "\" type=\"" << "\">" << "<![CDATA[" << cdata_message_to_string(test) << "]]></failure>" << std::endl;
-              file << "    </testcase>" << std::endl;
+            file << "        {" << std::endl;
+            file << "          \"name\": \"" << (test.ignored() ? "DISABLED_" : "") << test.name() << "\"," << std::endl;
+            file << "          \"file\": \"" << test.stack_frame().get_file_name() << "\"," << std::endl;
+            file << "          \"line\": " << test.stack_frame().get_file_line_number() << "," << std::endl;
+            file << "          \"status\": \"" << ustring(status_to_string(test)).to_upper() << "\"," << std::endl;
+            file << "          \"result\": \"" << (test.ignored() ? "SUPPRESSED" : "COMPLETED") << "\"," << std::endl;
+            file << "          \"timestamp\": \"" << test.start_time().to_string("S") << "\"," << std::endl;
+            file << "          \"time\": \"" << to_string(test.elapsed_time()) << "\"," << std::endl;
+            file << "          \"classname\": \"" << ustring(test_class.test()->name()).replace('<', '_').replace('>', '_') << "\"," << std::endl;
+            if (test.failed()) {
+              file << "          \"failures\": [" << std::endl;
+              file << "            {" << std::endl;
+              file << "              \"failure\": \"" << test.stack_frame().get_file_name() << ":" << test.stack_frame().get_file_line_number() << "\\n" << "Value of: " << test.actual() << "\\n" << "  Actual: " << test.actual() << "\\n" << "Expected: " << test.expect() <<"\"" << std::endl;
+              file << "              \"type\": \"\"" << std::endl;
+              file << "            }" << std::endl;
+              file << "          ]" << std::endl;
             }
+            file << "        }," << std::endl;
           }
-          file << "  </testsuite>" << std::endl;
+          file << "      ]" << std::endl;
+          file << "    }," << std::endl;
         }
-        file << "</testsuites>" << std::endl;
+
+        file << "  ]" << std::endl;
+        file << "}" << std::endl;
+
         file.close();
       }
       
@@ -374,6 +416,80 @@ namespace xtd {
             else {
               file << ">" << std::endl;
               file << "      <failure message=\"" << message_to_gtest_string(test) << "\" type=\"" << "\">" << "<![CDATA[" << cdata_message_to_gtest_string(test) << "]]></failure>" << std::endl;
+              file << "    </testcase>" << std::endl;
+            }
+          }
+          file << "  </testsuite>" << std::endl;
+        }
+        file << "</testsuites>" << std::endl;
+        file.close();
+      }
+      
+      void write_json() {
+        std::fstream file(xtd::tunit::settings::default_settings().output_json_path(), std::ios::out | std::ios::trunc);
+        
+        file << "{" << std::endl;
+        file << "  \"tests\": " << test_count() << "," << std::endl;
+        file << "  \"failures\": " << failed_test_count() << "," << std::endl;
+        file << "  \"disabled\": " << ignored_test_count() << "," << std::endl;
+        file << "  \"errors\": " << 0  << ","<< std::endl;
+        file << "  \"timestamp\": \"" << xtd::tunit::settings::default_settings().start_time().to_string("S") << "\"," << std::endl;
+        file << "  \"time\": \"" << to_string(elapsed_time()) << "\"," << std::endl;
+        file << "  \"testsuites\": [" << std::endl;
+ 
+        for (auto& test_class : test_classes()) {
+          file << "    {" << std::endl;
+          file << "      \"name\": \"" << ustring(test_class.test()->name()).replace('<', '_').replace('>', '_') << "\"," << std::endl;
+          file << "      \"tests\": " << test_class.test()->test_count() << "," << std::endl;
+          file << "      \"failures\": " << test_class.test()->failed_test_count() << "," << std::endl;
+          file << "      \"disabled\": " << test_class.test()->ignored_test_count() << "," << std::endl;
+          file << "      \"errors\": " << 0 << "," << std::endl;
+          file << "      \"timestamp\": \"" << test_class.test()->start_time().to_string("S") << "\"," << std::endl;
+          file << "      \"time\": \"" << to_string(test_class.test()->elapsed_time()) << "\"," << std::endl;
+          file << "      \"testsuite\": [" << std::endl;
+
+          for (auto& test : test_class.test()->tests()) {
+            file << "        {" << std::endl;
+            file << "          \"name\": \"" << test.name() << "\"," << std::endl;
+            file << "          \"file\": \"" << test.stack_frame().get_file_name() << "\"," << std::endl;
+            file << "          \"line\": " << test.stack_frame().get_file_line_number() << "," << std::endl;
+            file << "          \"status\": \"" << ustring(status_to_string(test)).to_upper() << "\"," << std::endl;
+            file << "          \"result\": \"" << (test.ignored() ? "SUPPRESSED" : "COMPLETED") << "\"," << std::endl;
+            file << "          \"timestamp\": \"" << test.start_time().to_string("S") << "\"," << std::endl;
+            file << "          \"time\": \"" << to_string(test.elapsed_time()) << "\"," << std::endl;
+            file << "          \"classname\": \"" << ustring(test_class.test()->name()).replace('<', '_').replace('>', '_') << "\"," << std::endl;
+            if (test.failed()) {
+              file << "          \"failures\": [" << std::endl;
+              file << "            {" << std::endl;
+              file << "              \"failure\": \"" << test.stack_frame().get_file_name() << ":" << test.stack_frame().get_file_line_number() << "\\n" << "Expected: " << test.expect()  << "But was : " << test.actual() <<"\"" << std::endl;
+              file << "            }" << std::endl;
+              file << "          ]" << std::endl;
+            }
+            file << "        }," << std::endl;
+          }
+          file << "      ]" << std::endl;
+          file << "    }," << std::endl;
+        }
+
+        file << "  ]" << std::endl;
+        file << "}" << std::endl;
+
+        file.close();
+      }
+
+      void write_xml() {
+        std::fstream file(xtd::tunit::settings::default_settings().output_xml_path(), std::ios::out | std::ios::trunc);
+        file << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" << std::endl;
+        file << "<testsuites tests=\"" << test_count() << "\" failures=\"" << failed_test_count() << "\" disabled=\"" << ignored_test_count() << "\" errors=\"" << 0 << "\" time=\"" << to_string(elapsed_time()) << "\" timestamp=\"" << xtd::tunit::settings::default_settings().start_time().to_string("s") << "\" name=\"" << name_ << "\">" << std::endl;
+        for (auto& test_class : test_classes()) {
+          file << "  <testsuite name=\"" << test_class.test()->name() << "\" tests=\"" << test_class.test()->test_count() << "\" failures=\"" << test_class.test()->failed_test_count() << "\" disabled=\"" << test_class.test()->ignored_test_count() << "\" errors=\"" << 0 << "\" time=\"" << to_string(test_class.test()->elapsed_time()) << "\">" << std::endl;
+          for (auto& test : test_class.test()->tests()) {
+            file << "    <testcase name=\"" << test.name() << "\" status=\"" << status_to_string(test) << "\" time=\"" << to_string(test.elapsed_time()) << "\" classname=\"" << test_class.test()->name() << "\"";
+            if (!test.failed())
+              file << " />" << std::endl;
+            else {
+              file << ">" << std::endl;
+              file << "      <failure message=\"" << message_to_string(test) << "\" type=\"" << "\">" << "<![CDATA[" << cdata_message_to_string(test) << "]]></failure>" << std::endl;
               file << "    </testcase>" << std::endl;
             }
           }

@@ -85,11 +85,27 @@ namespace xtd {
       
       /// @brief Gets output xml.
       /// @return true for generate xml report; otherwise false.
+      bool output_json() const noexcept {return output_json_;}
+      
+      /// @brief Sets output json.
+      /// @param output_json true for generate json report; otherwise false.
+      void output_json(bool output_json) noexcept {output_json_ = output_json;}
+      
+      /// @brief Gets output xml.
+      /// @return true for generate xml report; otherwise false.
       bool output_xml() const noexcept {return output_xml_;}
       
       /// @brief Sets output xml.
       /// @param output_xml true for generate xml report; otherwise false.
       void output_xml(bool output_xml) noexcept {output_xml_ = output_xml;}
+      
+      /// @brief Gets output json path.
+      /// @return Output json path.
+      std::string output_json_path() const noexcept {return output_json_path_;}
+      
+      /// @brief Sets output sjon path.
+      /// @param output_jsonl_path Output json path.
+      void output_json_path(const std::string& output_json_path) noexcept {output_json_path_ = output_json_path;}
       
       /// @brief Gets output xml path.
       /// @return Output xml path.
@@ -176,7 +192,9 @@ namespace xtd {
       bool gtest_compatibility_ = false;
       bool list_tests_ = false;
       bool output_color_ = true;
-      bool output_xml_;
+      bool output_json_ = false;
+      bool output_xml_ = false;
+      std::string output_json_path_ = "tests.json";
       std::string output_xml_path_ = "tests.xml";
       std::string file_name_ = xtd::io::path::get_full_path(xtd::environment::get_command_line_args()[0]);
       bool show_duration_ = true;
