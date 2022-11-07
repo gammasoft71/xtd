@@ -404,7 +404,7 @@ namespace xtd {
         file << "  \"failures\": " << failed_test_count() << "," << std::endl;
         file << "  \"disabled\": " << ignored_test_count() << "," << std::endl;
         file << "  \"errors\": " << 0  << ","<< std::endl;
-        file << "  \"timestamp\": \"" << ustring::format("{0:L}-{0:k}-{0:i}T{0:T}Z", xtd::tunit::settings::default_settings().start_time()) << "\"," << std::endl;
+        file << "  \"timestamp\": \"" << ustring::format("{0:L}-{0:k}-{0:i}T{0:t}Z", xtd::tunit::settings::default_settings().start_time()) << "\"," << std::endl;
         file << "  \"time\": \"" << to_string(elapsed_time()) << "s\"," << std::endl;
         file << "  \"name\": \"" << name_ << "\"," << std::endl;
         file << "  \"testsuites\": [" << std::endl;
@@ -416,7 +416,7 @@ namespace xtd {
           file << "      \"failures\": " << test_class.test()->failed_test_count() << "," << std::endl;
           file << "      \"disabled\": " << test_class.test()->ignored_test_count() << "," << std::endl;
           file << "      \"errors\": " << 0 << "," << std::endl;
-          file << "      \"timestamp\": \"" << ustring::format("{0:L}-{0:k}-{0:i}T{0:T}Z", test_class.test()->start_time()) << "\"," << std::endl;
+          file << "      \"timestamp\": \"" << ustring::format("{0:L}-{0:k}-{0:i}T{0:t}Z", test_class.test()->start_time()) << "\"," << std::endl;
           file << "      \"time\": \"" << to_string(test_class.test()->elapsed_time()) << "s\"," << std::endl;
           file << "      \"testsuite\": [" << std::endl;
 
@@ -427,7 +427,7 @@ namespace xtd {
             file << "          \"line\": " << test.stack_frame().get_file_line_number() << "," << std::endl;
             file << "          \"status\": \"" << ustring(status_to_string(test)).to_upper() << "\"," << std::endl;
             file << "          \"result\": \"" << (test.ignored() ? "SUPPRESSED" : "COMPLETED") << "\"," << std::endl;
-            file << "          \"timestamp\": \"" << ustring::format("{0:L}-{0:k}-{0:i}T{0:T}Z", test.start_time()) << "\"," << std::endl;
+            file << "          \"timestamp\": \"" << ustring::format("{0:L}-{0:k}-{0:i}T{0:t}Z", test.start_time()) << "\"," << std::endl;
             file << "          \"time\": \"" << to_string(test.elapsed_time()) << "s\"," << std::endl;
             file << "          \"classname\": \"" << ustring(test_class.test()->name()).replace('<', '_').replace('>', '_') << "\"," << std::endl;
             if (test.failed()) {
