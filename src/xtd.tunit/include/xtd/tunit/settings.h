@@ -61,7 +61,7 @@ namespace xtd {
       /// @brief Sets filter tests.
       /// @param filter_tests filter tests.
       /// @remarks The value by default is "*.*".
-      void filter_tests(const std::string& filter_tests) noexcept {filter_tests_ = filter_tests;}
+      void filter_tests(const std::string& filter_tests) noexcept {filter_tests_ = !filter_tests.empty() ? filter_tests : "*.*";}
       
       /// @brief Return true if a specified test class name and specified test name match with the current filter tests.
       /// @return Return true if class name and test name match with the current filter tests; otherwise false.
