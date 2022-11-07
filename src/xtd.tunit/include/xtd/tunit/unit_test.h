@@ -364,7 +364,7 @@ namespace xtd {
           file << "      \"testsuite\": [" << std::endl;
           for (auto& test : test_class.test()->tests()) {
             file << "        {" << std::endl;
-            file << "          \"name\": \"" << (settings::default_settings().gtest_compatibility_ && test.ignored() ? "DISABLED_" : "") << test.name() << "\"," << std::endl;
+            file << "          \"name\": \"" << test.name() << "\"," << std::endl;
             file << "          \"file\": \"" << escaped_path(test.stack_frame().get_file_name()) << "\"," << std::endl;
             file << "          \"line\": " << test.stack_frame().get_file_line_number() << "," << std::endl;
             file << "        }," << std::endl;
@@ -384,7 +384,7 @@ namespace xtd {
         for (auto& test_class : test_classes()) {
           file << "  <testsuite name=\"" << (settings::default_settings().gtest_compatibility_ ? ustring(test_class.test()->name()).replace('<', '_').replace('>', '_') : test_class.test()->name()) << "\" tests=\"" << test_class.test()->test_count() << "\">" << std::endl;
           for (auto& test : test_class.test()->tests()) {
-            file << "    <testcase name=\"" << (settings::default_settings().gtest_compatibility_ && test.ignored() ? "DISABLED_" : "") << test.name() << "\" file=\"" << test.stack_frame().get_file_name() << "\" line=\"" << test.stack_frame().get_file_line_number() << "\" />" << std::endl;
+            file << "    <testcase name=\"" << test.name() << "\" file=\"" << test.stack_frame().get_file_name() << "\" line=\"" << test.stack_frame().get_file_line_number() << "\" />" << std::endl;
           }
           file << "  </testsuite>" << std::endl;
         }
@@ -415,7 +415,7 @@ namespace xtd {
           file << "      \"testsuite\": [" << std::endl;
           for (auto& test : test_class.test()->tests()) {
             file << "        {" << std::endl;
-            file << "          \"name\": \"" << (settings::default_settings().gtest_compatibility_ && test.ignored() ? "DISABLED_" : "") << test.name() << "\"," << std::endl;
+            file << "          \"name\": \"" << test.name() << "\"," << std::endl;
             file << "          \"file\": \"" << escaped_path(test.stack_frame().get_file_name()) << "\"," << std::endl;
             file << "          \"line\": " << test.stack_frame().get_file_line_number() << "," << std::endl;
             file << "          \"status\": \"" << ustring(status_to_string(test)).to_upper() << "\"," << std::endl;
@@ -449,7 +449,7 @@ namespace xtd {
         for (auto& test_class : test_classes()) {
           file << "  <testsuite name=\"" << (settings::default_settings().gtest_compatibility_ ? ustring(test_class.test()->name()).replace('<', '_').replace('>', '_') : test_class.test()->name()) << "\" tests=\"" << test_class.test()->test_count() << "\" failures=\"" << test_class.test()->failed_test_count() << "\" disabled=\"" << test_class.test()->ignored_test_count() << "\" skipped=\"" << 0 << "\" errors=\"" << 0 << "\" time=\"" << to_string(test_class.test()->elapsed_time()) << "\" timestamp=\"" << test_class.test()->start_time().to_string("S") << "\">" << std::endl;
           for (auto& test : test_class.test()->tests()) {
-            file << "    <testcase name=\"" << (settings::default_settings().gtest_compatibility_ && test.ignored() ? "DISABLED_" : "") << test.name() << "\" file=\"" << test.stack_frame().get_file_name() << "\" line=\"" << test.stack_frame().get_file_line_number() << "\" status=\"" << status_to_string(test) << "\" result=\"" << (test.ignored() ? "suppressed" : "completed") << "\" time=\"" << to_string(test.elapsed_time()) << "\" timestamp=\"" << test.start_time().to_string("S") << "\" classname=\"" << ustring(test_class.test()->name()).replace('<', '_').replace('>', '_') << "\"";
+            file << "    <testcase name=\"" << test.name() << "\" file=\"" << test.stack_frame().get_file_name() << "\" line=\"" << test.stack_frame().get_file_line_number() << "\" status=\"" << status_to_string(test) << "\" result=\"" << (test.ignored() ? "suppressed" : "completed") << "\" time=\"" << to_string(test.elapsed_time()) << "\" timestamp=\"" << test.start_time().to_string("S") << "\" classname=\"" << ustring(test_class.test()->name()).replace('<', '_').replace('>', '_') << "\"";
             if (!test.failed())
               file << " />" << std::endl;
             else {
@@ -470,6 +470,21 @@ namespace xtd {
       xtd::date_time end_time_point_;
       int repeat_iteration_ = 0;
       xtd::date_time start_time_point_;
+      // The following variables are a hack to ensure that GoogleTestAdapter (Microsoft Visual Studio) will detect the tunit application as a google test application...
+      // See https://github.com/csoltenborn/GoogleTestAdapter/blob/master/GoogleTestAdapter/Core/GoogleTestConstants.cs
+      inline static const char* __test_body_signature__ = "::TestBody";
+      inline static const char* __parameterized_test_marker__ = "  # GetParam() = ";
+      inline static const char* __typed_test_marker__ = ".  # TypeParam = ";
+      inline static const char* __google_test_dll_marker__ = "gtest.dll";
+      inline static const char* __google_test_dll_marker_debug__ = "gtestd.dll";
+      inline static const char* __google_test_main_dll_marker__ = "gtest_main.dll";
+      inline static const char* __google_test_main_dll_marker_debug__ = "gtest_maind.dll";
+      inline static const char* __google_test_executable_markers__[] = {
+          "This program contains tests written using Google Test. You can use the",
+          "For more information, please read the Google Test documentation at",
+          "Run only the tests whose name matches one of the positive patterns but",
+          "--gtest_list_tests"
+      };
     };
   }
 }
