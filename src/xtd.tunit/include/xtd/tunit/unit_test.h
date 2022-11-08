@@ -17,6 +17,12 @@
 #include <random>
 #include <string>
 
+#if defined(__GCC_VERSION__)
+#define force_marker_used __attribute__((used))
+#else
+#define force_marker_used
+#endif
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
@@ -484,14 +490,14 @@ namespace xtd {
       xtd::date_time start_time_point_;
       // The following variables are a hack to ensure that GoogleTestAdapter (Microsoft Visual Studio) will detect the tunit application as a google test application...
       // See https://github.com/csoltenborn/GoogleTestAdapter/blob/master/GoogleTestAdapter/Core/GoogleTestConstants.cs
-      inline static const char* __test_body_signature__ = "::TestBody";
-      inline static const char* __parameterized_test_marker__ = "  # GetParam() = ";
-      inline static const char* __typed_test_marker__ = ".  # TypeParam = ";
-      inline static const char* __google_test_dll_marker__ = "gtest.dll";
-      inline static const char* __google_test_dll_marker_debug__ = "gtestd.dll";
-      inline static const char* __google_test_main_dll_marker__ = "gtest_main.dll";
-      inline static const char* __google_test_main_dll_marker_debug__ = "gtest_maind.dll";
-      inline static const char* __google_test_executable_markers__[] = {
+      inline static const char* __test_body_signature__ force_marker_used = "::TestBody";
+      inline static const char* __parameterized_test_marker__ force_marker_used = "  # GetParam() = ";
+      inline static const char* __typed_test_marker__ force_marker_used = ".  # TypeParam = ";
+      inline static const char* __google_test_dll_marker__ force_marker_used = "gtest.dll";
+      inline static const char* __google_test_dll_marker_debug__ force_marker_used = "gtestd.dll";
+      inline static const char* __google_test_main_dll_marker__ force_marker_used = "gtest_main.dll";
+      inline static const char* __google_test_main_dll_marker_debug__ force_marker_used = "gtest_maind.dll";
+      inline static const char* __google_test_executable_markers__[] force_marker_used = {
           "This program contains tests written using Google Test. You can use the",
           "For more information, please read the Google Test documentation at",
           "Run only the tests whose name matches one of the positive patterns but",
