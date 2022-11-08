@@ -10,7 +10,33 @@
 #include "test_cleanup_attribute.h"
 #include "test_method_attribute.h"
 #include <xtd/date_time.h>
+#include <xtd/unused.h>
 #include <vector>
+
+/// @cond
+// The following variables are a hack to ensure that GoogleTestAdapter (Microsoft Visual Studio) will detect the tunit application as a google test application...
+// See https://github.com/csoltenborn/GoogleTestAdapter/blob/master/GoogleTestAdapter/Core/GoogleTestConstants.cs
+
+#if defined(__GNUC__)
+#define __force_marker_used__ __attribute__((used))
+#else
+#define __force_marker_used__
+#endif
+
+inline static const char* __test_body_signature__ __force_marker_used__ = "::TestBody";
+inline static const char* __parameterized_test_marker__ __force_marker_used__ = "  # GetParam() = ";
+inline static const char* __typed_test_marker__ __force_marker_used__ = ".  # TypeParam = ";
+inline static const char* __google_test_dll_marker__ __force_marker_used__ = "gtest.dll";
+inline static const char* __google_test_dll_marker_debug__ __force_marker_used__ = "gtestd.dll";
+inline static const char* __google_test_main_dll_marker__ __force_marker_used__ = "gtest_main.dll";
+inline static const char* __google_test_main_dll_marker_debug__ __force_marker_used__ = "gtest_maind.dll";
+inline static const char* __google_test_executable_markers__[] __force_marker_used__ = {
+    "This program contains tests written using Google Test. You can use the",
+    "For more information, please read the Google Test documentation at",
+    "Run only the tests whose name matches one of the positive patterns but",
+    "--gtest_list_tests"
+};
+/// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -25,7 +51,18 @@ namespace xtd {
     class tunit_export_ test_class {
     public:
       /// @cond
-      test_class() = default;
+      test_class() {
+        // The following variables are a hack to ensure that GoogleTestAdapter (Microsoft Visual Studio) will detect the tunit application as a google test application...
+        // See https://github.com/csoltenborn/GoogleTestAdapter/blob/master/GoogleTestAdapter/Core/GoogleTestConstants.cs
+        unused_(__test_body_signature__);
+        unused_(__parameterized_test_marker__);
+        unused_(__typed_test_marker__);
+        unused_(__google_test_dll_marker__);
+        unused_(__google_test_dll_marker_debug__);
+        unused_(__google_test_main_dll_marker__);
+        unused_(__google_test_main_dll_marker_debug__);
+        unused_(__google_test_executable_markers__);
+      }
       test_class(const test_class&) = default;
       test_class& operator=(const test_class&) = default;
       virtual ~test_class() = default;
@@ -129,4 +166,3 @@ namespace xtd {
   class_name;\
   xtd::tunit::test_class_attribute<class_name> __##class_name##_attribute {#class_name}; \
   class class_name : public from_class_name
-
