@@ -209,7 +209,7 @@ namespace xtd {
       virtual bool parse_arguments(const std::vector<std::string>& args) {
         bool gtest_compatibility = false;
         for (auto arg : args) {
-          if (arg.find("--gtest") == 0) gtest_compatibility = true;
+          if (arg == "--gtest_compatibility" || arg.find("--gtest") == 0) gtest_compatibility = true;
           // Test selection :
           if (arg == "--list_tests") xtd::tunit::settings::default_settings().list_tests(true);
           else if (arg == "--gtest_list_tests") xtd::tunit::settings::default_settings().list_tests(true);
@@ -248,7 +248,7 @@ namespace xtd {
             if (arg[18] == ':') xtd::tunit::settings::default_settings().output_xml_path(arg.substr(19));
           }
         }
-        xtd::tunit::settings::default_settings().gtest_compatibility_ = gtest_compatibility;
+        xtd::tunit::settings::default_settings().gtest_compatibility(gtest_compatibility);
         return false;
       }
       
@@ -280,7 +280,7 @@ namespace xtd {
       
       std::string cdata_message_to_xml_string(const xtd::tunit::test& test) {
         std::stringstream ss;
-        if (settings::default_settings().gtest_compatibility_) {
+        if (settings::default_settings().gtest_compatibility()) {
           if (test.stack_frame() != xtd::diagnostics::stack_frame::empty())
             ss << test.stack_frame().get_file_name() << ":" << test.stack_frame().get_file_line_number() << std::endl;
           ss << "Value of: " << test.actual() << std::endl;
@@ -309,7 +309,7 @@ namespace xtd {
       
       std::string message_to_json_string(const xtd::tunit::test& test) {
         std::stringstream ss;
-        if (settings::default_settings().gtest_compatibility_)
+        if (settings::default_settings().gtest_compatibility())
           ss << "Value of: " << escape_to_json_string(test.actual()) << "\\n" << "  Actual: " << escape_to_json_string(test.actual()) << "\\n" << "Expected: " << escape_to_json_string(test.expect());
         else
           ss <<  "Expected: " << escape_to_json_string(test.expect()) << "\\n" << "But was: " << escape_to_json_string(test.actual());
@@ -318,7 +318,7 @@ namespace xtd {
       
       std::string message_to_xml_string(const xtd::tunit::test& test) {
         std::stringstream ss;
-        if (settings::default_settings().gtest_compatibility_) {
+        if (settings::default_settings().gtest_compatibility()) {
           if (test.stack_frame() != xtd::diagnostics::stack_frame::empty())
             ss << test.stack_frame().get_file_name() << ":" << test.stack_frame().get_file_line_number() << "&#x0A;";
           ss << "Value of: " << escape_to_xml_string(test.actual()) << "&#x0A;";
@@ -334,7 +334,7 @@ namespace xtd {
       }
       
       std::string name_to_string(const std::string& name) {
-        return (settings::default_settings().gtest_compatibility_ ? "AllTests" : name_);
+        return (settings::default_settings().gtest_compatibility() ? "AllTests" : name_);
       }
       
       std::string status_to_string(const xtd::tunit::test& test) {

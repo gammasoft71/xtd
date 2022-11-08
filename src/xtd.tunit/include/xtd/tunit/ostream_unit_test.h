@@ -37,7 +37,7 @@ namespace xtd {
       std::ostream& ostream() {return os_;}
       
       int list_tests(const std::vector<std::string>& tests) override {
-        if (!settings::default_settings().gtest_compatibility_) {
+        if (!settings::default_settings().gtest_compatibility()) {
           for (auto name : tests)
             os_ << name << std::endl;
         } else {
