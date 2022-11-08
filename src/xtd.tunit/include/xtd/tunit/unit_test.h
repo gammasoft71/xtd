@@ -252,6 +252,10 @@ namespace xtd {
         return false;
       }
       
+      std::string test_name_to_string(const std::string& name) {
+        return (settings::default_settings().gtest_compatibility_ ? ustring(name).replace('<', '_').replace('>', '_').replace(':', '_') : name);
+      }
+      
     private:
       template <typename test_class_t>
       friend class xtd::tunit::test_class_attribute;
@@ -334,10 +338,6 @@ namespace xtd {
         if (test.not_started() || test.ignored()) ss << "notrun";
         else ss << "run";
         return ss.str();
-      }
-
-      std::string test_name_to_string(const std::string& name) {
-        return (settings::default_settings().gtest_compatibility_ ? ustring(name).replace('<', '_').replace('>', '_').replace(':', '_') : name);
       }
 
       std::string to_string(const std::chrono::milliseconds& ms) {

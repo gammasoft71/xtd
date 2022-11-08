@@ -47,7 +47,7 @@ namespace xtd {
             auto key_value =  ustring(name).split({'.'});
             if (key_value.size() == 2) {
               if (lists.find(key_value[0]) == lists.end()) lists.insert({key_value[0], {}});
-              lists.at(key_value[0]).push_back(ustring(key_value[1]).replace('<', '_').replace('>', '_').replace(':', '_'));
+              lists.at(key_value[0]).push_back(test_name_to_string(key_value[1]));
             }
           }
           for (auto key_value : lists) {
