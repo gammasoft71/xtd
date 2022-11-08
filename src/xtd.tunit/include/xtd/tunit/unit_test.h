@@ -298,13 +298,25 @@ namespace xtd {
         }
         return ss.str();
       }
+      
+      std::string escape_path_to_json_string(const std::string& path) {
+        return ustring::join(ustring::format("\\{}", io::path::directory_separator_char()), ustring(path).split({io::path::directory_separator_char()}));
+      }
 
+      std::string escape_to_json_string(const std::string& str) {
+        return ustring(str).replace("\"", "\\\"");
+      }
+      
+      std::string escape_to_xml_string(const std::string& str) {
+        return ustring(str).replace("\"", " &quot;");
+      }
+      
       std::string message_to_json_string(const xtd::tunit::test& test) {
         std::stringstream ss;
         if (settings::default_settings().gtest_compatibility_)
-          ss << "Value of: " << test.actual() << "\\n" << "  Actual: " << test.actual() << "\\n" << "Expected: " << test.expect();
+          ss << "Value of: " << escape_to_json_string(test.actual()) << "\\n" << "  Actual: " << escape_to_json_string(test.actual()) << "\\n" << "Expected: " << escape_to_json_string(test.expect());
         else
-          ss <<  "Expected: " << test.expect() << "\\n" << "But was: " << test.actual();
+          ss <<  "Expected: " << escape_to_json_string(test.expect()) << "\\n" << "But was: " << escape_to_json_string(test.actual());
         return ss.str();
       }
       
@@ -313,24 +325,20 @@ namespace xtd {
         if (settings::default_settings().gtest_compatibility_) {
           if (test.stack_frame() != xtd::diagnostics::stack_frame::empty())
             ss << test.stack_frame().get_file_name() << ":" << test.stack_frame().get_file_line_number() << "&#x0A;";
-          ss << "Value of: " << test.actual() << "&#x0A;";
-          ss << "  Actual: " << test.actual() << "&#x0A;";
-          ss << "Expected: " << test.expect();
+          ss << "Value of: " << escape_to_xml_string(test.actual()) << "&#x0A;";
+          ss << "  Actual: " << escape_to_xml_string(test.actual()) << "&#x0A;";
+          ss << "Expected: " <<  escape_to_xml_string(test.expect());
         } else {
           if (test.stack_frame() != xtd::diagnostics::stack_frame::empty())
             ss << test.stack_frame().get_file_name() << ":" << test.stack_frame().get_file_line_number() << "&#x0A;";
-          ss << "Expected: " << test.expect() << "&#x0A;";
-          ss << "But was : " << test.actual();
+          ss << "Expected: " << escape_to_xml_string(test.expect()) << "&#x0A;";
+          ss << "But was : " << escape_to_xml_string(test.actual());
         }
         return ss.str();
       }
       
       std::string name_to_string(const std::string& name) {
         return (settings::default_settings().gtest_compatibility_ ? "AllTests" : name_);
-      }
-      
-      std::string path_to_json_string(const std::string& path) {
-        return ustring::join(ustring::format("\\{}", io::path::directory_separator_char()), ustring(path).split({io::path::directory_separator_char()}));
       }
       
       std::string status_to_string(const xtd::tunit::test& test) {
@@ -378,7 +386,7 @@ namespace xtd {
           for (auto& test : test_class.test()->tests()) {
             file << "        {" << std::endl;
             file << "          \"name\": \"" << test.name() << "\"," << std::endl;
-            file << "          \"file\": \"" << path_to_json_string(test.stack_frame().get_file_name()) << "\"," << std::endl;
+            file << "          \"file\": \"" << escape_path_to_json_string(test.stack_frame().get_file_name()) << "\"," << std::endl;
             file << "          \"line\": " << test.stack_frame().get_file_line_number() << "," << std::endl;
             file << "        }," << std::endl;
           }
@@ -429,7 +437,7 @@ namespace xtd {
           for (auto& test : test_class.test()->tests()) {
             file << "        {" << std::endl;
             file << "          \"name\": \"" << test.name() << "\"," << std::endl;
-            file << "          \"file\": \"" << path_to_json_string(test.stack_frame().get_file_name()) << "\"," << std::endl;
+            file << "          \"file\": \"" << escape_path_to_json_string(test.stack_frame().get_file_name()) << "\"," << std::endl;
             file << "          \"line\": " << test.stack_frame().get_file_line_number() << "," << std::endl;
             file << "          \"status\": \"" << ustring(status_to_string(test)).to_upper() << "\"," << std::endl;
             file << "          \"result\": \"" << (test.ignored() ? "SUPPRESSED" : "COMPLETED") << "\"," << std::endl;
