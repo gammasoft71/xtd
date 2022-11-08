@@ -359,7 +359,7 @@ namespace xtd {
         file << "  \"testsuites\": [" << std::endl;
         for (auto& test_class : test_classes()) {
           file << "    {" << std::endl;
-          file << "      \"name\": \"" << (settings::default_settings().gtest_compatibility_ ? ustring(test_class.test()->name()).replace('<', '_').replace('>', '_') : test_class.test()->name()) << "\"," << std::endl;
+          file << "      \"name\": \"" << (settings::default_settings().gtest_compatibility_ ? ustring(test_class.test()->name()).replace('<', '_').replace('>', '_').replace(':', '_') : test_class.test()->name()) << "\"," << std::endl;
           file << "      \"tests\": " << test_class.test()->test_count() << "," << std::endl;
           file << "      \"testsuite\": [" << std::endl;
           for (auto& test : test_class.test()->tests()) {
@@ -382,7 +382,7 @@ namespace xtd {
         file << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" << std::endl;
         file << "<testsuites tests=\"" << test_count() << "\" name=\"" << name_ << "\">" << std::endl;
         for (auto& test_class : test_classes()) {
-          file << "  <testsuite name=\"" << (settings::default_settings().gtest_compatibility_ ? ustring(test_class.test()->name()).replace('<', '_').replace('>', '_') : test_class.test()->name()) << "\" tests=\"" << test_class.test()->test_count() << "\">" << std::endl;
+          file << "  <testsuite name=\"" << (settings::default_settings().gtest_compatibility_ ? ustring(test_class.test()->name()).replace('<', '_').replace('>', '_').replace(':', '_') : test_class.test()->name()) << "\" tests=\"" << test_class.test()->test_count() << "\">" << std::endl;
           for (auto& test : test_class.test()->tests()) {
             file << "    <testcase name=\"" << test.name() << "\" file=\"" << test.stack_frame().get_file_name() << "\" line=\"" << test.stack_frame().get_file_line_number() << "\" />" << std::endl;
           }
@@ -405,7 +405,7 @@ namespace xtd {
         file << "  \"testsuites\": [" << std::endl;
         for (auto& test_class : test_classes()) {
           file << "    {" << std::endl;
-          file << "      \"name\": \"" << (settings::default_settings().gtest_compatibility_ ? ustring(test_class.test()->name()).replace('<', '_').replace('>', '_') : test_class.test()->name()) << "\"," << std::endl;
+          file << "      \"name\": \"" << (settings::default_settings().gtest_compatibility_ ? ustring(test_class.test()->name()).replace('<', '_').replace('>', '_').replace(':', '_') : test_class.test()->name()) << "\"," << std::endl;
           file << "      \"tests\": " << test_class.test()->test_count() << "," << std::endl;
           file << "      \"failures\": " << test_class.test()->failed_test_count() << "," << std::endl;
           file << "      \"disabled\": " << test_class.test()->ignored_test_count() << "," << std::endl;
@@ -422,7 +422,7 @@ namespace xtd {
             file << "          \"result\": \"" << (test.ignored() ? "SUPPRESSED" : "COMPLETED") << "\"," << std::endl;
             file << "          \"timestamp\": \"" << ustring::format("{0:L}-{0:k}-{0:i}T{0:t}Z", test.start_time()) << "\"," << std::endl;
             file << "          \"time\": \"" << to_string(test.elapsed_time()) << "s\"," << std::endl;
-            file << "          \"classname\": \"" << ustring(test_class.test()->name()).replace('<', '_').replace('>', '_') << "\"," << std::endl;
+            file << "          \"classname\": \"" << ustring(test_class.test()->name()).replace('<', '_').replace('>', '_').replace(':', '_') << "\"," << std::endl;
             if (test.failed()) {
               file << "          \"failures\": [" << std::endl;
               file << "            {" << std::endl;
@@ -447,9 +447,9 @@ namespace xtd {
         file << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" << std::endl;
         file << "<testsuites tests=\"" << test_count() << "\" failures=\"" << failed_test_count() << "\" disabled=\"" << ignored_test_count() << "\" errors=\"" << 0 << "\" time=\"" << to_string(elapsed_time()) << "\" timestamp=\"" << xtd::tunit::settings::default_settings().start_time().to_string("S") << "\" name=\"" << name_ << "\">" << std::endl;
         for (auto& test_class : test_classes()) {
-          file << "  <testsuite name=\"" << (settings::default_settings().gtest_compatibility_ ? ustring(test_class.test()->name()).replace('<', '_').replace('>', '_') : test_class.test()->name()) << "\" tests=\"" << test_class.test()->test_count() << "\" failures=\"" << test_class.test()->failed_test_count() << "\" disabled=\"" << test_class.test()->ignored_test_count() << "\" skipped=\"" << 0 << "\" errors=\"" << 0 << "\" time=\"" << to_string(test_class.test()->elapsed_time()) << "\" timestamp=\"" << test_class.test()->start_time().to_string("S") << "\">" << std::endl;
+          file << "  <testsuite name=\"" << (settings::default_settings().gtest_compatibility_ ? ustring(test_class.test()->name()).replace('<', '_').replace('>', '_').replace(':', '_') : test_class.test()->name()) << "\" tests=\"" << test_class.test()->test_count() << "\" failures=\"" << test_class.test()->failed_test_count() << "\" disabled=\"" << test_class.test()->ignored_test_count() << "\" skipped=\"" << 0 << "\" errors=\"" << 0 << "\" time=\"" << to_string(test_class.test()->elapsed_time()) << "\" timestamp=\"" << test_class.test()->start_time().to_string("S") << "\">" << std::endl;
           for (auto& test : test_class.test()->tests()) {
-            file << "    <testcase name=\"" << test.name() << "\" file=\"" << test.stack_frame().get_file_name() << "\" line=\"" << test.stack_frame().get_file_line_number() << "\" status=\"" << status_to_string(test) << "\" result=\"" << (test.ignored() ? "suppressed" : "completed") << "\" time=\"" << to_string(test.elapsed_time()) << "\" timestamp=\"" << test.start_time().to_string("S") << "\" classname=\"" << ustring(test_class.test()->name()).replace('<', '_').replace('>', '_') << "\"";
+            file << "    <testcase name=\"" << test.name() << "\" file=\"" << test.stack_frame().get_file_name() << "\" line=\"" << test.stack_frame().get_file_line_number() << "\" status=\"" << status_to_string(test) << "\" result=\"" << (test.ignored() ? "suppressed" : "completed") << "\" time=\"" << to_string(test.elapsed_time()) << "\" timestamp=\"" << test.start_time().to_string("S") << "\" classname=\"" << ustring(test_class.test()->name()).replace('<', '_').replace('>', '_').replace(':', '_') << "\"";
             if (!test.failed())
               file << " />" << std::endl;
             else {
