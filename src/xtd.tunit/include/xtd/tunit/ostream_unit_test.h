@@ -5,6 +5,8 @@
 #include "ostream_event_listener.h"
 #include "unit_test.h"
 #include <ostream>
+#include <map>
+#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -35,10 +37,30 @@ namespace xtd {
       std::ostream& ostream() {return os_;}
       
       int list_tests(const std::vector<std::string>& tests) override {
-        for (auto name : tests)
-          os_ << name << std::endl;
-        return unit_test::list_tests(tests);
-      }
+        if (!settings::default_settings().gtest_compatibility_) {
+             for (auto name : tests)
+               os_ << name << std::endl;
+           } else {
+             os_ << "Running main() from " << settings::default_settings().file_name_ << std::endl;
+             std::map<std::string, std::vector<std::string>> lists;
+             for (auto name : tests) {
+               auto key_value =  ustring(name).split({'.'});
+               if (key_value.size() == 2) {
+                 if (lists.find(key_value[0]) == lists.end()) lists.insert({key_value[0], {}});
+                 lists.at(key_value[0]).push_back(ustring(key_value[1]).replace('<', '_').replace('>', '_').replace(':', '_'));
+               }
+             }
+
+             for (auto key_value : lists) {
+               os_ << key_value.first << "." << std::endl;
+               for (auto value : key_value.second)
+                 os_ << "  " << value << std::endl;
+             }
+           }
+           for (auto name : tests)
+             os_ << name << std::endl;
+           return unit_test::list_tests(tests);
+     }
       
       bool parse_arguments(const std::vector<std::string>& args) override {
         for (auto arg : args)
