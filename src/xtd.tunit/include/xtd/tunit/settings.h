@@ -63,6 +63,14 @@ namespace xtd {
       /// @remarks The value by default is "*.*".
       void filter_tests(const std::string& filter_tests) noexcept {filter_tests_ = !filter_tests.empty() ? filter_tests : "*.*";}
       
+      /// @brief Gets google test comaptibility.
+      /// @return true if google test comaptibility; otherwise false.
+      bool gtest_compatibility() const noexcept {return gtest_compatibility_;}
+      
+      /// @brief Sets google test comaptibility.
+      /// @param gtest_compatibility  true if google test comaptibility; otherwise false.
+      void gtest_compatibility(bool gtest_compatibility) noexcept {gtest_compatibility_ = gtest_compatibility;}
+      
       /// @brief Return true if a specified test class name and specified test name match with the current filter tests.
       /// @return Return true if class name and test name match with the current filter tests; otherwise false.
       bool is_match_test_name(const std::string& test_class_name, const std::string& test_name) const noexcept {return pattern_compare(test_class_name + "." + test_name, filter_tests_);}
