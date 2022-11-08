@@ -355,7 +355,7 @@ namespace xtd {
         std::fstream file(xtd::tunit::settings::default_settings().output_json_path(), std::ios::out | std::ios::trunc);
         file << "{" << std::endl;
         file << "  \"tests\": " << test_count() << "," << std::endl;
-        file << "  \"name\": \"" << name_ << "\"," << std::endl;
+        file << "  \"name\": \"" << (settings::default_settings().gtest_compatibility_ ? "AllTests" : name_) << "\"," << std::endl;
         file << "  \"testsuites\": [" << std::endl;
         for (auto& test_class : test_classes()) {
           file << "    {" << std::endl;
@@ -380,7 +380,7 @@ namespace xtd {
       void write_list_tests_xml() {
         std::fstream file(xtd::tunit::settings::default_settings().output_xml_path(), std::ios::out | std::ios::trunc);
         file << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" << std::endl;
-        file << "<testsuites tests=\"" << test_count() << "\" name=\"" << name_ << "\">" << std::endl;
+        file << "<testsuites tests=\"" << test_count() << "\" name=\"" << (settings::default_settings().gtest_compatibility_ ? "AllTests" : name_) << "\">" << std::endl;
         for (auto& test_class : test_classes()) {
           file << "  <testsuite name=\"" << (settings::default_settings().gtest_compatibility_ ? ustring(test_class.test()->name()).replace('<', '_').replace('>', '_').replace(':', '_') : test_class.test()->name()) << "\" tests=\"" << test_class.test()->test_count() << "\">" << std::endl;
           for (auto& test : test_class.test()->tests()) {
@@ -401,7 +401,7 @@ namespace xtd {
         file << "  \"errors\": " << 0  << ","<< std::endl;
         file << "  \"timestamp\": \"" << ustring::format("{0:L}-{0:k}-{0:i}T{0:t}Z", xtd::tunit::settings::default_settings().start_time()) << "\"," << std::endl;
         file << "  \"time\": \"" << to_string(elapsed_time()) << "s\"," << std::endl;
-        file << "  \"name\": \"" << name_ << "\"," << std::endl;
+        file << "  \"name\": \"" << (settings::default_settings().gtest_compatibility_ ? "AllTests" : name_) << "\"," << std::endl;
         file << "  \"testsuites\": [" << std::endl;
         for (auto& test_class : test_classes()) {
           file << "    {" << std::endl;
@@ -445,7 +445,7 @@ namespace xtd {
       void write_tests_xml() {
         std::fstream file(xtd::tunit::settings::default_settings().output_xml_path(), std::ios::out | std::ios::trunc);
         file << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" << std::endl;
-        file << "<testsuites tests=\"" << test_count() << "\" failures=\"" << failed_test_count() << "\" disabled=\"" << ignored_test_count() << "\" errors=\"" << 0 << "\" time=\"" << to_string(elapsed_time()) << "\" timestamp=\"" << xtd::tunit::settings::default_settings().start_time().to_string("S") << "\" name=\"" << name_ << "\">" << std::endl;
+        file << "<testsuites tests=\"" << test_count() << "\" failures=\"" << failed_test_count() << "\" disabled=\"" << ignored_test_count() << "\" errors=\"" << 0 << "\" time=\"" << to_string(elapsed_time()) << "\" timestamp=\"" << xtd::tunit::settings::default_settings().start_time().to_string("S") << "\" name=\"" << (settings::default_settings().gtest_compatibility_ ? "AllTests" : name_) << "\">" << std::endl;
         for (auto& test_class : test_classes()) {
           file << "  <testsuite name=\"" << (settings::default_settings().gtest_compatibility_ ? ustring(test_class.test()->name()).replace('<', '_').replace('>', '_').replace(':', '_') : test_class.test()->name()) << "\" tests=\"" << test_class.test()->test_count() << "\" failures=\"" << test_class.test()->failed_test_count() << "\" disabled=\"" << test_class.test()->ignored_test_count() << "\" skipped=\"" << 0 << "\" errors=\"" << 0 << "\" time=\"" << to_string(test_class.test()->elapsed_time()) << "\" timestamp=\"" << test_class.test()->start_time().to_string("S") << "\">" << std::endl;
           for (auto& test : test_class.test()->tests()) {
