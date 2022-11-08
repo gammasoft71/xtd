@@ -211,7 +211,7 @@ namespace xtd {
           os_ << __foreground_color(__console_color::dark_green);
           os_ << "[==========] ";
           os_ << __reset_color();
-          os_ << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test suite" << (e.unit_test().test_cases_count() > 1 ?  "s" : "") <<  "ran. (" << e.unit_test().elapsed_time().count() << " ms total)" << std::endl;
+          os_ << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test suite" << (e.unit_test().test_cases_count() > 1 ?  "s" : "") <<  " ran. (" << e.unit_test().elapsed_time().count() << " ms total)" << std::endl;
           os_ << __foreground_color(__console_color::dark_green);
           os_ << "[  PASSED  ] ";
           os_ << __reset_color();
