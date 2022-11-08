@@ -9,6 +9,7 @@ add_references(xtd.core)
 add_sources(
   include/xtd/tunit/__console_color.h
   include/xtd/tunit/__demangle.h
+  include/xtd/tunit/__google_test_markers.h
   include/xtd/tunit/__tunit_join__items.h
   include/xtd/tunit/abort_error.h
   include/xtd/tunit/assert.h
