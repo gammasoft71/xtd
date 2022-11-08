@@ -173,7 +173,6 @@ namespace xtd {
 
     private:
       friend class unit_test;
-      friend class ostream_unit_test;
 
       bool pattern_compare(const std::string& name, const std::string& pattern) const noexcept {
         if (pattern == "") return name == "";

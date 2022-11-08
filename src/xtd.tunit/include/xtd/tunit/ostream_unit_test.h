@@ -5,8 +5,6 @@
 #include "ostream_event_listener.h"
 #include "unit_test.h"
 #include <ostream>
-#include <map>
-#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -37,26 +35,8 @@ namespace xtd {
       std::ostream& ostream() {return os_;}
       
       int list_tests(const std::vector<std::string>& tests) override {
-        if (!settings::default_settings().gtest_compatibility_) {
-          for (auto name : tests)
-            os_ << name << std::endl;
-        } else {
-          os_ << "Running main() from " << settings::default_settings().file_name_ << std::endl;
-          std::map<std::string, std::vector<std::string>> lists;
-          for (auto name : tests) {
-            auto key_value =  ustring(name).split({'.'});
-            if (key_value.size() == 2) {
-              if (lists.find(key_value[0]) == lists.end()) lists.insert({key_value[0], {}});
-              lists.at(key_value[0]).push_back(key_value[1]);
-            }
-          }
-          
-          for (auto key_value : lists) {
-            os_ << key_value.first << "." << std::endl;
-            for (auto value : key_value.second)
-              os_ << "  " << value << std::endl;
-          }
-        }
+        for (auto name : tests)
+          os_ << name << std::endl;
         return unit_test::list_tests(tests);
       }
       
@@ -64,9 +44,6 @@ namespace xtd {
         for (auto arg : args)
           if (arg == "--help") {
             write_help();
-            return true;
-          } else if (arg == "--gtest_help") {
-            write_gtest_help();
             return true;
           }
         return unit_test::parse_arguments(args);
@@ -139,72 +116,6 @@ namespace xtd {
         os_ << "      Enable/disable the elapsed time of each test display." << std::endl;
         os_ << __foreground_color(__console_color::green);
         os_ << "  --output_xml=xml";
-        os_ << __reset_color();
-        os_ << __foreground_color(__console_color::yellow);
-        os_ << "[=PATH]" << std::endl;
-        os_ << __reset_color();
-        os_ << "      Generate an xml report in the given directory or with the given file" << std::endl;
-        os_ << "      name. PATH defaults to tests.xml." << std::endl;
-        os_ << std::endl;
-      }
-      
-      void write_gtest_help() {
-        os_ << "This program contains tests written using xtd::tunit. You can use the" << std::endl;
-        os_ << "following gtest compatibility command line flags to control its behavior:" << std::endl;
-        os_ << std::endl;
-        os_ << "Test selection:" << std::endl;
-        os_ << __foreground_color(__console_color::green);
-        os_ << "  --gtest_list_tests" << std::endl;
-        os_ << __reset_color();
-        os_ << "      List the names of all tests instead of running them." << std::endl;
-        os_ << __foreground_color(__console_color::green);
-        os_ << "  --gtest_filter=";
-        os_ << __reset_color();
-        os_ << __foreground_color(__console_color::yellow);
-        os_ << "[PATTERN]" << std::endl;
-        os_ << __reset_color();
-        os_ << "      Run only the tests whose name matches one of the pattern." << std::endl;
-        os_ << "      '?' matches any single character; '*' matches any substring." << std::endl;
-        os_ << __foreground_color(__console_color::green);
-        os_ << "  --gtest_also_run_disabled_tests" << std::endl;
-        os_ << __reset_color();
-        os_ << "      Run all ignored tests too." << std::endl;
-        os_ << std::endl;
-        os_ << "Test execution:" << std::endl;
-        os_ << __foreground_color(__console_color::green);
-        os_ << "  --gtest_repeat=";
-        os_ << __reset_color();
-        os_ << __foreground_color(__console_color::yellow);
-        os_ << "[COUNT]" << std::endl;
-        os_ << __reset_color();
-        os_ << "      Run the tests repeatedly; use a negative count to repeat forever." << std::endl;
-        os_ << __foreground_color(__console_color::green);
-        os_ << "  --gtest_shuffle" << std::endl;
-        os_ << __reset_color();
-        os_ << "      Randomize tests' orders on every iteration." << std::endl;
-        os_ << __foreground_color(__console_color::green);
-        os_ << "  --gtest_random_seed=";
-        os_ << __reset_color();
-        os_ << __foreground_color(__console_color::yellow);
-        os_ << "[NUMBER]" << std::endl;
-        os_ << __reset_color();
-        os_ << "      Random number seed to use for shuffling test order. (any number" << std::endl;
-        os_ << "      or 0 to use a seed based on the current time)." << std::endl;
-        os_ << std::endl;
-        os_ << "Test output:" << std::endl;
-        os_ << __foreground_color(__console_color::green);
-        os_ << "  --gtest_color=";
-        os_ << __reset_color();
-        os_ << __foreground_color(__console_color::yellow);
-        os_ << "(yes|no|auto)" << std::endl;
-        os_ << __reset_color();
-        os_ << "      Enable/disable colored output." << std::endl;
-        os_ << __foreground_color(__console_color::green);
-        os_ << "  --gtest_print_time=0" << std::endl;
-        os_ << __reset_color();
-        os_ << "      Disable the elapsed time of each test display." << std::endl;
-        os_ << __foreground_color(__console_color::green);
-        os_ << "  --gtest_output=xml";
         os_ << __reset_color();
         os_ << __foreground_color(__console_color::yellow);
         os_ << "[=PATH]" << std::endl;
