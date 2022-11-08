@@ -211,7 +211,7 @@ namespace xtd {
           os_ << __foreground_color(__console_color::dark_green);
           os_ << "[==========] ";
           os_ << __reset_color();
-          os_ << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test case ran. (" << e.unit_test().elapsed_time().count() << " ms total)" << std::endl;
+          os_ << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test suite" << (e.unit_test().test_cases_count() > 1 ?  "s" : "") <<  "ran. (" << e.unit_test().elapsed_time().count() << " ms total)" << std::endl;
           os_ << __foreground_color(__console_color::dark_green);
           os_ << "[  PASSED  ] ";
           os_ << __reset_color();
@@ -233,7 +233,7 @@ namespace xtd {
           if (!e.unit_test().failed_test_count() && e.unit_test().ignored_test_count()) os_ << std::endl;
           if (e.unit_test().ignored_test_count()) {
             os_ << __foreground_color(__console_color::dark_yellow);
-            os_ << "  YOU HAVE " << e.unit_test().ignored_test_count() << " DISABLED TESTS" << std::endl << std::endl;
+            os_ << "  YOU HAVE " << e.unit_test().ignored_test_count() << " DISABLED TEST" << (e.unit_test().ignored_test_count() > 1 ? "S" : "") << std::endl << std::endl;
             os_ << __reset_color();
           }
         } else {
@@ -243,28 +243,28 @@ namespace xtd {
             os_ << __foreground_color(__console_color::green);
             os_ << "  SUCCEED ";
             os_ << __reset_color();
-            os_ << e.unit_test().succeed_test_count() << " test" << (e.unit_test().succeed_test_count() < 2 ? "" : "s") << "." << std::endl;
+            os_ << e.unit_test().succeed_test_count() << " test" << (e.unit_test().succeed_test_count() > 1 ? "s" : "") << "." << std::endl;
           }
           if (e.unit_test().aborted_test_count()) {
             os_ << __foreground_color(__console_color::magenta);
             os_ << "  ABORTED ";
             os_ << __reset_color();
-            os_ << e.unit_test().aborted_test_count() << " test" << (e.unit_test().aborted_test_count() < 2 ? "" : "s") << "." << std::endl;
+            os_ << e.unit_test().aborted_test_count() << " test" << (e.unit_test().aborted_test_count() > 1 ? "s" : "") << "." << std::endl;
           }
           if (e.unit_test().failed_test_count()) {
             os_ << __foreground_color(__console_color::red);
             os_ << "  FAILED  ";
             os_ << __reset_color();
-            os_ << e.unit_test().failed_test_count() << " test" << (e.unit_test().failed_test_count() < 2 ? "" : "s") << "." << std::endl;
+            os_ << e.unit_test().failed_test_count() << " test" << (e.unit_test().failed_test_count() > 1 ? "s" : "") << "." << std::endl;
           }
           if (e.unit_test().ignored_test_count()) {
             os_ << __foreground_color(__console_color::yellow);
             os_ << "  IGNORED ";
             os_ << __reset_color();
-            os_ << e.unit_test().ignored_test_count() << " test" << (e.unit_test().ignored_test_count() < 2 ? "" : "s") << "." << std::endl;
+            os_ << e.unit_test().ignored_test_count() << " test" << (e.unit_test().ignored_test_count() > 1 ? "s" : "") << "." << std::endl;
           }
           
-          os_ << "End " << e.unit_test().test_count() << " test" << (e.unit_test().test_count() < 2 ? "" : "s") << " from " << e.unit_test().test_cases_count() << " test case" << (e.unit_test().test_cases_count() < 2 ? "" : "s") << " ran.";
+          os_ << "End " << e.unit_test().test_count() << " test" << (e.unit_test().test_count() > 1 ? "s" : "") << " from " << e.unit_test().test_cases_count() << " test case" << (e.unit_test().test_cases_count() > 1 ? "s" : "") << " ran.";
           if (xtd::tunit::settings::default_settings().show_duration())
             os_ << " (" << e.unit_test().elapsed_time().count() << " ms total)";
           os_ << std::endl << std::endl;
@@ -284,9 +284,9 @@ namespace xtd {
           os_ << __foreground_color(__console_color::dark_green);
           os_ << "[==========] ";
           os_ << __reset_color();
-          os_ << "Running " << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test suites." << std::endl;
+          os_ << "Running " << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test suite" << (e.unit_test().test_cases_count() > 1 ? "s" : "") << "." << std::endl;
         } else {
-          os_ << "Start " << e.unit_test().test_count() << " test" << (e.unit_test().test_count() < 2 ? "" : "s") << " from " << e.unit_test().test_cases_count() << " test case" << (e.unit_test().test_cases_count() < 2 ? "" : "s") << std::endl;
+          os_ << "Start " << e.unit_test().test_count() << " test" << (e.unit_test().test_count() > 1 ? "s" : "") << " from " << e.unit_test().test_cases_count() << " test case" << (e.unit_test().test_cases_count() > 1 ? "s" : "") << std::endl;
           os_ << "Run tests:" << std::endl;
         }
         event_listener::on_unit_test_start(e);
