@@ -106,7 +106,7 @@ namespace xtd {
       /// @param tunit_event_args Contains unit test event parameters.
       virtual void on_unit_test_initialize_end(const xtd::tunit::tunit_event_args& e) const {}
       
-      /// @brief Occurs when unit test initialize is ended.
+      /// @brief Occurs when unit test initialize is started.
       /// @param tunit_event_args Contains unit test event parameters.
       virtual void on_unit_test_initialize_start(const xtd::tunit::tunit_event_args& e) const {}
       
