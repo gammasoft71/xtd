@@ -2552,7 +2552,7 @@ namespace xtd::forms::tests {
 
       form.font(nullptr);
       assert::is_false(control.on_parent_font_changed_raised, csf_);
-      form.font(system_fonts::tool_font());
+      form.font({form.font(), 32});
       assert::is_true(control.on_parent_font_changed_raised, csf_);
     }
 
