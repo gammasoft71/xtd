@@ -10,17 +10,17 @@
 ///   <tr>
 ///     <th><b>Name</b></th>
 ///     <th><b>Color field</b></th>
-///     <th><b>ARGB Value (hexa)</b></th>
+///     <th><b>ARGB Value (in hexa)</b></th>
 ///     <th><b>Color</b></th>
 ///   </tr>
 ///   <tr>
-///     <td>alice_blue</td>
+///     <td>alice blue</td>
 ///     <td>xtd::drawing::color::alice_blue</td>
 ///     <td>0xFFF0F8FF</td>
 ///     <td>@image html colors_alice_blue.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>antique_white</td>
+///     <td>antique white</td>
 ///     <td>xtd::drawing::color::antique_white</td>
 ///     <td>0xFFFAEBD7</td>
 ///     <td>@image html colors_antique_white.png</td>
@@ -62,7 +62,7 @@
 ///     <td>@image html colors_black.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>blanched_almond</td>
+///     <td>blanched almond</td>
 ///     <td>xtd::drawing::color::blanched_almond</td>
 ///     <td>0xFFFFEBCD</td>
 ///     <td>@image html colors_blanched_almond.png</td>
@@ -74,7 +74,7 @@
 ///     <td>@image html colors_blue.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>blue_violet</td>
+///     <td>blue violet</td>
 ///     <td>xtd::drawing::color::blue_violet</td>
 ///     <td>0xFF8A2BE2</td>
 ///     <td>@image html colors_blue_violet.png</td>
@@ -86,13 +86,13 @@
 ///     <td>@image html colors_brown.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>burly_wood</td>
+///     <td>burly wood</td>
 ///     <td>xtd::drawing::color::burly_wood</td>
 ///     <td>0xFFDEB887</td>
 ///     <td>@image html colors_burly_wood.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>cadet_blue</td>
+///     <td>cadet blue</td>
 ///     <td>xtd::drawing::color::cadet_blue</td>
 ///     <td>0xFF5F9EA0</td>
 ///     <td>@image html colors_cadet_blue.png</td>
@@ -116,7 +116,7 @@
 ///     <td>@image html colors_coral.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>cornflower_blue</td>
+///     <td>cornflower blue</td>
 ///     <td>xtd::drawing::color::cornflower_blue</td>
 ///     <td>0xFF6495ED</td>
 ///     <td>@image html colors_cornflower_blue.png</td>
@@ -140,127 +140,127 @@
 ///     <td>@image html colors_cyan.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>dark_blue</td>
+///     <td>dark blue</td>
 ///     <td>xtd::drawing::color::dark_blue</td>
 ///     <td>0xFF00008B</td>
 ///     <td>@image html colors_dark_blue.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>dark_cyan</td>
+///     <td>dark cyan</td>
 ///     <td>xtd::drawing::color::dark_cyan</td>
 ///     <td>0xFF008B8B</td>
 ///     <td>@image html colors_dark_cyan.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>dark_goldenrod</td>
+///     <td>dark goldenrod</td>
 ///     <td>xtd::drawing::color::dark_goldenrod</td>
 ///     <td>0xFFB8860B</td>
 ///     <td>@image html colors_dark_goldenrod.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>dark_gray</td>
+///     <td>dark gray</td>
 ///     <td>xtd::drawing::color::dark_gray</td>
 ///     <td>0xFFA9A9A9</td>
 ///     <td>@image html colors_dark_gray.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>dark_green</td>
+///     <td>dark green</td>
 ///     <td>xtd::drawing::color::dark_green</td>
 ///     <td>0xFF006400</td>
 ///     <td>@image html colors_dark_green.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>dark_khaki</td>
+///     <td>dark khaki</td>
 ///     <td>xtd::drawing::color::dark_khaki</td>
 ///     <td>0xFFBDB76B</td>
 ///     <td>@image html colors_dark_khaki.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>dark_magenta</td>
+///     <td>dark magenta</td>
 ///     <td>xtd::drawing::color::dark_magenta</td>
 ///     <td>0xFF8B008B</td>
 ///     <td>@image html colors_dark_magenta.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>dark_olive_green</td>
+///     <td>dark olive green</td>
 ///     <td>xtd::drawing::color::dark_olive_green</td>
 ///     <td>0xFF556B2F</td>
 ///     <td>@image html colors_dark_olive_green.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>dark_orange</td>
+///     <td>dark orange</td>
 ///     <td>xtd::drawing::color::dark_orange</td>
 ///     <td>0xFFFF8C00</td>
 ///     <td>@image html colors_dark_orange.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>dark_orchid</td>
+///     <td>dark orchid</td>
 ///     <td>xtd::drawing::color::dark_orchid</td>
 ///     <td>0xFF9932CC</td>
 ///     <td>@image html colors_dark_orchid.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>dark_red</td>
+///     <td>dark red</td>
 ///     <td>xtd::drawing::color::dark_red</td>
 ///     <td>0xFF8B0000</td>
 ///     <td>@image html colors_dark_red.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>dark_salmon</td>
+///     <td>dark salmon</td>
 ///     <td>xtd::drawing::color::dark_salmon</td>
 ///     <td>0xFFE9967A</td>
 ///     <td>@image html colors_dark_salmon.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>dark_sea_green</td>
+///     <td>dark sea green</td>
 ///     <td>xtd::drawing::color::dark_sea_green</td>
 ///     <td>0xFF8FBC8B</td>
 ///     <td>@image html colors_dark_sea_green.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>dark_slate_blue</td>
+///     <td>dark slate blue</td>
 ///     <td>xtd::drawing::color::dark_slate_blue</td>
 ///     <td>0xFF483D8B</td>
 ///     <td>@image html colors_dark_slate_blue.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>dark_slate_gray</td>
+///     <td>dark slate gray</td>
 ///     <td>xtd::drawing::color::dark_slate_gray</td>
 ///     <td>0xFF2F4F4F</td>
 ///     <td>@image html colors_dark_slate_gray.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>dark_turquoise</td>
+///     <td>dark turquoise</td>
 ///     <td>xtd::drawing::color::dark_turquoise</td>
 ///     <td>0xFF00CED1</td>
 ///     <td>@image html colors_dark_turquoise.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>dark_violet</td>
+///     <td>dark violet</td>
 ///     <td>xtd::drawing::color::dark_violet</td>
 ///     <td>0xFF9400D3</td>
 ///     <td>@image html colors_dark_violet.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>deep_pink</td>
+///     <td>deep pink</td>
 ///     <td>xtd::drawing::color::deep_pink</td>
 ///     <td>0xFFFF1493</td>
 ///     <td>@image html colors_deep_pink.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>deep_sky_blue</td>
+///     <td>deep sky blue</td>
 ///     <td>xtd::drawing::color::deep_sky_blue</td>
 ///     <td>0xFF00BFFF</td>
 ///     <td>@image html colors_deep_sky_blue.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>dim_gray</td>
+///     <td>dim gray</td>
 ///     <td>xtd::drawing::color::dim_gray</td>
 ///     <td>0xFF696969</td>
 ///     <td>@image html colors_dim_gray.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>dodger_blue</td>
+///     <td>dodger blue</td>
 ///     <td>xtd::drawing::color::dodger_blue</td>
 ///     <td>0xFF1E90FF</td>
 ///     <td>@image html colors_dodger_blue.png</td>
@@ -272,13 +272,13 @@
 ///     <td>@image html colors_firebrick.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>floral_white</td>
+///     <td>floral white</td>
 ///     <td>xtd::drawing::color::floral_white</td>
 ///     <td>0xFFFFFAF0</td>
 ///     <td>@image html colors_floral_white.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>forest_green</td>
+///     <td>forest green</td>
 ///     <td>xtd::drawing::color::forest_green</td>
 ///     <td>0xFF228B22</td>
 ///     <td>@image html colors_forest_green.png</td>
@@ -296,7 +296,7 @@
 ///     <td>@image html colors_gainsboro.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>ghost_white</td>
+///     <td>ghost white</td>
 ///     <td>xtd::drawing::color::ghost_white</td>
 ///     <td>0xFFF8F8FF</td>
 ///     <td>@image html colors_ghost_white.png</td>
@@ -326,7 +326,7 @@
 ///     <td>@image html colors_green.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>green_yellow</td>
+///     <td>green yellow</td>
 ///     <td>xtd::drawing::color::green_yellow</td>
 ///     <td>0xFFADFF2F</td>
 ///     <td>@image html colors_green_yellow.png</td>
@@ -338,13 +338,13 @@
 ///     <td>@image html colors_honeydew.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>hot_pink</td>
+///     <td>hot pink</td>
 ///     <td>xtd::drawing::color::hot_pink</td>
 ///     <td>0xFFFF69B4</td>
 ///     <td>@image html colors_hot_pink.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>indian_red</td>
+///     <td>indian red</td>
 ///     <td>xtd::drawing::color::indian_red</td>
 ///     <td>0xFFCD5C5C</td>
 ///     <td>@image html colors_indian_red.png</td>
@@ -374,97 +374,97 @@
 ///     <td>@image html colors_lavender.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>lavender_blush</td>
+///     <td>lavender blush</td>
 ///     <td>xtd::drawing::color::lavender_blush</td>
 ///     <td>0xFFFFF0F5</td>
 ///     <td>@image html colors_lavender_blush.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>lawn_green</td>
+///     <td>lawn green</td>
 ///     <td>xtd::drawing::color::lawn_green</td>
 ///     <td>0xFF7CFC00</td>
 ///     <td>@image html colors_lawn_green.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>lemon_chiffon</td>
+///     <td>lemon chiffon</td>
 ///     <td>xtd::drawing::color::lemon_chiffon</td>
 ///     <td>0xFFFFFACD</td>
 ///     <td>@image html colors_lemon_chiffon.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>light_blue</td>
+///     <td>light blue</td>
 ///     <td>xtd::drawing::color::light_blue</td>
 ///     <td>0xFFADD8E6</td>
 ///     <td>@image html colors_light_blue.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>light_coral</td>
+///     <td>light coral</td>
 ///     <td>xtd::drawing::color::light_coral</td>
 ///     <td>0xFFF08080</td>
 ///     <td>@image html colors_light_coral.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>light_cyan</td>
+///     <td>light cyan</td>
 ///     <td>xtd::drawing::color::light_cyan</td>
 ///     <td>0xFFE0FFFF</td>
 ///     <td>@image html colors_light_cyan.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>light_goldenrod_yellow</td>
+///     <td>light goldenrod yellow</td>
 ///     <td>xtd::drawing::color::light_goldenrod_yellow</td>
 ///     <td>0xFFFAFAD2</td>
 ///     <td>@image html colors_light_goldenrod_yellow.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>light_gray</td>
+///     <td>light gray</td>
 ///     <td>xtd::drawing::color::light_gray</td>
 ///     <td>0xFFD3D3D3</td>
 ///     <td>@image html colors_light_gray.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>light_green</td>
+///     <td>light green</td>
 ///     <td>xtd::drawing::color::light_green</td>
 ///     <td>0xFF90EE90</td>
 ///     <td>@image html colors_light_green.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>light_pink</td>
+///     <td>light pink</td>
 ///     <td>xtd::drawing::color::light_pink</td>
 ///     <td>0xFFFFB6C1</td>
 ///     <td>@image html colors_light_pink.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>light_salmon</td>
+///     <td>light salmon</td>
 ///     <td>xtd::drawing::color::light_salmon</td>
 ///     <td>0xFFFFA07A</td>
 ///     <td>@image html colors_light_salmon.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>light_sea_green</td>
+///     <td>light sea green</td>
 ///     <td>xtd::drawing::color::light_sea_green</td>
 ///     <td>0xFF20B2AA</td>
 ///     <td>@image html colors_light_sea_green.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>light_sky_blue</td>
+///     <td>light sky blue</td>
 ///     <td>xtd::drawing::color::light_sky_blue</td>
 ///     <td>0xFF87CEFA</td>
 ///     <td>@image html colors_light_sky_blue.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>light_slate_gray</td>
+///     <td>light slate gray</td>
 ///     <td>xtd::drawing::color::light_slate_gray</td>
 ///     <td>0xFF778899</td>
 ///     <td>@image html colors_light_slate_gray.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>light_steel_blue</td>
+///     <td>light steel blue</td>
 ///     <td>xtd::drawing::color::light_steel_blue</td>
 ///     <td>0xFFB0C4DE</td>
 ///     <td>@image html colors_light_steel_blue.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>light_yellow</td>
+///     <td>light yellow</td>
 ///     <td>xtd::drawing::color::light_yellow</td>
 ///     <td>0xFFFFFFE0</td>
 ///     <td>@image html colors_light_yellow.png</td>
@@ -476,7 +476,7 @@
 ///     <td>@image html colors_lime.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>lime_green</td>
+///     <td>lime green</td>
 ///     <td>xtd::drawing::color::lime_green</td>
 ///     <td>0xFF32CD32</td>
 ///     <td>@image html colors_lime_green.png</td>
@@ -500,73 +500,73 @@
 ///     <td>@image html colors_maroon.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>medium_aquamarine</td>
+///     <td>medium aquamarine</td>
 ///     <td>xtd::drawing::color::medium_aquamarine</td>
 ///     <td>0xFF66CDAA</td>
 ///     <td>@image html colors_medium_aquamarine.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>medium_blue</td>
+///     <td>medium blue</td>
 ///     <td>xtd::drawing::color::medium_blue</td>
 ///     <td>0xFF0000CD</td>
 ///     <td>@image html colors_medium_blue.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>medium_orchid</td>
+///     <td>medium orchid</td>
 ///     <td>xtd::drawing::color::medium_orchid</td>
 ///     <td>0xFFBA55D3</td>
 ///     <td>@image html colors_medium_orchid.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>medium_purple</td>
+///     <td>medium purple</td>
 ///     <td>xtd::drawing::color::medium_purple</td>
 ///     <td>0xFF9370DB</td>
 ///     <td>@image html colors_medium_purple.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>medium_sea_green</td>
+///     <td>medium sea green</td>
 ///     <td>xtd::drawing::color::medium_sea_green</td>
 ///     <td>0xFF3CB371</td>
 ///     <td>@image html colors_medium_sea_green.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>medium_slate_blue</td>
+///     <td>medium slate blue</td>
 ///     <td>xtd::drawing::color::medium_slate_blue</td>
 ///     <td>0xFF7B68EE</td>
 ///     <td>@image html colors_medium_slate_blue.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>medium_spring_green</td>
+///     <td>medium spring green</td>
 ///     <td>xtd::drawing::color::medium_spring_green</td>
 ///     <td>0xFF00FA9A</td>
 ///     <td>@image html colors_medium_spring_green.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>medium_turquoise</td>
+///     <td>medium turquoise</td>
 ///     <td>xtd::drawing::color::medium_turquoise</td>
 ///     <td>0xFF48D1CC</td>
 ///     <td>@image html colors_medium_turquoise.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>medium_violet_red</td>
+///     <td>medium violet red</td>
 ///     <td>xtd::drawing::color::medium_violet_red</td>
 ///     <td>0xFFC71585</td>
 ///     <td>@image html colors_medium_violet_red.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>midnight_blue</td>
+///     <td>midnight blue</td>
 ///     <td>xtd::drawing::color::midnight_blue</td>
 ///     <td>0xFF191970</td>
 ///     <td>@image html colors_midnight_blue.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>mint_cream</td>
+///     <td>mint cream</td>
 ///     <td>xtd::drawing::color::mint_cream</td>
 ///     <td>0xFFF5FFFA</td>
 ///     <td>@image html colors_mint_cream.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>misty_rose</td>
+///     <td>misty rose</td>
 ///     <td>xtd::drawing::color::misty_rose</td>
 ///     <td>0xFFFFE4E1</td>
 ///     <td>@image html colors_misty_rose.png</td>
@@ -578,7 +578,7 @@
 ///     <td>@image html colors_moccasin.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>navajo_white</td>
+///     <td>navajo white</td>
 ///     <td>xtd::drawing::color::navajo_white</td>
 ///     <td>0xFFFFDEAD</td>
 ///     <td>@image html colors_navajo_white.png</td>
@@ -590,7 +590,7 @@
 ///     <td>@image html colors_navy.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>old_lace</td>
+///     <td>old lace</td>
 ///     <td>xtd::drawing::color::old_lace</td>
 ///     <td>0xFFFDF5E6</td>
 ///     <td>@image html colors_old_lace.png</td>
@@ -602,7 +602,7 @@
 ///     <td>@image html colors_olive.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>olive_drab</td>
+///     <td>olive drab</td>
 ///     <td>xtd::drawing::color::olive_drab</td>
 ///     <td>0xFF6B8E23</td>
 ///     <td>@image html colors_olive_drab.png</td>
@@ -614,7 +614,7 @@
 ///     <td>@image html colors_orange.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>orange_red</td>
+///     <td>orange red</td>
 ///     <td>xtd::drawing::color::orange_red</td>
 ///     <td>0xFFFF4500</td>
 ///     <td>@image html colors_orange_red.png</td>
@@ -626,37 +626,37 @@
 ///     <td>@image html colors_orchid.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>pale_goldenrod</td>
+///     <td>pale goldenrod</td>
 ///     <td>xtd::drawing::color::pale_goldenrod</td>
 ///     <td>0xFFEEE8AA</td>
 ///     <td>@image html colors_pale_goldenrod.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>pale_green</td>
+///     <td>pale green</td>
 ///     <td>xtd::drawing::color::pale_green</td>
 ///     <td>0xFF98FB98</td>
 ///     <td>@image html colors_pale_green.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>pale_turquoise</td>
+///     <td>pale turquoise</td>
 ///     <td>xtd::drawing::color::pale_turquoise</td>
 ///     <td>0xFFAFEEEE</td>
 ///     <td>@image html colors_pale_turquoise.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>pale_violet_red</td>
+///     <td>pale violet red</td>
 ///     <td>xtd::drawing::color::pale_violet_red</td>
 ///     <td>0xFFDB7093</td>
 ///     <td>@image html colors_pale_violet_red.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>papaya_whip</td>
+///     <td>papaya whip</td>
 ///     <td>xtd::drawing::color::papaya_whip</td>
 ///     <td>0xFFFFEFD5</td>
 ///     <td>@image html colors_papaya_whip.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>peach_puff</td>
+///     <td>peach puff</td>
 ///     <td>xtd::drawing::color::peach_puff</td>
 ///     <td>0xFFFFDAB9</td>
 ///     <td>@image html colors_peach_puff.png</td>
@@ -680,7 +680,7 @@
 ///     <td>@image html colors_plum.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>powder_blue</td>
+///     <td>powder blue</td>
 ///     <td>xtd::drawing::color::powder_blue</td>
 ///     <td>0xFFB0E0E6</td>
 ///     <td>@image html colors_powder_blue.png</td>
@@ -692,7 +692,7 @@
 ///     <td>@image html colors_purple.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>rebecca_purple</td>
+///     <td>rebecca purple</td>
 ///     <td>xtd::drawing::color::rebecca_purple</td>
 ///     <td>0xFF663399</td>
 ///     <td>@image html colors_rebecca_purple.png</td>
@@ -704,19 +704,19 @@
 ///     <td>@image html colors_red.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>rosy_brown</td>
+///     <td>rosy brown</td>
 ///     <td>xtd::drawing::color::rosy_brown</td>
 ///     <td>0xFFBC8F8F</td>
 ///     <td>@image html colors_rosy_brown.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>royal_blue</td>
+///     <td>royal blue</td>
 ///     <td>xtd::drawing::color::royal_blue</td>
 ///     <td>0xFF4169E1</td>
 ///     <td>@image html colors_royal_blue.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>saddle_brown</td>
+///     <td>saddle brown</td>
 ///     <td>xtd::drawing::color::saddle_brown</td>
 ///     <td>0xFF8B4513</td>
 ///     <td>@image html colors_saddle_brown.png</td>
@@ -728,19 +728,19 @@
 ///     <td>@image html colors_salmon.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>sandy_brown</td>
+///     <td>sandy brown</td>
 ///     <td>xtd::drawing::color::sandy_brown</td>
 ///     <td>0xFFF4A460</td>
 ///     <td>@image html colors_sandy_brown.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>sea_green</td>
+///     <td>sea green</td>
 ///     <td>xtd::drawing::color::sea_green</td>
 ///     <td>0xFF2E8B57</td>
 ///     <td>@image html colors_sea_green.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>sea_shell</td>
+///     <td>sea shell</td>
 ///     <td>xtd::drawing::color::sea_shell</td>
 ///     <td>0xFFFFF5EE</td>
 ///     <td>@image html colors_sea_shell.png</td>
@@ -758,19 +758,19 @@
 ///     <td>@image html colors_silver.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>sky_blue</td>
+///     <td>sky blue</td>
 ///     <td>xtd::drawing::color::sky_blue</td>
 ///     <td>0xFF87CEEB</td>
 ///     <td>@image html colors_sky_blue.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>slate_blue</td>
+///     <td>slate blue</td>
 ///     <td>xtd::drawing::color::slate_blue</td>
 ///     <td>0xFF6A5ACD</td>
 ///     <td>@image html colors_slate_blue.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>slate_gray</td>
+///     <td>slate gray</td>
 ///     <td>xtd::drawing::color::slate_gray</td>
 ///     <td>0xFF708090</td>
 ///     <td>@image html colors_slate_gray.png</td>
@@ -782,13 +782,13 @@
 ///     <td>@image html colors_snow.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>spring_green</td>
+///     <td>spring green</td>
 ///     <td>xtd::drawing::color::spring_green</td>
 ///     <td>0xFF00FF7F</td>
 ///     <td>@image html colors_spring_green.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>steel_blue</td>
+///     <td>steel blue</td>
 ///     <td>xtd::drawing::color::steel_blue</td>
 ///     <td>0xFF4682B4</td>
 ///     <td>@image html colors_steel_blue.png</td>
@@ -842,7 +842,7 @@
 ///     <td>@image html colors_white.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>white_smoke</td>
+///     <td>white smoke</td>
 ///     <td>xtd::drawing::color::white_smoke</td>
 ///     <td>0xFFF5F5F5</td>
 ///     <td>@image html colors_white_smoke.png</td>
@@ -854,7 +854,7 @@
 ///     <td>@image html colors_yellow.png</td>
 ///   </tr>
 ///   <tr>
-///     <td>yellow_green</td>
+///     <td>yellow green</td>
 ///     <td>xtd::drawing::color::yellow_green</td>
 ///     <td>0xFF9ACD32</td>
 ///     <td>@image html colors_yellow_green.png</td>
