@@ -185,6 +185,14 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// @code
+      /// xtd::tunit::assert::error("User message..."); // test throws an assert_error exception.
+      /// @endcode
+      static void error(const std::string& message);
+      
+      /// @brief Throws an xtd::tunit::assert_error exception. This is used by the other assert functions.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
       /// xtd::tunit::assert::error(actual_str, expected_str, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
       static void error(const std::string& actual, const std::string& expected, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
