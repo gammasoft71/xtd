@@ -20,7 +20,7 @@ int main() {
     form->visible(true);
     forms.push_back(std::move(form));
     
-    form_color = form_color != known_color::yellow_green ? static_cast<known_color>(static_cast<int>(form_color) + 1) : known_color::alice_blue;
+    form_color = form_color != known_color::yellow_green ? known_color(int(form_color) + 1) : known_color::alice_blue;
   };
   
   application::run(*form_main);
