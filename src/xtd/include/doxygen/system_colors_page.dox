@@ -4,7 +4,7 @@
 /// @page SystemColorsPage System colors
 /// @brief Contains system colors.
 ///
-/// Shows xtd::drawing::system_colors colors.
+/// Shows xtd::drawing::system_colors.
 ///
 /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
