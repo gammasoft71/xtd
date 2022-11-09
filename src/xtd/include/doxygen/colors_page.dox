@@ -2,7 +2,7 @@
 /// @brief Contains colors page.
 
 /// @page ColorsPage Colors
-/// @brief Contains ccolors.
+/// @brief Contains colors.
 ///
 /// Shows xtd::drawing::color fields.
 ///
