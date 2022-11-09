@@ -80,7 +80,10 @@ namespace xtd {
       static test& current_test() {return *current_test_;}
       static const test_class& current_test_class() {return *current_test_class_;}
       static const unit_test& current_unit_test() {return *current_unit_test_;}
-      
+      static bool has_current_test() {return current_test_ != nullptr;}
+      static bool has_current_test_class() {return current_test_class_ != nullptr;}
+      static bool has_current_unit_test() {return current_unit_test_ != nullptr;}
+
       void run(const xtd::tunit::unit_test& unit_test, const xtd::tunit::test_class& test_class);
       
       xtd::date_time end_time_point;
