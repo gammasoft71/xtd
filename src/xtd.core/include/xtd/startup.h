@@ -15,6 +15,17 @@
 #endif
 
 /// @cond
+struct __startup__ final static_ {
+  static int run(void (*main_function)(), int, char*[]) {main_function(); return xtd::environment::exit_code();}
+  static int run(int (*main_function)(), int, char*[]) {return main_function();}
+  static int run(void (*main_function)(int argc, char* argv[]), int argc, char* argv[]) {main_function(argc, argv); return xtd::environment::exit_code();}
+  static int run(void (*main_function)(xtd::collections::specialized::string_vector), int argc, char* argv[]) {main_function({argv + 1, argv + argc}); return xtd::environment::exit_code();}
+  static int run(void (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]) {main_function({argv + 1, argv + argc}); return xtd::environment::exit_code();}
+  static int run(int (*main_function)(int argc, char* argv[]), int argc, char* argv[]) {return main_function(argc, argv);}
+  static int run(int (*main_function)(xtd::collections::specialized::string_vector), int argc, char* argv[]) {return main_function({argv + 1, argv + argc});}
+  static int run(int (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]) {return main_function({argv + 1, argv + argc});}
+};
+
 #if defined(__CMAKE_TARGET_TYPE__) && __CMAKE_TARGET_TYPE__ == 2 // 2 == GUI_APPLICATION
 inline void __startup_catch_exception__(const std::exception& e) {xtd::forms::application::open_forms().size() > 0 ? xtd::forms::exception_box::show(xtd::forms::application::open_forms()[0].get(), e, xtd::forms::application::product_name()) : xtd::forms::exception_box::show(e, xtd::forms::application::product_name());}
 inline void __startup_catch_exception__() {xtd::forms::application::open_forms().size() > 0 ? xtd::forms::exception_box::show(xtd::forms::application::open_forms()[0].get(), xtd::forms::application::product_name()) : xtd::forms::exception_box::show(xtd::forms::application::product_name());}
@@ -46,24 +57,14 @@ namespace xtd {
   /// This example show a main method with argument and return code
   /// @include main4.cpp
 #define startup_(main_class) \
-  int main(int argc, char* argv[]) {\
+  auto main(int argc, char* argv[])->int {\
     try {\
-      struct startup final static_ {\
-        static int run(void (*main_function)(), int, char*[]) {main_function(); return xtd::environment::exit_code();}\
-        static int run(int (*main_function)(), int, char*[]) {return main_function();}\
-        static int run(void (*main_function)(int argc, char* argv[]), int argc, char* argv[]) {main_function(argc, argv); return xtd::environment::exit_code();}\
-        static int run(void (*main_function)(xtd::collections::specialized::string_vector), int argc, char* argv[]) {main_function({argv + 1, argv + argc}); return xtd::environment::exit_code();}\
-        static int run(void (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]) {main_function({argv + 1, argv + argc}); return xtd::environment::exit_code();}\
-        static int run(int (*main_function)(int argc, char* argv[]), int argc, char* argv[]) {return main_function(argc, argv);}\
-        static int run(int (*main_function)(xtd::collections::specialized::string_vector), int argc, char* argv[]) {return main_function({argv + 1, argv + argc});}\
-        static int run(int (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]) {return main_function({argv + 1, argv + argc});}\
-      };\
-      return startup::run(main_class::main, argc, argv);\
+      return __startup__::run(main_class::main, argc, argv);\
     } catch(const std::exception& e) {\
       __startup_catch_exception__(e);\
     } catch(...) {\
       __startup_catch_exception__();\
     }\
   }\
-  int __startup_force_to_end_with_semicolon__ = 0
+  auto __startup_force_to_end_with_semicolon__ = 0
 }
