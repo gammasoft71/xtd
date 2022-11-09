@@ -1,0 +1,30 @@
+/// @file
+/// @brief Contains system_colors page.
+
+/// @page SystemColorsPage System colors
+/// @brief Contains system colors.
+///
+/// Shows xtd::drawing::system_colors colors.
+///
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <th><b>Name</b></th>
+///     <th><b>Value field</b></th>
+///     <th><b>Windows (light)</b></th>
+///     <th><b>Windows (dark)</b></th>
+///     <th><b>macOS (light)</b></th>
+///     <th><b>macOS (dark)</b></th>
+///     <th><b>Gnome (light)</b></th>
+///     <th><b>Gnome (dark)</b></th>
+///   </tr>
+///   <tr>
+///     <td>accent</td>
+///     <td>xtd::drawing::system_colors::accent</td>
+///     <td>@image html system_colors_accent_w.png</td>
+///     <td>@image html system_colors_accent_wd.png</td>
+///     <td>@image html system_colors_accent_m.png</td>
+///     <td>@image html system_colors_accent_md.png</td>
+///     <td>@image html system_colors_accent_g.png</td>
+///     <td>@image html system_colors_accent_gd.png</td>
+///   </tr>
+/// </table>
