@@ -19,8 +19,7 @@
 inline void __startup_catch_exception__(const std::exception& e) {xtd::forms::application::open_forms().size() > 0 ? xtd::forms::exception_box::show(xtd::forms::application::open_forms()[0].get(), e, xtd::forms::application::product_name()) : xtd::forms::exception_box::show(e, xtd::forms::application::product_name());}
 inline void __startup_catch_exception__() {xtd::forms::application::open_forms().size() > 0 ? xtd::forms::exception_box::show(xtd::forms::application::open_forms()[0].get(), xtd::forms::application::product_name()) : xtd::forms::exception_box::show(xtd::forms::application::product_name());}
 #else
-inline void __startup_catch_exception__(const std::exception& e) {std::cerr << std::endl << xtd::ustring::format("Unhandled exception: {}", e.what()) << std::endl;}
-inline void __startup_catch_exception__(const xtd::system_exception& e) { std::cerr << std::endl << xtd::ustring::format("Unhandled exception: {}", e) << std::endl;}
+inline void __startup_catch_exception__(const std::exception& e) {std::cerr << std::endl << xtd::ustring::format("Unhandled exception: {}", dynamic_cast<const xtd::system_exception*>(&e) ? static_cast<const xtd::system_exception&>(e).to_string() :  e.what()) << std::endl;}
 inline void __startup_catch_exception__() { std::cerr << std::endl << xtd::ustring::format("Unhandled exception: Unknown exception occurred") << std::endl;}
 #endif
 /// @endcond
@@ -60,8 +59,6 @@ namespace xtd {
         static int run(int (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]) {return main_function({argv + 1, argv + argc});}\
       };\
       return startup::run(main_class::main, argc, argv);\
-    } catch(const xtd::system_exception& e) {\
-      __startup_catch_exception__(e);\
     } catch(const std::exception& e) {\
       __startup_catch_exception__(e);\
     } catch(...) {\
