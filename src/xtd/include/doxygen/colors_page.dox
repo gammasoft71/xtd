@@ -1,0 +1,20 @@
+/// @file
+/// @brief Contains colors page.
+
+/// @page ColorsPage Colors
+/// @brief Contains ccolors.
+///
+/// Shows xtd::drawing::color fields.
+///
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <th><b>Name</b></th>
+///     <th><b>Value</b></th>
+///     <th><b>Color</b></th>
+///   </tr>
+///   <tr>
+///     <td>alice blue</td>
+///     <td>xtd::drawing::color::alice_blue</td>
+///     <td>@image html colors_aice_blue.png</td>
+///   </tr>
+/// </table>
