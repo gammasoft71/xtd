@@ -13,8 +13,708 @@
 ///     <th><b>Color</b></th>
 ///   </tr>
 ///   <tr>
-///     <td>alice blue</td>
+///     <td>alice_blue</td>
 ///     <td>xtd::drawing::color::alice_blue</td>
-///     <td>@image html colors_aice_blue.png</td>
+///     <td>@image html colors_alice_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>antique_white</td>
+///     <td>xtd::drawing::color::antique_white</td>
+///     <td>@image html colors_antique_white.png</td>
+///   </tr>
+///   <tr>
+///     <td>aqua</td>
+///     <td>xtd::drawing::color::aqua</td>
+///     <td>@image html colors_aqua.png</td>
+///   </tr>
+///   <tr>
+///     <td>aquamarine</td>
+///     <td>xtd::drawing::color::aquamarine</td>
+///     <td>@image html colors_aquamarine.png</td>
+///   </tr>
+///   <tr>
+///     <td>azure</td>
+///     <td>xtd::drawing::color::azure</td>
+///     <td>@image html colors_azure.png</td>
+///   </tr>
+///   <tr>
+///     <td>beige</td>
+///     <td>xtd::drawing::color::beige</td>
+///     <td>@image html colors_beige.png</td>
+///   </tr>
+///   <tr>
+///     <td>bisque</td>
+///     <td>xtd::drawing::color::bisque</td>
+///     <td>@image html colors_bisque.png</td>
+///   </tr>
+///   <tr>
+///     <td>black</td>
+///     <td>xtd::drawing::color::black</td>
+///     <td>@image html colors_black.png</td>
+///   </tr>
+///   <tr>
+///     <td>blanched_almond</td>
+///     <td>xtd::drawing::color::blanched_almond</td>
+///     <td>@image html colors_blanched_almond.png</td>
+///   </tr>
+///   <tr>
+///     <td>blue</td>
+///     <td>xtd::drawing::color::blue</td>
+///     <td>@image html colors_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>blue_violet</td>
+///     <td>xtd::drawing::color::blue_violet</td>
+///     <td>@image html colors_blue_violet.png</td>
+///   </tr>
+///   <tr>
+///     <td>brown</td>
+///     <td>xtd::drawing::color::brown</td>
+///     <td>@image html colors_brown.png</td>
+///   </tr>
+///   <tr>
+///     <td>burly_wood</td>
+///     <td>xtd::drawing::color::burly_wood</td>
+///     <td>@image html colors_burly_wood.png</td>
+///   </tr>
+///   <tr>
+///     <td>cadet_blue</td>
+///     <td>xtd::drawing::color::cadet_blue</td>
+///     <td>@image html colors_cadet_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>chartreuse</td>
+///     <td>xtd::drawing::color::chartreuse</td>
+///     <td>@image html colors_chartreuse.png</td>
+///   </tr>
+///   <tr>
+///     <td>chocolate</td>
+///     <td>xtd::drawing::color::chocolate</td>
+///     <td>@image html colors_chocolate.png</td>
+///   </tr>
+///   <tr>
+///     <td>coral</td>
+///     <td>xtd::drawing::color::coral</td>
+///     <td>@image html colors_coral.png</td>
+///   </tr>
+///   <tr>
+///     <td>cornflower_blue</td>
+///     <td>xtd::drawing::color::cornflower_blue</td>
+///     <td>@image html colors_cornflower_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>cornsilk</td>
+///     <td>xtd::drawing::color::cornsilk</td>
+///     <td>@image html colors_cornsilk.png</td>
+///   </tr>
+///   <tr>
+///     <td>crimson</td>
+///     <td>xtd::drawing::color::crimson</td>
+///     <td>@image html colors_crimson.png</td>
+///   </tr>
+///   <tr>
+///     <td>cyan</td>
+///     <td>xtd::drawing::color::cyan</td>
+///     <td>@image html colors_cyan.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark_blue</td>
+///     <td>xtd::drawing::color::dark_blue</td>
+///     <td>@image html colors_dark_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark_cyan</td>
+///     <td>xtd::drawing::color::dark_cyan</td>
+///     <td>@image html colors_dark_cyan.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark_goldenrod</td>
+///     <td>xtd::drawing::color::dark_goldenrod</td>
+///     <td>@image html colors_dark_goldenrod.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark_gray</td>
+///     <td>xtd::drawing::color::dark_gray</td>
+///     <td>@image html colors_dark_gray.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark_green</td>
+///     <td>xtd::drawing::color::dark_green</td>
+///     <td>@image html colors_dark_green.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark_khaki</td>
+///     <td>xtd::drawing::color::dark_khaki</td>
+///     <td>@image html colors_dark_khaki.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark_magenta</td>
+///     <td>xtd::drawing::color::dark_magenta</td>
+///     <td>@image html colors_dark_magenta.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark_olive_green</td>
+///     <td>xtd::drawing::color::dark_olive_green</td>
+///     <td>@image html colors_dark_olive_green.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark_orange</td>
+///     <td>xtd::drawing::color::dark_orange</td>
+///     <td>@image html colors_dark_orange.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark_orchid</td>
+///     <td>xtd::drawing::color::dark_orchid</td>
+///     <td>@image html colors_dark_orchid.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark_red</td>
+///     <td>xtd::drawing::color::dark_red</td>
+///     <td>@image html colors_dark_red.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark_salmon</td>
+///     <td>xtd::drawing::color::dark_salmon</td>
+///     <td>@image html colors_dark_salmon.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark_sea_green</td>
+///     <td>xtd::drawing::color::dark_sea_green</td>
+///     <td>@image html colors_dark_sea_green.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark_slate_blue</td>
+///     <td>xtd::drawing::color::dark_slate_blue</td>
+///     <td>@image html colors_dark_slate_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark_slate_gray</td>
+///     <td>xtd::drawing::color::dark_slate_gray</td>
+///     <td>@image html colors_dark_slate_gray.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark_turquoise</td>
+///     <td>xtd::drawing::color::dark_turquoise</td>
+///     <td>@image html colors_dark_turquoise.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark_violet</td>
+///     <td>xtd::drawing::color::dark_violet</td>
+///     <td>@image html colors_dark_violet.png</td>
+///   </tr>
+///   <tr>
+///     <td>deep_pink</td>
+///     <td>xtd::drawing::color::deep_pink</td>
+///     <td>@image html colors_deep_pink.png</td>
+///   </tr>
+///   <tr>
+///     <td>deep_sky_blue</td>
+///     <td>xtd::drawing::color::deep_sky_blue</td>
+///     <td>@image html colors_deep_sky_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>dim_gray</td>
+///     <td>xtd::drawing::color::dim_gray</td>
+///     <td>@image html colors_dim_gray.png</td>
+///   </tr>
+///   <tr>
+///     <td>dodger_blue</td>
+///     <td>xtd::drawing::color::dodger_blue</td>
+///     <td>@image html colors_dodger_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>firebrick</td>
+///     <td>xtd::drawing::color::firebrick</td>
+///     <td>@image html colors_firebrick.png</td>
+///   </tr>
+///   <tr>
+///     <td>floral_white</td>
+///     <td>xtd::drawing::color::floral_white</td>
+///     <td>@image html colors_floral_white.png</td>
+///   </tr>
+///   <tr>
+///     <td>forest_green</td>
+///     <td>xtd::drawing::color::forest_green</td>
+///     <td>@image html colors_forest_green.png</td>
+///   </tr>
+///   <tr>
+///     <td>fuchsia</td>
+///     <td>xtd::drawing::color::fuchsia</td>
+///     <td>@image html colors_fuchsia.png</td>
+///   </tr>
+///   <tr>
+///     <td>gainsboro</td>
+///     <td>xtd::drawing::color::gainsboro</td>
+///     <td>@image html colors_gainsboro.png</td>
+///   </tr>
+///   <tr>
+///     <td>ghost_white</td>
+///     <td>xtd::drawing::color::ghost_white</td>
+///     <td>@image html colors_ghost_white.png</td>
+///   </tr>
+///   <tr>
+///     <td>gold</td>
+///     <td>xtd::drawing::color::gold</td>
+///     <td>@image html colors_gold.png</td>
+///   </tr>
+///   <tr>
+///     <td>goldenrod</td>
+///     <td>xtd::drawing::color::goldenrod</td>
+///     <td>@image html colors_goldenrod.png</td>
+///   </tr>
+///   <tr>
+///     <td>gray</td>
+///     <td>xtd::drawing::color::gray</td>
+///     <td>@image html colors_gray.png</td>
+///   </tr>
+///   <tr>
+///     <td>green</td>
+///     <td>xtd::drawing::color::green</td>
+///     <td>@image html colors_green.png</td>
+///   </tr>
+///   <tr>
+///     <td>green_yellow</td>
+///     <td>xtd::drawing::color::green_yellow</td>
+///     <td>@image html colors_green_yellow.png</td>
+///   </tr>
+///   <tr>
+///     <td>honeydew</td>
+///     <td>xtd::drawing::color::honeydew</td>
+///     <td>@image html colors_honeydew.png</td>
+///   </tr>
+///   <tr>
+///     <td>hot_pink</td>
+///     <td>xtd::drawing::color::hot_pink</td>
+///     <td>@image html colors_hot_pink.png</td>
+///   </tr>
+///   <tr>
+///     <td>indian_red</td>
+///     <td>xtd::drawing::color::indian_red</td>
+///     <td>@image html colors_indian_red.png</td>
+///   </tr>
+///   <tr>
+///     <td>indigo</td>
+///     <td>xtd::drawing::color::indigo</td>
+///     <td>@image html colors_indigo.png</td>
+///   </tr>
+///   <tr>
+///     <td>ivory</td>
+///     <td>xtd::drawing::color::ivory</td>
+///     <td>@image html colors_ivory.png</td>
+///   </tr>
+///   <tr>
+///     <td>khaki</td>
+///     <td>xtd::drawing::color::khaki</td>
+///     <td>@image html colors_khaki.png</td>
+///   </tr>
+///   <tr>
+///     <td>lavender</td>
+///     <td>xtd::drawing::color::lavender</td>
+///     <td>@image html colors_lavender.png</td>
+///   </tr>
+///   <tr>
+///     <td>lavender_blush</td>
+///     <td>xtd::drawing::color::lavender_blush</td>
+///     <td>@image html colors_lavender_blush.png</td>
+///   </tr>
+///   <tr>
+///     <td>lawn_green</td>
+///     <td>xtd::drawing::color::lawn_green</td>
+///     <td>@image html colors_lawn_green.png</td>
+///   </tr>
+///   <tr>
+///     <td>lemon_chiffon</td>
+///     <td>xtd::drawing::color::lemon_chiffon</td>
+///     <td>@image html colors_lemon_chiffon.png</td>
+///   </tr>
+///   <tr>
+///     <td>light_blue</td>
+///     <td>xtd::drawing::color::light_blue</td>
+///     <td>@image html colors_light_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>light_coral</td>
+///     <td>xtd::drawing::color::light_coral</td>
+///     <td>@image html colors_light_coral.png</td>
+///   </tr>
+///   <tr>
+///     <td>light_cyan</td>
+///     <td>xtd::drawing::color::light_cyan</td>
+///     <td>@image html colors_light_cyan.png</td>
+///   </tr>
+///   <tr>
+///     <td>light_goldenrod_yellow</td>
+///     <td>xtd::drawing::color::light_goldenrod_yellow</td>
+///     <td>@image html colors_light_goldenrod_yellow.png</td>
+///   </tr>
+///   <tr>
+///     <td>light_gray</td>
+///     <td>xtd::drawing::color::light_gray</td>
+///     <td>@image html colors_light_gray.png</td>
+///   </tr>
+///   <tr>
+///     <td>light_green</td>
+///     <td>xtd::drawing::color::light_green</td>
+///     <td>@image html colors_light_green.png</td>
+///   </tr>
+///   <tr>
+///     <td>light_pink</td>
+///     <td>xtd::drawing::color::light_pink</td>
+///     <td>@image html colors_light_pink.png</td>
+///   </tr>
+///   <tr>
+///     <td>light_salmon</td>
+///     <td>xtd::drawing::color::light_salmon</td>
+///     <td>@image html colors_light_salmon.png</td>
+///   </tr>
+///   <tr>
+///     <td>light_sea_green</td>
+///     <td>xtd::drawing::color::light_sea_green</td>
+///     <td>@image html colors_light_sea_green.png</td>
+///   </tr>
+///   <tr>
+///     <td>light_sky_blue</td>
+///     <td>xtd::drawing::color::light_sky_blue</td>
+///     <td>@image html colors_light_sky_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>light_slate_gray</td>
+///     <td>xtd::drawing::color::light_slate_gray</td>
+///     <td>@image html colors_light_slate_gray.png</td>
+///   </tr>
+///   <tr>
+///     <td>light_steel_blue</td>
+///     <td>xtd::drawing::color::light_steel_blue</td>
+///     <td>@image html colors_light_steel_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>light_yellow</td>
+///     <td>xtd::drawing::color::light_yellow</td>
+///     <td>@image html colors_light_yellow.png</td>
+///   </tr>
+///   <tr>
+///     <td>lime</td>
+///     <td>xtd::drawing::color::lime</td>
+///     <td>@image html colors_lime.png</td>
+///   </tr>
+///   <tr>
+///     <td>lime_green</td>
+///     <td>xtd::drawing::color::lime_green</td>
+///     <td>@image html colors_lime_green.png</td>
+///   </tr>
+///   <tr>
+///     <td>linen</td>
+///     <td>xtd::drawing::color::linen</td>
+///     <td>@image html colors_linen.png</td>
+///   </tr>
+///   <tr>
+///     <td>magenta</td>
+///     <td>xtd::drawing::color::magenta</td>
+///     <td>@image html colors_magenta.png</td>
+///   </tr>
+///   <tr>
+///     <td>maroon</td>
+///     <td>xtd::drawing::color::maroon</td>
+///     <td>@image html colors_maroon.png</td>
+///   </tr>
+///   <tr>
+///     <td>medium_aquamarine</td>
+///     <td>xtd::drawing::color::medium_aquamarine</td>
+///     <td>@image html colors_medium_aquamarine.png</td>
+///   </tr>
+///   <tr>
+///     <td>medium_blue</td>
+///     <td>xtd::drawing::color::medium_blue</td>
+///     <td>@image html colors_medium_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>medium_orchid</td>
+///     <td>xtd::drawing::color::medium_orchid</td>
+///     <td>@image html colors_medium_orchid.png</td>
+///   </tr>
+///   <tr>
+///     <td>medium_purple</td>
+///     <td>xtd::drawing::color::medium_purple</td>
+///     <td>@image html colors_medium_purple.png</td>
+///   </tr>
+///   <tr>
+///     <td>medium_sea_green</td>
+///     <td>xtd::drawing::color::medium_sea_green</td>
+///     <td>@image html colors_medium_sea_green.png</td>
+///   </tr>
+///   <tr>
+///     <td>medium_slate_blue</td>
+///     <td>xtd::drawing::color::medium_slate_blue</td>
+///     <td>@image html colors_medium_slate_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>medium_spring_green</td>
+///     <td>xtd::drawing::color::medium_spring_green</td>
+///     <td>@image html colors_medium_spring_green.png</td>
+///   </tr>
+///   <tr>
+///     <td>medium_turquoise</td>
+///     <td>xtd::drawing::color::medium_turquoise</td>
+///     <td>@image html colors_medium_turquoise.png</td>
+///   </tr>
+///   <tr>
+///     <td>medium_violet_red</td>
+///     <td>xtd::drawing::color::medium_violet_red</td>
+///     <td>@image html colors_medium_violet_red.png</td>
+///   </tr>
+///   <tr>
+///     <td>midnight_blue</td>
+///     <td>xtd::drawing::color::midnight_blue</td>
+///     <td>@image html colors_midnight_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>mint_cream</td>
+///     <td>xtd::drawing::color::mint_cream</td>
+///     <td>@image html colors_mint_cream.png</td>
+///   </tr>
+///   <tr>
+///     <td>misty_rose</td>
+///     <td>xtd::drawing::color::misty_rose</td>
+///     <td>@image html colors_misty_rose.png</td>
+///   </tr>
+///   <tr>
+///     <td>moccasin</td>
+///     <td>xtd::drawing::color::moccasin</td>
+///     <td>@image html colors_moccasin.png</td>
+///   </tr>
+///   <tr>
+///     <td>navajo_white</td>
+///     <td>xtd::drawing::color::navajo_white</td>
+///     <td>@image html colors_navajo_white.png</td>
+///   </tr>
+///   <tr>
+///     <td>navy</td>
+///     <td>xtd::drawing::color::navy</td>
+///     <td>@image html colors_navy.png</td>
+///   </tr>
+///   <tr>
+///     <td>old_lace</td>
+///     <td>xtd::drawing::color::old_lace</td>
+///     <td>@image html colors_old_lace.png</td>
+///   </tr>
+///   <tr>
+///     <td>olive</td>
+///     <td>xtd::drawing::color::olive</td>
+///     <td>@image html colors_olive.png</td>
+///   </tr>
+///   <tr>
+///     <td>olive_drab</td>
+///     <td>xtd::drawing::color::olive_drab</td>
+///     <td>@image html colors_olive_drab.png</td>
+///   </tr>
+///   <tr>
+///     <td>orange</td>
+///     <td>xtd::drawing::color::orange</td>
+///     <td>@image html colors_orange.png</td>
+///   </tr>
+///   <tr>
+///     <td>orange_red</td>
+///     <td>xtd::drawing::color::orange_red</td>
+///     <td>@image html colors_orange_red.png</td>
+///   </tr>
+///   <tr>
+///     <td>orchid</td>
+///     <td>xtd::drawing::color::orchid</td>
+///     <td>@image html colors_orchid.png</td>
+///   </tr>
+///   <tr>
+///     <td>pale_goldenrod</td>
+///     <td>xtd::drawing::color::pale_goldenrod</td>
+///     <td>@image html colors_pale_goldenrod.png</td>
+///   </tr>
+///   <tr>
+///     <td>pale_green</td>
+///     <td>xtd::drawing::color::pale_green</td>
+///     <td>@image html colors_pale_green.png</td>
+///   </tr>
+///   <tr>
+///     <td>pale_turquoise</td>
+///     <td>xtd::drawing::color::pale_turquoise</td>
+///     <td>@image html colors_pale_turquoise.png</td>
+///   </tr>
+///   <tr>
+///     <td>pale_violet_red</td>
+///     <td>xtd::drawing::color::pale_violet_red</td>
+///     <td>@image html colors_pale_violet_red.png</td>
+///   </tr>
+///   <tr>
+///     <td>papaya_whip</td>
+///     <td>xtd::drawing::color::papaya_whip</td>
+///     <td>@image html colors_papaya_whip.png</td>
+///   </tr>
+///   <tr>
+///     <td>peach_puff</td>
+///     <td>xtd::drawing::color::peach_puff</td>
+///     <td>@image html colors_peach_puff.png</td>
+///   </tr>
+///   <tr>
+///     <td>peru</td>
+///     <td>xtd::drawing::color::peru</td>
+///     <td>@image html colors_peru.png</td>
+///   </tr>
+///   <tr>
+///     <td>pink</td>
+///     <td>xtd::drawing::color::pink</td>
+///     <td>@image html colors_pink.png</td>
+///   </tr>
+///   <tr>
+///     <td>plum</td>
+///     <td>xtd::drawing::color::plum</td>
+///     <td>@image html colors_plum.png</td>
+///   </tr>
+///   <tr>
+///     <td>powder_blue</td>
+///     <td>xtd::drawing::color::powder_blue</td>
+///     <td>@image html colors_powder_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>purple</td>
+///     <td>xtd::drawing::color::purple</td>
+///     <td>@image html colors_purple.png</td>
+///   </tr>
+///   <tr>
+///     <td>rebecca_purple</td>
+///     <td>xtd::drawing::color::rebecca_purple</td>
+///     <td>@image html colors_rebecca_purple.png</td>
+///   </tr>
+///   <tr>
+///     <td>red</td>
+///     <td>xtd::drawing::color::red</td>
+///     <td>@image html colors_red.png</td>
+///   </tr>
+///   <tr>
+///     <td>rosy_brown</td>
+///     <td>xtd::drawing::color::rosy_brown</td>
+///     <td>@image html colors_rosy_brown.png</td>
+///   </tr>
+///   <tr>
+///     <td>royal_blue</td>
+///     <td>xtd::drawing::color::royal_blue</td>
+///     <td>@image html colors_royal_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>saddle_brown</td>
+///     <td>xtd::drawing::color::saddle_brown</td>
+///     <td>@image html colors_saddle_brown.png</td>
+///   </tr>
+///   <tr>
+///     <td>salmon</td>
+///     <td>xtd::drawing::color::salmon</td>
+///     <td>@image html colors_salmon.png</td>
+///   </tr>
+///   <tr>
+///     <td>sandy_brown</td>
+///     <td>xtd::drawing::color::sandy_brown</td>
+///     <td>@image html colors_sandy_brown.png</td>
+///   </tr>
+///   <tr>
+///     <td>sea_green</td>
+///     <td>xtd::drawing::color::sea_green</td>
+///     <td>@image html colors_sea_green.png</td>
+///   </tr>
+///   <tr>
+///     <td>sea_shell</td>
+///     <td>xtd::drawing::color::sea_shell</td>
+///     <td>@image html colors_sea_shell.png</td>
+///   </tr>
+///   <tr>
+///     <td>sienna</td>
+///     <td>xtd::drawing::color::sienna</td>
+///     <td>@image html colors_sienna.png</td>
+///   </tr>
+///   <tr>
+///     <td>silver</td>
+///     <td>xtd::drawing::color::silver</td>
+///     <td>@image html colors_silver.png</td>
+///   </tr>
+///   <tr>
+///     <td>sky_blue</td>
+///     <td>xtd::drawing::color::sky_blue</td>
+///     <td>@image html colors_sky_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>slate_blue</td>
+///     <td>xtd::drawing::color::slate_blue</td>
+///     <td>@image html colors_slate_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>slate_gray</td>
+///     <td>xtd::drawing::color::slate_gray</td>
+///     <td>@image html colors_slate_gray.png</td>
+///   </tr>
+///   <tr>
+///     <td>snow</td>
+///     <td>xtd::drawing::color::snow</td>
+///     <td>@image html colors_snow.png</td>
+///   </tr>
+///   <tr>
+///     <td>spring_green</td>
+///     <td>xtd::drawing::color::spring_green</td>
+///     <td>@image html colors_spring_green.png</td>
+///   </tr>
+///   <tr>
+///     <td>steel_blue</td>
+///     <td>xtd::drawing::color::steel_blue</td>
+///     <td>@image html colors_steel_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>tan</td>
+///     <td>xtd::drawing::color::tan</td>
+///     <td>@image html colors_tan.png</td>
+///   </tr>
+///   <tr>
+///     <td>teal</td>
+///     <td>xtd::drawing::color::teal</td>
+///     <td>@image html colors_teal.png</td>
+///   </tr>
+///   <tr>
+///     <td>thistle</td>
+///     <td>xtd::drawing::color::thistle</td>
+///     <td>@image html colors_thistle.png</td>
+///   </tr>
+///   <tr>
+///     <td>tomato</td>
+///     <td>xtd::drawing::color::tomato</td>
+///     <td>@image html colors_tomato.png</td>
+///   </tr>
+///   <tr>
+///     <td>turquoise</td>
+///     <td>xtd::drawing::color::turquoise</td>
+///     <td>@image html colors_turquoise.png</td>
+///   </tr>
+///   <tr>
+///     <td>violet</td>
+///     <td>xtd::drawing::color::violet</td>
+///     <td>@image html colors_violet.png</td>
+///   </tr>
+///   <tr>
+///     <td>wheat</td>
+///     <td>xtd::drawing::color::wheat</td>
+///     <td>@image html colors_wheat.png</td>
+///   </tr>
+///   <tr>
+///     <td>white</td>
+///     <td>xtd::drawing::color::white</td>
+///     <td>@image html colors_white.png</td>
+///   </tr>
+///   <tr>
+///     <td>white_smoke</td>
+///     <td>xtd::drawing::color::white_smoke</td>
+///     <td>@image html colors_white_smoke.png</td>
+///   </tr>
+///   <tr>
+///     <td>yellow</td>
+///     <td>xtd::drawing::color::yellow</td>
+///     <td>@image html colors_yellow.png</td>
+///   </tr>
+///   <tr>
+///     <td>yellow_green</td>
+///     <td>xtd::drawing::color::yellow_green</td>
+///     <td>@image html colors_yellow_green.png</td>
 ///   </tr>
 /// </table>
