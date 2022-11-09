@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/ustring.h>
-#include <stdexcept>
+#include <xtd/system_exception.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -15,7 +15,7 @@ namespace xtd {
     /// @par Library
     /// xtd.tunit
     /// @ingroup xtd_tunit exceptions
-    class ignore_error : public std::exception {
+    class ignore_error : public xtd::system_exception {
     public:
       /// @brief Create a new instance of ignore_error class.
       /// @param message Message string associate to the error.
