@@ -126,7 +126,7 @@ For example the [gtest-runner](https://github.com/nholthaus/gtest-runner) tool c
 
 ## List of known IDE/tools NOT compatible with xtd.tunit
 
-* [QtCreator Tools Tests](https://github.com/qt-creator/qt-creator) : The "QtCreator Tools Tests" tool does not work because it analyzes the source files to detect Google Test macros like (`TEST`, `GTEST_SUITE`, ...).
+* [QtCreator](https://github.com/qt-creator/qt-creator) : The "QtCreator Tools Tests" tool does not work because it analyzes the source files to detect Google Test macros like (`TEST`, `GTEST_SUITE`, ...).
 
 ### Remarks
 
