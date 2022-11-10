@@ -2,7 +2,7 @@
 
 # xtd.tunit overview
 
-This topic shows how to create a simple xtd.tunit project and how to run it from the command line, with Visual Studio Test Explorer or external tools.
+This topic shows how to create a simple [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) project and how to run it from the command line, with Visual Studio Test Explorer or external tools.
 
 For this we will use a simple test.
 
@@ -63,7 +63,7 @@ install_component()
 
 # Console
 
-You can execute your xtd.tunit project in command line.
+You can execute your [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) project in command line.
 
 ## On Windows
 
@@ -95,7 +95,7 @@ You can use the following command line flags to control its behavior. Type `unit
 
 # Visual Studio Explorer
 
-You can write and run your C++ unit tests by using the Test Explorer window of Visual Studio 19 or later. 
+You can run your [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) project by using the Test Explorer window of Visual Studio 19 or later. 
 
 For more information about using Test Explorer, see [Run unit tests with Test Explorer](https://learn.microsoft.com/en-us/visualstudio/test/run-unit-tests-with-test-explorer?view=vs-2022).
 
@@ -111,26 +111,27 @@ For more information about using Test Explorer, see [Run unit tests with Test Ex
 
 # tunit-gui
 
-The tunit-gui tool (not ready yet, only a [c# prototype](https://github.com/gammasoft71/tunit_gui_win_forms) exists for the moment), can execute xtd.tunit unit tests.
+The tunit-gui tool (not ready yet, only a [c# prototype](https://github.com/gammasoft71/tunit_gui_win_forms) exists for the moment), can [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) project.
 
 [![tunit_gui_forms](pictures/unit_test_tools/tunit_gui_forms_w.png)](guide_tunit_overview.md)
 
 # Other unit tests GUI tools
 
-xtd.tunit is compatible with google-test (gtest). So any thirdparty unit tests GUI tool written for gtest can execute xtd.tunit project.
+[xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) is compatible with google-test (gtest). So any thirdparty unit tests GUI tool written for gtest can execute [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) project.
 
-For example the [gtest-runner](https://github.com/nholthaus/gtest-runner) tool can run your xtd.tunit project.
+For example the [gtest-runner](https://github.com/nholthaus/gtest-runner) tool can run your [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) project.
 
 [![tunit_gtest_runner](pictures/unit_test_tools/tunit_gtest_runner_md.png)](guide_tunit_overview.md)
 
 ## Remarks
 
-* Other third party tools should also run xtd.tunit projects but have not been tested.
+* Other third party tools should also run [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) projects but have not been tested.
 * If you have an external tool that doesn't seem to be working, don't hesitate to ask for [support](https://gammasoft71.wixsite.com/xtdpro/support).
 
 # Next step
 
-Read [Writing test application tutorial](https://github.com/gammasoft71/xtd/blob/master/docs/writing_applicaion_test.md)
+* Read [Writing test application tutorial](https://github.com/gammasoft71/xtd/blob/master/docs/writing_applicaion_test.md)
+* Read [xtd.tunit examples](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.tunit.examples/README.md).
 
 # See also
 ​
