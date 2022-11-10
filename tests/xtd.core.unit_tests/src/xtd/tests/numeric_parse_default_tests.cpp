@@ -13,15 +13,15 @@ namespace xtd::tests {
   class numeric_parse_string_default_tests;
   
   test_class_attribute<numeric_parse_string_default_tests<char>> numeric_parse_string_default_tests_class_char_attr {"numeric_parse_string_default_tests<char>"};
-  test_class_attribute<numeric_parse_string_default_tests<unsigned char>> numeric_parse_string_default_tests_class_unsigned_char_attr {"numeric_parse_string_default_tests<unsigned char>"};
+  test_class_attribute<numeric_parse_string_default_tests<unsigned char>> numeric_parse_string_default_tests_class_unsigned_char_attr {"numeric_parse_string_default_tests<unsigned_char>"};
   test_class_attribute<numeric_parse_string_default_tests<short>> numeric_parse_string_default_tests_class_short_attr {"numeric_parse_string_default_tests<short>"};
-  test_class_attribute<numeric_parse_string_default_tests<unsigned short>> numeric_parse_string_default_tests_class_unsigned_short_attr {"numeric_parse_string_default_tests<unsigned short>"};
+  test_class_attribute<numeric_parse_string_default_tests<unsigned short>> numeric_parse_string_default_tests_class_unsigned_short_attr {"numeric_parse_string_default_tests<unsigned_short>"};
   test_class_attribute<numeric_parse_string_default_tests<int>> numeric_parse_string_default_tests_class_int_attr {"numeric_parse_string_default_tests<int>"};
-  test_class_attribute<numeric_parse_string_default_tests<unsigned int>> numeric_parse_string_default_tests_class_unsigned_int_attr {"numeric_parse_string_default_tests<unsigned int>"};
+  test_class_attribute<numeric_parse_string_default_tests<unsigned int>> numeric_parse_string_default_tests_class_unsigned_int_attr {"numeric_parse_string_default_tests<unsigned_int>"};
   test_class_attribute<numeric_parse_string_default_tests<long>> numeric_parse_string_default_tests_class_long_attr {"numeric_parse_string_default_tests<long>"};
-  test_class_attribute<numeric_parse_string_default_tests<unsigned long>> numeric_parse_string_default_tests_class_unsigned_long_attr {"numeric_parse_string_default_tests<unsigned long>"};
-  test_class_attribute<numeric_parse_string_default_tests<long long>> numeric_parse_string_default_tests_class_long_long_attr {"numeric_parse_string_default_tests<long long>"};
-  test_class_attribute<numeric_parse_string_default_tests<unsigned long long>> numeric_parse_string_default_tests_class_unsigned_long_long_attr {"numeric_parse_string_default_tests<unsigned long long>"};
+  test_class_attribute<numeric_parse_string_default_tests<unsigned long>> numeric_parse_string_default_tests_class_unsigned_long_attr {"numeric_parse_string_default_tests<unsigned_long>"};
+  test_class_attribute<numeric_parse_string_default_tests<long long>> numeric_parse_string_default_tests_class_long_long_attr {"numeric_parse_string_default_tests<long_long>"};
+  test_class_attribute<numeric_parse_string_default_tests<unsigned long long>> numeric_parse_string_default_tests_class_unsigned_long_long_attr {"numeric_parse_string_default_tests<unsigned_long_long>"};
   test_class_attribute<numeric_parse_string_default_tests<int8_t>> numeric_parse_string_default_tests_class_int8_t_attr {"numeric_parse_string_default_tests<int8_t>"};
   test_class_attribute<numeric_parse_string_default_tests<int16_t>> numeric_parse_string_default_tests_class_int16_t_attr {"numeric_parse_string_default_tests<int16_t>"};
   test_class_attribute<numeric_parse_string_default_tests<int32_t>> numeric_parse_string_default_tests_class_int32_t_attr {"numeric_parse_string_default_tests<int32_t>"};
