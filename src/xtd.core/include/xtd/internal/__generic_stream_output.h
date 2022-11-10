@@ -82,8 +82,8 @@ inline std::basic_ostream<char_t, char_traits_t>& operator<<(std::basic_ostream<
 }
 
 /*
-template <typename char_t, typename char_traits_t, typename ... Args>
-inline std::basic_ostream<char_t, char_traits_t>& operator<<(std::basic_ostream<char_t, char_traits_t>& os, const std::variant<Args ...>& value) {
+template <typename char_t, typename char_traits_t, typename ... args_t>
+inline std::basic_ostream<char_t, char_traits_t>& operator<<(std::basic_ostream<char_t, char_traits_t>& os, const std::variant<args_t ...>& value) {
   std::visit([&](auto && t){
     os << t;
   }, value);
