@@ -136,6 +136,7 @@ For example the [gtest-runner](https://github.com/nholthaus/gtest-runner) tool c
 
 * Other third party IDE / tools could also run [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) projects but have not been tested.
 * If you have an IDE/tool that doesn't seem to be working, don't hesitate to ask for [support](https://gammasoft71.wixsite.com/xtdpro/support).
+* If you have a working IDE/tool, feel free to make a [pull request](https://github.com/gammasoft71/xtd) to update the list of compatible tools.
 
 ## Next step
 
