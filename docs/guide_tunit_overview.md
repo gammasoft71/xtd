@@ -123,9 +123,13 @@ For example the [gtest-runner](https://github.com/nholthaus/gtest-runner) tool c
 
 [![tunit_gtest_runner](pictures/unit_test_tools/tunit_gtest_runner_md.png)](guide_tunit_overview.md)
 
+## List of tools not compatible with xtd.tunit
+
+* Qt Tools Tests : The "Qt Tools Tests" tool does not work because it analyzes the source files to detect Google Test macros like (`TEST`, `GTEST_SUITE`, ...).
+
 ### Remarks
 
-* Other third party tools should also run [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) projects but have not been tested.
+* Other third party tools could also run [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) projects but have not been tested.
 * If you have an external tool that doesn't seem to be working, don't hesitate to ask for [support](https://gammasoft71.wixsite.com/xtdpro/support).
 
 ## Next step
