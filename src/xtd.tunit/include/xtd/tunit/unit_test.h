@@ -207,7 +207,7 @@ namespace xtd {
       }
       
       virtual bool parse_arguments(const std::vector<std::string>& args) {
-        bool gtest_compatibility = false;
+        bool gtest_compatibility = xtd::tunit::settings::default_settings().gtest_compatibility();
         for (auto arg : args) {
           if (arg == "--gtest_compatibility" || arg.find("--gtest") == 0) gtest_compatibility = true;
           // Test selection :
