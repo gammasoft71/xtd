@@ -83,7 +83,7 @@ Run "Terminal", go to the buid directory of the project (unit_test_project2/buil
 
 ## Output
 
-[!tunit_command_line](tunit_command_line.png)
+[!tunit_command_line](pictures/unit_test_tools/tunit_command_line.png)
 
 ## Options
 
@@ -91,7 +91,7 @@ You can use the following command line flags to control its behavior. Type `unit
 
 ## Output
 
-[!tunit_command_line](tunit_command_line_help.png)
+[!tunit_command_line](pictures/unit_test_tools/tunit_command_line_help.png)
 
 # Visual Studio Explorer
 
@@ -99,7 +99,7 @@ You can write and run your C++ unit tests by using the Test Explorer window of V
 
 For more information about using Test Explorer, see [Run unit tests with Test Explorer](https://learn.microsoft.com/en-us/visualstudio/test/run-unit-tests-with-test-explorer?view=vs-2022).
 
-[!tunit_visual_studio_test_explorer](tunit_visual_studio_test_explorer_w.png)
+[!tunit_visual_studio_test_explorer](pictures/unit_test_tools/tunit_visual_studio_test_explorer_w.png)
 
 ## Remarks
 
@@ -113,7 +113,7 @@ For more information about using Test Explorer, see [Run unit tests with Test Ex
 
 The tunit-gui tool (not ready yet, only a [c# prototype](https://github.com/gammasoft71/tunit_gui_win_forms) exists for the moment), can execute xtd.tunit unit tests.
 
-[!tunit_gui_forms](tunit_gui_forms_w.png)
+[!tunit_gui_forms](pictures/unit_test_tools/tunit_gui_forms_w.png)
 
 # Other unit tests GUI tools
 
@@ -121,7 +121,7 @@ xtd.tunit is compatible with google-test (gtest). So any thirdparty unit tests G
 
 For example the [gtest-runner](https://github.com/nholthaus/gtest-runner) tool can run your xtd.tunit project.
 
-[!tunit_gtest_runner](tunit_gtest_runner_md.png)
+[!tunit_gtest_runner](pictures/unit_test_tools/tunit_gtest_runner_md.png)
 
 ## Remarks
 
