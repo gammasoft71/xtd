@@ -4,7 +4,7 @@
 
 using namespace xtd::tunit;
 
-template<typename T>
+template<typename type_t>
 size_t get_max_value() {return 0;}
 
 template<>
@@ -24,26 +24,26 @@ size_t get_max_value<uint8_t>() {return 255;}
 
 namespace unit_tests {
   // Used test_class_attribute<> to add unit test suit.
-  template<typename T>
+  template<typename type_t>
   class test;
   
   test_class_attribute<test<bool>> test_bool_class_attr {"test<bool>"};
   test_class_attribute<test<int>> test_int_class_attr {"test<int>"};
-  test_class_attribute<test<long int>> test_double_class_attr {"test<long int>"};
+  test_class_attribute<test<long int>> test_double_class_attr {"test<long_int>"};
   test_class_attribute<test<int8_t>> test_int8_t_class_attr {"test<int8_t>"};
   test_class_attribute<test<uint8_t>> test_uint8_t_class_attr {"test<uint8_t>"};
   
   // The test class must be inherit from test_class class.
-  template<typename T>
+  template<typename type_t>
   class test : public test_class {
   public:
     void test_method_(test_max_value) {
       static std::map<std::string, size_t> expected_max_values = {{typeid(bool).name(), std::numeric_limits<bool>::max()}, {typeid(int).name(), std::numeric_limits<int>::max()}, {typeid(long int).name(), std::numeric_limits<long int>::max()}, {typeid(int8_t).name(), std::numeric_limits<int8_t>::max()}};
       
-      if (expected_max_values.find(typeid(T).name()) == expected_max_values.end())
+      if (expected_max_values.find(typeid(type_t).name()) == expected_max_values.end())
         assert::fail("expect max value for this type is not defined.");
         
-      assert::are_equal(expected_max_values[typeid(T).name()], get_max_value<T>());
+      assert::are_equal(expected_max_values[typeid(type_t).name()], get_max_value<type_t>());
     }
   };
 }

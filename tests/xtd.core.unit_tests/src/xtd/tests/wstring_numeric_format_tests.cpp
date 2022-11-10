@@ -12,15 +12,15 @@ namespace xtd::tests {
   class wstring_numeric_format_tests;
   
   test_class_attribute<wstring_numeric_format_tests<char>> wstring_numeric_format_tests_class_char_attr {"wstring_numeric_format_tests<char>"};
-  test_class_attribute<wstring_numeric_format_tests<unsigned char>> wstring_numeric_format_tests_class_unsigned_char_attr {"wstring_numeric_format_tests<unsigned char>"};
+  test_class_attribute<wstring_numeric_format_tests<unsigned char>> wstring_numeric_format_tests_class_unsigned_char_attr {"wstring_numeric_format_tests<unsigned_char>"};
   test_class_attribute<wstring_numeric_format_tests<short>> wstring_numeric_format_tests_class_short_attr {"wstring_numeric_format_tests<short>"};
-  test_class_attribute<wstring_numeric_format_tests<unsigned short>> wstring_numeric_format_tests_class_unsigned_short_attr {"wstring_numeric_format_tests<unsigned short>"};
+  test_class_attribute<wstring_numeric_format_tests<unsigned short>> wstring_numeric_format_tests_class_unsigned_short_attr {"wstring_numeric_format_tests<unsigned_short>"};
   test_class_attribute<wstring_numeric_format_tests<int>> wstring_numeric_format_tests_class_int_attr {"wstring_numeric_format_tests<int>"};
-  test_class_attribute<wstring_numeric_format_tests<unsigned int>> wstring_numeric_format_tests_class_unsigned_int_attr {"wstring_numeric_format_tests<unsigned int>"};
+  test_class_attribute<wstring_numeric_format_tests<unsigned int>> wstring_numeric_format_tests_class_unsigned_int_attr {"wstring_numeric_format_tests<unsigned_int>"};
   test_class_attribute<wstring_numeric_format_tests<long>> wstring_numeric_format_tests_class_long_attr {"wstring_numeric_format_tests<long>"};
-  test_class_attribute<wstring_numeric_format_tests<unsigned long>> wstring_numeric_format_tests_class_unsigned_long_attr {"wstring_numeric_format_tests<unsigned long>"};
-  test_class_attribute<wstring_numeric_format_tests<long long>> wstring_numeric_format_tests_class_long_long_attr {"wstring_numeric_format_tests<long long>"};
-  test_class_attribute<wstring_numeric_format_tests<unsigned long long>> wstring_numeric_format_tests_class_unsigned_long_long_attr {"wstring_numeric_format_tests<unsigned long long>"};
+  test_class_attribute<wstring_numeric_format_tests<unsigned long>> wstring_numeric_format_tests_class_unsigned_long_attr {"wstring_numeric_format_tests<unsigned_long>"};
+  test_class_attribute<wstring_numeric_format_tests<long long>> wstring_numeric_format_tests_class_long_long_attr {"wstring_numeric_format_tests<long_long>"};
+  test_class_attribute<wstring_numeric_format_tests<unsigned long long>> wstring_numeric_format_tests_class_unsigned_long_long_attr {"wstring_numeric_format_tests<unsigned_long_long>"};
   test_class_attribute<wstring_numeric_format_tests<int8_t>> wstring_numeric_format_tests_class_int8_t_attr {"wstring_numeric_format_tests<int8_t>"};
   test_class_attribute<wstring_numeric_format_tests<int16_t>> wstring_numeric_format_tests_class_int16_t_attr {"wstring_numeric_format_tests<int16_t>"};
   test_class_attribute<wstring_numeric_format_tests<int32_t>> wstring_numeric_format_tests_class_int32_t_attr {"wstring_numeric_format_tests<int32_t>"};

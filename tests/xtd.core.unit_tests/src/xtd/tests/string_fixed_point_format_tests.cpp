@@ -13,7 +13,7 @@ namespace xtd::tests {
   
   test_class_attribute<string_fixed_point_format_tests<float>> string_fixed_point_format_tests_class_float_attr {"string_fixed_point_format_tests<float>"};
   test_class_attribute<string_fixed_point_format_tests<double>> string_fixed_point_format_tests_class_double_attr {"string_fixed_point_format_tests<double>"};
-  test_class_attribute<string_fixed_point_format_tests<long double>> string_fixed_point_format_tests_class_long_double_attr {"string_fixed_point_format_tests<long double>"};
+  test_class_attribute<string_fixed_point_format_tests<long double>> string_fixed_point_format_tests_class_long_double_attr {"string_fixed_point_format_tests<long_double>"};
   
   template<typename Value>
   class string_fixed_point_format_tests : public test_class {
