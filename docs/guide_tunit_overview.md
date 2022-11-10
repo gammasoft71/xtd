@@ -67,7 +67,7 @@ You can execute your [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd
 
 ## On Windows
 
-Run "Command prompt", go to the buid directory of the project (unit_test_project2\build\Debug) and type the following line :
+Run "Command prompt", go to the buid directory of the project (`unit_test_project2\build\Debug`) and type the following line :
 
 ```shell
 unit_test_rpoject2
@@ -75,7 +75,7 @@ unit_test_rpoject2
 
 ## On macOS and Linux
 
-Run "Terminal", go to the buid directory of the project (unit_test_project2/build/Debug) and type the following line :
+Run "Terminal", go to the buid directory of the project (`unit_test_project2/build/Debug`) and type the following line :
 
 ```shell
 ./unit_test_rpoject2
