@@ -123,6 +123,7 @@ For example the [gtest-runner](https://github.com/nholthaus/gtest-runner) tool c
 
 * [Microsoft Vusial Studio 2019 or later](https://learn.microsoft.com/en-us/visualstudio/test/improve-code-quality?view=vs-2022)
 * [gtest-runner](https://github.com/nholthaus/gtest-runner)
+* [gtest-gbar](https://github.com/ospector/gtest-gbar)
 
 ## List of known IDE/tools NOT compatible with xtd.tunit
 
