@@ -11,7 +11,15 @@ public:
   __tunit_main() = delete;
   static int main(int argc, char* argv[]);
 };
+class tunit_export_ __tunit_main_with_gtest_compatibility final {
+public:
+  __tunit_main_with_gtest_compatibility() = delete;
+  static int main(int argc, char* argv[]);
+};
 /// @endcond
 
 #define tunit_main_ \
-  __tunit_main
+__tunit_main
+
+#define tunit_main_with_gtest_compatibility_ \
+__tunit_main_with_gtest_compatibility
