@@ -95,7 +95,7 @@ You can use the following command line flags to control its behavior. Type `unit
 
 ## Visual Studio Explorer
 
-You can run your [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) project by using the Test Explorer window of Visual Studio 19 or later. 
+You can run your [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) project by using the Test Explorer window of Visual Studio 2019 or later. 
 
 For more information about using Test Explorer, see [Run unit tests with Test Explorer](https://learn.microsoft.com/en-us/visualstudio/test/run-unit-tests-with-test-explorer?view=vs-2022).
 
@@ -121,7 +121,7 @@ For example the [gtest-runner](https://github.com/nholthaus/gtest-runner) tool c
 
 ## List of IDE/tools compatible with xtd.tunit
 
-* [Microsoft Vusial Studio 19 or later](https://learn.microsoft.com/en-us/visualstudio/test/improve-code-quality?view=vs-2022)
+* [Microsoft Vusial Studio 2019 or later](https://learn.microsoft.com/en-us/visualstudio/test/improve-code-quality?view=vs-2022)
 * [gtest-runner](https://github.com/nholthaus/gtest-runner)
 
 ## List of IDE/tools not compatible with xtd.tunit
