@@ -105,10 +105,6 @@ For more information about using Test Explorer, see [Run unit tests with Test Ex
 
 * Make sure that the [Test Adapter for Google Test](https://learn.microsoft.com/en-us/visualstudio/test/how-to-use-google-test-for-cpp?view=vs-2022) tool is installed. It should be installed by default.
 
-### Limitation
-
-* Generic test clases seem not to be understood by the Test Adapter for Google Test.
-
 ## tunit-gui
 
 The tunit-gui tool (not ready yet, only a [c# prototype](https://github.com/gammasoft71/tunit_gui_win_forms) exists for the moment), can run [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) project.
