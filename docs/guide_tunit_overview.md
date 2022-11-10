@@ -119,12 +119,12 @@ For example the [gtest-runner](https://github.com/nholthaus/gtest-runner) tool c
 
 [![tunit_gtest_runner](pictures/unit_test_tools/tunit_gtest_runner_md.png)](guide_tunit_overview.md)
 
-## List of IDE/tools compatible with xtd.tunit
+## List of known IDE/tools compatible with xtd.tunit
 
 * [Microsoft Vusial Studio 2019 or later](https://learn.microsoft.com/en-us/visualstudio/test/improve-code-quality?view=vs-2022)
 * [gtest-runner](https://github.com/nholthaus/gtest-runner)
 
-## List of IDE/tools not compatible with xtd.tunit
+## List of known IDE/tools NOT compatible with xtd.tunit
 
 * [QtCreator Tools Tests](https://github.com/qt-creator/qt-creator) : The "QtCreator Tools Tests" tool does not work because it analyzes the source files to detect Google Test macros like (`TEST`, `GTEST_SUITE`, ...).
 
