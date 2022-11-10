@@ -111,7 +111,7 @@ For more information about using Test Explorer, see [Run unit tests with Test Ex
 
 ## tunit-gui
 
-The tunit-gui tool (not ready yet, only a [c# prototype](https://github.com/gammasoft71/tunit_gui_win_forms) exists for the moment), can [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) project.
+The tunit-gui tool (not ready yet, only a [c# prototype](https://github.com/gammasoft71/tunit_gui_win_forms) exists for the moment), can run [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) project.
 
 [![tunit_gui_forms](pictures/unit_test_tools/tunit_gui_forms_w.png)](guide_tunit_overview.md)
 
