@@ -4,7 +4,7 @@
 #pragma once
 #include "test_class.h"
 #include <memory>
-#include <string>
+#include <xtd/ustring.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -18,7 +18,7 @@ namespace xtd {
     /// @ingroup xtd_tunit tunit
     class registered_test_class final {
     public:
-      registered_test_class(const std::string& name, std::shared_ptr<xtd::tunit::test_class> test_class) noexcept : tc_(test_class) {tc_->name_ = name;}
+      registered_test_class(const std::string& name, std::shared_ptr<xtd::tunit::test_class> test_class) noexcept : tc_(test_class) {tc_->name_ = ustring(name).replace(' ', '_');}
       
     private:
       friend class xtd::tunit::unit_test;
