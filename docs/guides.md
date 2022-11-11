@@ -44,6 +44,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Overview](xtd_forms_explanations.md)
     * [Controls management](controls_management.md)
     * [Control appearance](control_appearance.md)
+    * [Control events](guide_control_events.md)
     * [Containers](containers.md)
     * [How to make thread-safe calls](thread_safe_control_call.md)
 
