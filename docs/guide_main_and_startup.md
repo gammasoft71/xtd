@@ -34,7 +34,7 @@ int main() {
   console::write_line();
 
   // Write command line arguments to the console output
-  for (ustring arg : environment::get_command_line_args())
+  for (auto arg : environment::get_command_line_args())
     console::write_line(arg);
 }
 ```
@@ -107,7 +107,7 @@ namespace examples {
   public:
     static void main() {
       // Write arguments to the console output
-      for (ustring arg : environment::get_command_line_args())
+      for (auto arg : environment::get_command_line_args())
         console::write_line(arg);
         
       // return 42
@@ -131,7 +131,7 @@ namespace examples {
   public:
     static int main() {
       // Write arguments to the console output
-      for (ustring arg : environment::get_command_line_args())
+      for (auto arg : environment::get_command_line_args())
         console::write_line(arg);
         
       return 42;
@@ -155,7 +155,7 @@ namespace examples {
   public:
     static void main(const vector<ustring>& args) {
       // Write arguments to the console output
-      for (ustring arg : args)
+      for (auto arg : args)
         console::write_line(arg);
         
       // return 42
@@ -180,7 +180,53 @@ namespace examples {
   public:
     static int main(const vector<ustring>& args) {
       // Write arguments to the console output
-      for (ustring arg : args)
+      for (auto arg : args)
+        console::write_line(arg);
+        
+      return 42;
+    }
+  };
+}
+
+* Static `main` member function with int and char*[] arguments and without return value.
+
+```c++
+#include <xtd/xtd>
+
+using namespace std;
+using namespace xtd;
+
+namespace examples {
+  class program {
+  public:
+    static void main(int argc, char* argv[]) {
+      // Write arguments to the console output
+      for (auto arg : {argv, argv + argc})
+        console::write_line(arg);
+        
+      // return 42
+      environment::exit_code(42);
+    }
+  };
+}
+
+startup_(examples::program);
+```
+
+* Static `main` member function with int and char*[] arguments and with int return value.
+
+```c++
+#include <xtd/xtd>
+
+using namespace std;
+using namespace xtd;
+
+namespace examples {
+  class program {
+  public:
+    static int main(int argc, char* argv[]) {
+      // Write arguments to the console output
+      for (auto arg : {argv, argv + argc})
         console::write_line(arg);
         
       return 42;
@@ -190,6 +236,28 @@ namespace examples {
 
 startup_(examples::program);
 ```
+
+# Windows main definitions
+
+In Windows, there are different definitions for main in addition to the c++ standard :
+
+main definitions in the standard c++ :
+* `int main () { /*body*/ }`
+* `int main (int argc, char* argv[]) { /*body*/ }`
+* `int main (int argc, wchar_t* argv[], char* envp[ ]) { /*body*/ }`
+
+main definitions Windowws Specific :
+* `int wmain () { /*body*/ }`
+* `int wmain (int argc, wchar_t* argv[]) { /*body*/ }`
+* `int wmain (int argc, wchar_t* argv[], wchar_t* envp[ ]) { /*body*/ }`
+* `int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR pCmdLine, int nCmdShow);`
+* `int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow);`
+
+See [Using wmain](https://learn.microsoft.com/en-us/cpp/c-language/using-wmain?view=msvc-170) and [WinMain: The Application Entry Point](https://learn.microsoft.com/en-us/windows/win32/learnwin32/winmain--the-application-entry-point)
+
+For xtd portability, the `/ENTRY:mainCRTStartup` flag is added automatically when you add the xtd library in your CMakeLists.txt to the linker flags. So even for a GUI application you can call the main functions of the c++ standard in the Windows development environment.
+
+If you are not using CMake for your project creation, it is advisable to add this flag manually.
 
 # See also
 ​
