@@ -10,7 +10,7 @@ It shall have one of the following forms:
 * `int main () { /*body*/ }`
 * `int main (int argc, char* argv[]) { /*body*/ }`
 
-See c++ [reference](https://en.cppreference.com/w/cpp/language/main_function) for more information.
+See [Main function](https://en.cppreference.com/w/cpp/language/main_function) for more information.
 
 ## main function arguments
 
