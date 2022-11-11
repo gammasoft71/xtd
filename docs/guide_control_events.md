@@ -265,7 +265,7 @@ int main() {
 
 ### Remarks
 
-* Each event has an associated function that starts with `on_` followed by the event name.
+* Each event has an associated protected method that starts with `on_` followed by the event name.
 * When you override a method, don't forget to call the method of the inherited class.
 * Each control has its own events or not and also has those of the inherited class.
 
