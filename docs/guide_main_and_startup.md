@@ -43,7 +43,7 @@ As you can see, even if the `main` function is called without arguments and if `
 
 ## startup_ keyword
 
-xtd introduces the keyword `startup_` which allows to have a main static method in any class with different parameters with or without return value. 
+xtd introduces the keyword [startup_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c) which allows to have a main static method in any class with different parameters with or without return value. 
 In the case 
 
 Behind this keyword there is a `main` global function that call `main` static method in the cpecified class paramter with `try` and `catch`.
@@ -66,7 +66,7 @@ Behind this keyword there is a `main` global function that call `main` static me
 
 ### startup_ and exceptions
 
-Even if `startup_` keyword catch exceptions, it's preferable that you catch yourself exception. Indeed `startup_` generate a generic fallback message to the output console for a console application and a generic falbback [xtd::forms::dialog_exception](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1exception__dialog.html) for a GUI application.
+Even if [startup_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c) keyword catch exceptions, it's preferable that you catch yourself exception. Indeed [startup_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c) generate a generic fallback message to the output console for a console application and a generic falbback [xtd::forms::dialog_exception](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1exception__dialog.html) for a GUI application.
 
 Your code should look like this :
 
