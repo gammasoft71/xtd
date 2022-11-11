@@ -39,7 +39,7 @@ int main() {
 }
 ```
 
-As you can see, even if the `main` function is called without arguments and `one two "three four" five` are entered on the command line, you can still retrieve them.
+As you can see, even if the `main` function is called without arguments and if `one two "three four" five` are entered on the command line, you can still retrieve them.
 
 ## startup_ keyword
 
