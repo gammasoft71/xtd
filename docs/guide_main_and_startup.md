@@ -246,7 +246,7 @@ main definitions in the standard c++ :
 * `int main (int argc, char* argv[]) { /*body*/ }`
 * `int main (int argc, wchar_t* argv[], char* envp[ ]) { /*body*/ }`
 
-main definitions Windowws Specific :
+main definitions Windows Specific :
 * `int wmain () { /*body*/ }`
 * `int wmain (int argc, wchar_t* argv[]) { /*body*/ }`
 * `int wmain (int argc, wchar_t* argv[], wchar_t* envp[ ]) { /*body*/ }`
