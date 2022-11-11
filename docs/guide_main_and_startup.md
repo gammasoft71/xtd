@@ -66,7 +66,7 @@ Behind this keyword there is a `main` global function that call `main` static me
 
 ### startup_ and exceptions
 
-Even if startup_ keyword catch exceptions, it's preferable that you catch yourself exception. Indeed startup_ generate a generic fallback message to the output console for a console application and a generic falbback [xtd::forms::dialog_exception](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1exception__dialog.html) for a GUI application.
+Even if `startup_` keyword catch exceptions, it's preferable that you catch yourself exception. Indeed `startup_` generate a generic fallback message to the output console for a console application and a generic falbback [xtd::forms::dialog_exception](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1exception__dialog.html) for a GUI application.
 
 Your code should look like this :
 
