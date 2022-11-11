@@ -21,9 +21,9 @@ The xtd guides provide an explanation on how to use the important features of th
     * [More tutorials](tutorials.md)
 * xtd.core
   * Overview
+    * [main and startup_](guide_main_and_startup.md)
     * [Delegates](delegates.md)
     * [Events](events.md)
-  * * [main and startup_](guide_main_and_startup.md)
   * Common I/O tasks
     * [Common I/O tasks​](common_io_tasks.md)
     * [How to: Copy Directories](common_io_tasks_copy_directories.md)
