@@ -64,6 +64,35 @@ Behind this keyword there is a `main` global function that call `main` static me
   auto __startup_force_to_end_with_semicolon__ = 0
 ```
 
+### startup_ and exception exceptions
+
+Even if startup_ keyword catch exceptions, it's preferable that you catch yourself exception. Indeed startup_ generate a generic fallback message to the output console for a console application and a generic falbback [xtd::forms::dialog_exception](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1exception__dialog.html) for a GUI application.
+
+Your code should look like this :
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd;
+
+namespace examples {
+  class program {
+  public:
+    static void main() {
+      try {
+        // your code
+      } catch(const std::exception& e) {
+        // Your catch handler
+      }
+    }
+  };
+}
+
+startup_(examples::program);
+```
+
+See [try-block](https://en.cppreference.com/w/cpp/language/try_catch) for more information.
+
 ### statup_ keyword usage
 
 * Static `main` member function without argument and without return value.
