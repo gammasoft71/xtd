@@ -435,6 +435,14 @@ void form::on_handle_destroyed(const event_args& e) {
   destroy_system_menu();
 }
 
+void form::on_form_closed(const form_closed_event_args& e) {
+  static bool closing = false;
+  if (closing) return;
+  closing = true;
+  form_closed(*this, e);
+  closing = false;
+}
+
 void form::on_layout(const event_args& e) {
   scrollable_control::on_layout(e);
   if (is_handle_created() && auto_scroll()) native::form::virtual_size(handle(), display_rectangle().size());
