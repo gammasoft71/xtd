@@ -355,7 +355,7 @@ namespace xtd {
       
       /// @brief Begins running a standard application message loop on the current thread, with an application_context.
       /// @param context An ApplicationContext in which the application is run.
-      /// @remarks The message loop runs until Exit or exit_thread is called or the thread_exit event is raised on the context object.
+      /// @remarks The message loop runs until xtd::forms::application::exit or xtd::forms::application::exit_thread is called or the xtd::forms::application_context::thread_exit event is raised on the context object.
       /// @par Examples
       /// The following code example demonstrates the use of application run method.
       /// @include application_context.cpp
@@ -364,7 +364,7 @@ namespace xtd {
       /// @brief Begins running a standard application message loop on the current thread, and makes the specified form visible.
       /// @param main_form A form that represents the form to make visible.
       /// @remarks Typically, the main function of an application calls this method and passes to it the main window of the application.
-      /// @remarks This method adds an event handler to the main_form parameter for the closed event. The event handler calls exit_thread to clean up the application.
+      /// @remarks This method adds an event handler to the main_form parameter for the closed event. The event handler calls xtd::forms::application::exit_thread to clean up the application.
       /// @par Examples
       /// The following code example demonstrates the use of application run method.
       /// @include application.cpp
