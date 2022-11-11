@@ -401,7 +401,7 @@ namespace xtd {
       
       /// @brief Raises the form::form_closed event.
       /// @param e A form_closed_event_args that contains the event data.
-      virtual void on_form_closed(const form_closed_event_args& e) {form_closed(*this, e);}
+      virtual void on_form_closed(const form_closed_event_args& e);
       
       /// @brief Raises the form::form_closing event.
       /// @param e A form_closing_event_args that contains the event data.
