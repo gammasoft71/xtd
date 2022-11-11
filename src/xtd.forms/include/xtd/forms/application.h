@@ -242,7 +242,7 @@ namespace xtd {
       /// @remarks Use a message filter to prevent specific events from being raised or to perform special operations for an event before it is passed to an event handler. Message filters are unique to a specific thread.
       static void add_message_filter(const imessage_filter& value);
       
-      /// @brief Disable font size correction for the application.
+      /// @brief Disables font size correction for the application.
       /// @remarks By default, xtd corrects the size of fonts on non-Windows operating systems so that they have the same aspect ratio as Windows.
       /// @remarks If you disable this option, you will use the actual native font size of the operating system.
       /// @remarks This method has an effect only on non Windows operating system.
