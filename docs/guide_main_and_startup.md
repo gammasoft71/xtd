@@ -237,7 +237,7 @@ namespace examples {
 startup_(examples::program);
 ```
 
-# Windows main definitions
+## Windows main definitions
 
 In Windows, there are different definitions for main in addition to the c++ standard :
 
