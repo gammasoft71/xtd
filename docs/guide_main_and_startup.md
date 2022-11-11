@@ -253,7 +253,7 @@ main definitions specific Windows :
 * `int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR pCmdLine, int nCmdShow);`
 * `int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow);`
 
-See [Using wmain](https://learn.microsoft.com/en-us/cpp/c-language/using-wmain?view=msvc-170) and [WinMain: The Application Entry Point](https://learn.microsoft.com/en-us/windows/win32/learnwin32/winmain--the-application-entry-point)
+See [Using wmain](https://learn.microsoft.com/en-us/cpp/c-language/using-wmain?view=msvc-170) and [WinMain: The Application Entry Point](https://learn.microsoft.com/en-us/windows/win32/learnwin32/winmain--the-application-entry-point) for more information
 
 For xtd portability, the `/ENTRY:mainCRTStartup` flag is added automatically when you add the xtd library in your CMakeLists.txt to the linker flags. So even for a GUI application you can call the main functions of the c++ standard in the Windows development environment.
 
