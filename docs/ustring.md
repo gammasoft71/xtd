@@ -90,8 +90,79 @@ This example is one of N. You can convert any string container to any other stri
 
 See [type convertion](type_conversion_overview.md) and [xtd::as<...>](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7) operators for a complete list of conversion operators.
 
-### xtd::ustring literal operators
+## xtd::ustring literal operators
 
+There are some literals operators for xtd::ustring:
+
+* [_s](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert specified value into xtd::ustring.
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd;
+
+int main() {
+  ustring s = "This is a "_s + "simple string"_s;
+  console::write_line(s);
+}
+// output : This is a simple string
+```
+
+* [_sb](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert the specified value to xtd::ustring with a binary format.
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd;
+
+int main() {
+  ustring s = 42_sb;
+  console::write_line("0b{}", s);
+}
+// output : 0b101010
+```
+
+* [_sb2](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert the specified value to xtd::ustring with a binary format with two digits.
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd;
+
+int main() {
+  ustring s = 1_sb2;
+  console::write_line("0b{}", s);
+}
+// output : 0b01
+```
+
+* [_sb4](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert the specified value to xtd::ustring with a binary format with four digits.
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd;
+
+int main() {
+  ustring s = 3_sb4;
+  console::write_line("0b{}", s);
+}
+// output : 0b0011
+```
+
+* [_sb8](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert the specified value to xtd::ustring with a binary format with eight digits.
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd;
+
+int main() {
+  ustring s = 42_sb8;
+  console::write_line("0b{}", s);
+}
+// output : 0b00101010
+```
 
 # See also
 ​
