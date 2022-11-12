@@ -1140,27 +1140,27 @@ namespace xtd {
     template<typename ... args_t>
     static ustring sprintf(const ustring& fmt, args_t&& ... args) noexcept {return __sprintf(fmt.c_str(), convert_param(std::forward<args_t>(args)) ...);}
     
-    /// @brief Determines whether the beginning of this instance of String matches a specified String.
-    /// @param value A String to compare to.
+    /// @brief Determines whether the beginning of this instance of xtd::ustring matches a specified xtd::ustring.
+    /// @param value A xtd::ustring to compare to.
     /// @return bool true if value matches the beginning of the specified string; otherwise, false.
     /// @remarks This method compares value to the substring at the beginning of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified string.
     bool starts_with(value_type value) const noexcept;
     
-    /// @brief Determines whether the beginning of this instance of String matches a specified String, ignoring or honoring their case.
-    /// @param value A String to compare to.
+    /// @brief Determines whether the beginning of this instance of xtd::ustring matches a specified xtd::ustring, ignoring or honoring their case.
+    /// @param value A xtd::ustring to compare to.
     /// @param ignore_case true to ignore case when comparing the specified string and value; otherwise, false
     /// @return bool true if value matches the beginning of the specified string; otherwise, false.
     /// @remarks This method compares value to the substring at the beginning of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified string.
     bool starts_with(value_type value, bool ignore_case) const noexcept;
     
-    /// @brief Determines whether the beginning of this instance of String matches a specified String.
-    /// @param value A String to compare to.
+    /// @brief Determines whether the beginning of this instance of xtd::ustring matches a specified xtd::ustring.
+    /// @param value A xtd::ustring to compare to.
     /// @return bool true if value matches the beginning of the specified string; otherwise, false.
     /// @remarks This method compares value to the substring at the beginning of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified string.
     bool starts_with(const ustring& value) const noexcept;
     
-    /// @brief Determines whether the beginning of this instance of String matches a specified String, ignoring or honoring their case.
-    /// @param value A String to compare to.
+    /// @brief Determines whether the beginning of this instance of xtd::ustring matches a specified xtd::ustring, ignoring or honoring their case.
+    /// @param value A xtd::ustring to compare to.
     /// @param ignore_case true to ignore case when comparing the specified string and value; otherwise, false
     /// @return bool true if value matches the beginning of the specified string; otherwise, false.
     /// @remarks This method compares value to the substring at the beginning of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified string.
@@ -1179,18 +1179,18 @@ namespace xtd {
     ustring substring(size_t start_index, size_t length) const noexcept;
     
     /// @brief Copies the characters in this instance to a Unicode character array.
-    /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty String, the returned array is empty and has a zero length.
+    /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty xtd::ustring, the returned array is empty and has a zero length.
     std::vector<value_type> to_array() const noexcept;
     
     /// @brief Copies the characters in this instance to a Unicode character array starting at specified index.
     /// @param start_index The starting position of string to convert.
-    /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty String, the returned array is empty and has a zero length.
+    /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty xtd::ustring, the returned array is empty and has a zero length.
     std::vector<value_type> to_array(size_t start_index) const noexcept;
     
     /// @brief Copies the characters in this instance to a Unicode character array starting at specified index with specified length.
     /// @param start_index The starting position of string to convert.
     /// @param length The length of the string to convert
-    /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty String, the returned array is empty and has a zero length.
+    /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty xtd::ustring, the returned array is empty and has a zero length.
     std::vector<value_type> to_array(size_t start_index, size_t length) const noexcept;
     
     /// @brief Returns a copy of the current string converted to lowercase.
@@ -1204,65 +1204,72 @@ namespace xtd {
     /// @return A new string in uppercase.
     ustring to_upper() const noexcept;
     
-    /// @brief Removes all leading and trailing occurrences of white-space characters from the specified String.
-    /// @param str String to trim end.
+    /// @brief Removes all leading and trailing occurrences of white-space characters from the specified xtd::ustring.
+    /// @param str xtd::ustring to trim end.
     /// @param trim_char A character to remove.
-    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start and te and of the specified String.
+    /// @return The xtd::ustring that remains after all occurrences of the character in the trim_char parameter are removed from the start and te and of the specified xtd::ustring.
     ustring trim() const noexcept;
     
-    /// @brief Removes all leading and trailing occurrences of a character specified from the specified String .
-    /// @param str String to trim start.
+    /// @brief Removes all leading and trailing occurrences of a character specified from the specified xtd::ustring .
+    /// @param str xtd::ustring to trim start.
     /// @param trim_char A character to remove.
-    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start and the end of the specified String.
+    /// @return The xtd::ustring that remains after all occurrences of the character in the trim_char parameter are removed from the start and the end of the specified xtd::ustring.
     ustring trim(value_type trim_char) const noexcept;
     
-    /// @brief Removes all leading and trailing occurrences of a set of characters specified in an array from the specified String.
-    /// @param str String to trim end.
+    /// @brief Removes all leading and trailing occurrences of a set of characters specified in an array from the specified xtd::ustring.
+    /// @param str xtd::ustring to trim end.
     /// @param trim_chars An array of characters to remove.
-    /// @return The String that remains after all occurrences of the characters in the trim_chars parameter are removed from the start and the edn of the specified String.
+    /// @return The xtd::ustring that remains after all occurrences of the characters in the trim_chars parameter are removed from the start and the edn of the specified xtd::ustring.
     ustring trim(const std::vector<value_type>& trim_chars) const noexcept;
     
-    /// @brief Removes all trailing occurrences of white-space characters from the specified String.
-    /// @param str String to trim end.
+    /// @brief Removes all trailing occurrences of white-space characters from the specified xtd::ustring.
+    /// @param str xtd::ustring to trim end.
     /// @param trim_char A character to remove.
-    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the end of the specified String.
+    /// @return The xtd::ustring that remains after all occurrences of the character in the trim_char parameter are removed from the end of the specified xtd::ustring.
     ustring trim_end() const noexcept;
     
-    /// @brief Removes all trailing occurrences of a character specified from the specified String .
-    /// @param str String to trim start.
+    /// @brief Removes all trailing occurrences of a character specified from the specified xtd::ustring .
+    /// @param str xtd::ustring to trim start.
     /// @param trim_char A character to remove.
-    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the end of the specified String.
+    /// @return The xtd::ustring that remains after all occurrences of the character in the trim_char parameter are removed from the end of the specified xtd::ustring.
     ustring trim_end(value_type trim_char) const noexcept;
     
-    /// @brief Removes all trailing occurrences of a set of characters specified in an array from the specified String.
-    /// @param str String to trim end.
+    /// @brief Removes all trailing occurrences of a set of characters specified in an array from the specified xtd::ustring.
+    /// @param str xtd::ustring to trim end.
     /// @param trim_chars An array of characters to remove.
-    /// @return The String that remains after all occurrences of the characters in the trim_chars parameter are removed from the end of the specified String.
+    /// @return The xtd::ustring that remains after all occurrences of the characters in the trim_chars parameter are removed from the end of the specified xtd::ustring.
     ustring trim_end(const std::vector<value_type>& trim_chars) const noexcept;
     
-    /// @brief Removes all leading occurrences of white-space characters from the specified String.
-    /// @param str String to trim start.
+    /// @brief Removes all leading occurrences of white-space characters from the specified xtd::ustring.
+    /// @param str xtd::ustring to trim start.
     /// @param trim_char A character to remove.
-    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start of the specified String.
+    /// @return The xtd::ustring that remains after all occurrences of the character in the trim_char parameter are removed from the start of the specified xtd::ustring.
     ustring trim_start() const noexcept;
     
-    /// @brief Removes all leading occurrences of a character specified from the specified String .
-    /// @param str String to trim start.
+    /// @brief Removes all leading occurrences of a character specified from the specified xtd::ustring .
+    /// @param str xtd::ustring to trim start.
     /// @param trim_char A character to remove.
-    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start of the specified String.
+    /// @return The xtd::ustring that remains after all occurrences of the character in the trim_char parameter are removed from the start of the specified xtd::ustring.
     ustring trim_start(value_type trim_char) const noexcept;
     
-    /// @brief Removes all leading occurrences of a set of characters specified in an array from the specified String.
-    /// @param str String to trim start.
+    /// @brief Removes all leading occurrences of a set of characters specified in an array from the specified xtd::ustring.
+    /// @param str An xtd::ustring to trim start.
     /// @param trim_chars An array of characters to remove.
-    /// @return The String that remains after all occurrences of the characters in the trim_chars parameter are removed from the start of the specified String.
+    /// @return The xtd::ustring that remains after all occurrences of the characters in the trim_chars parameter are removed from the start of the specified xtd::ustring.
     ustring trim_start(const std::vector<value_type>& trim_chars) const noexcept;
     
+    /// @brief Converts a string into a type valut_t.
+    /// @param str Ax xtd::ustring to convert to value_t
+    /// @return The value_t object parsed.
     template<typename value_t>
     static value_t parse(const ustring& str) {
       return xtd::parse<value_t>(str);
     }
     
+    /// @brief Try to convert a string into a type valut_t.
+    /// @param str An xtd::ustring to convert to value_t
+    /// @param value The value that will contain the parsed xtd::ustring.
+    /// @return true if xtd::ustring:=:try_parse succed; otherwise, false.
     template<typename value_t>
     static bool try_parse(const ustring& str, value_t& value) {
       try {
