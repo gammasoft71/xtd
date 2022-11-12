@@ -108,34 +108,6 @@ int main() {
 // output: This is a simple string
 ```
 
-* [_s](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga49b668425569cb56bae6396b04d4d2bd) literal operator is used to convert specified value into xtd::ustring.
-
-```c++
-#include <xtd/xtd>
-
-using namespace xtd;
-
-int main() {
-  ustring s = 42_s;
-  console::write_line(s);
-}
-// output: 42
-```
-
-* [_s](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga59996330909db448db7eb3f6948e8d02) literal operator is used to convert specified value into xtd::ustring.
-
-```c++
-#include <xtd/xtd>
-
-using namespace xtd;
-
-int main() {
-  ustring s = 4.2_s;
-  console::write_line(s);
-}
-// output: 4.2
-```
-
 * [_sb](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga43c09451f4b809ab7efd4fc5bdaeda84) literal operator is used to convert the specified value to xtd::ustring with a binary format.
 
 ```c++
@@ -232,6 +204,34 @@ int main() {
   console::write_line("0b{}", s);
 }
 // output: 0b0000000000000000000000000000000000000000000000000000000000101010
+```
+
+* [_sd](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gac756c19a09319ef9a70df4405f70fcd8) literal operator is used to convert specified value into xtd::ustring with a decimal format.
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd;
+
+int main() {
+  ustring s = 42_sd;
+  console::write_line(s);
+}
+// output: 42
+```
+
+* [_sd](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga599899d6e78170e7a369e83378d14a1a) literal operator is used to convert specified value into xtd::ustring with a decimal format.
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd;
+
+int main() {
+  ustring s = 4.2_sd;
+  console::write_line(s);
+}
+// output: 4.2
 ```
 
 * [_sx](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gae46364777b448e80daadf66ae77f1fbf) literal operator is used to convert the specified value to xtd::ustring with a hexa format.
