@@ -25,8 +25,8 @@ The value of the [xtd::ustring](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_
 * [xtd::ustring::format](https://codedocs.xyz/gammasoft71/xtd/group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd) writes the text representation of the specified arguments list, to string using the specified format information. See [format](format.md) for more information.
 * [xtd::ustring::full_class_name](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html#a81a0eee00e7f757562565f8e19c7747d) gets the fully qualified class name of the specified object, including the namespace of the specified object.
 * [xtd::ustring::join](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html#a95694998a854ba65dde682b879eec355) concatenates a specified separator string between each element of a specified object array, yielding a single concatenated string.
-* [xtd::ustring::]()
-* [xtd::ustring::]()
+* [xtd::ustring::sprintf](https://codedocs.xyz/gammasoft71/xtd/group__format__parse.html#ga0c65606fb81f84e4d9ea43002114d8de) writes the text representation of the specified arguments list, to string using the specified format information.
+* [xtd::ustring::parse]()
 * [xtd::ustring::]()
 * [xtd::ustring::]()
 * [xtd::ustring::]()
