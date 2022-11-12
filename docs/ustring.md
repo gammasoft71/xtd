@@ -14,7 +14,7 @@ The value of the [xtd::ustring](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_
 [xtd::ustring](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html) is an immutable [std::string](https://en.cppreference.com/w/cpp/string/basic_string).
 
 * [std::string](https://en.cppreference.com/w/cpp/string/basic_string) is inherited from [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string).
-* [xtd::ustring](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html) is inherited from [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string) too and therefore offers the full (immutable) API of [std::string](https://en.cppreference.com/w/cpp/string/basic_string) with some functions missing from std::string.
+* [xtd::ustring](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html) is inherited from [std::basic_string<char>](https://en.cppreference.com/w/cpp/string/basic_string) too and thus offers the immutable API of [std::string](https://en.cppreference.com/w/cpp/string/basic_string) with some functions missing from std::string.
 
 ## Additional methods
 
