@@ -64,6 +64,10 @@ See [xtd::convert_string](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1conve
 
 The [xtd::as<...>](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7) operators cast a type into another type.
 
+#### Remarks 
+
+The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
+
 #### Examples
 
 The following code shows how to convert [std::u16string](https://en.cppreference.com/w/cpp/string/basic_string) to [xtd::ustring](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html) and writes the converted string to the console output.
