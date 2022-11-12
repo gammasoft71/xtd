@@ -49,7 +49,7 @@ using namespace std;
 using namespace xtd;
 
 int main() {
-  ustring s1 = "UTF-8 string value";
+  ustring s1 = "UTF-8 (65001) string value";
   
   auto s2 = convert_string::to_u32string(s1);
   console::write_line(s2);
@@ -79,7 +79,7 @@ using namespace std;
 using namespace xtd;
 
 int main() {
-  u16string s1 = u"UTF-8 string value";
+  u16string s1 = u"UTF-8 (65001) string value";
   
   auto s2 = as<ustring>(s1);
   console::write_line(s2);
