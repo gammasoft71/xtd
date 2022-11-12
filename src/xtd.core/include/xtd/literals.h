@@ -410,7 +410,7 @@ namespace xtd {
   /// @endcode
   xtd::ustring operator""_s(unsigned long long s);
   
-  /// @brief Used to convert specified value into xtd::ustring.
+  /// @brief Used to convert the specified value to xtd::ustring with a binary format.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -423,7 +423,7 @@ namespace xtd {
   /// @endcode
   xtd::ustring operator""_sb(unsigned long long s);
   
-  /// @brief Used to convert specified value into xtd::ustring.
+  /// @brief Used to convert the specified value to xtd::ustring with a binary format with two digits.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -436,7 +436,7 @@ namespace xtd {
   /// @endcode
   xtd::ustring operator""_sb2(unsigned long long s);
   
-  /// @brief Used to convert specified value into xtd::ustring.
+  /// @brief Used to convert the specified value to xtd::ustring with a binary format with four digits.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -449,7 +449,7 @@ namespace xtd {
   /// @endcode
   xtd::ustring operator""_sb4(unsigned long long s);
   
-  /// @brief Used to convert specified value into xtd::ustring.
+  /// @brief Used to convert the specified value to xtd::ustring with a binary format with eight digits.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -462,7 +462,7 @@ namespace xtd {
   /// @endcode
   xtd::ustring operator""_sb8(unsigned long long s);
   
-  /// @brief Used to convert specified value into xtd::ustring.
+  /// @brief Used to convert the specified value to xtd::ustring with a binary format with sixteen digits.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -475,7 +475,7 @@ namespace xtd {
   /// @endcode
   xtd::ustring operator""_sb16(unsigned long long s);
   
-  /// @brief Used to convert specified value into xtd::ustring.
+  /// @brief Used to convert the specified value to xtd::ustring with a binary format with thirty two digits.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -488,7 +488,7 @@ namespace xtd {
   /// @endcode
   xtd::ustring operator""_sb32(unsigned long long s);
   
-  /// @brief Used to convert specified value into xtd::ustring.
+  /// @brief Used to convert the specified value to xtd::ustring with a binary format with sixty four digits.
   /// @par Namespace
   /// xtd
   /// @par Library
