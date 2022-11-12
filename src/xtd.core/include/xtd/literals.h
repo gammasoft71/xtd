@@ -384,7 +384,7 @@ namespace xtd {
   /// @endcode
   xtd::ustring operator""_s(const wchar_t* s, size_t n);
   
-  /// @brief Used to convert specified value into xtd::ustring.
+  /// @brief Used to convert the specified value to xtd::ustring with a decimal format.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -395,9 +395,9 @@ namespace xtd {
   /// xtd::ustring s = "This is a "_s + "simple test"_s;
   /// std::cout << s << std::endl;
   /// @endcode
-  xtd::ustring operator""_s(long double s);
+  xtd::ustring operator""_sd(long double s);
   
-  /// @brief Used to convert specified value into xtd::ustring.
+  /// @brief Used to convert the specified value to xtd::ustring with a decimal format.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -408,7 +408,7 @@ namespace xtd {
   /// xtd::ustring s = 49_s;
   /// std::cout << s << std::endl;
   /// @endcode
-  xtd::ustring operator""_s(unsigned long long s);
+  xtd::ustring operator""_sd(unsigned long long s);
   
   /// @brief Used to convert the specified value to xtd::ustring with a binary format.
   /// @par Namespace
