@@ -108,7 +108,7 @@ int main() {
 // output: This is a simple string
 ```
 
-* [_s](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert specified value into xtd::ustring.
+* [_s](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga49b668425569cb56bae6396b04d4d2bd) literal operator is used to convert specified value into xtd::ustring.
 
 ```c++
 #include <xtd/xtd>
@@ -122,7 +122,7 @@ int main() {
 // output: 42
 ```
 
-* [_s](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert specified value into xtd::ustring.
+* [_s](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga59996330909db448db7eb3f6948e8d02) literal operator is used to convert specified value into xtd::ustring.
 
 ```c++
 #include <xtd/xtd>
@@ -136,21 +136,7 @@ int main() {
 // output: 4.2
 ```
 
-* [_s8](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert specified value into xtd::ustring.
-
-```c++
-#include <xtd/xtd>
-
-using namespace xtd;
-
-int main() {
-  ustring s = 42_s8;
-  console::write_line(s);
-}
-// output: 02
-```
-
-* [_sb](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert the specified value to xtd::ustring with a binary format.
+* [_sb](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga43c09451f4b809ab7efd4fc5bdaeda84) literal operator is used to convert the specified value to xtd::ustring with a binary format.
 
 ```c++
 #include <xtd/xtd>
@@ -164,7 +150,7 @@ int main() {
 // output: 0b101010
 ```
 
-* [_sb2](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert the specified value to xtd::ustring with a binary format with two digits.
+* [_sb2](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga7eaf7f69ff2304bf1bab94827e109610) literal operator is used to convert the specified value to xtd::ustring with a binary format with two digits.
 
 ```c++
 #include <xtd/xtd>
@@ -178,7 +164,7 @@ int main() {
 // output: 0b01
 ```
 
-* [_sb4](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert the specified value to xtd::ustring with a binary format with four digits.
+* [_sb4](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga856739797e253190afd27ba2dadcd713) literal operator is used to convert the specified value to xtd::ustring with a binary format with four digits.
 
 ```c++
 #include <xtd/xtd>
@@ -192,7 +178,7 @@ int main() {
 // output: 0b0011
 ```
 
-* [_sb8](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert the specified value to xtd::ustring with a binary format with eight digits.
+* [_sb8](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga27bc00f6bf6ca69c610a2dab13115a82) literal operator is used to convert the specified value to xtd::ustring with a binary format with eight digits.
 
 ```c++
 #include <xtd/xtd>
@@ -206,7 +192,7 @@ int main() {
 // output: 0b00101010
 ```
 
-* [_sb16](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert the specified value to xtd::ustring with a binary format with sixteen digits.
+* [_sb16](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gaf72922be81431716b63f621451dca9fc) literal operator is used to convert the specified value to xtd::ustring with a binary format with sixteen digits.
 
 ```c++
 #include <xtd/xtd>
@@ -220,7 +206,7 @@ int main() {
 // output: 0b0000000000101010
 ```
 
-* [_sb32](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert the specified value to xtd::ustring with a binary format with thirty two digits.
+* [_sb32](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga2722ffae5eaa8668ce66ae53309d7cf9) literal operator is used to convert the specified value to xtd::ustring with a binary format with thirty two digits.
 
 ```c++
 #include <xtd/xtd>
@@ -234,7 +220,7 @@ int main() {
 // output: 0b00000000000000000000000000101010
 ```
 
-* [_sb64](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert the specified value to xtd::ustring with a binary format with sixty four digits.
+* [_sb64](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3d69af37baeea27aba64561e5aa7411a) literal operator is used to convert the specified value to xtd::ustring with a binary format with sixty four digits.
 
 ```c++
 #include <xtd/xtd>
@@ -248,7 +234,7 @@ int main() {
 // output: 0b0000000000000000000000000000000000000000000000000000000000101010
 ```
 
-* [_sx](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert the specified value to xtd::ustring with a hexa format.
+* [_sx](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gae46364777b448e80daadf66ae77f1fbf) literal operator is used to convert the specified value to xtd::ustring with a hexa format.
 
 ```c++
 #include <xtd/xtd>
@@ -262,7 +248,7 @@ int main() {
 // output: 0x2a
 ```
 
-* [_sx2](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert the specified value to xtd::ustring with a hexa format with two digits.
+* [_sx2](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gae9616d36a82e9e5b5600328ca76a5471) literal operator is used to convert the specified value to xtd::ustring with a hexa format with two digits.
 
 ```c++
 #include <xtd/xtd>
@@ -276,7 +262,7 @@ int main() {
 // output: 0x0a
 ```
 
-* [_sx4](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert the specified value to xtd::ustring with a hexa format with four digits.
+* [_sx4](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gaf288cd786089a9f4ec3d02466707e3c5) literal operator is used to convert the specified value to xtd::ustring with a hexa format with four digits.
 
 ```c++
 #include <xtd/xtd>
@@ -290,7 +276,7 @@ int main() {
 // output: 0x002a
 ```
 
-* [_sx8](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert the specified value to xtd::ustring with a hexa format with eight digits.
+* [_sx8](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gaa4acf7c9bbc764e2254c67196630c434) literal operator is used to convert the specified value to xtd::ustring with a hexa format with eight digits.
 
 ```c++
 #include <xtd/xtd>
@@ -304,7 +290,7 @@ int main() {
 // output: 0x0000002a
 ```
 
-* [_sX](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert the specified value to xtd::ustring with a hexa format.
+* [_sX](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga47c03a571d078d7dfeed1af05baa0fe2) literal operator is used to convert the specified value to xtd::ustring with a hexa format.
 
 ```c++
 #include <xtd/xtd>
@@ -318,7 +304,7 @@ int main() {
 // output: 0x2A
 ```
 
-* [_sx2](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert the specified value to xtd::ustring with a hexa format with two digits.
+* [_sX2](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga246c6f5fcf4b5f23fd4f54512d1e25dd) literal operator is used to convert the specified value to xtd::ustring with a hexa format with two digits.
 
 ```c++
 #include <xtd/xtd>
@@ -332,7 +318,7 @@ int main() {
 // output: 0x0A
 ```
 
-* [_sx4](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert the specified value to xtd::ustring with a hexa format with four digits.
+* [_sX4](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga7f98753adb927ff671f9b7c0f505ce95) literal operator is used to convert the specified value to xtd::ustring with a hexa format with four digits.
 
 ```c++
 #include <xtd/xtd>
@@ -346,7 +332,7 @@ int main() {
 // output: 0x002A
 ```
 
-* [_sx8](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert the specified value to xtd::ustring with a hexa format with eight digits.
+* [_sX8](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gaca78174d0fd95202301f20582ab3c19a) literal operator is used to convert the specified value to xtd::ustring with a hexa format with eight digits.
 
 ```c++
 #include <xtd/xtd>
