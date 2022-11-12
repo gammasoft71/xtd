@@ -28,6 +28,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Delegates](delegates.md)
     * [Events](events.md)
     * [ustring](ustring.md)
+    * [Literal operators](literal_operators.md)
   * Common I/O tasks
     * [Common I/O tasks​](common_io_tasks.md)
     * How-tos
