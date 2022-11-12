@@ -108,6 +108,26 @@ char32_t xtd::operator""_c(unsigned long long c) {
   return as<char32_t>(c);
 }
 
+xtd::time_span xtd::operator""_h(unsigned long long s) {
+  return std::chrono::hours(s);
+}
+
+xtd::time_span xtd::operator""_m(unsigned long long s) {
+  return std::chrono::minutes(s);
+}
+
+xtd::time_span xtd::operator""_min(unsigned long long s) {
+  return std::chrono::minutes(s);
+}
+
+xtd::time_span xtd::operator""_ms(unsigned long long s) {
+  return std::chrono::milliseconds(s);
+}
+
+xtd::time_span xtd::operator""_ns(unsigned long long s) {
+  return duration_cast<time_span>(std::chrono::nanoseconds(s));
+}
+
 ustring xtd::operator""_s(const char* s, size_t n) {
   return ustring(s, s + n);
 }
@@ -126,6 +146,10 @@ ustring xtd::operator""_s(const char32_t* s, size_t n) {
 
 ustring xtd::operator""_s(const wchar_t* s, size_t n) {
   return ustring(wstring(s, s + n));
+}
+
+xtd::time_span xtd::operator""_s(unsigned long long s) {
+  return std::chrono::seconds(s);
 }
 
 ustring xtd::operator""_sb(unsigned long long s) {
@@ -308,6 +332,30 @@ int64_t xtd::operator""_s64(const wchar_t* s, size_t n) {
   return as<int64_t>(wstring(s, s + n));
 }
 
+const char* xtd::operator""_t(const char* s, size_t n) {
+  return translator::translate(s);
+}
+
+ustring xtd::operator""_t(const char8_t* s, size_t n) {
+  return translator::translate(u8string(s, s + n));
+}
+
+ustring xtd::operator""_t(const char16_t* s, size_t n) {
+  return translator::translate(u16string(s, s + n));
+}
+
+ustring xtd::operator""_t(const char32_t* s, size_t n) {
+  return translator::translate(u32string(s, s + n));
+}
+
+ustring xtd::operator""_t(const wchar_t* s, size_t n) {
+  return translator::translate(wstring(s, s + n));
+}
+
+xtd::time_span xtd::operator""_t(unsigned long long s) {
+  return xtd::ticks(s);
+}
+
 uint8_t xtd::operator""_u8(long double n) {
   return as<uint8_t>(n);
 }
@@ -420,22 +468,6 @@ uint64_t xtd::operator""_u64(const wchar_t* s, size_t n) {
   return as<uint64_t>(wstring(s, s + n));
 }
 
-const char* xtd::operator""_t(const char* s, size_t n) {
-  return translator::translate(s);
-}
-
-ustring xtd::operator""_t(const char8_t* s, size_t n) {
-  return translator::translate(u8string(s, s + n));
-}
-
-ustring xtd::operator""_t(const char16_t* s, size_t n) {
-  return translator::translate(u16string(s, s + n));
-}
-
-ustring xtd::operator""_t(const char32_t* s, size_t n) {
-  return translator::translate(u32string(s, s + n));
-}
-
-ustring xtd::operator""_t(const wchar_t* s, size_t n) {
-  return translator::translate(wstring(s, s + n));
+xtd::time_span xtd::operator""_us(unsigned long long s) {
+  return std::chrono::microseconds(s);
 }
