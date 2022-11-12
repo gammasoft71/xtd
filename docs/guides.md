@@ -24,6 +24,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [main and startup_](guide_main_and_startup.md)
     * [Delegates](delegates.md)
     * [Events](events.md)
+    * [ustring](ustring.md)
   * Common I/O tasks
     * [Common I/O tasks​](common_io_tasks.md)
     * How-tos
