@@ -48,7 +48,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Custom date and time format strings](format_custom_date_and_time_format_strings.md)
     * [Standard time_span format strings](format_standard_time_span_format_strings.md)
     * [Custom time_span format strings](format_custom_time_span_format_strings.md)
-    * [Enumeration format strings](format_enumeration_strings.md)
+    * [Enumeration format strings](format_enumeration_format_strings.md)
     * [Composite formating](format_composite_formating.md)
     * How-tos
       * [Pad a number with leading zeros](format_pad_a_number_with_leading_zeros.md)
