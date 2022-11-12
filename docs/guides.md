@@ -59,7 +59,7 @@ The xtd guides provide an explanation on how to use the important features of th
   * Parse (convert) strings
     * [Overview](parse_overview.md)
     * [Parse numeric strings](parse_numeric_strings.md)
-    * [Parse date and time strings](parse_date_end_time_strings.md)
+    * [Parse date and time strings](parse_date_and_time_strings.md)
     * [Parse other strings](parse_other_strings.md)
   * Type conversion
     * [Overview](type_conversion_overview.md)
