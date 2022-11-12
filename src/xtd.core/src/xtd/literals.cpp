@@ -128,14 +128,6 @@ ustring xtd::operator""_s(const wchar_t* s, size_t n) {
   return ustring(wstring(s, s + n));
 }
 
-ustring xtd::operator""_s(long double s) {
-  return ustring::format("{}", s);
-}
-
-ustring xtd::operator""_s(unsigned long long s) {
-  return ustring::format("{}", s);
-}
-
 ustring xtd::operator""_sb(unsigned long long s) {
   return ustring::format("{:b}", s);
 }
@@ -162,6 +154,14 @@ ustring xtd::operator""_sb32(unsigned long long s) {
 
 ustring xtd::operator""_sb64(unsigned long long s) {
   return ustring::format("{:b64}", s);
+}
+
+ustring xtd::operator""_sd(long double s) {
+  return ustring::format("{}", s);
+}
+
+ustring xtd::operator""_sd(unsigned long long s) {
+  return ustring::format("{}", s);
 }
 
 ustring xtd::operator""_sx(unsigned long long s) {
