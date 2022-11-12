@@ -122,6 +122,20 @@ int main() {
 // output : 42
 ```
 
+* [_s](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert specified value into xtd::ustring.
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd;
+
+int main() {
+  ustring s = 4.2_s;
+  console::write_line(s);
+}
+// output : 4.2
+```
+
 * [_s8](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert specified value into xtd::ustring.
 
 ```c++
