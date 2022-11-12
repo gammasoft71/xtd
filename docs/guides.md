@@ -13,8 +13,9 @@ The xtd guides provide an explanation on how to use the important features of th
   * [How to check xtd version](guide_check_version.md)
 * Overview
   * [Overview](xtd_explanations.md)
-  * [Libraries architecture](architecture.md)
-  * [Libraries hierarchy](hierarchy.md)
+  * Libraries
+    * [Architecture](architecture.md)
+    * [Hierarchy](hierarchy.md)
   * Tutorials
     * [Writing console application](writing_applicaion_console.md)
     * [Writing GUI application](writing_applicaion_gui.md)
