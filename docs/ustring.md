@@ -26,6 +26,66 @@ The value of the [xtd::ustring](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_
 * [xtd::ustring::try_parse](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html#a0975a450a98f2c65f5649d2144a0bf0e) Try to convert a string into a value_t type.
 * End more, see [xtd::ustring](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html) reference guide for a complete list of methods.
 
+## String conversions
+
+### xtd::convert_string
+
+The [xtd::convert_string](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1convert__string.html) class represents API to convert string containers.
+
+The [xtd::convert_string](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1convert__string.html) class is used to convert string container to another.
+
+#### Remarks 
+
+The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
+
+#### Examples
+
+The following code shows how to convert [xtd::ustring]((https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html)) to std::u32string and writes the converted string to the console output.
+
+```c++
+#include <xtd/xtd>
+
+using namespace std;
+using namespace xtd;
+
+int main() {
+  ustring s1 = "UTF-8 string value";
+  
+  auto s2 = convert_string::to_u32string(s1);
+  console::write_line(s2);
+}
+```
+
+This example is one of N. You can convert any string container to any other string container.
+
+See [xtd::convert_string](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1convert__string.html) class for a complete list of conversion methods.
+
+### as operator
+
+The [xtd::as<...>](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7) operators cast a type into another type.
+
+#### Examples
+
+The following code shows how to convert [std::u16string]() to [xtd::ustring](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html) and writes the converted string to the console output.
+
+```c++
+#include <xtd/xtd>
+
+using namespace std;
+using namespace xtd;
+
+int main() {
+  u16string s1 = u"UTF-8 string value";
+  
+  auto s2 = as<ustring>(s1);
+  console::write_line(s2);
+}
+```
+
+This example is one of N. You can convert any string container to any other string container.
+
+See [xtd::as<...>](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7) operators for a complete list of conversion operators.
+
 # See also
 ​
 * [Guides](guides.md)
