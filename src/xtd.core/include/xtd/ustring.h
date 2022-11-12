@@ -1000,6 +1000,14 @@ namespace xtd {
     /// @remarks The xtd::ustring::pad_right method pads the end of the returned string. This means that, when used with right-to-left languages, it pads the left portion of the string..
     ustring pad_right(size_t total_width, value_type padding_char) const noexcept;
     
+    /// @brief Converts a string into a value_t type.
+    /// @param str Ax xtd::ustring to convert to value_t
+    /// @return The value_t object parsed.
+    template<typename value_t>
+    static value_t parse(const ustring& str) {
+      return xtd::parse<value_t>(str);
+    }
+
     /// @brief Deletes all the characters from this string beginning at a specified position and continuing through the last position.
     /// @param start_index The position to begin deleting characters.
     /// @return A new string object that is equivalent to this string less the removed characters.
@@ -1258,15 +1266,7 @@ namespace xtd {
     /// @return The xtd::ustring that remains after all occurrences of the characters in the trim_chars parameter are removed from the start of the specified xtd::ustring.
     ustring trim_start(const std::vector<value_type>& trim_chars) const noexcept;
     
-    /// @brief Converts a string into a type valut_t.
-    /// @param str Ax xtd::ustring to convert to value_t
-    /// @return The value_t object parsed.
-    template<typename value_t>
-    static value_t parse(const ustring& str) {
-      return xtd::parse<value_t>(str);
-    }
-    
-    /// @brief Try to convert a string into a type valut_t.
+    /// @brief Try to convert a string into a value_t type.
     /// @param str An xtd::ustring to convert to value_t
     /// @param value The value that will contain the parsed xtd::ustring.
     /// @return true if xtd::ustring:=:try_parse succed; otherwise, false.
