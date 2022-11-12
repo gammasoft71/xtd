@@ -199,11 +199,11 @@ xtd::ticks date_time::ticks() const noexcept {
   return value_;
 }
 
-date_time::time_point date_time::time_of_day() const noexcept {
+time_span date_time::time_of_day() const noexcept {
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
   int32_t day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
-  return duration_cast<time_point>(chrono::hours(hour)) + duration_cast<time_point>(chrono::minutes(minute)) + duration_cast<time_point>(chrono::seconds(second));
+  return duration_cast<time_span>(chrono::hours(hour)) + duration_cast<time_span>(chrono::minutes(minute)) + duration_cast<time_span>(chrono::seconds(second));
 }
 
 date_time date_time::today() noexcept {
@@ -225,7 +225,7 @@ uint32_t date_time::year() const noexcept {
   return year;
 }
 
-date_time date_time::add(time_point value) const {
+date_time date_time::add(time_span value) const {
   return date_time(value_ + value, kind_);
 }
 
@@ -366,11 +366,11 @@ ustring date_time::sprintf(const ustring& format) const {
   return result.str();
 }
 
-date_time::time_point date_time::subtract(const date_time& value) const {
-  return time_point(duration_cast<time_point>(value_ - value.value_));
+time_span date_time::subtract(const date_time& value) const {
+  return time_span(duration_cast<time_span>(value_ - value.value_));
 }
 
-date_time date_time::subtract(time_point value) const {
+date_time date_time::subtract(time_span value) const {
   return date_time(value_ - duration_cast<xtd::ticks>(value));
 }
 
@@ -505,8 +505,8 @@ std::tm date_time::to_tm() const {
   return result;
 }
 
-date_time::operator date_time::time_point() const {
-  return time_point(value_);
+date_time::operator time_span() const {
+  return time_span(value_);
 }
 
 date_time date_time::to_universal_time() const {

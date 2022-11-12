@@ -100,6 +100,7 @@ add_sources(
   include/xtd/tick.h
   include/xtd/ticks.h
   include/xtd/time_out_exception.h
+  include/xtd/time_span.h
   include/xtd/time_zone_info.h
   include/xtd/time_zone_not_found_exception.h
   include/xtd/to_string.h
