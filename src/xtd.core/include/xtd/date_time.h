@@ -11,6 +11,7 @@
 #include "month_of_year.h"
 #include "object.h"
 #include "ticks.h"
+#include "time_span.h"
 #include "ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -70,13 +71,6 @@ namespace xtd {
   /// @include date_time.cpp
   class core_export_ date_time : public xtd::icomparable<date_time>, public xtd::iequatable<date_time>, public xtd::object {
   public:
-    /// @name Alias
-    
-    /// @{
-    /// /// @brief Represents a time point of date_time objects.
-    using time_point = xtd::ticks;
-    /// @}
-    
     /// @name Fields
     
     /// @{
@@ -448,9 +442,9 @@ namespace xtd {
     /// @par Examples
     /// The following example displays the value of the xtd::date_time::time_of_day property for an array of xtd::date_time values. It also contrasts the return value with the string returned by the "t" standard format string in a composite formatting operation.
     /// @include date_time_time_of_day.cpp
-    /// @remarks Unlike the xtd::date_time::date property. which returns a xtd::date_time value that represents a date without its time component, the xtd::date_time::time_of_day property returns a xtd::date_time::time_point value that represents a xtd::date_time value's time component.
+    /// @remarks Unlike the xtd::date_time::date property. which returns a xtd::date_time value that represents a date without its time component, the xtd::date_time::time_of_day property returns a xtd::time_span value that represents a xtd::date_time value's time component.
     /// @remarks If you want to display the time of day or retrieve the string representation of the time of day of a xtd::date_time value, you can instead call an overload of the ToString method that has a format parameter or use the composite formatting feature with the "t" or "T" standard format string.
-    time_point time_of_day() const noexcept;
+    xtd::time_span time_of_day() const noexcept;
     
     /// @brief Gets the current date.
     /// @return An object that is set to today's date, with the time component set to 00:00:00.
@@ -518,9 +512,9 @@ namespace xtd {
     /// @remarks See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::duration</a> for more information.
     template<typename rep_t, typename period_t>
     date_time add(std::chrono::duration<rep_t, period_t> value) const {
-      return add(std::chrono::duration_cast<time_point>(value));
+      return add(std::chrono::duration_cast<xtd::time_span>(value));
     }
-    /// @brief Returns a new xtd::date_time that adds the value of the specified xtd::date_time::time_point to the value of this instance.
+    /// @brief Returns a new xtd::date_time that adds the value of the specified xtd::time_span to the value of this instance.
     /// @param value A positive or negative time interval.
     /// @return An object whose value is the sum of the date and time represented by this instance and the time interval represented by value.
     /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
@@ -530,7 +524,7 @@ namespace xtd {
     /// @remarks You can use the xtd::date_time::add method to add more than one kind of time interval (days, hours, minutes, seconds, or milliseconds) in a single operation. This method's behavior is identical to that of the addition operator. The xtd::date_time::addxtd::date_time structure also supports specialized addition methods (such as xtd::date_time::add_days, xtd::date_time::add_hours, and xtd::date_time::add_minutes) for each time interval.
     /// @remarks The xtd::date_time::add method takes into account leap years and the number of days in a month when performing date arithmetic.
     /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation. The xtd::date_time::kind property of the new xtd::date_time instance is the same as that of the current instance.
-    date_time add(time_point value) const;
+    date_time add(xtd::time_span value) const;
     
     /// @brief Returns a new xtd::date_time that adds the specified number of days to the value of this instance.
     /// @param value A number of whole and fractional days. The value parameter can be negative or positive.
@@ -847,18 +841,18 @@ namespace xtd {
     /// @remarks See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time</a> for more information.
     xtd::ustring sprintf(const ustring& format) const;
     
-    /// @brief Returns a new xtd::date_time::time_point that subtracts the specified date and time from the value of this instance.
+    /// @brief Returns a new xtd::time_span that subtracts the specified date and time from the value of this instance.
     /// @param value The date and time value to subtract.
     /// @return A time interval that is equal to the date and time represented by this instance minus the date and time represented by value.
     /// @exception xtd::argument_out_of_range_exception The result is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
     /// @par Examples
     /// The following example demonstrates the xtd::date_time::subtract method and the subtraction operator.
     /// @include date_time_subtract.cpp
-    /// @remarks The xtd::date_time::subtract(const xtd::date_time&) method determines the difference between two dates. To subtract a time interval from the current instance, call the xtd::date_time::subtract(xtd::date_time::time_point) method. To subtract a particular time interval from the current instance, call the method that adds that time interval to the current date, and supply a negative value as the method argument. For example, to subtract two months from the current date, call the xtd::date_time::add_months method with a value of -2.
-    /// @remarks If the date and time of the current instance is earlier than value, the method returns a xtd::date_time::time_point object that represents a negative time span. That is, the value of all of its non-zero properties (such as xtd::date_time::days or xtd::date_time::ticks) is negative.
+    /// @remarks The xtd::date_time::subtract(const xtd::date_time&) method determines the difference between two dates. To subtract a time interval from the current instance, call the xtd::date_time::subtract(xtd::time_span) method. To subtract a particular time interval from the current instance, call the method that adds that time interval to the current date, and supply a negative value as the method argument. For example, to subtract two months from the current date, call the xtd::date_time::add_months method with a value of -2.
+    /// @remarks If the date and time of the current instance is earlier than value, the method returns a xtd::time_span object that represents a negative time span. That is, the value of all of its non-zero properties (such as xtd::date_time::days or xtd::date_time::ticks) is negative.
     /// @remarks The xtd::date_time::subtract(const xtd::date_time&) method does not consider the value of the xtd::date_time::kind property of the two xtd::date_time values when performing the subtraction. Before subtracting xtd::date_time::date_time objects, ensure that the objects represent times in the same time zone. Otherwise, the result will include the difference between time zones.
     /// @note The xtd::date_time_offset::subtract(const xtd::date_time_offset&) method does consider the difference between time zones when performing the subtraction.
-    time_point subtract(const date_time& value) const;
+    xtd::time_span subtract(const date_time& value) const;
     /// @brief Returns a new xtd::date_time that subtracts the specified duration from the value of this instance.
     /// @param value The time interval to subtract.
     /// @return An object that is equal to the date and time represented by this instance minus the time interval represented by value.
@@ -866,10 +860,10 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates the xtd::date_time::subtract method and the subtraction operator.
     /// @include date_time_subtract.cpp
-    /// @remarks The xtd::date_time::subtract(xtd::date_time::time_point) method returns the date that is a specified time interval difference from the current instance. To determine the time interval between two dates, call the xtd::date_time::subtract(const xtd::date_time&) method. To subtract a particular time interval from the current instance, call the method that adds that time interval to the current date, and supply a negative value as the method argument. For example, to subtract two months from the current date, call the xtd::date_time::add_months method with a value of -2.
+    /// @remarks The xtd::date_time::subtract(xtd::time_span) method returns the date that is a specified time interval difference from the current instance. To determine the time interval between two dates, call the xtd::date_time::subtract(const xtd::date_time&) method. To subtract a particular time interval from the current instance, call the method that adds that time interval to the current date, and supply a negative value as the method argument. For example, to subtract two months from the current date, call the xtd::date_time::add_months method with a value of -2.
     /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation.
-    /// @remarks Ordinarily, the xtd::date_time::subtract(xtd::date_time::time_point) method subtracts a xtd::date_time::time_point object that represents a positive time span and returns a xtd::date_time value that is earlier than the date and time of the current instance. However, if the xtd::date_time::time_point object represents a negative time span, the xtd::date_time::subtract(xtd::date_time::time_point) method returns a xtd::date_time value that is later than the date and time of the current instance.
-    /// @remarks The xtd::date_time::subtract(xtd::date_time::time_point) method allows you to subtract a time interval that consists of more than one unit of time (such as a given number of hours and a given number of minutes). To subtract a single unit of time (such as years, months, or days) from the xtd::date_time instance, you can pass a negative numeric value as a parameter to any of the following methods:
+    /// @remarks Ordinarily, the xtd::date_time::subtract(xtd::time_span) method subtracts a xtd::time_span object that represents a positive time span and returns a xtd::date_time value that is earlier than the date and time of the current instance. However, if the xtd::time_span object represents a negative time span, the xtd::date_time::subtract(xtd::time_span) method returns a xtd::date_time value that is later than the date and time of the current instance.
+    /// @remarks The xtd::date_time::subtract(xtd::time_span) method allows you to subtract a time interval that consists of more than one unit of time (such as a given number of hours and a given number of minutes). To subtract a single unit of time (such as years, months, or days) from the xtd::date_time instance, you can pass a negative numeric value as a parameter to any of the following methods:
     /// * xtd::date_time::add_years, to subtract a specific number of years from the current date and time instance.
     /// * xtd::date_time::add_months, to subtract a specific number of months from the current date and time instance.
     /// * xtd::date_time::add_days, to subtract a specific number of days from the current date and time instance.
@@ -880,7 +874,7 @@ namespace xtd {
     /// * xtd::date_time::add_ticks, to subtract a specific number of ticks from the current date and time instance.
     template<typename rep_t, typename period_t>
     date_time subtract(std::chrono::duration<rep_t, period_t> value) const {
-      return subtract(std::chrono::duration_cast<time_point>(value));
+      return subtract(std::chrono::duration_cast<xtd::time_span>(value));
     }
     /// @brief Returns a new xtd::date_time that subtracts the specified duration from the value of this instance.
     /// @param value The time interval to subtract.
@@ -889,10 +883,10 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates the xtd::date_time::subtract method and the subtraction operator.
     /// @include date_time_subtract.cpp
-    /// @remarks The xtd::date_time::subtract(xtd::date_time::time_point) method returns the date that is a specified time interval difference from the current instance. To determine the time interval between two dates, call the xtd::date_time::subtract(const xtd::date_time&) method. To subtract a particular time interval from the current instance, call the method that adds that time interval to the current date, and supply a negative value as the method argument. For example, to subtract two months from the current date, call the xtd::date_time::add_months method with a value of -2.
+    /// @remarks The xtd::date_time::subtract(xtd::time_span) method returns the date that is a specified time interval difference from the current instance. To determine the time interval between two dates, call the xtd::date_time::subtract(const xtd::date_time&) method. To subtract a particular time interval from the current instance, call the method that adds that time interval to the current date, and supply a negative value as the method argument. For example, to subtract two months from the current date, call the xtd::date_time::add_months method with a value of -2.
     /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation.
-    /// @remarks Ordinarily, the xtd::date_time::subtract(xtd::date_time::time_point) method subtracts a xtd::date_time::time_point object that represents a positive time span and returns a xtd::date_time value that is earlier than the date and time of the current instance. However, if the xtd::date_time::time_point object represents a negative time span, the xtd::date_time::subtract(xtd::date_time::time_point) method returns a xtd::date_time value that is later than the date and time of the current instance.
-    /// @remarks The xtd::date_time::subtract(xtd::date_time::time_point) method allows you to subtract a time interval that consists of more than one unit of time (such as a given number of hours and a given number of minutes). To subtract a single unit of time (such as years, months, or days) from the xtd::date_time instance, you can pass a negative numeric value as a parameter to any of the following methods:
+    /// @remarks Ordinarily, the xtd::date_time::subtract(xtd::time_span) method subtracts a xtd::time_span object that represents a positive time span and returns a xtd::date_time value that is earlier than the date and time of the current instance. However, if the xtd::time_span object represents a negative time span, the xtd::date_time::subtract(xtd::time_span) method returns a xtd::date_time value that is later than the date and time of the current instance.
+    /// @remarks The xtd::date_time::subtract(xtd::time_span) method allows you to subtract a time interval that consists of more than one unit of time (such as a given number of hours and a given number of minutes). To subtract a single unit of time (such as years, months, or days) from the xtd::date_time instance, you can pass a negative numeric value as a parameter to any of the following methods:
     /// * xtd::date_time::add_years, to subtract a specific number of years from the current date and time instance.
     /// * xtd::date_time::add_months, to subtract a specific number of months from the current date and time instance.
     /// * xtd::date_time::add_days, to subtract a specific number of days from the current date and time instance.
@@ -901,7 +895,7 @@ namespace xtd {
     /// * xtd::date_time::add_seconds, to subtract a specific number of seconds from the current date and time instance.
     /// * xtd::date_time::add_milliseconds, to subtract a specific number of milliseconds from the current date and time instance.
     /// * xtd::date_time::add_ticks, to subtract a specific number of ticks from the current date and time instance.
-    date_time subtract(time_point value) const;
+    date_time subtract(xtd::time_span value) const;
     
     /// @brief Serializes the current xtd::date_time object to a 64-bit binary value that subsequently can be used to recreate the xtd::date_time object.
     /// @return A 64-bit signed integer that encodes the xtd::date_time::kind and xtd::date_time::ticks properties.
@@ -1047,7 +1041,7 @@ namespace xtd {
     /// @}
     
     /// @cond
-    operator time_point() const;
+    operator xtd::time_span() const;
     date_time& operator+=(const date_time& value);
     date_time& operator-=(const date_time& value);
     template<typename rep_t, typename period_t>

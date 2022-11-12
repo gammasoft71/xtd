@@ -363,9 +363,9 @@ namespace xtd::tests {
       assert::is_zero(d2.millisecond(), csf_);
     }
     
-    void test_method_(add_time_point) {
-      date_time d1(date_time::time_point(20), date_time_kind::local);
-      date_time d2 = d1.add(date_time::time_point(22));
+    void test_method_(add_time_span) {
+      date_time d1(time_span(20), date_time_kind::local);
+      date_time d2 = d1.add(time_span(22));
       assert::are_equal(date_time_kind::local, d2.kind(), csf_);
       assert::are_equal(ticks(42), d2.ticks(), csf_);
       assert::are_equal(1U, d2.year(), csf_);
