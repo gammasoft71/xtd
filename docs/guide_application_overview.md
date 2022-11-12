@@ -2,7 +2,7 @@
 
 # Application overview
 
-An xtd GUI application must use the [xtd::forms::application](xtd::forms::application) class to run process event loop.
+An xtd GUI application must use the [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class to run process event loop.
 
 The following code shows the minimum required to run a GUI application.
 The application will exit automatically when the form is closed.
