@@ -44,8 +44,8 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @remarks A string is a sequential collection of characters that's used to represent text. A xtd::ustring object is a sequential collection of xtd::char8 objects that represent a string; a xtd::char8 object corresponds to a UTF-8 code unit. The value of the xtd::ustring object is the content of the sequential collection of xtd::char8 objects, and unlike std::basic_string that value is immutable (that is, it is read-only).
-  /// @remarks if you want the same mutable string class, you can use xtd::text::ustring_builder class.
+  /// @remarks A string is a sequential collection of characters that's used to represent text. A xtd::ustring object is a sequential collection of char that represent a string; a char corresponds to a UTF-8 code unit. The value of the xtd::ustring object is the content of the sequential collection of char, and unlike std::basic_string that value is immutable (that is, it is read-only).
+  /// @remarks If you want the same mutable string class, you can use xtd::text::ustring_builder class.
   /// @remarks xtd::ustring is inherited from std::basic_string<char> and therefore offers the full (immutable) API of std::string.
   class ustring : public xtd::icomparable<ustring>, public object, public std::basic_string<char> {
   public:
@@ -437,23 +437,6 @@ namespace xtd {
     /// @name Methods
     
     /// @{
-    /// @brief Gets the fully qualified class name of the objec_t, including the namespace of the objec_t.
-    /// @return The fully qualified class name of the objec_t, including the namespace of the objec_t.
-    /// @remarks For example, the fully qualified name of the ustring type is xtd::ustring.
-    template<typename object_t>
-    static ustring full_class_name() {return demangle(typeid(object_t).name());}
-    
-    /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
-    /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
-    /// @remarks For example, the fully qualified name of the ustring type is xtd::ustring.
-    template<typename object_t>
-    static ustring full_class_name(const object_t& object) {return demangle(typeid(object).name());}
-    
-    /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
-    /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
-    /// @remarks For example, the fully qualified name of the ustring type is xtd::ustring.
-    static ustring full_class_name(const std::type_info& info) {return demangle(info.name());}
-    
     /// @brief Gets the class name of the object_t.
     /// @return The class name of the object_t.
     /// @remarks For example, the name of the ustring type is ustring.
@@ -775,6 +758,23 @@ namespace xtd {
       __ustring_extract_format_arg(result, formats, std::forward<args_t>(args)...);
       return result.c_str();
     }
+    
+    /// @brief Gets the fully qualified class name of the objec_t, including the namespace of the objec_t.
+    /// @return The fully qualified class name of the objec_t, including the namespace of the objec_t.
+    /// @remarks For example, the fully qualified name of the ustring type is xtd::ustring.
+    template<typename object_t>
+    static ustring full_class_name() {return demangle(typeid(object_t).name());}
+    
+    /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
+    /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
+    /// @remarks For example, the fully qualified name of the ustring type is xtd::ustring.
+    template<typename object_t>
+    static ustring full_class_name(const object_t& object) {return demangle(typeid(object).name());}
+    
+    /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
+    /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
+    /// @remarks For example, the fully qualified name of the ustring type is xtd::ustring.
+    static ustring full_class_name(const std::type_info& info) {return demangle(info.name());}
     
     /// @brief Returns the hash code for this string.
     /// @return A hash code.
