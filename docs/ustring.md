@@ -40,7 +40,7 @@ The content of the string must be encoded in UTF-8 (65001) format. Make sure it 
 
 #### Examples
 
-The following code shows how to convert [xtd::ustring]((https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html)) to std::u32string and writes the converted string to the console output.
+The following code shows how to convert [xtd::ustring](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html) to [std::u32string](https://en.cppreference.com/w/cpp/string/basic_string) and writes the converted string to the console output.
 
 ```c++
 #include <xtd/xtd>
@@ -66,7 +66,7 @@ The [xtd::as<...>](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga
 
 #### Examples
 
-The following code shows how to convert [std::u16string]() to [xtd::ustring](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html) and writes the converted string to the console output.
+The following code shows how to convert [std::u16string](https://en.cppreference.com/w/cpp/string/basic_string) to [xtd::ustring](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html) and writes the converted string to the console output.
 
 ```c++
 #include <xtd/xtd>
