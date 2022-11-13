@@ -284,7 +284,7 @@ namespace xtd {
     template<typename enum_t>
     static std::vector<xtd::ustring> get_names() {
       std::vector<xtd::ustring> names;
-      for (auto item : num_object<enum_t>().values())
+      for (auto item : enum_object<enum_t>().values())
         names.push_back(item.first);
       return names;
     }
@@ -295,7 +295,7 @@ namespace xtd {
     template<typename enum_t>
     static std::vector<enum_t> get_values() {
       std::vector<enum_t> values;
-      for (auto item : num_object<enum_t>().values())
+      for (auto item : enum_object<enum_t>().values())
         values.push_back(item.second);
       return values;
     }
