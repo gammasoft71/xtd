@@ -58,11 +58,11 @@ int main() {
 
 This example is one of N. You can convert any string container to any other string container.
 
-See [xtd::convert_string](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1convert__string.html) class for a complete list of conversion methods.
+See [type convertion](type_conversion_overview.md) and [xtd::convert_string](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1convert__string.html) class for a complete list of conversion methods.
 
 ### as operator
 
-The [type convertion](type_conversion_overview.md) and [xtd::as<...>](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7) operators cast a type into another type.
+The [xtd::as<...>](ahtml#ga19379a1158ccd320e208b362f11295b7) operators cast a type into another type.
 
 #### Remarks 
 
