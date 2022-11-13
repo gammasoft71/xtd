@@ -73,10 +73,6 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override {return ustring::full_class_name(*this);}
       /// @}
       
-      /// @cond
-      friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::brush& brush) noexcept {return os << brush.to_string();}
-      /// @endcond
-      
     protected:
       /// @name Protected constructors
       

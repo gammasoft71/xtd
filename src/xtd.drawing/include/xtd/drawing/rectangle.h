@@ -303,10 +303,6 @@ namespace xtd {
       bool operator!=(const rectangle& value) const noexcept;
       /// @}
       
-      /// @cond
-      friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::rectangle& rectangle) noexcept {return os << rectangle.to_string();}
-      /// @endcond
-      
     private:
       int32_t x_ = 0;
       int32_t y_ = 0;

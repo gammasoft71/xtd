@@ -43,7 +43,6 @@ namespace xtd {
       /// @cond
       socket_address(const socket_address& socket_address) = default;
       socket_address& operator=(const socket_address& socket_address) = default;
-      friend std::ostream& operator<<(std::ostream& os, const socket_address& socket_address) noexcept {return os << socket_address.to_string();}
       /// @endcond
       
       /// @name Properties

@@ -439,10 +439,6 @@ namespace xtd {
         xtd::ustring to_string() const noexcept override;
         /// @}
         
-        /// @cond
-        friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::drawing2d::graphics_path& graphics_path) noexcept {return os << graphics_path.to_string();}
-        /// @endcond
-        
       private:
         void recreate_handle();
         struct data {

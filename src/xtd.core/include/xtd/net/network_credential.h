@@ -41,7 +41,6 @@ namespace xtd {
       network_credential(network_credential&& network_credential) = default;
       network_credential(const network_credential& network_credential) = default;
       network_credential& operator=(const network_credential&) = default;
-      friend std::ostream& operator<<(std::ostream& os, const network_credential& host_entry) noexcept {return os << host_entry.to_string();}
       /// @endcond
       
       /// @name Properties

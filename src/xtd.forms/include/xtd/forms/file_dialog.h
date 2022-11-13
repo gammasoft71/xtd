@@ -312,12 +312,6 @@ namespace xtd {
       }
       /// @}
       
-      /// @cond
-      friend std::ostream& operator<<(std::ostream& os, const xtd::forms::file_dialog& dialog) noexcept {
-        return os << dialog.to_string();
-      }
-      /// @endcond
-      
     protected:
       /// @name Protected methods
       

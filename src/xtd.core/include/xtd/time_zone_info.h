@@ -377,8 +377,4 @@ namespace xtd {
     bool supports_daylight_saving_time_ = false;
     std::vector<adjustement_rule> adjustement_rules_;
   };
-  
-  /// @cond
-  std::ostream& operator<<(std::ostream& os, const time_zone_info& tzi) noexcept;
-  /// @endcond
 }

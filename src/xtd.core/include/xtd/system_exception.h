@@ -144,12 +144,6 @@ namespace xtd {
     /// @return A string that represents the current exception.
     xtd::ustring to_string() const noexcept override;
     
-    /// @cond
-    friend std::ostream& operator<<(std::ostream& os, const xtd::system_exception& e) noexcept {
-      return os << e.to_string();
-    }
-    /// @endcond
-    
     /// @brief Gets message associate to the exception
     /// @return A string represent a massage associate to the exception
     const char* what() const noexcept override {return message().empty() ? name().c_str() : message().c_str();}

@@ -622,7 +622,3 @@ void date_time::set_date_time(uint32_t year, uint32_t month, uint32_t day, uint3
   value_ = xtd::ticks(days * ticks_per_day + hour * ticks_per_hour + minute * ticks_per_minute + second * ticks_per_second + millisecond * ticks_per_millisecond);
   kind_ = kind;
 }
-
-std::ostream& xtd::operator<<(std::ostream& os, const date_time& value) noexcept {
-  return os << value.to_string();
-}
