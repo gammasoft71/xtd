@@ -286,8 +286,4 @@ namespace xtd {
     int32_t build_ = -1;
     int32_t revision_ = -1;
   };
-  
-  /// @cond
-  std::ostream& operator<<(std::ostream& os, const version& ver) noexcept;
-  /// @endcond
 }

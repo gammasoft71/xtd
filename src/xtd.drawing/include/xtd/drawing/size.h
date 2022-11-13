@@ -123,10 +123,6 @@ namespace xtd {
       static size truncate(const size_f& value) noexcept;
       /// @}
       
-      /// @cond
-      friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::size& size) noexcept {return os << size.to_string();}
-      /// @endcond
-      
     private:
       int32_t width_ = 0;
       int32_t height_ = 0;

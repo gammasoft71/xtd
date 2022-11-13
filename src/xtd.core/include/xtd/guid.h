@@ -106,7 +106,6 @@ namespace xtd {
     /// @cond
     guid(const guid&) = default;
     guid& operator=(const guid&) = default;
-    friend std::ostream& operator<<(std::ostream& os, const guid& guid) noexcept {return os << guid.to_string();}
     /// @endcond
     
     /// @name Methods

@@ -93,11 +93,6 @@ namespace xtd {
       /// @return A string containing the name, alpha codes and numeric code of the country.
       virtual xtd::ustring to_string() const noexcept override;
       /// @}
-      
-      /// @cond
-      friend std::ostream& operator<<(std::ostream& os, const xtd::forms::country& country) noexcept {
-        return os << country.to_string();
-      }
       /// @endcond
       
     private:

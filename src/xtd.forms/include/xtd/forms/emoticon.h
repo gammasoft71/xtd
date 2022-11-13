@@ -97,9 +97,6 @@ namespace xtd {
       emoticon& operator=(const emoticon&) = default;
       bool operator==(const emoticon& value) {return name_ == value.name_ && codepoints_ == value.codepoints_;}
       bool operator!=(const emoticon& value) {return !operator==(value);}
-      friend std::ostream& operator<<(std::ostream& os, const xtd::forms::emoticon& emoticon) noexcept {
-        return os << emoticon.to_string();
-      }
       /// @endcond
       
       /// @name Properties

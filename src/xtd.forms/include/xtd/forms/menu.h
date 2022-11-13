@@ -156,12 +156,6 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
-      /// @cond
-      friend std::ostream& operator<<(std::ostream& os, const xtd::forms::menu& menu) noexcept {
-        return os << menu.to_string();
-      }
-      /// @endcond
-      
     protected:
       friend menu_item;
       

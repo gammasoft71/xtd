@@ -178,7 +178,6 @@ namespace xtd {
         socket(const socket&) = default;
         ~socket();
         socket& operator=(const socket&) = default;
-        friend std::ostream& operator<<(std::ostream& os, const socket& mo) noexcept {return os << mo.to_string();}
         bool operator==(const socket& s) const {return data_ == s.data_;};
         bool operator!=(const socket& s) const {return !operator==(s);};
         /// @endcond

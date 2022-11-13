@@ -189,11 +189,6 @@ namespace xtd {
       /// @return A readable representation of the stack trace.
       xtd::ustring to_string() const noexcept override;
       
-      /// @cond
-      friend std::ostream& operator<<(std::ostream& os, const xtd::diagnostics::stack_frame& stack_frame) noexcept {return os << stack_frame.to_string();}
-      /// @endcond
-      /// @}
-      
     private:
       friend class stack_trace;
       static std::vector<stack_frame> get_stack_frames(const xtd::ustring& str, size_t skip_frames, bool need_file_info);

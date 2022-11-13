@@ -55,8 +55,7 @@ namespace xtd {
       renderer& operator=(const renderer&) = default;
       bool operator==(const renderer& value) const {return name_ == value.name_;}
       bool operator!=(const renderer& value) const {return !operator==(value);}
-      friend std::ostream& operator<<(std::ostream& os, const renderer& theme) noexcept {return os << theme.to_string();}
-      /// @endcond
+       /// @endcond
       
       /// @name Properties
       

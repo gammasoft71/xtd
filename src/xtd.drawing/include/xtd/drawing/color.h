@@ -1238,10 +1238,6 @@ namespace xtd {
       xtd::ustring name_ = "0";
       bool empty_ = true;
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, color value) {return os << value.to_string();}
-    /// @endcond
   }
   
   /// @brief Creates a xtd::drawing::color class from the specified name.
