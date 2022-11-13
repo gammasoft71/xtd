@@ -247,7 +247,13 @@ namespace xtd {
     inline static enum_collection<enum_type> values_;
     inline static bool flags_ = false;
   };
-  
+ 
+  /// @brief Provides the base class for enumerations.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core system
   template<>
   class enum_object<std::nullptr_t> static_ {
   public:
