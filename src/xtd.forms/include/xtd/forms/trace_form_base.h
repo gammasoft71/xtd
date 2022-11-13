@@ -38,7 +38,7 @@ namespace xtd {
       /// @param header_separator A string that represent separator. By default is "|".
       /// @return Current trace_form_base.
       virtual trace_form_base& header_separator(const xtd::ustring& header_separator) {
-        if (header_separator_ != header_separator_) {
+        if (header_separator != header_separator_) {
           header_separator_ = header_separator;
           update_format();
         }

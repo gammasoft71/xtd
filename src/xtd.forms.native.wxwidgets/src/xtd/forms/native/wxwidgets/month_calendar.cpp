@@ -125,7 +125,7 @@ void month_calendar::monthly_bolded_dates(intptr_t control, const std::vector<xt
   reinterpret_cast<wx_month_calendar*>(control)->change_attribute_dates(reinterpret_cast<wx_month_calendar*>(control));
 }
 
-void month_calendar::selection_range(intptr_t control, date_time date_start, date_time date_end) {
+void month_calendar::selection_range(intptr_t control, date_time date_start) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

@@ -1345,21 +1345,21 @@ namespace xtd {
       }
       
       static void is_less_or_equal(const char8_t* val1, const char8_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        if (ustring(val1) < ustring(val2))
+        if (ustring(val1) <= ustring(val2))
           succeed(message, stack_frame);
         else
           base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
       }
       
       static void is_less_or_equal(const char16_t* val1, const char16_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        if (std::u16string(val1) < std::u16string(val2))
+        if (std::u16string(val1) <= std::u16string(val2))
           succeed(message, stack_frame);
         else
           base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
       }
       
       static void is_less_or_equal(const char32_t* val1, const char32_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        if (std::u32string(val1) < std::u32string(val2))
+        if (std::u32string(val1) <= std::u32string(val2))
           succeed(message, stack_frame);
         else
           base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
