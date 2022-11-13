@@ -2,7 +2,7 @@
 
 # Observer Design Pattern
 
-Comming soon...
+coming soon...
 
 # See also
 ​
