@@ -58,7 +58,7 @@ namespace xtd {
         multicast_option(multicast_option&& multicast_option) = default;
         multicast_option(const multicast_option& multicast_option) = default;
         multicast_option& operator=(const multicast_option&) = default;
-        friend std::ostream& operator <<(std::ostream& os, const multicast_option& mo) noexcept {return os << mo.to_string();}
+        friend std::ostream& operator<<(std::ostream& os, const multicast_option& mo) noexcept {return os << mo.to_string();}
         /// @endcond
         
         /// @name Properties

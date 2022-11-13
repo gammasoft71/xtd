@@ -74,7 +74,7 @@ namespace xtd {
         tcp_client(const tcp_client&) = default;
         ~tcp_client();
         tcp_client& operator=(const tcp_client&) = default;
-        friend std::ostream& operator <<(std::ostream& os, const tcp_client& tc) noexcept {return os << tc.to_string();}
+        friend std::ostream& operator<<(std::ostream& os, const tcp_client& tc) noexcept {return os << tc.to_string();}
         bool operator==(const tcp_client& s) const {return data_ == s.data_;};
         bool operator!=(const tcp_client& s) const {return !operator==(s);};
         /// @endcond

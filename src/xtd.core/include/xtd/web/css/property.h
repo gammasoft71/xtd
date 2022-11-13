@@ -23,7 +23,7 @@ namespace xtd {
         
         /// @{
         operator xtd::ustring() {return value_;}
-        friend std::ostream& operator <<(std::ostream& os, const property& property) noexcept {return os << property.to_string();}
+        friend std::ostream& operator<<(std::ostream& os, const property& property) noexcept {return os << property.to_string();}
         /// @}
         
         /// @name Properties
