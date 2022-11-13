@@ -41,7 +41,7 @@ namespace xtd {
     object(const object&) = default;
     object& operator=(const object&) = default;
     virtual ~object() = default;
-    //friend std::ostream& operator <<(std::ostream& os, const object& obj) noexcept {return os << obj.to_string();}
+    //friend std::ostream& operator<<(std::ostream& os, const object& obj) noexcept {return os << obj.to_string();}
     /// @endcond
     
     /// @name Methods
@@ -102,6 +102,6 @@ namespace xtd {
   };
   
   /// @cond
-  std::ostream& operator <<(std::ostream& os, const object& obj) noexcept;
+  std::ostream& operator<<(std::ostream& os, const object& obj) noexcept;
   /// @endcond
 }

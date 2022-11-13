@@ -75,7 +75,7 @@ namespace xtd {
     operating_system() = default;
     operating_system(const operating_system&) = default;
     operating_system& operator=(const operating_system&) = default;
-    friend std::ostream& operator <<(std::ostream& os, const operating_system& operating_system) noexcept {return os << operating_system.to_string();}
+    friend std::ostream& operator<<(std::ostream& os, const operating_system& operating_system) noexcept {return os << operating_system.to_string();}
     /// @endcond
     
     /// @name Properties

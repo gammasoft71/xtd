@@ -1087,7 +1087,7 @@ namespace xtd {
   };
   
   /// @cond
-  std::ostream& operator <<(std::ostream& os, const date_time& value) noexcept;
+  std::ostream& operator<<(std::ostream& os, const date_time& value) noexcept;
   /// @endcond
   
   /// @brief Convert a specified value into a string with specified format and locale.

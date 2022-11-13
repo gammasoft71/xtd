@@ -288,6 +288,6 @@ namespace xtd {
   };
   
   /// @cond
-  std::ostream& operator <<(std::ostream& os, const version& ver) noexcept;
+  std::ostream& operator<<(std::ostream& os, const version& ver) noexcept;
   /// @endcond
 }

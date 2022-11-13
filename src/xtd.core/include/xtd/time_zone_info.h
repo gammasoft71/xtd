@@ -379,6 +379,6 @@ namespace xtd {
   };
   
   /// @cond
-  std::ostream& operator <<(std::ostream& os, const time_zone_info& tzi) noexcept;
+  std::ostream& operator<<(std::ostream& os, const time_zone_info& tzi) noexcept;
   /// @endcond
 }
