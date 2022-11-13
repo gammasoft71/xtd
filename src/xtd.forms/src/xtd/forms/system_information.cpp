@@ -63,7 +63,7 @@ bool system_information::dbcs_enabled() {
 }
 
 bool system_information::debug_os() {
-  return native::system_information::dbcs_enabled();
+  return native::system_information::debug_os();
 }
 
 xtd::drawing::size system_information::double_click_size() {

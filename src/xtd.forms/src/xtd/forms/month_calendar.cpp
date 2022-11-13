@@ -128,7 +128,7 @@ month_calendar& month_calendar::selection_end(date_time value) {
   if (value > data_->max_date) value = data_->max_date;
   if (data_->selection_end != value) {
     data_->selection_end = value;
-    if (is_handle_created()) native::month_calendar::selection_range(handle(), data_->selection_start, data_->selection_end);
+    if (is_handle_created()) native::month_calendar::selection_range(handle(), data_->selection_start);
     on_date_selected(date_range_event_args(data_->selection_start, data_->selection_end));
   }
   return *this;
@@ -143,7 +143,7 @@ month_calendar& month_calendar::selection_start(date_time value) {
   if (value > data_->max_date) value = data_->max_date;
   if (data_->selection_start != value) {
     data_->selection_start = value;
-    if (is_handle_created()) native::month_calendar::selection_range(handle(), data_->selection_start, data_->selection_end);
+    if (is_handle_created()) native::month_calendar::selection_range(handle(), data_->selection_start);
     on_date_selected(date_range_event_args(data_->selection_start, data_->selection_end));
   }
   return *this;
@@ -356,7 +356,7 @@ void month_calendar::on_handle_created(const event_args& e) {
   native::month_calendar::allowable_dates(handle(), data_->min_date, data_->max_date);
   native::month_calendar::first_day_of_week(handle(), static_cast<uint32_t>(data_->first_day_of_week));
   native::month_calendar::max_selection_count(handle(), data_->max_selection_count);
-  native::month_calendar::selection_range(handle(), data_->selection_start, data_->selection_end);
+  native::month_calendar::selection_range(handle(), data_->selection_start);
   native::month_calendar::today_date(handle(), data_->today_date);
   native::month_calendar::title_back_color(handle(), title_back_color());
   native::month_calendar::title_fore_color(handle(), title_fore_color());

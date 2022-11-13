@@ -69,7 +69,7 @@ constexpr int32_t IM_NEAREST_NEIGHBOOR = 5;
 /// @ingroup xtd_drawing_native im
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t IM_HIGH_QUALLITY_BILINEAR = 6;
+constexpr int32_t IM_HIGH_QUALITY_BILINEAR = 6;
 
 /// @brief Specifies high-quality, bicubic interpolation. Prefiltering is performed to ensure high-quality shrinking. This mode produces the highest quality transformed images.
 /// @par Library
@@ -77,4 +77,4 @@ constexpr int32_t IM_HIGH_QUALLITY_BILINEAR = 6;
 /// @ingroup xtd_drawing_native im
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t IM_HIGN_QUALITY_BICUBIC = 7;
+constexpr int32_t IM_HIGH_QUALITY_BICUBIC = 7;

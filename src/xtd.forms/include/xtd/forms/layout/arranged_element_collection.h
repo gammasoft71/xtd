@@ -428,7 +428,11 @@ namespace xtd {
         }
         /// @brief Access specified element.
         /// @return The requested element.
-        const_reference operator[](size_type pos) const {return collection_[pos];}
+        const_reference operator[](size_type pos) const {
+          collection_[pos].pos = pos;
+          collection_[pos].owner = this;
+          return collection_[pos];
+        }
         /// @}
         
         /// @name Events
