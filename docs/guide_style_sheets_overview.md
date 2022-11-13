@@ -63,7 +63,7 @@ In the case of our example we don't want a change of color to change the appeara
 
 ## Style sheet usage
 
-Comming soon...
+coming soon...
 
 ## Themes
 

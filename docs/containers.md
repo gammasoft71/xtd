@@ -238,7 +238,7 @@ int main() {
 
 [splitter_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1splitter__panel.html) represents a panel that is associated with a split_container.
 
-*Comming soon...*
+*Coming soon...*
 
 ### Tab page
 
@@ -326,7 +326,7 @@ On the other hand, child controls of layout panel cannot use the dock or anchor 
 
 [flow_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1flow__layout__panel.html) is used to group collections of fixed aligned controls.
 
-*Comming soon...*
+*Coming soon...*
 
 ### Horizontal layout panel
 
@@ -482,7 +482,7 @@ int main() {
 
 [table_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1table__layout__panel.html) is used to group collections of fixed aligned controls.
 
-*Comming soon...*
+*Coming soon...*
 
 ### Vertical layout panel
 
@@ -641,7 +641,7 @@ int main() {
 
 [collapsible_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1collapsible__panel.html) is used to group collections of controls in a collapsible panel.
 
-*Comming soon...*
+*coming soon...*
 
 ### Split container
 
@@ -651,7 +651,7 @@ int main() {
 
 The child control for the [split_container](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1split__container.html) are [splitter_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1splitter__panel.html).
 
-*Comming soon...*
+*coming soon...*
  
 ### Tab control
  
