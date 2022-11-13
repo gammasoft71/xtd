@@ -116,7 +116,7 @@ namespace xtd {
         /// @param control month_calendar handle.
         /// @param date_start The range date start.
         /// @warning Internal use only
-        static void selection_range(intptr_t control, date_time date_start);
+        static void selection_range(intptr_t control, date_time date_start, date_time date_end);
         
         /// @brief Gets selection range from the calendar.
         /// @param control month_calendar handle.
