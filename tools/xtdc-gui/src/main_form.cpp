@@ -503,7 +503,7 @@ main_form::main_form() {
       configure_panel_.visible(false);
       previous_button_.visible(true);
       next_button_.visible(true);
-    } else if (open_xtd_examples_panel_.visible()) {
+    } else if (!open_xtd_examples_panel_.visible()) {
       previous_button_.text("&Back");
       next_button_.text("&Next");
       create_panel_.visible(true);

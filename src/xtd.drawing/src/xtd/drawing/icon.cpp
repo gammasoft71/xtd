@@ -81,7 +81,7 @@ intptr_t icon::handle() const {
 }
 
 int32_t icon::height() const {
-  return data_->size.width();
+  return data_->size.height();
 }
 
 const xtd::drawing::size& icon::size() const {

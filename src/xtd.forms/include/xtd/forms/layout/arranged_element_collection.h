@@ -428,7 +428,11 @@ namespace xtd {
         }
         /// @brief Access specified element.
         /// @return The requested element.
-        const_reference operator[](size_type pos) const {return collection_[pos];}
+        const_reference operator[](size_type pos) const {
+          collection_[pos].pos = pos;
+          collection_[pos].owner = const_cast<arranged_element_collection*>(this);
+          return collection_[pos];
+        }
         /// @}
         
         /// @name Events
@@ -448,7 +452,7 @@ namespace xtd {
         /// @}
         
       private:
-        std::vector<value_type, allocator_type> collection_;
+        mutable std::vector<value_type, allocator_type> collection_;
         bool inserting_ = false;
         bool erasing_ = false;
         bool sorted_ = false;
