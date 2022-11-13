@@ -89,7 +89,7 @@ namespace xtd {
           SetTextWithSelectedIndex();
         }
         
-        wxString GetLabel() const override {return textBox->GetValue();}
+        wxString GetLabel() const override {return textBox->GetValue(); }
         
         void SetLabel(const wxString& value) override {textBox->SetValue(value);}
         

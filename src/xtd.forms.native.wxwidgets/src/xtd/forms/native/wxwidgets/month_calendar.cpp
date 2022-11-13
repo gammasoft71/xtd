@@ -1,4 +1,5 @@
 #include <xtd/argument_exception.h>
+#include <xtd/unused.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/month_calendar.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_month_calendar.h"
@@ -136,6 +137,7 @@ void month_calendar::selection_range(intptr_t control, date_time date_start, dat
   wxDateTime wx_date_time(date_start.day(), static_cast<wxDateTime::Month>(date_start.month() - 1), date_start.year());
   reinterpret_cast<wx_month_calendar*>(control)->current_month = date_start.month();
   reinterpret_cast<wx_month_calendar*>(control)->current_year = date_start.year();
+  unused_(date_end);
   wx_calendar_ctrl->SetDate(wx_date_time);
 }
 

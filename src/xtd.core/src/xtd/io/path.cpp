@@ -106,7 +106,7 @@ ustring path::get_full_path(const ustring& path) {
   auto index = full_path.last_index_of(ustring::format("{}.{}", directory_separator_char()));
   while (index != full_path.npos) {
     full_path = full_path.remove(index, 2);
-    index = index = full_path.last_index_of(ustring::format("{}.{}", directory_separator_char()));
+    index = full_path.last_index_of(ustring::format("{}.{}", directory_separator_char()));
   }
     
   return full_path;
