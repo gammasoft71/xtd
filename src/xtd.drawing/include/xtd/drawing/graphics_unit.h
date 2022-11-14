@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::graphics_unit enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -30,10 +30,11 @@ namespace xtd {
       /// @brief Specifies the millimeter as the unit of measure.
       millimeter = 6
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, graphics_unit value) {return os << xtd::to_string(value, {{graphics_unit::world, "world"}, {graphics_unit::display, "display"}, {graphics_unit::pixel, "pixel"}, {graphics_unit::point, "point"}, {graphics_unit::inch, "inch"}, {graphics_unit::document, "document"}, {graphics_unit::millimeter, "millimeter"}});}
-    inline std::wostream& operator<<(std::wostream& os, graphics_unit value) {return os << xtd::to_string(value, {{graphics_unit::world, L"world"}, {graphics_unit::display, L"display"}, {graphics_unit::pixel, L"pixel"}, {graphics_unit::point, L"point"}, {graphics_unit::inch, L"inch"}, {graphics_unit::document, L"document"}, {graphics_unit::millimeter, L"millimeter"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::graphics_unit> {
+  void operator()(xtd::enum_collection<xtd::drawing::graphics_unit>& values, xtd::enum_type& type) {values = {{xtd::drawing::graphics_unit::world, "world"}, {xtd::drawing::graphics_unit::display, "display"}, {xtd::drawing::graphics_unit::pixel, "pixel"}, {xtd::drawing::graphics_unit::point, "point"}, {xtd::drawing::graphics_unit::inch, "inch"}, {xtd::drawing::graphics_unit::document, "document"}, {xtd::drawing::graphics_unit::millimeter, "millimeter"}};}
+};
+/// @endcond

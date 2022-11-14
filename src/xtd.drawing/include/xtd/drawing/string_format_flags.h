@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::string_format_flags enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -36,19 +36,16 @@ namespace xtd {
     };
     
     /// @cond
-    inline string_format_flags& operator +=(string_format_flags& lhs, string_format_flags rhs) {lhs = static_cast<string_format_flags>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
-    inline string_format_flags& operator -=(string_format_flags& lhs, string_format_flags rhs) {lhs = static_cast<string_format_flags>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}
-    inline string_format_flags& operator &=(string_format_flags& lhs, string_format_flags rhs) {lhs = static_cast<string_format_flags>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); return lhs;}
-    inline string_format_flags& operator |=(string_format_flags& lhs, string_format_flags rhs) {lhs = static_cast<string_format_flags>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); return lhs;}
-    inline string_format_flags& operator ^=(string_format_flags& lhs, string_format_flags rhs) {lhs = static_cast<string_format_flags>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); return lhs;}
-    inline string_format_flags operator +(string_format_flags lhs, string_format_flags rhs) {return static_cast<string_format_flags>(static_cast<long long>(lhs) + static_cast<long long>(rhs));}
-    inline string_format_flags operator -(string_format_flags lhs, string_format_flags rhs) {return static_cast<string_format_flags>(static_cast<long long>(lhs) - static_cast<long long>(rhs));}
-    inline string_format_flags operator ~(string_format_flags rhs) {return static_cast<string_format_flags>(~static_cast<long long>(rhs));}
-    inline string_format_flags operator &(string_format_flags lhs, string_format_flags rhs) {return static_cast<string_format_flags>(static_cast<long long>(lhs) & static_cast<long long>(rhs));}
-    inline string_format_flags operator |(string_format_flags lhs, string_format_flags rhs) {return static_cast<string_format_flags>(static_cast<long long>(lhs) | static_cast<long long>(rhs));}
-    inline string_format_flags operator ^(string_format_flags lhs, string_format_flags rhs) {return static_cast<string_format_flags>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs));}
-    inline std::ostream& operator<<(std::ostream& os, string_format_flags value) {return os << xtd::to_string(value, {{string_format_flags::direction_right_to_left, "direction_right_to_left"}, {string_format_flags::direction_vertical, "direction_vertical"}, {string_format_flags::fit_black_box, "fit_black_box"}, {string_format_flags::display_format_control, "display_format_control"}, {string_format_flags::no_font_fallback, "no_font_fallback"}, {string_format_flags::measure_trailing_spaces, "measure_trailing_spaces"}, {string_format_flags::no_wrap, "no_wrap"}, {string_format_flags::line_limit, "line_limit"}, {string_format_flags::no_clip, "no_clip"}});}
-    inline std::wostream& operator<<(std::wostream& os, string_format_flags value) {return os << xtd::to_string(value, {{string_format_flags::direction_right_to_left, L"direction_right_to_left"}, {string_format_flags::direction_vertical, L"direction_vertical"}, {string_format_flags::fit_black_box, L"fit_black_box"}, {string_format_flags::display_format_control, L"display_format_control"}, {string_format_flags::no_font_fallback, L"no_font_fallback"}, {string_format_flags::measure_trailing_spaces, L"measure_trailing_spaces"}, {string_format_flags::no_wrap, L"no_wrap"}, {string_format_flags::line_limit, L"line_limit"}, {string_format_flags::no_clip, L"no_clip"}});}
+    add_enum_flag_operators_(xtd::drawing::string_format_flags);
     /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::string_format_flags> {
+  void operator()(xtd::enum_collection<xtd::drawing::string_format_flags>& values, xtd::enum_type& type) {
+    values = {{xtd::drawing::string_format_flags::direction_right_to_left, "direction_right_to_left"}, {xtd::drawing::string_format_flags::direction_vertical, "direction_vertical"}, {xtd::drawing::string_format_flags::fit_black_box, "fit_black_box"}, {xtd::drawing::string_format_flags::display_format_control, "display_format_control"}, {xtd::drawing::string_format_flags::no_font_fallback, "no_font_fallback"}, {xtd::drawing::string_format_flags::measure_trailing_spaces, "measure_trailing_spaces"}, {xtd::drawing::string_format_flags::no_wrap, "no_wrap"}, {xtd::drawing::string_format_flags::line_limit, "line_limit"}, {xtd::drawing::string_format_flags::no_clip, "no_clip"}};
+    type = xtd::enum_type::flags;
+  }
+};
+/// @endcond

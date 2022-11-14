@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::font_style enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -28,19 +28,16 @@ namespace xtd {
     };
     
     /// @cond
-    inline font_style& operator +=(font_style& lhs, font_style rhs) {lhs = static_cast<font_style>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
-    inline font_style& operator -=(font_style& lhs, font_style rhs) {lhs = static_cast<font_style>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}
-    inline font_style& operator &=(font_style& lhs, font_style rhs) {lhs = static_cast<font_style>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); return lhs;}
-    inline font_style& operator |=(font_style& lhs, font_style rhs) {lhs = static_cast<font_style>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); return lhs;}
-    inline font_style& operator ^=(font_style& lhs, font_style rhs) {lhs = static_cast<font_style>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); return lhs;}
-    inline font_style operator +(font_style lhs, font_style rhs) {return static_cast<font_style>(static_cast<long long>(lhs) + static_cast<long long>(rhs));}
-    inline font_style operator -(font_style lhs, font_style rhs) {return static_cast<font_style>(static_cast<long long>(lhs) - static_cast<long long>(rhs));}
-    inline font_style operator ~(font_style rhs) {return static_cast<font_style>(~static_cast<long long>(rhs));}
-    inline font_style operator &(font_style lhs, font_style rhs) {return static_cast<font_style>(static_cast<long long>(lhs) & static_cast<long long>(rhs));}
-    inline font_style operator |(font_style lhs, font_style rhs) {return static_cast<font_style>(static_cast<long long>(lhs) | static_cast<long long>(rhs));}
-    inline font_style operator ^(font_style lhs, font_style rhs) {return static_cast<font_style>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs));}
-    inline std::ostream& operator<<(std::ostream& os, font_style value) {return os << xtd::to_string(value, {{font_style::regular, "regular"}, {font_style::bold, "bold"}, {font_style::italic, "italic"}, {font_style::underline, "underline"}, {font_style::strikeout, "strikeout"}});}
-    inline std::wostream& operator<<(std::wostream& os, font_style value) {return os << xtd::to_string(value, {{font_style::regular, L"regular"}, {font_style::bold, L"bold"}, {font_style::italic, L"italic"}, {font_style::underline, L"underline"}, {font_style::strikeout, L"strikeout"}});}
+    add_enum_flag_operators_(xtd::drawing::font_style);
     /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::font_style> {
+  void operator()(xtd::enum_collection<xtd::drawing::font_style>& values, xtd::enum_type& type) {
+    values = {{xtd::drawing::font_style::regular, "regular"}, {xtd::drawing::font_style::bold, "bold"}, {xtd::drawing::font_style::italic, "italic"}, {xtd::drawing::font_style::underline, "underline"}, {xtd::drawing::font_style::strikeout, "strikeout"}};
+    type = enum_type::flags;
+  }
+};
+/// @endcond

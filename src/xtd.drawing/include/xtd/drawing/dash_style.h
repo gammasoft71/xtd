@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::dash_style enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -29,10 +29,11 @@ namespace xtd {
       /// @brief Specifies a user-defined custom dash style.
       custom
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, dash_style value) {return os << xtd::to_string(value, {{dash_style::solid, "solid"}, {dash_style::dash, "dash"}, {dash_style::dot, "dot"}, {dash_style::dash_dot, "dash_dot"}, {dash_style::dash_dot_dot, "dash_dot_dot"}});}
-    inline std::wostream& operator<<(std::wostream& os, dash_style value) {return os << xtd::to_string(value, {{dash_style::solid, L"solid"}, {dash_style::dash, L"dash"}, {dash_style::dot, L"dot"}, {dash_style::dash_dot, L"dash_dot"}, {dash_style::dash_dot_dot, L"dash_dot_dot"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::dash_style> {
+  void operator()(xtd::enum_collection<xtd::drawing::dash_style>& values, xtd::enum_type& type) {values = {{xtd::drawing::dash_style::solid, "solid"}, {xtd::drawing::dash_style::dash, "dash"}, {xtd::drawing::dash_style::dot, "dot"}, {xtd::drawing::dash_style::dash_dot, "dash_dot"}, {xtd::drawing::dash_style::dash_dot_dot, "dash_dot_dot"}};}
+};
+/// @endcond

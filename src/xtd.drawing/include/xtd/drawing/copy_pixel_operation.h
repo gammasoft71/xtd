@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::copy_pixel_operation enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -51,10 +51,11 @@ namespace xtd {
       /// @brief The destination area is filled by using the color associated with index 1 in the physical palette. (This color is white for the default physical palette.)
       whiteness = 16711778,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, const copy_pixel_operation value) {return os << to_string(value, {{copy_pixel_operation::blackness, "blackness"}, {copy_pixel_operation::capture_blt, "capture_blt"}, {copy_pixel_operation::destination_invert, "destination_invert"}, {copy_pixel_operation::merge_copy, "merge_copy"}, {copy_pixel_operation::merge_paint, "merge_paint"}, {copy_pixel_operation::no_mirror_bitmap, "no_mirror_bitmap"}, {copy_pixel_operation::not_source_copy, "not_source_copy"}, {copy_pixel_operation::not_source_erase, "not_source_erase"}, {copy_pixel_operation::pat_copy, "pat_copy"}, {copy_pixel_operation::pat_invert, "pat_invert"}, {copy_pixel_operation::pat_paint, "pat_paint"}, {copy_pixel_operation::source_and, "source_and"}, {copy_pixel_operation::source_copy, "source_copy"}, {copy_pixel_operation::source_erase, "source_erase"}, {copy_pixel_operation::source_invert, "source_invert"}, {copy_pixel_operation::source_paint, "source_paint"}, {copy_pixel_operation::whiteness, "whiteness"}});}
-    inline std::wostream& operator<<(std::wostream& os, const copy_pixel_operation value) {return os << to_string(value, {{copy_pixel_operation::blackness, L"blackness"}, {copy_pixel_operation::capture_blt, L"capture_blt"}, {copy_pixel_operation::destination_invert, L"destination_invert"}, {copy_pixel_operation::merge_copy, L"merge_copy"}, {copy_pixel_operation::merge_paint, L"merge_paint"}, {copy_pixel_operation::no_mirror_bitmap, L"no_mirror_bitmap"}, {copy_pixel_operation::not_source_copy, L"not_source_copy"}, {copy_pixel_operation::not_source_erase, L"not_source_erase"}, {copy_pixel_operation::pat_copy, L"pat_copy"}, {copy_pixel_operation::pat_invert, L"pat_invert"}, {copy_pixel_operation::pat_paint, L"pat_paint"}, {copy_pixel_operation::source_and, L"source_and"}, {copy_pixel_operation::source_copy, L"source_copy"}, {copy_pixel_operation::source_erase, L"source_erase"}, {copy_pixel_operation::source_invert, L"source_invert"}, {copy_pixel_operation::source_paint, L"source_paint"}, {copy_pixel_operation::whiteness, L"whiteness"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::copy_pixel_operation> {
+  void operator()(xtd::enum_collection<xtd::drawing::copy_pixel_operation>& values, xtd::enum_type& type) {values = {{xtd::drawing::copy_pixel_operation::blackness, "blackness"}, {xtd::drawing::copy_pixel_operation::capture_blt, "capture_blt"}, {xtd::drawing::copy_pixel_operation::destination_invert, "destination_invert"}, {xtd::drawing::copy_pixel_operation::merge_copy, "merge_copy"}, {xtd::drawing::copy_pixel_operation::merge_paint, "merge_paint"}, {xtd::drawing::copy_pixel_operation::no_mirror_bitmap, "no_mirror_bitmap"}, {xtd::drawing::copy_pixel_operation::not_source_copy, "not_source_copy"}, {xtd::drawing::copy_pixel_operation::not_source_erase, "not_source_erase"}, {xtd::drawing::copy_pixel_operation::pat_copy, "pat_copy"}, {xtd::drawing::copy_pixel_operation::pat_invert, "pat_invert"}, {xtd::drawing::copy_pixel_operation::pat_paint, "pat_paint"}, {xtd::drawing::copy_pixel_operation::source_and, "source_and"}, {xtd::drawing::copy_pixel_operation::source_copy, "source_copy"}, {xtd::drawing::copy_pixel_operation::source_erase, "source_erase"}, {xtd::drawing::copy_pixel_operation::source_invert, "source_invert"}, {xtd::drawing::copy_pixel_operation::source_paint, "source_paint"}, {xtd::drawing::copy_pixel_operation::whiteness, "whiteness"}};}
+};
+/// @endcond

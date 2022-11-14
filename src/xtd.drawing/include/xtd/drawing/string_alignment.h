@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::string_alignment enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 #if defined(_WIN32)
 #undef far
@@ -28,10 +28,11 @@ namespace xtd {
       /// @brief Specifies that text is aligned far from the origin position of the layout rectangle. In a left-to-right layout, the far position is right. In a right-to-left layout, the far position is left.
       far = 2
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, string_alignment value) {return os << xtd::to_string(value, {{string_alignment::near, "near"}, {string_alignment::center, "center"}, {string_alignment::far, "far"}});}
-    inline std::wostream& operator<<(std::wostream& os, string_alignment value) {return os << xtd::to_string(value, {{string_alignment::near, L"near"}, {string_alignment::center, L"center"}, {string_alignment::far, L"far"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::string_alignment> {
+  void operator()(xtd::enum_collection<xtd::drawing::string_alignment>& values, xtd::enum_type& type) {values = {{xtd::drawing::string_alignment::near, "near"}, {xtd::drawing::string_alignment::center, "center"}, {xtd::drawing::string_alignment::far, "far"}};}
+};
+/// @endcond
