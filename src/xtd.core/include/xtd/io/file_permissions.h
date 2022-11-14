@@ -2,7 +2,7 @@
 /// @brief Contains xtd::io::file_permissions enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "../ustring.h"
+#include "../enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -59,19 +59,16 @@ namespace xtd {
     };
     
     /// @cond
-    inline file_permissions& operator^=(file_permissions& lhs, file_permissions rhs) {lhs = static_cast<file_permissions>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
-    inline file_permissions& operator&=(file_permissions& lhs, file_permissions rhs) {lhs = static_cast<file_permissions>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}
-    inline file_permissions& operator|=(file_permissions& lhs, file_permissions rhs) {lhs = static_cast<file_permissions>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;}
-    inline file_permissions& operator+=(file_permissions& lhs, file_permissions rhs) {lhs = static_cast<file_permissions>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;}
-    inline file_permissions& operator-=(file_permissions& lhs, file_permissions rhs) {lhs = static_cast<file_permissions>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;}
-    inline file_permissions operator^(file_permissions lhs, file_permissions rhs) {return static_cast<file_permissions>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}
-    inline file_permissions operator&(file_permissions lhs, file_permissions rhs) {return static_cast<file_permissions>(static_cast<int>(lhs) & static_cast<int>(rhs));}
-    inline file_permissions operator|(file_permissions lhs, file_permissions rhs) {return static_cast<file_permissions>(static_cast<int>(lhs) | static_cast<int>(rhs));}
-    inline file_permissions operator+(file_permissions lhs, file_permissions rhs) {return static_cast<file_permissions>(static_cast<int>(lhs) + static_cast<int>(rhs));}
-    inline file_permissions operator-(file_permissions lhs, file_permissions rhs) {return static_cast<file_permissions>(static_cast<int>(lhs) - static_cast<int>(rhs));}
-    inline file_permissions operator~(file_permissions lhs) {return static_cast<file_permissions>(~static_cast<int>(lhs));}
-    inline std::ostream& operator<<(std::ostream& os, file_permissions value) {return os << to_string(value, {{file_permissions::none, "none"}, {file_permissions::owner_read, "owner_read"}, {file_permissions::owner_write, "owner_write"}, {file_permissions::owner_execute, "owner_execute"}, {file_permissions::group_read, "group_read"}, {file_permissions::group_execute, "group_execute"}, {file_permissions::others_read, "others_read"}, {file_permissions::others_write, "others_write"}, {file_permissions::others_execute, "others_execute"}, {file_permissions::set_uid, "set_uid"}, {file_permissions::set_gid, "set_gid"}, {file_permissions::sticky_bit, "sticky_bit"}, {file_permissions::unknown, "unknown"}});}
-    inline std::wostream& operator<<(std::wostream& os, file_permissions value) {return os << to_string(value, {{file_permissions::none, L"none"}, {file_permissions::owner_read, L"owner_read"}, {file_permissions::owner_write, L"owner_write"}, {file_permissions::owner_execute, L"owner_execute"}, {file_permissions::group_read, L"group_read"}, {file_permissions::group_execute, L"group_execute"}, {file_permissions::others_read, L"others_read"}, {file_permissions::others_write, L"others_write"}, {file_permissions::others_execute, L"others_execute"}, {file_permissions::set_uid, L"set_uid"}, {file_permissions::set_gid, L"set_gid"}, {file_permissions::sticky_bit, L"sticky_bit"}, {file_permissions::unknown, L"unknown"}});}
+    add_enum_flag_operators_(xtd::io::file_permissions);
     /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::io::file_permissions> {
+  void operator()(xtd::enum_collection<xtd::io::file_permissions>& values, xtd::enum_type& type) {
+    values = {{xtd::io::file_permissions::none, L"none"}, {xtd::io::file_permissions::owner_read, L"owner_read"}, {xtd::io::file_permissions::owner_write, L"owner_write"}, {xtd::io::file_permissions::owner_execute, L"owner_execute"}, {xtd::io::file_permissions::group_read, L"group_read"}, {xtd::io::file_permissions::group_execute, L"group_execute"}, {xtd::io::file_permissions::others_read, L"others_read"}, {xtd::io::file_permissions::others_write, L"others_write"}, {xtd::io::file_permissions::others_execute, L"others_execute"}, {xtd::io::file_permissions::set_uid, L"set_uid"}, {xtd::io::file_permissions::set_gid, L"set_gid"}, {xtd::io::file_permissions::sticky_bit, L"sticky_bit"}, {xtd::io::file_permissions::unknown, L"unknown"}};
+    type = xtd::enum_type::flags;
+  }
+};
+/// @endcond

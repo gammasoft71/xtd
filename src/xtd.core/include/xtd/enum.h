@@ -5,6 +5,8 @@
 
 #include "format_exception.h"
 #include "icomparable.h"
+#include "static.h"
+#include "enum_type.h"
 #include "ustring.h"
 #include <mutex>
 
@@ -16,62 +18,8 @@ namespace xtd {
   /// @cond
   template<typename enum_t>
   struct enum_register {
-    void operator()(enum_collection<enum_t>& values, bool& flags) {}
+    void operator()(xtd::enum_collection<enum_t>& values, xtd::enum_type& type) {}
   };
-  
-  template <typename enum_t, bool = std::is_enum<enum_t>::value>
-  class add_flag_operators;
-  
-  template <typename enum_t>
-  class add_flag_operators<enum_t, true> : public std::false_type { };
-  
-  template <typename enum_t, typename std::enable_if<add_flag_operators<enum_t>::value>::type* = nullptr>
-  inline enum_t & operator+=(enum_t& lhs, enum_t rhs) {
-    lhs = static_cast<enum_t>(static_cast<typename std::underlying_type<enum_t>::type>(lhs) + static_cast<typename std::underlying_type<enum_t>::type>(rhs));
-    return lhs;
-  }
-  
-  template <typename enum_t, typename std::enable_if<add_flag_operators<enum_t>::value>::type* = nullptr>
-  inline enum_t & operator-=(enum_t& lhs, enum_t rhs) {
-    lhs = static_cast<enum_t>(static_cast<typename std::underlying_type<enum_t>::type>(lhs) - static_cast<typename std::underlying_type<enum_t>::type>(rhs));
-    return lhs;
-  }
-  
-  template <typename enum_t, typename std::enable_if<add_flag_operators<enum_t>::value>::type* = nullptr>
-  inline enum_t & operator &=(enum_t& lhs, enum_t rhs) {
-    lhs = static_cast<enum_t>(static_cast<typename std::underlying_type<enum_t>::type>(lhs) & static_cast<typename std::underlying_type<enum_t>::type>(rhs));
-    return lhs;
-  }
-  
-  template <typename enum_t, typename std::enable_if<add_flag_operators<enum_t>::value>::type* = nullptr>
-  inline enum_t & operator |=(enum_t& lhs, enum_t rhs) {
-    lhs = static_cast<enum_t>(static_cast<typename std::underlying_type<enum_t>::type>(lhs) | static_cast<typename std::underlying_type<enum_t>::type>(rhs));
-    return lhs;
-  }
-  
-  template <typename enum_t, typename std::enable_if<add_flag_operators<enum_t>::value>::type* = nullptr>
-  inline enum_t & operator ^=(enum_t& lhs, enum_t rhs) {
-    lhs = static_cast<enum_t>(static_cast<typename std::underlying_type<enum_t>::type>(lhs) ^ static_cast<typename std::underlying_type<enum_t>::type>(rhs));
-    return lhs;
-  }
-  
-  template <typename enum_t, typename std::enable_if<add_flag_operators<enum_t>::value>::type* = nullptr>
-  inline enum_t operator+(enum_t lhs, enum_t rhs) {return static_cast<enum_t>(static_cast<typename std::underlying_type<enum_t>::type>(lhs) + static_cast<typename std::underlying_type<enum_t>::type>(rhs));}
-  
-  template <typename enum_t, typename std::enable_if<add_flag_operators<enum_t>::value>::type* = nullptr>
-  inline enum_t operator-(enum_t lhs, enum_t rhs) {return static_cast<enum_t>(static_cast<typename std::underlying_type<enum_t>::type>(lhs) - static_cast<typename std::underlying_type<enum_t>::type>(rhs));}
-  
-  template <typename enum_t, typename std::enable_if<add_flag_operators<enum_t>::value>::type* = nullptr>
-  inline enum_t operator &(enum_t lhs, enum_t rhs) {return static_cast<enum_t>(static_cast<typename std::underlying_type<enum_t>::type>(lhs) & static_cast<typename std::underlying_type<enum_t>::type>(rhs));}
-  
-  template <typename enum_t, typename std::enable_if<add_flag_operators<enum_t>::value>::type* = nullptr>
-  inline enum_t operator |(enum_t lhs, enum_t rhs) {return static_cast<enum_t>(static_cast<typename std::underlying_type<enum_t>::type>(lhs) | static_cast<typename std::underlying_type<enum_t>::type>(rhs));}
-  
-  template <typename enum_t, typename std::enable_if<add_flag_operators<enum_t>::value>::type* = nullptr>
-  inline enum_t operator ^(enum_t lhs, enum_t rhs) {return static_cast<enum_t>(static_cast<typename std::underlying_type<enum_t>::type>(lhs) ^ static_cast<typename std::underlying_type<enum_t>::type>(rhs));}
-  
-  template <typename enum_t, typename std::enable_if<add_flag_operators<enum_t>::value>::type* = nullptr>
-  inline enum_t operator ~(enum_t rhs) {return static_cast<enum_t>(~static_cast<typename std::underlying_type<enum_t>::type>(rhs));}
   /// @endcond
   
   /// @brief Provides the base class for enumerations.
@@ -84,11 +32,6 @@ namespace xtd {
   class enum_object : public xtd::object, public icomparable<enum_object<enum_t>> {
   public:
     /// @name Alias
-    
-    /// @{
-    /// @brief The enum type.
-    using enum_type = enum_t;
-    /// @}
     
     /// @name Constructors
     
@@ -112,7 +55,7 @@ namespace xtd {
     enum_object(enum_object&&) noexcept = default;
     enum_object(const enum_object&) noexcept = default;
     enum_object& operator=(const enum_object&) noexcept = default;
-    operator enum_type() const noexcept {return value_;}
+    operator enum_t() const noexcept {return value_;}
     /// @endcond
         
     /// @name Public properties
@@ -122,14 +65,14 @@ namespace xtd {
     /// @param flag An enumeration value.
     /// @return true if the bit field or bit fields that are set in flag are also set in the current instance; otherwise, false.
     /// @remarks The has_flag method returns the result of the following bool expression : this_instance And flag = flag
-    bool has_flag(enum_type flag) const {return (to_int(value_) & to_int(flag)) == to_int(flag);}
+    bool has_flag(enum_t flag) const {return (to_int(value_) & to_int(flag)) == to_int(flag);}
     
     /// @brief Gets the value of the enum.
     /// @return The value of the enum.
-    enum_type value() const noexcept {return value_;}
+    enum_t value() const noexcept {return value_;}
     /// @brief Sets the value of the enum.
     /// @param value The value of the enum.
-    enum_object& value(enum_type value) {value_ = value;}
+    enum_object& value(enum_t value) {value_ = value;}
     /// @}
 
     /// @name Public methods
@@ -141,9 +84,9 @@ namespace xtd {
       return 1;
     }
     
-    int32_t compare_to(const xtd::object& value) const noexcept override {return is<enum_object<enum_type>>(value) && compare_to(static_cast<const enum_object<enum_type>&>(value));}
+    int32_t compare_to(const xtd::object& value) const noexcept override {return is<enum_object<enum_t>>(value) && compare_to(static_cast<const enum_object<enum_t>&>(value));}
     
-    bool equals(const xtd::object& value) const noexcept override {return is<enum_object<enum_type>>(value) && equals(static_cast<const enum_object<enum_type>&>(value));}
+    bool equals(const xtd::object& value) const noexcept override {return is<enum_object<enum_t>>(value) && equals(static_cast<const enum_object<enum_t>&>(value));}
 
     /// @brief Converts this instance to byte.
     /// @return A new byte_t object converted from this instance.
@@ -179,7 +122,7 @@ namespace xtd {
 
     xtd::ustring to_string() const noexcept override {
       values();
-      if (flags_) return to_string_flags();
+      if (type_ == xtd::enum_type::flags) return to_string_flags();
       
       auto iterator = std::find_if(values().begin(), values().end(), [&](auto value)->bool {return value.first == value_;});
       if (iterator == values().end()) return ustring::format("{}", to_int(value_));
@@ -190,30 +133,30 @@ namespace xtd {
 
     /// @cond
     bool equals(const enum_object& value) const noexcept {return value_ == value.value_;}
-    bool equals(enum_type value) const noexcept {return value_ == value;}
+    bool equals(enum_t value) const noexcept {return value_ == value;}
     template<typename type_t>
     bool equals(type_t value) const {return false;}
 
-    static enum_type parse(const xtd::ustring& str) {return parse(str, false);}
-    static enum_type parse(const xtd::ustring& str, bool ignore_case) {
-      enum_object<enum_type>().values();
-      if (enum_object<enum_type>().flags) return parse_flags(str, ignore_case);
+    static enum_t parse(const xtd::ustring& str) {return parse(str, false);}
+    static enum_t parse(const xtd::ustring& str, bool ignore_case) {
+      enum_object<enum_t>().values();
+      if (enum_object<enum_t>().flags) return parse_flags(str, ignore_case);
       
-      for (auto item : enum_object<enum_type>().values()) {
+      for (auto item : enum_object<enum_t>().values()) {
         if (xtd::ustring::compare(str, item.second, ignore_case) == 0)
-          return (enum_type)item.first;
+          return (enum_t)item.first;
       }
       
       return to_enum(xtd::parse<int64_t>(str));
     }
     
-    static enum_type parse_flags(const xtd::ustring& value, bool ignore_case) {
+    static enum_t parse_flags(const xtd::ustring& value, bool ignore_case) {
       std::vector<xtd::ustring> values = value.split({','});
       for (xtd::ustring& str : values)
         str = str.trim_start(' ').trim_end(' ');
       
       if (values.size() == 1) {
-        for (auto item : enum_object<enum_type>().values()) {
+        for (auto item : enum_object<enum_t>().values()) {
           if (xtd::ustring::compare(value, item.seconf, ignore_case) == 0)
             return to_enm(item.first);
         }
@@ -223,7 +166,7 @@ namespace xtd {
       int64_t result = 0;
       for (xtd::ustring str : values) {
         bool found = false;
-        for (auto item : enum_object<enum_type>().values()) {
+        for (auto item : enum_object<enum_t>().values()) {
           if (xtd::ustring::compare(str, item.second, ignore_case) == 0) {
             found = true;
             result |= to_int(item.first);
@@ -257,7 +200,7 @@ namespace xtd {
       
       xtd::ustring str;
       int64_t rest = to_int(value_);
-      enum_collection<enum_type> reversed = values();
+      enum_collection<enum_t> reversed = values();
       std::reverse(reversed.begin(), reversed.end());
       
       for (auto item : reversed) {
@@ -274,19 +217,19 @@ namespace xtd {
     }
 
     template<typename type_t>
-    static enum_type to_enum(type_t value) {return static_cast<enum_type>(value);}
-    static int64_t to_int(enum_type value) {return static_cast<int64_t>(value);}
+    static enum_t to_enum(type_t value) {return (enum_t)value;}
+    static int64_t to_int(enum_t value) {return static_cast<int64_t>(value);}
 
-    static enum_collection<enum_type>& values() {
+    static enum_collection<enum_t>& values() {
       std::mutex enum_mutex;
       std::lock_guard<std::mutex> lock(enum_mutex);
-      if (values_.size() == 0) enum_register<enum_type>()(values_, flags_);
+      if (values_.size() == 0) enum_register<enum_t>()(values_, type_);
       return values_;
     };
     
-    enum_type value_ {};
-    inline static enum_collection<enum_type> values_;
-    inline static bool flags_ = false;
+    enum_t value_ {};
+    inline static enum_collection<enum_t> values_;
+    inline static xtd::enum_type type_ = xtd::enum_type::standard;
   };
  
   /// @brief Provides the base class for enumerations.
@@ -446,3 +389,31 @@ namespace xtd {
   };
 }
 
+/// @cond
+template<typename enum_t>
+inline std::string __enum_to_string(enum_t value) {
+  return xtd::enum_object<>::get_name(value);
+}
+
+/*
+template<> struct xtd::enum_register<xtd::enum_type> {
+  void operator()(xtd::enum_collection<xtd::enum_type>& values, xtd::enum_type& type) {
+    values = {{enum_type::standard, L"standard"}, {enum_type::flags, L"flags"}};
+    type = xtd::enum_type::flags;
+  }
+};
+ */
+/// @endcond
+
+#define add_enum_flag_operators_(enum_name) \
+  inline enum_name& operator^=(enum_name& lhs, enum_name rhs) {lhs = static_cast<enum_name>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;} \
+  inline enum_name& operator&=(enum_name& lhs, enum_name rhs) {lhs = static_cast<enum_name>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;} \
+  inline enum_name& operator|=(enum_name& lhs, enum_name rhs) {lhs = static_cast<enum_name>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;} \
+  inline enum_name& operator+=(enum_name& lhs, enum_name rhs) {lhs = static_cast<enum_name>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;} \
+  inline enum_name& operator-=(enum_name& lhs, enum_name rhs) {lhs = static_cast<enum_name>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;} \
+  inline enum_name operator^(enum_name lhs, enum_name rhs) {return static_cast<enum_name>(static_cast<int>(lhs) ^ static_cast<int>(rhs));} \
+  inline enum_name operator&(enum_name lhs, enum_name rhs) {return static_cast<enum_name>(static_cast<int>(lhs) & static_cast<int>(rhs));} \
+  inline enum_name operator|(enum_name lhs, enum_name rhs) {return static_cast<enum_name>(static_cast<int>(lhs) | static_cast<int>(rhs));} \
+  inline enum_name operator+(enum_name lhs, enum_name rhs) {return static_cast<enum_name>(static_cast<int>(lhs) + static_cast<int>(rhs));} \
+  inline enum_name operator-(enum_name lhs, enum_name rhs) {return static_cast<enum_name>(static_cast<int>(lhs) - static_cast<int>(rhs));} \
+  inline enum_name operator~(enum_name lhs) {return static_cast<enum_name>(~static_cast<int>(lhs));}

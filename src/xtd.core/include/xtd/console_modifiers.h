@@ -2,7 +2,7 @@
 /// @brief Contains xtd::console_modifiers enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "ustring.h"
+#include "enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -23,18 +23,16 @@ namespace xtd {
   };
   
   /// @cond
-  inline xtd::console_modifiers& operator^=(xtd::console_modifiers& lhs, xtd::console_modifiers rhs) {lhs = static_cast<xtd::console_modifiers>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
-  inline xtd::console_modifiers& operator&=(xtd::console_modifiers& lhs, xtd::console_modifiers rhs) {lhs = static_cast<xtd::console_modifiers>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}
-  inline xtd::console_modifiers& operator|=(xtd::console_modifiers& lhs, xtd::console_modifiers rhs) {lhs = static_cast<xtd::console_modifiers>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;}
-  inline xtd::console_modifiers& operator+=(xtd::console_modifiers& lhs, xtd::console_modifiers rhs) {lhs = static_cast<xtd::console_modifiers>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;}
-  inline xtd::console_modifiers& operator-=(xtd::console_modifiers& lhs, xtd::console_modifiers rhs) {lhs = static_cast<xtd::console_modifiers>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;}
-  inline xtd::console_modifiers operator^(xtd::console_modifiers lhs, xtd::console_modifiers rhs) {return static_cast<xtd::console_modifiers>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}
-  inline xtd::console_modifiers operator&(xtd::console_modifiers lhs, xtd::console_modifiers rhs) {return static_cast<xtd::console_modifiers>(static_cast<int>(lhs) & static_cast<int>(rhs));}
-  inline xtd::console_modifiers operator|(xtd::console_modifiers lhs, xtd::console_modifiers rhs) {return static_cast<xtd::console_modifiers>(static_cast<int>(lhs) | static_cast<int>(rhs));}
-  inline xtd::console_modifiers operator+(xtd::console_modifiers lhs, xtd::console_modifiers rhs) {return static_cast<xtd::console_modifiers>(static_cast<int>(lhs) + static_cast<int>(rhs));}
-  inline xtd::console_modifiers operator-(xtd::console_modifiers lhs, xtd::console_modifiers rhs) {return static_cast<xtd::console_modifiers>(static_cast<int>(lhs) - static_cast<int>(rhs));}
-  inline xtd::console_modifiers operator~(xtd::console_modifiers lhs) {return static_cast<xtd::console_modifiers>(~static_cast<int>(lhs));}
-  inline std::ostream& operator<<(std::ostream& os, console_modifiers value) {return os << to_string(value, {{console_modifiers::alt, "alt"}, {console_modifiers::shift, "shift"}, {console_modifiers::control, "control"}});}
-  inline std::wostream& operator<<(std::wostream& os, console_modifiers value) {return os << to_string(value, {{console_modifiers::alt, L"alt"}, {console_modifiers::shift, L"shift"}, {console_modifiers::control, L"control"}});}
+  add_enum_flag_operators_(xtd::console_modifiers);
   /// @endcond
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::console_modifiers> {
+  void operator()(xtd::enum_collection<xtd::console_modifiers>& values, xtd::enum_type& type) {
+    values = {{xtd::console_modifiers::alt, "alt"}, {xtd::console_modifiers::shift, "shift"}, {xtd::console_modifiers::control, "control"}};
+    type = xtd::enum_type::flags;
+  }
+};
+/// @endcond
+

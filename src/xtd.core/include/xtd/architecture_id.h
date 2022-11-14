@@ -2,7 +2,7 @@
 /// @brief Contains xtd::architecture_id enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "ustring.h"
+#include "enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -21,9 +21,10 @@ namespace xtd {
     /// @brief The processor architecture is ARM.
     arm,
   };
-  
-  /// @cond
-  inline std::ostream& operator<<(std::ostream& os, architecture_id value) {return os << to_string(value, {{architecture_id::unknown, "unknown"}, {architecture_id::x86, "x86"}, {architecture_id::arm, "arm"}});}
-  inline std::wostream& operator<<(std::wostream& os, architecture_id value) {return os << to_string(value, {{architecture_id::unknown, L"unknown"}, {architecture_id::x86, L"x86"}, {architecture_id::arm, L"arm"}});}
-  /// @endcond
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::architecture_id> {
+  void operator()(xtd::enum_collection<xtd::architecture_id>& values, xtd::enum_type& type) {values = {{xtd::architecture_id::unknown, "unknown"}, {xtd::architecture_id::x86, "x86"}, {xtd::architecture_id::arm, "arm"}};}
+};
+/// @endcond

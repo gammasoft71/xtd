@@ -6,9 +6,9 @@
 #include <vector>
 
 #include "core_export.h"
+#include "enum.h"
 #include "static.h"
 #include "types.h"
-#include "ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -385,10 +385,10 @@ namespace xtd {
     static xtd::ustring to_string(const std::vector<byte_t>& value, size_t start_index, size_t length);
     /// @}
   };
-  
-  /// @cond
-  inline std::ostream& operator<<(std::ostream& os, bit_converter::endian value) {return os << to_string(value, {{bit_converter::endian::little, "little"}, {bit_converter::endian::big, "big"}});}
-  inline std::wostream& operator<<(std::wostream& os, bit_converter::endian value) {return os << to_string(value, {{bit_converter::endian::little, L"little"}, {bit_converter::endian::big, L"big"}});}
-  /// @endcond
 }
 
+/// @cond
+template<> struct xtd::enum_register<xtd::bit_converter::endian> {
+  void operator()(xtd::enum_collection<xtd::bit_converter::endian>& values, xtd::enum_type& type) {values = {{xtd::bit_converter::endian::little, "little"}, {xtd::bit_converter::endian::big, "big"}};}
+};
+/// @endcond

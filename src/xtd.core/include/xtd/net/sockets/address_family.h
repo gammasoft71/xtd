@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
-#include "../../ustring.h"
+#include "../../enum.h"
 
 /// @cond
 #undef unix
@@ -88,11 +88,12 @@ namespace xtd {
         /// @brief MAX address.
         max = 29,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, address_family value) {return os << to_string(value, {{address_family::unknown, "unknown"}, {address_family::unspecified, "unspecified"}, {address_family::unix, "unix"}, {address_family::inter_network, "inter_network"}, {address_family::imp_link, "imp_link"}, {address_family::pup, "pup"}, {address_family::chaos, "chaos"}, {address_family::ns, "ns"}, {address_family::ipx, "ipx"}, {address_family::iso, "iso"}, {address_family::osi, "osi"}, {address_family::ecma, "ecma"}, {address_family::data_kit, "data_kit"}, {address_family::ccitt, "ccitt"}, {address_family::sna, "sna"}, {address_family::dec_net, "dec_net"}, {address_family::data_link, "data_link"}, {address_family::lat, "lat"}, {address_family::hyper_channel, "hyper_channel"}, {address_family::apple_talk, "apple_talk"}, {address_family::net_bios, "net_bios"}, {address_family::voice_view, "voice_view"}, {address_family::fire_fox, "fire_fox"}, {address_family::banyan, "banyan"}, {address_family::atm, "atm"}, {address_family::inter_network_v6, "inter_network_v6"}, {address_family::cluster, "cluster"}, {address_family::ieee12844, "ieee12844"}, {address_family::irda, "irda"}, {address_family::network_designers, "network_designers"}, {address_family::max, "max"}});}
-      inline std::wostream& operator<<(std::wostream& os, address_family value) {return os << to_string(value, {{address_family::unknown, L"unknown"}, {address_family::unspecified, L"unspecified"}, {address_family::unix, L"unix"}, {address_family::inter_network, L"inter_network"}, {address_family::imp_link, L"imp_link"}, {address_family::pup, L"pup"}, {address_family::chaos, L"chaos"}, {address_family::ns, L"ns"}, {address_family::ipx, L"ipx"}, {address_family::iso, L"iso"}, {address_family::osi, L"osi"}, {address_family::ecma, L"ecma"}, {address_family::data_kit, L"data_kit"}, {address_family::ccitt, L"ccitt"}, {address_family::sna, L"sna"}, {address_family::dec_net, L"dec_net"}, {address_family::data_link, L"data_link"}, {address_family::lat, L"lat"}, {address_family::hyper_channel, L"hyper_channel"}, {address_family::apple_talk, L"apple_talk"}, {address_family::net_bios, L"net_bios"}, {address_family::voice_view, L"voice_view"}, {address_family::fire_fox, L"fire_fox"}, {address_family::banyan, L"banyan"}, {address_family::atm, L"atm"}, {address_family::inter_network_v6, L"inter_network_v6"}, {address_family::cluster, L"cluster"}, {address_family::ieee12844, L"ieee12844"}, {address_family::irda, L"irda"}, {address_family::network_designers, L"network_designers"}, {address_family::max, L"max"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::net::sockets::address_family> {
+  void operator()(xtd::enum_collection<xtd::net::sockets::address_family>& values, xtd::enum_type& type) {values = {{xtd::net::sockets::address_family::unknown, "unknown"}, {xtd::net::sockets::address_family::unspecified, "unspecified"}, {xtd::net::sockets::address_family::unix, "unix"}, {xtd::net::sockets::address_family::inter_network, "inter_network"}, {xtd::net::sockets::address_family::imp_link, "imp_link"}, {xtd::net::sockets::address_family::pup, "pup"}, {xtd::net::sockets::address_family::chaos, "chaos"}, {xtd::net::sockets::address_family::ns, "ns"}, {xtd::net::sockets::address_family::ipx, "ipx"}, {xtd::net::sockets::address_family::iso, "iso"}, {xtd::net::sockets::address_family::osi, "osi"}, {xtd::net::sockets::address_family::ecma, "ecma"}, {xtd::net::sockets::address_family::data_kit, "data_kit"}, {xtd::net::sockets::address_family::ccitt, "ccitt"}, {xtd::net::sockets::address_family::sna, "sna"}, {xtd::net::sockets::address_family::dec_net, "dec_net"}, {xtd::net::sockets::address_family::data_link, "data_link"}, {xtd::net::sockets::address_family::lat, "lat"}, {xtd::net::sockets::address_family::hyper_channel, "hyper_channel"}, {xtd::net::sockets::address_family::apple_talk, "apple_talk"}, {xtd::net::sockets::address_family::net_bios, "net_bios"}, {xtd::net::sockets::address_family::voice_view, "voice_view"}, {xtd::net::sockets::address_family::fire_fox, "fire_fox"}, {xtd::net::sockets::address_family::banyan, "banyan"}, {xtd::net::sockets::address_family::atm, "atm"}, {xtd::net::sockets::address_family::inter_network_v6, "inter_network_v6"}, {xtd::net::sockets::address_family::cluster, "cluster"}, {xtd::net::sockets::address_family::ieee12844, "ieee12844"}, {xtd::net::sockets::address_family::irda, "irda"}, {xtd::net::sockets::address_family::network_designers, "network_designers"}, {xtd::net::sockets::address_family::max, "max"}};}
+};
+/// @endcond

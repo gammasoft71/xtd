@@ -2,7 +2,7 @@
 /// @brief Contains xtd::io::search_option enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "../ustring.h"
+#include "../enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -24,10 +24,11 @@ namespace xtd {
       /// @brief Includes the current directory and all its subdirectories in a search operation. This option includes reparse points such as mounted drives and symbolic links in the search.
       all_directories = 1,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, search_option value) {return os << to_string(value, {{search_option::top_directory_only, "top_directory_only"}, {search_option::all_directories, "all_directories"}});}
-    inline std::wostream& operator<<(std::wostream& os, search_option value) {return os << to_string(value, {{search_option::top_directory_only, L"top_directory_only"}, {search_option::all_directories, L"all_directories"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::io::search_option> {
+  void operator()(xtd::enum_collection<xtd::io::search_option>& values, xtd::enum_type& type) {values = {{xtd::io::search_option::top_directory_only, "top_directory_only"}, {xtd::io::search_option::all_directories, "all_directories"}};}
+};
+/// @endcond

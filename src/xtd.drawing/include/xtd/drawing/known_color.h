@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::known_color enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "xtd/ustring.h"
+#include "xtd/enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

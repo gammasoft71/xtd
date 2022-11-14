@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
-#include "../../ustring.h"
+#include "../../enum.h"
 
 /// @cond
 #undef unix
@@ -35,11 +35,12 @@ namespace xtd {
         /// @brief The IP protection level is restricted. This value would be used by intranet applications that do not implement Internet scenarios. These applications are generally not tested or hardened against Internet-style attacks. This setting will limit the received traffic to link-local only.
         restricted = 30
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, ip_protection_level value) {return os << to_string(value, {{ip_protection_level::unspecified, "unspecified"}, {ip_protection_level::unrestricted, "unrestricted"}, {ip_protection_level::edge_restricted, "edge_restricted"}, {ip_protection_level::restricted, "restricted"}});}
-      inline std::wostream& operator<<(std::wostream& os, ip_protection_level value) {return os << to_string(value, {{ip_protection_level::unspecified, L"unspecified"}, {ip_protection_level::unrestricted, L"unrestricted"}, {ip_protection_level::edge_restricted, L"edge_restricted"}, {ip_protection_level::restricted, L"restricted"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::net::sockets::ip_protection_level> {
+  void operator()(xtd::enum_collection<xtd::net::sockets::ip_protection_level>& values, xtd::enum_type& type) {values = {{xtd::net::sockets::ip_protection_level::unspecified, "unspecified"}, {xtd::net::sockets::ip_protection_level::unrestricted, "unrestricted"}, {xtd::net::sockets::ip_protection_level::edge_restricted, "edge_restricted"}, {xtd::net::sockets::ip_protection_level::restricted, "restricted"}};}
+};
+/// @endcond

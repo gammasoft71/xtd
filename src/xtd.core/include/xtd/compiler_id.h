@@ -2,7 +2,7 @@
 /// @brief Contains xtd::compiler_id enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "ustring.h"
+#include "enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -23,9 +23,10 @@ namespace xtd {
     /// @brief The compiler is gcc.
     gcc,
   };
-  
-  /// @cond
-  inline std::ostream& operator<<(std::ostream& os, compiler_id value) {return os << to_string(value, {{compiler_id::unknown, "unknown"}, {compiler_id::microsoft_visual_studio, "microsoft_visual_studio"}, {compiler_id::clang, "clang"}, {compiler_id::gcc, "gcc"}});}
-  inline std::wostream& operator<<(std::wostream& os, compiler_id value) {return os << to_string(value, {{compiler_id::unknown, L"unknown"}, {compiler_id::microsoft_visual_studio, L"microsoft_visual_studio"}, {compiler_id::clang, L"clang"}, {compiler_id::gcc, L"gcc"}});}
-  /// @endcond
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::compiler_id> {
+  void operator()(xtd::enum_collection<xtd::compiler_id>& values, xtd::enum_type& type) {values = {{xtd::compiler_id::unknown, "unknown"}, {xtd::compiler_id::microsoft_visual_studio, "microsoft_visual_studio"}, {xtd::compiler_id::clang, "clang"}, {xtd::compiler_id::gcc, "gcc"}};}
+};
+/// @endcond

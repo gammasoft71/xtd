@@ -1,6 +1,7 @@
 #include "../../../include/xtd/io/directory.h"
 #include "../../../include/xtd/io/directory_info.h"
 #include "../../../include/xtd/io/directory_not_found_exception.h"
+#include "../../../include/xtd/io/file_attributes.h"
 #include "../../../include/xtd/io/file_info.h"
 #include "../../../include/xtd/io/io_exception.h"
 #include "../../../include/xtd/io/path.h"

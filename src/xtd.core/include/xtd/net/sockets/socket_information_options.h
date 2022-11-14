@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
-#include "../../ustring.h"
+#include "../../enum.h"
 
 /// @cond
 #undef unix
@@ -39,20 +39,17 @@ namespace xtd {
       };
       
       /// @cond
-      inline socket_information_options& operator^=(socket_information_options& lhs, socket_information_options rhs) {lhs = static_cast<socket_information_options>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
-      inline socket_information_options& operator&=(socket_information_options& lhs, socket_information_options rhs) {lhs = static_cast<socket_information_options>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}
-      inline socket_information_options& operator|=(socket_information_options& lhs, socket_information_options rhs) {lhs = static_cast<socket_information_options>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;}
-      inline socket_information_options& operator+=(socket_information_options& lhs, socket_information_options rhs) {lhs = static_cast<socket_information_options>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;}
-      inline socket_information_options& operator-=(socket_information_options& lhs, socket_information_options rhs) {lhs = static_cast<socket_information_options>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;}
-      inline socket_information_options operator^(socket_information_options lhs, socket_information_options rhs) {return static_cast<socket_information_options>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}
-      inline socket_information_options operator&(socket_information_options lhs, socket_information_options rhs) {return static_cast<socket_information_options>(static_cast<int>(lhs) & static_cast<int>(rhs));}
-      inline socket_information_options operator|(socket_information_options lhs, socket_information_options rhs) {return static_cast<socket_information_options>(static_cast<int>(lhs) | static_cast<int>(rhs));}
-      inline socket_information_options operator+(socket_information_options lhs, socket_information_options rhs) {return static_cast<socket_information_options>(static_cast<int>(lhs) + static_cast<int>(rhs));}
-      inline socket_information_options operator-(socket_information_options lhs, socket_information_options rhs) {return static_cast<socket_information_options>(static_cast<int>(lhs) - static_cast<int>(rhs));}
-      inline socket_information_options operator~(socket_information_options lhs) {return static_cast<socket_information_options>(~static_cast<int>(lhs));}
-      inline std::ostream& operator<<(std::ostream& os, socket_information_options value) {return os << to_string(value, {{socket_information_options::none, "none"}, {socket_information_options::non_blocking, "non_blocking"}, {socket_information_options::connected, "connected"}, {socket_information_options::listening, "listening"}, {socket_information_options::use_only_overlapped_io, "use_only_overlapped_io"}});}
-      inline std::wostream& operator<<(std::wostream& os, socket_information_options value) {return os << to_string(value, {{socket_information_options::none, L"none"}, {socket_information_options::non_blocking, L"non_blocking"}, {socket_information_options::connected, L"connected"}, {socket_information_options::listening, L"listening"}, {socket_information_options::use_only_overlapped_io, L"use_only_overlapped_io"}});}
+      add_enum_flag_operators_(xtd::net::sockets::socket_information_options);
       /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::net::sockets::socket_information_options> {
+  void operator()(xtd::enum_collection<xtd::net::sockets::socket_information_options>& values, xtd::enum_type& type) {
+    values = {{xtd::net::sockets::socket_information_options::none, "none"}, {xtd::net::sockets::socket_information_options::non_blocking, "non_blocking"}, {xtd::net::sockets::socket_information_options::connected, "connected"}, {xtd::net::sockets::socket_information_options::listening, "listening"}, {xtd::net::sockets::socket_information_options::use_only_overlapped_io, "use_only_overlapped_io"}};
+    type = xtd::enum_type::flags;
+  }
+};
+/// @endcond

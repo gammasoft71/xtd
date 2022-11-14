@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
-#include "../../ustring.h"
+#include "../../enum.h"
 
 /// @cond
 #undef unix
@@ -76,11 +76,12 @@ namespace xtd {
         /// @brief Sequenced Packet Exchange version 2 protocol.
         spx_2 = 1257,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, protocol_type value) {return os << to_string(value, {{protocol_type::unknown, "unknown"}, {protocol_type::ip_v6_hop_by_hop_options, "ip_v6_hop_by_hop_options"}, {protocol_type::unspecified, "unspecified"}, {protocol_type::ip, "ip"}, {protocol_type::icmp, "icmp"}, {protocol_type::igmp, "igmp"}, {protocol_type::ggp, "ggp"}, {protocol_type::ip_v4, "ip_v4"}, {protocol_type::tcp, "tcp"}, {protocol_type::pup, "pup"}, {protocol_type::udp, "udp"}, {protocol_type::idp, "idp"}, {protocol_type::ip_v6, "ip_v6"}, {protocol_type::ip_v6_routing_header, "ip_v6_routing_header"}, {protocol_type::ip_v6_fragment_header, "ip_v6_fragment_header"}, {protocol_type::ip_sec_encapsulating_security_payload, "ip_sec_encapsulating_security_payload"}, {protocol_type::ip_sec_authentication_header, "ip_sec_authentication_header"}, {protocol_type::icmp_v6, "icmp_v6"}, {protocol_type::ip_v6_no_next_header, "ip_v6_no_next_header"}, {protocol_type::ip_v6_destination_options, "ip_v6_destination_options"}, {protocol_type::nd, "nd"}, {protocol_type::raw, "raw"}, {protocol_type::ipx, "ipx"}, {protocol_type::spx, "spx"}, {protocol_type::spx_2, "spx_2"}});}
-      inline std::wostream& operator<<(std::wostream& os, protocol_type value) {return os << to_string(value, {{protocol_type::unknown, L"unknown"}, {protocol_type::ip_v6_hop_by_hop_options, L"ip_v6_hop_by_hop_options"}, {protocol_type::unspecified, L"unspecified"}, {protocol_type::ip, L"ip"}, {protocol_type::icmp, L"icmp"}, {protocol_type::igmp, L"igmp"}, {protocol_type::ggp, L"ggp"}, {protocol_type::ip_v4, L"ip_v4"}, {protocol_type::tcp, L"tcp"}, {protocol_type::pup, L"pup"}, {protocol_type::udp, L"udp"}, {protocol_type::idp, L"idp"}, {protocol_type::ip_v6, L"ip_v6"}, {protocol_type::ip_v6_routing_header, L"ip_v6_routing_header"}, {protocol_type::ip_v6_fragment_header, L"ip_v6_fragment_header"}, {protocol_type::ip_sec_encapsulating_security_payload, L"ip_sec_encapsulating_security_payload"}, {protocol_type::ip_sec_authentication_header, L"ip_sec_authentication_header"}, {protocol_type::icmp_v6, L"icmp_v6"}, {protocol_type::ip_v6_no_next_header, L"ip_v6_no_next_header"}, {protocol_type::ip_v6_destination_options, L"ip_v6_destination_options"}, {protocol_type::nd, L"nd"}, {protocol_type::raw, L"raw"}, {protocol_type::ipx, L"ipx"}, {protocol_type::spx, L"spx"}, {protocol_type::spx_2, L"spx_2"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::net::sockets::protocol_type> {
+  void operator()(xtd::enum_collection<xtd::net::sockets::protocol_type>& values, xtd::enum_type& type) {values = {{xtd::net::sockets::protocol_type::unknown, "unknown"}, {xtd::net::sockets::protocol_type::ip_v6_hop_by_hop_options, "ip_v6_hop_by_hop_options"}, {xtd::net::sockets::protocol_type::unspecified, "unspecified"}, {xtd::net::sockets::protocol_type::ip, "ip"}, {xtd::net::sockets::protocol_type::icmp, "icmp"}, {xtd::net::sockets::protocol_type::igmp, "igmp"}, {xtd::net::sockets::protocol_type::ggp, "ggp"}, {xtd::net::sockets::protocol_type::ip_v4, "ip_v4"}, {xtd::net::sockets::protocol_type::tcp, "tcp"}, {xtd::net::sockets::protocol_type::pup, "pup"}, {xtd::net::sockets::protocol_type::udp, "udp"}, {xtd::net::sockets::protocol_type::idp, "idp"}, {xtd::net::sockets::protocol_type::ip_v6, "ip_v6"}, {xtd::net::sockets::protocol_type::ip_v6_routing_header, "ip_v6_routing_header"}, {xtd::net::sockets::protocol_type::ip_v6_fragment_header, "ip_v6_fragment_header"}, {xtd::net::sockets::protocol_type::ip_sec_encapsulating_security_payload, "ip_sec_encapsulating_security_payload"}, {xtd::net::sockets::protocol_type::ip_sec_authentication_header, "ip_sec_authentication_header"}, {xtd::net::sockets::protocol_type::icmp_v6, "icmp_v6"}, {xtd::net::sockets::protocol_type::ip_v6_no_next_header, "ip_v6_no_next_header"}, {xtd::net::sockets::protocol_type::ip_v6_destination_options, "ip_v6_destination_options"}, {xtd::net::sockets::protocol_type::nd, "nd"}, {xtd::net::sockets::protocol_type::raw, "raw"}, {xtd::net::sockets::protocol_type::ipx, "ipx"}, {xtd::net::sockets::protocol_type::spx, "spx"}, {xtd::net::sockets::protocol_type::spx_2, "spx_2"}};}
+};
+/// @endcond

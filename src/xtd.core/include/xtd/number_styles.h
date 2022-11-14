@@ -73,3 +73,5 @@ namespace xtd {
   inline xtd::number_styles operator~(xtd::number_styles lhs) {return static_cast<xtd::number_styles>(~static_cast<int>(lhs));}
   /// @endcond
 }
+
+// This file is included before enum definition so the enum_register is in the enum.h file.

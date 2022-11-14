@@ -2,7 +2,7 @@
 /// @brief Contains xtd::io::drive_type enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "../ustring.h"
+#include "../enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -33,10 +33,11 @@ namespace xtd {
       /// @brief The drive is a RAM disk.
       ram
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, drive_type value) {return os << to_string(value, {{drive_type::unknown, "unknown"}, {drive_type::no_root_directory, "no_root_directory"}, {drive_type::removable, "removable"}, {drive_type::fixed, "fixed"}, {drive_type::network, "network"}, {drive_type::cd_rom, "cd_rom"}, {drive_type::ram, "ram"}});}
-    inline std::wostream& operator<<(std::wostream& os, drive_type value) {return os << to_string(value, {{drive_type::unknown, L"unknown"}, {drive_type::no_root_directory, L"no_root_directory"}, {drive_type::removable, L"removable"}, {drive_type::fixed, L"fixed"}, {drive_type::network, L"network"}, {drive_type::cd_rom, L"cd_rom"}, {drive_type::ram, L"ram"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::io::drive_type> {
+  void operator()(xtd::enum_collection<xtd::io::drive_type>& values, xtd::enum_type& type) {values = {{xtd::io::drive_type::unknown, "unknown"}, {xtd::io::drive_type::no_root_directory, "no_root_directory"}, {xtd::io::drive_type::removable, "removable"}, {xtd::io::drive_type::fixed, "fixed"}, {xtd::io::drive_type::network, "network"}, {xtd::io::drive_type::cd_rom, "cd_rom"}, {xtd::io::drive_type::ram, "ram"}};}
+};
+/// @endcond

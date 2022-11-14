@@ -2,7 +2,7 @@
 /// @brief Contains xtd::month_of_year enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "ustring.h"
+//#include "enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -44,9 +44,12 @@ namespace xtd {
     /// @brief Indicates december.
     december
   };
-  
-  /// @cond
-  inline std::ostream& operator<<(std::ostream& os, const month_of_year value) {return os << xtd::to_string(value, { {month_of_year::january, "january"}, {month_of_year::february, "february"}, {month_of_year::march, "march"}, {month_of_year::april, "april"}, {month_of_year::may, "may"}, {month_of_year::june, "june"}, {month_of_year::july, "july"}, {month_of_year::august, "august"}, {month_of_year::september, "september"}, {month_of_year::october, "october"}, {month_of_year::november, "november"}, {month_of_year::december, "december"}});}
-  inline std::wostream& operator<<(std::wostream& os, const month_of_year value) {return os << xtd::to_string(value, { {month_of_year::january, L"january"}, {month_of_year::february, L"february"}, {month_of_year::march, L"march"}, {month_of_year::april, L"april"}, {month_of_year::may, L"may"}, {month_of_year::june, L"june"}, {month_of_year::july, L"july"}, {month_of_year::august, L"august"}, {month_of_year::september, L"september"}, {month_of_year::october, L"october"}, {month_of_year::november, L"november"}, {month_of_year::december, L"december"}});}
-  /// @endcond
 }
+
+/*
+/// @cond
+template<> struct xtd::enum_register<xtd::month_of_year> {
+  void operator()(xtd::enum_collection<xtd::month_of_year>& values, xtd::enum_type& type) {values = {{xtd::month_of_year::january, "january"}, {xtd::month_of_year::february, "february"}, {xtd::month_of_year::march, "march"}, {xtd::month_of_year::april, "april"}, {xtd::month_of_year::may, "may"}, {xtd::month_of_year::june, "june"}, {xtd::month_of_year::july, "july"}, {xtd::month_of_year::august, "august"}, {xtd::month_of_year::september, "september"}, {xtd::month_of_year::october, "october"}, {xtd::month_of_year::november, "november"}, {xtd::month_of_year::december, "december"}};}
+};
+/// @endcond
+*/
