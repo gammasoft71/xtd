@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::close_reason enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -31,10 +31,11 @@ namespace xtd {
       /// @brief The Exit method of the Application class was invoked.
       application_exit_call = 6
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, close_reason value) {return os << to_string(value, {{close_reason::none, "none"}, {close_reason::windows_shut_down, "windows_shut_down"}, {close_reason::mdi_form_closing, "mdi_form_closing"}, {close_reason::user_closing, "user_closing"}, {close_reason::task_manager_closing, "task_manager_closing"}, {close_reason::form_owner_closing, "form_owner_closing"}, {close_reason::application_exit_call, "application_exit_call"}});}
-    inline std::wostream& operator<<(std::wostream& os, close_reason value) {return os << to_string(value, {{close_reason::none, L"none"}, {close_reason::windows_shut_down, L"windows_shut_down"}, {close_reason::mdi_form_closing, L"mdi_form_closing"}, {close_reason::user_closing, L"user_closing"}, {close_reason::task_manager_closing, L"task_manager_closing"}, {close_reason::form_owner_closing, L"form_owner_closing"}, {close_reason::application_exit_call, L"application_exit_call"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::close_reason> {
+  void operator()(xtd::enum_collection<xtd::forms::close_reason>& values, xtd::enum_type& type) {values = {{xtd::forms::close_reason::none, "none"}, {xtd::forms::close_reason::windows_shut_down, "windows_shut_down"}, {xtd::forms::close_reason::mdi_form_closing, "mdi_form_closing"}, {xtd::forms::close_reason::user_closing, "user_closing"}, {xtd::forms::close_reason::task_manager_closing, "task_manager_closing"}, {xtd::forms::close_reason::form_owner_closing, "form_owner_closing"}, {xtd::forms::close_reason::application_exit_call, "application_exit_call"}};}
+};
+/// @endcond

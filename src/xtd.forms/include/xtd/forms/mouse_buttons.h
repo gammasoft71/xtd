@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::mouse_buttons enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -31,19 +31,16 @@ namespace xtd {
     };
     
     /// @cond
-    inline mouse_buttons& operator +=(mouse_buttons& lhs, mouse_buttons rhs) {lhs = static_cast<mouse_buttons>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;}
-    inline mouse_buttons& operator -=(mouse_buttons& lhs, mouse_buttons rhs) {lhs = static_cast<mouse_buttons>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;}
-    inline mouse_buttons& operator &=(mouse_buttons& lhs, mouse_buttons rhs) {lhs = static_cast<mouse_buttons>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}
-    inline mouse_buttons& operator |=(mouse_buttons& lhs, mouse_buttons rhs) {lhs = static_cast<mouse_buttons>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;}
-    inline mouse_buttons& operator ^=(mouse_buttons& lhs, mouse_buttons rhs) {lhs = static_cast<mouse_buttons>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
-    inline mouse_buttons operator +(mouse_buttons lhs, mouse_buttons rhs) {return static_cast<mouse_buttons>(static_cast<int>(lhs) + static_cast<int>(rhs));}
-    inline mouse_buttons operator -(mouse_buttons lhs, mouse_buttons rhs) {return static_cast<mouse_buttons>(static_cast<int>(lhs) - static_cast<int>(rhs));}
-    inline mouse_buttons operator ~(mouse_buttons rhs) {return static_cast<mouse_buttons>(~static_cast<int>(rhs));}
-    inline mouse_buttons operator &(mouse_buttons lhs, mouse_buttons rhs) {return static_cast<mouse_buttons>(static_cast<int>(lhs) & static_cast<int>(rhs));}
-    inline mouse_buttons operator |(mouse_buttons lhs, mouse_buttons rhs) {return static_cast<mouse_buttons>(static_cast<int>(lhs) | static_cast<int>(rhs));}
-    inline mouse_buttons operator ^(mouse_buttons lhs, mouse_buttons rhs) {return static_cast<mouse_buttons>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}
-    inline std::ostream& operator<<(std::ostream& os, mouse_buttons value) {return os << to_string(value, {{mouse_buttons::none, "none"}, {mouse_buttons::left, "left"}, {mouse_buttons::right, "right"}, {mouse_buttons::middle, "middle"}, {mouse_buttons::x_button1, "x_button1"}, {mouse_buttons::x_button2, "x_button2"}});}
-    inline std::wostream& operator<<(std::wostream& os, mouse_buttons value) {return os << to_string(value, {{mouse_buttons::none, L"none"}, {mouse_buttons::left, L"left"}, {mouse_buttons::right, L"right"}, {mouse_buttons::middle, L"middle"}, {mouse_buttons::x_button1, L"x_button1"}, {mouse_buttons::x_button2, L"x_button2"}});}
+    add_enum_flag_operators_(xtd::forms::mouse_buttons);
     /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::mouse_buttons> {
+  void operator()(xtd::enum_collection<xtd::forms::mouse_buttons>& values, xtd::enum_type& type) {
+    values = {{xtd::forms::mouse_buttons::none, "none"}, {xtd::forms::mouse_buttons::left, "left"}, {xtd::forms::mouse_buttons::right, "right"}, {xtd::forms::mouse_buttons::middle, "middle"}, {xtd::forms::mouse_buttons::x_button1, "x_button1"}, {xtd::forms::mouse_buttons::x_button2, "x_button2"}};
+    type = xtd::enum_type::flags;
+  }
+};
+/// @endcond

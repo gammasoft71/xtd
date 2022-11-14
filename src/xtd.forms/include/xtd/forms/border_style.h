@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::border_style enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -61,10 +61,11 @@ namespace xtd {
       /// @brief A bevel raised border. Same as xtd::forms::border_style::bevel_outset.
       bevel_raised = bevel_outset,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, const border_style value) {return os << to_string(value, {{border_style::hidden, "hidden"}, {border_style::fixed_single, "fixed_single"}, {border_style::fixed_3d, "fixed_3d"}, {border_style::none, "none"}, {border_style::solid, "solid"}, {border_style::inset, "inset"}, {border_style::outset, "outset"}, {border_style::groove, "groove"}, {border_style::ridge, "ridge"}, {border_style::theme, "theme"}, {border_style::dashed, "dashed"}, {border_style::dot_dash, "dot_dash"}, {border_style::dot_dot_dash, "dot_dot_dash"}, {border_style::dotted, "dotted"}, {border_style::double_border, "double_border"}, {border_style::bevel_inset, "bevel_inset"}, {border_style::bevel_outset, "bevel_outset"}, {border_style::rounded, "rounded"}});}
-    inline std::wostream& operator<<(std::wostream& os, const border_style value) {return os << to_string(value, {{border_style::hidden, L"hidden"}, {border_style::fixed_single, L"fixed_single"}, {border_style::fixed_3d, L"fixed_3d"}, {border_style::none, L"none"}, {border_style::solid, L"solid"}, {border_style::inset, L"inset"}, {border_style::outset, L"outset"}, {border_style::groove, L"groove"}, {border_style::ridge, L"ridge"}, {border_style::theme, L"theme"}, {border_style::dashed, L"dashed"}, {border_style::dot_dash, L"dot_dash"}, {border_style::dot_dot_dash, L"dot_dot_dash"}, {border_style::dotted, L"dotted"}, {border_style::double_border, L"double_border"}, {border_style::bevel_inset, L"bevel_inset"}, {border_style::bevel_outset, L"bevel_outset"}, {border_style::rounded, L"rounded"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::border_style> {
+  void operator()(xtd::enum_collection<xtd::forms::border_style>& values, xtd::enum_type& type) {values = {{xtd::forms::border_style::hidden, "hidden"}, {xtd::forms::border_style::fixed_single, "fixed_single"}, {xtd::forms::border_style::fixed_3d, "fixed_3d"}, {xtd::forms::border_style::none, "none"}, {xtd::forms::border_style::solid, "solid"}, {xtd::forms::border_style::inset, "inset"}, {xtd::forms::border_style::outset, "outset"}, {xtd::forms::border_style::groove, "groove"}, {xtd::forms::border_style::ridge, "ridge"}, {xtd::forms::border_style::theme, "theme"}, {xtd::forms::border_style::dashed, "dashed"}, {xtd::forms::border_style::dot_dash, "dot_dash"}, {xtd::forms::border_style::dot_dot_dash, "dot_dot_dash"}, {xtd::forms::border_style::dotted, "dotted"}, {xtd::forms::border_style::double_border, "double_border"}, {xtd::forms::border_style::bevel_inset, "bevel_inset"}, {xtd::forms::border_style::bevel_outset, "bevel_outset"}, {xtd::forms::border_style::rounded, "rounded"}};}
+};
+/// @endcond

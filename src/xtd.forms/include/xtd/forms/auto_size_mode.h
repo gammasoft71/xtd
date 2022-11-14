@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::auto_size_mode enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -21,10 +21,11 @@ namespace xtd {
       /// @brief The control grows as much as necessary to fit its contents but does not shrink smaller than the value of its size property. The form can be resized, but cannot be made so small that any of its contained controls are hidden.
       grow_only = 1,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, auto_size_mode value) {return os << to_string(value, {{auto_size_mode::grow_and_shrink, "grow_and_shrink"}, {auto_size_mode::grow_only, "grow_only"}});}
-    inline std::wostream& operator<<(std::wostream& os, auto_size_mode value) {return os << to_string(value, {{auto_size_mode::grow_and_shrink, L"grow_and_shrink"}, {auto_size_mode::grow_only, L"grow_only"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::auto_size_mode> {
+  void operator()(xtd::enum_collection<xtd::forms::auto_size_mode>& values, xtd::enum_type& type) {values = {{xtd::forms::auto_size_mode::grow_and_shrink, "grow_and_shrink"}, {xtd::forms::auto_size_mode::grow_only, "grow_only"}};}
+};
+/// @endcond

@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::control_appearance enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -20,10 +20,11 @@ namespace xtd {
       /// @brief The appearance of the control is determined by the user's operating system.
       system,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, control_appearance value) {return os << to_string(value, {{control_appearance::standard, "standard"}, {control_appearance::system, "system"}});}
-    inline std::wostream& operator<<(std::wostream& os, control_appearance value) {return os << to_string(value, {{control_appearance::standard, L"standard"}, {control_appearance::system, L"system"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::control_appearance> {
+  void operator()(xtd::enum_collection<xtd::forms::control_appearance>& values, xtd::enum_type& type) {values = {{xtd::forms::control_appearance::standard, "standard"}, {xtd::forms::control_appearance::system, "system"}};}
+};
+/// @endcond

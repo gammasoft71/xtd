@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::message_dialog_icon enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -35,10 +35,11 @@ namespace xtd {
       /// @brief The message box contains a symbol consisting of a lowercase letter i in a circle.
       information = 0x00000040L,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, message_dialog_icon value) {return os << to_string(value, {{message_dialog_icon::none, "none"}, {message_dialog_icon::hand, "hand"}, {message_dialog_icon::stop, "stop"}, {message_dialog_icon::error, "error"}, {message_dialog_icon::question, "question"}, {message_dialog_icon::exclamation, "exclamation"}, {message_dialog_icon::warning, "warning"}, {message_dialog_icon::asterisk, "asterisk"}, {message_dialog_icon::information, "information"}});}
-    inline std::wostream& operator<<(std::wostream& os, message_dialog_icon value) {return os << to_string(value, {{message_dialog_icon::none, L"none"}, {message_dialog_icon::hand, L"hand"}, {message_dialog_icon::stop, L"stop"}, {message_dialog_icon::error, L"error"}, {message_dialog_icon::question, L"question"}, {message_dialog_icon::exclamation, L"exclamation"}, {message_dialog_icon::warning, L"warning"}, {message_dialog_icon::asterisk, L"asterisk"}, {message_dialog_icon::information, L"information"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::message_dialog_icon> {
+  void operator()(xtd::enum_collection<xtd::forms::message_dialog_icon>& values, xtd::enum_type& type) {values = {{xtd::forms::message_dialog_icon::none, "none"}, {xtd::forms::message_dialog_icon::hand, "hand"}, {xtd::forms::message_dialog_icon::stop, "stop"}, {xtd::forms::message_dialog_icon::error, "error"}, {xtd::forms::message_dialog_icon::question, "question"}, {xtd::forms::message_dialog_icon::exclamation, "exclamation"}, {xtd::forms::message_dialog_icon::warning, "warning"}, {xtd::forms::message_dialog_icon::asterisk, "asterisk"}, {xtd::forms::message_dialog_icon::information, "information"}};}
+};
+/// @endcond

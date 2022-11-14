@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::lcd_style enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -26,10 +26,11 @@ namespace xtd {
       /// @brief Dot matrix display style.
       dot_matrix_display,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, lcd_style value) {return os << to_string(value, {{lcd_style::seven_segment_display, "seven_segment_display"}, {lcd_style::nine_segment_display, "nine_segment_display"}, {lcd_style::fourteen_segment_display, "fourteen_segment_display"}, {lcd_style::sixteen_segment_display, "sixteen_segment_display"}, {lcd_style::dot_matrix_display, "dot_matrix_display"}});}
-    inline std::wostream& operator<<(std::wostream& os, lcd_style value) {return os << to_string(value, {{lcd_style::seven_segment_display, L"seven_segment_display"}, {lcd_style::nine_segment_display, L"nine_segment_display"}, {lcd_style::fourteen_segment_display, L"fourteen_segment_display"}, {lcd_style::sixteen_segment_display, L"sixteen_segment_display"}, {lcd_style::dot_matrix_display, L"dot_matrix_display"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::lcd_style> {
+  void operator()(xtd::enum_collection<xtd::forms::lcd_style>& values, xtd::enum_type& type) {values = {{xtd::forms::lcd_style::seven_segment_display, "seven_segment_display"}, {xtd::forms::lcd_style::nine_segment_display, "nine_segment_display"}, {xtd::forms::lcd_style::fourteen_segment_display, "fourteen_segment_display"}, {xtd::forms::lcd_style::sixteen_segment_display, "sixteen_segment_display"}, {xtd::forms::lcd_style::dot_matrix_display, "dot_matrix_display"}};}
+};
+/// @endcond

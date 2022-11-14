@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::control_styles enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -66,19 +66,16 @@ namespace xtd {
     };
     
     /// @cond
-    inline control_styles& operator +=(control_styles& lhs, control_styles rhs) {lhs = static_cast<control_styles>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
-    inline control_styles& operator -=(control_styles& lhs, control_styles rhs) {lhs = static_cast<control_styles>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}
-    inline control_styles& operator &=(control_styles& lhs, control_styles rhs) {lhs = static_cast<control_styles>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); return lhs;}
-    inline control_styles& operator |=(control_styles& lhs, control_styles rhs) {lhs = static_cast<control_styles>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); return lhs;}
-    inline control_styles& operator ^=(control_styles& lhs, control_styles rhs) {lhs = static_cast<control_styles>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); return lhs;}
-    inline control_styles operator +(control_styles lhs, control_styles rhs) {return static_cast<control_styles>(static_cast<long long>(lhs) + static_cast<long long>(rhs));}
-    inline control_styles operator -(control_styles lhs, control_styles rhs) {return static_cast<control_styles>(static_cast<long long>(lhs) - static_cast<long long>(rhs));}
-    inline control_styles operator ~(control_styles rhs) {return static_cast<control_styles>(~static_cast<long long>(rhs));}
-    inline control_styles operator &(control_styles lhs, control_styles rhs) {return static_cast<control_styles>(static_cast<long long>(lhs) & static_cast<long long>(rhs));}
-    inline control_styles operator |(control_styles lhs, control_styles rhs) {return static_cast<control_styles>(static_cast<long long>(lhs) | static_cast<long long>(rhs));}
-    inline control_styles operator ^(control_styles lhs, control_styles rhs) {return static_cast<control_styles>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs));}
-    inline std::ostream& operator<<(std::ostream& os, control_styles value) {return os << to_string(value, {{control_styles::container_control, "container_control"}, {control_styles::user_paint, "user_paint"}, {control_styles::opaque, "opaque"}, {control_styles::resize_redraw, "resize_redraw"}, {control_styles::fixed_width, "fixed_width"}, {control_styles::fixed_height, "fixed_height"}, {control_styles::standard_click, "standard_click"}, {control_styles::selectable, "selectable"}, {control_styles::user_mouse, "user_mouse"}, {control_styles::supports_transparent_back_color, "supports_transparent_back_color"}, {control_styles::standard_double_click, "standard_double_click"}, {control_styles::all_painting_in_wm_paint, "all_painting_in_wm_paint"}, {control_styles::cache_text, "cache_text"}, {control_styles::enable_notify_message, "enable_notify_message"}, {control_styles::double_buffer, "double_buffer"}, {control_styles::optimized_double_buffer, "optimized_double_buffer"}, {control_styles::use_text_for_accessibility, "use_text_for_accessibility"}});}
-    inline std::wostream& operator<<(std::wostream& os, control_styles value) {return os << to_string(value, {{control_styles::container_control, L"container_control"}, {control_styles::user_paint, L"user_paint"}, {control_styles::opaque, L"opaque"}, {control_styles::resize_redraw, L"resize_redraw"}, {control_styles::fixed_width, L"fixed_width"}, {control_styles::fixed_height, L"fixed_height"}, {control_styles::standard_click, L"standard_click"}, {control_styles::selectable, L"selectable"}, {control_styles::user_mouse, L"user_mouse"}, {control_styles::supports_transparent_back_color, L"supports_transparent_back_color"}, {control_styles::standard_double_click, L"standard_double_click"}, {control_styles::all_painting_in_wm_paint, L"all_painting_in_wm_paint"}, {control_styles::cache_text, L"cache_text"}, {control_styles::enable_notify_message, L"enable_notify_message"}, {control_styles::double_buffer, L"double_buffer"}, {control_styles::optimized_double_buffer, L"optimized_double_buffer"}, {control_styles::use_text_for_accessibility, L"use_text_for_accessibility"}});}
+    add_enum_flag_operators_(xtd::forms::control_styles);
     /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::control_styles> {
+  void operator()(xtd::enum_collection<xtd::forms::control_styles>& values, xtd::enum_type& type) {
+    values = {{xtd::forms::control_styles::container_control, "container_control"}, {xtd::forms::control_styles::user_paint, "user_paint"}, {xtd::forms::control_styles::opaque, "opaque"}, {xtd::forms::control_styles::resize_redraw, "resize_redraw"}, {xtd::forms::control_styles::fixed_width, "fixed_width"}, {xtd::forms::control_styles::fixed_height, "fixed_height"}, {xtd::forms::control_styles::standard_click, "standard_click"}, {xtd::forms::control_styles::selectable, "selectable"}, {xtd::forms::control_styles::user_mouse, "user_mouse"}, {xtd::forms::control_styles::supports_transparent_back_color, "supports_transparent_back_color"}, {xtd::forms::control_styles::standard_double_click, "standard_double_click"}, {xtd::forms::control_styles::all_painting_in_wm_paint, "all_painting_in_wm_paint"}, {xtd::forms::control_styles::cache_text, "cache_text"}, {xtd::forms::control_styles::enable_notify_message, "enable_notify_message"}, {xtd::forms::control_styles::double_buffer, "double_buffer"}, {xtd::forms::control_styles::optimized_double_buffer, "optimized_double_buffer"}, {xtd::forms::control_styles::use_text_for_accessibility, "use_text_for_accessibility"}};
+    type = xtd::enum_type::flags;
+  }
+};
+/// @endcond

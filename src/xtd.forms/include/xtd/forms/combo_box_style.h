@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::combo_box_style enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -25,10 +25,11 @@ namespace xtd {
       /// @brief Specifies that the list is displayed by clicking the down arrow and that the text portion is not editable. This means that the user cannot enter a new value. Only values already in the list can be selected. The list displays only if auto_complete_mode is suggest or suggest_append.
       drop_down_list = 3,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, combo_box_style value) {return os << to_string(value, {{combo_box_style::simple, "simple"}, {combo_box_style::drop_down, "drop_down"}, {combo_box_style::drop_down_list, "drop_down_list"}});}
-    inline std::wostream& operator<<(std::wostream& os, combo_box_style value) {return os << to_string(value, {{combo_box_style::simple, L"simple"}, {combo_box_style::drop_down, L"drop_down"}, {combo_box_style::drop_down_list, L"drop_down_list"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::combo_box_style> {
+  void operator()(xtd::enum_collection<xtd::forms::combo_box_style>& values, xtd::enum_type& type) {values = {{xtd::forms::combo_box_style::simple, "simple"}, {xtd::forms::combo_box_style::drop_down, "drop_down"}, {xtd::forms::combo_box_style::drop_down_list, "drop_down_list"}};}
+};
+/// @endcond

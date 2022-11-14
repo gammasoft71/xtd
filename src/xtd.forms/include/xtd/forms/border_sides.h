@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::border_sides enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -32,19 +32,16 @@ namespace xtd {
     };
     
     /// @cond
-    inline border_sides& operator +=(border_sides& lhs, border_sides rhs) {lhs = static_cast<border_sides>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
-    inline border_sides& operator -=(border_sides& lhs, border_sides rhs) {lhs = static_cast<border_sides>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}
-    inline border_sides& operator &=(border_sides& lhs, border_sides rhs) {lhs = static_cast<border_sides>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); return lhs;}
-    inline border_sides& operator |=(border_sides& lhs, border_sides rhs) {lhs = static_cast<border_sides>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); return lhs;}
-    inline border_sides& operator ^=(border_sides& lhs, border_sides rhs) {lhs = static_cast<border_sides>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); return lhs;}
-    inline border_sides operator +(border_sides lhs, border_sides rhs) {return static_cast<border_sides>(static_cast<long long>(lhs) + static_cast<long long>(rhs));}
-    inline border_sides operator -(border_sides lhs, border_sides rhs) {return static_cast<border_sides>(static_cast<long long>(lhs) - static_cast<long long>(rhs));}
-    inline border_sides operator ~(border_sides rhs) {return static_cast<border_sides>(~static_cast<long long>(rhs));}
-    inline border_sides operator &(border_sides lhs, border_sides rhs) {return static_cast<border_sides>(static_cast<long long>(lhs) & static_cast<long long>(rhs));}
-    inline border_sides operator |(border_sides lhs, border_sides rhs) {return static_cast<border_sides>(static_cast<long long>(lhs) | static_cast<long long>(rhs));}
-    inline border_sides operator ^(border_sides lhs, border_sides rhs) {return static_cast<border_sides>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs));}
-    inline std::ostream& operator<<(std::ostream& os, border_sides value) {return os << to_string(value, {{border_sides::none, "none"}, {border_sides::top, "top"}, {border_sides::bottom, "bottom"}, {border_sides::left, "left"}, {border_sides::right, "right"}});}
-    inline std::wostream& operator<<(std::wostream& os, border_sides value) {return os << to_string(value, {{border_sides::none, L"none"}, {border_sides::top, L"top"}, {border_sides::bottom, L"bottom"}, {border_sides::left, L"left"}, {border_sides::right, L"right"}});}
+    add_enum_flag_operators_(xtd::forms::border_sides);
     /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::border_sides> {
+  void operator()(xtd::enum_collection<xtd::forms::border_sides>& values, xtd::enum_type& type) {
+    values = {{xtd::forms::border_sides::none, "none"}, {xtd::forms::border_sides::top, "top"}, {xtd::forms::border_sides::bottom, "bottom"}, {xtd::forms::border_sides::left, "left"}, {xtd::forms::border_sides::right, "right"}};
+    type = xtd::enum_type::flags;
+  }
+};
+/// @endcond

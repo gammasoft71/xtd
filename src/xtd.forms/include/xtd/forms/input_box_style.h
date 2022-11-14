@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::input_box_style enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -23,10 +23,11 @@ namespace xtd {
       /// @brief Single line text box with password characters.
       password
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, input_box_style value) {return os << to_string(value, {{input_box_style::normal, "normal"}, {input_box_style::multiline, "multiline"}, {input_box_style::password, "password"}});}
-    inline std::wostream& operator<<(std::wostream& os, input_box_style value) {return os << to_string(value, {{input_box_style::normal, L"normal"}, {input_box_style::multiline, L"multiline"}, {input_box_style::password, L"password"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::input_box_style> {
+  void operator()(xtd::enum_collection<xtd::forms::input_box_style>& values, xtd::enum_type& type) {values = {{xtd::forms::input_box_style::normal, "normal"}, {xtd::forms::input_box_style::multiline, "multiline"}, {xtd::forms::input_box_style::password, "password"}};}
+};
+/// @endcond

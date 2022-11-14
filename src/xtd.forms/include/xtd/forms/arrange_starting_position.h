@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::arrange_starting_position enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -30,19 +30,16 @@ namespace xtd {
     };
     
     /// @cond
-    inline arrange_starting_position& operator +=(arrange_starting_position& lhs, arrange_starting_position rhs) {lhs = static_cast<arrange_starting_position>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
-    inline arrange_starting_position& operator -=(arrange_starting_position& lhs, arrange_starting_position rhs) {lhs = static_cast<arrange_starting_position>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}
-    inline arrange_starting_position& operator &=(arrange_starting_position& lhs, arrange_starting_position rhs) {lhs = static_cast<arrange_starting_position>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); return lhs;}
-    inline arrange_starting_position& operator |=(arrange_starting_position& lhs, arrange_starting_position rhs) {lhs = static_cast<arrange_starting_position>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); return lhs;}
-    inline arrange_starting_position& operator ^=(arrange_starting_position& lhs, arrange_starting_position rhs) {lhs = static_cast<arrange_starting_position>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); return lhs;}
-    inline arrange_starting_position operator +(arrange_starting_position lhs, arrange_starting_position rhs) {return static_cast<arrange_starting_position>(static_cast<long long>(lhs) + static_cast<long long>(rhs));}
-    inline arrange_starting_position operator -(arrange_starting_position lhs, arrange_starting_position rhs) {return static_cast<arrange_starting_position>(static_cast<long long>(lhs) - static_cast<long long>(rhs));}
-    inline arrange_starting_position operator ~(arrange_starting_position rhs) {return static_cast<arrange_starting_position>(~static_cast<long long>(rhs));}
-    inline arrange_starting_position operator &(arrange_starting_position lhs, arrange_starting_position rhs) {return static_cast<arrange_starting_position>(static_cast<long long>(lhs) & static_cast<long long>(rhs));}
-    inline arrange_starting_position operator |(arrange_starting_position lhs, arrange_starting_position rhs) {return static_cast<arrange_starting_position>(static_cast<long long>(lhs) | static_cast<long long>(rhs));}
-    inline arrange_starting_position operator ^(arrange_starting_position lhs, arrange_starting_position rhs) {return static_cast<arrange_starting_position>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs));}
-    inline std::ostream& operator<<(std::ostream& os, arrange_starting_position value) {return os << to_string(value, {{arrange_starting_position::bottom_left, "bottom_left"}, {arrange_starting_position::bottom_right, "bottom_right"}, {arrange_starting_position::top_left, "top_left"}, {arrange_starting_position::top_right, "top_right"}, {arrange_starting_position::hide, "hide"}});}
-    inline std::wostream& operator<<(std::wostream& os, arrange_starting_position value) {return os << to_string(value, {{arrange_starting_position::bottom_left, L"bottom_left"}, {arrange_starting_position::bottom_right, L"bottom_right"}, {arrange_starting_position::top_left, L"top_left"}, {arrange_starting_position::top_right, L"top_right"}, {arrange_starting_position::hide, L"hide"}});}
+    add_enum_flag_operators_(xtd::forms::arrange_starting_position);
     /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::arrange_starting_position> {
+  void operator()(xtd::enum_collection<xtd::forms::arrange_starting_position>& values, xtd::enum_type& type) {
+    values = {{xtd::forms::arrange_starting_position::bottom_left, "bottom_left"}, {xtd::forms::arrange_starting_position::bottom_right, "bottom_right"}, {xtd::forms::arrange_starting_position::top_left, "top_left"}, {xtd::forms::arrange_starting_position::top_right, "top_right"}, {xtd::forms::arrange_starting_position::hide, "hide"}};
+    type = xtd::enum_type::flags;
+  }
+};
+/// @endcond

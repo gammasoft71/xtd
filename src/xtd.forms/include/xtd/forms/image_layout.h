@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::image_layout enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -26,10 +26,11 @@ namespace xtd {
       /// @brief The image is enlarged within the control's client rectangle.
       zoom = 4,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, image_layout value) {return os << to_string(value, {{image_layout::none, "none"}, {image_layout::tile, "tile"}, {image_layout::center, "center"}, {image_layout::stretch, "stretch"}, {image_layout::zoom, "zoom"}});}
-    inline std::wostream& operator<<(std::wostream& os, image_layout value) {return os << to_string(value, {{image_layout::none, L"none"}, {image_layout::tile, L"tile"}, {image_layout::center, L"center"}, {image_layout::stretch, L"stretch"}, {image_layout::zoom, L"zoom"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::image_layout> {
+  void operator()(xtd::enum_collection<xtd::forms::image_layout>& values, xtd::enum_type& type) {values = {{xtd::forms::image_layout::none, "none"}, {xtd::forms::image_layout::tile, "tile"}, {xtd::forms::image_layout::center, "center"}, {xtd::forms::image_layout::stretch, "stretch"}, {xtd::forms::image_layout::zoom, "zoom"}};}
+};
+/// @endcond

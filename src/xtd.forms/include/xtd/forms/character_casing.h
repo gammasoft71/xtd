@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::character_casing enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -23,10 +23,11 @@ namespace xtd {
       /// @brief Converts all characters to lowercase.
       lower = 2,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, character_casing value) {return os << to_string(value, {{character_casing::normal, "normal"}, {character_casing::upper, "upper"}, {character_casing::lower, "lower"}});}
-    inline std::wostream& operator<<(std::wostream& os, character_casing value) {return os << to_string(value, {{character_casing::normal, L"normal"}, {character_casing::upper, L"upper"}, {character_casing::lower, L"lower"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::character_casing> {
+  void operator()(xtd::enum_collection<xtd::forms::character_casing>& values, xtd::enum_type& type) {values = {{xtd::forms::character_casing::normal, "normal"}, {xtd::forms::character_casing::upper, "upper"}, {xtd::forms::character_casing::lower, "lower"}};}
+};
+/// @endcond

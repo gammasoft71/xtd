@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::date_time_picker_format enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -25,10 +25,11 @@ namespace xtd {
       /// @brief The date_time_picker control displays the date/time value in a custom format.
       custom = 8,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, date_time_picker_format value) {return os << to_string(value, {{date_time_picker_format::long_format, "long_format"}, {date_time_picker_format::short_format, "short_format"}, {date_time_picker_format::time, "time"}, {date_time_picker_format::custom, "custom"}});}
-    inline std::wostream& operator<<(std::wostream& os, date_time_picker_format value) {return os << to_string(value, {{date_time_picker_format::long_format, L"long_format"}, {date_time_picker_format::short_format, L"short_format"}, {date_time_picker_format::time, L"time"}, {date_time_picker_format::custom, L"custom"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::date_time_picker_format> {
+  void operator()(xtd::enum_collection<xtd::forms::date_time_picker_format>& values, xtd::enum_type& type) {values = {{xtd::forms::date_time_picker_format::long_format, "long_format"}, {xtd::forms::date_time_picker_format::short_format, "short_format"}, {xtd::forms::date_time_picker_format::time, "time"}, {xtd::forms::date_time_picker_format::custom, "custom"}};}
+};
+/// @endcond

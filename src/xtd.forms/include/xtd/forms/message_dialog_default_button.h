@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::message_dialog_default_button enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -23,10 +23,11 @@ namespace xtd {
       /// @brief The third button on the message box is the default button.
       button3 = 0x00000200L
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, message_dialog_default_button value) {return os << to_string(value, {{message_dialog_default_button::button1, "button1"}, {message_dialog_default_button::button2, "button2"}, {message_dialog_default_button::button3, "button3"}});}
-    inline std::wostream& operator<<(std::wostream& os, message_dialog_default_button value) {return os << to_string(value, {{message_dialog_default_button::button1, L"button1"}, {message_dialog_default_button::button2, L"button2"}, {message_dialog_default_button::button3, L"button3"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::message_dialog_default_button> {
+  void operator()(xtd::enum_collection<xtd::forms::message_dialog_default_button>& values, xtd::enum_type& type) {values = {{xtd::forms::message_dialog_default_button::button1, "button1"}, {xtd::forms::message_dialog_default_button::button2, "button2"}, {xtd::forms::message_dialog_default_button::button3, "button3"}};}
+};
+/// @endcond

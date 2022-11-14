@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::bounds_specified enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -35,19 +35,16 @@ namespace xtd {
     };
     
     /// @cond
-    inline bounds_specified& operator +=(bounds_specified& lhs, bounds_specified rhs) {lhs = static_cast<bounds_specified>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
-    inline bounds_specified& operator -=(bounds_specified& lhs, bounds_specified rhs) {lhs = static_cast<bounds_specified>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}
-    inline bounds_specified& operator &=(bounds_specified& lhs, bounds_specified rhs) {lhs = static_cast<bounds_specified>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); return lhs;}
-    inline bounds_specified& operator |=(bounds_specified& lhs, bounds_specified rhs) {lhs = static_cast<bounds_specified>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); return lhs;}
-    inline bounds_specified& operator ^=(bounds_specified& lhs, bounds_specified rhs) {lhs = static_cast<bounds_specified>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); return lhs;}
-    inline bounds_specified operator +(bounds_specified lhs, bounds_specified rhs) {return static_cast<bounds_specified>(static_cast<long long>(lhs) + static_cast<long long>(rhs));}
-    inline bounds_specified operator -(bounds_specified lhs, bounds_specified rhs) {return static_cast<bounds_specified>(static_cast<long long>(lhs) - static_cast<long long>(rhs));}
-    inline bounds_specified operator ~(bounds_specified rhs) {return static_cast<bounds_specified>(~static_cast<long long>(rhs));}
-    inline bounds_specified operator &(bounds_specified lhs, bounds_specified rhs) {return static_cast<bounds_specified>(static_cast<long long>(lhs) & static_cast<long long>(rhs));}
-    inline bounds_specified operator |(bounds_specified lhs, bounds_specified rhs) {return static_cast<bounds_specified>(static_cast<long long>(lhs) | static_cast<long long>(rhs));}
-    inline bounds_specified operator ^(bounds_specified lhs, bounds_specified rhs) {return static_cast<bounds_specified>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs));}
-    inline std::ostream& operator<<(std::ostream& os, bounds_specified value) {return os << to_string(value, {{bounds_specified::none, "none"}, {bounds_specified::x, "x"}, {bounds_specified::y, "y"}, {bounds_specified::width, "width"}, {bounds_specified::height, "height"}});}
-    inline std::wostream& operator<<(std::wostream& os, bounds_specified value) {return os << to_string(value, {{bounds_specified::none, L"none"}, {bounds_specified::x, L"x"}, {bounds_specified::y, L"y"}, {bounds_specified::width, L"width"}, {bounds_specified::height, L"height"}});}
+    add_enum_flag_operators_(xtd::forms::bounds_specified);
     /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::bounds_specified> {
+  void operator()(xtd::enum_collection<xtd::forms::bounds_specified>& values, xtd::enum_type& type) {
+    values = {{xtd::forms::bounds_specified::none, "none"}, {xtd::forms::bounds_specified::x, "x"}, {xtd::forms::bounds_specified::y, "y"}, {xtd::forms::bounds_specified::width, "width"}, {xtd::forms::bounds_specified::height, "height"}};
+    type = enum_type::flags;
+  }
+};
+/// @endcond

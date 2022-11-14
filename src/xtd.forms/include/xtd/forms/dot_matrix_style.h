@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::dot_matrix_style enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -22,10 +22,11 @@ namespace xtd {
       /// @brief Standard (or round) dot matrix style.
       standard = round,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, dot_matrix_style value) {return os << to_string(value, {{dot_matrix_style::standard, "standard"}, {dot_matrix_style::square, "square"}});}
-    inline std::wostream& operator<<(std::wostream& os, dot_matrix_style value) {return os << to_string(value, {{dot_matrix_style::standard, L"standard"}, {dot_matrix_style::square, L"square"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::dot_matrix_style> {
+  void operator()(xtd::enum_collection<xtd::forms::dot_matrix_style>& values, xtd::enum_type& type) {values =  {{xtd::forms::dot_matrix_style::standard, "standard"}, {xtd::forms::dot_matrix_style::square, "square"}};}
+};
+/// @endcond
