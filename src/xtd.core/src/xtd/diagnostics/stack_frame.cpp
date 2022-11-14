@@ -93,10 +93,6 @@ ustring stack_frame::to_string() const noexcept {
   return ustring::format("{} at offset {} in file:line:column {}:{}:{}", method_name_.empty() ? "<unknown method>" : method_name_, offset_ == OFFSET_UNKNOWN || file_name_.empty() ? "<unknown offset>" : std::to_string(offset_), file_name_.empty() ? "<filename unknown>" : file_name_, file_line_number_, file_column_number_);
 }
 
-//friend ostream& operator<<(ostream& os, const stack_frame& stack_frame) noexcept {
-//  return os << stack_frame.to_string();
-//}
-
 std::vector<stack_frame> stack_frame::get_stack_frames(const ustring& str, size_t skip_frames, bool need_file_info) {
   stacktrace::call_stack call_stack(4);
   size_t skip_frames_before_str = 0;

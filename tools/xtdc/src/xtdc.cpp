@@ -703,7 +703,6 @@ namespace xtdc_command {
         else if (args[i] == "-v" || args[i] == "--version")
           show_version = true;
         else if (!args[i].starts_with('-')) {
-          command_args = vector<ustring>(args.size() - i);
           command_args = {args.begin() + i, args.end()};
           i = args.size();
         } else if (args[i].starts_with('-')) {

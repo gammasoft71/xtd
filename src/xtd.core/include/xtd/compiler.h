@@ -34,7 +34,7 @@ namespace xtd {
     compiler() = default;
     compiler(const compiler&) = default;
     compiler& operator=(const compiler&) = default;
-    friend std::ostream& operator <<(std::ostream& os, const compiler& compiler) noexcept {return os << compiler.to_string();}
+    friend std::ostream& operator<<(std::ostream& os, const compiler& compiler) noexcept {return os << compiler.to_string();}
     /// @endcond
     
     /// @name Properties

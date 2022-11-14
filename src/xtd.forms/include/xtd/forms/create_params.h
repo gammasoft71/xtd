@@ -7,6 +7,7 @@
 #include <string>
 #include <xtd/drawing/point.h>
 #include <xtd/drawing/size.h>
+#include <xtd/object.h>
 #include <xtd/ustring.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -21,7 +22,7 @@ namespace xtd {
     /// @ingroup xtd_forms_native
     /// @remarks The information in a create_params can be used to pass information about the initial state and appearance of a control. Most control derived controls override the create_params property to pass in the appropriate values or include additional information in the create_params.
     /// @note The constants used to set the style, ex_style, and class_style properties are defined in the xtd.forms.native library as constants.
-    class create_params {
+    class create_params : public object {
     public:
       /// @name Constructors
       
@@ -197,12 +198,8 @@ namespace xtd {
       /// @{
       /// @brief Returns a string that represents the current object.
       /// @return A string that represents the current object.
-      xtd::ustring to_string() const {return ustring::format("create_params {{'{}' , '{}', 0x{:X}, 0x{:X}, {{{}, {}, {}, {}}}}}", class_name_, caption_, style_, ex_style_, location_.x(), location_.y(), size_.width(), size_.height());}
+      xtd::ustring to_string() const noexcept override {return ustring::format("create_params {{'{}' , '{}', 0x{:X}, 0x{:X}, {{{}, {}, {}, {}}}}}", class_name_, caption_, style_, ex_style_, location_.x(), location_.y(), size_.width(), size_.height());}
       /// @}
-      
-      /// @cond
-      friend std::ostream& operator<<(std::ostream& os, const create_params& create_params) noexcept {return os << create_params.to_string();}
-      /// @endcond
       
     private:
       xtd::ustring caption_;

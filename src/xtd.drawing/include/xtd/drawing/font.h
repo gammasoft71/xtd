@@ -313,10 +313,6 @@ namespace xtd {
       }
       /// @}
       
-      /// @cond
-      friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::font& font) noexcept {return os << font.to_string();}
-      /// @endcond
-      
     private:
       friend class graphics;
       friend class system_fonts;

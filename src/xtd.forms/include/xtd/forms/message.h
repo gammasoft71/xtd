@@ -108,11 +108,6 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
-      /// @cond
-      friend std::ostream& operator<<(std::ostream& os, const xtd::forms::message& message) noexcept {return os << message.to_string();}
-      /// @endcond
-      
-      
     private:
       message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam);
       message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result);

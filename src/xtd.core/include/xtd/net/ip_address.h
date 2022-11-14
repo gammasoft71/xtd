@@ -92,7 +92,6 @@ namespace xtd {
       ip_address(ip_address&& ip_address) = default;
       ip_address(const ip_address& ip_address) = default;
       ip_address& operator=(const ip_address&) = default;
-      friend std::ostream& operator <<(std::ostream& os, const ip_address& address) noexcept {return os << address.to_string();}
       /// @endcond
       
       /// @name Properties

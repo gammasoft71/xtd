@@ -42,6 +42,7 @@
 #include "delegate.h"
 #include "divided_by_zero_exception.h"
 #include "domain_exception.h"
+#include "enum.h"
 #include "environment.h"
 #include "environment_variable_target.h"
 #include "event.h"

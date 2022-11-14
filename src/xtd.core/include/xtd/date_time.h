@@ -1086,10 +1086,6 @@ namespace xtd {
     date_time_kind kind_ {date_time_kind::unspecified};
   };
   
-  /// @cond
-  std::ostream& operator <<(std::ostream& os, const date_time& value) noexcept;
-  /// @endcond
-  
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
   /// xtd

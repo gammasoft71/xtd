@@ -6,6 +6,10 @@
 using namespace std;
 using namespace xtd;
 
+std::string __object_to_string(const object& value) {
+  return value.to_string();
+}
+
 std::ostream& operator<<(std::ostream& os, const char8_t* str) {
   return os << ustring(str); 
 }

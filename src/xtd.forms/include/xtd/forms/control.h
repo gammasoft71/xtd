@@ -1109,10 +1109,6 @@ namespace xtd {
       /// @}
       
       /// @cond
-      friend std::ostream& operator<<(std::ostream& os, const xtd::forms::control& control) noexcept {
-        return os << control.to_string();
-      }
-      
       bool operator==(const control& value) const {return this == &value;}
       bool operator!=(const control& value) const {return !operator==(value);}
       bool operator<(const control& value) const {return this < &value;}

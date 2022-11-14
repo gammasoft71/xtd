@@ -89,7 +89,6 @@ namespace xtd {
         tcp_listener(const tcp_listener&) = default;
         ~tcp_listener();
         tcp_listener& operator=(const tcp_listener&) = default;
-        friend std::ostream& operator <<(std::ostream& os, const tcp_listener& tl) noexcept {return os << tl.to_string();}
         bool operator==(const tcp_listener& s) const {return data_ == s.data_;};
         bool operator!=(const tcp_listener& s) const {return !operator==(s);};
         /// @endcond

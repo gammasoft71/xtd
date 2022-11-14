@@ -205,10 +205,6 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
-      /// @cond
-      friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::pen& pen) noexcept {return os << pen.to_string();}
-      /// @endcond
-      
     private:
       pen();
       void recreate_handle();

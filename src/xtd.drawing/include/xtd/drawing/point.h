@@ -323,8 +323,6 @@ namespace xtd {
       /// @cond
       bool operator==(const point& value) const noexcept;
       bool operator!=(const point& value) const noexcept;
-      
-      friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::point& point) noexcept {return os << point.to_string();}
       /// @endcond
       
       /// @name Operators

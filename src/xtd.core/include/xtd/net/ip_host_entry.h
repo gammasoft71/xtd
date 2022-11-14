@@ -33,7 +33,6 @@ namespace xtd {
       ip_host_entry(ip_host_entry&& ip_host_entry) = default;
       ip_host_entry(const ip_host_entry& ip_host_entry) = default;
       ip_host_entry& operator=(const ip_host_entry&) = default;
-      friend std::ostream& operator <<(std::ostream& os, const ip_host_entry& host_entry) noexcept {return os << host_entry.to_string();}
       /// @endcond
       
       /// @name Properties

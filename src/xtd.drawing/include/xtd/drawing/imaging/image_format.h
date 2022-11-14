@@ -200,12 +200,6 @@ namespace xtd {
         xtd::ustring to_string() const noexcept override {return ustring::format("[image_format: {}]", guid_);}
         /// @}
         
-        /// @cond
-        friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::imaging::image_format& image_format) noexcept {
-          return os << image_format.to_string();
-        }
-        /// @endcond
-        
       private:
         xtd::guid guid_;
       };

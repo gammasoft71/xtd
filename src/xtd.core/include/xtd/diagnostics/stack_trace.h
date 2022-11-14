@@ -324,10 +324,6 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
-      /// @cond
-      friend std::ostream& operator<<(std::ostream& os, const xtd::diagnostics::stack_trace& stack_trace) noexcept {return os << stack_trace.to_string();}
-      /// @endcond
-      
     private:
       friend class xtd::system_exception;
       stack_trace(const xtd::ustring& str, size_t skip_frames, bool need_file_info);

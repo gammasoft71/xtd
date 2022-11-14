@@ -158,7 +158,7 @@ namespace xtd {
       
       void on_back_color_changed(const event_args& e) override {
         if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
-        control::on_parent_back_color_changed(e);
+        control::on_back_color_changed(e);
       }
       
       void on_enabled_changed(const event_args& e) override {
