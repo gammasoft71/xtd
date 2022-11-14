@@ -2,7 +2,7 @@
 /// @brief Contains xtd::environment_variable_target enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-//#include "enum.h"
+#include "enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -22,10 +22,8 @@ namespace xtd {
   };
 }
 
-/*
 /// @cond
 template<> struct xtd::enum_register<xtd::environment_variable_target> {
   void operator()(xtd::enum_collection<xtd::environment_variable_target>& values, xtd::enum_type& type) {values = {{xtd::environment_variable_target::process, "process"}, {xtd::environment_variable_target::user, "user"}, {xtd::environment_variable_target::machine, "machine"}};}
 };
 /// @endcond
-*/
