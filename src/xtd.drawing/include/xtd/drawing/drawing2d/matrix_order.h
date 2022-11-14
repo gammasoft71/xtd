@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::drawing2d::matrix_order enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -23,11 +23,12 @@ namespace xtd {
         /// @brief The new operation is applied after the old operation.
         append = 1,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, matrix_order value) {return os << to_string(value, {{matrix_order::prepend, "prepend"}, {matrix_order::append, "append"}});}
-      inline std::wostream& operator<<(std::wostream& os, matrix_order value) {return os << to_string(value, {{matrix_order::prepend, L"prepend"}, {matrix_order::append, L"append"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::drawing2d::matrix_order> {
+  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::matrix_order>& values, xtd::enum_type& type) {values =  {{xtd::drawing::drawing2d::matrix_order::prepend, "prepend"}, {xtd::drawing::drawing2d::matrix_order::append, "append"}};}
+};
+/// @endcond

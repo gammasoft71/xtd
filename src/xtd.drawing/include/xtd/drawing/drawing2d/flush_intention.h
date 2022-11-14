@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::drawing2d::flush_intention enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -22,11 +22,12 @@ namespace xtd {
         /// @brief Specifies that all graphics operations on the stack are executed as soon as possible. This synchronizes the graphics state.
         sync = 1,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, flush_intention value) {return os << to_string(value, {{flush_intention::flush, "flush"}, {flush_intention::sync, "sync"}});}
-      inline std::wostream& operator<<(std::wostream& os, flush_intention value) {return os << to_string(value, {{flush_intention::flush, L"flush"}, {flush_intention::sync, L"sync"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::drawing2d::flush_intention> {
+  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::flush_intention>& values, xtd::enum_type& type) {values = {{xtd::drawing::drawing2d::flush_intention::flush, "flush"}, {xtd::drawing::drawing2d::flush_intention::sync, "sync"}};}
+};
+/// @endcond

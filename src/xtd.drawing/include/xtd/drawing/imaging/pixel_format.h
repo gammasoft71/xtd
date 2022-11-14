@@ -2,9 +2,7 @@
 /// @brief Contains xtd::drawing::imaging::pixel_format enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <cstdint>
-#include <ostream>
-#include <string>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -72,20 +70,17 @@ namespace xtd {
       };
       
       /// @cond
-      inline pixel_format& operator +=(pixel_format& lhs, pixel_format rhs) {lhs = static_cast<pixel_format>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
-      inline pixel_format& operator -=(pixel_format& lhs, pixel_format rhs) {lhs = static_cast<pixel_format>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}
-      inline pixel_format& operator &=(pixel_format& lhs, pixel_format rhs) {lhs = static_cast<pixel_format>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); return lhs;}
-      inline pixel_format& operator |=(pixel_format& lhs, pixel_format rhs) {lhs = static_cast<pixel_format>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); return lhs;}
-      inline pixel_format& operator ^=(pixel_format& lhs, pixel_format rhs) {lhs = static_cast<pixel_format>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); return lhs;}
-      inline pixel_format operator +(pixel_format lhs, pixel_format rhs) {return static_cast<pixel_format>(static_cast<long long>(lhs) + static_cast<long long>(rhs));}
-      inline pixel_format operator -(pixel_format lhs, pixel_format rhs) {return static_cast<pixel_format>(static_cast<long long>(lhs) - static_cast<long long>(rhs));}
-      inline pixel_format operator ~(pixel_format rhs) {return static_cast<pixel_format>(~static_cast<long long>(rhs));}
-      inline pixel_format operator &(pixel_format lhs, pixel_format rhs) {return static_cast<pixel_format>(static_cast<long long>(lhs) & static_cast<long long>(rhs));}
-      inline pixel_format operator |(pixel_format lhs, pixel_format rhs) {return static_cast<pixel_format>(static_cast<long long>(lhs) | static_cast<long long>(rhs));}
-      inline pixel_format operator ^(pixel_format lhs, pixel_format rhs) {return static_cast<pixel_format>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs));}
-      inline std::ostream& operator<<(std::ostream& os, pixel_format value) {return os << xtd::to_string(value, {{pixel_format::undefined, "undefined"}, {pixel_format::max, "max"}, {pixel_format::indexed, "indexed"}, {pixel_format::gdi, "gdi"}, {pixel_format::format16bpp_rgb555, "format16bpp_rgb555"}, {pixel_format::format16bpp_rgb565, "format16bpp_rgb565"}, {pixel_format::format24bpp_rgb, "format24bpp_rgb"}, {pixel_format::format32bpp_rgb, "format32bpp_rgb"}, {pixel_format::format1bpp_indexed, "format1bpp_indexed"}, {pixel_format::format4bpp_indexed, "format4bpp_indexed"}, {pixel_format::format8bpp_indexed, "format8bpp_indexed"}, {pixel_format::alpha, "alpha"}, {pixel_format::format16bpp_argb1555, "format16bpp_argb1555"}, {pixel_format::palpha, "palpha"}, {pixel_format::format32bpp_pargb, "format32bpp_pargb"}, {pixel_format::extended, "extended"}, {pixel_format::format16bpp_gray_scale, "format16bpp_gray_scale"}, {pixel_format::format48bpp_rgb, "format48bpp_rgb"}, {pixel_format::format64bpp_pargb, "format64bpp_pargb"}, {pixel_format::canonical, "canonical"}, {pixel_format::format32bpp_argb, "format32bpp_argb"}, {pixel_format::format64bpp_argb, "format64bpp_argb"}});}
-      inline std::wostream& operator<<(std::wostream& os, pixel_format value) {return os << xtd::to_string(value, {{pixel_format::undefined, L"undefined"}, {pixel_format::max, L"max"}, {pixel_format::indexed, L"indexed"}, {pixel_format::gdi, L"gdi"}, {pixel_format::format16bpp_rgb555, L"format16bpp_rgb555"}, {pixel_format::format16bpp_rgb565, L"format16bpp_rgb565"}, {pixel_format::format24bpp_rgb, L"format24bpp_rgb"}, {pixel_format::format32bpp_rgb, L"format32bpp_rgb"}, {pixel_format::format1bpp_indexed, L"format1bpp_indexed"}, {pixel_format::format4bpp_indexed, L"format4bpp_indexed"}, {pixel_format::format8bpp_indexed, L"format8bpp_indexed"}, {pixel_format::alpha, L"alpha"}, {pixel_format::format16bpp_argb1555, L"format16bpp_argb1555"}, {pixel_format::palpha, L"palpha"}, {pixel_format::format32bpp_pargb, L"format32bpp_pargb"}, {pixel_format::extended, L"extended"}, {pixel_format::format16bpp_gray_scale, L"format16bpp_gray_scale"}, {pixel_format::format48bpp_rgb, L"format48bpp_rgb"}, {pixel_format::format64bpp_pargb, L"format64bpp_pargb"}, {pixel_format::canonical, L"canonical"}, {pixel_format::format32bpp_argb, L"format32bpp_argb"}, {pixel_format::format64bpp_argb, L"format64bpp_argb"}});}
+      add_enum_flag_operators_(xtd::drawing::imaging::pixel_format);
       /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::imaging::pixel_format> {
+  void operator()(xtd::enum_collection<xtd::drawing::imaging::pixel_format>& values, xtd::enum_type& type) {
+    values = {{xtd::drawing::imaging::pixel_format::undefined, "undefined"}, {xtd::drawing::imaging::pixel_format::max, "max"}, {xtd::drawing::imaging::pixel_format::indexed, "indexed"}, {xtd::drawing::imaging::pixel_format::gdi, "gdi"}, {xtd::drawing::imaging::pixel_format::format16bpp_rgb555, "format16bpp_rgb555"}, {xtd::drawing::imaging::pixel_format::format16bpp_rgb565, "format16bpp_rgb565"}, {xtd::drawing::imaging::pixel_format::format24bpp_rgb, "format24bpp_rgb"}, {xtd::drawing::imaging::pixel_format::format32bpp_rgb, "format32bpp_rgb"}, {xtd::drawing::imaging::pixel_format::format1bpp_indexed, "format1bpp_indexed"}, {xtd::drawing::imaging::pixel_format::format4bpp_indexed, "format4bpp_indexed"}, {xtd::drawing::imaging::pixel_format::format8bpp_indexed, "format8bpp_indexed"}, {xtd::drawing::imaging::pixel_format::alpha, "alpha"}, {xtd::drawing::imaging::pixel_format::format16bpp_argb1555, "format16bpp_argb1555"}, {xtd::drawing::imaging::pixel_format::palpha, "palpha"}, {xtd::drawing::imaging::pixel_format::format32bpp_pargb, "format32bpp_pargb"}, {xtd::drawing::imaging::pixel_format::extended, "extended"}, {xtd::drawing::imaging::pixel_format::format16bpp_gray_scale, "format16bpp_gray_scale"}, {xtd::drawing::imaging::pixel_format::format48bpp_rgb, "format48bpp_rgb"}, {xtd::drawing::imaging::pixel_format::format64bpp_pargb, "format64bpp_pargb"}, {xtd::drawing::imaging::pixel_format::canonical, "canonical"}, {xtd::drawing::imaging::pixel_format::format32bpp_argb, "format32bpp_argb"}, {xtd::drawing::imaging::pixel_format::format64bpp_argb, "format64bpp_argb"}};
+    type = xtd::enum_type::flags;
+  }
+};
+/// @endcond

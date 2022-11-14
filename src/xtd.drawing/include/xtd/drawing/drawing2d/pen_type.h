@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::drawing2d::pen_type enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -33,11 +33,12 @@ namespace xtd {
         /// @brief Specifies a radial gradient fill.
         radial_gradient = 6,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, pen_type value) {return os << to_string(value, {{pen_type::solid_color, "solid_color"}, {pen_type::hatch_fill, "hatch_fill"}, {pen_type::texture_fill, "texture_fill"}, {pen_type::path_gradient, "path_gradient"}, {pen_type::linear_gradient, "linear_gradient"}, {pen_type::conical_gradient, "conical_gradient"}, {pen_type::radial_gradient, "radial_gradient"}});}
-      inline std::wostream& operator<<(std::wostream& os, pen_type value) {return os << to_string(value, {{pen_type::solid_color, L"solid_color"}, {pen_type::hatch_fill, L"hatch_fill"}, {pen_type::texture_fill, L"texture_fill"}, {pen_type::path_gradient, L"path_gradient"}, {pen_type::linear_gradient, L"linear_gradient"}, {pen_type::conical_gradient, L"conical_gradient"}, {pen_type::radial_gradient, L"radial_gradient"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::drawing2d::pen_type> {
+  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::pen_type>& values, xtd::enum_type& type) {values = {{xtd::drawing::drawing2d::pen_type::solid_color, "solid_color"}, {xtd::drawing::drawing2d::pen_type::hatch_fill, "hatch_fill"}, {xtd::drawing::drawing2d::pen_type::texture_fill, "texture_fill"}, {xtd::drawing::drawing2d::pen_type::path_gradient, "path_gradient"}, {xtd::drawing::drawing2d::pen_type::linear_gradient, "linear_gradient"}, {xtd::drawing::drawing2d::pen_type::conical_gradient, "conical_gradient"}, {xtd::drawing::drawing2d::pen_type::radial_gradient, "radial_gradient"}};}
+};
+/// @endcond

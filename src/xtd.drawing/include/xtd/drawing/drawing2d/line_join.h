@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::drawing2d::line_join enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -27,11 +27,12 @@ namespace xtd {
         /// @brief Specifies a mitered join. This produces a sharp corner or a beveled corner, depending on whether the length of the miter exceeds the miter limit.
         miter_clipped = 3,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, line_join value) {return os << to_string(value, {{line_join::miter, "miter"}, {line_join::bevel, "bevel"}, {line_join::round, "round"}, {line_join::miter_clipped, "miter_clipped"}});}
-      inline std::wostream& operator<<(std::wostream& os, line_join value) {return os << to_string(value, {{line_join::miter, L"miter"}, {line_join::bevel, L"bevel"}, {line_join::round, L"round"}, {line_join::miter_clipped, L"miter_clipped"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::drawing2d::line_join> {
+  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::line_join>& values, xtd::enum_type& type) {values = {{xtd::drawing::drawing2d::line_join::miter, "miter"}, {xtd::drawing::drawing2d::line_join::bevel, "bevel"}, {xtd::drawing::drawing2d::line_join::round, "round"}, {xtd::drawing::drawing2d::line_join::miter_clipped, "miter_clipped"}};}
+};
+/// @endcond

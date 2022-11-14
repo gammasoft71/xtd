@@ -2,9 +2,7 @@
 /// @brief Contains xtd::drawing::imaging::image_flags  class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <cstdint>
-#include <ostream>
-#include <string>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -49,11 +47,12 @@ namespace xtd {
         /// @brief The pixel data can be cached for faster access.
         caching = 0b100000000000000000,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, image_flags value) {return os << xtd::to_string(value, {{image_flags::none, "none"}, {image_flags::scalable, "scalable"}, {image_flags::has_alpha, "has_alpha"}, {image_flags::has_translucent, "has_translucent"}, {image_flags::partially_scalable, "partially_scalable"}, {image_flags::color_space_rgb, "color_space_rgb"}, {image_flags::color_space_cmyk, "color_space_cmyk"}, {image_flags::color_space_gray, "color_space_gray"}, {image_flags::color_space_ycbcr, "color_space_ycbcr"}, {image_flags::color_space_ycck, "color_space_ycck"}, {image_flags::has_real_dpi, "has_real_dpi"}, {image_flags::has_real_pixel_size, "has_real_pixel_size"}, {image_flags::read_only, "read_only"}, {image_flags::caching, "caching"}});}
-      inline std::wostream& operator<<(std::wostream& os, image_flags value) {return os << xtd::to_string(value, {{image_flags::none, L"none"}, {image_flags::scalable, L"scalable"}, {image_flags::has_alpha, L"has_alpha"}, {image_flags::has_translucent, L"has_translucent"}, {image_flags::partially_scalable, L"partially_scalable"}, {image_flags::color_space_rgb, L"color_space_rgb"}, {image_flags::color_space_cmyk, L"color_space_cmyk"}, {image_flags::color_space_gray, L"color_space_gray"}, {image_flags::color_space_ycbcr, L"color_space_ycbcr"}, {image_flags::color_space_ycck, L"color_space_ycck"}, {image_flags::has_real_dpi, L"has_real_dpi"}, {image_flags::has_real_pixel_size, L"has_real_pixel_size"}, {image_flags::read_only, L"read_only"}, {image_flags::caching, L"caching"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::imaging::image_flags> {
+  void operator()(xtd::enum_collection<xtd::drawing::imaging::image_flags>& values, xtd::enum_type& type) {values = {{xtd::drawing::imaging::image_flags::none, "none"}, {xtd::drawing::imaging::image_flags::scalable, "scalable"}, {xtd::drawing::imaging::image_flags::has_alpha, "has_alpha"}, {xtd::drawing::imaging::image_flags::has_translucent, "has_translucent"}, {xtd::drawing::imaging::image_flags::partially_scalable, "partially_scalable"}, {xtd::drawing::imaging::image_flags::color_space_rgb, "color_space_rgb"}, {xtd::drawing::imaging::image_flags::color_space_cmyk, "color_space_cmyk"}, {xtd::drawing::imaging::image_flags::color_space_gray, "color_space_gray"}, {xtd::drawing::imaging::image_flags::color_space_ycbcr, "color_space_ycbcr"}, {xtd::drawing::imaging::image_flags::color_space_ycck, "color_space_ycck"}, {xtd::drawing::imaging::image_flags::has_real_dpi, "has_real_dpi"}, {xtd::drawing::imaging::image_flags::has_real_pixel_size, "has_real_pixel_size"}, {xtd::drawing::imaging::image_flags::read_only, "read_only"}, {xtd::drawing::imaging::image_flags::caching, "caching"}};}
+};
+/// @endcond

@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::drawing2d::pixel_offset_mode enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -31,11 +31,12 @@ namespace xtd {
         /// @brief Specifies that pixels are offset by -.5 units, both horizontally and vertically, for high speed antialiasing.
         half = 4,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, pixel_offset_mode value) {return os << to_string(value, {{pixel_offset_mode::invalid, "invalid"}, {pixel_offset_mode::default_value, "default_value"}, {pixel_offset_mode::high_speed, "high_speed"}, {pixel_offset_mode::high_quality, "high_quality"}, {pixel_offset_mode::none, "none"}, {pixel_offset_mode::half, "half"}});}
-      inline std::wostream& operator<<(std::wostream& os, pixel_offset_mode value) {return os << to_string(value, {{pixel_offset_mode::invalid, L"invalid"}, {pixel_offset_mode::default_value, L"default_value"}, {pixel_offset_mode::high_speed, L"high_speed"}, {pixel_offset_mode::high_quality, L"high_quality"}, {pixel_offset_mode::none, L"none"}, {pixel_offset_mode::half, L"half"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::drawing2d::pixel_offset_mode> {
+  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::pixel_offset_mode>& values, xtd::enum_type& type) {values = {{xtd::drawing::drawing2d::pixel_offset_mode::invalid, "invalid"}, {xtd::drawing::drawing2d::pixel_offset_mode::default_value, "default_value"}, {xtd::drawing::drawing2d::pixel_offset_mode::high_speed, "high_speed"}, {xtd::drawing::drawing2d::pixel_offset_mode::high_quality, "high_quality"}, {xtd::drawing::drawing2d::pixel_offset_mode::none, "none"}, {xtd::drawing::drawing2d::pixel_offset_mode::half, "half"}};}
+};
+/// @endcond

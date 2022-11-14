@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::drawing2d::pen_alignment enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -30,11 +30,12 @@ namespace xtd {
         /// @brief Specifies the xtd::drawing::pen is positioned to the right of the theoretical line.
         right = 4,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, pen_alignment value) {return os << to_string(value, {{pen_alignment::center, "center"}, {pen_alignment::inset, "inset"}, {pen_alignment::outset, "outset"}, {pen_alignment::left, "left"}, {pen_alignment::right, "right"}});}
-      inline std::wostream& operator<<(std::wostream& os, pen_alignment value) {return os << to_string(value, {{pen_alignment::center, L"center"}, {pen_alignment::inset, L"inset"}, {pen_alignment::outset, L"outset"}, {pen_alignment::left, L"left"}, {pen_alignment::right, L"right"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::drawing2d::pen_alignment> {
+  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::pen_alignment>& values, xtd::enum_type& type) {values = {{xtd::drawing::drawing2d::pen_alignment::center, "center"}, {xtd::drawing::drawing2d::pen_alignment::inset, "inset"}, {xtd::drawing::drawing2d::pen_alignment::outset, "outset"}, {xtd::drawing::drawing2d::pen_alignment::left, "left"}, {xtd::drawing::drawing2d::pen_alignment::right, "right"}};}
+};
+/// @endcond

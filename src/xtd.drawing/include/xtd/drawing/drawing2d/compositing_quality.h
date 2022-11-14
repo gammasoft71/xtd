@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::drawing2d::compositing_quality enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -31,11 +31,12 @@ namespace xtd {
         /// @brief Assume linear values.
         assume_linear = 4,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, compositing_quality value) {return os << to_string(value, {{compositing_quality::invalid, "invalid"}, {compositing_quality::default_value, "default_value"}, {compositing_quality::high_speed, "high_speed"}, {compositing_quality::high_quality, "high_quality"}, {compositing_quality::gamma_corrected, "gamma_corrected"}, {compositing_quality::assume_linear, "assume_linear"}});}
-      inline std::wostream& operator<<(std::wostream& os, compositing_quality value) {return os << to_string(value, {{compositing_quality::invalid, L"invalid"}, {compositing_quality::default_value, L"default_value"}, {compositing_quality::high_speed, L"high_speed"}, {compositing_quality::high_quality, L"high_quality"}, {compositing_quality::gamma_corrected, L"gamma_corrected"}, {compositing_quality::assume_linear, L"assume_linear"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::drawing2d::compositing_quality> {
+  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::compositing_quality>& values, xtd::enum_type& type) {values = {{xtd::drawing::drawing2d::compositing_quality::invalid, "invalid"}, {xtd::drawing::drawing2d::compositing_quality::default_value, "default_value"}, {xtd::drawing::drawing2d::compositing_quality::high_speed, "high_speed"}, {xtd::drawing::drawing2d::compositing_quality::high_quality, "high_quality"}, {xtd::drawing::drawing2d::compositing_quality::gamma_corrected, "gamma_corrected"}, {xtd::drawing::drawing2d::compositing_quality::assume_linear, "assume_linear"}};}
+};
+/// @endcond

@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::text::generic_font_families enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -24,11 +24,12 @@ namespace xtd {
         /// @brief A generic Monospace font_family object.
         monospace = 2
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, generic_font_families value) {return os << xtd::to_string(value, {{generic_font_families::serif, "serif"}, {generic_font_families::sans_serif, "sans_serif"}, {generic_font_families::monospace, "italic"}});}
-      inline std::wostream& operator<<(std::wostream& os, generic_font_families value) {return os << xtd::to_string(value, {{generic_font_families::serif, L"serif"}, {generic_font_families::sans_serif, L"sans_serif"}, {generic_font_families::monospace, L"italic"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::text::generic_font_families> {
+  void operator()(xtd::enum_collection<xtd::drawing::text::generic_font_families>& values, xtd::enum_type& type) {values = {{xtd::drawing::text::generic_font_families::serif, "serif"}, {xtd::drawing::text::generic_font_families::sans_serif, "sans_serif"}, {xtd::drawing::text::generic_font_families::monospace, "italic"}};}
+};
+/// @endcond

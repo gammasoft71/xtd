@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::drawing2d::smoothing_mode enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -34,11 +34,12 @@ namespace xtd {
         /// @brief Specifies that pixels are offset by -.5 units, both horizontally and vertically, for high speed antialiasing.
         anti_alias = 4,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, smoothing_mode value) {return os << to_string(value, {{smoothing_mode::invalid, "invalid"}, {smoothing_mode::default_value, "default_value"}, {smoothing_mode::high_speed, "high_speed"}, {smoothing_mode::high_quality, "high_quality"}, {smoothing_mode::none, "none"}, {smoothing_mode::anti_alias, "anti_alias"}});}
-      inline std::wostream& operator<<(std::wostream& os, smoothing_mode value) {return os << to_string(value, {{smoothing_mode::invalid, L"invalid"}, {smoothing_mode::default_value, L"default_value"}, {smoothing_mode::high_speed, L"high_speed"}, {smoothing_mode::high_quality, L"high_quality"}, {smoothing_mode::none, L"none"}, {smoothing_mode::anti_alias, L"anti_alias"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::drawing2d::smoothing_mode> {
+  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::smoothing_mode>& values, xtd::enum_type& type) {values = {{xtd::drawing::drawing2d::smoothing_mode::invalid, "invalid"}, {xtd::drawing::drawing2d::smoothing_mode::default_value, "default_value"}, {xtd::drawing::drawing2d::smoothing_mode::high_speed, "high_speed"}, {xtd::drawing::drawing2d::smoothing_mode::high_quality, "high_quality"}, {xtd::drawing::drawing2d::smoothing_mode::none, "none"}, {xtd::drawing::drawing2d::smoothing_mode::anti_alias, "anti_alias"}};}
+};
+/// @endcond

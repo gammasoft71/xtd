@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::drawing2d::interpolation_mode enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -36,11 +36,12 @@ namespace xtd {
         /// @brief Specifies high-quality, bicubic interpolation. Prefiltering is performed to ensure high-quality shrinking. This mode produces the highest quality transformed images.
         high_quality_bicubic = 7,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, interpolation_mode value) {return os << to_string(value, {{interpolation_mode::invalid, "invalid"}, {interpolation_mode::default_value, "default_value"}, {interpolation_mode::low, "low"}, {interpolation_mode::hight, "hight"}, {interpolation_mode::bilinear, "bilinear"}, {interpolation_mode::bicubic, "bicubic"}, {interpolation_mode::nearest_neighbor, "nearest_neighbor"}, {interpolation_mode::high_quality_bilinear, "high_quality_bilinear"}, {interpolation_mode::high_quality_bicubic, "high_quality_bicubic"}});}
-      inline std::wostream& operator<<(std::wostream& os, interpolation_mode value) {return os << to_string(value, {{interpolation_mode::invalid, L"invalid"}, {interpolation_mode::default_value, L"default_value"}, {interpolation_mode::low, L"low"}, {interpolation_mode::hight, L"hight"}, {interpolation_mode::bilinear, L"bilinear"}, {interpolation_mode::bicubic, L"bicubic"}, {interpolation_mode::nearest_neighbor, L"nearest_neighbor"}, {interpolation_mode::high_quality_bilinear, L"high_quality_bilinear"}, {interpolation_mode::high_quality_bicubic, L"high_quality_bicubic"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::drawing2d::interpolation_mode> {
+  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::interpolation_mode>& values, xtd::enum_type& type) {values = {{xtd::drawing::drawing2d::interpolation_mode::invalid, "invalid"}, {xtd::drawing::drawing2d::interpolation_mode::default_value, "default_value"}, {xtd::drawing::drawing2d::interpolation_mode::low, "low"}, {xtd::drawing::drawing2d::interpolation_mode::hight, "hight"}, {xtd::drawing::drawing2d::interpolation_mode::bilinear, "bilinear"}, {xtd::drawing::drawing2d::interpolation_mode::bicubic, "bicubic"}, {xtd::drawing::drawing2d::interpolation_mode::nearest_neighbor, "nearest_neighbor"}, {xtd::drawing::drawing2d::interpolation_mode::high_quality_bilinear, "high_quality_bilinear"}, {xtd::drawing::drawing2d::interpolation_mode::high_quality_bicubic, "high_quality_bicubic"}};}
+};
+/// @endcond
