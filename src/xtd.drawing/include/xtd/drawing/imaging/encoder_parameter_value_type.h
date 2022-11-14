@@ -2,13 +2,11 @@
 /// @brief Contains xtd::drawing::imaging::encoder_parameter_value_type  class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <cstdint>
-#include <ostream>
-#include <string>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
+  /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::imaging, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief The xtd.drawing.imaging namespace provides advanced GDI+ imaging functionality. Basic graphics functionality is provided by the xtd.drawing namespace.
     /// @remarks The metafile class provides methods for recording and saving metafiles. The encoder class enables users to extend GDI+ to support any image format. The property_item class provides methods for storing and retrieving metadata in image files.
@@ -39,11 +37,12 @@ namespace xtd {
         /// @brief A pointer to a block of custom metadata.
         value_type_rational_pointer = 9,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, encoder_parameter_value_type value) {return os << xtd::to_string(value, {{encoder_parameter_value_type::value_type_byte, "value_type_byte"}, {encoder_parameter_value_type::value_type_ascii, "value_type_ascii"}, {encoder_parameter_value_type::value_type_short, "value_type_short"}, {encoder_parameter_value_type::value_type_long, "value_type_long"}, {encoder_parameter_value_type::value_type_rational, "value_type_rational"}, {encoder_parameter_value_type::value_type_long_range, "value_type_long_range"}, {encoder_parameter_value_type::value_type_undefined, "value_type_undefined"}, {encoder_parameter_value_type::value_type_rational_range, "value_type_rational_range"}, {encoder_parameter_value_type::value_type_rational_pointer, "value_type_rational_pointer"}});}
-      inline std::wostream& operator<<(std::wostream& os, encoder_parameter_value_type value) {return os << xtd::to_string(value, {{encoder_parameter_value_type::value_type_byte, L"value_type_byte"}, {encoder_parameter_value_type::value_type_ascii, L"value_type_ascii"}, {encoder_parameter_value_type::value_type_short, L"value_type_short"}, {encoder_parameter_value_type::value_type_long, L"value_type_long"}, {encoder_parameter_value_type::value_type_rational, L"value_type_rational"}, {encoder_parameter_value_type::value_type_long_range, L"value_type_long_range"}, {encoder_parameter_value_type::value_type_undefined, L"value_type_undefined"}, {encoder_parameter_value_type::value_type_rational_range, L"value_type_rational_range"}, {encoder_parameter_value_type::value_type_rational_pointer, L"value_type_rational_pointer"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::imaging::encoder_parameter_value_type> {
+  void operator()(xtd::enum_collection<xtd::drawing::imaging::encoder_parameter_value_type>& values, xtd::enum_type& type) {values = {{xtd::drawing::imaging::encoder_parameter_value_type::value_type_byte, "value_type_byte"}, {xtd::drawing::imaging::encoder_parameter_value_type::value_type_ascii, "value_type_ascii"}, {xtd::drawing::imaging::encoder_parameter_value_type::value_type_short, "value_type_short"}, {xtd::drawing::imaging::encoder_parameter_value_type::value_type_long, "value_type_long"}, {xtd::drawing::imaging::encoder_parameter_value_type::value_type_rational, "value_type_rational"}, {xtd::drawing::imaging::encoder_parameter_value_type::value_type_long_range, "value_type_long_range"}, {xtd::drawing::imaging::encoder_parameter_value_type::value_type_undefined, "value_type_undefined"}, {xtd::drawing::imaging::encoder_parameter_value_type::value_type_rational_range, "value_type_rational_range"}, {xtd::drawing::imaging::encoder_parameter_value_type::value_type_rational_pointer, "value_type_rational_pointer"}};}
+};
+/// @endcond

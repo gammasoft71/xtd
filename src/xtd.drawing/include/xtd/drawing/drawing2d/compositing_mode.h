@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::drawing2d::compositing_mode enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -22,11 +22,12 @@ namespace xtd {
         /// @brief Specifies that when a color is rendered, it overwrites the background color.
         source_copy = 1,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, compositing_mode value) {return os << to_string(value, {{compositing_mode::source_over, "source_over"}, {compositing_mode::source_copy, "source_copy"}});}
-      inline std::wostream& operator<<(std::wostream& os, compositing_mode value) {return os << to_string(value, {{compositing_mode::source_over, L"source_over"}, {compositing_mode::source_copy, L"source_copy"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::drawing2d::compositing_mode> {
+  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::compositing_mode>& values, xtd::enum_type& type) {values = {{xtd::drawing::drawing2d::compositing_mode::source_over, "source_over"}, {xtd::drawing::drawing2d::compositing_mode::source_copy, "source_copy"}};}
+};
+/// @endcond

@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::fill_mode enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -26,11 +26,12 @@ namespace xtd {
         /// @brief Specifies the winding fill mode.
         winding,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, fill_mode value) {return os << xtd::to_string(value, {{fill_mode::alternate, "alternate"}, {fill_mode::winding, "winding"}});}
-      inline std::wostream& operator<<(std::wostream& os, fill_mode value) {return os << xtd::to_string(value, {{fill_mode::alternate, L"alternate"}, {fill_mode::winding, L"winding"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::drawing2d::fill_mode> {
+  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::fill_mode>& values, xtd::enum_type& type) {values = {{xtd::drawing::drawing2d::fill_mode::alternate, "alternate"}, {xtd::drawing::drawing2d::fill_mode::winding, "winding"}};}
+};
+/// @endcond

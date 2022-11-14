@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::text::text_rendering_hint enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -31,11 +31,12 @@ namespace xtd {
         /// @brief Each character is drawn using its glyph ClearType bitmap with hinting. The highest quality setting. Used to take advantage of ClearType font features.
         clear_type_grid_fit = 5
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, text_rendering_hint value) {return os << xtd::to_string(value, {{text_rendering_hint::system_default, "system_default"}, {text_rendering_hint::single_bit_per_pixel_grid_fit, "single_bit_per_pixel_grid_fit"}, {text_rendering_hint::single_bit_per_pixel, "single_bit_per_pixel"}, {text_rendering_hint::anti_alias_grid_fit, "anti_alias_grid_fit"}, {text_rendering_hint::anti_alias, "anti_alias"}, {text_rendering_hint::clear_type_grid_fit, "clear_type_grid_fit"}});}
-      inline std::wostream& operator<<(std::wostream& os, text_rendering_hint value) {return os << xtd::to_string(value, {{text_rendering_hint::system_default, L"system_default"}, {text_rendering_hint::single_bit_per_pixel_grid_fit, L"single_bit_per_pixel_grid_fit"}, {text_rendering_hint::single_bit_per_pixel, L"single_bit_per_pixel"}, {text_rendering_hint::anti_alias_grid_fit, L"anti_alias_grid_fit"}, {text_rendering_hint::anti_alias, L"anti_alias"}, {text_rendering_hint::clear_type_grid_fit, L"clear_type_grid_fit"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::text::text_rendering_hint> {
+  void operator()(xtd::enum_collection<xtd::drawing::text::text_rendering_hint>& values, xtd::enum_type& type) {values = {{xtd::drawing::text::text_rendering_hint::system_default, "system_default"}, {xtd::drawing::text::text_rendering_hint::single_bit_per_pixel_grid_fit, "single_bit_per_pixel_grid_fit"}, {xtd::drawing::text::text_rendering_hint::single_bit_per_pixel, "single_bit_per_pixel"}, {xtd::drawing::text::text_rendering_hint::anti_alias_grid_fit, "anti_alias_grid_fit"}, {xtd::drawing::text::text_rendering_hint::anti_alias, "anti_alias"}, {xtd::drawing::text::text_rendering_hint::clear_type_grid_fit, "clear_type_grid_fit"}};}
+};
+/// @endcond

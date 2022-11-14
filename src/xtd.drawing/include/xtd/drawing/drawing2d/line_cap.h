@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::drawing2d::line_cap enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -24,11 +24,12 @@ namespace xtd {
         /// @brief Specifies a round line cap.
         round = 2,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, line_cap value) {return os << to_string(value, {{line_cap::flat, "flat"}, {line_cap::square, "square"}, {line_cap::round, "round"}});}
-      inline std::wostream& operator<<(std::wostream& os, line_cap value) {return os << to_string(value, {{line_cap::flat, L"flat"}, {line_cap::square, L"square"}, {line_cap::round, L"round"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::drawing2d::line_cap> {
+  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::line_cap>& values, xtd::enum_type& type) {values = {{xtd::drawing::drawing2d::line_cap::flat, "flat"}, {xtd::drawing::drawing2d::line_cap::square, "square"}, {xtd::drawing::drawing2d::line_cap::round, "round"}};}
+};
+/// @endcond

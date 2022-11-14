@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::drawing2d::linear_gradient_mode enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -26,11 +26,12 @@ namespace xtd {
         /// @brief Specifies a gradient from upper right to lower left.
         backward_diagonal = 3
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, linear_gradient_mode value) {return os << to_string(value, {{linear_gradient_mode::horizontal, "horizontal"}, {linear_gradient_mode::vertical, "vertical"}, {linear_gradient_mode::forward_diagonal, "forward_diagonal"}, {linear_gradient_mode::backward_diagonal, "backward_diagonal"}});}
-      inline std::wostream& operator<<(std::wostream& os, linear_gradient_mode value) {return os << to_string(value, {{linear_gradient_mode::horizontal, L"horizontal"}, {linear_gradient_mode::vertical, L"vertical"}, {linear_gradient_mode::forward_diagonal, L"forward_diagonal"}, {linear_gradient_mode::backward_diagonal, L"backward_diagonal"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::drawing2d::linear_gradient_mode> {
+  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::linear_gradient_mode>& values, xtd::enum_type& type) {values = {{xtd::drawing::drawing2d::linear_gradient_mode::horizontal, "horizontal"}, {xtd::drawing::drawing2d::linear_gradient_mode::vertical, "vertical"}, {xtd::drawing::drawing2d::linear_gradient_mode::forward_diagonal, "forward_diagonal"}, {xtd::drawing::drawing2d::linear_gradient_mode::backward_diagonal, "backward_diagonal"}};}
+};
+/// @endcond

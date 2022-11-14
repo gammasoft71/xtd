@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::text::hotkey_prefix enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -25,11 +25,12 @@ namespace xtd {
         /// @brief Do not display the hot-key prefix.
         hide = 2
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, hotkey_prefix value) {return os << xtd::to_string(value, {{hotkey_prefix::none, "none"}, {hotkey_prefix::show, "show"}, {hotkey_prefix::hide, "hide"}});}
-      inline std::wostream& operator<<(std::wostream& os, hotkey_prefix value) {return os << xtd::to_string(value, {{hotkey_prefix::none, L"none"}, {hotkey_prefix::show, L"show"}, {hotkey_prefix::hide, L"hide"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::text::hotkey_prefix> {
+  void operator()(xtd::enum_collection<xtd::drawing::text::hotkey_prefix>& values, xtd::enum_type& type) {values = {{xtd::drawing::text::hotkey_prefix::none, "none"}, {xtd::drawing::text::hotkey_prefix::show, "show"}, {xtd::drawing::text::hotkey_prefix::hide, "hide"}};}
+};
+/// @endcond
