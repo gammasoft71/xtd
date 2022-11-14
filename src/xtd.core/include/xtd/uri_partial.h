@@ -2,7 +2,7 @@
 /// @brief Contains Switch::System::UriPartial enum.
 #pragma once
 
-#include "ustring.h"
+#include "enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -23,9 +23,10 @@ namespace xtd {
     /// @brief The scheme, authority, path, and query segments of the URI.
     query = 3,
   };
-  
-  /// @cond
-  inline std::ostream& operator<<(std::ostream& os, const uri_partial value) {return os << to_string(value, { {uri_partial::scheme, "scheme"}, {uri_partial::authority, "authority"}, {uri_partial::path, "path"}, {uri_partial::query, "query"}});}
-  inline std::wostream& operator<<(std::wostream& os, const uri_partial value) {return os << to_string(value, { {uri_partial::scheme, L"scheme"}, {uri_partial::authority, L"authority"}, {uri_partial::path, L"path"}, {uri_partial::query, L"query"}});}
-  /// @endcond
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::uri_partial> {
+  void operator()(xtd::enum_collection<xtd::uri_partial>& values, xtd::enum_type& type) {values = { {xtd::uri_partial::scheme, "scheme"}, {xtd::uri_partial::authority, "authority"}, {xtd::uri_partial::path, "path"}, {xtd::uri_partial::query, "query"}};}
+};
+/// @endcond

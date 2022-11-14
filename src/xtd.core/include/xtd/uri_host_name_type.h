@@ -2,7 +2,7 @@
 /// @brief Contains xtd::uri_host_name_type enum.
 #pragma once
 
-#include "ustring.h"
+#include "enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -25,9 +25,10 @@ namespace xtd {
     /// @brief The Uri is a relative xtd::uri.
     ip_v6 = 4,
   };
-  
-  /// @cond
-  inline std::ostream& operator<<(std::ostream& os, const uri_host_name_type value) {return os << to_string(value, {{uri_host_name_type::unknown, "unknown"}, {uri_host_name_type::basic, "basic"}, {uri_host_name_type::dns, "dns"}, {uri_host_name_type::ip_v4, "ip_v4"}, {uri_host_name_type::ip_v6, "ip_v6"}});}
-  inline std::wostream& operator<<(std::wostream& os, const uri_host_name_type value) {return os << to_string(value, {{uri_host_name_type::unknown, L"unknown"}, {uri_host_name_type::basic, L"basic"}, {uri_host_name_type::dns, L"dns"}, {uri_host_name_type::ip_v4, L"ip_v4"}, {uri_host_name_type::ip_v6, L"ip_v6"}});}
-  /// @endcond
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::uri_host_name_type> {
+  void operator()(xtd::enum_collection<xtd::uri_host_name_type>& values, xtd::enum_type& type) {values = {{xtd::uri_host_name_type::unknown, "unknown"}, {xtd::uri_host_name_type::basic, "basic"}, {xtd::uri_host_name_type::dns, "dns"}, {xtd::uri_host_name_type::ip_v4, "ip_v4"}, {xtd::uri_host_name_type::ip_v6, "ip_v6"}};}
+};
+/// @endcond

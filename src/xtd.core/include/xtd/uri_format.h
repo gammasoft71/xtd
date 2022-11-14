@@ -2,7 +2,7 @@
 /// @brief Contains xtd::uri_format enum.
 #pragma once
 
-#include "ustring.h"
+#include "enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -23,9 +23,10 @@ namespace xtd {
     /// @brief Escaping is performed according to the rules in RFC 2396.
     uri_escaped = 2,
   };
-  
-  /// @cond
-  inline std::ostream& operator<<(std::ostream& os, const uri_format value) {return os << to_string(value, {{uri_format::safe_unescaped, "safe_unescaped"}, {uri_format::unescaped, "unescaped"}, {uri_format::uri_escaped, "uri_escaped"}});}
-  inline std::wostream& operator<<(std::wostream& os, const uri_format value) {return os << to_string(value, {{uri_format::safe_unescaped, L"safe_unescaped"}, {uri_format::unescaped, L"unescaped"}, {uri_format::uri_escaped, L"uri_escaped"}});}
-  /// @endcond
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::uri_format> {
+  void operator()(xtd::enum_collection<xtd::uri_format>& values, xtd::enum_type& type) {values = {{xtd::uri_format::safe_unescaped, "safe_unescaped"}, {xtd::uri_format::unescaped, "unescaped"}, {xtd::uri_format::uri_escaped, "uri_escaped"}};}
+};
+/// @endcond
