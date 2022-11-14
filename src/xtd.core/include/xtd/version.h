@@ -67,7 +67,9 @@ namespace xtd {
   ///
   /// enum class version_time {earlier = -1, same = 0, later = 1 };
   ///
-  /// std::ostream& operator<<(std::ostream& os, version_time value) {return os << to_string(value, {{version_time::earlier, "earlier"}, {version_time::same, "same"}, {version_time::later, "later"}});}
+  /// template<> struct xtd::enum_register<version_time> {
+  ///   void operator()(xtd::enum_collection<version_time>& values, xtd::enum_type& type) {values = {{version_time::earlier, "earlier"}, {version_time::same, "same"}, {version_time::later, "later"}};}
+  /// };
   ///
   /// class example {
   /// public:

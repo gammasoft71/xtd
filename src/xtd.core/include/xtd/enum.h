@@ -401,7 +401,6 @@ inline std::string __enum_to_string(enum_t value) {
 template<> struct xtd::enum_register<xtd::enum_type> {
   void operator()(xtd::enum_collection<xtd::enum_type>& values, xtd::enum_type& type) {
     values = {{enum_type::standard, L"standard"}, {enum_type::flags, L"flags"}};
-    type = xtd::enum_type::flags;
   }
 };
 

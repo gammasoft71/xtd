@@ -19,3 +19,5 @@ namespace xtd {
     ordinal_ignore_case
   };
 }
+
+// This file is included before enum definition so the enum_register is in the enum.h file.
