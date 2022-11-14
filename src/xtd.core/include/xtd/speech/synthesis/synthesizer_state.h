@@ -36,9 +36,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::speech::synthesis::synthesizer_state> {
-  void operator()(xtd::enum_collection<xtd::speech::synthesis::synthesizer_state>& values, xtd::enum_type& type) {
-    values = {{xtd::speech::synthesis::synthesizer_state::ready, "ready"}, {xtd::speech::synthesis::synthesizer_state::speaking, "speaking"}, {xtd::speech::synthesis::synthesizer_state::pause, "pause"}};
-    type = xtd::enum_type::flags;
-  }
+  void operator()(xtd::enum_collection<xtd::speech::synthesis::synthesizer_state>& values, xtd::enum_type& type) {values = {{xtd::speech::synthesis::synthesizer_state::ready, "ready"}, {xtd::speech::synthesis::synthesizer_state::speaking, "speaking"}, {xtd::speech::synthesis::synthesizer_state::pause, "pause"}};}
 };
 /// @endcond
