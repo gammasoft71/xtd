@@ -3,12 +3,15 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
+#include <mutex>
+#include "enum_type.h"
 #include "format_exception.h"
 #include "icomparable.h"
+#include "number_styles.h"
 #include "static.h"
-#include "enum_type.h"
+#include "string_comparison.h"
+#include "string_split_options.h"
 #include "ustring.h"
-#include <mutex>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -395,14 +398,26 @@ inline std::string __enum_to_string(enum_t value) {
   return xtd::enum_object<>::get_name(value);
 }
 
-/*
 template<> struct xtd::enum_register<xtd::enum_type> {
   void operator()(xtd::enum_collection<xtd::enum_type>& values, xtd::enum_type& type) {
     values = {{enum_type::standard, L"standard"}, {enum_type::flags, L"flags"}};
     type = xtd::enum_type::flags;
   }
 };
- */
+
+template<> struct xtd::enum_register<xtd::number_styles> {
+  void operator()(xtd::enum_collection<xtd::number_styles>& values, xtd::enum_type& type) {values = {{xtd::number_styles::none, "none"}, {xtd::number_styles::allow_leading_white, "allow_leading_white"}, {xtd::number_styles::allow_trailing_white, "allow_trailing_white"}, {xtd::number_styles::allow_leading_sign, "allow_leading_sign"}, {xtd::number_styles::allow_trailing_sign, "allow_trailing_sign"}, {xtd::number_styles::allow_parentheses, "allow_parentheses"}, {xtd::number_styles::allow_decimal_point, "allow_decimal_point"}, {xtd::number_styles::allow_thousands, "allow_thousands"}, {xtd::number_styles::allow_exponent, "allow_exponent"}, {xtd::number_styles::allow_currency_symbol, "allow_currency_symbol"}, {xtd::number_styles::allow_hex_specifier, "allow_hex_specifier"}, {xtd::number_styles::allow_binary_specifier, "allow_binary_specifier"}, {xtd::number_styles::allow_octal_specifier, "allow_octal_specifier"}, {xtd::number_styles::integer, "integer"}, {xtd::number_styles::number, "number"}, {xtd::number_styles::fixed_point, "fixed_point"}, {xtd::number_styles::currency, "currency"}, {xtd::number_styles::any, "any"}, {xtd::number_styles::hex_number, "hex_number"}, {xtd::number_styles::binary_number, "binary_number"}, {xtd::number_styles::octal_number, "octal_number"}};
+    type = xtd::enum_type::flags;
+  }
+};
+
+template<> struct xtd::enum_register<xtd::string_comparison> {
+  void operator()(xtd::enum_collection<xtd::string_comparison>& values, xtd::enum_type& type) {values = {{xtd::string_comparison::ordinal, "ordinal"}, {xtd::string_comparison::ordinal_ignore_case, "ordinal_ignore_case"}};}
+};
+
+template<> struct xtd::enum_register<xtd::string_split_options> {
+  void operator()(xtd::enum_collection<xtd::string_split_options>& values, xtd::enum_type& type) {values = {{xtd::string_split_options::none, "none"}, {xtd::string_split_options::remove_empty_entries, "remove_empty_entries"}};}
+};
 /// @endcond
 
 #define add_enum_flag_operators_(enum_name) \
