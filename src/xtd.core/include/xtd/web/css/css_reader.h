@@ -30,7 +30,7 @@ namespace xtd {
         /// @}
         
       private:
-        void parse_text(xtd::ustring text) {
+        void parse_text(const xtd::ustring& text) {
           enum class parse_status {
             selector,
             key,

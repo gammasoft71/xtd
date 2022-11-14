@@ -104,8 +104,7 @@ namespace xtd {
         static wxString TrimString(wxDC& dc, const wxString& string, const wxFont& font, float width, int32_t trimming) {
           dc.SetFont(font);
           auto strings = wxSplit(string, '\n');
-          auto results = strings;
-          for (auto& line : results) {
+          for (auto& line : strings) {
             switch (trimming) {
               case ST_NONE: break;
               case ST_CHARACTER: line = TrimmingCharacter(dc, line, font, width, ""); break;
@@ -116,7 +115,7 @@ namespace xtd {
               default: break;
             }
           }
-          return wxJoin(results, '\n');
+          return wxJoin(strings, '\n');
         }
 
       private:
@@ -153,7 +152,7 @@ namespace xtd {
           auto paths = wxSplit(string, xtd::io::path::directory_separator_char());
           if (GetTextWidth(dc, paths[paths.size() - 1], font, true) > width)  return paths[paths.size() - 1];
           for (auto index = 0U; index < paths.size() - 1; ++index) {
-            auto separator = index ? wxString(xtd::io::path::directory_separator_char()) : wxString("");
+            auto separator = index ? wxString(xtd::io::path::directory_separator_char()) : wxString();
             if (GetTextWidth(dc, result + separator + ellips + xtd::io::path::directory_separator_char() + paths[index] + xtd::io::path::directory_separator_char() + paths[paths.size() - 1], font, true) > width)  return result + xtd::io::path::directory_separator_char() + ellips + xtd::io::path::directory_separator_char() + paths[paths.size() - 1];
             result += separator + paths[index];
           }

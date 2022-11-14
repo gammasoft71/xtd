@@ -32,7 +32,7 @@ namespace xtd {
         class value_type : public type_t {
         public:
           /// @cond
-          value_type() {};
+          value_type() = default;
           value_type(const value_type&) = default;
           value_type(value_type&&) = default;
           template <typename ...args_t>
