@@ -2,7 +2,7 @@
 /// @brief Contains Switch::System::uri_kind enum.
 #pragma once
 
-#include "ustring.h"
+#include "enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -25,9 +25,10 @@ namespace xtd {
     /// @brief The xtd::uri is a relative xtd::uri.
     relative = 2,
   };
-  
-  /// @cond
-  inline std::ostream& operator<<(std::ostream& os, const uri_kind value) {return os << to_string(value, {{uri_kind::relative_or_absolute, "relative_or_absolute"}, {uri_kind::absolute, "absolute"}, {uri_kind::relative, "relative"}});}
-  inline std::wostream& operator<<(std::wostream& os, const uri_kind value) {return os << to_string(value, {{uri_kind::relative_or_absolute, L"relative_or_absolute"}, {uri_kind::absolute, L"absolute"}, {uri_kind::relative, L"relative"}});}
-  /// @endcond
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::uri_kind> {
+  void operator()(xtd::enum_collection<xtd::uri_kind>& values, xtd::enum_type& type) {values = {{xtd::uri_kind::relative_or_absolute, "relative_or_absolute"}, {xtd::uri_kind::absolute, "absolute"}, {xtd::uri_kind::relative, "relative"}};}
+};
+/// @endcond

@@ -2,7 +2,7 @@
 /// @brief Contains xtd::uri_components enum.
 #pragma once
 
-#include "ustring.h"
+#include "enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -51,18 +51,12 @@ namespace xtd {
   };
   
   /// @cond
-  inline xtd::uri_components& operator^=(xtd::uri_components& lhs, xtd::uri_components rhs) {lhs = static_cast<xtd::uri_components>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
-  inline xtd::uri_components& operator&=(xtd::uri_components& lhs, xtd::uri_components rhs) {lhs = static_cast<xtd::uri_components>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}
-  inline xtd::uri_components& operator|=(xtd::uri_components& lhs, xtd::uri_components rhs) {lhs = static_cast<xtd::uri_components>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;}
-  inline xtd::uri_components& operator+=(xtd::uri_components& lhs, xtd::uri_components rhs) {lhs = static_cast<xtd::uri_components>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;}
-  inline xtd::uri_components& operator-=(xtd::uri_components& lhs, xtd::uri_components rhs) {lhs = static_cast<xtd::uri_components>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;}
-  inline xtd::uri_components operator^(xtd::uri_components lhs, xtd::uri_components rhs) {return static_cast<xtd::uri_components>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}
-  inline xtd::uri_components operator&(xtd::uri_components lhs, xtd::uri_components rhs) {return static_cast<xtd::uri_components>(static_cast<int>(lhs) & static_cast<int>(rhs));}
-  inline xtd::uri_components operator|(xtd::uri_components lhs, xtd::uri_components rhs) {return static_cast<xtd::uri_components>(static_cast<int>(lhs) | static_cast<int>(rhs));}
-  inline xtd::uri_components operator+(xtd::uri_components lhs, xtd::uri_components rhs) {return static_cast<xtd::uri_components>(static_cast<int>(lhs) + static_cast<int>(rhs));}
-  inline xtd::uri_components operator-(xtd::uri_components lhs, xtd::uri_components rhs) {return static_cast<xtd::uri_components>(static_cast<int>(lhs) - static_cast<int>(rhs));}
-  inline xtd::uri_components operator~(xtd::uri_components lhs) {return static_cast<xtd::uri_components>(~static_cast<int>(lhs));}
-  inline std::ostream& operator<<(std::ostream& os, const uri_components value) {return os << to_string(value, {{uri_components::none, "none"}, {uri_components::scheme, "scheme"}, {uri_components::user_info, "user_info"}, {uri_components::host, "host"}, {uri_components::port, "port"}, {uri_components::path, "path"}, {uri_components::query, "query"}, {uri_components::fragment, "fragment"}, {uri_components::strong_port, "strong_port"}, {uri_components::keep_delimiter, "keep_delimiter"}, {uri_components::host_and_port, "host_and_port"}, {uri_components::strong_authority, "strong_authority"}, {uri_components::absolute_uri, "absolute_uri"}, {uri_components::path_and_query, "path_and_query"}, {uri_components::http_request_url, "http_request_url"}, {uri_components::scheme_and_server, "scheme_and_server"}, {uri_components::serialization_info_string, "serialization_info_string"}});}
-  inline std::wostream& operator<<(std::wostream& os, const uri_components value) {return os << to_string(value, {{uri_components::none, L"none"}, {uri_components::scheme, L"scheme"}, {uri_components::user_info, L"user_info"}, {uri_components::host, L"host"}, {uri_components::port, L"port"}, {uri_components::path, L"path"}, {uri_components::query, L"query"}, {uri_components::fragment, L"fragment"}, {uri_components::strong_port, L"strong_port"}, {uri_components::keep_delimiter, L"keep_delimiter"}, {uri_components::host_and_port, L"host_and_port"}, {uri_components::strong_authority, L"strong_authority"}, {uri_components::absolute_uri, L"absolute_uri"}, {uri_components::path_and_query, L"path_and_query"}, {uri_components::http_request_url, L"http_request_url"}, {uri_components::scheme_and_server, L"scheme_and_server"}, {uri_components::serialization_info_string, L"serialization_info_string"}});}
+  add_enum_flag_operators_(xtd::uri_components);
   /// @endcond
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::uri_components> {
+  void operator()(xtd::enum_collection<xtd::uri_components>& values, xtd::enum_type& type) {values = {{xtd::uri_components::none, "none"}, {xtd::uri_components::scheme, "scheme"}, {xtd::uri_components::user_info, "user_info"}, {xtd::uri_components::host, "host"}, {xtd::uri_components::port, "port"}, {xtd::uri_components::path, "path"}, {xtd::uri_components::query, "query"}, {xtd::uri_components::fragment, "fragment"}, {xtd::uri_components::strong_port, "strong_port"}, {xtd::uri_components::keep_delimiter, "keep_delimiter"}, {xtd::uri_components::host_and_port, "host_and_port"}, {xtd::uri_components::strong_authority, "strong_authority"}, {xtd::uri_components::absolute_uri, "absolute_uri"}, {xtd::uri_components::path_and_query, "path_and_query"}, {xtd::uri_components::http_request_url, "http_request_url"}, {xtd::uri_components::scheme_and_server, "scheme_and_server"}, {xtd::uri_components::serialization_info_string, "serialization_info_string"}};}
+};
+/// @endcond
