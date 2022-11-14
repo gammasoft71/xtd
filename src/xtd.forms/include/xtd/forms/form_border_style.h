@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::form_border_style enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -31,10 +31,11 @@ namespace xtd {
       /// @brief A resizable tool window border. A tool window does not appear in the taskbar or in the window that appears when the user presses ALT+TAB.
       sizable_tool_window = 6,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, form_border_style value) {return os << to_string(value, {{form_border_style::none, "none"}, {form_border_style::fixed_single, "fixed_single"}, {form_border_style::fixed_3d, "fixed_3d"}, {form_border_style::fixed_dialog, "fixed_dialog"}, {form_border_style::sizable, "sizable"}, {form_border_style::fixed_tool_window, "fixed_tool_window"}, {form_border_style::sizable_tool_window, "sizable_tool_window"}});}
-    inline std::wostream& operator<<(std::wostream& os, form_border_style value) {return os << to_string(value, {{form_border_style::none, L"none"}, {form_border_style::fixed_single, L"fixed_single"}, {form_border_style::fixed_3d, L"fixed_3d"}, {form_border_style::fixed_dialog, L"fixed_dialog"}, {form_border_style::sizable, L"sizable"}, {form_border_style::fixed_tool_window, L"fixed_tool_window"}, {form_border_style::sizable_tool_window, L"sizable_tool_window"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::form_border_style> {
+  void operator()(xtd::enum_collection<xtd::forms::form_border_style>& values, xtd::enum_type& type) {values = {{xtd::forms::form_border_style::none, "none"}, {xtd::forms::form_border_style::fixed_single, "fixed_single"}, {xtd::forms::form_border_style::fixed_3d, "fixed_3d"}, {xtd::forms::form_border_style::fixed_dialog, "fixed_dialog"}, {xtd::forms::form_border_style::sizable, "sizable"}, {xtd::forms::form_border_style::fixed_tool_window, "fixed_tool_window"}, {xtd::forms::form_border_style::sizable_tool_window, "sizable_tool_window"}};}
+};
+/// @endcond

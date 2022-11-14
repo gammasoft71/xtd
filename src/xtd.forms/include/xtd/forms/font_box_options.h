@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::font_box_options control.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -43,20 +43,16 @@ namespace xtd {
     };
     
     /// @cond
-    inline font_box_options& operator +=(font_box_options& lhs, font_box_options rhs) noexcept { lhs = static_cast<font_box_options>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs; }
-    inline font_box_options& operator -=(font_box_options& lhs, font_box_options rhs) noexcept { lhs = static_cast<font_box_options>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs; }
-    inline font_box_options& operator &=(font_box_options& lhs, font_box_options rhs) noexcept { lhs = static_cast<font_box_options>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); return lhs; }
-    inline font_box_options& operator |=(font_box_options& lhs, font_box_options rhs) noexcept { lhs = static_cast<font_box_options>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); return lhs; }
-    inline font_box_options& operator ^=(font_box_options& lhs, font_box_options rhs) noexcept { lhs = static_cast<font_box_options>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); return lhs; }
-    inline font_box_options operator +(font_box_options lhs, font_box_options rhs) noexcept { return static_cast<font_box_options>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); }
-    inline font_box_options operator -(font_box_options lhs, font_box_options rhs) noexcept { return static_cast<font_box_options>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); }
-    inline font_box_options operator ~(font_box_options rhs) noexcept { return static_cast<font_box_options>(~static_cast<long long>(rhs)); }
-    inline bool operator &(font_box_options lhs, font_box_options rhs) noexcept { return static_cast<bool>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); }
-    inline font_box_options operator |(font_box_options lhs, font_box_options rhs) noexcept { return static_cast<font_box_options>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); }
-    inline font_box_options operator ^(font_box_options lhs, font_box_options rhs) noexcept { return static_cast<font_box_options>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); }
-    
-    inline std::ostream& operator<<(std::ostream& os, font_box_options value) { return os << to_string(value, { {font_box_options::none, "none"}, {font_box_options::allow_simulations, "allow_simulations"}, {font_box_options::allow_vector_fonts, "allow_vector_fonts"}, {font_box_options::allow_vertical_fonts, "allow_vertical_fonts"}, {font_box_options::allow_script_change, "allow_script_change"}, {font_box_options::fixed_pitch_only, "fixed_pitch_only"}, {font_box_options::scripts_only, "scripts_only"}, {font_box_options::show_apply, "show_apply"}, {font_box_options::show_color, "show_color"}, {font_box_options::show_effects, "show_effects"}, {font_box_options::show_help, "show_help"}, {font_box_options::all, "all"} }); }
-    inline std::wostream& operator<<(std::wostream& os, font_box_options value) { return os << to_string(value, { {font_box_options::none, L"none"}, {font_box_options::allow_simulations, L"allow_simulations"}, {font_box_options::allow_vector_fonts, L"allow_vector_fonts"}, {font_box_options::allow_vertical_fonts, L"allow_vertical_fonts"}, {font_box_options::allow_script_change, L"allow_script_change"}, {font_box_options::fixed_pitch_only, L"fixed_pitch_only"}, {font_box_options::scripts_only, L"scripts_only"}, {font_box_options::show_apply, L"show_apply"}, {font_box_options::show_color, L"show_color"}, {font_box_options::show_effects, L"show_effects"}, {font_box_options::show_help, L"show_help"}, {font_box_options::all, L"all"} }); }
+    add_enum_flag_operators_(xtd::forms::font_box_options);
     /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::font_box_options> {
+  void operator()(xtd::enum_collection<xtd::forms::font_box_options>& values, xtd::enum_type& type) {
+    values =  {{xtd::forms::font_box_options::none, "none"}, {xtd::forms::font_box_options::allow_simulations, "allow_simulations"}, {xtd::forms::font_box_options::allow_vector_fonts, "allow_vector_fonts"}, {xtd::forms::font_box_options::allow_vertical_fonts, "allow_vertical_fonts"}, {xtd::forms::font_box_options::allow_script_change, "allow_script_change"}, {xtd::forms::font_box_options::fixed_pitch_only, "fixed_pitch_only"}, {xtd::forms::font_box_options::scripts_only, "scripts_only"}, {xtd::forms::font_box_options::show_apply, "show_apply"}, {xtd::forms::font_box_options::show_color, "show_color"}, {xtd::forms::font_box_options::show_effects, "show_effects"}, {xtd::forms::font_box_options::show_help, "show_help"}, {xtd::forms::font_box_options::all, "all"}};
+    type = xtd::enum_type::flags;
+  }
+};
+/// @endcond

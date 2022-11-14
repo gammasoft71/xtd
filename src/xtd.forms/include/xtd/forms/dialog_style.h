@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::dialog_style enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -20,10 +20,11 @@ namespace xtd {
       /// @brief System style dialog.
       system = 1,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, dialog_style value) {return os << to_string(value, {{dialog_style::standard, "standard"}, {dialog_style::system, "system"}});}
-    inline std::wostream& operator<<(std::wostream& os, dialog_style value) {return os << to_string(value, {{dialog_style::standard, L"standard"}, {dialog_style::system, L"system"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::dialog_style> {
+  void operator()(xtd::enum_collection<xtd::forms::dialog_style>& values, xtd::enum_type& type) {values =  {{xtd::forms::dialog_style::standard, "standard"}, {xtd::forms::dialog_style::system, "system"}};}
+};
+/// @endcond

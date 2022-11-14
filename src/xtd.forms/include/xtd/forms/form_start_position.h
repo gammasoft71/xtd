@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::form_start_position enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -27,10 +27,11 @@ namespace xtd {
       /// @brief The form is centered within the bounds of its parent form.
       center_parent = 4,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, form_start_position value) {return os << to_string(value, {{form_start_position::manual, "manual"}, {form_start_position::center_screen, "center_screen"}, {form_start_position::windows_default_location, "windows_default_location"}, {form_start_position::windows_default_bounds, "windows_default_bounds"}, {form_start_position::center_parent, "center_parent"}});}
-    inline std::wostream& operator<<(std::wostream& os, form_start_position value) {return os << to_string(value, {{form_start_position::manual, L"manual"}, {form_start_position::center_screen, L"center_screen"}, {form_start_position::windows_default_location, L"windows_default_location"}, {form_start_position::windows_default_bounds, L"windows_default_bounds"}, {form_start_position::center_parent, L"center_parent"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::form_start_position> {
+  void operator()(xtd::enum_collection<xtd::forms::form_start_position>& values, xtd::enum_type& type) {values = {{xtd::forms::form_start_position::manual, "manual"}, {xtd::forms::form_start_position::center_screen, "center_screen"}, {xtd::forms::form_start_position::windows_default_location, "windows_default_location"}, {xtd::forms::form_start_position::windows_default_bounds, "windows_default_bounds"}, {xtd::forms::form_start_position::center_parent, "center_parent"}};}
+};
+/// @endcond

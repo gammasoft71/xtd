@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::message_dialog_options enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -29,8 +29,16 @@ namespace xtd {
     };
     
     /// @cond
-    inline std::ostream& operator<<(std::ostream& os, message_dialog_options value) {return os << to_string(value, {{message_dialog_options::default_desktop_only, "default_desktop_only"}, {message_dialog_options::right_align, "right_align"}, {message_dialog_options::rtl_reading, "rtl_reading"}, {message_dialog_options::service_notification, "service_notification"}});}
-    inline std::wostream& operator<<(std::wostream& os, message_dialog_options value) {return os << to_string(value, {{message_dialog_options::default_desktop_only, L"default_desktop_only"}, {message_dialog_options::right_align, L"right_align"}, {message_dialog_options::rtl_reading, L"rtl_reading"}, {message_dialog_options::service_notification, L"service_notification"}});}
+    add_enum_flag_operators_(xtd::forms::message_dialog_options);
     /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::message_dialog_options> {
+  void operator()(xtd::enum_collection<xtd::forms::message_dialog_options>& values, xtd::enum_type& type) {
+    values = {{xtd::forms::message_dialog_options::default_desktop_only, "default_desktop_only"}, {xtd::forms::message_dialog_options::right_align, "right_align"}, {xtd::forms::message_dialog_options::rtl_reading, "rtl_reading"}, {xtd::forms::message_dialog_options::service_notification, "service_notification"}};
+    type = xtd::enum_type::flags;
+  }
+};
+/// @endcond

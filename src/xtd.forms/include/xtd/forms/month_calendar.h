@@ -6,6 +6,7 @@
 #include "application.h"
 #include "control.h"
 #include "day.h"
+#include "menu.h"
 #include "selection_range.h"
 #include "date_range_event_handler.h"
 
@@ -492,3 +493,9 @@ namespace xtd {
     };
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::month_calendar::hit_area> {
+  void operator()(xtd::enum_collection<xtd::forms::month_calendar::hit_area>& values, xtd::enum_type& type) {values = {{xtd::forms::month_calendar::hit_area::nowhere, "nowhere"}, {xtd::forms::month_calendar::hit_area::title_background, "title_background"}, {xtd::forms::month_calendar::hit_area::title_month, "title_month"}, {xtd::forms::month_calendar::hit_area::title_year, "title_year"}, {xtd::forms::month_calendar::hit_area::next_month_button, "next_month_button"}, {xtd::forms::month_calendar::hit_area::prev_month_button, "prev_month_button"}, {xtd::forms::month_calendar::hit_area::prev_month_button, "prev_month_button"}, {xtd::forms::month_calendar::hit_area::date, "date"}, {xtd::forms::month_calendar::hit_area::next_month_date, "next_month_date"}, {xtd::forms::month_calendar::hit_area::prev_month_date, "prev_month_date"}, {xtd::forms::month_calendar::hit_area::day_of_week, "day_of_week"}, {xtd::forms::month_calendar::hit_area::week_numbers, "week_numbers"}, {xtd::forms::month_calendar::hit_area::today_link, "today_link"}};}
+};
+/// @endcond

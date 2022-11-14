@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::arrange_direction enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -28,19 +28,16 @@ namespace xtd {
     };
     
     /// @cond
-    inline arrange_direction& operator +=(arrange_direction& lhs, arrange_direction rhs) {lhs = static_cast<arrange_direction>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
-    inline arrange_direction& operator -=(arrange_direction& lhs, arrange_direction rhs) {lhs = static_cast<arrange_direction>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}
-    inline arrange_direction& operator &=(arrange_direction& lhs, arrange_direction rhs) {lhs = static_cast<arrange_direction>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); return lhs;}
-    inline arrange_direction& operator |=(arrange_direction& lhs, arrange_direction rhs) {lhs = static_cast<arrange_direction>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); return lhs;}
-    inline arrange_direction& operator ^=(arrange_direction& lhs, arrange_direction rhs) {lhs = static_cast<arrange_direction>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); return lhs;}
-    inline arrange_direction operator +(arrange_direction lhs, arrange_direction rhs) {return static_cast<arrange_direction>(static_cast<long long>(lhs) + static_cast<long long>(rhs));}
-    inline arrange_direction operator -(arrange_direction lhs, arrange_direction rhs) {return static_cast<arrange_direction>(static_cast<long long>(lhs) - static_cast<long long>(rhs));}
-    inline arrange_direction operator ~(arrange_direction rhs) {return static_cast<arrange_direction>(~static_cast<long long>(rhs));}
-    inline arrange_direction operator &(arrange_direction lhs, arrange_direction rhs) {return static_cast<arrange_direction>(static_cast<long long>(lhs) & static_cast<long long>(rhs));}
-    inline arrange_direction operator |(arrange_direction lhs, arrange_direction rhs) {return static_cast<arrange_direction>(static_cast<long long>(lhs) | static_cast<long long>(rhs));}
-    inline arrange_direction operator ^(arrange_direction lhs, arrange_direction rhs) {return static_cast<arrange_direction>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs));}
-    inline std::ostream& operator<<(std::ostream& os, arrange_direction value) {return os << to_string(value, {{arrange_direction::down, "down"}, {arrange_direction::left, "left"}, {arrange_direction::right, "right"}, {arrange_direction::up, "up"}});}
-    inline std::wostream& operator<<(std::wostream& os, arrange_direction value) {return os << to_string(value, {{arrange_direction::down, L"down"}, {arrange_direction::left, L"left"}, {arrange_direction::right, L"right"}, {arrange_direction::up, L"up"}});}
+    add_enum_flag_operators_(xtd::forms::arrange_direction);
     /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::arrange_direction> {
+  void operator()(xtd::enum_collection<xtd::forms::arrange_direction>& values, xtd::enum_type& type) {
+    values = {{xtd::forms::arrange_direction::down, "down"}, {xtd::forms::arrange_direction::left, "left"}, {xtd::forms::arrange_direction::right, "right"}, {xtd::forms::arrange_direction::up, "up"}};
+    type = xtd::enum_type::flags;
+  }
+};
+/// @endcond

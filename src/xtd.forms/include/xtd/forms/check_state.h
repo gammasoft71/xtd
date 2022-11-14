@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::check_state enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -24,10 +24,11 @@ namespace xtd {
       /// @brief The control is indeterminate. An indeterminate control generally has a shaded appearance.
       indeterminate = 2
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, check_state value) {return os << to_string(value, {{check_state::unchecked, "unchecked"}, {check_state::checked, "checked"}, {check_state::indeterminate, "indeterminate"}});}
-    inline std::wostream& operator<<(std::wostream& os, check_state value) {return os << to_string(value, {{check_state::unchecked, L"unchecked"}, {check_state::checked, L"checked"}, {check_state::indeterminate, L"indeterminate"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::check_state> {
+  void operator()(xtd::enum_collection<xtd::forms::check_state>& values, xtd::enum_type& type) {values = {{xtd::forms::check_state::unchecked, "unchecked"}, {xtd::forms::check_state::checked, "checked"}, {xtd::forms::check_state::indeterminate, "indeterminate"}};}
+};
+/// @endcond

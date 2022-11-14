@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::horizontal_alignment enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -23,10 +23,11 @@ namespace xtd {
       /// @brief The object or text is aligned in the center of the control element.
       center = 2,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, horizontal_alignment value) {return os << to_string(value, {{horizontal_alignment::left, "left"}, {horizontal_alignment::right, "right"}, {horizontal_alignment::center, "center"}});}
-    inline std::wostream& operator<<(std::wostream& os, horizontal_alignment value) {return os << to_string(value, {{horizontal_alignment::left, L"left"}, {horizontal_alignment::right, L"right"}, {horizontal_alignment::center, L"center"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::horizontal_alignment> {
+  void operator()(xtd::enum_collection<xtd::forms::horizontal_alignment>& values, xtd::enum_type& type) {values = {{xtd::forms::horizontal_alignment::left, "left"}, {xtd::forms::horizontal_alignment::right, "right"}, {xtd::forms::horizontal_alignment::center, "center"}};}
+};
+/// @endcond

@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::flat_style enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -27,10 +27,11 @@ namespace xtd {
       /// @brief The appearance of the control is determined by the user's operating system.
       system,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, flat_style value) {return os << to_string(value, {{flat_style::flat, "flat"}, {flat_style::popup, "popup"}, {flat_style::standard, "standard"}, {flat_style::system, "system"}});}
-    inline std::wostream& operator<<(std::wostream& os, flat_style value) {return os << to_string(value, {{flat_style::flat, L"flat"}, {flat_style::popup, L"popup"}, {flat_style::standard, L"standard"}, {flat_style::system, L"system"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::flat_style> {
+  void operator()(xtd::enum_collection<xtd::forms::flat_style>& values, xtd::enum_type& type) {values =  {{xtd::forms::flat_style::flat, "flat"}, {xtd::forms::flat_style::popup, "popup"}, {xtd::forms::flat_style::standard, "standard"}, {xtd::forms::flat_style::system, "system"}};}
+};
+/// @endcond

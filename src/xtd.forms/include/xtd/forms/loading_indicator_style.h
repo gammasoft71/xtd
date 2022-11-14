@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::loading_indicator_style enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -23,10 +23,11 @@ namespace xtd {
       /// @brief The appearance of the control is determined by the user's operating system.
       system,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, loading_indicator_style value) {return os << to_string(value, {{loading_indicator_style::dots, "dots"}, {loading_indicator_style::standard, "standard"}, {loading_indicator_style::system, "system"}});}
-    inline std::wostream& operator<<(std::wostream& os, loading_indicator_style value) {return os << to_string(value, {{loading_indicator_style::dots, L"dots"}, {loading_indicator_style::standard, L"standard"}, {loading_indicator_style::system, L"system"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::loading_indicator_style> {
+  void operator()(xtd::enum_collection<xtd::forms::loading_indicator_style>& values, xtd::enum_type& type) {values = {{xtd::forms::loading_indicator_style::dots, "dots"}, {xtd::forms::loading_indicator_style::standard, "standard"}, {xtd::forms::loading_indicator_style::system, "system"}};}
+};
+/// @endcond

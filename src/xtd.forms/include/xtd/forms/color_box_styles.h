@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::color_box_styles enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -33,19 +33,13 @@ namespace xtd {
     };
     
     /// @cond
-    inline color_box_styles& operator +=(color_box_styles& lhs, color_box_styles rhs) {lhs = static_cast<color_box_styles>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
-    inline color_box_styles& operator -=(color_box_styles& lhs, color_box_styles rhs) {lhs = static_cast<color_box_styles>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}
-    inline color_box_styles& operator &=(color_box_styles& lhs, color_box_styles rhs) {lhs = static_cast<color_box_styles>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); return lhs;}
-    inline color_box_styles& operator |=(color_box_styles& lhs, color_box_styles rhs) {lhs = static_cast<color_box_styles>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); return lhs;}
-    inline color_box_styles& operator ^=(color_box_styles& lhs, color_box_styles rhs) {lhs = static_cast<color_box_styles>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); return lhs;}
-    inline color_box_styles operator +(color_box_styles lhs, color_box_styles rhs) {return static_cast<color_box_styles>(static_cast<long long>(lhs) + static_cast<long long>(rhs));}
-    inline color_box_styles operator -(color_box_styles lhs, color_box_styles rhs) {return static_cast<color_box_styles>(static_cast<long long>(lhs) - static_cast<long long>(rhs));}
-    inline color_box_styles operator ~(color_box_styles rhs) {return static_cast<color_box_styles>(~static_cast<long long>(rhs));}
-    inline color_box_styles operator &(color_box_styles lhs, color_box_styles rhs) {return static_cast<color_box_styles>(static_cast<long long>(lhs) & static_cast<long long>(rhs));}
-    inline color_box_styles operator |(color_box_styles lhs, color_box_styles rhs) {return static_cast<color_box_styles>(static_cast<long long>(lhs) | static_cast<long long>(rhs));}
-    inline color_box_styles operator ^(color_box_styles lhs, color_box_styles rhs) {return static_cast<color_box_styles>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs));}
-    inline std::ostream& operator<<(std::ostream& os, color_box_styles value) {return os << to_string(value, {{color_box_styles::none, "none"}, {color_box_styles::alpha_color, "alpha_color"}, {color_box_styles::allow_full_open, "allow_full_open"}, {color_box_styles::any_color, "any_color"}, {color_box_styles::full_open, "full_open"}, {color_box_styles::show_help, "show_help"}, {color_box_styles::solid_color_only, "solid_color_only"}});}
-    inline std::wostream& operator<<(std::wostream& os, color_box_styles value) {return os << to_string(value, {{color_box_styles::none, L"none"}, {color_box_styles::alpha_color, L"alpha_color"}, {color_box_styles::allow_full_open, L"allow_full_open"}, {color_box_styles::any_color, L"any_color"}, {color_box_styles::full_open, L"full_open"}, {color_box_styles::show_help, L"show_help"}, {color_box_styles::solid_color_only, L"solid_color_only"}});}
+    add_enum_flag_operators_(xtd::forms::color_box_styles);
     /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::color_box_styles> {
+  void operator()(xtd::enum_collection<xtd::forms::color_box_styles>& values, xtd::enum_type& type) {values = {{xtd::forms::color_box_styles::none, "none"}, {xtd::forms::color_box_styles::alpha_color, "alpha_color"}, {xtd::forms::color_box_styles::allow_full_open, "allow_full_open"}, {xtd::forms::color_box_styles::any_color, "any_color"}, {xtd::forms::color_box_styles::full_open, "full_open"}, {xtd::forms::color_box_styles::show_help, "show_help"}, {xtd::forms::color_box_styles::solid_color_only, "solid_color_only"}};}
+};
+/// @endcond

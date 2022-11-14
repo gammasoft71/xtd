@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::boot_mode enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -25,10 +25,11 @@ namespace xtd {
       /// @brief Starts the computer by using the basic files, drivers and the services and drivers necessary to start networking.
       fail_safe_with_network = 2,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, boot_mode value) {return os << to_string(value, {{boot_mode::normal, "normal"}, {boot_mode::fail_safe, "fail_safe"}, {boot_mode::fail_safe_with_network, "fail_safe_with_network"}});}
-    inline std::wostream& operator<<(std::wostream& os, boot_mode value) {return os << to_string(value, {{boot_mode::normal, L"normal"}, {boot_mode::fail_safe, L"fail_safe"}, {boot_mode::fail_safe_with_network, L"fail_safe_with_network"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::boot_mode> {
+  void operator()(xtd::enum_collection<xtd::forms::boot_mode>& values, xtd::enum_type& type) {values = {{xtd::forms::boot_mode::normal, "normal"}, {xtd::forms::boot_mode::fail_safe, "fail_safe"}, {xtd::forms::boot_mode::fail_safe_with_network, "fail_safe_with_network"}};}
+};
+/// @endcond

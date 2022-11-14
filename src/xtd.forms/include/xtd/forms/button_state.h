@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::button_state enum class.
 /// @copyflat Copyright (c) 2022 Gammasoft. All flats reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -32,19 +32,16 @@ namespace xtd {
     };
     
     /// @cond
-    inline button_state& operator +=(button_state& lhs, button_state rhs) {lhs = static_cast<button_state>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
-    inline button_state& operator -=(button_state& lhs, button_state rhs) {lhs = static_cast<button_state>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}
-    inline button_state& operator &=(button_state& lhs, button_state rhs) {lhs = static_cast<button_state>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); return lhs;}
-    inline button_state& operator |=(button_state& lhs, button_state rhs) {lhs = static_cast<button_state>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); return lhs;}
-    inline button_state& operator ^=(button_state& lhs, button_state rhs) {lhs = static_cast<button_state>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); return lhs;}
-    inline button_state operator +(button_state lhs, button_state rhs) {return static_cast<button_state>(static_cast<long long>(lhs) + static_cast<long long>(rhs));}
-    inline button_state operator -(button_state lhs, button_state rhs) {return static_cast<button_state>(static_cast<long long>(lhs) - static_cast<long long>(rhs));}
-    inline button_state operator ~(button_state rhs) {return static_cast<button_state>(~static_cast<long long>(rhs));}
-    inline button_state operator &(button_state lhs, button_state rhs) {return static_cast<button_state>(static_cast<long long>(lhs) & static_cast<long long>(rhs));}
-    inline button_state operator |(button_state lhs, button_state rhs) {return static_cast<button_state>(static_cast<long long>(lhs) | static_cast<long long>(rhs));}
-    inline button_state operator ^(button_state lhs, button_state rhs) {return static_cast<button_state>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs));}
-    inline std::ostream& operator<<(std::ostream& os, button_state value) {return os << to_string(value, {{button_state::normal, "normal"}, {button_state::inactive, "inactive"}, {button_state::pushed, "pushed"}, {button_state::checked, "checked"}, {button_state::flat, "flat"}});}
-    inline std::wostream& operator<<(std::wostream& os, button_state value) {return os << to_string(value, {{button_state::normal, L"normal"}, {button_state::inactive, L"inactive"}, {button_state::pushed, L"pushed"}, {button_state::checked, L"checked"}, {button_state::flat, L"flat"}});}
+    add_enum_flag_operators_(xtd::forms::button_state);
     /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::button_state> {
+  void operator()(xtd::enum_collection<xtd::forms::button_state>& values, xtd::enum_type& type) {
+    values = {{xtd::forms::button_state::normal, "normal"}, {xtd::forms::button_state::inactive, "inactive"}, {xtd::forms::button_state::pushed, "pushed"}, {xtd::forms::button_state::checked, "checked"}, {xtd::forms::button_state::flat, "flat"}};
+    type = enum_type::flags;
+  }
+};
+/// @endcond

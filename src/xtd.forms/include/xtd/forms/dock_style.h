@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::dock_style enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -30,10 +30,11 @@ namespace xtd {
       /// @brief All the control's edges are docked to the all edges of its containing control and sized appropriately.
       fill = 5,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, dock_style value) {return os << to_string(value, {{dock_style::none, "none"}, {dock_style::top, "top"}, {dock_style::bottom, "bottom"}, {dock_style::left, "left"}, {dock_style::right, "right"}, {dock_style::fill, "fill"}});}
-    inline std::wostream& operator<<(std::wostream& os, dock_style value) {return os << to_string(value, {{dock_style::none, L"none"}, {dock_style::top, L"top"}, {dock_style::bottom, L"bottom"}, {dock_style::left, L"left"}, {dock_style::right, L"right"}, {dock_style::fill, L"fill"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::dock_style> {
+  void operator()(xtd::enum_collection<xtd::forms::dock_style>& values, xtd::enum_type& type) {values =  {{xtd::forms::dock_style::none, "none"}, {xtd::forms::dock_style::top, "top"}, {xtd::forms::dock_style::bottom, "bottom"}, {xtd::forms::dock_style::left, "left"}, {xtd::forms::dock_style::right, "right"}, {xtd::forms::dock_style::fill, "fill"}};}
+};
+/// @endcond
