@@ -120,7 +120,6 @@ void matrix::shear(float scale_x, float scale_y, xtd::drawing::drawing2d::matrix
 }
 
 void matrix::transform_points(std::vector<xtd::drawing::point>& points) {
-  vector<pair<float, float>> tr_points;
   for (auto& point : points) {
     int32_t tx = point.x(), ty = point.y();
     native::matrix::transform_point(handle(), tx, ty);
@@ -130,7 +129,6 @@ void matrix::transform_points(std::vector<xtd::drawing::point>& points) {
 }
 
 void matrix::transform_points(std::vector<xtd::drawing::point_f>& points) {
-  vector<pair<float, float>> tr_points;
   for (auto& point : points) {
     float tx = point.x(), ty = point.y();
     native::matrix::transform_point(handle(), tx, ty);
@@ -142,7 +140,7 @@ void matrix::transform_points(std::vector<xtd::drawing::point_f>& points) {
 void matrix::transform_vectors(std::vector<xtd::drawing::point>& points) {
   vector<pair<int32_t, int32_t>> tr_points;
   for (auto point : points)
-    tr_points.push_back(make_pair(point.x(), point.y()));
+    tr_points.emplace_back(point.x(), point.y());
   native::matrix::transform_vectors(handle(), tr_points);
   points.clear();
   for (auto point : tr_points)
@@ -170,7 +168,7 @@ void matrix::translate(float offset_x, float offset_y, xtd::drawing::drawing2d::
 void matrix::vector_transform_points(std::vector<xtd::drawing::point>& points) {
   vector<pair<int32_t, int32_t>> tr_points;
   for (auto point : points)
-    tr_points.push_back(make_pair(point.x(), point.y()));
+    tr_points.emplace_back(point.x(), point.y());
   native::matrix::vector_transform_points(handle(), tr_points);
   points.clear();
   for (auto point : tr_points)

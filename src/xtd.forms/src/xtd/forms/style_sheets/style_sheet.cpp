@@ -746,15 +746,15 @@ vector<ustring> style_sheet::split_values_from_text(const ustring& text) const n
   while (!value.empty()) {
     auto color_keyword = string_starts_with_any(value, color_keywords);
     if (color_keyword != "") {
-      result.push_back(value.substring(0, value.find(")") + 1).trim());
-      value = value.remove(0, value.find(")") + 1).trim();
+      result.push_back(value.substring(0, value.find(')') + 1).trim());
+      value = value.remove(0, value.find(')') + 1).trim();
       if (value[0] == ',') value = value.remove(0, 1).trim();
-    } else if (value.find(",") == ustring::npos) {
+    } else if (value.find(',') == ustring::npos) {
       result.push_back(value.trim());
       value = "";
-    } else if (value.find(",") != ustring::npos) {
-      result.push_back(value.substring(0, value.find(",")).trim());
-      value = value.remove(0, value.find(",") + 1).trim();
+    } else if (value.find(',') != ustring::npos) {
+      result.push_back(value.substring(0, value.find(',')).trim());
+      value = value.remove(0, value.find(',') + 1).trim();
     }
   }
   return result;
@@ -1214,7 +1214,7 @@ bool style_sheet::try_parse_hsla_color(const ustring& text, color& result) const
 }
 
 bool style_sheet::try_parse_named_color(const ustring& text, color& result) const noexcept {
-  if (text.trim().find(" ") != ustring::npos) return false;
+  if (text.trim().find(' ') != ustring::npos) return false;
   auto named_color = color::from_name(text);
   if (!named_color.is_known_color()) return false;
   result = named_color;

@@ -733,7 +733,7 @@ namespace xtd {
                 else if (index_format_separator != std::string::npos)
                   index_str = format_str.substr(0, index_format_separator);
                 else
-                  index_str = format_str;
+                  index_str = std::move(format_str);
                 try {
                   for (auto c : index_str)
                     if (!std::isdigit(c)) __throw_ustring_format_exception_start_colon();

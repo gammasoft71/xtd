@@ -278,7 +278,7 @@ void directory_info::move_to(const ustring& dest_dir_name) {
     directory::move(path::combine(full_path_, item), path::combine(target_dir_name, item));
     
   remove();
-  original_path_ = target_dir_name;
+  original_path_ = std::move(target_dir_name);
   refresh();
 }
 

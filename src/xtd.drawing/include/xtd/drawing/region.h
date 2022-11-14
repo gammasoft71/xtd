@@ -155,7 +155,7 @@ namespace xtd {
       /// @param g A xtd::drawing::graphics that represents a graphics context.
       /// @return true when any portion of the rect is contained within this xtd::drawing::region; otherwise, false.
       /// @remarks The current transformation of the graphics context is used to compute the region interior and the rectangle coordinates on the drawing surface.
-      bool is_visible(xtd::drawing::rectangle_f rect, const xtd::drawing::graphics& g) const noexcept;
+      bool is_visible(const xtd::drawing::rectangle_f& rect, const xtd::drawing::graphics& g) const noexcept;
       /// @brief Tests whether any portion of the specified rectangle is contained within this xtd::drawing::region when drawn using the specified xtd::drawing::graphics.
       /// @param x The x-coordinate of the upper-left corner of the rectangle to test.
       /// @param y The y-coordinate of the upper-left corner of the rectangle to test.
@@ -170,7 +170,7 @@ namespace xtd {
       /// @param g A xtd::drawing::graphics that represents a graphics context.
       /// @return true when any portion of the rect is contained within this xtd::drawing::region; otherwise, false.
       /// @remarks The current transformation of the graphics context is used to compute the region interior and the rectangle coordinates on the drawing surface.
-      bool is_visible(xtd::drawing::rectangle rect, const xtd::drawing::graphics& g) const noexcept;
+      bool is_visible(const xtd::drawing::rectangle& rect, const xtd::drawing::graphics& g) const noexcept;
       /// @brief Tests whether any portion of the specified rectangle is contained within this xtd::drawing::region when drawn using the specified xtd::drawing::graphics.
       /// @param x The x-coordinate of the upper-left corner of the rectangle to test.
       /// @param y The y-coordinate of the upper-left corner of the rectangle to test.
@@ -183,7 +183,7 @@ namespace xtd {
       /// @brief Tests whether any portion of the specified xtd::drawing::rectangle_f structure is contained within this xtd::drawing::region.
       /// @param rect The xtd::drawing::rectangle_f structure to test.
       /// @return true when any portion of rect is contained within this xtd::drawing::region; otherwise, false.
-      bool is_visible(xtd::drawing::rectangle_f rect) const noexcept;
+      bool is_visible(const xtd::drawing::rectangle_f& rect) const noexcept;
       /// @brief Tests whether any portion of the specified rectangle is contained within this xtd::drawing::region.
       /// @param x The x-coordinate of the upper-left corner of the rectangle to test.
       /// @param y The y-coordinate of the upper-left corner of the rectangle to test.
@@ -194,7 +194,7 @@ namespace xtd {
       /// @brief Tests whether any portion of the specified xtd::drawing::rectangle structure is contained within this xtd::drawing::region.
       /// @param rect The xtd::drawing::rectangle structure to test.
       /// @return true when any portion of rect is contained within this xtd::drawing::region; otherwise, false.
-      bool is_visible(xtd::drawing::rectangle rect) const noexcept;
+      bool is_visible(const xtd::drawing::rectangle& rect) const noexcept;
       /// @brief Tests whether any portion of the specified rectangle is contained within this xtd::drawing::region.
       /// @param x The x-coordinate of the upper-left corner of the rectangle to test.
       /// @param y The y-coordinate of the upper-left corner of the rectangle to test.
