@@ -2,7 +2,7 @@
 /// @brief Contains xtd::date_time_kind enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "ustring.h"
+#include "enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -22,9 +22,10 @@ namespace xtd {
     /// @brief The time represented is local time.
     local,
   };
-  
-  /// @cond
-  inline std::ostream& operator<<(std::ostream& os, const date_time_kind value) {return os << to_string(value, { {date_time_kind::unspecified, "unspecified"}, {date_time_kind::utc, "utc"}, {date_time_kind::local, "local"}});}
-  inline std::wostream& operator<<(std::wostream& os, const date_time_kind value) {return os << to_string(value, { {date_time_kind::unspecified, L"unspecified"}, {date_time_kind::utc, L"utc"}, {date_time_kind::local, L"local"}});}
-  /// @endcond
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::date_time_kind> {
+  void operator()(xtd::enum_collection<xtd::date_time_kind>& values, xtd::enum_type& type) {values = {{xtd::date_time_kind::unspecified, "unspecified"}, {xtd::date_time_kind::utc, "utc"}, {xtd::date_time_kind::local, "local"}};}
+};
+/// @endcond
