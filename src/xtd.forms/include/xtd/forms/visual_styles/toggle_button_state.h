@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::visual_styles::toggle_button_state enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -43,11 +43,12 @@ namespace xtd {
         /// @brief The check box is three-state and disabled.
         mixed_disabled,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, toggle_button_state value) {return os << to_string(value, {{toggle_button_state::unchecked_normal, "unchecked_normal"}, {toggle_button_state::unchecked_hot, "unchecked_hot"}, {toggle_button_state::unchecked_pressed, "unchecked_pressed"}, {toggle_button_state::unchecked_disabled, "unchecked_disabled"}, {toggle_button_state::checked_normal, "checked_normal"}, {toggle_button_state::checked_hot, "checked_hot"}, {toggle_button_state::checked_pressed, "checked_pressed"}, {toggle_button_state::checked_disabled, "checked_disabled"}, {toggle_button_state::mixed_normal, "mixed_normal"}, {toggle_button_state::mixed_hot, "mixed_hot"}, {toggle_button_state::mixed_pressed, "mixed_pressed"}, {toggle_button_state::mixed_disabled, "mixed_disabled"}});}
-      inline std::wostream& operator<<(std::wostream& os, toggle_button_state value) {return os << to_string(value, {{toggle_button_state::unchecked_normal, L"unchecked_normal"}, {toggle_button_state::unchecked_hot, L"unchecked_hot"}, {toggle_button_state::unchecked_pressed, L"unchecked_pressed"}, {toggle_button_state::unchecked_disabled, L"unchecked_disabled"}, {toggle_button_state::checked_normal, L"checked_normal"}, {toggle_button_state::checked_hot, L"checked_hot"}, {toggle_button_state::checked_pressed, L"checked_pressed"}, {toggle_button_state::checked_disabled, L"checked_disabled"}, {toggle_button_state::mixed_normal, L"mixed_normal"}, {toggle_button_state::mixed_hot, L"mixed_hot"}, {toggle_button_state::mixed_pressed, L"mixed_pressed"}, {toggle_button_state::mixed_disabled, L"mixed_disabled"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::visual_styles::toggle_button_state> {
+  void operator()(xtd::enum_collection<xtd::forms::visual_styles::toggle_button_state>& values, xtd::enum_type& type) {values = {{xtd::forms::visual_styles::toggle_button_state::unchecked_normal, "unchecked_normal"}, {xtd::forms::visual_styles::toggle_button_state::unchecked_hot, "unchecked_hot"}, {xtd::forms::visual_styles::toggle_button_state::unchecked_pressed, "unchecked_pressed"}, {xtd::forms::visual_styles::toggle_button_state::unchecked_disabled, "unchecked_disabled"}, {xtd::forms::visual_styles::toggle_button_state::checked_normal, "checked_normal"}, {xtd::forms::visual_styles::toggle_button_state::checked_hot, "checked_hot"}, {xtd::forms::visual_styles::toggle_button_state::checked_pressed, "checked_pressed"}, {xtd::forms::visual_styles::toggle_button_state::checked_disabled, "checked_disabled"}, {xtd::forms::visual_styles::toggle_button_state::mixed_normal, "mixed_normal"}, {xtd::forms::visual_styles::toggle_button_state::mixed_hot, "mixed_hot"}, {xtd::forms::visual_styles::toggle_button_state::mixed_pressed, "mixed_pressed"}, {xtd::forms::visual_styles::toggle_button_state::mixed_disabled, "mixed_disabled"}};}
+};
+/// @endcond

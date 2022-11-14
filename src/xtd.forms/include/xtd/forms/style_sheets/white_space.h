@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::style_sheets::white_space enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -28,11 +28,12 @@ namespace xtd {
         /// @brief Whitespace is preserved by the browser. Text will wrap when necessary, and on line breaks
         pre_wrap,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, const white_space value) {return os << to_string(value, {{white_space::normal, "normal"}, {white_space::no_wrap, "no_wrap"}, {white_space::pre, "pre"}, {white_space::pre_line, "pre_line"}, {white_space::pre_wrap, "pre_wrap"}});}
-      inline std::wostream& operator<<(std::wostream& os, const white_space value) {return os << to_string(value, {{white_space::normal, L"normal"}, {white_space::no_wrap, L"no_wrap"}, {white_space::pre, L"pre"}, {white_space::pre_line, L"pre_line"}, {white_space::pre_wrap, L"pre_wrap"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::style_sheets::white_space> {
+  void operator()(xtd::enum_collection<xtd::forms::style_sheets::white_space>& values, xtd::enum_type& type) {values = {{xtd::forms::style_sheets::white_space::normal, "normal"}, {xtd::forms::style_sheets::white_space::no_wrap, "no_wrap"}, {xtd::forms::style_sheets::white_space::pre, "pre"}, {xtd::forms::style_sheets::white_space::pre_line, "pre_line"}, {xtd::forms::style_sheets::white_space::pre_wrap, "pre_wrap"}};}
+};
+/// @endcond

@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::visual_styles::push_button_state enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -31,11 +31,12 @@ namespace xtd {
         /// @brief The button has the default appearance.
         default_state,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, push_button_state value) {return os << to_string(value, {{push_button_state::normal, "normal"}, {push_button_state::hot, "hot"}, {push_button_state::pressed, "pressed"}, {push_button_state::disabled, "disabled"}, {push_button_state::default_state, "default_state"}});}
-      inline std::wostream& operator<<(std::wostream& os, push_button_state value) {return os << to_string(value, {{push_button_state::normal, L"normal"}, {push_button_state::hot, L"hot"}, {push_button_state::pressed, L"pressed"}, {push_button_state::disabled, L"disabled"}, {push_button_state::default_state, L"default_state"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::visual_styles::push_button_state> {
+  void operator()(xtd::enum_collection<xtd::forms::visual_styles::push_button_state>& values, xtd::enum_type& type) {values = {{xtd::forms::visual_styles::push_button_state::normal, "normal"}, {xtd::forms::visual_styles::push_button_state::hot, "hot"}, {xtd::forms::visual_styles::push_button_state::pressed, "pressed"}, {xtd::forms::visual_styles::push_button_state::disabled, "disabled"}, {xtd::forms::visual_styles::push_button_state::default_state, "default_state"}};}
+};
+/// @endcond
