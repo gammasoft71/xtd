@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
-#include "../../ustring.h"
+#include "../../enum.h"
 
 /// @cond
 #undef unix
@@ -40,11 +40,12 @@ namespace xtd {
         /// @brief Provides connection-oriented and reliable two-way transfer of ordered byte streams across a network. xtd::net::sockets::socket_type::seqpacket does not duplicate data, and it preserves boundaries within the data stream. A xtd::net::sockets::socket of type xtd::net::sockets::socket_type::seqpacket communicates with a single peer and requires a remote host connection before communication can begin.
         seqpacket = 5,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, socket_type value) {return os << to_string(value, {{socket_type::unknown, "unknown"}, {socket_type::stream, "stream"}, {socket_type::dgram, "dgram"}, {socket_type::raw, "raw"}, {socket_type::rdm, "rdm"}, {socket_type::seqpacket, "seqpacket"}});}
-      inline std::wostream& operator<<(std::wostream& os, socket_type value) {return os << to_string(value, {{socket_type::unknown, L"unknown"}, {socket_type::stream, L"stream"}, {socket_type::dgram, L"dgram"}, {socket_type::raw, L"raw"}, {socket_type::rdm, L"rdm"}, {socket_type::seqpacket, L"seqpacket"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::net::sockets::socket_type> {
+  void operator()(xtd::enum_collection<xtd::net::sockets::socket_type>& values, xtd::enum_type& type) {values = {{xtd::net::sockets::socket_type::unknown, "unknown"}, {xtd::net::sockets::socket_type::stream, "stream"}, {xtd::net::sockets::socket_type::dgram, "dgram"}, {xtd::net::sockets::socket_type::raw, "raw"}, {xtd::net::sockets::socket_type::rdm, "rdm"}, {xtd::net::sockets::socket_type::seqpacket, "seqpacket"}};}
+};
+/// @endcond

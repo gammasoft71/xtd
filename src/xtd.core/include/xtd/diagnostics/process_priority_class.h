@@ -2,7 +2,7 @@
 /// @brief Contains xtd::diagnostics::process_priority_class enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "../ustring.h"
+#include "../enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -33,10 +33,11 @@ namespace xtd {
       /// @brief Specifies that the process has priority higher than Normal but lower than High.
       above_normal = 0x8000,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, xtd::diagnostics::process_priority_class value) {return os << to_string(value, {{diagnostics::process_priority_class::normal, "normal"}, {diagnostics::process_priority_class::idle, "idle"}, {diagnostics::process_priority_class::high, "high"}, {diagnostics::process_priority_class::real_time, "real_time"}, {diagnostics::process_priority_class::below_normal, "below_normal"}, {diagnostics::process_priority_class::above_normal, "above_normal"}});}
-    inline std::wostream& operator<<(std::wostream& os, xtd::diagnostics::process_priority_class value) {return os << to_string(value, {{diagnostics::process_priority_class::normal, L"normal"}, {diagnostics::process_priority_class::idle, L"idle"}, {diagnostics::process_priority_class::high, L"high"}, {diagnostics::process_priority_class::real_time, L"real_time"}, {diagnostics::process_priority_class::below_normal, L"below_normal"}, {diagnostics::process_priority_class::above_normal, L"above_normal"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::diagnostics::process_priority_class> {
+  void operator()(xtd::enum_collection<xtd::diagnostics::process_priority_class>& values, xtd::enum_type& type) {values = {{xtd::diagnostics::process_priority_class::normal, "normal"}, {xtd::diagnostics::process_priority_class::idle, "idle"}, {xtd::diagnostics::process_priority_class::high, "high"}, {xtd::diagnostics::process_priority_class::real_time, "real_time"}, {xtd::diagnostics::process_priority_class::below_normal, "below_normal"}, {xtd::diagnostics::process_priority_class::above_normal, "above_normal"}};}
+};
+/// @endcond

@@ -2,7 +2,7 @@
 /// @brief Contains xtd::diagnostics::source_levels enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "../ustring.h"
+#include "../enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -36,21 +36,18 @@ namespace xtd {
       /// @brief Allows the stop, start, suspend, transfer, and resume events through.
       activity_tracing = 0b1111111100000000,
     };
-    
+
     /// @cond
-    inline source_levels& operator +=(source_levels& lhs, source_levels rhs) {lhs = static_cast<source_levels>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
-    inline source_levels& operator -=(source_levels& lhs, source_levels rhs) {lhs = static_cast<source_levels>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}
-    inline source_levels& operator &=(source_levels& lhs, source_levels rhs) {lhs = static_cast<source_levels>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); return lhs;}
-    inline source_levels& operator |=(source_levels& lhs, source_levels rhs) {lhs = static_cast<source_levels>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); return lhs;}
-    inline source_levels& operator ^=(source_levels& lhs, source_levels rhs) {lhs = static_cast<source_levels>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); return lhs;}
-    inline source_levels operator +(source_levels lhs, source_levels rhs) {return static_cast<source_levels>(static_cast<long long>(lhs) + static_cast<long long>(rhs));}
-    inline source_levels operator -(source_levels lhs, source_levels rhs) {return static_cast<source_levels>(static_cast<long long>(lhs) - static_cast<long long>(rhs));}
-    inline source_levels operator ~(source_levels rhs) {return static_cast<source_levels>(~static_cast<long long>(rhs));}
-    inline source_levels operator &(source_levels lhs, source_levels rhs) {return static_cast<source_levels>(static_cast<long long>(lhs) & static_cast<long long>(rhs));}
-    inline source_levels operator |(source_levels lhs, source_levels rhs) {return static_cast<source_levels>(static_cast<long long>(lhs) | static_cast<long long>(rhs));}
-    inline source_levels operator ^(source_levels lhs, source_levels rhs) {return static_cast<source_levels>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs));}
-    inline std::ostream& operator<<(std::ostream& os, xtd::diagnostics::source_levels value) {return os << to_string(value, {{diagnostics::source_levels::all, "all"}, {diagnostics::source_levels::off, "off"}, {diagnostics::source_levels::critical, "critical"}, {diagnostics::source_levels::error, "error"}, {diagnostics::source_levels::warning, "warning"}, {diagnostics::source_levels::information, "information"}, {diagnostics::source_levels::verbose, "verbose"}, {diagnostics::source_levels::activity_tracing, "activity_tracing"}});}
-    inline std::wostream& operator<<(std::wostream& os, xtd::diagnostics::source_levels value) {return os << to_string(value, {{diagnostics::source_levels::all, L"all"}, {diagnostics::source_levels::off, L"off"}, {diagnostics::source_levels::critical, L"critical"}, {diagnostics::source_levels::error, L"error"}, {diagnostics::source_levels::warning, L"warning"}, {diagnostics::source_levels::information, L"information"}, {diagnostics::source_levels::verbose, L"verbose"}, {diagnostics::source_levels::activity_tracing, L"activity_tracing"}});}
+    add_enum_flag_operators_(xtd::diagnostics::source_levels);
     /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::diagnostics::source_levels> {
+  void operator()(xtd::enum_collection<xtd::diagnostics::source_levels>& values, xtd::enum_type& type) {
+    values = {{xtd::diagnostics::source_levels::all, "all"}, {xtd::diagnostics::source_levels::off, "off"}, {xtd::diagnostics::source_levels::critical, "critical"}, {xtd::diagnostics::source_levels::error, "error"}, {xtd::diagnostics::source_levels::warning, "warning"}, {xtd::diagnostics::source_levels::information, "information"}, {xtd::diagnostics::source_levels::verbose, "verbose"}, {xtd::diagnostics::source_levels::activity_tracing, "activity_tracing"}};
+    type = xtd::enum_type::flags;
+  }
+};
+/// @endcond

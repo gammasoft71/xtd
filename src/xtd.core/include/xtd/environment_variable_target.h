@@ -2,7 +2,7 @@
 /// @brief Contains xtd::environment_variable_target enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "ustring.h"
+//#include "enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -20,9 +20,12 @@ namespace xtd {
     /// @brief The environment variable is stored or retrieved from the HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment key in the Windows operating system registry.
     machine = 2,
   };
-  
-  /// @cond
-  inline std::ostream& operator<<(std::ostream& os, environment_variable_target value) {return os << to_string(value, {{environment_variable_target::process, "process"}, {environment_variable_target::user, "user"}, {environment_variable_target::machine, "machine"}});}
-  inline std::wostream& operator<<(std::wostream& os, environment_variable_target value) {return os << to_string(value, {{environment_variable_target::process, L"process"}, {environment_variable_target::user, L"user"}, {environment_variable_target::machine, L"machine"}});}
-  /// @endcond
 }
+
+/*
+/// @cond
+template<> struct xtd::enum_register<xtd::environment_variable_target> {
+  void operator()(xtd::enum_collection<xtd::environment_variable_target>& values, xtd::enum_type& type) {values = {{xtd::environment_variable_target::process, "process"}, {xtd::environment_variable_target::user, "user"}, {xtd::environment_variable_target::machine, "machine"}};}
+};
+/// @endcond
+*/

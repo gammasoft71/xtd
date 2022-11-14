@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
-#include "../../ustring.h"
+#include "../../enum.h"
 
 /// @cond
 #undef unix
@@ -37,11 +37,12 @@ namespace xtd {
         /// @brief Socket options apply only to UDP sockets.
         udp = 17,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, socket_option_level value) {return os << to_string(value, {{socket_option_level::socket, "socket"}, {socket_option_level::ip, "ip"}, {socket_option_level::ip_v6, "ip_v6"}, {socket_option_level::tcp, "tcp"}, {socket_option_level::udp, "udp"}});}
-      inline std::wostream& operator<<(std::wostream& os, socket_option_level value) {return os << to_string(value, {{socket_option_level::socket, L"socket"}, {socket_option_level::ip, L"ip"}, {socket_option_level::ip_v6, L"ip_v6"}, {socket_option_level::tcp, L"tcp"}, {socket_option_level::udp, L"udp"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::net::sockets::socket_option_level> {
+  void operator()(xtd::enum_collection<xtd::net::sockets::socket_option_level>& values, xtd::enum_type& type) {values = {{xtd::net::sockets::socket_option_level::socket, "socket"}, {xtd::net::sockets::socket_option_level::ip, "ip"}, {xtd::net::sockets::socket_option_level::ip_v6, "ip_v6"}, {xtd::net::sockets::socket_option_level::tcp, "tcp"}, {xtd::net::sockets::socket_option_level::udp, "udp"}};}
+};
+/// @endcond

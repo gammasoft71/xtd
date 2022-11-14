@@ -1,4 +1,5 @@
 #define TRACE
+#include <xtd/diagnostics/trace_options.h>
 #include <xtd/diagnostics/trace_listener.h>
 #include <xtd/xtd.tunit>
 #include <sstream>
@@ -74,7 +75,7 @@ namespace xtd::diagnostics::tests {
     
     void test_method_(trace_output_options) {
       unit_test_trace_listener trace_listener;
-      trace_listener.trace_output_options(trace_options::process_id | trace_options::callstack);
+      trace_listener.trace_output_options(xtd::diagnostics::trace_options::process_id | xtd::diagnostics::trace_options::callstack);
       assert::are_equal(trace_options::process_id | trace_options::callstack, trace_listener.trace_output_options(), csf_);
     }
     

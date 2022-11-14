@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
-#include "../../ustring.h"
+#include "../../enum.h"
 
 /// @cond
 #undef unix
@@ -33,11 +33,12 @@ namespace xtd {
         /// @brief Error status mode.
         select_error = 2
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, select_mode value) {return os << to_string(value, {{select_mode::select_read, "select_read"}, {select_mode::select_write, "select_write"}, {select_mode::select_error, "select_error"}});}
-      inline std::wostream& operator<<(std::wostream& os, select_mode value) {return os << to_string(value, {{select_mode::select_read, L"select_read"}, {select_mode::select_write, L"select_write"}, {select_mode::select_error, L"select_error"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::net::sockets::select_mode> {
+  void operator()(xtd::enum_collection<xtd::net::sockets::select_mode>& values, xtd::enum_type& type) {values = {{xtd::net::sockets::select_mode::select_read, "select_read"}, {xtd::net::sockets::select_mode::select_write, "select_write"}, {xtd::net::sockets::select_mode::select_error, "select_error"}};}
+};
+/// @endcond

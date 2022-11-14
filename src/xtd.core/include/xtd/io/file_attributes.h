@@ -2,7 +2,7 @@
 /// @brief Contains xtd::io::file_attributes enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "../ustring.h"
+#include "../enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -49,19 +49,18 @@ namespace xtd {
     };
     
     /// @cond
-    inline file_attributes& operator^=(file_attributes& lhs, file_attributes rhs) {lhs = static_cast<file_attributes>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
-    inline file_attributes& operator&=(file_attributes& lhs, file_attributes rhs) {lhs = static_cast<file_attributes>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}
-    inline file_attributes& operator|=(file_attributes& lhs, file_attributes rhs) {lhs = static_cast<file_attributes>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;}
-    inline file_attributes& operator+=(file_attributes& lhs, file_attributes rhs) {lhs = static_cast<file_attributes>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;}
-    inline file_attributes& operator-=(file_attributes& lhs, file_attributes rhs) {lhs = static_cast<file_attributes>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;}
-    inline file_attributes operator^(file_attributes lhs, file_attributes rhs) {return static_cast<file_attributes>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}
-    inline file_attributes operator&(file_attributes lhs, file_attributes rhs) {return static_cast<file_attributes>(static_cast<int>(lhs) & static_cast<int>(rhs));}
-    inline file_attributes operator|(file_attributes lhs, file_attributes rhs) {return static_cast<file_attributes>(static_cast<int>(lhs) | static_cast<int>(rhs));}
-    inline file_attributes operator+(file_attributes lhs, file_attributes rhs) {return static_cast<file_attributes>(static_cast<int>(lhs) + static_cast<int>(rhs));}
-    inline file_attributes operator-(file_attributes lhs, file_attributes rhs) {return static_cast<file_attributes>(static_cast<int>(lhs) - static_cast<int>(rhs));}
-    inline file_attributes operator~(file_attributes lhs) {return static_cast<file_attributes>(~static_cast<int>(lhs));}
-    inline std::ostream& operator<<(std::ostream& os, file_attributes value) {return os << to_string(value, {{file_attributes::read_only, "read_only"}, {file_attributes::hidden, "hidden"}, {file_attributes::system, "system"}, {file_attributes::directory, "directory"}, {file_attributes::archive, "archive"}, {file_attributes::device, "device"}, {file_attributes::normal, "normal"}, {file_attributes::temporary, "temporary"}, {file_attributes::sparse_file, "sparse_file"}, {file_attributes::reparse_point, "reparse_point"}, {file_attributes::compressed, "compressed"}, {file_attributes::offline, "offline"}, {file_attributes::not_content_indexed, "not_content_indexed"}, {file_attributes::encrypted, "encrypted"}});}
-    inline std::wostream& operator<<(std::wostream& os, file_attributes value) {return os << to_string(value, {{file_attributes::read_only, L"read_only"}, {file_attributes::hidden, L"hidden"}, {file_attributes::system, L"system"}, {file_attributes::directory, L"directory"}, {file_attributes::archive, L"archive"}, {file_attributes::device, L"device"}, {file_attributes::normal, L"normal"}, {file_attributes::temporary, L"temporary"}, {file_attributes::sparse_file, L"sparse_file"}, {file_attributes::reparse_point, L"reparse_point"}, {file_attributes::compressed, L"compressed"}, {file_attributes::offline, L"offline"}, {file_attributes::not_content_indexed, L"not_content_indexed"}, {file_attributes::encrypted, L"encrypted"}});}
+
+    /// @cond
+    add_enum_flag_operators_(xtd::io::file_attributes);
     /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::io::file_attributes> {
+  void operator()(xtd::enum_collection<xtd::io::file_attributes>& values, xtd::enum_type& type) {
+    values = {{xtd::io::file_attributes::read_only, "read_only"}, {xtd::io::file_attributes::hidden, "hidden"}, {xtd::io::file_attributes::system, "system"}, {xtd::io::file_attributes::directory, "directory"}, {xtd::io::file_attributes::archive, "archive"}, {xtd::io::file_attributes::device, "device"}, {xtd::io::file_attributes::normal, "normal"}, {xtd::io::file_attributes::temporary, "temporary"}, {xtd::io::file_attributes::sparse_file, "sparse_file"}, {xtd::io::file_attributes::reparse_point, "reparse_point"}, {xtd::io::file_attributes::compressed, "compressed"}, {xtd::io::file_attributes::offline, "offline"}, {xtd::io::file_attributes::not_content_indexed, "not_content_indexed"}, {xtd::io::file_attributes::encrypted, "encrypted"}};
+    type = xtd::enum_type::flags;
+  }
+};
+/// @endcond

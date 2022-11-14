@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
-#include "../../ustring.h"
+#include "../../enum.h"
 
 /// @cond
 #undef unix
@@ -35,9 +35,13 @@ namespace xtd {
       };
       
       /// @cond
-      inline std::ostream& operator<<(std::ostream& os, socket_shutdown value) {return os << to_string(value, {{socket_shutdown::receive, "receive"}, {socket_shutdown::send, "send"}, {socket_shutdown::both, "both"}});}
-      inline std::wostream& operator<<(std::wostream& os, socket_shutdown value) {return os << to_string(value, {{socket_shutdown::receive, L"receive"}, {socket_shutdown::send, L"send"}, {socket_shutdown::both, L"both"}});}
       /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::net::sockets::socket_shutdown> {
+  void operator()(xtd::enum_collection<xtd::net::sockets::socket_shutdown>& values, xtd::enum_type& type) {values = {{xtd::net::sockets::socket_shutdown::receive, "receive"}, {xtd::net::sockets::socket_shutdown::send, "send"}, {xtd::net::sockets::socket_shutdown::both, "both"}};}
+};
+/// @endcond

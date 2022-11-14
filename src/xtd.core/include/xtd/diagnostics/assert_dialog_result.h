@@ -2,7 +2,7 @@
 /// @brief Contains xtd::diagnostics::assert_dialog_result enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "../ustring.h"
+#include "../enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -26,10 +26,11 @@ namespace xtd {
       /// @brief The assert dialog return value is Ignore (usually sent from a button labeled Ignore).
       ignore = 5,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, assert_dialog_result value) {return os << to_string(value, {{assert_dialog_result::abort, "abort"}, {assert_dialog_result::retry, "retry"}, {assert_dialog_result::ignore, "ignore"}});}
-    inline std::wostream& operator<<(std::wostream& os, assert_dialog_result value) {return os << to_string(value, {{assert_dialog_result::abort, L"abort"}, {assert_dialog_result::retry, L"retry"}, {assert_dialog_result::ignore, L"ignore"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::diagnostics::assert_dialog_result> {
+  void operator()(xtd::enum_collection<xtd::diagnostics::assert_dialog_result>& values, xtd::enum_type& type) {values = {{xtd::diagnostics::assert_dialog_result::abort, "abort"}, {xtd::diagnostics::assert_dialog_result::retry, "retry"}, {xtd::diagnostics::assert_dialog_result::ignore, "ignore"}};}
+};
+/// @endcond

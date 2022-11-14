@@ -2,7 +2,7 @@
 /// @brief Contains xtd::console_color enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "ustring.h"
+#include "enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -48,9 +48,10 @@ namespace xtd {
     /// @brief The color white.
     white
   };
-  
-  /// @cond
-  inline std::ostream& operator<<(std::ostream& os, console_color value) {return os << to_string(value, {{console_color::black, "black"}, {console_color::dark_blue, "dark_blue"}, {console_color::dark_green, "dark_green"}, {console_color::dark_cyan, "dark_cyan"}, {console_color::dark_red, "dark_red"}, {console_color::dark_magenta, "dark_magenta"}, {console_color::dark_yellow, "dark_yellow"}, {console_color::gray, "gray"}, {console_color::dark_gray, "dark_gray"}, {console_color::blue, "blue"}, {console_color::green, "green"}, {console_color::cyan, "cyan"}, {console_color::red, "red"}, {console_color::magenta, "magenta"}, {console_color::yellow, "yellow"}, {console_color::white, "white"}});}
-  inline std::wostream& operator<<(std::wostream& os, console_color value) {return os << to_string(value, {{console_color::black, L"black"}, {console_color::dark_blue, L"dark_blue"}, {console_color::dark_green, L"dark_green"}, {console_color::dark_cyan, L"dark_cyan"}, {console_color::dark_red, L"dark_red"}, {console_color::dark_magenta, L"dark_magenta"}, {console_color::dark_yellow, L"dark_yellow"}, {console_color::gray, L"gray"}, {console_color::dark_gray, L"dark_gray"}, {console_color::blue, L"blue"}, {console_color::green, L"green"}, {console_color::cyan, L"cyan"}, {console_color::red, L"red"}, {console_color::magenta, L"magenta"}, {console_color::yellow, L"yellow"}, {console_color::white, L"white"}});}
-  /// @endcond
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::console_color> {
+  void operator()(xtd::enum_collection<xtd::console_color>& values, xtd::enum_type& type) {values = {{xtd::console_color::black, "black"}, {xtd::console_color::dark_blue, "dark_blue"}, {xtd::console_color::dark_green, "dark_green"}, {xtd::console_color::dark_cyan, "dark_cyan"}, {xtd::console_color::dark_red, "dark_red"}, {xtd::console_color::dark_magenta, "dark_magenta"}, {xtd::console_color::dark_yellow, "dark_yellow"}, {xtd::console_color::gray, "gray"}, {xtd::console_color::dark_gray, "dark_gray"}, {xtd::console_color::blue, "blue"}, {xtd::console_color::green, "green"}, {xtd::console_color::cyan, "cyan"}, {xtd::console_color::red, "red"}, {xtd::console_color::magenta, "magenta"}, {xtd::console_color::yellow, "yellow"}, {xtd::console_color::white, "white"}};}
+};
+/// @endcond

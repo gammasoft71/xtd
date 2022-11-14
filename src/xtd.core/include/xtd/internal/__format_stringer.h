@@ -238,13 +238,32 @@ std::ostream& operator<<(std::ostream& os, const char16_t* str);
 std::ostream& operator<<(std::ostream& os, const char32_t* str);
 std::ostream& operator<<(std::ostream& os, const wchar_t* str);
 
+template<typename enum_t>
+std::string __enum_to_string(enum_t value);
 std::string __object_to_string(const xtd::object& value);
 
 template <typename char_t, typename type_t, typename bool_t>
-struct __polymorphic_ostream__ {};
+struct __enum_ostream__ {};
 
 template <typename char_t, typename type_t>
-struct __polymorphic_ostream__<char_t, type_t, std::true_type> {
+struct __enum_ostream__<char_t, type_t, std::true_type> {
+  std::basic_ostream<char_t>& to_stream(std::basic_ostream<char_t>& os, const type_t& value) noexcept {
+    return os << __enum_to_string(value);
+  }
+};
+
+template <typename char_t, typename type_t>
+struct __enum_ostream__<char_t, type_t, std::false_type> {
+  std::basic_ostream<char_t>& to_stream(std::basic_ostream<char_t>& os, const type_t& value) noexcept {
+    return os << value;
+  }
+};
+
+template <typename char_t, typename type_t, typename bool_t>
+struct __enum_or_polymorphic_ostream__ {};
+
+template <typename char_t, typename type_t>
+struct __enum_or_polymorphic_ostream__<char_t, type_t, std::true_type> {
   std::basic_ostream<char_t>& to_stream(std::basic_ostream<char_t>& os, const type_t& value) noexcept {
     if (dynamic_cast<const xtd::object*>(&value)) return os << __object_to_string(static_cast<const xtd::object&>(value));
     return os << value;
@@ -252,9 +271,10 @@ struct __polymorphic_ostream__<char_t, type_t, std::true_type> {
 };
 
 template <typename char_t, typename type_t>
-struct __polymorphic_ostream__<char_t, type_t, std::false_type> {
+struct __enum_or_polymorphic_ostream__<char_t, type_t, std::false_type> {
   std::basic_ostream<char_t>& to_stream(std::basic_ostream<char_t>& os, const type_t& value) noexcept {
-    return os << value;
+    __enum_ostream__<char, type_t, typename std::conditional<std::is_enum<type_t>::value, std::true_type, std::false_type>::type>().to_stream(os, value);
+    return os;
   }
 };
 
@@ -262,7 +282,7 @@ template<typename value_t>
 std::string __format_stringer_to_std_string(const value_t& value) {
   std::basic_stringstream<char> ss;
   //ss << value;
-  __polymorphic_ostream__<char, value_t, typename std::conditional<std::is_polymorphic<value_t>::value, std::true_type, std::false_type>::type>().to_stream(ss, value);
+  __enum_or_polymorphic_ostream__<char, value_t, typename std::conditional<std::is_polymorphic<value_t>::value, std::true_type, std::false_type>::type>().to_stream(ss, value);
   return ss.str();
 }
 

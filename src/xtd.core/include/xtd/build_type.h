@@ -2,7 +2,7 @@
 /// @brief Contains xtd::build_type enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "ustring.h"
+#include "enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -19,9 +19,10 @@ namespace xtd {
     /// @brief Build type release.
     release,
   };
-  
-  /// @cond
-  inline std::ostream& operator<<(std::ostream& os, build_type value) {return os << to_string(value, {{build_type::debug, "debug"}, {build_type::release, "release"}});}
-  inline std::wostream& operator<<(std::wostream& os, build_type value) {return os << to_string(value, {{build_type::debug, L"debug"}, {build_type::release, L"release"}});}
-  /// @endcond
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::build_type> {
+  void operator()(xtd::enum_collection<xtd::build_type>& values, xtd::enum_type& type) {values = {{xtd::build_type::debug, "debug"}, {xtd::build_type::release, "release"}};}
+};
+/// @endcond

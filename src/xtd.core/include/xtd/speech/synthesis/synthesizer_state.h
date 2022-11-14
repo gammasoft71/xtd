@@ -3,8 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
-#include "../../object.h"
-#include "../../ustring.h"
+#include "../../enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -31,11 +30,15 @@ namespace xtd {
         /// @brief Indicates that the xtd::speech::synthesis::speech_synthesizer is paused.
         pause = 2,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, synthesizer_state value) {return os << to_string(value, {{synthesizer_state::ready, "ready"}, {synthesizer_state::speaking, "speaking"}, {synthesizer_state::pause, "pause"}});}
-      inline std::wostream& operator<<(std::wostream& os, synthesizer_state value) {return os << to_string(value, {{synthesizer_state::ready, L"ready"}, {synthesizer_state::speaking, L"speaking"}, {synthesizer_state::pause, L"pause"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::speech::synthesis::synthesizer_state> {
+  void operator()(xtd::enum_collection<xtd::speech::synthesis::synthesizer_state>& values, xtd::enum_type& type) {
+    values = {{xtd::speech::synthesis::synthesizer_state::ready, "ready"}, {xtd::speech::synthesis::synthesizer_state::speaking, "speaking"}, {xtd::speech::synthesis::synthesizer_state::pause, "pause"}};
+    type = xtd::enum_type::flags;
+  }
+};
+/// @endcond

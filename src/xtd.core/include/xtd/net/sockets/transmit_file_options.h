@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
-#include "../../ustring.h"
+#include "../../enum.h"
 
 /// @cond
 #undef disconnect
@@ -42,20 +42,17 @@ namespace xtd {
       };
       
       /// @cond
-      inline transmit_file_options& operator^=(transmit_file_options& lhs, transmit_file_options rhs) {lhs = static_cast<transmit_file_options>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
-      inline transmit_file_options& operator&=(transmit_file_options& lhs, transmit_file_options rhs) {lhs = static_cast<transmit_file_options>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}
-      inline transmit_file_options& operator|=(transmit_file_options& lhs, transmit_file_options rhs) {lhs = static_cast<transmit_file_options>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;}
-      inline transmit_file_options& operator+=(transmit_file_options& lhs, transmit_file_options rhs) {lhs = static_cast<transmit_file_options>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;}
-      inline transmit_file_options& operator-=(transmit_file_options& lhs, transmit_file_options rhs) {lhs = static_cast<transmit_file_options>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;}
-      inline transmit_file_options operator^(transmit_file_options lhs, transmit_file_options rhs) {return static_cast<transmit_file_options>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}
-      inline transmit_file_options operator&(transmit_file_options lhs, transmit_file_options rhs) {return static_cast<transmit_file_options>(static_cast<int>(lhs) & static_cast<int>(rhs));}
-      inline transmit_file_options operator|(transmit_file_options lhs, transmit_file_options rhs) {return static_cast<transmit_file_options>(static_cast<int>(lhs) | static_cast<int>(rhs));}
-      inline transmit_file_options operator+(transmit_file_options lhs, transmit_file_options rhs) {return static_cast<transmit_file_options>(static_cast<int>(lhs) + static_cast<int>(rhs));}
-      inline transmit_file_options operator-(transmit_file_options lhs, transmit_file_options rhs) {return static_cast<transmit_file_options>(static_cast<int>(lhs) - static_cast<int>(rhs));}
-      inline transmit_file_options operator~(transmit_file_options lhs) {return static_cast<transmit_file_options>(~static_cast<int>(lhs));}
-      inline std::ostream& operator<<(std::ostream& os, transmit_file_options value) {return os << to_string(value, {{transmit_file_options::use_default_worker_thread, "use_default_worker_thread"}, {transmit_file_options::disconnect, "disconnect"}, {transmit_file_options::reuse_socket, "reuse_socket"}, {transmit_file_options::write_behind, "write_behind"}, {transmit_file_options::use_system_thread, "use_system_thread"}, {transmit_file_options::use_kernel_apc, "use_kernel_apc"}});}
-      inline std::wostream& operator<<(std::wostream& os, transmit_file_options value) {return os << to_string(value, {{transmit_file_options::use_default_worker_thread, L"use_default_worker_thread"}, {transmit_file_options::disconnect, L"disconnect"}, {transmit_file_options::reuse_socket, L"reuse_socket"}, {transmit_file_options::write_behind, L"write_behind"}, {transmit_file_options::use_system_thread, L"use_system_thread"}, {transmit_file_options::use_kernel_apc, L"use_kernel_apc"}});}
+      add_enum_flag_operators_(xtd::net::sockets::transmit_file_options);
       /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::net::sockets::transmit_file_options> {
+  void operator()(xtd::enum_collection<xtd::net::sockets::transmit_file_options>& values, xtd::enum_type& type) {
+    values = {{xtd::net::sockets::transmit_file_options::use_default_worker_thread, "use_default_worker_thread"}, {xtd::net::sockets::transmit_file_options::disconnect, "disconnect"}, {xtd::net::sockets::transmit_file_options::reuse_socket, "reuse_socket"}, {xtd::net::sockets::transmit_file_options::write_behind, "write_behind"}, {xtd::net::sockets::transmit_file_options::use_system_thread, "use_system_thread"}, {xtd::net::sockets::transmit_file_options::use_kernel_apc, "use_kernel_apc"}};
+    type = xtd::enum_type::flags;
+  }
+};
+/// @endcond
