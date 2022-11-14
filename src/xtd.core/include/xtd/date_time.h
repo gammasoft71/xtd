@@ -771,7 +771,7 @@ namespace xtd {
     /// @par Examples
     /// The following example uses the xtd::date_time::specify_kind method to demonstrate how the xtd::date_time::kind property influences the xtd::date_time::to_local_time and xtd::date_time::to_universal_time conversion methods.
     /// @include date_time_specify_kind.cpp
-    static date_time specify_kind(date_time value, date_time_kind kind);
+    static date_time specify_kind(const date_time& value, date_time_kind kind);
     
     /// @brief Returns a xtd::ustring that represents the current xtd::date_time.
     /// @param format Format-control String.

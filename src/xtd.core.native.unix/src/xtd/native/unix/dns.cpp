@@ -54,7 +54,7 @@ vector<vector<uint8_t>> dns::get_addresses(intptr_t host) {
   size_t index = 0;
   vector<vector<uint8_t>> addresses;
   while (reinterpret_cast<hostent*>(host)->h_addr_list[index] != nullptr) {
-    addresses.push_back(vector<uint8_t>(reinterpret_cast<const uint8_t*>(reinterpret_cast<hostent*>(host)->h_addr_list[index]), reinterpret_cast<const uint8_t*>(reinterpret_cast<hostent*>(host)->h_addr_list[index]) + (reinterpret_cast<hostent*>(host)->h_addrtype == ADDRESS_FAMILY_INTER_NETWORK ? 4 : 16)));
+    addresses.emplace_back(reinterpret_cast<const uint8_t*>(reinterpret_cast<hostent*>(host)->h_addr_list[index]), reinterpret_cast<const uint8_t*>(reinterpret_cast<hostent*>(host)->h_addr_list[index]) + (reinterpret_cast<hostent*>(host)->h_addrtype == ADDRESS_FAMILY_INTER_NETWORK ? 4 : 16));
     index++;
   }
   return addresses;
