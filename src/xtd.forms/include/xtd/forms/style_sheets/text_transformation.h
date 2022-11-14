@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::style_sheets::text_transformation enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -27,11 +27,12 @@ namespace xtd {
         /// @brief Defines a capitalize text transformation.
         capitalize,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, const text_transformation value) {return os << to_string(value, {{text_transformation::none, "none"}, {text_transformation::lowercase, "lowercase"}, {text_transformation::uppercase, "uppercase"}, {text_transformation::capitalize, "capitalize"}});}
-      inline std::wostream& operator<<(std::wostream& os, const text_transformation value) {return os << to_string(value, {{text_transformation::none, L"none"}, {text_transformation::lowercase, L"lowercase"}, {text_transformation::uppercase, L"uppercase"}, {text_transformation::capitalize, L"capitalize"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::style_sheets::text_transformation> {
+  void operator()(xtd::enum_collection<xtd::forms::style_sheets::text_transformation>& values, xtd::enum_type& type) {values = {{xtd::forms::style_sheets::text_transformation::none, "none"}, {xtd::forms::style_sheets::text_transformation::lowercase, "lowercase"}, {xtd::forms::style_sheets::text_transformation::uppercase, "uppercase"}, {xtd::forms::style_sheets::text_transformation::capitalize, "capitalize"}};}
+};
+/// @endcond

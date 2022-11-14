@@ -91,11 +91,12 @@ namespace xtd {
         /// @brief Defines a percent unit. Relative to the parent element.
         percent,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, const length_unit value) {return os << to_string(value, { {length_unit::centimeters, "centimeters"}, {length_unit::millimeters, "millimeters"}, {length_unit::inches, "inches"}, {length_unit::pixels, "pixels"}, {length_unit::points, "points"}, {length_unit::picas, "picas"}, {length_unit::element, "element"}, {length_unit::element_x_height, "element_x_height"}, {length_unit::chase, "chase"}, {length_unit::root_element, "root_element"}, {length_unit::viewport_width, "viewport_width"}, {length_unit::viewport_height, "viewport_height"}, {length_unit::viewport_min, "viewport_min"}, {length_unit::viewport_max, "viewport_max"}, {length_unit::percent, "percent"}});}
-      inline std::wostream& operator<<(std::wostream& os, const length_unit value) {return os << to_string(value, { {length_unit::centimeters, L"centimeters"}, {length_unit::millimeters, L"millimeters"}, {length_unit::inches, L"inches"}, {length_unit::pixels, L"pixels"}, {length_unit::points, L"points"}, {length_unit::picas, L"picas"}, {length_unit::element, L"element"}, {length_unit::element_x_height, L"element_x_height"}, {length_unit::chase, L"chase"}, {length_unit::root_element, L"root_element"}, {length_unit::viewport_width, L"viewport_width"}, {length_unit::viewport_height, L"viewport_height"}, {length_unit::viewport_min, L"viewport_min"}, {length_unit::viewport_max, L"viewport_max"}, {length_unit::percent, L"percent"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::style_sheets::length_unit> {
+  void operator()(xtd::enum_collection<xtd::forms::style_sheets::length_unit>& values, xtd::enum_type& type) {values = {{xtd::forms::style_sheets::length_unit::centimeters, "centimeters"}, {xtd::forms::style_sheets::length_unit::millimeters, "millimeters"}, {xtd::forms::style_sheets::length_unit::inches, "inches"}, {xtd::forms::style_sheets::length_unit::pixels, "pixels"}, {xtd::forms::style_sheets::length_unit::points, "points"}, {xtd::forms::style_sheets::length_unit::picas, "picas"}, {xtd::forms::style_sheets::length_unit::element, "element"}, {xtd::forms::style_sheets::length_unit::element_x_height, "element_x_height"}, {xtd::forms::style_sheets::length_unit::chase, "chase"}, {xtd::forms::style_sheets::length_unit::root_element, "root_element"}, {xtd::forms::style_sheets::length_unit::viewport_width, "viewport_width"}, {xtd::forms::style_sheets::length_unit::viewport_height, "viewport_height"}, {xtd::forms::style_sheets::length_unit::viewport_min, "viewport_min"}, {xtd::forms::style_sheets::length_unit::viewport_max, "viewport_max"}, {xtd::forms::style_sheets::length_unit::percent, "percent"}};}
+};
+/// @endcond

@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::appearance enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -23,10 +23,11 @@ namespace xtd {
       /// @brief The appearance of a switch button.
       switch_button = 2,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, appearance value) {return os << to_string(value, {{appearance::normal, "normal"}, {appearance::button, "button"}, {appearance::switch_button, "switch_button"}});}
-    inline std::wostream& operator<<(std::wostream& os, appearance value) {return os << to_string(value, {{appearance::normal, L"normal"}, {appearance::button, L"button"}, {appearance::switch_button, L"switch_button"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::appearance> {
+  void operator()(xtd::enum_collection<xtd::forms::appearance>& values, xtd::enum_type& type) {values = {{xtd::forms::appearance::normal, "normal"}, {xtd::forms::appearance::button, "button"}, {xtd::forms::appearance::switch_button, "switch_button"}};}
+};
+/// @endcond

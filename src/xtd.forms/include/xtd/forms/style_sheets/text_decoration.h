@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::style_sheets::text_decoration enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -28,11 +28,12 @@ namespace xtd {
         /// @brief Defines a underline text decoration.
         underline,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, const text_decoration value) {return os << to_string(value, {{text_decoration::none, "none"}, {text_decoration::overline, "overline"}, {text_decoration::line_through, "line_through"}, {text_decoration::underline, "underline"}});}
-      inline std::wostream& operator<<(std::wostream& os, const text_decoration value) {return os << to_string(value, {{text_decoration::none, L"none"}, {text_decoration::overline, L"overline"}, {text_decoration::line_through, L"line_through"}, {text_decoration::underline, L"underline"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::style_sheets::text_decoration> {
+  void operator()(xtd::enum_collection<xtd::forms::style_sheets::text_decoration>& values, xtd::enum_type& type) {values = {{xtd::forms::style_sheets::text_decoration::none, "none"}, {xtd::forms::style_sheets::text_decoration::overline, "overline"}, {xtd::forms::style_sheets::text_decoration::line_through, "line_through"}, {xtd::forms::style_sheets::text_decoration::underline, "underline"}};}
+};
+/// @endcond

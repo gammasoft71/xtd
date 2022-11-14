@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::style_sheets::border_type enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -44,11 +44,12 @@ namespace xtd {
         /// @brief Defines a double border.
         double_border,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, const border_type value) {return os << to_string(value, {{border_type::hidden, "hidden"}, {border_type::none, "none"}, {border_type::solid, "solid"}, {border_type::inset, "inset"}, {border_type::outset, "outset"}, {border_type::groove, "groove"}, {border_type::ridge, "ridge"}, {border_type::theme, "theme"}, {border_type::dashed, "dashed"}, {border_type::dot_dash, "dot_dash"}, {border_type::dot_dot_dash, "dot_dot_dash"}, {border_type::dotted, "dotted"}, {border_type::double_border, "double_border"}});}
-      inline std::wostream& operator<<(std::wostream& os, const border_type value) {return os << to_string(value, {{border_type::hidden, L"hidden"}, {border_type::none, L"none"}, {border_type::solid, L"solid"}, {border_type::inset, L"inset"}, {border_type::outset, L"outset"}, {border_type::groove, L"groove"}, {border_type::ridge, L"ridge"}, {border_type::theme, L"theme"}, {border_type::dashed, L"dashed"}, {border_type::dot_dash, L"dot_dash"}, {border_type::dot_dot_dash, L"dot_dot_dash"}, {border_type::dotted, L"dotted"}, {border_type::double_border, L"double_border"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::style_sheets::border_type> {
+  void operator()(xtd::enum_collection<xtd::forms::style_sheets::border_type>& values, xtd::enum_type& type) {values = {{xtd::forms::style_sheets::border_type::hidden, "hidden"}, {xtd::forms::style_sheets::border_type::none, "none"}, {xtd::forms::style_sheets::border_type::solid, "solid"}, {xtd::forms::style_sheets::border_type::inset, "inset"}, {xtd::forms::style_sheets::border_type::outset, "outset"}, {xtd::forms::style_sheets::border_type::groove, "groove"}, {xtd::forms::style_sheets::border_type::ridge, "ridge"}, {xtd::forms::style_sheets::border_type::theme, "theme"}, {xtd::forms::style_sheets::border_type::dashed, "dashed"}, {xtd::forms::style_sheets::border_type::dot_dash, "dot_dash"}, {xtd::forms::style_sheets::border_type::dot_dot_dash, "dot_dot_dash"}, {xtd::forms::style_sheets::border_type::dotted, "dotted"}, {xtd::forms::style_sheets::border_type::double_border, "double_border"}};}
+};
+/// @endcond

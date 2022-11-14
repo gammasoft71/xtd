@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::anchor_styles enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -32,19 +32,13 @@ namespace xtd {
     };
     
     /// @cond
-    inline anchor_styles& operator +=(anchor_styles& lhs, anchor_styles rhs) {lhs = static_cast<anchor_styles>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
-    inline anchor_styles& operator -=(anchor_styles& lhs, anchor_styles rhs) {lhs = static_cast<anchor_styles>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}
-    inline anchor_styles& operator &=(anchor_styles& lhs, anchor_styles rhs) {lhs = static_cast<anchor_styles>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); return lhs;}
-    inline anchor_styles& operator |=(anchor_styles& lhs, anchor_styles rhs) {lhs = static_cast<anchor_styles>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); return lhs;}
-    inline anchor_styles& operator ^=(anchor_styles& lhs, anchor_styles rhs) {lhs = static_cast<anchor_styles>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); return lhs;}
-    inline anchor_styles operator +(anchor_styles lhs, anchor_styles rhs) {return static_cast<anchor_styles>(static_cast<long long>(lhs) + static_cast<long long>(rhs));}
-    inline anchor_styles operator -(anchor_styles lhs, anchor_styles rhs) {return static_cast<anchor_styles>(static_cast<long long>(lhs) - static_cast<long long>(rhs));}
-    inline anchor_styles operator ~(anchor_styles rhs) {return static_cast<anchor_styles>(~static_cast<long long>(rhs));}
-    inline anchor_styles operator &(anchor_styles lhs, anchor_styles rhs) {return static_cast<anchor_styles>(static_cast<long long>(lhs) & static_cast<long long>(rhs));}
-    inline anchor_styles operator |(anchor_styles lhs, anchor_styles rhs) {return static_cast<anchor_styles>(static_cast<long long>(lhs) | static_cast<long long>(rhs));}
-    inline anchor_styles operator ^(anchor_styles lhs, anchor_styles rhs) {return static_cast<anchor_styles>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs));}
-    inline std::ostream& operator<<(std::ostream& os, anchor_styles value) {return os << to_string(value, {{anchor_styles::none, "none"}, {anchor_styles::top, "top"}, {anchor_styles::bottom, "bottom"}, {anchor_styles::left, "left"}, {anchor_styles::right, "right"}});}
-    inline std::wostream& operator<<(std::wostream& os, anchor_styles value) {return os << to_string(value, {{anchor_styles::none, L"none"}, {anchor_styles::top, L"top"}, {anchor_styles::bottom, L"bottom"}, {anchor_styles::left, L"left"}, {anchor_styles::right, L"right"}});}
+    add_enum_flag_operators_(xtd::forms::anchor_styles);
     /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::anchor_styles> {
+  void operator()(xtd::enum_collection<xtd::forms::anchor_styles>& values, xtd::enum_type& type) {values = {{xtd::forms::anchor_styles::none, "none"}, {xtd::forms::anchor_styles::top, "top"}, {xtd::forms::anchor_styles::bottom, "bottom"}, {xtd::forms::anchor_styles::left, "left"}, {xtd::forms::anchor_styles::right, "right"}};}
+};
+/// @endcond

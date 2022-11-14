@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::style_sheets::pseudo_state enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -38,20 +38,17 @@ namespace xtd {
       };
       
       /// @cond
-      inline pseudo_state& operator +=(pseudo_state& lhs, pseudo_state rhs) {lhs = static_cast<pseudo_state>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
-      inline pseudo_state& operator -=(pseudo_state& lhs, pseudo_state rhs) {lhs = static_cast<pseudo_state>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}
-      inline pseudo_state& operator &=(pseudo_state& lhs, pseudo_state rhs) {lhs = static_cast<pseudo_state>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); return lhs;}
-      inline pseudo_state& operator |=(pseudo_state& lhs, pseudo_state rhs) {lhs = static_cast<pseudo_state>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); return lhs;}
-      inline pseudo_state& operator ^=(pseudo_state& lhs, pseudo_state rhs) {lhs = static_cast<pseudo_state>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); return lhs;}
-      inline pseudo_state operator +(pseudo_state lhs, pseudo_state rhs) {return static_cast<pseudo_state>(static_cast<long long>(lhs) + static_cast<long long>(rhs));}
-      inline pseudo_state operator -(pseudo_state lhs, pseudo_state rhs) {return static_cast<pseudo_state>(static_cast<long long>(lhs) - static_cast<long long>(rhs));}
-      inline pseudo_state operator ~(pseudo_state rhs) {return static_cast<pseudo_state>(~static_cast<long long>(rhs));}
-      inline pseudo_state operator &(pseudo_state lhs, pseudo_state rhs) {return static_cast<pseudo_state>(static_cast<long long>(lhs) & static_cast<long long>(rhs));}
-      inline pseudo_state operator |(pseudo_state lhs, pseudo_state rhs) {return static_cast<pseudo_state>(static_cast<long long>(lhs) | static_cast<long long>(rhs));}
-      inline pseudo_state operator ^(pseudo_state lhs, pseudo_state rhs) {return static_cast<pseudo_state>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs));}
-      inline std::ostream& operator<<(std::ostream& os, const pseudo_state value) {return os << to_string(value, {{pseudo_state::standard, "standard"}, {pseudo_state::hover, "hover"}, {pseudo_state::pressed, "pressed"}, {pseudo_state::disabled, "disabled"}, {pseudo_state::focused, "focused"}, {pseudo_state::default_state, "default_state"}, {pseudo_state::unchecked, "unchecked"}, {pseudo_state::checked, "checked"}, {pseudo_state::mixed, "mixed"}});}
-      inline std::wostream& operator<<(std::wostream& os, const pseudo_state value) {return os << to_string(value, {{pseudo_state::standard, L"standard"}, {pseudo_state::hover, L"hover"}, {pseudo_state::pressed, L"pressed"}, {pseudo_state::disabled, L"disabled"}, {pseudo_state::focused, L"focused"}, {pseudo_state::default_state, L"default_state"}, {pseudo_state::unchecked, L"unchecked"}, {pseudo_state::checked, L"checked"}, {pseudo_state::mixed, L"mixed"}});}
+      add_enum_flag_operators_(xtd::forms::style_sheets::pseudo_state);
       /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::style_sheets::pseudo_state> {
+  void operator()(xtd::enum_collection<xtd::forms::style_sheets::pseudo_state>& values, xtd::enum_type& type) {
+    values = {{xtd::forms::style_sheets::pseudo_state::standard, "standard"}, {xtd::forms::style_sheets::pseudo_state::hover, "hover"}, {xtd::forms::style_sheets::pseudo_state::pressed, "pressed"}, {xtd::forms::style_sheets::pseudo_state::disabled, "disabled"}, {xtd::forms::style_sheets::pseudo_state::focused, "focused"}, {xtd::forms::style_sheets::pseudo_state::default_state, "default_state"}, {xtd::forms::style_sheets::pseudo_state::unchecked, "unchecked"}, {xtd::forms::style_sheets::pseudo_state::checked, "checked"}, {xtd::forms::style_sheets::pseudo_state::mixed, "mixed"}};
+    type = xtd::enum_type::flags;
+  }
+};
+/// @endcond

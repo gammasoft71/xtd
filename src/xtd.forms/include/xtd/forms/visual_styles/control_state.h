@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::visual_styles::control_state enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -27,11 +27,12 @@ namespace xtd {
         /// @brief The control is disabled.
         disabled,
       };
-      
-      /// @cond
-      inline std::ostream& operator<<(std::ostream& os, control_state value) {return os << to_string(value, {{control_state::normal, "normal"}, {control_state::hot, "hot"}, {control_state::pressed, "pressed"}, {control_state::disabled, "disabled"}});}
-      inline std::wostream& operator<<(std::wostream& os, control_state value) {return os << to_string(value, {{control_state::normal, L"normal"}, {control_state::hot, L"hot"}, {control_state::pressed, L"pressed"}, {control_state::disabled, L"disabled"}});}
-      /// @endcond
     }
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::visual_styles::control_state> {
+  void operator()(xtd::enum_collection<xtd::forms::visual_styles::control_state>& values, xtd::enum_type& type) {values = {{xtd::forms::visual_styles::control_state::normal, "normal"}, {xtd::forms::visual_styles::control_state::hot, "hot"}, {xtd::forms::visual_styles::control_state::pressed, "pressed"}, {xtd::forms::visual_styles::control_state::disabled, "disabled"}};}
+};
+/// @endcond
