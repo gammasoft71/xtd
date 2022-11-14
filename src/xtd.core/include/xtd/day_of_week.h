@@ -2,7 +2,7 @@
 /// @brief Contains xtd::day_of_week enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "ustring.h"
+#include "enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -34,9 +34,10 @@ namespace xtd {
     /// @brief Indicates saturday.
     saturday
   };
-  
-  /// @cond
-  inline std::ostream& operator<<(std::ostream& os, const day_of_week value) {return os << to_string(value, { {day_of_week::sunday, "sunday"}, {day_of_week::monday, "monday"}, {day_of_week::tuesday, "tuesday"}, {day_of_week::wednesday, "wednesday"}, {day_of_week::thursday, "thursday"}, {day_of_week::friday, "friday"}, {day_of_week::saturday, "saturday"}});}
-  inline std::wostream& operator<<(std::wostream& os, const day_of_week value) {return os << to_string(value, { {day_of_week::sunday, L"sunday"}, {day_of_week::monday, L"monday"}, {day_of_week::tuesday, L"tuesday"}, {day_of_week::wednesday, L"wednesday"}, {day_of_week::thursday, L"thursday"}, {day_of_week::friday, L"friday"}, {day_of_week::saturday, L"saturday"}});}
-  /// @endcond
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::day_of_week> {
+  void operator()(xtd::enum_collection<xtd::day_of_week>& values, xtd::enum_type& type) {values = {{xtd::day_of_week::sunday, "sunday"}, {xtd::day_of_week::monday, "monday"}, {xtd::day_of_week::tuesday, "tuesday"}, {xtd::day_of_week::wednesday, "wednesday"}, {xtd::day_of_week::thursday, "thursday"}, {xtd::day_of_week::friday, "friday"}, {xtd::day_of_week::saturday, "saturday"}};}
+};
+/// @endcond
