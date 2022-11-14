@@ -137,6 +137,38 @@ namespace xtd {
     
     bool equals(const xtd::object& value) const noexcept override {return is<enum_object<enum_type>>(value) && equals(static_cast<const enum_object<enum_type>&>(value));}
 
+    /// @brief Converts this instance to byte.
+    /// @return A new byte_t object converted from this instance.
+    byte_t to_byte() const noexcept {return static_cast<byte_t>(value_);}
+
+    /// @brief Converts this instance to signed byte.
+    /// @return A new sbyte_t object converted from this instance.
+    sbyte_t to_sbyte() const noexcept {return static_cast<sbyte_t>(value_);}
+
+    /// @brief Converts this instance to int16.
+    /// @return A new to_int16 object converted from this instance.
+    int16_t to_int16() const noexcept {return static_cast<int16_t>(value_);}
+
+    /// @brief Converts this instance to int32.
+    /// @return A new to_int32 object converted from this instance.
+    int32_t to_int32() const noexcept {return static_cast<int32_t>(value_);}
+
+    /// @brief Converts this instance to int64.
+    /// @return A new to_int64 object converted from this instance.
+    int64_t to_int64() const noexcept {return static_cast<int64_t>(value_);}
+
+    /// @brief Converts this instance to unsigned int16.
+    /// @return A new to_uint16 object converted from this instance.
+    uint16_t to_uint16() const noexcept {return static_cast<uint16_t>(value_);}
+
+    /// @brief Converts this instance to unsigned int32.
+    /// @return A new to_uint32 object converted from this instance.
+    uint32_t to_uint32() const noexcept {return static_cast<uint32_t>(value_);}
+
+    /// @brief Converts this instance to unsigned int64.
+    /// @return A new to_uint64 object converted from this instance.
+    uint64_t to_uint64() const noexcept {return static_cast<uint64_t>(value_);}
+
     xtd::ustring to_string() const noexcept override {
       values();
       if (flags_) return to_string_flags();
@@ -324,6 +356,54 @@ namespace xtd {
       return enum_object<enum_t>::parse(str, ignore_case);
     }
     
+    /// @brief Converts this instance to byte.
+    /// @return A new byte_t object converted from this instance.
+    /// @param value The value to convert.
+    template<typename enum_t>
+    static byte_t to_byte(enum_t value) noexcept {return enum_object<enum_t>(value).to_byte();}
+    
+    /// @brief Converts this instance to signed byte.
+    /// @param value The value to convert.
+    /// @return A new sbyte_t object converted from this instance.
+    template<typename enum_t>
+    static sbyte_t to_sbyte(enum_t value) noexcept {return enum_object<enum_t>(value).to_sbyte();}
+    
+    /// @brief Converts this instance to int16.
+    /// @param value The value to convert.
+    /// @return A new to_int16 object converted from this instance.
+    template<typename enum_t>
+    static int16_t to_int16(enum_t value) noexcept {return enum_object<enum_t>(value).to_int16();}
+    
+    /// @brief Converts this instance to int32.
+    /// @param value The value to convert.
+    /// @return A new to_int32 object converted from this instance.
+    template<typename enum_t>
+    static int32_t to_int32(enum_t value) noexcept {return enum_object<enum_t>(value).to_int32();}
+    
+    /// @brief Converts this instance to int64.
+    /// @param value The value to convert.
+    /// @return A new to_int64 object converted from this instance.
+    template<typename enum_t>
+    static int64_t to_int64(enum_t value) noexcept {return enum_object<enum_t>(value).to_int64();}
+    
+    /// @brief Converts this instance to unsigned int16.
+    /// @param value The value to convert.
+    /// @return A new to_uint16 object converted from this instance.
+    template<typename enum_t>
+    static uint16_t to_uint16(enum_t value) noexcept {return enum_object<enum_t>(value).to_uint16();}
+    
+    /// @brief Converts this instance to unsigned int32.
+    /// @param value The value to convert.
+    /// @return A new to_uint32 object converted from this instance.
+    template<typename enum_t>
+      static uint32_t to_uint32(enum_t value) noexcept {return enum_object<enum_t>(value).to_uint32();}
+    
+    /// @brief Converts this instance to unsigned int64.
+    /// @param value The value to convert.
+    /// @return A new to_uint64 object converted from this instance.
+    template<typename enum_t>
+      static uint64_t to_uint64(enum_t value) noexcept {return enum_object<enum_t>(value).to_uint64();}
+
     /// @brief Converts the String representation of the name or numeric value of one or more enumerated constants to an equivalent enumerated object. The return value indicates whether the conversion succeeded.
     /// @param vaue The String representation of the enumeration name or underlying value to convert.
     /// @param reslt When this method returns, result contains an object of type TEnum whose value is represented by value if the parse operation succeeds. If the parse operation fails, result contains the default value of the underlying type of TEnum. Note that this value need ! be a member of the TEnum enumeration. This parameter is passed uninitialized.
