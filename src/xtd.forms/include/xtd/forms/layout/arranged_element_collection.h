@@ -297,6 +297,34 @@ namespace xtd {
           insert(begin() + index, value);
         }
         
+        /// @brief Inserts specified element at specified position.
+        /// @param pos The iterator before which the content will be inserted. pos may be the arranged_element_collection::end iterator.
+        /// @param args The arguments to forward to the constructor of the element
+        template<typename ...args_t>
+        void emplace(const_iterator pos, args_t&&... args) {
+          size_t index = pos - begin();
+          inserting_ = true;
+          iterator result = collection_.insert(pos, args...);
+          inserting_ = false;
+          (*this)[index].owner = this;
+          (*this)[index].pos = index;
+          item_added(index, collection_[index]);
+          if (sorted_) sort();
+          return result;
+        }
+        
+        /// @brief Adds an element to the end.
+        /// @param args The arguments to forward to the constructor of the element
+        template<typename ...args_t>
+        void emplace_back(args_t&&... args) {
+          collection_.push_back(args...);
+          size_t index = collection_.size() - 1;
+          (*this)[index].owner = this;
+          (*this)[index].pos = index;
+          item_added(index, collection_[index]);
+          if (sorted_) sort();
+        }
+
         /// @brief Erases element at specified position.
         /// @param pos The iterator which the content will be erased.
         iterator erase(iterator pos) {
