@@ -351,7 +351,7 @@ date_time date_time::parse(const xtd::ustring& s) {
   throw not_implemented_exception(csf_);
 }
 
-date_time date_time::specify_kind(date_time value, date_time_kind kind) {
+date_time date_time::specify_kind(const date_time& value, date_time_kind kind) {
   if (kind == date_time_kind::local && value.kind_ != date_time_kind::local) return value.to_local_time();
   if (kind == date_time_kind::utc && value.kind_ != date_time_kind::utc) return value.to_universal_time();
   if (kind == date_time_kind::unspecified) return date_time(value.value_, date_time_kind::unspecified);

@@ -23,7 +23,7 @@ vertical_layout_panel& vertical_layout_panel::control_layout_style(const control
 
 void vertical_layout_panel::on_control_added(const xtd::forms::control_event_args& e) {
   panel::on_control_added(e);
-  control_layout_styles_.push_back(make_pair(control_ref(const_cast<xtd::forms::control&>(e.control())), vertical_control_layout_style()));
+  control_layout_styles_.emplace_back(control_ref(const_cast<xtd::forms::control&>(e.control())), vertical_control_layout_style());
 }
 
 void vertical_layout_panel::on_control_removed(const xtd::forms::control_event_args& e) {

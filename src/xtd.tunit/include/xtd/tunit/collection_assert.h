@@ -258,7 +258,7 @@ namespace xtd {
         auto value = *collection.cbegin();
         std::map<decltype(value), int> counts;
         for (auto item : collection) {
-          auto result = counts.insert(std::pair<decltype(item), int>(item, 1));
+          auto result = counts.emplace(item, 1);
           if (result.second == false)
             base_assert::fail("all items are unique", base_assert::join_items(collection), message, stack_frame);
         }
@@ -276,7 +276,7 @@ namespace xtd {
       static void all_items_are_unique(const std::initializer_list<item_t>& collection, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         std::map<item_t, int> counts;
         for (auto item : collection) {
-          auto result = counts.insert(std::pair<item_t, int>(item, 1));
+          auto result = counts.emplace(item, 1);
           if (result.second == false)
             base_assert::fail("all items are unique", base_assert::join_items(collection), message, stack_frame);
         }
