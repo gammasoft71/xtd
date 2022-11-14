@@ -223,12 +223,12 @@ namespace xtd {
       for (auto item : reversed) {
         if (to_int(item.first) != 0 && (rest & to_int(item.first)) == to_int(item.first)) {
           rest -= to_int(item.first);
-          if (!str.empty()) str = ", " + str;
+          if (!xtd::ustring::is_empty(str)) str = ", " + str;
           str = item.second + str;
         }
       }
       
-      if (str.empty() || rest > 0) return  xtd::ustring::format("{}", value_);
+      if (str.empty() || rest > 0) return  xtd::ustring::format("{}", to_int(value_));
       
       return str;
     }
