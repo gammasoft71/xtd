@@ -425,7 +425,7 @@ xtd::ustring date_time::to_string() const noexcept {
 ustring date_time::to_string(const ustring& format) const {
   auto fmt = format;
   if (fmt.empty()) fmt =  "G";
-  if (fmt.size() > 1) format_exception("Invalid format", csf_);
+  if (fmt.size() > 1) throw format_exception("Invalid format", csf_);
   
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
   int32_t day_of_week = 0;
@@ -621,8 +621,4 @@ void date_time::set_date_time(uint32_t year, uint32_t month, uint32_t day, uint3
   days += (year * days_per_year) + (year / 4) - (year / 100) + (year / 400);
   value_ = xtd::ticks(days * ticks_per_day + hour * ticks_per_hour + minute * ticks_per_minute + second * ticks_per_second + millisecond * ticks_per_millisecond);
   kind_ = kind;
-}
-
-std::ostream& xtd::operator<<(std::ostream& os, const date_time& value) noexcept {
-  return os << value.to_string();
 }

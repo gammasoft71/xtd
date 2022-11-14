@@ -34,7 +34,7 @@ namespace xtd {
     cpp_language() noexcept = default;
     cpp_language(const cpp_language&) noexcept = default;
     cpp_language& operator=(const cpp_language&) noexcept = default;
-    friend std::ostream& operator <<(std::ostream& os, const cpp_language& cpp_language) noexcept {return os << cpp_language.to_string();}
+    friend std::ostream& operator<<(std::ostream& os, const cpp_language& cpp_language) noexcept {return os << cpp_language.to_string();}
     /// @endcond
     
     /// @name Properties

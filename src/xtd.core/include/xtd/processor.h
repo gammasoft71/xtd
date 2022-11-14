@@ -32,7 +32,6 @@ namespace xtd {
     processor() = default;
     processor(const processor&) = default;
     processor& operator=(const processor&) = default;
-    friend std::ostream& operator <<(std::ostream& os, const processor& processor) noexcept {return os << processor.to_string();}
     /// @endcond
     
     /// @name Properties

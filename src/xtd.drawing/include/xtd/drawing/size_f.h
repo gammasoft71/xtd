@@ -110,10 +110,6 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
-      /// @cond
-      friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::size_f& size) noexcept {return os << size.to_string();}
-      /// @endcond
-      
     private:
       float width_ = 0;
       float height_ = 0;

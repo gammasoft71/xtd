@@ -128,6 +128,3 @@ const time_zone_info& time_zone_info::time_find_system_time_zone_by_id(const ust
 ustring time_zone_info::to_string() const noexcept {
   return ustring::format("time_zone_info [id=\"{}\", base_utc_offset={}, daylight_name=\"{}\", display_name\"{}\", standard_name=\"{}\", supports_daylight_saving_time={}]", id(), base_utc_offset(), daylight_name(), display_name(), standard_name(), supports_daylight_saving_time());
 }
-std::ostream& xtd::operator<<(std::ostream& os, const time_zone_info& value) noexcept {
-  return os << value.to_string();
-}

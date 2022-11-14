@@ -40,7 +40,6 @@ namespace xtd {
         socket_information(socket_information&& socket_information) = default;
         socket_information(const socket_information& socket_information) = default;
         socket_information& operator=(const socket_information&) = default;
-        friend std::ostream& operator <<(std::ostream& os, const socket_information& mo) noexcept {return os << mo.to_string();}
         /// @endcond
         
         /// @name Properties

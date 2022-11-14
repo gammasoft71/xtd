@@ -115,7 +115,6 @@ namespace xtd {
         /// @brief Sets selection range to the calendar.
         /// @param control month_calendar handle.
         /// @param date_start The range date start.
-        /// @param date_end: The range date end.
         /// @warning Internal use only
         static void selection_range(intptr_t control, date_time date_start, date_time date_end);
         

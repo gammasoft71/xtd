@@ -221,10 +221,6 @@ namespace xtd {
         xtd::ustring to_string() const noexcept override;
         /// @}
         
-        /// @cond
-        friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::drawing2d::matrix& matrix) noexcept {return os << matrix.to_string();}
-        /// @endcond
-        
       private:
         void init_from_rect_3points(const xtd::drawing::rectangle_f& rect, const xtd::drawing::point_f pt1, const xtd::drawing::point_f pt2, const xtd::drawing::point_f pt3);
         friend class xtd::drawing::graphics;

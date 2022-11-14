@@ -121,11 +121,3 @@ xtd::ustring version::to_string(size_t field_count) const {
     result << "." << std::to_string(revision_);
   return result.str();
 }
-
-std::ostream& xtd::operator<<(std::ostream& os, const version& ver) noexcept {
-  try {
-    return os << ver.to_string();
-  } catch (...) {
-    return os;
-  }
-}

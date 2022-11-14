@@ -127,12 +127,6 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override {return ustring::format("[{}: name={}]", ustring::class_name(*this), data_->name_);}
       /// @}
       
-      /// @cond
-      friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::font_family& font_family) noexcept {
-        return os << font_family.to_string();
-      }
-      /// @endcond
-      
     private:
       struct data {
         intptr_t handle_ = 0;

@@ -42,7 +42,6 @@ namespace xtd {
       dns_end_point(dns_end_point&&) = default;
       dns_end_point(const dns_end_point&) = default;
       dns_end_point& operator=(const dns_end_point&) = default;
-      friend std::ostream& operator <<(std::ostream& os, const dns_end_point& end_point) noexcept {return os << end_point.to_string();}
       /// @endcond
       
       /// @name Properties
