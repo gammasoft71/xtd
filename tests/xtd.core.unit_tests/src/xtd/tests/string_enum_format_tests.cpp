@@ -17,18 +17,9 @@ enum day {
   saturday
 };
 
-std::ostream& operator<<(std::ostream& os, day d) {
-  switch (d) {
-    case sunday: os << "sunday"; break;
-    case monday: os << "monday"; break;
-    case tuesday: os << "tuesday"; break;
-    case wednesday: os << "wednesday"; break;
-    case thursday: os << "thursday"; break;
-    case friday: os << "friday"; break;
-    case saturday: os << "saturday"; break;
-  }
-  return os;
-}
+template<> struct xtd::enum_register<day> {
+  void operator()(xtd::enum_collection<day>& values, xtd::enum_type& type) {values = {{day::sunday,  "sunday"}, {day::monday, "monday"}, {day::tuesday, "tuesday"}, {day::wednesday, "wednesday"}, {day::thursday, "thursday"}, {day::friday, "friday"}, {day::saturday, "saturday"}};}
+};
 
 namespace xtd::tests {
   class test_class_(string_enum_format_tests) {
