@@ -11,6 +11,7 @@
 #undef __XTD_CORE_INTERNAL__
 /// @endcond
 
+#include <ostream>
 #include <string>
 #include "icomparable.h"
 #include "iequatable.h"

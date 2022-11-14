@@ -3,8 +3,6 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
-#include <ostream>
-
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Specifies the culture, case, and sort rules to be used by certain overloads of the xtd::ustring::compare method
@@ -21,13 +19,3 @@ namespace xtd {
     ordinal_ignore_case
   };
 }
-
-/// @cond
-inline std::ostream& operator<<(std::ostream& os, xtd::string_comparison sc) {
-  switch (sc) {
-    case xtd::string_comparison::ordinal: os << "ordinal"; break;
-    case xtd::string_comparison::ordinal_ignore_case: os << "ordinal_ignore_case"; break;
-  }
-  return os;
-}
-/// @endcond
