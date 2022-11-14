@@ -17,20 +17,13 @@ namespace xtd::tests {
     friday,
     saturday
   };
-  
-  std::ostream& operator<<(std::ostream& os, wday d) {
-    switch (d) {
-      case wday::sunday: os << "sunday"; break;
-      case wday::monday: os << "monday"; break;
-      case wday::tuesday: os << "tuesday"; break;
-      case wday::wednesday: os << "wednesday"; break;
-      case wday::thursday: os << "thursday"; break;
-      case wday::friday: os << "friday"; break;
-      case wday::saturday: os << "saturday"; break;
-    }
-    return os;
-  }
-  
+};
+
+template<> struct xtd::enum_register<xtd::tests::wday> {
+  void operator()(xtd::enum_collection<tests::wday>& values, xtd::enum_type& type) {values = {{xtd::tests::wday::sunday,  "sunday"}, {xtd::tests::wday::monday, "monday"}, {xtd::tests::wday::tuesday, "tuesday"}, {xtd::tests::wday::wednesday, "wednesday"}, {xtd::tests::wday::thursday, "thursday"}, {xtd::tests::wday::friday, "friday"}, {xtd::tests::wday::saturday, "saturday"}};}
+};
+
+namespace xtd::tests {
   class test_class_(wstring_enum_class_format_tests) {
   public:
     void test_method_(format_sunday_with_default_argument) {

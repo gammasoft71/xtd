@@ -1,4 +1,4 @@
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 #include <xtd/format_exception.h>
 #include <xtd/xtd.tunit>
 
@@ -17,20 +17,13 @@ namespace xtd::tests {
     friday,
     saturday
   };
-  
-  std::ostream& operator<<(std::ostream& os, xtd::tests::day d) {
-    switch (d) {
-      case xtd::tests::day::sunday: os << "sunday"; break;
-      case xtd::tests::day::monday: os << "monday"; break;
-      case xtd::tests::day::tuesday: os << "tuesday"; break;
-      case xtd::tests::day::wednesday: os << "wednesday"; break;
-      case xtd::tests::day::thursday: os << "thursday"; break;
-      case xtd::tests::day::friday: os << "friday"; break;
-      case xtd::tests::day::saturday: os << "saturday"; break;
-    }
-    return os;
-  }
+};
 
+template<> struct xtd::enum_register<xtd::tests::day> {
+  void operator()(xtd::enum_collection<tests::day>& values, xtd::enum_type& type) {values = {{xtd::tests::day::sunday,  "sunday"}, {xtd::tests::day::monday, "monday"}, {xtd::tests::day::tuesday, "tuesday"}, {xtd::tests::day::wednesday, "wednesday"}, {xtd::tests::day::thursday, "thursday"}, {xtd::tests::day::friday, "friday"}, {xtd::tests::day::saturday, "saturday"}};}
+};
+
+namespace xtd::tests {
   class test_class_(string_enum_class_format_tests) {
   public:
     void test_method_(format_sunday_with_default_argument) {
