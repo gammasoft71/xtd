@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::string_trimming enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -28,10 +28,11 @@ namespace xtd {
       /// @brief The center is removed from trimmed lines and replaced by an ellipsis. The algorithm keeps as much of the last slash-delimited segment of the line as possible.
       ellipsis_path = 5,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, string_trimming value) {return os << xtd::to_string(value, {{string_trimming::none, "none"}, {string_trimming::character, "character"}, {string_trimming::word, "word"}, {string_trimming::ellipsis_character, "ellipsis_character"}, {string_trimming::ellipsis_word, "ellipsis_word"}, {string_trimming::ellipsis_path, "ellipsis_path"}});}
-    inline std::wostream& operator<<(std::wostream& os, string_trimming value) {return os << xtd::to_string(value, {{string_trimming::none, L"none"}, {string_trimming::character, L"character"}, {string_trimming::word, L"word"}, {string_trimming::ellipsis_character, L"ellipsis_character"}, {string_trimming::ellipsis_word, L"ellipsis_word"}, {string_trimming::ellipsis_path, L"ellipsis_path"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::string_trimming> {
+  void operator()(xtd::enum_collection<xtd::drawing::string_trimming>& values, xtd::enum_type& type) {values = {{xtd::drawing::string_trimming::none, "none"}, {xtd::drawing::string_trimming::character, "character"}, {xtd::drawing::string_trimming::word, "word"}, {xtd::drawing::string_trimming::ellipsis_character, "ellipsis_character"}, {xtd::drawing::string_trimming::ellipsis_word, "ellipsis_word"}, {xtd::drawing::string_trimming::ellipsis_path, "ellipsis_path"}};}
+};
+/// @endcond

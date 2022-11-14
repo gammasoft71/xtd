@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::rotate_flip_type enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -53,10 +53,11 @@ namespace xtd {
       /// @brief Specifies a 90-degree clockwise rotation without flipping.
       rotate_270_flip_xy = rotate_90_flip_none,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, const rotate_flip_type value) {return os << to_string(value, {{rotate_flip_type::rotate_none_flip_none, "rotate_none_flip_none"}, {rotate_flip_type::rotate_90_flip_none, "rotate_90_flip_none"}, {rotate_flip_type::rotate_180_flip_none, "rotate_180_flip_none"}, {rotate_flip_type::rotate_270_flip_none, "rotate_270_flip_none"}, {rotate_flip_type::rotate_none_flip_x, "rotate_none_flip_x"}, {rotate_flip_type::rotate_90_flip_x, "rotate_90_flip_x"}, {rotate_flip_type::rotate_180_flip_x, "rotate_180_flip_x"}, {rotate_flip_type::rotate_270_flip_x, "rotate_270_flip_x"}});}
-    inline std::wostream& operator<<(std::wostream& os, const rotate_flip_type value) {return os << to_string(value, {{rotate_flip_type::rotate_none_flip_none, L"rotate_none_flip_none"}, {rotate_flip_type::rotate_90_flip_none, L"rotate_90_flip_none"}, {rotate_flip_type::rotate_180_flip_none, L"rotate_180_flip_none"}, {rotate_flip_type::rotate_270_flip_none, L"rotate_270_flip_none"}, {rotate_flip_type::rotate_none_flip_x, L"rotate_none_flip_x"}, {rotate_flip_type::rotate_90_flip_x, L"rotate_90_flip_x"}, {rotate_flip_type::rotate_180_flip_x, L"rotate_180_flip_x"}, {rotate_flip_type::rotate_270_flip_x, L"rotate_270_flip_x"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::drawing::rotate_flip_type> {
+  void operator()(xtd::enum_collection<xtd::drawing::rotate_flip_type>& values, xtd::enum_type& type) {values = {{xtd::drawing::rotate_flip_type::rotate_none_flip_none, "rotate_none_flip_none"}, {xtd::drawing::rotate_flip_type::rotate_90_flip_none, "rotate_90_flip_none"}, {xtd::drawing::rotate_flip_type::rotate_180_flip_none, "rotate_180_flip_none"}, {xtd::drawing::rotate_flip_type::rotate_270_flip_none, "rotate_270_flip_none"}, {xtd::drawing::rotate_flip_type::rotate_none_flip_x, "rotate_none_flip_x"}, {xtd::drawing::rotate_flip_type::rotate_90_flip_x, "rotate_90_flip_x"}, {xtd::drawing::rotate_flip_type::rotate_180_flip_x, "rotate_180_flip_x"}, {xtd::drawing::rotate_flip_type::rotate_270_flip_x, "rotate_270_flip_x"}};}
+};
+/// @endcond
