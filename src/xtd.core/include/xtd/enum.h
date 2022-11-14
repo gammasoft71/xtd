@@ -101,6 +101,14 @@ namespace xtd {
     /// @}
 
     /// @cond
+    enum_object(byte_t value) : value_(to_enum(value)) {}
+    enum_object(sbyte_t value) : value_(to_enum(value)) {}
+    enum_object(int16_t value) : value_(to_enum(value)) {}
+    enum_object(int32_t value) : value_(to_enum(value)) {}
+    enum_object(int64_t value) : value_(to_enum(value)) {}
+    enum_object(uint16_t value) : value_(to_enum(value)) {}
+    enum_object(uint32_t value) : value_(to_enum(value)) {}
+    enum_object(uint64_t value) : value_(to_enum(value)) {}
     enum_object(enum_object&&) noexcept = default;
     enum_object(const enum_object&) noexcept = default;
     enum_object& operator=(const enum_object&) noexcept = default;
@@ -265,7 +273,8 @@ namespace xtd {
       return str;
     }
 
-    static enum_type to_enum(int64_t value) {return static_cast<enum_type>(value);}
+    template<typename type_t>
+    static enum_type to_enum(type_t value) {return static_cast<enum_type>(value);}
     static int64_t to_int(enum_type value) {return static_cast<int64_t>(value);}
 
     static enum_collection<enum_type>& values() {
@@ -295,20 +304,24 @@ namespace xtd {
     /// @exception ArgumentException The value is ! a value of enumType.
     template<typename enum_t>
     static xtd::ustring get_name(enum_t value) {return enum_object<enum_t>(value).to_string();}
-    
     /// @brief Retrieves the name of the constant in the specified enumeration that has the specified value.
     /// @param value The value of a particular enumerated constant in terms of its underlying type.
     /// @return String A String containing the name of the enumerated constant in enumType whose value is value; or the value int32 to String if no such constant is found.
     /// @exception ArgumentException The value is ! a value of enumType.
     template<typename enum_t>
-    static xtd::ustring get_name(int32_t value) {return enum_object<enum_t>(static_cast<enum_t>(value)).to_string();}
-    
+    static xtd::ustring get_name(enum_object<enum_t> value) {return enum_object<enum_t>(value).to_string();}
     /// @brief Retrieves the name of the constant in the specified enumeration that has the specified value.
     /// @param value The value of a particular enumerated constant in terms of its underlying type.
     /// @return String A String containing the name of the enumerated constant in enumType whose value is value; or the value int32 to String if no such constant is found.
     /// @exception ArgumentException The value is ! a value of enumType.
     template<typename enum_t>
-    static xtd::ustring get_name(int64_t value) {return enum_object<enum_t>(static_cast<enum_t>(value)).to_string();}
+    static xtd::ustring get_name(int32_t value) {return enum_object<enum_t>(value).to_string();}
+    /// @brief Retrieves the name of the constant in the specified enumeration that has the specified value.
+    /// @param value The value of a particular enumerated constant in terms of its underlying type.
+    /// @return String A String containing the name of the enumerated constant in enumType whose value is value; or the value int32 to String if no such constant is found.
+    /// @exception ArgumentException The value is ! a value of enumType.
+    template<typename enum_t>
+    static xtd::ustring get_name(int64_t value) {return enum_object<enum_t>(value).to_string();}
     
     /// @brief Retrieves an array of the names of the constants in a specified enumeration.
     /// @return Array<String> A String array of the names of the constants in enumType.
@@ -338,14 +351,19 @@ namespace xtd {
     /// @exception ArgumentException The value is ! a value of enumType.
     template<typename enum_t>
     static bool is_defined(enum_t value) {return std::find_if(enum_object<enum_t>().values().begin(), enum_object<enum_t>().values().end(), [&](auto item)->bool {return item.first == value;}) != enum_object<enum_t>().values().end();}
-    
+    /// @brief Returns an indication whether a constant with a specified value exists in a specified enumeration.
+    /// @param fromValue An enumeration value.
+    /// @return Boolean true if a constant in enumType has a value equal to value; otherwise, false.
+    /// @exception ArgumentException The value is ! a value of enumType.
+    template<typename enum_t>
+    static bool is_defined(enum_object<enum_t> value) {return std::find_if(enum_object<enum_t>().values().begin(), enum_object<enum_t>().values().end(), [&](auto item)->bool {return item.first == value;}) != enum_object<enum_t>().values().end();}
+
     /// @brief Converts the String representation of the name or numeric value of one or more enumerated constants to an equivalent enumerated object.
     /// @param value An A String containing the name or value to convert.
     /// @return enum_object An enum whose value is represented by value.
     /// @exception ArgumentException The value is ! a value of enumType.
     template<typename enum_t>
     static enum_t parse(const xtd::ustring& value) {return parse<enum_t>(value, false);}
-    
     /// @brief Converts the String representation of the name or numeric value of one or more enumerated constants to an equivalent enumerated object.
     /// @param str An A String containing the name or value to convert.
     /// @param ignore_case true to Ignore case; false to regard case.
