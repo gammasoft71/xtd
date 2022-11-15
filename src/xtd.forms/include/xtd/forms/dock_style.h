@@ -35,6 +35,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::dock_style> {
-  void operator()(xtd::enum_collection<xtd::forms::dock_style>& values, xtd::enum_type& type) {values =  {{xtd::forms::dock_style::none, "none"}, {xtd::forms::dock_style::top, "top"}, {xtd::forms::dock_style::bottom, "bottom"}, {xtd::forms::dock_style::left, "left"}, {xtd::forms::dock_style::right, "right"}, {xtd::forms::dock_style::fill, "fill"}};}
+  void operator()(xtd::enum_collection<xtd::forms::dock_style>& values, xtd::enum_type& type) {values = {{xtd::forms::dock_style::none, "none"}, {xtd::forms::dock_style::top, "top"}, {xtd::forms::dock_style::bottom, "bottom"}, {xtd::forms::dock_style::left, "left"}, {xtd::forms::dock_style::right, "right"}, {xtd::forms::dock_style::fill, "fill"}};}
 };
 /// @endcond
