@@ -46,19 +46,14 @@ namespace xtd {
         /// @brief Partial send or receive for message.
         partial = 0x8000,
       };
-      
-      /// @cond
-      add_enum_flag_operators_(xtd::net::sockets::socket_flags);
-      /// @endcond
     }
   }
 }
 
 /// @cond
+add_enum_flag_operators_(xtd::net::sockets, socket_flags);
+
 template<> struct xtd::enum_register<xtd::net::sockets::socket_flags> {
-  void operator()(xtd::enum_collection<xtd::net::sockets::socket_flags>& values, xtd::enum_attribute& attribute) {
-    values = {{xtd::net::sockets::socket_flags::none, "none"}, {xtd::net::sockets::socket_flags::out_of_band, "out_of_band"}, {xtd::net::sockets::socket_flags::peek, "peek"}, {xtd::net::sockets::socket_flags::dont_route, "dont_route"}, {xtd::net::sockets::socket_flags::max_io_vector_length, "max_io_vector_length"}, {xtd::net::sockets::socket_flags::truncated, "truncated"}, {xtd::net::sockets::socket_flags::control_data_truncated, "control_data_truncated"}, {xtd::net::sockets::socket_flags::broadcast, "broadcast"}, {xtd::net::sockets::socket_flags::multicast, "multicast"}, {xtd::net::sockets::socket_flags::partial, "partial"}};
-    attribute = xtd::enum_attribute::flags;
-  }
+  void operator()(xtd::enum_collection<xtd::net::sockets::socket_flags>& values) {values = {{xtd::net::sockets::socket_flags::none, "none"}, {xtd::net::sockets::socket_flags::out_of_band, "out_of_band"}, {xtd::net::sockets::socket_flags::peek, "peek"}, {xtd::net::sockets::socket_flags::dont_route, "dont_route"}, {xtd::net::sockets::socket_flags::max_io_vector_length, "max_io_vector_length"}, {xtd::net::sockets::socket_flags::truncated, "truncated"}, {xtd::net::sockets::socket_flags::control_data_truncated, "control_data_truncated"}, {xtd::net::sockets::socket_flags::broadcast, "broadcast"}, {xtd::net::sockets::socket_flags::multicast, "multicast"}, {xtd::net::sockets::socket_flags::partial, "partial"}};}
 };
 /// @endcond

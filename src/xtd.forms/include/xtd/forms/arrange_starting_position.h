@@ -28,18 +28,15 @@ namespace xtd {
       /// @brief Hides minimized windows by moving them off the visible area of the screen.
       hide = 8
     };
-    
-    /// @cond
-    add_enum_flag_operators_(xtd::forms::arrange_starting_position);
-    /// @endcond
   }
 }
 
 /// @cond
+add_enum_flag_operators_(xtd::forms, arrange_starting_position);
+/// @endcond
+
+/// @cond
 template<> struct xtd::enum_register<xtd::forms::arrange_starting_position> {
-  void operator()(xtd::enum_collection<xtd::forms::arrange_starting_position>& values, xtd::enum_attribute& attribute) {
-    values = {{xtd::forms::arrange_starting_position::bottom_left, "bottom_left"}, {xtd::forms::arrange_starting_position::bottom_right, "bottom_right"}, {xtd::forms::arrange_starting_position::top_left, "top_left"}, {xtd::forms::arrange_starting_position::top_right, "top_right"}, {xtd::forms::arrange_starting_position::hide, "hide"}};
-    attribute = xtd::enum_attribute::flags;
-  }
+  void operator()(xtd::enum_collection<xtd::forms::arrange_starting_position>& values) {values = {{xtd::forms::arrange_starting_position::bottom_left, "bottom_left"}, {xtd::forms::arrange_starting_position::bottom_right, "bottom_right"}, {xtd::forms::arrange_starting_position::top_left, "top_left"}, {xtd::forms::arrange_starting_position::top_right, "top_right"}, {xtd::forms::arrange_starting_position::hide, "hide"}};}
 };
 /// @endcond

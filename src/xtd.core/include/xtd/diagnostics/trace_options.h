@@ -34,18 +34,13 @@ namespace xtd {
       /// @brief Write the call stack, which is represented by the return value of the Environment.StackTrace property.
       callstack = 0b100000
     };
-
-    /// @cond
-    add_enum_flag_operators_(xtd::diagnostics::trace_options);
-    /// @endcond
   }
 }
 
 /// @cond
+add_enum_flag_operators_(xtd::diagnostics, trace_options);
+
 template<> struct xtd::enum_register<xtd::diagnostics::trace_options> {
-  void operator()(xtd::enum_collection<xtd::diagnostics::trace_options>& values, xtd::enum_attribute& attribute) {
-    values = {{xtd::diagnostics::trace_options::none, "none"}, {xtd::diagnostics::trace_options::logical_operation_stack, "logical_operation_stack"}, {xtd::diagnostics::trace_options::date_time, "date_time"}, {xtd::diagnostics::trace_options::timestamp, "timestamp"}, {xtd::diagnostics::trace_options::process_id, "process_id"}, {xtd::diagnostics::trace_options::thread_id, "thread_id"}, {xtd::diagnostics::trace_options::callstack, "callstack"}};
-    attribute = xtd::enum_attribute::flags;
-  }
+  void operator()(xtd::enum_collection<xtd::diagnostics::trace_options>& values) {values = {{xtd::diagnostics::trace_options::none, "none"}, {xtd::diagnostics::trace_options::logical_operation_stack, "logical_operation_stack"}, {xtd::diagnostics::trace_options::date_time, "date_time"}, {xtd::diagnostics::trace_options::timestamp, "timestamp"}, {xtd::diagnostics::trace_options::process_id, "process_id"}, {xtd::diagnostics::trace_options::thread_id, "thread_id"}, {xtd::diagnostics::trace_options::callstack, "callstack"}};}
 };
 /// @endcond

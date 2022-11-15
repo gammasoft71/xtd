@@ -23,6 +23,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::build_type> {
-  void operator()(xtd::enum_collection<xtd::build_type>& values, xtd::enum_attribute& attribute) {values = {{xtd::build_type::debug, "debug"}, {xtd::build_type::release, "release"}};}
+  void operator()(xtd::enum_collection<xtd::build_type>& values) {values = {{xtd::build_type::debug, "debug"}, {xtd::build_type::release, "release"}};}
 };
 /// @endcond

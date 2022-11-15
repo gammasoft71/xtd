@@ -36,18 +36,13 @@ namespace xtd {
       /// @brief Allows the stop, start, suspend, transfer, and resume events through.
       activity_tracing = 0b1111111100000000,
     };
-
-    /// @cond
-    add_enum_flag_operators_(xtd::diagnostics::source_levels);
-    /// @endcond
   }
 }
 
 /// @cond
+add_enum_flag_operators_(xtd::diagnostics, source_levels);
+
 template<> struct xtd::enum_register<xtd::diagnostics::source_levels> {
-  void operator()(xtd::enum_collection<xtd::diagnostics::source_levels>& values, xtd::enum_attribute& attribute) {
-    values = {{xtd::diagnostics::source_levels::all, "all"}, {xtd::diagnostics::source_levels::off, "off"}, {xtd::diagnostics::source_levels::critical, "critical"}, {xtd::diagnostics::source_levels::error, "error"}, {xtd::diagnostics::source_levels::warning, "warning"}, {xtd::diagnostics::source_levels::information, "information"}, {xtd::diagnostics::source_levels::verbose, "verbose"}, {xtd::diagnostics::source_levels::activity_tracing, "activity_tracing"}};
-    attribute = xtd::enum_attribute::flags;
-  }
+  void operator()(xtd::enum_collection<xtd::diagnostics::source_levels>& values) {values = {{xtd::diagnostics::source_levels::all, "all"}, {xtd::diagnostics::source_levels::off, "off"}, {xtd::diagnostics::source_levels::critical, "critical"}, {xtd::diagnostics::source_levels::error, "error"}, {xtd::diagnostics::source_levels::warning, "warning"}, {xtd::diagnostics::source_levels::information, "information"}, {xtd::diagnostics::source_levels::verbose, "verbose"}, {xtd::diagnostics::source_levels::activity_tracing, "activity_tracing"}};}
 };
 /// @endcond

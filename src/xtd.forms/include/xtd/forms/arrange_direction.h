@@ -26,18 +26,13 @@ namespace xtd {
       /// @brief Arranges vertically, from bottom to top.
       up = 0x0004,
     };
-    
-    /// @cond
-    add_enum_flag_operators_(xtd::forms::arrange_direction);
-    /// @endcond
   }
 }
 
 /// @cond
+add_enum_flag_operators_(xtd::forms, arrange_direction);
+
 template<> struct xtd::enum_register<xtd::forms::arrange_direction> {
-  void operator()(xtd::enum_collection<xtd::forms::arrange_direction>& values, xtd::enum_attribute& attribute) {
-    values = {{xtd::forms::arrange_direction::down, "down"}, {xtd::forms::arrange_direction::left, "left"}, {xtd::forms::arrange_direction::right, "right"}, {xtd::forms::arrange_direction::up, "up"}};
-    attribute = xtd::enum_attribute::flags;
-  }
+  void operator()(xtd::enum_collection<xtd::forms::arrange_direction>& values) {values = {{xtd::forms::arrange_direction::down, "down"}, {xtd::forms::arrange_direction::left, "left"}, {xtd::forms::arrange_direction::right, "right"}, {xtd::forms::arrange_direction::up, "up"}};}
 };
 /// @endcond

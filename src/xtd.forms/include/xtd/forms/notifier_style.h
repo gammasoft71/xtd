@@ -13,6 +13,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::notifier_style> {
-  void operator()(xtd::enum_collection<xtd::forms::notifier_style>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::notifier_style::standard, "standard"}, {xtd::forms::notifier_style::system, "system"}};}
+  void operator()(xtd::enum_collection<xtd::forms::notifier_style>& values) {values = {{xtd::forms::notifier_style::standard, "standard"}, {xtd::forms::notifier_style::system, "system"}};}
 };
 /// @endcond

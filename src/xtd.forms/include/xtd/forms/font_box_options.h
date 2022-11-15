@@ -41,18 +41,13 @@ namespace xtd {
       /// @brief All flags except none.
       all = allow_simulations | allow_vector_fonts | allow_vertical_fonts | allow_script_change | fixed_pitch_only | scripts_only | show_apply | show_color | show_effects | show_help
     };
-    
-    /// @cond
-    add_enum_flag_operators_(xtd::forms::font_box_options);
-    /// @endcond
   }
 }
 
 /// @cond
+add_enum_flag_operators_(xtd::forms, font_box_options);
+
 template<> struct xtd::enum_register<xtd::forms::font_box_options> {
-  void operator()(xtd::enum_collection<xtd::forms::font_box_options>& values, xtd::enum_attribute& attribute) {
-    values = {{xtd::forms::font_box_options::none, "none"}, {xtd::forms::font_box_options::allow_simulations, "allow_simulations"}, {xtd::forms::font_box_options::allow_vector_fonts, "allow_vector_fonts"}, {xtd::forms::font_box_options::allow_vertical_fonts, "allow_vertical_fonts"}, {xtd::forms::font_box_options::allow_script_change, "allow_script_change"}, {xtd::forms::font_box_options::fixed_pitch_only, "fixed_pitch_only"}, {xtd::forms::font_box_options::scripts_only, "scripts_only"}, {xtd::forms::font_box_options::show_apply, "show_apply"}, {xtd::forms::font_box_options::show_color, "show_color"}, {xtd::forms::font_box_options::show_effects, "show_effects"}, {xtd::forms::font_box_options::show_help, "show_help"}, {xtd::forms::font_box_options::all, "all"}};
-    attribute = xtd::enum_attribute::flags;
-  }
+  void operator()(xtd::enum_collection<xtd::forms::font_box_options>& values) {values = {{xtd::forms::font_box_options::none, "none"}, {xtd::forms::font_box_options::allow_simulations, "allow_simulations"}, {xtd::forms::font_box_options::allow_vector_fonts, "allow_vector_fonts"}, {xtd::forms::font_box_options::allow_vertical_fonts, "allow_vertical_fonts"}, {xtd::forms::font_box_options::allow_script_change, "allow_script_change"}, {xtd::forms::font_box_options::fixed_pitch_only, "fixed_pitch_only"}, {xtd::forms::font_box_options::scripts_only, "scripts_only"}, {xtd::forms::font_box_options::show_apply, "show_apply"}, {xtd::forms::font_box_options::show_color, "show_color"}, {xtd::forms::font_box_options::show_effects, "show_effects"}, {xtd::forms::font_box_options::show_help, "show_help"}, {xtd::forms::font_box_options::all, "all"}};}
 };
 /// @endcond

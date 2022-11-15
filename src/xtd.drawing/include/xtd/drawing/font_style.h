@@ -26,18 +26,13 @@ namespace xtd {
       /// @brief Text with a line through the middle.
       strikeout = 0b1000
     };
-    
-    /// @cond
-    add_enum_flag_operators_(xtd::drawing::font_style);
-    /// @endcond
   }
 }
 
 /// @cond
+add_enum_flag_operators_(xtd::drawing, font_style);
+
 template<> struct xtd::enum_register<xtd::drawing::font_style> {
-  void operator()(xtd::enum_collection<xtd::drawing::font_style>& values, xtd::enum_attribute& attribute) {
-    values = {{xtd::drawing::font_style::regular, "regular"}, {xtd::drawing::font_style::bold, "bold"}, {xtd::drawing::font_style::italic, "italic"}, {xtd::drawing::font_style::underline, "underline"}, {xtd::drawing::font_style::strikeout, "strikeout"}};
-    attribute = xtd::enum_attribute::flags;
-  }
+  void operator()(xtd::enum_collection<xtd::drawing::font_style>& values) {values = {{xtd::drawing::font_style::regular, "regular"}, {xtd::drawing::font_style::bold, "bold"}, {xtd::drawing::font_style::italic, "italic"}, {xtd::drawing::font_style::underline, "underline"}, {xtd::drawing::font_style::strikeout, "strikeout"}};}
 };
 /// @endcond

@@ -21,18 +21,13 @@ namespace xtd {
     /// @brief The left or right CTRL modifier key.
     control = 0b100
   };
-  
-  /// @cond
-  add_enum_flag_operators_(xtd::console_modifiers);
-  /// @endcond
 }
 
 /// @cond
+add_enum_flag_operators_(xtd, console_modifiers);
+
 template<> struct xtd::enum_register<xtd::console_modifiers> {
-  void operator()(xtd::enum_collection<xtd::console_modifiers>& values, xtd::enum_attribute& attribute) {
-    values = {{xtd::console_modifiers::alt, "alt"}, {xtd::console_modifiers::shift, "shift"}, {xtd::console_modifiers::control, "control"}};
-    attribute = xtd::enum_attribute::flags;
-  }
+  void operator()(xtd::enum_collection<xtd::console_modifiers>& values) {values = {{xtd::console_modifiers::alt, "alt"}, {xtd::console_modifiers::shift, "shift"}, {xtd::console_modifiers::control, "control"}};}
 };
 /// @endcond
 

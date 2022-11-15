@@ -27,18 +27,13 @@ namespace xtd {
       /// @brief The message box is displayed on the active desktop.
       service_notification = 0x00200000L
     };
-    
-    /// @cond
-    add_enum_flag_operators_(xtd::forms::message_dialog_options);
-    /// @endcond
   }
 }
 
 /// @cond
+add_enum_flag_operators_(xtd::forms, message_dialog_options);
+
 template<> struct xtd::enum_register<xtd::forms::message_dialog_options> {
-  void operator()(xtd::enum_collection<xtd::forms::message_dialog_options>& values, xtd::enum_attribute& attribute) {
-    values = {{xtd::forms::message_dialog_options::default_desktop_only, "default_desktop_only"}, {xtd::forms::message_dialog_options::right_align, "right_align"}, {xtd::forms::message_dialog_options::rtl_reading, "rtl_reading"}, {xtd::forms::message_dialog_options::service_notification, "service_notification"}};
-    attribute = xtd::enum_attribute::flags;
-  }
+  void operator()(xtd::enum_collection<xtd::forms::message_dialog_options>& values) {values = {{xtd::forms::message_dialog_options::default_desktop_only, "default_desktop_only"}, {xtd::forms::message_dialog_options::right_align, "right_align"}, {xtd::forms::message_dialog_options::rtl_reading, "rtl_reading"}, {xtd::forms::message_dialog_options::service_notification, "service_notification"}};}
 };
 /// @endcond

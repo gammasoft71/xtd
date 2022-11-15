@@ -32,6 +32,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::form_start_position> {
-  void operator()(xtd::enum_collection<xtd::forms::form_start_position>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::form_start_position::manual, "manual"}, {xtd::forms::form_start_position::center_screen, "center_screen"}, {xtd::forms::form_start_position::windows_default_location, "windows_default_location"}, {xtd::forms::form_start_position::windows_default_bounds, "windows_default_bounds"}, {xtd::forms::form_start_position::center_parent, "center_parent"}};}
+  void operator()(xtd::enum_collection<xtd::forms::form_start_position>& values) {values = {{xtd::forms::form_start_position::manual, "manual"}, {xtd::forms::form_start_position::center_screen, "center_screen"}, {xtd::forms::form_start_position::windows_default_location, "windows_default_location"}, {xtd::forms::form_start_position::windows_default_bounds, "windows_default_bounds"}, {xtd::forms::form_start_position::center_parent, "center_parent"}};}
 };
 /// @endcond

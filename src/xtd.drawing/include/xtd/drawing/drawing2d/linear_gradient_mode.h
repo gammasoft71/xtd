@@ -32,6 +32,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::drawing2d::linear_gradient_mode> {
-  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::linear_gradient_mode>& values, xtd::enum_attribute& attribute) {values = {{xtd::drawing::drawing2d::linear_gradient_mode::horizontal, "horizontal"}, {xtd::drawing::drawing2d::linear_gradient_mode::vertical, "vertical"}, {xtd::drawing::drawing2d::linear_gradient_mode::forward_diagonal, "forward_diagonal"}, {xtd::drawing::drawing2d::linear_gradient_mode::backward_diagonal, "backward_diagonal"}};}
+  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::linear_gradient_mode>& values) {values = {{xtd::drawing::drawing2d::linear_gradient_mode::horizontal, "horizontal"}, {xtd::drawing::drawing2d::linear_gradient_mode::vertical, "vertical"}, {xtd::drawing::drawing2d::linear_gradient_mode::forward_diagonal, "forward_diagonal"}, {xtd::drawing::drawing2d::linear_gradient_mode::backward_diagonal, "backward_diagonal"}};}
 };
 /// @endcond

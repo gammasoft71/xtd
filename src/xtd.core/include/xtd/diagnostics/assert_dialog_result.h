@@ -31,6 +31,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::diagnostics::assert_dialog_result> {
-  void operator()(xtd::enum_collection<xtd::diagnostics::assert_dialog_result>& values, xtd::enum_attribute& attribute) {values = {{xtd::diagnostics::assert_dialog_result::abort, "abort"}, {xtd::diagnostics::assert_dialog_result::retry, "retry"}, {xtd::diagnostics::assert_dialog_result::ignore, "ignore"}};}
+  void operator()(xtd::enum_collection<xtd::diagnostics::assert_dialog_result>& values) {values = {{xtd::diagnostics::assert_dialog_result::abort, "abort"}, {xtd::diagnostics::assert_dialog_result::retry, "retry"}, {xtd::diagnostics::assert_dialog_result::ignore, "ignore"}};}
 };
 /// @endcond

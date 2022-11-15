@@ -29,6 +29,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::check_state> {
-  void operator()(xtd::enum_collection<xtd::forms::check_state>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::check_state::unchecked, "unchecked"}, {xtd::forms::check_state::checked, "checked"}, {xtd::forms::check_state::indeterminate, "indeterminate"}};}
+  void operator()(xtd::enum_collection<xtd::forms::check_state>& values) {values = {{xtd::forms::check_state::unchecked, "unchecked"}, {xtd::forms::check_state::checked, "checked"}, {xtd::forms::check_state::indeterminate, "indeterminate"}};}
 };
 /// @endcond

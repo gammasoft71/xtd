@@ -32,6 +32,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::flat_style> {
-  void operator()(xtd::enum_collection<xtd::forms::flat_style>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::flat_style::flat, "flat"}, {xtd::forms::flat_style::popup, "popup"}, {xtd::forms::flat_style::standard, "standard"}, {xtd::forms::flat_style::system, "system"}};}
+  void operator()(xtd::enum_collection<xtd::forms::flat_style>& values) {values = {{xtd::forms::flat_style::flat, "flat"}, {xtd::forms::flat_style::popup, "popup"}, {xtd::forms::flat_style::standard, "standard"}, {xtd::forms::flat_style::system, "system"}};}
 };
 /// @endcond

@@ -47,20 +47,13 @@ namespace xtd {
       /// @brief The file or directory is encrypted. For a file, this means that all data in the file is encrypted. For a directory, this means that encryption is the default for newly created files and directories.
       encrypted = 0x4000
     };
-    
-    /// @cond
-
-    /// @cond
-    add_enum_flag_operators_(xtd::io::file_attributes);
-    /// @endcond
   }
 }
 
 /// @cond
+add_enum_flag_operators_(xtd::io, file_attributes);
+
 template<> struct xtd::enum_register<xtd::io::file_attributes> {
-  void operator()(xtd::enum_collection<xtd::io::file_attributes>& values, xtd::enum_attribute& attribute) {
-    values = {{xtd::io::file_attributes::read_only, "read_only"}, {xtd::io::file_attributes::hidden, "hidden"}, {xtd::io::file_attributes::system, "system"}, {xtd::io::file_attributes::directory, "directory"}, {xtd::io::file_attributes::archive, "archive"}, {xtd::io::file_attributes::device, "device"}, {xtd::io::file_attributes::normal, "normal"}, {xtd::io::file_attributes::temporary, "temporary"}, {xtd::io::file_attributes::sparse_file, "sparse_file"}, {xtd::io::file_attributes::reparse_point, "reparse_point"}, {xtd::io::file_attributes::compressed, "compressed"}, {xtd::io::file_attributes::offline, "offline"}, {xtd::io::file_attributes::not_content_indexed, "not_content_indexed"}, {xtd::io::file_attributes::encrypted, "encrypted"}};
-    attribute = xtd::enum_attribute::flags;
-  }
+  void operator()(xtd::enum_collection<xtd::io::file_attributes>& values) {values = {{xtd::io::file_attributes::read_only, "read_only"}, {xtd::io::file_attributes::hidden, "hidden"}, {xtd::io::file_attributes::system, "system"}, {xtd::io::file_attributes::directory, "directory"}, {xtd::io::file_attributes::archive, "archive"}, {xtd::io::file_attributes::device, "device"}, {xtd::io::file_attributes::normal, "normal"}, {xtd::io::file_attributes::temporary, "temporary"}, {xtd::io::file_attributes::sparse_file, "sparse_file"}, {xtd::io::file_attributes::reparse_point, "reparse_point"}, {xtd::io::file_attributes::compressed, "compressed"}, {xtd::io::file_attributes::offline, "offline"}, {xtd::io::file_attributes::not_content_indexed, "not_content_indexed"}, {xtd::io::file_attributes::encrypted, "encrypted"}};}
 };
 /// @endcond

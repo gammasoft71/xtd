@@ -34,6 +34,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::style_sheets::text_decoration> {
-  void operator()(xtd::enum_collection<xtd::forms::style_sheets::text_decoration>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::style_sheets::text_decoration::none, "none"}, {xtd::forms::style_sheets::text_decoration::overline, "overline"}, {xtd::forms::style_sheets::text_decoration::line_through, "line_through"}, {xtd::forms::style_sheets::text_decoration::underline, "underline"}};}
+  void operator()(xtd::enum_collection<xtd::forms::style_sheets::text_decoration>& values) {values = {{xtd::forms::style_sheets::text_decoration::none, "none"}, {xtd::forms::style_sheets::text_decoration::overline, "overline"}, {xtd::forms::style_sheets::text_decoration::line_through, "line_through"}, {xtd::forms::style_sheets::text_decoration::underline, "underline"}};}
 };
 /// @endcond
