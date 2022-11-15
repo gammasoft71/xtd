@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::search_direction enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -20,10 +20,11 @@ namespace xtd {
       /// @brief Search direction up.
       up = 1,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, search_direction value) {return os << to_string(value, {{search_direction::down, "down"}, {search_direction::up, "up"}});}
-    inline std::wostream& operator<<(std::wostream& os, search_direction value) {return os << to_string(value, {{search_direction::down, L"down"}, {search_direction::up, L"up"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::search_direction> {
+  void operator()(xtd::enum_collection<xtd::forms::search_direction>& values, xtd::enum_type& type) {values = {{xtd::forms::search_direction::down, "down"}, {xtd::forms::search_direction::up, "up"}};}
+};
+/// @endcond

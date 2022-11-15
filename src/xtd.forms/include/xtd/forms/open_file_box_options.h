@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::open_file_box_options control.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -41,20 +41,16 @@ namespace xtd {
     };
     
     /// @cond
-    inline open_file_box_options& operator +=(open_file_box_options& lhs, open_file_box_options rhs) noexcept { lhs = static_cast<open_file_box_options>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs; }
-    inline open_file_box_options& operator -=(open_file_box_options& lhs, open_file_box_options rhs) noexcept { lhs = static_cast<open_file_box_options>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs; }
-    inline open_file_box_options& operator &=(open_file_box_options& lhs, open_file_box_options rhs) noexcept { lhs = static_cast<open_file_box_options>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); return lhs; }
-    inline open_file_box_options& operator |=(open_file_box_options& lhs, open_file_box_options rhs) noexcept { lhs = static_cast<open_file_box_options>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); return lhs; }
-    inline open_file_box_options& operator ^=(open_file_box_options& lhs, open_file_box_options rhs) noexcept { lhs = static_cast<open_file_box_options>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); return lhs; }
-    inline open_file_box_options operator +(open_file_box_options lhs, open_file_box_options rhs) noexcept { return static_cast<open_file_box_options>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); }
-    inline open_file_box_options operator -(open_file_box_options lhs, open_file_box_options rhs) noexcept { return static_cast<open_file_box_options>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); }
-    inline open_file_box_options operator ~(open_file_box_options rhs) noexcept { return static_cast<open_file_box_options>(~static_cast<long long>(rhs)); }
-    inline bool operator &(open_file_box_options lhs, open_file_box_options rhs) noexcept { return static_cast<bool>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); }
-    inline open_file_box_options operator |(open_file_box_options lhs, open_file_box_options rhs) noexcept { return static_cast<open_file_box_options>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); }
-    inline open_file_box_options operator ^(open_file_box_options lhs, open_file_box_options rhs) noexcept { return static_cast<open_file_box_options>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); }
-    
-    inline std::ostream& operator<<(std::ostream& os, open_file_box_options value) { return os << to_string(value, { {open_file_box_options::none, "none"}, {open_file_box_options::check_file_exists, "check_file_exists"}, {open_file_box_options::dereference_link, "dereference_link"}, {open_file_box_options::validate_names, "validate_names"}, {open_file_box_options::restore_directory, "restore_directory"}, {open_file_box_options::enable_auto_upgrade, "enable_auto_upgrade"}, {open_file_box_options::show_hidden_files, "show_hidden_files"}, {open_file_box_options::show_help, "show_help"}, {open_file_box_options::show_preview, "show_preview"}, {open_file_box_options::support_multi_dotted_extensions, "support_multi_dotted_extensions"}, {open_file_box_options::all, "all"} }); }
-    inline std::wostream& operator<<(std::wostream& os, open_file_box_options value) { return os << to_string(value, { {open_file_box_options::none, L"none"}, {open_file_box_options::check_file_exists, L"check_file_exists"}, {open_file_box_options::dereference_link, L"dereference_link"}, {open_file_box_options::validate_names, L"validate_names"}, {open_file_box_options::restore_directory, L"restore_directory"}, {open_file_box_options::enable_auto_upgrade, L"enable_auto_upgrade"}, {open_file_box_options::show_hidden_files, L"show_hidden_files"}, {open_file_box_options::show_help, L"show_help"}, {open_file_box_options::show_preview, L"show_preview"}, {open_file_box_options::support_multi_dotted_extensions, L"support_multi_dotted_extensions"}, {open_file_box_options::all, L"all"} }); }
+    add_enum_flag_operators_(xtd::forms::open_file_box_options);
     /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::open_file_box_options> {
+  void operator()(xtd::enum_collection<xtd::forms::open_file_box_options>& values, xtd::enum_type& type) {
+    values = {{xtd::forms::open_file_box_options::none, "none"}, {xtd::forms::open_file_box_options::check_file_exists, "check_file_exists"}, {xtd::forms::open_file_box_options::dereference_link, "dereference_link"}, {xtd::forms::open_file_box_options::validate_names, "validate_names"}, {xtd::forms::open_file_box_options::restore_directory, "restore_directory"}, {xtd::forms::open_file_box_options::enable_auto_upgrade, "enable_auto_upgrade"}, {xtd::forms::open_file_box_options::show_hidden_files, "show_hidden_files"}, {xtd::forms::open_file_box_options::show_help, "show_help"}, {xtd::forms::open_file_box_options::show_preview, "show_preview"}, {xtd::forms::open_file_box_options::support_multi_dotted_extensions, "support_multi_dotted_extensions"}, {xtd::forms::open_file_box_options::all, "all"}};
+    type = xtd::enum_type::flags;
+  }
+};
+/// @endcond
