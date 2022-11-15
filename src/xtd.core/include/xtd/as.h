@@ -14345,31 +14345,6 @@ namespace xtd {
   
   // ___________________________________________________________________________________________
   //                                                         xtd::convert_pointer specialization
-  
-  /// @cond
-  template<typename new_type_t, typename current_type_t, typename bool_t>
-  struct __as_enum__ {};
-  
-  template<typename new_type_t, typename current_type_t>
-  struct __as_enum__<new_type_t, current_type_t, std::true_type> {
-    const new_type_t& convert(const current_type_t& value) noexcept {
-      return (const new_type_t&)value;
-    }
-    new_type_t& convert(current_type_t& value) noexcept {
-      return (new_type_t&)value;
-    }
-  };
-  
-  template<typename new_type_t, typename current_type_t>
-  struct __as_enum__<new_type_t, current_type_t, std::false_type> {
-    const new_type_t& convert(const current_type_t& value) noexcept {
-      return xtd::convert_pointer::to_ref<new_type_t>(value);
-    }
-    new_type_t& convert(current_type_t& value) noexcept {
-      return xtd::convert_pointer::to_ref<new_type_t>(value);
-    }
-  };
-  /// @endcond
 
   /// @brief Casts a type into another type.
   /// @par Namespace
@@ -14385,8 +14360,7 @@ namespace xtd {
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<typename new_type_t, typename current_type_t>
   const new_type_t& as(const current_type_t& value) {
-    //return xtd::convert_pointer::to_ref<new_type_t>(value);
-    return __as_enum__<new_type_t, current_type_t, typename std::conditional<std::is_enum<current_type_t>::value, std::true_type, std::false_type>::type>().convert(value);
+    return xtd::convert_pointer::to_ref<new_type_t>(value);
   }
   
   /// @brief Casts a type into another type.
@@ -14403,8 +14377,7 @@ namespace xtd {
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<typename new_type_t, typename current_type_t>
   new_type_t& as(current_type_t& value) {
-    //return xtd::convert_pointer::to_ref<new_type_t>(value);
-    return __as_enum__<new_type_t, current_type_t, typename std::conditional<std::is_enum<current_type_t>::value, std::true_type, std::false_type>::type>().convert(value);
+    return xtd::convert_pointer::to_ref<new_type_t>(value);
   }
   
   /// @brief Casts a type into another type.
