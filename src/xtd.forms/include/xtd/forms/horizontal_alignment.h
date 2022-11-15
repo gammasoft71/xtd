@@ -28,6 +28,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::horizontal_alignment> {
-  void operator()(xtd::enum_collection<xtd::forms::horizontal_alignment>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::horizontal_alignment::left, "left"}, {xtd::forms::horizontal_alignment::right, "right"}, {xtd::forms::horizontal_alignment::center, "center"}};}
+  void operator()(xtd::enum_collection<xtd::forms::horizontal_alignment>& values) {values = {{xtd::forms::horizontal_alignment::left, "left"}, {xtd::forms::horizontal_alignment::right, "right"}, {xtd::forms::horizontal_alignment::center, "center"}};}
 };
 /// @endcond

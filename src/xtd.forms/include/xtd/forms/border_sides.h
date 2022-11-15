@@ -30,18 +30,13 @@ namespace xtd {
       /// @brief All flags except none.
       all = top | bottom | left | right,
     };
-    
-    /// @cond
-    add_enum_flag_operators_(xtd::forms::border_sides);
-    /// @endcond
   }
 }
 
 /// @cond
+add_enum_flag_operators_(xtd::forms, border_sides);
+
 template<> struct xtd::enum_register<xtd::forms::border_sides> {
-  void operator()(xtd::enum_collection<xtd::forms::border_sides>& values, xtd::enum_attribute& attribute) {
-    values = {{xtd::forms::border_sides::none, "none"}, {xtd::forms::border_sides::top, "top"}, {xtd::forms::border_sides::bottom, "bottom"}, {xtd::forms::border_sides::left, "left"}, {xtd::forms::border_sides::right, "right"}};
-    attribute = xtd::enum_attribute::flags;
-  }
+  void operator()(xtd::enum_collection<xtd::forms::border_sides>& values) {values = {{xtd::forms::border_sides::none, "none"}, {xtd::forms::border_sides::top, "top"}, {xtd::forms::border_sides::bottom, "bottom"}, {xtd::forms::border_sides::left, "left"}, {xtd::forms::border_sides::right, "right"}};}
 };
 /// @endcond

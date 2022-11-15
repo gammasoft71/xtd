@@ -30,6 +30,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::tab_alignment> {
-  void operator()(xtd::enum_collection<xtd::forms::tab_alignment>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::tab_alignment::top, "top"}, {xtd::forms::tab_alignment::bottom, "bottom"}, {xtd::forms::tab_alignment::left, "left"}, {xtd::forms::tab_alignment::right, "right"}};}
+  void operator()(xtd::enum_collection<xtd::forms::tab_alignment>& values) {values = {{xtd::forms::tab_alignment::top, "top"}, {xtd::forms::tab_alignment::bottom, "bottom"}, {xtd::forms::tab_alignment::left, "left"}, {xtd::forms::tab_alignment::right, "right"}};}
 };
 /// @endcond

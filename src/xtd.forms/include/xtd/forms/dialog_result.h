@@ -59,6 +59,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::dialog_result> {
-  void operator()(xtd::enum_collection<xtd::forms::dialog_result>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::dialog_result::none, "none"}, {xtd::forms::dialog_result::ok, "ok"}, {xtd::forms::dialog_result::cancel, "cancel"}, {xtd::forms::dialog_result::abort, "abort"}, {xtd::forms::dialog_result::retry, "retry"}, {xtd::forms::dialog_result::ignore, "ignore"}, {xtd::forms::dialog_result::yes, "yes"}, {xtd::forms::dialog_result::no, "no"}};}
+  void operator()(xtd::enum_collection<xtd::forms::dialog_result>& values) {values = {{xtd::forms::dialog_result::none, "none"}, {xtd::forms::dialog_result::ok, "ok"}, {xtd::forms::dialog_result::cancel, "cancel"}, {xtd::forms::dialog_result::abort, "abort"}, {xtd::forms::dialog_result::retry, "retry"}, {xtd::forms::dialog_result::ignore, "ignore"}, {xtd::forms::dialog_result::yes, "yes"}, {xtd::forms::dialog_result::no, "no"}};}
 };
 /// @endcond

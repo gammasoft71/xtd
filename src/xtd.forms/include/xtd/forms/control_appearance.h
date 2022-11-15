@@ -25,6 +25,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::control_appearance> {
-  void operator()(xtd::enum_collection<xtd::forms::control_appearance>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::control_appearance::standard, "standard"}, {xtd::forms::control_appearance::system, "system"}};}
+  void operator()(xtd::enum_collection<xtd::forms::control_appearance>& values) {values = {{xtd::forms::control_appearance::standard, "standard"}, {xtd::forms::control_appearance::system, "system"}};}
 };
 /// @endcond

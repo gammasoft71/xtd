@@ -30,6 +30,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::combo_box_style> {
-  void operator()(xtd::enum_collection<xtd::forms::combo_box_style>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::combo_box_style::simple, "simple"}, {xtd::forms::combo_box_style::drop_down, "drop_down"}, {xtd::forms::combo_box_style::drop_down_list, "drop_down_list"}};}
+  void operator()(xtd::enum_collection<xtd::forms::combo_box_style>& values) {values = {{xtd::forms::combo_box_style::simple, "simple"}, {xtd::forms::combo_box_style::drop_down, "drop_down"}, {xtd::forms::combo_box_style::drop_down_list, "drop_down_list"}};}
 };
 /// @endcond

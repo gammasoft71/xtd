@@ -30,18 +30,13 @@ namespace xtd {
       /// @brief All flags except none.
       all = top | bottom | left | right,
     };
-    
-    /// @cond
-    add_enum_flag_operators_(xtd::forms::anchor_styles);
-    /// @endcond
   }
 }
 
 /// @cond
+add_enum_flag_operators_(xtd::forms, anchor_styles);
+
 template<> struct xtd::enum_register<xtd::forms::anchor_styles> {
-  void operator()(xtd::enum_collection<xtd::forms::anchor_styles>& values, xtd::enum_attribute& attribute) {
-    values = {{xtd::forms::anchor_styles::none, "none"}, {xtd::forms::anchor_styles::top, "top"}, {xtd::forms::anchor_styles::bottom, "bottom"}, {xtd::forms::anchor_styles::left, "left"}, {xtd::forms::anchor_styles::right, "right"}};
-    attribute = xtd::enum_attribute::flags;
-  }
+  void operator()(xtd::enum_collection<xtd::forms::anchor_styles>& values) {values = {{xtd::forms::anchor_styles::none, "none"}, {xtd::forms::anchor_styles::top, "top"}, {xtd::forms::anchor_styles::bottom, "bottom"}, {xtd::forms::anchor_styles::left, "left"}, {xtd::forms::anchor_styles::right, "right"}};}
 };
 /// @endcond

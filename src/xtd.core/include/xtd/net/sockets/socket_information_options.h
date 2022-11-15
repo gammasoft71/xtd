@@ -37,19 +37,14 @@ namespace xtd {
         /// @brief The Socket uses overlapped I/O.
         use_only_overlapped_io = 0x08,
       };
-      
-      /// @cond
-      add_enum_flag_operators_(xtd::net::sockets::socket_information_options);
-      /// @endcond
     }
   }
 }
 
 /// @cond
+add_enum_flag_operators_(xtd::net::sockets, socket_information_options);
+
 template<> struct xtd::enum_register<xtd::net::sockets::socket_information_options> {
-  void operator()(xtd::enum_collection<xtd::net::sockets::socket_information_options>& values, xtd::enum_attribute& attribute) {
-    values = {{xtd::net::sockets::socket_information_options::none, "none"}, {xtd::net::sockets::socket_information_options::non_blocking, "non_blocking"}, {xtd::net::sockets::socket_information_options::connected, "connected"}, {xtd::net::sockets::socket_information_options::listening, "listening"}, {xtd::net::sockets::socket_information_options::use_only_overlapped_io, "use_only_overlapped_io"}};
-    attribute = xtd::enum_attribute::flags;
-  }
+  void operator()(xtd::enum_collection<xtd::net::sockets::socket_information_options>& values) {values = {{xtd::net::sockets::socket_information_options::none, "none"}, {xtd::net::sockets::socket_information_options::non_blocking, "non_blocking"}, {xtd::net::sockets::socket_information_options::connected, "connected"}, {xtd::net::sockets::socket_information_options::listening, "listening"}, {xtd::net::sockets::socket_information_options::use_only_overlapped_io, "use_only_overlapped_io"}};}
 };
 /// @endcond

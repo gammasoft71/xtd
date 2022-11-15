@@ -25,6 +25,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::architecture_id> {
-  void operator()(xtd::enum_collection<xtd::architecture_id>& values, xtd::enum_attribute& attribute) {values = {{xtd::architecture_id::unknown, "unknown"}, {xtd::architecture_id::x86, "x86"}, {xtd::architecture_id::arm, "arm"}};}
+  void operator()(xtd::enum_collection<xtd::architecture_id>& values) {values = {{xtd::architecture_id::unknown, "unknown"}, {xtd::architecture_id::x86, "x86"}, {xtd::architecture_id::arm, "arm"}};}
 };
 /// @endcond

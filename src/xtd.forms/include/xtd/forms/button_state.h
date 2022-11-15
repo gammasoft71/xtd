@@ -30,18 +30,15 @@ namespace xtd {
       /// @brief All flags except normal are set.
       all = inactive | pushed | checked | flat,
     };
-    
-    /// @cond
-    add_enum_flag_operators_(xtd::forms::button_state);
-    /// @endcond
   }
 }
 
 /// @cond
+add_enum_flag_operators_(xtd::forms, button_state);
+/// @endcond
+
+/// @cond
 template<> struct xtd::enum_register<xtd::forms::button_state> {
-  void operator()(xtd::enum_collection<xtd::forms::button_state>& values, xtd::enum_attribute& attribute) {
-    values = {{xtd::forms::button_state::normal, "normal"}, {xtd::forms::button_state::inactive, "inactive"}, {xtd::forms::button_state::pushed, "pushed"}, {xtd::forms::button_state::checked, "checked"}, {xtd::forms::button_state::flat, "flat"}};
-    attribute = xtd::enum_attribute::flags;
-  }
+  void operator()(xtd::enum_collection<xtd::forms::button_state>& values) {values = {{xtd::forms::button_state::normal, "normal"}, {xtd::forms::button_state::inactive, "inactive"}, {xtd::forms::button_state::pushed, "pushed"}, {xtd::forms::button_state::checked, "checked"}, {xtd::forms::button_state::flat, "flat"}};}
 };
 /// @endcond

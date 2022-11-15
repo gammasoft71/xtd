@@ -31,18 +31,13 @@ namespace xtd {
       /// @brief The dialog box will restrict users to selecting solid colors only.
       solid_color_only = 0b100000,
     };
-    
-    /// @cond
-    add_enum_flag_operators_(xtd::forms::color_box_styles);
-    /// @endcond
   }
 }
 
 /// @cond
+add_enum_flag_operators_(xtd::forms, color_box_styles);
+
 template<> struct xtd::enum_register<xtd::forms::color_box_styles> {
-  void operator()(xtd::enum_collection<xtd::forms::color_box_styles>& values, xtd::enum_attribute& attribute) {
-    values = {{xtd::forms::color_box_styles::none, "none"}, {xtd::forms::color_box_styles::alpha_color, "alpha_color"}, {xtd::forms::color_box_styles::allow_full_open, "allow_full_open"}, {xtd::forms::color_box_styles::any_color, "any_color"}, {xtd::forms::color_box_styles::full_open, "full_open"}, {xtd::forms::color_box_styles::show_help, "show_help"}, {xtd::forms::color_box_styles::solid_color_only, "solid_color_only"}};
-    attribute = xtd::enum_attribute::flags;
-  }
+  void operator()(xtd::enum_collection<xtd::forms::color_box_styles>& values) {values = {{xtd::forms::color_box_styles::none, "none"}, {xtd::forms::color_box_styles::alpha_color, "alpha_color"}, {xtd::forms::color_box_styles::allow_full_open, "allow_full_open"}, {xtd::forms::color_box_styles::any_color, "any_color"}, {xtd::forms::color_box_styles::full_open, "full_open"}, {xtd::forms::color_box_styles::show_help, "show_help"}, {xtd::forms::color_box_styles::solid_color_only, "solid_color_only"}};}
 };
 /// @endcond

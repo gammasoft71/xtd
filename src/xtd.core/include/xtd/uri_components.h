@@ -49,17 +49,12 @@ namespace xtd {
     /// @brief The complete xtd::uri context that is needed for xtd::uri Serializers. The context includes the IPv6 scope.
     serialization_info_string = 0x08000000 //0x80000000
   };
-  
-  /// @cond
-  add_enum_flag_operators_(xtd::uri_components);
-  /// @endcond
 }
 
 /// @cond
+add_enum_flag_operators_(xtd, uri_components);
+
 template<> struct xtd::enum_register<xtd::uri_components> {
-  void operator()(xtd::enum_collection<xtd::uri_components>& values, xtd::enum_attribute& attribute) {values = {
-    {xtd::uri_components::none, "none"}, {xtd::uri_components::scheme, "scheme"}, {xtd::uri_components::user_info, "user_info"}, {xtd::uri_components::host, "host"}, {xtd::uri_components::port, "port"}, {xtd::uri_components::path, "path"}, {xtd::uri_components::query, "query"}, {xtd::uri_components::fragment, "fragment"}, {xtd::uri_components::strong_port, "strong_port"}, {xtd::uri_components::keep_delimiter, "keep_delimiter"}, {xtd::uri_components::host_and_port, "host_and_port"}, {xtd::uri_components::strong_authority, "strong_authority"}, {xtd::uri_components::absolute_uri, "absolute_uri"}, {xtd::uri_components::path_and_query, "path_and_query"}, {xtd::uri_components::http_request_url, "http_request_url"}, {xtd::uri_components::scheme_and_server, "scheme_and_server"}, {xtd::uri_components::serialization_info_string, "serialization_info_string"}};
-    attribute = xtd::enum_attribute::flags;
-  }
+  void operator()(xtd::enum_collection<xtd::uri_components>& values) {values = {{xtd::uri_components::none, "none"}, {xtd::uri_components::scheme, "scheme"}, {xtd::uri_components::user_info, "user_info"}, {xtd::uri_components::host, "host"}, {xtd::uri_components::port, "port"}, {xtd::uri_components::path, "path"}, {xtd::uri_components::query, "query"}, {xtd::uri_components::fragment, "fragment"}, {xtd::uri_components::strong_port, "strong_port"}, {xtd::uri_components::keep_delimiter, "keep_delimiter"}, {xtd::uri_components::host_and_port, "host_and_port"}, {xtd::uri_components::strong_authority, "strong_authority"}, {xtd::uri_components::absolute_uri, "absolute_uri"}, {xtd::uri_components::path_and_query, "path_and_query"}, {xtd::uri_components::http_request_url, "http_request_url"}, {xtd::uri_components::scheme_and_server, "scheme_and_server"}, {xtd::uri_components::serialization_info_string, "serialization_info_string"}};}
 };
 /// @endcond

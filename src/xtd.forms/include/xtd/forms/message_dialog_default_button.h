@@ -28,6 +28,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::message_dialog_default_button> {
-  void operator()(xtd::enum_collection<xtd::forms::message_dialog_default_button>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::message_dialog_default_button::button1, "button1"}, {xtd::forms::message_dialog_default_button::button2, "button2"}, {xtd::forms::message_dialog_default_button::button3, "button3"}};}
+  void operator()(xtd::enum_collection<xtd::forms::message_dialog_default_button>& values) {values = {{xtd::forms::message_dialog_default_button::button1, "button1"}, {xtd::forms::message_dialog_default_button::button2, "button2"}, {xtd::forms::message_dialog_default_button::button3, "button3"}};}
 };
 /// @endcond

@@ -20,7 +20,7 @@ namespace xtd::tests {
 };
 
 template<> struct xtd::enum_register<xtd::tests::wday> {
-  void operator()(xtd::enum_collection<tests::wday>& values, xtd::enum_attribute& attribute) {values = {{xtd::tests::wday::sunday,  "sunday"}, {xtd::tests::wday::monday, "monday"}, {xtd::tests::wday::tuesday, "tuesday"}, {xtd::tests::wday::wednesday, "wednesday"}, {xtd::tests::wday::thursday, "thursday"}, {xtd::tests::wday::friday, "friday"}, {xtd::tests::wday::saturday, "saturday"}};}
+  void operator()(xtd::enum_collection<tests::wday>& values) {values = {{xtd::tests::wday::sunday,  "sunday"}, {xtd::tests::wday::monday, "monday"}, {xtd::tests::wday::tuesday, "tuesday"}, {xtd::tests::wday::wednesday, "wednesday"}, {xtd::tests::wday::thursday, "thursday"}, {xtd::tests::wday::friday, "friday"}, {xtd::tests::wday::saturday, "saturday"}};}
 };
 
 namespace xtd::tests {

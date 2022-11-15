@@ -29,18 +29,13 @@ namespace xtd {
       /// @brief The second XButton (XBUTTON2) on Microsoft IntelliMouse Explorer was pressed.
       x_button2 = 0x1000000
     };
-    
-    /// @cond
-    add_enum_flag_operators_(xtd::forms::mouse_buttons);
-    /// @endcond
   }
 }
 
 /// @cond
+add_enum_flag_operators_(xtd::forms, mouse_buttons);
+
 template<> struct xtd::enum_register<xtd::forms::mouse_buttons> {
-  void operator()(xtd::enum_collection<xtd::forms::mouse_buttons>& values, xtd::enum_attribute& attribute) {
-    values = {{xtd::forms::mouse_buttons::none, "none"}, {xtd::forms::mouse_buttons::left, "left"}, {xtd::forms::mouse_buttons::right, "right"}, {xtd::forms::mouse_buttons::middle, "middle"}, {xtd::forms::mouse_buttons::x_button1, "x_button1"}, {xtd::forms::mouse_buttons::x_button2, "x_button2"}};
-    attribute = xtd::enum_attribute::flags;
-  }
+  void operator()(xtd::enum_collection<xtd::forms::mouse_buttons>& values) {values = {{xtd::forms::mouse_buttons::none, "none"}, {xtd::forms::mouse_buttons::left, "left"}, {xtd::forms::mouse_buttons::right, "right"}, {xtd::forms::mouse_buttons::middle, "middle"}, {xtd::forms::mouse_buttons::x_button1, "x_button1"}, {xtd::forms::mouse_buttons::x_button2, "x_button2"}};}
 };
 /// @endcond

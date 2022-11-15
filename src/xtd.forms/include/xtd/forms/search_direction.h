@@ -25,6 +25,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::search_direction> {
-  void operator()(xtd::enum_collection<xtd::forms::search_direction>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::search_direction::down, "down"}, {xtd::forms::search_direction::up, "up"}};}
+  void operator()(xtd::enum_collection<xtd::forms::search_direction>& values) {values = {{xtd::forms::search_direction::down, "down"}, {xtd::forms::search_direction::up, "up"}};}
 };
 /// @endcond

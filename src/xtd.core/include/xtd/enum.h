@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
+#include <optional>
 #include <mutex>
 #include "enum_attribute.h"
 #include "format_exception.h"
@@ -30,7 +31,22 @@ namespace xtd {
   /// @include format_enum_class.cpp
   template<typename enum_t>
   struct enum_register {
-    void operator()(xtd::enum_collection<enum_t>& values, xtd::enum_attribute& attribute) {}
+    void operator()(xtd::enum_collection<enum_t>& values) {}
+  };
+  
+  /// @brief Provides the set attribute class for enumerations.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core system
+  /// @remarks The overloading of this operator is necessary for enum classes to be recognized as having a flags attribute to be properly handled by xtd::ustring::format().
+  /// @par example
+  /// The following code show how to use xtd::enum_register operator.
+  /// @include format_enum_class_flags.cpp
+  template<typename enum_t>
+  struct enum_set_attribute {
+    void operator()(xtd::enum_attribute& attribute) {}
   };
   
   /// @brief Provides the base class for enumerations.
@@ -137,7 +153,7 @@ namespace xtd {
 
     xtd::ustring to_string() const noexcept override {
       values();
-      if (attribute_ == xtd::enum_attribute::flags) return to_string_flags();
+      if (attribute_.value_or(xtd::enum_attribute::standard) == xtd::enum_attribute::flags) return to_string_flags();
       
       auto iterator = std::find_if(values().begin(), values().end(), [&](auto value)->bool {return value.first == value_;});
       if (iterator == values().end()) return ustring::format("{}", to_int(value_));
@@ -238,13 +254,18 @@ namespace xtd {
     static enum_collection<enum_type>& values() {
       std::mutex enum_mutex;
       std::lock_guard<std::mutex> lock(enum_mutex);
-      if (values_.size() == 0) enum_register<enum_type>()(values_, attribute_);
+      if (!attribute_.has_value()) {
+        xtd::enum_attribute attribute = xtd::enum_attribute::standard;
+        enum_set_attribute<enum_type>()(attribute);
+        attribute_ = attribute;
+      }
+      if (values_.size() == 0) enum_register<enum_type>()(values_);
       return values_;
     };
     
     enum_type value_ {};
     inline static enum_collection<enum_type> values_;
-    inline static xtd::enum_attribute attribute_ = xtd::enum_attribute::standard;
+    inline static std::optional<xtd::enum_attribute> attribute_;
   };
  
   /// @brief Provides the base class for enumerations.
@@ -404,6 +425,24 @@ namespace xtd {
   };
 }
 
+#define add_enum_flag_operators_(namespace_name, enum_name) \
+  namespace namespace_name { \
+    inline enum_name& operator^=(enum_name& lhs, enum_name rhs) {lhs = static_cast<enum_name>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;} \
+    inline enum_name& operator&=(enum_name& lhs, enum_name rhs) {lhs = static_cast<enum_name>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;} \
+    inline enum_name& operator|=(enum_name& lhs, enum_name rhs) {lhs = static_cast<enum_name>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;} \
+    inline enum_name& operator+=(enum_name& lhs, enum_name rhs) {lhs = static_cast<enum_name>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;} \
+    inline enum_name& operator-=(enum_name& lhs, enum_name rhs) {lhs = static_cast<enum_name>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;} \
+    inline enum_name operator^(enum_name lhs, enum_name rhs) {return static_cast<enum_name>(static_cast<int>(lhs) ^ static_cast<int>(rhs));} \
+    inline enum_name operator&(enum_name lhs, enum_name rhs) {return static_cast<enum_name>(static_cast<int>(lhs) & static_cast<int>(rhs));} \
+    inline enum_name operator|(enum_name lhs, enum_name rhs) {return static_cast<enum_name>(static_cast<int>(lhs) | static_cast<int>(rhs));} \
+    inline enum_name operator+(enum_name lhs, enum_name rhs) {return static_cast<enum_name>(static_cast<int>(lhs) + static_cast<int>(rhs));} \
+    inline enum_name operator-(enum_name lhs, enum_name rhs) {return static_cast<enum_name>(static_cast<int>(lhs) - static_cast<int>(rhs));} \
+    inline enum_name operator~(enum_name lhs) {return static_cast<enum_name>(~static_cast<int>(lhs));} \
+  }\
+  template<> struct xtd::enum_set_attribute<namespace_name::enum_name> { \
+    void operator()(xtd::enum_attribute& attribute) {attribute = xtd::enum_attribute::flags;} \
+  }
+
 /// @cond
 template<typename enum_t>
 inline std::string __enum_to_string(enum_t value) {
@@ -411,35 +450,23 @@ inline std::string __enum_to_string(enum_t value) {
 }
 
 template<> struct xtd::enum_register<xtd::enum_attribute> {
-  void operator()(xtd::enum_collection<xtd::enum_attribute>& values, xtd::enum_attribute& attribute) {
-    values = {{enum_attribute::standard, L"standard"}, {enum_attribute::flags, L"flags"}};
-  }
+  void operator()(xtd::enum_collection<xtd::enum_attribute>& values) {values = {{enum_attribute::standard, L"standard"}, {enum_attribute::flags, L"flags"}};}
+};
+
+template<> struct xtd::enum_set_attribute<xtd::number_styles> {
+  void operator()(xtd::enum_attribute& attribute) {attribute = xtd::enum_attribute::flags;}
 };
 
 template<> struct xtd::enum_register<xtd::number_styles> {
-  void operator()(xtd::enum_collection<xtd::number_styles>& values, xtd::enum_attribute& attribute) {values = {{xtd::number_styles::none, "none"}, {xtd::number_styles::allow_leading_white, "allow_leading_white"}, {xtd::number_styles::allow_trailing_white, "allow_trailing_white"}, {xtd::number_styles::allow_leading_sign, "allow_leading_sign"}, {xtd::number_styles::allow_trailing_sign, "allow_trailing_sign"}, {xtd::number_styles::allow_parentheses, "allow_parentheses"}, {xtd::number_styles::allow_decimal_point, "allow_decimal_point"}, {xtd::number_styles::allow_thousands, "allow_thousands"}, {xtd::number_styles::allow_exponent, "allow_exponent"}, {xtd::number_styles::allow_currency_symbol, "allow_currency_symbol"}, {xtd::number_styles::allow_hex_specifier, "allow_hex_specifier"}, {xtd::number_styles::allow_binary_specifier, "allow_binary_specifier"}, {xtd::number_styles::allow_octal_specifier, "allow_octal_specifier"}, {xtd::number_styles::integer, "integer"}, {xtd::number_styles::number, "number"}, {xtd::number_styles::fixed_point, "fixed_point"}, {xtd::number_styles::currency, "currency"}, {xtd::number_styles::any, "any"}, {xtd::number_styles::hex_number, "hex_number"}, {xtd::number_styles::binary_number, "binary_number"}, {xtd::number_styles::octal_number, "octal_number"}};
-    attribute = xtd::enum_attribute::flags;
+  void operator()(xtd::enum_collection<xtd::number_styles>& values) {values = {{xtd::number_styles::none, "none"}, {xtd::number_styles::allow_leading_white, "allow_leading_white"}, {xtd::number_styles::allow_trailing_white, "allow_trailing_white"}, {xtd::number_styles::allow_leading_sign, "allow_leading_sign"}, {xtd::number_styles::allow_trailing_sign, "allow_trailing_sign"}, {xtd::number_styles::allow_parentheses, "allow_parentheses"}, {xtd::number_styles::allow_decimal_point, "allow_decimal_point"}, {xtd::number_styles::allow_thousands, "allow_thousands"}, {xtd::number_styles::allow_exponent, "allow_exponent"}, {xtd::number_styles::allow_currency_symbol, "allow_currency_symbol"}, {xtd::number_styles::allow_hex_specifier, "allow_hex_specifier"}, {xtd::number_styles::allow_binary_specifier, "allow_binary_specifier"}, {xtd::number_styles::allow_octal_specifier, "allow_octal_specifier"}, {xtd::number_styles::integer, "integer"}, {xtd::number_styles::number, "number"}, {xtd::number_styles::fixed_point, "fixed_point"}, {xtd::number_styles::currency, "currency"}, {xtd::number_styles::any, "any"}, {xtd::number_styles::hex_number, "hex_number"}, {xtd::number_styles::binary_number, "binary_number"}, {xtd::number_styles::octal_number, "octal_number"}};
   }
 };
 
 template<> struct xtd::enum_register<xtd::string_comparison> {
-  void operator()(xtd::enum_collection<xtd::string_comparison>& values, xtd::enum_attribute& attribute) {values = {{xtd::string_comparison::ordinal, "ordinal"}, {xtd::string_comparison::ordinal_ignore_case, "ordinal_ignore_case"}};}
+  void operator()(xtd::enum_collection<xtd::string_comparison>& values) {values = {{xtd::string_comparison::ordinal, "ordinal"}, {xtd::string_comparison::ordinal_ignore_case, "ordinal_ignore_case"}};}
 };
 
 template<> struct xtd::enum_register<xtd::string_split_options> {
-  void operator()(xtd::enum_collection<xtd::string_split_options>& values, xtd::enum_attribute& attribute) {values = {{xtd::string_split_options::none, "none"}, {xtd::string_split_options::remove_empty_entries, "remove_empty_entries"}};}
+  void operator()(xtd::enum_collection<xtd::string_split_options>& values) {values = {{xtd::string_split_options::none, "none"}, {xtd::string_split_options::remove_empty_entries, "remove_empty_entries"}};}
 };
 /// @endcond
-
-#define add_enum_flag_operators_(enum_name) \
-  inline enum_name& operator^=(enum_name& lhs, enum_name rhs) {lhs = static_cast<enum_name>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;} \
-  inline enum_name& operator&=(enum_name& lhs, enum_name rhs) {lhs = static_cast<enum_name>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;} \
-  inline enum_name& operator|=(enum_name& lhs, enum_name rhs) {lhs = static_cast<enum_name>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;} \
-  inline enum_name& operator+=(enum_name& lhs, enum_name rhs) {lhs = static_cast<enum_name>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;} \
-  inline enum_name& operator-=(enum_name& lhs, enum_name rhs) {lhs = static_cast<enum_name>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;} \
-  inline enum_name operator^(enum_name lhs, enum_name rhs) {return static_cast<enum_name>(static_cast<int>(lhs) ^ static_cast<int>(rhs));} \
-  inline enum_name operator&(enum_name lhs, enum_name rhs) {return static_cast<enum_name>(static_cast<int>(lhs) & static_cast<int>(rhs));} \
-  inline enum_name operator|(enum_name lhs, enum_name rhs) {return static_cast<enum_name>(static_cast<int>(lhs) | static_cast<int>(rhs));} \
-  inline enum_name operator+(enum_name lhs, enum_name rhs) {return static_cast<enum_name>(static_cast<int>(lhs) + static_cast<int>(rhs));} \
-  inline enum_name operator-(enum_name lhs, enum_name rhs) {return static_cast<enum_name>(static_cast<int>(lhs) - static_cast<int>(rhs));} \
-  inline enum_name operator~(enum_name lhs) {return static_cast<enum_name>(~static_cast<int>(lhs));}

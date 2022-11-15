@@ -33,18 +33,12 @@ namespace xtd {
       /// @brief Specifies that both the location and size property values are defined.
       all = location | size,
     };
-    
-    /// @cond
-    add_enum_flag_operators_(xtd::forms::bounds_specified);
-    /// @endcond
   }
 }
 
 /// @cond
+add_enum_flag_operators_(xtd::forms, bounds_specified);
 template<> struct xtd::enum_register<xtd::forms::bounds_specified> {
-  void operator()(xtd::enum_collection<xtd::forms::bounds_specified>& values, xtd::enum_attribute& attribute) {
-    values = {{xtd::forms::bounds_specified::none, "none"}, {xtd::forms::bounds_specified::x, "x"}, {xtd::forms::bounds_specified::y, "y"}, {xtd::forms::bounds_specified::width, "width"}, {xtd::forms::bounds_specified::height, "height"}};
-    attribute = xtd::enum_attribute::flags;
-  }
+  void operator()(xtd::enum_collection<xtd::forms::bounds_specified>& values) {values = {{xtd::forms::bounds_specified::none, "none"}, {xtd::forms::bounds_specified::x, "x"}, {xtd::forms::bounds_specified::y, "y"}, {xtd::forms::bounds_specified::width, "width"}, {xtd::forms::bounds_specified::height, "height"}};}
 };
 /// @endcond

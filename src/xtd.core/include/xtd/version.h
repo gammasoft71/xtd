@@ -68,7 +68,7 @@ namespace xtd {
   /// enum class version_time {earlier = -1, same = 0, later = 1 };
   ///
   /// template<> struct xtd::enum_register<version_time> {
-  ///   void operator()(xtd::enum_collection<version_time>& values, xtd::enum_attribute& attribute) {values = {{version_time::earlier, "earlier"}, {version_time::same, "same"}, {version_time::later, "later"}};}
+  ///   void operator()(xtd::enum_collection<version_time>& values) {values = {{version_time::earlier, "earlier"}, {version_time::same, "same"}, {version_time::later, "later"}};}
   /// };
   ///
   /// class example {

@@ -31,6 +31,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::image_layout> {
-  void operator()(xtd::enum_collection<xtd::forms::image_layout>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::image_layout::none, "none"}, {xtd::forms::image_layout::tile, "tile"}, {xtd::forms::image_layout::center, "center"}, {xtd::forms::image_layout::stretch, "stretch"}, {xtd::forms::image_layout::zoom, "zoom"}};}
+  void operator()(xtd::enum_collection<xtd::forms::image_layout>& values) {values = {{xtd::forms::image_layout::none, "none"}, {xtd::forms::image_layout::tile, "tile"}, {xtd::forms::image_layout::center, "center"}, {xtd::forms::image_layout::stretch, "stretch"}, {xtd::forms::image_layout::zoom, "zoom"}};}
 };
 /// @endcond

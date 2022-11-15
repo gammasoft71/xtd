@@ -40,19 +40,14 @@ namespace xtd {
         /// @brief Use kernel asynchronous procedure calls (APCs) instead of worker threads to process long file transfer requests. Long requests are defined as requests that require more than a single read from the file or a cache; the request therefore depends on the size of the file and the specified length of the send packet.
         use_kernel_apc = 0b100000,
       };
-      
-      /// @cond
-      add_enum_flag_operators_(xtd::net::sockets::transmit_file_options);
-      /// @endcond
     }
   }
 }
 
 /// @cond
+add_enum_flag_operators_(xtd::net::sockets, transmit_file_options);
+
 template<> struct xtd::enum_register<xtd::net::sockets::transmit_file_options> {
-  void operator()(xtd::enum_collection<xtd::net::sockets::transmit_file_options>& values, xtd::enum_attribute& attribute) {
-    values = {{xtd::net::sockets::transmit_file_options::use_default_worker_thread, "use_default_worker_thread"}, {xtd::net::sockets::transmit_file_options::disconnect, "disconnect"}, {xtd::net::sockets::transmit_file_options::reuse_socket, "reuse_socket"}, {xtd::net::sockets::transmit_file_options::write_behind, "write_behind"}, {xtd::net::sockets::transmit_file_options::use_system_thread, "use_system_thread"}, {xtd::net::sockets::transmit_file_options::use_kernel_apc, "use_kernel_apc"}};
-    attribute = xtd::enum_attribute::flags;
-  }
+  void operator()(xtd::enum_collection<xtd::net::sockets::transmit_file_options>& values) {values = {{xtd::net::sockets::transmit_file_options::use_default_worker_thread, "use_default_worker_thread"}, {xtd::net::sockets::transmit_file_options::disconnect, "disconnect"}, {xtd::net::sockets::transmit_file_options::reuse_socket, "reuse_socket"}, {xtd::net::sockets::transmit_file_options::write_behind, "write_behind"}, {xtd::net::sockets::transmit_file_options::use_system_thread, "use_system_thread"}, {xtd::net::sockets::transmit_file_options::use_kernel_apc, "use_kernel_apc"}};}
 };
 /// @endcond

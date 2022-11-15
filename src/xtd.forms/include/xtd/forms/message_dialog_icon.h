@@ -40,6 +40,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::message_dialog_icon> {
-  void operator()(xtd::enum_collection<xtd::forms::message_dialog_icon>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::message_dialog_icon::none, "none"}, {xtd::forms::message_dialog_icon::hand, "hand"}, {xtd::forms::message_dialog_icon::stop, "stop"}, {xtd::forms::message_dialog_icon::error, "error"}, {xtd::forms::message_dialog_icon::question, "question"}, {xtd::forms::message_dialog_icon::exclamation, "exclamation"}, {xtd::forms::message_dialog_icon::warning, "warning"}, {xtd::forms::message_dialog_icon::asterisk, "asterisk"}, {xtd::forms::message_dialog_icon::information, "information"}};}
+  void operator()(xtd::enum_collection<xtd::forms::message_dialog_icon>& values) {values = {{xtd::forms::message_dialog_icon::none, "none"}, {xtd::forms::message_dialog_icon::hand, "hand"}, {xtd::forms::message_dialog_icon::stop, "stop"}, {xtd::forms::message_dialog_icon::error, "error"}, {xtd::forms::message_dialog_icon::question, "question"}, {xtd::forms::message_dialog_icon::exclamation, "exclamation"}, {xtd::forms::message_dialog_icon::warning, "warning"}, {xtd::forms::message_dialog_icon::asterisk, "asterisk"}, {xtd::forms::message_dialog_icon::information, "information"}};}
 };
 /// @endcond

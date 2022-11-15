@@ -15,6 +15,8 @@ add_projects(
   format_duration
   format_enum
   format_enum_class
+  format_enum_class_flags
+  format_enum_class_flags_without_helper
   format_exception
   format_floating_point
   format_numeric
