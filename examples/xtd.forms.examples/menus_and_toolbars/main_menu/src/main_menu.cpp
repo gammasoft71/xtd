@@ -67,11 +67,11 @@ namespace examples {
     menu_item options_value_b_menu_item {"Value B", {*this, &form1::on_menu_click}, menu_item_kind::check, shortcut::alt_2};
     menu_item options_value_c_menu_item {"Value C", {*this, &form1::on_menu_click}, menu_item_kind::check, true, shortcut::alt_3};
     menu_item options_separator1_menu_item {"-"};
-    menu_item options_value_d_menu_item {"Value D", {*this, &form1::on_menu_click}, menu_item_kind::radio, static_cast<shortcut>(keys::alt | keys::d)};
-    menu_item options_value_e_menu_item {"Value E", {*this, &form1::on_menu_click}, menu_item_kind::radio, true, static_cast<shortcut>(keys::alt | keys::e)};
-    menu_item options_value_f_menu_item {"Value F", {*this, &form1::on_menu_click}, menu_item_kind::radio, static_cast<shortcut>(keys::alt | keys::f)};
+    menu_item options_value_d_menu_item {"Value D", {*this, &form1::on_menu_click}, menu_item_kind::radio, as<shortcut>(keys::alt | keys::d)};
+    menu_item options_value_e_menu_item {"Value E", {*this, &form1::on_menu_click}, menu_item_kind::radio, true, as<shortcut>(keys::alt | keys::e)};
+    menu_item options_value_f_menu_item {"Value F", {*this, &form1::on_menu_click}, menu_item_kind::radio, as<shortcut>(keys::alt | keys::f)};
     menu_item options_separator2_menu_item {"-"};
-    menu_item options_value_g_menu_item {"Value G", {*this, &form1::on_menu_click}, menu_item_kind::radio, static_cast<shortcut>(keys::alt | keys::shift | keys::left)};
+    menu_item options_value_g_menu_item {"Value G", {*this, &form1::on_menu_click}, menu_item_kind::radio, as<shortcut>(keys::alt | keys::shift | keys::left)};
     menu_item options_value_h_menu_item {"Value H", {*this, &form1::on_menu_click}, menu_item_kind::radio};
     menu_item options_value_i_menu_item {"Value I", {*this, &form1::on_menu_click}, menu_item_kind::radio};
     

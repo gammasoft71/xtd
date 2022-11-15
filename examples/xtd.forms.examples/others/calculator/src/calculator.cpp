@@ -137,12 +137,12 @@ namespace calculator {
         case '%' : button_percent.perform_click(); e.handled(true); break;
         case ',' : button_decimal.perform_click(); e.handled(true); break;
         case '.' : button_decimal.perform_click(); e.handled(true); break;
-        case '/' : button_operators[static_cast<int>(operators::divide)].perform_click(); e.handled(true); break;
-        case '*' : button_operators[static_cast<int>(operators::multiply)].perform_click(); e.handled(true); break;
-        case '-' : button_operators[static_cast<int>(operators::subtract)].perform_click(); e.handled(true); break;
-        case '+' : button_operators[static_cast<int>(operators::add)].perform_click(); e.handled(true); break;
-        case '=' : button_operators[static_cast<int>(operators::equal)].perform_click(); e.handled(true); break;
-        case 13 : button_operators[static_cast<int>(operators::equal)].perform_click(); e.handled(true); break;
+        case '/' : button_operators[as<int>(operators::divide)].perform_click(); e.handled(true); break;
+        case '*' : button_operators[as<int>(operators::multiply)].perform_click(); e.handled(true); break;
+        case '-' : button_operators[as<int>(operators::subtract)].perform_click(); e.handled(true); break;
+        case '+' : button_operators[as<int>(operators::add)].perform_click(); e.handled(true); break;
+        case '=' : button_operators[as<int>(operators::equal)].perform_click(); e.handled(true); break;
+        case 13 : button_operators[as<int>(operators::equal)].perform_click(); e.handled(true); break;
         case 127 : back_space_key_press(sender, e); e.handled(true); break;
       }
     }

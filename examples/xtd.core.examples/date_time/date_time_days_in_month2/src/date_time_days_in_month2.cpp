@@ -12,7 +12,7 @@ public:
     
     for (auto year : years) {
       for (uint32_t ctr = 1; ctr <= 12; ctr++)
-        console::write_line("{0,-10}{1,-15}{2,4}", year, static_cast<month_of_year>(ctr), date_time::days_in_month(year, ctr));
+        console::write_line("{0,-10}{1,-15}{2,4}", year, as<month_of_year>(ctr), date_time::days_in_month(year, ctr));
       console::write_line();
     }
   }

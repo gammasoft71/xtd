@@ -59,11 +59,11 @@ minesweeper_form::minesweeper_form() {
   stopwatch_timer_.tick += event_handler(*this, &minesweeper_form::on_stopwatch_tick);
   
   update_colors();
-  change_level(static_cast<level>(properties::settings::default_settings().level()));
+  change_level(as<level>(properties::settings::default_settings().level()));
 }
 
 void minesweeper_form::change_level(level l) {
-  properties::settings::default_settings().level(static_cast<int>(l));
+  properties::settings::default_settings().level(as<int>(l));
   properties::settings::default_settings().save();
   
   level_ = l;
