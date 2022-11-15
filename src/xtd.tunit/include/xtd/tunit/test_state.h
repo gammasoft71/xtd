@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "test.h"
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -22,3 +23,9 @@ namespace xtd {
     };
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::tunit::test_state> {
+  void operator()(xtd::enum_collection<xtd::tunit::test_state>& values, xtd::enum_type& type) {values = {{xtd::tunit::test_state::considered, "considered"}, {xtd::tunit::test_state::ignored, "ignored"}};}
+};
+/// @endcond
