@@ -35,10 +35,10 @@ namespace examples {
         segment_style_choice.items().clear();
         if (lcd_style_choice.selected_item().value() == "Dot matrix display") {
           segment_style_choice.items().push_back_range({{"Standard (or round)", dot_matrix_style::standard}, {"Square", dot_matrix_style::square}});
-          segment_style_choice.selected_index(static_cast<int>(label_lcd_label.dot_matrix_style()));
+          segment_style_choice.selected_index(as<int>(label_lcd_label.dot_matrix_style()));
         } else {
           segment_style_choice.items().push_back_range({{"Standard", segment_style::standard}, {"Modern", segment_style::modern}, {"Mixed", segment_style::mixed}, {"expanded", segment_style::expanded}, {"Design", segment_style::design}, {"Stick", segment_style::stick}});
-          segment_style_choice.selected_index(static_cast<int>(label_lcd_label.segment_style()));
+          segment_style_choice.selected_index(as<int>(label_lcd_label.segment_style()));
         }
       };
       lcd_style_choice.selected_index(0);

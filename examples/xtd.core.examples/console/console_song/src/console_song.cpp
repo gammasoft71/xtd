@@ -60,9 +60,9 @@ public:
 void play(const vector<note>& tune) {
   for (note n : tune) {
     if (n.note_tone() == tone::rest)
-      sleep_for(chrono::milliseconds(static_cast<int>(n.note_duration())));
+      sleep_for(chrono::milliseconds(as<int>(n.note_duration())));
     else
-      console::beep(static_cast<unsigned int>(n.note_tone()), static_cast<unsigned int>(n.note_duration()));
+      console::beep(as<unsigned int>(n.note_tone()), as<unsigned int>(n.note_duration()));
   }
 }
 
