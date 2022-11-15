@@ -10,6 +10,7 @@ add_projects(
   format_boolean
   format_character
   format_class
+  format_class_object
   format_class_with_specified_formating
   format_date_time
   format_duration
