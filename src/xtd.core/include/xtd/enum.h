@@ -43,7 +43,7 @@ namespace xtd {
   /// @remarks The overloading of this operator is necessary for enum classes to be recognized as having a flags attribute to be properly handled by xtd::ustring::format().
   /// @par example
   /// The following code show how to use xtd::enum_register operator.
-  /// @include format_enum_class_flags.cpp
+  /// @include format_enum_class_flags_without_helper.cpp
   template<typename enum_t>
   struct enum_set_attribute {
     void operator()(xtd::enum_attribute& attribute) {}
