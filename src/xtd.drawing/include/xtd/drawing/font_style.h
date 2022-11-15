@@ -37,7 +37,7 @@ namespace xtd {
 template<> struct xtd::enum_register<xtd::drawing::font_style> {
   void operator()(xtd::enum_collection<xtd::drawing::font_style>& values, xtd::enum_type& type) {
     values = {{xtd::drawing::font_style::regular, "regular"}, {xtd::drawing::font_style::bold, "bold"}, {xtd::drawing::font_style::italic, "italic"}, {xtd::drawing::font_style::underline, "underline"}, {xtd::drawing::font_style::strikeout, "strikeout"}};
-    type = enum_type::flags;
+    type = xtd::enum_type::flags;
   }
 };
 /// @endcond
