@@ -29,6 +29,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::uri_host_name_type> {
-  void operator()(xtd::enum_collection<xtd::uri_host_name_type>& values, xtd::enum_type& type) {values = {{xtd::uri_host_name_type::unknown, "unknown"}, {xtd::uri_host_name_type::basic, "basic"}, {xtd::uri_host_name_type::dns, "dns"}, {xtd::uri_host_name_type::ip_v4, "ip_v4"}, {xtd::uri_host_name_type::ip_v6, "ip_v6"}};}
+  void operator()(xtd::enum_collection<xtd::uri_host_name_type>& values, xtd::enum_attribute& attribute) {values = {{xtd::uri_host_name_type::unknown, "unknown"}, {xtd::uri_host_name_type::basic, "basic"}, {xtd::uri_host_name_type::dns, "dns"}, {xtd::uri_host_name_type::ip_v4, "ip_v4"}, {xtd::uri_host_name_type::ip_v6, "ip_v6"}};}
 };
 /// @endcond

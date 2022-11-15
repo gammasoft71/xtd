@@ -33,6 +33,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::visual_styles::control_state> {
-  void operator()(xtd::enum_collection<xtd::forms::visual_styles::control_state>& values, xtd::enum_type& type) {values = {{xtd::forms::visual_styles::control_state::normal, "normal"}, {xtd::forms::visual_styles::control_state::hot, "hot"}, {xtd::forms::visual_styles::control_state::pressed, "pressed"}, {xtd::forms::visual_styles::control_state::disabled, "disabled"}};}
+  void operator()(xtd::enum_collection<xtd::forms::visual_styles::control_state>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::visual_styles::control_state::normal, "normal"}, {xtd::forms::visual_styles::control_state::hot, "hot"}, {xtd::forms::visual_styles::control_state::pressed, "pressed"}, {xtd::forms::visual_styles::control_state::disabled, "disabled"}};}
 };
 /// @endcond

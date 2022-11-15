@@ -26,6 +26,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::tunit::test_state> {
-  void operator()(xtd::enum_collection<xtd::tunit::test_state>& values, xtd::enum_type& type) {values = {{xtd::tunit::test_state::considered, "considered"}, {xtd::tunit::test_state::ignored, "ignored"}};}
+  void operator()(xtd::enum_collection<xtd::tunit::test_state>& values, xtd::enum_attribute& attribute) {values = {{xtd::tunit::test_state::considered, "considered"}, {xtd::tunit::test_state::ignored, "ignored"}};}
 };
 /// @endcond

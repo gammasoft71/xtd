@@ -42,6 +42,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::net::sockets::socket_shutdown> {
-  void operator()(xtd::enum_collection<xtd::net::sockets::socket_shutdown>& values, xtd::enum_type& type) {values = {{xtd::net::sockets::socket_shutdown::receive, "receive"}, {xtd::net::sockets::socket_shutdown::send, "send"}, {xtd::net::sockets::socket_shutdown::both, "both"}};}
+  void operator()(xtd::enum_collection<xtd::net::sockets::socket_shutdown>& values, xtd::enum_attribute& attribute) {values = {{xtd::net::sockets::socket_shutdown::receive, "receive"}, {xtd::net::sockets::socket_shutdown::send, "send"}, {xtd::net::sockets::socket_shutdown::both, "both"}};}
 };
 /// @endcond

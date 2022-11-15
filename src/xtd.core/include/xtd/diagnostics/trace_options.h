@@ -43,9 +43,9 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::diagnostics::trace_options> {
-  void operator()(xtd::enum_collection<xtd::diagnostics::trace_options>& values, xtd::enum_type& type) {
+  void operator()(xtd::enum_collection<xtd::diagnostics::trace_options>& values, xtd::enum_attribute& attribute) {
     values = {{xtd::diagnostics::trace_options::none, "none"}, {xtd::diagnostics::trace_options::logical_operation_stack, "logical_operation_stack"}, {xtd::diagnostics::trace_options::date_time, "date_time"}, {xtd::diagnostics::trace_options::timestamp, "timestamp"}, {xtd::diagnostics::trace_options::process_id, "process_id"}, {xtd::diagnostics::trace_options::thread_id, "thread_id"}, {xtd::diagnostics::trace_options::callstack, "callstack"}};
-    type = xtd::enum_type::flags;
+    attribute = xtd::enum_attribute::flags;
   }
 };
 /// @endcond

@@ -29,6 +29,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::io::search_option> {
-  void operator()(xtd::enum_collection<xtd::io::search_option>& values, xtd::enum_type& type) {values = {{xtd::io::search_option::top_directory_only, "top_directory_only"}, {xtd::io::search_option::all_directories, "all_directories"}};}
+  void operator()(xtd::enum_collection<xtd::io::search_option>& values, xtd::enum_attribute& attribute) {values = {{xtd::io::search_option::top_directory_only, "top_directory_only"}, {xtd::io::search_option::all_directories, "all_directories"}};}
 };
 /// @endcond

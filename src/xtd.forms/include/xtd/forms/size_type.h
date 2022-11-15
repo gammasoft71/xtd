@@ -28,6 +28,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::size_type> {
-  void operator()(xtd::enum_collection<xtd::forms::size_type>& values, xtd::enum_type& type) {values = {{xtd::forms::size_type::auto_size, "auto_size"}, {xtd::forms::size_type::absolute, "absolute"}, {xtd::forms::size_type::percent, "percent"}};}
+  void operator()(xtd::enum_collection<xtd::forms::size_type>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::size_type::auto_size, "auto_size"}, {xtd::forms::size_type::absolute, "absolute"}, {xtd::forms::size_type::percent, "percent"}};}
 };
 /// @endcond

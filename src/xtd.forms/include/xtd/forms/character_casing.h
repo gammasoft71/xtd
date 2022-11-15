@@ -28,6 +28,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::character_casing> {
-  void operator()(xtd::enum_collection<xtd::forms::character_casing>& values, xtd::enum_type& type) {values = {{xtd::forms::character_casing::normal, "normal"}, {xtd::forms::character_casing::upper, "upper"}, {xtd::forms::character_casing::lower, "lower"}};}
+  void operator()(xtd::enum_collection<xtd::forms::character_casing>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::character_casing::normal, "normal"}, {xtd::forms::character_casing::upper, "upper"}, {xtd::forms::character_casing::lower, "lower"}};}
 };
 /// @endcond

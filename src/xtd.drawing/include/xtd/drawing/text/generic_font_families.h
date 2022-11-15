@@ -30,6 +30,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::text::generic_font_families> {
-  void operator()(xtd::enum_collection<xtd::drawing::text::generic_font_families>& values, xtd::enum_type& type) {values = {{xtd::drawing::text::generic_font_families::serif, "serif"}, {xtd::drawing::text::generic_font_families::sans_serif, "sans_serif"}, {xtd::drawing::text::generic_font_families::monospace, "italic"}};}
+  void operator()(xtd::enum_collection<xtd::drawing::text::generic_font_families>& values, xtd::enum_attribute& attribute) {values = {{xtd::drawing::text::generic_font_families::serif, "serif"}, {xtd::drawing::text::generic_font_families::sans_serif, "sans_serif"}, {xtd::drawing::text::generic_font_families::monospace, "italic"}};}
 };
 /// @endcond

@@ -31,6 +31,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::text::hotkey_prefix> {
-  void operator()(xtd::enum_collection<xtd::drawing::text::hotkey_prefix>& values, xtd::enum_type& type) {values = {{xtd::drawing::text::hotkey_prefix::none, "none"}, {xtd::drawing::text::hotkey_prefix::show, "show"}, {xtd::drawing::text::hotkey_prefix::hide, "hide"}};}
+  void operator()(xtd::enum_collection<xtd::drawing::text::hotkey_prefix>& values, xtd::enum_attribute& attribute) {values = {{xtd::drawing::text::hotkey_prefix::none, "none"}, {xtd::drawing::text::hotkey_prefix::show, "show"}, {xtd::drawing::text::hotkey_prefix::hide, "hide"}};}
 };
 /// @endcond

@@ -35,9 +35,9 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::arrange_direction> {
-  void operator()(xtd::enum_collection<xtd::forms::arrange_direction>& values, xtd::enum_type& type) {
+  void operator()(xtd::enum_collection<xtd::forms::arrange_direction>& values, xtd::enum_attribute& attribute) {
     values = {{xtd::forms::arrange_direction::down, "down"}, {xtd::forms::arrange_direction::left, "left"}, {xtd::forms::arrange_direction::right, "right"}, {xtd::forms::arrange_direction::up, "up"}};
-    type = xtd::enum_type::flags;
+    attribute = xtd::enum_attribute::flags;
   }
 };
 /// @endcond

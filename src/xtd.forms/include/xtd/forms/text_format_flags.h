@@ -82,9 +82,9 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::text_format_flags> {
-  void operator()(xtd::enum_collection<xtd::forms::text_format_flags>& values, xtd::enum_type& type) {
+  void operator()(xtd::enum_collection<xtd::forms::text_format_flags>& values, xtd::enum_attribute& attribute) {
     values = {{xtd::forms::text_format_flags::default_format, "default_format"}, {xtd::forms::text_format_flags::glyph_overhang_padding, "glyph_overhang_padding"}, {xtd::forms::text_format_flags::left, "left"}, {xtd::forms::text_format_flags::top, "top"}, {xtd::forms::text_format_flags::horizontal_center, "horizontal_center"}, {xtd::forms::text_format_flags::right, "right"}, {xtd::forms::text_format_flags::vertical_center, "vertical_center"}, {xtd::forms::text_format_flags::bottom, "bottom"}, {xtd::forms::text_format_flags::word_break, "word_break"}, {xtd::forms::text_format_flags::single_line, "single_line"}, {xtd::forms::text_format_flags::expand_tabs, "expand_tabs"}, {xtd::forms::text_format_flags::no_clipping, "no_clipping"}, {xtd::forms::text_format_flags::external_leading, "external_leading"}, {xtd::forms::text_format_flags::no_prefix, "no_prefix"}, {xtd::forms::text_format_flags::internal, "internal"}, {xtd::forms::text_format_flags::text_box_control, "text_box_control"}, {xtd::forms::text_format_flags::path_ellipsis, "path_ellipsis"}, {xtd::forms::text_format_flags::end_ellipse, "end_ellipse"}, {xtd::forms::text_format_flags::modify_string, "modify_string"}, {xtd::forms::text_format_flags::right_to_left, "right_to_left"}, {xtd::forms::text_format_flags::word_ellipsis, "word_ellipsis"}, {xtd::forms::text_format_flags::no_full_width_characterB_break, "no_full_width_characterB_break"}, {xtd::forms::text_format_flags::hide_prefix, "hide_prefix"}, {xtd::forms::text_format_flags::prefix_only, "prefix_only"}, {xtd::forms::text_format_flags::preserve_graphics_clipping, "preserve_graphics_clipping"}, {xtd::forms::text_format_flags::preserve_graphics_translate_transform, "preserve_graphics_translate_transform"}, {xtd::forms::text_format_flags::no_padding, "no_padding"}, {xtd::forms::text_format_flags::left_and_right_padding, "left_and_right_padding"}};
-    type = xtd::enum_type::flags;
+    attribute = xtd::enum_attribute::flags;
   }
 };
 /// @endcond

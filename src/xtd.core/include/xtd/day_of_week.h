@@ -38,6 +38,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::day_of_week> {
-  void operator()(xtd::enum_collection<xtd::day_of_week>& values, xtd::enum_type& type) {values = {{xtd::day_of_week::sunday, "sunday"}, {xtd::day_of_week::monday, "monday"}, {xtd::day_of_week::tuesday, "tuesday"}, {xtd::day_of_week::wednesday, "wednesday"}, {xtd::day_of_week::thursday, "thursday"}, {xtd::day_of_week::friday, "friday"}, {xtd::day_of_week::saturday, "saturday"}};}
+  void operator()(xtd::enum_collection<xtd::day_of_week>& values, xtd::enum_attribute& attribute) {values = {{xtd::day_of_week::sunday, "sunday"}, {xtd::day_of_week::monday, "monday"}, {xtd::day_of_week::tuesday, "tuesday"}, {xtd::day_of_week::wednesday, "wednesday"}, {xtd::day_of_week::thursday, "thursday"}, {xtd::day_of_week::friday, "friday"}, {xtd::day_of_week::saturday, "saturday"}};}
 };
 /// @endcond

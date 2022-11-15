@@ -26,6 +26,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::orientation> {
-  void operator()(xtd::enum_collection<xtd::forms::orientation>& values, xtd::enum_type& type) {values = {{xtd::forms::orientation::horizontal, "horizontal"}, {xtd::forms::orientation::vertical, "vertical"}};}
+  void operator()(xtd::enum_collection<xtd::forms::orientation>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::orientation::horizontal, "horizontal"}, {xtd::forms::orientation::vertical, "vertical"}};}
 };
 /// @endcond

@@ -66,9 +66,9 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::io::file_permissions> {
-  void operator()(xtd::enum_collection<xtd::io::file_permissions>& values, xtd::enum_type& type) {
+  void operator()(xtd::enum_collection<xtd::io::file_permissions>& values, xtd::enum_attribute& attribute) {
     values = {{xtd::io::file_permissions::none, L"none"}, {xtd::io::file_permissions::owner_read, L"owner_read"}, {xtd::io::file_permissions::owner_write, L"owner_write"}, {xtd::io::file_permissions::owner_execute, L"owner_execute"}, {xtd::io::file_permissions::group_read, L"group_read"}, {xtd::io::file_permissions::group_execute, L"group_execute"}, {xtd::io::file_permissions::others_read, L"others_read"}, {xtd::io::file_permissions::others_write, L"others_write"}, {xtd::io::file_permissions::others_execute, L"others_execute"}, {xtd::io::file_permissions::set_uid, L"set_uid"}, {xtd::io::file_permissions::set_gid, L"set_gid"}, {xtd::io::file_permissions::sticky_bit, L"sticky_bit"}, {xtd::io::file_permissions::unknown, L"unknown"}};
-    type = xtd::enum_type::flags;
+    attribute = xtd::enum_attribute::flags;
   }
 };
 /// @endcond

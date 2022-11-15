@@ -37,6 +37,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::visual_styles::push_button_state> {
-  void operator()(xtd::enum_collection<xtd::forms::visual_styles::push_button_state>& values, xtd::enum_type& type) {values = {{xtd::forms::visual_styles::push_button_state::normal, "normal"}, {xtd::forms::visual_styles::push_button_state::hot, "hot"}, {xtd::forms::visual_styles::push_button_state::pressed, "pressed"}, {xtd::forms::visual_styles::push_button_state::disabled, "disabled"}, {xtd::forms::visual_styles::push_button_state::default_state, "default_state"}};}
+  void operator()(xtd::enum_collection<xtd::forms::visual_styles::push_button_state>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::visual_styles::push_button_state::normal, "normal"}, {xtd::forms::visual_styles::push_button_state::hot, "hot"}, {xtd::forms::visual_styles::push_button_state::pressed, "pressed"}, {xtd::forms::visual_styles::push_button_state::disabled, "disabled"}, {xtd::forms::visual_styles::push_button_state::default_state, "default_state"}};}
 };
 /// @endcond

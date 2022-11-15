@@ -37,6 +37,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::day> {
-  void operator()(xtd::enum_collection<xtd::forms::day>& values, xtd::enum_type& type) {values = {{xtd::forms::day::monday, "monday"}, {xtd::forms::day::tuesday, "tuesday"}, {xtd::forms::day::wednesday, "wednesday"}, {xtd::forms::day::thursday, "thursday"}, {xtd::forms::day::friday, "friday"}, {xtd::forms::day::saturday, "saturday"}, {xtd::forms::day::sunday, "sunday"}, {xtd::forms::day::default_day, "default_day"}};}
+  void operator()(xtd::enum_collection<xtd::forms::day>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::day::monday, "monday"}, {xtd::forms::day::tuesday, "tuesday"}, {xtd::forms::day::wednesday, "wednesday"}, {xtd::forms::day::thursday, "thursday"}, {xtd::forms::day::friday, "friday"}, {xtd::forms::day::saturday, "saturday"}, {xtd::forms::day::sunday, "sunday"}, {xtd::forms::day::default_day, "default_day"}};}
 };
 /// @endcond

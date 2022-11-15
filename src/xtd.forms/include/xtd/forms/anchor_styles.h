@@ -39,9 +39,9 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::anchor_styles> {
-  void operator()(xtd::enum_collection<xtd::forms::anchor_styles>& values, xtd::enum_type& type) {
+  void operator()(xtd::enum_collection<xtd::forms::anchor_styles>& values, xtd::enum_attribute& attribute) {
     values = {{xtd::forms::anchor_styles::none, "none"}, {xtd::forms::anchor_styles::top, "top"}, {xtd::forms::anchor_styles::bottom, "bottom"}, {xtd::forms::anchor_styles::left, "left"}, {xtd::forms::anchor_styles::right, "right"}};
-    type = xtd::enum_type::flags;
+    attribute = xtd::enum_attribute::flags;
   }
 };
 /// @endcond

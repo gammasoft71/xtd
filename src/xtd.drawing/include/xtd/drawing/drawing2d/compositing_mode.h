@@ -28,6 +28,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::drawing2d::compositing_mode> {
-  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::compositing_mode>& values, xtd::enum_type& type) {values = {{xtd::drawing::drawing2d::compositing_mode::source_over, "source_over"}, {xtd::drawing::drawing2d::compositing_mode::source_copy, "source_copy"}};}
+  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::compositing_mode>& values, xtd::enum_attribute& attribute) {values = {{xtd::drawing::drawing2d::compositing_mode::source_over, "source_over"}, {xtd::drawing::drawing2d::compositing_mode::source_copy, "source_copy"}};}
 };
 /// @endcond

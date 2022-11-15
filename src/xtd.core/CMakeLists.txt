@@ -51,7 +51,7 @@ add_sources(
   include/xtd/divided_by_zero_exception.h
   include/xtd/domain_exception.h
   include/xtd/enum.h
-  include/xtd/enum_type.h
+  include/xtd/enum_attribute.h
   include/xtd/environment.h
   include/xtd/environment_variable_target.h
   include/xtd/event.h

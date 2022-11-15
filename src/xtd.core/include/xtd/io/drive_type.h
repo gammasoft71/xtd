@@ -38,6 +38,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::io::drive_type> {
-  void operator()(xtd::enum_collection<xtd::io::drive_type>& values, xtd::enum_type& type) {values = {{xtd::io::drive_type::unknown, "unknown"}, {xtd::io::drive_type::no_root_directory, "no_root_directory"}, {xtd::io::drive_type::removable, "removable"}, {xtd::io::drive_type::fixed, "fixed"}, {xtd::io::drive_type::network, "network"}, {xtd::io::drive_type::cd_rom, "cd_rom"}, {xtd::io::drive_type::ram, "ram"}};}
+  void operator()(xtd::enum_collection<xtd::io::drive_type>& values, xtd::enum_attribute& attribute) {values = {{xtd::io::drive_type::unknown, "unknown"}, {xtd::io::drive_type::no_root_directory, "no_root_directory"}, {xtd::io::drive_type::removable, "removable"}, {xtd::io::drive_type::fixed, "fixed"}, {xtd::io::drive_type::network, "network"}, {xtd::io::drive_type::cd_rom, "cd_rom"}, {xtd::io::drive_type::ram, "ram"}};}
 };
 /// @endcond

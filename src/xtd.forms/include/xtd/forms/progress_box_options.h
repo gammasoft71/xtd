@@ -40,9 +40,9 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::progress_box_options> {
-  void operator()(xtd::enum_collection<xtd::forms::progress_box_options>& values, xtd::enum_type& type) {
+  void operator()(xtd::enum_collection<xtd::forms::progress_box_options>& values, xtd::enum_attribute& attribute) {
     values = {{xtd::forms::progress_box_options::none, "none"}, {xtd::forms::progress_box_options::show_cancel_button, "show_cancel_button"}, {xtd::forms::progress_box_options::show_skip_button, "show_skip_button"}, {xtd::forms::progress_box_options::show_elapsed_time, "show_elapsed_time"}, {xtd::forms::progress_box_options::show_estimated_time, "show_estimated_time"}, {xtd::forms::progress_box_options::show_remaining_time, "show_remaining_time"}, {xtd::forms::progress_box_options::all, "all"}};
-    type = xtd::enum_type::flags;
+    attribute = xtd::enum_attribute::flags;
   }
 };
 /// @endcond

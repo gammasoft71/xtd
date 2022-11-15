@@ -34,6 +34,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::style_sheets::white_space> {
-  void operator()(xtd::enum_collection<xtd::forms::style_sheets::white_space>& values, xtd::enum_type& type) {values = {{xtd::forms::style_sheets::white_space::normal, "normal"}, {xtd::forms::style_sheets::white_space::no_wrap, "no_wrap"}, {xtd::forms::style_sheets::white_space::pre, "pre"}, {xtd::forms::style_sheets::white_space::pre_line, "pre_line"}, {xtd::forms::style_sheets::white_space::pre_wrap, "pre_wrap"}};}
+  void operator()(xtd::enum_collection<xtd::forms::style_sheets::white_space>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::style_sheets::white_space::normal, "normal"}, {xtd::forms::style_sheets::white_space::no_wrap, "no_wrap"}, {xtd::forms::style_sheets::white_space::pre, "pre"}, {xtd::forms::style_sheets::white_space::pre_line, "pre_line"}, {xtd::forms::style_sheets::white_space::pre_wrap, "pre_wrap"}};}
 };
 /// @endcond
