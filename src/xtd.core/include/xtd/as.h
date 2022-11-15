@@ -14346,6 +14346,7 @@ namespace xtd {
   // ___________________________________________________________________________________________
   //                                                         xtd::convert_pointer specialization
   
+  /// @cond
   template<typename new_type_t, typename current_type_t, typename bool_t>
   struct __as_enum__ {};
   
@@ -14368,6 +14369,7 @@ namespace xtd {
       return xtd::convert_pointer::to_ref<new_type_t>(value);
     }
   };
+  /// @endcond
 
   /// @brief Casts a type into another type.
   /// @par Namespace
