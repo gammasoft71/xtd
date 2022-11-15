@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::tool_bar_text_align enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -20,12 +20,11 @@ namespace xtd {
       /// @brief The text is aligned to the right of the toolbar button image.
       right = 1,
     };
-    
-    /// @cond
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, tool_bar_text_align value) {return os << to_string(value, {{tool_bar_text_align::underneath, "underneath"}, {tool_bar_text_align::right, "right"}});}
-    inline std::wostream& operator<<(std::wostream& os, tool_bar_text_align value) {return os << to_string(value, {{tool_bar_text_align::underneath, L"underneath"}, {tool_bar_text_align::right, L"right"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::tool_bar_text_align> {
+  void operator()(xtd::enum_collection<xtd::forms::tool_bar_text_align>& values, xtd::enum_type& type) {values = {{xtd::forms::tool_bar_text_align::underneath, "underneath"}, {xtd::forms::tool_bar_text_align::right, "right"}};}
+};
+/// @endcond

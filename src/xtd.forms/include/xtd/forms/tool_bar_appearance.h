@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::tool_bar_appearance enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -22,12 +22,11 @@ namespace xtd {
       /// @brief The toolbar and buttons appear as system controls.
       system = 2,
     };
-    
-    /// @cond
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, tool_bar_appearance value) {return os << to_string(value, {{tool_bar_appearance::normal, "normal"}, {tool_bar_appearance::flat, "flat"}, {tool_bar_appearance::system, "system"}});}
-    inline std::wostream& operator<<(std::wostream& os, tool_bar_appearance value) {return os << to_string(value, {{tool_bar_appearance::normal, L"normal"}, {tool_bar_appearance::flat, L"flat"}, {tool_bar_appearance::system, L"system"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::tool_bar_appearance> {
+  void operator()(xtd::enum_collection<xtd::forms::tool_bar_appearance>& values, xtd::enum_type& type) {values = {{xtd::forms::tool_bar_appearance::normal, "normal"}, {xtd::forms::tool_bar_appearance::flat, "flat"}, {xtd::forms::tool_bar_appearance::system, "system"}};}
+};
+/// @endcond

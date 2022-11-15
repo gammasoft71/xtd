@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::selection_mode enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -25,10 +25,11 @@ namespace xtd {
       /// @brief Multiple items can be selected, and the user can use the SHIFT, CTRL, and arrow keys to make selections.
       multi_extended = 3
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, selection_mode value) {return os << to_string(value, {{selection_mode::none, "none"}, {selection_mode::one, "one"}, {selection_mode::multi_simple, "multi_simple"}, {selection_mode::multi_extended, "multi_extended"}});}
-    inline std::wostream& operator<<(std::wostream& os, selection_mode value) {return os << to_string(value, {{selection_mode::none, L"none"}, {selection_mode::one, L"one"}, {selection_mode::multi_simple, L"multi_simple"}, {selection_mode::multi_extended, L"multi_extended"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::selection_mode> {
+  void operator()(xtd::enum_collection<xtd::forms::selection_mode>& values, xtd::enum_type& type) {values = {{xtd::forms::selection_mode::none, "none"}, {xtd::forms::selection_mode::one, "one"}, {xtd::forms::selection_mode::multi_simple, "multi_simple"}, {xtd::forms::selection_mode::multi_extended, "multi_extended"}};}
+};
+/// @endcond
