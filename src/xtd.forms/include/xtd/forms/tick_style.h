@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::tick_style enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -25,10 +25,11 @@ namespace xtd {
       /// @brief Tick marks are located on both sides of the control.
       both = 3,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, tick_style value) {return os << to_string(value, {{tick_style::none, "none"}, {tick_style::top_left, "top_left"}, {tick_style::bottom_right, "bottom_right"}, {tick_style::both, "both"}});}
-    inline std::wostream& operator<<(std::wostream& os, tick_style value) {return os << to_string(value, {{tick_style::none, L"none"}, {tick_style::top_left, L"top_left"}, {tick_style::bottom_right, L"bottom_right"}, {tick_style::both, L"both"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::tick_style> {
+  void operator()(xtd::enum_collection<xtd::forms::tick_style>& values, xtd::enum_type& type) {values = {{xtd::forms::tick_style::none, "none"}, {xtd::forms::tick_style::top_left, "top_left"}, {xtd::forms::tick_style::bottom_right, "bottom_right"}, {xtd::forms::tick_style::both, "both"}};}
+};
+/// @endcond

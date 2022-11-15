@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::tab_alignment enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -25,10 +25,11 @@ namespace xtd {
       /// @brief The tabs are located along the right edge of the control.
       right = 3,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, tab_alignment value) {return os << to_string(value, {{tab_alignment::top, "top"}, {tab_alignment::bottom, "bottom"}, {tab_alignment::left, "left"}, {tab_alignment::right, "right"}});}
-    inline std::wostream& operator<<(std::wostream& os, tab_alignment value) {return os << to_string(value, {{tab_alignment::top, L"top"}, {tab_alignment::bottom, L"bottom"}, {tab_alignment::left, L"left"}, {tab_alignment::right, L"right"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::tab_alignment> {
+  void operator()(xtd::enum_collection<xtd::forms::tab_alignment>& values, xtd::enum_type& type) {values = {{xtd::forms::tab_alignment::top, "top"}, {xtd::forms::tab_alignment::bottom, "bottom"}, {xtd::forms::tab_alignment::left, "left"}, {xtd::forms::tab_alignment::right, "right"}};}
+};
+/// @endcond

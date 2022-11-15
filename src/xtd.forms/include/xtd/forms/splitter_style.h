@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::splitter_style enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -20,10 +20,11 @@ namespace xtd {
       /// @brief Update children splitter style.
       update_children = 1
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, splitter_style value) {return os << to_string(value, {{splitter_style::draw_line, "draw_line"}, {splitter_style::update_children, "update_children"}});}
-    inline std::wostream& operator<<(std::wostream& os, splitter_style value) {return os << to_string(value, {{splitter_style::draw_line, L"draw_line"}, {splitter_style::update_children, L"update_children"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::splitter_style> {
+  void operator()(xtd::enum_collection<xtd::forms::splitter_style>& values, xtd::enum_type& type) {values = {{xtd::forms::splitter_style::draw_line, "draw_line"}, {xtd::forms::splitter_style::update_children, "update_children"}};}
+};
+/// @endcond

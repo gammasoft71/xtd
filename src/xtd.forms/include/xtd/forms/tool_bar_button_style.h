@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::tool_bar_button_style enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -28,10 +28,11 @@ namespace xtd {
       /// @brief Use to add any control to the toolbar. Using with xtd::forms::tool_bar_button::control property.
       control = 6,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, tool_bar_button_style value) {return os << to_string(value, {{tool_bar_button_style::push_button, "push_button"}, {tool_bar_button_style::toggle_button, "toggle_button"}, {tool_bar_button_style::separator, "separator"}, {tool_bar_button_style::drop_down_button, "drop_down_button"}, {tool_bar_button_style::stretchable_separator, "stretchable_separator"}, {tool_bar_button_style::control, "control"}});}
-    inline std::wostream& operator<<(std::wostream& os, tool_bar_button_style value) {return os << to_string(value, {{tool_bar_button_style::push_button, L"push_button"}, {tool_bar_button_style::toggle_button, L"toggle_button"}, {tool_bar_button_style::separator, L"separator"}, {tool_bar_button_style::drop_down_button, L"drop_down_button"}, {tool_bar_button_style::stretchable_separator, L"stretchable_separator"}, {tool_bar_button_style::control, L"control"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::tool_bar_button_style> {
+  void operator()(xtd::enum_collection<xtd::forms::tool_bar_button_style>& values, xtd::enum_type& type) {values = {{xtd::forms::tool_bar_button_style::push_button, "push_button"}, {xtd::forms::tool_bar_button_style::toggle_button, "toggle_button"}, {xtd::forms::tool_bar_button_style::separator, "separator"}, {xtd::forms::tool_bar_button_style::drop_down_button, "drop_down_button"}, {xtd::forms::tool_bar_button_style::stretchable_separator, "stretchable_separator"}, {xtd::forms::tool_bar_button_style::control, "control"}};}
+};
+/// @endcond

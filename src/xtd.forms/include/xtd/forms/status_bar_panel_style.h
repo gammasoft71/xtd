@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::status_bar_panel_style enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -22,10 +22,11 @@ namespace xtd {
       /// @brief The xtd::forms::status_bar_panel contains a xtd::forms::control.
       control = 3,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, status_bar_panel_style value) {return os << to_string(value, {{status_bar_panel_style::text, "text"}, {status_bar_panel_style::owner_draw, "owner_draw"}, {status_bar_panel_style::control, "control"}});}
-    inline std::wostream& operator<<(std::wostream& os, status_bar_panel_style value) {return os << to_string(value, {{status_bar_panel_style::text, L"text"}, {status_bar_panel_style::owner_draw, L"owner_draw"}, {status_bar_panel_style::control, L"control"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::status_bar_panel_style> {
+  void operator()(xtd::enum_collection<xtd::forms::status_bar_panel_style>& values, xtd::enum_type& type) {values = {{xtd::forms::status_bar_panel_style::text, "text"}, {xtd::forms::status_bar_panel_style::owner_draw, "owner_draw"}, {xtd::forms::status_bar_panel_style::control, "control"}};}
+};
+/// @endcond

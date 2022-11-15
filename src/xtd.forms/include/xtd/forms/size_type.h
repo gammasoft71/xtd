@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::size_type enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -23,10 +23,11 @@ namespace xtd {
       /// @brief The control should be sized as a percentage of the parent container.
       percent = 2,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, size_type value) {return os << to_string(value, {{size_type::auto_size, "auto_size"}, {size_type::absolute, "absolute"}, {size_type::percent, "percent"}});}
-    inline std::wostream& operator<<(std::wostream& os, size_type value) {return os << to_string(value, {{size_type::auto_size, L"auto_size"}, {size_type::absolute, L"absolute"}, {size_type::percent, L"percent"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::size_type> {
+  void operator()(xtd::enum_collection<xtd::forms::size_type>& values, xtd::enum_type& type) {values =  {{xtd::forms::size_type::auto_size, "auto_size"}, {xtd::forms::size_type::absolute, "absolute"}, {xtd::forms::size_type::percent, "percent"}};}
+};
+/// @endcond

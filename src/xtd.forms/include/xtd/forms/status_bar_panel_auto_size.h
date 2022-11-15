@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::status_bar_panel_auto_size enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -21,10 +21,11 @@ namespace xtd {
       /// @brief The width of the xtd::forms::status_bar_panel is determined by its contents.
       contents = 3,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, status_bar_panel_auto_size value) {return os << to_string(value, {{status_bar_panel_auto_size::none, "none"}, {status_bar_panel_auto_size::spring, "spring"}, {status_bar_panel_auto_size::contents, "contents"}});}
-    inline std::wostream& operator<<(std::wostream& os, status_bar_panel_auto_size value) {return os << to_string(value, {{status_bar_panel_auto_size::none, L"none"}, {status_bar_panel_auto_size::spring, L"spring"}, {status_bar_panel_auto_size::contents, L"contents"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::status_bar_panel_auto_size> {
+  void operator()(xtd::enum_collection<xtd::forms::status_bar_panel_auto_size>& values, xtd::enum_type& type) {values = {{xtd::forms::status_bar_panel_auto_size::none, "none"}, {xtd::forms::status_bar_panel_auto_size::spring, "spring"}, {xtd::forms::status_bar_panel_auto_size::contents, "contents"}};}
+};
+/// @endcond

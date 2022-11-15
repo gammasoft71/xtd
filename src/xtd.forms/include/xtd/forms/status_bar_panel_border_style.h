@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::status_bar_panel_border_style enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -27,10 +27,11 @@ namespace xtd {
       /// @brief Defines a sunken border. Same as xtd::forms::status_bar_panel_border_style::inset.
       sunken = inset,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, const status_bar_panel_border_style value) {return os << to_string(value, {{status_bar_panel_border_style::none, "none"}, {status_bar_panel_border_style::outset, "outset"}, {status_bar_panel_border_style::inset, "inset"}});}
-    inline std::wostream& operator<<(std::wostream& os, const status_bar_panel_border_style value) {return os << to_string(value, {{status_bar_panel_border_style::none, L"none"}, {status_bar_panel_border_style::outset, L"outset"}, {status_bar_panel_border_style::inset, L"inset"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::status_bar_panel_border_style> {
+  void operator()(xtd::enum_collection<xtd::forms::status_bar_panel_border_style>& values, xtd::enum_type& type) {values = {{xtd::forms::status_bar_panel_border_style::none, "none"}, {xtd::forms::status_bar_panel_border_style::outset, "outset"}, {xtd::forms::status_bar_panel_border_style::inset, "inset"}};}
+};
+/// @endcond
