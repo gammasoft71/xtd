@@ -28,6 +28,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::console_special_key> {
-  void operator()(xtd::enum_collection<xtd::console_special_key>& values, xtd::enum_type& type) {values = {{xtd::console_special_key::control_break, "control_break"}, {xtd::console_special_key::control_c, "control_c"}, {xtd::console_special_key::control_backslash, "control_backslash"}, {xtd::console_special_key::control_z, "control_z"}};}
+  void operator()(xtd::enum_collection<xtd::console_special_key>& values, xtd::enum_attribute& attribute) {values = {{xtd::console_special_key::control_break, "control_break"}, {xtd::console_special_key::control_c, "control_c"}, {xtd::console_special_key::control_backslash, "control_backslash"}, {xtd::console_special_key::control_z, "control_z"}};}
 };
 /// @endcond

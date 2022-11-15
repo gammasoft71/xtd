@@ -39,9 +39,9 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::border_sides> {
-  void operator()(xtd::enum_collection<xtd::forms::border_sides>& values, xtd::enum_type& type) {
+  void operator()(xtd::enum_collection<xtd::forms::border_sides>& values, xtd::enum_attribute& attribute) {
     values = {{xtd::forms::border_sides::none, "none"}, {xtd::forms::border_sides::top, "top"}, {xtd::forms::border_sides::bottom, "bottom"}, {xtd::forms::border_sides::left, "left"}, {xtd::forms::border_sides::right, "right"}};
-    type = xtd::enum_type::flags;
+    attribute = xtd::enum_attribute::flags;
   }
 };
 /// @endcond

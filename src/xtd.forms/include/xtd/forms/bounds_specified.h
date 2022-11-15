@@ -42,9 +42,9 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::bounds_specified> {
-  void operator()(xtd::enum_collection<xtd::forms::bounds_specified>& values, xtd::enum_type& type) {
+  void operator()(xtd::enum_collection<xtd::forms::bounds_specified>& values, xtd::enum_attribute& attribute) {
     values = {{xtd::forms::bounds_specified::none, "none"}, {xtd::forms::bounds_specified::x, "x"}, {xtd::forms::bounds_specified::y, "y"}, {xtd::forms::bounds_specified::width, "width"}, {xtd::forms::bounds_specified::height, "height"}};
-    type = xtd::enum_type::flags;
+    attribute = xtd::enum_attribute::flags;
   }
 };
 /// @endcond

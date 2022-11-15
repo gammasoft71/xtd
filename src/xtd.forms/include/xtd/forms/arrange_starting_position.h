@@ -37,9 +37,9 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::arrange_starting_position> {
-  void operator()(xtd::enum_collection<xtd::forms::arrange_starting_position>& values, xtd::enum_type& type) {
+  void operator()(xtd::enum_collection<xtd::forms::arrange_starting_position>& values, xtd::enum_attribute& attribute) {
     values = {{xtd::forms::arrange_starting_position::bottom_left, "bottom_left"}, {xtd::forms::arrange_starting_position::bottom_right, "bottom_right"}, {xtd::forms::arrange_starting_position::top_left, "top_left"}, {xtd::forms::arrange_starting_position::top_right, "top_right"}, {xtd::forms::arrange_starting_position::hide, "hide"}};
-    type = xtd::enum_type::flags;
+    attribute = xtd::enum_attribute::flags;
   }
 };
 /// @endcond

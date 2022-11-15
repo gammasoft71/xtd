@@ -40,6 +40,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::drawing2d::smoothing_mode> {
-  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::smoothing_mode>& values, xtd::enum_type& type) {values = {{xtd::drawing::drawing2d::smoothing_mode::invalid, "invalid"}, {xtd::drawing::drawing2d::smoothing_mode::default_value, "default_value"}, {xtd::drawing::drawing2d::smoothing_mode::high_speed, "high_speed"}, {xtd::drawing::drawing2d::smoothing_mode::high_quality, "high_quality"}, {xtd::drawing::drawing2d::smoothing_mode::none, "none"}, {xtd::drawing::drawing2d::smoothing_mode::anti_alias, "anti_alias"}};}
+  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::smoothing_mode>& values, xtd::enum_attribute& attribute) {values = {{xtd::drawing::drawing2d::smoothing_mode::invalid, "invalid"}, {xtd::drawing::drawing2d::smoothing_mode::default_value, "default_value"}, {xtd::drawing::drawing2d::smoothing_mode::high_speed, "high_speed"}, {xtd::drawing::drawing2d::smoothing_mode::high_quality, "high_quality"}, {xtd::drawing::drawing2d::smoothing_mode::none, "none"}, {xtd::drawing::drawing2d::smoothing_mode::anti_alias, "anti_alias"}};}
 };
 /// @endcond

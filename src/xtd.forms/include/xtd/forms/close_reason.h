@@ -36,6 +36,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::close_reason> {
-  void operator()(xtd::enum_collection<xtd::forms::close_reason>& values, xtd::enum_type& type) {values = {{xtd::forms::close_reason::none, "none"}, {xtd::forms::close_reason::windows_shut_down, "windows_shut_down"}, {xtd::forms::close_reason::mdi_form_closing, "mdi_form_closing"}, {xtd::forms::close_reason::user_closing, "user_closing"}, {xtd::forms::close_reason::task_manager_closing, "task_manager_closing"}, {xtd::forms::close_reason::form_owner_closing, "form_owner_closing"}, {xtd::forms::close_reason::application_exit_call, "application_exit_call"}};}
+  void operator()(xtd::enum_collection<xtd::forms::close_reason>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::close_reason::none, "none"}, {xtd::forms::close_reason::windows_shut_down, "windows_shut_down"}, {xtd::forms::close_reason::mdi_form_closing, "mdi_form_closing"}, {xtd::forms::close_reason::user_closing, "user_closing"}, {xtd::forms::close_reason::task_manager_closing, "task_manager_closing"}, {xtd::forms::close_reason::form_owner_closing, "form_owner_closing"}, {xtd::forms::close_reason::application_exit_call, "application_exit_call"}};}
 };
 /// @endcond

@@ -46,9 +46,9 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::style_sheets::pseudo_state> {
-  void operator()(xtd::enum_collection<xtd::forms::style_sheets::pseudo_state>& values, xtd::enum_type& type) {
+  void operator()(xtd::enum_collection<xtd::forms::style_sheets::pseudo_state>& values, xtd::enum_attribute& attribute) {
     values = {{xtd::forms::style_sheets::pseudo_state::standard, "standard"}, {xtd::forms::style_sheets::pseudo_state::hover, "hover"}, {xtd::forms::style_sheets::pseudo_state::pressed, "pressed"}, {xtd::forms::style_sheets::pseudo_state::disabled, "disabled"}, {xtd::forms::style_sheets::pseudo_state::focused, "focused"}, {xtd::forms::style_sheets::pseudo_state::default_state, "default_state"}, {xtd::forms::style_sheets::pseudo_state::unchecked, "unchecked"}, {xtd::forms::style_sheets::pseudo_state::checked, "checked"}, {xtd::forms::style_sheets::pseudo_state::mixed, "mixed"}};
-    type = xtd::enum_type::flags;
+    attribute = xtd::enum_attribute::flags;
   }
 };
 /// @endcond

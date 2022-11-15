@@ -18,7 +18,7 @@ enum day {
 };
 
 template<> struct xtd::enum_register<day> {
-  void operator()(xtd::enum_collection<day>& values, xtd::enum_type& type) {values = {{day::sunday,  "sunday"}, {day::monday, "monday"}, {day::tuesday, "tuesday"}, {day::wednesday, "wednesday"}, {day::thursday, "thursday"}, {day::friday, "friday"}, {day::saturday, "saturday"}};}
+  void operator()(xtd::enum_collection<day>& values, xtd::enum_attribute& attribute) {values = {{day::sunday,  "sunday"}, {day::monday, "monday"}, {day::tuesday, "tuesday"}, {day::wednesday, "wednesday"}, {day::thursday, "thursday"}, {day::friday, "friday"}, {day::saturday, "saturday"}};}
 };
 
 namespace xtd::tests {

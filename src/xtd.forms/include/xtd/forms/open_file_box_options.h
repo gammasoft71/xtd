@@ -48,9 +48,9 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::open_file_box_options> {
-  void operator()(xtd::enum_collection<xtd::forms::open_file_box_options>& values, xtd::enum_type& type) {
+  void operator()(xtd::enum_collection<xtd::forms::open_file_box_options>& values, xtd::enum_attribute& attribute) {
     values = {{xtd::forms::open_file_box_options::none, "none"}, {xtd::forms::open_file_box_options::check_file_exists, "check_file_exists"}, {xtd::forms::open_file_box_options::dereference_link, "dereference_link"}, {xtd::forms::open_file_box_options::validate_names, "validate_names"}, {xtd::forms::open_file_box_options::restore_directory, "restore_directory"}, {xtd::forms::open_file_box_options::enable_auto_upgrade, "enable_auto_upgrade"}, {xtd::forms::open_file_box_options::show_hidden_files, "show_hidden_files"}, {xtd::forms::open_file_box_options::show_help, "show_help"}, {xtd::forms::open_file_box_options::show_preview, "show_preview"}, {xtd::forms::open_file_box_options::support_multi_dotted_extensions, "support_multi_dotted_extensions"}, {xtd::forms::open_file_box_options::all, "all"}};
-    type = xtd::enum_type::flags;
+    attribute = xtd::enum_attribute::flags;
   }
 };
 /// @endcond

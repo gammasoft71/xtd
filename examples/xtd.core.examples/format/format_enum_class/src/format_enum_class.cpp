@@ -15,7 +15,7 @@ enum class week_day {
 
 // Only this operator is needed for week_day enum class to be recognized by xtd::ustring::format()
 template<> struct xtd::enum_register<week_day> {
-  void operator()(xtd::enum_collection<week_day>& values, xtd::enum_type& type) {values ={{week_day::monday, "monday"}, {week_day::tuesday, "tuesday"}, {week_day::wednesday, "wednesday"}, {week_day::thursday, "thursday"}, {week_day::friday, "friday"}, {week_day::saturday, "saturday"}, {week_day::sunday, "sunday"}};}
+  void operator()(xtd::enum_collection<week_day>& values, xtd::enum_attribute& attribute) {values ={{week_day::monday, "monday"}, {week_day::tuesday, "tuesday"}, {week_day::wednesday, "wednesday"}, {week_day::thursday, "thursday"}, {week_day::friday, "friday"}, {week_day::saturday, "saturday"}, {week_day::sunday, "sunday"}};}
 };
 
 int main() {

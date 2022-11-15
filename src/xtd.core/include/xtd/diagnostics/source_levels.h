@@ -45,9 +45,9 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::diagnostics::source_levels> {
-  void operator()(xtd::enum_collection<xtd::diagnostics::source_levels>& values, xtd::enum_type& type) {
+  void operator()(xtd::enum_collection<xtd::diagnostics::source_levels>& values, xtd::enum_attribute& attribute) {
     values = {{xtd::diagnostics::source_levels::all, "all"}, {xtd::diagnostics::source_levels::off, "off"}, {xtd::diagnostics::source_levels::critical, "critical"}, {xtd::diagnostics::source_levels::error, "error"}, {xtd::diagnostics::source_levels::warning, "warning"}, {xtd::diagnostics::source_levels::information, "information"}, {xtd::diagnostics::source_levels::verbose, "verbose"}, {xtd::diagnostics::source_levels::activity_tracing, "activity_tracing"}};
-    type = xtd::enum_type::flags;
+    attribute = xtd::enum_attribute::flags;
   }
 };
 /// @endcond

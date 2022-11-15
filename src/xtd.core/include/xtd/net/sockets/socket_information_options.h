@@ -47,9 +47,9 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::net::sockets::socket_information_options> {
-  void operator()(xtd::enum_collection<xtd::net::sockets::socket_information_options>& values, xtd::enum_type& type) {
+  void operator()(xtd::enum_collection<xtd::net::sockets::socket_information_options>& values, xtd::enum_attribute& attribute) {
     values = {{xtd::net::sockets::socket_information_options::none, "none"}, {xtd::net::sockets::socket_information_options::non_blocking, "non_blocking"}, {xtd::net::sockets::socket_information_options::connected, "connected"}, {xtd::net::sockets::socket_information_options::listening, "listening"}, {xtd::net::sockets::socket_information_options::use_only_overlapped_io, "use_only_overlapped_io"}};
-    type = xtd::enum_type::flags;
+    attribute = xtd::enum_attribute::flags;
   }
 };
 /// @endcond

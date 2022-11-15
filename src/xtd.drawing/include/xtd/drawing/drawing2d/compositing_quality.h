@@ -37,6 +37,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::drawing2d::compositing_quality> {
-  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::compositing_quality>& values, xtd::enum_type& type) {values = {{xtd::drawing::drawing2d::compositing_quality::invalid, "invalid"}, {xtd::drawing::drawing2d::compositing_quality::default_value, "default_value"}, {xtd::drawing::drawing2d::compositing_quality::high_speed, "high_speed"}, {xtd::drawing::drawing2d::compositing_quality::high_quality, "high_quality"}, {xtd::drawing::drawing2d::compositing_quality::gamma_corrected, "gamma_corrected"}, {xtd::drawing::drawing2d::compositing_quality::assume_linear, "assume_linear"}};}
+  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::compositing_quality>& values, xtd::enum_attribute& attribute) {values = {{xtd::drawing::drawing2d::compositing_quality::invalid, "invalid"}, {xtd::drawing::drawing2d::compositing_quality::default_value, "default_value"}, {xtd::drawing::drawing2d::compositing_quality::high_speed, "high_speed"}, {xtd::drawing::drawing2d::compositing_quality::high_quality, "high_quality"}, {xtd::drawing::drawing2d::compositing_quality::gamma_corrected, "gamma_corrected"}, {xtd::drawing::drawing2d::compositing_quality::assume_linear, "assume_linear"}};}
 };
 /// @endcond

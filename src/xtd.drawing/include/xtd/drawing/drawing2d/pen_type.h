@@ -39,6 +39,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::drawing2d::pen_type> {
-  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::pen_type>& values, xtd::enum_type& type) {values = {{xtd::drawing::drawing2d::pen_type::solid_color, "solid_color"}, {xtd::drawing::drawing2d::pen_type::hatch_fill, "hatch_fill"}, {xtd::drawing::drawing2d::pen_type::texture_fill, "texture_fill"}, {xtd::drawing::drawing2d::pen_type::path_gradient, "path_gradient"}, {xtd::drawing::drawing2d::pen_type::linear_gradient, "linear_gradient"}, {xtd::drawing::drawing2d::pen_type::conical_gradient, "conical_gradient"}, {xtd::drawing::drawing2d::pen_type::radial_gradient, "radial_gradient"}};}
+  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::pen_type>& values, xtd::enum_attribute& attribute) {values = {{xtd::drawing::drawing2d::pen_type::solid_color, "solid_color"}, {xtd::drawing::drawing2d::pen_type::hatch_fill, "hatch_fill"}, {xtd::drawing::drawing2d::pen_type::texture_fill, "texture_fill"}, {xtd::drawing::drawing2d::pen_type::path_gradient, "path_gradient"}, {xtd::drawing::drawing2d::pen_type::linear_gradient, "linear_gradient"}, {xtd::drawing::drawing2d::pen_type::conical_gradient, "conical_gradient"}, {xtd::drawing::drawing2d::pen_type::radial_gradient, "radial_gradient"}};}
 };
 /// @endcond

@@ -39,9 +39,9 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::button_state> {
-  void operator()(xtd::enum_collection<xtd::forms::button_state>& values, xtd::enum_type& type) {
+  void operator()(xtd::enum_collection<xtd::forms::button_state>& values, xtd::enum_attribute& attribute) {
     values = {{xtd::forms::button_state::normal, "normal"}, {xtd::forms::button_state::inactive, "inactive"}, {xtd::forms::button_state::pushed, "pushed"}, {xtd::forms::button_state::checked, "checked"}, {xtd::forms::button_state::flat, "flat"}};
-    type = xtd::enum_type::flags;
+    attribute = xtd::enum_attribute::flags;
   }
 };
 /// @endcond

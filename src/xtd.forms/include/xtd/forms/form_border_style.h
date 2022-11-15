@@ -36,6 +36,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::form_border_style> {
-  void operator()(xtd::enum_collection<xtd::forms::form_border_style>& values, xtd::enum_type& type) {values = {{xtd::forms::form_border_style::none, "none"}, {xtd::forms::form_border_style::fixed_single, "fixed_single"}, {xtd::forms::form_border_style::fixed_3d, "fixed_3d"}, {xtd::forms::form_border_style::fixed_dialog, "fixed_dialog"}, {xtd::forms::form_border_style::sizable, "sizable"}, {xtd::forms::form_border_style::fixed_tool_window, "fixed_tool_window"}, {xtd::forms::form_border_style::sizable_tool_window, "sizable_tool_window"}};}
+  void operator()(xtd::enum_collection<xtd::forms::form_border_style>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::form_border_style::none, "none"}, {xtd::forms::form_border_style::fixed_single, "fixed_single"}, {xtd::forms::form_border_style::fixed_3d, "fixed_3d"}, {xtd::forms::form_border_style::fixed_dialog, "fixed_dialog"}, {xtd::forms::form_border_style::sizable, "sizable"}, {xtd::forms::form_border_style::fixed_tool_window, "fixed_tool_window"}, {xtd::forms::form_border_style::sizable_tool_window, "sizable_tool_window"}};}
 };
 /// @endcond

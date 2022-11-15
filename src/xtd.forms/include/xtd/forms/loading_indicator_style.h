@@ -28,6 +28,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::loading_indicator_style> {
-  void operator()(xtd::enum_collection<xtd::forms::loading_indicator_style>& values, xtd::enum_type& type) {values = {{xtd::forms::loading_indicator_style::dots, "dots"}, {xtd::forms::loading_indicator_style::standard, "standard"}, {xtd::forms::loading_indicator_style::system, "system"}};}
+  void operator()(xtd::enum_collection<xtd::forms::loading_indicator_style>& values, xtd::enum_attribute& attribute) {values = {{xtd::forms::loading_indicator_style::dots, "dots"}, {xtd::forms::loading_indicator_style::standard, "standard"}, {xtd::forms::loading_indicator_style::system, "system"}};}
 };
 /// @endcond

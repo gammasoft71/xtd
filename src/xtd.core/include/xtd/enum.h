@@ -4,7 +4,7 @@
 #pragma once
 
 #include <mutex>
-#include "enum_type.h"
+#include "enum_attribute.h"
 #include "format_exception.h"
 #include "icomparable.h"
 #include "number_styles.h"
@@ -17,13 +17,21 @@
 namespace xtd {
   template<typename enum_t>
   using enum_collection = std::vector<std::pair<enum_t, xtd::ustring>>;
-  
-  /// @cond
+
+  /// @brief Provides the registration class for enumerations.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core system
+  /// @remarks The overloading of this operator is necessary for enum classes to be recognized by xtd::ustring::format().
+  /// @par example
+  /// The following code show how to use xtd::enum_register operator.
+  /// @include format_enum_class.cpp
   template<typename enum_t>
   struct enum_register {
-    void operator()(xtd::enum_collection<enum_t>& values, xtd::enum_type& type) {}
+    void operator()(xtd::enum_collection<enum_t>& values, xtd::enum_attribute& attribute) {}
   };
-  /// @endcond
   
   /// @brief Provides the base class for enumerations.
   /// @par Namespace
@@ -35,6 +43,10 @@ namespace xtd {
   class enum_object : public xtd::object, public icomparable<enum_object<enum_t>> {
   public:
     /// @name Alias
+
+    /// @{
+    using enum_type = enum_t;
+    /// @}
     
     /// @name Constructors
     
@@ -43,7 +55,7 @@ namespace xtd {
     enum_object() noexcept = default;
     /// @brief Initializes a new instance of the xtd::enum_object class with specified value.
     /// @param value Value to set to this instance.
-    enum_object(enum_t value) : value_(value) {}
+    enum_object(enum_type value) : value_(value) {}
     /// @}
 
     /// @cond
@@ -58,7 +70,7 @@ namespace xtd {
     enum_object(enum_object&&) noexcept = default;
     enum_object(const enum_object&) noexcept = default;
     enum_object& operator=(const enum_object&) noexcept = default;
-    operator enum_t() const noexcept {return value_;}
+    operator enum_type() const noexcept {return value_;}
     /// @endcond
         
     /// @name Public properties
@@ -68,14 +80,14 @@ namespace xtd {
     /// @param flag An enumeration value.
     /// @return true if the bit field or bit fields that are set in flag are also set in the current instance; otherwise, false.
     /// @remarks The has_flag method returns the result of the following bool expression : this_instance And flag = flag
-    bool has_flag(enum_t flag) const {return (to_int(value_) & to_int(flag)) == to_int(flag);}
+    bool has_flag(enum_type flag) const {return (to_int(value_) & to_int(flag)) == to_int(flag);}
     
     /// @brief Gets the value of the enum.
     /// @return The value of the enum.
-    enum_t value() const noexcept {return value_;}
+    enum_type value() const noexcept {return value_;}
     /// @brief Sets the value of the enum.
     /// @param value The value of the enum.
-    enum_object& value(enum_t value) {value_ = value;}
+    enum_object& value(enum_type value) {value_ = value;}
     /// @}
 
     /// @name Public methods
@@ -87,9 +99,9 @@ namespace xtd {
       return 1;
     }
     
-    int32_t compare_to(const xtd::object& value) const noexcept override {return is<enum_object<enum_t>>(value) && compare_to(static_cast<const enum_object<enum_t>&>(value));}
+    int32_t compare_to(const xtd::object& value) const noexcept override {return is<enum_object<enum_type>>(value) && compare_to(static_cast<const enum_object<enum_type>&>(value));}
     
-    bool equals(const xtd::object& value) const noexcept override {return is<enum_object<enum_t>>(value) && equals(static_cast<const enum_object<enum_t>&>(value));}
+    bool equals(const xtd::object& value) const noexcept override {return is<enum_object<enum_type>>(value) && equals(static_cast<const enum_object<enum_type>&>(value));}
 
     /// @brief Converts this instance to byte.
     /// @return A new byte_t object converted from this instance.
@@ -125,7 +137,7 @@ namespace xtd {
 
     xtd::ustring to_string() const noexcept override {
       values();
-      if (type_ == xtd::enum_type::flags) return to_string_flags();
+      if (attribute_ == xtd::enum_attribute::flags) return to_string_flags();
       
       auto iterator = std::find_if(values().begin(), values().end(), [&](auto value)->bool {return value.first == value_;});
       if (iterator == values().end()) return ustring::format("{}", to_int(value_));
@@ -136,30 +148,30 @@ namespace xtd {
 
     /// @cond
     bool equals(const enum_object& value) const noexcept {return value_ == value.value_;}
-    bool equals(enum_t value) const noexcept {return value_ == value;}
-    template<typename type_t>
-    bool equals(type_t value) const {return false;}
+    bool equals(enum_type value) const noexcept {return value_ == value;}
+    template<typename attribute_t>
+    bool equals(attribute_t value) const {return false;}
 
-    static enum_t parse(const xtd::ustring& str) {return parse(str, false);}
-    static enum_t parse(const xtd::ustring& str, bool ignore_case) {
-      enum_object<enum_t>().values();
-      if (enum_object<enum_t>().flags) return parse_flags(str, ignore_case);
+    static enum_type parse(const xtd::ustring& str) {return parse(str, false);}
+    static enum_type parse(const xtd::ustring& str, bool ignore_case) {
+      enum_object<enum_type>().values();
+      if (enum_object<enum_type>().flags) return parse_flags(str, ignore_case);
       
-      for (auto item : enum_object<enum_t>().values()) {
+      for (auto item : enum_object<enum_type>().values()) {
         if (xtd::ustring::compare(str, item.second, ignore_case) == 0)
-          return (enum_t)item.first;
+          return (enum_type)item.first;
       }
       
       return to_enum(xtd::parse<int64_t>(str));
     }
     
-    static enum_t parse_flags(const xtd::ustring& value, bool ignore_case) {
+    static enum_type parse_flags(const xtd::ustring& value, bool ignore_case) {
       std::vector<xtd::ustring> values = value.split({','});
       for (xtd::ustring& str : values)
         str = str.trim_start(' ').trim_end(' ');
       
       if (values.size() == 1) {
-        for (auto item : enum_object<enum_t>().values()) {
+        for (auto item : enum_object<enum_type>().values()) {
           if (xtd::ustring::compare(value, item.seconf, ignore_case) == 0)
             return to_enm(item.first);
         }
@@ -169,7 +181,7 @@ namespace xtd {
       int64_t result = 0;
       for (xtd::ustring str : values) {
         bool found = false;
-        for (auto item : enum_object<enum_t>().values()) {
+        for (auto item : enum_object<enum_type>().values()) {
           if (xtd::ustring::compare(str, item.second, ignore_case) == 0) {
             found = true;
             result |= to_int(item.first);
@@ -203,7 +215,7 @@ namespace xtd {
       
       xtd::ustring str;
       int64_t rest = to_int(value_);
-      enum_collection<enum_t> reversed = values();
+      enum_collection<enum_type> reversed = values();
       std::reverse(reversed.begin(), reversed.end());
       
       for (auto item : reversed) {
@@ -219,20 +231,20 @@ namespace xtd {
       return str;
     }
 
-    template<typename type_t>
-    static enum_t to_enum(type_t value) {return (enum_t)value;}
-    static int64_t to_int(enum_t value) {return static_cast<int64_t>(value);}
+    template<typename attribute_t>
+    static enum_type to_enum(attribute_t value) {return (enum_type)value;}
+    static int64_t to_int(enum_type value) {return static_cast<int64_t>(value);}
 
-    static enum_collection<enum_t>& values() {
+    static enum_collection<enum_type>& values() {
       std::mutex enum_mutex;
       std::lock_guard<std::mutex> lock(enum_mutex);
-      if (values_.size() == 0) enum_register<enum_t>()(values_, type_);
+      if (values_.size() == 0) enum_register<enum_type>()(values_, attribute_);
       return values_;
     };
     
-    enum_t value_ {};
-    inline static enum_collection<enum_t> values_;
-    inline static xtd::enum_type type_ = xtd::enum_type::standard;
+    enum_type value_ {};
+    inline static enum_collection<enum_type> values_;
+    inline static xtd::enum_attribute attribute_ = xtd::enum_attribute::standard;
   };
  
   /// @brief Provides the base class for enumerations.
@@ -398,24 +410,24 @@ inline std::string __enum_to_string(enum_t value) {
   return xtd::enum_object<>::get_name(value);
 }
 
-template<> struct xtd::enum_register<xtd::enum_type> {
-  void operator()(xtd::enum_collection<xtd::enum_type>& values, xtd::enum_type& type) {
-    values = {{enum_type::standard, L"standard"}, {enum_type::flags, L"flags"}};
+template<> struct xtd::enum_register<xtd::enum_attribute> {
+  void operator()(xtd::enum_collection<xtd::enum_attribute>& values, xtd::enum_attribute& attribute) {
+    values = {{enum_attribute::standard, L"standard"}, {enum_attribute::flags, L"flags"}};
   }
 };
 
 template<> struct xtd::enum_register<xtd::number_styles> {
-  void operator()(xtd::enum_collection<xtd::number_styles>& values, xtd::enum_type& type) {values = {{xtd::number_styles::none, "none"}, {xtd::number_styles::allow_leading_white, "allow_leading_white"}, {xtd::number_styles::allow_trailing_white, "allow_trailing_white"}, {xtd::number_styles::allow_leading_sign, "allow_leading_sign"}, {xtd::number_styles::allow_trailing_sign, "allow_trailing_sign"}, {xtd::number_styles::allow_parentheses, "allow_parentheses"}, {xtd::number_styles::allow_decimal_point, "allow_decimal_point"}, {xtd::number_styles::allow_thousands, "allow_thousands"}, {xtd::number_styles::allow_exponent, "allow_exponent"}, {xtd::number_styles::allow_currency_symbol, "allow_currency_symbol"}, {xtd::number_styles::allow_hex_specifier, "allow_hex_specifier"}, {xtd::number_styles::allow_binary_specifier, "allow_binary_specifier"}, {xtd::number_styles::allow_octal_specifier, "allow_octal_specifier"}, {xtd::number_styles::integer, "integer"}, {xtd::number_styles::number, "number"}, {xtd::number_styles::fixed_point, "fixed_point"}, {xtd::number_styles::currency, "currency"}, {xtd::number_styles::any, "any"}, {xtd::number_styles::hex_number, "hex_number"}, {xtd::number_styles::binary_number, "binary_number"}, {xtd::number_styles::octal_number, "octal_number"}};
-    type = xtd::enum_type::flags;
+  void operator()(xtd::enum_collection<xtd::number_styles>& values, xtd::enum_attribute& attribute) {values = {{xtd::number_styles::none, "none"}, {xtd::number_styles::allow_leading_white, "allow_leading_white"}, {xtd::number_styles::allow_trailing_white, "allow_trailing_white"}, {xtd::number_styles::allow_leading_sign, "allow_leading_sign"}, {xtd::number_styles::allow_trailing_sign, "allow_trailing_sign"}, {xtd::number_styles::allow_parentheses, "allow_parentheses"}, {xtd::number_styles::allow_decimal_point, "allow_decimal_point"}, {xtd::number_styles::allow_thousands, "allow_thousands"}, {xtd::number_styles::allow_exponent, "allow_exponent"}, {xtd::number_styles::allow_currency_symbol, "allow_currency_symbol"}, {xtd::number_styles::allow_hex_specifier, "allow_hex_specifier"}, {xtd::number_styles::allow_binary_specifier, "allow_binary_specifier"}, {xtd::number_styles::allow_octal_specifier, "allow_octal_specifier"}, {xtd::number_styles::integer, "integer"}, {xtd::number_styles::number, "number"}, {xtd::number_styles::fixed_point, "fixed_point"}, {xtd::number_styles::currency, "currency"}, {xtd::number_styles::any, "any"}, {xtd::number_styles::hex_number, "hex_number"}, {xtd::number_styles::binary_number, "binary_number"}, {xtd::number_styles::octal_number, "octal_number"}};
+    attribute = xtd::enum_attribute::flags;
   }
 };
 
 template<> struct xtd::enum_register<xtd::string_comparison> {
-  void operator()(xtd::enum_collection<xtd::string_comparison>& values, xtd::enum_type& type) {values = {{xtd::string_comparison::ordinal, "ordinal"}, {xtd::string_comparison::ordinal_ignore_case, "ordinal_ignore_case"}};}
+  void operator()(xtd::enum_collection<xtd::string_comparison>& values, xtd::enum_attribute& attribute) {values = {{xtd::string_comparison::ordinal, "ordinal"}, {xtd::string_comparison::ordinal_ignore_case, "ordinal_ignore_case"}};}
 };
 
 template<> struct xtd::enum_register<xtd::string_split_options> {
-  void operator()(xtd::enum_collection<xtd::string_split_options>& values, xtd::enum_type& type) {values = {{xtd::string_split_options::none, "none"}, {xtd::string_split_options::remove_empty_entries, "remove_empty_entries"}};}
+  void operator()(xtd::enum_collection<xtd::string_split_options>& values, xtd::enum_attribute& attribute) {values = {{xtd::string_split_options::none, "none"}, {xtd::string_split_options::remove_empty_entries, "remove_empty_entries"}};}
 };
 /// @endcond
 

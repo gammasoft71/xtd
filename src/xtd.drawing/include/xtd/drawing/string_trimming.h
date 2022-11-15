@@ -33,6 +33,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::string_trimming> {
-  void operator()(xtd::enum_collection<xtd::drawing::string_trimming>& values, xtd::enum_type& type) {values = {{xtd::drawing::string_trimming::none, "none"}, {xtd::drawing::string_trimming::character, "character"}, {xtd::drawing::string_trimming::word, "word"}, {xtd::drawing::string_trimming::ellipsis_character, "ellipsis_character"}, {xtd::drawing::string_trimming::ellipsis_word, "ellipsis_word"}, {xtd::drawing::string_trimming::ellipsis_path, "ellipsis_path"}};}
+  void operator()(xtd::enum_collection<xtd::drawing::string_trimming>& values, xtd::enum_attribute& attribute) {values = {{xtd::drawing::string_trimming::none, "none"}, {xtd::drawing::string_trimming::character, "character"}, {xtd::drawing::string_trimming::word, "word"}, {xtd::drawing::string_trimming::ellipsis_character, "ellipsis_character"}, {xtd::drawing::string_trimming::ellipsis_word, "ellipsis_word"}, {xtd::drawing::string_trimming::ellipsis_path, "ellipsis_path"}};}
 };
 /// @endcond

@@ -38,6 +38,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::diagnostics::process_priority_class> {
-  void operator()(xtd::enum_collection<xtd::diagnostics::process_priority_class>& values, xtd::enum_type& type) {values = {{xtd::diagnostics::process_priority_class::normal, "normal"}, {xtd::diagnostics::process_priority_class::idle, "idle"}, {xtd::diagnostics::process_priority_class::high, "high"}, {xtd::diagnostics::process_priority_class::real_time, "real_time"}, {xtd::diagnostics::process_priority_class::below_normal, "below_normal"}, {xtd::diagnostics::process_priority_class::above_normal, "above_normal"}};}
+  void operator()(xtd::enum_collection<xtd::diagnostics::process_priority_class>& values, xtd::enum_attribute& attribute) {values = {{xtd::diagnostics::process_priority_class::normal, "normal"}, {xtd::diagnostics::process_priority_class::idle, "idle"}, {xtd::diagnostics::process_priority_class::high, "high"}, {xtd::diagnostics::process_priority_class::real_time, "real_time"}, {xtd::diagnostics::process_priority_class::below_normal, "below_normal"}, {xtd::diagnostics::process_priority_class::above_normal, "above_normal"}};}
 };
 /// @endcond
