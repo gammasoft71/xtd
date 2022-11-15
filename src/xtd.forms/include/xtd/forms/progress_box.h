@@ -283,7 +283,7 @@ namespace xtd {
       
       /// @brief Updates progress box
       /// @param options A bitwise combination of enum xtd::forms::progress_box_options to specify additional options to the progress dialog box.
-      static void update(const progress_box_options options) { if (dialog_) dialog_->show_cancel_button(options & progress_box_options::show_cancel_button).show_skip_button(options & progress_box_options::show_skip_button).show_elapsed_time(options & progress_box_options::show_elapsed_time).show_estimated_time(options & progress_box_options::show_estimated_time).show_remaining_time(options & progress_box_options::show_remaining_time); }
+      static void update(const progress_box_options options) {if (dialog_) dialog_->show_cancel_button((options & progress_box_options::show_cancel_button) == progress_box_options::show_cancel_button).show_skip_button((options & progress_box_options::show_skip_button) == progress_box_options::show_skip_button).show_elapsed_time((options & progress_box_options::show_elapsed_time) == progress_box_options::show_elapsed_time).show_estimated_time((options & progress_box_options::show_estimated_time) == progress_box_options::show_estimated_time).show_remaining_time((options & progress_box_options::show_remaining_time) == progress_box_options::show_remaining_time);}
       /// @brief Updates progress box
       /// @param value An integer that indicates the value of the progress dialog.
       static void update(const int32_t value) { if (dialog_) dialog_->value(value); }
@@ -351,11 +351,11 @@ namespace xtd {
         .marquee(marquee)
         .marquee_animation_speed(marquee_animation_speed)
         .informations(informations)
-        .show_cancel_button(options & progress_box_options::show_cancel_button)
-        .show_skip_button(options & progress_box_options::show_skip_button)
-        .show_elapsed_time(options & progress_box_options::show_elapsed_time)
-        .show_estimated_time(options & progress_box_options::show_estimated_time)
-        .show_remaining_time(options & progress_box_options::show_remaining_time);
+        .show_cancel_button((options & progress_box_options::show_cancel_button) == progress_box_options::show_cancel_button)
+        .show_skip_button((options & progress_box_options::show_skip_button) == progress_box_options::show_skip_button)
+        .show_elapsed_time((options & progress_box_options::show_elapsed_time) == progress_box_options::show_elapsed_time)
+        .show_estimated_time((options & progress_box_options::show_estimated_time) == progress_box_options::show_estimated_time)
+        .show_remaining_time((options & progress_box_options::show_remaining_time) == progress_box_options::show_remaining_time);
         owner ? dialog_->show(*owner) : dialog_->show();
       }
     };

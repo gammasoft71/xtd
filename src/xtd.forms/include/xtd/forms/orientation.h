@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::orientation enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -21,10 +21,11 @@ namespace xtd {
       /// @brief The control or element is oriented vertically.
       vertical = 1,
     };
-    
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, orientation value) {return os << to_string(value, {{orientation::horizontal, "horizontal"}, {orientation::vertical, "vertical"}});}
-    inline std::wostream& operator<<(std::wostream& os, orientation value) {return os << to_string(value, {{orientation::horizontal, L"horizontal"}, {orientation::vertical, L"vertical"}});}
-    /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::orientation> {
+  void operator()(xtd::enum_collection<xtd::forms::orientation>& values, xtd::enum_type& type) {values = {{xtd::forms::orientation::horizontal, "horizontal"}, {xtd::forms::orientation::vertical, "vertical"}};}
+};
+/// @endcond

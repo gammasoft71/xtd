@@ -282,15 +282,15 @@ namespace xtd {
         .title(title)
         .initial_directory(initial_directory)
         .filter(filter)
-        .check_file_exists(options & open_file_box_options::check_file_exists)
-        .dereference_link(options & open_file_box_options::dereference_link)
-        .validate_names(options & open_file_box_options::validate_names)
-        .restore_directory(options & open_file_box_options::restore_directory)
-        .auto_upgrade_enabled(options & open_file_box_options::enable_auto_upgrade)
-        .show_hidden_files(options & open_file_box_options::show_hidden_files)
-        .show_help(options & open_file_box_options::show_help)
-        .show_preview(options & open_file_box_options::show_preview)
-        .support_multi_dotted_extensions(options & open_file_box_options::support_multi_dotted_extensions);
+        .check_file_exists((options & open_file_box_options::check_file_exists) == open_file_box_options::check_file_exists)
+        .dereference_link((options & open_file_box_options::dereference_link) == open_file_box_options::dereference_link)
+        .validate_names((options & open_file_box_options::validate_names) == open_file_box_options::validate_names)
+        .restore_directory((options & open_file_box_options::restore_directory) == open_file_box_options::restore_directory)
+        .auto_upgrade_enabled((options & open_file_box_options::enable_auto_upgrade) == open_file_box_options::enable_auto_upgrade)
+        .show_hidden_files((options & open_file_box_options::show_hidden_files) == open_file_box_options::show_hidden_files)
+        .show_help((options & open_file_box_options::show_help) == open_file_box_options::show_help)
+        .show_preview((options & open_file_box_options::show_preview) == open_file_box_options::show_preview)
+        .support_multi_dotted_extensions((options & open_file_box_options::support_multi_dotted_extensions) == open_file_box_options::support_multi_dotted_extensions);
         if constexpr(!multiselect) dialog.file_name(output);
         const auto res = owner ? dialog.show_sheet_dialog(*owner) : dialog.show_dialog();
         if (res == dialog_result::ok) {

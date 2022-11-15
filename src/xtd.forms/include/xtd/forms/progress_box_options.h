@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::progress_box_options control.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -33,20 +33,16 @@ namespace xtd {
     };
     
     /// @cond
-    inline progress_box_options& operator +=(progress_box_options& lhs, progress_box_options rhs) noexcept { lhs = static_cast<progress_box_options>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs; }
-    inline progress_box_options& operator -=(progress_box_options& lhs, progress_box_options rhs) noexcept { lhs = static_cast<progress_box_options>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs; }
-    inline progress_box_options& operator &=(progress_box_options& lhs, progress_box_options rhs) noexcept { lhs = static_cast<progress_box_options>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); return lhs; }
-    inline progress_box_options& operator |=(progress_box_options& lhs, progress_box_options rhs) noexcept { lhs = static_cast<progress_box_options>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); return lhs; }
-    inline progress_box_options& operator ^=(progress_box_options& lhs, progress_box_options rhs) noexcept { lhs = static_cast<progress_box_options>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); return lhs; }
-    inline progress_box_options operator +(progress_box_options lhs, progress_box_options rhs) noexcept { return static_cast<progress_box_options>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); }
-    inline progress_box_options operator -(progress_box_options lhs, progress_box_options rhs) noexcept { return static_cast<progress_box_options>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); }
-    inline progress_box_options operator ~(progress_box_options rhs) noexcept { return static_cast<progress_box_options>(~static_cast<long long>(rhs)); }
-    inline bool operator &(progress_box_options lhs, progress_box_options rhs) noexcept { return static_cast<bool>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); }
-    inline progress_box_options operator |(progress_box_options lhs, progress_box_options rhs) noexcept { return static_cast<progress_box_options>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); }
-    inline progress_box_options operator ^(progress_box_options lhs, progress_box_options rhs) noexcept { return static_cast<progress_box_options>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); }
-    
-    inline std::ostream& operator<<(std::ostream& os, progress_box_options value) { return os << to_string(value, { {progress_box_options::none, "none"}, {progress_box_options::show_cancel_button, "show_cancel_button"}, {progress_box_options::show_skip_button, "show_skip_button"}, {progress_box_options::show_elapsed_time, "show_elapsed_time"}, {progress_box_options::show_estimated_time, "show_estimated_time"}, {progress_box_options::show_remaining_time, "show_remaining_time"}, {progress_box_options::all, "all"} }); }
-    inline std::wostream& operator<<(std::wostream& os, progress_box_options value) { return os << to_string(value, { {progress_box_options::none, L"none"}, {progress_box_options::show_cancel_button, L"show_cancel_button"}, {progress_box_options::show_skip_button, L"show_skip_button"}, {progress_box_options::show_elapsed_time, L"show_elapsed_time"}, {progress_box_options::show_estimated_time, L"show_estimated_time"}, {progress_box_options::show_remaining_time, L"show_remaining_time"}, {progress_box_options::all, L"all"} }); }
+    add_enum_flag_operators_(xtd::forms::progress_box_options);
     /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::progress_box_options> {
+  void operator()(xtd::enum_collection<xtd::forms::progress_box_options>& values, xtd::enum_type& type) {
+    values = {{xtd::forms::progress_box_options::none, "none"}, {xtd::forms::progress_box_options::show_cancel_button, "show_cancel_button"}, {xtd::forms::progress_box_options::show_skip_button, "show_skip_button"}, {xtd::forms::progress_box_options::show_elapsed_time, "show_elapsed_time"}, {xtd::forms::progress_box_options::show_estimated_time, "show_estimated_time"}, {xtd::forms::progress_box_options::show_remaining_time, "show_remaining_time"}, {xtd::forms::progress_box_options::all, "all"}};
+    type = xtd::enum_type::flags;
+  }
+};
+/// @endcond

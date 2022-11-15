@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::segments enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
+#include <xtd/enum.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -64,19 +64,16 @@ namespace xtd {
     };
     
     /// @cond
-    inline segments& operator +=(segments& lhs, segments rhs) {lhs = static_cast<segments>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
-    inline segments& operator -=(segments& lhs, segments rhs) {lhs = static_cast<segments>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}
-    inline segments& operator &=(segments& lhs, segments rhs) {lhs = static_cast<segments>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); return lhs;}
-    inline segments& operator |=(segments& lhs, segments rhs) {lhs = static_cast<segments>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); return lhs;}
-    inline segments& operator ^=(segments& lhs, segments rhs) {lhs = static_cast<segments>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); return lhs;}
-    inline segments operator +(segments lhs, segments rhs) {return static_cast<segments>(static_cast<long long>(lhs) + static_cast<long long>(rhs));}
-    inline segments operator -(segments lhs, segments rhs) {return static_cast<segments>(static_cast<long long>(lhs) - static_cast<long long>(rhs));}
-    inline segments operator ~(segments rhs) {return static_cast<segments>(~static_cast<long long>(rhs));}
-    inline segments operator &(segments lhs, segments rhs) {return static_cast<segments>(static_cast<long long>(lhs) & static_cast<long long>(rhs));}
-    inline segments operator |(segments lhs, segments rhs) {return static_cast<segments>(static_cast<long long>(lhs) | static_cast<long long>(rhs));}
-    inline segments operator ^(segments lhs, segments rhs) {return static_cast<segments>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs));}
-    inline std::ostream& operator<<(std::ostream& os, segments value) {return os << to_string(value, {{segments::none, "none"}, {segments::a, "a"}, {segments::b, "b"}, {segments::c, "c"}, {segments::d, "d"}, {segments::e, "e"}, {segments::f, "f"}, {segments::g, "g"}, {segments::h, "h"}, {segments::i, "i"}, {segments::j, "j"}, {segments::k, "k"}, {segments::l, "l"}, {segments::m, "m"}, {segments::a2, "a2"}, {segments::d2, "d2"}, {segments::g2, "g2"}, {segments::dp, "dp"}, {segments::pc, "pc"}});}
-    inline std::wostream& operator<<(std::wostream& os, segments value) {return os << to_string(value, {{segments::none, L"none"}, {segments::a, L"a"}, {segments::b, L"b"}, {segments::c, L"c"}, {segments::d, L"d"}, {segments::e, L"e"}, {segments::f, L"f"}, {segments::g, L"g"}, {segments::h, L"h"}, {segments::i, L"i"}, {segments::j, L"j"}, {segments::k, L"k"}, {segments::l, L"l"}, {segments::m, L"m"}, {segments::a2, L"a2"}, {segments::d2, L"d2"}, {segments::g2, L"g2"}, {segments::dp, L"dp"}, {segments::pc, L"pc"}});}
+    add_enum_flag_operators_(xtd::forms::segments);
     /// @endcond
   }
 }
+
+/// @cond
+template<> struct xtd::enum_register<xtd::forms::segments> {
+  void operator()(xtd::enum_collection<xtd::forms::segments>& values, xtd::enum_type& type) {
+    values = {{xtd::forms::segments::none, "none"}, {xtd::forms::segments::a, "a"}, {xtd::forms::segments::b, "b"}, {xtd::forms::segments::c, "c"}, {xtd::forms::segments::d, "d"}, {xtd::forms::segments::e, "e"}, {xtd::forms::segments::f, "f"}, {xtd::forms::segments::g, "g"}, {xtd::forms::segments::h, "h"}, {xtd::forms::segments::i, "i"}, {xtd::forms::segments::j, "j"}, {xtd::forms::segments::k, "k"}, {xtd::forms::segments::l, "l"}, {xtd::forms::segments::m, "m"}, {xtd::forms::segments::a2, "a2"}, {xtd::forms::segments::d2, "d2"}, {xtd::forms::segments::g2, "g2"}, {xtd::forms::segments::dp, "dp"}, {xtd::forms::segments::pc, "pc"}};
+    type = xtd::enum_type::flags;
+  }
+};
+/// @endcond
