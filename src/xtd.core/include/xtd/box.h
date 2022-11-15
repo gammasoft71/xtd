@@ -4,6 +4,7 @@
 #pragma once
 #include "icomparable.h"
 #include "iequatable.h"
+#include "enum.h"
 #include "object.h"
 #include "ustring.h"
 #include "types.h"
@@ -738,6 +739,25 @@ namespace xtd {
   /// @endcode
   using wchar_object = box_char<wchar_t>;
   
+  /// @cond
+  template<typename type_t, typename bool_t>
+  struct __enum_or_object__;
+  
+  template<typename type_t>
+  struct __enum_or_object__<type_t, std::true_type> {
+    using type = xtd::enum_object<type_t>;
+  };
+  
+  template<typename type_t>
+  struct __enum_or_object__<type_t, std::false_type> {
+    using type = xtd::box<type_t>;
+  };
+  
+  inline int16_object boxing(const int16_t& value) {return int16_object(value);}
+  inline int32_object boxing(const int32_t& value) {return int32_object(value);}
+  inline const object& boxing(const object& value) {return value;}
+  /// @endcond
+
   /// @brief Allows to box an object
   /// @param value Value used to initialize object.
   /// @return Boxed object.
@@ -748,7 +768,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   template<typename type_t>
-  inline box<type_t> boxing(const type_t& value) {return box<type_t>(value);}
+  inline auto boxing(const type_t& value) {return typename __enum_or_object__<type_t, typename std::is_enum<type_t>::type>::type(value);}
   /// @brief Allows to box an object
   /// @param ...args  Params used to initialize object.
   /// @return Boxed object.
@@ -760,13 +780,6 @@ namespace xtd {
   /// @ingroup xtd_core system
   template<typename type_t, typename ...args_t>
   inline box<type_t> boxing(args_t&& ...args) {return box<type_t>(args...);}
-  
-  /// @cond
-  inline int16_object boxing(const int16_t& value) {return int16_object(value);}
-  inline int32_object boxing(const int32_t& value) {return int32_object(value);}
-  inline const object& boxing(const object& value) {return value;}
-  inline object& boxing(object& value) {return value;}
-  /// @endcond
   
   /// @brief Allows to unbox an object
   /// @param value Object to box.
@@ -782,7 +795,7 @@ namespace xtd {
   /// @cond
   inline const object& unboxing(const object& value) {return value;}
   inline object& unboxing(object& value) {return value;}
-  
+
   template<typename type_t>
   inline std::string to_string(const xtd::box<type_t>& value, const std::string& fmt, const std::locale& loc) {
     return value.to_string(fmt);
