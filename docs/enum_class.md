@@ -10,11 +10,11 @@ Enums and enum classes in c++11 have two problems:
 
 Several external libraries solve the problem with elegance. Here is a non-exhaustive list:
 
-* [magic_enum](https://github.com/Neargye/magic_enum)
 * [better_enums](https://github.com/aantron/better-enums)
-* [wise_enum](https://github.com/quicknir/wise_enum)
 * [enum.hpp](https://github.com/BlackMATov/enum.hpp)
+* [magic_enum](https://github.com/Neargye/magic_enum)
 * [nav](https://github.com/codeinred/nav)
+* [wise_enum](https://github.com/quicknir/wise_enum)
 * And probably still others...
 
 But in the context of xtd, after testing these different external libraries, none of them have been retained for different reasons such as limitations, macros for the declaration of enums and others.
