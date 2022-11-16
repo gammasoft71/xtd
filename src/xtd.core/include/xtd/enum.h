@@ -160,6 +160,44 @@ namespace xtd {
       
       return iterator->second;
     }
+
+    /// @brief Converts the value of this instance to its equivalent string representation using the specified format.
+    /// @param format A format string.
+    /// @return The string representation of the value of this instance as specified by format.
+    /// @exception xtd::format_exception format contains an invalid specification.
+    /// @remarks The format parameter can be one of the following format strings: "G" or "g", "D" or "d", "X" or "x", and "F" or "f" (the format string is not case-sensitive). If format is null or an empty string (""), the general format specifier ("G") is used. For more information about the enumeration format strings and formatting enumeration values, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/format_enumeration_format_strings.md">Enumeration Format Strings</a>. For more information about formatting in general, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/format_overview.md">Formatting Types</a>.
+    /// @par Notes to caller
+    /// If multiple enumeration members have the same underlying value and you attempt to retrieve the string representation of an enumeration member's name based on its underlying value, your code should not make any assumptions about which name the method will return. For example, the following enumeration defines two members, shade::gray and shade::grey, that have the same underlying value.
+    /// @code
+    /// enum shade {
+    ///   white = 0, gray = 1, grey = 1, black = 2
+    /// };
+    /// @endcode
+    /// The following method call attempts to retrieve the name of a member of the shade enumeration whose underlying value is 1. The method can return either "gray" or "grey", and your code should not make any assumptions about which string will be returned.
+    /// @code
+    /// ustring shade_name = enum_object<shade>(as<shade>(1)).to_string("F");
+    /// @endcode
+    xtd::ustring to_string(const xtd::ustring& format) const {
+      entries();
+      auto fmt = format;
+      if (fmt.empty()) fmt =  "G";
+      
+      switch (fmt[0]) {
+        case 'b':
+        case 'B':
+        case 'd':
+        case 'D':
+        case 'o':
+        case 'O':
+        case 'x':
+        case 'X': return __numeric_formatter(fmt, static_cast<long long int>(value_), std::locale());
+        case 'f':
+        case 'F':
+        case 'g':
+        case 'G': return __format_stringer<char_t>(value_);
+      }
+      throw format_exception("Invalid format");
+    }
     /// @}
 
     /// @cond
