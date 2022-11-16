@@ -163,7 +163,18 @@ names = [value_one, value_two, value_three, value_four]
 entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]
 ```
 
-** Next explanations coming soon...**
+### Format enum class
+
+You can use the [xtd::enum_object::to_string](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object.html#a7e0bc388bc8f4ec019e586fb2e5ad998) method to create a new string object that represents the numeric, hexadecimal, or string value of an enumeration member. This method takes one of the enumeration formatting strings to specify the value that you want returned.
+
+See [Enumeraton format strings](https://github.com/gammasoft71/xtd/blob/master/docs/format_enumeration_format_strings.md) for more information about enum class format.
+
+#### Note
+  xtd can display a string representing a member of an enum class as long as it is registered. If it is not registered then the numeric value will be displayed.
+
+### Parse
+
+**coming soon...**
 
 # See also
 ​
