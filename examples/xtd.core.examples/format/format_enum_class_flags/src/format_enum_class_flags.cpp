@@ -16,7 +16,7 @@ add_enum_flag_operators_(, text_styles);
 
 // Only this operator is needed for text_styles enum class to be recognized by xtd::ustring::format().
 template<> struct xtd::enum_register<text_styles> {
-  void operator()(xtd::enum_collection<text_styles>& values) {values ={{text_styles::normal, "normal"}, {text_styles::bold, "bold"}, {text_styles::italic, "italic"}, {text_styles::underline, "underline"}, {text_styles::strikeout, "strikeout"}};}
+  void operator()(xtd::enum_collection<text_styles>& values) {values = {{text_styles::normal, "normal"}, {text_styles::bold, "bold"}, {text_styles::italic, "italic"}, {text_styles::underline, "underline"}, {text_styles::strikeout, "strikeout"}};}
 };
 
 int main() {

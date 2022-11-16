@@ -13,6 +13,7 @@ add_projects(
   delegates
   diagnostics
   environment
+  enum_class
   exceptions
   format
   guid
