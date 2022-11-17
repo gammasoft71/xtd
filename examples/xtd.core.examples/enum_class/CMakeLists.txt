@@ -5,5 +5,6 @@ find_package(xtd REQUIRED)
 
 add_projects(
   enum_class
+  enum_class_without_helper
 )
 
