@@ -291,6 +291,20 @@ namespace xtd {
     template<typename input_iterator_t>
     ustring(input_iterator_t first, input_iterator_t last, const allocator_type& allocator) : std::basic_string<value_type>(first, last, allocator) {}
     
+    /// @brief Initializes a new instance of xtd::ustring with specified string view of substring and allocator.
+    /// @param string_view The string view.
+    /// @param allocator The allocator to use for all memory allocations of this string.
+    template<typename string_view_like_t>
+    explicit constexpr ustring(const string_view_like_t& string_view, const allocator_type& allocator = allocator_type()) : std::basic_string<value_type>(string_view, allocator) {}
+    
+    /// @brief Initializes a new instance of xtd::ustring with specified string view of substring and allocator.
+    /// @param string_view The string view.
+    /// @param index The index of the first substring character where start copy.
+    /// @param count The number of substring characters to copy.
+    /// @param allocator The allocator to use for all memory allocations of this string.
+    template<typename string_view_like_t>
+    constexpr ustring(const string_view_like_t& string_view, size_type index, size_type count, const allocator_type& allocator = allocator_type()) : std::basic_string<value_type>(string_view, index, count, allocator) {}
+
     /// @brief Initializes a new instance of xtd::ustring with specified initializer list.
     /// @param il The initializer list to fill.
     ustring(std::initializer_list<value_type> il);
