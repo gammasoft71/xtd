@@ -18,7 +18,73 @@
 namespace xtd {
   template<typename enum_t>
   using enum_collection = std::vector<std::pair<enum_t, xtd::ustring>>;
+}
 
+/// @cond
+struct __enum_class__;
+class __enum_register__ {
+public:
+  template<typename enum_t>
+  static xtd::ustring get_enum_definition() {
+    auto iterator = registered_enum_class_.find(xtd::ustring::full_class_name<enum_t>());
+    if (iterator == registered_enum_class_.end()) return "";
+    return iterator->second;
+  }
+  
+  template<typename enum_t>
+  static xtd::enum_collection<enum_t> enum_entries() {
+    auto iterator = registered_enum_class_.find(xtd::ustring::full_class_name<enum_t>());
+    if (iterator == registered_enum_class_.end()) return {};
+    xtd::enum_collection<enum_t> entries;
+    int64_t current_value = 0;
+    for (auto entry : iterator->second.substring(iterator->second.index_of('{')).replace('{', ' ').replace('}', ' ').trim().split({','})) {
+      auto key_value = entry.trim().split({'='});
+      if (key_value.size() < 1 || key_value.size() > 2 || (key_value.size() == 2 && xtd::ustring::is_empty(key_value[1])))
+        throw xtd::format_exception("Not a valid enum declaration", csf_);
+      int64_t value = current_value;
+      if (key_value.size() == 2) {
+        if (!xtd::try_parse<int64_t>(key_value[1].trim(), value) && xtd::try_parse<int64_t>(key_value[1].trim(), value, xtd::number_styles::hex_number) && xtd::try_parse<int64_t>(key_value[1].trim(), value, xtd::number_styles::binary_number) && xtd::try_parse<int64_t>(key_value[1].trim(), value, xtd::number_styles::octal_number)) {
+          auto iterator = std::find_if(entries.begin(), entries.end(), [&](auto item)->bool {return item.second == key_value[1].trim();});
+          if (iterator != entries.end()) value = static_cast<int64_t>(iterator->first);
+          
+          /// @todo Add parse arithmetic operation...
+          throw xtd::format_exception("Not a valid enum declaration", csf_);
+        }
+      }
+      current_value = value;
+      entries.push_back({static_cast<enum_t>(value), key_value[0].trim()});
+      current_value++;
+    }
+    
+    return entries;
+  }
+  
+private:
+  static void add_enum_definition(const xtd::ustring& enum_definition) {
+    try {
+      registered_enum_class_.insert({enum_definition.remove(enum_definition.index_of(' ')), enum_definition.substring(enum_definition.index_of(' '))});
+    } catch (...) {
+      throw xtd::format_exception(csf_);
+    }
+  }
+  
+  friend struct __enum_class__;
+  inline static std::map<xtd::ustring, xtd::ustring> registered_enum_class_;
+};
+
+struct __enum_class__ {
+  __enum_class__(const xtd::ustring& enum_definition) {
+    try {
+      __enum_register__::add_enum_definition(enum_definition);
+    } catch (...) {
+      throw xtd::format_exception(csf_);
+    }
+  }
+};
+/// @endcond
+
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
+namespace xtd {
   /// @brief Provides the registration class for enumerations.
   /// @par Namespace
   /// xtd
@@ -297,7 +363,10 @@ namespace xtd {
         enum_set_attribute<enum_type>()(attribute);
         attribute_ = attribute;
       }
+      
+      if (values_.size() == 0) values_ = __enum_register__::enum_entries<enum_type>();
       if (values_.size() == 0) enum_register<enum_type>()(values_);
+
       return values_;
     };
     
@@ -487,6 +556,18 @@ namespace xtd {
   template<> struct xtd::enum_set_attribute<namespace_name::enum_name> { \
     void operator()(xtd::enum_attribute& attribute) {attribute = xtd::enum_attribute::flags;} \
   }
+
+#define enum_(enum_name, ...) \
+  enum enum_name __VA_ARGS__; \
+  inline static __enum__ __enum__##enum_name {xtd::ustring::full_class_name<enum_name>() + " " + #__VA_ARGS__}
+
+#define enum_class_(enum_class_name, ...) \
+  enum class enum_class_name __VA_ARGS__; \
+  inline static __enum_class__ __enum_class__##enum_class_name {xtd::ustring::full_class_name<enum_class_name>() + " " + #__VA_ARGS__}
+
+#define enum_struct_(enum_struct_name, ...) \
+  enum struct enum_struct_name __VA_ARGS__; \
+  inline static __enum_struct__ __enum_struct__##enum_struct_name {xtd::ustring::full_class_name<enum_struct_name>() + " " + #__VA_ARGS__}
 
 /// @cond
 template<typename enum_t>
