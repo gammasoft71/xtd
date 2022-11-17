@@ -107,6 +107,7 @@
 ## [enum_class](enum_class/README.md)
 
 * [enum_class](enum_class/enum_class/README.md) shows how to use [xtd::enum_object](../../src/xtd.core/include/xtd/xtd::enum_object.h) class and [enum_class_](../../src/xtd.core/include/xtd/xtd::enum_object.h) helper.
+* [enum_class_parse](enum_class/enum_class_parse/README.md) shows how to use [xtd::enum_object::parse](../../src/xtd.core/include/xtd/xtd::enum_object.h) method.
 * [enum_class_without_helper](enum_class/enum_class_without_helper/README.md) shows how to use [xtd::enum_object](../../src/xtd.core/include/xtd/xtd::enum_object.h) class and [xtd::enumregister](../../src/xtd.core/include/xtd/xtd::enum_object.h) classes.
 
 ## [Environment](environment/README.md)
