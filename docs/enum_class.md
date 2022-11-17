@@ -4,11 +4,11 @@
 
 Enums and enum classes in c++11 have two problems:
 * Displaying in a string the name of the enum value either for debugging or simply to qualify some values as for example in [xtd::drawing::color::name]().
-* You have to add the bitwise operators for each enum class. Additional problem to display in a string the names of the value.
+* There is no flags attribute. You have to add the bitwise operators for each enum class. Additional problem to display in a string the names of the value.
 
 ## External libraries
 
-Several external libraries solve the problem with elegance. Here is a non-exhaustive list:
+Several external libraries solve theses problems with elegance. Here is a non-exhaustive list:
 
 * [better_enums](https://github.com/aantron/better-enums)
 * [enum.hpp](https://github.com/BlackMATov/enum.hpp)
@@ -19,7 +19,7 @@ Several external libraries solve the problem with elegance. Here is a non-exhaus
 
 But in the context of xtd, after testing these different external libraries, none of them have been retained for different reasons such as limitations, macros for the declaration of enums and others.
 
-This does not prevent you, of course, from using them in your own projects. As xtd is non-intrusive, you can easily combine them with xtd and with some xtd enum class definitions (if the limitations of the tools do not prevent this).
+This does not prevent you, of course, from using them in your own projects. As xtd is non-intrusive, you can easily combine them with xtd and with some xtd enum class definitions (if the limitations of the library do not prevent this).
 
 ### Examples
 
@@ -69,7 +69,7 @@ entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]
 
 * [nav](https://github.com/codeinred/nav) with xtd
 
-The following code shows how to use `enum class` with nac and xtd:
+The following code shows how to use `enum class` with nav and xtd:
 
 ```c++
 #include <nav/nav_core.hpp>
