@@ -1,11 +1,11 @@
-# enum_class
+# enum_class_without_helper
 
-* Shows how to use [xtd::enum_object](../../../../src/xtd.core/include/xtd/xtd::enum_object.h) class and [enum_class_](../../../../src/xtd.core/include/xtd/xtd::enum_object.h) helper.
+* Shows how to use [xtd::enum_object](../../../../src/xtd.core/include/xtd/xtd::enum_object.h) and [enum_register](../../../../src/xtd.core/include/xtd/xtd::enum_object.h) classes.
 
 
 ## Sources
 
-[src/enum_class.cpp](src/enum_class.cpp)
+[src/enum_class_without_helper.cpp](src/enum_class_without_helper.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

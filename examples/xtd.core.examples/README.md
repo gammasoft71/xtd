@@ -104,6 +104,11 @@
 * [trace](diagnostics/trace/README.md) shows how to use [xtd::diagnostics::trace](../../src/xtd.core/include/xtd/diagnostics::trace.h) class.
 * [trace_cassert](diagnostics/trace_cassert/README.md) shows how to use [xtd::diagnostics::trace::cassert](../../src/xtd.core/include/xtd/diagnostics::trace.h) method.
 
+## [enum_class](enum_class/README.md)
+
+* [enum_class](enum_class/enum_class/README.md) shows how to use [xtd::enum_object](../../src/xtd.core/include/xtd/xtd::enum_object.h) class and [enum_class_](../../src/xtd.core/include/xtd/xtd::enum_object.h) helper.
+* [enum_class_without_helper](enum_class/enum_class_without_helper/README.md) shows how to use [xtd::enum_object](../../src/xtd.core/include/xtd/xtd::enum_object.h) class and [xtd::enumregister](../../src/xtd.core/include/xtd/xtd::enum_object.h) classes.
+
 ## [Environment](environment/README.md)
 
 * [environment](environment/environment/README.md) shows how to use [xtd::environment](../../src/xtd.core/include/xtd/environment.h) class.

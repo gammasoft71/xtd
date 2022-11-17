@@ -2,12 +2,16 @@
 
 using namespace xtd;
 
-enum_class_(enum_test, {
+enum class enum_test {
   value_one,
   value_two,
   value_three,
   value_four
-});
+};
+
+template<> struct xtd::enum_register<enum_test> {
+  void operator()(xtd::enum_collection<enum_test>& values) {values = {{enum_test::value_one,  "value_one"}, {enum_test::value_two,  "value_two"}, {enum_test::value_three,  "value_three"}, {enum_test::value_four,  "value_four"}};}
+};
 
 int main() {
   console::write_line("name = {}", enum_test::value_four);
