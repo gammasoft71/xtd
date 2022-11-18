@@ -43,10 +43,9 @@ As you can see, even if the `main` function is called without arguments and if `
 
 ## startup_ keyword
 
-xtd introduces the keyword [startup_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c) which allows to have a main static method in any class with different parameters with or without return value. 
-In the case 
+xtd introduces the keyword [startup_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c) which allows to have a main static method in any class with different parameters with or without return value.
 
-Behind this keyword there is a `main` global function that call `main` static method in the cpecified class paramter with `try` and `catch`.
+Behind this keyword there is a `main` global function that call `main` static method in the specified class paramter with `try` and `catch`.
 
 ## startup_ definition
 
