@@ -539,35 +539,35 @@ namespace xtd {
   };
 }
 
-#define add_enum_flag_operators_(namespace_name, enum_name) \
+#define add_enum_flag_operators_(namespace_name, enum_type) \
   namespace namespace_name { \
-    inline enum_name& operator^=(enum_name& lhs, enum_name rhs) {lhs = static_cast<enum_name>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;} \
-    inline enum_name& operator&=(enum_name& lhs, enum_name rhs) {lhs = static_cast<enum_name>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;} \
-    inline enum_name& operator|=(enum_name& lhs, enum_name rhs) {lhs = static_cast<enum_name>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;} \
-    inline enum_name& operator+=(enum_name& lhs, enum_name rhs) {lhs = static_cast<enum_name>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;} \
-    inline enum_name& operator-=(enum_name& lhs, enum_name rhs) {lhs = static_cast<enum_name>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;} \
-    inline enum_name operator^(enum_name lhs, enum_name rhs) {return static_cast<enum_name>(static_cast<int>(lhs) ^ static_cast<int>(rhs));} \
-    inline enum_name operator&(enum_name lhs, enum_name rhs) {return static_cast<enum_name>(static_cast<int>(lhs) & static_cast<int>(rhs));} \
-    inline enum_name operator|(enum_name lhs, enum_name rhs) {return static_cast<enum_name>(static_cast<int>(lhs) | static_cast<int>(rhs));} \
-    inline enum_name operator+(enum_name lhs, enum_name rhs) {return static_cast<enum_name>(static_cast<int>(lhs) + static_cast<int>(rhs));} \
-    inline enum_name operator-(enum_name lhs, enum_name rhs) {return static_cast<enum_name>(static_cast<int>(lhs) - static_cast<int>(rhs));} \
-    inline enum_name operator~(enum_name lhs) {return static_cast<enum_name>(~static_cast<int>(lhs));} \
+    inline enum_type& operator^=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) ^ static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
+    inline enum_type& operator&=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) & static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
+    inline enum_type& operator|=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) | static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
+    inline enum_type& operator+=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) + static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
+    inline enum_type& operator-=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) - static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
+    inline enum_type operator^(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) ^ static_cast<std::underlying_type<enum_type>::type>(rhs));} \
+    inline enum_type operator&(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) & static_cast<std::underlying_type<enum_type>::type>(rhs));} \
+    inline enum_type operator|(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) | static_cast<std::underlying_type<enum_type>::type>(rhs));} \
+    inline enum_type operator+(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) + static_cast<std::underlying_type<enum_type>::type>(rhs));} \
+    inline enum_type operator-(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) - static_cast<std::underlying_type<enum_type>::type>(rhs));} \
+    inline enum_type operator~(enum_type lhs) {return static_cast<enum_type>(~static_cast<std::underlying_type<enum_type>::type>(lhs));} \
   }\
-  template<> struct xtd::enum_set_attribute<namespace_name::enum_name> { \
+  template<> struct xtd::enum_set_attribute<namespace_name::enum_type> { \
     void operator()(xtd::enum_attribute& attribute) {attribute = xtd::enum_attribute::flags;} \
   }
 
-#define enum_(enum_name, ...) \
-  enum enum_name __VA_ARGS__; \
-  inline static __enum__ __enum__##enum_name {xtd::ustring::full_class_name<enum_name>() + " " + #__VA_ARGS__}
+#define enum_(enum_type, ...) \
+  enum enum_type __VA_ARGS__; \
+  inline static __enum__ __enum__##enum_type {xtd::ustring::full_class_name<enum_type>() + " " + #__VA_ARGS__}
 
-#define enum_class_(enum_class_name, ...) \
-  enum class enum_class_name __VA_ARGS__; \
-  inline static __enum_class__ __enum_class__##enum_class_name {xtd::ustring::full_class_name<enum_class_name>() + " " + #__VA_ARGS__}
+#define enum_class_(enum_class_type, ...) \
+  enum class enum_class_type __VA_ARGS__; \
+  inline static __enum_class__ __enum_class__##enum_class_type {xtd::ustring::full_class_name<enum_class_type>() + " " + #__VA_ARGS__}
 
-#define enum_struct_(enum_struct_name, ...) \
-  enum struct enum_struct_name __VA_ARGS__; \
-  inline static __enum_struct__ __enum_struct__##enum_struct_name {xtd::ustring::full_class_name<enum_struct_name>() + " " + #__VA_ARGS__}
+#define enum_struct_(enum_struct_type, ...) \
+  enum struct enum_struct_type __VA_ARGS__; \
+  inline static __enum_struct__ __enum_struct__##enum_struct_type {xtd::ustring::full_class_name<enum_struct_type>() + " " + #__VA_ARGS__}
 
 /// @cond
 template<typename enum_t>
