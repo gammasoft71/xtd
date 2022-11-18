@@ -4,7 +4,7 @@ Shows how to use [bit_converter::endianness](https://codedocs.xyz/gammasoft71/xt
 
 ## Sources
 
-[src/bit_converter_is_little_endian.cpp](src/bit_converter_is_little_endian.cpp)
+[src/bit_converter_endianness.cpp](src/bit_converter_endianness.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
