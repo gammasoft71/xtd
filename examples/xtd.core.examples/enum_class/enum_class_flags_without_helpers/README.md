@@ -4,7 +4,7 @@
 
 ## Sources
 
-[src/enum_class_flags_without_helper.cpp](src/enum_class_flags_without_helpers.cpp)
+[src/enum_class_flags_without_helpers.cpp](src/enum_class_flags_without_helpers.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
