@@ -4,7 +4,7 @@
 
 `enum`, `enum class` and `enum struct` in c++11 have two problems:
 * Displaying in a string the name of the enum value either for debugging or simply to qualify some values as for example in [xtd::drawing::color::name]().
-* There is no flags attribute. You have to add the bitwise operators for each enum, enum class or enum struct. Enum flags pose an additional problem for displaying the value names in a string due to bitwise flags.
+* There is no flags attribute. You have to add the bitwise operators for each `enum`, `enum class` or `enum struct`. Enum flags pose an additional problem for displaying the value names in a string due to bitwise flags.
 
 ## External libraries
 
@@ -109,13 +109,13 @@ entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]
 
 ## Register
 
-Unlike some external libraries, xtd does not yet have enum class introspection. So you have to register the enum class with the class [xtd::enum_register](). 
+Unlike some external libraries, xtd does not yet have `enum class` introspection. So you have to register the `enum class` with the class [xtd::enum_register](). 
 The advantage is that it has no limitation and the disadvantage is that it is more verbose.
 
 ### Note
 
-  If in your own project you do not register your enum classes, there is no problem you can use them normally. 
-  But when you want to display the value of the enum class it will always be displayed as an integer and you can't do any parsing on it.
+  If in your own project you do not register your `enum class`, there is no problem you can use it normally. 
+  But when you want to display the value of the `enum class`, it will always be displayed as an integer value and you can't do any parsing on it.
 
 ### Examples
 
@@ -169,7 +169,7 @@ You can use the [xtd::enum_object::to_string](https://codedocs.xyz/gammasoft71/x
 
 See [Enumeraton format strings](https://github.com/gammasoft71/xtd/blob/master/docs/format_enumeration_format_strings.md) for more information about enum class format.
 
-The following code shows how to use enum class with format.
+The following code shows how to use `enum class` with format.
 
 ```c++
 #include <xtd/xtd>
@@ -222,13 +222,13 @@ saturday
 ```
 
 ### Note
-  xtd can display a string representing a member of an enum class as long as it is registered. If it is not registered then the numeric value will be displayed.
+  xtd can display a string representing a member of an `enum class` as long as it is registered. If it is not registered then the numeric value will be displayed.
 
 ## Parse
 
-To parse an enum class with xtd, the enum class must be registered.
+To parse an `enum class` with xtd, the enum class must be registered.
 
-The folowwing example shows how to parse an enum class with [xtd::enum_object::parse](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object_3_01std_1_1nullptr__t_01_4.html#a159422352085070f5d77c6f814e68693) method.
+The folowwing example shows how to parse an `enum class` with [xtd::enum_object::parse](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object_3_01std_1_1nullptr__t_01_4.html#a159422352085070f5d77c6f814e68693) method.
 
 ```c++
 #include <xtd/xtd>
