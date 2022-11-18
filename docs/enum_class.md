@@ -1,10 +1,10 @@
 | [Home](home.md) | [News](news.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Support](support.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# Enum class
+# enum, enum class and enum struct
 
-Enums and enum classes in c++11 have two problems:
+Enums, enum classes and enum struct in c++11 have two problems:
 * Displaying in a string the name of the enum value either for debugging or simply to qualify some values as for example in [xtd::drawing::color::name]().
-* There is no flags attribute. You have to add the bitwise operators for each enum class. Additional problem to display in a string the names of the value.
+* There is no flags attribute. You have to add the bitwise operators for each enum, enum class or enum struct. Enum flags pose an additional problem for displaying the value names in a string due to bitwise flags.
 
 ## External libraries
 
@@ -114,12 +114,12 @@ The advantage is that it has no limitation and the disadvantage is that it is mo
 
 ### Note
 
-If in your own project you do not register your enum classes, there is no problem you can use them normally. 
-But when you want to display the value of the enum class it will always be displayed as an integer and you can't do any parsing on it.
+  If in your own project you do not register your enum classes, there is no problem you can use them normally. 
+  But when you want to display the value of the enum class it will always be displayed as an integer and you can't do any parsing on it.
 
 ### Examples
 
-The following code shows how to use `enum class` with xtd:
+The following code shows how to use `enum class` with [xtd::enum_register](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__register.html):
 
 ```c++
 #include <xtd/xtd>
@@ -163,11 +163,63 @@ names = [value_one, value_two, value_three, value_four]
 entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]
 ```
 
-### Format enum class
+### Format
 
 You can use the [xtd::enum_object::to_string](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object.html#a7e0bc388bc8f4ec019e586fb2e5ad998) method to create a new string object that represents the numeric, hexadecimal, or string value of an enumeration member. This method takes one of the enumeration formatting strings to specify the value that you want returned.
 
 See [Enumeraton format strings](https://github.com/gammasoft71/xtd/blob/master/docs/format_enumeration_format_strings.md) for more information about enum class format.
+
+The following code shows how to use enum class with format.
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd;
+
+enum class week_day {
+  monday,
+  tuesday,
+  wednesday,
+  thursday,
+  friday,
+  saturday,
+  sunday
+};
+
+template<> struct xtd::enum_register<week_day> {
+  void operator()(xtd::enum_collection<week_day>& values) {values ={{week_day::monday, "monday"}, {week_day::tuesday, "tuesday"}, {week_day::wednesday, "wednesday"}, {week_day::thursday, "thursday"}, {week_day::friday, "friday"}, {week_day::saturday, "saturday"}, {week_day::sunday, "sunday"}};}
+};
+
+int main() {
+  console::write_line("{}", week_day::saturday);
+  console::write_line("0b{:b}", week_day::saturday);
+  console::write_line("0b{:B}", week_day::saturday);
+  console::write_line("{:d}", week_day::saturday);
+  console::write_line("{:D}", week_day::saturday);
+  console::write_line("{:g}", week_day::saturday);
+  console::write_line("{:G}", week_day::saturday);
+  console::write_line("0{:o}", week_day::saturday);
+  console::write_line("0{:O}", week_day::saturday);
+  console::write_line("0x{:x}", week_day::saturday);
+  console::write_line("0x{:X}", week_day::saturday);
+}
+```
+
+output:
+
+```
+saturday
+0b101
+0b101
+5
+5
+saturday
+saturday
+05
+05
+0x5
+0x5
+```
 
 #### Note
   xtd can display a string representing a member of an enum class as long as it is registered. If it is not registered then the numeric value will be displayed.
@@ -183,12 +235,16 @@ The folowwing example shows how to parse an enum class with [xtd::enum_object::p
 
 using namespace xtd;
 
-enum_class_(enum_test, {
+enum class enum_test {
   value_one,
   value_two,
   value_three,
   value_four
-});
+};
+
+template<> struct xtd::enum_register<enum_test> {
+  void operator()(xtd::enum_collection<enum_test>& values) {values = {{enum_test::value_one,  "value_one"}, {enum_test::value_two,  "value_two"}, {enum_test::value_three,  "value_three"}, {enum_test::value_four,  "value_four"}};}
+};
 
 int main() {
   console::write_line("result = {}", enum_object<>::parse<enum_test>("value_two"));
@@ -219,6 +275,15 @@ enum_test::value_six does not exists!
 ```
 
 ### enum class helpers
+
+Registering an `enum class flags` is unfortunately verbose. Registering an `enum, `enum class` or an `enum struct` is unfortunately verbose too. 
+
+There are some helpers in xtd to make your job easier:
+
+* add_enum_flag_operators_
+* enum_
+* enum_class_
+* enum_struct_
 
 
 # See also
