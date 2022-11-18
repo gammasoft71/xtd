@@ -107,7 +107,7 @@ names = value_one, value_two, value_three, value_four
 entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]
 ```
 
-## xtd
+## Register
 
 Unlike some external libraries, xtd does not yet have enum class introspection. So you have to register the enum class with the class [xtd::enum_register](). 
 The advantage is that it has no limitation and the disadvantage is that it is more verbose.
@@ -163,7 +163,7 @@ names = [value_one, value_two, value_three, value_four]
 entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]
 ```
 
-### Format
+## Format
 
 You can use the [xtd::enum_object::to_string](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object.html#a7e0bc388bc8f4ec019e586fb2e5ad998) method to create a new string object that represents the numeric, hexadecimal, or string value of an enumeration member. This method takes one of the enumeration formatting strings to specify the value that you want returned.
 
@@ -221,10 +221,10 @@ saturday
 0x5
 ```
 
-#### Note
+### Note
   xtd can display a string representing a member of an enum class as long as it is registered. If it is not registered then the numeric value will be displayed.
 
-### Parse
+## Parse
 
 To parse an enum class with xtd, the enum class must be registered.
 
@@ -274,17 +274,20 @@ result = value_one
 enum_test::value_six does not exists!
 ```
 
-### enum class helpers
+## enum class helpers
 
 Registering an `enum class flags` is unfortunately verbose. Registering an `enum, `enum class` or an `enum struct` is unfortunately verbose too. 
 
 There are some helpers in xtd to make your job easier:
 
-* add_enum_flag_operators_
-* enum_
-* enum_class_
-* enum_struct_
+* [add_enum_flag_operators_]()
+* [enum_]()
+* [enum_class_]()
+* [enum_struct_]()
 
+### add_enum_flag_operators_
+
+### enum_, enum_class_ and enum_struct_
 
 # See also
 ​
