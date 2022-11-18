@@ -4,7 +4,7 @@ Shows how to use [bit_converter](https://codedocs.xyz/gammasoft71/xtd/classxtd_1
 
 ## Sources
 
-[src/bit_converter_round_tripsbit_converter_round_trips.cpp](src/bit_converter_round_trips.cpp)
+[src/bit_converter_round_trips.cpp](src/bit_converter_round_trips.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
