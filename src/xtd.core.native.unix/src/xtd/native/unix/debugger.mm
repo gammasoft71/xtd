@@ -32,6 +32,9 @@ bool debugger::launch() {
 
 int32_t debugger::show_assert_dialog(const std::string& text, const std::string& caption) {
   //#if !defined(TARGET_IPHONE_SIMULATOR) && !defined(TARGET_OS_MACCATALYST) && !defined(TARGET_OS_IPHONE)
+  [NSApplication sharedApplication];
+  [NSApp finishLaunching];
+  [NSApp activateIgnoringOtherApps:YES];
   NSModalResponse return_code = NSAlertSecondButtonReturn;
   NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
   @autoreleasepool {
