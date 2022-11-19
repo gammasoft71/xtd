@@ -818,6 +818,12 @@
 ///     <td>@image html colors_tomato.png</td>
 ///   </tr>
 ///   <tr>
+///     <td>transparent</td>
+///     <td>xtd::drawing::color::transparent</td>
+///     <td>0x00FFFFFF</td>
+///     <td>@image html colors_transparent.png</td>
+///   </tr>
+///   <tr>
 ///     <td>turquoise</td>
 ///     <td>xtd::drawing::color::turquoise</td>
 ///     <td>0xFF40E0D0</td>
