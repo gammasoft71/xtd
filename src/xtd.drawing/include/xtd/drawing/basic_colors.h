@@ -11,7 +11,7 @@
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
-    /// @brief Pink colors for all the hmtl pink colors. This class cannot be inherited.
+    /// @brief Basic colors for all the hmtl basic colors. This class cannot be inherited.
     /// @code
     /// class drawing_export_ basic_colors final static_
     /// @endcode

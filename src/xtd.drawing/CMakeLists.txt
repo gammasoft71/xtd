@@ -25,6 +25,7 @@ add_sources(
   include/xtd/drawing/icon.h
   include/xtd/drawing/image.h
   include/xtd/drawing/known_color.h
+  include/xtd/drawing/orange_colors.h
   include/xtd/drawing/pen.h
   include/xtd/drawing/pens.h
   include/xtd/drawing/pink_colors.h
@@ -99,6 +100,7 @@ add_sources(
   src/xtd/drawing/graphics.cpp
   src/xtd/drawing/icon.cpp
   src/xtd/drawing/image.cpp
+  src/xtd/drawing/orange_colors.cpp
   src/xtd/drawing/pen.cpp
   src/xtd/drawing/pens.cpp
   src/xtd/drawing/pink_colors.cpp
