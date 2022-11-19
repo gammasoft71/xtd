@@ -49,7 +49,7 @@ namespace xtd {
       static xtd::drawing::color aquamarine();
       
       /// @brief A system-defined color object.
-      /// @image html colors_v.png
+      /// @image html colors_azure.png
       static xtd::drawing::color azure();
       
       /// @brief A system-defined color object.
