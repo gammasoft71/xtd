@@ -1,0 +1,28 @@
+#include "../../../include/xtd/drawing/orange_colors.h"
+
+using namespace std;
+using namespace xtd::drawing;
+
+color orange_colors::coral() {
+  return color::from_known_color(known_color::coral);
+}
+
+color orange_colors::dark_orange() {
+  return color::from_known_color(known_color::dark_orange);
+}
+
+color orange_colors::orange_red() {
+  return color::from_known_color(known_color::orange_red);
+}
+
+color orange_colors::tomato() {
+  return color::from_known_color(known_color::tomato);
+}
+
+color orange_colors::orange() {
+  return color::from_known_color(known_color::orange);
+}
+
+vector<color> orange_colors::get_colors() {
+  return {orange_colors::orange_red(), orange_colors::tomato(), orange_colors::dark_orange(), orange_colors::coral(), orange_colors::orange()};
+}

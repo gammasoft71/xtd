@@ -41,6 +41,7 @@
 #include "drawing/icon.h"
 #include "drawing/image.h"
 #include "drawing/known_color.h"
+#include "drawing/orange_colors.h"
 #include "drawing/pen.h"
 #include "drawing/pens.h"
 #include "drawing/pink_colors.h"
