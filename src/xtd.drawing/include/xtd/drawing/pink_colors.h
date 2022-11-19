@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::colors factory.
+/// @brief Contains xtd::drawing::pink_colors factory.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <vector>
