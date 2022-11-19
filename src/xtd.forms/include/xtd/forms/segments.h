@@ -66,7 +66,7 @@ namespace xtd {
 }
 
 /// @cond
-add_enum_flag_operators_(xtd::forms, segments);
+flags_attribute_(xtd::forms, segments);
 
 template<> struct xtd::enum_register<xtd::forms::segments> {
   void operator()(xtd::enum_collection<xtd::forms::segments>& values) {values = {{xtd::forms::segments::none, "none"}, {xtd::forms::segments::a, "a"}, {xtd::forms::segments::b, "b"}, {xtd::forms::segments::c, "c"}, {xtd::forms::segments::d, "d"}, {xtd::forms::segments::e, "e"}, {xtd::forms::segments::f, "f"}, {xtd::forms::segments::g, "g"}, {xtd::forms::segments::h, "h"}, {xtd::forms::segments::i, "i"}, {xtd::forms::segments::j, "j"}, {xtd::forms::segments::k, "k"}, {xtd::forms::segments::l, "l"}, {xtd::forms::segments::m, "m"}, {xtd::forms::segments::a2, "a2"}, {xtd::forms::segments::d2, "d2"}, {xtd::forms::segments::g2, "g2"}, {xtd::forms::segments::dp, "dp"}, {xtd::forms::segments::pc, "pc"}};}

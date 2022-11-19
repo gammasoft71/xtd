@@ -32,7 +32,7 @@ namespace xtd {
 }
 
 /// @cond
-add_enum_flag_operators_(xtd::forms, arrange_starting_position);
+flags_attribute_(xtd::forms, arrange_starting_position);
 /// @endcond
 
 /// @cond

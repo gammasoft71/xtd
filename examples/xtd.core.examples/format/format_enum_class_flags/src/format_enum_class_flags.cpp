@@ -12,7 +12,7 @@ enum class text_styles {
 };
 
 // Add text_style enum class flags operators and register flags attribute.
-add_enum_flag_operators_(, text_styles);
+flags_attribute_(, text_styles);
 
 // Only this operator is needed for text_styles enum class to be recognized by xtd::ustring::format().
 template<> struct xtd::enum_register<text_styles> {

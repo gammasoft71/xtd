@@ -539,7 +539,7 @@ namespace xtd {
   };
 }
 
-#define add_enum_flag_operators_(namespace_name, enum_type) \
+#define flags_attribute_(namespace_name, enum_type) \
   namespace namespace_name { \
     [[maybe_unused]] inline enum_type& operator^=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) ^ static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
     [[maybe_unused]] inline enum_type& operator&=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) & static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \

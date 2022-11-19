@@ -45,7 +45,7 @@ namespace xtd {
 }
 
 /// @cond
-add_enum_flag_operators_(xtd::net::sockets, transmit_file_options);
+flags_attribute_(xtd::net::sockets, transmit_file_options);
 
 template<> struct xtd::enum_register<xtd::net::sockets::transmit_file_options> {
   void operator()(xtd::enum_collection<xtd::net::sockets::transmit_file_options>& values) {values = {{xtd::net::sockets::transmit_file_options::use_default_worker_thread, "use_default_worker_thread"}, {xtd::net::sockets::transmit_file_options::disconnect, "disconnect"}, {xtd::net::sockets::transmit_file_options::reuse_socket, "reuse_socket"}, {xtd::net::sockets::transmit_file_options::write_behind, "write_behind"}, {xtd::net::sockets::transmit_file_options::use_system_thread, "use_system_thread"}, {xtd::net::sockets::transmit_file_options::use_kernel_apc, "use_kernel_apc"}};}

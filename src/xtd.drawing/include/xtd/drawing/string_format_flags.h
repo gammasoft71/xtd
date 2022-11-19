@@ -38,7 +38,7 @@ namespace xtd {
 }
 
 /// @cond
-add_enum_flag_operators_(xtd::drawing, string_format_flags);
+flags_attribute_(xtd::drawing, string_format_flags);
 
 template<> struct xtd::enum_register<xtd::drawing::string_format_flags> {
   void operator()(xtd::enum_collection<xtd::drawing::string_format_flags>& values) {values = {{xtd::drawing::string_format_flags::direction_right_to_left, "direction_right_to_left"}, {xtd::drawing::string_format_flags::direction_vertical, "direction_vertical"}, {xtd::drawing::string_format_flags::fit_black_box, "fit_black_box"}, {xtd::drawing::string_format_flags::display_format_control, "display_format_control"}, {xtd::drawing::string_format_flags::no_font_fallback, "no_font_fallback"}, {xtd::drawing::string_format_flags::measure_trailing_spaces, "measure_trailing_spaces"}, {xtd::drawing::string_format_flags::no_wrap, "no_wrap"}, {xtd::drawing::string_format_flags::line_limit, "line_limit"}, {xtd::drawing::string_format_flags::no_clip, "no_clip"}};}

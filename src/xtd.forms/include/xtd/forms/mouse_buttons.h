@@ -33,7 +33,7 @@ namespace xtd {
 }
 
 /// @cond
-add_enum_flag_operators_(xtd::forms, mouse_buttons);
+flags_attribute_(xtd::forms, mouse_buttons);
 
 template<> struct xtd::enum_register<xtd::forms::mouse_buttons> {
   void operator()(xtd::enum_collection<xtd::forms::mouse_buttons>& values) {values = {{xtd::forms::mouse_buttons::none, "none"}, {xtd::forms::mouse_buttons::left, "left"}, {xtd::forms::mouse_buttons::right, "right"}, {xtd::forms::mouse_buttons::middle, "middle"}, {xtd::forms::mouse_buttons::x_button1, "x_button1"}, {xtd::forms::mouse_buttons::x_button2, "x_button2"}};}

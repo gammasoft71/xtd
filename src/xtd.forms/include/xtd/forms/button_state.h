@@ -34,7 +34,7 @@ namespace xtd {
 }
 
 /// @cond
-add_enum_flag_operators_(xtd::forms, button_state);
+flags_attribute_(xtd::forms, button_state);
 /// @endcond
 
 /// @cond

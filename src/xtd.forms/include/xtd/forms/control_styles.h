@@ -68,7 +68,7 @@ namespace xtd {
 }
 
 /// @cond
-add_enum_flag_operators_(xtd::forms, control_styles);
+flags_attribute_(xtd::forms, control_styles);
 
 template<> struct xtd::enum_register<xtd::forms::control_styles> {
   void operator()(xtd::enum_collection<xtd::forms::control_styles>& values) {values = {{xtd::forms::control_styles::container_control, "container_control"}, {xtd::forms::control_styles::user_paint, "user_paint"}, {xtd::forms::control_styles::opaque, "opaque"}, {xtd::forms::control_styles::resize_redraw, "resize_redraw"}, {xtd::forms::control_styles::fixed_width, "fixed_width"}, {xtd::forms::control_styles::fixed_height, "fixed_height"}, {xtd::forms::control_styles::standard_click, "standard_click"}, {xtd::forms::control_styles::selectable, "selectable"}, {xtd::forms::control_styles::user_mouse, "user_mouse"}, {xtd::forms::control_styles::supports_transparent_back_color, "supports_transparent_back_color"}, {xtd::forms::control_styles::standard_double_click, "standard_double_click"}, {xtd::forms::control_styles::all_painting_in_wm_paint, "all_painting_in_wm_paint"}, {xtd::forms::control_styles::cache_text, "cache_text"}, {xtd::forms::control_styles::enable_notify_message, "enable_notify_message"}, {xtd::forms::control_styles::double_buffer, "double_buffer"}, {xtd::forms::control_styles::optimized_double_buffer, "optimized_double_buffer"}, {xtd::forms::control_styles::use_text_for_accessibility, "use_text_for_accessibility"}};}
