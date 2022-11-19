@@ -3,7 +3,7 @@
 # enum, enum class and enum struct
 
 `enum`, `enum class` and `enum struct` in c++11 have two problems:
-* Displaying in a string the name of the enum value either for debugging or simply to qualify some values as for example in [xtd::drawing::color::name]().
+* Displaying in a string the name of the enum value either for debugging or simply to qualify some values as for example in [xtd::drawing::color::name](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1color.html#a0b74e93ea5582716bde7104b84177a77).
 * There is no flags attribute. You have to add the bitwise operators for each `enum`, `enum class` or `enum struct`. Enum flags pose an additional problem for displaying the value names in a string due to bitwise flags.
 
 ## External libraries
