@@ -32,6 +32,7 @@ add_sources(
   include/xtd/drawing/point_f.h
   include/xtd/drawing/rectangle.h
   include/xtd/drawing/rectangle_f.h
+  include/xtd/drawing/red_colors.h
   include/xtd/drawing/region.h
   include/xtd/drawing/rotate_flip_type.h
   include/xtd/drawing/size.h
@@ -105,6 +106,7 @@ add_sources(
   src/xtd/drawing/point.cpp
   src/xtd/drawing/rectangle_f.cpp
   src/xtd/drawing/rectangle.cpp
+  src/xtd/drawing/red_colors.cpp
   src/xtd/drawing/region.cpp
   src/xtd/drawing/size_f.cpp
   src/xtd/drawing/size.cpp

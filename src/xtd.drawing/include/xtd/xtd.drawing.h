@@ -48,6 +48,7 @@
 #include "drawing/point_f.h"
 #include "drawing/rectangle.h"
 #include "drawing/rectangle_f.h"
+#include "drawing/red_colors.h"
 #include "drawing/region.h"
 #include "drawing/size.h"
 #include "drawing/size_f.h"
