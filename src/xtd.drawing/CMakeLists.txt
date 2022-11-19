@@ -26,6 +26,7 @@ add_sources(
   include/xtd/drawing/known_color.h
   include/xtd/drawing/pen.h
   include/xtd/drawing/pens.h
+  include/xtd/drawing/pink_colors.h
   include/xtd/drawing/point.h
   include/xtd/drawing/point_f.h
   include/xtd/drawing/rectangle.h
@@ -97,6 +98,7 @@ add_sources(
   src/xtd/drawing/image.cpp
   src/xtd/drawing/pen.cpp
   src/xtd/drawing/pens.cpp
+  src/xtd/drawing/pink_colors.cpp
   src/xtd/drawing/point_f.cpp
   src/xtd/drawing/point.cpp
   src/xtd/drawing/rectangle_f.cpp
