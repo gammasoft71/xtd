@@ -107,7 +107,7 @@ names = value_one, value_two, value_three, value_four
 entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]
 ```
 
-## Register
+## xtd::enum_egister
 
 Unlike some external libraries, xtd does not yet have `enum class` introspection. So you have to register the `enum class` with the class [xtd::enum_register](). 
 The advantage is that it has no limitation and the disadvantage is that it is more verbose.
@@ -162,6 +162,109 @@ values = [0, 1, 2, 3]
 names = [value_one, value_two, value_three, value_four]
 entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]
 ```
+
+## xtd::enum_set_attribute
+
+The [xtd::enum_attribute]() class is used to qualify an enum class attribute. 
+By default, an enum class attribute is [xtd::enum_attribute::standard]().
+
+Write the following code to set the attribute of an enum class :
+
+```c++
+enum clas enum_flags { /*...*/; }
+
+template<> struct xtd::enum_set_attribute<enum_flags> {
+  void operator()(xtd::enum_attribute& attribute) {attribute = xtd::enum_attribute::flags;}
+};
+```
+
+This does not dispense with writing the operators necessary to perform bitwise operations, but is necessary to display the values of the enum class correctly.
+
+Let's take the following example and see what happens with and without setting the attribute flag to [xtd::enum_attribute::flags]() :
+
+```c++
+enum class test_enum {
+  value_one = 0,
+  value_two = 1,
+  value_three = 2,
+  value_four = 4
+};
+
+test_enum operator|(test_enum lhs, test_enum rhs) {return static_cast<test_enum>(static_cast<std::underlying_type<test_enum>::type>(lhs) | static_cast<std::underlying_type<test_enum>::type>(rhs));}
+```
+
+* With setting the attribute flag to [xtd::enum_attribute::flags]() :
+
+```c++
+#include <xtd/xtd.core.h>
+
+using namespace xtd;
+
+enum class test_enum {
+  value_one = 0,
+  value_two = 1,
+  value_three = 2,
+  value_four = 4
+};
+
+test_enum operator|(test_enum lhs, test_enum rhs) {return static_cast<test_enum>(static_cast<std::underlying_type<test_enum>::type>(lhs) | static_cast<std::underlying_type<test_enum>::type>(rhs));}
+
+template<> struct xtd::enum_set_attribute<test_enum> {
+  void operator()(xtd::enum_attribute& attribute) {attribute = xtd::enum_attribute::flags;}
+};
+
+template<> struct xtd::enum_register<test_enum> {
+  void operator()(xtd::enum_collection<test_enum>& values) {values = {{test_enum::value_one, "value_one"}, {test_enum::value_two, "value_two"}, {test_enum::value_three, "value_three"}, {test_enum::value_four, "value_four"}};}
+};
+
+int main() {
+  auto value = test_enum::value_two | test_enum::value_three;
+  console::write_line("value = {}", value);
+}
+```
+
+output:
+
+```
+value = value_two, value_three
+```
+
+Ok, this is the expected value.
+
+* Without setting the attribute flag to [xtd::enum_attribute::flags]() :
+
+```c++
+#include <xtd/xtd.core.h>
+
+using namespace xtd;
+
+enum class test_enum {
+  value_one = 0,
+  value_two = 1,
+  value_three = 2,
+  value_four = 4
+};
+
+test_enum operator|(test_enum lhs, test_enum rhs) {return static_cast<test_enum>(static_cast<std::underlying_type<test_enum>::type>(lhs) | static_cast<std::underlying_type<test_enum>::type>(rhs));}
+
+template<> struct xtd::enum_register<test_enum> {
+  void operator()(xtd::enum_collection<test_enum>& values) {values = {{test_enum::value_one, "value_one"}, {test_enum::value_two, "value_two"}, {test_enum::value_three, "value_three"}, {test_enum::value_four, "value_four"}};}
+};
+
+int main() {
+  auto value = test_enum::value_two | test_enum::value_three;
+  console::write_line("value = {}", value);
+}
+```
+
+output:
+
+```
+value = 3
+```
+
+Error, this is not the expected value.
+Indeed, when the `value` is displayed, there is no member variable in `enum_test` that corresponds to `3`.
 
 ## Format
 
