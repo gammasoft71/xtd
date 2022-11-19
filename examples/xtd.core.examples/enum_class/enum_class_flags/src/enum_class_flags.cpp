@@ -10,7 +10,7 @@ enum_class_(text_attribute, {
   strikeout = 0b1000,
 });
 
-add_enum_flag_operators_(, text_attribute);
+flags_attribute_(, text_attribute);
 
 int main() {
   console::write_line("name = {}", text_attribute::bold | text_attribute::italic);

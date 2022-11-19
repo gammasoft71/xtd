@@ -383,12 +383,12 @@ Registering an `enum class flags` is unfortunately verbose. Registering an `enum
 
 There are some helpers in xtd to make your job easier:
 
-* [add_enum_flag_operators_]()
+* [flags_attribute_]()
 * [enum_]()
 * [enum_class_]()
 * [enum_struct_]()
 
-### add_enum_flag_operators_
+### flags_attribute_
 
 ### enum_, enum_class_ and enum_struct_
 
