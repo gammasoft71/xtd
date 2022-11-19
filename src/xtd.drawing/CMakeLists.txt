@@ -50,6 +50,7 @@ add_sources(
   include/xtd/drawing/system_images.h
   include/xtd/drawing/system_pens.h
   include/xtd/drawing/texture_brush.h
+  include/xtd/drawing/yellow_colors.h
   include/xtd/drawing/drawing2d/conical_gradient_brush.h
   include/xtd/drawing/drawing2d/compositing_mode.h
   include/xtd/drawing/drawing2d/compositing_quality.h
@@ -121,6 +122,7 @@ add_sources(
   src/xtd/drawing/system_images.cpp
   src/xtd/drawing/system_pens.cpp
   src/xtd/drawing/texture_brush.cpp
+  src/xtd/drawing/yellow_colors.cpp
   src/xtd/drawing/drawing2d/hatch_brush.cpp
   src/xtd/drawing/drawing2d/conical_gradient_brush.cpp
   src/xtd/drawing/drawing2d/graphics_path.cpp
