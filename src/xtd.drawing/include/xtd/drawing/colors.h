@@ -29,10 +29,6 @@ namespace xtd {
       
       /// @{
       /// @brief A system-defined color object.
-      /// @image html colors_transparent.png
-      static xtd::drawing::color transparent();
-      
-      /// @brief A system-defined color object.
       /// @image html colors_alice_blue.png
       static xtd::drawing::color alice_blue();
       
@@ -567,6 +563,10 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_tomato.png
       static xtd::drawing::color tomato();
+      
+      /// @brief A system-defined color object.
+      /// @image html colors_transparent.png
+      static xtd::drawing::color transparent();
       
       /// @brief A system-defined color object.
       /// @image html colors_turquoise.png
