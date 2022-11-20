@@ -107,7 +107,7 @@ names = value_one, value_two, value_three, value_four
 entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]
 ```
 
-## xtd::enum_egister
+## xtd::enum_register
 
 Unlike some external libraries, xtd does not yet have `enum class` introspection. So you have to register the `enum class` with the class [xtd::enum_register](). 
 The advantage is that it has no limitation and the disadvantage is that it is more verbose.
