@@ -68,6 +68,16 @@
 ///     <td>@image html system_colors_active_caption_text_gd.png</td>
 ///   </tr>
 ///   <tr>
+///     <td>active text</td>
+///     <td>xtd::drawing::system_colors::active_text</td>
+///     <td>@image html system_colors_active_text_w.png</td>
+///     <td>@image html system_colors_active_text_wd.png</td>
+///     <td>@image html system_colors_active_text_m.png</td>
+///     <td>@image html system_colors_active_text_md.png</td>
+///     <td>@image html system_colors_active_text_g.png</td>
+///     <td>@image html system_colors_active_text_gd.png</td>
+///   </tr>
+///   <tr>
 ///     <td>app workspace</td>
 ///     <td>xtd::drawing::system_colors::app_workspace</td>
 ///     <td>@image html system_colors_app_workspace_w.png</td>
@@ -288,6 +298,16 @@
 ///     <td>@image html system_colors_info_text_gd.png</td>
 ///   </tr>
 ///   <tr>
+///     <td>link text</td>
+///     <td>xtd::drawing::system_colors::link_text</td>
+///     <td>@image html system_colors_link_text_w.png</td>
+///     <td>@image html system_colors_link_text_wd.png</td>
+///     <td>@image html system_colors_link_text_m.png</td>
+///     <td>@image html system_colors_link_text_md.png</td>
+///     <td>@image html system_colors_link_text_g.png</td>
+///     <td>@image html system_colors_link_text_gd.png</td>
+///   </tr>
+///   <tr>
 ///     <td>menu</td>
 ///     <td>xtd::drawing::system_colors::menu</td>
 ///     <td>@image html system_colors_menu_w.png</td>
@@ -356,6 +376,16 @@
 ///     <td>@image html system_colors_text_box_text_md.png</td>
 ///     <td>@image html system_colors_text_box_text_g.png</td>
 ///     <td>@image html system_colors_text_box_text_gd.png</td>
+///   </tr>
+///   <tr>
+///     <td>visited text</td>
+///     <td>xtd::drawing::system_colors::visited_text</td>
+///     <td>@image html system_colors_visited_text_w.png</td>
+///     <td>@image html system_colors_visited_text_wd.png</td>
+///     <td>@image html system_colors_visited_text_m.png</td>
+///     <td>@image html system_colors_visited_text_md.png</td>
+///     <td>@image html system_colors_visited_text_g.png</td>
+///     <td>@image html system_colors_visited_text_gd.png</td>
 ///   </tr>
 ///   <tr>
 ///     <td>window</td>
