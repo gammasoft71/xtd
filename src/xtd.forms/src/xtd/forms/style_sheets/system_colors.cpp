@@ -46,6 +46,14 @@ void system_colors::active_caption_text(const color& value) noexcept {
   active_caption_text_ = value;
 }
 
+const color& system_colors::active_text() const noexcept {
+  return active_text_;
+}
+
+void system_colors::active_text(const color& value) noexcept {
+  active_text_ = value;
+}
+
 const color& system_colors::app_workspace() const noexcept {
   return app_workspace_;
 }
@@ -222,6 +230,14 @@ void system_colors::info_text(const color& value) noexcept {
   info_text_ = value;
 }
 
+const color& system_colors::link_text() const noexcept {
+  return link_text_;
+}
+
+void system_colors::link_text(const color& value) noexcept {
+  link_text_ = value;
+}
+
 const color& system_colors::menu() const noexcept {
   return menu_;
 }
@@ -278,6 +294,14 @@ void system_colors::text_box_text(const color& value) noexcept {
   text_box_text_ = value;
 }
 
+const color& system_colors::visited_text() const noexcept {
+  return visited_text_;
+}
+
+void system_colors::visited_text(const color& value) noexcept {
+  visited_text_ = value;
+}
+
 const color& system_colors::window() const noexcept {
   return window_;
 }
@@ -307,5 +331,5 @@ bool system_colors::equals(const object& other) const noexcept {
 }
 
 bool system_colors::equals(const system_colors& other) const noexcept {
-  return accent_ == other.accent_ && accent_text_ == other.accent_text_ && active_border_ == other.active_border_ && active_caption_ == other.active_caption_ && active_caption_text_ == other.active_caption_text_ && app_workspace_ == other.app_workspace_ && button_face_ == other.button_face_ && button_highlight_ == other.button_highlight_ && button_shadow_ == other.button_shadow_ && control_ == other.control_ && control_dark_ == other.control_dark_ && control_dark_dark_ == other.control_dark_dark_ && control_light_ == other.control_light_ && control_light_light_ == other.control_light_light_ && control_text_ == other.control_text_ && desktop_ == other.desktop_ && gradient_active_caption_ == other.gradient_active_caption_ && gradient_inactive_caption_ == other.gradient_inactive_caption_ && gray_text_ == other.gray_text_ && highlight_ == other.highlight_ && highlight_text_ == other.highlight_text_ && hot_track_ == other.hot_track_ && inactive_border_ == other.inactive_border_ && inactive_caption_ == other.inactive_caption_ && inactive_caption_text_ == other.inactive_caption_text_ && info_ == other.info_ && info_text_ == other.info_text_ && menu_ == other.menu_ && menu_bar_ == other.menu_bar_ && menu_highlight_ == other.menu_highlight_ && menu_text_ == other.menu_text_ && scroll_bar_ == other.scroll_bar_ && text_box_ == other.text_box_ && text_box_text_ == other.text_box_text_ && window_ == other.window_ && window_frame_ == other.window_frame_ && window_text_ == other.window_text_;
+  return accent_ == other.accent_ && accent_text_ == other.accent_text_ && active_border_ == other.active_border_ && active_caption_ == other.active_caption_ && active_caption_text_ == other.active_caption_text_ && active_text_ == other.active_text_ && app_workspace_ == other.app_workspace_ && button_face_ == other.button_face_ && button_highlight_ == other.button_highlight_ && button_shadow_ == other.button_shadow_ && control_ == other.control_ && control_dark_ == other.control_dark_ && control_dark_dark_ == other.control_dark_dark_ && control_light_ == other.control_light_ && control_light_light_ == other.control_light_light_ && control_text_ == other.control_text_ && desktop_ == other.desktop_ && gradient_active_caption_ == other.gradient_active_caption_ && gradient_inactive_caption_ == other.gradient_inactive_caption_ && gray_text_ == other.gray_text_ && highlight_ == other.highlight_ && highlight_text_ == other.highlight_text_ && hot_track_ == other.hot_track_ && inactive_border_ == other.inactive_border_ && inactive_caption_ == other.inactive_caption_ && inactive_caption_text_ == other.inactive_caption_text_ && info_ == other.info_ && info_text_ == other.info_text_ && link_text_ == other.link_text_&& menu_ == other.menu_ && menu_bar_ == other.menu_bar_ && menu_highlight_ == other.menu_highlight_ && menu_text_ == other.menu_text_ && scroll_bar_ == other.scroll_bar_ && text_box_ == other.text_box_ && text_box_text_ == other.text_box_text_ && visited_text_ == other.visited_text_ && window_ == other.window_ && window_frame_ == other.window_frame_ && window_text_ == other.window_text_;
 }

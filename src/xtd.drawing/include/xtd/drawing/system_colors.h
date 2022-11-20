@@ -43,6 +43,11 @@ namespace xtd {
       /// @return A xtd::drawing::color that is the color of the active window's title bar.
       static xtd::drawing::color active_caption();
       
+      /// @brief Gets a xtd::drawing::color structure that is the color of a active text.
+      /// @return A xtd::drawing::color that is the color of a active text.
+      /// @remark The active text color is the text color of an html link text when mouse down.
+      static xtd::drawing::color active_text();
+
       /// @brief Gets a xtd::drawing::color structure that is the color of the text in the active window's title bar.
       /// @return A xtd::drawing::color that is the color of the text in the active window's title bar.
       static xtd::drawing::color active_caption_text();
@@ -146,6 +151,11 @@ namespace xtd {
       /// @return A xtd::drawing::color that is the color of the text of a xtd::forms::tool_tip.
       static xtd::drawing::color info_text();
       
+      /// @brief Gets a xtd::drawing::color structure that is the color of a link text.
+      /// @return A xtd::drawing::color that is the color of a link text.
+      /// @remark The link text color is the text color of an html link text.
+      static xtd::drawing::color link_text();
+      
       /// @brief Gets a xtd::drawing::color structure that is the color of a menu's background.
       /// @return A xtd::drawing::color that is the color of a menu's background.
       static xtd::drawing::color menu();
@@ -174,6 +184,11 @@ namespace xtd {
       /// @return A xtd::drawing::color that is the color of the text of a text tbox.
       static xtd::drawing::color text_box_text();
       
+      /// @brief Gets a xtd::drawing::color structure that is the color of a visited text.
+      /// @return A xtd::drawing::color that is the color of a link text.
+      /// @remark The visited text color is the text color of an html visited link text.
+      static xtd::drawing::color visited_text();
+
       /// @brief Gets a xtd::drawing::color structure that is the color of the background in the client area of a window.
       /// @return A xtd::drawing::color that is the color of the background in the client area of a window.
       static xtd::drawing::color window();

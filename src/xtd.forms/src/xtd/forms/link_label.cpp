@@ -34,7 +34,7 @@ link_label::link_collection::reference link_label::link_collection::operator[](c
   return empty_;
 }
 
-link_label::link_label() : active_link_color_(application::dark_mode_enabled() ? color::from_argb(0xFFD03E3D) : xtd::drawing::color::red), disabled_link_color_(application::dark_mode_enabled() ? xtd::drawing::color::from_argb(0xFF858585) : xtd::drawing::color::from_argb(0xFF858585)), link_color_(application::dark_mode_enabled() ? xtd::drawing::color::dodger_blue : xtd::drawing::color::blue), override_cursor_(xtd::forms::cursors::hand()), visited_link_color_(application::dark_mode_enabled() ? xtd::drawing::color::light_sky_blue : xtd::drawing::color::purple) {
+link_label::link_label() {
   double_buffered(true);
   set_style(control_styles::all_painting_in_wm_paint | control_styles::optimized_double_buffer | control_styles::opaque | control_styles::user_paint | control_styles::standard_click | control_styles::resize_redraw, true);
   links_.item_added += [&] {
@@ -51,8 +51,8 @@ link_label::link_label() : active_link_color_(application::dark_mode_enabled() ?
   };
 }
 
-const xtd::drawing::color& link_label::active_link_color() const {
-  return active_link_color_;
+xtd::drawing::color link_label::active_link_color() const {
+  return active_link_color_.value_or(xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().active_text());
 }
 
 link_label& link_label::active_link_color(const xtd::drawing::color& color) {
@@ -63,8 +63,8 @@ link_label& link_label::active_link_color(const xtd::drawing::color& color) {
   return *this;
 }
 
-const xtd::drawing::color& link_label::disabled_link_color() const {
-  return disabled_link_color_;
+xtd::drawing::color link_label::disabled_link_color() const {
+  return disabled_link_color_.value_or(xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().gray_text());;
 }
 
 link_label& link_label::disabled_link_color(const xtd::drawing::color& color) {
@@ -75,8 +75,8 @@ link_label& link_label::disabled_link_color(const xtd::drawing::color& color) {
   return *this;
 }
 
-const xtd::drawing::color& link_label::link_color() const {
-  return link_color_;
+xtd::drawing::color link_label::link_color() const {
+  return link_color_.value_or(xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().link_text());;
 }
 
 link_label& link_label::link_color(const xtd::drawing::color& color) {
@@ -95,8 +95,17 @@ link_label::link_collection& link_label::links() {
   return links_;
 }
 
-const xtd::drawing::color& link_label::visited_link_color() const {
-  return link_color_;
+xtd::forms::cursor link_label::override_cursor() const {
+  return override_cursor_.value_or(xtd::forms::cursors::hand());
+}
+
+link_label& link_label::override_cursor(const xtd::forms::cursor& cursor) {
+  override_cursor_ = cursor;
+  return *this;
+}
+
+xtd::drawing::color link_label::visited_link_color() const {
+  return visited_link_color_.value_or(xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().visited_text());;
 }
 
 link_label& link_label::visited_link_color(const xtd::drawing::color& color) {
@@ -157,7 +166,7 @@ void link_label::on_mouse_move(const mouse_event_args& e) {
   if (!enabled()) return;
   mouse_hover_ = true;
   auto& link = point_in_link(e.location());
-  cursor(link != link_empty_ && link.enabled() ? override_cursor_ : original_cursor_);
+  cursor(link != link_empty_ && link.enabled() ? override_cursor() : original_cursor_);
   mouse_hover_ = false;
 }
 
@@ -175,10 +184,10 @@ void link_label::on_paint(paint_event_args& e) {
     drawing::size size_text;
     ustring text;
     for (auto link : links_) {
-      drawing::color color = link_color_;
-      if (!link.enabled()) color = disabled_link_color_;
-      else if (link.active_) color = active_link_color_;
-      else if (link.visited()) color = visited_link_color_;
+      drawing::color color = link_color();
+      if (!link.enabled()) color = disabled_link_color();
+      else if (link.active_) color = active_link_color();
+      else if (link.visited()) color = visited_link_color();
       
       if (index < link.start()) {
         text = line.substring(line_index, link.start() - line_index);

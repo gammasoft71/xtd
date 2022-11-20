@@ -418,6 +418,9 @@ color color::from_known_color(known_color color) {
     case known_color::accent_text: return drawing::color(color::from_handle(native::system_colors::accent_text()), color);
     case known_color::text_box: return drawing::color(color::from_handle(native::system_colors::text_box()), color);
     case known_color::text_box_text: return drawing::color(color::from_handle(native::system_colors::text_box_text()), color);
+    case known_color::active_text: return drawing::color(color::from_handle(native::system_colors::active_text()), color);
+    case known_color::link_text: return drawing::color(color::from_handle(native::system_colors::link_text()), color);
+    case known_color::visited_text: return drawing::color(color::from_handle(native::system_colors::visited_text()), color);
     default: throw xtd::argument_exception("know_color invalid"_t, current_stack_frame_);
   }
 }
