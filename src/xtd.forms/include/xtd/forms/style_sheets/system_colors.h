@@ -80,6 +80,13 @@ namespace xtd {
         /// @param value The active caption text system color.
         void active_caption_text(const xtd::drawing::color& value) noexcept;
         
+        /// @brief Gets the text color of an html link text when mouse down.
+        /// @return The text color of an html link text when mouse down.
+        const xtd::drawing::color& active_text() const noexcept;
+        /// @brief Sets the text color of an html link text when mouse down.
+        /// @param value The text color of an html link text when mouse down.
+        void active_text(const xtd::drawing::color& value) noexcept;
+        
         /// @brief Gets the app workspace system color;
         /// @return The app workspace system color.
         const xtd::drawing::color& app_workspace() const noexcept;
@@ -234,6 +241,13 @@ namespace xtd {
         /// @param value The info text system color.
         void info_text(const xtd::drawing::color& value) noexcept;
         
+        /// @brief Gets the text color of an html link text.
+        /// @return The text color of an html link text.
+        const xtd::drawing::color& link_text() const noexcept;
+        /// @brief Sets the text color of an html link text.
+        /// @param value The text color of an html link text.
+        void link_text(const xtd::drawing::color& value) noexcept;
+
         /// @brief Gets the menu system color;
         /// @return The menu system color.
         const xtd::drawing::color& menu() const noexcept;
@@ -283,6 +297,13 @@ namespace xtd {
         /// @param value The text box text system color.
         void text_box_text(const xtd::drawing::color& value) noexcept;
         
+        /// @brief Gets the text color of an html visited link text.
+        /// @return The text color of an html visited link text.
+        const xtd::drawing::color& visited_text() const noexcept;
+        /// @brief Sets the text color of an html visited link text.
+        /// @param value The text color of an html visited link text.
+        void visited_text(const xtd::drawing::color& value) noexcept;
+
         /// @brief Gets the window system color;
         /// @return The window system color.
         const xtd::drawing::color& window() const noexcept;
@@ -318,6 +339,7 @@ namespace xtd {
         xtd::drawing::color active_border_;
         xtd::drawing::color active_caption_;
         xtd::drawing::color active_caption_text_;
+        xtd::drawing::color active_text_;
         xtd::drawing::color app_workspace_;
         xtd::drawing::color button_face_;
         xtd::drawing::color button_highlight_;
@@ -340,6 +362,7 @@ namespace xtd {
         xtd::drawing::color inactive_caption_text_;
         xtd::drawing::color info_;
         xtd::drawing::color info_text_;
+        xtd::drawing::color link_text_;
         xtd::drawing::color menu_;
         xtd::drawing::color menu_bar_;
         xtd::drawing::color menu_highlight_;
@@ -347,6 +370,7 @@ namespace xtd {
         xtd::drawing::color scroll_bar_;
         xtd::drawing::color text_box_;
         xtd::drawing::color text_box_text_;
+        xtd::drawing::color visited_text_;
         xtd::drawing::color window_;
         xtd::drawing::color window_frame_;
         xtd::drawing::color window_text_;

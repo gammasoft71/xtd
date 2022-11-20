@@ -122,7 +122,7 @@ namespace xtd {
       /// @remarks An active link is a link that is in the process of being clicked. This is similar to the depressed state of a xtd::forms::button control. You can use this property to specify the color that the link is displayed in when the link is in the process of being clicked.
       /// @remarks There are a number of colors associated with a link. The xtd::forms::link_label::link_color specifies the color of all links displayed in the xtd::forms::link_label control. The xtd::forms::link_label::visited_link_color property enables you to specify the color of a link after it has been visited by the user. When a link is disabled, the xtd::forms::link_label::disabled_link_color is used to display the link in a disabled state.
       /// @note When setting this property, ensure that the color you are setting the property to does not conflict with the color of the control's background or the text does not display properly. For example, if the background color of the control is xtd::drawing::color::red and this property is set to xtd::drawing::color::red, the text is not shown properly when the link is in the process of being clicked.
-      const xtd::drawing::color& active_link_color() const;
+      xtd::drawing::color active_link_color() const;
       /// @brief Sets the color used to display an active link.
       /// @param color A xtd::drawing::color that represents the color to display an active link. The default color is specified by the system, typically this color is xtd::drawing::color::red in light mode and xtd::drawing::color::from_argb(0xFFD03E3D) in dark mode.
       /// @remarks An active link is a link that is in the process of being clicked. This is similar to the depressed state of a xtd::forms::button control. You can use this property to specify the color that the link is displayed in when the link is in the process of being clicked.
@@ -130,16 +130,19 @@ namespace xtd {
       /// @note When setting this property, ensure that the color you are setting the property to does not conflict with the color of the control's background or the text does not display properly. For example, if the background color of the control is xtd::drawing::color::red and this property is set to xtd::drawing::color::red, the text is not shown properly when the link is in the process of being clicked.
       link_label& active_link_color(const xtd::drawing::color& color);
       
-      const xtd::drawing::color& disabled_link_color() const;
+      xtd::drawing::color disabled_link_color() const;
       link_label& disabled_link_color(const xtd::drawing::color& color);
       
-      const xtd::drawing::color& link_color() const;
+      xtd::drawing::color link_color() const;
       link_label& link_color(const xtd::drawing::color& color);
       
       const link_collection& links() const;
       link_collection& links();
       
-      const xtd::drawing::color& visited_link_color() const;
+      xtd::forms::cursor override_cursor() const;
+      link_label& override_cursor(const xtd::forms::cursor& cursor);
+
+      xtd::drawing::color visited_link_color() const;
       link_label& visited_link_color(const xtd::drawing::color& color);
       /// @}
       
@@ -176,13 +179,13 @@ namespace xtd {
       std::vector<std::tuple<xtd::drawing::rectangle, bool>> generate_text_rects() const;
       xtd::drawing::font link_font() const;
       bool mouse_hover_ = false;
-      xtd::drawing::color active_link_color_;
-      xtd::drawing::color disabled_link_color_;
-      xtd::drawing::color link_color_;
+      std::optional<xtd::drawing::color> active_link_color_;
+      std::optional<xtd::drawing::color> disabled_link_color_;
+      std::optional<xtd::drawing::color> link_color_;
       link_collection links_;
       xtd::forms::cursor original_cursor_;
-      xtd::forms::cursor override_cursor_;
-      xtd::drawing::color visited_link_color_;
+      std::optional<xtd::forms::cursor> override_cursor_;
+      std::optional<xtd::drawing::color> visited_link_color_;
       inline static link link_empty_;
     };
   }

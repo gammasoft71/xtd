@@ -47,6 +47,7 @@ style_sheet::style_sheet(const xtd::ustring& css_text, bool init_system) {
     data_->system_colors.active_border(drawing::system_colors::active_border());
     data_->system_colors.active_caption(drawing::system_colors::active_caption());
     data_->system_colors.active_caption_text(drawing::system_colors::active_caption_text());
+    data_->system_colors.active_text(drawing::system_colors::active_text());
     data_->system_colors.app_workspace(drawing::system_colors::app_workspace());
     data_->system_colors.button_face(drawing::system_colors::button_face());
     data_->system_colors.button_highlight(drawing::system_colors::button_highlight());
@@ -69,6 +70,7 @@ style_sheet::style_sheet(const xtd::ustring& css_text, bool init_system) {
     data_->system_colors.inactive_caption_text(drawing::system_colors::inactive_caption_text());
     data_->system_colors.info(drawing::system_colors::info());
     data_->system_colors.info_text(drawing::system_colors::info_text());
+    data_->system_colors.link_text(drawing::system_colors::link_text());
     data_->system_colors.menu(drawing::system_colors::menu());
     data_->system_colors.menu_bar(drawing::system_colors::menu_bar());
     data_->system_colors.menu_highlight(drawing::system_colors::menu_highlight());
@@ -76,6 +78,7 @@ style_sheet::style_sheet(const xtd::ustring& css_text, bool init_system) {
     data_->system_colors.scroll_bar(drawing::system_colors::scroll_bar());
     data_->system_colors.text_box(drawing::system_colors::text_box());
     data_->system_colors.text_box_text(drawing::system_colors::text_box_text());
+    data_->system_colors.visited_text(drawing::system_colors::visited_text());
     data_->system_colors.window(drawing::system_colors::window());
     data_->system_colors.window_frame(drawing::system_colors::window_frame());
     data_->system_colors.window_text(drawing::system_colors::window_text());
@@ -978,6 +981,7 @@ void style_sheet::system_colors_reader(xtd::web::css::css_reader& reader) noexce
     if (property.first == "active-border") data_->system_colors.active_border(color_from_css(property.second.to_string(), drawing::system_colors::active_border()));
     if (property.first == "active-caption") data_->system_colors.active_caption(color_from_css(property.second.to_string(), drawing::system_colors::active_caption()));
     if (property.first == "active-caption-text") data_->system_colors.active_caption_text(color_from_css(property.second.to_string(), drawing::system_colors::active_caption_text()));
+    if (property.first == "active-text") data_->system_colors.active_text(color_from_css(property.second.to_string(), drawing::system_colors::active_text()));
     if (property.first == "app-workspace") data_->system_colors.app_workspace(color_from_css(property.second.to_string(), drawing::system_colors::app_workspace()));
     if (property.first == "button-face") data_->system_colors.button_face(color_from_css(property.second.to_string(), drawing::system_colors::button_face()));
     if (property.first == "button-highlight") data_->system_colors.button_highlight(color_from_css(property.second.to_string(), drawing::system_colors::button_highlight()));
@@ -1000,6 +1004,7 @@ void style_sheet::system_colors_reader(xtd::web::css::css_reader& reader) noexce
     if (property.first == "inactive-caption-text") data_->system_colors.inactive_caption_text(color_from_css(property.second.to_string(), drawing::system_colors::inactive_caption_text()));
     if (property.first == "info") data_->system_colors.info(color_from_css(property.second.to_string(), drawing::system_colors::info()));
     if (property.first == "info-text") data_->system_colors.info_text(color_from_css(property.second.to_string(), drawing::system_colors::info_text()));
+    if (property.first == "link-text") data_->system_colors.link_text(color_from_css(property.second.to_string(), drawing::system_colors::link_text()));
     if (property.first == "menu") data_->system_colors.menu(color_from_css(property.second.to_string(), drawing::system_colors::menu()));
     if (property.first == "menu-bar") data_->system_colors.menu_bar(color_from_css(property.second.to_string(), drawing::system_colors::menu_bar()));
     if (property.first == "menu-highlight") data_->system_colors.menu_highlight(color_from_css(property.second.to_string(), drawing::system_colors::menu_highlight()));
@@ -1007,6 +1012,7 @@ void style_sheet::system_colors_reader(xtd::web::css::css_reader& reader) noexce
     if (property.first == "scroll-bar") data_->system_colors.scroll_bar(color_from_css(property.second.to_string(), drawing::system_colors::scroll_bar()));
     if (property.first == "text-box") data_->system_colors.text_box(color_from_css(property.second.to_string(), drawing::system_colors::text_box()));
     if (property.first == "text-box-text") data_->system_colors.text_box_text(color_from_css(property.second.to_string(), drawing::system_colors::text_box_text()));
+    if (property.first == "visited-text") data_->system_colors.visited_text(color_from_css(property.second.to_string(), drawing::system_colors::visited_text()));
     if (property.first == "window") data_->system_colors.window(color_from_css(property.second.to_string(), drawing::system_colors::window()));
     if (property.first == "window-frame") data_->system_colors.window_frame(color_from_css(property.second.to_string(), drawing::system_colors::window_frame()));
     if (property.first == "window-text") data_->system_colors.window_text(color_from_css(property.second.to_string(), drawing::system_colors::window_text()));

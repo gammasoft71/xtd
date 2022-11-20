@@ -96,6 +96,12 @@ intptr_t system_colors::active_caption_text() {
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_CAPTIONTEXT));
 }
 
+intptr_t system_colors::active_text() {
+  toolkit::initialize(); // Must be first
+  if (wxSystemSettings::GetAppearance().IsDark() || is_windows_dark_mode()) return 0xFFD03E3D;
+  return 0xFFFF0000;
+}
+
 intptr_t system_colors::app_workspace() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF191919;
@@ -242,6 +248,12 @@ intptr_t system_colors::info_text() {
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INFOTEXT));
 }
 
+intptr_t system_colors::link_text() {
+  toolkit::initialize(); // Must be first
+  if (wxSystemSettings::GetAppearance().IsDark() || is_windows_dark_mode()) return 0xFF1E90FF;
+  return 0xFF0000FF;
+}
+
 intptr_t system_colors::menu() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF2B2B2B;
@@ -290,6 +302,12 @@ intptr_t system_colors::text_box_text() {
   if (is_windows_dark_mode()) return 0xFFFFFFFF;
   return window_text();
   #endif
+}
+
+intptr_t system_colors::visited_text() {
+  toolkit::initialize(); // Must be first
+  if (wxSystemSettings::GetAppearance().IsDark() || is_windows_dark_mode()) return 0xFF87CEEB;
+  return 0xFF800080;
 }
 
 intptr_t system_colors::window() {
