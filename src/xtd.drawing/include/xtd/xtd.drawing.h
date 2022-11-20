@@ -39,6 +39,7 @@
 #include "drawing/font_style.h"
 #include "drawing/graphics.h"
 #include "drawing/graphics_unit.h"
+#include "drawing/gray_and_black_colors.h"
 #include "drawing/green_colors.h"
 #include "drawing/icon.h"
 #include "drawing/image.h"

@@ -23,6 +23,7 @@ add_sources(
   include/xtd/drawing/font_style.h
   include/xtd/drawing/graphics.h
   include/xtd/drawing/graphics_unit.h
+  include/xtd/drawing/gray_and_black_colors.h
   include/xtd/drawing/green_colors.h
   include/xtd/drawing/icon.h
   include/xtd/drawing/image.h
@@ -103,6 +104,7 @@ add_sources(
   src/xtd/drawing/font.cpp
   src/xtd/drawing/font_family.cpp
   src/xtd/drawing/graphics.cpp
+  src/xtd/drawing/gray_and_black_colors.cpp
   src/xtd/drawing/green_colors.cpp
   src/xtd/drawing/icon.cpp
   src/xtd/drawing/image.cpp
