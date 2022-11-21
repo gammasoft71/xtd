@@ -6,6 +6,115 @@
 ///
 /// Shows xtd::drawing::color fields.
 ///
+/// @section BasicColors Basic colors
+///
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <th><b>Name</b></th>
+///     <th><b>Color field</b></th>
+///     <th><b>ARGB value (in hexa)</b></th>
+///     <th><b>Color</b></th>
+///   </tr>
+///   <tr>
+///     <td>whitee</td>
+///     <td>xtd::drawing::basci_colors::white</td>
+///     <td>0xFFFFFFFF</td>
+///     <td>@image html colors_white.png</td>
+///   </tr>
+///   <tr>
+///     <td>silvere</td>
+///     <td>xtd::drawing::basci_colors::silver</td>
+///     <td>0xFFC0C0C0</td>
+///     <td>@image html colors_silver.png</td>
+///   </tr>
+///   <tr>
+///     <td>graye</td>
+///     <td>xtd::drawing::basci_colors::gray</td>
+///     <td>0xFF808080</td>
+///     <td>@image html colors_gray.png</td>
+///   </tr>
+///   <tr>
+///     <td>blacke</td>
+///     <td>xtd::drawing::basci_colors::black</td>
+///     <td>0xFF000000</td>
+///     <td>@image html colors_black.png</td>
+///   </tr>
+///   <tr>
+///     <td>rede</td>
+///     <td>xtd::drawing::basci_colors::red</td>
+///     <td>0xFFFF0000</td>
+///     <td>@image html colors_red.png</td>
+///   </tr>
+///   <tr>
+///     <td>maroone</td>
+///     <td>xtd::drawing::basci_colors::maroon</td>
+///     <td>0xFF800000</td>
+///     <td>@image html colors_maroon.png</td>
+///   </tr>
+///   <tr>
+///     <td>yellowe</td>
+///     <td>xtd::drawing::basci_colors::yellow</td>
+///     <td>0xFFFFFF00</td>
+///     <td>@image html colors_yellow.png</td>
+///   </tr>
+///   <tr>
+///     <td>olivee</td>
+///     <td>xtd::drawing::basci_colors::olive</td>
+///     <td>0xFF808000</td>
+///     <td>@image html colors_olive.png</td>
+///   </tr>
+///   <tr>
+///     <td>limee</td>
+///     <td>xtd::drawing::basci_colors::lime</td>
+///     <td>0xFF00FF00</td>
+///     <td>@image html colors_lime.png</td>
+///   </tr>
+///   <tr>
+///     <td>greene</td>
+///     <td>xtd::drawing::basci_colors::green</td>
+///     <td>0xFF008000</td>
+///     <td>@image html colors_green.png</td>
+///   </tr>
+///   <tr>
+///     <td>aquae</td>
+///     <td>xtd::drawing::basci_colors::aqua</td>
+///     <td>0xFF00FFFF</td>
+///     <td>@image html colors_aqua.png</td>
+///   </tr>
+///   <tr>
+///     <td>teale</td>
+///     <td>xtd::drawing::basci_colors::teal</td>
+///     <td>0xFF008080</td>
+///     <td>@image html colors_teal.png</td>
+///   </tr>
+///   <tr>
+///     <td>bluee</td>
+///     <td>xtd::drawing::basci_colors::blue</td>
+///     <td>0xFF0000FF</td>
+///     <td>@image html colors_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>navye</td>
+///     <td>xtd::drawing::basci_colors::navy</td>
+///     <td>0xFF000080</td>
+///     <td>@image html colors_navy.png</td>
+///   </tr>
+///   <tr>
+///     <td>fuchsiae</td>
+///     <td>xtd::drawing::basci_colors::fuchsia</td>
+///     <td>0xFFFF00FF</td>
+///     <td>@image html colors_fuchsia.png</td>
+///   </tr>
+///   <tr>
+///     <td>purplee</td>
+///     <td>xtd::drawing::basci_colors::purple</td>
+///     <td>0xFF800080</td>
+///     <td>@image html colors_purple.png</td>
+///   </tr>
+/// </table>
+///
+/// @section ExtendedColors Extended colors
+///
 /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
 ///     <th><b>Name</b></th>
