@@ -605,7 +605,7 @@ namespace xtd {
       /// @}
     };
     
-    /// @brief extended_colors for all the standard colors.
+    /// @brief extended_colors for all the html extended colors.
     /// @par Namespace
     /// xtd::drawing
     /// @par Library
