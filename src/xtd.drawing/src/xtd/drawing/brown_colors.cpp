@@ -72,5 +72,5 @@ color brown_colors::wheat() {
 }
 
 vector<color> brown_colors::get_colors() {
-  return {brown_colors::maroon(), brown_colors::brown(), brown_colors::saddle_brown(), brown_colors::sienna(), brown_colors::chocolate(), brown_colors::dark_goldenrod(), brown_colors::rosy_brown(), brown_colors::goldenrod(), brown_colors::sandy_brown(), brown_colors::tan(), brown_colors::burly_wood(), brown_colors::wheat(), brown_colors::navajo_white(), brown_colors::bisque(), brown_colors::blanched_almond(), brown_colors::cornsilk()};
+  return {brown_colors::maroon(), brown_colors::brown(), brown_colors::saddle_brown(), brown_colors::sienna(), brown_colors::chocolate(), brown_colors::dark_goldenrod(), brown_colors::peru(), brown_colors::rosy_brown(), brown_colors::goldenrod(), brown_colors::sandy_brown(), brown_colors::tan(), brown_colors::burly_wood(), brown_colors::wheat(), brown_colors::navajo_white(), brown_colors::bisque(), brown_colors::blanched_almond(), brown_colors::cornsilk()};
 }
