@@ -28,6 +28,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::progress_bar_style> {
-  void operator()(xtd::enum_collection<xtd::forms::progress_bar_style>& values) {values = {{xtd::forms::progress_bar_style::blocks, "blocks"}, {xtd::forms::progress_bar_style::continuous, "continuous"}, {xtd::forms::progress_bar_style::marquee, "marquee"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::forms::progress_bar_style> {{xtd::forms::progress_bar_style::blocks, "blocks"}, {xtd::forms::progress_bar_style::continuous, "continuous"}, {xtd::forms::progress_bar_style::marquee, "marquee"}};}
 };
 /// @endcond

@@ -27,6 +27,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::tool_bar_appearance> {
-  void operator()(xtd::enum_collection<xtd::forms::tool_bar_appearance>& values) {values = {{xtd::forms::tool_bar_appearance::normal, "normal"}, {xtd::forms::tool_bar_appearance::flat, "flat"}, {xtd::forms::tool_bar_appearance::system, "system"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::forms::tool_bar_appearance> {{xtd::forms::tool_bar_appearance::normal, "normal"}, {xtd::forms::tool_bar_appearance::flat, "flat"}, {xtd::forms::tool_bar_appearance::system, "system"}};}
 };
 /// @endcond

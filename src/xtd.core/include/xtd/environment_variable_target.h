@@ -24,6 +24,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::environment_variable_target> {
-  void operator()(xtd::enum_collection<xtd::environment_variable_target>& values) {values = {{xtd::environment_variable_target::process, "process"}, {xtd::environment_variable_target::user, "user"}, {xtd::environment_variable_target::machine, "machine"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::environment_variable_target> {{xtd::environment_variable_target::process, "process"}, {xtd::environment_variable_target::user, "user"}, {xtd::environment_variable_target::machine, "machine"}};}
 };
 /// @endcond

@@ -33,6 +33,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::style_sheets::text_transformation> {
-  void operator()(xtd::enum_collection<xtd::forms::style_sheets::text_transformation>& values) {values = {{xtd::forms::style_sheets::text_transformation::none, "none"}, {xtd::forms::style_sheets::text_transformation::lowercase, "lowercase"}, {xtd::forms::style_sheets::text_transformation::uppercase, "uppercase"}, {xtd::forms::style_sheets::text_transformation::capitalize, "capitalize"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::forms::style_sheets::text_transformation> {{xtd::forms::style_sheets::text_transformation::none, "none"}, {xtd::forms::style_sheets::text_transformation::lowercase, "lowercase"}, {xtd::forms::style_sheets::text_transformation::uppercase, "uppercase"}, {xtd::forms::style_sheets::text_transformation::capitalize, "capitalize"}};}
 };
 /// @endcond

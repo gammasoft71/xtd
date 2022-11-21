@@ -48,6 +48,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::month_of_year> {
-  void operator()(xtd::enum_collection<xtd::month_of_year>& values) {values = {{xtd::month_of_year::january, "january"}, {xtd::month_of_year::february, "february"}, {xtd::month_of_year::march, "march"}, {xtd::month_of_year::april, "april"}, {xtd::month_of_year::may, "may"}, {xtd::month_of_year::june, "june"}, {xtd::month_of_year::july, "july"}, {xtd::month_of_year::august, "august"}, {xtd::month_of_year::september, "september"}, {xtd::month_of_year::october, "october"}, {xtd::month_of_year::november, "november"}, {xtd::month_of_year::december, "december"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::month_of_year> {{xtd::month_of_year::january, "january"}, {xtd::month_of_year::february, "february"}, {xtd::month_of_year::march, "march"}, {xtd::month_of_year::april, "april"}, {xtd::month_of_year::may, "may"}, {xtd::month_of_year::june, "june"}, {xtd::month_of_year::july, "july"}, {xtd::month_of_year::august, "august"}, {xtd::month_of_year::september, "september"}, {xtd::month_of_year::october, "october"}, {xtd::month_of_year::november, "november"}, {xtd::month_of_year::december, "december"}};}
 };
 /// @endcond

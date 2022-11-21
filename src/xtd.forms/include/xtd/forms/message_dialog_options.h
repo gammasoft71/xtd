@@ -34,6 +34,6 @@ namespace xtd {
 flags_attribute_(xtd::forms, message_dialog_options);
 
 template<> struct xtd::enum_register<xtd::forms::message_dialog_options> {
-  void operator()(xtd::enum_collection<xtd::forms::message_dialog_options>& values) {values = {{xtd::forms::message_dialog_options::default_desktop_only, "default_desktop_only"}, {xtd::forms::message_dialog_options::right_align, "right_align"}, {xtd::forms::message_dialog_options::rtl_reading, "rtl_reading"}, {xtd::forms::message_dialog_options::service_notification, "service_notification"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::forms::message_dialog_options> {{xtd::forms::message_dialog_options::default_desktop_only, "default_desktop_only"}, {xtd::forms::message_dialog_options::right_align, "right_align"}, {xtd::forms::message_dialog_options::rtl_reading, "rtl_reading"}, {xtd::forms::message_dialog_options::service_notification, "service_notification"}};}
 };
 /// @endcond

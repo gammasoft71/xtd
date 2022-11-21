@@ -26,6 +26,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::date_time_kind> {
-  void operator()(xtd::enum_collection<xtd::date_time_kind>& values) {values = {{xtd::date_time_kind::unspecified, "unspecified"}, {xtd::date_time_kind::utc, "utc"}, {xtd::date_time_kind::local, "local"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::date_time_kind> {{xtd::date_time_kind::unspecified, "unspecified"}, {xtd::date_time_kind::utc, "utc"}, {xtd::date_time_kind::local, "local"}};}
 };
 /// @endcond

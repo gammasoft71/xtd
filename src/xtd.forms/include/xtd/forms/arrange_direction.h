@@ -33,6 +33,6 @@ namespace xtd {
 flags_attribute_(xtd::forms, arrange_direction);
 
 template<> struct xtd::enum_register<xtd::forms::arrange_direction> {
-  void operator()(xtd::enum_collection<xtd::forms::arrange_direction>& values) {values = {{xtd::forms::arrange_direction::down, "down"}, {xtd::forms::arrange_direction::left, "left"}, {xtd::forms::arrange_direction::right, "right"}, {xtd::forms::arrange_direction::up, "up"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::forms::arrange_direction> {{xtd::forms::arrange_direction::down, "down"}, {xtd::forms::arrange_direction::left, "left"}, {xtd::forms::arrange_direction::right, "right"}, {xtd::forms::arrange_direction::up, "up"}};}
 };
 /// @endcond

@@ -26,6 +26,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::status_bar_panel_auto_size> {
-  void operator()(xtd::enum_collection<xtd::forms::status_bar_panel_auto_size>& values) {values = {{xtd::forms::status_bar_panel_auto_size::none, "none"}, {xtd::forms::status_bar_panel_auto_size::spring, "spring"}, {xtd::forms::status_bar_panel_auto_size::contents, "contents"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::forms::status_bar_panel_auto_size> {{xtd::forms::status_bar_panel_auto_size::none, "none"}, {xtd::forms::status_bar_panel_auto_size::spring, "spring"}, {xtd::forms::status_bar_panel_auto_size::contents, "contents"}};}
 };
 /// @endcond

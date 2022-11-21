@@ -39,6 +39,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::content_alignment> {
-  void operator()(xtd::enum_collection<xtd::forms::content_alignment>& values) {values = {{xtd::forms::content_alignment::top_left, "top_left"}, {xtd::forms::content_alignment::top_center, "top_center"}, {xtd::forms::content_alignment::top_right, "top_right"}, {xtd::forms::content_alignment::middle_left, "middle_left"}, {xtd::forms::content_alignment::middle_center, "middle_center"}, {xtd::forms::content_alignment::middle_right, "middle_right"}, {xtd::forms::content_alignment::bottom_left, "bottom_left"}, {xtd::forms::content_alignment::bottom_center, "bottom_center"}, {xtd::forms::content_alignment::bottom_right, "bottom_right"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::forms::content_alignment> {{xtd::forms::content_alignment::top_left, "top_left"}, {xtd::forms::content_alignment::top_center, "top_center"}, {xtd::forms::content_alignment::top_right, "top_right"}, {xtd::forms::content_alignment::middle_left, "middle_left"}, {xtd::forms::content_alignment::middle_center, "middle_center"}, {xtd::forms::content_alignment::middle_right, "middle_right"}, {xtd::forms::content_alignment::bottom_left, "bottom_left"}, {xtd::forms::content_alignment::bottom_center, "bottom_center"}, {xtd::forms::content_alignment::bottom_right, "bottom_right"}};}
 };
 /// @endcond

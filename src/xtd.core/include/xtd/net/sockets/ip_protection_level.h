@@ -41,6 +41,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::net::sockets::ip_protection_level> {
-  void operator()(xtd::enum_collection<xtd::net::sockets::ip_protection_level>& values) {values = {{xtd::net::sockets::ip_protection_level::unspecified, "unspecified"}, {xtd::net::sockets::ip_protection_level::unrestricted, "unrestricted"}, {xtd::net::sockets::ip_protection_level::edge_restricted, "edge_restricted"}, {xtd::net::sockets::ip_protection_level::restricted, "restricted"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::net::sockets::ip_protection_level> {{xtd::net::sockets::ip_protection_level::unspecified, "unspecified"}, {xtd::net::sockets::ip_protection_level::unrestricted, "unrestricted"}, {xtd::net::sockets::ip_protection_level::edge_restricted, "edge_restricted"}, {xtd::net::sockets::ip_protection_level::restricted, "restricted"}};}
 };
 /// @endcond

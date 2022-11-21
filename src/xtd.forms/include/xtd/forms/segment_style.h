@@ -33,6 +33,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::segment_style> {
-  void operator()(xtd::enum_collection<xtd::forms::segment_style>& values) {values = {{xtd::forms::segment_style::standard, "standard"}, {xtd::forms::segment_style::modern, "modern"}, {xtd::forms::segment_style::mixed, "mixed"}, {xtd::forms::segment_style::expanded, "expanded"}, {xtd::forms::segment_style::design, "design"}, {xtd::forms::segment_style::stick, "stick"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::forms::segment_style> {{xtd::forms::segment_style::standard, "standard"}, {xtd::forms::segment_style::modern, "modern"}, {xtd::forms::segment_style::mixed, "mixed"}, {xtd::forms::segment_style::expanded, "expanded"}, {xtd::forms::segment_style::design, "design"}, {xtd::forms::segment_style::stick, "stick"}};}
 };
 /// @endcond

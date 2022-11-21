@@ -27,7 +27,7 @@ namespace xtd {
 flags_attribute_(xtd, console_modifiers);
 
 template<> struct xtd::enum_register<xtd::console_modifiers> {
-  void operator()(xtd::enum_collection<xtd::console_modifiers>& values) {values = {{xtd::console_modifiers::alt, "alt"}, {xtd::console_modifiers::shift, "shift"}, {xtd::console_modifiers::control, "control"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::console_modifiers> {{xtd::console_modifiers::alt, "alt"}, {xtd::console_modifiers::shift, "shift"}, {xtd::console_modifiers::control, "control"}};}
 };
 /// @endcond
 

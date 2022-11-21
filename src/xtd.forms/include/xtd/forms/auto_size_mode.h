@@ -26,6 +26,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::auto_size_mode> {
-  void operator()(xtd::enum_collection<xtd::forms::auto_size_mode>& values) {values = {{xtd::forms::auto_size_mode::grow_and_shrink, "grow_and_shrink"}, {xtd::forms::auto_size_mode::grow_only, "grow_only"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::forms::auto_size_mode> {{xtd::forms::auto_size_mode::grow_and_shrink, "grow_and_shrink"}, {xtd::forms::auto_size_mode::grow_only, "grow_only"}};}
 };
 /// @endcond

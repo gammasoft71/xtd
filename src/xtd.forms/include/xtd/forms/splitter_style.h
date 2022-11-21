@@ -25,6 +25,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::splitter_style> {
-  void operator()(xtd::enum_collection<xtd::forms::splitter_style>& values) {values = {{xtd::forms::splitter_style::draw_line, "draw_line"}, {xtd::forms::splitter_style::update_children, "update_children"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::forms::splitter_style> {{xtd::forms::splitter_style::draw_line, "draw_line"}, {xtd::forms::splitter_style::update_children, "update_children"}};}
 };
 /// @endcond

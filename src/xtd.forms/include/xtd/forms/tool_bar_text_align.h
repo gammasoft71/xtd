@@ -25,6 +25,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::tool_bar_text_align> {
-  void operator()(xtd::enum_collection<xtd::forms::tool_bar_text_align>& values) {values = {{xtd::forms::tool_bar_text_align::underneath, "underneath"}, {xtd::forms::tool_bar_text_align::right, "right"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::forms::tool_bar_text_align> {{xtd::forms::tool_bar_text_align::underneath, "underneath"}, {xtd::forms::tool_bar_text_align::right, "right"}};}
 };
 /// @endcond

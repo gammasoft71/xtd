@@ -23,6 +23,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::build_type> {
-  void operator()(xtd::enum_collection<xtd::build_type>& values) {values = {{xtd::build_type::debug, "debug"}, {xtd::build_type::release, "release"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::build_type> {{xtd::build_type::debug, "debug"}, {xtd::build_type::release, "release"}};}
 };
 /// @endcond

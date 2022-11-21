@@ -39,6 +39,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::net::sockets::select_mode> {
-  void operator()(xtd::enum_collection<xtd::net::sockets::select_mode>& values) {values = {{xtd::net::sockets::select_mode::select_read, "select_read"}, {xtd::net::sockets::select_mode::select_write, "select_write"}, {xtd::net::sockets::select_mode::select_error, "select_error"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::net::sockets::select_mode> {{xtd::net::sockets::select_mode::select_read, "select_read"}, {xtd::net::sockets::select_mode::select_write, "select_write"}, {xtd::net::sockets::select_mode::select_error, "select_error"}};}
 };
 /// @endcond
