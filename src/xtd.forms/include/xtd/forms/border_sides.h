@@ -37,6 +37,6 @@ namespace xtd {
 flags_attribute_(xtd::forms, border_sides);
 
 template<> struct xtd::enum_register<xtd::forms::border_sides> {
-  void operator()(xtd::enum_collection<xtd::forms::border_sides>& values) {values = {{xtd::forms::border_sides::none, "none"}, {xtd::forms::border_sides::top, "top"}, {xtd::forms::border_sides::bottom, "bottom"}, {xtd::forms::border_sides::left, "left"}, {xtd::forms::border_sides::right, "right"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::forms::border_sides> {{xtd::forms::border_sides::none, "none"}, {xtd::forms::border_sides::top, "top"}, {xtd::forms::border_sides::bottom, "bottom"}, {xtd::forms::border_sides::left, "left"}, {xtd::forms::border_sides::right, "right"}};}
 };
 /// @endcond

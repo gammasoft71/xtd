@@ -27,6 +27,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::uri_format> {
-  void operator()(xtd::enum_collection<xtd::uri_format>& values) {values = {{xtd::uri_format::safe_unescaped, "safe_unescaped"}, {xtd::uri_format::unescaped, "unescaped"}, {xtd::uri_format::uri_escaped, "uri_escaped"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::uri_format> {{xtd::uri_format::safe_unescaped, "safe_unescaped"}, {xtd::uri_format::unescaped, "unescaped"}, {xtd::uri_format::uri_escaped, "uri_escaped"}};}
 };
 /// @endcond

@@ -29,6 +29,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::drawing2d::matrix_order> {
-  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::matrix_order>& values) {values = {{xtd::drawing::drawing2d::matrix_order::prepend, "prepend"}, {xtd::drawing::drawing2d::matrix_order::append, "append"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::drawing::drawing2d::matrix_order> {{xtd::drawing::drawing2d::matrix_order::prepend, "prepend"}, {xtd::drawing::drawing2d::matrix_order::append, "append"}};}
 };
 /// @endcond

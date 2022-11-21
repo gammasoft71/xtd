@@ -30,6 +30,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::selection_mode> {
-  void operator()(xtd::enum_collection<xtd::forms::selection_mode>& values) {values = {{xtd::forms::selection_mode::none, "none"}, {xtd::forms::selection_mode::one, "one"}, {xtd::forms::selection_mode::multi_simple, "multi_simple"}, {xtd::forms::selection_mode::multi_extended, "multi_extended"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::forms::selection_mode> {{xtd::forms::selection_mode::none, "none"}, {xtd::forms::selection_mode::one, "one"}, {xtd::forms::selection_mode::multi_simple, "multi_simple"}, {xtd::forms::selection_mode::multi_extended, "multi_extended"}};}
 };
 /// @endcond

@@ -28,6 +28,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::appearance> {
-  void operator()(xtd::enum_collection<xtd::forms::appearance>& values) {values = {{xtd::forms::appearance::normal, "normal"}, {xtd::forms::appearance::button, "button"}, {xtd::forms::appearance::switch_button, "switch_button"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::forms::appearance> {{xtd::forms::appearance::normal, "normal"}, {xtd::forms::appearance::button, "button"}, {xtd::forms::appearance::switch_button, "switch_button"}};}
 };
 /// @endcond

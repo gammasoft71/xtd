@@ -35,6 +35,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::graphics_unit> {
-  void operator()(xtd::enum_collection<xtd::drawing::graphics_unit>& values) {values = {{xtd::drawing::graphics_unit::world, "world"}, {xtd::drawing::graphics_unit::display, "display"}, {xtd::drawing::graphics_unit::pixel, "pixel"}, {xtd::drawing::graphics_unit::point, "point"}, {xtd::drawing::graphics_unit::inch, "inch"}, {xtd::drawing::graphics_unit::document, "document"}, {xtd::drawing::graphics_unit::millimeter, "millimeter"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::drawing::graphics_unit> {{xtd::drawing::graphics_unit::world, "world"}, {xtd::drawing::graphics_unit::display, "display"}, {xtd::drawing::graphics_unit::pixel, "pixel"}, {xtd::drawing::graphics_unit::point, "point"}, {xtd::drawing::graphics_unit::inch, "inch"}, {xtd::drawing::graphics_unit::document, "document"}, {xtd::drawing::graphics_unit::millimeter, "millimeter"}};}
 };
 /// @endcond

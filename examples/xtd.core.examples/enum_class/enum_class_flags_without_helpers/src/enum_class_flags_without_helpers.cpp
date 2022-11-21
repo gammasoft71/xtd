@@ -17,7 +17,7 @@ template<> struct xtd::enum_set_attribute<text_attribute> {
 };
 
 template<> struct xtd::enum_register<text_attribute> {
-  void operator()(xtd::enum_collection<text_attribute>& values) {values = {{text_attribute::normal, "normal"}, {text_attribute::bold, "bold"}, {text_attribute::italic, "italic"}, {text_attribute::underline, "underline"}, {text_attribute::strikeout, "strikeout"}};}
+  explicit operator auto() const {return xtd::enum_collection<text_attribute> {{text_attribute::normal, "normal"}, {text_attribute::bold, "bold"}, {text_attribute::italic, "italic"}, {text_attribute::underline, "underline"}, {text_attribute::strikeout, "strikeout"}};}
   };
 
 int main() {

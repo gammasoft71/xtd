@@ -34,6 +34,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::dash_style> {
-  void operator()(xtd::enum_collection<xtd::drawing::dash_style>& values) {values = {{xtd::drawing::dash_style::solid, "solid"}, {xtd::drawing::dash_style::dash, "dash"}, {xtd::drawing::dash_style::dot, "dot"}, {xtd::drawing::dash_style::dash_dot, "dash_dot"}, {xtd::drawing::dash_style::dash_dot_dot, "dash_dot_dot"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::drawing::dash_style> {{xtd::drawing::dash_style::solid, "solid"}, {xtd::drawing::dash_style::dash, "dash"}, {xtd::drawing::dash_style::dot, "dot"}, {xtd::drawing::dash_style::dash_dot, "dash_dot"}, {xtd::drawing::dash_style::dash_dot_dot, "dash_dot_dot"}};}
 };
 /// @endcond

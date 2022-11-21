@@ -33,6 +33,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::tool_bar_button_style> {
-  void operator()(xtd::enum_collection<xtd::forms::tool_bar_button_style>& values) {values = {{xtd::forms::tool_bar_button_style::push_button, "push_button"}, {xtd::forms::tool_bar_button_style::toggle_button, "toggle_button"}, {xtd::forms::tool_bar_button_style::separator, "separator"}, {xtd::forms::tool_bar_button_style::drop_down_button, "drop_down_button"}, {xtd::forms::tool_bar_button_style::stretchable_separator, "stretchable_separator"}, {xtd::forms::tool_bar_button_style::control, "control"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::forms::tool_bar_button_style> {{xtd::forms::tool_bar_button_style::push_button, "push_button"}, {xtd::forms::tool_bar_button_style::toggle_button, "toggle_button"}, {xtd::forms::tool_bar_button_style::separator, "separator"}, {xtd::forms::tool_bar_button_style::drop_down_button, "drop_down_button"}, {xtd::forms::tool_bar_button_style::stretchable_separator, "stretchable_separator"}, {xtd::forms::tool_bar_button_style::control, "control"}};}
 };
 /// @endcond

@@ -27,6 +27,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::dot_matrix_style> {
-  void operator()(xtd::enum_collection<xtd::forms::dot_matrix_style>& values) {values = {{xtd::forms::dot_matrix_style::standard, "standard"}, {xtd::forms::dot_matrix_style::square, "square"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::forms::dot_matrix_style> {{xtd::forms::dot_matrix_style::standard, "standard"}, {xtd::forms::dot_matrix_style::square, "square"}};}
 };
 /// @endcond

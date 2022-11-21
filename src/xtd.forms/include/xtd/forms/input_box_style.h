@@ -28,6 +28,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::input_box_style> {
-  void operator()(xtd::enum_collection<xtd::forms::input_box_style>& values) {values = {{xtd::forms::input_box_style::normal, "normal"}, {xtd::forms::input_box_style::multiline, "multiline"}, {xtd::forms::input_box_style::password, "password"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::forms::input_box_style> {{xtd::forms::input_box_style::normal, "normal"}, {xtd::forms::input_box_style::multiline, "multiline"}, {xtd::forms::input_box_style::password, "password"}};}
 };
 /// @endcond

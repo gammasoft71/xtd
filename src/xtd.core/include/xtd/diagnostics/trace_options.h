@@ -41,6 +41,6 @@ namespace xtd {
 flags_attribute_(xtd::diagnostics, trace_options);
 
 template<> struct xtd::enum_register<xtd::diagnostics::trace_options> {
-  void operator()(xtd::enum_collection<xtd::diagnostics::trace_options>& values) {values = {{xtd::diagnostics::trace_options::none, "none"}, {xtd::diagnostics::trace_options::logical_operation_stack, "logical_operation_stack"}, {xtd::diagnostics::trace_options::date_time, "date_time"}, {xtd::diagnostics::trace_options::timestamp, "timestamp"}, {xtd::diagnostics::trace_options::process_id, "process_id"}, {xtd::diagnostics::trace_options::thread_id, "thread_id"}, {xtd::diagnostics::trace_options::callstack, "callstack"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::diagnostics::trace_options> {{xtd::diagnostics::trace_options::none, "none"}, {xtd::diagnostics::trace_options::logical_operation_stack, "logical_operation_stack"}, {xtd::diagnostics::trace_options::date_time, "date_time"}, {xtd::diagnostics::trace_options::timestamp, "timestamp"}, {xtd::diagnostics::trace_options::process_id, "process_id"}, {xtd::diagnostics::trace_options::thread_id, "thread_id"}, {xtd::diagnostics::trace_options::callstack, "callstack"}};}
 };
 /// @endcond

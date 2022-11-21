@@ -27,6 +27,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::compiler_id> {
-  void operator()(xtd::enum_collection<xtd::compiler_id>& values) {values = {{xtd::compiler_id::unknown, "unknown"}, {xtd::compiler_id::microsoft_visual_studio, "microsoft_visual_studio"}, {xtd::compiler_id::clang, "clang"}, {xtd::compiler_id::gcc, "gcc"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::compiler_id> {{xtd::compiler_id::unknown, "unknown"}, {xtd::compiler_id::microsoft_visual_studio, "microsoft_visual_studio"}, {xtd::compiler_id::clang, "clang"}, {xtd::compiler_id::gcc, "gcc"}};}
 };
 /// @endcond

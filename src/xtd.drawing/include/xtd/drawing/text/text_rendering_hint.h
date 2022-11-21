@@ -37,6 +37,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::text::text_rendering_hint> {
-  void operator()(xtd::enum_collection<xtd::drawing::text::text_rendering_hint>& values) {values = {{xtd::drawing::text::text_rendering_hint::system_default, "system_default"}, {xtd::drawing::text::text_rendering_hint::single_bit_per_pixel_grid_fit, "single_bit_per_pixel_grid_fit"}, {xtd::drawing::text::text_rendering_hint::single_bit_per_pixel, "single_bit_per_pixel"}, {xtd::drawing::text::text_rendering_hint::anti_alias_grid_fit, "anti_alias_grid_fit"}, {xtd::drawing::text::text_rendering_hint::anti_alias, "anti_alias"}, {xtd::drawing::text::text_rendering_hint::clear_type_grid_fit, "clear_type_grid_fit"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::drawing::text::text_rendering_hint> {{xtd::drawing::text::text_rendering_hint::system_default, "system_default"}, {xtd::drawing::text::text_rendering_hint::single_bit_per_pixel_grid_fit, "single_bit_per_pixel_grid_fit"}, {xtd::drawing::text::text_rendering_hint::single_bit_per_pixel, "single_bit_per_pixel"}, {xtd::drawing::text::text_rendering_hint::anti_alias_grid_fit, "anti_alias_grid_fit"}, {xtd::drawing::text::text_rendering_hint::anti_alias, "anti_alias"}, {xtd::drawing::text::text_rendering_hint::clear_type_grid_fit, "clear_type_grid_fit"}};}
 };
 /// @endcond

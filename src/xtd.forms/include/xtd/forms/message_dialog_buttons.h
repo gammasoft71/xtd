@@ -34,6 +34,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::message_dialog_buttons> {
-  void operator()(xtd::enum_collection<xtd::forms::message_dialog_buttons>& values) {values = {{xtd::forms::message_dialog_buttons::ok, "ok"}, {xtd::forms::message_dialog_buttons::ok_cancel, "ok_cancel"}, {xtd::forms::message_dialog_buttons::abort_retry_ignore, "abort_retry_ignore"}, {xtd::forms::message_dialog_buttons::yes_no_cancel, "yes_no_cancel"}, {xtd::forms::message_dialog_buttons::yes_no, "yes_no"}, {xtd::forms::message_dialog_buttons::retry_cancel, "retry_cancel"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::forms::message_dialog_buttons> {{xtd::forms::message_dialog_buttons::ok, "ok"}, {xtd::forms::message_dialog_buttons::ok_cancel, "ok_cancel"}, {xtd::forms::message_dialog_buttons::abort_retry_ignore, "abort_retry_ignore"}, {xtd::forms::message_dialog_buttons::yes_no_cancel, "yes_no_cancel"}, {xtd::forms::message_dialog_buttons::yes_no, "yes_no"}, {xtd::forms::message_dialog_buttons::retry_cancel, "retry_cancel"}};}
 };
 /// @endcond

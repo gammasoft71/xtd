@@ -58,6 +58,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::rotate_flip_type> {
-  void operator()(xtd::enum_collection<xtd::drawing::rotate_flip_type>& values) {values = {{xtd::drawing::rotate_flip_type::rotate_none_flip_none, "rotate_none_flip_none"}, {xtd::drawing::rotate_flip_type::rotate_90_flip_none, "rotate_90_flip_none"}, {xtd::drawing::rotate_flip_type::rotate_180_flip_none, "rotate_180_flip_none"}, {xtd::drawing::rotate_flip_type::rotate_270_flip_none, "rotate_270_flip_none"}, {xtd::drawing::rotate_flip_type::rotate_none_flip_x, "rotate_none_flip_x"}, {xtd::drawing::rotate_flip_type::rotate_90_flip_x, "rotate_90_flip_x"}, {xtd::drawing::rotate_flip_type::rotate_180_flip_x, "rotate_180_flip_x"}, {xtd::drawing::rotate_flip_type::rotate_270_flip_x, "rotate_270_flip_x"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::drawing::rotate_flip_type> {{xtd::drawing::rotate_flip_type::rotate_none_flip_none, "rotate_none_flip_none"}, {xtd::drawing::rotate_flip_type::rotate_90_flip_none, "rotate_90_flip_none"}, {xtd::drawing::rotate_flip_type::rotate_180_flip_none, "rotate_180_flip_none"}, {xtd::drawing::rotate_flip_type::rotate_270_flip_none, "rotate_270_flip_none"}, {xtd::drawing::rotate_flip_type::rotate_none_flip_x, "rotate_none_flip_x"}, {xtd::drawing::rotate_flip_type::rotate_90_flip_x, "rotate_90_flip_x"}, {xtd::drawing::rotate_flip_type::rotate_180_flip_x, "rotate_180_flip_x"}, {xtd::drawing::rotate_flip_type::rotate_270_flip_x, "rotate_270_flip_x"}};}
 };
 /// @endcond

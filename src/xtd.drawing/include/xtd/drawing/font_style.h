@@ -33,6 +33,6 @@ namespace xtd {
 flags_attribute_(xtd::drawing, font_style);
 
 template<> struct xtd::enum_register<xtd::drawing::font_style> {
-  void operator()(xtd::enum_collection<xtd::drawing::font_style>& values) {values = {{xtd::drawing::font_style::regular, "regular"}, {xtd::drawing::font_style::bold, "bold"}, {xtd::drawing::font_style::italic, "italic"}, {xtd::drawing::font_style::underline, "underline"}, {xtd::drawing::font_style::strikeout, "strikeout"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::drawing::font_style> {{xtd::drawing::font_style::regular, "regular"}, {xtd::drawing::font_style::bold, "bold"}, {xtd::drawing::font_style::italic, "italic"}, {xtd::drawing::font_style::underline, "underline"}, {xtd::drawing::font_style::strikeout, "strikeout"}};}
 };
 /// @endcond

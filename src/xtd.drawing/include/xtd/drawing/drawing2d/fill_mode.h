@@ -32,6 +32,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::drawing2d::fill_mode> {
-  void operator()(xtd::enum_collection<xtd::drawing::drawing2d::fill_mode>& values) {values = {{xtd::drawing::drawing2d::fill_mode::alternate, "alternate"}, {xtd::drawing::drawing2d::fill_mode::winding, "winding"}};}
+  explicit operator auto() const {return xtd::enum_collection<xtd::drawing::drawing2d::fill_mode> {{xtd::drawing::drawing2d::fill_mode::alternate, "alternate"}, {xtd::drawing::drawing2d::fill_mode::winding, "winding"}};}
 };
 /// @endcond
