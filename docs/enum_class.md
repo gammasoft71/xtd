@@ -174,7 +174,7 @@ Write the following code to set the attribute of an enum class :
 enum clas enum_flags { /*...*/; }
 
 template<> struct xtd::enum_set_attribute<enum_flags> {
-  void operator()(xtd::enum_attribute& attribute) {attribute = xtd::enum_attribute::flags;}
+  explicit operator auto() const {return xtd::enum_attribute::flags;}
 };
 ```
 
@@ -210,7 +210,7 @@ enum class test_enum {
 test_enum operator|(test_enum lhs, test_enum rhs) {return static_cast<test_enum>(static_cast<std::underlying_type<test_enum>::type>(lhs) | static_cast<std::underlying_type<test_enum>::type>(rhs));}
 
 template<> struct xtd::enum_set_attribute<test_enum> {
-  void operator()(xtd::enum_attribute& attribute) {attribute = xtd::enum_attribute::flags;}
+  explicit operator auto() const {return xtd::enum_attribute::flags;}
 };
 
 template<> struct xtd::enum_register<test_enum> {

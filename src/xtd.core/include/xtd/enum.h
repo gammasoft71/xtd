@@ -112,7 +112,7 @@ namespace xtd {
   /// @include format_enum_class_flags_without_helper.cpp
   template<typename enum_t>
   struct enum_set_attribute {
-    void operator()(xtd::enum_attribute& attribute) {}
+    explicit operator auto() const {return xtd::enum_attribute::standard;}
   };
   
   /// @brief Provides the base class for enumerations.
@@ -358,12 +358,7 @@ namespace xtd {
     static enum_collection<enum_type>& entries() {
       std::mutex enum_mutex;
       std::lock_guard<std::mutex> lock(enum_mutex);
-      if (!attribute_.has_value()) {
-        xtd::enum_attribute attribute = xtd::enum_attribute::standard;
-        enum_set_attribute<enum_type>()(attribute);
-        attribute_ = attribute;
-      }
-      
+      if (!attribute_.has_value()) attribute_ = xtd::enum_attribute(enum_set_attribute<enum_type>());
       if (values_.size() == 0) values_ = __enum_register__::enum_entries<enum_type>();
       if (values_.size() == 0) enum_register<enum_type>()(values_);
 
@@ -554,7 +549,7 @@ namespace xtd {
     [[maybe_unused]] inline enum_type operator~(enum_type lhs) {return static_cast<enum_type>(~static_cast<std::underlying_type<enum_type>::type>(lhs));} \
   }\
   template<> struct xtd::enum_set_attribute<namespace_name::enum_type> { \
-    void operator()(xtd::enum_attribute& attribute) {attribute = xtd::enum_attribute::flags;} \
+    explicit operator auto() const {return xtd::enum_attribute::flags;} \
   }
 
 #define enum_(enum_type, ...) \
@@ -580,7 +575,7 @@ template<> struct xtd::enum_register<xtd::enum_attribute> {
 };
 
 template<> struct xtd::enum_set_attribute<xtd::number_styles> {
-  void operator()(xtd::enum_attribute& attribute) {attribute = xtd::enum_attribute::flags;}
+  explicit operator auto() const {return xtd::enum_attribute::flags;}
 };
 
 template<> struct xtd::enum_register<xtd::number_styles> {
