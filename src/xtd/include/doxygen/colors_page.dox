@@ -262,6 +262,12 @@
 ///     <td>@image html colors_dark_goldenrod.png</td>
 ///   </tr>
 ///   <tr>
+///     <td>peru</td>
+///     <td>xtd::drawing::brown_colors::peru</td>
+///     <td>0xFFCD853F</td>
+///     <td>@image html colors_peru.png</td>
+///   </tr>
+///   <tr>
 ///     <td>rosy brown</td>
 ///     <td>xtd::drawing::brown_colors::rosy_brown</td>
 ///     <td>0xFFBC8F8F</td>
