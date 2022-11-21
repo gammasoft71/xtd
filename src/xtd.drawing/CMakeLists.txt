@@ -28,12 +28,14 @@ add_sources(
   include/xtd/drawing/icon.h
   include/xtd/drawing/image.h
   include/xtd/drawing/known_color.h
+  include/xtd/drawing/magenta_colors.h
   include/xtd/drawing/orange_colors.h
   include/xtd/drawing/pen.h
   include/xtd/drawing/pens.h
   include/xtd/drawing/pink_colors.h
   include/xtd/drawing/point.h
   include/xtd/drawing/point_f.h
+  include/xtd/drawing/purple_colors.h
   include/xtd/drawing/rectangle.h
   include/xtd/drawing/rectangle_f.h
   include/xtd/drawing/red_colors.h
@@ -53,6 +55,7 @@ add_sources(
   include/xtd/drawing/system_images.h
   include/xtd/drawing/system_pens.h
   include/xtd/drawing/texture_brush.h
+  include/xtd/drawing/violet_colors.h
   include/xtd/drawing/white_colors.h
   include/xtd/drawing/yellow_colors.h
   include/xtd/drawing/drawing2d/conical_gradient_brush.h
@@ -114,6 +117,7 @@ add_sources(
   src/xtd/drawing/pink_colors.cpp
   src/xtd/drawing/point_f.cpp
   src/xtd/drawing/point.cpp
+  src/xtd/drawing/purple_colors.cpp
   src/xtd/drawing/rectangle_f.cpp
   src/xtd/drawing/rectangle.cpp
   src/xtd/drawing/red_colors.cpp
