@@ -22,20 +22,19 @@ namespace xtd {
 
 /// @cond
 struct __enum_class__;
+template<typename enum_t = std::nullptr_t>
 class __enum_register__ {
 public:
-  template<typename enum_t>
-  static xtd::ustring get_enum_definition() {
+  xtd::ustring get_enum_definition() {
     auto iterator = registered_enum_class_.find(xtd::ustring::full_class_name<enum_t>());
     if (iterator == registered_enum_class_.end()) return "";
     return iterator->second;
   }
   
-  template<typename enum_t>
-  static xtd::enum_collection<enum_t> enum_entries() {
-    auto iterator = registered_enum_class_.find(xtd::ustring::full_class_name<enum_t>());
-    if (iterator == registered_enum_class_.end()) return {};
+  explicit operator auto() const {
     xtd::enum_collection<enum_t> entries;
+    auto iterator = registered_enum_class_.find(xtd::ustring::full_class_name<enum_t>());
+    if (iterator == registered_enum_class_.end()) return entries;
     int64_t current_value = 0;
     for (auto entry : iterator->second.substring(iterator->second.index_of('{')).replace('{', ' ').replace('}', ' ').trim().split({','})) {
       auto key_value = entry.trim().split({'='});
@@ -75,7 +74,7 @@ private:
 struct __enum_class__ {
   __enum_class__(const xtd::ustring& enum_definition) {
     try {
-      __enum_register__::add_enum_definition(enum_definition);
+      __enum_register__<>::add_enum_definition(enum_definition);
     } catch (...) {
       throw xtd::format_exception(csf_);
     }
@@ -359,7 +358,7 @@ namespace xtd {
       std::mutex enum_mutex;
       std::lock_guard<std::mutex> lock(enum_mutex);
       if (!attribute_.has_value()) attribute_ = xtd::enum_attribute(enum_set_attribute<enum_type>());
-      if (values_.size() == 0) values_ = __enum_register__::enum_entries<enum_type>();
+      if (values_.size() == 0) values_ = enum_collection<enum_type>(__enum_register__<enum_type>());
       if (values_.size() == 0) values_ = enum_collection<enum_type>(enum_register<enum_type>());
 
       return values_;
