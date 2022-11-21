@@ -35,6 +35,7 @@
 #include "drawing/color.h"
 #include "drawing/colors.h"
 #include "drawing/dash_style.h"
+#include "drawing/extended_colors.h"
 #include "drawing/font_family.h"
 #include "drawing/font_style.h"
 #include "drawing/graphics.h"

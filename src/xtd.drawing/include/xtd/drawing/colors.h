@@ -604,13 +604,5 @@ namespace xtd {
       static std::vector<xtd::drawing::color> get_colors();
       /// @}
     };
-    
-    /// @brief extended_colors for all the html extended colors.
-    /// @par Namespace
-    /// xtd::drawing
-    /// @par Library
-    /// xtd.drawing
-    /// @ingroup xtd_drawing drawing
-    using extended_colors = xtd::drawing::colors;
   }
 }
