@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::gray_and_black_colors factory.
+/// @brief Contains xtd::drawing::gray_colors factory.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <vector>
@@ -13,16 +13,16 @@ namespace xtd {
   namespace drawing {
     /// @brief Gray and black colors for all the hmtl gray and black colors. This class cannot be inherited.
     /// @code
-    /// class drawing_export_ gray_and_black_colors final static_
+    /// class drawing_export_ gray_colors final static_
     /// @endcode
     /// @par Inheritance
-    /// xtd::static_object → xtd::drawing::gray_and_black_colors
+    /// xtd::static_object → xtd::drawing::gray_colors
     /// @par Namespace
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    class drawing_export_ gray_and_black_colors final static_ {
+    class drawing_export_ gray_colors final static_ {
     public:
       /// @name Public properties
       
