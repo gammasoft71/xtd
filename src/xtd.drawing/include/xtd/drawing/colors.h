@@ -611,6 +611,6 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    using extended_colors = xtd::drawing::colors
+    using extended_colors = xtd::drawing::colors;
   }
 }
