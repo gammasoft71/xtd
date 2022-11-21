@@ -216,6 +216,113 @@
 ///   </tr>
 /// </table>
 ///
+/// @subsection BrownColors Brown colors
+///
+/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
+///   <tr>
+///     <th><b>Name</b></th>
+///     <th><b>Color field</b></th>
+///     <th><b>ARGB value (in hexa)</b></th>
+///     <th><b>Color</b></th>
+///   </tr>
+///   <tr>
+///     <td>maroon</td>
+///     <td>xtd::drawing::brown_colors::maroon</td>
+///     <td>0xFF800000</td>
+///     <td>@image html colors_maroon.png</td>
+///   </tr>
+///   <tr>
+///     <td>brown</td>
+///     <td>xtd::drawing::brown_colors::brown</td>
+///     <td>0xFFA52A2A</td>
+///     <td>@image html colors_brown.png</td>
+///   </tr>
+///   <tr>
+///     <td>saddle brown</td>
+///     <td>xtd::drawing::brown_colors::saddle_brown</td>
+///     <td>0xFF8B4513</td>
+///     <td>@image html colors_saddle_brown.png</td>
+///   </tr>
+///   <tr>
+///     <td>sienna</td>
+///     <td>xtd::drawing::brown_colors::sienna</td>
+///     <td>0xFFA0522D</td>
+///     <td>@image html colors_sienna.png</td>
+///   </tr>
+///   <tr>
+///     <td>chocolate</td>
+///     <td>xtd::drawing::brown_colors::chocolate</td>
+///     <td>0xFFD2691E</td>
+///     <td>@image html colors_chocolate.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark goldenrod</td>
+///     <td>xtd::drawing::brown_colors::dark_goldenrod</td>
+///     <td>0xFFB8860B</td>
+///     <td>@image html colors_dark_goldenrod.png</td>
+///   </tr>
+///   <tr>
+///     <td>rosy brown</td>
+///     <td>xtd::drawing::brown_colors::rosy_brown</td>
+///     <td>0xFFBC8F8F</td>
+///     <td>@image html colors_rosy_brown.png</td>
+///   </tr>
+///   <tr>
+///     <td>goldenrod</td>
+///     <td>xtd::drawing::brown_colors::goldenrod</td>
+///     <td>0xFFDAA520</td>
+///     <td>@image html colors_goldenrod.png</td>
+///   </tr>
+///   <tr>
+///     <td>sandy brown</td>
+///     <td>xtd::drawing::brown_colors::sandy_brown</td>
+///     <td>0xFFF4A460</td>
+///     <td>@image html colors_sandy_brown.png</td>
+///   </tr>
+///   <tr>
+///     <td>tan</td>
+///     <td>xtd::drawing::brown_colors::tan</td>
+///     <td>0xFFD2B48C</td>
+///     <td>@image html colors_tan.png</td>
+///   </tr>
+///   <tr>
+///     <td>burly wood</td>
+///     <td>xtd::drawing::brown_colors::burly_wood</td>
+///     <td>0xFFDEB887</td>
+///     <td>@image html colors_burly_wood.png</td>
+///   </tr>
+///   <tr>
+///     <td>wheat</td>
+///     <td>xtd::drawing::brown_colors::wheat</td>
+///     <td>0xFFF5DEB3</td>
+///     <td>@image html colors_wheat.png</td>
+///   </tr>
+///   <tr>
+///     <td>navajo white</td>
+///     <td>xtd::drawing::brown_colors::navajo_white</td>
+///     <td>0xFFFFDEAD</td>
+///     <td>@image html colors_navajo_white.png</td>
+///   </tr>
+///   <tr>
+///     <td>bisque</td>
+///     <td>xtd::drawing::brown_colors::bisque</td>
+///     <td>0xFFFFE4C4</td>
+///     <td>@image html colors_bisque.png</td>
+///   </tr>
+///   <tr>
+///     <td>blanched almond</td>
+///     <td>xtd::drawing::brown_colors::blanched_almond</td>
+///     <td>0xFFFFEBCD</td>
+///     <td>@image html colors_blanched_almond.png</td>
+///   </tr>
+///   <tr>
+///     <td>cornsilk</td>
+///     <td>xtd::drawing::brown_colors::cornsilk</td>
+///     <td>0xFFFFF8DC</td>
+///     <td>@image html colors_cornsilk.png</td>
+///   </tr>
+/// </table>
+///
 /// @subsection CyanColors Cyan colors
 ///
 /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
@@ -501,17 +608,6 @@
 ///   </tr>
 /// </table>
 ///
-/// @subsection MaroonColors Maroon colors
-///
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <th><b>Name</b></th>
-///     <th><b>Color field</b></th>
-///     <th><b>ARGB value (in hexa)</b></th>
-///     <th><b>Color</b></th>
-///   </tr>
-/// </table>
-///
 /// @subsection OrangeColors Orange colors
 ///
 /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
@@ -520,6 +616,36 @@
 ///     <th><b>Color field</b></th>
 ///     <th><b>ARGB value (in hexa)</b></th>
 ///     <th><b>Color</b></th>
+///   </tr>
+///   <tr>
+///     <td>orange red</td>
+///     <td>xtd::drawing::orange_colors::orange_red</td>
+///     <td>0xFFFF4500</td>
+///     <td>@image html colors_orange_red.png</td>
+///   </tr>
+///   <tr>
+///     <td>tomato</td>
+///     <td>xtd::drawing::orange_colors::tomato</td>
+///     <td>0xFFFF6347</td>
+///     <td>@image html colors_tomato.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark orange</td>
+///     <td>xtd::drawing::orange_colors::dark_orange</td>
+///     <td>0xFFFF8C00</td>
+///     <td>@image html colors_dark_orange.png</td>
+///   </tr>
+///   <tr>
+///     <td>coral</td>
+///     <td>xtd::drawing::orange_colors::coral</td>
+///     <td>0xFFFF7F50</td>
+///     <td>@image html colors_coral.png</td>
+///   </tr>
+///   <tr>
+///     <td>orange</td>
+///     <td>xtd::drawing::orange_colors::orange</td>
+///     <td>0xFFFFA500</td>
+///     <td>@image html colors_orange.png</td>
 ///   </tr>
 /// </table>
 ///
@@ -532,6 +658,42 @@
 ///     <th><b>ARGB value (in hexa)</b></th>
 ///     <th><b>Color</b></th>
 ///   </tr>
+///   <tr>
+///     <td>medium violet red</td>
+///     <td>xtd::drawing::pink_colors::medium_violet_red</td>
+///     <td>0xFFC71585</td>
+///     <td>@image html colors_medium_violet_red.png</td>
+///   </tr>
+///   <tr>
+///     <td>deep pink</td>
+///     <td>xtd::drawing::pink_colors::deep_pink</td>
+///     <td>0xFFFF1493</td>
+///     <td>@image html colors_deep_pink.png</td>
+///   </tr>
+///   <tr>
+///     <td>pale violet red</td>
+///     <td>xtd::drawing::pink_colors::pale_violet_red</td>
+///     <td>0xFFDB7093</td>
+///     <td>@image html colors_pale_violet_red.png</td>
+///   </tr>
+///   <tr>
+///     <td>hot pink</td>
+///     <td>xtd::drawing::pink_colors::hot_pink</td>
+///     <td>0xFFFF69B4</td>
+///     <td>@image html colors_hot_pink.png</td>
+///   </tr>
+///   <tr>
+///     <td>light pink</td>
+///     <td>xtd::drawing::pink_colors::light_pink</td>
+///     <td>0xFFFFB6C1</td>
+///     <td>@image html colors_light_pink.png</td>
+///   </tr>
+///   <tr>
+///     <td>pink</td>
+///     <td>xtd::drawing::pink_colors::pink</td>
+///     <td>0xFFFFC0CB</td>
+///     <td>@image html colors_pink.png</td>
+///   </tr>
 /// </table>
 ///
 /// @subsection PurpleColors Purple colors
@@ -542,6 +704,120 @@
 ///     <th><b>Color field</b></th>
 ///     <th><b>ARGB value (in hexa)</b></th>
 ///     <th><b>Color</b></th>
+///   </tr>
+///   <tr>
+///     <td>indigo</td>
+///     <td>xtd::drawing::purple_colors::indigo</td>
+///     <td>0xFF4B0082</td>
+///     <td>@image html colors_indigo.png</td>
+///   </tr>
+///   <tr>
+///     <td>rebecca purple</td>
+///     <td>xtd::drawing::purple_colors::rebecca_purple</td>
+///     <td>0xFF663399</td>
+///     <td>@image html colors_rebecca_purple.png</td>
+///   </tr>
+///   <tr>
+///     <td>purple</td>
+///     <td>xtd::drawing::purple_colors::purple</td>
+///     <td>0xFF800080</td>
+///     <td>@image html colors_purple.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark magenta</td>
+///     <td>xtd::drawing::purple_colors::dark_magenta</td>
+///     <td>0xFF8B008B</td>
+///     <td>@image html colors_dark_magenta.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark violet</td>
+///     <td>xtd::drawing::purple_colors::dark_violet</td>
+///     <td>0xFF9400D3</td>
+///     <td>@image html colors_dark_violet.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark slate blue</td>
+///     <td>xtd::drawing::purple_colors::dark_slate_blue</td>
+///     <td>0xFF483D8B</td>
+///     <td>@image html colors_dark_slate_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>blue violet</td>
+///     <td>xtd::drawing::purple_colors::blue_violet</td>
+///     <td>0xFF8A2BE2</td>
+///     <td>@image html colors_blue_violet.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark orchid</td>
+///     <td>xtd::drawing::purple_colors::dark_orchid</td>
+///     <td>0xFF9932CC</td>
+///     <td>@image html colors_dark_orchid.png</td>
+///   </tr>
+///   <tr>
+///     <td>fuchsia</td>
+///     <td>xtd::drawing::purple_colors::fuchsia</td>
+///     <td>0xFFFF00FF</td>
+///     <td>@image html colors_fuchsia.png</td>
+///   </tr>
+///   <tr>
+///     <td>magenta</td>
+///     <td>xtd::drawing::purple_colors::magenta</td>
+///     <td>0xFFFF00FF</td>
+///     <td>@image html colors_magenta.png</td>
+///   </tr>
+///   <tr>
+///     <td>slate blue</td>
+///     <td>xtd::drawing::purple_colors::slate_blue</td>
+///     <td>0xFF6A5ACD</td>
+///     <td>@image html colors_slate_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>medium slate blue</td>
+///     <td>xtd::drawing::purple_colors::medium_slate_blue</td>
+///     <td>0xFF7B68EE</td>
+///     <td>@image html colors_medium_slate_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>medium orchid</td>
+///     <td>xtd::drawing::purple_colors::medium_orchid</td>
+///     <td>0xFFBA55D3</td>
+///     <td>@image html colors_medium_orchid.png</td>
+///   </tr>
+///   <tr>
+///     <td>medium purple</td>
+///     <td>xtd::drawing::purple_colors::medium_purple</td>
+///     <td>0xFF9370DB</td>
+///     <td>@image html colors_medium_purple.png</td>
+///   </tr>
+///   <tr>
+///     <td>orchid</td>
+///     <td>xtd::drawing::purple_colors::orchid</td>
+///     <td>0xFFDA70D6</td>
+///     <td>@image html colors_orchid.png</td>
+///   </tr>
+///   <tr>
+///     <td>violet</td>
+///     <td>xtd::drawing::purple_colors::violet</td>
+///     <td>0xFFEE82EE</td>
+///     <td>@image html colors_violet.png</td>
+///   </tr>
+///   <tr>
+///     <td>plum</td>
+///     <td>xtd::drawing::purple_colors::plum</td>
+///     <td>0xFFDDA0DD</td>
+///     <td>@image html colors_plum.png</td>
+///   </tr>
+///   <tr>
+///     <td>thistle</td>
+///     <td>xtd::drawing::purple_colors::thistle</td>
+///     <td>0xFFD8BFD8</td>
+///     <td>@image html colors_thistle.png</td>
+///   </tr>
+///   <tr>
+///     <td>lavender</td>
+///     <td>xtd::drawing::purple_colors::lavender</td>
+///     <td>0xFFE6E6FA</td>
+///     <td>@image html colors_lavender.png</td>
 ///   </tr>
 /// </table>
 ///
@@ -554,6 +830,60 @@
 ///     <th><b>ARGB value (in hexa)</b></th>
 ///     <th><b>Color</b></th>
 ///   </tr>
+///   <tr>
+///     <td>dark red</td>
+///     <td>xtd::drawing::red_colors::dark_red</td>
+///     <td>0xFF8B0000</td>
+///     <td>@image html colors_dark_red.png</td>
+///   </tr>
+///   <tr>
+///     <td>red</td>
+///     <td>xtd::drawing::red_colors::red</td>
+///     <td>0xFFFF0000</td>
+///     <td>@image html colors_red.png</td>
+///   </tr>
+///   <tr>
+///     <td>firebrick</td>
+///     <td>xtd::drawing::red_colors::firebrick</td>
+///     <td>0xFFB22222</td>
+///     <td>@image html colors_firebrick.png</td>
+///   </tr>
+///   <tr>
+///     <td>crimson</td>
+///     <td>xtd::drawing::red_colors::crimson</td>
+///     <td>0xFFDC143C</td>
+///     <td>@image html colors_crimson.png</td>
+///   </tr>
+///   <tr>
+///     <td>indian red</td>
+///     <td>xtd::drawing::red_colors::indian_red</td>
+///     <td>0xFFCD5C5C</td>
+///     <td>@image html colors_indian_red.png</td>
+///   </tr>
+///   <tr>
+///     <td>light coral</td>
+///     <td>xtd::drawing::red_colors::light_coral</td>
+///     <td>0xFFF08080</td>
+///     <td>@image html colors_light_coral.png</td>
+///   </tr>
+///   <tr>
+///     <td>salmon</td>
+///     <td>xtd::drawing::red_colors::salmon</td>
+///     <td>0xFFFA8072</td>
+///     <td>@image html colors_salmon.png</td>
+///   </tr>
+///   <tr>
+///     <td>dark salmon</td>
+///     <td>xtd::drawing::red_colors::dark_salmon</td>
+///     <td>0xFFE9967A</td>
+///     <td>@image html colors_dark_salmon.png</td>
+///   </tr>
+///   <tr>
+///     <td>light salmon</td>
+///     <td>xtd::drawing::red_colors::light_salmon</td>
+///     <td>0xFFFFA07A</td>
+///     <td>@image html colors_light_salmon.png</td>
+///   </tr>
 /// </table>
 ///
 /// @subsection whiteColors White colors
@@ -565,6 +895,108 @@
 ///     <th><b>ARGB value (in hexa)</b></th>
 ///     <th><b>Color</b></th>
 ///   </tr>
+///   <tr>
+///     <td>misty rose</td>
+///     <td>xtd::drawing::white_colors::misty_rose</td>
+///     <td>0xFFFFE4E1</td>
+///     <td>@image html colors_misty_rose.png</td>
+///   </tr>
+///   <tr>
+///     <td>antique white</td>
+///     <td>xtd::drawing::white_colors::antique_white</td>
+///     <td>0xFFFAEBD7</td>
+///     <td>@image html colors_antique_white.png</td>
+///   </tr>
+///   <tr>
+///     <td>linen</td>
+///     <td>xtd::drawing::white_colors::linen</td>
+///     <td>0xFFFAF0E6</td>
+///     <td>@image html colors_linen.png</td>
+///   </tr>
+///   <tr>
+///     <td>beige</td>
+///     <td>xtd::drawing::white_colors::beige</td>
+///     <td>0xFFF5F5DC</td>
+///     <td>@image html colors_beige.png</td>
+///   </tr>
+///   <tr>
+///     <td>white smoke</td>
+///     <td>xtd::drawing::white_colors::white_smoke</td>
+///     <td>0xFFF5F5F5</td>
+///     <td>@image html colors_white_smoke.png</td>
+///   </tr>
+///   <tr>
+///     <td>lavender blush</td>
+///     <td>xtd::drawing::white_colors::lavender_blush</td>
+///     <td>0xFFFFF0F5</td>
+///     <td>@image html colors_lavender_blush.png</td>
+///   </tr>
+///   <tr>
+///     <td>old lace</td>
+///     <td>xtd::drawing::white_colors::old_lace</td>
+///     <td>0xFFFDF5E6</td>
+///     <td>@image html colors_old_lace.png</td>
+///   </tr>
+///   <tr>
+///     <td>alice blue</td>
+///     <td>xtd::drawing::white_colors::alice_blue</td>
+///     <td>0xFFF0F8FF</td>
+///     <td>@image html colors_alice_blue.png</td>
+///   </tr>
+///   <tr>
+///     <td>sea shell</td>
+///     <td>xtd::drawing::white_colors::sea_shell</td>
+///     <td>0xFFFFF5EE</td>
+///     <td>@image html colors_sea_shell.png</td>
+///   </tr>
+///   <tr>
+///     <td>ghost white</td>
+///     <td>xtd::drawing::white_colors::ghost_white</td>
+///     <td>0xFFF8F8FF</td>
+///     <td>@image html colors_ghost_white.png</td>
+///   </tr>
+///   <tr>
+///     <td>honeydew</td>
+///     <td>xtd::drawing::white_colors::honeydew</td>
+///     <td>0xFFF0FFF0</td>
+///     <td>@image html colors_honeydew.png</td>
+///   </tr>
+///   <tr>
+///     <td>floral white</td>
+///     <td>xtd::drawing::white_colors::floral_white</td>
+///     <td>0xFFFFFAF0</td>
+///     <td>@image html colors_floral_white.png</td>
+///   </tr>
+///   <tr>
+///     <td>azure</td>
+///     <td>xtd::drawing::white_colors::azure</td>
+///     <td>0xFFF0FFFF</td>
+///     <td>@image html colors_azure.png</td>
+///   </tr>
+///   <tr>
+///     <td>mint cream</td>
+///     <td>xtd::drawing::white_colors::mint_cream</td>
+///     <td>0xFFF5FFFA</td>
+///     <td>@image html colors_mint_cream.png</td>
+///   </tr>
+///   <tr>
+///     <td>snow</td>
+///     <td>xtd::drawing::white_colors::snow</td>
+///     <td>0xFFFFFAFA</td>
+///     <td>@image html colors_snow.png</td>
+///   </tr>
+///   <tr>
+///     <td>ivory</td>
+///     <td>xtd::drawing::white_colors::ivory</td>
+///     <td>0xFFFFFFF0</td>
+///     <td>@image html colors_ivory.png</td>
+///   </tr>
+///   <tr>
+///     <td>white</td>
+///     <td>xtd::drawing::white_colors::white</td>
+///     <td>0xFFFFFFFF</td>
+///     <td>@image html colors_white.png</td>
+///   </tr>
 /// </table>
 ///
 /// @subsection YellowColors Yellow colors
@@ -575,6 +1007,72 @@
 ///     <th><b>Color field</b></th>
 ///     <th><b>ARGB value (in hexa)</b></th>
 ///     <th><b>Color</b></th>
+///   </tr>
+///   <tr>
+///     <td>dark khaki</td>
+///     <td>xtd::drawing::yellow_colors::dark_khaki</td>
+///     <td>0xFFBDB76B</td>
+///     <td>@image html colors_dark_khaki.png</td>
+///   </tr>
+///   <tr>
+///     <td>gold</td>
+///     <td>xtd::drawing::yellow_colors::gold</td>
+///     <td>0xFFFFD700</td>
+///     <td>@image html colors_gold.png</td>
+///   </tr>
+///   <tr>
+///     <td>khaki</td>
+///     <td>xtd::drawing::yellow_colors::khaki</td>
+///     <td>0xFFF0E68C</td>
+///     <td>@image html colors_khaki.png</td>
+///   </tr>
+///   <tr>
+///     <td>peach puff</td>
+///     <td>xtd::drawing::yellow_colors::peach_puff</td>
+///     <td>0xFFFFDAB9</td>
+///     <td>@image html colors_peach_puff.png</td>
+///   </tr>
+///   <tr>
+///     <td>yellow</td>
+///     <td>xtd::drawing::yellow_colors::yellow</td>
+///     <td>0xFFFFFF00</td>
+///     <td>@image html colors_yellow.png</td>
+///   </tr>
+///   <tr>
+///     <td>pale goldenrod</td>
+///     <td>xtd::drawing::yellow_colors::pale_goldenrod</td>
+///     <td>0xFFEEE8AA</td>
+///     <td>@image html colors_pale_goldenrod.png</td>
+///   </tr>
+///   <tr>
+///     <td>moccasin</td>
+///     <td>xtd::drawing::yellow_colors::moccasin</td>
+///     <td>0xFFFFE4B5</td>
+///     <td>@image html colors_moccasin.png</td>
+///   </tr>
+///   <tr>
+///     <td>papaya whip</td>
+///     <td>xtd::drawing::yellow_colors::papaya_whip</td>
+///     <td>0xFFFFEFD5</td>
+///     <td>@image html colors_papaya_whip.png</td>
+///   </tr>
+///   <tr>
+///     <td>light goldenrod yellow</td>
+///     <td>xtd::drawing::yellow_colors::light_goldenrod_yellow</td>
+///     <td>0xFFFAFAD2</td>
+///     <td>@image html colors_light_goldenrod_yellow.png</td>
+///   </tr>
+///   <tr>
+///     <td>lemon chiffon</td>
+///     <td>xtd::drawing::yellow_colors::lemon_chiffon</td>
+///     <td>0xFFFFFACD</td>
+///     <td>@image html colors_lemon_chiffon.png</td>
+///   </tr>
+///   <tr>
+///     <td>light yellow</td>
+///     <td>xtd::drawing::yellow_colors::light_yellow</td>
+///     <td>0xFFFFFFE0</td>
+///     <td>@image html colors_light_yellow.png</td>
 ///   </tr>
 /// </table>
 ///
