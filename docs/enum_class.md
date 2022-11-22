@@ -1,5 +1,15 @@
 | [Home](home.md) | [News](news.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Support](support.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
+# Table of content
+
+* [enum, enum class and enum struct](enum-enum-class-and-enum-struct)
+* [External libraries](external-libraries)
+* [xtd::enum_register](xtd-enum-register)
+* [xtd::enum_set_attribute](xtd-enum_set-attribute)
+* [Format](format)
+* [Parse](parse)
+* [helpers](helpers)
+
 # enum, enum class and enum struct
 
 `enum`, `enum class` and `enum struct` in c++11 have two problems:
@@ -109,7 +119,7 @@ entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]
 
 ## xtd::enum_register
 
-Unlike some external libraries, xtd does not yet have `enum class` introspection. So you have to register the `enum class` with the class [xtd::enum_register](). 
+Unlike some external libraries, xtd does not yet have `enum class` introspection. So you have to register the `enum class` with the class [xtd::enum_register](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__register.html). 
 The advantage is that it has no limitation and the disadvantage is that it is more verbose.
 
 ### Note
@@ -165,8 +175,8 @@ entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]
 
 ## xtd::enum_set_attribute
 
-The [xtd::enum_attribute]() class is used to qualify an enum class attribute. 
-By default, an enum class attribute is [xtd::enum_attribute::standard]().
+The [xtd::enum_set_attribute](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__set__attribute.html) class is used to qualify an enum class attribute. 
+By default, an enum class attribute is [xtd::enum_attribute::standard](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga21077f4832fc4718f7095d1a560a89cd).
 
 Write the following code to set the attribute of an enum class :
 
@@ -180,7 +190,7 @@ template<> struct xtd::enum_set_attribute<enum_flags> {
 
 This does not dispense with writing the operators necessary to perform bitwise operations, but is necessary to display the values of the enum class correctly.
 
-Let's take the following example and see what happens with and without setting the attribute flag to [xtd::enum_attribute::flags]() :
+Let's take the following example and see what happens with and without setting the attribute flag to [xtd::enum_attribute::flags](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga21077f4832fc4718f7095d1a560a89cd) :
 
 ```c++
 enum class test_enum {
@@ -193,7 +203,7 @@ enum class test_enum {
 test_enum operator|(test_enum lhs, test_enum rhs) {return static_cast<test_enum>(static_cast<std::underlying_type<test_enum>::type>(lhs) | static_cast<std::underlying_type<test_enum>::type>(rhs));}
 ```
 
-* With setting the attribute flag to [xtd::enum_attribute::flags]() :
+* With setting the attribute flag to [xtd::enum_attribute::flags](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga21077f4832fc4718f7095d1a560a89cd) :
 
 ```c++
 #include <xtd/xtd.core.h>
@@ -231,7 +241,7 @@ value = value_two, value_three
 
 Ok, this is the expected value.
 
-* Without setting the attribute flag to [xtd::enum_attribute::flags]() :
+* Without setting the attribute flag to [xtd::enum_attribute::flags](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga21077f4832fc4718f7095d1a560a89cd) :
 
 ```c++
 #include <xtd/xtd.core.h>
@@ -377,20 +387,25 @@ result = value_one
 enum_test::value_six does not exists!
 ```
 
-## enum class helpers
+## helpers
 
-Registering an `enum class flags` is unfortunately verbose. Registering an `enum, `enum class` or an `enum struct` is unfortunately verbose too. 
+Registering an `enum class flags` is unfortunately verbose. 
+Registering an `enum, `enum class` or an `enum struct` is unfortunately verbose too. 
 
 There are some helpers in xtd to make your job easier:
 
 * [flags_attribute_]()
-* [enum_]()
-* [enum_class_]()
-* [enum_struct_]()
+* [enum_]() and [enum_ut_]()
+* [enum_class_]() and [enum_class_ut_]()
+* [enum_struct_]() and [enum_struct_ut_]()
 
 ### flags_attribute_
 
-### enum_, enum_class_ and enum_struct_
+### enum_ and enum_ut_
+
+### enum_class_ and enum_class_ut_
+
+### enum_struct_ and enum_struct_ut_
 
 # See also
 ​
