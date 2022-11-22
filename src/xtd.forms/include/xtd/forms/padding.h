@@ -164,7 +164,7 @@ namespace xtd {
       
       /// @cond
       bool operator ==(const padding& p) const {return all_ == p.all_ && left_ == p.left_ && top_ == p.top_ && right_ == p.right_ && bottom_ == p.bottom_;}
-      friend std::ostream& operator<<(std::ostream& os, const xtd::forms::padding& padding) noexcept {return os << padding.to_string();}
+      friend std::ostream& operator <<(std::ostream& os, const xtd::forms::padding& padding) noexcept {return os << padding.to_string();}
       /// @endcond
       
     private:

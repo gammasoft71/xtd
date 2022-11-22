@@ -10,19 +10,19 @@ std::string __object_to_string(const object& value) {
   return value.to_string();
 }
 
-std::ostream& operator<<(std::ostream& os, const char8_t* str) {
+std::ostream& operator <<(std::ostream& os, const char8_t* str) {
   return os << ustring(str); 
 }
 
-std::ostream& operator<<(std::ostream& os, const char16_t* str) {
+std::ostream& operator <<(std::ostream& os, const char16_t* str) {
   return os << ustring(str); 
 }
 
-std::ostream& operator<<(std::ostream& os, const char32_t* str) {
+std::ostream& operator <<(std::ostream& os, const char32_t* str) {
   return os << ustring(str);
 }
 
-std::ostream& operator<<(std::ostream& os, const wchar_t* str) {
+std::ostream& operator <<(std::ostream& os, const wchar_t* str) {
   return os << ustring(str);
 }
 

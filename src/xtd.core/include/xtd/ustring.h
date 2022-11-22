@@ -1297,8 +1297,8 @@ namespace xtd {
     /// @}
     
     /// @cond
-    friend std::ostream& operator<<(std::ostream& stream, const ustring& str) {return stream << str.c_str();}
-    friend std::istream& operator>>(std::istream& stream, ustring& str) {
+    friend std::ostream& operator <<(std::ostream& stream, const ustring& str) {return stream << str.c_str();}
+    friend std::istream& operator >>(std::istream& stream, ustring& str) {
       std::string s;
       stream >> s;
       str = s;

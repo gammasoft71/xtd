@@ -15,7 +15,7 @@ namespace {
   };
   
   template<typename char_t>
-  std::basic_ostream<char_t>& operator<<(std::basic_ostream<char_t>& os, const ::point& p) {
+  std::basic_ostream<char_t>& operator <<(std::basic_ostream<char_t>& os, const ::point& p) {
     return os << xtd::to_string(p, ustring::empty_string());
   }
 }

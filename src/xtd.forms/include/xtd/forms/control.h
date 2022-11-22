@@ -1092,7 +1092,7 @@ namespace xtd {
       /// @param parent A control that represents the parent or container control of the control.
       /// @param child A control to add to parent.
       /// @return Current control.
-      control& operator<<(control& child) {
+      control& operator <<(control& child) {
         child.parent(*this);
         return *this;
       }
@@ -1101,7 +1101,7 @@ namespace xtd {
       /// @param parent A control that represents the parent or container control of the control.
       /// @param child A control to remove to parent.
       /// @return Current control.
-      control& operator>>(control& child) {
+      control& operator >>(control& child) {
         if (child.parent().has_value() && &child.parent().value().get() == this)
           child.parent(nullptr);
         return *this;
@@ -1111,7 +1111,7 @@ namespace xtd {
       /// @cond
       bool operator ==(const control& value) const {return this == &value;}
       bool operator !=(const control& value) const {return !operator ==(value);}
-      bool operator<(const control& value) const {return this < &value;}
+      bool operator <(const control& value) const {return this < &value;}
       /// @endcond
       
       /// @name Events

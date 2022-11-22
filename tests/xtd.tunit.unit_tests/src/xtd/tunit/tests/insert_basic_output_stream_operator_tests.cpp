@@ -355,7 +355,7 @@ namespace tunit::tests {
     
     int value() const noexcept {return value_;}
     
-    friend std::ostream& operator<<(std::ostream& os, const class_with_insert_stream_operator& c) {
+    friend std::ostream& operator <<(std::ostream& os, const class_with_insert_stream_operator& c) {
       return os << "(value = " << c.value_ << ")";
     }
     

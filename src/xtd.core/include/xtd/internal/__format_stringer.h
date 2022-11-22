@@ -229,14 +229,14 @@ inline std::basic_string<char_t> __to_string(const arg_t* str) {
 }
 
 template<typename char_t, typename type_t, typename period_t = std::ratio<1>>
-std::basic_ostream<char_t>& operator<<(std::basic_ostream<char_t>& os, const std::chrono::duration<type_t, period_t>& value) {
+std::basic_ostream<char_t>& operator <<(std::basic_ostream<char_t>& os, const std::chrono::duration<type_t, period_t>& value) {
   return os << xtd::to_string(value, std::basic_string<char_t> {'G'}, std::locale());
 }
 
-std::ostream& operator<<(std::ostream& os, const char8_t* str);
-std::ostream& operator<<(std::ostream& os, const char16_t* str);
-std::ostream& operator<<(std::ostream& os, const char32_t* str);
-std::ostream& operator<<(std::ostream& os, const wchar_t* str);
+std::ostream& operator <<(std::ostream& os, const char8_t* str);
+std::ostream& operator <<(std::ostream& os, const char16_t* str);
+std::ostream& operator <<(std::ostream& os, const char32_t* str);
+std::ostream& operator <<(std::ostream& os, const wchar_t* str);
 
 template<typename enum_t>
 std::string __enum_to_string(enum_t value);

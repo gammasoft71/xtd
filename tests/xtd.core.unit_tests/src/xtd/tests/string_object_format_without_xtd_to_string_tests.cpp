@@ -14,7 +14,7 @@ public:
 };
 
 template<typename char_t>
-std::basic_ostream<char_t>& operator<<(std::basic_ostream<char_t>& os, const ::size_sof& p) {
+std::basic_ostream<char_t>& operator <<(std::basic_ostream<char_t>& os, const ::size_sof& p) {
   return os << "(" << p.w << ", " << p.h << ")";
 }
 

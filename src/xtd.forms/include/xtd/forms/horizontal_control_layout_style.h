@@ -132,7 +132,7 @@ namespace xtd {
       /// @cond
       bool operator ==(const horizontal_control_layout_style& value) const {return width_ == value.width_ && control_layout_style::operator ==(value);}
       bool operator !=(const horizontal_control_layout_style& value) const {return !operator ==(value);}
-      friend std::ostream& operator<<(std::ostream& os, const xtd::forms::horizontal_control_layout_style& control_layout_style) noexcept {
+      friend std::ostream& operator <<(std::ostream& os, const xtd::forms::horizontal_control_layout_style& control_layout_style) noexcept {
         return os << control_layout_style.to_string();
       }
       /// @endcond

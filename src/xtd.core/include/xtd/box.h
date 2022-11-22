@@ -33,7 +33,7 @@ namespace xtd {
   /// @remarks You can use xtd::box to represent a class or structure that does not inherit from xtd::object. Typically used for integral types.
   /// @remarks Use xtd::boxing to box an object.
   /// @remarks Use xtd::unboxing to unbox an object.
-  /// @remarks The boxed object must implement operator == and operator< because a xtd::box implement xtd::icomparable and xtd::iequatable interfaces.
+  /// @remarks The boxed object must implement operator == and operator < because a xtd::box implement xtd::icomparable and xtd::iequatable interfaces.
   /// @par Examples
   /// The following example shows how to create and use xtd::box<bool>.
   /// @code
@@ -761,7 +761,7 @@ namespace xtd {
   /// @brief Allows to box an object
   /// @param value Value used to initialize object.
   /// @return Boxed object.
-  /// @remarks The boxed object must implement operator == and operator< because a xtd::box implement xtd::icomparable and xtd::iequatable interfaces.
+  /// @remarks The boxed object must implement operator == and operator < because a xtd::box implement xtd::icomparable and xtd::iequatable interfaces.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -772,7 +772,7 @@ namespace xtd {
   /// @brief Allows to box an object
   /// @param ...args  Params used to initialize object.
   /// @return Boxed object.
-  /// @remarks The boxed object must implement operator == and operator< because a xtd::box implement xtd::icomparable and xtd::iequatable interfaces.
+  /// @remarks The boxed object must implement operator == and operator < because a xtd::box implement xtd::icomparable and xtd::iequatable interfaces.
   /// @par Namespace
   /// xtd
   /// @par Library
