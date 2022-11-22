@@ -87,11 +87,11 @@ namespace xtd {
         item& operator =(const item& value) = default;
         bool operator ==(const item& value) const {return list_box::item::operator ==(value);}
         bool operator !=(const item& value) const {return list_box::item::operator !=(value);}
-        bool operator<(const item& value) const {return list_box::item::operator<(value);}
-        bool operator<=(const item& value) const {return list_box::item::operator<=(value);}
-        bool operator>(const item& value) const {return list_box::item::operator>(value);}
-        bool operator>=(const item& value) const {return list_box::item::operator>=(value);}
-        friend std::ostream& operator<<(std::ostream& os, const item& value) {return os << value.to_string();}
+        bool operator <(const item& value) const {return list_box::item::operator <(value);}
+        bool operator <=(const item& value) const {return list_box::item::operator <=(value);}
+        bool operator >(const item& value) const {return list_box::item::operator >(value);}
+        bool operator >=(const item& value) const {return list_box::item::operator >=(value);}
+        friend std::ostream& operator <<(std::ostream& os, const item& value) {return os << value.to_string();}
         /// @endcond
         
         /// @name Properties

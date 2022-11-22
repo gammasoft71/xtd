@@ -30,7 +30,7 @@ namespace xtd {
     /// @}
     
     /// @cond
-    friend std::ostream& operator<<(std::ostream& os, const reset_color&) {
+    friend std::ostream& operator <<(std::ostream& os, const reset_color&) {
       if (!console::is_output_redirected() && os.rdbuf() == console::out.rdbuf())
         console::reset_color();
       return os;

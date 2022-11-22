@@ -46,7 +46,7 @@ namespace xtd {
         ip_v6_multicast_option(ip_v6_multicast_option&& ip_v6_multicast_option) = default;
         ip_v6_multicast_option(const ip_v6_multicast_option& ip_v6_multicast_option) = default;
         ip_v6_multicast_option& operator =(const ip_v6_multicast_option&) = default;
-        friend std::ostream& operator<<(std::ostream& os, const ip_v6_multicast_option& mo) noexcept {return os << mo.to_string();}
+        friend std::ostream& operator <<(std::ostream& os, const ip_v6_multicast_option& mo) noexcept {return os << mo.to_string();}
         /// @endcond
         
         /// @name Properties

@@ -64,11 +64,11 @@ namespace xtd {
         virtual ~item() = default;
         bool operator ==(const item& value) const {return value_ == value.value_;}
         bool operator !=(const item& value) const {return !operator ==(value);}
-        bool operator<(const item& value) const {return value_ < value.value_;}
-        bool operator<=(const item& value) const {return value_ <= value.value_;}
-        bool operator>(const item& value) const {return value_ > value.value_;}
-        bool operator>=(const item& value) const {return value_ >= value.value_;}
-        friend std::ostream& operator<<(std::ostream& os, const item& value) {return os << value.to_string();}
+        bool operator <(const item& value) const {return value_ < value.value_;}
+        bool operator <=(const item& value) const {return value_ <= value.value_;}
+        bool operator >(const item& value) const {return value_ > value.value_;}
+        bool operator >=(const item& value) const {return value_ >= value.value_;}
+        friend std::ostream& operator <<(std::ostream& os, const item& value) {return os << value.to_string();}
         /// @endcond
         
         /// @name Properties

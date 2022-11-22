@@ -42,10 +42,10 @@ namespace xtd {
         image_format& operator =(const image_format&) = default;
         bool operator ==(const image_format& value) const {return guid_ == value.guid_;}
         bool operator !=(const image_format& value) const {return !operator ==(value);}
-        bool operator<(const image_format& value) const {return guid_ < value.guid_;}
-        bool operator<=(const image_format& value) const {return guid_ <= value.guid_;}
-        bool operator>(const image_format& value) const {return guid_ > value.guid_;}
-        bool operator>=(const image_format& value) const {return guid_ >= value.guid_;}
+        bool operator <(const image_format& value) const {return guid_ < value.guid_;}
+        bool operator <=(const image_format& value) const {return guid_ <= value.guid_;}
+        bool operator >(const image_format& value) const {return guid_ > value.guid_;}
+        bool operator >=(const image_format& value) const {return guid_ >= value.guid_;}
         /// @endcond
         
         /// @name Properties

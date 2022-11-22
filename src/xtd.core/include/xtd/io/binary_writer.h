@@ -222,35 +222,35 @@ namespace xtd {
       /// @}
       
       /// @cond
-      binary_writer& operator<<(bool value) {write(value); return *this;}
-      binary_writer& operator<<(byte value) {write(value); return *this;}
-      binary_writer& operator<<(char value) {write(value); return *this;}
+      binary_writer& operator <<(bool value) {write(value); return *this;}
+      binary_writer& operator <<(byte value) {write(value); return *this;}
+      binary_writer& operator <<(char value) {write(value); return *this;}
       template<size_t size>
-      binary_writer& operator<<(const std::array<byte_t, size>& value) {write(value); return *this;}
+      binary_writer& operator <<(const std::array<byte_t, size>& value) {write(value); return *this;}
       template<size_t size>
-      binary_writer& operator<<(const std::array<char, size>& value) {write(value); return *this;}
-      binary_writer& operator<<(const std::vector<byte_t>& value) {write(value); return *this;}
-      binary_writer& operator<<(const std::vector<char>& value) {write(value); return *this;}
-      binary_writer& operator<<(double value) {write(value); return *this;}
-      binary_writer& operator<<(int16_t value) {write(value); return *this;}
-      binary_writer& operator<<(int32_t value) {write(value); return *this;}
-      binary_writer& operator<<(int64_t value) {write(value); return *this;}
-      binary_writer& operator<<(sbyte value) {write(value); return *this;}
-      binary_writer& operator<<(float value) {write(value); return *this;}
-      binary_writer& operator<<(const ustring& value) {write(value); return *this;}
-      binary_writer& operator<<(const std::string& value) {write(value); return *this;}
-      binary_writer& operator<<(const std::u8string& value) {write(value); return *this;}
-      binary_writer& operator<<(const std::u16string& value) {write(value); return *this;}
-      binary_writer& operator<<(const std::u32string& value) {write(value); return *this;}
-      binary_writer& operator<<(const std::wstring& value) {write(value); return *this;}
-      binary_writer& operator<<(const char* value) {write(value); return *this;}
-      binary_writer& operator<<(const char8_t* value) {write(value); return *this;}
-      binary_writer& operator<<(const char16_t* value) {write(value); return *this;}
-      binary_writer& operator<<(const char32_t* value) {write(value); return *this;}
-      binary_writer& operator<<(const wchar_t* value) {write(value); return *this;}
-      binary_writer& operator<<(uint16_t value) {write(value); return *this;}
-      binary_writer& operator<<(uint32_t value) {write(value); return *this;}
-      binary_writer& operator<<(uint64_t value) {write(value); return *this;}
+      binary_writer& operator <<(const std::array<char, size>& value) {write(value); return *this;}
+      binary_writer& operator <<(const std::vector<byte_t>& value) {write(value); return *this;}
+      binary_writer& operator <<(const std::vector<char>& value) {write(value); return *this;}
+      binary_writer& operator <<(double value) {write(value); return *this;}
+      binary_writer& operator <<(int16_t value) {write(value); return *this;}
+      binary_writer& operator <<(int32_t value) {write(value); return *this;}
+      binary_writer& operator <<(int64_t value) {write(value); return *this;}
+      binary_writer& operator <<(sbyte value) {write(value); return *this;}
+      binary_writer& operator <<(float value) {write(value); return *this;}
+      binary_writer& operator <<(const ustring& value) {write(value); return *this;}
+      binary_writer& operator <<(const std::string& value) {write(value); return *this;}
+      binary_writer& operator <<(const std::u8string& value) {write(value); return *this;}
+      binary_writer& operator <<(const std::u16string& value) {write(value); return *this;}
+      binary_writer& operator <<(const std::u32string& value) {write(value); return *this;}
+      binary_writer& operator <<(const std::wstring& value) {write(value); return *this;}
+      binary_writer& operator <<(const char* value) {write(value); return *this;}
+      binary_writer& operator <<(const char8_t* value) {write(value); return *this;}
+      binary_writer& operator <<(const char16_t* value) {write(value); return *this;}
+      binary_writer& operator <<(const char32_t* value) {write(value); return *this;}
+      binary_writer& operator <<(const wchar_t* value) {write(value); return *this;}
+      binary_writer& operator <<(uint16_t value) {write(value); return *this;}
+      binary_writer& operator <<(uint32_t value) {write(value); return *this;}
+      binary_writer& operator <<(uint64_t value) {write(value); return *this;}
       /// @endcond
       
     private:

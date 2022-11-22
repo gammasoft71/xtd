@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains std::basic_ostream<char_t, char_traits_t>& operator<<(std::basic_ostream<char_t, char_traits_t>& os, const type_t& value) function.
+/// @brief Contains std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const type_t& value) function.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <array>
@@ -554,19 +554,19 @@ struct __tunit_value_printer<char_t, char_traits_t, std::unordered_set<value_t>>
 };
 
 template <typename char_t, typename char_traits_t, typename type_t>
-std::basic_ostream<char_t, char_traits_t>& operator<<(std::basic_ostream<char_t, char_traits_t>& os, const type_t& value) {
+std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const type_t& value) {
   __tunit_value_printer<char_t, char_traits_t, type_t>::print(os, value);
   return os;
 }
 
 template <typename char_t, typename char_traits_t, typename type_t>
-std::basic_ostream<char_t, char_traits_t>& operator<<(std::basic_ostream<char_t, char_traits_t>& os, const type_t* value) {
+std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const type_t* value) {
   __tunit_value_printer<char_t, char_traits_t, type_t>::print(os, value);
   return os;
 }
 
 template <typename char_t, typename char_traits_t, typename type_t>
-std::basic_ostream<char_t, char_traits_t>& operator<<(std::basic_ostream<char_t, char_traits_t>& os, type_t* value) {
+std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, type_t* value) {
   __tunit_value_printer<char_t, char_traits_t, type_t>::print(os, value);
   return os;
 }

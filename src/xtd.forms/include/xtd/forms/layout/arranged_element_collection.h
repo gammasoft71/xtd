@@ -50,7 +50,7 @@ namespace xtd {
             return *this;
           }
           operator type_t() {return *this;}
-          friend std::ostream& operator<<(std::ostream& os, const value_type& value) {return os << static_cast<const type_t&>(value);}
+          friend std::ostream& operator <<(std::ostream& os, const value_type& value) {return os << static_cast<const type_t&>(value);}
           /// @endcond
           
         private:

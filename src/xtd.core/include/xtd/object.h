@@ -101,6 +101,6 @@ namespace xtd {
   };
   
   /// @cond
-  std::ostream& operator<<(std::ostream& os, const object& obj) noexcept;
+  std::ostream& operator <<(std::ostream& os, const object& obj) noexcept;
   /// @endcond
 }

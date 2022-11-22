@@ -26,7 +26,7 @@ Operator overloading is useful in cases in which it is immediately obvious what 
 
 **✔️ DO** overload operators in a symmetric fashion.
 
-For example, if you overload the operator ==, you should also overload the operator !=. Similarly, if you overload the operator<, you should also overload the operator>, and so on.
+For example, if you overload the operator ==, you should also overload the operator !=. Similarly, if you overload the operator <, you should also overload the operator >, and so on.
 
 **✔️ CONSIDER** providing methods with friendly names that correspond to each overloaded operator.
 

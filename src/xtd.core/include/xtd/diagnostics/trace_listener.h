@@ -301,7 +301,7 @@ namespace xtd {
       
       /// @cond
       template<typename object>
-      trace_listener& operator<<(object&& message) {
+      trace_listener& operator <<(object&& message) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(message);
         #endif

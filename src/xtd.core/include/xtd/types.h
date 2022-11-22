@@ -19,10 +19,10 @@ public:
   operator char() const {return value_;}
   bool operator ==(char8_t c) const {return value_ == c.value_;}
   bool operator !=(char8_t c) const {return value_ != c.value_;}
-  bool operator<(char8_t c) const {return value_ < c.value_;}
-  bool operator>(char8_t c) const {return value_ > c.value_;}
-  bool operator<=(char8_t c) const {return value_ <= c.value_;}
-  bool operator>=(char8_t c) const {return value_ >= c.value_;}
+  bool operator <(char8_t c) const {return value_ < c.value_;}
+  bool operator >(char8_t c) const {return value_ > c.value_;}
+  bool operator <=(char8_t c) const {return value_ <= c.value_;}
+  bool operator >=(char8_t c) const {return value_ >= c.value_;}
   
   char8_t operator +(char8_t c) const {return char8_t(value_ + c.value_);}
   char8_t operator -(char8_t c) const {return char8_t(value_ - c.value_);}
@@ -34,12 +34,12 @@ public:
   
   bool operator ==(char c) const {return value_ == c;}
   bool operator !=(char c) const {return value_ != c;}
-  bool operator<(char c) const {return value_ < c;}
-  bool operator>(char c) const {return value_ > c;}
-  bool operator<=(char c) const {return value_ <= c;}
-  bool operator>=(char c) const {return value_ >= c;}
+  bool operator <(char c) const {return value_ < c;}
+  bool operator >(char c) const {return value_ > c;}
+  bool operator <=(char c) const {return value_ <= c;}
+  bool operator >=(char c) const {return value_ >= c;}
   
-  friend std::ostream& operator<<(std::ostream& os, const char8_t& c) noexcept {return os << std::to_string(static_cast<int32_t>(c.value_));}
+  friend std::ostream& operator <<(std::ostream& os, const char8_t& c) noexcept {return os << std::to_string(static_cast<int32_t>(c.value_));}
   
 private:
   char value_ = 0;
