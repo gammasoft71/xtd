@@ -24,7 +24,7 @@ xtd::enum_collection<enum_t> __enum_definition_to_enum_collection__(const xtd::u
       throw xtd::format_exception("Not a valid enum declaration", csf_);
     int64_t value = current_value;
     if (key_value.size() == 2) {
-      if (!xtd::try_parse<int64_t>(key_value[1].trim(), value) && xtd::try_parse<int64_t>(key_value[1].trim(), value, xtd::number_styles::hex_number) && xtd::try_parse<int64_t>(key_value[1].trim(), value, xtd::number_styles::binary_number) && xtd::try_parse<int64_t>(key_value[1].trim(), value, xtd::number_styles::octal_number)) {
+      if (!xtd::try_parse<int64_t>(key_value[1].trim(), value, xtd::number_styles::number) && xtd::try_parse<int64_t>(key_value[1].trim(), value, xtd::number_styles::hex_number) && xtd::try_parse<int64_t>(key_value[1].trim(), value, xtd::number_styles::binary_number) && xtd::try_parse<int64_t>(key_value[1].trim(), value, xtd::number_styles::octal_number)) {
         auto iterator = std::find_if(entries.begin(), entries.end(), [&](auto item)->bool {return item.second == key_value[1].trim();});
         if (iterator != entries.end()) value = static_cast<int64_t>(iterator->first);
         
