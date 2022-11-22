@@ -264,14 +264,16 @@ namespace xtd {
     static int64_t to_int(enum_type value) {return static_cast<int64_t>(value);}
     
     static xtd::enum_attribute attribute() {
-      std::lock_guard<std::mutex> lock(access_mutex_);
+      static std::mutex attribute_mutex;
+      std::lock_guard<std::mutex> lock(attribute_mutex);
       if (attribute_.has_value()) return attribute_.value();
       attribute_ = xtd::enum_attribute(enum_set_attribute<enum_type>());
       return attribute_.value();
     }
     
     static enum_collection<enum_type>& entries() {
-      std::lock_guard<std::mutex> lock(access_mutex_);
+      static std::mutex entries_mutex;
+      std::lock_guard<std::mutex> lock(entries_mutex);
       if (entries_.has_value()) return entries_.value();
       entries_ = enum_collection<enum_type>(enum_register<enum_type>());
       return entries_.value();
@@ -284,8 +286,7 @@ namespace xtd {
     
     inline static std::optional<xtd::enum_attribute> attribute_;
     inline static std::optional<enum_collection<enum_type>> entries_;
-    inline static std::mutex access_mutex_;
-    enum_type value_ {};
+     enum_type value_ {};
   };
   
   /// @brief Provides the base class for enumerations.
