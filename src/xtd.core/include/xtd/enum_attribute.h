@@ -5,7 +5,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief the enum attribute.
+  /// @brief Specifies the enum attribute.
   /// @code
   /// enum class enum_attribute
   /// @endcode
@@ -14,7 +14,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  /// @remarks The xtd::enum_attribute is used with the xts::enum_register class.
+  /// @remarks The xtd::enum_attribute is used with the xtd::enum_set_attribute struct.
   enum class enum_attribute {
     /// @brief Enum standard attribute.
     standard,
