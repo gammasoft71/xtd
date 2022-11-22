@@ -4,7 +4,6 @@
 #pragma once
 
 #include <optional>
-#include <mutex>
 #include "enum_attribute.h"
 #include "format_exception.h"
 #include "icomparable.h"
@@ -264,16 +263,12 @@ namespace xtd {
     static int64_t to_int(enum_type value) {return static_cast<int64_t>(value);}
     
     static xtd::enum_attribute attribute() {
-      static std::mutex attribute_mutex;
-      std::lock_guard<std::mutex> lock(attribute_mutex);
       if (attribute_.has_value()) return attribute_.value();
       attribute_ = xtd::enum_attribute(enum_set_attribute<enum_type>());
       return attribute_.value();
     }
     
     static enum_collection<enum_type>& entries() {
-      static std::mutex entries_mutex;
-      std::lock_guard<std::mutex> lock(entries_mutex);
       if (entries_.has_value()) return entries_.value();
       entries_ = enum_collection<enum_type>(enum_register<enum_type>());
       return entries_.value();
