@@ -12,7 +12,7 @@
 * [Parse](#parse)
 * [helpers](#helpers)
 
-# Overview
+## Overview
 
 An enumeration is a distinct type whose value is restricted to a range of values (see below for details), which may include several explicitly named constants ("enumerators"). The values of the constants are values of an integral type known as the underlying type of the enumeration.
 For more information about c++ enumeration see [Enumeration declaration](https://en.cppreference.com/w/cpp/language/enum).
