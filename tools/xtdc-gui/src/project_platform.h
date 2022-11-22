@@ -1,4 +1,5 @@
 #pragma once
+#include <type_traits>
 
 #undef linux
 
@@ -11,16 +12,16 @@ namespace xtdc_gui {
   };
   
   /// @cond
-  inline project_platform& operator +=(project_platform& lhs, project_platform rhs) {lhs = static_cast<project_platform>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
-  inline project_platform& operator -=(project_platform& lhs, project_platform rhs) {lhs = static_cast<project_platform>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}
-  inline project_platform& operator &=(project_platform& lhs, project_platform rhs) {lhs = static_cast<project_platform>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); return lhs;}
-  inline project_platform& operator |=(project_platform& lhs, project_platform rhs) {lhs = static_cast<project_platform>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); return lhs;}
-  inline project_platform& operator ^=(project_platform& lhs, project_platform rhs) {lhs = static_cast<project_platform>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); return lhs;}
-  inline project_platform operator +(project_platform lhs, project_platform rhs) {return static_cast<project_platform>(static_cast<long long>(lhs) + static_cast<long long>(rhs));}
-  inline project_platform operator -(project_platform lhs, project_platform rhs) {return static_cast<project_platform>(static_cast<long long>(lhs) - static_cast<long long>(rhs));}
-  inline project_platform operator ~(project_platform rhs) {return static_cast<project_platform>(~static_cast<long long>(rhs));}
-  inline project_platform operator &(project_platform lhs, project_platform rhs) {return static_cast<project_platform>(static_cast<long long>(lhs) & static_cast<long long>(rhs));}
-  inline project_platform operator |(project_platform lhs, project_platform rhs) {return static_cast<project_platform>(static_cast<long long>(lhs) | static_cast<long long>(rhs));}
-  inline project_platform operator ^(project_platform lhs, project_platform rhs) {return static_cast<project_platform>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs));}
+  [[maybe_unused]] inline project_platform& operator ^=(project_platform& lhs, project_platform rhs) {lhs = static_cast<project_platform>(static_cast<std::underlying_type<project_platform>::type>(lhs) ^ static_cast<std::underlying_type<project_platform>::type>(rhs)); return lhs;}
+  [[maybe_unused]] inline project_platform& operator &=(project_platform& lhs, project_platform rhs) {lhs = static_cast<project_platform>(static_cast<std::underlying_type<project_platform>::type>(lhs) & static_cast<std::underlying_type<project_platform>::type>(rhs)); return lhs;}
+  [[maybe_unused]] inline project_platform& operator |=(project_platform& lhs, project_platform rhs) {lhs = static_cast<project_platform>(static_cast<std::underlying_type<project_platform>::type>(lhs) | static_cast<std::underlying_type<project_platform>::type>(rhs)); return lhs;}
+  [[maybe_unused]] inline project_platform& operator +=(project_platform& lhs, project_platform rhs) {lhs = static_cast<project_platform>(static_cast<std::underlying_type<project_platform>::type>(lhs) + static_cast<std::underlying_type<project_platform>::type>(rhs)); return lhs;}
+  [[maybe_unused]] inline project_platform& operator -=(project_platform& lhs, project_platform rhs) {lhs = static_cast<project_platform>(static_cast<std::underlying_type<project_platform>::type>(lhs) - static_cast<std::underlying_type<project_platform>::type>(rhs)); return lhs;}
+  [[maybe_unused]] inline project_platform operator ^(project_platform lhs, project_platform rhs) {return static_cast<project_platform>(static_cast<std::underlying_type<project_platform>::type>(lhs) ^ static_cast<std::underlying_type<project_platform>::type>(rhs));}
+  [[maybe_unused]] inline project_platform operator &(project_platform lhs, project_platform rhs) {return static_cast<project_platform>(static_cast<std::underlying_type<project_platform>::type>(lhs) & static_cast<std::underlying_type<project_platform>::type>(rhs));}
+  [[maybe_unused]] inline project_platform operator |(project_platform lhs, project_platform rhs) {return static_cast<project_platform>(static_cast<std::underlying_type<project_platform>::type>(lhs) | static_cast<std::underlying_type<project_platform>::type>(rhs));}
+  [[maybe_unused]] inline project_platform operator +(project_platform lhs, project_platform rhs) {return static_cast<project_platform>(static_cast<std::underlying_type<project_platform>::type>(lhs) + static_cast<std::underlying_type<project_platform>::type>(rhs));}
+  [[maybe_unused]] inline project_platform operator -(project_platform lhs, project_platform rhs) {return static_cast<project_platform>(static_cast<std::underlying_type<project_platform>::type>(lhs) - static_cast<std::underlying_type<project_platform>::type>(rhs));}
+  [[maybe_unused]] inline project_platform operator ~(project_platform lhs) {return static_cast<project_platform>(~static_cast<std::underlying_type<project_platform>::type>(lhs));} \
   /// @endcond
 }

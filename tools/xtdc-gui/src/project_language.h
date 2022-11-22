@@ -1,4 +1,5 @@
 #pragma once
+#include <type_traits>
 
 namespace xtdc_gui {
   enum class project_language {
@@ -12,16 +13,16 @@ namespace xtdc_gui {
   };
   
   /// @cond
-  inline project_language& operator +=(project_language& lhs, project_language rhs) {lhs = static_cast<project_language>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
-  inline project_language& operator -=(project_language& lhs, project_language rhs) {lhs = static_cast<project_language>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}
-  inline project_language& operator &=(project_language& lhs, project_language rhs) {lhs = static_cast<project_language>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); return lhs;}
-  inline project_language& operator |=(project_language& lhs, project_language rhs) {lhs = static_cast<project_language>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); return lhs;}
-  inline project_language& operator ^=(project_language& lhs, project_language rhs) {lhs = static_cast<project_language>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); return lhs;}
-  inline project_language operator +(project_language lhs, project_language rhs) {return static_cast<project_language>(static_cast<long long>(lhs) + static_cast<long long>(rhs));}
-  inline project_language operator -(project_language lhs, project_language rhs) {return static_cast<project_language>(static_cast<long long>(lhs) - static_cast<long long>(rhs));}
-  inline project_language operator ~(project_language rhs) {return static_cast<project_language>(~static_cast<long long>(rhs));}
-  inline project_language operator &(project_language lhs, project_language rhs) {return static_cast<project_language>(static_cast<long long>(lhs) & static_cast<long long>(rhs));}
-  inline project_language operator |(project_language lhs, project_language rhs) {return static_cast<project_language>(static_cast<long long>(lhs) | static_cast<long long>(rhs));}
-  inline project_language operator ^(project_language lhs, project_language rhs) {return static_cast<project_language>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs));}
+  [[maybe_unused]] inline project_language& operator ^=(project_language& lhs, project_language rhs) {lhs = static_cast<project_language>(static_cast<std::underlying_type<project_language>::type>(lhs) ^ static_cast<std::underlying_type<project_language>::type>(rhs)); return lhs;}
+  [[maybe_unused]] inline project_language& operator &=(project_language& lhs, project_language rhs) {lhs = static_cast<project_language>(static_cast<std::underlying_type<project_language>::type>(lhs) & static_cast<std::underlying_type<project_language>::type>(rhs)); return lhs;}
+  [[maybe_unused]] inline project_language& operator |=(project_language& lhs, project_language rhs) {lhs = static_cast<project_language>(static_cast<std::underlying_type<project_language>::type>(lhs) | static_cast<std::underlying_type<project_language>::type>(rhs)); return lhs;}
+  [[maybe_unused]] inline project_language& operator +=(project_language& lhs, project_language rhs) {lhs = static_cast<project_language>(static_cast<std::underlying_type<project_language>::type>(lhs) + static_cast<std::underlying_type<project_language>::type>(rhs)); return lhs;}
+  [[maybe_unused]] inline project_language& operator -=(project_language& lhs, project_language rhs) {lhs = static_cast<project_language>(static_cast<std::underlying_type<project_language>::type>(lhs) - static_cast<std::underlying_type<project_language>::type>(rhs)); return lhs;}
+  [[maybe_unused]] inline project_language operator ^(project_language lhs, project_language rhs) {return static_cast<project_language>(static_cast<std::underlying_type<project_language>::type>(lhs) ^ static_cast<std::underlying_type<project_language>::type>(rhs));}
+  [[maybe_unused]] inline project_language operator &(project_language lhs, project_language rhs) {return static_cast<project_language>(static_cast<std::underlying_type<project_language>::type>(lhs) & static_cast<std::underlying_type<project_language>::type>(rhs));}
+  [[maybe_unused]] inline project_language operator |(project_language lhs, project_language rhs) {return static_cast<project_language>(static_cast<std::underlying_type<project_language>::type>(lhs) | static_cast<std::underlying_type<project_language>::type>(rhs));}
+  [[maybe_unused]] inline project_language operator +(project_language lhs, project_language rhs) {return static_cast<project_language>(static_cast<std::underlying_type<project_language>::type>(lhs) + static_cast<std::underlying_type<project_language>::type>(rhs));}
+  [[maybe_unused]] inline project_language operator -(project_language lhs, project_language rhs) {return static_cast<project_language>(static_cast<std::underlying_type<project_language>::type>(lhs) - static_cast<std::underlying_type<project_language>::type>(rhs));}
+  [[maybe_unused]] inline project_language operator ~(project_language lhs) {return static_cast<project_language>(~static_cast<std::underlying_type<project_language>::type>(lhs));} \
   /// @endcond
 }
