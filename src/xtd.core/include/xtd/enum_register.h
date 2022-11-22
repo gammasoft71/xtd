@@ -32,7 +32,7 @@ namespace xtd {
     /// @return An xtd::enum_collection collection that represent enumeration.
     /// @remarks To register an enumeration just override xtd::enum_register.
     /// @par Examples
-    /// The following code show how to register a values enum class.
+    /// The following code show how to register the values enum class.
     /// @code
     /// enum class values {
     ///   value_one,
