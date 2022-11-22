@@ -2,13 +2,13 @@
 
 using namespace xtd;
 
-enum_class_(text_attribute, {
+enum_class_(, text_attribute,
   normal = 0b0,
   bold = 0b1,
   italic = 0b10,
   underline = 0b100,
   strikeout = 0b1000,
-});
+);
 
 flags_attribute_(, text_attribute);
 

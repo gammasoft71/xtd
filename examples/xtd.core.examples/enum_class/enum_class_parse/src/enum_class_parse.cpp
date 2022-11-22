@@ -2,12 +2,12 @@
 
 using namespace xtd;
 
-enum_class_(enum_test, {
+enum_class_(, enum_test,
   value_one,
   value_two,
   value_three,
   value_four
-});
+);
 
 int main() {
   console::write_line("result = {}", enum_object<>::parse<enum_test>("value_two"));
