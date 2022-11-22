@@ -260,9 +260,11 @@ bool directory::exists(const std::string& path) {
 }
 
 string directory::get_current_directory() {
-  /// @todo Use GetCurrentDirectory : https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcurrentdirectory
-  char path[MAX_PATH + 1];
-  return _getcwd(path, MAX_PATH) ? path : "";
+  DWORD length = GetCurrentDirectory(0, nullptr);
+
+  wstring current_directory(static_cast<size_t>(length), 0);
+  GetCurrentDirectory(length, current_directory.data());
+  return win32::strings::to_string(current_directory);
 }
 
 int32_t directory::remove(const std::string& directory_name) {
@@ -270,6 +272,5 @@ int32_t directory::remove(const std::string& directory_name) {
 }
 
 int32_t directory::set_current_directory(const std::string& directory_name) {
-  /// @todo Use SetCurrentDirectory : https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setcurrentdirectory
-  return _chdir(directory_name.c_str());
+  return SetCurrentDirectory(win32::strings::to_wstring(directory_name).c_str()) != FALSE ? 0 : -1;
 }
