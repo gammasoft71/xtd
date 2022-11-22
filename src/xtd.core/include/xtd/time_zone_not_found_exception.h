@@ -76,7 +76,7 @@ namespace xtd {
     
     /// @cond
     time_zone_not_found_exception(const time_zone_not_found_exception&) = default;
-    time_zone_not_found_exception& operator=(const time_zone_not_found_exception&) = default;
+    time_zone_not_found_exception& operator =(const time_zone_not_found_exception&) = default;
     /// @endcond
     
   private:

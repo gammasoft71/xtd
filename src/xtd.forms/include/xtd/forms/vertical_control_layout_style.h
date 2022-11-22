@@ -142,8 +142,8 @@ namespace xtd {
       /// @}
       
       /// @cond
-      bool operator==(const vertical_control_layout_style& value) const {return height_ == value.height_ && control_layout_style::operator==(value);}
-      bool operator!=(const vertical_control_layout_style& value) const {return !operator==(value);}
+      bool operator ==(const vertical_control_layout_style& value) const {return height_ == value.height_ && control_layout_style::operator ==(value);}
+      bool operator !=(const vertical_control_layout_style& value) const {return !operator ==(value);}
       friend std::ostream& operator<<(std::ostream& os, const xtd::forms::vertical_control_layout_style& control_layout_style) noexcept {
         return os << control_layout_style.to_string();
       }

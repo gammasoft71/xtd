@@ -48,9 +48,9 @@ namespace xtd {
       
       /// @cond
       padding(const padding&) = default;
-      padding& operator=(const padding&) = default;
-      bool operator==(const padding& value) {return all_ == value.all_ && left_ == value.left_ && top_ == value.top_ && right_ == value.right_ && bottom_ == value.bottom_;}
-      bool operator!=(const padding& value) {return !operator==(value);}
+      padding& operator =(const padding&) = default;
+      bool operator ==(const padding& value) {return all_ == value.all_ && left_ == value.left_ && top_ == value.top_ && right_ == value.right_ && bottom_ == value.bottom_;}
+      bool operator !=(const padding& value) {return !operator ==(value);}
       /// @endcond
       
       /// @name Peorperties
@@ -163,7 +163,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      bool operator==(const padding& p) const {return all_ == p.all_ && left_ == p.left_ && top_ == p.top_ && right_ == p.right_ && bottom_ == p.bottom_;}
+      bool operator ==(const padding& p) const {return all_ == p.all_ && left_ == p.left_ && top_ == p.top_ && right_ == p.right_ && bottom_ == p.bottom_;}
       friend std::ostream& operator<<(std::ostream& os, const xtd::forms::padding& padding) noexcept {return os << padding.to_string();}
       /// @endcond
       

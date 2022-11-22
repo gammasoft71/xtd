@@ -237,10 +237,10 @@ void region::translate(float dx, float dy) {
   native::region::translate(handle(), dx, dy);
 }
 
-bool region::operator==(const region& value) const {
+bool region::operator ==(const region& value) const {
   return data_ == value.data_;
 }
 
-bool region::operator!=(const region& value) const {
-  return !operator==(value);
+bool region::operator !=(const region& value) const {
+  return !operator ==(value);
 }

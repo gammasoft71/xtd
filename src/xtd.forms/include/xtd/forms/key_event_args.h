@@ -33,7 +33,7 @@ namespace xtd {
       
       /// @cond
       key_event_args(const xtd::forms::key_event_args& key_event_args) = default;
-      key_event_args& operator=(const xtd::forms::key_event_args& key_event_args) = default;
+      key_event_args& operator =(const xtd::forms::key_event_args& key_event_args) = default;
       /// @endcond
       
       /// @name Properties

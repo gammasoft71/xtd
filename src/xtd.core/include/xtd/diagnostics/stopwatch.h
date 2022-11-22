@@ -45,7 +45,7 @@ namespace xtd {
       
       /// @cond
       stopwatch(const stopwatch&) = default;
-      stopwatch& operator=(const stopwatch&) = default;
+      stopwatch& operator =(const stopwatch&) = default;
       /// @endcond
       
       /// @name Properties

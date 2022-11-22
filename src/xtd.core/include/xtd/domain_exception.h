@@ -76,7 +76,7 @@ namespace xtd {
     
     /// @cond
     domain_exception(const domain_exception&) = default;
-    domain_exception& operator=(const domain_exception&) = default;
+    domain_exception& operator =(const domain_exception&) = default;
     /// @endcond
     
   private:

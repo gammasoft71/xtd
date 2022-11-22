@@ -35,45 +35,45 @@ namespace xtd {
     /// @brief Adds an handler to the event.
     /// @param handler Handler to add.
     /// @return The current event instance.
-    handler_t& operator+=(const handler_t& handler) noexcept {
-      return handler_t::operator+=(handler);
+    handler_t& operator +=(const handler_t& handler) noexcept {
+      return handler_t::operator +=(handler);
     }
     
     /// @brief Adds a function to the event.
     /// @param handler Function to add.
     /// @return The current event instance.
-    handler_t& operator+=(const typename handler_t::function_t& function) noexcept {
-      return handler_t::operator+=(function);
+    handler_t& operator +=(const typename handler_t::function_t& function) noexcept {
+      return handler_t::operator +=(function);
     }
     
     /// @brief Adds a function to the event.
     /// @param function Function to add.
     /// @return The current event instance.
     template<typename fn_t>
-    handler_t& operator+=(fn_t function) noexcept {
-      return handler_t::operator+=(function);
+    handler_t& operator +=(fn_t function) noexcept {
+      return handler_t::operator +=(function);
     }
     
     /// @brief Removes an handler to the event.
     /// @param handler Handler to remove.
     /// @return The current event instance.
-    handler_t& operator-=(const handler_t& handler) noexcept {
-      return handler_t::operator-=(handler);
+    handler_t& operator -=(const handler_t& handler) noexcept {
+      return handler_t::operator -=(handler);
     }
     
     /// @brief Removes a function to the event.
     /// @param function Function to remove.
     /// @return The current event instance.
-    handler_t& operator-=(const typename handler_t::function_t& function) noexcept {
-      return handler_t::operator-=(function);
+    handler_t& operator -=(const typename handler_t::function_t& function) noexcept {
+      return handler_t::operator -=(function);
     }
     
     /// @brief Removes a function to the event.
     /// @param function Function to remove.
     /// @return The current event instance.
     template<typename fn_t>
-    handler_t& operator-=(fn_t function) noexcept {
-      return handler_t::operator-=(function);
+    handler_t& operator -=(fn_t function) noexcept {
+      return handler_t::operator -=(function);
     }
 
     /// @brief Clear event.

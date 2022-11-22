@@ -27,7 +27,7 @@ namespace xtd {
     public:
       /// @cond
       date_range_event_args(const date_range_event_args& date_range_event_args) = default;
-      date_range_event_args& operator=(const date_range_event_args& date_range_event_args) = default;
+      date_range_event_args& operator =(const date_range_event_args& date_range_event_args) = default;
       /// @endcond
       
       /// @name Constructors

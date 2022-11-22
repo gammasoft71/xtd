@@ -53,13 +53,13 @@ namespace xtd {
       
       /// @cond
       size_f(const xtd::drawing::size_f&) noexcept = default;
-      bool operator==(const xtd::drawing::size_f& value) const noexcept;
-      bool operator!=(const xtd::drawing::size_f& value) const noexcept;
-      size_f& operator=(const xtd::drawing::size_f& size) noexcept = default;
-      size_f operator+(const xtd::drawing::size_f& size) const noexcept;
-      size_f operator-(const xtd::drawing::size_f& size) const noexcept;
-      size_f& operator+=(const xtd::drawing::size_f& size) noexcept;
-      size_f& operator-=(const xtd::drawing::size_f& size) noexcept;
+      bool operator ==(const xtd::drawing::size_f& value) const noexcept;
+      bool operator !=(const xtd::drawing::size_f& value) const noexcept;
+      size_f& operator =(const xtd::drawing::size_f& size) noexcept = default;
+      size_f operator +(const xtd::drawing::size_f& size) const noexcept;
+      size_f operator -(const xtd::drawing::size_f& size) const noexcept;
+      size_f& operator +=(const xtd::drawing::size_f& size) noexcept;
+      size_f& operator -=(const xtd::drawing::size_f& size) noexcept;
       /// @endcond
       
       /// @name Properties

@@ -159,7 +159,7 @@ namespace xtd {
         /// @cond
         explicit control_collection(const base& collection);
         control_collection(const control_collection& collection);
-        control_collection& operator=(const control_collection& collection);
+        control_collection& operator =(const control_collection& collection);
         control_collection(control_collection&&) = default;
         /// @endcond
         
@@ -1109,8 +1109,8 @@ namespace xtd {
       /// @}
       
       /// @cond
-      bool operator==(const control& value) const {return this == &value;}
-      bool operator!=(const control& value) const {return !operator==(value);}
+      bool operator ==(const control& value) const {return this == &value;}
+      bool operator !=(const control& value) const {return !operator ==(value);}
       bool operator<(const control& value) const {return this < &value;}
       /// @endcond
       

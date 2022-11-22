@@ -14,7 +14,7 @@ The following guidelines should help you decide when and how to use operator ove
 
 **✔️ CONSIDER** defining operator overloads in a type that should feel like a primitive type.
 
-For example, xtd:ustring has operator== and operator!= defined.
+For example, xtd:ustring has operator == and operator != defined.
 
 **✔️ DO** define operator overloads in structs that represent numbers.
 
@@ -26,7 +26,7 @@ Operator overloading is useful in cases in which it is immediately obvious what 
 
 **✔️ DO** overload operators in a symmetric fashion.
 
-For example, if you overload the operator==, you should also overload the operator!=. Similarly, if you overload the operator<, you should also overload the operator>, and so on.
+For example, if you overload the operator ==, you should also overload the operator !=. Similarly, if you overload the operator<, you should also overload the operator>, and so on.
 
 **✔️ CONSIDER** providing methods with friendly names that correspond to each overloaded operator.
 

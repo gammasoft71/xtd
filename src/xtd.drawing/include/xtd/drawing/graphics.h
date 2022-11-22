@@ -71,7 +71,7 @@ namespace xtd {
     public:
       /// @cond
       graphics(const graphics& value);
-      graphics& operator=(const graphics& value);
+      graphics& operator =(const graphics& value);
       ~graphics();
       /// @endcond
       

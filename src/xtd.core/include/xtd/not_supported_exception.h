@@ -76,7 +76,7 @@ namespace xtd {
     
     /// @cond
     not_supported_exception(const not_supported_exception&) = default;
-    not_supported_exception& operator=(const not_supported_exception&) = default;
+    not_supported_exception& operator =(const not_supported_exception&) = default;
     /// @endcond
     
   private:

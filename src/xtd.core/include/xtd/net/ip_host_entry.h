@@ -32,7 +32,7 @@ namespace xtd {
       /// @cond
       ip_host_entry(ip_host_entry&& ip_host_entry) = default;
       ip_host_entry(const ip_host_entry& ip_host_entry) = default;
-      ip_host_entry& operator=(const ip_host_entry&) = default;
+      ip_host_entry& operator =(const ip_host_entry&) = default;
       /// @endcond
       
       /// @name Properties

@@ -82,9 +82,9 @@ namespace xtd {
         
         /// @cond
         radial_gradient_brush(const radial_gradient_brush& value);
-        radial_gradient_brush& operator=(const radial_gradient_brush& value);
-        bool operator==(const radial_gradient_brush& value) const {return data_ == value.data_;}
-        bool operator!=(const radial_gradient_brush& value) const {return !operator==(value);}
+        radial_gradient_brush& operator =(const radial_gradient_brush& value);
+        bool operator ==(const radial_gradient_brush& value) const {return data_ == value.data_;}
+        bool operator !=(const radial_gradient_brush& value) const {return !operator ==(value);}
         /// @endcond
         
         /// @name Properties

@@ -70,7 +70,7 @@ namespace xtd {
       
       /// @cond
       rectangle(const rectangle&) noexcept = default;
-      rectangle& operator=(const rectangle&) noexcept = default;
+      rectangle& operator =(const rectangle&) noexcept = default;
       operator rectangle_f() const noexcept;
       /// @endcond
       
@@ -296,11 +296,11 @@ namespace xtd {
       /// @brief Tests whether two xtd::drawing::rectangle structures have equal location and size.
       /// @param value The xtd::drawing::rectangle structure that is to the right of the equality operator.
       /// @return This operator returns true if the two xtd::drawing::rectangle structures have equal xtd::drawing::rectangle::x, xtd::drawing::rectangle::y, xtd::drawing::rectangle::width, and xtd::drawing::rectangle::height properties.
-      bool operator==(const rectangle& value) const noexcept;
+      bool operator ==(const rectangle& value) const noexcept;
       /// @brief Tests whether two xtd::drawing::rectangle structures differ in location or size.
       /// @param value The xtd::drawing::rectangle structure that is to the right of the inequality operator.
       /// @return This operator returns true if any of the xtd::drawing::rectangle::x, xtd::drawing::rectangle::y, xtd::drawing::rectangle::width or xtd::drawing::rectangle::height properties of the two xtd::drawing::rectangle structures are unequal; otherwise false.
-      bool operator!=(const rectangle& value) const noexcept;
+      bool operator !=(const rectangle& value) const noexcept;
       /// @}
       
     private:

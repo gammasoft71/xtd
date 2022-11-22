@@ -108,7 +108,7 @@ style_sheet::style_sheet(const style_sheet& value) {
   *data_ = *value.data_;
 }
 
-style_sheet& style_sheet::operator=(const style_sheet& value) {
+style_sheet& style_sheet::operator =(const style_sheet& value) {
   // memberwise clone...
   *data_ = *value.data_;
   return *this;

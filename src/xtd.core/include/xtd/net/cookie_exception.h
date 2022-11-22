@@ -78,7 +78,7 @@ namespace xtd {
       
       /// @cond
       cookie_exception(const cookie_exception&) = default;
-      cookie_exception& operator=(const cookie_exception&) = default;
+      cookie_exception& operator =(const cookie_exception&) = default;
       /// @endcond
       
     private:

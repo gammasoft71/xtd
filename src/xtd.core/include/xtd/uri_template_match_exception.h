@@ -73,7 +73,7 @@ namespace xtd {
     
     /// @cond
     uri_template_match_exception(const uri_template_match_exception&) = default;
-    uri_template_match_exception& operator=(const uri_template_match_exception&) = default;
+    uri_template_match_exception& operator =(const uri_template_match_exception&) = default;
     /// @endcond
     
   private:

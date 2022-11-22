@@ -52,10 +52,10 @@ namespace xtd {
       
       /// @cond
       region(const region& value) = default;
-      region& operator=(const region& value) = default;
+      region& operator =(const region& value) = default;
       ~region();
-      bool operator==(const region& value) const;
-      bool operator!=(const region& value) const;
+      bool operator ==(const region& value) const;
+      bool operator !=(const region& value) const;
       /// @endcond
       
       /// @name Properties

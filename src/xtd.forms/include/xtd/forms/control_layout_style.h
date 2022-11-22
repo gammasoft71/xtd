@@ -87,8 +87,8 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override {return ustring::format("control_layout_style=[expanded={}, align={}, size_type={}]", expanded_, align_, size_type_);}
       
       /// @cond
-      bool operator==(const control_layout_style& value) const {return size_type_ == value.size_type_ && expanded_ == value.expanded_;}
-      bool operator!=(const control_layout_style& value) const {return !operator==(value);}
+      bool operator ==(const control_layout_style& value) const {return size_type_ == value.size_type_ && expanded_ == value.expanded_;}
+      bool operator !=(const control_layout_style& value) const {return !operator ==(value);}
       friend std::ostream& operator<<(std::ostream& os, const xtd::forms::control_layout_style& control_layout_style) noexcept {
         return os << control_layout_style.to_string();
       }

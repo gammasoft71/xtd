@@ -227,303 +227,303 @@ ustring::ustring(initializer_list<wchar_t> il, const allocator_type& allocator) 
   *this = convert_string::to_ustring(wstring(il));
 }
 
-ustring& ustring::operator=(const ustring& str) {
+ustring& ustring::operator =(const ustring& str) {
   assign(str);
   return *this;
 }
 
-ustring& ustring::operator=(const std::string& str) {
+ustring& ustring::operator =(const std::string& str) {
   assign(str.c_str());
   return *this;
 }
 
-ustring& ustring::operator=(const value_type* str) {
+ustring& ustring::operator =(const value_type* str) {
   assign(str);
   return *this;
 }
 
-ustring& ustring::operator=(const std::u8string& str) {
+ustring& ustring::operator =(const std::u8string& str) {
   assign(reinterpret_cast<const value_type*>(str.c_str()));
   return *this;
 }
 
-ustring& ustring::operator=(const char8_t* str) {
+ustring& ustring::operator =(const char8_t* str) {
   assign(reinterpret_cast<const value_type*>(str));
   return *this;
 }
 
-ustring& ustring::operator=(const std::u16string& str) {
+ustring& ustring::operator =(const std::u16string& str) {
   clear();
   *this = convert_string::to_ustring(str);
   return *this;
 }
 
-ustring& ustring::operator=(const char16_t* str) {
-  return operator=(u16string(str));
+ustring& ustring::operator =(const char16_t* str) {
+  return operator =(u16string(str));
 }
 
-ustring& ustring::operator=(const std::u32string& str) {
+ustring& ustring::operator =(const std::u32string& str) {
   clear();
   *this = convert_string::to_ustring(str);
   return *this;
 }
 
-ustring& ustring::operator=(const char32_t* str) {
-  return operator=(u32string(str));
+ustring& ustring::operator =(const char32_t* str) {
+  return operator =(u32string(str));
 }
 
-ustring& ustring::operator=(const std::wstring& str) {
+ustring& ustring::operator =(const std::wstring& str) {
   clear();
   *this = convert_string::to_ustring(str);
   return *this;
 }
 
-ustring& ustring::operator=(const wchar_t* str) {
-  return operator=(wstring(str));
+ustring& ustring::operator =(const wchar_t* str) {
+  return operator =(wstring(str));
 }
 
-ustring& ustring::operator=(ustring&& str) noexcept {
-  std::basic_string<value_type>::operator=(str);
+ustring& ustring::operator =(ustring&& str) noexcept {
+  std::basic_string<value_type>::operator =(str);
   return *this;
 }
 
-ustring& ustring::operator=(value_type character) {
+ustring& ustring::operator =(value_type character) {
   *this = ustring(1, character);
   return  *this;
 }
 
-ustring& ustring::operator=(char8_t character) {
+ustring& ustring::operator =(char8_t character) {
   *this = ustring(1, character);
   return  *this;
 }
 
-ustring& ustring::operator=(char16_t character) {
+ustring& ustring::operator =(char16_t character) {
   *this = ustring(1, character);
   return  *this;
 }
 
-ustring& ustring::operator=(char32_t character) {
+ustring& ustring::operator =(char32_t character) {
   *this = ustring(1, character);
   return  *this;
 }
 
-ustring& ustring::operator=(wchar_t character) {
+ustring& ustring::operator =(wchar_t character) {
   *this = ustring(1, character);
   return  *this;
 }
 
-ustring& ustring::operator=(const std::initializer_list<value_type>& il) {
+ustring& ustring::operator =(const std::initializer_list<value_type>& il) {
   assign(il);
   return *this;
 }
 
-ustring& ustring::operator=(const std::initializer_list<char8_t>& il) {
+ustring& ustring::operator =(const std::initializer_list<char8_t>& il) {
   for (auto c : il)
     *this += static_cast<value_type>(c);
   return *this;
 }
 
-ustring& ustring::operator=(const std::initializer_list<char16_t>& il) {
+ustring& ustring::operator =(const std::initializer_list<char16_t>& il) {
   clear();
   *this = convert_string::to_ustring(u16string(il));
   return *this;
 }
 
-ustring& ustring::operator=(const std::initializer_list<char32_t>& il) {
+ustring& ustring::operator =(const std::initializer_list<char32_t>& il) {
   clear();
   *this = convert_string::to_ustring(u32string(il));
   return *this;
 }
 
-ustring& ustring::operator=(const std::initializer_list<wchar_t>& il) {
+ustring& ustring::operator =(const std::initializer_list<wchar_t>& il) {
   clear();
   *this = convert_string::to_ustring(wstring(il));
   return *this;
 }
 
-ustring& ustring::operator+=(const ustring& str) {
+ustring& ustring::operator +=(const ustring& str) {
   *this = *this + str;
   return *this;
 }
 
-ustring& ustring::operator+=(const std::string& str) {
+ustring& ustring::operator +=(const std::string& str) {
   *this = *this + str;
   return *this;
 }
 
-ustring& ustring::operator+=(const value_type* str) {
+ustring& ustring::operator +=(const value_type* str) {
   *this = *this + str;
   return *this;
 }
 
-ustring& ustring::operator+=(const std::u8string& str) {
+ustring& ustring::operator +=(const std::u8string& str) {
   *this = *this + str;
   return *this;
 }
 
-ustring& ustring::operator+=(const char8_t* str) {
+ustring& ustring::operator +=(const char8_t* str) {
   *this = *this + str;
   return *this;
 }
 
-ustring& ustring::operator+=(const std::u16string& str) {
+ustring& ustring::operator +=(const std::u16string& str) {
   *this = *this + str;
   return *this;
 }
 
-ustring& ustring::operator+=(const char16_t* str) {
+ustring& ustring::operator +=(const char16_t* str) {
   *this = *this + str;
   return *this;
 }
 
-ustring& ustring::operator+=(const std::u32string& str) {
+ustring& ustring::operator +=(const std::u32string& str) {
   *this = *this + str;
   return *this;
 }
 
-ustring& ustring::operator+=(const char32_t* str) {
+ustring& ustring::operator +=(const char32_t* str) {
   *this = *this + str;
   return *this;
 }
 
-ustring& ustring::operator+=(const std::wstring& str) {
+ustring& ustring::operator +=(const std::wstring& str) {
   *this = *this + str;
   return *this;
 }
 
-ustring& ustring::operator+=(const wchar_t* str) {
+ustring& ustring::operator +=(const wchar_t* str) {
   *this = *this + str;
   return *this;
 }
 
-ustring& ustring::operator+=(value_type character) {
+ustring& ustring::operator +=(value_type character) {
   *this = *this + character;
   return *this;
 }
 
-ustring& ustring::operator+=(char8_t character) {
+ustring& ustring::operator +=(char8_t character) {
   *this = *this + character;
   return *this;
 }
 
-ustring& ustring::operator+=(char16_t character) {
+ustring& ustring::operator +=(char16_t character) {
   *this = *this + character;
   return *this;
 }
 
-ustring& ustring::operator+=(char32_t character) {
+ustring& ustring::operator +=(char32_t character) {
   *this = *this + character;
   return *this;
 }
 
-ustring& ustring::operator+=(wchar_t character) {
+ustring& ustring::operator +=(wchar_t character) {
   *this = *this + character;
   return *this;
 }
 
-ustring& ustring::operator+=(const std::initializer_list<value_type>& il) {
+ustring& ustring::operator +=(const std::initializer_list<value_type>& il) {
   *this = *this + il;
   return *this;
 }
 
-ustring& ustring::operator+=(const std::initializer_list<char8_t>& il) {
+ustring& ustring::operator +=(const std::initializer_list<char8_t>& il) {
   *this = *this + il;
   return *this;
 }
 
-ustring& ustring::operator+=(const std::initializer_list<char16_t>& il) {
+ustring& ustring::operator +=(const std::initializer_list<char16_t>& il) {
   *this = *this + il;
   return *this;
 }
 
-ustring& ustring::operator+=(const std::initializer_list<char32_t>& il) {
+ustring& ustring::operator +=(const std::initializer_list<char32_t>& il) {
   *this = *this + il;
   return *this;
 }
 
-ustring& ustring::operator+=(const std::initializer_list<wchar_t>& il) {
+ustring& ustring::operator +=(const std::initializer_list<wchar_t>& il) {
   *this = *this + il;
   return *this;
 }
 
-bool ustring::operator==(const ustring& other) const {
+bool ustring::operator ==(const ustring& other) const {
   return std::basic_string<value_type>(*this) == std::basic_string<value_type>(other);
 }
 
-bool ustring::operator!=(const ustring& other) const {
-  return !operator==(other);
+bool ustring::operator !=(const ustring& other) const {
+  return !operator ==(other);
 }
 
-bool ustring::operator==(const std::string& other) const {
+bool ustring::operator ==(const std::string& other) const {
   return *this == ustring(other);
 }
 
-bool ustring::operator!=(const std::string& other) const {
-  return !operator==(other);
+bool ustring::operator !=(const std::string& other) const {
+  return !operator ==(other);
 }
 
-bool ustring::operator==(const value_type* other) const {
+bool ustring::operator ==(const value_type* other) const {
   return std::basic_string<value_type>(*this) == other;
 }
 
-bool ustring::operator!=(const value_type* other) const {
-  return !operator==(other);
+bool ustring::operator !=(const value_type* other) const {
+  return !operator ==(other);
 }
 
-bool ustring::operator==(const char8_t* other) const {
+bool ustring::operator ==(const char8_t* other) const {
   return *this == ustring(other);
 }
 
-bool ustring::operator!=(const char8_t* other) const {
-  return !operator==(other);
+bool ustring::operator !=(const char8_t* other) const {
+  return !operator ==(other);
 }
 
-bool ustring::operator==(const std::u16string& other) const {
+bool ustring::operator ==(const std::u16string& other) const {
   return *this == ustring(other);
 }
 
-bool ustring::operator!=(const std::u16string& other) const {
-  return !operator==(other);
+bool ustring::operator !=(const std::u16string& other) const {
+  return !operator ==(other);
 }
 
-bool ustring::operator==(const char16_t* other) const {
+bool ustring::operator ==(const char16_t* other) const {
   return *this == ustring(other);
 }
 
-bool ustring::operator!=(const char16_t* other) const {
-  return !operator==(other);
+bool ustring::operator !=(const char16_t* other) const {
+  return !operator ==(other);
 }
 
-bool ustring::operator==(const std::u32string& other) const {
+bool ustring::operator ==(const std::u32string& other) const {
   return *this == ustring(other);
 }
 
-bool ustring::operator!=(const std::u32string& other) const {
-  return !operator==(other);
+bool ustring::operator !=(const std::u32string& other) const {
+  return !operator ==(other);
 }
 
-bool ustring::operator==(const char32_t* other) const {
+bool ustring::operator ==(const char32_t* other) const {
   return *this == ustring(other);
 }
 
-bool ustring::operator!=(const char32_t* other) const {
-  return !operator==(other);
+bool ustring::operator !=(const char32_t* other) const {
+  return !operator ==(other);
 }
 
-bool ustring::operator==(const std::wstring& other) const {
+bool ustring::operator ==(const std::wstring& other) const {
   return *this == ustring(other);
 }
 
-bool ustring::operator!=(const std::wstring& other) const {
-  return !operator==(other);
+bool ustring::operator !=(const std::wstring& other) const {
+  return !operator ==(other);
 }
 
-bool ustring::operator==(const wchar_t* other) const {
+bool ustring::operator ==(const wchar_t* other) const {
   return *this == ustring(other);
 }
 
-bool ustring::operator!=(const wchar_t* other) const {
-  return !operator==(other);
+bool ustring::operator !=(const wchar_t* other) const {
+  return !operator ==(other);
 }
 
 const ustring::value_type& ustring::operator[](size_t index) {

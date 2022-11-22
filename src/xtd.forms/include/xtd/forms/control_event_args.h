@@ -24,7 +24,7 @@ namespace xtd {
     public:
       /// @cond
       control_event_args(control_event_args& control_event_args) = default;
-      control_event_args& operator=(control_event_args& control_event_args) = default;
+      control_event_args& operator =(control_event_args& control_event_args) = default;
       /// @endcond
       
       /// @name Constructors

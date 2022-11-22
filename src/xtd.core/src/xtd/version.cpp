@@ -26,12 +26,12 @@ version::version(int32_t major, int32_t minor, int32_t build, int32_t revision) 
   if (major < 0 || minor < 0 || build < 0 || revision < 0) throw argument_out_of_range_exception(csf_);
 }
 
-bool version::operator==(const version& v) const noexcept {
+bool version::operator ==(const version& v) const noexcept {
   return major_ == v.major_ && minor_ == v.minor_ && build_ == v.build_ && revision_ == v.revision_;
 }
 
-bool version::operator!=(const version& v) const noexcept {
-  return !operator==(v);
+bool version::operator !=(const version& v) const noexcept {
+  return !operator ==(v);
 }
 
 int32_t version::build() const noexcept {

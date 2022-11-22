@@ -59,9 +59,9 @@ namespace xtd {
       ~font_family();
       font_family(const font_family& value);
       font_family() = default;
-      font_family& operator=(const font_family& value);
-      bool operator==(const font_family& value) const {return data_->name_ == value.data_->name_;}
-      bool operator!=(const font_family& value) const {return !operator==(value);}
+      font_family& operator =(const font_family& value);
+      bool operator ==(const font_family& value) const {return data_->name_ == value.data_->name_;}
+      bool operator !=(const font_family& value) const {return !operator ==(value);}
       /// @endcond
       
       /// @name Properties

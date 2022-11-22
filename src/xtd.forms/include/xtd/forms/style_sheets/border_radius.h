@@ -57,7 +57,7 @@ namespace xtd {
         
         /// @cond
         border_radius(const border_radius&) = default;
-        border_radius& operator=(const border_radius&) = default;
+        border_radius& operator =(const border_radius&) = default;
         /// @endcond
         
         /// @name Peorperties

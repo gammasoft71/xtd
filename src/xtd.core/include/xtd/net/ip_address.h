@@ -91,7 +91,7 @@ namespace xtd {
       /// @cond
       ip_address(ip_address&& ip_address) = default;
       ip_address(const ip_address& ip_address) = default;
-      ip_address& operator=(const ip_address&) = default;
+      ip_address& operator =(const ip_address&) = default;
       /// @endcond
       
       /// @name Properties

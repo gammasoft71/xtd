@@ -37,16 +37,16 @@ namespace xtd {
           value_type(value_type&&) = default;
           template <typename ...args_t>
           value_type(args_t&& ...args) : type_t(args...) {}
-          value_type& operator=(const value_type& value) {
+          value_type& operator =(const value_type& value) {
             if (value.owner) owner = value.owner;
             if (owner != nullptr && !owner->inserting_ && !owner->erasing_) owner->item_updated(pos, static_cast<type_t&>(const_cast<value_type&>(value)));
-            type_t::operator=(value);
+            type_t::operator =(value);
             return *this;
           }
-          value_type& operator=(value_type&& value) {
+          value_type& operator =(value_type&& value) {
             if (value.owner) owner = value.owner;
             if (owner != nullptr && !owner->inserting_ && !owner->erasing_) owner->item_updated(pos, static_cast<type_t&>(value));
-            type_t::operator=(value);
+            type_t::operator =(value);
             return *this;
           }
           operator type_t() {return *this;}
@@ -114,14 +114,14 @@ namespace xtd {
             push_back(item);
         }
         arranged_element_collection(const arranged_element_collection& collection) {push_back_range(collection);}
-        arranged_element_collection& operator=(const arranged_element_collection& collection) {
+        arranged_element_collection& operator =(const arranged_element_collection& collection) {
           clear();
           push_back_range(collection);
           return *this;
         }
         arranged_element_collection(arranged_element_collection&&) = default;
-        bool operator==(const arranged_element_collection& value) const {return collection_ == value.collection_;}
-        bool operator!=(const arranged_element_collection& value) const {return !operator==(value);}
+        bool operator ==(const arranged_element_collection& value) const {return collection_ == value.collection_;}
+        bool operator !=(const arranged_element_collection& value) const {return !operator ==(value);}
         /// @endcond
         
         /// @name Methods

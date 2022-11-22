@@ -49,7 +49,7 @@ namespace xtd {
       /// @}
       /// @cond
       binary_writer(const binary_writer&) = delete;
-      binary_writer& operator=(const binary_writer&) = delete;
+      binary_writer& operator =(const binary_writer&) = delete;
       ~binary_writer();
       /// @endcond
       

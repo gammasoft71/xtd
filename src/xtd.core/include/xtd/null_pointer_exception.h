@@ -76,7 +76,7 @@ namespace xtd {
     
     /// @cond
     null_pointer_exception(const null_pointer_exception&) = default;
-    null_pointer_exception& operator=(const null_pointer_exception&) = default;
+    null_pointer_exception& operator =(const null_pointer_exception&) = default;
     /// @endcond
     
   private:

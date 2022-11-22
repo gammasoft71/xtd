@@ -28,12 +28,12 @@ graphics_path::~graphics_path() {
   }
 }
 
-bool graphics_path::operator==(const graphics_path& value) const {
+bool graphics_path::operator ==(const graphics_path& value) const {
   return data_ == value.data_;
 }
 
-bool graphics_path::operator!=(const graphics_path& value) const {
-  return !operator==(value);
+bool graphics_path::operator !=(const graphics_path& value) const {
+  return !operator ==(value);
 }
 
 intptr_t graphics_path::handle() const noexcept {

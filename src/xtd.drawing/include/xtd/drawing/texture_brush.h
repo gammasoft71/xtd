@@ -35,9 +35,9 @@ namespace xtd {
       
       /// @cond
       texture_brush(const texture_brush& value);
-      texture_brush& operator=(const texture_brush& value);
-      bool operator==(const texture_brush& value) const {return data_->image_ == value.data_->image_;}
-      bool operator!=(const texture_brush& value) const {return !operator==(value);}
+      texture_brush& operator =(const texture_brush& value);
+      bool operator ==(const texture_brush& value) const {return data_->image_ == value.data_->image_;}
+      bool operator !=(const texture_brush& value) const {return !operator ==(value);}
       /// @endcond
       
       /// @name Properties

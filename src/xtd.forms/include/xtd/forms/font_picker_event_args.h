@@ -25,7 +25,7 @@ namespace xtd {
     public:
       /// @cond
       font_picker_event_args(const font_picker_event_args& font_picker_event_args) = default;
-      font_picker_event_args& operator=(const font_picker_event_args& font_picker_event_args) = default;
+      font_picker_event_args& operator =(const font_picker_event_args& font_picker_event_args) = default;
       /// @endcond
       
       /// @name Constructors

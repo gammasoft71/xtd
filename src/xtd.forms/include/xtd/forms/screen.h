@@ -30,7 +30,7 @@ namespace xtd {
     public:
       /// @cond
       screen(const screen&) = default;
-      screen& operator=(const screen&) = default;
+      screen& operator =(const screen&) = default;
       /// @endcond
       
       /// @name Properties

@@ -24,7 +24,7 @@ namespace xtd {
     /// @cond
     attribute(const attribute&) = default;
     attribute(attribute&&) = default;
-    attribute& operator=(const attribute&) = default;
+    attribute& operator =(const attribute&) = default;
     /// @endcond
     
     /// @name Properties

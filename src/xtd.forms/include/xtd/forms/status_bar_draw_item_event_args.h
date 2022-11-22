@@ -22,7 +22,7 @@ namespace xtd {
     public:
       /// @cond
       status_bar_draw_item_event_args(const status_bar_draw_item_event_args&) = default;
-      status_bar_draw_item_event_args& operator=(const status_bar_draw_item_event_args&) = default;
+      status_bar_draw_item_event_args& operator =(const status_bar_draw_item_event_args&) = default;
       /// @endcond
       
       /// @name Constructors

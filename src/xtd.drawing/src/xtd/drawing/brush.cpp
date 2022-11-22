@@ -15,7 +15,7 @@ brush::brush(const brush& value) {
   data_ = value.data_;
 }
 
-brush& brush::operator=(const brush& value) {
+brush& brush::operator =(const brush& value) {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::brush::destroy(data_->handle_);
   data_ = value.data_;
   return *this;

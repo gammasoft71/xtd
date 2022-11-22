@@ -57,7 +57,7 @@ namespace xtd {
         
         /// @cond
         border_style(const border_style&) = default;
-        border_style& operator=(const border_style&) = default;
+        border_style& operator =(const border_style&) = default;
         /// @endcond
         
         /// @name Peorperties

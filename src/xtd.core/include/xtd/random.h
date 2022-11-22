@@ -54,7 +54,7 @@ namespace xtd {
     /// @cond
     random(random&&) = default;
     random(const random&) = default;
-    random& operator=(const random&) = default;
+    random& operator =(const random&) = default;
     /// @endcond
     
     /// @name Properties

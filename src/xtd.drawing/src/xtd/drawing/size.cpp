@@ -11,29 +11,29 @@ size::size(const point& point) noexcept : width_(point.x()), height_(point.y()) 
 size::size(int32_t width, int32_t height) noexcept : width_(width), height_(height) {
 }
 
-bool size::operator==(const xtd::drawing::size& value) const noexcept {
+bool size::operator ==(const xtd::drawing::size& value) const noexcept {
   return width_ == value.width_ && height_ == value.height_;
 }
 
-bool size::operator!=(const xtd::drawing::size& value) const noexcept {
-  return !operator==(value);
+bool size::operator !=(const xtd::drawing::size& value) const noexcept {
+  return !operator ==(value);
 }
 
-size size::operator+(const size& size) const noexcept {
+size size::operator +(const size& size) const noexcept {
   return {width_ + size.width_, height_ + size.height_};
 }
 
-size size::operator-(const size& size) const noexcept {
+size size::operator -(const size& size) const noexcept {
   return {width_ - size.width_, height_ - size.height_};
 }
 
-size& size::operator+=(const size& size) noexcept {
+size& size::operator +=(const size& size) noexcept {
   width_ += size.width_;
   height_ += size.height_;
   return *this;
 }
 
-size& size::operator-=(const size& size) noexcept {
+size& size::operator -=(const size& size) noexcept {
   width_ -= size.width_;
   height_ -= size.height_;
   return *this;

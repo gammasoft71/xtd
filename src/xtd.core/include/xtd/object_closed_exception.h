@@ -76,7 +76,7 @@ namespace xtd {
     
     /// @cond
     object_closed_exception(const object_closed_exception&) = default;
-    object_closed_exception& operator=(const object_closed_exception&) = default;
+    object_closed_exception& operator =(const object_closed_exception&) = default;
     /// @endcond
     
   private:

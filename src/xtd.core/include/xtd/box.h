@@ -33,7 +33,7 @@ namespace xtd {
   /// @remarks You can use xtd::box to represent a class or structure that does not inherit from xtd::object. Typically used for integral types.
   /// @remarks Use xtd::boxing to box an object.
   /// @remarks Use xtd::unboxing to unbox an object.
-  /// @remarks The boxed object must implement operator== and operator< because a xtd::box implement xtd::icomparable and xtd::iequatable interfaces.
+  /// @remarks The boxed object must implement operator == and operator< because a xtd::box implement xtd::icomparable and xtd::iequatable interfaces.
   /// @par Examples
   /// The following example shows how to create and use xtd::box<bool>.
   /// @code
@@ -63,8 +63,8 @@ namespace xtd {
     /// @cond
     box(const box&) = default;
     box(box&&) = default;
-    box& operator=(const box&) = default;
-    box& operator=(const type_t& value) {
+    box& operator =(const box&) = default;
+    box& operator =(const type_t& value) {
       value_ = value;
       return *this;
     };
@@ -158,7 +158,7 @@ namespace xtd {
     box_integer(const type_t& value) : box<type_t>(value) {}
     box_integer(const box_integer&) = default;
     box_integer(box_integer&&) = default;
-    box_integer& operator=(const box_integer&) = default;
+    box_integer& operator =(const box_integer&) = default;
     /// @endcond
     
     /// @brief Represents the largest possible value of type_t. This field is constant.
@@ -200,7 +200,7 @@ namespace xtd {
     box_char(const type_t& value) : box_integer<type_t>(value) {}
     box_char(const box_char&) = default;
     box_char(box_char&&) = default;
-    box_char& operator=(const box_char&) = default;
+    box_char& operator =(const box_char&) = default;
     /// @endcond
     
     /// @brief Returns true if c is an ASCII character ([ U+0000..U+007F ]).
@@ -390,7 +390,7 @@ namespace xtd {
     box_floating_point(const type_t& value) : box_integer<type_t>(value) {}
     box_floating_point(const box_floating_point&) = default;
     box_floating_point(box_floating_point&&) = default;
-    box_floating_point& operator=(const box_floating_point&) = default;
+    box_floating_point& operator =(const box_floating_point&) = default;
     /// @endcond
     
     /// @brief Represents the smallest positive type_t value greater than zero. This field is constant.
@@ -761,7 +761,7 @@ namespace xtd {
   /// @brief Allows to box an object
   /// @param value Value used to initialize object.
   /// @return Boxed object.
-  /// @remarks The boxed object must implement operator== and operator< because a xtd::box implement xtd::icomparable and xtd::iequatable interfaces.
+  /// @remarks The boxed object must implement operator == and operator< because a xtd::box implement xtd::icomparable and xtd::iequatable interfaces.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -772,7 +772,7 @@ namespace xtd {
   /// @brief Allows to box an object
   /// @param ...args  Params used to initialize object.
   /// @return Boxed object.
-  /// @remarks The boxed object must implement operator== and operator< because a xtd::box implement xtd::icomparable and xtd::iequatable interfaces.
+  /// @remarks The boxed object must implement operator == and operator< because a xtd::box implement xtd::icomparable and xtd::iequatable interfaces.
   /// @par Namespace
   /// xtd
   /// @par Library

@@ -42,7 +42,7 @@ namespace xtd {
         /// @cond
         ip_packet_information(ip_packet_information&&) = default;
         ip_packet_information(const ip_packet_information&) = default;
-        ip_packet_information& operator=(const ip_packet_information&) = default;
+        ip_packet_information& operator =(const ip_packet_information&) = default;
         /// @endcond
         
         /// @name Properties

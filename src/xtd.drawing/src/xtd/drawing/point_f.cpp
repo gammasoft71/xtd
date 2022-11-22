@@ -79,74 +79,74 @@ xtd::ustring point_f::to_string() const noexcept {
   return "{x=" + std::to_string(x_) + ", y=" + std::to_string(y_) + "}";
 }
 
-point_f point_f::operator+(const size& sz) const noexcept {
+point_f point_f::operator +(const size& sz) const noexcept {
   return add(*this, sz);
 }
 
-point_f point_f::operator+(const size_f& sz) const noexcept {
+point_f point_f::operator +(const size_f& sz) const noexcept {
   return add(*this, sz);
 }
 
-point_f point_f::operator+(const point& pt) const noexcept {
+point_f point_f::operator +(const point& pt) const noexcept {
   return add(*this, pt);
 }
 
-point_f point_f::operator+(const point_f& pt) const noexcept {
+point_f point_f::operator +(const point_f& pt) const noexcept {
   return add(*this, pt);
 }
 
-point_f& point_f::operator+=(const size& sz) noexcept {
+point_f& point_f::operator +=(const size& sz) noexcept {
   *this = add(*this, sz);
   return *this;
 }
 
-point_f& point_f::operator+=(const size_f& sz) noexcept {
+point_f& point_f::operator +=(const size_f& sz) noexcept {
   *this = add(*this, sz);
   return *this;
 }
 
-point_f& point_f::operator+=(const point& pt) noexcept {
+point_f& point_f::operator +=(const point& pt) noexcept {
   *this = add(*this, pt);
   return *this;
 }
 
-point_f& point_f::operator+=(const point_f& pt) noexcept {
+point_f& point_f::operator +=(const point_f& pt) noexcept {
   *this = add(*this, pt);
   return *this;
 }
 
-point_f point_f::operator-(const size& sz) const noexcept {
+point_f point_f::operator -(const size& sz) const noexcept {
   return subtract(*this, sz);
 }
 
-point_f point_f::operator-(const size_f& sz) const noexcept {
+point_f point_f::operator -(const size_f& sz) const noexcept {
   return subtract(*this, sz);
 }
 
-point_f point_f::operator-(const point& pt) const noexcept {
+point_f point_f::operator -(const point& pt) const noexcept {
   return subtract(*this, pt);
 }
 
-point_f point_f::operator-(const point_f& pt) const noexcept {
+point_f point_f::operator -(const point_f& pt) const noexcept {
   return subtract(*this, pt);
 }
 
-point_f& point_f::operator-=(const size& sz) noexcept {
+point_f& point_f::operator -=(const size& sz) noexcept {
   *this = subtract(*this, sz);
   return *this;
 }
 
-point_f& point_f::operator-=(const size_f& sz) noexcept {
+point_f& point_f::operator -=(const size_f& sz) noexcept {
   *this = subtract(*this, sz);
   return *this;
 }
 
-point_f& point_f::operator-=(const point& pt) noexcept {
+point_f& point_f::operator -=(const point& pt) noexcept {
   *this = subtract(*this, pt);
   return *this;
 }
 
-point_f& point_f::operator-=(const point_f& pt) noexcept {
+point_f& point_f::operator -=(const point_f& pt) noexcept {
   *this = subtract(*this, pt);
   return *this;
 }

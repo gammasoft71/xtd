@@ -76,7 +76,7 @@ namespace xtd {
     
     /// @cond
     overflow_exception(const overflow_exception&) = default;
-    overflow_exception& operator=(const overflow_exception&) = default;
+    overflow_exception& operator =(const overflow_exception&) = default;
     /// @endcond
     
   private:

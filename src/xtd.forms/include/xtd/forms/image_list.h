@@ -48,9 +48,9 @@ namespace xtd {
       /// @cond
       ~image_list();
       image_list(const image_list&) = default;
-      image_list& operator=(const image_list&) = default;
-      bool operator==(const image_list& value) const {return data_->images_ == value.data_->images_;}
-      bool operator!=(const image_list& value) const {return !operator==(value);}
+      image_list& operator =(const image_list&) = default;
+      bool operator ==(const image_list& value) const {return data_->images_ == value.data_->images_;}
+      bool operator !=(const image_list& value) const {return !operator ==(value);}
       /// @endcond
       
       /// @name Properties

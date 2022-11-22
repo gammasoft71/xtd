@@ -76,7 +76,7 @@ namespace xtd {
     
     /// @cond
     underflow_exception(const underflow_exception&) = default;
-    underflow_exception& operator=(const underflow_exception&) = default;
+    underflow_exception& operator =(const underflow_exception&) = default;
     /// @endcond
     
   private:

@@ -51,10 +51,10 @@ namespace xtd {
     public:
       /// @cond
       brush(const brush& value);
-      brush& operator=(const brush& value);
+      brush& operator =(const brush& value);
       ~brush();
-      bool operator==(const brush& value) const {return data_->handle_ == value.data_->handle_;}
-      bool operator!=(const brush& value) const {return !operator==(value);}
+      bool operator ==(const brush& value) const {return data_->handle_ == value.data_->handle_;}
+      bool operator !=(const brush& value) const {return !operator ==(value);}
       /// @endcond
       
       /// @name Properties

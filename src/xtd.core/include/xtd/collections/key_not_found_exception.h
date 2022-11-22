@@ -82,7 +82,7 @@ namespace xtd {
       
       /// @cond
       key_not_found_exception(const key_not_found_exception&) = default;
-      key_not_found_exception& operator=(const key_not_found_exception&) = default;
+      key_not_found_exception& operator =(const key_not_found_exception&) = default;
       /// @endcond
       
     private:

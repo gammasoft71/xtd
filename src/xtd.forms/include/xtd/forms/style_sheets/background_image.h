@@ -102,7 +102,7 @@ namespace xtd {
         background_image(const std::initializer_list<xtd::drawing::color>& colors);
         background_image(const background_image&) = default;
         background_image(background_image&&) = default;
-        background_image& operator=(const background_image&) = default;
+        background_image& operator =(const background_image&) = default;
         /// @endcond
         
         /// @name Properties

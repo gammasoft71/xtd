@@ -36,7 +36,7 @@ namespace xtd {
       
       /// @cond
       key_press_event_args(const key_press_event_args& key_press_event_args) = default;
-      key_press_event_args& operator=(const key_press_event_args& key_press_event_args) = default;
+      key_press_event_args& operator =(const key_press_event_args& key_press_event_args) = default;
       /// @endcond
       
       /// @name Properties

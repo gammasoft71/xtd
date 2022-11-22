@@ -64,7 +64,7 @@ public:
   }
 
   my_control(const my_control&) = default;
-  my_control& operator=(const my_control&) = default;
+  my_control& operator =(const my_control&) = default;
     
   void on_control_click(xtd::object& sender, const xtd::event_args& e) {
     (*internal_counter)++;
@@ -97,7 +97,7 @@ So in this case it would be enough to say that in the copy constructor, the [cli
     click += {*this, &my_control::on_control_click};    
   }
 
-  my_control& operator=(const my_control&) {
+  my_control& operator =(const my_control&) {
     *this = other;
     click += {*this, &my_control::on_control_click};
     return *this;    

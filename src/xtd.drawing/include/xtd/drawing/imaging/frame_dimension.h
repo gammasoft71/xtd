@@ -32,9 +32,9 @@ namespace xtd {
         
         /// @cond
         frame_dimension(const frame_dimension&) = default;
-        frame_dimension& operator=(const frame_dimension&) = default;
-        bool operator==(const frame_dimension& value) const {return guid_ == value.guid_;}
-        bool operator!=(const frame_dimension& value) const {return !operator==(value);}
+        frame_dimension& operator =(const frame_dimension&) = default;
+        bool operator ==(const frame_dimension& value) const {return guid_ == value.guid_;}
+        bool operator !=(const frame_dimension& value) const {return !operator ==(value);}
         /// @endcond
         
         /// @name Properties

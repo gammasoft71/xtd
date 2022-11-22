@@ -30,9 +30,9 @@ namespace xtd {
       public:
         /// @cond
         color_palette(const color_palette&) = default;
-        color_palette& operator=(const color_palette&) = default;
-        bool operator==(const color_palette& value) const {return entries_ == value.entries_ && flags_ == value.flags_;}
-        bool operator!=(const color_palette& value) const {return !operator==(value);}
+        color_palette& operator =(const color_palette&) = default;
+        bool operator ==(const color_palette& value) const {return entries_ == value.entries_ && flags_ == value.flags_;}
+        bool operator !=(const color_palette& value) const {return !operator ==(value);}
         /// @endcond
         
         /// @name Properties

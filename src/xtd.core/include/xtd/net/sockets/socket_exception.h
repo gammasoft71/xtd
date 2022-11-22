@@ -90,7 +90,7 @@ namespace xtd {
         
         /// @cond
         socket_exception(const socket_exception&) = default;
-        socket_exception& operator=(const socket_exception&) = default;
+        socket_exception& operator =(const socket_exception&) = default;
         /// @endcond
         
       private:

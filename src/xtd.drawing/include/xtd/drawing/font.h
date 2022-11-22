@@ -163,9 +163,9 @@ namespace xtd {
       
       /// @cond
       font(const font& value);
-      font& operator=(const font& value);
-      bool operator==(const font& value) const {return data_->font_family_ == value.data_->font_family_ && data_->gdi_char_set_ == value.data_->gdi_char_set_ && data_->gdi_vertical_font_ == value.data_->gdi_vertical_font_ && data_->style_ == value.data_->style_ && data_->size_ == value.data_->size_ && data_->unit_ == value.data_->unit_;}
-      bool operator!=(const font& value) const {return !operator==(value);}
+      font& operator =(const font& value);
+      bool operator ==(const font& value) const {return data_->font_family_ == value.data_->font_family_ && data_->gdi_char_set_ == value.data_->gdi_char_set_ && data_->gdi_vertical_font_ == value.data_->gdi_vertical_font_ && data_->style_ == value.data_->style_ && data_->size_ == value.data_->size_ && data_->unit_ == value.data_->unit_;}
+      bool operator !=(const font& value) const {return !operator ==(value);}
       ~font();
       /// @endcond
       

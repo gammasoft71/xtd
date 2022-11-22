@@ -133,8 +133,8 @@ namespace xtd {
       /// @}
       
       /// @cond
-      bool operator==(const cursor& value) const {return data_ == value.data_ || (!data_->name_.empty() && data_->name_ == value.data_->name_);}
-      bool operator!=(const cursor& value) const {return !operator==(value);}
+      bool operator ==(const cursor& value) const {return data_ == value.data_ || (!data_->name_.empty() && data_->name_ == value.data_->name_);}
+      bool operator !=(const cursor& value) const {return !operator ==(value);}
       /// @endcond
       
     private:

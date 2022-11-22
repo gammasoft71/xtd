@@ -27,7 +27,7 @@ namespace xtd {
       
       /// @cond
       ignore_error(const ignore_error&) = default;
-      ignore_error& operator=(const ignore_error&) = default;
+      ignore_error& operator =(const ignore_error&) = default;
       /// @endcond
       
       /// @brief Returns a string that represents the current ignore_error.

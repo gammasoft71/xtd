@@ -76,7 +76,7 @@ namespace xtd {
     
     /// @cond
     invalid_cast_exception(const invalid_cast_exception&) = default;
-    invalid_cast_exception& operator=(const invalid_cast_exception&) = default;
+    invalid_cast_exception& operator =(const invalid_cast_exception&) = default;
     /// @endcond
     
   private:

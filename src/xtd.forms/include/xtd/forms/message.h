@@ -27,7 +27,7 @@ namespace xtd {
       /// @cond
       message() = default;
       message(const message& message) = default;
-      message& operator=(const message&) = default;
+      message& operator =(const message&) = default;
       /// @endcond
       
       /// @name Properties

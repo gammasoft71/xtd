@@ -58,7 +58,7 @@ namespace xtd {
         /// @cond
         theme(const theme&) = default;
         theme(theme&&) = default;
-        theme& operator=(const theme&) = default;
+        theme& operator =(const theme&) = default;
         /// @endcond
         
         /// @name Properties

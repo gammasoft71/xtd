@@ -82,7 +82,7 @@ namespace xtd {
       /// @}
       /// @cond
       file_not_found_exception(const file_not_found_exception&) = default;
-      file_not_found_exception& operator=(const file_not_found_exception&) = default;
+      file_not_found_exception& operator =(const file_not_found_exception&) = default;
       /// @endcond
       
     private:

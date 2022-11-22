@@ -41,7 +41,7 @@ namespace xtd {
         /// @cond
         control(const control&) = default;
         control(control&&) = default;
-        control& operator=(const control&) = default;
+        control& operator =(const control&) = default;
         /// @endcond
         
         /// @name Properties

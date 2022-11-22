@@ -121,7 +121,7 @@ namespace xtd {
 
       /// @cond
       form_closed_event_args(const form_closed_event_args& form_closed_event_args) = default;
-      form_closed_event_args& operator=(const form_closed_event_args& form_closed_event_args) = default;
+      form_closed_event_args& operator =(const form_closed_event_args& form_closed_event_args) = default;
       /// @endcond
 
       forms::close_reason close_reason() const {return close_reason_;}
@@ -216,7 +216,7 @@ class my_control : public xtd::forms::control {
 public:
   my_control() = default;
   my_control(const my_control&) = default;
-  my_control& my_control& operator=(const my_control& my_control);
+  my_control& my_control& operator =(const my_control& my_control);
   
   const std::string base_name() const {return base_name_;}
   intptr_t handle() const {return handle_;}

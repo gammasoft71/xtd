@@ -200,7 +200,7 @@ namespace xtd {
       stack_trace(const std::exception& exception, bool need_file_info);
       /// @cond
       stack_trace(const stack_trace&) = default;
-      stack_trace& operator=(const stack_trace&) = default;
+      stack_trace& operator =(const stack_trace&) = default;
       /// @endcond
       /// @}
       

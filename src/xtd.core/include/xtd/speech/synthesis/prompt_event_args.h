@@ -37,7 +37,7 @@ namespace xtd {
         /// @cond
         prompt_event_args(const prompt_event_args&) = default;
         prompt_event_args(prompt_event_args&&) = default;
-        prompt_event_args& operator=(const prompt_event_args&) = default;
+        prompt_event_args& operator =(const prompt_event_args&) = default;
         /// @endcond
         
         /// @brief Gets a value indicating whether an asynchronous operation has been canceled.

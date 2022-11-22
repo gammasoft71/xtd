@@ -40,7 +40,7 @@ namespace xtd {
       /// @cond
       network_credential(network_credential&& network_credential) = default;
       network_credential(const network_credential& network_credential) = default;
-      network_credential& operator=(const network_credential&) = default;
+      network_credential& operator =(const network_credential&) = default;
       /// @endcond
       
       /// @name Properties

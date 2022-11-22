@@ -76,7 +76,7 @@ namespace xtd {
     
     /// @cond
     divided_by_zero_exception(const divided_by_zero_exception&) = default;
-    divided_by_zero_exception& operator=(const divided_by_zero_exception&) = default;
+    divided_by_zero_exception& operator =(const divided_by_zero_exception&) = default;
     /// @endcond
     
   private:

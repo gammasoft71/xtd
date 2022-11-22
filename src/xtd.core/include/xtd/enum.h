@@ -59,7 +59,7 @@ namespace xtd {
     enum_object(uint64_t value) : value_(to_enum(value)) {}
     enum_object(enum_object&&) noexcept = default;
     enum_object(const enum_object&) noexcept = default;
-    enum_object& operator=(const enum_object&) noexcept = default;
+    enum_object& operator =(const enum_object&) noexcept = default;
     operator enum_type() const noexcept {return value_;}
     /// @endcond
     

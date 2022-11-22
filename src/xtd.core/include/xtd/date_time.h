@@ -187,7 +187,7 @@ namespace xtd {
     /// @cond
     date_time(const date_time&) = default;
     date_time(date_time&&) = default;
-    date_time& operator=(const date_time&) = default;
+    date_time& operator =(const date_time&) = default;
     /// @endcond
     
     
@@ -1042,38 +1042,38 @@ namespace xtd {
     
     /// @cond
     operator xtd::time_span() const;
-    date_time& operator+=(const date_time& value);
-    date_time& operator-=(const date_time& value);
+    date_time& operator +=(const date_time& value);
+    date_time& operator -=(const date_time& value);
     template<typename rep_t, typename period_t>
-    date_time& operator+=(std::chrono::duration<rep_t, period_t> value) {
+    date_time& operator +=(std::chrono::duration<rep_t, period_t> value) {
       value_ += std::chrono::duration_cast<xtd::ticks>(value);
       return *this;
     }
     template<typename rep_t, typename period_t>
-    date_time& operator-=(std::chrono::duration<rep_t, period_t> value) {
+    date_time& operator -=(std::chrono::duration<rep_t, period_t> value) {
       value_ -= std::chrono::duration_cast<xtd::ticks>(value);
       return *this;
     }
-    date_time operator+();
-    date_time operator-();
-    date_time operator+(const date_time& value) const;
-    date_time operator-(const date_time& value) const;
+    date_time operator +();
+    date_time operator -();
+    date_time operator +(const date_time& value) const;
+    date_time operator -(const date_time& value) const;
     template<typename rep_t, typename period_t>
-    date_time operator+(std::chrono::duration<rep_t, period_t> value) const {
+    date_time operator +(std::chrono::duration<rep_t, period_t> value) const {
       date_time result = *this;
       result += value;
       return result;
     }
     template<typename rep_t, typename period_t>
-    date_time operator-(std::chrono::duration<rep_t, period_t> value) const {
+    date_time operator -(std::chrono::duration<rep_t, period_t> value) const {
       date_time result = *this;
       result -= value;
       return result;
     }
-    date_time& operator++();
-    date_time operator++(int);
-    date_time& operator--();
-    date_time operator--(int);
+    date_time& operator ++();
+    date_time operator ++(int);
+    date_time& operator --();
+    date_time operator --(int);
     /// @endcond
     
   private:

@@ -122,9 +122,9 @@ namespace xtd {
         udp_client(udp_client&&) = default;
         udp_client(const udp_client&) = default;
         ~udp_client();
-        udp_client& operator=(const udp_client&) = default;
-        bool operator==(const udp_client& s) const {return data_ == s.data_;};
-        bool operator!=(const udp_client& s) const {return !operator==(s);};
+        udp_client& operator =(const udp_client&) = default;
+        bool operator ==(const udp_client& s) const {return data_ == s.data_;};
+        bool operator !=(const udp_client& s) const {return !operator ==(s);};
         /// @endcond
         
         /// @name Properties

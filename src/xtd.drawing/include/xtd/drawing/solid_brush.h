@@ -38,9 +38,9 @@ namespace xtd {
       
       /// @cond
       solid_brush(const solid_brush& value);
-      solid_brush& operator=(const solid_brush& value);
-      bool operator==(const solid_brush& value) const {return data_->color_ == value.data_->color_;}
-      bool operator!=(const solid_brush& value) const {return !operator==(value);}
+      solid_brush& operator =(const solid_brush& value);
+      bool operator ==(const solid_brush& value) const {return data_->color_ == value.data_->color_;}
+      bool operator !=(const solid_brush& value) const {return !operator ==(value);}
       /// @endcond
       
       /// @name Properties

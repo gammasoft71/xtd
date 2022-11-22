@@ -90,7 +90,7 @@ namespace xtd {
     
     /// @cond
     system_exception(const system_exception&) = default;
-    system_exception& operator=(const system_exception&) = default;
+    system_exception& operator =(const system_exception&) = default;
     /// @endcond
     
     /// @name Properties

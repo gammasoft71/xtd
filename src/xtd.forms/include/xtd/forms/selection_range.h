@@ -22,7 +22,7 @@ namespace xtd {
       /// @cond
       selection_range(const selection_range&) = default;
       selection_range(selection_range&&) = default;
-      selection_range& operator=(const selection_range&) = default;
+      selection_range& operator =(const selection_range&) = default;
       /// @endcond
       
       

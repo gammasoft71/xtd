@@ -177,9 +177,9 @@ namespace xtd {
         socket(socket&&) = default;
         socket(const socket&) = default;
         ~socket();
-        socket& operator=(const socket&) = default;
-        bool operator==(const socket& s) const {return data_ == s.data_;};
-        bool operator!=(const socket& s) const {return !operator==(s);};
+        socket& operator =(const socket&) = default;
+        bool operator ==(const socket& s) const {return data_ == s.data_;};
+        bool operator !=(const socket& s) const {return !operator ==(s);};
         /// @endcond
         
         /// @name Properties

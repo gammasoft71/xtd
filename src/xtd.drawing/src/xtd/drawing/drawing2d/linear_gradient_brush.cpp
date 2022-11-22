@@ -137,8 +137,8 @@ void linear_gradient_brush::recreate_handle() {
 linear_gradient_brush::linear_gradient_brush(const linear_gradient_brush& value) : brush(value), data_(value.data_) {
 }
 
-linear_gradient_brush& linear_gradient_brush::operator=(const linear_gradient_brush& value) {
-  brush::operator=(value);
+linear_gradient_brush& linear_gradient_brush::operator =(const linear_gradient_brush& value) {
+  brush::operator =(value);
   data_ = value.data_;
   return *this;
 }

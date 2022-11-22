@@ -69,7 +69,7 @@ namespace xtd {
       transition_time() = default;
       transition_time(const transition_time&) = default;
       transition_time(transition_time&&) = default;
-      transition_time& operator=(const transition_time&) = default;
+      transition_time& operator =(const transition_time&) = default;
       /// @endcond
       
       /// @name Properties
@@ -209,7 +209,7 @@ namespace xtd {
       adjustement_rule() = default;
       adjustement_rule(const adjustement_rule&) = default;
       adjustement_rule(adjustement_rule&&) = default;
-      adjustement_rule& operator=(const adjustement_rule&) = default;
+      adjustement_rule& operator =(const adjustement_rule&) = default;
       /// @endcond
       
       /// @name Properties
@@ -249,7 +249,7 @@ namespace xtd {
     time_zone_info(const ustring& id, const ticks& base_utc_offset, const ustring& daylight_name, const ustring& display_name, const ustring& standard_name, bool supports_daylight_saving_time);
     time_zone_info(const time_zone_info&) = default;
     time_zone_info(time_zone_info&&) = default;
-    time_zone_info& operator=(const time_zone_info&) = default;
+    time_zone_info& operator =(const time_zone_info&) = default;
     /// @endcond
     
     /// @name Properties

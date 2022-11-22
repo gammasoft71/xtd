@@ -26,7 +26,7 @@ namespace xtd {
     public:
       /// @cond
       item_check_event_args(const item_check_event_args& item_check_event_args) = default;
-      item_check_event_args& operator=(const item_check_event_args& item_check_event_args) = default;
+      item_check_event_args& operator =(const item_check_event_args& item_check_event_args) = default;
       /// @endcond
       
       /// @name Constructors

@@ -32,7 +32,7 @@ namespace xtd {
         __unused_google_test_markers__();
       }
       test_class(const test_class&) = default;
-      test_class& operator=(const test_class&) = default;
+      test_class& operator =(const test_class&) = default;
       virtual ~test_class() = default;
       /// @endcond
       

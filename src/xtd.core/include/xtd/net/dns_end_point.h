@@ -41,7 +41,7 @@ namespace xtd {
       /// @cond
       dns_end_point(dns_end_point&&) = default;
       dns_end_point(const dns_end_point&) = default;
-      dns_end_point& operator=(const dns_end_point&) = default;
+      dns_end_point& operator =(const dns_end_point&) = default;
       /// @endcond
       
       /// @name Properties

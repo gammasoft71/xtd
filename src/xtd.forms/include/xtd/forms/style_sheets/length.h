@@ -97,7 +97,7 @@ namespace xtd {
         
         /// @cond
         length(const length&) = default;
-        length& operator=(const length&) = default;
+        length& operator =(const length&) = default;
         /// @endcond
         
         /// @name Peorperties

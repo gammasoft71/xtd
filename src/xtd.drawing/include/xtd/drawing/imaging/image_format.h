@@ -39,9 +39,9 @@ namespace xtd {
         
         /// @cond
         image_format(const image_format&) = default;
-        image_format& operator=(const image_format&) = default;
-        bool operator==(const image_format& value) const {return guid_ == value.guid_;}
-        bool operator!=(const image_format& value) const {return !operator==(value);}
+        image_format& operator =(const image_format&) = default;
+        bool operator ==(const image_format& value) const {return guid_ == value.guid_;}
+        bool operator !=(const image_format& value) const {return !operator ==(value);}
         bool operator<(const image_format& value) const {return guid_ < value.guid_;}
         bool operator<=(const image_format& value) const {return guid_ <= value.guid_;}
         bool operator>(const image_format& value) const {return guid_ > value.guid_;}

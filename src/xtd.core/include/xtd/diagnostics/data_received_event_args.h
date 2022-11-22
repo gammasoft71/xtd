@@ -35,7 +35,7 @@ namespace xtd {
       
       /// @cond
       data_received_event_args(const data_received_event_args&) = default;
-      data_received_event_args& operator=(const data_received_event_args&) = default;
+      data_received_event_args& operator =(const data_received_event_args&) = default;
       /// @endcond
       
       /// @}

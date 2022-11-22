@@ -29,9 +29,9 @@ namespace xtd {
       public:
         /// @cond
         graphics_state(const graphics_state& value);
-        graphics_state& operator=(const graphics_state& value);
-        bool operator==(const graphics_state& value) const {return handle_ == value.handle_;}
-        bool operator!=(const graphics_state& value) const {return !operator==(value);}
+        graphics_state& operator =(const graphics_state& value);
+        bool operator ==(const graphics_state& value) const {return handle_ == value.handle_;}
+        bool operator !=(const graphics_state& value) const {return !operator ==(value);}
         /// @endcond
         
       private:
