@@ -1,16 +1,21 @@
 | [Home](home.md) | [News](news.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Support](support.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# Table of content
-
-* [enum, enum class and enum struct](enum-enum-class-and-enum-struct)
-* [External libraries](external-libraries)
-* [xtd::enum_register](xtd-enum-register)
-* [xtd::enum_set_attribute](xtd-enum_set-attribute)
-* [Format](format)
-* [Parse](parse)
-* [helpers](helpers)
-
 # enum, enum class and enum struct
+
+## In This section
+
+* [Overview](#overview)
+* [External libraries](#external-libraries)
+* [xtd::enum_register](#xtd-enum-register)
+* [xtd::enum_set_attribute](#xtd-enum_set-attribute)
+* [Format](#format)
+* [Parse](#parse)
+* [helpers](#helpers)
+
+# Overview
+
+An enumeration is a distinct type whose value is restricted to a range of values (see below for details), which may include several explicitly named constants ("enumerators"). The values of the constants are values of an integral type known as the underlying type of the enumeration.
+For more information about c++ enumeration see [Enumeration declaration](https://en.cppreference.com/w/cpp/language/enum).
 
 `enum`, `enum class` and `enum struct` in c++11 have two problems:
 * Displaying in a string the name of the enum value either for debugging or simply to qualify some values as for example in [xtd::drawing::color::name](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1color.html#a0b74e93ea5582716bde7104b84177a77).
