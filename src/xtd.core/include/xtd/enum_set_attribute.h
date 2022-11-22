@@ -30,7 +30,7 @@ namespace xtd {
     /// @return One of xtd::enum_attribute values.
     /// @remarks To set attribute to an enumeration just override xtd::enum_set_attribute.
     /// @par Examples
-    /// The following code show how to set attribute to a values enum class.
+    /// The following code show how to set attribute to the value_flags enum class.
     /// @code
     /// enum class value_flags {
     ///   value_none = 0,
