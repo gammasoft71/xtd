@@ -69,9 +69,9 @@ namespace xtdc_gui {
     }
     
     static xtd::drawing::image get_picture(const xtd::ustring& name) {
-      auto picture_file_name = xtd::io::path::combine(xtd_share_path_, "resources", "pictures/examples", (name + "_" + get_os_postfix() + get_theme_postfix() + ".png"));
+      auto picture_file_name = xtd::io::path::combine({xtd_share_path_, "resources", "pictures", "examples", (name + "_" + get_os_postfix() + get_theme_postfix() + ".png")});
       if (xtd::io::file::exists(picture_file_name)) return xtd::drawing::bitmap(picture_file_name);
-      picture_file_name = xtd::io::path::combine(xtd_share_path_, "resources", "pictures/examples", (name + "_" + get_os_postfix() + ".png"));
+      picture_file_name = xtd::io::path::combine({xtd_share_path_, "resources", "pictures", "examples", (name + "_" + get_os_postfix() + ".png")});
       if (xtd::io::file::exists(picture_file_name)) return xtd::drawing::bitmap(picture_file_name);
       //return xtd::drawing::bitmap(noimage_picture);
       return xtd::drawing::bitmap(400, 250);
