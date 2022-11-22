@@ -1,4 +1,5 @@
 #pragma once
+#include <type_traits>
 
 namespace xtdc_gui {
   enum class project_type {
@@ -12,16 +13,16 @@ namespace xtdc_gui {
   };
   
   /// @cond
-  inline project_type& operator +=(project_type& lhs, project_type rhs) {lhs = static_cast<project_type>(static_cast<long long>(lhs) + static_cast<long long>(rhs)); return lhs;}
-  inline project_type& operator -=(project_type& lhs, project_type rhs) {lhs = static_cast<project_type>(static_cast<long long>(lhs) - static_cast<long long>(rhs)); return lhs;}
-  inline project_type& operator &=(project_type& lhs, project_type rhs) {lhs = static_cast<project_type>(static_cast<long long>(lhs) & static_cast<long long>(rhs)); return lhs;}
-  inline project_type& operator |=(project_type& lhs, project_type rhs) {lhs = static_cast<project_type>(static_cast<long long>(lhs) | static_cast<long long>(rhs)); return lhs;}
-  inline project_type& operator ^=(project_type& lhs, project_type rhs) {lhs = static_cast<project_type>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs)); return lhs;}
-  inline project_type operator +(project_type lhs, project_type rhs) {return static_cast<project_type>(static_cast<long long>(lhs) + static_cast<long long>(rhs));}
-  inline project_type operator -(project_type lhs, project_type rhs) {return static_cast<project_type>(static_cast<long long>(lhs) - static_cast<long long>(rhs));}
-  inline project_type operator ~(project_type rhs) {return static_cast<project_type>(~static_cast<long long>(rhs));}
-  inline project_type operator &(project_type lhs, project_type rhs) {return static_cast<project_type>(static_cast<long long>(lhs) & static_cast<long long>(rhs));}
-  inline project_type operator |(project_type lhs, project_type rhs) {return static_cast<project_type>(static_cast<long long>(lhs) | static_cast<long long>(rhs));}
-  inline project_type operator ^(project_type lhs, project_type rhs) {return static_cast<project_type>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs));}
+  [[maybe_unused]] inline project_type& operator ^=(project_type& lhs, project_type rhs) {lhs = static_cast<project_type>(static_cast<std::underlying_type<project_type>::type>(lhs) ^ static_cast<std::underlying_type<project_type>::type>(rhs)); return lhs;}
+  [[maybe_unused]] inline project_type& operator &=(project_type& lhs, project_type rhs) {lhs = static_cast<project_type>(static_cast<std::underlying_type<project_type>::type>(lhs) & static_cast<std::underlying_type<project_type>::type>(rhs)); return lhs;}
+  [[maybe_unused]] inline project_type& operator |=(project_type& lhs, project_type rhs) {lhs = static_cast<project_type>(static_cast<std::underlying_type<project_type>::type>(lhs) | static_cast<std::underlying_type<project_type>::type>(rhs)); return lhs;}
+  [[maybe_unused]] inline project_type& operator +=(project_type& lhs, project_type rhs) {lhs = static_cast<project_type>(static_cast<std::underlying_type<project_type>::type>(lhs) + static_cast<std::underlying_type<project_type>::type>(rhs)); return lhs;}
+  [[maybe_unused]] inline project_type& operator -=(project_type& lhs, project_type rhs) {lhs = static_cast<project_type>(static_cast<std::underlying_type<project_type>::type>(lhs) - static_cast<std::underlying_type<project_type>::type>(rhs)); return lhs;}
+  [[maybe_unused]] inline project_type operator ^(project_type lhs, project_type rhs) {return static_cast<project_type>(static_cast<std::underlying_type<project_type>::type>(lhs) ^ static_cast<std::underlying_type<project_type>::type>(rhs));}
+  [[maybe_unused]] inline project_type operator &(project_type lhs, project_type rhs) {return static_cast<project_type>(static_cast<std::underlying_type<project_type>::type>(lhs) & static_cast<std::underlying_type<project_type>::type>(rhs));}
+  [[maybe_unused]] inline project_type operator |(project_type lhs, project_type rhs) {return static_cast<project_type>(static_cast<std::underlying_type<project_type>::type>(lhs) | static_cast<std::underlying_type<project_type>::type>(rhs));}
+  [[maybe_unused]] inline project_type operator +(project_type lhs, project_type rhs) {return static_cast<project_type>(static_cast<std::underlying_type<project_type>::type>(lhs) + static_cast<std::underlying_type<project_type>::type>(rhs));}
+  [[maybe_unused]] inline project_type operator -(project_type lhs, project_type rhs) {return static_cast<project_type>(static_cast<std::underlying_type<project_type>::type>(lhs) - static_cast<std::underlying_type<project_type>::type>(rhs));}
+  [[maybe_unused]] inline project_type operator ~(project_type lhs) {return static_cast<project_type>(~static_cast<std::underlying_type<project_type>::type>(lhs));} \
   /// @endcond
 }

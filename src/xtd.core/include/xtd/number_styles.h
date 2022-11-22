@@ -2,6 +2,7 @@
 /// @brief Contains xtd::number_styles enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
+#include <type_traits>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -58,19 +59,17 @@ namespace xtd {
   };
   
   /// @cond
-  inline xtd::number_styles& operator^=(xtd::number_styles& lhs, xtd::number_styles rhs) {lhs = static_cast<xtd::number_styles>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
-  inline xtd::number_styles& operator&=(xtd::number_styles& lhs, xtd::number_styles rhs) {lhs = static_cast<xtd::number_styles>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}
-  inline xtd::number_styles& operator|=(xtd::number_styles& lhs, xtd::number_styles rhs) {lhs = static_cast<xtd::number_styles>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;}
-  inline xtd::number_styles& operator+=(xtd::number_styles& lhs, xtd::number_styles rhs) {lhs = static_cast<xtd::number_styles>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;}
-  inline xtd::number_styles& operator-=(xtd::number_styles& lhs, xtd::number_styles rhs) {lhs = static_cast<xtd::number_styles>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;}
-  
-  inline xtd::number_styles operator^(xtd::number_styles lhs, xtd::number_styles rhs) {return static_cast<xtd::number_styles>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}
-  inline xtd::number_styles operator&(xtd::number_styles lhs, xtd::number_styles rhs) {return static_cast<xtd::number_styles>(static_cast<int>(lhs) & static_cast<int>(rhs));}
-  inline xtd::number_styles operator|(xtd::number_styles lhs, xtd::number_styles rhs) {return static_cast<xtd::number_styles>(static_cast<int>(lhs) | static_cast<int>(rhs));}
-  inline xtd::number_styles operator+(xtd::number_styles lhs, xtd::number_styles rhs) {return static_cast<xtd::number_styles>(static_cast<int>(lhs) + static_cast<int>(rhs));}
-  inline xtd::number_styles operator-(xtd::number_styles lhs, xtd::number_styles rhs) {return static_cast<xtd::number_styles>(static_cast<int>(lhs) - static_cast<int>(rhs));}
-  
-  inline xtd::number_styles operator~(xtd::number_styles lhs) {return static_cast<xtd::number_styles>(~static_cast<int>(lhs));}
+  [[maybe_unused]] inline number_styles& operator ^=(number_styles& lhs, number_styles rhs) {lhs = static_cast<number_styles>(static_cast<std::underlying_type<number_styles>::type>(lhs) ^ static_cast<std::underlying_type<number_styles>::type>(rhs)); return lhs;}
+  [[maybe_unused]] inline number_styles& operator &=(number_styles& lhs, number_styles rhs) {lhs = static_cast<number_styles>(static_cast<std::underlying_type<number_styles>::type>(lhs) & static_cast<std::underlying_type<number_styles>::type>(rhs)); return lhs;}
+  [[maybe_unused]] inline number_styles& operator |=(number_styles& lhs, number_styles rhs) {lhs = static_cast<number_styles>(static_cast<std::underlying_type<number_styles>::type>(lhs) | static_cast<std::underlying_type<number_styles>::type>(rhs)); return lhs;}
+  [[maybe_unused]] inline number_styles& operator +=(number_styles& lhs, number_styles rhs) {lhs = static_cast<number_styles>(static_cast<std::underlying_type<number_styles>::type>(lhs) + static_cast<std::underlying_type<number_styles>::type>(rhs)); return lhs;}
+  [[maybe_unused]] inline number_styles& operator -=(number_styles& lhs, number_styles rhs) {lhs = static_cast<number_styles>(static_cast<std::underlying_type<number_styles>::type>(lhs) - static_cast<std::underlying_type<number_styles>::type>(rhs)); return lhs;}
+  [[maybe_unused]] inline number_styles operator ^(number_styles lhs, number_styles rhs) {return static_cast<number_styles>(static_cast<std::underlying_type<number_styles>::type>(lhs) ^ static_cast<std::underlying_type<number_styles>::type>(rhs));}
+  [[maybe_unused]] inline number_styles operator &(number_styles lhs, number_styles rhs) {return static_cast<number_styles>(static_cast<std::underlying_type<number_styles>::type>(lhs) & static_cast<std::underlying_type<number_styles>::type>(rhs));}
+  [[maybe_unused]] inline number_styles operator |(number_styles lhs, number_styles rhs) {return static_cast<number_styles>(static_cast<std::underlying_type<number_styles>::type>(lhs) | static_cast<std::underlying_type<number_styles>::type>(rhs));}
+  [[maybe_unused]] inline number_styles operator +(number_styles lhs, number_styles rhs) {return static_cast<number_styles>(static_cast<std::underlying_type<number_styles>::type>(lhs) + static_cast<std::underlying_type<number_styles>::type>(rhs));}
+  [[maybe_unused]] inline number_styles operator -(number_styles lhs, number_styles rhs) {return static_cast<number_styles>(static_cast<std::underlying_type<number_styles>::type>(lhs) - static_cast<std::underlying_type<number_styles>::type>(rhs));}
+  [[maybe_unused]] inline number_styles operator ~(number_styles lhs) {return static_cast<number_styles>(~static_cast<std::underlying_type<number_styles>::type>(lhs));} \
   /// @endcond
 }
 
