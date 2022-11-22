@@ -18,6 +18,11 @@ struct __enum_object__;
 template<typename enum_t = std::nullptr_t>
 class __enum_register__ {
 public:
+  __enum_register__() = default;
+  explicit __enum_register__(const xtd::ustring& enum_definition) {
+    enum_definition_ = enum_definition;
+  }
+  
   const xtd::ustring& enum_definition() {
     return enum_definition_;
   }
@@ -48,14 +53,6 @@ public:
   }
   
 private:
-  static void add_enum_definition(const xtd::ustring& enum_definition) {
-    try {
-      enum_definition_ = enum_definition;
-    } catch (...) {
-      throw xtd::format_exception(csf_);
-    }
-  }
-  
   template<typename enum_type>
   friend struct __enum_object__;
   inline static xtd::ustring enum_definition_;

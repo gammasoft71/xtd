@@ -11,17 +11,15 @@
 #include "../format_exception.h"
 #include "../ustring.h"
 #include "../enum_collection.h"
+#include "../unused.h"
 #include "__enum_register.h"
 
 /// @cond
 template<typename enum_t>
 struct __enum_object__ {
   __enum_object__(const xtd::ustring& enum_definition) {
-    try {
-      __enum_register__<enum_t>::add_enum_definition(enum_definition);
-    } catch (...) {
-      throw xtd::format_exception(csf_);
-    }
+    __enum_register__<enum_t> enum_register {enum_definition};
+    unused_(enum_register);
   }
 };
 /// @endcond
