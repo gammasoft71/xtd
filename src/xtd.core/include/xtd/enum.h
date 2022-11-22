@@ -12,139 +12,18 @@
 #include "static.h"
 #include "string_comparison.h"
 #include "string_split_options.h"
-#include "ustring.h"
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief Represents a pair of an enum_t value and a string of an enum of type enum_t.
-  /// @remarks For more information about enumeration, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/enum_class.md">enum class</a> guide.
-  template<typename enum_t>
-  using enum_collection = std::vector<std::pair<enum_t, xtd::ustring>>;
-}
-
+#include "enum_collection.h"
+#include "enum_register.h"
+#include "enum_set_attribute.h"
 /// @cond
-template<typename enum_t>
-struct __enum_object__;
-template<typename enum_t = std::nullptr_t>
-class __enum_register__ {
-public:
-  const xtd::ustring& enum_definition() {
-    return enum_definition_;
-  }
-  
-  explicit operator auto() const {
-    xtd::enum_collection<enum_t> entries;
-    int64_t current_value = 0;
-    for (auto entry : enum_definition_.substring(enum_definition_.index_of('{')).replace('{', ' ').replace('}', ' ').trim().split({','})) {
-      auto key_value = entry.trim().split({'='});
-      if (key_value.size() < 1 || key_value.size() > 2 || (key_value.size() == 2 && xtd::ustring::is_empty(key_value[1])))
-        throw xtd::format_exception("Not a valid enum declaration", csf_);
-      int64_t value = current_value;
-      if (key_value.size() == 2) {
-        if (!xtd::try_parse<int64_t>(key_value[1].trim(), value) && xtd::try_parse<int64_t>(key_value[1].trim(), value, xtd::number_styles::hex_number) && xtd::try_parse<int64_t>(key_value[1].trim(), value, xtd::number_styles::binary_number) && xtd::try_parse<int64_t>(key_value[1].trim(), value, xtd::number_styles::octal_number)) {
-          auto iterator = std::find_if(entries.begin(), entries.end(), [&](auto item)->bool {return item.second == key_value[1].trim();});
-          if (iterator != entries.end()) value = static_cast<int64_t>(iterator->first);
-          
-          /// @todo Add parse arithmetic operation...
-          throw xtd::format_exception("Not a valid enum declaration", csf_);
-        }
-      }
-      current_value = value;
-      entries.push_back({static_cast<enum_t>(value), key_value[0].trim()});
-      current_value++;
-    }
-    
-    return entries;
-  }
-  
-private:
-  static void add_enum_definition(const xtd::ustring& enum_definition) {
-    try {
-      enum_definition_ = enum_definition;
-    } catch (...) {
-      throw xtd::format_exception(csf_);
-    }
-  }
-  
-  template<typename enum_type>
-  friend struct __enum_object__;
-  inline static xtd::ustring enum_definition_;
-};
-
-template<typename enum_t>
-struct __enum_object__ {
-  __enum_object__(const xtd::ustring& enum_definition) {
-    try {
-      __enum_register__<enum_t>::add_enum_definition(enum_definition);
-    } catch (...) {
-      throw xtd::format_exception(csf_);
-    }
-  }
-};
+#define __XTD_CORE_INTERNAL__
+#include "internal/__enum_register.h"
+#include "internal/__enum_object.h"
+#undef __XTD_CORE_INTERNAL__
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Provides the registration struct for enumerations.
-  /// @code
-  /// template<typename enum_t>
-  /// struct enum_register
-  /// @endcode
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core system
-  /// @remarks The overloading of this operator is necessary for enum classes to be recognized by xtd::ustring::format().
-  /// @remarks For more information about enumeration, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/enum_class.md">enum class</a> guide.
-  /// @remarks When an enumeration is registered, we can display its name instead of its value, we can format it and parse it.
-  /// @remarks <a href="https://github.com/gammasoft71/xtd/blob/master/docs/format_enumeration_format_strings.md">See Enumeration Format Strings</a>. For more information about formatting in general, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/format_overview.md">Formatting Types</a>.
-  /// @par Examples
-  /// The following code show how to use xtd::enum_register operator for an enum.
-  /// @include enum_class_without_helper.cpp
-  /// The following code show how to use xtd::enum_register operator for an enum flags.
-  /// @include enum_class_flags_without_helpers.cpp
-  template<typename enum_t>
-  struct enum_register {
-    /// Allows to register an enumeration that can be used by xtd::enum_object.
-    /// @return An xtd::enum_collection collection that represent enumeration.
-    /// @remarks To register an enumeration just override xtd::enum_register.
-    /// @par Examples
-    /// THe following code show how to register a values enum class.
-    /// @code
-    /// enum class values {
-    ///   value_one,
-    ///   value_two
-    /// };
-    ///
-    /// template<>
-    /// xtd::enum_register<values> {
-    ///   explicit operator auto() const {return xtd::enum_collection<values> {{values::value_one, "value_one"}, {values::value_two, "value_two"}};}
-    /// };
-    /// @endcode
-    /// 
-    explicit operator auto() const {return xtd::enum_collection<enum_t> {};}
-  };
-  
-  /// @brief Provides the set attribute struct for enumerations.
-  /// @code
-  /// template<typename enum_t>
-  /// struct enum_set_attribute
-  /// @endcode
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core system
-  /// @remarks The overloading of this operator is necessary for enum classes to be recognized as having a flags attribute to be properly handled by xtd::ustring::format().
-  /// @par Examples
-  /// The following code show how to use xtd::enum_set_attribute operator.
-  /// @include format_enum_class_flags_without_helpers.cpp
-  template<typename enum_t>
-  struct enum_set_attribute {
-    explicit operator auto() const {return xtd::enum_attribute::standard;}
-  };
-  
   /// @brief Provides the base class for enumerations.
   /// @par Namespace
   /// xtd
@@ -744,34 +623,34 @@ namespace xtd {
 }
 
 #define flags_attribute_(namespace_name, enum_type) \
-namespace namespace_name { \
-[[maybe_unused]] inline enum_type& operator^=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) ^ static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
-[[maybe_unused]] inline enum_type& operator&=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) & static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
-[[maybe_unused]] inline enum_type& operator|=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) | static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
-[[maybe_unused]] inline enum_type& operator+=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) + static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
-[[maybe_unused]] inline enum_type& operator-=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) - static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
-[[maybe_unused]] inline enum_type operator^(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) ^ static_cast<std::underlying_type<enum_type>::type>(rhs));} \
-[[maybe_unused]] inline enum_type operator&(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) & static_cast<std::underlying_type<enum_type>::type>(rhs));} \
-[[maybe_unused]] inline enum_type operator|(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) | static_cast<std::underlying_type<enum_type>::type>(rhs));} \
-[[maybe_unused]] inline enum_type operator+(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) + static_cast<std::underlying_type<enum_type>::type>(rhs));} \
-[[maybe_unused]] inline enum_type operator-(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) - static_cast<std::underlying_type<enum_type>::type>(rhs));} \
-[[maybe_unused]] inline enum_type operator~(enum_type lhs) {return static_cast<enum_type>(~static_cast<std::underlying_type<enum_type>::type>(lhs));} \
-}\
-template<> struct xtd::enum_set_attribute<namespace_name::enum_type> { \
-explicit operator auto() const {return xtd::enum_attribute::flags;} \
-}
+  namespace namespace_name { \
+    [[maybe_unused]] inline enum_type& operator^=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) ^ static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
+    [[maybe_unused]] inline enum_type& operator&=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) & static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
+    [[maybe_unused]] inline enum_type& operator|=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) | static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
+    [[maybe_unused]] inline enum_type& operator+=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) + static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
+    [[maybe_unused]] inline enum_type& operator-=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) - static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
+    [[maybe_unused]] inline enum_type operator^(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) ^ static_cast<std::underlying_type<enum_type>::type>(rhs));} \
+    [[maybe_unused]] inline enum_type operator&(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) & static_cast<std::underlying_type<enum_type>::type>(rhs));} \
+    [[maybe_unused]] inline enum_type operator|(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) | static_cast<std::underlying_type<enum_type>::type>(rhs));} \
+    [[maybe_unused]] inline enum_type operator+(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) + static_cast<std::underlying_type<enum_type>::type>(rhs));} \
+    [[maybe_unused]] inline enum_type operator-(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) - static_cast<std::underlying_type<enum_type>::type>(rhs));} \
+    [[maybe_unused]] inline enum_type operator~(enum_type lhs) {return static_cast<enum_type>(~static_cast<std::underlying_type<enum_type>::type>(lhs));} \
+  }\
+  template<> struct xtd::enum_set_attribute<namespace_name::enum_type> { \
+    explicit operator auto() const {return xtd::enum_attribute::flags;} \
+  }
 
 #define enum_(enum_type, ...) \
-enum enum_type __VA_ARGS__; \
-inline static __enum_object__<enum_class_type> __enum_object__##enum_type {xtd::ustring::full_class_name<enum_type>() + " " + #__VA_ARGS__}
+  enum enum_type __VA_ARGS__; \
+  inline static __enum_object__<enum_class_type> __enum_object__##enum_type {xtd::ustring::full_class_name<enum_type>() + " " + #__VA_ARGS__}
 
 #define enum_class_(enum_class_type, ...) \
-enum class enum_class_type __VA_ARGS__; \
-inline static __enum_object__<enum_class_type> __enum_class__##enum_class_type {xtd::ustring::full_class_name<enum_class_type>() + " " + #__VA_ARGS__}
+  enum class enum_class_type __VA_ARGS__; \
+  inline static __enum_object__<enum_class_type> __enum_class__##enum_class_type {xtd::ustring::full_class_name<enum_class_type>() + " " + #__VA_ARGS__}
 
 #define enum_struct_(enum_struct_type, ...) \
-enum struct enum_struct_type __VA_ARGS__; \
-inline static __enum_object__<enum_class_type> __enum_struct__##enum_struct_type {xtd::ustring::full_class_name<enum_struct_type>() + " " + #__VA_ARGS__}
+  enum struct enum_struct_type __VA_ARGS__; \
+  inline static __enum_object__<enum_class_type> __enum_struct__##enum_struct_type {xtd::ustring::full_class_name<enum_struct_type>() + " " + #__VA_ARGS__}
 
 /// @cond
 template<typename enum_t>

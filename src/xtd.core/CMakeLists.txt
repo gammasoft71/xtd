@@ -52,6 +52,9 @@ add_sources(
   include/xtd/domain_exception.h
   include/xtd/enum.h
   include/xtd/enum_attribute.h
+  include/xtd/enum_collection.h
+  include/xtd/enum_register.h
+  include/xtd/enum_set_attribute.h
   include/xtd/environment.h
   include/xtd/environment_variable_target.h
   include/xtd/event.h
@@ -172,6 +175,8 @@ add_sources(
   include/xtd/internal/__date_time_formatter.h
   include/xtd/internal/__duration_formatter.h
   include/xtd/internal/__enum_formatter.h
+  include/xtd/internal/__enum_object.h
+  include/xtd/internal/__enum_register.h
   include/xtd/internal/__fixed_point_formatter.h
   include/xtd/internal/__generic_stream_output.h
   include/xtd/internal/__format_exception.h
