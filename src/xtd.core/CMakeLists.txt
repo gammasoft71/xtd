@@ -175,8 +175,7 @@ add_sources(
   include/xtd/internal/__date_time_formatter.h
   include/xtd/internal/__duration_formatter.h
   include/xtd/internal/__enum_formatter.h
-  include/xtd/internal/__enum_object.h
-  include/xtd/internal/__enum_register.h
+  include/xtd/internal/__enum_definition_to_enum_collection.h
   include/xtd/internal/__fixed_point_formatter.h
   include/xtd/internal/__generic_stream_output.h
   include/xtd/internal/__format_exception.h

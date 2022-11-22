@@ -17,8 +17,7 @@
 #include "enum_set_attribute.h"
 /// @cond
 #define __XTD_CORE_INTERNAL__
-#include "internal/__enum_register.h"
-#include "internal/__enum_object.h"
+#include "internal/__enum_definition_to_enum_collection.h"
 #undef __XTD_CORE_INTERNAL__
 /// @endcond
 
@@ -274,8 +273,7 @@ namespace xtd {
     static enum_collection<enum_type>& entries() {
       std::lock_guard<std::mutex> lock(access_mutex_);
       if (entries_.has_value()) return entries_.value();
-      entries_ = enum_collection<enum_type>(__enum_register__<enum_type>());
-      if (entries_.value().empty()) entries_ = enum_collection<enum_type>(enum_register<enum_type>());
+      entries_ = enum_collection<enum_type>(enum_register<enum_type>());
       return entries_.value();
     };
     
@@ -640,17 +638,32 @@ namespace xtd {
     explicit operator auto() const {return xtd::enum_attribute::flags;} \
   }
 
-#define enum_(enum_type, ...) \
-  enum enum_type __VA_ARGS__; \
-  inline static __enum_object__<enum_class_type> __enum_object__##enum_type {xtd::ustring::full_class_name<enum_type>() + " " + #__VA_ARGS__}
+#define enum_ut(namespace_name, enum_type, underlying_type, ...) \
+  namespace namespace_name { enum enum_type : underlying_type {__VA_ARGS__}; } \
+  template<> struct xtd::enum_register<namespace_name::enum_type> { \
+    explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_type>(#__VA_ARGS__);} \
+  }
 
-#define enum_class_(enum_class_type, ...) \
-  enum class enum_class_type __VA_ARGS__; \
-  inline static __enum_object__<enum_class_type> __enum_class__##enum_class_type {xtd::ustring::full_class_name<enum_class_type>() + " " + #__VA_ARGS__}
+#define enum_class_ut(namespace_name, enum_class_type, underlying_type, ...) \
+  namespace namespace_name { enum class enum_class_type : underlying_type { __VA_ARGS__ }; } \
+  template<> struct xtd::enum_register<namespace_name::enum_class_type> { \
+    explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_class_type>(#__VA_ARGS__);} \
+  }
 
-#define enum_struct_(enum_struct_type, ...) \
-  enum struct enum_struct_type __VA_ARGS__; \
-  inline static __enum_object__<enum_class_type> __enum_struct__##enum_struct_type {xtd::ustring::full_class_name<enum_struct_type>() + " " + #__VA_ARGS__}
+#define enum_struct_ut(namespace_name, enum_struct_type, underlying_type, ...) \
+  namespace namespace_name { enum struct enum_struct_type : underlying_type { __VA_ARGS__ }; } \
+  template<> struct xtd::enum_register<namespace_name::enum_struct_type> { \
+    explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_struct_type>(#__VA_ARGS__);} \
+  }
+
+#define enum_(namespace_name, enum_type, ...) \
+  enum_ut(namespace_name, enum_type, int32_t, __VA_ARGS__)
+
+#define enum_class_(namespace_name, enum_class_type, ...) \
+  enum_class_ut(namespace_name, enum_class_type, int32_t, __VA_ARGS__)
+
+#define enum_struct_(namespace_name, enum_struct_type, ...) \
+  enum_struct_ut(namespace_name, enum_struct_type, int32_t, __VA_ARGS__)
 
 /// @cond
 template<typename enum_t>
