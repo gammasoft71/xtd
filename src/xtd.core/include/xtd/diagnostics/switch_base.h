@@ -32,9 +32,9 @@ namespace xtd {
     public:
       /// @cond
       switch_base(const switch_base& value) = default;
-      switch_base& operator=(const switch_base& value) = default;
-      bool operator==(const switch_base& value) const;
-      bool operator!=(const switch_base& value) const;
+      switch_base& operator =(const switch_base& value) = default;
+      bool operator ==(const switch_base& value) const;
+      bool operator !=(const switch_base& value) const;
       /// @endcond
       
       /// @name Properties

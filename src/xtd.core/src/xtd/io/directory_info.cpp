@@ -33,22 +33,22 @@ directory_info::directory_iterator::directory_iterator() {
   data_ = make_shared<data>();
 }
 
-directory_info::directory_iterator& directory_info::directory_iterator::operator++() {
+directory_info::directory_iterator& directory_info::directory_iterator::operator ++() {
   data_->iterator_++;
   return *this;
 }
 
-directory_info::directory_iterator directory_info::directory_iterator::operator++(int) {
+directory_info::directory_iterator directory_info::directory_iterator::operator ++(int) {
   directory_iterator result = *this;
   ++(*this);
   return result;
 }
 
-bool directory_info::directory_iterator::operator==(directory_info::directory_iterator other) const {
+bool directory_info::directory_iterator::operator ==(directory_info::directory_iterator other) const {
   return data_->iterator_ == other.data_->iterator_;
 }
 
-directory_info::directory_iterator::value_type directory_info::directory_iterator::operator*() const {
+directory_info::directory_iterator::value_type directory_info::directory_iterator::operator *() const {
   if (data_ == nullptr) return empty;
   return directory_info(*data_->iterator_);
 }
@@ -83,22 +83,22 @@ directory_info::file_iterator::file_iterator() {
   data_ = make_shared<data>();
 }
 
-directory_info::file_iterator& directory_info::file_iterator::operator++() {
+directory_info::file_iterator& directory_info::file_iterator::operator ++() {
   data_->iterator_++;
   return *this;
 }
 
-directory_info::file_iterator directory_info::file_iterator::operator++(int) {
+directory_info::file_iterator directory_info::file_iterator::operator ++(int) {
   file_iterator result = *this;
   ++(*this);
   return result;
 }
 
-bool directory_info::file_iterator::operator==(directory_info::file_iterator other) const {
+bool directory_info::file_iterator::operator ==(directory_info::file_iterator other) const {
   return data_->iterator_ == other.data_->iterator_;
 }
 
-directory_info::file_iterator::value_type directory_info::file_iterator::operator*() const {
+directory_info::file_iterator::value_type directory_info::file_iterator::operator *() const {
   if (data_ == nullptr) return file_info::empty;
   return file_info(*data_->iterator_);
 }
@@ -132,12 +132,12 @@ directory_info::file_system_info_iterator::file_system_info_iterator() {
   data_ = make_shared<data>();
 }
 
-directory_info::file_system_info_iterator& directory_info::file_system_info_iterator::operator++() {
+directory_info::file_system_info_iterator& directory_info::file_system_info_iterator::operator ++() {
   data_->iterator_++;
   return *this;
 }
 
-directory_info::file_system_info_iterator directory_info::file_system_info_iterator::operator++(int) {
+directory_info::file_system_info_iterator directory_info::file_system_info_iterator::operator ++(int) {
   file_system_info_iterator result = *this;
   ++(*this);
   return result;
@@ -159,11 +159,11 @@ ustring directory_info::file_system_info_iterator::pattern() const {
   return data_->iterator_.pattern();
 }
 
-bool directory_info::file_system_info_iterator::operator==(directory_info::file_system_info_iterator other) const {
+bool directory_info::file_system_info_iterator::operator ==(directory_info::file_system_info_iterator other) const {
   return data_->iterator_ == other.data_->iterator_;
 }
 
-directory_info::file_system_info_iterator::value_type directory_info::file_system_info_iterator::operator*() const {
+directory_info::file_system_info_iterator::value_type directory_info::file_system_info_iterator::operator *() const {
   if (data_ == nullptr) return std::make_shared<file_info>("");
   int32_t attributes = -1;
   native::file_system::get_attributes(*data_->iterator_, attributes);

@@ -76,7 +76,7 @@ namespace xtd {
     
     /// @cond
     invalid_program_exception(const invalid_program_exception&) = default;
-    invalid_program_exception& operator=(const invalid_program_exception&) = default;
+    invalid_program_exception& operator =(const invalid_program_exception&) = default;
     /// @endcond
     
   private:

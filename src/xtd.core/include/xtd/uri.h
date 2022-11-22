@@ -220,7 +220,7 @@ namespace xtd {
     
     /// @cond
     uri(const xtd::uri& uri) = default;
-    uri& operator=(const uri&) = default;
+    uri& operator =(const uri&) = default;
     /// @endcond
     
     /// @brief Initializes a new instance of the xtd::uri class with the specified URI.

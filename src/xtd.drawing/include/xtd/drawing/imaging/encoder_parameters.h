@@ -35,9 +35,9 @@ namespace xtd {
         
         /// @cond
         encoder_parameters(const encoder_parameters&) = default;
-        encoder_parameters& operator=(const encoder_parameters&) = default;
-        bool operator==(const encoder_parameters& value) const {return params_ == value.params_;}
-        bool operator!=(const encoder_parameters& value) const {return !operator==(value);}
+        encoder_parameters& operator =(const encoder_parameters&) = default;
+        bool operator ==(const encoder_parameters& value) const {return params_ == value.params_;}
+        bool operator !=(const encoder_parameters& value) const {return !operator ==(value);}
         /// @endcond
         
         /// @name Properties

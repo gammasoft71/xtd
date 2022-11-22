@@ -89,7 +89,7 @@ namespace xtd {
       public:
         /// @cond
         hit_test_info(const hit_test_info&) = default;
-        hit_test_info& operator=(const hit_test_info&) = default;
+        hit_test_info& operator =(const hit_test_info&) = default;
         /// @endcond
         
         /// @brief Gets the xtd::forms::month_calendar::hit_area that represents the area of the calendar evaluated by the hit-test operation.

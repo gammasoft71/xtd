@@ -39,7 +39,7 @@ namespace xtd {
     
     /// @cond
     object(const object&) = default;
-    object& operator=(const object&) = default;
+    object& operator =(const object&) = default;
     virtual ~object() = default;
     /// @endcond
     

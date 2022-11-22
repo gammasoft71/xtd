@@ -26,7 +26,7 @@ namespace xtd {
       
       /// @cond
       settings(const settings&) = default;
-      settings& operator=(const settings&) = default;
+      settings& operator =(const settings&) = default;
       /// @endcond
       
       /// @brief Gets default settings instance.

@@ -76,7 +76,7 @@ namespace xtd {
     
     /// @cond
     argument_out_of_range_exception(const argument_out_of_range_exception&) = default;
-    argument_out_of_range_exception& operator=(const argument_out_of_range_exception&) = default;
+    argument_out_of_range_exception& operator =(const argument_out_of_range_exception&) = default;
     /// @endcond
     
   private:

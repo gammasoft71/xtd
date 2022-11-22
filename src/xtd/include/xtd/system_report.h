@@ -28,7 +28,7 @@ namespace xtd {
       /// @cond
       xtd_library() = default;
       xtd_library(const xtd_library&) = default;
-      xtd_library& operator=(const xtd_library&) = default;
+      xtd_library& operator =(const xtd_library&) = default;
       /// @endcond
       
       const std::string& name() const {return name_;}

@@ -73,7 +73,7 @@ namespace xtd {
     
     /// @cond
     uri_format_exception(const uri_format_exception&) = default;
-    uri_format_exception& operator=(const uri_format_exception&) = default;
+    uri_format_exception& operator =(const uri_format_exception&) = default;
     /// @endcond
     
   private:

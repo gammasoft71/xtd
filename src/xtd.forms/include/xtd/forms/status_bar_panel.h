@@ -59,9 +59,9 @@ namespace xtd {
       /// @cond
       status_bar_panel(const status_bar_panel&) noexcept = default;
       status_bar_panel(status_bar_panel&&) noexcept = default;
-      status_bar_panel& operator=(const status_bar_panel&) noexcept = default;
-      bool operator==(const status_bar_panel& other) const noexcept {return data_ == other.data_;}
-      bool operator!=(const status_bar_panel& other) const noexcept {return !operator==(other);}
+      status_bar_panel& operator =(const status_bar_panel&) noexcept = default;
+      bool operator ==(const status_bar_panel& other) const noexcept {return data_ == other.data_;}
+      bool operator !=(const status_bar_panel& other) const noexcept {return !operator ==(other);}
       /// @endcond
       
       /// @name Properties

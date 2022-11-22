@@ -221,10 +221,10 @@ xtd::ustring rectangle::to_string() const noexcept {
   return ustring::format("{{x={}, y={}, width={}, heght={}}}", x(), y(), width(), height());
 }
 
-bool rectangle::operator==(const rectangle& value) const noexcept {
+bool rectangle::operator ==(const rectangle& value) const noexcept {
   return x_ == value.x_ && y_ == value.y_ && width_ == value.width_ && height_ == value.height_;
 }
 
-bool rectangle::operator!=(const rectangle& value) const noexcept {
-  return !operator==(value);
+bool rectangle::operator !=(const rectangle& value) const noexcept {
+  return !operator ==(value);
 }

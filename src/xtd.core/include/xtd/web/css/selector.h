@@ -20,7 +20,7 @@ namespace xtd {
         /// @cond
         selector() = default;
         selector(const selector&) = default;
-        selector& operator=(const selector&) = default;
+        selector& operator =(const selector&) = default;
         /// @endcond
         
         /// @name Properties

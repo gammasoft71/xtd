@@ -554,8 +554,8 @@ void hatch_brush::recreate_handle() {
 hatch_brush::hatch_brush(const hatch_brush& value) : brush(value), data_(value.data_) {
 }
 
-hatch_brush& hatch_brush::operator=(const hatch_brush& value) {
-  brush::operator=(value);
+hatch_brush& hatch_brush::operator =(const hatch_brush& value) {
+  brush::operator =(value);
   data_ = value.data_;
   return *this;
 }

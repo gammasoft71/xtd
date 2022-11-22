@@ -70,10 +70,10 @@ namespace xtd {
       
       /// @cond
       pen(const xtd::drawing::pen& value);
-      pen& operator=(const xtd::drawing::pen& value);
+      pen& operator =(const xtd::drawing::pen& value);
       ~pen();
-      bool operator==(const xtd::drawing::pen& value) const;
-      bool operator!=(const xtd::drawing::pen& value) const;
+      bool operator ==(const xtd::drawing::pen& value) const;
+      bool operator !=(const xtd::drawing::pen& value) const;
       /// @endcond
       
       /// @name Properties

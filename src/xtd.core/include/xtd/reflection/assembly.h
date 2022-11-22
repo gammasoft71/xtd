@@ -25,7 +25,7 @@ namespace xtd {
       /// @cond
       assembly(const assembly&) = default;
       assembly(assembly&&) = default;
-      assembly& operator=(const assembly&) = default;
+      assembly& operator =(const assembly&) = default;
       /// @endcond
       
       /// @name Properties

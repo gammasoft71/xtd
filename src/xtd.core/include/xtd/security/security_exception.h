@@ -78,7 +78,7 @@ namespace xtd {
       
       /// @cond
       security_exception(const security_exception&) = default;
-      security_exception& operator=(const security_exception&) = default;
+      security_exception& operator =(const security_exception&) = default;
       /// @endcond
       
     private:

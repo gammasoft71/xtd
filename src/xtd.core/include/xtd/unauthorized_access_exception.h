@@ -77,7 +77,7 @@ namespace xtd {
     
     /// @cond
     unauthorized_access_exception(const unauthorized_access_exception&) = default;
-    unauthorized_access_exception& operator=(const unauthorized_access_exception&) = default;
+    unauthorized_access_exception& operator =(const unauthorized_access_exception&) = default;
     /// @endcond
     
   private:

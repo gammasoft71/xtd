@@ -39,12 +39,12 @@ matrix::~matrix() {
   }
 }
 
-bool matrix::operator==(const matrix& value) const {
+bool matrix::operator ==(const matrix& value) const {
   return data_ == value.data_;
 }
 
-bool matrix::operator!=(const matrix& value) const {
-  return !operator==(value);
+bool matrix::operator !=(const matrix& value) const {
+  return !operator ==(value);
 }
 
 std::vector<float> matrix::elements() const {

@@ -68,12 +68,12 @@ icon::~icon() {
     native::icon::destroy(data_->handle);
 }
 
-bool icon::operator==(const icon& icon) const {
+bool icon::operator ==(const icon& icon) const {
   return data_->handle == icon.data_->handle;
 }
 
-bool icon::operator!=(const icon& icon) const {
-  return !operator==(icon);
+bool icon::operator !=(const icon& icon) const {
+  return !operator ==(icon);
 }
 
 intptr_t icon::handle() const {

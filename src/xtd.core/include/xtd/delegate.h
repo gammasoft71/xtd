@@ -48,7 +48,7 @@ namespace xtd {
     }
     /// @cond
     delegate(const function_t& function) noexcept { data_->functions.push_back(function); }
-    delegate& operator=(const delegate& delegate) noexcept {
+    delegate& operator =(const delegate& delegate) noexcept {
       data_->functions = delegate.data_->functions;
       return *this;
     }
@@ -192,9 +192,9 @@ namespace xtd {
     /// @brief Determines whether this instance and another specified delegateType object have the same value.
     /// @param value The delegateType to compare.
     /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
-    bool operator !=(const delegate& delegate) const { return !operator==(delegate); }
+    bool operator !=(const delegate& delegate) const { return !operator ==(delegate); }
     
-    delegate& operator=(const function_t& function) noexcept {
+    delegate& operator =(const function_t& function) noexcept {
       data_->functions.clear();
       data_->functions.push_back(function);
       return *this;
@@ -202,52 +202,52 @@ namespace xtd {
     /// @}
     
     /// @cond
-    delegate operator+(const delegate& other) noexcept {
+    delegate operator +(const delegate& other) noexcept {
       delegate result = *this;
       result += other;
       return result;
     }
     
-    delegate operator+(const function_t& function) noexcept {
+    delegate operator +(const function_t& function) noexcept {
       delegate result = *this;
       result += function;
       return result;
     }
     
-    delegate& operator+=(const delegate& delegate) noexcept {
+    delegate& operator +=(const delegate& delegate) noexcept {
       *this = delegate::combine(*this, delegate);
       return *this;
     }
     
-    delegate& operator+=(const function_t& function) noexcept {
+    delegate& operator +=(const function_t& function) noexcept {
       *this = delegate::combine(*this, delegate(function));
       return *this;
     }
     
-    delegate operator-(const delegate& other) noexcept {
+    delegate operator -(const delegate& other) noexcept {
       delegate result = *this;
       result -= other;
       return result;
     }
     
-    delegate operator-(const function_t& function) noexcept {
+    delegate operator -(const function_t& function) noexcept {
       delegate result = *this;
       result -= function;
       return result;
     }
     
-    delegate& operator-=(const delegate& delegate) noexcept {
+    delegate& operator -=(const delegate& delegate) noexcept {
       *this = delegate::remove(*this, delegate);
       return *this;
     }
     
-    delegate& operator-=(const function_t& function) noexcept {
+    delegate& operator -=(const function_t& function) noexcept {
       *this = delegate::remove(*this, delegate(function));
       return *this;
     }
     
     template<typename fn_t>
-    delegate& operator-=(fn_t function) noexcept {
+    delegate& operator -=(fn_t function) noexcept {
       *this = delegate::remove(*this, delegate(function));
       return *this;
     }
@@ -304,7 +304,7 @@ namespace xtd {
       data_->functions = delegate.data_->functions;
     }
     /// @cond
-    delegate& operator=(const delegate& delegate) noexcept {
+    delegate& operator =(const delegate& delegate) noexcept {
       data_->no_arguments_functions = delegate.data_->no_arguments_functions;
       data_->functions = delegate.data_->functions;
       return *this;
@@ -592,7 +592,7 @@ namespace xtd {
     /// @brief Determines whether this instance and another specified delegateType object have the same value.
     /// @param value The delegateType to compare.
     /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
-    bool operator==(const delegate& delegate) const noexcept {
+    bool operator ==(const delegate& delegate) const noexcept {
       if (data_->functions.size() != delegate.data_->functions.size() || data_->no_arguments_functions.size() != delegate.data_->no_arguments_functions.size())
         return false;
         
@@ -610,120 +610,120 @@ namespace xtd {
     /// @brief Determines whether this instance and another specified delegateType object have the same value.
     /// @param value The delegateType to compare.
     /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
-    bool operator!=(const delegate& delegate) const { return !operator==(delegate); }
+    bool operator !=(const delegate& delegate) const { return !operator ==(delegate); }
     /// @}
     
     /// @cond
     template<typename type_t>
-    delegate& operator=(const type_t& function) noexcept {
+    delegate& operator =(const type_t& function) noexcept {
       data_->no_arguments_functions.clear();
       data_->functions.clear();
       data_->functions.push_back(function_t(function));
       return *this;
     }
     
-    delegate& operator=(const function_t& function) noexcept {
+    delegate& operator =(const function_t& function) noexcept {
       data_->no_arguments_functions.clear();
       data_->functions.clear();
       data_->functions.push_back(function);
       return *this;
     }
     
-    delegate& operator=(const no_arguments_function_t& function) noexcept {
+    delegate& operator =(const no_arguments_function_t& function) noexcept {
       data_->no_arguments_functions.clear();
       data_->functions.clear();
       data_->no_arguments_functions.push_back(function);
       return *this;
     }
     
-    delegate operator+(const delegate& other) noexcept {
+    delegate operator +(const delegate& other) noexcept {
       delegate result = *this;
       result += other;
       return result;
     }
     
-    delegate operator+(const no_arguments_function_t& function) noexcept {
+    delegate operator +(const no_arguments_function_t& function) noexcept {
       delegate result = *this;
       result += function;
       return result;
     }
     
-    delegate operator+(const function_t& function) noexcept {
+    delegate operator +(const function_t& function) noexcept {
       delegate result = *this;
       result += function;
       return result;
     }
     
     template<typename fn_t>
-    delegate operator+(fn_t function) noexcept {
+    delegate operator +(fn_t function) noexcept {
       delegate result = *this;
       result += function;
       return result;
     }
     
-    delegate& operator+=(const delegate& delegate) noexcept {
+    delegate& operator +=(const delegate& delegate) noexcept {
       *this = delegate::combine(*this, delegate);
       return *this;
     }
     
-    delegate& operator+=(const no_arguments_function_t& function) noexcept {
+    delegate& operator +=(const no_arguments_function_t& function) noexcept {
       *this = delegate::combine(*this, delegate(function));
       return *this;
     }
     
-    delegate& operator+=(const function_t& function) noexcept {
+    delegate& operator +=(const function_t& function) noexcept {
       *this = delegate::combine(*this, delegate(function));
       return *this;
     }
     
     template<typename fn_t>
-    delegate& operator+=(fn_t function) noexcept {
+    delegate& operator +=(fn_t function) noexcept {
       *this = delegate::combine(*this, delegate(function));
       return *this;
     }
     
-    delegate operator-(const delegate& other) noexcept {
+    delegate operator -(const delegate& other) noexcept {
       delegate result = *this;
       result -= other;
       return result;
     }
     
-    delegate operator-(const no_arguments_function_t& function) noexcept {
+    delegate operator -(const no_arguments_function_t& function) noexcept {
       delegate result = *this;
       result -= function;
       return result;
     }
     
-    delegate operator-(const function_t& function) noexcept {
+    delegate operator -(const function_t& function) noexcept {
       delegate result = *this;
       result -= function;
       return result;
     }
     
     template<typename fn_t>
-    delegate operator-(fn_t function) noexcept {
+    delegate operator -(fn_t function) noexcept {
       delegate result = *this;
       result -= function;
       return result;
     }
     
-    delegate& operator-=(const delegate& delegate) noexcept {
+    delegate& operator -=(const delegate& delegate) noexcept {
       *this = delegate::remove(*this, delegate);
       return *this;
     }
     
-    delegate& operator-=(const no_arguments_function_t& function) noexcept {
+    delegate& operator -=(const no_arguments_function_t& function) noexcept {
       *this = delegate::remove(*this, delegate(function));
       return *this;
     }
     
-    delegate& operator-=(const function_t& function) noexcept {
+    delegate& operator -=(const function_t& function) noexcept {
       *this = delegate::remove(*this, delegate(function));
       return *this;
     }
     
     template<typename fn_t>
-    delegate& operator-=(fn_t function) noexcept {
+    delegate& operator -=(fn_t function) noexcept {
       *this = delegate::remove(*this, delegate(function));
       return *this;
     }

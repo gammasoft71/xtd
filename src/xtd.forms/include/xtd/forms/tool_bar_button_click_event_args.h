@@ -22,7 +22,7 @@ namespace xtd {
     public:
       /// @cond
       tool_bar_button_click_event_args(const tool_bar_button_click_event_args&) = default;
-      tool_bar_button_click_event_args& operator=(const tool_bar_button_click_event_args&) = default;
+      tool_bar_button_click_event_args& operator =(const tool_bar_button_click_event_args&) = default;
       /// @endcond
       
       /// @name Constructors

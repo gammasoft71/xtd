@@ -71,7 +71,7 @@ font::font(const font& value) {
   data_ = value.data_;
 }
 
-font& font::operator=(const font& value) {
+font& font::operator =(const font& value) {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::font::destroy(data_->handle_);
   data_ = value.data_;
   return *this;

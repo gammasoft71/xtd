@@ -39,7 +39,7 @@ namespace xtd {
         /// @cond
         socket_information(socket_information&& socket_information) = default;
         socket_information(const socket_information& socket_information) = default;
-        socket_information& operator=(const socket_information&) = default;
+        socket_information& operator =(const socket_information&) = default;
         /// @endcond
         
         /// @name Properties

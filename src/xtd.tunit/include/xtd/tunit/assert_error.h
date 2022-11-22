@@ -27,7 +27,7 @@ namespace xtd {
       
       /// @cond
       assert_error(const assert_error&) = default;
-      assert_error& operator=(const assert_error&) = default;
+      assert_error& operator =(const assert_error&) = default;
       /// @endcond
       
       /// @brief Returns a string that represents the current assert_error.

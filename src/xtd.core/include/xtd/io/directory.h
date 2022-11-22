@@ -110,11 +110,11 @@ namespace xtd {
         directory_iterator(const directory_iterator&) = default;
         directory_iterator(directory_iterator&&) = default;
         
-        directory_iterator& operator++();
-        directory_iterator operator++(int);
-        bool operator==(directory_iterator other) const;
-        bool operator!=(directory_iterator other) const {return !operator==(other);}
-        value_type operator*() const;
+        directory_iterator& operator ++();
+        directory_iterator operator ++(int);
+        bool operator ==(directory_iterator other) const;
+        bool operator !=(directory_iterator other) const {return !operator ==(other);}
+        value_type operator *() const;
         xtd::io::directory::directory_iterator begin() const;
         xtd::io::directory::directory_iterator end() const;
         /// @endcond
@@ -140,11 +140,11 @@ namespace xtd {
         file_iterator(const file_iterator&) = default;
         file_iterator(file_iterator&&) = default;
         
-        file_iterator& operator++();
-        file_iterator operator++(int);
-        bool operator==(file_iterator other) const;
-        bool operator!=(file_iterator other) const {return !operator==(other);}
-        value_type operator*() const;
+        file_iterator& operator ++();
+        file_iterator operator ++(int);
+        bool operator ==(file_iterator other) const;
+        bool operator !=(file_iterator other) const {return !operator ==(other);}
+        value_type operator *() const;
         xtd::io::directory::file_iterator begin() const;
         xtd::io::directory::file_iterator end() const;
         /// @endcond
@@ -170,11 +170,11 @@ namespace xtd {
         file_system_entry_iterator(const file_system_entry_iterator&) = default;
         file_system_entry_iterator(file_system_entry_iterator&&) = default;
         
-        file_system_entry_iterator& operator++();
-        file_system_entry_iterator operator++(int);
-        bool operator==(file_system_entry_iterator other) const;
-        bool operator!=(file_system_entry_iterator other) const {return !operator==(other);}
-        value_type operator*() const;
+        file_system_entry_iterator& operator ++();
+        file_system_entry_iterator operator ++(int);
+        bool operator ==(file_system_entry_iterator other) const;
+        bool operator !=(file_system_entry_iterator other) const {return !operator ==(other);}
+        value_type operator *() const;
         xtd::io::directory::file_system_entry_iterator begin() const;
         xtd::io::directory::file_system_entry_iterator end() const;
         /// @endcond

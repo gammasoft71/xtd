@@ -490,9 +490,9 @@ namespace xtd {
       
       /// @cond
       color(const color& color) = default;
-      color& operator=(const color& color) = default;
-      bool operator==(const color& value) const {return argb_ == value.argb_ && handle_ == value.handle_ && name_ == value.name_ && empty_ == value.empty_;}
-      bool operator!=(const color& value) const {return !operator==(value);}
+      color& operator =(const color& color) = default;
+      bool operator ==(const color& value) const {return argb_ == value.argb_ && handle_ == value.handle_ && name_ == value.name_ && empty_ == value.empty_;}
+      bool operator !=(const color& value) const {return !operator ==(value);}
       /// @endcond
       
       /// @name Properties

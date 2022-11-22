@@ -21,7 +21,7 @@ namespace xtd {
     public:
       /// @cond
       run_worker_completed_event_args(const run_worker_completed_event_args& do_work_event_args) = default;
-      run_worker_completed_event_args& operator=(const run_worker_completed_event_args& do_work_event_args) = default;
+      run_worker_completed_event_args& operator =(const run_worker_completed_event_args& do_work_event_args) = default;
       /// @endcond
       
       /// @name Constructors

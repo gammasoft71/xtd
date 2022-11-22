@@ -36,22 +36,22 @@ directory::directory_iterator::directory_iterator() {
   data_ = make_shared<data>();
 }
 
-directory::directory_iterator& directory::directory_iterator::operator++() {
+directory::directory_iterator& directory::directory_iterator::operator ++() {
   data_->iterator_++;
   return *this;
 }
 
-directory::directory_iterator directory::directory_iterator::operator++(int) {
+directory::directory_iterator directory::directory_iterator::operator ++(int) {
   directory_iterator result = *this;
   ++(*this);
   return result;
 }
 
-bool directory::directory_iterator::operator==(directory::directory_iterator other) const {
+bool directory::directory_iterator::operator ==(directory::directory_iterator other) const {
   return data_->iterator_ == other.data_->iterator_;
 }
 
-directory::directory_iterator::value_type directory::directory_iterator::operator*() const {
+directory::directory_iterator::value_type directory::directory_iterator::operator *() const {
   if (data_ == nullptr) return "";
   return (*data_->iterator_).full_name();
 }
@@ -78,22 +78,22 @@ directory::file_iterator::file_iterator() {
   data_ = make_shared<data>();
 }
 
-directory::file_iterator& directory::file_iterator::operator++() {
+directory::file_iterator& directory::file_iterator::operator ++() {
   data_->iterator_++;
   return *this;
 }
 
-directory::file_iterator directory::file_iterator::operator++(int) {
+directory::file_iterator directory::file_iterator::operator ++(int) {
   file_iterator result = *this;
   ++(*this);
   return result;
 }
 
-bool directory::file_iterator::operator==(directory::file_iterator other) const {
+bool directory::file_iterator::operator ==(directory::file_iterator other) const {
   return data_->iterator_ == other.data_->iterator_;
 }
 
-directory::file_iterator::value_type directory::file_iterator::operator*() const {
+directory::file_iterator::value_type directory::file_iterator::operator *() const {
   if (data_ == nullptr) return "";
   return (*data_->iterator_).full_name();
 }
@@ -120,22 +120,22 @@ directory::file_system_entry_iterator::file_system_entry_iterator() {
   data_ = make_shared<data>();
 }
 
-directory::file_system_entry_iterator& directory::file_system_entry_iterator::operator++() {
+directory::file_system_entry_iterator& directory::file_system_entry_iterator::operator ++() {
   data_->iterator_++;
   return *this;
 }
 
-directory::file_system_entry_iterator directory::file_system_entry_iterator::operator++(int) {
+directory::file_system_entry_iterator directory::file_system_entry_iterator::operator ++(int) {
   file_system_entry_iterator result = *this;
   ++(*this);
   return result;
 }
 
-bool directory::file_system_entry_iterator::operator==(directory::file_system_entry_iterator other) const {
+bool directory::file_system_entry_iterator::operator ==(directory::file_system_entry_iterator other) const {
   return data_->iterator_ == other.data_->iterator_;
 }
 
-directory::file_system_entry_iterator::value_type directory::file_system_entry_iterator::operator*() const {
+directory::file_system_entry_iterator::value_type directory::file_system_entry_iterator::operator *() const {
   if (data_ == nullptr) return "";
   return (*data_->iterator_)->full_name();
 }

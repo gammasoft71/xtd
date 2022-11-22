@@ -76,7 +76,7 @@ namespace xtd {
     
     /// @cond
     argument_null_exception(const argument_null_exception&) = default;
-    argument_null_exception& operator=(const argument_null_exception&) = default;
+    argument_null_exception& operator =(const argument_null_exception&) = default;
     /// @endcond
     
   private:

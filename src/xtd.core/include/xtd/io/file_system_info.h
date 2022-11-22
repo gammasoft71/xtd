@@ -85,7 +85,7 @@ namespace xtd {
     public:
       /// @cond
       file_system_info(const file_system_info&) = default;
-      file_system_info& operator=(const file_system_info&) = default;
+      file_system_info& operator =(const file_system_info&) = default;
       /// @endcond
       
       /// @name Properties

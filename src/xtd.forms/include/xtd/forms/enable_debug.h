@@ -27,12 +27,12 @@ namespace xtd {
       /// @cond
       enable_debug() = default;
       enable_debug(const enable_debug&) = default;
-      enable_debug& operator=(const enable_debug&) = default;
+      enable_debug& operator =(const enable_debug&) = default;
       
-      bool operator==(const enable_debug& value) const {return value_ == value.value_;}
-      bool operator!=(const enable_debug& value) const  {return !operator==(value);}
-      enable_debug operator|(const enable_debug& value) const {return enable_debug(value_ | value.value_);}
-      enable_debug operator+(const enable_debug& value) const {return enable_debug(value_ + value.value_);}
+      bool operator ==(const enable_debug& value) const {return value_ == value.value_;}
+      bool operator !=(const enable_debug& value) const  {return !operator ==(value);}
+      enable_debug operator |(const enable_debug& value) const {return enable_debug(value_ | value.value_);}
+      enable_debug operator +(const enable_debug& value) const {return enable_debug(value_ + value.value_);}
       /// @endcond
       
       /// @name Fields

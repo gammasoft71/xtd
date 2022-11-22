@@ -119,8 +119,8 @@ void radial_gradient_brush::recreate_handle() {
 radial_gradient_brush::radial_gradient_brush(const radial_gradient_brush& value) : brush(value), data_(value.data_) {
 }
 
-radial_gradient_brush& radial_gradient_brush::operator=(const radial_gradient_brush& value) {
-  brush::operator=(value);
+radial_gradient_brush& radial_gradient_brush::operator =(const radial_gradient_brush& value) {
+  brush::operator =(value);
   data_ = value.data_;
   return *this;
 }

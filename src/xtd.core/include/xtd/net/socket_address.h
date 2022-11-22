@@ -42,7 +42,7 @@ namespace xtd {
       
       /// @cond
       socket_address(const socket_address& socket_address) = default;
-      socket_address& operator=(const socket_address& socket_address) = default;
+      socket_address& operator =(const socket_address& socket_address) = default;
       /// @endcond
       
       /// @name Properties

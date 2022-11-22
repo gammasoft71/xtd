@@ -75,7 +75,7 @@ namespace xtd {
       
       /// @cond
       bitmap(const bitmap& bitmap) = default;
-      bitmap& operator=(const bitmap& bitmap) = default;
+      bitmap& operator =(const bitmap& bitmap) = default;
       /// @endcond
       
       /// @brief Gets the color of the specified pixel in this bitmap.

@@ -3,12 +3,12 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-bool switch_base::operator==(const switch_base& value) const {
+bool switch_base::operator ==(const switch_base& value) const {
   return display_name_ == value.display_name_ && description_ == value.description_ && attributes_ == value.attributes_ && switch_setting_ == value.switch_setting_ && value_ == value.value_;
 }
 
-bool switch_base::operator!=(const switch_base& value) const {
-  return !operator==(value);
+bool switch_base::operator !=(const switch_base& value) const {
+  return !operator ==(value);
 }
 
 const std::map<ustring, ustring>& switch_base::attributes() const {

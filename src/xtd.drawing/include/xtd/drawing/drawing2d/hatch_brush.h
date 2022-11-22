@@ -47,9 +47,9 @@ namespace xtd {
         
         /// @cond
         hatch_brush(const hatch_brush& value);
-        hatch_brush& operator=(const hatch_brush& value);
-        bool operator==(const hatch_brush& value) const {return data_->hatch_style_ == value.data_->hatch_style_ && data_->fore_color_ == value.data_->fore_color_ && data_->back_color_ == value.data_->back_color_;}
-        bool operator!=(const hatch_brush& value) const {return !operator==(value);}
+        hatch_brush& operator =(const hatch_brush& value);
+        bool operator ==(const hatch_brush& value) const {return data_->hatch_style_ == value.data_->hatch_style_ && data_->fore_color_ == value.data_->fore_color_ && data_->back_color_ == value.data_->back_color_;}
+        bool operator !=(const hatch_brush& value) const {return !operator ==(value);}
         /// @endcond
         
         /// @name Properties

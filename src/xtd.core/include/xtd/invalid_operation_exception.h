@@ -76,7 +76,7 @@ namespace xtd {
     
     /// @cond
     invalid_operation_exception(const invalid_operation_exception&) = default;
-    invalid_operation_exception& operator=(const invalid_operation_exception&) = default;
+    invalid_operation_exception& operator =(const invalid_operation_exception&) = default;
     /// @endcond
     
   private:

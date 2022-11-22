@@ -46,7 +46,7 @@ namespace xtd {
       
       /// @cond
       trace_listener(const trace_listener& tl) = delete;
-      trace_listener& operator=(const trace_listener& tl) = delete;
+      trace_listener& operator =(const trace_listener& tl) = delete;
       ~trace_listener();
       /// @endcond
       

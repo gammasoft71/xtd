@@ -76,7 +76,7 @@ namespace xtd {
     
     /// @cond
     format_exception(const format_exception&) = default;
-    format_exception& operator=(const format_exception&) = default;
+    format_exception& operator =(const format_exception&) = default;
     /// @endcond
     
   private:

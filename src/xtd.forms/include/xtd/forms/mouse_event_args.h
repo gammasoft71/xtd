@@ -51,7 +51,7 @@ namespace xtd {
       
       /// @cond
       mouse_event_args(const mouse_event_args& mouse_event_args) = default;
-      mouse_event_args& operator=(const mouse_event_args& mouse_event_args) = default;
+      mouse_event_args& operator =(const mouse_event_args& mouse_event_args) = default;
       /// @endcond
       
       /// @name Properties

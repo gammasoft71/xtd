@@ -33,7 +33,7 @@ namespace xtd {
       /// @cond
       secure_string(secure_string&&) = default;
       secure_string(const secure_string&) = default;
-      secure_string& operator=(const secure_string&) = default;
+      secure_string& operator =(const secure_string&) = default;
       bool empty() const noexcept;
       /// @endcond
       

@@ -47,9 +47,9 @@ namespace xtd {
         /// @cond
         encoder() = default;
         encoder(const encoder&) = default;
-        encoder& operator=(const encoder&) = default;
-        bool operator==(const encoder& value) const {return guid_ == value.guid_;}
-        bool operator!=(const encoder& value) const {return !operator==(value);}
+        encoder& operator =(const encoder&) = default;
+        bool operator ==(const encoder& value) const {return guid_ == value.guid_;}
+        bool operator !=(const encoder& value) const {return !operator ==(value);}
         /// @endcond
         
         

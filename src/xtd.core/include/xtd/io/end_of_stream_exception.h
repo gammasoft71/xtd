@@ -83,7 +83,7 @@ namespace xtd {
       
       /// @cond
       end_of_stream_exception(const end_of_stream_exception&) = default;
-      end_of_stream_exception& operator=(const end_of_stream_exception&) = default;
+      end_of_stream_exception& operator =(const end_of_stream_exception&) = default;
       /// @endcond
       
     private:

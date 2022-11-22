@@ -45,7 +45,7 @@ namespace xtd {
         prompt() = default;
         prompt(const prompt&) = default;
         prompt(prompt&&) = default;
-        prompt& operator=(const prompt&) = default;
+        prompt& operator =(const prompt&) = default;
         /// @endcond
 
         /// @name Properties

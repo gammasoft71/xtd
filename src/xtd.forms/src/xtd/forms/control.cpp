@@ -71,8 +71,8 @@ control::control_collection::control_collection(const control::control_collectio
 
 control::control_collection::control_collection(const control::control_collection::base& collection) : control::control_collection::base(collection) {}
 control::control_collection::control_collection(const control::control_collection& collection) : control::control_collection::base(collection) {}
-control::control_collection& control::control_collection::operator=(const control::control_collection& collection) {
-  base::operator=(collection);
+control::control_collection& control::control_collection::operator =(const control::control_collection& collection) {
+  base::operator =(collection);
   return *this;
 }
 

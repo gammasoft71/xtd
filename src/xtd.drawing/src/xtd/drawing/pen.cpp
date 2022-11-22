@@ -35,7 +35,7 @@ pen::pen(const pen& value) {
   data_ = value.data_;
 }
 
-pen& pen::operator=(const pen& value) {
+pen& pen::operator =(const pen& value) {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::pen::destroy(data_->handle_);
   data_ = value.data_;
   return *this;
@@ -45,12 +45,12 @@ pen::~pen() {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::pen::destroy(data_->handle_);
 }
 
-bool pen::operator==(const xtd::drawing::pen& value) const {
+bool pen::operator ==(const xtd::drawing::pen& value) const {
   return data_ == value.data_;
 }
 
-bool pen::operator!=(const xtd::drawing::pen& value) const {
-  return !operator==(value);
+bool pen::operator !=(const xtd::drawing::pen& value) const {
+  return !operator ==(value);
 }
 
 pen_alignment pen::alignment() const {

@@ -48,9 +48,9 @@ namespace xtd {
       /// @cond
       tool_bar_button(const tool_bar_button&) noexcept = default;
       tool_bar_button(tool_bar_button&&) noexcept = default;
-      tool_bar_button& operator=(const tool_bar_button&) noexcept = default;
-      bool operator==(const tool_bar_button& other) const noexcept {return data_ == other.data_;}
-      bool operator!=(const tool_bar_button& other) const noexcept {return !operator==(other);}
+      tool_bar_button& operator =(const tool_bar_button&) noexcept = default;
+      bool operator ==(const tool_bar_button& other) const noexcept {return data_ == other.data_;}
+      bool operator !=(const tool_bar_button& other) const noexcept {return !operator ==(other);}
       /// @endcond
       
       /// @name Properties

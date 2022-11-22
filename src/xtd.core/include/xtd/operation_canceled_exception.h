@@ -76,7 +76,7 @@ namespace xtd {
     
     /// @cond
     operation_canceled_exception(const operation_canceled_exception&) = default;
-    operation_canceled_exception& operator=(const operation_canceled_exception&) = default;
+    operation_canceled_exception& operator =(const operation_canceled_exception&) = default;
     /// @endcond
     
   private:

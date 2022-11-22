@@ -108,7 +108,7 @@ namespace xtd {
         /// @cond
         style_sheet(const style_sheet&);
         style_sheet(style_sheet&&) = default;
-        style_sheet& operator=(const style_sheet&);
+        style_sheet& operator =(const style_sheet&);
         /// @endcond
         
         /// @name Properties

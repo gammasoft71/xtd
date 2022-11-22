@@ -102,8 +102,8 @@ void conical_gradient_brush::recreate_handle() {
 conical_gradient_brush::conical_gradient_brush(const conical_gradient_brush& value) : brush(value), data_(value.data_) {
 }
 
-conical_gradient_brush& conical_gradient_brush::operator=(const conical_gradient_brush& value) {
-  brush::operator=(value);
+conical_gradient_brush& conical_gradient_brush::operator =(const conical_gradient_brush& value) {
+  brush::operator =(value);
   data_ = value.data_;
   return *this;
 }

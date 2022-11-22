@@ -35,7 +35,7 @@ namespace xtd {
       
       /// @cond
       trace_event_cache(const trace_event_cache& tec);
-      trace_event_cache& operator=(const trace_event_cache& tec) = default;
+      trace_event_cache& operator =(const trace_event_cache& tec) = default;
       /// @endcond
       
       /// @name Properties

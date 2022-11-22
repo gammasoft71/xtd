@@ -53,7 +53,7 @@ namespace xtd {
         /// @cond
         linger_option(linger_option&& linger_option) = default;
         linger_option(const linger_option& linger_option) = default;
-        linger_option& operator=(const linger_option&) = default;
+        linger_option& operator =(const linger_option&) = default;
         friend std::ostream& operator<<(std::ostream& os, const linger_option& mo) noexcept {return os << mo.to_string();}
         /// @endcond
         

@@ -17,23 +17,23 @@ public:
   char8_t(char8_t&&) = default;
   
   operator char() const {return value_;}
-  bool operator==(char8_t c) const {return value_ == c.value_;}
-  bool operator!=(char8_t c) const {return value_ != c.value_;}
+  bool operator ==(char8_t c) const {return value_ == c.value_;}
+  bool operator !=(char8_t c) const {return value_ != c.value_;}
   bool operator<(char8_t c) const {return value_ < c.value_;}
   bool operator>(char8_t c) const {return value_ > c.value_;}
   bool operator<=(char8_t c) const {return value_ <= c.value_;}
   bool operator>=(char8_t c) const {return value_ >= c.value_;}
   
-  char8_t operator+(char8_t c) const {return char8_t(value_ + c.value_);}
-  char8_t operator-(char8_t c) const {return char8_t(value_ - c.value_);}
-  char8_t& operator=(char8_t c) {value_ = c.value_; return *this;}
-  char8_t& operator++() {value_ += 1; return *this;}
-  char8_t operator++(int) {char8_t result(*this); ++(*this); return result;}
-  char8_t& operator--() {value_ -= 1; return *this;}
-  char8_t operator--(int) {char8_t result(*this); --(*this); return result;}
+  char8_t operator +(char8_t c) const {return char8_t(value_ + c.value_);}
+  char8_t operator -(char8_t c) const {return char8_t(value_ - c.value_);}
+  char8_t& operator =(char8_t c) {value_ = c.value_; return *this;}
+  char8_t& operator ++() {value_ += 1; return *this;}
+  char8_t operator ++(int) {char8_t result(*this); ++(*this); return result;}
+  char8_t& operator --() {value_ -= 1; return *this;}
+  char8_t operator --(int) {char8_t result(*this); --(*this); return result;}
   
-  bool operator==(char c) const {return value_ == c;}
-  bool operator!=(char c) const {return value_ != c;}
+  bool operator ==(char c) const {return value_ == c;}
+  bool operator !=(char c) const {return value_ != c;}
   bool operator<(char c) const {return value_ < c;}
   bool operator>(char c) const {return value_ > c;}
   bool operator<=(char c) const {return value_ <= c;}

@@ -76,7 +76,7 @@ namespace xtd {
     
     /// @cond
     length_exception(const length_exception&) = default;
-    length_exception& operator=(const length_exception&) = default;
+    length_exception& operator =(const length_exception&) = default;
     /// @endcond
     
   private:

@@ -45,9 +45,9 @@ namespace xtd {
       /// @cond
       link(const link&) = default;
       link(link&&) = default;
-      link& operator=(const link&) = default;
-      bool operator==(const link& other) const {return enabled_ == other.enabled_ && length_ == other.length_ && name_ == other.name_ && start_ == other.start_;}
-      bool operator!=(const link& other) const {return !operator==(other);}
+      link& operator =(const link&) = default;
+      bool operator ==(const link& other) const {return enabled_ == other.enabled_ && length_ == other.length_ && name_ == other.name_ && start_ == other.start_;}
+      bool operator !=(const link& other) const {return !operator ==(other);}
       /// @endcond
       
       /// @name Properties

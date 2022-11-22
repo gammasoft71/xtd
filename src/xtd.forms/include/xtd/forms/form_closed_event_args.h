@@ -30,7 +30,7 @@ namespace xtd {
       
       /// @cond
       form_closed_event_args(const form_closed_event_args& form_closed_event_args) = default;
-      form_closed_event_args& operator=(const form_closed_event_args& form_closed_event_args) = default;
+      form_closed_event_args& operator =(const form_closed_event_args& form_closed_event_args) = default;
       /// @endcond
       
       /// @name Properties

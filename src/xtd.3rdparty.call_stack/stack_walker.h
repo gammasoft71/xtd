@@ -77,7 +77,7 @@ public:
   );
   StackWalker(DWORD dwProcessId, HANDLE hProcess);
   StackWalker(const StackWalker&) = delete;
-  StackWalker& operator=(const StackWalker&) = delete;
+  StackWalker& operator =(const StackWalker&) = delete;
   virtual ~StackWalker();
   
   typedef BOOL (__stdcall* PReadProcessMemoryRoutine)(

@@ -34,10 +34,10 @@ namespace xtd {
     
     ///@cond
     // Not correct for an interface but necessary for C++ language.
-    friend bool operator==(const type_t& a, const type_t& b) {return a.equals(b);}
-    friend bool operator!=(const type_t& a, const type_t& b) {return !a.equals(b);}
-    friend bool operator==(const type_t& a, const object& b) {return a.equals(b);}
-    friend bool operator!=(const type_t& a, const object& b) {return !a.equals(b);}
+    friend bool operator ==(const type_t& a, const type_t& b) {return a.equals(b);}
+    friend bool operator !=(const type_t& a, const type_t& b) {return !a.equals(b);}
+    friend bool operator ==(const type_t& a, const object& b) {return a.equals(b);}
+    friend bool operator !=(const type_t& a, const object& b) {return !a.equals(b);}
     /// @endcond
   };
 }

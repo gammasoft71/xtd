@@ -16,7 +16,7 @@ namespace assert_unit_tests {
     explicit unit_test_error(const std::string& message) : message_(message) {}
     explicit unit_test_error(const char* message) : message_(message) {}
     unit_test_error(const unit_test_error&) = default;
-    unit_test_error& operator=(const unit_test_error&) = default;
+    unit_test_error& operator =(const unit_test_error&) = default;
     const char* what() const noexcept {return message_.c_str();}
     
   private:
@@ -52,7 +52,7 @@ namespace assert_unit_tests {
     register_assert_unit_test(const std::string& name, std::function<void(const std::string&)> method) : method(method), name(name) {assert_unit_tests.push_back(*this);}
     register_assert_unit_test(bool ignore) {if (ignore == true) ignore_test_count++;}
     register_assert_unit_test(const register_assert_unit_test&) = default;
-    register_assert_unit_test& operator=(const register_assert_unit_test&) = default;
+    register_assert_unit_test& operator =(const register_assert_unit_test&) = default;
     
     static int run_all_tests() {
       std::cout << "Start unit tests" << std::endl;

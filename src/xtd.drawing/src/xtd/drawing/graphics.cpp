@@ -31,7 +31,7 @@ graphics::graphics(const graphics& value) {
   data_ = value.data_;
 }
 
-graphics& graphics::operator=(const graphics& value) {
+graphics& graphics::operator =(const graphics& value) {
   if (data_.use_count() == 1 && handle() != 0) native::graphics::destroy(handle());
   data_ = value.data_;
   return *this;

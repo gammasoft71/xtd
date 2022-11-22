@@ -33,7 +33,7 @@ namespace xtd {
       
       /// @cond
       replace_event_args(const replace_event_args&) = default;
-      replace_event_args& operator=(const replace_event_args&) = default;
+      replace_event_args& operator =(const replace_event_args&) = default;
       /// @endcond
       
       /// @name Properties

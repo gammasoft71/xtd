@@ -44,9 +44,9 @@ namespace xtd {
     
     /// @cond
     console_key_info(const console_key_info& key_info) noexcept = default;
-    console_key_info& operator=(const console_key_info& key_info) noexcept = default;
-    bool operator==(const console_key_info& key_info) const noexcept {return key_char_ == key_info.key_char_ && key_ == key_info.key_ && modifiers_ == key_info.modifiers_;}
-    bool operator!=(const console_key_info& key_info) const noexcept {return !operator==(key_info);}
+    console_key_info& operator =(const console_key_info& key_info) noexcept = default;
+    bool operator ==(const console_key_info& key_info) const noexcept {return key_char_ == key_info.key_char_ && key_ == key_info.key_ && modifiers_ == key_info.modifiers_;}
+    bool operator !=(const console_key_info& key_info) const noexcept {return !operator ==(key_info);}
     /// @endcond
     
     /// @name Properties

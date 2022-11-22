@@ -76,7 +76,7 @@ namespace xtd {
     
     /// @cond
     not_finite_number_exception(const not_finite_number_exception&) = default;
-    not_finite_number_exception& operator=(const not_finite_number_exception&) = default;
+    not_finite_number_exception& operator =(const not_finite_number_exception&) = default;
     /// @endcond
     
   private:

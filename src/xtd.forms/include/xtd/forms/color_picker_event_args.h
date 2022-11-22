@@ -24,7 +24,7 @@ namespace xtd {
     public:
       /// @cond
       color_picker_event_args(const color_picker_event_args& color_picker_event_args) = default;
-      color_picker_event_args& operator=(const color_picker_event_args& color_picker_event_args) = default;
+      color_picker_event_args& operator =(const color_picker_event_args& color_picker_event_args) = default;
       /// @endcond
       
       /// @name Constructors

@@ -44,10 +44,10 @@ namespace xtd {
       /// @cond
       explicit trace_listener_collection(const base& collection);
       trace_listener_collection(const trace_listener_collection& collection);
-      trace_listener_collection& operator=(const trace_listener_collection& collection);
+      trace_listener_collection& operator =(const trace_listener_collection& collection);
       trace_listener_collection(trace_listener_collection&&) = default;
-      bool operator==(const trace_listener_collection& value) const;
-      bool operator!=(const trace_listener_collection& value) const;
+      bool operator ==(const trace_listener_collection& value) const;
+      bool operator !=(const trace_listener_collection& value) const;
       /// @endcond
       
       /// @name Operators

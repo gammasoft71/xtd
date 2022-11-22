@@ -31,7 +31,7 @@ namespace xtd {
       
       /// @cond
       cancel_event_args(const cancel_event_args& cancel_event_args) = default;
-      cancel_event_args& operator=(const cancel_event_args& cancel_event_args) = default;
+      cancel_event_args& operator =(const cancel_event_args& cancel_event_args) = default;
       /// @endcond
       
       /// @name Properties

@@ -34,7 +34,7 @@ namespace xtd {
       
       /// @cond
       find_event_args(const find_event_args&) = default;
-      find_event_args& operator=(const find_event_args&) = default;
+      find_event_args& operator =(const find_event_args&) = default;
       /// @endcond
       
       /// @name Properties

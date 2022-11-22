@@ -76,7 +76,7 @@ namespace xtd {
     
     /// @cond
     platform_not_supported_exception(const platform_not_supported_exception&) = default;
-    platform_not_supported_exception& operator=(const platform_not_supported_exception&) = default;
+    platform_not_supported_exception& operator =(const platform_not_supported_exception&) = default;
     /// @endcond
     
   private:

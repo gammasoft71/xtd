@@ -49,10 +49,10 @@ namespace xtd {
       /// @cond
       image() = default;
       image(const image& image) = default;
-      image& operator=(const image& image) = default;
+      image& operator =(const image& image) = default;
       ~image();
-      bool operator==(const image& image) const;
-      bool operator!=(const image& image) const;
+      bool operator ==(const image& image) const;
+      bool operator !=(const image& image) const;
       /// @endcond
       
       /// @name Fields

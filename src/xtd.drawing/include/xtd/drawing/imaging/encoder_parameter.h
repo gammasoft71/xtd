@@ -97,9 +97,9 @@ namespace xtd {
         /// @cond
         encoder_parameter() = default;
         encoder_parameter(const encoder_parameter&) = default;
-        encoder_parameter& operator=(const encoder_parameter&) = default;
-        bool operator==(const encoder_parameter& value) const {return encoder_ == value.encoder_ && type_ == value.type_ && value_ == value.value_;}
-        bool operator!=(const encoder_parameter& value) const {return !operator==(value);}
+        encoder_parameter& operator =(const encoder_parameter&) = default;
+        bool operator ==(const encoder_parameter& value) const {return encoder_ == value.encoder_ && type_ == value.type_ && value_ == value.value_;}
+        bool operator !=(const encoder_parameter& value) const {return !operator ==(value);}
         /// @endcond
         
         

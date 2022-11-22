@@ -33,7 +33,7 @@ namespace xtd {
       
       /// @cond
       create_params(const create_params&) = default;
-      create_params& operator=(create_params&) = default;
+      create_params& operator =(create_params&) = default;
       /// @endcond
       
       /// @name Properties

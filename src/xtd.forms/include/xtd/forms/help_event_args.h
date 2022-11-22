@@ -31,7 +31,7 @@ namespace xtd {
       
       /// @cond
       help_event_args(const help_event_args& control_event_args) = default;
-      help_event_args& operator=(const help_event_args& help_event_args) = default;
+      help_event_args& operator =(const help_event_args& help_event_args) = default;
       /// @endcond
       
       /// @name Properties

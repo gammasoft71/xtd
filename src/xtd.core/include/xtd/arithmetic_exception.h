@@ -76,7 +76,7 @@ namespace xtd {
     
     /// @cond
     arithmetic_exception(const arithmetic_exception&) = default;
-    arithmetic_exception& operator=(const arithmetic_exception&) = default;
+    arithmetic_exception& operator =(const arithmetic_exception&) = default;
     /// @endcond
     
   private:

@@ -28,9 +28,9 @@ namespace xtd {
       /// @cond
       flat_button_appearance(const flat_button_appearance&) = default;
       flat_button_appearance(flat_button_appearance&&) = default;
-      flat_button_appearance& operator=(const flat_button_appearance&) = default;
-      bool operator==(const flat_button_appearance& other) const {return border_color_ == other.border_color_ && border_size_ == other.border_size_ && checked_back_color_ == other.checked_back_color_ && mouse_down_back_color_ == other.mouse_down_back_color_ && mouse_over_back_color_ == other.mouse_over_back_color_;}
-      bool operator!=(const flat_button_appearance& other) const {return !operator==(other);}
+      flat_button_appearance& operator =(const flat_button_appearance&) = default;
+      bool operator ==(const flat_button_appearance& other) const {return border_color_ == other.border_color_ && border_size_ == other.border_size_ && checked_back_color_ == other.checked_back_color_ && mouse_down_back_color_ == other.mouse_down_back_color_ && mouse_over_back_color_ == other.mouse_over_back_color_;}
+      bool operator !=(const flat_button_appearance& other) const {return !operator ==(other);}
       /// @endcond
       
       /// @name Properties

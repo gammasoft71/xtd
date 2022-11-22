@@ -89,12 +89,12 @@ image::~image() {
     native::image::destroy(data_->handle_);
 }
 
-bool image::operator==(const image& image) const {
+bool image::operator ==(const image& image) const {
   return data_->handle_ == image.data_->handle_;
 }
 
-bool image::operator!=(const image& image) const {
-  return !operator==(image);
+bool image::operator !=(const image& image) const {
+  return !operator ==(image);
 }
 int32_t image::flags() const {
   return static_cast<int32_t>(data_->flags_);

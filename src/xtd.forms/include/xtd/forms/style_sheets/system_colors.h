@@ -39,7 +39,7 @@ namespace xtd {
         /// @cond
         system_colors(const system_colors&) = default;
         system_colors(system_colors&&) = default;
-        system_colors& operator=(const system_colors&) = default;
+        system_colors& operator =(const system_colors&) = default;
         /// @endcond
         
         /// @name Properties

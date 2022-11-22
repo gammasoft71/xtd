@@ -81,46 +81,46 @@ point point::truncate(const point_f& value) noexcept {
   return {int32_t(std::trunc(value.x())), int32_t(std::trunc(value.y()))};
 }
 
-bool point::operator==(const point& value) const noexcept {
+bool point::operator ==(const point& value) const noexcept {
   return x_ == value.x_ && y_ == value.y_;
 }
 
-bool point::operator!=(const point& value) const noexcept {
-  return !operator==(value);
+bool point::operator !=(const point& value) const noexcept {
+  return !operator ==(value);
 }
 
-point point::operator+(const size& sz) const noexcept {
+point point::operator +(const size& sz) const noexcept {
   return add(*this, sz);
 }
 
-point point::operator+(const point& pt) const noexcept {
+point point::operator +(const point& pt) const noexcept {
   return add(*this, pt);
 }
 
-point& point::operator+=(const size& sz) noexcept {
+point& point::operator +=(const size& sz) noexcept {
   *this = add(*this, sz);
   return *this;
 }
 
-point& point::operator+=(const point& pt) noexcept {
+point& point::operator +=(const point& pt) noexcept {
   *this = add(*this, pt);
   return *this;
 }
 
-point point::operator-(const size& sz) const noexcept {
+point point::operator -(const size& sz) const noexcept {
   return subtract(*this, sz);
 }
 
-point point::operator-(const point& pt) const noexcept {
+point point::operator -(const point& pt) const noexcept {
   return subtract(*this, pt);
 }
 
-point& point::operator-=(const size& sz) noexcept {
+point& point::operator -=(const size& sz) noexcept {
   *this = subtract(*this, sz);
   return *this;
 }
 
-point& point::operator-=(const point& pt) noexcept {
+point& point::operator -=(const point& pt) noexcept {
   *this = subtract(*this, pt);
   return *this;
 }

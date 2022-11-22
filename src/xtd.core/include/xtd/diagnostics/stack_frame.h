@@ -79,9 +79,9 @@ namespace xtd {
       /// @cond
       stack_frame(const stack_frame&) = default;
       stack_frame(stack_frame&&) = default;
-      stack_frame& operator=(const stack_frame&) = default;
-      bool operator==(const stack_frame& sf) const {return file_name_ == sf.file_name_ && file_line_number_ == sf.file_line_number_ && method_name_ == sf.method_name_ && file_column_number_ == sf.file_column_number_ && offset_ == sf.offset_;}
-      bool operator!=(const stack_frame& sf) const {return !operator==(sf);}
+      stack_frame& operator =(const stack_frame&) = default;
+      bool operator ==(const stack_frame& sf) const {return file_name_ == sf.file_name_ && file_line_number_ == sf.file_line_number_ && method_name_ == sf.method_name_ && file_column_number_ == sf.file_column_number_ && offset_ == sf.offset_;}
+      bool operator !=(const stack_frame& sf) const {return !operator ==(sf);}
       /// @endcond
       /// @}
       

@@ -194,7 +194,7 @@ namespace {
     
     key_info(const key_info& ki) : key_(ki.key_), key_char_(ki.key_char_), has_alt_modifier_(ki.has_alt_modifier_), has_control_modifier_(ki.has_control_modifier_), has_shift_modifier_(ki.has_shift_modifier_) {}
     
-    key_info& operator=(const key_info& ki) {
+    key_info& operator =(const key_info& ki) {
       key_ = ki.key_;
       key_char_ = ki.key_char_;
       has_alt_modifier_ = ki.has_alt_modifier_;

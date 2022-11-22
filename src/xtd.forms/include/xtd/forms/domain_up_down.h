@@ -62,8 +62,8 @@ namespace xtd {
         item(const char* value) : value_(value) {}
         item(const item& value) = default;
         virtual ~item() = default;
-        bool operator==(const item& value) const {return value_ == value.value_;}
-        bool operator!=(const item& value) const {return !operator==(value);}
+        bool operator ==(const item& value) const {return value_ == value.value_;}
+        bool operator !=(const item& value) const {return !operator ==(value);}
         bool operator<(const item& value) const {return value_ < value.value_;}
         bool operator<=(const item& value) const {return value_ <= value.value_;}
         bool operator>(const item& value) const {return value_ > value.value_;}

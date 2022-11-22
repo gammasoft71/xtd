@@ -31,7 +31,7 @@ namespace xtd {
     /// @cond
     processor() = default;
     processor(const processor&) = default;
-    processor& operator=(const processor&) = default;
+    processor& operator =(const processor&) = default;
     /// @endcond
     
     /// @name Properties

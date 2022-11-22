@@ -76,7 +76,7 @@ namespace xtd {
     
     /// @cond
     time_out_exception(const time_out_exception&) = default;
-    time_out_exception& operator=(const time_out_exception&) = default;
+    time_out_exception& operator =(const time_out_exception&) = default;
     /// @endcond
     
   private:

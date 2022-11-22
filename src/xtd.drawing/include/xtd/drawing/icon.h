@@ -109,9 +109,9 @@ namespace xtd {
       /// @cond
       icon() = default;
       icon(const icon& icon) = default;
-      icon& operator=(const icon& icon) = default;
-      bool operator==(const icon& icon) const;
-      bool operator!=(const icon& icon) const;
+      icon& operator =(const icon& icon) = default;
+      bool operator ==(const icon& icon) const;
+      bool operator !=(const icon& icon) const;
       ~icon();
       /// @endcond
       

@@ -105,7 +105,7 @@ namespace xtd {
     
     /// @cond
     guid(const guid&) = default;
-    guid& operator=(const guid&) = default;
+    guid& operator =(const guid&) = default;
     /// @endcond
     
     /// @name Methods

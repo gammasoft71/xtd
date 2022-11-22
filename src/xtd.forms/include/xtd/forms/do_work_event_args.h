@@ -20,7 +20,7 @@ namespace xtd {
     public:
       /// @cond
       do_work_event_args(const do_work_event_args& do_work_event_args) = default;
-      do_work_event_args& operator=(const do_work_event_args& do_work_event_args) = default;
+      do_work_event_args& operator =(const do_work_event_args& do_work_event_args) = default;
       /// @endcond
       
       /// @name Constructors

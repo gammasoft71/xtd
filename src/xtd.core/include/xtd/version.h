@@ -163,10 +163,10 @@ namespace xtd {
     
     /// @cond
     version(const version&) noexcept = default;
-    version& operator=(const version&) noexcept = default;
+    version& operator =(const version&) noexcept = default;
     
-    bool operator==(const version& v) const noexcept;
-    bool operator!=(const version& v) const noexcept;
+    bool operator ==(const version& v) const noexcept;
+    bool operator !=(const version& v) const noexcept;
     /// @endcond
     
     /// @name Properties

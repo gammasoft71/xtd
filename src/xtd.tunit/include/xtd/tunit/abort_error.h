@@ -27,7 +27,7 @@ namespace xtd {
       
       /// @cond
       abort_error(const abort_error&) = default;
-      abort_error& operator=(const abort_error&) = default;
+      abort_error& operator =(const abort_error&) = default;
       /// @endcond
       
       /// @brief Returns a string that represents the current abort_error.

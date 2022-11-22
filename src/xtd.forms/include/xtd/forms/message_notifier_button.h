@@ -18,10 +18,10 @@ namespace forms {
         }
 
         //TODO:
-        bool operator==(const message_notifier_button& other) const {
+        bool operator ==(const message_notifier_button& other) const {
             return text_ == other.text_;
         }
-        bool operator!=(const message_notifier_button& other) const {
+        bool operator !=(const message_notifier_button& other) const {
             return !((*this) == other);
         }
     private:

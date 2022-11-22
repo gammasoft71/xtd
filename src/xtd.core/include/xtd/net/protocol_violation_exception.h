@@ -78,7 +78,7 @@ namespace xtd {
       
       /// @cond
       protocol_violation_exception(const protocol_violation_exception&) = default;
-      protocol_violation_exception& operator=(const protocol_violation_exception&) = default;
+      protocol_violation_exception& operator =(const protocol_violation_exception&) = default;
       /// @endcond
       
     private:

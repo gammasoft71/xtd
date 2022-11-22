@@ -52,9 +52,9 @@ namespace xtd {
       
       /// @cond
       renderer(const renderer&) = default;
-      renderer& operator=(const renderer&) = default;
-      bool operator==(const renderer& value) const {return name_ == value.name_;}
-      bool operator!=(const renderer& value) const {return !operator==(value);}
+      renderer& operator =(const renderer&) = default;
+      bool operator ==(const renderer& value) const {return name_ == value.name_;}
+      bool operator !=(const renderer& value) const {return !operator ==(value);}
        /// @endcond
       
       /// @name Properties

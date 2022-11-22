@@ -20,7 +20,7 @@ namespace xtd {
     public:
       /// @cond
       progress_changed_event_args(const progress_changed_event_args&) = default;
-      progress_changed_event_args& operator=(const progress_changed_event_args&) = default;
+      progress_changed_event_args& operator =(const progress_changed_event_args&) = default;
       /// @endcond
       
       /// @name Constructors

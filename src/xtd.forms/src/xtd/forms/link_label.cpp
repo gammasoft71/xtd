@@ -17,8 +17,8 @@ link_label::link_collection::link_collection(const link_label::link_collection::
 
 link_label::link_collection::link_collection(const link_label::link_collection::base& collection) : link_label::link_collection::base(collection) {}
 link_label::link_collection::link_collection(const link_label::link_collection& collection) : link_label::link_collection::base(collection) {}
-link_label::link_collection& link_label::link_collection::operator=(const link_label::link_collection& collection) {
-  base::operator=(collection);
+link_label::link_collection& link_label::link_collection::operator =(const link_label::link_collection& collection) {
+  base::operator =(collection);
   return *this;
 }
 

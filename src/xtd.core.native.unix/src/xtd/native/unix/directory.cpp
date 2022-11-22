@@ -46,7 +46,7 @@ directory::directory_iterator::~directory_iterator() {
   }
 }
 
-directory::directory_iterator& directory::directory_iterator::operator++() {
+directory::directory_iterator& directory::directory_iterator::operator ++() {
   dirent* item;
   int32_t attributes;
   do {
@@ -59,17 +59,17 @@ directory::directory_iterator& directory::directory_iterator::operator++() {
   return *this;
 }
 
-directory::directory_iterator directory::directory_iterator::operator++(int) {
+directory::directory_iterator directory::directory_iterator::operator ++(int) {
   directory_iterator result = *this;
   ++(*this);
   return result;
 }
 
-bool directory::directory_iterator::operator==(directory::directory_iterator other) const {
+bool directory::directory_iterator::operator ==(directory::directory_iterator other) const {
   return data_->current_ == other.data_->current_;
 }
 
-directory::directory_iterator::value_type directory::directory_iterator::operator*() const {
+directory::directory_iterator::value_type directory::directory_iterator::operator *() const {
   if (data_ == nullptr) return "";
   return data_->current_;
 }
@@ -116,7 +116,7 @@ directory::file_iterator::~file_iterator() {
   }
 }
 
-directory::file_iterator& directory::file_iterator::operator++() {
+directory::file_iterator& directory::file_iterator::operator ++() {
   dirent* item;
   int32_t attributes;
   do {
@@ -129,17 +129,17 @@ directory::file_iterator& directory::file_iterator::operator++() {
   return *this;
 }
 
-directory::file_iterator directory::file_iterator::operator++(int) {
+directory::file_iterator directory::file_iterator::operator ++(int) {
   file_iterator result = *this;
   ++(*this);
   return result;
 }
 
-bool directory::file_iterator::operator==(directory::file_iterator other) const {
+bool directory::file_iterator::operator ==(directory::file_iterator other) const {
   return data_->current_ == other.data_->current_;
 }
 
-directory::file_iterator::value_type directory::file_iterator::operator*() const {
+directory::file_iterator::value_type directory::file_iterator::operator *() const {
   if (data_ == nullptr) return "";
   return data_->current_;
 }
@@ -186,7 +186,7 @@ directory::file_and_directory_iterator::~file_and_directory_iterator() {
   }
 }
 
-directory::file_and_directory_iterator& directory::file_and_directory_iterator::operator++() {
+directory::file_and_directory_iterator& directory::file_and_directory_iterator::operator ++() {
   dirent* item;
   int32_t attributes;
   do {
@@ -199,17 +199,17 @@ directory::file_and_directory_iterator& directory::file_and_directory_iterator::
   return *this;
 }
 
-directory::file_and_directory_iterator directory::file_and_directory_iterator::operator++(int) {
+directory::file_and_directory_iterator directory::file_and_directory_iterator::operator ++(int) {
   file_and_directory_iterator result = *this;
   ++(*this);
   return result;
 }
 
-bool directory::file_and_directory_iterator::operator==(directory::file_and_directory_iterator other) const {
+bool directory::file_and_directory_iterator::operator ==(directory::file_and_directory_iterator other) const {
   return data_->current_ == other.data_->current_;
 }
 
-directory::file_and_directory_iterator::value_type directory::file_and_directory_iterator::operator*() const {
+directory::file_and_directory_iterator::value_type directory::file_and_directory_iterator::operator *() const {
   if (data_ == nullptr) return "";
   return data_->current_;
 }

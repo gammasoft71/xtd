@@ -77,7 +77,7 @@ namespace xtd {
     
     /// @cond
     xml_syntax_exception(const xml_syntax_exception&) = default;
-    xml_syntax_exception& operator=(const xml_syntax_exception&) = default;
+    xml_syntax_exception& operator =(const xml_syntax_exception&) = default;
     /// @endcond
     
   private:

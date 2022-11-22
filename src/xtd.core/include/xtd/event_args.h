@@ -35,7 +35,7 @@ namespace xtd {
     
     /// @cond
     event_args(const event_args& event_args) = default;
-    event_args& operator=(const event_args& event_args) = default;
+    event_args& operator =(const event_args& event_args) = default;
     /// @endcond
   };
 }

@@ -26,7 +26,7 @@ namespace xtd {
       /// @cond
       end_point(end_point&& end_point) = default;
       end_point(const end_point& end_point) = default;
-      end_point& operator=(const end_point&) = default;
+      end_point& operator =(const end_point&) = default;
       /// @endcond
       
       /// @name Properties

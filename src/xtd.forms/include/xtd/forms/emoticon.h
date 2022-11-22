@@ -94,9 +94,9 @@ namespace xtd {
       
       emoticon() = default;
       emoticon(const emoticon&) = default;
-      emoticon& operator=(const emoticon&) = default;
-      bool operator==(const emoticon& value) {return name_ == value.name_ && codepoints_ == value.codepoints_;}
-      bool operator!=(const emoticon& value) {return !operator==(value);}
+      emoticon& operator =(const emoticon&) = default;
+      bool operator ==(const emoticon& value) {return name_ == value.name_ && codepoints_ == value.codepoints_;}
+      bool operator !=(const emoticon& value) {return !operator ==(value);}
       /// @endcond
       
       /// @name Properties
@@ -147,23 +147,23 @@ namespace xtd {
 }
 
 /// @cond
-inline xtd::ustring operator+(const xtd::forms::emoticon& value_a, const xtd::forms::emoticon& value_b) {
+inline xtd::ustring operator +(const xtd::forms::emoticon& value_a, const xtd::forms::emoticon& value_b) {
   return value_a.to_string() + value_b.to_string();
 }
 
-inline xtd::ustring operator+(const xtd::forms::emoticon& value_a, const char* value_b) {
+inline xtd::ustring operator +(const xtd::forms::emoticon& value_a, const char* value_b) {
   return value_a.to_string() + value_b;
 }
 
-inline xtd::ustring operator+(const xtd::forms::emoticon& value_a, const xtd::ustring& value_b) {
+inline xtd::ustring operator +(const xtd::forms::emoticon& value_a, const xtd::ustring& value_b) {
   return value_a.to_string() + value_b;
 }
 
-inline xtd::ustring operator+(const xtd::ustring& value_a, const xtd::forms::emoticon& value_b) {
+inline xtd::ustring operator +(const xtd::ustring& value_a, const xtd::forms::emoticon& value_b) {
   return value_a + value_b.to_string();
 }
 
-inline xtd::ustring operator+(const char* value_a, const xtd::forms::emoticon& value_b) {
+inline xtd::ustring operator +(const char* value_a, const xtd::forms::emoticon& value_b) {
   return xtd::ustring(value_a) + value_b.to_string();
 }
 /// @endcond
