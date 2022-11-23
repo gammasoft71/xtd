@@ -49,7 +49,7 @@ std::string environment::get_desktop_theme() {
 std::string environment::get_environment_variable(const std::string& variable) {
   DWORD environent_variable_size = 65535;
   std::wstring environment_variable(environent_variable_size, 0);
-  environent_variable_size = GetEnvironmentVariableW(L"Name", environment_variable.data(), environent_variable_size);
+  environent_variable_size = GetEnvironmentVariable(win32::strings::to_wstring(variable).data(), environment_variable.data(), environent_variable_size);
   if (!environent_variable_size) return "";
   return win32::strings::to_string(environment_variable);
 }
