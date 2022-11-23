@@ -25,6 +25,11 @@ __declspec(dllimport) extern int __argc;
 __declspec(dllimport) extern char** __argv;
 int __environment_argc = __argc;
 char** __environment_argv = __argv;
+std::map<std::string, std::string> __machine_envs__;
+std::map<std::string, std::string> __none_envs__;
+std::map<std::string, std::string> __process_envs__;
+std::map<std::string, std::string> __user_envs__;
+
 
 std::vector<std::string> environment::get_command_line_args() {
   return {__environment_argv, __environment_argv + __environment_argc};
@@ -35,52 +40,69 @@ std::string environment::get_desktop_environment() {
 }
 
 std::string environment::get_desktop_theme() {
-  auto light_theme = true;
-  // @todo read registry key "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize\\AppsUseLightTheme"
-  return light_theme ? "windows" : "windows dark";
+  DWORD value = 0, value_size = sizeof(value);
+  if (RegGetValue(HKEY_CURRENT_USER, L"Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", L"AppsUseLightTheme", RRF_RT_REG_DWORD, nullptr, &value, &value_size) != ERROR_SUCCESS)
+    value = 0;
+  return value == 0 ? "windows" : "windows dark";
 }
 
 std::string environment::get_environment_variable(const std::string& variable) {
-  /// @todo Use GetEnvironmentVariable : https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getenvironmentvariable
-  auto value = getenv(variable.c_str());
-  return value ? value : "";
+  DWORD environent_variable_size = 65535;
+  std::wstring environment_variable(environent_variable_size, 0);
+  environent_variable_size = GetEnvironmentVariableW(L"Name", environment_variable.data(), environent_variable_size);
+  if (!environent_variable_size) return "";
+  return win32::strings::to_string(environment_variable.c_str());
 }
 
 std::map<std::string, std::string>& environment::get_environment_variables(int32_t target) {
-  /// @todo Use GetEnvironmentVariable : https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getenvironmentvariable
+  auto& envs = __none_envs__;
+
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
-    static std::map<std::string, std::string> envs;
-    if (envs.size() == 0) {
-      for (size_t index = 0; environ[index] != nullptr; index++) {
-        std::vector<std::string> key_value = win32::strings::split(environ[index], {'='});
-        if (key_value.size() == 2)
-          envs[key_value[0]] = key_value[1];
-      }
+    envs = __process_envs__;
+    envs.clear();
+
+    for (size_t index = 0; environ[index] != nullptr; index++) {
+      std::vector<std::string> key_value = win32::strings::split(environ[index], {'='});
+      if (key_value.size() == 2)
+        envs.insert({key_value[0], key_value[1]});
     }
     return envs;
   }
-  
+
   if (target == ENVIRONMENT_VARIABLE_TARGET_USER || target == ENVIRONMENT_VARIABLE_TARGET_MACHINE) {
-    static std::map<std::string, std::string> envs;
+    envs = target == ENVIRONMENT_VARIABLE_TARGET_USER ? __user_envs__ : __machine_envs__;
     envs.clear();
-    //microsoft::win32::registry_key key = target == environment_variable_target::user ? microsoft::win32::registry::current_user().create_sub_key("Environment") : microsoft::win32::registry::local_machine().create_sub_key("System").create_sub_key("CurrentControlSet").create_sub_key("Control").create_sub_key("Session Manager").create_sub_key("Environment");
-    //for (auto name : key.get_value_names())
-    //  envs[name] = key.get_value(name).to_string();
+
+    HKEY root_key = target == ENVIRONMENT_VARIABLE_TARGET_USER ? HKEY_CURRENT_USER : HKEY_LOCAL_MACHINE;
+    std::wstring sub_key = target == ENVIRONMENT_VARIABLE_TARGET_USER ? L"Environment" : L"System\\CurrentControlSet\\Control\\Session Manager\\Environment";
+    HKEY environment_key = 0;
+    LSTATUS result = RegOpenKeyEx(root_key, sub_key.data(), 0, KEY_READ, &environment_key);
+    if (result != ERROR_SUCCESS || environment_key == 0) return envs;
+    
+    for (DWORD index = 0; result != ERROR_NO_MORE_ITEMS; ++index) {
+      DWORD value_size = 32767;
+      std::wstring value(value_size, 0);
+      DWORD data_type = REG_EXPAND_SZ;
+      DWORD data_size = 65535;
+      std::wstring data(data_size, 0);
+      result = RegEnumValue(environment_key, index, value.data(), &value_size, nullptr, &data_type, reinterpret_cast<LPBYTE>(data.data()), &data_size);
+      if (value[0] != 0) envs.insert({ win32::strings::to_string(value), win32::strings::to_string(data)});
+    }
+
+    RegCloseKey(environment_key);
     return envs;
   }
-  
-  static std::map<std::string, std::string> envs;
   return envs;
 }
 
 std::string environment::get_know_folder_path(int32_t id) {
   if (id == CSIDL_HOME) {
-    /// @todo Use GetEnvironmentVariable : https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getenvironmentvariable
-    auto path = getenv("HOMEPATH");
-    return path ? path : "";
+    return get_environment_variable("HOMEPATH");
   }
-  wchar_t path[MAX_PATH + 1];
-  return SHGetFolderPath(nullptr, id, nullptr, SHGFP_TYPE_CURRENT, path) == S_OK ? win32::strings::to_string(path) : "";
+  DWORD path_size = 65535;
+  std::wstring path;
+  path.resize(path_size);
+  return SHGetFolderPath(nullptr, id, nullptr, SHGFP_TYPE_CURRENT, path.data()) == S_OK ? win32::strings::to_string(path) : "";
 }
 
 std::string environment::get_machine_name() {
@@ -176,15 +198,25 @@ bool environment::has_shutdown_started() {
 bool environment::is_processor_arm() {
   SYSTEM_INFO system_info {};
   GetNativeSystemInfo(&system_info);
-  /// @todo check compare
-  return (system_info.wProcessorArchitecture & (PROCESSOR_ARCHITECTURE_ARM | PROCESSOR_ARCHITECTURE_ARM64)) != 0;
+  bool arm = false;
+  if ((system_info.wProcessorArchitecture & PROCESSOR_ARCHITECTURE_ARM) == PROCESSOR_ARCHITECTURE_ARM)
+    arm = true;
+  if ((system_info.wProcessorArchitecture & PROCESSOR_ARCHITECTURE_ARM64) == PROCESSOR_ARCHITECTURE_ARM64)
+    arm = true;
+  return arm;
 }
 
 bool environment::is_os_64_bit() {
   SYSTEM_INFO system_info {};
   GetNativeSystemInfo(&system_info);
-  /// @todo check compare
-  return (system_info.wProcessorArchitecture & (PROCESSOR_ARCHITECTURE_AMD64 | PROCESSOR_ARCHITECTURE_ARM64 | PROCESSOR_ARCHITECTURE_IA64)) != 0;
+  bool is64 = false;
+  if ((system_info.wProcessorArchitecture & PROCESSOR_ARCHITECTURE_AMD64) == PROCESSOR_ARCHITECTURE_AMD64)
+    is64 = true;
+  if ((system_info.wProcessorArchitecture & PROCESSOR_ARCHITECTURE_ARM64) == PROCESSOR_ARCHITECTURE_ARM64)
+    is64 = true;
+  if ((system_info.wProcessorArchitecture & PROCESSOR_ARCHITECTURE_IA64) == PROCESSOR_ARCHITECTURE_IA64)
+    is64 = true;
+  return is64;
 }
 
 std::string environment::new_line() {
@@ -192,13 +224,11 @@ std::string environment::new_line() {
 }
 
 void environment::set_environment_variable(const std::string& name, const std::string& value) {
-  /// @todo Use SetEnvironmentVariable : https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setenvironmentvariable
-  _putenv((name + "=" + value).c_str());
+  SetEnvironmentVariable(win32::strings::to_wstring(name).c_str(), win32::strings::to_wstring(value).c_str());
 }
 
 void environment::unset_environment_variable(const std::string& name) {
-  /// @todo Use SetEnvironmentVariable : https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setenvironmentvariable
-  _putenv((name + "=").c_str());
+  SetEnvironmentVariable(win32::strings::to_wstring(name).c_str(), nullptr);
 }
 
 int64_t environment::working_set() {
