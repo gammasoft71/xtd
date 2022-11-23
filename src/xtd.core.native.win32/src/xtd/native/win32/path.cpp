@@ -2,6 +2,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/path.h>
+#include "../../../../include/xtd/native/win32/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <string>
 #include <direct.h>
@@ -22,11 +23,10 @@ char path::directory_separator_char() {
 }
 
 string path::get_temp_path() {
-  /// @todo Use GetTTempPath : https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-gettemppatha
-  if (getenv("TMP") != nullptr)  return getenv("TMP");
-  if (getenv("TEMP") != nullptr) return getenv("TEMP");
-  if (getenv("USERPROFILE") != nullptr) return getenv("USERPROFILE");
-  return getenv("WINDIR");
+  DWORD temp_path_size = 65535;
+  std::wstring temp_path(temp_path_size, 0);
+  GetTempPath(temp_path_size, temp_path.data());
+  return win32::strings::to_string(temp_path.c_str());
 }
 
 vector<char> path::invalid_path_chars() {

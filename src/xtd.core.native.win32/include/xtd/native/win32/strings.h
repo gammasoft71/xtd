@@ -17,6 +17,7 @@ namespace xtd::native {
   class environment;
   class file;
   class file_system;
+  class path;
   class process;
   class translator;
   namespace win32 {
@@ -29,6 +30,7 @@ namespace xtd::native {
       friend xtd::native::environment;
       friend xtd::native::file;
       friend xtd::native::file_system;
+      friend xtd::native::path;
       friend xtd::native::process;
       friend xtd::native::translator;
     protected:
