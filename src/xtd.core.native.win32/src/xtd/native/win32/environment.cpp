@@ -196,27 +196,21 @@ bool environment::has_shutdown_started() {
 }
 
 bool environment::is_processor_arm() {
+  
   SYSTEM_INFO system_info {};
   GetNativeSystemInfo(&system_info);
-  bool arm = false;
-  if ((system_info.wProcessorArchitecture & PROCESSOR_ARCHITECTURE_ARM) == PROCESSOR_ARCHITECTURE_ARM)
-    arm = true;
-  if ((system_info.wProcessorArchitecture & PROCESSOR_ARCHITECTURE_ARM64) == PROCESSOR_ARCHITECTURE_ARM64)
-    arm = true;
-  return arm;
+  if ((system_info.wProcessorArchitecture & PROCESSOR_ARCHITECTURE_ARM) == PROCESSOR_ARCHITECTURE_ARM) return true;
+  if ((system_info.wProcessorArchitecture & PROCESSOR_ARCHITECTURE_ARM64) == PROCESSOR_ARCHITECTURE_ARM64) return true;
+  return false;
 }
 
 bool environment::is_os_64_bit() {
   SYSTEM_INFO system_info {};
   GetNativeSystemInfo(&system_info);
-  bool is64 = false;
-  if ((system_info.wProcessorArchitecture & PROCESSOR_ARCHITECTURE_AMD64) == PROCESSOR_ARCHITECTURE_AMD64)
-    is64 = true;
-  if ((system_info.wProcessorArchitecture & PROCESSOR_ARCHITECTURE_ARM64) == PROCESSOR_ARCHITECTURE_ARM64)
-    is64 = true;
-  if ((system_info.wProcessorArchitecture & PROCESSOR_ARCHITECTURE_IA64) == PROCESSOR_ARCHITECTURE_IA64)
-    is64 = true;
-  return is64;
+  if ((system_info.wProcessorArchitecture & PROCESSOR_ARCHITECTURE_AMD64) == PROCESSOR_ARCHITECTURE_AMD64) return true;
+  if ((system_info.wProcessorArchitecture & PROCESSOR_ARCHITECTURE_ARM64) == PROCESSOR_ARCHITECTURE_ARM64) return true;
+  if ((system_info.wProcessorArchitecture & PROCESSOR_ARCHITECTURE_IA64) == PROCESSOR_ARCHITECTURE_IA64) return true;
+  return false;
 }
 
 std::string environment::new_line() {
