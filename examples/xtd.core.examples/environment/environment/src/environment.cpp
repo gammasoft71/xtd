@@ -55,11 +55,11 @@ namespace examples {
       //  No example for Exit(exitCode) because doing so would terminate this example.
       
       //  <-- Keep this information secure! -->
-      ustring query = "My home folder is %HOME% and user is %USER%";
+      ustring query = ustring::format("My home folder is %{}% and user is %{}%", environment::os_version().is_windows_platform() ? "HOMEPATH" : "HOME", environment::os_version().is_windows_platform() ? "USERNAME" : "USER");
       str = environment::expand_environment_variables(query);
       console::write_line("expand_environment_variables: {}  {}",  nl, str);
       
-      console::write_line("get_environment_variable: {}  My temporary directory is {}.", nl,  environment::get_environment_variable( environment::os_version().is_windows_platform() ? "TEMP" : "TMPDIR"));
+      console::write_line("get_environment_variable: {}  My temporary directory is {}.", nl,  environment::get_environment_variable(environment::os_version().is_windows_platform() ? "TEMP" : "TMPDIR"));
       
       console::write_line("get_environment_variables: ");
       auto environment_variables = environment::get_environment_variables();
