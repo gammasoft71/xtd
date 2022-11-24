@@ -28,6 +28,11 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
+  /// @remarks For more information about enumeration, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/enum_class.md">enum class</a> guide.
+  /// The following code show how to use xtd::enum_object class for an enum.
+  /// @include enum_class.cpp
+  /// The following code show how to use xtd::enum_object class for an enum flags.
+  /// @include enum_class_flags.cpp
   template<typename enum_t = std::nullptr_t>
   class enum_object : public xtd::object, public icomparable<enum_object<enum_t>> {
   public:
