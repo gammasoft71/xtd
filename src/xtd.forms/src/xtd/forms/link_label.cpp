@@ -75,6 +75,18 @@ link_label& link_label::disabled_link_color(const xtd::drawing::color& color) {
   return *this;
 }
 
+xtd::forms::link_behavior link_label::link_behavior() const {
+  return link_behavior_;
+}
+
+link_label& link_label::link_behavior(xtd::forms::link_behavior value) {
+  if (link_behavior_ != value) {
+    link_behavior_ = value;
+    invalidate();
+  }
+  return *this;
+}
+
 xtd::drawing::color link_label::link_color() const {
   return link_color_.value_or(xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().link_text());;
 }
