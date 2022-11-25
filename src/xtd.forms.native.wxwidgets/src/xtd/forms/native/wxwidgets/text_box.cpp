@@ -73,3 +73,25 @@ void text_box::text(intptr_t control, const ustring& text) {
     case wx_text_box::character_casing::lower: static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetValue(convert_string::to_wstring(text.to_lower())); break;
   }
 }
+
+ustring text_box::placeholder_text(intptr_t control) {
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return "";
+  }
+  return static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetHint().c_str().AsWChar();
+}
+
+void text_box::placeholder_text(intptr_t control, const ustring& text) {
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
+  switch (reinterpret_cast<wx_text_box*>(control)->character_casing_) {
+    case wx_text_box::character_casing::normal: static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetHint(wxString(convert_string::to_wstring(text))); break;
+    case wx_text_box::character_casing::upper: static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetHint(convert_string::to_wstring(text.to_upper())); break;
+    case wx_text_box::character_casing::lower: static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetHint(convert_string::to_wstring(text.to_lower())); break;
+  }
+}

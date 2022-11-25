@@ -73,6 +73,19 @@ control& text_box::text(const ustring& text) {
   return *this;
 }
 
+const xtd::ustring& text_box::placeholder_text() const {
+  return placeholder_text_;
+}
+
+control& text_box::placeholder_text(const xtd::ustring& value) {
+  if (placeholder_text_ != value) {
+    placeholder_text_ = value;
+    if (is_handle_created())
+      native::text_box::placeholder_text(handle(), placeholder_text_);
+  }
+  return *this;
+}
+
 text_box& text_box::use_system_password_char(bool value) {
   if (use_system_password_char_ != value) {
     use_system_password_char_ = value;
@@ -124,6 +137,7 @@ void text_box::select(size_t start, size_t length) {
 
 void text_box::on_handle_created(const event_args& e) {
   text_box_base::on_handle_created(e);
+  native::text_box::placeholder_text(handle(), placeholder_text_);
   /*
   switch (character_casing_) {
     case xtd::forms::character_casing::upper: set_text(text().to_upper()); break;
