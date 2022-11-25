@@ -160,6 +160,8 @@ namespace xtd {
       /// @param e An event_args that contains the event data.
       virtual void on_value_changed(const event_args& e);
       
+      void on_lost_focus(const event_args& e) override;
+      
       void wnd_proc(message& message) override;
       /// @}
       
