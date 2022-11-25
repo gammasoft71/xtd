@@ -10,16 +10,16 @@ namespace examples {
   public:
     form1() {
       text("Status bar example");
-      client_size({820, 500});
+      client_size({ 820, 500 });
       //status_bar(status_bar1);
       
       text_box1.multiline(true);
       text_box1.read_only(true);
       text_box1.parent(*this);
       text_box1.dock(dock_style::fill);
-
+      
       status_bar1.parent(*this);
-      status_bar1.panels().push_back_range({status_bar_panel1, status_bar_panel2, status_bar_panel3, status_bar_panel4});
+      status_bar1.panels().push_back_range({ status_bar_panel1, status_bar_panel2, status_bar_panel3, status_bar_panel4 });
       //status_bar1.sizing_grip(false);
       status_bar1.show_panels(true);
       status_bar1.text("Shows status information without panels...");
@@ -70,34 +70,34 @@ namespace examples {
       text("Message notifier example");
       
       button1.parent(*this);
-      button1.location({10, 10});
+      button1.location({ 10, 10 });
       button1.text("Notify");
       button1.click += [&] {
         message_notifier1.show();
       };
       
-      message_notifier1.buttons().push_back_range({start_message_notifier_button, cancel_message_notifier_button});
+      message_notifier1.buttons().push_back_range({ start_message_notifier_button, cancel_message_notifier_button });
       message_notifier1.close_timeout_enabled(true);
       message_notifier1.close_timeout_interval(2s);
       message_notifier1.icon(xtd::drawing::system_icons::question());
       message_notifier1.message("Start the auto backup now. Note that once the backup is started, you can't cancel until its done.");
       message_notifier1.notifier_style(notifier_style::standard);
       message_notifier1.title("Backup");
-      message_notifier1.button_click += {*this, &form2::on_message_notifier_button_click};
+      message_notifier1.button_click += {*this, & form2::on_message_notifier_button_click};
     }
     
   private:
-
-     void on_message_notifier_button_click(object& sender, const notifier_button_click_event_args& e) {
-         if (e.button() == start_message_notifier_button)
-            diagnostics::debug::write_line("Start backup");
-         else
-            diagnostics::debug::write_line("Cancel backup");
-     }
+  
+    void on_message_notifier_button_click(object& sender, const notifier_button_click_event_args& e) {
+      if (e.button() == start_message_notifier_button)
+        diagnostics::debug::write_line("Start backup");
+      else
+        diagnostics::debug::write_line("Cancel backup");
+    }
     
     button button1;
-    message_notifier_button start_message_notifier_button {"&Start"};
-    message_notifier_button cancel_message_notifier_button {"&Cancel"};
+    message_notifier_button start_message_notifier_button{ "&Start" };
+    message_notifier_button cancel_message_notifier_button{ "&Cancel" };
     message_notifier message_notifier1;
   };
   
@@ -105,7 +105,7 @@ namespace examples {
   class form3 : public form {
   public:
     form3() {
-      client_size({300, button1.height() + button2.height() + 10});
+      client_size({ 300, button1.height() + button2.height() + 10 });
       form_border_style(forms::form_border_style::none);
       padding(forms::padding(5));
       start_position(xtd::forms::form_start_position::manual);
@@ -117,14 +117,14 @@ namespace examples {
       region(drawing::region(path));
       
       // Top right screen location :
-      location({screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().top() + 5});
+      location({ screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().top() + 5 });
       
       // Bottom right screen location :
       //location({screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().bottom() - client_size().height() - 5});
       
-      layout_panel1.controls().push_back_range({panel1, layout_panel2});
-      layout_panel1.control_layout_style(panel1, {1.0f, size_type::percent, true});
-      layout_panel1.control_layout_style(layout_panel2, {75, size_type::absolute});
+      layout_panel1.controls().push_back_range({ panel1, layout_panel2 });
+      layout_panel1.control_layout_style(panel1, { 1.0f, size_type::percent, true });
+      layout_panel1.control_layout_style(layout_panel2, { 75, size_type::absolute });
       layout_panel1.dock(dock_style::fill);
       layout_panel1.parent(*this);
       
@@ -136,7 +136,7 @@ namespace examples {
       // The following text is wrapped in label :
       label1.text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.\n\nUt velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien eros vitae ligula. Pellentesque rhoncus nunc et augue. Integer id felis. Curabitur aliquet pellentesque diam. Integer quis metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi vel erat non mauris convallis vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus, convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat. Proin feugiat, augue non elementum posuere, metus purus iaculis lectus, et tristique ligula justo vitae magna.\n\nAliquam convallis sollicitudin purus. Praesent aliquam, enim at fermentum mollis, ligula massa adipiscing nisl, ac euismod nibh nisl eu lectus. Fusce vulputate sem at sapien. Vivamus leo. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet. Aenean suscipit nulla in justo. Suspendisse cursus rutrum augue. Nulla tincidunt tincidunt mi. Curabitur iaculis, lorem vel rhoncus faucibus, felis magna fermentum augue, et ultricies lacus lorem varius purus. Curabitur eu amet.");
       
-      layout_panel2.controls().push_back_range({button1, button2});
+      layout_panel2.controls().push_back_range({ button1, button2 });
       
       button1.text("Ok");
       button1.click += [&] {
@@ -162,8 +162,8 @@ namespace examples {
   class form4 : public form {
   public:
     form4() {
-      controls().push_back_range({panel1, panel2});
-      client_size({300, button1.height() + button2.height() + 10});
+      controls().push_back_range({ panel1, panel2 });
+      client_size({ 300, button1.height() + button2.height() + 10 });
       form_border_style(forms::form_border_style::none);
       start_position(xtd::forms::form_start_position::manual);
       top_most(true);
@@ -174,7 +174,7 @@ namespace examples {
       region(drawing::region(path));
       
       // Top right screen location :
-      location({screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().top() + 5});
+      location({ screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().top() + 5 });
       
       // Bottom right screen location :
       //location({screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().bottom() - client_size().height() - 5});
@@ -189,7 +189,7 @@ namespace examples {
       // The following text is wrapped in label :
       label1.text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.\n\nUt velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien eros vitae ligula. Pellentesque rhoncus nunc et augue. Integer id felis. Curabitur aliquet pellentesque diam. Integer quis metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi vel erat non mauris convallis vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus, convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat. Proin feugiat, augue non elementum posuere, metus purus iaculis lectus, et tristique ligula justo vitae magna.\n\nAliquam convallis sollicitudin purus. Praesent aliquam, enim at fermentum mollis, ligula massa adipiscing nisl, ac euismod nibh nisl eu lectus. Fusce vulputate sem at sapien. Vivamus leo. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet. Aenean suscipit nulla in justo. Suspendisse cursus rutrum augue. Nulla tincidunt tincidunt mi. Curabitur iaculis, lorem vel rhoncus faucibus, felis magna fermentum augue, et ultricies lacus lorem varius purus. Curabitur eu amet.");
       
-      panel2.controls().push_back_range({button2, button1});
+      panel2.controls().push_back_range({ button2, button1 });
       panel2.dock(dock_style::right);
       panel2.width(85);
       panel2.padding(forms::padding(5));
@@ -225,15 +225,15 @@ namespace examples {
       top_most(true);
       form_border_style(forms::form_border_style::none);
       start_position(form_start_position::manual);
-      client_size({350, 200});
-      location({screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().top() + 5});
+      client_size({ 350, 200 });
+      location({ screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().top() + 5 });
       //padding(forms::padding(5));
       
       /// Set round rectangle form :
       drawing::drawing2d::graphics_path path;
       path.add_rounded_rectangle(client_rectangle(), 10);
       region(drawing::region(path));
-
+      
       //      back_color(drawing::color::white);
       //      h_layout_container_.back_color(drawing::color::yellow);
       //      v_layout_icon_.back_color(drawing::color::blue);
@@ -245,30 +245,30 @@ namespace examples {
       h_layout_container_.parent(*this);
       //h_layout_container_.border_style(border_style::none);
       h_layout_container_.padding(forms::padding(5));
-      h_layout_container_.controls().push_back_range({v_layout_icon_, v_layout_title_message_, v_layout_buttons_});
+      h_layout_container_.controls().push_back_range({ v_layout_icon_, v_layout_title_message_, v_layout_buttons_ });
       h_layout_container_.dock(dock_style::fill);
-      h_layout_container_.control_layout_style(v_layout_icon_, {0.25f, size_type::percent, true});
-      h_layout_container_.control_layout_style(v_layout_title_message_, {0.75f, size_type::percent, true});
-      h_layout_container_.control_layout_style(v_layout_buttons_, {80, size_type::absolute});
+      h_layout_container_.control_layout_style(v_layout_icon_, { 0.25f, size_type::percent, true });
+      h_layout_container_.control_layout_style(v_layout_title_message_, { 0.75f, size_type::percent, true });
+      h_layout_container_.control_layout_style(v_layout_buttons_, { 80, size_type::absolute });
       
       v_layout_icon_.controls().push_back(picture_box_icon_);
       v_layout_icon_.dock(dock_style::top);
       
       picture_box_icon_.image(xtd::drawing::system_icons::question().to_bitmap());
-      picture_box_icon_.client_size({64, 64});
+      picture_box_icon_.client_size({ 64, 64 });
       picture_box_icon_.size_mode(picture_box_size_mode::center_image);
       picture_box_icon_.dock(dock_style::top);
       picture_box_icon_.padding(forms::padding(5));
       
       v_layout_title_message_.padding(forms::padding(5));
-      v_layout_title_message_.controls().push_back_range({label_title_, label_message_});
-      v_layout_title_message_.control_layout_style(label_title_, {0.20f, size_type::percent, true, content_alignment::top_left});
-      v_layout_title_message_.control_layout_style(label_message_, {0.80f, size_type::percent, true, content_alignment::top_left});
+      v_layout_title_message_.controls().push_back_range({ label_title_, label_message_ });
+      v_layout_title_message_.control_layout_style(label_title_, { 0.20f, size_type::percent, true, content_alignment::top_left });
+      v_layout_title_message_.control_layout_style(label_message_, { 0.80f, size_type::percent, true, content_alignment::top_left });
       v_layout_title_message_.dock(dock_style::fill);
       
       label_title_.text("Backup your files");
       label_title_.padding(forms::padding(5));
-      label_title_.font({label_title_.font(), label_title_.font().size() + 2, xtd::drawing::font_style::bold});
+      label_title_.font({ label_title_.font(), label_title_.font().size() + 2, xtd::drawing::font_style::bold });
       label_title_.dock(dock_style::top);
       
       label_message_.padding(forms::padding(5));
@@ -278,18 +278,18 @@ namespace examples {
       v_layout_buttons_.padding(forms::padding(5));
       v_layout_buttons_.dock(dock_style::fill);
       
-      for(auto txt : std::vector{ustring("Start")/*, ustring("Cancel"), ustring("Ignore"), ustring("Abort")*/}) {
+      for (auto txt : std::vector{ ustring("Start")/*, ustring("Cancel"), ustring("Ignore"), ustring("Abort")*/ }) {
         std::unique_ptr<button> btn = std::make_unique<button>();
         btn->parent(v_layout_buttons_)
-          .text(txt)
-          .dock(dock_style::top)
-          .click += [txt, this]{
-            diagnostics::debug::write_line("button clicked -> " + txt);
-            form::close();
-          };
+        .text(txt)
+        .dock(dock_style::top)
+        .click += [txt, this] {
+          diagnostics::debug::write_line("button clicked -> " + txt);
+          form::close();
+        };
         buttons_.push_back(std::move(btn));
       }
-
+      
     };
     
   private:
@@ -302,34 +302,33 @@ namespace examples {
     label label_message_;
     std::vector<std::unique_ptr<button>> buttons_;
   };
-}
-
-class form1 : public form {
+  
+  class form6 : public form {
   public:
-    form1() {
+    form6() {
       mouse_down += [] {
-        diagnostics::debug::write_line("form1::mouse_down");
+        diagnostics::debug::write_line("form6::mouse_down");
       };
       panel_.back_color(color::navy);
       panel_.mouse_down += [] {
         diagnostics::debug::write_line("panel_::mouse_down");
       };
       panel_.parent(*this);
-      panel_.size({250, 250});
-
+      panel_.size({ 250, 250 });
+      
       panel2_.back_color(color::red);
       panel2_.mouse_down += [] {
         diagnostics::debug::write_line("panel2_::mouse_down");
       };
       panel2_.parent(panel_);
-      panel2_.size({200, 200});
-
+      panel2_.size({ 200, 200 });
+      
       group_box_.parent(panel2_);
       group_box_.back_color(color::green);
       group_box_.mouse_down += [] {
         diagnostics::debug::write_line("group_box_::mouse_down");
       };
-
+      
       button_.parent(group_box_);
       button_.flat_style(xtd::forms::flat_style::system);
       button_.mouse_down += [] {
@@ -338,7 +337,7 @@ class form1 : public form {
       button_.click += [] {
         diagnostics::debug::write_line("button_::click");
       };
-
+      
       numeric_up_down_.parent(group_box_);
       numeric_up_down_.top(30);
       numeric_up_down_.value_changed += [] {
@@ -346,14 +345,48 @@ class form1 : public form {
       };
     }
   private:
-  panel panel_;
-  panel panel2_;
-  group_box group_box_;
-  button button_;
-  numeric_up_down numeric_up_down_;
-};
+    panel panel_;
+    panel panel2_;
+    group_box group_box_;
+    button button_;
+    numeric_up_down numeric_up_down_;
+  };
+  
+  class form7 : public form {
+  public:
+    form7() {
+      client_size({ 450, 200 });
+      
+      tbx_username_.parent(*this);
+      tbx_username_.location({ 50, 20 });
+      tbx_username_.size({ 350, 30 });
+      tbx_username_.placeholder_text("Username...");
+      
+      tbx_password_.parent(*this);
+      tbx_password_.location({ 50, 60 });
+      tbx_password_.size({ 350, 30 });
+      tbx_password_.use_system_password_char(true);
+      tbx_password_.placeholder_text("Password must be between 6 and 20 characters...");
+      
+      btn_login_.parent(*this);
+      btn_login_.location({ 50, 100 });
+      btn_login_.size({ 350, 35 });
+      btn_login_.text("Login");
+      btn_login_.click += [&] {
+        message_box::show(*this, "username text_box hint: " + tbx_username_.placeholder_text() + '\n' + "password text_box hint: " + tbx_password_.placeholder_text(), "placeholder");
+      };
+      
+    }
+  private:
+    text_box tbx_username_;
+    text_box tbx_password_;
+    button btn_login_;
+  };
+  
+}
+
 
 int main() {
-  application::run(form1());
+  application::run(examples::form7());
 }
 
