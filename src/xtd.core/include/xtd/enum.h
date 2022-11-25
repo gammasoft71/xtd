@@ -81,7 +81,10 @@ namespace xtd {
     enum_type value() const noexcept {return value_;}
     /// @brief Sets the value of the enum.
     /// @param value The value of the enum.
-    enum_object& value(enum_type value) {value_ = value; return *this;}
+    enum_object& value(enum_type value) {
+      value_ = value;
+      return *this;
+    }
     /// @}
     
     /// @name Public methods
