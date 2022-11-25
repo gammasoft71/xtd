@@ -6,6 +6,7 @@
 #include <xtd/forms/native/window_styles.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/numeric_up_down.h"
+#include <xtd/as.h>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -100,6 +101,10 @@ void numeric_up_down::on_value_changed(const event_args& e) {
   if (can_raise_events()) value_changed(*this, e);
 }
 
+void numeric_up_down::on_lost_focus(const event_args& e) {
+  up_down_base::on_lost_focus(e);
+  value(as<double>(text()));
+}
 
 void numeric_up_down::wnd_proc(message& message) {
   switch (message.msg()) {
