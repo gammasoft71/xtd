@@ -8,6 +8,7 @@
 #include "cursors.h"
 #include "label.h"
 #include "link.h"
+#include "link_behavior.h"
 #include "link_label_clicked_event_handler.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -125,13 +126,26 @@ namespace xtd {
       xtd::drawing::color active_link_color() const;
       /// @brief Sets the color used to display an active link.
       /// @param color A xtd::drawing::color that represents the color to display an active link. The default color is specified by the system, typically this color is xtd::drawing::color::red in light mode and xtd::drawing::color::from_argb(0xFFD03E3D) in dark mode.
+      /// @return Current control.
       /// @remarks An active link is a link that is in the process of being clicked. This is similar to the depressed state of a xtd::forms::button control. You can use this property to specify the color that the link is displayed in when the link is in the process of being clicked.
       /// @remarks There are a number of colors associated with a link. The xtd::forms::link_label::link_color specifies the color of all links displayed in the xtd::forms::link_label control. The xtd::forms::link_label::visited_link_color property enables you to specify the color of a link after it has been visited by the user. When a link is disabled, the xtd::forms::link_label::disabled_link_color is used to display the link in a disabled state.
       /// @note When setting this property, ensure that the color you are setting the property to does not conflict with the color of the control's background or the text does not display properly. For example, if the background color of the control is xtd::drawing::color::red and this property is set to xtd::drawing::color::red, the text is not shown properly when the link is in the process of being clicked.
       link_label& active_link_color(const xtd::drawing::color& color);
       
+      /// @brief Gets the color used when displaying a disabled link.
+      /// @return A xtd::drawing::color that represents the color when displaying a disabled link. The default is Empty.
+      /// @remarks his property enables you to specify the color for links that are disabled in the xtd::forms::link_label. Disabled links do not cause the xtd::forms::link_label::link_clicked event to be raised.
+      /// @remarks There are a number of colors associated with a link. All links in the xtd::forms::link_label are initially displayed with the color defined in the xtd::forms::link_label::link_color property. The xtd::forms::link_label::active_link_color property enables you to specify the color of the link when it is in the process of being clicked. The xtd::forms::link_label::visited_link_color property enables you to specify the color of a link after it has been visited by the user.
       xtd::drawing::color disabled_link_color() const;
+      /// @brief Sets the color used when displaying a disabled link.
+      /// @param color A xtd::drawing::color that represents the color when displaying a disabled link. The default is Empty.
+      /// @return Current control.
+      /// @remarks his property enables you to specify the color for links that are disabled in the xtd::forms::link_label. Disabled links do not cause the xtd::forms::link_label::link_clicked event to be raised.
+      /// @remarks There are a number of colors associated with a link. All links in the xtd::forms::link_label are initially displayed with the color defined in the xtd::forms::link_label::link_color property. The xtd::forms::link_label::active_link_color property enables you to specify the color of the link when it is in the process of being clicked. The xtd::forms::link_label::visited_link_color property enables you to specify the color of a link after it has been visited by the user.
       link_label& disabled_link_color(const xtd::drawing::color& color);
+      
+      xtd::forms::link_behavior link_behavior() const;
+      link_label& link_behavior(xtd::forms::link_behavior value);
       
       xtd::drawing::color link_color() const;
       link_label& link_color(const xtd::drawing::color& color);
@@ -181,6 +195,7 @@ namespace xtd {
       bool mouse_hover_ = false;
       std::optional<xtd::drawing::color> active_link_color_;
       std::optional<xtd::drawing::color> disabled_link_color_;
+      xtd::forms::link_behavior link_behavior_ = xtd::forms::link_behavior::system_default;
       std::optional<xtd::drawing::color> link_color_;
       link_collection links_;
       xtd::forms::cursor original_cursor_;
