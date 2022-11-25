@@ -10,7 +10,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class control_handler : xtd::object {
+      class control_handler : public xtd::object {
       public:
         control_handler() = default;
         
