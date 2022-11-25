@@ -69,6 +69,15 @@ namespace xtd {
         /// @param text The text string.
         /// @warning Internal use only
         static void text(intptr_t control, const xtd::ustring& text);
+        /// @brief Gets the placeholder text (aka hint) associate to the text box.
+        /// @param control Text box window handle.
+        /// @param text The text string.
+        /// @warning Internal use only
+        static xtd::ustring placeholder_text(intptr_t control);
+        /// @brief Sets the placeholder text (aka hint) associate to the text box.
+        /// @return The text string.
+        /// @warning Internal use only
+        static void placeholder_text(intptr_t control, const xtd::ustring& text);
         /// @}
       };
     }

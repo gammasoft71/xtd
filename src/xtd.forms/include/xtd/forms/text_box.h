@@ -106,6 +106,9 @@ namespace xtd {
       const xtd::ustring& text() const override;
       control& text(const xtd::ustring& text) override;
       
+      const xtd::ustring& placeholder_text() const;
+      control& placeholder_text(const xtd::ustring& text);
+      
       /// @brief Gets a value indicating whether the text in the TextBox control should appear as the default password character.
       /// @return true if the text in the TextBox control should appear as the default password character; otherwise, false.
       /// @remarks The use_system_password_char property has precedence over the password_char property. Whenever the use_system_password_char is set to true, the default system password character is used and any character set by password_char is ignored.
@@ -141,7 +144,7 @@ namespace xtd {
       drawing::color default_back_color() const override;
       drawing::color default_fore_color() const override;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{
@@ -166,6 +169,7 @@ namespace xtd {
       /// @endcond
       
     private:
+      xtd::ustring placeholder_text_ = xtd::ustring::empty_string();
       bool accepts_return_ = false;
       xtd::forms::character_casing character_casing_ = xtd::forms::character_casing::normal;
       char32_t password_char_ = 0;
