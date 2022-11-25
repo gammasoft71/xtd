@@ -69,6 +69,10 @@ namespace xtd {
         /// @param text The text string.
         /// @warning Internal use only
         static void text(intptr_t control, const xtd::ustring& text);
+        
+        static xtd::ustring placeholder_text(intptr_t control);
+        static void placeholder_text(intptr_t control, const xtd::ustring& text);
+        
         /// @}
       };
     }
