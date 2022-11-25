@@ -106,8 +106,13 @@ namespace xtd {
       const xtd::ustring& text() const override;
       control& text(const xtd::ustring& text) override;
       
+      /// @brief Gets the text that is displayed when the control has no text and does not have the focus.
+      /// @return The text that is displayed when the control has no text and does not have the focus.
       const xtd::ustring& placeholder_text() const;
-      control& placeholder_text(const xtd::ustring& text);
+      /// @brief Sets the text that is displayed when the control has no text and does not have the focus.
+      /// @param value The text that is displayed when the control has no text and does not have the focus.
+      /// @return Current text_box instance.
+      text_box& placeholder_text(const xtd::ustring& value);
       
       /// @brief Gets a value indicating whether the text in the TextBox control should appear as the default password character.
       /// @return true if the text in the TextBox control should appear as the default password character; otherwise, false.

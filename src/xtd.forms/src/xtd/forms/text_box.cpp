@@ -77,7 +77,7 @@ const xtd::ustring& text_box::placeholder_text() const {
   return placeholder_text_;
 }
 
-control& text_box::placeholder_text(const xtd::ustring& value) {
+text_box& text_box::placeholder_text(const xtd::ustring& value) {
   if (placeholder_text_ != value) {
     placeholder_text_ = value;
     if (is_handle_created())
