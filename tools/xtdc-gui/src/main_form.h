@@ -20,6 +20,7 @@
 #include <xtd/forms/label.h>
 #include <xtd/forms/list_box.h>
 #include <xtd/forms/main_menu.h>
+#include <xtd/forms/menu_images.h>
 #include <xtd/forms/menu_item.h>
 #include <xtd/forms/panel.h>
 #include <xtd/forms/picture_box.h>
