@@ -65,7 +65,7 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the button class.
       /// @remarks By default the button displays no caption. To specify the caption text, set the text property.
-      button() noexcept;
+      button();
       /// @}
       
       /// @name Properties
