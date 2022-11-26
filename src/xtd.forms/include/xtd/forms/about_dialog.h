@@ -209,7 +209,7 @@ namespace xtd {
       
       /// @{
       /// @brief Resets all properties to empty string.
-      void reset();
+      void reset() noexcept;
       
       /// @brief Runs about dialog box.
       void show();

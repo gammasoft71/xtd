@@ -400,7 +400,7 @@ about_dialog& about_dialog::website_label(const xtd::ustring& website_label) {
   return *this;
 }
 
-void about_dialog::reset() {
+void about_dialog::reset() noexcept {
   data_->dialog_style = xtd::forms::dialog_style::standard;
   data_->icon = xtd::drawing::image::empty;
   data_->artists.clear();
