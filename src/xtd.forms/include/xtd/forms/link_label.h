@@ -173,7 +173,7 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      xtd::drawing::size measure_control() const override;
+      xtd::drawing::size measure_control() const noexcept override;
       void on_cursor_changed(const xtd::event_args& e) override;
       void on_mouse_click(const xtd::forms::mouse_event_args& e) override;
       void on_mouse_down(const xtd::forms::mouse_event_args& e) override;

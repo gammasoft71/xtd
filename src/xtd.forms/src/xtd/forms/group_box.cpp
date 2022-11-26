@@ -45,7 +45,7 @@ group_box& group_box::flat_style(xtd::forms::flat_style flat_style) {
   return *this;
 }
 
-forms::create_params group_box::create_params() const {
+forms::create_params group_box::create_params() const noexcept {
   forms::create_params create_params = control::create_params();
   
   create_params.class_name("groupbox");
@@ -54,7 +54,7 @@ forms::create_params group_box::create_params() const {
   return create_params;
 }
 
-drawing::size group_box::measure_control() const {
+drawing::size group_box::measure_control() const noexcept {
   drawing::rectangle bounds;
   for (auto item : controls()) {
     if (item.get().visible())

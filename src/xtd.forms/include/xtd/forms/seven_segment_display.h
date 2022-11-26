@@ -161,7 +161,7 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
-      drawing::size default_size() const override {return {25, 50};}
+      drawing::size default_size() const noexcept override {return {25, 50};}
       /// @}
 
       /// @name Protected methods
@@ -203,7 +203,7 @@ namespace xtd {
         invalidate();
       }
       
-      drawing::size measure_control() const override {
+      drawing::size measure_control() const noexcept override {
         return drawing::size((height() - 3) / 2 + 2, height());
       }
       

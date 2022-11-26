@@ -370,7 +370,7 @@ forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
   return is_handle_created() ? static_cast<forms::dialog_result>(native::form::show_sheet_dialog(handle())) : dialog_result::cancel;
 }
 
-forms::create_params form::create_params() const {
+forms::create_params form::create_params() const noexcept {
   forms::create_params cp = container_control::create_params();
   cp.style(cp.style() & ~WS_CHILD);
   

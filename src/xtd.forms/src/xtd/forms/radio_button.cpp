@@ -76,7 +76,7 @@ void radio_button::perform_click() {
   on_click(event_args::empty);
 }
 
-forms::create_params radio_button::create_params() const {
+forms::create_params radio_button::create_params() const noexcept {
   forms::create_params create_params = button_base::create_params();
   
   create_params.class_name("radiobutton");
@@ -94,7 +94,7 @@ forms::create_params radio_button::create_params() const {
   return create_params;
 }
 
-drawing::size radio_button::measure_control() const {
+drawing::size radio_button::measure_control() const noexcept {
   return button_base::measure_text() + drawing::size(24, 0);
 }
 

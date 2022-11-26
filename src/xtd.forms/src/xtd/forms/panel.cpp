@@ -52,7 +52,7 @@ panel& panel::border_style(std::nullptr_t) {
   return *this;
 }
 
-forms::create_params panel::create_params() const {
+forms::create_params panel::create_params() const noexcept {
   forms::create_params create_params = scrollable_control::create_params();
   
   create_params.class_name("panel");
@@ -66,7 +66,7 @@ forms::create_params panel::create_params() const {
   return create_params;
 }
 
-drawing::size panel::measure_control() const {
+drawing::size panel::measure_control() const noexcept {
   drawing::rectangle bounds;
   for (auto item : controls()) {
     if (item.get().visible())

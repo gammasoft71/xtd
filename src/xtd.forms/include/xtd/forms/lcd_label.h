@@ -261,13 +261,13 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
-      drawing::size default_size() const override;
+      drawing::size default_size() const noexcept override;
       /// @}
 
       /// @name Protected methods
       
       /// @{
-      drawing::size measure_control() const override;
+      drawing::size measure_control() const noexcept override;
       void on_back_color_changed(const event_args& e) override;
       void on_fore_color_changed(const event_args& e) override;
       void on_handle_created(const event_args& e) override;

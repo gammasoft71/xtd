@@ -13,7 +13,7 @@ v_scroll_bar::v_scroll_bar() {
   set_can_focus(false);
 }
 
-forms::create_params v_scroll_bar::create_params() const {
+forms::create_params v_scroll_bar::create_params() const noexcept {
   forms::create_params create_params = scroll_bar::create_params();
   
   create_params.style(create_params.style() | SBS_VERT);
@@ -21,6 +21,6 @@ forms::create_params v_scroll_bar::create_params() const {
   return create_params;
 }
 
-xtd::drawing::size v_scroll_bar::default_size() const {
+xtd::drawing::size v_scroll_bar::default_size() const noexcept {
   return {control::default_size().width(), 80};
 }

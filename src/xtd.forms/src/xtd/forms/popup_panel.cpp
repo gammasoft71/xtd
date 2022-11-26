@@ -27,7 +27,7 @@ popup_panel& popup_panel::ignore_mouse_messages(bool value) {
   return *this;
 }
 
-forms::create_params popup_panel::create_params() const {
+forms::create_params popup_panel::create_params() const noexcept {
   forms::create_params create_params = panel::create_params();
   
   create_params.class_name("popuppanel");

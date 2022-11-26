@@ -175,9 +175,9 @@ namespace xtd {
       /// @{
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
-      forms::create_params create_params() const override;
+      forms::create_params create_params() const noexcept override;
 
-      drawing::size default_size() const override;
+      drawing::size default_size() const noexcept override;
       /// @}
       
       /// @name Protected methods

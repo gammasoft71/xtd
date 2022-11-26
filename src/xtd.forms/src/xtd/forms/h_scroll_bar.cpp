@@ -14,7 +14,7 @@ h_scroll_bar::h_scroll_bar() {
   set_can_focus(false);
 }
 
-forms::create_params h_scroll_bar::create_params() const {
+forms::create_params h_scroll_bar::create_params() const noexcept {
   forms::create_params create_params = scroll_bar::create_params();
   
   create_params.style(create_params.style() | SBS_HORZ);
@@ -22,6 +22,6 @@ forms::create_params h_scroll_bar::create_params() const {
   return create_params;
 }
 
-xtd::drawing::size h_scroll_bar::default_size() const {
+xtd::drawing::size h_scroll_bar::default_size() const noexcept {
   return {80, control::default_size().height()};
 }

@@ -32,7 +32,7 @@ control& font_picker::font(const drawing::font& value) {
   return *this;
 }
 
-forms::create_params font_picker::create_params() const {
+forms::create_params font_picker::create_params() const noexcept {
   forms::create_params create_params = control::create_params();
   create_params.class_name("fontpicker");
   return create_params;

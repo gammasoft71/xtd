@@ -120,7 +120,7 @@ status_bar& status_bar::sizing_grip(bool value) {
   return *this;
 }
 
-forms::create_params status_bar::create_params() const {
+forms::create_params status_bar::create_params() const noexcept {
   forms::create_params create_params = control::create_params();
   
   if (is_system_status_bar())
@@ -135,11 +135,11 @@ forms::create_params status_bar::create_params() const {
   return create_params;
 }
 
-xtd::drawing::font status_bar::default_font() const {
+xtd::drawing::font status_bar::default_font() const noexcept {
   return xtd::drawing::system_fonts::status_font();
 }
 
-drawing::size status_bar::default_size() const {
+drawing::size status_bar::default_size() const noexcept {
   return native::control::default_size("toolbar");
 }
 

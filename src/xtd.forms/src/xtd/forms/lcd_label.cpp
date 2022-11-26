@@ -765,7 +765,7 @@ std::vector<char32_t> lcd_label::valid_characters() {
   return {vc.begin(), vc.end()};
 }
 
-drawing::size lcd_label::default_size() const {
+drawing::size lcd_label::default_size() const noexcept {
   return {100, 25};
 }
 
@@ -794,7 +794,7 @@ void lcd_label::on_resize(const event_args& e) {
   control::on_resize(e);
 }
 
-drawing::size lcd_label::measure_control() const {
+drawing::size lcd_label::measure_control() const noexcept {
   if (digits_.size() == 0) return {0, size().height()};
   return drawing::size((dynamic_cast<control*>(digits_[0].get())->width() - 2 + digit_spacing()) * static_cast<int32_t>(digits_.size()) - digit_spacing() + 2, size().height());
 }

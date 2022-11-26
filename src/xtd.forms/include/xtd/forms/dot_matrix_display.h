@@ -233,7 +233,7 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
-      xtd::drawing::size default_size() const override {return {50, 50};}
+      xtd::drawing::size default_size() const noexcept override {return {50, 50};}
       /// @}
 
       /// @name Protected methods
@@ -260,7 +260,7 @@ namespace xtd {
         control::on_paint(e);
       }
       
-      drawing::size measure_control() const override {
+      drawing::size measure_control() const noexcept override {
         int32_t width = static_cast<int32_t>(static_cast<double>(height()) / matrix_height() * matrix_width());
         return drawing::size(width, height());
       }

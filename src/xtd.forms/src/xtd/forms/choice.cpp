@@ -90,7 +90,7 @@ void choice::end_update() {
   if (is_handle_created()) native::choice::end_update(handle());
 }
 
-forms::create_params choice::create_params() const {
+forms::create_params choice::create_params() const noexcept {
   forms::create_params create_params = list_control::create_params();
   
   create_params.class_name("choice");

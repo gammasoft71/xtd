@@ -84,7 +84,7 @@ public:
   void status_bar_panel(status_bar_panel_ref value) {data_->status_bar_panel = value;}
   
 protected:  
-  xtd::drawing::font default_font() const override {return xtd::drawing::system_fonts::tool_font();}
+  xtd::drawing::font default_font() const noexcept override {return xtd::drawing::system_fonts::tool_font();}
 
   void on_paint(paint_event_args& e) override {
     if (data_->style == status_bar_panel_style::text) draw_panel(e);

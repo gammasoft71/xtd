@@ -145,8 +145,8 @@ namespace xtd {
       /// @name Protetced properties
       
       /// @{
-      drawing::color default_back_color() const override;
-      drawing::color default_fore_color() const override;
+      drawing::color default_back_color() const noexcept override;
+      drawing::color default_fore_color() const noexcept override;
       /// @}
       
       /// @name Protected methods

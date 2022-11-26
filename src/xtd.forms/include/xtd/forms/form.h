@@ -381,8 +381,8 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
-      forms::create_params create_params() const override;
-      drawing::size default_size() const override {return {300, 300};}
+      forms::create_params create_params() const noexcept override;
+      drawing::size default_size() const noexcept override {return {300, 300};}
       /// @}
 
       /// @name Protected methods

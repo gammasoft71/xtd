@@ -132,15 +132,15 @@ void list_box::end_update() {
   if (is_handle_created()) native::list_box::end_update(handle());
 }
 
-drawing::color list_box::default_back_color() const {
+drawing::color list_box::default_back_color() const noexcept {
   return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().window();
 }
 
-drawing::color list_box::default_fore_color() const {
+drawing::color list_box::default_fore_color() const noexcept {
   return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().window_text();
 }
 
-forms::create_params list_box::create_params() const {
+forms::create_params list_box::create_params() const noexcept {
   forms::create_params create_params = list_control::create_params();
   
   create_params.class_name("listbox");

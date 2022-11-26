@@ -42,7 +42,7 @@ collapsible_panel& collapsible_panel::expanded(bool expanded) {
   return *this;
 }
 
-forms::create_params collapsible_panel::create_params() const {
+forms::create_params collapsible_panel::create_params() const noexcept {
   forms::create_params create_params = control::create_params();
   
   create_params.class_name("collapsiblepanel");
@@ -82,7 +82,7 @@ void collapsible_panel::on_handle_created(const event_args& e) {
   size(native::control::size(handle()));
 }
 
-drawing::size collapsible_panel::measure_control() const {
+drawing::size collapsible_panel::measure_control() const noexcept {
   drawing::rectangle bounds;
   for (auto item : controls()) {
     if (item.get().visible())

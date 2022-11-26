@@ -8,10 +8,10 @@ splitter::splitter() {
   set_style(control_styles::selectable, false);
 }
 
-forms::cursor splitter::default_cursor() const {
+forms::cursor splitter::default_cursor() const noexcept {
   return dock() == dock_style::left || dock() == dock_style::right ? xtd::forms::cursors::vsplit() : xtd::forms::cursors::hsplit();
 }
 
-drawing::size splitter::default_size() const {
+drawing::size splitter::default_size() const noexcept {
   return {3, 3};
 }

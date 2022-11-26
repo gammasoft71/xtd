@@ -233,7 +233,7 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
-      forms::cursor default_cursor() const override {return forms::cursors::ibeam();}
+      forms::cursor default_cursor() const noexcept override {return forms::cursors::ibeam();}
       /// @}
 
       /// @name Protected methods

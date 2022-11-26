@@ -15,7 +15,7 @@ up_down_button::up_down_button() {
   flat_style(xtd::forms::flat_style::system);
 }
 
-forms::create_params up_down_button::create_params() const {
+forms::create_params up_down_button::create_params() const noexcept {
   forms::create_params create_params = button_base::create_params();
   
   create_params.class_name("updownbutton");

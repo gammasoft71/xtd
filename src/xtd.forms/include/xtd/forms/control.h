@@ -1577,28 +1577,28 @@ namespace xtd {
       /// @remarks The create_params property should not be overridden and used to adjust the properties of your derived control. Properties such as the create_params::caption, create_params::width, and create_params::height should be set by the corresponding properties in your control such as control::text, control::width and control::height. The create_params should only be extended when you are wrapping a standard Windows control class or to set styles not provided by the forms namespace.
       /// @par Notes for inheritors
       /// When overriding the create_params property in a derived class, use the base class's create_params property to extend the base implementation. Otherwise, you must provide all the implementation.
-      virtual forms::create_params create_params() const;
+      virtual forms::create_params create_params() const noexcept;
       
       /// @brief Gets the default background color of the control.
       /// @return The default background color of the control. The default is control.
       /// @remarks This is the default back_color property value of a generic top-level control. Derived classes can have different defaults.
-      virtual drawing::color default_back_color() const;
+      virtual drawing::color default_back_color() const noexcept;
       
       /// @brief Gets the default cursor for the control.
       /// @return An object of type xtd::forms::cursor representing the current default cursor.
-      virtual forms::cursor default_cursor() const;
+      virtual forms::cursor default_cursor() const noexcept;
       
       /// @brief Gets the default font of the control.
       /// @return The default font of the control. The value returned will vary depending on the user's operating system the local culture setting of their system.
-      virtual drawing::font default_font() const;
+      virtual drawing::font default_font() const noexcept;
       
       /// @brief Gets the default foreground color of the control.
       /// @return The default foreground color of the control. The default is control_text.
-      virtual drawing::color default_fore_color() const;
+      virtual drawing::color default_fore_color() const noexcept;
       
       /// @brief Gets the default size of the control.
       /// @return The default size of the control.
-      virtual drawing::size default_size() const;
+      virtual drawing::size default_size() const noexcept;
       /// @}
 
       /// @name Protected methods
@@ -1623,15 +1623,15 @@ namespace xtd {
       /// @param flag The control_styles bit to return the value from.
       /// @return true if the specified control style bit is set to true; otherwise, false.
       /// @remarks Control style bit flags are used to categorize supported behavior. A control can enable a style by calling the set_style method and passing in the appropriate control_styles bit and the bool value to set the bit to. To determine the value assigned to a specified control_styles bit, use the get_style method and pass in the control_styles member to evaluate.
-      bool get_style(control_styles flag) const;
+      bool get_style(control_styles flag) const noexcept;
       
       /// @brief Measure this control.
       /// @return The drawing::size size of this control.
-      virtual drawing::size measure_control() const;
+      virtual drawing::size measure_control() const noexcept;
       
       /// @brief Measure this control text.
       /// @return The drawing::size size of this control text.
-      drawing::size measure_text() const;
+      drawing::size measure_text() const noexcept;
       
       /// @brief Raises the xtd::forms::control::auto_size_changed event.
       /// @param e An xtd::event_args that contains the event data.
@@ -1894,7 +1894,7 @@ namespace xtd {
       /// @ingroup events
       virtual void on_visible_changed(const event_args& e);
       
-      void post_recreate_handle();
+      void post_recreate_handle() noexcept;
       
       /// @brief Forces the re-creation of the handle for the control.
       /// @remarks The recreate_handle method is called whenever parameters are needed for a new control, but using a call from update_styles to create_params is insufficient. This method also calls destroy_handle and create_handle and sets recreating_handle to true.
@@ -1955,7 +1955,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      bool get_state(control::state flag) const;
+      bool get_state(control::state flag) const noexcept;
       void set_state(control::state flag, bool value);
       bool on_context_menu_item_click(xtd::forms::context_menu& menu, intptr_t menu_id) const;
       /// @endcond

@@ -48,7 +48,7 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
-      forms::create_params create_params() const override;
+      forms::create_params create_params() const noexcept override;
       /// @}
       
     private:

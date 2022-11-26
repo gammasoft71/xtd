@@ -86,7 +86,7 @@ check_box& check_box::three_state(bool three_state) {
   return *this;
 }
 
-forms::create_params check_box::create_params() const {
+forms::create_params check_box::create_params() const noexcept {
   forms::create_params create_params = button_base::create_params();
   
   create_params.class_name("checkbox");
@@ -105,7 +105,7 @@ forms::create_params check_box::create_params() const {
   return create_params;
 }
 
-drawing::size check_box::measure_control() const {
+drawing::size check_box::measure_control() const noexcept {
   return button_base::measure_text() + drawing::size(18, 0);
 }
 

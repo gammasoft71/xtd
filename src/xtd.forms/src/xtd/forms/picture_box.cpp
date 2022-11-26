@@ -78,7 +78,7 @@ picture_box& picture_box::size_mode(picture_box_size_mode size_mode) {
   return *this;
 }
 
-forms::create_params picture_box::create_params() const {
+forms::create_params picture_box::create_params() const noexcept {
   forms::create_params create_params = control::create_params();
   
   create_params.class_name("picturebox");
@@ -100,7 +100,7 @@ forms::create_params picture_box::create_params() const {
   return create_params;
 }
 
-drawing::size picture_box::measure_control() const {
+drawing::size picture_box::measure_control() const noexcept {
   drawing::size size;
   size = image_.has_value() ? image_.value().size() : drawing::size(0, 0);
   /// @todo add location

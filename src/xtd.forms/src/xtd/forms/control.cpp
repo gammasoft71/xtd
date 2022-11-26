@@ -882,7 +882,7 @@ void control::end_invoke(shared_ptr<iasync_result> async) {
   lock_guard<shared_mutex> lock(async->async_mutex());
 }
 
-forms::create_params control::create_params() const {
+forms::create_params control::create_params() const noexcept {
   forms::create_params create_params;
   
   create_params.caption(data_->text);
@@ -900,39 +900,39 @@ forms::create_params control::create_params() const {
   return create_params;
 }
 
-drawing::color control::default_back_color() const {
+drawing::color control::default_back_color() const noexcept {
   return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().control();
 }
 
-forms::cursor control::default_cursor() const {
+forms::cursor control::default_cursor() const noexcept {
   return cursors::default_cursor();
 }
 
-drawing::font control::default_font() const {
+drawing::font control::default_font() const noexcept {
   return system_fonts::default_font();
 }
 
-drawing::color control::default_fore_color() const {
+drawing::color control::default_fore_color() const noexcept {
   return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().control_text();
 }
 
-drawing::size control::default_size() const {
+drawing::size control::default_size() const noexcept {
   return native::control::default_size(create_params().class_name());
 }
 
-bool control::get_state(control::state flag) const {
+bool control::get_state(control::state flag) const noexcept {
   return ((int32_t)data_->state & (int32_t)flag) == (int32_t)flag;
 }
 
-bool control::get_style(control_styles flag) const {
+bool control::get_style(control_styles flag) const noexcept {
   return ((int32_t)data_->style & (int32_t)flag) == (int32_t)flag;
 }
 
-drawing::size control::measure_control() const {
+drawing::size control::measure_control() const noexcept {
   return data_->client_size;
 }
 
-drawing::size control::measure_text() const {
+drawing::size control::measure_text() const noexcept {
   return drawing::size::ceiling(screen::create_graphics().measure_string(data_->text, font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces))) + drawing::size(2, 1);
 }
 
@@ -1624,7 +1624,7 @@ void control::on_parent_size_changed(object& sender, const event_args& e) {
     perform_layout();
 }
 
-void control::post_recreate_handle() {
+void control::post_recreate_handle() noexcept {
   if (data_->handle)
     data_->recreate_handle_posted = true;
 }

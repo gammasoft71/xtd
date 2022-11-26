@@ -21,7 +21,7 @@ command_link_button& command_link_button::auto_size_mode(forms::auto_size_mode v
   return *this;
 }
 
-forms::create_params command_link_button::create_params() const {
+forms::create_params command_link_button::create_params() const noexcept {
   forms::create_params create_params = button_base::create_params();
   
   create_params.class_name("commandlinkbutton");
@@ -44,7 +44,7 @@ void command_link_button::on_handle_created(const event_args& e) {
   }
 }
 
-drawing::size command_link_button::measure_control() const {
+drawing::size command_link_button::measure_control() const noexcept {
   drawing::size size = button_base::measure_control();
   if (size.height() < default_size().height()) size.height(default_size().height());
   return size;

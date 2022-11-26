@@ -123,7 +123,7 @@ light_button& light_button::light_on_color(std::nullptr_t) {
   return *this;
 }
 
-forms::create_params light_button::create_params() const {
+forms::create_params light_button::create_params() const noexcept {
   forms::create_params create_params = button_base::create_params();
   
   create_params.class_name("lightbutton");
@@ -166,7 +166,7 @@ void light_button::on_paint(paint_event_args& e) {
   button_base::on_paint(e);
 }
 
-drawing::size light_button::measure_control() const {
+drawing::size light_button::measure_control() const noexcept {
   /// @todo Add light according to the alignment
   return button_base::measure_text();
 }

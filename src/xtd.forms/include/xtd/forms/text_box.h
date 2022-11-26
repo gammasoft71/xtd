@@ -138,15 +138,15 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
-      forms::create_params create_params() const override;
-      drawing::color default_back_color() const override;
-      drawing::color default_fore_color() const override;
+      forms::create_params create_params() const noexcept override;
+      drawing::color default_back_color() const noexcept override;
+      drawing::color default_fore_color() const noexcept override;
       /// @}
       
       /// @name Protected methods
       
       /// @{
-      drawing::size measure_control() const override;
+      drawing::size measure_control() const noexcept override;
       
       /// @brief Raises the text_box::accepts_return_changed event.
       /// @param e An xtd::event_args that contains the event data.

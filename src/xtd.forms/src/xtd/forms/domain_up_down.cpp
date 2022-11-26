@@ -80,7 +80,7 @@ domain_up_down& domain_up_down::wrap(bool value) {
   return *this;
 }
 
-forms::create_params domain_up_down::create_params() const {
+forms::create_params domain_up_down::create_params() const noexcept {
   forms::create_params create_params = up_down_base::create_params();
   
   create_params.class_name("domainupdown");
@@ -91,11 +91,11 @@ forms::create_params domain_up_down::create_params() const {
   return create_params;
 }
 
-drawing::color domain_up_down::default_back_color() const {
+drawing::color domain_up_down::default_back_color() const noexcept {
   return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().window();
 }
 
-drawing::color domain_up_down::default_fore_color() const {
+drawing::color domain_up_down::default_fore_color() const noexcept {
   return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().window_text();
 }
 
