@@ -73,52 +73,40 @@ namespace xtd {
       /// @{
       /// @brief Gets if this button instance is auto repeat.
       /// @return true, if is auto repeat; otherwise false. Default is false.
-      virtual bool auto_repeat() const {return data_->auto_repeat;}
+      virtual bool auto_repeat() const noexcept;
       /// @brief Sets if this button instance is auto repeat.
       /// @param auto_repeat true, if is auto repeat; otherwise false. Default is false.
       /// @return This button.
-      virtual button& auto_repeat(bool auto_repeat) {
-        if (data_->auto_repeat != auto_repeat) {
-          data_->auto_repeat = auto_repeat;
-          if (!data_->auto_repeat) data_->auto_repeat_timer.enabled(false);
-        }
-        return *this;
-      }
+      virtual button& auto_repeat(bool auto_repeat);
       
       /// @brief Gets the auto repeat delay.
       /// @return Auto repeat delay in milliseconds. Default is 300 ms.
-      virtual int32_t auto_repeat_delay() const {return data_->auto_repeat_delay;}
+      virtual int32_t auto_repeat_delay() const noexcept;
       /// @brief Gets the auto repeat delay.
       /// @param auto_repeat_delay Auto repeat delay in milliseconds. Default is 300 ms.
       /// @return This button.
-      virtual button& auto_repeat_delay(int32_t auto_repeat_delay) {
-        data_->auto_repeat_delay = auto_repeat_delay;
-        return *this;
-      }
+      virtual button& auto_repeat_delay(int32_t auto_repeat_delay);
       
       /// @brief Gets the auto repeat interval.
       /// @return Auto repeat interval in milliseconds. Default is 100 ms.
-      virtual int32_t auto_repeat_interval() const {return data_->auto_repeat_interval;}
+      virtual int32_t auto_repeat_interval() const noexcept;
       /// @brief Gets the auto repeat interval.
       /// @param auto_repeat_delay Auto repeat interval in milliseconds. Default is 100 ms.
       /// @return This button.
-      virtual button& auto_repeat_interval(int32_t auto_repeat_interval) {
-        data_->auto_repeat_interval = auto_repeat_interval;
-        return *this;
-      }
+      virtual button& auto_repeat_interval(int32_t auto_repeat_interval);
       
       /// @brief Gets the mode by which the button automatically resizes itself.
       /// @return One of the AutoSizeMode values. The default value is grow_only.
-      virtual forms::auto_size_mode auto_size_mode() const {return get_auto_size_mode();}
+      virtual forms::auto_size_mode auto_size_mode() const noexcept;
       /// @brief Sets the mode by which the button automatically resizes itself.
       /// @param value One of the AutoSizeMode values. The default value is grow only.
       virtual button& auto_size_mode(forms::auto_size_mode value);
 
       /// @brief Gets is default button.
       /// @return true is default button; otherwise false.
-      bool default_button() const {return data_->default_button;}
+      bool default_button() const noexcept;
       
-      forms::dialog_result dialog_result() const override {return data_->dialog_result;}
+      forms::dialog_result dialog_result() const noexcept override;
       control& dialog_result(forms::dialog_result dialog_result) override;
       /// @}
       

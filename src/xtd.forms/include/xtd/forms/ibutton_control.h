@@ -27,7 +27,7 @@ namespace xtd {
       /// @brief Gets the value returned to the parent form when the button is clicked.
       /// @return One of the DialogResult values.
       /// @remarks When a form is shown as a dialog box using the show_dialog method and one of its buttons is clicked, the button's dialog_result value is assigned to the form's dialog_result property.
-      virtual forms::dialog_result dialog_result() const = 0;
+      virtual forms::dialog_result dialog_result() const noexcept = 0;
       /// @brief Sets the value returned to the parent form when the button is clicked.
       /// @param dialog_result One of the DialogResult values.
       /// @remarks When a form is shown as a dialog box using the show_dialog method and one of its buttons is clicked, the button's dialog_result value is assigned to the form's dialog_result property.
