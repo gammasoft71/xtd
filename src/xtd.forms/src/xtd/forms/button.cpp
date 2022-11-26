@@ -28,9 +28,51 @@ button::button() {
   };
 }
 
+bool button::auto_repeat() const noexcept {
+  return data_->auto_repeat;
+}
+
+button& button::auto_repeat(bool auto_repeat) {
+  if (data_->auto_repeat != auto_repeat) {
+    data_->auto_repeat = auto_repeat;
+    if (!data_->auto_repeat) data_->auto_repeat_timer.enabled(false);
+  }
+  return *this;
+}
+
+int32_t button::auto_repeat_delay() const noexcept {
+  return data_->auto_repeat_delay;
+}
+
+button& button::auto_repeat_delay(int32_t auto_repeat_delay) {
+  data_->auto_repeat_delay = auto_repeat_delay;
+  return *this;
+}
+
+int32_t button::auto_repeat_interval() const noexcept {
+  return data_->auto_repeat_interval;
+}
+
+button& button::auto_repeat_interval(int32_t auto_repeat_interval) {
+  data_->auto_repeat_interval = auto_repeat_interval;
+  return *this;
+}
+
+forms::auto_size_mode button::auto_size_mode() const noexcept {
+  return get_auto_size_mode();
+}
+
 button& button::auto_size_mode(forms::auto_size_mode value) {
   set_auto_size_mode(value);
   return *this;
+}
+
+bool button::default_button() const noexcept {
+  return data_->default_button;
+}
+
+forms::dialog_result button::dialog_result() const noexcept {
+  return data_->dialog_result;
 }
 
 control& button::dialog_result(forms::dialog_result dialog_result) {
