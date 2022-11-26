@@ -58,7 +58,7 @@ namespace xtd {
       /// @brief Gets the flat style appearance of the loading_indicator control.
       /// @return One of the xtd::forms::loading_indicator_style values. The default value is xtd::forms::loading_indicator_style::standard.
       /// @remarks When the loading_indicator_style property is set to xtd::forms::loading_indicator_style::system, any values assigned to the image_list, image, image_index, and image_align properties are ignored. In addition, the text_align property ignores any property values that are not vertical property settings. Horizontally aligned settings of the text_align property are aligned to the top of the control. For example, if you set the text_align property to content_alignment::top_center, content_alignment::middle_center, or content_alignment::bottom_center, when the loading_indicator_style property is set to xtd::forms::loading_indicator_style::system, the text in the loading_indicator control will be aligned to the top and center locations within the bounds of the control.
-      virtual xtd::forms::loading_indicator_style loading_indicator_style() const noexcept {return loading_indicator_style_;}
+      virtual xtd::forms::loading_indicator_style loading_indicator_style() const noexcept;
       /// @brief Sets the flat style appearance of the loading_indicator control.
       /// @param loading_indicator_style One of the xtd::forms::loading_indicator_style values. The default value is xtd::forms::loading_indicator_style::standard.
       /// @return Current loading_indicator instance.
@@ -67,7 +67,7 @@ namespace xtd {
       
       /// @brief Returns if the loading indicator animation is started.
       /// @return true if the loading indicator is running; otherwise false.
-      bool is_running() const {return is_running_;}
+      bool is_running() const noexcept;
       /// @}
       
       /// @name Methods
@@ -96,14 +96,17 @@ namespace xtd {
       
     private:
       void on_timer_tick(object& timer, const xtd::event_args& e);
-      
-      bool is_running_ = false;
-      xtd::forms::loading_indicator_style loading_indicator_style_ = xtd::forms::loading_indicator_style::standard;
-      xtd::forms::timer timer_;
-      int32_t intervals_ = 8;
-      int32_t radius_factor_ = 10;
-      int32_t frame_ = 0;
-      int32_t interval_ = 150;
+
+      struct data {
+        bool is_running = false;
+        xtd::forms::loading_indicator_style loading_indicator_style = xtd::forms::loading_indicator_style::standard;
+        xtd::forms::timer timer;
+        int32_t intervals = 8;
+        int32_t radius_factor = 10;
+        int32_t frame = 0;
+        int32_t interval = 150;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }

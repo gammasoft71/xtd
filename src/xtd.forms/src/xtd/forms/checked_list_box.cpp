@@ -18,6 +18,59 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
+checked_list_box::item::item(const xtd::ustring& value) : list_box::item(value) {
+}
+
+checked_list_box::item::item(const xtd::ustring& value, bool checked) : list_box::item(value), check_state_(checked ? forms::check_state::checked : forms::check_state::unchecked) {
+}
+
+checked_list_box::item::item(const xtd::ustring& value, forms::check_state check_state) : list_box::item(value), check_state_(check_state) {
+}
+
+checked_list_box::item::item(const xtd::ustring& value, const std::any& tag) : list_box::item(value, tag) {
+}
+
+checked_list_box::item::item(const xtd::ustring& value, bool checked, const std::any& tag) : list_box::item(value, tag), check_state_(checked ? forms::check_state::checked : forms::check_state::unchecked) {
+}
+
+checked_list_box::item::item(const xtd::ustring& value, forms::check_state check_state, const std::any& tag) : list_box::item(value, tag), check_state_(check_state) {
+}
+
+checked_list_box::item::item(const char* value) : list_box::item(value) {
+}
+
+bool checked_list_box::item::operator ==(const item& value) const noexcept {
+  return list_box::item::operator ==(value);
+}
+
+bool checked_list_box::item::operator !=(const item& value) const noexcept {
+  return list_box::item::operator !=(value);
+}
+
+bool checked_list_box::item::operator <(const item& value) const noexcept {
+  return list_box::item::operator <(value);
+}
+
+bool checked_list_box::item::operator <=(const item& value) const noexcept {
+  return list_box::item::operator <=(value);
+}
+
+bool checked_list_box::item::operator >(const item& value) const noexcept {
+  return list_box::item::operator >(value);
+}
+
+bool checked_list_box::item::operator >=(const item& value) const noexcept {
+  return list_box::item::operator >=(value);
+}
+
+bool checked_list_box::item::checked() const {
+  return check_state_ != forms::check_state::unchecked;
+}
+
+forms::check_state checked_list_box::item::check_state() const {
+  return check_state_;
+}
+
 checked_list_box::checked_list_box() {
   set_style(control_styles::resize_redraw, true);
   data_->items.item_added += [&](size_t pos, const item & item) {
@@ -94,6 +147,10 @@ vector<size_t> checked_list_box::selected_indices() const noexcept {
   return is_handle_created() ? native::checked_list_box::selected_indices(handle()) : vector<size_t> {};
 }
 
+const checked_list_box::item& checked_list_box::selected_item() const noexcept {
+  return data_->selected_item;
+}
+
 list_box& checked_list_box::selected_item(const item& selected_item) {
   if (data_->selected_item != selected_item) {
     auto it = std::find(data_->items.begin(), data_->items.end(), selected_item);
@@ -109,11 +166,16 @@ list_box& checked_list_box::selected_item(const item& selected_item) {
   return *this;
 }
 
-vector<checked_list_box::item> checked_list_box::selected_items() const {
+vector<checked_list_box::item> checked_list_box::selected_items() const noexcept {
   vector<item> items;
   for (size_t index : selected_indices())
     items.push_back(data_->items[index]);
   return items;
+}
+
+control& checked_list_box::text(const xtd::ustring& text) {
+  data_->selected_item = {text};
+  return *this;
 }
 
 void checked_list_box::begin_update() {
@@ -152,6 +214,10 @@ void checked_list_box::set_item_text(size_t index, const xtd::ustring& text) {
   items()[index] = {text, items()[index].checked(), items()[index].tag()};
 }
 
+bool checked_list_box::allow_selection() const noexcept {
+  return selection_mode() != forms::selection_mode::none;
+}
+
 forms::create_params checked_list_box::create_params() const noexcept {
   forms::create_params create_params = list_box::create_params();
   
@@ -183,6 +249,10 @@ void checked_list_box::on_handle_created(const event_args& e) {
   if (selection_mode() == forms::selection_mode::none) selected_index(npos);
   native::checked_list_box::selected_index(handle(), selected_index());
   if (selected_index() != npos) data_->selected_item = data_->items[selected_index()];
+}
+
+void checked_list_box::on_item_check(item_check_event_args& e) {
+  item_check(*this, e);
 }
 
 void checked_list_box::on_selected_value_changed(const event_args& e) {
