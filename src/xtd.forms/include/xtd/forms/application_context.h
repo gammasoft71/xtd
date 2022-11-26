@@ -29,7 +29,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the application_context class with no context.
-      application_context() noexcept = default;
+      application_context() = default;
       /// @brief Initializes a new instance of the application_context class with the specified Form.
       /// @param main_form The main form of the application to use for context.
       /// @remarks If on_main_form_closed is not overridden, the message loop of the thread terminates when main_form is closed.
@@ -37,7 +37,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      ~application_context() noexcept;
+      ~application_context();
       /// @endcond
       
       /// @name Properties
