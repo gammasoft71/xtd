@@ -135,39 +135,13 @@ namespace xtd {
       drawing::size measure_control() const noexcept override;
       
       void on_click(const event_args& e) override;
-      
-      void on_enabled_changed(const event_args& e) override {
-        if (flat_style() != xtd::forms::flat_style::system) data_->state = enabled() ? (data_->default_button ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal) : xtd::forms::visual_styles::push_button_state::disabled;
-        button_base::on_enabled_changed(e);
-      }
-      
+      void on_enabled_changed(const event_args& e) override;
       void on_handle_created(const event_args& e) override;
-      
       void on_image_changed(const xtd::event_args& e) override;
-      
-      void on_mouse_down(const mouse_event_args& e) override {
-        data_->auto_repeat_timer.interval_milliseconds(data_->auto_repeat_delay);
-        data_->auto_repeat_timer.enabled(data_->auto_repeat);
-        if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = xtd::forms::visual_styles::push_button_state::pressed;
-        button_base::on_mouse_down(e);
-      }
-      
-      void on_mouse_enter(const event_args& e) override {
-        if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::push_button_state::pressed : xtd::forms::visual_styles::push_button_state::hot;
-        button_base::on_mouse_enter(e);
-      }
-      
-      void on_mouse_leave(const event_args& e) override {
-        if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = data_->default_button ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal;
-        button_base::on_mouse_leave(e);
-      }
-      
-      void on_mouse_up(const mouse_event_args& e) override {
-        data_->auto_repeat_timer.enabled(false);
-        if (flat_style() != xtd::forms::flat_style::system && enabled() && data_->state == xtd::forms::visual_styles::push_button_state::pressed) data_->state = xtd::forms::visual_styles::push_button_state::hot;
-        button_base::on_mouse_up(e);
-      }
-      
+      void on_mouse_down(const mouse_event_args& e) override;
+      void on_mouse_enter(const event_args& e) override;
+      void on_mouse_leave(const event_args& e) override;
+      void on_mouse_up(const mouse_event_args& e) override;
       void on_paint(paint_event_args& e) override;
       
     private:
