@@ -21,18 +21,52 @@ text_box::text_box() {
   control_appearance(forms::control_appearance::system);
 }
 
+bool text_box::accepts_return() const {
+  return data_->accepts_return;
+}
+
+text_box& text_box::accepts_return(bool value) {
+  if (data_->accepts_return != value) {
+    data_->accepts_return = value;
+    post_recreate_handle();
+    on_accepts_return_changed(event_args::empty);
+  }
+  return *this;
+}
+
+xtd::forms::character_casing text_box::character_casing() const {
+  return data_->character_casing;
+}
+
 text_box& text_box::character_casing(xtd::forms::character_casing value) {
-  if (character_casing_ != value) {
-    character_casing_ = value;
+  if (data_->character_casing != value) {
+    data_->character_casing = value;
     post_recreate_handle();
   }
   return *this;
 }
 
+char32_t text_box::password_char() const {
+  return data_->password_char;
+}
+
 text_box& text_box::password_char(char32_t value) {
-  if (password_char_ != value) {
-    password_char_ = value;
+  if (data_->password_char != value) {
+    data_->password_char = value;
     post_recreate_handle();
+  }
+  return *this;
+}
+
+const xtd::ustring& text_box::placeholder_text() const {
+  return data_->placeholder_text;
+}
+
+text_box& text_box::placeholder_text(const xtd::ustring& value) {
+  if (data_->placeholder_text != value) {
+    data_->placeholder_text = value;
+    if (is_handle_created())
+      native::text_box::placeholder_text(handle(), data_->placeholder_text);
   }
   return *this;
 }
@@ -48,19 +82,19 @@ size_t text_box::selection_start() const {
 }
 
 const ustring& text_box::text() const {
-  if (!use_system_password_char_ && password_char_) return control::text();
+  if (!data_->use_system_password_char && data_->password_char) return control::text();
   return text_box_base::text();
 }
 
 control& text_box::text(const ustring& text) {
   if (control::text() != text) {
     set_text(text);
-    if (!use_system_password_char_ && password_char_) {
+    if (!data_->use_system_password_char && data_->password_char) {
       if (is_handle_created()) native::text_box::text(handle(), "");
       for (size_t count = 0; count < text.size(); count++)
-        if (is_handle_created()) native::text_box::append(handle(), xtd::ustring::format("{}", password_char_));
+        if (is_handle_created()) native::text_box::append(handle(), xtd::ustring::format("{}", data_->password_char));
     } else {
-      switch (character_casing_) {
+      switch (data_->character_casing) {
         case xtd::forms::character_casing::normal: set_text(text); break;
         case xtd::forms::character_casing::upper: set_text(text.to_upper()); break;
         case xtd::forms::character_casing::lower: set_text(text.to_lower()); break;
@@ -73,22 +107,13 @@ control& text_box::text(const ustring& text) {
   return *this;
 }
 
-const xtd::ustring& text_box::placeholder_text() const {
-  return placeholder_text_;
-}
-
-text_box& text_box::placeholder_text(const xtd::ustring& value) {
-  if (placeholder_text_ != value) {
-    placeholder_text_ = value;
-    if (is_handle_created())
-      native::text_box::placeholder_text(handle(), placeholder_text_);
-  }
-  return *this;
+bool text_box::use_system_password_char() const {
+  return data_->use_system_password_char;
 }
 
 text_box& text_box::use_system_password_char(bool value) {
-  if (use_system_password_char_ != value) {
-    use_system_password_char_ = value;
+  if (data_->use_system_password_char != value) {
+    data_->use_system_password_char = value;
     post_recreate_handle();
   }
   return *this;
@@ -137,21 +162,21 @@ void text_box::select(size_t start, size_t length) {
 
 void text_box::on_handle_created(const event_args& e) {
   text_box_base::on_handle_created(e);
-  native::text_box::placeholder_text(handle(), placeholder_text_);
+  native::text_box::placeholder_text(handle(), data_->placeholder_text);
   /*
-  switch (character_casing_) {
+  switch (data_->character_casing) {
     case xtd::forms::character_casing::upper: set_text(text().to_upper()); break;
     case xtd::forms::character_casing::lower: set_text(text().to_lower()); break;
     default: break;
   }*/
   
-  if (!use_system_password_char_ && password_char_) {
+  if (!data_->use_system_password_char && data_->password_char) {
     auto text = this->text();
     native::text_box::text(handle(), "");
     for (size_t count = 0; count < text.size(); count++)
-      native::text_box::append(handle(), xtd::ustring::format("{}", password_char_));
+      native::text_box::append(handle(), xtd::ustring::format("{}", data_->password_char));
   } else {
-    switch (character_casing_) {
+    switch (data_->character_casing) {
       case xtd::forms::character_casing::upper: set_text(text().to_upper()); break;
       case xtd::forms::character_casing::lower: set_text(text().to_lower()); break;
       default: break;
@@ -161,7 +186,7 @@ void text_box::on_handle_created(const event_args& e) {
 }
 
 void text_box::on_text_changed(const event_args& e) {
-  if (!use_system_password_char_ && password_char_)
+  if (!data_->use_system_password_char && data_->password_char)
     control::on_text_changed(e);
   else {
   }
@@ -179,7 +204,7 @@ void text_box::wnd_proc(message& message) {
 }
 
 void text_box::wm_key_char(message& message) {
-  if (use_system_password_char_ || password_char_ == 0)
+  if (data_->use_system_password_char || data_->password_char == 0)
     control::wnd_proc(message);
   else {
     if (message.msg() == WM_KEYDOWN) {
@@ -189,7 +214,7 @@ void text_box::wm_key_char(message& message) {
     } else if (message.msg() == WM_CHAR && std::iscntrl(static_cast<int32_t>(message.wparam())) == 0) {
       key_press_event_args key_event_args(static_cast<int32_t>(message.wparam()));
       set_text(control::text() + xtd::ustring::format("{}", key_event_args.key_char()));
-      native::text_box::append(handle(), xtd::ustring::format("{}", password_char_));
+      native::text_box::append(handle(), xtd::ustring::format("{}", data_->password_char));
       message.result(true);
     } else if (message.msg() == WM_KEYUP) {
       key_event_args key_event_args(static_cast<keys>(message.wparam()));
@@ -200,7 +225,7 @@ void text_box::wm_key_char(message& message) {
 }
 
 void text_box::wm_set_text(message& message) {
-  if (!use_system_password_char_ && password_char_)
+  if (!data_->use_system_password_char && data_->password_char)
     on_text_changed(event_args::empty);
   else {
     def_wnd_proc(message);
