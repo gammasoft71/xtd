@@ -7,7 +7,7 @@ application_context::application_context(const form& main_form) noexcept {
   this->main_form(main_form);
 }
 
-application_context::~application_context() noexcept {
+application_context::~application_context() {
   if (data_->main_form != nullptr) data_->main_form->handle_destroyed -= {*this, &application_context::on_main_form_closed};
 }
 
