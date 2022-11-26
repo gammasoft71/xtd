@@ -88,7 +88,7 @@ optional<control::control_collection::value_type> control::control_collection::o
   return {};
 }
 
-control::control() noexcept {
+control::control() {
   if (application::use_system_controls()) data_->control_appearance = xtd::forms::control_appearance::system;
   native::application::initialize();
   set_state(state::enabled, true);

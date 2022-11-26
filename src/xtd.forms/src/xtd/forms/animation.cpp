@@ -6,7 +6,7 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::forms;
 
-animation::animation() noexcept {
+animation::animation() {
   double_buffered(true);
   set_can_focus(false);
   set_style(control_styles::resize_redraw, true);

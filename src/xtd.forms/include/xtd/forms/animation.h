@@ -26,7 +26,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initialize a new instance of animation class.
-      animation() noexcept;
+      animation();
       /// @}
       
       /// @name Properties

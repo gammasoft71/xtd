@@ -52,7 +52,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the busy_dialog class.
-      busy_dialog() noexcept = default;
+      busy_dialog() = default;
       /// @}
       /// @cond
       ~busy_dialog();

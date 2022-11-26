@@ -78,7 +78,7 @@ list_control& list_box::selected_index(size_t selected_index) {
   return *this;
 }
 
-vector<size_t> list_box::selected_indices() const {
+vector<size_t> list_box::selected_indices() const noexcept {
   return is_handle_created() ? native::list_box::selected_indices(handle()) : vector<size_t> {};
 }
 
@@ -101,7 +101,7 @@ list_box& list_box::selected_item(const item& selected_item) {
   return *this;
 }
 
-vector<list_box::item> list_box::selected_items() const {
+vector<list_box::item> list_box::selected_items() const noexcept {
   vector<item> items;
   for (size_t index : selected_indices())
     items.push_back(data_->items[index]);
