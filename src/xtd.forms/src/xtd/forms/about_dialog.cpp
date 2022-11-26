@@ -248,6 +248,158 @@ namespace {
   };
 }
 
+const about_dialog::artist_collection& about_dialog::artists() const noexcept {
+  return data_->artists;
+}
+
+about_dialog::artist_collection& about_dialog::artists() noexcept {
+  return data_->artists;
+}
+
+about_dialog& about_dialog::artists(const artist_collection& artists) {
+  data_->artists = artists;
+  return *this;
+}
+
+const about_dialog::author_collection& about_dialog::authors() const noexcept {
+  return data_->authors;
+}
+
+about_dialog::author_collection& about_dialog::authors() noexcept {
+  return data_->authors;
+}
+
+about_dialog& about_dialog::authors(const author_collection& authors) {
+  data_->authors = authors;
+  return *this;
+}
+
+xtd::ustring about_dialog::copyright() const noexcept {
+  return data_->copyright;
+}
+
+about_dialog& about_dialog::copyright(const xtd::ustring& copyright) {
+  data_->copyright = copyright;
+  return *this;
+}
+
+xtd::ustring about_dialog::description() const noexcept {
+  return data_->description;
+}
+
+about_dialog& about_dialog::description(const xtd::ustring& description) {
+  data_->description = description;
+  return *this;
+}
+
+const about_dialog::documenter_collection& about_dialog::documenters() const noexcept {
+  return data_->documenters;
+}
+
+about_dialog::documenter_collection& about_dialog::documenters() noexcept {
+  return data_->documenters;
+}
+
+about_dialog& about_dialog::documenters(const documenter_collection& documenters) {
+  data_->documenters = documenters;
+  return *this;
+}
+
+xtd::forms::dialog_style about_dialog::dialog_style() const noexcept {
+  return data_->dialog_style;
+}
+
+about_dialog& about_dialog::dialog_style(xtd::forms::dialog_style dialog_style) {
+  data_->dialog_style = dialog_style;
+  return *this;
+}
+
+xtd::drawing::icon about_dialog::icon() const noexcept {
+  return xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon));
+}
+
+about_dialog& about_dialog::icon(const xtd::drawing::icon& icon) {
+  data_->icon = icon.to_bitmap();
+  return *this;
+}
+
+about_dialog& about_dialog::icon(const xtd::drawing::image& image) {
+  data_->icon = image;
+  return *this;
+}
+
+about_dialog& about_dialog::icon(const xtd::drawing::bitmap& bitmap) {
+  data_->icon = bitmap;
+  return *this;
+}
+
+xtd::ustring about_dialog::license() const noexcept {
+  return data_->license;
+}
+
+about_dialog& about_dialog::license(const xtd::ustring& license) {
+  data_->license = license;
+  return *this;
+}
+
+xtd::ustring about_dialog::long_version() const noexcept {
+  return data_->long_version;
+}
+
+about_dialog& about_dialog::long_version(const xtd::ustring& long_version) {
+  data_->long_version = long_version;
+  return *this;
+}
+
+xtd::ustring about_dialog::name() const noexcept {
+  return data_->name;
+}
+
+about_dialog& about_dialog::name(const xtd::ustring& name) {
+  data_->name = name;
+  return *this;
+}
+
+const about_dialog::translator_collection& about_dialog::translators() const noexcept {
+  return data_->translators;
+}
+
+about_dialog::translator_collection& about_dialog::translators() noexcept {
+  return data_->translators;
+}
+
+about_dialog& about_dialog::translators(const translator_collection& translators) {
+  data_->translators = translators;
+  return *this;
+}
+
+xtd::ustring about_dialog::version() const noexcept {
+  return data_->version;
+}
+
+about_dialog& about_dialog::version(const xtd::ustring& version) {
+  data_->version = version;
+  return *this;
+}
+
+xtd::ustring about_dialog::website() const noexcept {
+  return data_->website;
+}
+
+about_dialog& about_dialog::website(const xtd::ustring& website) {
+  data_->website = website;
+  return *this;
+}
+
+xtd::ustring about_dialog::website_label() const noexcept {
+  return data_->website_label;
+}
+
+about_dialog& about_dialog::website_label(const xtd::ustring& website_label) {
+  data_->website_label = website_label;
+  return *this;
+}
+
 void about_dialog::reset() {
   data_->dialog_style = xtd::forms::dialog_style::standard;
   data_->icon = xtd::drawing::image::empty;
