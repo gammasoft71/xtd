@@ -29,17 +29,15 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the application_context class with no context.
-      application_context() = default;
+      application_context() noexcept = default;
       /// @brief Initializes a new instance of the application_context class with the specified Form.
       /// @param main_form The main form of the application to use for context.
       /// @remarks If on_main_form_closed is not overridden, the message loop of the thread terminates when main_form is closed.
-      explicit application_context(const form& main_form) {this->main_form(main_form);}
+      explicit application_context(const form& main_form) noexcept;
       /// @}
       
       /// @cond
-      ~application_context() {
-        if (main_form_ != nullptr) main_form_->handle_destroyed -= {*this, &application_context::on_main_form_closed};
-      }
+      ~application_context() noexcept;
       /// @endcond
       
       /// @name Properties
@@ -48,30 +46,26 @@ namespace xtd {
       /// @brief Gets the form to use as context.
       /// @return The form to use as context.
       /// @remarks This property determines the main form for this context. This property can change at any time. If on_main_form_closed is not overridden, the message loop of the thread terminates when the main_form parameter closes.
-      const form& main_form() const {return *main_form_;}
+      const form& main_form() const noexcept;
       /// @brief Gets or sets the Form to use as context.
       /// @return The form to use as context.
       /// @remarks This property determines the main form for this context. This property can change at any time. If on_main_form_closed is not overridden, the message loop of the thread terminates when the main_form parameter closes.
-      form& main_form() {return *main_form_;}
+      form& main_form() noexcept;
       /// @brief Sets the Form to use as context.
       /// @param main_form The form to use as context.
       /// @remarks This property determines the main form for this context. This property can change at any time. If on_main_form_closed is not overridden, the message loop of the thread terminates when the main_form parameter closes.
-      void main_form(const form& main_form) {
-        if (main_form_ != nullptr) main_form_->handle_destroyed -= {*this, &application_context::on_main_form_closed};
-        main_form_ = const_cast<form*>(&main_form);
-        main_form_->visible_changed += {*this, &application_context::on_main_form_closed};
-      }
+      void main_form(const form& main_form);
       
       /// @brief Gets an object that contains data about the control.
       /// @return A std::any that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
       /// @remarks A common use for the tag property is to store data that is closely associated with the control. For example, if you have a control that displays information about a customer, you might store a data_set that contains the customer's order history in that control's tag property so the data can be accessed quickly.
-      std::any tag() const {return tag_;}
+      std::any tag() const noexcept;
       /// @brief Sets an object that contains data about the control.
       /// @param tag A std::any that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
       /// @remarks A common use for the tag property is to store data that is closely associated with the control. For example, if you have a control that displays information about a customer, you might store a data_set that contains the customer's order history in that control's tag property so the data can be accessed quickly.
-      void tag(std::any tag) {tag_ = tag;}
+      void tag(std::any tag);
       /// @}
       
       /// @name Methods
@@ -80,7 +74,7 @@ namespace xtd {
       /// @brief Terminates the message loop of the thread.
       /// @remarks This method calls exit_thread_core.
       /// @note exit_thread and exit_thread_core do not actually cause the thread to terminate. These methods raise the thread_exit event to which the Application object listens. The Application object then terminates the thread.
-      void exit_thread() {exit_thread_core();}
+      void exit_thread();
       /// @}
       
       /// @name Events
@@ -96,27 +90,22 @@ namespace xtd {
       /// @brief Terminates the message loop of the thread.
       /// @remarks This method is called from exit_thread.
       /// @note exit_thread and exit_thread_core do not actually cause the thread to terminate. These methods raise the thread_exit event to which the Application object listens. The Application object then terminates the thread.
-      virtual void exit_thread_core() {thread_exit(*this, event_args::empty);}
+      virtual void exit_thread_core();
       
       /// @brief Calls ExitThreadCore(), which raises the ThreadExit event.
       /// @param sender The object that raised the event.
       /// @param e The event_args that contains the event data.
       /// @remarks The default implementation of this method calls exit_thread_core.
-      virtual void on_main_form_closed(object& sender, const event_args& e) {
-        if (!main_form_->visible()) {
-          if (!main_form_->closed_) main_form_->close();
-          if (main_form_->closed_) {
-            main_form_->handle_destroyed -= {*this, &application_context::on_main_form_closed};
-            exit_thread_core();
-          }
-        }
-      }
+      virtual void on_main_form_closed(object& sender, const event_args& e);
       
     private:
       friend class application;
       
-      form* main_form_ = nullptr;
-      std::any tag_;
+      struct data {
+        form* main_form = nullptr;
+        std::any tag;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
