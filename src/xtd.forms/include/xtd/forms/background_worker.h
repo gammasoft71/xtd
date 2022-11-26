@@ -35,11 +35,11 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the background_worker class.
       /// @remarks This constructor initializes a background_worker.
-      background_worker();
+      background_worker() noexcept;
       /// @}
       
       /// @cond
-      ~background_worker();
+      ~background_worker() noexcept;
       /// @endcond
       
       /// @name Properties
@@ -47,29 +47,29 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating whether the application has requested cancellation of a background operation.
       /// @return true if the application has requested cancellation of a background operation; otherwise, false. The default is false.
-      bool cancellation_pending() const {return data_->cancellation_pending;}
+      bool cancellation_pending() const noexcept;
       
       /// @brief Gets a value indicating whether the background_worker is running an asynchronous operation.
       /// @return true, if the background_worker is running an asynchronous operation; otherwise, false.
-      bool is_busy() const {return data_->is_busy;}
+      bool is_busy() const noexcept;
       
       /// @brief Gets a value indicating whether the background_worker can report progress updates.Gets or sets a value indicating whether the background_worker can report progress updates.
       /// @return true if the background_worker supports progress updates; otherwise false. The default is false.
       /// @remarks Set the worker_reports_progress property to true if you want the background_worker to support progress updates. When this property is true, user code can call the report_progress method to raise the progress_changed event.
-      bool worker_reports_progress() const {return data_->worker_reports_progress;}
+      bool worker_reports_progress() const noexcept;
       /// @brief Sets a value indicating whether the background_worker can report progress updates.Gets or sets a value indicating whether the background_worker can report progress updates.
       /// @param value true if the background_worker supports progress updates; otherwise false. The default is false.
       /// @remarks Set the worker_reports_progress property to true if you want the background_worker to support progress updates. When this property is true, user code can call the report_progress method to raise the progress_changed event.
-      void worker_reports_progress(bool value) {data_->worker_reports_progress = value;}
+      void worker_reports_progress(bool value);
       
       /// @brief Gets a value indicating whether the background_worker supports asynchronous cancellation.
       /// @return true if the background_worker supports cancellation; otherwise false. The default is false.
       /// @remarks Set the worker_supports_cancellation property to true if you want the background_worker to support cancellation. When this property is true, you can call the cancel_async method to interrupt a background operation.
-      bool worker_supports_cancellation() const {return data_->worker_supports_cancellation;}
+      bool worker_supports_cancellation() const noexcept;
       /// @brief Gets a value indicating whether the background_worker supports asynchronous cancellation.
       /// @param value true if the background_worker supports cancellation; otherwise false. The default is false.
       /// @remarks Set the worker_supports_cancellation property to true if you want the background_worker to support cancellation. When this property is true, you can call the cancel_async method to interrupt a background operation.
-      void worker_supports_cancellation(bool value) {data_->worker_supports_cancellation = value;}
+      void worker_supports_cancellation(bool value);
       /// @}
       
       /// @name Methods
@@ -82,15 +82,15 @@ namespace xtd {
       
       /// @brief Raises the background_worker::do_work event.
       /// @param e An event_args that contains the event data.
-      virtual void on_do_work(do_work_event_args& e) {do_work(*this, e);}
+      virtual void on_do_work(do_work_event_args& e);
       
       /// @brief Raises the background_worker::progress_changed event.
       /// @param e An event_args that contains the event data.
-      virtual void on_progress_changed(const progress_changed_event_args& e) {progress_changed(*this, e);}
+      virtual void on_progress_changed(const progress_changed_event_args& e);
       
       /// @brief Raises the background_worker::run_worker_completed event.
       /// @param e An event_args that contains the event data.
-      virtual void on_run_worker_completed(const run_worker_completed_event_args& e) {run_worker_completed(*this, e);}
+      virtual void on_run_worker_completed(const run_worker_completed_event_args& e);
       
       /// @brief Starts execution of a background operation.
       void run_worker_async();
