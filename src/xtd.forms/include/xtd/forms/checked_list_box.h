@@ -56,42 +56,41 @@ namespace xtd {
         item() = default;
         /// @brief Initializes a new instance of the item class with specified value.
         /// @param value a string that represent the item.
-        item(const xtd::ustring& value) : list_box::item(value) {}
+        item(const xtd::ustring& value);
         /// @brief Initializes a new instance of the item class with specified value and check state.
         /// @param value a string that represent the item.
         /// @param checked a bool that represent check state.
-        item(const xtd::ustring& value, bool checked) : list_box::item(value), check_state_(checked ? forms::check_state::checked : forms::check_state::unchecked) {}
+        item(const xtd::ustring& value, bool checked);
         /// @brief Initializes a new instance of the item class with specified value and checked state.
         /// @param value a string that represent the item.
         /// @param check_state a bool that represent check state.
-        item(const xtd::ustring& value, forms::check_state check_state) : list_box::item(value), check_state_(check_state) {}
+        item(const xtd::ustring& value, forms::check_state check_state);
         /// @brief Initializes a new instance of the item class with specified value and tag.
         /// @param value a string that represent the item.
         /// @param tag an object that contains data about the item.
-        item(const xtd::ustring& value, const std::any& tag) : list_box::item(value, tag) {}
+        item(const xtd::ustring& value, const std::any& tag);
         /// @brief Initializes a new instance of the item class with specified value, check state and tag.
         /// @param value a string that represent the item.
         /// @param checked a bool that represent check state.
         /// @param tag an object that contains data about the item.
-        item(const xtd::ustring& value, bool checked, const std::any& tag) : list_box::item(value, tag), check_state_(checked ? forms::check_state::checked : forms::check_state::unchecked) {}
+        item(const xtd::ustring& value, bool checked, const std::any& tag);
         /// @brief Initializes a new instance of the item class with specified value, check state and tag.
         /// @param value a string that represent the item.
         /// @param checked a bool that represent check state.
         /// @param tag an object that contains data about the item.
-        item(const xtd::ustring& value, forms::check_state check_state, const std::any& tag) : list_box::item(value, tag), check_state_(check_state) {}
+        item(const xtd::ustring& value, forms::check_state check_state, const std::any& tag);
         /// @}
         
         /// @cond
-        item(const char* value) : list_box::item(value) {}
+        item(const char* value);
         item(const item& value) = default;
         item& operator =(const item& value) = default;
-        bool operator ==(const item& value) const {return list_box::item::operator ==(value);}
-        bool operator !=(const item& value) const {return list_box::item::operator !=(value);}
-        bool operator <(const item& value) const {return list_box::item::operator <(value);}
-        bool operator <=(const item& value) const {return list_box::item::operator <=(value);}
-        bool operator >(const item& value) const {return list_box::item::operator >(value);}
-        bool operator >=(const item& value) const {return list_box::item::operator >=(value);}
-        friend std::ostream& operator <<(std::ostream& os, const item& value) {return os << value.to_string();}
+        bool operator ==(const item& value) const noexcept;
+        bool operator !=(const item& value) const noexcept;
+        bool operator <(const item& value) const noexcept;
+        bool operator <=(const item& value) const noexcept;
+        bool operator >(const item& value) const noexcept;
+        bool operator >=(const item& value) const noexcept;
         /// @endcond
         
         /// @name Properties
@@ -99,12 +98,12 @@ namespace xtd {
         /// @{
         /// @brief Gets a value indicating whether the item is in the checked state.
         /// @return true if the item is in the checked state; otherwise, false. The default value is false. If the three_state property is set to true, the checked property will return true for either a checked or indeterminate check_state.
-        virtual bool checked() const {return check_state_ != forms::check_state::unchecked;}
+        virtual bool checked() const;
         
         /// @brief Gets the state of the item.
         /// @return One of the check_state enumeration values. The default value is unchecked.
         /// @remarks If the three_state property is set to false, the check_state property value can only be set to check_state::indeterminate in code and not by u ser interaction.
-        virtual forms::check_state check_state() const {return check_state_;}
+        virtual forms::check_state check_state() const;
         /// @}
         
       private:
@@ -172,7 +171,7 @@ namespace xtd {
       /// @return An object that represents the current selection in the control.
       /// @remarks For a standard list_box, you can use this property to determine which item is selected in the list_box. If the selection_mode property of the list_box is set to either selection_mode::multi_simple or selection_mode::multi_extended (which indicates a multiple-selection list_box) and multiple items are selected in the list, this property can return any selected item.
       /// @remarks To retrieve a collection containing all selected items in a multiple-selection list_box, use the selected_items property. If you want to obtain the index position of the currently selected item in the list_box, use the selected_index property. In addition, you can use the selected_indices property to obtain all the selected indexes in a multiple-selection list_box.
-      const item& selected_item() const {return data_->selected_item;}
+      const item& selected_item() const noexcept;
       /// @brief Sets the currently selected item in the list_box.
       /// @param selected_item An object that represents the current selection in the control.
       /// @remarks For a standard list_box, you can use this property to determine which item is selected in the list_box. If the selection_mode property of the list_box is set to either selection_mode::multi_simple or selection_mode::multi_extended (which indicates a multiple-selection list_box) and multiple items are selected in the list, this property can return any selected item.
@@ -183,15 +182,12 @@ namespace xtd {
       /// @return A list_box::selected_object_collection containing the currently selected items in the control.
       /// @remarks For a multiple-selection list_box, this property returns a collection containing all items that are selected in the list_box. For a single-selection list_box, this property returns a collection containing a single element containing the only selected item in the list_box. For more information about how to manipulate the items of the collection, see list_box::selected_object_collection.
       /// @remarks The list_box class provides a number of ways to reference selected items. Instead of using the selected_items property to obtain the currently selected item in a single-selection list_box, you can use the selected_item property. If you want to obtain the index position of an item that is currently selected in the list_box, instead of the item itself, use the selected_index property. In addition, you can use the selected_indices property if you want to obtain the index positions of all selected items in a multiple-selection list_box.
-      selected_object_collection selected_items() const;
+      selected_object_collection selected_items() const noexcept;
       
       using list_box::text;
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
-      control& text(const xtd::ustring& text) override {
-        data_->selected_item = {text};
-        return *this;
-      }
+      control& text(const xtd::ustring& text) override;
       /// @}
       
       /// @name Methods
@@ -252,7 +248,7 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
-      bool allow_selection() const noexcept override {return selection_mode() != forms::selection_mode::none;}
+      bool allow_selection() const noexcept override;
       forms::create_params create_params() const noexcept override;
       /// @}
       
@@ -263,7 +259,7 @@ namespace xtd {
       
       /// @brief Raises the checked_list_box::item_check event.
       /// @param e An item_check_event_args that contains the event data.
-      virtual void on_item_check(item_check_event_args& e) {item_check(*this, e);}
+      virtual void on_item_check(item_check_event_args& e);
       
       void on_selected_value_changed(const event_args& e) override;
       

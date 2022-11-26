@@ -20,7 +20,7 @@ namespace xtd {
     class forms_export_ list_control : public control {
     public:
       /// @brief Represent an item contained in the list_control::object_collection collection.
-      class item {
+      class item : public object{
       public:
         /// @brief Represent the sorter class used by list_control::object_collection collection.
         class sorter {
@@ -46,27 +46,26 @@ namespace xtd {
         item() = default;
         /// @brief Initializes a new instance of the item class with specified value.
         /// @param value a string that represent the item.
-        item(const xtd::ustring& value) : value_(value) {}
+        item(const xtd::ustring& value);
         /// @brief Initializes a new instance of the item class with specified value and tag.
         /// @param value a string that represent the item.
         /// @param tag an object that contains data about the item.
-        item(const xtd::ustring& value, const std::any& tag) : value_(value), tag_(tag) {}
+        item(const xtd::ustring& value, const std::any& tag);
         /// @}
         
         /// @cond
-        item(const char* value) : value_(value) {}
+        item(const char* value);
         item(const item& value) = default;
         item(item&& value) = default;
         item& operator =(const item& value) = default;
         item& operator =(item&& value) = default;
         virtual ~item() = default;
-        bool operator ==(const item& value) const {return value_ == value.value_;}
-        bool operator !=(const item& value) const {return !operator ==(value);}
-        bool operator <(const item& value) const {return value_ < value.value_;}
-        bool operator <=(const item& value) const {return value_ <= value.value_;}
-        bool operator >(const item& value) const {return value_ > value.value_;}
-        bool operator >=(const item& value) const {return value_ >= value.value_;}
-        friend std::ostream& operator <<(std::ostream& os, const item& value) {return os << value.to_string();}
+        bool operator ==(const item& value) const noexcept;
+        bool operator !=(const item& value) const noexcept;
+        bool operator <(const item& value) const noexcept;
+        bool operator <=(const item& value) const noexcept;
+        bool operator >(const item& value) const noexcept;
+        bool operator >=(const item& value) const noexcept;
         /// @endcond
         
         /// @name Properties
@@ -74,11 +73,11 @@ namespace xtd {
         /// @{
         /// @brief Gets the value of the item.
         /// @return A xtd::ustring that represent the value of item.
-        virtual const xtd::ustring& value() const {return value_;}
+        virtual const xtd::ustring& value() const noexcept;
         
         /// @brief Gets the tag of the item.
         /// @return A std::any that represent the tag of item.
-        virtual std::any tag() const {return tag_;}
+        virtual std::any tag() const noexcept;
         /// @}
         
         /// @name Methods
@@ -86,7 +85,7 @@ namespace xtd {
         /// @{
         /// @brief Returns a string containing the value of the item.
         /// @return A string containing the value of the item.
-        xtd::ustring to_string() const {return value_;}
+        xtd::ustring to_string() const noexcept override;
         /// @}
         
       private:
@@ -113,7 +112,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the zero-based index of the currently selected item.
       /// @return A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
-      virtual size_t selected_index() const noexcept {return data_->selected_index;}
+      virtual size_t selected_index() const noexcept;
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
       /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       /// @return Current list_control.
@@ -154,17 +153,17 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating whether the list enables selection of list items.
       /// @return true if the list enables list item selection; otherwise, false. The default is true.
-      virtual bool allow_selection() const noexcept {return true;}
+      virtual bool allow_selection() const noexcept;
       
       /// @brief Raises the list_control::selected_index_changed event.
-      virtual void on_selected_index_changed(const event_args& e) {selected_index_changed(*this, e);}
+      virtual void on_selected_index_changed(const event_args& e);
       
       /// @brief Raises the list_control::selected_value_changed event.
-      virtual void on_selected_value_changed(const event_args& e) {selected_value_changed(*this, e);}
+      virtual void on_selected_value_changed(const event_args& e);
       
       /// @brief Sets the currently selected item.
       /// @param value A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
-      void set_selected_index(size_t value) {data_->selected_index = value;}
+      void set_selected_index(size_t value);
       /// @}
       
     private:

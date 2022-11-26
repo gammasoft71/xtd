@@ -45,6 +45,10 @@ list_box::list_box() {
   };
 }
 
+forms::border_sides list_box::border_sides() const noexcept {
+  return data_->border_sides;
+}
+
 list_box& list_box::border_sides(forms::border_sides border_sides) {
   if (data_->border_sides != border_sides) {
     data_->border_sides = border_sides;
@@ -53,11 +57,28 @@ list_box& list_box::border_sides(forms::border_sides border_sides) {
   return *this;
 }
 
+forms::border_style list_box::border_style() const noexcept {
+  return data_->border_style;
+}
+
 list_box& list_box::border_style(forms::border_style border_style) {
   if (data_->border_style != border_style) {
     data_->border_style = border_style;
     post_recreate_handle();
   }
+  return *this;
+}
+
+list_box::object_collection& list_box::items() noexcept {
+  return data_->items;
+}
+
+const list_box::object_collection& list_box::items() const noexcept {
+  return data_->items;
+}
+
+const list_box& list_box::items(const object_collection& items) {
+  data_->items = items;
   return *this;
 }
 
@@ -101,11 +122,19 @@ list_box& list_box::selected_item(const item& selected_item) {
   return *this;
 }
 
+const list_box::item& list_box::selected_item() const noexcept {
+  return data_->selected_item;
+}
+
 vector<list_box::item> list_box::selected_items() const noexcept {
   vector<item> items;
   for (size_t index : selected_indices())
     items.push_back(data_->items[index]);
   return items;
+}
+
+forms::selection_mode list_box::selection_mode() const noexcept {
+  return data_->selection_mode;
 }
 
 list_box& list_box::selection_mode(forms::selection_mode selection_mode) {
@@ -116,11 +145,19 @@ list_box& list_box::selection_mode(forms::selection_mode selection_mode) {
   return *this;
 }
 
+bool list_box::sorted() const noexcept {
+  return data_->sorted;
+}
+
 list_box& list_box::sorted(bool sorted) {
   if (data_->sorted != sorted) {
     data_->sorted = sorted;
     data_->items.sorted(data_->sorted);
   }
+  return *this;
+}
+
+control& list_box::text(const xtd::ustring& text) {
   return *this;
 }
 
@@ -138,6 +175,10 @@ drawing::color list_box::default_back_color() const noexcept {
 
 drawing::color list_box::default_fore_color() const noexcept {
   return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().window_text();
+}
+
+bool list_box::allow_selection() const noexcept {
+  return data_->selection_mode != forms::selection_mode::none;
 }
 
 forms::create_params list_box::create_params() const noexcept {
