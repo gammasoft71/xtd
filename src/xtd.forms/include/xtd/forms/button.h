@@ -65,7 +65,7 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the button class.
       /// @remarks By default the button displays no caption. To specify the caption text, set the text property.
-      button();
+      button() noexcept;
       /// @}
       
       /// @name Properties
@@ -171,6 +171,8 @@ namespace xtd {
       void on_paint(paint_event_args& e) override;
       
     private:
+      void on_auto_repeat_timer_tick(object& sender, const event_args& e);
+      
       struct data {
         bool auto_repeat = false;
         timer auto_repeat_timer;
