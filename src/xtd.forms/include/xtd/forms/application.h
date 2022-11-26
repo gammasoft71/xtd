@@ -58,14 +58,14 @@ namespace xtd {
       /// @brief Gets a value indicating whether the caller can quit this application.
       /// @return true if the caller can quit this application; otherwise, false.
       /// @remarks This method returns false if it is called from a control being hosted within a Web browser. Thus, the control cannot quit the application.
-      static bool allow_quit();
+      static bool allow_quit() noexcept;
       
       /// @brief Gets the path for the application data that is shared among all users.
       /// @return The path for the application data that is shared among all users.
       /// @remarks If a path does not exist, one is created in the following format: base_path\company_name\product_name\product_version
       /// @remarks product_version first looks to see if the assembly containing the main executable has the AssemblyInformationalVersion attribute on it. If this attribute exists, it is used for both product_version and common_app_data_path. If this attribute does not exist, both properties use the version of the executable file instead.
       /// @remarks The path will be different depending on whether the Windows Forms application is deployed using ClickOnce. ClickOnce applications are stored in a per-user application cache in the C:\Documents and Settings\username directory. For more information, see Accessing Local and Remote Data in ClickOnce Applications.
-      static xtd::ustring common_app_data_path();
+      static xtd::ustring common_app_data_path() noexcept;
       
       /*
       /// @brief Gets the registry key for the application data that is shared among all users.
@@ -83,44 +83,44 @@ namespace xtd {
       ///   textBox1.Text(xtd::ustring::format("The company name is: {0}", application::company_name);
       /// }
       /// @endcode
-      static xtd::ustring company_name();
+      static xtd::ustring company_name() noexcept;
       
       /// @brief Return true if dark mode is enabled for the application; otherwise return false.
       /// @return True is dark mode enabled; otherwise false.
-      static bool dark_mode_enabled();
+      static bool dark_mode_enabled() noexcept;
       
       /// @brief Return true if dark mode is enabled for the application; otherwise return false.
       /// @return True is light mode enabled; otherwise false.
-      static bool light_mode_enabled();
+      static bool light_mode_enabled() noexcept;
 
       /// @brief Gets the executable name for the executable file that started the application, including the executable extension.
       /// @return The executable name and executable name for the executable file that started the application.<br><br>
-      static xtd::ustring executable_name();
+      static xtd::ustring executable_name() noexcept;
       
       /// @brief Gets the path for the executable file that started the application, including the executable name.
       /// @return The path and executable name for the executable file that started the application.<br><br>
-      static xtd::ustring executable_path();
+      static xtd::ustring executable_path() noexcept;
       
       /// @brief Gets a value indicating whether a message loop exists on this thread.
       /// @return true if a message loop exists; otherwise, false.
-      static bool message_loop();
+      static bool message_loop() noexcept;
       
       /// @brief Gets a collection of open forms owned by the application.
       /// @return A form_collection containing all the currently open forms owned by this application.
       /// @remarks The open_forms property represents a read-only collection of forms owned by the application.
-      static const form_collection open_forms();
+      static const form_collection open_forms() noexcept;
       
       /// @brief Gets the product name associated with this application.
       /// @return The product name.
-      static xtd::ustring product_name();
+      static xtd::ustring product_name() noexcept;
       
       /// @brief Gets the product version associated with this application.
       /// @return The product version.
-      static xtd::ustring product_version();
+      static xtd::ustring product_version() noexcept;
       
       /// @brief Gets the path for the executable file that started the application, not including the executable name.
       /// @return The path for the executable file that started the application.
-      static xtd::ustring startup_path();
+      static xtd::ustring startup_path() noexcept;
       
       /// @brief Gets current xtd::forms::style_sheets::style_sheet style sheet.
       /// @return The current xtd::forms::style_sheets::style_sheet style sheet.
@@ -151,7 +151,7 @@ namespace xtd {
       /// @remarks If a path does not exist, one is created in the following format: base_path\company_name\product_name\product_version
       /// @remarks Data stored in this path is part of user profile that is enabled for roaming. A roaming user works on more than one computer in a network. The user profile for a roaming user is kept on a server on the network and is loaded onto a system when the user logs on. For a user profile to be considered for roaming, the operating system must support roaming profiles and it must be enabled.
       /// @remarks A typical base path is "C:\Documents and Settings\username\Application Data".
-      static xtd::ustring user_app_data_path();
+      static xtd::ustring user_app_data_path() noexcept;
       
       /*
        /// @brief Gets the registry key for the application data of a user.
@@ -164,13 +164,13 @@ namespace xtd {
       /// @brief Gets a value that indicates whether system controls are enabled for the application.
       /// @return true if system_control are enabled; otherwise, false.
       /// @remarks The system_controls can be enabled by calling enable_xtd::forms::application::system_controls.
-      static bool use_system_controls();
+      static bool use_system_controls() noexcept;
       
 
       /// @brief Gets a value that indicates whether visual styles are enabled for the application.
       /// @return true if visual styles are enabled; otherwise, false.
       /// @remarks The visual styles can be enabled by calling enable_xtd::forms::application::visual_styles.
-      static bool use_visual_styles();
+      static bool use_visual_styles() noexcept;
       
       /// @brief Gets whether the wait cursor is used for all open forms of the application.
       /// @return true is the wait cursor is used for all open forms; otherwise, false.
@@ -178,7 +178,14 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of application use wait cursor property.
       /// @include application_use_wait_cursor.cpp
-      static bool use_wait_cursor();
+      static bool use_wait_cursor() noexcept;
+      /// @brief Sets whether the wait cursor is used for all open forms of the application.
+      /// @param use_wait_cursor true is the wait cursor is used for all open forms; otherwise, false.
+      /// @remarks When this property is set to true, the use_wait_cursor property of all open forms in the application will be set to true. This call will not return until this property has been set on all forms. Use this property when you have a long-running operation, and want to indicate in all application forms that the operation is still processing.
+      /// @par Examples
+      /// The following code example demonstrates the use of application use wait cursor property.
+      /// @include application_use_wait_cursor.cpp
+      static void use_wait_cursor(bool use_wait_cursor);
       /// @}
       
       /// @name Events
@@ -229,14 +236,6 @@ namespace xtd {
      /// @name Methods
       
       /// @{
-      /// @brief Sets whether the wait cursor is used for all open forms of the application.
-      /// @param use_wait_cursor true is the wait cursor is used for all open forms; otherwise, false.
-      /// @remarks When this property is set to true, the use_wait_cursor property of all open forms in the application will be set to true. This call will not return until this property has been set on all forms. Use this property when you have a long-running operation, and want to indicate in all application forms that the operation is still processing.
-      /// @par Examples
-      /// The following code example demonstrates the use of application use wait cursor property.
-      /// @include application_use_wait_cursor.cpp
-      static void use_wait_cursor(bool use_wait_cursor);
-      
       /// @brief Adds a message filter to monitor Windows messages as they are routed to their destinations.
       /// @param The implementation of the imessage_filter interface you want to install.
       /// @remarks Use a message filter to prevent specific events from being raised or to perform special operations for an event before it is passed to an event handler. Message filters are unique to a specific thread.
