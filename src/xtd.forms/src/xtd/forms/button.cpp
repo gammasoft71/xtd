@@ -16,16 +16,9 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-button::button() {
+button::button() noexcept {
   set_style(control_styles::standard_click | control_styles::standard_double_click, false);
-  data_->auto_repeat_timer.tick += [&] {
-    data_->auto_repeat_timer.enabled(false);
-    if (enabled()) {
-      perform_click();
-      data_->auto_repeat_timer.interval_milliseconds(data_->auto_repeat_interval);
-      data_->auto_repeat_timer.enabled(data_->auto_repeat);
-    }
-  };
+  data_->auto_repeat_timer.tick += {*this, &button::on_auto_repeat_timer_tick};
 }
 
 bool button::auto_repeat() const noexcept {
@@ -140,4 +133,13 @@ drawing::size button::measure_control() const noexcept {
   drawing::size size = button_base::measure_control();
   if (size.height() < default_size().height()) size.height(default_size().height());
   return size;
+}
+
+void button::on_auto_repeat_timer_tick(object& sender, const event_args& e) {
+  data_->auto_repeat_timer.enabled(false);
+  if (enabled()) {
+    perform_click();
+    data_->auto_repeat_timer.interval_milliseconds(data_->auto_repeat_interval);
+    data_->auto_repeat_timer.enabled(data_->auto_repeat);
+  }
 }
