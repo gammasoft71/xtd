@@ -120,7 +120,7 @@ public:
   void tool_bar_button(tool_bar_button_ref value) {data_->tool_bar_button = value;}
   
 protected:
-  xtd::drawing::font default_font() const override {return xtd::drawing::system_fonts::tool_font();}
+  xtd::drawing::font default_font() const noexcept override {return xtd::drawing::system_fonts::tool_font();}
   
   void on_click(const xtd::event_args& e) override {
     button::on_click(e);

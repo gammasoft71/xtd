@@ -52,7 +52,7 @@ void button::perform_click() {
   on_click(event_args::empty);
 }
 
-forms::create_params button::create_params() const {
+forms::create_params button::create_params() const noexcept {
   forms::create_params create_params = button_base::create_params();
   
   create_params.class_name("button");
@@ -94,7 +94,7 @@ void button::on_paint(paint_event_args& e) {
   button_base::on_paint(e);
 }
 
-drawing::size button::measure_control() const {
+drawing::size button::measure_control() const noexcept {
   drawing::size size = button_base::measure_control();
   if (size.height() < default_size().height()) size.height(default_size().height());
   return size;

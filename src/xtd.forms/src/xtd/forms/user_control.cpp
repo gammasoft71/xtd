@@ -49,7 +49,7 @@ user_control& user_control::border_style(std::nullptr_t) {
   return *this;
 }
 
-forms::create_params user_control::create_params() const {
+forms::create_params user_control::create_params() const noexcept {
   forms::create_params create_params = scrollable_control::create_params();
   
   create_params.class_name("usercontrol");

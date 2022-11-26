@@ -433,9 +433,9 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
-      xtd::forms::create_params create_params() const override;
-      xtd::drawing::color default_back_color() const override;
-      xtd::drawing::color default_fore_color() const override;
+      xtd::forms::create_params create_params() const noexcept override;
+      xtd::drawing::color default_back_color() const noexcept override;
+      xtd::drawing::color default_fore_color() const noexcept override;
       /// @}
 
       /// @name Protected methods

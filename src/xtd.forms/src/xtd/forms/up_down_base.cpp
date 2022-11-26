@@ -29,7 +29,7 @@ up_down_base::up_down_base() {
   set_style(control_styles::use_text_for_accessibility, false);
 }
 
-forms::create_params up_down_base::create_params() const {
+forms::create_params up_down_base::create_params() const noexcept {
   forms::create_params create_params = container_control::create_params();
   
   if (border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);

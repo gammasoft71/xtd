@@ -100,7 +100,7 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
-      xtd::forms::create_params create_params() const override;
+      xtd::forms::create_params create_params() const noexcept override;
       /// @}
 
       /// @name Protected methods

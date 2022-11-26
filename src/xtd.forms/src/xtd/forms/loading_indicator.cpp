@@ -39,14 +39,14 @@ loading_indicator& loading_indicator::loading_indicator_style(xtd::forms::loadin
   return *this;
 }
 
-forms::create_params loading_indicator::create_params() const {
+forms::create_params loading_indicator::create_params() const noexcept {
   forms::create_params create_params = control::create_params();
   create_params.class_name("loadingindicator");
   if (loading_indicator_style_ != xtd::forms::loading_indicator_style::system) create_params.style(create_params.style() | LI_OWNERDRAW);
   return create_params;
 }
 
-drawing::size loading_indicator::measure_control() const {
+drawing::size loading_indicator::measure_control() const noexcept {
   return control::measure_text();
 }
 

@@ -73,7 +73,7 @@ progress_bar& progress_bar::value(int32_t value) {
   return *this;
 }
 
-forms::create_params progress_bar::create_params() const {
+forms::create_params progress_bar::create_params() const noexcept {
   forms::create_params create_params = control::create_params();
   
   create_params.class_name("progressbar");
@@ -84,7 +84,7 @@ forms::create_params progress_bar::create_params() const {
   return create_params;
 }
 
-drawing::size progress_bar::default_size() const {
+drawing::size progress_bar::default_size() const noexcept {
   static auto size = control::default_size();
   return orientation() == forms::orientation::horizontal ? size : drawing::size(size.height(), size.width());
 }

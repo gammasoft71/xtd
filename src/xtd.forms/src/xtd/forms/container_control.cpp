@@ -13,7 +13,7 @@ container_control::container_control() {
   set_style(control_styles::all_painting_in_wm_paint, false);
 }
 
-drawing::size container_control::measure_control() const {
+drawing::size container_control::measure_control() const noexcept {
   drawing::rectangle bounds;
   for (auto item : controls()) {
     if (item.get().visible())

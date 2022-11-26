@@ -139,7 +139,7 @@ void checked_list_box::set_item_text(size_t index, const xtd::ustring& text) {
   items()[index] = {text, items()[index].checked(), items()[index].tag()};
 }
 
-forms::create_params checked_list_box::create_params() const {
+forms::create_params checked_list_box::create_params() const noexcept {
   forms::create_params create_params = list_box::create_params();
   
   create_params.class_name("checkedlistbox");

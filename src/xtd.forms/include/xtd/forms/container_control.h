@@ -45,7 +45,7 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      drawing::size measure_control() const override;
+      drawing::size measure_control() const noexcept override;
       /// @}
       
       /// @cond

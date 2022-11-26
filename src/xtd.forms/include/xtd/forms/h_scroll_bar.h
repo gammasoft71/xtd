@@ -51,8 +51,8 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
-      xtd::forms::create_params create_params() const override;
-      xtd::drawing::size default_size() const override;
+      xtd::forms::create_params create_params() const noexcept override;
+      xtd::drawing::size default_size() const noexcept override;
       /// @}
     };
   }

@@ -138,7 +138,7 @@ label& label::text_align(content_alignment text_align) {
   return *this;
 }
 
-forms::create_params label::create_params() const {
+forms::create_params label::create_params() const noexcept {
   forms::create_params create_params = control::create_params();
   
   create_params.class_name("label");
@@ -167,7 +167,7 @@ forms::create_params label::create_params() const {
   return create_params;
 }
 
-drawing::size label::measure_control() const {
+drawing::size label::measure_control() const noexcept {
   return control::measure_text() + drawing::size(data_->border_style == border_style::none ? 0 : 4, data_->border_style == border_style::none ? 0 : 4);
 }
 

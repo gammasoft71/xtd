@@ -87,7 +87,7 @@ button_base& button_base::text_align(content_alignment text_align) {
   return *this;
 }
 
-forms::create_params button_base::create_params() const {
+forms::create_params button_base::create_params() const noexcept {
   forms::create_params create_params = control::create_params();
   
   if (data_->flat_style != xtd::forms::flat_style::system) create_params.style(create_params.style() | BS_OWNERDRAW);
@@ -108,7 +108,7 @@ forms::create_params button_base::create_params() const {
   return create_params;
 }
 
-drawing::size button_base::measure_control() const {
+drawing::size button_base::measure_control() const noexcept {
   return control::measure_text() + drawing::size(13, 0);
 }
 

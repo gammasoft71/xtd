@@ -11,7 +11,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-forms::create_params tab_page::create_params() const {
+forms::create_params tab_page::create_params() const noexcept {
   forms::create_params create_params = panel::create_params();
   
   create_params.class_name("tabpage");

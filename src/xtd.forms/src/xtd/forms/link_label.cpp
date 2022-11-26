@@ -128,7 +128,7 @@ link_label& link_label::visited_link_color(const xtd::drawing::color& color) {
   return *this;
 }
 
-drawing::size link_label::measure_control() const {
+drawing::size link_label::measure_control() const noexcept {
   rectangle bounds;
   for (auto [rect, is_link] : generate_text_rects())
     bounds = drawing::rectangle::make_union(bounds, rect);

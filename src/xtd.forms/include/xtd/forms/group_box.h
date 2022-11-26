@@ -81,13 +81,13 @@ namespace xtd {
       /// @name Protectd properties
       
       /// @{
-      forms::create_params create_params() const override;
+      forms::create_params create_params() const noexcept override;
       /// @}
 
       /// @name Protectd methods
       
       /// @{
-      drawing::size measure_control() const override;
+      drawing::size measure_control() const noexcept override;
       void on_font_changed(const xtd::event_args& e) override;
       void on_resize(const xtd::event_args& e) override;
       void on_text_changed(const xtd::event_args& e) override;

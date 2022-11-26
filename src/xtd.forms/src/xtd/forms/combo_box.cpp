@@ -112,7 +112,7 @@ void combo_box::end_update() {
   if (is_handle_created()) native::combo_box::end_update(handle());
 }
 
-forms::create_params combo_box::create_params() const {
+forms::create_params combo_box::create_params() const noexcept {
   forms::create_params create_params = list_control::create_params();
   
   create_params.class_name("combobox");

@@ -119,15 +119,15 @@ text_box& text_box::use_system_password_char(bool value) {
   return *this;
 }
 
-drawing::color text_box::default_back_color() const {
+drawing::color text_box::default_back_color() const noexcept {
   return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().text_box();
 }
 
-drawing::color text_box::default_fore_color() const {
+drawing::color text_box::default_fore_color() const noexcept {
   return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().text_box_text();
 }
 
-forms::create_params text_box::create_params() const {
+forms::create_params text_box::create_params() const noexcept {
   forms::create_params create_params = text_box_base::create_params();
   
   create_params.class_name("textbox");
@@ -147,7 +147,7 @@ forms::create_params text_box::create_params() const {
   return create_params;
 }
 
-drawing::size text_box::measure_control() const {
+drawing::size text_box::measure_control() const noexcept {
   return drawing::size(client_size().width(), static_cast<int32_t>(font().get_height()) + 2 + (border_style() == border_style::none ? 0 : 4));
 }
 

@@ -151,9 +151,9 @@ namespace xtd {
       /// @name Protetced properties
       
       /// @{
-      forms::create_params create_params() const override;
-      xtd::drawing::font default_font() const override;
-      drawing::size default_size() const override;      
+      forms::create_params create_params() const noexcept override;
+      xtd::drawing::font default_font() const noexcept override;
+      drawing::size default_size() const noexcept override;      
      /// @}
       
       /// @name Protetced methods

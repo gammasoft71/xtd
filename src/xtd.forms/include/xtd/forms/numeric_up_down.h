@@ -144,9 +144,9 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
-      forms::create_params create_params() const override;
-      drawing::color default_back_color() const override;
-      drawing::color default_fore_color() const override;
+      forms::create_params create_params() const noexcept override;
+      drawing::color default_back_color() const noexcept override;
+      drawing::color default_fore_color() const noexcept override;
       /// @}
 
       /// @name Protected methods

@@ -13,7 +13,7 @@ animation::animation() noexcept {
   data_->frames_timer.tick += {*this, &animation::on_frames_timer_tick};
 }
 
-drawing::size animation::default_size() const {
+drawing::size animation::default_size() const noexcept {
   return {200, 100};
 }
 

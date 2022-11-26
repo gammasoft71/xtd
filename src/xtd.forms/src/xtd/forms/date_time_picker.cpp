@@ -68,15 +68,15 @@ control& date_time_picker::value(date_time value) {
   return *this;
 }
 
-drawing::color date_time_picker::default_back_color() const {
+drawing::color date_time_picker::default_back_color() const noexcept {
   return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().window();
 }
 
-drawing::color date_time_picker::default_fore_color() const {
+drawing::color date_time_picker::default_fore_color() const noexcept {
   return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().window_text();
 }
 
-forms::create_params date_time_picker::create_params() const {
+forms::create_params date_time_picker::create_params() const noexcept {
   forms::create_params create_params = control::create_params();
   create_params.class_name("datetimepicker");
   switch (format_) {

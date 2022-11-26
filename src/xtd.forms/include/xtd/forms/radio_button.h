@@ -133,7 +133,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
-      forms::create_params create_params() const override;
+      forms::create_params create_params() const noexcept override;
       
       /// @brief Gets state.
       /// @return One of xtd::forms::visual_styles::radio_button_state values.
@@ -146,7 +146,7 @@ namespace xtd {
       /// @brief Measure this control.
       /// @return The drawing::size size of this control.
       /// @remarks This method is used when auto_size is true.
-      drawing::size measure_control() const override;
+      drawing::size measure_control() const noexcept override;
       
       /// @brief Raises the radio_button::appearance_changed event.
       /// @param e An EventArgs that contains the event data.

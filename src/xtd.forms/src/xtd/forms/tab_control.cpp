@@ -44,7 +44,7 @@ tab_control& tab_control::image_list(const forms::image_list& value) {
   return *this;
 }
 
-forms::create_params tab_control::create_params() const {
+forms::create_params tab_control::create_params() const noexcept {
   forms::create_params create_params = control::create_params();
   
   create_params.class_name("tabcontrol");
@@ -60,7 +60,7 @@ forms::create_params tab_control::create_params() const {
   return create_params;
 }
 
-drawing::size tab_control::measure_control() const {
+drawing::size tab_control::measure_control() const noexcept {
   drawing::rectangle bounds;
   for (auto item : controls())
     if (item.get().visible()) bounds = drawing::rectangle::make_union(bounds, item.get().bounds());

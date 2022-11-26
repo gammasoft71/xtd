@@ -24,7 +24,7 @@ void color_picker::color(const drawing::color& value) {
   }
 }
 
-forms::create_params color_picker::create_params() const {
+forms::create_params color_picker::create_params() const noexcept {
   forms::create_params create_params = control::create_params();
   create_params.class_name("colorpicker");
   if (alpha_color_) create_params.style(create_params.style() | CC_ALPHACOLOR);

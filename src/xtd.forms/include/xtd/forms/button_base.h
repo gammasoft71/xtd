@@ -145,7 +145,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
-      forms::create_params create_params() const override;
+      forms::create_params create_params() const noexcept override;
       /// @}
 
       /// @name Protected methods
@@ -154,7 +154,7 @@ namespace xtd {
       /// @brief Measure this control.
       /// @return The drawing::size size of this control.
       /// @remarks This method is used when auto_size is true.
-      drawing::size measure_control() const override;
+      drawing::size measure_control() const noexcept override;
       
       void on_back_color_changed(const event_args& e) override {
         if (data_->flat_style != xtd::forms::flat_style::system) invalidate();

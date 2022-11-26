@@ -249,7 +249,7 @@ tool_bar& tool_bar::wrappable(bool value) {
   return *this;
 }
 
-forms::create_params tool_bar::create_params() const {
+forms::create_params tool_bar::create_params() const noexcept {
   forms::create_params create_params = control::create_params();
   
   if (is_system_tool_bar())
@@ -269,11 +269,11 @@ forms::create_params tool_bar::create_params() const {
   return create_params;
 }
 
-xtd::drawing::font tool_bar::default_font() const {
+xtd::drawing::font tool_bar::default_font() const noexcept {
   return xtd::drawing::system_fonts::tool_font();
 }
 
-drawing::size tool_bar::default_size() const {
+drawing::size tool_bar::default_size() const noexcept {
   return native::control::default_size("toolbar");
 }
 

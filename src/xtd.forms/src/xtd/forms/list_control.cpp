@@ -8,10 +8,10 @@ list_control::list_control() {
   //fore_color_ = default_fore_color();
 }
 
-drawing::color list_control::default_back_color() const {
+drawing::color list_control::default_back_color() const noexcept {
   return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().window();
 }
 
-drawing::color list_control::default_fore_color() const {
+drawing::color list_control::default_fore_color() const noexcept {
   return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().window_text();
 }

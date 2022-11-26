@@ -56,7 +56,7 @@ toggle_button& toggle_button::three_state(bool three_state) {
   return *this;
 }
 
-forms::create_params toggle_button::create_params() const {
+forms::create_params toggle_button::create_params() const noexcept {
   forms::create_params create_params = button_base::create_params();
   
   create_params.class_name("togglebutton");
@@ -75,7 +75,7 @@ forms::create_params toggle_button::create_params() const {
   return create_params;
 }
 
-drawing::size toggle_button::measure_control() const {
+drawing::size toggle_button::measure_control() const noexcept {
   return button_base::measure_text() + drawing::size(18, 0);
 }
 

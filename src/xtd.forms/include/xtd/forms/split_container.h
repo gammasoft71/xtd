@@ -114,7 +114,7 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      drawing::size default_size() const override {return {150, 100};}
+      drawing::size default_size() const noexcept override {return {150, 100};}
       /// @}
 
       /// @name Protected methods

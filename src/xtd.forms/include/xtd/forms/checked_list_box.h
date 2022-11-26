@@ -256,7 +256,7 @@ namespace xtd {
       
       /// @{
       bool allow_selection() override {return selection_mode() != forms::selection_mode::none;}
-      forms::create_params create_params() const override;
+      forms::create_params create_params() const noexcept override;
       /// @}
       
       /// @name Protected methods
