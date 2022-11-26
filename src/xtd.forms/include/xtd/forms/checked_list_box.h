@@ -141,27 +141,24 @@ namespace xtd {
       /// @brief Collection of checked indexes in this checked_list_box.
       /// @return The checked_list_box::checked_index_collection collection for the checked_list_box.
       /// @remarks The collection of checked indexes is a subset of the indexes into the collection of all items in the checked_list_box control. These indexes specify items in a checked or indeterminate state.
-      checked_index_collection checked_indices() const;
+      checked_index_collection checked_indices() const noexcept;
       
       /// @brief Collection of checked items in this checked_list_box.
       /// @return The checked_list_box::checked_item_collection collection for the checked_list_box.
       /// @remarks The collection is a subset of the objects in the items collection, representing only those items whose xtd::forms::check_state is checked or indeterminate. The indexes in this collection are in ascending order.
-      checked_item_collection checked_items() const;
+      checked_item_collection checked_items() const noexcept;
       
       /// @brief Gets the collection of items in this checked_list_box.
       /// @return The checked_list_box::object_collection collection representing the items in the checked_list_box.
       /// @remarks The items property enables you to obtain a reference to the list of items that are currently stored in a checked_list_box control. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
-      object_collection& items() {return data_->items;}
+      object_collection& items() noexcept;
       /// @brief Gets the collection of items in this checked_list_box.
       /// @return The checked_list_box::object_collection collection representing the items in the checked_list_box.
       /// @remarks The items property enables you to obtain a reference to the list of items that are currently stored in a checked_list_box control. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
-      const object_collection& items() const {return data_->items;}
+      const object_collection& items() const noexcept;
       /// @brief Sets the collection of items in this checked_list_box.
       /// @param items The checked_list_box::object_collection collection representing the items in the checked_list_box.
-      const list_box& items(const object_collection& items) {
-        data_->items = items;
-        return *this;
-      }
+      const list_box& items(const object_collection& items);
       
       using list_box::selected_index;
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
@@ -169,7 +166,7 @@ namespace xtd {
       /// @return Current list_control.
       list_control& selected_index(size_t selected_index) override;
       
-      std::vector<size_t> selected_indices() const override;
+      std::vector<size_t> selected_indices() const noexcept override;
       
       /// @brief Gets the currently selected item in the checked_list_box.
       /// @return An object that represents the current selection in the control.
@@ -255,7 +252,7 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
-      bool allow_selection() override {return selection_mode() != forms::selection_mode::none;}
+      bool allow_selection() const noexcept override {return selection_mode() != forms::selection_mode::none;}
       forms::create_params create_params() const noexcept override;
       /// @}
       

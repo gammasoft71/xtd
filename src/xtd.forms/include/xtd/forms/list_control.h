@@ -113,7 +113,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the zero-based index of the currently selected item.
       /// @return A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
-      virtual size_t selected_index() const {return data_->selected_index;}
+      virtual size_t selected_index() const noexcept {return data_->selected_index;}
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
       /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       /// @return Current list_control.
@@ -154,7 +154,7 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating whether the list enables selection of list items.
       /// @return true if the list enables list item selection; otherwise, false. The default is true.
-      virtual bool allow_selection() {return true;}
+      virtual bool allow_selection() const noexcept {return true;}
       
       /// @brief Raises the list_control::selected_index_changed event.
       virtual void on_selected_index_changed(const event_args& e) {selected_index_changed(*this, e);}

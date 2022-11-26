@@ -185,7 +185,7 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::control class with default settings.
       /// @remarks The xtd::forms::control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
-      control() noexcept;
+      control();
       /// @brief Initializes a new instance of the xtd::forms::control class with specific text.
       /// @param text The text displayed by the control.
       /// @remarks The xtd::forms::control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.

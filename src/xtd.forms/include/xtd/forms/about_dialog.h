@@ -66,7 +66,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the about_dialog class.
-      about_dialog() noexcept = default;
+      about_dialog() = default;
       /// @}
       
       /// @name Properties

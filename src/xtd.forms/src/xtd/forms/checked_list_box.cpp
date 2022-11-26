@@ -46,18 +46,31 @@ checked_list_box::checked_list_box() {
   };
 }
 
-checked_list_box::checked_index_collection checked_list_box::checked_indices() const {
+checked_list_box::checked_index_collection checked_list_box::checked_indices() const noexcept {
   checked_index_collection indices;
   for (size_t index = 0; index < data_->items.size(); index++)
     if (data_->items[index].checked()) indices.push_back(index);
   return indices;
 }
 
-checked_list_box::checked_item_collection checked_list_box::checked_items() const {
+checked_list_box::checked_item_collection checked_list_box::checked_items() const noexcept {
   checked_item_collection items;
   for (checked_list_box::item item : data_->items)
     if (item.checked()) items.push_back(item);
   return items;
+}
+
+checked_list_box::object_collection& checked_list_box::items() noexcept {
+  return data_->items;
+}
+
+const checked_list_box::object_collection& checked_list_box::items() const noexcept {
+  return data_->items;
+}
+
+const list_box& checked_list_box::items(const object_collection& items) {
+  data_->items = items;
+  return *this;
 }
 
 list_control& checked_list_box::selected_index(size_t selected_index) {
@@ -77,7 +90,7 @@ list_control& checked_list_box::selected_index(size_t selected_index) {
   return *this;
 }
 
-vector<size_t> checked_list_box::selected_indices() const {
+vector<size_t> checked_list_box::selected_indices() const noexcept {
   return is_handle_created() ? native::checked_list_box::selected_indices(handle()) : vector<size_t> {};
 }
 
