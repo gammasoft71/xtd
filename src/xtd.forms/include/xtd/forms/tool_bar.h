@@ -152,7 +152,7 @@ namespace xtd {
       /// @note Only on Windows and if xtd::forms::tool_bar::appearance is set to xtd::forms::tool_bar_appearance::system.
       virtual tool_bar& divider(bool value);
       
-      dock_style dock() const override;
+      dock_style dock() const noexcept override;
       control& dock(dock_style dock) override;
       
       /// @brief Gets a value indicating whether drop-down buttons on a toolbar display down arrows.

@@ -38,7 +38,7 @@ public:
     data_->min_width = value;
   }
   
-  xtd::drawing::size size() const override {return control::size();}
+  xtd::drawing::size size() const noexcept override {return control::size();}
   
   xtd::forms::control& size(const xtd::drawing::size& value) override {
     if (size() != value) {

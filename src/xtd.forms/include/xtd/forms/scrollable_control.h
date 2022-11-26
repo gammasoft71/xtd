@@ -50,7 +50,7 @@ namespace xtd {
       
       /// @brief Gets the rectangle that represents the virtual display area of the control.
       /// @return A rectangle that represents the display area of the control.
-      drawing::rectangle display_rectangle() const override {return display_rectangle_;}
+      drawing::rectangle display_rectangle() const noexcept override {return display_rectangle_;}
       
       /// @brief Gets a value indicating whether the horizontal scroll bar is visible.
       /// @return true if the horizontal scroll bar is visible; otherwise, false.

@@ -45,7 +45,7 @@ namespace xtd {
         return *this;
       }
       
-      const xtd::ustring& name() const override {return form::name();}
+      const xtd::ustring& name() const noexcept override {return form::name();}
       
       /// @brief Gets a value indicate if date is showing before trace text.
       /// @return true is date showing; otherwise false. By default is true.

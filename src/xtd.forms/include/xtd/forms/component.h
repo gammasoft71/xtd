@@ -33,15 +33,19 @@ namespace xtd {
       /// @brief Gets a value indicating whether the component can raise an event.
       /// @return true if the component can raise events; otherwise, false. The default is true.
       /// @remarks The default implementation of this property always returns true. Classes that inherit from the Component class should override this property to provide the ability to disable the raising of events.
-      virtual bool can_raise_events() const {return true;}
+      virtual bool can_raise_events() const noexcept {return data_->can_raise_event;}
       
       /// @brief Gets a value that indicates whether the component is currently in design mode.
       /// @return true if the component is in design mode; otherwise, false.
-      bool design_mode() const {return design_mode_;}
+      bool design_mode() const noexcept {return data_->design_mode;}
       /// @}
       
     private:
-      bool design_mode_ = false;
+      struct data {
+        bool can_raise_event = true;
+        bool design_mode = false;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }

@@ -81,7 +81,7 @@ size_t text_box::selection_start() const {
   return text_box_base::selection_start();
 }
 
-const ustring& text_box::text() const {
+const ustring& text_box::text() const noexcept {
   if (!data_->use_system_password_char && data_->password_char) return control::text();
   return text_box_base::text();
 }

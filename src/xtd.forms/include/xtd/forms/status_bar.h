@@ -86,7 +86,7 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      dock_style dock() const override;
+      dock_style dock() const noexcept override;
       control& dock(dock_style dock) override;
       
       /// @brief Gets the collection of xtd::forms::status_bar panels contained within the control.
