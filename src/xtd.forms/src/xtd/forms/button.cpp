@@ -16,7 +16,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-button::button() noexcept {
+button::button() {
   set_style(control_styles::standard_click | control_styles::standard_double_click, false);
   data_->auto_repeat_timer.tick += {*this, &button::on_auto_repeat_timer_tick};
 }
@@ -97,6 +97,12 @@ forms::create_params button::create_params() const noexcept {
   return create_params;
 }
 
+drawing::size button::measure_control() const noexcept {
+  drawing::size size = button_base::measure_control();
+  if (size.height() < default_size().height()) size.height(default_size().height());
+  return size;
+}
+
 void button::on_click(const event_args& e) {
   if (enabled()) button_base::on_click(e);
   if (data_->dialog_result != forms::dialog_result::none &&  top_level_control().has_value() && static_cast<form&>(top_level_control().value().get()).modal()) {
@@ -121,18 +127,40 @@ void button::on_handle_created(const event_args& e) {
   }
 }
 
+void button::on_enabled_changed(const event_args& e) {
+  if (flat_style() != xtd::forms::flat_style::system) data_->state = enabled() ? (data_->default_button ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal) : xtd::forms::visual_styles::push_button_state::disabled;
+  button_base::on_enabled_changed(e);
+}
+
+void button::on_mouse_down(const mouse_event_args& e) {
+  data_->auto_repeat_timer.interval_milliseconds(data_->auto_repeat_delay);
+  data_->auto_repeat_timer.enabled(data_->auto_repeat);
+  if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = xtd::forms::visual_styles::push_button_state::pressed;
+  button_base::on_mouse_down(e);
+}
+
+void button::on_mouse_enter(const event_args& e) {
+  if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::push_button_state::pressed : xtd::forms::visual_styles::push_button_state::hot;
+  button_base::on_mouse_enter(e);
+}
+
+void button::on_mouse_leave(const event_args& e) {
+  if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = data_->default_button ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal;
+  button_base::on_mouse_leave(e);
+}
+
+void button::on_mouse_up(const mouse_event_args& e) {
+  data_->auto_repeat_timer.enabled(false);
+  if (flat_style() != xtd::forms::flat_style::system && enabled() && data_->state == xtd::forms::visual_styles::push_button_state::pressed) data_->state = xtd::forms::visual_styles::push_button_state::hot;
+  button_base::on_mouse_up(e);
+}
+
 void button::on_paint(paint_event_args& e) {
   auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
   if (flat_style() == xtd::forms::flat_style::standard) button_renderer::draw_button(style, e.graphics(), e.clip_rectangle(), state(), default_button(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align());
   if (flat_style() == xtd::forms::flat_style::flat) button_renderer::draw_flat_button(style, e.graphics(), e.clip_rectangle(), state(), default_button(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align());
   if (flat_style() == xtd::forms::flat_style::popup) button_renderer::draw_popup_button(style, e.graphics(), e.clip_rectangle(), state(), default_button(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align());
   button_base::on_paint(e);
-}
-
-drawing::size button::measure_control() const noexcept {
-  drawing::size size = button_base::measure_control();
-  if (size.height() < default_size().height()) size.height(default_size().height());
-  return size;
 }
 
 void button::on_auto_repeat_timer_tick(object& sender, const event_args& e) {
