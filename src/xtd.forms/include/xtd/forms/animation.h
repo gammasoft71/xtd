@@ -26,7 +26,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initialize a new instance of animation class.
-      animation();
+      animation() noexcept;
       /// @}
       
       /// @name Properties
@@ -34,22 +34,22 @@ namespace xtd {
       /// @{
       /// @brief Gets the elapsed time for the current frame, in milliseconds.
       /// @return A long integer representing the elapsed time for the current frame, in milliseconds.
-      virtual int64_t elapsed_milliseconds() const;
+      virtual int64_t elapsed_milliseconds() const noexcept;
       
       /// @brief Gets the current frame counter value.
       /// @return The current frame counter value.
-      virtual int32_t frame_counter() const;
+      virtual int32_t frame_counter() const noexcept;
       
       /// @brief Gets the number of frame per second.
       /// @return The number if frame per seconds. The default is 10.
-      virtual int32_t frames_per_second() const;
+      virtual int32_t frames_per_second() const noexcept;
       /// @brief Sets the number of frame per second.
       /// @para value The number if frame per seconds. The default is 10.
       virtual animation& frames_per_second(int32_t value);
       
       /// @brief Returns if the animation is started.
       /// @return true if the animation is running; otherwise false.
-      virtual bool is_running() const;
+      virtual bool is_running() const noexcept;
       /// @}
       
       /// @name Methods

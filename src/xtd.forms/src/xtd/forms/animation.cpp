@@ -6,7 +6,7 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::forms;
 
-animation::animation() {
+animation::animation() noexcept {
   double_buffered(true);
   set_can_focus(false);
   set_style(control_styles::resize_redraw, true);
@@ -17,15 +17,15 @@ drawing::size animation::default_size() const {
   return {200, 100};
 }
 
-int64_t animation::elapsed_milliseconds() const {
+int64_t animation::elapsed_milliseconds() const noexcept {
   return data_->stopwatch.elapsed_nanoseconds();
 }
 
-int32_t animation::frame_counter() const {
+int32_t animation::frame_counter() const noexcept {
   return data_->frame_counter;
 }
 
-int32_t animation::frames_per_second() const {
+int32_t animation::frames_per_second() const noexcept {
   return data_->frames_per_second;
 }
 
@@ -38,7 +38,7 @@ animation& animation::frames_per_second(int32_t value) {
   return *this;
 }
 
-bool animation::is_running() const {
+bool animation::is_running() const noexcept {
   return data_->frames_timer.enabled();
 }
 
