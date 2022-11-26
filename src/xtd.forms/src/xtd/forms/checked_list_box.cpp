@@ -73,30 +73,9 @@ forms::check_state checked_list_box::item::check_state() const {
 
 checked_list_box::checked_list_box() {
   set_style(control_styles::resize_redraw, true);
-  data_->items.item_added += [&](size_t pos, const item & item) {
-    if (is_handle_created()) native::checked_list_box::insert_item(handle(), pos, item.value(), static_cast<int32_t>(item.check_state()));
-    checked_list_box::item selected_item;
-    if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
-    this->selected_item(selected_item);
-  };
-  
-  data_->items.item_removed += [&](size_t pos, const item & item) {
-    if (is_handle_created()) native::checked_list_box::delete_item(handle(), pos);
-    
-    checked_list_box::item selected_item;
-    if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
-    this->selected_item(selected_item);
-    
-    if (this->items().size() == 1) // not 0! --> the item_remove occure before erase!
-      this->selected_index(npos);
-  };
-  
-  data_->items.item_updated += [&](size_t pos, const item & item) {
-    if (is_handle_created()) native::checked_list_box::update_item(handle(), pos, item.value(), static_cast<int32_t>(item.check_state()));
-    checked_list_box::item selected_item;
-    if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
-    this->selected_item(selected_item);
-  };
+  data_->items.item_added += {*this, &checked_list_box::on_items_item_added};  
+  data_->items.item_removed += {*this, &checked_list_box::on_items_item_removed};
+  data_->items.item_updated += {*this, &checked_list_box::on_items_item_updated};
 }
 
 checked_list_box::checked_index_collection checked_list_box::checked_indices() const noexcept {
@@ -268,6 +247,31 @@ void checked_list_box::wnd_proc(message& message) {
     case WM_REFLECT + WM_COMMAND: wm_command_control(message); break;
     default: list_box::wnd_proc(message);
   }
+}
+
+void checked_list_box::on_items_item_added(size_t pos, const item & item) {
+  if (is_handle_created()) native::checked_list_box::insert_item(handle(), pos, item.value(), static_cast<int32_t>(item.check_state()));
+  checked_list_box::item selected_item;
+  if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
+  this->selected_item(selected_item);
+}
+
+void checked_list_box::on_items_item_removed(size_t pos, const item & item)  {
+  if (is_handle_created()) native::checked_list_box::delete_item(handle(), pos);
+  
+  checked_list_box::item selected_item;
+  if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
+  this->selected_item(selected_item);
+  
+  if (this->items().size() == 1) // not 0! --> the item_remove occure before erase!
+    this->selected_index(npos);
+}
+
+void checked_list_box::on_items_item_updated(size_t pos, const item & item) {
+  if (is_handle_created()) native::checked_list_box::update_item(handle(), pos, item.value(), static_cast<int32_t>(item.check_state()));
+  checked_list_box::item selected_item;
+  if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
+  this->selected_item(selected_item);
 }
 
 void checked_list_box::wm_mouse_double_click(message& message) {

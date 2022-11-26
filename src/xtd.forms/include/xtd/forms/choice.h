@@ -61,16 +61,13 @@ namespace xtd {
       /// @brief Gets an object representing the collection of the items contained in this choice.
       /// @return A choice::object_collection representing the items in the choice.
       /// @remarks This property enables you to obtain a reference to the list of items that are currently stored in the choice. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
-      object_collection& items() {return items_;}
+      object_collection& items() noexcept;
       /// @brief Gets an object representing the collection of the items contained in this choice.
       /// @return A choice::object_collection representing the items in the choice.
-      const object_collection& items() const {return items_;}
+      const object_collection& items() const noexcept;
       /// @brief Sets an object representing the collection of the items contained in this choice.
       /// @param items A choice::object_collection representing the items in the choice.
-      const choice& items(const object_collection& items) {
-        items_ = items;
-        return *this;
-      }
+      const choice& items(const object_collection& items);
       
       using list_control::selected_index;
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
@@ -79,7 +76,7 @@ namespace xtd {
       
       /// @brief Gets currently selected item in the choice.
       /// @return The object that is the currently selected item.
-      const item& selected_item() const {return selected_item_;}
+      const item& selected_item() const noexcept;
       /// @brief Sets currently selected item in the choice.
       /// @param selected_item The object that is the currently selected item.
       choice& selected_item(const item& selected_item);
@@ -87,7 +84,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether the items in the choice are sorted.
       /// @return true if the choice is sorted; otherwise, false. The default is false.
       /// @remarks This property specifies whether the choice sorts existing entries and add new entries to the appropriate sorted position in the list. You can use this property to automatically sort items in a choice. As items are added to a sorted choice, the items are moved to the appropriate location in the sorted list. When you set the property to false, new items are added to the end of the existing list. The sort is case-insensitive and in alphabetically ascending order.
-      virtual bool sorted() const {return sorted_;}
+      virtual bool sorted() const noexcept;
       /// @brief Sets a value indicating whether the items in the choice are sorted.
       /// @param sorted true if the choice is sorted; otherwise, false. The default is false.
       /// @remarks This property specifies whether the choice sorts existing entries and add new entries to the appropriate sorted position in the list. You can use this property to automatically sort items in a choice. As items are added to a sorted choice, the items are moved to the appropriate location in the sorted list. When you set the property to false, new items are added to the end of the existing list. The sort is case-insensitive and in alphabetically ascending order.
@@ -96,7 +93,7 @@ namespace xtd {
       using list_control::text;
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
-      control& text(const xtd::ustring& text) override {return *this;}
+      control& text(const xtd::ustring& text) override;
       /// @}
       
       /// @name Methods
@@ -121,25 +118,27 @@ namespace xtd {
       
       /// @{
       void on_handle_created(const event_args& e) override;
-      
       void on_selected_value_changed(const event_args& e) override;
-      
       void set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) override;
-      
       void set_client_size_core(int32_t width, int32_t height) override;
-      
       void wnd_proc(message& message) override;
   /// @}
       
     private:
+      void on_items_item_added(size_t pos, const item & item);
+      void on_items_item_removed(size_t pos, const item & item);
+      void on_items_item_updated(size_t pos, const item & item);
       void wm_command_control(message& message);
       void wm_mouse_double_click(message& message);
       void wm_mouse_down(message& message);
       void wm_mouse_up(message& message);
 
-      object_collection items_;
-      item selected_item_;
-      bool sorted_ = false;
+      struct data {
+        object_collection items;
+        item selected_item;
+        bool sorted = false;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
