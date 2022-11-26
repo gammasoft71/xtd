@@ -7,6 +7,7 @@
 #include <xtd/environment.h>
 #include <xtd/invalid_operation_exception.h>
 #include <xtd/literals.h>
+#include <xtd/diagnostics/debug.h>
 #include <xtd/diagnostics/process.h>
 #include <xtd/io/directory.h>
 #include <xtd/reflection/assembly.h>
@@ -81,14 +82,22 @@ event<application, delegate<void(const event_args&)>> application::leave_thread_
 //event<threading::thread_exception_event_handler> application::thread_exception;
 event<application, delegate<void(const event_args&)>> application::thread_exit;
 
-bool application::allow_quit() {
-  return native::application::allow_quit();
+bool application::allow_quit() noexcept {
+  try {
+    return native::application::allow_quit();
+  } catch(...) {
+    return true;
+  }
 }
 
-xtd::ustring application::common_app_data_path() {
+xtd::ustring application::common_app_data_path() noexcept {
   xtd::ustring common_app_data_path = io::path::combine({environment::get_folder_path(environment::special_folder::common_application_data), company_name(), product_name(), product_version()});
-  if (!io::directory::exists(common_app_data_path))
-    io::directory::create_directory(common_app_data_path);
+  try {
+    if (!io::directory::exists(common_app_data_path))
+      io::directory::create_directory(common_app_data_path);
+  } catch(...) {
+    assert_(io::directory::exists(common_app_data_path), ustring::format("The {} path does not exist.", common_app_data_path));
+  }
   return common_app_data_path;
 }
 
@@ -98,25 +107,41 @@ microsoft::win32::registry_key application::common_app_data_registry() {
 }
  */
 
-xtd::ustring application::company_name() {
-  if (assembly::get_executing_assembly().company() == "") return xtd::io::path::get_file_name_without_extension(executable_path());
-  return assembly::get_executing_assembly().company();
+xtd::ustring application::company_name() noexcept {
+  try {
+    if (assembly::get_executing_assembly().company() == "") return xtd::io::path::get_file_name_without_extension(executable_path());
+    return assembly::get_executing_assembly().company();
+  } catch(...) {
+    return assembly::get_executing_assembly().company();
+  }
 }
 
-xtd::ustring application::executable_name() {
+bool application::dark_mode_enabled() noexcept {
+  try {
+    return native::application::dark_mode_enabled();
+  } catch (...) {
+    return false;
+  }
+}
+
+bool application::light_mode_enabled() noexcept {
+  return !dark_mode_enabled();
+}
+
+xtd::ustring application::executable_name() noexcept {
   return io::path::get_file_name(application::executable_path());
 }
 
-xtd::ustring application::executable_path() {
+xtd::ustring application::executable_path() noexcept {
   if (environment::get_command_line_args().size() == 0) return "";
   return environment::get_command_line_args()[0];
 }
 
-bool application::message_loop() {
+bool application::message_loop() noexcept {
   return  message_loop_;
 }
 
-const form_collection application::open_forms() {
+const form_collection application::open_forms() noexcept {
   form_collection forms;
   for (auto control : control::top_level_controls_)
     forms.push_back(static_cast<form&>(control.get()));
@@ -133,17 +158,17 @@ const form_collection application::open_forms() {
    */
 }
 
-xtd::ustring application::product_name() {
+xtd::ustring application::product_name() noexcept {
   if (assembly::get_executing_assembly().product() == "") return xtd::io::path::get_file_name_without_extension(executable_path());
   return assembly::get_executing_assembly().product();
 }
 
-xtd::ustring application::product_version() {
+xtd::ustring application::product_version() noexcept {
   if (assembly::get_executing_assembly().version() == "") return ustring("0.0.0");
   return assembly::get_executing_assembly().version();
 }
 
-xtd::ustring application::startup_path() {
+xtd::ustring application::startup_path() noexcept {
   if (environment::get_command_line_args().size() == 0) return "";
   return io::path::get_directory_name(environment::get_command_line_args()[0]);
 }
@@ -168,10 +193,14 @@ const xtd::forms::style_sheets::style_sheet& application::system_style_sheet() n
   return xtd::forms::style_sheets::style_sheet::system_style_sheet();
 }
 
-xtd::ustring application::user_app_data_path() {
+xtd::ustring application::user_app_data_path() noexcept {
   xtd::ustring user_app_data_path = io::path::combine({environment::get_folder_path(environment::special_folder::application_data), company_name(), product_name(), product_version()});
-  if (!io::directory::exists(user_app_data_path))
-    io::directory::create_directory(user_app_data_path);
+  try {
+    if (!io::directory::exists(user_app_data_path))
+      io::directory::create_directory(user_app_data_path);
+  } catch (...) {
+    assert_(io::directory::exists(user_app_data_path), ustring::format("The {} path does not exist.", user_app_data_path));
+  }
   return user_app_data_path;
 }
 
@@ -181,15 +210,15 @@ xtd::ustring application::user_app_data_path() {
  }
  */
 
-bool application::use_system_controls() {
+bool application::use_system_controls() noexcept {
   return use_system_controls_;
 }
 
-bool application::use_visual_styles() {
+bool application::use_visual_styles() noexcept {
   return use_visual_styles_;
 }
 
-bool application::use_wait_cursor() {
+bool application::use_wait_cursor() noexcept {
   return use_wait_cursor_;
 }
 
@@ -211,14 +240,6 @@ void application::disable_font_size_correction() {
 
 void application::do_events() {
   native::application::do_events();
-}
-
-bool application::dark_mode_enabled() {
-  return native::application::dark_mode_enabled();
-}
-
-bool application::light_mode_enabled() {
-  return !dark_mode_enabled();
 }
 
 void application::enable_dark_mode() {
