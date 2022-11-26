@@ -63,7 +63,7 @@ namespace xtd {
       
       /// @brief Gets the selected font.
       /// @return The selected font.
-      drawing::font font() const override {return font_;}
+      drawing::font font() const noexcept override {return font_;}
       /// @brief Sets the selected font.
       /// @param font The selected font.
       /// @return Current control.

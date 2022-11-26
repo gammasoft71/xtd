@@ -127,7 +127,7 @@ tool_bar& tool_bar::divider(bool value) {
   return *this;
 }
 
-dock_style tool_bar::dock() const {
+dock_style tool_bar::dock() const noexcept {
   //if (is_system_tool_bar()) return data_->non_system_dock;
   return control::dock();
 }

@@ -31,7 +31,7 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      virtual bool auto_size() const override {return true;}
+      virtual bool auto_size() const noexcept override {return true;}
       
       /// @brief Gets the border sides for the control.
       /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
@@ -57,8 +57,8 @@ namespace xtd {
       collapsible_panel& expanded(bool expanded);
       
       /// @cond
-      const xtd::drawing::size& client_size() const override {return control::client_size();}
-      xtd::drawing::size size() const override {return control::size();}
+      const xtd::drawing::size& client_size() const noexcept override {return control::client_size();}
+      xtd::drawing::size size() const noexcept override {return control::size();}
       /// @endcond
       /// @}
       

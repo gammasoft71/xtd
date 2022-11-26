@@ -57,7 +57,7 @@ status_bar::status_bar() {
   set_style(control_styles::user_paint | control_styles::selectable, false);
 }
 
-dock_style status_bar::dock() const {
+dock_style status_bar::dock() const noexcept {
   //if (is_system_status_bar()) return data_->non_system_dock;
   return control::dock();
 }

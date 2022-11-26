@@ -48,7 +48,7 @@ namespace xtd {
         return *this;
       }
       
-      bool auto_size() const override {return control::auto_size();}
+      bool auto_size() const noexcept override {return control::auto_size();}
       control& auto_size(bool auto_size) override {
         control::auto_size(auto_size);
         if (get_state(state::auto_size))
