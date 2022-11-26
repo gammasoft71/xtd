@@ -38,6 +38,10 @@ check_box::check_box() {
   text_align(content_alignment::middle_left);
 }
 
+forms::appearance check_box::appearance() const noexcept {
+  return data_->appearance;
+}
+
 check_box& check_box::appearance(forms::appearance appearance) {
   if (data_->appearance != appearance) {
     data_->appearance = appearance;
@@ -47,14 +51,26 @@ check_box& check_box::appearance(forms::appearance appearance) {
   return *this;
 }
 
+bool check_box::auto_check() const noexcept {
+  return data_->auto_check;
+}
+
 check_box& check_box::auto_check(bool auto_check) {
   data_->auto_check = auto_check;
   return *this;
 }
 
+bool check_box::checked() const noexcept {
+  return data_->checked;
+}
+
 check_box& check_box::checked(bool checked) {
   check_state(checked ? forms::check_state::checked : forms::check_state::unchecked);
   return *this;
+}
+
+content_alignment check_box::check_align() const noexcept {
+  return data_->check_align;
 }
 
 check_box& check_box::check_align(content_alignment check_align) {
@@ -63,6 +79,10 @@ check_box& check_box::check_align(content_alignment check_align) {
     post_recreate_handle();
   }
   return *this;
+}
+
+forms::check_state check_box::check_state() const noexcept {
+  return data_->check_state;
 }
 
 check_box& check_box::check_state(forms::check_state check_state) {
@@ -76,6 +96,10 @@ check_box& check_box::check_state(forms::check_state check_state) {
     on_check_state_changed(event_args::empty);
   }
   return *this;
+}
+
+bool check_box::three_state() const noexcept {
+  return data_->three_state;
 }
 
 check_box& check_box::three_state(bool three_state) {
@@ -105,14 +129,96 @@ forms::create_params check_box::create_params() const noexcept {
   return create_params;
 }
 
+xtd::forms::visual_styles::check_box_state check_box::state() const noexcept {
+  return data_->state;
+}
+
 drawing::size check_box::measure_control() const noexcept {
   return button_base::measure_text() + drawing::size(18, 0);
+}
+
+void check_box::on_appearance_changed(const event_args& e) {
+  appearance_changed(*this, e);
+  if (flat_style() != xtd::forms::flat_style::system) invalidate();
+}
+
+/// @brief Raises the check_box::checked_changed event.
+/// @param e An event_args that contains the event data.
+/// @remarks Raising an event invokes the event handler through a delegate.
+/// @remarks The on_checked_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
+void check_box::on_checked_changed(const event_args& e) {
+  if (flat_style() != xtd::forms::flat_style::system && enabled()) {
+    if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_normal;
+    else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_normal;
+    else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_normal;
+  }
+  checked_changed(*this, e);
+  if (flat_style() != xtd::forms::flat_style::system) invalidate();
+}
+
+/// @brief Raises the check_box::check_state_changed event.
+/// @param e An event_args that contains the event data.
+/// @remarks Raising an event invokes the event handler through a delegate.
+/// @remarks The on_check_state_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
+void check_box::on_check_state_changed(const event_args& e) {
+  if (flat_style() != xtd::forms::flat_style::system && enabled()) {
+    if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_normal;
+    else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_normal;
+    else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_normal;
+  }
+  check_state_changed(*this, e);
+  if (flat_style() != xtd::forms::flat_style::system) invalidate();
+}
+
+void check_box::on_enabled_changed(const event_args& e) {
+  if (flat_style() != xtd::forms::flat_style::system) {
+    if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = enabled() ? xtd::forms::visual_styles::check_box_state::unchecked_normal : xtd::forms::visual_styles::check_box_state::unchecked_disabled;
+    else if (data_->check_state == xtd::forms::check_state::checked) data_->state = enabled() ? xtd::forms::visual_styles::check_box_state::checked_normal : xtd::forms::visual_styles::check_box_state::checked_disabled;
+    else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = enabled() ? xtd::forms::visual_styles::check_box_state::mixed_normal : xtd::forms::visual_styles::check_box_state::mixed_disabled;
+  }
+  button_base::on_enabled_changed(e);
 }
 
 void check_box::on_handle_created(const event_args& e) {
   button_base::on_handle_created(e);
   if (flat_style() == xtd::forms::flat_style::system) native::check_box::check_state(handle(), static_cast<int32_t>(data_->check_state));
   if (flat_style() != xtd::forms::flat_style::system && data_->check_state != xtd::forms::check_state::unchecked) invalidate();
+}
+
+void check_box::on_mouse_down(const mouse_event_args& e) {
+  if (flat_style() != xtd::forms::flat_style::system && enabled()) {
+    if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_pressed;
+    else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_pressed;
+    else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_pressed;
+  }
+  button_base::on_mouse_down(e);
+}
+
+void check_box::on_mouse_enter(const event_args& e) {
+  if (flat_style() != xtd::forms::flat_style::system && enabled()) {
+    if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::check_box_state::unchecked_pressed : xtd::forms::visual_styles::check_box_state::unchecked_hot;
+    else if (data_->check_state == xtd::forms::check_state::checked) data_->state = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::check_box_state::checked_pressed : xtd::forms::visual_styles::check_box_state::checked_hot;
+    else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::check_box_state::mixed_pressed : xtd::forms::visual_styles::check_box_state::mixed_hot;
+  }
+  button_base::on_mouse_enter(e);
+}
+
+void check_box::on_mouse_leave(const event_args& e) {
+  if (flat_style() != xtd::forms::flat_style::system && enabled()) {
+    if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_normal;
+    else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_normal;
+    else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_normal;
+  }
+  button_base::on_mouse_leave(e);
+}
+
+void check_box::on_mouse_up(const mouse_event_args& e) {
+  if (flat_style() != xtd::forms::flat_style::system && enabled() && (data_->state == xtd::forms::visual_styles::check_box_state::unchecked_pressed || data_->state == xtd::forms::visual_styles::check_box_state::checked_pressed || data_->state == xtd::forms::visual_styles::check_box_state::mixed_pressed)) {
+    if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_hot;
+    else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_hot;
+    else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_hot;
+  }
+  button_base::on_mouse_up(e);
 }
 
 void check_box::on_paint(paint_event_args& e) {
