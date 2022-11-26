@@ -8,10 +8,30 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-button_base::button_base() {
+button_base::button_base() noexcept {
   if (application::use_system_controls()) data_->flat_style = xtd::forms::flat_style::system;
   set_auto_size_mode(forms::auto_size_mode::grow_only);
   set_style(control_styles::user_mouse | control_styles::user_paint, control_appearance() == forms::control_appearance::standard);
+}
+
+bool button_base::auto_ellipsis() const noexcept {
+  return data_->auto_ellipsis;
+}
+
+button_base& button_base::auto_ellipsis(bool auto_ellipsis) {
+  data_->auto_ellipsis = auto_ellipsis;
+  return *this;
+}
+
+bool button_base::auto_size() const noexcept {
+  return control::auto_size();
+}
+
+control& button_base::auto_size(bool auto_size) {
+  control::auto_size(auto_size);
+  if (get_state(state::auto_size))
+    data_->auto_ellipsis = false;
+  return *this;
 }
 
 control& button_base::control_appearance(forms::control_appearance value) {
@@ -23,12 +43,20 @@ control& button_base::control_appearance(forms::control_appearance value) {
   return *this;
 }
 
+const xtd::forms::flat_button_appearance& button_base::flat_appearance() const noexcept {
+  return data_->flat_appearance;
+}
+
 button_base& button_base::flat_appearance(const xtd::forms::flat_button_appearance& value) {
   if (data_->flat_appearance != value) {
     data_->flat_appearance = value;
     recreate_handle();
   }
   return *this;
+}
+
+xtd::forms::flat_style button_base::flat_style() const noexcept {
+  return data_->flat_style;  
 }
 
 button_base& button_base::flat_style(xtd::forms::flat_style value) {
@@ -38,6 +66,10 @@ button_base& button_base::flat_style(xtd::forms::flat_style value) {
     recreate_handle();
   }
   return *this;
+}
+
+const drawing::image& button_base::image() const noexcept {
+  return data_->image;
 }
 
 button_base& button_base::image(const drawing::image& value) {
@@ -51,12 +83,20 @@ button_base& button_base::image(const drawing::image& value) {
   return *this;
 }
 
+content_alignment button_base::image_align() const noexcept {
+  return data_->image_align;
+}
+
 button_base& button_base::image_align(content_alignment value) {
   if (data_->image_align != value) {
     data_->image_align = value;
     if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
   }
   return *this;
+}
+
+int32_t button_base::image_index() const noexcept {
+  return data_->image_index;
 }
 
 button_base& button_base::image_index(int32_t value) {
@@ -69,6 +109,14 @@ button_base& button_base::image_index(int32_t value) {
   return *this;
 }
 
+const forms::image_list& button_base::image_list() const noexcept {
+  return data_->image_list;
+}
+
+forms::image_list& button_base::image_list() noexcept {
+  return data_->image_list;
+}
+
 button_base& button_base::image_list(const forms::image_list& value) {
   if (data_->image_list != value) {
     data_->image_list = value;
@@ -76,6 +124,10 @@ button_base& button_base::image_list(const forms::image_list& value) {
     post_recreate_handle();
   }
   return *this;
+}
+
+content_alignment button_base::text_align() const noexcept {
+  return data_->text_align;
 }
 
 button_base& button_base::text_align(content_alignment text_align) {
@@ -112,6 +164,71 @@ drawing::size button_base::measure_control() const noexcept {
   return control::measure_text() + drawing::size(13, 0);
 }
 
+void button_base::on_back_color_changed(const event_args& e) {
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
+  control::on_back_color_changed(e);
+}
+
+void button_base::on_enabled_changed(const event_args& e) {
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
+  control::on_enabled_changed(e);
+}
+
+void button_base::on_font_changed(const xtd::event_args& e) {
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
+  control::on_font_changed(e);
+}
+
+void button_base::on_fore_color_changed(const event_args& e) {
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
+  control::on_fore_color_changed(e);
+}
+
+void button_base::on_image_changed(const xtd::event_args& e) {
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
+  if (can_raise_events()) image_changed(*this, e);
+}
+
+void button_base::on_mouse_down(const mouse_event_args& e) {
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
+  control::on_mouse_down(e);
+}
+
+void button_base::on_mouse_enter(const event_args& e) {
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
+  control::on_mouse_enter(e);
+}
+
+void button_base::on_mouse_leave(const event_args& e) {
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
+  control::on_mouse_leave(e);
+}
+
+void button_base::on_mouse_up(const mouse_event_args& e) {
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
+  control::on_mouse_up(e);
+}
+
+void button_base::on_parent_back_color_changed(const event_args& e) {
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
+  control::on_parent_back_color_changed(e);
+}
+
+void button_base::on_parent_fore_color_changed(const event_args& e) {
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
+  control::on_parent_fore_color_changed(e);
+}
+
+void button_base::on_resize(const xtd::event_args& e) {
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
+  control::on_resize(e);
+}
+
+void button_base::on_text_changed(const xtd::event_args& e) {
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
+  control::on_text_changed(e);
+}
+
 text_format_flags button_base::to_text_format_flags(content_alignment text_align) {
   text_format_flags flags = text_format_flags::default_format;
   
@@ -130,6 +247,8 @@ text_format_flags button_base::to_text_format_flags(content_alignment text_align
   
   return flags;
 }
+
+xtd::drawing::rectangle button_base::compute_image_bounds() {return compute_image_bounds({0, 0, width(), height()});}
 
 xtd::drawing::rectangle button_base::compute_image_bounds(const xtd::drawing::rectangle& rectangle) {
   xtd::drawing::rectangle image_bounds = {(width() - data_->image.width()) / 2, (height() - data_->image.height()) / 2, data_->image.width(), data_->image.height()};
