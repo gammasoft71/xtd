@@ -312,7 +312,7 @@ void application::run(application_context& context) {
   native::application::register_wnd_proc(delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(application::wnd_proc_));
   
   application::message_loop_ = true;
-  if (context.main_form_ != nullptr) context.main_form().show();
+  if (context.data_->main_form != nullptr) context.main_form().show();
   native::application::run();
   context.thread_exit -= application::on_app_thread_exit;
   application::message_loop_ = false;

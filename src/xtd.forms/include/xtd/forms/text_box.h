@@ -174,7 +174,6 @@ namespace xtd {
         char32_t password_char = 0;
         bool use_system_password_char = false;
       };
-      
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
