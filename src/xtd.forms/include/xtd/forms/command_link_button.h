@@ -62,7 +62,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the mode by which the button automatically resizes itself.
       /// @return One of the AutoSizeMode values. The default value is grow_only.
-      virtual forms::auto_size_mode auto_size_mode() const {return get_auto_size_mode();}
+      virtual forms::auto_size_mode auto_size_mode() const noexcept;
       /// @brief Sets the mode by which the button automatically resizes itself.
       /// @param value One of the AutoSizeMode values. The default value is grow_only.
       virtual command_link_button& auto_size_mode(forms::auto_size_mode value);
@@ -71,7 +71,7 @@ namespace xtd {
       /// @param text A string that represent control text
       /// @param supplementary_text A string that represent supplementary text.
       /// @remarks Is equivalent to call text property with text and supplementary_text separated by "\n".
-      virtual control& texts(const xtd::ustring& text, const xtd::ustring& supplementary_text) {return this->text(ustring::format("{}{}{}", text, environment::new_line(), supplementary_text));}
+      virtual control& texts(const xtd::ustring& text, const xtd::ustring& supplementary_text);
       /// @}
       
     protected:
@@ -87,10 +87,6 @@ namespace xtd {
       drawing::size measure_control() const noexcept override;
       void on_handle_created(const event_args& e) override;      
       /// @}
-      
-    private:
-      //void wm_click(message& message);
-      //void wm_mouse_up(message& message);
     };
   }
 }

@@ -16,9 +16,17 @@ command_link_button::command_link_button() {
   set_style(control_styles::standard_click | control_styles::standard_double_click, false);
 }
 
+forms::auto_size_mode command_link_button::auto_size_mode() const noexcept {
+  return get_auto_size_mode();
+}
+
 command_link_button& command_link_button::auto_size_mode(forms::auto_size_mode value) {
   set_auto_size_mode(value);
   return *this;
+}
+
+control& command_link_button::texts(const xtd::ustring& text, const xtd::ustring& supplementary_text) {
+  return this->text(ustring::format("{}{}{}", text, environment::new_line(), supplementary_text));
 }
 
 forms::create_params command_link_button::create_params() const noexcept {
