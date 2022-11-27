@@ -19,7 +19,7 @@ find_dialog::~find_dialog() {
   destroy_handle();
 }
 
-const xtd::ustring& find_dialog::find_string() const {
+const xtd::ustring& find_dialog::find_string() const noexcept {
   return data_->find_string;
 }
 
@@ -31,7 +31,7 @@ find_dialog& find_dialog::find_string(const xtd::ustring& value) {
   return *this;
 }
 
-xtd::drawing::point find_dialog::location() const {
+xtd::drawing::point find_dialog::location() const noexcept {
   return data_->location.value_or(point(0, 0));
 }
 
@@ -43,7 +43,7 @@ find_dialog& find_dialog::location(const xtd::drawing::point& value) {
   return *this;
 }
 
-bool find_dialog::match_case() const {
+bool find_dialog::match_case() const noexcept {
   return data_->match_case;
 }
 
@@ -55,7 +55,7 @@ find_dialog& find_dialog::match_case(bool value) {
   return *this;
 }
 
-xtd::forms::search_direction find_dialog::search_direction() const {
+xtd::forms::search_direction find_dialog::search_direction() const noexcept {
   return data_->search_direction;
 }
 
@@ -67,7 +67,7 @@ find_dialog& find_dialog::search_direction(xtd::forms::search_direction value) {
   return *this;
 }
 
-bool find_dialog::show_match_case() const {
+bool find_dialog::show_match_case() const noexcept {
   return data_->show_match_case;
 }
 
@@ -79,7 +79,7 @@ find_dialog& find_dialog::show_match_case(bool value) {
   return *this;
 }
 
-bool find_dialog::show_up_down() const {
+bool find_dialog::show_up_down() const noexcept {
   return data_->show_up_down;
 }
 
@@ -91,7 +91,7 @@ find_dialog& find_dialog::show_up_down(bool value) {
   return *this;
 }
 
-bool find_dialog::show_whole_word() const {
+bool find_dialog::show_whole_word() const noexcept {
   return data_->show_whole_word;
 }
 
@@ -103,7 +103,7 @@ find_dialog& find_dialog::show_whole_word(bool value) {
   return *this;
 }
 
-const xtd::ustring& find_dialog::title() const {
+const xtd::ustring& find_dialog::title() const noexcept {
   return data_->title;
 }
 
@@ -115,7 +115,7 @@ find_dialog& find_dialog::title(const xtd::ustring& value) {
   return *this;
 }
 
-bool find_dialog::whole_word() const {
+bool find_dialog::whole_word() const noexcept {
   return data_->whole_word;
 }
 
@@ -133,7 +133,7 @@ void find_dialog::close() {
   data_->visible = false;
 }
 
-void find_dialog::reset() {
+void find_dialog::reset() noexcept {
   data_->dialog_style = xtd::forms::dialog_style::standard;
   data_->location.reset();
   data_->title = "";
@@ -158,6 +158,17 @@ void find_dialog::show(const iwin32_window& owner) {
   data_->visible = true;
 }
 
+void find_dialog::create_handle() {
+  if (data_->handle) return;
+  data_->handle = native::find_dialog::create(data_->owner->handle(), data_->location, data_->title, data_->find_string, data_->show_up_down, data_->show_whole_word, data_->show_match_case, data_->search_direction == xtd::forms::search_direction::down, data_->whole_word, data_->match_case, {*this, &find_dialog::on_dialog_find}, {*this, &find_dialog::on_dialog_closed});
+}
+
+void find_dialog::destroy_handle() {
+  if (!data_->handle) return;
+  native::find_dialog::destroy(data_->handle);
+  data_->handle = 0;
+}
+
 void find_dialog::on_dialog_closed() {
   data_->visible = false;
   dialog_closed(*this, dialog_closed_event_args(forms::dialog_result::cancel));
@@ -170,17 +181,6 @@ void find_dialog::on_dialog_find(const xtd::drawing::point& location, const ustr
   data_->whole_word = whole_word;
   data_->match_case = match_case;
   find_next(*this, find_event_args(data_->find_string, data_->match_case, data_->search_direction, data_->whole_word));
-}
-
-void find_dialog::create_handle() {
-  if (data_->handle) return;
-  data_->handle = native::find_dialog::create(data_->owner->handle(), data_->location, data_->title, data_->find_string, data_->show_up_down, data_->show_whole_word, data_->show_match_case, data_->search_direction == xtd::forms::search_direction::down, data_->whole_word, data_->match_case, {*this, &find_dialog::on_dialog_find}, {*this, &find_dialog::on_dialog_closed});
-}
-
-void find_dialog::destroy_handle() {
-  if (!data_->handle) return;
-  native::find_dialog::destroy(data_->handle);
-  data_->handle = 0;
 }
 
 void find_dialog::recreate_handle() {
