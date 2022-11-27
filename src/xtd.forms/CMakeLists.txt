@@ -379,6 +379,7 @@ add_sources(
   src/xtd/forms/cursors.cpp
   src/xtd/forms/date_time_picker.cpp
   src/xtd/forms/domain_up_down.cpp
+  src/xtd/forms/dot_matrix_display.cpp
   src/xtd/forms/emoticon.cpp
   src/xtd/forms/emoticons.cpp
   src/xtd/forms/enable_debug.cpp
