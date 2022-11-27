@@ -369,6 +369,7 @@ add_sources(
   src/xtd/forms/container_control.cpp
   src/xtd/forms/context_menu.cpp
   src/xtd/forms/control.cpp
+  src/xtd/forms/control_layout_style.cpp
   src/xtd/forms/control_paint.cpp
   src/xtd/forms/control_renderer.cpp
   src/xtd/forms/countries.cpp
