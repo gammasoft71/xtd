@@ -40,7 +40,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the xtd::drawing::color that represent the xtd::forms::color_picker::color.
       /// @return The xtd::drawing::color that represent the xtd::forms::color_picker::color.
-      const xtd::drawing::color& color() const {return color_;}
+      const xtd::drawing::color& color() const noexcept {return color_;}
       //// @}
       
     private:
