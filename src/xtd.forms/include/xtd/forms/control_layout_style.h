@@ -23,81 +23,72 @@ namespace xtd {
       control_layout_style() = default;
       /// @brief Initialises a new instance of control layout style class with specified size type.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container.
-      explicit control_layout_style(xtd::forms::size_type size_type) : size_type_(size_type) {}
+      explicit control_layout_style(xtd::forms::size_type size_type);
       /// @brief Initialises a new instance of control layout style class with specified expanded.
       /// @param expanded true if control expanded; otherwise false.
-      explicit control_layout_style(bool expanded) : expanded_(expanded) {}
+      explicit control_layout_style(bool expanded);
       /// @brief Initialises a new instance of control layout style class with specified content alignment.
       /// @param expanded true if control expanded; otherwise false.
       /// @param align One of the content_alignment values..
-      explicit control_layout_style(xtd::forms::content_alignment align) : align_(align) {}
+      explicit control_layout_style(xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of control layout style class with specified size type and expanded.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container.
       /// @param expanded true if control expanded; otherwise false.
-      control_layout_style(xtd::forms::size_type size_type, bool expanded) : size_type_(size_type), expanded_(expanded) {}
+      control_layout_style(xtd::forms::size_type size_type, bool expanded);
       /// @brief Initialises a new instance of control layout style class with specified size type and content alignment.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container.
       /// @param align One of the content_alignment values.
-      control_layout_style(xtd::forms::size_type size_type, xtd::forms::content_alignment align) : size_type_(size_type), align_(align) {}
+      control_layout_style(xtd::forms::size_type size_type, xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of control layout style class with specified size type, expanded and content alignment.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container.
       /// @param expanded true if control expanded; otherwise false.
       /// @param align One of the content_alignment values.
-      control_layout_style(xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align) : size_type_(size_type), expanded_(expanded), align_(align) {}
+      control_layout_style(xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of control layout style class with specified expanded and content alignment.
       /// @param expanded true if control expanded; otherwise false.
       /// @param align One of the content_alignment values..
-      control_layout_style(bool expanded, xtd::forms::content_alignment align) : expanded_(expanded), align_(align) {}
+      control_layout_style(bool expanded, xtd::forms::content_alignment align);
       
     public:
       /// @brief Gets a flag indicating how a control should be sized relative to its containing layout container.
       /// @return One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::absolute.
-      xtd::forms::size_type size_type() const {return size_type_;}
+      xtd::forms::size_type size_type() const noexcept;
       /// @brief Sets a flag indicating how a control should be sized relative to its containing layout container.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::absolute.
-      control_layout_style& size_type(xtd::forms::size_type size_type) {
-        size_type_ = size_type;
-        return *this;
-      }
+      control_layout_style& size_type(xtd::forms::size_type size_type);
       
       /// @brief Gets a flag indicating if control is expanded to its containing layout container.
       /// @return true if control expanded; otherwise false. The default is false.
-      bool expanded() const {return expanded_;}
+      bool expanded() const noexcept;
       /// @brief Sets a flag indicating if control is expanded to its containing layout container.
       /// @param expanded true if control expanded; otherwise false. The default is false.
-      control_layout_style& expanded(bool expanded) {
-        expanded_ = expanded;
-        return *this;
-      }
+      control_layout_style& expanded(bool expanded);
       
       /// @brief Gets a flag indicating how a control should be align to its containing layout container.
       /// @return align One of the content_alignment values. The default is top_left.
       /// @remarks This property work only if expanded = false.
-      xtd::forms::content_alignment align() const {return align_;}
+      xtd::forms::content_alignment align() const noexcept;
       /// @brief Sets a flag indicating how a control should be align to its containing layout container.
       /// @param align One of the content_alignment values. The default is top_left.
       /// @remarks This property work only if expanded = false.
-      control_layout_style& align(xtd::forms::content_alignment align) {
-        align_ = align;
-        return *this;
-      }
+      control_layout_style& align(xtd::forms::content_alignment align);
       
       /// @brief Returns a string that represent xtd::forms::control_layout_style.
       /// @return A string containing that represent xtd::forms::control_layout_style.
-      xtd::ustring to_string() const noexcept override {return ustring::format("control_layout_style=[expanded={}, align={}, size_type={}]", expanded_, align_, size_type_);}
+      xtd::ustring to_string() const noexcept override;
       
       /// @cond
-      bool operator ==(const control_layout_style& value) const {return size_type_ == value.size_type_ && expanded_ == value.expanded_;}
-      bool operator !=(const control_layout_style& value) const {return !operator ==(value);}
-      friend std::ostream& operator <<(std::ostream& os, const xtd::forms::control_layout_style& control_layout_style) noexcept {
-        return os << control_layout_style.to_string();
-      }
+      bool operator ==(const control_layout_style& value) const noexcept;
+      bool operator !=(const control_layout_style& value) const noexcept;
       /// @endcond
       
     private:
-      xtd::forms::size_type size_type_ = xtd::forms::size_type::absolute;
-      bool expanded_ = false;
-      xtd::forms::content_alignment align_ = xtd::forms::content_alignment::top_left;
+      struct data {
+        xtd::forms::size_type size_type = xtd::forms::size_type::absolute;
+        bool expanded = false;
+        xtd::forms::content_alignment align = xtd::forms::content_alignment::top_left;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }

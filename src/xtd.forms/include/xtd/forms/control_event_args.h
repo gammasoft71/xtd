@@ -40,7 +40,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the control object used by this event.
       /// @return The control used by this event.
-      forms::control& control() const {return *control_;}
+      forms::control& control() const noexcept {return *control_;}
       //// @}
       
     private:
