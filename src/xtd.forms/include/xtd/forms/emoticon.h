@@ -100,8 +100,13 @@ namespace xtd {
       }
       
       emoticon() = default;
-      emoticon(const emoticon&) = default;
-      emoticon& operator =(const emoticon&) = default;
+      emoticon(const emoticon& other) {
+        *data_ = *other.data_;
+      }
+      emoticon& operator =(const emoticon& other) {
+        *data_ = *other.data_;
+        return *this;
+      }
       bool operator ==(const emoticon& value) const noexcept;
       bool operator !=(const emoticon& value) const noexcept;
       /// @endcond

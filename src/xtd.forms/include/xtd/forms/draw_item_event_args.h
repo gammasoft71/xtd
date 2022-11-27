@@ -26,8 +26,13 @@ namespace xtd {
     class draw_item_event_args : public event_args {
     public:
       /// @cond
-      draw_item_event_args(const draw_item_event_args&) = default;
-      draw_item_event_args& operator =(const draw_item_event_args&) = default;
+      draw_item_event_args(const draw_item_event_args& other) {
+        *data_ = *other.data_;
+      }
+      draw_item_event_args& operator =(const draw_item_event_args& other) {
+        *data_ = *other.data_;
+        return *this;
+      }
       /// @endcond
       
       /// @name Constructors
