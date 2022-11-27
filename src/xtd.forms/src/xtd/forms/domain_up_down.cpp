@@ -158,6 +158,11 @@ void domain_up_down::on_handle_created(const event_args& e) {
   else native::control::text(handle(), text());
 }
 
+void domain_up_down::on_lost_focus(const event_args& e) {
+  up_down_base::on_lost_focus(e);
+  selected_item(text());
+}
+
 void domain_up_down::on_text_changed(const event_args& e) {
   if (is_handle_created()) {
     set_text(native::control::text(handle()));
@@ -175,6 +180,21 @@ void domain_up_down::on_text_changed(const event_args& e) {
 
 void domain_up_down::on_selected_item_changed(const event_args& e) {
   if (can_raise_events()) selected_item_changed(*this, e);
+}
+
+void domain_up_down::wnd_proc(message& message) {
+  switch (message.msg()) {
+    case WM_REFLECT + WM_VSCROLL: wm_scroll_control(message); break;
+    default: up_down_base::wnd_proc(message);
+  }
+}
+
+void domain_up_down::wm_scroll_control(message& message) {
+  def_wnd_proc(message);
+  if (data_->selected_index != native::domain_up_down::selected_index(handle())) {
+    data_->selected_index = native::domain_up_down::selected_index(handle());
+    on_selected_item_changed(event_args::empty);
+  }
 }
 
 void domain_up_down::on_items_item_added(size_t pos, const item & item) {
