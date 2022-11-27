@@ -374,6 +374,7 @@ add_sources(
   src/xtd/forms/control_renderer.cpp
   src/xtd/forms/countries.cpp
   src/xtd/forms/country.cpp
+  src/xtd/forms/create_params.cpp
   src/xtd/forms/cursor.cpp
   src/xtd/forms/cursors.cpp
   src/xtd/forms/date_time_picker.cpp
