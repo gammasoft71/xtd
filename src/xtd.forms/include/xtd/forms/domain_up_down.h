@@ -183,12 +183,20 @@ namespace xtd {
       /// @{
       void on_handle_created(const event_args& e) override;
       
+      void on_lost_focus(const event_args& e) override;
+      
       /// @brief Raises the domain_up_down::selected_item_changed event.
       /// @param e An event_args that contains the event data.
       virtual void on_selected_item_changed(const event_args& e);
       
       void on_text_changed(const event_args& e) override;
+      
+      void wnd_proc(message& message) override;
       /// @}
+      
+      /// @cond
+      void wm_scroll_control(message& message);
+      /// @endcond
 
     private:
       void on_items_item_added(size_t pos, const item & item);
