@@ -43,7 +43,7 @@ combo_box::combo_box() {
   };
 }
 
-bool combo_box::dropped_down() const {
+bool combo_box::dropped_down() const noexcept {
   return data_->drop_down;
 }
 
@@ -53,6 +53,10 @@ combo_box& combo_box::dropped_down(bool value) {
     if (is_handle_created()) native::combo_box::dropped_down(handle(), data_->drop_down);
   }
   return *this;
+}
+
+combo_box_style combo_box::drop_down_style() const noexcept {
+  return data_->drop_down_style;
 }
 
 combo_box& combo_box::drop_down_style(combo_box_style drop_down_style) {
@@ -81,6 +85,23 @@ list_control& combo_box::selected_index(size_t selected_index) {
   return *this;
 }
 
+combo_box::object_collection& combo_box::items() noexcept {
+  return data_->items;
+}
+
+const combo_box::object_collection& combo_box::items() const noexcept {
+  return data_->items;
+}
+
+const combo_box& combo_box::items(const object_collection& items) {
+  data_->items = items;
+  return *this;
+}
+
+const combo_box::item& combo_box::selected_item() const noexcept {
+  return data_->selected_item;
+}
+
 combo_box& combo_box::selected_item(const item& selected_item) {
   if (data_->selected_item != selected_item) {
     auto it = std::find(data_->items.begin(), data_->items.end(), selected_item);
@@ -96,11 +117,19 @@ combo_box& combo_box::selected_item(const item& selected_item) {
   return *this;
 }
 
+bool combo_box::sorted() const noexcept {
+  return data_->sorted;
+}
+
 combo_box& combo_box::sorted(bool sorted) {
   if (data_->sorted != sorted) {
     data_->sorted = sorted;
     data_->items.sorted(data_->sorted);
   }
+  return *this;
+}
+
+control& combo_box::text(const xtd::ustring& text) {
   return *this;
 }
 
