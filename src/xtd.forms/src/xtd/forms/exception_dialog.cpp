@@ -187,25 +187,62 @@ namespace {
   };
 }
 
-void exception_dialog::reset() {
-  dialog_style_ = xtd::forms::dialog_style::standard;
-  exception_ = nullptr;
-  text_ = "";
+xtd::forms::dialog_result exception_dialog::dialog_result() const noexcept {
+  return data_->dialog_result;
+}
+
+xtd::forms::dialog_style exception_dialog::dialog_style() const noexcept {
+  return data_->dialog_style;
+}
+
+exception_dialog& exception_dialog::dialog_style(xtd::forms::dialog_style dialog_style) {
+  data_->dialog_style = dialog_style;
+  return *this;
+}
+
+std::reference_wrapper<const std::exception> exception_dialog::exception() const noexcept {
+  return std::reference_wrapper<const std::exception>(*data_->exception);
+}
+
+exception_dialog& exception_dialog::exception(const std::exception& exception) {
+  data_->exception = &exception;
+  return *this;
+}
+
+xtd::ustring exception_dialog::text() const noexcept {
+  return data_->text;
+}
+
+exception_dialog& exception_dialog::text(const xtd::ustring& text) {
+  data_->text = text;
+  return *this;
+}
+
+
+void exception_dialog::reset() noexcept {
+  data_->dialog_style = xtd::forms::dialog_style::standard;
+  data_->exception = nullptr;
+  data_->text = "";
 }
 
 xtd::forms::dialog_result exception_dialog::show_dialog() {
-  return exception_dialog_standard::show_dialog(exception_, text_, new delegate<void(const dialog_closed_event_args& e)>(*this, &exception_dialog::on_dialog_closed));
+  return exception_dialog_standard::show_dialog(data_->exception, data_->text, new delegate<void(const dialog_closed_event_args& e)>(*this, &exception_dialog::on_dialog_closed));
 }
 
 xtd::forms::dialog_result exception_dialog::show_dialog(const iwin32_window& owner) {
-  return exception_dialog_standard::show_dialog(owner, exception_, text_, new delegate<void(const dialog_closed_event_args& e)>(*this, &exception_dialog::on_dialog_closed));
+  return exception_dialog_standard::show_dialog(owner, data_->exception, data_->text, new delegate<void(const dialog_closed_event_args& e)>(*this, &exception_dialog::on_dialog_closed));
 }
 
 void exception_dialog::show_sheet(const iwin32_window& owner) {
-  dialog_result_ = xtd::forms::dialog_result::none;
-  exception_dialog_standard::show_sheet(owner, exception_, text_, new delegate<void(const dialog_closed_event_args& e)>(*this, &exception_dialog::on_dialog_closed));
+  data_->dialog_result = xtd::forms::dialog_result::none;
+  exception_dialog_standard::show_sheet(owner, data_->exception, data_->text, new delegate<void(const dialog_closed_event_args& e)>(*this, &exception_dialog::on_dialog_closed));
 }
 
 xtd::forms::dialog_result exception_dialog::show_sheet_dialog(const iwin32_window& owner) {
-  return exception_dialog_standard::show_sheet_dialog(owner, exception_, text_, new delegate<void(const dialog_closed_event_args& e)>(*this, &exception_dialog::on_dialog_closed));
+  return exception_dialog_standard::show_sheet_dialog(owner, data_->exception, data_->text, new delegate<void(const dialog_closed_event_args& e)>(*this, &exception_dialog::on_dialog_closed));
+}
+
+void exception_dialog::on_dialog_closed(const dialog_closed_event_args& e) {
+  data_->dialog_result = e.dialog_result();
+  dialog_closed(*this, e);
 }
