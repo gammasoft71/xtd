@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-void file_dialog::reset() {
+void file_dialog::reset() noexcept {
   set_dialog_result(xtd::forms::dialog_result::none);
   auto_upgrade_enabled_ = true;
   default_ext_ = "";

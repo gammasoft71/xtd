@@ -17,29 +17,62 @@ collapsible_panel::collapsible_panel() {
   set_style(control_styles::supports_transparent_back_color, true);
 }
 
+bool collapsible_panel::auto_size() const noexcept {
+  return true;
+}
+
+
+forms::border_sides collapsible_panel::border_sides() const noexcept {
+  return data_->border_sides;
+}
+
 collapsible_panel& collapsible_panel::border_sides(forms::border_sides border_sides) {
-  if (border_sides_ != border_sides) {
-    border_sides_ = border_sides;
+  if (data_->border_sides != border_sides) {
+    data_->border_sides = border_sides;
     if (control_appearance() == forms::control_appearance::standard) invalidate();
   }
   return *this;
 }
 
+forms::border_style collapsible_panel::border_style() const noexcept {
+  return data_->border_style;
+}
+
 collapsible_panel& collapsible_panel::border_style(forms::border_style border_style) {
-  if (border_style_ != border_style) {
-    border_style_ = border_style;
+  if (data_->border_style != border_style) {
+    data_->border_style = border_style;
     post_recreate_handle();
   }
   return *this;
 }
 
+bool collapsible_panel::expanded() const noexcept {
+  return data_->expanded;
+}
+
 collapsible_panel& collapsible_panel::expanded(bool expanded) {
-  if (expanded_ != expanded) {
-    expanded_ = expanded;
-    if (is_handle_created()) native::collapsible_panel::expanded(handle(), expanded_);
+  if (data_->expanded != expanded) {
+    data_->expanded = expanded;
+    if (is_handle_created()) native::collapsible_panel::expanded(handle(), data_->expanded);
     on_expanded_changed(event_args::empty);
   }
   return *this;
+}
+
+const xtd::drawing::size& collapsible_panel::client_size() const noexcept {
+  return control::client_size();
+}
+
+xtd::drawing::size collapsible_panel::size() const noexcept {
+  return control::size();
+}
+
+void collapsible_panel::collapse() {
+  expanded(false);
+}
+
+void collapsible_panel::expand() {
+  expanded(true);
 }
 
 forms::create_params collapsible_panel::create_params() const noexcept {
@@ -48,8 +81,8 @@ forms::create_params collapsible_panel::create_params() const noexcept {
   create_params.class_name("collapsiblepanel");
   create_params.style(create_params.style() | WS_CLIPSIBLINGS);
   
-  if (border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-  else if (border_style_ != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  if (data_->border_style == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+  else if (data_->border_style != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
   
   return create_params;
 }
@@ -99,7 +132,19 @@ void collapsible_panel::wnd_proc(message& message) {
 }
 
 void collapsible_panel::wm_command_control(message& message) {
-  expanded_ = native::collapsible_panel::expanded(handle());
+  data_->expanded = native::collapsible_panel::expanded(handle());
   size(native::control::size(handle()));
   on_expanded_changed(event_args::empty);
+}
+
+control& collapsible_panel::auto_size(bool auto_size) {
+  return control::auto_size(auto_size);
+}
+
+control& collapsible_panel::client_size(const xtd::drawing::size& client_size) {
+  return control::size(client_size);
+}
+
+control& collapsible_panel::size(const xtd::drawing::size& size) {
+  return control::size(size);
 }

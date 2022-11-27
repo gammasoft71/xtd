@@ -252,7 +252,7 @@ namespace xtd {
       /// @{
       /// @brief Resets all dialog box options to their default values.
       /// @remarks When the options are reset, the strikethrough, underline, and color effects are enabled. The fonts listed include only the screen fonts supported by the system.
-      void reset() override;
+      void reset() noexcept override;
       /// @}
       
       /// @name Events

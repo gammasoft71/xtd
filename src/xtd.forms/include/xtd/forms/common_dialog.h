@@ -42,12 +42,12 @@ namespace xtd {
       /// @{
       /// @brief Gets async dialog_result result after dialog box is closing.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
-      xtd::forms::dialog_result dialog_result() const {return dialog_result_;}
+      xtd::forms::dialog_result dialog_result() const noexcept {return dialog_result_;}
       
       /// @brief Gets an object that contains data about the control.
       /// @return The object that contains data about the common_dialog.
       /// @remarks Use this property to store arbitrary information about the control.
-      std::any tag() const {return tag_;}
+      std::any tag() const noexcept {return tag_;}
       /// @brief Sets an object that contains data about the control.
       /// @param tag The object that contains data about the common_dialog.
       /// @remarks Use this property to store arbitrary information about the control.
@@ -63,7 +63,7 @@ namespace xtd {
       /// @brief When overridden in a derived class, resets the properties of a common dialog box to their default values.
       /// @par Notes to Inheritors
       /// Inheriting classes can override this method to reset their properties.
-      virtual void reset() = 0;
+      virtual void reset() noexcept = 0;
       
       /// @brief Runs a common dialog box with a default owner.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.

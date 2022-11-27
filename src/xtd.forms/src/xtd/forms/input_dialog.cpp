@@ -101,7 +101,7 @@ namespace {
   };
 }
 
-void input_dialog::reset() {
+void input_dialog::reset() noexcept {
   character_casing_ = xtd::forms::character_casing::normal;
   dialog_style_ = xtd::forms::dialog_style::standard;
   message_ = "";
