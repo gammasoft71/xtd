@@ -17,52 +17,56 @@ date_time_picker::date_time_picker() {
   set_style(control_styles::user_paint | control_styles::standard_click, false);  
 }
 
+date_time_picker_format date_time_picker::format() const noexcept {
+  return data_->format;
+}
+
 control& date_time_picker::format(date_time_picker_format format) {
-  if (format_ != format) {
-    format_ = format;
+  if (data_->format != format) {
+    data_->format = format;
     post_recreate_handle();
   }
   return *this;
 }
 
-date_time date_time_picker::max_date() const {
-  return max_date_;
+date_time date_time_picker::max_date() const noexcept {
+  return data_->max_date;
 }
 
 control& date_time_picker::max_date(date_time value) {
-  if (max_date_ != value) {
-    max_date_ = value;
-    if (max_date_ < min_date_) min_date_ = max_date_;
-    if (is_handle_created()) native::date_time_picker::allowable_dates(handle(), min_date_, max_date_);
-    this->value(value_);
+  if (data_->max_date != value) {
+    data_->max_date = value;
+    if (data_->max_date < data_->min_date) data_->min_date = data_->max_date;
+    if (is_handle_created()) native::date_time_picker::allowable_dates(handle(), data_->min_date, data_->max_date);
+    this->value(data_->value);
   }
   return *this;
 }
 
-date_time date_time_picker::min_date() const {
-  return min_date_;
+date_time date_time_picker::min_date() const noexcept {
+  return data_->min_date;
 }
 
 control& date_time_picker::min_date(date_time value) {
-  if (min_date_ != value) {
-    min_date_ = value;
-    if (max_date_ < min_date_) max_date_ = min_date_;
-    if (is_handle_created()) native::date_time_picker::allowable_dates(handle(), min_date_, max_date_);
-    this->value(value_);
+  if (data_->min_date != value) {
+    data_->min_date = value;
+    if (data_->max_date < data_->min_date) data_->max_date = data_->min_date;
+    if (is_handle_created()) native::date_time_picker::allowable_dates(handle(), data_->min_date, data_->max_date);
+    this->value(data_->value);
   }
   return *this;
 }
 
-date_time date_time_picker::value() const {
-  return value_;
+date_time date_time_picker::value() const noexcept {
+  return data_->value;
 }
 
 control& date_time_picker::value(date_time value) {
-  if (value < min_date_) value = min_date_;
-  if (value > max_date_) value = max_date_;
-  if (value_ != value) {
-    value_ = value;
-    if (is_handle_created()) native::date_time_picker::value(handle(), value_);
+  if (value < data_->min_date) value = data_->min_date;
+  if (value > data_->max_date) value = data_->max_date;
+  if (data_->value != value) {
+    data_->value = value;
+    if (is_handle_created()) native::date_time_picker::value(handle(), data_->value);
     on_value_changed(event_args::empty);
   }
   return *this;
@@ -79,7 +83,7 @@ drawing::color date_time_picker::default_fore_color() const noexcept {
 forms::create_params date_time_picker::create_params() const noexcept {
   forms::create_params create_params = control::create_params();
   create_params.class_name("datetimepicker");
-  switch (format_) {
+  switch (data_->format) {
     case date_time_picker_format::long_format: create_params.style(create_params.style() | DTS_LONGDATEFORMAT); break;
     case date_time_picker_format::short_format: create_params.style(create_params.style() | DTS_SHORTDATEFORMAT); break;
     case date_time_picker_format::time: create_params.style(create_params.style() | DTS_TIMEFORMAT); break;
@@ -98,8 +102,8 @@ void date_time_picker::on_drop_down(const event_args& e) {
 
 void date_time_picker::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
-  native::date_time_picker::allowable_dates(handle(), min_date_, max_date_);
-  native::date_time_picker::value(handle(), value_);
+  native::date_time_picker::allowable_dates(handle(), data_->min_date, data_->max_date);
+  native::date_time_picker::value(handle(), data_->value);
 }
 
 void date_time_picker::on_value_changed(const event_args& e) {
@@ -131,10 +135,10 @@ void date_time_picker::wm_nottify_control_dropdown(message& message) {
 }
 
 void date_time_picker::wm_nottify_control_datetimechange(message& message) {
-  if (native::date_time_picker::value(handle()) < min_date_) native::date_time_picker::value(handle(), min_date_);
-  if (native::date_time_picker::value(handle()) > max_date_) native::date_time_picker::value(handle(), max_date_);
-  if (value_ != native::date_time_picker::value(handle())) {
-    value_ = native::date_time_picker::value(handle());
+  if (native::date_time_picker::value(handle()) < data_->min_date) native::date_time_picker::value(handle(), data_->min_date);
+  if (native::date_time_picker::value(handle()) > data_->max_date) native::date_time_picker::value(handle(), data_->max_date);
+  if (data_->value != native::date_time_picker::value(handle())) {
+    data_->value = native::date_time_picker::value(handle());
     on_value_changed(event_args::empty);
   }
 }

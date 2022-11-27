@@ -57,7 +57,7 @@ namespace xtd {
       /// @brief Gets the format of the date and time displayed in the control.
       /// @return One of the date_time_picker_format values. The default is long_format.
       /// @remarks This property determines the date/time format the date is displayed in. The date/time format is based on the user's regional settings in their operating system.
-      virtual date_time_picker_format format() const {return format_;}
+      virtual date_time_picker_format format() const noexcept;
       /// @brief Sets the format of the date and time displayed in the control.
       /// @param format One of the date_time_picker_format values. The default is long_format.
       /// @return Current date_time_picker.
@@ -66,7 +66,7 @@ namespace xtd {
       
       /// @brief Gets the maximum date and time that can be selected in the control.
       /// @return The maximum date and time that can be selected in the control.
-      virtual date_time max_date() const;
+      virtual date_time max_date() const noexcept;
       /// @brief Sets the maximum date and time that can be selected in the control.
       /// @param value The maximum date and time that can be selected in the control.
       /// @return Current date_time_picker.
@@ -74,7 +74,7 @@ namespace xtd {
       
       /// @brief Gets the minimum date and time that can be selected in the control.
       /// @return The minimum date and time that can be selected in the control.
-      virtual date_time min_date() const;
+      virtual date_time min_date() const noexcept;
       /// @brief Sets the minimum date and time that can be selected in the control.
       /// @param value The minimum date and time that can be selected in the control.
       /// @return Current date_time_picker.
@@ -82,7 +82,7 @@ namespace xtd {
       
       /// @brief Gets the date/time value assigned to the control.
       /// @return The date and time value assign to the control.
-      virtual date_time value() const;
+      virtual date_time value() const noexcept;
       /// @brief Sets the date/time value assigned to the control.
       /// @param value The date and time value assign to the control.
       virtual control& value(date_time value);
@@ -136,10 +136,14 @@ namespace xtd {
       void wm_nottify_control_closeup(message& message);
       void wm_nottify_control_dropdown(message& message);
       void wm_nottify_control_datetimechange(message& message);
-      date_time_picker_format format_ = date_time_picker_format::long_format;
-      date_time max_date_ = date_time::max_value;
-      date_time min_date_ = date_time::min_value;
-      date_time value_ = date_time::now();
+      
+      struct data {
+        date_time_picker_format format = date_time_picker_format::long_format;
+        date_time max_date = date_time::max_value;
+        date_time min_date = date_time::min_value;
+        date_time value = date_time::now();
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
