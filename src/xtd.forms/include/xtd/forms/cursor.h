@@ -49,7 +49,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the Cursor class from the specified Windows handle.
       /// @param handle An IntPtr that represents the Windows handle of the cursor to create.
       /// @remarks You must free the cursor handle when you are done with it.
-      explicit cursor(intptr_t handle) : cursor(handle, false, "") {}
+      explicit cursor(intptr_t handle);
       /// @}
       
       /// @cond
@@ -69,12 +69,12 @@ namespace xtd {
       /// @brief Gets the handle of the cursor.
       /// @return An intptr_t that represents the cursor's handle.
       /// @remarks This is not a copy of the handle; do not destroy it.
-      intptr_t handle() const {return data_->handle_;}
+      intptr_t handle() const noexcept;
       
       /// @brief Gets the cursor hot spot.
       /// @return A point representing the cursor hot spot.
       /// @remarks The hot_spot is the point in the cursor that interacts with other elements on the screen.
-      drawing::point hot_spot() const {return data_->hot_spot_;}
+      drawing::point hot_spot() const noexcept;
       
       /// @brief Gets the cursor's position.
       /// @return A point that represents the cursor's position in screen coordinates.
@@ -87,17 +87,17 @@ namespace xtd {
       
       /// @brief Gets the size of the cursor object.
       /// @return A size that represents the width and height of the cursor.
-      drawing::size size() const {return data_->size_;}
+      drawing::size size() const noexcept;
       
       /// @brief Gets the object that contains data about the control.
       /// @return A std::any that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
-      std::any tag() const {return data_->tag_;}
+      std::any tag() const noexcept;
       
       /// @brief Sets the object that contains data about the control.
       /// @param tag A std::any that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
-      void tag(std::any tag) {data_->tag_ = tag;}
+      void tag(std::any tag);
       /// @}
       
       /// @name Methodds
@@ -112,12 +112,12 @@ namespace xtd {
       /// @param bitmap A xtd::drawing::bitmap image will be use by cursor.
       /// @param hot_spot A xtd::drawing::point hot spot location.
       /// @return A new cursor instance.
-      static cursor from_bitmap(const xtd::drawing::bitmap& bitmap, const xtd::drawing::point& hot_spot) {return cursor(bitmap, hot_spot);}
+      static cursor from_bitmap(const xtd::drawing::bitmap& bitmap, const xtd::drawing::point& hot_spot);
       /// @brief Create a cursor form a specified bitmap.
       /// @param bitmap A xtd::drawing::bitmap image will be use by cursor.
       /// @return A new cursor instance.
       /// @remarks The hot spot location is top left (0, 0).
-      static cursor from_bitmap(const xtd::drawing::bitmap& bitmap) {return from_bitmap(bitmap, {});}
+      static cursor from_bitmap(const xtd::drawing::bitmap& bitmap);
       
       /// @brief Hides the cursor.
       /// @brief The show and hide method calls must be balanced. For every call to the hide method there must be a corresponding call to the show method.
@@ -133,8 +133,8 @@ namespace xtd {
       /// @}
       
       /// @cond
-      bool operator ==(const cursor& value) const {return data_ == value.data_ || (!data_->name_.empty() && data_->name_ == value.data_->name_);}
-      bool operator !=(const cursor& value) const {return !operator ==(value);}
+      bool operator ==(const cursor& value) const noexcept;
+      bool operator !=(const cursor& value) const noexcept;
       /// @endcond
       
     private:

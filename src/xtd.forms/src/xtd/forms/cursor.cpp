@@ -29,6 +29,9 @@ cursor::cursor() {
   data_->size_ = native::cursor::size(data_->handle_);
 }
 
+cursor::cursor(intptr_t handle) : cursor(handle, false, "") {
+}
+
 cursor::cursor(const bitmap& bitmap, const xtd::drawing::point& hot_spot) {
   data_->handle_ = native::cursor::create(bitmap, hot_spot);
   data_->hot_spot_ = hot_spot;
@@ -49,6 +52,14 @@ cursor cursor::current() {
   return current_cursor.value_or(none);
 }
 
+intptr_t cursor::handle() const noexcept {
+  return data_->handle_;
+}
+
+drawing::point cursor::hot_spot() const noexcept {
+  return data_->hot_spot_;
+}
+
 point cursor::position() {
   return native::cursor::position();
 }
@@ -57,8 +68,28 @@ void cursor::position(const point& position) {
   native::cursor::position(position);
 }
 
+drawing::size cursor::size() const noexcept {
+  return data_->size_;
+}
+
+std::any cursor::tag() const noexcept {
+  return data_->tag_;
+}
+
+void cursor::tag(std::any tag) {
+  data_->tag_ = tag;
+}
+
 intptr_t cursor::copy_handle() const {
   return native::cursor::copy(data_->handle_);
+}
+
+cursor cursor::from_bitmap(const xtd::drawing::bitmap& bitmap, const xtd::drawing::point& hot_spot) {
+  return cursor(bitmap, hot_spot);
+}
+
+cursor cursor::from_bitmap(const xtd::drawing::bitmap& bitmap) {
+  return from_bitmap(bitmap, {});
 }
 
 void cursor::hide() {
@@ -71,4 +102,12 @@ void cursor::show() {
 
 ustring cursor::to_string() const noexcept {
   return ustring::format("[cursor: {}]", data_->name_ != "" ? data_->name_ : ustring::full_class_name(*this));
+}
+
+bool cursor::operator ==(const cursor& value) const noexcept {
+  return data_ == value.data_ || (!data_->name_.empty() && data_->name_ == value.data_->name_);
+}
+
+bool cursor::operator !=(const cursor& value) const noexcept {
+  return !operator ==(value);
 }
