@@ -66,7 +66,7 @@ namespace xtd {
       /// @{
       /// @brief Gets underlying trace listener.
       /// @return A xtd::diagnostics::trace_listener trace listener. In this case a xtd::forms::control_trace_listener.
-      const xtd::diagnostics::trace_listener& trace_listener() const {return *listener_;}
+      const xtd::diagnostics::trace_listener& trace_listener() const noexcept {return *listener_;}
       /// @brief Gets underlying trace listener.
       /// @return A xtd::diagnostics::trace_listener trace listener. In this case a xtd::forms::control_trace_listener.
       xtd::diagnostics::trace_listener& trace_listener() {return *listener_;}

@@ -42,7 +42,7 @@ namespace xtd {
     class forms_export_ domain_up_down : public up_down_base {
     public:
       /// @brief Represent an item contained in the domain_up_down::object_collection collection.
-      class item {
+      class item : public object {
       public:
         /// @name Constructors
         
@@ -51,24 +51,23 @@ namespace xtd {
         item() = default;
         /// @brief Initializes a new instance of the item class with specified value.
         /// @param value a string that represent the item.
-        item(const xtd::ustring& value) : value_(value) {}
+        item(const xtd::ustring& value);
         /// @brief Initializes a new instance of the item class with specified value and tag.
         /// @param value a string that represent the item.
         /// @param tag an object that contains data about the item.
-        item(const xtd::ustring& value, const std::any& tag) : value_(value), tag_(tag) {}
+        item(const xtd::ustring& value, const std::any& tag);
         /// @}
         
         /// @cond
-        item(const char* value) : value_(value) {}
+        item(const char* value);
         item(const item& value) = default;
-        virtual ~item() = default;
-        bool operator ==(const item& value) const {return value_ == value.value_;}
-        bool operator !=(const item& value) const {return !operator ==(value);}
-        bool operator <(const item& value) const {return value_ < value.value_;}
-        bool operator <=(const item& value) const {return value_ <= value.value_;}
-        bool operator >(const item& value) const {return value_ > value.value_;}
-        bool operator >=(const item& value) const {return value_ >= value.value_;}
-        friend std::ostream& operator <<(std::ostream& os, const item& value) {return os << value.to_string();}
+        item& operator =(const item& value) = default;
+        bool operator ==(const item& value) const noexcept;
+        bool operator !=(const item& value) const noexcept;
+        bool operator <(const item& value) const noexcept;
+        bool operator <=(const item& value) const noexcept;
+        bool operator >(const item& value) const noexcept;
+        bool operator >=(const item& value) const noexcept;
         /// @endcond
         
         /// @name Properties
@@ -76,11 +75,11 @@ namespace xtd {
         /// @{
         /// @brief Gets the value of the item.
         /// @return A xtd::ustring that represent the value of item.
-        virtual const xtd::ustring& value() const {return value_;}
+        virtual const xtd::ustring& value() const noexcept;
         
         /// @brief Gets the tag of the item.
         /// @return A std::any that represent the tag of item.
-        virtual std::any tag() const {return tag_;}
+        virtual std::any tag() const noexcept;
         /// @}
         
         /// @name Methods
@@ -88,7 +87,7 @@ namespace xtd {
         /// @{
         /// @brief Returns a string containing the vague of the item.
         /// @return A string containing the value of the item.
-        xtd::ustring to_string() const {return value_;}
+        xtd::ustring to_string() const noexcept override;
         /// @}
         
       private:
@@ -123,20 +122,17 @@ namespace xtd {
       /// @brief Gets an object representing the collection of the items contained in this domain_up_down. Gets an object representing the collection of the items contained in this domain_up_down.
       /// @return A domain_up_down::object_collection representing the items in the domain_up_down.
       /// @remarks This property enables you to obtain a reference to the list of items that are currently stored in the domain_up_down. With this reference, you can add items, remove items, and obtain a count of the items in the collection.
-      object_collection& items() {return items_;}
+      object_collection& items() noexcept;
       /// @brief Gets an object representing the collection of the items contained in this domain_up_down. Gets an object representing the collection of the items contained in this domain_up_down.
       /// @return A domain_up_down::object_collection representing the items in the domain_up_down.
-      const object_collection& items() const {return items_;}
+      const object_collection& items() const noexcept;
       /// @brief Sets an object representing the collection of the items contained in this domain_up_down. Gets an object representing the collection of the items contained in this domain_up_down.
       /// @param items A domain_up_down::object_collection representing the items in the domain_up_down.
       /// @return Current domain_up_down.
-      const domain_up_down& items(const object_collection& items) {
-        items_ = items;
-        return *this;
-      }
+      const domain_up_down& items(const object_collection& items);
       /// @brief Gets the zero-based index of the currently selected item.
       /// @return A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
-      virtual size_t selected_index() const {return selected_index_;}
+      virtual size_t selected_index() const noexcept;
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
       /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       /// @return Current domain_up_down.
@@ -144,7 +140,7 @@ namespace xtd {
       
       /// @brief Gets the selected item based on the index value of the selected item in the collection.
       /// @return The selected item based on the selected_index value. The default value is item::empty.
-      const item& selected_item() const {return selected_item_;}
+      const item& selected_item() const noexcept;
       /// @brief Gets the selected item based on the index value of the selected item in the collection.
       /// @param item The selected item based on the selected_index value. The default value is item::empty.
       /// @return Current domain_up_down.
@@ -152,7 +148,7 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the collection of items continues to the first or last item if the user continues past the end of the list.
       /// @return true if the list starts again when the user reaches the beginning or end of the collection; otherwise, false. The default value is false.
-      virtual bool wrap() {return wrap_;}
+      virtual bool wrap() const noexcept;
       /// @brief Sets a value indicating whether the collection of items continues to the first or last item if the user continues past the end of the list.
       /// @param value true if the list starts again when the user reaches the beginning or end of the collection; otherwise, false. The default value is false.
       /// @return Current domain_up_down.
@@ -194,12 +190,18 @@ namespace xtd {
       void on_text_changed(const event_args& e) override;
       /// @}
 
-      /// @cond
-      object_collection items_;
-      size_t selected_index_ = npos;
-      item selected_item_;
-      bool wrap_ = false;
-      /// @endcond
+    private:
+      void on_items_item_added(size_t pos, const item & item);
+      void on_items_item_removed(size_t pos, const item & item);
+      void on_items_item_updated(size_t pos, const item & item);
+
+      struct data {
+        object_collection items;
+        size_t selected_index = npos;
+        item selected_item;
+        bool wrap = false;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
