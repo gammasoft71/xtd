@@ -29,7 +29,12 @@ namespace xtd {
       /// @param match_case true if match case option selected; otherwise false.
       /// @param search_direction true if match case option selected; otherwise false.
       /// @param whole_word One of xtd::forms::search_direction values.
-      find_event_args(const xtd::ustring& find_string, bool match_case, xtd::forms::search_direction search_direction, bool whole_word) : find_string_(find_string), match_case_(match_case), search_direction_(search_direction), whole_word_(whole_word) {}
+      find_event_args(const xtd::ustring& find_string, bool match_case, xtd::forms::search_direction search_direction, bool whole_word) {
+        data_->find_string = find_string;
+        data_->match_case = match_case;
+        data_->search_direction = search_direction;
+        data_->whole_word = whole_word;
+      }
       /// @}
       
       /// @cond
@@ -42,27 +47,30 @@ namespace xtd {
       /// @{
       /// @brief Gets the string to find.
       /// @return The string to find.
-      const xtd::ustring& find_string() const {return find_string_;}
+      const xtd::ustring& find_string() const noexcept {return data_->find_string;}
       
       /// @brief Gets the match case value.
       /// @return true if match case option selected; otherwise false. The default is false.
-      bool match_case() const {return match_case_;}
+      bool match_case() const noexcept {return data_->match_case;}
       
       /// @brief Gets the search direction value.
       /// @return One of xtd::forms::search_direction values; The default is xtd::forms::search_direction::down.
-      xtd::forms::search_direction search_direction() const {return search_direction_;}
+      xtd::forms::search_direction search_direction() const noexcept {return data_->search_direction;}
       
       /// @brief Gets the whole word value.
       /// @return true if whole word option selected; otherwise false. The default is false.
-      bool whole_word() const {return whole_word_;}
+      bool whole_word() const noexcept {return data_->whole_word;}
       
       /// @}
       
     private:
-      xtd::ustring find_string_;
-      bool match_case_ = false;
-      xtd::forms::search_direction search_direction_ = xtd::forms::search_direction::down;
-      bool whole_word_ = false;
+      struct data {
+        xtd::ustring find_string;
+        bool match_case = false;
+        xtd::forms::search_direction search_direction = xtd::forms::search_direction::down;
+        bool whole_word = false;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
