@@ -36,7 +36,7 @@ namespace xtd {
       /// @{
       /// @brief Gets icontroll_trace object.
       /// @return The icontrol_trace object used.
-      virtual xtd::forms::icontrol_trace& control_trace() {return *control_trace_;}
+      virtual xtd::forms::icontrol_trace& control_trace() noexcept {return *control_trace_;}
       /// @brief Sets icontroll_trace object.
       /// @param control_trace The icontrol_trace object to use.
       virtual void control_trace(xtd::forms::icontrol_trace& control_trace) {control_trace_ = &control_trace;}
