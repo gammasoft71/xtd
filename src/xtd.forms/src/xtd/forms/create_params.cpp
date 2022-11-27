@@ -1,0 +1,126 @@
+#include "../../../include/xtd/forms/create_params.h"
+
+using namespace xtd;
+using namespace xtd::forms;
+
+const xtd::ustring& create_params::caption() const noexcept {
+  return data_->caption;
+}
+
+create_params& create_params::caption(const xtd::ustring& caption) {
+  data_->caption = caption;
+  return *this;
+}
+
+const xtd::ustring& create_params::class_name() const noexcept {
+  return data_->class_name;
+}
+
+create_params& create_params::class_name(const xtd::ustring& class_name) {
+  data_->class_name = class_name;
+  return *this;
+}
+
+size_t create_params::class_style() const noexcept {
+  return data_->class_style;
+}
+
+create_params& create_params::class_style(size_t class_style) {
+  data_->class_style = class_style;
+  return *this;
+}
+
+size_t create_params::ex_style() const noexcept {
+  return data_->ex_style;
+}
+
+create_params& create_params::ex_style(size_t ex_style) {
+  data_->ex_style = ex_style;
+  return *this;
+}
+
+int32_t create_params::height() const noexcept {
+  return data_->size.height();
+}
+
+create_params& create_params::height(int32_t height) {
+  data_->size.height(height);
+  return *this;
+}
+
+drawing::point create_params::location() const noexcept {
+  return data_->location;
+}
+
+create_params& create_params::location(const drawing::point location) {
+  data_->location = location;
+  return *this;
+}
+
+intptr_t create_params::param() const noexcept {
+  return data_->param;
+}
+
+create_params& create_params::param(intptr_t param) {
+  data_->param = param;
+  return *this;
+}
+
+intptr_t create_params::parent() const noexcept {
+  return data_->parent;
+}
+
+create_params& create_params::parent(intptr_t parent) {
+  data_->parent = parent;
+  return *this;
+}
+
+size_t create_params::style() const noexcept {
+  return data_->style;
+}
+
+create_params& create_params::style(size_t style) {
+  data_->style = style;
+  return *this;
+}
+
+drawing::size create_params::size() const noexcept {
+  return data_->size;
+}
+
+create_params& create_params::size(const drawing::size size) {
+  data_->size = size;
+  return *this;
+}
+
+
+int32_t create_params::width() const noexcept {
+  return data_->size.width();
+}
+
+create_params& create_params::width(int32_t width) {
+  data_->size.width(width);
+  return *this;
+}
+
+int32_t create_params::x() const noexcept {
+  return data_->location.x();
+}
+
+create_params& create_params::x(int32_t x) {
+  data_->location.x(x);
+  return *this;
+}
+
+int32_t create_params::y() const noexcept {
+  return data_->location.y();
+}
+
+create_params& create_params::y(int32_t y) {
+  data_->location.y(y);
+  return *this;
+}
+
+xtd::ustring create_params::to_string() const noexcept {
+  return ustring::format("create_params {{'{}' , '{}', 0x{:X}, 0x{:X}, {{{}, {}, {}, {}}}}}", data_->class_name, data_->caption, data_->style, data_->ex_style, data_->location.x(), data_->location.y(), data_->size.width(), data_->size.height());
+}
