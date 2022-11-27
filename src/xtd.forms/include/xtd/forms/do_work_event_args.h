@@ -36,11 +36,11 @@ namespace xtd {
       /// @{
       /// @brief Gets a value that represents the argument of an asynchronous operation.
       /// @return An object representing the argument of an asynchronous operation.
-      std::any argument() const {return argument_;}
+      std::any argument() const noexcept {return argument_;}
       
       /// @brief Gets a value that represents the result of an asynchronous operation.
       /// @return A std::any representing the result of an asynchronous operation.
-      std::any result() const {return result_;}
+      std::any result() const noexcept {return result_;}
       /// @brief Sets a value that represents the result of an asynchronous operation.
       /// @param value A std::any representing the result of an asynchronous operation.
       void result(std::any value) {result_ = value;}
