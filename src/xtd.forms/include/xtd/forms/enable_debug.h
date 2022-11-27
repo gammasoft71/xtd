@@ -29,10 +29,10 @@ namespace xtd {
       enable_debug(const enable_debug&) = default;
       enable_debug& operator =(const enable_debug&) = default;
       
-      bool operator ==(const enable_debug& value) const {return value_ == value.value_;}
-      bool operator !=(const enable_debug& value) const  {return !operator ==(value);}
-      enable_debug operator |(const enable_debug& value) const {return enable_debug(value_ | value.value_);}
-      enable_debug operator +(const enable_debug& value) const {return enable_debug(value_ + value.value_);}
+      bool operator ==(const enable_debug& value) const noexcept;
+      bool operator !=(const enable_debug& value) const noexcept;
+      enable_debug operator |(const enable_debug& value) const noexcept;
+      enable_debug operator +(const enable_debug& value) const  noexcept;
       /// @endcond
       
       /// @name Fields
@@ -60,7 +60,7 @@ namespace xtd {
       /// @{
       /// @brief Gets a trace switch to configure debug traces.
       /// @return a xtd::diagnostics::trace_switch to configure debug traces.
-      static xtd::diagnostics::trace_switch& trace_switch() {return trace_switch_;}
+      static xtd::diagnostics::trace_switch& trace_switch() noexcept;
       /// @}
       
       /// @name Methods
@@ -68,15 +68,15 @@ namespace xtd {
       /// @{
       /// @brief Gets enable_debug flags status.
       /// @return true if enable_debug flags is on; otherwise false.
-      static bool get(const enable_debug& flags) {return (values_.value_ & flags.value_) == flags.value_;}
+      static bool get(const enable_debug& flags);
       /// @brief Sets enable_debug flags status.
       /// @param on true if enable_debug flags is on; otherwise false.
-      static void set(const enable_debug& flags, bool on) {values_.value_ = on ? (values_.value_ | flags.value_) : (values_.value_ & ~flags.value_);}
+      static void set(const enable_debug& flags, bool on);
       /// @}
       
       
     private:
-      explicit enable_debug(uint64_t value) : value_(value) {}
+      explicit enable_debug(uint64_t value);
       
       uint64_t value_ = 0;
       static xtd::diagnostics::trace_switch trace_switch_;
