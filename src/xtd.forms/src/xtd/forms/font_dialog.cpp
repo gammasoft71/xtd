@@ -7,7 +7,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-void font_dialog::reset() {
+void font_dialog::reset() noexcept {
   set_dialog_result(xtd::forms::dialog_result::none);
   color_ = application::style_sheet().system_colors().control_text();
   font_ = drawing::system_fonts::default_font();

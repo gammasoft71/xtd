@@ -172,7 +172,7 @@ namespace xtd {
       
       /// @{
       /// @brief Resets all properties to empty string.
-      void reset() override;
+      void reset() noexcept override;
       /// @}
       
     protected:

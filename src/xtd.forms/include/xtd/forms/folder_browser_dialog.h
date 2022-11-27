@@ -124,7 +124,7 @@ namespace xtd {
       
       /// @{
       /// @brief Resets all options to their default values, the last selected color to black, and the custom colors to their default values.
-      void reset() override;
+      void reset() noexcept override;
       /// @}
       
     protected:

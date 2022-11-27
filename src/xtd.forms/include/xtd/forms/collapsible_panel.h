@@ -31,11 +31,11 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      virtual bool auto_size() const noexcept override {return true;}
+      virtual bool auto_size() const noexcept override;
       
       /// @brief Gets the border sides for the control.
       /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
-      virtual forms::border_sides border_sides() const {return border_sides_;}
+      virtual forms::border_sides border_sides() const noexcept;
       /// @brief Sets the border sides for the control.
       /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
       virtual collapsible_panel& border_sides(forms::border_sides border_sides);
@@ -43,7 +43,7 @@ namespace xtd {
       /// @brief Gets the border style for the control.
       /// @return One of the border_style values. The default is border_style::none.
       /// @remarks By default, the collapsible_panel control is displayed without a border. You can use this property to distinguish the boundaries of the collapsible_panel control from other areas on the form.
-      virtual forms::border_style border_style() const {return border_style_;}
+      virtual forms::border_style border_style() const noexcept;
       /// @brief Sets the border style for the control.
       /// @param border_style One of the border_style values. The default is border_style::none.
       /// @remarks By default, the collapsible_panel control is displayed without a border. You can use this property to distinguish the boundaries of the collapsible_panel control from other areas on the form.
@@ -51,14 +51,14 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the collapsible_panel is in the expanded.
       /// @return true if collapsible_panel is expanded; otherwise false.
-      bool expanded() const {return expanded_;}
+      bool expanded() const noexcept;
       /// @brief Sets a value indicating whether the collapsible_panel is in the expanded.
       /// @param expanded true if collapsible_panel is expanded; otherwise false.
       collapsible_panel& expanded(bool expanded);
       
       /// @cond
-      const xtd::drawing::size& client_size() const noexcept override {return control::client_size();}
-      xtd::drawing::size size() const noexcept override {return control::size();}
+      const xtd::drawing::size& client_size() const noexcept override;
+      xtd::drawing::size size() const noexcept override;
       /// @endcond
       /// @}
       
@@ -67,11 +67,11 @@ namespace xtd {
       /// @{
       /// @brief Collapse the collapsible_panel.
       /// @remarks Collapsing the collapsible_panel is equivalent to setting the expanded property to false. After the collapse method is called, the expanded property returns a value of false until the expand method is called.
-      void collapse() {expanded(false);}
+      void collapse();
       
       /// @brief Expand the collapsible_panel.
       /// @remarks Expanding the collapsible_panel is equivalent to setting the expanded property to true. After the expand method is called, the expanded property returns a value of true until the collapse method is called.
-      void expand() {expanded(true);}
+      void expand();
       /// @}
       
       /// @name Events
@@ -108,14 +108,17 @@ namespace xtd {
       /// @}
       
     private:
-      control& auto_size(bool auto_size) override {return control::auto_size(auto_size);}
-      control& client_size(const xtd::drawing::size& client_size) override {return control::size(client_size);}
-      control& size(const xtd::drawing::size& size) override {return control::size(size);}
+      control& auto_size(bool auto_size) override;
+      control& client_size(const xtd::drawing::size& client_size) override;
+      control& size(const xtd::drawing::size& size) override;
       void wm_command_control(message& message);
       
-      forms::border_sides border_sides_ = forms::border_sides::all;
-      forms::border_style border_style_ = forms::border_style::none;
-      bool expanded_ = false;
+      struct data {
+        forms::border_sides border_sides = forms::border_sides::all;
+        forms::border_style border_style = forms::border_style::none;
+        bool expanded = false;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }

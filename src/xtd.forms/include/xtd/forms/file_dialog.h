@@ -303,7 +303,7 @@ namespace xtd {
       /// @{
       /// @brief Resets all properties to their default values.
       /// @remarks When overriding reset() in a derived class, be sure to call the base class's reset() method.
-      void reset() override;
+      void reset() noexcept override;
       
       /// @brief Provides a string version of this object.
       /// @return A string version of this object.
