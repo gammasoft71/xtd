@@ -21,7 +21,7 @@
 * [date_time_now](date_time_now/README.md) Shows how to use [xtd::date_time::now](../../../src/xtd.core/include/xtd/date_time.h) property.
 * [date_time_now2](date_time_now2/README.md) Shows how to use [xtd::date_time::now](../../../src/xtd.core/include/xtd/date_time.h) property.
 * [date_time_specify_kind](date_time_specify_kind/README.md) shows how to use [xtd::date_time::specify_kind](../../../src/xtd.core/include/xtd/date_time.h) method.
-* [date_time_sprintft](date_time_sprintft/README.md) shows how to use [xtd::date_time::sprintf](../../../src/xtd.core/include/xtd/date_time.h) method.
+* [date_time_sprintf](date_time_sprintf/README.md) shows how to use [xtd::date_time::sprintf](../../../src/xtd.core/include/xtd/date_time.h) method.
 * [date_time_subtract](date_time_subtract/README.md) shows how to use [xtd::date_time::subtract](../../../src/xtd.core/include/xtd/date_time.h) method.
 * [date_time_ticks](date_time_ticks/README.md) shows how to use [xtd::date_time](../../../src/xtd.core/include/xtd/date_time.h) class with ticks constructors.
 * [date_time_ticks2](date_time_ticks2/README.md) shows how to use [xtd::date_time::ticks](../../../src/xtd.core/include/xtd/date_time.h) property.
