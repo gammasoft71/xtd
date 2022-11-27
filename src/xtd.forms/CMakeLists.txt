@@ -365,6 +365,7 @@ add_sources(
   src/xtd/forms/combo_box.cpp
   src/xtd/forms/command_link_button.cpp
   src/xtd/forms/common_dialog.cpp
+  src/xtd/forms/component.cpp
   src/xtd/forms/container_control.cpp
   src/xtd/forms/context_menu.cpp
   src/xtd/forms/control.cpp
