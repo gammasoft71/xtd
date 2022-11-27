@@ -62,48 +62,39 @@ namespace xtd {
       /// @{
       /// @brief Gets async dialog_result result after dialog box is closing.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
-      xtd::forms::dialog_result dialog_result() const {return dialog_result_;}
+      xtd::forms::dialog_result dialog_result() const noexcept;
       
       /// @brief Gets the dialog style.
       /// @return One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
-      xtd::forms::dialog_style dialog_style() const {return dialog_style_;}
+      xtd::forms::dialog_style dialog_style() const noexcept;
       /// @brief Sets the dialog style.
       /// @param dialog_style One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
       /// @return Current exception_dialog instance.
-      exception_dialog& dialog_style(xtd::forms::dialog_style dialog_style) {
-        dialog_style_ = dialog_style;
-        return *this;
-      }
+      exception_dialog& dialog_style(xtd::forms::dialog_style dialog_style);
       
       /// @brief Gets exception reference.
       /// @return A exception reference.
-      std::reference_wrapper<const std::exception> exception() const {return std::reference_wrapper<const std::exception>(*exception_);}
+      std::reference_wrapper<const std::exception> exception() const noexcept;
       /// @brief Sets exception.
       /// @param exception The exception.
       /// @return Current exception_dialog instance.
       /// @warning Contains only a reference on the parameter exception. Do not delete exception before closing dialog.
-      exception_dialog& exception(const std::exception& exception) {
-        exception_ = &exception;
-        return *this;
-      }
+      exception_dialog& exception(const std::exception& exception);
       
       /// @brief Gets the dialog caption text.
       /// @return The current dialog caption text.
-      xtd::ustring text() const {return text_;}
+      xtd::ustring text() const noexcept;
       /// @brief Sets the dialog caption text.
       /// @param text The new dialog caption text.
       /// @return Current input_dialog instance.
-      exception_dialog& text(const xtd::ustring& text) {
-        text_ = text;
-        return *this;
-      }
+      exception_dialog& text(const xtd::ustring& text);
       /// @}
       
       /// @name Methods
       
       /// @{
       /// @brief Resets all properties to empty string.
-      void reset();
+      void reset() noexcept;
       
       /// @brief Runs exception dialog box.
       xtd::forms::dialog_result show_dialog();
@@ -132,17 +123,17 @@ namespace xtd {
       /// @brief Raises the close event.
       /// @param e An exception_dialog_closed_event_args that provides the event data.
       /// @remarks This method is invoked when the exception dialog box is closed.
-      void on_dialog_closed(const dialog_closed_event_args& e) {
-        dialog_result_ = e.dialog_result();
-        dialog_closed(*this, e);
-      }
+      void on_dialog_closed(const dialog_closed_event_args& e);
       /// @}
       
     private:
-      xtd::forms::dialog_result dialog_result_ = xtd::forms::dialog_result::none;
-      xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::standard;
-      const std::exception* exception_ = nullptr;
-      xtd::ustring text_;
+      struct data {
+        xtd::forms::dialog_result dialog_result = xtd::forms::dialog_result::none;
+        xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::standard;
+        const std::exception* exception = nullptr;
+        xtd::ustring text;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
