@@ -38,8 +38,13 @@ namespace xtd {
       /// @}
       
       /// @cond
-      find_event_args(const find_event_args&) = default;
-      find_event_args& operator =(const find_event_args&) = default;
+      find_event_args(const find_event_args& other) {
+        *data_ = *other.data_;
+      }
+      find_event_args& operator =(const find_event_args& other) {
+        *data_ = *other.data_;
+        return *this;
+      }
       /// @endcond
       
       /// @name Properties
