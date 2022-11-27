@@ -59,6 +59,26 @@ namespace {
   }
 }
 
+control::async_result_invoke::async_result_invoke(std::any async_state) {
+  data_->async_state = async_state;
+}
+
+std::any control::async_result_invoke::async_state() const noexcept {
+  return data_->async_state;
+}
+
+std::shared_mutex& control::async_result_invoke::async_mutex() {
+  return *data_->async_mutex;
+}
+
+bool control::async_result_invoke::completed_synchronously() const noexcept {
+  return false;
+}
+
+bool control::async_result_invoke::is_completed() const noexcept {
+  return *data_->is_completed;
+}
+
 bool control::check_for_illegal_cross_thread_calls_ = diagnostics::debugger::is_attached();
 std::thread::id control::handle_created_on_thread_id_ = std::this_thread::get_id();
 forms::keys control::modifier_keys_ = forms::keys::none;
@@ -739,7 +759,7 @@ shared_ptr<iasync_result> control::begin_invoke(delegate<void(vector<any>)> valu
   //while (!xtd::forms::application::message_loop()) this_thread::sleep_for(10ms);
   shared_ptr<async_result_invoke> async = make_shared<async_result_invoke>(std::reference_wrapper(*this));
   async->async_mutex().lock();
-  if (is_handle_created()) native::control::invoke_in_control_thread(data_->handle, value, args, async->async_mutex_, async->is_completed_);
+  if (is_handle_created()) native::control::invoke_in_control_thread(data_->handle, value, args, async->data_->async_mutex, async->data_->is_completed);
   this_thread::yield();
   return async;
 }
@@ -880,6 +900,10 @@ void control::invoke(delegate<void(std::vector<std::any>)> value, std::any arg) 
 
 void control::end_invoke(shared_ptr<iasync_result> async) {
   lock_guard<shared_mutex> lock(async->async_mutex());
+}
+
+xtd::forms::visual_styles::control_state control::control_state() const noexcept {
+  return data_->control_state;
 }
 
 forms::create_params control::create_params() const noexcept {

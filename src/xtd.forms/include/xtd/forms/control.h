@@ -124,15 +124,18 @@ namespace xtd {
       
       class async_result_invoke : public xtd::iasync_result {
       public:
-        explicit async_result_invoke(std::any async_state) : async_state_(async_state) {}
-        std::any async_state() const noexcept override {return async_state_;}
-        std::shared_mutex& async_mutex() override {return *async_mutex_;}
-        bool completed_synchronously() const noexcept override {return false;}
-        bool is_completed() const noexcept override {return *is_completed_;};
+        explicit async_result_invoke(std::any async_state);
+        std::any async_state() const noexcept override;
+        std::shared_mutex& async_mutex() override;
+        bool completed_synchronously() const noexcept override;
+        bool is_completed() const noexcept override;
         
-        std::any async_state_;
-        std::shared_ptr<bool> is_completed_ = std::make_shared<bool>(false);
-        std::shared_ptr<std::shared_mutex> async_mutex_ = std::make_shared<std::shared_mutex>();
+        struct data {
+          std::any async_state;
+          std::shared_ptr<bool> is_completed = std::make_shared<bool>(false);
+          std::shared_ptr<std::shared_mutex> async_mutex = std::make_shared<std::shared_mutex>();
+        };
+        std::shared_ptr<data> data_ = std::make_shared<data>();
       };
       /// @endcond
       
@@ -1570,7 +1573,7 @@ namespace xtd {
       /// @{
       /// @brief Gets state.
       /// @return One of xtd::forms::visual_styles::control_state values.
-      xtd::forms::visual_styles::control_state control_state() const noexcept {return data_->control_state;}
+      xtd::forms::visual_styles::control_state control_state() const noexcept;
       
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
