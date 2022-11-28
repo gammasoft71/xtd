@@ -19,7 +19,7 @@ xtdc run
 # Output
 
 ```
-ame = bold, italic
+name = bold, italic
 value = 3
 as<int> = 3
 values = [0, 1, 2, 4, 8]
