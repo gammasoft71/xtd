@@ -78,6 +78,8 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       
       /// @cond
+      control_layout_style(const control_layout_style& other);
+      control_layout_style& operator =(const control_layout_style& other);
       bool operator ==(const control_layout_style& value) const noexcept;
       bool operator !=(const control_layout_style& value) const noexcept;
       /// @endcond
