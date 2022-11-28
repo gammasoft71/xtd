@@ -12,7 +12,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 group_box::group_box() {
-  if (application::use_system_controls()) flat_style_ = xtd::forms::flat_style::system;
+  if (application::use_system_controls()) data_->flat_style = xtd::forms::flat_style::system;
   control_appearance(forms::control_appearance::system);
   set_auto_size_mode(forms::auto_size_mode::grow_only);
   set_can_focus(false);
@@ -22,6 +22,10 @@ group_box::group_box() {
   set_style(control_styles::selectable, false);
 }
 
+forms::auto_size_mode group_box::auto_size_mode() const noexcept {
+  return get_auto_size_mode();
+}
+
 group_box& group_box::auto_size_mode(forms::auto_size_mode value) {
   set_auto_size_mode(value);
   return *this;
@@ -29,17 +33,21 @@ group_box& group_box::auto_size_mode(forms::auto_size_mode value) {
 
 control& group_box::control_appearance(forms::control_appearance value) {
   control::control_appearance(value);
-  if (value == forms::control_appearance::system && flat_style_ != xtd::forms::flat_style::system)
+  if (value == forms::control_appearance::system && data_->flat_style != xtd::forms::flat_style::system)
     flat_style(xtd::forms::flat_style::system);
-  else if (value == forms::control_appearance::standard && flat_style_ == xtd::forms::flat_style::system)
+  else if (value == forms::control_appearance::standard && data_->flat_style == xtd::forms::flat_style::system)
     flat_style(xtd::forms::flat_style::standard);
   return *this;
 }
 
+xtd::forms::flat_style group_box::flat_style() const noexcept {
+  return data_->flat_style;
+}
+
 group_box& group_box::flat_style(xtd::forms::flat_style flat_style) {
-  if (flat_style_ != flat_style) {
-    flat_style_ = flat_style;
-    control_appearance(flat_style_ == xtd::forms::flat_style::system ? forms::control_appearance::system : forms::control_appearance::standard);
+  if (data_->flat_style != flat_style) {
+    data_->flat_style = flat_style;
+    control_appearance(data_->flat_style == xtd::forms::flat_style::system ? forms::control_appearance::system : forms::control_appearance::standard);
     recreate_handle();
   }
   return *this;
@@ -65,15 +73,15 @@ drawing::size group_box::measure_control() const noexcept {
 
 void group_box::on_font_changed(const xtd::event_args& e) {
   control::on_font_changed(e);
-  if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
 }
 
 void group_box::on_text_changed(const xtd::event_args& e) {
   control::on_text_changed(e);
-  if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
 }
 
 void group_box::on_resize(const xtd::event_args& e) {
   control::on_resize(e);
-  if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
 }
