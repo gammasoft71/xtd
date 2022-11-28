@@ -394,6 +394,7 @@ add_sources(
   src/xtd/forms/font_picker.cpp
   src/xtd/forms/form.cpp
   src/xtd/forms/form_renderer.cpp
+  src/xtd/forms/fourtheen_segment_display.cpp
   src/xtd/forms/group_box.cpp
   src/xtd/forms/horizontal_layout_panel.cpp
   src/xtd/forms/h_scroll_bar.cpp

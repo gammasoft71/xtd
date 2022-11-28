@@ -39,7 +39,7 @@ namespace xtd {
       /// @{
       /// @brief Gets a value that indicates why the form is being closed.
       /// @return One of the xtd::forms::close_reason enumerated values.
-      forms::close_reason close_reason() const {return close_reason_;}
+      forms::close_reason close_reason() const noexcept {return close_reason_;}
       /// @}
       
     private:
