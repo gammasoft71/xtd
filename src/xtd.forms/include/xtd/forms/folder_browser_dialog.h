@@ -58,66 +58,51 @@ namespace xtd {
       /// @{
       /// @brief Gets a value that indicates whether the dialog will be automatically upgraded to enable new features.
       /// @return true if the the dialog will be automatically upgraded to enable new features; otherwise, false. The default value is true.
-      bool auto_upgrade_enable() const {return get_option(BIF_USENEWUI);}
+      bool auto_upgrade_enable() const noexcept;
       /// @brief Sets a value that indicates whether the dialog will be automatically upgraded to enable new features.
       /// @param value true if the the dialog will be automatically upgraded to enable new features; otherwise, false. The default value is true.
       /// @return Current folder_browser_dialog.
-      folder_browser_dialog& auto_upgrade_enable(bool value) {
-        set_option(BIF_USENEWUI, value);
-        return *this;
-      }
+      folder_browser_dialog& auto_upgrade_enable(bool value);
       
       /// @brief Gets the descriptive text displayed above the tree view control in the dialog box.
       /// @return The description to display. The default is an empty string ("").
       /// @remarks The description property can be used to specify additional information to the user, like instructions.
-      const xtd::ustring& description() const {return description_;}
+      const xtd::ustring& description() const noexcept;
       /// @brief Sets the descriptive text displayed above the tree view control in the dialog box.
       /// @param value The description to display. The default is an empty string ("").
       /// @return Current folder_browser_dialog.
       /// @remarks The description property can be used to specify additional information to the user, like instructions.
-      folder_browser_dialog& description(const xtd::ustring& value) {
-        description_ = value;
-        return *this;
-      }
+      folder_browser_dialog& description(const xtd::ustring& value);
       
       /// @brief Gets the root folder where the browsing starts from.
       /// @return One of the environment::special_folder values. The default is environment::special_folder::desktop.
       /// @remarks Only the specified folder and any subfolders that are beneath it will appear in the dialog box and be selectable. The selected_path property, along with root_folder, determines what the selected folder will be when the dialog box is displayed, as long as SelectedPath is an absolute path that is a subfolder of root_folder (or more accurately, points to a subfolder of the shell namespace represented by root_folder).
-      environment::special_folder root_folder() const {return root_folder_;}
+      environment::special_folder root_folder() const noexcept;
       /// @brief Sets the root folder where the browsing starts from.
       /// @param value One of the environment::special_folder values. The default is environment::special_folder::desktop.
       /// @return Current folder_browser_dialog.
       /// @remarks Only the specified folder and any subfolders that are beneath it will appear in the dialog box and be selectable. The selected_path property, along with root_folder, determines what the selected folder will be when the dialog box is displayed, as long as SelectedPath is an absolute path that is a subfolder of root_folder (or more accurately, points to a subfolder of the shell namespace represented by root_folder).
-      folder_browser_dialog& root_folder(environment::special_folder value) {
-        root_folder_ = value;
-        return *this;
-      }
+      folder_browser_dialog& root_folder(environment::special_folder value);
       /// @brief Gets the path selected by the user.
       /// @return The path of the folder first selected in the dialog box or the last folder selected by the user. The default is an empty string ("").
       /// @remarks If the selected_ath property is set before showing the dialog box, the folder with this path will be the selected folder, as long as selected_path is set to an absolute path that is a subfolder of root_folder (or more accurately, points to a subfolder of the shell namespace represented by root_folder).
       /// @remarks If the show_dialog returns OK, meaning the user clicked the OK button, the selected_path property will return a string containing the path to the selected folder. If show_dialog returns Cancel, meaning the user canceled out of the dialog box, this property will have the same value that it had prior to displaying the dialog box. If the user selects a folder that does not have a physical path (for example, My Computer), the OK button on the dialog box will be disabled.
-      const xtd::ustring& selected_path() const {return selected_path_;}
+      const xtd::ustring& selected_path() const noexcept;
       /// @brief Sets the path selected by the user.
       /// @param value The path of the folder first selected in the dialog box or the last folder selected by the user. The default is an empty string ("").
       /// @return Current folder_browser_dialog.
       /// @remarks If the selected_ath property is set before showing the dialog box, the folder with this path will be the selected folder, as long as selected_path is set to an absolute path that is a subfolder of root_folder (or more accurately, points to a subfolder of the shell namespace represented by root_folder).
       /// @remarks If the show_dialog returns OK, meaning the user clicked the OK button, the selected_path property will return a string containing the path to the selected folder. If show_dialog returns Cancel, meaning the user canceled out of the dialog box, this property will have the same value that it had prior to displaying the dialog box. If the user selects a folder that does not have a physical path (for example, My Computer), the OK button on the dialog box will be disabled.
-      folder_browser_dialog& selected_path(const xtd::ustring& value) {
-        selected_path_ = value;
-        return *this;
-      }
+      folder_browser_dialog& selected_path(const xtd::ustring& value);
       
       /// @brief Gets a value indicating whether the New Folder button appears in the folder browser dialog box.
       /// @return true if the New Folder button is shown in the dialog box; otherwise, false. The default is true.
       /// @remarks When show_new_folder_button is true, the New Folder button is visible, giving the user a chance to create a folder. When the user clicks the New Folder button, a new folder is created and the user is prompted to specify the folder name. The selected node in the tree becomes the parent of the new folder. The actual caption of the New Folder button can vary depending upon the operating system
-      bool show_new_folder_button() const {return !get_option(BIF_NONEWFOLDERBUTTON);}
+      bool show_new_folder_button() const noexcept;
       /// @brief Sets a value indicating whether the New Folder button appears in the folder browser dialog box.
       /// @param value true if the New Folder button is shown in the dialog box; otherwise, false. The default is true.
       /// @remarks When show_new_folder_button is true, the New Folder button is visible, giving the user a chance to create a folder. When the user clicks the New Folder button, a new folder is created and the user is prompted to specify the folder name. The selected node in the tree becomes the parent of the new folder. The actual caption of the New Folder button can vary depending upon the operating system
-      folder_browser_dialog& show_new_folder_button(bool value) {
-        set_option(BIF_NONEWFOLDERBUTTON, !value);
-        return *this;
-      }
+      folder_browser_dialog& show_new_folder_button(bool value);
       /// @}
       
       /// @name Methods
@@ -142,13 +127,16 @@ namespace xtd {
       /// @}
       
     private:
-      bool get_option(size_t flag) const {return (options_ & flag) == flag;}
-      void set_option(size_t flag, bool value) {options_ = value ? options_ | flag : options_ & ~flag;}
+      bool get_option(size_t flag) const noexcept;
+      void set_option(size_t flag, bool value);
       
-      xtd::ustring description_;
-      environment::special_folder root_folder_ = environment::special_folder::desktop;
-      xtd::ustring selected_path_;
-      size_t options_ =  BIF_RETURNONLYFSDIRS | BIF_NEWDIALOGSTYLE;
+      struct data {
+        xtd::ustring description;
+        environment::special_folder root_folder = environment::special_folder::desktop;
+        xtd::ustring selected_path;
+        size_t options =  BIF_RETURNONLYFSDIRS | BIF_NEWDIALOGSTYLE;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
