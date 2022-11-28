@@ -16,24 +16,40 @@ color_picker::color_picker() {
   set_can_focus(false);
 }
 
+bool color_picker::alpha_color() const noexcept {
+  return data_->alpha_color;
+}
+
+color_picker& color_picker::alpha_color(bool alpha_color) {
+  if (data_->alpha_color != alpha_color) {
+    data_->alpha_color = alpha_color;
+    post_recreate_handle();
+  }
+  return *this;
+}
+
+const drawing::color& color_picker::color() const noexcept {
+  return data_->color;
+}
+
 void color_picker::color(const drawing::color& value) {
-  if (color_ != value) {
-    color_ = value;
-    if (is_handle_created()) native::color_picker::color(handle(), color_);
-    on_color_picker_changed(color_picker_event_args(color_));
+  if (data_->color != value) {
+    data_->color = value;
+    if (is_handle_created()) native::color_picker::color(handle(), data_->color);
+    on_color_picker_changed(color_picker_event_args(data_->color));
   }
 }
 
 forms::create_params color_picker::create_params() const noexcept {
   forms::create_params create_params = control::create_params();
   create_params.class_name("colorpicker");
-  if (alpha_color_) create_params.style(create_params.style() | CC_ALPHACOLOR);
+  if (data_->alpha_color) create_params.style(create_params.style() | CC_ALPHACOLOR);
   return create_params;
 }
 
 void color_picker::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
-  native::color_picker::color(handle(), color_);
+  native::color_picker::color(handle(), data_->color);
 }
 
 void color_picker::on_color_picker_changed(const color_picker_event_args& e) {
@@ -56,6 +72,6 @@ void color_picker::wm_command_control(message& message) {
 }
 
 void color_picker::wm_command_control_selchange(message& message) {
-  color_ = native::color_picker::color(handle());
-  on_color_picker_changed(color_picker_event_args(color_));
+  data_->color = native::color_picker::color(handle());
+  on_color_picker_changed(color_picker_event_args(data_->color));
 }
