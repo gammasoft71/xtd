@@ -14,20 +14,28 @@ font_picker::font_picker() {
   control_appearance(forms::control_appearance::system);
 }
 
+const drawing::color& font_picker::color() const noexcept {
+  return data_->color;
+}
+
 control& font_picker::color(const drawing::color& value) {
-  if (color_ != value) {
-    color_ = value;
-    if (is_handle_created()) native::font_picker::color(handle(), color_);
-    on_font_picker_changed(font_picker_event_args(font_, color_));
+  if (data_->color != value) {
+    data_->color = value;
+    if (is_handle_created()) native::font_picker::color(handle(), data_->color);
+    on_font_picker_changed(font_picker_event_args(data_->font, data_->color));
   }
   return *this;
 }
 
+drawing::font font_picker::font() const noexcept {
+  return data_->font;
+}
+
 control& font_picker::font(const drawing::font& value) {
-  if (font_ != value) {
-    font_ = value;
-    if (is_handle_created()) native::font_picker::font(handle(), font_);
-    on_font_picker_changed(font_picker_event_args(font_, color_));
+  if (data_->font != value) {
+    data_->font = value;
+    if (is_handle_created()) native::font_picker::font(handle(), data_->font);
+    on_font_picker_changed(font_picker_event_args(data_->font, data_->color));
   }
   return *this;
 }
@@ -41,8 +49,8 @@ forms::create_params font_picker::create_params() const noexcept {
 void font_picker::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   if (is_handle_created()) {
-    native::font_picker::color(handle(), color_);
-    native::font_picker::font(handle(), font_);
+    native::font_picker::color(handle(), data_->color);
+    native::font_picker::font(handle(), data_->font);
   }
 }
 
@@ -66,7 +74,7 @@ void font_picker::wm_command_control(message& message) {
 }
 
 void font_picker::wm_command_control_selchange(message& message) {
-  color_ = native::font_picker::color(handle());
-  font_ = native::font_picker::font(handle());
-  on_font_picker_changed(font_picker_event_args(font_, color_));
+  data_->color = native::font_picker::color(handle());
+  data_->font = native::font_picker::font(handle());
+  on_font_picker_changed(font_picker_event_args(data_->font, data_->color));
 }

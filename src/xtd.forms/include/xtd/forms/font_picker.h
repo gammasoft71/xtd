@@ -54,7 +54,7 @@ namespace xtd {
       /// @brief Gets the color selected by the user.
       /// @return The color selected by the user. If a color is not selected, the default value is black.
       /// @remarks The color selected by the user in the color picker at run time, as defined in color structure.
-      const drawing::color& color() const {return color_;}
+      const drawing::color& color() const noexcept;
       /// @brief Sets the color selected by the user.
       /// @param color The color selected by the user. If a color is not selected.
       /// @brief This instance of control.
@@ -63,7 +63,7 @@ namespace xtd {
       
       /// @brief Gets the selected font.
       /// @return The selected font.
-      drawing::font font() const noexcept override {return font_;}
+      drawing::font font() const noexcept override;
       /// @brief Sets the selected font.
       /// @param font The selected font.
       /// @return Current control.
@@ -104,8 +104,11 @@ namespace xtd {
     private:
       void wm_command_control(message& message);
       void wm_command_control_selchange(message& message);
-      drawing::color color_;
-      drawing::font font_ = default_font();
+      struct data {
+        drawing::color color;
+        drawing::font font = xtd::drawing::system_fonts::default_font();
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
