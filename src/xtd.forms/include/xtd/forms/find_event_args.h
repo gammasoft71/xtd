@@ -41,6 +41,7 @@ namespace xtd {
       find_event_args(const find_event_args& other) {
         *data_ = *other.data_;
       }
+      
       find_event_args& operator =(const find_event_args& other) {
         *data_ = *other.data_;
         return *this;
