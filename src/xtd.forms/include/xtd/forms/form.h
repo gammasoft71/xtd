@@ -75,7 +75,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the button on the form that is clicked when the user presses the ENTER key.
       /// @return An ibutton_control that represents the button to use as the accept button for the form.
-      std::optional<std::reference_wrapper<ibutton_control>> accept_button() const {return accept_button_;}
+      std::optional<std::reference_wrapper<ibutton_control>> accept_button() const noexcept;
       /// @brief Sets the button on the form that is clicked when the user presses the ENTER key.
       /// @param value An ibutton_control that represents the button to use as the accept button for the form.
       /// @return Current form.
@@ -87,11 +87,11 @@ namespace xtd {
       
       /// @brief Gets the currently active form for this application.
       /// @return A form that represents the currently active form, or std::optional with no value if there is no active form.
-      static std::optional<std::reference_wrapper<form>> active_form() {return active_form_;}
+      static std::optional<std::reference_wrapper<form>> active_form() noexcept;
       
       /// @brief Gets the mode by which the form automatically resizes itself.
       /// @return An auto_size_mode enumerated value. The default is grow_only.
-      virtual forms::auto_size_mode auto_size_mode() const {return get_auto_size_mode();}
+      virtual forms::auto_size_mode auto_size_mode() const noexcept;
       /// @brief Sets the mode by which the form automatically resizes itself.
       /// @param value An auto_size_mode enumerated value. The default is grow_only.
       /// @return Current form.
@@ -99,7 +99,7 @@ namespace xtd {
       
       /// @brief Gets the button control that is clicked when the user presses the ESC key.
       /// @return An ibutton_control that represents the cancel button for the form.
-      std::optional<std::reference_wrapper<ibutton_control>> cancel_button() const {return cancel_button_;}
+      std::optional<std::reference_wrapper<ibutton_control>> cancel_button() const noexcept;
       /// @brief Gets the button control that is clicked when the user presses the ESC key.
       /// @param value  An ibutton_control that represents the cancel button for the form.
       /// @return Current form.
@@ -111,7 +111,7 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether a close box is displayed in the caption bar of the form.
       /// @return true if the form displays a close box in the upper-left corner of the form; otherwise, false. The default is true.
-      virtual bool close_box() const {return close_box_;}
+      virtual bool close_box() const noexcept;
       /// @brief Sets a value indicating whether a close box is displayed in the caption bar of the form.
       /// @param value true if the form displays a close box in the upper-left corner of the form; otherwise, false. The default is true.
       /// @return Current form.
@@ -119,7 +119,7 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether a control box is displayed in the caption bar of the form.
       /// @return true if the form displays a control box in the upper-right corner of the form; otherwise, false. The default is true.
-      virtual bool control_box() const {return control_box_;}
+      virtual bool control_box() const noexcept;
       /// @brief Sets a value indicating whether a control box is displayed in the caption bar of the form.
       /// @param value true if the form displays a control box in the upper-right corner of the form; otherwise, false. The default is true.
       /// @return Current form.
@@ -127,7 +127,7 @@ namespace xtd {
             
       /// @brief Gets the dialog result for the form.
       /// @return A dialog_result that represents the result of the form when used as a dialog box.
-      virtual forms::dialog_result dialog_result() const {return dialog_result_;}
+      virtual forms::dialog_result dialog_result() const noexcept;
       /// @brief Sets the dialog result for the form.
       /// @param value A dialog_result that represents the result of the form when used as a dialog box.
       /// @return Current form.
@@ -140,31 +140,31 @@ namespace xtd {
 
       /// @brief Gets the border style of the form.
       /// @return A form_border_style that represents the style of border to display for the form. The default is form_border_style::sizable.
-      virtual forms::form_border_style form_border_style() const {return form_border_style_;}
+      virtual forms::form_border_style form_border_style() const noexcept;
       /// @brief Gets the border style of the form.
       /// @param value A form_border_style that represents the style of border to display for the form. The default is form_border_style::sizable.
       /// @return Current form.
       virtual form& form_border_style(forms::form_border_style value);
       
-      /// @brief Gets the icon for the form.
-      /// @return An icon that represents the icon for the form.
-      virtual const xtd::drawing::icon& icon() const {return icon_;}
-      /// @brief Sets the icon for the form.
-      /// @param value An icon that represents the icon for the form.
-      /// @return Current form.
-      virtual form& icon(const xtd::drawing::icon& value);
-      
       /// @brief Gets a value indicating whether a Help button should be displayed in the caption box of the form.
       /// @return true to display a Help button in the form's caption bar; otherwise, false. The default is false.
-      virtual bool help_button() const {return help_button_;}
+      virtual bool help_button() const;
       /// @brief Sets a value indicating whether a Help button should be displayed in the caption box of the form.
       /// @param value true to display a Help button in the form's caption bar; otherwise, false. The default is false.
       /// @return Current form.
       virtual form& help_button(bool value);
       
+      /// @brief Gets the icon for the form.
+      /// @return An icon that represents the icon for the form.
+      virtual const xtd::drawing::icon& icon() const noexcept;
+      /// @brief Sets the icon for the form.
+      /// @param value An icon that represents the icon for the form.
+      /// @return Current form.
+      virtual form& icon(const xtd::drawing::icon& value);
+
       /// @brief Gets a value indicating whether the Maximize button is displayed in the caption bar of the form.
       /// @return true to display a Maximize button for the form; otherwise, false. The default is true.
-      virtual bool maximize_box() const {return maximize_box_;}
+      virtual bool maximize_box() const noexcept;
       /// @brief Sets a value indicating whether the Maximize button is displayed in the caption bar of the form.
       /// @param value true to display a Maximize button for the form; otherwise, false. The default is true.
       /// @return Current form.
@@ -172,7 +172,7 @@ namespace xtd {
       
       /// @brief Gets the main_menu that is displayed in the form.
       /// @return A main_menu that represents the menu to display in the form.
-      virtual std::optional<std::reference_wrapper<forms::main_menu>> menu() const {return menu_;}
+      virtual std::optional<std::reference_wrapper<forms::main_menu>> menu() const noexcept;
       /// @brief Sets the main_menu that is displayed in the form.
       /// @param value A main_menu that represents the menu to display in the form.
       /// @return Current form.
@@ -184,7 +184,7 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the Minimize button is displayed in the caption bar of the form.
       /// @return true to display a Minimize button for the form; otherwise, false. The default is true.
-      virtual bool minimize_box() const {return minimize_box_;}
+      virtual bool minimize_box() const noexcept;
       /// @brief Sets a value indicating whether the Minimize button is displayed in the caption bar of the form.
       /// @param value true to display a Minimize button for the form; otherwise, false. The default is true.
       /// @return Current form.
@@ -192,11 +192,18 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether this form is displayed modally.
       /// @return true if the form is displayed modally; otherwise, false.
-      bool modal() const {return get_state(state::modal);}
+      bool modal() const noexcept;
       
+      /// @brief Gets form opacity.
+      /// @return A double-precision value between 0.0 and 1.0 that represent the form opacity.
+      virtual double opacity() const noexcept;
+      /// @brief Sets form opacity.
+      /// @param opacity A double-precision value between 0.0 and 1.0 that represent the form opacity.
+      virtual form& opacity(double opacity);
+
       /// @brief Gets the form that owns this form.
       /// @return A form that represents the form that is the owner of this form.
-      virtual std::optional<control_ref> owner() const;
+      virtual std::optional<control_ref> owner() const noexcept;
       /// @brief Sets the form that owns this form.
       /// @param value A form that represents the form that is the owner of this form.
       /// @return Current form.
@@ -213,7 +220,7 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether an icon is displayed in the caption bar of the form.
       /// @return true if the form displays an icon in the caption bar; otherwise, false. The default is true.
-      virtual bool show_icon() const {return show_icon_;}
+      virtual bool show_icon() const noexcept;
       /// @brief Sets a value indicating whether an icon is displayed in the caption bar of the form.
       /// @param value true if the form displays an icon in the caption bar; otherwise, false. The default is true.
       /// @return Current form.
@@ -224,7 +231,7 @@ namespace xtd {
       /// @remarks If a form is parented within another form, the parented form is not displayed in the Windows taskbar.
       /// @remarks You can use this property to prevent users from selecting your form through the Windows taskbar. For example, if you display a Find and Replace tool window in your application, you might want to prevent that window from being selected through the Windows taskbar because you would need both the application's main window and the Find and Replace tool window displayed in order to process searches appropriately.
       /// @remarks You will often wish to use this property when creating a form with the xtd::forms::form_border_style::fixed_tool_window style. Setting the xtd::forms::form_border_style::fixed_tool_window style does not alone guarantee that a window will not appear in the taskbar.
-      virtual bool show_in_taskbar() const {return show_in_taskbar_;}
+      virtual bool show_in_taskbar() const noexcept;
       /// @brief Sets a value indicating whether the form is displayed in the Windows taskbar.
       /// @param value true to display the form in the Windows taskbar at run time; otherwise, false. The default is true.
       /// @return Current form.
@@ -235,7 +242,7 @@ namespace xtd {
       
       /// @brief Gets the starting position of the form at run time.
       /// @return A form_start_position that represents the starting position of the form.
-      virtual form_start_position start_position() const {return start_position_;}
+      virtual form_start_position start_position() const noexcept;
       /// @brief Sets the starting position of the form at run time.
       /// @param value A form_start_position that represents the starting position of the form.
       /// @return Current form.
@@ -243,7 +250,7 @@ namespace xtd {
       
       /// @brief Gets the status_bar that is displayed in the form.
       /// @return A status_bar that represents the status bar to display in the form.
-      virtual std::optional<std::reference_wrapper<forms::status_bar>> status_bar() const {return status_bar_;}
+      virtual std::optional<std::reference_wrapper<forms::status_bar>> status_bar() const noexcept;
       /// @brief Sets the status_bar that is displayed in the form.
       /// @param value A status_bar that represents the status bar to display in the form.
       /// @return Current form.
@@ -255,7 +262,7 @@ namespace xtd {
       
       /// @brief Gets the tool_bar that is displayed in the form.
       /// @return A tool_bar that represents the tool bar to display in the form.
-      virtual std::optional<std::reference_wrapper<forms::tool_bar>> tool_bar() const {return tool_bar_;}
+      virtual std::optional<std::reference_wrapper<forms::tool_bar>> tool_bar() const noexcept;
       /// @brief Sets the tool_bar that is displayed in the form.
       /// @param value A tool_bar that represents the tool bar to display in the form.
       /// @return Current form.
@@ -269,7 +276,7 @@ namespace xtd {
       /// @return true to display the form as a top-level window; otherwise, false. The default is true.
       /// @remarks A Multiple-document interface (MDI) parent form must be a top-level window. So set to false has no effect.
       /// @remarks A top-level form is a window that has no parent form, or whose parent form is the desktop window. Top-level windows are typically used as the main form in an application.
-      virtual bool top_level() const {return get_state(state::top_level);}
+      virtual bool top_level() const noexcept;
       /// @brief Sets a value indicating whether to display the form as a top-level window.
       /// @return true to display the form as a top-level window; otherwise, false. The default is true.
       /// @remarks A Multiple-document interface (MDI) parent form must be a top-level window. So set to false has no effect.
@@ -278,18 +285,11 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the form should be displayed as a topmost form.
       /// @return true to display the form as a topmost form; otherwise, false. The default is false.
-      virtual bool top_most() const {return top_most_;}
+      virtual bool top_most() const noexcept;
       /// @brief Sets a value indicating whether the form should be displayed as a topmost form.
       /// @param value true to display the form as a topmost form; otherwise, false. The default is false.
       /// @return Current form.
       virtual form& top_most(bool value);
-      
-      /// @brief Gets form opacity.
-      /// @return A double-precision value between 0.0 and 1.0 that represent the form opacity.
-      virtual double opacity() const {return opacity_;}
-      /// @brief Sets form opacity.
-      /// @param opacity A double-precision value between 0.0 and 1.0 that represent the form opacity.
-      virtual form& opacity(double opacity);
       
       using container_control::visible;
       /// @brief Sets a value indicating whether the control and all its child controls are displayed.
@@ -299,7 +299,7 @@ namespace xtd {
       
       /// @brief Gets a value that indicates whether form is minimized, maximized, or normal.
       /// @return A form_window_state that represents whether form is minimized, maximized, full_screen, or normal. The default is form_window_state::normal.
-      virtual form_window_state window_state() const {return window_state_;}
+      virtual form_window_state window_state() const noexcept;
       /// @brief Sets a value that indicates whether form is minimized, maximized, or normal.
       /// @param value A form_window_state that represents whether form is minimized, maximized, full_screen, or normal. The default is form_window_state::normal.
       /// @return Current form.
@@ -382,7 +382,7 @@ namespace xtd {
       
       /// @{
       forms::create_params create_params() const noexcept override;
-      drawing::size default_size() const noexcept override {return {300, 300};}
+      drawing::size default_size() const noexcept override;
       /// @}
 
       /// @name Protected methods
@@ -390,11 +390,11 @@ namespace xtd {
       /// @{
       /// @brief Raises the form::activated event.
       /// @param e An event_args that contains the event data.
-      virtual void on_activated(const event_args& e) {activated(*this, e);}
+      virtual void on_activated(const event_args& e);
       
       /// @brief Raises the form::deactivate event.
       /// @param e An event_args that contains the event data.
-      virtual void on_deactivate(const event_args& e) {deactivate(*this, e);}
+      virtual void on_deactivate(const event_args& e);
       
       void on_handle_created(const event_args& e) override;
       void on_handle_destroyed(const event_args& e) override;
@@ -405,7 +405,7 @@ namespace xtd {
       
       /// @brief Raises the form::form_closing event.
       /// @param e A form_closing_event_args that contains the event data.
-      virtual void on_form_closing(form_closing_event_args& e) {form_closing(*this, e);}
+      virtual void on_form_closing(form_closing_event_args& e);
       
       void on_layout(const event_args& e) override;
       void on_location_changed(const event_args& e) override;
@@ -438,30 +438,33 @@ namespace xtd {
       void wm_recreate(message& message);
       void wm_syscolor_change(message& message);
 
-      std::optional<std::reference_wrapper<ibutton_control>> accept_button_;
-      std::optional<std::reference_wrapper<ibutton_control>> cancel_button_;
+      struct data {
+        std::optional<std::reference_wrapper<ibutton_control>> accept_button;
+        std::optional<std::reference_wrapper<ibutton_control>> cancel_button;
+        bool closed = false;
+        bool close_box = true;
+        bool control_box = true;
+        forms::dialog_result dialog_result = forms::dialog_result::none;
+        forms::form_border_style form_border_style = form_border_style::sizable;
+        bool help_button = false;
+        xtd::drawing::icon icon = xtd::drawing::icon::empty;
+        bool maximize_box = true;
+        std::optional<std::reference_wrapper<forms::main_menu>> menu;
+        bool minimize_box = true;
+        double opacity = 1.0;
+        const control* owner = nullptr;
+        intptr_t parent_before_show_dialog = 0;
+        std::shared_ptr<screen> previous_screen;
+        bool show_icon = true;
+        bool show_in_taskbar = true;
+        form_start_position start_position = form_start_position::windows_default_location;
+        std::optional<std::reference_wrapper<forms::status_bar>> status_bar;
+        std::optional<std::reference_wrapper<forms::tool_bar>> tool_bar;
+        bool top_most = false;
+        form_window_state window_state = form_window_state::normal;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
       static std::optional<std::reference_wrapper<form>> active_form_;
-      bool closed_ = false;
-      bool close_box_ = true;
-      bool control_box_ = true;
-      forms::dialog_result dialog_result_ = forms::dialog_result::none;
-      forms::form_border_style form_border_style_ = form_border_style::sizable;
-      bool help_button_ = false;
-      xtd::drawing::icon icon_ = xtd::drawing::icon::empty;
-      bool maximize_box_ = true;
-      std::optional<std::reference_wrapper<forms::main_menu>> menu_;
-      bool minimize_box_ = true;
-      double opacity_ = 1.0;
-      const control* owner_ = nullptr;
-      intptr_t parent_before_show_dialog_ = 0;
-      std::shared_ptr<screen> previous_screen_;
-      bool show_icon_ = true;
-      bool show_in_taskbar_ = true;
-      form_start_position start_position_ = form_start_position::windows_default_location;
-      std::optional<std::reference_wrapper<forms::status_bar>> status_bar_;
-      std::optional<std::reference_wrapper<forms::tool_bar>> tool_bar_;
-      bool top_most_ = false;
-      form_window_state window_state_ = form_window_state::normal;
     };
   }
 }

@@ -43,8 +43,8 @@ void application_context::exit_thread_core() {
 
 void application_context::on_main_form_closed(object& sender, const event_args& e) {
   if (!data_->main_form->visible()) {
-    if (!data_->main_form->closed_) data_->main_form->close();
-    if (data_->main_form->closed_) {
+    if (!data_->main_form->data_->closed) data_->main_form->close();
+    if (data_->main_form->data_->closed) {
       data_->main_form->handle_destroyed -= {*this, &application_context::on_main_form_closed};
       exit_thread_core();
     }
