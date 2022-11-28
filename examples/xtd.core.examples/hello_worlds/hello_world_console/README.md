@@ -16,9 +16,6 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output (with colors)
+# Output
 
-```
-Hello, World!
-```
-
+![Screenshot](../../../../docs/pictures/examples/hello_world_console.png)
