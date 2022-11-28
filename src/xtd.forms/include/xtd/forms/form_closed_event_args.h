@@ -39,7 +39,7 @@ namespace xtd {
       /// @brief Gets a value that indicates why the form was closed.
       /// @return One of the close_reason enumerated values.
       /// @remarks A Form can be closed because of a variety of reasons, both user-initiated and programmatic. The close_reason property indicates the reason for the closure.
-      forms::close_reason close_reason() const {return close_reason_;}
+      forms::close_reason close_reason() const noexcept {return close_reason_;}
       /// @}
       
     private:

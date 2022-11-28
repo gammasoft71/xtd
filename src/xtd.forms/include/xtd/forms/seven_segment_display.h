@@ -59,7 +59,7 @@ namespace xtd {
       /// @brief Gets background segment color.
       /// @return A xtd::drawing color that represent the background segment color.
       /// @remarks Do not confuse back_segment_color and back_color. Background segment color is the color when segment is off.
-      virtual drawing::color back_segment_color() {return back_segment_color_.value_or(fore_color());}
+      virtual drawing::color back_segment_color() const noexcept {return back_segment_color_.value_or(fore_color());}
       /// @brief Sets background segment color.
       /// @param value A xtd::drawing color that represent the background segment color.
       /// @return Current seven_segment_display.
@@ -74,7 +74,7 @@ namespace xtd {
       
       /// @brief Gets the background segment opacity.
       /// @return A double-precision value between 0.0 and 1.0 that represent the background segment opacity.
-      virtual double back_segment_opacity() const {return back_segment_opacity_;}
+      virtual double back_segment_opacity() const noexcept {return back_segment_opacity_;}
       /// @brief Sets the background segment opacity.
       /// @param value A double-precision value between 0.0 and 1.0 that represent the background segment opacity.
       /// @exception xtd::argument_out_of_range_exception if value less than 0.0 or greater than 1.0.
@@ -90,7 +90,7 @@ namespace xtd {
             
       /// @brief Gets a value indicate if background segments are shown.
       /// @return true if background segments are shown; otherwise false
-      virtual bool show_back_segment() const {return show_back_segment_;}
+      virtual bool show_back_segment() const noexcept {return show_back_segment_;}
       /// @brief Sets a value indicate if background segments are shown.
       /// @param value true if background segments are shown; otherwise false
       /// @return Current seven_segment_display.
@@ -104,7 +104,7 @@ namespace xtd {
       
       /// @brief Gets segment style.
       /// @return One of xtd::forms::segment_style values. The default is xtd::forms::segment_style::standard.
-      virtual forms::segment_style segment_style() const {return segment_style_;}
+      virtual forms::segment_style segment_style() const noexcept {return segment_style_;}
       /// @brief Sets segment style.
       /// @param value One of xtd::forms::segment_style values. The default is xtd::forms::segment_style::standard.
       /// @return Current seven_segment_display.
@@ -118,7 +118,7 @@ namespace xtd {
       
       /// @brief Gets thickness of segment.
       /// @return A int32_t that represent the segment thickness.
-      virtual int32_t thickness() const {return thickness_.value_or(size().height() < 10 ? 1 : (size().height() / 10 + ((size().height() / 10) % 2 ? 0 : 1)));}
+      virtual int32_t thickness() const noexcept {return thickness_.value_or(size().height() < 10 ? 1 : (size().height() / 10 + ((size().height() / 10) % 2 ? 0 : 1)));}
       /// @brief Sets thickness of segment.
       /// @param value A int32_t that represent the segment thickness.
       /// @return Current seven_segment_display.
@@ -132,7 +132,7 @@ namespace xtd {
       
       /// @brief Gets seven_segment_display value.
       /// @return A xtd::forms::segments combination that represent seven_segment_display.
-      virtual forms::segments value() const {return value_;}
+      virtual forms::segments value() const noexcept {return value_;}
       /// @brief Sets seven_segment_display value.
       /// @param value A xtd::forms::segments combination that represent seven_segment_display.
       /// @return Current seven_segment_display.
@@ -150,7 +150,7 @@ namespace xtd {
       /// @{
       /// @brief Gets if specified xtd::forms::segments combination is on.
       /// @return true if xtd::forms::segments combination is on; otherwise false.
-      virtual bool get_segments(forms::segments segment) const {return (value_ & segment) == segment;}
+      virtual bool get_segments(forms::segments segment) const noexcept {return (value_ & segment) == segment;}
       /// @brief Sets specified xtd::forms::segments combination to on.
       /// @param segment A xtd::forms::segments combination to set.
       /// @param on true to set to on; otherwise false.
