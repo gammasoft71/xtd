@@ -3,6 +3,15 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+create_params::create_params(const create_params& other) {
+  *data_ = *other.data_;
+}
+
+create_params& create_params::operator =(create_params& other) {
+  *data_ = *other.data_;
+  return *this;
+}
+
 const xtd::ustring& create_params::caption() const noexcept {
   return data_->caption;
 }

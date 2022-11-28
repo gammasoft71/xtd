@@ -53,7 +53,8 @@ namespace xtd {
       /// @}
       
       /// @cond
-      cursor(const cursor& value) = default;
+      cursor(const cursor& value);
+      cursor& operator =(const cursor& value);
       ~cursor();
       /// @endcond
       
