@@ -103,6 +103,7 @@ namespace xtd {
       emoticon(const emoticon& other) {
         *data_ = *other.data_;
       }
+      
       emoticon& operator =(const emoticon& other) {
         *data_ = *other.data_;
         return *this;
