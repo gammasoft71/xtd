@@ -30,6 +30,8 @@ namespace xtd {
     public:
       /// @cond
       country() = default;
+      country(const country& other);
+      country& operator =(const country& other);
       bool operator ==(const country& value) const noexcept;
       bool operator !=(const country& value) const noexcept;
       /// @endcond
