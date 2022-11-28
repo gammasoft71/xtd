@@ -40,7 +40,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether the help event was handled.
       /// @return true if the event is handled; otherwise, false. The default is false.
       /// @remarks If you do not set this property to true the event will be passed to Windows for additional processing.
-      bool handled() const {return handled_;}
+      bool handled() const noexcept {return handled_;}
       /// @brief Sets a value indicating whether the help event was handled.
       /// @param handled true if the event is handled; otherwise, false. The default is false.
       /// @remarks If you do not set this property to true the event will be passed to Windows for additional processing.
@@ -49,7 +49,7 @@ namespace xtd {
       /// @brief Gets the screen coordinates of the mouse pointer.
       /// @return A xtd::drawing::point representing the screen coordinates of the mouse pointer.
       /// @remarks You can use this information to provide help based on the position of the mouse pointer.
-      xtd::drawing::point mouse_pos() const {return mouse_pos_;}
+      xtd::drawing::point mouse_pos() const noexcept {return mouse_pos_;}
       /// @}
       
     private:

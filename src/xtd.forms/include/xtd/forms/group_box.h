@@ -60,7 +60,7 @@ namespace xtd {
       /// @{
       /// @brief Gets how the group_box behaves when its auto_size property is enabled
       /// @return One of the xtd::forms::auto_size_mode values. The default is xtd::forms::auto_size_mode::grow_only.
-      virtual forms::auto_size_mode auto_size_mode() const {return get_auto_size_mode();}
+      virtual forms::auto_size_mode auto_size_mode() const noexcept;
       /// @brief Sets how the group_box behaves when its auto_size property is enabled
       /// @param value One of the xtd::forms::auto_size_mode values. The default is xtd::forms::auto_size_mode::grow_only.
       /// @return Current group_box.
@@ -71,7 +71,7 @@ namespace xtd {
       
       /// @brief Gets the flat style appearance of the xtd::forms::group_box control.
       /// @return One of the xtd::forms::flat_style values. The default value is xtd::forms::flat_style::standard.
-      virtual xtd::forms::flat_style flat_style() const {return flat_style_;}
+      virtual xtd::forms::flat_style flat_style() const noexcept;
       /// @brief Sets the flat style appearance of the xtd::forms::group_box control.
       /// @param flat_style One of the xtd::forms::flat_style values. The default value is xtd::forms::flat_style::standard.
       virtual xtd::forms::group_box& flat_style(xtd::forms::flat_style flat_style);
@@ -91,10 +91,13 @@ namespace xtd {
       void on_font_changed(const xtd::event_args& e) override;
       void on_resize(const xtd::event_args& e) override;
       void on_text_changed(const xtd::event_args& e) override;
-      /// }
+      /// @}
       
     private:
-      xtd::forms::flat_style flat_style_ = xtd::forms::flat_style::system;
+      struct data {
+        xtd::forms::flat_style flat_style = xtd::forms::flat_style::system;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
