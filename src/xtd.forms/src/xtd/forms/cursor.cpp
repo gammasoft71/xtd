@@ -38,15 +38,6 @@ cursor::cursor(const bitmap& bitmap, const xtd::drawing::point& hot_spot) {
   data_->size_ = native::cursor::size(data_->handle_);
 }
 
-cursor::cursor(const cursor& value) {
-  *data_ = *value.data_;
-}
-
-cursor& cursor::operator =(const cursor& value) {
-  *data_ = *value.data_;
-  return *this;
-}
-
 cursor::~cursor() {
   if (data_.use_count() == 1 && data_->handle_ && data_->destroyable_)
     native::cursor::destroy(data_->handle_);
