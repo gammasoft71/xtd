@@ -53,27 +53,21 @@ namespace xtd {
       /// @name Properties
       
       /// @{
+      /// @brief Gets a value indicating whether the dialog box  shows alpha values and an opacity selector (slider).
+      /// @return true if the dialog box  shows alpha values and an opacity selector (slider); otherwise, false. The default is true.
+      bool alpha_color() const noexcept;
+      /// @brief Sets a value indicating whether the user can use the dialog box to define custom colors.
+      /// @param alpha_color true if the dialog box  shows alpha values and an opacity selector (slider); otherwise, false.
+      color_picker& alpha_color(bool alpha_color);
+
       /// @brief Gets the color selected by the user.
       /// @return The color selected by the user. If a color is not selected, the default value is black.
       /// @remarks The color selected by the user in the color picker at run time, as defined in color structure.
-      const drawing::color& color() const {return color_;}
+      const drawing::color& color() const noexcept;
       /// @brief Sets the color selected by the user.
       /// @param color The color selected by the user. If a color is not selected.
       /// @remarks The color selected by the user in the color picker at run time, as defined in color structure.
       void color(const drawing::color& color);
-      
-      /// @brief Gets a value indicating whether the dialog box  shows alpha values and an opacity selector (slider).
-      /// @return true if the dialog box  shows alpha values and an opacity selector (slider); otherwise, false. The default is true.
-      bool alpha_color() const {return alpha_color_;}
-      /// @brief Sets a value indicating whether the user can use the dialog box to define custom colors.
-      /// @param alpha_color true if the dialog box  shows alpha values and an opacity selector (slider); otherwise, false.
-      color_picker& alpha_color(bool alpha_color) {
-        if (alpha_color_ != alpha_color) {
-          alpha_color_ = alpha_color;
-          post_recreate_handle();
-        }
-        return *this;
-      }
       /// @}
       
       /// @name Events
@@ -106,8 +100,12 @@ namespace xtd {
     private:
       void wm_command_control(message& message);
       void wm_command_control_selchange(message& message);
-      drawing::color color_ = drawing::color::white;
-      bool alpha_color_ = true;
+      
+      struct data {
+        drawing::color color = drawing::color::white;
+        bool alpha_color = true;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
