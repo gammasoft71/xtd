@@ -74,25 +74,25 @@ namespace xtd {
       /// @brief Gets a value representing the window handle for the menu.
       /// @return The HMENU value of the menu.
       /// @remarks You can use this property to obtain the handle to the menu to perform special operations to the menu outside of the functionality provided by this class or its derived classes.
-      intptr_t handle() const {return data_->handle_;}
+      intptr_t handle() const noexcept;
       
       /// @brief Gets a value indicating whether this menu contains any menu items.
       /// @return true if this menu contains menu_item objects; otherwise, false. The default is false.
-      virtual bool is_parent() const;
+      virtual bool is_parent() const noexcept;
       
       /// @brief Gets a value indicating the menu_item that is used to display a list of multiple document interface (MDI) child forms.
       /// @return A MenuItem that represents the menu item displaying a list of MDI child forms that are open in the application.
       /// @remarks You can use this property to determine whether a menu_item has been specified to display the list of open child windows in an MDI application. To use a specific menu_item as an MDI list, set the mdi_list property in the menu_item to be used.
-      const menu_item& mdi_list_item() const;
+      const menu_item& mdi_list_item() const noexcept;
       
       /// @brief Gets a value indicating the collection of menu_item objects associated with the menu.
       /// @return A menu::menu_item_collection that represents the list of menu_item objects stored in the menu.
       /// @remarks You can use this property to obtain a reference to the list of menu items that are currently stored in the menu. For main_menu and context_menu objects, the menu_items property contains the entire menu structure in the control. For the menu_item class, the menu_items property contains the list of submenu items associated with the menu_item. With the reference to the collection of menu items for the menu (provided by this property), you can add and remove menu items, determine the total number of menu items, and clear the list of menu items from the collection. For more information on maintaining the menu item collection for a menu, see the xtd::forms::menu::menu_item_collection documentation.
-      const menu_item_collection& menu_items() const {return data_->menu_items_;}
+      const menu_item_collection& menu_items() const noexcept;
       /// @brief Gets a value indicating the collection of menu_item objects associated with the menu.
       /// @return A menu::menu_item_collection that represents the list of menu_item objects stored in the menu.
       /// @remarks You can use this property to obtain a reference to the list of menu items that are currently stored in the menu. For main_menu and context_menu objects, the menu_items property contains the entire menu structure in the control. For the menu_item class, the menu_items property contains the list of submenu items associated with the menu_item. With the reference to the collection of menu items for the menu (provided by this property), you can add and remove menu items, determine the total number of menu items, and clear the list of menu items from the collection. For more information on maintaining the menu item collection for a menu, see the xtd::forms::menu::menu_item_collection documentation.
-      menu_item_collection& menu_items() {return data_->menu_items_;}
+      menu_item_collection& menu_items() noexcept;
       /// @brief Sets a value indicating the collection of menu_item objects associated with the menu.
       /// @param value A menu::menu_item_collection that represents the list of menu_item objects stored in the menu.
       /// @return Current menu class.
@@ -106,27 +106,21 @@ namespace xtd {
       /// @brief Gets the name of the menu.
       /// @return A string representing the name.
       /// @remarks At design time, this property is set to the programmatic identifier of the control. However, this property has no bearing on the control at run time.
-      const xtd::ustring& name() const {return data_->name_;}
+      const xtd::ustring& name() const noexcept;
       
       /// @brief Sets the name of the menu.
       /// @param value A string representing the name.
       /// @return Current menu class.
       /// @remarks At design time, this property is set to the programmatic identifier of the control. However, this property has no bearing on the control at run time.
-      menu& name(const xtd::ustring& value) {
-        data_->name_ = value;
-        return *this;
-      }
+      menu& name(const xtd::ustring& value);
       
       /// @brief Gets user-defined data associated with the control.
       /// @return An object representing the data.
-      std::any tag() const {return data_->tag_;}
+      std::any tag() const noexcept;
       /// @brief Sets user-defined data associated with the control.
       /// @param value An object representing the data.
       /// @return Current menu class.
-      menu& tag(std::any value) {
-        data_->tag_ = value;
-        return *this;
-      }
+      menu& tag(std::any value);
       /// @}
       
       /// @name Methods
@@ -138,12 +132,12 @@ namespace xtd {
       /// @brief Gets the context_menu that contains this menu.
       /// @return The context_menu that contains this menu. The default is no value.
       /// @remarks This method allows you to obtain a reference to the context_menu that this menu is contained in. This property returns no value if the menu is not contained in a context_menu. This can occur if the menu is contained in a menu_item or main_menu, or if the menu is not contained in any menu. You can use this property to determine whether a menu is currently being used, and also to determine where.
-      std::optional<std::reference_wrapper<context_menu>> get_context_menu() const;
+      std::optional<std::reference_wrapper<context_menu>> get_context_menu() const noexcept;
       
       /// @brief Gets the main_menu that contains this menu.
       /// @return The main_menu that contains this menu. The default is has no value.
       /// @remarks This method allows you to obtain a reference to the main_menu that this menu is contained in. This property returns no value if the menu is not contained in a main_menu. This can occur if the menu is contained in a menu_item or context_menu, or if the menu is not contained in any menu. You can use this property to determine whether a menu is currently being used, and also to determine where.
-      std::optional<std::reference_wrapper<main_menu>> get_main_menu() const;
+      std::optional<std::reference_wrapper<main_menu>> get_main_menu() const noexcept;
       
       /// @brief Merges the MenuItem objects of one menu with the current menu.
       /// @param menu_src The menu whose menu items are merged with the menu items of the current menu.
@@ -191,10 +185,10 @@ namespace xtd {
       
       /// @brief Destroys the handle to the Menu.
       /// @param handle A handle to the menu.
-      virtual void destroy_menu_handle(intptr_t handle) {}
+      virtual void destroy_menu_handle(intptr_t handle);
       
-      virtual void on_item_added(size_t pos, menu_item_ref item) {}
-      virtual void on_item_removed(size_t pos, menu_item_ref item) {}
+      virtual void on_item_added(size_t pos, menu_item_ref item);
+      virtual void on_item_removed(size_t pos, menu_item_ref item);
       /// @}
       
       /// @cond

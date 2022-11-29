@@ -255,11 +255,11 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating the Windows identifier for this menu item.
       /// @return The Windows identifier for this menu item.
-      intptr_t menu_id() const;
+      intptr_t menu_id() const noexcept;
       
       /// @brief Gets a value indicating whether a check mark appears next to the text of the menu item.
       /// @return true if there is a check mark next to the menu item; otherwise, false. The default is false.
-      bool checked() const {return checked_;}
+      bool checked() const noexcept;
       /// @brief Sets a value indicating whether a check mark appears next to the text of the menu item.
       /// @param value true if there is a check mark next to the menu item; otherwise, false. The default is false.
       /// @return Current menu_item.
@@ -267,17 +267,17 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the menu item is enabled.
       /// @return true if the menu item is enabled; otherwise, false. The default is true.
-      bool enabled() const {return enabled_;}
+      bool enabled() const noexcept;
       /// @brief Gets a value indicating whether the menu item is enabled.
       /// @param value true if the menu item is enabled; otherwise, false. The default is true.
       /// @return Current menu_item.
       menu_item& enabled(bool value);
       
-      bool is_parent() const override;
+      bool is_parent() const noexcept override;
       
       /// @brief Gets a value that represents the kind of menu item.
       /// @return One of the xtd::forms::menu_item_kind value.
-      xtd::forms::menu_item_kind kind() const {return kind_;}
+      xtd::forms::menu_item_kind kind() const noexcept;
       /// @brief Sets a value that represents the kind of menu item.
       /// @param value One of the xtd::forms::menu_item_kind value.
       /// @return Current menu_item.
@@ -285,7 +285,7 @@ namespace xtd {
       
       /// @brief Gets a value indicating the shortcut key associated with the menu item.
       /// @return One of the xtd::forms::shortcut values. The default is xtd::forms::shortcut::none.
-      xtd::forms::shortcut shortcut() const {return shortcut_;}
+      xtd::forms::shortcut shortcut() const noexcept;
       /// @brief Sets a value indicating the shortcut key associated with the menu item.
       /// @param value One of the xtd::forms::shortcut values. The default is xtd::forms::shortcut::none.
       /// @return Current menu_item.
@@ -295,7 +295,7 @@ namespace xtd {
       /// @return The text caption of the menu item.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
-      const xtd::ustring& text() const {return text_;}
+      const xtd::ustring& text() const noexcept;
       /// @brief Sets a value indicating the caption of the menu item.
       /// @param value The text caption of the menu item.
       /// @return Current menu_item.

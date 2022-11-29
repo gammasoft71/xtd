@@ -110,12 +110,8 @@ menu_item::menu_item(const xtd::ustring& text, const std::initializer_list<const
     data_->menu_items_.push_back(menu_item_ref(const_cast<menu_item&>(item.get())));
 }
 
-menu_item& menu_item::enabled(bool value) {
-  if (enabled_ != value) {
-    enabled_ = value;
-    if (handle()) native::menu_item::enabled(handle(), enabled_);
-  }
-  return *this;
+bool menu_item::checked() const noexcept {
+  return checked_;
 }
 
 menu_item& menu_item::checked(bool value) {
@@ -126,8 +122,24 @@ menu_item& menu_item::checked(bool value) {
   return *this;
 }
 
-bool menu_item::is_parent() const {
+bool menu_item::enabled() const noexcept {
+  return enabled_;
+}
+
+menu_item& menu_item::enabled(bool value) {
+  if (enabled_ != value) {
+    enabled_ = value;
+    if (handle()) native::menu_item::enabled(handle(), enabled_);
+  }
+  return *this;
+}
+
+bool menu_item::is_parent() const noexcept {
   return is_parent_ || menu::is_parent();
+}
+
+xtd::forms::menu_item_kind menu_item::kind() const noexcept {
+  return kind_;
 }
 
 menu_item& menu_item::kind(xtd::forms::menu_item_kind value) {
@@ -139,6 +151,10 @@ menu_item& menu_item::kind(xtd::forms::menu_item_kind value) {
   return *this;
 }
 
+xtd::forms::shortcut menu_item::shortcut() const noexcept {
+  return shortcut_;
+}
+
 menu_item& menu_item::shortcut(xtd::forms::shortcut value) {
   if (shortcut_ != value) {
     shortcut_ = value;
@@ -146,6 +162,10 @@ menu_item& menu_item::shortcut(xtd::forms::shortcut value) {
     if (handle()) native::menu_item::text(handle(), text_, static_cast<size_t>(shortcut_));
   }
   return *this;
+}
+
+const xtd::ustring& menu_item::text() const noexcept {
+  return text_;
 }
 
 menu_item& menu_item::text(const xtd::ustring& value) {
@@ -173,7 +193,7 @@ void menu_item::destroy_menu_handle(intptr_t handle) {
   native::menu_item::destroy(handle);
 }
 
-intptr_t menu_item::menu_id() const {
+intptr_t menu_item::menu_id() const noexcept {
   return native::menu_item::menu_id(data_->handle_);
 }
 

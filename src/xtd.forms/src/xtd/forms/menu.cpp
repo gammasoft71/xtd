@@ -49,12 +49,24 @@ menu::~menu() {
   destroy_menu();
 }
 
-bool menu::is_parent() const {
+intptr_t menu::handle() const noexcept {
+  return data_->handle_;
+}
+
+bool menu::is_parent() const noexcept {
   return data_->menu_items_.size() != 0;
 }
 
-const menu_item& menu::mdi_list_item() const {
+const menu_item& menu::mdi_list_item() const noexcept {
   return *data_->mdi_list_item_;
+}
+
+const menu::menu_item_collection& menu::menu_items() const noexcept {
+  return data_->menu_items_;
+}
+
+menu::menu_item_collection& menu::menu_items() noexcept {
+  return data_->menu_items_;
 }
 
 menu& menu::menu_items(const menu_item_collection& value) {
@@ -79,6 +91,24 @@ menu& menu::menu_items(const vector<reference_wrapper<menu_item>>& value) {
   return *this;
 }
 
+const xtd::ustring& menu::name() const noexcept {
+  return data_->name_;
+}
+
+menu& menu::name(const xtd::ustring& value) {
+  data_->name_ = value;
+  return *this;
+}
+
+std::any menu::tag() const noexcept {
+  return data_->tag_;
+}
+
+menu& menu::tag(std::any value) {
+  data_->tag_ = value;
+  return *this;
+}
+
 bool menu::equals(const menu& value) const noexcept {
   return data_ == value.data_;
 }
@@ -87,14 +117,14 @@ bool menu::equals(const object& obj) const noexcept {
   return is<menu>(obj) && equals(as<menu>(obj));
 }
 
-optional<reference_wrapper<context_menu>> menu::get_context_menu() const {
+optional<reference_wrapper<context_menu>> menu::get_context_menu() const noexcept {
   menu* item = const_cast<menu*>(this);
   while (item)
     if (dynamic_cast<context_menu*>(item)) return static_cast<context_menu&>(*item);
   return {};
 }
 
-optional<reference_wrapper<main_menu>> menu::get_main_menu() const {
+optional<reference_wrapper<main_menu>> menu::get_main_menu() const noexcept {
   menu* item = const_cast<menu*>(this);
   while (item)
     if (dynamic_cast<main_menu*>(item)) return static_cast<main_menu&>(*item);
@@ -115,6 +145,15 @@ void menu::clone_menu(const menu& menu_src) {
 void menu::merge_menu(const menu& menu_src) {
   if (data_.get() == menu_src.data_.get()) throw argument_exception("It was attempted to merge the menu with itself"_t, current_stack_frame_);
   data_->menu_items_.push_back_range(menu_src.data_->menu_items_);
+}
+
+void menu::destroy_menu_handle(intptr_t handle) {
+}
+
+void menu::on_item_added(size_t pos, menu_item_ref item) {
+}
+
+void menu::on_item_removed(size_t pos, menu_item_ref item) {
 }
 
 void menu::create_menu() {
