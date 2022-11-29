@@ -53,7 +53,7 @@ namespace xtd {
       /// @{
       /// @brief Gets horizontal control layout style for all child controls.
       /// @return The horizontal control layout style collection.
-      const horizontal_control_layout_style_collection& control_layout_styles() const {return control_layout_styles_;}
+      const horizontal_control_layout_style_collection& control_layout_styles() const noexcept {return control_layout_styles_;}
       
       /// @brief Gets horizontal control layout style for specified child controls.
       /// @param control The control to get horizontal control layout style.
