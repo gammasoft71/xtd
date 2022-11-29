@@ -36,7 +36,7 @@ namespace xtd {
       /// @brief Gets the window handle of the message.
       /// @return The window handle of the message.
       /// @remarks Window handle is a value that uniquely identifies a window on the system. This property returns a handle of the window whose window procedure receives this message. It is useful when your code need to interact with some native Windows API functions that expect window handles as parameters.
-      intptr_t hwnd() const;
+      intptr_t hwnd() const noexcept;
       /// @brief Sets the window handle of the message.
       /// @param hwnd The window handle of the message.
       /// @remarks Window handle is a value that uniquely identifies a window on the system. This property returns a handle of the window whose window procedure receives this message. It is useful when your code need to interact with some native Windows API functions that expect window handles as parameters.
@@ -45,7 +45,7 @@ namespace xtd {
       /// @brief Gets the lparam field of the message.
       /// @return The lparam field of the message.
       /// @remarks The value of this field depends on the message. Use the lparam field to get information that is important for handling the message. lparam is typically used to store an object if it is needed by the message.
-      intptr_t lparam() const;
+      intptr_t lparam() const noexcept;
       /// @brief Sets the lparam field of the message.
       /// @param value The lparam field of the message.
       /// @remarks The value of this field depends on the message. Use the lparam field to get information that is important for handling the message. lparam is typically used to store an object if it is needed by the message.
@@ -53,14 +53,14 @@ namespace xtd {
       
       /// @brief Gets the ID number for the message.
       /// @return The ID number for the message.
-      uint32_t msg() const;
+      uint32_t msg() const noexcept;
       /// @brief Sets the ID number for the message.
       /// @param value The ID number for the message.
       void msg(uint32_t value);
       
       /// @brief Gets the value that is returned to Windows in response to handling the message.
       /// @return The return value of the message.
-      intptr_t result() const;
+      intptr_t result() const noexcept;
       /// @brief Sets the value that is returned to Windows in response to handling the message.
       /// @param value The return value of the message.
       void result(intptr_t value);
@@ -68,7 +68,7 @@ namespace xtd {
       /// @brief Gets the wparam field of the message.
       /// @return The wparam field of the message.
       /// @remarks The value of this field depends on the message. Use the wparam field to get information that is important to handling the message. This field is typically used to store small pieces of information, such as flags.
-      intptr_t wparam() const;
+      intptr_t wparam() const noexcept;
       /// @brief Sets the wparam field of the message.
       /// @param value The wparam field of the message.
       /// @remarks The value of this field depends on the message. Use the wparam field to get information that is important to handling the message. This field is typically used to store small pieces of information, such as flags.
@@ -76,7 +76,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      intptr_t handle() const;
+      intptr_t handle() const noexcept;
       void handle(intptr_t value);
       /// @endcond
       
@@ -101,7 +101,7 @@ namespace xtd {
       /// @tparam type The type to use to create an instance. This type must be declared as a structure type.
       /// @return An object that represents an instance of the class specified by the template parameter, with the data from the lparam field of the message.
       template<typename type_t>
-      type_t get_lparam() { return reinterpret_cast<type_t>(lparam_); }
+      type_t get_lparam() const noexcept { return reinterpret_cast<type_t>(lparam_); }
       
       /// @brief Returns a string that represents the current message.
       /// @return A xtd::ustring that represents the current message.
