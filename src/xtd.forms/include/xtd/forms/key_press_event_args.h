@@ -45,7 +45,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether the key_press event was handled.
       /// @return true if the event is handled; otherwise, false.
       /// @remarks If the event is not handled, it will be sent to the operating system for default processing. Set handled to true to cancel the key_press event.
-      bool handled() const {return handled_;}
+      bool handled() const noexcept {return handled_;}
       /// @brief Sets a value indicating whether the key_press event was handled.
       /// @param handled true if the event is handled; otherwise, false.
       /// @remarks If the event is not handled, it will be sent to the operating system for default processing. Set handled to true to cancel the key_press event.
@@ -70,7 +70,7 @@ namespace xtd {
       /// * CMD and ALT.
       /// * Arrow keys.
       /// @note For information about how to detect any of the non-character keys mentioned above, see the key_event_args class.
-      char32_t key_char() const {return key_char_;}
+      char32_t key_char() const noexcept {return key_char_;}
       /// @brief Sets the character corresponding to the key pressed.
       /// @param key_char The ASCII character that is composed. For example, if the user presses SHIFT + K, this property returns an uppercase K.
       /// @remarks Use the key_char property to sample keystrokes at run time and to modify keystrokes under special run-time circumstances. For example, you can use key_char to disable non-numeric keypresses when the user enters a ZIP code, change all alphabetical keypresses to uppercase in a data entry field, or monitor the keyboard or other key input device for specific key combinations.
