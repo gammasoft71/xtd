@@ -4,15 +4,15 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-char32_t lcd_label::dot_matrix_display_digit::get_character() const {
+char32_t lcd_label::dot_matrix_display_digit::get_character() const noexcept {
   return character_;
 }
 
-std::u32string lcd_label::dot_matrix_display_digit::get_valid_characters() const {
+std::u32string lcd_label::dot_matrix_display_digit::get_valid_characters() const noexcept {
   return U"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/%\\_°\"'[](){}<>| .,:;!?&$€";
 }
 
-int32_t lcd_label::dot_matrix_display_digit::get_thickness() const {
+int32_t lcd_label::dot_matrix_display_digit::get_thickness() const noexcept {
   return thickness();
 }
 
@@ -142,15 +142,15 @@ void lcd_label::dot_matrix_display_digit::set_thickness(int32_t value) {
   thickness(value);
 }
 
-char32_t lcd_label::fourteen_segment_display_digit::get_character() const {
+char32_t lcd_label::fourteen_segment_display_digit::get_character() const noexcept {
   return character_;
 }
 
-std::u32string lcd_label::fourteen_segment_display_digit::get_valid_characters() const {
+std::u32string lcd_label::fourteen_segment_display_digit::get_valid_characters() const noexcept {
   return U"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/\\_°\"'[]()| .,:";
 }
 
-int32_t lcd_label::fourteen_segment_display_digit::get_thickness() const {
+int32_t lcd_label::fourteen_segment_display_digit::get_thickness() const noexcept {
   return thickness();
 }
 
@@ -269,15 +269,15 @@ void lcd_label::fourteen_segment_display_digit::set_thickness(int32_t value) {
   thickness(value);
 }
 
-char32_t lcd_label::nine_segment_display_digit::get_character() const {
+char32_t lcd_label::nine_segment_display_digit::get_character() const noexcept {
   return character_;
 }
 
-std::u32string lcd_label::nine_segment_display_digit::get_valid_characters() const {
+std::u32string lcd_label::nine_segment_display_digit::get_valid_characters() const noexcept {
   return U"0123456789ABCDEFGHIJLNOPQRSTUYabcdefghijlnopqrstuy=-_°\"'[]| .,:";
 }
 
-int32_t lcd_label::nine_segment_display_digit::get_thickness() const {
+int32_t lcd_label::nine_segment_display_digit::get_thickness() const noexcept {
   return thickness();
 }
 
@@ -376,15 +376,15 @@ void lcd_label::nine_segment_display_digit::set_thickness(int32_t value) {
   thickness(value);
 }
 
-char32_t lcd_label::seven_segment_display_digit::get_character() const {
+char32_t lcd_label::seven_segment_display_digit::get_character() const noexcept {
   return character_;
 }
 
-std::u32string lcd_label::seven_segment_display_digit::get_valid_characters() const {
+std::u32string lcd_label::seven_segment_display_digit::get_valid_characters() const noexcept {
   return U"0123456789ABCDEFGHIJLNOPQRSTUYabcdefghijlnopqrstuy=-_°\"'[]| .,:";
 }
 
-int32_t lcd_label::seven_segment_display_digit::get_thickness() const {
+int32_t lcd_label::seven_segment_display_digit::get_thickness() const noexcept {
   return thickness();
 }
 
@@ -483,15 +483,15 @@ void lcd_label::seven_segment_display_digit::set_thickness(int32_t value) {
   thickness(value);
 }
 
-char32_t lcd_label::sixteen_segment_display_digit::get_character() const {
+char32_t lcd_label::sixteen_segment_display_digit::get_character() const noexcept {
   return character_;
 }
 
-std::u32string lcd_label::sixteen_segment_display_digit::get_valid_characters() const {
+std::u32string lcd_label::sixteen_segment_display_digit::get_valid_characters() const noexcept {
   return U"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/\\_°\"'[]()| .,:";
 }
 
-int32_t lcd_label::sixteen_segment_display_digit::get_thickness() const {
+int32_t lcd_label::sixteen_segment_display_digit::get_thickness() const noexcept {
   return sixteen_segment_display::thickness();
 }
 
@@ -612,7 +612,7 @@ lcd_label::lcd_label() {
   set_style(control_styles::resize_redraw, true);
 }
 
-xtd::drawing::color lcd_label::back_digit_color() const {
+xtd::drawing::color lcd_label::back_digit_color() const noexcept {
   return back_digit_color_.value_or(fore_color());
 }
 
@@ -624,7 +624,7 @@ lcd_label& lcd_label::back_digit_color(const xtd::drawing::color& value) {
   return *this;
 }
 
-double lcd_label::back_digit_opacity() const {
+double lcd_label::back_digit_opacity() const noexcept {
   return back_digit_opacity_;
 }
 
@@ -637,7 +637,7 @@ lcd_label& lcd_label::back_digit_opacity(double value) {
   return *this;
 }
 
-bool lcd_label::show_back_digit() const {
+bool lcd_label::show_back_digit() const noexcept {
   return show_back_digit_;
 }
 
@@ -649,7 +649,7 @@ lcd_label& lcd_label::show_back_digit(bool value) {
   return *this;
 }
 
-int32_t lcd_label::digit_spacing() const {
+int32_t lcd_label::digit_spacing() const noexcept {
   return digit_spacing_.value_or(lcd_style_ == lcd_style::dot_matrix_display ? 0 : thickness());
 }
 
@@ -662,7 +662,7 @@ lcd_label& lcd_label::digit_spacing(int32_t value) {
   return *this;
 }
 
-forms::lcd_style lcd_label::lcd_style() const {
+forms::lcd_style lcd_label::lcd_style() const noexcept {
   return lcd_style_;
 }
 
@@ -676,7 +676,7 @@ lcd_label& lcd_label::lcd_style(forms::lcd_style value) {
   return *this;
 }
 
-forms::segment_style lcd_label::segment_style() const {
+forms::segment_style lcd_label::segment_style() const noexcept {
   return segment_style_;
 }
 
@@ -689,7 +689,7 @@ lcd_label& lcd_label::segment_style(forms::segment_style value) {
   return *this;
 }
 
-forms::dot_matrix_style lcd_label::dot_matrix_style() const {
+forms::dot_matrix_style lcd_label::dot_matrix_style() const noexcept {
   return dot_matrix_style_;
 }
 
@@ -702,7 +702,7 @@ lcd_label& lcd_label::dot_matrix_style(forms::dot_matrix_style value) {
   return *this;
 }
 
-int32_t lcd_label::thickness() const {
+int32_t lcd_label::thickness() const noexcept {
   return thickness_.value_or(digits_.size() ? digits_[0]->get_thickness() : 1);
 }
 
