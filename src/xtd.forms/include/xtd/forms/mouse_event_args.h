@@ -59,27 +59,27 @@ namespace xtd {
       /// @{
       /// @brief Gets which mouse button was pressed.
       /// @return One of the xtd::forms::mouse_buttons values.
-      mouse_buttons button() const {return button_;}
+      mouse_buttons button() const noexcept {return button_;}
       
       /// @brief Gets the number of times the mouse button was pressed and released.
       /// @return An Int32_t that contains the number of times the mouse button was pressed and released.
-      int32_t clicks() const {return clicks_;}
+      int32_t clicks() const noexcept {return clicks_;}
       
       /// @brief Gets a signed count of the number of detents the mouse wheel has rotated, multiplied by the WHEEL_DELTA constant. A detent is one notch of the mouse wheel.
       /// @return A signed count of the number of detents the mouse wheel has rotated, multiplied by the WHEEL_DELTA constant.
-      int32_t delta() const {return delta_;}
+      int32_t delta() const noexcept {return delta_;}
       
       /// @brief Gets the location of the mouse during the generating mouse event.
       /// @return A xtd::drawing::point that contains the x- and y- mouse coordinates, in pixels, relative to the upper-left corner of the form.
-      const drawing::point& location() const {return location_;}
+      const drawing::point& location() const noexcept {return location_;}
       
       /// @brief Gets the x-coordinate of the mouse during the generating mouse event.
       /// @return The x-coordinate of the mouse, in pixels.
-      int32_t x() const {return location().x();}
+      int32_t x() const noexcept {return location().x();}
       
       /// @brief Gets the y-coordinate of the mouse during the generating mouse event.
       /// @return The y-coordinate of the mouse, in pixels.
-      int32_t y() const {return location().y();}
+      int32_t y() const noexcept {return location().y();}
       /// @}
       
     private:

@@ -51,58 +51,37 @@ namespace xtd {
       /// @brief Sets thickness of segment.
       /// @param value A int32_t that represent the segment thickness.
       /// @return Current seven_segment_display.
-      int32_t thickness() const noexcept override {return thickness_.value_or(size().height() < 20 ? 1 : (size().height() / 20 + ((size().height() / 20) % 2 ? 0 : 1)));}
+      int32_t thickness() const noexcept override;
       /// @brief Sets thickness of segment.
       /// @param value A int32_t that represent the segment thickness.
       /// @return Current seven_segment_display.
-      seven_segment_display& thickness(int32_t value) override {
-        if (!thickness_.has_value() || thickness_.value() != value) {
-          thickness_ = value;
-          invalidate();
-        }
-        return *this;
-      }
+      seven_segment_display& thickness(int32_t value) override;
       /// @}
       
     protected:
       /// @name Protected methods
       
       /// @{
-      void on_paint(paint_event_args& e) override {
-        seven_segment_display::on_paint(e);
-        if ((value() & forms::segments::h) == forms::segments::h) draw_segment_h(e.graphics(), fore_color());
-        if ((value() & forms::segments::i) == forms::segments::i) draw_segment_i(e.graphics(), fore_color());
-      }
+      void on_paint(paint_event_args& e) override;
       
-      void draw_back_digit(drawing::graphics& graphics) override {
-        seven_segment_display::draw_back_digit(graphics);
-        draw_segment_h(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
-        draw_segment_i(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
-      }
+      void draw_back_digit(drawing::graphics& graphics) override;
       
       /// @brief Draw segment h on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
-      virtual void draw_segment_h(drawing::graphics& graphics, const drawing::color& color) {
-        for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++) {
-          graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness() - abs(offset), 2 + thickness(), 2 + thickness(), size().height() / 2 - 2 - thickness() / 2 - abs(offset));
-          graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness(), 2 + thickness() + abs(offset), 2 + thickness() + abs(offset), size().height() / 2 - 2 - thickness() / 2);
-        }
-      }
+      virtual void draw_segment_h(drawing::graphics& graphics, const drawing::color& color);
       
       /// @brief Draw segment ion specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
-      virtual void draw_segment_i(drawing::graphics& graphics, const drawing::color& color) {
-        for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++) {
-          graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness() - abs(offset), size().height() / 2 + 2 + thickness() / 2, 2 + thickness(), size().height() - 3 - thickness() - abs(offset));
-          graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness(), size().height() / 2 + 2 + thickness() / 2 + abs(offset), 2 + thickness() + abs(offset), size().height() - 3 - thickness());
-        }
-      }
+      virtual void draw_segment_i(drawing::graphics& graphics, const drawing::color& color);
       /// @}
       
     private:
-      std::optional<int32_t> thickness_;
+      struct data {
+        std::optional<int32_t> thickness;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
