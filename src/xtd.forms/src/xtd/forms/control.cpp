@@ -455,6 +455,12 @@ control& control::fore_color(std::nullptr_t) {
   return *this;
 }
 
+intptr_t control::handle() const {
+  if (check_for_illegal_cross_thread_calls() && invoke_required())
+    throw invalid_operation_exception(ustring::format("Cross-thread operation not valid: {}"_t, to_string()), csf_);
+  return data_->handle;
+}
+
 int32_t control::height() const noexcept {
   return size().height();
 }
@@ -463,12 +469,6 @@ control& control::height(int32_t height) {
   if (size().height() == height) return *this;
   set_bounds_core(0, 0, 0, height, bounds_specified::height);
   return *this;
-}
-
-intptr_t control::handle() const {
-  if (check_for_illegal_cross_thread_calls() && invoke_required())
-    throw invalid_operation_exception(ustring::format("Cross-thread operation not valid: {}"_t, to_string()), csf_);
-  return data_->handle;
 }
 
 bool control::invoke_required() const noexcept {
