@@ -62,6 +62,25 @@ namespace xtd {
     /// @include form.cpp
     class forms_export_ form : public container_control {
     public:
+      /// @name Alias
+      
+      /// @{
+      /// @brief Represent an xtd::forms::form reference.
+      using form_ref = std::reference_wrapper<xtd::forms::form>;
+      
+      /// @brief Represent an xtd::forms::ibutton_control reference.
+      using ibutton_control_ref = std::reference_wrapper<xtd::forms::ibutton_control>;
+      
+      /// @brief Represent an xtd::forms::main_menu reference.
+      using main_menu_ref = std::reference_wrapper<xtd::forms::main_menu>;
+
+      /// @brief Represent an xtd::forms::status_bar reference.
+      using status_bar_ref = std::reference_wrapper<xtd::forms::status_bar>;
+
+      /// @brief Represent an xtd::forms::tool_bar reference.
+      using tool_bar_ref = std::reference_wrapper<xtd::forms::tool_bar>;
+      /// @}
+      
       /// @name Constructors
       
       /// @{
@@ -75,7 +94,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the button on the form that is clicked when the user presses the ENTER key.
       /// @return An ibutton_control that represents the button to use as the accept button for the form.
-      std::optional<std::reference_wrapper<ibutton_control>> accept_button() const noexcept;
+      std::optional<ibutton_control_ref> accept_button() const noexcept;
       /// @brief Sets the button on the form that is clicked when the user presses the ENTER key.
       /// @param value An ibutton_control that represents the button to use as the accept button for the form.
       /// @return Current form.
@@ -87,7 +106,7 @@ namespace xtd {
       
       /// @brief Gets the currently active form for this application.
       /// @return A form that represents the currently active form, or std::optional with no value if there is no active form.
-      static std::optional<std::reference_wrapper<form>> active_form() noexcept;
+      static std::optional<form_ref> active_form() noexcept;
       
       /// @brief Gets the mode by which the form automatically resizes itself.
       /// @return An auto_size_mode enumerated value. The default is grow_only.
@@ -99,7 +118,7 @@ namespace xtd {
       
       /// @brief Gets the button control that is clicked when the user presses the ESC key.
       /// @return An ibutton_control that represents the cancel button for the form.
-      std::optional<std::reference_wrapper<ibutton_control>> cancel_button() const noexcept;
+      std::optional<ibutton_control_ref> cancel_button() const noexcept;
       /// @brief Gets the button control that is clicked when the user presses the ESC key.
       /// @param value  An ibutton_control that represents the cancel button for the form.
       /// @return Current form.
@@ -172,7 +191,7 @@ namespace xtd {
       
       /// @brief Gets the main_menu that is displayed in the form.
       /// @return A main_menu that represents the menu to display in the form.
-      virtual std::optional<std::reference_wrapper<forms::main_menu>> menu() const noexcept;
+      virtual std::optional<main_menu_ref> menu() const noexcept;
       /// @brief Sets the main_menu that is displayed in the form.
       /// @param value A main_menu that represents the menu to display in the form.
       /// @return Current form.
@@ -250,7 +269,7 @@ namespace xtd {
       
       /// @brief Gets the status_bar that is displayed in the form.
       /// @return A status_bar that represents the status bar to display in the form.
-      virtual std::optional<std::reference_wrapper<forms::status_bar>> status_bar() const noexcept;
+      virtual std::optional<status_bar_ref> status_bar() const noexcept;
       /// @brief Sets the status_bar that is displayed in the form.
       /// @param value A status_bar that represents the status bar to display in the form.
       /// @return Current form.
@@ -262,7 +281,7 @@ namespace xtd {
       
       /// @brief Gets the tool_bar that is displayed in the form.
       /// @return A tool_bar that represents the tool bar to display in the form.
-      virtual std::optional<std::reference_wrapper<forms::tool_bar>> tool_bar() const noexcept;
+      virtual std::optional<tool_bar_ref> tool_bar() const noexcept;
       /// @brief Sets the tool_bar that is displayed in the form.
       /// @param value A tool_bar that represents the tool bar to display in the form.
       /// @return Current form.
@@ -439,8 +458,8 @@ namespace xtd {
       void wm_syscolor_change(message& message);
 
       struct data {
-        std::optional<std::reference_wrapper<ibutton_control>> accept_button;
-        std::optional<std::reference_wrapper<ibutton_control>> cancel_button;
+        std::optional<ibutton_control_ref> accept_button;
+        std::optional<ibutton_control_ref> cancel_button;
         bool closed = false;
         bool close_box = true;
         bool control_box = true;
@@ -449,7 +468,7 @@ namespace xtd {
         bool help_button = false;
         xtd::drawing::icon icon = xtd::drawing::icon::empty;
         bool maximize_box = true;
-        std::optional<std::reference_wrapper<forms::main_menu>> menu;
+        std::optional<main_menu_ref> menu;
         bool minimize_box = true;
         double opacity = 1.0;
         const control* owner = nullptr;
@@ -458,13 +477,13 @@ namespace xtd {
         bool show_icon = true;
         bool show_in_taskbar = true;
         form_start_position start_position = form_start_position::windows_default_location;
-        std::optional<std::reference_wrapper<forms::status_bar>> status_bar;
-        std::optional<std::reference_wrapper<forms::tool_bar>> tool_bar;
+        std::optional<status_bar_ref> status_bar;
+        std::optional<tool_bar_ref> tool_bar;
         bool top_most = false;
         form_window_state window_state = form_window_state::normal;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
-      static std::optional<std::reference_wrapper<form>> active_form_;
+      static std::optional<form_ref> active_form_;
     };
   }
 }

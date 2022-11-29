@@ -27,7 +27,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-std::optional<std::reference_wrapper<form>> form::active_form_;
+std::optional<form::form_ref> form::active_form_;
 
 form::form() {
   set_auto_size_mode(forms::auto_size_mode::grow_only);
@@ -43,7 +43,7 @@ form::form() {
   create_control();
 }
 
-std::optional<std::reference_wrapper<ibutton_control>> form::accept_button() const noexcept {
+std::optional<form::ibutton_control_ref> form::accept_button() const noexcept {
   return data_->accept_button;
 }
 
@@ -62,7 +62,7 @@ form& form::accept_button(std::nullptr_t) {
   return *this;
 }
 
-std::optional<std::reference_wrapper<form>> form::active_form() noexcept {
+std::optional<form::form_ref> form::active_form() noexcept {
   return active_form_;
 }
 
@@ -75,7 +75,7 @@ form& form::auto_size_mode(forms::auto_size_mode value) {
   return *this;
 }
 
-std::optional<std::reference_wrapper<ibutton_control>> form::cancel_button() const noexcept {
+std::optional<form::ibutton_control_ref> form::cancel_button() const noexcept {
   return data_->cancel_button;
 }
 
@@ -175,7 +175,7 @@ form& form::maximize_box(bool value) {
   return *this;
 }
 
-std::optional<std::reference_wrapper<forms::main_menu>> form::menu() const noexcept {
+std::optional<form::main_menu_ref> form::menu() const noexcept {
   return data_->menu;
 }
 
@@ -282,7 +282,7 @@ form& form::start_position(form_start_position start_position) {
   return *this;
 }
 
-std::optional<std::reference_wrapper<forms::status_bar>> form::status_bar() const noexcept {
+std::optional<form::status_bar_ref> form::status_bar() const noexcept {
   return data_->status_bar;
 }
 
@@ -302,7 +302,7 @@ form& form::status_bar(std::nullptr_t) {
   return *this;
 }
 
-std::optional<std::reference_wrapper<forms::tool_bar>> form::tool_bar() const noexcept {
+std::optional<form::tool_bar_ref> form::tool_bar() const noexcept {
   return data_->tool_bar;
 }
 
