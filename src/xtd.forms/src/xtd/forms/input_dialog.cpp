@@ -101,55 +101,140 @@ namespace {
   };
 }
 
+xtd::forms::character_casing input_dialog::character_casing() const noexcept {
+  return data_->character_casing;
+}
+
+input_dialog& input_dialog::character_casing(xtd::forms::character_casing character_casing) {
+  if (data_->character_casing != character_casing) {
+    data_->character_casing = character_casing;
+    switch (data_->character_casing) {
+      case xtd::forms::character_casing::upper: data_->value = data_->value.to_upper(); break;
+      case xtd::forms::character_casing::lower: data_->value = data_->value.to_lower(); break;
+      default: break;
+    }
+  }
+  return *this;
+}
+
+xtd::forms::dialog_style input_dialog::dialog_style() const noexcept {
+  return data_->dialog_style;
+}
+
+input_dialog& input_dialog::dialog_style(xtd::forms::dialog_style dialog_style) {
+  data_->dialog_style = dialog_style;
+  return *this;
+}
+
+bool input_dialog::multiline() const noexcept {
+  return data_->multiline;
+}
+
+input_dialog& input_dialog::multiline(bool multiline) {
+  data_->multiline = multiline;
+  return *this;
+}
+
+xtd::ustring input_dialog::message() const noexcept {
+  return data_->message;
+}
+
+input_dialog& input_dialog::message(const xtd::ustring& message) {
+  data_->message = message;
+  return *this;
+}
+
+xtd::ustring input_dialog::text() const noexcept {
+  return data_->text;
+}
+
+input_dialog& input_dialog::text(const xtd::ustring& text) {
+  data_->text = text;
+  return *this;
+}
+
+bool input_dialog::use_system_password_char() const noexcept {
+  return data_->use_system_password_char;
+}
+
+input_dialog& input_dialog::use_system_password_char(bool use_system_password_char) {
+  data_->use_system_password_char = use_system_password_char;
+  return *this;
+}
+
+xtd::ustring input_dialog::value() const noexcept {
+  return data_->value;
+}
+
+input_dialog& input_dialog::value(const xtd::ustring& value) {
+  if (value != data_->value) {
+    switch (data_->character_casing) {
+      case xtd::forms::character_casing::normal: data_->value = value; break;
+      case xtd::forms::character_casing::upper: data_->value = value.to_upper(); break;
+      case xtd::forms::character_casing::lower: data_->value = value.to_lower(); break;
+    }
+  }
+  return *this;
+}
+
+bool input_dialog::word_wrap() const noexcept {
+  return data_->word_wrap;
+}
+
+input_dialog& input_dialog::word_wrap(bool word_wrap) {
+  data_->word_wrap = word_wrap;
+  return *this;
+}
+
 void input_dialog::reset() noexcept {
-  character_casing_ = xtd::forms::character_casing::normal;
-  dialog_style_ = xtd::forms::dialog_style::standard;
-  message_ = "";
-  multiline_ = false;
-  text_ = "";
-  use_system_password_char_ = false;
-  value_ = "";
-  word_wrap_ = true;
+  data_->character_casing = xtd::forms::character_casing::normal;
+  data_->dialog_style = xtd::forms::dialog_style::standard;
+  data_->message = "";
+  data_->multiline = false;
+  data_->text = "";
+  data_->use_system_password_char = false;
+  data_->value = "";
+  data_->word_wrap = true;
 }
 
 bool input_dialog::run_dialog(intptr_t owner) {
-  switch (character_casing_) {
-    case xtd::forms::character_casing::upper: value_ = value_.to_upper(); break;
-    case xtd::forms::character_casing::lower: value_ = value_.to_lower(); break;
+  switch (data_->character_casing) {
+    case xtd::forms::character_casing::upper: data_->value = data_->value.to_upper(); break;
+    case xtd::forms::character_casing::lower: data_->value = data_->value.to_lower(); break;
     default: break;
   }
-  if (dialog_style_ == xtd::forms::dialog_style::standard) {
-    input_dialog_standard dialog(text_, message_, value_, character_casing_, multiline_, use_system_password_char_, word_wrap_);
+  if (data_->dialog_style == xtd::forms::dialog_style::standard) {
+    input_dialog_standard dialog(data_->text, data_->message, data_->value, data_->character_casing, data_->multiline, data_->use_system_password_char, data_->word_wrap);
     auto result = dialog.run_dialog(owner);
-    if (result) value_ = dialog.value();
+    if (result) data_->value = dialog.value();
     return result;
   }
   application::raise_enter_thread_modal(event_args::empty);
-  auto result = native::input_dialog::run_dialog(owner, text_, message_, value_, static_cast<int32_t>(character_casing_), multiline_, use_system_password_char_, word_wrap_);
+  auto result = native::input_dialog::run_dialog(owner, data_->text, data_->message, data_->value, static_cast<int32_t>(data_->character_casing), data_->multiline, data_->use_system_password_char, data_->word_wrap);
   application::raise_leave_thread_modal(event_args::empty);
   return result;
 }
 
 void input_dialog::run_sheet(intptr_t owner) {
-  switch (character_casing_) {
-    case xtd::forms::character_casing::upper: value_ = value_.to_upper(); break;
-    case xtd::forms::character_casing::lower: value_ = value_.to_lower(); break;
+  switch (data_->character_casing) {
+    case xtd::forms::character_casing::upper: data_->value = data_->value.to_upper(); break;
+    case xtd::forms::character_casing::lower: data_->value = data_->value.to_lower(); break;
     default: break;
   }
   if (!owner)
     run_dialog(owner);
   else {
-    if (dialog_style_ == xtd::forms::dialog_style::standard) {
-      std::shared_ptr<input_dialog_standard> dialog = std::make_shared<input_dialog_standard>(text_, message_, value_, character_casing_, multiline_, use_system_password_char_, word_wrap_);
+    if (data_->dialog_style == xtd::forms::dialog_style::standard) {
+      std::shared_ptr<input_dialog_standard> dialog = std::make_shared<input_dialog_standard>(data_->text, data_->message, data_->value, data_->character_casing, data_->multiline, data_->use_system_password_char, data_->word_wrap);
       dialog->form_closed += [&, dialog](object & sender, const form_closed_event_args & e) {
-        if (dialog->dialog_result() == dialog_result::ok) value_ = dialog->value();
+        if (dialog->dialog_result() == dialog_result::ok) data_->value = dialog->value();
         on_dialog_closed(dialog_closed_event_args(dialog->dialog_result()));
       };
       dialog->run_sheet(owner);
       return;
     }
     application::raise_enter_thread_modal(event_args::empty);
-    native::input_dialog::run_sheet({*new __xtd_forms_common_dialog_closed_caller__(this), &__xtd_forms_common_dialog_closed_caller__::on_common_dialog_closed}, owner, text_, message_, value_, static_cast<int32_t>(character_casing_), multiline_, use_system_password_char_, word_wrap_);
+    native::input_dialog::run_sheet({*new __xtd_forms_common_dialog_closed_caller__(this), &__xtd_forms_common_dialog_closed_caller__::on_common_dialog_closed}, owner, data_->text, data_->message, data_->value, static_cast<int32_t>(data_->character_casing), data_->multiline, data_->use_system_password_char, data_->word_wrap);
     application::raise_leave_thread_modal(event_args::empty);
   }
 }
