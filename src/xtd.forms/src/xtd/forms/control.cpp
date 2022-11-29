@@ -246,7 +246,7 @@ control& control::bounds(const drawing::rectangle& bounds) {
 bool control::can_focus() const noexcept {
   bool visible_and_enabled = handle() && get_state(state::visible) && get_state(state::enabled);
   
-  optional<reference_wrapper<control>> top_level_control = const_cast<control&>(*this);
+  optional<control_ref> top_level_control = const_cast<control&>(*this);
   while (visible_and_enabled && top_level_control.has_value() && !top_level_control.value().get().get_state(state::top_level)) {
     top_level_control = top_level_control.value().get().parent();
     if (top_level_control.has_value()) visible_and_enabled = top_level_control.value().get().get_state(state::visible) && get_state(state::enabled);
@@ -721,8 +721,8 @@ control& control::top(int32_t top) {
   return *this;
 }
 
-optional<reference_wrapper<control>> control::top_level_control() const noexcept {
-  optional<reference_wrapper<control>> top_level_control = const_cast<control&>(*this);
+optional<control_ref> control::top_level_control() const noexcept {
+  optional<control_ref> top_level_control = const_cast<control&>(*this);
   while (top_level_control.has_value() && !top_level_control.value().get().get_state(state::top_level))
     top_level_control = top_level_control.value().get().parent();
   if (top_level_control.has_value() && !top_level_control.value().get().get_state(state::top_level)) top_level_control.reset();
@@ -815,7 +815,7 @@ bool control::focus() {
   return true;
 }
 
-optional<reference_wrapper<control>> control::from_child_handle(intptr_t handle) {
+optional<control_ref> control::from_child_handle(intptr_t handle) {
   try {
     auto it = handles_.find(handle);
     if (it != handles_.end())
@@ -826,7 +826,7 @@ optional<reference_wrapper<control>> control::from_child_handle(intptr_t handle)
   }
 }
 
-optional<reference_wrapper<control>> control::from_handle(intptr_t handle) {
+optional<control_ref> control::from_handle(intptr_t handle) {
   try {
     auto it = handles_.find(handle);
     if (it != handles_.end())
@@ -1630,14 +1630,14 @@ void control::set_client_size_core(int32_t width, int32_t height) {
   on_resize(event_args::empty);
 }
 
-void control::on_controls_item_added(size_t, std::reference_wrapper<control> item) {
+void control::on_controls_item_added(size_t, control_ref item) {
   on_control_added(control_event_args(item.get()));
   item.get().data_->parent = data_->handle;
   if (data_->handle)
     item.get().create_control();
 }
 
-void control::on_controls_item_removed(size_t, std::reference_wrapper<control> item) {
+void control::on_controls_item_removed(size_t, control_ref item) {
   on_control_removed(control_event_args(item.get()));
   item.get().data_->parent = 0;
   item.get().destroy_control();
