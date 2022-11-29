@@ -12,13 +12,33 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+xtd::forms::month_calendar::hit_area month_calendar::hit_test_info::hit_area() const noexcept {
+  return hit_area_;
+}
+
+/// @brief Gets the point that was hit-tested.
+/// @return A xtd::drawing::point containing the xtd::drawing::point::x and xtd::drawing::point::y values tested.
+const xtd::drawing::point& month_calendar::hit_test_info::point() const noexcept {
+  return point_;
+}
+
+/// @brief Gets the time information specific to the location that was hit-tested.
+/// @return The time information specific to the location that was hit-tested.
+/// @remarks The xtd::forms::month_calendar::hit_test_info::time property contains a valid date when the xtd::forms::month_calendar::hit_area property is set to xtd::forms::month_calendar::hit_area::date or xtd::forms::month_calendar::hit_area::week_numbers.
+const xtd::date_time& month_calendar::hit_test_info::time() const noexcept {
+  return time_;
+}
+
+month_calendar::hit_test_info::hit_test_info(xtd::forms::month_calendar::hit_area hit_area, const xtd::drawing::point& point, const xtd::date_time& time) : hit_area_(hit_area), point_(point), time_(time) {
+}
+
 month_calendar::month_calendar() {
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::user_paint, false);
   set_style(control_styles::standard_click, false);
 }
 
-std::vector<xtd::date_time> month_calendar::annually_bolded_dates() const {
+std::vector<xtd::date_time> month_calendar::annually_bolded_dates() const noexcept {
   return data_->annually_bolded_dates;
 }
 
@@ -30,7 +50,7 @@ month_calendar& month_calendar::annually_bolded_dates(const std::vector<xtd::dat
   return *this;
 }
 
-std::vector<xtd::date_time> month_calendar::bolded_dates() const {
+std::vector<xtd::date_time> month_calendar::bolded_dates() const noexcept {
   return data_->bolded_dates;
 }
 
@@ -42,7 +62,7 @@ month_calendar& month_calendar::bolded_dates(const std::vector<xtd::date_time>& 
   return *this;
 }
 
-const xtd::drawing::size& month_calendar::calendar_dimensions() const {
+const xtd::drawing::size& month_calendar::calendar_dimensions() const noexcept {
   return data_->calendar_dimensions;
 }
 
@@ -54,7 +74,7 @@ month_calendar& month_calendar::calendar_dimensions(const xtd::drawing::size& va
   return *this;
 }
 
-xtd::forms::day month_calendar::first_day_of_week() const {
+xtd::forms::day month_calendar::first_day_of_week() const noexcept {
   return data_->first_day_of_week;
 }
 month_calendar& month_calendar::first_day_of_week(xtd::forms::day value) {
@@ -65,7 +85,7 @@ month_calendar& month_calendar::first_day_of_week(xtd::forms::day value) {
   return *this;
 }
 
-date_time month_calendar::max_date() const {
+date_time month_calendar::max_date() const noexcept {
   return data_->max_date;
 }
 
@@ -80,7 +100,7 @@ month_calendar& month_calendar::max_date(date_time value) {
   return *this;
 }
 
-uint32_t month_calendar::max_selection_count() const {
+uint32_t month_calendar::max_selection_count() const noexcept {
   return data_->max_selection_count;
 }
 
@@ -92,7 +112,7 @@ month_calendar& month_calendar::max_selection_count(uint32_t value) {
   return *this;
 }
 
-date_time month_calendar::min_date() const {
+date_time month_calendar::min_date() const noexcept {
   return data_->min_date;
 }
 
@@ -107,7 +127,7 @@ month_calendar& month_calendar::month_calendar::min_date(date_time value) {
   return *this;
 }
 
-std::vector<xtd::date_time> month_calendar::monthly_bolded_dates() const {
+std::vector<xtd::date_time> month_calendar::monthly_bolded_dates() const noexcept {
   return data_->monthly_bolded_dates;
 }
 
@@ -119,7 +139,7 @@ month_calendar& month_calendar::monthly_bolded_dates(const std::vector<xtd::date
   return *this;
 }
 
-date_time month_calendar::selection_end() const {
+date_time month_calendar::selection_end() const noexcept {
   return data_->selection_end;
 }
 
@@ -134,7 +154,7 @@ month_calendar& month_calendar::selection_end(date_time value) {
   return *this;
 }
 
-date_time month_calendar::selection_start() const {
+date_time month_calendar::selection_start() const noexcept {
   return data_->selection_start;
 }
 
@@ -149,7 +169,7 @@ month_calendar& month_calendar::selection_start(date_time value) {
   return *this;
 }
 
-forms::selection_range month_calendar::selection_range() const {
+forms::selection_range month_calendar::selection_range() const noexcept {
   return {data_->selection_start, data_->selection_end};
 }
 
@@ -159,7 +179,7 @@ month_calendar& month_calendar::selection_range(const forms::selection_range& va
   return *this;
 }
 
-bool month_calendar::show_today() const {
+bool month_calendar::show_today() const noexcept {
   return data_->show_today;
 }
 
@@ -171,7 +191,7 @@ month_calendar& month_calendar::show_today(bool value) {
   return *this;
 }
 
-bool month_calendar::show_today_circle() const {
+bool month_calendar::show_today_circle() const noexcept {
   return data_->show_today_circle;
 }
 
@@ -183,7 +203,7 @@ month_calendar& month_calendar::show_today_circle(bool value) {
   return *this;
 }
 
-bool month_calendar::show_week_numbers() const {
+bool month_calendar::show_week_numbers() const noexcept {
   return data_->show_week_numbers;
 }
 
@@ -195,12 +215,12 @@ month_calendar& month_calendar::show_week_numbers(bool value) {
   return *this;
 }
 
-drawing::size month_calendar::single_month_size() const {
+drawing::size month_calendar::single_month_size() const noexcept {
   data_->single_month_size = native::month_calendar::single_month_size(handle());
   return data_->single_month_size;
 }
 
-xtd::drawing::color month_calendar::title_back_color() const {
+xtd::drawing::color month_calendar::title_back_color() const noexcept {
   return data_->title_back_color.value_or(application::style_sheet().system_colors().active_caption());
 }
 
@@ -212,7 +232,7 @@ month_calendar& month_calendar::title_back_color(const xtd::drawing::color& valu
   return *this;
 }
 
-xtd::drawing::color month_calendar::title_fore_color() const {
+xtd::drawing::color month_calendar::title_fore_color() const noexcept {
   return data_->title_fore_color.value_or(application::style_sheet().system_colors().active_caption_text());
 }
 
@@ -224,7 +244,7 @@ month_calendar& month_calendar::title_fore_color(const xtd::drawing::color& valu
   return *this;
 }
 
-const xtd::date_time& month_calendar::today_date() const {
+const xtd::date_time& month_calendar::today_date() const noexcept {
   return data_->today_date;
 }
 
@@ -236,11 +256,11 @@ month_calendar& month_calendar::today_date(const xtd::date_time& value) {
   return *this;
 }
 
-bool month_calendar::today_date_set() const {
+bool month_calendar::today_date_set() const noexcept {
   return data_->today_date_set;
 }
 
-xtd::drawing::color month_calendar::trailing_fore_color() const {
+xtd::drawing::color month_calendar::trailing_fore_color() const noexcept {
   return data_->trailing_fore_color.value_or(application::style_sheet().system_colors().gray_text());
 }
 
