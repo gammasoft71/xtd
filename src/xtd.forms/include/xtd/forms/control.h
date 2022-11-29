@@ -1964,8 +1964,8 @@ namespace xtd {
       /// @endcond
       
     private:
-      void on_controls_item_added(size_t, std::reference_wrapper<control> item);
-      void on_controls_item_removed(size_t, std::reference_wrapper<control> item);
+      void on_controls_item_added(size_t, control_ref item);
+      void on_controls_item_removed(size_t, control_ref item);
       void on_parent_size_changed(object& sender, const event_args& e);
       void do_layout_children_with_dock_style();
       void do_layout_with_auto_size_mode();
