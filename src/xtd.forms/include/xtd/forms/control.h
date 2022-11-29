@@ -74,9 +74,6 @@ namespace xtd {
     /// @include control.cpp
     class forms_export_ control : public component, public iwin32_window {
     protected:
-      /// @brief Represent an xtd::forms::context_menu reference.
-      using context_menu_ref = std::reference_wrapper<xtd::forms::context_menu>;
-      
       /// @cond
       enum class state {
         empty = 0,
@@ -143,6 +140,13 @@ namespace xtd {
       /// @endcond
       
     public:
+      /// @name Alias
+      
+      /// @{
+      /// @brief Represent an xtd::forms::context_menu reference.
+      using context_menu_ref = std::reference_wrapper<xtd::forms::context_menu>;
+      /// @}
+
       /// @brief Represents a collection of controls.
       class control_collection : public xtd::forms::layout::arranged_element_collection<control_ref> {
       public:
