@@ -13,37 +13,118 @@ using namespace std::this_thread;
 using namespace xtd;
 using namespace xtd::forms;
 
+xtd::forms::message_dialog_buttons message_dialog::buttons() const noexcept {
+  return data_->buttons;
+}
+
+message_dialog& message_dialog::buttons(xtd::forms::message_dialog_buttons buttons) {
+  data_->buttons = buttons;
+  return *this;
+}
+
+xtd::forms::message_dialog_default_button message_dialog::default_button() const noexcept {
+  return data_->default_button;
+}
+
+message_dialog& message_dialog::default_button(xtd::forms::message_dialog_default_button default_button) {
+  data_->default_button = default_button;
+  return *this;
+}
+
+bool message_dialog::display_help_button() const noexcept {
+  return data_->display_help_button;
+}
+
+message_dialog& message_dialog::display_help_button(bool display_help_button) {
+  data_->display_help_button = display_help_button;
+  return *this;
+}
+
+xtd::forms::dialog_result message_dialog::dialog_result() const noexcept {
+  return data_->dialog_result;
+}
+
+xtd::forms::dialog_style message_dialog::dialog_style() const noexcept {
+  return data_->dialog_style;
+}
+
+message_dialog& message_dialog::dialog_style(xtd::forms::dialog_style dialog_style) {
+  data_->dialog_style = dialog_style;
+  return *this;
+}
+
+xtd::forms::message_dialog_icon message_dialog::icon() const noexcept {
+  return data_->icon;
+}
+
+message_dialog& message_dialog::icon(xtd::forms::message_dialog_icon icon) {
+  data_->icon = icon;
+  return *this;
+}
+
+xtd::forms::message_dialog_options message_dialog::options() const noexcept {
+  return data_->options;
+}
+
+message_dialog& message_dialog::options(xtd::forms::message_dialog_options options) {
+  data_->options = options;
+  return *this;
+}
+
+xtd::ustring message_dialog::message() const noexcept {
+  return data_->message;
+}
+
+message_dialog& message_dialog::message(const xtd::ustring& message) {
+  data_->message = message;
+  return *this;
+}
+
+xtd::ustring message_dialog::text() const noexcept {
+  return data_->text;
+}
+
+message_dialog& message_dialog::text(const xtd::ustring& text) {
+  data_->text = text;
+  return *this;
+}
+
 void message_dialog::reset() {
-  buttons_ = xtd::forms::message_dialog_buttons::ok;
-  default_button_ = xtd::forms::message_dialog_default_button::button1;
-  dialog_style_ = xtd::forms::dialog_style::standard;
-  display_help_button_ = false;
-  icon_ = xtd::forms::message_dialog_icon::none;
-  options_ = static_cast<xtd::forms::message_dialog_options>(0);
-  message_ = "";
-  text_ = "";
+  data_->buttons = xtd::forms::message_dialog_buttons::ok;
+  data_->default_button = xtd::forms::message_dialog_default_button::button1;
+  data_->dialog_style = xtd::forms::dialog_style::standard;
+  data_->display_help_button = false;
+  data_->icon = xtd::forms::message_dialog_icon::none;
+  data_->options = static_cast<xtd::forms::message_dialog_options>(0);
+  data_->message = "";
+  data_->text = "";
 }
 
 xtd::forms::dialog_result message_dialog::show_dialog() {
-  on_dialog_closed(dialog_closed_event_args(static_cast<xtd::forms::dialog_result>(native::message_box::show(0, message_, text_, static_cast<uint32_t>(buttons_) + static_cast<uint32_t>(icon_) + static_cast<uint32_t>(default_button_) + static_cast<uint32_t>(options_), display_help_button_))));
-  return dialog_result_;
+  on_dialog_closed(dialog_closed_event_args(static_cast<xtd::forms::dialog_result>(native::message_box::show(0, data_->message, data_->text, static_cast<uint32_t>(data_->buttons) + static_cast<uint32_t>(data_->icon) + static_cast<uint32_t>(data_->default_button) + static_cast<uint32_t>(data_->options), data_->display_help_button))));
+  return data_->dialog_result;
 }
 
 xtd::forms::dialog_result message_dialog::show_dialog(const iwin32_window& owner) {
-  on_dialog_closed(dialog_closed_event_args(static_cast<xtd::forms::dialog_result>(native::message_box::show(owner.handle(), message_, text_, static_cast<uint32_t>(buttons_) + static_cast<uint32_t>(icon_) + static_cast<uint32_t>(default_button_) + static_cast<uint32_t>(options_), display_help_button_))));
-  return dialog_result_;
+  on_dialog_closed(dialog_closed_event_args(static_cast<xtd::forms::dialog_result>(native::message_box::show(owner.handle(), data_->message, data_->text, static_cast<uint32_t>(data_->buttons) + static_cast<uint32_t>(data_->icon) + static_cast<uint32_t>(data_->default_button) + static_cast<uint32_t>(data_->options), data_->display_help_button))));
+  return data_->dialog_result;
 }
 
 void message_dialog::show_sheet(const iwin32_window& owner) {
-  dialog_result_ = xtd::forms::dialog_result::none;
-  native::message_box::show_sheet({*new __xtd_forms_message_dialog_closed_caller__(this), &__xtd_forms_message_dialog_closed_caller__::on_dialog_closed}, owner.handle(), message_, text_, static_cast<uint32_t>(buttons_) + static_cast<uint32_t>(icon_) + static_cast<uint32_t>(default_button_) + static_cast<uint32_t>(options_), display_help_button_);
+  data_->dialog_result = xtd::forms::dialog_result::none;
+  native::message_box::show_sheet({*new __xtd_forms_message_dialog_closed_caller__(this), &__xtd_forms_message_dialog_closed_caller__::on_dialog_closed}, owner.handle(), data_->message, data_->text, static_cast<uint32_t>(data_->buttons) + static_cast<uint32_t>(data_->icon) + static_cast<uint32_t>(data_->default_button) + static_cast<uint32_t>(data_->options), data_->display_help_button);
 }
 
 xtd::forms::dialog_result message_dialog::show_sheet_dialog(const iwin32_window& owner) {
   show_sheet(owner);
-  while (dialog_result_ == xtd::forms::dialog_result::none) {
+  while (data_->dialog_result == xtd::forms::dialog_result::none) {
     application::do_events();
     sleep_for(100ms);
   }
-  return dialog_result_;
+  return data_->dialog_result;
 }
+
+void message_dialog::on_dialog_closed(const dialog_closed_event_args& e) {
+  data_->dialog_result = e.dialog_result();
+  dialog_closed(*this, e);
+  }
