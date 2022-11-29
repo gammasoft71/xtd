@@ -3,80 +3,102 @@
 using namespace std;
 using namespace xtd;
 
-xtd::forms::link::link(size_t start, size_t length) : length_(length), start_(start) {
+xtd::forms::link::link(size_t start, size_t length) {
+  data_->length = length;
+  data_->start = start;
 }
 
-xtd::forms::link::link(size_t start, size_t length, std::any link_data) : length_(length), link_data_(link_data), start_(start) {
+xtd::forms::link::link(size_t start, size_t length, std::any link_data) {
+  data_->length = length;
+  data_->link_data = link_data;
+  data_->start = start;
 }
 
-const xtd::ustring& xtd::forms::link::description() const {
-  return description_;
+xtd::forms::link::link(const link& value) {
+  *data_ = *value.data_;
+}
+
+xtd::forms::link& xtd::forms::link::operator =(const link& value) {
+  *data_ = *value.data_;
+  return *this;
+}
+
+bool xtd::forms::link::operator ==(const link& other) const noexcept {
+  return data_->enabled == other.data_->enabled && data_->length == other.data_->length && data_->name == other.data_->name && data_->start == other.data_->start;
+}
+
+bool xtd::forms::link::operator !=(const link& other) const noexcept {
+  return !operator ==(other);
+}
+
+const xtd::ustring& xtd::forms::link::description() const noexcept {
+  return data_->description;
 }
 
 xtd::forms::link& xtd::forms::link::description(const xtd::ustring& value) {
-  description_ = value;
+  data_->description = value;
   return *this;
 }
 
-bool xtd::forms::link::enabled() const {
-  return enabled_;
+bool xtd::forms::link::enabled() const noexcept {
+  return data_->enabled;
 }
 
 xtd::forms::link& xtd::forms::link::enabled(bool value) {
-  enabled_ = value;
+  data_->enabled = value;
   return *this;
 }
 
-size_t xtd::forms::link::length() const {
-  return length_;
+size_t xtd::forms::link::length() const noexcept {
+  return data_->length;
 }
 
 xtd::forms::link& xtd::forms::link::length(size_t value) {
-  length_ = value;
+  data_->length = value;
   return *this;
 }
 
-std::any xtd::forms::link::link_data() const {
-  return link_data_;
+std::any xtd::forms::link::link_data() const noexcept {
+  return data_->link_data;
 }
 
 xtd::forms::link& xtd::forms::link::link_data(std::any value) {
-  link_data_ = value;
+  data_->link_data = value;
   return *this;
 }
 
-const xtd::ustring& xtd::forms::link::name() const {
-  return name_;
+const xtd::ustring& xtd::forms::link::name() const noexcept {
+  return data_->name;
 }
 
 xtd::forms::link& xtd::forms::link::name(const xtd::ustring& value) {
-  name_ = value;
+  data_->name = value;
   return *this;
 }
 
-size_t xtd::forms::link::start() const {
-  return start_;
+size_t xtd::forms::link::start() const noexcept {
+  return data_->start;
 }
 
 xtd::forms::link& xtd::forms::link::start(size_t value) {
-  start_ = value;
+  data_->start = value;
   return *this;
 }
 
-std::any xtd::forms::link::tag() const {
-  return tag_;
+std::any xtd::forms::link::tag() const noexcept {
+  return data_->tag;
 }
 
 xtd::forms::link& xtd::forms::link::tag(std::any value) {
-  tag_ = value;
+  data_->tag = value;
   return *this;
 }
 
-bool xtd::forms::link::visited() const {
-  return visited_;
+bool xtd::forms::link::visited() const noexcept {
+  return data_->visited;
 }
 
 xtd::forms::link& xtd::forms::link::visited(bool value) {
-  visited_ = value;
+  data_->visited = value;
   return *this;
 }
