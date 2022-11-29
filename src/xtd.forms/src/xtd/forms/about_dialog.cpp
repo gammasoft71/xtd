@@ -231,7 +231,6 @@ namespace {
     inline static about_dialog_standard* about_dialog = nullptr;
     picture_box picture_box_icon_;
     label label_name_;
-    tab_control tab_control_about_;
     tab_page tab_page_about_;
     panel panel_about_;
     label label_version_;
@@ -245,6 +244,7 @@ namespace {
     credits_item_panel artists_;
     tab_page tab_page_license_;
     text_box text_box_license_;
+    tab_control tab_control_about_;
   };
 }
 
