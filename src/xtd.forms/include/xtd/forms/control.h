@@ -74,6 +74,9 @@ namespace xtd {
     /// @include control.cpp
     class forms_export_ control : public component, public iwin32_window {
     protected:
+      /// @brief Represent an xtd::forms::context_menu reference.
+      using context_menu_ref = std::reference_wrapper<xtd::forms::context_menu>;
+      
       /// @cond
       enum class state {
         empty = 0,
@@ -374,7 +377,7 @@ namespace xtd {
       
       /// @brief Gets the xtd::forms::context_menu that is displayed in the control.
       /// @return A xtd::forms::context_menu that represents the context menu to display in the control.
-      virtual std::optional<std::reference_wrapper<xtd::forms::context_menu>> context_menu() const noexcept;
+      virtual std::optional<context_menu_ref> context_menu() const noexcept;
       /// @brief Sets the xtd::forms::context_menu that is displayed in the control.
       /// @param value A xtd::forms::context_menu that represents the context menu to display in the control.
       /// @return Current control.
@@ -2022,7 +2025,7 @@ namespace xtd {
         forms::control_appearance control_appearance = forms::control_appearance::standard;
         xtd::forms::visual_styles::control_state control_state = xtd::forms::visual_styles::control_state::normal;
         control_collection controls;
-        std::optional<std::reference_wrapper<xtd::forms::context_menu>> context_menu;
+        std::optional<context_menu_ref> context_menu;
         std::optional<forms::cursor> cursor;
         dock_style dock = dock_style::none;
         bool focused = false;
