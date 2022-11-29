@@ -294,7 +294,7 @@ xtd::ustring control::company_name() const noexcept {
   return "Gammasoft";
 }
 
-std::optional<std::reference_wrapper<xtd::forms::context_menu>> control::context_menu() const noexcept {
+optional<control::context_menu_ref> control::context_menu() const noexcept {
   return data_->context_menu;
 }
 
