@@ -53,9 +53,9 @@ namespace xtd {
     class lcd_label : public control {
       class idigit interface_ {
       public:
-        virtual char32_t get_character() const = 0;
-        virtual std::u32string get_valid_characters() const = 0;
-        virtual int32_t get_thickness() const = 0;
+        virtual char32_t get_character() const noexcept = 0;
+        virtual std::u32string get_valid_characters() const noexcept = 0;
+        virtual int32_t get_thickness() const noexcept = 0;
         
         virtual void set_back_digit_color(const xtd::drawing::color& value) = 0;
         virtual void set_back_digit_opacity(double value) = 0;
@@ -70,9 +70,9 @@ namespace xtd {
       public:
         dot_matrix_display_digit() = default;
         
-        char32_t get_character() const override;
-        std::u32string get_valid_characters() const override;
-        int32_t get_thickness() const override;
+        char32_t get_character() const noexcept override;
+        std::u32string get_valid_characters() const noexcept override;
+        int32_t get_thickness() const noexcept override;
         
         void set_back_digit_color(const xtd::drawing::color& value) override;
         void set_back_digit_opacity(double value) override;
@@ -90,9 +90,9 @@ namespace xtd {
       public:
         fourteen_segment_display_digit() = default;
         
-        char32_t get_character() const override;
-        std::u32string get_valid_characters() const override;
-        int32_t get_thickness() const override;
+        char32_t get_character() const noexcept override;
+        std::u32string get_valid_characters() const noexcept override;
+        int32_t get_thickness() const noexcept override;
         
         void set_back_digit_color(const xtd::drawing::color& value) override;
         void set_back_digit_opacity(double value) override;
@@ -110,9 +110,9 @@ namespace xtd {
       public:
         nine_segment_display_digit() = default;
         
-        char32_t get_character() const override;
-        std::u32string get_valid_characters() const override;
-        int32_t get_thickness() const override;
+        char32_t get_character() const noexcept override;
+        std::u32string get_valid_characters() const noexcept override;
+        int32_t get_thickness() const noexcept override;
         
         void set_back_digit_color(const xtd::drawing::color& value) override;
         void set_back_digit_opacity(double value) override;
@@ -130,9 +130,9 @@ namespace xtd {
       public:
         seven_segment_display_digit() = default;
         
-        char32_t get_character() const override;
-        std::u32string get_valid_characters() const override;
-        int32_t get_thickness() const override;
+        char32_t get_character() const noexcept override;
+        std::u32string get_valid_characters() const noexcept override;
+        int32_t get_thickness() const noexcept override;
         
         void set_back_digit_color(const xtd::drawing::color& value) override;
         void set_back_digit_opacity(double value) override;
@@ -150,9 +150,9 @@ namespace xtd {
       public:
         sixteen_segment_display_digit() = default;
         
-        char32_t get_character() const override;
-        std::u32string get_valid_characters() const override;
-        int32_t get_thickness() const override;
+        char32_t get_character() const noexcept override;
+        std::u32string get_valid_characters() const noexcept override;
+        int32_t get_thickness() const noexcept override;
         
         void set_back_digit_color(const xtd::drawing::color& value) override;
         void set_back_digit_opacity(double value) override;
@@ -180,7 +180,7 @@ namespace xtd {
       /// @brief Gets background digit color.
       /// @return A xtd::drawing color that represent the background digit color.
       /// @remarks Do not confuse back_digit_color and back_color. Background digit color is the color when digit is off.
-      xtd::drawing::color back_digit_color() const;
+      xtd::drawing::color back_digit_color() const noexcept;
       /// @brief Sets background digit color.
       /// @param value A xtd::drawing color that represent the background digit color.
       /// @return Current lcd_label.
@@ -189,7 +189,7 @@ namespace xtd {
       
       /// @brief Gets the background digit opacity.
       /// @return A double-precision value between 0.0 and 1.0 that represent the background digit opacity.
-      double back_digit_opacity() const;
+      double back_digit_opacity() const noexcept;
       /// @brief Sets the background digit opacity.
       /// @param value A double-precision value between 0.0 and 1.0 that represent the background digit opacity.
       /// @exception xtd::argument_out_of_range_exception if value less than 0.0 or greater than 1.0.
@@ -198,7 +198,7 @@ namespace xtd {
       
       /// @brief Gets a value indicate if background digits are shown.
       /// @return true if background digits are shown; otherwise false
-      bool show_back_digit() const;
+      bool show_back_digit() const noexcept;
       /// @brief Sets a value indicate if background digits are shown.
       /// @param value true if background digits are shown; otherwise false
       /// @return Current lcd_label.
@@ -206,7 +206,7 @@ namespace xtd {
       
       /// @brief Gets the digit spacing.
       /// @return A int32_t represent the digit spacing.
-      int32_t digit_spacing() const;
+      int32_t digit_spacing() const noexcept;
       /// @brief Sets the digit spacing.
       /// @param value A int32_t represent the digit spacing.
       /// @return Current lcd_label.
@@ -215,7 +215,7 @@ namespace xtd {
       
       /// @brief Gets lcd style.
       /// @return One of xtd::forms::lcd_style values. The default is xtd::forms::lcd_style::seven_segment_display.
-      forms::lcd_style lcd_style() const;
+      forms::lcd_style lcd_style() const noexcept;
       /// @brief Sets lcd style.
       /// @param value One of xtd::forms::lcd_style values. The default is xtd::forms::lcd_style::seven_segment_display.
       /// @return Current lcd_label.
@@ -223,7 +223,7 @@ namespace xtd {
       
       /// @brief Gets segment style.
       /// @return One of xtd::forms::segment_style values. The default is xtd::forms::segment_style::standard.
-      forms::segment_style segment_style() const;
+      forms::segment_style segment_style() const noexcept;
       /// @brief Sets segment style.
       /// @param value One of xtd::forms::segment_style values. The default is xtd::forms::segment_style::standard.
       /// @return Current lcd_label.
@@ -231,7 +231,7 @@ namespace xtd {
       
       /// @brief Gets dot matrix style.
       /// @return One of xtd::forms::dot_matrix_style values. The default is xtd::forms::dot_matrix_style::standard.
-      forms::dot_matrix_style dot_matrix_style() const;
+      forms::dot_matrix_style dot_matrix_style() const noexcept;
       /// @brief Sets dot matrix style.
       /// @param value One of xtd::forms::dot_matrix_style values. The default is xtd::forms::dot_matrix_style::standard.
       /// @return Current lcd_label.
@@ -239,7 +239,7 @@ namespace xtd {
       
       /// @brief Gets thickness of lcd.
       /// @return A int32_t that represent the lcd thickness.
-      int32_t thickness() const;
+      int32_t thickness() const noexcept;
       /// @brief Sets thickness of lcd.
       /// @param value A int32_t that represent the lcd thickness.
       /// @return Current lcd_label.
