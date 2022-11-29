@@ -34,6 +34,34 @@ image_list::~image_list() {
   }
 }
 
+bool image_list::operator ==(const image_list& value) const noexcept {
+  return data_->images_ == value.data_->images_;
+}
+
+bool image_list::operator !=(const image_list& value) const noexcept {
+  return !operator ==(value);
+}
+
+intptr_t image_list::handle() const noexcept {
+  return data_->handle_;
+}
+
+bool image_list::handle_created() const noexcept {
+  return data_->handle_ != 0;
+}
+
+image_list::image_collection& image_list::images() {
+  return data_->images_;
+}
+
+const image_list::image_collection& image_list::images() const noexcept {
+  return data_->images_;
+}
+
+const drawing::size image_list::image_size() const noexcept {
+  return data_->image_size_;
+}
+
 const image_list& image_list::image_size(const drawing::size& value) {
   if (value.width() < 16 || value.width() > 256 || value.height() < 16 || value.height() > 256) throw argument_out_of_range_exception("The values for width and height must be between 16 and 256."_t, current_stack_frame_);
   if (data_->image_size_ != value) {
@@ -42,5 +70,14 @@ const image_list& image_list::image_size(const drawing::size& value) {
     native::image_list::destroy(data_->handle_);
     data_->handle_ = native::image_list::create(data_->image_size_);
   }
+  return *this;
+}
+
+std::any image_list::tag() const noexcept {
+  return data_->tag_;
+}
+
+image_list& image_list::tag(const std::any& tag) {
+  data_->tag_ = tag;
   return *this;
 }

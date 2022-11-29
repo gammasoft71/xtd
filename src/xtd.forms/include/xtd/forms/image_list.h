@@ -49,8 +49,8 @@ namespace xtd {
       ~image_list();
       image_list(const image_list&) = default;
       image_list& operator =(const image_list&) = default;
-      bool operator ==(const image_list& value) const {return data_->images_ == value.data_->images_;}
-      bool operator !=(const image_list& value) const {return !operator ==(value);}
+      bool operator ==(const image_list& value) const noexcept;
+      bool operator !=(const image_list& value) const noexcept;
       /// @endcond
       
       /// @name Properties
@@ -58,24 +58,24 @@ namespace xtd {
       /// @{
       /// @brief Gets the handle of the image list object.
       /// @return The handle for the image list. The default is 0.
-      intptr_t handle() const {return data_->handle_;}
+      intptr_t handle() const noexcept;
       
       /// @brief Gets a value indicating whether the underlying Win32 handle has been created.
       /// @return true if the Handle has been created; otherwise, false. The default is false.
-      bool handle_created() const {return data_->handle_ != 0;}
+      bool handle_created() const noexcept;
       
       /// @brief Gets the xtd::forms::image_list::image_collection for this image list.
       /// @return The collection of images.
       /// @remarks If the image collection has not yet been created, it is created when you retrieve this property.
-      image_collection& images() {return data_->images_;}
+      image_collection& images();
       /// @brief Gets the xtd::forms::image_list::image_collection for this image list.
       /// @return The collection of images.
       /// @remarks If the image collection has not yet been created, it is created when you retrieve this property.
-      const image_collection& images() const {return data_->images_;}
+      const image_collection& images() const noexcept;
       
       /// @brief Gets the size of the images in the image list.
       /// @return The xtd::drawing::size that defines the height and width, in pixels, of the images in the list. The default size is 16 by 16. The maximum size is 256 by 256.
-      const drawing::size image_size() const {return data_->image_size_;}
+      const drawing::size image_size() const noexcept;
       /// @brief Sets the size of the images in the image list.
       /// @param value The xtd::drawing::size that defines the height and width, in pixels, of the images in the list. The default size is 16 by 16. The maximum size is 256 by 256.
       /// @remarks Setting the image_size property prior to adding images to the image collection causes the images to be resized to the image size specified.
@@ -85,13 +85,10 @@ namespace xtd {
       
       /// @brief Gets an object that contains additional data about the image_list.
       /// @return A object that contains additional data about the image_list.
-      std::any tag() const {return data_->tag_;}
+      std::any tag() const noexcept;
       /// @brief Sets an object that contains additional data about the image_list.
       /// @param tag A object that contains additional data about the image_list.
-      image_list& tag(const std::any& tag) {
-        data_->tag_ = tag;
-        return *this;
-      }
+      image_list& tag(const std::any& tag);
       /// @}
       
     private:
