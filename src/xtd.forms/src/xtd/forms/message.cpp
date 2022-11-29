@@ -6,27 +6,27 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-intptr_t message::hwnd() const {return hwnd_;}
+intptr_t message::hwnd() const noexcept {return hwnd_;}
 
 void message::hwnd(intptr_t value) {hwnd_ = value;}
 
-intptr_t message::lparam() const {return lparam_;}
+intptr_t message::lparam() const noexcept {return lparam_;}
 
 void message::lparam(intptr_t value) {lparam_ = value;}
 
-uint32_t message::msg() const {return msg_;}
+uint32_t message::msg() const noexcept {return msg_;}
 
 void message::msg(uint32_t value) {msg_ = value;}
 
-intptr_t message::result() const {return result_;}
+intptr_t message::result() const noexcept {return result_;}
 
 void message::result(intptr_t value) {result_ = value;}
 
-intptr_t message::wparam() const {return wparam_;}
+intptr_t message::wparam() const noexcept {return wparam_;}
 
 void message::wparam(intptr_t value) {wparam_ = value;}
 
-intptr_t message::handle() const {return handle_;}
+intptr_t message::handle() const noexcept {return handle_;}
 
 void message::handle(intptr_t value) {handle_ = value;}
 
