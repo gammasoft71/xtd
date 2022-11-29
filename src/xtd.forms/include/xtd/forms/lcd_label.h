@@ -282,15 +282,18 @@ namespace xtd {
       void on_digit_mouse_up(object& sender, const mouse_event_args& e);
       void set_digits_params();
       
-      bool show_back_digit_ = true;
-      std::optional<xtd::drawing::color> back_digit_color_;
-      double back_digit_opacity_ = 0.95;
-      std::optional<int32_t> digit_spacing_;
-      forms::lcd_style lcd_style_ = forms::lcd_style::seven_segment_display;
-      forms::segment_style segment_style_ = forms::segment_style::standard;
-      forms::dot_matrix_style dot_matrix_style_ = forms::dot_matrix_style::standard;
-      std::vector<std::shared_ptr<idigit>> digits_;
-      std::optional<int32_t> thickness_;
+      struct data {
+        bool show_back_digit = true;
+        std::optional<xtd::drawing::color> back_digit_color;
+        double back_digit_opacity = 0.95;
+        std::optional<int32_t> digit_spacing;
+        forms::lcd_style lcd_style = forms::lcd_style::seven_segment_display;
+        forms::segment_style segment_style = forms::segment_style::standard;
+        forms::dot_matrix_style dot_matrix_style = forms::dot_matrix_style::standard;
+        std::vector<std::shared_ptr<idigit>> digits;
+        std::optional<int32_t> thickness;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
