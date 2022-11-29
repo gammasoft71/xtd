@@ -40,14 +40,33 @@ light_button::light_button() {
   set_style(control_styles::standard_click | control_styles::standard_double_click, false);
 }
 
+bool light_button::auto_check() const noexcept {
+  return data_->auto_check;
+}
+
 light_button& light_button::auto_check(bool auto_check) {
   data_->auto_check = auto_check;
   return *this;
+}
+bool light_button::checked() const noexcept {
+  return data_->checked;
 }
 
 light_button& light_button::checked(bool checked) {
   check_state(checked ? forms::check_state::checked : forms::check_state::unchecked);
   return *this;
+}
+
+drawing::color light_button::default_light_off_color() const noexcept {
+  return drawing::system_colors::window();
+}
+
+drawing::color light_button::default_light_on_color() const noexcept {
+  return drawing::system_colors::accent();
+}
+
+content_alignment light_button::light_align() const noexcept {
+  return data_->light_align;
 }
 
 light_button& light_button::light_align(content_alignment light_align) {
@@ -56,6 +75,10 @@ light_button& light_button::light_align(content_alignment light_align) {
     post_recreate_handle();
   }
   return *this;
+}
+
+forms::check_state light_button::check_state() const noexcept {
+  return data_->check_state;
 }
 
 light_button& light_button::check_state(forms::check_state check_state) {
@@ -71,6 +94,10 @@ light_button& light_button::check_state(forms::check_state check_state) {
   return *this;
 }
 
+bool light_button::three_state() const noexcept {
+  return data_->three_state;
+}
+
 light_button& light_button::three_state(bool three_state) {
   if (data_->three_state != three_state) {
     data_->three_state = three_state;
@@ -79,7 +106,7 @@ light_button& light_button::three_state(bool three_state) {
   return *this;
 }
 
-drawing::color light_button::light_off_color() const {
+drawing::color light_button::light_off_color() const noexcept {
   return data_->light_off_color.value_or(default_light_off_color());
 }
 
@@ -101,7 +128,7 @@ light_button& light_button::light_off_color(std::nullptr_t) {
   return *this;
 }
 
-drawing::color light_button::light_on_color() const {
+drawing::color light_button::light_on_color() const noexcept {
   return data_->light_on_color.value_or(default_light_on_color());
 }
 
@@ -133,14 +160,83 @@ forms::create_params light_button::create_params() const noexcept {
   return create_params;
 }
 
+xtd::forms::visual_styles::check_box_state light_button::state() const noexcept {
+  return data_->state;
+}
+
 void light_button::on_image_changed(const xtd::event_args& e) {
   button_base::on_image_changed(e);
+}
+
+void light_button::on_checked_changed(const event_args& e) {
+  if (flat_style() != xtd::forms::flat_style::system && enabled()) {
+    if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_normal;
+    else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_normal;
+    else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_normal;
+  }
+  checked_changed(*this, e);
+  if (flat_style() != xtd::forms::flat_style::system) invalidate();
+}
+
+void light_button::on_check_state_changed(const event_args& e) {
+  if (flat_style() != xtd::forms::flat_style::system && enabled()) {
+    if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_normal;
+    else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_normal;
+    else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_normal;
+  }
+  check_state_changed(*this, e);
+  if (flat_style() != xtd::forms::flat_style::system) invalidate();
+}
+
+void light_button::on_enabled_changed(const event_args& e) {
+  if (flat_style() != xtd::forms::flat_style::system) {
+    if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = enabled() ? xtd::forms::visual_styles::check_box_state::unchecked_normal : xtd::forms::visual_styles::check_box_state::unchecked_disabled;
+    else if (data_->check_state == xtd::forms::check_state::checked) data_->state = enabled() ? xtd::forms::visual_styles::check_box_state::checked_normal : xtd::forms::visual_styles::check_box_state::checked_disabled;
+    else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = enabled() ? xtd::forms::visual_styles::check_box_state::mixed_normal : xtd::forms::visual_styles::check_box_state::mixed_disabled;
+  }
+  button_base::on_enabled_changed(e);
 }
 
 void light_button::on_handle_created(const event_args& e) {
   button_base::on_handle_created(e);
   if (flat_style() == xtd::forms::flat_style::system) native::light_button::check_state(handle(), static_cast<int32_t>(data_->check_state));
   if (flat_style() != xtd::forms::flat_style::system && data_->check_state != xtd::forms::check_state::unchecked) invalidate();
+}
+
+void light_button::on_mouse_down(const mouse_event_args& e) {
+  if (flat_style() != xtd::forms::flat_style::system && enabled()) {
+    if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_pressed;
+    else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_pressed;
+    else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_pressed;
+  }
+  button_base::on_mouse_down(e);
+}
+
+void light_button::on_mouse_enter(const event_args& e) {
+  if (flat_style() != xtd::forms::flat_style::system && enabled()) {
+    if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::check_box_state::unchecked_pressed : xtd::forms::visual_styles::check_box_state::unchecked_hot;
+    else if (data_->check_state == xtd::forms::check_state::checked) data_->state = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::check_box_state::checked_pressed : xtd::forms::visual_styles::check_box_state::checked_hot;
+    else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::check_box_state::mixed_pressed : xtd::forms::visual_styles::check_box_state::mixed_hot;
+  }
+  button_base::on_mouse_enter(e);
+}
+
+void light_button::on_mouse_leave(const event_args& e) {
+  if (flat_style() != xtd::forms::flat_style::system && enabled()) {
+    if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_normal;
+    else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_normal;
+    else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_normal;
+  }
+  button_base::on_mouse_leave(e);
+}
+
+void light_button::on_mouse_up(const mouse_event_args& e) {
+  if (flat_style() != xtd::forms::flat_style::system && enabled() && (data_->state == xtd::forms::visual_styles::check_box_state::unchecked_pressed || data_->state == xtd::forms::visual_styles::check_box_state::checked_pressed || data_->state == xtd::forms::visual_styles::check_box_state::mixed_pressed)) {
+    if (data_->check_state == xtd::forms::check_state::unchecked) data_->state = xtd::forms::visual_styles::check_box_state::unchecked_hot;
+    else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_hot;
+    else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_hot;
+  }
+  button_base::on_mouse_up(e);
 }
 
 void light_button::on_paint(paint_event_args& e) {
