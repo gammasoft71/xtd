@@ -22,13 +22,13 @@ link_label::link_collection& link_label::link_collection::operator =(const link_
   return *this;
 }
 
-link_label::link_collection::const_reference link_label::link_collection::operator[](const ustring& name) const {
+link_label::link_collection::const_reference link_label::link_collection::operator[](const ustring& name) const noexcept {
   for (auto& item : *this)
     if (item.name() == name) return item;
   return empty_;
 }
 
-link_label::link_collection::reference link_label::link_collection::operator[](const ustring& name) {
+link_label::link_collection::reference link_label::link_collection::operator[](const ustring& name) noexcept {
   for (auto& item : *this)
     if (item.name() == name) return item;
   return empty_;
@@ -37,92 +37,92 @@ link_label::link_collection::reference link_label::link_collection::operator[](c
 link_label::link_label() {
   double_buffered(true);
   set_style(control_styles::all_painting_in_wm_paint | control_styles::optimized_double_buffer | control_styles::opaque | control_styles::user_paint | control_styles::standard_click | control_styles::resize_redraw, true);
-  links_.item_added += [&] {
-    if (links_.size() == 2 && links_[0].start() == 0 && links_[0].length() == text().length())
-      links_.erase_at(0);
+  data_->links.item_added += [&] {
+    if (data_->links.size() == 2 && data_->links[0].start() == 0 && data_->links[0].length() == text().length())
+      data_->links.erase_at(0);
     //tab_stop(true);
     invalidate();
   };
-  links_.item_removed += [&] {
+  data_->links.item_removed += [&] {
     invalidate();
   };
-  links_.item_updated += [&] {
+  data_->links.item_updated += [&] {
     invalidate();
   };
 }
 
-xtd::drawing::color link_label::active_link_color() const {
-  return active_link_color_.value_or(xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().active_text());
+xtd::drawing::color link_label::active_link_color() const noexcept {
+  return data_->active_link_color.value_or(xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().active_text());
 }
 
 link_label& link_label::active_link_color(const xtd::drawing::color& color) {
-  if (active_link_color_ != color) {
-    active_link_color_ = color;
+  if (data_->active_link_color != color) {
+    data_->active_link_color = color;
     invalidate();
   }
   return *this;
 }
 
-xtd::drawing::color link_label::disabled_link_color() const {
-  return disabled_link_color_.value_or(xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().gray_text());;
+xtd::drawing::color link_label::disabled_link_color() const noexcept {
+  return data_->disabled_link_color.value_or(xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().gray_text());;
 }
 
 link_label& link_label::disabled_link_color(const xtd::drawing::color& color) {
-  if (active_link_color_ != color) {
-    disabled_link_color_ = color;
+  if (data_->active_link_color != color) {
+    data_->disabled_link_color = color;
     invalidate();
   }
   return *this;
 }
 
-xtd::forms::link_behavior link_label::link_behavior() const {
-  return link_behavior_;
+xtd::forms::link_behavior link_label::link_behavior() const noexcept {
+  return data_->link_behavior;
 }
 
 link_label& link_label::link_behavior(xtd::forms::link_behavior value) {
-  if (link_behavior_ != value) {
-    link_behavior_ = value;
+  if (data_->link_behavior != value) {
+    data_->link_behavior = value;
     invalidate();
   }
   return *this;
 }
 
-xtd::drawing::color link_label::link_color() const {
-  return link_color_.value_or(xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().link_text());;
+xtd::drawing::color link_label::link_color() const noexcept {
+  return data_->link_color.value_or(xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().link_text());;
 }
 
 link_label& link_label::link_color(const xtd::drawing::color& color) {
-  if (link_color_ != color) {
-    link_color_ = color;
+  if (data_->link_color != color) {
+    data_->link_color = color;
     invalidate();
   }
   return *this;
 }
 
-const link_label::link_collection& link_label::links() const {
-  return links_;
+const link_label::link_collection& link_label::links() const noexcept {
+  return data_->links;
 }
 
 link_label::link_collection& link_label::links() {
-  return links_;
+  return data_->links;
 }
 
-xtd::forms::cursor link_label::override_cursor() const {
-  return override_cursor_.value_or(xtd::forms::cursors::hand());
+xtd::forms::cursor link_label::override_cursor() const noexcept {
+  return data_->override_cursor.value_or(xtd::forms::cursors::hand());
 }
 
 link_label& link_label::override_cursor(const xtd::forms::cursor& cursor) {
-  override_cursor_ = cursor;
+  data_->override_cursor = cursor;
   return *this;
 }
 
-xtd::drawing::color link_label::visited_link_color() const {
-  return visited_link_color_.value_or(xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().visited_text());;
+xtd::drawing::color link_label::visited_link_color() const noexcept {
+  return data_->visited_link_color.value_or(xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().visited_text());;
 }
 
 link_label& link_label::visited_link_color(const xtd::drawing::color& color) {
-  if (visited_link_color_ != color) {
-    visited_link_color_ = color;
+  if (data_->visited_link_color != color) {
+    data_->visited_link_color = color;
     invalidate();
   }
   return *this;
@@ -137,8 +137,8 @@ drawing::size link_label::measure_control() const noexcept {
 
 void link_label::on_cursor_changed(const event_args& e) {
   label::on_cursor_changed(e);
-  if (!mouse_hover_)
-    original_cursor_ = cursor();
+  if (!data_->mouse_hover)
+    data_->original_cursor = cursor();
 }
 
 void link_label::on_mouse_click(const mouse_event_args& e) {
@@ -168,7 +168,7 @@ void link_label::on_mouse_down(const mouse_event_args& e) {
 void link_label::on_mouse_up(const mouse_event_args& e) {
   label::on_mouse_up(e);
   if (!enabled()) return;
-  for (auto& link : links_)
+  for (auto& link : data_->links)
     link.data_->active = false;
   invalidate();
 }
@@ -176,10 +176,10 @@ void link_label::on_mouse_up(const mouse_event_args& e) {
 void link_label::on_mouse_move(const mouse_event_args& e) {
   label::on_mouse_move(e);
   if (!enabled()) return;
-  mouse_hover_ = true;
+  data_->mouse_hover = true;
   auto& link = point_in_link(e.location());
-  cursor(link != link_empty_ && link.enabled() ? override_cursor() : original_cursor_);
-  mouse_hover_ = false;
+  cursor(link != link_empty_ && link.enabled() ? override_cursor() : data_->original_cursor);
+  data_->mouse_hover = false;
 }
 
 void link_label::on_paint(paint_event_args& e) {
@@ -195,7 +195,7 @@ void link_label::on_paint(paint_event_args& e) {
     size_t line_index = 0;
     drawing::size size_text;
     ustring text;
-    for (auto link : links_) {
+    for (auto link : data_->links) {
       drawing::color color = link_color();
       if (!link.enabled()) color = disabled_link_color();
       else if (link.data_->active) color = active_link_color();
@@ -244,7 +244,7 @@ void link_label::on_text_align_changed(const event_args& e) {
 }
 
 void link_label::on_text_changed(const event_args& e) {
-  if (links_.empty()) links_.push_back({0, text().length()});
+  if (data_->links.empty()) data_->links.push_back({0, text().length()});
   label::on_text_changed(e);
   invalidate();
 }
@@ -253,14 +253,14 @@ link_label::link& link_label::point_in_link(const xtd::drawing::point& point) {
   size_t link_index = 0;
   for (auto [rect, is_link] : generate_text_rects())
     if (is_link) {
-      if (rect.contains(point)) return links_[link_index];
+      if (rect.contains(point)) return data_->links[link_index];
       ++link_index;
     }
     
   return link_empty_;
 }
 
-xtd::drawing::point link_label::get_text_location(size_t line_number) const {
+xtd::drawing::point link_label::get_text_location(size_t line_number) const noexcept {
   size_t line_index = 0;
   for (auto line : text().split({'\n'})) {
     point text_location;
@@ -283,7 +283,7 @@ xtd::drawing::point link_label::get_text_location(size_t line_number) const {
   return {0, 0};
 }
 
-std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text_rects() const {
+std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text_rects() const noexcept {
   std::vector<std::tuple<xtd::drawing::rectangle, bool>> text_rects;
   size_t line_number = 0;
   size_t index = 0;
@@ -292,7 +292,7 @@ std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text
     auto text_location = get_text_location(line_number);
     drawing::size size_text;
     ustring text;
-    for (auto link : links_) {
+    for (auto link : data_->links) {
       if (index < link.start()) {
         text = line.substring(line_index, link.start() - line_index);
         size_text = drawing::size::ceiling(screen::create_graphics().measure_string(text, font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
@@ -322,6 +322,6 @@ std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text
   return text_rects;
 }
 
-xtd::drawing::font link_label::link_font() const {
+xtd::drawing::font link_label::link_font() const noexcept {
   return {font(), xtd::drawing::font_style::underline};
 }
