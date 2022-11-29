@@ -38,15 +38,15 @@ namespace xtd {
       /// @{
       /// @brief Geyts the link clicked.
       /// @return The link clocked.
-      const xtd::forms::link& link() const;
+      const xtd::forms::link& link() const noexcept;
       
       /// @brief Gets which mouse button was pressed.
       /// @return One of the xtd::forms::mouse_buttons values.
-      xtd::forms::mouse_buttons button() const;
+      xtd::forms::mouse_buttons button() const noexcept;
       
       /// @brief Gets the visited link value.
       /// @return true if visited link; otherwise false.
-      bool visited() const;
+      bool visited() const noexcept;
       /// @brief Sets the visited link value.
       /// @param value true if visited link; otherwise false.
       void visited(bool value);
