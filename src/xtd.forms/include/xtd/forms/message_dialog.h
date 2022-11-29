@@ -66,95 +66,71 @@ namespace xtd {
       /// @{
       /// @brief Gets buttons to display in the message dialog.
       /// @return One of the xtd::forms::message_dialog_buttons values that specifies which buttons to display in the message dialog.
-      xtd::forms::message_dialog_buttons buttons() const {return buttons_;}
+      xtd::forms::message_dialog_buttons buttons() const noexcept;
       /// @brief Sets buttons to display in the message dialog.
       /// @param buttons One of the xtd::forms::message_dialog_buttons values that specifies which buttons to display in the message dialog.
       /// @return Current message dialog.
-      message_dialog& buttons(xtd::forms::message_dialog_buttons buttons) {
-        buttons_ = buttons;
-        return *this;
-      }
+      message_dialog& buttons(xtd::forms::message_dialog_buttons buttons);
       
       /// @brief Gets default button for the message dialog.
       /// @return One of the xtd::forms::message_dialog_default_button values that specifies the default button for the message dialog.
-      xtd::forms::message_dialog_default_button default_button() const {return default_button_;}
+      xtd::forms::message_dialog_default_button default_button() const noexcept;
       /// @brief Sets default button for the message dialog.
       /// @param default_button One of the xtd::forms::message_dialog_default_button values that specifies the default button for the message dialog.
       /// @return Current message dialog.
-      message_dialog& default_button(xtd::forms::message_dialog_default_button default_button) {
-        default_button_ = default_button;
-        return *this;
-      }
+      message_dialog& default_button(xtd::forms::message_dialog_default_button default_button);
       
       /// @brief Gets a value indicate if help button is shown.
       /// @return true to show the Help button; otherwise, false. The default is false.
-      bool display_help_button() const {return display_help_button_;}
+      bool display_help_button() const noexcept;
       /// @brief Sets a value indicate if help button is shown.
       /// @param display_help_button true to show the Help button; otherwise, false. The default is false.
       /// @return Current message dialog.
-      message_dialog& display_help_button(bool display_help_button) {
-        display_help_button_ = display_help_button;
-        return *this;
-      }
+      message_dialog& display_help_button(bool display_help_button);
       
       /// @brief Gets async dialog_result result after dialog box is closing.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
-      xtd::forms::dialog_result dialog_result() const {return dialog_result_;}
+      xtd::forms::dialog_result dialog_result() const noexcept;
       
       /// @brief Gets the dialog style.
       /// @return One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
-      xtd::forms::dialog_style dialog_style() const {return dialog_style_;}
+      xtd::forms::dialog_style dialog_style() const noexcept;
       /// @brief Sets the dialog style.
       /// @param dialog_style One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
       /// @return Current message dialog.
-      message_dialog& dialog_style(xtd::forms::dialog_style dialog_style) {
-        dialog_style_ = dialog_style;
-        return *this;
-      }
+      message_dialog& dialog_style(xtd::forms::dialog_style dialog_style);
       
       /// @brief Gets icon to display in the message dialog.
       /// @return One of the xtd::forms::message_dialog_icon values that specifies which icon to display in the message dialog.
-      xtd::forms::message_dialog_icon icon() const {return icon_;}
+      xtd::forms::message_dialog_icon icon() const noexcept;
       /// @brief Sets icon to display in the message dialog.
       /// @param icon One of the xtd::forms::message_dialog_icon values that specifies which icon to display in the message dialog.
       /// @return Current message dialog.
-      message_dialog& icon(xtd::forms::message_dialog_icon icon) {
-        icon_ = icon;
-        return *this;
-      }
+      message_dialog& icon(xtd::forms::message_dialog_icon icon);
       
       /// @brief Gets options will be used for the message box.
       /// @return One of the xtd::forms::message_dialog_options values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults.
-      xtd::forms::message_dialog_options options() const {return options_;}
+      xtd::forms::message_dialog_options options() const noexcept;
       /// @brief Sets options will be used for the message box.
       /// @param options One of the xtd::forms::message_dialog_options values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults.
       /// @return Current message dialog.
-      message_dialog& options(xtd::forms::message_dialog_options options) {
-        options_ = options;
-        return *this;
-      }
+      message_dialog& options(xtd::forms::message_dialog_options options);
       
       /// @brief Gets the text message.
       /// @return The text message.
-      xtd::ustring message() const {return message_;}
+      xtd::ustring message() const noexcept;
       /// @brief Sets the text message.
       /// @param message The text message.
       /// @return Current message_dialog instance.
-      message_dialog& message(const xtd::ustring& message) {
-        message_ = message;
-        return *this;
-      }
+      message_dialog& message(const xtd::ustring& message);
       
       /// @brief Gets the dialog caption text.
       /// @return The current dialog caption text.
-      xtd::ustring text() const {return text_;}
+      xtd::ustring text() const noexcept;
       /// @brief Sets the dialog caption text.
       /// @param text The new dialog caption text.
       /// @return Current message_dialog instance.
-      message_dialog& text(const xtd::ustring& text) {
-        text_ = text;
-        return *this;
-      }
+      message_dialog& text(const xtd::ustring& text);
       /// @}
       
       /// @name Methods
@@ -195,20 +171,20 @@ namespace xtd {
       /// @brief Raises the message_dialog::dialog_close event.
       /// @param e An message_dialog_close_event_args that provides the event data.
       /// @remarks This method is invoked when the message dialog box is closed.
-      virtual void on_dialog_closed(const dialog_closed_event_args& e) {
-        dialog_result_ = e.dialog_result();
-        dialog_closed(*this, e);
-      }
+      virtual void on_dialog_closed(const dialog_closed_event_args& e);
       
-      xtd::forms::message_dialog_buttons buttons_ = xtd::forms::message_dialog_buttons::ok;
-      xtd::forms::message_dialog_default_button default_button_ = xtd::forms::message_dialog_default_button::button1;
-      xtd::forms::dialog_result dialog_result_ = xtd::forms::dialog_result::none;
-      xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::system;
-      bool display_help_button_ = false;
-      xtd::forms::message_dialog_icon icon_ = xtd::forms::message_dialog_icon::none;
-      xtd::forms::message_dialog_options options_ = static_cast<xtd::forms::message_dialog_options>(0);
-      xtd::ustring message_;
-      xtd::ustring text_;
+      struct data {
+        xtd::forms::message_dialog_buttons buttons = xtd::forms::message_dialog_buttons::ok;
+        xtd::forms::message_dialog_default_button default_button = xtd::forms::message_dialog_default_button::button1;
+        xtd::forms::dialog_result dialog_result = xtd::forms::dialog_result::none;
+        xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::system;
+        bool display_help_button = false;
+        xtd::forms::message_dialog_icon icon = xtd::forms::message_dialog_icon::none;
+        xtd::forms::message_dialog_options options = static_cast<xtd::forms::message_dialog_options>(0);
+        xtd::ustring message;
+        xtd::ustring text;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
