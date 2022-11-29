@@ -197,14 +197,14 @@ namespace xtd {
       void recreate_menu();
       
       struct data {
-        intptr_t handle_ = 0;
-        std::optional<std::reference_wrapper<menu>> context_menu_;
-        menu_item_collection menu_items_;
-        std::unique_ptr<menu_item> mdi_list_item_;
-        std::optional<std::reference_wrapper<menu>> main_menu_;
-        xtd::ustring name_;
-        std::optional<std::reference_wrapper<menu>> parent_;
-        std::any tag_;
+        intptr_t handle = 0;
+        std::optional<std::reference_wrapper<menu>> context_menu;
+        menu_item_collection menu_items;
+        std::unique_ptr<menu_item> mdi_list_item;
+        std::optional<std::reference_wrapper<menu>> main_menu;
+        xtd::ustring name;
+        std::optional<std::reference_wrapper<menu>> parent;
+        std::any tag;
       };
       std::shared_ptr<data> data_;
       static std::map<intptr_t, std::reference_wrapper<menu>> handles_;

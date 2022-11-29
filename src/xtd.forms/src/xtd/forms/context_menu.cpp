@@ -20,16 +20,16 @@ context_menu::context_menu() {
 context_menu::context_menu(const std::initializer_list<const_menu_item_ref>& menu_items) {
   create_menu();
   for (auto& item : menu_items)
-    data_->menu_items_.push_back(menu_item_ref(const_cast<menu_item&>(item.get())));
+    data_->menu_items.push_back(menu_item_ref(const_cast<menu_item&>(item.get())));
 }
 
 context_menu::context_menu(const std::vector<menu_item_ref>& menu_items) {
   create_menu();
-  data_->menu_items_.push_back_range(menu_items);
+  data_->menu_items.push_back_range(menu_items);
 }
 
 context_menu::~context_menu() {
-  if (data_.use_count() == 1) destroy_menu_handle(data_->handle_);
+  if (data_.use_count() == 1) destroy_menu_handle(data_->handle);
 }
 
 void context_menu::show(const xtd::forms::control& control, const xtd::drawing::point& pos)  {
@@ -46,10 +46,10 @@ void context_menu::destroy_menu_handle(intptr_t handle) {
 
 void context_menu::on_item_added(size_t pos, menu_item_ref item) {
   menu::on_item_added(pos, item);
-  item.get().data_->context_menu_ = *this;
-  item.get().data_->parent_ = *this;
+  item.get().menu::data_->context_menu = *this;
+  item.get().menu::data_->parent = *this;
   if (!item.get().handle()) item.get().create_menu();
-  if (item.get().is_parent() || item.get().data_->main_menu_.has_value()) native::context_menu::insert_menu(handle(), pos, item.get().handle(), item.get().text());
+  if (item.get().is_parent() || item.get().menu::data_->main_menu.has_value()) native::context_menu::insert_menu(handle(), pos, item.get().handle(), item.get().text());
   else {
     native::context_menu::insert_item(handle(), pos, item.get().handle());
     native::menu_item::enabled(item.get().handle(), item.get().enabled());
@@ -59,7 +59,7 @@ void context_menu::on_item_added(size_t pos, menu_item_ref item) {
 
 void context_menu::on_item_removed(size_t pos, menu_item_ref item) {
   menu::on_item_removed(pos, item);
-  item.get().data_->parent_.reset();
+  item.get().menu::data_->parent.reset();
   native::context_menu::remove_item(handle(), pos);
 }
 

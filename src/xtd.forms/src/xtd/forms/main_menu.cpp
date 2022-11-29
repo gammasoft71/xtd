@@ -20,12 +20,12 @@ main_menu::main_menu() {
 main_menu::main_menu(const std::initializer_list<const_menu_item_ref>& menu_items) {
   create_menu();
   for (auto& item : menu_items)
-    data_->menu_items_.push_back(menu_item_ref(const_cast<menu_item&>(item.get())));
+    data_->menu_items.push_back(menu_item_ref(const_cast<menu_item&>(item.get())));
 }
 
 main_menu::main_menu(const std::vector<menu_item_ref>& menu_items) {
   create_menu();
-  data_->menu_items_.push_back_range(menu_items);
+  data_->menu_items.push_back_range(menu_items);
 }
 
 intptr_t main_menu::create_menu_handle() {
@@ -38,15 +38,15 @@ void main_menu::destroy_menu_handle(intptr_t handle) {
 
 void main_menu::on_item_added(size_t pos, menu_item_ref item) {
   menu::on_item_added(pos, item);
-  item.get().data_->main_menu_ = *this;
-  item.get().data_->parent_ = *this;
+  item.get().menu::data_->main_menu = *this;
+  item.get().menu::data_->parent = *this;
   if (!item.get().handle()) item.get().create_menu();
   native::main_menu::insert_item(handle(), pos, item.get().handle(), item.get().text());
 }
 
 void main_menu::on_item_removed(size_t pos, menu_item_ref item) {
   menu::on_item_removed(pos, item);
-  item.get().data_->parent_.reset();
+  item.get().menu::data_->parent.reset();
   native::main_menu::remove_item(handle(), pos);
 }
 

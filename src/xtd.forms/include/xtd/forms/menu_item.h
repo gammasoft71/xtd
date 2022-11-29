@@ -346,15 +346,16 @@ namespace xtd {
       /// @}
       
     private:
-      /// @cond
-      xtd::ustring text_;
-      xtd::drawing::image image_ = xtd::drawing::image::empty;
-      xtd::forms::menu_item_kind kind_ = xtd::forms::menu_item_kind::normal;
-      bool checked_ = false;
-      xtd::forms::shortcut shortcut_ = xtd::forms::shortcut::none;
-      bool enabled_ = true;
-      bool is_parent_ = false;
-      /// @endcond
+      struct data {
+        xtd::ustring text;
+        xtd::drawing::image image = xtd::drawing::image::empty;
+        xtd::forms::menu_item_kind kind = xtd::forms::menu_item_kind::normal;
+        bool checked = false;
+        xtd::forms::shortcut shortcut = xtd::forms::shortcut::none;
+        bool enabled = true;
+        bool is_parent = false;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
