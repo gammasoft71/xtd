@@ -29,12 +29,8 @@ label::label() {
   set_style(control_styles::resize_redraw, true);
 }
 
-label& label::border_sides(forms::border_sides border_sides) {
-  if (data_->border_sides != border_sides) {
-    data_->border_sides = border_sides;
-    if (control_appearance() == forms::control_appearance::standard) invalidate();
-  }
-  return *this;
+bool label::auto_ellipsis() const noexcept {
+  return data_->auto_ellipsis;
 }
 
 label& label::auto_ellipsis(bool value) {
@@ -44,6 +40,22 @@ label& label::auto_ellipsis(bool value) {
     else invalidate();
   }
   return *this;
+}
+
+forms::border_sides label::border_sides() const noexcept {
+  return data_->border_sides;
+}
+
+label& label::border_sides(forms::border_sides border_sides) {
+  if (data_->border_sides != border_sides) {
+    data_->border_sides = border_sides;
+    if (control_appearance() == forms::control_appearance::standard) invalidate();
+  }
+  return *this;
+}
+
+xtd::forms::border_style label::border_style() const noexcept {
+  return data_->border_style.value_or(xtd::forms::border_style::none);
 }
 
 label& label::border_style(xtd::forms::border_style border_style) {
@@ -73,6 +85,9 @@ control& label::control_appearance(forms::control_appearance value) {
   return *this;
 }
 
+xtd::forms::flat_style label::flat_style() const noexcept {
+  return data_->flat_style;
+}
 
 label& label::flat_style(xtd::forms::flat_style flat_style) {
   if (data_->flat_style != flat_style) {
@@ -81,6 +96,10 @@ label& label::flat_style(xtd::forms::flat_style flat_style) {
     recreate_handle();
   }
   return *this;
+}
+
+const drawing::image& label::image() const noexcept {
+  return data_->image;
 }
 
 label& label::image(const drawing::image& value) {
@@ -94,12 +113,20 @@ label& label::image(const drawing::image& value) {
   return *this;
 }
 
+xtd::forms::content_alignment label::image_align() const noexcept {
+  return data_->image_align;
+}
+
 label& label::image_align(content_alignment value) {
   if (data_->image_align != value) {
     data_->image_align = value;
     if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
   }
   return *this;
+}
+
+int32_t label::image_index() const noexcept {
+  return data_->image_index;
 }
 
 label& label::image_index(int32_t value) {
@@ -112,6 +139,14 @@ label& label::image_index(int32_t value) {
   return *this;
 }
 
+const forms::image_list& label::image_list() const noexcept {
+  return data_->image_list;
+}
+
+forms::image_list& label::image_list() noexcept {
+  return data_->image_list;
+}
+
 label& label::image_list(const forms::image_list& value) {
   if (data_->image_list != value) {
     data_->image_list = value;
@@ -121,12 +156,20 @@ label& label::image_list(const forms::image_list& value) {
   return *this;
 }
 
+bool label::shadow() const noexcept {
+  return data_->shadow;
+}
+
 label& label::shadow(bool value) {
   if (data_->shadow != value) {
     data_->shadow = value;
     if (control_appearance() == forms::control_appearance::standard) invalidate();
   }
   return *this;
+}
+
+xtd::forms::content_alignment label::text_align() const noexcept {
+  return data_->text_align;
 }
 
 label& label::text_align(content_alignment text_align) {
@@ -174,6 +217,11 @@ drawing::size label::measure_control() const noexcept {
 void label::on_font_changed(const xtd::event_args& e) {
   control::on_font_changed(e);
   if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
+}
+
+void label::on_image_changed(const xtd::event_args& e) {
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
+  if (can_raise_events()) image_changed(*this, e);
 }
 
 void label::on_paint(paint_event_args& e) {
