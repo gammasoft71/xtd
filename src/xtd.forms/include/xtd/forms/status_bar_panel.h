@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "component.h"
+#include "control_ref.h"
 #include <xtd/event.h>
 #include <xtd/event_handler.h>
 #include <xtd/forms/image_list.h>
@@ -102,7 +103,7 @@ namespace xtd {
       /// @brief Gets the control to be displayed in the control status bar panel.
       /// @return A xtd::forms::control to be displayed in the control status bar panel. The default is std::nullopt.
       /// @remarks You can specify a xtd::forms::control to be displayed. This property is not used unless the xtd::forms::status_bar_panel::style property value is set to xtd::forms::status_bar_panel_style::control.
-      std::optional<std::reference_wrapper<xtd::forms::control>> control() const noexcept;
+      std::optional<control_ref> control() const noexcept;
       /// @brief Sets the control to be displayed in the control status bar panel.
       /// @param value A xtd::forms::control to be displayed in the control status bar panel. The default is std::nullopt.
       /// @return This current instance.
