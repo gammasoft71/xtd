@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/object.h>
-#include "application.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -26,11 +25,11 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of use_wait_cursor class.
       /// @remarks The xtd::forms::application::use_wait_cursor(true) is called in the constructor and xtd::forms::application::use_wait_cursor(false) is called in the destructor.
-      use_wait_cursor() {xtd::forms::application::use_wait_cursor(true);}
+      use_wait_cursor();
       /// @}
       
       /// @cond
-      ~use_wait_cursor() {xtd::forms::application::use_wait_cursor(false);}
+      ~use_wait_cursor();
       /// @endcond
     };
   }

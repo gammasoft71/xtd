@@ -473,6 +473,7 @@ add_sources(
   src/xtd/forms/track_bar.cpp
   src/xtd/forms/up_down_base.cpp
   src/xtd/forms/up_down_button.cpp
+  src/xtd/forms/use_wait_cursor.cpp
   src/xtd/forms/user_control.cpp
   src/xtd/forms/user_control_renderer.cpp
   src/xtd/forms/vertical_layout_panel.cpp
