@@ -2,7 +2,9 @@
 /// @brief Contains xtd::box class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
+#include "convert_string.h"
 #include "icomparable.h"
+#include "invalid_cast_exception.h"
 #include "iequatable.h"
 #include "enum.h"
 #include "object.h"
@@ -206,6 +208,40 @@ namespace xtd {
   
   inline const object& unboxing(const object& value) {return value;}
   inline const char* unboxing(ustring& value) {return value.c_str();}
+  
+  template<typename char_t>
+  inline const char_t* unboxing(ustring& value) {throw invalid_cast_exception("Invalid character type");}
+  
+  template<>
+  inline const char* unboxing<char>(ustring& value) {return value.c_str();}
+  
+  template<>
+  inline const char8_t* unboxing<char8_t>(ustring& value) {
+    thread_local static std::u8string result;
+    result = convert_string::to_u8string(value);
+    return result.c_str();
+  }
+  
+  template<>
+  inline const char16_t* unboxing<char16_t>(ustring& value) {
+    thread_local static std::u16string result;
+    result = convert_string::to_u16string(value);
+    return result.c_str();
+  }
+  
+  template<>
+  inline const char32_t* unboxing<char32_t>(ustring& value) {
+    thread_local static std::u32string result;
+    result = convert_string::to_u32string(value);
+    return result.c_str();
+  }
+  
+  template<>
+  inline const wchar_t* unboxing<wchar_t>(ustring& value) {
+    thread_local static std::wstring result;
+    result = convert_string::to_wstring(value);
+    return result.c_str();
+  }
   inline object& unboxing(object& value) {return value;}
   
   template<typename type_t>
@@ -218,3 +254,4 @@ namespace xtd {
 #include "box_char.h"
 #include "box_floating_point.h"
 #include "box_integer.h"
+
