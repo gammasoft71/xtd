@@ -43,52 +43,47 @@ namespace xtd {
       /// @brief Gets the number of bits of memory, associated with one pixel of data.
       /// @return The number of bits of memory, associated with one pixel of data.
       /// @remarks Typically, the number of bits per pixel for a screen is useful when working with bitmaps.
-      int32_t bits_per_pixel() const {return bits_per_pixel_;}
+      int32_t bits_per_pixel() const noexcept;
       
       /// @brief Gets the bounds of the display.
       /// @return A xtd::drawing::rectangle, representing the bounds of the display.
-      const drawing::rectangle& bounds() const {return bounds_;}
+      const drawing::rectangle& bounds() const noexcept;
       
       /// @brief Gets the device name associated with a display.
       /// @return The device name associated with a display.
       /// @remarks This string may contain non-printable characters.
-      const xtd::ustring& device_name() const {return device_name_;}
+      const xtd::ustring& device_name() const;
       
       /// @brief Gets a value indicating whether a particular display is high resolution.
       /// @return true if this display is high resolution; otherwise, false.
-      bool high_resolution() const {return scale_factor_ > 1.;}
+      bool high_resolution() const noexcept;
       
       /// @brief Gets the number of pixels per inch of the display.
       /// @return The number of pixels per inch of the display.
       /// @remarks See get_standard_pixels_per_inch() for more informations.
-      int32_t pixels_per_inch() const {return pixels_per_inch_;}
+      int32_t pixels_per_inch() const noexcept;
       
       /// @brief Gets a value indicating whether a particular display is the primary device.
       /// @return true if this display is primary; otherwise, false.
-      bool primary() const {return primary_;}
+      bool primary() const noexcept;
       
       /// @brief Gets the scale factor of the display.
       /// @return The scale factor of the display.
       /// @remarks This value is computed from pixels_per_inch() for the display divided by get_standard_pixels_per_inch().
       /// @remarks If scale factor is equal to 1.0 is a standard display; greater than 1.0 is a high DPI display.
       /// @remarks See get_standard_pixels_per_inch() for more informations.
-      double scale_factor() const {return scale_factor_;}
+      double scale_factor() const noexcept;
       
       /// @brief Gets the primary display.
       /// @return The primary display.
       /// @remarks For a single display system, the primary display is the only display.
-      static screen primary_screen() {
-        std::vector<screen> screens = all_screens();
-        for (auto& screen : screens)
-          if (screen.primary()) return screen;
-        return screens[0];
-      }
+      static screen primary_screen();
       
       /// @brief Gets the working area of the display. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.
       /// @return A xtd::drawing::rectangle, representing the working area of the display.
       /// @remarks The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.
       /// @remarks working_area will return the entire area of the screen if the Windows Taskbar is set to Auto-Hide, no matter whether the Taskbar is currently displayed or not.
-      const drawing::rectangle& working_area() const {return working_area_;}
+      const drawing::rectangle& working_area() const noexcept;
       
       /// @brief Creates the xtd::drawing::graphics for the screen.
       /// @return A xtd::drawing::graphics for the screen.
@@ -173,7 +168,7 @@ namespace xtd {
       
     private:
       screen() = default;
-      screen(int32_t bits_per_pixel, const drawing::rectangle& bounds, const xtd::ustring& device_name, int32_t pixels_per_inch, bool primary, double scale_factor, const drawing::rectangle& working_area) : bits_per_pixel_(bits_per_pixel), bounds_(bounds), device_name_(device_name), pixels_per_inch_(pixels_per_inch), primary_(primary), scale_factor_(scale_factor), working_area_(working_area) {}
+      screen(int32_t bits_per_pixel, const drawing::rectangle& bounds, const xtd::ustring& device_name, int32_t pixels_per_inch, bool primary, double scale_factor, const drawing::rectangle& working_area);
       
       int32_t bits_per_pixel_ = 0;
       drawing::rectangle bounds_;

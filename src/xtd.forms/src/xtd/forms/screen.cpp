@@ -17,6 +17,46 @@ vector<screen> screen::all_screens() {
   return screens;
 }
 
+int32_t screen::bits_per_pixel() const noexcept {
+  return bits_per_pixel_;
+}
+
+const drawing::rectangle& screen::bounds() const noexcept {
+  return bounds_;
+}
+
+const xtd::ustring& screen::device_name() const {
+  return device_name_;
+}
+
+bool screen::high_resolution() const noexcept {
+  return scale_factor_ > 1.;
+}
+
+int32_t screen::pixels_per_inch() const noexcept {
+  return pixels_per_inch_;
+}
+
+bool screen::primary() const noexcept {
+  return primary_;
+}
+
+double screen::scale_factor() const noexcept {
+  return scale_factor_;
+}
+
+screen screen::primary_screen() {
+  std::vector<screen> screens = all_screens();
+  for (auto& screen : screens)
+    if (screen.primary()) return screen;
+  return screens[0];
+}
+
+
+const drawing::rectangle& screen::working_area() const noexcept {
+  return working_area_;
+}
+
 graphics screen::create_graphics() {
   return graphics(native::screen::create_graphics());
 }
@@ -75,4 +115,7 @@ rectangle screen::get_working_area(const point& point) {
 
 rectangle screen::get_working_area(const rectangle& rect) {
   return from_rectangle(rect).working_area();
+}
+
+screen::screen(int32_t bits_per_pixel, const drawing::rectangle& bounds, const xtd::ustring& device_name, int32_t pixels_per_inch, bool primary, double scale_factor, const drawing::rectangle& working_area) : bits_per_pixel_(bits_per_pixel), bounds_(bounds), device_name_(device_name), pixels_per_inch_(pixels_per_inch), primary_(primary), scale_factor_(scale_factor), working_area_(working_area) {
 }
