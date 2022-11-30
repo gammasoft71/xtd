@@ -75,7 +75,7 @@ control& status_bar::dock(dock_style dock) {
   return *this;
 }
 
-const status_bar::status_bar_panel_collection& status_bar::panels() const {
+const status_bar::status_bar_panel_collection& status_bar::panels() const noexcept {
   return data_->panels;
 }
 
@@ -83,7 +83,7 @@ status_bar::status_bar_panel_collection& status_bar::panels() {
   return data_->panels;
 }
 
-bool status_bar::show_panels() const {
+bool status_bar::show_panels() const noexcept {
   return data_->show_panels;
 }
 
@@ -95,7 +95,7 @@ status_bar& status_bar::show_panels(bool value) {
   return *this;
 }
 
-bool status_bar::show_tool_tips() const {
+bool status_bar::show_tool_tips() const noexcept {
   return data_->show_tool_tips;
 }
 
@@ -107,7 +107,7 @@ status_bar& status_bar::show_tool_tips(bool value) {
   return *this;
 }
 
-bool status_bar::sizing_grip() const {
+bool status_bar::sizing_grip() const noexcept {
   return data_->sizing_grip;
 }
 
@@ -195,11 +195,11 @@ void status_bar::on_resize(const event_args& e) {
   resize_spring_panels();
 }
 
-bool status_bar::is_horizontal() const {
+bool status_bar::is_horizontal() const noexcept {
   return dock() != dock_style::left && dock() != dock_style::right;
 }
 
-bool status_bar::is_system_status_bar() const {
+bool status_bar::is_system_status_bar() const noexcept {
   auto result = data_->is_system_status_bar || control_appearance() == xtd::forms::control_appearance::system;
   return result;
 }
