@@ -8,62 +8,63 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-int32_t scroll_bar::large_change() const {
-  return large_change_;
+int32_t scroll_bar::large_change() const noexcept {
+  return data_->large_change;
 }
 
 scroll_bar& scroll_bar::large_change(int32_t large_change) {
   if (large_change < 0) throw argument_out_of_range_exception(csf_);
-  large_change_ = large_change;
+  data_->large_change = large_change;
   return *this;
 }
 
-int32_t scroll_bar::maximum() const {
-  return maximum_;
+int32_t scroll_bar::maximum() const noexcept {
+  return data_->maximum;
 }
 
 scroll_bar& scroll_bar::maximum(int32_t maximum) {
-  maximum_ = maximum;
+  data_->maximum = maximum;
   return *this;
 }
 
-int32_t scroll_bar::minimum() const {
-  return minimum_;
+int32_t scroll_bar::minimum() const noexcept {
+  return data_->minimum;
 }
 
 scroll_bar& scroll_bar::minimum(int32_t minimum) {
-  minimum_ = minimum;
+  data_->minimum = minimum;
   return *this;
 }
 
-int32_t scroll_bar::small_change() const {
-  return small_change_;
+int32_t scroll_bar::small_change() const noexcept {
+  return data_->small_change;
 }
 
 scroll_bar& scroll_bar::small_change(int32_t small_change) {
   if (small_change < 0) throw argument_out_of_range_exception(csf_);
-  small_change_ = small_change;
+  data_->small_change = small_change;
   return *this;
 }
 
-int32_t scroll_bar::value() const {
-  return value_;
+int32_t scroll_bar::value() const noexcept {
+  return data_->value;
 }
 
 scroll_bar& scroll_bar::value(int32_t value) {
-  if (value < minimum_ || value > maximum_) throw argument_out_of_range_exception(csf_);
-  if (value_ != value) {
-    value_ = value;
+  if (value < data_->minimum || value > data_->maximum) throw argument_out_of_range_exception(csf_);
+  if (data_->value != value) {
+    data_->value = value;
     if (is_handle_created()) native::scroll_bar::value(handle(), value);
     on_value_changed(event_args::empty);
   }
   return *this;
 }
 
-scroll_bar::scroll_bar() {
+scroll_bar::scroll_bar(bool vertical) {
   set_style(control_styles::user_paint, false);
   set_style(control_styles::standard_click, false);
   set_style(control_styles::use_text_for_accessibility, false);
+  data_->v_scroll = vertical;
 }
 
 forms::create_params scroll_bar::create_params() const noexcept {
@@ -76,15 +77,15 @@ forms::create_params scroll_bar::create_params() const noexcept {
 
 void scroll_bar::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
-  native::scroll_bar::large_change(handle(), large_change_);
-  native::scroll_bar::maximum(handle(), maximum_);
-  native::scroll_bar::minimum(handle(), minimum_);
-  native::scroll_bar::small_change(handle(), small_change_);
-  native::scroll_bar::value(handle(), value_);
+  native::scroll_bar::large_change(handle(), data_->large_change);
+  native::scroll_bar::maximum(handle(), data_->maximum);
+  native::scroll_bar::minimum(handle(), data_->minimum);
+  native::scroll_bar::small_change(handle(), data_->small_change);
+  native::scroll_bar::value(handle(), data_->value);
 }
 
 void scroll_bar::on_scroll(const event_args& e) {
-  if (is_handle_created()) value_ = native::scroll_bar::value(handle());
+  if (is_handle_created()) data_->value = native::scroll_bar::value(handle());
   scroll(*this, e);
 }
 
