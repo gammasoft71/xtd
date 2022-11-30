@@ -32,12 +32,12 @@ size_t socket_address::size() const {
   return bytes_.size();
 }
 
-byte_t& socket_address::operator[](size_t index) {
+byte_t& socket_address::operator [](size_t index) {
   if (index >= bytes_.size()) throw index_out_of_range_exception(csf_);
   return bytes_[index];
 }
 
-const byte_t& socket_address::operator[](size_t index) const {
+const byte_t& socket_address::operator [](size_t index) const {
   if (index >= bytes_.size()) throw index_out_of_range_exception(csf_);
   return bytes_[index];
 }

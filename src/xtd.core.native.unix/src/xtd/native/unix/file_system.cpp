@@ -19,7 +19,7 @@ using namespace xtd::native;
 
 int32_t file_system::get_attributes(const std::string& path, int32_t& attributes) {
   struct system_attribute_to_file_attribute_converter {
-    int32_t operator()(int32_t attribute) {
+    int32_t operator ()(int32_t attribute) {
       int32_t file_attributes = 0;
       if ((attribute & S_IRUSR) == S_IRUSR && (attribute & S_IWUSR) != S_IWUSR) file_attributes |= FILE_ATTRIBUTE_READONLY;
       if ((attribute & S_IFSOCK) == S_IFSOCK || (attribute & S_IFIFO) == S_IFIFO) file_attributes |= FILE_ATTRIBUTE_SYSTEM;
@@ -76,7 +76,7 @@ string file_system::get_full_path(const string& relative_path) {
 
 int32_t file_system::get_permissions(const std::string& path, int32_t& permissions) {
   struct system_permission_to_file_permission_converter {
-    int32_t operator()(mode_t permission) {
+    int32_t operator ()(mode_t permission) {
       int32_t file_permissions = 0;
       if ((permission & S_IRUSR) == S_IRUSR) file_permissions |= FILE_PERMISSIONS_OWNER_READ;
       if ((permission & S_IWUSR) == S_IWUSR) file_permissions |= FILE_PERMISSIONS_OWNER_WRITE;
@@ -158,7 +158,7 @@ int32_t file_system::set_last_write_time(const std::string& path, time_t last_wr
 
 int32_t file_system::set_permissions(const std::string& path, int32_t permissions) {
   struct file_permission_to_system_permission_converter {
-    mode_t operator()(int32_t permission) {
+    mode_t operator ()(int32_t permission) {
       int32_t system_permissions = 0;
       if ((permission & FILE_PERMISSIONS_OWNER_READ) == FILE_PERMISSIONS_OWNER_READ) system_permissions |= S_IRUSR;
       if ((permission & FILE_PERMISSIONS_OWNER_WRITE) == FILE_PERMISSIONS_OWNER_WRITE) system_permissions |= S_IWUSR;

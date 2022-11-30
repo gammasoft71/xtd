@@ -526,12 +526,12 @@ bool ustring::operator !=(const wchar_t* other) const {
   return !operator ==(other);
 }
 
-const ustring::value_type& ustring::operator[](size_t index) {
-  return basic_string<value_type>::operator[](index);
+const ustring::value_type& ustring::operator [](size_t index) {
+  return basic_string<value_type>::operator [](index);
 }
 
-const ustring::value_type& ustring::operator[](size_t index) const {
-  return basic_string<value_type>::operator[](index);
+const ustring::value_type& ustring::operator [](size_t index) const {
+  return basic_string<value_type>::operator [](index);
 }
 
 ustring ustring::substr(size_type index, size_type count) const {

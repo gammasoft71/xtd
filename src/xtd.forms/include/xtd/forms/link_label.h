@@ -91,17 +91,17 @@ namespace xtd {
         /// @name Operators
         
         /// @{
-        using base::operator[];
+        using base::operator [];
         /// @brief Gets the first xtd::forms::control::control_collection in the list with the specified name.
         /// @param name The name of the xtd::forms::control to get from the list.
         /// @return The first xtd::forms::control in the list with the given Name. This item returns optional with no value if no xtd::forms::control with the given name can be found.
-        /// @remarks The operator[] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator[] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
-        const_reference operator[](const xtd::ustring& name) const noexcept;
+        /// @remarks The operator [] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator [] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
+        const_reference operator [](const xtd::ustring& name) const noexcept;
         /// @brief Gets the first xtd::forms::control::control_collection in the list with the specified name.
         /// @param name The name of the xtd::forms::control to get from the list.
         /// @return The first xtd::forms::control in the list with the given Name. This item returns optional with no value if no xtd::forms::control with the given name can be found.
-        /// @remarks The operator[] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator[] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
-        reference operator[](const xtd::ustring& name) noexcept;
+        /// @remarks The operator [] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator [] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
+        reference operator [](const xtd::ustring& name) noexcept;
         /// @}
         
       private:

@@ -22,7 +22,7 @@ namespace xtd {
         
         /// @{
         template<typename type_t>
-        void operator()(type_t first, type_t last) {}
+        void operator ()(type_t first, type_t last) {}
         /// @}
       };
     }

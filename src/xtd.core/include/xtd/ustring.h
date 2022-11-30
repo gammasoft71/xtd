@@ -444,8 +444,8 @@ namespace xtd {
     bool operator !=(const std::wstring& other) const;
     bool operator ==(const wchar_t* other) const;
     bool operator !=(const wchar_t* other) const;
-    const value_type& operator[](size_t index);
-    const value_type& operator[](size_t index) const;
+    const value_type& operator [](size_t index);
+    const value_type& operator [](size_t index) const;
     ustring substr(size_type index = 0, size_type count = npos) const;
     /// @endcond
     
@@ -654,7 +654,7 @@ namespace xtd {
       public:
         auto_delete_char_pointer(char* value) : value_(value) {}
         ~auto_delete_char_pointer() {free(value_);}
-        char* operator()() const {return value_;}
+        char* operator ()() const {return value_;}
       private:
         char* value_;
       };

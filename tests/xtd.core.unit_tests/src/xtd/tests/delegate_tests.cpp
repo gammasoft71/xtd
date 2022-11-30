@@ -49,7 +49,7 @@ namespace xtd::tests {
         return "member_method1";
       }
       
-      string operator()() {
+      string operator ()() {
         return "functor_method1";
       }
     };

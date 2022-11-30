@@ -53,11 +53,11 @@ namespace xtd {
       /// @name Operators
       
       /// @{
-      using base::operator[];
+      using base::operator [];
       /// @brief Gets the first xtd::diagnostics::trace_listener in the list with the specified name.
       /// @param name The name of the xtd::diagnostics::trace_listener to get from the list.
       /// @return The first xtd::diagnostics::trace_listener in the list with the given Name. This item returns empty if no xtd::diagnostics::trace_listener with the given name can be found.
-      /// @remarks The operator[] property is case-sensitive when searching for names. That is, if two listeners exist with the names "Lname" and "lname", operator[] property will find only the xtd::diagnostics::trace_listener with the xtd::diagnostics::trace_listener::name() that you specify, not both.
+      /// @remarks The operator [] property is case-sensitive when searching for names. That is, if two listeners exist with the names "Lname" and "lname", operator [] property will find only the xtd::diagnostics::trace_listener with the xtd::diagnostics::trace_listener::name() that you specify, not both.
       /// @par Examples
       /// This example shows how to write "User message" text on the default trace listener of debug with name operator:
       /// @code
@@ -69,11 +69,11 @@ namespace xtd {
       ///   debug::listeners()["default"]->write_line("User message");
       /// }
       /// @endcode
-      const_reference operator[](const xtd::ustring& name) const;
+      const_reference operator [](const xtd::ustring& name) const;
       /// @brief Gets the first xtd::diagnostics::trace_listener in the list with the specified name.
       /// @param name The name of the xtd::diagnostics::trace_listener to get from the list.
       /// @return The first xtd::diagnostics::trace_listener in the list with the given Name. This item returns empty if no xtd::diagnostics::trace_listener with the given name can be found.
-      /// @remarks The operator[] property is case-sensitive when searching for names. That is, if two listeners exist with the names "Lname" and "lname", operator[] property will find only the xtd::diagnostics::trace_listener with the xtd::diagnostics::trace_listener::name() that you specify, not both.
+      /// @remarks The operator [] property is case-sensitive when searching for names. That is, if two listeners exist with the names "Lname" and "lname", operator [] property will find only the xtd::diagnostics::trace_listener with the xtd::diagnostics::trace_listener::name() that you specify, not both.
       /// @par Examples
       /// This example shows how to write "User message" text on the default trace listener of debug with name operator:
       /// @code
@@ -85,7 +85,7 @@ namespace xtd {
       ///   debug::listeners()["default"]->write_line("User message");
       /// }
       /// @endcode
-      reference operator[](const xtd::ustring& name);
+      reference operator [](const xtd::ustring& name);
       /// @}
       
     private:
