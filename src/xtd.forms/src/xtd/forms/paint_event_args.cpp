@@ -8,8 +8,18 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+paint_event_args::paint_event_args(xtd::forms::control& control, const drawing::rectangle& clip_rectangle) : control_(&control), clip_rectangle_(clip_rectangle) {
+}
+
+paint_event_args::paint_event_args(xtd::drawing::graphics& graphics, const drawing::rectangle& clip_rectangle) : graphics_(&graphics), clip_rectangle_(clip_rectangle) {
+}
+
 paint_event_args::~paint_event_args() {
   if (control_ && graphics_) delete graphics_;
+}
+
+const drawing::rectangle& paint_event_args::clip_rectangle() const noexcept {
+  return clip_rectangle_;
 }
 
 drawing::graphics& paint_event_args::graphics() {

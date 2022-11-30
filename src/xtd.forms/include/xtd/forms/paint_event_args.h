@@ -32,11 +32,11 @@ namespace xtd {
       /// @brief Initializes a new instance of the paint_event_args class with the specified control, clipping rectangle.
       /// @param control The xtd::forms::control used to paint the item.
       /// @param clip_rectangle The xtd::drawing::rectangle that represents the rectangle in which to paint.
-      paint_event_args(xtd::forms::control& control, const drawing::rectangle& clip_rectangle) : control_(&control), clip_rectangle_(clip_rectangle) {};
+      paint_event_args(xtd::forms::control& control, const drawing::rectangle& clip_rectangle);
       /// @brief Initializes a new instance of the paint_event_args class with the specified control, clipping rectangle.
       /// @param graphics_ The xtd::drawing::graphics used to paint the item.
       /// @param clip_rectangle The xtd::drawing::rectangle that represents the rectangle in which to paint.
-      paint_event_args(xtd::drawing::graphics& graphics, const drawing::rectangle& clip_rectangle) : graphics_(&graphics), clip_rectangle_(clip_rectangle) {};
+      paint_event_args(xtd::drawing::graphics& graphics, const drawing::rectangle& clip_rectangle);
       /// @}
       
       /// @cond
@@ -48,7 +48,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the rectangle in which to paint.
       /// @return The xtd::drawing::rectangle in which to paint.
-      const drawing::rectangle& clip_rectangle() const {return clip_rectangle_;}
+      const drawing::rectangle& clip_rectangle() const noexcept;
       
       /// @brief Gets the graphics used to paint.
       /// @return The xtd::drawing::graphics object used to paint. The xtd::drawing::graphics object provides methods for drawing objects on the display device.
