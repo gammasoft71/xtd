@@ -58,7 +58,7 @@ namespace xtd {
       /// @brief Gets the number of decimal places to display in the spin box (also known as an up-down control). This property doesn't affect the value property.
       /// @return The number of decimal places to display in the spin box. The default is 0.
       /// @remarks When the decimal_places property is set, the update_edit_text method is called to update the spin box's display to the new format.
-      virtual double decimal_place() {return decimal_place_;}
+      virtual double decimal_place() const noexcept;
       /// @brief Sets the number of decimal places to display in the spin box (also known as an up-down control). This property doesn't affect the value property.
       /// @param value The number of decimal places to display in the spin box. The default is 0.
       /// @return Current numeric_up_down.
@@ -68,7 +68,7 @@ namespace xtd {
       /// @brief Gets the value to increment or decrement the spin box (also known as an up-down control) when the up or down buttons are clicked.
       /// @return The value to increment or decrement the Value property when the up or down buttons are clicked on the spin box. The default value is 1.
       /// @remarks Clicking the up button causes the value property to increment by the amount specified by the increment property and approach the maximum property. Clicking the down button causes the value property to be decremented by the amount specified by the increment property and approach the minimum property.
-      virtual double increment() {return increment_;}
+      virtual double increment() const noexcept;
       /// @brief Sets the value to increment or decrement the spin box (also known as an up-down control) when the up or down buttons are clicked.
       /// @param value The value to increment or decrement the Value property when the up or down buttons are clicked on the spin box. The default value is 1.
       /// @return Current numeric_up_down.
@@ -78,7 +78,7 @@ namespace xtd {
       /// @brief Gets the maximum value for the spin box (also known as an up-down control).
       /// @return The maximum value for the spin box. The default value is 100.
       /// @remarks When the maximum property is set, the minimum property is evaluated and the update_edit_text method is called. If the minimum property is greater than the new maximum property, the minimum property value is set equal to the maximum value. If the current Value is greater than the new Maximum value. the value property value is set equal to the maximum value.
-      virtual double maximum() {return maximum_;}
+      virtual double maximum() const noexcept;
       /// @brief Sets the maximum value for the spin box (also known as an up-down control).
       /// @param value The maximum value for the spin box. The default value is 100.
       /// @return Current numeric_up_down.
@@ -88,7 +88,7 @@ namespace xtd {
       /// @brief Gets the minimum allowed value for the spin box (also known as an up-down control).
       /// @return The minimum allowed value for the spin box. The default value is 0.
       /// @remarks When the maximum property is set, the minimum property is evaluated and the update_edit_text method is called. If the minimum property is greater than the new maximum property, the minimum property value is set equal to the maximum value. If the current Value is greater than the new Maximum value. the value property value is set equal to the maximum value.
-      virtual double minimum() {return minimum_;}
+      virtual double minimum() const noexcept;
       /// @brief Sets the minimum allowed value for the spin box (also known as an up-down control).
       /// @param value The minimum allowed value for the spin box. The default value is 0.
       /// @return Current numeric_up_down.
@@ -98,7 +98,7 @@ namespace xtd {
       /// @brief Gets the value assigned to the spin box (also known as an up-down control).
       /// @return The numeric value of the numeric_up_down control.
       /// @remarks When the value property is set, the new value is validated to be between the minimum and maximum values. Following this, the update_edit_text method is called to update the spin box's display with the new value in the appropriate format.
-      virtual double value() {return value_;}
+      virtual double value() const noexcept;
       /// @brief Sets the value assigned to the spin box (also known as an up-down control).
       /// @param value The numeric value of the numeric_up_down control.
       /// @return Current numeric_up_down.
@@ -107,7 +107,7 @@ namespace xtd {
       
       /// @brief Gets a value indicate if value can be wrapped.
       /// @return true if value can be wrapped; otherwise false. The default is false.
-      virtual bool wrapped() {return wrapped_;}
+      virtual bool wrapped() const noexcept;
       /// @brief Sets a value indicate if value can be wrapped.
       /// @param value true if value can be wrapped; otherwise false. The default is false.
       /// @return Current numeric_up_down.
@@ -121,15 +121,12 @@ namespace xtd {
       /// @param min_value The lower limit of the range of the track bar.
       /// @param max_value The upper limit of the range of the track bar.
       /// @remarks You can use this method to set the entire range for the track_bar at the same time. To set the minimum or maximum values individually, use the minimum and maximum properties. If the min_value parameter is greater than the max_value parameter, max_value is set equal to min_value.
-      void set_range(double min_value, double max_value) {
-        minimum(min_value);
-        maximum(min_value > max_value ? min_value : max_value);
-      }
+      void set_range(double min_value, double max_value);
       
       /// @brief Returns a string that represents the track_bar control.
       /// @return A string that represents the current progress_bar.
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
-      xtd::ustring to_string() const noexcept override {return ustring::format("{}, minimum: {}, maximum: {}, value: {}", ustring::full_class_name(*this), minimum_, maximum_, value_);}
+      xtd::ustring to_string() const noexcept override;
       /// @}
       
       /// @name Events
@@ -170,12 +167,15 @@ namespace xtd {
       /// @endcond
       
     private:
-      int32_t decimal_place_ = 0;
-      double increment_ = 1.0;
-      double maximum_ = 100.0;
-      double minimum_ = 0.0;
-      double value_ = 0.0;
-      bool wrapped_ = false;
+      struct data {
+        int32_t decimal_place = 0;
+        double increment = 1.0;
+        double maximum = 100.0;
+        double minimum = 0.0;
+        double value = 0.0;
+        bool wrapped = false;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }

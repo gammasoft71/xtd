@@ -15,59 +15,92 @@ numeric_up_down::numeric_up_down() {
   control_appearance(forms::control_appearance::system);
 }
 
+double numeric_up_down::decimal_place() const noexcept {
+  return data_->decimal_place;
+}
+
 numeric_up_down& numeric_up_down::decimal_place(int32_t value) {
-  if (decimal_place_ != value) {
-    decimal_place_ = value;
-    if (is_handle_created()) native::numeric_up_down::decimal_place(handle(), decimal_place_);
+  if (data_->decimal_place != value) {
+    data_->decimal_place = value;
+    if (is_handle_created()) native::numeric_up_down::decimal_place(handle(), data_->decimal_place);
   }
   return *this;
+}
+
+double numeric_up_down::increment() const noexcept {
+  return data_->increment;
 }
 
 numeric_up_down& numeric_up_down::increment(double value) {
-  if (increment_ != value) {
-    increment_ = value;
-    if (is_handle_created()) native::numeric_up_down::increment(handle(), increment_);
+  if (data_->increment != value) {
+    data_->increment = value;
+    if (is_handle_created()) native::numeric_up_down::increment(handle(), data_->increment);
   }
   return *this;
+}
+
+double numeric_up_down::maximum() const noexcept {
+  return data_->maximum;
 }
 
 numeric_up_down& numeric_up_down::maximum(double value) {
-  if (maximum_ != value) {
-    maximum_ = value;
-    if (is_handle_created()) native::numeric_up_down::maximum(handle(), maximum_);
-    if (minimum_ > value) minimum(value);
-    if (value_ > value) this->value(value);
+  if (data_->maximum != value) {
+    data_->maximum = value;
+    if (is_handle_created()) native::numeric_up_down::maximum(handle(), data_->maximum);
+    if (data_->minimum > value) minimum(value);
+    if (data_->value > value) this->value(value);
   }
   return *this;
+}
+
+double numeric_up_down::minimum() const noexcept {
+  return data_->minimum;
 }
 
 numeric_up_down& numeric_up_down::minimum(double value) {
-  if (minimum_ != value) {
-    minimum_ = value;
-    if (is_handle_created()) native::numeric_up_down::minimum(handle(), minimum_);
-    if (maximum_ < value) maximum(value);
-    if (value_ < value) this->value(value);
+  if (data_->minimum != value) {
+    data_->minimum = value;
+    if (is_handle_created()) native::numeric_up_down::minimum(handle(), data_->minimum);
+    if (data_->maximum < value) maximum(value);
+    if (data_->value < value) this->value(value);
   }
   return *this;
 }
 
+double numeric_up_down::value() const noexcept {
+  return data_->value;
+}
+
 numeric_up_down& numeric_up_down::value(double value) {
-  if (value_ != value) {
-    if (value > maximum_) value_ = maximum_;
-    else if (value < minimum_) value_ = minimum_;
-    else value_ = value;
-    if (is_handle_created()) native::numeric_up_down::value(handle(), value_);
+  if (data_->value != value) {
+    if (value > data_->maximum) data_->value = data_->maximum;
+    else if (value < data_->minimum) data_->value = data_->minimum;
+    else data_->value = value;
+    if (is_handle_created()) native::numeric_up_down::value(handle(), data_->value);
     on_value_changed(event_args::empty);
   }
   return *this;
 }
 
+bool numeric_up_down::wrapped() const noexcept {
+  return data_->wrapped;
+}
+
 numeric_up_down& numeric_up_down::wrapped(bool value) {
-  if (wrapped_ != value) {
-    wrapped_ = value;
+  if (data_->wrapped != value) {
+    data_->wrapped = value;
     post_recreate_handle();
   }
   return *this;
+}
+
+void numeric_up_down::set_range(double min_value, double max_value) {
+  minimum(min_value);
+  maximum(min_value > max_value ? min_value : max_value);
+}
+
+xtd::ustring numeric_up_down::to_string() const noexcept {
+  return ustring::format("{}, minimum: {}, maximum: {}, value: {}", ustring::full_class_name(*this), data_->minimum, data_->maximum, data_->value);
 }
 
 drawing::color numeric_up_down::default_back_color() const noexcept {
@@ -83,18 +116,18 @@ forms::create_params numeric_up_down::create_params() const noexcept {
   
   create_params.class_name("numericupdown");
   
-  if (wrapped_) create_params.style(create_params.style() | UDS_WRAP);
+  if (data_->wrapped) create_params.style(create_params.style() | UDS_WRAP);
   
   return create_params;
 }
 
 void numeric_up_down::on_handle_created(const event_args& e) {
   scrollable_control::on_handle_created(e);
-  native::numeric_up_down::decimal_place(handle(), decimal_place_);
-  native::numeric_up_down::increment(handle(), increment_);
-  native::numeric_up_down::maximum(handle(), maximum_);
-  native::numeric_up_down::minimum(handle(), minimum_);
-  native::numeric_up_down::value(handle(), value_);
+  native::numeric_up_down::decimal_place(handle(), data_->decimal_place);
+  native::numeric_up_down::increment(handle(), data_->increment);
+  native::numeric_up_down::maximum(handle(), data_->maximum);
+  native::numeric_up_down::minimum(handle(), data_->minimum);
+  native::numeric_up_down::value(handle(), data_->value);
 }
 
 void numeric_up_down::on_value_changed(const event_args& e) {
@@ -117,8 +150,8 @@ void numeric_up_down::wnd_proc(message& message) {
 
 void numeric_up_down::wm_command_control(message& message) {
   def_wnd_proc(message);
-  if (value_ != native::numeric_up_down::value(handle())) {
-    value_ = native::numeric_up_down::value(handle());
+  if (data_->value != native::numeric_up_down::value(handle())) {
+    data_->value = native::numeric_up_down::value(handle());
     on_value_changed(event_args::empty);
   }
 }
