@@ -41,19 +41,19 @@ namespace xtd {
       /// @{
       /// @brief Gets the string to find.
       /// @return The string to find.
-      const xtd::ustring& find_string() const {return find_string_;}
+      const xtd::ustring& find_string() const noexcept {return find_string_;}
       
       /// @brief Gets the replaced string.
       /// @return The replaced string.
-      const xtd::ustring& replace_string() const {return replace_string_;}
+      const xtd::ustring& replace_string() const noexcept {return replace_string_;}
       
       /// @brief Gets the match case value.
       /// @return true if match case option selected; otherwise false. The default is false.
-      bool match_case() const {return match_case_;}
+      bool match_case() const noexcept {return match_case_;}
       
       /// @brief Gets the whole word value.
       /// @return true if whole word option selected; otherwise false. The default is false.
-      bool whole_word() const {return whole_word_;}
+      bool whole_word() const noexcept {return whole_word_;}
       
       /// @}
       
