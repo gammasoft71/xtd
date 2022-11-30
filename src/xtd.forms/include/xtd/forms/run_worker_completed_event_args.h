@@ -35,14 +35,14 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      bool cancel() const {return cancel_;}
+      bool cancel() const noexcept {return cancel_;}
       void cancel(bool value) {cancel_ = value;}
       
       /// @brief Gets a value that represents the argument of an asynchronous operation.
       /// @return An object representing the argument of an asynchronous operation.
-      std::any user_state() const {return user_state_;}
+      std::any user_state() const noexcept {return user_state_;}
       
-      std::any result() const {return result_;}
+      std::any result() const noexcept {return result_;}
       /// @}
       
     private:
