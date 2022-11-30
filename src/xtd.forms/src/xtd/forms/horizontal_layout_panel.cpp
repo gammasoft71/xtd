@@ -5,6 +5,10 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
+const horizontal_control_layout_style_collection& horizontal_layout_panel::control_layout_styles() const noexcept {
+  return control_layout_styles_;
+}
+
 const horizontal_control_layout_style& horizontal_layout_panel::control_layout_style(const control_ref& control) const {
   auto it = find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](auto item) {return item.first.get() == control;});
   if (it == control_layout_styles_.end()) throw argument_exception(current_stack_frame_);

@@ -54,7 +54,7 @@ namespace xtd {
       /// @{
       /// @brief Gets vertical control layout style for all child controls.
       /// @return The vertical control layout style collection.
-      const vertical_control_layout_style_collection& control_layout_styles() const {return control_layout_styles_;}
+      const vertical_control_layout_style_collection& control_layout_styles() const noexcept;
       
       /// @brief Gets vertical control layout style for specified child controls.
       /// @param control The control to get vertical control layout style.
