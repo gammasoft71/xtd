@@ -52,7 +52,7 @@ namespace xtd {
       /// @{
       /// @brief Gets ignore mouse messages
       /// @return value If true, the popup panel does not close automatically when the user clicks outside the popup panel; otherwise the popup panel will close automatically. The default value is false.
-      bool ignore_mouse_messages() const;
+      bool ignore_mouse_messages() const noexcept;
       /// @brief Sets ignore mouse messages
       /// @param value If true, the popup panel does not close automatically when the user clicks outside the popup panel; otherwise the popup panel will close automatically. The default value is false.
       /// @return The current popup panel instance.
@@ -78,7 +78,10 @@ namespace xtd {
     private:
       void wm_show(message& message);
       
-      bool ignore_mouse_messages_ = false;
+      struct data {
+        bool ignore_mouse_messages = false;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
