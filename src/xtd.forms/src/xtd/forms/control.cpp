@@ -96,13 +96,13 @@ control::control_collection& control::control_collection::operator =(const contr
   return *this;
 }
 
-optional<control::control_collection::value_type> control::control_collection::operator[](const ustring& name) const {
+optional<control::control_collection::value_type> control::control_collection::operator [](const ustring& name) const {
   for (auto item : *this)
     if (item.get().name() == name) return item;
   return {};
 }
 
-optional<control::control_collection::value_type> control::control_collection::operator[](const ustring& name) {
+optional<control::control_collection::value_type> control::control_collection::operator [](const ustring& name) {
   for (auto item : *this)
     if (item.get().name() == name) return item;
   return {};

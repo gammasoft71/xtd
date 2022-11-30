@@ -6,7 +6,7 @@
 using namespace xtd::forms;
 
 struct __message_sender__ {
-  intptr_t operator()(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) {
+  intptr_t operator ()(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) {
     return native::control::send_message(hwnd, hwnd, msg, wparam, lparam);
   }
 };

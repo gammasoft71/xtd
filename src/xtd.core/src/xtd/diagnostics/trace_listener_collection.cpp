@@ -24,13 +24,13 @@ bool trace_listener_collection::operator !=(const trace_listener_collection& val
   return !operator ==(value);
 }
 
-trace_listener_collection::const_reference trace_listener_collection::operator[](const ustring& name) const {
+trace_listener_collection::const_reference trace_listener_collection::operator [](const ustring& name) const {
   for (auto& item : *this)
     if (item->name() == name) return item;
   return empty_;
 }
 
-trace_listener_collection::reference trace_listener_collection::operator[](const ustring& name) {
+trace_listener_collection::reference trace_listener_collection::operator [](const ustring& name) {
   for (auto& item : *this)
     if (item->name() == name) return item;
   return empty_;

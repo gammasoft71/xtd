@@ -83,7 +83,7 @@ namespace xtd {
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The parameter list.
     /// @return result_t The return value.
-    result_t invoke() const { return operator()(); }
+    result_t invoke() const { return operator ()(); }
     
     /// @brief Concatenates the invocation lists of an array of delegates.
     /// @param delegates The array of delegates to combine.
@@ -164,7 +164,7 @@ namespace xtd {
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The parameter list.
     /// @return result_t The return value.
-    result_t operator()() const {
+    result_t operator ()() const {
       if (data_->functions.size() == 0) return result_t();
       
       for (size_t i = 0; i < data_->functions.size() - 1; i++) {
@@ -461,7 +461,7 @@ namespace xtd {
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The parameter list.
     /// @return result_t The return value.
-    result_t invoke(arguments_t... arguments) const { return operator()(arguments...); }
+    result_t invoke(arguments_t... arguments) const { return operator ()(arguments...); }
     
     /// @brief Concatenates the invocation lists of an array of delegates.
     /// @param delegates The array of delegates to combine.
@@ -566,7 +566,7 @@ namespace xtd {
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The parameter list.
     /// @return result_t The return value.
-    result_t operator()(arguments_t... arguments) const {
+    result_t operator ()(arguments_t... arguments) const {
       if (data_->no_arguments_functions.size() == 0 && data_->functions.size() == 0) return result_t();
       
       if (data_->no_arguments_functions.size()) {

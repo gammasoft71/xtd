@@ -22,13 +22,13 @@ link_label::link_collection& link_label::link_collection::operator =(const link_
   return *this;
 }
 
-link_label::link_collection::const_reference link_label::link_collection::operator[](const ustring& name) const noexcept {
+link_label::link_collection::const_reference link_label::link_collection::operator [](const ustring& name) const noexcept {
   for (auto& item : *this)
     if (item.name() == name) return item;
   return empty_;
 }
 
-link_label::link_collection::reference link_label::link_collection::operator[](const ustring& name) noexcept {
+link_label::link_collection::reference link_label::link_collection::operator [](const ustring& name) noexcept {
   for (auto& item : *this)
     if (item.name() == name) return item;
   return empty_;

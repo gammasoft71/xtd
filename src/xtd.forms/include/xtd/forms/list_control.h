@@ -33,7 +33,7 @@ namespace xtd {
           /// @param last the last iterator to sort.
           /// @remarks same as std::sort.
           template<typename type_t>
-          void operator()(type_t first, type_t last) {
+          void operator ()(type_t first, type_t last) {
             std::sort(first, last);
           }
           /// @}

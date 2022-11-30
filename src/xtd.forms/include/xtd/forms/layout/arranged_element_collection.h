@@ -129,7 +129,7 @@ namespace xtd {
         /// @{
         /// @brief Returns the associated allocator
         /// @return The associate allocator.
-        allocator_type get_allocator() const {return collection_.get_allocator();}
+        allocator_type get_allocator() const noexcept {return collection_.get_allocator();}
         
         /// @brief Access specified element with bounds checking.
         /// @param pos The position of the element to return.
@@ -167,69 +167,69 @@ namespace xtd {
         
         /// @brief Returns an iterator to the beginning.
         /// @return The iterator to the beginning.
-        iterator begin() {return collection_.begin();}
+        iterator begin() noexcept {return collection_.begin();}
         /// @brief Returns an iterator to the beginning.
         /// @return The iterator to the beginning.
-        const_iterator begin() const {return collection_.begin();}
+        const_iterator begin() const noexcept {return collection_.begin();}
         /// @brief Returns an iterator to the beginning.
         /// @return The iterator to the beginning.
-        const_iterator cbegin() const {return collection_.cbegin();}
+        const_iterator cbegin() const noexcept {return collection_.cbegin();}
         
         /// @brief Returns an iterator to the end.
         /// @return The iterator to the end.
-        iterator end() {return collection_.end();}
+        iterator end() noexcept {return collection_.end();}
         /// @brief Returns an iterator to the end.
         /// @return The iterator to the end.
-        const_iterator end() const {return collection_.end();}
+        const_iterator end() const noexcept {return collection_.end();}
         /// @brief Returns an iterator to the end.
         /// @return The iterator to the end.
-        const_iterator cend() const {return collection_.cend();}
+        const_iterator cend() const noexcept {return collection_.cend();}
         
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
-        reverse_iterator rbegin() {return collection_.rbegin();}
+        reverse_iterator rbegin() noexcept {return collection_.rbegin();}
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
-        const_reverse_iterator rbegin() const {return collection_.rbegin();}
+        const_reverse_iterator rbegin() const noexcept {return collection_.rbegin();}
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
-        const_reverse_iterator crbegin() const {return collection_.crbegin();}
+        const_reverse_iterator crbegin() const noexcept {return collection_.crbegin();}
         
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
-        reverse_iterator rend() {return collection_.rend();}
+        reverse_iterator rend() noexcept {return collection_.rend();}
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
-        const_reverse_iterator rend() const {return collection_.rend();}
+        const_reverse_iterator rend() const noexcept {return collection_.rend();}
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
-        const_reverse_iterator crend() const {return collection_.crend();}
+        const_reverse_iterator crend() const noexcept {return collection_.crend();}
         
         /// @brief Checks whether the container is empty.
         /// @return true if container is empty; otherwise false.
-        bool empty() const {return collection_.empty();}
+        bool empty() const noexcept {return collection_.empty();}
         
         /// @brief Returns the number of elements.
         /// @return The number of elements.
-        size_type size() const {return collection_.size();}
+        size_type size() const noexcept {return collection_.size();}
         
         /// @brief Returns the maximum possible number of elements.
         /// @return The maximum possible number of elements.
-        size_type max_size() const {return collection_.max_size();}
+        size_type max_size() const noexcept {return collection_.max_size();}
         
         /// @brief Reserves storage.
         void reserve(size_type size) {collection_.reserve(size);}
         
         /// @brief Returns the number of elements that can be held in currently allocated storage.
         /// @return The number of elements that can be held in currently allocated storage.
-        size_type capacity() const {return collection_.capacity();}
+        size_type capacity() const noexcept {return collection_.capacity();}
         
         /// @brief Reduces memory usage by freeing unused memory.
         void shrink_to_fit() {collection_.shrink_to_fit();}
         
         /// @brief Checks whether the container is sorted.
         /// @return true if container is sorted; otherwise false.
-        bool sorted() const {return sorted_;}
+        bool sorted() const noexcept {return sorted_;}
         /// @brief Sets the container is sorted.
         /// @param value true if container is sorted; otherwise false.
         void sorted(bool value) {
@@ -240,7 +240,7 @@ namespace xtd {
         }
         
         /// @brief clears the contents.
-        void clear() {
+        void clear() noexcept {
           iterator it = begin();
           while (it != end())
             it = erase(it);
@@ -370,6 +370,11 @@ namespace xtd {
           erase(begin() + index);
         }
         
+        /// @brief Removes the last element of the container.
+        void pop_back() {
+          if (size() != 0) erase_at(size() - 1);
+        }
+        
         /// @brief Adds an element to the end.
         /// @param item The element to add.
         void push_back(const value_type& item) {
@@ -432,7 +437,7 @@ namespace xtd {
         
         /// @brief Gets an array with the elements of the container.
         /// @return The array that contains elements of the container.
-        std::vector<type_t> to_array() const {
+        std::vector<type_t> to_array() const noexcept {
           std::vector<type_t> array;
           for (auto item : collection_)
             array.push_back(item);
@@ -441,7 +446,7 @@ namespace xtd {
         
         /// @brief Gets an array with the elements of the container.
         /// @return The array that contains elements of the container.
-        std::vector<type_t> to_vector() const {return to_array();}
+        std::vector<type_t> to_vector() const noexcept {return to_array();}
         /// @}
         
         /// @name Operators
@@ -449,14 +454,14 @@ namespace xtd {
         /// @{
         /// @brief Access specified element.
         /// @return The requested element.
-        reference operator[](size_type pos) {
+        reference operator [](size_type pos) {
           collection_[pos].pos = pos;
           collection_[pos].owner = this;
           return collection_[pos];
         }
         /// @brief Access specified element.
         /// @return The requested element.
-        const_reference operator[](size_type pos) const {
+        const_reference operator [](size_type pos) const {
           collection_[pos].pos = pos;
           collection_[pos].owner = const_cast<arranged_element_collection*>(this);
           return collection_[pos];

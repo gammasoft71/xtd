@@ -45,7 +45,7 @@ The following example demonstrates the use of delegates with functor.
 using namespace xtd;
 
 struct string_reverser {
-  ustring operator()(const ustring& s) {
+  ustring operator ()(const ustring& s) {
     ustring result = s;
     std::reverse(result.begin(), result.end());
     return result;

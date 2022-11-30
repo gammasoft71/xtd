@@ -94,8 +94,8 @@ namespace xtd {
       xtd::drawing::graphics& graphics() noexcept {return *data_->graphics;}
       
       /// @brief Gets the index value of the item that is being drawn.
-      /// @return The numeric value that represents the xtd::forms::control::control_collection::operator[] value of the item being drawn.
-      /// @remarks This property returns the xtd::forms::control::control_collection::operator[] value of the item being drawn in the xtd::forms::control::control_collection. This property can return xtd::forms::control::control_collection::npos if items were removed from the list.
+      /// @return The numeric value that represents the xtd::forms::control::control_collection::operator [] value of the item being drawn.
+      /// @remarks This property returns the xtd::forms::control::control_collection::operator [] value of the item being drawn in the xtd::forms::control::control_collection. This property can return xtd::forms::control::control_collection::npos if items were removed from the list.
       size_t index() const noexcept {return data_->index;}
       
       /// @brief Gets the state of the item being drawn.

@@ -8,7 +8,7 @@ std::string __tunit_demangle(const std::string& name) {
   public:
     explicit auto_delete_char_pointer(char* value) : value_(value) {}
     ~auto_delete_char_pointer() {free(value_);}
-    char* operator()() const {return value_;}
+    char* operator ()() const {return value_;}
   private:
     char* value_;
   };
