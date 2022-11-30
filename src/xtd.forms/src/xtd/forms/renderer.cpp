@@ -10,9 +10,9 @@ using namespace xtd::forms;
 using namespace xtd::forms::visual_styles;
 
 renderer::data::data() {
-  renderer::button_renderer button_renderer = renderer::button_renderer(default_button_renderer);
-  renderer::check_box_renderer check_box_renderer = renderer::check_box_renderer(default_check_box_renderer);
-  renderer::radio_button_renderer radio_button_renderer = renderer::radio_button_renderer(default_radio_button_renderer);
+  xtd::forms::renderer::button_renderer button_renderer = xtd::forms::renderer::button_renderer(default_button_renderer);
+  xtd::forms::renderer::check_box_renderer check_box_renderer = xtd::forms::renderer::check_box_renderer(default_check_box_renderer);
+  xtd::forms::renderer::radio_button_renderer radio_button_renderer = xtd::forms::renderer::radio_button_renderer(default_radio_button_renderer);
 }
 
 renderer::renderer(const xtd::ustring& name) {

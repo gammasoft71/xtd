@@ -91,9 +91,9 @@ namespace xtd {
       struct data {
         data();
         xtd::ustring name;
-        button_renderer button_renderer;
-        check_box_renderer check_box_renderer;
-        radio_button_renderer radio_button_renderer;
+        xtd::forms::renderer::button_renderer button_renderer;
+        xtd::forms::renderer::check_box_renderer check_box_renderer;
+        xtd::forms::renderer::radio_button_renderer radio_button_renderer;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };
