@@ -48,7 +48,7 @@ namespace xtd {
       /// @brief Gets whether the timer is running.
       /// @return true if the timer is currently enabled; otherwise, false. The default is false.
       /// @remarks Calling the start method is the same as setting enabled to true. Likewise, calling the stop method is the same as setting enabled to false.
-      bool enabled() const {return enabled_;}
+      bool enabled() const noexcept;
       /// @brief Sets whether the timer is running.
       /// @param enabled true if the timer is currently enabled; otherwise, false. The default is false.
       /// @remarks Calling the start method is the same as setting enabled to true. Likewise, calling the stop method is the same as setting enabled to false.
@@ -57,7 +57,7 @@ namespace xtd {
       /// @brief Gets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
       /// @return An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
       /// @remarks To get the number of seconds in the interval, divide this number by 1,000.
-      std::chrono::milliseconds interval() const {return std::chrono::milliseconds(interval_);}
+      std::chrono::milliseconds interval() const noexcept;
       /// @brief Sets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
       /// @param interval An int32_t specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
       /// @remarks To get the number of seconds in the interval, divide this number by 1,000.
@@ -67,7 +67,7 @@ namespace xtd {
       /// @brief Gets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
       /// @return An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
       /// @remarks To get the number of seconds in the interval, divide this number by 1,000.
-      int32_t interval_milliseconds() const {return interval_;}
+      int32_t interval_milliseconds() const noexcept;
       /// @brief Sets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
       /// @param interval An int32_t specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
       /// @remarks To get the number of seconds in the interval, divide this number by 1,000.
@@ -79,11 +79,11 @@ namespace xtd {
       /// @{
       /// @brief Stops the timer.
       /// @remarks You can also stop the timer by setting the enabled property to false.
-      void start() {enabled(true);}
+      void start();
       
       /// @brief Starts the timer.
       /// @remarks You can also start the timer by setting the enabled property to true.
-      void stop() {enabled(false);}
+      void stop();
       /// @}
       
       /// @name Events
@@ -106,9 +106,14 @@ namespace xtd {
       /// @}
       
     private:
-      bool enabled_ = false;
-      int32_t interval_ = 100;
-      intptr_t handle_ = 0;
+      void restart();
+      
+      struct data {
+        bool enabled = false;
+        int32_t interval = 100;
+        intptr_t handle = 0;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
