@@ -159,6 +159,11 @@ namespace xtd {
   };
   
   inline const object& boxing(const object& value) {return value;}
+  inline ustring boxing(const char* value) {return ustring(value);}
+  inline ustring boxing(const char8_t* value) {return ustring(value);}
+  inline ustring boxing(const char16_t* value) {return ustring(value);}
+  inline ustring boxing(const char32_t* value) {return ustring(value);}
+  inline ustring boxing(const wchar_t* value) {return ustring(value);}
   /// @endcond
   
   /// @brief Allows to box an object
@@ -200,6 +205,7 @@ namespace xtd {
   inline type_t unboxing(const xtd::enum_object<type_t>& value) {return value.value();}
 
   inline const object& unboxing(const object& value) {return value;}
+  inline const char* unboxing(ustring& value) {return value.c_str();}
   inline object& unboxing(object& value) {return value;}
   
   template<typename type_t>
