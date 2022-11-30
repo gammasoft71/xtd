@@ -21,7 +21,7 @@ text_box::text_box() {
   control_appearance(forms::control_appearance::system);
 }
 
-bool text_box::accepts_return() const {
+bool text_box::accepts_return() const noexcept {
   return data_->accepts_return;
 }
 
@@ -34,7 +34,7 @@ text_box& text_box::accepts_return(bool value) {
   return *this;
 }
 
-xtd::forms::character_casing text_box::character_casing() const {
+xtd::forms::character_casing text_box::character_casing() const noexcept {
   return data_->character_casing;
 }
 
@@ -46,7 +46,7 @@ text_box& text_box::character_casing(xtd::forms::character_casing value) {
   return *this;
 }
 
-char32_t text_box::password_char() const {
+char32_t text_box::password_char() const noexcept {
   return data_->password_char;
 }
 
@@ -58,7 +58,7 @@ text_box& text_box::password_char(char32_t value) {
   return *this;
 }
 
-const xtd::ustring& text_box::placeholder_text() const {
+const xtd::ustring& text_box::placeholder_text() const noexcept {
   return data_->placeholder_text;
 }
 
@@ -71,12 +71,12 @@ text_box& text_box::placeholder_text(const xtd::ustring& value) {
   return *this;
 }
 
-size_t text_box::selection_length() const {
+size_t text_box::selection_length() const noexcept {
   if (is_handle_created()) const_cast<text_box*>(this)->text_box_base::selection_length(native::text_box::selection_length(handle()));
   return text_box_base::selection_length();
 }
 
-size_t text_box::selection_start() const {
+size_t text_box::selection_start() const noexcept {
   if (is_handle_created()) const_cast<text_box*>(this)->text_box_base::selection_start(native::text_box::selection_start(handle()));
   return text_box_base::selection_start();
 }
@@ -107,7 +107,7 @@ control& text_box::text(const ustring& text) {
   return *this;
 }
 
-bool text_box::use_system_password_char() const {
+bool text_box::use_system_password_char() const noexcept {
   return data_->use_system_password_char;
 }
 
@@ -158,6 +158,10 @@ void text_box::append_text(const xtd::ustring& value) {
 void text_box::select(size_t start, size_t length) {
   text_box_base::select(start, length);
   if (is_handle_created()) native::text_box::select(handle(), selection_start(), selection_length());
+}
+
+void text_box::on_accepts_return_changed(const event_args& e) {
+  if (can_raise_events()) accepts_return_changed(*this, e);
 }
 
 void text_box::on_handle_created(const event_args& e) {

@@ -459,6 +459,7 @@ add_sources(
   src/xtd/forms/tab_page.cpp
   src/xtd/forms/table_layout_panel.cpp
   src/xtd/forms/text_box.cpp
+  src/xtd/forms/text_box_base.cpp
   src/xtd/forms/text_renderer.cpp
   src/xtd/forms/timer.cpp
   src/xtd/forms/toggle_button.cpp
