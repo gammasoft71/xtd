@@ -168,6 +168,7 @@ add_sources(
   include/xtd/diagnostics/trace_options.h
   include/xtd/diagnostics/trace_source.h
   include/xtd/diagnostics/trace_switch.h
+  include/xtd/internal/__as_enum.h
   include/xtd/internal/__binary_formatter.h
   include/xtd/internal/__boolean_formatter.h
   include/xtd/internal/__character_formatter.h
