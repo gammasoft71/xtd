@@ -53,7 +53,7 @@ tool_bar::tool_bar() {
 
 }
 
-xtd::forms::tool_bar_appearance tool_bar::appearance() const {
+xtd::forms::tool_bar_appearance tool_bar::appearance() const noexcept {
   return data_->appearance;
 }
 
@@ -66,12 +66,20 @@ tool_bar& tool_bar::appearance(xtd::forms::tool_bar_appearance value) {
   return *this;
 }
 
+forms::border_sides tool_bar::border_sides() const noexcept {
+  return data_->border_sides;
+}
+
 tool_bar& tool_bar::border_sides(forms::border_sides border_sides) {
   if (data_->border_sides != border_sides) {
     data_->border_sides = border_sides;
     if (control_appearance() == forms::control_appearance::standard) invalidate();
   }
   return *this;
+}
+
+forms::border_style tool_bar::border_style() const noexcept {
+  return data_->border_style.value_or(xtd::forms::border_style::none);
 }
 
 tool_bar& tool_bar::border_style(forms::border_style border_style) {
@@ -92,7 +100,7 @@ tool_bar& tool_bar::border_style(std::nullptr_t) {
   return *this;
 }
 
-xtd::drawing::size tool_bar::button_size() const {
+xtd::drawing::size tool_bar::button_size() const noexcept {
   return data_->button_size.value_or(image_size() + drawing::size(12, 12));
 }
 
@@ -114,7 +122,7 @@ tool_bar& tool_bar::button_size(std::nullptr_t) {
   return *this;
 }
 
-bool tool_bar::divider() const {
+bool tool_bar::divider() const noexcept {
   return data_->divider;
 }
 
@@ -145,7 +153,7 @@ control& tool_bar::dock(dock_style dock) {
   return *this;
 }
 
-bool tool_bar::drop_down_arrows() const {
+bool tool_bar::drop_down_arrows() const noexcept {
   return data_->drop_down_arrows;
 }
 
@@ -157,7 +165,7 @@ tool_bar& tool_bar::drop_down_arrows(bool value) {
   return *this;
 }
 
-const xtd::forms::image_list& tool_bar::image_list() const {
+const xtd::forms::image_list& tool_bar::image_list() const noexcept {
   return data_->image_list;
 }
 
@@ -173,11 +181,11 @@ xtd::forms::tool_bar& tool_bar::image_list(const xtd::forms::image_list& value) 
   return *this;
 }
 
-xtd::drawing::size tool_bar::image_size() const {
+xtd::drawing::size tool_bar::image_size() const noexcept {
   return data_->image_list.image_size();
 }
 
-const tool_bar::tool_bar_button_collection& tool_bar::buttons() const {
+const tool_bar::tool_bar_button_collection& tool_bar::buttons() const noexcept {
   return data_->buttons;
 }
 
@@ -185,7 +193,7 @@ tool_bar::tool_bar_button_collection& tool_bar::buttons() {
   return data_->buttons;
 }
 
-bool tool_bar::show_icon() const {
+bool tool_bar::show_icon() const noexcept {
   return data_->show_icon;
 }
 
@@ -198,7 +206,7 @@ tool_bar& tool_bar::show_icon(bool value) {
   return *this;
 }
 
-bool tool_bar::show_text() const {
+bool tool_bar::show_text() const noexcept {
   return data_->show_text;
 }
 
@@ -211,7 +219,7 @@ tool_bar& tool_bar::show_text(bool value) {
   return *this;
 }
 
-bool tool_bar::show_tool_tips() const {
+bool tool_bar::show_tool_tips() const noexcept {
   return data_->show_tool_tips;
 }
 
@@ -223,7 +231,7 @@ tool_bar& tool_bar::show_tool_tips(bool value) {
   return *this;
 }
 
-xtd::forms::tool_bar_text_align tool_bar::text_align() const {
+xtd::forms::tool_bar_text_align tool_bar::text_align() const noexcept {
   return data_->text_align;
 }
 
@@ -236,7 +244,7 @@ tool_bar& tool_bar::text_align(xtd::forms::tool_bar_text_align value) {
   return *this;
 }
 
-bool tool_bar::wrappable() const {
+bool tool_bar::wrappable() const noexcept {
   return data_->wrappable;
 }
 
@@ -312,11 +320,11 @@ void tool_bar::on_resize(const event_args& e) {
   resize_stretchable_separtors();
 }
 
-bool tool_bar::is_horizontal() const {
+bool tool_bar::is_horizontal() const noexcept {
   return dock() != dock_style::left && dock() != dock_style::right;
 }
 
-bool tool_bar::is_system_tool_bar() const {
+bool tool_bar::is_system_tool_bar() const noexcept {
   auto result = data_->is_system_tool_bar || data_->appearance == tool_bar_appearance::system;
   return result;
 }
