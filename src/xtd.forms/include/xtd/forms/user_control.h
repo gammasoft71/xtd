@@ -33,7 +33,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the mode by which the user_control automatically resizes itself.
       /// @return An auto_size_mode enumerated value. The default is grow_only.
-      virtual forms::auto_size_mode auto_size_mode() const {return get_auto_size_mode();}
+      virtual forms::auto_size_mode auto_size_mode() const noexcept;
       /// @brief Sets the mode by which the panel automatically resizes itself.
       /// @param value An auto_size_mode enumerated value. The default is grow_only.
       /// @return Current user_control instance.
@@ -41,7 +41,7 @@ namespace xtd {
       
       /// @brief Gets the border sides for the control.
       /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
-      virtual forms::border_sides border_sides() const {return border_sides_;}
+      virtual forms::border_sides border_sides() const noexcept;
       /// @brief Sets the border sides for the control.
       /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
       virtual user_control& border_sides(forms::border_sides border_sides);
@@ -49,7 +49,7 @@ namespace xtd {
       /// @brief Gets the border style for the control.
       /// @return One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
-      virtual xtd::forms::border_style border_style() const {return border_style_.value_or(xtd::forms::border_style::none);}
+      virtual xtd::forms::border_style border_style() const noexcept;
       /// @brief Sets the border style for the control.
       /// @param border_style One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
       /// @return Current user_control instance.
@@ -77,8 +77,11 @@ namespace xtd {
       /// @}
       
     private:
-      forms::border_sides border_sides_ = forms::border_sides::all;
-      std::optional<forms::border_style> border_style_;
+      struct data {
+        forms::border_sides border_sides = forms::border_sides::all;
+        std::optional<forms::border_style> border_style;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
