@@ -86,7 +86,7 @@ namespace xtd {
       /// @brief Gets the value that determines the appearance of a toolbar control and its buttons.
       /// @return One of the xtd::forms::tool_bar_appearance values. The default is xtd::forms::tool_bar::appearance::normal.
       /// @remarks The xtd::forms::tool_bar::appearance property affects the appearance of the buttons assigned to the toolbar. When the appearance is set to xtd::forms::tool_bar_appearance::normal, the toolbar's buttons appear three-dimensional and raised. Set the xtd::forms::tool_bar::appearance property of the toolbar to xtd::forms::tool_bar_ppearance::flat to give the toolbar's buttons a flat appearance. As the mouse pointer moves over the flat buttons, they appear raised and three-dimensional. Separators on a xtd::forms::tool_bar with the xtd::forms::tool_bar::appearance property set to xtd::forms::tool_bar_appearance::flat appear as etched lines rather than spaces between the raised buttons. The flat style buttons give your application a more Web-like look.
-      virtual xtd::forms::tool_bar_appearance appearance() const;
+      virtual xtd::forms::tool_bar_appearance appearance() const noexcept;
       /// @brief Sets the value that determines the appearance of a toolbar control and its buttons.
       /// @param value One of the xtd::forms::tool_bar_appearance values. The default is xtd::forms::tool_bar::appearance::normal.
       /// @return Current tool_bar instance.
@@ -95,7 +95,7 @@ namespace xtd {
       
       /// @brief Gets the border sides for the control.
       /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
-      virtual forms::border_sides border_sides() const {return data_->border_sides;}
+      virtual forms::border_sides border_sides() const noexcept;
       /// @brief Sets the border sides for the control.
       /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
       /// @return Current tool_bar instance.
@@ -104,7 +104,7 @@ namespace xtd {
       /// @brief Gets the border style for the control.
       /// @return One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
       /// @remarks The xtd::forms::tool_bar can take on a sunken, three-dimensional appearance when the xtd::forms::tool_bar::border_style property is set to xtd::forms::border_style::fixed_3d. To display a flat thin border around the toolbar control, set the xtd::forms::tool_bar::border_style property to xtd::forms::border_style.fixed_single.
-      virtual forms::border_style border_style() const {return data_->border_style.value_or(xtd::forms::border_style::none);}
+      virtual forms::border_style border_style() const noexcept;
       /// @brief Sets the border style for the control.
       /// @param value One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
       /// @return Current tool_bar instance.
@@ -119,7 +119,7 @@ namespace xtd {
       /// @brief Gets the collection of xtd::forms::tool_bar_button controls assigned to the toolbar control.
       /// @return A xtd::forms::tool_bar::tool_bar_button_collection that contains a collection of xtd::forms::tool_bar_button controls.
       /// @remarks The xtd::forms::tool_bar::item property is a zero-based indexed collection used to hold all the xtd::forms::tool_bar_button controls assigned to the toolbar. Because the property is read-only, it can not be assigned a collection of toolbar buttons directly. Toolbar item can be added or removed by using the methods inherited from the xtd::forms::tool_bar::tool_bar_button_collection class. Use the xtd::forms::tool_bar::tool_bar_button_collection::push_back method to add individual buttons and the xtd::forms::tool_bar::tool_bar_button_collection::erase method to delete a item. Call the xtd::forms::tool_bar::tool_bar_button_collection::clear method to remove all the buttons from the collection.
-      const tool_bar_button_collection& buttons() const;
+      const tool_bar_button_collection& buttons() const noexcept;
       /// @brief Gets the collection of xtd::forms::tool_bar_button controls assigned to the toolbar control.
       /// @return A xtd::forms::tool_bar::tool_bar_button_collection that contains a collection of xtd::forms::tool_bar_button controls.
       /// @remarks The xtd::forms::tool_bar::item property is a zero-based indexed collection used to hold all the xtd::forms::tool_bar_button controls assigned to the toolbar. Because the property is read-only, it can not be assigned a collection of toolbar buttons directly. Toolbar item can be added or removed by using the methods inherited from the xtd::forms::tool_bar::tool_bar_button_collection class. Use the xtd::forms::tool_bar::tool_bar_button_collection::push_back method to add individual buttons and the xtd::forms::tool_bar::tool_bar_button_collection::erase method to delete a item. Call the xtd::forms::tool_bar::tool_bar_button_collection::clear method to remove all the buttons from the collection.
@@ -128,7 +128,7 @@ namespace xtd {
       /// @brief Gets the size of the buttons on the toolbar control.
       /// @return A xtd::drawing::size object that represents the size of the xtd::forms::tool_bar_button controls on the toolbar. The default size has a width of 24 pixels and a height of 22 pixels, or large enough to accommodate the xtd::drawing::image and text, whichever is greater.
       /// @remarks If the xtd::forms::tool_bar::button_size is not set, it is set to its default. Alternatively, a xtd::forms::tool_bar::size is computed to accommodate the largest xtd::drawing::image and text assigned to the xtd::forms::tool_bar_button controls.
-      virtual xtd::drawing::size button_size() const;
+      virtual xtd::drawing::size button_size() const noexcept;
       /// @brief Sets the size of the buttons on the toolbar control.
       /// @param value A xtd::drawing::size object that represents the size of the xtd::forms::tool_bar_button controls on the toolbar. The default size has a width of 24 pixels and a height of 22 pixels, or large enough to accommodate the xtd::drawing::image and text, whichever is greater.
       /// @return Current tool_bar instance.
@@ -144,7 +144,7 @@ namespace xtd {
       /// @return true if the toolbar displays a divider; otherwise, false. The default is true.
       /// @remarks Dividers are displayed to help distinguish the toolbar from adjacent controls, such as menus. A divider is displayed as a raised edge along the top of the xtd::forms::tool_bar control.
       /// @note Only on Windows and if xtd::forms::tool_bar::appearance is set to xtd::forms::tool_bar_appearance::system.
-      virtual bool divider() const;
+      virtual bool divider() const noexcept;
       /// @brief Sets a value indicating whether the toolbar displays a divider.
       /// @param value true if the toolbar displays a divider; otherwise, false. The default is true.
       /// @return Current tool_bar instance.
@@ -158,7 +158,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether drop-down buttons on a toolbar display down arrows.
       /// @return true if drop-down toolbar buttons display down arrows; otherwise, false. The default is true.
       /// @remarks When xtd::forms::tool_bar::drop_down_arrows is set to false, no down arrows display on drop-down style toolbar buttons. When the user clicks the drop-down button on the toolbar, the menu drops down for selection. When the drop-down arrow is displayed, the user must press the down arrow to display the menu.
-      virtual bool drop_down_arrows() const;
+      virtual bool drop_down_arrows() const noexcept;
       /// @brief Sets a value indicating whether drop-down buttons on a toolbar display down arrows.
       /// @param value true if drop-down toolbar buttons display down arrows; otherwise, false. The default is true.
       /// @return Current tool_bar instance.
@@ -168,7 +168,7 @@ namespace xtd {
       /// @brief Gets the collection of images available to the toolbar button controls.
       /// @return An xtd::forms::image_list that contains images available to the xtd::forms::tool_bar_button controls. The default is empty.
       /// @remarks If you create an xtd::drawing::image_list and assign it to the xtd::forms::toll_bar::image_list property, you can assign an image from the collection to the xtd:forms::tool_bar_button controls by assigning the image's index value to the xtd:forms::tool_bar_button::image_index property of the toolbar button.
-      const xtd::forms::image_list& image_list() const;
+      const xtd::forms::image_list& image_list() const noexcept;
       /// @brief Gets the collection of images available to the toolbar button controls.
       /// @return An xtd::forms::image_list that contains images available to the xtd::forms::tool_bar_button controls. The default is empty.
       /// @remarks If you create an xtd::drawing::image_list and assign it to the xtd::forms::toll_bar::image_list property, you can assign an image from the collection to the xtd:forms::tool_bar_button controls by assigning the image's index value to the xtd:forms::tool_bar_button::image_index property of the toolbar button.
@@ -181,11 +181,11 @@ namespace xtd {
       
       /// @brief Gets the size of the images in the image list assigned to the toolbar.
       /// @return A xtd::drawing::size that represents the size of the images (in the xtd::forms::image_list) assigned to the xtd::forms::tool_bar.
-      virtual xtd::drawing::size image_size() const;
+      virtual xtd::drawing::size image_size() const noexcept;
       
       /// @brief Gets a value indicating whether the toolbar displays the image for each button.
       /// @return true if the toolbar display the image for each button; otherwise, false. The default is true.
-      virtual bool show_icon() const;
+      virtual bool show_icon() const noexcept;
       /// @brief Sets a value indicating whether the toolbar displays the image for each button.
       /// @param value true if the toolbar display the image for each button; otherwise, false. The default is true.
       /// @return Current tool_bar instance.
@@ -193,7 +193,7 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the toolbar displays the text for each button.
       /// @return true if the toolbar display the text for each button; otherwise, false. The default is false.
-      virtual bool show_text() const;
+      virtual bool show_text() const noexcept;
       /// @brief Sets a value indicating whether the toolbar displays the text for each button.
       /// @param value true if the toolbar display the text for each button; otherwise, false. The default is false.
       /// @return Current tool_bar instance.
@@ -202,7 +202,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether the toolbar displays a xtd::forms::tool_tip for each button.
       /// @return true if the toolbar display a xtd::forms::tool_tip for each button; otherwise, false. The default is false.
       /// @remarks To set the text displayed by the xtd::forms::tool_tip, set the xtd::forms::tool_bar_button::tool_tip_text property of each xtd::forms::tool_bar_button on the xtd::forms::tool_bar. To cause the xtd::forms::tool_tip to display as the user moves the mouse pointer over the toolbar button, set the xtd::forms::tool_bar::show_tool_tips property to true.
-      virtual bool show_tool_tips() const;
+      virtual bool show_tool_tips() const noexcept;
       /// @brief Sets a value indicating whether the toolbar displays a xtd::forms::tool_tip for each button.
       /// @param value true if the toolbar display a xtd::forms::tool_tip for each button; otherwise, false. The default is false.
       /// @return Current tool_bar instance.
@@ -212,7 +212,7 @@ namespace xtd {
       /// @brief Gets the alignment of text in relation to each image displayed on the toolbar button controls.
       /// @return One of the xtd::forms::tool_bar_text_align values. The default is xtd::forms::tool_bar_text_align::underneath.
       /// @remarks The xtd::forms::tool_bar::text can be aligned underneath or to the right of the image displayed on the xtd::forms::tool_bar_button controls.
-      virtual xtd::forms::tool_bar_text_align text_align() const;
+      virtual xtd::forms::tool_bar_text_align text_align() const noexcept;
       /// @brief Sets the alignment of text in relation to each image displayed on the toolbar button controls.
       /// @param value One of the xtd::forms::tool_bar_text_align values. The default is xtd::forms::tool_bar_text_align::underneath.
       /// @return Current tool_bar instance.
@@ -222,7 +222,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether the toolbar buttons wrap to the next line if the toolbar becomes too small to display all the buttons on the same line.
       /// @return true if the toolbar buttons wrap to another line if the toolbar becomes too small to display all the buttons on the same line; otherwise, false. The default value is true.
       /// @note Not yet implemented.
-      virtual bool wrappable() const;
+      virtual bool wrappable() const noexcept;
       /// @brief Gets a value indicating whether the toolbar buttons wrap to the next line if the toolbar becomes too small to display all the buttons on the same line.
       /// @param value true if the toolbar buttons wrap to another line if the toolbar becomes too small to display all the buttons on the same line; otherwise, false. The default value is true.
       /// @return Current tool_bar instance.
@@ -275,21 +275,17 @@ namespace xtd {
       void on_button_drop_down(const xtd::forms::tool_bar_button_click_event_args& e);
       
       void on_handle_created(const event_args& e) override;
-      
       void on_handle_destroyed(const event_args& e) override;
-      
       void on_paint(xtd::forms::paint_event_args& e) override;
-      
       void on_resize(const event_args& e) override;
-      
       void wnd_proc(message& message) override;
       /// @}
       
     private:
       void fill();
       
-      bool is_horizontal() const;
-      bool is_system_tool_bar() const;
+      bool is_horizontal() const noexcept;
+      bool is_system_tool_bar() const noexcept;
       tool_bar& is_system_tool_bar(bool value);
       
       void on_item_added(size_t pos, tool_bar_button_ref item);
