@@ -15,14 +15,14 @@ popup_panel::popup_panel() {
   visible(false);
 }
 
-bool popup_panel::ignore_mouse_messages() const {
-  return ignore_mouse_messages_;
+bool popup_panel::ignore_mouse_messages() const noexcept {
+  return data_->ignore_mouse_messages;
 }
 
 popup_panel& popup_panel::ignore_mouse_messages(bool value) {
-  if (ignore_mouse_messages_ != value) {
-    ignore_mouse_messages_ = value;
-    native::popup_panel::ignore_mouse_messages(handle(), ignore_mouse_messages_);
+  if (data_->ignore_mouse_messages != value) {
+    data_->ignore_mouse_messages = value;
+    native::popup_panel::ignore_mouse_messages(handle(), data_->ignore_mouse_messages);
   }
   return *this;
 }
@@ -37,7 +37,7 @@ forms::create_params popup_panel::create_params() const noexcept {
 
 void popup_panel::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
-  native::popup_panel::ignore_mouse_messages(handle(), ignore_mouse_messages_);
+  native::popup_panel::ignore_mouse_messages(handle(), data_->ignore_mouse_messages);
 }
 
 void popup_panel::on_layout(const event_args& e) {
