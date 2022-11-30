@@ -441,6 +441,7 @@ add_sources(
   src/xtd/forms/scrollable_control.cpp
   src/xtd/forms/selection_range.cpp
   src/xtd/forms/settings.cpp
+  src/xtd/forms/seven_segment_display.cpp
   src/xtd/forms/sizing_grip_control.h
   src/xtd/forms/split_container.cpp
   src/xtd/forms/splitter.cpp
