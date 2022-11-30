@@ -93,10 +93,10 @@ namespace xtd {
     /// @name Methods
     
     /// @{
-    bool equals(const object& value) const noexcept override {return dynamic_cast<const box<type_t>*>(&value) ? equals(static_cast<const box<type_t>&>(value)) : false;}
+    bool equals(const object& value) const noexcept override {return (dynamic_cast<const box<type_t>*>(&value) ? equals(static_cast<const box<type_t>&>(value)) : false);}
     bool equals(const box& value) const noexcept override {return value_ == value.value_;}
     
-    int32_t compare_to(const object& value) const noexcept override {return dynamic_cast<const box<type_t>*>(&value) ? compare_to(static_cast<const box<type_t>&>(value)) : -1;}
+    int32_t compare_to(const object& value) const noexcept override {return (dynamic_cast<const box<type_t>*>(&value) ? compare_to(static_cast<const box<type_t>&>(value)) : -1);}
     int32_t compare_to(const box& value) const noexcept override {
       if (value_ == value.value_) return 0;
       if (value_ < value.value_) return -1;
@@ -203,7 +203,7 @@ namespace xtd {
   /// @cond
   template<typename type_t>
   inline type_t unboxing(const xtd::enum_object<type_t>& value) {return value.value();}
-
+  
   inline const object& unboxing(const object& value) {return value;}
   inline const char* unboxing(ustring& value) {return value.c_str();}
   inline object& unboxing(object& value) {return value;}
@@ -214,8 +214,7 @@ namespace xtd {
   }
   /// @endcond
 }
-    
+
 #include "box_char.h"
 #include "box_floating_point.h"
 #include "box_integer.h"
-
