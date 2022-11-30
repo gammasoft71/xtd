@@ -21,120 +21,117 @@ namespace xtd {
       horizontal_control_layout_style() = default;
       /// @brief Initialises a new instance of horizontal control layout style class with specified width.
       /// @param width The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
-      explicit horizontal_control_layout_style(float width) : width_(width) {}
+      explicit horizontal_control_layout_style(float width);
       /// @brief Initialises a new instance of horizontal control layout style class with specified width.
       /// @param width The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
-      explicit horizontal_control_layout_style(int32_t width) : width_(static_cast<float>(width)) {}
+      explicit horizontal_control_layout_style(int32_t width);
       /// @brief Initialises a new instance of horizontal control layout style class with specified size type.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
-      explicit horizontal_control_layout_style(xtd::forms::size_type size_type) : control_layout_style(size_type) {}
+      explicit horizontal_control_layout_style(xtd::forms::size_type size_type);
       /// @brief Initialises a new instance of horizontal control layout style class with specified width and size type.
       /// @param width The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
-      horizontal_control_layout_style(float width, xtd::forms::size_type size_type) : control_layout_style(size_type), width_(width) {}
+      horizontal_control_layout_style(float width, xtd::forms::size_type size_type);
       /// @brief Initialises a new instance of horizontal control layout style class with specified width and size type.
       /// @param width The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
-      horizontal_control_layout_style(int32_t width, xtd::forms::size_type size_type) : control_layout_style(size_type), width_(static_cast<float>(width)) {}
+      horizontal_control_layout_style(int32_t width, xtd::forms::size_type size_type);
       /// @brief Initialises a new instance of horizontal control layout style class with specified expanded.
       /// @param expanded true if control expanded; otherwise false.
-      explicit horizontal_control_layout_style(bool expanded) : control_layout_style(expanded) {}
+      explicit horizontal_control_layout_style(bool expanded);
       /// @brief Initialises a new instance of horizontal control layout style class with specified width and expanded.
       /// @param width The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param expanded true if control expanded; otherwise false.
-      horizontal_control_layout_style(float width, bool expanded) : control_layout_style(expanded), width_(width) {}
+      horizontal_control_layout_style(float width, bool expanded);
       /// @brief Initialises a new instance of horizontal control layout style class with specified width and expanded.
       /// @param width The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param expanded true if control expanded; otherwise false.
-      horizontal_control_layout_style(int32_t width, bool expanded) : control_layout_style(expanded), width_(static_cast<float>(width)) {}
+      horizontal_control_layout_style(int32_t width, bool expanded);
       /// @brief Initialises a new instance of horizontal control layout style class with specified content alignment.
       /// @param align One of the content_alignment values. The default is middle_center.
-      explicit horizontal_control_layout_style(xtd::forms::content_alignment align) : control_layout_style(align) {}
+      explicit horizontal_control_layout_style(xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of horizontal control layout style class with specified width and content alignment.
       /// @param width The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param align One of the content_alignment values. The default is middle_center.
-      horizontal_control_layout_style(float width, xtd::forms::content_alignment align) : control_layout_style(align), width_(width) {}
+      horizontal_control_layout_style(float width, xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of horizontal control layout style class with specified width and content alignment.
       /// @param width The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param align One of the content_alignment values. The default is middle_center.
-      horizontal_control_layout_style(int32_t width, xtd::forms::content_alignment align) : control_layout_style(align), width_(static_cast<float>(width)) {}
+      horizontal_control_layout_style(int32_t width, xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of horizontal control layout style class with specified size type and expanded.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
       /// @param expanded true if control expanded; otherwise false.
-      horizontal_control_layout_style(xtd::forms::size_type size_type, bool expanded) : control_layout_style(size_type, expanded) {}
+      horizontal_control_layout_style(xtd::forms::size_type size_type, bool expanded);
       /// @brief Initialises a new instance of horizontal control layout style class with specified width, size type and expanded.
       /// @param width The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
       /// @param expanded true if control expanded; otherwise false.
-      horizontal_control_layout_style(float width, xtd::forms::size_type size_type, bool expanded) : control_layout_style(size_type, expanded), width_(width) {}
+      horizontal_control_layout_style(float width, xtd::forms::size_type size_type, bool expanded);
       /// @brief Initialises a new instance of horizontal control layout style class with specified width, size type and expanded.
       /// @param width The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
       /// @param expanded true if control expanded; otherwise false.
-      horizontal_control_layout_style(int32_t width, xtd::forms::size_type size_type, bool expanded) : control_layout_style(size_type, expanded), width_(static_cast<float>(width)) {}
+      horizontal_control_layout_style(int32_t width, xtd::forms::size_type size_type, bool expanded);
       /// @brief Initialises a new instance of horizontal control layout style class with specified size type and content alignment.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
       /// @param align One of the content_alignment values. The default is middle_center.
-      horizontal_control_layout_style(xtd::forms::size_type size_type, xtd::forms::content_alignment align) : control_layout_style(size_type, align) {}
+      horizontal_control_layout_style(xtd::forms::size_type size_type, xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of horizontal control layout style class with specified width, size type and content alignment.
       /// @param width The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
       /// @param align One of the content_alignment values. The default is middle_center.
-      horizontal_control_layout_style(float width, xtd::forms::size_type size_type, xtd::forms::content_alignment align) : control_layout_style(size_type, align), width_(width) {}
+      horizontal_control_layout_style(float width, xtd::forms::size_type size_type, xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of horizontal control layout style class with specified width, size type and content alignment.
       /// @param width The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
       /// @param align One of the content_alignment values. The default is middle_center.
-      horizontal_control_layout_style(int32_t width, xtd::forms::size_type size_type, xtd::forms::content_alignment align) : control_layout_style(size_type, align), width_(static_cast<float>(width)) {}
+      horizontal_control_layout_style(int32_t width, xtd::forms::size_type size_type, xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of horizontal control layout style class with specified size type, expanded and content alignment.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
       /// @param expanded true if control expanded; otherwise false.
       /// @param align One of the content_alignment values. The default is middle_center.
-      horizontal_control_layout_style(xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align) : control_layout_style(size_type, expanded, align) {}
+      horizontal_control_layout_style(xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of horizontal control layout style class with specified width, size type, expanded and content alignment.
       /// @param width The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
       /// @param expanded true if control expanded; otherwise false.
       /// @param align One of the content_alignment values. The default is middle_center.
-      horizontal_control_layout_style(float width, xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align) : control_layout_style(size_type, expanded, align), width_(width) {}
+      horizontal_control_layout_style(float width, xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of horizontal control layout style class with specified width, size type, expanded and content alignment.
       /// @param width The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
       /// @param expanded true if control expanded; otherwise false.
       /// @param align One of the content_alignment values. The default is middle_center.
-      horizontal_control_layout_style(int32_t width, xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align) : control_layout_style(size_type, expanded, align), width_(static_cast<float>(width)) {}
+      horizontal_control_layout_style(int32_t width, xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of horizontal control layout style class with specified expanded and content alignment.
       /// @param expanded true if control expanded; otherwise false.
       /// @param align One of the content_alignment values. The default is middle_center.
-      horizontal_control_layout_style(bool expanded, xtd::forms::content_alignment align) : control_layout_style(expanded, align) {}
-      /// @brief Initialises a new instance of horizontal control layout style class with specified expanded and content alignment.
-      /// @param width The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
-      /// @param expanded true if control expanded; otherwise false.
-      /// @param align One of the content_alignment values. The default is middle_center.
-      horizontal_control_layout_style(float width, bool expanded, xtd::forms::content_alignment align) : control_layout_style(expanded, align), width_(width) {}
+      horizontal_control_layout_style(bool expanded, xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of horizontal control layout style class with specified expanded and content alignment.
       /// @param width The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param expanded true if control expanded; otherwise false.
       /// @param align One of the content_alignment values. The default is middle_center.
-      horizontal_control_layout_style(int32_t width, bool expanded, xtd::forms::content_alignment align) : control_layout_style(expanded, align), width_(static_cast<float>(width)) {}
+      horizontal_control_layout_style(float width, bool expanded, xtd::forms::content_alignment align);
+      /// @brief Initialises a new instance of horizontal control layout style class with specified expanded and content alignment.
+      /// @param width The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
+      /// @param expanded true if control expanded; otherwise false.
+      /// @param align One of the content_alignment values. The default is middle_center.
+      horizontal_control_layout_style(int32_t width, bool expanded, xtd::forms::content_alignment align);
       
       /// @brief Gets the width value for a control.
       /// @return The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
-      std::optional<float> width() const {return width_;}
+      std::optional<float> width() const noexcept;
       /// @brief Sets the width value for a control.
       /// @param width The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
-      void width(float width) {width_ = width;}
+      void width(float width);
       
       /// @brief Returns a string that represent xtd::forms::control_layout_style.
       /// @return A string containing that represent xtd::forms::control_layout_style.
-      xtd::ustring to_string() const noexcept override {return ustring::format("horizontal_control_layout_style=[expanded={}, align={}, size_type={}, width={}]", expanded(), align(), size_type(), width_.value_or(-1));}
+      xtd::ustring to_string() const noexcept override;
       
       /// @cond
-      bool operator ==(const horizontal_control_layout_style& value) const {return width_ == value.width_ && control_layout_style::operator ==(value);}
-      bool operator !=(const horizontal_control_layout_style& value) const {return !operator ==(value);}
-      friend std::ostream& operator <<(std::ostream& os, const xtd::forms::horizontal_control_layout_style& control_layout_style) noexcept {
-        return os << control_layout_style.to_string();
-      }
+      bool operator ==(const horizontal_control_layout_style& value) const noexcept;
+      bool operator !=(const horizontal_control_layout_style& value) const noexcept;
       /// @endcond
       
     private:

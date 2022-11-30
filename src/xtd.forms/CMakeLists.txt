@@ -396,6 +396,7 @@ add_sources(
   src/xtd/forms/form_renderer.cpp
   src/xtd/forms/fourteen_segment_display.cpp
   src/xtd/forms/group_box.cpp
+  src/xtd/forms/horizontal_control_layout_style.cpp
   src/xtd/forms/horizontal_layout_panel.cpp
   src/xtd/forms/h_scroll_bar.cpp
   src/xtd/forms/image_list.cpp
@@ -476,6 +477,7 @@ add_sources(
   src/xtd/forms/use_wait_cursor.cpp
   src/xtd/forms/user_control.cpp
   src/xtd/forms/user_control_renderer.cpp
+  src/xtd/forms/vertical_control_layout_style.cpp
   src/xtd/forms/vertical_layout_panel.cpp
   src/xtd/forms/v_scroll_bar.cpp
   src/xtd/forms/xtd_forms_common_dialog_closed_caller.h
