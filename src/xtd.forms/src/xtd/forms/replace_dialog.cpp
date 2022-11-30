@@ -19,7 +19,7 @@ replace_dialog::~replace_dialog() {
   destroy_handle();
 }
 
-const xtd::ustring& replace_dialog::find_string() const {
+const xtd::ustring& replace_dialog::find_string() const noexcept {
   return data_->find_string;
 }
 
@@ -31,7 +31,7 @@ replace_dialog& replace_dialog::find_string(const xtd::ustring& value) {
   return *this;
 }
 
-const xtd::ustring& replace_dialog::replace_string() const {
+const xtd::ustring& replace_dialog::replace_string() const noexcept {
   return data_->replace_string;
 }
 
@@ -43,7 +43,7 @@ replace_dialog& replace_dialog::replace_string(const xtd::ustring& value) {
   return *this;
 }
 
-xtd::drawing::point replace_dialog::location() const {
+xtd::drawing::point replace_dialog::location() const noexcept {
   return data_->location.value_or(point(0, 0));
 }
 
@@ -55,7 +55,7 @@ replace_dialog& replace_dialog::location(const xtd::drawing::point& value) {
   return *this;
 }
 
-bool replace_dialog::match_case() const {
+bool replace_dialog::match_case() const noexcept {
   return data_->match_case;
 }
 
@@ -67,7 +67,7 @@ replace_dialog& replace_dialog::match_case(bool value) {
   return *this;
 }
 
-bool replace_dialog::show_match_case() const {
+bool replace_dialog::show_match_case() const noexcept {
   return data_->show_match_case;
 }
 
@@ -79,7 +79,7 @@ replace_dialog& replace_dialog::show_match_case(bool value) {
   return *this;
 }
 
-bool replace_dialog::show_whole_word() const {
+bool replace_dialog::show_whole_word() const noexcept {
   return data_->show_whole_word;
 }
 
@@ -91,7 +91,7 @@ replace_dialog& replace_dialog::show_whole_word(bool value) {
   return *this;
 }
 
-const xtd::ustring& replace_dialog::title() const {
+const xtd::ustring& replace_dialog::title() const noexcept {
   return data_->title;
 }
 
@@ -103,7 +103,7 @@ replace_dialog& replace_dialog::title(const xtd::ustring& value) {
   return *this;
 }
 
-bool replace_dialog::whole_word() const {
+bool replace_dialog::whole_word() const noexcept {
   return data_->whole_word;
 }
 
@@ -121,7 +121,7 @@ void replace_dialog::close() {
   data_->visible = false;
 }
 
-void replace_dialog::reset() {
+void replace_dialog::reset() noexcept {
   data_->dialog_style = xtd::forms::dialog_style::standard;
   data_->location.reset();
   data_->title = "";

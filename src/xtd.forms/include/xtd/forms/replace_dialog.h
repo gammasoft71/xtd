@@ -65,7 +65,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the string to find.
       /// @return The string to find.
-      const xtd::ustring& find_string() const;
+      const xtd::ustring& find_string() const noexcept;
       /// @brief Sets the string to find.
       /// @param value The string to find.
       /// @return Current replace_dialog instance.
@@ -73,7 +73,7 @@ namespace xtd {
       
       /// @brief Gets the replaced string.
       /// @return The replaced string.
-      const xtd::ustring& replace_string() const;
+      const xtd::ustring& replace_string() const noexcept;
       /// @brief Sets the replaced string.
       /// @param value The replaced string.
       /// @return Current replace_dialog instance.
@@ -81,7 +81,7 @@ namespace xtd {
       
       /// @brief Gets the coordinates of the upper-left corner of the dialog relative to the upper-left corner of the screen.
       /// @return The point that represents the upper-left corner of the dialog relative to the upper-left corner of its screen.
-      xtd::drawing::point location() const;
+      xtd::drawing::point location() const noexcept;
       /// @brief Sets the coordinates of the upper-left corner of the dialog relative to the upper-left corner of the screen.
       /// @param value The point that represents the upper-left corner of the dialog relative to the upper-left corner of its screen.
       /// @return Current replace_dialog instance.
@@ -89,7 +89,7 @@ namespace xtd {
       
       /// @brief Gets the match case value.
       /// @return true if match case option selected; otherwise false. The default is false.
-      bool match_case() const;
+      bool match_case() const noexcept;
       /// @brief Sets the match case value.
       /// @param value true if match case option selected; otherwise false. The default is false.
       /// @return Current replace_dialog instance.
@@ -97,7 +97,7 @@ namespace xtd {
       
       /// @brief Gets a value that indicates whether match case option is shown.
       /// @return true if match case option is shown; otherwise false. The default is true.
-      bool show_match_case() const;
+      bool show_match_case() const noexcept;
       /// @brief Sets a value that indicates whether match case option is shown.
       /// @param value true if match case option is shown; otherwise false. The default is true.
       /// @return Current replace_dialog instance.
@@ -105,7 +105,7 @@ namespace xtd {
       
       /// @brief Gets a value that indicates whether whole word option is shown.
       /// @return true if whole word option is shown; otherwise false. The default is true.
-      bool show_whole_word() const;
+      bool show_whole_word() const noexcept;
       /// @brief Sets a value that indicates whether whole word option is shown.
       /// @param value true if whole word option is shown; otherwise false. The default is true.
       /// @return Current replace_dialog instance.
@@ -113,7 +113,7 @@ namespace xtd {
       
       /// @brief Gets the find dialog title.
       /// @return The find dialog title.
-      const xtd::ustring& title() const;
+      const xtd::ustring& title() const noexcept;
       /// @brief Sets the find dialog title.
       /// @param value The find dialog title.
       /// @return Current replace_dialog instance.
@@ -121,7 +121,7 @@ namespace xtd {
       
       /// @brief Gets the whole word value.
       /// @return true if whole word option selected; otherwise false. The default is false.
-      bool whole_word() const;
+      bool whole_word() const noexcept;
       /// @brief Sets the whole word value.
       /// @param value true if whole word option selected; otherwise false. The default is false.
       /// @return Current replace_dialog instance.
@@ -171,7 +171,7 @@ namespace xtd {
       /// | show_match_case  | true                               |
       /// | whole_word       | false                              |
       /// | match_case       | false                              |
-      void reset();
+      void reset() noexcept;
       
       /// @brief Runs find dialog box.
       /// @remarks If the find dialog box is already displayed, this method does nothing.
@@ -179,6 +179,13 @@ namespace xtd {
       /// @}
       
     private:
+      void create_handle();
+      void destroy_handle();
+      void recreate_handle();
+      void on_dialog_closed();
+      void on_dialog_find(const xtd::drawing::point& location, const ustring& find_string, const ustring& replace_string, bool whole_word, bool match_case);
+      void on_dialog_replace(const xtd::drawing::point& location, const ustring& find_string, const ustring& replace_string, bool replace_all, bool whole_word, bool match_case);
+
       struct data {
         xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::standard;
         xtd::ustring find_string;
@@ -194,12 +201,6 @@ namespace xtd {
         bool whole_word = false;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
-      void create_handle();
-      void destroy_handle();
-      void recreate_handle();
-      void on_dialog_closed();
-      void on_dialog_find(const xtd::drawing::point& location, const ustring& find_string, const ustring& replace_string, bool whole_word, bool match_case);
-      void on_dialog_replace(const xtd::drawing::point& location, const ustring& find_string, const ustring& replace_string, bool replace_all, bool whole_word, bool match_case);
     };
   }
 }
