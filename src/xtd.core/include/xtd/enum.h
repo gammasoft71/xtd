@@ -119,7 +119,7 @@ namespace xtd {
     /// @brief Converts this instance to signed byte.
     /// @return A new sbyte_t object converted from this instance.
     sbyte_t to_sbyte() const noexcept {return static_cast<sbyte_t>(value_);}
-
+    
     /// @brief Converts this instance to unsigned int16.
     /// @return A new to_uint16 object converted from this instance.
     uint16_t to_uint16() const noexcept {return static_cast<uint16_t>(value_);}
@@ -289,7 +289,7 @@ namespace xtd {
     
     inline static std::optional<xtd::enum_attribute> attribute_;
     inline static std::optional<enum_collection<enum_type>> entries_;
-     enum_type value_ {};
+    enum_type value_ {};
   };
   
   /// @brief Provides the base class for enumerations.
@@ -327,7 +327,7 @@ namespace xtd {
         entries.emplace_back(enum_object<enum_t>(entry.first).to_int16(), entry.second);
       return entries;
     }
-
+    
     /// @brief Retrieves an array of the std::pair<int32_t, xtd::ustring> of the constants in a specified enumeration.
     /// @return A xtd::ustring array of the values and names of the constants in enumType.
     template<typename enum_t>
@@ -337,7 +337,7 @@ namespace xtd {
         entries.emplace_back(enum_object<enum_t>(entry.first).to_int32(), entry.second);
       return entries;
     }
-
+    
     /// @brief Retrieves an array of the std::pair<int64_t, xtd::ustring> of the constants in a specified enumeration.
     /// @return A xtd::ustring array of the values and names of the constants in enumType.
     template<typename enum_t>
@@ -387,7 +387,7 @@ namespace xtd {
         entries.emplace_back(enum_object<enum_t>(entry.first).to_uint64(), entry.second);
       return entries;
     }
-
+    
     /// @brief Retrieves the name of the constant in the specified enumeration that has the specified value.
     /// @param value The value of a particular enumerated constant in terms of its underlying type.
     /// @return A xtd::ustring containing the name of the enumerated constant in enumType whose value is value; or the value int32 to xtd::ustring if no such constant is found.
@@ -445,7 +445,7 @@ namespace xtd {
         values.push_back(enum_object<enum_t>(entry.first).to_byte());
       return values;
     }
-
+    
     /// @brief Retrieves an array of the values of the constants in a specified enumeration.
     /// @return Array<int16_t> An array that contains the values of the constants in enumType.
     /// @exception xtd::argument_exception The value is ! a value of enumType.
@@ -489,7 +489,7 @@ namespace xtd {
         values.push_back(enum_object<enum_t>(entry.first).to_sbyte());
       return values;
     }
-
+    
     /// @brief Retrieves an array of the values of the constants in a specified enumeration.
     /// @return Array<uint16_t> An array that contains the values of the constants in enumType.
     /// @exception xtd::argument_exception The value is ! a value of enumType.
@@ -522,7 +522,7 @@ namespace xtd {
         values.push_back(enum_object<enum_t>(entry.first).to_uint64());
       return values;
     }
-
+    
     /// @brief Returns an indication whether a constant with a specified value exists in a specified enumeration.
     /// @param fromValue An enumeration value.
     /// @return true if a constant in enumType has a value equal to value; otherwise, false.
@@ -581,7 +581,7 @@ namespace xtd {
     /// @return A new sbyte_t object converted from this instance.
     template<typename enum_t>
     static sbyte_t to_sbyte(enum_t value) noexcept {return enum_object<enum_t>(value).to_sbyte();}
-
+    
     /// @brief Converts this instance to unsigned int16.
     /// @param value The value to convert.
     /// @return A new to_uint16 object converted from this instance.
@@ -622,6 +622,13 @@ namespace xtd {
       }
     }
   };
+  
+  /// @cond
+  template<typename type_t>
+  inline std::string to_string(const xtd::enum_object<type_t>& value, const std::string& fmt, const std::locale& loc) {
+    return value.to_string(fmt);
+  }
+  /// @endcond
 }
 
 #define flags_attribute_(namespace_name, enum_type) \

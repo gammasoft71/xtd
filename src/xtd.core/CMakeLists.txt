@@ -25,6 +25,9 @@ add_sources(
   include/xtd/bit_converter.h
   include/xtd/block_scope.h
   include/xtd/box.h
+  include/xtd/box_char.h
+  include/xtd/box_floating_point.h
+  include/xtd/box_integer.h
   include/xtd/build_type.h
   include/xtd/cdebug.h
   include/xtd/cnull.h
@@ -182,6 +185,7 @@ add_sources(
   include/xtd/internal/__format_exception.h
   include/xtd/internal/__format_information.h
   include/xtd/internal/__format_stringer.h
+  include/xtd/internal/__math.h
   include/xtd/internal/__natural_formatter.h
   include/xtd/internal/__numeric_formatter.h
   include/xtd/internal/__opaque_console.h
