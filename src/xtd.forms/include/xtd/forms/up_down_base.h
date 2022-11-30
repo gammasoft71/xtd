@@ -23,14 +23,14 @@ namespace xtd {
       /// @{
       /// @brief Gets the border sides for the control.
       /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
-      virtual forms::border_sides border_sides() const {return border_sides_;}
+      virtual forms::border_sides border_sides() const noexcept;
       /// @brief Sets the border sides for the control.
       /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
       virtual up_down_base& border_sides(forms::border_sides border_sides);
       
       /// @brief Gets the border style for the spin box (also known as an up-down control).
       /// @return One of the border_style values. The default value is fixed_single.
-      virtual forms::border_style border_style() const {return border_style_;}
+      virtual forms::border_style border_style() const noexcept;
       /// @brief Sets the border style for the spin box (also known as an up-down control).
       /// @param value One of the border_style values. The default value is fixed_single.
       /// @return Current up_down_base.
@@ -52,8 +52,11 @@ namespace xtd {
       /// @}
       
     private:
-      forms::border_sides border_sides_ = forms::border_sides::all;
-      forms::border_style border_style_ = forms::border_style::fixed_single;
+      struct data {
+        forms::border_sides border_sides = forms::border_sides::all;
+        forms::border_style border_style = forms::border_style::fixed_single;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
