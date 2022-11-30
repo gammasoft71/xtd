@@ -42,11 +42,11 @@ namespace xtd {
       /// @{
       /// @brief Gets the xtd::forms::status_bar_panel that was clicked.
       /// @return The xtd::forms::status_bar_panel that was clicked.
-      const xtd::forms::status_bar_panel& panel() const {return panel_;}
+      const xtd::forms::status_bar_panel& panel() const noexcept {return panel_;}
       
       /// @brief Gets internal handle.
       /// @return Internal handle.
-      intptr_t handle() const {return handle_;}
+      intptr_t handle() const noexcept {return handle_;}
       /// @}
       
     private:
