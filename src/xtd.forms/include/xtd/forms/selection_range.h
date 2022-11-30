@@ -29,11 +29,11 @@ namespace xtd {
       /// @Name Properties
       
       /// @{
-      virtual date_time end() const;
+      virtual date_time end() const noexcept;
       virtual void end(date_time value);
       
       
-      virtual date_time start() const;
+      virtual date_time start() const noexcept;
       virtual void start(date_time value);
       /// @}
       

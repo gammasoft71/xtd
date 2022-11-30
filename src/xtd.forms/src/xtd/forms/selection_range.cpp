@@ -6,7 +6,7 @@ using namespace xtd::forms;
 selection_range::selection_range(date_time start, date_time end) : start_(start), end_(end) {
 }
 
-date_time selection_range::end() const {
+date_time selection_range::end() const noexcept {
   return end_;
 }
 
@@ -14,7 +14,7 @@ void selection_range::end(date_time value) {
   end_ = value;
 }
 
-date_time selection_range::start() const {
+date_time selection_range::start() const noexcept {
   return start_;
 }
 
