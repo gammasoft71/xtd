@@ -9,7 +9,15 @@ tool_bar_button::tool_bar_button(const ustring& text) {
   data_->text = text;
 }
 
-optional<reference_wrapper<forms::control>> tool_bar_button::control() const {
+bool tool_bar_button::operator ==(const tool_bar_button& other) const noexcept {
+  return data_ == other.data_;
+}
+
+bool tool_bar_button::operator !=(const tool_bar_button& other) const noexcept {
+  return !operator ==(other);
+}
+
+optional<reference_wrapper<forms::control>> tool_bar_button::control() const noexcept {
   return data_->control ? optional<reference_wrapper<forms::control>>(*data_->control) : nullopt;
 }
 
@@ -29,7 +37,7 @@ tool_bar_button& tool_bar_button::control(std::nullptr_t value) {
   return *this;
 }
 
-std::optional<std::reference_wrapper<xtd::forms::context_menu>> tool_bar_button::drop_down_menu() const {
+std::optional<std::reference_wrapper<xtd::forms::context_menu>> tool_bar_button::drop_down_menu() const noexcept {
   return data_->drop_down_menu ? std::optional<std::reference_wrapper<xtd::forms::context_menu>>(*data_->drop_down_menu) : std::optional<std::reference_wrapper<xtd::forms::context_menu>>();
 }
 
@@ -50,7 +58,7 @@ tool_bar_button& tool_bar_button::drop_down_menu(std::nullptr_t value) {
 }
 
 
-bool tool_bar_button::enabled() const {
+bool tool_bar_button::enabled() const noexcept {
   return data_->enabled;
 }
 
@@ -62,7 +70,7 @@ tool_bar_button& tool_bar_button::enabled(bool value) {
   return *this;
 }
 
-size_t tool_bar_button::image_index() const {
+size_t tool_bar_button::image_index() const noexcept {
   return data_->image_index;
 }
 
@@ -74,7 +82,7 @@ tool_bar_button& tool_bar_button::image_index(size_t value) {
   return *this;
 }
 
-const ustring& tool_bar_button::name() const {
+const ustring& tool_bar_button::name() const noexcept {
   return data_->name;
 }
 
@@ -83,11 +91,11 @@ tool_bar_button& tool_bar_button::name(const xtd::ustring& value) {
   return *this;
 }
 
-optional<reference_wrapper<tool_bar>> tool_bar_button::parent() const {
+optional<reference_wrapper<tool_bar>> tool_bar_button::parent() const noexcept {
   return data_->parent ? optional<reference_wrapper<tool_bar>>(*data_->parent) : nullopt;
 }
 
-bool tool_bar_button::pushed() const {
+bool tool_bar_button::pushed() const noexcept {
   return data_->pushed;
 }
 
@@ -99,7 +107,7 @@ tool_bar_button& tool_bar_button::pushed(bool value) {
   return *this;
 }
 
-xtd::forms::tool_bar_button_style tool_bar_button::style() const {
+xtd::forms::tool_bar_button_style tool_bar_button::style() const noexcept {
   return data_->style;
 }
 
@@ -111,11 +119,11 @@ tool_bar_button& tool_bar_button::style(xtd::forms::tool_bar_button_style value)
   return *this;
 }
 
-const xtd::drawing::rectangle& tool_bar_button::rectangle() const {
+const xtd::drawing::rectangle& tool_bar_button::rectangle() const noexcept {
   return data_->rectangle;
 }
 
-std::any tool_bar_button::tag() const {
+std::any tool_bar_button::tag() const noexcept {
   return data_->tag;
 }
 
@@ -124,7 +132,7 @@ tool_bar_button& tool_bar_button::tag(std::any value) {
   return *this;
 }
 
-const ustring& tool_bar_button::text() const {
+const ustring& tool_bar_button::text() const noexcept {
   return data_->text;
 }
 
@@ -136,7 +144,7 @@ tool_bar_button& tool_bar_button::text(const xtd::ustring& value) {
   return *this;
 }
 
-const ustring& tool_bar_button::tool_tip_text() const {
+const ustring& tool_bar_button::tool_tip_text() const noexcept {
   return data_->tool_tip_text;
 }
 
@@ -148,7 +156,7 @@ tool_bar_button& tool_bar_button::tool_tip_text(const xtd::ustring& value) {
   return *this;
 }
 
-bool tool_bar_button::visible() const {
+bool tool_bar_button::visible() const noexcept {
   return data_->visible;
 }
 
