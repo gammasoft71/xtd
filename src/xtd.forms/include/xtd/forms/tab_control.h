@@ -65,7 +65,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the area of the control (for example, along the top) where the tabs are aligned.
       /// @return One of the xtd::forms::tab_alignment values. The default is top.
-      virtual tab_alignment alignment() const {return alignment_;}
+      virtual tab_alignment alignment() const noexcept;
       /// @brief Sets the area of the control (for example, along the top) where the tabs are aligned.
       /// @param alignment One of the xtd::forms::tab_alignment values. The default is top.
       /// @return Current tab_control instance.
@@ -74,7 +74,7 @@ namespace xtd {
       /// @brief Gets the images to display on the control's tabs.
       /// @return An xtd::forms::image_list that specifies the images to display on the tabs.
       /// @remarks To display an image on a tab, set the image_index property of that xtd::forms::tab_page. The image_index acts as the index into the image_list.
-      virtual const forms::image_list& image_list() const {return image_list_;}
+      virtual const forms::image_list& image_list() const noexcept;
       /*
       /// @brief Gets the images to display on the control's tabs.
       /// @return An xtd::forms::image_list that specifies the images to display on the tabs.
@@ -89,7 +89,7 @@ namespace xtd {
       
       /// @brief Gets the index of the currently selected tab page.
       /// @return The zero-based index of the currently selected tab page. The default is -1, which is also the value if no tab page is selected.
-      virtual size_t selected_index() const {return selected_index_;}
+      virtual size_t selected_index() const noexcept;
       /// @brief Sets the index of the currently selected tab page.
       /// @param selected_index The zero-based index of the currently selected tab page. The default is -1, which is also the value if no tab page is selected.
       /// @return Current tab_control instance.
@@ -98,11 +98,11 @@ namespace xtd {
       /// @brief Gets the collection of tab pages in this tab control.
       /// @return A control_collection that contains the control objects in this tab_control.
       /// @remarks The order of tab pages in this collection reflects the order the tabs appear in the control.
-      virtual control_collection& tab_pages() {return controls();}
+      virtual control_collection& tab_pages() noexcept;
       /// @brief Gets the collection of tab pages in this tab control.
       /// @return A control_collection that contains the control objects in this tab_control.
       /// @remarks The order of tab pages in this collection reflects the order the tabs appear in the control.
-      virtual const control_collection& tab_pages() const {return controls();}
+      virtual const control_collection& tab_pages() const noexcept;
       /// @}
       
       /// @name Events
@@ -133,26 +133,25 @@ namespace xtd {
       
       /// @brief Raises the tab_control::selected_index_changed event.
       /// @param An xtd::event_args that contains the event data.
-      virtual void on_selected_index_changed(const event_args& e) {selected_index_changed(*this, e);}
+      virtual void on_selected_index_changed(const event_args& e);
       
       void wnd_proc(message& message) override;
       /// @}
       
       /// @cond
       friend class tab_page;
-      size_t get_child_index(intptr_t page) {
-        for (size_t index = 0; index < controls().size(); ++index)
-          if (controls()[index].get().handle() == page) return index;
-        return npos;
-      }
+      size_t get_child_index(intptr_t page);
       /// @endcond
       
     private:
       void wm_command_control(message& message);
 
-      tab_alignment alignment_ = tab_alignment::top;
-      forms::image_list image_list_;
-      size_t selected_index_ = npos;
+      struct data {
+        tab_alignment alignment = tab_alignment::top;
+        forms::image_list image_list;
+        size_t selected_index = npos;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
