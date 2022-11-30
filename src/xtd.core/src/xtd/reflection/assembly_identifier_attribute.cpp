@@ -11,7 +11,7 @@ assembly_identifier_attribute::assembly_identifier_attribute(const ustring& iden
   __assembly_identifier_attribute__() = make_shared<xtd::reflection::assembly_identifier_attribute>(identifier);
 }
 
-shared_ptr<object> assembly_identifier_attribute::get_type_id() const {
+shared_ptr<object> assembly_identifier_attribute::get_type_id() const noexcept {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
 }
 

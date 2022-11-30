@@ -43,7 +43,7 @@ namespace xtd {
       /// @}
       
     protected:
-      std::shared_ptr<object> get_type_id() const override;
+      std::shared_ptr<object> get_type_id() const noexcept override;
       
     private:
       ustring company_;

@@ -11,7 +11,7 @@ assembly_trademark_attribute::assembly_trademark_attribute(const ustring& tradem
   __assembly_trademark_attribute__() = make_shared<xtd::reflection::assembly_trademark_attribute>(trademark);
 }
 
-shared_ptr<object> assembly_trademark_attribute::get_type_id() const {
+shared_ptr<object> assembly_trademark_attribute::get_type_id() const noexcept {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
 }
 

@@ -11,7 +11,7 @@ assembly_guid_attribute::assembly_guid_attribute(const ustring& guid, const obje
   __assembly_guid_attribute__() = make_shared<xtd::reflection::assembly_guid_attribute>(guid);
 }
 
-shared_ptr<object> assembly_guid_attribute::get_type_id() const {
+shared_ptr<object> assembly_guid_attribute::get_type_id() const noexcept {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
 }
 
