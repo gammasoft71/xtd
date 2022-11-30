@@ -15,18 +15,6 @@ seven_segment_display& fourteen_segment_display::thickness(int32_t value) {
   return *this;
 }
 
-void fourteen_segment_display::on_paint(paint_event_args& e) {
-  seven_segment_display::on_paint(e);
-  if ((value() & forms::segments::g1) == forms::segments::g1) draw_segment_g1(e.graphics(), fore_color());
-  if ((value() & forms::segments::g2) == forms::segments::g2) draw_segment_g2(e.graphics(), fore_color());
-  if ((value() & forms::segments::h) == forms::segments::h) draw_segment_h(e.graphics(), fore_color());
-  if ((value() & forms::segments::i) == forms::segments::i) draw_segment_i(e.graphics(), fore_color());
-  if ((value() & forms::segments::j) == forms::segments::j) draw_segment_j(e.graphics(), fore_color());
-  if ((value() & forms::segments::k) == forms::segments::k) draw_segment_k(e.graphics(), fore_color());
-  if ((value() & forms::segments::l) == forms::segments::l) draw_segment_l(e.graphics(), fore_color());
-  if ((value() & forms::segments::m) == forms::segments::m) draw_segment_m(e.graphics(), fore_color());
-}
-
 void fourteen_segment_display::draw_back_digit(drawing::graphics& graphics) {
   seven_segment_display::draw_back_digit(graphics);
   draw_segment_g1(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
@@ -37,6 +25,9 @@ void fourteen_segment_display::draw_back_digit(drawing::graphics& graphics) {
   draw_segment_k(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
   draw_segment_l(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
   draw_segment_m(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
+}
+
+void fourteen_segment_display::draw_segment_g(drawing::graphics& graphics, const drawing::color& color) {
 }
 
 void fourteen_segment_display::draw_segment_g1(drawing::graphics& graphics, const drawing::color& color) {
@@ -121,5 +112,14 @@ void fourteen_segment_display::draw_segment_m(drawing::graphics& graphics, const
   }
 }
 
-void fourteen_segment_display::draw_segment_g(drawing::graphics& graphics, const drawing::color& color) {
+void fourteen_segment_display::on_paint(paint_event_args& e) {
+  seven_segment_display::on_paint(e);
+  if ((value() & forms::segments::g1) == forms::segments::g1) draw_segment_g1(e.graphics(), fore_color());
+  if ((value() & forms::segments::g2) == forms::segments::g2) draw_segment_g2(e.graphics(), fore_color());
+  if ((value() & forms::segments::h) == forms::segments::h) draw_segment_h(e.graphics(), fore_color());
+  if ((value() & forms::segments::i) == forms::segments::i) draw_segment_i(e.graphics(), fore_color());
+  if ((value() & forms::segments::j) == forms::segments::j) draw_segment_j(e.graphics(), fore_color());
+  if ((value() & forms::segments::k) == forms::segments::k) draw_segment_k(e.graphics(), fore_color());
+  if ((value() & forms::segments::l) == forms::segments::l) draw_segment_l(e.graphics(), fore_color());
+  if ((value() & forms::segments::m) == forms::segments::m) draw_segment_m(e.graphics(), fore_color());
 }

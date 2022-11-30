@@ -62,8 +62,6 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      void on_paint(paint_event_args& e) override;
-      
       void draw_back_digit(drawing::graphics& graphics) override;
       
       /// @brief Draw segment h on specified graphics with specified color.
@@ -75,6 +73,8 @@ namespace xtd {
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
       virtual void draw_segment_i(drawing::graphics& graphics, const drawing::color& color);
+
+      void on_paint(paint_event_args& e) override;
       /// @}
       
     private:
