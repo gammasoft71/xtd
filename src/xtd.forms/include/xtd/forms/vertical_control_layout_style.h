@@ -24,102 +24,102 @@ namespace xtd {
       vertical_control_layout_style() = default;
       /// @brief Initialises a new instance of vertical control layout style class with specified height.
       /// @param height The preferred height, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
-      explicit vertical_control_layout_style(float height) : height_(height) {}
+      explicit vertical_control_layout_style(float height);
       /// @brief Initialises a new instance of vertical control layout style class with specified height.
       /// @param height The preferred height, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
-      explicit vertical_control_layout_style(int32_t height) : height_(static_cast<float>(height)) {}
+      explicit vertical_control_layout_style(int32_t height);
       /// @brief Initialises a new instance of vertical control layout style class with specified size type.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
-      explicit vertical_control_layout_style(xtd::forms::size_type size_type) : control_layout_style(size_type) {}
+      explicit vertical_control_layout_style(xtd::forms::size_type size_type);
       /// @brief Initialises a new instance of vertical control layout style class with specified height and size type.
       /// @param height The preferred height, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
-      vertical_control_layout_style(float height, xtd::forms::size_type size_type) : control_layout_style(size_type), height_(height) {}
+      vertical_control_layout_style(float height, xtd::forms::size_type size_type);
       /// @brief Initialises a new instance of vertical control layout style class with specified height and size type.
       /// @param height The preferred height, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
-      vertical_control_layout_style(int32_t height, xtd::forms::size_type size_type) : control_layout_style(size_type), height_(static_cast<float>(height)) {}
+      vertical_control_layout_style(int32_t height, xtd::forms::size_type size_type);
       /// @brief Initialises a new instance of vertical control layout style class with specified expanded.
       /// @param expanded true if control expanded; otherwise false.
-      explicit vertical_control_layout_style(bool expanded) : control_layout_style(expanded) {}
+      explicit vertical_control_layout_style(bool expanded);
       /// @brief Initialises a new instance of vertical control layout style class with specified height and expanded.
       /// @param height The preferred height, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param expanded true if control expanded; otherwise false.
-      vertical_control_layout_style(float height, bool expanded) : control_layout_style(expanded), height_(height) {}
+      vertical_control_layout_style(float height, bool expanded);
       /// @brief Initialises a new instance of vertical control layout style class with specified height and expanded.
       /// @param height The preferred height, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param expanded true if control expanded; otherwise false.
-      vertical_control_layout_style(int32_t height, bool expanded) : control_layout_style(expanded), height_(static_cast<float>(height)) {}
+      vertical_control_layout_style(int32_t height, bool expanded);
       /// @brief Initialises a new instance of vertical control layout style class with specified content alignment.
       /// @param align One of the content_alignment values. The default is middle_center.
-      explicit vertical_control_layout_style(xtd::forms::content_alignment align) : control_layout_style(align) {}
+      explicit vertical_control_layout_style(xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of vertical control layout style class with specified height and content alignment.
       /// @param height The preferred height, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param align One of the content_alignment values. The default is middle_center.
-      vertical_control_layout_style(float height, xtd::forms::content_alignment align) : control_layout_style(align), height_(height) {}
+      vertical_control_layout_style(float height, xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of vertical control layout style class with specified height and content alignment.
       /// @param height The preferred height, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param align One of the content_alignment values. The default is middle_center.
-      vertical_control_layout_style(int32_t height, xtd::forms::content_alignment align) : control_layout_style(align), height_(static_cast<float>(height)) {}
+      vertical_control_layout_style(int32_t height, xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of vertical control layout style class with specified size type and expanded.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
       /// @param expanded true if control expanded; otherwise false.
-      vertical_control_layout_style(xtd::forms::size_type size_type, bool expanded) : control_layout_style(size_type, expanded) {}
+      vertical_control_layout_style(xtd::forms::size_type size_type, bool expanded);
       /// @brief Initialises a new instance of vertical control layout style class with specified height, size type and expanded.
       /// @param height The preferred height, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
       /// @param expanded true if control expanded; otherwise false.
-      vertical_control_layout_style(float height, xtd::forms::size_type size_type, bool expanded) : control_layout_style(size_type, expanded), height_(height) {}
+      vertical_control_layout_style(float height, xtd::forms::size_type size_type, bool expanded);
       /// @brief Initialises a new instance of vertical control layout style class with specified height, size type and expanded.
       /// @param height The preferred height, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
       /// @param expanded true if control expanded; otherwise false.
-      vertical_control_layout_style(int32_t height, xtd::forms::size_type size_type, bool expanded) : control_layout_style(size_type, expanded), height_(static_cast<float>(height)) {}
+      vertical_control_layout_style(int32_t height, xtd::forms::size_type size_type, bool expanded);
       /// @brief Initialises a new instance of vertical control layout style class with specified size type and content alignment.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
       /// @param align One of the content_alignment values. The default is middle_center.
-      vertical_control_layout_style(xtd::forms::size_type size_type, xtd::forms::content_alignment align) : control_layout_style(size_type, align) {}
+      vertical_control_layout_style(xtd::forms::size_type size_type, xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of vertical control layout style class with specified height, size type and content alignment.
       /// @param height The preferred height, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
       /// @param align One of the content_alignment values. The default is middle_center.
-      vertical_control_layout_style(float height, xtd::forms::size_type size_type, xtd::forms::content_alignment align) : control_layout_style(size_type, align), height_(height) {}
+      vertical_control_layout_style(float height, xtd::forms::size_type size_type, xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of vertical control layout style class with specified height, size type and content alignment.
       /// @param height The preferred height, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
       /// @param align One of the content_alignment values. The default is middle_center.
-      vertical_control_layout_style(int32_t height, xtd::forms::size_type size_type, xtd::forms::content_alignment align) : control_layout_style(size_type, align), height_(static_cast<float>(height)) {}
+      vertical_control_layout_style(int32_t height, xtd::forms::size_type size_type, xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of vertical control layout style class with specified size type, expanded and content alignment.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
       /// @param expanded true if control expanded; otherwise false.
       /// @param align One of the content_alignment values. The default is middle_center.
-      vertical_control_layout_style(xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align) : control_layout_style(size_type, expanded, align) {}
+      vertical_control_layout_style(xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of vertical control layout style class with specified height, size type, expanded and content alignment.
       /// @param height The preferred height, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
       /// @param expanded true if control expanded; otherwise false.
       /// @param align One of the content_alignment values. The default is middle_center.
-      vertical_control_layout_style(float height, xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align) : control_layout_style(size_type, expanded, align), height_(height) {}
+      vertical_control_layout_style(float height, xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of vertical control layout style class with specified height, size type, expanded and content alignment.
       /// @param height The preferred height, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::auto_size.
       /// @param expanded true if control expanded; otherwise false.
       /// @param align One of the content_alignment values. The default is middle_center.
-      vertical_control_layout_style(int32_t height, xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align) : control_layout_style(size_type, expanded, align), height_(static_cast<float>(height)) {}
+      vertical_control_layout_style(int32_t height, xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of vertical control layout style class with specified expanded and content alignment.
       /// @param expanded true if control expanded; otherwise false.
       /// @param align One of the content_alignment values. The default is middle_center.
-      vertical_control_layout_style(bool expanded, xtd::forms::content_alignment align) : control_layout_style(expanded, align) {}
+      vertical_control_layout_style(bool expanded, xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of vertical control layout style class with specified height, expanded and content alignment.
       /// @param height The preferred height, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param expanded true if control expanded; otherwise false.
       /// @param align One of the content_alignment values. The default is middle_center.
-      vertical_control_layout_style(float height, bool expanded, xtd::forms::content_alignment align) : control_layout_style(expanded, align), height_(height) {}
+      vertical_control_layout_style(float height, bool expanded, xtd::forms::content_alignment align);
       /// @brief Initialises a new instance of vertical control layout style class with specified height, expanded and content alignment.
       /// @param height The preferred height, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       /// @param expanded true if control expanded; otherwise false.
       /// @param align One of the content_alignment values. The default is middle_center.
-      vertical_control_layout_style(int32_t height, bool expanded, xtd::forms::content_alignment align) : control_layout_style(expanded, align), height_(static_cast<float>(height)) {}
+      vertical_control_layout_style(int32_t height, bool expanded, xtd::forms::content_alignment align);
       /// @}
       
       /// @name Properties
@@ -127,10 +127,10 @@ namespace xtd {
       /// @{
       /// @brief Gets the height value for a control.
       /// @return The preferred height, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
-      std::optional<float> height() const {return height_;}
+      std::optional<float> height() const noexcept;
       /// @brief Sets the height value for a control.
       /// @param height The preferred height, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
-      void height(float height) {height_ = height;}
+      void height(float height);
       /// @}
       
       /// @name Methods
@@ -138,15 +138,12 @@ namespace xtd {
       /// @{
       /// @brief Returns a string that represent xtd::forms::control_layout_style.
       /// @return A string containing that represent xtd::forms::control_layout_style.
-      xtd::ustring to_string() const noexcept override {return ustring::format("vertical_control_layout_style=[expanded={}, align={}, size_type={}, height={}]", expanded(), align(), size_type(), height_.value_or(-1));}
+      xtd::ustring to_string() const noexcept override;
       /// @}
       
       /// @cond
-      bool operator ==(const vertical_control_layout_style& value) const {return height_ == value.height_ && control_layout_style::operator ==(value);}
-      bool operator !=(const vertical_control_layout_style& value) const {return !operator ==(value);}
-      friend std::ostream& operator <<(std::ostream& os, const xtd::forms::vertical_control_layout_style& control_layout_style) noexcept {
-        return os << control_layout_style.to_string();
-      }
+      bool operator ==(const vertical_control_layout_style& value) const noexcept;
+      bool operator !=(const vertical_control_layout_style& value) const noexcept;
       /// @endcond
       
     private:
