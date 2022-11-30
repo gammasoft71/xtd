@@ -11,7 +11,7 @@ assembly_copyright_attribute::assembly_copyright_attribute(const ustring& copyri
   __assembly_copyright_attribute__() = make_shared<xtd::reflection::assembly_copyright_attribute>(copyright);
 }
 
-shared_ptr<object> assembly_copyright_attribute::get_type_id() const {
+shared_ptr<object> assembly_copyright_attribute::get_type_id() const noexcept {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
 }
 
