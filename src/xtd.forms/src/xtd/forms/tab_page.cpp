@@ -53,6 +53,6 @@ void tab_page::on_handle_created(const event_args& e) {
   native::tab_control::insert_page(parent().value().get().handle(), parent().value().get().get_child_index(handle()), handle());
   native::tab_page::text(handle(), text());
   native::tab_page::image_index(handle(), image_index_);
-  if (parent().value().get().get_child_index(handle()) == static_cast<tab_control&>(parent().value().get()).selected_index_)
-    native::tab_control::selected_index(parent().value().get().handle(), static_cast<tab_control&>(parent().value().get()).selected_index_);
+  if (parent().value().get().get_child_index(handle()) == static_cast<tab_control&>(parent().value().get()).data_->selected_index)
+    native::tab_control::selected_index(parent().value().get().handle(), static_cast<tab_control&>(parent().value().get()).data_->selected_index);
 }
