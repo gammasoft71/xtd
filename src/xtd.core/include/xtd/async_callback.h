@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::action delegate.
+/// @brief Contains xtd::async_callback delegate.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
