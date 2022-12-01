@@ -238,12 +238,12 @@ namespace xtd {
   inline int16_object boxing(const int16_t& value) {return int16_object(value);}
   inline int32_object boxing(const int32_t& value) {return int32_object(value);}
   inline int64_object boxing(const int64_t& value) {return int64_object(value);}
-  inline intptr_object boxing(const intptr_t& value) {return intptr_object(value);}
+  //inline intptr_object boxing(const intptr_t& value) {return intptr_object(value);}
   inline sbyte_object boxing(const sbyte_t& value) {return sbyte_object(value);}
   inline uint16_object boxing(const uint16_t& value) {return uint16_object(value);}
   inline uint32_object boxing(const uint32_t& value) {return uint32_object(value);}
   inline uint64_object boxing(const uint64_t& value) {return uint64_object(value);}
-  inline uintptr_object boxing(const uintptr_t& value) {return uintptr_object(value);}
+  //inline uintptr_object boxing(const uintptr_t& value) {return uintptr_object(value);}
 
   template<typename type_t>
   inline std::string to_string(const xtd::box_integer<type_t>& value, const std::string& fmt, const std::locale& loc) {
