@@ -20,6 +20,7 @@
 #include <list>
 #include <map>
 #include <set>
+#include <system_error>
 #include <tuple>
 #include <typeindex>
 #include <type_traits>
@@ -187,6 +188,16 @@ std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t
 template <typename char_t, typename char_traits_t, typename key_t, typename pred_t = std::equal_to<key_t>, typename allocator_t = std::allocator<key_t>>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::unordered_set<key_t, pred_t, allocator_t>& values) {
   return __xtd_console_print_associative_container(os, values.begin(), values.end());
+}
+
+template <typename char_t, typename char_traits_t>
+inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::error_category& value) {
+  return os << "(" <<value.name() << ")";
+}
+
+template <typename char_t, typename char_traits_t>
+inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::error_code& value) {
+  return os << "(value = " << value.value() << "category= " << value.category().name() << ")";
 }
 
 template <typename char_t, typename char_traits_t>
