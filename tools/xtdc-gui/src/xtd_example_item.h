@@ -22,30 +22,39 @@ namespace xtdc_gui {
     const xtd::ustring& path() const noexcept {return path_;};
     const xtd::drawing::image& picture() const noexcept {return picture_;};
     
-    static std::vector<xtd_example_item> get_cmake_examples() {
-      return xtd_example_item::get_examples(xtd::io::path::combine(xtd_share_path_, "examples", "xtd.cmake.examples"));
+    static const std::vector<xtd_example_item>& get_cmake_examples() {
+      static std::vector<xtd_example_item> examples;
+      if (examples.empty()) examples = xtd_example_item::get_examples(xtd::io::path::combine(xtd_share_path_, "examples", "xtd.cmake.examples"));
+      return examples;
     }
     
-    static std::vector<xtd_example_item> get_core_examples() {
-      return xtd_example_item::get_examples(xtd::io::path::combine(xtd_share_path_, "examples", "xtd.core.examples"));
+    static const std::vector<xtd_example_item>& get_core_examples() {
+      static std::vector<xtd_example_item> examples;
+      if (examples.empty()) examples = xtd_example_item::get_examples(xtd::io::path::combine(xtd_share_path_, "examples", "xtd.core.examples"));
+      return examples;
     }
     
-    static std::vector<xtd_example_item> get_drawing_examples() {
-      return xtd_example_item::get_examples(xtd::io::path::combine(xtd_share_path_, "examples", "xtd.drawing.examples"));
+    static const std::vector<xtd_example_item>& get_drawing_examples() {
+      static std::vector<xtd_example_item> examples;
+      if (examples.empty()) examples = xtd_example_item::get_examples(xtd::io::path::combine(xtd_share_path_, "examples", "xtd.drawing.examples"));
+      return examples;
     }
     
-    static std::vector<xtd_example_item> get_forms_examples() {
-      return xtd_example_item::get_examples(xtd::io::path::combine(xtd_share_path_, "examples", "xtd.forms.examples"));
+    static const std::vector<xtd_example_item>& get_forms_examples() {
+      static std::vector<xtd_example_item> examples;
+      if (examples.empty()) examples = xtd_example_item::get_examples(xtd::io::path::combine(xtd_share_path_, "examples", "xtd.forms.examples"));
+      return examples;
     }
     
-    static std::vector<xtd_example_item> get_tunit_examples() {
-      return xtd_example_item::get_examples(xtd::io::path::combine(xtd_share_path_, "examples", "xtd.tunit.examples"));
+    static const std::vector<xtd_example_item>& get_tunit_examples() {
+      static std::vector<xtd_example_item> examples;
+      if (examples.empty()) examples = xtd_example_item::get_examples(xtd::io::path::combine(xtd_share_path_, "examples", "xtd.tunit.examples"));
+      return examples;
     }
     
   private:
-    static const std::vector<xtd_example_item>& get_examples(const xtd::ustring& examples_path) {
-      static std::vector<xtd_example_item> examples;
-      if (!examples.empty()) return examples;
+    static std::vector<xtd_example_item> get_examples(const xtd::ustring& examples_path) {
+      std::vector<xtd_example_item> examples;
       for (auto group_item : xtd::io::directory::enumerate_directories(examples_path)) {
         for (auto item : xtd::io::directory::enumerate_directories(group_item)) {
           if (xtd::io::path::get_file_name(item) != "src") {
