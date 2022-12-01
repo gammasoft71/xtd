@@ -157,7 +157,7 @@ namespace xtd {
   
   template<typename type_t>
   struct __box_enum_or_object__<type_t, std::false_type> {
-    using type = xtd::box<type_t>;
+    using type = typename std::conditional<std::is_base_of<xtd::object, type_t>::value, type_t, xtd::box<type_t>>::type;
   };
   
   inline const object& boxing(const object& value) {return value;}
