@@ -44,7 +44,8 @@ namespace xtdc_gui {
     
   private:
     static std::vector<xtd_example_item> get_examples(const xtd::ustring& examples_path) {
-      std::vector<xtd_example_item> examples;
+      static std::vector<xtd_example_item> examples;
+      if (!examples.empty()) return examples;
       for (auto group_item : xtd::io::directory::enumerate_directories(examples_path)) {
         for (auto item : xtd::io::directory::enumerate_directories(group_item)) {
           if (xtd::io::path::get_file_name(item) != "src") {
