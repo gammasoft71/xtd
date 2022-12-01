@@ -553,6 +553,7 @@ struct __tunit_value_printer<char_t, char_traits_t, std::unordered_set<value_t>>
   }
 };
 
+#if defined(__CMAKE_TARGET_TYPE__) && __CMAKE_TARGET_TYPE__ == 3 // 3 == TEST_APPLICATION
 template <typename char_t, typename char_traits_t, typename type_t>
 std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const type_t& value) {
   __tunit_value_printer<char_t, char_traits_t, type_t>::print(os, value);
@@ -570,6 +571,7 @@ std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t
   __tunit_value_printer<char_t, char_traits_t, type_t>::print(os, value);
   return os;
 }
+#endif
 
 inline std::string __tunit_codepoint_to_string(char32_t codepoint) {
   std::string result;
