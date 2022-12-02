@@ -29,6 +29,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::io::search_option> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::io::search_option> {{xtd::io::search_option::top_directory_only, "top_directory_only"}, {xtd::io::search_option::all_directories, "all_directories"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::io::search_option> {{xtd::io::search_option::top_directory_only, "top_directory_only"}, {xtd::io::search_option::all_directories, "all_directories"}};}
 };
 /// @endcond

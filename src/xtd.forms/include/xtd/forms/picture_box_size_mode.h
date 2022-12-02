@@ -32,6 +32,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::picture_box_size_mode> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::forms::picture_box_size_mode> {{xtd::forms::picture_box_size_mode::normal, "normal"}, {xtd::forms::picture_box_size_mode::stretch_image, "stretch_image"}, {xtd::forms::picture_box_size_mode::auto_size, "auto_size"}, {xtd::forms::picture_box_size_mode::center_image, "center_image"}, {xtd::forms::picture_box_size_mode::zoom, "zoom"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::picture_box_size_mode> {{xtd::forms::picture_box_size_mode::normal, "normal"}, {xtd::forms::picture_box_size_mode::stretch_image, "stretch_image"}, {xtd::forms::picture_box_size_mode::auto_size, "auto_size"}, {xtd::forms::picture_box_size_mode::center_image, "center_image"}, {xtd::forms::picture_box_size_mode::zoom, "zoom"}};}
 };
 /// @endcond

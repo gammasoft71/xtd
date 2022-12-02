@@ -46,6 +46,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::net::sockets::socket_type> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::net::sockets::socket_type> {{xtd::net::sockets::socket_type::unknown, "unknown"}, {xtd::net::sockets::socket_type::stream, "stream"}, {xtd::net::sockets::socket_type::dgram, "dgram"}, {xtd::net::sockets::socket_type::raw, "raw"}, {xtd::net::sockets::socket_type::rdm, "rdm"}, {xtd::net::sockets::socket_type::seqpacket, "seqpacket"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::net::sockets::socket_type> {{xtd::net::sockets::socket_type::unknown, "unknown"}, {xtd::net::sockets::socket_type::stream, "stream"}, {xtd::net::sockets::socket_type::dgram, "dgram"}, {xtd::net::sockets::socket_type::raw, "raw"}, {xtd::net::sockets::socket_type::rdm, "rdm"}, {xtd::net::sockets::socket_type::seqpacket, "seqpacket"}};}
 };
 /// @endcond

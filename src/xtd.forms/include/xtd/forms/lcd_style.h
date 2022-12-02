@@ -31,6 +31,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::lcd_style> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::forms::lcd_style> {{xtd::forms::lcd_style::seven_segment_display, "seven_segment_display"}, {xtd::forms::lcd_style::nine_segment_display, "nine_segment_display"}, {xtd::forms::lcd_style::fourteen_segment_display, "fourteen_segment_display"}, {xtd::forms::lcd_style::sixteen_segment_display, "sixteen_segment_display"}, {xtd::forms::lcd_style::dot_matrix_display, "dot_matrix_display"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::lcd_style> {{xtd::forms::lcd_style::seven_segment_display, "seven_segment_display"}, {xtd::forms::lcd_style::nine_segment_display, "nine_segment_display"}, {xtd::forms::lcd_style::fourteen_segment_display, "fourteen_segment_display"}, {xtd::forms::lcd_style::sixteen_segment_display, "sixteen_segment_display"}, {xtd::forms::lcd_style::dot_matrix_display, "dot_matrix_display"}};}
 };
 /// @endcond

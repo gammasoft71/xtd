@@ -43,6 +43,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::net::sockets::socket_option_level> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::net::sockets::socket_option_level> {{xtd::net::sockets::socket_option_level::socket, "socket"}, {xtd::net::sockets::socket_option_level::ip, "ip"}, {xtd::net::sockets::socket_option_level::ip_v6, "ip_v6"}, {xtd::net::sockets::socket_option_level::tcp, "tcp"}, {xtd::net::sockets::socket_option_level::udp, "udp"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::net::sockets::socket_option_level> {{xtd::net::sockets::socket_option_level::socket, "socket"}, {xtd::net::sockets::socket_option_level::ip, "ip"}, {xtd::net::sockets::socket_option_level::ip_v6, "ip_v6"}, {xtd::net::sockets::socket_option_level::tcp, "tcp"}, {xtd::net::sockets::socket_option_level::udp, "udp"}};}
 };
 /// @endcond

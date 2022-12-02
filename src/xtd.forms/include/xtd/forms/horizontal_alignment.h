@@ -28,6 +28,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::horizontal_alignment> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::forms::horizontal_alignment> {{xtd::forms::horizontal_alignment::left, "left"}, {xtd::forms::horizontal_alignment::right, "right"}, {xtd::forms::horizontal_alignment::center, "center"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::horizontal_alignment> {{xtd::forms::horizontal_alignment::left, "left"}, {xtd::forms::horizontal_alignment::right, "right"}, {xtd::forms::horizontal_alignment::center, "center"}};}
 };
 /// @endcond

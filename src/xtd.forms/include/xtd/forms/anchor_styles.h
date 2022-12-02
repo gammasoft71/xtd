@@ -37,6 +37,6 @@ namespace xtd {
 flags_attribute_(xtd::forms, anchor_styles);
 
 template<> struct xtd::enum_register<xtd::forms::anchor_styles> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::forms::anchor_styles> {{xtd::forms::anchor_styles::none, "none"}, {xtd::forms::anchor_styles::top, "top"}, {xtd::forms::anchor_styles::bottom, "bottom"}, {xtd::forms::anchor_styles::left, "left"}, {xtd::forms::anchor_styles::right, "right"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::anchor_styles> {{xtd::forms::anchor_styles::none, "none"}, {xtd::forms::anchor_styles::top, "top"}, {xtd::forms::anchor_styles::bottom, "bottom"}, {xtd::forms::anchor_styles::left, "left"}, {xtd::forms::anchor_styles::right, "right"}};}
 };
 /// @endcond

@@ -45,6 +45,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::diagnostics::trace_event_type> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::diagnostics::trace_event_type> {{xtd::diagnostics::trace_event_type::critical, "critical"}, {xtd::diagnostics::trace_event_type::error, "error"}, {xtd::diagnostics::trace_event_type::information, "information"}, {xtd::diagnostics::trace_event_type::resume, "resume"}, {xtd::diagnostics::trace_event_type::start, "start"}, {xtd::diagnostics::trace_event_type::stop, "stop"}, {xtd::diagnostics::trace_event_type::suspend, "suspend"}, {xtd::diagnostics::trace_event_type::transfer, "transfer"}, {xtd::diagnostics::trace_event_type::verbose, "verbose"}, {xtd::diagnostics::trace_event_type::warning, "warning"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::diagnostics::trace_event_type> {{xtd::diagnostics::trace_event_type::critical, "critical"}, {xtd::diagnostics::trace_event_type::error, "error"}, {xtd::diagnostics::trace_event_type::information, "information"}, {xtd::diagnostics::trace_event_type::resume, "resume"}, {xtd::diagnostics::trace_event_type::start, "start"}, {xtd::diagnostics::trace_event_type::stop, "stop"}, {xtd::diagnostics::trace_event_type::suspend, "suspend"}, {xtd::diagnostics::trace_event_type::transfer, "transfer"}, {xtd::diagnostics::trace_event_type::verbose, "verbose"}, {xtd::diagnostics::trace_event_type::warning, "warning"}};}
 };
 /// @endcond

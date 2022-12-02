@@ -25,6 +25,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::architecture_id> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::architecture_id> {{xtd::architecture_id::unknown, "unknown"}, {xtd::architecture_id::x86, "x86"}, {xtd::architecture_id::arm, "arm"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::architecture_id> {{xtd::architecture_id::unknown, "unknown"}, {xtd::architecture_id::x86, "x86"}, {xtd::architecture_id::arm, "arm"}};}
 };
 /// @endcond

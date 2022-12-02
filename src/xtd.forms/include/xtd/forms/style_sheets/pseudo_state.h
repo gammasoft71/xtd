@@ -44,6 +44,6 @@ namespace xtd {
 flags_attribute_(xtd::forms, style_sheets::pseudo_state);
 
 template<> struct xtd::enum_register<xtd::forms::style_sheets::pseudo_state> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::forms::style_sheets::pseudo_state> {{xtd::forms::style_sheets::pseudo_state::standard, "standard"}, {xtd::forms::style_sheets::pseudo_state::hover, "hover"}, {xtd::forms::style_sheets::pseudo_state::pressed, "pressed"}, {xtd::forms::style_sheets::pseudo_state::disabled, "disabled"}, {xtd::forms::style_sheets::pseudo_state::focused, "focused"}, {xtd::forms::style_sheets::pseudo_state::default_state, "default_state"}, {xtd::forms::style_sheets::pseudo_state::unchecked, "unchecked"}, {xtd::forms::style_sheets::pseudo_state::checked, "checked"}, {xtd::forms::style_sheets::pseudo_state::mixed, "mixed"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::style_sheets::pseudo_state> {{xtd::forms::style_sheets::pseudo_state::standard, "standard"}, {xtd::forms::style_sheets::pseudo_state::hover, "hover"}, {xtd::forms::style_sheets::pseudo_state::pressed, "pressed"}, {xtd::forms::style_sheets::pseudo_state::disabled, "disabled"}, {xtd::forms::style_sheets::pseudo_state::focused, "focused"}, {xtd::forms::style_sheets::pseudo_state::default_state, "default_state"}, {xtd::forms::style_sheets::pseudo_state::unchecked, "unchecked"}, {xtd::forms::style_sheets::pseudo_state::checked, "checked"}, {xtd::forms::style_sheets::pseudo_state::mixed, "mixed"}};}
 };
 /// @endcond

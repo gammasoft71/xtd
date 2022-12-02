@@ -31,6 +31,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::image_layout> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::forms::image_layout> {{xtd::forms::image_layout::none, "none"}, {xtd::forms::image_layout::tile, "tile"}, {xtd::forms::image_layout::center, "center"}, {xtd::forms::image_layout::stretch, "stretch"}, {xtd::forms::image_layout::zoom, "zoom"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::image_layout> {{xtd::forms::image_layout::none, "none"}, {xtd::forms::image_layout::tile, "tile"}, {xtd::forms::image_layout::center, "center"}, {xtd::forms::image_layout::stretch, "stretch"}, {xtd::forms::image_layout::zoom, "zoom"}};}
 };
 /// @endcond

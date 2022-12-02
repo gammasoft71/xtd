@@ -33,6 +33,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::string_alignment> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::drawing::string_alignment> {{xtd::drawing::string_alignment::near, "near"}, {xtd::drawing::string_alignment::center, "center"}, {xtd::drawing::string_alignment::far, "far"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::string_alignment> {{xtd::drawing::string_alignment::near, "near"}, {xtd::drawing::string_alignment::center, "center"}, {xtd::drawing::string_alignment::far, "far"}};}
 };
 /// @endcond

@@ -37,6 +37,6 @@ flags_attribute_(xtd::forms, arrange_starting_position);
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::arrange_starting_position> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::forms::arrange_starting_position> {{xtd::forms::arrange_starting_position::bottom_left, "bottom_left"}, {xtd::forms::arrange_starting_position::bottom_right, "bottom_right"}, {xtd::forms::arrange_starting_position::top_left, "top_left"}, {xtd::forms::arrange_starting_position::top_right, "top_right"}, {xtd::forms::arrange_starting_position::hide, "hide"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::arrange_starting_position> {{xtd::forms::arrange_starting_position::bottom_left, "bottom_left"}, {xtd::forms::arrange_starting_position::bottom_right, "bottom_right"}, {xtd::forms::arrange_starting_position::top_left, "top_left"}, {xtd::forms::arrange_starting_position::top_right, "top_right"}, {xtd::forms::arrange_starting_position::hide, "hide"}};}
 };
 /// @endcond

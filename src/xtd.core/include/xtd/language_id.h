@@ -33,6 +33,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::language_id> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::language_id> {{xtd::language_id::unknown, "unknown"}, {xtd::language_id::cpp_pre98, "cpp_pre98"}, {xtd::language_id::cpp98, "cpp98"}, {xtd::language_id::cpp11, "cpp11"}, {xtd::language_id::cpp14, "cpp14"}, {xtd::language_id::cpp17, "cpp17"}, {xtd::language_id::cpp20, "cpp20"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::language_id> {{xtd::language_id::unknown, "unknown"}, {xtd::language_id::cpp_pre98, "cpp_pre98"}, {xtd::language_id::cpp98, "cpp98"}, {xtd::language_id::cpp11, "cpp11"}, {xtd::language_id::cpp14, "cpp14"}, {xtd::language_id::cpp17, "cpp17"}, {xtd::language_id::cpp20, "cpp20"}};}
 };
 /// @endcond

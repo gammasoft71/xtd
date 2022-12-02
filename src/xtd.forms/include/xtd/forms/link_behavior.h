@@ -30,6 +30,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::link_behavior> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::forms::link_behavior> {{xtd::forms::link_behavior::system_default, "system_default"}, {xtd::forms::link_behavior::always_underline, "always_underline"}, {xtd::forms::link_behavior::hover_underline, "hover_underline"}, {xtd::forms::link_behavior::never_underline, "never_underline"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::link_behavior> {{xtd::forms::link_behavior::system_default, "system_default"}, {xtd::forms::link_behavior::always_underline, "always_underline"}, {xtd::forms::link_behavior::hover_underline, "hover_underline"}, {xtd::forms::link_behavior::never_underline, "never_underline"}};}
 };
 /// @endcond

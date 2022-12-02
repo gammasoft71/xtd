@@ -29,6 +29,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::uri_kind> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::uri_kind> {{xtd::uri_kind::relative_or_absolute, "relative_or_absolute"}, {xtd::uri_kind::absolute, "absolute"}, {xtd::uri_kind::relative, "relative"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::uri_kind> {{xtd::uri_kind::relative_or_absolute, "relative_or_absolute"}, {xtd::uri_kind::absolute, "absolute"}, {xtd::uri_kind::relative, "relative"}};}
 };
 /// @endcond

@@ -27,6 +27,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::status_bar_panel_style> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::forms::status_bar_panel_style> {{xtd::forms::status_bar_panel_style::text, "text"}, {xtd::forms::status_bar_panel_style::owner_draw, "owner_draw"}, {xtd::forms::status_bar_panel_style::control, "control"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::status_bar_panel_style> {{xtd::forms::status_bar_panel_style::text, "text"}, {xtd::forms::status_bar_panel_style::owner_draw, "owner_draw"}, {xtd::forms::status_bar_panel_style::control, "control"}};}
 };
 /// @endcond

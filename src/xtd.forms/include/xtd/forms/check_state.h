@@ -29,6 +29,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::check_state> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::forms::check_state> {{xtd::forms::check_state::unchecked, "unchecked"}, {xtd::forms::check_state::checked, "checked"}, {xtd::forms::check_state::indeterminate, "indeterminate"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::check_state> {{xtd::forms::check_state::unchecked, "unchecked"}, {xtd::forms::check_state::checked, "checked"}, {xtd::forms::check_state::indeterminate, "indeterminate"}};}
 };
 /// @endcond

@@ -30,6 +30,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::tab_alignment> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::forms::tab_alignment> {{xtd::forms::tab_alignment::top, "top"}, {xtd::forms::tab_alignment::bottom, "bottom"}, {xtd::forms::tab_alignment::left, "left"}, {xtd::forms::tab_alignment::right, "right"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::tab_alignment> {{xtd::forms::tab_alignment::top, "top"}, {xtd::forms::tab_alignment::bottom, "bottom"}, {xtd::forms::tab_alignment::left, "left"}, {xtd::forms::tab_alignment::right, "right"}};}
 };
 /// @endcond

@@ -27,6 +27,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::uri_partial> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::uri_partial> {{xtd::uri_partial::scheme, "scheme"}, {xtd::uri_partial::authority, "authority"}, {xtd::uri_partial::path, "path"}, {xtd::uri_partial::query, "query"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::uri_partial> {{xtd::uri_partial::scheme, "scheme"}, {xtd::uri_partial::authority, "authority"}, {xtd::uri_partial::path, "path"}, {xtd::uri_partial::query, "query"}};}
 };
 /// @endcond

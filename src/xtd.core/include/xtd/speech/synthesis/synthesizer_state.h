@@ -36,6 +36,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::speech::synthesis::synthesizer_state> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::speech::synthesis::synthesizer_state> {{xtd::speech::synthesis::synthesizer_state::ready, "ready"}, {xtd::speech::synthesis::synthesizer_state::speaking, "speaking"}, {xtd::speech::synthesis::synthesizer_state::pause, "pause"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::speech::synthesis::synthesizer_state> {{xtd::speech::synthesis::synthesizer_state::ready, "ready"}, {xtd::speech::synthesis::synthesizer_state::speaking, "speaking"}, {xtd::speech::synthesis::synthesizer_state::pause, "pause"}};}
 };
 /// @endcond

@@ -31,6 +31,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::menu_item_kind> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::forms::menu_item_kind> {{xtd::forms::menu_item_kind::normal, "normal"}, {xtd::forms::menu_item_kind::check, "check"}, {xtd::forms::menu_item_kind::radio, "radio"}, {xtd::forms::menu_item_kind::drop_down, "drop_down"}, {xtd::forms::menu_item_kind::separator, "separator"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::menu_item_kind> {{xtd::forms::menu_item_kind::normal, "normal"}, {xtd::forms::menu_item_kind::check, "check"}, {xtd::forms::menu_item_kind::radio, "radio"}, {xtd::forms::menu_item_kind::drop_down, "drop_down"}, {xtd::forms::menu_item_kind::separator, "separator"}};}
 };
 /// @endcond
