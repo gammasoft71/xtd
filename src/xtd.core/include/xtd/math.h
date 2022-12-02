@@ -60,17 +60,17 @@ namespace xtd {
     /// @brief Returns the absolute value of a decimal number
     /// @param value A number in the range std::numeric_limit<decimal_t>::lowest() <= value <= std::numeric_limit<decimal_t>::max().
     /// @return A decimal number, x, such that 0 <= x <= std::numeric_limit<decimal_t>::max()std::numeric_limit<decimal_t>::max().
-    static decimal_t abs(decimal_t value);
+    static decimal_t abs(decimal_t value) noexcept;
     
     /// @brief Returns the absolute value of a double-precision floating-point number
     /// @param value A number in the range std::numeric_limit<double>::lowest() <= value <= std::numeric_limit<double>::max().
     /// @return A double-precision floating-point number, x, such that 0 <= x <= std::numeric_limit<double>::max().
-    static double abs(double value);
+    static double abs(double value) noexcept;
     
     /// @brief Returns the absolute value of a single-precision floating-point number
     /// @param value A number in the range std::numeric_limit<float>::lowest() <= value <= std::numeric_limit<float>::max().
     /// @return A single-precision floating-point number, x, such that 0 <= x <= std::numeric_limit<float>::max().
-    static float abs(float value);
+    static float abs(float value) noexcept;
     
     /// @brief Returns the absolute value of a 16-bit signed integer.
     /// @param value A number in the range std::numeric_limit<int16_t>::lowest() <= value <= std::numeric_limit<int16_t>::max().

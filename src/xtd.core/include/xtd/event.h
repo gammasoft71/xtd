@@ -26,7 +26,9 @@ namespace xtd {
     /// @{
     /// @brief Gets a value indicate if the event is empty.
     /// @return true if evcent does not contains functions; otherwise false.
-    bool is_empty() const noexcept { return handler_t::is_empty(); }
+    bool is_empty() const noexcept {
+      return handler_t::is_empty();
+    }
     /// @}
     
     /// @name Operators
