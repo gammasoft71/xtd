@@ -11,15 +11,15 @@ using namespace xtd;
 namespace {
 }
 
-decimal_t math::abs(decimal_t value) noexcept {
+decimal_t math::abs(decimal_t value) {
   return value < 0 ? -value : value;
 }
 
-double math::abs(double value) noexcept {
+double math::abs(double value) {
   return value < 0 ? -value : value;
 }
 
-float math::abs(float value) noexcept {
+float math::abs(float value) {
   return value < 0 ? -value : value;
 }
 
@@ -84,7 +84,7 @@ double math::cosh(double value) {
   return std::cosh(value);
 }
 
-double math::degrees_to_radians(double degrees) {
+double math::degrees_to_radians(double degrees) noexcept {
   return degrees * (math::pi / 180);
 }
 
@@ -114,19 +114,19 @@ double math::floor(double value) {
   return std::floor(value);
 }
 
-bool math::is_infinity(double value) {
+bool math::is_infinity(double value) noexcept {
   return is_negative_infinity(value) || is_positive_infinity(value);
 }
 
-bool math::is_negative_infinity(double value) {
+bool math::is_negative_infinity(double value) noexcept {
   return value <= negative_infinity;
 }
 
-bool math::is_positive_infinity(double value) {
+bool math::is_positive_infinity(double value) noexcept {
   return value >= positive_infinity;
 }
 
-bool math::is_NaN(double value) {
+bool math::is_NaN(double value) noexcept {
   return value != value;
 }
 
@@ -145,107 +145,107 @@ double math::log10(double value) {
   return std::log10(value);
 }
 
-byte_t math::max(byte_t a, byte_t b) {
+byte_t math::max(byte_t a, byte_t b) noexcept {
   return a > b ? a : b;
 }
 
-decimal_t math::max(decimal_t a, decimal_t b) {
+decimal_t math::max(decimal_t a, decimal_t b) noexcept {
   return a > b ? a : b;
 }
 
-double math::max(double a, double b) {
+double math::max(double a, double b) noexcept {
   return a > b ? a : b;
 }
 
-int16_t math::max(int16_t a, int16_t b) {
+int16_t math::max(int16_t a, int16_t b) noexcept {
   return a > b ? a : b;
 }
 
-int32_t math::max(int32_t a, int32_t b) {
+int32_t math::max(int32_t a, int32_t b) noexcept {
   return a > b ? a : b;
 }
 
-int64_t math::max(int64_t a, int64_t b) {
+int64_t math::max(int64_t a, int64_t b) noexcept {
   return a > b ? a : b;
 }
 
-llong_t math::max(llong_t a, llong_t b) {
+llong_t math::max(llong_t a, llong_t b) noexcept {
   return a > b ? a : b;
 }
 
-sbyte_t math::max(sbyte_t a, sbyte_t b) {
+sbyte_t math::max(sbyte_t a, sbyte_t b) noexcept {
   return a > b ? a : b;
 }
 
-float math::max(float a, float b) {
+float math::max(float a, float b) noexcept {
   return a > b ? a : b;
 }
 
-uint16_t math::max(uint16_t a, uint16_t b) {
+uint16_t math::max(uint16_t a, uint16_t b) noexcept {
   return a > b ? a : b;
 }
 
-uint32_t math::max(uint32_t a, uint32_t b) {
+uint32_t math::max(uint32_t a, uint32_t b) noexcept {
   return a > b ? a : b;
 }
 
-uint64_t math::max(uint64_t a, uint64_t b) {
+uint64_t math::max(uint64_t a, uint64_t b) noexcept {
   return a > b ? a : b;
 }
 
-ullong_t math::max(ullong_t a, ullong_t b) {
+ullong_t math::max(ullong_t a, ullong_t b) noexcept {
   return a > b ? a : b;
 }
 
-byte_t math::min(byte_t a, byte_t b) {
+byte_t math::min(byte_t a, byte_t b) noexcept {
   return a < b ? a : b;
 }
 
-decimal_t math::min(decimal_t a, decimal_t b) {
+decimal_t math::min(decimal_t a, decimal_t b) noexcept {
   return a < b ? a : b;
 }
 
-double math::min(double a, double b) {
+double math::min(double a, double b) noexcept {
   return a < b ? a : b;
 }
 
-int16_t math::min(int16_t a, int16_t b) {
+int16_t math::min(int16_t a, int16_t b) noexcept {
   return a < b ? a : b;
 }
 
-int32_t math::min(int32_t a, int32_t b) {
+int32_t math::min(int32_t a, int32_t b) noexcept {
   return a < b ? a : b;
 }
 
-int64_t math::min(int64_t a, int64_t b) {
+int64_t math::min(int64_t a, int64_t b) noexcept {
   return a < b ? a : b;
 }
 
-llong_t math::min(llong_t a, llong_t b) {
+llong_t math::min(llong_t a, llong_t b) noexcept {
   return a < b ? a : b;
 }
 
-sbyte_t math::min(sbyte_t a, sbyte_t b) {
+sbyte_t math::min(sbyte_t a, sbyte_t b) noexcept {
   return a < b ? a : b;
 }
 
-float math::min(float a, float b) {
+float math::min(float a, float b) noexcept {
   return a < b ? a : b;
 }
 
-uint16_t math::min(uint16_t a, uint16_t b) {
+uint16_t math::min(uint16_t a, uint16_t b) noexcept {
   return a < b ? a : b;
 }
 
-uint32_t math::min(uint32_t a, uint32_t b) {
+uint32_t math::min(uint32_t a, uint32_t b) noexcept {
   return a < b ? a : b;
 }
 
-uint64_t math::min(uint64_t a, uint64_t b) {
+uint64_t math::min(uint64_t a, uint64_t b) noexcept {
   return a < b ? a : b;
 }
 
-ullong_t math::min(ullong_t a, ullong_t b) {
+ullong_t math::min(ullong_t a, ullong_t b) noexcept {
   return a < b ? a : b;
 }
 
@@ -253,7 +253,7 @@ double math::pow(double x, double y) {
   return std::pow(x, y);
 }
 
-double math::radians_to_degrees(double radians) {
+double math::radians_to_degrees(double radians) noexcept {
   return radians * (180 / math::pi);
 }
 
