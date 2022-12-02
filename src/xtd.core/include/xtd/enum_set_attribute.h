@@ -41,9 +41,9 @@ namespace xtd {
     ///
     /// template<>
     /// xtd::enum_set_attribute<value_flags> {
-    ///   explicit operator auto() const {return xtd::enum_attribute::flags;}
+    ///   explicit operator auto() const noexcept {return xtd::enum_attribute::flags;}
     /// };
     /// @endcode
-    explicit operator auto() const {return xtd::enum_attribute::standard;}
+    explicit operator auto() const noexcept {return xtd::enum_attribute::standard;}
   };
 }

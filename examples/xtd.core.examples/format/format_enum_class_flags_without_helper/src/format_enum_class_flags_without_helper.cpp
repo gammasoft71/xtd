@@ -16,7 +16,7 @@ text_styles operator|(text_styles lhs, text_styles rhs) {return as<text_styles>(
 
 // This operator is needed to register flags attribute.
 template<> struct xtd::enum_set_attribute<text_styles> {
-  explicit operator auto() const {return xtd::enum_attribute::flags;}
+  explicit operator auto() const noexcept {return xtd::enum_attribute::flags;}
 };
 
 // This operator is needed for text_styles enum class to be recognized by xtd::ustring::format().

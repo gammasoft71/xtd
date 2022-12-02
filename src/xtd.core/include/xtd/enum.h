@@ -646,7 +646,7 @@ namespace xtd {
     [[maybe_unused]] inline enum_type operator ~(enum_type lhs) {return static_cast<enum_type>(~static_cast<std::underlying_type<enum_type>::type>(lhs));} \
   }\
   template<> struct xtd::enum_set_attribute<namespace_name::enum_type> { \
-    explicit operator auto() const {return xtd::enum_attribute::flags;} \
+    explicit operator auto() const noexcept {return xtd::enum_attribute::flags;} \
   }
 
 #define enum_ut_(namespace_name, enum_type, underlying_type, ...) \
@@ -687,7 +687,7 @@ template<> struct xtd::enum_register<xtd::enum_attribute> {
 };
 
 template<> struct xtd::enum_set_attribute<xtd::number_styles> {
-  explicit operator auto() const {return xtd::enum_attribute::flags;}
+  explicit operator auto() const noexcept {return xtd::enum_attribute::flags;}
 };
 
 template<> struct xtd::enum_register<xtd::number_styles> {
