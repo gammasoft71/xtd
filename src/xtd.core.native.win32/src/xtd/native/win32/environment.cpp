@@ -106,7 +106,7 @@ std::map<std::string, std::string>& environment::get_environment_variables(int32
 
 std::string environment::get_know_folder_path(int32_t id) {
   if (id == CSIDL_HOME) {
-    return get_environment_variable("HOMEPATH");
+    return get_environment_variable("HOMEPATH", ENVIRONMENT_VARIABLE_TARGET_PROCESS);
   }
   DWORD path_size = 65535;
   std::wstring path;
