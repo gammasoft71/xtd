@@ -61,16 +61,6 @@ namespace xtd {
       big,
     };
     
-    /// @cond
-    #if defined(__linux__) && defined(_LP64)
-    using llong = long long int;
-    using ullong = unsigned long long int;
-    #else
-    using llong = long;
-    using ullong = unsigned long;
-    #endif
-    /// @endcond
-    
     /// @name Fields
     
     /// @{
@@ -107,7 +97,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example converts the bit patterns of several Double values to int64_t values with the double_to_int64_bits method.
     /// @include bit_converterdouble_to_int64_bits.cpp
-    static int64_t double_to_int64_bits(double value);
+    static int64_t double_to_int64_bits(double value) noexcept;
     
     /// @brief Returns the specified Boolean value as an std::vector of bytes.
     /// @param value A Boolean value.
@@ -115,7 +105,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example converts the bit patterns of Boolean values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesBoolean.cpp
-    static std::vector<byte_t> get_bytes(bool value);
+    static std::vector<byte_t> get_bytes(bool value) noexcept;
     
     /// @brief Returns the specified Char value as an std::vector of bytes.
     /// @param value A Char value.
@@ -123,7 +113,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example converts the bit patterns of Char values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesChar.cpp
-    static std::vector<byte_t> get_bytes(char value);
+    static std::vector<byte_t> get_bytes(char value) noexcept;
     
     /// @brief Returns the specified Char value as an std::vector of bytes.
     /// @param value A Char value.
@@ -131,7 +121,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example converts the bit patterns of Char values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesChar.cpp
-    static std::vector<byte_t> get_bytes(char16_t value);
+    static std::vector<byte_t> get_bytes(char16_t value) noexcept;
     
     /// @brief Returns the specified Char value as an std::vector of bytes.
     /// @param value A Char value.
@@ -139,7 +129,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example converts the bit patterns of Char values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesChar.cpp
-    static std::vector<byte_t> get_bytes(char32_t value);
+    static std::vector<byte_t> get_bytes(char32_t value) noexcept;
     
     /// @brief Returns the specified Char value as an std::vector of bytes.
     /// @param value A Char value.
@@ -147,7 +137,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example converts the bit patterns of Char values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesChar.cpp
-    static std::vector<byte_t> get_bytes(wchar_t value);
+    static std::vector<byte_t> get_bytes(wchar_t value) noexcept;
     
     /// @brief Returns the specified double value as an std::vector of bytes.
     /// @param value A double value.
@@ -155,12 +145,12 @@ namespace xtd {
     /// @par Examples
     /// The following code example converts the bit patterns of double values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesDouble.cpp
-    static std::vector<byte_t> get_bytes(double value);
+    static std::vector<byte_t> get_bytes(double value) noexcept;
     
     /// @brief Returns the specified byte_t value as an std::vector of bytes.
     /// @param value A byte_t value.
     /// @return An std::vector of bytes with length 1.
-    static std::vector<byte_t> get_bytes(sbyte_t value);
+    static std::vector<byte_t> get_bytes(sbyte_t value) noexcept;
     
     /// @brief Returns the specified int16_t value as an std::vector of bytes.
     /// @param value A int16_t value.
@@ -168,7 +158,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example converts the bit patterns of int16_t values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesint16_t.cpp
-    static std::vector<byte_t> get_bytes(int16_t value);
+    static std::vector<byte_t> get_bytes(int16_t value) noexcept;
     
     /// @brief Returns the specified int32_t value as an std::vector of bytes.
     /// @param value A int32_t value.
@@ -176,7 +166,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example converts the bit patterns of int32_t values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesint32_t.cpp
-    static std::vector<byte_t> get_bytes(int32_t value);
+    static std::vector<byte_t> get_bytes(int32_t value) noexcept;
     
     /// @brief Returns the specified int64_t value as an std::vector of bytes.
     /// @param value A int64_t value.
@@ -184,7 +174,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example converts the bit patterns of int64_t values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesint64_t.cpp
-    static std::vector<byte_t> get_bytes(int64_t value);
+    static std::vector<byte_t> get_bytes(int64_t value) noexcept;
     
     /// @brief Returns the specified single value as an std::vector of bytes.
     /// @param value A single value.
@@ -192,12 +182,12 @@ namespace xtd {
     /// @par Examples
     /// The following code example converts the bit patterns of single values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesSingle.cpp
-    static std::vector<byte_t> get_bytes(float value);
+    static std::vector<byte_t> get_bytes(float value) noexcept;
     
     /// @brief Returns the specified byte_t value as an std::vector of bytes.
     /// @param value A byte_t value.
     /// @return An std::vector of bytes with length 1.
-    static std::vector<byte_t> get_bytes(byte_t value);
+    static std::vector<byte_t> get_bytes(byte_t value) noexcept;
     
     /// @brief Returns the specified uint16_t value as an std::vector of bytes.
     /// @param value A uint16_t value.
@@ -205,7 +195,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example converts the bit patterns of uint16_t values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesUint16_t.cpp
-    static std::vector<byte_t> get_bytes(uint16_t value);
+    static std::vector<byte_t> get_bytes(uint16_t value) noexcept;
     
     /// @brief Returns the specified uint32_t value as an std::vector of bytes.
     /// @param value A uint32_t value.
@@ -213,7 +203,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example converts the bit patterns of uint32_t values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesUint32_t.cpp;
-    static std::vector<byte_t> get_bytes(uint32_t value);
+    static std::vector<byte_t> get_bytes(uint32_t value) noexcept;
     
     /// @brief Returns the specified uint64_t value as an std::vector of bytes.
     /// @param value A uint64_t value.
@@ -221,30 +211,30 @@ namespace xtd {
     /// @par Examples
     /// The following code example converts the bit patterns of uint64_t values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesUint64_t.cpp
-    static std::vector<byte_t> get_bytes(uint64_t value);
+    static std::vector<byte_t> get_bytes(uint64_t value) noexcept;
     
     /// @cond
-    static std::vector<byte_t> get_bytes(llong value);
-    static std::vector<byte_t> get_bytes(ullong value);
+    static std::vector<byte_t> get_bytes(llong_t value) noexcept;
+    static std::vector<byte_t> get_bytes(ullong_t value) noexcept;
     /// @endcond
     
     /// @brief Converts the specified 32-bit signed integer to a single-precision floating point number.
     /// @param value The number to convert.
     /// @return A single-precision floating point number whose value is equivalent to value.
     /// @remarks Typically, value is an integer that is returned by the single_to_int32_bits method.
-    static float int32_bits_to_single(int32_t value);
+    static float int32_bits_to_single(int32_t value) noexcept;
     
     /// @brief Converts the specified 64-bit signed integer to a double-precision floating point number.
     /// @param value The number to convert.
     /// @return A double-precision floating point number whose value is equivalent to value.
     /// @remarks Typically, value is an integer that is returned by the double_to_int64_bits method.
-    static double int64_bits_to_double(int64_t value);
+    static double int64_bits_to_double(int64_t value) noexcept;
     
     /// @brief Converts the specified single-precision floating point number to a 32-bit signed integer.
     /// @param value The number to convert.
     /// @return A 32-bit signed integer whose value is equivalent to value.
     /// @remarks The order of bits in the integer returned by the double_to_int64_bits method depends on whether the computer architecture is little-endian or big-endian.
-    static int32_t single_to_int32_bits(float value);
+    static int32_t single_to_int32_bits(float value) noexcept;
     
     /// @brief Returns a Boolean value converted from one byte_t at a specified position in a byte_t std::vector.
     /// @param value An std::vector of bytes.
