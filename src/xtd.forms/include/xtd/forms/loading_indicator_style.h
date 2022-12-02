@@ -28,6 +28,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::loading_indicator_style> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::forms::loading_indicator_style> {{xtd::forms::loading_indicator_style::dots, "dots"}, {xtd::forms::loading_indicator_style::standard, "standard"}, {xtd::forms::loading_indicator_style::system, "system"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::loading_indicator_style> {{xtd::forms::loading_indicator_style::dots, "dots"}, {xtd::forms::loading_indicator_style::standard, "standard"}, {xtd::forms::loading_indicator_style::system, "system"}};}
 };
 /// @endcond

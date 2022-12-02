@@ -26,6 +26,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::orientation> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::forms::orientation> {{xtd::forms::orientation::horizontal, "horizontal"}, {xtd::forms::orientation::vertical, "vertical"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::orientation> {{xtd::forms::orientation::horizontal, "horizontal"}, {xtd::forms::orientation::vertical, "vertical"}};}
 };
 /// @endcond

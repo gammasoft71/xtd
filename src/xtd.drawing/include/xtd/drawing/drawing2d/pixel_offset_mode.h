@@ -37,6 +37,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::drawing2d::pixel_offset_mode> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::drawing::drawing2d::pixel_offset_mode> {{xtd::drawing::drawing2d::pixel_offset_mode::invalid, "invalid"}, {xtd::drawing::drawing2d::pixel_offset_mode::default_value, "default_value"}, {xtd::drawing::drawing2d::pixel_offset_mode::high_speed, "high_speed"}, {xtd::drawing::drawing2d::pixel_offset_mode::high_quality, "high_quality"}, {xtd::drawing::drawing2d::pixel_offset_mode::none, "none"}, {xtd::drawing::drawing2d::pixel_offset_mode::half, "half"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::drawing2d::pixel_offset_mode> {{xtd::drawing::drawing2d::pixel_offset_mode::invalid, "invalid"}, {xtd::drawing::drawing2d::pixel_offset_mode::default_value, "default_value"}, {xtd::drawing::drawing2d::pixel_offset_mode::high_speed, "high_speed"}, {xtd::drawing::drawing2d::pixel_offset_mode::high_quality, "high_quality"}, {xtd::drawing::drawing2d::pixel_offset_mode::none, "none"}, {xtd::drawing::drawing2d::pixel_offset_mode::half, "half"}};}
 };
 /// @endcond

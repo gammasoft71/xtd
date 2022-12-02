@@ -36,6 +36,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::drawing2d::pen_alignment> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::drawing::drawing2d::pen_alignment> {{xtd::drawing::drawing2d::pen_alignment::center, "center"}, {xtd::drawing::drawing2d::pen_alignment::inset, "inset"}, {xtd::drawing::drawing2d::pen_alignment::outset, "outset"}, {xtd::drawing::drawing2d::pen_alignment::left, "left"}, {xtd::drawing::drawing2d::pen_alignment::right, "right"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::drawing2d::pen_alignment> {{xtd::drawing::drawing2d::pen_alignment::center, "center"}, {xtd::drawing::drawing2d::pen_alignment::inset, "inset"}, {xtd::drawing::drawing2d::pen_alignment::outset, "outset"}, {xtd::drawing::drawing2d::pen_alignment::left, "left"}, {xtd::drawing::drawing2d::pen_alignment::right, "right"}};}
 };
 /// @endcond

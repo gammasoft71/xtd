@@ -30,6 +30,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::drawing2d::line_cap> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::drawing::drawing2d::line_cap> {{xtd::drawing::drawing2d::line_cap::flat, "flat"}, {xtd::drawing::drawing2d::line_cap::square, "square"}, {xtd::drawing::drawing2d::line_cap::round, "round"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::drawing2d::line_cap> {{xtd::drawing::drawing2d::line_cap::flat, "flat"}, {xtd::drawing::drawing2d::line_cap::square, "square"}, {xtd::drawing::drawing2d::line_cap::round, "round"}};}
 };
 /// @endcond

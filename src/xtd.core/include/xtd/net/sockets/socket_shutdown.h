@@ -42,6 +42,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::net::sockets::socket_shutdown> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::net::sockets::socket_shutdown> {{xtd::net::sockets::socket_shutdown::receive, "receive"}, {xtd::net::sockets::socket_shutdown::send, "send"}, {xtd::net::sockets::socket_shutdown::both, "both"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::net::sockets::socket_shutdown> {{xtd::net::sockets::socket_shutdown::receive, "receive"}, {xtd::net::sockets::socket_shutdown::send, "send"}, {xtd::net::sockets::socket_shutdown::both, "both"}};}
 };
 /// @endcond

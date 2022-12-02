@@ -34,6 +34,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::style_sheets::image_type> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::forms::style_sheets::image_type> {{xtd::forms::style_sheets::image_type::none, "none"}, {xtd::forms::style_sheets::image_type::url, "url"}, {xtd::forms::style_sheets::image_type::linear_gradient, "linear_gradient"}, {xtd::forms::style_sheets::image_type::radial_gradient, "radial_gradient"}, {xtd::forms::style_sheets::image_type::conic_gradient, "conic_gradient"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::style_sheets::image_type> {{xtd::forms::style_sheets::image_type::none, "none"}, {xtd::forms::style_sheets::image_type::url, "url"}, {xtd::forms::style_sheets::image_type::linear_gradient, "linear_gradient"}, {xtd::forms::style_sheets::image_type::radial_gradient, "radial_gradient"}, {xtd::forms::style_sheets::image_type::conic_gradient, "conic_gradient"}};}
 };
 /// @endcond

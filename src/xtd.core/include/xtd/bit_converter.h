@@ -379,6 +379,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::bit_converter::endian> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::bit_converter::endian> {{xtd::bit_converter::endian::little, "little"}, {xtd::bit_converter::endian::big, "big"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::bit_converter::endian> {{xtd::bit_converter::endian::little, "little"}, {xtd::bit_converter::endian::big, "big"}};}
 };
 /// @endcond

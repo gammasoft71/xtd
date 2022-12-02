@@ -35,6 +35,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::dock_style> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::forms::dock_style> {{xtd::forms::dock_style::none, "none"}, {xtd::forms::dock_style::top, "top"}, {xtd::forms::dock_style::bottom, "bottom"}, {xtd::forms::dock_style::left, "left"}, {xtd::forms::dock_style::right, "right"}, {xtd::forms::dock_style::fill, "fill"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::dock_style> {{xtd::forms::dock_style::none, "none"}, {xtd::forms::dock_style::top, "top"}, {xtd::forms::dock_style::bottom, "bottom"}, {xtd::forms::dock_style::left, "left"}, {xtd::forms::dock_style::right, "right"}, {xtd::forms::dock_style::fill, "fill"}};}
 };
 /// @endcond

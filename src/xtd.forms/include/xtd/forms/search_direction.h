@@ -25,6 +25,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::search_direction> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::forms::search_direction> {{xtd::forms::search_direction::down, "down"}, {xtd::forms::search_direction::up, "up"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::search_direction> {{xtd::forms::search_direction::down, "down"}, {xtd::forms::search_direction::up, "up"}};}
 };
 /// @endcond

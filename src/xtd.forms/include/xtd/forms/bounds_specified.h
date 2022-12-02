@@ -39,6 +39,6 @@ namespace xtd {
 /// @cond
 flags_attribute_(xtd::forms, bounds_specified);
 template<> struct xtd::enum_register<xtd::forms::bounds_specified> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::forms::bounds_specified> {{xtd::forms::bounds_specified::none, "none"}, {xtd::forms::bounds_specified::x, "x"}, {xtd::forms::bounds_specified::y, "y"}, {xtd::forms::bounds_specified::width, "width"}, {xtd::forms::bounds_specified::height, "height"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::bounds_specified> {{xtd::forms::bounds_specified::none, "none"}, {xtd::forms::bounds_specified::x, "x"}, {xtd::forms::bounds_specified::y, "y"}, {xtd::forms::bounds_specified::width, "width"}, {xtd::forms::bounds_specified::height, "height"}};}
 };
 /// @endcond

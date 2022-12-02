@@ -30,6 +30,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::form_window_state> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::forms::form_window_state> {{xtd::forms::form_window_state::normal, "normal"}, {xtd::forms::form_window_state::minimized, "minimized"}, {xtd::forms::form_window_state::maximized, "maximized"}, {xtd::forms::form_window_state::full_screen, "full_screen"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::form_window_state> {{xtd::forms::form_window_state::normal, "normal"}, {xtd::forms::form_window_state::minimized, "minimized"}, {xtd::forms::form_window_state::maximized, "maximized"}, {xtd::forms::form_window_state::full_screen, "full_screen"}};}
 };
 /// @endcond

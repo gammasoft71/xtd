@@ -33,6 +33,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::drawing2d::line_join> {
-  explicit operator auto() const {return xtd::enum_collection<xtd::drawing::drawing2d::line_join> {{xtd::drawing::drawing2d::line_join::miter, "miter"}, {xtd::drawing::drawing2d::line_join::bevel, "bevel"}, {xtd::drawing::drawing2d::line_join::round, "round"}, {xtd::drawing::drawing2d::line_join::miter_clipped, "miter_clipped"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::drawing2d::line_join> {{xtd::drawing::drawing2d::line_join::miter, "miter"}, {xtd::drawing::drawing2d::line_join::bevel, "bevel"}, {xtd::drawing::drawing2d::line_join::round, "round"}, {xtd::drawing::drawing2d::line_join::miter_clipped, "miter_clipped"}};}
 };
 /// @endcond
