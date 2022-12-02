@@ -303,6 +303,7 @@ add_sources(
   src/xtd/bit_converter.cpp
   src/xtd/compiler.cpp
   src/xtd/console.cpp
+  src/xtd/console_cancel_event_args.cpp
   src/xtd/convert.cpp
   src/xtd/convert_pointer.cpp
   src/xtd/convert_string.cpp
