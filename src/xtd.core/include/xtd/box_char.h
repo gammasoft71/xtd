@@ -43,7 +43,7 @@ namespace xtd {
     /// @brief Returns true if c is an ASCII character ([ U+0000..U+007F ]).
     /// @param c The character to analyze.
     /// @return true if c is an ASCII character; false otherwise.
-    static bool is_ascii(type_t c) {return c > 0 && c <= 0x7F;}
+    static bool is_ascii(type_t c) noexcept {return c > 0 && c <= 0x7F;}
     
     /// @brief Indicates whether the character at the specified position in a specified string is an ASCII character ([ U+0000..U+007F ]).
     /// @param s A string.
@@ -55,7 +55,7 @@ namespace xtd {
     /// @brief Indicates whether the specified Unicode character is categorized as a control character.
     /// @param c The Unicode character to evaluate.
     /// @return true if c is a control character; otherwise, false.
-    static bool is_control(type_t c) {return std::iscntrl(c) != 0;}
+    static bool is_control(type_t c) noexcept {return std::iscntrl(c) != 0;}
     
     /// @brief Indicates whether the character at the specified position in a specified string is categorized as a control character.
     /// @param s A string.
@@ -68,7 +68,7 @@ namespace xtd {
     /// @param c The Unicode character to evaluate.
     /// @return true if c is a decimal digit; otherwise, false.
     /// @remarks This method determines whether a type_tis a radix-10 digit. This contrasts with is_number, which determines whether a Char is of any numeric Unicode category. Numbers include characters such as fractions, subscripts, superscripts, Roman numerals, currency numerators, encircled numbers, and script-specific digits.
-    static bool is_digit(type_t c) {return std::isdigit(c) != 0;}
+    static bool is_digit(type_t c) noexcept {return std::isdigit(c) != 0;}
     
     /// @brief Indicates whether the character at the specified position in a specified string is categorized as a decimal digit.
     /// @param s A string.
@@ -80,7 +80,7 @@ namespace xtd {
     /// @brief Indicates whether the specified Unicode character is categorized as a Unicode letter.
     /// @param c The Unicode character to evaluate.
     /// @return true if c is a letter; otherwise, false.
-    static bool is_letter(type_t c) {return std::isalpha(c) != 0;}
+    static bool is_letter(type_t c) noexcept {return std::isalpha(c) != 0;}
     
     /// @brief Indicates whether the character at the specified position in a specified string is categorized as a Unicode letter.
     /// @param s A string.
@@ -92,7 +92,7 @@ namespace xtd {
     /// @brief Indicates whether a Unicode character is categorized as a letter or a decimal digit.
     /// @param c The Unicode character to evaluate.
     /// @return true if c is a letter or a decimal digit; otherwise, false.
-    static bool is_letter_or_digit(type_t c) {return std::isalnum(c) != 0;}
+    static bool is_letter_or_digit(type_t c) noexcept {return std::isalnum(c) != 0;}
     
     /// @brief Indicates whether the character at the specified position in a specified string is categorized as a letter or a decimal digit.
     /// @param s A string.
@@ -104,7 +104,7 @@ namespace xtd {
     /// @brief ndicates whether the specified Unicode character is categorized as a lowercase letter.
     /// @param c The Unicode character to evaluate.
     /// @return true if c is a lowercase letter; otherwise, false.
-    static bool is_lower(type_t c) {return std::islower(c) != 0;}
+    static bool is_lower(type_t c) noexcept {return std::islower(c) != 0;}
     
     /// @brief Indicates whether the character at the specified position in a specified string is categorized as a lowercase letter.
     /// @param s A string.
@@ -116,7 +116,7 @@ namespace xtd {
     /// @brief Indicates whether a Unicode character is categorized as a number.
     /// @param c The Unicode character to evaluate.
     /// @return true if c is a number; otherwise, false.
-    static bool is_number(type_t c) {return std::isdigit(c) != 0;}
+    static bool is_number(type_t c) noexcept {return std::isdigit(c) != 0;}
     
     /// @brief Indicates whether the character at the specified position in a specified string is categorized as a number.
     /// @param s A string.
@@ -128,7 +128,7 @@ namespace xtd {
     /// @brief Indicates whether the specified Unicode character is categorized as a punctuation mark.
     /// @param c The Unicode character to evaluate.
     /// @return true if c is a punctuation mark; otherwise, false.
-    static bool is_punctuation(type_t c) {return std::ispunct(c) != 0;}
+    static bool is_punctuation(type_t c) noexcept {return std::ispunct(c) != 0;}
     
     /// @brief Indicates whether the character at the specified position in a specified string is categorized as a punctuation mark.
     /// @param s A string.
@@ -140,7 +140,7 @@ namespace xtd {
     /// @brief Indicates whether the specified Unicode character is categorized as a separator character.
     /// @param c The Unicode character to evaluate.
     /// @return true if c is a separator character; otherwise, false.
-    static bool is_separator(type_t c) {return std::isspace(c) != 0 || c == '\n';}
+    static bool is_separator(type_t c) noexcept {return std::isspace(c) != 0 || c == '\n';}
     
     /// @brief Indicates whether the character at the specified position in a specified string is categorized as a separator character.
     /// @param s A string.
@@ -152,7 +152,7 @@ namespace xtd {
     /// @brief Indicates whether the specified Unicode character is categorized as a symbol character.
     /// @param c The Unicode character to evaluate.
     /// @return true if c is a symbol character; otherwise, false.
-    static bool is_symbol(type_t c) {return std::isgraph(c) != 0 || c == 0x9C;}
+    static bool is_symbol(type_t c) noexcept {return std::isgraph(c) != 0 || c == 0x9C;}
     
     /// @brief Indicates whether the character at the specified position in a specified string is categorized as a symbol character.
     /// @param s A string.
@@ -164,7 +164,7 @@ namespace xtd {
     /// @brief Indicates whether the specified Unicode character is categorized as an uppercase letter.
     /// @param c The Unicode character to evaluate.
     /// @return true if c is an uppercase letter; otherwise, false.
-    static bool is_upper(type_t c) {return std::isupper(c) != 0;}
+    static bool is_upper(type_t c) noexcept {return std::isupper(c) != 0;}
     
     /// @brief Indicates whether the character at the specified position in a specified string is categorized as an uppercase letter.
     /// @param s A string.
@@ -176,7 +176,7 @@ namespace xtd {
     /// @brief Indicates whether the specified Unicode character is categorized as white space.
     /// @param c The Unicode character to evaluate.
     /// @return true if c is white space; otherwise, false.
-    static bool is_white_space(type_t c) {return std::isspace(c) != 0;}
+    static bool is_white_space(type_t c) noexcept {return std::isspace(c) != 0;}
     
     /// @brief Indicates whether the character at the specified position in a specified string is categorized as white space.
     /// @param s A string.
@@ -282,11 +282,11 @@ namespace xtd {
   using wchar_object = box_char<wchar_t>;
   
   /// @cond
-  inline char_object boxing(const char& value) {return char_object(value);}
-  inline char8_object boxing(const char8_t& value) {return char8_object(value);}
-  inline char16_object boxing(const char16_t& value) {return char16_object(value);}
-  inline char32_object boxing(const char32_t& value) {return char32_object(value);}
-  inline wchar_object boxing(const wchar_t& value) {return wchar_object(value);}
+  inline char_object boxing(const char& value) noexcept {return char_object(value);}
+  inline char8_object boxing(const char8_t& value) noexcept {return char8_object(value);}
+  inline char16_object boxing(const char16_t& value) noexcept {return char16_object(value);}
+  inline char32_object boxing(const char32_t& value) noexcept {return char32_object(value);}
+  inline wchar_object boxing(const wchar_t& value) noexcept {return wchar_object(value);}
 
   template<typename type_t>
   inline std::string to_string(const xtd::box_char<type_t>& value, const std::string& fmt, const std::locale& loc) {
