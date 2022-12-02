@@ -52,8 +52,8 @@ std::string environment::get_desktop_environment() {
   #if defined(__APPLE__)
   return "macos";
   #else
-  auto current_desktop = get_environment_variable("XDG_CURRENT_DESKTOP");
-  if (current_desktop == "") current_desktop = get_environment_variable("XDG_DATA_DIRS");
+  auto current_desktop = get_environment_variable("XDG_CURRENT_DESKTOP", ENVIRONMENT_VARIABLE_TARGET_PROCESS);
+  if (current_desktop == "") current_desktop = get_environment_variable("XDG_DATA_DIRS", ENVIRONMENT_VARIABLE_TARGET_PROCESS);
   for (auto environment_desktop : {"budgie", "cinnamon", "deepin", "Enlightenment", "étoilé", "gnome", "kde", "lxqt", "mate", "pantheon", "razor", "unity", "xfce"}) {
     if (unix::strings::contains(unix::strings::to_lower(current_desktop), environment_desktop)) return environment_desktop;
   }
