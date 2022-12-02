@@ -60,17 +60,17 @@ namespace xtd {
     /// @brief Returns the absolute value of a decimal number
     /// @param value A number in the range std::numeric_limit<decimal_t>::lowest() <= value <= std::numeric_limit<decimal_t>::max().
     /// @return A decimal number, x, such that 0 <= x <= std::numeric_limit<decimal_t>::max()std::numeric_limit<decimal_t>::max().
-    static decimal_t abs(decimal_t value) noexcept;
+    static decimal_t abs(decimal_t value);
     
     /// @brief Returns the absolute value of a double-precision floating-point number
     /// @param value A number in the range std::numeric_limit<double>::lowest() <= value <= std::numeric_limit<double>::max().
     /// @return A double-precision floating-point number, x, such that 0 <= x <= std::numeric_limit<double>::max().
-    static double abs(double value) noexcept;
+    static double abs(double value);
     
     /// @brief Returns the absolute value of a single-precision floating-point number
     /// @param value A number in the range std::numeric_limit<float>::lowest() <= value <= std::numeric_limit<float>::max().
     /// @return A single-precision floating-point number, x, such that 0 <= x <= std::numeric_limit<float>::max().
-    static float abs(float value) noexcept;
+    static float abs(float value);
     
     /// @brief Returns the absolute value of a 16-bit signed integer.
     /// @param value A number in the range std::numeric_limit<int16_t>::lowest() <= value <= std::numeric_limit<int16_t>::max().
@@ -162,7 +162,7 @@ namespace xtd {
     /// @brief Convert degrees to radians.
     /// @param degrees A double-precision floating-point number.
     /// @return A converted degrees from radians.
-    static double degrees_to_radians(double degrees);
+    static double degrees_to_radians(double degrees) noexcept;
     
     /// @brief Calculates the quotient of two 32-bit signed integers and also returns the remainder in an output parameter.
     /// @param dividend The dividend.
@@ -204,22 +204,22 @@ namespace xtd {
     /// @brief Returns a value indicating whether the specified number evaluates to negative or positive infinity.
     /// @param value A double-precision floating-point number.
     /// @return true if value evaluates to xtd::math::positive_infinity or xtd::math::negative_infinity; otherwise, false.
-    static bool is_infinity(double value);
+    static bool is_infinity(double value) noexcept;
     
     /// @brief Returns a value indicating whether the specified number evaluates to negative infinity.
     /// @param value A double-precision floating-point number.
     /// @return true if value evaluates to xtd::math::negative_infinity; otherwise, false.
-    static bool is_negative_infinity(double value);
+    static bool is_negative_infinity(double value) noexcept;
     
     /// @brief Returns a value indicating whether the specified number evaluates to positive infinity.
     /// @param value A double-precision floating-point number.
     /// @return true if value evaluates to xtd::math::positive_infinity; otherwise, false.
-    static bool is_positive_infinity(double value);
+    static bool is_positive_infinity(double value) noexcept;
     
     /// @brief Returns a value indicating whether the specified number evaluates to not a number.
     /// @param value A double-precision floating-point number.
     /// @return true if value evaluates to not a number; otherwise, false.
-    static bool is_NaN(double value);
+    static bool is_NaN(double value) noexcept;
     
     /// @brief Returns the natural (base e) logarithm of a specified number.
     /// @param value A number whose logarithm is to be found.
@@ -273,157 +273,157 @@ namespace xtd {
     /// @param a The first of two 8-bit unsigned integers to compare.
     /// @param b The second of two 8-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is larger.
-    static byte_t max(byte_t a, byte_t b);
+    static byte_t max(byte_t a, byte_t b) noexcept;
     
     /// @brief Returns the larger of two double single.
     /// @param a The first of two double single to compare.
     /// @param b The second of two double single to compare.
     /// @return Parameter a or b, whichever is larger.
-    static decimal_t max(decimal_t a, decimal_t b);
+    static decimal_t max(decimal_t a, decimal_t b) noexcept;
     
     /// @brief Returns the larger of two double single.
     /// @param a The first of two double single to compare.
     /// @param b The second of two double single to compare.
     /// @return Parameter a or b, whichever is larger.
-    static double max(double a, double b);
+    static double max(double a, double b) noexcept;
     
     /// @brief Returns the larger of two 16-bit signed integers.
     /// @param a The first of two 16-bit signed integers to compare.
     /// @param b The second of two 16-bit signed integers to compare.
     /// @return Parameter a or b, whichever is larger.
-    static int16_t max(int16_t a, int16_t b);
+    static int16_t max(int16_t a, int16_t b) noexcept;
     
     /// @brief Returns the larger of two 32-bit signed integers.
     /// @param a The first of two 32-bit signed integers to compare.
     /// @param b The second of two 32-bit signed integers to compare.
     /// @return Parameter a or b, whichever is larger.
-    static int32_t max(int32_t a, int32_t b);
+    static int32_t max(int32_t a, int32_t b) noexcept;
     
     /// @brief Returns the larger of two 64-bit signed integers.
     /// @param a The first of two 64-bit signed integers to compare.
     /// @param b The second of two 64-bit signed integers to compare.
     /// @return Parameter a or b, whichever is larger.
-    static int64_t max(int64_t a, int64_t b);
+    static int64_t max(int64_t a, int64_t b) noexcept;
     
     /// @brief Returns the larger of two 64-bit signed integers.
     /// @param a The first of two 64-bit signed integers to compare.
     /// @param b The second of two 64-bit signed integers to compare.
     /// @return Parameter a or b, whichever is larger.
-    static llong_t max(llong_t a, llong_t b);
+    static llong_t max(llong_t a, llong_t b) noexcept;
     
     /// @brief Returns the larger of two 8-bit signed integers.
     /// @param a The first of two 8-bit signed integers to compare.
     /// @param b The second of two 8-bit signed integers to compare.
     /// @return Parameter a or b, whichever is larger.
-    static sbyte_t max(sbyte_t a, sbyte_t b);
+    static sbyte_t max(sbyte_t a, sbyte_t b) noexcept;
     
     /// @brief Returns the larger of two single single.
     /// @param a The first of two single single to compare.
     /// @param b The second of two single single to compare.
     /// @return Parameter a or b, whichever is larger.
-    static float max(float a, float b);
+    static float max(float a, float b) noexcept;
     
     /// @brief Returns the larger of two 16-bit unsigned integers.
     /// @param a The first of two 16-bit unsigned integers to compare.
     /// @param b The second of two 16-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is larger.
-    static uint16_t max(uint16_t a, uint16_t b);
+    static uint16_t max(uint16_t a, uint16_t b) noexcept;
     
     /// @brief Returns the larger of two 32-bit unsigned integers.
     /// @param a The first of two 32-bit unsigned integers to compare.
     /// @param b The second of two 32-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is larger.
-    static uint32_t max(uint32_t a, uint32_t b);
+    static uint32_t max(uint32_t a, uint32_t b) noexcept;
     
     /// @brief Returns the larger of two 64-bit unsigned integers.
     /// @param a The first of two 64-bit unsigned integers to compare.
     /// @param b The second of two 64-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is larger.
-    static uint64_t max(uint64_t a, uint64_t b);
+    static uint64_t max(uint64_t a, uint64_t b) noexcept;
     
     /// @brief Returns the larger of two 64-bit unsigned integers.
     /// @param a The first of two 64-bit unsigned integers to compare.
     /// @param b The second of two 64-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is larger.
-    static ullong_t max(ullong_t a, ullong_t b);
+    static ullong_t max(ullong_t a, ullong_t b) noexcept;
     
     /// @brief Returns the smaller of two 8-bit unsigned integers.
     /// @param a The first of two 8-bit unsigned integers to compare.
     /// @param b The second of two 8-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static byte_t min(byte_t a, byte_t b);
+    static byte_t min(byte_t a, byte_t b) noexcept;
     
     /// @brief Returns the smaller of two double single.
     /// @param a The first of two double single to compare.
     /// @param b The second of two double single to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static decimal_t min(decimal_t a, decimal_t b);
+    static decimal_t min(decimal_t a, decimal_t b) noexcept;
     
     /// @brief Returns the smaller of two double single.
     /// @param a The first of two double single to compare.
     /// @param b The second of two double single to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static double min(double a, double b);
+    static double min(double a, double b) noexcept;
     
     /// @brief Returns the smaller of two 16-bit signed integers.
     /// @param a The first of two 16-bit signed integers to compare.
     /// @param b The second of two 16-bit signed integers to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static int16_t min(int16_t a, int16_t b);
+    static int16_t min(int16_t a, int16_t b) noexcept;
     
     /// @brief Returns the smaller of two 32-bit signed integers.
     /// @param a The first of two 32-bit signed integers to compare.
     /// @param b The second of two 32-bit signed integers to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static int32_t min(int32_t a, int32_t b);
+    static int32_t min(int32_t a, int32_t b) noexcept;
     
     /// @brief Returns the smaller of two 64-bit signed integers.
     /// @param a The first of two 64-bit signed integers to compare.
     /// @param b The second of two 64-bit signed integers to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static int64_t min(int64_t a, int64_t b);
+    static int64_t min(int64_t a, int64_t b) noexcept;
     
     /// @brief Returns the smaller of two 64-bit signed integers.
     /// @param a The first of two 64-bit signed integers to compare.
     /// @param b The second of two 64-bit signed integers to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static llong_t min(llong_t a, llong_t b);
+    static llong_t min(llong_t a, llong_t b) noexcept;
     
     /// @brief Returns the smaller of two 8-bit signed integers.
     /// @param a The first of two 8-bit signed integers to compare.
     /// @param b The second of two 8-bit signed integers to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static sbyte_t min(sbyte_t a, sbyte_t b);
+    static sbyte_t min(sbyte_t a, sbyte_t b) noexcept;
     
     /// @brief Returns the smaller of two single single.
     /// @param a The first of two single single to compare.
     /// @param b The second of two single single to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static float min(float a, float b);
+    static float min(float a, float b) noexcept;
     
     /// @brief Returns the smaller of two 16-bit unsigned integers.
     /// @param a The first of two 16-bit unsigned integers to compare.
     /// @param b The second of two 16-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static uint16_t min(uint16_t a, uint16_t b);
+    static uint16_t min(uint16_t a, uint16_t b) noexcept;
     
     /// @brief Returns the smaller of two 32-bit unsigned integers.
     /// @param a The first of two 32-bit unsigned integers to compare.
     /// @param b The second of two 32-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static uint32_t min(uint32 a, uint32 b);
+    static uint32_t min(uint32 a, uint32 b) noexcept;
     
     /// @brief Returns the smaller of two 64-bit unsigned integers.
     /// @param a The first of two 64-bit unsigned integers to compare.
     /// @param b The second of two 64-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static uint64 min(uint64_t a, uint64_t b);
+    static uint64 min(uint64_t a, uint64_t b) noexcept;
     
     /// @brief Returns the smaller of two 64-bit unsigned integers.
     /// @param a The first of two 64-bit unsigned integers to compare.
     /// @param b The second of two 64-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static ullong_t min(ullong_t a, ullong_t b);
+    static ullong_t min(ullong_t a, ullong_t b) noexcept;
     
     /// @brief Returns a specified number raised to the specified power.
     /// @param x A double-precision floating-point number to be raised to a power.
@@ -453,7 +453,7 @@ namespace xtd {
     /// @brief Convert radians to degrees.
     /// @param radians A double-precision floating-point number.
     /// @return A converted radians from degrees.
-    static double radians_to_degrees(double radians);
+    static double radians_to_degrees(double radians) noexcept;
     
     /// @brief Rounds a double-precision floating-point value to the nearest integral value.
     /// @param value A double-precision floating-point number to be rounded.
