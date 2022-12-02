@@ -15,8 +15,8 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   class debugstreambuf : public object, public std::stringbuf {
-  public:
-    /// @name Methods
+  protected:
+    /// @name Protected methods
     
     /// @{
     /// @brief Synchronizes the buffers with the associated character sequence
