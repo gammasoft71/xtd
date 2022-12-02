@@ -67,6 +67,6 @@ xtd::ustring theme::to_css() const noexcept {
   return ustring::format("  name: \"{}\";\n  description: \"{}\";\n  authors:\"{}\";\n  website=url(\"{}\");\n", name(), description(), authors(), website());
 }
 
-bool theme::try_parse(const xtd::ustring& text, theme& result) {
+bool theme::try_parse(const xtd::ustring& text, theme& result) noexcept {
   return false;
 }

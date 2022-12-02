@@ -286,7 +286,7 @@ namespace xtd {
       /// @param str The string to validate.
       /// @param address The xtd::net::ip_address version of the string.
       /// @return bool true if str is a valid IP address; otherwise, false.
-      static bool try_parse(const ustring& str, ip_address& address);
+      static bool try_parse(const ustring& str, ip_address& address) noexcept;
       /// @}
       
     private:

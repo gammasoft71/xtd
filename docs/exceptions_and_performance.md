@@ -42,7 +42,7 @@ struct date_time : public object {
     ...
   }
   
-  static bool try_parse(const string& dateTime, date_time& result) {
+  static bool try_parse(const string& dateTime, date_time& result) noexcept {
     ...
   }
 };

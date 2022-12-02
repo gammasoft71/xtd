@@ -265,7 +265,7 @@ ustring ip_address::to_string() const noexcept {
   return str;
 }
 
-bool ip_address::try_parse(const ustring& str, ip_address& address) {
+bool ip_address::try_parse(const ustring& str, ip_address& address) noexcept {
   try {
     address = parse(str);
   } catch (...) {
