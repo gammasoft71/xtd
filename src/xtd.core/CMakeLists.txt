@@ -299,6 +299,7 @@ add_sources(
   src/xtd/environment_version.cpp
   src/xtd/abstract.cpp
   src/xtd/any.cpp
+  src/xtd/attribute.cpp
   src/xtd/bit_converter.cpp
   src/xtd/console.cpp
   src/xtd/convert.cpp
