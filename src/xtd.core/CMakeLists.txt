@@ -301,6 +301,7 @@ add_sources(
   src/xtd/any.cpp
   src/xtd/attribute.cpp
   src/xtd/bit_converter.cpp
+  src/xtd/compiler.cpp
   src/xtd/console.cpp
   src/xtd/convert.cpp
   src/xtd/convert_pointer.cpp
