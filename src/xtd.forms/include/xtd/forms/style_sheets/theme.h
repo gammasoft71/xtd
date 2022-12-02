@@ -121,7 +121,7 @@ namespace xtd {
         /// @param text A xtd::ustring that represents a xtd::forms::style_sheets::theme object.
         /// @param result The xtd::forms::style_sheets::theme class that this method creates.
         /// @return true if succeed; otherwise false.
-        static bool try_parse(const xtd::ustring& text, theme& result);
+        static bool try_parse(const xtd::ustring& text, theme& result) noexcept;
         /// @}
         
       private:

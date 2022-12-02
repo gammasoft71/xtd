@@ -74,10 +74,10 @@ namespace xtd {
     /// @{
     /// @brief Gets the underlying value.
     /// @return Return the underlying value.
-    const type_t& value() const {return value_;}
+    const type_t& value() const noexcept {return value_;}
     /// @brief Gets the underlying value.
     /// @return Return the underlying value.
-    type_t& value() {return value_;}
+    type_t& value() noexcept {return value_;}
     /// @brief Sets de underlying value.
     /// @param value The value to set to the underlying value.
     box& value(const type_t& value) {
@@ -89,7 +89,7 @@ namespace xtd {
     /// @name Opertors
     
     /// @{
-    operator type_t() const {return value_;}
+    operator type_t() const noexcept {return value_;}
     /// @}
     
     /// @name Methods
@@ -122,7 +122,7 @@ namespace xtd {
     /// @param value A string containing a type_t to convert.
     /// @param result A type_t equivalent to the number contained in value.
     /// @return true if s was converted successfully; otherwise, false.
-    static bool try_parse(const xtd::ustring& value, type_t& result) {return xtd::try_parse<type_t>(value, result);}
+    static bool try_parse(const xtd::ustring& value, type_t& result) noexcept {return xtd::try_parse<type_t>(value, result);}
     /// @}
     
   private:

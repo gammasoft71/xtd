@@ -1286,7 +1286,7 @@ namespace xtd {
     /// @param value The value that will contain the parsed xtd::ustring.
     /// @return true if xtd::ustring:=:try_parse succed; otherwise, false.
     template<typename value_t>
-    static bool try_parse(const ustring& str, value_t& value) {
+    static bool try_parse(const ustring& str, value_t& value) noexcept {
       try {
         value = parse<value_t>(str);
         return true;

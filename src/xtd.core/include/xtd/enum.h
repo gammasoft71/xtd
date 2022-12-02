@@ -605,7 +605,7 @@ namespace xtd {
     /// @param reslt When this method returns, result contains an object of type TEnum whose value is represented by value if the parse operation succeeds. If the parse operation fails, result contains the default value of the underlying type of TEnum. Note that this value need ! be a member of the TEnum enumeration. This parameter is passed uninitialized.
     /// @return true if the value parameter was converted successfully; otherwise, false.
     template<typename enum_t>
-    static bool try_parse(const xtd::ustring& value, enum_t& result) {return try_parse<enum_t>(value, false, result);}
+    static bool try_parse(const xtd::ustring& value, enum_t& result) noexcept {return try_parse<enum_t>(value, false, result);}
     
     /// @brief Converts the xtd::ustring representation of the name or numeric value of one or more enumerated constants to an equivalent enumerated object. A parameter specifies whether the operation is case-sensitive. The return value indicates whether the conversion succeeded.
     /// @param vaue The xtd::ustring representation of the enumeration name or underlying value to convert.
@@ -613,7 +613,7 @@ namespace xtd {
     /// @param reslt When this method returns, result contains an object of type TEnum whose value is represented by value if the parse operation succeeds. If the parse operation fails, result contains the default value of the underlying type of TEnum. Note that this value need ! be a member of the TEnum enumeration. This parameter is passed uninitialized.
     /// @return true if the value parameter was converted successfully; otherwise, false.
     template<typename enum_t>
-    static bool try_parse(const xtd::ustring& value, bool ignore_case, enum_t& result) {
+    static bool try_parse(const xtd::ustring& value, bool ignore_case, enum_t& result) noexcept {
       try {
         result = parse<enum_t>(value, ignore_case);
         return true;
