@@ -160,12 +160,12 @@ namespace xtd {
     using type = typename std::conditional<std::is_base_of<xtd::object, type_t>::value, type_t, xtd::box<type_t>>::type;
   };
   
-  inline const object& boxing(const object& value) {return value;}
-  inline ustring boxing(const char* value) {return ustring(value);}
-  inline ustring boxing(const char8_t* value) {return ustring(value);}
-  inline ustring boxing(const char16_t* value) {return ustring(value);}
-  inline ustring boxing(const char32_t* value) {return ustring(value);}
-  inline ustring boxing(const wchar_t* value) {return ustring(value);}
+  inline const object& boxing(const object& value) noexcept {return value;}
+  inline ustring boxing(const char* value) noexcept {return ustring(value);}
+  inline ustring boxing(const char8_t* value) noexcept {return ustring(value);}
+  inline ustring boxing(const char16_t* value) noexcept {return ustring(value);}
+  inline ustring boxing(const char32_t* value) noexcept {return ustring(value);}
+  inline ustring boxing(const wchar_t* value) noexcept {return ustring(value);}
   /// @endcond
   
   /// @brief Allows to box an object
@@ -178,7 +178,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   template<typename type_t>
-  inline auto boxing(const type_t& value) {return typename __box_enum_or_object__<type_t, typename std::is_enum<type_t>::type>::type(value);}
+  inline auto boxing(const type_t& value) noexcept {return typename __box_enum_or_object__<type_t, typename std::is_enum<type_t>::type>::type(value);}
   /// @brief Allows to box an object
   /// @param ...args  Params used to initialize object.
   /// @return Boxed object.
@@ -189,7 +189,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   template<typename type_t, typename ...args_t>
-  inline box<type_t> boxing(args_t&& ...args) {return box<type_t>(args...);}
+  inline box<type_t> boxing(args_t&& ...args) noexcept {return box<type_t>(args...);}
   
   /// @brief Allows to unbox an object
   /// @param value Object to box.
@@ -200,14 +200,14 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   template<typename type_t>
-  inline type_t unboxing(const xtd::box<type_t>& value) {return value.value();}
+  inline type_t unboxing(const xtd::box<type_t>& value) noexcept {return value.value();}
   
   /// @cond
   template<typename type_t>
-  inline type_t unboxing(const xtd::enum_object<type_t>& value) {return value.value();}
+  inline type_t unboxing(const xtd::enum_object<type_t>& value) noexcept {return value.value();}
   
-  inline const object& unboxing(const object& value) {return value;}
-  inline const char* unboxing(ustring& value) {return value.c_str();}
+  inline const object& unboxing(const object& value) noexcept {return value;}
+  inline const char* unboxing(ustring& value) noexcept {return value.c_str();}
   
   template<typename char_t>
   inline const char_t* unboxing(ustring& value) {throw invalid_cast_exception("Invalid character type");}
