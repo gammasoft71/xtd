@@ -74,9 +74,18 @@ std::string environment::get_desktop_theme() {
   #endif
 }
 
-std::string environment::get_environment_variable(const std::string& variable) {
-  auto value = getenv(variable.c_str());
-  return value ? value : "";
+std::string environment::get_environment_variable(const std::string& variable, int32_t target) {
+  if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
+    auto value = getenv(variable.c_str());
+    return value ? value : "";
+  }  else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {
+    /// @todo Get registry value when implmented ???
+    return "";
+  } if (target == ENVIRONMENT_VARIABLE_TARGET_MACHINE) {
+    /// @todo Get registry value when implmented ???
+    return "";
+  }
+  return "";
 }
 
 std::map<std::string, std::string>& environment::get_environment_variables(int32_t target) {
@@ -107,9 +116,9 @@ std::map<std::string, std::string>& environment::get_environment_variables(int32
 
 std::string environment::get_know_folder_path(int32_t csidl) {
   #if defined(__APPLE__)
-  static std::map<int32_t, std::string> special_folders = {{CSIDL_DESKTOP, get_environment_variable("HOME") + "/Desktop"}, {CSIDL_PERSONAL, get_environment_variable("HOME")}, {CSIDL_FAVORITES, get_environment_variable("HOME") + "/Library/Favorites"}, {CSIDL_MYMUSIC, get_environment_variable("HOME") + "/Music"}, {CSIDL_MYVIDEO, get_environment_variable("HOME") + "/Videos"}, {CSIDL_DESKTOPDIRECTORY, get_environment_variable("HOME") + "/Desktop"}, {CSIDL_FONTS, get_environment_variable("HOME") + "/Library/Fonts"}, {CSIDL_TEMPLATES, get_environment_variable("HOME") + "/Templates"}, {CSIDL_APPDATA, get_environment_variable("HOME") + "/.config"}, {CSIDL_LOCAL_APPDATA, get_environment_variable("HOME") + "/.local/share"}, {CSIDL_INTERNET_CACHE, get_environment_variable("HOME") + "/Library/Caches"}, {CSIDL_COMMON_APPDATA, "/usr/share"}, {CSIDL_SYSTEM, "/System"}, {CSIDL_PROGRAM_FILES, "/Applications"}, {CSIDL_MYPICTURES, get_environment_variable("HOME") + "/Pictures"}, {CSIDL_PROFILE, get_environment_variable("HOME")}, {CSIDL_COMMON_TEMPLATES, "/usr/share/templates"}, {CSIDL_HOME, get_environment_variable("HOME")}};
+  static std::map<int32_t, std::string> special_folders = {{CSIDL_DESKTOP, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_PERSONAL, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_FAVORITES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Favorites"}, {CSIDL_MYMUSIC, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Music"}, {CSIDL_MYVIDEO, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Videos"}, {CSIDL_DESKTOPDIRECTORY, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_FONTS, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Fonts"}, {CSIDL_TEMPLATES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Templates"}, {CSIDL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.config"}, {CSIDL_LOCAL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.local/share"}, {CSIDL_INTERNET_CACHE, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Caches"}, {CSIDL_COMMON_APPDATA, "/usr/share"}, {CSIDL_SYSTEM, "/System"}, {CSIDL_PROGRAM_FILES, "/Applications"}, {CSIDL_MYPICTURES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Pictures"}, {CSIDL_PROFILE, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_COMMON_TEMPLATES, "/usr/share/templates"}, {CSIDL_HOME, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}};
   #else
-  static std::map<int32_t, std::string> special_folders = {{CSIDL_DESKTOP, get_environment_variable("HOME") + "/Desktop"}, {CSIDL_PERSONAL, get_environment_variable("HOME")}, {CSIDL_MYMUSIC, get_environment_variable("HOME") + "/Music"}, {CSIDL_MYVIDEO, get_environment_variable("HOME") + "/Videos"}, {CSIDL_DESKTOPDIRECTORY, get_environment_variable("HOME") + "/Desktop"}, {CSIDL_FONTS, get_environment_variable("HOME") + "/.fonts"}, {CSIDL_TEMPLATES, get_environment_variable("HOME") + "/Templates"}, {CSIDL_APPDATA, get_environment_variable("HOME") + "/.config"}, {CSIDL_LOCAL_APPDATA, get_environment_variable("HOME") + "/.local/share"}, {CSIDL_COMMON_APPDATA, "/usr/share"}, {CSIDL_MYPICTURES, get_environment_variable("HOME") + "/Pictures"}, {CSIDL_PROFILE, get_environment_variable("HOME")}, {CSIDL_COMMON_TEMPLATES, "/usr/share/templates"}, {CSIDL_HOME, get_environment_variable("HOME")}};
+  static std::map<int32_t, std::string> special_folders = {{CSIDL_DESKTOP, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_PERSONAL, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_MYMUSIC, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Music"}, {CSIDL_MYVIDEO, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Videos"}, {CSIDL_DESKTOPDIRECTORY, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_FONTS, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.fonts"}, {CSIDL_TEMPLATES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Templates"}, {CSIDL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.config"}, {CSIDL_LOCAL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.local/share"}, {CSIDL_COMMON_APPDATA, "/usr/share"}, {CSIDL_MYPICTURES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Pictures"}, {CSIDL_PROFILE, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_COMMON_TEMPLATES, "/usr/share/templates"}, {CSIDL_HOME, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}};
   #endif
   auto it = special_folders.find(csidl);
   if (it == special_folders.end()) return "";
@@ -210,12 +219,24 @@ std::string environment::new_line() {
   return "\n";
 }
 
-void environment::set_environment_variable(const std::string& name, const std::string& value) {
-  setenv(name.c_str(), value.c_str(), 1);
+void environment::set_environment_variable(const std::string& name, const std::string& value, int32_t target) {
+  if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS)
+    setenv(name.c_str(), value.c_str(), 1);
+  else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {
+    /// @todo Snset registry value when implmented ???
+  } if (target == ENVIRONMENT_VARIABLE_TARGET_MACHINE) {
+    /// @todo Set registry value when implmented ???
+  }
 }
 
-void environment::unset_environment_variable(const std::string& name) {
-  unsetenv(name.c_str());
+void environment::unset_environment_variable(const std::string& name, int32_t target) {
+  if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS)
+    unsetenv(name.c_str());
+  else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {
+    /// @todo Unset registry value when implmented ???
+  } if (target == ENVIRONMENT_VARIABLE_TARGET_MACHINE) {
+    /// @todo Unset registry value when implmented ???
+  }
 }
 
 int64_t environment::working_set() {

@@ -212,18 +212,18 @@ namespace xtd {
     /// @remarks This method provides access to the program name and any arguments specified on the command line when the current process was started.
     /// @remarks The program name can include path information, but is not required to do so. Use the xtd::environment::get_command_line_args method to retrieve the command-line information parsed and stored in an array of strings.
     /// @remarks The maximum size of the command-line buffer is not set to a specific number of characters; it varies depending on the operating system that is running on the computer.
-    static xtd::ustring command_line() {return xtd::ustring::join(" ", get_command_line_args());}
+    static xtd::ustring command_line() noexcept;
     
     /// @brief Gets an xtd::compiler object that contains the current compiler identifier and version number.
     /// @return An object that contains the compiler identifier and version number.
-    static xtd::compiler compiler_version() {
+    static xtd::compiler compiler_version() noexcept {
       static xtd::compiler compiler;
       return compiler;
     }
     
     /// @brief Gets an xtd::cpp_language object that contains the current c++ standard identifier and version number.
     /// @return An object that contains the c++ standard identifier and version number.
-    static xtd::cpp_language cpp_version() {
+    static xtd::cpp_language cpp_version() noexcept {
       static xtd::cpp_language cpp_language;
       return cpp_language;
     }
@@ -244,20 +244,20 @@ namespace xtd {
     
     /// @brief Gets a unique identifier for the current thread.
     /// @return A std::thread::id that represents a unique identifier for this thread.
-    static std::thread::id current_thread_id() {return std::this_thread::get_id();}
+    static std::thread::id current_thread_id() noexcept;
     
     /// @brief Gets the exit code of the process.
     /// @return A 32-bit signed integer containing the exit code. The default value is 0 (zero), which indicates that the process completed successfully.
     /// @remarks If the main method returns void, you can use this property to set the exit code that will be returned to the calling environment. If Main does not return void, this property is ignored. The initial value of this property is zero.
     /// @warning The xtd::environment::exit_code property is a signed 32-bit integer. To prevent the property from returning a negative exit code, you should not use values greater than or equal to 0x80000000.
     /// @remarks Use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present and a value of 2 to indicate that the file is in the wrong format.
-    static int exit_code();
+    static int exit_code() noexcept;
     /// @brief Sets the exit code of the process.
     /// @param value A 32-bit signed integer containing the exit code. The default value is 0 (zero), which indicates that the process completed successfully.
     /// @remarks If the main method returns void, you can use this property to set the exit code that will be returned to the calling environment. If Main does not return void, this property is ignored. The initial value of this property is zero.
     /// @warning The xtd::environment::exit_code property is a signed 32-bit integer. To prevent the property from returning a negative exit code, you should not use values greater than or equal to 0x80000000.
     /// @remarks Use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present and a value of 2 to indicate that the file is in the wrong format.
-    static void exit_code(int value);
+    static void exit_code(int value) noexcept;
     
     /// @brief Gets a value that indicates whether the current application domain is shutting down.
     /// @return bool true if the current application domain is shutting down; otherwise, false.
@@ -266,11 +266,11 @@ namespace xtd {
 
     /// @brief Determines whether the current operating system is a 64-bit operating system.
     /// @return true if the operating system is 64-bit; otherwise, false.
-    static bool is_64_bit_operating_system() {return os_version().is_64_bit();}
+    static bool is_64_bit_operating_system() noexcept;
     
     /// @brief Determines whether the current process is a 64-bit process.
     /// @return true if the process is 64-bit; otherwise, false.
-    static bool is_64_bit_process() {return sizeof(size_t) == 8;}
+    static bool is_64_bit_process() noexcept;
     
     /// @brief Gets the NetBIOS name of this local computer.
     /// @return A string containing the name of this computer.
@@ -279,25 +279,26 @@ namespace xtd {
     
     /// @brief Gets the newline string defined for this environment.
     /// @return A string containing "\r\n" for non-Unix platforms, or a string containing "\n" for Unix platforms.
-    static xtd::ustring new_line();
+    static xtd::ustring new_line() noexcept;
     
     /// @brief Inserts a new-line character and flushes the stream.
     /// @param os Output stream object affected. Because this function is a manipulator, it is designed to be used alone with no arguments in conjunction with the insertion (<<) operations on output streams (see example below).
     /// @return Argument os.
     template <class char_t, class traits_t>
     static std::basic_ostream<char_t, traits_t>& new_line(std::basic_ostream<char_t, traits_t>& os) {
-      os.put(os.widen('\n'));
+      for (auto c : new_line())
+        os.put(os.widen(c));
       os.flush();
       return os;
     }
     
     /// @brief Gets an xtd::operating_system object that contains the current platform identifier and version number.
     /// @return An object that contains the platform identifier and version number.
-    static xtd::operating_system os_version();
+    static xtd::operating_system os_version() noexcept;
     
     /// @brief Gets the number of processors on the current machine.
     /// @return The 32-bit unsigned integer that specifies the number of processors on the current machine. There is no default. If the current machine contains multiple processor groups, this property returns the number of logical processors that are available for use.
-    static uint32_t processor_count() {return processor_information().core_count();}
+    static uint32_t processor_count();
     
     /// @brief Gets an xtd::processor object that contains the processor identifier.
     /// @return An object that contains the procesor identifier.
@@ -305,12 +306,12 @@ namespace xtd {
     
     /// @brief Gets current stack trace information.
     /// @return A string containing stack trace information. This value can be empty "".
-    static xtd::ustring stack_trace() {return xtd::diagnostics::stack_trace().to_string();}
+    static xtd::ustring stack_trace();
     
     /// @brief Gets the fully qualified path of the system directory.
     /// @return A string containing a directory path.
     /// @remarks An example of the value returned is the string "C:\Windows".
-    static xtd::ustring system_directory() {return get_folder_path(environment::special_folder::system);}
+    static xtd::ustring system_directory();
     
     /// @brief Gets the number of bytes in the operating system's memory page.
     /// @return The number of bytes in the system memory page.
@@ -341,7 +342,7 @@ namespace xtd {
     
     /// @brief Gets a version consisting of the major, minor, build, and revision numbers of the xtd framework.
     /// @return The version of the xtd framework.
-    static xtd::version version();
+    static xtd::version version() noexcept;
 
     /// @brief Gets the amount of physical memory mapped to the process context.
     /// @return Int64 A 64-bit signed integer containing the number of bytes of physical memory mapped to the process context.
@@ -358,31 +359,13 @@ namespace xtd {
     /// @brief Terminates this process and returns an exit code to the operating system.
     /// @param xtd::environment::exit_code The exit code to return to the operating system. Use 0 (zero) to indicate that the process completed successfully.
     /// @remarks For the exit_code parameter, use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present, and a value of 2 to indicate that the file is in the wrong format.
-    static void exit(int exit_code) {::_Exit(exit_code);}
+    [[noreturn]] static void exit(int exit_code);
     
     /// @brief Replaces the name of each environment variable embedded in the specified string with the string equivalent of the value of the variable, then returns the resulting string.
     /// @param name A string containing the names of zero or more environment variables. Each environment variable is quoted with the percent sign character (%).
     /// @return A string with each environment variable replaced by its value.
     /// @remarks Replacement only occurs for environment variables that are set. For example, suppose name is "MyENV = %MyENV%". If the environment variable, MyENV, is set to 42, this method returns "MyENV = 42". If MyENV is not set, no change occurs; this method returns "MyENV = %MyENV%".
-    static xtd::ustring expand_environment_variables(const xtd::ustring& name) {
-      xtd::ustring buffer = name;
-      xtd::ustring result;
-      
-      size_t index = buffer.index_of('%');
-      while (index != xtd::ustring::npos && buffer.index_of('%', index + 1) != xtd::ustring::npos) {
-        result += buffer.substring(0, index);
-        buffer = buffer.remove(0, index + 1);
-        index = buffer.index_of('%');
-        if (get_environment_variable(buffer.substring(0, index)) != "")
-          result += get_environment_variable(buffer.substring(0, index));
-        else
-          result += xtd::ustring::format("%{0}%", buffer.substring(0, index));
-        buffer = buffer.remove(0, index + 1);
-        index = buffer.index_of('%');
-      }
-      result += buffer;
-      return result;
-    }
+    static xtd::ustring expand_environment_variables(const xtd::ustring& name);
     
     /// @brief Returns a string array containing the command-line arguments for the current process.
     /// @return An array of string where each element contains a command-line argument. The first element is the executable file name, and the following zero or more elements contain the remaining command-line arguments.
@@ -407,7 +390,7 @@ namespace xtd {
     /// @remarks The get_environment_variable(xtd::ustring) method retrieves an environment variable from the environment block of the current process only. It is equivalent to calling the xtd::environment::get_environment_variable(xtd::ustring, xtd::environment_variable_target) method with a target value of xtd::environment_variable_target::process.
     /// @remarks To retrieve all environment variables along with their values, call the xtd::environment::get_environment_variables method.
     /// @remarks Environment variable names are case-sensitive on Linux and macOS but are not case-sensitive on Windows.
-    static xtd::ustring get_environment_variable(const xtd::ustring& variable) {return get_environment_variable(variable, environment_variable_target::process);}
+    static xtd::ustring get_environment_variable(const xtd::ustring& variable);
     
     /// @brief Retrieves the value of an environment variable from the current process or from the Windows operating system registry key for the current user or local machine.
     /// @param variable The name of an environment variable.
@@ -422,7 +405,7 @@ namespace xtd {
     /// @brief Retrieves all environment variable names and their values from the current process.
     /// @return std::map A dictionary that contains all environment variable names and their values; otherwise, an empty dictionary if no environment variables are found.
     /// @remarks The names and values for the environment variables are stored as key-value pairs in the returned std::map.
-    static std::map<std::string, std::string>& get_environment_variables() {return get_environment_variables(environment_variable_target::process);}
+    static std::map<std::string, std::string>& get_environment_variables();
     
     /// @brief Retrieves all environment variable names and their values from the current process, or from the Windows operating system registry key for the current user or local machine.
     /// @param target One of the environment_variable_target values.
@@ -436,7 +419,7 @@ namespace xtd {
     /// @param folder One of enumeration values that identifies a system special folder.
     /// @return The path to the specified system special folder, if that folder physically exists on your computer; otherwise, an empty string ("").
     /// @remarks This method retrieves the path to a system special folder, such as Program Files, Programs, System, or Startup, which can be used to access common information. Special folders are set by default by the system, or explicitly by the user, when installing a version of Windows.
-    static xtd::ustring get_folder_path(environment::special_folder folder) {return get_folder_path(folder, environment::special_folder_option::none);}
+    static xtd::ustring get_folder_path(environment::special_folder folder);
     
     /// @brief Gets the path to the system special folder that is identified by the specified enumeration, and uses a specified option for accessing special folders.
     /// @param folder One of the enumeration values that identifies a system special folder.
@@ -447,9 +430,7 @@ namespace xtd {
     
     /// @brief Returns an array of string containing the names of the logical drives on the current computer.
     /// @return An array of strings where each element contains the name of a logical drive. For example, if the computer's hard drive is the first logical drive, the first element returned is "C:\".
-    static xtd::collections::specialized::string_vector get_logical_drives() {
-      return io::directory::get_logical_drives();
-    }
+    static xtd::collections::specialized::string_vector get_logical_drives();
     
     /// @brief Creates, modifies, or deletes an environment variable stored in the current process.
     /// @param variable The name of an environment variable.
@@ -457,9 +438,7 @@ namespace xtd {
     /// @remarks Calling this method is equivalent to calling the xtd::environment::set_environment_variable(xtd::ustring, xtd::ustring, environment_variable_target) overload with a value of xtd::environment_variable_target::process for the target argument.
     /// @remarks If the value argument is not empty and the environment variable named by the variable parameter does not exist, the environment variable is created and assigned the contents of value. If it does exist, its value is modified. Because the environment variable is defined in the environment block of the current process only, it does not persist after the process has ended.
     /// @remarks If value is empty and the environment variable named by variable exists, the environment variable is deleted. If variable does not exist, no error occurs even though the operation cannot be performed.
-    static void set_environment_variable(const xtd::ustring& variable, const xtd::ustring& value) {
-      set_environment_variable(variable, value, environment_variable_target::process);
-    }
+    static void set_environment_variable(const xtd::ustring& variable, const xtd::ustring& value);
     
     /// @brief Creates, modifies, or deletes an environment variable stored in the current process or in the Windows operating system registry key reserved for the current user or local machine.
     /// @param variable The name of an environment variable.

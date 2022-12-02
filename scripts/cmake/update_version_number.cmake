@@ -22,7 +22,7 @@ if (${STRING_FOUND} EQUAL -1)
     "\n"
     "#include \"../include/xtd/environment.h\"\n"
     "\n"
-    "xtd::version xtd::environment::version() {\n"
+    "xtd::version xtd::environment::version() noexcept {\n"
     "  return xtd::version::parse(\"${XTD_VERSION}\");\n"
     "}\n"
   )
