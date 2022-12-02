@@ -13,7 +13,7 @@ enum class text_attribute {
 text_attribute operator|(text_attribute lhs, text_attribute rhs) {return static_cast<text_attribute>(static_cast<std::underlying_type<text_attribute>::type>(lhs) | static_cast<std::underlying_type<text_attribute>::type>(rhs));}
 
 template<> struct xtd::enum_set_attribute<text_attribute> {
-  explicit operator auto() const {return xtd::enum_attribute::flags;}
+  explicit operator auto() const noexcept {return xtd::enum_attribute::flags;}
 };
 
 template<> struct xtd::enum_register<text_attribute> {
