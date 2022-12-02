@@ -70,7 +70,7 @@ namespace xtd {
       /// @param variable The name of the environment variable.
       /// @return std::string The value of the environment variable specified by variable, or empty "" if the environment variable is not found.
       /// @warning Internal use only
-      static std::string get_environment_variable(const std::string& variable);
+      static std::string get_environment_variable(const std::string& variable, int32_t target);
       /// @brief Gets the path to the system special folder that is identified by the specified enumeration.
       /// @param csidl System special folder identifier (see constant_special_item_id_list.h file).
       /// @return The path to the specified system special folder, if that folder physically exists on your computer; otherwise, an empty string ("").
@@ -139,11 +139,11 @@ namespace xtd {
       /// @param variable The name of an environment variable.
       /// @param value A value to assign to variable.
       /// @warning Internal use only
-      static void set_environment_variable(const std::string& name, const std::string& value);
+      static void set_environment_variable(const std::string& name, const std::string& value, int32_t target);
       /// @brief Deletes an environment variable stored in the current process.
       /// @param variable The name of an environment variable.
       /// @warning Internal use only
-      static void unset_environment_variable(const std::string& name);
+      static void unset_environment_variable(const std::string& name, int32_t target);
       /// @brief Gets the amount of physical memory mapped to the process context.
       /// @return Int64 A 64-bit signed integer containing the number of bytes of physical memory mapped to the process context.
       /// @warning Internal use only

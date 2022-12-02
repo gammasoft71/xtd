@@ -46,12 +46,21 @@ std::string environment::get_desktop_theme() {
   return value == 0 ? "windows" : "windows dark";
 }
 
-std::string environment::get_environment_variable(const std::string& variable) {
-  DWORD environent_variable_size = 65535;
-  std::wstring environment_variable(environent_variable_size, 0);
-  environent_variable_size = GetEnvironmentVariable(win32::strings::to_wstring(variable).data(), environment_variable.data(), environent_variable_size);
-  if (!environent_variable_size) return "";
-  return win32::strings::to_string(environment_variable);
+std::string environment::get_environment_variable(const std::string& variable, int32_t target) {
+  if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
+    DWORD environent_variable_size = 65535;
+    std::wstring environment_variable(environent_variable_size, 0);
+    environent_variable_size = GetEnvironmentVariable(win32::strings::to_wstring(variable).data(), environment_variable.data(), environent_variable_size);
+    if (!environent_variable_size) return "";
+    return win32::strings::to_string(environment_variable);
+  }  else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {
+    /// @todo Get registry value
+    return "";
+  } if (target == ENVIRONMENT_VARIABLE_TARGET_MACHINE) {
+    /// @todo Get registry value
+    return "";
+  }
+  return "";
 }
 
 std::map<std::string, std::string>& environment::get_environment_variables(int32_t target) {
@@ -217,12 +226,24 @@ std::string environment::new_line() {
   return "\n";
 }
 
-void environment::set_environment_variable(const std::string& name, const std::string& value) {
-  SetEnvironmentVariable(win32::strings::to_wstring(name).c_str(), win32::strings::to_wstring(value).c_str());
+void environment::set_environment_variable(const std::string& name, const std::string& value, int32_t target) {
+  if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS)
+    SetEnvironmentVariable(win32::strings::to_wstring(name).c_str(), win32::strings::to_wstring(value).c_str());
+  else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {
+    /// @todo Set registry value when implmented ???
+  } if (target == ENVIRONMENT_VARIABLE_TARGET_MACHINE) {
+    /// @todo Set registry value when implmented ???
+  }
 }
 
-void environment::unset_environment_variable(const std::string& name) {
-  SetEnvironmentVariable(win32::strings::to_wstring(name).c_str(), nullptr);
+void environment::unset_environment_variable(const std::string& name, int32_t target) {
+  if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS)
+    SetEnvironmentVariable(win32::strings::to_wstring(name).c_str(), nullptr);
+  else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {
+    /// @todo Unset registry value
+  } if (target == ENVIRONMENT_VARIABLE_TARGET_MACHINE) {
+    /// @todo Unset registry value
+  }
 }
 
 int64_t environment::working_set() {
