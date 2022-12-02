@@ -6,7 +6,7 @@
 using namespace std;
 using namespace xtd;
 
-std::string __object_to_string(const object& value) {
+std::string __object_to_string(const object& value) noexcept {
   return value.to_string();
 }
 

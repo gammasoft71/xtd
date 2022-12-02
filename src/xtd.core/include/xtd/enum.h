@@ -678,7 +678,7 @@ namespace xtd {
 
 /// @cond
 template<typename enum_t>
-inline std::string __enum_to_string(enum_t value) {
+inline std::string __enum_to_string(enum_t value) noexcept {
   return xtd::enum_object<>::get_name(value);
 }
 
