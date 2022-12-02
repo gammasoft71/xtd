@@ -89,6 +89,8 @@
 #include "string_comparison.h"
 #include "string_split_options.h"
 #include "system_exception.h"
+#include "target_id.h"
+#include "target_type.h"
 #include "tick.h"
 #include "ticks.h"
 #include "time_out_exception.h"
