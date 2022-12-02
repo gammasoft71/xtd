@@ -11,15 +11,15 @@ using namespace xtd;
 namespace {
 }
 
-decimal_t math::abs(decimal_t value) {
+decimal_t math::abs(decimal_t value) noexcept {
   return value < 0 ? -value : value;
 }
 
-double math::abs(double value) {
+double math::abs(double value) noexcept {
   return value < 0 ? -value : value;
 }
 
-float math::abs(float value) {
+float math::abs(float value) noexcept {
   return value < 0 ? -value : value;
 }
 

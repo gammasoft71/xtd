@@ -48,14 +48,14 @@ namespace xtd {
     
     ///@cond
     // Not correct for an interface but necessary for C++ language.
-    bool operator <(const object& obj) const noexcept { return compare_to(obj) < 0; }
-    bool operator <=(const object& obj) const noexcept { return compare_to(obj) <= 0; }
-    bool operator >(const object& obj) const noexcept { return compare_to(obj) > 0; }
-    bool operator >=(const object& obj) const noexcept { return compare_to(obj) >= 0; }
-    bool operator <(const type_t& obj) const noexcept { return compare_to(obj) < 0; }
-    bool operator <=(const type_t& obj) const noexcept { return compare_to(obj) <= 0; }
-    bool operator >(const type_t& obj) const noexcept { return compare_to(obj) > 0; }
-    bool operator >=(const type_t& obj) const noexcept { return compare_to(obj) >= 0; }
+    bool operator <(const object& obj) const noexcept {return compare_to(obj) < 0;}
+    bool operator <=(const object& obj) const noexcept {return compare_to(obj) <= 0;}
+    bool operator >(const object& obj) const noexcept {return compare_to(obj) > 0;}
+    bool operator >=(const object& obj) const noexcept {return compare_to(obj) >= 0;}
+    bool operator <(const type_t& obj) const noexcept {return compare_to(obj) < 0;}
+    bool operator <=(const type_t& obj) const noexcept {return compare_to(obj) <= 0;}
+    bool operator >(const type_t& obj) const noexcept {return compare_to(obj) > 0;}
+    bool operator >=(const type_t& obj) const noexcept {return compare_to(obj) >= 0;}
     ///@endcond
   };
 }
