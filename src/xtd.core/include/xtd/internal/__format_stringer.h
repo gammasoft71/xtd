@@ -239,8 +239,8 @@ std::ostream& operator <<(std::ostream& os, const char32_t* str);
 std::ostream& operator <<(std::ostream& os, const wchar_t* str);
 
 template<typename enum_t>
-std::string __enum_to_string(enum_t value);
-std::string __object_to_string(const xtd::object& value);
+std::string __enum_to_string(enum_t value) noexcept;
+std::string __object_to_string(const xtd::object& value) noexcept;
 
 template <typename char_t, typename type_t, typename bool_t>
 struct __enum_ostream__ {};
