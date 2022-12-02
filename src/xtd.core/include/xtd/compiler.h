@@ -27,37 +27,45 @@ namespace xtd {
     /// @{
     /// @brief Initialise a new xtd::compiler class.
     /// @param compiler_id One of xtd::compiler_id values.
-    explicit compiler(xtd::compiler_id compiler_id) : compiler_id_(compiler_id) {}
+    explicit compiler(xtd::compiler_id compiler_id);
     /// @}
     
     /// @cond
     compiler() = default;
     compiler(const compiler&) = default;
     compiler& operator =(const compiler&) = default;
-    friend std::ostream& operator <<(std::ostream& os, const compiler& compiler) noexcept {return os << compiler.to_string();}
     /// @endcond
     
     /// @name Properties
     
     /// @{
-    xtd::build_type build_type() const noexcept {return build_type_;}
+    /// @brief Gets the build type.
+    /// @return One of xtd::build_type values.
+    xtd::build_type build_type() const noexcept;
     
-    xtd::compiler_id compiler_id() const noexcept {return compiler_id_;}
+    /// @brief Gets the compiler id.
+    /// @return One of xtd::compiler_id values.
+    xtd::compiler_id compiler_id() const noexcept;
     
-    bool is_build_type_debug() const noexcept {return build_type_ == xtd::build_type::debug; }
+    /// @brief Gets build type is debug.
+    /// @return true if build type debug; otherwise false.
+    bool is_build_type_debug() const noexcept;
     
-    static bool is_64_bit() noexcept {return sizeof(size_t) == 8;}
+    /// @brief Gets is 64 bits.
+    /// @return true if 64 bits; otherwise false.
+    static bool is_64_bit() noexcept;
     
-    xtd::ustring name() const noexcept {
-      static std::map<xtd::compiler_id, xtd::ustring> names {{compiler_id::unknown, "<unknown>"}, {compiler_id::microsoft_visual_studio, "Microsoft Visual Studio"}, {compiler_id::clang, "clang"}, {compiler_id::gcc, "gcc"}};
-      return names[compiler_id()];
-    }
+    /// @brief Gets compiler name.
+    /// @return The compiler name.
+    xtd::ustring name() const noexcept;
     
-    xtd::ustring version_string() const noexcept {
-      return ustring::format("{} {}", name(), version());
-    }
+    /// @brief Gets compiler version string.
+    /// @return The compiler version string.
+    xtd::ustring version_string() const noexcept;
     
-    const xtd::version& version() const noexcept {return version_;}
+    /// @brief Gets compiler version.
+    /// @return The compiler version.
+    const xtd::version& version() const noexcept;
     /// @}
     
     /// @name Methods
@@ -65,7 +73,7 @@ namespace xtd {
     /// @{
     /// @brief Converts the value of this operating_system object to its equivalent string representation.
     /// @return The string representation of the values returned by the platform, version, and service_pack methods.
-    xtd::ustring to_string() const noexcept override {return version_string();}
+    xtd::ustring to_string() const noexcept override;
     /// @}
     
   private:
