@@ -105,6 +105,8 @@ add_sources(
   include/xtd/string_comparison.h
   include/xtd/string_split_options.h
   include/xtd/system_exception.h
+  include/xtd/target_id.h
+  include/xtd/target_type.h
   include/xtd/tick.h
   include/xtd/ticks.h
   include/xtd/time_out_exception.h
@@ -321,6 +323,7 @@ add_sources(
   src/xtd/random.cpp
 # src/xtd/signal_catcher.cpp
   src/xtd/system_exception.cpp
+  src/xtd/target_type.cpp
   src/xtd/time_zone_info.cpp
   src/xtd/to_string.cpp
   src/xtd/translator.cpp

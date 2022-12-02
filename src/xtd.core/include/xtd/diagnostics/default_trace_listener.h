@@ -133,7 +133,7 @@ namespace xtd {
       /// @}
       
     private:
-      #if defined(__CMAKE_TARGET_TYPE__) && __CMAKE_TARGET_TYPE__ == 2 // 2 == GUI_APPLICATION
+      #if __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_GUI_APPLICATION__
       bool assert_ui_enabled_ = true;
       #else
       bool assert_ui_enabled_ = false;

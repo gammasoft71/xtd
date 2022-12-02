@@ -8,6 +8,7 @@
 #include <vector>
 
 #include "argument_exception.h"
+#include "as.h"
 #include "compiler.h"
 #include "core_export.h"
 #include "cpp_language.h"
@@ -18,6 +19,7 @@
 #include "platform_id.h"
 #include "processor.h"
 #include "static.h"
+#include "target_type.h"
 #include "ustring.h"
 #include "version.h"
 #include "collections/specialized/string_vector.h"
@@ -316,6 +318,12 @@ namespace xtd {
     /// @brief Gets the number of bytes in the operating system's memory page.
     /// @return The number of bytes in the system memory page.
     static size_t system_page_size();
+    
+    /// @brief Gets an xtd::target_type object that contains the current target identifier.
+    /// @return An object that contains the target identifier.
+    static xtd::target_type target_type() noexcept {
+      return xtd::target_type(as<xtd::target_id>(__XTD_CURRENT_TARGET_ID__));
+    }
     
     /// @brief Gets the number of milliseconds elapsed since the system started.
     /// @return A 32-bit unsigned integer containing the amount of time in milliseconds that has passed since the last time the computer was started.
