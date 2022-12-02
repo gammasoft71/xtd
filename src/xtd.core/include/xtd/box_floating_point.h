@@ -55,9 +55,6 @@ namespace xtd {
     /// @brief Represents positive infinity. This field is constant.
     /// @remarks The value of this field is std::numeric_limits<type_t>::infinity().
     static constexpr type_t positive_infinity = +infinity;
-    
-    
-  private:
   };
   
   /// @brief Represent a boxed single.
@@ -110,9 +107,9 @@ namespace xtd {
   using decimal_object = box_floating_point<decimal_t>;
   
   /// @cond
-  inline single_object boxing(const float& value) {return single_object(value);}
-  inline double_object boxing(const double& value) {return double_object(value);}
-  inline decimal_object boxing(const decimal_t& value) {return decimal_object(value);}
+  inline single_object boxing(const float& value) noexcept {return single_object(value);}
+  inline double_object boxing(const double& value) noexcept {return double_object(value);}
+  inline decimal_object boxing(const decimal_t& value) noexcept {return decimal_object(value);}
 
   template<typename type_t>
   inline std::string to_string(const xtd::box_floating_point<type_t>& value, const std::string& fmt, const std::locale& loc) {
