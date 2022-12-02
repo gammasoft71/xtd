@@ -304,6 +304,7 @@ add_sources(
   src/xtd/compiler.cpp
   src/xtd/console.cpp
   src/xtd/console_cancel_event_args.cpp
+  src/xtd/console_key_info.cpp
   src/xtd/convert.cpp
   src/xtd/convert_pointer.cpp
   src/xtd/convert_string.cpp
