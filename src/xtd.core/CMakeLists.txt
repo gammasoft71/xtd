@@ -317,6 +317,7 @@ add_sources(
   src/xtd/math.cpp
   src/xtd/object.cpp
   src/xtd/operating_system.cpp
+  src/xtd/processor.cpp
 # src/xtd/signal_catcher.cpp
   src/xtd/system_exception.cpp
   src/xtd/time_zone_info.cpp
