@@ -39,7 +39,7 @@ namespace xtd {
       
       /// @cond
       timer(const timer&) = delete;
-      ~timer() {stop();}
+      ~timer();
       /// @endcond
       
       /// @name Properties
