@@ -98,43 +98,43 @@ namespace xtd {
     /// @{
     /// @brief Gets file path where exception occurred
     /// @return A string represent file path where exception occurred
-    virtual const xtd::ustring& file_path() const noexcept {return information_.get_file_name();}
+    virtual const xtd::ustring& file_path() const noexcept;
     
     /// @brief Gets a link to the help file associated with this exception.
     /// @return A string represent a link to Help file associated with exception
-    virtual const xtd::ustring& help_link() const noexcept {return help_link_;}
+    virtual const xtd::ustring& help_link() const noexcept;
     
     /// @brief Gets or sets if the generation of the stack trace is enabled.
-    static bool enable_stack_trace() {return enable_stack_trace_;}
-    static void enable_stack_trace(bool enable) {enable_stack_trace_ = enable;}
+    static bool enable_stack_trace() noexcept;
+    static void enable_stack_trace(bool enable) noexcept;
     
     /// @brief Gets error associate to the exception
     /// @return An error_code represent a Error associate to the exception
-    virtual std::error_code error_code() const noexcept {return error_;}
+    virtual std::error_code error_code() const noexcept;
     
     /// @brief Gets the exception instance that caused the current exception.
     /// @return An instance of exception that describes the error that caused the current exception. The inner_exception property returns the same value as was passed into the constructor, or a null reference if the inner exception value was not supplied to the constructor.
-    virtual exception_ref inner_exception() const noexcept {return inner_exception_;}
+    virtual exception_ref inner_exception() const noexcept;
     
     /// @brief Gets Line number where the exception occurred
     /// @return the line number where exception occurred
-    virtual uint32_t line_number() const noexcept {return information_.get_file_line_number();}
+    virtual uint32_t line_number() const noexcept;
     
     /// @brief Gets file member where exception occurred
     /// @return A string represent member name where exception occurred
-    virtual const xtd::ustring& member_name() const noexcept {return information_.get_method();}
+    virtual const xtd::ustring& member_name() const noexcept;
     
     /// @brief Gets message associate to the exception
     /// @return A string represent a massage associate to the exception
-    virtual const xtd::ustring& message() const noexcept {return message_;}
+    virtual const xtd::ustring& message() const noexcept;
     
     /// @brief Gets full class name the exception
     /// @return A string represent a full class name of the exception
-    virtual const xtd::ustring& name() const noexcept {return (name_ = xtd::ustring::full_class_name(*this));}
+    virtual const xtd::ustring& name() const noexcept;
     
     /// @brief Gets a string representation of the immediate frames on the call stack.
     /// @return A string that describes the immediate frames of the call stack.
-    virtual xtd::ustring stack_trace() const noexcept {return stack_trace_to_string();}
+    virtual xtd::ustring stack_trace() const noexcept;
     /// @}
     
     /// @name Methods
@@ -146,13 +146,13 @@ namespace xtd {
     
     /// @brief Gets message associate to the exception
     /// @return A string represent a massage associate to the exception
-    const char* what() const noexcept override {return message().empty() ? name().c_str() : message().c_str();}
+    const char* what() const noexcept override;
     /// @}
     
   private:
     system_exception(const xtd::ustring& message, const std::exception* inner_exception, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& information);
     xtd::ustring stack_trace_to_string() const noexcept;
-    const char* default_message() const;
+    const char* default_message() const noexcept;
     
     static bool enable_stack_trace_;
     mutable xtd::ustring name_;
