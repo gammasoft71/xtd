@@ -15,10 +15,10 @@ public:
   }
   
 protected:
-  xtd::drawing::color default_back_color() const override {return xtd::drawing::color::black;}
-  xtd::drawing::font default_font() const override {return xtd::drawing::font(xtd::drawing::font_family::generic_monospace(), 10);}
-  xtd::drawing::color default_fore_color() const override {return xtd::drawing::color::lime;}
-  xtd::drawing::size default_size() const override {return {300, 200};}
+  xtd::drawing::color default_back_color() const noexcept override {return xtd::drawing::color::black;}
+  xtd::drawing::font default_font() const noexcept override {return xtd::drawing::font(xtd::drawing::font_family::generic_monospace(), 10);}
+  xtd::drawing::color default_fore_color() const noexcept override {return xtd::drawing::color::lime;}
+  xtd::drawing::size default_size() const noexcept override {return {300, 200};}
 
   void on_key_down(xtd::forms::key_event_args& e) override {
     switch(e.key_code()) {

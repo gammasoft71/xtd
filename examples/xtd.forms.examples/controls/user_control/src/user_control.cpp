@@ -41,7 +41,7 @@ namespace examples {
       e.graphics().draw_string(text(), default_font(), system_brushes::control_text(), 35, e.graphics().measure_string(text(), default_font()).height() / 2);
     }
     
-    drawing::size default_size() const override {return {160, 30};}
+    drawing::size default_size() const noexcept override {return {160, 30};}
     
   private:
     operation_status status_ = operation_status::none;
