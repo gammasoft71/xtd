@@ -94,7 +94,7 @@ namespace xtd {
         /// @endcond
         
       private:
-        const char* default_message() const {return "The Socket operation failed."_t;}
+        const char* default_message() const noexcept {return "The Socket operation failed."_t;}
       };
     }
   }

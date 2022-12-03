@@ -87,7 +87,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      const char* default_message() const {return "Input file or data stream does not conform to the expected file format specification."_t;}
+      const char* default_message() const noexcept {return "Input file or data stream does not conform to the expected file format specification."_t;}
     };
   }
 }

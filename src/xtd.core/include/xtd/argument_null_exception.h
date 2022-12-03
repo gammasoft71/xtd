@@ -80,6 +80,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() const {return "Value cannot be null."_t;}
+    const char* default_message() const noexcept {return "Value cannot be null."_t;}
   };
 }
