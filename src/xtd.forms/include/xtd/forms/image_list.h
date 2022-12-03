@@ -36,6 +36,8 @@ namespace xtd {
       /// @{
       /// @brief Represents an image_list empty.
       static image_list empty;
+      
+      inline static const size_t npos = image_collection::npos;
       /// @}
       
       /// @name Constructors
