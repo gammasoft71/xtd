@@ -45,7 +45,7 @@ namespace xtd {
       
       /// @brief Gets the line of characters that was written to a redirected Process output stream.
       /// @return true if the current process should resume when the event handler concludes; false if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If true, the current process continues.
-      const xtd::ustring& data() const {return data_;}
+      const xtd::ustring& data() const noexcept {return data_;}
       
       /// @}
       

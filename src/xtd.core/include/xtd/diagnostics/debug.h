@@ -63,61 +63,61 @@ namespace xtd {
       /// @return true if xtd::diagnostics::debug::flush is called on the xtd::diagnostics::debug::listeners after every write; otherwise, false.
       /// @remarks The default is false.
       /// @remarks Flushing the stream will not flush its underlying encoder unless you explicitly call xtd::diagnostics::debug::flush or xtd::diagnostics::debug::close. Setting xtd::diagnostics::debug::auto_flush to true means that data will be flushed from the buffer to the stream.
-      static bool auto_flush();
+      static bool auto_flush() noexcept;
       /// @brief Sets whether xtd::diagnostics::debug::flush should be called on the xtd::diagnostics::debug::Listeners after every write.
       /// @param auto_flush true if xtd::diagnostics::debug::flush is called on the xtd::diagnostics::debug::listeners after every write; otherwise, false.
       /// @remarks The default is false.
       /// @remarks Flushing the stream will not flush its underlying encoder unless you explicitly call xtd::diagnostics::debug::flush or xtd::diagnostics::debug::close. Setting xtd::diagnostics::debug::auto_flush to true means that data will be flushed from the buffer to the stream.
-      static void auto_flush(bool auto_flush);
+      static void auto_flush(bool auto_flush) noexcept;
       
       /// @brief Gets the indent level.
       /// @return The indent level. The default is zero.
       /// @remarks The xtd::diagnostics::debug::indent_level property represents the number of times the indent of size xtd::diagnostics::debug::indent_size is applied. This property is stored on per-thread/per-request basis.
-      static uint32_t indent_level();
+      static uint32_t indent_level() noexcept;
       /// @brief Sets the indent level.
       /// @param indent_level The indent level. The default is zero.
       /// @remarks The xtd::diagnostics::debug::indent_level property represents the number of times the indent of size xtd::diagnostics::debug::indent_size is applied. This property is stored on per-thread/per-request basis.
-      static void indent_level(uint32_t indent_level);
+      static void indent_level(uint32_t indent_level) noexcept;
       
       /// @brief Gets the number of spaces in an indent.
       /// @return The number of spaces in an indent. The default is four.
       /// @remarks A xtd::diagnostics::ostream_trace_listener interprets this number as spaces. An xtd::diagnostics::event_log_trace_listener ignores this value.
-      static uint32_t indent_size();
+      static uint32_t indent_size() noexcept;
       /// @brief Sets the number of spaces in an indent.
       /// @param indent_size The number of spaces in an indent. The default is four.
       /// @remarks A xtd::diagnostics::ostream_trace_listener interprets this number as spaces. An xtd::diagnostics::event_log_trace_listener ignores this value.
-      static void indent_size(uint32_t indent_size);
+      static void indent_size(uint32_t indent_size) noexcept;
       
       /// @brief Gets the collection of listeners that is monitoring the trace output.
       /// @return A xtd::diagnostics::debug::listener_collection that represents a collection of type xtd::diagnostics::trace_listener monitoring the trace output.
       /// @remarks The xtd::diagnostics::debug::listeners produce formatted output from the trace output. By default, the collection contains an instance of the xtd::diagnostics::default_trace_listener class. If you want to remove the default listener, call the erase method, and pass it the instance of the xtd::diagnostics::default_trace_listener. To redirect output to the console window, add an instance of the xtd::diagnostics::console_trace_listener class.
       /// @note The xtd::diagnostics::debug::listeners collection is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; adding a trace listener to either class adds the listener to both.
-      static listener_collection& listeners();
+      static listener_collection& listeners() noexcept;
       /// @brief Sets the collection of listeners that is monitoring the trace output.
       /// @paral$m listeners A xtd::diagnostics::debug::listener_collection that represents a collection of type xtd::diagnostics::trace_listener monitoring the trace output.
       /// @remarks The xtd::diagnostics::debug::listeners produce formatted output from the trace output. By default, the collection contains an instance of the xtd::diagnostics::default_trace_listener class. If you want to remove the default listener, call the erase method, and pass it the instance of the xtd::diagnostics::default_trace_listener. To redirect output to the console window, add an instance of the xtd::diagnostics::console_trace_listener class.
       /// @note The xtd::diagnostics::debug::listeners collection is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; adding a trace listener to either class adds the listener to both.
-      static void listeners(const listener_collection& listeners);
+      static void listeners(const listener_collection& listeners) noexcept;
       
       /// @brief Gets a value indicating whether the assert dialog should be show.
       /// @return true if assert dialog is to be shown; otherwise, false. The default is true.
       /// @remarks The show assert dialog is used when xtd::diagnostics::debug::cassert or td::diagnostics::trace::cassert or assert_ is called to ask user to ignore, continue or retry the assert.
       /// @note The xtd::diagnostics::debug::show_assert_dialog boolean is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; updating the boolean to either class modify the show assert dialog to both.
-      static bool show_assert_dialog();
+      static bool show_assert_dialog() noexcept;
       /// @brief Sets a value indicating whether the assert dialog should be show.
       /// @param show_assert_dialog true if assert dialog is to be shown; otherwise, false. The default is true.
       /// @remarks The show assert dialog is used when xtd::diagnostics::debug::cassert or td::diagnostics::trace::cassert or assert_ is called to ask user to ignore, continue or retry the assert.
       /// @note The xtd::diagnostics::debug::show_assert_dialog boolean is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; updating the boolean to either class modify the show assert dialog to both.
-      static void show_assert_dialog(bool show_assert_dialog);
+      static void show_assert_dialog(bool show_assert_dialog) noexcept;
       
       /// @brief Gets a value indicating whether the global lock should be used.
       /// @return true if the global lock is to be used; otherwise, false. The default is true.
       /// @remarks The global lock is always used if the trace listener is not thread safe, regardless of the value of xtd::diagnostics::debug::use_global_lock. The IsThreadSafe property is used to determine if the listener is thread safe. The global lock is not used only if the value of UseGlobalLock is false and the value of IsThreadSafe is true. The default behavior is to use the global lock.
-      static bool use_global_lock();
+      static bool use_global_lock() noexcept;
       /// @brief Sets a value indicating whether the global lock should be used.
       /// @param use_global_lock true if the global lock is to be used; otherwise, false. The default is true.
       /// @remarks The global lock is always used if the trace listener is not thread safe, regardless of the value of UseGlobalLock. The xtd::diagnostics::debug::is_thread_safe property is used to determine if the listener is thread safe. The global lock is not used only if the value of xtd::diagnostics::debug::use_global_lock is false and the value of xtd::diagnostics::debug::is_thread_safe is true. The default behavior is to use the global lock.
-      static void use_global_lock(bool use_global_lock);
+      static void use_global_lock(bool use_global_lock) noexcept;
       /// @}
       
       /// @name Methods
@@ -171,7 +171,7 @@ namespace xtd {
       }
       
       /// @brief Increases the current indent_level by one.
-      static void indent();
+      static void indent() noexcept;
       
       /// @brief Writes a message followed by a line terminator to the trace listeners in the listeners collection.
       /// @param message The message to write.
@@ -258,7 +258,7 @@ namespace xtd {
       }
       
       /// @brief Decreases the current indent_level by one.
-      static void unindent();
+      static void unindent() noexcept;
       
       /// @brief Writes a message to the trace listeners in the listeners collection.
       /// @param message A message to write.
