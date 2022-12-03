@@ -26,6 +26,28 @@
 #include "diagnostics/stack_trace.h"
 #include "io/directory.h"
 
+/// @cond
+// The following constants are defined in the file xtd_command.cmake.
+// If the target project is not built with cmake, each constant must be defined by the build tool like this:
+// | Constant                       | Value                                            |
+// |--------------------------------|--------------------------------------------------|
+// | __XTD_INCLUDE_PATH__           | ${XTD_INSTALL_PATH}/include"                     |
+// | __XTD_LIB_PATH__               | ${XTD_INSTALL_PATH}/lib"                         |
+// | __XTD_CONSOLE_INCLUDE_PATH__   | ${XTD_CONSOLE_INSTALL_PATH}/include"             |
+// | __XTD_CONSOLE_LIB_PATH__       | ${XTD_CONSOLE_INSTALL_PATH}/lib"                 |
+// | __XTD_DRAWING_INCLUDE_PATH__   | ${XTD_DRAWING_INSTALL_PATH}/include"             |
+// | __XTD_DRAWING_LIB_PATH__       | ${XTD_DRAWING_INSTALL_PATH}/lib"                 |
+// | __XTD_DRAWING_RESOURCES_PATH__ | ${XTD_DRAWING_INSTALL_PATH}/share/xtd/resources" |
+// | __XTD_FORMS_INCLUDE_PATH__     | ${XTD_FORMS_INSTALL_PATH}/include"               |
+// | __XTD_FORMS_LIB_PATH__         | ${XTD_FORMS_INSTALL_PATH}/lib"                   |
+// | __XTD_FORMS_RESOURCES_PATH__   | ${XTD_FORMS_INSTALL_PATH}/share/xtd/resources"   |
+// | __XTD_TUNIT_INCLUDE_PATH__     | ${XTD_TUNIT_INSTALL_PATH}/include"               |
+// | __XTD_TUNIT_LIB_PATH__         | ${XTD_TUNIT_INSTALL_PATH}/lib"                   |
+#if !defined(__XTD_INCLUDE_PATH__) || !defined(__XTD_LIB_PATH__) || !defined(__XTD_CONSOLE_INCLUDE_PATH__) || !defined(__XTD_CONSOLE_LIB_PATH__) || !defined(__XTD_DRAWING_INCLUDE_PATH__) || !defined(__XTD_DRAWING_LIB_PATH__) || !defined(__XTD_DRAWING_RESOURCES_PATH__) || !defined(__XTD_FORMS_INCLUDE_PATH__) || !defined(__XTD_FORMS_LIB_PATH__) || !defined(__XTD_FORMS_RESOURCES_PATH__) || !defined(__XTD_TUNIT_INCLUDE_PATH__) || !defined(__XTD_TUNIT_LIB_PATH__)
+  #error "Some variables (like __XTD_INCLUDE_PATH__) are not defined. This is probably because you are not using CMake to generate your project. See the following link for more information: https://github.com/gammasoft71/xtd/blob/master/docs/xtd_cmake_overview.md..."
+#endif
+/// @endcond
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The environment class.
@@ -192,7 +214,41 @@ namespace xtd {
       /// @brief The file system directory that acts as a staging area for files waiting to be written to a CD.
       cd_burning = 59,
       /// @brief The file system directory that contains home folder.
-      home = 64
+      home = 64,
+      /// @brief
+      xtd_install = 1000,
+      /// @brief
+      xtd_locale = 1001,
+      /// @brief
+      xtd_reference_guide = 1002,
+      /// @brief
+      xtd_themes = 1003,
+      /// @brief
+      xtd_include = 1004,
+      /// @brief
+      xtd_libraries = 1005,
+      /// @brief
+      xtd_resources = 1006,
+      /// @brief
+      xtd_console_include = 1007,
+      /// @brief
+      xtd_console_libraries = 1008,
+      /// @brief
+      xtd_drawing_include = 1009,
+      /// @brief
+      xtd_drawing_libraries = 1010,
+      /// @brief
+      xtd_drawing_resources = 1011,
+      /// @brief
+      xtd_forms_include = 1012,
+      /// @brief
+      xtd_forms_libraries = 1013,
+      /// @brief
+      xtd_forms_resources = 1014,
+      /// @brief
+      xtd_tunit_include = 1015,
+      /// @brief
+      xtd_tunit_libraries = 1016,
     };
     
     /// @brief Specifies options to use for getting the path to a special folder.
@@ -457,13 +513,28 @@ namespace xtd {
     /// @remarks If value is empty and the environment variable named by variable exists, the environment variable is deleted. If variable does not exist, no error occurs even though the operation cannot be performed.
     /// @todo Add xtd::registry and uncomment lines.
     static void set_environment_variable(const xtd::ustring& variable, const xtd::ustring& value, environment_variable_target target);
+    
+  private:
+    inline static constexpr const char* xtd_include_path = __XTD_INCLUDE_PATH__;
+    inline static constexpr const char* xtd_libraries_path = __XTD_LIB_PATH__;
+    inline static constexpr const char* xtd_resources_path = __XTD_RESOURCES_PATH__;
+    inline static constexpr const char* xtd_console_include_path = __XTD_CONSOLE_INCLUDE_PATH__;
+    inline static constexpr const char* xtd_console_libraries_path = __XTD_CONSOLE_LIB_PATH__;
+    inline static constexpr const char* xtd_drawing_include_path = __XTD_DRAWING_INCLUDE_PATH__;
+    inline static constexpr const char* xtd_drawing_libraries_path = __XTD_DRAWING_LIB_PATH__;
+    inline static constexpr const char* xtd_drawing_resources_path = __XTD_DRAWING_RESOURCES_PATH__;
+    inline static constexpr const char* xtd_forms_include_path = __XTD_FORMS_INCLUDE_PATH__;
+    inline static constexpr const char* xtd_forms_libraries_path = __XTD_FORMS_LIB_PATH__;
+    inline static constexpr const char* xtd_forms_resources_path = __XTD_FORMS_RESOURCES_PATH__;
+    inline static constexpr const char* xtd_tunit_include_path = __XTD_TUNIT_INCLUDE_PATH__;
+    inline static constexpr const char* xtd_tunit_libraries_path = __XTD_TUNIT_LIB_PATH__;
   };
   /// @}
 }
 
 /// @cond
 template<> struct xtd::enum_register<xtd::environment::special_folder> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::environment::special_folder> {{xtd::environment::special_folder::desktop, "desktop"}, {xtd::environment::special_folder::programs, "programs"}, {xtd::environment::special_folder::my_documents, "my_documents"}, {xtd::environment::special_folder::personal, "personal"}, {xtd::environment::special_folder::favorites, "favorites"}, {xtd::environment::special_folder::startup, "startup"}, {xtd::environment::special_folder::recent, "recent"}, {xtd::environment::special_folder::send_to, "send_to"}, {xtd::environment::special_folder::start_menu, "start_menu"}, {xtd::environment::special_folder::personal, "my_music"}, {xtd::environment::special_folder::my_videos, "my_videos"}, {xtd::environment::special_folder::desktop_directory, "desktop_directory"}, {xtd::environment::special_folder::my_computer, "my_computer"}, {xtd::environment::special_folder::network_shortcuts, "network_shortcuts"}, {xtd::environment::special_folder::fonts, "fonts"}, {xtd::environment::special_folder::templates, "templates"}, {xtd::environment::special_folder::common_start_menu, "common_start_menu"}, {xtd::environment::special_folder::common_programs, "common_programs"}, {xtd::environment::special_folder::common_startup, "common_startup"}, {xtd::environment::special_folder::common_desktop_directory, "common_desktop_directory"}, {xtd::environment::special_folder::application_data, "application_data"}, {xtd::environment::special_folder::printer_shortcuts, "printer_shortcuts"}, {xtd::environment::special_folder::local_application_data, "local_application_data"}, {xtd::environment::special_folder::internet_cache, "internet_cache"}, {xtd::environment::special_folder::cookies, "cookies"}, {xtd::environment::special_folder::history, "history"}, {xtd::environment::special_folder::common_application_data, "common_application_data"}, {xtd::environment::special_folder::windows, "windows"}, {xtd::environment::special_folder::system, "system"}, {xtd::environment::special_folder::program_files, "program_files"}, {xtd::environment::special_folder::my_pictures, "my_pictures"}, {xtd::environment::special_folder::user_profile, "user_profile"}, {xtd::environment::special_folder::system_x86, "system_x86"}, {xtd::environment::special_folder::program_files_x86, "program_files_x86"}, {xtd::environment::special_folder::common_program_files, "common_program_files"}, {xtd::environment::special_folder::common_program_files_x86, "common_program_files_x86"}, {xtd::environment::special_folder::common_templates, "common_templates"}, {xtd::environment::special_folder::common_documents, "common_documents"}, {xtd::environment::special_folder::common_admin_tools, "common_admin_tools"}, {xtd::environment::special_folder::admin_tools, "admin_tools"}, {xtd::environment::special_folder::common_music, "common_music"}, {xtd::environment::special_folder::common_pictures, "common_pictures"}, {xtd::environment::special_folder::common_videos, "common_videos"}, {xtd::environment::special_folder::resources, "resources"}, {xtd::environment::special_folder::localized_resources, "localized_resources"}, {xtd::environment::special_folder::common_oem_links, "common_oem_links"}, {xtd::environment::special_folder::cd_burning, "cd_burning"}, {xtd::environment::special_folder::home, "home"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::environment::special_folder> {{xtd::environment::special_folder::desktop, "desktop"}, {xtd::environment::special_folder::programs, "programs"}, {xtd::environment::special_folder::my_documents, "my_documents"}, {xtd::environment::special_folder::personal, "personal"}, {xtd::environment::special_folder::favorites, "favorites"}, {xtd::environment::special_folder::startup, "startup"}, {xtd::environment::special_folder::recent, "recent"}, {xtd::environment::special_folder::send_to, "send_to"}, {xtd::environment::special_folder::start_menu, "start_menu"}, {xtd::environment::special_folder::personal, "my_music"}, {xtd::environment::special_folder::my_videos, "my_videos"}, {xtd::environment::special_folder::desktop_directory, "desktop_directory"}, {xtd::environment::special_folder::my_computer, "my_computer"}, {xtd::environment::special_folder::network_shortcuts, "network_shortcuts"}, {xtd::environment::special_folder::fonts, "fonts"}, {xtd::environment::special_folder::templates, "templates"}, {xtd::environment::special_folder::common_start_menu, "common_start_menu"}, {xtd::environment::special_folder::common_programs, "common_programs"}, {xtd::environment::special_folder::common_startup, "common_startup"}, {xtd::environment::special_folder::common_desktop_directory, "common_desktop_directory"}, {xtd::environment::special_folder::application_data, "application_data"}, {xtd::environment::special_folder::printer_shortcuts, "printer_shortcuts"}, {xtd::environment::special_folder::local_application_data, "local_application_data"}, {xtd::environment::special_folder::internet_cache, "internet_cache"}, {xtd::environment::special_folder::cookies, "cookies"}, {xtd::environment::special_folder::history, "history"}, {xtd::environment::special_folder::common_application_data, "common_application_data"}, {xtd::environment::special_folder::windows, "windows"}, {xtd::environment::special_folder::system, "system"}, {xtd::environment::special_folder::program_files, "program_files"}, {xtd::environment::special_folder::my_pictures, "my_pictures"}, {xtd::environment::special_folder::user_profile, "user_profile"}, {xtd::environment::special_folder::system_x86, "system_x86"}, {xtd::environment::special_folder::program_files_x86, "program_files_x86"}, {xtd::environment::special_folder::common_program_files, "common_program_files"}, {xtd::environment::special_folder::common_program_files_x86, "common_program_files_x86"}, {xtd::environment::special_folder::common_templates, "common_templates"}, {xtd::environment::special_folder::common_documents, "common_documents"}, {xtd::environment::special_folder::common_admin_tools, "common_admin_tools"}, {xtd::environment::special_folder::admin_tools, "admin_tools"}, {xtd::environment::special_folder::common_music, "common_music"}, {xtd::environment::special_folder::common_pictures, "common_pictures"}, {xtd::environment::special_folder::common_videos, "common_videos"}, {xtd::environment::special_folder::resources, "resources"}, {xtd::environment::special_folder::localized_resources, "localized_resources"}, {xtd::environment::special_folder::common_oem_links, "common_oem_links"}, {xtd::environment::special_folder::cd_burning, "cd_burning"}, {xtd::environment::special_folder::home, "home"}, {xtd::environment::special_folder::xtd_install, "xtd_install"}, {xtd::environment::special_folder::xtd_locale, "xtd_locale"}, {xtd::environment::special_folder::xtd_reference_guide, "xtd_reference_guide"}, {xtd::environment::special_folder::xtd_themes, "xtd_themes"}, {xtd::environment::special_folder::xtd_include, "xtd_include"}, {xtd::environment::special_folder::xtd_libraries, "xtd_libraries"}, {xtd::environment::special_folder::xtd_resources, "xtd_resources"}, {xtd::environment::special_folder::xtd_console_include, "xtd_console_include"}, {xtd::environment::special_folder::xtd_console_libraries, "xtd_console_libraries"}, {xtd::environment::special_folder::xtd_drawing_include, "xtd_drawing_include"}, {xtd::environment::special_folder::xtd_drawing_libraries, "xtd_drawing_libraries"}, {xtd::environment::special_folder::xtd_drawing_resources, "xtd_drawing_resources"}, {xtd::environment::special_folder::xtd_forms_include, "xtd_forms_include"}, {xtd::environment::special_folder::xtd_forms_libraries, "xtd_forms_libraries"}, {xtd::environment::special_folder::xtd_forms_resources, "xtd_forms_resources"}, {xtd::environment::special_folder::xtd_tunit_include, "xtd_tunit_include"}, {xtd::environment::special_folder::xtd_tunit_libraries, "xtd_tunit_libraries"}};}
 };
 
 template<> struct xtd::enum_register<xtd::environment::special_folder_option> {

@@ -34,7 +34,6 @@ option(XTD_SET_COMPILER_OPTION_WARNINGS_TO_ALL "Enable compiler option warnings 
 option(XTD_SET_COMPILER_OPTION_WARNINGS_AS_ERRORS "Enable compiler option warnings as errors" OFF)
 add_definitions(-D__XTD_INSTALL_PATH__="${CMAKE_INSTALL_PREFIX}")
 add_definitions(-D__XTD_LOCALE_PATH__="${CMAKE_INSTALL_PREFIX}/share/xtd/locale")
-add_definitions(-D__XTD_RESOURCES_PATH__="${CMAKE_INSTALL_PREFIX}/share/xtd/resources")
 add_definitions(-D__XTD_REFERENCE_GUIDE_PATH__="${CMAKE_INSTALL_PREFIX}/share/xtd/reference_guide")
 add_definitions(-D__XTD_THEMES_PATH__="${CMAKE_INSTALL_PREFIX}/share/xtd/themes")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/scripts/cmake)

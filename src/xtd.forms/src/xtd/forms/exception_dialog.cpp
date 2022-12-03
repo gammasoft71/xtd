@@ -134,9 +134,9 @@ namespace {
         report += ustring::format("{}{}", library, environment::new_line());
         report += ustring::format("    Name: {}.{}{}"_t, library, environment::os_version().is_windows_platform() ? "lib" : "a", environment::new_line());
         report += ustring::format("    Version: {}{}"_t, environment::version(), environment::new_line());
-        report += ustring::format("    include path: {}{}"_t, xtd::io::path::combine(__XTD_INSTALL_PATH__, "include"), environment::new_line());
-        report += ustring::format("    library path: {}{}"_t, xtd::io::path::combine(__XTD_INSTALL_PATH__, "lib"), environment::new_line());
-        report += ustring::format("    resources path: {}{}"_t, __XTD_RESOURCES_PATH__, environment::new_line());
+        report += ustring::format("    include path: {}{}"_t, xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), environment::new_line());
+        report += ustring::format("    library path: {}{}"_t, xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::new_line());
+        report += ustring::format("    resources path: {}{}"_t, environment::get_folder_path(environment::special_folder::xtd_resources), environment::new_line());
         first = false;
       }
       report += environment::new_line();

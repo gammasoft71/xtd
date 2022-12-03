@@ -371,7 +371,7 @@ namespace xtdc_command {
     }
     
     void create_doxygen_txt(const xtd::ustring& name) const {
-      xtd::io::file::write_all_text(xtd::io::path::combine(path_, ".doxygen.txt"), xtd::io::path::combine(__XTD_RESOURCES_PATH__, "texts", "doxygen.txt"));
+      xtd::io::file::write_all_text(xtd::io::path::combine(path_, ".doxygen.txt"), xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::xtd_resources), "texts", "doxygen.txt"));
     }
     
     void create_readme_md(const xtd::ustring& name) const {
