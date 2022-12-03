@@ -80,6 +80,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() const {return "The operation was canceled."_t;}
+    const char* default_message() const noexcept {return "The operation was canceled."_t;}
   };
 }

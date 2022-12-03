@@ -80,6 +80,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() const {return "Overflow or underflow in the arithmetic operation."_t;}
+    const char* default_message() const noexcept {return "Overflow or underflow in the arithmetic operation."_t;}
   };
 }

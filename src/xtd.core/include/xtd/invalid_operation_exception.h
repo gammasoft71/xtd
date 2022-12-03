@@ -80,6 +80,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() const {return "Operation is not valid due to the current state of the object."_t;}
+    const char* default_message() const noexcept {return "Operation is not valid due to the current state of the object."_t;}
   };
 }

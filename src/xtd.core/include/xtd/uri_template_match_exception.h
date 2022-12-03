@@ -77,6 +77,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() const {return "System error."_t;}
+    const char* default_message() const noexcept {return "System error."_t;}
   };
 }

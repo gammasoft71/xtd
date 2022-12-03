@@ -87,7 +87,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      const char* default_message() const {return "Attempted to access a drive that is not available."_t;}
+      const char* default_message() const noexcept {return "Attempted to access a drive that is not available."_t;}
     };
   }
 }

@@ -80,6 +80,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() const {return "Cannot access a closed object."_t;}
+    const char* default_message() const noexcept {return "Cannot access a closed object."_t;}
   };
 }

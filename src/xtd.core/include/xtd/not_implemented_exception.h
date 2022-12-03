@@ -80,6 +80,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() const {return "The method or operation is not implemented."_t;}
+    const char* default_message() const noexcept {return "The method or operation is not implemented."_t;}
   };
 }

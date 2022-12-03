@@ -82,7 +82,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      const char* default_message() const {return "Security error detected."_t;}
+      const char* default_message() const noexcept {return "Security error detected."_t;}
     };
   }
 }

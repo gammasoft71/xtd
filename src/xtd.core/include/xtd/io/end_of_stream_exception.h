@@ -87,7 +87,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      const char* default_message() const {return "Attempted to read past the end of the stream."_t;}
+      const char* default_message() const noexcept {return "Attempted to read past the end of the stream."_t;}
     };
   }
 }

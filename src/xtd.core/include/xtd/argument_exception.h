@@ -81,6 +81,6 @@ namespace xtd {
     /// @endcond
     
   private:
-    const char* default_message() const {return "Value does not fall within the expected range."_t;}
+    const char* default_message() const noexcept {return "Value does not fall within the expected range."_t;}
   };
 }
