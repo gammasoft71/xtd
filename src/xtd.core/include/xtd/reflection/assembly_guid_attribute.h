@@ -37,7 +37,7 @@ namespace xtd {
       /// @{
       /// @brief Gets guid information.
       /// @return A string containing the guid information.
-      const ustring& guid() const {return guid_;}
+      const ustring& guid() const noexcept;
       /// @}
       
     protected:

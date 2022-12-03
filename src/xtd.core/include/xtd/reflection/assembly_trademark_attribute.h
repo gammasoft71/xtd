@@ -35,7 +35,7 @@ namespace xtd {
       /// @{
       /// @brief Gets trademark information.
       /// @return A string containing the trademark information.
-      const ustring& trademark() const {return trademark_;}
+      const ustring& trademark() const noexcept;
       /// @}
       
     protected:

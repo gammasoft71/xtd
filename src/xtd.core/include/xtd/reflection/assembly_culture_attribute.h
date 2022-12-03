@@ -39,7 +39,7 @@ namespace xtd {
       /// @{
       /// @brief Gets culture information.
       /// @return A string containing the culture information.
-      const ustring& culture() const {return culture_;}
+      const ustring& culture() const noexcept;
       /// @}
       
     protected:

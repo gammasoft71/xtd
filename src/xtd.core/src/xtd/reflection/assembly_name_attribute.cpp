@@ -11,6 +11,10 @@ assembly_name_attribute::assembly_name_attribute(const ustring& name, const obje
   __assembly_name_attribute__() = make_shared<xtd::reflection::assembly_name_attribute>(name);
 }
 
+const ustring& assembly_name_attribute::name() const noexcept {
+  return name_;
+}
+
 shared_ptr<object> assembly_name_attribute::get_type_id() const noexcept {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
 }

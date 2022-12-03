@@ -39,7 +39,7 @@ namespace xtd {
       /// @{
       /// @brief Gets copyright information.
       /// @return A string containing the copyright information.
-      const ustring& copyright() const {return copyright_;}
+      const ustring& copyright() const noexcept;
       /// @}
       
     protected:

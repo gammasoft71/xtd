@@ -37,7 +37,7 @@ namespace xtd {
       /// @{
       /// @brief Gets identifier information.
       /// @return A string containing the identifier information.
-      const ustring& identifier() const {return identifier_;}
+      const ustring& identifier() const noexcept;
       /// @}
       
     protected:

@@ -38,7 +38,7 @@ namespace xtd {
       /// @{
       /// @brief Gets decription information.
       /// @return A string containing the decription information.
-      const ustring& description() const {return description_;}
+      const ustring& description() const noexcept;
       /// @}
       
     protected:

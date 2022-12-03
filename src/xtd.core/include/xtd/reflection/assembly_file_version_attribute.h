@@ -37,7 +37,7 @@ namespace xtd {
       /// @{
       /// @brief Gets version information.
       /// @return A string containing the version information.
-      const ustring& version() const {return version_;}
+      const ustring& version() const noexcept;
       /// @}
       
     protected:
