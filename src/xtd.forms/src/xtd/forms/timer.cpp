@@ -6,6 +6,10 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+timer::~timer() {
+  stop();
+}
+
 bool timer::enabled() const noexcept {
   return data_->enabled;
 }
