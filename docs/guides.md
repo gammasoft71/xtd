@@ -30,6 +30,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [ustring](ustring.md)
     * [enum, enum class and enum struct](enum_class.md)
     * [Literal operators](literal_operators.md)
+    * [Internationalization](internationalization.md)
   * Common I/O tasks
     * [Common I/O tasks​](common_io_tasks.md)
     * How-tos
