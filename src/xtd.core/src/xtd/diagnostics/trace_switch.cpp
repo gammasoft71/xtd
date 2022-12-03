@@ -9,27 +9,27 @@ trace_switch::trace_switch(const ustring& display_name, const ustring& descripti
 trace_switch::trace_switch(const ustring& display_name, const ustring& description, const ustring& default_switch_value) : switch_base(display_name, description, default_switch_value) {
 }
 
-xtd::diagnostics::trace_level trace_switch::level() const {
+xtd::diagnostics::trace_level trace_switch::level() const noexcept {
   return static_cast<xtd::diagnostics::trace_level>(switch_setting());
 }
 
-void trace_switch::level(xtd::diagnostics::trace_level level) {
+void trace_switch::level(xtd::diagnostics::trace_level level) noexcept {
   switch_setting(static_cast<int32_t>(level));
 }
 
-bool trace_switch::trace_switch::trace_error() const {
+bool trace_switch::trace_switch::trace_error() const noexcept {
   return static_cast<int32_t>(level()) >= static_cast<int32_t>(xtd::diagnostics::trace_level::error);
 }
 
-bool trace_switch::trace_info() const {
+bool trace_switch::trace_info() const noexcept {
   return static_cast<int32_t>(level()) >= static_cast<int32_t>(xtd::diagnostics::trace_level::info);
 }
 
-bool trace_switch::trace_verbose() const {
+bool trace_switch::trace_verbose() const noexcept {
   return static_cast<int32_t>(level()) == static_cast<int32_t>(xtd::diagnostics::trace_level::verbose);
 }
 
-bool trace_switch::trace_warning() const {
+bool trace_switch::trace_warning() const noexcept {
   return static_cast<int32_t>(level()) >= static_cast<int32_t>(xtd::diagnostics::trace_level::warning);
 }
 

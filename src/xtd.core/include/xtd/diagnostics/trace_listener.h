@@ -61,37 +61,37 @@ namespace xtd {
       /// @brief Gets the indent level.
       /// @return uint32_t The indent level. The default is zero.
       /// @remarks The IndentLevel property represents the number of times that the indent specified by the IndentSize property is applied. This property is stored on per-thread/per-request basis.
-      uint32_t indent_level() const;
+      uint32_t indent_level() const noexcept;
       
       /// @brief Sets the indent level.
       /// @param indent_level The indent level. The default is zero.
       /// @remarks The IndentLevel property represents the number of times that the indent specified by the IndentSize property is applied. This property is stored on per-thread/per-request basis.
-      void indent_level(uint32_t indent_level);
+      void indent_level(uint32_t indent_level) noexcept;
       
       /// @brief Gets the number of spaces in an indent.
       /// @return uint32_t The number of spaces in an indent. The default is four spaces.
       /// @remarks The property is stored on per-thread/per-request basis.
-      uint32_t indent_size() const;
+      uint32_t indent_size() const noexcept;
       
       /// @brief Sets the number of spaces in an indent.
       /// @param int32 The number of spaces in an indent. The default is four spaces.
       /// @remarks The property is stored on per-thread/per-request basis.
-      void indent_size(uint32_t indent_size);
+      void indent_size(uint32_t indent_size) noexcept;
       
       /// @brief Gets a value indicating whether the trace listener is thread safe.
       /// @return bool true if the trace listener is thread safe; otherwise, false. The default is false.
       /// @remarks The value of IsThreadSafe is used to determine whether to use a global lock when writing to the listener. If the value of IsThreadSafe is false, the global lock is used regardless of the value of UseGlobalLock. The global lock is not used only if the value of IsThreadSafe is true and the value of UseGlobalLock is false. The default behavior is to use the global lock whenever writing to the listener.
-      virtual bool is_thread_safe() const;
+      virtual bool is_thread_safe() const noexcept;
       
       /// @brief Gets or sets a name for this TraceListener.
       /// @return string A name for this TraceListener. The default is an empty string ("").
       /// @remarks The name can be used to organize and access listeners in a TraceListenerCollection collection.
-      const xtd::ustring& name() const;
+      const xtd::ustring& name() const noexcept;
       
       /// @brief Sets a name for this TraceListener.
       /// @param name A name for this TraceListener. The default is an empty string ("").
       /// @remarks The name can be used to organize and access listeners in a TraceListenerCollection collection.
-      void name(const xtd::ustring& name);
+      void name(const xtd::ustring& name) noexcept;
       
       /// @brief Gets the trace output options.
       /// @return trace_options A bitwise combination of the enumeration values. The default is None.
@@ -100,7 +100,7 @@ namespace xtd {
       /// * The EventLogTraceListener class, because it can cause a large volume of data to be written to the log.
       /// * The Write and WriteLine methods of the ConsoleTraceListener, DefaultTraceListener, and TextWriterTraceListener classes.
       /// * The Write and WriteLine methods of the TraceListener class when they are not overridden in a derived class.
-      trace_options trace_output_options() const;
+      trace_options trace_output_options() const noexcept;
       
       /// @brief Sets the trace output options.
       /// @param trace_output_options A bitwise combination of the enumeration values. The default is None.
@@ -109,7 +109,7 @@ namespace xtd {
       /// * The EventLogTraceListener class, because it can cause a large volume of data to be written to the log.
       /// * The Write and WriteLine methods of the ConsoleTraceListener, DefaultTraceListener, and TextWriterTraceListener classes.
       /// * The Write and WriteLine methods of the TraceListener class when they are not overridden in a derived class.
-      void trace_output_options(trace_options trace_output_options);
+      void trace_output_options(trace_options trace_output_options) noexcept;
       /// @}
       
       /// @name Methods
@@ -315,14 +315,14 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating whether to indent the output.
       /// @return true if the output should be indented; otherwise, false.
-      bool need_indent() const;
+      bool need_indent() const noexcept;
       /// @brief Sets a value indicating whether to indent the output.
       /// @param need_indent true if the output should be indented; otherwise, false.
-      void need_indent(bool need_indent);
+      void need_indent(bool need_indent) noexcept;
       
       /// @brief Sets a value indicating whether the trace listener is thread safe.
       /// @param thread_safe true if the trace listener is thread safe; otherwise, false. The default is false.
-      void thread_safe(bool thread_safe);
+      void thread_safe(bool thread_safe) noexcept;
       /// @}
       
       /// @name Protected methods

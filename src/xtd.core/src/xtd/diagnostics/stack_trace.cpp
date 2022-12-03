@@ -37,15 +37,15 @@ stack_trace::stack_trace(const std::exception& exception, size_t skip_frames) : 
 stack_trace::stack_trace(const std::exception& exception, size_t skip_frames, bool need_file_info) : stack_trace(ustring::full_class_name(exception), skip_frames, need_file_info) {
 }
 
-size_t stack_trace::frame_count() const {
+size_t stack_trace::frame_count() const noexcept {
   return frames_.size();
 }
 
-const xtd::diagnostics::stack_frame& stack_trace::get_frame(size_t index) {
+const xtd::diagnostics::stack_frame& stack_trace::get_frame(size_t index) noexcept {
   return frames_[index];
 }
 
-const stack_trace::stack_frame_collection& stack_trace::get_frames() const {
+const stack_trace::stack_frame_collection& stack_trace::get_frames() const noexcept {
   return frames_;
 }
 

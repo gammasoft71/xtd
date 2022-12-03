@@ -5,28 +5,28 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-ustring trace_event_cache::call_stack() const {
+ustring trace_event_cache::call_stack() const noexcept {
   return stack_trace(true).to_string();
 }
 
-const date_time& trace_event_cache::date_time() const {
+const date_time& trace_event_cache::date_time() const noexcept {
   if (date_time_ == date_time::min_value)
     date_time_ = date_time::now();
   return date_time_;
 }
 
-std::vector<ustring> trace_event_cache::logical_operation_stack() const {
+std::vector<ustring> trace_event_cache::logical_operation_stack() const noexcept {
   return std::vector<ustring>();
 }
 
-int32_t trace_event_cache::process_id() const {
+int32_t trace_event_cache::process_id() const noexcept {
   return -1;
 }
 
-ustring trace_event_cache::thread_id() const {
+ustring trace_event_cache::thread_id() const noexcept {
   return ustring::format("{}", std::this_thread::get_id());
 }
 
-int64_t trace_event_cache::timestamp() const {
+int64_t trace_event_cache::timestamp() const noexcept {
   return stopwatch::get_timestamp();
 }

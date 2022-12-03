@@ -14,56 +14,52 @@ bool& trace::show_assert_dialog_ = __show_assert_dialog__;
 mutex trace::global_lock_;
 ustring trace::source_name_ = environment::get_command_line_args().size() == 0 ? "(unknown)" : environment::get_command_line_args()[0];
 
-bool trace::auto_flush() {
+bool trace::auto_flush() noexcept {
   return auto_flush_;
 }
 
-void trace::auto_flush(bool auto_flush) {
+void trace::auto_flush(bool auto_flush) noexcept {
   auto_flush_ = auto_flush;
 }
 
-uint32_t trace::indent_level() {
+uint32_t trace::indent_level() noexcept {
   return indent_level_;
 }
 
-void trace::indent_level(uint32_t indent_level) {
+void trace::indent_level(uint32_t indent_level) noexcept {
   indent_level_ = indent_level;
 }
 
-uint32_t trace::indent_size() {
+uint32_t trace::indent_size() noexcept {
   return indent_size_;
 }
 
-void trace::indent_size(uint32_t indent_size) {
+void trace::indent_size(uint32_t indent_size) noexcept {
   indent_size_ = indent_size;
 }
 
-trace_listener_collection& trace::listeners() {
+trace_listener_collection& trace::listeners() noexcept {
   return listeners_;
 }
 
-void trace::listeners(const trace_listener_collection& listeners) {
+void trace::listeners(const trace_listener_collection& listeners) noexcept {
   listeners_ = listeners;
 }
 
-bool trace::show_assert_dialog() {
+bool trace::show_assert_dialog() noexcept {
   return show_assert_dialog_;
 }
 
-void trace::show_assert_dialog(bool show_assert_dialog) {
+void trace::show_assert_dialog(bool show_assert_dialog) noexcept {
   show_assert_dialog_ = show_assert_dialog;
 }
 
-bool trace::use_global_lock() {
+bool trace::use_global_lock() noexcept {
   return use_global_lock_;
 }
 
-void trace::use_global_lock(bool use_global_lock) {
+void trace::use_global_lock(bool use_global_lock) noexcept {
   use_global_lock_ = use_global_lock;
-}
-
-void trace::indent() {
-  indent_level(indent_level() + 1);
 }
 
 void trace::cassert(bool condition) {
@@ -82,7 +78,11 @@ void trace::cassert(bool condition, const xtd::diagnostics::stack_frame& stack_f
   if (__should_aborted__(condition, "", stack_frame)) __std_abort__();
 }
 
-void trace::unindent() {
+void trace::indent() noexcept {
+  indent_level(indent_level() + 1);
+}
+
+void trace::unindent() noexcept {
   if (indent_level() != 0) indent_level(indent_level() - 1);
 }
 
