@@ -44,7 +44,7 @@ const xtd::ustring country::emoticon() const noexcept {
 }
 
 const image country::flag() const noexcept {
-  return bitmap(path::combine({__XTD_RESOURCES_PATH__, "countries", alpha_2_code().to_lower() + ".png"}));
+  return bitmap(path::combine({environment::get_folder_path(environment::special_folder::xtd_resources), "countries", alpha_2_code().to_lower() + ".png"}));
 }
 
 const image country::flag_squared() const noexcept {

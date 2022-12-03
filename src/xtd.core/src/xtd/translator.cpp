@@ -100,7 +100,7 @@ void translator::initialize() {
   static xtd::ustring language_initialized ;
   if (language_initialized == language_ || language_values_.find(language_) != language_values_.end()) return;
   
-  parse_locale(__XTD_LOCALE_PATH__);
+  parse_locale(environment::get_folder_path(environment::special_folder::xtd_locale));
   if (xtd::environment::os_version().is_macos_platform()) parse_locale(io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "locale"));
   else parse_locale(io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "locale"));
   /*

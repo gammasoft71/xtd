@@ -266,7 +266,7 @@ const style_sheet::status_bar_panels_t& style_sheet::status_bar_panels() const n
 const style_sheet::style_sheets_t& style_sheet::style_sheets() noexcept {
   if (!style_sheets_.empty()) return style_sheets_;
   
-  for (auto theme_dir : directory::enumerate_directories(__XTD_THEMES_PATH__)) {
+  for (auto theme_dir : directory::enumerate_directories(environment::get_folder_path(environment::special_folder::xtd_themes))) {
     xtd::ustring theme_css;
     for (auto theme_file : directory::enumerate_files(theme_dir, "*.css"))
       theme_css += file::read_all_text(theme_file);
@@ -280,7 +280,7 @@ const style_sheet::style_sheets_t& style_sheet::style_sheets() noexcept {
 const style_sheet::style_sheet_names_t& style_sheet::style_sheet_names() noexcept {
   if (!style_sheet_names_.empty()) return style_sheet_names_;
   
-  for (auto theme_dir : directory::enumerate_directories(__XTD_THEMES_PATH__)) {
+  for (auto theme_dir : directory::enumerate_directories(environment::get_folder_path(environment::special_folder::xtd_themes))) {
     if (!file::exists(path::combine(theme_dir, "theme.css"))) continue;
     css_reader reader(file::read_all_text(path::combine(theme_dir, "theme.css")));
     selector_map::const_iterator selectors_iterator =  reader.selectors().find("theme");
@@ -299,14 +299,14 @@ const style_sheet& style_sheet::system_style_sheet() noexcept {
   if (system_style_sheet_ != style_sheet::empty)
     return system_style_sheet_;
   if (environment::os_version().is_windows_platform())
-    return (system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, application::dark_mode_enabled() ? "windows_dark" : "windows_light")), false));
+    return (system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_themes), application::dark_mode_enabled() ? "windows_dark" : "windows_light")), false));
   if (environment::os_version().is_macos_platform())
-    return (system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, application::dark_mode_enabled() ? "macos_dark" : "macos_light")), false));
+    return (system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_themes), application::dark_mode_enabled() ? "macos_dark" : "macos_light")), false));
   if (environment::os_version().is_unix_platform() && environment::os_version().desktop_environment() == "kde")
-    return (system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__,  application::dark_mode_enabled() ? "kde_dark" : "kde_light")), false));
+    return (system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_themes),  application::dark_mode_enabled() ? "kde_dark" : "kde_light")), false));
   if (environment::os_version().is_unix_platform())
-    return (system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, application::dark_mode_enabled() ? "gnome_dark" : "gnome_light")), false));
-  return (system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(__XTD_THEMES_PATH__, "default")), false));
+    return (system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_themes), application::dark_mode_enabled() ? "gnome_dark" : "gnome_light")), false));
+  return (system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_themes), "default")), false));
 }
 
 const xtd::forms::style_sheets::theme& style_sheet::theme() const noexcept {
@@ -385,7 +385,7 @@ style_sheet::forms_t style_sheet::form_from_css(const  xtd::ustring& css_text) {
 }
 
 style_sheet style_sheet::get_style_sheet_from_name(const xtd::ustring& name) {
-  for (auto theme_dir : directory::enumerate_directories(__XTD_THEMES_PATH__)) {
+  for (auto theme_dir : directory::enumerate_directories(environment::get_folder_path(environment::special_folder::xtd_themes))) {
     css_reader reader(file::read_all_text(path::combine(theme_dir, "theme.css")));
     selector_map::const_iterator selectors_iterator =  reader.selectors().find("theme");
     if (selectors_iterator == reader.selectors().end()) break;

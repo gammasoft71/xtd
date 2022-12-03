@@ -34,7 +34,7 @@ namespace xtdc_command {
     }
     
   private:
-    static ustring get_full_path() noexcept {return __XTD_RESOURCES_PATH__;}
+    static ustring get_full_path() noexcept {return xtd::environment::get_folder_path(xtd::environment::special_folder::xtd_resources);}
 
     static ustring get_project_full_path_from_path(const xtd::ustring& path) noexcept {
       if (path.empty() || path == ".") return environment::current_directory();

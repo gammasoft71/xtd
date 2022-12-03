@@ -17,7 +17,7 @@ namespace {
   }
   
   static std::string forms_resource_path() {
-    return __XTD_RESOURCES_PATH__;
+    return xtd::environment::get_folder_path(xtd::environment::special_folder::xtd_resources);
   }
   
   static intptr_t create_cursor_from_resources(const std::string& name, const xtd::drawing::point& hot_spot) {

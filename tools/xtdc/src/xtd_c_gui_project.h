@@ -20,7 +20,7 @@ namespace xtdc_command {
     }
     
   private:
-    static xtd::ustring get_base_path() noexcept {return __XTD_RESOURCES_PATH__;}
+    static xtd::ustring get_base_path() noexcept {return xtd::environment::get_folder_path(xtd::environment::special_folder::xtd_resources);}
     
     void create_solution_cmakelists_txt(const xtd::ustring& name) const {
       std::vector<xtd::ustring> lines {
