@@ -12,10 +12,109 @@ using namespace std;
 using namespace std::chrono;
 using namespace xtd;
 
+uint32_t time_zone_info::transition_time::day() const noexcept {
+  return day_;
+}
+
+xtd::day_of_week time_zone_info::transition_time::day_of_week() const noexcept {
+  return day_of_week_;
+}
+
+bool time_zone_info::transition_time::is_fixed_rule() const noexcept {
+  return is_fixed_date_rule_;
+}
+
+uint32_t time_zone_info::transition_time::month() const noexcept {
+  return month_;
+}
+
+xtd::date_time time_zone_info::transition_time::time_of_day() const noexcept {
+  return time_of_day_;
+}
+
+uint32_t time_zone_info::transition_time::week() const noexcept {
+  return week_;
+}
+
+time_zone_info::transition_time time_zone_info::transition_time::create_fixed_date_rule(date_time time_of_day, uint32_t month, uint32_t day) {
+  if (time_of_day.year() != 1 || time_of_day.month() != 1 || time_of_day.day() != 1 || time_of_day.kind() != date_time_kind::unspecified) throw argument_exception(csf_);
+  if (month < 1 || month > 12 || day < 1 || day > 31) throw argument_out_of_range_exception(csf_);
+  transition_time result;
+  result.day_ = day;
+  result.is_fixed_date_rule_ = false;
+  result.month_ = month;
+  result.time_of_day_ = time_of_day;
+  return result;
+}
+
+time_zone_info::transition_time time_zone_info::transition_time::create_floating_date_rule(date_time time_of_day, uint32_t month, uint32_t week, xtd::day_of_week day_of_week) {
+  if (time_of_day.year() != 1 || time_of_day.month() != 1 || time_of_day.day() != 1 || time_of_day.kind() != date_time_kind::unspecified) throw argument_exception(csf_);
+  if (month < 1 || month > 12 || week < 1 || week > 5) throw argument_out_of_range_exception(csf_);
+  transition_time result;
+  result.day_of_week_ = day_of_week;
+  result.is_fixed_date_rule_ = false;
+  result.month_ = month;
+  result.time_of_day_ = time_of_day;
+  result.week_ = week;
+  return result;
+}
+
+bool time_zone_info::transition_time::equals(const time_zone_info::transition_time& tt) const noexcept {
+  return day_ == tt.day_ && day_of_week_ == tt.day_of_week_ && is_fixed_date_rule_ == tt.is_fixed_date_rule_ && month_ == tt.month_ && time_of_day_ == tt.time_of_day_ && week_ == tt.week_;
+}
+
+bool time_zone_info::transition_time::equals(const object& obj) const noexcept {
+  return is<transition_time>(obj) && equals(static_cast<const transition_time&>(obj));
+}
+
+const xtd::date_time& time_zone_info::adjustement_rule::date_end() const noexcept {
+  return date_end_;
+}
+
+const xtd::date_time& time_zone_info::adjustement_rule::date_start() const noexcept {
+  return date_start_;
+}
+
+xtd::time_span time_zone_info::adjustement_rule::daylight_delta() const noexcept {
+  return daylight_delta_;
+}
+
+time_zone_info::transition_time time_zone_info::adjustement_rule::daylight_transition_end() const noexcept {
+  return daylight_transition_end_;
+}
+
+time_zone_info::transition_time time_zone_info::adjustement_rule::daylight_transition_start() const noexcept {
+  return daylight_transition_start_;
+}
+
+bool time_zone_info::adjustement_rule::equals(const adjustement_rule& ar) const noexcept {
+  return date_end_ == ar.date_end_ && date_start_ == ar.date_start_ && daylight_delta_ == ar.daylight_delta_ && daylight_transition_end_ == ar.daylight_transition_end_ && daylight_transition_start_ == ar.daylight_transition_start_;
+}
+
+bool time_zone_info::adjustement_rule::equals(const object& obj) const noexcept {
+  return is<adjustement_rule>(obj) && equals(static_cast<const adjustement_rule&>(obj));
+}
+
 time_zone_info::time_zone_info(const ustring& id, const ticks& base_utc_offset, const ustring& daylight_name, const ustring& display_name, const ustring& standard_name, bool supports_daylight_saving_time) : id_(id), base_utc_offset_(base_utc_offset), daylight_name_(daylight_name), display_name_(display_name), standard_name_(standard_name), supports_daylight_saving_time_(supports_daylight_saving_time) {
 }
 
-const time_zone_info& time_zone_info::local() {
+ticks time_zone_info::base_utc_offset() const noexcept {
+  return base_utc_offset_;
+}
+
+const ustring& time_zone_info::daylight_name() const noexcept {
+  return daylight_name_;
+}
+
+const ustring& time_zone_info::display_name() const noexcept {
+  return display_name_;
+}
+
+const ustring& time_zone_info::id() const noexcept {
+  return id_;
+}
+
+const time_zone_info& time_zone_info::local() noexcept {
   static time_zone_info local_time_zone;
   if (ustring::is_empty(local_time_zone.id_)) {
     native::date_time::time_zone_info tzi = native::date_time::get_local_time_zone();
@@ -29,7 +128,15 @@ const time_zone_info& time_zone_info::local() {
   return local_time_zone;
 }
 
-const time_zone_info& time_zone_info::utc() {
+const ustring& time_zone_info::standard_name() const noexcept {
+  return standard_name_;
+}
+
+bool time_zone_info::supports_daylight_saving_time() const noexcept {
+  return supports_daylight_saving_time_;
+}
+
+const time_zone_info& time_zone_info::utc() noexcept {
   static time_zone_info utc_time_zone("UTC", ticks(0), "UTC", "UTC", "UTC", false);
   return utc_time_zone;
 }
@@ -42,8 +149,7 @@ xtd::date_time time_zone_info::convert_time_to_utc(const xtd::date_time& date_ti
   return xtd::date_time::specify_kind(date_time.to_universal_time(), date_time_kind::utc);
 }
 
-
-const list<time_zone_info>& time_zone_info::get_system_time_zones() {
+const list<time_zone_info>& time_zone_info::get_system_time_zones() noexcept {
   static list<time_zone_info> system_time_zones;
   if (!system_time_zones.size())
     for (auto item : native::date_time::get_system_time_zones())
@@ -71,7 +177,7 @@ xtd::date_time time_zone_info::convert_time_by_system_time_zone_id(const xtd::da
   return {};
 }
 
-xtd::date_time time_zone_info::convert_time_by_system_time_zone_id(const xtd::date_time& date_time, const xtd::time_zone_info& source_time_zone_id, const xtd::time_zone_info& destination_time_zone_id) {
+xtd::date_time time_zone_info::convert_time_by_system_time_zone_id(const xtd::date_time& date_time, const xtd::ustring& source_time_zone_id, const xtd::ustring& destination_time_zone_id) {
   return {};
 }
 
@@ -106,11 +212,11 @@ bool time_zone_info::equals(const object& obj) const noexcept {
   return is<time_zone_info>(obj) && equals(static_cast<const time_zone_info&>(obj));
 }
 
-std::vector<time_zone_info::adjustement_rule> time_zone_info::get_adjustement_rules() const {
+std::vector<time_zone_info::adjustement_rule> time_zone_info::get_adjustement_rules() const noexcept {
   return adjustement_rules_;
 }
 
-bool time_zone_info::is_daylight_saving_time(const xtd::date_time& date_time) const {
+bool time_zone_info::is_daylight_saving_time(const xtd::date_time& date_time) const noexcept {
   if (date_time.kind() != date_time_kind::local || !supports_daylight_saving_time()) return false;
   return false;
 }
