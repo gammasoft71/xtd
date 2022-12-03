@@ -8,6 +8,6 @@ prompt::prompt(const ustring& text_to_speak) {
   data_->text_to_speak = text_to_speak;
 }
 
-bool prompt::is_completed() const {
+bool prompt::is_completed() const noexcept {
   return !data_->synthesizer ? true : data_->synthesizer->state() == synthesizer_state::ready;
 }
