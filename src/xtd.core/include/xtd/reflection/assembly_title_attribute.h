@@ -36,7 +36,7 @@ namespace xtd {
       /// @{
       /// @brief Gets title information.
       /// @return A string containing the title information.
-      const ustring& title() const {return title_;}
+      const ustring& title() const noexcept;
       /// @}
       
     protected:

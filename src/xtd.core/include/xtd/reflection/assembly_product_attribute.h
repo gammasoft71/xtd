@@ -37,7 +37,7 @@ namespace xtd {
       /// @{
       /// @brief Gets product information.
       /// @return A string containing the product information.
-      const ustring& product() const {return product_;}
+      const ustring& product() const noexcept;
       /// @}
       
     protected:
