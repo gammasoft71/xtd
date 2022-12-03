@@ -26,12 +26,12 @@ namespace xtd {
         /// @name Properties
         
         /// @{
-        const xtd::ustring& name() const {return name_;}
-        void name(const xtd::ustring& name) {name_ = name;}
+        const xtd::ustring& name() const noexcept {return name_;}
+        void name(const xtd::ustring& name) noexcept {name_ = name;}
         
-        const xtd::web::css::property_map& properties() const {return properties_;}
-        void properties(const xtd::web::css::property_map& properties) {properties_ = properties;}
-        xtd::web::css::property_map& properties() {return properties_;}
+        const xtd::web::css::property_map& properties() const noexcept {return properties_;}
+        void properties(const xtd::web::css::property_map& properties) noexcept {properties_ = properties;}
+        xtd::web::css::property_map& properties() noexcept {return properties_;}
         /// @}
         
       private:

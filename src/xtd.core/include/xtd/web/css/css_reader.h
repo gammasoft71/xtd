@@ -26,7 +26,7 @@ namespace xtd {
         /// @name Properties
         
         /// @{
-        const xtd::web::css::selector_map& selectors() const {return selectors_;}
+        const xtd::web::css::selector_map& selectors() const noexcept {return selectors_;}
         /// @}
         
       private:
