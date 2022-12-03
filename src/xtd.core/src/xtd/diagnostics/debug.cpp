@@ -18,60 +18,52 @@ bool& debug::show_assert_dialog_ = __show_assert_dialog__;
 mutex debug::global_lock_;
 ustring debug::source_name_ = environment::get_command_line_args().size() == 0 ? "(unknown)" : environment::get_command_line_args()[0];
 
-bool debug::auto_flush() {
+bool debug::auto_flush() noexcept {
   return auto_flush_;
 }
 
-void debug::auto_flush(bool auto_flush) {
+void debug::auto_flush(bool auto_flush) noexcept {
   auto_flush_ = auto_flush;
 }
 
-uint32_t debug::indent_level() {
+uint32_t debug::indent_level() noexcept {
   return indent_level_;
 }
 
-void debug::indent_level(uint32_t indent_level) {
+void debug::indent_level(uint32_t indent_level) noexcept {
   indent_level_ = indent_level;
 }
 
-uint32_t debug::indent_size() {
+uint32_t debug::indent_size() noexcept {
   return indent_size_;
 }
 
-void debug::indent_size(uint32_t indent_size) {
+void debug::indent_size(uint32_t indent_size) noexcept {
   indent_size_ = indent_size;
 }
 
-trace_listener_collection& debug::listeners() {
+trace_listener_collection& debug::listeners() noexcept {
   return listeners_;
 }
 
-void debug::listeners(const trace_listener_collection& listeners) {
+void debug::listeners(const trace_listener_collection& listeners) noexcept {
   listeners_ = listeners;
 }
 
-bool debug::show_assert_dialog() {
+bool debug::show_assert_dialog() noexcept {
   return show_assert_dialog_;
 }
 
-void debug::show_assert_dialog(bool show_assert_dialog) {
+void debug::show_assert_dialog(bool show_assert_dialog) noexcept {
   show_assert_dialog_ = show_assert_dialog;
 }
 
-bool debug::use_global_lock() {
+bool debug::use_global_lock() noexcept {
   return use_global_lock_;
 }
 
-void debug::use_global_lock(bool use_global_lock) {
+void debug::use_global_lock(bool use_global_lock) noexcept {
   use_global_lock_ = use_global_lock;
-}
-
-void debug::indent() {
-  indent_level(indent_level() + 1);
-}
-
-void debug::unindent() {
-  if (indent_level() != 0) indent_level(indent_level() - 1);
 }
 
 void debug::cassert(bool condition) {
@@ -88,6 +80,14 @@ void debug::cassert(bool condition, const ustring& message, const xtd::diagnosti
 
 void debug::cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
   if (__should_aborted__(condition, "", stack_frame)) debug_break_();
+}
+
+void debug::indent() noexcept {
+  indent_level(indent_level() + 1);
+}
+
+void debug::unindent() noexcept {
+  if (indent_level() != 0) indent_level(indent_level() - 1);
 }
 
 void debug::fail__(const ustring& message) {
