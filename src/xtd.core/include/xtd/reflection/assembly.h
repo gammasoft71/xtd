@@ -33,55 +33,55 @@ namespace xtd {
       /// @{
       /// @brief Gets company name information.
       /// @return A string containing the company name.
-      const ustring& company() const;
+      const ustring& company() const noexcept;
       
       /// @brief Gets assembly configuration information.
       /// @return A string containing the assembly configuration information.
-      const ustring& configuration() const;
+      const ustring& configuration() const noexcept;
       
       /// @brief Initializes a new instance of the xtd::reflection::assembly_copyright_attribute class.
       /// @param copyright The copyright information.
-      const ustring& copyright() const;
+      const ustring& copyright() const noexcept;
       
       /// @brief Gets culture information.
       /// @return A string containing the culture information.
-      const ustring& culture() const;
+      const ustring& culture() const noexcept;
       
       /// @brief Gets decription information.
       /// @return A string containing the decription information.
-      const ustring& description() const;
+      const ustring& description() const noexcept;
       
       /// @brief Gets file version information.
       /// @return A string containing the file version information.
-      const ustring& file_version() const;
+      const ustring& file_version() const noexcept;
       
       /// @brief Gets guid information.
       /// @return A string containing the guid information.
-      const ustring& guid() const;
+      const ustring& guid() const noexcept;
       
       /// @brief Gets identifier information.
       /// @return A string containing the identifier information.
-      const ustring& identifier() const;
+      const ustring& identifier() const noexcept;
       
       /// @brief Gets name information.
       /// @return A string containing the name information.
-      const ustring& name() const;
+      const ustring& name() const noexcept;
       
       /// @brief Gets product information.
       /// @return A string containing the product information.
-      const ustring& product() const;
+      const ustring& product() const noexcept;
       
       /// @brief Gets title information.
       /// @return A string containing the title information.
-      const ustring& title() const;
+      const ustring& title() const noexcept;
       
       /// @brief Gets trademark information.
       /// @return A string containing the trademark information.
-      const ustring& trademarks() const;
+      const ustring& trademarks() const noexcept;
       
       /// @brief Gets version information.
       /// @return A string containing the version information.
-      const ustring& version() const;
+      const ustring& version() const noexcept;
       /// @}
       
       /// @name Methods
@@ -89,7 +89,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the assembly that contains the code that is currently executing.
       /// @return The assembly that contains the code that is currently executing.
-      static const assembly& get_executing_assembly();
+      static const assembly& get_executing_assembly() noexcept;
       /// @}
       
     protected:

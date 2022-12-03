@@ -5,59 +5,59 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::reflection;
 
-const ustring& assembly::company() const {
+const ustring& assembly::company() const noexcept {
   return company_;
 }
 
-const ustring& assembly::configuration() const {
+const ustring& assembly::configuration() const noexcept {
   return configuration_;
 }
 
-const ustring& assembly::copyright() const {
+const ustring& assembly::copyright() const noexcept {
   return copyright_;
 }
 
-const ustring& assembly::culture() const {
+const ustring& assembly::culture() const noexcept {
   return culture_;
 }
 
-const ustring& assembly::description() const {
+const ustring& assembly::description() const noexcept {
   return description_;
 }
 
-const ustring& assembly::file_version() const {
+const ustring& assembly::file_version() const noexcept {
   return file_version_;
 }
 
-const ustring& assembly::guid() const {
+const ustring& assembly::guid() const noexcept {
   return guid_;
 }
 
-const ustring& assembly::identifier() const {
+const ustring& assembly::identifier() const noexcept {
   return identifier_;
 }
 
-const ustring& assembly::name() const {
+const ustring& assembly::name() const noexcept {
   return name_;
 }
 
-const ustring& assembly::product() const {
+const ustring& assembly::product() const noexcept {
   return product_;
 }
 
-const ustring& assembly::title() const {
+const ustring& assembly::title() const noexcept {
   return title_;
 }
 
-const ustring& assembly::trademarks() const {
+const ustring& assembly::trademarks() const noexcept {
   return trademarks_;
 }
 
-const ustring& assembly::version() const {
+const ustring& assembly::version() const noexcept {
   return version_;
 }
 
-const assembly& assembly::get_executing_assembly() {
+const assembly& assembly::get_executing_assembly() noexcept {
   static unique_ptr<assembly> current_assembly;
   if (!current_assembly) {
     current_assembly = unique_ptr<assembly>(new assembly());

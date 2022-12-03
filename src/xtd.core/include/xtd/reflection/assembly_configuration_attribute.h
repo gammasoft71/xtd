@@ -39,7 +39,7 @@ namespace xtd {
       /// @{
       /// @brief Gets assembly configuration information.
       /// @return A string containing the assembly configuration information.
-      const ustring& configuration() const {return configuration_;}
+      const ustring& configuration() const noexcept;
       /// @}
       
     protected:

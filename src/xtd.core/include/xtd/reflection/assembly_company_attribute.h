@@ -39,7 +39,7 @@ namespace xtd {
       /// @{
       /// @brief Gets company name information.
       /// @return A string containing the company name.
-      const ustring& company() const {return company_;}
+      const ustring& company() const noexcept;
       /// @}
       
     protected:
