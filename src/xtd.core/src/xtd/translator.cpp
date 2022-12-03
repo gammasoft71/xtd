@@ -19,21 +19,27 @@ using namespace xtd::collections::specialized;
 map<ustring, string_map> translator::language_values_;
 ustring translator::language_;
 
-void translator::add_value(const xtd::ustring& language, const xtd::ustring& key, const xtd::ustring& value) {
-  language_values_[language][key] = value;
-}
 xtd::ustring translator::language() {
-  initialize(); // Must be first
+  try {
+    initialize(); // Must be first
+  }catch(...) {
+  }
   return language_;
 }
 
 void translator::language(const xtd::ustring& language) {
-  initialize(); // Must be first
+  try {
+    initialize(); // Must be first
+  }catch(...) {
+  }
   language_ = language.to_lower();
 }
 
 std::vector<xtd::ustring> translator::languages() {
-  initialize(); // Must be first
+  try {
+    initialize(); // Must be first
+  }catch(...) {
+  }
   static std::vector<xtd::ustring> languages;
   if (languages.empty()) {
     for (auto language_value : language_values_)
@@ -46,17 +52,8 @@ xtd::ustring translator::system_language() {
   return xtd::native::translator::get_system_language();
 }
 
-xtd::ustring translator::translate(const xtd::ustring& language, const xtd::ustring& value) {
-  return translate(language, value.c_str());
-}
-
-const char* translator::translate(const xtd::ustring& language, const char* value) {
-  initialize(); // Must be first
-  try {
-    return language_values_.at(language).at(value).c_str();
-  } catch (...) {
-    return value;
-  }
+void translator::add_value(const xtd::ustring& language, const xtd::ustring& key, const xtd::ustring& value) {
+  language_values_[language][key] = value;
 }
 
 void translator::parse_locale(const xtd::ustring& locale_path) {
@@ -85,6 +82,27 @@ void translator::parse_file(const xtd::ustring& file, const xtd::ustring& langua
       add_value(language, key, value);
       key = value = "";
     }
+  }
+}
+
+xtd::ustring translator::translate(const xtd::ustring& value) noexcept {
+  return translate(language(), value);
+}
+
+xtd::ustring translator::translate(const xtd::ustring& language, const xtd::ustring& value) noexcept {
+  return translate(language, value.c_str());
+}
+
+const char* translator::translate(const char* value) noexcept {
+  return translate(language(), value);
+}
+
+const char* translator::translate(const xtd::ustring& language, const char* value) noexcept {
+  try {
+    initialize(); // Must be first
+    return language_values_.at(language).at(value).c_str();
+  } catch (...) {
+    return value;
   }
 }
 
