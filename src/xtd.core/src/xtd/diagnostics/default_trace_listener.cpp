@@ -14,19 +14,19 @@ default_trace_listener::~default_trace_listener() {
   flush();
 }
 
-bool default_trace_listener::assert_ui_enabled() {
+bool default_trace_listener::assert_ui_enabled() const noexcept {
   return assert_ui_enabled_;
 }
 
-void default_trace_listener::assert_ui_enabled(bool assert_ui_enabled) {
+void default_trace_listener::assert_ui_enabled(bool assert_ui_enabled) noexcept {
   assert_ui_enabled_ = assert_ui_enabled;
 }
 
-ustring default_trace_listener::log_file_name() const {
+ustring default_trace_listener::log_file_name() const noexcept {
   return log_file_name_;
 }
 
-void default_trace_listener::log_file_name(const ustring log_file_name) {
+void default_trace_listener::log_file_name(const ustring log_file_name) noexcept {
   log_file_name_ = log_file_name;
 }
 

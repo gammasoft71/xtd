@@ -70,7 +70,7 @@ namespace xtd {
       ///   return;
       /// }
       /// @endcode
-      bool assert_ui_enabled();
+      bool assert_ui_enabled() const noexcept;
       /// @brief Sets a value indicating whether the application is running in user-interface mode.
       /// @param assert_ui_enabled true if user-interface mode is enabled; otherwise, false.
       ///  @par Examples
@@ -87,7 +87,7 @@ namespace xtd {
       ///   return;
       /// }
       /// @endcode
-      void assert_ui_enabled(bool assert_ui_enabled);
+      void assert_ui_enabled(bool assert_ui_enabled) noexcept;
       
       /// @brief Gets the name of a log file to write trace or debug messages to.
       /// @return The name of a log file to write trace or debug messages to.
@@ -102,7 +102,7 @@ namespace xtd {
       /// if (args.size() >= 2)
       ///   default_listener->log_file_name(args[1]);
       /// @endcode
-      xtd::ustring log_file_name() const;
+      xtd::ustring log_file_name() const noexcept;
       /// @brief Sets the name of a log file to write trace or debug messages to.
       /// @param log_file_name The name of a log file to write trace or debug messages to.
       /// @par Examples
@@ -116,7 +116,7 @@ namespace xtd {
       /// if (args.size() >= 2)
       ///   default_listener->log_file_name(args[1]);
       /// @endcode
-      void log_file_name(const xtd::ustring log_file_name);
+      void log_file_name(const xtd::ustring log_file_name) noexcept;
       /// @}
       
       /// @name Methods
