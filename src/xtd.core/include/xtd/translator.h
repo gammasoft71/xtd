@@ -19,7 +19,7 @@ namespace xtd {
   /// @remarks This class is used to translate an application into different languages.
   /// @remarks For more information about internationalization, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/internationalization.md">Internationalizations</a>.
   /// @par Examples
-  /// The following shows how to use translator with std::locale method, litteral operator @code _t @endcode and translation files.
+  /// The following shows how to use translator with std::locale method, litteral operator @c _t and translation files.
   /// @include translator.cpp
   /// @include /examples/xtd.forms.examples/components/translator/locale/ru/locale.strings
   class translator final static_ {
