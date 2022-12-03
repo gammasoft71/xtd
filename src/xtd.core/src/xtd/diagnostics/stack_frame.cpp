@@ -68,23 +68,23 @@ stack_frame stack_frame::empty() noexcept {
   return {"", 0, "", 0, OFFSET_UNKNOWN};
 }
 
-uint32_t stack_frame::get_file_column_number() const {
+uint32_t stack_frame::get_file_column_number() const noexcept {
   return file_column_number_;
 }
 
-uint32_t stack_frame::get_file_line_number() const {
+uint32_t stack_frame::get_file_line_number() const noexcept {
   return file_line_number_;
 }
 
-const ustring& stack_frame::get_file_name() const {
+const ustring& stack_frame::get_file_name() const noexcept {
   return file_name_;
 }
 
-const ustring& stack_frame::get_method() const {
+const ustring& stack_frame::get_method() const noexcept {
   return method_name_;
 }
 
-uint32_t stack_frame::get_offset() const {
+uint32_t stack_frame::get_offset() const noexcept {
   return offset_;
 }
 
@@ -93,7 +93,7 @@ ustring stack_frame::to_string() const noexcept {
   return ustring::format("{} at offset {} in file:line:column {}:{}:{}", method_name_.empty() ? "<unknown method>" : method_name_, offset_ == OFFSET_UNKNOWN || file_name_.empty() ? "<unknown offset>" : std::to_string(offset_), file_name_.empty() ? "<filename unknown>" : file_name_, file_line_number_, file_column_number_);
 }
 
-std::vector<stack_frame> stack_frame::get_stack_frames(const ustring& str, size_t skip_frames, bool need_file_info) {
+std::vector<stack_frame> stack_frame::get_stack_frames(const ustring& str, size_t skip_frames, bool need_file_info) noexcept {
   stacktrace::call_stack call_stack(4);
   size_t skip_frames_before_str = 0;
   if (!str.empty()) {

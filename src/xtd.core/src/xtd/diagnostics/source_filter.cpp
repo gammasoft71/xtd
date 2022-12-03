@@ -8,11 +8,11 @@ using namespace xtd::diagnostics;
 source_filter::source_filter(const ustring& source) : source_(source) {
 }
 
-const ustring& source_filter::source() const {
+const ustring& source_filter::source() const noexcept {
   return source_;
 }
 
-void source_filter::source(const ustring& source) {
+void source_filter::source(const ustring& source) noexcept {
   source_ = source;
 }
 

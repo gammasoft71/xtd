@@ -11,7 +11,7 @@ source_switch::source_switch(const ustring& display_name, const ustring& default
 }
 
 
-source_levels source_switch::level() const {
+source_levels source_switch::level() const noexcept {
   return static_cast<source_levels>(switch_setting());
 }
 
@@ -20,7 +20,7 @@ void source_switch::level(xtd::diagnostics::source_levels level) {
 }
 
 
-bool source_switch::should_trace(trace_event_type event_type) {
+bool source_switch::should_trace(trace_event_type event_type) noexcept {
   return (switch_setting() & static_cast<int>(event_type)) != 0;
 }
 
