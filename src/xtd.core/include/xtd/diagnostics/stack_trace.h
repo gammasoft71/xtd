@@ -250,7 +250,7 @@ namespace xtd {
       ///   }
       /// }
       /// @endcode
-      size_t frame_count() const;
+      size_t frame_count() const noexcept;
       /// @}
       
       /// @name Methods
@@ -293,7 +293,7 @@ namespace xtd {
       /// }
       /// @endcode
       /// @remarks Stack frames are numbered starting at 0, which is the last stack frame pushed.
-      const xtd::diagnostics::stack_frame& get_frame(size_t index);
+      const xtd::diagnostics::stack_frame& get_frame(size_t index) noexcept;
       
       /// @brief Returns a copy of all stack frames in the current stack trace.
       /// @return An array of type xtd::diagnostics::stack_frame representing the function calls in the stack trace.
@@ -310,7 +310,7 @@ namespace xtd {
       /// @remarks Use the returned xtd::diagnostics::stack_frame array to enumerate and examine function calls in the xtd::diagnostics::stack_trace. The size of the returned array is equal to the frame_count() property value.
       /// @remarks The xtd::diagnostics::stack_frame array elements are in reverse chronological order. The xtd::diagnostics::stack_frame at array index 0 represents the most recent function call in the stack trace and the last frame pushed onto the call stack. The xtd::diagnostics::stack_frame at array index frame_count() minus 1 represents the oldest function call in the stack trace and the first frame pushed onto the call stack.
       /// @remarks Use the get_frames() method to obtain all stack frames in a stack trace; use the get_frame(size_t) method to obtain a specific stack frame in a stack trace. The xtd::diagnostics::stack_frame indexes are ordered alike by the two methods. For example, the xtd::diagnostics::stack_frame at index 0 in the array returned by get_frames() is equivalent to the xtd::diagnostics::stack_frame returned by get_frame(size_t) with an input index of 0.
-      const stack_frame_collection& get_frames() const;
+      const stack_frame_collection& get_frames() const noexcept;
       
       /// @brief Builds a readable representation of the stack trace.
       /// @return A readable representation of the stack trace.

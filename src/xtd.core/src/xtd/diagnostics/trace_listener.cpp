@@ -10,39 +10,39 @@ trace_listener::~trace_listener() {
 trace_listener::trace_listener(const ustring& name) : name_{name} {
 }
 
-unsigned int trace_listener::indent_level() const {
+unsigned int trace_listener::indent_level() const noexcept {
   return indent_level_;
 }
 
-void trace_listener::indent_level(unsigned int indent_level) {
+void trace_listener::indent_level(unsigned int indent_level) noexcept {
   indent_level_ = indent_level;
 }
 
-unsigned int trace_listener::indent_size() const {
+unsigned int trace_listener::indent_size() const noexcept {
   return indent_size_;
 }
 
-void trace_listener::indent_size(unsigned int indent_size) {
+void trace_listener::indent_size(unsigned int indent_size) noexcept {
   indent_size_ = indent_size;
 }
 
-bool trace_listener::is_thread_safe() const {
+bool trace_listener::is_thread_safe() const noexcept {
   return is_thread_safe_;
 }
 
-const ustring& trace_listener::name() const {
+const ustring& trace_listener::name() const noexcept {
   return name_;
 }
 
-void trace_listener::name(const ustring& name) {
+void trace_listener::name(const ustring& name) noexcept {
   name_ = name;
 }
 
-trace_options trace_listener::trace_output_options() const {
+trace_options trace_listener::trace_output_options() const noexcept {
   return trace_output_options_;
 }
 
-void trace_listener::trace_output_options(trace_options trace_output_options) {
+void trace_listener::trace_output_options(trace_options trace_output_options) noexcept {
   trace_output_options_ = trace_output_options;
 }
 
@@ -50,15 +50,15 @@ void trace_listener::close() {
   flush();
 }
 
-bool trace_listener::need_indent() const {
+bool trace_listener::need_indent() const noexcept {
   return need_indent_;
 }
 
-void trace_listener::need_indent(bool need_indent) {
+void trace_listener::need_indent(bool need_indent) noexcept {
   need_indent_ = need_indent;
 }
 
-void trace_listener::thread_safe(bool thread_safe) {
+void trace_listener::thread_safe(bool thread_safe) noexcept {
   is_thread_safe_ = thread_safe;
 }
 

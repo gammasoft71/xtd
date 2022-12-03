@@ -10,23 +10,23 @@ trace_source::trace_source::trace_source(const ustring& name, xtd::diagnostics::
   source_switch_.level(switch_levels_);
 }
 
-xtd::diagnostics::trace_listener_collection& trace_source::listeners() {
+xtd::diagnostics::trace_listener_collection& trace_source::listeners() noexcept {
   return listeners_;
 }
 
-void trace_source::listeners(const xtd::diagnostics::trace_listener_collection& listeners) {
+void trace_source::listeners(const xtd::diagnostics::trace_listener_collection& listeners) noexcept {
   listeners_ = listeners;
 }
 
-const ustring& trace_source::name() const {
+const ustring& trace_source::name() const noexcept {
   return name_;
 }
 
-const xtd::diagnostics::source_switch& trace_source::source_switch() const {
+const xtd::diagnostics::source_switch& trace_source::source_switch() const noexcept {
   return source_switch_;
 }
 
-void trace_source::source_switch(const xtd::diagnostics::source_switch& source_switch) {
+void trace_source::source_switch(const xtd::diagnostics::source_switch& source_switch) noexcept {
   source_switch_ = source_switch;
 }
 

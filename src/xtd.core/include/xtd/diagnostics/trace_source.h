@@ -54,27 +54,27 @@ namespace xtd {
       /// @brief Gets the collection of trace listeners for the trace source.
       /// @return A trace_listener_collection that contains the active trace listeners associated with the source.
       /// @remarks Use this property to access and perform operations on the trace listeners.
-      xtd::diagnostics::trace_listener_collection& listeners();
+      xtd::diagnostics::trace_listener_collection& listeners() noexcept;
       
       /// @brief Sets the collection of trace listeners for the trace source.
       /// @param listeners A trace_listener_collection that contains the active trace listeners associated with the source.
       /// @remarks Use this property to access and perform operations on the trace listeners.
-      void listeners(const xtd::diagnostics::trace_listener_collection& listeners);
+      void listeners(const xtd::diagnostics::trace_listener_collection& listeners) noexcept;
       
       /// @brief Gets the name of the trace source.
       /// @return The name of the trace source.
-      const xtd::ustring& name() const;
+      const xtd::ustring& name() const noexcept;
       
       /// @brief Gets the source switch value.
       /// @return A SourceSwitch object representing the source switch value.
       /// @remarks The source_switch property allows the filtering of messages before the trace source calls the listeners.
       /// @remarks The switch is used to check whether trace calls should be generated or ignored. Each trace method calls the should_trace method of the source_switch to determine whether to proceed with the trace. If the call returns true, the listeners are called.
-      const xtd::diagnostics::source_switch& source_switch() const;
+      const xtd::diagnostics::source_switch& source_switch() const noexcept;
       /// @brief Sets the source switch value.
       /// @param source_switch A SourceSwitch object representing the source switch value.
       /// @remarks The source_switch property allows the filtering of messages before the trace source calls the listeners.
       /// @remarks The switch is used to check whether trace calls should be generated or ignored. Each trace method calls the should_trace method of the source_switch to determine whether to proceed with the trace. If the call returns true, the listeners are called.
-      void source_switch(const xtd::diagnostics::source_switch& source_switch);
+      void source_switch(const xtd::diagnostics::source_switch& source_switch) noexcept;
       /// @}
       
       /// @name Methods
