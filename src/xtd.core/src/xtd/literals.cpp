@@ -332,23 +332,23 @@ int64_t xtd::operator""_s64(const wchar_t* s, size_t n) {
   return as<int64_t>(wstring(s, s + n));
 }
 
-const char* xtd::operator""_t(const char* s, size_t n) {
+const char* xtd::operator""_t(const char* s, size_t n) noexcept {
   return translator::translate(s);
 }
 
-ustring xtd::operator""_t(const char8_t* s, size_t n) {
+ustring xtd::operator""_t(const char8_t* s, size_t n) noexcept {
   return translator::translate(u8string(s, s + n));
 }
 
-ustring xtd::operator""_t(const char16_t* s, size_t n) {
+ustring xtd::operator""_t(const char16_t* s, size_t n) noexcept {
   return translator::translate(u16string(s, s + n));
 }
 
-ustring xtd::operator""_t(const char32_t* s, size_t n) {
+ustring xtd::operator""_t(const char32_t* s, size_t n) noexcept {
   return translator::translate(u32string(s, s + n));
 }
 
-ustring xtd::operator""_t(const wchar_t* s, size_t n) {
+ustring xtd::operator""_t(const wchar_t* s, size_t n) noexcept {
   return translator::translate(wstring(s, s + n));
 }
 

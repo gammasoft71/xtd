@@ -1026,7 +1026,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals translate
-  const char* operator""_t(const char* s, size_t n);
+  const char* operator""_t(const char* s, size_t n) noexcept;
   
   /// @brief Used to translate specified string into locale.
   /// @par Namespace
@@ -1034,7 +1034,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals translate
-  xtd::ustring operator""_t(const char8_t* s, size_t n);
+  xtd::ustring operator""_t(const char8_t* s, size_t n) noexcept;
   
   /// @brief Used to translate specified string into locale.
   /// @par Namespace
@@ -1042,7 +1042,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals translate
-  xtd::ustring operator""_t(const char16_t* s, size_t n);
+  xtd::ustring operator""_t(const char16_t* s, size_t n) noexcept;
   
   /// @brief Used to translate specified string into locale.
   /// @par Namespace
@@ -1050,7 +1050,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals translate
-  xtd::ustring operator""_t(const char32_t* s, size_t n);
+  xtd::ustring operator""_t(const char32_t* s, size_t n) noexcept;
   
   /// @brief Used to translate specified string into locale.
   /// @par Namespace
@@ -1058,7 +1058,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals translate
-  xtd::ustring operator""_t(const wchar_t* s, size_t n);
+  xtd::ustring operator""_t(const wchar_t* s, size_t n) noexcept;
 
   /// @brief Used to convert the specified value as tiks to xtd::time_span.
   /// @par Namespace
