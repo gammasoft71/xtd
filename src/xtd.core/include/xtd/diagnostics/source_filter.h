@@ -38,10 +38,10 @@ namespace xtd {
       /// @{
       /// @brief Gets the name of the trace source.
       /// @return The name of the trace source.
-      const xtd::ustring& source() const;
+      const xtd::ustring& source() const noexcept;
       /// @brief Gets the name of the trace source.
       /// @param source The name of the trace source.
-      void source(const xtd::ustring& source);
+      void source(const xtd::ustring& source) noexcept;
       /// @}
       
       /// @name Methods

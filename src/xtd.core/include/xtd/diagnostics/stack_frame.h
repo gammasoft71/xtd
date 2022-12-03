@@ -115,7 +115,7 @@ namespace xtd {
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
       /// @endcode
-      virtual uint32_t get_file_column_number() const;
+      virtual uint32_t get_file_column_number() const noexcept;
       
       /// @brief Gets the line number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.
       /// @return The file line number, or 0 (zero) if the file line number cannot be determined.
@@ -132,7 +132,7 @@ namespace xtd {
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
       /// @endcode
-      virtual uint32_t get_file_line_number() const;
+      virtual uint32_t get_file_line_number() const noexcept;
       
       /// @brief Gets the file name that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.
       /// @return The file name, or empty ("") if the file name cannot be determined.
@@ -149,7 +149,7 @@ namespace xtd {
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
       /// @endcode
-      virtual const xtd::ustring& get_file_name() const;
+      virtual const xtd::ustring& get_file_name() const noexcept;
       
       /// @brief Gets the method in which the frame is executing.
       /// @return The method in which the frame is executing.
@@ -166,7 +166,7 @@ namespace xtd {
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
       /// @endcode
-      virtual const xtd::ustring& get_method() const;
+      virtual const xtd::ustring& get_method() const noexcept;
       
       /// @brief Gets the offset from the start of the code for the method that is being executed.
       /// @return The offset from the code for the method that is being executed.
@@ -183,7 +183,7 @@ namespace xtd {
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
       /// @endcode
-      virtual uint32_t get_offset() const;
+      virtual uint32_t get_offset() const noexcept;
       
       /// @brief Builds a readable representation of the stack trace.
       /// @return A readable representation of the stack trace.
@@ -191,7 +191,7 @@ namespace xtd {
       
     private:
       friend class stack_trace;
-      static std::vector<stack_frame> get_stack_frames(const xtd::ustring& str, size_t skip_frames, bool need_file_info);
+      static std::vector<stack_frame> get_stack_frames(const xtd::ustring& str, size_t skip_frames, bool need_file_info) noexcept;
       
       xtd::ustring file_name_;
       uint32_t file_line_number_ = 0;

@@ -3,31 +3,31 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-bool switch_base::operator ==(const switch_base& value) const {
+bool switch_base::operator ==(const switch_base& value) const noexcept {
   return display_name_ == value.display_name_ && description_ == value.description_ && attributes_ == value.attributes_ && switch_setting_ == value.switch_setting_ && value_ == value.value_;
 }
 
-bool switch_base::operator !=(const switch_base& value) const {
+bool switch_base::operator !=(const switch_base& value) const noexcept {
   return !operator ==(value);
 }
 
-const std::map<ustring, ustring>& switch_base::attributes() const {
+const std::map<ustring, ustring>& switch_base::attributes() const noexcept {
   return attributes_;
 }
 
-std::map<ustring, ustring>& switch_base::attributes() {
+std::map<ustring, ustring>& switch_base::attributes() noexcept {
   return attributes_;
 }
 
-void switch_base::attributes(const std::map<ustring, ustring>& attributes) {
+void switch_base::attributes(const std::map<ustring, ustring>& attributes) noexcept {
   attributes_ = attributes;
 }
 
-const ustring& switch_base::description() const {
+const ustring& switch_base::description() const noexcept {
   return description_;
 }
 
-const ustring& switch_base::display_name() const {
+const ustring& switch_base::display_name() const noexcept {
   return display_name_;
 }
 
@@ -37,7 +37,7 @@ switch_base::switch_base(const ustring& display_name, const ustring& description
 switch_base::switch_base(const ustring& display_name, const ustring& description, const ustring& default_switch_value) : display_name_(display_name), description_(description), value_(default_switch_value) {
 }
 
-int32_t switch_base::switch_setting() const {
+int32_t switch_base::switch_setting() const noexcept {
   return switch_setting_;
 }
 
@@ -48,7 +48,7 @@ void switch_base::switch_setting(int32_t switch_setting) {
   }
 }
 
-const ustring& switch_base::value() const {
+const ustring& switch_base::value() const noexcept {
   return value_;
 }
 
@@ -59,7 +59,7 @@ void switch_base::value(const ustring& value) {
   }
 }
 
-std::vector<ustring> switch_base::get_supported_attributes() const {
+std::vector<ustring> switch_base::get_supported_attributes() const noexcept {
   return {};
 }
 

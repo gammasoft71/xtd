@@ -33,8 +33,8 @@ namespace xtd {
       /// @cond
       switch_base(const switch_base& value) = default;
       switch_base& operator =(const switch_base& value) = default;
-      bool operator ==(const switch_base& value) const;
-      bool operator !=(const switch_base& value) const;
+      bool operator ==(const switch_base& value) const noexcept;
+      bool operator !=(const switch_base& value) const noexcept;
       /// @endcond
       
       /// @name Properties
@@ -42,23 +42,23 @@ namespace xtd {
       /// @{
       /// @brief Gets the custom switch attributes
       /// @rettur nA StringDictionary containing the case-insensitive custom attributes for the trace switch.
-      const std::map<xtd::ustring, xtd::ustring>& attributes() const;
+      const std::map<xtd::ustring, xtd::ustring>& attributes() const noexcept;
       /// @brief Gets the custom switch attributes
       /// @return A StringDictionary containing the case-insensitive custom attributes for the trace switch.
-      std::map<xtd::ustring, xtd::ustring>& attributes();
+      std::map<xtd::ustring, xtd::ustring>& attributes() noexcept;
       /// @brief Sets the custom switch attributes
       /// @param attributes A StringDictionary containing the case-insensitive custom attributes for the trace switch.
-      void attributes(const std::map<xtd::ustring, xtd::ustring>& attributes);
+      void attributes(const std::map<xtd::ustring, xtd::ustring>& attributes) noexcept;
       
       /// @brief Gets a description of the switch
       /// @return The description of the switch. The default value is an empty string ("").
       /// @remarks This property should indicate the function of the switch; for example, "Enables tracing for a directory watcher component." The value is set by the descriptor parameter in the switch_base constructor.
-      const xtd::ustring& description() const;
+      const xtd::ustring& description() const noexcept;
       
       /// @brief Gets a name used to identify the switch.
       /// @return The name used to identify the switch. The default value is an empty string ("").
       /// @remarks When you create a new switch_base object, the display_name finds initial switch settings. For more information, see the switch_base constructor.
-      const xtd::ustring& display_name() const;
+      const xtd::ustring& display_name() const noexcept;
       /// @}
       
     protected:
@@ -85,7 +85,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the current setting for this switch.
       /// @return The current setting for this switch. The default is zero.
-      int32_t switch_setting() const;
+      int32_t switch_setting() const noexcept;
       /// @brief Sets the current setting for this switch.
       /// @param switch_setting The current setting for this switch. The default is zero.
       void switch_setting(int32_t switch_setting);
@@ -95,7 +95,7 @@ namespace xtd {
       /// @remarks The on_value_changed method is called when the value of the value property is changed. The on_value_changed method parses the value of this property and converts it to an integer value, which is then used to set the switch_setting property.
       /// @par Notes to inheritors
       /// You should override the on_value_changed() method and provide a conversion operation that sets the appropriate switch_setting value for your switch.
-      const xtd::ustring& value() const;
+      const xtd::ustring& value() const noexcept;
       /// @brief Sets the value of the switch.
       /// @param value A string representing the value of the switch.
       /// @remarks The on_value_changed method is called when the value of the value property is changed. The on_value_changed method parses the value of this property and converts it to an integer value, which is then used to set the switch_setting property.
@@ -112,7 +112,7 @@ namespace xtd {
       /// @remarks The default implementation for the get_supported_attributes method returns {} (empty array). If a switch is added in a configuration file and custom attributes are specified that are not included in the string array returned by get_supported_attributes, a configuration_exception is thrown when the switch is loaded.
       /// @par Notes to Inheritors
       /// When inheriting from the switch_base class or a derived class, you can override the get_supported_attributes() method to provide custom attributes for your class.
-      virtual std::vector<xtd::ustring> get_supported_attributes() const;
+      virtual std::vector<xtd::ustring> get_supported_attributes() const noexcept;
       
       /// @brief Invoked when the switch_setting property is changed.
       virtual void on_switch_setting_changed();
