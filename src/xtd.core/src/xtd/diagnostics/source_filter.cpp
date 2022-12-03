@@ -16,6 +16,6 @@ void source_filter::source(const ustring& source) {
   source_ = source;
 }
 
-bool source_filter::should_trace(const trace_event_cache& cache, const ustring& source, trace_event_type event_type, int32_t id, const ustring& message, any data1, const vector<any>& data_array) {
+bool source_filter::should_trace(const trace_event_cache& cache, const ustring& source, trace_event_type event_type, int32_t id, const ustring& message, any data1, const vector<any>& data_array) noexcept {
   return source == source_;
 }
