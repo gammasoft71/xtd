@@ -51,7 +51,7 @@ namespace xtd {
         /// @name Properties
         
         /// @{
-        bool is_completed() const;
+        bool is_completed() const noexcept;
         /// @}
 
       private:
