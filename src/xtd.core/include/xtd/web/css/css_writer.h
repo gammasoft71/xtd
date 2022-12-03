@@ -28,8 +28,8 @@ namespace xtd {
         /// @name Properties
         
         /// @{
-        const xtd::web::css::selector_map& selectors() const {return selectors_;}
-        xtd::web::css::selector_map& selectors() {return selectors_;}
+        const xtd::web::css::selector_map& selectors() const noexcept {return selectors_;}
+        xtd::web::css::selector_map& selectors() noexcept {return selectors_;}
         void selectors(const xtd::web::css::selector_map& selector) {selectors_ = selector;}
         /// @}
         

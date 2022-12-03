@@ -22,15 +22,15 @@ namespace xtd {
         /// @name Operators
         
         /// @{
-        operator xtd::ustring() {return value_;}
+        operator xtd::ustring() noexcept {return value_;}
         /// @}
         
         /// @name Properties
         
         /// @{
-        const xtd::ustring& value() const {return value_;}
+        const xtd::ustring& value() const noexcept {return value_;}
         template<typename value_t>
-        uintptr_t value() const {return xtd::parse<value_t>(value_);}
+        uintptr_t value() const noexcept {return xtd::parse<value_t>(value_);}
         /// @}
         
         /// @name Methods
