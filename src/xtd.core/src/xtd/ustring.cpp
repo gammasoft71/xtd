@@ -3,6 +3,10 @@
 #include "../../include/xtd/format_exception.h"
 #include "../../include/xtd/diagnostics/stack_frame.h"
 
+#if !defined(_WIN32)
+#include <cxxabi.h>
+#endif
+
 using namespace std;
 using namespace xtd;
 
@@ -538,6 +542,10 @@ ustring ustring::substr(size_type index, size_type count) const {
   return basic_string<value_type>::substr(index, count);
 }
 
+ustring ustring::class_name(const std::type_info& info) {
+  return get_class_name(full_class_name(info));
+}
+
 int ustring::compare(const ustring& str_a, const ustring& str_b) noexcept {
   return compare(str_a, str_b, false);
 }
@@ -631,6 +639,26 @@ ustring ustring::concat(const std::initializer_list<const char8_t*>& values) noe
   return result;
 }
 
+ustring ustring::demangle(const ustring& name) {
+#if defined(_WIN32)
+  ustring result = name;
+  for (auto& item : {"enum ", "class ", "union ", "struct "})
+    result = result.replace(item, "");
+  return result;
+#else
+  class auto_delete_char_pointer {
+  public:
+    auto_delete_char_pointer(char* value) : value_(value) {}
+    ~auto_delete_char_pointer() {free(value_);}
+    char* operator ()() const {return value_;}
+  private:
+    char* value_;
+  };
+  int32_t status = 0;
+  return auto_delete_char_pointer(abi::__cxa_demangle(name.c_str(), 0, 0, &status))();
+#endif
+}
+
 bool ustring::contains(const ustring& value) const noexcept {
   return find(value) != npos;
 }
@@ -669,6 +697,7 @@ bool ustring::ends_with(const ustring& value, xtd::string_comparison comparison_
   return rfind(value) + value.size() == size();
 }
 
+ustring ustring::full_class_name(const std::type_info& info) {return demangle(info.name());}
 size_t ustring::get_hash_code() const noexcept {
   return std::hash<std::basic_string<value_type>>()(*this);
 }

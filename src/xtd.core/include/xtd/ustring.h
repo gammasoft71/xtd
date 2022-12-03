@@ -22,10 +22,6 @@
 #include "parse.h"
 #include "to_string.h"
 
-#if !defined(_WIN32)
-#include <cxxabi.h>
-#endif
-
 /// @cond
 namespace xtd {
   class ustring;
@@ -467,7 +463,7 @@ namespace xtd {
     /// @brief Gets the class name of the specified object.
     /// @return The class name of the specified object.
     /// @remarks For example, the name of the ustring type is ustring.
-    static ustring class_name(const std::type_info& info) {return get_class_name(full_class_name(info));}
+    static ustring class_name(const std::type_info& info);
     
     using std::basic_string<value_type>::compare;
     /// @brief Compares two specified string objects and returns an integer that indicates their relative position in the sort order.
@@ -643,25 +639,7 @@ namespace xtd {
     
     /// @brief Gets demangled string of name,.
     /// @return The demangled string of name.
-    static ustring demangle(const ustring& name) {
-      #if defined(_WIN32)
-      ustring result = name;
-      for (auto& item : {"enum ", "class ", "union ", "struct "})
-        result = result.replace(item, "");
-      return result;
-      #else
-      class auto_delete_char_pointer {
-      public:
-        auto_delete_char_pointer(char* value) : value_(value) {}
-        ~auto_delete_char_pointer() {free(value_);}
-        char* operator ()() const {return value_;}
-      private:
-        char* value_;
-      };
-      int32_t status = 0;
-      return auto_delete_char_pointer(abi::__cxa_demangle(name.c_str(), 0, 0, &status))();
-      #endif
-    }
+    static ustring demangle(const ustring& name);
     
     /// @brief Returns a value indicating whether a specified substring occurs within this string.
     /// @param value The string to seek.
@@ -789,7 +767,7 @@ namespace xtd {
     /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
     /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
     /// @remarks For example, the fully qualified name of the ustring type is xtd::ustring.
-    static ustring full_class_name(const std::type_info& info) {return demangle(info.name());}
+    static ustring full_class_name(const std::type_info& info);
     
     /// @brief Returns the hash code for this string.
     /// @return A hash code.
