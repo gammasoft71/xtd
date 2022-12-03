@@ -265,7 +265,7 @@ struct __enum_or_polymorphic_ostream__ {};
 template <typename char_t, typename type_t>
 struct __enum_or_polymorphic_ostream__<char_t, type_t, std::true_type> {
   std::basic_ostream<char_t>& to_stream(std::basic_ostream<char_t>& os, const type_t& value) noexcept {
-    if (dynamic_cast<const xtd::object*>(&value)) return os << __object_to_string(static_cast<const xtd::object&>(value));
+    if (dynamic_cast<const xtd::object*>(&value)) return os << __object_to_string(dynamic_cast<const xtd::object&>(value));
     return os << value;
   }
 };
