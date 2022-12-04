@@ -84,7 +84,7 @@ namespace xtdc_gui {
       picture_file_name = xtd::io::path::combine({xtd_share_path_, "resources", "pictures", "examples", (name + "_" + get_os_postfix() + ".png")});
       if (xtd::io::file::exists(picture_file_name)) return xtd::drawing::bitmap(picture_file_name);
       //return xtd::drawing::bitmap(noimage_picture);
-      return xtd::drawing::bitmap(400, 250);
+      return xtd::drawing::image::empty;
     }
     
     static xtd::ustring get_os_postfix() noexcept {return xtd::environment::os_version().is_windows_platform() ? "w" : xtd::environment::os_version().is_unix_platform() ? "g" : "m";}
