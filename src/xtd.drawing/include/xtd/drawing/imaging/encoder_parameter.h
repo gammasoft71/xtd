@@ -98,8 +98,8 @@ namespace xtd {
         encoder_parameter() = default;
         encoder_parameter(const encoder_parameter&) = default;
         encoder_parameter& operator =(const encoder_parameter&) = default;
-        bool operator ==(const encoder_parameter& value) const {return encoder_ == value.encoder_ && type_ == value.type_ && value_ == value.value_;}
-        bool operator !=(const encoder_parameter& value) const {return !operator ==(value);}
+        bool operator ==(const encoder_parameter& value) const noexcept;
+        bool operator !=(const encoder_parameter& value) const noexcept;
         /// @endcond
         
         
@@ -108,7 +108,7 @@ namespace xtd {
         /// @{
         /// @brief Gets the Encoder object associated with this xtd::drawing::imaging::encoder_parameter object. The Encoder object encapsulates the globally unique identifier (GUID) that specifies the category (for example Quality, ColorDepth, or Compression) of the parameter stored in this xtd::drawing::imaging::encoder_parameter object.
         /// @return An Encoder object that encapsulates the GUID that specifies the category of the parameter stored in this xtd::drawing::imaging::encoder_parameter object.
-        const xtd::drawing::imaging::encoder& encoder() const;
+        const xtd::drawing::imaging::encoder& encoder() const noexcept;
         /// @brief Sets the Encoder object associated with this xtd::drawing::imaging::encoder_parameter object. The Encoder object encapsulates the globally unique identifier (GUID) that specifies the category (for example Quality, ColorDepth, or Compression) of the parameter stored in this xtd::drawing::imaging::encoder_parameter object.
         /// @param value An Encoder object that encapsulates the GUID that specifies the category of the parameter stored in this xtd::drawing::imaging::encoder_parameter object.
         /// @return This current instance.
@@ -116,15 +116,15 @@ namespace xtd {
         
         /// @brief Gets the number of elements in the array of values stored in this xtd::drawing::imaging::encoder_parameter object.
         /// @return An integer that indicates the number of elements in the array of values stored in this xtd::drawing::imaging::encoder_parameter object.
-        size_t number_of_values() const;
+        size_t number_of_values() const noexcept;
         
         /// @brief Gets the data type of the values stored in this xtd::drawing::imaging::encoder_parameter object.
         /// @return A member of the EncoderParameterValueType enumeration that indicates the data type of the values stored in this xtd::drawing::imaging::encoder_parameter object.
-        xtd::drawing::imaging::encoder_parameter_value_type value_type() const;
+        xtd::drawing::imaging::encoder_parameter_value_type value_type() const noexcept;
         
         /// @brief Gets The data value.
         /// @return The data value.
-        const std::vector<byte_t>& value() const;
+        const std::vector<byte_t>& value() const noexcept;
         /// @}
         
       private:
