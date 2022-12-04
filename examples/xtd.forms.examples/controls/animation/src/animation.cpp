@@ -27,8 +27,7 @@ namespace examples {
     
   private:
     void on_fish_animation_click(object& sender, const event_args& e) {
-      if (fish_animation.is_running()) fish_animation.stop();
-      else fish_animation.start();
+      fish_animation.running(!fish_animation.running());
     }
     
     void on_fish_animation_paint(object& sender, paint_event_args& e) {

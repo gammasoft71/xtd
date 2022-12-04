@@ -47,9 +47,14 @@ namespace xtd {
       /// @para value The number if frame per seconds. The default is 10.
       virtual animation& frames_per_second(int32_t value);
       
-      /// @brief Returns if the animation is started.
+      
+      /// @brief Gets a valiue that indicates if the animation is started.
       /// @return true if the animation is running; otherwise false.
-      virtual bool is_running() const noexcept;
+      virtual bool running() const noexcept;
+      
+      /// @brief Gets a valiue that indicates if the animation is started.
+      /// @param value true if the animation is running; otherwise false.
+      virtual animation& running(bool value);
       /// @}
       
       /// @name Methods
