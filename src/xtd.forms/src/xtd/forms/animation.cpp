@@ -17,23 +17,31 @@ drawing::size animation::default_size() const noexcept {
   return {200, 100};
 }
 
+std::chrono::nanoseconds animation::elapsed() const noexcept {
+  return data_->stopwatch.elapsed();
+}
+
 int64_t animation::elapsed_milliseconds() const noexcept {
+  return data_->stopwatch.elapsed_milliseconds();
+}
+
+int64_t animation::elapsed_nanoseconds() const noexcept {
   return data_->stopwatch.elapsed_nanoseconds();
 }
 
-int32_t animation::frame_counter() const noexcept {
+uint32_t animation::frame_counter() const noexcept {
   return data_->frame_counter;
 }
 
-int32_t animation::frames_per_second() const noexcept {
+uint32_t animation::frames_per_second() const noexcept {
   return data_->frames_per_second;
 }
 
-animation& animation::frames_per_second(int32_t value) {
+animation& animation::frames_per_second(uint32_t value) {
   if (data_->frames_per_second != value) {
     data_->frames_per_second = value;
-    if (!data_->frames_per_second) data_->frames_timer.interval_milliseconds(std::numeric_limits<int32_t>::max());
-    else data_->frames_timer.interval_milliseconds(static_cast<int32_t>(ceil(1000.0 / data_->frames_per_second)));
+    if (!data_->frames_per_second) data_->frames_timer.interval_milliseconds(std::numeric_limits<uint32_t>::max());
+    else data_->frames_timer.interval_milliseconds(static_cast<uint32_t>(ceil(1000.0 / data_->frames_per_second)));
   }
   return *this;
 }
@@ -62,7 +70,7 @@ void animation::on_updated(const animation_updated_event_args& e) {
 
 void animation::on_frames_timer_tick(object& timer, const event_args& e) {
   ++data_->frame_counter;
-  on_updated(animation_updated_event_args(data_->frame_counter, data_->stopwatch.elapsed_milliseconds()));
+  on_updated(animation_updated_event_args(data_->frame_counter, data_->stopwatch.elapsed()));
   invalidate();
   data_->stopwatch = stopwatch::start_new();
 }

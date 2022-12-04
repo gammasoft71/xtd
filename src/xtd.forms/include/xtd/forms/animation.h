@@ -32,20 +32,28 @@ namespace xtd {
       /// @name Properties
       
       /// @{
+      /// @brief Gets the elapsed time for the current frame, in nanoseconds.
+      /// @return A std::chrono::nanoseconds representing the elapsed time for the current frame, in nanoseconds.
+      virtual std::chrono::nanoseconds elapsed() const noexcept;
+      
       /// @brief Gets the elapsed time for the current frame, in milliseconds.
       /// @return A long integer representing the elapsed time for the current frame, in milliseconds.
       virtual int64_t elapsed_milliseconds() const noexcept;
       
+      /// @brief Gets the elapsed time for the current frame, in nanoseconds.
+      /// @return A long integer representing the elapsed time for the current frame, in nanoseconds.
+      virtual int64_t elapsed_nanoseconds() const noexcept;
+      
       /// @brief Gets the current frame counter value.
       /// @return The current frame counter value.
-      virtual int32_t frame_counter() const noexcept;
+      virtual uint32_t frame_counter() const noexcept;
       
       /// @brief Gets the number of frame per second.
       /// @return The number if frame per seconds. The default is 10.
-      virtual int32_t frames_per_second() const noexcept;
+      virtual uint32_t frames_per_second() const noexcept;
       /// @brief Sets the number of frame per second.
       /// @para value The number if frame per seconds. The default is 10.
-      virtual animation& frames_per_second(int32_t value);
+      virtual animation& frames_per_second(uint32_t value);
       
       
       /// @brief Gets a valiue that indicates if the animation is started.
@@ -96,8 +104,8 @@ namespace xtd {
       void on_frames_timer_tick(object& timer, const xtd::event_args& e);
       
       struct data {
-        int32_t frame_counter = 0;
-        int32_t frames_per_second = 10;
+        uint32_t frame_counter = 0;
+        uint32_t frames_per_second = 10;
         xtd::diagnostics::stopwatch stopwatch;
         xtd::forms::timer frames_timer;
       };

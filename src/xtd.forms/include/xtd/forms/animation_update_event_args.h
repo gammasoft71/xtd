@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/event_args.h>
+#include <chrono>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -19,16 +20,22 @@ namespace xtd {
       /// @name Constructors
       
       /// @{
-      animation_updated_event_args(int32_t frame_counter, int64_t elapsed_milliseconds) : frame_counter_(frame_counter), elapsed_milliseconds_(elapsed_milliseconds) {}
+      animation_updated_event_args(int32_t frame_counter, std::chrono::nanoseconds elapsed) : frame_counter_(frame_counter), elapsed_(elapsed) {}
       /// @}
       
       /// @name Properties
       
       /// @{
+      /// @brief Gets elepased time in nanoseconds.
+      /// @return Elapsed time in nanoseconds
+      std::chrono::nanoseconds elapsed() const {return elapsed_;}
       /// @brief Gets elepased time in milliseconds.
       /// @return Elapsed time in milliseconds
-      int64_t elapsed_milliseconds() const {return elapsed_milliseconds_;}
-      
+      int64_t elapsed_milliseconds() const {return std::chrono::duration_cast<std::chrono::milliseconds>(elapsed_).count();}
+      /// @brief Gets elepased time in nanoseconds.
+      /// @return Elapsed time in nanoseconds
+      int64_t elapsed_nanoseconds() const {return std::chrono::duration_cast<std::chrono::nanoseconds>(elapsed_).count();}
+
       /// @brief Gets frame counter.
       /// @return Frame counter.
       int32_t frame_counter() const {return frame_counter_;}
@@ -36,7 +43,7 @@ namespace xtd {
       
     private:
       int32_t frame_counter_ = 0;
-      int64_t elapsed_milliseconds_ = 0;
+      std::chrono::nanoseconds elapsed_;
     };
   }
 }
