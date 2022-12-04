@@ -53,8 +53,8 @@ namespace xtd {
       brush(const brush& value);
       brush& operator =(const brush& value);
       ~brush();
-      bool operator ==(const brush& value) const {return data_->handle_ == value.data_->handle_;}
-      bool operator !=(const brush& value) const {return !operator ==(value);}
+      bool operator ==(const brush& value) const noexcept;
+      bool operator !=(const brush& value) const noexcept;
       /// @endcond
       
       /// @name Properties
@@ -62,7 +62,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the handle of the brush.
       /// @return An intptr_t that contains the handle of the brush.
-      intptr_t handle() const {return data_->handle_;}
+      intptr_t handle() const noexcept;
       /// @}
       
       /// @name Methods
@@ -70,7 +70,7 @@ namespace xtd {
       /// @{
       /// @brief Converts this brush object to a human-readable string.
       /// @return A string that represents this brush object.
-      xtd::ustring to_string() const noexcept override {return ustring::full_class_name(*this);}
+      xtd::ustring to_string() const noexcept override;
       /// @}
       
     protected:
