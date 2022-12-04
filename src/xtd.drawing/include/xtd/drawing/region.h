@@ -54,8 +54,8 @@ namespace xtd {
       region(const region& value) = default;
       region& operator =(const region& value) = default;
       ~region();
-      bool operator ==(const region& value) const;
-      bool operator !=(const region& value) const;
+      bool operator ==(const region& value) const noexcept;
+      bool operator !=(const region& value) const noexcept;
       /// @endcond
       
       /// @name Properties
@@ -63,7 +63,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the handle of the region.
       /// @return An intptr_t that contains the handle of the region.
-      intptr_t handle() const;
+      intptr_t handle() const noexcept;
       /// @}
       
       /// @name Methods
@@ -71,28 +71,28 @@ namespace xtd {
       /// @{
       /// @brief Updates this xtd::drawing::region to contain the portion of the specified xtd::drawing::graphics_path that does not intersect with this xtd::drawing::region.
       /// @param path The xtd::drawing::graphics_path to complement this xtd::drawing::region.
-      void complement(const xtd::drawing::drawing2d::graphics_path& path);
+      void complement(const xtd::drawing::drawing2d::graphics_path& path) noexcept;
       /// @brief Updates this xtd::drawing::region to contain the portion of the specified xtd::drawing::rectangle structure that does not intersect with this xtd::drawing::region.
       /// @param rect The xtd::drawing::rectangle structure to complement this xtd::drawing::region.
-      void complement(const xtd::drawing::rectangle& rect);
+      void complement(const xtd::drawing::rectangle& rect) noexcept;
       /// @brief Updates this xtd::drawing::region to contain the portion of the specified xtd::drawing::rectangle_f structure that does not intersect with this xtd::drawing::region.
       /// @param rect The xtd::drawing::rectangle_f structure to complement this xtd::drawing::region.
-      void complement(const xtd::drawing::rectangle_f& rect);
+      void complement(const xtd::drawing::rectangle_f& rect) noexcept;
       /// @brief Updates this xtd::drawing::region to contain the portion of the specified xtd::drawing::region that does not intersect with this xtd::drawing::region.
       /// @param region The xtd::drawing::region object to complement this xtd::drawing::region object.
-      void complement(const xtd::drawing::region& region);
+      void complement(const xtd::drawing::region& region) noexcept;
       
       /// @brief Updates this xtd::drawing::region to contain only the portion of its interior that does not intersect with the specified xtd::drawing::graphics_path.
       /// @param path The xtd::drawing::graphics_path to exclude from this xtd::drawing::region.
-      void exclude(const xtd::drawing::drawing2d::graphics_path& path);
+      void exclude(const xtd::drawing::drawing2d::graphics_path& path) noexcept;
       /// @brief Updates this xtd::drawing::region to contain only the portion of its interior that does not intersect with the specified xtd::drawing::rectangle structure.
       /// @param rect The xtd::drawing::rectangle structure to exclude from this xtd::drawing::region.
-      void exclude(const xtd::drawing::rectangle& rect);
+      void exclude(const xtd::drawing::rectangle& rect) noexcept;
       /// @brief The xtd::drawing::rectangle_f structure to exclude from this xtd::drawing::region.
-      void exclude(const xtd::drawing::rectangle_f& rect);
+      void exclude(const xtd::drawing::rectangle_f& rect) noexcept;
       /// @brief Updates this xtd::drawing::region to contain only the portion of its interior that does not intersect with the specified xtd::drawing::region.
       /// @param region The xtd::drawing::region to exclude from this xtd::drawing::region.
-      void exclude(const xtd::drawing::region& region);
+      void exclude(const xtd::drawing::region& region) noexcept;
       
       /// @brief Initializes a new xtd::drawing::region from a handle to the specified existing GDI region.
       /// @param hrgn A handle to an existing xtd::drawing::region.
@@ -104,31 +104,31 @@ namespace xtd {
       /// @param g The xtd::drawing::graphics on which this xtd::drawing::region is drawn.
       /// @return A xtd::drawing::rectangle_f structure that represents the bounding rectangle for this xtd::drawing::region in pixels.
       /// @remarks The current transformation of the graphics context is used to compute the region interior on the drawing surface. The bounding rectangle is not always the smallest possible bounding rectangle depending on the current transformation.
-      xtd::drawing::rectangle_f get_bounds() const;
+      xtd::drawing::rectangle_f get_bounds() const noexcept;
       /// @brief Gets a xtd::drawing::rectangle_f structure that represents a rectangle that bounds this xtd::drawing::region on the drawing surface of a xtd::drawing::graphics object.
       /// @param g The xtd::drawing::graphics on which this xtd::drawing::region is drawn.
       /// @return A xtd::drawing::rectangle_f structure that represents the bounding rectangle for this xtd::drawing::region on the specified drawing surface.
       /// @remarks The current transformation of the graphics context is used to compute the region interior on the drawing surface. The bounding rectangle is not always the smallest possible bounding rectangle depending on the current transformation.
-      xtd::drawing::rectangle_f get_bounds(const xtd::drawing::graphics& g) const;
+      xtd::drawing::rectangle_f get_bounds(const xtd::drawing::graphics& g) const noexcept;
 
       /// @brief Returns a Windows handle to this xtd::drawing::region in the specified graphics context.
       /// @param g The xtd::drawing::graphics on which this xtd::drawing::region is drawn.
       /// @return A Windows handle to this xtd::drawing::region.
       /// @remarks You are responsible for calling the xtd::region::release_hrgn method to free the memory used by the GDI region object.
-      intptr_t get_hrgn(const xtd::drawing::graphics& g) const;
+      intptr_t get_hrgn(const xtd::drawing::graphics& g) const noexcept;
       
       /// @brief Updates this xtd::drawing::region to the intersection of itself with the specified xtd::drawing::graphics_path.
       /// @param path The xtd::drawing::graphics_path to intersect with this xtd::drawing::region.
-      void intersect(const xtd::drawing::drawing2d::graphics_path& path);
+      void intersect(const xtd::drawing::drawing2d::graphics_path& path) noexcept;
       /// @brief Updates this xtd::drawing::region to the intersection of itself with the specified xtd::drawing::rectangle structure.
       /// @param The xtd::drawing::rectangle structure to intersect with this xtd::drawing::region.
-      void intersect(const xtd::drawing::rectangle& rect);
+      void intersect(const xtd::drawing::rectangle& rect) noexcept;
       /// @brief Updates this xtd::drawing::region to the intersection of itself with the specified xtd::drawing::rectangle_f structure.
       /// @param rect The xtd::drawing::rectangle_f structure to intersect with this xtd::drawing::region.
-      void intersect(const xtd::drawing::rectangle_f& rect);
+      void intersect(const xtd::drawing::rectangle_f& rect) noexcept;
       /// @brief Updates this xtd::drawing::region to the intersection of itself with the specified xtd::drawing::region.
       /// @param region The xtd::drawing::region to intersect with this xtd::drawing::region.
-      void intersect(const xtd::drawing::region& region);
+      void intersect(const xtd::drawing::region& region) noexcept;
       
       /// @brief Tests whether this xtd::drawing::region has an empty interior.
       /// @return true if the interior of this xtd::drawing::region is empty; otherwise, false.
@@ -251,33 +251,33 @@ namespace xtd {
       void make_empty();
       
       /// @brief Initializes this xtd::drawing::region object to an infinite interior.
-      void make_infinite();
+      void make_infinite() noexcept;
       
       /// @brief Updates this xtd::drawing::region to the union of itself and the specified xtd::drawing::graphics_path.
       /// @param path The xtd::drawing::graphics_path to unite with this xtd::drawing::region.
-      void make_union(const xtd::drawing::drawing2d::graphics_path& path);
+      void make_union(const xtd::drawing::drawing2d::graphics_path& path) noexcept;
       /// @brief Updates this xtd::drawing::region to the union of itself and the specified xtd::drawing::rectangle structure.
       /// @param rect The xtd::drawing::rectangle structure to unite with this xtd::drawing::region.
-      void make_union(const xtd::drawing::rectangle& rect);
+      void make_union(const xtd::drawing::rectangle& rect) noexcept;
       /// @brief Updates this xtd::drawing::region to the union of itself and the specified xtd::drawing::rectangle_f structure.
       /// @param rect The xtd::drawing::rectangle_f structure to unite with this xtd::drawing::region.
-      void make_union(const xtd::drawing::rectangle_f& rect);
+      void make_union(const xtd::drawing::rectangle_f& rect) noexcept;
       /// @brief Updates this xtd::drawing::region to the union of itself and the specified xtd::drawing::region.
       /// @param region The xtd::drawing::region to unite with this xtd::drawing::region.
-      void make_union(const xtd::drawing::region& region);
+      void make_union(const xtd::drawing::region& region) noexcept;
       
       /// @brief Updates this xtd::drawing::region to the union minus the intersection of itself with the specified xtd::drawing::graphics_path.
       /// @param path The xtd::drawing::graphics_path to Xor with this xtd::drawing::region.
-      void make_xor(const xtd::drawing::drawing2d::graphics_path& path);
+      void make_xor(const xtd::drawing::drawing2d::graphics_path& path) noexcept;
       /// @brief Updates this xtd::drawing::region to the union minus the intersection of itself with the specified xtd::drawing::rectangle structure.
       /// @param path The xtd::drawing::rectangle structure to Xor with this xtd::drawing::region.
-      void make_xor(const xtd::drawing::rectangle& rect);
+      void make_xor(const xtd::drawing::rectangle& rect) noexcept;
       /// @brief Updates this xtd::drawing::region to the union minus the intersection of itself with the specified xtd::drawing::rectangle_f structure.
       /// @param path The xtd::drawing::rectangle_f structure to Xor with this xtd::drawing::region.
-      void make_xor(const xtd::drawing::rectangle_f& rect);
+      void make_xor(const xtd::drawing::rectangle_f& rect) noexcept;
       /// @brief Updates this xtd::drawing::region to the union minus the intersection of itself with the specified xtd::drawing::region.
       /// @param path The xtd::drawing::region to Xor with this xtd::drawing::region.
-      void make_xor(const xtd::drawing::region& region);
+      void make_xor(const xtd::drawing::region& region) noexcept;
       
       /// @brief Releases the handle of the xtd::drawing::region.
       /// @param region_handle The handle to the xtd::drawing::region.
@@ -286,11 +286,11 @@ namespace xtd {
       /// @brief Offsets the coordinates of this xtd::drawing::region by the specified amount.
       /// @param dx The amount to offset this xtd::drawing::region horizontally.
       /// @param dy The amount to offset this xtd::drawing::region vertically.
-      void translate(int32_t dx, int32_t dy);
+      void translate(int32_t dx, int32_t dy) noexcept;
       /// @brief Offsets the coordinates of this xtd::drawing::region by the specified amount.
       /// @param dx The amount to offset this xtd::drawing::region horizontally.
       /// @param dy The amount to offset this xtd::drawing::region vertically.
-      void translate(float dx, float dy);
+      void translate(float dx, float dy) noexcept;
       /// @}
       
     private:
