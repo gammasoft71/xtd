@@ -27,6 +27,21 @@ inline std::pair<const std::type_index, std::function<std::string(std::any const
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @brief Unregister an any stringer method for a specified type.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core system
+  /// @par Examples
+  /// Show how to register your own class.
+  /// @include format_any.cpp
+  template<class type_t>
+  inline void unregister_any_stringer() {
+    auto it = __any_stringer__.find(std::type_index(typeid(type_t)));
+    if (it != __any_stringer__.cend()) __any_stringer__.erase(it);
+  }
+  
   /// @brief Register an any stringer method for a specified type.
   /// @param func Function to register any stringer for specified type.
   /// @par Namespace
@@ -41,19 +56,5 @@ namespace xtd {
   inline void register_any_stringer(const function_t& func) {
     unregister_any_stringer<type_t>();
     __any_stringer__.insert(__to_any_stringer__<type_t>(func));
-  }
-  /// @brief Unregister an any stringer method for a specified type.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core system
-  /// @par Examples
-  /// Show how to register your own class.
-  /// @include format_any.cpp
-  template<class type_t>
-  inline void unregister_any_stringer() {
-    auto it = __any_stringer__.find(std::type_index(typeid(type_t)));
-    if (it != __any_stringer__.cend()) __any_stringer__.erase(it);
   }
 }
