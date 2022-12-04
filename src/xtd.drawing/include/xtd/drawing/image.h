@@ -51,8 +51,8 @@ namespace xtd {
       image(const image& image) = default;
       image& operator =(const image& image) = default;
       ~image();
-      bool operator ==(const image& image) const;
-      bool operator !=(const image& image) const;
+      bool operator ==(const image& image) const noexcept;
+      bool operator !=(const image& image) const noexcept;
       /// @endcond
       
       /// @name Fields
@@ -85,76 +85,76 @@ namespace xtd {
       /// | Iimage_flags_read_only           | 65536                  |
       /// | Iimage_flags_caching             | 131072                 |
       /// @remarks For example, if the Flags property for an image returned 77960, the image_flags for the image would be read_only, has_real_dpi, has_real_pixel_size, color_space_ycbcr, and partially_scalable.
-      int32_t flags() const;
+      int32_t flags() const noexcept;
       
       /// @brief Gets an array of GUIDs that represent the dimensions of frames within this image.
       /// @return An array of GUIDs that specify the dimensions of frames within this xtd::drawing::image from most significant to least significant.
       /// @remarks This method returns information about multiple-frame images, which come in two styles: multiple page and multiple resolution.
       /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
       /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
-      std::vector<guid> frame_dimentions_list() const;
+      std::vector<guid> frame_dimentions_list() const noexcept;
       
       /// @brief Gets the handle of this image.
       /// @return The handle of this image.
-      intptr_t handle() const;
+      intptr_t handle() const noexcept;
       
       /// @brief Gets the height, in pixels, of this image.
       /// @return The height, in pixels, of this image.
-      int32_t height() const;
+      int32_t height() const noexcept;
       
       /// @brief Gets the horizontal resolution, in pixels per inch, of this image.
       /// @return The horizontal resolution, in pixels per inch, of this image.
-      float horizontal_resolution() const;
+      float horizontal_resolution() const noexcept;
       
       /// @brief Gets the color palette used for this image.
       /// @return An xtd::drawing::imaging::color_palette that represents the color palette used for this image.
       /// @remarks This property returns a copy of the xtd::drawing::imaging::color_palette object used by this xtd::drawing::image.
-      imaging::color_palette palette() const;
+      imaging::color_palette palette() const noexcept;
       /// @brief Sets the color palette used for this image.
       /// @param palette A color_palette that represents the color palette used for this image.
-      void palette(const imaging::color_palette& palette);
+      void palette(const imaging::color_palette& palette) noexcept;
       
       /// @brief Gets the width and height of this image.
       /// @return A xtd::drawing::size_f structure that represents the width and height of this image.
       /// @remarks If the image is a bitmap, the width and height are returned in pixels. If the image is a metafile, the width and height are returned in 0.01 millimeter units.
-      const size_f& physical_dimension() const;
+      const size_f& physical_dimension() const noexcept;
       
       /// @brief Gets the pixel format for this image.
       /// @return A pixel_format that represents the pixel format for this image.
-      imaging::pixel_format pixel_format() const;
+      imaging::pixel_format pixel_format() const noexcept;
       
       /// @brief Gets IDs of the property items stored in this image.
       /// @return An array of the property IDs, one for each property item stored in this image.
       /// @remarks If the image has no property items or if the image format does not support property items, the property_id_list property returns an empty array (that is, an array of length zero).
-      const std::vector<int32_t>& property_id_list() const;
+      const std::vector<int32_t>& property_id_list() const noexcept;
       
       /// @brief Gets all the property items (pieces of metadata) stored in this image.
       /// @return An array of xtd::drawing::imaging::property_item objects, one for each property item stored in the image.
       /// @remarks IIf the image has no property items or if the image format does not support property items, property_items returns an empty array (that is, an array of length zero).
-      const std::vector<imaging::property_item>& property_items() const;
+      const std::vector<imaging::property_item>& property_items() const noexcept;
       
       /// @brief Gets the file format of this image.
       /// @return The image_format that represents the file format of this image.
-      const imaging::image_format& raw_format() const;
+      const imaging::image_format& raw_format() const noexcept;
       
       /// @brief Gets the width and height, in pixels, of this image.
       /// @return A size structure that represents the width and height, in pixels, of this image.
-      const drawing::size& size() const;
+      const drawing::size& size() const noexcept;
       
       /// @brief Gets an object that provides additional data about the image.
       /// @return The object that provides additional data about the image.
-      const std::any& tag() const;
+      const std::any& tag() const noexcept;
       /// @brief Sets an object that provides additional data about the image.
       /// @param tag The object that provides additional data about the image.
-      void tag(const std::any& tag);
+      void tag(const std::any& tag) noexcept;
       
       /// @brief Gets the vertical resolution, in pixels per inch, of this image.
       /// @return The vertical resolution, in pixels per inch, of this image.
-      float vertical_resolution() const;
+      float vertical_resolution() const noexcept;
       
       /// @brief Gets the width, in pixels, of this image.
       /// @return The width, in pixels, of this image.
-      int32_t width() const;
+      int32_t width() const noexcept;
       /// @}
       
       /// @name Methods
@@ -193,12 +193,12 @@ namespace xtd {
       /// @brief Gets the bounds of the image in the specified unit.
       /// @param page_unit One of the xtd::drawing::graphics_unit values indicating the unit of measure for the bounding rectangle.
       /// @return The xtd::drawing::rectangle_f that represents the bounds of the image, in the specified unit.
-      xtd::drawing::rectangle_f get_bounds(xtd::drawing::graphics_unit page_unit) const;
+      xtd::drawing::rectangle_f get_bounds(xtd::drawing::graphics_unit page_unit) const noexcept;
       
       /// @brief Returns information about the parameters supported by the specified image encoder.
       /// @param guid A GUID that specifies the image encoder.
       /// @return An xtd::drawing::imaging::encoder_parameters that contains an array of xtd::drawing::imaging::encoder_parameter objects. Each xtd::drawing::imaging::encoder_parameter contains information about one of the parameters supported by the specified image encoder.
-      xtd::drawing::imaging::encoder_parameters get_encoder_parameter_list(xtd::guid encoder) const;
+      xtd::drawing::imaging::encoder_parameters get_encoder_parameter_list(xtd::guid encoder) const noexcept;
       
       /// @brief Returns the number of frames of the specified dimension.
       /// @param dimension A xtd::drawing::imaging::frame_dimension that specifies the identity of the dimension type.
@@ -211,7 +211,7 @@ namespace xtd {
       /// @brief Returns the color depth, in number of bits per pixel, of the specified pixel format.
       /// @param pixfmt The xtd::drawing::imaging::pixel_format member that specifies the format for which to find the size.
       /// @return The color depth of the specified pixel format.
-      static int32_t get_pixel_format_size(xtd::drawing::imaging::pixel_format pixfmt);
+      static int32_t get_pixel_format_size(xtd::drawing::imaging::pixel_format pixfmt) noexcept;
       
       /// @brief Gets the specified property item from this xtd::drawing::image.
       /// @param propid The ID of the property item to get.
@@ -227,22 +227,22 @@ namespace xtd {
       /// @return An xtd::drawing::image that represents the thumbnail.
       /// @remarks If the xtd::drawing::image contains an embedded thumbnail image, this method retrieves the embedded thumbnail and scales it to the requested size. If the xtd::drawing::image does not contain an embedded thumbnail image, this method creates a thumbnail image by scaling the main image.
       /// @remarks The xtd::drawing::image::get_thumbnail_image method works well when the requested thumbnail image has a size of about 120 x 120 pixels. If you request a large thumbnail image (for example, 300 x 300) from an xtd::drawing::image that has an embedded thumbnail, there could be a noticeable loss of quality in the thumbnail image. It might be better to scale the main image (instead of scaling the embedded thumbnail) by calling the xtd::drawing::graphics::draw_image method.
-      xtd::drawing::image get_thmbnail_image(int32_t thumb_width, int32_t thunb_height);
+      xtd::drawing::image get_thmbnail_image(int32_t thumb_width, int32_t thunb_height) noexcept;
       
       /// @brief Returns a value that indicates whether the pixel format for this xtd::drawing::image contains alpha information.
       /// @param pixfmt The PixelFormat to test.
       /// @return true if pixfmt contains alpha information; otherwise, false.
-      static bool is_alpha_pixel_format(xtd::drawing::imaging::pixel_format pixfmt);
+      static bool is_alpha_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) noexcept;
       
       /// @brief Returns a value that indicates whether the pixel format is 32 bits per pixel.
       /// @param pixfmt The PixelFormat to test.
       /// @return true if pixfmt is canonical; otherwise, false.
-      static bool is_canonical_pixel_format(xtd::drawing::imaging::pixel_format pixfmt);
+      static bool is_canonical_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) noexcept;
       
       /// @brief Returns a value that indicates whether the pixel format is 64 bits per pixel.
       /// @param pixfmt The PixelFormat to test.
       /// @return true if pixfmt is extended; otherwise, false.
-      static bool is_extended_pixel_format(xtd::drawing::imaging::pixel_format pixfmt);
+      static bool is_extended_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) noexcept;
       
       /// @brief Rotates, flips, or rotates and flips the xtd::drawing::image.
       /// @param rotate_flip_type A xtd::drawing::rotate_flip_type member that specifies the type of rotation and flip to apply to the image.

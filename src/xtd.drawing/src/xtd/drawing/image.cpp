@@ -89,81 +89,81 @@ image::~image() {
     native::image::destroy(data_->handle_);
 }
 
-bool image::operator ==(const image& image) const {
+bool image::operator ==(const image& image) const noexcept {
   return data_->handle_ == image.data_->handle_;
 }
 
-bool image::operator !=(const image& image) const {
+bool image::operator !=(const image& image) const noexcept {
   return !operator ==(image);
 }
-int32_t image::flags() const {
+int32_t image::flags() const noexcept {
   return static_cast<int32_t>(data_->flags_);
 }
 
-vector<guid> image::frame_dimentions_list() const {
+vector<guid> image::frame_dimentions_list() const noexcept {
   vector<guid> result;
   for (auto frame : data_->frame_dimensions)
     result.push_back(frame.first);
   return result;
 }
 
-intptr_t image::handle() const {
+intptr_t image::handle() const noexcept {
   return data_->handle_;
 }
 
-int32_t image::height() const {
+int32_t image::height() const noexcept {
   return data_->size_.height();
 }
 
-float image::horizontal_resolution() const {
+float image::horizontal_resolution() const noexcept {
   return data_->horizontal_resolution_;
 }
 
-imaging::color_palette image::palette() const {
+imaging::color_palette image::palette() const noexcept {
   return data_->palette_;
 }
 
-void image::palette(const imaging::color_palette& palette) {
+void image::palette(const imaging::color_palette& palette) noexcept {
   data_->palette_ = palette;
 }
 
-const size_f& image::physical_dimension() const {
+const size_f& image::physical_dimension() const noexcept {
   return data_->physical_dimension_;
 }
 
-imaging::pixel_format image::pixel_format() const {
+imaging::pixel_format image::pixel_format() const noexcept {
   return data_->pixel_format_;
 }
 
-const std::vector<int32_t>& image::property_id_list() const {
+const std::vector<int32_t>& image::property_id_list() const noexcept {
   return data_->property_id_list_;
 }
 
-const std::vector<imaging::property_item>& image::property_items() const {
+const std::vector<imaging::property_item>& image::property_items() const noexcept {
   return data_->property_items_;
 }
 
-const imaging::image_format& image::raw_format() const {
+const imaging::image_format& image::raw_format() const noexcept {
   return data_->raw_format_;
 }
 
-const drawing::size& image::size() const {
+const drawing::size& image::size() const noexcept {
   return data_->size_;
 }
 
-const std::any& image::tag() const {
+const std::any& image::tag() const noexcept {
   return data_->tag_;
 }
 
-void image::tag(const std::any& tag) {
+void image::tag(const std::any& tag) noexcept {
   data_->tag_ = tag;
 }
 
-float image::vertical_resolution() const {
+float image::vertical_resolution() const noexcept {
   return data_->vertical_resolution_;
 }
 
-int32_t image::width() const {
+int32_t image::width() const noexcept {
   return data_->size_.width();
 }
 
@@ -179,11 +179,11 @@ image image::from_data(const char* const* bits) {
   return image(bits);
 }
 
-xtd::drawing::rectangle_f image::get_bounds(graphics_unit page_unit) const {
+xtd::drawing::rectangle_f image::get_bounds(graphics_unit page_unit) const noexcept {
   return rectangle_f(0.0f, 0.0f, graphics::to_page_unit(as<float>(data_->size_.width()), page_unit, 1.0f, native::image::screen_dpi()), graphics::to_page_unit(as<float>(data_->size_.height()), page_unit, 1.0f, native::image::screen_dpi()));
 }
 
-xtd::drawing::imaging::encoder_parameters image::get_encoder_parameter_list(xtd::guid encoder) const {
+xtd::drawing::imaging::encoder_parameters image::get_encoder_parameter_list(xtd::guid encoder) const noexcept {
   xtd::drawing::imaging::encoder_parameters result;
   for (auto encoder_parameter : data_->encoder_parameter_list_.params()) {
     if (encoder_parameter.encoder().guid() == encoder)
@@ -198,7 +198,7 @@ size_t image::get_frame_count(const xtd::drawing::imaging::frame_dimension& dime
   throw argument_exception(csf_);
 }
 
-int32_t image::get_pixel_format_size(xtd::drawing::imaging::pixel_format pixfmt) {
+int32_t image::get_pixel_format_size(xtd::drawing::imaging::pixel_format pixfmt) noexcept {
   return (static_cast<int32_t>(pixfmt) >> 8) & 0xFF;
 }
 
@@ -208,19 +208,19 @@ xtd::drawing::imaging::property_item image::get_property_item(int32_t propid) {
   throw argument_exception(csf_);
 }
 
-xtd::drawing::image image::get_thmbnail_image(int32_t thumb_width, int32_t thunb_height) {
+xtd::drawing::image image::get_thmbnail_image(int32_t thumb_width, int32_t thunb_height) noexcept {
   return image(*this, thumb_width, thunb_height);
 }
 
-bool image::is_alpha_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) {
+bool image::is_alpha_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) noexcept {
   return (pixfmt & xtd::drawing::imaging::pixel_format::alpha) == xtd::drawing::imaging::pixel_format::alpha;
 }
 
-bool image::is_canonical_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) {
+bool image::is_canonical_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) noexcept {
   return (pixfmt & xtd::drawing::imaging::pixel_format::canonical) == xtd::drawing::imaging::pixel_format::canonical;
 }
 
-bool image::is_extended_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) {
+bool image::is_extended_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) noexcept {
   return (pixfmt & xtd::drawing::imaging::pixel_format::extended) == xtd::drawing::imaging::pixel_format::extended;
 }
 
