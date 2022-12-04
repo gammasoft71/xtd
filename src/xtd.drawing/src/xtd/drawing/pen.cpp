@@ -45,15 +45,15 @@ pen::~pen() {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::pen::destroy(data_->handle_);
 }
 
-bool pen::operator ==(const xtd::drawing::pen& value) const {
+bool pen::operator ==(const xtd::drawing::pen& value) const noexcept {
   return data_ == value.data_;
 }
 
-bool pen::operator !=(const xtd::drawing::pen& value) const {
+bool pen::operator !=(const xtd::drawing::pen& value) const noexcept {
   return !operator ==(value);
 }
 
-pen_alignment pen::alignment() const {
+pen_alignment pen::alignment() const noexcept {
   return data_->alignment;
 }
 
@@ -65,11 +65,11 @@ pen& pen::alignment(drawing2d::pen_alignment value) {
   return *this;
 }
 
-const std::unique_ptr<drawing::brush>& pen::brush() const {
+const std::unique_ptr<drawing::brush>& pen::brush() const noexcept {
   return data_->brush;
 }
 
-const xtd::drawing::color& pen::color() const {
+const xtd::drawing::color& pen::color() const noexcept {
   return data_->color;
 }
 
@@ -82,7 +82,7 @@ pen& pen::color(const drawing::color& value) {
   return *this;
 }
 
-std::vector<float> pen::dash_pattern() const {
+std::vector<float> pen::dash_pattern() const noexcept {
   return data_->dash_pattern;
 }
 
@@ -99,7 +99,7 @@ pen& pen::dash_pattern(const vector<float>& value) {
   return *this;
 }
 
-drawing::dash_style pen::dash_style() const {
+drawing::dash_style pen::dash_style() const noexcept {
   return data_->dash_style;
 }
 
@@ -123,7 +123,7 @@ xtd::drawing::pen& pen::end_cap(xtd::drawing::drawing2d::line_cap value) {
   return *this;
 }
 
-intptr_t pen::handle() const {
+intptr_t pen::handle() const noexcept {
   return data_->handle_;
 }
 
@@ -163,8 +163,12 @@ xtd::drawing::pen& pen::start_cap(xtd::drawing::drawing2d::line_cap value) {
   return *this;
 }
 
-xtd::drawing::drawing2d::pen_type pen::type() const {
+xtd::drawing::drawing2d::pen_type pen::type() const noexcept {
   return data_->type;
+}
+
+float pen::width() const noexcept {
+  return data_->width;
 }
 
 pen& pen::width(float value) {
