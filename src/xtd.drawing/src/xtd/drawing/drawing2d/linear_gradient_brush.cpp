@@ -78,6 +78,21 @@ linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle& rect
 linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::color>& linear_colors)  : linear_gradient_brush(rect, linear_colors, .0) {
 }
 
+linear_gradient_brush& linear_gradient_brush::operator =(const linear_gradient_brush& value) {
+  brush::operator =(value);
+  data_ = value.data_;
+  return *this;
+}
+
+bool linear_gradient_brush::operator ==(const linear_gradient_brush& value) const noexcept {
+  return data_ == value.data_;
+}
+
+bool linear_gradient_brush::operator !=(const linear_gradient_brush& value) const noexcept {
+  return !operator ==(value);
+}
+
+
 float linear_gradient_brush::angle() const noexcept {
   return data_->angle;
 }
@@ -135,10 +150,4 @@ void linear_gradient_brush::recreate_handle() {
 }
 
 linear_gradient_brush::linear_gradient_brush(const linear_gradient_brush& value) : brush(value), data_(value.data_) {
-}
-
-linear_gradient_brush& linear_gradient_brush::operator =(const linear_gradient_brush& value) {
-  brush::operator =(value);
-  data_ = value.data_;
-  return *this;
 }

@@ -133,8 +133,8 @@ namespace xtd {
         /// @cond
         linear_gradient_brush(const linear_gradient_brush& value);
         linear_gradient_brush& operator =(const linear_gradient_brush& value);
-        bool operator ==(const linear_gradient_brush& value) const {return data_ == value.data_;}
-        bool operator !=(const linear_gradient_brush& value) const {return !operator ==(value);}
+        bool operator ==(const linear_gradient_brush& value) const noexcept;
+        bool operator !=(const linear_gradient_brush& value) const noexcept;
         /// @endcond
         
         /// @name Properties
