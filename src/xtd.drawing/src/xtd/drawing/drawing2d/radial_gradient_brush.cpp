@@ -50,6 +50,20 @@ radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point_f& center
   recreate_handle();
 }
 
+radial_gradient_brush& radial_gradient_brush::operator =(const radial_gradient_brush& value) {
+  brush::operator =(value);
+  data_ = value.data_;
+  return *this;
+}
+
+bool radial_gradient_brush::operator ==(const radial_gradient_brush& value) const noexcept {
+  return data_ == value.data_;
+}
+
+bool radial_gradient_brush::operator !=(const radial_gradient_brush& value) const noexcept {
+  return !operator ==(value);
+}
+
 float radial_gradient_brush::radius() const noexcept {
   return data_->radius;
 }
@@ -117,10 +131,4 @@ void radial_gradient_brush::recreate_handle() {
 }
 
 radial_gradient_brush::radial_gradient_brush(const radial_gradient_brush& value) : brush(value), data_(value.data_) {
-}
-
-radial_gradient_brush& radial_gradient_brush::operator =(const radial_gradient_brush& value) {
-  brush::operator =(value);
-  data_ = value.data_;
-  return *this;
 }
