@@ -28,39 +28,47 @@ region::~region() {
   if (data_.use_count() == 1 && data_->handle != 0) native::region::destroy(data_->handle);
 }
 
-intptr_t region::handle() const {
+bool region::operator ==(const region& value) const noexcept {
+  return data_ == value.data_;
+}
+
+bool region::operator !=(const region& value) const noexcept {
+  return !operator ==(value);
+}
+
+intptr_t region::handle() const noexcept {
   return data_->handle;
 }
 
-void region::complement(const xtd::drawing::drawing2d::graphics_path& path) {
+void region::complement(const xtd::drawing::drawing2d::graphics_path& path) noexcept {
   complement(region(path));
 }
 
-void region::complement(const xtd::drawing::rectangle& rect) {
+void region::complement(const xtd::drawing::rectangle& rect) noexcept {
   complement(region(rect));
 }
 
-void region::complement(const xtd::drawing::rectangle_f& rect) {
+void region::complement(const xtd::drawing::rectangle_f& rect) noexcept {
   complement(region(rect));
 }
 
-void region::complement(const xtd::drawing::region& region) {
+void region::complement(const xtd::drawing::region& region) noexcept {
   native::region::complement(data_->handle, region.data_->handle);
 }
 
-void region::exclude(const xtd::drawing::drawing2d::graphics_path& path) {
+void region::exclude(const xtd::drawing::drawing2d::graphics_path& path) noexcept {
   exclude(region(path));
 }
 
-void region::exclude(const xtd::drawing::rectangle& rect) {
+void region::exclude(const xtd::drawing::rectangle& rect) noexcept {
   exclude(region(rect));
 }
 
-void region::exclude(const xtd::drawing::rectangle_f& rect) {
+void region::exclude(const xtd::drawing::rectangle_f& rect) noexcept {
   exclude(region(rect));
 }
 
-void region::exclude(const xtd::drawing::region& region) {
+void region::exclude(const xtd::drawing::region& region) noexcept {
   native::region::exclude(data_->handle, region.data_->handle);
 }
 
@@ -70,13 +78,13 @@ xtd::drawing::region region::from_hrgn(intptr_t hrgn) {
   return result;
 }
 
-rectangle_f region::get_bounds() const {
+rectangle_f region::get_bounds() const noexcept {
   float x = 0.0f, y = 0.0f, width = 0.0f, height = 0.0f;
   native::region::get_bounds(handle(), x, y, width, height);
   return rectangle_f(x, y, width, height);
 }
 
-rectangle_f region::get_bounds(const xtd::drawing::graphics& g) const {
+rectangle_f region::get_bounds(const xtd::drawing::graphics& g) const noexcept {
   rectangle_f rect = get_bounds();
   rect.x(g.to_page_unit(rect.x()));
   rect.y(g.to_page_unit(rect.y()));
@@ -85,23 +93,23 @@ rectangle_f region::get_bounds(const xtd::drawing::graphics& g) const {
   return rect;
 }
 
-intptr_t region::get_hrgn(const xtd::drawing::graphics& g) const {
+intptr_t region::get_hrgn(const xtd::drawing::graphics& g) const noexcept {
   return native::region::get_hrgn(handle(), g.handle());
 }
 
-void region::intersect(const xtd::drawing::drawing2d::graphics_path& path) {
+void region::intersect(const xtd::drawing::drawing2d::graphics_path& path) noexcept {
   intersect(region(path));
 }
 
-void region::intersect(const xtd::drawing::rectangle& rect) {
+void region::intersect(const xtd::drawing::rectangle& rect) noexcept {
   intersect(region(rect));
 }
 
-void region::intersect(const xtd::drawing::rectangle_f& rect) {
+void region::intersect(const xtd::drawing::rectangle_f& rect) noexcept {
   intersect(region(rect));
 }
 
-void region::intersect(const xtd::drawing::region& region) {
+void region::intersect(const xtd::drawing::region& region) noexcept {
   native::region::intersect(data_->handle, region.data_->handle);
 }
 
@@ -189,39 +197,39 @@ void region::make_empty() {
   native::region::make_empty(handle());
 }
 
-void region::make_infinite() {
+void region::make_infinite() noexcept {
   *this = region();
 }
 
-void region::make_union(const xtd::drawing::drawing2d::graphics_path& path) {
+void region::make_union(const xtd::drawing::drawing2d::graphics_path& path) noexcept {
   make_union(region(path));
 }
 
-void region::make_union(const xtd::drawing::rectangle& rect) {
+void region::make_union(const xtd::drawing::rectangle& rect) noexcept {
   make_union(region(rect));
 }
 
-void region::make_union(const xtd::drawing::rectangle_f& rect) {
+void region::make_union(const xtd::drawing::rectangle_f& rect) noexcept {
   make_union(region(rect));
 }
 
-void region::make_union(const xtd::drawing::region& region) {
+void region::make_union(const xtd::drawing::region& region) noexcept {
   native::region::make_union(data_->handle, region.data_->handle);
 }
 
-void region::make_xor(const xtd::drawing::drawing2d::graphics_path& path) {
+void region::make_xor(const xtd::drawing::drawing2d::graphics_path& path) noexcept {
   make_xor(region(path));
 }
 
-void region::make_xor(const xtd::drawing::rectangle& rect) {
+void region::make_xor(const xtd::drawing::rectangle& rect) noexcept {
   make_xor(region(rect));
 }
 
-void region::make_xor(const xtd::drawing::rectangle_f& rect) {
+void region::make_xor(const xtd::drawing::rectangle_f& rect) noexcept {
   make_xor(region(rect));
 }
 
-void region::make_xor(const xtd::drawing::region& region) {
+void region::make_xor(const xtd::drawing::region& region) noexcept {
   native::region::make_xor(data_->handle, region.data_->handle);
 }
 
@@ -229,18 +237,10 @@ void region::release_hrgn(intptr_t region_handle) {
   native::region::release_hrgn(region_handle);
 }
 
-void region::translate(int32_t dx, int32_t dy) {
+void region::translate(int32_t dx, int32_t dy) noexcept {
   translate(as<float>(dx), as<float>(dy));
 }
 
-void region::translate(float dx, float dy) {
+void region::translate(float dx, float dy) noexcept {
   native::region::translate(handle(), dx, dy);
-}
-
-bool region::operator ==(const region& value) const {
-  return data_ == value.data_;
-}
-
-bool region::operator !=(const region& value) const {
-  return !operator ==(value);
 }
