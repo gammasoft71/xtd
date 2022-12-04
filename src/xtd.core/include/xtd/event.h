@@ -11,6 +11,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core events
+  /// @remarks For more info about events see <a href=https://github.com/gammasoft71/xtd/blob/master/docs/events.md">Events</a> guide.
   /// @paramt object_t the owner object type of the event.
   /// @paramt handler_t Typically a xtd::event_handler or inherited type.
   /// @remarks Only an object of type object_t can be create and invoke event.

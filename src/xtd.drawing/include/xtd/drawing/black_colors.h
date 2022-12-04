@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::gray_and_black_colors factory.
+/// @brief Contains xtd::drawing::black_colors factory.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "gray_colors.h"

@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains Switch::System::uri_template_match_exception exception.
+/// @brief Contains xtd::uri_template_match_exception exception.
 #pragma once
 
 #include "system_exception.h"

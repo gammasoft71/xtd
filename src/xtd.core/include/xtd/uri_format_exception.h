@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains Switch::System::UriFormatException exception.
+/// @brief Contains xtd::uri_format_exception exception.
 #pragma once
 
 #include "format_exception.h"

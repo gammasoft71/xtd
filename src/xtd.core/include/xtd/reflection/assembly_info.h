@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains assembly information includes.
+/// @brief Contains the assembly information contained in xtd::reflection.
 #pragma once
 
 #include "assembly_company_attribute.h"
