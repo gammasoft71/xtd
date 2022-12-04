@@ -26,7 +26,7 @@ namespace xtd {
         /// @{
         /// @brief Gets the array of FontFamily objects associated with this FontCollection.
         /// @return Array<FontFamily> An array of FontFamily objects.
-        const std::vector<font_family>& families() const {return families_;}
+        const std::vector<font_family>& families() const noexcept {return families_;}
         /// @}
         
       protected:
