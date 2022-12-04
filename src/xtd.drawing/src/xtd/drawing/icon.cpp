@@ -68,27 +68,27 @@ icon::~icon() {
     native::icon::destroy(data_->handle);
 }
 
-bool icon::operator ==(const icon& icon) const {
+bool icon::operator ==(const icon& icon) const noexcept {
   return data_->handle == icon.data_->handle;
 }
 
-bool icon::operator !=(const icon& icon) const {
+bool icon::operator !=(const icon& icon) const noexcept {
   return !operator ==(icon);
 }
 
-intptr_t icon::handle() const {
+intptr_t icon::handle() const noexcept {
   return data_->handle;
 }
 
-int32_t icon::height() const {
+int32_t icon::height() const noexcept {
   return data_->size.height();
 }
 
-const xtd::drawing::size& icon::size() const {
+const xtd::drawing::size& icon::size() const noexcept {
   return data_->size;
 }
 
-int32_t icon::width() const {
+int32_t icon::width() const noexcept {
   return data_->size.width();
 }
 
@@ -115,4 +115,6 @@ bitmap icon::to_bitmap() const {
   return image::from_hbitmap(native::icon::to_image(data_->handle));
 }
 
-
+xtd::ustring icon::to_string() const noexcept {
+  return ustring::full_class_name(*this);
+}
