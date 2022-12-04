@@ -47,8 +47,8 @@ namespace xtd {
         graphics_path(const xtd::drawing::drawing2d::graphics_path& value);
         graphics_path& operator =(const xtd::drawing::drawing2d::graphics_path& value);
         ~graphics_path();
-        bool operator ==(const xtd::drawing::drawing2d::graphics_path& value) const;
-        bool operator !=(const xtd::drawing::drawing2d::graphics_path& value) const;
+        bool operator ==(const xtd::drawing::drawing2d::graphics_path& value) const noexcept;
+        bool operator !=(const xtd::drawing::drawing2d::graphics_path& value) const noexcept;
         /// @endcond
         
         /// @name Properties
