@@ -82,7 +82,7 @@ namespace xtd {
       /// @param gdi_vertical_font A boolean value indicating whether the new xtd::drawing::font is derived from a GDI vertical font.
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
       /// @remarks The gdiCharSet parameter takes a value from the list defined in the Windows SDK header file WinGDI.h. If the familyName parameter specifies a font that is not installed on the machine running the application or is not supported, Microsoft Sans Serif will be substituted.
-      font(const drawing::font_family& font_family, float em_size, font_style style, graphics_unit unit, uint8_t gdi_char_set, bool gdi_vertical_font) : font(font_family.name(), em_size, style, unit, gdi_char_set, gdi_vertical_font) {}
+      font(const drawing::font_family& font_family, float em_size, font_style style, graphics_unit unit, uint8_t gdi_char_set, bool gdi_vertical_font);
       
       /// @brief Initializes a new xtd::drawing::font using the specified size, style, unit, and character set.
       /// @param family_name A string representation of the font_family for the new xtd::drawing::font.
@@ -92,7 +92,7 @@ namespace xtd {
       /// @param gdi_char_set A byte that specifies a GDI character set to use for this font.
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
       /// @remarks The gdiCharSet parameter takes a value from the list defined in the Windows SDK header file WinGDI.h. If the familyName parameter specifies a font that is not installed on the machine running the application or is not supported, Microsoft Sans Serif will be substituted.
-      font(xtd::ustring family_name, float em_size, font_style style, graphics_unit unit, uint8_t gdi_char_set) : font(family_name, em_size, style, unit, gdi_char_set, false) {}
+      font(xtd::ustring family_name, float em_size, font_style style, graphics_unit unit, uint8_t gdi_char_set);
       
       /// @brief Initializes a new xtd::drawing::font using the specified size, style, unit, and character set.
       /// @param font_family The font_family of the new Font.
@@ -102,7 +102,7 @@ namespace xtd {
       /// @param gdi_char_set A byte that specifies a GDI character set to use for this font.
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
       /// @remarks The gdiCharSet parameter takes a value from the list defined in the Windows SDK header file WinGDI.h. If the familyName parameter specifies a font that is not installed on the machine running the application or is not supported, Microsoft Sans Serif will be substituted.
-      font(const drawing::font_family& font_family, float em_size, font_style style, graphics_unit unit, uint8_t gdi_char_set) : font(font_family, em_size, style, unit, gdi_char_set, false) {}
+      font(const drawing::font_family& font_family, float em_size, font_style style, graphics_unit unit, uint8_t gdi_char_set);
       
       /// @brief Initializes a new xtd::drawing::font using the specified size, style and unit.
       /// @param family_name A string representation of the font_family for the new xtd::drawing::font.
@@ -110,7 +110,7 @@ namespace xtd {
       /// @param style The font_style of the new xtd::drawing::font.
       /// @param unit The graphics_unit of the new xtd::drawing::font.
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
-      font(xtd::ustring family_name, float em_size, font_style style, graphics_unit unit) : font(family_name, em_size, style, unit, 0, false) {}
+      font(xtd::ustring family_name, float em_size, font_style style, graphics_unit unit);
       
       /// @brief Initializes a new xtd::drawing::font using the specified size, style and unit.
       /// @param font_family The font_family of the new Font.
@@ -118,54 +118,54 @@ namespace xtd {
       /// @param style The font_style of the new xtd::drawing::font.
       /// @param unit The graphics_unit of the new xtd::drawing::font.
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
-      font(const drawing::font_family& font_family, float em_size, font_style style, graphics_unit unit) : font(font_family, em_size, style, unit, 0, false) {}
+      font(const drawing::font_family& font_family, float em_size, font_style style, graphics_unit unit);
       
       /// @brief Initializes a new xtd::drawing::font using the specified size and style.
       /// @param family_name A string representation of the font_family for the new xtd::drawing::font.
       /// @param em_size The em-size of the new font in the units specified by the unit parameter.
       /// @param style The font_style of the new xtd::drawing::font.
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
-      font(xtd::ustring family_name, float em_size, font_style style) : font(family_name, em_size, style, graphics_unit::point, 0, false) {}
+      font(xtd::ustring family_name, float em_size, font_style style);
       
       /// @brief Initializes a new xtd::drawing::font using the specified size and style.
       /// @param font_family The font_family of the new Font.
       /// @param em_size The em-size of the new font in the units specified by the unit parameter.
       /// @param style The font_style of the new xtd::drawing::font.
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
-      font(const drawing::font_family& font_family, float em_size, font_style style) : font(font_family, em_size, style, graphics_unit::point, 0, false) {}
+      font(const drawing::font_family& font_family, float em_size, font_style style);
       
       /// @brief Initializes a new xtd::drawing::font using the specified size and unit.
       /// @param family_name A string representation of the font_family for the new xtd::drawing::font.
       /// @param em_size The em-size of the new font in the units specified by the unit parameter.
       /// @param unit The graphics_unit of the new xtd::drawing::font.
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
-      font(xtd::ustring family_name, float em_size, graphics_unit unit) : font(family_name, em_size, font_style::regular, unit, 0, false) {}
+      font(xtd::ustring family_name, float em_size, graphics_unit unit);
       
       /// @brief Initializes a new xtd::drawing::font using the specified size and unit.
       /// @param font_family The font_family of the new Font.
       /// @param em_size The em-size of the new font in the units specified by the unit parameter.
       /// @param unit The graphics_unit of the new xtd::drawing::font.
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
-      font(const drawing::font_family& font_family, float em_size, graphics_unit unit) : font(font_family, em_size, font_style::regular, unit, 0, false) {}
+      font(const drawing::font_family& font_family, float em_size, graphics_unit unit);
       
       /// @brief Initializes a new xtd::drawing::font using the specified size and unit.
       /// @param family_name A string representation of the font_family for the new xtd::drawing::font.
       /// @param em_size The em-size of the new font in the units specified by the unit parameter.
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
-      font(xtd::ustring family_name, float em_size) : font(family_name, em_size, font_style::regular, graphics_unit::point, 0, false) {}
+      font(xtd::ustring family_name, float em_size);
       
       /// @brief Initializes a new xtd::drawing::font using the specified size.
       /// @param font_family The font_family of the new Font.
       /// @param em_size The em-size of the new font in the units specified by the unit parameter.
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
-      font(const drawing::font_family& font_family, float em_size) : font(font_family, em_size, font_style::regular, graphics_unit::point, 0, false) {}
+      font(const drawing::font_family& font_family, float em_size);
       /// @}
       
       /// @cond
       font(const font& value);
       font& operator =(const font& value);
-      bool operator ==(const font& value) const {return data_->font_family_ == value.data_->font_family_ && data_->gdi_char_set_ == value.data_->gdi_char_set_ && data_->gdi_vertical_font_ == value.data_->gdi_vertical_font_ && data_->style_ == value.data_->style_ && data_->size_ == value.data_->size_ && data_->unit_ == value.data_->unit_;}
-      bool operator !=(const font& value) const {return !operator ==(value);}
+      bool operator ==(const font& value) const noexcept;
+      bool operator !=(const font& value) const noexcept;
       ~font();
       /// @endcond
       
@@ -174,12 +174,12 @@ namespace xtd {
       /// @{
       /// @brief Gets a value that indicates whether this xtd::drawing::font is bold.
       /// @return true if this xtd::drawing::font is bold; otherwise, false.
-      bool bold() const {return (data_->style_ & font_style::bold) == font_style::bold;}
+      bool bold() const noexcept;
       
       /// @brief Gets the xtd::drawing::font_family associated with this xtd::drawing::font.
       /// @return The font_family associated with this Font.
       /// @remarks A font_family represents a group of fonts that have a similar font face, but may have different sizes and styles (for example, Arial, Times New Roman, and Verdana).
-      drawing::font_family font_family() const {return data_->font_family_;}
+      drawing::font_family font_family() const noexcept;
       
       /// @brief Gets a byte value that specifies the GDI character set that this xtd::drawing::font uses.
       /// @return A byte value that specifies the GDI character set that this xtd::drawing::font uses. The default is 1.
@@ -206,17 +206,17 @@ namespace xtd {
       /// | RUSSIAN       | 204   |
       /// | MAC           | 77    |
       /// | BALTIC        | 186   |
-      uint8_t gdi_char_set() const {return data_->gdi_char_set_;}
+      uint8_t gdi_char_set() const noexcept;
       
       /// @brief Gets a Boolean value that indicates whether this xtd::drawing::font is derived from a GDI vertical font.
       /// @return true if this xtd::drawing::font is derived from a GDI vertical font; otherwise, false.
       /// @remarks Use this property to determine if a font is compatible with native Win32 controls on non-Unicode platforms.
       /// @remarks gdi_vertical_font only returns true if this font was created from a classic GDI font definition, like a LOGFONT or HFONT.
-      bool gdi_vertical_font() const {return data_->gdi_vertical_font_;}
+      bool gdi_vertical_font() const noexcept;
       
       /// @brief Gets the window handle that the font is bound to.
       /// @return An intptr_t that contains the window handle (hfont) of the font.
-      intptr_t handle() const {return data_->handle_;}
+      intptr_t handle() const noexcept;
       
       /// @brief Gets the line spacing of this font.
       /// @return The line spacing, in pixels, of this font.
@@ -224,48 +224,48 @@ namespace xtd {
       /// @remarks If the unit property of the font is set to anything other than graphics_unit::pixel, the height (in pixels) is calculated using the vertical resolution of the screen display. For example, suppose the font unit is inches and the font size is 0.3. Also suppose that for the corresponding font family, the em-height is 2048 and the line spacing is 2355. For a screen display that has a vertical resolution of 96 dots per inch, you can calculate the height as follows:
       /// @remarks 2355*(0.3/2048)*96 = 33.11719
       /// @remarks The value returned by the get_height method would be 33.11719, and the value returned by the height property would be 34. The height property is the value returned by get_height, rounded up to the nearest integer.
-      int32_t height() const;
+      int32_t height() const noexcept;
       
       /// @brief Gets a value indicating whether the font is a member of xtd::drawing::system_fonts.
       /// @return true if the font is a member of xtd::drawing::system_fonts; otherwise, false. The default is false.
       /// @remarks When the user changes the system font, the is_system_font property could return true, even if the font is not actually a system font.
-      bool is_system_font() const {return data_->is_system_font_;}
+      bool is_system_font() const noexcept;
       
       /// @brief Gets a value that indicates whether this xtd::drawing::font is italic.
       /// @return true if this xtd::drawing::font is italic; otherwise, false.
-      bool italic() const {return (data_->style_ & font_style::italic) == font_style::italic;}
+      bool italic() const noexcept;
       
       /// @brief Gets the face name of this xtd::drawing::font.
       /// @return A string representation of the face name of this xtd::drawing::font.
-      const xtd::ustring& name() const {return data_->font_family_.name();}
+      const xtd::ustring& name() const noexcept;
       
       /// @brief Gets the face name of this Font.
       /// @return A string representation of the face name of this Font.
-      const xtd::ustring& original_font_name() const {return data_->original_font_name_;}
+      const xtd::ustring& original_font_name() const noexcept;
       
       /// @brief Gets the em-size of this xtd::drawing::font measured in the units specified by the unit property.
       /// @return The em-size of this xtd::drawing::font.
-      float size() const {return data_->size_;}
+      float size() const noexcept;
       
       /// @brizef Gets the em-size, in points, of this xtd::drawing::font.
       /// @return The em-size, in points, of this xtd::drawing::font.
-      float size_in_points() const;
+      float size_in_points() const noexcept;
       
       /// @brief Gets a value that indicates whether this xtd::drawing::font is strikeout.
       /// @return true if this xtd::drawing::font is strikeout; otherwise, false.
-      bool strikeout() const {return (data_->style_ & font_style::strikeout) == font_style::strikeout;}
+      bool strikeout() const noexcept;
       
       /// @brief Gets style information for this xtd::drawing::font.
       /// @return A font_style enumeration that contains style information for this xtd::drawing::font.
-      font_style style() const {return data_->style_;}
+      font_style style() const noexcept;
       
       /// @brief Gets a value that indicates whether this xtd::drawing::font is underline.
       /// @return true if this xtd::drawing::font is underline; otherwise, false.
-      bool underline() const {return (data_->style_ & font_style::underline) == font_style::underline;}
+      bool underline() const noexcept;
       
       /// @brief Gets the unit of measure for this xtd::drawing::font.
       /// @return A graphics_unit that represents the unit of measure for this xtd::drawing::font.
-      graphics_unit unit() const {return data_->unit_;}
+      graphics_unit unit() const noexcept;
       /// @}
       
       /// @name Methods
@@ -307,10 +307,7 @@ namespace xtd {
       
       /// @brief Converts this font_family to a human-readable string representation.
       /// @return The string that represents this font_family.
-      xtd::ustring to_string() const noexcept override {
-        //return ustring::format("[{}: ]", ustring::class_name(*this));
-        return ustring::format("[{}: name={}, size={}, units={}, gdi_char_set={}, gdi_vertical_font={}]", ustring::class_name(*this), data_->font_family_.name(), data_->size_, (int32_t)data_->unit_, data_->gdi_char_set_, data_->gdi_vertical_font_);
-      }
+      xtd::ustring to_string() const noexcept override;
       /// @}
       
     private:
