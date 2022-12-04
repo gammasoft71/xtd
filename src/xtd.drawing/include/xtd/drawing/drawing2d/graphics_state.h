@@ -2,6 +2,7 @@
 /// @brief Contains xtd::drawing::drawing2d::graphics_state class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
+#include "../../drawing_export.h"
 #include <xtd/object.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -28,10 +29,10 @@ namespace xtd {
       class drawing_export_ graphics_state final : public xtd::object {
       public:
         /// @cond
-        graphics_state(const graphics_state& value);
-        graphics_state& operator =(const graphics_state& value);
-        bool operator ==(const graphics_state& value) const {return handle_ == value.handle_;}
-        bool operator !=(const graphics_state& value) const {return !operator ==(value);}
+        graphics_state(const graphics_state& value) = default;
+        graphics_state& operator =(const graphics_state& value) = default;
+        bool operator ==(const graphics_state& value) const noexcept;
+        bool operator !=(const graphics_state& value) const noexcept;
         /// @endcond
         
       private:
