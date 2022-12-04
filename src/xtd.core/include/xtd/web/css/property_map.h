@@ -9,6 +9,7 @@
 namespace xtd {
   namespace web {
     namespace css {
+      /// @brief Represents the map of a property name - property pair.
       using property_map = std::map<xtd::ustring, xtd::web::css::property>;
     }
   }

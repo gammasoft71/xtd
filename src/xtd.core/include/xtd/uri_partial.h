@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains Switch::System::UriPartial enum.
+/// @brief Contains xtd::uri_partial enum.
 #pragma once
 
 #include "enum.h"

@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::arranged_element_collection collection.
+/// @brief Contains xtd::forms::layout::arranged_element_collection collection.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <limits>

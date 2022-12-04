@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::do_work_event event args.
+/// @brief Contains xtd::forms::do_work_event_args event args.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <any>

@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains Switch::System::uri_kind enum.
+/// @brief Contains xtd::uri_kind enum.
 #pragma once
 
 #include "enum.h"

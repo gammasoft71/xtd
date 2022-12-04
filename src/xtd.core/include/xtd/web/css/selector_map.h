@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::web::css::selector_map typedef.
+/// @brief Contains xtd::web::css::selector_map alias.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "selector.h"
@@ -9,6 +9,7 @@
 namespace xtd {
   namespace web {
     namespace css {
+      /// @brief Represents the map of a selector name - selector pair.
       using selector_map = std::map<xtd::ustring, xtd::web::css::selector>;
     }
   }
