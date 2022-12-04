@@ -102,7 +102,7 @@ namespace xtd {
       /// @{
       /// @brief Raises the xtd::forms::timer::tick event.
       /// @param e An event_args that contains the event data. This is always xtd::event_args::empty.
-      void on_tick(const event_args& e);
+      virtual void on_tick(const event_args& e);
       /// @}
       
     private:
