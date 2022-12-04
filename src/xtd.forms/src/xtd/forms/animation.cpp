@@ -38,16 +38,22 @@ animation& animation::frames_per_second(int32_t value) {
   return *this;
 }
 
-bool animation::is_running() const noexcept {
+bool animation::running() const noexcept {
   return data_->frames_timer.enabled();
 }
 
+animation& animation::running(bool value) {
+  if (value) data_->frames_timer.enabled(data_->frames_per_second);
+  else data_->frames_timer.enabled(false);
+  return *this;
+}
+
 void animation::start() {
-  data_->frames_timer.enabled(data_->frames_per_second);
+  running(true);
 }
 
 void animation::stop() {
-  data_->frames_timer.enabled(false);
+  running(false);
 }
 
 void animation::on_updated(const animation_updated_event_args& e) {
