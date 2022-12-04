@@ -36,14 +36,14 @@ namespace xtd {
       /// @cond
       texture_brush(const texture_brush& value);
       texture_brush& operator =(const texture_brush& value);
-      bool operator ==(const texture_brush& value) const {return data_->image_ == value.data_->image_;}
-      bool operator !=(const texture_brush& value) const {return !operator ==(value);}
+      bool operator ==(const texture_brush& value) const noexcept;
+      bool operator !=(const texture_brush& value) const noexcept;
       /// @endcond
       
       /// @name Properties
       
       /// @{
-      const drawing::image& image() const {return data_->image_;}
+      const drawing::image& image() const noexcept;
       texture_brush& image(const drawing::image& image);
       /// @}
       
