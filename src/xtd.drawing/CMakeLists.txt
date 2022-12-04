@@ -144,6 +144,7 @@ add_sources(
   src/xtd/drawing/drawing2d/hatch_brush.cpp
   src/xtd/drawing/drawing2d/conical_gradient_brush.cpp
   src/xtd/drawing/drawing2d/graphics_path.cpp
+  src/xtd/drawing/drawing2d/graphics_state.cpp
   src/xtd/drawing/drawing2d/linear_gradient_brush.cpp
   src/xtd/drawing/drawing2d/matrix.cpp
   src/xtd/drawing/drawing2d/radial_gradient_brush.cpp
