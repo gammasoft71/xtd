@@ -120,7 +120,9 @@ namespace xtd {
     /// @brief Returns the angle whose tangent is the specified number.
     /// @param y The y coordinate of a point.
     /// @param x The x coordinate of a point.
-    /// @return An angle, A, measured in radians, such that -PI <= A <= PI, and tan(?) = y / x, where (x, y) is a point in the Cartesian plane. Observe the following:
+    /// @return An angle, A, measured in radians, such that -PI <= A <= PI, and tan(?) = y / x, where (x, y) is a point in the Cartesian plane.
+    ///
+    /// Observe the following:
     /// * For (x, y) in quadrant 1, 0 < A < PI/2.
     /// * For (x, y) in quadrant 2, PI/2 < A <= PI.
     /// * For (x, y) in quadrant 3, -PI < A < -PI/2.
@@ -224,6 +226,7 @@ namespace xtd {
     /// @brief Returns the natural (base e) logarithm of a specified number.
     /// @param value A number whose logarithm is to be found.
     /// @return One of the values in the following table.
+    ///
     /// | value parameter                       | Return value                                                  |
     /// |---------------------------------------|---------------------------------------------------------------|
     /// | Positive                              | The natural logarithm of d; that is, ln value, or log e value |
@@ -238,6 +241,7 @@ namespace xtd {
     /// @param a The number whose logarithm is to be found.
     /// @param new_base The base of the logarithm.
     /// @return One of the values in the following table. (+Infinity denotes math::positive_infinity, -Infinity denotes math::negative_infinity, and math::NaN denotes math::NaN.)
+    ///
     /// | a                                | new_base                                | Return value                 |
     /// |----------------------------------|-----------------------------------------| -----------------------------|
     /// | a > 0                            | (0 < new_base < 1) -or- (new_base > 1)  | log new_base (a)             |
@@ -259,6 +263,7 @@ namespace xtd {
     /// @brief Returns the base 10 logarithm of a specified number.
     /// @param value A number whose logarithm is to be found.
     /// @return One of the values in the following table.
+    ///
     /// | value parameter                       | Return value                                                  |
     /// |---------------------------------------|---------------------------------------------------------------|
     /// | Positive                              | The natural logarithm of d; that is, ln value, or log e value |
@@ -430,6 +435,7 @@ namespace xtd {
     /// @param y A double-precision floating-point number that specifies a power.
     /// @return The number x raised to the power y.
     /// @remarks The following table indicates the return value when various values or ranges of values are specified for the x and y parameters. For more information, see Double::math::positive_infinity, Double::math::negative_infinity, and Double::NaN.
+    ///
     /// | Parameters                                                                                                       | Return value            |
     /// |------------------------------------------------------------------------------------------------------------------|-------------------------|
     /// | x or y = math::NaN.                                                                                              | math::NaN               |
@@ -480,6 +486,7 @@ namespace xtd {
     /// @brief Returns a value indicating the sign of a double-precision floating-point number.
     /// @param value A signed number.
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
+    ///
     /// | Return value | Meaning                     |
     /// |--------------|-----------------------------|
     /// | -1           | value is less than zero.    |
@@ -491,6 +498,7 @@ namespace xtd {
     /// @brief Returns a value indicating the sign of a double-precision floating-point number.
     /// @param value A signed number.
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
+    ///
     /// | Return value | Meaning                     |
     /// |--------------|-----------------------------|
     /// | -1           | value is less than zero.    |
@@ -502,6 +510,7 @@ namespace xtd {
     /// @brief Returns a value indicating the sign of a 16-bit signed integer.
     /// @param value A signed number.
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
+    ///
     /// | Return value | Meaning                     |
     /// |--------------|-----------------------------|
     /// | -1           | value is less than zero.    |
@@ -512,6 +521,7 @@ namespace xtd {
     /// @brief Returns a value indicating the sign of a 32-bit signed integer.
     /// @param value A signed number.
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
+    ///
     /// | Return value | Meaning                     |
     /// |--------------|-----------------------------|
     /// | -1           | value is less than zero.    |
@@ -522,6 +532,7 @@ namespace xtd {
     /// @brief Returns a value indicating the sign of a 64-bit signed integer.
     /// @param value A signed number.
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
+    ///
     /// | Return value | Meaning                     |
     /// |--------------|-----------------------------|
     /// | -1           | value is less than zero.    |
@@ -532,6 +543,7 @@ namespace xtd {
     /// @brief Returns a value indicating the sign of a 64-bit signed integer.
     /// @param value A signed number.
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
+    ///
     /// | Return value | Meaning                     |
     /// |--------------|-----------------------------|
     /// | -1           | value is less than zero.    |
@@ -542,6 +554,7 @@ namespace xtd {
     /// @brief Returns a value indicating the sign of an 8-bit signed integer.
     /// @param value A signed number.
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
+    ///
     /// | Return value | Meaning                     |
     /// |--------------|-----------------------------|
     /// | -1           | value is less than zero.    |
@@ -552,6 +565,7 @@ namespace xtd {
     /// @brief Returns a value indicating the sign of a single-precision floating-point number.
     /// @param value A signed number.
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
+    ///
     /// | Return value | Meaning                     |
     /// |--------------|-----------------------------|
     /// | -1           | value is less than zero.    |
@@ -573,6 +587,7 @@ namespace xtd {
     /// @brief Returns the square root of a specified number.
     /// @param value The number whose square root is to be found.
     /// @return One of the values in the following table.
+    ///
     /// | value parameter                | Return value                   |
     /// |--------------------------------|--------------------------------|
     /// | Zero or positive               | The positive square root of d. |
@@ -594,6 +609,7 @@ namespace xtd {
     /// @brief Calculates the integral part of a specified double-precision floating-point number.
     /// @param value A number to truncate.
     /// @return The integral part of d; that is, the number that remains after any fractional digits have been discarded, or one of the values listed in the following table.
+    ///
     /// | value            | Return value     |
     /// |------------------|------------------|
     /// | NaN              | NaN              |
@@ -604,6 +620,7 @@ namespace xtd {
     /// @brief Calculates the integral part of a specified double-precision floating-point number.
     /// @param value A number to truncate.
     /// @return The integral part of d; that is, the number that remains after any fractional digits have been discarded, or one of the values listed in the following table.
+    ///
     /// | value                   | Return value            |
     /// |-------------------------|-------------------------|
     /// | math::NaN               | math::NaN               |
