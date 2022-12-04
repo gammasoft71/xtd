@@ -60,8 +60,8 @@ namespace xtd {
       font_family(const font_family& value);
       font_family() = default;
       font_family& operator =(const font_family& value);
-      bool operator ==(const font_family& value) const {return data_->name_ == value.data_->name_;}
-      bool operator !=(const font_family& value) const {return !operator ==(value);}
+      bool operator ==(const font_family& value) const noexcept;
+      bool operator !=(const font_family& value) const noexcept;
       /// @endcond
       
       /// @name Properties
@@ -69,23 +69,23 @@ namespace xtd {
       /// @{
       /// @brief Returns an array that contains all the font_family objects associated with the current graphics context.
       /// @return An array of font_family objects associated with the current graphics context.
-      static std::vector<font_family> families();
+      static std::vector<font_family> families() noexcept;
       
       /// @brief Gets a generic monospace font_family.
       /// @return A font_family that represents a generic monospace font.
-      static font_family generic_monospace() {return font_family(text::generic_font_families::monospace);}
+      static font_family generic_monospace() noexcept;
       
       /// @brief Gets a generic sans serif font_family.
       /// @return A font_family that represents a generic sans serif font.
-      static font_family generic_sans_serif() {return font_family(text::generic_font_families::sans_serif);}
+      static font_family generic_sans_serif() noexcept;
       
       /// @brief Gets a generic serif font_family.
       /// @return A font_family that represents a generic serif font.
-      static font_family generic_serif() {return font_family(text::generic_font_families::serif);}
+      static font_family generic_serif() noexcept;
       
       /// @brief Gets the name of this font_family.
       /// @return A String that represents the name of this font_family.
-      const xtd::ustring& name() const {return data_->name_;}
+      const xtd::ustring& name() const noexcept;
       /// @}
       
       /// @name Methods
@@ -104,7 +104,7 @@ namespace xtd {
       /// @brief Gets the height, in font design units, of the em square for the specified style.
       /// @param style A font_style that contains style information for the font.
       /// @return The height of the em square.
-      int32_t get_em_height(font_style style) const;
+      int32_t get_em_height(font_style style) const noexcept;
       
       /// @brief Returns the line spacing, in design units, of the font_family of the specified style. The line spacing is the vertical distance between the base lines of two consecutive lines of text.
       /// @param style A font_style that contains style information for the font.
@@ -124,7 +124,7 @@ namespace xtd {
       
       /// @brief Converts this font_family to a human-readable string representation.
       /// @return The string that represents this font_family.
-      xtd::ustring to_string() const noexcept override {return ustring::format("[{}: name={}]", ustring::class_name(*this), data_->name_);}
+      xtd::ustring to_string() const noexcept override;
       /// @}
       
     private:

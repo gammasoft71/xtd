@@ -48,8 +48,32 @@ font_family::~font_family() {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::font_family::destroy(data_->handle_);
 }
 
-std::vector<font_family> font_family::families() {
+bool font_family::operator ==(const font_family& value) const noexcept {
+  return data_->name_ == value.data_->name_;
+}
+
+bool font_family::operator !=(const font_family& value) const noexcept {
+  return !operator ==(value);
+}
+
+std::vector<font_family> font_family::families() noexcept {
   return text::installed_font_collection().families();
+}
+
+font_family font_family::generic_monospace() noexcept {
+  return font_family(text::generic_font_families::monospace);
+}
+
+font_family font_family::generic_sans_serif() noexcept {
+  return font_family(text::generic_font_families::sans_serif);
+}
+
+font_family font_family::generic_serif() noexcept {
+  return font_family(text::generic_font_families::serif);
+}
+
+const xtd::ustring& font_family::name() const noexcept {
+  return data_->name_;
 }
 
 int32_t font_family::get_cell_ascent(font_style style) const {
@@ -60,7 +84,7 @@ int32_t font_family::get_cell_descent(font_style style) const {
   return native::font_family::get_cell_descent(data_->handle_, get_em_height(style), (style & font_style::bold) == font_style::bold, (style & font_style::italic) == font_style::italic, (style & font_style::underline) == font_style::underline, (style & font_style::strikeout) == font_style::strikeout);
 }
 
-int32_t font_family::get_em_height(font_style style) const {
+int32_t font_family::get_em_height(font_style style) const noexcept {
   return 2048;
 }
 
@@ -74,4 +98,8 @@ ustring font_family::get_name(int32_t language) const {
 
 bool font_family::is_style_available(font_style style) const {
   return native::font_family::is_style_available(data_->handle_, (style & font_style::bold) == font_style::bold, (style & font_style::italic) == font_style::italic, (style & font_style::underline) == font_style::underline, (style & font_style::strikeout) == font_style::strikeout);
+}
+
+xtd::ustring font_family::to_string() const noexcept {
+  return ustring::format("[{}: name={}]", ustring::class_name(*this), data_->name_);
 }
