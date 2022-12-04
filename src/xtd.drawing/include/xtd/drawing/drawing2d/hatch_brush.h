@@ -37,7 +37,7 @@ namespace xtd {
         /// @param hatch_style One of the xtd::drawing::drawing2d::hatch_style values that represents the pattern drawn by this xtd::drawing::drawing2d::hatch_brush.
         /// @param fore_color The xtd::drawing::color structure that represents the color of lines drawn by this xtd::drawing::drawing2d::hatch_brush.
         /// @remarks The background color is initialized to black.
-        hatch_brush(xtd::drawing::drawing2d::hatch_style hatch_style, const xtd::drawing::color& fore_color) : hatch_brush(hatch_style, fore_color, xtd::drawing::color::black) {}
+        hatch_brush(xtd::drawing::drawing2d::hatch_style hatch_style, const xtd::drawing::color& fore_color);
         /// @brief Initializes a new instance of the xtd::drawing::drawing2d::hatch_brush class with the specified xtd::drawing::drawing2d::hatch_style enumeration, foreground color and background color.
         /// @param hatch_style One of the xtd::drawing::drawing2d::hatch_style values that represents the pattern drawn by this xtd::drawing::drawing2d::hatch_brush.
         /// @param fore_color The xtd::drawing::color structure that represents the color of lines drawn by this xtd::drawing::drawing2d::hatch_brush.
@@ -48,8 +48,8 @@ namespace xtd {
         /// @cond
         hatch_brush(const hatch_brush& value);
         hatch_brush& operator =(const hatch_brush& value);
-        bool operator ==(const hatch_brush& value) const {return data_->hatch_style_ == value.data_->hatch_style_ && data_->fore_color_ == value.data_->fore_color_ && data_->back_color_ == value.data_->back_color_;}
-        bool operator !=(const hatch_brush& value) const {return !operator ==(value);}
+        bool operator ==(const hatch_brush& value) const noexcept;
+        bool operator !=(const hatch_brush& value) const noexcept;
         /// @endcond
         
         /// @name Properties
@@ -57,15 +57,15 @@ namespace xtd {
         /// @{
         /// @brief Gets the color of spaces between the hatch lines drawn by this hatch_brush object.
         /// @return A xtd::drawing::color structure that represents the background color for this hatch_brush.
-        xtd::drawing::color background_color() const {return data_->back_color_;}
+        xtd::drawing::color background_color() const noexcept;
         
         /// @brief Gets the color of hatch lines drawn by this hatch_brush object.
         /// @return A xtd::drawing::color structure that represents the foreground color for this hatch_brush.
-        xtd::drawing::color foreground_color() const {return data_->fore_color_;}
+        xtd::drawing::color foreground_color() const noexcept;
         
         /// @brief Gets the hatch style of this hatch_brush object.
         /// @return One of the xtd::drawing::drawing2d::hatch_style values that represents the pattern of this hatch_brush.
-        xtd::drawing::drawing2d::hatch_style hatch_style() const {return data_->hatch_style_;}
+        xtd::drawing::drawing2d::hatch_style hatch_style() const noexcept;
         /// @}
         
       private:
