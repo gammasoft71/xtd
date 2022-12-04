@@ -43,7 +43,7 @@ namespace xtd {
       
     private:
       int32_t frame_counter_ = 0;
-      std::chrono::nanoseconds elapsed_;
+      std::chrono::nanoseconds elapsed_ {0};
     };
   }
 }
