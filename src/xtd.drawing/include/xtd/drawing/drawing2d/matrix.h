@@ -99,8 +99,8 @@ namespace xtd {
         matrix(const xtd::drawing::drawing2d::matrix& value);
         matrix& operator =(const xtd::drawing::drawing2d::matrix& value);
         ~matrix();
-        bool operator ==(const xtd::drawing::drawing2d::matrix& value) const;
-        bool operator !=(const xtd::drawing::drawing2d::matrix& value) const;
+        bool operator ==(const xtd::drawing::drawing2d::matrix& value) const noexcept;
+        bool operator !=(const xtd::drawing::drawing2d::matrix& value) const noexcept;
         /// @endcond
         
         /// @name Properties

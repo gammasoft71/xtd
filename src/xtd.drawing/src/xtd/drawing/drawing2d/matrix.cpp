@@ -39,11 +39,11 @@ matrix::~matrix() {
   }
 }
 
-bool matrix::operator ==(const matrix& value) const {
+bool matrix::operator ==(const matrix& value) const noexcept {
   return data_ == value.data_;
 }
 
-bool matrix::operator !=(const matrix& value) const {
+bool matrix::operator !=(const matrix& value) const noexcept {
   return !operator ==(value);
 }
 
