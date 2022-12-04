@@ -72,8 +72,8 @@ namespace xtd {
       pen(const xtd::drawing::pen& value);
       pen& operator =(const xtd::drawing::pen& value);
       ~pen();
-      bool operator ==(const xtd::drawing::pen& value) const;
-      bool operator !=(const xtd::drawing::pen& value) const;
+      bool operator ==(const xtd::drawing::pen& value) const noexcept;
+      bool operator !=(const xtd::drawing::pen& value) const noexcept;
       /// @endcond
       
       /// @name Properties
@@ -82,7 +82,7 @@ namespace xtd {
       /// @brief Gets the alignment for this xtd::drawing::pen.
       /// @return A xtd::drawing::drawing2d::pen_alignment that represents the alignment for this xtd::drawing::pen.
       /// @remarks This property determines how the xtd::drawing::pen draws closed curves and polygons. The td::drawing2d::pen_alignment enumeration specifies five values; however, only two values - td::drawing2d::pen_alignment::center and td::drawing2d::pen_alignment::inset - will change the appearance of a drawn line. td::drawing2d::pen_alignment::center is the default value for this property and specifies that the width of the pen is centered on the outline of the curve or polygon. A value of td::drawing2d::pen_alignment::inset for this property specifies that the width of the pen is inside the outline of the curve or polygon. The other three values, td::drawing2d::pen_alignment::right, td::drawing2d::pen_alignment::left, and td::drawing2d::pen_alignment::outset, will result in a pen that is centered.
-      xtd::drawing::drawing2d::pen_alignment alignment() const;
+      xtd::drawing::drawing2d::pen_alignment alignment() const noexcept;
       
       /// @brief Sets the alignment for this xtd::drawing::pen.
       /// @param value A xtd::drawing::drawing2d::pen_alignment that represents the alignment for this xtd::drawing::pen.
@@ -92,7 +92,7 @@ namespace xtd {
       /// @brief Gets the xtd::drawing::brush that determines attributes of this xtd::drawing::pen.
       /// @return A Brush that determines attributes of this xtd::drawing::pen.
       /// @remarks Assigning this property causes the pen to draw filled lines and curves. It overrides thextd::drawing::pen::color property of the xtd::drawing::pen.
-      const std::unique_ptr<xtd::drawing::brush>& brush() const;
+      const std::unique_ptr<xtd::drawing::brush>& brush() const noexcept;
       /// @brief Sets the xtd::drawing::brush that determines attributes of this xtd::drawing::pen.
       /// @param value A xtd::drawing::brush that determines attributes of this xtd::drawing::pen.
       /// @remarks Assigning this property causes the pen to draw filled lines and curves. It overrides thextd::drawing::pen::color property of the xtd::drawing::pen.
@@ -106,7 +106,7 @@ namespace xtd {
       
       /// @brief Gets the color of this xtd::drawing::pen.
       /// @return A xtd::drawing::color structure that represents the color of this xtd::drawing::pen.
-      const xtd::drawing::color& color() const;
+      const xtd::drawing::color& color() const noexcept;
       /// @brief Sets the color of this xtd::drawing::pen.
       /// @param value A xtd::drawing::color structure that represents the color of this xtd::drawing::pen.
       /// @return This current instance.
@@ -117,7 +117,7 @@ namespace xtd {
       /// @remarks Assigning a value other than empty to this property will set the xtd::drawing::pen::dash_style property for this xtd::drawing::pen to xtd::drawing:dash_style::custom.
       /// @remarks The elements in the dash_pattern array set the length of each dash and space in the dash pattern. The first element sets the length of a dash, the second element sets the length of a space, the third element sets the length of a dash, and so on. Consequently, each element should be a non-zero positive number.
       /// @remarks The length of each dash and space in the dash pattern is the product of the element value in the array and the width of the xtd::drawing::pen.
-      std::vector<float> dash_pattern() const;
+      std::vector<float> dash_pattern() const noexcept;
       /// @brief Sets an array of custom dashes and spaces.
       /// @param value An array of real numbers that specifies the lengths of alternating dashes and spaces in dashed lines.
       /// @remarks Assigning a value other than empty to this property will set the xtd::drawing::pen::dash_style property for this xtd::drawing::pen to xtd::drawing:dash_style::custom.
@@ -128,7 +128,7 @@ namespace xtd {
       /// @brief Gets the style used for dashed lines drawn with this xtd::drawing::pen.
       /// @return A xtd::drawing::dash_style that represents the style used for dashed lines drawn with this xtd::drawing::pen.
       /// @remarks A value of xtd::drawing::dash_style::custom for this property specifies that a custom pattern of dashes and spaces, defined by the xtd::drawing::pendash_pattern property, makes up lines drawn with this xtd::drawing::pen. If the value of this property is xtd::drawing::dash_style::custom and the value of the xtd::drawing::pen::dash_pattern property is empty, the pen draws solid lines.
-      xtd::drawing::dash_style dash_style() const;
+      xtd::drawing::dash_style dash_style() const noexcept;
       /// @brief Sets the style used for dashed lines drawn with this xtd::drawing::pen.
       /// @param value A xtd::drawing::dash_style that represents the style used for dashed lines drawn with this xtd::drawing::pen.
       /// @return This current instance.
@@ -145,7 +145,7 @@ namespace xtd {
       
       /// @brief Gets the handle of the pen.
       /// @return An intptr_t that contains the handle of the pen.
-      intptr_t handle() const;
+      intptr_t handle() const noexcept;
       
       /// @brief Gets the join style for the ends of two consecutive lines drawn with this xtd::drawing::pen.
       /// @return A xtd::drawing::drawing2d::line_join that represents the join style for the ends of two consecutive lines drawn with this xtd::drawing::pen.
@@ -182,12 +182,12 @@ namespace xtd {
       /// @brief Gets the style of lines drawn with this xtd::drawing::pen.
       /// @return A xtd::drawing::drawing2d::pen_type enumeration that specifies the style of lines drawn with this xtd::drawing::pen.
       /// @remarks A xtd::drawing::pen can draw solid lines, filled lines, or textured lines, depending on the style specified by a member of the PenType enumeration.
-      xtd::drawing::drawing2d::pen_type type() const;
+      xtd::drawing::drawing2d::pen_type type() const noexcept;
       
       /// @brief Gets the width of this xtd::drawing::pen, in units of the xtd::drawing::graphics object used for drawing.
       /// @return The width of this xtd::drawing::pen.
       /// @remarks You can access the unit of measure of the xtd::drawing::graphics object using its xtd::drawing::graphics::page_unit property. The unit of measure is typically pixels. A Width of 0 will result in the xtd::drawing::pen drawing as if the xtd::drawing::pen::width were 1.
-      float width() const {return data_->width;}
+      float width() const noexcept;
       /// @brief Sets the width of this xtd::drawing::pen, in units of the xtd::drawing::graphics object used for drawing.
       /// @param value The width of this xtd::drawing::pen.
       /// @return This current instance.
