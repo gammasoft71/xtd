@@ -12,7 +12,8 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  /// @see operating_system
+  /// @see xtd::cpp_language
+  /// @remarks For more info about c++ see <a href="https://en.cppreference.com/w/cpp">cppreference</a>.
   enum class language_id {
     /// @brief The language is unknown.
     unknown = -1,

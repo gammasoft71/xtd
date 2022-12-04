@@ -20,7 +20,8 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @remarks The cpp_language class contains information about c++ libraries.
   /// @remarks For information about current c++ libraries, retrieve the cpp_language object returned by the xtd::environment::cpp_language_version method.
-  /// @remarks By design, the operating_system class is not a general purpose means of describing an operating system, and you cannot derive a more inclusive type from the operating_system class. If you need a type to contain other information about C++ libraries, create your own type, then include a field of type cpp_language and any additional fields or methods that you require.
+  /// @remarks By design, the xtd::cpp_language class is not a general purpose means of describing c++ language, and you cannot derive a more inclusive type from the xtd::cpp_language class. If you need a type to contain other information about C++ libraries, create your own type, then include a field of type cpp_language and any additional fields or methods that you require.
+  /// @remarks For more info about c++ see <a href="https://en.cppreference.com/w/cpp">cppreference</a>.
   class cpp_language final : public object {
   public:
     /// @name Constructors
