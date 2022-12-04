@@ -81,7 +81,7 @@ namespace xtd {
       /// @brief Gets a xtd::drawing::region that limits the drawing region of this xtd::drawing::graphics.
       /// @return A xtd::drawing::region that limits the portion of this xtd::drawing::graphics that is currently available for drawing.
       /// @remarks Modifying the xtd::drawing::region object returned by the xtd::drawing::graphics::clip property does not affect subsequent drawing with the xtd::drawing::graphics object. To change the clip region, replace the xtd::drawing::graphics::clip property value with a new xtd::drawing::region object. To determine whether the clipping region is infinite, retrieve the xtd::drawing::graphics::clip property and call its xtd::drawing::region::is_infinite method.
-      xtd::drawing::region clip() const;
+      xtd::drawing::region clip() const noexcept;
       /// @brief Sets a xtd::drawing::region that limits the drawing region of this xtd::drawing::graphics.
       /// @param value A xtd::drawing::region that limits the portion of this xtd::drawing::graphics that is currently available for drawing.
       /// @return This current instance.
@@ -92,13 +92,13 @@ namespace xtd {
       /// @return A xtd::drawing::rectangle_f structure that represents a bounding rectangle for the clipping region of this xtd::drawing::graphics.
       /// @remarks The unit for resulting rectangle is designated by the xtd::drawing::graphics::page_unit property. The default unit is pixels. A xtd::drawing::graphics is typically associated with a control and the origin of the rectangle will be relative to the client area of that control.
       /// @remarks If the clipping region is infinite, the xtd::drawing::graphics::clip_bounds property returns a meaningless large rectangle. To determine whether the clipping region is infinite, retrieve the xtd::drawing::graphics::clip property and call its xtd::drawing::region::is_infinite method.
-      xtd::drawing::rectangle_f clip_bounds() const;
+      xtd::drawing::rectangle_f clip_bounds() const noexcept;
       
       /// @brief Gets a value that specifies how composited images are drawn to this xtd::drawing::graphics.
       /// @return This property specifies a member of the xtd::drawing::drawing2d::compositing_mode enumeration. The default is xtd::drawing::drawing2d::compositing_mode::source_over.
       /// @remarks The compositing mode determines whether pixels from a source image overwrite or are combined with background pixels.
       /// @note You should not use a xtd::drawing::graphics::compositing_mode property value of xtd::drawing::graphics::source_copy when the xtd::drawing::graphics::text_rendering_hint property is set to xtd::drawing::graphics::text_rendering_hint::clear_type_grid_fit. An exception could occur or the image may not render correctly.
-      xtd::drawing::drawing2d::compositing_mode compositing_mode() const;
+      xtd::drawing::drawing2d::compositing_mode compositing_mode() const noexcept;
       /// @brief Sets a value that specifies how composited images are drawn to this xtd::drawing::graphics.
       /// @param value This property specifies a member of the CompositingMode enumeration. The default is SourceOver.
       /// @return This current instance.
@@ -109,7 +109,7 @@ namespace xtd {
       /// @brief Gets the rendering quality of composited images drawn to this xtd::drawing::graphics.
       /// @return This property specifies a member of the xtd::drawing::drawing2d::compositing_quality enumeration. The xtd::drawing::drawing2d::compositing_quality::default_value is Default.
       /// @remarks The compositing quality determines the rendering quality level of composited images.
-      xtd::drawing::drawing2d::compositing_quality compositing_quality() const;
+      xtd::drawing::drawing2d::compositing_quality compositing_quality() const noexcept;
       /// @brief Sets the rendering quality of composited images drawn to this xtd::drawing::graphics.
       /// @param value This property specifies a member of the xtd::drawing::drawing2d::compositing_quality enumeration. The xtd::drawing::drawing2d::compositing_quality::default_value is Default.
       /// @return This current instance.
@@ -118,38 +118,38 @@ namespace xtd {
       
       /// @brief Gets the horizontal resolution of this xtd::drawing::graphics.
       /// @return The value, in dots per inch, for the horizontal resolution supported by this xtd::drawing::graphics.
-      float dpi_x() const;
+      float dpi_x() const noexcept;
       
       /// @brief Gets the vertical resolution of this xtd::drawing::graphics.
       /// @return The value, in dots per inch, for the vertical resolution supported by this xtd::drawing::graphics.
-      float dpi_y() const;
+      float dpi_y() const noexcept;
       
       /// @brief Gets the handle device context that the graphics is bound to.
       /// @return An intptr_t that contains the handle device context of the graphics.
-      intptr_t handle() const;
+      intptr_t handle() const noexcept;
       
       /// @brief Gets the interpolation mode associated with this xtd::drawing::graphics.
       /// @return One of the xtd::drawing::drawing2d::interpolation_mode values.
       /// @remarks The interpolation mode determines how intermediate values between two endpoints are calculated.
-      xtd::drawing::drawing2d::interpolation_mode interpolation_mode() const;
+      xtd::drawing::drawing2d::interpolation_mode interpolation_mode() const noexcept;
       /// @brief Sets the interpolation mode associated with this xtd::drawing::graphics.
       /// @param value One of the xtd::drawing::drawing2d::interpolation_mode values.
       /// @return This current instance.
       /// @remarks The interpolation mode determines how intermediate values between two endpoints are calculated.
-      graphics& interpolation_mode(xtd::drawing::drawing2d::interpolation_mode value);
+      graphics& interpolation_mode(xtd::drawing::drawing2d::interpolation_mode value) noexcept;
       
       /// @brief Gets the scaling between world units and page units for this xtd::drawing::graphics.
       /// @return This property specifies a value for the scaling between world units and page units for this xtd::drawing::graphics.
-      float page_scale() const;
+      float page_scale() const noexcept;
       /// @brief Sets the scaling between world units and page units for this xtd::drawing::graphics.
       /// @param value This property specifies a value for the scaling between world units and page units for this xtd::drawing::graphics.
       /// @return This current instance.
-      graphics& page_scale(float value);
+      graphics& page_scale(float value) noexcept;
       
       /// @brief Gets or sets the unit of measure used for page coordinates in this xtd::drawing::graphics.
       /// @return One of the xtd::drawing::graphics_unit values other than xtd::drawing::graphics_unit::world.
       /// @remarks The graphics unit is the unit of measure used for page coordinates in this xtd::drawing::graphics.
-      xtd::drawing::graphics_unit page_unit() const;
+      xtd::drawing::graphics_unit page_unit() const noexcept;
       /// @brief Sets or sets the unit of measure used for page coordinates in this xtd::drawing::graphics.
       /// @param value One of the xtd::drawing::graphics_unit values other than xtd::drawing::graphics_unit::world.
       /// @return This current instance.
@@ -160,38 +160,38 @@ namespace xtd {
       /// @brief Gets a value specifying how pixels are offset during rendering of this xtd::drawing::graphics.
       /// @return This property specifies a member of the xtd::drawing::drawing2d::pixel_offset_mode enumeration.
       /// @remarks Use this property to specify either higher quality, slower rendering, or lower quality, faster rendering of the contents of this xtd::drawing::graphics object.
-      xtd::drawing::drawing2d::pixel_offset_mode pixel_offset_mode() const;
+      xtd::drawing::drawing2d::pixel_offset_mode pixel_offset_mode() const noexcept;
       /// @brief Sets a value specifying how pixels are offset during rendering of this xtd::drawing::graphics.
       /// @param value This property specifies a member of the xtd::drawing::drawing2d::pixel_offset_mode enumeration.
       /// @return This current instance.
       /// @remarks Use this property to specify either higher quality, slower rendering, or lower quality, faster rendering of the contents of this xtd::drawing::graphics object.
-      graphics& pixel_offset_mode(xtd::drawing::drawing2d::pixel_offset_mode value);
+      graphics& pixel_offset_mode(xtd::drawing::drawing2d::pixel_offset_mode value) noexcept;
       
       /// @brief Gets the rendering quality for this xtd::drawing::graphics.
       /// @return One of the xtd::drawing::drawing2d::smoothing_mode values.
       /// @remarks The smoothing mode specifies whether lines, curves, and the edges of filled areas use smoothing (also called antialiasing). One exception is that path gradient brushes do not obey the smoothing mode. Areas filled using a xtd::drawing::drawing2d::path_gradient_brush are rendered the same way (aliased) regardless of the xtd::drawing::graphics::smoothing_mode property.
-      xtd::drawing::drawing2d::smoothing_mode smoothing_mode() const;
+      xtd::drawing::drawing2d::smoothing_mode smoothing_mode() const noexcept;
       /// @brief Sets the rendering quality for this xtd::drawing::graphics.
       /// @param value One of the xtd::drawing::drawing2d::smoothing_mode values.
       /// @return This current instance.
       /// @remarks The smoothing mode specifies whether lines, curves, and the edges of filled areas use smoothing (also called antialiasing). One exception is that path gradient brushes do not obey the smoothing mode. Areas filled using a xtd::drawing::drawing2d::path_gradient_brush are rendered the same way (aliased) regardless of the xtd::drawing::graphics::smoothing_mode property.
-      graphics& smoothing_mode(xtd::drawing::drawing2d::smoothing_mode value);
+      graphics& smoothing_mode(xtd::drawing::drawing2d::smoothing_mode value) noexcept;
       
       /// @brief Gets the gamma correction value for rendering text.
       /// @return The gamma correction value used for rendering antialiased and ClearType text.
       /// @remarks The gamma correction value must be between 0 and 12. The default value is 4.
-      int text_contrast() const;
+      int text_contrast() const noexcept;
       /// @brief Sets the gamma correction value for rendering text.
       /// @param value The gamma correction value used for rendering antialiased and ClearType text.
       /// @return This current instance.
       /// @remarks The gamma correction value must be between 0 and 12. The default value is 4.
-      graphics& text_contrast(int value);
+      graphics& text_contrast(int value) noexcept;
       
       /// @brief Gets the rendering mode for text associated with this xtd::drawing::graphics.
       /// @return One of the xtd::drawing::graphics::text_rendering_hint values.
       /// @remarks The text rendering hint specifies whether text renders with antialiasing.
       /// @note You should not use a xtd::drawing::graphics::compositing_mode property value of xtd::drawing::graphics::source_copy when the xtd::drawing::graphics::text_rendering_hint property is set to xtd::drawing::graphics::text_rendering_hint::clear_type_grid_fit. An exception could occur or the image may not render correctly.
-      xtd::drawing::text::text_rendering_hint text_rendering_hint() const;
+      xtd::drawing::text::text_rendering_hint text_rendering_hint() const noexcept;
       /// @brief Sets the rendering mode for text associated with this xtd::drawing::graphics.
       /// @param value One of the xtd::drawing::graphics::text_rendering_hint values.
       /// @return This current instance.
@@ -203,13 +203,13 @@ namespace xtd {
       /// @return A copy of the xtd::drawing::drawing2d::matrix that represents the geometric world transformation for this xtd::drawing::graphics.
       /// @remarks GDI+ uses three coordinate spaces: world, page, and device. World coordinates are the coordinates used to model a particular graphic world and are the coordinates you pass to methods in the .NET Framework. Page coordinates refer to the coordinate system used by a drawing surface, such as a form or a control. Device coordinates are the coordinates used by the physical device being drawn on, such as a screen or a printer. The xtd::drawing::graphics::transform property represents the world transformation, which maps world coordinates to page coordinates.
       /// @remarks Because the matrix returned and by the xtd::drawing::graphics::transform property is a copy of the geometric transform, you should dispose of the matrix when you no longer need it.
-      xtd::drawing::drawing2d::matrix transform() const;
+      xtd::drawing::drawing2d::matrix transform() const noexcept;
       /// @brief Sets a copy of the geometric world transformation for this xtd::drawing::graphics.
       /// @param value A copy of the xtd::drawing::drawing2d::matrix that represents the geometric world transformation for this xtd::drawing::graphics.
       /// @return This current instance.
       /// @remarks GDI+ uses three coordinate spaces: world, page, and device. World coordinates are the coordinates used to model a particular graphic world and are the coordinates you pass to methods in the .NET Framework. Page coordinates refer to the coordinate system used by a drawing surface, such as a form or a control. Device coordinates are the coordinates used by the physical device being drawn on, such as a screen or a printer. The xtd::drawing::graphics::transform property represents the world transformation, which maps world coordinates to page coordinates.
       /// @remarks Because the matrix returned and by the xtd::drawing::graphics::transform property is a copy of the geometric transform, you should dispose of the matrix when you no longer need it.
-      graphics& transform(const xtd::drawing::drawing2d::matrix& value);
+      graphics& transform(const xtd::drawing::drawing2d::matrix& value) noexcept;
       
       /// @brief Gets the bounding rectangle of the visible clipping region of this xtd::drawing::graphics.
       /// @return A xtd::drawing::rectangle_f structure that represents a bounding rectangle for the visible clipping region of this xtd::drawing::graphics.

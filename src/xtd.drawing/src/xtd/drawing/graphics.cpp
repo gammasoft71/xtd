@@ -41,7 +41,7 @@ graphics::~graphics() {
   if (data_.use_count() == 1 && handle() != 0) native::graphics::destroy(handle());
 }
 
-region graphics::clip() const {
+region graphics::clip() const noexcept {
   return data_->clip;
 }
 
@@ -53,12 +53,12 @@ graphics& graphics::clip(const xtd::drawing::region value) {
   return *this;
 }
 
-rectangle_f graphics::clip_bounds() const {
+rectangle_f graphics::clip_bounds() const noexcept {
   auto rect_pixels = data_->clip.get_bounds(*this);
   return rectangle_f(to_page_unit(rect_pixels.x()), to_page_unit(rect_pixels.y()), to_page_unit(rect_pixels.width()), to_page_unit(rect_pixels.height()));
 }
 
-xtd::drawing::drawing2d::compositing_mode graphics::compositing_mode() const {
+xtd::drawing::drawing2d::compositing_mode graphics::compositing_mode() const noexcept {
   return data_->compositing_mode;
 }
 
@@ -71,7 +71,7 @@ graphics& graphics::compositing_mode(xtd::drawing::drawing2d::compositing_mode v
   return *this;
 }
 
-xtd::drawing::drawing2d::compositing_quality graphics::compositing_quality() const {
+xtd::drawing::drawing2d::compositing_quality graphics::compositing_quality() const noexcept {
   return data_->compositing_quality;
 }
 
@@ -83,23 +83,23 @@ graphics& graphics::compositing_quality(xtd::drawing::drawing2d::compositing_qua
   return *this;
 }
 
-float graphics::dpi_x() const {
+float graphics::dpi_x() const noexcept {
   return native::graphics::get_dpi_x(handle());
 }
 
-float graphics::dpi_y() const {
+float graphics::dpi_y() const noexcept {
   return native::graphics::get_dpi_y(handle());
 }
 
-intptr_t graphics::handle() const {
+intptr_t graphics::handle() const noexcept {
   return data_->handle;
 }
 
-xtd::drawing::drawing2d::interpolation_mode graphics::interpolation_mode() const {
+xtd::drawing::drawing2d::interpolation_mode graphics::interpolation_mode() const noexcept {
   return data_->interpolation_mode;
 }
 
-graphics& graphics::interpolation_mode(xtd::drawing::drawing2d::interpolation_mode value) {
+graphics& graphics::interpolation_mode(xtd::drawing::drawing2d::interpolation_mode value) noexcept {
   if (data_->interpolation_mode != value) {
     data_->interpolation_mode = value;
     native::graphics::interpolation_mode(handle(), static_cast<int32_t>(data_->interpolation_mode));
@@ -107,16 +107,16 @@ graphics& graphics::interpolation_mode(xtd::drawing::drawing2d::interpolation_mo
   return *this;
 }
 
-float graphics::page_scale() const {
+float graphics::page_scale() const noexcept {
   return data_->page_scale;
 }
 
-graphics& graphics::page_scale(float value) {
+graphics& graphics::page_scale(float value) noexcept {
   data_->page_scale = value;
   return *this;
 }
 
-xtd::drawing::graphics_unit graphics::page_unit() const {
+xtd::drawing::graphics_unit graphics::page_unit() const noexcept {
   return data_->page_unit;
 }
 graphics& graphics::page_unit(xtd::drawing::graphics_unit value) {
@@ -125,11 +125,11 @@ graphics& graphics::page_unit(xtd::drawing::graphics_unit value) {
   return *this;
 }
 
-xtd::drawing::drawing2d::pixel_offset_mode graphics::pixel_offset_mode() const {
+xtd::drawing::drawing2d::pixel_offset_mode graphics::pixel_offset_mode() const noexcept {
   return data_->pixel_offset_mode;
 }
 
-graphics& graphics::pixel_offset_mode(xtd::drawing::drawing2d::pixel_offset_mode value) {
+graphics& graphics::pixel_offset_mode(xtd::drawing::drawing2d::pixel_offset_mode value) noexcept {
   if (data_->pixel_offset_mode != value) {
     data_->pixel_offset_mode = value;
     native::graphics::pixel_offset_mode(handle(), static_cast<int32_t>(data_->pixel_offset_mode));
@@ -137,10 +137,10 @@ graphics& graphics::pixel_offset_mode(xtd::drawing::drawing2d::pixel_offset_mode
   return *this;
 }
 
-xtd::drawing::drawing2d::smoothing_mode graphics::smoothing_mode() const {
+xtd::drawing::drawing2d::smoothing_mode graphics::smoothing_mode() const noexcept {
   return data_->smoothing_mode;
 }
-graphics& graphics::smoothing_mode(xtd::drawing::drawing2d::smoothing_mode value) {
+graphics& graphics::smoothing_mode(xtd::drawing::drawing2d::smoothing_mode value) noexcept {
   if (data_->smoothing_mode != value) {
     data_->smoothing_mode = value;
     native::graphics::smoothing_mode(handle(), static_cast<int32_t>(data_->smoothing_mode));
@@ -148,11 +148,11 @@ graphics& graphics::smoothing_mode(xtd::drawing::drawing2d::smoothing_mode value
   return *this;
 }
 
-int graphics::text_contrast() const {
+int graphics::text_contrast() const noexcept {
   return data_->text_contrast;
 }
 
-graphics& graphics::text_contrast(int value) {
+graphics& graphics::text_contrast(int value) noexcept {
   if (data_->text_contrast != value) {
     data_->text_contrast = value;
     native::graphics::text_contrast(handle(), data_->text_contrast);
@@ -160,7 +160,7 @@ graphics& graphics::text_contrast(int value) {
   return *this;
 }
 
-xtd::drawing::text::text_rendering_hint graphics::text_rendering_hint() const {
+xtd::drawing::text::text_rendering_hint graphics::text_rendering_hint() const noexcept {
   return data_->text_rendering_hint;
 }
 
@@ -173,11 +173,11 @@ graphics& graphics::text_rendering_hint(xtd::drawing::text::text_rendering_hint 
   return *this;
 }
 
-xtd::drawing::drawing2d::matrix graphics::transform() const {
+xtd::drawing::drawing2d::matrix graphics::transform() const noexcept {
   return matrix(native::graphics::transform(handle()));
 }
 
-graphics& graphics::transform(const xtd::drawing::drawing2d::matrix& value) {
+graphics& graphics::transform(const xtd::drawing::drawing2d::matrix& value) noexcept {
   native::graphics::transform(handle(), value.handle());
   return *this;
 }
