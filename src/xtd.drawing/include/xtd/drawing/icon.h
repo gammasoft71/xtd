@@ -110,8 +110,8 @@ namespace xtd {
       icon() = default;
       icon(const icon& icon) = default;
       icon& operator =(const icon& icon) = default;
-      bool operator ==(const icon& icon) const;
-      bool operator !=(const icon& icon) const;
+      bool operator ==(const icon& icon) const noexcept;
+      bool operator !=(const icon& icon) const noexcept;
       ~icon();
       /// @endcond
       
@@ -120,19 +120,19 @@ namespace xtd {
       /// @{
       /// @brief Gets the handle of this icon. This is not a copy of the handle; do not free it.
       /// @return The Windows handle for the icon.
-      intptr_t handle() const;
+      intptr_t handle() const noexcept;
       
       /// @brief Gets the height of this xtd::drawing::icon.
       /// @return The height of this xtd::drawing::icon.
-      int32_t height() const;
+      int32_t height() const noexcept;
       
       /// @brief Gets the size of this xtd::drawing::icon.
       /// @return The size of this xtd::drawing::icon.
-      const xtd::drawing::size& size() const;
+      const xtd::drawing::size& size() const noexcept;
       
       /// @brief Gets the width of this xtd::drawing::icon.
       /// @return The width of this xtd::drawing::icon.
-      int32_t width() const;
+      int32_t width() const noexcept;
       /// @}
       
       /// @name Methods
@@ -163,7 +163,7 @@ namespace xtd {
       
       /// @brief Gets a human-readable string that describes the xtd::drawing::icon.
       /// @return A string that describes the xtd::drawing::icon.
-      xtd::ustring to_string() const noexcept override {return ustring::full_class_name(*this);}
+      xtd::ustring to_string() const noexcept override;
       /// @}
       
     private:
