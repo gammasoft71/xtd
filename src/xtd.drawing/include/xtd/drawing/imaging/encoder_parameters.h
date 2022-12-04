@@ -36,8 +36,8 @@ namespace xtd {
         /// @cond
         encoder_parameters(const encoder_parameters&) = default;
         encoder_parameters& operator =(const encoder_parameters&) = default;
-        bool operator ==(const encoder_parameters& value) const {return params_ == value.params_;}
-        bool operator !=(const encoder_parameters& value) const {return !operator ==(value);}
+        bool operator ==(const encoder_parameters& value) const noexcept {return params_ == value.params_;}
+        bool operator !=(const encoder_parameters& value) const noexcept {return !operator ==(value);}
         /// @endcond
         
         /// @name Properties
@@ -45,13 +45,13 @@ namespace xtd {
         /// @{
         /// @brief Gets an array of EncoderParameter objects.
         /// @return The array of xtd::drawing::imaging::encoder_parameter objects.
-        const std::vector<xtd::drawing::imaging::encoder_parameter>& params() const {return params_;}
+        const std::vector<xtd::drawing::imaging::encoder_parameter>& params() const noexcept {return params_;}
         /// @brief Gets an array of EncoderParameter objects.
         /// @return The array of xtd::drawing::imaging::encoder_parameter objects.
-        std::vector<xtd::drawing::imaging::encoder_parameter>& params() {return params_;}
+        std::vector<xtd::drawing::imaging::encoder_parameter>& params() noexcept {return params_;}
         /// @brief Sets an array of EncoderParameter objects.
         /// @param value The array of xtd::drawing::imaging::encoder_parameter objects.
-        void params(const std::vector<xtd::drawing::imaging::encoder_parameter>& value) {params_ = value;}
+        void params(const std::vector<xtd::drawing::imaging::encoder_parameter>& value) noexcept {params_ = value;}
         /// @}
         
       private:
