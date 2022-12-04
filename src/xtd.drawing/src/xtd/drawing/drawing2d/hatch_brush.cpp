@@ -530,12 +530,14 @@ namespace {
   }
 }
 
-
 hatch_brush::hatch_brush() {
   data_->hatch_style_ = xtd::drawing::drawing2d::hatch_style::horizontal;
   data_->fore_color_ = xtd::drawing::color::black;
   data_->back_color_ = xtd::drawing::color::black;
   recreate_handle();
+}
+
+hatch_brush::hatch_brush(xtd::drawing::drawing2d::hatch_style hatch_style, const xtd::drawing::color& fore_color) : hatch_brush(hatch_style, fore_color, xtd::drawing::color::black) {
 }
 
 hatch_brush::hatch_brush(xtd::drawing::drawing2d::hatch_style hatch_style, const xtd::drawing::color& fore_color, const xtd::drawing::color& back_color) {
@@ -558,4 +560,22 @@ hatch_brush& hatch_brush::operator =(const hatch_brush& value) {
   brush::operator =(value);
   data_ = value.data_;
   return *this;
+}
+
+bool hatch_brush::operator ==(const hatch_brush& value) const noexcept {
+  return data_->hatch_style_ == value.data_->hatch_style_ && data_->fore_color_ == value.data_->fore_color_ && data_->back_color_ == value.data_->back_color_;
+}
+
+bool hatch_brush::operator !=(const hatch_brush& value) const noexcept {
+  return !operator ==(value);
+}
+
+xtd::drawing::color hatch_brush::background_color() const noexcept {return data_->back_color_;}
+
+xtd::drawing::color hatch_brush::foreground_color() const noexcept {
+  return data_->fore_color_;
+}
+
+xtd::drawing::drawing2d::hatch_style hatch_brush::hatch_style() const noexcept {
+  return data_->hatch_style_;
 }
