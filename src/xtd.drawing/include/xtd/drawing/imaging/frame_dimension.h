@@ -33,8 +33,8 @@ namespace xtd {
         /// @cond
         frame_dimension(const frame_dimension&) = default;
         frame_dimension& operator =(const frame_dimension&) = default;
-        bool operator ==(const frame_dimension& value) const {return guid_ == value.guid_;}
-        bool operator !=(const frame_dimension& value) const {return !operator ==(value);}
+        bool operator ==(const frame_dimension& value) const noexcept {return guid_ == value.guid_;}
+        bool operator !=(const frame_dimension& value) const noexcept {return !operator ==(value);}
         /// @endcond
         
         /// @name Properties
@@ -42,19 +42,19 @@ namespace xtd {
         /// @{
         /// @brief Gets a globally unique identifier (GUID) that represents this frame_dimension object.
         /// @return An xtd::guid structure that contains a GUID that represents this frame_dimension object.
-        const xtd::guid& guid() const {return guid_;}
+        const xtd::guid& guid() const noexcept {return guid_;}
         
         /// @brief Gets the page dimension.
         /// @return The page dimension.
-        static frame_dimension page() {return frame_dimension(xtd::guid("7462dc86-6180-4c7e-8e3f-ee7333a7a483"));}
+        static frame_dimension page() noexcept {return frame_dimension(xtd::guid("7462dc86-6180-4c7e-8e3f-ee7333a7a483"));}
         
         /// @brief Gets the resolution dimension.
         /// @return The resolution dimension.
-        static frame_dimension resolution() {return frame_dimension(xtd::guid("84236f7b-3bd3-428f-8dab-4ea1439ca315"));}
+        static frame_dimension resolution() noexcept {return frame_dimension(xtd::guid("84236f7b-3bd3-428f-8dab-4ea1439ca315"));}
         
         /// @brief Gets the time dimension.
         /// @return The time dimension.
-        static frame_dimension time() {return frame_dimension(xtd::guid("6aedbd6d-3fb5-418a-83a6-7f45229dc872"));}
+        static frame_dimension time() noexcept {return frame_dimension(xtd::guid("6aedbd6d-3fb5-418a-83a6-7f45229dc872"));}
         /// @}
         
       private:

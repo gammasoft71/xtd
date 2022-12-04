@@ -253,7 +253,7 @@ namespace xtd {
         /// | 0xA300 | property_tag_exif_file_Source                 |
         /// | 0xA301 | property_tag_exif_scene_type                  |
         /// | 0xA302 | property_tag_exif_cfa_pattern                 |
-        int32_t id() const {return id_;}
+        int32_t id() const noexcept {return id_;}
         /// @brief Sets the ID of the property.
         /// @param id The integer that represents the ID of the property.
         /// @remarks The following table shows the property tags and their IDs.
@@ -476,14 +476,14 @@ namespace xtd {
         /// | 0xA300 | property_tag_exif_file_Source                 |
         /// | 0xA301 | property_tag_exif_scene_type                  |
         /// | 0xA302 | property_tag_exif_cfa_pattern                 |
-        void id(int32_t id) {id_ = id;}
+        void id(int32_t id) noexcept {id_ = id;}
         
         /// @brief Gets the length (in bytes) of the value property.
         /// @return An integer that represents the length (in bytes) of the value byte array.
-        int32_t len() const {return len_;}
+        int32_t len() const noexcept {return len_;}
         /// @brief Sets the length (in bytes) of the value property.
         /// &param len An integer that represents the length (in bytes) of the value byte array.
-        void len(int32_t len) {len_ = len;}
+        void len(int32_t len) noexcept {len_ = len;}
         
         /// @brief Gets an integer that defines the type of data contained in the value property.
         /// @return An integer that defines the type of data contained in value.
@@ -498,7 +498,7 @@ namespace xtd {
         /// | 6       | Specifies that Value is an array of bytes that can hold values of any data type.                                                                                                                                                                            |
         /// | 7       | Specifies that Value is an array of signed long (32-bit) integers.                                                                                                                                                                                          |
         /// | 10      | Specifies that Value is an array of pairs of signed long integers. Each pair represents a fraction; the first integer is the numerator and the second integer is the denominator.                                                                           |
-        int16_t type() const {return type_;}
+        int16_t type() const noexcept {return type_;}
         /// @brief Sets an integer that defines the type of data contained in the value property.
         /// @param type An integer that defines the type of data contained in value.
         /// @remarks The following table shows integers and the types they represent.
@@ -512,20 +512,20 @@ namespace xtd {
         /// | 6       | Specifies that Value is an array of bytes that can hold values of any data type.                                                                                                                                                                            |
         /// | 7       | Specifies that Value is an array of signed long (32-bit) integers.                                                                                                                                                                                          |
         /// | 10      | Specifies that Value is an array of pairs of signed long integers. Each pair represents a fraction; the first integer is the numerator and the second integer is the denominator.                                                                           |
-        void type(int16_t type) {type_ = type;}
+        void type(int16_t type) noexcept {type_ = type;}
         
         /// @brief Gets the value of the property item.
         /// @return A byte array that represents the value of the property item.
         /// @remarks The byte array returned by the Value property contains data in one of several different primitive types. To use the data, determine the data type using the type property and convert the byte array accordingly.
-        const std::vector<uint8_t>& value() const {return value_;}
+        const std::vector<uint8_t>& value() const noexcept {return value_;}
         /// @brief Gets the value of the property item.
         /// @return A byte array that represents the value of the property item.
         /// @remarks The byte array returned by the Value property contains data in one of several different primitive types. To use the data, determine the data type using the type property and convert the byte array accordingly.
-        std::vector<uint8_t>& value() {return value_;}
+        std::vector<uint8_t>& value() noexcept {return value_;}
         /// @brief Sets the value of the property item.
         /// @param value A byte array that represents the value of the property item.
         /// @remarks The byte array returned by the Value property contains data in one of several different primitive types. To use the data, determine the data type using the type property and convert the byte array accordingly.
-        void value(const std::vector<uint8_t>& value) {value_ = value;}
+        void value(const std::vector<uint8_t>& value) noexcept {value_ = value;}
         /// @}
         
       private:
