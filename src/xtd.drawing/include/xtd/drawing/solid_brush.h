@@ -33,14 +33,14 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new xtd::drawing::solid_brush object of the specified color.
       /// @param color A xtd::drawing::color structure that represents the color of this brush.
-      explicit solid_brush(const xtd::drawing::color& color) {this->color(color);}
+      explicit solid_brush(const xtd::drawing::color& color);
       /// @}
       
       /// @cond
       solid_brush(const solid_brush& value);
       solid_brush& operator =(const solid_brush& value);
-      bool operator ==(const solid_brush& value) const {return data_->color_ == value.data_->color_;}
-      bool operator !=(const solid_brush& value) const {return !operator ==(value);}
+      bool operator ==(const solid_brush& value) const noexcept;
+      bool operator !=(const solid_brush& value) const noexcept;
       /// @endcond
       
       /// @name Properties
@@ -48,11 +48,11 @@ namespace xtd {
       /// @{
       /// @brief Gets the color of this xtd::drawing::solid_brush object.
       /// @return A xtd::drawing::color structure that represents the color of this brush.
-      const xtd::drawing::color& color() const noexcept {return data_->color_;}
+      const xtd::drawing::color& color() const noexcept;
       /// @brief Sets the color of this xtd::drawing::solid_brush object.
       /// @param value A xtd::drawing::color structure that represents the color of this brush.
       /// @return This current instance.
-      xtd::drawing::solid_brush& color(const xtd::drawing::color& value);
+      xtd::drawing::solid_brush& color(const xtd::drawing::color& value) noexcept;
       /// @}
       
     private:
