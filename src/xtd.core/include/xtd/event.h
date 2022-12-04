@@ -10,7 +10,7 @@ namespace xtd {
   /// xtd
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core events
+  /// @ingroup xtd_core
   /// @remarks For more info about events see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/events.md">Events</a> guide.
   /// @paramt object_t the owner object type of the event.
   /// @paramt handler_t Typically a xtd::event_handler or inherited type.
