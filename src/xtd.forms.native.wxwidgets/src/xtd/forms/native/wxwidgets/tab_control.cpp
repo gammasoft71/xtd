@@ -17,7 +17,7 @@ void tab_control::delete_page(intptr_t control, intptr_t page) {
   }
   auto ctrl = static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control());
   if (ctrl != nullptr) {
-    int index = ctrl->FindPage(reinterpret_cast<control_handler*>(page)->control());
+    int32_t index = ctrl->FindPage(reinterpret_cast<control_handler*>(page)->control());
     if (index != wxNOT_FOUND)
       static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->RemovePage(index);
   }

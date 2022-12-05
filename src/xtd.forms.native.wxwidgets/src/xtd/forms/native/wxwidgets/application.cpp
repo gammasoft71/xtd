@@ -17,7 +17,7 @@
 
 #if defined(__WXMSW__)
 #include <wx/msw/registry.h>
-extern drawing_native_export_ int __xtd_win32_enable_dark_mode__;
+extern drawing_native_export_ int32_t __xtd_win32_enable_dark_mode__;
 static wxTimer* __system_color_detection_timer__;
 static bool __is_dark_mode__ = false;
 static void __on_timer_system_color_detection__(wxTimerEvent& e) {

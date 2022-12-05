@@ -117,7 +117,7 @@ void tool_bar::update_tool_bar_item(intptr_t tool_bar, intptr_t handle, const xt
     return;
   }
   
-  auto tool_bar_item = dynamic_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->FindById(static_cast<int>(handle));
+  auto tool_bar_item = dynamic_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->FindById(static_cast<int32_t>(handle));
   if (!tool_bar_item) throw argument_exception(csf_);
   
   tool_bar_item->SetLabel(convert_string::to_wstring(text));
@@ -134,7 +134,7 @@ rectangle tool_bar::tool_bar_item_rectangle(intptr_t tool_bar, intptr_t handle) 
     return {};
   }
   
-  auto tool_bar_item = dynamic_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->FindById(static_cast<int>(handle));
+  auto tool_bar_item = dynamic_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->FindById(static_cast<int32_t>(handle));
   if (!tool_bar_item) throw argument_exception(csf_);
   return {};
 }

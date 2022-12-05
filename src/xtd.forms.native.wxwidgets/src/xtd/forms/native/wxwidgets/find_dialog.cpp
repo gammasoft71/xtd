@@ -28,9 +28,9 @@ namespace {
 
 class wxFindDialog : public wxFindReplaceDialog {
 public:
-  wxFindDialog(intptr_t hwnd, wxFindReplaceData* data, const wxString& title, int style, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, bool, bool, bool)> find_next, xtd::delegate<void()> dialog_closed) : wxFindReplaceDialog(reinterpret_cast<control_handler*>(hwnd)->control(), data, title, style), style(style), find_next(find_next), dialog_closed(dialog_closed), hwnd(hwnd) {}
+  wxFindDialog(intptr_t hwnd, wxFindReplaceData* data, const wxString& title, int32_t style, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, bool, bool, bool)> find_next, xtd::delegate<void()> dialog_closed) : wxFindReplaceDialog(reinterpret_cast<control_handler*>(hwnd)->control(), data, title, style), style(style), find_next(find_next), dialog_closed(dialog_closed), hwnd(hwnd) {}
   
-  int style = 0;
+  int32_t style = 0;
   bool downwards = true;
   bool whole_word = false;
   bool match_case = false;

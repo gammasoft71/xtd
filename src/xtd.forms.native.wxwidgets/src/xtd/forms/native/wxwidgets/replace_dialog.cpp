@@ -29,13 +29,13 @@ namespace {
 
 class wxReplaceDialog : public wxFindReplaceDialog {
 public:
-  wxReplaceDialog(intptr_t hwnd, wxFindReplaceData* data, const wxString& title, int style, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, const xtd::ustring&, bool, bool)> find_next, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, const xtd::ustring&, bool, bool, bool)> replace, xtd::delegate<void()> dialog_closed) : wxFindReplaceDialog(reinterpret_cast<control_handler*>(hwnd)->control(), data, title, style), style(style), find_next(find_next), replace(replace), dialog_closed(dialog_closed), hwnd(hwnd) {
+  wxReplaceDialog(intptr_t hwnd, wxFindReplaceData* data, const wxString& title, int32_t style, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, const xtd::ustring&, bool, bool)> find_next, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, const xtd::ustring&, bool, bool, bool)> replace, xtd::delegate<void()> dialog_closed) : wxFindReplaceDialog(reinterpret_cast<control_handler*>(hwnd)->control(), data, title, style), style(style), find_next(find_next), replace(replace), dialog_closed(dialog_closed), hwnd(hwnd) {
     #if !defined(__WXMSW__)
     m_radioDir->Hide();
     #endif
   }
   
-  int style = 0;
+  int32_t style = 0;
   bool whole_word = false;
   bool match_case = false;
   wxString find_string;

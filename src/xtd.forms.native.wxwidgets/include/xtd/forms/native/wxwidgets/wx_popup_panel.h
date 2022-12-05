@@ -75,7 +75,7 @@ namespace xtd {
         friend xtd::forms::native::wx_popup_panel;
       public:
         wxPopup(wxWindow* parent, long styles) {
-          Create(parent, static_cast<int>(styles));
+          Create(parent, static_cast<int32_t>(styles));
           boxSizer = new wxBoxSizer(wxVERTICAL);
           inner_panel = new wxPopupPanel(this);
           boxSizer->Add(inner_panel, wxSizerFlags().Proportion(-1).Expand());

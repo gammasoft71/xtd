@@ -81,7 +81,7 @@ int32_t system_information::caption_height() {
   #elif defined(__APPLE__)
   // return 22;
   wxFrame* frame = new wxFrame(nullptr, wxID_ANY, wxEmptyString);
-  int height = frame->GetSize().GetHeight() - frame->GetClientSize().GetHeight();
+  int32_t height = frame->GetSize().GetHeight() - frame->GetClientSize().GetHeight();
   frame->Destroy();
   return height;
   #else

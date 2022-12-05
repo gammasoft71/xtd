@@ -91,7 +91,7 @@ namespace xtd {
         
         wxPoint GetClientAreaOrigin() const override {return {inner_margin, inner_margin + extra_inner_margin_up};}
         
-        void DoGetClientSize(int* width, int* height) const override {
+        void DoGetClientSize(int32_t* width, int32_t* height) const override {
           wxStaticBox::DoGetSize(width, height);
           *width = *width - GetClientAreaOrigin().x - inner_margin;
           *height = *height - GetClientAreaOrigin().y - inner_margin;
@@ -139,17 +139,17 @@ namespace xtd {
           return {inner_margin + (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" ? 2 : 0), inner_margin + (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" ? 13 : 5)};
         }
         
-        void DoSetSize(int x, int y, int width, int height, int sizeFlags = wxSIZE_AUTO) override {
+        void DoSetSize(int32_t x, int32_t y, int32_t width, int32_t height, int32_t sizeFlags = wxSIZE_AUTO) override {
           wxPanel::DoSetSize(x, y, width, height, sizeFlags);
         }
         
-        void DoGetClientSize(int* width, int* height) const override {
+        void DoGetClientSize(int32_t* width, int32_t* height) const override {
           wxPanel::DoGetSize(width, height);
           *width = *width - GetClientAreaOrigin().x - inner_margin - (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" ? 2 : 0);
           *height = *height - GetClientAreaOrigin().y - inner_margin - (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" ? 2 : 0);
         }
         
-        void DoSetClientSize(int width, int height) override {
+        void DoSetClientSize(int32_t width, int32_t height) override {
           DoSetSize(GetPosition().x, GetPosition().y, width + GetClientAreaOrigin().x + inner_margin + (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" ? 2 : 0), height + GetClientAreaOrigin().y + inner_margin + (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" ? 2 : 0));
         }
         
