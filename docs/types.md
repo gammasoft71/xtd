@@ -36,7 +36,9 @@ For more performance prefere used `unboxed` type. Used `boxed` type when necessa
 | const char*                                                                                               | [xtd::ustring](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html)                                     | std::string | std::string (3)                              | variable       | Represents text as a series of unicode characters.                            |
 
 (1) Depend of OS : if build on Windows is 2 bytes, if build on Linux or many other non-Windows systems is 4 bytes.
+
 (2) Depend of build : if build in 32 bits the size is 4 bytes, if build in 64 bits the size is 8 bytes.
+
 (3) The std::string type is the main string datatype in standard C++ since 1998, but it was not always part of C++98. 
 
 ### Remarks
@@ -79,7 +81,8 @@ Of course, [std::numeric_limits](https://en.cppreference.com/w/cpp/types/numeric
 
 ## Boxing
 
-For explicit boxing a type into corresponding object class use keyword [xtd::boxing]() method
+For explicit boxing a type into corresponding object class use [xtd::boxing](https://codedocs.xyz/gammasoft71/xtd/group__system.html#ga7352fcff0da12feb0aff421fc8c41d15) method. 
+By default, the boxing implicit in the corresponding object is used.
 
 ```c++
 bool ready_unboxed = true;
@@ -88,13 +91,10 @@ xtd::boolean_object ready_boxed2 = xtd::boxing(ready_unboxed);  // explicit
 aito ready_boxed3 = xtd::boxing(ready_unboxed);                 // explicit with auto is xtd::boolean_object type
 ```
 
-### Remarks
-
-By default, the boxing implicit in the corresponding object is used.
-
 ## Unboxing
 
-For explicit unboxing a object class into corresponding type use keyword Unbox or Unboxer::Unboxing method
+For explicit unboxing a object class into corresponding type use [xtd::unboxing](https://codedocs.xyz/gammasoft71/xtd/group__system.html#ga5aa911c016af5795d0482eefb481fcc9) method.
+By default, the unboxing implicit in the corresponding type is used.
 
 ```c++
 xtd::boolean_object ready_boxed = true;
@@ -102,10 +102,6 @@ bool ready_unboxed1 = ready_boxed;                 // implicit
 bool ready_unboxed2 = xtd::unboxing(ready_boxed);  // explict
 autp ready_unboxed3 = xtd::unboxing(ready_boxed);  // explict with auto is bool
 ```
-
-### Remarks
-
-By default, the unboxing implicit in the corresponding type is used.
 
 # See also
 ​
