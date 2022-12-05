@@ -24,6 +24,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [More tutorials](tutorials.md)
 * xtd.core
   * Overview
+    * [Types](types.md)
     * [main and startup_](guide_main_and_startup.md)
     * [Delegates](delegates.md)
     * [Events](events.md)
