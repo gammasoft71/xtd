@@ -125,7 +125,7 @@ void pen::dash_style(intptr_t pen, uint32_t dash_style) {
 
 void pen::width(intptr_t pen, float width) {
   toolkit::initialize(); // Must be first
-  reinterpret_cast<wxPen*>(pen)->SetWidth(static_cast<int>(width));
+  reinterpret_cast<wxPen*>(pen)->SetWidth(static_cast<int32_t>(width));
 }
 
 void pen::destroy(intptr_t pen) {

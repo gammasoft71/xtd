@@ -14,8 +14,8 @@ public:
   static wxBitmap CreateBitmap(const wxSize& size, const wxGraphicsGradientStops& gradientStops, const wxPoint& center, float offset) noexcept {
     wxImage image(size.GetWidth(), size.GetHeight());
     image.InitAlpha();
-    for (int y = 0; y < size.GetHeight(); y++)
-      for (int x = 0; x < size.GetWidth(); x++)
+    for (int32_t y = 0; y < size.GetHeight(); y++)
+      for (int32_t x = 0; x < size.GetWidth(); x++)
         image.SetAlpha(x, y, 0);
     wxBitmap bitmap(image);
     auto dc = wxMemoryDC(bitmap);
@@ -99,10 +99,10 @@ private:
     auto rad = DegreesToRadians(angle);
     auto x = center.x + radius * std::cos(rad);
     auto y = center.y + radius * std::sin(rad);
-    return {static_cast<int>(x), static_cast<int>(y)};
+    return {static_cast<int32_t>(x), static_cast<int32_t>(y)};
   }
   
-  static std::vector<wxPoint> GetPointsOnLine(int x0, int y0, int x1, int y1) noexcept {
+  static std::vector<wxPoint> GetPointsOnLine(int32_t x0, int32_t y0, int32_t x1, int32_t y1) noexcept {
     bool steep = std::abs(y1 - y0) > std::abs(x1 - x0);
     if (steep) {
       std::swap(x0, y0);
@@ -112,13 +112,13 @@ private:
       std::swap(x0, x1);
       std::swap(y0, y1);
     }
-    int dx = x1 - x0;
-    int dy = std::abs(y1 - y0);
-    int error = dx / 2;
-    int ystep = (y0 < y1) ? 1 : -1;
-    int y = y0;
+    int32_t dx = x1 - x0;
+    int32_t dy = std::abs(y1 - y0);
+    int32_t error = dx / 2;
+    int32_t ystep = (y0 < y1) ? 1 : -1;
+    int32_t y = y0;
     std::vector<wxPoint> points;
-    for (int x = x0; x <= x1; x++) {
+    for (int32_t x = x0; x <= x1; x++) {
       points.push_back(wxPoint((steep ? y : x), (steep ? x : y)));
       error = error - dy;
       if (error < 0) {
@@ -217,12 +217,12 @@ private:
 ///  http://ericw.ca/notes/bresenhams-line-algorithm-in-csharp.html
 ///
 /// @code
-/// public static IEnumerable<Point> GetPointsOnLine(int x0, int y0, int x1, int y1)
+/// public static IEnumerable<Point> GetPointsOnLine(int32_t x0, int32_t y0, int32_t x1, int32_t y1)
 /// {
 ///   bool steep = Math.Abs(y1 - y0) > Math.Abs(x1 - x0);
 ///   if (steep)
 ///   {
-///     int t;
+///     int32_t t;
 ///     t = x0; // swap x0 and y0
 ///     x0 = y0;
 ///     y0 = t;
@@ -232,7 +232,7 @@ private:
 ///   }
 ///   if (x0 > x1)
 ///   {
-///     int t;
+///     int32_t t;
 ///     t = x0; // swap x0 and x1
 ///     x0 = x1;
 ///     x1 = t;
@@ -240,12 +240,12 @@ private:
 ///     y0 = y1;
 ///     y1 = t;
 ///   }
-///   int dx = x1 - x0;
-///   int dy = Math.Abs(y1 - y0);
-///   int error = dx / 2;
-///   int ystep = (y0 < y1) ? 1 : -1;
-///   int y = y0;
-///   for (int x = x0; x <= x1; x++)
+///   int32_t dx = x1 - x0;
+///   int32_t dy = Math.Abs(y1 - y0);
+///   int32_t error = dx / 2;
+///   int32_t ystep = (y0 < y1) ? 1 : -1;
+///   int32_t y = y0;
+///   for (int32_t x = x0; x <= x1; x++)
 ///   {
 ///     yield return new Point((steep ? y : x), (steep ? x : y));
 ///     error = error - dy;
