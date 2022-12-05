@@ -126,6 +126,15 @@ button_base& button_base::image_list(const forms::image_list& value) {
   return *this;
 }
 
+bool button_base::is_default() const noexcept {
+  return data_->is_default;
+}
+
+button_base& button_base::is_default(bool value) {
+  data_->is_default = value;
+  return *this;
+}
+
 content_alignment button_base::text_align() const noexcept {
   return data_->text_align;
 }
@@ -229,25 +238,6 @@ void button_base::on_text_changed(const xtd::event_args& e) {
   control::on_text_changed(e);
 }
 
-text_format_flags button_base::to_text_format_flags(content_alignment text_align) {
-  text_format_flags flags = text_format_flags::default_format;
-  
-  switch (text_align) {
-    case content_alignment::top_left: flags |= text_format_flags::top | text_format_flags::left; break;
-    case content_alignment::top_center: flags |= text_format_flags::top | text_format_flags::horizontal_center; break;
-    case content_alignment::top_right: flags |= text_format_flags::top | text_format_flags::right; break;
-    case content_alignment::middle_left: flags |= text_format_flags::vertical_center | text_format_flags::left; break;
-    case content_alignment::middle_center: flags |= text_format_flags::vertical_center | text_format_flags::horizontal_center; break;
-    case content_alignment::middle_right: flags |= text_format_flags::vertical_center | text_format_flags::right; break;
-    case content_alignment::bottom_left: flags |= text_format_flags::bottom | text_format_flags::left; break;
-    case content_alignment::bottom_center: flags |= text_format_flags::bottom | text_format_flags::horizontal_center; break;
-    case content_alignment::bottom_right: flags |= text_format_flags::bottom | text_format_flags::right; break;
-    default: break;
-  }
-  
-  return flags;
-}
-
 xtd::drawing::rectangle button_base::compute_image_bounds() {return compute_image_bounds({0, 0, width(), height()});}
 
 xtd::drawing::rectangle button_base::compute_image_bounds(const xtd::drawing::rectangle& rectangle) {
@@ -266,4 +256,23 @@ xtd::drawing::rectangle button_base::compute_image_bounds(const xtd::drawing::re
     default: break;
   }
   return image_bounds;
+}
+
+text_format_flags button_base::to_text_format_flags(content_alignment text_align) {
+  text_format_flags flags = text_format_flags::default_format;
+  
+  switch (text_align) {
+    case content_alignment::top_left: flags |= text_format_flags::top | text_format_flags::left; break;
+    case content_alignment::top_center: flags |= text_format_flags::top | text_format_flags::horizontal_center; break;
+    case content_alignment::top_right: flags |= text_format_flags::top | text_format_flags::right; break;
+    case content_alignment::middle_left: flags |= text_format_flags::vertical_center | text_format_flags::left; break;
+    case content_alignment::middle_center: flags |= text_format_flags::vertical_center | text_format_flags::horizontal_center; break;
+    case content_alignment::middle_right: flags |= text_format_flags::vertical_center | text_format_flags::right; break;
+    case content_alignment::bottom_left: flags |= text_format_flags::bottom | text_format_flags::left; break;
+    case content_alignment::bottom_center: flags |= text_format_flags::bottom | text_format_flags::horizontal_center; break;
+    case content_alignment::bottom_right: flags |= text_format_flags::bottom | text_format_flags::right; break;
+    default: break;
+  }
+  
+  return flags;
 }

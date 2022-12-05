@@ -101,10 +101,6 @@ namespace xtd {
       /// @brief Sets the mode by which the button automatically resizes itself.
       /// @param value One of the AutoSizeMode values. The default value is grow only.
       virtual button& auto_size_mode(forms::auto_size_mode value);
-
-      /// @brief Gets is default button.
-      /// @return true is default button; otherwise false.
-      bool default_button() const noexcept;
       
       forms::dialog_result dialog_result() const noexcept override;
       control& dialog_result(forms::dialog_result dialog_result) override;
@@ -152,7 +148,6 @@ namespace xtd {
         timer auto_repeat_timer;
         int32_t auto_repeat_delay = 300;
         int32_t auto_repeat_interval = 100;
-        bool default_button = false;
         forms::dialog_result dialog_result = forms::dialog_result::none;
         xtd::forms::visual_styles::push_button_state state = xtd::forms::visual_styles::push_button_state::normal;
       };

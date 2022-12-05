@@ -60,10 +60,6 @@ button& button::auto_size_mode(forms::auto_size_mode value) {
   return *this;
 }
 
-bool button::default_button() const noexcept {
-  return data_->default_button;
-}
-
 forms::dialog_result button::dialog_result() const noexcept {
   return data_->dialog_result;
 }
@@ -74,8 +70,8 @@ control& button::dialog_result(forms::dialog_result dialog_result) {
 }
 
 void button::notify_default(bool value) {
-  data_->default_button = value;
-  if (enabled()) data_->state = data_->default_button ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal;
+  is_default(value);
+  if (enabled()) data_->state = is_default() ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal;
   if (flat_style() != xtd::forms::flat_style::system) invalidate();
   else {
     if (is_handle_created() && value && flat_style() == xtd::forms::flat_style::system) native::button::set_default_button(handle());
@@ -123,12 +119,12 @@ void button::on_handle_created(const event_args& e) {
       native::control::location(handle(), location());
       native::control::size(handle(), size());
     }
-    if (data_->default_button && flat_style() == xtd::forms::flat_style::system) native::button::set_default_button(handle());
+    if (is_default() && flat_style() == xtd::forms::flat_style::system) native::button::set_default_button(handle());
   }
 }
 
 void button::on_enabled_changed(const event_args& e) {
-  if (flat_style() != xtd::forms::flat_style::system) data_->state = enabled() ? (data_->default_button ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal) : xtd::forms::visual_styles::push_button_state::disabled;
+  if (flat_style() != xtd::forms::flat_style::system) data_->state = enabled() ? (is_default() ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal) : xtd::forms::visual_styles::push_button_state::disabled;
   button_base::on_enabled_changed(e);
 }
 
@@ -145,7 +141,7 @@ void button::on_mouse_enter(const event_args& e) {
 }
 
 void button::on_mouse_leave(const event_args& e) {
-  if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = data_->default_button ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal;
+  if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = is_default() ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal;
   button_base::on_mouse_leave(e);
 }
 
@@ -157,9 +153,9 @@ void button::on_mouse_up(const mouse_event_args& e) {
 
 void button::on_paint(paint_event_args& e) {
   auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-  if (flat_style() == xtd::forms::flat_style::standard) button_renderer::draw_button(style, e.graphics(), e.clip_rectangle(), state(), default_button(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align());
-  if (flat_style() == xtd::forms::flat_style::flat) button_renderer::draw_flat_button(style, e.graphics(), e.clip_rectangle(), state(), default_button(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align());
-  if (flat_style() == xtd::forms::flat_style::popup) button_renderer::draw_popup_button(style, e.graphics(), e.clip_rectangle(), state(), default_button(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align());
+  if (flat_style() == xtd::forms::flat_style::standard) button_renderer::draw_button(style, e.graphics(), e.clip_rectangle(), state(), is_default(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align());
+  if (flat_style() == xtd::forms::flat_style::flat) button_renderer::draw_flat_button(style, e.graphics(), e.clip_rectangle(), state(), is_default(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align());
+  if (flat_style() == xtd::forms::flat_style::popup) button_renderer::draw_popup_button(style, e.graphics(), e.clip_rectangle(), state(), is_default(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align());
   button_base::on_paint(e);
 }
 
