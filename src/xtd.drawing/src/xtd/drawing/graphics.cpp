@@ -148,11 +148,11 @@ graphics& graphics::smoothing_mode(xtd::drawing::drawing2d::smoothing_mode value
   return *this;
 }
 
-int graphics::text_contrast() const noexcept {
+int32_t graphics::text_contrast() const noexcept {
   return data_->text_contrast;
 }
 
-graphics& graphics::text_contrast(int value) noexcept {
+graphics& graphics::text_contrast(int32_t value) noexcept {
   if (data_->text_contrast != value) {
     data_->text_contrast = value;
     native::graphics::text_contrast(handle(), data_->text_contrast);
