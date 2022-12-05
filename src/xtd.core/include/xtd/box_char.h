@@ -287,6 +287,22 @@ namespace xtd {
   inline char16_object boxing(const char16_t& value) noexcept {return char16_object(value);}
   inline char32_object boxing(const char32_t& value) noexcept {return char32_object(value);}
   inline wchar_object boxing(const wchar_t& value) noexcept {return wchar_object(value);}
+  inline char_object boxing(char& value) noexcept {return char_object(value);}
+  inline char8_object boxing(char8_t& value) noexcept {return char8_object(value);}
+  inline char16_object boxing(char16_t& value) noexcept {return char16_object(value);}
+  inline char32_object boxing(char32_t& value) noexcept {return char32_object(value);}
+  inline wchar_object boxing(wchar_t& value) noexcept {return wchar_object(value);}
+
+  inline char unboxing(const char& value) noexcept {return value;}
+  inline char8_t unboxing(const char8_t& value) noexcept {return value;}
+  inline char16_t unboxing(const char16_t& value) noexcept {return value;}
+  inline char32_t unboxing(const char32_t& value) noexcept {return value;}
+  inline wchar_t unboxing(const wchar_t& value) noexcept {return value;}
+  inline char unboxing(char& value) noexcept {return value;}
+  inline char8_t unboxing(char8_t& value) noexcept {return value;}
+  inline char16_t unboxing(char16_t& value) noexcept {return value;}
+  inline char32_t unboxing(char32_t& value) noexcept {return value;}
+  inline wchar_t unboxing(wchar_t& value) noexcept {return value;}
 
   template<typename type_t>
   inline std::string to_string(const xtd::box_char<type_t>& value, const std::string& fmt, const std::locale& loc) {
