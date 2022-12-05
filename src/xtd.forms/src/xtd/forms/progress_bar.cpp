@@ -114,7 +114,7 @@ void progress_bar::perform_step() {
   increment(step());
 }
 
-void progress_bar::set_range(int min_value, int max_value) {
+void progress_bar::set_range(int32_t min_value, int32_t max_value) {
   minimum(min_value);
   maximum(min_value > max_value ? min_value : max_value);
 }

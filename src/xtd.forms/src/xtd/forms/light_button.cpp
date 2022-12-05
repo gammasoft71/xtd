@@ -250,10 +250,10 @@ void light_button::on_paint(paint_event_args& e) {
     if (data_->check_state == check_state::checked) light_color = light_on_color();
     else if (data_->check_state == check_state::indeterminate) light_color = drawing::color::dark(light_on_color());
     if (!enabled()) light_color = back_color();
-    int left = e.clip_rectangle().left() + 5;
+    int32_t left = e.clip_rectangle().left() + 5;
     if (data_->light_align == content_alignment::top_right || data_->light_align == content_alignment::middle_right || data_->light_align == content_alignment::bottom_right) left = e.clip_rectangle().right() - 15;
     else if (data_->light_align == content_alignment::top_center || data_->light_align == content_alignment::middle_center || data_->light_align == content_alignment::bottom_center) left = e.clip_rectangle().left() + (e.clip_rectangle().width() / 2) - 5;
-    int top = e.clip_rectangle().top() + (e.clip_rectangle().height() / 2) - 7;
+    int32_t top = e.clip_rectangle().top() + (e.clip_rectangle().height() / 2) - 7;
     if (data_->light_align == content_alignment::top_right || data_->light_align == content_alignment::top_center || data_->light_align == content_alignment::top_left) top = e.clip_rectangle().top() + 5;
     else if (data_->light_align == content_alignment::bottom_right || data_->light_align == content_alignment::bottom_center || data_->light_align == content_alignment::bottom_left) top = e.clip_rectangle().bottom() - 20;
     e.graphics().fill_rounded_rectangle(drawing::solid_brush(light_color), drawing::rectangle {left, top, 10, 16}, 2);

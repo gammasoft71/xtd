@@ -143,7 +143,7 @@ namespace xtd {
       /// @param min_value The lower limit of the range of the track bar.
       /// @param max_value The upper limit of the range of the track bar.
       /// @remarks You can use this method to set the entire range for the xtd::forms::track_bar at the same time. To set the minimum or maximum values individually, use the xtd::forms::track_bar::minimum and xtd::forms::track_bar::maximum properties. If the min_value parameter is greater than the max_value parameter, max_value is set equal to min_value.
-      void set_range(int min_value, int max_value);
+      void set_range(int32_t min_value, int32_t max_value);
       
       /// @brief Returns a string that represents the track_bar control.
       /// @return A string that represents the current progress_bar.

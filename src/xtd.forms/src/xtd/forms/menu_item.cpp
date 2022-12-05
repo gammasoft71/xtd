@@ -255,7 +255,7 @@ intptr_t menu_item::create_menu_handle() {
   if (is_parent() || menu::data_->main_menu.has_value()) return native::menu::create();
   
   if (data_->text == "-") data_->kind = xtd::forms::menu_item_kind::separator;
-  auto handle = native::menu_item::create(menu::data_->parent.value().get().handle(), data_->text, data_->image, static_cast<int>(data_->kind), static_cast<size_t>(data_->shortcut));
+  auto handle = native::menu_item::create(menu::data_->parent.value().get().handle(), data_->text, data_->image, static_cast<int32_t>(data_->kind), static_cast<size_t>(data_->shortcut));
   handles_.insert({native::menu_item::menu_id(handle), reference_wrapper<menu>(*this)});
   return handle;
 }

@@ -56,11 +56,11 @@ namespace xtd {
       
       /// @brief Gets the location of the splitter, in pixels, from the left or top edge of the split_container.
       /// @return An int32_t representing the location of the splitter, in pixels, from the left or top edge of the split_container. The default value is 50 pixels.
-      virtual int splitter_distance() const noexcept;
+      virtual int32_t splitter_distance() const noexcept;
       /// @brief Sets the location of the splitter, in pixels, from the left or top edge of the split_container.
       /// @param splitter_distance An int32_t representing the location of the splitter, in pixels, from the left or top edge of the split_container. The default value is 50 pixels.
       /// @return Current split_container instance.
-      virtual split_container& splitter_distance(int splitter_distance);
+      virtual split_container& splitter_distance(int32_t splitter_distance);
       
       /// @brief Gets the style of the splitter.
       /// @return One of xtd::forms::splitter_style values. The default is xtd::forms::splitter_style::update_children
@@ -73,12 +73,12 @@ namespace xtd {
       /// @brief Gets or sets the width of the splitter in pixels.
       /// @return An int32_t representing the width of the splitter, in pixels. The default is four pixels.
       /// @remarks Use the splitter_width property to change the width of the splitter itself, not the split_container.
-      virtual int splitter_width() const noexcept;
+      virtual int32_t splitter_width() const noexcept;
       /// @brief Gets or sets the width of the splitter in pixels.
       /// @param splitter_width An int32_t representing the width of the splitter, in pixels. The default is four pixels.
       /// @return Current split_container instance.
       /// @remarks Use the splitter_width property to change the width of the splitter itself, not the split_container.
-      virtual split_container& splitter_width(int splitter_width);
+      virtual split_container& splitter_width(int32_t splitter_width);
       /// @}
       
     protected:
@@ -102,9 +102,9 @@ namespace xtd {
         splitter_panel panel1;
         splitter_panel panel2;
         xtd::forms::splitter splitter;
-        int splitter_distance = 50;
-        //int splitter_increment = 1;
-        int splitter_width = 4;
+        int32_t splitter_distance = 50;
+        //int32_t splitter_increment = 1;
+        int32_t splitter_width = 4;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

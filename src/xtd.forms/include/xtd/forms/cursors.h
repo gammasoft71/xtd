@@ -652,7 +652,7 @@ namespace xtd {
       /// </table>
       static cursor wait_cursor();
       
-      /// @brief Gets the zoom int cursor, typically to zoom in an object.
+      /// @brief Gets the zoom_in cursor, typically to zoom in an object.
       /// @return The cursor that represents the zoom in cursor.
       /// @par Appearance
       /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">

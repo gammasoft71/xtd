@@ -71,7 +71,7 @@ namespace xtd {
       
       /// @brief Gets the keyboard value for a key_down or key_up event.
       /// @return The integer representation of the key_code property.
-      int key_value() const noexcept {return static_cast<int>(key_data_) & 0xFFFF;}
+      int32_t key_value() const noexcept {return static_cast<int32_t>(key_data_) & 0xFFFF;}
       
       /// @brief Gets the modifier flags for a key_down or key_up event. The flags indicate which combination of CMD, CTRL, SHIFT, and ALT keys was pressed.
       /// @return A xtd::forms::keys value representing one or more modifier flags.
