@@ -247,7 +247,37 @@ namespace xtd {
   inline uint32_object boxing(const uint32_t& value) noexcept {return uint32_object(value);}
   inline uint64_object boxing(const uint64_t& value) noexcept {return uint64_object(value);}
   inline ullong_object boxing(const ullong_t& value) noexcept {return ullong_object(value);}
-  /// @endcond
+  inline byte_object boxing(byte_t& value) noexcept {return byte_object(value);}
+  inline int16_object boxing(int16_t& value) noexcept {return int16_object(value);}
+  inline int32_object boxing(int32_t& value) noexcept {return int32_object(value);}
+  inline int64_object boxing(int64_t& value) noexcept {return int64_object(value);}
+  inline llong_object boxing(llong_t& value) noexcept {return llong_object(value);}
+  inline sbyte_object boxing(sbyte_t& value) noexcept {return sbyte_object(value);}
+  inline uint16_object boxing(uint16_t& value) noexcept {return uint16_object(value);}
+  inline uint32_object boxing(uint32_t& value) noexcept {return uint32_object(value);}
+  inline uint64_object boxing(uint64_t& value) noexcept {return uint64_object(value);}
+  inline ullong_object boxing(ullong_t& value) noexcept {return ullong_object(value);}
+
+  inline byte_t unboxing(const byte_t& value) noexcept {return value;}
+  inline int16_t unboxing(const int16_t& value) noexcept {return value;}
+  inline int32_t unboxing(const int32_t& value) noexcept {return value;}
+  inline int64_t unboxing(const int64_t& value) noexcept {return value;}
+  inline llong_t unboxing(const llong_t& value) noexcept {return value;}
+  inline sbyte_t unboxing(const sbyte_t& value) noexcept {return value;}
+  inline uint16_t unboxing(const uint16_t& value) noexcept {return value;}
+  inline uint32_t unboxing(const uint32_t& value) noexcept {return value;}
+  inline uint64_t unboxing(const uint64_t& value) noexcept {return value;}
+  inline ullong_t unboxing(const ullong_t& value) noexcept {return value;}
+  inline byte_t unboxing(byte_t& value) noexcept {return value;}
+  inline int16_t unboxing(int16_t& value) noexcept {return value;}
+  inline int32_t unboxing(int32_t& value) noexcept {return value;}
+  inline int64_t unboxing(int64_t& value) noexcept {return value;}
+  inline llong_t unboxing(llong_t& value) noexcept {return value;}
+  inline sbyte_t unboxing(sbyte_t& value) noexcept {return value;}
+  inline uint16_t unboxing(uint16_t& value) noexcept {return value;}
+  inline uint32_t unboxing(uint32_t& value) noexcept {return value;}
+  inline uint64_t unboxing(uint64_t& value) noexcept {return value;}
+  inline ullong_t unboxing(ullong_t& value) noexcept {return value;}
 
   template<typename type_t>
   inline std::string to_string(const xtd::box_integer<type_t>& value, const std::string& fmt, const std::locale& loc) {
