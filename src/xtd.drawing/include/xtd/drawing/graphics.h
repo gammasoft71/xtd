@@ -180,12 +180,12 @@ namespace xtd {
       /// @brief Gets the gamma correction value for rendering text.
       /// @return The gamma correction value used for rendering antialiased and ClearType text.
       /// @remarks The gamma correction value must be between 0 and 12. The default value is 4.
-      int text_contrast() const noexcept;
+      int32_t text_contrast() const noexcept;
       /// @brief Sets the gamma correction value for rendering text.
       /// @param value The gamma correction value used for rendering antialiased and ClearType text.
       /// @return This current instance.
       /// @remarks The gamma correction value must be between 0 and 12. The default value is 4.
-      graphics& text_contrast(int value) noexcept;
+      graphics& text_contrast(int32_t value) noexcept;
       
       /// @brief Gets the rendering mode for text associated with this xtd::drawing::graphics.
       /// @return One of the xtd::drawing::graphics::text_rendering_hint values.
@@ -1316,7 +1316,7 @@ namespace xtd {
         xtd::drawing::drawing2d::pixel_offset_mode pixel_offset_mode = xtd::drawing::drawing2d::pixel_offset_mode::default_value;
         xtd::drawing::drawing2d::smoothing_mode smoothing_mode = xtd::drawing::drawing2d::smoothing_mode::default_value;
         xtd::drawing::text::text_rendering_hint text_rendering_hint = xtd::drawing::text::text_rendering_hint::system_default;
-        int text_contrast = 4;
+        int32_t text_contrast = 4;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

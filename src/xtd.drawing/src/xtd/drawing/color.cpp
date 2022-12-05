@@ -194,7 +194,7 @@ color color::from_hsb(float hue, float saturation, float brightness) noexcept {
   float q = brightness * (1.0f - (saturation * f));
   float t = brightness * (1.0f - (saturation * (1.0f - f)));
   
-  switch (static_cast<int>(trunc(hue))) {
+  switch (static_cast<int32_t>(trunc(hue))) {
     case 0: return color::from_argb(255, static_cast<uint8_t>(brightness * 255.0f), static_cast<uint8_t>(t * 255.0f), static_cast<uint8_t>(p * 255.0f));
     case 1: return color::from_argb(255, static_cast<uint8_t>(q * 255.0f), static_cast<uint8_t>(brightness * 255.0f), static_cast<uint8_t>(p * 255.0f));
     case 2: return color::from_argb(255, static_cast<uint8_t>(p * 255.0f),  static_cast<uint8_t>(brightness * 255.0f), static_cast<uint8_t>(t * 255.0f));

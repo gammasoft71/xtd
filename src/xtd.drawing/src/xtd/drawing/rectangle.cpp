@@ -91,12 +91,12 @@ void rectangle::add(const drawing::size& sz) noexcept {
   add(sz.width(), sz.height());
 }
 
-void rectangle::add(int width, int height) noexcept {
+void rectangle::add(int32_t width, int32_t height) noexcept {
   width_ += width;
   height_ += height;
 }
 
-rectangle rectangle::add(const rectangle& rect, int x, int y) noexcept {
+rectangle rectangle::add(const rectangle& rect, int32_t x, int32_t y) noexcept {
   auto result = rect;
   result.add(x, y);
   return result;
@@ -130,14 +130,14 @@ void rectangle::inflate(const drawing::size& sz) noexcept {
   inflate(sz.width(), sz.height());
 }
 
-void rectangle::inflate(int width, int height) noexcept {
+void rectangle::inflate(int32_t width, int32_t height) noexcept {
   x_ -= width;
   y_ -= height;
   width_ += 2 * width;
   height_ +=  2 * height;
 }
 
-rectangle rectangle::inflate(const rectangle& rect, int x, int y) noexcept {
+rectangle rectangle::inflate(const rectangle& rect, int32_t x, int32_t y) noexcept {
   auto result = rect;
   result.inflate(x, y);
   return result;
@@ -203,7 +203,7 @@ rectangle rectangle::offset(const rectangle& rect, const point& pos) noexcept {
   return offset(rect, pos.x(), pos.y());
 }
 
-rectangle rectangle::offset(const rectangle& rect, int x, int y) noexcept {
+rectangle rectangle::offset(const rectangle& rect, int32_t x, int32_t y) noexcept {
   auto result = rect;
   result.offset(x, y);
   return result;

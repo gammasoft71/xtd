@@ -160,14 +160,14 @@ namespace xtd {
       /// @param width The amount to add this xtd::drawing::rectangle horizontally.
       /// @param height The amount to add this xtd::drawing::rectangle verticaly.
       /// @remarks This method adds this rectangle, not a copy of it.
-      void add(int width, int height) noexcept;
+      void add(int32_t width, int32_t height) noexcept;
       /// @brief Creates and returns an added copy of the specified xtd::drawing::rectangle structure. The copy is added by the specified amount. The original xtd::drawing::rectangle structure remains unmodified.
       /// @param rect The xtd::drawing::rectangle with which to start. This rectangle is not modified.
       /// @param x The amount to add the specified rectangle horizontally.
       /// @param y The amount to add the specified rectangle vertically.
       /// @return The added xtd::drawing::rectangle.
       /// @remarks This method makes a copy of rect, adds the copy, and then returns the added copy.
-      static rectangle add(const rectangle& rect, int x, int y) noexcept;
+      static rectangle add(const rectangle& rect, int32_t x, int32_t y) noexcept;
       /// @brief Creates and returns an added copy of the specified xtd::drawing::rectangle structure. The copy is added by the specified amount. The original xtd::drawing::rectangle structure remains unmodified.
       /// @param rect The xtd::drawing::rectangle with which to start. This rectangle is not modified.
       /// @param sz The amount to add the specified rectangle.
@@ -215,14 +215,14 @@ namespace xtd {
       /// @param height The amount to inflate this xtd::drawing::rectangle verticaly.
       /// @remarks This method enlarges this rectangle, not a copy of it. The rectangle is enlarged in both directions along an axis. For example, if a 50 by 50 rectangle is enlarged by 50 in the x-axis, the resultant rectangle will be 150 units long (the original 50, the 50 in the minus direction, and the 50 in the plus direction) maintaining the rectangle's geometric center.
       /// @remarks If either x or y is negative, the xtd::drawing::rectangle structure is deflated in the corresponding direction.
-      void inflate(int width, int height) noexcept;
+      void inflate(int32_t width, int32_t height) noexcept;
       /// @brief Creates and returns an enlarged copy of the specified xtd::drawing::rectangle structure. The copy is enlarged by the specified amount. The original xtd::drawing::rectangle structure remains unmodified.
       /// @param rect The xtd::drawing::rectangle with which to start. This rectangle is not modified.
       /// @param x The amount to inflate the specified rectangle horizontally.
       /// @param y The amount to inflate the specified rectangle vertically.
       /// @return The enlarged xtd::drawing::rectangle.
       /// @remarks This method makes a copy of rect, enlarges the copy, and then returns the enlarged copy. The rectangle is enlarged in both directions along an axis. For example, if a 50 by 50 rectangle is enlarged by 50 in the x-axis, the resultant rectangle will be 150 units long (the original 50, the 50 in the minus direction, and the 50 in the plus direction) maintaining the rectangle's geometric center.
-      static rectangle inflate(const rectangle& rect, int x, int y) noexcept;
+      static rectangle inflate(const rectangle& rect, int32_t x, int32_t y) noexcept;
       /// @brief Creates and returns an enlarged copy of the specified xtd::drawing::rectangle structure. The copy is enlarged by the specified amount. The original xtd::drawing::rectangle structure remains unmodified.
       /// @param rect The xtd::drawing::rectangle with which to start. This rectangle is not modified.
       /// @param sz The amount to inflate the specified rectangle.
@@ -273,7 +273,7 @@ namespace xtd {
       /// @param y The amount to offset the specified rectangle vertically.
       /// @return The offsetted xtd::drawing::rectangle.
       /// @remarks This method makes a copy of rect, offsets the copy, and then returns the offsetted copy.
-      static rectangle offset(const rectangle& rect, int x, int y) noexcept;
+      static rectangle offset(const rectangle& rect, int32_t x, int32_t y) noexcept;
       
       /// @brief Converts the specified xtd::drawing::rectangle_f to a xtd::drawing::rectangle by rounding the xtd::drawing::rectangle_f values to the nearest integer values.
       /// @param rect The xtd::drawing::rectangle_f to be converted.
