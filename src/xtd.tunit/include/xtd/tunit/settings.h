@@ -6,6 +6,7 @@
 #include <xtd/date_time.h>
 #include <xtd/environment.h>
 #include <xtd/io/path.h>
+#include <cstdint>
 #include <cstdlib>
 #include <string>
 
@@ -45,13 +46,13 @@ namespace xtd {
       /// @return exit status.
       /// @remarks The value by default is EXIT_SUCCESS.
       /// @remarks When an error occurred in unit test the value is set to EXIT_FAILURE.
-      int exit_status() const noexcept {return exit_status_;}
+      int32_t exit_status() const noexcept {return exit_status_;}
       
       /// @brief Sets exit status.
       /// @param exit_status exit status.
       /// @remarks The value by default is EXIT_SUCCESS.
       /// @remarks When an error occurred in unit test the value is set to EXIT_FAILURE.
-      void exit_status(int exit_status) noexcept {exit_status_ = exit_status;}
+      void exit_status(int32_t exit_status) noexcept {exit_status_ = exit_status;}
       
       /// @brief Gets filter tests.
       /// @return filter tests.
@@ -136,22 +137,22 @@ namespace xtd {
       /// @brief Gets random seed value.
       /// @return Random seed value.
       /// @remarks By default is set to 0 (no seed).
-      unsigned int random_seed() const noexcept {return random_seed_;}
+      uint32_t random_seed() const noexcept {return random_seed_;}
       
       /// @brief Sets random seed value.
       /// @param random_seed Random seed value.
       /// @remarks By default is set to 0 (no seed).
-      void random_seed(unsigned int random_seed) noexcept {random_seed_ = random_seed;}
+      void random_seed(uint32_t random_seed) noexcept {random_seed_ = random_seed;}
       
       /// @brief Gets repeat tests count.
       /// @return Repeat test count.
       /// @remarks By default is set to 1 (no repeat).
-      int repeat_test() const noexcept {return repeat_tests_;}
+      int32_t repeat_test() const noexcept {return repeat_tests_;}
       
       /// @brief Sets repeat tests count.
       /// @param repeat_tests Repeat test count.
       /// @remarks By default is set to 1 (no repeat).
-      void repeat_tests(int repeat_tests) noexcept {repeat_tests_ = repeat_tests;}
+      void repeat_tests(int32_t repeat_tests) noexcept {repeat_tests_ = repeat_tests;}
       
       /// @brief Gets if show duration for each test.
       /// @return true if show duration for each test; otherwise false.
@@ -197,7 +198,7 @@ namespace xtd {
       
       bool also_run_ignored_tests_ = false;
       std::string filter_tests_ = "*.*";
-      int exit_status_ = EXIT_SUCCESS;
+      int32_t exit_status_ = EXIT_SUCCESS;
       bool gtest_compatibility_ = false;
       bool list_tests_ = false;
       bool output_color_ = true;
@@ -208,8 +209,8 @@ namespace xtd {
       std::string file_name_ = xtd::io::path::get_full_path(xtd::environment::get_command_line_args()[0]);
       bool show_duration_ = true;
       bool shuffle_tests_ = false;
-      unsigned int random_seed_ = 0;
-      int repeat_tests_ = 1;
+      uint32_t random_seed_ = 0;
+      int32_t repeat_tests_ = 1;
       bool enable_stack_trace_ = false;
       xtd::date_time start_time_;
       xtd::date_time end_time_;

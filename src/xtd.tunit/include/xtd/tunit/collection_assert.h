@@ -256,7 +256,7 @@ namespace xtd {
       template<typename collection_t>
       static void all_items_are_unique(const collection_t& collection, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         auto value = *collection.cbegin();
-        std::map<decltype(value), int> counts;
+        std::map<decltype(value), int32_t> counts;
         for (auto item : collection) {
           auto result = counts.emplace(item, 1);
           if (result.second == false)
@@ -274,7 +274,7 @@ namespace xtd {
       static void all_items_are_unique(const std::initializer_list<item_t>& collection, const std::string& message) {all_items_are_unique(collection, message, xtd::diagnostics::stack_frame::empty());}
       template<typename item_t>
       static void all_items_are_unique(const std::initializer_list<item_t>& collection, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        std::map<item_t, int> counts;
+        std::map<item_t, int32_t> counts;
         for (auto item : collection) {
           auto result = counts.emplace(item, 1);
           if (result.second == false)
