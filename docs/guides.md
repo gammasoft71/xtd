@@ -25,12 +25,12 @@ The xtd guides provide an explanation on how to use the important features of th
 * xtd.core
   * Overview
     * [Types](types.md)
-    * [main and startup_](guide_main_and_startup.md)
+    * [enum, enum class and enum struct](enum_class.md)
+    * [ustring](ustring.md)
     * [Delegates](delegates.md)
     * [Events](events.md)
-    * [ustring](ustring.md)
-    * [enum, enum class and enum struct](enum_class.md)
     * [Literal operators](literal_operators.md)
+    * [main and startup_](guide_main_and_startup.md)
     * [Internationalization](internationalization.md)
   * Common I/O tasks
     * [Common I/O tasks​](common_io_tasks.md)
