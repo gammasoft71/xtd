@@ -242,7 +242,7 @@ namespace xtd {
       static bool is_path_rooted(const xtd::ustring& path);
       
     private:
-      static int __get_index_path_rooted(const xtd::ustring& path);
+      static int32_t __get_index_path_rooted(const xtd::ustring& path);
       static bool __is_drive(const xtd::ustring& path) noexcept;
     };
   }

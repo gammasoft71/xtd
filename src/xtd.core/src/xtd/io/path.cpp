@@ -173,9 +173,9 @@ char path::volume_separator_char() noexcept {
   return native::path::volume_separator_char();
 }
 
-int path::__get_index_path_rooted(const ustring& path) {
+int32_t path::__get_index_path_rooted(const ustring& path) {
   size_t index = path.find(directory_separator_char());
-  return (index == ustring::npos || index == path.size() || (index != 0 && !__is_drive(path.substring(0, index + 1)))) ? -1 : static_cast<int>(index);
+  return (index == ustring::npos || index == path.size() || (index != 0 && !__is_drive(path.substring(0, index + 1)))) ? -1 : static_cast<int32_t>(index);
 }
 
 bool path::__is_drive(const ustring& path) noexcept {

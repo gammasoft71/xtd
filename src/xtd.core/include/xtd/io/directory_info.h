@@ -140,7 +140,7 @@ namespace xtd {
         directory_iterator(directory_iterator&&) = default;
         
         directory_iterator& operator ++();
-        directory_iterator operator ++(int);
+        directory_iterator operator ++(int32_t);
         bool operator ==(directory_iterator other) const;
         bool operator !=(directory_iterator other) const {return !operator ==(other);}
         value_type operator *() const;
@@ -174,7 +174,7 @@ namespace xtd {
         file_iterator(file_iterator&&) = default;
         
         file_iterator& operator ++();
-        file_iterator operator ++(int);
+        file_iterator operator ++(int32_t);
         bool operator ==(file_iterator other) const;
         bool operator !=(file_iterator other) const {return !operator ==(other);}
         value_type operator *() const;
@@ -208,7 +208,7 @@ namespace xtd {
         file_system_info_iterator(file_system_info_iterator&&) = default;
         
         file_system_info_iterator& operator ++();
-        file_system_info_iterator operator ++(int);
+        file_system_info_iterator operator ++(int32_t);
         bool operator ==(file_system_info_iterator other) const;
         bool operator !=(file_system_info_iterator other) const {return !operator ==(other);}
         value_type operator *() const;

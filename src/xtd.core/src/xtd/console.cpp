@@ -232,8 +232,8 @@ console_key_info console::read_key() {
 }
 
 console_key_info console::read_key(bool intercept) {
-  int key_char = 0;
-  int key_code = 0;
+  int32_t key_char = 0;
+  int32_t key_code = 0;
   bool alt = false;
   bool shift = false;
   bool ctrl = false;

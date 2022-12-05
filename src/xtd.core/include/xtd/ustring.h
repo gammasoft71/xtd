@@ -475,7 +475,7 @@ namespace xtd {
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
-    static int compare(const ustring& str_a, const ustring& str_b) noexcept;
+    static int32_t compare(const ustring& str_a, const ustring& str_b) noexcept;
     /// @brief Compares two specified string objects, ignoring or honoring their case, and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first string to compare.
     /// @param str_b The second string to compare.
@@ -486,7 +486,7 @@ namespace xtd {
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
-    static int compare(const ustring& str_a, const ustring& str_b, bool ignore_case) noexcept;
+    static int32_t compare(const ustring& str_a, const ustring& str_b, bool ignore_case) noexcept;
     
     /// @brief Compares two specified string objects using the specified rules, and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first string to compare.
@@ -498,7 +498,7 @@ namespace xtd {
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
-    static int compare(const ustring& str_a, const ustring& str_b, xtd::string_comparison comparison_type) noexcept;
+    static int32_t compare(const ustring& str_a, const ustring& str_b, xtd::string_comparison comparison_type) noexcept;
     /// @brief Compares substrings of two specified string objects and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first string to use in the comparison.
     /// @param index_a The position of the substring within str_a.
@@ -511,7 +511,7 @@ namespace xtd {
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
-    static int compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length) noexcept;
+    static int32_t compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length) noexcept;
     /// @brief Compares substrings of two specified string objects, ignoring or honoring their case, and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first string to use in the comparison.
     /// @param index_a The position of the substring within str_a.
@@ -525,7 +525,7 @@ namespace xtd {
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
-    static int compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length, bool ignore_case) noexcept;
+    static int32_t compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length, bool ignore_case) noexcept;
     /// @brief Compares substrings of two specified string objects using the specified rules, and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first string to use in the comparison.
     /// @param index_a The position of the substring within str_a.
@@ -539,7 +539,7 @@ namespace xtd {
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
-    static int compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length, xtd::string_comparison comparison_type) noexcept;
+    static int32_t compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length, xtd::string_comparison comparison_type) noexcept;
     
     int32_t compare_to(const ustring& tzi) const noexcept override;
     int32_t compare_to(const object& obj) const noexcept override;
@@ -1607,7 +1607,7 @@ void __ustring_extract_format_arg(std::string& fmt, size_t& index, std::vector<_
       xtd::ustring arg_str = format.format.empty() ? __format_stringer<char, arg_t>(arg) : xtd::to_string(arg, format.format);
       
       if (!format.alignment.empty()) {
-        int alignment = 0;
+        int32_t alignment = 0;
         try {
           alignment = std::stoi(format.alignment);
         } catch (...) {

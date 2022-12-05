@@ -557,7 +557,7 @@ date_time& date_time::operator ++() {
   return *this;
 }
 
-date_time date_time::operator ++(int) {
+date_time date_time::operator ++(int32_t) {
   return date_time(value_++, kind_);
 }
 
@@ -566,7 +566,7 @@ date_time& date_time::operator --() {
   return *this;
 }
 
-date_time date_time::operator --(int) {
+date_time date_time::operator --(int32_t) {
   return date_time(value_--, kind_);
 }
 

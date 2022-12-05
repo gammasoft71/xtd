@@ -38,7 +38,7 @@ directory_info::directory_iterator& directory_info::directory_iterator::operator
   return *this;
 }
 
-directory_info::directory_iterator directory_info::directory_iterator::operator ++(int) {
+directory_info::directory_iterator directory_info::directory_iterator::operator ++(int32_t) {
   directory_iterator result = *this;
   ++(*this);
   return result;
@@ -88,7 +88,7 @@ directory_info::file_iterator& directory_info::file_iterator::operator ++() {
   return *this;
 }
 
-directory_info::file_iterator directory_info::file_iterator::operator ++(int) {
+directory_info::file_iterator directory_info::file_iterator::operator ++(int32_t) {
   file_iterator result = *this;
   ++(*this);
   return result;
@@ -137,7 +137,7 @@ directory_info::file_system_info_iterator& directory_info::file_system_info_iter
   return *this;
 }
 
-directory_info::file_system_info_iterator directory_info::file_system_info_iterator::operator ++(int) {
+directory_info::file_system_info_iterator directory_info::file_system_info_iterator::operator ++(int32_t) {
   file_system_info_iterator result = *this;
   ++(*this);
   return result;
