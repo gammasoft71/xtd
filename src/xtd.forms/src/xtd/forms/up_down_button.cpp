@@ -80,7 +80,7 @@ up_down_button& up_down_button::wrapped(bool value) {
   return *this;
 }
 
-void up_down_button::set_range(int min_value, int max_value) {
+void up_down_button::set_range(int32_t min_value, int32_t max_value) {
   minimum(min_value);
   maximum(min_value > max_value ? min_value : max_value);
 }

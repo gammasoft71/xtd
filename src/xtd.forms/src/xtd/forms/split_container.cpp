@@ -39,11 +39,11 @@ splitter_panel& split_container::panel2() noexcept {
   return data_->panel2;
 }
 
-int split_container::splitter_distance() const noexcept {
+int32_t split_container::splitter_distance() const noexcept {
   return data_->splitter_distance;
 }
 
-split_container& split_container::splitter_distance(int splitter_distance) {
+split_container& split_container::splitter_distance(int32_t splitter_distance) {
   if (data_->splitter_distance != splitter_distance) {
     data_->splitter_distance = splitter_distance;
     if (data_->orientation == xtd::forms::orientation::horizontal) data_->panel1.height(splitter_distance);
@@ -62,11 +62,11 @@ split_container& split_container::splitter_style(xtd::forms::splitter_style spli
   return *this;
 }
 
-int split_container::splitter_width() const noexcept {
+int32_t split_container::splitter_width() const noexcept {
   return data_->splitter_width;
 }
 
-split_container& split_container::splitter_width(int splitter_width) {
+split_container& split_container::splitter_width(int32_t splitter_width) {
   if (data_->splitter_width != splitter_width) {
     data_->splitter_width = splitter_width;
     arrange_children();

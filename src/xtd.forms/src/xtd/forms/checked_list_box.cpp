@@ -301,7 +301,7 @@ void checked_list_box::wm_command_control(message& message) {
     if (data_->items[selected_index].check_state() != check_state) {
       item_check_event_args item_check_event_args(selected_index, check_state, data_->items[selected_index].check_state());
       on_item_check(item_check_event_args);
-      if (item_check_event_args.new_value() != check_state) native::checked_list_box::check_state(handle(), selected_index, static_cast<int>(item_check_event_args.new_value()));
+      if (item_check_event_args.new_value() != check_state) native::checked_list_box::check_state(handle(), selected_index, static_cast<int32_t>(item_check_event_args.new_value()));
       set_item_check_state(selected_index, item_check_event_args.new_value());
     }
   }

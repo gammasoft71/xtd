@@ -72,7 +72,7 @@ namespace xtd {
       
       /// @brief Gets the country numeric code.
       /// @return A signed-integer that represent the numeric code.
-      virtual int numeric_code() const noexcept;
+      virtual int32_t numeric_code() const noexcept;
       /// @}
       
       /// @name Methods
@@ -92,7 +92,7 @@ namespace xtd {
       
       /// @brief Gets a country from numeric code.
       /// @return If exist a xtd::forms::country that represent numeric coded; otherwise xtd::forms::country::empty.
-      static country from_numeric_code(int numeric_code);
+      static country from_numeric_code(int32_t numeric_code);
       
       /// @brief Returns a string containing the name, alpha codes and numeric code of the country.
       /// @return A string containing the name, alpha codes and numeric code of the country.
@@ -103,13 +103,13 @@ namespace xtd {
     private:
       friend class countries;
       static const std::vector<xtd::ustring> enclosed_letters;
-      country(const xtd::ustring& name, const xtd::ustring& alpha_2_code, const xtd::ustring& alpha_3_code, int numeric_code);
+      country(const xtd::ustring& name, const xtd::ustring& alpha_2_code, const xtd::ustring& alpha_3_code, int32_t numeric_code);
       
       struct data {
         xtd::ustring name;
         xtd::ustring alpha_2_code;
         xtd::ustring alpha_3_code;
-        int numeric_code = 0;
+        int32_t numeric_code = 0;
         xtd::ustring emoticon;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();

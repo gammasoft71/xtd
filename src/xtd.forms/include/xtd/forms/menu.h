@@ -59,9 +59,9 @@ namespace xtd {
       
       /// @{
       /// @brief Specifies that the find_menu_item(int32_t, intptr_t) method should search for a handle.
-      static constexpr const int find_handle = 0;
+      static constexpr const int32_t find_handle = 0;
       /// @brief Specifies that the find_menu_item(int32_t, intptr_t) method should search for a shortcut.
-      static constexpr const int find_shortcut = 1;
+      static constexpr const int32_t find_shortcut = 1;
       /// @}
       
       /// @cond
