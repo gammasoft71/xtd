@@ -60,7 +60,7 @@ namespace xtd {
           upDown->SetSize(upDown->GetSize().GetWidth(), GetSize().GetHeight());
           #endif
           
-          upDown->SetRange(0, static_cast<int>(items.GetCount()) - 1);
+          upDown->SetRange(0, static_cast<int32_t>(items.GetCount()) - 1);
           upDown->Bind(wxEVT_SPIN, [&](wxSpinEvent & event) {
             if (index == std::numeric_limits<size_t>::max())
               upDown->SetValue(static_cast<int32_t>(items.GetCount() - 1));

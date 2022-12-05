@@ -243,7 +243,7 @@ constexpr bool CheckBuildNumber(DWORD buildNumber) {
       buildNumber >= 19041); // 2004, 20H2, 21H1, ...
 }
 
-void init_dark_mode(int enableDarkMode) {
+void init_dark_mode(int32_t enableDarkMode) {
   auto RtlGetNtVersionNumbers = reinterpret_cast<fnRtlGetNtVersionNumbers>(GetProcAddress(GetModuleHandleW(L"ntdll.dll"), "RtlGetNtVersionNumbers"));
   if (RtlGetNtVersionNumbers) {
     DWORD major, minor;
@@ -286,7 +286,7 @@ bool allow_dark_mode_for_window(intptr_t hWnd) {
   return false;
 }
 
-void init_dark_mode(int enableDarkMode) {
+void init_dark_mode(int32_t enableDarkMode) {
 }
 
 void refresh_title_bar_theme_color(intptr_t hWnd) {

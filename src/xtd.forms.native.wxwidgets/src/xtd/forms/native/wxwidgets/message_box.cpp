@@ -35,7 +35,7 @@ int32_t message_box::show(intptr_t control, const ustring& text, const ustring& 
   return MessageBoxW(control == 0 ? ((!control && wxTheApp && wxTheApp->GetTopWindow()) ? wxTheApp->GetTopWindow()->GetHandle() : 0) : reinterpret_cast<control_handler*>(control)->control()->GetHandle(), convert_string::to_wstring(text).c_str(), convert_string::to_wstring(caption).c_str(), style + (displayHelpButton ? 0x00004000L : 0));
 }
 
-void message_box::show_sheet(xtd::delegate<void(int)> on_dialog_closed, intptr_t control, const ustring& text, const ustring& caption, uint32_t style, bool display_help_button) {
+void message_box::show_sheet(xtd::delegate<void(int32_t)> on_dialog_closed, intptr_t control, const ustring& text, const ustring& caption, uint32_t style, bool display_help_button) {
   on_dialog_closed(show(control, text, caption, style, display_help_button));
 }
 #elif !defined(__APPLE__)

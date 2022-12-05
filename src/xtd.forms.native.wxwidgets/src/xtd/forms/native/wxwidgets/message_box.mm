@@ -13,8 +13,8 @@ using namespace xtd;
 using namespace xtd::forms::native;
 
 namespace {
-  static int convert_to_dialog_rsult(uint32_t style, NSModalResponse return_code) {
-    int result = IDOK;
+  static int32_t convert_to_dialog_rsult(uint32_t style, NSModalResponse return_code) {
+    int32_t result = IDOK;
     if ((style & MB_RETRYCANCEL) == MB_RETRYCANCEL) result = return_code == NSAlertFirstButtonReturn ? IDRETRY : IDCANCEL;
     else if ((style & MB_YESNOCANCEL) == MB_YESNOCANCEL) result = return_code == NSAlertFirstButtonReturn ? IDYES : (return_code == NSAlertSecondButtonReturn ? IDNO : IDCANCEL);
     else if ((style & MB_YESNO) == MB_YESNO) result = return_code == NSAlertFirstButtonReturn ? IDYES : IDNO;

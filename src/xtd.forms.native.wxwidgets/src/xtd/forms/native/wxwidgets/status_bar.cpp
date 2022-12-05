@@ -11,7 +11,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 namespace {
-  int to_wx_style(int style) {
+  int32_t to_wx_style(int32_t style) {
     switch (style) {
       case 3: return wxSB_SUNKEN;
       case 2: return wxSB_RAISED;
@@ -32,10 +32,10 @@ intptr_t status_bar::add_status_bar_panel(intptr_t status_bar, const xtd::ustrin
   reinterpret_cast<wx_status_bar*>(status_bar)->panel_texts.push_back(convert_string::to_wstring(text));
   reinterpret_cast<wx_status_bar*>(status_bar)->panel_widths.push_back(auto_size == 3 ? -1 : width);
   
-  int count = static_cast<int>(reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.size());
+  int32_t count = static_cast<int32_t>(reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.size());
   static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetFieldsCount(count);
   static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetStatusStyles(count, reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.data());
-  static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetStatusText(reinterpret_cast<wx_status_bar*>(status_bar)->panel_texts[static_cast<int>(reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.size())], count - 1);
+  static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetStatusText(reinterpret_cast<wx_status_bar*>(status_bar)->panel_texts[static_cast<int32_t>(reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.size())], count - 1);
   static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetStatusWidths(count, reinterpret_cast<wx_status_bar*>(status_bar)->panel_widths.data());
   return static_cast<intptr_t>(count - 1);
 }
@@ -56,10 +56,10 @@ intptr_t status_bar::add_status_bar_control(intptr_t status_bar, intptr_t contro
   reinterpret_cast<wx_status_bar*>(status_bar)->panel_texts.push_back(wxEmptyString);
   reinterpret_cast<wx_status_bar*>(status_bar)->panel_widths.push_back(0);
   
-  int count = static_cast<int>(reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.size());
+  int32_t count = static_cast<int32_t>(reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.size());
   static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetFieldsCount(count);
   static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetStatusStyles(count, reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.data());
-  static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetStatusText(reinterpret_cast<wx_status_bar*>(status_bar)->panel_texts[static_cast<int>(reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.size())], count - 1);
+  static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetStatusText(reinterpret_cast<wx_status_bar*>(status_bar)->panel_texts[static_cast<int32_t>(reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.size())], count - 1);
   static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetStatusWidths(count, reinterpret_cast<wx_status_bar*>(status_bar)->panel_widths.data());
   return static_cast<intptr_t>(count - 1);
 }
@@ -92,7 +92,7 @@ xtd::ustring status_bar::sizing_grip_cursor_name() {
   return "size_nwse";
 }
 
-void status_bar::update_status_bar_item(intptr_t status_bar, intptr_t handle, int border_style, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool visible, int width, bool stretchable) {
+void status_bar::update_status_bar_item(intptr_t status_bar, intptr_t handle, int32_t border_style, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool visible, int32_t width, bool stretchable) {
   if (!status_bar || !handle || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(status_bar)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(status_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -105,9 +105,9 @@ void status_bar::update_status_bar_item(intptr_t status_bar, intptr_t handle, in
   reinterpret_cast<wx_status_bar*>(status_bar)->panel_texts.push_back(convert_string::to_wstring(text));
   reinterpret_cast<wx_status_bar*>(status_bar)->panel_widths.push_back(stretchable ? -1 : width);
   
-  int count = static_cast<int>(reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.size());
+  int32_t count = static_cast<int32_t>(reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.size());
   static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetFieldsCount(count);
   static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetStatusStyles(count, reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.data());
-  static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetStatusText(reinterpret_cast<wx_status_bar*>(status_bar)->panel_texts[static_cast<int>(reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.size())], static_cast<int>(handle));
+  static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetStatusText(reinterpret_cast<wx_status_bar*>(status_bar)->panel_texts[static_cast<int32_t>(reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.size())], static_cast<int32_t>(handle));
   static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetStatusWidths(count, reinterpret_cast<wx_status_bar*>(status_bar)->panel_widths.data());
 }
