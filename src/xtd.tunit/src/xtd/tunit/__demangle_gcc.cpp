@@ -12,7 +12,7 @@ std::string __tunit_demangle(const std::string& name) {
   private:
     char* value_;
   };
-  int status = 0;
+  int32_t status = 0;
   return auto_delete_char_pointer(abi::__cxa_demangle(name.c_str(), 0, 0, &status))();
 }
 
