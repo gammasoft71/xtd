@@ -27,11 +27,11 @@ using namespace xtd::native;
 namespace {
   class file_descriptor_streambuf : public streambuf {
   public:
-    explicit file_descriptor_streambuf(int file_descriptor) : file_descriptor_(file_descriptor) {}
+    explicit file_descriptor_streambuf(int32_t file_descriptor) : file_descriptor_(file_descriptor) {}
     ~file_descriptor_streambuf() {close(file_descriptor_);}
     
   protected:
-    int underflow() override {
+    int32_t underflow() override {
       if (read(file_descriptor_, &value_, 1) == 1) {
         this->setg(&value_, &value_, &value_ + 1);
         return value_;
@@ -39,7 +39,7 @@ namespace {
       return streambuf::underflow(); // EOF
     }
     
-    int overflow(int c) override {
+    int32_t overflow(int32_t c) override {
       value_ = static_cast<char>(c);
       if (write(file_descriptor_, &value_, 1) != -1) {
         this->setp(&value_, &value_);
@@ -48,13 +48,13 @@ namespace {
       return streambuf::overflow(c); // EOF
     }
     
-    int file_descriptor_;
+    int32_t file_descriptor_;
     char value_ = EOF;
   };
   
   class process_istream : public istream {
   public:
-    explicit process_istream(int file_descriptor) : istream(&stream_buf_), stream_buf_(file_descriptor) {}
+    explicit process_istream(int32_t file_descriptor) : istream(&stream_buf_), stream_buf_(file_descriptor) {}
     
   private:
     file_descriptor_streambuf stream_buf_;
@@ -62,7 +62,7 @@ namespace {
   
   class process_ostream : public ostream {
   public:
-    explicit process_ostream(int file_descriptor) : ostream(&stream_buf_), stream_buf_(file_descriptor) {}
+    explicit process_ostream(int32_t file_descriptor) : ostream(&stream_buf_), stream_buf_(file_descriptor) {}
     
   private:
     file_descriptor_streambuf stream_buf_;
@@ -117,8 +117,8 @@ namespace {
     vector<string> arguments;
     bool skip_next_space = false;
     bool quotes_empty = false;
-    int left_space_count = 0;
-    int right_space_count = 0;
+    int32_t left_space_count = 0;
+    int32_t right_space_count = 0;
     string argument;
     
     for (size_t index = 0; index < line_argument.size(); index++) {
@@ -230,12 +230,12 @@ intptr_t process::shell_execute(const std::string& verb, const string& file_name
 process::started_process process::start(const string& file_name, const string& arguments, const string& working_directory, int32_t process_window_style, int32_t process_creation_flags, tuple<bool, bool, bool> redirect_standard_streams) {
   auto [redirect_standard_input, redirect_standard_output, redirect_standard_error] = redirect_standard_streams;
   
-  int pipe_result = 0;
-  int pipe_stdin[2];
+  int32_t pipe_result = 0;
+  int32_t pipe_stdin[2];
   if (redirect_standard_input) pipe_result = pipe(pipe_stdin);
-  int pipe_stdout[2];
+  int32_t pipe_stdout[2];
   if (redirect_standard_output) pipe_result = pipe(pipe_stdout);
-  int pipe_stderr[2];
+  int32_t pipe_stderr[2];
   if (redirect_standard_error) pipe_result = pipe(pipe_stderr);
   if (pipe_result) {/*do nothing*/}
   
