@@ -32,7 +32,7 @@ namespace xtd {
           return false;
         }
         
-        int MainLoop() override {
+        int32_t MainLoop() override {
           struct CallOnExit {
             ~CallOnExit() {wxTheApp->OnExit();}
           } callOnExit;

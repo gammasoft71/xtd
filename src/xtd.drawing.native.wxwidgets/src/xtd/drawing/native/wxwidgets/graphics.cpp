@@ -440,8 +440,8 @@ void graphics::fill_rectangle(intptr_t handle, intptr_t brush, float x, float y,
     auto wx_radial_brush = reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush();
     wxImage image(width, height);
     image.InitAlpha();
-    for (int y_ia = 0; y_ia < height; y_ia++)
-      for (int x_ia = 0; x_ia < width; x_ia++)
+    for (int32_t y_ia = 0; y_ia < height; y_ia++)
+      for (int32_t x_ia = 0; x_ia < width; x_ia++)
         image.SetAlpha(x_ia, y_ia, 0);
     wxBitmap radial_gradient_bitmap(image);
     auto radial_gradient_graphics = wxGraphicsContext::Create(wxMemoryDC(radial_gradient_bitmap));
@@ -514,8 +514,8 @@ void graphics::fill_rounded_rectangle(intptr_t handle, intptr_t brush, float x, 
     auto wx_radial_brush = reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush();
     wxImage image(width, height);
     image.InitAlpha();
-    for (int y_ia = 0; y_ia < height; y_ia++)
-      for (int x_ia = 0; x_ia < width; x_ia++)
+    for (int32_t y_ia = 0; y_ia < height; y_ia++)
+      for (int32_t x_ia = 0; x_ia < width; x_ia++)
         image.SetAlpha(x_ia, y_ia, 0);
     wxBitmap radial_gradient_bitmap(image);
     auto radial_gradient_graphics = wxGraphicsContext::Create(wxMemoryDC(radial_gradient_bitmap));

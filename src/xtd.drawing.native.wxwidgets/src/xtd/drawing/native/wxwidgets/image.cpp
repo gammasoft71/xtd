@@ -118,7 +118,7 @@ namespace {
 void image::color_palette(intptr_t image, std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t>>& entries, int32_t& flags) {
   wxPalette palette = reinterpret_cast<wxImage*>(image)->GetPalette();
   entries.clear();
-  for (int index = 0; index < palette.GetColoursCount(); index++) {
+  for (int32_t index = 0; index < palette.GetColoursCount(); index++) {
     uint8_t a = 255, r = 0, g = 0, b = 0;
     palette.GetRGB(index, &r, &g, &b);
     entries.push_back({a, r, g, b});
@@ -150,8 +150,8 @@ intptr_t image::create(int32_t width, int32_t height) {
   toolkit::initialize(); // Must be first
   wxImage* result = new wxImage(width, height);
   result->InitAlpha();
-  for (int y = 0; y < height; y++)
-    for (int x = 0; x < width; x++)
+  for (int32_t y = 0; y < height; y++)
+    for (int32_t x = 0; x < width; x++)
       result->SetAlpha(x, y, 0);
   return reinterpret_cast<intptr_t>(result);
 }
@@ -200,7 +200,7 @@ float image::horizontal_resolution(intptr_t image) {
   float horizontal_resolution = xtd::ustring::parse<float>(xtd::convert_string::to_string(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONX).c_str().AsWChar()));
   if (!reinterpret_cast<wxImage*>(image)->HasOption(wxIMAGE_OPTION_RESOLUTIONUNIT))
     return horizontal_resolution;
-  if (xtd::ustring::parse<int>(xtd::convert_string::to_string(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONUNIT).c_str().AsWChar())) == wxIMAGE_RESOLUTION_CM)
+  if (xtd::ustring::parse<int32_t>(xtd::convert_string::to_string(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONUNIT).c_str().AsWChar())) == wxIMAGE_RESOLUTION_CM)
     horizontal_resolution *= 2.54f;
   return horizontal_resolution;
 }
@@ -240,7 +240,7 @@ float image::vertical_resolution(intptr_t image) {
   float vertical_resolution = xtd::ustring::parse<float>(xtd::convert_string::to_string(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONY).c_str().AsWChar()));
   if (!reinterpret_cast<wxImage*>(image)->HasOption(wxIMAGE_OPTION_RESOLUTIONUNIT))
     return vertical_resolution;
-  if (xtd::ustring::parse<int>(xtd::convert_string::to_string(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONUNIT).c_str().AsWChar())) == wxIMAGE_RESOLUTION_CM)
+  if (xtd::ustring::parse<int32_t>(xtd::convert_string::to_string(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONUNIT).c_str().AsWChar())) == wxIMAGE_RESOLUTION_CM)
     vertical_resolution *= 2.54f;
   return vertical_resolution;
 }

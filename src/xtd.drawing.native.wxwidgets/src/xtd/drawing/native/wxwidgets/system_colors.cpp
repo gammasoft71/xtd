@@ -16,7 +16,7 @@
 #include <Windows.h>
 #undef max
 #undef min
-drawing_native_export_ int __xtd_win32_enable_dark_mode__ = -1;
+drawing_native_export_ int32_t __xtd_win32_enable_dark_mode__ = -1;
 #endif
 
 #if defined(__APPLE__)
