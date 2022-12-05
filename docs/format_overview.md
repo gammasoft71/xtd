@@ -8,9 +8,40 @@ This article introduces the formatting mechanisms that xtd provides.
 
 ## Notes
 
-Parsing is the inverse of formatting. 
-A parsing operation creates an instance of a data type from its string representation. 
-For more information, see [Parsing Strings](parse_overview.md). 
+  Parsing is the inverse of formatting. 
+  A parsing operation creates an instance of a data type from its string representation. 
+  For more information, see [Parsing Strings](parse_overview.md). 
+
+The basic mechanism for formatting is the default implementation of the [xtd::object::to_string](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1object.html#a5682215ee76ab97c48580ab162c49507) method, which is discussed in the [Default Formatting Using the to_string Method](default-formatting-using-the-to-strin-method) section later in this topic. 
+However, xtd provides several ways to modify and extend its default formatting support. 
+These include the following:
+* Overriding the [xtd::object::to_string](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1object.html#a5682215ee76ab97c48580ab162c49507) method to define a custom string representation of an object's value. For more information, see the [Override the to_string Method](override-the-to-string-method) section later in this topic.
+* Defining format specifiers that enable the string representation of an object's value to take multiple forms. For example, the "X" format specifier in the following statement converts an integer to the string representation of a hexadecimal value.
+
+```c++
+int integer_value = 60312;
+xtd::console::write_line(xtd::to_string(integer_value, "X"));   // Displays EB98.
+```
+
+For more information about format specifiers, see the [to_string Method and Format Strings](to_string-method-and-format-strings) section.
+
+* Using format providers to implement the formatting conventions of a specific culture. For example, the following statement displays a currency value by using the formatting conventions of the en-US culture.
+
+```c++
+double cost = 1632.54;
+xtd::console::write_line(xtd::to_string(cost, "C", std::locale("en_US.UTF-8")));
+// The example displays the following output:
+//
+// $1,632.54
+```
+
+* Implementing the IFormattable interface to support both string conversion with the Convert class and composite formatting. For more information, see the IFormattable Interface section.
+* Using composite formatting to embed the string representation of a value in a larger string. For more information, see the Composite Formatting section.
+* Using string interpolation, a more readable syntax to embed the string representation of a value in a larger string. For more information, see String interpolation.
+* Implementing ICustomFormatter and IFormatProvider to provide a complete custom formatting solution. For more information, see the Custom Formatting with ICustomFormatter section.
+
+The following sections examine these methods for converting an object to its string representation.
+
 
 # See also
 ​
