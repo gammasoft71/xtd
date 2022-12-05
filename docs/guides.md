@@ -8,46 +8,49 @@ The xtd guides provide an explanation on how to use the important features of th
   * [Hello World](guide_hello_world.md)
   * [Get started tutorials](tutorials.md)
   * [Follow by looking at examples of xtd](../examples/README.md)
-* How to install
-  * [Read download, install and uninstall](downloads.md)
-  * [How to check xtd version](guide_check_version.md)
+  * How to install
+    * [Read download, install and uninstall](downloads.md)
+    * [How to check xtd version](guide_check_version.md)
 * Overview
   * [Overview](xtd_explanations.md)
   * Libraries
     * [Architecture](architecture.md)
     * [Hierarchy](hierarchy.md)
+  * [Release](https://github.com/gammasoft71/xtd/blob/master/docs/release_notes.md)
   * Tutorials
     * [Writing console application](writing_applicaion_console.md)
     * [Writing GUI application](writing_applicaion_gui.md)
     * [Writing test application](writing_applicaion_test.md)
     * [Some useful git commands](git.md)
     * [More tutorials](tutorials.md)
+* Tools
+  * [Overview](https://github.com/gammasoft71/xtd/blob/master/docs/tools.md)
 * xtd.core
-  * Overview
-    * [Types](types.md)
+  * Entry point
+    * [main and startup_](guide_main_and_startup.md)
+  * Types overview
+    * [Native types, boxing and unboxing](types.md)
     * [enum, enum class and enum struct](enum_class.md)
     * [ustring](ustring.md)
+    * [Date time](date_time.md)
     * [Delegates](delegates.md)
     * [Events](events.md)
-    * [Literal operators](literal_operators.md)
-    * [main and startup_](guide_main_and_startup.md)
-    * [Internationalization](internationalization.md)
-  * Common I/O tasks
-    * [Common I/O tasks​](common_io_tasks.md)
-    * How-tos
-      * [Copy Directories](common_io_tasks_copy_directories.md)
-      * [Enumerate Directories and Files](common_io_tasks_enumerate_directories_and_files.md)
-      * [Read and Write to a Newly Created Data File](common_io_tasks_read_and_write_to_a_newly_created_data_file.md)
-      * [Open and Append to a Log File](common_io_tasks_open_and_append_to_a_log_file.md)
-      * [Write Text to a File](common_io_tasks_write_text_to_a_file.md)
-      * [Read Text from a File](common_io_tasks_read_text_from_a_file.md)
-      * [Write Text to a File](common_io_tasks_write_text_to_a_file.md)
+    * Type conversion
+      * [Overview](type_conversion_overview.md)
+      * [Type conversion tables](type_conversion_tables.md)     
+  * Collections
+    * [Overview](collections.md)
+  * [Interfaces](interfaces.md)
+  * [Literal operators](literal_operators.md)
+  * [Internationalization](internationalization.md)
   * Delegates and lambdas
     * [Overview](guide_delegates_and_lambdas.md)
   * Event
     * [Overview](guide_handle_and_raise_events.md)
     * [Raise and consume events](guide_raise_and_consume_events.md)
     * [Observer Design Pattern](guide_observer_design_pattern.md)
+  * Exceptions
+    * [Overview](exceptions.md)
   * Format number, dates other types
     * [Overview](format_overview.md)
     * [Standard numeric format strings](format_standard_numeric_format_strings.md)
@@ -69,22 +72,48 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Parse numeric strings](parse_numeric_strings.md)
     * [Parse date and time strings](parse_date_and_time_strings.md)
     * [Parse other strings](parse_other_strings.md)
-  * Type conversion
-    * [Overview](type_conversion_overview.md)
-    * [Type conversion tables](type_conversion_tables.md)     
+  * Common I/O tasks
+    * [Common I/O tasks​](common_io_tasks.md)
+    * How-tos
+      * [Copy Directories](common_io_tasks_copy_directories.md)
+      * [Enumerate Directories and Files](common_io_tasks_enumerate_directories_and_files.md)
+      * [Read and Write to a Newly Created Data File](common_io_tasks_read_and_write_to_a_newly_created_data_file.md)
+      * [Open and Append to a Log File](common_io_tasks_open_and_append_to_a_log_file.md)
+      * [Write Text to a File](common_io_tasks_write_text_to_a_file.md)
+      * [Read Text from a File](common_io_tasks_read_text_from_a_file.md)
+      * [Write Text to a File](common_io_tasks_write_text_to_a_file.md)
+* xtd.drawing
+  * [Overview](drawing.md)
+  * [Points, sizes and rectangles](points_sizes_and_rectangles.md)
+  * [Colors](colors.md)
+  * [Brushes](brushes.md)
+  * [Pens](pens.md)
+  * [Fonts](fonts.md)
+  * [Images, bitmaps and icons](images.md)
+  * Drawing
+    * [Region][region.md]
+    * [Graphics][graphics.md]
+    * [Graphics path][graphics_path.md]
+    * [Matrix][matrix.md]
 * xtd.forms
   * Overview
     * [Overview](xtd_forms_explanations.md)
     * [Application](guide_application_overview.md)
+    * [Dialogs](dialogs.md)
+    * [Forms](forms.md)
+    * [Menus and toolbars](menus_and_tollbars.md)
+    * [Containers](containers.md)
+    * [Controls](controls.md)
+    * [Components](components.md)
+  * Controls usages
     * [Controls management](controls_management.md)
     * [Control appearance](control_appearance.md)
     * [Control events](guide_control_events.md)
-    * [Containers](containers.md)
     * [How to make thread-safe calls](thread_safe_control_call.md)
-  * Properties
-    * [Size and location properties](size_and_location_properties.md)
-    * [Ambient properties](ambient_properties.md)
-    * [Position and layout of controls](position_and_layout_of_controls.md)
+    * Properties
+      * [Size and location properties](size_and_location_properties.md)
+      * [Ambient properties](ambient_properties.md)
+      * [Position and layout of controls](position_and_layout_of_controls.md)
   * Style sheets
     * [Overview](guide_style_sheets_overview.md)
     * [Reference](guide_style_sheets_reference.md)
