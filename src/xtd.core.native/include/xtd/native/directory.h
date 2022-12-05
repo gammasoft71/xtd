@@ -67,7 +67,7 @@ namespace xtd {
         ~directory_iterator();
         
         directory_iterator& operator ++();
-        directory_iterator operator ++(int);
+        directory_iterator operator ++(int32_t);
         bool operator ==(directory_iterator other) const;
         bool operator !=(directory_iterator other) const {return !operator ==(other);}
         value_type operator *() const;
@@ -104,7 +104,7 @@ namespace xtd {
         ~file_iterator();
         
         file_iterator& operator ++();
-        file_iterator operator ++(int);
+        file_iterator operator ++(int32_t);
         bool operator ==(file_iterator other) const;
         bool operator !=(file_iterator other) const {return !operator ==(other);}
         value_type operator *() const;
@@ -140,7 +140,7 @@ namespace xtd {
         ~file_and_directory_iterator();
         
         file_and_directory_iterator& operator ++();
-        file_and_directory_iterator operator ++(int);
+        file_and_directory_iterator operator ++(int32_t);
         bool operator ==(file_and_directory_iterator other) const;
         bool operator !=(file_and_directory_iterator other) const {return !operator ==(other);}
         value_type operator *() const;
