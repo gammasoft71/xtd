@@ -149,7 +149,7 @@ enum class enum_test {
 };
 
 template<> struct xtd::enum_register<enum_test> {
-  explicit operator auto() const {return xtd::enum_collection<enum_test> {{enum_test::value_one,  "value_one"}, {enum_test::value_two,  "value_two"}, {enum_test::value_three,  "value_three"}, {enum_test::value_four,  "value_four"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<enum_test> {{enum_test::value_one,  "value_one"}, {enum_test::value_two,  "value_two"}, {enum_test::value_three,  "value_three"}, {enum_test::value_four,  "value_four"}};}
 };
 
 int main() {
@@ -189,7 +189,7 @@ Write the following code to set the attribute of an enum class :
 enum clas enum_flags { /*...*/; }
 
 template<> struct xtd::enum_set_attribute<enum_flags> {
-  explicit operator auto() const {return xtd::enum_attribute::flags;}
+  explicit operator auto() const noexcept {return xtd::enum_attribute::flags;}
 };
 ```
 
@@ -225,11 +225,11 @@ enum class test_enum {
 test_enum operator|(test_enum lhs, test_enum rhs) {return static_cast<test_enum>(static_cast<std::underlying_type<test_enum>::type>(lhs) | static_cast<std::underlying_type<test_enum>::type>(rhs));}
 
 template<> struct xtd::enum_set_attribute<test_enum> {
-  explicit operator auto() const {return xtd::enum_attribute::flags;}
+  explicit operator auto() const noexcept {return xtd::enum_attribute::flags;}
 };
 
 template<> struct xtd::enum_register<test_enum> {
-  explicit operator auto() const {return xtd::enum_collection<test_enum> {{test_enum::value_one, "value_one"}, {test_enum::value_two, "value_two"}, {test_enum::value_three, "value_three"}, {test_enum::value_four, "value_four"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<test_enum> {{test_enum::value_one, "value_one"}, {test_enum::value_two, "value_two"}, {test_enum::value_three, "value_three"}, {test_enum::value_four, "value_four"}};}
 };
 
 int main() {
@@ -263,7 +263,7 @@ enum class test_enum {
 test_enum operator|(test_enum lhs, test_enum rhs) {return static_cast<test_enum>(static_cast<std::underlying_type<test_enum>::type>(lhs) | static_cast<std::underlying_type<test_enum>::type>(rhs));}
 
 template<> struct xtd::enum_register<test_enum> {
-  explicit operator auto() const {return xtd::enum_collection<test_enum> {{test_enum::value_one, "value_one"}, {test_enum::value_two, "value_two"}, {test_enum::value_three, "value_three"}, {test_enum::value_four, "value_four"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<test_enum> {{test_enum::value_one, "value_one"}, {test_enum::value_two, "value_two"}, {test_enum::value_three, "value_three"}, {test_enum::value_four, "value_four"}};}
 };
 
 int main() {
@@ -305,7 +305,7 @@ enum class week_day {
 };
 
 template<> struct xtd::enum_register<week_day> {
-  explicit operator auto() const {return xtd::enum_collection<week_day> {{week_day::monday, "monday"}, {week_day::tuesday, "tuesday"}, {week_day::wednesday, "wednesday"}, {week_day::thursday, "thursday"}, {week_day::friday, "friday"}, {week_day::saturday, "saturday"}, {week_day::sunday, "sunday"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<week_day> {{week_day::monday, "monday"}, {week_day::tuesday, "tuesday"}, {week_day::wednesday, "wednesday"}, {week_day::thursday, "thursday"}, {week_day::friday, "friday"}, {week_day::saturday, "saturday"}, {week_day::sunday, "sunday"}};}
 };
 
 int main() {
@@ -361,7 +361,7 @@ enum class enum_test {
 };
 
 template<> struct xtd::enum_register<enum_test> {
-  explicit operator auto() const {return xtd::enum_collection<enum_test> {{enum_test::value_one,  "value_one"}, {enum_test::value_two,  "value_two"}, {enum_test::value_three,  "value_three"}, {enum_test::value_four,  "value_four"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<enum_test> {{enum_test::value_one,  "value_one"}, {enum_test::value_two,  "value_two"}, {enum_test::value_three,  "value_three"}, {enum_test::value_four,  "value_four"}};}
 };
 
 int main() {
