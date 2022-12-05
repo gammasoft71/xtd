@@ -105,7 +105,7 @@ namespace xtd {
       /// @brief Sets the image_list that contains the image displayed on a button control.
       /// @return An xtd::drawing::image_list. The default value is xtd::drawing::image_list::empty.
       virtual button_base& image_list(const forms::image_list& value);
-      
+
       /// @brief Gets the alignment of the text on the button control.
       /// @return One of the content_alignment values. The default is middle_center.
       virtual content_alignment text_align() const noexcept ;
@@ -138,6 +138,17 @@ namespace xtd {
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
       forms::create_params create_params() const noexcept override;
+      
+      /// @brief Gets a value indicating whether the button control is the default button.
+      /// @return true if the button control is the default button; otherwise, false.
+      /// @remarks When the xtd::forms::button_base::is_default property is set to true, the button is the default button for the xtd::forms::form. This means that the button is clicked when the ENTER key is pressed if no other button or any other control that captures the ENTER key has focus.
+      /// @remarks To specify the default button of a form, set the xtd::forms::form::accept_button property of the form to the desired button.
+      bool is_default() const noexcept;
+      /// @brief Sets a value indicating whether the button control is the default button.
+      /// @param value true if the button control is the default button; otherwise, false.
+      /// @remarks When the xtd::forms::button_base::is_default property is set to true, the button is the default button for the xtd::forms::form. This means that the button is clicked when the ENTER key is pressed if no other button or any other control that captures the ENTER key has focus.
+      /// @remarks To specify the default button of a form, set the xtd::forms::form::accept_button property of the form to the desired button.
+      button_base& is_default(bool value);
       /// @}
 
       /// @name Protected methods
@@ -168,12 +179,12 @@ namespace xtd {
       /// @}
 
       /// @cond
-      text_format_flags to_text_format_flags(content_alignment text_align);
       xtd::drawing::rectangle compute_image_bounds();
       xtd::drawing::rectangle compute_image_bounds(const xtd::drawing::rectangle& rectangle);
+      text_format_flags to_text_format_flags(content_alignment text_align);
       /// @endcond
       
-    private:      
+    private:
       struct data {
         bool auto_ellipsis = false;
         xtd::forms::flat_button_appearance flat_appearance;
@@ -182,6 +193,7 @@ namespace xtd {
         xtd::forms::image_list image_list = xtd::forms::image_list::empty;
         int32_t image_index = -1;
         content_alignment image_align = content_alignment::middle_center;
+        bool is_default = false;
         content_alignment text_align = content_alignment::middle_center;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
