@@ -101,7 +101,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Application](guide_application_overview.md)
     * [Dialogs](dialogs.md)
     * [Forms](forms.md)
-    * [Menus and toolbars](menus_and_tollbars.md)
+    * [Menus and toolbars](menus_and_toolbars.md)
     * [Containers](containers.md)
     * [Controls](controls.md)
     * [Components](components.md)
