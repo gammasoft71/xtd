@@ -77,7 +77,7 @@ namespace xtd {
         /// @param width The panel width.
         /// @param visible true if panel is stretchable; otherwise false.
         /// @warning Internal use only
-        static void update_status_bar_item(intptr_t status_bar, intptr_t handle, int border_style, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool visible, int width, bool stretchable);
+        static void update_status_bar_item(intptr_t status_bar, intptr_t handle, int32_t border_style, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool visible, int32_t width, bool stretchable);
         /// @}
       };
     }
