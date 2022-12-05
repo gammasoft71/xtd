@@ -16,5 +16,5 @@ void event_type_filter::event_type(source_levels level) noexcept {
 }
 
 bool event_type_filter::should_trace(const trace_event_cache& cache, const ustring& source, trace_event_type event_type, int32_t id, const ustring& message, any data1, const vector<any>& data_array) noexcept {
-  return (static_cast<int>(event_type) & static_cast<int>(level_)) != 0;
+  return (static_cast<int32_t>(event_type) & static_cast<int32_t>(level_)) != 0;
 }

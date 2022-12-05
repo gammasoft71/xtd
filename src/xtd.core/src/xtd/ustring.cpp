@@ -546,29 +546,29 @@ ustring ustring::class_name(const std::type_info& info) {
   return get_class_name(full_class_name(info));
 }
 
-int ustring::compare(const ustring& str_a, const ustring& str_b) noexcept {
+int32_t ustring::compare(const ustring& str_a, const ustring& str_b) noexcept {
   return compare(str_a, str_b, false);
 }
 
-int ustring::compare(const ustring& str_a, const ustring& str_b, bool ignore_case) noexcept {
+int32_t ustring::compare(const ustring& str_a, const ustring& str_b, bool ignore_case) noexcept {
   return compare(str_a, str_b, ignore_case ? xtd::string_comparison::ordinal_ignore_case : xtd::string_comparison::ordinal);
 }
 
-int ustring::compare(const ustring& str_a, const ustring& str_b, xtd::string_comparison comparison_type) noexcept {
+int32_t ustring::compare(const ustring& str_a, const ustring& str_b, xtd::string_comparison comparison_type) noexcept {
   if (comparison_type == xtd::string_comparison::ordinal_ignore_case)
     return str_a.to_lower().compare(str_b.to_lower());
   return str_a.compare(str_b);
 }
 
-int ustring::compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length) noexcept {
+int32_t ustring::compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length) noexcept {
   return compare(str_a, index_a, str_b, index_b, length, false);
 }
 
-int ustring::compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length, bool ignore_case) noexcept {
+int32_t ustring::compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length, bool ignore_case) noexcept {
   return compare(str_a, index_a, str_b, index_b, length, ignore_case ? xtd::string_comparison::ordinal_ignore_case : xtd::string_comparison::ordinal);
 }
 
-int ustring::compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length, xtd::string_comparison comparison_type) noexcept {
+int32_t ustring::compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length, xtd::string_comparison comparison_type) noexcept {
   ustring sa(str_a.substr(index_a, length));
   ustring sb(str_b.substr(index_b, length));
   if (comparison_type == xtd::string_comparison::ordinal_ignore_case)

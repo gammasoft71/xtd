@@ -466,8 +466,8 @@ namespace xtd {
       static void write_line_(const xtd::ustring& message, const xtd::ustring& category);
       
       inline static bool auto_flush_ = false;
-      inline static unsigned int indent_level_ = 0;
-      inline static unsigned int indent_size_ = 4;
+      inline static uint32_t indent_level_ = 0;
+      inline static uint32_t indent_size_ = 4;
       static listener_collection& listeners_;
       static bool& show_assert_dialog_;
       inline static bool use_global_lock_ = true;

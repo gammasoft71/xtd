@@ -309,13 +309,13 @@ namespace xtd {
     /// @remarks If the main method returns void, you can use this property to set the exit code that will be returned to the calling environment. If Main does not return void, this property is ignored. The initial value of this property is zero.
     /// @warning The xtd::environment::exit_code property is a signed 32-bit integer. To prevent the property from returning a negative exit code, you should not use values greater than or equal to 0x80000000.
     /// @remarks Use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present and a value of 2 to indicate that the file is in the wrong format.
-    static int exit_code() noexcept;
+    static int32_t exit_code() noexcept;
     /// @brief Sets the exit code of the process.
     /// @param value A 32-bit signed integer containing the exit code. The default value is 0 (zero), which indicates that the process completed successfully.
     /// @remarks If the main method returns void, you can use this property to set the exit code that will be returned to the calling environment. If Main does not return void, this property is ignored. The initial value of this property is zero.
     /// @warning The xtd::environment::exit_code property is a signed 32-bit integer. To prevent the property from returning a negative exit code, you should not use values greater than or equal to 0x80000000.
     /// @remarks Use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present and a value of 2 to indicate that the file is in the wrong format.
-    static void exit_code(int value) noexcept;
+    static void exit_code(int32_t value) noexcept;
     
     /// @brief Gets a value that indicates whether the current application domain is shutting down.
     /// @return bool true if the current application domain is shutting down; otherwise, false.
@@ -423,7 +423,7 @@ namespace xtd {
     /// @brief Terminates this process and returns an exit code to the operating system.
     /// @param xtd::environment::exit_code The exit code to return to the operating system. Use 0 (zero) to indicate that the process completed successfully.
     /// @remarks For the exit_code parameter, use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present, and a value of 2 to indicate that the file is in the wrong format.
-    [[noreturn]] static void exit(int exit_code);
+    [[noreturn]] static void exit(int32_t exit_code);
     
     /// @brief Replaces the name of each environment variable embedded in the specified string with the string equivalent of the value of the variable, then returns the resulting string.
     /// @param name A string containing the names of zero or more environment variables. Each environment variable is quoted with the percent sign character (%).

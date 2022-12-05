@@ -21,7 +21,7 @@ void source_switch::level(xtd::diagnostics::source_levels level) {
 
 
 bool source_switch::should_trace(trace_event_type event_type) noexcept {
-  return (switch_setting() & static_cast<int>(event_type)) != 0;
+  return (switch_setting() & static_cast<int32_t>(event_type)) != 0;
 }
 
 

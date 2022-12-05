@@ -1071,9 +1071,9 @@ namespace xtd {
       return result;
     }
     date_time& operator ++();
-    date_time operator ++(int);
+    date_time operator ++(int32_t);
     date_time& operator --();
-    date_time operator --(int);
+    date_time operator --(int32_t);
     /// @endcond
     
   private:

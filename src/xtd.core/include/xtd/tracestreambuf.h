@@ -20,7 +20,7 @@ namespace xtd {
     
     /// @{
     /// @brief Synchronizes the buffers with the associated character sequence
-    int sync() override {
+    int32_t sync() override {
       #if defined(TRACE)
       if (!str().empty()) {
         if (str() == "\n") xtd::diagnostics::trace::write_line();

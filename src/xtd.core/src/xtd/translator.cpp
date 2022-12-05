@@ -69,7 +69,7 @@ void translator::parse_file(const xtd::ustring& file, const xtd::ustring& langua
   vector<ustring> lines = xtd::io::file::read_all_lines(file);
   ustring key;
   ustring value;
-  int line_count = 0;
+  int32_t line_count = 0;
   for (auto line : lines) {
     line_count++;
     line = line.trim();

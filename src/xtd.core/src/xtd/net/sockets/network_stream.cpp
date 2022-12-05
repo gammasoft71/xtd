@@ -12,7 +12,7 @@ network_stream::socket_streambuf::~socket_streambuf() {
   if (owns_socket_) socket_.close();
 }
 
-int network_stream::socket_streambuf::underflow() {
+int32_t network_stream::socket_streambuf::underflow() {
   std::vector<byte_t> buffer(1);
   if (socket_.receive(buffer) == 1) {
     value_ = static_cast<char>(buffer[0]);
@@ -22,7 +22,7 @@ int network_stream::socket_streambuf::underflow() {
   return std::streambuf::underflow(); // EOF
 }
 
-int network_stream::socket_streambuf::overflow(int value) {
+int32_t network_stream::socket_streambuf::overflow(int32_t value) {
   value_ = static_cast<char>(value);
   std::vector<byte_t> buffer {static_cast<byte_t>(value_)};
   if (socket_.send(buffer) == 1) {
