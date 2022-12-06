@@ -16,7 +16,7 @@ The xtd guides provide an explanation on how to use the important features of th
   * Libraries
     * [Architecture](architecture.md)
     * [Hierarchy](hierarchy.md)
-  * [Release](https://github.com/gammasoft71/xtd/blob/master/docs/release_notes.md)
+  * [Releases, patches, and support](release_patches_and_support.md)
   * Tutorials
     * [Writing console application](writing_applicaion_console.md)
     * [Writing GUI application](writing_applicaion_gui.md)
