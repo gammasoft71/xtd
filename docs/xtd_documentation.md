@@ -32,6 +32,25 @@
 | [What is a delegate?](delegates.md)      |
 | [What is an event?](events.md)           |
 
+| xtd.drawing                                                         |
+|---------------------------------------------------------------------|
+| [Basic types like point, size, ...](points_sizes_and_rectangles.md) |
+| [Need colors ?](colors.md)                                          |
+| [Painting with brushes](brushes.md)                                 |
+| [Drawing with pens](pens.md)                                        |
+| [What is fonts?](fonts.md)                                          |
+| [Images, bitmaps and icons](images.md)                              |
+
+| xtd.forms                                    |
+|----------------------------------------------|
+| [Application](guide_application_overview.md) |
+| [Dialogs](dialogs.md)                        |
+| [Forms](forms.md)                            |
+| [Menus and toolbars](menus_and_toolbars.md)  |
+| [Containers](containers.md)                  |
+| [Controls](controls.md)                      |
+| [Components](components.md)                  |
+
 ## Next step
 
 * [Read xtd guides](guides.md)
