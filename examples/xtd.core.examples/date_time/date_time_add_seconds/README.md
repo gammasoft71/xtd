@@ -1,10 +1,10 @@
-# date_time_add_milliseconds
+# date_time_add_seconds
 
-Shows how to use [xtd::date_time::add_hours](../../../../src/xtd.core/include/xtd/date_time.h) method.
+Shows how to use [xtd::date_time::add_seconds](../../../../src/xtd.core/include/xtd/date_time.h) method.
 
 # Sources
 
-[src/date_time_add_milliseconds.cpp](src/date_time_add_milliseconds.cpp)
+[src/date_time_add_seconds.cpp](src/date_time_add_seconds.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

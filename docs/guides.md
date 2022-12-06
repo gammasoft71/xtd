@@ -91,17 +91,17 @@ The xtd guides provide an explanation on how to use the important features of th
   * [Fonts](fonts.md)
   * [Images, bitmaps and icons](images.md)
   * Drawing
-    * [Region][region.md]
-    * [Graphics][graphics.md]
-    * [Graphics path][graphics_path.md]
-    * [Matrix][matrix.md]
+    * [Region](region.md)
+    * [Graphics](graphics.md)
+    * [Graphics path](graphics_path.md)
+    * [Matrix](matrix.md)
 * xtd.forms
   * Overview
     * [Overview](xtd_forms_explanations.md)
     * [Application](guide_application_overview.md)
     * [Dialogs](dialogs.md)
     * [Forms](forms.md)
-    * [Menus and toolbars](menus_and_tollbars.md)
+    * [Menus and toolbars](menus_and_toolbars.md)
     * [Containers](containers.md)
     * [Controls](controls.md)
     * [Components](components.md)
