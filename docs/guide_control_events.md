@@ -119,9 +119,9 @@ int main() {
   button button2;
   button2.parent(form1).text("button 2").bounds({50, 100, 200, 75});
   label label1;
-  label1.parent(form1).text("button 1 clicked 0 times").bounds({50, 200, 200, 20});
+  label1.parent(form1).text("button1 clicked 0 times").bounds({50, 200, 200, 20});
   label label2;
-  label2.parent(form1).text("button 2 clicked 0 times").bounds({50, 230, 200, 20});
+  label2.parent(form1).text("button2 clicked 0 times").bounds({50, 230, 200, 20});
   
   // button1 click event
   button1.click += [&] {
