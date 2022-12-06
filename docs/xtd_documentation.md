@@ -23,7 +23,7 @@
 |------------------------------------------------------------|
 | [News on xtd](https://gammasoft71.wixsite.com/xtdpro/news) |
 
-| xtd.core                                 |
+| Basics                                   |
 |------------------------------------------|
 | [Types specifications](types.md)         |
 | [Enumerations management](enum_class.md) |
@@ -32,7 +32,7 @@
 | [What is a delegate?](delegates.md)      |
 | [What is an event?](events.md)           |
 
-| xtd.drawing                                                         |
+| Drawing something                                                   |
 |---------------------------------------------------------------------|
 | [Basic types like point, size, ...](points_sizes_and_rectangles.md) |
 | [Need colors ?](colors.md)                                          |
@@ -41,7 +41,7 @@
 | [What is fonts?](fonts.md)                                          |
 | [Images, bitmaps and icons](images.md)                              |
 
-| xtd.forms                                    |
+| Desktop applications                         |
 |----------------------------------------------|
 | [Application](guide_application_overview.md) |
 | [Dialogs](dialogs.md)                        |
@@ -50,6 +50,14 @@
 | [Containers](containers.md)                  |
 | [Controls](controls.md)                      |
 | [Components](components.md)                  |
+| [Resources](resources.md)                    |
+| [Settings](settings.md)                      |
+
+| Unit tests applications                                |
+|--------------------------------------------------------|
+| [Overview](guide_tunit_overview.md)                    |
+| [Running test](writing_applicaion_running_test.md)     |
+| [Extending test](writing_applicaion_extending_test.md) |
 
 ## Next step
 
