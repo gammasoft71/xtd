@@ -19,7 +19,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Read download, install and uninstall](downloads.md)
     * [How to check xtd version](guide_check_version.md)
 
-  <details>
+  </details>
 
 </details>
 
