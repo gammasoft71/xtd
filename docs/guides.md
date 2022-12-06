@@ -13,8 +13,8 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Read download, install and uninstall](downloads.md)
     * [How to check xtd version](guide_check_version.md)
 * Overview
-  * [Overview](xtd_explanations.md)
   * [Introduction to xtd](introduction_to_xtd.md)
+  * [About xtd](xtd_explanations.md)
   * Libraries
     * [Architecture](architecture.md)
     * [Hierarchy](hierarchy.md)
@@ -25,8 +25,9 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Writing test application](writing_applicaion_test.md)
     * [Some useful git commands](git.md)
     * [More tutorials](tutorials.md)
+* [What's new in xtd](https://gammasoft71.wixsite.com/xtdpro/news)
 * Tools
-  * [Overview](https://github.com/gammasoft71/xtd/blob/master/docs/tools.md)
+  * [Overview](tools.md)
 * xtd.core
   * Entry point
     * [main and startup_](guide_main_and_startup.md)
@@ -34,7 +35,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Native types, boxing and unboxing](types.md)
     * [enum, enum class and enum struct](enum_class.md)
     * [ustring](ustring.md)
-    * [Date time](date_time.md)
+    * [Date time, and time zones](date_time.md)
     * [Delegates](delegates.md)
     * [Events](events.md)
     * Type conversion
@@ -45,14 +46,20 @@ The xtd guides provide an explanation on how to use the important features of th
   * [Interfaces](interfaces.md)
   * [Literal operators](literal_operators.md)
   * [Internationalization](internationalization.md)
-  * Delegates and lambdas
-    * [Overview](guide_delegates_and_lambdas.md)
+  * [Delegates and lambdas](guide_delegates_and_lambdas.md)
   * Event
     * [Overview](guide_handle_and_raise_events.md)
     * [Raise and consume events](guide_raise_and_consume_events.md)
     * [Observer Design Pattern](guide_observer_design_pattern.md)
   * Exceptions
     * [Overview](exceptions.md)
+    * [system_exception class and properties](system_exception_class_and_properties.md)
+    * How-tos
+      * [Use the try-catch block to catch exceptions](exceptions_try_catch.md)
+      * [Use specific exceptions in a catch block](exceptions_use_specific_exceptions.md)
+      * [Explicitly throw exceptions](explicitly_throw_exception.md)
+      * [Create user-defined exceptions](create_user_dined_exceptions.md)
+    * [Best practices](exceptions_best_practices.md)
   * Format number, dates other types
     * [Overview](format_overview.md)
     * [Standard numeric format strings](format_standard_numeric_format_strings.md)
@@ -84,6 +91,17 @@ The xtd guides provide an explanation on how to use the important features of th
       * [Write Text to a File](common_io_tasks_write_text_to_a_file.md)
       * [Read Text from a File](common_io_tasks_read_text_from_a_file.md)
       * [Write Text to a File](common_io_tasks_write_text_to_a_file.md)
+  * [console class](console_class.md)
+  * Networking
+    * [Network programming](network_programming.md)
+    * [Network availability](network_pavailability.md)
+    * [IPv6 overview](ipv6_overview.md)
+    * Sockets
+      * [Sockets support](socket_support.md)
+      * [Use sockets to send and receive data over TCP](sockets_tcp.md)
+      * [Use tcp_client_and_tcp_listener](tcp_client_and_tcp_listener.md)
+    * [Resources](resources.md)
+    * [Settings](settings.md)
 * xtd.drawing
   * [Overview](drawing.md)
   * [Points, sizes and rectangles](points_sizes_and_rectangles.md)
@@ -108,8 +126,6 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Controls](controls.md)
     * [Components](components.md)
     * [Controls management](controls_management.md)
-    * [Resources](resources.md)
-    * [Settings](settings.md)
     * [Control appearance](control_appearance.md)
     * [Control events](guide_control_events.md)
     * [Size and location properties](size_and_location_properties.md)
