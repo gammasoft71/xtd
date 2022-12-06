@@ -105,15 +105,23 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Containers](containers.md)
     * [Controls](controls.md)
     * [Components](components.md)
-  * Controls usages
     * [Controls management](controls_management.md)
     * [Control appearance](control_appearance.md)
     * [Control events](guide_control_events.md)
-    * [How to make thread-safe calls](thread_safe_control_call.md)
-    * Properties
-      * [Size and location properties](size_and_location_properties.md)
-      * [Ambient properties](ambient_properties.md)
-      * [Position and layout of controls](position_and_layout_of_controls.md)
+    * [Size and location properties](size_and_location_properties.md)
+    * [Ambient properties](ambient_properties.md)
+  * Forms
+  * Controls
+    * [Overview](controls_overview.md)
+    * [Layout options](position_and_layout_of_controls.md)
+    * [Labels](labels.md)
+    * [custom_controls](custom_controls.md)
+    * [custom painting and drawing](custom_painting_and_drawing.md)
+    * Common tasks
+      * [Add a control to a form](add_a_control_to_a_form.md)
+      * [Create access key shortcuts](create_access_key_shortcuts.md)
+      * [Dock and anchor controls](dock_and_anchor_controls.md)
+      * [Make thread-safe calls](thread_safe_control_call.md)
   * Style sheets
     * [Overview](guide_style_sheets_overview.md)
     * [Reference](guide_style_sheets_reference.md)

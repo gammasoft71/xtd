@@ -1,6 +1,6 @@
 | [Home](home.md) | [News](news.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Support](support.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# Position and layout of controls
+# Position and layout of controls (xtd.forms)
 
 ## In This Section
 
@@ -256,3 +256,5 @@ In this case the client_size of main_form will be :
 ______________________________________________________________________________________________
 
 © 2022 Gammasoft.
+
+[comment]: <> (https://learn.microsoft.com/en-us/dotnet/desktop/winforms/controls/layout?view=netdesktop-6.0)
