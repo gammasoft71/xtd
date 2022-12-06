@@ -1,6 +1,6 @@
 | [Home](home.md) | [News](news.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Support](support.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
 
-# What is .NET? Introduction and overview
+# What is xtd? Introduction and overview
 
 `xtd` is a free, cross-platform, open source developer platform for building many kinds of applications.
 `xtd` is built on the C++ Standard library a high-performance third-party libraries when needed.
