@@ -4,13 +4,16 @@
 
 The xtd guides provide an explanation on how to use the important features of the xtd Framework. 
 
-* Get started
+<details>
+<summary>Get started</summary>
+<br>
   * [Hello World](guide_hello_world.md)
   * [Get started tutorials](tutorials.md)
   * [Follow by looking at examples of xtd](../examples/README.md)
   * How to install
     * [Read download, install and uninstall](downloads.md)
     * [How to check xtd version](guide_check_version.md)
+</details>
 * Overview
   * [Overview](xtd_explanations.md)
   * Libraries
@@ -120,6 +123,8 @@ The xtd guides provide an explanation on how to use the important features of th
     * Common tasks
       * [Add a control to a form](add_a_control_to_a_form.md)
       * [Create access key shortcuts](create_access_key_shortcuts.md)
+      * [Set the text displayed by a control](set_the_text_displayed_by_a_control.md)
+      * [Set the tab order of a control](set_the_tab_order_of_a_control.md)
       * [Dock and anchor controls](dock_and_anchor_controls.md)
       * [Make thread-safe calls](thread_safe_control_call.md)
   * Style sheets
