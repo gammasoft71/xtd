@@ -1,6 +1,6 @@
 # date_time_add_minutes
 
-Shows how to use [xtd::date_time::add_hours](../../../../src/xtd.core/include/xtd/date_time.h) method.
+Shows how to use [xtd::date_time::add_minutes](../../../../src/xtd.core/include/xtd/date_time.h) method.
 
 # Sources
 
