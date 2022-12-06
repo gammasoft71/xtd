@@ -108,6 +108,8 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Controls](controls.md)
     * [Components](components.md)
     * [Controls management](controls_management.md)
+    * [Resources](resources.md)
+    * [Settings](settings.md)
     * [Control appearance](control_appearance.md)
     * [Control events](guide_control_events.md)
     * [Size and location properties](size_and_location_properties.md)
