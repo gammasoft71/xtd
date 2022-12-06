@@ -4,6 +4,7 @@
 
 The xtd guides provide an explanation on how to use the important features of the xtd Framework. 
 
+* [xtd documentation](xtd_documentation.md)
 * Get started
   * [Hello World](guide_hello_world.md)
   * [Get started tutorials](tutorials.md)
@@ -13,6 +14,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [How to check xtd version](guide_check_version.md)
 * Overview
   * [Overview](xtd_explanations.md)
+  * [Introduction to xtd](introduction_to_xtd.md)
   * Libraries
     * [Architecture](architecture.md)
     * [Hierarchy](hierarchy.md)
