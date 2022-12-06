@@ -11,9 +11,15 @@ The xtd guides provide an explanation on how to use the important features of th
   * [Hello World](guide_hello_world.md)
   * [Get started tutorials](tutorials.md)
   * [Follow by looking at examples of xtd](../examples/README.md)
-  * How to install
+
+  <details>
+  <summary>How to install</summary>
+  <br>
+
     * [Read download, install and uninstall](downloads.md)
     * [How to check xtd version](guide_check_version.md)
+
+  <details>
 
 </details>
 
