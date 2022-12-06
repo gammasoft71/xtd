@@ -6,7 +6,7 @@
 
 ### Download
 
-* [Download xtd](download.md)
+* [Download xtd](downloads.md)
 
 ### Overview
 
