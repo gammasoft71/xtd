@@ -7,13 +7,16 @@ The xtd guides provide an explanation on how to use the important features of th
 <details>
 <summary>Get started</summary>
 <br>
+
   * [Hello World](guide_hello_world.md)
   * [Get started tutorials](tutorials.md)
   * [Follow by looking at examples of xtd](../examples/README.md)
   * How to install
     * [Read download, install and uninstall](downloads.md)
     * [How to check xtd version](guide_check_version.md)
+
 </details>
+
 * Overview
   * [Overview](xtd_explanations.md)
   * Libraries
