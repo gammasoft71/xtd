@@ -35,7 +35,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Native types, boxing and unboxing](types.md)
     * [enum, enum class and enum struct](enum_class.md)
     * [ustring](ustring.md)
-    * [Date time, and time zones](date_time.md)
+    * [Dates, times, and time zones](date_time.md)
     * [Delegates](delegates.md)
     * [Events](events.md)
     * Type conversion
@@ -45,7 +45,6 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Overview](collections.md)
   * [Interfaces](interfaces.md)
   * [Literal operators](literal_operators.md)
-  * [Internationalization](internationalization.md)
   * [Delegates and lambdas](guide_delegates_and_lambdas.md)
   * Event
     * [Overview](guide_handle_and_raise_events.md)
@@ -100,8 +99,9 @@ The xtd guides provide an explanation on how to use the important features of th
       * [Sockets support](socket_support.md)
       * [Use sockets to send and receive data over TCP](sockets_tcp.md)
       * [Use tcp_client_and_tcp_listener](tcp_client_and_tcp_listener.md)
-    * [Resources](resources.md)
-    * [Settings](settings.md)
+  * [Internationalization](internationalization.md)
+  * [Resources](resources.md)
+  * [Settings](settings.md)
 * xtd.drawing
   * [Overview](drawing.md)
   * [Points, sizes and rectangles](points_sizes_and_rectangles.md)
