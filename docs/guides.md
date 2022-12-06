@@ -117,17 +117,39 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Labels](labels.md)
     * [custom_controls](custom_controls.md)
     * [custom painting and drawing](custom_painting_and_drawing.md)
+    * [Apply accessibility information](apply_accessibility_information.md)
     * Common tasks
       * [Add a control to a form](add_a_control_to_a_form.md)
       * [Create access key shortcuts](create_access_key_shortcuts.md)
       * [Set the text displayed by a control](set_the_text_displayed_by_a_control.md)
       * [Set the tab order of a control](set_the_tab_order_of_a_control.md)
       * [Dock and anchor controls](dock_and_anchor_controls.md)
+      * [Set the image displayed by a control](set_the_image_displayed_by_a_control.md)
+      * [Add or remove event handlers](add_or_remove_event_handlers.md)
       * [Make thread-safe calls](thread_safe_control_call.md)
+  * User input - keyboard
+    * [Overview](keybord_overview.md)
+    * [Use keyboard events](use_keyboard_events.md)
+    * [Validate input](validate_input.md)
+    * Common tasks
+      * [Change the pressed key](change_the_pressed_key.md)
+      * [Determine wich modifier key is pressed](determine_wich_modifier_key_is_pressed.md)
+      * [Handle input at the form level](handle_input_at_the_form_level.md)
+      * [Simulate keyboard events](simulate_keyboard_events.md)
+  * User input - mouse
+    * [Overview](mouse_overview.md)
+    * [Use mouse events](use_mouse_events.md)
+    * [Drag-and-drop functionality](drag_and_drop_functionality.md)
+    * Common tasks
+      * [Distinguish between clicks and double-clicks](distinguish_between_clicks_and_double_clicks.md)
+      * [Control and modify the mouse pointer](control_and_modify_the_mouse_pointer.md)
+      * [Simulate mouse events](simulate_mouse_events.md)
   * Style sheets
     * [Overview](guide_style_sheets_overview.md)
     * [Reference](guide_style_sheets_reference.md)
     * [Box model](guide_style_sheets_box_model.md)
+    * Common tasks
+      * [Add style sheets to a control](add_style_sheets_to_a_control.md)
 * xtd.tunit
   * Overview
     * [Overview](guide_tunit_overview.md)
@@ -145,7 +167,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Install](cmake_install_commands.md)
     * [Packages](cmake_packages_commands.md)
     * [Project](cmake_project_commands.md)
-    * Common task
+    * Common tasks
       * [Create a project](cmake_create_project.md)
       * [Add resources](cmake_add_resources.md)
       * [Add settings](cmake_add_settings.md)
