@@ -133,6 +133,23 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Overview](guide_tunit_overview.md)
     * [Running test](writing_applicaion_running_test.md)
     * [Extending test](writing_applicaion_extending_test.md)
+* xtd.cmake
+  * Overview
+    * [Overview](cmake_overview.md)
+    * [Files](cmake_files.md)      
+  * Commands
+    * [Generic](cmake_generic_commands.md)
+    * [Target properties](cmake_target_properties_commands.md)
+    * [Assembly informations](cmake_assembly_informations_commands.md)
+    * [Build options](cmake_build_options_commands.md)
+    * [Install](cmake_install_commands.md)
+    * [Packages](cmake_packages_commands.md)
+    * [Project](cmake_project_commands.md)
+    * Common task
+      * [Create a project](cmake_create_project.md)
+      * [Add resources](cmake_add_resources.md)
+      * [Add settings](cmake_add_settings.md)
+      * [Add assembly informations](cmake_add_assembly_information.md)
 
 ## See also
 
