@@ -66,7 +66,7 @@ Hello, World!
 ## Free and open source
 
 * `xtd` is free, [open source](https://github.com/gammasoft71/xtd).
-* `xtd` source and binaries are licensed with the [MIT license](https://gammasoft71.wixsite.com/xtdpro/license).
+* `xtd` sources and binaries are licensed under the [MIT license](https://gammasoft71.wixsite.com/xtdpro/license).
 
 ## Languages
 
