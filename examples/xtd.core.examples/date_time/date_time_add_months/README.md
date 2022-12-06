@@ -1,10 +1,10 @@
-# date_time_add_minutes
+# date_time_add_months
 
-Shows how to use [xtd::date_time::add_hours](../../../../src/xtd.core/include/xtd/date_time.h) method.
+Shows how to use [xtd::date_time::add_months](../../../../src/xtd.core/include/xtd/date_time.h) method.
 
 # Sources
 
-[src/date_time_add_minutes.cpp](src/date_time_add_minutes.cpp)
+[src/date_time_add_months.cpp](src/date_time_add_months.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
