@@ -111,6 +111,12 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Size and location properties](size_and_location_properties.md)
     * [Ambient properties](ambient_properties.md)
   * Forms
+    * [Event handlers](event_handlers.md)
+    * [Automatic scalling](automatic_scalling.md)
+    * Common tasks
+      * [Add a form]([add_a_form.md)
+      * [Resize a form]([resize_a_form.md)
+      * [Position a form]([resize_a_form.md)
   * Controls
     * [Overview](controls_overview.md)
     * [Layout options](position_and_layout_of_controls.md)
@@ -144,6 +150,19 @@ The xtd guides provide an explanation on how to use the important features of th
       * [Distinguish between clicks and double-clicks](distinguish_between_clicks_and_double_clicks.md)
       * [Control and modify the mouse pointer](control_and_modify_the_mouse_pointer.md)
       * [Simulate mouse events](simulate_mouse_events.md)
+  * Printing
+    * [Overview](printing_overview.md)
+    * Common tasks
+      * [Print a text document](print_a_text_document.md)
+      * [Print a form](print_a_form.md)
+      * [Use print preview](use_print_preview.md)
+  * Data binding
+    * [Overview](data_binding_overview.md)
+    * [Design great data sources](design_great_data_sources.md)
+    * [Work with a data grid](work_with_a_data_grid.md)
+    * Common tasks
+      * [Create a control binding](create_a_control_binding.md)    
+      * [Synchronize multiple controls](synchronize_multiple_controls.md)    
   * Style sheets
     * [Overview](guide_style_sheets_overview.md)
     * [Reference](guide_style_sheets_reference.md)
