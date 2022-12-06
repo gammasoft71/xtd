@@ -4,34 +4,33 @@
 
 ## Learn about xtd
 
-### Download
+| Download                     |
+|------------------------------|
+| [Download xtd](downloads.md) |
 
-* [Download xtd](downloads.md)
+| Overview                                      |
+|-----------------------------------------------|
+| [What is xtd?](what_is_xtd.md)                |
+| [Introduction to xtd](introduction_to_xtd.md) |
 
-### Overview
+| Get started                                                   |
+|---------------------------------------------------------------|
+| [Hello World](guide_hello_world.md)                           |
+| [Get started tutorials](tutorials.md)                         |
+| [Follow by looking at examples of xtd](../examples/README.md) |
 
-* [What is xtd?](what_is_xtd.md)
-* [Introduction to xtd](introduction_to_xtd.md)
+| What's new?                                                |
+|------------------------------------------------------------|
+| [News on xtd](https://gammasoft71.wixsite.com/xtdpro/news) |
 
-## Get started
-
-* [Hello World](guide_hello_world.md)
-* [Get started tutorials](tutorials.md)
-* [Follow by looking at examples of xtd](../examples/README.md)
-
-## What's new ?
-
-* [News on xtd](https://gammasoft71.wixsite.com/xtdpro/news)
-
-## xtd.core
-
-* [Types specifications](types.md)
-* [Enumerations management](enum_class.md)
-* [String manipulations](ustring.md)
-* [Date and time usages](date_time.md)
-* [What is a delegate?](delegates.md)
-* [What is an event?](events.md)
-
+| xtd.core                                 |
+|------------------------------------------|
+| [Types specifications](types.md)         |
+| [Enumerations management](enum_class.md) |
+| [String manipulations](ustring.md)       |
+| [Date and time usages](date_time.md)     |
+| [What is a delegate?](delegates.md)      |
+| [What is an event?](events.md)           |
 
 ## Next step
 
