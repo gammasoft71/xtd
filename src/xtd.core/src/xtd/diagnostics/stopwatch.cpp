@@ -3,6 +3,8 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
+using stopwatch_clock_t = std::chrono::steady_clock;
+
 int64_t stopwatch::frequency() noexcept {
   return std::nano::den;
 }
@@ -33,7 +35,7 @@ bool stopwatch::is_running() const noexcept {
 }
 
 int64_t stopwatch::get_timestamp() noexcept {
-  return std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
+  return std::chrono::nanoseconds(stopwatch_clock_t::now().time_since_epoch()).count();
 }
 
 void stopwatch::reset() noexcept {
