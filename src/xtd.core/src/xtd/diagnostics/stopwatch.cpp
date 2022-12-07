@@ -3,6 +3,9 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
+// Replacement of std::chrono::high_resolution_clock by std::chrono::steady_clock.
+// The high_resolution_clock is not implemented consistently across different standard library implementations, and its use should be avoided.
+// For more info see note : https://en.cppreference.com/w/cpp/chrono/high_resolution_clock
 using stopwatch_clock_t = std::chrono::steady_clock;
 
 int64_t stopwatch::frequency() noexcept {
