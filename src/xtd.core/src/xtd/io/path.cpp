@@ -5,6 +5,7 @@
 #include "../../../include/xtd/random.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/path.h>
+#include <xtd/native/file_system.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace std;
@@ -76,40 +77,7 @@ ustring path::get_file_name_without_extension(const ustring& path) {
 }
 
 ustring path::get_full_path(const ustring& path) {
-  string path_str = path;
-  basic_regex<char> r(string("(\\") + directory_separator_char<char>() + alt_directory_separator_char<char>() + string(")+"));
-  vector<ustring> directories;
-  for (sregex_token_iterator it(path_str.begin(), path_str.end(), r, -1), end; it != end; ++it)
-    if (*it != "") directories.push_back(it->str());
-    
-  ustring full_path;
-  
-  if (path[0] != directory_separator_char() && path[0] != alt_directory_separator_char()) full_path = environment::current_directory();
-  for (auto item : directories) {
-    if (item == ".." && full_path.last_index_of(directory_separator_char()) != ustring::npos)
-      full_path = full_path.substr(0, full_path.last_index_of(directory_separator_char()));
-    else if (item == ".." && full_path.last_index_of(alt_directory_separator_char()) != ustring::npos)
-      full_path = full_path.substr(0, full_path.last_index_of(alt_directory_separator_char()));
-    else if (item != ".") {
-      stringstream ss;
-      ss << full_path << directory_separator_char() << item;
-      full_path = ss.str();
-    }
-  }
-  
-  if (path[path.size() - 1] == directory_separator_char()) {
-    stringstream ss;
-    ss << full_path << directory_separator_char();
-    full_path = ss.str();
-  }
-  
-  auto index = full_path.last_index_of(ustring::format("{0}.{0}", directory_separator_char()));
-  while (index != full_path.npos) {
-    full_path = full_path.remove(index, 2);
-    index = full_path.last_index_of(ustring::format("{0}.{0}", directory_separator_char()));
-  }
-    
-  return full_path;
+  return native::file_system::get_full_path(path);
 }
 
 vector<char> path::get_invalid_path_chars() noexcept {
