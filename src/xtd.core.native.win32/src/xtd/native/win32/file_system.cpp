@@ -59,7 +59,7 @@ int32_t file_system::get_file_times(const string& path, time_t& creation_time, t
 
 string file_system::get_full_path(const string& relative_path) {
   std::wstring full_path(32767, 0);
-  if (GetFullPathName(win32::strings::to_wstring(relative_path).c_str(), static_cast<DWORD>(full_path.size()), full_path.data(), nullptr) == 0) return "";
+  if (GetFullPathName(win32::strings::to_wstring(relative_path).c_str(), static_cast<DWORD>(full_path.size()), full_path.data(), nullptr) == 0) return relative_path;
   return win32::strings::to_string(full_path);
 }
 
