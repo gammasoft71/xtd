@@ -148,25 +148,5 @@ namespace xtd::io::tests {
       ustring path = path::combine(path::get_temp_path(), "dir1", "dir2", file);
       assert::are_equal(path::combine(path::get_temp_path(), "dir1", "dir2", file), path::get_full_path(path), csf_);
     }
-
-    void test_method_(get_full_path_with_create_file) {
-      ustring path = "xtd_test_file.txt";
-      ustring full_path = path::combine(path::get_temp_path(), path);
-      file_info fi(full_path);
-      fi.create();
-      assert::are_equal(path::combine(path::get_temp_path(), path), path::get_full_path(fi.full_name()), csf_);
-      fi.remove();
-    }
-
-    void test_method_(get_full_path_with_create_file_recursive) {
-      ustring path = "xtd_test_file.txt";
-      ustring full_path = path::combine(path::get_temp_path(), "dir1", "dir2", path);
-      directory::create_directory(path::combine(path::get_temp_path(), "dir1", "dir2"));
-      file_info fi(full_path);
-      fi.create();
-      assert::are_equal(path::combine(path::get_temp_path(), "dir1", "dir2", path), path::get_full_path(fi.full_name()), csf_);
-      fi.remove();
-      directory::remove(path::combine(path::get_temp_path(), "dir1"), true);
-    }
   };
 }
