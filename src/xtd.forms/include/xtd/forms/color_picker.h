@@ -55,19 +55,19 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating whether the dialog box  shows alpha values and an opacity selector (slider).
       /// @return true if the dialog box  shows alpha values and an opacity selector (slider); otherwise, false. The default is true.
-      virual bool alpha_color() const noexcept;
+      virtual bool alpha_color() const noexcept;
       /// @brief Sets a value indicating whether the user can use the dialog box to define custom colors.
       /// @param alpha_color true if the dialog box  shows alpha values and an opacity selector (slider); otherwise, false.
-      virual color_picker& alpha_color(bool alpha_color);
+      virtual color_picker& alpha_color(bool alpha_color);
 
       /// @brief Gets the color selected by the user.
       /// @return The color selected by the user. If a color is not selected, the default value is black.
       /// @remarks The color selected by the user in the color picker at run time, as defined in color structure.
-      virual const drawing::color& color() const noexcept;
+      virtual const drawing::color& color() const noexcept;
       /// @brief Sets the color selected by the user.
       /// @param color The color selected by the user. If a color is not selected.
       /// @remarks The color selected by the user in the color picker at run time, as defined in color structure.
-      virual void color(const drawing::color& color);
+      virtual void color(const drawing::color& color);
       /// @}
       
       /// @name Events
