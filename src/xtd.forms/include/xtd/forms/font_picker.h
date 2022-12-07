@@ -54,12 +54,12 @@ namespace xtd {
       /// @brief Gets the color selected by the user.
       /// @return The color selected by the user. If a color is not selected, the default value is black.
       /// @remarks The color selected by the user in the color picker at run time, as defined in color structure.
-      const drawing::color& color() const noexcept;
+      virtual const drawing::color& color() const noexcept;
       /// @brief Sets the color selected by the user.
       /// @param color The color selected by the user. If a color is not selected.
       /// @brief This instance of control.
       /// @remarks The color selected by the user in the color picker at run time, as defined in color structure.
-      control& color(const drawing::color& color);
+      virtual control& color(const drawing::color& color);
       
       /// @brief Gets the selected font.
       /// @return The selected font.
