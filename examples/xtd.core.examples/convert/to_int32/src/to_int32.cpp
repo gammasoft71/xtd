@@ -50,12 +50,12 @@ int main() {
   console::write_line("static_cast<int32_t>(overflow_value) = {}", static_cast<int32_t>(overflow_value)); // Overflow not detected
   try {
     console::write_line("as<int32_t>(overflow_value)          = {}", as<int32_t>(overflow_value));
-  } catch (const overflow_exception& e) {
+  } catch (const overflow_exception&) {
     console::write_line("(ERROR) as : Overflow exception");
   }
   try {
     console::write_line("convert::to_int32(overflow_value)   = {}", convert::to_int32(overflow_value));
-  } catch (const overflow_exception& e) {
+  } catch (const overflow_exception&) {
     console::write_line("(ERROR) convert::to_int32 : Overflow exception");
   }
 }

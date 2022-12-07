@@ -9,12 +9,12 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       vector v = {1, 2, 3, 4};
-      assert::throws<std::out_of_range>([&] {v.at(5);});
+      assert::throws<std::out_of_range>([&] {return v.at(5);});
     }
     
     void test_method_(test_case_failed) {
       vector v = {1, 2, 3, 4};
-      assert::throws<std::out_of_range>([&] {v.at(2);});
+      assert::throws<std::out_of_range>([&] {return v.at(2);});
     }
   };
 }

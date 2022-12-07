@@ -9,12 +9,12 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       vector v = {1, 2, 3, 4};
-      assert::does_not_throw([&] {v.at(2);});
+      assert::does_not_throw([&] {return v.at(2);});
     }
     
     void test_method_(test_case_failed) {
       vector v = {1, 2, 3, 4};
-      assert::does_not_throw([&] {v.at(5);});
+      assert::does_not_throw([&] {return v.at(5);});
     }
   };
 }

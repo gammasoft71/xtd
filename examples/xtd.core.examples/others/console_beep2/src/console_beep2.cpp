@@ -8,7 +8,7 @@ using namespace xtd;
 int main(int argc, char* argv[]) {
   int x = 0;
   //
-  if ((argc == 2) && (x = atoi(argv[1])) && ((x >= 1) && (x <= 9))) {
+  if ((argc == 2) && (int32_object::try_parse(argv[1], x) == true) && ((x >= 1) && (x <= 9))) {
     for (int i = 1; i <= x; i++) {
       console::out << ustring::format("Beep number {}.", i) << beep() << environment::new_line;
       sleep_for(milliseconds(100));
