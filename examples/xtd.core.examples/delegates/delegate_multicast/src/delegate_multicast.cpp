@@ -4,7 +4,7 @@
 using namespace std;
 using namespace xtd;
 
-using write = delegate<void(const ustring& str)>;
+using writer = delegate<void(const ustring& str)>;
 
 void write_debug(const ustring& str) {
   cdebug << str << environment::new_line;
@@ -22,7 +22,7 @@ public:
 };
 
 int main() {
-  ::write write;
+  writer write;
   
   write += [](const ustring & str)  {
     console::out << str << environment::new_line;

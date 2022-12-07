@@ -2040,6 +2040,10 @@ if (MSVC)
   add_definitions(-D_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS)
   add_compile_options(${BUILD_ON_MULTIPLE_PROCESSES} /utf-8 /wd4251 /wd4275 /wd4996 /Zc:__cplusplus)
   set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /bigobj")
+  
+  # The following linker flag goes against Microsoft's note.
+  # But this is not a problem at the moment. If there is ever a problem or doubt, it should be addressed and removed it.
+  # For more information ee https://learn.microsoft.com/en-us/windows/win32/learnwin32/winmain--the-application-entry-point
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /ENTRY:mainCRTStartup")
 endif ()
 
