@@ -15,7 +15,7 @@ public:
       
     int64 frequency = stopwatch::frequency();
     console::write_line("  Timer frequency in ticks per second = {0}", frequency);
-    long nanosec_per_tick = (1000L * 1000L * 1000L) / frequency;
+    int64 nanosec_per_tick = (1000L * 1000L * 1000L) / frequency;
     console::write_line("  Timer is accurate within {0} nanoseconds", nanosec_per_tick);
   }
   
@@ -31,13 +31,13 @@ public:
     
     for (int operation = 0; operation <= 3; operation++) {
       // Define variables for operation statistics.
-      long num_ticks = 0;
-      long num_rollovers = 0;
-      long max_ticks = 0;
-      long min_ticks = numeric_limits<long>::max();
+      int64 num_ticks = 0;
+      int64 num_rollovers = 0;
+      int64 max_ticks = 0;
+      int64 min_ticks = numeric_limits<long>::max();
       int index_fastest = -1;
       int index_slowest = -1;
-      long milli_sec = 0;
+      int64 milli_sec = 0;
       
       stopwatch time_10k_operations = stopwatch::start_new();
       

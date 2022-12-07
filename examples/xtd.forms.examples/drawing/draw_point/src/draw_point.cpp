@@ -27,7 +27,7 @@ namespace examples {
       form::on_paint(e);
       e.graphics().clear(color::black);
       for (auto colored_point : colored_points)
-        e.graphics().draw_point(pen(colored_point.color, colored_point.width), colored_point.location);
+        e.graphics().draw_point(pen(colored_point.color, as<float>(colored_point.width)), colored_point.location);
     }
     
   private:

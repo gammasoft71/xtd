@@ -14,7 +14,7 @@ int main() {
   console::write_line("result = {}", enum_object<>::parse<enum_test>("VaLuE_fOuR", true));
   try {
     console::write_line("result = {}", enum_object<>::parse<enum_test>("value_five"));
-  } catch(const xtd::system_exception& e) {
+  } catch(const xtd::system_exception&) {
     console::write_line("enum_test::value_five does not exists!");
   }
 

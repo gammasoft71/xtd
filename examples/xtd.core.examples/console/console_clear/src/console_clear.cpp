@@ -46,7 +46,7 @@ namespace examples {
         console::background_color(new_back_color);
         console::write_line(text_to_display);
         console::write_line();
-        if (char_object::to_upper(get_key_press("Display another message (Y/N): ", vector<char32> { 'Y', 'N' })) == 'N')
+        if (char32_object::to_upper(get_key_press("Display another message (Y/N): ", vector<char32> { 'Y', 'N' })) == 'N')
           continue_flag = false;
         
         // Restore the default settings and clear the screen.
