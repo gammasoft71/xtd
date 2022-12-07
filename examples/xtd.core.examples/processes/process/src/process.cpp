@@ -8,8 +8,8 @@ int main() {
   try {
     using_(process my_process) {
       my_process.start_info().use_shell_execute(false);
-      // You can start any process, hello_world is a do-nothing example.
-      my_process.start_info().file_name("hello_world");
+      // You can start any process other guidgen.
+      my_process.start_info().file_name("guidgen");
       my_process.start_info().create_no_window(true);
       my_process.start();
       // This code assumes the process you are starting will terminate itself.
@@ -22,6 +22,6 @@ int main() {
   }
 }
 
-// This code produces the following output :
+// This code can produces the following output :
 //
-// Hello, World!
+// 1549cf47-b1c9-4333-96e5-4eabffbd9fbd
