@@ -162,6 +162,10 @@ void tcp_client::end_connect(std::shared_ptr<xtd::iasync_result> async_result) {
   active(true);
 }
 
+bool tcp_client::equals(const tcp_client& s) const noexcept {
+  return data_ == s.data_;
+}
+
 network_stream tcp_client::get_stream() const {
   if (!data_->client_socket.connected()) throw socket_exception(socket_error::not_connected, csf_);
   return network_stream(data_->client_socket, true);
