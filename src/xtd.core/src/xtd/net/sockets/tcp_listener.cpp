@@ -112,6 +112,10 @@ xtd::net::sockets::tcp_client tcp_listener::end_accept_tcp_client(std::shared_pt
   return as<async_result_accept_tcp_client>(async_result)->tcp_client_;
 }
 
+bool tcp_listener::equals(const tcp_listener& s) const noexcept {
+  return data_ == s.data_;
+}
+
 bool tcp_listener::pending() {
   if (!active()) throw invalid_operation_exception(csf_);
   return data_->server_socket.poll(0, select_mode::select_read);

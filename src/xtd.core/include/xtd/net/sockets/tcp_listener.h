@@ -32,7 +32,7 @@ namespace xtd {
       /// @par Examples
       /// The following example shows how to use IPv6 xtd::net::sockets::tcp_listener class with use xtd::net::sockets::tcp_client, xtd::net::sockets::network_stream, xtd::net::sockets::socket, xtd::io::stream_reader and xtd::io::stream_writer classes.
       /// @include tcp_client_ip_v6.cpp
-      class core_export_ tcp_listener : public xtd::object {
+      class core_export_ tcp_listener : public xtd::object, public xtd::iequatable<tcp_listener> {
         class async_result_socket : public xtd::object, public xtd::iasync_result {
         public:
           explicit async_result_socket(std::any async_state) : async_state_(async_state) {}
@@ -89,8 +89,6 @@ namespace xtd {
         tcp_listener(const tcp_listener&) = default;
         ~tcp_listener();
         tcp_listener& operator =(const tcp_listener&) = default;
-        bool operator ==(const tcp_listener& s) const {return data_ == s.data_;};
-        bool operator !=(const tcp_listener& s) const {return !operator ==(s);};
         /// @endcond
         
         /// @name Properties
@@ -207,6 +205,8 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         xtd::net::sockets::tcp_client end_accept_tcp_client(std::shared_ptr<xtd::iasync_result> async_result);
         
+        bool equals(const tcp_listener& s) const noexcept override;
+
         /// @brief Determines if there are pending connection requests.
         /// @return true if connections are pending; otherwise, false.
         /// @exception xtd::invalid_operation_exception The listener has not been started with a call to xtd::net::sockets::tcp_listener::start.
