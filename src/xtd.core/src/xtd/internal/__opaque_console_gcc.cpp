@@ -136,8 +136,8 @@ namespace {
         return *this;
       }
       
-      bool operator ==(const input_list& il) const {return chars == il.chars;}
-      bool operator !=(const input_list& il) const {return chars != il.chars;}
+      bool operator ==(const input_list& il) const noexcept {return chars == il.chars;}
+      bool operator !=(const input_list& il) const noexcept {return chars != il.chars;}
       
       using const_iterator = std::list<int32_t>::const_iterator;
       using iterator = std::list<int32_t>::iterator;
