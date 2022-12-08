@@ -1,0 +1,12 @@
+/* Contains link-label definitions. */
+/* Copyright (c) 2022 Gammasoft. All rights reserved. */
+
+link-label {
+  background-color: system-color(control);
+  color: system-color(control-text);
+  text-align: top left;
+}
+
+link-label:disabled {  
+  color: system-color(gray-text);
+}

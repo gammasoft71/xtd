@@ -46,6 +46,24 @@ namespace xtd {
       /// @param auto_ellipsis The value indicating whether the ellipsis character (...) appears at the right edge of the xtd::forms::label, denoting that the xtd::forms::label text extends beyond the specified length of the xtd::forms::label.
       /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
       static void draw_label(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::label_state label_state, const std::optional<xtd::drawing::color>& back_color, const xtd::ustring& text, const std::optional<xtd::forms::content_alignment>& text_align, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font, const xtd::drawing::image& image, const std::optional<xtd::forms::content_alignment>& image_align, const std::optional<xtd::forms::border_style>& border, xtd::forms::border_sides sides, bool shadow, bool auto_ellipsis);
+      /// @brief Draws a box in the specified bounds, label style, label state and background color.
+      /// @param style_sheet The xtd::forms::style_sheets::style_sheet used to draw a label.
+      /// @param graphics The xtd::drawing::graphics used to draw a label.
+      /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the label.
+      /// @param label_state The visual state of a label that is drawn with visual styles.
+      /// @param back_color The background color for the label control.
+      /// @param text The text of the label control.
+      /// @param text_flags Contains the display and layout information for text strings.
+      /// @param fore_color The foreground color for the label control.
+      /// @param font The font of the text for the label control.
+      /// @param image The image of the label control.
+      /// @param image_align Contains the display and layout information for image .
+      /// @param border Contains the border style for the control
+      /// @param side Contains the border sides for the control.
+      /// @param shadow The value that allows to draw a drop shadow under the text.
+      /// @param auto_ellipsis The value indicating whether the ellipsis character (...) appears at the right edge of the xtd::forms::label, denoting that the xtd::forms::label text extends beyond the specified length of the xtd::forms::label.
+      /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
+      static void draw_link_label(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::label_state label_state, const std::optional<xtd::drawing::color>& back_color, const xtd::ustring& text, const std::optional<xtd::forms::content_alignment>& text_align, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font, const std::optional<xtd::drawing::font>& font_link, const xtd::drawing::image& image, const std::optional<xtd::forms::content_alignment>& image_align, const std::optional<xtd::forms::border_style>& border, xtd::forms::border_sides sides, bool shadow, bool auto_ellipsis);
     };
   }
 }

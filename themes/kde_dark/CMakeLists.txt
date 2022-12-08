@@ -12,6 +12,7 @@ add_sources(
   flat-toggle-button.css
   form.css
   label.css
+  link-label.css
   panel.css
   popup-button.css
   popup-toggle-button.css
