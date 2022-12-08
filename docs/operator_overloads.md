@@ -20,7 +20,7 @@ For example, xtd:ustring has operator == and operator != defined.
 
 **❌ DO NOT** be cute when defining operator overloads.
 
-Operator overloading is useful in cases in which it is immediately obvious what the result of the operation will be. For example, it makes sense to be able to subtract one DateTime from another date_time and get a time_span. However, it is not appropriate to use the logical union operator to union two database queries, or to use the shift operator to write to a stream.
+Operator overloading is useful in cases in which it is immediately obvious what the result of the operation will be. For example, it makes sense to be able to subtract one date_time from another date_time and get a time_span. However, it is not appropriate to use the logical union operator to union two database queries, or to use the shift operator to write to a stream.
 
 **❌ DO NOT** provide operator overloads unless at least one of the operands is of the type defining the overload.
 
@@ -30,23 +30,20 @@ For example, if you overload the operator ==, you should also overload the opera
 
 **✔️ CONSIDER** providing methods with friendly names that correspond to each overloaded operator.
 
-# equals
+# xtd::iequatable
 
-The xtd::object class implement the == and != operators and used the virtual bool equals(const object&) const; method. By default this method check if the objects are the same addresses. You must just overload this method for used your own implementation.
+The [xtd::iequatable<type_t>](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1iequatable.html) interface class implement the == and != operators and used the `virtual bool equals(const type_t&) const` noexcept; method.
+You must just overload this method for used your own implementation.
 
 The Point class show how to used Equals method :
 
 ```c++
-class point : public object {
+class point : public xtd::object, public xtd::iequatable<point> {
   ...
   
 public:
-  bool equals(const point& value) const {
+  bool equals(const point& value) const noexcept override {
     return x_ == value.x_ && y_ == value.y_;
-  }
-  ​
-  bool equals(const object& obj) const override {
-    return is<point>(obj) && equals(as<point>(obj));
   }
   ​
   ...
@@ -66,16 +63,17 @@ static ustring form1::check_points(const point& p1, const point& p2) {
 
 # ​compare_to
 
-The xtd::icomparable interface implement the <, <=, > and >= operators. and used the virtual int32_t compare_to(const type_t&) const; method. You must just overload this method for used your own implementation.
+The [xtd::icomparable<type_t>](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1icomparable.html) interface implement the <, <=, > and >= operators. and used the `virtual int32_t compare_to(const type_t&) const noexcept;` method.
+You must just overload this method for used your own implementation.
 
 The time_span class show how to used compare_to method:
 
 ```c++
-class time_span : public object, public icomparable<time_span> {
+class time_span : public xtd::object, public xtd::icomparable<time_span> {
   ...
   
 public:
-  int compare_to(const time_span& value) const override {
+  int compare_to(const time_span& value) const noexcept override {
     return value_ < value.value_ ? -1 : value_ > value.value_ ? 1 : 0;
   }
   ​
