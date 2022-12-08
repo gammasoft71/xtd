@@ -28,7 +28,7 @@ namespace xtd {
   /// The following example shows how to define a delegate named my Method delegate. Instances of this delegate are created for an instance method && a static method of the nested mySampleClass class. The delegate for the instance method requires an instance of mySampleClass. The mySampleClass instance is saved in a variable named mySC.
   /// @include delegate.cpp
   template<typename result_t>
-  class delegate<result_t()> : public object {
+  class delegate<result_t()> : public xtd::object, public xtd::iequatable<delegate<result_t()>> {
   public:
     /// @name Alias
     
@@ -179,7 +179,7 @@ namespace xtd {
     /// @brief Determines whether this instance and another specified delegateType object have the same value.
     /// @param value The delegateType to compare.
     /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
-    bool operator ==(const delegate& delegate) const noexcept {
+    bool equals(const delegate& delegate) const noexcept override {
       if (data_->functions.size() != delegate.data_->functions.size())
         return false;
         
@@ -189,11 +189,6 @@ namespace xtd {
           
       return true;
     }
-    
-    /// @brief Determines whether this instance and another specified delegateType object have the same value.
-    /// @param value The delegateType to compare.
-    /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
-    bool operator !=(const delegate& delegate) const { return !operator ==(delegate); }
     
     delegate& operator =(const function_t& function) noexcept {
       data_->functions.clear();
@@ -283,7 +278,7 @@ namespace xtd {
   /// The following example shows how to define a delegate named my Method delegate. Instances of this delegate are created for an instance method && a static method of the nested mySampleClass class. The delegate for the instance method requires an instance of mySampleClass. The mySampleClass instance is saved in a variable named mySC.
   /// @include delegate.cpp
   template<typename result_t, typename... arguments_t>
-  class delegate<result_t(arguments_t...)> : public object {
+  class delegate<result_t(arguments_t...)> : public object, public xtd::iequatable<delegate<result_t(arguments_t...)>> {
   public:
     /// @name Alias
     
@@ -594,7 +589,7 @@ namespace xtd {
     /// @brief Determines whether this instance and another specified delegateType object have the same value.
     /// @param value The delegateType to compare.
     /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
-    bool operator ==(const delegate& delegate) const noexcept {
+    bool equals(const delegate& delegate) const noexcept override {
       if (data_->functions.size() != delegate.data_->functions.size() || data_->no_arguments_functions.size() != delegate.data_->no_arguments_functions.size())
         return false;
         
@@ -608,11 +603,6 @@ namespace xtd {
           
       return true;
     }
-    
-    /// @brief Determines whether this instance and another specified delegateType object have the same value.
-    /// @param value The delegateType to compare.
-    /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
-    bool operator !=(const delegate& delegate) const { return !operator ==(delegate); }
     /// @}
     
     /// @cond
