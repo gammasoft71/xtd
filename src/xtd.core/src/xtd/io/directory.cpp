@@ -47,7 +47,7 @@ directory::directory_iterator directory::directory_iterator::operator ++(int32_t
   return result;
 }
 
-bool directory::directory_iterator::operator ==(directory::directory_iterator other) const {
+bool directory::directory_iterator::equals(const directory::directory_iterator& other) const noexcept {
   return data_->iterator_ == other.data_->iterator_;
 }
 

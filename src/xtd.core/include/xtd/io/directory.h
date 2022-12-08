@@ -96,7 +96,7 @@ namespace xtd {
     class core_export_ directory static_ {
     public:
       /// @brief Represent directory iterator used by xtd::io::directory.
-      class directory_iterator {
+      class directory_iterator : public xtd::iequatable<directory_iterator> {
         explicit directory_iterator(const xtd::ustring& path, const xtd::ustring& pattern);
       public:
         /// @cond
@@ -112,11 +112,10 @@ namespace xtd {
         
         directory_iterator& operator ++();
         directory_iterator operator ++(int32_t);
-        bool operator ==(directory_iterator other) const;
-        bool operator !=(directory_iterator other) const {return !operator ==(other);}
         value_type operator *() const;
         xtd::io::directory::directory_iterator begin() const;
         xtd::io::directory::directory_iterator end() const;
+        bool equals(const directory_iterator& other) const noexcept override;
         /// @endcond
         
       private:
