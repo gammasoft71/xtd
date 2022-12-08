@@ -578,11 +578,6 @@ int32_t ustring::compare(const ustring& str_a, size_t index_a, const ustring& st
   return sa.compare(sb);
 }
 
-int32_t ustring::compare_to(const object& obj) const noexcept {
-  if (!dynamic_cast<const ustring*>(&obj)) return 1;
-  return compare_to(static_cast<const ustring&>(obj));
-}
-
 int32_t ustring::compare_to(const ustring& value) const noexcept {
   return compare(*this, value);
 }

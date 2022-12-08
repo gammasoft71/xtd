@@ -58,11 +58,6 @@ int32_t version::revision() const noexcept {
   return revision_;
 }
 
-int32_t version::compare_to(const object& obj) const noexcept {
-  if (!is<version>(&obj)) return 1;
-  return compare_to(static_cast<const version&>(obj));
-}
-
 int32_t version::compare_to(const version& value) const noexcept {
   if (major_ < value.major_) return -1;
   if (major_ > value.major_) return 1;

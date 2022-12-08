@@ -278,11 +278,6 @@ date_time date_time::add_years(int32_t value) const {
   return add_months(value * 12);
 }
 
-int32_t date_time::compare_to(const object& obj) const noexcept {
-  if (!dynamic_cast<const date_time*>(&obj)) return 1;
-  return compare_to(static_cast<const date_time&>(obj));
-}
-
 int32_t date_time::compare_to(const date_time& value) const noexcept {
   if (value_.count() < value.value_.count()) return -1;
   if (value_.count() > value.value_.count()) return 1;

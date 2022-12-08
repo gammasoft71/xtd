@@ -120,16 +120,6 @@ namespace xtd {
     /// | Less than zero    | This instance is less than obj.    |
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
-    int32_t compare_to(const object& obj) const noexcept override;
-    /// @brief Compares the current instance with another object of the same type.
-    /// @param obj An object to compare with this instance.
-    /// @return A 32-bit signed integer that indicates the relative order of the objects being compared.
-    /// The return value has these meanings:
-    /// | Value             | Condition                          |
-    /// |-------------------|------------------------------------|
-    /// | Less than zero    | This instance is less than obj.    |
-    /// | Zero              | This instance is equal to obj.     |
-    /// | Greater than zero | This instance is greater than obj. |
     int32_t compare_to(const guid& value) const noexcept override;
     
     bool equals(const guid& g) const noexcept override;
