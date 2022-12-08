@@ -28,7 +28,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of hatch_brush class.
       /// @include fill_rectangle.cpp
-      class drawing_export_ hatch_brush final : public brush, public iequatable<hatch_brush> {
+      class drawing_export_ hatch_brush final : public brush, public xtd::iequatable<hatch_brush> {
       public:
         /// @name Constructors
         

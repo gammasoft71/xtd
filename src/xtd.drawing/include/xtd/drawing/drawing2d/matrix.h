@@ -69,7 +69,7 @@ namespace xtd {
       /// my_matrix.scale(1, 2, matrix_order::append);
       /// my_matrix.translate(5, 0, matrix_order::append);
       /// @endcode
-      class drawing_export_ matrix final : public object, public iequatable<matrix> {
+      class drawing_export_ matrix final : public object, public xtd::iequatable<matrix> {
       public:
         /// @name Constructors
         
