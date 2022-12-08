@@ -125,7 +125,7 @@ namespace xtd {
       };
       
       /// @brief Represent file iterator used by xtd::io::directory.
-      class file_iterator {
+      class file_iterator : public xtd::iequatable<file_iterator> {
         explicit file_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
@@ -141,11 +141,10 @@ namespace xtd {
         
         file_iterator& operator ++();
         file_iterator operator ++(int);
-        bool operator ==(file_iterator other) const;
-        bool operator !=(file_iterator other) const {return !operator ==(other);}
         value_type operator *() const;
         xtd::io::directory::file_iterator begin() const;
         xtd::io::directory::file_iterator end() const;
+        bool equals(const file_iterator& other) const noexcept override;
         /// @endcond
         
       private:
@@ -155,7 +154,7 @@ namespace xtd {
       };
       
       /// @brief Represent file system iterator used by xtd::io::directory.
-      class file_system_entry_iterator {
+      class file_system_entry_iterator : public xtd::iequatable<file_system_entry_iterator> {
         explicit file_system_entry_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
@@ -171,11 +170,10 @@ namespace xtd {
         
         file_system_entry_iterator& operator ++();
         file_system_entry_iterator operator ++(int32_t);
-        bool operator ==(file_system_entry_iterator other) const;
-        bool operator !=(file_system_entry_iterator other) const {return !operator ==(other);}
         value_type operator *() const;
         xtd::io::directory::file_system_entry_iterator begin() const;
         xtd::io::directory::file_system_entry_iterator end() const;
+        bool equals(const file_system_entry_iterator& other) const noexcept override;
         /// @endcond
         
       private:

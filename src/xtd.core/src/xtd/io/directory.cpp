@@ -89,10 +89,6 @@ directory::file_iterator directory::file_iterator::operator ++(int32_t) {
   return result;
 }
 
-bool directory::file_iterator::operator ==(directory::file_iterator other) const {
-  return data_->iterator_ == other.data_->iterator_;
-}
-
 directory::file_iterator::value_type directory::file_iterator::operator *() const {
   if (data_ == nullptr) return "";
   return (*data_->iterator_).full_name();
@@ -104,6 +100,10 @@ directory::file_iterator directory::file_iterator::begin() const {
 
 directory::file_iterator directory::file_iterator::end() const {
   return directory::file_iterator();
+}
+
+bool directory::file_iterator::equals(const directory::file_iterator& other) const noexcept {
+  return data_->iterator_ == other.data_->iterator_;
 }
 
 struct directory::file_system_entry_iterator::data {
@@ -131,10 +131,6 @@ directory::file_system_entry_iterator directory::file_system_entry_iterator::ope
   return result;
 }
 
-bool directory::file_system_entry_iterator::operator ==(directory::file_system_entry_iterator other) const {
-  return data_->iterator_ == other.data_->iterator_;
-}
-
 directory::file_system_entry_iterator::value_type directory::file_system_entry_iterator::operator *() const {
   if (data_ == nullptr) return "";
   return (*data_->iterator_)->full_name();
@@ -146,6 +142,10 @@ directory::file_system_entry_iterator directory::file_system_entry_iterator::beg
 
 directory::file_system_entry_iterator directory::file_system_entry_iterator::end() const {
   return directory::file_system_entry_iterator();
+}
+
+bool directory::file_system_entry_iterator::equals(const directory::file_system_entry_iterator& other) const noexcept {
+  return data_->iterator_ == other.data_->iterator_;
 }
 
 directory_info directory::create_directory(const ustring& path) {
