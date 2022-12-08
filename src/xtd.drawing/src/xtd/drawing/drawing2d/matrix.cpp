@@ -39,14 +39,6 @@ matrix::~matrix() {
   }
 }
 
-bool matrix::operator ==(const matrix& value) const noexcept {
-  return data_ == value.data_;
-}
-
-bool matrix::operator !=(const matrix& value) const noexcept {
-  return !operator ==(value);
-}
-
 std::vector<float> matrix::elements() const {
   return native::matrix::elenents(handle());
 }
@@ -69,6 +61,10 @@ float matrix::offset_x() const {
 
 float matrix::offset_y() const {
   return native::matrix::offset_y(handle());
+}
+
+bool matrix::equals(const matrix& value) const noexcept {
+  return data_ == value.data_;
 }
 
 void matrix::invert() {
