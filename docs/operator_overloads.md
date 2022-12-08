@@ -39,21 +39,21 @@ The Point class show how to used Equals method :
 
 ```c++
 class point : public xtd::object, public xtd::iequatable<point> {
-  ...
+  //...
   
 public:
   bool equals(const point& value) const noexcept override {
     return x_ == value.x_ && y_ == value.y_;
   }
   ​
-  ...
+  //...
   
 private:
   int x_ = 0;
   int y_ = 0;
 };
 
-...
+//...
 
 static ustring form1::check_points(const point& p1, const point& p2) {
   if (p1 == p2) eturn "Equals";
@@ -61,7 +61,7 @@ static ustring form1::check_points(const point& p1, const point& p2) {
 }
 ```
 
-# ​compare_to
+# xtd::icomparable
 
 The [xtd::icomparable<type_t>](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1icomparable.html) interface implement the <, <=, > and >= operators. and used the `virtual int32_t compare_to(const type_t&) const noexcept;` method.
 You must just overload this method for used your own implementation.
@@ -70,22 +70,22 @@ The time_span class show how to used compare_to method:
 
 ```c++
 class time_span : public xtd::object, public xtd::icomparable<time_span> {
-  ...
+  //...
   
 public:
   int compare_to(const time_span& value) const noexcept override {
     return value_ < value.value_ ? -1 : value_ > value.value_ ? 1 : 0;
   }
   ​
-  ...
+  //...
   
 private:
   int64 value_ = 0;
 };
 
-...
+//...
 
-time_span test::get_max_duration(const std::vector<time_span>& durations) const {
+time_span test::get_max_duration(const std::vector<time_span>& durations) const noexcept {
   time_span result;
   for (const auto& duration : durations)
     if (duration > result) result = duration;
