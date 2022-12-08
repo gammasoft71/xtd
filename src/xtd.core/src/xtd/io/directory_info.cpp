@@ -44,10 +44,6 @@ directory_info::directory_iterator directory_info::directory_iterator::operator 
   return result;
 }
 
-bool directory_info::directory_iterator::operator ==(directory_info::directory_iterator other) const {
-  return data_->iterator_ == other.data_->iterator_;
-}
-
 directory_info::directory_iterator::value_type directory_info::directory_iterator::operator *() const {
   if (data_ == nullptr) return empty;
   return directory_info(*data_->iterator_);
@@ -59,6 +55,10 @@ directory_info::directory_iterator directory_info::directory_iterator::begin() c
 
 directory_info::directory_iterator directory_info::directory_iterator::end() const {
   return directory_info::directory_iterator();
+}
+
+bool directory_info::directory_iterator::equals(const directory_info::directory_iterator& other) const noexcept {
+  return data_->iterator_ == other.data_->iterator_;
 }
 
 ustring directory_info::directory_iterator::path() const {
@@ -94,10 +94,6 @@ directory_info::file_iterator directory_info::file_iterator::operator ++(int32_t
   return result;
 }
 
-bool directory_info::file_iterator::operator ==(directory_info::file_iterator other) const {
-  return data_->iterator_ == other.data_->iterator_;
-}
-
 directory_info::file_iterator::value_type directory_info::file_iterator::operator *() const {
   if (data_ == nullptr) return file_info::empty;
   return file_info(*data_->iterator_);
@@ -108,6 +104,10 @@ directory_info::file_iterator directory_info::file_iterator::begin() const {
 }
 directory_info::file_iterator directory_info::file_iterator::end() const {
   return xtd::io::directory_info::file_iterator();
+}
+
+bool directory_info::file_iterator::equals(const directory_info::file_iterator& other) const noexcept {
+  return data_->iterator_ == other.data_->iterator_;
 }
 
 ustring directory_info::file_iterator::path() const {
@@ -151,16 +151,16 @@ directory_info::file_system_info_iterator directory_info::file_system_info_itera
   return xtd::io::directory_info::file_system_info_iterator();
 }
 
+bool directory_info::file_system_info_iterator::equals(const directory_info::file_system_info_iterator& other) const noexcept {
+  return data_->iterator_ == other.data_->iterator_;
+}
+
 ustring directory_info::file_system_info_iterator::path() const {
   return data_->iterator_.path();
 }
 
 ustring directory_info::file_system_info_iterator::pattern() const {
   return data_->iterator_.pattern();
-}
-
-bool directory_info::file_system_info_iterator::operator ==(directory_info::file_system_info_iterator other) const {
-  return data_->iterator_ == other.data_->iterator_;
 }
 
 directory_info::file_system_info_iterator::value_type directory_info::file_system_info_iterator::operator *() const {
