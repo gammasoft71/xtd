@@ -84,15 +84,6 @@ linear_gradient_brush& linear_gradient_brush::operator =(const linear_gradient_b
   return *this;
 }
 
-bool linear_gradient_brush::operator ==(const linear_gradient_brush& value) const noexcept {
-  return data_ == value.data_;
-}
-
-bool linear_gradient_brush::operator !=(const linear_gradient_brush& value) const noexcept {
-  return !operator ==(value);
-}
-
-
 float linear_gradient_brush::angle() const noexcept {
   return data_->angle;
 }
@@ -128,6 +119,10 @@ linear_gradient_brush& linear_gradient_brush::rectangle(const rectangle_f& value
     recreate_handle();
   }
   return *this;
+}
+
+bool linear_gradient_brush::equals(const linear_gradient_brush& value) const noexcept {
+  return data_ == value.data_;
 }
 
 float linear_gradient_brush::linear_gradient_mode_to_angle(xtd::drawing::drawing2d::linear_gradient_mode linear_gradient_mode) {
