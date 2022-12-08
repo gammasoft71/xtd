@@ -17,7 +17,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   /// @see Console
-  class console_key_info final : public object {
+  class console_key_info final : public object, public iequatable<console_key_info> {
   public:
     /// @name Constructors
     
@@ -41,8 +41,6 @@ namespace xtd {
     /// @cond
     console_key_info(const console_key_info& key_info) noexcept = default;
     console_key_info& operator =(const console_key_info& key_info) noexcept = default;
-    bool operator ==(const console_key_info& key_info) const noexcept;
-    bool operator !=(const console_key_info& key_info) const noexcept;
     /// @endcond
     
     /// @name Properties
@@ -60,7 +58,13 @@ namespace xtd {
     /// @param A bitwise combination of console_modifiers values. There is no default value.
     console_modifiers modifiers() const noexcept;
     /// @}
-    
+
+    /// @name Methods
+
+    /// @{
+    bool equals(const console_key_info& key_info) const noexcept override;
+    /// @}
+
   private:
     char32_t key_char_ {0};
     console_key key_ {static_cast<console_key>(0)};

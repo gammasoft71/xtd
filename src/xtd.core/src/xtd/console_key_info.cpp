@@ -8,14 +8,6 @@ console_key_info::console_key_info(char32_t key_char, console_key key, bool shif
   if (control == true) modifiers_ = modifiers_ | console_modifiers::control;
 }
 
-bool console_key_info::operator ==(const console_key_info& key_info) const noexcept {
-  return key_char_ == key_info.key_char_ && key_ == key_info.key_ && modifiers_ == key_info.modifiers_;
-}
-
-bool console_key_info::operator !=(const console_key_info& key_info) const noexcept {
-  return !operator ==(key_info);
-}
-
 console_key console_key_info::key() const noexcept {
   return key_;
 }
@@ -26,4 +18,8 @@ char32_t console_key_info::key_char() const noexcept {
 
 console_modifiers console_key_info::modifiers() const noexcept {
   return modifiers_;
+}
+
+bool console_key_info::equals(const console_key_info& key_info) const noexcept {
+  return key_char_ == key_info.key_char_ && key_ == key_info.key_ && modifiers_ == key_info.modifiers_;
 }
