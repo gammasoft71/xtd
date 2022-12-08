@@ -26,7 +26,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of radial_gradient_brush class.
       /// @include fill_rectangle.cpp
-      class drawing_export_ radial_gradient_brush final : public brush {
+      class drawing_export_ radial_gradient_brush final : public brush, public iequatable<radial_gradient_brush> {
       public:
         /// @name Constructors
         
@@ -83,21 +83,11 @@ namespace xtd {
         /// @cond
         radial_gradient_brush(const radial_gradient_brush& value);
         radial_gradient_brush& operator =(const radial_gradient_brush& value);
-        bool operator ==(const radial_gradient_brush& value) const noexcept;
-        bool operator !=(const radial_gradient_brush& value) const noexcept;
         /// @endcond
         
         /// @name Properties
         
         /// @{
-        /// @brief Gets the starting and ending colors of the gradient.
-        /// @return An array of two xtd::drawing::color structures that represents the starting and ending colors of the gradient.
-        const xtd::drawing::drawing2d::gradient_stop_collection& radial_colors() const noexcept;
-        /// @brief sets the starting and ending colors of the gradient.
-        /// @param radial_colors An array of two xtd::drawing::color structures that represents the starting and ending colors of the gradient.
-        /// @return Current radial_gradient_brush instance.
-        xtd::drawing::drawing2d::radial_gradient_brush& radial_colors(const xtd::drawing::drawing2d::gradient_stop_collection& radial_colors);
-        
         /// @brief Gets the center point of the radial gradient.
         /// @return A xtd::drawing::point_f structure that specifies the center point of the radial  gradient.
         xtd::drawing::point_f center_point() const noexcept;
@@ -121,6 +111,15 @@ namespace xtd {
         /// @param value A xtd::drawing::point_f structure that specifies the focal point of the radial  gradient.
         /// @return This current instance.
         radial_gradient_brush& focal_point(const xtd::drawing::point& value) noexcept;
+        
+        /// @brief Gets the starting and ending colors of the gradient.
+        /// @return An array of two xtd::drawing::color structures that represents the starting and ending colors of the gradient.
+        const xtd::drawing::drawing2d::gradient_stop_collection& radial_colors() const noexcept;
+        /// @brief sets the starting and ending colors of the gradient.
+        /// @param radial_colors An array of two xtd::drawing::color structures that represents the starting and ending colors of the gradient.
+        /// @return Current radial_gradient_brush instance.
+        xtd::drawing::drawing2d::radial_gradient_brush& radial_colors(const xtd::drawing::drawing2d::gradient_stop_collection& radial_colors);
+
         /// @brief Gets the angle of the gradient.
         /// @return A float that specifies the angle of the linear gradient.
         float radius() const noexcept;
@@ -128,9 +127,14 @@ namespace xtd {
         /// @param value A float that specifies the radius of the radial gradient.
         /// @return Current linear_gradient_brush instance.
         radial_gradient_brush& radius(float value) noexcept;
-        
         /// @}
+
+        /// @name Methods
         
+        /// @{
+        bool equals(const radial_gradient_brush& value) const noexcept override;
+        /// @}
+
       private:
         void recreate_handle();
         struct data {
