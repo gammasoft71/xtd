@@ -32,7 +32,7 @@ For example, if you overload the operator ==, you should also overload the opera
 
 # xtd::iequatable
 
-The [xtd::iequatable<type_t>](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1iequatable.html) interface class implement the == and != operators and used the `virtual bool equals(const type_t&) const` noexcept; method.
+The [xtd::iequatable<type_t>](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1iequatable.html) interface class implement the == and != operators and used the `virtual bool equals(const type_t&) const noexcept;` method.
 You must just overload this method for used your own implementation.
 
 The Point class show how to used Equals method :
