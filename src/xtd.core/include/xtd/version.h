@@ -92,7 +92,7 @@ namespace xtd {
   /// //       Relationship of 1.1 to 1.1.0: earlier
   /// //       Relationship of 1.1.0.0 to 1.1.0: later
   /// @endcode
-  class version final : public object, public icomparable<version> {
+  class version final : public object, public icomparable<version>, public iequatable<version> {
   public:
     /// @name Constructors
     
@@ -164,9 +164,6 @@ namespace xtd {
     /// @cond
     version(const version&) noexcept = default;
     version& operator =(const version&) noexcept = default;
-    
-    bool operator ==(const version& v) const noexcept;
-    bool operator !=(const version& v) const noexcept;
     /// @endcond
     
     /// @name Properties
@@ -223,6 +220,8 @@ namespace xtd {
     /// * xtd::version 1.2.5 is newer than version 1.2.3.4
     int32_t compare_to(const version& version) const noexcept override;
     
+    bool equals(const version& v) const noexcept override;
+
     /// @brief Converts the string representation of a version number to an equivalent Version object.
     /// @param input A string that contains a version number to convert.
     /// @return An object that is equivalent to the version number specified in the input parameter.
