@@ -44,7 +44,7 @@ namespace xtd {
   /// @remarks A string is a sequential collection of characters that's used to represent text. A xtd::ustring object is a sequential collection of char that represent a string; a char corresponds to a UTF-8 code unit. The value of the xtd::ustring object is the content of the sequential collection of char, and unlike std::basic_string that value is immutable (that is, it is read-only).
   /// @remarks If you want the same mutable string class, you can use xtd::text::ustring_builder class.
   /// @remarks xtd::ustring is inherited from std::basic_string<char> and therefore offers the full (immutable) API of std::string.
-  class ustring : public object/*, public xtd::iequatable<ustring*/, public xtd::icomparable<ustring>, public std::basic_string<char> {
+  class ustring : public object, public xtd::icomparable<ustring>, public std::basic_string<char> {
   public:
     /// @name Fields
     
