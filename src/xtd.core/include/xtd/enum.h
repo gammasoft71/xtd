@@ -96,8 +96,6 @@ namespace xtd {
       if (to_int(value_) < to_int(value.value_)) return -1;
       return 1;
     }
-    
-    int32_t compare_to(const xtd::object& value) const noexcept override {return is<enum_object<enum_type>>(value) && compare_to(static_cast<const enum_object<enum_type>&>(value));}
         
     /// @brief Converts this instance to byte.
     /// @return A new byte_t object converted from this instance.

@@ -85,49 +85,65 @@ namespace xtd::tests {
     void test_method_(box_compare_to) {
       box<int32_t> b1(42);
       box<int32_t> b2(42);
+      assert::is_zero(b1.compare_to(b2), csf_);
+      
+      box<int32_t> b3(41);
+      assert::is_positive(b1.compare_to(b3), csf_);
+      
+      box<int32_t> b4(43);
+      assert::is_negative(b1.compare_to(b4), csf_);
+    }
+
+    void test_method_(box_operator_less) {
+      box<int32_t> b1(42);
+      box<int32_t> b2(42);
       assert::is_false(b1 < b2, csf_);
+      
+      box<int32_t> b3(41);
+      assert::is_false(b1 < b3, csf_);
+      
+      box<int32_t> b4(43);
+      assert::is_true(b1 < b4, csf_);
+    }
+
+    void test_method_(box_operator_less_equal) {
+      box<int32_t> b1(42);
+      box<int32_t> b2(42);
       assert::is_true(b1 <= b2, csf_);
       assert::is_false(b1 > b2, csf_);
       assert::is_true(b1 >= b2, csf_);
       
       box<int32_t> b3(41);
-      assert::is_false(b1 < b3, csf_);
       assert::is_false(b1 <= b3, csf_);
+      
+      box<int32_t> b4(43);
+      assert::is_true(b1 <= b4, csf_);
+    }
+    
+    void test_method_(box_operator_greater) {
+      box<int32_t> b1(42);
+      box<int32_t> b2(42);
+      assert::is_false(b1 > b2, csf_);
+      
+      box<int32_t> b3(41);
       assert::is_true(b1 > b3, csf_);
+      
+      box<int32_t> b4(43);
+      assert::is_false(b1 > b4, csf_);
+    }
+    
+    void test_method_(box_operator_greater_equal) {
+      box<int32_t> b1(42);
+      box<int32_t> b2(42);
+      assert::is_true(b1 >= b2, csf_);
+      
+      box<int32_t> b3(41);
       assert::is_true(b1 >= b3, csf_);
       
       box<int32_t> b4(43);
-      assert::is_true(b1 < b4, csf_);
-      assert::is_true(b1 <= b4, csf_);
-      assert::is_false(b1 > b4, csf_);
       assert::is_false(b1 >= b4, csf_);
-      
-      object& o1 = b2;
-      assert::is_false(b1 < o1, csf_);
-      assert::is_true(b1 <= o1, csf_);
-      assert::is_false(b1 > o1, csf_);
-      assert::is_true(b1 >= o1, csf_);
-      
-      object& o2 = b3;
-      assert::is_false(b1 < o2, csf_);
-      assert::is_false(b1 <= o2, csf_);
-      assert::is_true(b1 > o2, csf_);
-      assert::is_true(b1 >= o2, csf_);
-      
-      object& o3 = b4;
-      assert::is_true(b1 < o3, csf_);
-      assert::is_true(b1 <= o3, csf_);
-      assert::is_false(b1 > o3, csf_);
-      assert::is_false(b1 >= o3, csf_);
-      
-      ustring s1;
-      object& o4 = s1;
-      assert::is_true(b1 < o4, csf_);
-      assert::is_true(b1 <= o4, csf_);
-      assert::is_false(b1 > o4, csf_);
-      assert::is_false(b1 >= o4, csf_);
     }
-    
+
     void test_method_(box_parse) {
       assert::are_equal(42, box<int32_t>::parse("42"));
     }

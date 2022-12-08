@@ -98,7 +98,6 @@ namespace xtd {
     /// @{
     bool equals(const box& value) const noexcept override {return value_ == value.value_;}
     
-    int32_t compare_to(const object& value) const noexcept override {return (dynamic_cast<const box<type_t>*>(&value) ? compare_to(static_cast<const box<type_t>&>(value)) : -1);}
     int32_t compare_to(const box& value) const noexcept override {
       if (value_ == value.value_) return 0;
       if (value_ < value.value_) return -1;

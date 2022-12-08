@@ -79,11 +79,6 @@ guid::guid(const ustring& guid) {
   }
 }
 
-int32_t guid::compare_to(const object& obj) const noexcept {
-  if (!dynamic_cast<const guid*>(&obj)) return 1;
-  return compare_to(static_cast<const guid&>(obj));
-}
-
 int32_t guid::compare_to(const guid& value) const noexcept {
   for (size_t i = 0; i < data_.size(); i++)
     if (data_[i] > value.data_[i]) return 1;

@@ -153,10 +153,6 @@ int32_t time_zone_info::compare_to(const time_zone_info& tzi) const noexcept {
   return id_.compare_to(tzi.id_);
 }
 
-int32_t time_zone_info::compare_to(const object& obj) const noexcept {
-  return is<time_zone_info>(obj) && compare_to(static_cast<const time_zone_info&>(obj));
-}
-
 xtd::date_time time_zone_info::convert_time(const xtd::date_time& date_time, const xtd::time_zone_info& destination_time_zone) {
   return {};
 }

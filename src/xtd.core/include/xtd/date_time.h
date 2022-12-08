@@ -615,7 +615,6 @@ namespace xtd {
     /// The following example illustrates using the xtd::date_time::add_years method with a xtd::date_time value that represents a leap year day. It displays the date for the fifteen years prior to and the fifteen years that follow February 29, 2000.
     date_time add_years(int32_t value) const;
     
-    int32_t compare_to(const object& obj) const noexcept override;
     int32_t compare_to(const date_time& value) const noexcept override;
     
     /// @brief Returns the number of days in the specified month and year.

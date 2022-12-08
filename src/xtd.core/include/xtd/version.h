@@ -209,22 +209,6 @@ namespace xtd {
     /// @brief Compares the current xtd::version object to a specified object and returns an indication of their relative values.
     /// @param version An object to compare.
     /// @return A signed integer that indicates the relative values of the two objects, as shown in the following table.
-    /// | Return value      | Meaning                                                                                                       |
-    /// |-------------------|---------------------------------------------------------------------------------------------------------------|
-    /// | Less than zero    | The current xtd::version object is a version before version.                                                  |
-    /// | Zero              | The current xtd::version object is the same version as version.                                               |
-    /// | Greater than zero | The current xtd::version object is a version subsequent to version or version is not ta xtd::version object. |
-    /// @remarks The components of Version in decreasing order of importance are: major, minor, build, and revision. An unknown component is assumed to be older than any known component.
-    /// For example:
-    /// * xtd::version 1.1 is older than version 1.1.0
-    /// * xtd::version 1.1 is older than version 1.1.1
-    /// * xtd::version 1.1 is older than version 1.1.2.3
-    /// * xtd::version 1.1.2 is older than version 1.1.2.4
-    /// * xtd::version 1.2.5 is newer than version 1.2.3.4
-    int32_t compare_to(const object& version) const noexcept override;
-    /// @brief Compares the current xtd::version object to a specified object and returns an indication of their relative values.
-    /// @param version An object to compare.
-    /// @return A signed integer that indicates the relative values of the two objects, as shown in the following table.
     /// | Return value      | Meaning                                                              |
     /// |-------------------|----------------------------------------------------------------------|
     /// | Less than zero    | The current xtd::version object is a version before version.         |

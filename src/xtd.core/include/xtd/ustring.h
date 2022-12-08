@@ -542,7 +542,6 @@ namespace xtd {
     static int32_t compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length, xtd::string_comparison comparison_type) noexcept;
     
     int32_t compare_to(const ustring& tzi) const noexcept override;
-    int32_t compare_to(const object& obj) const noexcept override;
     
     /// @brief Concatenates four specified instances of string.
     /// @param str_a The first string to concatenate.
