@@ -68,6 +68,10 @@ stack_frame stack_frame::empty() noexcept {
   return {"", 0, "", 0, OFFSET_UNKNOWN};
 }
 
+bool stack_frame::equals(const stack_frame& sf) const noexcept {
+  return file_name_ == sf.file_name_ && file_line_number_ == sf.file_line_number_ && method_name_ == sf.method_name_ && file_column_number_ == sf.file_column_number_ && offset_ == sf.offset_;
+}
+
 uint32_t stack_frame::get_file_column_number() const noexcept {
   return file_column_number_;
 }
