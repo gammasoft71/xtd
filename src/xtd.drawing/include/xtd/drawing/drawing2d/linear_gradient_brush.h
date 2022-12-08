@@ -169,7 +169,7 @@ namespace xtd {
         
         /// @name Methods
         
-        /// @}
+        /// @{
         bool equals(const linear_gradient_brush& value) const noexcept override;
         /// @}
         
