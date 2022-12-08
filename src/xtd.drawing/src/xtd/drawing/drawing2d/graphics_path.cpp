@@ -28,14 +28,6 @@ graphics_path::~graphics_path() {
   }
 }
 
-bool graphics_path::operator ==(const graphics_path& value) const noexcept {
-  return data_ == value.data_;
-}
-
-bool graphics_path::operator !=(const graphics_path& value) const noexcept {
-  return !operator ==(value);
-}
-
 intptr_t graphics_path::handle() const noexcept {
   return data_->handle;
 }
@@ -288,6 +280,10 @@ void graphics_path::close_all_figures() {
 
 void graphics_path::close_figure() {
   native::graphics_path::close_figure(handle());
+}
+
+bool graphics_path::equals(const graphics_path& value) const noexcept {
+  return data_ == value.data_;
 }
 
 void graphics_path::flatten() {
