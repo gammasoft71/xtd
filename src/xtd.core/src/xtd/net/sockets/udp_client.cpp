@@ -234,6 +234,10 @@ size_t udp_client::end_send(std::shared_ptr<xtd::iasync_result> async_result) {
   return as<async_result_send>(async_result)->number_of_bytes_sent_;
 }
 
+bool udp_client::equals(const udp_client& s) const noexcept {
+  return data_ == s.data_;
+}
+
 void udp_client::join_multicast_group(const xtd::net::ip_address& multicast_address) {
   if (data_->client_socket.address_family() == address_family::inter_network) data_->client_socket.set_socket_option(socket_option_name::add_membership, multicast_option(multicast_address));
   else data_->client_socket.set_socket_option(socket_option_name::add_membership, ip_v6_multicast_option(multicast_address));
