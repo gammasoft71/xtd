@@ -64,7 +64,6 @@ namespace xtd {
       ///
       /// @{
       bool equals(const link_area&) const noexcept override;
-      bool equals(const object&) const noexcept override;
       xtd::ustring to_string() const noexcept override;
       /// @}
       

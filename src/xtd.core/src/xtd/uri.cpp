@@ -351,10 +351,6 @@ bool uri::equals(const uri& uri) const noexcept {
   return scheme_ == uri.scheme_ && scheme_delimiter_ == uri.scheme_delimiter_ && host_ == uri.host_ && port_ == uri.port_ && path_ == uri.path_ && query_ == uri.query_ && kind_ == uri.kind_;
 }
 
-bool uri::equals(const object& obj) const noexcept {
-  return is<uri>(obj) && equals((const uri&)obj);
-}
-
 ustring uri::to_string() const noexcept {
   return get_components(uri_components::absolute_uri, uri_format::unescaped);
 }

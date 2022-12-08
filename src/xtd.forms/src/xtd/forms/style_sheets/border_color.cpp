@@ -69,10 +69,6 @@ void border_color::top(const xtd::drawing::color& top) noexcept {
   }
 }
 
-bool border_color::equals(const object& other) const noexcept {
-  return is<border_color>(other) ? equals(static_cast<const border_color&>(other)) : false;
-}
-
 bool border_color::equals(const border_color& other) const noexcept {
   return all_ == other.all_ && left_ == other.left_ && top_ == other.top_ && right_ == other.right_ && bottom_ == other.bottom_;
 }

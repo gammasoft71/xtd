@@ -136,7 +136,6 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      bool equals(const object& other) const noexcept override;
       bool equals(const ip_address& other) const noexcept override;
       
       /// @brief Provides a copy of the IPAddress as an array of bytes.

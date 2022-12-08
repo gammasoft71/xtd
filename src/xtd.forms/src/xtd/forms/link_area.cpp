@@ -1,6 +1,4 @@
 #include "../../../include/xtd/forms/link_area.h"
-#include <xtd/as.h>
-#include <xtd/is.h>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -32,10 +30,6 @@ link_area& link_area::start(size_t value) noexcept {
 
 bool link_area::equals(const link_area& other) const noexcept {
   return start_ == other.start_ && length_ == other.length_;
-}
-
-bool link_area::equals(const object& other) const noexcept {
-  return is<link_area>(other) && equals(as<link_area>(other));
 }
 
 xtd::ustring link_area::to_string() const noexcept {

@@ -96,7 +96,6 @@ namespace xtd {
         /// @name Methods
         
         /// @{
-        bool equals(const object& other) const noexcept override {return is<theme>(other) ? equals(static_cast<const theme&>(other)) : false;}
         bool equals(const theme& other) const noexcept override {return name_ == other.name_ && description_ == other.description_ && authors_ == other.authors_ && website_ == other.website_;}
         
         /// @brief Creates a xtd::forms::style_sheets::theme object from the specified css text.

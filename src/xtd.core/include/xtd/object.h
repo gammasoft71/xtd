@@ -6,6 +6,7 @@
 #include <string>
 #include <memory>
 #include "core_export.h"
+#include "iequatable.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -41,6 +42,12 @@ namespace xtd {
     object(const object&) = default;
     object& operator =(const object&) = default;
     virtual ~object() = default;
+    //friend bool operator ==(const object& a, const object& b) noexcept {return a.equals(b);}
+    //friend bool operator !=(const object& a, const object& b) noexcept {return !a.equals(b);}
+    template<typename object_t>
+    friend bool operator ==(const iequatable<object_t>& a, const iequatable<object_t>& b) noexcept {return dynamic_cast<const iequatable<object_t>*>(&b) && a.equals(dynamic_cast<const iequatable<object_t>&>(b));}
+    template<typename object_t>
+    friend bool operator !=(const iequatable<object_t>& a, const iequatable<object_t>& b) noexcept {return !dynamic_cast<const iequatable<object_t>*>(&b) || !a.equals(dynamic_cast<const iequatable<object_t>&>(b));}
     /// @endcond
     
     /// @name Methods
@@ -52,8 +59,8 @@ namespace xtd {
     /// @par Examples
     /// The following code example compares the current instance with another object.
     /// @include object_equals.cpp
-    virtual bool equals(const object& obj) const noexcept;
-    
+    bool equals(const object& obj) const noexcept;
+
     /// @brief Determines whether the specified object instances are considered equal.
     /// @param object_a The first object to compare.
     /// @param object_b The second object to compare.
@@ -98,6 +105,19 @@ namespace xtd {
     /// @include object_to_string.cpp
     virtual xtd::ustring to_string() const noexcept;
     /// @}
+    
+    /// @cond
+    template<typename object_t>
+    bool equals(const iequatable<object_t>& obj) const noexcept {
+      if (dynamic_cast<const iequatable<object_t>*>(this)) return dynamic_cast<const iequatable<object_t>*>(this)->equals(obj);
+      return this == &obj;
+    }
+
+    template<typename object_t>
+    static bool equals(const iequatable<object_t>& object_a, const iequatable<object_t>& object_b) noexcept {
+      return object_a.equals(object_b);
+    }
+    /// @endcond
   };
   
   /// @cond

@@ -321,7 +321,6 @@ namespace xtd {
         /// @name Methods
         
         /// @{
-        bool equals(const object& other) const noexcept override;
         bool equals(const style_sheet& other) const noexcept override;
         
         /// @brief Gets the style sheet buttons collection from specified css string.

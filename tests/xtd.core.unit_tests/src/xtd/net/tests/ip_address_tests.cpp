@@ -117,16 +117,18 @@ namespace xtd::net::tests {
     void test_method_(equals) {
       assert::is_true(ip_address(172, 16, 12, 24).equals(ip_address(172, 16, 12, 24)), csf_);
       assert::is_false(ip_address(172, 16, 12, 24).equals(ip_address(172, 16, 12, 25)), csf_);
-      
-      ip_address addr1(172, 16, 12, 24);
-      ip_address addr2(172, 16, 12, 25);
-      object* obj1 = &addr1;
-      object* obj2 = &addr2;
-      assert::is_true(ip_address(172, 16, 12, 24).equals(*obj1), csf_);
-      assert::is_false(ip_address(172, 16, 12, 24).equals(*obj2), csf_);
-      assert::is_false(ip_address(172, 16, 12, 24).equals(ustring("172.16.12.24")), csf_);
     }
     
+    void test_method_(operator_equals) {
+      assert::is_true(ip_address(172, 16, 12, 24) == ip_address(172, 16, 12, 24), csf_);
+      assert::is_false(ip_address(172, 16, 12, 24) == ip_address(172, 16, 12, 25), csf_);
+    }
+    
+    void test_method_(operator_not_equals) {
+      assert::is_false(ip_address(172, 16, 12, 24) != ip_address(172, 16, 12, 24), csf_);
+      assert::is_true(ip_address(172, 16, 12, 24) != ip_address(172, 16, 12, 25), csf_);
+    }
+
     void test_method_(get_address_bytes) {
       collection_assert::are_equal({172, 16, 12, 24}, ip_address(172, 16, 12, 24).get_address_bytes(), csf_);
       collection_assert::are_equal({172, 16, 12, 24}, ip_address(static_cast<uint32_t>(bit_converter::to_int32({172, 16, 12, 24}, 0))).get_address_bytes(), csf_);

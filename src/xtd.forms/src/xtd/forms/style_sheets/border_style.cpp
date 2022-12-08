@@ -66,10 +66,6 @@ void border_style::top(border_type top) noexcept {
   }
 }
 
-bool border_style::equals(const object& other) const noexcept {
-  return is<border_style>(other) ? equals(static_cast<const border_style&>(other)) : false;
-}
-
 bool border_style::equals(const border_style& other) const noexcept {
   return all_ == other.all_ && left_ == other.left_ && top_ == other.top_ && right_ == other.right_ && bottom_ == other.bottom_;
 }

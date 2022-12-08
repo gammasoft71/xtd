@@ -95,9 +95,6 @@ ip_address& ip_address::scope_id(uint32_t value) {
   return *this;
 }
 
-bool ip_address::equals(const object& other) const noexcept {
-  return dynamic_cast<const ip_address*>(&other) && equals(static_cast<const ip_address&>(other));
-}
 bool ip_address::equals(const ip_address& other) const noexcept {
   return address_ == other.address_ && numbers_ == other.numbers_ && scope_id_ == other.scope_id_ && address_family_ == other.address_family_;
 }

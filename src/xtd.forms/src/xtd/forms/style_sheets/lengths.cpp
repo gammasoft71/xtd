@@ -67,10 +67,6 @@ void lengths::top(length top) noexcept {
   }
 }
 
-bool lengths::equals(const object& other) const noexcept {
-  return is<lengths>(other) ? equals(static_cast<const lengths&>(other)) : false;
-}
-
 bool lengths::equals(const lengths& other) const noexcept {
   return all_ == other.all_ && left_ == other.left_ && top_ == other.top_ && right_ == other.right_ && bottom_ == other.bottom_;
 }

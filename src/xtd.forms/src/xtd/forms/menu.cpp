@@ -113,10 +113,6 @@ bool menu::equals(const menu& value) const noexcept {
   return data_ == value.data_;
 }
 
-bool menu::equals(const object& obj) const noexcept {
-  return is<menu>(obj) && equals(as<menu>(obj));
-}
-
 optional<reference_wrapper<context_menu>> menu::get_context_menu() const noexcept {
   menu* item = const_cast<menu*>(this);
   while (item)

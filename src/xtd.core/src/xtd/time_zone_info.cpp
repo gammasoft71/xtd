@@ -63,10 +63,6 @@ bool time_zone_info::transition_time::equals(const time_zone_info::transition_ti
   return day_ == tt.day_ && day_of_week_ == tt.day_of_week_ && is_fixed_date_rule_ == tt.is_fixed_date_rule_ && month_ == tt.month_ && time_of_day_ == tt.time_of_day_ && week_ == tt.week_;
 }
 
-bool time_zone_info::transition_time::equals(const object& obj) const noexcept {
-  return is<transition_time>(obj) && equals(static_cast<const transition_time&>(obj));
-}
-
 const xtd::date_time& time_zone_info::adjustement_rule::date_end() const noexcept {
   return date_end_;
 }
@@ -89,10 +85,6 @@ time_zone_info::transition_time time_zone_info::adjustement_rule::daylight_trans
 
 bool time_zone_info::adjustement_rule::equals(const adjustement_rule& ar) const noexcept {
   return date_end_ == ar.date_end_ && date_start_ == ar.date_start_ && daylight_delta_ == ar.daylight_delta_ && daylight_transition_end_ == ar.daylight_transition_end_ && daylight_transition_start_ == ar.daylight_transition_start_;
-}
-
-bool time_zone_info::adjustement_rule::equals(const object& obj) const noexcept {
-  return is<adjustement_rule>(obj) && equals(static_cast<const adjustement_rule&>(obj));
 }
 
 time_zone_info::time_zone_info(const ustring& id, const ticks& base_utc_offset, const ustring& daylight_name, const ustring& display_name, const ustring& standard_name, bool supports_daylight_saving_time) : id_(id), base_utc_offset_(base_utc_offset), daylight_name_(daylight_name), display_name_(display_name), standard_name_(standard_name), supports_daylight_saving_time_(supports_daylight_saving_time) {
@@ -206,10 +198,6 @@ xtd::date_time time_zone_info::convert_to_utc(const xtd::date_time& date_time) {
 
 bool time_zone_info::equals(const time_zone_info& tzi) const noexcept {
   return id_.equals(tzi.id_);
-}
-
-bool time_zone_info::equals(const object& obj) const noexcept {
-  return is<time_zone_info>(obj) && equals(static_cast<const time_zone_info&>(obj));
 }
 
 std::vector<time_zone_info::adjustement_rule> time_zone_info::get_adjustement_rules() const noexcept {

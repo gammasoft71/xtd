@@ -156,7 +156,6 @@ namespace xtd {
       static transition_time create_floating_date_rule(date_time time_of_day, uint32_t month, uint32_t week, xtd::day_of_week day_of_week);
       
       bool equals(const transition_time& tt) const noexcept override;
-      bool equals(const object& obj) const noexcept override;
       /// @}
       
     private:
@@ -236,7 +235,6 @@ namespace xtd {
       
       /// @{
       bool equals(const adjustement_rule& ar) const noexcept override;
-      bool equals(const object& obj) const noexcept override;
       /// @}
       
     private:
@@ -375,7 +373,6 @@ namespace xtd {
     static xtd::date_time convert_to_utc(const xtd::date_time& date_time);
     
     bool equals(const time_zone_info& tzi) const noexcept override;
-    bool equals(const object& obj) const noexcept override;
 
     /// @brief Retrieves an array of xtd::time_zone_info::adjustment_rule objects that apply to the current xtd::time_zone_info object.
     /// @return An array of objects for this time zone.

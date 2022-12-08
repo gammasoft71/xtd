@@ -450,6 +450,7 @@ ustring& ustring::operator +=(const std::initializer_list<wchar_t>& il) {
   return *this;
 }
 
+/*
 bool ustring::operator ==(const ustring& other) const {
   return std::basic_string<value_type>(*this) == std::basic_string<value_type>(other);
 }
@@ -457,6 +458,7 @@ bool ustring::operator ==(const ustring& other) const {
 bool ustring::operator !=(const ustring& other) const {
   return !operator ==(other);
 }
+ */
 
 bool ustring::operator ==(const std::string& other) const {
   return *this == ustring(other);
@@ -665,10 +667,6 @@ bool ustring::contains(const ustring& value) const noexcept {
 
 bool ustring::equals(const ustring& other) const noexcept {
   return compare_to(other) == 0;
-}
-
-bool ustring::equals(const object& other) const noexcept {
-  return dynamic_cast<const ustring*>(&other) && equals(static_cast<const ustring&>(other));
 }
 
 ustring ustring::empty_string() noexcept {

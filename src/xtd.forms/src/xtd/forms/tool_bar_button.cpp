@@ -57,7 +57,6 @@ tool_bar_button& tool_bar_button::drop_down_menu(std::nullptr_t value) {
   return *this;
 }
 
-
 bool tool_bar_button::enabled() const noexcept {
   return data_->enabled;
 }

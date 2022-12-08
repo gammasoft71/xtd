@@ -96,7 +96,6 @@ namespace xtd {
     /// @name Methods
     
     /// @{
-    bool equals(const object& value) const noexcept override {return (dynamic_cast<const box<type_t>*>(&value) ? equals(static_cast<const box<type_t>&>(value)) : false);}
     bool equals(const box& value) const noexcept override {return value_ == value.value_;}
     
     int32_t compare_to(const object& value) const noexcept override {return (dynamic_cast<const box<type_t>*>(&value) ? compare_to(static_cast<const box<type_t>&>(value)) : -1);}

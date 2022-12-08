@@ -361,10 +361,6 @@ const style_sheet::user_controls_t& style_sheet::user_controls() const noexcept 
   return data_->user_controls;
 }
 
-bool style_sheet::equals(const object& other) const noexcept {
-  return is<style_sheet>(other) ? equals(static_cast<const style_sheet&>(other)) : false;
-}
-
 bool style_sheet::equals(const style_sheet& other) const noexcept {
   return data_->theme == other.data_->theme;
 }
