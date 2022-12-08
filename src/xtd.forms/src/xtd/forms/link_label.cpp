@@ -75,6 +75,18 @@ link_label& link_label::disabled_link_color(const xtd::drawing::color& color) {
   return *this;
 }
 
+xtd::forms::link_area link_label::link_area() const noexcept {
+  return data_->link_area;
+}
+
+link_label& link_label::link_area(xtd::forms::link_area value) {
+  if (data_->link_area != value) {
+    data_->link_area = value;
+    invalidate();
+  }
+  return *this;
+}
+
 xtd::forms::link_behavior link_label::link_behavior() const noexcept {
   return data_->link_behavior;
 }

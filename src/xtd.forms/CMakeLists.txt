@@ -162,6 +162,7 @@ add_sources(
   include/xtd/forms/lcd_style.h
   include/xtd/forms/light_button.h
   include/xtd/forms/light_buttons.h
+  include/xtd/forms/link_area.h
   include/xtd/forms/link_behavior.h
   include/xtd/forms/link_label.h
   include/xtd/forms/link_label_clicked_event_args.h
@@ -407,6 +408,7 @@ add_sources(
   src/xtd/forms/label_renderer.cpp
   src/xtd/forms/lcd_label.cpp
   src/xtd/forms/light_button.cpp
+  src/xtd/forms/link_area.cpp
   src/xtd/forms/link_label.cpp
   src/xtd/forms/link_label_clicked_event_args.cpp
   src/xtd/forms/link.cpp
