@@ -92,6 +92,10 @@ socket::~socket() {
   }
 }
 
+bool socket::equals(const socket& s) const noexcept {
+  return data_ == s.data_;
+}
+
 address_family socket::address_family() const noexcept {
   return data_->address_family;
 }
