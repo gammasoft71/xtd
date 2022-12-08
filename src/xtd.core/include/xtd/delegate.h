@@ -112,6 +112,20 @@ namespace xtd {
       return result;
     }
     
+    /// @brief Determines whether this instance and another specified delegateType object have the same value.
+    /// @param value The delegateType to compare.
+    /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
+    bool equals(const delegate& delegate) const noexcept override {
+      if (data_->functions.size() != delegate.data_->functions.size())
+        return false;
+      
+      for (size_t i = 0; i < data_->functions.size(); i++)
+        if (!are_equals(data_->functions[i], delegate.data_->functions[i]))
+          return false;
+      
+      return true;
+    }
+
     /// @brief Return if the delegate is empty.
     /// @return bool Return true if delegate is empty; otherwise false.
     bool is_empty() const noexcept { return data_->functions.size() == 0; }
@@ -174,20 +188,6 @@ namespace xtd {
       }
       if (data_->functions.back() == nullptr) throw xtd::argument_null_exception(current_stack_frame_);
       return data_->functions.back()();
-    }
-    
-    /// @brief Determines whether this instance and another specified delegateType object have the same value.
-    /// @param value The delegateType to compare.
-    /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
-    bool equals(const delegate& delegate) const noexcept override {
-      if (data_->functions.size() != delegate.data_->functions.size())
-        return false;
-        
-      for (size_t i = 0; i < data_->functions.size(); i++)
-        if (!are_equals(data_->functions[i], delegate.data_->functions[i]))
-          return false;
-          
-      return true;
     }
     
     delegate& operator =(const function_t& function) noexcept {
@@ -490,6 +490,24 @@ namespace xtd {
       return result;
     }
     
+    /// @brief Determines whether this instance and another specified delegateType object have the same value.
+    /// @param value The delegateType to compare.
+    /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
+    bool equals(const delegate& delegate) const noexcept override {
+      if (data_->functions.size() != delegate.data_->functions.size() || data_->no_arguments_functions.size() != delegate.data_->no_arguments_functions.size())
+        return false;
+      
+      for (size_t i = 0; i < data_->no_arguments_functions.size(); i++)
+        if (!are_equals(data_->no_arguments_functions[i], delegate.data_->no_arguments_functions[i]))
+          return false;
+      
+      for (size_t i = 0; i < data_->functions.size(); i++)
+        if (!are_equals(data_->functions[i], delegate.data_->functions[i]))
+          return false;
+      
+      return true;
+    }
+
     /// @brief Return if the delegate is empty.
     /// @return bool Return true if delegate is empty; otherwise false.
     bool is_empty() const noexcept { return data_->functions.size() == 0 && data_->no_arguments_functions.size() == 0; }
@@ -584,24 +602,6 @@ namespace xtd {
       }
       if (data_->functions.back() == nullptr) throw xtd::argument_null_exception(current_stack_frame_);
       return data_->functions.back()(arguments...);
-    }
-    
-    /// @brief Determines whether this instance and another specified delegateType object have the same value.
-    /// @param value The delegateType to compare.
-    /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
-    bool equals(const delegate& delegate) const noexcept override {
-      if (data_->functions.size() != delegate.data_->functions.size() || data_->no_arguments_functions.size() != delegate.data_->no_arguments_functions.size())
-        return false;
-        
-      for (size_t i = 0; i < data_->no_arguments_functions.size(); i++)
-        if (!are_equals(data_->no_arguments_functions[i], delegate.data_->no_arguments_functions[i]))
-          return false;
-          
-      for (size_t i = 0; i < data_->functions.size(); i++)
-        if (!are_equals(data_->functions[i], delegate.data_->functions[i]))
-          return false;
-          
-      return true;
     }
     /// @}
     
