@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "interface.h"
-#include "object.h"
+//#include "object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -25,19 +25,15 @@ namespace xtd {
     /// @param obj An object to compare with this object.
     /// @return true if the current object is equal to the other parameter; otherwise, false.
     virtual bool equals(const type_t&) const noexcept = 0;
-    
-    /// @brief Indicates whether the current object is equal to another object of the same type.
-    /// @param obj An object to compare with this object.
-    /// @return true if the current object is equal to the other parameter; otherwise, false.
-    virtual bool equals(const object&) const noexcept = 0;
     /// @}
     
     ///@cond
-    // Not correct for an interface but necessary for C++ language.
-    friend bool operator ==(const type_t& a, const type_t& b) {return a.equals(b);}
-    friend bool operator !=(const type_t& a, const type_t& b) {return !a.equals(b);}
-    friend bool operator ==(const type_t& a, const object& b) {return a.equals(b);}
-    friend bool operator !=(const type_t& a, const object& b) {return !a.equals(b);}
+    friend bool operator ==(const type_t& a, const type_t& b) noexcept {return a.equals(b);}
+    friend bool operator !=(const type_t& a, const type_t& b) noexcept {return !a.equals(b);}
+    template<typename object_t>
+    friend bool operator ==(const type_t& a, const iequatable<object_t>& b) noexcept {return dynamic_cast<const type_t*>(&b) && a.equals(dynamic_cast<const type_t&>(b));}
+    template<typename object_t>
+    friend bool operator !=(const type_t& a, const iequatable<object_t>& b) noexcept {return !dynamic_cast<const type_t*>(&b) || !a.equals(dynamic_cast<const type_t&>(b));}
     /// @endcond
   };
 }

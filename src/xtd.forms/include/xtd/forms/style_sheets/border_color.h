@@ -112,7 +112,6 @@ namespace xtd {
         /// @name Methods
         
         /// @{
-        bool equals(const object& other) const noexcept override;
         bool equals(const border_color& other) const noexcept override;
         /// @}
         

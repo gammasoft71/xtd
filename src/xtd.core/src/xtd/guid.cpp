@@ -91,10 +91,6 @@ int32_t guid::compare_to(const guid& value) const noexcept {
   return 0;
 }
 
-bool guid::equals(const object& g) const noexcept {
-  return dynamic_cast<const guid*>(&g) && equals(static_cast<const guid&>(g));
-}
-
 bool guid::equals(const guid& g) const noexcept {
   for (size_t index = 0; index < 16; index++)
     if (data_[index] != g.data_[index]) return false;

@@ -121,7 +121,6 @@ namespace xtd {
         /// @name Methods
         
         /// @{
-        bool equals(const object& other) const noexcept override;
         bool equals(const length& other) const noexcept override;
         
         /// @brief Gets the legnth in pixels.

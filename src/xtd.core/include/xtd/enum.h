@@ -7,6 +7,7 @@
 #include "enum_attribute.h"
 #include "format_exception.h"
 #include "icomparable.h"
+#include "iequatable.h"
 #include "number_styles.h"
 #include "static.h"
 #include "string_comparison.h"
@@ -34,7 +35,7 @@ namespace xtd {
   /// The following code show how to use xtd::enum_object class for an enum flags.
   /// @include enum_class_flags.cpp
   template<typename enum_t = std::nullptr_t>
-  class enum_object : public xtd::object, public icomparable<enum_object<enum_t>> {
+  class enum_object : public xtd::object, public xtd::icomparable<enum_object<enum_t>>, public xtd::iequatable<enum_object<enum_t>> {
   public:
     /// @name Alias
     
@@ -97,9 +98,7 @@ namespace xtd {
     }
     
     int32_t compare_to(const xtd::object& value) const noexcept override {return is<enum_object<enum_type>>(value) && compare_to(static_cast<const enum_object<enum_type>&>(value));}
-    
-    bool equals(const xtd::object& value) const noexcept override {return is<enum_object<enum_type>>(value) && equals(static_cast<const enum_object<enum_type>&>(value));}
-    
+        
     /// @brief Converts this instance to byte.
     /// @return A new byte_t object converted from this instance.
     byte_t to_byte() const noexcept {return static_cast<byte_t>(value_);}
@@ -182,7 +181,7 @@ namespace xtd {
     /// @}
     
     /// @cond
-    bool equals(const enum_object& value) const noexcept {return value_ == value.value_;}
+    bool equals(const enum_object& value) const noexcept override {return value_ == value.value_;}
     bool equals(enum_type value) const noexcept {return value_ == value;}
     template<typename attribute_t>
     bool equals(attribute_t value) const noexcept {return false;}

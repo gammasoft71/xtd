@@ -145,7 +145,6 @@ namespace xtd {
         /// @name Methods
         
         /// @{
-        bool equals(const object& other) const noexcept override {return is<background_image>(other) ? equals(static_cast<const background_image&>(other)) : false;}
         bool equals(const background_image& other) const noexcept override {return image_type_ == other.image_type_ && colors_ == other.colors_ && angle_ == other.angle_;}
         
         /// @brief Creates a xtd::drawing::brush from specified image data and rectangle.

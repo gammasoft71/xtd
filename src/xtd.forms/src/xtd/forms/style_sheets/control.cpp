@@ -214,10 +214,6 @@ style_sheets::control& style_sheets::control::font(const drawing::font& value) n
   return *this;
 }
 
-bool style_sheets::control::equals(const object& other) const noexcept {
-  return is<style_sheets::control>(other) ? equals(static_cast<const style_sheets::control&>(other)) : false;
-}
-
 bool style_sheets::control::equals(const style_sheets::control& other) const noexcept {
   return margin_ == other.margin_ && border_style_ == other.border_style_ && border_color_ == other.border_color_ && border_width_ == other.border_width_ && border_radius_ == other.border_radius_ && padding_ == other.padding_ && background_color_ == other.background_color_ && background_image_ == other.background_image_ && width_ == other.width_ && height_ == other.height_ && color_ == other.color_ && text_alignment_ == other.text_alignment_ && font_ == other.font_ && decoration_ == other.decoration_ && transformation_ == other.transformation_;
 }

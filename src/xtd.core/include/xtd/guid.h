@@ -132,7 +132,6 @@ namespace xtd {
     /// | Greater than zero | This instance is greater than obj. |
     int32_t compare_to(const guid& value) const noexcept override;
     
-    bool equals(const object& g) const noexcept override;
     bool equals(const guid& g) const noexcept override;
     
     /// @brief Initializes a new instance of the xtd::guid structure.

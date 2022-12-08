@@ -304,10 +304,6 @@ bool date_time::equals(const date_time& other) const noexcept {
   return value_.count() == other.value_.count();
 }
 
-bool date_time::equals(const object& other) const noexcept {
-  return dynamic_cast<const date_time*>(&other) && equals(static_cast<const date_time&>(other));
-}
-
 date_time date_time::from_binary(int64_t date_data) {
   return date_time(xtd::ticks(date_data & 0x3FFFFFFFFFFFFFFFLL), static_cast<date_time_kind>(static_cast<int32_t>(((date_data & 0xC000000000000000LL) >> 62) & 0x0000000000000003LL)));
 }

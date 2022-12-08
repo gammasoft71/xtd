@@ -112,7 +112,6 @@ namespace xtd {
         /// @name Methods
         
         /// @{
-        bool equals(const object& other) const noexcept override;
         bool equals(const lengths& other) const noexcept override;
         xtd::ustring to_string() const noexcept override;
         /// @}

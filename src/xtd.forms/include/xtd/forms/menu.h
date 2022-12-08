@@ -127,7 +127,6 @@ namespace xtd {
       
       /// @{
       bool equals(const menu&) const noexcept override;
-      bool equals(const object&) const noexcept override;
       
       /// @brief Gets the context_menu that contains this menu.
       /// @return The context_menu that contains this menu. The default is no value.

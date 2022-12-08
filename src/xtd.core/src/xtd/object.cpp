@@ -10,6 +10,7 @@ bool object::equals(const object& obj) const noexcept {
 
 bool object::equals(const object& object_a, const object& object_b) noexcept {
   return object_a.equals(object_b);
+  //return object_a == object_b;
 }
 
 size_t object::get_hash_code() const noexcept {

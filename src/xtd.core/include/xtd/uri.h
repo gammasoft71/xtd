@@ -665,8 +665,6 @@ namespace xtd {
     
     bool equals(const xtd::uri& uri) const noexcept override;
     
-    bool equals(const xtd::object& obj) const noexcept override;
-    
     /// @brief Gets a canonical string representation for the specified xtd::uri instance.
     /// @return string A string instance that contains the unescaped canonical representation of the xtd::uri instance. All characters are unescaped except #, ?, and %.
     /// @remarks The string returned by this method does not contain port information when the port is the default port for the scheme.

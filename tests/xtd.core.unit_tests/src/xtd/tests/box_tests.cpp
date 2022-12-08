@@ -58,22 +58,30 @@ namespace xtd::tests {
     void test_method_(box_equals) {
       box<int32_t> b1(42);
       box<int32_t> b2(42);
+      assert::is_true(b1.equals(b2), csf_);
+      
+      box<int32_t> b3(41);
+      assert::is_false(b1.equals(b3), csf_);
+    }
+    
+    void test_method_(box_operator_equals) {
+      box<int32_t> b1(42);
+      box<int32_t> b2(42);
       assert::is_true(b1 == b2, csf_);
       
       box<int32_t> b3(41);
       assert::is_false(b1 == b3, csf_);
-      
-      object& o1 = b2;
-      assert::is_true(b1 == o1, csf_);
-      
-      object& o2 = b3;
-      assert::is_false(b1 == o2, csf_);
-      
-      ustring s1;
-      object& o3 = s1;
-      assert::is_false(b1 == o3, csf_);
     }
     
+    void test_method_(box_operator_not_equals) {
+      box<int32_t> b1(42);
+      box<int32_t> b2(42);
+      assert::is_false(b1 != b2, csf_);
+      
+      box<int32_t> b3(41);
+      assert::is_true(b1 != b3, csf_);
+    }
+
     void test_method_(box_compare_to) {
       box<int32_t> b1(42);
       box<int32_t> b2(42);

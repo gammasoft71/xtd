@@ -649,7 +649,6 @@ namespace xtd {
     static int32_t days_in_month(uint32_t year, uint32_t month);
     
     bool equals(const date_time&) const noexcept override;
-    bool equals(const object&) const noexcept override;
     
     /// @brief Deserializes a 64-bit binary value and recreates an original serialized xtd::date_time object.
     /// @param date_data A 64-bit signed integer that encodes the xtd::date_time::kind property in a 2-bit field and the xtd::date_time::ticks property in a 62-bit field.

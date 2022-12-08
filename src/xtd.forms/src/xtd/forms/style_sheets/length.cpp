@@ -30,10 +30,6 @@ void length::unit(length_unit value) noexcept {
   unit_ = value;
 }
 
-bool length::equals(const object& other) const noexcept {
-  return is<length>(other) ? equals(static_cast<const length&>(other)) : false;
-}
-
 bool length::equals(const length& other) const noexcept {
   return value_ == other.value_ && unit_ == other.unit_;
 }

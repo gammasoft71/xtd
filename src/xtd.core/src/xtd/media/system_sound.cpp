@@ -11,10 +11,6 @@ using namespace xtd::media;
 system_sound::system_sound(uint32_t type) : type_(type) {
 }
 
-bool system_sound::equals(const object& obj) const noexcept {
-  return is<system_sound>(obj) && equals((const system_sound&)obj);
-}
-
 bool system_sound::equals(const system_sound& sound) const noexcept {
   return type_ == sound.type_;
 }

@@ -67,10 +67,6 @@ void border_radius::top_right(length top_right) noexcept {
   }
 }
 
-bool border_radius::equals(const object& other) const noexcept {
-  return is<border_radius>(other) ? equals(static_cast<const border_radius&>(other)) : false;
-}
-
 bool border_radius::equals(const border_radius& other) const noexcept {
   return all_ == other.all_ && top_left_ == other.top_left_ && top_right_ == other.top_left_ && bottom_left_ == other.bottom_left_ && bottom_right_ == other.bottom_right_;
 }

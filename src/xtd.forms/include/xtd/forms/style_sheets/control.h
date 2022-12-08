@@ -208,7 +208,6 @@ namespace xtd {
         /// @name Methods
         
         /// @{
-        bool equals(const object& other) const noexcept override;
         bool equals(const control& other) const noexcept override;
         
         static control create_control() {return control();}
