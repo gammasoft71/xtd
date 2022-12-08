@@ -28,7 +28,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of linear_gradient_brush class.
       /// @include fill_rectangle.cpp
-      class drawing_export_ linear_gradient_brush final : public brush, iequatable<linear_gradient_brush> {
+      class drawing_export_ linear_gradient_brush final : public brush, xtd::iequatable<linear_gradient_brush> {
       public:
         /// @name Constructors
         

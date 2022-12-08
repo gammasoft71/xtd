@@ -32,7 +32,7 @@ namespace xtd {
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing drawing
-      class drawing_export_ graphics_path final : public object, iequatable<graphics_path> {
+      class drawing_export_ graphics_path final : public xtd::object, xtd::iequatable<graphics_path> {
       public:
         /// @name Constructors
         
