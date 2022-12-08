@@ -26,14 +26,19 @@ namespace xtd {
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing drawing
-      class drawing_export_ graphics_state final : public xtd::object {
+      class drawing_export_ graphics_state final : public xtd::object, public xtd::iequatable<graphics_state> {
       public:
         /// @cond
         graphics_state(const graphics_state& value) = default;
         graphics_state& operator =(const graphics_state& value) = default;
-        bool operator ==(const graphics_state& value) const noexcept;
-        bool operator !=(const graphics_state& value) const noexcept;
         /// @endcond
+
+        /// @name Methods
+        
+        /// @{
+        bool equals(const graphics_state& value) const noexcept override;
+        /// @}
+
         
       private:
         friend xtd::drawing::graphics;
