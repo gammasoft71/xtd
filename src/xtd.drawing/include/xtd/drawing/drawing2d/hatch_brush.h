@@ -28,7 +28,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of hatch_brush class.
       /// @include fill_rectangle.cpp
-      class drawing_export_ hatch_brush final : public brush {
+      class drawing_export_ hatch_brush final : public brush, public iequatable<hatch_brush> {
       public:
         /// @name Constructors
         
@@ -48,8 +48,6 @@ namespace xtd {
         /// @cond
         hatch_brush(const hatch_brush& value);
         hatch_brush& operator =(const hatch_brush& value);
-        bool operator ==(const hatch_brush& value) const noexcept;
-        bool operator !=(const hatch_brush& value) const noexcept;
         /// @endcond
         
         /// @name Properties
@@ -68,6 +66,12 @@ namespace xtd {
         xtd::drawing::drawing2d::hatch_style hatch_style() const noexcept;
         /// @}
         
+        /// @name Methods
+        
+        /// @{
+        bool equals(const hatch_brush& value) const noexcept override;
+        /// @}
+
       private:
         hatch_brush();
         void recreate_handle();
