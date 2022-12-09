@@ -149,7 +149,7 @@ namespace xtd {
   /// @remarks * xtd::iobservable::unsubscribe, that indicates that an observer no longer wants receive push-based notifications.
   /// @remarks At any given time, a given provider may have zero, one, or multiple observers. The provider is responsible for storing references to observers and ensuring that they are valid before it sends notifications. The xtd::iobservable interface does not make any assumptions about the number of observers or the order in which notifications are sent.
   /// @remarks The provider sends the following three kinds of notifications to the observer by calling xtd::iobserver methods:
-  /// @remarks * The current data. The provider can call the xtd::iobserver::on_next method to pass the observer a T object that has current data, changed data, or fresh data.
+  /// @remarks * The current data. The provider can call the xtd::iobserver::on_next method to pass the observer a @p type_t object that has current data, changed data, or fresh data.
   /// @remarks * An error condition. The provider can call the xtd::iobserver::on_error method to notify the observer that some error condition has occurred.
   /// @remarks * No further data. The provider can call the xtd::iobserver::on_completed method to notify the observer that it has finished sending notifications.
   class iobservable interface_ {
