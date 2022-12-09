@@ -42,7 +42,7 @@ namespace xtd {
     class forms_export_ domain_up_down : public up_down_base {
     public:
       /// @brief Represent an item contained in the domain_up_down::object_collection collection.
-      class item : public object {
+      class item : public object, public icomparable<item>, public iequatable<item> {
       public:
         /// @name Constructors
         
@@ -62,12 +62,6 @@ namespace xtd {
         item(const char* value);
         item(const item& value) = default;
         item& operator =(const item& value) = default;
-        bool operator ==(const item& value) const noexcept;
-        bool operator !=(const item& value) const noexcept;
-        bool operator <(const item& value) const noexcept;
-        bool operator <=(const item& value) const noexcept;
-        bool operator >(const item& value) const noexcept;
-        bool operator >=(const item& value) const noexcept;
         /// @endcond
         
         /// @name Properties
@@ -85,6 +79,8 @@ namespace xtd {
         /// @name Methods
         
         /// @{
+        int32_t compare_to(const item& value) const noexcept override;
+        bool equals(const item& value) const noexcept override;
         /// @brief Returns a string containing the vague of the item.
         /// @return A string containing the value of the item.
         xtd::ustring to_string() const noexcept override;
