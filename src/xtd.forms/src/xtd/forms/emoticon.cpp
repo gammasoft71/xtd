@@ -33,20 +33,16 @@ emoticon::emoticon(char32_t codepoint) {
   data_->codepoints = {codepoint};
 }
 
-bool emoticon::operator ==(const emoticon& value) const noexcept {
-  return data_->name == value.data_->name && data_->codepoints == value.data_->codepoints;
-}
-
-bool emoticon::operator !=(const emoticon& value) const noexcept {
-  return !operator ==(value);
-}
-
 const xtd::ustring& emoticon::name() const noexcept {
   return data_->name;
 }
 
 const std::vector<char32_t>& emoticon::codepoints() const noexcept {
   return data_->codepoints;
+}
+
+bool emoticon::equals(const emoticon& value) const noexcept {
+  return data_->name == value.data_->name && data_->codepoints == value.data_->codepoints;
 }
 
 xtd::ustring emoticon::to_string() const noexcept {

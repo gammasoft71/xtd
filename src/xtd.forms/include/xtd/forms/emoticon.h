@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of emoticon class.
     /// @include emoticons.cpp
-    class forms_export_ emoticon : public object {
+    class forms_export_ emoticon : public object, public iequatable<emoticon> {
     public:
       /// @name Fields
       
@@ -108,8 +108,6 @@ namespace xtd {
         *data_ = *other.data_;
         return *this;
       }
-      bool operator ==(const emoticon& value) const noexcept;
-      bool operator !=(const emoticon& value) const noexcept;
       /// @endcond
       
       /// @name Properties
@@ -127,6 +125,8 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      bool equals(const emoticon& value) const noexcept override;
+
       /// @brief Returns a string containing the codepoints of the emoticons.
       /// @return A string containing the codepoints of the emoticon. Empty string ("") for none codepoints.
       xtd::ustring to_string() const noexcept override;
