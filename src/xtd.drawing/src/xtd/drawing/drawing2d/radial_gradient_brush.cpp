@@ -56,39 +56,6 @@ radial_gradient_brush& radial_gradient_brush::operator =(const radial_gradient_b
   return *this;
 }
 
-bool radial_gradient_brush::operator ==(const radial_gradient_brush& value) const noexcept {
-  return data_ == value.data_;
-}
-
-bool radial_gradient_brush::operator !=(const radial_gradient_brush& value) const noexcept {
-  return !operator ==(value);
-}
-
-float radial_gradient_brush::radius() const noexcept {
-  return data_->radius;
-}
-
-radial_gradient_brush& radial_gradient_brush::radius(float value) noexcept {
-  if (data_->radius != value) {
-    data_->radius = value;
-    recreate_handle();
-  }
-  return *this;
-}
-
-radial_gradient_brush& radial_gradient_brush::radial_colors(const gradient_stop_collection& value) {
-  if (data_->radial_colors != value) {
-    if (value.size() < 2) throw argument_exception(csf_);
-    data_->radial_colors = value;
-    recreate_handle();
-  }
-  return *this;
-}
-
-const gradient_stop_collection& radial_gradient_brush::radial_colors() const noexcept {
-  return data_->radial_colors;
-}
-
 xtd::drawing::point_f radial_gradient_brush::center_point() const noexcept {
   return data_->center_point;
 }
@@ -119,6 +86,35 @@ radial_gradient_brush& radial_gradient_brush::focal_point(const point_f& value) 
 
 radial_gradient_brush& radial_gradient_brush::focal_point(const point& value) noexcept {
   return focal_point(point_f(as<float>(value.x()), as<float>(value.y())));
+}
+
+radial_gradient_brush& radial_gradient_brush::radial_colors(const gradient_stop_collection& value) {
+  if (data_->radial_colors != value) {
+    if (value.size() < 2) throw argument_exception(csf_);
+    data_->radial_colors = value;
+    recreate_handle();
+  }
+  return *this;
+}
+
+const gradient_stop_collection& radial_gradient_brush::radial_colors() const noexcept {
+  return data_->radial_colors;
+}
+
+float radial_gradient_brush::radius() const noexcept {
+  return data_->radius;
+}
+
+radial_gradient_brush& radial_gradient_brush::radius(float value) noexcept {
+  if (data_->radius != value) {
+    data_->radius = value;
+    recreate_handle();
+  }
+  return *this;
+}
+
+bool radial_gradient_brush::equals(const radial_gradient_brush& value) const noexcept {
+  return data_ == value.data_;
 }
 
 void radial_gradient_brush::recreate_handle() {

@@ -3,14 +3,6 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-bool switch_base::operator ==(const switch_base& value) const noexcept {
-  return display_name_ == value.display_name_ && description_ == value.description_ && attributes_ == value.attributes_ && switch_setting_ == value.switch_setting_ && value_ == value.value_;
-}
-
-bool switch_base::operator !=(const switch_base& value) const noexcept {
-  return !operator ==(value);
-}
-
 const std::map<ustring, ustring>& switch_base::attributes() const noexcept {
   return attributes_;
 }
@@ -29,6 +21,10 @@ const ustring& switch_base::description() const noexcept {
 
 const ustring& switch_base::display_name() const noexcept {
   return display_name_;
+}
+
+bool switch_base::equals(const switch_base& value) const noexcept {
+  return display_name_ == value.display_name_ && description_ == value.description_ && attributes_ == value.attributes_ && switch_setting_ == value.switch_setting_ && value_ == value.value_;
 }
 
 switch_base::switch_base(const ustring& display_name, const ustring& description) : display_name_(display_name), description_(description) {

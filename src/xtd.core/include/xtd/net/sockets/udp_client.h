@@ -37,7 +37,7 @@ namespace xtd {
       /// @par Examples
       /// The following example shows how to use IPv6 xtd::net::sockets::udp_client class.
       /// @include udp_client_ip_v6.cpp
-      class core_export_ udp_client : public xtd::object {
+      class core_export_ udp_client : public xtd::object, public iequatable<udp_client> {
         class async_result_socket : public xtd::object, public xtd::iasync_result {
         public:
           explicit async_result_socket(std::any async_state) : async_state_(async_state) {}
@@ -123,8 +123,6 @@ namespace xtd {
         udp_client(const udp_client&) = default;
         ~udp_client();
         udp_client& operator =(const udp_client&) = default;
-        bool operator ==(const udp_client& s) const {return data_ == s.data_;};
-        bool operator !=(const udp_client& s) const {return !operator ==(s);};
         /// @endcond
         
         /// @name Properties
@@ -364,7 +362,9 @@ namespace xtd {
         /// @remarks To perform this operation synchronously, use the xtd::net::sockets::udp_client::send method.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         size_t end_send(std::shared_ptr<xtd::iasync_result> async_result);
-        
+
+        bool equals(const udp_client& s) const noexcept override;
+
         /// @brief Adds a xtd::net::sockets::udp_client to a multicast group.
         /// @param multicast_address The multicast xtd::net::ip_address of the group you want to join.
         /// @exception argument_exception The IP address is not compatible with the xtd::net::sockets::address_family value that defines the addressing scheme of the socket.

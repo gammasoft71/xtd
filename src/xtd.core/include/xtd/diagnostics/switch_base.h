@@ -28,13 +28,11 @@ namespace xtd {
     /// @remarks This class is the base class for the boolean_switch, source_switch and the trace_switch classes. These switches meet most debugging and tracing needs.
     /// @par Notes to implementers
     /// If you need trace levels, or mechanisms for setting switch levels different from those provided by boolean_switch, source_switch and trace_switch, you can inherit from switch_base. When inheriting from this class, you must implement the switch_setting method.
-    class core_export_ switch_base : public xtd::object {
+    class core_export_ switch_base : public xtd::object, public xtd::iequatable<switch_base> {
     public:
       /// @cond
       switch_base(const switch_base& value) = default;
       switch_base& operator =(const switch_base& value) = default;
-      bool operator ==(const switch_base& value) const noexcept;
-      bool operator !=(const switch_base& value) const noexcept;
       /// @endcond
       
       /// @name Properties
@@ -61,6 +59,12 @@ namespace xtd {
       const xtd::ustring& display_name() const noexcept;
       /// @}
       
+      /// @name Methods
+      
+      /// @{
+      bool equals(const switch_base& value) const noexcept override;
+      /// @}
+
     protected:
       /// @name Protected constructors
       

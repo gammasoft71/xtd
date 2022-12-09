@@ -31,7 +31,7 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates the use of the xtd::diagnostics::stack_frame class to provide the stack frame information for a stack trace.
     /// @include stack_frame.cpp
-    class core_export_ stack_frame : public xtd::object {
+    class core_export_ stack_frame : public xtd::object, public xtd::iequatable<stack_frame> {
     public:
     
       /// @name Constructors
@@ -80,8 +80,6 @@ namespace xtd {
       stack_frame(const stack_frame&) = default;
       stack_frame(stack_frame&&) = default;
       stack_frame& operator =(const stack_frame&) = default;
-      bool operator ==(const stack_frame& sf) const {return file_name_ == sf.file_name_ && file_line_number_ == sf.file_line_number_ && method_name_ == sf.method_name_ && file_column_number_ == sf.file_column_number_ && offset_ == sf.offset_;}
-      bool operator !=(const stack_frame& sf) const {return !operator ==(sf);}
       /// @endcond
       /// @}
       
@@ -100,6 +98,8 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      bool equals(const stack_frame& sf) const noexcept override;
+
       /// @brief Gets the column number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.
       /// @return The file column number, or 0 (zero) if the file column number cannot be determined.
       /// @par Examples

@@ -3,10 +3,6 @@
 
 using namespace xtd::drawing::drawing2d;
 
-bool graphics_state::operator ==(const graphics_state& value) const noexcept {
+bool graphics_state::equals(const graphics_state& value) const noexcept {
   return handle_ == value.handle_;
-}
-
-bool graphics_state::operator !=(const graphics_state& value) const noexcept {
-  return !operator ==(value);
 }

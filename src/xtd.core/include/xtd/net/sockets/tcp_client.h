@@ -41,7 +41,7 @@ namespace xtd {
       /// @par Examples
       /// The following example shows how to use IPv6 xtd::net::sockets::tcp_client class with xtd::net::sockets::network_stream, xtd::net::sockets::socket, xtd::io::stream_reader and xtd::io::stream_writer classes.
       /// @include tcp_client_ip_v6.cpp
-      class core_export_ tcp_client : public xtd::object {
+      class core_export_ tcp_client : public xtd::object, public iequatable<tcp_client> {
       public:
         /// @name Constructors
         
@@ -74,8 +74,6 @@ namespace xtd {
         tcp_client(const tcp_client&) = default;
         ~tcp_client();
         tcp_client& operator =(const tcp_client&) = default;
-        bool operator ==(const tcp_client& s) const {return data_ == s.data_;};
-        bool operator !=(const tcp_client& s) const {return !operator ==(s);};
         /// @endcond
         
         /// @name Properties
@@ -324,6 +322,8 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void end_connect(std::shared_ptr<xtd::iasync_result> async_result);
         
+        bool equals(const tcp_client& s) const noexcept override;
+
         /// @brief Returns the xtd::net::sockets::network_stream used to send and receive data.
         /// @return The underlying xtd::net::sockets::network_stream.
         /// @remarks xtd::net::sockets::tcp_client::get_stream returns a xtd::net::sockets::network_stream that you can use to send and receive data. The xtd::net::sockets::network_stream class inherits from the std::iostream class, which provides a rich collection of methods and properties used to facilitate network communications.You must call the xtd::net::sockets::tcp_client::connect method first, or the xtd::net::sockets::tcp_client::get_stream method will throw an xtd::invalid_operation_exception. After you have obtained the xtd::net::sockets::network_stream, call the std::iostream::write method to send data to the remote host. Call the std::iostream::read method to receive data arriving from the remote host. Both of these methods block until the specified operation is performed. You can avoid blocking on a read operation by checking the xtd::net::sockets::network_stream::data_available property. A true value means that data has arrived from the remote host and is available for reading. In this case, std::iostream::read is guaranteed to complete immediately. If the remote host has shutdown its connection, std::iostream::read will immediately return with zero bytes.
