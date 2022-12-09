@@ -68,14 +68,6 @@ icon::~icon() {
     native::icon::destroy(data_->handle);
 }
 
-bool icon::operator ==(const icon& icon) const noexcept {
-  return data_->handle == icon.data_->handle;
-}
-
-bool icon::operator !=(const icon& icon) const noexcept {
-  return !operator ==(icon);
-}
-
 intptr_t icon::handle() const noexcept {
   return data_->handle;
 }
@@ -92,12 +84,8 @@ int32_t icon::width() const noexcept {
   return data_->size.width();
 }
 
-void icon::save(const ustring& filename) const {
-  native::icon::save(data_->handle, filename);
-}
-
-void icon::save(std::ostream& stream) const {
-  native::icon::save(data_->handle, stream, IFM_ICO);
+bool icon::equals(const icon& icon) const noexcept {
+  return data_->handle == icon.data_->handle;
 }
 
 icon icon::from_handle(intptr_t handle) {
@@ -109,6 +97,14 @@ icon icon::from_handle(intptr_t handle) {
 
 icon icon::from_bitmap(const bitmap& bitmap) {
   return icon(bitmap);
+}
+
+void icon::save(const ustring& filename) const {
+  native::icon::save(data_->handle, filename);
+}
+
+void icon::save(std::ostream& stream) const {
+  native::icon::save(data_->handle, stream, IFM_ICO);
 }
 
 bitmap icon::to_bitmap() const {
