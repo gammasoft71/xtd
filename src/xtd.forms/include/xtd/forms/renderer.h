@@ -27,7 +27,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms renderers
-    class forms_export_ renderer : public object {
+    class forms_export_ renderer : public object, public iequatable<renderer> {
     public:
       /// @name Alias
       
@@ -53,8 +53,6 @@ namespace xtd {
       /// @cond
       renderer(const renderer&);
       renderer& operator =(const renderer&);
-      bool operator ==(const renderer& value) const noexcept;
-      bool operator !=(const renderer& value) const noexcept;
        /// @endcond
       
       /// @name Properties
@@ -79,7 +77,9 @@ namespace xtd {
       void draw_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color);
       void draw_check_box(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color);
       void draw_radio_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color);
-      
+
+      bool equals(const renderer& value) const noexcept override;
+
       xtd::ustring to_string() const noexcept override;
       /// @}
       

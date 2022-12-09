@@ -28,14 +28,6 @@ renderer& renderer::operator =(const renderer& value) {
   return *this;
 }
 
-bool renderer::operator ==(const renderer& value) const noexcept {
-  return data_->name == value.data_->name;
-}
-
-bool renderer::operator !=(const renderer& value) const noexcept {
-  return !operator ==(value);
-}
-
 const xtd::ustring& renderer::name() const {
   return data_->name;
 }
@@ -79,6 +71,10 @@ void renderer::draw_check_box(xtd::drawing::graphics g, const xtd::drawing::rect
 
 void renderer::draw_radio_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
   data_->radio_button_renderer(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+}
+
+bool renderer::equals(const renderer& value) const noexcept {
+  return data_->name == value.data_->name;
 }
 
 xtd::ustring renderer::to_string() const noexcept {
