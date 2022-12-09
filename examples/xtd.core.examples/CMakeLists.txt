@@ -18,6 +18,7 @@ add_projects(
   exceptions
   format
   guid
+  interfaces
   io
   keywords
   mains
