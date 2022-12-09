@@ -32,7 +32,7 @@ namespace xtd {
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing drawing
-      class drawing_export_ graphics_path final : public object {
+      class drawing_export_ graphics_path final : public xtd::object, xtd::iequatable<graphics_path> {
       public:
         /// @name Constructors
         
@@ -47,8 +47,6 @@ namespace xtd {
         graphics_path(const xtd::drawing::drawing2d::graphics_path& value);
         graphics_path& operator =(const xtd::drawing::drawing2d::graphics_path& value);
         ~graphics_path();
-        bool operator ==(const xtd::drawing::drawing2d::graphics_path& value) const noexcept;
-        bool operator !=(const xtd::drawing::drawing2d::graphics_path& value) const noexcept;
         /// @endcond
         
         /// @name Properties
@@ -394,6 +392,8 @@ namespace xtd {
         /// @brief Closes the current figure and starts a new figure. If the current figure contains a sequence of connected lines and curves, the method closes the loop by connecting a line from the endpoint to the starting point.
         void close_figure();
         
+        bool equals(const xtd::drawing::drawing2d::graphics_path& value) const noexcept override;
+
         /// @brief Converts each curve in this path into a sequence of connected line segments.
         void flatten();
         

@@ -69,7 +69,7 @@ namespace xtd {
       /// my_matrix.scale(1, 2, matrix_order::append);
       /// my_matrix.translate(5, 0, matrix_order::append);
       /// @endcode
-      class drawing_export_ matrix final : public object {
+      class drawing_export_ matrix final : public object, public xtd::iequatable<matrix> {
       public:
         /// @name Constructors
         
@@ -99,8 +99,6 @@ namespace xtd {
         matrix(const xtd::drawing::drawing2d::matrix& value);
         matrix& operator =(const xtd::drawing::drawing2d::matrix& value);
         ~matrix();
-        bool operator ==(const xtd::drawing::drawing2d::matrix& value) const noexcept;
-        bool operator !=(const xtd::drawing::drawing2d::matrix& value) const noexcept;
         /// @endcond
         
         /// @name Properties
@@ -135,6 +133,8 @@ namespace xtd {
         /// @name Methods
         
         /// @{
+        bool equals(const xtd::drawing::drawing2d::matrix& value) const noexcept override;
+
         /// @brief Inverts this xtd::drawing::drawing2d::matrix, if it is invertible.
         void invert();
         

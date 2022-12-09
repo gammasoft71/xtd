@@ -28,7 +28,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of linear_gradient_brush class.
       /// @include fill_rectangle.cpp
-      class drawing_export_ linear_gradient_brush final : public brush {
+      class drawing_export_ linear_gradient_brush final : public brush, xtd::iequatable<linear_gradient_brush> {
       public:
         /// @name Constructors
         
@@ -133,8 +133,6 @@ namespace xtd {
         /// @cond
         linear_gradient_brush(const linear_gradient_brush& value);
         linear_gradient_brush& operator =(const linear_gradient_brush& value);
-        bool operator ==(const linear_gradient_brush& value) const noexcept;
-        bool operator !=(const linear_gradient_brush& value) const noexcept;
         /// @endcond
         
         /// @name Properties
@@ -167,6 +165,12 @@ namespace xtd {
         /// @param value A xtd::drawing::rectangle_f structure that specifies the starting and ending points of the linear gradient.
         /// @return Current linear_gradient_brush instance.
         linear_gradient_brush& rectangle(const xtd::drawing::rectangle& value) noexcept;
+        /// @}
+        
+        /// @name Methods
+        
+        /// @{
+        bool equals(const linear_gradient_brush& value) const noexcept override;
         /// @}
         
       private:

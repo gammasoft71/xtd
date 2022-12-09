@@ -17,11 +17,8 @@ trace_listener_collection& trace_listener_collection::operator =(const trace_lis
   return *this;
 }
 
-bool trace_listener_collection::operator ==(const trace_listener_collection& value) const {
-  return reinterpret_cast<const base&>(*this) == reinterpret_cast<const base&>(value);
-}
-bool trace_listener_collection::operator !=(const trace_listener_collection& value) const {
-  return !operator ==(value);
+bool trace_listener_collection::equals(const trace_listener_collection& value) const noexcept {
+  return static_cast<const base&>(*this) == static_cast<const base&>(value);
 }
 
 trace_listener_collection::const_reference trace_listener_collection::operator [](const ustring& name) const {

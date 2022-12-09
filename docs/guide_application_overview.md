@@ -27,7 +27,7 @@ The following methods are used to start process event loop:
 * [xtd::forms::application::run(xtd::forms::application_context& context)](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#ab79aa8eba69cde497bae6657cb11eab8) begins running a standard application message loop on the current thread, with an application_context. The message loop runs until [xtd::forms::application::exit](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#a1f7d29b0aeda0c96f5acc4e38ad5902a) or [xtd::forms::application::exit_thread](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#a7cd6fe69c23173cb2dabae8f6c7a1690) is called or the [xtd::forms::application_context::thread_exit](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga3dc1fee2312e39f7032b071ed5ee0f54) event is raised on the context object.
 * [xtd::forms::application::run()](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e) begins running a standard application message loop on the current thread, without a form. If you use this method you have to stop the application yourself with the method [xtd::forms::application::exit()](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#a1f7d29b0aeda0c96f5acc4e38ad5902a) or [xtd::forms:application::exit_thread()](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#a7cd6fe69c23173cb2dabae8f6c7a1690) when for example the last window is closed. Because there is no main window that when closed stops the application.
 
-The following code shows the use of the [application::run()](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e) method without paramter. 
+The following code shows the use of the [application::run()](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e) method without parameter. 
 Unlike the method with the specified form parameter, the message loop application will not stop when you close the window.
 You have to call the method [applicati::exit](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#a1f7d29b0aeda0c96f5acc4e38ad5902a) or [application::exit_thread](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#a7cd6fe69c23173cb2dabae8f6c7a1690) explicitly.
 
@@ -41,7 +41,7 @@ int main() {
   form1.show();
   form1.form_closed += [] {
     // If you comment the following line the application will not exit when you close the form.
-    application::exit(); // or application::exit_thread();
+    application::exit();
   };
   
   application::run();

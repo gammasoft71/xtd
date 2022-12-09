@@ -21,7 +21,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    class core_export_ trace_listener_collection : public std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>> {
+    class core_export_ trace_listener_collection : public std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>>, public xtd::iequatable<trace_listener_collection> {
     public:
       /// @name Alias
       
@@ -46,10 +46,12 @@ namespace xtd {
       trace_listener_collection(const trace_listener_collection& collection);
       trace_listener_collection& operator =(const trace_listener_collection& collection);
       trace_listener_collection(trace_listener_collection&&) = default;
-      bool operator ==(const trace_listener_collection& value) const;
-      bool operator !=(const trace_listener_collection& value) const;
       /// @endcond
       
+      /// @{
+      bool equals(const trace_listener_collection& value) const noexcept override;
+      /// @}
+
       /// @name Operators
       
       /// @{
@@ -87,7 +89,9 @@ namespace xtd {
       /// @endcode
       reference operator [](const xtd::ustring& name);
       /// @}
-      
+
+      /// @name Methods
+
     private:
       inline static value_type empty_;
     };

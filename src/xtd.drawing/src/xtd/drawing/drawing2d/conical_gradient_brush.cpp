@@ -55,14 +55,6 @@ conical_gradient_brush& conical_gradient_brush::operator =(const conical_gradien
   return *this;
 }
 
-bool conical_gradient_brush::operator ==(const conical_gradient_brush& value) const noexcept {
-  return data_ == value.data_;
-}
-
-bool conical_gradient_brush::operator !=(const conical_gradient_brush& value) const noexcept {
-  return !operator ==(value);
-}
-
 float conical_gradient_brush::angle() const noexcept {
   return data_->angle;
 }
@@ -102,6 +94,10 @@ conical_gradient_brush& conical_gradient_brush::center_point(const point_f& valu
 
 conical_gradient_brush& conical_gradient_brush::center_point(const point& value) noexcept {
   return center_point(point_f(as<float>(value.x()), as<float>(value.y())));
+}
+
+bool conical_gradient_brush::equals(const conical_gradient_brush& value) const noexcept {
+  return data_ == value.data_;
 }
 
 void conical_gradient_brush::recreate_handle() {
