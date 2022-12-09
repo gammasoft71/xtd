@@ -22,15 +22,13 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of enable_debug class.
     /// @include enable_debug.cpp
-    class forms_export_ enable_debug : public object {
+    class forms_export_ enable_debug : public object, public iequatable<enable_debug> {
     public:
       /// @cond
       enable_debug() = default;
       enable_debug(const enable_debug&) = default;
       enable_debug& operator =(const enable_debug&) = default;
       
-      bool operator ==(const enable_debug& value) const noexcept;
-      bool operator !=(const enable_debug& value) const noexcept;
       enable_debug operator |(const enable_debug& value) const noexcept;
       enable_debug operator +(const enable_debug& value) const  noexcept;
       /// @endcond
@@ -66,6 +64,8 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      bool equals(const enable_debug& value) const noexcept override;
+
       /// @brief Gets enable_debug flags status.
       /// @return true if enable_debug flags is on; otherwise false.
       static bool get(const enable_debug& flags);
