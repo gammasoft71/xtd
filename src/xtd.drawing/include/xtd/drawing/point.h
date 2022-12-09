@@ -333,6 +333,7 @@ namespace xtd {
       /// @param pt A xtd::drawing::point that specifies the pair of numbers to add to the coordinates of this xtd::drawing::point.
       /// @return The translated xtd::drawing::point.
       point operator +(const point& pt) const noexcept;
+
       /// @brief Translates a xtd::drawing::point by a given xtd::drawing::size.
       /// @param sz A xtd::drawing::size that specifies the pair of numbers to add to the coordinates of this xtd::drawing::point.
       /// @return The translated xtd::drawing::point.
@@ -341,6 +342,7 @@ namespace xtd {
       /// @param pt A xtd::drawing::point that specifies the pair of numbers to add to the coordinates of this xtd::drawing::point.
       /// @return The translated xtd::drawing::point.
       point& operator +=(const point& pt) noexcept;
+
       /// @brief Translates a xtd::drawing::point by the negative of a given xtd::drawing::size.
       /// @param sz A xtd::drawing::size that specifies the pair of numbers to subtract from the coordinates of this xtd::drawing::point.
       /// @return A xtd::drawing::point structure that is translated by the negative of a given xtd::drawing::size structure.
@@ -349,6 +351,7 @@ namespace xtd {
       /// @param pt A xtd::drawing::point that specifies the pair of numbers to subtract from the coordinates of this xtd::drawing::point.
       /// @return A xtd::drawing::point structure that is translated by the negative of a given xtd::drawing::size structure.
       point operator -(const point& pt) const noexcept;
+
       /// @brief Translates a xtd::drawing::point by the negative of a given xtd::drawing::size.
       /// @param sz A xtd::drawing::size that specifies the pair of numbers to subtract from the coordinates of this xtd::drawing::point.
       /// @return The translated xtd::drawing::point.
