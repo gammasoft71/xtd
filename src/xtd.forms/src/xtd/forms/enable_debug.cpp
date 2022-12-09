@@ -12,14 +12,6 @@ const enable_debug enable_debug::layout {0b10000};
 const enable_debug enable_debug::workaround {0b100000};
 const enable_debug enable_debug::all {0b1111111111111111111111111111111111111111111111111111111111111111};
 
-bool enable_debug::operator ==(const enable_debug& value) const noexcept {
-  return value_ == value.value_;
-}
-
-bool enable_debug::operator !=(const enable_debug& value) const noexcept {
-  return !operator ==(value);
-}
-
 enable_debug enable_debug::operator |(const enable_debug& value) const noexcept {
   return enable_debug(value_ | value.value_);
 }
@@ -30,6 +22,10 @@ enable_debug enable_debug::operator +(const enable_debug& value) const  noexcept
 
 xtd::diagnostics::trace_switch& enable_debug::trace_switch() noexcept {
   return trace_switch_;
+}
+
+bool enable_debug::equals(const enable_debug& value) const noexcept {
+  return value_ == value.value_;
 }
 
 bool enable_debug::get(const enable_debug& flags) {
