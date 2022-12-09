@@ -72,7 +72,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of control control.
     /// @include control.cpp
-    class forms_export_ control : public component, public iwin32_window {
+    class forms_export_ control : public component, public iwin32_window, public icomparable<control>, public iequatable<control> {
     protected:
       /// @cond
       enum class state {
@@ -788,7 +788,9 @@ namespace xtd {
       /// @brief Brings the control to the front of the z-order.
       /// @remarks The control is moved to the front of the z-order. If the control is a child of another control, the child control is moved to the front of the z-order. bring_to_front does not make a control a top-level control, and it does not raise the paint event.
       virtual void bring_to_front();
-      
+
+      int32_t compare_to(const control& value) const noexcept override;
+
       /// @brief A factory to create a specified control with specified location ,size back_color and fore_color.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @param size A xtd::drawing::size that represent size of the control.
@@ -881,7 +883,9 @@ namespace xtd {
       /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
       /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke(delegate).
       void end_invoke(std::shared_ptr<xtd::iasync_result> async);
-      
+
+      bool equals(const control& value) const noexcept override;
+
       /// @brief Sets input focus to the control.
       /// @return true if the input focus request was successful; otherwise, false.
       /// @remarks The focus method returns true if the control successfully received input focus. The control can have the input focus while not displaying any visual cues of having the focus. This behavior is primarily observed by the unselectable controls listed below, or any controls derived from them.
@@ -1100,12 +1104,6 @@ namespace xtd {
         return *this;
       }
       /// @}
-      
-      /// @cond
-      bool operator ==(const control& value) const {return this == &value;}
-      bool operator !=(const control& value) const {return !operator ==(value);}
-      bool operator <(const control& value) const {return this < &value;}
-      /// @endcond
       
       /// @name Events
       
