@@ -75,6 +75,8 @@ add_sources(
   include/xtd/invalid_cast_exception.h
   include/xtd/invalid_operation_exception.h
   include/xtd/invalid_program_exception.h
+  include/xtd/iobservable.h
+  include/xtd/iobserver.h
   include/xtd/iprogress.h
   include/xtd/is.h
   include/xtd/language_id.h
