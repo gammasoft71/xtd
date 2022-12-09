@@ -50,6 +50,10 @@ point_f point_f::add(const point_f& pt1, const point_f& pt2) noexcept {
   return {pt1.x() + pt2.x(), pt1.y() + pt2.y()};
 }
 
+bool point_f::equals(const point_f& value) const noexcept {
+  return x_ == value.x_ && y_ == value.y_;
+}
+
 void point_f::offset(float dx, float dy) noexcept {
   x_ += dx;
   y_ += dy;

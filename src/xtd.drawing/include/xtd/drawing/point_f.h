@@ -31,7 +31,7 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    class drawing_export_ point_f : public object {
+    class drawing_export_ point_f : public xtd::object, public xtd::iequatable<point_f> {
     public:
       /// @name Fields
       
@@ -110,6 +110,8 @@ namespace xtd {
       /// @return The xtd::drawing::point_f that is the result of the addition operation.
       static point_f add(const point_f& pt1, const point_f& pt2) noexcept;
       
+      bool equals(const point_f& value) const noexcept override;
+      
       /// @brief Translates this xtd::drawing::point_f by the specified amount.
       /// @param dx The amount to offset the x-coordinate.
       /// @param dy The amount to offset the y-coordinate.
@@ -147,11 +149,6 @@ namespace xtd {
       /// @return An xtd::ustring that represents this xtd::drawing::point.
       xtd::ustring to_string() const noexcept override;
       /// @}
-      
-      /// @cond
-      bool operator ==(const point_f& value) const noexcept {return x_ == value.x_ && y_ == value.y_;}
-      bool operator !=(const point_f& value) const noexcept {return !operator ==(value);}
-      /// @endcond
       
       /// @name Operators
       
