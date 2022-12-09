@@ -32,7 +32,7 @@ namespace xtd {
     /// @remarks To change the appearance of the toolbar buttons assigned to the toolbar, set the xtd::forms::tool_bar::appearance property of the parent toolbar control. The xtd::forms::tool_bar_appearance::flat appearance gives the buttons a flat appearance. As the mouse pointer moves over the buttons, their appearance changes to three-dimensional. Button separators appear as lines rather than spaces between the buttons when the buttons have a flat appearance. If the xtd::forms::tool_bar::appearance property is set to xtd::forms::tool_bar_appearance::normal, the buttons appear raised and three-dimensional, and the separators appear as a gap between the buttons.
     /// @remarks You can assign a xtd::forms::context_menu to a button if the xtd::forms::tool_bar_button::style property is set to xtd::forms::tool_bar_button_style::drop_down. When the button is clicked, the assigned menu is displayed.
     /// @remarks To create a collection of xtd::forms::tool_bar_button controls to display on a xtd::forms::tool_bar, add the buttons individually by using the xtd::forms::tool_bar::tool_bar_button_collection::push_back method of the xtd::forms::tool_bar::buttons property. Alternatively, you can add several toolbar buttons using the xtd::forms::tool_bar::tool_bar_button_collection.push_back_range method.
-    class tool_bar_button : public xtd::forms::component {
+    class tool_bar_button : public xtd::forms::component, public iequatable<tool_bar_button> {
     public:
       /// @name Constructors
       
@@ -50,8 +50,6 @@ namespace xtd {
       tool_bar_button(const tool_bar_button&) noexcept = default;
       tool_bar_button(tool_bar_button&&) noexcept = default;
       tool_bar_button& operator =(const tool_bar_button&) noexcept = default;
-      bool operator ==(const tool_bar_button& other) const noexcept;
-      bool operator !=(const tool_bar_button& other) const noexcept;
       /// @endcond
       
       /// @name Properties
@@ -253,6 +251,8 @@ namespace xtd {
       /// @return New xtd::forms::tool_bar_button created.
       static tool_bar_button create_toggle_button(const xtd::ustring& text, size_t image_index);
       
+      bool equals(const tool_bar_button& other) const noexcept override;
+
       /// @brief Returns a string that represents the xtd::forms::tool_bar_button control.
       /// @return A xtd::ustring that represents the current xtd::forms::tool_bar_button.
       /// @remarks The xtd::forms::tool_bar_button::to_string method returns a string that includes the type and the value of the xtd::forms::tool_bar_button::style and xtd::forms::tool_bar_button::text properties.

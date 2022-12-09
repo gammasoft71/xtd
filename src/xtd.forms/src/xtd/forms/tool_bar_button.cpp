@@ -9,14 +9,6 @@ tool_bar_button::tool_bar_button(const ustring& text) {
   data_->text = text;
 }
 
-bool tool_bar_button::operator ==(const tool_bar_button& other) const noexcept {
-  return data_ == other.data_;
-}
-
-bool tool_bar_button::operator !=(const tool_bar_button& other) const noexcept {
-  return !operator ==(other);
-}
-
 optional<reference_wrapper<forms::control>> tool_bar_button::control() const noexcept {
   return data_->control ? optional<reference_wrapper<forms::control>>(*data_->control) : nullopt;
 }
@@ -261,6 +253,10 @@ tool_bar_button tool_bar_button::create_toggle_button(const xtd::ustring& text, 
   result.style(xtd::forms::tool_bar_button_style::toggle_button);
   result.text(text);
   return result;
+}
+
+bool tool_bar_button::equals(const tool_bar_button& other) const noexcept {
+  return data_ == other.data_;
 }
 
 xtd::ustring tool_bar_button::to_string() const noexcept {
