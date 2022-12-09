@@ -1,6 +1,6 @@
 # horizontal_layout_panel
 
-demonstrates the use of [xtd::forms::horizontal_layout_panel](../../../../src/xtd.forms/include/xtd/forms/horizontal_layout_panel.h) container.
+demonstrates the use of [xtd::forms::horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) container.
 
 # Sources
 
