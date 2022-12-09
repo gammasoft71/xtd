@@ -1,6 +1,6 @@
 # background_worker
 
-demonstrates the use of [xtd::forms::background_worker](../../../../src/xtd.forms/include/xtd/forms/background_worker.h) component.
+demonstrates the use of [xtd::forms::background_worker](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1background__worker.html) component.
 
 # Sources
 

@@ -1,6 +1,6 @@
 # screen
 
-demonstrates the use of [xtd::forms::screen](../../../../src/xtd.forms/include/xtd/forms/screen.h) component.
+demonstrates the use of [xtd::forms::screen](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1screen.html) component.
 
 # Sources
 
