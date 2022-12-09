@@ -41,7 +41,7 @@ namespace xtd {
     /// @remarks To draw rectangles, you need a xtd::drawing::graphics object and a xtd::drawing::pen object. The xtd::drawing::graphics object provides the xtd::drawing::graphics::draw_rectangle method, and the xtd::drawing::pen object stores features of the line, such as color and width. The units the rectangle is drawn in is determined by the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale properties of the graphics object used for drawing. The default unit is pixels.
     /// @remarks To draw a xtd::drawing::rectangle filled with color, you need a xtd::drawing::graphics object and an object derived from xtd::drawing::brush such as xtd::drawing::solid_brush or xtd::drawing::texture_brush or xtd::drawing::drawing2d::conical_gradient_brush or xtd::drawing::drawing2d::hatch_gradient_brush or xtd::drawing::drawing2d::linear_gradient_brush or xtd::drawing::drawing2d::radial_gradient_brush. The xtd::drawing::graphics object provides the xtd::drawing::graphics::fill_rectangle method and the xtd::drawing::brush object provides the color and fill information.
     /// @remarks For more advanced shapes, use a xtd::drawing::region object.
-    class drawing_export_ rectangle : public xtd::object {
+    class drawing_export_ rectangle : public xtd::object, public xtd::iequatable<rectangle> {
     public:
       /// @name Fields
       
@@ -197,6 +197,8 @@ namespace xtd {
       /// @remarks The containing rectangle must be normalized for this method to return accurate results.
       bool contains(int32_t x, int32_t y) const noexcept;
       
+      bool equals(const rectangle& value) const noexcept override;
+
       /// @brief Creates a xtd::drawing::rectangle structure with the specified edge locations.
       /// @param left The x-coordinate of the upper-left corner of this xtd::drawing::rectangle structure.
       /// @param top The y-coordinate of the upper-left corner of this xtd::drawing::rectangle structure.
@@ -288,19 +290,6 @@ namespace xtd {
       /// @param rect The xtd::drawing::rectangle_f to be converted.
       /// @return The truncated value of the xtd::drawing::rectangle.
       static rectangle truncate(const rectangle_f& rect) noexcept;
-      /// @}
-      
-      /// @name Operators
-      
-      /// @{
-      /// @brief Tests whether two xtd::drawing::rectangle structures have equal location and size.
-      /// @param value The xtd::drawing::rectangle structure that is to the right of the equality operator.
-      /// @return This operator returns true if the two xtd::drawing::rectangle structures have equal xtd::drawing::rectangle::x, xtd::drawing::rectangle::y, xtd::drawing::rectangle::width, and xtd::drawing::rectangle::height properties.
-      bool operator ==(const rectangle& value) const noexcept;
-      /// @brief Tests whether two xtd::drawing::rectangle structures differ in location or size.
-      /// @param value The xtd::drawing::rectangle structure that is to the right of the inequality operator.
-      /// @return This operator returns true if any of the xtd::drawing::rectangle::x, xtd::drawing::rectangle::y, xtd::drawing::rectangle::width or xtd::drawing::rectangle::height properties of the two xtd::drawing::rectangle structures are unequal; otherwise false.
-      bool operator !=(const rectangle& value) const noexcept;
       /// @}
       
     private:

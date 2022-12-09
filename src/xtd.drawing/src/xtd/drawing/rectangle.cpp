@@ -122,6 +122,10 @@ bool rectangle::contains(int32_t x, int32_t y) const noexcept {
   return x_ <= x && x < x_ + width_ && y_ <= y && y < y_ + height_;
 }
 
+bool rectangle::equals(const rectangle& value) const noexcept {
+  return x_ == value.x_ && y_ == value.y_ && width_ == value.width_ && height_ == value.height_;
+}
+
 rectangle rectangle::from_ltrb(int32_t left, int32_t top, int32_t right, int32_t bottom) noexcept {
   return rectangle(left, top, right - left, bottom - top);
 }
@@ -219,12 +223,4 @@ rectangle rectangle::truncate(const rectangle_f& rect) noexcept {
 
 xtd::ustring rectangle::to_string() const noexcept {
   return ustring::format("{{x={}, y={}, width={}, heght={}}}", x(), y(), width(), height());
-}
-
-bool rectangle::operator ==(const rectangle& value) const noexcept {
-  return x_ == value.x_ && y_ == value.y_ && width_ == value.width_ && height_ == value.height_;
-}
-
-bool rectangle::operator !=(const rectangle& value) const noexcept {
-  return !operator ==(value);
 }
