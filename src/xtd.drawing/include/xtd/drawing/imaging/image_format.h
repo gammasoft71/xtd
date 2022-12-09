@@ -22,7 +22,7 @@ namespace xtd {
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing
-      class image_format final : public object {
+      class image_format final : public object, public icomparable<image_format>, public iequatable<image_format> {
       public:
         /// @cond
         image_format() = default;
@@ -40,12 +40,6 @@ namespace xtd {
         /// @cond
         image_format(const image_format&) = default;
         image_format& operator =(const image_format&) = default;
-        bool operator ==(const image_format& value) const noexcept {return guid_ == value.guid_;}
-        bool operator !=(const image_format& value) const noexcept {return !operator ==(value);}
-        bool operator <(const image_format& value) const noexcept {return guid_ < value.guid_;}
-        bool operator <=(const image_format& value) const noexcept {return guid_ <= value.guid_;}
-        bool operator >(const image_format& value) const noexcept {return guid_ > value.guid_;}
-        bool operator >=(const image_format& value) const noexcept {return guid_ >= value.guid_;}
         /// @endcond
         
         /// @name Properties
@@ -195,6 +189,9 @@ namespace xtd {
         /// @name Methods
         
         /// @{
+        int32_t compare_to(const image_format& value) const noexcept override {return guid_ < value.guid_ ? -1 : guid_ > value.guid_ ? 1 : 0;}
+        bool equals(const image_format& value) const noexcept override {return guid_ == value.guid_;}
+
         /// @brief Converts this image_format object to a human-readable string.
         /// @return A string that represents this image_format object.
         xtd::ustring to_string() const noexcept override {return ustring::format("[image_format: {}]", guid_);}
