@@ -25,16 +25,12 @@ brush::~brush() {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::brush::destroy(data_->handle_);
 }
 
-bool brush::operator ==(const brush& value) const noexcept {
-  return data_->handle_ == value.data_->handle_;
-}
-
-bool brush::operator !=(const brush& value) const noexcept {
-  return !operator ==(value);
-}
-
 intptr_t brush::handle() const noexcept {
   return data_->handle_;
+}
+
+bool brush::equals(const brush& value) const noexcept {
+  return data_->handle_ == value.data_->handle_;
 }
 
 xtd::ustring brush::to_string() const noexcept {
