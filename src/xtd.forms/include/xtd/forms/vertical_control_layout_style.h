@@ -15,7 +15,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    class vertical_control_layout_style : public control_layout_style {
+    class vertical_control_layout_style : public control_layout_style, public iequatable<vertical_control_layout_style> {
     public:
       /// @name Constructors
       
@@ -136,15 +136,13 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      using control_layout_style::equals;
+      bool equals(const vertical_control_layout_style& value) const noexcept override;
+
       /// @brief Returns a string that represent xtd::forms::control_layout_style.
       /// @return A string containing that represent xtd::forms::control_layout_style.
       xtd::ustring to_string() const noexcept override;
       /// @}
-      
-      /// @cond
-      bool operator ==(const vertical_control_layout_style& value) const noexcept;
-      bool operator !=(const vertical_control_layout_style& value) const noexcept;
-      /// @endcond
       
     private:
       std::optional<float> height_;

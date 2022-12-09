@@ -19,14 +19,6 @@ country& country::operator =(const country& other) {
   return *this;
 }
 
-bool country::operator ==(const country& value) const noexcept {
-  return data_->name == value.data_->name && data_->alpha_2_code == value.data_->alpha_2_code && data_->alpha_3_code == value.data_->alpha_3_code && data_->numeric_code == value.data_->numeric_code;
-}
-
-bool country::operator !=(const country& value) const noexcept {
-  return !operator ==(value);
-}
-
 const country country::empty() {
   return country();
 }
@@ -57,6 +49,10 @@ const xtd::ustring country::name() const noexcept {
 
 int32_t country::numeric_code() const noexcept {
   return data_->numeric_code;
+}
+
+bool country::equals(const country& value) const noexcept {
+  return data_->name == value.data_->name && data_->alpha_2_code == value.data_->alpha_2_code && data_->alpha_3_code == value.data_->alpha_3_code && data_->numeric_code == value.data_->numeric_code;
 }
 
 country country::from_alpha_2_code(const xtd::ustring& alpha_2_code) {

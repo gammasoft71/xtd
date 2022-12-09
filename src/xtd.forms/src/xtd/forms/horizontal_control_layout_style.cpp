@@ -81,14 +81,10 @@ void horizontal_control_layout_style::width(float width) {
   width_ = width;
 }
 
+bool horizontal_control_layout_style::equals(const horizontal_control_layout_style& value) const noexcept {
+  return width_ == value.width_ && control_layout_style::equals(value);
+}
+
 xtd::ustring horizontal_control_layout_style::to_string() const noexcept {
   return ustring::format("horizontal_control_layout_style=[expanded={}, align={}, size_type={}, width={}]", expanded(), align(), size_type(), width_.value_or(-1));
-}
-
-bool horizontal_control_layout_style::operator ==(const horizontal_control_layout_style& value) const noexcept {
-  return width_ == value.width_ && control_layout_style::operator ==(value);
-}
-
-bool horizontal_control_layout_style::operator !=(const horizontal_control_layout_style& value) const noexcept {
-  return !operator ==(value);
 }

@@ -15,8 +15,11 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    class horizontal_control_layout_style : public control_layout_style {
+    class horizontal_control_layout_style : public control_layout_style, public iequatable<horizontal_control_layout_style> {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Initialises a new instance of horizontal control layout style class.
       horizontal_control_layout_style() = default;
       /// @brief Initialises a new instance of horizontal control layout style class with specified width.
@@ -117,22 +120,29 @@ namespace xtd {
       /// @param expanded true if control expanded; otherwise false.
       /// @param align One of the content_alignment values. The default is middle_center.
       horizontal_control_layout_style(int32_t width, bool expanded, xtd::forms::content_alignment align);
+      /// @}
+
+      /// @name Properties
       
+      /// @{
       /// @brief Gets the width value for a control.
       /// @return The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       std::optional<float> width() const noexcept;
       /// @brief Sets the width value for a control.
       /// @param width The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       void width(float width);
+      /// @}
+
+      /// @name Methods
+      
+      /// @{
+      using control_layout_style::equals;
+      bool equals(const horizontal_control_layout_style& value) const noexcept override;
       
       /// @brief Returns a string that represent xtd::forms::control_layout_style.
       /// @return A string containing that represent xtd::forms::control_layout_style.
       xtd::ustring to_string() const noexcept override;
-      
-      /// @cond
-      bool operator ==(const horizontal_control_layout_style& value) const noexcept;
-      bool operator !=(const horizontal_control_layout_style& value) const noexcept;
-      /// @endcond
+      /// @}
       
     private:
       std::optional<float> width_;
