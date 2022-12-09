@@ -13,14 +13,6 @@ flat_button_appearance& flat_button_appearance::operator =(const flat_button_app
   return *this;
 }
 
-bool flat_button_appearance::operator ==(const flat_button_appearance& other) const noexcept {
-  return data_->border_color == other.data_->border_color && data_->border_size == other.data_->border_size && data_->checked_back_color == other.data_->checked_back_color && data_->mouse_down_back_color == other.data_->mouse_down_back_color && data_->mouse_over_back_color == other.data_->mouse_over_back_color;
-}
-
-bool flat_button_appearance::operator !=(const flat_button_appearance& other) const noexcept {
-  return !operator ==(other);
-}
-
 std::optional<xtd::drawing::color> flat_button_appearance::border_color() const noexcept {
   return data_->border_color;
 }
@@ -103,4 +95,8 @@ flat_button_appearance& flat_button_appearance::mouse_over_back_color(const xtd:
 flat_button_appearance& flat_button_appearance::mouse_over_back_color(std::nullptr_t) {
   data_->mouse_over_back_color.reset();
   return *this;
+}
+
+bool flat_button_appearance::equals(const flat_button_appearance& other) const noexcept {
+  return data_->border_color == other.data_->border_color && data_->border_size == other.data_->border_size && data_->checked_back_color == other.data_->checked_back_color && data_->mouse_down_back_color == other.data_->mouse_down_back_color && data_->mouse_over_back_color == other.data_->mouse_over_back_color;
 }

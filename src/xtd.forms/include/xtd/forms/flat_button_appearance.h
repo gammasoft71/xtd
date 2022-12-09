@@ -16,7 +16,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    class flat_button_appearance : public object {
+    class flat_button_appearance : public object, public iequatable<flat_button_appearance> {
     public:
       /// @name Constructors
       
@@ -29,8 +29,6 @@ namespace xtd {
       flat_button_appearance(const flat_button_appearance& other);
       flat_button_appearance(flat_button_appearance&&) = default;
       flat_button_appearance& operator =(const flat_button_appearance&);
-      bool operator ==(const flat_button_appearance& other) const noexcept;
-      bool operator !=(const flat_button_appearance& other) const noexcept;
       /// @endcond
       
       /// @name Properties
@@ -107,6 +105,12 @@ namespace xtd {
       /// @param color nullptr.
       /// @return Current xtd::forms::flat_button_appearance.
       flat_button_appearance& mouse_over_back_color(std::nullptr_t color);
+      /// @}
+      
+      /// @name Methods
+      
+      /// @{
+      bool equals(const flat_button_appearance& other) const noexcept override;
       /// @}
       
     private:
