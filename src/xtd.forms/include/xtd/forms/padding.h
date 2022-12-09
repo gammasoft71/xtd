@@ -17,7 +17,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    class forms_export_ padding : public object {
+    class forms_export_ padding : public object, public iequatable<padding> {
     public:
       /// @name Fields
       
@@ -49,8 +49,6 @@ namespace xtd {
       /// @cond
       padding(const padding&) = default;
       padding& operator =(const padding&) = default;
-      bool operator ==(const padding& value) const noexcept;
-      bool operator !=(const padding& value) const noexcept;
       /// @endcond
       
       /// @name Peorperties
@@ -119,6 +117,8 @@ namespace xtd {
       /// @return A padding that contains the sum of the two specified padding values.
       static padding add(const padding& p1, const padding& p2);
       
+      bool equals(const padding& value) const noexcept override;
+
       /// @brief Subtracts one specified Padding value from another.
       /// @param p1 A padding.
       /// @param p2 A padding.
