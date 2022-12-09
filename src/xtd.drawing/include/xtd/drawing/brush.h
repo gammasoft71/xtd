@@ -47,14 +47,12 @@ namespace xtd {
     ///     <td>@image html radial_gradient_brush.png</td>
     ///   </tr>
     /// </table>
-    class drawing_export_ brush : public xtd::object {
+    class drawing_export_ brush : public xtd::object, public xtd::iequatable<brush> {
     public:
       /// @cond
       brush(const brush& value);
       brush& operator =(const brush& value);
       ~brush();
-      bool operator ==(const brush& value) const noexcept;
-      bool operator !=(const brush& value) const noexcept;
       /// @endcond
       
       /// @name Properties
@@ -68,6 +66,8 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      bool equals(const brush& value) const noexcept override;
+
       /// @brief Converts this brush object to a human-readable string.
       /// @return A string that represents this brush object.
       xtd::ustring to_string() const noexcept override;
