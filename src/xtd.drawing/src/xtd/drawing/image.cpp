@@ -89,13 +89,6 @@ image::~image() {
     native::image::destroy(data_->handle_);
 }
 
-bool image::operator ==(const image& image) const noexcept {
-  return data_->handle_ == image.data_->handle_;
-}
-
-bool image::operator !=(const image& image) const noexcept {
-  return !operator ==(image);
-}
 int32_t image::flags() const noexcept {
   return static_cast<int32_t>(data_->flags_);
 }
@@ -165,6 +158,10 @@ float image::vertical_resolution() const noexcept {
 
 int32_t image::width() const noexcept {
   return data_->size_.width();
+}
+
+bool image::equals(const image& image) const noexcept {
+  return data_->handle_ == image.data_->handle_;
 }
 
 bitmap image::from_hbitmap(intptr_t hbitmap) {
