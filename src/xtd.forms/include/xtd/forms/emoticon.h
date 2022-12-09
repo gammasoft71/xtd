@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "../forms_export.h"
+#include <xtd/iequatable.h>
 #include <xtd/object.h>
 #include <xtd/static.h>
 #include <xtd/ustring.h>
@@ -22,7 +23,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of emoticon class.
     /// @include emoticons.cpp
-    class forms_export_ emoticon : public object, public iequatable<emoticon> {
+    class forms_export_ emoticon : public object, public xtd::iequatable<emoticon> {
     public:
       /// @name Fields
       

@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
+#include <xtd/iequatable.h>
 #include <xtd/object.h>
 #include <xtd/static.h>
 #include <xtd/diagnostics/trace_switch.h>
@@ -22,7 +23,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of enable_debug class.
     /// @include enable_debug.cpp
-    class forms_export_ enable_debug : public object, public iequatable<enable_debug> {
+    class forms_export_ enable_debug : public object, public xtd::iequatable<enable_debug> {
     public:
       /// @cond
       enable_debug() = default;

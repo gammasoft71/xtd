@@ -4,6 +4,7 @@
 #pragma once
 #include <cstdint>
 #include <limits>
+#include "../iequatable.h"
 #include "../object.h"
 #include "../ustring.h"
 

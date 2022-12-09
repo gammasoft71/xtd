@@ -4,6 +4,7 @@
 #pragma once
 #include "convert_string.h"
 #include "icomparable.h"
+#include "iequatable.h"
 #include "invalid_cast_exception.h"
 #include "iequatable.h"
 #include "enum.h"

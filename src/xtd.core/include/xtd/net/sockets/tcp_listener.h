@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
+#include "../../iequatable.h"
 #include "tcp_client.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

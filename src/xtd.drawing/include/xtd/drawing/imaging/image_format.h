@@ -6,6 +6,7 @@
 #include <ostream>
 #include <string>
 #include <xtd/guid.h>
+#include <xtd/iequatable.h>
 #include <xtd/object.h>
 #include <xtd/ustring.h>
 
@@ -22,7 +23,7 @@ namespace xtd {
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing
-      class image_format final : public object, public icomparable<image_format>, public iequatable<image_format> {
+      class image_format final : public object, public icomparable<image_format>, public xtd::iequatable<image_format> {
       public:
         /// @cond
         image_format() = default;

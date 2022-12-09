@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "../forms_export.h"
+#include <xtd/iequatable.h>
 #include <xtd/object.h>
 #include <xtd/ustring.h>
 #include <xtd/convert_string.h>
@@ -26,7 +27,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of country component.
     /// @include countries.cpp
-    class forms_export_ country : public object, public iequatable<country> {
+    class forms_export_ country : public object, public xtd::iequatable<country> {
     public:
       /// @cond
       country() = default;

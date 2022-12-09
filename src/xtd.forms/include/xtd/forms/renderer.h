@@ -4,6 +4,7 @@
 #pragma once
 #include <optional>
 #include <xtd/delegate.h>
+#include <xtd/iequatable.h>
 #include <xtd/object.h>
 #include <xtd/ustring.h>
 #include <xtd/drawing/color.h>
@@ -27,7 +28,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms renderers
-    class forms_export_ renderer : public object, public iequatable<renderer> {
+    class forms_export_ renderer : public object, public xtd::iequatable<renderer> {
     public:
       /// @name Alias
       

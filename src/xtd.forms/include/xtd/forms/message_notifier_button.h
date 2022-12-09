@@ -1,11 +1,12 @@
 #pragma once
 #include <xtd/forms/component.h>
+#include <xtd/iequatable.h>
 #include <xtd/ustring.h>
 #include <xtd/forms/component.h>
 // TODO: documentation
 namespace xtd {
   namespace forms {
-    class message_notifier_button : public xtd::forms::component, public iequatable<message_notifier_button> {
+    class message_notifier_button : public xtd::forms::component, public xtd::iequatable<message_notifier_button> {
     public:
       message_notifier_button() = default;
       message_notifier_button(const xtd::ustring& text) : text_(text) {}

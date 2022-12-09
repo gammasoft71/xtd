@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <map>
 #include <vector>
+#include "../iequatable.h"
 #include "../object.h"
 #include "../ustring.h"
 #include "source_levels.h"

@@ -2,6 +2,7 @@
 /// @brief Contains xtd::forms::list_control control.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/iequatable.h>
 #include "application.h"
 #include "control.h"
 
@@ -20,7 +21,7 @@ namespace xtd {
     class forms_export_ list_control : public control {
     public:
       /// @brief Represent an item contained in the list_control::object_collection collection.
-      class item : public object, public icomparable<item>, public iequatable<item> {
+      class item : public object, public icomparable<item>, public xtd::iequatable<item> {
       public:
         /// @brief Represent the sorter class used by list_control::object_collection collection.
         class sorter {

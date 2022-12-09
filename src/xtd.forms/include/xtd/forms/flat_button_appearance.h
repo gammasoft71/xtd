@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <optional>
+#include <xtd/iequatable.h>
 #include <xtd/object.h>
 #include <xtd/drawing/color.h>
 
@@ -16,7 +17,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    class flat_button_appearance : public object, public iequatable<flat_button_appearance> {
+    class flat_button_appearance : public object, public xtd::iequatable<flat_button_appearance> {
     public:
       /// @name Constructors
       

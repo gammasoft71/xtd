@@ -2,6 +2,7 @@
 /// @brief Contains xtd::drawing::imaging::encoder_parameter class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/iequatable.h>
 #include "encoder.h"
 #include "encoder_parameter_value_type.h"
 
@@ -18,7 +19,7 @@ namespace xtd {
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing
-      class encoder_parameter final : public object, public iequatable<encoder_parameter> {
+      class encoder_parameter final : public object, public xtd::iequatable<encoder_parameter> {
       public:
         /// @name Constructors
         

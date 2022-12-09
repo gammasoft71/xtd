@@ -2,6 +2,7 @@
 /// @brief Contains xtd::forms::domain_up_down control.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/iequatable.h>
 #include "up_down_base.h"
 #include "application.h"
 
@@ -42,7 +43,7 @@ namespace xtd {
     class forms_export_ domain_up_down : public up_down_base {
     public:
       /// @brief Represent an item contained in the domain_up_down::object_collection collection.
-      class item : public object, public icomparable<item>, public iequatable<item> {
+      class item : public object, public icomparable<item>, public xtd::iequatable<item> {
       public:
         /// @name Constructors
         

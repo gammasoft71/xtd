@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
+#include "../../iequatable.h"
 #include "../../object.h"
 #include "../../ustring.h"
 #include "../ip_end_point.h"
@@ -37,7 +38,7 @@ namespace xtd {
       /// @par Examples
       /// The following example shows how to use IPv6 xtd::net::sockets::udp_client class.
       /// @include udp_client_ip_v6.cpp
-      class core_export_ udp_client : public xtd::object, public iequatable<udp_client> {
+      class core_export_ udp_client : public xtd::object, public xtd::iequatable<udp_client> {
         class async_result_socket : public xtd::object, public xtd::iasync_result {
         public:
           explicit async_result_socket(std::any async_state) : async_state_(async_state) {}

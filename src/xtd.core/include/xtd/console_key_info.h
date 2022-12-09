@@ -6,6 +6,7 @@
 #include <iostream>
 #include "console_key.h"
 #include "console_modifiers.h"
+#include "iequatable.h"
 #include "object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -17,7 +18,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   /// @see Console
-  class console_key_info final : public object, public iequatable<console_key_info> {
+  class console_key_info final : public object, public xtd::iequatable<console_key_info> {
   public:
     /// @name Constructors
     
