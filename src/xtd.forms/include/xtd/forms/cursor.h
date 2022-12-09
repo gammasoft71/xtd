@@ -32,7 +32,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of cursor component.
     /// @include cursors.cpp
-    class forms_export_ cursor : public object {
+    class forms_export_ cursor : public object, public iequatable<cursor> {
     public:
       /// @name Fields
       
@@ -109,6 +109,8 @@ namespace xtd {
       /// @remarks The handle created as a result of calling this method must be deleted of when you are done with it.
       intptr_t copy_handle() const;
       
+      bool equals(const cursor& value) const noexcept override;
+
       /// @brief Create a cursor form a specified bitmap with specified hot spot.
       /// @param bitmap A xtd::drawing::bitmap image will be use by cursor.
       /// @param hot_spot A xtd::drawing::point hot spot location.
@@ -132,11 +134,6 @@ namespace xtd {
       /// @return A string containing the name of the cursor.
       xtd::ustring to_string() const noexcept override;
       /// @}
-      
-      /// @cond
-      bool operator ==(const cursor& value) const noexcept;
-      bool operator !=(const cursor& value) const noexcept;
-      /// @endcond
       
     private:
       friend class xtd::forms::cursors;
