@@ -20,7 +20,7 @@ namespace xtd {
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing
-      class frame_dimension final : public object {
+      class frame_dimension final : public object, public iequatable<frame_dimension> {
       public:
         /// @name Constructors
         
@@ -33,8 +33,6 @@ namespace xtd {
         /// @cond
         frame_dimension(const frame_dimension&) = default;
         frame_dimension& operator =(const frame_dimension&) = default;
-        bool operator ==(const frame_dimension& value) const noexcept {return guid_ == value.guid_;}
-        bool operator !=(const frame_dimension& value) const noexcept {return !operator ==(value);}
         /// @endcond
         
         /// @name Properties
@@ -55,6 +53,12 @@ namespace xtd {
         /// @brief Gets the time dimension.
         /// @return The time dimension.
         static frame_dimension time() noexcept {return frame_dimension(xtd::guid("6aedbd6d-3fb5-418a-83a6-7f45229dc872"));}
+        /// @}
+        
+        /// @name Methods
+        
+        /// @{
+        bool equals(const frame_dimension& value) const noexcept override {return guid_ == value.guid_;}
         /// @}
         
       private:
