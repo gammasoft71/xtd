@@ -22,6 +22,7 @@
 * [Exceptions](xtd.core.examples/exceptions/README.md) contains exceptions examples.
 * [Format](xtd.core.examples/format/README.md) contains format examples.
 * [Guid](xtd.core.examples/guid/README.md) contains guid examples.
+* [Interfaces](xtd.core.examples/interfaces/README.md) contains interfaces examples.
 * [IO](xtd.core.examples/io/README.md) contains io examples.
 * [Keywords](xtd.core.examples/keywords/README.md) contains keywords examples.
 * [Mains](xtd.core.examples/mains/README.md) contains main examples.
