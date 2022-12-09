@@ -47,7 +47,7 @@ namespace xtd {
     class forms_export_ checked_list_box : public list_box {
     public:
       /// @brief Represent an item contained in the checked_list_box::object_collection collection.
-      class item : public list_box::item {
+      class item : public list_box::item, public xtd::icomparable<item>, public xtd::iequatable<item> {
       public:
         /// @name Constructors
         
@@ -85,12 +85,6 @@ namespace xtd {
         item(const char* value);
         item(const item& value) = default;
         item& operator =(const item& value) = default;
-        bool operator ==(const item& value) const noexcept;
-        bool operator !=(const item& value) const noexcept;
-        bool operator <(const item& value) const noexcept;
-        bool operator <=(const item& value) const noexcept;
-        bool operator >(const item& value) const noexcept;
-        bool operator >=(const item& value) const noexcept;
         /// @endcond
         
         /// @name Properties
@@ -106,6 +100,15 @@ namespace xtd {
         virtual forms::check_state check_state() const;
         /// @}
         
+        /// @name Methods
+        
+        /// @{
+        using list_box::item::compare_to;
+        int32_t compare_to(const item& value) const noexcept override;
+        using list_box::item::equals;
+        bool equals(const item& value) const noexcept override;
+        /// @}
+
       private:
         forms::check_state check_state_ = forms::check_state::unchecked;
       };

@@ -12,36 +12,20 @@ list_control::item::item(const xtd::ustring& value, const std::any& tag) : value
 list_control::item::item(const char* value) : value_(value) {
 }
 
-bool list_control::item::operator ==(const item& value) const noexcept {
-  return value_ == value.value_;
-}
-
-bool list_control::item::operator !=(const item& value) const noexcept {
-  return !operator ==(value);
-}
-
-bool list_control::item::operator <(const item& value) const noexcept {
-  return value_ < value.value_;
-}
-
-bool list_control::item::operator <=(const item& value) const noexcept {
-  return value_ <= value.value_;
-}
-
-bool list_control::item::operator >(const item& value) const noexcept {
-  return value_ > value.value_;
-}
-
-bool list_control::item::operator >=(const item& value) const noexcept {
-  return value_ >= value.value_;
-}
-
 const xtd::ustring& list_control::item::value() const noexcept {
   return value_;
 }
 
 std::any list_control::item::tag() const noexcept {
   return tag_;
+}
+
+bool list_control::item::equals(const item& value) const noexcept {
+  return value_ == value.value_;
+}
+
+int32_t list_control::item::compare_to(const item& value) const noexcept {
+  return value_ < value.value_ ? -1 : value_ > value.value_ ? 1 : 0;
 }
 
 xtd::ustring list_control::item::to_string() const noexcept {

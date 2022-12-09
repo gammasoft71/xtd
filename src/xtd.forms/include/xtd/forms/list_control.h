@@ -20,7 +20,7 @@ namespace xtd {
     class forms_export_ list_control : public control {
     public:
       /// @brief Represent an item contained in the list_control::object_collection collection.
-      class item : public object{
+      class item : public object, public icomparable<item>, public iequatable<item> {
       public:
         /// @brief Represent the sorter class used by list_control::object_collection collection.
         class sorter {
@@ -60,12 +60,6 @@ namespace xtd {
         item& operator =(const item& value) = default;
         item& operator =(item&& value) = default;
         virtual ~item() = default;
-        bool operator ==(const item& value) const noexcept;
-        bool operator !=(const item& value) const noexcept;
-        bool operator <(const item& value) const noexcept;
-        bool operator <=(const item& value) const noexcept;
-        bool operator >(const item& value) const noexcept;
-        bool operator >=(const item& value) const noexcept;
         /// @endcond
         
         /// @name Properties
@@ -83,6 +77,10 @@ namespace xtd {
         /// @name Methods
         
         /// @{
+        int32_t compare_to(const item& value) const noexcept override;
+
+        bool equals(const item& value) const noexcept override;
+
         /// @brief Returns a string containing the value of the item.
         /// @return A string containing the value of the item.
         xtd::ustring to_string() const noexcept override;
