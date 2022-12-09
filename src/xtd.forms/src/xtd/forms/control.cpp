@@ -768,6 +768,10 @@ void control::bring_to_front() {
   focus();
 }
 
+int32_t control::compare_to(const control& value) const noexcept {
+  return this < &value ? -1 : this > &value ? 1 : 0;
+}
+
 void control::create_control() {
   if (!get_state(state::destroying) && !get_state(state::creating) && !get_state(state::created)) {
     set_state(state::destroyed, false);
@@ -896,6 +900,10 @@ void control::invoke(delegate<void(std::vector<std::any>)> value, const std::vec
 
 void control::invoke(delegate<void(std::vector<std::any>)> value, std::any arg) {
   end_invoke(begin_invoke(value, std::vector<std::any> {arg}));
+}
+
+bool control::equals(const control& value) const noexcept {
+  return this == &value;
 }
 
 void control::end_invoke(shared_ptr<iasync_result> async) {
