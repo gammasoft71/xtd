@@ -31,7 +31,7 @@ namespace xtd {
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
     /// @remarks A rectangle is defined by its width, height, and upper-left corner.
-    class drawing_export_ rectangle_f : public xtd::object {
+    class drawing_export_ rectangle_f : public xtd::object, public xtd::iequatable<rectangle_f> {
     public:
       /// @name Fields
       
@@ -181,6 +181,8 @@ namespace xtd {
       /// @remarks The containing rectangle must be normalized for this method to return accurate results.
       bool contains(float x, float y) const noexcept;
       
+      bool equals(const rectangle_f& value) const noexcept override;
+
       /// @brief Creates a xtd::drawing::rectangle_f structure with the specified edge locations.
       /// @param left The x-coordinate of the upper-left corner of this xtd::drawing::rectangle_f structure.
       /// @param top The y-coordinate of the upper-left corner of this xtd::drawing::rectangle_f structure.
@@ -262,19 +264,6 @@ namespace xtd {
       /// @brief Converts the attributes of this xtd::drawing::rectangle_f to a human-readable string.
       /// @return A string that contains the position, width, and height of this Rectangle structure ¾ for example, {x=20, y=20, width=100, height=50}.
       xtd::ustring to_string() const noexcept override;
-      /// @}
-      
-      /// @name Operators
-      
-      /// @{
-      /// @brief Tests whether two xtd::drawing::rectangle_f structures have equal location and size.
-      /// @param value The xtd::drawing::rectangle_f structure that is to the right of the equality operator.
-      /// @return This operator returns true if the two xtd::drawing::rectangle_f structures have equal xtd::drawing::rectangle_f::x, xtd::drawing::rectangle_f::y, xtd::drawing::rectangle_f::width, and xtd::drawing::rectangle_f::height properties.
-      bool operator ==(const rectangle_f& value) const noexcept;
-      /// @brief Tests whether two xtd::drawing::rectangle_f structures differ in location or size.
-      /// @param value The xtd::drawing::rectangle_f structure that is to the right of the inequality operator.
-      /// @return This operator returns true if any of the xtd::drawing::rectangle_f::x, xtd::drawing::rectangle_f::y, xtd::drawing::rectangle_f::width or xtd::drawing::rectangle_f::height properties of the two xtd::drawing::rectangle_f structures are unequal; otherwise false.
-      bool operator !=(const rectangle_f& value) const noexcept;
       /// @}
       
     private:
