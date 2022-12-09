@@ -94,7 +94,3 @@ xtd::forms::link& xtd::forms::link::visited(bool value) {
   data_->visited = value;
   return *this;
 }
-
-bool xtd::forms::link::equals(const xtd::forms::link& other) const noexcept {
-  return data_->enabled == other.data_->enabled && data_->length == other.data_->length && data_->name == other.data_->name && data_->start == other.data_->start;
-}
