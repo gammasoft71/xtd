@@ -23,14 +23,6 @@ xtd::forms::link& xtd::forms::link::operator =(const link& value) {
   return *this;
 }
 
-bool xtd::forms::link::operator ==(const link& other) const noexcept {
-  return data_->enabled == other.data_->enabled && data_->length == other.data_->length && data_->name == other.data_->name && data_->start == other.data_->start;
-}
-
-bool xtd::forms::link::operator !=(const link& other) const noexcept {
-  return !operator ==(other);
-}
-
 const xtd::ustring& xtd::forms::link::description() const noexcept {
   return data_->description;
 }
@@ -101,4 +93,8 @@ bool xtd::forms::link::visited() const noexcept {
 xtd::forms::link& xtd::forms::link::visited(bool value) {
   data_->visited = value;
   return *this;
+}
+
+bool xtd::forms::link::equals(const link& other) const noexcept {
+  return data_->enabled == other.data_->enabled && data_->length == other.data_->length && data_->name == other.data_->name && data_->start == other.data_->start;
 }
