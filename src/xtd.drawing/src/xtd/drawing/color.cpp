@@ -159,8 +159,72 @@ const color color::yellow_green = color::from_known_color(known_color::yellow_gr
 color::color(const color& color, const known_color& known_color) : argb_(color.argb_), handle_(color.handle_), known_color_(known_color), name_(ustring::format("{}", known_color)), empty_(false) {
 }
 
+uint8_t color::a() const noexcept {
+  return (uint8_t)((to_argb() & 0xFF000000) >> 24);
+}
+
+uint8_t color::b() const noexcept {
+  return (uint8_t)(to_argb() & 0x000000FF);
+}
+
+uint8_t color::g() const noexcept {
+  return (uint8_t)((to_argb() & 0x0000FF00) >> 8);
+}
+
+intptr_t color::handle() const noexcept {
+  return handle_;
+}
+
+bool color::is_dark() const noexcept {
+  return get_lightness() < lightness_threshold;
+}
+
+bool color::is_empty() const noexcept {
+  return empty_;
+}
+
+bool color::is_known_color() const noexcept {
+  return known_color_ != (xtd::drawing::known_color)0;
+}
+
+bool color::is_light() const noexcept {
+  return get_lightness() >= lightness_threshold;
+}
+
+bool color::is_named_color() const noexcept {
+  return name_ != ustring::format("{:X8}", argb_) && name_ != "0";
+}
+
 bool color::is_system_color() const noexcept {
   return known_color_ != (known_color)0 && (known_color_ <= known_color::window_text || known_color_ >= drawing::known_color::button_face);
+}
+
+xtd::ustring color::name() const noexcept {
+  return name_;
+}
+
+uint8_t color::r() const noexcept {
+  return (uint8_t)((to_argb() & 0x00FF0000) >> 16);
+}
+
+color color::average(const color& color1, const color& color2, double weight, bool average_alpha) noexcept {
+  return from_argb(average_alpha ? static_cast<uint8_t>(color1.a() * (1 - weight) + color2.a() * weight) : static_cast<uint8_t>(color1.a()), static_cast<uint8_t>(color1.r() * (1 - weight) + color2.r() * weight), static_cast<uint8_t>(color1.g() * (1 - weight) + color2.g() * weight), static_cast<uint8_t>(color1.b() * (1 - weight) + color2.b() * weight));
+}
+
+color color::average(const color& color1, const color& color2, double weight) noexcept {
+  return average(color1, color2, weight, false);
+}
+
+color color::dark(const color& color, double weight) noexcept {
+  return color::average(color, drawing::color::black, weight);
+}
+
+color color::dark(const color& color) noexcept {
+  return color::dark(color, 1.0 / 3);
+}
+
+bool color::equals(const color& value) const noexcept {
+  return argb_ == value.argb_ && handle_ == value.handle_ && name_ == value.name_ && empty_ == value.empty_;
 }
 
 color color::from_argb(uint32_t argb) noexcept {
@@ -468,6 +532,14 @@ float color::get_saturation() const noexcept {
   return (max + min) <= 1.0f ? (max - min) / (max + min) : (max - min) / (2 - max - min);
 }
 
+color color::light(const color& color, double weight) noexcept {
+  return color::average(color, drawing::color::white, weight);
+}
+
+color color::light(const color& color) noexcept {
+  return color::light(color, 1.0 / 3);
+}
+
 color color::parse(const ustring& color) noexcept {
   try {
     vector<ustring> argb = color.replace("color [a=", "").replace(" r=", "").replace(" g=", "").replace("b=", "").replace("]", "").split({','});
@@ -491,4 +563,10 @@ ustring color::to_string() const noexcept {
   if (empty_) return "color [empty]";
   if (name_ != ustring::format("{:X8}", argb_) && name_ != "0") return ustring::format("color [{0}]", name());
   return ustring::format("color [a={}, r={}, g={}, b={}]", a(), r(), g(), b());
+}
+
+color::color(uint32_t argb) : argb_(argb), name_(argb ? ustring::format("{:X8}", argb) : "0"), empty_(false) {
+}
+
+color::color(intptr_t handle) : handle_(handle), name_(ustring::format("{:X}h", handle)), empty_(false) {
 }
