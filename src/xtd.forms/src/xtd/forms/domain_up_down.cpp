@@ -22,36 +22,20 @@ domain_up_down::item::item(const xtd::ustring& value, const std::any& tag) : val
 domain_up_down::item::item(const char* value) : value_(value) {
 }
 
-bool domain_up_down::item::operator ==(const item& value) const noexcept {
-  return value_ == value.value_;
-}
-
-bool domain_up_down::item::operator !=(const item& value) const noexcept {
-  return !operator ==(value);
-}
-
-bool domain_up_down::item::operator <(const item& value) const noexcept {
-  return value_ < value.value_;
-}
-
-bool domain_up_down::item::operator <=(const item& value) const noexcept {
-  return value_ <= value.value_;
-}
-
-bool domain_up_down::item::operator >(const item& value) const noexcept {
-  return value_ > value.value_;
-}
-
-bool domain_up_down::item::operator >=(const item& value) const noexcept {
-  return value_ >= value.value_;
-}
-
 const xtd::ustring& domain_up_down::item::value() const noexcept {
   return value_;
 }
 
 std::any domain_up_down::item::tag() const noexcept {
   return tag_;
+}
+
+bool domain_up_down::item::equals(const item& value) const noexcept {
+  return value_ == value.value_;
+}
+
+int32_t domain_up_down::item::compare_to(const item& value) const noexcept {
+  return value_ < value.value_ ? -1 : value_ > value.value_ ? 1 : 0;
 }
 
 xtd::ustring domain_up_down::item::to_string() const noexcept {
