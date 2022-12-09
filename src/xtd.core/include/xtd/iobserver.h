@@ -142,7 +142,7 @@ namespace xtd {
   /// @endcode
   /// See You can show this example here
   /// @remarks The xtd::iobserver and xtd::iobservable <type_t> interfaces provide a generalized mechanism for push-based notification, also known as the observer design pattern. The xtd::iobservable interface represents the class that sends notifications (the provider); the xtd::io::bserver <type_t> interface represents the class that receives them (the observer). @p type_t represents the class that provides the notification information. In some push-based notifications, the xtd::iobserver <type_t> implementation and @p type_t can represent the same type.
-  /// @remarks The provider must implement two methodq :
+  /// @remarks The provider must implement two methods :
   /// @remarks * xtd::iobservable::subscribe, that indicates that an observer wants to receive push-based notifications.
   /// @remarks * xtd::iobservable::unsubscribe, that indicates that an observer no longer wants receive push-based notifications.
   /// @remarks At any given time, a given provider may have zero, one, or multiple observers. The provider is responsible for storing references to observers and ensuring that they are valid before it sends notifications. The xtd::iobservable interface does not make any assumptions about the number of observers or the order in which notifications are sent.
@@ -163,7 +163,7 @@ namespace xtd {
     ///   console::write_line("The location Tracker has completed transmitting data to {}.", name());
     ///   unsubscribe();
     /// }
-    /// @endode
+    /// @endcode
     virtual void on_completed() noexcept = 0;
 
     /// @brief Notifies the observer that the provider has experienced an error condition.
