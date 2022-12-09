@@ -15,14 +15,6 @@ texture_brush& texture_brush::operator =(const texture_brush& value) {
   return *this;
 }
 
-bool texture_brush::operator ==(const texture_brush& value) const noexcept {
-  return data_->image_ == value.data_->image_;
-}
-
-bool texture_brush::operator !=(const texture_brush& value) const noexcept {
-  return !operator ==(value);
-}
-
 const drawing::image& texture_brush::image() const noexcept {
   return data_->image_;
 }
@@ -33,6 +25,10 @@ texture_brush& texture_brush::image(const drawing::image& image) {
     native::brush::texture(handle(), data_->image_.handle());
   }
   return *this;
+}
+
+bool texture_brush::equals(const texture_brush& value) const noexcept {
+  return data_->image_ == value.data_->image_;
 }
 
 texture_brush::texture_brush(const texture_brush& value) : brush(value), data_(value.data_) {
