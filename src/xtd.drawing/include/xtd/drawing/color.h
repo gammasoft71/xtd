@@ -41,7 +41,7 @@ namespace xtd {
     ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
     /// }
     /// @endcode
-    class drawing_export_ color : public xtd::object {
+    class drawing_export_ color : public xtd::object, public xtd::iequatable<color> {
     public:
       /// @name Fields
       
@@ -491,8 +491,6 @@ namespace xtd {
       /// @cond
       color(const color& color) = default;
       color& operator =(const color& color) = default;
-      bool operator ==(const color& value) const noexcept {return argb_ == value.argb_ && handle_ == value.handle_ && name_ == value.name_ && empty_ == value.empty_;}
-      bool operator !=(const color& value) const noexcept {return !operator ==(value);}
       /// @endcond
       
       /// @name Properties
@@ -515,7 +513,7 @@ namespace xtd {
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
       /// @endcode
-      uint8_t a() const noexcept {return (uint8_t)((to_argb() & 0xFF000000) >> 24);}
+      uint8_t a() const noexcept;
       
       /// @brief Gets the blue component value of this xtd::drawing::color class.
       /// @return byte The blue component value of this xtd::drawing::color.
@@ -534,7 +532,7 @@ namespace xtd {
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
       /// @endcode
-      uint8_t b() const noexcept {return (uint8_t)(to_argb() & 0x000000FF);}
+      uint8_t b() const noexcept;
       
       /// @brief Gets the green component value of this xtd::drawing::color class.
       /// @return byte The green component value of this xtd::drawing::color.
@@ -553,32 +551,32 @@ namespace xtd {
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
       /// @endcode
-      uint8_t g() const noexcept {return (uint8_t)((to_argb() & 0x0000FF00) >> 8);}
+      uint8_t g() const noexcept;
       
       /// @brief Gets the native handle of this xtd::drawing::color class.
       /// @remarks For internal use only, needed for system_colors.
-      intptr_t handle() const noexcept {return handle_;}
+      intptr_t handle() const noexcept;
       
       /// @brief Gets a value indicating wheter this xtd::drawing::color structure is dark color.
       /// @remarks return true if dark color; otherwise false.
-      bool is_dark() const noexcept {return get_lightness() < lightness_threshold;}
+      bool is_dark() const noexcept;
       
       /// @brief Specifies whether this xtd::drawing::color class is uninitialized.
       /// @return bool Returns true if this color is uninitialized; otherwise, false.
-      bool is_empty() const noexcept {return empty_;}
+      bool is_empty() const noexcept;
       
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a predefined color. Predefined colors are represented by the elements of the xtd::drawing::known_color enumeration.
       /// @return bool Returns true if this xtd::drawing::color was created from a predefined color by using either the from_name method or the from_known_color method; otherwise, false.
       /// @remarks This property does not do a comparison of the ARGB values. Therefore, when the is_known_color property is applied to a xtd::drawing::color structure that is created by using the xtd::drawing::color::from_argb method, is_known_color returns false, even if the ARGB value matches the ARGB value of a predefined color.
-      bool is_known_color() const noexcept {return known_color_ != (xtd::drawing::known_color)0;}
+      bool is_known_color() const noexcept;
       
       /// @brief Gets a value indicating wheter this xtd::drawing::color structure is light color.
       /// @remarks return true if light color; otherwise false.
-      bool is_light() const noexcept {return get_lightness() >= lightness_threshold;}
+      bool is_light() const noexcept;
       
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a named color or a member of the xtd::drawing::known_color enumeration.
       /// @return bool Returns true if this xtd::drawing::color was created by using either the xtd::drawing::color::from_name method or the xtd::drawing::color::from_known_color method; otherwise, false.
-      bool is_named_color() const noexcept {return name_ != ustring::format("{:X8}", argb_) && name_ != "0";}
+      bool is_named_color() const noexcept;
       
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a system color. A system color is a color that is used in a Windows display element. System colors are represented by elements of the xtd::drawing::known_color enumeration.
       /// @return bool Returns true if this xtd::drawing::color was created from a system color by using either the xtd::drawing::color::from_name method or the xtd::drawing::color::from_known_color method; otherwise, false.
@@ -586,7 +584,7 @@ namespace xtd {
       
       /// @brief Gets the name of this xtd::drawing::color.
       /// @return string The name of this xtd::drawing::color.
-      xtd::ustring name() const noexcept {return name_;}
+      xtd::ustring name() const noexcept;
       
       /// @brief Gets the red component value of this xtd::drawing::color class.
       /// @return byte The red component value of this xtd::drawing::color.
@@ -605,7 +603,7 @@ namespace xtd {
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
       /// @endcode
-      uint8_t r() const noexcept {return (uint8_t)((to_argb() & 0x00FF0000) >> 16);}
+      uint8_t r() const noexcept;
       /// @}
       
       /// @name Methods
@@ -622,7 +620,7 @@ namespace xtd {
       /// color = color1 * (1 - weight) + color2 * weight;
       /// @endcode
       /// @remarks Thus, a weight value of 1.0 will return the first color, while a value of 0.0 will return the second color.
-      static color average(const color& color1, const color& color2, double weight, bool average_alpha) noexcept {return from_argb(average_alpha ? static_cast<uint8_t>(color1.a() * (1 - weight) + color2.a() * weight) : static_cast<uint8_t>(color1.a()), static_cast<uint8_t>(color1.r() * (1 - weight) + color2.r() * weight), static_cast<uint8_t>(color1.g() * (1 - weight) + color2.g() * weight), static_cast<uint8_t>(color1.b() * (1 - weight) + color2.b() * weight));}
+      static color average(const color& color1, const color& color2, double weight, bool average_alpha) noexcept;
       
       /// @brief Returns the weighted average color between the two given colors.
       /// @param color1 The first color.
@@ -635,27 +633,19 @@ namespace xtd {
       /// color = color1 * (1 - weight) + color2 * weight;
       /// @endcode
       /// @remarks Thus, a weight value of 1.0 will return the second color, while a value of 0.0 will return the first color.
-      static color average(const color& color1, const color& color2, double weight) noexcept {return average(color1, color2, weight, false);}
+      static color average(const color& color1, const color& color2, double weight) noexcept;
       
       /// @brief Returns a darker version of the specified color.
       /// @param color The color to dark.
       /// @return the darker color result.
-      static color dark(const color& color, double weight) noexcept {return color::average(color, drawing::color::black, weight);}
+      static color dark(const color& color, double weight) noexcept;
       
       /// @brief Returns a darker version of the specified color.
       /// @param color The color to dark.
       /// @return the darker color result.
-      static color dark(const color& color) noexcept {return color::dark(color, 1.0 / 3);}
+      static color dark(const color& color) noexcept;
       
-      /// @brief Returns a lighter version of the specified color.
-      /// @param color The color to light.
-      /// @return the lighter color result.
-      static color light(const color& color, double weight) noexcept {return color::average(color, drawing::color::white, weight);}
-      
-      /// @brief Returns a lighter version of the specified color.
-      /// @param color The color to light.
-      /// @return the lighter color result.
-      static color light(const color& color) noexcept {return color::light(color, 1.0 / 3);}
+      bool equals(const color& value) const noexcept override;
       
       /// @brief Creates a xtd::drawing::color class from a 32-bit ARGB value.
       /// @param argb A value specifying the 32-bit ARGB value
@@ -1108,7 +1098,17 @@ namespace xtd {
       /// }
       /// @endcode
       float get_saturation() const noexcept;
+
+      /// @brief Returns a lighter version of the specified color.
+      /// @param color The color to light.
+      /// @return the lighter color result.
+      static color light(const color& color, double weight) noexcept;
       
+      /// @brief Returns a lighter version of the specified color.
+      /// @param color The color to light.
+      /// @return the lighter color result.
+      static color light(const color& color) noexcept;
+
       /// @brief Creates a xtd::drawing::color class from the specified name.
       /// @param name A string that is the name of a predefined color. Valid names are the same as the names of the elements of the xtd::drawing::known_color enumeration or hexadecimal value that represents argb value, or four decimal values separated by a comma representing respectively a, r, g, b, values.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
@@ -1229,13 +1229,13 @@ namespace xtd {
       /// @}
       
     private:
-      explicit color(uint32_t argb) : argb_(argb), name_(argb ? ustring::format("{:X8}", argb) : "0"), empty_(false) {}
-      explicit color(intptr_t handle)  : handle_(handle), name_(ustring::format("{:X}h", handle)), empty_(false) {}
+      explicit color(uint32_t argb);
+      explicit color(intptr_t handle);
       color(const color& color, const xtd::drawing::known_color& know_color);
       
       uint32_t argb_ = 0;
       intptr_t handle_ = 0;
-      xtd::drawing::known_color known_color_ = (xtd::drawing::known_color)0;
+      xtd::drawing::known_color known_color_ = static_cast<xtd::drawing::known_color>(0);
       xtd::ustring name_ = "0";
       bool empty_ = true;
     };
