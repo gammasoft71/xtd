@@ -53,7 +53,7 @@ namespace xtd {
       xtd::drawing::solid_brush& color(const xtd::drawing::color& value) noexcept;
       /// @}
       
-      /// @name Properties
+      /// @name Methods
       
       /// @{
       using brush::equals;

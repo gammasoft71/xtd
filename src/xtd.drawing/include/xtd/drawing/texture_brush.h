@@ -25,7 +25,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of texture_brush class.
     /// @include fill_rectangle.cpp
-    class drawing_export_ texture_brush final : public brush {
+    class drawing_export_ texture_brush final : public brush, public xtd::iequatable<texture_brush> {
     public:
       /// @name Constructors
       
@@ -36,8 +36,6 @@ namespace xtd {
       /// @cond
       texture_brush(const texture_brush& value);
       texture_brush& operator =(const texture_brush& value);
-      bool operator ==(const texture_brush& value) const noexcept;
-      bool operator !=(const texture_brush& value) const noexcept;
       /// @endcond
       
       /// @name Properties
@@ -47,6 +45,13 @@ namespace xtd {
       texture_brush& image(const drawing::image& image);
       /// @}
       
+      /// @name Methods
+      
+      /// @{
+      using brush::equals;
+      bool equals(const texture_brush& value) const noexcept override;
+      /// @}
+
     private:
       texture_brush();
       struct data {
