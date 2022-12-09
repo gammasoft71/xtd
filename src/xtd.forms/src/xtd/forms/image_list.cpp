@@ -34,14 +34,6 @@ image_list::~image_list() {
   }
 }
 
-bool image_list::operator ==(const image_list& value) const noexcept {
-  return data_->images_ == value.data_->images_;
-}
-
-bool image_list::operator !=(const image_list& value) const noexcept {
-  return !operator ==(value);
-}
-
 intptr_t image_list::handle() const noexcept {
   return data_->handle_;
 }
@@ -80,4 +72,8 @@ std::any image_list::tag() const noexcept {
 image_list& image_list::tag(const std::any& tag) {
   data_->tag_ = tag;
   return *this;
+}
+
+bool image_list::equals(const image_list& value) const noexcept {
+  return data_->images_ == value.data_->images_;
 }

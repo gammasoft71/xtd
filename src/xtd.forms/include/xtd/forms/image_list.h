@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of image_list class.
     /// @include image_list.cpp
-    class forms_export_ image_list final : public component {
+    class forms_export_ image_list final : public component, public iequatable<image_list> {
     public:
       /// @name Alias
       
@@ -51,8 +51,6 @@ namespace xtd {
       ~image_list();
       image_list(const image_list&) = default;
       image_list& operator =(const image_list&) = default;
-      bool operator ==(const image_list& value) const noexcept;
-      bool operator !=(const image_list& value) const noexcept;
       /// @endcond
       
       /// @name Properties
@@ -93,6 +91,12 @@ namespace xtd {
       image_list& tag(const std::any& tag);
       /// @}
       
+      /// @name Methods
+      
+      /// @{
+      bool equals(const image_list& value) const noexcept override;
+      /// @}
+
     private:
       struct data {
         intptr_t handle_ = 0;
