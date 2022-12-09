@@ -41,7 +41,7 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    class drawing_export_ font final : public xtd::object {
+    class drawing_export_ font final : public xtd::object, public xtd::iequatable<font> {
     public:
       /// @name Constructors
       
@@ -164,8 +164,6 @@ namespace xtd {
       /// @cond
       font(const font& value);
       font& operator =(const font& value);
-      bool operator ==(const font& value) const noexcept;
-      bool operator !=(const font& value) const noexcept;
       ~font();
       /// @endcond
       
@@ -271,6 +269,8 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      bool equals(const font& value) const noexcept override;
+
       /// @brief Creates a font from the specified Windows handle to a device context.
       /// @param hdc A handle to a device context.
       /// @return The font this method creates.

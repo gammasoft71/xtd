@@ -110,14 +110,6 @@ font& font::operator =(const font& value) {
   return *this;
 }
 
-bool font::operator ==(const font& value) const noexcept {
-  return data_->font_family_ == value.data_->font_family_ && data_->gdi_char_set_ == value.data_->gdi_char_set_ && data_->gdi_vertical_font_ == value.data_->gdi_vertical_font_ && data_->style_ == value.data_->style_ && data_->size_ == value.data_->size_ && data_->unit_ == value.data_->unit_;
-}
-
-bool font::operator !=(const font& value) const noexcept {
-  return !operator ==(value);
-}
-
 font::~font() {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::font::destroy(data_->handle_);
 }
@@ -193,6 +185,10 @@ bool font::underline() const noexcept {
 
 graphics_unit font::unit() const noexcept {
   return data_->unit_;
+}
+
+bool font::equals(const font& value) const noexcept {
+  return data_->font_family_ == value.data_->font_family_ && data_->gdi_char_set_ == value.data_->gdi_char_set_ && data_->gdi_vertical_font_ == value.data_->gdi_vertical_font_ && data_->style_ == value.data_->style_ && data_->size_ == value.data_->size_ && data_->unit_ == value.data_->unit_;
 }
 
 font font::from_hdc(const intptr_t hdc) {
