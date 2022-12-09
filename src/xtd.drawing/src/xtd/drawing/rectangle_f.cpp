@@ -111,6 +111,10 @@ bool rectangle_f::contains(float x, float y) const noexcept {
   return x_ <= x && x < x_ + width_ && y_ <= y && y < y_ + height_;
 }
 
+bool rectangle_f::equals(const rectangle_f& value) const noexcept {
+  return x_ == value.x_ && y_ == value.y_ && width_ == value.width_ && height_ == value.height_;
+}
+
 rectangle_f rectangle_f::from_ltrb(float left, float top, float right, float bottom) noexcept {
   return rectangle_f(left, top, right - left, bottom - top);
 }
@@ -200,12 +204,4 @@ rectangle_f rectangle_f::offset(const rectangle_f& rect, float x, float y) noexc
 
 xtd::ustring rectangle_f::to_string() const noexcept {
   return ustring::format("{{x={}, y={}, width={}, heght={}}}", x(), y(), width(), height());
-}
-
-bool rectangle_f::operator ==(const rectangle_f& value) const noexcept {
-  return x_ == value.x_ && y_ == value.y_ && width_ == value.width_ && height_ == value.height_;
-}
-
-bool rectangle_f::operator !=(const rectangle_f& value) const noexcept {
-  return !operator ==(value);
 }
