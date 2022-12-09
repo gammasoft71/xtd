@@ -13,6 +13,7 @@ namespace xtd {
   namespace drawing {
     /// @cond
     class point_f;
+    class size;
     /// @endcond
     
     /// @brief Stores an ordered pair of floating-point, which specify a height and width.
@@ -26,7 +27,7 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    class drawing_export_ size_f : public xtd::object {
+    class drawing_export_ size_f : public xtd::object, public xtd::iequatable<size_f> {
     public:
       /// @name Fields
       
@@ -53,13 +54,7 @@ namespace xtd {
       
       /// @cond
       size_f(const xtd::drawing::size_f&) noexcept = default;
-      bool operator ==(const xtd::drawing::size_f& value) const noexcept;
-      bool operator !=(const xtd::drawing::size_f& value) const noexcept;
       size_f& operator =(const xtd::drawing::size_f& size) noexcept = default;
-      size_f operator +(const xtd::drawing::size_f& size) const noexcept;
-      size_f operator -(const xtd::drawing::size_f& size) const noexcept;
-      size_f& operator +=(const xtd::drawing::size_f& size) noexcept;
-      size_f& operator -=(const xtd::drawing::size_f& size) noexcept;
       /// @endcond
       
       /// @name Properties
@@ -99,6 +94,8 @@ namespace xtd {
       /// @return A xtd::drawing::size_f class that is the result of the addition operation.
       static xtd::drawing::size_f add(const xtd::drawing::size_f& size1, const xtd::drawing::size_f& size2) noexcept;
       
+      bool equals(const xtd::drawing::size_f& value) const noexcept override;
+
       /// @brief Returns the result of subtracting specified xtd::drawing::size_f from the specified xtd::drawing::size_f.
       /// @param sz1 The xtd::drawing::size_f to be subtracted from.
       /// @param sz2 The xtd::drawing::size_f to subtract from the Size.
@@ -109,7 +106,47 @@ namespace xtd {
       /// @return A xtd::ustring that represents this size.
       xtd::ustring to_string() const noexcept override;
       /// @}
-      
+
+      /// @name Operators
+
+      /// @{
+      /// @brief Increases a xtd::drawing::size_f with a given xtd::drawing::size_f.
+      /// @param size A xtd::drawing::size_f that specifies the pair of numbers to add to the size of this xtd::drawing::size_f.
+      /// @return The increased xtd::drawing::size.
+      size_f operator +(const xtd::drawing::size_f& size) const noexcept;
+      /// @brief Increases a xtd::drawing::size_f with a given xtd::drawing::size.
+      /// @param size A xtd::drawing::size that specifies the pair of numbers to add to the size of this xtd::drawing::size_f.
+      /// @return The increased xtd::drawing::size_f.
+      size_f operator +(const xtd::drawing::size& size) const noexcept;
+
+      /// @brief Increases a xtd::drawing::size_f wuth a given xtd::drawing::size_f.
+      /// @param size A xtd::drawing::size_f that specifies the pair of numbers to add to the size of this xtd::drawing::size_f.
+      /// @return The increased xtd::drawing::size_f.
+      size_f& operator +=(const xtd::drawing::size_f& size) noexcept;
+      /// @brief Increases a xtd::drawing::size_f wuth a given xtd::drawing::size.
+      /// @param size A xtd::drawing::size that specifies the pair of numbers to add to the size of this xtd::drawing::size_f.
+      /// @return The increased xtd::drawing::size_f.
+      size_f& operator +=(const xtd::drawing::size& size) noexcept;
+
+      /// @brief Decreases a xtd::drawing::size_f with the a given xtd::drawing::size_f.
+      /// @param size A xtd::drawing::size_f that specifies the pair of numbers to subtract from the size of this xtd::drawing::size_f.
+      /// @return The decreased xtd::drawing::size_f.
+      size_f operator -(const xtd::drawing::size_f& size) const noexcept;
+      /// @brief Decreases a xtd::drawing::size_f with the a given xtd::drawing::size.
+      /// @param size A xtd::drawing::size that specifies the pair of numbers to subtract from the size of this xtd::drawing::size_f.
+      /// @return The decreased xtd::drawing::size_f.
+      size_f operator -(const xtd::drawing::size& size) const noexcept;
+
+      /// @brief Decreases a xtd::drawing::size_f with the a given xtd::drawing::size_f.
+      /// @param size A xtd::drawing::size_f that specifies the pair of numbers to subtract from the size of this xtd::drawing::size_f.
+      /// @return The decreased xtd::drawing::size_f.
+      size_f& operator -=(const xtd::drawing::size_f& size) noexcept;
+      /// @brief Decreases a xtd::drawing::size_f with the a given xtd::drawing::size.
+      /// @param size A xtd::drawing::size that specifies the pair of numbers to subtract from the size of this xtd::drawing::size_f.
+      /// @return The decreased xtd::drawing::size_f.
+      size_f& operator -=(const xtd::drawing::size& size) noexcept;
+      /// @}
+
     private:
       float width_ = 0;
       float height_ = 0;

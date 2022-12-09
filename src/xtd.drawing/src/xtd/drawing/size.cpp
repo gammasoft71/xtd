@@ -11,34 +11,6 @@ size::size(const point& point) noexcept : width_(point.x()), height_(point.y()) 
 size::size(int32_t width, int32_t height) noexcept : width_(width), height_(height) {
 }
 
-bool size::operator ==(const xtd::drawing::size& value) const noexcept {
-  return width_ == value.width_ && height_ == value.height_;
-}
-
-bool size::operator !=(const xtd::drawing::size& value) const noexcept {
-  return !operator ==(value);
-}
-
-size size::operator +(const size& size) const noexcept {
-  return {width_ + size.width_, height_ + size.height_};
-}
-
-size size::operator -(const size& size) const noexcept {
-  return {width_ - size.width_, height_ - size.height_};
-}
-
-size& size::operator +=(const size& size) noexcept {
-  width_ += size.width_;
-  height_ += size.height_;
-  return *this;
-}
-
-size& size::operator -=(const size& size) noexcept {
-  width_ -= size.width_;
-  height_ -= size.height_;
-  return *this;
-}
-
 size::operator size_f() const noexcept {
   return size_f(static_cast<float>(width_), static_cast<float>(height_));
 }
@@ -71,6 +43,10 @@ size size::ceiling(const size_f& value) noexcept {
   return {int32_t(std::ceil(value.width())), int32_t(std::ceil(value.height()))};
 }
 
+bool size::equals(const xtd::drawing::size& value) const noexcept {
+  return width_ == value.width_ && height_ == value.height_;
+}
+
 size size::round(const size_f& value) noexcept {
   return {int32_t(std::round(value.width())), int32_t(std::round(value.height()))};
 }
@@ -85,4 +61,24 @@ size size::subtract(const size& size1, const size& size2) noexcept {
 
 xtd::ustring size::to_string() const noexcept {
   return ustring::format("{{width={}, height={}}}", width(), height());
+}
+
+size size::operator +(const size& size) const noexcept {
+  return {width_ + size.width_, height_ + size.height_};
+}
+
+size& size::operator +=(const size& size) noexcept {
+  width_ += size.width_;
+  height_ += size.height_;
+  return *this;
+}
+
+size size::operator -(const size& size) const noexcept {
+  return {width_ - size.width_, height_ - size.height_};
+}
+
+size& size::operator -=(const size& size) noexcept {
+  width_ -= size.width_;
+  height_ -= size.height_;
+  return *this;
 }
