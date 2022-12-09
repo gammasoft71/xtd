@@ -10,14 +10,6 @@ padding::padding(int32_t all) : all_(true), left_(all), top_(all), right_(all), 
 padding::padding(int32_t left, int32_t top, int32_t right, int32_t bottom) : all_(left == top && left == right && left == bottom), left_(left), top_(top), right_(right), bottom_(bottom) {
 }
 
-bool padding::operator ==(const padding& value) const noexcept {
-  return all_ == value.all_ && left_ == value.left_ && top_ == value.top_ && right_ == value.right_ && bottom_ == value.bottom_;
-}
-
-bool padding::operator !=(const padding& value) const noexcept {
-  return !operator ==(value);
-}
-
 int32_t padding::all() const noexcept {
   return all_ ? top_ : -1;
 }
@@ -85,6 +77,10 @@ int32_t padding::vertical() const noexcept {
 padding padding::add(const padding& p1, const padding& p2) {
   if (p1.all_ && p2.all_) return {p1.left_ + p2.left_};
   return {p1.left_ + p2.left_, p1.top_ + p2.top_, p1.right_ + p2.right_, p1.bottom_ + p2.bottom_};
+}
+
+bool padding::equals(const padding& value) const noexcept {
+  return all_ == value.all_ && left_ == value.left_ && top_ == value.top_ && right_ == value.right_ && bottom_ == value.bottom_;
 }
 
 padding padding::subtract(const padding& p1, const padding& p2) {
