@@ -127,6 +127,7 @@ namespace xtd {
         /// @name Methods
         
         /// @{
+        using brush::equals;
         bool equals(const conical_gradient_brush& value) const noexcept override;
         /// @}
         

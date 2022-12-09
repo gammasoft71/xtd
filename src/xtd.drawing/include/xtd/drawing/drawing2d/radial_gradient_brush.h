@@ -132,6 +132,7 @@ namespace xtd {
         /// @name Methods
         
         /// @{
+        using brush::equals;
         bool equals(const radial_gradient_brush& value) const noexcept override;
         /// @}
 
