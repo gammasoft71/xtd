@@ -34,7 +34,7 @@ namespace xtd {
       /// | scan_method       | 3a4e2661-3109-4e56-8536-42c156e7dcfa |
       /// | transformation    | 8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9 |
       /// | version           | 24d18c76-814a-41a4-bf53-1c219cccf797 |
-      class encoder final : public object {
+      class encoder final : public object, public iequatable<encoder> {
       public:
         /// @name Constructors
         
@@ -48,8 +48,6 @@ namespace xtd {
         encoder() = default;
         encoder(const encoder&) = default;
         encoder& operator =(const encoder&) = default;
-        bool operator ==(const encoder& value) const noexcept {return guid_ == value.guid_;}
-        bool operator !=(const encoder& value) const noexcept {return !operator ==(value);}
         /// @endcond
         
         
@@ -223,6 +221,12 @@ namespace xtd {
         /// @brief Gets a globally unique identifier (GUID) that identifies an image encoder parameter category.
         /// @return The GUID that identifies an image encoder parameter category.
         const xtd::guid& guid() const noexcept {return guid_;}
+        /// @}
+
+        /// @name Methods
+        
+        /// @{
+        bool equals(const encoder& value) const noexcept override {return guid_ == value.guid_;}
         /// @}
         
       private:
