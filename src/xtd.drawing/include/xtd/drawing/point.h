@@ -50,7 +50,7 @@ namespace xtd {
     ///   }
     /// }
     /// @endcode
-    class drawing_export_ point : public xtd::object {
+    class drawing_export_ point : public xtd::object, public xtd::iequatable<point> {
     public:
       /// @name Fields
       
@@ -273,6 +273,8 @@ namespace xtd {
       /// @return The xtd::drawing::point this method converts to.
       static point ceiling(const point_f& value) noexcept;
       
+      bool equals(const point& value) const noexcept override;
+
       /// @brief Translates this xtd::drawing::point by the specified amount.
       /// @param dx The amount to offset the x-coordinate.
       /// @param dy The amount to offset the y-coordinate.
@@ -319,12 +321,7 @@ namespace xtd {
       /// @return The xtd::drawing::point this method converts to.
       static point truncate(const point_f& value) noexcept;
       /// @}
-      
-      /// @cond
-      bool operator ==(const point& value) const noexcept;
-      bool operator !=(const point& value) const noexcept;
-      /// @endcond
-      
+            
       /// @name Operators
       
       /// @{

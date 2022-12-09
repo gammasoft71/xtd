@@ -52,6 +52,10 @@ point point::ceiling(const point_f& value) noexcept {
   return {int32_t(std::ceil(value.x())), int32_t(std::ceil(value.y()))};
 }
 
+bool point::equals(const point& value) const noexcept {
+  return x_ == value.x_ && y_ == value.y_;
+}
+
 void point::offset(int32_t dx, int32_t dy) noexcept {
   x_ += dx;
   y_ += dy;
@@ -79,14 +83,6 @@ xtd::ustring point::to_string() const noexcept {
 
 point point::truncate(const point_f& value) noexcept {
   return {int32_t(std::trunc(value.x())), int32_t(std::trunc(value.y()))};
-}
-
-bool point::operator ==(const point& value) const noexcept {
-  return x_ == value.x_ && y_ == value.y_;
-}
-
-bool point::operator !=(const point& value) const noexcept {
-  return !operator ==(value);
 }
 
 point point::operator +(const size& sz) const noexcept {
