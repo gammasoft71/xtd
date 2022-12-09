@@ -69,6 +69,7 @@ namespace xtd {
         /// @name Methods
         
         /// @{
+        using brush::equals;
         bool equals(const hatch_brush& value) const noexcept override;
         /// @}
 
