@@ -31,7 +31,7 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    class drawing_export_ pen final : public xtd::object {
+    class drawing_export_ pen final : public xtd::object, public xtd::iequatable<pen> {
     public:
       /// @name Constructors
       
@@ -72,8 +72,6 @@ namespace xtd {
       pen(const xtd::drawing::pen& value);
       pen& operator =(const xtd::drawing::pen& value);
       ~pen();
-      bool operator ==(const xtd::drawing::pen& value) const noexcept;
-      bool operator !=(const xtd::drawing::pen& value) const noexcept;
       /// @endcond
       
       /// @name Properties
@@ -202,6 +200,8 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      bool equals(const xtd::drawing::pen& value) const noexcept override;
+
       xtd::ustring to_string() const noexcept override;
       /// @}
       
