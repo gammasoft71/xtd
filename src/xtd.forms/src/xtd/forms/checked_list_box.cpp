@@ -39,36 +39,20 @@ checked_list_box::item::item(const xtd::ustring& value, forms::check_state check
 checked_list_box::item::item(const char* value) : list_box::item(value) {
 }
 
-bool checked_list_box::item::operator ==(const item& value) const noexcept {
-  return list_box::item::operator ==(value);
-}
-
-bool checked_list_box::item::operator !=(const item& value) const noexcept {
-  return list_box::item::operator !=(value);
-}
-
-bool checked_list_box::item::operator <(const item& value) const noexcept {
-  return list_box::item::operator <(value);
-}
-
-bool checked_list_box::item::operator <=(const item& value) const noexcept {
-  return list_box::item::operator <=(value);
-}
-
-bool checked_list_box::item::operator >(const item& value) const noexcept {
-  return list_box::item::operator >(value);
-}
-
-bool checked_list_box::item::operator >=(const item& value) const noexcept {
-  return list_box::item::operator >=(value);
-}
-
 bool checked_list_box::item::checked() const {
   return check_state_ != forms::check_state::unchecked;
 }
 
 forms::check_state checked_list_box::item::check_state() const {
   return check_state_;
+}
+
+int32_t checked_list_box::item::compare_to(const item& value) const noexcept {
+  return list_box::item::compare_to(value);
+}
+
+bool checked_list_box::item::equals(const item& value) const noexcept {
+  return list_box::item::equals(value);
 }
 
 checked_list_box::checked_list_box() {
