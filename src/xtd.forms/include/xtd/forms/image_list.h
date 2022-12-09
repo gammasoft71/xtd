@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <any>
+#include <xtd/iequatable.h>
 #include <xtd/drawing/image.h>
 #include "component.h"
 #include "layout/arranged_element_collection.h"
@@ -22,7 +23,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of image_list class.
     /// @include image_list.cpp
-    class forms_export_ image_list final : public component, public iequatable<image_list> {
+    class forms_export_ image_list final : public component, public xtd::iequatable<image_list> {
     public:
       /// @name Alias
       

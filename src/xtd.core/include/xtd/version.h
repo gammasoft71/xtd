@@ -92,7 +92,7 @@ namespace xtd {
   /// //       Relationship of 1.1 to 1.1.0: earlier
   /// //       Relationship of 1.1.0.0 to 1.1.0: later
   /// @endcode
-  class version final : public object, public icomparable<version>, public iequatable<version> {
+  class version final : public object, public icomparable<version>, public xtd::iequatable<version> {
   public:
     /// @name Constructors
     

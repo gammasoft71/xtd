@@ -2,6 +2,7 @@
 /// @brief Contains xtd::forms::style_sheets::control class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/iequatable.h>
 #include "ibox_model.h"
 #include "iimage_model.h"
 #include "itext_model.h"

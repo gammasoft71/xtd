@@ -13,6 +13,7 @@
 #include <thread>
 #include <vector>
 #include <xtd/iasync_result.h>
+#include <xtd/iequatable.h>
 #include <xtd/drawing/color.h>
 #include <xtd/drawing/font.h>
 #include <xtd/drawing/point.h>
@@ -72,7 +73,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of control control.
     /// @include control.cpp
-    class forms_export_ control : public component, public iwin32_window, public icomparable<control>, public iequatable<control> {
+    class forms_export_ control : public component, public iwin32_window, public icomparable<control>, public xtd::iequatable<control> {
     protected:
       /// @cond
       enum class state {

@@ -5,6 +5,7 @@
 #include <any>
 #include <cstdint>
 #include <memory>
+#include <xtd/iequatable.h>
 #include <xtd/object.h>
 #include <xtd/drawing/bitmap.h>
 #include <xtd/drawing/point.h>
@@ -32,7 +33,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of cursor component.
     /// @include cursors.cpp
-    class forms_export_ cursor : public object, public iequatable<cursor> {
+    class forms_export_ cursor : public object, public xtd::iequatable<cursor> {
     public:
       /// @name Fields
       

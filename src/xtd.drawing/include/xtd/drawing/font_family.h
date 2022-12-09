@@ -7,6 +7,7 @@
 #include <ostream>
 #include <stdexcept>
 #include <vector>
+#include <xtd/iequatable.h>
 #include <xtd/object.h>
 #include <xtd/ustring.h>
 #include "../drawing_export.h"

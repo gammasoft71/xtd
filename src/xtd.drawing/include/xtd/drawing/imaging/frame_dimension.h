@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <ostream>
 #include <xtd/guid.h>
+#include <xtd/iequatable.h>
 #include <xtd/object.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -20,7 +21,7 @@ namespace xtd {
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing
-      class frame_dimension final : public object, public iequatable<frame_dimension> {
+      class frame_dimension final : public object, public xtd::iequatable<frame_dimension> {
       public:
         /// @name Constructors
         

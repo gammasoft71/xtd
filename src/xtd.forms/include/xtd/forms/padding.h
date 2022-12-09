@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
+#include <xtd/iequatable.h>
 #include <xtd/object.h>
 #include <xtd/ustring.h>
 #include "../forms_export.h"
@@ -17,7 +18,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    class forms_export_ padding : public object, public iequatable<padding> {
+    class forms_export_ padding : public object, public xtd::iequatable<padding> {
     public:
       /// @name Fields
       

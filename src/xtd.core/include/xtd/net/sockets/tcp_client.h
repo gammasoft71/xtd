@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
+#include "../../iequatable.h"
 #include "../../object.h"
 #include "../../ustring.h"
 #include "../ip_end_point.h"
@@ -41,7 +42,7 @@ namespace xtd {
       /// @par Examples
       /// The following example shows how to use IPv6 xtd::net::sockets::tcp_client class with xtd::net::sockets::network_stream, xtd::net::sockets::socket, xtd::io::stream_reader and xtd::io::stream_writer classes.
       /// @include tcp_client_ip_v6.cpp
-      class core_export_ tcp_client : public xtd::object, public iequatable<tcp_client> {
+      class core_export_ tcp_client : public xtd::object, public xtd::iequatable<tcp_client> {
       public:
         /// @name Constructors
         

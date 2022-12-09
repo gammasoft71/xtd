@@ -4,6 +4,7 @@
 #pragma once
 #include <cstdint>
 #include <ostream>
+#include <xtd/iequatable.h>
 #include "encoder_parameter.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -19,7 +20,7 @@ namespace xtd {
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing
-      class encoder_parameters final : public object, public iequatable<encoder_parameters> {
+      class encoder_parameters final : public object, public xtd::iequatable<encoder_parameters> {
       public:
         /// @name Constructors
         

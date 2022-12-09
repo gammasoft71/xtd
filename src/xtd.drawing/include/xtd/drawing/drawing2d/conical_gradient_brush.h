@@ -4,6 +4,7 @@
 #pragma once
 #include <array>
 #include <utility>
+#include <xtd/iequatable.h>
 #include "../../drawing_export.h"
 #include "../brush.h"
 #include "../point.h"
@@ -31,7 +32,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of conical_gradient_brush class.
       /// @include fill_rectangle.cpp
-      class drawing_export_ conical_gradient_brush final : public brush, public iequatable<conical_gradient_brush> {
+      class drawing_export_ conical_gradient_brush final : public brush, public xtd::iequatable<conical_gradient_brush> {
       public:
         /// @name Constructors
         

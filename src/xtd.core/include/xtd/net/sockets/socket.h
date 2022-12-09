@@ -8,6 +8,7 @@
 #include "../../argument_exception.h"
 #include "../../async_callback.h"
 #include "../../iasync_result.h"
+#include "../../iequatable.h"
 #include "../../not_implemented_exception.h"
 #include "../../not_supported_exception.h"
 #include "../../object.h"

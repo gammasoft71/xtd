@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "../../drawing_export.h"
+#include <xtd/iequatable.h>
 #include <xtd/object.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

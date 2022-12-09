@@ -4,6 +4,7 @@
 #pragma once
 #include <cstdint>
 #include <memory>
+#include <xtd/iequatable.h>
 #include <xtd/object.h>
 #include <xtd/ustring.h>
 #include "../drawing_export.h"

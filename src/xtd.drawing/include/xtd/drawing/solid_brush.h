@@ -2,6 +2,7 @@
 /// @brief Contains xtd::drawing::solid_brush class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/iequatable.h>
 #include "../drawing_export.h"
 #include "brush.h"
 #include "color.h"

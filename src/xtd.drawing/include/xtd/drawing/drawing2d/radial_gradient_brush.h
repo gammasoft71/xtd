@@ -4,6 +4,7 @@
 #pragma once
 #include <array>
 #include <utility>
+#include <xtd/iequatable.h>
 #include "../../drawing_export.h"
 #include "../brush.h"
 #include "../point.h"

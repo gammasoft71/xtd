@@ -8,6 +8,7 @@
 #include <stdexcept>
 #include <vector>
 #include "argument_null_exception.h"
+#include "iequatable.h"
 #include "object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

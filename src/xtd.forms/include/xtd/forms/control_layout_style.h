@@ -2,6 +2,7 @@
 /// @brief Contains xtd::forms::control_layout_style class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/iequatable.h>
 #include <xtd/object.h>
 #include <xtd/ustring.h>
 #include "content_alignment.h"
@@ -17,7 +18,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    class control_layout_style : public object, public iequatable<control_layout_style> {
+    class control_layout_style : public object, public xtd::iequatable<control_layout_style> {
     protected:
       /// @name Protected Constructors
       

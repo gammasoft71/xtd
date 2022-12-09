@@ -5,6 +5,7 @@
 
 #include "../core_export.h"
 #include "../date_time.h"
+#include "../iequatable.h"
 #include "../static.h"
 #include "directory_info.h"
 

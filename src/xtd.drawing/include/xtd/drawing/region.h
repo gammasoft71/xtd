@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "../drawing_export.h"
+#include <xtd/iequatable.h>
 #include <xtd/object.h>
 #include "drawing2d/graphics_path.h"
 

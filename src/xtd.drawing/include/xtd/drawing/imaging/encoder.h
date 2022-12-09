@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <ostream>
 #include <xtd/guid.h>
+#include <xtd/iequatable.h>
 #include <xtd/object.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -34,7 +35,7 @@ namespace xtd {
       /// | scan_method       | 3a4e2661-3109-4e56-8536-42c156e7dcfa |
       /// | transformation    | 8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9 |
       /// | version           | 24d18c76-814a-41a4-bf53-1c219cccf797 |
-      class encoder final : public object, public iequatable<encoder> {
+      class encoder final : public object, public xtd::iequatable<encoder> {
       public:
         /// @name Constructors
         
