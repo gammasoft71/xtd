@@ -84,6 +84,10 @@ intptr_t cursor::copy_handle() const {
   return native::cursor::copy(data_->handle_);
 }
 
+bool cursor::equals(const cursor& value) const noexcept {
+  return data_ == value.data_ || (!data_->name_.empty() && data_->name_ == value.data_->name_);
+}
+
 cursor cursor::from_bitmap(const xtd::drawing::bitmap& bitmap, const xtd::drawing::point& hot_spot) {
   return cursor(bitmap, hot_spot);
 }
@@ -102,12 +106,4 @@ void cursor::show() {
 
 ustring cursor::to_string() const noexcept {
   return ustring::format("[cursor: {}]", data_->name_ != "" ? data_->name_ : ustring::full_class_name(*this));
-}
-
-bool cursor::operator ==(const cursor& value) const noexcept {
-  return data_ == value.data_ || (!data_->name_.empty() && data_->name_ == value.data_->name_);
-}
-
-bool cursor::operator !=(const cursor& value) const noexcept {
-  return !operator ==(value);
 }
