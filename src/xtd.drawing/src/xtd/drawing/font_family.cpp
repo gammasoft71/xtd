@@ -48,14 +48,6 @@ font_family::~font_family() {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::font_family::destroy(data_->handle_);
 }
 
-bool font_family::operator ==(const font_family& value) const noexcept {
-  return data_->name_ == value.data_->name_;
-}
-
-bool font_family::operator !=(const font_family& value) const noexcept {
-  return !operator ==(value);
-}
-
 std::vector<font_family> font_family::families() noexcept {
   return text::installed_font_collection().families();
 }
@@ -74,6 +66,10 @@ font_family font_family::generic_serif() noexcept {
 
 const xtd::ustring& font_family::name() const noexcept {
   return data_->name_;
+}
+
+bool font_family::equals(const font_family& value) const noexcept {
+  return data_->name_ == value.data_->name_;
 }
 
 int32_t font_family::get_cell_ascent(font_style style) const {

@@ -34,7 +34,7 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    class drawing_export_ font_family final : public xtd::object {
+    class drawing_export_ font_family final : public xtd::object , public xtd::iequatable<font_family> {
     public:
       /// @name Constructors
       
@@ -60,8 +60,6 @@ namespace xtd {
       font_family(const font_family& value);
       font_family() = default;
       font_family& operator =(const font_family& value);
-      bool operator ==(const font_family& value) const noexcept;
-      bool operator !=(const font_family& value) const noexcept;
       /// @endcond
       
       /// @name Properties
@@ -91,6 +89,8 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      bool equals(const font_family& value) const noexcept override;
+
       /// @brief Returns the cell ascent, in design units, of the font_family of the specified style.
       /// @param style A font_style that contains style information for the font.
       /// @return The cell ascent for this font_family that uses the specified font_style.
