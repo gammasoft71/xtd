@@ -44,15 +44,13 @@ namespace xtd {
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
     /// @remarks To draw an image on a Windows Form, you should use one of the draw_image methods.
-    class drawing_export_ image : public object {
+    class drawing_export_ image : public xtd::object, public xtd::iequatable<image> {
     public:
       /// @cond
       image() = default;
       image(const image& image) = default;
       image& operator =(const image& image) = default;
       ~image();
-      bool operator ==(const image& image) const noexcept;
-      bool operator !=(const image& image) const noexcept;
       /// @endcond
       
       /// @name Fields
@@ -166,6 +164,8 @@ namespace xtd {
       /// @ingroup drawing
       graphics create_graphics() {return graphics::from_image(*this);}
       
+      bool equals(const image& image) const noexcept override;
+
       /// @brief Creates an image from the specified file.
       /// @param filename A string that contains the name of the file from which to create the image.
       /// @return The xtd::drawing::image this method creates.
