@@ -132,7 +132,7 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      bool equals(const link& other) const noexcept override;
+      bool equals(const link& other) const noexcept override {return data_->enabled == other.data_->enabled && data_->length == other.data_->length && data_->name == other.data_->name && data_->start == other.data_->start;}
       /// @}
 
     private:
