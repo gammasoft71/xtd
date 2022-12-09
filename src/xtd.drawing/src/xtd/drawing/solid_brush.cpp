@@ -20,14 +20,6 @@ solid_brush& solid_brush::operator =(const solid_brush& value) {
   return *this;
 }
 
-bool solid_brush::operator ==(const solid_brush& value) const noexcept {
-  return data_->color_ == value.data_->color_;
-}
-
-bool solid_brush::operator !=(const solid_brush& value) const noexcept {
-  return !operator ==(value);
-}
-
 const xtd::drawing::color& solid_brush::color() const noexcept {
   return data_->color_;
 }
@@ -38,6 +30,10 @@ solid_brush& solid_brush::color(const drawing::color& value) noexcept {
     native::brush::solid(handle(), data_->color_.a(), data_->color_.r(), data_->color_.g(), data_->color_.b());
   }
   return *this;
+}
+
+bool solid_brush::equals(const solid_brush& value) const noexcept {
+  return data_->color_ == value.data_->color_;
 }
 
 solid_brush::solid_brush(const solid_brush& value) : brush(value), data_(value.data_) {

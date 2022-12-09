@@ -26,7 +26,7 @@ namespace xtd {
     /// The following code example demonstrates the use of solid_brush class.
     /// @include fill_rectangle.cpp
     /// @remarks This class inherits from the xtd::drawing::brush class.
-    class drawing_export_ solid_brush final : public xtd::drawing::brush {
+    class drawing_export_ solid_brush final : public xtd::drawing::brush, public xtd::iequatable<solid_brush> {
     public:
       /// @name Constructors
       
@@ -39,8 +39,6 @@ namespace xtd {
       /// @cond
       solid_brush(const solid_brush& value);
       solid_brush& operator =(const solid_brush& value);
-      bool operator ==(const solid_brush& value) const noexcept;
-      bool operator !=(const solid_brush& value) const noexcept;
       /// @endcond
       
       /// @name Properties
@@ -55,6 +53,13 @@ namespace xtd {
       xtd::drawing::solid_brush& color(const xtd::drawing::color& value) noexcept;
       /// @}
       
+      /// @name Properties
+      
+      /// @{
+      using brush::equals;
+      bool equals(const solid_brush& value) const noexcept override;
+      /// @}
+
     private:
       solid_brush();
       struct data {
