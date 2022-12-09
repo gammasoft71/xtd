@@ -1,6 +1,6 @@
-# texts
+# system_texts
 
-demonstrates the use of [xtd::forms::texts](../../../../src/xtd.forms/include/xtd/forms/texts.h) strings.
+demonstrates the use of [xtd::forms::system_texts](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1system__texts.htmlh) strings.
 
 # Sources
 

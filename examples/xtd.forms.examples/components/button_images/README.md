@@ -1,6 +1,6 @@
 # button_images
 
-demonstrates the use of [xtd::forms::button_images](../../../../src/xtd.forms/include/xtd/forms/button_images.h) control.
+demonstrates the use of [xtd::forms::button_images](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button__images.html) control.
 
 # Sources
 

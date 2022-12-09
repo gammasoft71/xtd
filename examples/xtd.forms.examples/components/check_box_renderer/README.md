@@ -1,6 +1,6 @@
 # check_box_renderer
 
-demonstrates the use of [xtd::forms::check_box_renderer](../../../../src/xtd.forms/include/xtd/forms/check_box_renderer.h) control.
+demonstrates the use of [xtd::forms::check_box_renderer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1check__box__renderer.html) control.
 
 # Sources
 
