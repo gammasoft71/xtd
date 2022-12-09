@@ -196,6 +196,10 @@ status_bar_panel status_bar_panel::create_panel(const xtd::ustring& text, const 
   return result;
 }
 
+bool status_bar_panel::equals(const status_bar_panel& other) const noexcept {
+  return data_ == other.data_;
+}
+
 void status_bar_panel::end_init() {
   data_->init_mode = false;
   if (data_->parent && data_->init_mode == false) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image, data_->alignment, data_->auto_size, data_->border_style, data_->style, data_->min_width, data_->width);
