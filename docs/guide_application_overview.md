@@ -41,7 +41,7 @@ int main() {
   form1.show();
   form1.form_closed += [] {
     // If you comment the following line the application will not exit when you close the form.
-    application::exit(); // or application::exit_thread();
+    application::exit();
   };
   
   application::run();
