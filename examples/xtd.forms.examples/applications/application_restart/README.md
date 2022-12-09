@@ -1,6 +1,6 @@
 # application_restart
 
-Shows how to create an application with  [xtd::forms::application::restart](../../../../src/xtd.forms/include/xtd/forms/application.h) method.
+Shows how to create an application with  [xtd::forms::application::restart](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#a9d1de5b2f5e8ee4b46a24aa8f556a5c2) method.
 
 # Sources
 
