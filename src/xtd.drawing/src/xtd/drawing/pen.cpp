@@ -45,14 +45,6 @@ pen::~pen() {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::pen::destroy(data_->handle_);
 }
 
-bool pen::operator ==(const xtd::drawing::pen& value) const noexcept {
-  return data_ == value.data_;
-}
-
-bool pen::operator !=(const xtd::drawing::pen& value) const noexcept {
-  return !operator ==(value);
-}
-
 pen_alignment pen::alignment() const noexcept {
   return data_->alignment;
 }
@@ -177,6 +169,10 @@ pen& pen::width(float value) {
     recreate_handle();
   }
   return *this;
+}
+
+bool pen::equals(const xtd::drawing::pen& value) const noexcept {
+  return data_ == value.data_;
 }
 
 xtd::ustring pen::to_string() const noexcept {
