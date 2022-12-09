@@ -26,13 +26,11 @@ namespace xtd {
       /// @ingroup xtd_drawing
       /// @remarks You are not allowed to construct a color_palette object directly. If you created a color_palette object, you could then manipulate the palette size for a particular image, which is not allowed. Use the image.palette property to obtain a color_palette object.
       /// @remarks The colors in the palette are limited to 32-bit ARGB colors. A 32-bit ARGB color has 8 bits each for alpha, red, green, and blue values. The lowest 8 bits make up the blue bit, the next 8 bits are green, the next 8 bits are red, and the most significant 8 bits are alpha. This means each component can vary from 0 to 255. Fully on is 255 and fully off is 0. Alpha is used to make the color value transparent (alpha = 0) or opaque (alpha = 255). The number of intensity levels in the image can be increased without increasing the number of colors used. This process creates what is called a halftone, and it offers increased contrast at a cost of decreased resolution.
-      class color_palette final : public object {
+      class color_palette final : public object, public iequatable<color_palette> {
       public:
         /// @cond
         color_palette(const color_palette&) = default;
         color_palette& operator =(const color_palette&) = default;
-        bool operator ==(const color_palette& value) const noexcept {return entries_ == value.entries_ && flags_ == value.flags_;}
-        bool operator !=(const color_palette& value) const noexcept {return !operator ==(value);}
         /// @endcond
         
         /// @name Properties
@@ -49,7 +47,13 @@ namespace xtd {
         /// * 0x00000004 The colors in the array are halftone values.
         int32_t flags() const noexcept {return flags_;}
         /// @}
+
+        /// @name Methods
         
+        /// @{
+        bool equals(const color_palette& value) const noexcept override {return entries_ == value.entries_ && flags_ == value.flags_;}
+        /// @}
+
       private:
         friend class xtd::drawing::image;
         color_palette() = default;
