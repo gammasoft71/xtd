@@ -1,6 +1,6 @@
 # popup_panel
 
-demonstrates the use of [xtd::forms::popup_panel](../../../../src/xtd.forms/include/xtd/forms/popup_panel.h) container.
+demonstrates the use of [xtd::forms::popup_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1popup__panel.html) container.
 
 # Sources
 

@@ -1,6 +1,6 @@
 # split_container
 
-demonstrates the use of [xtd::forms::split_container](../../../../src/xtd.forms/include/xtd/forms/split_container.h) container.
+demonstrates the use of [xtd::forms::split_container](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1split__container.html) container.
 
 # Sources
 

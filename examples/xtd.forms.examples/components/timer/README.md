@@ -1,6 +1,6 @@
 # timer
 
-demonstrates the use of [xtd::forms::timer](../../../../src/xtd.forms/include/xtd/forms/timer.h) component.
+demonstrates the use of [xtd::forms::timer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1timer.html) component.
 
 # Sources
 

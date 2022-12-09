@@ -1,6 +1,6 @@
 # collapsible_panel
 
-demonstrates the use of [xtd::forms::collapsible_panel](../../../../src/xtd.forms/include/xtd/forms/collapsible_panel.h) container.
+demonstrates the use of [xtd::forms::collapsible_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1collapsible__panel.html) container.
 
 # Sources
 

@@ -1,6 +1,6 @@
 # emoticons
 
-demonstrates the use of [xtd::forms::emoticons](../../../../src/xtd.forms/include/xtd/forms/emoticons.h) control.
+demonstrates the use of [xtd::forms::emoticons](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1emoticons.html) control.
 
 # Sources
 
