@@ -106,14 +106,6 @@ encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encod
 encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, int32_t number_values, xtd::drawing::imaging::encoder_parameter_value_type type, std::vector<byte_t> value) : encoder_(encoder), number_of_values_(number_values), type_(type), value_(value) {
 }
 
-bool encoder_parameter::operator ==(const encoder_parameter& value) const noexcept {
-  return encoder_ == value.encoder_ && type_ == value.type_ && value_ == value.value_;
-}
-
-bool encoder_parameter::operator !=(const encoder_parameter& value) const noexcept {
-  return !operator ==(value);
-}
-
 const xtd::drawing::imaging::encoder& encoder_parameter::encoder() const noexcept {
   return encoder_;
 }
@@ -128,4 +120,8 @@ xtd::drawing::imaging::encoder_parameter_value_type encoder_parameter::value_typ
 
 const std::vector<byte_t>& encoder_parameter::value() const noexcept {
   return value_;
+}
+
+bool encoder_parameter::equals(const encoder_parameter& value) const noexcept {
+  return encoder_ == value.encoder_ && type_ == value.type_ && value_ == value.value_;
 }

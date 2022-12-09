@@ -18,7 +18,7 @@ namespace xtd {
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing
-      class encoder_parameter final : public object {
+      class encoder_parameter final : public object, public iequatable<encoder_parameter> {
       public:
         /// @name Constructors
         
@@ -98,8 +98,6 @@ namespace xtd {
         encoder_parameter() = default;
         encoder_parameter(const encoder_parameter&) = default;
         encoder_parameter& operator =(const encoder_parameter&) = default;
-        bool operator ==(const encoder_parameter& value) const noexcept;
-        bool operator !=(const encoder_parameter& value) const noexcept;
         /// @endcond
         
         
@@ -125,6 +123,12 @@ namespace xtd {
         /// @brief Gets The data value.
         /// @return The data value.
         const std::vector<byte_t>& value() const noexcept;
+        /// @}
+        
+        /// @name Methods
+        
+        /// @{
+        bool equals(const encoder_parameter& value) const noexcept override;
         /// @}
         
       private:
