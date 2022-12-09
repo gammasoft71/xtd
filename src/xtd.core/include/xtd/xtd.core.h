@@ -60,6 +60,8 @@
 #include "invalid_cast_exception.h"
 #include "invalid_operation_exception.h"
 #include "invalid_program_exception.h"
+#include "iobservable.h"
+#include "iobserver.h"
 #include "iprogress.h"
 #include "is.h"
 #include "language_id.h"
