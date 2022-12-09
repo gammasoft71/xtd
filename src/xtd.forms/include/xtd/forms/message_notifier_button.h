@@ -5,7 +5,7 @@
 // TODO: documentation
 namespace xtd {
   namespace forms {
-    class message_notifier_button : public xtd::forms::component {
+    class message_notifier_button : public xtd::forms::component, public iequatable<message_notifier_button> {
     public:
       message_notifier_button() = default;
       message_notifier_button(const xtd::ustring& text) : text_(text) {}
@@ -20,12 +20,8 @@ namespace xtd {
       }
       
       //TODO:
-      bool operator ==(const message_notifier_button& other) const {
+      bool equals(const message_notifier_button& other) const noexcept override {
         return text_ == other.text_;
-      }
-      
-      bool operator !=(const message_notifier_button& other) const {
-        return !((*this) == other);
       }
       
     private:
