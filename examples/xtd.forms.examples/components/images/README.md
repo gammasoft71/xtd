@@ -1,6 +1,6 @@
 # images
 
-demonstrates the use of [xtd::forms::images](../../../../src/xtd.forms/include/xtd/forms/images.h) component.
+demonstrates the use of [xtd::forms::images](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1images.html) component.
 
 # Sources
 

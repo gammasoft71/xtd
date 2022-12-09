@@ -1,6 +1,6 @@
 # button_renderer
 
-demonstrates the use of [xtd::forms::button_renderer](../../../../src/xtd.forms/include/xtd/forms/button_renderer.h) control.
+demonstrates the use of [xtd::forms::button_renderer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button__renderer.html) control.
 
 # Sources
 

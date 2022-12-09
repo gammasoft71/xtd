@@ -1,6 +1,6 @@
 # countries
 
-demonstrates the use of [xtd::forms::countries](../../../../src/xtd.forms/include/xtd/forms/countries.h) component.
+demonstrates the use of [xtd::forms::countries](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1countries.html) component.
 
 # Sources
 

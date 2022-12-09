@@ -1,6 +1,6 @@
 f# enable_debug
 
-demonstrates the use of [xtd::enable_debugs::enable_debug](../../../../src/xtd.forms/include/xtd/forms/enable_debug.h) container.
+demonstrates the use of [xtd::enable_debugs::enable_debug](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1enable__debug.html) container.
 
 # Sources
 
