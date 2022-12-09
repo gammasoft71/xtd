@@ -17,8 +17,11 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    class control_layout_style : public object {
+    class control_layout_style : public object, public iequatable<control_layout_style> {
     protected:
+      /// @name Protected Constructors
+      
+      /// @{
       /// @brief Initialises a new instance of control layout style class.
       control_layout_style() = default;
       /// @brief Initialises a new instance of control layout style class with specified size type.
@@ -48,8 +51,17 @@ namespace xtd {
       /// @param expanded true if control expanded; otherwise false.
       /// @param align One of the content_alignment values..
       control_layout_style(bool expanded, xtd::forms::content_alignment align);
+      /// @}
       
-    public:
+    public:      
+      /// @cond
+      control_layout_style(const control_layout_style& other);
+      control_layout_style& operator =(const control_layout_style& other);
+      /// @endcond
+
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets a flag indicating how a control should be sized relative to its containing layout container.
       /// @return One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is xtd::forms::size_type::absolute.
       xtd::forms::size_type size_type() const noexcept;
@@ -72,17 +84,17 @@ namespace xtd {
       /// @param align One of the content_alignment values. The default is top_left.
       /// @remarks This property work only if expanded = false.
       control_layout_style& align(xtd::forms::content_alignment align);
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
+      bool equals(const control_layout_style& value) const noexcept override;
+
       /// @brief Returns a string that represent xtd::forms::control_layout_style.
       /// @return A string containing that represent xtd::forms::control_layout_style.
       xtd::ustring to_string() const noexcept override;
-      
-      /// @cond
-      control_layout_style(const control_layout_style& other);
-      control_layout_style& operator =(const control_layout_style& other);
-      bool operator ==(const control_layout_style& value) const noexcept;
-      bool operator !=(const control_layout_style& value) const noexcept;
-      /// @endcond
+      /// @}
       
     private:
       struct data {

@@ -36,6 +36,15 @@ control_layout_style::control_layout_style(bool expanded, xtd::forms::content_al
   data_->align = align;
 }
 
+control_layout_style::control_layout_style(const control_layout_style& other) {
+  *data_ = *other.data_;
+}
+
+control_layout_style& control_layout_style::operator =(const control_layout_style& other) {
+  *data_ = *other.data_;
+  return *this;
+}
+
 xtd::forms::size_type control_layout_style::size_type() const noexcept {
   return data_->size_type;
 }
@@ -67,19 +76,6 @@ xtd::ustring control_layout_style::to_string() const noexcept {
   return ustring::format("control_layout_style=[expanded={}, align={}, size_type={}]", data_->expanded, data_->align, data_->size_type);
 }
 
-control_layout_style::control_layout_style(const control_layout_style& other) {
-  *data_ = *other.data_;
-}
-
-control_layout_style& control_layout_style::operator =(const control_layout_style& other) {
-  *data_ = *other.data_;
-  return *this;
-}
-
-bool control_layout_style::operator ==(const control_layout_style& value) const noexcept {
+bool control_layout_style::equals(const control_layout_style& value) const noexcept {
   return data_->size_type == value.data_->size_type && data_->expanded == value.data_->expanded;
-}
-
-bool control_layout_style::operator !=(const control_layout_style& value) const noexcept {
-  return !operator ==(value);
 }

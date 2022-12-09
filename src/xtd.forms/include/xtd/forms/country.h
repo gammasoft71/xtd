@@ -26,14 +26,12 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of country component.
     /// @include countries.cpp
-    class forms_export_ country : public object {
+    class forms_export_ country : public object, public iequatable<country> {
     public:
       /// @cond
       country() = default;
       country(const country& other);
       country& operator =(const country& other);
-      bool operator ==(const country& value) const noexcept;
-      bool operator !=(const country& value) const noexcept;
       /// @endcond
       
       /// @name Fields
@@ -78,6 +76,8 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      bool equals(const country& value) const noexcept override;
+
       /// @brief Gets a country from alpha 2 code.
       /// @return If exist a xtd::forms::country that represent alpha 2 coded; otherwise xtd::forms::country::empty.
       static country from_alpha_2_code(const xtd::ustring& alpha_2_code);
