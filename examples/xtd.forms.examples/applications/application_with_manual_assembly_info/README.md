@@ -1,6 +1,6 @@
 # application_with_manual_assembly_info
 
-This example demonstrates the use of [xtd::reflection::assembly](../../../../src/xtd.core/include/xtd/refelction/assembly_info.h) attrubutes, [xtd::forms::form](../../../../src/xtd.forms/include/xtd/forms/form.h) and [xtd::forms::application](../../../../src/xtd.forms/include/xtd/forms/application.h) classes.
+This example demonstrates the use of [xtd::reflection::assembly](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1reflection_1_1assembly.html) attributes, [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) classes.
 
 # Sources
 
