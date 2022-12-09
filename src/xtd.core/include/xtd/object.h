@@ -42,8 +42,8 @@ namespace xtd {
     object(const object&) = default;
     object& operator =(const object&) = default;
     virtual ~object() = default;
-    //friend bool operator ==(const object& a, const object& b) noexcept {return a.equals(b);}
-    //friend bool operator !=(const object& a, const object& b) noexcept {return !a.equals(b);}
+    friend bool operator ==(const object& a, const object& b) noexcept {return a.equals(b);}
+    friend bool operator !=(const object& a, const object& b) noexcept {return !a.equals(b);}
     template<typename object_t>
     friend bool operator ==(const iequatable<object_t>& a, const iequatable<object_t>& b) noexcept {return dynamic_cast<const iequatable<object_t>*>(&b) && a.equals(dynamic_cast<const iequatable<object_t>&>(b));}
     template<typename object_t>
