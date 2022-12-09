@@ -28,14 +28,6 @@ region::~region() {
   if (data_.use_count() == 1 && data_->handle != 0) native::region::destroy(data_->handle);
 }
 
-bool region::operator ==(const region& value) const noexcept {
-  return data_ == value.data_;
-}
-
-bool region::operator !=(const region& value) const noexcept {
-  return !operator ==(value);
-}
-
 intptr_t region::handle() const noexcept {
   return data_->handle;
 }
@@ -54,6 +46,10 @@ void region::complement(const xtd::drawing::rectangle_f& rect) noexcept {
 
 void region::complement(const xtd::drawing::region& region) noexcept {
   native::region::complement(data_->handle, region.data_->handle);
+}
+
+bool region::equals(const region& value) const noexcept {
+  return data_ == value.data_;
 }
 
 void region::exclude(const xtd::drawing::drawing2d::graphics_path& path) noexcept {

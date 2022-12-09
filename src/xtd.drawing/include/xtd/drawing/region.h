@@ -28,7 +28,7 @@ namespace xtd {
     /// @remarks A region is scalable because its coordinates are specified in world coordinates. On a drawing surface, however, its interior is dependent on the size and shape of the pixels representing it. An application can use regions to clip the output of drawing operations. These regions are called clipping regions. For more information on using regions for clipping,
     /// @remarks An application can also use regions in hit-testing operations, such as checking whether a point or a rectangle intersects a region.
     /// @remarks An application can fill a region by using the xtd::drawing::graphics::fill_region method and a xtd::drawing::brush object.
-    class drawing_export_ region final : public xtd::object {
+    class drawing_export_ region final : public xtd::object, public xtd::iequatable<region> {
     public:
       /// @name Constructors
       
@@ -54,8 +54,6 @@ namespace xtd {
       region(const region& value) = default;
       region& operator =(const region& value) = default;
       ~region();
-      bool operator ==(const region& value) const noexcept;
-      bool operator !=(const region& value) const noexcept;
       /// @endcond
       
       /// @name Properties
@@ -81,6 +79,8 @@ namespace xtd {
       /// @brief Updates this xtd::drawing::region to contain the portion of the specified xtd::drawing::region that does not intersect with this xtd::drawing::region.
       /// @param region The xtd::drawing::region object to complement this xtd::drawing::region object.
       void complement(const xtd::drawing::region& region) noexcept;
+      
+      bool equals(const region& value) const noexcept override;
       
       /// @brief Updates this xtd::drawing::region to contain only the portion of its interior that does not intersect with the specified xtd::drawing::graphics_path.
       /// @param path The xtd::drawing::graphics_path to exclude from this xtd::drawing::region.
