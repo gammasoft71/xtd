@@ -1,6 +1,6 @@
 # system_sound
 
-This example demonstrates the use of [xtd::media::system_sound](../../../../src/xtd_forms/include/xtd/media/system_sound.hpp) component.
+This example demonstrates the use of [xtd::media::system_sound](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1media_1_1system__sound.html) component.
 
 # Sources
 

@@ -1,6 +1,6 @@
 # text_box_multiline
 
-demonstrates the use of [xtd::forms::text_box_multiline](../../../../src/xtd.forms/include/xtd/forms/text_box_multiline.h) control.
+demonstrates the use of [xtd::forms::text_box_multiline](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1text__box__base.html#a9cd3d8acb8c06e3a6cd370a3afc28e5c) control.
 
 # Sources
 

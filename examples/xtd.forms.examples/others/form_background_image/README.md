@@ -1,6 +1,6 @@
 # form_background_image
 
-demonstrates how to use of [xtd::forms::form](../../../../src/xtd.forms/include/xtd/forms/form.h) control with background_image.
+demonstrates how to use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) control with background_image.
 
 # Sources
 

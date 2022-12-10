@@ -1,6 +1,6 @@
 # lcd_label_with_fourteen_segment
 
-demonstrates how to use [xtd::forms::lcd_label_with_fourtenn_segment](../../../../src/xtd.forms/include/xtd/forms/lcd_label_with_fourteen_segment.h) control.
+demonstrates how to use [xtd::forms::lcd_label_with_fourteen_segment](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1fourteen__segment__display.html) control.
 
 # Sources
 

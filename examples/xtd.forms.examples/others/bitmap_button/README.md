@@ -1,6 +1,6 @@
 # bitmap_button
 
-demonstrates the use of [xtd::forms::button](../../../../src/xtd.forms/include/xtd/forms/button.h) control with image.
+demonstrates the use of [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control with image.
 
 # Sources
 
