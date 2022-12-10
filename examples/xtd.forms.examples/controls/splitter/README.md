@@ -1,6 +1,6 @@
 # splitter
 
-demonstrates the use of [xtd::forms::splitter](../../../../src/xtd.forms/include/xtd/forms/splitter.h) control.
+demonstrates the use of [xtd::forms::splitter](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1splitter.html) control.
 
 # Sources
 

@@ -1,6 +1,6 @@
 # nine_segment_display
 
-demonstrates how to use [xtd::forms::nine_segment_display](../../../../src/xtd.forms/include/xtd/forms/nine_segment_display.h) control.
+demonstrates how to use [xtd::forms::nine_segment_display](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1nine__segment__display.html) control.
 
 # Sources
 
