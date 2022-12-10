@@ -1,6 +1,6 @@
 # hello_world_emoticons
 
-The classic first application "Hello, World!" with  [xtd::forms::emoticon](../../../../src/xtd.forms/include/xtd/forms/emoticon.h) control.
+The classic first application "Hello, World!" with  [xtd::forms::emoticon](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1emoticon.html) control.
 
 # Sources
 
