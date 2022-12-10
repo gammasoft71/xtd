@@ -13,7 +13,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core interfaces
-  /// @tparam type_t The type of progress update value.This type parameter is contravariant. That is, you can use either the type you specified or any type that is less derived
+  /// @tparam type_t The type of progress update value. This type parameter is contravariant. That is, you can use either the type you specified or any type that is less derived
   class iprogress interface_ {
   public:
     /// @name Methods
@@ -21,7 +21,7 @@ namespace xtd {
     /// @{
     /// @brief Reports a progress update.
     /// @param value The value of the updated progress.
-    virtual void report(type_t& value) noexcept = 0;
+    virtual void report(const type_t& value) noexcept = 0;
     /// @}
   };
 }
