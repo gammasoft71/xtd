@@ -1,6 +1,6 @@
 # mouse_events
 
-demonstrates some events received by [form](../../../../src/xtd.forms/include/xtd/forms/form.h).
+demonstrates some events received by [form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html).
 
 # Sources
 
