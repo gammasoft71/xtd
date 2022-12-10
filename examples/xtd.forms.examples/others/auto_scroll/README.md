@@ -1,6 +1,6 @@
 # auto_scroll
 
-demonstrates the use of [xtd::forms::panel](../../../../src/xtd.forms/include/xtd/forms/panel.h) container with [xtd::forms/scrollable_control::auto_scroll](../../../../src/xtd.forms/include/xtd/forms/scrollable_control.h).
+demonstrates the use of [xtd::forms::panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1panel.html).
 
 # Sources
 

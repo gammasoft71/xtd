@@ -7,23 +7,23 @@
 ## [Hello Worlds](hello_worlds/README.md)
 
 * [hello_world_emoticons](hello_worlds/hello_world_emoticons/README.md) The classic first application "Hello, World!" with  [xtd::forms::emoticons](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1emoticons.html) component.
-* [hello_world_label](hello_worlds/hello_world_label/README.md) The classic first application "Hello, World!" with  [xtd::forms::label](../../src/xtd.forms/include/xtd/forms/label.h) control.
-* [hello_world_message_box](hello_worlds/hello_world_message_box/README.md) The classic first application "Hello, World!" with [xtd::forms::message_box](../../src/xtd.forms/include/xtd/forms/message_box.h) control.
-* [hello_world_message_box2](hello_worlds/hello_world_message_box2/README.md) The classic first application "Hello, World!" with [xtd::forms::message_box](../../src/xtd.forms/include/xtd/forms/message_box.h) control.
-* [hello_world_message_box3](hello_worlds/hello_world_message_box3/README.md) The classic first application "Hello, World!" with [xtd::forms::message_box](../../src/xtd.forms/include/xtd/forms/message_box.h) control.
-* [hello_world_paint](hello_worlds/hello_world_paint/README.md) The classic first application "Hello, Wrold!" with GDI+ drawing objects.
+* [hello_world_label](hello_worlds/hello_world_label/README.md) The classic first application "Hello, World!" with  [xtd::forms::label](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1label.html) control.
+* [hello_world_message_box](hello_worlds/hello_world_message_box/README.md) The classic first application "Hello, World!" with [xtd::forms::message_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1message__box.html) control.
+* [hello_world_message_box2](hello_worlds/hello_world_message_box2/README.md) The classic first application "Hello, World!" with [xtd::forms::message_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1message__box.html) control.
+* [hello_world_message_box3](hello_worlds/hello_world_message_box3/README.md) The classic first application "Hello, World!" with [xtd::forms::message_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1message__box.html) control.
+* [hello_world_paint](hello_worlds/hello_world_paint/README.md) The classic first application "Hello, World!" with GDI+ drawing objects.
 * [hello_world_say](hello_worlds/hello_world_say/README.md) The classic first application "Hello, World!" with say.
 
-## [Application](applications/README.md)
+## [application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html)
 
-* [application](applications/application/README.md) shows how to create an application with [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) class.
-* [application_and_assert](applications/application_and_assert/README.md) shows how to create an application with [xtd::forms::application](../../src/xtd_forms/include/xtd/forms/application.h) class and hot to manage assert.
-* [application_and_exception](applications/application_and_exception/README.md) shows how to create an application with [xtd::forms::application](../../src/xtd_forms/include/xtd/forms/application.h) class and hot to manage exception.
-* [application_context](applications/application_context/README.md) shows how to create an application with [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) class with [xtd::forms::application_context](../../src/xtd.forms/include/xtd/forms/application_context.h) class.
-* [application_restart](applications/application_restart/README.md) shows how to restart application with [xtd::forms::application::restart](../../src/xtd_forms/include/xtd/forms/application.h) method.
-* [application_use_wait_cursor](applications/application_use_wait_cursor/README.md) shows how to show and hide wait cursor application with [xtd::forms::application::use_wait_cursor](../../src/xtd.forms/include/xtd/forms/application.h) method.
-* [application_with_cmake_assembly_info](applications/application_with_cmake_assembly_info/README.md) demonstrates the use of [xtd::reflection::assembly](../../src/xtd.core/include/xtd/refelction/assembly_info.h) attrubutes, [xtd::forms::form](../../../src/xtd.forms/include/xtd/forms/form.h) and [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) classes.
-* [application_with_manual_assembly_info](applications/application_with_manual_assembly_info/README.md) demonstrates the use of [xtd::reflection::assembly](../../src/xtd.core/include/xtd/refelction/assembly_info.h) attrubutes, [xtd::forms::form](../../../src/xtd.forms/include/xtd/forms/form.h) and [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) classes.
+* [application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) shows how to create an application with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class.
+* [application_and_assert](applications/application_and_assert/README.md) shows how to create an application with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class and hot to manage assert.
+* [application_and_exception](applications/application_and_exception/README.md) shows how to create an application with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class and hot to manage exception.
+* [application_context](applications/application_context/README.md) shows how to create an application with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class.
+* [application_restart](applications/application_restart/README.md) shows how to restart application with [xtd::forms::application::restart](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#a9d1de5b2f5e8ee4b46a24aa8f556a5c2) method.
+* [application_use_wait_cursor](applications/application_use_wait_cursor/README.md) shows how to show and hide wait cursor application with [xtd::forms::application::use_wait_cursor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1use__wait__cursor.html) method.
+* [application_with_cmake_assembly_info](applications/application_with_cmake_assembly_info/README.md) demonstrates the use of [xtd::reflection::assembly](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1reflection_1_1assembly.html) attributes, [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) classes.
+* [application_with_manual_assembly_info](applications/application_with_manual_assembly_info/README.md) demonstrates the use of [xtd::reflection::assembly](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1reflection_1_1assembly.html) attributes, [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) classes.
 
 ## [Dialogs](dialogs/README.md)
 
@@ -34,8 +34,8 @@
 * [color_box](dialogs/color_box/README.md) represents a dialog box that displays available colors along with controls that enable the user to define custom colors.
 * [color_dialog](dialogs/color_dialog/README.md) represents a dialog box that displays available colors along with controls that enable the user to define custom colors.
 * [debug_message_box](dialogs/debug_message_box/README.md) represents a debug message box that displays debug message box and write debug message.
-* [exception_box](dialogs/exception_box/README.md) represents a exception box that displays exceptioon box.
-* [exception_dialog](dialogs/exception_dialog/README.md) represents a exception box that displays exceptioon box.
+* [exception_box](dialogs/exception_box/README.md) represents a exception box that displays exception box.
+* [exception_dialog](dialogs/exception_dialog/README.md) represents a exception box that displays exception box.
 * [find_box](dialogs/find_box/README.md) represents a find dialog box.
 * [find_dialog](dialogs/find_dialog/README.md) represents a find dialog box.
 * [folder_browser_box](dialogs/folder_browser_box/README.md) prompts the user to select a folder.
@@ -58,12 +58,12 @@
 
 ## [forms](forms/README.md)
 
-* [circular_form](forms/circular_form/README.md) demonstrates the use of [xtd::control::region](../../src/xtd_forms/include/xtd/forms/control.h) property for create a circular form.
-* [debug_form](forms/debug_form/README.md) represents a form that trace all written debug with xtd::diagnosticts::debug class.
-* [dialog](forms/dialog/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd_forms/include/xtd/forms/form.h) container as dialog.
-* [form](forms/form/README.md) represents a window or dialog box that makes up an application's user interface.
-* [popup_form](forms/popup_form/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd_forms/include/xtd/forms/form.h) container as popup form.
-* [trace_form](forms/trace_form/README.md) represents a form that trace all written trace with xtd::diagnosticts::trace class.
+* [circular_form](forms/circular_form/README.md) demonstrates the use of [xtd::control::region](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#ad87086e004f60985be7fa8d6eb1f8527) property for create a circular form.
+* [debug_form](forms/debug_form/README.md) represents a form that trace all written debug with xtd::diagnostics::debug class.
+* [dialog](forms/dialog/README.md) demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) container as dialog.
+* [form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) represents a window or dialog box that makes up an application's user interface.
+* [popup_form](forms/popup_form/README.md) demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) container as popup form.
+* [trace_form](forms/trace_form/README.md) represents a form that trace all written trace with xtd::diagnostics::trace class.
 
 ## [Menus and Toolbars](menus_and_toolbars/README.md)
 
@@ -82,59 +82,59 @@
 * **flow_layout_panel** represents a panel that dynamically lays out its contents horizontally or vertically.
 * [collapsible_panel](containers/collapsible_panel/README.md) used to group collections of controls in a collapsible container.
 * [group_box](containers/group_box/README.md) represents a Windows control that displays a frame around a group of controls with an optional caption.
-* [horizontal_layout_panel](containers/horizontal_layout_panel/README.md) used to group collections of horizontal alligned controls.
-* [panel](containers/panel/README.md) demonstrates the use of [xtd::forms::panel](../../src/xtd.forms/include/xtd/forms/panel.h) container.
-* [popup_panel](containers/popup_panel/README.md) demonstrates the use of [xtd::forms::popup_panel](../../src/xtd.forms/include/xtd/forms/popup_panel.h) container.
+* [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) used to group collections of horizontal aligned controls.
+* [panel](containers/panel/README.md) demonstrates the use of [xtd::forms::panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1panel.html) container.
+* [popup_panel](containers/popup_panel/README.md) demonstrates the use of [xtd::forms::popup_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1popup__panel.html) container.
 * [split_container](containers/split_container/README.md) represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
 * [tab_control](containers/tab_control/README.md) manages a related set of tab pages.
 * **table_layout_panel** represents a panel that dynamically lays out its contents in a grid composed of rows and columns.
-* [vertical_layout_panel](containers/vertical_layout_panel/README.md) used to group collections of horizontal alligned controls.
+* [vertical_layout_panel](containers/vertical_layout_panel/README.md) used to group collections of horizontal aligned controls.
 
 ## [Controls](controls/README.md)
 
-* [animation](controls/animation/README.md) represents a [xtd::forms::animation](../../src/xtd.forms/include/xtd/forms/animation.h) control.
-* [button](controls/button/README.md) represents a Windows [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control.
-* [buttons](controls/buttons/README.md) Show how to use buttons factory with [xtd::forms::buttons](../../src/xtd.forms/include/xtd/forms/buttons.h) control.
-* [check_box](controls/check_box/README.md) represents a Windows [xtd::forms::check_box](../../src/xtd.forms/include/xtd/forms/check_box.h) control.
-* [check_boxes](controls/check_boxes/README.md) Show how to use check boxes factory with [xtd::forms::check_boxes](../../src/xtd.forms/include/xtd/forms/check_boxes.h) factory.
+* [animation](controls/animation/README.md) represents a [xtd::forms::animation](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1animation.html) control.
+* [button](controls/button/README.md) represents a Windows [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control.
+* [buttons](controls/buttons/README.md) Show how to use buttons factory with [xtd::forms::buttons](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1buttons.html) control.
+* [check_box](controls/check_box/README.md) represents a Windows [xtd::forms::check_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1check__box.html) control.
+* [check_boxes](controls/check_boxes/README.md) Show how to use check boxes factory with [xtd::forms::check_boxes](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1check__boxes.html) factory.
 * [checked_list_box](controls/checked_list_box/README.md) represents a Windows control to display a list of check box.
-* [choice](controls/choice/README.md) represents a [xtd::forms::choice](../../src/xtd.forms/include/xtd/forms/choice.h) control.
+* [choice](controls/choice/README.md) represents a [xtd::forms::choice](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1choice.html) control.
 * [color_picker](controls/color_picker/README.md) represents a Windows control that allows the user to select and display a color.
-* [combo_box](controls/combo_box/README.md) represents a Windows [xtd::forms::combo_box](../../src/xtd.forms/include/xtd/forms/combo_box.h)control.
-* [command_link_button](controls/command_link_button/README.md) represents a Windows [xtd::forms::command_link_button](../../src/xtd.forms/include/xtd/forms/command_link_button.h) control.
+* [combo_box](controls/combo_box/README.md) represents a Windows [xtd::forms::combo_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1combo__box.html)control.
+* [command_link_button](controls/command_link_button/README.md) represents a Windows [xtd::forms::command_link_button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1command__link__button.html) control.
 * [control](controls/control/README.md) defines the base class for controls, which are components with visual representation.
 * [date_time_picker](controls/date_time_picker/README.md) represents a Windows control that allows the user to select a date and a time and to display the date and time with a specified format.
 * [domain_up_down](controls/domain_up_down/README.md) represents a Windows spin box (also known as an up-down control) that displays string values.
-* [dot_matrix_display](controls/dot_matrix_display/README.md) represents a [xtd::forms::fourteen_segment_display](../../src/xtd.forms/include/xtd/forms/dot_matrix_display.h) control.
+* [dot_matrix_display](controls/dot_matrix_display/README.md) represents a [xtd::forms::fourteen_segment_display](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1fourteen__segment__display.html) control.
 * [font_picker](controls/font_picker/README.md) represents a Windows control that allows the user to select and display a font.
-* [fourteen_segment_display](controls/fourteen_segment_display/README.md) represents a [xtd::forms::fourteen_segment_display](../../src/xtd.forms/include/xtd/forms/fourteen_segment_display.h) control.
+* [fourteen_segment_display](controls/fourteen_segment_display/README.md) represents a [xtd::forms::fourteen_segment_display](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1fourteen__segment__display.html) control.
 * [h_scroll_bar](controls/h_scroll_bar/README.md) represents a standard Windows horizontal scroll bar.
-* [label](controls/label/README.md) represents a standard Windows [xtd::forms::label](../../src/xtd.forms/include/xtd/forms/label.h).
-* [lcd_label](controls/lcd_label/README.md) represents a [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
-* [light_button](controls/light_button/README.md) represents a [xtd::forms::light_button](../../src/xtd.forms/include/xtd/forms/light_button.h) control.
+* [label](controls/label/README.md) represents a standard Windows [xtd::forms::label](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1label.html).
+* [lcd_label](controls/lcd_label/README.md) represents a [xtd::forms::lcd_label](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1lcd__label.html) control.
+* [light_button](controls/light_button/README.md) represents a [xtd::forms::light_button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1light__button.html) control.
 * [link_label](controls/link_label/README.md) represents a Windows label control that can display hyperlinks.
 * [list_box](controls/list_box/README.md) represents a Windows control to display a list of items.
 * **list_view** represents a Windows list view control, which displays a collection of items that can be displayed using one of four different views.
 * [loading_indicator](controls/loading_indicator/README.md) represents a Windows control to display a loading indicator animation.
 * **masked_text_box** uses a mask to distinguish between proper and improper user input.
 * [month_calendar](controls/month_calendar/README.md) specifies values for navigating among accessible objects.
-* [nine_segment_display](controls/nine_segment_display/README.md) represents a [xtd::forms::nine_segment_display](../../src/xtd.forms/include/xtd/forms/nine_segment_display.h) control.
+* [nine_segment_display](controls/nine_segment_display/README.md) represents a [xtd::forms::nine_segment_display](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1nine__segment__display.html) control.
 * **notify_icon** specifies a component that creates an icon in the notification area. This class cannot be inherited.
 * [numeric_up_down](controls/numeric_up_down/README.md) represents a Windows spin box (also known as an up-down control) that displays numeric values.
 * [picture_box](controls/picture_box/README.md) represents a Windows picture box control for displaying an image.
-* [progress_bar](controls/progress_bar/README.md) represents a Windows [xtd::forms::progress_bar](../../src/xtd.forms/include/xtd/forms/progress_bar.h) control.
-* [radio_button](controls/radio_button/README.md) enables the user to select a single option from a group of choices when paired with other [xtd::forms::radio_button](../../src/xtd.forms/include/xtd/forms/radio_button.h) controls.
-* [radio_buttons](controls/radio_buttons/README.md) Show how to use radio buttons factory with [xtd::forms::radio_buttons](../../src/xtd.forms/include/xtd/forms/radio_buttons.h) factory.
+* [progress_bar](controls/progress_bar/README.md) represents a Windows [xtd::forms::progress_bar](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1progress__bar.html) control.
+* [radio_button](controls/radio_button/README.md) enables the user to select a single option from a group of choices when paired with other [xtd::forms::radio_button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1radio__button.html) controls.
+* [radio_buttons](controls/radio_buttons/README.md) Show how to use radio buttons factory with [xtd::forms::radio_buttons](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1radio__buttons.html) factory.
 * **rich_text_box** represents a Windows rich text box control.
-* [seven_segment_display](controls/seven_segment_display/README.md) represents a [xtd::forms::seven_segment_display](../../src/xtd.forms/include/xtd/forms/seven_segment_display.h) control.
-* [sixteen_segment_display](controls/sixteen_segment_display/README.md) represents a [xtd::forms::sixteen_segment_display](../../src/xtd.forms/include/xtd/forms/sixteen_segment_display.h) control.
+* [seven_segment_display](controls/seven_segment_display/README.md) represents a [xtd::forms::seven_segment_display](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1seven__segment__display.html) control.
+* [sixteen_segment_display](controls/sixteen_segment_display/README.md) represents a [xtd::forms::sixteen_segment_display](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1sixteen__segment__display.html) control.
 * [splitter](controls/splitter/README.md) represents a splitter control that enables the user to resize docked controls. Splitter has been replaced by SplitContainer and is provided only for compatibility with previous versions.
-* [switch_button](controls/switch_button/README.md) represents a [xtd::forms::switch_button](../../src/xtd.forms/include/xtd/forms/switch_button.h) control.
-* [text_box](controls/text_box/README.md) represents a Windows [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) control.
+* [switch_button](controls/switch_button/README.md) represents a [xtd::forms::switch_button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1switch__button.html) control.
+* [text_box](controls/text_box/README.md) represents a Windows [xtd::forms::text_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1text__box.html) control.
 * **tool_tip** Represents a small rectangular pop-up window that displays a brief description of a control's purpose when the user rests the pointer on the control.
-* [toggle_button](controls/toggle_button/README.md) represents a [xtd::forms::toggle_button](../../src/xtd.forms/include/xtd/forms/toggle_button.h) control.
-* [toggle_buttons](controls/toggle_buttons/README.md) Show how to use toggle buttons factory with [xtd::forms::toggle_buttons](../../src/xtd.forms/include/xtd/forms/toggle_buttons.h) factory.
-* [track_bar](controls/track_bar/README.md) represents a standard Windows [xtd::forms::track_bar](../../src/xtd.forms/include/xtd/forms/track_bar.h).
+* [toggle_button](controls/toggle_button/README.md) represents a [xtd::forms::toggle_button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1toggle__button.html) control.
+* [toggle_buttons](controls/toggle_buttons/README.md) Show how to use toggle buttons factory with [xtd::forms::toggle_buttons](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1toggle__buttons.html) factory.
+* [track_bar](controls/track_bar/README.md) represents a standard Windows [xtd::forms::track_bar](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1track__bar.html).
 * **tree_view** displays a hierarchical collection of labeled items, each represented by a TreeNode.
 * [up_down_button](controls/up_down_button/README.md) represents a Windows spin button.
 * [user_control](controls/user_control/README.md) defines the base class for user controls.
@@ -145,11 +145,11 @@
 
 * [background_worker](components/background_worker/README.md) executes an operation on a separate thread.
 * [button_images](components/button_images/README.md) represents common images collection can be used for button.
-* [button_renderer](components/button_renderer/README.md) show how to use [xtd::forms::button_renderer](../../src/xtd.forms/include/xtd/forms/button_renderer.h) renderer.
-* [check_box_renderer](components/check_box_renderer/README.md) show how to use [xtd::forms::check_box_renderer](../../src/xtd.forms/include/xtd/forms/check_box_renderer.h) renderer.
-* [countries](components/countries/README.md) shows how to use [xtd::forms::coutries](../../src/xtd.forms/include/xtd/forms/countries.h) collection and [xtd::forms::country](../../src/xtd.forms/include/xtd/forms/country.h) component.
-* [cursors](components/cursors/README.md) shows how to used [xtd::forms::cursors](../../src/xtd.forms/include/xtd/forms/cursors.h) collection and [xtd::forms::cursor](../../src/xtd.forms/include/xtd/forms/cursor.h) component.
-* [emoticons](components/emoticons/README.md) shows how to used [xtd::forms::emoticons](../../src/xtd.forms/include/xtd/forms/emoticons.h) collection and [xtd::forms::emoticon](../../src/xtd.forms/include/xtd/forms/emoticon.h) component.
+* [button_renderer](components/button_renderer/README.md) show how to use [xtd::forms::button_renderer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button__renderer.html) renderer.
+* [check_box_renderer](components/check_box_renderer/README.md) show how to use [xtd::forms::check_box_renderer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1check__box__renderer.html) renderer.
+* [countries](components/countries/README.md) shows how to use [xtd::forms::countries](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1countries.html) collection and [xtd::forms::country](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1country.html) component.
+* [cursors](components/cursors/README.md) shows how to used [xtd::forms::cursors](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1cursors.html) collection and [xtd::forms::cursor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1cursor.html) component.
+* [emoticons](components/emoticons/README.md) shows how to used [xtd::forms::emoticons](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1emoticons.html) collection and [xtd::forms::emoticon](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1emoticon.html) component.
 * **directory_entry** The DirectoryEntry class encapsulates a node or object in the Active Directory Domain Services hierarchy.
 * **directory_searcher** performs queries against Active Directory Domain Services.
 * **error_provider** provides a user interface for indicating that a control on a form has an error associated with it.
@@ -157,19 +157,19 @@
 * **file_system_watcher** listens to the file system change notifications and raises events when a directory, or file in a directory, changes.
 * **help_provider** provides pop-up or online Help for controls.
 * [image_list](components/image_list/README.md) provides methods to manage a collection of Image objects. This class cannot be inherited.
-* [images](components/images/README.md) demonstrates the use of [xtd::forms::images](../../src/xtd.forms/include/xtd/forms/images.h) class.
+* [images](components/images/README.md) demonstrates the use of [xtd::forms::images](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1images.html) class.
 * **message_queue** provides access to a queue on a Message Queuing server.
 * **performance_counter** represents a Windows NT performance counter component.
 * [process](components/process_form/README.md) provides access to local and remote processes and enables you to start and stop local system processes.
-* [radio_button_renderer](components/radio_button_renderer/README.md) show how to use [xtd::forms::radio_button_renderer](../../src/xtd.forms/include/xtd/forms/radio_button_renderer.h) renderer.
+* [radio_button_renderer](components/radio_button_renderer/README.md) show how to use [xtd::forms::radio_button_renderer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1radio__button__renderer.html) renderer.
 * [screen](components/screen/README.md) represents a display device or multiple display devices on a single system.
 * [settings](components/settings_example/README.md) represents settings application.
 * **serial_port** represents a serial port resource.
-* **service_controler** represents a Windows service and allows you to connect to a running or stopped service, manipulate it, or get information about it.
-* [texts](components/texts/README.md) shows how to used [xtd::forms::texts](../../src/xtd.forms/include/xtd/forms/texts.h) collection.
+* **service_controller** represents a Windows service and allows you to connect to a running or stopped service, manipulate it, or get information about it.
+* [system_texts](components/texts/README.md) shows how to used [xtd::forms::system_texts](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1system__texts.html) collection.
 * [timer](components/timer/README.md) implements a timer that raises an event at user-defined intervals. This timer is optimized for use in Windows Forms applications and must be used in a window.
-* [translator](components/translator/README.md) demonstrates the use of [xtd::forms::translator](../../src/xtd.core/include/xtd/translator.h) strings.
-* [use_wait_cursor](components/use_wait_cursor/README.md) shows how to use [xtd::forms::use_wait_cursor](../../src/xtd.forms/include/xtd/forms/use_wait_cursor.h) component.
+* [translator](components/translator/README.md) demonstrates the use of [xtd::forms::translator](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1translator.html) strings.
+* [use_wait_cursor](components/use_wait_cursor/README.md) shows how to use [xtd::forms::use_wait_cursor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1use__wait__cursor.html) component.
 
 ## [Datas](datas/README.md)
 
@@ -189,36 +189,36 @@
 
 ## [Themes](themes/README.md)
 
-* [application_enable_dark_mode](themes/application_enable_dark_mode/README.md) shows how to enable dark mode with [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) class with [xtd::forms::application_context](../../src/xtd.forms/include/xtd/forms/application_context.h) class.
-* [application_enable_light_mode](themes/application_enable_light_mode/README.md) shows how to enable light mode with [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) class with [xtd::forms::application_context](../../src/xtd.forms/include/xtd/forms/application_context.h) class.
-* [themes](themes/themes/README.md) shows how to use [xtd::forms::theme](../../src/xtd_forms/include/xtd/forms/theme.h) class.
+* [application_enable_dark_mode](themes/application_enable_dark_mode/README.md) shows how to enable dark mode with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class.
+* [application_enable_light_mode](themes/application_enable_light_mode/README.md) shows how to enable light mode with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class.
+* [themes](themes/themes/README.md) shows how to use [xtd::forms::theme](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1style__sheets_1_1theme.html) class.
 
 ## [Events](events/README.md)
 
-* [application_events](events/application_events/README.md) demonstrates the use of [xtd::forms::application](../../src/xtd.forms/include/xtd/forms/application.h) events.
-* [application_idle](events/application_idle/README.md) demonstrates the use of [xtd::forms::application::idle](../../src/xtd.forms/include/xtd/forms/application.h) event.
-* [enable_changed_event](events/enable_changed_event/README.md) demonstrates the use of [enable_changed](../../src/xtd.forms/include/xtd/forms/control.h) event.
-* [font_changed_event](events/font_changed_event/README.md) demonstrates the use of [font_changed](../../src/xtd.forms/include/xtd/forms/control.h) event.
-* [form_click](events/form_click/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) control and [click](../../src/xtd.forms/include/xtd/forms/control.h) event.
-* [form_and_messages](events/form_and_messages/README.md) demonstrates some events received by [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h).
-* [form_paint](events/form_paint/README.md) demonstrates paint event with [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h).
+* [application_events](events/application_events/README.md) demonstrates the use of [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) events.
+* [application_idle](events/application_idle/README.md) demonstrates the use of [xtd::forms::application::idle](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga936f2c887b42e06ecb7e81d4d1bc33ba) event.
+* [enable_changed_event](events/enable_changed_event/README.md) demonstrates the use of [enable_changed](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga34c92d7fb3eb02179db90c13669b6a70) event.
+* [font_changed_event](events/font_changed_event/README.md) demonstrates the use of [font_changed](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga52494f7214b65db98e3a942acab5d506) event.
+* [form_click](events/form_click/README.md) demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) event.
+* [form_and_messages](events/form_and_messages/README.md) demonstrates some events received by [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html).
+* [form_paint](events/form_paint/README.md) demonstrates paint event with [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html).
 * [key_events](events/key_events/README.md) demonstrates the use of key events.
 * [mouse_events](events/mouse_events/README.md) demonstrates the use of mouse events.
 * [move_form](events/move_form/README.md) demonstrates the use of move form events.
 * [send_message_to_form](events/send_message_to_form/README.md) demonstrates how to send message to form.
-* [wnd_proc](events/wnd_proc/README.md) demonstrates the use of [wnd_proc](../../src/xtd.forms/include/xtd/forms/control.h) method.
+* [wnd_proc](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#ac75d78bfc73154decabddc734cd28096) demonstrates the use of [wnd_proc](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#ac75d78bfc73154decabddc734cd28096) method.
 
 ## [User Controls](user_controls/README.md)
 
-* [button_with_style_sheet](user_controls/button_with_style_sheet/README.md) demonstrates the [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control with style_sheet.
-* [line](user_controls/line/README.md) demonstrates the use of [xtd::forms::user_control](../../src/xtd.forms/include/xtd/forms/user_control.h)control to draw simple lines.
-* [numeric_text_box](user_controls/numeric_text_box/README.md) demonstrates the customize [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) control.
-* [owner_button](user_controls/owner_button/README.md) demonstrates the customize [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control.
+* [button_with_style_sheet](user_controls/button_with_style_sheet/README.md) demonstrates the [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control with style_sheet.
+* [line](user_controls/line/README.md) demonstrates the use of [xtd::forms::user_control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1user__control.html)control to draw simple lines.
+* [numeric_text_box](user_controls/numeric_text_box/README.md) demonstrates the customize [xtd::forms::text_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1text__box.html) control.
+* [owner_button](user_controls/owner_button/README.md) demonstrates the customize [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control.
 
 ## [User Dialogs](user_dialogs/README.md)
 
-* [user_dialog](user_dialogs/user_dialog/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) as dialog.
-* [user_dialog_show_sheet](user_dialogs/user_dialog_show_sheet/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) as dialog.
+* [user_dialog](user_dialogs/user_dialog/README.md) demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) as dialog.
+* [user_dialog_show_sheet](user_dialogs/user_dialog_show_sheet/README.md) demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) as dialog.
 
 ## [Drawing](drawing/README.md)
 
@@ -240,61 +240,61 @@
 ## [Others](others/README.md)
 
 * [about_dialog_system](others/about_dialog_system/README.md) represents a dialog box that displays about box.
-* [anchors](others/anchors/README.md) demonstrates the use of [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) container with [xtd::forms::control::anchor](../../src/xtd.forms/include/xtd/forms/control.h).
-* [auto_scroll](others/auto_scroll/README.md) demonstrates the use of [xtd::forms::panel](../../src/xtd.forms/include/xtd/forms/panel.h) container with [xtd::forms/scrollable_control::auto_scroll](../../src/xtd.forms/include/xtd/forms/scrollable_control.h).
-* [bitmap_button](others/bitmap_button/README.md) demonstrates the use of [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control with [xtd::drawing::image](../../src/xtd.drawing/include/xtd/drawing/image.h).
-* [border_style](others/border_style/README.md) demonstrates the use of [xtd::forms::label::border_style](../../src/xtd.forms/include/xtd/forms/label.h) property.
-* [button2](others/button2/README.md) demonstrates the use of [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control.
-* [button3](others/button3/README.md) demonstrates the use of [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control.
-* [button4](others/button4/README.md) demonstrates the use of [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control.
-* [calculator](others/calculator/README.md) demonstrates the use of [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control.
-* [change_color](others/change_color/README.md) demonstrated the use of [xtd::forms::control](../../src/xtd.forms/include/xtd/forms/control.h) back_color and fore_color properties.
-* [change_parent](others/change_parent/README.md) demonstrates the use of [xtd::forms::control](../../src/xtd.forms/include/xtd/forms/control.h) parent property.
-* [clock](others/clock/README.md) demonstrates the use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
-* [colored_forms](others/colored_forms/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) control and xtd::drawing::color class.
-* [colored_tab_pages](others/colored_tab_pages/README.md) demonstrates the use of [xtd::forms::tab_control](../../src/xtd.forms/include/xtd/forms/tab_control.h) and colored [xtd::forms::tab_page](../../src/xtd.forms/include/xtd/forms/tab_page.h) controls.
-* [colors](others/colors/README.md) demonstrates the use of [xtd::forms::user_control](../../src/xtd.forms/include/xtd/forms/user_control.h) control with xtd::drawing::color.
-* [docked_panels](others/docked_panels/README.md) demonstrates the use of [xtd::forms::panel](../../src/xtd.forms/include/xtd/forms/panel.h) container with [xtd::forms::dock_style](../../src/xtd.forms/include/xtd/forms/dock_style.h).
-* [flat_button](others/flat_button/README.md) demonstrates the use of [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) control with flat style.
+* [anchors](others/anchors/README.md) demonstrates the use of [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) container with [xtd::forms::control::anchor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tool__bar.html).
+* [auto_scroll](others/auto_scroll/README.md) demonstrates the use of [xtd::forms::panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1panel.html).
+* [bitmap_button](others/bitmap_button/README.md) demonstrates the use of [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control with [xtd::drawing::image](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1image.html).
+* [border_style](others/border_style/README.md) demonstrates the use of [xtd::forms::label::border_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1label.html#a572b81ed9b6e7ba3a3b97501aeb43c69) property.
+* [button2](others/button2/README.md) demonstrates the use of [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control.
+* [button3](others/button3/README.md) demonstrates the use of [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control.
+* [button4](others/button4/README.md) demonstrates the use of [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control.
+* [calculator](others/calculator/README.md) demonstrates the use of [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control.
+* [change_color](others/change_color/README.md) demonstrated the use of [xtd::forms::control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html) back_color and fore_color properties.
+* [change_parent](others/change_parent/README.md) demonstrates the use of [xtd::forms::control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html) parent property.
+* [clock](others/clock/README.md) demonstrates the use of [xtd::forms::lcd_label](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1lcd__label.html) control.
+* [colored_forms](others/colored_forms/README.md) demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) control and xtd::drawing::color class.
+* [colored_tab_pages](others/colored_tab_pages/README.md) demonstrates the use of [xtd::forms::tab_control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__control.html) and colored [xtd::forms::tab_page](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__page.html) controls.
+* [colors](others/colors/README.md) demonstrates the use of [xtd::forms::user_control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1user__control.html) control with xtd::drawing::color.
+* [docked_panels](others/docked_panels/README.md) demonstrates the use of [xtd::forms::panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1panel.html).
+* [flat_button](others/flat_button/README.md) demonstrates the use of [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control with flat style.
 * [font_families](others/font_families/README.md) demonstrates the use of xtd::drawing::font_family class.
 * [form_and_main](others/form_and_main/README.md) demonstrates how to use startup_ keyword.
-* [form_and_thread](others/form_and_thread/README.md) demonstrates how a thread can update ui with [xtd::forms::control::invoke](../../src/xtd.forms/include/xtd/forms/form.h) method.
-* [form_background_image](others/form_background_image/README.md) demonstrates how to use [xtd::forms::forms](../../src/xtd.forms/include/xtd/forms/form.h) class with image_background property.
-* [form_decoration](others/form_decoration/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) decoration (title, icon, control boxes and border).
+* [form_and_thread](others/form_and_thread/README.md) demonstrates how a thread can update ui with [xtd::forms::control::invoke](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a17ec51282322d8387937dc8dad438e32) method.
+* [form_background_image](others/form_background_image/README.md) demonstrates how to use [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) class with image_background property.
+* [form_decoration](others/form_decoration/README.md) demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html).
 * [form_resize](others/form_resize/README.md) shows how to set minimum size, set maximum size, move and resize a form.
-* [form_show](others/form_show/README.md) demontrate how to launch form as normal window, modeless window and modal window.
-* [form_show_hide](others/form_show_hide/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) show, hide and close mehods.
-* [form_window_state](others/form_window_state/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd.forms/include/xtd/forms/form.h) window state.
+* [form_show](others/form_show/README.md) demonstrates how to launch form as normal window, model-less window and modal window.
+* [form_show_hide](others/form_show_hide/README.md) demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) show, hide and close methods.
+* [form_window_state](others/form_window_state/README.md) demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) window state.
 * [form2](others/form2/README.md) represents a window or dialog box that makes up an application's user interface.
-* [group_box_and_check_box](others/group_box_and_check_box/README.md) demonstrates the use of [xtd::forms::group_box](../../src/xtd.forms/include/xtd/forms/button.h) container and [xtd::forms::check_box](../../src/xtd.forms/include/xtd/forms/check_box.h) control.
-* [group_box_and_radio_button](others/group_box_and_radio_button/README.md) demonstrates the use of [xtd::forms::group_box](../../src/xtd.forms/include/xtd/forms/group_box.h) container and [xtd::forms::radio_button](../../src/xtd.forms/include/xtd/forms/radio_button.h) control.
-* [images2](others/images2/README.md) demonstrates the use of **xtd::drawing::system_images** class.
-* [images3](others/images3/README.md) demonstrates the use of **xtd::drawing::system_images** class.
+* [group_box_and_check_box](others/group_box_and_check_box/README.md) demonstrates the use of [xtd::forms::group_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1group__box.html) container and [xtd::forms::check_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1check__box.html) control.
+* [group_box_and_radio_button](others/group_box_and_radio_button/README.md) demonstrates the use of [xtd::forms::group_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1group__box.html) container and [xtd::forms::radio_button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1radio__button.html) control.
+* [images2](others/images2/README.md) demonstrates the use of [xtd::drawing::system_images](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__images.html) class.
+* [images3](others/images3/README.md) demonstrates the use of [xtd::drawing::system_images](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__images.html) class.
 * [input_dialog_multiline](others/input_dialog_multiline/README.md) prompts the user to input multiline text.
 * [input_dialog_password](others/input_dialog_password/README.md) prompts the user to input password text.
-* [labels_and_unicode_text](others/labels_and_unicode_text/README.md) demonstrates the use of [xtd::forms::label](../../src/xtd.forms/include/xtd/forms/label.h) control and Unicode text.
-* [lcd_label_with_dot_matrix](others/lcd_label_with_dot_matrix/README.md) representsthe use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
-* [lcd_label_with_fourteen_segment](others/lcd_label_with_fourteen_segment/README.md) representsthe use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
-* [lcd_label_with_nine_segment](others/lcd_label_with_nine_segment/README.md) representsthe use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
-* [lcd_label_with_seven_segment](others/lcd_label_with_seven_segment/README.md) representsthe use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
-* [lcd_label_with_sixteen_segment](others/lcd_label_with_sixteen_segment/README.md) representsthe use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
-* [lcd_label2](others/lcd_label2/README.md) representsthe use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
-* [lcd_label3](others/lcd_label3/README.md) representsthe use of [xtd::forms::lcd_label](../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
-* [main_menu_create_standard_items](others/main_menu_create_standard_items/README.md) demonstrates the use of [xtd::forms::main_menu::create_standard_items](../../src/xtd.forms/include/xtd/forms/main_menu.h) method.
-* [painting](others/painting/README.md) demonstrates the use of xtd::forms::form, xtd::forms::panel, [xtd::forms::track_bar](../../src/xtd.forms/include/xtd/forms/track_bar.h) and [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) controls with mouse_down, mouse_move and paint events..
-* [screen_informations](others/screen_informations/README.md) shows how to get screen information of [xtd::forms::screen](../../src/xtd_forms/include/xtd/forms/screen.h) control.
+* [labels_and_unicode_text](others/labels_and_unicode_text/README.md) demonstrates the use of [xtd::forms::label](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1label.html) control and Unicode text.
+* [lcd_label_with_dot_matrix](others/lcd_label_with_dot_matrix/README.md) represents the use of [xtd::forms::lcd_label](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1lcd__label.html) control.
+* [lcd_label_with_fourteen_segment](others/lcd_label_with_fourteen_segment/README.md) represents the use of [xtd::forms::lcd_label](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1lcd__label.html) control.
+* [lcd_label_with_nine_segment](others/lcd_label_with_nine_segment/README.md) represents the use of [xtd::forms::lcd_label](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1lcd__label.html) control.
+* [lcd_label_with_seven_segment](others/lcd_label_with_seven_segment/README.md) represents the use of [xtd::forms::lcd_label](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1lcd__label.html) control.
+* [lcd_label_with_sixteen_segment](others/lcd_label_with_sixteen_segment/README.md) represents the use of [xtd::forms::lcd_label](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1lcd__label.html) control.
+* [lcd_label2](others/lcd_label2/README.md) represents the use of [xtd::forms::lcd_label](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1lcd__label.html) control.
+* [lcd_label3](others/lcd_label3/README.md) represents the use of [xtd::forms::lcd_label](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1lcd__label.html) control.
+* [main_menu_create_standard_items](others/main_menu_create_standard_items/README.md) demonstrates the use of [xtd::forms::main_menu::create_standard_items](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1main__menu.html#a6bbc2f6a58ca79e0329f882c3cef77e1) method.
+* [painting](others/painting/README.md) demonstrates the use of xtd::forms::form, xtd::forms::panel, [xtd::forms::track_bar](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1track__bar.html) and [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) controls with mouse_down, mouse_move and paint events..
+* [screen_informations](others/screen_informations/README.md) shows how to get screen information of [xtd::forms::screen](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1screen.html) control.
 * [settings2](others/settings_example2/README.md) represents settings application.
-* [smileys](others/smileys/README.md) demonstrates the use of [xtd::forms::label](../../src/xtd.forms/include/xtd/forms/label.h) control.
+* [smileys](others/smileys/README.md) demonstrates the use of [xtd::forms::label](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1label.html) control.
 * [some_controls](others/some_controls/README.md) demonstrates the use of some controls.
 * [status_bar_without_panels](others/status_bar_without_panels/README.md) represents a Windows status bar control without panels.
-* [stopwatch_form](others/stopwatch_form/README.md) demonstrates the use of stopwatch class, [xtd::forms::label](../../src/xtd.forms/include/xtd/forms/label.h) and [xtd::forms::button](../../src/xtd.forms/include/xtd/forms/button.h) controls.
-* [system_report](others/system_report/README.md) shows system_repoort with [xtd::forms::text_box](../../src/xtd_forms/include/xtd/forms/text_box.h) control.
+* [stopwatch_form](others/stopwatch_form/README.md) demonstrates the use of stopwatch class, [xtd::forms::label](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1label.html) and [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) controls.
+* [system_report](others/system_report/README.md) shows system_report with [xtd::forms::text_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1text__box.html) control.
 * [system_sound](others/system_sound/README.md) demonstrates the use of xtd::media::system_sound component.
-* [text_box_multiline](others/text_box_multiline/README.md) represents a Windows [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) control.
-* [text_box_password](others/text_box_password/README.md) represents a Windows [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) control.
-* [text_box_password2](others/text_box_password2/README.md) represents a Windows [xtd::forms::text_box](../../src/xtd.forms/include/xtd/forms/text_box.h) control.
-* [toggle_button2](others/toggle_button2/README.md) represents a [xtd::forms::toggle_button](../../src/xtd.forms/include/xtd/forms/toggle_button.h) control.
-* [track_bar2](others/track_bar2/README.md) represents a standard Windows [xtd::forms::track_bar](../../src/xtd.forms/include/xtd/forms/track_bar.h).
+* [text_box_multiline](others/text_box_multiline/README.md) represents a Windows [xtd::forms::text_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1text__box.html) control.
+* [text_box_password](others/text_box_password/README.md) represents a Windows [xtd::forms::text_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1text__box.html) control.
+* [text_box_password2](others/text_box_password2/README.md) represents a Windows [xtd::forms::text_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1text__box.html) control.
+* [toggle_button2](others/toggle_button2/README.md) represents a [xtd::forms::toggle_button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1toggle__button.html) control.
+* [track_bar2](others/track_bar2/README.md) represents a standard Windows [xtd::forms::track_bar](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1track__bar.html).
 * [wiggly](others/wiggly/README.md) shows how to animate a user control using timer and timer::event. In addition, the example demonstrates how to use graphics::measure_string to determine the size of text on screen.
 
 * [All](.) You can see all examples here. 

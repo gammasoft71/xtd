@@ -1,6 +1,6 @@
 # numeric_up_down
 
-demonstrates the use of [xtd::forms::numeric_up_down](../../../../src/xtd.forms/include/xtd/forms/numeric_up_down.h) control.
+demonstrates the use of [xtd::forms::numeric_up_down](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1numeric__up__down.html) control.
 
 # Sources
 

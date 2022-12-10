@@ -1,6 +1,6 @@
 # dot_matrix_display
 
-demonstrates how to use [xtd::forms::dot_matrix_display](../../../../src/xtd.forms/include/xtd/forms/dot_matrix_display.h) control.
+demonstrates how to use [xtd::forms::dot_matrix_display](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1dot__matrix__display.html) control.
 
 # Sources
 

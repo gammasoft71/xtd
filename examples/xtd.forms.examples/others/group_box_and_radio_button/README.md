@@ -1,6 +1,6 @@
 # group_box_and_radio_button
 
-demonstrates the use of [xtd::forms::group_box](../../../../src/xtd.forms/include/xtd/forms/group_box.h) container and  [xtd::forms::radio_button](../../../../src/xtd.forms/include/xtd/forms/radio_button.h) control.
+demonstrates the use of [xtd::forms::group_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1group__box.html) container and  [xtd::forms::radio_button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1radio__button.html) control.
 
 # Sources
 

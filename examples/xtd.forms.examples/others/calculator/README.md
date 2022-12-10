@@ -1,7 +1,6 @@
 # calculator
 
-represents a window or dialog box that makes up an application's user interface.
-
+represents a calculator [application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) that performs arithmetic operations on numbers.
 # Sources
 
 * [src/calculator.cpp](src/calculator.cpp)

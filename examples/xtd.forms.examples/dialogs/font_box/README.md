@@ -1,6 +1,6 @@
 # font_box
 
-demonstrates the use of [xtd::forms::font_box](../../../../src/xtd.forms/include/xtd/forms/font_box.h) font dialog.
+demonstrates the use of [xtd::forms::font_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1font__box.html) font dialog.
 
 # Sources
 

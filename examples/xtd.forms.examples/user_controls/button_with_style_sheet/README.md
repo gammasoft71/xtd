@@ -1,6 +1,6 @@
 # button_with_style_sheet
 
-demonstrates how to create a [xtd::forms::button](../../../../src/xtd.forms/include/xtd/forms/button.h) control with style_sheet.
+demonstrates how to create a [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control with [style_sheet](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html).
 
 # Sources
 

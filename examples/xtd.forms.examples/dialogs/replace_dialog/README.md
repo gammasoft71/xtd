@@ -1,6 +1,6 @@
 # replace_dialog
 
-demonstrates the use of [xtd::forms::replace_dialog](../../../../src/xtd.forms/include/xtd/forms/replace_dialog.h) dialog.
+demonstrates the use of [xtd::forms::replace_dialog](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1replace__dialog.html) dialog.
 
 # Sources
 

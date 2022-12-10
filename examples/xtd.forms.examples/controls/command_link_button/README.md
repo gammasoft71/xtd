@@ -1,6 +1,6 @@
 # command_link_button
 
-demonstrates the use of [xtd::forms::command_link_button](../../../../src/xtd.forms/include/xtd/forms/command_link_button.h) control.
+demonstrates the use of [xtd::forms::command_link_button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1command__link__button.html) control.
 
 # Sources
 

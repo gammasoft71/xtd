@@ -1,6 +1,6 @@
 # clock
 
-demonstrates the use of [xtd::forms::lcd_label](../../../../src/xtd.forms/include/xtd/forms/lcd_label.h) control.
+demonstrates the use of [xtd::forms::lcd_label](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1lcd__label.html) control.
 
 # Sources
 

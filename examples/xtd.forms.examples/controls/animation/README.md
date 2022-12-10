@@ -1,6 +1,6 @@
 # animation
 
-demonstrates the use of [xtd::forms::animation](../../../../src/xtd.forms/include/xtd/forms/animation.h) control.
+demonstrates the use of [xtd::forms::animation](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1animation.html) control.
 
 # Sources
 

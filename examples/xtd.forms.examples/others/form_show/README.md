@@ -1,6 +1,6 @@
 # form_show
 
-This example demontrate how to launch form as normal window, modeless window and modal window.
+This example demonstrates how to launch form as normal window , model-less window and modal window.
 
 # Sources
 

@@ -1,6 +1,6 @@
 # main_menu
 
-demonstrates the use of [xtd::forms::main_main_menu](../../../../src/xtd.forms/include/xtd/forms/main_main_menu.h) component.
+demonstrates the use of [xtd::forms::main_menu](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1main__menu.html) component.
 
 # Sources
 

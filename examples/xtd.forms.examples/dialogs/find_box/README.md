@@ -1,6 +1,6 @@
 # find_box
 
-demonstrates the use of [xtd::forms::find_box](../../../../src/xtd.forms/include/xtd/forms/find_box.h) dialog.
+demonstrates the use of [xtd::forms::find_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1find__box.html) dialog.
 
 # Sources
 

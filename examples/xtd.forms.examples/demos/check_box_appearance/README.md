@@ -1,6 +1,6 @@
 # check_box_appearance
 
-demonstrates how to use [xtd::forms::check_box](../../../../src/xtd.forms/include/xtd/forms/check_box.h) control.
+demonstrates how to use [xtd::forms::check_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1check__box.html) control.
 
 # Sources
 

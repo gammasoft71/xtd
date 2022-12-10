@@ -1,6 +1,6 @@
 # dialog
 
-demonstrates the use of [xtd::forms::form](../../../../src/xtd.forms/include/xtd/forms/form.h) container as dialog.
+demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) container as dialog.
 
 # Sources
 
