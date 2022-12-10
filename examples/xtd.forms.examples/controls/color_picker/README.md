@@ -1,6 +1,6 @@
 # color_picker
 
-demonstrates the use of [xtd::forms::color_picker](../../../../src/xtd.forms/include/xtd/forms/color_picker.h) control.
+demonstrates the use of [xtd::forms::color_picker](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1color__picker.html) control.
 
 # Sources
 

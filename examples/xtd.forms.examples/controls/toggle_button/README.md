@@ -1,6 +1,6 @@
 # toggle_button
 
-demonstrates the use of [xtd::forms::toggle_button](../../../../src/xtd.forms/include/xtd/forms/toggle_button.h) control.
+demonstrates the use of [xtd::forms::toggle_button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1toggle__button.html) control.
 
 # Sources
 
