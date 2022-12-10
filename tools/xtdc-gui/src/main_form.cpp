@@ -825,7 +825,7 @@ void main_form::show_about_dialog() {
 void main_form::update_open_xtd_examples_information(const xtd::ustring& description) {
   open_xtd_examples_information_link_label_.text("");
   open_xtd_examples_information_link_label_.links().clear();
-  if (description.is_empty()) return;
+  if (description.empty()) return;
   static const std::regex rgx_md_link(R"(\[(.*?)\]\((.*?)\))", std::regex::optimize);
   xtd::ustring text = description;
   std::sregex_iterator it(description.begin(), description.end(), rgx_md_link), end{};
