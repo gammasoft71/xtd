@@ -1,6 +1,6 @@
 # choice
 
-demonstrates the use of [xtd::forms::choice](../../../../src/xtd.forms/include/xtd/forms/choice.h) control.
+demonstrates the use of [xtd::forms::choice](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1choice.html) control.
 
 # Sources
 

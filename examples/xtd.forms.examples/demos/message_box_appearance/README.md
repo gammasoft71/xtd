@@ -1,6 +1,6 @@
 # message_box_appearance
 
-demonstrates how to use [xtd::forms::message_box](../../../../src/xtd.forms/include/xtd/forms/message_box.h) control.
+demonstrates how to use [xtd::forms::message_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1message__box.html) control.
 
 # Sources
 

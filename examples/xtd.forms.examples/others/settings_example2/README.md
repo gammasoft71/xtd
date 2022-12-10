@@ -1,6 +1,6 @@
 # settings_example2
 
-demonstrates the use of [xtd::forms::settings](../../../../src/xtd.forms/include/xtd/forms/settings.h) component.
+demonstrates the use of [xtd::forms::settings](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1settings.html) component.
 
 # Sources
 

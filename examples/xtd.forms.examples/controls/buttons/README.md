@@ -1,6 +1,6 @@
 # buttons
 
-demonstrates the use of [xtd::forms::buttons](../../../../src/xtd.forms/include/xtd/forms/buttons.h) button object collection.
+demonstrates the use of [xtd::forms::buttons](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1buttons.html) button object collection.
 
 # Sources
 

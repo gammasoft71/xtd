@@ -1,6 +1,6 @@
 # control
 
-demonstrates the use of [xtd::forms::control](../../../../src/xtd.forms/include/xtd/forms/control.h) control.
+demonstrates the use of [xtd::forms::control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html) control.
 
 # Sources
 

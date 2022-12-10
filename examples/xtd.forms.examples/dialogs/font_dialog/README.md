@@ -1,6 +1,6 @@
 # font_dialog
 
-demonstrates the use of [xtd::forms::font_dialog](../../../../src/xtd.forms/include/xtd/forms/font_dialog.h) dialog.
+demonstrates the use of [xtd::forms::font_dialog](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1font__dialog.html) dialog.
 
 # Sources
 

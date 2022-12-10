@@ -1,6 +1,6 @@
 # application_events
 
-demonstrates the use of [application](../../../../src/xtd.forms/include/xtd/forms/application.h) events.
+demonstrates the use of [application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) events.
 
 # Sources
 

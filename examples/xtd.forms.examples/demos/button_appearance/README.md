@@ -1,6 +1,6 @@
 # button_appearance
 
-demonstrates how to use [xtd::forms::button](../../../../src/xtd.forms/include/xtd/forms/button.h) control.
+demonstrates how to use [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control.
 
 # Sources
 

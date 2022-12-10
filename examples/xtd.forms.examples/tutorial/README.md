@@ -47,7 +47,7 @@ int main(int argc, char* argv[]) {
 }
 ```
 
-This example can be build on Windows, macOS or linux operating system with CMake.
+This example can be build on Windows, macOS or Linux operating system with CMake.
 
 ```cmake
 cmake_minimum_required(VERSION 3.3)
@@ -58,7 +58,7 @@ add_sources(src/simple.cpp)
 target_type(GUI_APPLICATION)
 ```
 
-See [cmake](htps:\\cmake.org) for more information.
+See [cmake](https://cmake.org) for more information.
 
 ![Screenshot](../../docs/pictures/examples/tutorial/simple.png)
 

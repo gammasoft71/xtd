@@ -1,6 +1,6 @@
 # domain_up_down
 
-demonstrates the use of [xtd::forms::domain_up_down](../../../../src/xtd.forms/include/xtd/forms/domain_up_down.h) control.
+demonstrates the use of [xtd::forms::domain_up_down](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1domain__up__down.html) control.
 
 # Sources
 

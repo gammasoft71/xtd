@@ -1,6 +1,6 @@
 # user_control
 
-demonstrates the use of [xtd::forms::user_control](../../../../src/xtd.forms/include/xtd/forms/user_control.h) control.
+demonstrates the use of [xtd::forms::user_control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1user__control.html) control.
 
 # Sources
 

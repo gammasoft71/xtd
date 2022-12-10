@@ -1,6 +1,6 @@
 # input_dialog_password
 
-demonstrates the use of [xtd::forms::input_dialog](../../../../src/xtd.forms/include/xtd/forms/input_dialog.h) dialog.
+demonstrates the use of [xtd::forms::input_dialog](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1input__dialog.html) dialog.
 
 # Sources
 

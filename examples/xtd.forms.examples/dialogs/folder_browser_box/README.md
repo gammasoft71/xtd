@@ -1,6 +1,6 @@
 # folder_browser_box
 
-demonstrates the use of [xtd::forms::folder_browser_box](../../../../src/xtd.forms/include/xtd/forms/folder_browser_box.h) dialog.
+demonstrates the use of [xtd::forms::folder_browser_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1folder__browser__box.html) dialog.
 
 # Sources
 

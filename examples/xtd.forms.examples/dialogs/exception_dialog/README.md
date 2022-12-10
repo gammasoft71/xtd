@@ -1,6 +1,6 @@
 # exception_dialog
 
-demonstrates the use of [xtd::forms::exception_dialog](../../../../src/xtd.forms/include/xtd/forms/exception_dialog.h) dialog.
+demonstrates the use of [xtd::forms::exception_dialog](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1exception__dialog.html) dialog.
 
 # Sources
 

@@ -2,15 +2,15 @@
 
 [This folder](.) contains xtd.forms event examples.
 
-* [application_events](application_events/README.md) demonstrates the use of [xtd::forms::application](../../../src/xtd.forms/include/xtd/forms/application.h) events.
-* [application_idle](application_idle/README.md) demonstrates the use of [xtd::forms::application::idle](../../../src/xtd.forms/include/xtd/forms/application.h) event.
-* [enable_changed_event](enable_changed_event/README.md) demonstrates the use of [enable_changed](../../../src/xtd.forms/include/xtd/forms/control.h) event.
-* [font_changed_event](font_changed_event/README.md) demonstrates the use of [font_changed](../../../src/xtd.forms/include/xtd/forms/control.h) event.
-* [form_click](form_click/README.md) demonstrates the use of [xtd::forms::form](../../../src/xtd.forms/include/xtd/forms/form.h) control and [click](../../../src/xtd.forms/include/xtd/forms/control.h) event.
-* [form_and_messages](form_and_messages/README.md) demonstrates some events received by [xtd::forms::form](../../../src/xtd.forms/include/xtd/forms/form.h).
-* [form_paint](form_paint/README.md) demonstrates paint event with [xtd::forms::form](../../../src/xtd.forms/include/xtd/forms/form.h).
+* [application_events](application_events/README.md) demonstrates the use of [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) events.
+* [application_idle](application_idle/README.md) demonstrates the use of [xtd::forms::application::idle](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga936f2c887b42e06ecb7e81d4d1bc33ba) event.
+* [enable_changed_event](enable_changed_event/README.md) demonstrates the use of [enable_changed](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga34c92d7fb3eb02179db90c13669b6a70) event.
+* [font_changed_event](font_changed_event/README.md) demonstrates the use of [font_changed](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga52494f7214b65db98e3a942acab5d506) event.
+* [form_click](form_click/README.md) demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) event.
+* [form_and_messages](form_and_messages/README.md) demonstrates some events received by [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html).
+* [form_paint](form_paint/README.md) demonstrates paint event with [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html).
 * [key_events](key_events/README.md) demonstrates the use of key events.
 * [mouse_events](mouse_events/README.md) demonstrates the use of mouse events.
 * [move_form](move_form/README.md) demonstrates the use of move form events.
 * [send_message_to_form](send_message_to_form/README.md) demonstrates how to send message to form.
-* [wnd_proc](wnd_proc/README.md) demonstrates the use of [wnd_proc](../../../src/xtd.forms/include/xtd/forms/control.h) method.
+* [wnd_proc](wnd_proc/README.md) demonstrates the use of [wnd_proc](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#ac75d78bfc73154decabddc734cd28096) method.

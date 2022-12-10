@@ -1,6 +1,6 @@
 # link_label
 
-demonstrates the use of [xtd::forms::link_label](../../../../src/xtd.forms/include/xtd/forms/link_label.h) control.
+demonstrates the use of [xtd::forms::link_label](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1link__label.html) control.
 
 # Sources
 

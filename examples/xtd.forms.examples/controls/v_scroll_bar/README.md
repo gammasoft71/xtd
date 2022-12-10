@@ -1,6 +1,6 @@
 # v_scroll_bar
 
-demonstrates the use of [xtd::forms::v_scroll_bar](../../../../src/xtd.forms/include/xtd/forms/v_scroll_bar.h) control.
+demonstrates the use of [xtd::forms::v_scroll_bar](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1v__scroll__bar.html) control.
 
 # Sources
 
