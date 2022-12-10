@@ -63,7 +63,7 @@ Total element height = height + top padding + bottom padding + top border + bott
 
 # See also
 ​
-* [Style sheets reference](guide_style_sheets_reference.md)
+* [Style sheets reference](style_sheets_reference.md)
 * [Guides](guides.md)
 * [Documentation](documentation.md)
 

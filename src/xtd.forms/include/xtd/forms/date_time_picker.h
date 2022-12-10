@@ -93,15 +93,15 @@ namespace xtd {
       /// @{
       /// @brief Occurs when the drop-down calendar is dismissed and disappears.
       /// @ingroup events
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<date_time_picker, event_handler> close_up;
       /// @brief Occurs when the drop-down calendar is shown.
       /// @ingroup events
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<date_time_picker, event_handler> drop_down;
       /// @brief Occurs when the value of the value property changes.
       /// @ingroup events
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<date_time_picker, event_handler> value_changed;
       /// @}
       

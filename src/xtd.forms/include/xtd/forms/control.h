@@ -681,21 +681,21 @@ namespace xtd {
       
       /// @brief Gets the contol style sheet.
       /// @return The xtd::forms::style_sheets::style-sheet style sheet associate to this current instance of xtd::forms::control.
-      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/style_sheets_overview.md">Style sheets overview</a>.
       virtual style_sheets::style_sheet style_sheet() const noexcept;
       /// @brief Sets the contol style sheet.
       /// @param value The xtd::forms::style_sheets::style-sheet style sheet associate to this current instance of xtd::forms::control.
-      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/style_sheets_overview.md">Style sheets overview</a>.
       virtual control& style_sheet(const style_sheets::style_sheet& value);
       /// @brief Sets the contol style sheet.
       /// @param value The xtd::forms::style_sheets::style-sheet style sheet associate to this current instance of xtd::forms::control.
       /// @return Current control.
-      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/style_sheets_overview.md">Style sheets overview</a>.
       virtual control& style_sheet(const xtd::ustring& value);
       /// @brief Resets the contol style sheet.
       /// @param value The xtd::forms::style_sheets::style-sheet style sheet associate to this current instance of xtd::forms::control.
       /// @return Current control.
-      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_style_sheets_overview.md">Style sheets overview</a>.
+      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/style_sheets_overview.md">Style sheets overview</a>.
       virtual control& style_sheet(std::nullptr_t);
 
       /// @brief Gets a value indicating whether the user can give the focus to this control using the TAB key.
@@ -1112,31 +1112,31 @@ namespace xtd {
       /// @brief Occurs when the value of the xtd::forms::control::auto_size property changes.
       /// @ingroup events
       /// @remarks This event is raised if the xtd::forms::control::auto_size property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> auto_size_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::back_color property changes.
       /// @ingroup events
       /// @remarks This event is raised if the xtd::forms::control::back_color property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> back_color_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::background_image property changes.
       /// @ingroup events
       /// @remarks This event is raised if the xtd::forms::control::background_image property is changed by either a programmatic modification or user interaction
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> background_image_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::background_image_layout property changes.
       /// @ingroup events
       /// @remarks This event is raised if the xtd::forms::control::background_image_layout property is changed by either a programmatic modification or user interaction
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> background_image_layout_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::control_appearance property changes.
       /// @ingroup events
       /// @remarks This event is raised if the control_appearance property is changed by either a programmatic modification or user interaction
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> control_appearance_changed;
       
       /// @brief Occurs when the xtd::forms::control is clicked.
@@ -1162,35 +1162,35 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> click;
       
       /// @brief Occurs when the value of the xtd::forms::control::client_size property changes.
       /// @ingroup events
       /// @remarks This event is raised if the xtd::forms::control::client_size property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> client_size_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::cursor property changes.
       /// @ingroup events
       /// @remarks This event is raised if the xtd::forms::control::cursor property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> cursor_changed;
       
       /// @brief Occurs when a new xtd::forms::control::control is added to the xtd::forms::control::control_collection.
       /// @ingroup events
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, control_event_handler> control_added;
       
       /// @brief Occurs when a new xtd::forms::control:: is removed to the xtd::forms::control::control_collection.
       /// @ingroup events
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, control_event_handler> control_removed;
       
       /// @brief Occurs when the value of the xtd::forms::control::dock property changes.
       /// @ingroup events
       /// @remarks This event is raised if the xtd::forms::control::dock property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> dock_changed;
       
       /// @brief Occurs when the xtd::forms::control is double-clicked.
@@ -1215,7 +1215,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> double_click;
       
       /// @brief Occurs when the xtd::forms::control receives focus.
@@ -1237,43 +1237,43 @@ namespace xtd {
       /// @remarks If the causes_validation property is set to false, the xtd::forms::control::validating and xtd::forms::control::validated events are suppressed.
       /// @remarks Note The got_focus and lost_focus events are low-level focus events that are tied to the WM_KILLFOCUS and WM_SETFOCUS Windows messages. Typically, the got_focus and lost_focus events are only used when updating when writing custom controls. Instead the enter and leave events should be used for all controls except the xtd::forms::form class, which uses the activated and deactivate events.
       /// @warning Do not attempt to set focus from within the enter, got_focus, leave, lost_focus, validating, or validated event handlers. Doing so can cause your application or the operating system to stop responding.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> got_focus;
       
       /// @brief Occurs when a handle is created for the xtd::forms::control.
       /// @ingroup events
       /// @remarks A handle is created when the xtd::forms::control is displayed for the first time. For example, if a xtd::forms::control is created that has visible set to false, the handle_created event will not be raised until visible is set to true.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> handle_created;
       
       /// @brief Occurs when the control's handle is in the process of being destroyed.
       /// @ingroup events
       /// @remarks During the handle_destroyed event, the control is still a valid Windows control and the handle can be recreated by calling the recreate_handle method.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> handle_destroyed;
       
       /// @brief Occurs when the value of the xtd::forms::control::enabled property changes.
       /// @ingroup events
       /// @remarks This event is raised if the xtd::forms::control::enabled property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> enabled_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::fore_color property changes.
       /// @ingroup events
       /// @remarks This event is raised if the xtd::forms::control::fore_color property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> fore_color_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::font property changes.
       /// @ingroup events
       /// @remarks This event is raised if the xtd::forms::control::font property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> font_changed;
       
       /// @brief Occurs when the user requests help for a xtd::forms::control.
       /// @ingroup events
       /// @remarks The xtd::forms::control::help_requested event is commonly raised when the user presses the F1 key or an associated context-sensitive help button is clicked.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, help_event_handler> help_requested;
       
       /// @brief Occurs when a key is pressed while the xtd::forms::control has focus.
@@ -1286,7 +1286,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control keyboard events.
       /// @include key_events.cpp
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, key_event_handler> key_down;
       
       /// @brief Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.
@@ -1301,7 +1301,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control keyboard events.
       /// @include key_events.cpp
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, key_press_event_handler> key_press;
       
       /// @brief Occurs when a key is released while the xtd::forms::control has focus.
@@ -1314,19 +1314,19 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control keyboard events.
       /// @include key_events.cpp
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, key_event_handler> key_up;
       
       /// @brief Occurs when a xtd::forms::control should reposition its child controls.
       /// @ingroup events
       /// @remarks The layout event occurs when child controls are added or removed, when the bounds of the control changes, and when other changes occur that can affect the layout of the control. The layout event can be suppressed using the suspend_layout and resume_layout methods. Suspending layout enables you to perform multiple actions on a control without having to perform a layout for each change. For example, if you resize and move a control, each operation would raise a layout event.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> layout;
       
       /// @brief Occurs when the value of the xtd::forms::control::location property changes.
       /// @ingroup events
       /// @remarks This event is raised if the xtd::forms::control::location property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> location_changed;
       
       /// @brief Occurs when the xtd::forms::control loses focus.
@@ -1349,7 +1349,7 @@ namespace xtd {
       /// @remarks If the cancel property of the xtd::forms::cancel_event_args is set to true in the validating event delegate, all events that would usually occur after the validating event are suppressed.
       /// @remarks Note The got_focus and lost_focus events are low-level focus events that are tied to the WM_KILLFOCUS and WM_SETFOCUS Windows messages. Typically, the got_focus and lost_focus events are only used when updating when writing custom controls. Instead the enter and leave events should be used for all controls except the xtd::forms::form class, which uses the activated and deactivate events.
       /// @warning Do not attempt to set focus from within the enter, got_focus, leave, lost_focus, validating, or validated event handlers. Doing so can cause your application or the operating system to stop responding.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> lost_focus;
       
       /// @brief Occurs when the xtd::forms::control is clicked by the mouse.
@@ -1366,7 +1366,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, mouse_event_handler> mouse_click;
       
       /// @brief Occurs when the xtd::forms::control is double clicked by the mouse.
@@ -1387,7 +1387,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, mouse_event_handler> mouse_double_click;
       
       /// @brief Occurs when the mouse pointer is over the xtd::forms::control and a mouse button is pressed.
@@ -1402,7 +1402,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, mouse_event_handler> mouse_down;
       
       /// @brief Occurs when the mouse pointer enters the xtd::forms::control.
@@ -1417,7 +1417,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> mouse_enter;
       
       /// @brief Occurs when the mouse horizontal wheel moves while the xtd::forms::control has focus.
@@ -1433,7 +1433,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, mouse_event_handler> mouse_horizontal_wheel;
       
       /// @brief Occurs when the mouse pointer leaves the xtd::forms::control.
@@ -1448,7 +1448,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> mouse_leave;
       
       /// @brief Occurs when the mouse pointer is moved over the xtd::forms::control.
@@ -1463,7 +1463,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, mouse_event_handler> mouse_move;
       
       /// @brief Occurs when the mouse pointer is over the xtd::forms::control and a mouse button is released.
@@ -1478,7 +1478,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, mouse_event_handler> mouse_up;
       
       /// @brief Occurs when the mouse wheel moves while the xtd::forms::control has focus.
@@ -1494,12 +1494,12 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, mouse_event_handler> mouse_wheel;
       
       /// @brief Occurs when the control is moved.
       /// @ingroup events
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> move;
       
       /// @brief Occurs when the xtd::forms::control is redrawn.
@@ -1509,19 +1509,19 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control paint events.
       /// @include form_paint.cpp
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, paint_event_handler> paint;
       
       /// @brief Occurs when the value of the xtd::forms::control::parent property changes.
       /// @ingroup events
       /// @remarks This event is raised if the xtd::forms::control::parent property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> parent_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::region property changes.
       /// @ingroup events
       /// @remarks This event is raised if the xtd::forms::control::region property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> region_changed;
       
       /// @brief Occurs when the xtd::forms::control is resized.
@@ -1531,37 +1531,37 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control resize event.
       /// @include dot_matrix_display.cpp
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> resize;
       
       /// @brief Occurs when the value of the xtd::forms::control::size property changes.
       /// @ingroup events
       /// @remarks This event is raised if the xtd::forms::control::size property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> size_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::style_sheet property changes or when xtd::application::style_sheet property changes.
       /// @ingroup events
       /// @remarks This event is raised if the xtd::forms::control::style_sheet property is changed or when xtd::application::style_sheet property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> style_sheet_changed;
 
       /// @brief Occurs when the xtd::forms::control::tab_stop property value changes.
       /// @ingroup events
       /// @remarks This event is raised if the xtd::forms::control::tab_stop property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> tab_stop_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::text property changes.
       /// @ingroup events
       /// @remarks This event is raised if the xtd::forms::control::text property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> text_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::visible property changes.
       /// @ingroup events
       /// @remarks This event is raised if the xtd::forms::control::visible property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> visible_changed;
       /// @}
       

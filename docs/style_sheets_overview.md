@@ -106,8 +106,8 @@ xtd browses the whole folder and reads all files with the .css extension.
 
 # See also
 ​
-* [Style sheets reference](guide_style_sheets_reference.md)
-* [Box model](guide_style_sheets_box_model.md)
+* [Style sheets reference](style_sheets_reference.md)
+* [Box model](style_sheets_box_model.md)
 * [Guides](guides.md)
 * [Documentation](documentation.md)
 

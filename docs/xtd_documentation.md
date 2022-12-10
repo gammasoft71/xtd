@@ -15,7 +15,7 @@
 
 | Get started                                                   |
 |---------------------------------------------------------------|
-| [Hello World](guide_hello_world.md)                           |
+| [Hello World](hello_world.md)                           |
 | [Get started tutorials](tutorials.md)                         |
 | [Follow by looking at examples of xtd](../examples/README.md) |
 
@@ -43,7 +43,7 @@
 
 | Desktop applications                         |
 |----------------------------------------------|
-| [Application](guide_application_overview.md) |
+| [Application](application_overview.md) |
 | [Dialogs](dialogs.md)                        |
 | [Forms](forms.md)                            |
 | [Menus and toolbars](menus_and_toolbars.md)  |
@@ -55,7 +55,7 @@
 
 | Unit tests applications                                |
 |--------------------------------------------------------|
-| [Overview](guide_tunit_overview.md)                    |
+| [Overview](tunit_overview.md)                    |
 | [Running test](writing_applicaion_running_test.md)     |
 | [Extending test](writing_applicaion_extending_test.md) |
 

@@ -16,6 +16,7 @@ add_sources(
   add_or_remove_event_handlers.md
   add_style_sheets_to_a_control.md
   ambient_properties.md
+  application_overview.md
   apply_accessibility_information.md
   architecture.md
   automatic_scalling.md
@@ -27,6 +28,7 @@ add_sources(
   capitalisation_conventions.md
   chain_of_responsibility.md
   change_the_pressed_key.md
+  check_version.md
   choosing_between_class_and_struct.md
   class_cleanup.md
   class_initialize.md
@@ -65,6 +67,7 @@ add_sources(
   containers.md
   control_and_modify_the_mouse_pointer.md
   control_appearance.md
+  control_events.md
   controls.md
   controls_events.md
   controls_management.md
@@ -79,6 +82,7 @@ add_sources(
   date_time.md
   decorator.md
   delegates.md
+  delegates_and_lambdas.md
   dependencies.md
   design_great_data_sources.md
   design_guidelines.md
@@ -160,21 +164,10 @@ add_sources(
   git.md
   graphics.md
   graphics_path.md
-  guide_application_overview.md
-  guide_check_version.md
-  guide_control_events.md
-  guide_delegates_and_lambdas.md
-  guide_handle_and_raise_events.md
-  guide_hello_world.md
-  guide_main_and_startup.md
-  guide_observer_design_pattern.md
-  guide_raise_and_consume_events.md
-  guide_style_sheets_box_model.md
-  guide_style_sheets_overview.md
-  guide_style_sheets_reference.md
-  guide_tunit_overview.md
   guides.md
+  handle_and_raise_events.md
   handle_input_at_the_form_level.md
+  hello_world.md
   hierarchy.md
   home.md
   ignore_test_method.md
@@ -192,6 +185,7 @@ add_sources(
   license.md
   links.md
   literal_operators.md
+  main_and_startup.md
   matrix.md
   mediator.md
   member_design_guidelines.md
@@ -212,6 +206,7 @@ add_sources(
   news.md
   non-final_classes.md
   observer.md
+  observer_design_pattern.md
   operator_overloads.md
   parameter_design.md
   parse_date_and_time_strings.md
@@ -229,6 +224,7 @@ add_sources(
   protected_members.md
   prototype.md
   proxy.md
+  raise_and_consume_events.md
   region.md
   release_notes.md
   release_patches_and_support.md
@@ -248,6 +244,9 @@ add_sources(
   static_class_design.md
   strategy.md
   struct_design.md
+  style_sheets_box_model.md
+  style_sheets_overview.md
+  style_sheets_reference.md
   support.md
   synchronize_multiple_controls.md
   system_exception_class_and_properties.md
@@ -261,6 +260,7 @@ add_sources(
   thread_safe_control_call.md
   tools.md
   translations_status.md
+  tunit_overview.md
   tutorials.md
   type_conversion_overview.md
   type_conversion_tables.md

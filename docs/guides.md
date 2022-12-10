@@ -6,12 +6,12 @@ The xtd guides provide an explanation on how to use the important features of th
 
 * [xtd documentation](xtd_documentation.md)
 * Get started
-  * [Hello World](guide_hello_world.md)
+  * [Hello World](hello_world.md)
   * [Get started tutorials](tutorials.md)
   * [Follow by looking at examples of xtd](../examples/README.md)
   * How to install
     * [Read download, install and uninstall](downloads.md)
-    * [How to check xtd version](guide_check_version.md)
+    * [How to check xtd version](check_version.md)
 * Overview
   * [Introduction to xtd](introduction_to_xtd.md)
   * [About xtd](xtd_explanations.md)
@@ -30,7 +30,7 @@ The xtd guides provide an explanation on how to use the important features of th
   * [Overview](tools.md)
 * xtd.core
   * Entry point
-    * [main and startup_](guide_main_and_startup.md)
+    * [main and startup_](main_and_startup.md)
   * Types overview
     * [Native types, boxing and unboxing](types.md)
     * [enum, enum class and enum struct](enum_class.md)
@@ -45,11 +45,11 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Overview](collections.md)
   * [Interfaces](interfaces.md)
   * [Literal operators](literal_operators.md)
-  * [Delegates and lambdas](guide_delegates_and_lambdas.md)
+  * [Delegates and lambdas](delegates_and_lambdas.md)
   * Event
-    * [Overview](guide_handle_and_raise_events.md)
-    * [Raise and consume events](guide_raise_and_consume_events.md)
-    * [Observer Design Pattern](guide_observer_design_pattern.md)
+    * [Overview](handle_and_raise_events.md)
+    * [Raise and consume events](raise_and_consume_events.md)
+    * [Observer Design Pattern](observer_design_pattern.md)
   * Exceptions
     * [Overview](exceptions.md)
     * [system_exception class and properties](system_exception_class_and_properties.md)
@@ -118,7 +118,7 @@ The xtd guides provide an explanation on how to use the important features of th
 * xtd.forms
   * Overview
     * [Overview](xtd_forms_explanations.md)
-    * [Application](guide_application_overview.md)
+    * [Application](application_overview.md)
     * [Dialogs](dialogs.md)
     * [Forms](forms.md)
     * [Menus and toolbars](menus_and_toolbars.md)
@@ -127,7 +127,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Components](components.md)
     * [Controls management](controls_management.md)
     * [Control appearance](control_appearance.md)
-    * [Control events](guide_control_events.md)
+    * [Control events](control_events.md)
     * [Size and location properties](size_and_location_properties.md)
     * [Ambient properties](ambient_properties.md)
   * Forms
@@ -184,14 +184,14 @@ The xtd guides provide an explanation on how to use the important features of th
       * [Create a control binding](create_a_control_binding.md)    
       * [Synchronize multiple controls](synchronize_multiple_controls.md)    
   * Style sheets
-    * [Overview](guide_style_sheets_overview.md)
-    * [Reference](guide_style_sheets_reference.md)
-    * [Box model](guide_style_sheets_box_model.md)
+    * [Overview](style_sheets_overview.md)
+    * [Reference](style_sheets_reference.md)
+    * [Box model](style_sheets_box_model.md)
     * Common tasks
       * [Add style sheets to a control](add_style_sheets_to_a_control.md)
 * xtd.tunit
   * Overview
-    * [Overview](guide_tunit_overview.md)
+    * [Overview](tunit_overview.md)
     * [Running test](writing_applicaion_running_test.md)
     * [Extending test](writing_applicaion_extending_test.md)
 * xtd.cmake

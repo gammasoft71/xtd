@@ -123,12 +123,12 @@ namespace xtd {
       /// @{
       /// @brief Occurs when either a mouse or keyboard action moves the scroll box.
       /// @ingroup events
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<up_down_button, event_handler> scroll;
       
       /// @brief Occurs when the value of the value property changes.
       /// @ingroup events
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<up_down_button, event_handler> value_changed;
       /// @}
       
