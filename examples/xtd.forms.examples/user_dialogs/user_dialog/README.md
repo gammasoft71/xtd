@@ -1,6 +1,6 @@
 # user_dialog
 
-demonstrates the use of [xtd::forms::form](../../../../src/xtd.forms/include/xtd/forms/form.h) as dialog.
+demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) as dialog.
 
 # Sources
 
