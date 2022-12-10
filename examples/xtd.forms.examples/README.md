@@ -12,7 +12,7 @@
 * [hello_world_message_box2](hello_worlds/hello_world_message_box2/README.md) The classic first application "Hello, World!" with [xtd::forms::message_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1message__box.html) control.
 * [hello_world_message_box3](hello_worlds/hello_world_message_box3/README.md) The classic first application "Hello, World!" with [xtd::forms::message_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1message__box.html) control.
 * [hello_world_paint](hello_worlds/hello_world_paint/README.md) The classic first application "Hello, World!" with GDI+ drawing objects.
-* [hello_world_say](hello_worlds/hello_world_say/README.md) The classic first application "Hello, World!" with [xtd::speech::synthesis::speech_synthesizer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1speech_1_1synthesis_1_1speech__synthesizer.html).
+* [hello_world_say](hello_worlds/hello_world_say/README.md) The classic first application "Hello, World!" with [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control an [xtd::speech::synthesis::speech_synthesizer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1speech_1_1synthesis_1_1speech__synthesizer.html) class.
 
 ## [application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html)
 
