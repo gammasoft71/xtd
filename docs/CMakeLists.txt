@@ -6,118 +6,49 @@ include(../scripts/cmake/xtd_commands.cmake)
 include(../scripts/cmake/xtd_version.cmake)
 
 add_sources(
+  README.md
   abstract_class_design.md
   abstract_factory.md
   abstractions_abstract_types_and_interfaces.md
   adapter.md
+  add_a_control_to_a_form.md
+  add_a_form.md
+  add_or_remove_event_handlers.md
+  add_style_sheets_to_a_control.md
+  ambient_properties.md
+  apply_accessibility_information.md
   architecture.md
+  automatic_scalling.md
   base_classes_for_implementing_abstractions.md
   bridge.md
+  brushes.md
   builder.md
   c++.md
   capitalisation_conventions.md
   chain_of_responsibility.md
+  change_the_pressed_key.md
   choosing_between_class_and_struct.md
   class_cleanup.md
   class_initialize.md
+  cmake_add_assembly_information.md
+  cmake_add_resources.md
+  cmake_add_settings.md
+  cmake_assembly_informations_commands.md
+  cmake_build_options_commands.md
+  cmake_create_project.md
+  cmake_files.md
+  cmake_generic_commands.md
+  cmake_install_commands.md
+  cmake_overview.md
+  cmake_packages_commands.md
+  cmake_project_commands.md
+  cmake_target_properties_commands.md
   coding_conventions_guidelines.md
+  collections.md
+  colors.md
   command.md
   common_design_patterns.md
-  composite.md
-  constructor_design.md
-  contact.md
-  csf.md
-  decorator.md
-  dependencies.md
-  design_guidelines_for_exception.md
-  design_guidelines.md
-  designing_for_extensibility.md
-  development_status_cmake.md
-  development_status_themes.md
-  development_status_toolkits.md
-  development_status_tools.md
-  development_status_xtd_core.md
-  development_status_xtd_drawing.md
-  development_status_xtd_forms.md
-  development_status_xtd_tunit.md
-  development_status.md
-  documentation.md
-  downloads.md
-  enum_design.md
-  event_design.md
-  events_and_callbacks.md
-  examples.md
-  exception_throwing.md
-  exceptions_and_performance.md
-  external_tools_libraries_and_toolkits.md
-  facade.md
-  factory_method.md
-  field_design.md
-  final.md
-  flyweight.md
-  gallery.md
-  gammasoft.md
-  general_naming_conventions.md
-  getting_started.md
-  git.md
-  guide_check_version.md
-  guide_delegates_and_lambdas.md
-  guide_handle_and_raise_events.md
-  guide_hello_world.md
-  guide_observer_design_pattern.md
-  guide_raise_and_consume_events.md
-  guide_style_sheets_box_model.md
-  guide_style_sheets_overview.md
-  guide_style_sheets_reference.md
-  guides.md
-  hierarchy.md
-  home.md
-  ignore_test_method.md
-  ingore_test_method.md
-  interface_design.md
-  interpreter.md
-  iterator.md
-  license.md
-  links.md
-  mediator.md
-  member_design_guidelines.md
-  member_overloading.md
-  memento.md
-  names_of_classes_structs_and_interfaces.md
-  names_of_libraries_and_dlls.md
-  names_of_namespace.md
-  names_of_type_members.md
-  naming_guidelines.md
-  naming_parameters.md
-  naming_resources.md
-  nested_types.md
-  news.md
-  non-final_classes.md
-  observer.md
-  operator_overloads.md
-  parameter_design.md
-  portability.md
-  property_design.md
-  protected_members.md
-  prototype.md
-  proxy.md
-  README.md
-  release_notes.md
-  roadmap.md
-  singleton.md
-  state.md
-  static_class_design.md
-  strategy.md
-  struct_design.md
-  support.md
-  template_method.md
-  test_class.md
-  test_cleanup.md
-  test_initialize.md
-  test_method.md
-  themes.md
-  tools.md
-  translations_status.md
+  common_io_tasks.md
   common_io_tasks_copy_directories.md
   common_io_tasks_enumerate_directories_and_files.md
   common_io_tasks_file_and_stream_io.md
@@ -126,12 +57,51 @@ add_sources(
   common_io_tasks_read_text_from_a_file.md
   common_io_tasks_write_a_text_file.md
   common_io_tasks_write_text_to_a_file.md
-  common_io_tasks.md
-  ambient_properties.md
+  components.md
+  composite.md
+  console_class.md
+  constructor_design.md
+  contact.md
+  containers.md
+  control_and_modify_the_mouse_pointer.md
   control_appearance.md
+  controls.md
+  controls_events.md
   controls_management.md
+  controls_overview.md
+  create_a_control_binding.md
+  create_access_key_shortcuts.md
+  create_user_dined_exceptions.md
+  csf.md
+  custom_controls.md
+  custom_painting_and_drawing.md
+  data_binding_overview.md
   date_time.md
+  decorator.md
   delegates.md
+  dependencies.md
+  design_great_data_sources.md
+  design_guidelines.md
+  design_guidelines_for_exception.md
+  designing_for_extensibility.md
+  determine_wich_modifier_key_is_pressed.md
+  development_status.md
+  development_status_cmake.md
+  development_status_themes.md
+  development_status_toolkits.md
+  development_status_tools.md
+  development_status_xtd_core.md
+  development_status_xtd_drawing.md
+  development_status_xtd_forms.md
+  development_status_xtd_tunit.md
+  dialogs.md
+  distinguish_between_clicks_and_double_clicks.md
+  dock_and_anchor_controls.md
+  documentation.md
+  downloads.md
+  drag_and_drop_functionality.md
+  drawing.md
+  ebook.md
   ebook_console_classes.md
   ebook_controls.md
   ebook_custom_controls.md
@@ -145,26 +115,182 @@ add_sources(
   ebook_menus_and_toolbars.md
   ebook_tetris.md
   ebook_unit_testing_classes.md
-  ebook.md
+  enum_class.md
+  enum_design.md
+  event_design.md
+  event_handlers.md
   events.md
+  events_and_callbacks.md
+  examples.md
+  exception_throwing.md
+  exceptions.md
+  exceptions_and_performance.md
+  exceptions_best_practices.md
+  exceptions_try_catch.md
+  exceptions_use_specific_exceptions.md
+  explicitly_throw_exception.md
+  external_tools_libraries_and_toolkits.md
+  facade.md
+  factory_method.md
+  field_design.md
+  final.md
+  flyweight.md
+  fonts.md
   form.md
+  format_composite_formating.md
+  format_custom_date_and_time_format_strings.md
+  format_custom_numeric_format_strings.md
+  format_custom_time_span_format_strings.md
+  format_display_milliseconds_in_date_and_time_values.md
+  format_enumeration_format_strings.md
+  format_extract_the_day_of_the_week_from_date.md
+  format_overview.md
+  format_pad_a_number_with_leading_zeros.md
+  format_round_trip_date_and_time_values.md
+  format_standard_date_and_time_format_strings.md
+  format_standard_numeric_format_strings.md
+  format_standard_time_span_format_strings.md
+  format_use_custom_numeric_format_providers.md
+  forms.md
+  gallery.md
+  gammasoft.md
+  gammasoft_logo.md
+  general_naming_conventions.md
+  getting_started.md
+  git.md
+  graphics.md
+  graphics_path.md
+  guide_application_overview.md
+  guide_check_version.md
+  guide_control_events.md
+  guide_delegates_and_lambdas.md
+  guide_handle_and_raise_events.md
+  guide_hello_world.md
+  guide_main_and_startup.md
+  guide_observer_design_pattern.md
+  guide_raise_and_consume_events.md
+  guide_style_sheets_box_model.md
+  guide_style_sheets_overview.md
+  guide_style_sheets_reference.md
+  guide_tunit_overview.md
+  guides.md
+  handle_input_at_the_form_level.md
+  hierarchy.md
+  home.md
+  ignore_test_method.md
+  images.md
+  ingore_test_method.md
+  interface_design.md
+  interfaces.md
+  internationalization.md
+  interpreter.md
+  introduction_to_xtd.md
+  ipv6_overview.md
+  iterator.md
+  keybord_overview.md
+  labels.md
+  license.md
+  links.md
+  literal_operators.md
+  matrix.md
+  mediator.md
+  member_design_guidelines.md
+  member_overloading.md
+  memento.md
+  menus_and_toolbars.md
+  mouse_overview.md
+  names_of_classes_structs_and_interfaces.md
+  names_of_libraries_and_dlls.md
+  names_of_namespace.md
+  names_of_type_members.md
+  naming_guidelines.md
+  naming_parameters.md
+  naming_resources.md
+  nested_types.md
+  network_availability.md
+  network_programming.md
+  news.md
+  non-final_classes.md
+  observer.md
+  operator_overloads.md
+  parameter_design.md
+  parse_date_and_time_strings.md
+  parse_numeric_strings.md
+  parse_other_strings.md
+  parse_overview.md
+  pens.md
+  points_sizes_and_rectangles.md
+  portability.md
   position_and_layout_of_controls.md
+  print_a_form.md
+  print_a_text_document.md
+  printing_overview.md
+  property_design.md
+  protected_members.md
+  prototype.md
+  proxy.md
+  region.md
+  release_notes.md
+  release_patches_and_support.md
+  resize_a_form.md
+  resources.md
+  roadmap.md
+  set_the_image_displayed_by_a_control.md
+  set_the_tab_order_of_a_control.md
+  set_the_text_displayed_by_a_control.md
+  settings.md
+  simulate_keyboard_events.md
+  simulate_mouse_events.md
+  singleton.md
   size_and_location_properties.md
+  socket_support.md
+  state.md
+  static_class_design.md
+  strategy.md
+  struct_design.md
+  support.md
+  synchronize_multiple_controls.md
+  system_exception_class_and_properties.md
+  tcp_client_and_tcp_listener.md
+  template_method.md
+  test_class.md
+  test_cleanup.md
+  test_initialize.md
+  test_method.md
+  themes.md
   thread_safe_control_call.md
+  tools.md
+  translations_status.md
+  tutorials.md
+  type_conversion_overview.md
+  type_conversion_tables.md
+  type_design_guidelines.md
+  types.md
+  usage_guidelines.md
+  use_keyboard_events.md
+  use_mouse_events.md
+  use_print_preview.md
+  using_standard_exception_types.md
+  ustring.md
+  validate_input.md
+  virtual_members.md
+  visitor.md
+  what_is_xtd.md
+  work_with_a_data_grid.md
   writing_applicaion_console.md
   writing_applicaion_extending_test.md
   writing_applicaion_gui.md
   writing_applicaion_running_test.md
   writing_applicaion_test.md
   writing_applications.md
-  tutorials.md
-  type_design_guidelines.md
-  usage_guidelines.md
-  using_standard_exception_types.md
-  virtual_members.md
-  visitor.md
+  xtd_core_logo.md
+  xtd_documentation.md
+  xtd_drawing_logo.md
   xtd_explanations.md
   xtd_forms_explanations.md
+  xtd_forms_logo.md
+  xtd_logo.md
+  xtd_tunit_logo.md
 )
 add_sources(
   ../AUTHORS.md
