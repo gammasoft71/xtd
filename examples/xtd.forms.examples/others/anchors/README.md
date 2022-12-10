@@ -1,6 +1,6 @@
 # anchors
 
-demonstrates the use of [xtd::forms::control::button](../../../../src/xtd.forms/include/xtd/forms/button.h) control with [xtd::forms::control::anchor](../../../../src/xtd.forms/include/xtd/forms/contrl.h).
+demonstrates the use of [xtd::forms::control::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control with [xtd::forms::control::anchor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tool__bar.html).
 
 # Sources
 

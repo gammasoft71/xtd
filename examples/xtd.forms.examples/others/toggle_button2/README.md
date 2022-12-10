@@ -1,6 +1,6 @@
 # toggle_button2
 
-demonstrates the use of [xtd::forms::check_box](../../../../src/xtd.forms/include/xtd/forms/toggle_button.h) control.
+demonstrates the use of [xtd::forms::check_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1check__box.html) control.
 
 # Sources
 

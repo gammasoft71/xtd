@@ -1,6 +1,6 @@
 # lcd_label_with_dot_matrix
 
-demonstrates how to use [xtd::forms::lcd_label_with_dot_matrix](../../../../src/xtd.forms/include/xtd/forms/lcd_label_with_dot_matrix.h) control.
+demonstrates how to use [xtd::forms::lcd_label_with_dot_matrix](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1dot__matrix__display.html) control.
 
 # Sources
 

@@ -1,6 +1,6 @@
 # form_and_thread
 
-demonstrates how a thread can update ui with [xtd::forms::control::invoke](../../../../src/xtd.forms/include/xtd/forms/form.h) method.
+demonstrates how a thread can update ui with [xtd::forms::control::invoke](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a17ec51282322d8387937dc8dad438e32) method.
 
 # Sources
 
