@@ -1,6 +1,6 @@
 # find_dialog
 
-demonstrates the use of [xtd::forms::find_dialog](../../../../src/xtd.forms/include/xtd/forms/find_dialog.h) dialog.
+demonstrates the use of [xtd::forms::find_dialog](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1find__dialog.html) dialog.
 
 # Sources
 

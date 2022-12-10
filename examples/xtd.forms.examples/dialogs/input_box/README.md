@@ -1,6 +1,6 @@
 # input_box
 
-demonstrates the use of [xtd::forms::input_box](../../../../src/xtd.forms/include/xtd/forms/input_box.h) dialog.
+demonstrates the use of [xtd::forms::font_dialog](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1font__dialog.html) dialog.
 
 # Sources
 

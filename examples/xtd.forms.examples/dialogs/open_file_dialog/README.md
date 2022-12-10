@@ -1,6 +1,6 @@
 # open_file_dialog
 
-demonstrates the use of [xtd::forms::open_file_dialog](../../../../src/xtd.orms/include/xtd/forms/open_file_dialog.h) dialog.
+demonstrates the use of [xtd::forms::open_file_dialog](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1open__file__dialog.html) dialog.
 
 # Sources
 
