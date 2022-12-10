@@ -1,6 +1,6 @@
 # hello_world_paint
 
-The classic first application "Hello, Wrold!" with GDI+ drawing objects.
+The classic first application "Hello, World!" with GDI+ drawing objects.
 
 # Sources
 

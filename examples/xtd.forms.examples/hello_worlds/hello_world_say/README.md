@@ -1,6 +1,6 @@
 # hello_world_say
 
-The classic first application "Hello, World!" with [xtd::forms::button](../../../../src/xtd.forms/include/xtd/forms/button.h) control.
+The classic first application "Hello, World!" with [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control.
 
 # Sources
 
