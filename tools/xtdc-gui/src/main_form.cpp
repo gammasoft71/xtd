@@ -183,13 +183,20 @@ main_form::main_form() {
     }
   };
   
-  open_xtd_examples_information_text_box_.parent(open_xtd_examples_panel_);
-  open_xtd_examples_information_text_box_.location({550, 50});
-  open_xtd_examples_information_text_box_.size({400, open_xtd_examples_panel_.size().height() - 350});
-  open_xtd_examples_information_text_box_.anchor(anchor_styles::top | anchor_styles::bottom | anchor_styles::right);
-  open_xtd_examples_information_text_box_.multiline(true);
-  open_xtd_examples_information_text_box_.read_only(true);
-  open_xtd_examples_information_text_box_.word_wrap(true);
+  open_xtd_examples_information_link_label_.parent(open_xtd_examples_panel_);
+  open_xtd_examples_information_link_label_.location({550, 50});
+  open_xtd_examples_information_link_label_.size({400, open_xtd_examples_panel_.size().height() - 350});
+  open_xtd_examples_information_link_label_.font({open_xtd_examples_information_link_label_.font(), 12.0f});
+  open_xtd_examples_information_link_label_.anchor(anchor_styles::top | anchor_styles::bottom | anchor_styles::right);
+  open_xtd_examples_information_link_label_.text_align(content_alignment::top_left);
+  open_xtd_examples_information_link_label_.link_clicked += [](object& sender, link_label_clicked_event_args& e) {
+    process::start(as<ustring>(e.link().link_data()));
+  };
+  open_xtd_examples_information_link_label_.auto_ellipsis(true);
+
+  //open_xtd_examples_information_link_label_.multiline(true);
+  //open_xtd_examples_information_link_label_.read_only(true);
+  //open_xtd_examples_information_link_label_.word_wrap(true);
   
   open_xtd_examples_information_picture_box_.parent(open_xtd_examples_panel_);
   open_xtd_examples_information_picture_box_.location({550, open_xtd_examples_panel_.size().height() - 260});
@@ -262,7 +269,8 @@ main_form::main_form() {
   open_xtd_example_core_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_core_list_box_.selected_index() != open_xtd_example_core_list_box_.npos) {
       current_open_xtd_example_core_list_box_index_ = open_xtd_example_core_list_box_.selected_index();
-      open_xtd_examples_information_text_box_.text(any_cast<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag()).description());
+      update_open_xtd_examples_information(any_cast<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag()).description());
+      //open_xtd_examples_information_link_label_.text(any_cast<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag()).description());
       open_xtd_examples_information_picture_box_.image(any_cast<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag()).picture());
     }
   };
@@ -279,7 +287,7 @@ main_form::main_form() {
   open_xtd_example_forms_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_forms_list_box_.selected_index() != open_xtd_example_forms_list_box_.npos) {
       current_open_xtd_example_forms_list_box_index_ = open_xtd_example_forms_list_box_.selected_index();
-      open_xtd_examples_information_text_box_.text(any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()).description());
+      update_open_xtd_examples_information(any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()).description());
       open_xtd_examples_information_picture_box_.image(any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()).picture());
     }
   };
@@ -296,7 +304,7 @@ main_form::main_form() {
   open_xtd_example_tunit_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_tunit_list_box_.selected_index() != open_xtd_example_tunit_list_box_.npos) {
       current_open_xtd_example_tunit_list_box_index_ = open_xtd_example_tunit_list_box_.selected_index();
-      open_xtd_examples_information_text_box_.text(any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()).description());
+      update_open_xtd_examples_information(any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()).description());
       open_xtd_examples_information_picture_box_.image(any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()).picture());
     }
   };
@@ -313,7 +321,7 @@ main_form::main_form() {
   open_xtd_example_cmake_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_cmake_list_box_.selected_index() != open_xtd_example_cmake_list_box_.npos) {
       current_open_xtd_example_cmake_list_box_index_ = open_xtd_example_cmake_list_box_.selected_index();
-      open_xtd_examples_information_text_box_.text(any_cast<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag()).description());
+      update_open_xtd_examples_information(any_cast<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag()).description());
       open_xtd_examples_information_picture_box_.image(any_cast<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag()).picture());
     }
   };
@@ -812,6 +820,32 @@ void main_form::show_about_dialog() {
     "\n"
     "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n");
   dialog.show();
+}
+
+void main_form::update_open_xtd_examples_information(const xtd::ustring& description) {
+  open_xtd_examples_information_link_label_.text("");
+  open_xtd_examples_information_link_label_.links().clear();
+  if (description.is_empty()) return;
+  static const std::regex rgx_md_link(R"(\[(.*?)\]\((.*?)\))", std::regex::optimize);
+  xtd::ustring text = description;
+  std::sregex_iterator it(description.begin(), description.end(), rgx_md_link), end{};
+  for (; it != end; ++it)
+  {
+    if (it->size() == 3) { // 3 matches: whole []() + sub [] + sub ()   
+      const xtd::ustring whole = it->str(0); // []()
+      const xtd::ustring title = it->str(1); // [] contents
+      xtd::ustring link = it->str(2);        // () contents
+      // Todo: if it's not a link, maybe a file e.g ../../CMakeLists.txt
+      // open a google search in xtd documentation for now...
+      if (not link.starts_with("http"))
+        link = xtd::ustring::format("https://www.google.com/search?q={}+site:https://codedocs.xyz/gammasoft71/xtd", title);
+      // Replace all markdown links [title](url) with title
+      text = text.replace(whole, title);
+      open_xtd_examples_information_link_label_.links().push_back(xtd::forms::link(it->position(), title.length(), link));
+    }
+  }
+ 
+  open_xtd_examples_information_link_label_.text(text);
 }
 
 void main_form::main() {
