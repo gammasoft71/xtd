@@ -1,6 +1,6 @@
 # save_file_dialog
 
-demonstrates the use of [xtd::forms::save_file_dialog](../../../../src/xtd.forms/include/xtd/forms/save_file_dialog.h) dialog.
+demonstrates the use of [xtd::forms::save_file_dialog](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1save__file__dialog.html) dialog.
 
 # Sources
 

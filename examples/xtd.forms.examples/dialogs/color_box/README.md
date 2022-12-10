@@ -1,6 +1,6 @@
 # color_box
 
-demonstrates the use of [xtd::forms::color_box](../../../../src/xtd.forms/include/xtd/forms/color_box.h) dialog.
+demonstrates the use of [xtd::forms::color_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1color__box.html) dialog.
 
 # Sources
 
