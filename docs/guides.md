@@ -89,7 +89,6 @@ The xtd guides provide an explanation on how to use the important features of th
       * [Open and Append to a Log File](common_io_tasks_open_and_append_to_a_log_file.md)
       * [Write Text to a File](common_io_tasks_write_text_to_a_file.md)
       * [Read Text from a File](common_io_tasks_read_text_from_a_file.md)
-      * [Write Text to a File](common_io_tasks_write_text_to_a_file.md)
   * [console class](console_class.md)
   * Networking
     * [Network programming](network_programming.md)
@@ -134,9 +133,9 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Event handlers](event_handlers.md)
     * [Automatic scalling](automatic_scalling.md)
     * Common tasks
-      * [Add a form]([add_a_form.md)
-      * [Resize a form]([resize_a_form.md)
-      * [Position a form]([resize_a_form.md)
+      * [Add a form](add_a_form.md)
+      * [Resize a form](resize_a_form.md)
+      * [Position a form](resize_a_form.md)
   * Controls
     * [Overview](controls_overview.md)
     * [Layout options](position_and_layout_of_controls.md)
