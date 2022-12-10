@@ -1,6 +1,6 @@
 # tool_bar
 
-demonstrates the use of [xtd::forms::tool_bar](../../../../src/xtd.forms/include/xtd/forms/tool_bar.h) component.
+demonstrates the use of [xtd::forms::tool_bar](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tool__bar.html) component.
 
 # Sources
 

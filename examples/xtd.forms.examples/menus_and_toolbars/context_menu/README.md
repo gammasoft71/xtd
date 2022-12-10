@@ -1,6 +1,6 @@
 # context_menu
 
-demonstrates the use of [xtd::forms::context_menu](../../../../src/xtd.forms/include/xtd/forms/context_menu.h) component.
+demonstrates the use of [xtd::forms::context_menu](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1context__menu.html) component.
 
 # Sources
 
