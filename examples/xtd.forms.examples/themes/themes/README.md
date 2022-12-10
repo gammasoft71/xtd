@@ -1,6 +1,6 @@
 # themes
 
-Shows how to use [xtd::forms::theme](../../../../src/xtd_forms/include/xtd/forms/theme.hpp) class.
+Shows how to use [xtd::forms::theme](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1style__sheets_1_1theme.html) class.
 
 # Sources
 

@@ -1,6 +1,6 @@
 # application_enable_light_mode
 
-Shows how to create an application with  [xtd::forms::application::enable_light_mode](../../../../src/xtd.forms/include/xtd/forms/application.h) method.
+Shows how to create an application with  [xtd::forms::application::enable_light_mode](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#ac6f2defe8e2722b0fb450f5ae6a2f28d) method.
 
 # Sources
 
