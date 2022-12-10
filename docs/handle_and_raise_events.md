@@ -3,7 +3,7 @@
 # Handle and raise events
 
 The xtd Framework events are based on the delegate model. 
-The delegate model follows the [observer design pattern](guide_observer_design_pattern.md), which allows a subscriber to register with and receive notifications from a provider. 
+The delegate model follows the [observer design pattern](observer_design_pattern.md), which allows a subscriber to register with and receive notifications from a provider. 
 An event sender sends a notification that an event has occurred, and an event receiver receives that notification and defines a response to it.
 This article describes the main components of the delegate model, how to consume events in applications, and how to implement events in your code.
 

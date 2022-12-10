@@ -83,7 +83,7 @@ Run "Terminal", go to the buid directory of the project (`unit_test_project2/bui
 
 ### Output
 
-[![tunit_command_line](pictures/unit_test_tools/tunit_command_line.png)](guide_tunit_overview.md)
+[![tunit_command_line](pictures/unit_test_tools/tunit_command_line.png)](tunit_overview.md)
 
 ### Options
 
@@ -91,7 +91,7 @@ You can use the following command line flags to control its behavior. Type `unit
 
 ### Output
 
-[![tunit_command_line](pictures/unit_test_tools/tunit_command_line_help.png)](guide_tunit_overview.md)
+[![tunit_command_line](pictures/unit_test_tools/tunit_command_line_help.png)](tunit_overview.md)
 
 ## Visual Studio Explorer
 
@@ -99,7 +99,7 @@ You can run your [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tu
 
 For more information about using Test Explorer, see [Run unit tests with Test Explorer](https://learn.microsoft.com/en-us/visualstudio/test/run-unit-tests-with-test-explorer?view=vs-2022).
 
-[![tunit_visual_studio_test_explorer](pictures/unit_test_tools/tunit_visual_studio_test_explorer_w.png)](guide_tunit_overview.md)
+[![tunit_visual_studio_test_explorer](pictures/unit_test_tools/tunit_visual_studio_test_explorer_w.png)](tunit_overview.md)
 
 ### Remarks
 
@@ -109,7 +109,7 @@ For more information about using Test Explorer, see [Run unit tests with Test Ex
 
 The tunit-gui tool (not ready yet, only a [c# prototype](https://github.com/gammasoft71/tunit_gui_win_forms) exists for the moment), can run [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) project.
 
-[![tunit_gui_forms](pictures/unit_test_tools/tunit_gui_forms_w.png)](guide_tunit_overview.md)
+[![tunit_gui_forms](pictures/unit_test_tools/tunit_gui_forms_w.png)](tunit_overview.md)
 
 ## Other unit tests GUI tools
 
@@ -117,7 +117,7 @@ The tunit-gui tool (not ready yet, only a [c# prototype](https://github.com/gamm
 
 For example the [gtest-runner](https://github.com/nholthaus/gtest-runner) tool can run your [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) project.
 
-[![tunit_gtest_runner](pictures/unit_test_tools/tunit_gtest_runner_md.png)](guide_tunit_overview.md)
+[![tunit_gtest_runner](pictures/unit_test_tools/tunit_gtest_runner_md.png)](tunit_overview.md)
 
 ## List of known IDE/tools compatible with xtd.tunit
 

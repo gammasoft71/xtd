@@ -133,22 +133,22 @@ namespace xtd {
       /// @{
       /// @brief Occurs when the value of the accepts_tab property has changed.
       /// @ingroup events
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<text_box_base, event_handler> accepts_tab_changed;
       
       /// @brief Occurs when the value of the accepts_tab border_style has changed.
       /// @ingroup events
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<text_box_base, event_handler> border_style_changed;
       
       /// @brief Occurs when the value of the accepts_tab border_style has changed.
       /// @ingroup events
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<text_box_base, event_handler> multiline_changed;
       
       /// @brief Occurs when the value of the read_only property has changed.
       /// @ingroup events
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/guide_handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<text_box_base, event_handler> read_only_changed;
       /// @}
       

@@ -5,7 +5,7 @@
 The examples in this topic show how to work with events. 
 They include examples of the [xtd::event_handler](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate, the [xtd::generic_event_handler<event_args_t>](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) delegate, and a custom delegate, to illustrate events with and without data.
 
-The examples use concepts described in the [events](guide_handle_and_raise_events.md) article.
+The examples use concepts described in the [events](handle_and_raise_events.md) article.
 
 ## Example 1
 
