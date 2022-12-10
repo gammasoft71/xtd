@@ -1,6 +1,6 @@
 # form_paint
 
-demonstrates paint event with [form](../../../../src/xtd.forms/include/xtd/forms/form.h).
+demonstrates paint event with [form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html).
 
 # Sources
 
