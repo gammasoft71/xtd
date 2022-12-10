@@ -1,6 +1,7 @@
 #include "../../include/xtd/math.h"
 #include "../../include/xtd/as.h"
 #include "../../include/xtd/overflow_exception.h"
+#include <algorithm>
 #include <cmath>
 #include <cstdlib>
 #include <limits>
@@ -74,6 +75,58 @@ decimal math::ceiling(decimal value) {
 
 double math::ceiling(double value) {
   return std::ceil(value);
+}
+
+byte_t math::clamp(byte_t value, byte_t min, byte_t max) noexcept {
+  return std::clamp(value, min, max);
+}
+
+decimal_t math::clamp(decimal_t value, decimal_t min, decimal_t max) noexcept {
+  return std::clamp(value, min, max);
+}
+
+double math::clamp(double value, double min, double max) noexcept {
+  return std::clamp(value, min, max);
+}
+
+int16_t math::clamp(int16_t value, int16_t min, int16_t max) noexcept {
+  return std::clamp(value, min, max);
+}
+
+int32_t math::clamp(int32_t value, int32_t min, int32_t max) noexcept {
+  return std::clamp(value, min, max);
+}
+
+int64_t math::clamp(int64_t value, int64_t min, int64_t max) noexcept {
+  return std::clamp(value, min, max);
+}
+
+llong_t math::clamp(llong_t value, llong_t min, llong_t max) noexcept {
+  return std::clamp(value, min, max);
+}
+
+sbyte_t math::clamp(sbyte_t value, sbyte_t min, sbyte_t max) noexcept {
+  return std::clamp(value, min, max);
+}
+
+float math::clamp(float value, float min, float max) noexcept {
+  return std::clamp(value, min, max);
+}
+
+uint16_t math::clamp(uint16_t value, uint16_t min, uint16_t max) noexcept {
+  return std::clamp(value, min, max);
+}
+
+uint32_t math::clamp(uint32_t value, uint32_t min, uint32_t max) noexcept {
+  return std::clamp(value, min, max);
+}
+
+uint64_t math::clamp(uint64_t value, uint64_t min, uint64_t max) noexcept {
+  return std::clamp(value, min, max);
+}
+
+ullong_t math::clamp(ullong_t value, ullong_t min, ullong_t max) noexcept {
+  return std::clamp(value, min, max);
 }
 
 double math::cos(double value) {

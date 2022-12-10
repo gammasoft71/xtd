@@ -151,6 +151,85 @@ namespace xtd {
     /// @return The smallest integer greater than or equal to value. If value is equal to xtd::math::NaN, xtd::math::negative_infinity, or xtd::math::positive_infinity, that value is returned.
     static double ceiling(double value);
     
+    /// @brief Returns value clamped to the inclusive range of min and max.
+    /// @param value The value to be clamped.
+    /// @param min The lower bound of the result.
+    /// @param max The upper bound of the result.
+    /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
+    static byte_t clamp(byte_t value, byte_t min, byte_t max) noexcept;
+    /// @brief Returns value clamped to the inclusive range of min and max.
+    /// @param value The value to be clamped.
+    /// @param min The lower bound of the result.
+    /// @param max The upper bound of the result.
+    /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
+    static decimal_t clamp(decimal_t value, decimal_t min, decimal_t max) noexcept;
+    /// @brief Returns value clamped to the inclusive range of min and max.
+    /// @param value The value to be clamped.
+    /// @param min The lower bound of the result.
+    /// @param max The upper bound of the result.
+    /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
+    static double clamp(double value, double min, double max) noexcept;
+    /// @brief Returns value clamped to the inclusive range of min and max.
+    /// @param value The value to be clamped.
+    /// @param min The lower bound of the result.
+    /// @param max The upper bound of the result.
+    /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
+    static int16_t clamp(int16_t value, int16_t min, int16_t max) noexcept;
+    /// @brief Returns value clamped to the inclusive range of min and max.
+    /// @param value The value to be clamped.
+    /// @param min The lower bound of the result.
+    /// @param max The upper bound of the result.
+    /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
+    static int32_t clamp(int32_t value, int32_t min, int32_t max) noexcept;
+    /// @brief Returns value clamped to the inclusive range of min and max.
+    /// @param value The value to be clamped.
+    /// @param min The lower bound of the result.
+    /// @param max The upper bound of the result.
+    /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
+    static int64_t clamp(int64_t value, int64_t min, int64_t max) noexcept;
+    /// @brief Returns value clamped to the inclusive range of min and max.
+    /// @param value The value to be clamped.
+    /// @param min The lower bound of the result.
+    /// @param max The upper bound of the result.
+    /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
+    static llong_t clamp(llong_t value, llong_t min, llong_t max) noexcept;
+    /// @brief Returns value clamped to the inclusive range of min and max.
+    /// @param value The value to be clamped.
+    /// @param min The lower bound of the result.
+    /// @param max The upper bound of the result.
+    /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
+    static sbyte_t clamp(sbyte_t value, sbyte_t min, sbyte_t max) noexcept;
+    /// @brief Returns value clamped to the inclusive range of min and max.
+    /// @param value The value to be clamped.
+    /// @param min The lower bound of the result.
+    /// @param max The upper bound of the result.
+    /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
+    static float clamp(float value, float min, float max) noexcept;
+    /// @brief Returns value clamped to the inclusive range of min and max.
+    /// @param value The value to be clamped.
+    /// @param min The lower bound of the result.
+    /// @param max The upper bound of the result.
+    /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
+    static uint16_t clamp(uint16_t value, uint16_t min, uint16_t max) noexcept;
+    /// @brief Returns value clamped to the inclusive range of min and max.
+    /// @param value The value to be clamped.
+    /// @param min The lower bound of the result.
+    /// @param max The upper bound of the result.
+    /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
+    static uint32_t clamp(uint32_t value, uint32_t min, uint32_t max) noexcept;
+    /// @brief Returns value clamped to the inclusive range of min and max.
+    /// @param value The value to be clamped.
+    /// @param min The lower bound of the result.
+    /// @param max The upper bound of the result.
+    /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
+    static uint64_t clamp(uint64_t value, uint64_t min, uint64_t max) noexcept;
+    /// @brief Returns value clamped to the inclusive range of min and max.
+    /// @param value The value to be clamped.
+    /// @param min The lower bound of the result.
+    /// @param max The upper bound of the result.
+    /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
+    static ullong_t clamp(ullong_t value, ullong_t min, ullong_t max) noexcept;
+
     /// @brief Returns the cosine of the specified angle.
     /// @param value An angle, measured in radians.
     /// @return The cosine of value. If value is equal to xtd::math::NaN, xtd::math::negative_infinity, or xtd::math::positive_infinity, this method returns xtd::math::NaN.
