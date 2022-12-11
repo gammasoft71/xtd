@@ -1,12 +1,8 @@
 cmake_minimum_required(VERSION 3.3)
 
-project(xtd.drawing.examples)
+project(points)
 find_package(xtd REQUIRED)
 
 add_projects(
-  hello_worlds
-  colors
-  fonts
-  images
-  points
+  point
 )
