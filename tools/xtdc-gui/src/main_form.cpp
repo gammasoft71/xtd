@@ -869,9 +869,8 @@ void main_form::update_open_xtd_examples_information(const xtd::ustring& descrip
   if (description.empty()) return;
   static const std::regex rgx_md_link(R"(\[(.*?)\]\((.*?)\))", std::regex::optimize);
   xtd::ustring text = description;
-  std::sregex_iterator it(description.begin(), description.end(), rgx_md_link), end{};
-  for (; it != end; ++it)
-  {
+  std::sregex_iterator iterator(description.begin(), description.end(), rgx_md_link), end{};
+  for (auto it = iterator; it != end; ++it) {
     if (it->size() == 3) { // 3 matches: whole []() + sub [] + sub ()   
       const xtd::ustring whole = it->str(0); // []()
       const xtd::ustring title = it->str(1); // [] contents
@@ -885,8 +884,9 @@ void main_form::update_open_xtd_examples_information(const xtd::ustring& descrip
       open_xtd_examples_information_link_label_.links().push_back(xtd::forms::link(it->position(), title.length(), link));
     }
   }
- 
+  
   open_xtd_examples_information_link_label_.text(text);
+  if (iterator == end) open_xtd_examples_information_link_label_.links().clear();
 }
 
 void main_form::main() {
