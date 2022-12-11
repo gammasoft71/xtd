@@ -213,7 +213,7 @@ main_form::main_form() {
   open_xtd_examples_information_picture_label_.location({550, open_xtd_examples_panel_.size().height() - 270});
   open_xtd_examples_information_picture_label_.auto_size(true);
   open_xtd_examples_information_picture_label_.font({open_xtd_examples_information_picture_label_.font(), 16.0});
-  open_xtd_examples_information_picture_label_.text("Picture");
+  open_xtd_examples_information_picture_label_.text("Output");
 
   open_xtd_examples_information_picture_box_.parent(open_xtd_examples_panel_);
   open_xtd_examples_information_picture_box_.back_color(xtd::forms::application::style_sheet().system_colors().window());
