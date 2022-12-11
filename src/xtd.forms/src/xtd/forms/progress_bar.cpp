@@ -3,7 +3,7 @@
 #include <xtd/forms/native/progress_bar_styles.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/progress_bar.h"
-#include <algorithm>
+#include <xtd/math.h>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -34,8 +34,8 @@ progress_bar& progress_bar::maximum(int32_t maximum) {
   if (data_->maximum != maximum) {
     data_->maximum = maximum;
     if (is_handle_created()) native::progress_bar::maximum(handle(), data_->maximum);
-    if (data_->minimum > maximum) minimum(maximum);
-    if (data_->value > maximum) value(maximum);
+    minimum(math::min(data_->minimum, maximum));
+    value(math::min(data_->value, maximum));
   }
   return *this;
 }
@@ -48,8 +48,8 @@ progress_bar& progress_bar::minimum(int32_t minimum) {
   if (data_->minimum != minimum) {
     data_->minimum = minimum;
     if (is_handle_created()) native::progress_bar::minimum(handle(), data_->minimum);
-    if (data_->maximum < minimum) maximum(minimum);
-    if (data_->value < minimum) value(minimum);
+    maximum(math::max(data_->maximum, minimum));
+    value(math::max(data_->value, minimum));
   }
   return *this;
 }
@@ -59,6 +59,7 @@ forms::orientation progress_bar::orientation() const noexcept {
 }
 
 progress_bar& progress_bar::orientation(forms::orientation orientation) {
+  if (!enum_object<>::is_defined<forms::orientation>(orientation)) throw argument_out_of_range_exception(csf_);
   if (data_->orientation != orientation) {
     data_->orientation = orientation;
     post_recreate_handle();
@@ -80,6 +81,7 @@ progress_bar_style progress_bar::style() const noexcept {
 }
 
 progress_bar& progress_bar::style(progress_bar_style style) {
+  if (!enum_object<>::is_defined<progress_bar_style>(style)) throw argument_out_of_range_exception(csf_);
   if (data_->style != style) {
     data_->style = style;
     if (is_handle_created()) native::progress_bar::marquee(handle(), data_->style == progress_bar_style::marquee, data_->marquee_animation_speed);
@@ -95,18 +97,13 @@ int32_t progress_bar::value() const noexcept {
 
 progress_bar& progress_bar::value(int32_t value) {
   if (data_->value != value) {
-    data_->value = std::clamp(value, data_->minimum, data_->maximum);
+    data_->value = math::clamp(value, data_->minimum, data_->maximum);
     if (is_handle_created()) native::progress_bar::value(handle(), data_->value);
   }
   return *this;
 }
 
 void progress_bar::increment(int32_t value) {
-  if (data_->value + value < data_->minimum)
-    this->value(data_->minimum);
-  if (data_->value + value > data_->maximum)
-    this->value(data_->maximum);
-  else
     this->value(data_->value + value);
 }
 
