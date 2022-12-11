@@ -45,7 +45,7 @@ namespace xtdc_gui {
       if (examples.empty()) examples = xtd_example_item::get_examples(xtd::io::path::combine(xtd_share_path_, "examples", "xtd.forms.examples"));
       return examples;
     }
-    
+
     static const std::vector<xtd_example_item>& get_tunit_examples() {
       static std::vector<xtd_example_item> examples;
       if (examples.empty()) examples = xtd_example_item::get_examples(xtd::io::path::combine(xtd_share_path_, "examples", "xtd.tunit.examples"));
