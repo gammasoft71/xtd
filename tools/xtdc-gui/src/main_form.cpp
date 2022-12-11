@@ -195,6 +195,7 @@ main_form::main_form() {
   open_xtd_examples_information_label_.auto_size(true);
   open_xtd_examples_information_label_.font({open_xtd_examples_information_label_.font(), 16.0});
   open_xtd_examples_information_label_.text("Description");
+  open_xtd_examples_information_label_.anchor(anchor_styles::top | anchor_styles::right);
 
   open_xtd_examples_information_link_label_.parent(open_xtd_examples_panel_);
   open_xtd_examples_information_link_label_.back_color(xtd::forms::application::style_sheet().system_colors().window());
@@ -214,6 +215,7 @@ main_form::main_form() {
   open_xtd_examples_information_picture_label_.auto_size(true);
   open_xtd_examples_information_picture_label_.font({open_xtd_examples_information_picture_label_.font(), 16.0});
   open_xtd_examples_information_picture_label_.text("Output");
+  open_xtd_examples_information_picture_label_.anchor(anchor_styles::bottom | anchor_styles::right);
 
   open_xtd_examples_information_picture_box_.parent(open_xtd_examples_panel_);
   open_xtd_examples_information_picture_box_.back_color(xtd::forms::application::style_sheet().system_colors().window());
