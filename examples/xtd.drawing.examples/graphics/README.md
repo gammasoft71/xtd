@@ -1,4 +1,4 @@
-# Colors examples
+# Graphics examples
 
 [This folder](.) contains colors examples.
 
