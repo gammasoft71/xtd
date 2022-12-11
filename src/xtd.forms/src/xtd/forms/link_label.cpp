@@ -198,7 +198,7 @@ void link_label::on_paint(paint_event_args& e) {
   control::on_paint(e);
   if (control_appearance() == forms::control_appearance::system) return;
   
-  if (double_buffered() && !native::toolkit::is_operating_system_double_buffered())
+  if (native::toolkit::is_operating_system_double_buffered() || double_buffered())
     e.graphics().clear(back_color());
   size_t line_number = 0;
   size_t index = 0;
