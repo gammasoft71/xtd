@@ -43,6 +43,10 @@
 [xtd.drawing](xtd.drawing.examples/README.md) contains xtd.drawing library examples.
 
 * [Hello Worlds](xtd.drawing.examples/hello_worlds/README.md) contains xtd.drawing "Hello, World!" examples.
+* [Colors](xtd.drawing.examples/colors/README.md) contains xtd.drawing colors examples.
+* [Fonts](xtd.drawing.examples/fonts/README.md) contains xtd.drawing fonts examples.
+* [Images](xtd.drawing.examples/images/README.md) contains xtd.drawing images examples.
+* [Points](xtd.drawing.examples/points/README.md) contains xtd.drawing points examples.
 
 ## [xtd.forms](xtd.forms.examples/README.md)
 
