@@ -191,6 +191,8 @@ main_form::main_form() {
   };
   
   open_xtd_examples_information_link_label_.parent(open_xtd_examples_panel_);
+  open_xtd_examples_information_link_label_.back_color(xtd::forms::application::style_sheet().system_colors().window());
+  open_xtd_examples_information_link_label_.border_style(xtd::forms::border_style::solid);
   open_xtd_examples_information_link_label_.location({550, 50});
   open_xtd_examples_information_link_label_.size({400, open_xtd_examples_panel_.size().height() - 350});
   open_xtd_examples_information_link_label_.font({open_xtd_examples_information_link_label_.font(), 12.0f});
@@ -200,10 +202,6 @@ main_form::main_form() {
     process::start(as<ustring>(e.link().link_data()));
   };
   open_xtd_examples_information_link_label_.auto_ellipsis(true);
-
-  //open_xtd_examples_information_link_label_.multiline(true);
-  //open_xtd_examples_information_link_label_.read_only(true);
-  //open_xtd_examples_information_link_label_.word_wrap(true);
   
   open_xtd_examples_information_picture_box_.parent(open_xtd_examples_panel_);
   open_xtd_examples_information_picture_box_.location({550, open_xtd_examples_panel_.size().height() - 260});
@@ -642,6 +640,8 @@ void main_form::on_system_colors_changed(const event_args& e) {
   form::on_system_colors_changed(e);
   create_project_type_items_control_.on_system_colors_changed(e);
   
+  open_xtd_examples_information_link_label_.back_color(xtd::forms::application::style_sheet().system_colors().window());
+
   auto selected_index = open_xtd_example_forms_list_box_.selected_index();
   open_xtd_example_forms_list_box_.selected_index(open_xtd_example_forms_list_box_.npos);
   open_xtd_example_forms_list_box_.items().clear();
