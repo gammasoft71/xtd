@@ -162,21 +162,31 @@ main_form::main_form() {
   open_xtd_example_tab_control_.selected_index_changed += [&] {
     if (open_xtd_example_tab_control_.selected_index() == 0) {
       open_xtd_example_core_list_box_.selected_index(current_open_xtd_example_core_list_box_index_);
+      open_xtd_example_drawing_list_box_.selected_index(open_xtd_example_drawing_list_box_.npos);
       open_xtd_example_forms_list_box_.selected_index(open_xtd_example_forms_list_box_.npos);
       open_xtd_example_tunit_list_box_.selected_index(open_xtd_example_tunit_list_box_.npos);
       open_xtd_example_cmake_list_box_.selected_index(open_xtd_example_cmake_list_box_.npos);
     } else if (open_xtd_example_tab_control_.selected_index() == 1) {
       open_xtd_example_core_list_box_.selected_index(open_xtd_example_core_list_box_.npos);
-      open_xtd_example_forms_list_box_.selected_index(current_open_xtd_example_forms_list_box_index_);
+      open_xtd_example_drawing_list_box_.selected_index(current_open_xtd_example_drawing_list_box_index_);
+      open_xtd_example_forms_list_box_.selected_index(open_xtd_example_forms_list_box_.npos);
       open_xtd_example_tunit_list_box_.selected_index(open_xtd_example_tunit_list_box_.npos);
       open_xtd_example_cmake_list_box_.selected_index(open_xtd_example_cmake_list_box_.npos);
     } else if (open_xtd_example_tab_control_.selected_index() == 2) {
       open_xtd_example_core_list_box_.selected_index(open_xtd_example_core_list_box_.npos);
-      open_xtd_example_forms_list_box_.selected_index(open_xtd_example_forms_list_box_.npos);
-      open_xtd_example_tunit_list_box_.selected_index(current_open_xtd_example_tunit_list_box_index_);
+      open_xtd_example_drawing_list_box_.selected_index(open_xtd_example_drawing_list_box_.npos);
+      open_xtd_example_forms_list_box_.selected_index(current_open_xtd_example_forms_list_box_index_);
+      open_xtd_example_tunit_list_box_.selected_index(open_xtd_example_tunit_list_box_.npos);
       open_xtd_example_cmake_list_box_.selected_index(open_xtd_example_cmake_list_box_.npos);
     } else if (open_xtd_example_tab_control_.selected_index() == 3) {
       open_xtd_example_core_list_box_.selected_index(open_xtd_example_core_list_box_.npos);
+      open_xtd_example_drawing_list_box_.selected_index(open_xtd_example_drawing_list_box_.npos);
+      open_xtd_example_forms_list_box_.selected_index(open_xtd_example_forms_list_box_.npos);
+      open_xtd_example_tunit_list_box_.selected_index(current_open_xtd_example_tunit_list_box_index_);
+      open_xtd_example_cmake_list_box_.selected_index(open_xtd_example_cmake_list_box_.npos);
+    } else if (open_xtd_example_tab_control_.selected_index() == 4) {
+      open_xtd_example_core_list_box_.selected_index(open_xtd_example_core_list_box_.npos);
+      open_xtd_example_drawing_list_box_.selected_index(open_xtd_example_drawing_list_box_.npos);
       open_xtd_example_forms_list_box_.selected_index(open_xtd_example_forms_list_box_.npos);
       open_xtd_example_tunit_list_box_.selected_index(open_xtd_example_tunit_list_box_.npos);
       open_xtd_example_cmake_list_box_.selected_index(current_open_xtd_example_cmake_list_box_index_);
@@ -207,9 +217,12 @@ main_form::main_form() {
   open_xtd_example_core_tab_page_.text("xtd.core");
   open_xtd_example_core_tab_page_.parent(open_xtd_example_tab_control_);
   
+  open_xtd_example_drawing_tab_page_.text("xtd.drawing");
+  open_xtd_example_drawing_tab_page_.parent(open_xtd_example_tab_control_);
+
   open_xtd_example_forms_tab_page_.text("xtd.forms");
   open_xtd_example_forms_tab_page_.parent(open_xtd_example_tab_control_);
-  
+
   open_xtd_example_tunit_tab_page_.text("xtd.tunit");
   open_xtd_example_tunit_tab_page_.parent(open_xtd_example_tab_control_);
   
@@ -219,17 +232,22 @@ main_form::main_form() {
   open_xtd_example_core_picture_box_.parent(open_xtd_example_core_tab_page_);
   open_xtd_example_core_picture_box_.location({30, 30});
   open_xtd_example_core_picture_box_.size({40, 40});
-  open_xtd_example_core_picture_box_.image(bitmap(xtd_console_icon));
+  open_xtd_example_core_picture_box_.image(images::from_name("xtd-console", drawing::size {40, 40}));
+  
+  open_xtd_example_drawing_picture_box_.parent(open_xtd_example_drawing_tab_page_);
+  open_xtd_example_drawing_picture_box_.location({30, 30});
+  open_xtd_example_drawing_picture_box_.size({40, 40});
+  open_xtd_example_drawing_picture_box_.image(images::from_name("xtd-drawing", drawing::size {40, 40}));
   
   open_xtd_example_forms_picture_box_.parent(open_xtd_example_forms_tab_page_);
   open_xtd_example_forms_picture_box_.location({30, 30});
   open_xtd_example_forms_picture_box_.size({40, 40});
-  open_xtd_example_forms_picture_box_.image(bitmap(xtd_gui_icon));
-  
+  open_xtd_example_forms_picture_box_.image(images::from_name("xtd-forms", drawing::size {40, 40}));
+
   open_xtd_example_tunit_picture_box_.parent(open_xtd_example_tunit_tab_page_);
   open_xtd_example_tunit_picture_box_.location({30, 30});
   open_xtd_example_tunit_picture_box_.size({40, 40});
-  open_xtd_example_tunit_picture_box_.image(bitmap(xtd_tunit_icon));
+  open_xtd_example_tunit_picture_box_.image(images::from_name("xtd-tunit", drawing::size {40, 40}));
   
   open_xtd_example_cmake_picture_box_.parent(open_xtd_example_cmake_tab_page_);
   open_xtd_example_cmake_picture_box_.location({30, 30});
@@ -242,12 +260,18 @@ main_form::main_form() {
   open_xtd_example_core_title_label_.location({80, 35});
   open_xtd_example_core_title_label_.auto_size(true);
   
+  open_xtd_example_drawing_title_label_.parent(open_xtd_example_drawing_tab_page_);
+  open_xtd_example_drawing_title_label_.text("xtd Drawing Project (c++)");
+  open_xtd_example_drawing_title_label_.font({open_xtd_example_drawing_title_label_.font(), 16.0});
+  open_xtd_example_drawing_title_label_.location({80, 35});
+  open_xtd_example_drawing_title_label_.auto_size(true);
+  
   open_xtd_example_forms_title_label_.parent(open_xtd_example_forms_tab_page_);
   open_xtd_example_forms_title_label_.text("xtd Gui Application (c++)");
   open_xtd_example_forms_title_label_.font({open_xtd_example_forms_title_label_.font(), 16.0});
   open_xtd_example_forms_title_label_.location({80, 35});
   open_xtd_example_forms_title_label_.auto_size(true);
-  
+
   open_xtd_example_tunit_title_label_.parent(open_xtd_example_tunit_tab_page_);
   open_xtd_example_tunit_title_label_.text("xtd Unit Test Project (c++)");
   open_xtd_example_tunit_title_label_.font({open_xtd_example_tunit_title_label_.font(), 16.0});
@@ -278,6 +302,23 @@ main_form::main_form() {
     next_button_.perform_click();
   };
   
+  open_xtd_example_drawing_list_box_.parent(open_xtd_example_drawing_tab_page_);
+  open_xtd_example_drawing_list_box_.location({30, 110});
+  open_xtd_example_drawing_list_box_.size(open_xtd_example_forms_tab_page_.size() - drawing::size {60, 140});
+  open_xtd_example_drawing_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
+  for (auto item : xtd_example_item::get_drawing_examples())
+    open_xtd_example_drawing_list_box_.items().push_back({item.name(), item});
+  open_xtd_example_drawing_list_box_.selected_value_changed += [&] {
+    if (open_xtd_example_drawing_list_box_.selected_index() != open_xtd_example_drawing_list_box_.npos) {
+      current_open_xtd_example_drawing_list_box_index_ = open_xtd_example_drawing_list_box_.selected_index();
+      update_open_xtd_examples_information(any_cast<xtd_example_item>(open_xtd_example_drawing_list_box_.selected_item().tag()).description());
+      open_xtd_examples_information_picture_box_.image(any_cast<xtd_example_item>(open_xtd_example_drawing_list_box_.selected_item().tag()).picture());
+    }
+  };
+  open_xtd_example_drawing_list_box_.double_click += [&] {
+    next_button_.perform_click();
+  };
+  
   open_xtd_example_forms_list_box_.parent(open_xtd_example_forms_tab_page_);
   open_xtd_example_forms_list_box_.location({30, 110});
   open_xtd_example_forms_list_box_.size(open_xtd_example_forms_tab_page_.size() - drawing::size {60, 140});
@@ -294,7 +335,7 @@ main_form::main_form() {
   open_xtd_example_forms_list_box_.double_click += [&] {
     next_button_.perform_click();
   };
-  
+
   open_xtd_example_tunit_list_box_.parent(open_xtd_example_tunit_tab_page_);
   open_xtd_example_tunit_list_box_.location({30, 110});
   open_xtd_example_tunit_list_box_.size(open_xtd_example_tunit_tab_page_.size() - drawing::size {60, 140});
@@ -554,12 +595,15 @@ main_form::main_form() {
         xtd_example = any_cast<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag());
         exemple_subproject_path = "xtd.core.examples";
       } else if (open_xtd_example_tab_control_.selected_index() == 1) {
+        xtd_example = any_cast<xtd_example_item>(open_xtd_example_drawing_list_box_.selected_item().tag());
+        exemple_subproject_path = "xtd.drawing.examples";
+      } else if (open_xtd_example_tab_control_.selected_index() == 2) {
         xtd_example = any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag());
         exemple_subproject_path = "xtd.forms.examples";
-      } else if (open_xtd_example_tab_control_.selected_index() == 2) {
+      } else if (open_xtd_example_tab_control_.selected_index() == 3) {
         xtd_example = any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag());
         exemple_subproject_path = "xtd.tunit.examples";
-      } else if (open_xtd_example_tab_control_.selected_index() == 3) {
+      } else if (open_xtd_example_tab_control_.selected_index() == 4) {
         xtd_example = any_cast<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag());
         exemple_subproject_path = "xtd.cmake.examples";
       }

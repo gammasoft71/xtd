@@ -79,19 +79,23 @@ namespace xtdc_gui {
     xtd::forms::label open_xtd_examples_title_label_;
     xtd::forms::tab_control open_xtd_example_tab_control_;
     xtd::forms::tab_page open_xtd_example_core_tab_page_;
+    xtd::forms::tab_page open_xtd_example_drawing_tab_page_;
     xtd::forms::tab_page open_xtd_example_forms_tab_page_;
     xtd::forms::tab_page open_xtd_example_tunit_tab_page_;
     xtd::forms::tab_page open_xtd_example_cmake_tab_page_;
     xtd::forms::picture_box open_xtd_example_core_picture_box_;
+    xtd::forms::picture_box open_xtd_example_drawing_picture_box_;
     xtd::forms::picture_box open_xtd_example_forms_picture_box_;
     xtd::forms::picture_box open_xtd_example_tunit_picture_box_;
     xtd::forms::picture_box open_xtd_example_cmake_picture_box_;
     xtd::forms::label open_xtd_example_cmake_title_label_;
     xtd::forms::label open_xtd_example_core_title_label_;
+    xtd::forms::label open_xtd_example_drawing_title_label_;
     xtd::forms::label open_xtd_example_forms_title_label_;
     xtd::forms::label open_xtd_example_tunit_title_label_;
     xtd::forms::list_box open_xtd_example_cmake_list_box_;
     xtd::forms::list_box open_xtd_example_core_list_box_;
+    xtd::forms::list_box open_xtd_example_drawing_list_box_;
     xtd::forms::list_box open_xtd_example_forms_list_box_;
     xtd::forms::list_box open_xtd_example_tunit_list_box_;
     xtd::forms::link_label open_xtd_examples_information_link_label_;
@@ -133,6 +137,7 @@ namespace xtdc_gui {
     
     size_t current_project_type_index_ = std::numeric_limits<size_t>::max();
     size_t current_open_xtd_example_core_list_box_index_ = 0;
+    size_t current_open_xtd_example_drawing_list_box_index_ = 0;
     size_t current_open_xtd_example_forms_list_box_index_ = 0;
     size_t current_open_xtd_example_tunit_list_box_index_ = 0;
     size_t current_open_xtd_example_cmake_list_box_index_ = 0;
