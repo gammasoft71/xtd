@@ -189,12 +189,18 @@ main_form::main_form() {
       open_xtd_example_cmake_list_box_.selected_index(current_open_xtd_example_cmake_list_box_index_);
     }
   };
-  
+
+  open_xtd_examples_information_label_.parent(open_xtd_examples_panel_);
+  open_xtd_examples_information_label_.location({550, 60});
+  open_xtd_examples_information_label_.auto_size(true);
+  open_xtd_examples_information_label_.font({open_xtd_examples_information_label_.font(), 16.0});
+  open_xtd_examples_information_label_.text("Description");
+
   open_xtd_examples_information_link_label_.parent(open_xtd_examples_panel_);
   open_xtd_examples_information_link_label_.back_color(xtd::forms::application::style_sheet().system_colors().window());
   open_xtd_examples_information_link_label_.border_style(xtd::forms::border_style::solid);
-  open_xtd_examples_information_link_label_.location({550, 50});
-  open_xtd_examples_information_link_label_.size({400, open_xtd_examples_panel_.size().height() - 350});
+  open_xtd_examples_information_link_label_.location({550, 100});
+  open_xtd_examples_information_link_label_.size({400, open_xtd_examples_panel_.size().height() - 390});
   open_xtd_examples_information_link_label_.font({open_xtd_examples_information_link_label_.font(), 12.0f});
   open_xtd_examples_information_link_label_.anchor(anchor_styles::top | anchor_styles::bottom | anchor_styles::right);
   open_xtd_examples_information_link_label_.text_align(content_alignment::top_left);
@@ -202,12 +208,18 @@ main_form::main_form() {
     process::start(as<ustring>(e.link().link_data()));
   };
   open_xtd_examples_information_link_label_.auto_ellipsis(true);
-  
+
+  open_xtd_examples_information_picture_label_.parent(open_xtd_examples_panel_);
+  open_xtd_examples_information_picture_label_.location({550, open_xtd_examples_panel_.size().height() - 270});
+  open_xtd_examples_information_picture_label_.auto_size(true);
+  open_xtd_examples_information_picture_label_.font({open_xtd_examples_information_picture_label_.font(), 16.0});
+  open_xtd_examples_information_picture_label_.text("Picture");
+
   open_xtd_examples_information_picture_box_.parent(open_xtd_examples_panel_);
   open_xtd_examples_information_picture_box_.back_color(xtd::forms::application::style_sheet().system_colors().window());
   open_xtd_examples_information_picture_box_.border_style(xtd::forms::border_style::solid);
-  open_xtd_examples_information_picture_box_.location({550, open_xtd_examples_panel_.size().height() - 260});
-  open_xtd_examples_information_picture_box_.size({400, 250});
+  open_xtd_examples_information_picture_box_.location({550, open_xtd_examples_panel_.size().height() - 230});
+  open_xtd_examples_information_picture_box_.size({400, 230});
   open_xtd_examples_information_picture_box_.size_mode(picture_box_size_mode::zoom);
   open_xtd_examples_information_picture_box_.anchor(anchor_styles::bottom | anchor_styles::right);
   
