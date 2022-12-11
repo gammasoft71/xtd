@@ -225,30 +225,35 @@ main_form::main_form() {
   open_xtd_example_cmake_tab_page_.parent(open_xtd_example_tab_control_);
   
   open_xtd_example_core_picture_box_.parent(open_xtd_example_core_tab_page_);
+  open_xtd_example_core_picture_box_.image(images::from_name("xtd-console"));
   open_xtd_example_core_picture_box_.location({30, 30});
   open_xtd_example_core_picture_box_.size({40, 40});
-  open_xtd_example_core_picture_box_.image(images::from_name("xtd-console", drawing::size {40, 40}));
-  
+  open_xtd_example_core_picture_box_.size_mode(picture_box_size_mode::zoom);
+
   open_xtd_example_drawing_picture_box_.parent(open_xtd_example_drawing_tab_page_);
+  open_xtd_example_drawing_picture_box_.image(images::from_name("xtd-drawing"));
   open_xtd_example_drawing_picture_box_.location({30, 30});
   open_xtd_example_drawing_picture_box_.size({40, 40});
-  open_xtd_example_drawing_picture_box_.image(images::from_name("xtd-drawing", drawing::size {40, 40}));
-  
+  open_xtd_example_drawing_picture_box_.size_mode(picture_box_size_mode::zoom);
+
   open_xtd_example_forms_picture_box_.parent(open_xtd_example_forms_tab_page_);
+  open_xtd_example_forms_picture_box_.image(images::from_name("xtd-forms"));
   open_xtd_example_forms_picture_box_.location({30, 30});
   open_xtd_example_forms_picture_box_.size({40, 40});
-  open_xtd_example_forms_picture_box_.image(images::from_name("xtd-forms", drawing::size {40, 40}));
+  open_xtd_example_forms_picture_box_.size_mode(picture_box_size_mode::zoom);
 
   open_xtd_example_tunit_picture_box_.parent(open_xtd_example_tunit_tab_page_);
+  open_xtd_example_tunit_picture_box_.size_mode(picture_box_size_mode::zoom);
   open_xtd_example_tunit_picture_box_.location({30, 30});
   open_xtd_example_tunit_picture_box_.size({40, 40});
-  open_xtd_example_tunit_picture_box_.image(images::from_name("xtd-tunit", drawing::size {40, 40}));
+  open_xtd_example_tunit_picture_box_.image(images::from_name("xtd-tunit"));
   
   open_xtd_example_cmake_picture_box_.parent(open_xtd_example_cmake_tab_page_);
+  open_xtd_example_cmake_picture_box_.image(bitmap(xtd_cmake_icon));
   open_xtd_example_cmake_picture_box_.location({30, 30});
   open_xtd_example_cmake_picture_box_.size({40, 40});
-  open_xtd_example_cmake_picture_box_.image(bitmap(xtd_cmake_icon));
-  
+  open_xtd_example_cmake_picture_box_.size_mode(picture_box_size_mode::zoom);
+
   open_xtd_example_core_title_label_.parent(open_xtd_example_core_tab_page_);
   open_xtd_example_core_title_label_.text("xtd Console Application (c++)");
   open_xtd_example_core_title_label_.font({open_xtd_example_core_title_label_.font(), 16.0});
