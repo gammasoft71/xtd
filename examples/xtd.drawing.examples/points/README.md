@@ -1,4 +1,4 @@
-# Colors examples
+# Points examples
 
 [This folder](.) contains points examples.
 
