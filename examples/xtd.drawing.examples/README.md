@@ -17,6 +17,10 @@
 * [font](fonts/font/README.md) Shows how to use [xtd::drawing::font](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1font.html) class.
 * [system_fonts](fonts/system_fonts/README.md) Shows how to use [xtd::drawing::font](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__fonts.html) class.
 
+## [Graphics](graphics/README.md)
+
+* [graphics](graphics/graphics/README.md) shows how to use [xtd::drawing::graphics](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1graphics.html) class.
+
 ## [Images](images/README.md)
 
 * [image](images/image/README.md) Shows how to use [xtd::drawing::image](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1font.html) class.
