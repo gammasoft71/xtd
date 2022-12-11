@@ -6,24 +6,24 @@ class generic_progress {
 public:
   generic_progress() = default;
   generic_progress(int val, int min = 0, int max = 100, const ustring& msg = "") : message_(msg) {
-    minimum_value(min);
-    maximum_value(max);
+    minimum(min);
+    maximum(max);
     value(val);
   }
-
-  int minimum_value() const noexcept {return minimum_value_;}
-  generic_progress& minimum_value(int minimum_value) noexcept {
-    minimum_value_ = minimum_value;
-    maximum_value_ = math::max(maximum_value(), minimum_value);
-    value_ = math::max(value(), minimum_value);
+  
+  int maximum() const noexcept {return maximum_;}
+  generic_progress& maximum(int maximum) noexcept {
+    maximum_ = maximum;
+    minimum_ = math::min(minimum(), maximum);
+    value_ = math::min(value(), maximum);
     return *this;
   }
-  
-  int maximum_value() const noexcept {return maximum_value_;}
-  generic_progress& maximum_value(int maximum_value) noexcept {
-    maximum_value_ = maximum_value;
-    minimum_value_ = math::min(minimum_value(), maximum_value);
-    value_ = math::min(value(), maximum_value);
+
+  int minimum() const noexcept {return minimum_;}
+  generic_progress& minimum(int minimum) noexcept {
+    minimum_ = minimum;
+    maximum_ = math::max(maximum(), minimum);
+    value_ = math::max(value(), minimum);
     return *this;
   }
   
@@ -33,12 +33,14 @@ public:
     return *this;
   }
 
-  float percent() const noexcept {return maximum_value_ - minimum_value_ ? as<float>(value() - minimum_value()) / (maximum_value() - minimum_value()) : 1;}
+  float percent() const noexcept {return maximum_ - minimum_ ? as<float>(value() - minimum()) / (maximum() - minimum()) : 1;}
 
-  generic_progress& perform_step() noexcept {
-    value(value() + step());
+  generic_progress& increment(int increment) noexcept {
+    value(value() + increment);
     return *this;
   }
+
+  generic_progress& perform_step() noexcept {return increment(step());}
   generic_progress& perform_step(const ustring& message) noexcept {
     message_ = message;
     return perform_step();
@@ -46,7 +48,7 @@ public:
 
   int value() const noexcept {return value_;}
   generic_progress& value(int value) noexcept {
-    value_ = math::clamp(value, minimum_value(), maximum_value());
+    value_ = math::clamp(value, minimum(), maximum());
     return *this;
   }
 
@@ -57,8 +59,8 @@ public:
   }
 
 private:
-  int minimum_value_ = 0;
-  int maximum_value_ = 100;
+  int minimum_ = 0;
+  int maximum_ = 100;
   int step_ = 1;
   int value_ = 0;
   ustring message_;
