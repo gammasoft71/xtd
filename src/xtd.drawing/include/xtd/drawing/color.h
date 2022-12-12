@@ -34,10 +34,10 @@ namespace xtd {
     /// @code
     /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
     ///   color slate_blue = xtd::drawing::color::from_name("slate blue");
-    ///   byte_t a = slate_blue.a();
-    ///   byte_t r = slate_blue.r();
-    ///   byte_t g = slate_blue.g();
-    ///   byte_t b = slate_blue.b();
+    ///   xtd::byte a = slate_blue.a();
+    ///   xtd::byte r = slate_blue.r();
+    ///   xtd::byte g = slate_blue.g();
+    ///   xtd::byte b = slate_blue.b();
     ///   string text = xtd::ustring::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green:{2}, blue:{3}", a, r, g, b);
     ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
     /// }

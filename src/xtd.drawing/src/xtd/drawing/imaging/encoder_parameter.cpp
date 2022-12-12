@@ -10,13 +10,13 @@ using namespace xtd::drawing::imaging;
 
 namespace {
   template<typename type_t>
-  void add_bytes(vector<byte_t>& bytes, type_t value) {
+  void add_bytes(vector<xtd::byte>& bytes, type_t value) {
     auto value_bytes = bit_converter::get_bytes(value);
     bytes.insert(bytes.end(), value_bytes.begin(), value_bytes.end());
   }
 }
 
-encoder_parameter::encoder_parameter(const imaging::encoder& encoder, byte_t value) : encoder_(encoder), number_of_values_(1), type_(xtd::drawing::imaging::encoder_parameter_value_type::value_type_byte) {
+encoder_parameter::encoder_parameter(const imaging::encoder& encoder, xtd::byte value) : encoder_(encoder), number_of_values_(1), type_(xtd::drawing::imaging::encoder_parameter_value_type::value_type_byte) {
   add_bytes(value_, value);
 }
 
@@ -35,11 +35,11 @@ encoder_parameter::encoder_parameter(const imaging::encoder& encoder, const xtd:
     add_bytes(value_, v);
 }
 
-encoder_parameter::encoder_parameter(const imaging::encoder& encoder, byte_t value, bool undefined) : encoder_(encoder), number_of_values_(1), type_(undefined ? xtd::drawing::imaging::encoder_parameter_value_type::value_type_undefined :  xtd::drawing::imaging::encoder_parameter_value_type::value_type_byte) {
+encoder_parameter::encoder_parameter(const imaging::encoder& encoder, xtd::byte value, bool undefined) : encoder_(encoder), number_of_values_(1), type_(undefined ? xtd::drawing::imaging::encoder_parameter_value_type::value_type_undefined :  xtd::drawing::imaging::encoder_parameter_value_type::value_type_byte) {
   add_bytes(value_, value);
 }
 
-encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, std::vector<byte_t> value) : encoder_(encoder), number_of_values_(value.size()), type_(xtd::drawing::imaging::encoder_parameter_value_type::value_type_byte) {
+encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, std::vector<xtd::byte> value) : encoder_(encoder), number_of_values_(value.size()), type_(xtd::drawing::imaging::encoder_parameter_value_type::value_type_byte) {
   for (auto v : value)
     add_bytes(value_, v);
 }
@@ -65,7 +65,7 @@ encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encod
   }
 }
 
-encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, std::vector<byte_t> value, bool undefined) : encoder_(encoder), number_of_values_(value.size()), type_(undefined ? xtd::drawing::imaging::encoder_parameter_value_type::value_type_undefined :  xtd::drawing::imaging::encoder_parameter_value_type::value_type_byte) {
+encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, std::vector<xtd::byte> value, bool undefined) : encoder_(encoder), number_of_values_(value.size()), type_(undefined ? xtd::drawing::imaging::encoder_parameter_value_type::value_type_undefined :  xtd::drawing::imaging::encoder_parameter_value_type::value_type_byte) {
   for (auto v : value)
     add_bytes(value_, v);
 }
@@ -103,7 +103,7 @@ encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encod
   }
 }
 
-encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, int32_t number_values, xtd::drawing::imaging::encoder_parameter_value_type type, std::vector<byte_t> value) : encoder_(encoder), number_of_values_(number_values), type_(type), value_(value) {
+encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, int32_t number_values, xtd::drawing::imaging::encoder_parameter_value_type type, std::vector<xtd::byte> value) : encoder_(encoder), number_of_values_(number_values), type_(type), value_(value) {
 }
 
 const xtd::drawing::imaging::encoder& encoder_parameter::encoder() const noexcept {
@@ -118,7 +118,7 @@ xtd::drawing::imaging::encoder_parameter_value_type encoder_parameter::value_typ
   return type_;
 }
 
-const std::vector<byte_t>& encoder_parameter::value() const noexcept {
+const std::vector<xtd::byte>& encoder_parameter::value() const noexcept {
   return value_;
 }
 
