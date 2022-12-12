@@ -1,6 +1,6 @@
 # uri
 
-Demonstrates the [xtd::uri](../../../src/xtd.core/include/xtd/uri.h) various properties.
+Demonstrates the [xtd::uri](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1uri.html) various properties.
 
 # Sources
 
