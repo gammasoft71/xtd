@@ -142,12 +142,12 @@ namespace xtd {
   /// The following example shows how to create and use xtd::sbyte_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
-  /// sbyte_t unboxed_object = 42;
+  /// sbyte unboxed_object = 42;
   /// sbyte_object boxed_object = unboxed_object;
   /// auto result = stringer(boxed_object);
   /// console::write_line("result = {}", result); // Display: result = 42;
   /// @endcode
-  using sbyte_object = box_integer<sbyte_t>;
+  using sbyte_object = box_integer<sbyte>;
 
   /// @brief Represent a boxed uint16.
   /// @par Namespace
@@ -242,7 +242,7 @@ namespace xtd {
   inline int32_object boxing(const int32& value) noexcept {return int32_object(value);}
   inline int64_object boxing(const int64& value) noexcept {return int64_object(value);}
   inline llong_object boxing(const llong_t& value) noexcept {return llong_object(value);}
-  inline sbyte_object boxing(const sbyte_t& value) noexcept {return sbyte_object(value);}
+  inline sbyte_object boxing(const sbyte& value) noexcept {return sbyte_object(value);}
   inline uint16_object boxing(const uint16_t& value) noexcept {return uint16_object(value);}
   inline uint32_object boxing(const uint32& value) noexcept {return uint32_object(value);}
   inline uint64_object boxing(const uint64& value) noexcept {return uint64_object(value);}
@@ -252,7 +252,7 @@ namespace xtd {
   inline int32_object boxing(int32& value) noexcept {return int32_object(value);}
   inline int64_object boxing(int64& value) noexcept {return int64_object(value);}
   inline llong_object boxing(llong_t& value) noexcept {return llong_object(value);}
-  inline sbyte_object boxing(sbyte_t& value) noexcept {return sbyte_object(value);}
+  inline sbyte_object boxing(sbyte& value) noexcept {return sbyte_object(value);}
   inline uint16_object boxing(uint16_t& value) noexcept {return uint16_object(value);}
   inline uint32_object boxing(uint32& value) noexcept {return uint32_object(value);}
   inline uint64_object boxing(uint64& value) noexcept {return uint64_object(value);}
@@ -263,7 +263,7 @@ namespace xtd {
   inline int32 unboxing(const int32& value) noexcept {return value;}
   inline int64 unboxing(const int64& value) noexcept {return value;}
   inline llong_t unboxing(const llong_t& value) noexcept {return value;}
-  inline sbyte_t unboxing(const sbyte_t& value) noexcept {return value;}
+  inline sbyte unboxing(const sbyte& value) noexcept {return value;}
   inline uint16_t unboxing(const uint16_t& value) noexcept {return value;}
   inline uint32 unboxing(const uint32& value) noexcept {return value;}
   inline uint64 unboxing(const uint64& value) noexcept {return value;}
@@ -273,7 +273,7 @@ namespace xtd {
   inline int32 unboxing(int32& value) noexcept {return value;}
   inline int64 unboxing(int64& value) noexcept {return value;}
   inline llong_t unboxing(llong_t& value) noexcept {return value;}
-  inline sbyte_t unboxing(sbyte_t& value) noexcept {return value;}
+  inline sbyte unboxing(sbyte& value) noexcept {return value;}
   inline uint16_t unboxing(uint16_t& value) noexcept {return value;}
   inline uint32 unboxing(uint32& value) noexcept {return value;}
   inline uint64 unboxing(uint64& value) noexcept {return value;}

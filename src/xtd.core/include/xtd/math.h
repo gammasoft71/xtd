@@ -91,10 +91,10 @@ namespace xtd {
     static int64 abs(int64 value);
     
     /// @brief Returns the absolute value of a 8-bit signed integer.
-    /// @param value A number in the range std::numeric_limit<sbyte_t>::lowest() <= value <= std::numeric_limit<sbyte_t>::max().
-    /// @return A 8-bit signed integer, x, such that 0 <= x <= std::numeric_limit<sbyte_t>::max().
+    /// @param value A number in the range std::numeric_limit<sbyte>::lowest() <= value <= std::numeric_limit<sbyte>::max().
+    /// @return A 8-bit signed integer, x, such that 0 <= x <= std::numeric_limit<sbyte>::max().
     /// @exception xtd::overflow_exception value equals std::numeric_limit<sbyte_tsbyte_t>::lowest().
-    static sbyte_t abs(sbyte_t value);
+    static sbyte abs(sbyte value);
     
     /// @brief Returns the absolute value of a 64-bit signed integer
     /// @param value A number in the range std::numeric_limit<llong_t>::lowest() <= value <= std::numeric_limit<llong_t>::max().
@@ -198,7 +198,7 @@ namespace xtd {
     /// @param min The lower bound of the result.
     /// @param max The upper bound of the result.
     /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
-    static sbyte_t clamp(sbyte_t value, sbyte_t min, sbyte_t max) noexcept;
+    static sbyte clamp(sbyte value, sbyte min, sbyte max) noexcept;
     /// @brief Returns value clamped to the inclusive range of min and max.
     /// @param value The value to be clamped.
     /// @param min The lower bound of the result.
@@ -399,7 +399,7 @@ namespace xtd {
     /// @param a The first of two 8-bit signed integers to compare.
     /// @param b The second of two 8-bit signed integers to compare.
     /// @return Parameter a or b, whichever is larger.
-    static sbyte_t max(sbyte_t a, sbyte_t b) noexcept;
+    static sbyte max(sbyte a, sbyte b) noexcept;
     
     /// @brief Returns the larger of two single single.
     /// @param a The first of two single single to compare.
@@ -477,7 +477,7 @@ namespace xtd {
     /// @param a The first of two 8-bit signed integers to compare.
     /// @param b The second of two 8-bit signed integers to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static sbyte_t min(sbyte_t a, sbyte_t b) noexcept;
+    static sbyte min(sbyte a, sbyte b) noexcept;
     
     /// @brief Returns the smaller of two single single.
     /// @param a The first of two single single to compare.
@@ -639,7 +639,7 @@ namespace xtd {
     /// | -1           | value is less than zero.    |
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
-    static int32 sign(sbyte_t value);
+    static int32 sign(sbyte value);
     
     /// @brief Returns a value indicating the sign of a single-precision floating-point number.
     /// @param value A signed number.

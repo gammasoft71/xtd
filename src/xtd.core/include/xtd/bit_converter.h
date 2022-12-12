@@ -150,7 +150,7 @@ namespace xtd {
     /// @brief Returns the specified xtd::byte value as an std::vector of bytes.
     /// @param value A xtd::byte value.
     /// @return An std::vector of bytes with length 1.
-    static std::vector<xtd::byte> get_bytes(sbyte_t value) noexcept;
+    static std::vector<xtd::byte> get_bytes(sbyte value) noexcept;
     
     /// @brief Returns the specified int16 value as an std::vector of bytes.
     /// @param value A int16 value.

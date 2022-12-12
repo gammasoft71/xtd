@@ -176,7 +176,7 @@ namespace xtd {
       /// @param value The signed byte to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
-      virtual void write(sbyte_t value);
+      virtual void write(sbyte value);
       
       /// @brief Writes an four-byte floating-point value to the current stream and advances the stream position by four bytes.
       /// @param value The four-byte floating-point value to write.

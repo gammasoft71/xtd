@@ -113,8 +113,8 @@ int64 binary_reader::read_int64() {
   return bit_converter::to_int16(read_bytes(sizeof(int64)), 0);
 }
 
-sbyte_t binary_reader::read_sbyte() {
-  return read_bytes(sizeof(sbyte_t))[0];
+sbyte binary_reader::read_sbyte() {
+  return read_bytes(sizeof(sbyte))[0];
 }
 
 float binary_reader::read_single() {

@@ -100,11 +100,11 @@ namespace xtd::tests {
     }
     
     void test_method_(abs_sbyte) {
-      assert::are_equal(numeric_limits<sbyte_t>::max(), math::abs(numeric_limits<sbyte_t>::max()), csf_);
-      assert::are_equal(as<sbyte_t>(98), math::abs(as<sbyte_t>(98)), csf_);
-      assert::are_equal(as<sbyte_t>(0), math::abs(as<sbyte_t>(0)), csf_);
-      assert::are_equal(as<sbyte_t>(32), math::abs(as<sbyte_t>(-32)), csf_);
-      assert::throws<overflow_exception>([] {math::abs(numeric_limits<sbyte_t>::lowest());}, csf_);
+      assert::are_equal(numeric_limits<sbyte>::max(), math::abs(numeric_limits<sbyte>::max()), csf_);
+      assert::are_equal(as<sbyte>(98), math::abs(as<sbyte>(98)), csf_);
+      assert::are_equal(as<sbyte>(0), math::abs(as<sbyte>(0)), csf_);
+      assert::are_equal(as<sbyte>(32), math::abs(as<sbyte>(-32)), csf_);
+      assert::throws<overflow_exception>([] {math::abs(numeric_limits<sbyte>::lowest());}, csf_);
     }
     
     void test_method_(abs_llong) {
@@ -493,9 +493,9 @@ namespace xtd::tests {
     }
     
     void test_method_(max_sbyte) {
-      assert::are_equal(52, math::max(as<sbyte_t>(2), as<sbyte_t>(52)), csf_);
-      assert::are_equal(22, math::max(as<sbyte_t>(22), as<sbyte_t>(5)), csf_);
-      assert::are_equal(16, math::max(as<sbyte_t>(16), as<sbyte_t>(16)), csf_);
+      assert::are_equal(52, math::max(as<sbyte>(2), as<sbyte>(52)), csf_);
+      assert::are_equal(22, math::max(as<sbyte>(22), as<sbyte>(5)), csf_);
+      assert::are_equal(16, math::max(as<sbyte>(16), as<sbyte>(16)), csf_);
     }
     
     void test_method_(max_single) {
@@ -571,9 +571,9 @@ namespace xtd::tests {
     }
     
     void test_method_(min_sbyte) {
-      assert::are_equal(2, math::min(as<sbyte_t>(2), as<sbyte_t>(52)), csf_);
-      assert::are_equal(5, math::min(as<sbyte_t>(22), as<sbyte_t>(5)), csf_);
-      assert::are_equal(16, math::min(as<sbyte_t>(16), as<sbyte_t>(16)), csf_);
+      assert::are_equal(2, math::min(as<sbyte>(2), as<sbyte>(52)), csf_);
+      assert::are_equal(5, math::min(as<sbyte>(22), as<sbyte>(5)), csf_);
+      assert::are_equal(16, math::min(as<sbyte>(16), as<sbyte>(16)), csf_);
     }
     
     void test_method_(min_single) {

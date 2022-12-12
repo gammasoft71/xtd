@@ -190,7 +190,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
-      virtual sbyte_t read_sbyte();
+      virtual sbyte read_sbyte();
       
       /// @brief Reads an 4-byte floating point value from the current stream and advances the current position of the stream by four bytes.
       /// @return An 4-byte floating point value read from the current stream.
@@ -241,7 +241,7 @@ namespace xtd {
       binary_reader& operator >>(int16& value) {value = read_int16(); return *this;}
       binary_reader& operator >>(int32& value) {value = read_int32(); return *this;}
       binary_reader& operator >>(int64& value) {value = read_int64(); return *this;}
-      binary_reader& operator >>(sbyte_t& value) {value = read_sbyte(); return *this;}
+      binary_reader& operator >>(sbyte& value) {value = read_sbyte(); return *this;}
       binary_reader& operator >>(float& value) {value = read_single(); return *this;}
       binary_reader& operator >>(ustring& value) {value = read_string(); return *this;}
       binary_reader& operator >>(uint16_t& value) {value = read_uint16(); return *this;}
