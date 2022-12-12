@@ -35,7 +35,7 @@ vector<xtd::byte> bit_converter::get_bytes(double value) noexcept {
   return bit_converter::get_bytes(double_to_int64_bits(value));
 }
 
-vector<xtd::byte> bit_converter::get_bytes(sbyte_t value) noexcept {
+vector<xtd::byte> bit_converter::get_bytes(sbyte value) noexcept {
   return bit_converter::get_bytes(xtd::byte(value));
 }
 

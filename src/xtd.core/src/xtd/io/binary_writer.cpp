@@ -105,7 +105,7 @@ void binary_writer::write(int64 value) {
   write(bit_converter::get_bytes(value));
 }
 
-void binary_writer::write(sbyte_t value) {
+void binary_writer::write(sbyte value) {
   if (!stream_) throw io_exception(csf_);
   stream_->put(static_cast<char>(value));
 }

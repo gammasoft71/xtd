@@ -39,8 +39,8 @@ int64 math::abs(int64 value) {
   return value < 0 ? -value : value;
 }
 
-sbyte_t math::abs(sbyte_t value) {
-  if (value == numeric_limits<sbyte_t>::lowest()) throw xtd::overflow_exception(csf_);
+sbyte math::abs(sbyte value) {
+  if (value == numeric_limits<sbyte>::lowest()) throw xtd::overflow_exception(csf_);
   return value < 0 ? -value : value;
 }
 
@@ -105,7 +105,7 @@ llong_t math::clamp(llong_t value, llong_t min, llong_t max) noexcept {
   return std::clamp(value, min, max);
 }
 
-sbyte_t math::clamp(sbyte_t value, sbyte_t min, sbyte_t max) noexcept {
+sbyte math::clamp(sbyte value, sbyte min, sbyte max) noexcept {
   return std::clamp(value, min, max);
 }
 
@@ -226,7 +226,7 @@ llong_t math::max(llong_t a, llong_t b) noexcept {
   return a > b ? a : b;
 }
 
-sbyte_t math::max(sbyte_t a, sbyte_t b) noexcept {
+sbyte math::max(sbyte a, sbyte b) noexcept {
   return a > b ? a : b;
 }
 
@@ -278,7 +278,7 @@ llong_t math::min(llong_t a, llong_t b) noexcept {
   return a < b ? a : b;
 }
 
-sbyte_t math::min(sbyte_t a, sbyte_t b) noexcept {
+sbyte math::min(sbyte a, sbyte b) noexcept {
   return a < b ? a : b;
 }
 
@@ -354,7 +354,7 @@ int32 math::sign(int64 value) {
   return value < 0 ? -1 : value == 0 ? 0 : 1;
 }
 
-int32 math::sign(sbyte_t value) {
+int32 math::sign(sbyte value) {
   return value < 0 ? -1 : value == 0 ? 0 : 1;
 }
 

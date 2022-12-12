@@ -69,7 +69,7 @@ std::any convert::to_any(llong_t value) noexcept {
   return value;
 }
 
-std::any convert::to_any(sbyte_t value) noexcept {
+std::any convert::to_any(sbyte value) noexcept {
   return value;
 }
 
@@ -219,7 +219,7 @@ bool convert::to_boolean(llong_t value) noexcept {
   return value != 0;
 }
 
-bool convert::to_boolean(sbyte_t value) noexcept {
+bool convert::to_boolean(sbyte value) noexcept {
   return value != 0;
 }
 
@@ -373,8 +373,8 @@ xtd::byte convert::to_byte(llong_t value) {
   return static_cast<xtd::byte>(value);
 }
 
-xtd::byte convert::to_byte(sbyte_t value) {
-  if (value < static_cast<sbyte_t>(numeric_limits<xtd::byte>::lowest())) throw overflow_exception(csf_);
+xtd::byte convert::to_byte(sbyte value) {
+  if (value < static_cast<sbyte>(numeric_limits<xtd::byte>::lowest())) throw overflow_exception(csf_);
   return static_cast<xtd::byte>(value);
 }
 
@@ -546,7 +546,7 @@ char convert::to_char(llong_t value) {
   return static_cast<char>(value);
 }
 
-char convert::to_char(sbyte_t value) {
+char convert::to_char(sbyte value) {
   if (value < 0) throw overflow_exception(csf_);
   return static_cast<char>(value);
 }
@@ -721,7 +721,7 @@ char8_t convert::to_char8(llong_t value) {
   return static_cast<char8_t>(value);
 }
 
-char8_t convert::to_char8(sbyte_t value) {
+char8_t convert::to_char8(sbyte value) {
   if (value < 0) throw overflow_exception(csf_);
   return static_cast<char8_t>(value);
 }
@@ -902,7 +902,7 @@ char16_t convert::to_char16(llong_t value) {
   return static_cast<char16_t>(value);
 }
 
-char16_t convert::to_char16(sbyte_t value) {
+char16_t convert::to_char16(sbyte value) {
   if (value < 0) throw overflow_exception(csf_);
   return static_cast<char16_t>(value);
 }
@@ -1081,7 +1081,7 @@ char32_t convert::to_char32(llong_t value) {
   return static_cast<char32_t>(value);
 }
 
-char32_t convert::to_char32(sbyte_t value) {
+char32_t convert::to_char32(sbyte value) {
   if (value < 0) throw overflow_exception(csf_);
   return static_cast<char32_t>(value);
 }
@@ -1260,7 +1260,7 @@ wchar_t convert::to_wchar(llong_t value) {
   return static_cast<wchar_t>(value);
 }
 
-wchar_t convert::to_wchar(sbyte_t value) {
+wchar_t convert::to_wchar(sbyte value) {
   if (value < 0) throw overflow_exception(csf_);
   return static_cast<wchar_t>(value);
 }
@@ -1428,7 +1428,7 @@ decimal_t convert::to_decimal(llong_t value) noexcept {
   return static_cast<decimal_t>(value);
 }
 
-decimal_t convert::to_decimal(sbyte_t value) noexcept {
+decimal_t convert::to_decimal(sbyte value) noexcept {
   return static_cast<decimal_t>(value);
 }
 
@@ -1576,7 +1576,7 @@ double convert::to_double(llong_t value) noexcept {
   return static_cast<double>(value);
 }
 
-double convert::to_double(sbyte_t value) noexcept {
+double convert::to_double(sbyte value) noexcept {
   return static_cast<double>(value);
 }
 
@@ -1724,7 +1724,7 @@ float convert::to_single(llong_t value) noexcept {
   return static_cast<float>(value);
 }
 
-float convert::to_single(sbyte_t value) noexcept {
+float convert::to_single(sbyte value) noexcept {
   return static_cast<float>(value);
 }
 
@@ -1879,7 +1879,7 @@ int16 convert::to_int16(llong_t value) {
   return static_cast<int16>(value);
 }
 
-int16 convert::to_int16(sbyte_t value) noexcept {
+int16 convert::to_int16(sbyte value) noexcept {
   return static_cast<int16>(value);
 }
 
@@ -2045,7 +2045,7 @@ int32 convert::to_int32(llong_t value) {
   return static_cast<int32>(value);
 }
 
-int32 convert::to_int32(sbyte_t value) noexcept {
+int32 convert::to_int32(sbyte value) noexcept {
   return static_cast<int32>(value);
 }
 
@@ -2206,7 +2206,7 @@ int64 convert::to_int64(llong_t value) noexcept {
   return static_cast<int64>(value);
 }
 
-int64 convert::to_int64(sbyte_t value) noexcept {
+int64 convert::to_int64(sbyte value) noexcept {
   return static_cast<int64>(value);
 }
 
@@ -2366,7 +2366,7 @@ llong_t convert::to_llong(llong_t value) noexcept {
   return static_cast<llong_t>(value);
 }
 
-llong_t convert::to_llong(sbyte_t value) noexcept {
+llong_t convert::to_llong(sbyte value) noexcept {
   return static_cast<llong_t>(value);
 }
 
@@ -2462,176 +2462,176 @@ llong_t convert::to_llong(wchar_t* value) {
   return ustring::parse<llong_t>(value);
 }
 
-sbyte_t convert::to_sbyte(any value) {
+sbyte convert::to_sbyte(any value) {
   try {
-    return any_cast<sbyte_t>(value);
+    return any_cast<sbyte>(value);
   } catch (...) {
     throw invalid_cast_exception(csf_);
   }
 }
 
-sbyte_t convert::to_sbyte(bool value) noexcept {
-  return static_cast<sbyte_t>(value);
+sbyte convert::to_sbyte(bool value) noexcept {
+  return static_cast<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(xtd::byte value) noexcept {
+sbyte convert::to_sbyte(xtd::byte value) noexcept {
   return value;
 }
 
-sbyte_t convert::to_sbyte(char value) noexcept {
-  return static_cast<sbyte_t>(value);
+sbyte convert::to_sbyte(char value) noexcept {
+  return static_cast<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(char8_t value) noexcept {
-  return static_cast<sbyte_t>(value);
+sbyte convert::to_sbyte(char8_t value) noexcept {
+  return static_cast<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(char16_t value) {
-  if (value > static_cast<char16_t>(numeric_limits<sbyte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<sbyte_t>(value);
+sbyte convert::to_sbyte(char16_t value) {
+  if (value > static_cast<char16_t>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
+  return static_cast<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(char32_t value) {
-  if (value > static_cast<char32_t>(numeric_limits<sbyte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<sbyte_t>(value);
+sbyte convert::to_sbyte(char32_t value) {
+  if (value > static_cast<char32_t>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
+  return static_cast<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(wchar_t value) {
-  if (value > static_cast<wchar_t>(numeric_limits<sbyte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<sbyte_t>(value);
+sbyte convert::to_sbyte(wchar_t value) {
+  if (value > static_cast<wchar_t>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
+  return static_cast<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(decimal_t value) {
-  if (value < static_cast<decimal_t>(numeric_limits<sbyte_t>::lowest()) || value > static_cast<decimal_t>(numeric_limits<sbyte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<sbyte_t>(math::round(value));
+sbyte convert::to_sbyte(decimal_t value) {
+  if (value < static_cast<decimal_t>(numeric_limits<sbyte>::lowest()) || value > static_cast<decimal_t>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
+  return static_cast<sbyte>(math::round(value));
 }
 
-sbyte_t convert::to_sbyte(double value) {
-  if (value < static_cast<double>(numeric_limits<sbyte_t>::lowest()) || value > static_cast<double>(numeric_limits<sbyte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<sbyte_t>(math::round(value));
+sbyte convert::to_sbyte(double value) {
+  if (value < static_cast<double>(numeric_limits<sbyte>::lowest()) || value > static_cast<double>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
+  return static_cast<sbyte>(math::round(value));
 }
 
-sbyte_t convert::to_sbyte(float value) {
-  if (value < static_cast<float>(numeric_limits<sbyte_t>::lowest()) || value > static_cast<float>(numeric_limits<sbyte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<sbyte_t>(math::round(value));
+sbyte convert::to_sbyte(float value) {
+  if (value < static_cast<float>(numeric_limits<sbyte>::lowest()) || value > static_cast<float>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
+  return static_cast<sbyte>(math::round(value));
 }
 
-sbyte_t convert::to_sbyte(int16 value) {
-  if (value < static_cast<int16>(numeric_limits<sbyte_t>::lowest()) || value > static_cast<int16>(numeric_limits<sbyte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<sbyte_t>(value);
+sbyte convert::to_sbyte(int16 value) {
+  if (value < static_cast<int16>(numeric_limits<sbyte>::lowest()) || value > static_cast<int16>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
+  return static_cast<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(int32 value) {
-  if (value < static_cast<int32>(numeric_limits<sbyte_t>::lowest()) || value > static_cast<int32>(numeric_limits<sbyte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<sbyte_t>(value);
+sbyte convert::to_sbyte(int32 value) {
+  if (value < static_cast<int32>(numeric_limits<sbyte>::lowest()) || value > static_cast<int32>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
+  return static_cast<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(int64 value) {
-  if (value < static_cast<int64>(numeric_limits<sbyte_t>::lowest()) || value > static_cast<int64>(numeric_limits<sbyte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<sbyte_t>(value);
+sbyte convert::to_sbyte(int64 value) {
+  if (value < static_cast<int64>(numeric_limits<sbyte>::lowest()) || value > static_cast<int64>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
+  return static_cast<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(llong_t value) {
-  if (value < static_cast<llong_t>(numeric_limits<sbyte_t>::lowest()) || value > static_cast<llong_t>(numeric_limits<sbyte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<sbyte_t>(value);
+sbyte convert::to_sbyte(llong_t value) {
+  if (value < static_cast<llong_t>(numeric_limits<sbyte>::lowest()) || value > static_cast<llong_t>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
+  return static_cast<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(sbyte_t value) {
+sbyte convert::to_sbyte(sbyte value) {
   return value;
 }
 
-sbyte_t convert::to_sbyte(uint16_t value) {
-  if (value > static_cast<uint16_t>(numeric_limits<sbyte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<sbyte_t>(value);
+sbyte convert::to_sbyte(uint16_t value) {
+  if (value > static_cast<uint16_t>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
+  return static_cast<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(uint32 value) {
-  if (value > static_cast<uint32>(numeric_limits<sbyte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<sbyte_t>(value);
+sbyte convert::to_sbyte(uint32 value) {
+  if (value > static_cast<uint32>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
+  return static_cast<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(uint64 value) {
-  if (value > static_cast<uint64>(numeric_limits<sbyte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<sbyte_t>(value);
+sbyte convert::to_sbyte(uint64 value) {
+  if (value > static_cast<uint64>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
+  return static_cast<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(ullong_t value) {
-  if (value > static_cast<ullong_t>(numeric_limits<sbyte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<sbyte_t>(value);
+sbyte convert::to_sbyte(ullong_t value) {
+  if (value > static_cast<ullong_t>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
+  return static_cast<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(const ustring& value) {
-  return ustring::parse<sbyte_t>(value);
+sbyte convert::to_sbyte(const ustring& value) {
+  return ustring::parse<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(const ustring& value, xtd::byte from_base) {
+sbyte convert::to_sbyte(const ustring& value, xtd::byte from_base) {
   switch (from_base) {
-    case 2: return parse<sbyte_t>(value, number_styles::binary_number); break;
-    case 8: return parse<sbyte_t>(value, number_styles::octal_number); break;
-    case 10: return parse<sbyte_t>(value, number_styles::integer); break;
-    case 16: return parse<sbyte_t>(value, number_styles::hex_number); break;
+    case 2: return parse<sbyte>(value, number_styles::binary_number); break;
+    case 8: return parse<sbyte>(value, number_styles::octal_number); break;
+    case 10: return parse<sbyte>(value, number_styles::integer); break;
+    case 16: return parse<sbyte>(value, number_styles::hex_number); break;
     default: throw argument_exception(csf_);
   }
 }
 
-sbyte_t convert::to_sbyte(const string& value) {
-  return ustring::parse<sbyte_t>(value);
+sbyte convert::to_sbyte(const string& value) {
+  return ustring::parse<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(const u8string& value) {
-  return ustring::parse<sbyte_t>(value);
+sbyte convert::to_sbyte(const u8string& value) {
+  return ustring::parse<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(const u16string& value) {
-  return ustring::parse<sbyte_t>(value);
+sbyte convert::to_sbyte(const u16string& value) {
+  return ustring::parse<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(const u32string& value) {
-  return ustring::parse<sbyte_t>(value);
+sbyte convert::to_sbyte(const u32string& value) {
+  return ustring::parse<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(const wstring& value) {
-  return ustring::parse<sbyte_t>(value);
+sbyte convert::to_sbyte(const wstring& value) {
+  return ustring::parse<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(const char* value) {
-  return ustring::parse<sbyte_t>(value);
+sbyte convert::to_sbyte(const char* value) {
+  return ustring::parse<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(char* value) {
-  return ustring::parse<sbyte_t>(value);
+sbyte convert::to_sbyte(char* value) {
+  return ustring::parse<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(const char8_t* value) {
-  return ustring::parse<sbyte_t>(value);
+sbyte convert::to_sbyte(const char8_t* value) {
+  return ustring::parse<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(char8_t* value) {
-  return ustring::parse<sbyte_t>(value);
+sbyte convert::to_sbyte(char8_t* value) {
+  return ustring::parse<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(const char16_t* value) {
-  return ustring::parse<sbyte_t>(value);
+sbyte convert::to_sbyte(const char16_t* value) {
+  return ustring::parse<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(char16_t* value) {
-  return ustring::parse<sbyte_t>(value);
+sbyte convert::to_sbyte(char16_t* value) {
+  return ustring::parse<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(const char32_t* value) {
-  return ustring::parse<sbyte_t>(value);
+sbyte convert::to_sbyte(const char32_t* value) {
+  return ustring::parse<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(char32_t* value) {
-  return ustring::parse<sbyte_t>(value);
+sbyte convert::to_sbyte(char32_t* value) {
+  return ustring::parse<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(const wchar_t* value) {
-  return ustring::parse<sbyte_t>(value);
+sbyte convert::to_sbyte(const wchar_t* value) {
+  return ustring::parse<sbyte>(value);
 }
 
-sbyte_t convert::to_sbyte(wchar_t* value) {
-  return ustring::parse<sbyte_t>(value);
+sbyte convert::to_sbyte(wchar_t* value) {
+  return ustring::parse<sbyte>(value);
 }
 
 uint16_t convert::to_uint16(any value) {
@@ -2706,8 +2706,8 @@ uint16_t convert::to_uint16(llong_t value) {
   return static_cast<uint16_t>(value);
 }
 
-uint16_t convert::to_uint16(sbyte_t value) {
-  if (value < static_cast<sbyte_t>(numeric_limits<uint16_t>::lowest())) throw overflow_exception(csf_);
+uint16_t convert::to_uint16(sbyte value) {
+  if (value < static_cast<sbyte>(numeric_limits<uint16_t>::lowest())) throw overflow_exception(csf_);
   return static_cast<uint16_t>(value);
 }
 
@@ -2875,8 +2875,8 @@ uint32 convert::to_uint32(llong_t value) {
   return static_cast<uint32>(value);
 }
 
-uint32 convert::to_uint32(sbyte_t value) {
-  if (value < static_cast<sbyte_t>(numeric_limits<uint32>::lowest())) throw overflow_exception(csf_);
+uint32 convert::to_uint32(sbyte value) {
+  if (value < static_cast<sbyte>(numeric_limits<uint32>::lowest())) throw overflow_exception(csf_);
   return static_cast<uint32>(value);
 }
 
@@ -3043,8 +3043,8 @@ uint64 convert::to_uint64(llong_t value) {
   return static_cast<uint64>(value);
 }
 
-uint64 convert::to_uint64(sbyte_t value) {
-  if (value < static_cast<sbyte_t>(numeric_limits<uint64>::lowest())) throw overflow_exception(csf_);
+uint64 convert::to_uint64(sbyte value) {
+  if (value < static_cast<sbyte>(numeric_limits<uint64>::lowest())) throw overflow_exception(csf_);
   return static_cast<uint64>(value);
 }
 
@@ -3209,8 +3209,8 @@ ullong_t convert::to_ullong(llong_t value) {
   return static_cast<ullong_t>(value);
 }
 
-ullong_t convert::to_ullong(sbyte_t value) {
-  if (value < static_cast<sbyte_t>(numeric_limits<ullong_t>::lowest())) throw overflow_exception(csf_);
+ullong_t convert::to_ullong(sbyte value) {
+  if (value < static_cast<sbyte>(numeric_limits<ullong_t>::lowest())) throw overflow_exception(csf_);
   return static_cast<ullong_t>(value);
 }
 
@@ -3414,11 +3414,11 @@ ustring convert::to_string(llong_t value, xtd::byte from_base) {
   }
 }
 
-ustring convert::to_string(sbyte_t value) {
+ustring convert::to_string(sbyte value) {
   return ustring::format("{}", value);
 }
 
-ustring convert::to_string(sbyte_t value, xtd::byte from_base) {
+ustring convert::to_string(sbyte value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return ustring::format("{:B}", value); break;
     case 8: return ustring::format("{:O}", value); break;
@@ -3628,11 +3628,11 @@ ustring convert::to_ustring(llong_t value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
-ustring convert::to_ustring(sbyte_t value) {
+ustring convert::to_ustring(sbyte value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(sbyte_t value, xtd::byte from_base) {
+ustring convert::to_ustring(sbyte value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
