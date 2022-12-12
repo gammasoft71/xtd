@@ -54,10 +54,10 @@ namespace std {
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
-  using byte_t = uint8_t;
+  using byte_t = uint_fast8_t;
   using char_t = char;
   using decimal_t = long double;
-  using sbyte_t = int8_t;
+  using sbyte_t = int_fast8_t;
   using single_t = float;
   using uchar_t = unsigned char;
   using ushort_t = unsigned short;
