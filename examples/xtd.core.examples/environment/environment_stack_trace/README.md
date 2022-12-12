@@ -1,6 +1,6 @@
 # environment_stack_trace
 
-Shows how to use [xtd::environment](../../../../src/xtd.core/include/xtd/environment.h) class.
+Shows how to use [xtd::environment](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html) class.
 
 ## Sources
 
