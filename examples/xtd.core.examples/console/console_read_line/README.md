@@ -1,6 +1,6 @@
 # console_read_line
 
-Shows how to use [xtd::console::in](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#aa8987e499bd2004bf0564b4fbca9161d) stream.
+Shows how to use [xtd::console::in](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#a7c103233b3e74cb63538b48616b7fd02) stream.
 
 # Sources
 
