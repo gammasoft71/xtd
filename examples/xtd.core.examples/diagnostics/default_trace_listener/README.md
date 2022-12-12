@@ -1,6 +1,6 @@
 # default_trace_listener
 
-Shows how to use [xtd::diagnostics::default_trace_listener](../../../../src/xtd.core/include/xtd/diagnostics/default_trace_listener.h) class.
+Shows how to use [xtd::diagnostics::default_trace_listener](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1default__trace__listener.html) class.
 
 ## Sources
 

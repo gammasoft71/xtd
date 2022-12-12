@@ -1,6 +1,6 @@
 # hello_world_console3
 
-The classic first application "Hello, World!" with [xtd::console](../../../../src/xtd.core/include/xtd/basic_console.h) class.
+The classic first application "Hello, World!" with [xtd::console](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html) class.
 
 ## Sources
 

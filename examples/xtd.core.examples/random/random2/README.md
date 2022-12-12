@@ -1,6 +1,6 @@
 # random2
 
-Shows how to use [xtd::random](../../../../src/xtd.core/include/xtd/basic_console.h) class.
+Shows how to use [xtd::random](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1random.html) class.
 
 ## Sources
 

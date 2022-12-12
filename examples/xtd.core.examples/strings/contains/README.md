@@ -1,6 +1,6 @@
 # contains
 
-Shows how to use [xtd::strings::contains](../../../../src/xtd.core/include/xtd/strings.h) method.
+Shows how to use [xtd::ustring::contains](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html#aea0e43190da2d939a59a911e46302af1) method.
 
 ## Sources
 

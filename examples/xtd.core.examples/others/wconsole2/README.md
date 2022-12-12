@@ -1,6 +1,6 @@
 # wconsole2
 
-Shows how to use [xtd::wconsole](../../../../src/xtd.core/include/xtd/basic_console.h) class.
+Shows how to use [xtd::wconsole](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html) class.
 
 ## Sources
 

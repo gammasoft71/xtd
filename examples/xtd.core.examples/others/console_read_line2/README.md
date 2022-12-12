@@ -1,6 +1,6 @@
 # console_read_line2
 
-Shows how to use [xtd::console::read_line](../../../../src/xtd.core/include/xtd/basic_console.h) method.
+Shows how to use [xtd::console::read_line](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#aa8987e499bd2004bf0564b4fbca9161d) method.
 
 ## Sources
 

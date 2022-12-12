@@ -1,6 +1,6 @@
 # date_time_max_value
 
-Shows how to use [xtd::date_time::max_value](../../../../src/xtd.core/include/xtd/date_time.h) field.
+Shows how to use [xtd::date_time::max_value](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#af86fd0f8e3f55ca8f3ffa6daeb7187bb) field.
 
 # Sources
 

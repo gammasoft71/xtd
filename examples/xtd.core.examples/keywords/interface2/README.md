@@ -1,6 +1,6 @@
 # interface2
 
-Shows how to use [xtd::interface](../../../../src/xtd.core/include/xtd/interface.h) class.
+Shows how to use [xtd::interface](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1interface.html) class.
 
 ## Sources
 

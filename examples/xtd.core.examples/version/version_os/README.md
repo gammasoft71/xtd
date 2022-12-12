@@ -1,6 +1,6 @@
 # version_os
 
-Shows how to use [xtd::version](../../../src/xtd.core/include/xtd/version.h) to get the Operating System version.
+Shows how to use [xtd::version](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1version.html) to get the Operating System version.
 
 # Sources
 

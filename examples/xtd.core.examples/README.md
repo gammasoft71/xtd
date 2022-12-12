@@ -30,17 +30,17 @@
 
 ## [Console](console/README.md)
 
-* [console_background_color](console/console_background_color/README.md) shows how to use [xtd::console::background_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#a16386e533bc0bbb8cc4dfb4b079c828a) method.
-* [console_beep](console/console_beep/README.md) shows how to use [xtd::console::beep](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#acec44516d026402ea726848809dda77c) method.
+* [console_background_color](console/console_background_color/README.md) shows how to use [xtd::console::background_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1background__color.html) method.
+* [console_beep](console/console_beep/README.md) shows how to use [xtd::console::beep](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#aab2e161c3a72cb14f808ed40e2b59ef2) method.
 * [console_buffer](console/console_buffer/README.md) shows how to use [xtd::console::buffer_height](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#a4088b3aa84f6a10b4e2c8c72db095eaa) and [xtd::console::buffer_width](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#ad055fc0fad3ebe72948916a088cd8790) methods.
 * [console_clear](console/console_clear/README.md) shows how to use [xtd::console::clear](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#a8aa7128ca9254b18afa2e2155413a22a) method.
-* [console_color](console/console_color/README.md) shows how to use [xtd::console::background_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#a16386e533bc0bbb8cc4dfb4b079c828a) and [xtd::console::foreground_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#a7828d85c021b5515a2eb94105ca6c149) methods.
+* [console_color](console/console_color/README.md) shows how to use [xtd::console::background_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1background__color.html) and [xtd::console::foreground_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1foreground__color.html) methods.
 * [console_cursor](console/console_cursor/README.md) shows how to use [xtd::console::set_cursor_position](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#a018f41d3c8b61fb0a1bc8f5c45014288), [xtd::console::cursor_top](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#aefb5599582f2675363d2dcc4de4c4d27) and [xtd::console::cursor_left](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#aba13d00d8da5f3025380ee9967fc86f7) methods.
 * [console_in_out](console/console_in_out/README.md) shows how to use [xtd::console::in](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#a7c103233b3e74cb63538b48616b7fd02) and [xtd::console::out](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888) streams.
 * [console_info](console/console_info/README.md) shows how to use [xtd::console](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html) class.
 * [console_read_key](console/console_read_key/README.md) shows how to use [xtd::console::read_key](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#ac0ebb643e4d3b01faa8380bd90d22aa0) and [xtd::console::key_available](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#ade7353994e38d4645a831a12caab9427) methods.
 * [console_read_line](console/console_read_line/README.md) shows how to use [xtd::console::read_line](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#aa8987e499bd2004bf0564b4fbca9161d) method.
-* [console_song](console/console_song/README.md) shows how to use [xtd::console::beep](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#acec44516d026402ea726848809dda77c) method.
+* [console_song](console/console_song/README.md) shows how to use [xtd::console::beep](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#aab2e161c3a72cb14f808ed40e2b59ef2) method.
 * [console_title](console/console_title/README.md) shows how to use [xtd::console::title](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#a717eaf6693dab615adf8f6b8b1763586) method.
 * [console_unicode](console/console_unicode/README.md) shows how to use [xtd::console](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html) with unicode characters.
 * [wconsole](console/wconsole/README.md) shows how to use [xtd::console](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html) class.
@@ -54,112 +54,112 @@
 
 # [Date time](date_time/README.md)
 
-* [date_time](date_time/date_time/README.md) shows how to use [xtd::date_time](../../src/xtd.core/include/xtd/date_time.h) class.
-* [date_time_add](date_time/date_time_add/README.md) shows how to use [xtd::date_time::add](../../src/xtd.core/include/xtd/date_time.h) method.
-* [date_time_add_days](date_time/date_time_add_days/README.md) shows how to use [xtd::date_time::add_days](../../src/xtd.core/include/xtd/date_time.h) method.
-* [date_time_add_hours](date_time/date_time_add_hours/README.md) shows how to use [xtd::date_time::add_hours](../../src/xtd.core/include/xtd/date_time.h) method.
-* [date_time_add_milliseconds](date_time/date_time_add_milliseconds/README.md) shows how to use [xtd::date_time::add_milliseconds](../../src/xtd.core/include/xtd/date_time.h) method.
-* [date_time_add_minutes](date_time/date_time_add_minutes/README.md) shows how to use [xtd::date_time::add_minutes](../../src/xtd.core/include/xtd/date_time.h) method.
-* [date_time_add_months](date_time/date_time_add_months/README.md) shows how to use [xtd::date_time::add_months](../../../src/xtd.core/include/xtd/date_time.h) method.
-* [date_time_add_seconds](date_time/date_time_add_seconds/README.md) shows how to use [xtd::date_time::add_seconds](../../src/xtd.core/include/xtd/date_time.h) method.
-* [date_time_add_years](date_time/date_time_add_years/README.md) shows how to use [xtd::date_time::add_years](../../src/xtd.core/include/xtd/date_time.h) method.
-* [date_time_date](date_time/date_time_date/README.md) shows how to use [xtd::date_time::date](../../src/xtd.core/include/xtd/date_time.h) property.
-* [date_time_day_of_week](date_time/date_time_day_of_week/README.md) shows how to use [xtd::date_time::day_of_week](../../src/xtd.core/include/xtd/date_time.h) property.
-* [date_time_day_of_year](date_time/date_time_day_of_year/README.md) shows how to use [xtd::date_time::day_of_year](../../src/xtd.core/include/xtd/date_time.h) property.
-* [date_time_days_in_month](date_time/date_time_days_in_month/README.md) shows how to use [xtd::date_time::days_in_month](../../src/xtd.core/include/xtd/date_time.h) method.
-* [date_time_days_in_month2](date_time/date_time_days_in_month2/README.md) shows how to use [xtd::date_time::days_in_month](../../src/xtd.core/include/xtd/date_time.h) method.
-* [date_time_max_value](date_time/date_time_max_value/README.md) Shows how to use [xtd::date_time::max_value](../../src/xtd.core/include/xtd/date_time.h) field.
-* [date_time_min_value](date_time/date_time_min_value/README.md) Shows how to use [xtd::date_time::min_value](../../src/xtd.core/include/xtd/date_time.h) field.
-* [date_time_now](date_time/date_time_now/README.md) Shows how to use [xtd::date_time::now](../../src/xtd.core/include/xtd/date_time.h) property.
-* [date_time_now2](date_time/date_time_now2/README.md) Shows how to use [xtd::date_time::now](../../src/xtd.core/include/xtd/date_time.h) property.
-* [date_time_specify_kind](date_time/date_time_specify_kind/README.md) shows how to use [xtd::date_time::specify_kind](../../src/xtd.core/include/xtd/date_time.h) method.
-* [date_time_sprintf](date_time/date_time_sprintf/README.md) shows how to use [xtd::date_time::sprintf](../../src/xtd.core/include/xtd/date_time.h) method.
-* [date_time_subtract](date_time/date_time_subtract/README.md) shows how to use [xtd::date_time::subtract](../../src/xtd.core/include/xtd/date_time.h) method.
-* [date_time_ticks](date_time/date_time_ticks/README.md) shows how to use [xtd::date_time](../../src/xtd.core/include/xtd/date_time.h) class with ticks constructors.
-* [date_time_ticks2](date_time/date_time_ticks2/README.md) shows how to use [xtd::date_time::ticks](../../src/xtd.core/include/xtd/date_time.h) property.
-* [date_time_time_of_day](date_time/date_time_time_of_day/README.md) shows how to use [xtd::date_time::time_of_day](../../src/xtd.core/include/xtd/date_time.h) property.
-* [date_time_to_string_format](date_time/date_time_to_string_format/README.md) shows how to use [xtd::date_time::to_string](../../src/xtd.core/include/xtd/date_time.h) with format method.
-* [date_time_today](date_time/date_time_today/README.md) shows how to use [xtd::date_time::today](../../src/xtd.core/include/xtd/date_time.h) property.
+* [date_time](date_time/date_time/README.md) shows how to use [xtd::date_time](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html) class.
+* [date_time_add](date_time/date_time_add/README.md) shows how to use [xtd::date_time::add](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a383491b411dbc746d01caedb353882a4) method.
+* [date_time_add_days](date_time/date_time_add_days/README.md) shows how to use [xtd::date_time::add_days](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a7644578aa80da95945aad6a09baeb8ff) method.
+* [date_time_add_hours](date_time/date_time_add_hours/README.md) shows how to use [xtd::date_time::add_hours](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a154440d7ac0ca311e6e861481f89bbd5) method.
+* [date_time_add_milliseconds](date_time/date_time_add_milliseconds/README.md) shows how to use [xtd::date_time::add_milliseconds](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a0c0b9b22d495ed1096b74dd9c72df2e4) method.
+* [date_time_add_minutes](date_time/date_time_add_minutes/README.md) shows how to use [xtd::date_time::add_minutes](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a707bef059e2d5161b8545cedc58983b2) method.
+* [date_time_add_months](date_time/date_time_add_months/README.md) shows how to use [xtd::date_time::add_months](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a07d4f63d951d1e2674aadc064f533f0c) method.
+* [date_time_add_seconds](date_time/date_time_add_seconds/README.md) shows how to use [xtd::date_time::add_seconds](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a413650dded2269db34a6ec15949a5d5f) method.
+* [date_time_add_years](date_time/date_time_add_years/README.md) shows how to use [xtd::date_time::add_years](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a673fa2094f973e199e9ebcc1f6e48158) method.
+* [date_time_date](date_time/date_time_date/README.md) shows how to use [xtd::date_time::date](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a2b6f82824acbcb499acc6c6b62959644) property.
+* [date_time_day_of_week](date_time/date_time_day_of_week/README.md) shows how to use [xtd::date_time::day_of_week](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a907e5ccf896744690074196778815697) property.
+* [date_time_day_of_year](date_time/date_time_day_of_year/README.md) shows how to use [xtd::date_time::day_of_year](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a551c9340690aa363067b70efd8691de3) property.
+* [date_time_days_in_month](date_time/date_time_days_in_month/README.md) shows how to use [xtd::date_time::days_in_month](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#acf06b7e2c3c396c332d86e03c87f1d23) method.
+* [date_time_days_in_month2](date_time/date_time_days_in_month2/README.md) shows how to use [xtd::date_time::days_in_month](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#ac044c2bb28a73c7df9758c5d3075b905) method.
+* [date_time_max_value](date_time/date_time_max_value/README.md) Shows how to use [xtd::date_time::max_value](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#af86fd0f8e3f55ca8f3ffa6daeb7187bb) field.
+* [date_time_min_value](date_time/date_time_min_value/README.md) Shows how to use [xtd::date_time::min_value](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a2052693f474e549778be006a9bf9ffcd) field.
+* [date_time_now](date_time/date_time_now/README.md) Shows how to use [xtd::date_time::now](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#ad94505e74efe9f353836901eda9230ed) property.
+* [date_time_now2](date_time/date_time_now2/README.md) Shows how to use [xtd::date_time::now](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#ad94505e74efe9f353836901eda9230ed) property.
+* [date_time_specify_kind](date_time/date_time_specify_kind/README.md) shows how to use [xtd::date_time::specify_kind](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#adcb67f5e68f1830781c7d2b4e90f757c) method.
+* [date_time_sprintf](date_time/date_time_sprintf/README.md) shows how to use [xtd::date_time::sprintf](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#aa21e25167da0cf2593175b48cf1a82d0) method.
+* [date_time_subtract](date_time/date_time_subtract/README.md) shows how to use [xtd::date_time::subtract](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#aaf1f38f9b51733e38b5db3b5dfde6bb6) method.
+* [date_time_ticks](date_time/date_time_ticks/README.md) shows how to use [xtd::date_time::ticks](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#ae8ee2b1e004ff0ee7934e1a94ea44f91) class with ticks constructors.
+* [date_time_ticks2](date_time/date_time_ticks2/README.md) shows how to use [xtd::date_time::ticks](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#ae8ee2b1e004ff0ee7934e1a94ea44f91) property.
+* [date_time_time_of_day](date_time/date_time_time_of_day/README.md) shows how to use [xtd::date_time::time_of_day](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#ab19867a4850ebd33ba52908050eb3df7) property.
+* [date_time_to_string_format](date_time/date_time_to_string_format/README.md) shows how to use [xtd::date_time::to_string](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a58e9d766b5af37b77d5d8239a8320ab7) with format method.
+* [date_time_today](date_time/date_time_today/README.md) shows how to use [xtd::date_time::today](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a59f1715a20ea00fdd56aabe19b704f70) property.
 
 # [Delegates](delegates/README.md)
 
-* [action](delegates/action/README.md) shows how to use [xtd::action](../../src/xtd.core/include/xtd/action.h) alias.
+* [action](delegates/action/README.md) shows how to use [xtd::action](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31) alias.
 * [action1](delegates/action1/README.md) shows how to simplify code by instantiating the action delegate instead of explicitly defining a new delegate and assigning a named method to it.
 * [action2](delegates/action2/README.md) shows how to simplify code by instantiating the action delegate instead of explicitly defining a new delegate and assigning a named method to it.
 * [action3](action3/README.md) shows how to simplify code by instantiating the action delegate instead of explicitly defining a new delegate and assigning a named method to it.
-* [delegate](delegates/delegate/README.md) shows how to use [xtd::delegate](../../src/xtd.core/include/xtd/delegate.h) class.
-* [delegate_lambda](delegates/delegate_lambda/README.md) shows how to use [xtd::delegate](../../src/xtd.core/include/xtd/delegate.h) class.
-* [delegate_member_method](delegates/delegate_member_method/README.md) shows how to use [xtd::delegate](../../src/xtd.core/include/xtd/delegate.h) class.
-* [delegate_multicast](delegates/delegate_multicast/README.md) shows how to use [xtd::delegate](../../src/xtd.core/include/xtd/delegate.h) class.
-* [event](delegates/event/README.md) shows how to use [xtd::event](../../src/xtd.core/include/xtd/event.h) class.
+* [delegate](delegates/delegate/README.md) shows how to use [xtd::delegate](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1delegate_3_01result__t_07_08_4.html) class.
+* [delegate_lambda](delegates/delegate_lambda/README.md) shows how to use [xtd::delegate](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1delegate_3_01result__t_07_08_4.html) class.
+* [delegate_member_method](delegates/delegate_member_method/README.md) shows how to use [xtd::delegate](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1delegate_3_01result__t_07_08_4.html) class.
+* [delegate_multicast](delegates/delegate_multicast/README.md) shows how to use [xtd::delegate](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1delegate_3_01result__t_07_08_4.html) class.
+* [event](delegates/event/README.md) shows how to use [xtd::event](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1event.html) class.
 
 ## [Diagnostics](diagnostics/README.md)
 
-* [assert](diagnostics/assert_/README.md) shows how to use [assert_](../../src/xtd.core/include/xtd/diagnostics::debug.h) macro.
-* [assert_with_message](diagnostics/assert_with_message/README.md) shows how to use [assert_](../../src/xtd.core/include/xtd/diagnostics::debug.h) macro wth message.
-* [console_trace_listener](diagnostics/console_trace_listener/README.md) shows how to use [xtd::diagnostics/console_trace_listener](../../src/xtd.core/include/xtd/diagnostics/console_trace_listener.h) class.
-* [debug](diagnostics/debug/README.md) shows how to use [xtd::diagnostics::debug](../../src/xtd.core/include/xtd/diagnostics::debug.h) class.
-* [debug_cassert](diagnostics/debug_cassert/README.md) shows how to use [xtd::diagnostics::debug::cassert](../../src/xtd.core/include/xtd/diagnostics::debug.h) method.
-* [stack_frame](diagnostics/stack_frame/README.md) shows how to use [xtd::diagnostics/stack_frame](../../src/xtd.core/include/xtd/diagnostics/stack_frame.h) class.
-* [stack_trace](diagnostics/stack_trace/README.md) shows how to use [xtd::diagnostics/stack_trace](../../src/xtd.core/include/xtd/diagnostics/stack_trace.h) class.
-* [stack_trace_simple](diagnostics/stack_trace_simple/README.md) demonstrates how to create a simple [xtd::diagnostics::stack_trace](../../src/xtd.core/include/xtd/diagnostics::stack_trace.h) class and iterate through its frames to obtain debugging and diagnostic information.
-* [stopwatch](diagnostics/stopwatch/README.md) shows how to use [xtd::diagnostics/stopwatch](../../src/xtd.core/include/xtd/diagnostics/stopwatch.h) class.
-* [stopwatch_constructor](diagnostics/stopwatch_constructor/README.md) initializes a [xtd::diagnostics::stopwatch](../../src/xtd.core/include/xtd/diagnostics::stopwatch.h) instance by using a simple class constructor.
-* [trace](diagnostics/trace/README.md) shows how to use [xtd::diagnostics::trace](../../src/xtd.core/include/xtd/diagnostics::trace.h) class.
-* [trace_cassert](diagnostics/trace_cassert/README.md) shows how to use [xtd::diagnostics::trace::cassert](../../src/xtd.core/include/xtd/diagnostics::trace.h) method.
+* [assert](diagnostics/assert_/README.md) shows how to use [assert_](https://codedocs.xyz/gammasoft71/xtd/group__debug.html#gad1e9d87aeb065b1eec47e92a49fd01e9) macro.
+* [assert_with_message](diagnostics/assert_with_message/README.md) shows how to use [assert_](https://codedocs.xyz/gammasoft71/xtd/group__debug.html#gad1e9d87aeb065b1eec47e92a49fd01e9) macro wth message.
+* [console_trace_listener](diagnostics/console_trace_listener/README.md) shows how to use [xtd::diagnostics::console_trace_listener](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1console__trace__listener.html) class.
+* [debug](diagnostics/debug/README.md) shows how to use [xtd::diagnostics::debug](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1debug.html) class.
+* [debug_cassert](diagnostics/debug_cassert/README.md) shows how to use [xtd::diagnostics::debug::cassert](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1debug.html#acdb0d00e4b12fccc037cf3f965110d72) method.
+* [stack_frame](diagnostics/stack_frame/README.md) shows how to use [xtd::diagnostics::stack_frame](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1stack__frame.html) class.
+* [stack_trace](diagnostics/stack_trace/README.md) shows how to use [xtd::diagnostics::stack_trace](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1stack__trace.html) class.
+* [stack_trace_simple](diagnostics/stack_trace_simple/README.md) demonstrates how to create a simple [xtd::diagnostics::stack_trace](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1stack__trace.html) class and iterate through its frames to obtain debugging and diagnostic information.
+* [stopwatch](diagnostics/stopwatch/README.md) shows how to use [xtd::diagnostics::stopwatch](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1stopwatch.html) class.
+* [stopwatch_constructor](diagnostics/stopwatch_constructor/README.md) initializes a [xtd::diagnostics::stopwatch](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1stopwatch.html) instance by using a simple class constructor.
+* [trace](diagnostics/trace/README.md) shows how to use [xtd::diagnostics::trace](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1trace.html) class.
+* [trace_cassert](diagnostics/trace_cassert/README.md) shows how to use [xtd::diagnostics::trace::cassert](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1debug.html#acdb0d00e4b12fccc037cf3f965110d72) method.
 
 ## [enum_class](enum_class/README.md)
 
-* [enum_class](enum_class/enum_class/README.md) shows how to use [xtd::enum_object](../../src/xtd.core/include/xtd/xtd::enum_object.h) class and [enum_class_](../../src/xtd.core/include/xtd/xtd::enum_object.h) helper.
-* [enum_class_flags](enum_class_flags/README.md) shows how to use [xtd::enum_object](../../src/xtd.core/include/xtd/xtd::enum_object.h) class, [enum_class_](../../src/xtd.core/include/xtd/xtd::enum_object.h) and [add_enum_flag_operators_](../../src/xtd.core/include/xtd/xtd::enum_object.h) helpers.
-* [enum_class_flags_without_helpers](enum_class_flags_without_helpers/README.md) shows how to use [xtd::enum_object](../../src/xtd.core/include/xtd/xtd::enum_object.h) and [xtd::enumregister](../../src/xtd.core/include/xtd/xtd::enum_object.h) classes.
-* [enum_class_parse](enum_class/enum_class_parse/README.md) shows how to use [xtd::enum_object::parse](../../src/xtd.core/include/xtd/xtd::enum_object.h) method.
-* [enum_class_without_helper](enum_class/enum_class_without_helper/README.md) shows how to use [xtd::enum_object](../../src/xtd.core/include/xtd/xtd::enum_object.h) and [xtd::enumregister](../../src/xtd.core/include/xtd/xtd::enum_object.h) classes.
+* [enum_class](enum_class/enum_class/README.md) shows how to use [xtd::enum_object](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object.html) class and [enum_class_](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object.html) helper.
+* [enum_class_flags](enum_class_flags/README.md) shows how to use [xtd::enum_object](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object.html) class, [enum_class_](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object.html) and [add_enum_flag_operators_](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object.html) helpers.
+* [enum_class_flags_without_helpers](enum_class_flags_without_helpers/README.md) shows how to use [xtd::enum_object](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object.html) and [xtd::enum_register](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__register.html) classes.
+* [enum_class_parse](enum_class/enum_class_parse/README.md) shows how to use [xtd::enum_object::parse](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object_3_01std_1_1nullptr__t_01_4.html#a2ad0cf97016a5826ea31f86175c01991) method.
+* [enum_class_without_helper](enum_class/enum_class_without_helper/README.md) shows how to use [xtd::enum_object](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object.html) and [xtd::enum_register](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__register.html) classes.
 
 ## [Environment](environment/README.md)
 
-* [environment](environment/environment/README.md) shows how to use [xtd::environment](../../src/xtd.core/include/xtd/environment.h) class.
-* [environment_command_line](environment/environment_command_line/README.md) shows how to use [xtd::environment::comand_line](../../src/xtd.core/include/xtd/environment.h) method.
-* [environment_current_directory](environment/environment_current_directory/README.md) shows how to use [xtd::environment::current_directory](../../src/xtd.core/include/xtd/environment.h) method.
-* [environment_exit_code](environment/environment_exit_code/README.md) shows how to use [xtd::environment::exit_code](../../src/xtd.core/include/xtd/environment.h) method.
-* [environment_expand_environment_variables](environment/environment_expand_environment_variables/README.md) shows how to use [xtd::environment::expand_environment_variables](../../src/xtd.core/include/xtd/environment.h) method.
-* [environment_stack_trace](environment/environment_stack_trace/README.md) shows how to use [xtd::environment::stack_trace](../../src/xtd.core/include/xtd/environment.h) method.
-* [environment_tick_count](environment/environment_tick_count/README.md) shows how to use [xtd::environment::tick_count](../../src/xtd.core/include/xtd/environment.h) method.
+* [environment](environment/environment/README.md) shows how to use [xtd::environment](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html) class.
+* [environment_command_line](environment/environment_command_line/README.md) shows how to use [xtd::environment::command_line](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#a9e675a5b7bfbb96f8df5bca48051c0ee) method.
+* [environment_current_directory](environment/environment_current_directory/README.md) shows how to use [xtd::environment::current_directory](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#a981ec9665ba83e12a0241c37017c9ec7) method.
+* [environment_exit_code](environment/environment_exit_code/README.md) shows how to use [xtd::environment::exit_code](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#a592bc11cb5dce688a9e40aa6f866d496) method.
+* [environment_expand_environment_variables](environment/environment_expand_environment_variables/README.md) shows how to use [xtd::environment::expand_environment_variables](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#aafe787566bc6c20c39491e295c2b48a7) method.
+* [environment_stack_trace](environment/environment_stack_trace/README.md) shows how to use [xtd::environment::stack_trace](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1stack__trace.html) method.
+* [environment_tick_count](environment/environment_tick_count/README.md) shows how to use [xtd::environment::tick_count](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#a07572149363f8941095c1d6f6e40e6c5) method.
 
 ## [Exceptions](exceptions/README.md)
 
-* [exception_ptr](exception_ptr/README.md) shows how to use std::exception_ptr and [invalid_operation_exception](../../src/xtd.core/include/xtd/invalid_operation_exception.h) exception.
-* [system_exception](exceptions/system_exception/README.md) shows how to use [xtd::system_exception](../../src/xtd.core/include/xtd/system_exception.h) exception.
+* [exception_ptr](exception_ptr/README.md) shows how to use std::exception_ptr and [invalid_operation_exception](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1invalid__operation__exception.html) exception.
+* [system_exception](exceptions/system_exception/README.md) shows how to use [xtd::system_exception](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1system__exception.html) exception.
 
 ## [Format](format/README.md)
 
-* [format](format/format/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method.
-* [format_associative_containers](format/format_associative_containers/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with associative containers (std::set, std::multiset, sttd::map and std::multimap).
-* [format_boolean](format/format_boolean/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with bool.
-* [format_character](format/format_character/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with characters (char, wchar_t, char8_t, char16_t and char32_t).
-* [format_class](format/format_class/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with owner class.
-* [format_class_with_specified_formating](format/format_class_with_specified_formating/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with owner class and with specified formating args.
-* [format_date_time](format/format_date_time/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with date time (time_t, std::tm and std::chrono:system_clock::time_point).
-* [format_duration](format/format_duration/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with durattion (sttd::chrono::duration).
-* [format_enum](format/format_enum/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with owner enum.
-* [format_enum_class](format/format_enum_class/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with owner enum class.
-* [format_exception](format/format_exception/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with exceptions (std::exception and inherited classes, xtd::system_exception and inherited classes).
-* [format_floating_point](format/format_floating_point/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with floating point (float, double and long double).
-* [format_numeric](format/format_numeric/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with numeric (int8_t, int16_t, int32_t, int64_t, uint8_t, uint16_t, uint32_t and uint64_t).
-* [format_nullptr](format/format_nullptr/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with nulllptr and null.
-* [format_optional](format/format_optional/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with std::format_optional.
-* [format_pair](format/format_pair/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with std::pair.
-* [format_pointer](format/format_pointer/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with std::shared_ptr, std::unique_ptr and classic pointer.
-* [format_sequence_containers](format/format_sequence_containers/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with sequence containers (std::initilizer_list, std::array, sttd::forward_list, std::list, std::deque and std::vector).
-* [format_string](format/format_string/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with strings (std::string, std::wstring, std::u8string, std::u16string andstd::u32string).
-* [format_tuple](format/format_tuple/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with std::tuple.
-* [format_unordered_associative_containers](format/format_unordered_associative_containers/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with associative containers (std::unordered_set, std::unordered_multiset, sttd::unordered_map and std::unordered_multimap).
-* [format_with_alignment](format/format_with_alignment/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with specified alignment args.
-* [format_with_order](format/format_with_order/README.md) shows how to use [xtd::format](../../src/xtd.core/include/xtd/format.h) method with specified order args.
+* [format](format/format/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method.
+* [format_associative_containers](format/format_associative_containers/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with associative containers (std::set, std::multiset, std::map and std::multimap).
+* [format_boolean](format/format_boolean/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with bool.
+* [format_character](format/format_character/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with characters (char, wchar_t, char8_t, char16_t and char32_t).
+* [format_class](format/format_class/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with owner class.
+* [format_class_with_specified_formatting](format/format_class_with_specified_formating/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with owner class and with specified formatting args.
+* [format_date_time](format/format_date_time/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with date time (time_t, std::tm and std::chrono:system_clock::time_point).
+* [format_duration](format/format_duration/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with duration (std::chrono::duration).
+* [format_enum](format/format_enum/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with owner enum.
+* [format_enum_class](format/format_enum_class/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with owner enum class.
+* [format_exception](format/format_exception/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with exceptions (std::exception and inherited classes, xtd::system_exception and inherited classes).
+* [format_floating_point](format/format_floating_point/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with floating point (float, double and long double).
+* [format_numeric](format/format_numeric/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with numeric (int8_t, int16_t, int32_t, int64_t, uint8_t, uint16_t, uint32_t and uint64_t).
+* [format_nullptr](format/format_nullptr/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with nulllptr and null.
+* [format_optional](format/format_optional/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with std::format_optional.
+* [format_pair](format/format_pair/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with std::pair.
+* [format_pointer](format/format_pointer/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with std::shared_ptr, std::unique_ptr and classic pointer.
+* [format_sequence_containers](format/format_sequence_containers/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with sequence containers (std::initializer_list, std::array, std::forward_list, std::list, std::deque and std::vector).
+* [format_string](format/format_string/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with strings (std::string, std::wstring, std::u8string, std::u16string and std::u32string).
+* [format_tuple](format/format_tuple/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with std::tuple.
+* [format_unordered_associative_containers](format/format_unordered_associative_containers/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with associative containers (std::unordered_set, std::unordered_multiset, std::unordered_map and std::unordered_multimap).
+* [format_with_alignment](format/format_with_alignment/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with specified alignment args.
+* [format_with_order](format/format_with_order/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with specified order args.
 
 ## [Guid](guid/README.md)
 
-* [guid](guid/guid/README.md) shows how to use [xtd::guid](../../src/xtd.core/include/xtd/guid.h) class.
+* [guid](guid/guid/README.md) shows how to use [xtd::guid](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1guid.html) class.
 
 ## [Interfaces](interfaces/README.md)
 
@@ -168,116 +168,116 @@
 
 ## [IO](io/README.md)
 
-* [binary_reader](io/binary_reader/README.md) shows how to use [xtd::io::binary_reader](../../src/xtd.core/include/xtd/io/binary_reader.h) class.
-* [binary_reader2](io/binary_reader2/README.md) shows how to use [xtd::io::binary_reader](../../src/xtd.core/include/xtd/io/binary_reader.h) class.
-* [directory_info](io/directory_info/README.md) shows how to use [xtd::io::directory_info](../../src/xtd.core/include/xtd/io/directory_info.h) class.
-* [drive_info](io/drive_info/README.md) shows how to use [xtd::io::drive_info](../../src/xtd.core/include/xtd/io/drive_info.h) class.
-* [file_info](io/file_info/README.md) shows how to use [xtd::io::file_info](../../src/xtd.core/include/xtd/io/file_info.h) class.
-* [file_info2](io/file_info2/README.md) shows how to use [xtd::io::file_info](../../src/xtd.core/include/xtd/io/file_info.h) class.
-* [file_info_append_text](io/file_info_append_text/README.md) shows how to use [xtd::io::file_info::append_text](../../src/xtd.core/include/xtd/io/file_info.h) method.
-* [file_info_move_to](io/file_info_move_to/README.md) shows how to use [xtd::io::file_info::move_to](../../src/xtd.core/include/xtd/io/file_info.h) method.
-* [file_info_open](io/file_info_open/README.md) shows how to use [xtd::io::file_info::open](../../src/xtd.core/include/xtd/io/file_info.h) method.
-* [file_info_open_read](io/file_info_open_read/README.md) shows how to use [xtd::io::file_info::open_read](../../src/xtd.core/include/xtd/io/file_info.h) method.
-* [file_info_open_text](io/file_info_open_text/README.md) shows how to use [xtd::io::file_info::open_text](../../src/xtd.core/include/xtd/io/file_info.h) method.
-* [file_info_open_write](io/file_info_open_write/README.md) shows how to use [xtd::io::file_info::open_write](../../src/xtd.core/include/xtd/io/file_info.h) method.
-* [file_info_replace](io/file_info_replace/README.md) shows how to use [xtd::io::file_info::replace](../../src/xtd.core/include/xtd/io/file_info.h) method.
+* [binary_reader](io/binary_reader/README.md) shows how to use [xtd::io::binary_reader](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1binary__reader.html) class.
+* [binary_reader2](io/binary_reader2/README.md) shows how to use [xtd::io::binary_reader](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1binary__reader.html) class.
+* [directory_info](io/directory_info/README.md) shows how to use [xtd::io::directory_info](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1directory__info.html) class.
+* [drive_info](io/drive_info/README.md) shows how to use [xtd::io::drive_info](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1drive__info.html) class.
+* [file_info](io/file_info/README.md) shows how to use [xtd::io::file_info](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1file__info.html) class.
+* [file_info2](io/file_info2/README.md) shows how to use [xtd::io::file_info](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1file__info.html) class.
+* [file_info_append_text](io/file_info_append_text/README.md) shows how to use [xtd::io::file_info::append_text](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1file.html#af3014bf599f7b0165dbf84ebe46dce8f) method.
+* [file_info_move_to](io/file_info_move_to/README.md) shows how to use [xtd::io::file_info::move_to](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1file__info.html#a518d205507601c6de179fab492750dbc) method.
+* [file_info_open](io/file_info_open/README.md) shows how to use [xtd::io::file_info::open](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1file__info.html#a2b99a2ebcd022156a02e101a905c0cd6) method.
+* [file_info_open_read](io/file_info_open_read/README.md) shows how to use [xtd::io::file_info::open_read](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1file__info.html#a9b3abeefd4e4f232fe8d4c3e59f01b45) method.
+* [file_info_open_text](io/file_info_open_text/README.md) shows how to use [xtd::io::file_info::open_text](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1file__info.html#a55c30f6d3e2d1522117d1e4e660e962d) method.
+* [file_info_open_write](io/file_info_open_write/README.md) shows how to use [xtd::io::file_info::open_write](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1file__info.html#a0646c288e2969e622568e9b517fcbad9) method.
+* [file_info_replace](io/file_info_replace/README.md) shows how to use [xtd::io::file_info::replace](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1file__info.html#abb07c7523a23cb67975615bb76db17ec) method.
 
 ## [Keywords](keywords/README.md)
 
-* [block_scope](keywords/block_scope/README.md) shows how to use [xtd::block_scope](../../src/xtd.core/include/xtd/block_scope.h) method.
-* [current_stack_frame](keywords/current_stack_frame/README.md) shows how to use [xtd::diagnostics::stack_frame(../../src/xtd.core/include/xtd/diagnostics/starck_frame.h) method.
-* [csf](keywords/csf/README.md) shows how to use [xtd::diagnostics::stack_frame(../../src/xtd.core/include/xtd/diagnostics/starck_frame.h) method.
-* [interface](keywords/interface/README.md) shows how to use [xtd::interface](../../src/xtd.core/include/xtd/interface.h) method.
-* [interface2](keywords/interface2/README.md) shows how to use [xtd::interface](../../src/xtd.core/include/xtd/interface.h) method.
-* [startup](keywords/startup/README.md) shows how to use [xtd::startup](../../src/xtd.core/include/xtd/startup.h) method.
-* [static](keywords/static/README.md) shows how to use [xtd::static](../../src/xtd.core/include/xtd/static.h) method.
-* [static_class](keywords/static_class/README.md) shows how to use [xtd::static_class](../../src/xtd.core/include/xtd/static_class.h) method.
-* [static_class2](keywords/static_class2/README.md) shows how to use [xtd::static_class](../../src/xtd.core/include/xtd/static_class.h) method.
-* [using](keywords/using/README.md) shows how to use [xtd::using](../../src/xtd.core/include/xtd/using.h) method.
+* [block_scope](keywords/block_scope/README.md) shows how to use [xtd::block_scope](https://codedocs.xyz/gammasoft71/xtd/block__scope_8h.html) keyword.
+* [current_stack_frame](keywords/current_stack_frame/README.md) shows how to use [current_stack_frame_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gae15b54f63b03b198d02fc94bdd0479ee) keyword.
+* [csf](keywords/csf/README.md) shows how to use [csf_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6) keyword.
+* [interface](keywords/interface/README.md) shows how to use [interface_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga64c32b24bd922fc8189a487213592ccf) keyword.
+* [interface2](keywords/interface2/README.md) shows how to use [interface_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga64c32b24bd922fc8189a487213592ccf) keyword.
+* [startup](keywords/startup/README.md) shows how to use [startup_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c) keyword.
+* [static](keywords/static/README.md) shows how to use [static_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga28796443ec37b938df7072c79595e3f6) keyword.
+* [static_object](keywords/static_object/README.md) shows how to use [static_object_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gadf2fc01c525cce1b8255c8308b2fb004) keyword.
+* [static_object2](keywords/static_object2/README.md) shows how to use [static_object_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gadf2fc01c525cce1b8255c8308b2fb004) keyword.
+* [using](keywords/using/README.md) shows how to use [using_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f) keyword.
 
 ## [Math](math/README.md)
 
-* [math](math/math/README.md) uses several mathematical and trigonometric functions from the [xtd::math](../../src/xtd.core/include/xtd/math.h) class to calculate the inner angles of a trapezoid.
+* [math](math/math/README.md) uses several mathematical and trigonometric functions from the [xtd::math](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1math.html) class to calculate the inner angles of a trapezoid.
 
 ## [Media](media/README.md)
 
-* [system_sounds](media/system_sounds/README.md) shows how to use [xtd::media::system_sounds](../../src/xtd.core/include/xtd/media/system_sounds.h) and [xtd::media::system_sound](../../src/xtd.core/include/xtd/media/system_sound.h) classes.
+* [system_sounds](media/system_sounds/README.md) shows how to use [xtd::media::system_sounds](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1media_1_1system__sounds.html) and [xtd::media::system_sound](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1media_1_1system__sound.html) classes.
 
 ## [Network](network/README.md)
 
-* [dns_get_host_addresses](network/dns_get_host_addresses/README.md) shows hows how to use [xtd::net::dns](../../src/xtd.core/include/xtd/net/dns.h) class.
-* [dns_get_host_entry](network/dns_get_host_entry/README.md) shows hows how to use [xtd::net::dns](../../src/xtd.core/include/xtd/net/dns.h) class.
-* [ip_address](network/ip_address/README.md) shows hows how to use [xtd::net::dns](../../src/xtd.core/include/xtd/net/ip_address.h) class.
-* [network_stream](network/network_stream/README.md) shows hows how to use [xtd::net::sockets::network_stream](../../src/xtd.core/include/xtd/net/sockets/network_stream.h) class.
-* [socket_tcp_ip_v4](network/socket_tcp_ip_v4/README.md) shows hows how to use [xtd::net::sockets::socket](../../src/xtd.core/include/xtd/net/sockets/socket.h) class.
-* [socket_tcp_ip_v4_without_thread](network/socket_tcp_ip_v4_without_thread/README.md) shows hows how to use [xtd::net::sockets::socket](../../src/xtd.core/include/xtd/net/sockets/socket.h) class.
-* [socket_tcp_ip_v6](network/socket_tcp_ip_v6/README.md) shows hows how to use [xtd::net::sockets::socket](../../src/xtd.core/include/xtd/net/sockets/socket.h) class.
-* [socket_udp_ip_v4](network/socket_udp_ip_v4/README.md) shows hows how to use [xtd::net::sockets::socket](../../src/xtd.core/include/xtd/net/sockets/socket.h) class.
-* [socket_udp_ip_v6](network/socket_udp_ip_v6/README.md) shows hows how to use [xtd::net::sockets::socket](../../src/xtd.core/include/xtd/net/sockets/socket.h) class.
-* [tcp_client_ip_v4](network/tcp_client_ip_v4/README.md) shows hows how to use [xtd::net::sockets::tcp_client](../../src/xtd.core/include/xtd/net/sockets/tcp_client.h) class.
-* [tcp_client_ip_v6](network/tcp_client_ip_v6/README.md) shows hows how to use [xtd::net::sockets::tcp_client](../../src/xtd.core/include/xtd/net/sockets/tcp_client.h) class.
-* [udp_client_ip_v4](network/udp_client_ip_v4/README.md) shows hows how to use [xtd::net::sockets::udp_client](../../src/xtd.core/include/xtd/net/sockets/udp_client.h) class.
-* [udp_client_ip_v6](network/udp_client_ip_v6/README.md) shows hows how to use [xtd::net::sockets::udp_client](../../src/xtd.core/include/xtd/net/sockets/udp_client.h) class.
+* [dns_get_host_addresses](network/dns_get_host_addresses/README.md) shows hows how to use [xtd::net::dns](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1net_1_1dns.html) class.
+* [dns_get_host_entry](network/dns_get_host_entry/README.md) shows hows how to use [xtd::net::dns](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1net_1_1dns.html) class.
+* [ip_address](network/ip_address/README.md) shows hows how to use [xtd::net::dns](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1net_1_1dns.html) class.
+* [network_stream](network/network_stream/README.md) shows hows how to use [xtd::net::sockets::network_stream](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1net_1_1sockets_1_1network__stream.html) class.
+* [socket_tcp_ip_v4](network/socket_tcp_ip_v4/README.md) shows hows how to use [xtd::net::sockets::socket](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1net_1_1sockets_1_1socket.html) class.
+* [socket_tcp_ip_v4_without_thread](network/socket_tcp_ip_v4_without_thread/README.md) shows hows how to use [xtd::net::sockets::socket](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1net_1_1sockets_1_1socket.html) class.
+* [socket_tcp_ip_v6](network/socket_tcp_ip_v6/README.md) shows hows how to use [xtd::net::sockets::socket](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1net_1_1sockets_1_1socket.html) class.
+* [socket_udp_ip_v4](network/socket_udp_ip_v4/README.md) shows hows how to use [xtd::net::sockets::socket](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1net_1_1sockets_1_1socket.html) class.
+* [socket_udp_ip_v6](network/socket_udp_ip_v6/README.md) shows hows how to use [xtd::net::sockets::socket](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1net_1_1sockets_1_1socket.html) class.
+* [tcp_client_ip_v4](network/tcp_client_ip_v4/README.md) shows hows how to use [xtd::net::sockets::tcp_client](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1net_1_1sockets_1_1tcp__client.html) class.
+* [tcp_client_ip_v6](network/tcp_client_ip_v6/README.md) shows hows how to use [xtd::net::sockets::tcp_client](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1net_1_1sockets_1_1tcp__client.html) class.
+* [udp_client_ip_v4](network/udp_client_ip_v4/README.md) shows hows how to use [xtd::net::sockets::udp_client](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1net_1_1sockets_1_1udp__client.html) class.
+* [udp_client_ip_v6](network/udp_client_ip_v6/README.md) shows hows how to use [xtd::net::sockets::udp_client](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1net_1_1sockets_1_1udp__client.html) class.
 
 ## [Processes](processes/README.md)
 
-* [process_start_info](processes/process_start_info/README.md) shows how to use [xtd::diagnostics::process_start_info](../../src/xtd.core/include/xtd/diagnostics/process_start_info.h) class.
-* [process_with_standard_output_redirection](processes/process_with_standard_output_redirection/README.md) shows how to use [xtd::diagnostics::process](../../src/xtd.core/include/xtd/diagnostics/process.h) class with standard output redirection.
+* [process_start_info](processes/process_start_info/README.md) shows how to use [xtd::diagnostics::process_start_info](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1process__start__info.html) class.
+* [process_with_standard_output_redirection](processes/process_with_standard_output_redirection/README.md) shows how to use [xtd::diagnostics::process](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1process.html) class with standard output redirection.
 
 ## [random](random/README.md)
 
-* [random1](random/random1/README.md) shows how to use [xtd::random::next_bytes](../../src/xtd.core/include/xtd/random.h) method.
-* [random2](random/random2/README.md) shows how to use [xtd::random](../../src/xtd.core/include/xtd/random.h) class.
-* [random3](random/random3/README.md) shows how to use [xtd::random::next](../../src/xtd.core/include/xtd/random.h) method.
+* [random1](random/random1/README.md) shows how to use [xtd::random::next_bytes](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1random.html#a1075ee5aac60100ca2c6e60d2ac065d1) method.
+* [random2](random/random2/README.md) shows how to use [xtd::random](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1random.html) class.
+* [random3](random/random3/README.md) shows how to use [xtd::random::next](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1random.html#aea69230c5fe2a5ecc5026aa568dc349c) method.
 
 ## [strings](strings/README.md)
 
-* [compare](strings/compare/README.md) shows how to use [xtd::strings::compare](../../src/xtd.core/include/xtd/strings.h) method.
-* [compare_ignore_case](strings/compare_ignore_case/README.md) shows how to use [xtd::strings::compare](../../src/xtd.core/include/xtd/strings.h) method.
-* [concat](strings/concat/README.md) shows how to use [xtd::strings::concat](../../src/xtd.core/include/xtd/strings.h) method.
-* [concat_collection](strings/concat_collection/README.md) shows how to use [xtd::strings::concat](../../src/xtd.core/include/xtd/strings.h) method.
-* [contains](strings/contains/README.md) shows how to use [xtd::strings::contains](../../src/xtd.core/include/xtd/strings.h) method.
-* [join](strings/join/README.md) shows how to use [xtd::strings::join](../../src/xtd.core/include/xtd/strings.h) method.
-* [split](strings/split/README.md) shows how to use [xtd::strings::split](../../src/xtd.core/include/xtd/strings.h) method.
-* [string_format](strings/string_format/README.md) shows how to use [xtd::strings::format](../../src/xtd.core/include/xtd/strings.h) method.
-* [string_format_with_order](strings/string_format_with_order/README.md) shows how to use [xtd::strings::format](../../src/xtd.core/include/xtd/strings.h) method.
-* [string_unicode](strings/string_unicode/README.md) shows how to use [xtd::strings](../../src/xtd.core/include/xtd/strings.h) class with unicode.
+* [compare](strings/compare/README.md) shows how to use [xtd::ustring::compare](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html#a1e328e81c381bd2cef918f91fd107933) method.
+* [compare_ignore_case](strings/compare_ignore_case/README.md) shows how to use [xtd::ustring::compare](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html#a1e328e81c381bd2cef918f91fd107933) method.
+* [concat](strings/concat/README.md) shows how to use [xtd::ustring::concat](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html#a9d492d6b9ce2f2e38661a5062009a32f) method.
+* [concat_collection](strings/concat_collection/README.md) shows how to use [xtd::ustring::concat](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html#a9d492d6b9ce2f2e38661a5062009a32f) method.
+* [contains](strings/contains/README.md) shows how to use [xtd::ustring::contains](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html#aea0e43190da2d939a59a911e46302af1) method.
+* [join](strings/join/README.md) shows how to use [xtd::ustring::join](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html#a95694998a854ba65dde682b879eec355) method.
+* [split](strings/split/README.md) shows how to use [xtd::ustring::split](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html#a96a729c2b591760cb0971d43418b3804) method.
+* [string_format](strings/string_format/README.md) shows how to use [xtd::ustring::format](https://codedocs.xyz/gammasoft71/xtd/group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd) method.
+* [string_format_with_order](strings/string_format_with_order/README.md) shows how to use [xtd::ustring::format](https://codedocs.xyz/gammasoft71/xtd/group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd) method.
+* [string_unicode](strings/string_unicode/README.md) shows how to use [xtd::string](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html) class with unicode.
 
 ## [Threading](threading/README.md)
 
-* [interlocked](threading/interlocked/README.md) shows hows how to use [xtd::threading::interlocked](../../src/xtd.core/include/xtd/threading/interlocked.h) class.
-* [interlocked_decrement](threading/interlocked_decrement/README.md) shows hows how to use [xtd::network::interlocked::decrement](../../src/xtd.core/include/xtd/threading/interlocked.h) and [xtd::network::interlocked::increment](../../src/xtd.core/include/xtd/threading/interlocked.h) methods.
+* [interlocked](threading/interlocked/README.md) shows hows how to use [xtd::threading::interlocked](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1threading_1_1interlocked.html) class.
+* [interlocked_decrement](threading/interlocked_decrement/README.md) shows hows how to use [xtd::threading::interlocked::decrement](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1threading_1_1interlocked.html#a4f4545f0c5952db7df8ff6fc4aa41067) and [xtd::threading::interlocked::increment](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1threading_1_1interlocked.html#acf60d0d23279ede3b23ddee39265aadd) methods.
 
 ## [Uri](uri/README.md)
 
-* [uri](uri/uri/uri/README.md) demonstrates the [xtd::uri](../../src/xtd.core/include/xtd/uri.h) various properties.
+* [uri](uri/uri/uri/README.md) demonstrates the [xtd::uri](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1uri.html) various properties.
 
 ## [Version](version/README.md)
 
-* [version](version/version/version/README.md) demonstrates the [xtd::version](../../src/xtd.core/include/xtd/version.h) constructor, and major, minor, build, revision, major_revision, and minor_revision properties.
-* [version_os](version/version_os/README.md) shows how to use [xtd::version](../..src/xtd.core/include/xtd/version.h) to get the Operating System version.
+* [version](version/version/version/README.md) demonstrates the [xtd::version](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1version.html) constructor, and major, minor, build, revision, major_revision, and minor_revision properties.
+* [version_os](version/version_os/README.md) shows how to use [xtd::version](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1version.html) to get the Operating System version.
 
 ## [Web](web/README.md)
 
-* [css_reader](web/css_reader/README.md) shows how to use [xtd::web/css/reader](../../src/xtd.core/include/xtd/html/css/reader.h) class.
-* [css_writer](web/css_writer/README.md) shows how to use [xtd::web/css/writer](../../src/xtd.core/include/xtd/html/css/writer.h) class.
+* [css_reader](web/css_reader/README.md) shows how to use [xtd::web::css::reader](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1web_1_1css_1_1css__reader.html) class.
+* [css_writer](web/css_writer/README.md) shows how to use [xtd::web::css::writer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1web_1_1css_1_1css__writer.html) class.
 
 ## [Others](others/README.md)
 
-* [bit_converter](others/bit_converter/README.md) shows hows how to use [xtd::bit_converter](../../src/xtd.core/include/xtd/bit_converter.h) class.
-* [console_background_color2](others/console_background_color2/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/console.h) method.
-* [console_background_color3](others/console_background_color3/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/console.h) method.
-* [console_beep2](others/console_beep2/README.md) shows how to use [xtd::console::beep](../../src/xtd.core/include/xtd/console.h) method.
-* [console_beep3](others/console_beep3/README.md) shows how to use [xtd::console::beep](../../src/xtd.core/include/xtd/console.h) method.
-* [console_color2](others/console_color2/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/console.h) and [xtd::console::foreground_color](../../src/xtd.core/include/xtd/console.h) methods.
-* [console_color3](others/console_color3/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/console.h) and [xtd::console::foreground_color](../../src/xtd.core/include/xtd/console.h) methods.
-* [console_color4](others/console_color4/README.md) shows how to use [xtd::console::background_color](../../src/xtd.core/include/xtd/console.h) and [xtd::console::foreground_color](../../src/xtd.core/include/xtd/console.h) methods.
-* [console_read_line](others/console_read_line/README.md) shows how to use [xtd::console::in](../../src/xtd.core/include/xtd/console.h) stream.
-* [console_song2](others/console_song2/README.md) shows how to use [xtd::beep](../../src/xtd.core/include/xtd/beep.h) class.
-* [console_song3](others/console_song3/README.md) shows how to use [xtd::beep](../../src/xtd.core/include/xtd/beep.h) class.
-* [fibonacci_series](others/fibonacci_series/README.md) shows how to use [xtd::console](../../src/xtd.core/include/xtd/console.h) and [xtd::ustring](../../../src/xtd.core/include/xtd/ustring.h) classes.
+* [bit_converter](others/bit_converter/README.md) shows hows how to use [xtd::bit_converter](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1bit__converter.html) class.
+* [console_background_color2](others/console_background_color2/README.md) shows how to use [xtd::console::background_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1background__color.html) method.
+* [console_background_color3](others/console_background_color3/README.md) shows how to use [xtd::console::background_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1background__color.html) method.
+* [console_beep2](others/console_beep2/README.md) shows how to use [xtd::console::beep](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#aab2e161c3a72cb14f808ed40e2b59ef2) method.
+* [console_beep3](others/console_beep3/README.md) shows how to use [xtd::console::beep](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#aab2e161c3a72cb14f808ed40e2b59ef2) method.
+* [console_color2](others/console_color2/README.md) shows how to use [xtd::console::background_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1background__color.html) and [xtd::console::foreground_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1foreground__color.html) methods.
+* [console_color3](others/console_color3/README.md) shows how to use [xtd::console::background_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1background__color.html) and [xtd::console::foreground_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1foreground__color.html) methods.
+* [console_color4](others/console_color4/README.md) shows how to use [xtd::console::background_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1background__color.html) and [xtd::console::foreground_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1foreground__color.html) methods.
+* [console_read_line](others/console_read_line/README.md) shows how to use [xtd::console::in](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#a7c103233b3e74cb63538b48616b7fd02) stream.
+* [console_song2](others/console_song2/README.md) shows how to use [xtd::beep](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1beep.html) class.
+* [console_song3](others/console_song3/README.md) shows how to use [xtd::beep](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1beep.html) class.
+* [fibonacci_series](others/fibonacci_series/README.md) shows how to use [xtd::console](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html) and [xtd::ustring](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html) classes.
 * [hello_world_console2](others/hello_world_console2/README.md) The same classic first application "Hello World" on the standard output stream with another style.
 * [hello_world_console3](others/hello_world_console3/README.md) The same classic first application "Hello World" on the standard output stream with another style.
 * [hello_world_diagnostics2](others/hello_world_diagnostics2/README.md) The same classic first application "Hello World" on the debug output stream with another style.
 * [hello_world_environment2](others/hello_world_environment2/README.md) The same classic first application "Hello World" environment with another style.
-* [wconsole2](others/wconsole2/README.md) shows how to use [xtd::wconsole](../../src/xtd.core/include/xtd/console.h) class.
+* [wconsole2](others/wconsole2/README.md) shows how to use [xtd::wconsole](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html) class.

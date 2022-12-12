@@ -54,10 +54,10 @@ namespace std {
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
-  using byte_t = uint_fast8_t;
+  using byte_t = uint_least8_t;
   using char_t = char;
   using decimal_t = long double;
-  using sbyte_t = int_fast8_t;
+  using sbyte_t = int_least8_t;
   using single_t = float;
   using uchar_t = unsigned char;
   using ushort_t = unsigned short;
@@ -79,7 +79,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using byte = uint_fast8_t;
+  using byte = uint_least8_t;
   
   /// @brief Represents a 16-bit unicode character.
   /// @par Namespace
@@ -127,7 +127,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using int16 = int_fast16_t;
+  using int16 = int_least16_t;
   
   /// @brief Represents a 32-bit signed integer.
   /// @par Namespace
@@ -135,7 +135,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using int32 = int_fast32_t;
+  using int32 = int_least32_t;
   
   /// @brief Represents a 64-bit signed integer.
   /// @par Namespace
@@ -143,7 +143,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using int64 = int_fast64_t;
+  using int64 = int_least64_t;
   
   /// @brief Represent a pointer or a handle.
   /// @ingroup xtd_core types
@@ -169,7 +169,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using sbyte = int_fast8_t;
+  using sbyte = int_least8_t;
   
   /// @brief Stores information about a type.
   /// @par Namespace
@@ -201,7 +201,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using uint16 = uint_fast16_t;
+  using uint16 = uint_least16_t;
   
   /// @brief Represents a 32-bit unsigned integer.
   /// @par Namespace
@@ -209,7 +209,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using uint32 = uint_fast32_t;
+  using uint32 = uint_least32_t;
   
   /// @brief Represents a 64-bit unsigned integer.
   /// @par Namespace
@@ -217,7 +217,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using uint64 = uint_fast64_t;
+  using uint64 = uint_least64_t;
   
   /// @brief Represent a pointer or a handle.
   /// @par Namespace

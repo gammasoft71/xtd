@@ -1,6 +1,6 @@
 # binary_reader
 
-Show how to use [xtd::io::binary_reader](../../../../src/xtd.core/include/xtd/io/binary_reader.h) class.
+Show how to use [xtd::io::binary_reader](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1binary__reader.html) class.
 
 ## Sources
 

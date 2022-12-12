@@ -1,6 +1,6 @@
 # fibonacci_series
 
-Shows how to use [xtd::console](../../../../src/xtd.core/include/xtd/console.h), [xtd::ustring](../../../../src/xtd.core/include/xtd/ustring.h) classes.
+Shows how to use [xtd::console](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html), [xtd::ustring](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html) classes.
 
 ## Sources
 

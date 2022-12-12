@@ -1,6 +1,6 @@
 # assert
 
-Shows how to use [assert_](../../../../src/xtd.core/include/xtd/diagnostics::debug.h) macro.
+Shows how to use [assert_](https://codedocs.xyz/gammasoft71/xtd/group__debug.html#gad1e9d87aeb065b1eec47e92a49fd01e9) macro.
 
 ## Sources
 
