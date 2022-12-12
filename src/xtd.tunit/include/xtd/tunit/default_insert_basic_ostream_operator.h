@@ -664,13 +664,13 @@ inline std::string __tunit_to_string(const std::wstring& value) {
 
 inline std::string __tunit_to_string(const void* value) {
   std::stringstream ss;
-  ss << "\"" << reinterpret_cast<intptr_t>(value) << "\"";
+  ss << "\"" << reinterpret_cast<xtd::intptr>(value) << "\"";
   return ss.str();
 }
 
 inline std::string __tunit_to_string(void* value) {
   std::stringstream ss;
-  ss << "\"" << reinterpret_cast<intptr_t>(value) << "\"";
+  ss << "\"" << reinterpret_cast<xtd::intptr>(value) << "\"";
   return ss.str();
 }
 

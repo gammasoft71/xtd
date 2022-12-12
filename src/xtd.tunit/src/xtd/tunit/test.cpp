@@ -2,12 +2,13 @@
 #include "../../../include/xtd/tunit/unit_test.h"
 #include <exception>
 
+using namespace xtd;
 using namespace xtd::tunit;
 
 test* test::current_test_ = nullptr;
 const test_class* test::current_test_class_ = nullptr;
 const unit_test* test::current_unit_test_ = nullptr;
-intptr_t test::__internal_tunit_unit_tests_mode__ = reinterpret_cast<intptr_t>("");
+intptr test::__internal_tunit_unit_tests_mode__ = reinterpret_cast<intptr>("");
 
 void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_class) {
   current_test_ = this;

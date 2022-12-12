@@ -69,7 +69,7 @@ namespace xtd {
       }
       
       /// @cond
-      static intptr_t __internal_tunit_unit_tests_mode__;
+      static intptr __internal_tunit_unit_tests_mode__;
       /// @endcond
       
     private:
