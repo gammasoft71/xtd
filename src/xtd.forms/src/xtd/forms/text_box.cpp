@@ -233,8 +233,8 @@ void text_box::wm_set_text(message& message) {
     on_text_changed(event_args::empty);
   else {
     def_wnd_proc(message);
-    if (control::text() != convert_string::to_string(reinterpret_cast<const wchar_t*>(message.lparam()))) {
-      set_text(convert_string::to_string(reinterpret_cast<const wchar_t*>(message.lparam())));
+    if (control::text() != convert_string::to_string(reinterpret_cast<const wchar*>(message.lparam()))) {
+      set_text(convert_string::to_string(reinterpret_cast<const wchar*>(message.lparam())));
       on_text_changed(event_args::empty);
     }
   }

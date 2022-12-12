@@ -29,7 +29,7 @@ namespace {
   }
   
   INT CALLBACK OnBrowserCalllback(HWND hwnd, UINT message, LPARAM lParam, LPARAM data) {
-    if (message == BFFM_INITIALIZED && !wstring(reinterpret_cast<wchar_t*>(data)).empty())
+    if (message == BFFM_INITIALIZED && !wstring(reinterpret_cast<wchar*>(data)).empty())
       SendMessage(hwnd, BFFM_SETSELECTION, 1, data);
     return 0;
   }
@@ -52,7 +52,7 @@ bool folder_browser_dialog::run_dialog(intptr hwnd, const ustring& description, 
   
   PCIDLIST_ABSOLUTE result = SHBrowseForFolder(&browserInfo);
   if (result) {
-    wchar_t path[MAX_PATH];
+    wchar path[MAX_PATH];
     SHGetPathFromIDList(result, path);
     selected_path = wxString(path).ToUTF8().data();
     return true;
