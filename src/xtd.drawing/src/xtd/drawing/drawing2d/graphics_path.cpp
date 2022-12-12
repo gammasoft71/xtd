@@ -28,7 +28,7 @@ graphics_path::~graphics_path() {
   }
 }
 
-intptr_t graphics_path::handle() const noexcept {
+intptr graphics_path::handle() const noexcept {
   return data_->handle;
 }
 

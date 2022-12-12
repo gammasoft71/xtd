@@ -1957,4 +1957,4 @@ constexpr uint32_t CPN_SELCHANGE = 1;
 
 constexpr uint32_t FPN_SELCHANGE = 1;
 
-intptr_t send_message(intptr_t hwnd, xtd::int32 msg, intptr_t wparam, intptr_t lparam);
+xtd::intptr send_message(xtd::intptr hwnd, xtd::int32 msg, xtd::intptr wparam, xtd::intptr lparam);

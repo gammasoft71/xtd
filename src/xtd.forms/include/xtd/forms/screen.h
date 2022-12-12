@@ -102,7 +102,7 @@ namespace xtd {
       /// @brief Retrieves a screen for the display that contains the largest portion of the object referred to by the specified handle.
       /// @param handle The window handle for which to retrieve the screen.
       /// @return A screen for the display that contains the largest region of the object. In multiple display environments where no display contains any portion of the specified handle, the display closest to the object is returned.
-      static screen from_handle(intptr_t handle);
+      static screen from_handle(intptr handle);
       
       /// @brief Retrieves a screen for the display that contains the specified point.
       /// @param point A xtd::drawing::point that specifies the location for which to retrieve a screen.
@@ -122,7 +122,7 @@ namespace xtd {
       /// @brief Retrieves the bounds of the display that contains the largest portion of the specified handle.
       /// @param handle The window handle for which to retrieve the display bounds.
       /// @return A xtd::drawing::rectangle that specifies the bounds of the display that contains the specified handle. In multiple display environments where no display contains the specified handle, the display closest to the object is returned.
-      static drawing::rectangle get_bounds(intptr_t handle);
+      static drawing::rectangle get_bounds(intptr handle);
       
       /// @brief Retrieves the bounds of the display that contains the specified point.
       /// @param point A xtd::drawing::point that specifies the coordinates for which to retrieve the display bounds.
@@ -153,7 +153,7 @@ namespace xtd {
       /// @brief Retrieves the working area for the display that contains the largest region of the specified handle. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.
       /// @param handle The window handle for which to retrieve the working area.
       /// @return A xtd::drawing::rectangle that specifies the working area. In multiple display environments where no display contains the specified handle, the display closest to the object is returned.
-      static drawing::rectangle get_working_area(intptr_t handle);
+      static drawing::rectangle get_working_area(intptr handle);
       
       /// @brief Retrieves the working area closest to the specified point. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.
       /// @param point A xtd::drawing::point that specifies the coordinates for which to retrieve the working area.

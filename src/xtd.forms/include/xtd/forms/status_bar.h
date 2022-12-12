@@ -200,7 +200,7 @@ namespace xtd {
       void on_item_removed(size_t pos, status_bar_panel_ref item);
       
       void resize_spring_panels();
-      void update_status_bar_panel_control(intptr_t handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, xtd::forms::horizontal_alignment alignment, xtd::forms::status_bar_panel_auto_size auto_size, xtd::forms::status_bar_panel_border_style border_style, xtd::forms::status_bar_panel_style panel_style, int32 min_width, int32 width);
+      void update_status_bar_panel_control(intptr handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, xtd::forms::horizontal_alignment alignment, xtd::forms::status_bar_panel_auto_size auto_size, xtd::forms::status_bar_panel_border_style border_style, xtd::forms::status_bar_panel_style panel_style, int32 min_width, int32 width);
       
       struct data {
         status_bar_panel_collection panels;
@@ -213,7 +213,7 @@ namespace xtd {
         std::shared_ptr<class sizing_grip_control> sizing_grip_control;
         std::vector<std::shared_ptr<xtd::forms::status_bar::status_bar_panel_control>> spring_panels;
         std::vector<std::shared_ptr<xtd::forms::status_bar::status_bar_panel_control>> status_bar_panels;
-        std::vector<intptr_t> system_status_bar_panel_handles;
+        std::vector<intptr> system_status_bar_panel_handles;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

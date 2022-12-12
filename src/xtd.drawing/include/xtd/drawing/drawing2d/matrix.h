@@ -111,8 +111,8 @@ namespace xtd {
         std::vector<float> elements() const;
         
         /// @brief Gets the handle of the matrix.
-        /// @return An intptr_t that contains the handle of the matrix.
-        intptr_t handle() const noexcept;
+        /// @return An intptr that contains the handle of the matrix.
+        intptr handle() const noexcept;
         
         /// @brief Gets a value indicating whether this xtd::drawing::drawing2d::matrix is the identity matrix.
         /// @return This property is true if this xtd::drawing::drawing2d::matrix is identity; otherwise, false.
@@ -225,9 +225,9 @@ namespace xtd {
       private:
         void init_from_rect_3points(const xtd::drawing::rectangle_f& rect, const xtd::drawing::point_f pt1, const xtd::drawing::point_f pt2, const xtd::drawing::point_f pt3);
         friend class xtd::drawing::graphics;
-        matrix(intptr_t handle);
+        matrix(intptr handle);
         struct data {
-          intptr_t handle = 0;
+          intptr handle = 0;
         };
         std::shared_ptr<data> data_ = std::make_shared<data>();
       };

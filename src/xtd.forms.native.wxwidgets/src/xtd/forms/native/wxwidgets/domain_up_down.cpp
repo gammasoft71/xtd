@@ -10,7 +10,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-void domain_up_down::begin_update(intptr_t control) {
+void domain_up_down::begin_update(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -19,7 +19,7 @@ void domain_up_down::begin_update(intptr_t control) {
   reinterpret_cast<control_handler*>(control)->control()->Freeze();
 }
 
-void domain_up_down::delete_item(intptr_t control, size_t index) {
+void domain_up_down::delete_item(intptr control, size_t index) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -29,7 +29,7 @@ void domain_up_down::delete_item(intptr_t control, size_t index) {
   static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->updateSpin();
 }
 
-void domain_up_down::end_update(intptr_t control) {
+void domain_up_down::end_update(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -38,7 +38,7 @@ void domain_up_down::end_update(intptr_t control) {
   reinterpret_cast<control_handler*>(control)->control()->Thaw();
 }
 
-void domain_up_down::insert_item(intptr_t control, size_t index, const ustring& value) {
+void domain_up_down::insert_item(intptr control, size_t index, const ustring& value) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -48,7 +48,7 @@ void domain_up_down::insert_item(intptr_t control, size_t index, const ustring& 
   static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->updateSpin();
 }
 
-size_t domain_up_down::selected_index(intptr_t control) {
+size_t domain_up_down::selected_index(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -57,7 +57,7 @@ size_t domain_up_down::selected_index(intptr_t control) {
   return static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetSelectedIndex();
 }
 
-void domain_up_down::selected_index(intptr_t control, size_t index) {
+void domain_up_down::selected_index(intptr control, size_t index) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -66,7 +66,7 @@ void domain_up_down::selected_index(intptr_t control, size_t index) {
   return static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetSelectedIndex(index);
 }
 
-void domain_up_down::update_item(intptr_t control, size_t index, const ustring& value) {
+void domain_up_down::update_item(intptr control, size_t index, const ustring& value) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

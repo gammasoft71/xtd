@@ -28,7 +28,7 @@ matrix::matrix(const rectangle_f& rect, const vector<point_f>& plgpts) {
   init_from_rect_3points(rect, plgpts[0], plgpts[1], plgpts[2]);
 }
 
-matrix::matrix(intptr_t handle) {
+matrix::matrix(intptr handle) {
   data_->handle = handle;
 }
 
@@ -43,7 +43,7 @@ std::vector<float> matrix::elements() const {
   return native::matrix::elenents(handle());
 }
 
-intptr_t matrix::handle() const noexcept {
+intptr matrix::handle() const noexcept {
   return data_->handle;
 }
 

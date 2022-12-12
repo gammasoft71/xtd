@@ -2,6 +2,8 @@
 #include <AppKit/AppKit.h>
 #include <xtd/types.h>
 
+using namespace xtd;
+
 namespace {
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
@@ -42,27 +44,27 @@ namespace {
   }
 }
 
-intptr_t __xtd__macos_system_colors_accent_control__() {
+intptr __xtd__macos_system_colors_accent_control__() {
   effective_appearance_setter helper;
   return to_argb([NSColor controlAccentColor]);
 }
 
-intptr_t __xtd__macos_system_colors_accent_text__() {
+intptr __xtd__macos_system_colors_accent_text__() {
   effective_appearance_setter helper;
   return to_argb(255, 255, 255);
 }
 
-intptr_t __xtd__macos_system_colors_active_border__() {
+intptr __xtd__macos_system_colors_active_border__() {
   effective_appearance_setter helper;
   return to_argb([[NSColor highlightColor] colorUsingColorSpace:[NSColorSpace deviceRGBColorSpace]]);
 }
 
-intptr_t __xtd__macos_system_colors_active_caption__() {
+intptr __xtd__macos_system_colors_active_caption__() {
   effective_appearance_setter helper;
   return to_argb([[NSColor highlightColor] colorUsingColorSpace:[NSColorSpace deviceRGBColorSpace]]);
 }
 
-intptr_t __xtd__macos_system_colors_button_face__() {
+intptr __xtd__macos_system_colors_button_face__() {
   effective_appearance_setter helper;
   uint32_t argb = to_argb(NSColor.controlColor);
   if (argb != 0xFFFFFFFF) {
@@ -73,22 +75,22 @@ intptr_t __xtd__macos_system_colors_button_face__() {
   
 }
 
-intptr_t __xtd__macos_system_colors_button_text__() {
+intptr __xtd__macos_system_colors_button_text__() {
   effective_appearance_setter helper;
   return to_argb([NSColor controlTextColor]);
 }
 
-intptr_t __xtd__macos_system_colors_control__() {
+intptr __xtd__macos_system_colors_control__() {
   effective_appearance_setter helper;
   return to_argb([NSColor windowBackgroundColor]);
 }
 
-intptr_t __xtd__macos_system_colors_control_text__() {
+intptr __xtd__macos_system_colors_control_text__() {
   effective_appearance_setter helper;
   return to_argb([NSColor controlTextColor]);
 }
 
-intptr_t __xtd__macos_system_colors_text_box__() {
+intptr __xtd__macos_system_colors_text_box__() {
   effective_appearance_setter helper;
   uint32_t argb = to_argb([NSColor controlColor]);
   if (argb != 0xFFFFFFFF) {
@@ -98,7 +100,7 @@ intptr_t __xtd__macos_system_colors_text_box__() {
   return argb;
 }
 
-intptr_t __xtd__macos_system_colors_text_box_text__() {
+intptr __xtd__macos_system_colors_text_box_text__() {
   effective_appearance_setter helper;
   return to_argb([NSColor textColor]);
 }

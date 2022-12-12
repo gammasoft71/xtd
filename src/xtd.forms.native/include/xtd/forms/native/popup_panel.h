@@ -41,19 +41,19 @@ namespace xtd {
         /// @param control Control popup panel handle.
         /// @param value If true, the popup panel does not close automatically when the user clicks outside the popup panel; otherwise the popup panel will close automatically.
         /// @warning Internal use only
-        static void ignore_mouse_messages(intptr_t control, bool value);
+        static void ignore_mouse_messages(intptr control, bool value);
         
         /// @brief Sets the shape of the popup panel to that depicted by region.
         /// @param control Control popup panel handle.
         /// @param region The region to set shape;
         /// @warning Internal use only
-        static void set_region(intptr_t control, intptr_t region);
+        static void set_region(intptr control, intptr region);
         
         /// @brief Sets virtual size
         /// @param control Control popup panel handle.
         /// @param size A virtual xtd::drawing::size.
         /// @warning Internal use only
-        static void virtual_size(intptr_t control, const drawing::size& size);
+        static void virtual_size(intptr control, const drawing::size& size);
         /// @}
       };
     }

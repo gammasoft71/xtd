@@ -130,7 +130,7 @@ namespace xtd {
       
     private:
       struct data {
-        intptr_t handle_ = 0;
+        intptr handle_ = 0;
         xtd::ustring name_;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();

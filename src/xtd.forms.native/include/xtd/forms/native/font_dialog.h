@@ -49,7 +49,7 @@ namespace xtd {
         /// @return true if the user clicks OK in the dialog box; otherwise, false.
         /// @remarks If result is true, the font parameter contains the new font, and the color parameter contains the now color.
         /// @warning Internal use only
-        static bool run_dialog(intptr_t hwnd, drawing::font& font, drawing::color& color, size_t options, size_t min_size, size_t max_size, bool show_color);
+        static bool run_dialog(intptr hwnd, drawing::font& font, drawing::color& color, size_t options, size_t min_size, size_t max_size, bool show_color);
         /// @brief Shows async dialog as sheet.
         /// @param hwnd Parent window handle.
         /// @param font The selected font.
@@ -60,7 +60,7 @@ namespace xtd {
         /// @return true if the user clicks OK in the dialog box; otherwise, false.
         /// @remarks When dialog closed and if result is true, the font parameter contains the new font, and the color parameter contains the now color.
         /// @warning Internal use only
-        static void run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, drawing::font& font, drawing::color& color, size_t options, size_t min_size, size_t max_size, bool show_color);
+        static void run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr hwnd, drawing::font& font, drawing::color& color, size_t options, size_t min_size, size_t max_size, bool show_color);
         /// @}
       };
     }

@@ -40,89 +40,89 @@ namespace xtd {
         /// @brief Activates the form and gives it focus.
         /// @param control Control window handle.
         /// @warning Internal use only
-        static void activate(intptr_t control);
+        static void activate(intptr control);
         /// @brief Closes the form.
         /// @param control Control window handle.
         /// @warning Internal use only
-        static void close(intptr_t control);
+        static void close(intptr control);
         /// @brief Force end dialog with specified result
         /// @param control Control window handle.
         /// @param result A dialog box id.
         /// @warning Internal use only
-        static void end_dialog(intptr_t control, int32 result);
+        static void end_dialog(intptr control, int32 result);
         /// @brief Gets a value indicates whether full screen window.
         /// @param control Control window handle.
         /// @return true if form is full screen; otherwise false.
         /// @warning Internal use only
-        static bool full_screen(intptr_t control);
+        static bool full_screen(intptr control);
         /// @brief Sets a value indicates whether full screen window.
         /// @param control Control window handle.
         /// @param full_screen true if form is full screen; otherwise false.
         /// @warning Internal use only
-        static void full_screen(intptr_t control, bool full_screen);
+        static void full_screen(intptr control, bool full_screen);
         /// @brief Sets the icon for the form.
         /// @param control Control window handle.
         /// @param icon An icon that represents the icon for the form.
         /// @warning Internal use only
-        static void icon(intptr_t control, const xtd::drawing::icon& icon);
+        static void icon(intptr control, const xtd::drawing::icon& icon);
         /// @brief Gets a value indicate whether maximized windows.
         /// @param control Control window handle.
         /// @return true if form is full screen; otherwise false.
         /// @warning Internal use only
-        static bool maximize(intptr_t control);
+        static bool maximize(intptr control);
         /// @brief Sets a value indicate whether maximized windows.
         /// @param control Control window handle.
         /// @param maximize true if form is maximized; otherwise false.
         /// @warning Internal use only
-        static void maximize(intptr_t control, bool maximize);
+        static void maximize(intptr control, bool maximize);
         /// @brief Gets a value indicate whether minimized windows.
         /// @param control Control window handle.
         /// @return true if form is full screen; otherwise false.
         /// @warning Internal use only
-        static bool minimize(intptr_t control);
+        static bool minimize(intptr control);
         /// @brief Sets a value indicate whether minimized windows.
         /// @param control Control window handle.
         /// @param minimize true if form is full screen; otherwise false.
         /// @warning Internal use only
-        static void minimize(intptr_t control, bool minimize);
+        static void minimize(intptr control, bool minimize);
         /// @brief Sets the main_menu that is displayed in the form.
         /// @param control Control window handle.
         /// @param menu A menu handle that represents the menu to display in the form.
         /// @warning Internal use only
-        static void menu(intptr_t control, intptr_t menu);
+        static void menu(intptr control, intptr menu);
         /// @brief Sets form opacity.
         /// @param control Control window handle.
         /// @param opacity A double-precision value between 0.0 and 1.0 that represent the form opacity.
         /// @warning Internal use only
-        static void opacity(intptr_t control, double opacity);
+        static void opacity(intptr control, double opacity);
         /// @brief Restore form in normal state (not minimized, not maximized and not full screen).
         /// @param control Control window handle.
         /// @warning Internal use only
-        static void restore(intptr_t control);
+        static void restore(intptr control);
         
         /// @brief Sets the shape of the window to that depicted by region.
         /// @param control Control window handle.
         /// @param region The region to set shape;
         /// @warning Internal use only
-        static void set_region(intptr_t control, intptr_t region);
+        static void set_region(intptr control, intptr region);
         
         /// @brief Show dialog.
         /// @param control Control window handle.
         /// @warning Internal use only
-        static int32 show_dialog(intptr_t control);
+        static int32 show_dialog(intptr control);
         /// @brief Show async dialog as sheet.
         /// @param control Control window handle.
         /// @warning Internal use only
-        static void show_sheet(intptr_t control);
+        static void show_sheet(intptr control);
         /// @brief Show dialog as sheet.
         /// @param control Control window handle.
         /// @warning Internal use only
-        static int32 show_sheet_dialog(intptr_t control);
+        static int32 show_sheet_dialog(intptr control);
         /// @brief Sets virtual size
         /// @param control Control window handle.
         /// @param size A virtual xtd::drawing::size.
         /// @warning Internal use only
-        static void virtual_size(intptr_t control, const drawing::size& size);
+        static void virtual_size(intptr control, const drawing::size& size);
         /// @}
       };
     }

@@ -44,28 +44,28 @@ namespace xtd {
         /// @param control Tab control window handle.
         /// @param page The page handle to delete.
         /// @warning Internal use only
-        static void delete_page(intptr_t control, intptr_t page);
+        static void delete_page(intptr control, intptr page);
         /// @brief Sets image list.
         /// @param control Tab control window handle.
         /// @param image_list The image list handle.
         /// @warning Internal use only
-        static void image_list(intptr_t control, intptr_t image_list);
+        static void image_list(intptr control, intptr image_list);
         /// @brief Inserts at specified tab page index a specified tab page handle.
         /// @param control Tab control window handle.
         /// @param index The tab page index to insert.
         /// @param page The tab page handle.
         /// @warning Internal use only
-        static void insert_page(intptr_t control, size_t index, intptr_t page);
+        static void insert_page(intptr control, size_t index, intptr page);
         /// @brief Gets selected tab page index.
         /// @param control Tab control window handle.
         /// @return The selected tab page index.
         /// @warning Internal use only
-        static size_t selected_index(intptr_t control);
+        static size_t selected_index(intptr control);
         /// @brief Sets selected tab page with specified index
         /// @param control Tab control window handle.
         /// @param index The selected tab page index.
         /// @warning Internal use only
-        static void selected_index(intptr_t control, size_t index);
+        static void selected_index(intptr control, size_t index);
         /// @}
       };
     }

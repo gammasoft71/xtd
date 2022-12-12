@@ -41,43 +41,43 @@ namespace xtd {
         /// @brief Maintains performance while items are added to the list_box one at a time by preventing the control from drawing until the end_update() method is called.
         /// @param control List box window handle.
         /// @warning Internal use only
-        static void begin_update(intptr_t control);
+        static void begin_update(intptr control);
         /// @brief Deletes specified item index.
         /// @param control List box window handle.
         /// @param index The item index to delete.
         /// @warning Internal use only
-        static void delete_item(intptr_t control, size_t index);
+        static void delete_item(intptr control, size_t index);
         /// @brief Resumes painting the list_box control after painting is suspended by the begin_update method.
         /// @param control List box window handle.
         /// @warning Internal use only
-        static void end_update(intptr_t control);
+        static void end_update(intptr control);
         /// @brief Inserts at specified item index a specified value.
         /// @param control List box window handle.
         /// @param index The item index to insert.
         /// @param value The text value.
         /// @warning Internal use only
-        static void insert_item(intptr_t control, size_t index, const xtd::ustring& value);
+        static void insert_item(intptr control, size_t index, const xtd::ustring& value);
         /// @brief Gets selected item index.
         /// @param control List box window handle.
         /// @return The selected item index.
         /// @warning Internal use only
-        static size_t selected_index(intptr_t control);
+        static size_t selected_index(intptr control);
         /// @brief Sets selected item with specified index
         /// @param control List box window handle.
         /// @param index The selected item index.
         /// @warning Internal use only
-        static void selected_index(intptr_t control, size_t index);
+        static void selected_index(intptr control, size_t index);
         /// @brief Gets a size_t array of selected indices.
         /// @param control List box window handle.
         /// @return A size_t array of selected indices.
         /// @warning Internal use only
-        static std::vector<size_t> selected_indices(intptr_t control);
+        static std::vector<size_t> selected_indices(intptr control);
         /// @brief Updates a specified item index with specified value.
         /// @param control List box window handle.
         /// @param index The item index to update.
         /// @param value The text value.
         /// @warning Internal use only
-        static void update_item(intptr_t control, size_t index, const xtd::ustring& value);
+        static void update_item(intptr control, size_t index, const xtd::ustring& value);
         /// @}
       };
     }

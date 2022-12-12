@@ -125,7 +125,7 @@ protected:
   void on_click(const xtd::event_args& e) override {
     button::on_click(e);
     if (data_->style == tool_bar_button_style::drop_down_button && drop_down_rectangle().contains(point_to_client(mouse_position()))) {
-      as<tool_bar>(parent().value().get()).on_button_drop_down(xtd::forms::tool_bar_button_click_event_args(data_->tool_bar_button.value().get(), reinterpret_cast<intptr_t>(this)));
+      as<tool_bar>(parent().value().get()).on_button_drop_down(xtd::forms::tool_bar_button_click_event_args(data_->tool_bar_button.value().get(), reinterpret_cast<intptr>(this)));
       data_->mouse_on_drop_down_menu = false;
       data_->mouse_down_on_drop_down_menu = false;
       invalidate();

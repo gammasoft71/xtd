@@ -214,8 +214,8 @@ namespace xtd {
       bool gdi_vertical_font() const noexcept;
       
       /// @brief Gets the window handle that the font is bound to.
-      /// @return An intptr_t that contains the window handle (hfont) of the font.
-      intptr_t handle() const noexcept;
+      /// @return An intptr that contains the window handle (hfont) of the font.
+      intptr handle() const noexcept;
       
       /// @brief Gets the line spacing of this font.
       /// @return The line spacing, in pixels, of this font.
@@ -275,12 +275,12 @@ namespace xtd {
       /// @brief Creates a font from the specified Windows handle to a device context.
       /// @param hdc A handle to a device context.
       /// @return The font this method creates.
-      static font from_hdc(const intptr_t hdc);
+      static font from_hdc(const intptr hdc);
       
       /// @brief Creates a font from the specified Windows handle.
       /// @param hfont A Windows handle to a GDI font.
       /// @return The font this method creates.
-      static font from_hfont(const intptr_t hfont);
+      static font from_hfont(const intptr hfont);
       
       /// @brief Returns the line spacing, in pixels, of this font.
       /// @return The line spacing, in pixels, of this font.
@@ -304,7 +304,7 @@ namespace xtd {
       /// @return Returns a handle to this xtd::drawing::font.
       /// @return A Windows handle to this xtd::drawing::font.
       /// @remarks When using this method, you must dispose of the resulting Hfont using the GDI DeleteObject method to ensure the resources are released.
-      intptr_t to_hfont() const;
+      intptr to_hfont() const;
       
       /// @brief Converts this font_family to a human-readable string representation.
       /// @return The string that represents this font_family.
@@ -316,9 +316,9 @@ namespace xtd {
       friend class system_fonts;
       friend class xtd::forms::native::font_dialog;
       font() = default;
-      explicit font(intptr_t hfont);
+      explicit font(intptr hfont);
       struct data {
-        intptr_t handle_ = 0;
+        intptr handle_ = 0;
         drawing::font_family font_family_;
         xtd::byte gdi_char_set_ = 1;
         bool gdi_vertical_font_ = false;

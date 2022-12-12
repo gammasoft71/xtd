@@ -190,7 +190,7 @@ namespace xtd {
         xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::standard;
         xtd::ustring find_string;
         xtd::ustring replace_string;
-        intptr_t handle = 0;
+        intptr handle = 0;
         std::optional<xtd::drawing::point> location;
         bool match_case = false;
         const iwin32_window* owner;

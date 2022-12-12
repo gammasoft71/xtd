@@ -142,8 +142,8 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      bool run_dialog(intptr_t owner) override;
-      void run_sheet(intptr_t owner) override;
+      bool run_dialog(intptr owner) override;
+      void run_sheet(intptr owner) override;
       /// @}
       
     private:

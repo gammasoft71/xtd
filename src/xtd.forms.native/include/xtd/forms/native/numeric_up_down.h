@@ -40,32 +40,32 @@ namespace xtd {
         /// @param control Numeric up down window handle.
         /// @param decimal_place The number of decimal places to display in the spin box.
         /// @warning Internal use only
-        static void decimal_place(intptr_t control, int32 decimal_place);
+        static void decimal_place(intptr control, int32 decimal_place);
         /// @brief Sets the value to increment or decrement the spin box (also known as an up-down control) when the up or down buttons are clicked.
         /// @param control Numeric up down window handle.
         /// @param increment The value to increment or decrement the Value property when the up or down buttons are clicked on the spin box.
         /// @warning Internal use only
-        static void increment(intptr_t control, double increment);
+        static void increment(intptr control, double increment);
         /// @brief Sets the maximum value for the spin box (also known as an up-down control).
         /// @param control Numeric up down window handle.
         /// @param maximum The maximum value for the spin box.
         /// @warning Internal use only
-        static void maximum(intptr_t control, double maximum);
+        static void maximum(intptr control, double maximum);
         /// @brief Sets the minimum value for the spin box (also known as an up-down control).
         /// @param control Numeric up down window handle.
         /// @param minimum The maximum value for the spin box.
         /// @warning Internal use only
-        static void minimum(intptr_t control, double minimum);
+        static void minimum(intptr control, double minimum);
         /// @brief Gets the value assigned to the spin box (also known as an up-down control).
         /// @param control Numeric up down window handle.
         /// @return The numeric value of the numeric_up_down control.
         /// @warning Internal use only
-        static double value(intptr_t control);
+        static double value(intptr control);
         /// @brief Sets the value assigned to the spin box (also known as an up-down control).
         /// @param control Numeric up down window handle.
         /// @param value The numeric value of the numeric_up_down control.
         /// @warning Internal use only
-        static void value(intptr_t control, double value);
+        static void value(intptr control, double value);
         /// @}
       };
     }

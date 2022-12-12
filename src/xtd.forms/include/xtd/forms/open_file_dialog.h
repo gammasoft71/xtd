@@ -67,8 +67,8 @@ namespace xtd {
       /// @}
       
     private:
-      bool run_file_dialog(intptr_t hwnd_owner) override;
-      void run_file_sheet(intptr_t owner) override;
+      bool run_file_dialog(intptr hwnd_owner) override;
+      void run_file_sheet(intptr owner) override;
     };
   }
 }

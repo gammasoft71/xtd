@@ -171,7 +171,7 @@ xtd::byte color::g() const noexcept {
   return (xtd::byte)((to_argb() & 0x0000FF00) >> 8);
 }
 
-intptr_t color::handle() const noexcept {
+intptr color::handle() const noexcept {
   return handle_;
 }
 
@@ -243,7 +243,7 @@ color color::from_argb(xtd::byte red, xtd::byte green, xtd::byte blue) noexcept 
   return from_argb(0xFF, red, green, blue);
 }
 
-color color::from_handle(intptr_t handle) noexcept {
+color color::from_handle(intptr handle) noexcept {
   return color(handle);
 }
 
@@ -568,5 +568,5 @@ ustring color::to_string() const noexcept {
 color::color(uint32_t argb) : argb_(argb), name_(argb ? ustring::format("{:X8}", argb) : "0"), empty_(false) {
 }
 
-color::color(intptr_t handle) : handle_(handle), name_(ustring::format("{:X}h", handle)), empty_(false) {
+color::color(intptr handle) : handle_(handle), name_(ustring::format("{:X}h", handle)), empty_(false) {
 }

@@ -125,8 +125,8 @@ namespace xtd {
       float dpi_y() const noexcept;
       
       /// @brief Gets the handle device context that the graphics is bound to.
-      /// @return An intptr_t that contains the handle device context of the graphics.
-      intptr_t handle() const noexcept;
+      /// @return An intptr that contains the handle device context of the graphics.
+      intptr handle() const noexcept;
       
       /// @brief Gets the interpolation mode associated with this xtd::drawing::graphics.
       /// @return One of the xtd::drawing::drawing2d::interpolation_mode values.
@@ -1057,19 +1057,19 @@ namespace xtd {
       /// @return This method returns a new xtd::drawing::graphics for the specified device context.
       /// @remarks Even if the display device has an associated ICM color profile, GDI+ will not use that profile by default. To enable ICM for a xtd::drawing::graphics, construct the xtd::drawing::graphics from an HDC after you pass the HDC (and ICM_ON) to the SetICMMode function. Then any drawing done by the xtd::drawing::graphics will be adjusted according to the ICM profile associated with the display device. Enabling ICM will result in slower performance.
       /// @remarks The state of the device context (mapping mode, logical unit, and the like) at the time you call xtd::drawing::graphics::from_hdc can affect rendering done by the xtd::drawing::graphics.
-      static graphics from_hdc(intptr_t hdc);
+      static graphics from_hdc(intptr hdc);
       /// @brief Creates a new xtd::drawing::graphics from the specified handle to a device contextand handle to a device.
       /// @param hdc Handle to a device context.
       /// @param hdevice Handle to a device.
       /// @return This method returns a new xtd::drawing::graphics for the specified device context and device.
       /// @remarks Even if the display device has an associated ICM color profile, GDI+ will not use that profile by default. To enable ICM for a xtd::drawing::graphics, construct the xtd::drawing::graphics from an HDC after you pass the HDC (and ICM_ON) to the SetICMMode function. Then any drawing done by the xtd::drawing::graphics will be adjusted according to the ICM profile associated with the display device. Enabling ICM will result in slower performance.
       /// @remarks The state of the device context (mapping mode, logical unit, and the like) at the time you call xtd::drawing::graphics::from_hdc can affect rendering done by the xtd::drawing::graphics.
-      static graphics from_hdc(intptr_t hdc, intptr_t hdevice);
+      static graphics from_hdc(intptr hdc, intptr hdevice);
       
       /// @brief Creates a new xtd::drawing::graphics from the specified handle to a window.
       /// @param hwnd Handle to a window.
       /// @return This method returns a new xtd::drawing::graphics for the specified window handle.
-      static graphics from_hwnd(intptr_t hwnd);
+      static graphics from_hwnd(intptr hwnd);
       
       /// @brief Creates a new xtd::drawing::graphics from the specified xtd::drawing::image.
       /// @param image xtd::drawing::image from which to create the new xtd::drawing::graphics.
@@ -1090,7 +1090,7 @@ namespace xtd {
       /// @return Handle to the device context associated with this xtd::drawing::graphics.
       /// @remarks The device context is a Windows structure based on GDI that defines a set of graphical objects and their associated attributes, as well as the graphical modes that affect output. This method returns that device context with the exception of a font. Because a font is not selected, calls to the xtd::drawing::graphics::from_hdc method using a handle returned from the xtd::drawing::graphics::get_hdc method will fail.
       /// @remarks Calls to the xtd::drawing::graphics::get_hdc and xtd::drawing::graphics::release_hdc methods must appear in pairs. During the scope of a xtd::drawing::graphics::get_hdc and xtd::drawing::graphics::release_hdc method pair, you usually make only calls to GDI functions. Calls in that scope made to GDI+ methods of the xtd::drawing::graphics that produced the hdc parameter fail with an ObjectBusy error. Also, GDI+ ignores any state changes made to the xtd::drawing::graphics of the hdc parameter in subsequent operations.
-      intptr_t get_hdc() const;
+      intptr get_hdc() const;
       
       /// @brief Gets the nearest color to the specified xtd::drawing::color structure.
       /// @param color xtd::drawing::color structure for which to find a match.
@@ -1213,7 +1213,7 @@ namespace xtd {
       /// @param hdc Handle to a device context obtained by a previous call to the xtd::drawing::graphics::get_hdc() method of this xtd::drawing::graphics.
       /// @remarks The device context is a Windows structure based on GDI that defines a set of graphical objects and their associated attributes, as well as the graphical modes that affect output. This method returns that device context with the exception of a font. Because a font is not selected, calls to the xtd::drawing::graphics::from_hdc method using a handle returned from the xtd::drawing::graphics::get_hdc method will fail.
       /// @remarks Calls to the xtd::drawing::graphics::get_hdc and xtd::drawing::graphics::release_hdc methods must appear in pairs. During the scope of a xtd::drawing::graphics::get_hdc and xtd::drawing::graphics::release_hdc method pair, you usually make only calls to GDI functions. Calls in that scope made to GDI+ methods of the xtd::drawing::graphics that produced the hdc parameter fail with an ObjectBusy error. Also, GDI+ ignores any state changes made to the xtd::drawing::graphics of the hdc parameter in subsequent operations.
-      void release_hdc(intptr_t hdc);
+      void release_hdc(intptr hdc);
       
       /// @brief Resets the clip region of this xtd::drawing::graphics to an infinite region.
       /// @remarks When the clipping region of a xtd::drawing::graphics is infinite, items that this xtd::drawing::graphics draws are not clipped.
@@ -1301,15 +1301,15 @@ namespace xtd {
       friend xtd::forms::paint_event_args;
       friend xtd::forms::screen;
       
-      explicit graphics(intptr_t handle);
-      graphics(intptr_t handle, const drawing::region& region);
+      explicit graphics(intptr handle);
+      graphics(intptr handle, const drawing::region& region);
       void draw_image_disabled(const xtd::drawing::image& image, float x, float y, float brightness);
       
       struct data {
         xtd::drawing::region clip;
         xtd::drawing::drawing2d::compositing_mode compositing_mode = xtd::drawing::drawing2d::compositing_mode::source_over;
         xtd::drawing::drawing2d::compositing_quality compositing_quality = xtd::drawing::drawing2d::compositing_quality::default_value;
-        intptr_t handle = 0;
+        intptr handle = 0;
         xtd::drawing::drawing2d::interpolation_mode interpolation_mode = xtd::drawing::drawing2d::interpolation_mode::default_value;
         float page_scale = 1.0f;
         xtd::drawing::graphics_unit page_unit = xtd::drawing::graphics_unit::pixel;

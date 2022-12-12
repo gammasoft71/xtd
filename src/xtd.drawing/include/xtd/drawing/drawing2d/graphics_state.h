@@ -43,8 +43,8 @@ namespace xtd {
         
       private:
         friend xtd::drawing::graphics;
-        graphics_state(intptr_t handle) : handle_(handle) {}
-        mutable intptr_t handle_ = 0;
+        graphics_state(intptr handle) : handle_(handle) {}
+        mutable intptr handle_ = 0;
       };
     }
   }

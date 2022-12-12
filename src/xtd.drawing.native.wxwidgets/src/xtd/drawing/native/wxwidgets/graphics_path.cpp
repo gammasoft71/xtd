@@ -11,6 +11,7 @@
 #include <xtd/static.h>
 
 using namespace std;
+using namespace xtd;
 using namespace xtd::drawing::native;
 
 namespace {
@@ -58,36 +59,36 @@ namespace {
   };
 }
 
-intptr_t graphics_path::create() {
+intptr graphics_path::create() {
   toolkit::initialize(); // Must be first
   static wxBitmap bmp(1, 1);
   wxMemoryDC mdc(bmp);
   wxGraphicsContext* mgc = wxGraphicsContext::Create(mdc);
   auto path = new wxGraphicsPath(mgc->CreatePath());
   figures::new_figure(path);
-  return reinterpret_cast<intptr_t>(path);
+  return reinterpret_cast<intptr>(path);
 }
 
-void graphics_path::destroy(intptr_t handle) {
+void graphics_path::destroy(intptr handle) {
   if (!handle) return;
   figures::close_all_figure(reinterpret_cast<wxGraphicsPath*>(handle));
   delete reinterpret_cast<wxGraphicsPath*>(handle);
 }
 
-void graphics_path::add_arc(intptr_t handle, float x, float y, float width, float height, float start_angle, float sweep_angle) {
+void graphics_path::add_arc(intptr handle, float x, float y, float width, float height, float start_angle, float sweep_angle) {
   if (!handle) return;
   figures::start(reinterpret_cast<wxGraphicsPath*>(handle), x, y);
   reinterpret_cast<wxGraphicsPath*>(handle)->AddArc(x + width / 2, y + height / 2, math::max(width, height) / 2, math::degrees_to_radians(start_angle), math::degrees_to_radians(start_angle + sweep_angle), true);
 }
 
-void graphics_path::add_bezier(intptr_t handle, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4) {
+void graphics_path::add_bezier(intptr handle, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4) {
   if (!handle) return;
   figures::start(reinterpret_cast<wxGraphicsPath*>(handle), x1, y1);
   reinterpret_cast<wxGraphicsPath*>(handle)->AddLineToPoint(x1, y1);
   reinterpret_cast<wxGraphicsPath*>(handle)->AddCurveToPoint(x2, y2, x3, y3, x4, y4);
 }
 
-void graphics_path::add_beziers(intptr_t handle, std::vector<std::pair<float, float>> points) {
+void graphics_path::add_beziers(intptr handle, std::vector<std::pair<float, float>> points) {
   if (!handle) return;
   figures::start(reinterpret_cast<wxGraphicsPath*>(handle), points[0].first, points[0].second);
   reinterpret_cast<wxGraphicsPath*>(handle)->AddLineToPoint(points[0].first, points[0].second);
@@ -95,29 +96,29 @@ void graphics_path::add_beziers(intptr_t handle, std::vector<std::pair<float, fl
     reinterpret_cast<wxGraphicsPath*>(handle)->AddCurveToPoint(points[index].first, points[index].second, points[index + 1].first, points[index + 1].second, points[index + 2].first, points[index + 2].second);
 }
 
-void graphics_path::add_closed_curve(intptr_t handle, std::vector<std::pair<float, float>> points, float tension) {
+void graphics_path::add_closed_curve(intptr handle, std::vector<std::pair<float, float>> points, float tension) {
   if (!handle) return;
   // Not supported by wxWidgets 3.1.5...
 }
 
-void graphics_path::add_curve(intptr_t handle, std::vector<std::pair<float, float>> points, size_t offset, size_t number_of_segments, float tension) {
+void graphics_path::add_curve(intptr handle, std::vector<std::pair<float, float>> points, size_t offset, size_t number_of_segments, float tension) {
   if (!handle) return;
   // Not supported by wxWidgets 3.1.5...
 }
 
-void graphics_path::add_line(intptr_t handle, float x1, float y1, float x2, float y2) {
+void graphics_path::add_line(intptr handle, float x1, float y1, float x2, float y2) {
   if (!handle) return;
   figures::start(reinterpret_cast<wxGraphicsPath*>(handle), x1, y1);
   reinterpret_cast<wxGraphicsPath*>(handle)->AddLineToPoint(x1, y1);
   reinterpret_cast<wxGraphicsPath*>(handle)->AddLineToPoint(x2, y2);
 }
 
-void graphics_path::add_ellipse(intptr_t handle, float x, float y, float width, float height) {
+void graphics_path::add_ellipse(intptr handle, float x, float y, float width, float height) {
   if (!handle) return;
   reinterpret_cast<wxGraphicsPath*>(handle)->AddEllipse(x, y, width, height);
 }
 
-void graphics_path::add_path(intptr_t handle, intptr_t path, bool connect) {
+void graphics_path::add_path(intptr handle, intptr path, bool connect) {
   if (!handle || !path) return;
   if (connect) {
     auto path_box = reinterpret_cast<wxGraphicsPath*>(path)->GetBox();
@@ -126,60 +127,60 @@ void graphics_path::add_path(intptr_t handle, intptr_t path, bool connect) {
   reinterpret_cast<wxGraphicsPath*>(handle)->AddPath(*reinterpret_cast<wxGraphicsPath*>(path));
 }
 
-void graphics_path::add_pie(intptr_t handle, float x, float y, float width, float height, float start_angle, float sweep_angle) {
+void graphics_path::add_pie(intptr handle, float x, float y, float width, float height, float start_angle, float sweep_angle) {
   if (!handle) return;
   reinterpret_cast<wxGraphicsPath*>(handle)->MoveToPoint(x + (width / 2), y + (height / 2));
   reinterpret_cast<wxGraphicsPath*>(handle)->AddArc(x + (width / 2), y + (height / 2), math::max(width, height) / 2, math::degrees_to_radians(start_angle), math::degrees_to_radians(start_angle + sweep_angle), true);
   reinterpret_cast<wxGraphicsPath*>(handle)->AddLineToPoint(x + (width / 2), y + (height / 2));
 }
 
-void graphics_path::add_rectangle(intptr_t handle, float x, float y, float width, float height) {
+void graphics_path::add_rectangle(intptr handle, float x, float y, float width, float height) {
   if (!handle) return;
   reinterpret_cast<wxGraphicsPath*>(handle)->AddRectangle(x, y, width, height);
 }
 
-void graphics_path::add_rounded_rectangle(intptr_t handle, float x, float y, float width, float height, float radius) {
+void graphics_path::add_rounded_rectangle(intptr handle, float x, float y, float width, float height, float radius) {
   if (!handle) return;
   reinterpret_cast<wxGraphicsPath*>(handle)->AddRoundedRectangle(x, y, width, height, radius);
 }
 
-void graphics_path::add_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming) {
+void graphics_path::add_string(intptr handle, const xtd::ustring& text, intptr font, float x, float y, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming) {
   if (!handle) return;
   // Not supported by wxWidgets 3.1.5...
 }
 
-void graphics_path::add_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y, float w, float h, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming) {
+void graphics_path::add_string(intptr handle, const xtd::ustring& text, intptr font, float x, float y, float w, float h, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming) {
   if (!handle) return;
   // Not supported by wxWidgets 3.1.5...
 }
 
-void graphics_path::close_all_figures(intptr_t handle) {
+void graphics_path::close_all_figures(intptr handle) {
   if (!handle) return;
   figures::close_all_figure(reinterpret_cast<wxGraphicsPath*>(handle));
 }
 
-void graphics_path::close_figure(intptr_t handle) {
+void graphics_path::close_figure(intptr handle) {
   if (!handle) return;
   figures::close_figure(reinterpret_cast<wxGraphicsPath*>(handle));
 }
 
-void graphics_path::flatten(intptr_t handle) {
+void graphics_path::flatten(intptr handle) {
   // Not supported by wxWidgets 3.1.5...
   if (!handle) return;
 }
 
-void graphics_path::reverse(intptr_t handle) {
+void graphics_path::reverse(intptr handle) {
   if (!handle) return;
   // Not supported by wxWidgets 3.1.5...
 }
 
-void graphics_path::start_figure(intptr_t handle) {
+void graphics_path::start_figure(intptr handle) {
   if (!handle) return;
   figures::new_figure(reinterpret_cast<wxGraphicsPath*>(handle));
   figures::start(reinterpret_cast<wxGraphicsPath*>(handle));
 }
 
-void graphics_path::get_bounds(intptr_t handle, float& x, float& y, float& width, float& height) {
+void graphics_path::get_bounds(intptr handle, float& x, float& y, float& width, float& height) {
   if (!handle) return;
   double wx_x, wx_y, wx_width, wx_height;
   reinterpret_cast<wxGraphicsPath*>(handle)->GetBox(&wx_x, &wx_y, &wx_width, &wx_height);
@@ -189,14 +190,14 @@ void graphics_path::get_bounds(intptr_t handle, float& x, float& y, float& width
   height = as<float>(wx_height);
 }
 
-void graphics_path::get_last_point(intptr_t handle, float& x, float& y) {
+void graphics_path::get_last_point(intptr handle, float& x, float& y) {
   if (!handle) return;
   auto point = reinterpret_cast<wxGraphicsPath*>(handle)->GetCurrentPoint();
   x = static_cast<float>(point.m_x);
   y = static_cast<float>(point.m_y);
 }
 
-bool graphics_path::is_vsible(intptr_t handle, float x, float y) {
+bool graphics_path::is_vsible(intptr handle, float x, float y) {
   if (!handle) return false;
   return reinterpret_cast<wxGraphicsPath*>(handle)->Contains(x, y);
 }

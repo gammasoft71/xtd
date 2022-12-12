@@ -267,7 +267,7 @@ namespace xtd {
           SetPosition(location);
         }
         
-        static long form_style_to_wx_style(size_t style, size_t ex_style, size_t class_style, intptr_t parent) {
+        static long form_style_to_wx_style(size_t style, size_t ex_style, size_t class_style, intptr parent) {
           long wx_style = wxFRAME_SHAPED;
           
           if ((style & WS_TABSTOP) != WS_TABSTOP) wx_style |= wxTAB_TRAVERSAL;

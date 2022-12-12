@@ -14,7 +14,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
-map<intptr_t, reference_wrapper<menu>> menu::handles_;
+map<intptr, reference_wrapper<menu>> menu::handles_;
 
 menu::menu() : data_(make_shared<data>()) {
   //data_->mdi_list_item = make_unique<menu_item>();
@@ -49,7 +49,7 @@ menu::~menu() {
   destroy_menu();
 }
 
-intptr_t menu::handle() const noexcept {
+intptr menu::handle() const noexcept {
   return data_->handle;
 }
 
@@ -143,7 +143,7 @@ void menu::merge_menu(const menu& menu_src) {
   data_->menu_items.push_back_range(menu_src.data_->menu_items);
 }
 
-void menu::destroy_menu_handle(intptr_t handle) {
+void menu::destroy_menu_handle(intptr handle) {
 }
 
 void menu::on_item_added(size_t pos, menu_item_ref item) {

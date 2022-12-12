@@ -42,39 +42,39 @@ namespace xtd {
         /// @brief Creates menu.
         /// @return The created menu handle.
         /// @warning Internal use only
-        static intptr_t create();
+        static intptr create();
         /// @brief Destroys menu.
         /// @param menu Menu handle.
         /// @warning Internal use only
-        static void destroy(intptr_t menu);
+        static void destroy(intptr menu);
         /// @brief Insert specified item to specisified position.
         /// @param menu Menu handle.
         /// @param pos Position to insert menu item.
         /// @param menu_item Menu item to insert.
         /// @warning Internal use only
-        static void insert_item(intptr_t menu, size_t pos,  intptr_t menu_item);
+        static void insert_item(intptr menu, size_t pos,  intptr menu_item);
         /// @brief Insert specified menu item to specisified position.
         /// @param menu Menu handle.
         /// @param pos Position to insert menu item.
         /// @param menu_item Menu item to insert.
         /// @param text The text associated with this menu.
         /// @warning Internal use only
-        static void insert_menu(intptr_t menu, size_t pos,  intptr_t menu_item, const xtd::ustring& text);
+        static void insert_menu(intptr menu, size_t pos,  intptr menu_item, const xtd::ustring& text);
         /// @brief Gets native menu handle.
         /// @param menu Menu handle.
         /// @return The native menu handle.
         /// @warning Internal use only
-        static intptr_t native_handle(intptr_t menu);
+        static intptr native_handle(intptr menu);
         /// @brief Remove menu item from specisified position.
         /// @param menu Menu handle.
         /// @param pos Position to insert menu item.
         /// @warning Internal use only
-        static void remove_item(intptr_t menu, size_t pos);
+        static void remove_item(intptr menu, size_t pos);
         /// @brief Sets text menu.
         /// @param menu Menu handle.
         /// @param text The text associated with this menu.
         /// @warning Internal use only
-        static void text(intptr_t menu, const xtd::ustring& text);
+        static void text(intptr menu, const xtd::ustring& text);
         /// @}
       };
     }

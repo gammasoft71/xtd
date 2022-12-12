@@ -37,7 +37,7 @@ namespace xtd {
         /// @brief Creates a pen.
         /// @return The created pen handle.
         /// @warning Internal use only
-        static intptr_t create();
+        static intptr create();
         
         /// @brief Sets solid color pen with specified color, width, dash offset and dash array.
         /// @param pen the pen handle.
@@ -49,71 +49,71 @@ namespace xtd {
         /// @param dash_offset The offset of the dash.
         /// @param dashes A dash array that represent the format of dash. If the array of dashes is empty then the pen is a solid type.
         /// @warning Internal use only
-        static void solid_color(intptr_t pen, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b, float width, float dash_offset, std::vector<float> dashes);
+        static void solid_color(intptr pen, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b, float width, float dash_offset, std::vector<float> dashes);
         
         /// @brief Sets hatch fill pen with specified hatch fill brush and width.
         /// @param pen the pen handle.
         /// @param brush the hatch brush handle.
         /// @param width The width of the pen in pixels.
         /// @warning Internal use only
-        static void hatch_fill(intptr_t pen, intptr_t brush, float width);
+        static void hatch_fill(intptr pen, intptr brush, float width);
         
         /// @brief Sets conical gradient pen with specified conical gradient brush and width.
         /// @param pen the pen handle.
         /// @param brush the conical gradient brush handle.
         /// @param width The width of the pen in pixels.
         /// @warning Internal use only
-        static void conical_gradient(intptr_t pen, intptr_t brush, float width);
+        static void conical_gradient(intptr pen, intptr brush, float width);
         
         /// @brief Sets the cap style used at the end of lines drawn with the pen.
         /// @param pen the pen handle.
         /// @param value A value that represents the cap style used at the end of lines drawn with the pen (see line_saps.h for more information).
         /// @warning Internal use only
-        static void end_cap(intptr_t pen, int32 line_cap);
+        static void end_cap(intptr pen, int32 line_cap);
         
         /// @brief Sets linear gradient pen with specified linear gradient brush and width.
         /// @param pen the pen handle.
         /// @param brush the linear gradient brush handle.
         /// @param width The width of the pen in pixels.
         /// @warning Internal use only
-        static void linear_gradient(intptr_t pen, intptr_t brush, float width);
+        static void linear_gradient(intptr pen, intptr brush, float width);
         
         /// @brief Sets the join style for the ends of two consecutive lines drawn with the pen.
         /// @param pen the pen handle.
         /// @param line_join A value that represents the join style for the ends of two consecutive lines drawn with the pen (see line_joins.h for more information).
         /// @warning Internal use only
-        static void line_join(intptr_t pen, int32 line_join);
+        static void line_join(intptr pen, int32 line_join);
         
         /// @brief Sets the limit of the thickness of the join on a mitered corner.
         /// @param pen the pen handle.
         /// @param miter_limit The limit of the thickness of the join on a mitered corner.
         /// @warning Internal use only
-        static void miter_limit(intptr_t pen, float miter_limit);
+        static void miter_limit(intptr pen, float miter_limit);
         
         /// @brief Sets radial gradient pen with specified radial gradient brush and width.
         /// @param pen the pen handle.
         /// @param brush the radial gradient brush handle.
         /// @param width The width of the pen in pixels.
         /// @warning Internal use only
-        static void radial_gradient(intptr_t pen, intptr_t brush, float width);
+        static void radial_gradient(intptr pen, intptr brush, float width);
         
         /// @brief Sets the cap style used at the start of lines drawn with the pen.
         /// @param pen the pen handle.
         /// @param value A value that represents the cap style used at the start of lines drawn with the pen (see line_saps.h for more information).
         /// @warning Internal use only
-        static void start_cap(intptr_t pen, int32 line_cap);
+        static void start_cap(intptr pen, int32 line_cap);
         
         /// @brief Sets texture fill pen with specified texture fill brush and width.
         /// @param pen the pen handle.
         /// @param brush the texture fill brush handle.
         /// @param width The width of the pen in pixels.
         /// @warning Internal use only
-        static void texture_fill(intptr_t pen, intptr_t brush, float width);
+        static void texture_fill(intptr pen, intptr brush, float width);
         
         /// @brief Destroys a pen.
         /// @param pen The pen handle to destroy.
         /// @warning Internal use only
-        static void destroy(intptr_t pen);
+        static void destroy(intptr pen);
         /// @}
       };
     }

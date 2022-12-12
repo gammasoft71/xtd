@@ -30,17 +30,17 @@ namespace {
 }
 #endif
 
-intptr_t main_menu::create() {
-  return reinterpret_cast<intptr_t>(new wxMenuBar);
+intptr main_menu::create() {
+  return reinterpret_cast<intptr>(new wxMenuBar);
 }
 
-void main_menu::destroy(intptr_t main_menu) {
+void main_menu::destroy(intptr main_menu) {
   if (!wxTheApp) return;
   if (main_menu == 0) throw argument_exception(csf_);
   reinterpret_cast<wxMenuBar*>(main_menu)->Destroy();
 }
 
-void main_menu::insert_item(intptr_t main_menu, size_t pos, intptr_t menu_item, const ustring& text) {
+void main_menu::insert_item(intptr main_menu, size_t pos, intptr menu_item, const ustring& text) {
   if (main_menu == 0) throw argument_exception(csf_);
   if (menu_item == 0) throw argument_exception(csf_);
   
@@ -64,7 +64,7 @@ void main_menu::insert_item(intptr_t main_menu, size_t pos, intptr_t menu_item, 
   wx_main_menu->Insert(pos, reinterpret_cast<wxMenu*>(menu_item), convert_string::to_wstring(text));
 }
 
-void main_menu::remove_item(intptr_t main_menu, size_t pos) {
+void main_menu::remove_item(intptr main_menu, size_t pos) {
   if (main_menu == 0) throw argument_exception(csf_);
   reinterpret_cast<wxMenuBar*>(main_menu)->Remove(pos);
 }

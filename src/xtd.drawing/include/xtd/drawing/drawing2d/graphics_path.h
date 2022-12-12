@@ -53,8 +53,8 @@ namespace xtd {
         
         /// @{
         /// @brief Gets the handle of the graphics path.
-        /// @return An intptr_t that contains the handle of the graphics path.
-        intptr_t handle() const noexcept;
+        /// @return An intptr that contains the handle of the graphics path.
+        intptr handle() const noexcept;
         
         
         /// @brief Gets a xtd::drawing::drawing2d::fill_mode enumeration that determines how the interiors of shapes in this xtd::drawing::drawing2d::graphics_path are filled.
@@ -442,7 +442,7 @@ namespace xtd {
       private:
         void recreate_handle();
         struct data {
-          intptr_t handle = 0;
+          intptr handle = 0;
           xtd::drawing::drawing2d::fill_mode fill_mode = xtd::drawing::drawing2d::fill_mode::alternate;
         };
         std::shared_ptr<data> data_ = std::make_shared<data>();

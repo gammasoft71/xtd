@@ -40,22 +40,22 @@ namespace xtd {
         /// @param control Up down button window handle.
         /// @param maximum The maximum allowed value for the up down button.
         /// @warning Internal use only
-        static void maximum(intptr_t control, int32 maximum);
+        static void maximum(intptr control, int32 maximum);
         /// @brief Sets the minimum allowed value for the up_down_button control.
         /// @param control Up down button window handle.
         /// @param value The minimum allowed value for the up down button.
         /// @warning Internal use only
-        static void minimum(intptr_t control, int32 minimum);
+        static void minimum(intptr control, int32 minimum);
         /// @brief Gets the value assigned to the up_down_button control.
         /// @param control Up down button window handle.
         /// @return The numeric value of the up down button control.
         /// @warning Internal use only
-        static int32 value(intptr_t control);
+        static int32 value(intptr control);
         /// @brief Sets the value assigned to the up_down_button control.
         /// @param control Up down button window handle.
         /// @param value The numeric value of the up down button control.
         /// @warning Internal use only
-        static void value(intptr_t control, int32 value);
+        static void value(intptr control, int32 value);
         /// @}
       };
     }

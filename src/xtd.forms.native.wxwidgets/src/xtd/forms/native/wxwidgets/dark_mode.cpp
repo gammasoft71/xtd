@@ -4,6 +4,9 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/types.h>
+
+using namespace xtd;
 
 #if defined(_WIN32)
 #include <Windows.h>
@@ -160,7 +163,7 @@ bool g_darkModeSupported = false;
 bool g_darkModeEnabled = false;
 DWORD g_buildNumber = 0;
 
-bool allow_dark_mode_for_window(intptr_t hWnd) {
+bool allow_dark_mode_for_window(intptr hWnd) {
   if (!g_darkModeEnabled) return false;
   if (g_darkModeSupported)
     return _AllowDarkModeForWindow(reinterpret_cast<HWND>(hWnd), g_darkModeEnabled);
@@ -174,7 +177,7 @@ bool IsHighContrast() {
   return false;
 }
 
-void refresh_title_bar_theme_color(intptr_t hWnd) {
+void refresh_title_bar_theme_color(intptr hWnd) {
   if (!g_darkModeEnabled) return;
   BOOL dark = FALSE;
   if (_IsDarkModeAllowedForWindow(reinterpret_cast<HWND>(hWnd)) &&
@@ -282,14 +285,14 @@ void init_dark_mode(xtd::int32 enableDarkMode) {
 }
 
 #else
-bool allow_dark_mode_for_window(intptr_t hWnd) {
+bool allow_dark_mode_for_window(intptr hWnd) {
   return false;
 }
 
 void init_dark_mode(xtd::int32 enableDarkMode) {
 }
 
-void refresh_title_bar_theme_color(intptr_t hWnd) {
+void refresh_title_bar_theme_color(intptr hWnd) {
 }
 
 #endif

@@ -102,11 +102,11 @@ void color_dialog::reset() noexcept {
   data_->options = CC_ALPHACOLOR | CC_PREVENTFULLOPEN;
 }
 
-bool color_dialog::run_dialog(intptr_t owner) {
+bool color_dialog::run_dialog(intptr owner) {
   return native::color_dialog::run_dialog(owner, data_->title, data_->color, data_->custom_colors, data_->options);
 }
 
-void color_dialog::run_sheet(intptr_t owner) {
+void color_dialog::run_sheet(intptr owner) {
   if (!owner) run_dialog(owner);
   else native::color_dialog::run_sheet({*new __xtd_forms_common_dialog_closed_caller__(this), &__xtd_forms_common_dialog_closed_caller__::on_common_dialog_closed}, owner, data_->title, data_->color, data_->custom_colors, data_->options);
 }

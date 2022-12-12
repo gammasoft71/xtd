@@ -55,19 +55,19 @@ namespace xtd {
         /// @param dialog_closed A delegate that will be invoked when the dialog is closed.
         /// @param return The find dialog handle.
         /// @warning Internal use only
-        static intptr_t create(intptr_t hwnd, const std::optional<xtd::drawing::point>& location, const xtd::ustring& title, const xtd::ustring& find_string, bool show_up_down, bool show_whole_word, bool show_match_case, bool downwards, bool whole_word, bool match_case, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, bool, bool, bool)> find_next, xtd::delegate<void()> dialog_closed);
+        static intptr create(intptr hwnd, const std::optional<xtd::drawing::point>& location, const xtd::ustring& title, const xtd::ustring& find_string, bool show_up_down, bool show_whole_word, bool show_match_case, bool downwards, bool whole_word, bool match_case, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, bool, bool, bool)> find_next, xtd::delegate<void()> dialog_closed);
         /// @brief Hides find dialog.
         /// @param dialog Find dialog handle.
         /// @warning Internal use only
-        static void close(intptr_t dialog);
+        static void close(intptr dialog);
         /// @brief Destroy find dialog.
         /// @param dialog Find dialog handle.
         /// @warning Internal use only
-        static void destroy(intptr_t dialog);
+        static void destroy(intptr dialog);
         /// @brief Shows find dialog.
         /// @param dialog Find dialog handle.
         /// @warning Internal use only
-        static void show(intptr_t& dialog);
+        static void show(intptr& dialog);
         /// @}
       };
     }

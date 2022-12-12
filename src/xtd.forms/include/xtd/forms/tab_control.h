@@ -140,7 +140,7 @@ namespace xtd {
       
       /// @cond
       friend class tab_page;
-      size_t get_child_index(intptr_t page);
+      size_t get_child_index(intptr page);
       /// @endcond
       
     private:

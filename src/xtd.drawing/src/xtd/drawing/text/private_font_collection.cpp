@@ -16,6 +16,6 @@ void private_font_collection::add_font_file(const xtd::ustring& filename) {
   throw xtd::not_implemented_exception(current_stack_frame_);
 }
 
-void private_font_collection::add_memory_font(intptr_t memory, size_t length) {
+void private_font_collection::add_memory_font(intptr memory, size_t length) {
   throw xtd::not_implemented_exception(current_stack_frame_);
 }

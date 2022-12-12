@@ -25,7 +25,7 @@ brush::~brush() {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::brush::destroy(data_->handle_);
 }
 
-intptr_t brush::handle() const noexcept {
+intptr brush::handle() const noexcept {
   return data_->handle_;
 }
 
@@ -37,6 +37,6 @@ xtd::ustring brush::to_string() const noexcept {
   return ustring::full_class_name(*this);
 }
 
-void brush::set_native_brush(intptr_t brush) {
+void brush::set_native_brush(intptr brush) {
   data_->handle_ = brush;
 }

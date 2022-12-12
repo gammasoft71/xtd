@@ -45,7 +45,7 @@ namespace xtd {
         /// @param dialog Progress dialog window handle.
         /// @return true if user has clicked on cancel button; otherwise false.
         /// @warning Internal use only
-        static bool cancelled(intptr_t dialog);
+        static bool cancelled(intptr dialog);
         /// @brief Creates progress dialog.
         /// @param hwnd Parent window handle.
         /// @param text A string that specifies the title bar caption to display.
@@ -58,58 +58,58 @@ namespace xtd {
         /// @param options A bitwise progress dialog flags value.
         /// @return The created progress dialog window handle.
         /// @warning Internal use only
-        static intptr_t create(intptr_t hwnd, const xtd::ustring& text, const xtd::ustring& message, const std::vector<xtd::ustring>& informations, size_t marquee_animation_speed, int32 minimum, int32 maximum, int32 value, size_t options);
+        static intptr create(intptr hwnd, const xtd::ustring& text, const xtd::ustring& message, const std::vector<xtd::ustring>& informations, size_t marquee_animation_speed, int32 minimum, int32 maximum, int32 value, size_t options);
         /// @brief Destroys progress dialog.
         /// @param dialog Progress dialog window handle to destroy.
         /// @warning Internal use only
-        static void destroy(intptr_t dialog);
+        static void destroy(intptr dialog);
         /// @brief Sets the information texts.
         /// @param dialog Progress dialog window handle.
         /// @param informations The information texts.
         /// @warning Internal use only
-        static void informations(intptr_t dialog, const std::vector<xtd::ustring>& informations);
+        static void informations(intptr dialog, const std::vector<xtd::ustring>& informations);
         /// @brief Gets a value that Indicates progress by continuously scrolling a block across a progress_bar in a marquee fashion.
         /// @param dialog Progress dialog window handle.
         /// @param marquee tree is marquee; otherwise false. The default is false.
         /// @warning Internal use only
-        static void marquee(intptr_t dialog, bool marquee, size_t animation_speed);
+        static void marquee(intptr dialog, bool marquee, size_t animation_speed);
         /// @brief Sets the maximum value of the range of the control.
         /// @param dialog Progress dialog window handle.
         /// @param maximum The maximum value of the range.
         /// @warning Internal use only
-        static void maximum(intptr_t dialog, int32 maximum);
+        static void maximum(intptr dialog, int32 maximum);
         /// @brief Sets the message text.
         /// @param dialog Progress dialog window handle.
         /// @param description The message text.
         /// @warning Internal use only
-        static void message(intptr_t dialog, const xtd::ustring& message);
+        static void message(intptr dialog, const xtd::ustring& message);
         /// @brief Sets the minimum value of the range of the control.
         /// @param dialog Progress dialog window handle.
         /// @param minimum The minimum value of the range.
         /// @warning Internal use only
-        static void minimum(intptr_t dialog, int32 minimum);
+        static void minimum(intptr dialog, int32 minimum);
         /// @brief Resume progress dialog box after Abort button clicked.
         /// @param dialog Progress dialog window handle.
         /// @warning Internal use only
-        static void resume(intptr_t dialog);
+        static void resume(intptr dialog);
         /// @brief Runs progress dialog box.
         /// @param dialog Progress dialog window handle.
         /// @warning Internal use only
-        static void show(intptr_t dialog);
+        static void show(intptr dialog);
         /// @brief Runs progress dialog box as sheet.
         /// @param dialog Progress dialog window handle.
         /// @warning Internal use only
-        static void show_sheet(intptr_t dialog);
+        static void show_sheet(intptr dialog);
         /// @brief Gets whether user has clicked on skip button.
         /// @param dialog Progress dialog window handle.
         /// @return true if user has clicked on skip button; otherwise false.
         /// @warning Internal use only
-        static bool skipped(intptr_t dialog);
+        static bool skipped(intptr dialog);
         /// @brief Sets the current position of the progress bar.
         /// @param dialog Progress dialog window handle.
         /// @param value The position within the range of the progress bar. The default is 0.
         /// @warning Internal use only
-        static void value(intptr_t dialog, int32 value);
+        static void value(intptr dialog, int32 value);
         /// @}
       };
     }

@@ -61,8 +61,8 @@ namespace xtd {
       
       /// @{
       /// @brief Gets the handle of the region.
-      /// @return An intptr_t that contains the handle of the region.
-      intptr_t handle() const noexcept;
+      /// @return An intptr that contains the handle of the region.
+      intptr handle() const noexcept;
       /// @}
       
       /// @name Methods
@@ -99,7 +99,7 @@ namespace xtd {
       /// @param hrgn A handle to an existing xtd::drawing::region.
       /// @return The new xtd::drawing::region.
       /// @remarks This method creates a new xtd::drawing::region with an interior defined by the existing xtd::drawing::region referred to by the handle in the hrgn parameter.
-      static xtd::drawing::region from_hrgn(intptr_t hrgn);
+      static xtd::drawing::region from_hrgn(intptr hrgn);
       
       /// @brief Gets a xtd::drawing::rectangle_f structure that represents a rectangle that bounds this xtd::drawing::region on the drawing surface of a xtd::drawing::graphics object.
       /// @param g The xtd::drawing::graphics on which this xtd::drawing::region is drawn.
@@ -116,7 +116,7 @@ namespace xtd {
       /// @param g The xtd::drawing::graphics on which this xtd::drawing::region is drawn.
       /// @return A Windows handle to this xtd::drawing::region.
       /// @remarks You are responsible for calling the xtd::region::release_hrgn method to free the memory used by the GDI region object.
-      intptr_t get_hrgn(const xtd::drawing::graphics& g) const noexcept;
+      intptr get_hrgn(const xtd::drawing::graphics& g) const noexcept;
       
       /// @brief Updates this xtd::drawing::region to the intersection of itself with the specified xtd::drawing::graphics_path.
       /// @param path The xtd::drawing::graphics_path to intersect with this xtd::drawing::region.
@@ -282,7 +282,7 @@ namespace xtd {
       
       /// @brief Releases the handle of the xtd::drawing::region.
       /// @param region_handle The handle to the xtd::drawing::region.
-      void release_hrgn(intptr_t region_handle);
+      void release_hrgn(intptr region_handle);
       
       /// @brief Offsets the coordinates of this xtd::drawing::region by the specified amount.
       /// @param dx The amount to offset this xtd::drawing::region horizontally.
@@ -296,7 +296,7 @@ namespace xtd {
       
     private:
       struct data {
-        intptr_t handle = 0;
+        intptr handle = 0;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

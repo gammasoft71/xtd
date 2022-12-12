@@ -34,7 +34,7 @@ image_list::~image_list() {
   }
 }
 
-intptr_t image_list::handle() const noexcept {
+intptr image_list::handle() const noexcept {
   return data_->handle_;
 }
 

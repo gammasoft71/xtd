@@ -16,8 +16,8 @@ namespace {
   HHOOK handle_hook;
   LRESULT CALLBACK callbackProc(INT ncode, WPARAM wparam, LPARAM lparam) {
     if (ncode == HCBT_ACTIVATE) {
-      allow_dark_mode_for_window(static_cast<intptr_t>(wparam));
-      refresh_title_bar_theme_color(static_cast<intptr_t>(wparam));
+      allow_dark_mode_for_window(static_cast<intptr>(wparam));
+      refresh_title_bar_theme_color(static_cast<intptr>(wparam));
       UnhookWindowsHookEx(handle_hook);
     } else
       CallNextHookEx(handle_hook, ncode, wparam, lparam);
@@ -28,7 +28,7 @@ namespace {
 
 class wxFindDialog : public wxFindReplaceDialog {
 public:
-  wxFindDialog(intptr_t hwnd, wxFindReplaceData* data, const wxString& title, int32 style, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, bool, bool, bool)> find_next, xtd::delegate<void()> dialog_closed) : wxFindReplaceDialog(reinterpret_cast<control_handler*>(hwnd)->control(), data, title, style), style(style), find_next(find_next), dialog_closed(dialog_closed), hwnd(hwnd) {}
+  wxFindDialog(intptr hwnd, wxFindReplaceData* data, const wxString& title, int32 style, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, bool, bool, bool)> find_next, xtd::delegate<void()> dialog_closed) : wxFindReplaceDialog(reinterpret_cast<control_handler*>(hwnd)->control(), data, title, style), style(style), find_next(find_next), dialog_closed(dialog_closed), hwnd(hwnd) {}
   
   int32 style = 0;
   bool downwards = true;
@@ -37,10 +37,10 @@ public:
   wxString find_string;
   xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, bool, bool, bool)> find_next;
   xtd::delegate<void()> dialog_closed;
-  intptr_t hwnd = 0;
+  intptr hwnd = 0;
 };
 
-intptr_t find_dialog::create(intptr_t hwnd, const std::optional<xtd::drawing::point>& location, const xtd::ustring& title, const xtd::ustring& find_string, bool show_up_down, bool show_whole_word, bool show_match_case, bool downwards, bool whole_word, bool match_case, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, bool, bool, bool)> find_next, xtd::delegate<void()> dialog_closed) {
+intptr find_dialog::create(intptr hwnd, const std::optional<xtd::drawing::point>& location, const xtd::ustring& title, const xtd::ustring& find_string, bool show_up_down, bool show_whole_word, bool show_match_case, bool downwards, bool whole_word, bool match_case, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, bool, bool, bool)> find_next, xtd::delegate<void()> dialog_closed) {
   if (!wxTheApp) return 0;
   
   int32 find_replace_flags = 0;
@@ -94,16 +94,16 @@ intptr_t find_dialog::create(intptr_t hwnd, const std::optional<xtd::drawing::po
   if (location.has_value())
     find_dialog->SetPosition({location.value().x(), location.value().y()});
     
-  return reinterpret_cast<intptr_t>(find_dialog);
+  return reinterpret_cast<intptr>(find_dialog);
 }
 
-void find_dialog::close(intptr_t dialog) {
+void find_dialog::close(intptr dialog) {
   if (!dialog || !wxTheApp) return;
   
   reinterpret_cast<wxFindDialog*>(dialog)->Hide();
 }
 
-void find_dialog::destroy(intptr_t dialog) {
+void find_dialog::destroy(intptr dialog) {
   if (!dialog || !wxTheApp) return;
   
   auto data = reinterpret_cast<wxFindDialog*>(dialog)->GetData();
@@ -111,7 +111,7 @@ void find_dialog::destroy(intptr_t dialog) {
   delete data;
 }
 
-void find_dialog::show(intptr_t& dialog) {
+void find_dialog::show(intptr& dialog) {
   if (!dialog || !wxTheApp) return;
   
   auto& old_dialog = *reinterpret_cast<wxFindDialog*>(dialog);

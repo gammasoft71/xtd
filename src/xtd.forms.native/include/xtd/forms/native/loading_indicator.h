@@ -41,11 +41,11 @@ namespace xtd {
         /// @brief Start loading indicator.
         /// @param control loading indicator handle.
         /// @warning Internal use only
-        static void start(intptr_t control);
+        static void start(intptr control);
         /// @brief Stop loading indicator.
         /// @param control loading indicator handle.
         /// @warning Internal use only
-        static void stop(intptr_t control);
+        static void stop(intptr control);
         /// @}
       };
     }

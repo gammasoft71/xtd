@@ -42,26 +42,26 @@ namespace xtd {
         /// @brief Creates cursor.
         /// @return The created cursor handle.
         /// @warning Internal use only
-        static intptr_t create();
+        static intptr create();
         /// @brief Creates cursor with specified image and hot spot.
         /// @param image A xtd::drawing::image image will be use by cursor.
         /// @param hot_spot A xtd::drawing::point hot spot location.
         /// @return The created cursor handle.
         /// @warning Internal use only
-        static intptr_t create(const xtd::drawing::image& image, const drawing::point& hot_spot);
+        static intptr create(const xtd::drawing::image& image, const drawing::point& hot_spot);
         /// @brief Copies the cursor handle.
         /// @param cursor Cursor handle.
-        /// @return An intptr_t that represents the cursor's handle.
+        /// @return An intptr that represents the cursor's handle.
         /// @warning Internal use only
-        static intptr_t copy(intptr_t cursor);
+        static intptr copy(intptr cursor);
         /// @brief Sets a cursor object that represents the mouse cursor.
         /// @param cursor Cursor handle.
         /// @warning Internal use only
-        static void current(intptr_t cursor);
+        static void current(intptr cursor);
         /// @brief Destroys cursor.
         /// @param cursor Cursor handle.
         /// @warning Internal use only
-        static void destroy(intptr_t cursor);
+        static void destroy(intptr cursor);
         /// @brief Hides cursor.
         /// @param cursor Cursor handle.
         /// @warning Internal use only
@@ -70,7 +70,7 @@ namespace xtd {
         /// @param cursor Cursor handle.
         /// @return A point representing the cursor hot spot.
         /// @warning Internal use only
-        static drawing::point hot_spot(intptr_t cursor);
+        static drawing::point hot_spot(intptr cursor);
         /// @brief Gets the cursor's position.
         /// @param cursor Cursor handle.
         /// @return A point that represents the cursor's position in screen coordinates.
@@ -85,7 +85,7 @@ namespace xtd {
         /// @param cursor Cursor handle.
         /// @return A size that represents the width and height of the cursor.
         /// @warning Internal use only
-        static drawing::size size(intptr_t cursor);
+        static drawing::size size(intptr cursor);
         /// @brief Shows cursor.
         /// @param cursor Cursor handle.
         /// @warning Internal use only

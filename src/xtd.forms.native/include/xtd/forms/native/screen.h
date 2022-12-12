@@ -50,7 +50,7 @@ namespace xtd {
         /// @brief Creates a graphics for the screen.
         /// @return A graphics handle for the screen.
         /// @warning Internal use only
-        static intptr_t create_graphics();
+        static intptr create_graphics();
         /// @brief Gets the number of bits of memory, associated with one pixel of data.
         /// @param index The screen index.
         /// @return The number of bits of memory, associated with one pixel of data.
@@ -95,7 +95,7 @@ namespace xtd {
         /// @param handle The window handle for which to retrieve the screen.
         /// @return A screen index for the display that contains the largest region of the object. In multiple display environments where no display contains any portion of the specified handle, the display closest to the object is returned.
         /// @warning Internal use only
-        static size_t from_handle(intptr_t handle);
+        static size_t from_handle(intptr handle);
         /// @brief Retrieves a screen for the display that contains the specified point.
         /// @param point A xtd::drawing::point that specifies the location for which to retrieve a screen.
         /// @return A screen index for the display that contains the point. In multiple display environments where no display contains the point, the display closest to the specified point is returned.

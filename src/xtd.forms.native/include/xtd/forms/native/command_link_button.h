@@ -41,12 +41,12 @@ namespace xtd {
         /// @param control Command link button window handle.
         /// @param image A xtd::drawing::image to set.
         /// @warning Internal use only
-        static void image(intptr_t control, const drawing::image& image);
+        static void image(intptr control, const drawing::image& image);
         /// @brief Sets image align.
         /// @param control Command link button window handle.
         /// @param align A bitwise combination of the content alignment flags.
         /// @warning Internal use only
-        static void image_align(intptr_t control, uint32_t align);
+        static void image_align(intptr control, uint32_t align);
         /// @}
       };
     }

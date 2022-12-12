@@ -18,8 +18,8 @@ namespace {
   HHOOK handle_hook;
   LRESULT CALLBACK callbackProc(INT ncode, WPARAM wparam, LPARAM lparam) {
     if (ncode == HCBT_ACTIVATE) {
-      allow_dark_mode_for_window(static_cast<intptr_t>(wparam));
-      refresh_title_bar_theme_color(static_cast<intptr_t>(wparam));
+      allow_dark_mode_for_window(static_cast<intptr>(wparam));
+      refresh_title_bar_theme_color(static_cast<intptr>(wparam));
       UnhookWindowsHookEx(handle_hook);
     } else
       CallNextHookEx(handle_hook, ncode, wparam, lparam);
@@ -27,7 +27,7 @@ namespace {
   }
   #endif
   
-  wxTextEntryDialog* create_text_entry_dialog(intptr_t control, const ustring& text, const ustring& message, ustring& value, int32 character_casing, bool multiline, bool use_system_password_char) {
+  wxTextEntryDialog* create_text_entry_dialog(intptr control, const ustring& text, const ustring& message, ustring& value, int32 character_casing, bool multiline, bool use_system_password_char) {
     #if defined(__WXMSW__)
     handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
     #endif
@@ -53,7 +53,7 @@ namespace {
   }
 }
 
-bool input_dialog::run_dialog(intptr_t control, const ustring& text, const ustring& message, ustring& value, int32 character_casing, bool multiline, bool use_system_password_char, bool word_wrap) {
+bool input_dialog::run_dialog(intptr control, const ustring& text, const ustring& message, ustring& value, int32 character_casing, bool multiline, bool use_system_password_char, bool word_wrap) {
   wxWindowPtr<wxTextEntryDialog> text_entry_dialog(create_text_entry_dialog(control, text, message, value, character_casing, multiline, use_system_password_char));
   int32 result = text_entry_dialog->ShowModal() == wxID_OK ? IDOK : IDCANCEL;
   if (result == IDCANCEL) return false;
@@ -64,7 +64,7 @@ bool input_dialog::run_dialog(intptr_t control, const ustring& text, const ustri
   return true;
 }
 
-void input_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t control, const ustring& text, const ustring& message, ustring& value, int32 character_casing, bool multiline, bool use_system_password_char, bool word_wrap) {
+void input_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr control, const ustring& text, const ustring& message, ustring& value, int32 character_casing, bool multiline, bool use_system_password_char, bool word_wrap) {
   //wxWindowPtr<wxTextEntryDialog> text_entry_dialog(create_text_entry_dialog(control, text, message, value, character_casing, multiline, use_system_password_char, word_wrap));
   wxTextEntryDialog* text_entry_dialog(create_text_entry_dialog(control, text, message, value, character_casing, multiline, use_system_password_char));
   text_entry_dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [text_entry_dialog, on_dialog_closed, &value, character_casing](wxWindowModalDialogEvent & event) {

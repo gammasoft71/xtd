@@ -40,12 +40,12 @@ namespace xtd {
         /// @param control Collapsible panel window handle.
         /// @return true if collapsible_panel is expanded; otherwise false.
         /// @warning Internal use only
-        static bool expanded(intptr_t handle);
+        static bool expanded(intptr handle);
         /// @brief Sets a value indicating whether the collapsible_panel is in the expanded.
         /// @param control Collapsible panel window handle.
         /// @param expanded true if collapsible_panel is expanded; otherwise false.
         /// @warning Internal use only
-        static void expanded(intptr_t handle, bool expanded);
+        static void expanded(intptr handle, bool expanded);
         /// @}
       };
     }

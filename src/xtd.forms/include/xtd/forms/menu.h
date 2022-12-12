@@ -58,9 +58,9 @@ namespace xtd {
       /// @name Fields
       
       /// @{
-      /// @brief Specifies that the find_menu_item(int32, intptr_t) method should search for a handle.
+      /// @brief Specifies that the find_menu_item(int32, intptr) method should search for a handle.
       static constexpr const int32 find_handle = 0;
-      /// @brief Specifies that the find_menu_item(int32, intptr_t) method should search for a shortcut.
+      /// @brief Specifies that the find_menu_item(int32, intptr) method should search for a shortcut.
       static constexpr const int32 find_shortcut = 1;
       /// @}
       
@@ -74,7 +74,7 @@ namespace xtd {
       /// @brief Gets a value representing the window handle for the menu.
       /// @return The HMENU value of the menu.
       /// @remarks You can use this property to obtain the handle to the menu to perform special operations to the menu outside of the functionality provided by this class or its derived classes.
-      intptr_t handle() const noexcept;
+      intptr handle() const noexcept;
       
       /// @brief Gets a value indicating whether this menu contains any menu items.
       /// @return true if this menu contains menu_item objects; otherwise, false. The default is false.
@@ -180,11 +180,11 @@ namespace xtd {
       
       /// @brief Creates a new handle to the Menu.
       /// @return A handle to the menu if the method succeeds; otherwise, 0.
-      virtual intptr_t create_menu_handle() = 0;
+      virtual intptr create_menu_handle() = 0;
       
       /// @brief Destroys the handle to the Menu.
       /// @param handle A handle to the menu.
-      virtual void destroy_menu_handle(intptr_t handle);
+      virtual void destroy_menu_handle(intptr handle);
       
       virtual void on_item_added(size_t pos, menu_item_ref item);
       virtual void on_item_removed(size_t pos, menu_item_ref item);
@@ -196,7 +196,7 @@ namespace xtd {
       void recreate_menu();
       
       struct data {
-        intptr_t handle = 0;
+        intptr handle = 0;
         std::optional<std::reference_wrapper<menu>> context_menu;
         menu_item_collection menu_items;
         std::unique_ptr<menu_item> mdi_list_item;
@@ -206,7 +206,7 @@ namespace xtd {
         std::any tag;
       };
       std::shared_ptr<data> data_;
-      static std::map<intptr_t, std::reference_wrapper<menu>> handles_;
+      static std::map<intptr, std::reference_wrapper<menu>> handles_;
       /// @endcond
     };
   }

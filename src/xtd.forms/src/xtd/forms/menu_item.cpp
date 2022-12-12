@@ -251,7 +251,7 @@ menu_item& menu_item::text(const xtd::ustring& value) {
   return *this;
 }
 
-intptr_t menu_item::create_menu_handle() {
+intptr menu_item::create_menu_handle() {
   if (is_parent() || menu::data_->main_menu.has_value()) return native::menu::create();
   
   if (data_->text == "-") data_->kind = xtd::forms::menu_item_kind::separator;
@@ -260,14 +260,14 @@ intptr_t menu_item::create_menu_handle() {
   return handle;
 }
 
-void menu_item::destroy_menu_handle(intptr_t handle) {
+void menu_item::destroy_menu_handle(intptr handle) {
   if (!handle) return;
   if (is_parent()) return native::menu::destroy(menu::data_->handle);
   handles_.erase(native::menu_item::menu_id(handle));
   native::menu_item::destroy(handle);
 }
 
-intptr_t menu_item::menu_id() const noexcept {
+intptr menu_item::menu_id() const noexcept {
   return native::menu_item::menu_id(menu::data_->handle);
 }
 

@@ -57,11 +57,11 @@ void folder_browser_dialog::reset() noexcept {
   data_->options = BIF_USENEWUI;
 }
 
-bool folder_browser_dialog::run_dialog(intptr_t owner) {
+bool folder_browser_dialog::run_dialog(intptr owner) {
   return native::folder_browser_dialog::run_dialog(owner, data_->description, data_->root_folder, data_->selected_path, data_->options);
 }
 
-void folder_browser_dialog::run_sheet(intptr_t owner) {
+void folder_browser_dialog::run_sheet(intptr owner) {
   if (!owner) run_dialog(owner);
   else native::folder_browser_dialog::run_sheet({*new __xtd_forms_common_dialog_closed_caller__(this), &__xtd_forms_common_dialog_closed_caller__::on_common_dialog_closed}, owner, data_->description, data_->root_folder, data_->selected_path, data_->options);
 }

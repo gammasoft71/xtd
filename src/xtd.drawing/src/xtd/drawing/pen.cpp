@@ -115,7 +115,7 @@ xtd::drawing::pen& pen::end_cap(xtd::drawing::drawing2d::line_cap value) {
   return *this;
 }
 
-intptr_t pen::handle() const noexcept {
+intptr pen::handle() const noexcept {
   return data_->handle_;
 }
 

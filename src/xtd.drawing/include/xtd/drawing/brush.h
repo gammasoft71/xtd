@@ -60,8 +60,8 @@ namespace xtd {
       
       /// @{
       /// @brief Gets the handle of the brush.
-      /// @return An intptr_t that contains the handle of the brush.
-      intptr_t handle() const noexcept;
+      /// @return An intptr that contains the handle of the brush.
+      intptr handle() const noexcept;
       /// @}
       
       /// @name Methods
@@ -87,13 +87,13 @@ namespace xtd {
       /// @{
       /// @brief In a derived class, sets a reference to a GDI+ brush object.
       /// @param brush A pointer to the GDI+ brush object.
-      void set_native_brush(intptr_t brush);
+      void set_native_brush(intptr brush);
       /// @}
       
     private:
       /// @cond
       struct data {
-        intptr_t handle_ = 0;
+        intptr handle_ = 0;
       };
       
       std::shared_ptr<data> data_ = std::make_shared<data>();

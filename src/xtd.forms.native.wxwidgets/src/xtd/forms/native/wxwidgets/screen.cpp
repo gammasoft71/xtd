@@ -16,11 +16,11 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-intptr_t screen::create_graphics() {
+intptr screen::create_graphics() {
   application::initialize();
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper;
   hdc_wrapper->create<wxScreenDC>();
-  return reinterpret_cast<intptr_t>(hdc_wrapper);
+  return reinterpret_cast<intptr>(hdc_wrapper);
 }
 
 size_t screen::count() {
@@ -71,7 +71,7 @@ rectangle screen::working_area(size_t index) {
   return {working_area.GetX(), working_area.GetY(), working_area.GetWidth(), working_area.GetHeight()};
 }
 
-size_t screen::from_handle(intptr_t handle) {
+size_t screen::from_handle(intptr handle) {
   application::initialize();
   return wxDisplay::GetFromWindow(reinterpret_cast<control_handler*>(handle)->control());
 }

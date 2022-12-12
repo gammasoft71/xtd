@@ -15,7 +15,7 @@ namespace {
 
 cursor cursor::none(0, false, "none");
 
-cursor::cursor(intptr_t handle, bool destroyable, const xtd::ustring& name) {
+cursor::cursor(intptr handle, bool destroyable, const xtd::ustring& name) {
   data_->handle_ = handle;
   data_->destroyable_ = destroyable;
   data_->name_ = name;
@@ -29,7 +29,7 @@ cursor::cursor() {
   data_->size_ = native::cursor::size(data_->handle_);
 }
 
-cursor::cursor(intptr_t handle) : cursor(handle, false, "") {
+cursor::cursor(intptr handle) : cursor(handle, false, "") {
 }
 
 cursor::cursor(const bitmap& bitmap, const xtd::drawing::point& hot_spot) {
@@ -52,7 +52,7 @@ cursor cursor::current() {
   return current_cursor.value_or(none);
 }
 
-intptr_t cursor::handle() const noexcept {
+intptr cursor::handle() const noexcept {
   return data_->handle_;
 }
 
@@ -80,7 +80,7 @@ void cursor::tag(std::any tag) {
   data_->tag_ = tag;
 }
 
-intptr_t cursor::copy_handle() const {
+intptr cursor::copy_handle() const {
   return native::cursor::copy(data_->handle_);
 }
 

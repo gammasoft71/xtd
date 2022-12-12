@@ -68,7 +68,7 @@ icon::~icon() {
     native::icon::destroy(data_->handle);
 }
 
-intptr_t icon::handle() const noexcept {
+intptr icon::handle() const noexcept {
   return data_->handle;
 }
 
@@ -88,7 +88,7 @@ bool icon::equals(const icon& icon) const noexcept {
   return data_->handle == icon.data_->handle;
 }
 
-icon icon::from_handle(intptr_t handle) {
+icon icon::from_handle(intptr handle) {
   drawing::icon icon;
   icon.data_->handle = native::icon::from_handle(handle);
   icon.data_->size = {native::icon::get_width(icon.data_->handle), native::icon::get_height(icon.data_->handle)};

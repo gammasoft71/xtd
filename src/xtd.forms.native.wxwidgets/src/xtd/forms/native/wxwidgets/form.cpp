@@ -42,7 +42,7 @@ wxMenuBar* __create_default_menu_bar__() {
   return default_menu_bar;
 }
 
-void form::activate(intptr_t control) {
+void form::activate(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -51,7 +51,7 @@ void form::activate(intptr_t control) {
   reinterpret_cast<control_handler*>(control)->control()->Raise();
 }
 
-void form::close(intptr_t control) {
+void form::close(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -60,7 +60,7 @@ void form::close(intptr_t control) {
   reinterpret_cast<control_handler*>(control)->control()->Close();
 }
 
-bool form::full_screen(intptr_t control) {
+bool form::full_screen(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -73,7 +73,7 @@ bool form::full_screen(intptr_t control) {
   #endif
 }
 
-void form::full_screen(intptr_t control, bool full_screen) {
+void form::full_screen(intptr control, bool full_screen) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -86,7 +86,7 @@ void form::full_screen(intptr_t control, bool full_screen) {
   #endif
 }
 
-void form::icon(intptr_t control, const xtd::drawing::icon& icon) {
+void form::icon(intptr control, const xtd::drawing::icon& icon) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -96,7 +96,7 @@ void form::icon(intptr_t control, const xtd::drawing::icon& icon) {
   else static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->SetIcon(reinterpret_cast<wxIconBundle*>(icon.handle())->GetIcon());
 }
 
-bool form::maximize(intptr_t control) {
+bool form::maximize(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -111,7 +111,7 @@ bool form::maximize(intptr_t control) {
   #endif
 }
 
-void form::maximize(intptr_t control, bool maximize) {
+void form::maximize(intptr control, bool maximize) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -120,7 +120,7 @@ void form::maximize(intptr_t control, bool maximize) {
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->Maximize(maximize);
 }
 
-void form::menu(intptr_t control, intptr_t menu) {
+void form::menu(intptr control, intptr menu) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (menu != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("dialog can't have menu"_t, current_stack_frame_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
@@ -131,7 +131,7 @@ void form::menu(intptr_t control, intptr_t menu) {
   static_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())->SetMenuBar(menu != 0 ? reinterpret_cast<wxMenuBar*>(menu) : __create_default_menu_bar__());
 }
 
-bool form::minimize(intptr_t control) {
+bool form::minimize(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -140,7 +140,7 @@ bool form::minimize(intptr_t control) {
   return static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->IsIconized();
 }
 
-void form::minimize(intptr_t control, bool minimize) {
+void form::minimize(intptr control, bool minimize) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -149,7 +149,7 @@ void form::minimize(intptr_t control, bool minimize) {
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->Iconize(minimize);
 }
 
-void form::restore(intptr_t control) {
+void form::restore(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -163,7 +163,7 @@ void form::restore(intptr_t control) {
   #endif
 }
 
-void form::set_region(intptr_t control, intptr_t region) {
+void form::set_region(intptr control, intptr region) {
   if (!control || !region || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -172,7 +172,7 @@ void form::set_region(intptr_t control, intptr_t region) {
   static_cast<wxNonOwnedWindow*>(reinterpret_cast<control_handler*>(control)->control())->SetShape(*reinterpret_cast<wxRegion*>(region));
 }
 
-int32 form::show_dialog(intptr_t control) {
+int32 form::show_dialog(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -183,7 +183,7 @@ int32 form::show_dialog(intptr_t control) {
   return dialog->ShowModal();
 }
 
-void form::show_sheet(intptr_t control) {
+void form::show_sheet(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -197,7 +197,7 @@ void form::show_sheet(intptr_t control) {
   #endif
 }
 
-int32 form::show_sheet_dialog(intptr_t control) {
+int32 form::show_sheet_dialog(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -225,7 +225,7 @@ int32 form::show_sheet_dialog(intptr_t control) {
   #endif
 }
 
-void form::end_dialog(intptr_t control, int32 result) {
+void form::end_dialog(intptr control, int32 result) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -235,7 +235,7 @@ void form::end_dialog(intptr_t control, int32 result) {
   static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())->EndModal(result);
 }
 
-void form::opacity(intptr_t control, double opacity) {
+void form::opacity(intptr control, double opacity) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -244,7 +244,7 @@ void form::opacity(intptr_t control, double opacity) {
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->SetTransparent(static_cast<xtd::byte>(255 * opacity));
 }
 
-void form::virtual_size(intptr_t control, const drawing::size& size) {
+void form::virtual_size(intptr control, const drawing::size& size) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

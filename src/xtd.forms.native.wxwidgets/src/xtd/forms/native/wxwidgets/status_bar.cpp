@@ -21,7 +21,7 @@ namespace {
   }
 }
 
-intptr_t status_bar::add_status_bar_panel(intptr_t status_bar, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, int32 alignment, int32 auto_size, int32 border_style, int32 min_width, int32 width) {
+intptr status_bar::add_status_bar_panel(intptr status_bar, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, int32 alignment, int32 auto_size, int32 border_style, int32 min_width, int32 width) {
   if (!status_bar || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(status_bar)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(status_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -37,10 +37,10 @@ intptr_t status_bar::add_status_bar_panel(intptr_t status_bar, const xtd::ustrin
   static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetStatusStyles(count, reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.data());
   static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetStatusText(reinterpret_cast<wx_status_bar*>(status_bar)->panel_texts[static_cast<int32>(reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.size())], count - 1);
   static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetStatusWidths(count, reinterpret_cast<wx_status_bar*>(status_bar)->panel_widths.data());
-  return static_cast<intptr_t>(count - 1);
+  return static_cast<intptr>(count - 1);
 }
 
-intptr_t status_bar::add_status_bar_control(intptr_t status_bar, intptr_t control, const xtd::ustring& text) {
+intptr status_bar::add_status_bar_control(intptr status_bar, intptr control, const xtd::ustring& text) {
   if (!status_bar || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(status_bar)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(status_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -61,10 +61,10 @@ intptr_t status_bar::add_status_bar_control(intptr_t status_bar, intptr_t contro
   static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetStatusStyles(count, reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.data());
   static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetStatusText(reinterpret_cast<wx_status_bar*>(status_bar)->panel_texts[static_cast<int32>(reinterpret_cast<wx_status_bar*>(status_bar)->panel_styles.size())], count - 1);
   static_cast<wxStatusBar*>(reinterpret_cast<control_handler*>(status_bar)->control())->SetStatusWidths(count, reinterpret_cast<wx_status_bar*>(status_bar)->panel_widths.data());
-  return static_cast<intptr_t>(count - 1);
+  return static_cast<intptr>(count - 1);
 }
 
-bool status_bar::set_system_status_bar(intptr_t control, intptr_t status_bar) {
+bool status_bar::set_system_status_bar(intptr control, intptr status_bar) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (status_bar != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("dialog can't have tool bar"_t, current_stack_frame_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
@@ -92,7 +92,7 @@ xtd::ustring status_bar::sizing_grip_cursor_name() {
   return "size_nwse";
 }
 
-void status_bar::update_status_bar_item(intptr_t status_bar, intptr_t handle, int32 border_style, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool visible, int32 width, bool stretchable) {
+void status_bar::update_status_bar_item(intptr status_bar, intptr handle, int32 border_style, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool visible, int32 width, bool stretchable) {
   if (!status_bar || !handle || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(status_bar)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(status_bar)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

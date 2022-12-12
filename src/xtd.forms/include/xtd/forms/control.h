@@ -503,9 +503,9 @@ namespace xtd {
       /// @endcond
       
       /// @brief Gets the window handle that the control is bound to.
-      /// @return An intptr_t that contains the window handle (HWND) of the control.
+      /// @return An intptr that contains the window handle (HWND) of the control.
       /// @remarks When the underlying toolkits is native, xtd::forms::control::handle and xtd::forms::control::native_handle are the same, But if the underlying toolkit is not native, the xtd::forms::control::handle matches the toolkit handle while xtd::forms::control::native_handle returns the true native handle.
-      intptr_t handle() const override;
+      intptr handle() const override;
       
       /// @brief Gets the height of the control.
       /// @return The height of the control in pixels.
@@ -615,9 +615,9 @@ namespace xtd {
       static xtd::drawing::point mouse_position() noexcept;
       
       /// @brief Gets the native handle that the control is bound to.
-      /// @return An intptr_t that contains the native handle (HWND) of the control.
+      /// @return An intptr that contains the native handle (HWND) of the control.
       /// @remarks When the underlying toolkits is native, xtd::forms::control::handle and xtd::forms::control::native_handle are the same, But if the underlying toolkit is not native, the xtd::forms::control::handle matches the toolkit handle while xtd::forms::control::native_handle returns the true native handle.
-      intptr_t native_handle() const noexcept;
+      intptr native_handle() const noexcept;
       
       /// @brief Gets the name of the control.
       /// @return The name of the control. The default is an empty string ("").
@@ -731,9 +731,9 @@ namespace xtd {
       virtual control& text(const xtd::ustring& text);
       
       /// @brief Gets the toolkit handle that the control is bound to.
-      /// @return An intptr_t that contains the toolkit handle (HWND) of the control.
+      /// @return An intptr that contains the toolkit handle (HWND) of the control.
       /// @remarks When the underlying toolkits is native, xtd::forms::control::handle and xtd::forms::control::toolkit_handle are the same, But if the underlying toolkit is not native, the xtd::forms::control::handle matches the toolkit handle while xtd::forms::control::toolkit_handle returns the toolkit handle.
-      intptr_t toolkit_handle() const noexcept;
+      intptr toolkit_handle() const noexcept;
       
       /// @brief Gets the distance, in pixels, between the top edge of the control and the top edge of its container's client area.
       /// @return An Int32_t representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
@@ -896,12 +896,12 @@ namespace xtd {
       /// @param handle The window handle (HWND) to search for.
       /// @return The control that represents the control associated with the specified handle; returns null if no control with the specified handle is found.
       /// @remarks This method searches up the window handle parent chain until it finds a handle that is associated with a control. This method is more reliable than the from_handle method, because it correctly returns controls that own more than one handle.
-      static std::optional<control_ref> from_child_handle(intptr_t handle);
+      static std::optional<control_ref> from_child_handle(intptr handle);
       
       /// @brief Returns the control that is currently associated with the specified handle.
       /// @param handle The window handle (HWND) to search for.
       /// @return A control that represents the control associated with the specified handle; returns null if no control with the specified handle is found.
-      static std::optional<control_ref> from_handle(intptr_t handle);
+      static std::optional<control_ref> from_handle(intptr handle);
       
       /// @brief Gets a value indicating how a control will behave when its auto_size property is enabled.
       /// @return auto_size_mode One of the xtd::forms::auto_size_mode values.
@@ -926,12 +926,12 @@ namespace xtd {
       /// @param child The control to search for in the control collection.
       /// @return A zero-based index value that represents the location of the specified child control within the control collection.
       /// @exception xtd::argument_exception The child control is not in the control::control_collection.
-      size_t get_child_index(intptr_t child) const;
+      size_t get_child_index(intptr child) const;
       
       /// @brief Retrieves the index of the specified child control within the control collection, and optionally raises an exception if the specified control is not within the control collection.
       /// @param child The control to search for in the control collection.
       /// @@param throw_exception true to throw an exception if the control specified in the child parameter is not a control in the control::control_collection; otherwise, false.
-      size_t get_child_index(intptr_t child, bool& throw_exception) const;
+      size_t get_child_index(intptr child, bool& throw_exception) const;
       
       /// @brief Conceals the control from the user.
       /// @remarks Hiding the control is equivalent to setting the visible property to false. After the hide method is called, the visible property returns a value of false until the show method is called.
@@ -1038,7 +1038,7 @@ namespace xtd {
       /// @param wparam The WParam field of the message.
       /// @param lparam The LParam field of the message.
       /// @return The return value of the message.
-      intptr_t send_message(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam) const;
+      intptr send_message(intptr hwnd, int32 msg, intptr wparam, intptr lparam) const;
       
       /// @brief Sets a value indicating how a control will behave when its auto_size property is enabled.
       /// @param auto_size_mode One of the xtd::forms::auto_size_mode values.
@@ -1946,7 +1946,7 @@ namespace xtd {
       
       /// @brief Sets the parent handle of the control.
       /// @param handle The parent handle.
-      void set_parent(intptr_t handle);
+      void set_parent(intptr handle);
       
       /// @brief Sets a specified control_styles flag to either true or false.
       /// @param flag The control_styles bit to set.
@@ -1966,7 +1966,7 @@ namespace xtd {
       /// @cond
       bool get_state(control::state flag) const noexcept;
       void set_state(control::state flag, bool value);
-      bool on_context_menu_item_click(xtd::forms::context_menu& menu, intptr_t menu_id) const;
+      bool on_context_menu_item_click(xtd::forms::context_menu& menu, intptr menu_id) const;
       /// @endcond
       
     private:
@@ -1978,8 +1978,8 @@ namespace xtd {
       void do_layout_with_anchor_styles();
       control(const xtd::ustring& name, bool);
       void show_context_menu(xtd::forms::context_menu& menu, const xtd::drawing::point& pos) const;
-      void reflect_message(intptr_t handle, message& message);
-      intptr_t wnd_proc_(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
+      void reflect_message(intptr handle, message& message);
+      intptr wnd_proc_(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle);
       void wm_app_idle(message& message);
       void wm_child_activate(message& message);
       void wm_command(message& message);
@@ -2034,7 +2034,7 @@ namespace xtd {
         bool focused = false;
         std::optional<drawing::color> fore_color;
         std::optional<drawing::font> font;
-        intptr_t handle = 0;
+        intptr handle = 0;
         drawing::point location;
         drawing::region region;
         forms::padding margin {3};
@@ -2045,7 +2045,7 @@ namespace xtd {
         forms::padding padding;
         bool mouse_in = false;
         xtd::ustring name;
-        intptr_t parent = 0;
+        intptr parent = 0;
         bool recreate_handle_posted = false;
         std::optional<drawing::size> size;
         control::state state = control::state::empty;
@@ -2060,7 +2060,7 @@ namespace xtd {
       static std::thread::id handle_created_on_thread_id_;
       static forms::keys modifier_keys_;
       static forms::mouse_buttons mouse_buttons_;
-      static std::map<intptr_t, control*> handles_;
+      static std::map<intptr, control*> handles_;
       static control_collection top_level_controls_;
       
       std::shared_ptr<data> data_ = std::make_shared<data>();

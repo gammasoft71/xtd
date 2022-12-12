@@ -7,11 +7,11 @@ using namespace xtd;
 using namespace xtd::forms;
 
 struct __message_sender__ {
-  intptr_t operator ()(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam) {
+  intptr operator ()(intptr hwnd, int32 msg, intptr wparam, intptr lparam) {
     return native::control::send_message(hwnd, hwnd, msg, wparam, lparam);
   }
 };
 
-intptr_t send_message(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam) {
+intptr send_message(intptr hwnd, int32 msg, intptr wparam, intptr lparam) {
   return __message_sender__()(hwnd, msg, wparam, lparam);
 }

@@ -293,7 +293,7 @@ namespace xtd {
       void on_item_removed(size_t pos, tool_bar_button_ref item);
       
       void resize_stretchable_separtors();
-      void update_toolbar_button_control(intptr_t handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible);
+      void update_toolbar_button_control(intptr handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible);
       
       void wm_click(const message& message);
       
@@ -313,7 +313,7 @@ namespace xtd {
         bool show_tool_tips = false;
         std::vector<std::shared_ptr<xtd::forms::tool_bar::tool_bar_button_control>> stretchable_separators;
         std::vector<std::shared_ptr<xtd::forms::tool_bar::tool_bar_button_control>> tool_bar_buttons;
-        std::vector<intptr_t> system_tool_bar_button_handles;
+        std::vector<intptr> system_tool_bar_button_handles;
         xtd::forms::tool_bar_text_align text_align = xtd::forms::tool_bar_text_align::underneath;
         bool wrappable = false;
       };

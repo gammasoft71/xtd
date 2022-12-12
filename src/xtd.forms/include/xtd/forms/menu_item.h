@@ -255,7 +255,7 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating the Windows identifier for this menu item.
       /// @return The Windows identifier for this menu item.
-      intptr_t menu_id() const noexcept;
+      intptr menu_id() const noexcept;
       
       /// @brief Gets a value indicating whether a check mark appears next to the text of the menu item.
       /// @return true if there is a check mark next to the menu item; otherwise, false. The default is false.
@@ -333,8 +333,8 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      intptr_t create_menu_handle() override;
-      void destroy_menu_handle(intptr_t handle) override;
+      intptr create_menu_handle() override;
+      void destroy_menu_handle(intptr handle) override;
       
       /// @brief Raises the Click event.
       /// @param e An xtd::event_args that contains the event data.

@@ -40,7 +40,7 @@ namespace xtd {
         /// @brief Mark button as default.
         /// @param control Button window handle.
         /// @warning Internal use only
-        static void set_default_button(intptr_t control);
+        static void set_default_button(intptr control);
         /// @}
       };
     }

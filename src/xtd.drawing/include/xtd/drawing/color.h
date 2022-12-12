@@ -556,7 +556,7 @@ namespace xtd {
       
       /// @brief Gets the native handle of this xtd::drawing::color class.
       /// @remarks For internal use only, needed for system_colors.
-      intptr_t handle() const noexcept;
+      intptr handle() const noexcept;
       
       /// @brief Gets a value indicating wheter this xtd::drawing::color structure is dark color.
       /// @remarks return true if dark color; otherwise false.
@@ -853,7 +853,7 @@ namespace xtd {
       /// @param handle the handle for the new xtd::drawing::color.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       /// @remarks For internal use only.
-      static xtd::drawing::color from_handle(intptr_t handle) noexcept;
+      static xtd::drawing::color from_handle(intptr handle) noexcept;
       
       /// @brief Creates a xtd::drawing::color class from the three HSV component (hue, saturation, and brightness) values.
       /// @param hue The xtd::drawing::color saturation. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
@@ -1231,11 +1231,11 @@ namespace xtd {
       
     private:
       explicit color(uint32_t argb);
-      explicit color(intptr_t handle);
+      explicit color(intptr handle);
       color(const color& color, const xtd::drawing::known_color& know_color);
       
       uint32_t argb_ = 0;
-      intptr_t handle_ = 0;
+      intptr handle_ = 0;
       xtd::drawing::known_color known_color_ = static_cast<xtd::drawing::known_color>(0);
       xtd::ustring name_ = "0";
       bool empty_ = true;

@@ -46,7 +46,7 @@ font::font(ustring family_name, float em_size, font_style style, graphics_unit u
   data_->handle_ = native::font::create(data_->original_font_name_, size_in_points(), (data_->style_ & font_style::bold) == font_style::bold, (data_->style_ & font_style::italic) == font_style::italic, (data_->style_ & font_style::underline) == font_style::underline, (data_->style_ & font_style::strikeout) == font_style::strikeout, data_->gdi_char_set_, data_->gdi_vertical_font_);
 }
 
-font::font(intptr_t handle) {
+font::font(intptr handle) {
   data_->handle_ = handle;
   ustring family_name;
   bool bold = false, italic = false, underline = false, strikeout = false;
@@ -130,7 +130,7 @@ bool font::gdi_vertical_font() const noexcept {
   return data_->gdi_vertical_font_;
 }
 
-intptr_t font::handle() const noexcept {
+intptr font::handle() const noexcept {
   return data_->handle_;
 }
 
@@ -191,7 +191,7 @@ bool font::equals(const font& value) const noexcept {
   return data_->font_family_ == value.data_->font_family_ && data_->gdi_char_set_ == value.data_->gdi_char_set_ && data_->gdi_vertical_font_ == value.data_->gdi_vertical_font_ && data_->style_ == value.data_->style_ && data_->size_ == value.data_->size_ && data_->unit_ == value.data_->unit_;
 }
 
-font font::from_hdc(const intptr_t hdc) {
+font font::from_hdc(const intptr hdc) {
   font font;
   font.data_->handle_ = native::font::create_from_hdc(hdc);
   ustring family_name;
@@ -212,7 +212,7 @@ font font::from_hdc(const intptr_t hdc) {
   return font;
 }
 
-font font::from_hfont(const intptr_t hfont) {
+font font::from_hfont(const intptr hfont) {
   return font(native::font::create_from_hfont(hfont));
 }
 
@@ -230,7 +230,7 @@ float font::get_height(float dpi) const {
   return get_height() / native::font::dpi() * dpi;
 }
 
-intptr_t font::to_hfont() const {
+intptr font::to_hfont() const {
   return native::font::create_from_hfont(data_->handle_);
 }
 

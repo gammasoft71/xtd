@@ -19,8 +19,8 @@ namespace {
   HHOOK handle_hook;
   LRESULT CALLBACK callbackProc(INT ncode, WPARAM wparam, LPARAM lparam) {
     if (ncode == HCBT_ACTIVATE) {
-      allow_dark_mode_for_window(static_cast<intptr_t>(wparam));
-      refresh_title_bar_theme_color(static_cast<intptr_t>(wparam));
+      allow_dark_mode_for_window(static_cast<intptr>(wparam));
+      refresh_title_bar_theme_color(static_cast<intptr>(wparam));
       UnhookWindowsHookEx(handle_hook);
     } else
       CallNextHookEx(handle_hook, ncode, wparam, lparam);
@@ -96,12 +96,12 @@ namespace {
   }
 }
 
-bool progress_dialog::cancelled(intptr_t dialog) {
+bool progress_dialog::cancelled(intptr dialog) {
   if (dialog == 0) return false;
   return reinterpret_cast<wx_progress_dialog*>(dialog)->WasCancelled();
 }
 
-intptr_t progress_dialog::create(intptr_t hwnd, const ustring& text, const ustring& message, const std::vector<ustring>& informations, size_t animation_speed, int32 minimum, int32 maximum, int32 value, size_t options) {
+intptr progress_dialog::create(intptr hwnd, const ustring& text, const ustring& message, const std::vector<ustring>& informations, size_t animation_speed, int32 minimum, int32 maximum, int32 value, size_t options) {
   #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
   #endif
@@ -111,56 +111,56 @@ intptr_t progress_dialog::create(intptr_t hwnd, const ustring& text, const ustri
   dialog->minimum(minimum);
   dialog->maximum(maximum);
   dialog->value(value);
-  return reinterpret_cast<intptr_t>(dialog);
+  return reinterpret_cast<intptr>(dialog);
 }
 
-void progress_dialog::destroy(intptr_t dialog) {
+void progress_dialog::destroy(intptr dialog) {
   delete reinterpret_cast<wx_progress_dialog*>(dialog);
 }
 
-void progress_dialog::informations(intptr_t dialog, const std::vector<ustring>& informations) {
+void progress_dialog::informations(intptr dialog, const std::vector<ustring>& informations) {
   // doesn't exists on wxWidgets
 }
 
-void progress_dialog::marquee(intptr_t dialog, bool marquee, size_t animation_speed) {
+void progress_dialog::marquee(intptr dialog, bool marquee, size_t animation_speed) {
   if (dialog == 0) return;
   reinterpret_cast<wx_progress_dialog*>(dialog)->marquee(marquee, animation_speed);
 }
 
-void progress_dialog::maximum(intptr_t dialog, int32 maximum) {
+void progress_dialog::maximum(intptr dialog, int32 maximum) {
   if (dialog == 0) return;
   reinterpret_cast<wx_progress_dialog*>(dialog)->maximum(maximum);
 }
 
-void progress_dialog::message(intptr_t dialog, const ustring& message) {
+void progress_dialog::message(intptr dialog, const ustring& message) {
   if (dialog == 0) return;
   reinterpret_cast<wx_progress_dialog*>(dialog)->message(message);
 }
 
-void progress_dialog::minimum(intptr_t dialog, int32 minimum) {
+void progress_dialog::minimum(intptr dialog, int32 minimum) {
   if (dialog == 0) return;
   reinterpret_cast<wx_progress_dialog*>(dialog)->minimum(minimum);
 }
 
-void progress_dialog::resume(intptr_t dialog) {
+void progress_dialog::resume(intptr dialog) {
   if (dialog == 0) return;
   reinterpret_cast<wx_progress_dialog*>(dialog)->Resume();
 }
 
-void progress_dialog::show(intptr_t dialog) {
+void progress_dialog::show(intptr dialog) {
   reinterpret_cast<wx_progress_dialog*>(dialog)->Show();
 }
 
-void progress_dialog::show_sheet(intptr_t dialog) {
+void progress_dialog::show_sheet(intptr dialog) {
   reinterpret_cast<wx_progress_dialog*>(dialog)->ShowWindowModal();
 }
 
-bool progress_dialog::skipped(intptr_t dialog) {
+bool progress_dialog::skipped(intptr dialog) {
   if (dialog == 0) return false;
   return reinterpret_cast<wx_progress_dialog*>(dialog)->WasSkipped();
 }
 
-void progress_dialog::value(intptr_t dialog, int32 value) {
+void progress_dialog::value(intptr dialog, int32 value) {
   if (dialog == 0) return;
   reinterpret_cast<wx_progress_dialog*>(dialog)->value(value);
 }

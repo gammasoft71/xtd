@@ -111,7 +111,7 @@ namespace xtd {
       struct data {
         bool enabled = false;
         int32 interval = 100;
-        intptr_t handle = 0;
+        intptr handle = 0;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

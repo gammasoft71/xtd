@@ -277,7 +277,7 @@ namespace xtd {
         xtd::ustring tool_tip_text;
         bool visible = true;
         xtd::forms::tool_bar* parent = nullptr;
-        intptr_t handle = 0;
+        intptr handle = 0;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

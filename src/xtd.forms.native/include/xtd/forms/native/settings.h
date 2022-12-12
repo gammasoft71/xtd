@@ -43,32 +43,32 @@ namespace xtd {
         /// @brief Create settings.
         /// @return The settings handle created.
         /// @warning Internal use only
-        static intptr_t create(const xtd::ustring& product_name, const xtd::ustring& company_name);
+        static intptr create(const xtd::ustring& product_name, const xtd::ustring& company_name);
         /// @brief Destroys settings.
         /// @param settings Settings handle.
         /// @warning Internal use only
-        static void destroy(intptr_t settings);
+        static void destroy(intptr settings);
         /// @brief Reset settings.
         /// @param settings Settings handle.
         /// @warning Internal use only
-        static void reset(intptr_t settings);
+        static void reset(intptr settings);
         /// @brief Reads about settings handle a value for specified key. If not found default value is used.
         /// @param settings Settings handle.
         /// @param key The key used to read a value.
         /// @param default_value A string used if value not found.
         /// @return A string that represent the value associate to the key.
         /// @warning Internal use only
-        static xtd::ustring read(intptr_t settings, const xtd::ustring& key, const xtd::ustring& default_value);
+        static xtd::ustring read(intptr settings, const xtd::ustring& key, const xtd::ustring& default_value);
         /// @brief Save settings.
         /// @param settings Settings handle.
         /// @warning Internal use only
-        static void save(intptr_t settings);
+        static void save(intptr settings);
         /// @brief Writes in settings handle a specified value for specified key.
         /// @param settings Settings handle.
         /// @param key The key used to write a value.
         /// @param value A string to write.
         /// @warning Internal use only
-        static void write(intptr_t settings, const xtd::ustring& key, const xtd::ustring& value);
+        static void write(intptr settings, const xtd::ustring& key, const xtd::ustring& value);
         /// @}
       };
     }

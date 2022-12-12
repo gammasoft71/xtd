@@ -16,11 +16,11 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing2d;
 
-graphics::graphics(intptr_t handle) {
+graphics::graphics(intptr handle) {
   data_->handle = handle;
 }
 
-graphics::graphics(intptr_t handle, const drawing::region& region) {
+graphics::graphics(intptr handle, const drawing::region& region) {
   data_->handle = handle;
   if (!region.is_empty() && !region.is_infinite())
     clip(region);
@@ -91,7 +91,7 @@ float graphics::dpi_y() const noexcept {
   return native::graphics::get_dpi_y(handle());
 }
 
-intptr_t graphics::handle() const noexcept {
+intptr graphics::handle() const noexcept {
   return data_->handle;
 }
 
@@ -721,15 +721,15 @@ void graphics::flush(xtd::drawing::drawing2d::flush_intention intention) {
   native::graphics::flush(handle(), static_cast<int32>(intention));
 }
 
-graphics graphics::from_hdc(intptr_t hdc) {
+graphics graphics::from_hdc(intptr hdc) {
   return graphics(native::graphics::from_hdc(hdc));
 }
 
-graphics graphics::from_hdc(intptr_t hdc, intptr_t hdevice) {
+graphics graphics::from_hdc(intptr hdc, intptr hdevice) {
   return graphics(native::graphics::from_hdc(hdc, hdevice));
 }
 
-graphics graphics::from_hwnd(intptr_t hwnd) {
+graphics graphics::from_hwnd(intptr hwnd) {
   return graphics(native::graphics::from_hwnd(hwnd));
 }
 
@@ -737,7 +737,7 @@ graphics graphics::from_image(const image& image) {
   return graphics(native::graphics::from_image(image.handle()));
 }
 
-intptr_t graphics::get_hdc() const {
+intptr graphics::get_hdc() const {
   return native::graphics::get_hdc(handle());
 }
 
@@ -835,7 +835,7 @@ void graphics::multiply_transform(const xtd::drawing::drawing2d::matrix& matrix,
   transform(new_matrix);
 }
 
-void graphics::release_hdc(intptr_t hdc) {
+void graphics::release_hdc(intptr hdc) {
   native::graphics::release_hdc(handle(), hdc);
 }
 

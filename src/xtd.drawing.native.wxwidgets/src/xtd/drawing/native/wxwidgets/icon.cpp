@@ -68,88 +68,88 @@ namespace {
   }
 }
 
-intptr_t icon::create(const ustring& filename) {
+intptr icon::create(const ustring& filename) {
   toolkit::initialize(); // Must be first
-  return reinterpret_cast<intptr_t>(new wxIconBundle(wxString(convert_string::to_wstring(filename))));
+  return reinterpret_cast<intptr>(new wxIconBundle(wxString(convert_string::to_wstring(filename))));
 }
 
-intptr_t icon::create(const xtd::ustring& filename, int32 width, int32 height) {
+intptr icon::create(const xtd::ustring& filename, int32 width, int32 height) {
   toolkit::initialize(); // Must be first
-  //return reinterpret_cast<intptr_t>(new wxIconBundle(wxIcon(wxString(convert_string::to_wstring(filename)), wxICON_DEFAULT_TYPE, width, height)));
-  return reinterpret_cast<intptr_t>(new wxIconBundle(wxIconBundle(wxString(convert_string::to_wstring(filename))).GetIcon({width, height})));
+  //return reinterpret_cast<intptr>(new wxIconBundle(wxIcon(wxString(convert_string::to_wstring(filename)), wxICON_DEFAULT_TYPE, width, height)));
+  return reinterpret_cast<intptr>(new wxIconBundle(wxIconBundle(wxString(convert_string::to_wstring(filename))).GetIcon({width, height})));
 }
 
-intptr_t icon::create(std::istream& stream) {
-  toolkit::initialize(); // Must be first
-  StdInputStreamAdapter std_stream(stream);
-  return reinterpret_cast<intptr_t>(new wxIconBundle(std_stream));
-}
-
-intptr_t icon::create(std::istream& stream, int32 width, int32 height) {
+intptr icon::create(std::istream& stream) {
   toolkit::initialize(); // Must be first
   StdInputStreamAdapter std_stream(stream);
-  return reinterpret_cast<intptr_t>(new wxIconBundle(wxIconBundle(std_stream).GetIcon({width, height})));
+  return reinterpret_cast<intptr>(new wxIconBundle(std_stream));
 }
 
-intptr_t icon::create(const char* const* bits) {
+intptr icon::create(std::istream& stream, int32 width, int32 height) {
   toolkit::initialize(); // Must be first
-  return reinterpret_cast<intptr_t>(new wxIconBundle(wxIcon(bits)));
+  StdInputStreamAdapter std_stream(stream);
+  return reinterpret_cast<intptr>(new wxIconBundle(wxIconBundle(std_stream).GetIcon({width, height})));
 }
 
-intptr_t icon::create(const char* const* bits, int32 width, int32 height) {
+intptr icon::create(const char* const* bits) {
   toolkit::initialize(); // Must be first
-  return reinterpret_cast<intptr_t>(new wxIconBundle(wxIconBundle(wxIcon(bits)).GetIcon({width, height})));
+  return reinterpret_cast<intptr>(new wxIconBundle(wxIcon(bits)));
 }
 
-intptr_t icon::create(intptr_t image) {
+intptr icon::create(const char* const* bits, int32 width, int32 height) {
+  toolkit::initialize(); // Must be first
+  return reinterpret_cast<intptr>(new wxIconBundle(wxIconBundle(wxIcon(bits)).GetIcon({width, height})));
+}
+
+intptr icon::create(intptr image) {
   toolkit::initialize(); // Must be first
   if (image == 0) return 0;
   wxIconBundle* result = new wxIconBundle;
   wxIcon icon;
   icon.CopyFromBitmap(wxBitmap(*reinterpret_cast<wxImage*>(image)));
   result->AddIcon(icon);
-  return reinterpret_cast<intptr_t>(result);
+  return reinterpret_cast<intptr>(result);
 }
 
-intptr_t icon::create(intptr_t icon, int32 width, int32 height) {
+intptr icon::create(intptr icon, int32 width, int32 height) {
   toolkit::initialize(); // Must be first
   if (icon == 0) return 0;
   wxIconBundle* result = new wxIconBundle(reinterpret_cast<wxIconBundle*>(icon)->GetIcon({width, height}));
-  return reinterpret_cast<intptr_t>(result);
+  return reinterpret_cast<intptr>(result);
 }
 
-void icon::destroy(intptr_t icon) {
+void icon::destroy(intptr icon) {
   delete reinterpret_cast<wxImage*>(icon);
 }
 
-intptr_t icon::from_handle(intptr_t handle) {
-  return reinterpret_cast<intptr_t>(new wxIconBundle(wxIcon(*reinterpret_cast<wxIcon*>(handle))));
+intptr icon::from_handle(intptr handle) {
+  return reinterpret_cast<intptr>(new wxIconBundle(wxIcon(*reinterpret_cast<wxIcon*>(handle))));
 }
 
-int32 icon::get_height(intptr_t icon) {
+int32 icon::get_height(intptr icon) {
   return reinterpret_cast<wxIconBundle*>(icon)->GetIcon().GetHeight();
 }
 
-int32 icon::get_width(intptr_t icon) {
+int32 icon::get_width(intptr icon) {
   return reinterpret_cast<wxIconBundle*>(icon)->GetIcon().GetWidth();
 }
 
-void icon::save(intptr_t icon, const ustring& filename) {
+void icon::save(intptr icon, const ustring& filename) {
   //reinterpret_cast<wxIconBundle*>(icon)->GetIcon().SaveFile(wxString(convert_string::to_wstring(filename)), wxICON_DEFAULT_TYPE);
   reinterpret_cast<wxImage*>(to_image(icon))->SaveFile(filename);
 }
 
-void icon::save(intptr_t icon, std::ostream& stream, size_t raw_format) {
+void icon::save(intptr icon, std::ostream& stream, size_t raw_format) {
   StdOutputStreamAdapter output_stream(stream);
   reinterpret_cast<wxImage*>(to_image(icon))->SaveFile(output_stream, to_bitmap_type(raw_format));
 }
 
-intptr_t icon::to_image(intptr_t icon) {
+intptr icon::to_image(intptr icon) {
   if (icon == 0) return 0;
   wxIconBundle* icon_bundle = reinterpret_cast<wxIconBundle*>(icon);
   wxIcon wx_icon = icon_bundle->GetIcon();
   if (!wx_icon.IsOk()) return 0;
   wxBitmap wx_bitmap;
   wx_bitmap.CopyFromIcon(wx_icon);
-  return reinterpret_cast<intptr_t>(new wxImage(wx_bitmap.ConvertToImage()));
+  return reinterpret_cast<intptr>(new wxImage(wx_bitmap.ConvertToImage()));
 }
