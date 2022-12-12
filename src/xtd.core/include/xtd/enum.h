@@ -57,7 +57,7 @@ namespace xtd {
     enum_object(byte_t value) : value_(to_enum(value)) {}
     enum_object(sbyte_t value) : value_(to_enum(value)) {}
     enum_object(int16_t value) : value_(to_enum(value)) {}
-    enum_object(int32_t value) : value_(to_enum(value)) {}
+    enum_object(int32 value) : value_(to_enum(value)) {}
     enum_object(int64_t value) : value_(to_enum(value)) {}
     enum_object(uint16_t value) : value_(to_enum(value)) {}
     enum_object(uint32_t value) : value_(to_enum(value)) {}
@@ -91,7 +91,7 @@ namespace xtd {
     /// @name Public methods
     
     /// @{
-    int32_t compare_to(const enum_object& value) const noexcept override {
+    int32 compare_to(const enum_object& value) const noexcept override {
       if (to_int(value_) == to_int(value.value_)) return 0;
       if (to_int(value_) < to_int(value.value_)) return -1;
       return 1;
@@ -107,7 +107,7 @@ namespace xtd {
     
     /// @brief Converts this instance to int32.
     /// @return A new to_int32 object converted from this instance.
-    int32_t to_int32() const noexcept {return static_cast<int32_t>(value_);}
+    int32 to_int32() const noexcept {return static_cast<int32>(value_);}
     
     /// @brief Converts this instance to int64.
     /// @return A new to_int64 object converted from this instance.
@@ -325,11 +325,11 @@ namespace xtd {
       return entries;
     }
     
-    /// @brief Retrieves an array of the std::pair<int32_t, xtd::ustring> of the constants in a specified enumeration.
+    /// @brief Retrieves an array of the std::pair<int32, xtd::ustring> of the constants in a specified enumeration.
     /// @return A xtd::ustring array of the values and names of the constants in enumType.
     template<typename enum_t>
-    static xtd::enum_collection<int32_t> get_entries_as_int32() noexcept {
-      xtd::enum_collection<int32_t> entries;
+    static xtd::enum_collection<int32> get_entries_as_int32() noexcept {
+      xtd::enum_collection<int32> entries;
       for (auto entry : enum_object<enum_t>().entries())
         entries.emplace_back(enum_object<enum_t>(entry.first).to_int32(), entry.second);
       return entries;
@@ -402,7 +402,7 @@ namespace xtd {
     /// @return xtd::ustring A xtd::ustring containing the name of the enumerated constant in enumType whose value is value; or the value int32 to xtd::ustring if no such constant is found.
     /// @exception xtd::argument_exception The value is ! a value of enumType.
     template<typename enum_t>
-    static xtd::ustring get_name(int32_t value) noexcept {return enum_object<enum_t>(value).to_string();}
+    static xtd::ustring get_name(int32 value) noexcept {return enum_object<enum_t>(value).to_string();}
     /// @brief Retrieves the name of the constant in the specified enumeration that has the specified value.
     /// @param value The value of a particular enumerated constant in terms of its underlying type.
     /// @return A xtd::ustring containing the name of the enumerated constant in enumType whose value is value; or the value int32 to xtd::ustring if no such constant is found.
@@ -455,11 +455,11 @@ namespace xtd {
     }
     
     /// @brief Retrieves an array of the values of the constants in a specified enumeration.
-    /// @return Array<int32_t> An array that contains the values of the constants in enumType.
+    /// @return Array<int32> An array that contains the values of the constants in enumType.
     /// @exception xtd::argument_exception The value is ! a value of enumType.
     template<typename enum_t>
-    static std::vector<int32_t> get_values_as_int32() noexcept {
-      std::vector<int32_t> values;
+    static std::vector<int32> get_values_as_int32() noexcept {
+      std::vector<int32> values;
       for (auto entry : enum_object<enum_t>().entries())
         values.push_back(enum_object<enum_t>(entry.first).to_int32());
       return values;
@@ -565,7 +565,7 @@ namespace xtd {
     /// @param value The value to convert.
     /// @return A new to_int32 object converted from this instance.
     template<typename enum_t>
-    static int32_t to_int32(enum_t value) noexcept {return enum_object<enum_t>(value).to_int32();}
+    static int32 to_int32(enum_t value) noexcept {return enum_object<enum_t>(value).to_int32();}
     
     /// @brief Converts this instance to int64.
     /// @param value The value to convert.
@@ -665,13 +665,13 @@ namespace xtd {
   }
 
 #define enum_(namespace_name, enum_type, ...) \
-  enum_ut_(namespace_name, enum_type, int32_t, __VA_ARGS__)
+  enum_ut_(namespace_name, enum_type, int32, __VA_ARGS__)
 
 #define enum_class_(namespace_name, enum_class_type, ...) \
-  enum_class_ut_(namespace_name, enum_class_type, int32_t, __VA_ARGS__)
+  enum_class_ut_(namespace_name, enum_class_type, int32, __VA_ARGS__)
 
 #define enum_struct_(namespace_name, enum_struct_type, ...) \
-  enum_struct_ut_(namespace_name, enum_struct_type, int32_t, __VA_ARGS__)
+  enum_struct_ut_(namespace_name, enum_struct_type, int32, __VA_ARGS__)
 
 /// @cond
 template<typename enum_t>

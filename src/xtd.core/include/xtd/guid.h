@@ -50,7 +50,7 @@ namespace xtd {
     /// @param c The next 2 bytes of the GUID.
     /// @param d The remaining 8 bytes of the GUID.
     /// @exception xtd::argument_exception bytes is not 8 bytes long.
-    explicit guid(int32_t a, int32_t b, int32_t c, const std::vector<byte_t>& d);
+    explicit guid(int32 a, int32 b, int32 c, const std::vector<byte_t>& d);
     /// @brief Initializes a new instance of the xtd::guid structure by using the specified integers and bytes.
     /// @param a The first 4 bytes of the GUID.
     /// @param b The next 2 bytes of the GUID.
@@ -63,7 +63,7 @@ namespace xtd {
     /// @param i The next byte of the GUID.
     /// @param j The next byte of the GUID.
     /// @param k The next byte of the GUID.
-    guid(int32_t a, int16_t b, int16_t c, byte_t d, byte_t e, byte_t f, byte_t g, byte_t h, byte_t i, byte_t j, byte_t k) noexcept;
+    guid(int32 a, int16_t b, int16_t c, byte_t d, byte_t e, byte_t f, byte_t g, byte_t h, byte_t i, byte_t j, byte_t k) noexcept;
     /// @brief Initializes a new instance of the xtd::guid structure by using the specified uint32_integers and bytes.
     /// @param a The first 4 bytes of the GUID.
     /// @param b The next 2 bytes of the GUID.
@@ -120,7 +120,7 @@ namespace xtd {
     /// | Less than zero    | This instance is less than obj.    |
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
-    int32_t compare_to(const guid& value) const noexcept override;
+    int32 compare_to(const guid& value) const noexcept override;
     
     bool equals(const guid& g) const noexcept override;
     

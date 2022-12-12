@@ -33,11 +33,11 @@ switch_base::switch_base(const ustring& display_name, const ustring& description
 switch_base::switch_base(const ustring& display_name, const ustring& description, const ustring& default_switch_value) : display_name_(display_name), description_(description), value_(default_switch_value) {
 }
 
-int32_t switch_base::switch_setting() const noexcept {
+int32 switch_base::switch_setting() const noexcept {
   return switch_setting_;
 }
 
-void switch_base::switch_setting(int32_t switch_setting) {
+void switch_base::switch_setting(int32 switch_setting) {
   if (switch_setting_ != switch_setting) {
     switch_setting_ = switch_setting;
     on_switch_setting_changed();

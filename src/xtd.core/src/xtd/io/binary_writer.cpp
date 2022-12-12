@@ -97,7 +97,7 @@ void binary_writer::write(int16_t value) {
   write(bit_converter::get_bytes(value));
 }
 
-void binary_writer::write(int32_t value) {
+void binary_writer::write(int32 value) {
   write(bit_converter::get_bytes(value));
 }
 
@@ -115,7 +115,7 @@ void binary_writer::write(float value) {
 }
 
 void binary_writer::write(const ustring& value) {
-  write(static_cast<int32_t>(value.size()));
+  write(static_cast<int32>(value.size()));
   for (auto c : value)
     write(c);
 }

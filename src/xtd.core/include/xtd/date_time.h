@@ -582,7 +582,7 @@ namespace xtd {
     /// @include date_time_add_months.cpp
     /// @remarks This method does not change the value of this xtd::date_time object. Instead, it returns a new xtd::date_time object whose value is the result of this operation.
     /// @remarks The xtd::date_time::add_months method calculates the resulting month and year, taking into account leap years and the number of days in a month, then adjusts the day part of the resulting xtd::date_time object. If the resulting day is not a valid day in the resulting month, the last valid day of the resulting month is used. For example, March 31st + 1 month = April 30th, and March 31st - 1 month = February 28 for a non-leap year and February 29 for a leap year.
-    date_time add_months(int32_t months) const;
+    date_time add_months(int32 months) const;
     
     /// @brief Returns a new xtd::date_time that adds the specified number of seconds to the value of this instance.
     /// @param value A number of whole and fractional seconds. The value parameter can be negative or positive.
@@ -613,9 +613,9 @@ namespace xtd {
     /// * If value + xtd::date_time::year() is not a leap year, the return value represents the day before the leap day in that year. For example, if one year is added to February 29, 2012, the date returned is February 28, 2013.
     /// @par Examples
     /// The following example illustrates using the xtd::date_time::add_years method with a xtd::date_time value that represents a leap year day. It displays the date for the fifteen years prior to and the fifteen years that follow February 29, 2000.
-    date_time add_years(int32_t value) const;
+    date_time add_years(int32 value) const;
     
-    int32_t compare_to(const date_time& value) const noexcept override;
+    int32 compare_to(const date_time& value) const noexcept override;
     
     /// @brief Returns the number of days in the specified month and year.
     /// @param year The year.
@@ -630,7 +630,7 @@ namespace xtd {
     /// The following example displays the number of days in each month of a year specified in an integer array.
     /// @include date_time_days_in_month2.cpp
     /// @remarks The xtd::date_time::days_in_month method always interprets month and year as the month and year of the Gregorian calendar.
-    static int32_t days_in_month(uint32_t year, month_of_year month);
+    static int32 days_in_month(uint32_t year, month_of_year month);
     
     /// @brief Returns the number of days in the specified month and year.
     /// @param year The year.
@@ -645,7 +645,7 @@ namespace xtd {
     /// The following example displays the number of days in each month of a year specified in an integer array.
     /// @include date_time_days_in_month2.cpp
     /// @remarks The xtd::date_time::days_in_month method always interprets month and year as the month and year of the Gregorian calendar.
-    static int32_t days_in_month(uint32_t year, uint32_t month);
+    static int32 days_in_month(uint32_t year, uint32_t month);
     
     bool equals(const date_time&) const noexcept override;
     
@@ -1069,15 +1069,15 @@ namespace xtd {
       return result;
     }
     date_time& operator ++();
-    date_time operator ++(int32_t);
+    date_time operator ++(int32);
     date_time& operator --();
-    date_time operator --(int32_t);
+    date_time operator --(int32);
     /// @endcond
     
   private:
     friend class time_zone_info;
     xtd::ticks utc_offset() const;
-    void get_date_time(uint32_t& year, uint32_t& month, uint32_t& day, uint32_t& hour, uint32_t& minute, uint32_t& second, uint32_t& day_of_year,  int32_t& day_of_week) const;
+    void get_date_time(uint32_t& year, uint32_t& month, uint32_t& day, uint32_t& hour, uint32_t& minute, uint32_t& second, uint32_t& day_of_year,  int32& day_of_week) const;
     void set_date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, uint32_t millisecond, date_time_kind kind);
     
     xtd::ticks value_ {0};

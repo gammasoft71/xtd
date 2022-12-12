@@ -16,15 +16,15 @@ source_levels source_switch::level() const noexcept {
 }
 
 void source_switch::level(xtd::diagnostics::source_levels level) {
-  switch_setting(static_cast<int32_t>(level));
+  switch_setting(static_cast<int32>(level));
 }
 
 
 bool source_switch::should_trace(trace_event_type event_type) noexcept {
-  return (switch_setting() & static_cast<int32_t>(event_type)) != 0;
+  return (switch_setting() & static_cast<int32>(event_type)) != 0;
 }
 
 
 void source_switch::on_value_changed() {
-  switch_setting(static_cast<int32_t>(parse<source_levels>(value())));
+  switch_setting(static_cast<int32>(parse<source_levels>(value())));
 }

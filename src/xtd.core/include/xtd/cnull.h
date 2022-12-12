@@ -7,9 +7,10 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include "types.h"
 
 /// @cond
-int32_t __get_file_attributes(const char* path);
+xtd::int32 __get_file_attributes(const char* path);
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

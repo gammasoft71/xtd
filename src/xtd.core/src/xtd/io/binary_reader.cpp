@@ -39,15 +39,15 @@ void binary_reader::close() {
   stream_ = nullptr;
 }
 
-int32_t binary_reader::peek_char() const {
+int32 binary_reader::peek_char() const {
   if (!stream_) return EOF;
-  int32_t value = stream_->peek();
+  int32 value = stream_->peek();
   return value;
 }
 
-int32_t binary_reader::read() {
+int32 binary_reader::read() {
   if (!stream_) return EOF;
-  int32_t value = stream_->get();
+  int32 value = stream_->get();
   return value;
 }
 
@@ -105,8 +105,8 @@ int16_t binary_reader::read_int16() {
   return bit_converter::to_int16(read_bytes(sizeof(int16_t)), 0);
 }
 
-int32_t binary_reader::read_int32() {
-  return bit_converter::to_int32(read_bytes(sizeof(int32_t)), 0);
+int32 binary_reader::read_int32() {
+  return bit_converter::to_int32(read_bytes(sizeof(int32)), 0);
 }
 
 int64_t binary_reader::read_int64() {
@@ -122,7 +122,7 @@ float binary_reader::read_single() {
 }
 
 ustring binary_reader::read_string() {
-  int32_t length = read_int32();
+  int32 length = read_int32();
   return ustring(read_chars(length).data(), static_cast<size_t>(length));
 }
 
@@ -131,7 +131,7 @@ uint16_t binary_reader::read_uint16() {
 }
 
 uint32_t binary_reader::read_uint32() {
-  return bit_converter::to_int32(read_bytes(sizeof(int32_t)), 0);
+  return bit_converter::to_int32(read_bytes(sizeof(int32)), 0);
 }
 
 uint64_t binary_reader::read_uint64() {

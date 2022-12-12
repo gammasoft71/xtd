@@ -150,7 +150,7 @@ namespace xtd {
       /// @remarks <b>Important</b> This method is not intended to be called directly by application code but by members of the Debug, Trace, and TraceSource classes to write trace data to output.
       /// @remarks The default implementation writes the event_cache, source, eventType and id parameters in the header and footer of the trace. The data parameter is written as the body of the trace message. The ToString method of the data object is used to convert the object to a String.
       template<typename object>
-      void trace_data(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, const xtd::diagnostics::trace_event_type& event_type, int32_t id, const object& data) {
+      void trace_data(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, const xtd::diagnostics::trace_event_type& event_type, int32 id, const object& data) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::ustring::format("{} {}: {} : {}", source, event_type, id, data));
         write_event_cache(event_cache);
@@ -166,7 +166,7 @@ namespace xtd {
       /// @remarks <b>Important</b> This method is not intended to be called directly by application code but by members of the Debug, Trace, and TraceSource classes to write trace data to output.
       /// @remarks The default implementation writes the event_cache, source, eventType and id parameters in the header and footer of the trace. The data parameter is written as the body of the trace message. The ToString method of the data object is used to convert the object to a String.
       template<typename object>
-      void trace_data(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, const xtd::diagnostics::trace_event_type& event_type, int32_t id, const std::vector<object>& data) {
+      void trace_data(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, const xtd::diagnostics::trace_event_type& event_type, int32 id, const std::vector<object>& data) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::ustring::format("{} {}: {} : {}", source, event_type, id, xtd::ustring::join(", ", data)));
         write_event_cache(event_cache);
@@ -182,7 +182,7 @@ namespace xtd {
       /// @remarks <b>Important</b> This method is not intended to be called directly by application code but by members of the Debug, Trace, and TraceSource classes to write trace data to output.
       /// @remarks The default implementation writes the event_cache, source, eventType and id parameters in the header and footer of the trace. The data parameter is written as the body of the trace message. The ToString method of the data object is used to convert the object to a String.
       template<typename ...objects>
-      void trace_data(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, const xtd::diagnostics::trace_event_type& event_type, int32_t id, const objects& ... data) {
+      void trace_data(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, const xtd::diagnostics::trace_event_type& event_type, int32 id, const objects& ... data) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::ustring::format("{} {}: {} : {}", source, event_type, id, xtd::ustring::join(", ", {data...})));
         write_event_cache(event_cache);
@@ -196,7 +196,7 @@ namespace xtd {
       /// @param id A numeric identifier for the event.
       /// @remarks <b>Important</b> This method is not intended to be called directly by application code but by members of the Debug, Trace, and TraceSource classes to write trace data to output.
       /// @remarks The default implementation writes the values of the source, eventType and id parameters as a header. The event_cache data is written as a footer, the nature of the output data being dependent on the value of the TraceOutputOptions property.
-      virtual void trace_event(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, const xtd::diagnostics::trace_event_type& event_type, int32_t id) {
+      virtual void trace_event(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, const xtd::diagnostics::trace_event_type& event_type, int32 id) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::ustring::format("{} {}: {}", source, event_type, id));
         write_event_cache(event_cache);
@@ -211,7 +211,7 @@ namespace xtd {
       /// @param message A message to write.
       /// @remarks <b>Important</b> This method is not intended to be called directly by application code but by members of the Debug, Trace, and TraceSource classes to write trace data to output.
       /// @remarks The default implementation writes the values of the source, eventType and id parameters as a header. The event_cache data is written as a footer, the nature of the output data being dependent on the value of the TraceOutputOptions property.
-      virtual void trace_event(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, const xtd::diagnostics::trace_event_type& event_type, int32_t id, const xtd::ustring& message) {
+      virtual void trace_event(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, const xtd::diagnostics::trace_event_type& event_type, int32 id, const xtd::ustring& message) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::ustring::format("{} {}: {} : {}", source, event_type, id, message));
         write_event_cache(event_cache);
@@ -228,7 +228,7 @@ namespace xtd {
       /// @remarks <b>Important</b> This method is not intended to be called directly by application code but by members of the Debug, Trace, and TraceSource classes to write trace data to output.
       /// @remarks The default implementation writes the values of the source, eventType and id parameters as a header. The args object array is converted to a string using the Format method, passing the format string and args array to format the string as the message portion of the trace. The event_cache data is written as a footer, the nature of the output data being dependent on the value of the TraceOutputOptions property.
       template<typename ...objects>
-      void trace_event(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, const xtd::diagnostics::trace_event_type& event_type, int32_t id, const xtd::ustring& format, const objects& ... args) {
+      void trace_event(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, const xtd::diagnostics::trace_event_type& event_type, int32 id, const xtd::ustring& format, const objects& ... args) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::ustring::format("{} {}: {} : {}", source, event_type, id, xtd::ustring::format(format, args...)));
         write_event_cache(event_cache);
@@ -245,7 +245,7 @@ namespace xtd {
       /// @remarks The TraceTransfer method is used for the correlation of related traces. The TraceTransfer method calls the TraceEvent method to process the call, with the eventType level set to Transfer and the relatedActivityIdGuid as a string appended to the message.
       /// @remarks activity_id_type is generally a guid.
       template<typename activity_id_type>
-      void trace_transfer(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, int32_t id, const xtd::ustring& message, const activity_id_type& related_activity_id) {
+      void trace_transfer(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::ustring& source, int32 id, const xtd::ustring& message, const activity_id_type& related_activity_id) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::ustring::format("{} transfer: {} : {}, related_activity_id={}", source, id, message, related_activity_id));
         write_event_cache(event_cache);

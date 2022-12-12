@@ -29,8 +29,8 @@ int16_t math::abs(int16_t value) {
   return value < 0 ? -value : value;
 }
 
-int32_t math::abs(int32_t value) {
-  if (value == numeric_limits<int32_t>::lowest()) throw xtd::overflow_exception(csf_);
+int32 math::abs(int32 value) {
+  if (value == numeric_limits<int32>::lowest()) throw xtd::overflow_exception(csf_);
   return value < 0 ? -value : value;
 }
 
@@ -65,7 +65,7 @@ double math::atan2(double y, double x) {
   return is_infinity(y) && is_infinity(x) ? NaN : std::atan2(y, x);
 }
 
-int64_t math::big_mul(int32_t a, int32_t b) {
+int64_t math::big_mul(int32 a, int32 b) {
   return as<int64_t>(a) * as<int64_t>(b);
 }
 
@@ -93,7 +93,7 @@ int16_t math::clamp(int16_t value, int16_t min, int16_t max) noexcept {
   return std::clamp(value, min, max);
 }
 
-int32_t math::clamp(int32_t value, int32_t min, int32_t max) noexcept {
+int32 math::clamp(int32 value, int32 min, int32 max) noexcept {
   return std::clamp(value, min, max);
 }
 
@@ -141,7 +141,7 @@ double math::degrees_to_radians(double degrees) noexcept {
   return degrees * (math::pi / 180);
 }
 
-int32_t math::div_rem(int32_t dividend, int32_t divisor, int32_t& remainder) {
+int32 math::div_rem(int32 dividend, int32 divisor, int32& remainder) {
   remainder = dividend % divisor;
   return dividend / divisor;
 }
@@ -214,7 +214,7 @@ int16_t math::max(int16_t a, int16_t b) noexcept {
   return a > b ? a : b;
 }
 
-int32_t math::max(int32_t a, int32_t b) noexcept {
+int32 math::max(int32 a, int32 b) noexcept {
   return a > b ? a : b;
 }
 
@@ -266,7 +266,7 @@ int16_t math::min(int16_t a, int16_t b) noexcept {
   return a < b ? a : b;
 }
 
-int32_t math::min(int32_t a, int32_t b) noexcept {
+int32 math::min(int32 a, int32 b) noexcept {
   return a < b ? a : b;
 }
 
@@ -314,9 +314,9 @@ decimal_t math::round(decimal_t value) {
   return math::round(value, 0);
 }
 
-decimal_t math::round(decimal_t value, int32_t decimals) {
+decimal_t math::round(decimal_t value, int32 decimals) {
   decimal_t muliplicator = 1;
-  for (int32_t index = 0; index < decimals; index++)
+  for (int32 index = 0; index < decimals; index++)
     muliplicator *= 10;
   return math::floor((value * muliplicator) + 0.5) / muliplicator;
 }
@@ -325,40 +325,40 @@ double math::round(double value) {
   return math::round(value, 0);
 }
 
-double math::round(double value, int32_t decimals) {
+double math::round(double value, int32 decimals) {
   double multiplicator = 1.0;
-  for (int32_t index = 0; index < decimals; index++)
+  for (int32 index = 0; index < decimals; index++)
     multiplicator *= 10.0;
   return math::floor((value * multiplicator) + 0.5) / multiplicator;
 }
 
-int32_t math::sign(decimal_t value) {
+int32 math::sign(decimal_t value) {
   if (value != value) throw arithmetic_exception(csf_);
   return value < 0 ? -1 : value == 0 ? 0 : 1;
 }
 
-int32_t math::sign(double value) {
+int32 math::sign(double value) {
   if (is_NaN(value)) throw arithmetic_exception(csf_);
   return value < 0.0 ? -1 : value == 0.0 ? 0 : 1;
 }
 
-int32_t math::sign(int16_t value) {
+int32 math::sign(int16_t value) {
   return value < 0 ? -1 : value == 0 ? 0 : 1;
 }
 
-int32_t math::sign(int32_t value) {
+int32 math::sign(int32 value) {
   return value < 0 ? -1 : value == 0 ? 0 : 1;
 }
 
-int32_t math::sign(int64_t value) {
+int32 math::sign(int64_t value) {
   return value < 0 ? -1 : value == 0 ? 0 : 1;
 }
 
-int32_t math::sign(sbyte_t value) {
+int32 math::sign(sbyte_t value) {
   return value < 0 ? -1 : value == 0 ? 0 : 1;
 }
 
-int32_t math::sign(float value) {
+int32 math::sign(float value) {
   if (value != value) throw arithmetic_exception(csf_);
   return value < 0.0f ? -1 : value == 0.0f ? 0 : 1;
 }

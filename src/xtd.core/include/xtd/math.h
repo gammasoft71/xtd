@@ -79,10 +79,10 @@ namespace xtd {
     static int16_t abs(int16_t value);
     
     /// @brief Returns the absolute value of a 32-bit signed integer
-    /// @param value A number in the range std::numeric_limit<int32_t>::lowest() <= value <= std::numeric_limit<int32_t>::max().
-    /// @return A 32-bit signed integer, x, such that 0 <= x <= std::numeric_limit<int32_t>::max().
-    /// @exception xtd::overflow_exception value equals std::numeric_limit<int32_t>::lowest().
-    static int32_t abs(int32_t value);
+    /// @param value A number in the range std::numeric_limit<int32>::lowest() <= value <= std::numeric_limit<int32>::max().
+    /// @return A 32-bit signed integer, x, such that 0 <= x <= std::numeric_limit<int32>::max().
+    /// @exception xtd::overflow_exception value equals std::numeric_limit<int32>::lowest().
+    static int32 abs(int32 value);
     
     /// @brief Returns the absolute value of a 64-bit signed integer
     /// @param value A number in the range std::numeric_limit<int64_t>::min() <= value <= std::numeric_limit<int64_t>::max().
@@ -139,7 +139,7 @@ namespace xtd {
     /// @param a The first int32 to multiply.
     /// @param b The second int32 to multiply.
     /// @return The int64 containing the product of the specified numbers.
-    static int64_t big_mul(int32_t a, int32_t b);
+    static int64_t big_mul(int32 a, int32 b);
     
     /// @brief Returns the smallest integer greater than or equal to the specified double-precision floating-point number.
     /// @param value A double-precision floating-point number.
@@ -180,7 +180,7 @@ namespace xtd {
     /// @param min The lower bound of the result.
     /// @param max The upper bound of the result.
     /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
-    static int32_t clamp(int32_t value, int32_t min, int32_t max) noexcept;
+    static int32 clamp(int32 value, int32 min, int32 max) noexcept;
     /// @brief Returns value clamped to the inclusive range of min and max.
     /// @param value The value to be clamped.
     /// @param min The lower bound of the result.
@@ -250,7 +250,7 @@ namespace xtd {
     /// @param divisor The divisor.
     /// @param remainder An angle, measured in radians.
     /// @return The remainder.
-    static int32_t div_rem(int32_t dividend, int32_t divisor, int32_t& remainder);
+    static int32 div_rem(int32 dividend, int32 divisor, int32& remainder);
     
     /// @brief Calculates the quotient of two 64-bit signed integers and also returns the remainder in an output parameter.
     /// @param dividend The dividend.
@@ -381,7 +381,7 @@ namespace xtd {
     /// @param a The first of two 32-bit signed integers to compare.
     /// @param b The second of two 32-bit signed integers to compare.
     /// @return Parameter a or b, whichever is larger.
-    static int32_t max(int32_t a, int32_t b) noexcept;
+    static int32 max(int32 a, int32 b) noexcept;
     
     /// @brief Returns the larger of two 64-bit signed integers.
     /// @param a The first of two 64-bit signed integers to compare.
@@ -459,7 +459,7 @@ namespace xtd {
     /// @param a The first of two 32-bit signed integers to compare.
     /// @param b The second of two 32-bit signed integers to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static int32_t min(int32_t a, int32_t b) noexcept;
+    static int32 min(int32 a, int32 b) noexcept;
     
     /// @brief Returns the smaller of two 64-bit signed integers.
     /// @param a The first of two 64-bit signed integers to compare.
@@ -549,7 +549,7 @@ namespace xtd {
     /// @param value A double-precision floating-point number to be rounded.
     /// @param decimals The number of decimal places in the return value.
     /// @return The number nearest to d that contains a number of fractional digits equal to decimals.
-    static decimal_t round(decimal_t value, int32_t decimals);
+    static decimal_t round(decimal_t value, int32 decimals);
     
     /// @brief Rounds a double-precision floating-point value to the nearest integral value.
     /// @param value A double-precision floating-point number to be rounded.
@@ -560,7 +560,7 @@ namespace xtd {
     /// @param value A double-precision floating-point number to be rounded.
     /// @param decimals The number of decimal places in the return value.
     /// @return The number nearest to d that contains a number of fractional digits equal to decimals.
-    static double round(double value, int32_t decimals);
+    static double round(double value, int32 decimals);
     
     /// @brief Returns a value indicating the sign of a double-precision floating-point number.
     /// @param value A signed number.
@@ -572,7 +572,7 @@ namespace xtd {
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
     /// @exception xtd::arithmetic_exception value is equal to NaN.
-    static int32_t sign(decimal_t value);
+    static int32 sign(decimal_t value);
     
     /// @brief Returns a value indicating the sign of a double-precision floating-point number.
     /// @param value A signed number.
@@ -584,7 +584,7 @@ namespace xtd {
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
     /// @exception xtd::arithmetic_exception value is equal to NaN.
-    static int32_t sign(double value);
+    static int32 sign(double value);
     
     /// @brief Returns a value indicating the sign of a 16-bit signed integer.
     /// @param value A signed number.
@@ -595,7 +595,7 @@ namespace xtd {
     /// | -1           | value is less than zero.    |
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
-    static int32_t sign(int16_t value);
+    static int32 sign(int16_t value);
     
     /// @brief Returns a value indicating the sign of a 32-bit signed integer.
     /// @param value A signed number.
@@ -606,7 +606,7 @@ namespace xtd {
     /// | -1           | value is less than zero.    |
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
-    static int32_t sign(int32_t value);
+    static int32 sign(int32 value);
     
     /// @brief Returns a value indicating the sign of a 64-bit signed integer.
     /// @param value A signed number.
@@ -617,7 +617,7 @@ namespace xtd {
     /// | -1           | value is less than zero.    |
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
-    static int32_t sign(int64_t value);
+    static int32 sign(int64_t value);
     
     /// @brief Returns a value indicating the sign of a 64-bit signed integer.
     /// @param value A signed number.
@@ -628,7 +628,7 @@ namespace xtd {
     /// | -1           | value is less than zero.    |
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
-    static int32_t sign(llong_t value);
+    static int32 sign(llong_t value);
     
     /// @brief Returns a value indicating the sign of an 8-bit signed integer.
     /// @param value A signed number.
@@ -639,7 +639,7 @@ namespace xtd {
     /// | -1           | value is less than zero.    |
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
-    static int32_t sign(sbyte_t value);
+    static int32 sign(sbyte_t value);
     
     /// @brief Returns a value indicating the sign of a single-precision floating-point number.
     /// @param value A signed number.
@@ -651,7 +651,7 @@ namespace xtd {
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
     /// @exception xtd::arithmetic_exception value is equal to NaN.
-    static int32_t sign(float value);
+    static int32 sign(float value);
     
     /// @brief Returns the sine of the specified angle.
     /// @param value An angle, measured in radians.

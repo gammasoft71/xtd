@@ -114,9 +114,9 @@ process::~process() {
   if (data_.use_count() == 1 && data_->thread_.joinable()) data_->thread_.detach();
 }
 
-int32_t process::base_priority() const {
+int32 process::base_priority() const {
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(current_stack_frame_);
-  static map<process_priority_class, int32_t> base_priorities {{process_priority_class::idle, 4}, {process_priority_class::below_normal, 6}, {process_priority_class::normal, 8}, {process_priority_class::above_normal, 10}, {process_priority_class::high, 13}, {process_priority_class::real_time, 24}};
+  static map<process_priority_class, int32> base_priorities {{process_priority_class::idle, 4}, {process_priority_class::below_normal, 6}, {process_priority_class::normal, 8}, {process_priority_class::above_normal, 10}, {process_priority_class::high, 13}, {process_priority_class::real_time, 24}};
   return base_priorities[priority_class()];
 }
 
@@ -129,7 +129,7 @@ process& process::enable_raising_events(bool value) {
   return *this;
 }
 
-int32_t process::exit_code() const {
+int32 process::exit_code() const {
   if (!data_->handle_.has_value() || !has_exited()) throw xtd::invalid_operation_exception(current_stack_frame_);
   return data_->exit_code_.value();
 }
@@ -149,7 +149,7 @@ bool process::has_exited() const {
   return data_->exit_code_.has_value();
 }
 
-int32_t process::id() const {
+int32 process::id() const {
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(current_stack_frame_);
   return data_->id_;
 }
@@ -167,7 +167,7 @@ process_priority_class process::priority_class() const {
 process& process::priority_class(process_priority_class value) {
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(current_stack_frame_);
   data_->priority_class_ = value;
-  static map<process_priority_class, int32_t> priorities {{process_priority_class::idle, IDLE_PRIORITY_CLASS}, {process_priority_class::below_normal, BELOW_NORMAL_PRIORITY_CLASS}, {process_priority_class::normal, NORMAL_PRIORITY_CLASS}, {process_priority_class::above_normal, ABOVE_NORMAL_PRIORITY_CLASS}, {process_priority_class::high, HIGH_PRIORITY_CLASS}, {process_priority_class::real_time, REALTIME_PRIORITY_CLASS}};
+  static map<process_priority_class, int32> priorities {{process_priority_class::idle, IDLE_PRIORITY_CLASS}, {process_priority_class::below_normal, BELOW_NORMAL_PRIORITY_CLASS}, {process_priority_class::normal, NORMAL_PRIORITY_CLASS}, {process_priority_class::above_normal, ABOVE_NORMAL_PRIORITY_CLASS}, {process_priority_class::high, HIGH_PRIORITY_CLASS}, {process_priority_class::real_time, REALTIME_PRIORITY_CLASS}};
   auto it = priorities.find(value);
   if (it == priorities.end()) throw argument_exception(current_stack_frame_);
   if (native::process::priority_class(data_->handle_.value(), it->second) == false) throw invalid_operation_exception(current_stack_frame_);
@@ -238,9 +238,9 @@ bool process::start() {
       process.data_->handle_.reset();
       process.data_->exit_code_.reset();
       process.data_->start_time_ = date_time::now();
-      int32_t process_creation_flags = 0;
+      int32 process_creation_flags = 0;
       if (process.start_info().create_no_window()) process_creation_flags |= CREATE_NO_WINDOW;
-      int32_t process_window_style = 0;
+      int32 process_window_style = 0;
       
       if (process.start_info().use_shell_execute())
         process.data_->handle_ = native::process::shell_execute(process.start_info().verb(), process.start_info().file_name(), process.start_info().arguments(), process.start_info().working_directory(), process_window_style);
@@ -256,7 +256,7 @@ bool process::start() {
       if (process.data_->handle_ == 0) throw invalid_operation_exception("The system cannot find the file specified", current_stack_frame_);
       allow_to_continue = true;
       debug::write_line_if(show_debug_process.enabled(), ustring::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle_, ustring::format("{}{}", process.start_info().file_name(), process.start_info().arguments() == "" ? "" : ustring::format(" {}", process.start_info().arguments())), process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.ticks())).count() % 1000000));
-      int32_t exit_code = 0;
+      int32 exit_code = 0;
       process.data_->exit_code_ =  native::process::wait(process.data_->handle_.value(), exit_code) ? exit_code : -1;
       process.data_->exit_time_ = date_time::now();
       debug::write_line_if(show_debug_process.enabled(), ustring::format("process::start [handle={}, exit_time={:u}.{:D6}, exit_code={}, exited]", process.data_->handle_, process.data_->exit_time_, std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time_.ticks()).count() % 1000000, process.data_->exit_code_));
@@ -308,7 +308,7 @@ process& process::wait_for_exit() {
   return *this;
 }
 
-process& process::wait_for_exit(int32_t milliseconds) {
+process& process::wait_for_exit(int32 milliseconds) {
   /// @todo create a timeout...
   /// @see https://stackoverflow.com/questions/9948420/timeout-for-thread-join
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(current_stack_frame_);

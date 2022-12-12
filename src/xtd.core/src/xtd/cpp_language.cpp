@@ -37,7 +37,7 @@ language_id cpp_language::experimental_language() const noexcept {
   return language_id::unknown;
 }
 
-int32_t cpp_language::month() const noexcept {
+int32 cpp_language::month() const noexcept {
   return cpp_ % 100;
 }
 
@@ -60,7 +60,7 @@ const xtd::version& cpp_language::version() const noexcept {
   return ver;
 }
 
-int32_t cpp_language::year() const noexcept {return cpp_ / 100;}
+int32 cpp_language::year() const noexcept {return cpp_ / 100;}
 
 xtd::ustring cpp_language::to_string() const noexcept {
   return version_string();

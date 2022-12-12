@@ -65,26 +65,26 @@ namespace xtd {
     /// @par Examples
     /// This example demonstrates the buffer_height and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
     /// @include console_buffer.cpp
-    static int32_t buffer_height();
+    static int32 buffer_height();
     /// @brief Sets or sets the height of the buffer area.
     /// @param height The current height, in rows, of the buffer area.
     /// @par Examples
     /// This example demonstrates the buffer_height and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
     /// @include console_buffer.cpp
-    static void buffer_height(int32_t height);
+    static void buffer_height(int32 height);
     
     /// @brief Gets the width of the buffer area.
     /// @return The current width, in columns, of the buffer area.
     /// @par Examples
     /// This example demonstrates the BufferHeight and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
     /// @include console_buffer.cpp
-    static int32_t buffer_width();
+    static int32 buffer_width();
     /// @brief Sets the width of the buffer area.
     /// @param width The current width, in columns, of the buffer area.
     /// @par Examples
     /// This example demonstrates the BufferHeight and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
     /// @include console_buffer.cpp
-    static void buffer_width(int32_t width);
+    static void buffer_width(int32 width);
     
     /// @brief Gets a value indicating whether the CAPS LOCK keyboard toggle is turned on or turned off.
     /// @return true if CAPS LOCK is turned on; false if CAPS LOCK is turned off.
@@ -95,41 +95,41 @@ namespace xtd {
     /// @par Examples
     /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
     /// @include console_cursor.cpp
-    static int32_t cursor_left();
+    static int32 cursor_left();
     /// @brief Sets the column position of the cursor within the buffer area.
     /// @param left The current position, in columns, of the cursor.
     /// @return true if cursor left changed; otherwise false.
     /// @par Examples
     /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
     /// @include console_cursor.cpp
-    static void cursor_left(int32_t left);
+    static void cursor_left(int32 left);
     
     /// @brief Gets or sets the height of the cursor within a character cell.
     /// @return The size of the cursor expressed as a percentage of the height of a character cell. The property value ranges from 1 to 100.
     /// @par Examples
     /// This example demonstrates the cursor_size property. The example increases the size of the cursor each time any console key is pressed, then restores the cursor to its original size before terminating.
     /// @include console_cursor_size.cpp
-    static int32_t cursor_size();
+    static int32 cursor_size();
     /// @brief Sets the height of the cursor within a character cell.
     /// @param size The size of the cursor expressed as a percentage of the height of a character cell. The property value ranges from 1 to 100.
     /// @par Examples
     /// This example demonstrates the cursor_size property. The example increases the size of the cursor each time any console key is pressed, then restores the cursor to its original size before terminating.
     /// @include console_cursor_size.cpp
-    static void cursor_size(int32_t size);
+    static void cursor_size(int32 size);
     
     /// @brief Gets the row position of the cursor within the buffer area.
     /// @return The current position, in rows, of the cursor.
     /// @par Examples
     /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
     /// @include console_cursor.cpp
-    static int32_t cursor_top();
+    static int32 cursor_top();
     /// @brief Sets the row position of the cursor within the buffer area.
     /// @param top The current position, in rows, of the cursor.
     /// @return true if cursor top changed; otherwise false.
     /// @par Examples
     /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
     /// @include console_cursor.cpp
-    static void cursor_top(int32_t top);
+    static void cursor_top(int32 top);
     
     /// @brief Gets a value indicating whether the cursor is visible.
     /// @return true if the cursor is visible; otherwise, false.
@@ -159,11 +159,11 @@ namespace xtd {
     
     /// @brief Gets the code page the console uses to read input.
     /// @return The code page used to read console input.
-    static int32_t input_code_page();
+    static int32 input_code_page();
     /// @brief Sets the code page the console uses to read input.
     /// @param code_page The code page used to read console input.
     /// @return true if the code page changed; otherwise false.
-    static bool input_code_page(int32_t code_page);
+    static bool input_code_page(int32 code_page);
     
     /// @brief Gets a value that indicates whether the error output stream has been redirected from the standard error stream.
     /// @param true if error output is redirected; otherwise, false.
@@ -183,10 +183,10 @@ namespace xtd {
     
     /// @brief Gets the largest possible number of console window rows, based on the current font and screen resolution.
     /// @param The height of the largest possible console window measured in rows.
-    static int32_t largest_window_height();
+    static int32 largest_window_height();
     /// @brief Gets the largest possible number of console window columns, based on the current font and screen resolution.
     /// @param The width of the largest possible console window measured in columns.
-    static int32_t largest_window_width();
+    static int32 largest_window_width();
     
     /// @brief Gets a value indicating whether the NUM LOCK keyboard toggle is turned on or turned off.
     /// @param true if NUM LOCK is turned on; false if NUM LOCK is turned off.
@@ -194,11 +194,11 @@ namespace xtd {
     
     /// @brief Gets the code page the console uses to write output.
     /// @return The code page used to write console output.
-    static int32_t output_code_page();
+    static int32 output_code_page();
     /// @brief Sets the code page the console uses to write output.
     /// @param code_page The code page used to write console output.
     /// @return true if the code page changed; otherwise false.
-    static bool output_code_page(int32_t code_page);
+    static bool output_code_page(int32 code_page);
     
     /// @brief Gets the title to display in the console title bar.
     /// @return The string to be displayed in the title bar of the console. The maximum length of the title string is 24500 characters.
@@ -220,28 +220,28 @@ namespace xtd {
     
     /// @brief Gets the height of the console window area.
     /// @return The height of the console window measured in rows.
-    static int32_t window_height();
+    static int32 window_height();
     /// @brief Sets the height of the console window area.
     /// @param height The height of the console window measured in rows.
-    static void window_height(int32_t height);
+    static void window_height(int32 height);
     
     /// @brief Gets the left of the console window area.
     /// @return The left of the console window measured in columns.
-    static int32_t window_left();
+    static int32 window_left();
     /// @brief Sets the left of the console window area.
     /// @param left The left of the console window measured in columns.
-    static void window_left(int32_t left);
+    static void window_left(int32 left);
     
     /// @brief Gets the top of the console window area.
     /// @return The top of the console window measured in rows.
-    static int32_t window_top();
+    static int32 window_top();
     /// @brief Sets the top of the console window area.
     /// @param top The top of the console window measured in rows.
-    static void window_top(int32_t top);
+    static void window_top(int32 top);
     
     /// @brief Gets the width of the console window area.
     /// @return The width of the console window measured in columns.
-    static int32_t window_width();
+    static int32 window_width();
     /// @brief Sets the width of the console window area.
     /// @param width The width of the console window measured in columns.
     static void window_width(int32 width);
@@ -291,7 +291,7 @@ namespace xtd {
     /// @brief Gets the position of the cursor.
     /// @return The column and row position of the cursor.
     /// @remarks Columns are numbered from left to right starting at 0. Rows are numbered from top to bottom starting at 0.
-    static std::pair<int32_t, int32_t> get_cursor_position();
+    static std::pair<int32, int32> get_cursor_position();
     
     /// @brief Acquires the standard error stream.
     /// @return The standard error stream.
@@ -328,7 +328,7 @@ namespace xtd {
     /// @param top The row position of the cursor. Rows are numbered from top to bottom starting at 0.
     /// @remarks Use the set_cursor_position method to specify where the next write operation in the console window is to begin. If the specified cursor position is outside the area that is currently visible in the console window, the window origin changes automatically to make the cursor visible.
     /// @remarks The cursor automatically moves to the next character position each time a character is written to the console window. If the cursor is at the bottom right character position of the console window, the next write operation causes the console window to scroll so the cursor remains visible. If you want to write a character to the bottom right character position without causing the console window to scroll, use the move_buffer_area method to move a character to that position.
-    static void set_cursor_position(int32_t left, int32_t top);
+    static void set_cursor_position(int32 left, int32 top);
     
     /// @brief Sets the error property to the specified std::ostream object.
     /// @param os A stream that is the new standard error output.
@@ -349,7 +349,7 @@ namespace xtd {
     /// @brief Sets the position of the console window relative to the screen buffer.
     /// @param left The column position of the upper left corner of the console window.
     /// @param top The row position of the upper left corner of the console window.
-    static void set_window_position(int32_t left, int32_t top);
+    static void set_window_position(int32 left, int32 top);
     
     /// @brief Sets the height and width of the console window to the specified values.
     /// @param width The width of the console window measured in columns.
@@ -359,7 +359,7 @@ namespace xtd {
     /// This example demonstrates the SetWindowSize method, and the WindowWidth and WindowHeight properties. You must run the example to see the full effect of changing the console window size.
     /// The example reports the dimensions of a console window set to 85 columns and 43 rows, then waits for a key press. When any key is pressed, the dimensions of the console window are halved, the new dimensions are reported, and the example waits for another key press. Finally, when any key is pressed the console window is restored to its original dimensions and the example terminates.
     /// @include console_window_size.cpp
-    static void set_window_size(int32_t width, int32_t height);
+    static void set_window_size(int32 width, int32 height);
     
     /// @brief Writes the text representation of the specified value to the standard output stream.
     /// @tparam arg_t The type of the value to write.

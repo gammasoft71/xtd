@@ -82,7 +82,7 @@ file_attributes file::get_attributes(const ustring& path) {
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
   if (!(exists(path) || directory::exists(path))) throw file_not_found_exception(csf_);
   
-  int32_t attributes = 0;
+  int32 attributes = 0;
   if (native::file_system::get_attributes(path, attributes) != 0) throw file_not_found_exception(csf_);
   return static_cast<file_attributes>(attributes);
 }
@@ -126,7 +126,7 @@ file_permissions file::get_permissions(const ustring& path) {
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
   if (!(exists(path) || directory::exists(path))) throw file_not_found_exception(csf_);
   
-  int32_t permission = 0;
+  int32 permission = 0;
   if (native::file_system::get_permissions(path, permission) != 0) throw file_not_found_exception(csf_);
   return static_cast<file_permissions>(permission);
 }
@@ -253,7 +253,7 @@ void file::set_attributes(const xtd::ustring& path, xtd::io::file_attributes att
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
   if (!(exists(path) || directory::exists(path))) throw file_not_found_exception(csf_);
   
-  if (native::file_system::set_attributes(path, static_cast<int32_t>(attributes)) != 0) throw io_exception(csf_);
+  if (native::file_system::set_attributes(path, static_cast<int32>(attributes)) != 0) throw io_exception(csf_);
 }
 
 void file::set_creation_time(const xtd::ustring& path, const xtd::date_time& creation_time) {
@@ -289,7 +289,7 @@ void file::set_permissions(const xtd::ustring& path, xtd::io::file_permissions p
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
   if (!(exists(path) || directory::exists(path))) throw file_not_found_exception(csf_);
   
-  if (native::file_system::set_permissions(path, static_cast<int32_t>(permissions)) != 0) throw io_exception(csf_);
+  if (native::file_system::set_permissions(path, static_cast<int32>(permissions)) != 0) throw io_exception(csf_);
 }
 
 ofstream file::write_text(const ustring& path) {

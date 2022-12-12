@@ -862,7 +862,7 @@ namespace xtd {
   /// @code
   /// std::cout << 1.6_s32 << std::endl;
   /// @endcode
-  int32_t operator""_s32(long double n);
+  int32 operator""_s32(long double n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -874,7 +874,7 @@ namespace xtd {
   /// @code
   /// std::cout << 54_s32 << std::endl;
   /// @endcode
-  int32_t operator""_s32(unsigned long long n);
+  int32 operator""_s32(unsigned long long n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -886,7 +886,7 @@ namespace xtd {
   /// @code
   /// std::cout << "125"_s32 << std::endl;
   /// @endcode
-  int32_t operator""_s32(const char* s, size_t n);
+  int32 operator""_s32(const char* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -898,7 +898,7 @@ namespace xtd {
   /// @code
   /// std::cout << u8"125"_s32 << std::endl;
   /// @endcode
-  int32_t operator""_s32(const char8_t* s, size_t n);
+  int32 operator""_s32(const char8_t* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -910,7 +910,7 @@ namespace xtd {
   /// @code
   /// std::cout << u"125"_s32 << std::endl;
   /// @endcode
-  int32_t operator""_s32(const char16_t* s, size_t n);
+  int32 operator""_s32(const char16_t* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -922,7 +922,7 @@ namespace xtd {
   /// @code
   /// std::cout << U"125"_s32 << std::endl;
   /// @endcode
-  int32_t operator""_s32(const char32_t* s, size_t n);
+  int32 operator""_s32(const char32_t* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -934,7 +934,7 @@ namespace xtd {
   /// @code
   /// std::cout << L"125"_s32 << std::endl;
   /// @endcode
-  int32_t operator""_s32(const wchar_t* s, size_t n);
+  int32 operator""_s32(const wchar_t* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace

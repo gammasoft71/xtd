@@ -41,7 +41,7 @@ directory::directory_iterator& directory::directory_iterator::operator ++() {
   return *this;
 }
 
-directory::directory_iterator directory::directory_iterator::operator ++(int32_t) {
+directory::directory_iterator directory::directory_iterator::operator ++(int32) {
   directory_iterator result = *this;
   ++(*this);
   return result;
@@ -83,7 +83,7 @@ directory::file_iterator& directory::file_iterator::operator ++() {
   return *this;
 }
 
-directory::file_iterator directory::file_iterator::operator ++(int32_t) {
+directory::file_iterator directory::file_iterator::operator ++(int32) {
   file_iterator result = *this;
   ++(*this);
   return result;
@@ -125,7 +125,7 @@ directory::file_system_entry_iterator& directory::file_system_entry_iterator::op
   return *this;
 }
 
-directory::file_system_entry_iterator directory::file_system_entry_iterator::operator ++(int32_t) {
+directory::file_system_entry_iterator directory::file_system_entry_iterator::operator ++(int32) {
   file_system_entry_iterator result = *this;
   ++(*this);
   return result;
@@ -297,7 +297,7 @@ xtd::io::file_permissions directory::get_permissions(const ustring& path) {
   if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception(csf_);
   if (!exists(path)) throw directory_not_found_exception(csf_);
   
-  int32_t permissions = 0;
+  int32 permissions = 0;
   if (native::file_system::get_permissions(path, permissions) != 0) throw io_exception(csf_);
   return static_cast<xtd::io::file_permissions>(permissions);
 }
@@ -368,5 +368,5 @@ void directory::set_permissions(const xtd::ustring &path, xtd::io::file_permissi
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
   if (!exists(path)) throw directory_not_found_exception(csf_);
   
-  if (native::file_system::set_permissions(path, static_cast<int32_t>(permissions)) != 0) throw io_exception(csf_);
+  if (native::file_system::set_permissions(path, static_cast<int32>(permissions)) != 0) throw io_exception(csf_);
 }

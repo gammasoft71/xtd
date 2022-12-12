@@ -149,7 +149,7 @@ const list<time_zone_info>& time_zone_info::get_system_time_zones() noexcept {
   return system_time_zones;
 }
 
-int32_t time_zone_info::compare_to(const time_zone_info& tzi) const noexcept {
+int32 time_zone_info::compare_to(const time_zone_info& tzi) const noexcept {
   return id_.compare_to(tzi.id_);
 }
 

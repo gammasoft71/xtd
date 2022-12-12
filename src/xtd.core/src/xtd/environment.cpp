@@ -24,7 +24,7 @@ using namespace xtd;
 using namespace xtd::io;
 
 namespace {
-  int32_t exit_code = 0;
+  int32 exit_code = 0;
 }
 
 xtd::ustring environment::command_line() noexcept {
@@ -43,11 +43,11 @@ std::thread::id environment::current_thread_id() noexcept {
   return std::this_thread::get_id();
 }
 
-int32_t environment::exit_code() noexcept {
+int32 environment::exit_code() noexcept {
   return ::exit_code;
 }
 
-void environment::exit_code(int32_t value) noexcept {
+void environment::exit_code(int32 value) noexcept {
   ::exit_code = value;
 }
 
@@ -62,12 +62,12 @@ xtd::collections::specialized::string_vector environment::get_command_line_args(
 
 ustring environment::get_environment_variable(const ustring& variable, environment_variable_target target) {
   if (!enum_object<>::is_defined<environment_variable_target>(target)) throw xtd::argument_exception("Invalid environment variable target value"_t, csf_);
-  return native::environment::get_environment_variable(variable, as<int32_t>(target));
+  return native::environment::get_environment_variable(variable, as<int32>(target));
 }
 
 map<string, string>& environment::get_environment_variables(environment_variable_target target) {
   if (!enum_object<>::is_defined<environment_variable_target>(target)) throw xtd::argument_exception("Invalid environment variable target value"_t, csf_);
-  return native::environment::get_environment_variables(as<int32_t>(target));
+  return native::environment::get_environment_variables(as<int32>(target));
 }
 
 ustring environment::get_folder_path(environment::special_folder folder, environment::special_folder_option option) {
@@ -92,7 +92,7 @@ ustring environment::get_folder_path(environment::special_folder folder, environ
     default: break;
   }
     
-  ustring path = native::environment::get_know_folder_path(static_cast<int32_t>(folder));
+  ustring path = native::environment::get_know_folder_path(static_cast<int32>(folder));
   if (path.empty()) return path;
   if (option == environment::special_folder_option::none) return !xtd::io::directory::exists(path) ? "" :  path;
   if (!xtd::io::directory::exists(path)) xtd::io::directory::create_directory(path);
@@ -118,7 +118,7 @@ ustring environment::new_line() noexcept {
 xtd::operating_system environment::os_version() noexcept {
   static xtd::operating_system os(xtd::platform_id::unknown, xtd::version());
   if (os.platform() == xtd::platform_id::unknown) {
-    int32_t major, minor, build, revision;
+    int32 major, minor, build, revision;
     native::environment::get_os_version(major, minor, build, revision);
     xtd::version version;
     version = xtd::version(major, minor, build, revision);
@@ -144,11 +144,11 @@ void environment::set_environment_variable(const ustring& variable, const ustrin
   if (!enum_object<>::is_defined<environment_variable_target>(target)) throw xtd::argument_exception("Invalid environment variable target value"_t, csf_);
   
   if (ustring::is_empty(value)) {
-    native::environment::get_environment_variables(as<int32_t>(target)).erase(variable);
-    native::environment::unset_environment_variable(variable, as<int32_t>(target));
+    native::environment::get_environment_variables(as<int32>(target)).erase(variable);
+    native::environment::unset_environment_variable(variable, as<int32>(target));
   } else {
-    native::environment::get_environment_variables(as<int32_t>(target))[variable] = value;
-    native::environment::set_environment_variable(variable, value, as<int32_t>(target));
+    native::environment::get_environment_variables(as<int32>(target))[variable] = value;
+    native::environment::set_environment_variable(variable, value, as<int32>(target));
   }
 }
 
@@ -188,7 +188,7 @@ int64_t environment::working_set() {
   return native::environment::working_set();
 }
 
-void environment::exit(int32_t exit_code) {
+void environment::exit(int32 exit_code) {
   _Exit(exit_code);
 }
 

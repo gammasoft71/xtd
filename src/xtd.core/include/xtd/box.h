@@ -99,7 +99,7 @@ namespace xtd {
     /// @{
     bool equals(const box& value) const noexcept override {return value_ == value.value_;}
     
-    int32_t compare_to(const box& value) const noexcept override {
+    int32 compare_to(const box& value) const noexcept override {
       if (value_ == value.value_) return 0;
       if (value_ < value.value_) return -1;
       return 1;

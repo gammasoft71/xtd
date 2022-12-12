@@ -127,35 +127,35 @@ date_time::date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour,
 
 date_time date_time::date() const noexcept {
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32_t day_of_week = 0;
+  int32 day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return date_time(year, month, day, 0, 0, 0, 0, kind_);
 }
 
 uint32_t date_time::day() const noexcept {
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32_t day_of_week = 0;
+  int32 day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return day;
 }
 
 xtd::day_of_week date_time::day_of_week() const noexcept {
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32_t day_of_week = 0;
+  int32 day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return static_cast<xtd::day_of_week>(day_of_week);
 }
 
 uint32_t date_time::day_of_year() const noexcept {
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32_t day_of_week = 0;
+  int32 day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return day_of_year;
 }
 
 uint32_t date_time::hour() const noexcept {
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32_t day_of_week = 0;
+  int32 day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return hour;
 }
@@ -170,14 +170,14 @@ uint32_t date_time::millisecond() const noexcept {
 
 uint32_t date_time::minute() const noexcept {
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32_t day_of_week = 0;
+  int32 day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return minute;
 }
 
 uint32_t date_time::month() const noexcept {
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32_t day_of_week = 0;
+  int32 day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return month;
 }
@@ -190,7 +190,7 @@ date_time date_time::now() noexcept {
 
 uint32_t date_time::second() const noexcept {
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32_t day_of_week = 0;
+  int32 day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return second;
 }
@@ -201,7 +201,7 @@ xtd::ticks date_time::ticks() const noexcept {
 
 time_span date_time::time_of_day() const noexcept {
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32_t day_of_week = 0;
+  int32 day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return duration_cast<time_span>(chrono::hours(hour)) + duration_cast<time_span>(chrono::minutes(minute)) + duration_cast<time_span>(chrono::seconds(second));
 }
@@ -209,7 +209,7 @@ time_span date_time::time_of_day() const noexcept {
 date_time date_time::today() noexcept {
   date_time today = now();
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32_t day_of_week = 0;
+  int32 day_of_week = 0;
   today.get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return date_time(year, month, day, 0, 0, 0, 0, today.kind_);
 }
@@ -220,7 +220,7 @@ date_time date_time::utc_now() noexcept {
 
 uint32_t date_time::year() const noexcept {
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32_t day_of_week = 0;
+  int32 day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   return year;
 }
@@ -245,14 +245,14 @@ date_time date_time::add_minutes(double minute) const {
   return date_time(value_ + xtd::ticks(static_cast<int64_t>(minute * ticks_per_minute)), kind_);
 }
 
-date_time date_time::add_months(int32_t months) const {
+date_time date_time::add_months(int32 months) const {
   if (months < -120000 || months > 120000) throw argument_out_of_range_exception(csf_);
   
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32_t day_of_week = 0;
+  int32 day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   
-  int32_t i = month - 1 + months;
+  int32 i = month - 1 + months;
   if (i >= 0) {
     month = static_cast<uint32_t>(i % 12 + 1);
     year = year + static_cast<uint32_t>(i / 12);
@@ -274,21 +274,21 @@ date_time date_time::add_ticks(int64 value) const {
   return date_time(value_ + xtd::ticks(value), kind_);
 }
 
-date_time date_time::add_years(int32_t value) const {
+date_time date_time::add_years(int32 value) const {
   return add_months(value * 12);
 }
 
-int32_t date_time::compare_to(const date_time& value) const noexcept {
+int32 date_time::compare_to(const date_time& value) const noexcept {
   if (value_.count() < value.value_.count()) return -1;
   if (value_.count() > value.value_.count()) return 1;
   return 0;
 }
 
-int32_t date_time::days_in_month(uint32_t year, month_of_year month) {
+int32 date_time::days_in_month(uint32_t year, month_of_year month) {
   return days_in_month(year, static_cast<uint32_t>(month));
 }
 
-int32_t date_time::days_in_month(uint32_t year, uint32_t month) {
+int32 date_time::days_in_month(uint32_t year, uint32_t month) {
   if (month < 1 || month > 12) throw argument_out_of_range_exception(csf_);
   if (month == 2) return is_leap_year(year) ? 29 : 28;
   if (month == 4 || month == 6 || month == 9 || month == 11) return 30;
@@ -300,7 +300,7 @@ bool date_time::equals(const date_time& other) const noexcept {
 }
 
 date_time date_time::from_binary(int64_t date_data) {
-  return date_time(xtd::ticks(date_data & 0x3FFFFFFFFFFFFFFFLL), static_cast<date_time_kind>(static_cast<int32_t>(((date_data & 0xC000000000000000LL) >> 62) & 0x0000000000000003LL)));
+  return date_time(xtd::ticks(date_data & 0x3FFFFFFFFFFFFFFFLL), static_cast<date_time_kind>(static_cast<int32>(((date_data & 0xC000000000000000LL) >> 62) & 0x0000000000000003LL)));
 }
 
 date_time date_time::from_file_time(int64_t file_time) {
@@ -387,7 +387,7 @@ date_time date_time::to_local_time() const {
   if (value_ + utc_offset > max_value.value_) return date_time(value_, date_time_kind::local);
   
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32_t day_of_week = 0;
+  int32 day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year, day_of_week);
   
   return date_time(ticks() + utc_offset, date_time_kind::local);
@@ -419,7 +419,7 @@ ustring date_time::to_string(const ustring& format) const {
   if (fmt.size() > 1) throw format_exception("Invalid format", csf_);
   
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32_t day_of_week = 0;
+  int32 day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
   
   switch (fmt[0]) {
@@ -480,18 +480,18 @@ std::time_t date_time::to_time_t() const {
 
 std::tm date_time::to_tm() const {
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32_t day_of_week = 0;
+  int32 day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year, day_of_week);
   
   std::tm result {};
-  result.tm_sec = static_cast<int32_t>(second);
-  result.tm_min = static_cast<int32_t>(minute);
-  result.tm_hour = static_cast<int32_t>(hour);
-  result.tm_mday = static_cast<int32_t>(day);
-  result.tm_mon = static_cast<int32_t>(month - 1);
-  result.tm_year = static_cast<int32_t>(year - 1900);
+  result.tm_sec = static_cast<int32>(second);
+  result.tm_min = static_cast<int32>(minute);
+  result.tm_hour = static_cast<int32>(hour);
+  result.tm_mday = static_cast<int32>(day);
+  result.tm_mon = static_cast<int32>(month - 1);
+  result.tm_year = static_cast<int32>(year - 1900);
   result.tm_wday = day_of_week;
-  result.tm_yday = static_cast<int32_t>(day_of_year);
+  result.tm_yday = static_cast<int32>(day_of_year);
   result.tm_isdst = is_daylight_saving_time();
   return result;
 }
@@ -507,7 +507,7 @@ date_time date_time::to_universal_time() const {
   if (value_ < utc_offset) return date_time(value_, date_time_kind::utc);
   
   uint32_t year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
-  int32_t day_of_week = 0;
+  int32 day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year, day_of_week);
   
   return date_time(ticks() - utc_offset, date_time_kind::utc);
@@ -548,7 +548,7 @@ date_time& date_time::operator ++() {
   return *this;
 }
 
-date_time date_time::operator ++(int32_t) {
+date_time date_time::operator ++(int32) {
   return date_time(value_++, kind_);
 }
 
@@ -557,11 +557,11 @@ date_time& date_time::operator --() {
   return *this;
 }
 
-date_time date_time::operator --(int32_t) {
+date_time date_time::operator --(int32) {
   return date_time(value_--, kind_);
 }
 
-void date_time::get_date_time(uint32_t& year, uint32_t& month, uint32_t& day, uint32_t& hour, uint32_t& minute, uint32_t& second, uint32_t& day_of_year, int32_t& day_of_week) const {
+void date_time::get_date_time(uint32_t& year, uint32_t& month, uint32_t& day, uint32_t& hour, uint32_t& minute, uint32_t& second, uint32_t& day_of_year, int32& day_of_week) const {
   int64_t days = value_.count() / ticks_per_day;
   year = get_years(days);
   day_of_year = static_cast<uint32_t>(days + 1);
@@ -570,7 +570,7 @@ void date_time::get_date_time(uint32_t& year, uint32_t& month, uint32_t& day, ui
   hour = static_cast<uint32_t>(value_.count() / ticks_per_hour % 24);
   minute = static_cast<uint32_t>(value_.count() / ticks_per_minute % 60);
   second = static_cast<uint32_t>(value_.count() / ticks_per_second % 60);
-  day_of_week = (static_cast<int32_t>(value_.count() / ticks_per_day + 1) % 7);
+  day_of_week = (static_cast<int32>(value_.count() / ticks_per_day + 1) % 7);
 }
 
 xtd::ticks date_time::utc_offset() const {
@@ -579,7 +579,7 @@ xtd::ticks date_time::utc_offset() const {
 
 void date_time::set_date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, uint32_t millisecond, date_time_kind kind) {
   uint32_t day_of_year = 0;
-  int32_t day_of_week = 0;
+  int32 day_of_week = 0;
   
   uint32_t max_year = 1, max_month = 1, max_day = 1, max_hour = 0, max_minute = 0, max_second = 0;
   max_value.get_date_time(max_year, max_month, max_day, max_hour, max_minute, max_second, day_of_year, day_of_week);

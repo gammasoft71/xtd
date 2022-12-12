@@ -205,12 +205,12 @@ namespace xtd {
         /// @brief Gets the amount of time a xtd::net::sockets::tcp_client will wait to receive data once a read operation is initiated.
         /// @return The time-out value of the connection in milliseconds. The default value is 0.
         /// @remarks The xtd::net::sockets::tcp_client::receive_timeout property determines the amount of time that the Read method will block until it is able to receive data. This time is measured in milliseconds. If the time-out expires before Read successfully completes, xtd::net::sockets::tcp_client throws a xtd::io::io_exception. There is no time-out by default.
-        int32_t receive_timeout() const;
+        int32 receive_timeout() const;
         /// @brief Sets the amount of time a xtd::net::sockets::tcp_client will wait to receive data once a read operation is initiated.
         /// @param value The time-out value of the connection in milliseconds. The default value is 0.
         /// @return This current instance.
         /// @remarks The xtd::net::sockets::tcp_client::receive_timeout property determines the amount of time that the Read method will block until it is able to receive data. This time is measured in milliseconds. If the time-out expires before Read successfully completes, xtd::net::sockets::tcp_client throws a xtd::io::io_exception. There is no time-out by default.
-        tcp_client& receive_timeout(int32_t value);
+        tcp_client& receive_timeout(int32 value);
         
         /// @brief Gets the size of the send buffer.
         /// @return The size of the send buffer, in bytes. The default value is 8192 bytes.
@@ -230,13 +230,13 @@ namespace xtd {
         /// @return The send time-out value, in milliseconds. The default value is 0.
         /// @remarks The xtd::net::sockets::tcp_client::send_timeout property determines the amount of time that the xtd::net::sockets::send method will block until it is able to return successfully. This time is measured in milliseconds..
         /// @remarks After you call the Write method, the underlying xtd::net::sockets::socket returns the number of bytes actually sent to the host. The xtd::net::sockets::tcp_client::send_timeout property determines the amount of time a xtd::net::sockets::tcp_client will wait before receiving the number of bytes returned. If the time-out expires before the Send method successfully completes, xtd::net::sockets::tcp_client will throw a xtd::net::sockets::socket_exception. There is no time-out by default.
-        int32_t send_timeout() const;
+        int32 send_timeout() const;
         /// @brief Gets the amount of time a xtd::net::sockets::tcp_client will wait for a send operation to complete successfully.
         /// @param value The send time-out value, in milliseconds. The default value is 0.
         /// @return This current instance.
         /// @remarks The xtd::net::sockets::tcp_client::send_timeout property determines the amount of time that the xtd::net::sockets::send method will block until it is able to return successfully. This time is measured in milliseconds..
         /// @remarks After you call the Write method, the underlying xtd::net::sockets::socket returns the number of bytes actually sent to the host. The xtd::net::sockets::tcp_client::send_timeout property determines the amount of time a xtd::net::sockets::tcp_client will wait before receiving the number of bytes returned. If the time-out expires before the Send method successfully completes, xtd::net::sockets::tcp_client will throw a xtd::net::sockets::socket_exception. There is no time-out by default.
-        tcp_client& send_timeout(int32_t value);
+        tcp_client& send_timeout(int32 value);
         /// @}
         
         /// @name Methods

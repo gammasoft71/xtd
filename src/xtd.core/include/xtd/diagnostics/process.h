@@ -273,7 +273,7 @@ namespace xtd {
       /// | 10                    | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4  (10) | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4  (10) | xtd::diagnostics::process_priority_class::above_normal |
       /// | 13                    | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | xtd::diagnostics::process_priority_class::high         |
       /// | 24                    | PRIO_MAX                              (20) | PRIO_MAX                              (20) | xtd::diagnostics::process_priority_class::real_time    |
-      int32_t base_priority() const;
+      int32 base_priority() const;
       
       /// @brief Gets whether the xtd::diagnostics::process::exited event should be raised when the process terminates.
       /// @return true if the xtd::diagnostics::process::exited event should be raised when the associated process is terminated (through either an exit or a call to xtd::diagnostics::process::kill()); otherwise, false. The default is false. Note that the xtd::diagnostics::process::exited event is raised even if the value of xtd::diagnostics::process::enable_raising_events is false when the process exits during or before the user performs a xtd::diagnostics::process::has_exited check.
@@ -303,7 +303,7 @@ namespace xtd {
       /// @note When standard output has been redirected to asynchronous event handlers, it is possible that output processing will not have completed when HasExited returns true. To ensure that asynchronous event handling has been completed, call the xtd::diagnostics::wait_for_exit() overload that takes no parameter before checking xtd::diagnostics::has_exited.
       /// @remarks You can use the xtd::diagnostics::process::close_main_window or the xtd::diagnostics::process::kill method to cause an associated process to exit.
       /// @remarks There are two ways of being notified when the associated process exits: synchronously and asynchronously. Synchronous notification relies on calling the xtd::diagnostics::process::wait_for_exit method to pause the processing of your application until the associated component exits. Asynchronous notification relies on the xtd::diagnostics::process::exited event. When using asynchronous notification, xtd::diagnostics::process::enable_raising_events must be set to true for the xtd::diagnostics::process component to receive notification that the process has exited.
-      int32_t exit_code() const;
+      int32 exit_code() const;
       
       /// @brief Gets the time that the associated process exited.
       /// @return A xtd::date_time that indicates when the associated process was terminated.
@@ -336,7 +336,7 @@ namespace xtd {
       /// @remarks You can connect a process that is running on a local or remote computer to a new xtd::diagnostics::process instance by passing the process identifier to the xtd::diagnostics::process::get_process_by_id method. xtd::diagnostics::process::get_process_by_id is a static method that creates a new component and sets the xtd::diagnostics::process::id property for the new xtd::diagnostics::process instance automatically.
       /// @remarks Process identifiers can be reused by the system. The xtd::diagnostics::process::id property value is unique only while the associated process is running. After the process has terminated, the system can reuse the xtd::diagnostics::process::id property value for an unrelated process.
       /// @remarks Because the identifier is unique on the system, you can pass it to other threads as an alternative to passing a xtd::diagnostics::process instance. This action can save system resources yet guarantee that the process is correctly identified.
-      int32_t id() const;
+      int32 id() const;
       
       /// @brief Gets the name of the computer the associated process is running on.
       /// @return The name of the computer that the associated process is running on.
@@ -790,7 +790,7 @@ namespace xtd {
       /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
       /// @remarks xtd::diagnostics::process::wait_for_exit() makes the current thread wait until the associated process terminates. It should be called after all other methods are called on the process. To avoid blocking the current thread, use the xtd::diagnostics::process::exited event.
       /// @remarks This method instructs the xtd::diagnostics::process component to wait an infinite amount of time for the process and event handlers to exit. This can cause an application to stop responding. For example, if you call td::diagnostics::process::close_main_window for a process that has a user interface, the request to the operating system to terminate the associated process might not be handled if the process is written to never enter its message loop.
-      /// @remarks This overload ensures that all processing has been completed, including the handling of asynchronous events for redirected standard output. You should use this overload after a call to the xtd::diagnostics::process::wait_for_exit(int32_t) overload when standard output has been redirected to asynchronous event handlers.
+      /// @remarks This overload ensures that all processing has been completed, including the handling of asynchronous events for redirected standard output. You should use this overload after a call to the xtd::diagnostics::process::wait_for_exit(int32) overload when standard output has been redirected to asynchronous event handlers.
       /// @remarks When an associated process exits (that is, when it is shut down by the operation system through a normal or abnormal termination), the system stores administrative information about the process and returns to the component that had called xtd::diagnostics::process::wait_for_exit(). The xtd::diagnostics::process component can then access the information, which includes the xtd::diagnostics::process::exit_time, by using the xtd::diagnostics::process::handle to the exited process.
       /// @remarks Because the associated process has exited, the Handle property of the component no longer points to an existing process resource. Instead, the handle can be used only to access the operating system's information about the process resource. The system is aware of handles to exited processes that have not been released by xtd::diagnostics::process components, so it keeps the xtd::diagnostics::process::exit_time and xtd::diagnostics::process::handle information in memory until the xtd::diagnostics::process component specifically frees the resources. For this reason, any time you call xtd::diagnostics::process::start for a xtd::diagnostics::process instance, call xtd::diagnostics::process::close when the associated process has terminated and you no longer need any administrative information about it. xtd::diagnostics::process::close frees the memory allocated to the exited process.
       process& wait_for_exit();
@@ -800,10 +800,10 @@ namespace xtd {
       /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
       /// @remarks xtd::diagnostics::process::wait_for_exit() makes the current thread wait until the associated process terminates. It should be called after all other methods are called on the process. To avoid blocking the current thread, use the xtd::diagnostics::process::exited event.
       /// @remarks This method instructs the xtd::diagnostics::process component to wait an infinite amount of time for the process and event handlers to exit. This can cause an application to stop responding. For example, if you call td::diagnostics::process::close_main_window for a process that has a user interface, the request to the operating system to terminate the associated process might not be handled if the process is written to never enter its message loop.
-      /// @remarks This overload ensures that all processing has been completed, including the handling of asynchronous events for redirected standard output. You should use this overload after a call to the xtd::diagnostics::process::wait_for_exit(int32_t) overload when standard output has been redirected to asynchronous event handlers.
+      /// @remarks This overload ensures that all processing has been completed, including the handling of asynchronous events for redirected standard output. You should use this overload after a call to the xtd::diagnostics::process::wait_for_exit(int32) overload when standard output has been redirected to asynchronous event handlers.
       /// @remarks When an associated process exits (that is, when it is shut down by the operation system through a normal or abnormal termination), the system stores administrative information about the process and returns to the component that had called xtd::diagnostics::process::wait_for_exit(). The xtd::diagnostics::process component can then access the information, which includes the xtd::diagnostics::process::exit_time, by using the xtd::diagnostics::process::handle to the exited process.
       /// @remarks Because the associated process has exited, the Handle property of the component no longer points to an existing process resource. Instead, the handle can be used only to access the operating system's information about the process resource. The system is aware of handles to exited processes that have not been released by xtd::diagnostics::process components, so it keeps the xtd::diagnostics::process::exit_time and xtd::diagnostics::process::handle information in memory until the xtd::diagnostics::process component specifically frees the resources. For this reason, any time you call xtd::diagnostics::process::start for a xtd::diagnostics::process instance, call xtd::diagnostics::process::close when the associated process has terminated and you no longer need any administrative information about it. xtd::diagnostics::process::close frees the memory allocated to the exited process.
-      process& wait_for_exit(int32_t milliseconds);
+      process& wait_for_exit(int32 milliseconds);
       /// @}
       
       /// @name Events
@@ -812,7 +812,7 @@ namespace xtd {
       /// @brief Occurs when an application writes to its redirected xtd::diagnostics::process::standard_error stream.
       /// @remarks The xtd::diagnostics::process::error_data_received event indicates that the associated xtd::diagnostics::process has written a line that's terminated with a newline (carriage return (CR), line feed (LF), or CR+LF) to its redirected xtd::diagnostics::process::standard_error stream.
       /// @remarks The event only occurs during asynchronous read operations on xtd::diagnostics::process::standard_error. To start asynchronous read operations, you must redirect the xtd::diagnostics::process::standard_error stream of a xtd::diagnostics::process, add your event handler to the xtd::diagnostics::process::error_data_received event, and call xtd::diagnostics::process::begin_error_read_line. Thereafter, the xtd::diagnostics::process::error_data_received event signals each time the process writes a line to the redirected xtd::diagnostics::process::standard_error stream, until the process exits or calls xtd::diagnostics::process::cancel_error_read.
-      /// @note The application that is processing the asynchronous output should call the xtd::diagnostics::process::wait_forE_exit() method to ensure that the output buffer has been flushed. Note that specifying a timeout by using the xtd::diagnostics::process::wait_for_exit(int32_t) overload does not ensure the output buffer has been flushed.
+      /// @note The application that is processing the asynchronous output should call the xtd::diagnostics::process::wait_forE_exit() method to ensure that the output buffer has been flushed. Note that specifying a timeout by using the xtd::diagnostics::process::wait_for_exit(int32) overload does not ensure the output buffer has been flushed.
       error_data_received_event error_data_received;
       
       /// @brief Occurs when a process exits.
@@ -843,7 +843,7 @@ namespace xtd {
       struct data {
         xtd::diagnostics::process_start_info start_info_;
         std::optional<intptr_t> handle_ = 0;
-        int32_t id_ = 0;
+        int32 id_ = 0;
         ustring machine_name_;
         xtd::diagnostics::process_priority_class priority_class_ = xtd::diagnostics::process_priority_class::normal;
         std::unique_ptr<std::ostream> standard_input_;
@@ -853,7 +853,7 @@ namespace xtd {
         xtd::date_time start_time_;
         xtd::date_time exit_time_;
         bool enable_raising_events_ = false;
-        std::optional<int32_t> exit_code_;
+        std::optional<int32> exit_code_;
         event_handler exit_callback_;
         data_received_event_handler error_data_received_callback_;
         data_received_event_handler output_data_received_callback_;

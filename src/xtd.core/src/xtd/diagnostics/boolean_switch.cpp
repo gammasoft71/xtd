@@ -35,5 +35,5 @@ void boolean_switch::enabled(bool enabled) {
 
 void boolean_switch::on_value_changed() {
   switch_base::on_value_changed();
-  switch_setting(static_cast<int32_t>(enabled_.value()));
+  switch_setting(static_cast<int32>(enabled_.value()));
 }

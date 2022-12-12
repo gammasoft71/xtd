@@ -439,10 +439,10 @@ namespace xtd {
     xtd::ustring path_and_query() const;
     
     /// @brief Gets the port number of this URI.
-    /// @return int32_t An int32_t value that contains the port number for this URI.
+    /// @return int32 An int32 value that contains the port number for this URI.
     /// @exception xtd::invalid_operation_exception This instance represents a relative URI, and this property is valid only for absolute URIs.
     /// @remarks The port number defines the protocol port used for contacting the server referenced in the URI. If a port is not specified as part of the URI, the port property returns the default value for the protocol. If there is no default port number, this property returns -1.
-    int32_t port() const;
+    int32 port() const;
     
     /// @brief Gets any query information included in the specified URI.
     /// @return string A string that contains any query information included in the specified URI.
@@ -536,10 +536,10 @@ namespace xtd {
     
     /// @brief Gets the decimal value of a hexadecimal digit.
     /// @param digit The hexadecimal digit (0-9, a-f, A-F) to convert.
-    /// @return int32_t An int32_t value that contains a number from 0 to 15 that corresponds to the specified hexadecimal digit.
+    /// @return int32 An int32 value that contains a number from 0 to 15 that corresponds to the specified hexadecimal digit.
     /// @exception ArgumentException digit is not a valid hexadecimal digit (0-9, a-f, A-F).
     /// @remarks The from_hex method converts a character representing a hexadecimal digit (0-9, a-f, A-F) to its decimal value (0 to 15). If digit is not a valid hexadecimal digit, an ArgumentException exception is thrown.
-    static int32_t from_hex(char digit);
+    static int32 from_hex(char digit);
     
     /// @brief Gets the specified components of the current instance using the specified escaping for special characters.
     /// @param components A bitwise combination of the xtd::uri_components values that specifies which parts of the current instance to return to the caller.

@@ -19,7 +19,7 @@ std::vector<ustring> trace_event_cache::logical_operation_stack() const noexcept
   return std::vector<ustring>();
 }
 
-int32_t trace_event_cache::process_id() const noexcept {
+int32 trace_event_cache::process_id() const noexcept {
   return -1;
 }
 

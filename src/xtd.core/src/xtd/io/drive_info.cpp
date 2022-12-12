@@ -30,7 +30,7 @@ ustring drive_info::drive_format() const {
 }
 
 drive_type drive_info::drive_type() const {
-  int32_t drive_type = native::drive::get_drive_type(drive_name_);
+  int32 drive_type = native::drive::get_drive_type(drive_name_);
   return static_cast<xtd::io::drive_type>(drive_type);
 }
 

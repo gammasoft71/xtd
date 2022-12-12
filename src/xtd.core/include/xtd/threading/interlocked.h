@@ -42,8 +42,8 @@ namespace xtd {
       /// @brief Adds two 32-bit integers and replaces the first integer with the sum, as an atomic operation.
       /// @param location A variable containing the first value to be added. The sum of the two values is stored in location.
       /// @param value The value to be added to the integer at location.
-      /// @return int32_t The new value stored at location.
-      static int32_t add(int32_t& location, int32_t value) noexcept;
+      /// @return int32 The new value stored at location.
+      static int32 add(int32& location, int32 value) noexcept;
       /// @brief Adds two 64-bit integers and replaces the first integer with the sum, as an atomic operation.
       /// @param location A variable containing the first value to be added. The sum of the two values is stored in location.
       /// @param value The value to be added to the integer at location.
@@ -61,7 +61,7 @@ namespace xtd {
       /// @param value The value that replaces the destination value if the comparison results in equality.
       /// @param Comparand The value that is compared to the value at location.
       /// @return The original value in location.
-      static int32_t compare_exchange(int32_t& location, int32_t value, int32_t comparand) noexcept;
+      static int32 compare_exchange(int32& location, int32 value, int32 comparand) noexcept;
       /// @brief Compares two 64-bit signed integers for equality and, if they are equal, replaces one of the values.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
       /// @param value The value that replaces the destination value if the comparison results in equality.
@@ -116,7 +116,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example shows a thread-safe way to increment and decrement an integer value. SafeInstanceCount will always be zero. However, UnsafeInstanceCount will not necessarily be zero because a race condition occurs between incrementing and decrementing the count. This effect is especially marked on a multiprocessor computer.
       /// @include interlocked_decrement.cpp
-      static int32_t decrement(int32_t& location) noexcept;
+      static int32 decrement(int32& location) noexcept;
       /// @brief Decrements a specified variable and stores the result, as an atomic operation.
       /// @param location The variable whose value is to be decremented.
       /// @return The decremented value.
@@ -145,7 +145,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example shows a thread-safe resource locking mechanism.
       /// @include interlocked.cpp
-      static int32_t exchange(int32_t& location, int32_t value) noexcept;
+      static int32 exchange(int32& location, int32 value) noexcept;
       /// @brief Sets a 64-bit signed integer to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
@@ -182,7 +182,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example shows a thread-safe way to increment and decrement an integer value. SafeInstanceCount will always be zero. However, UnsafeInstanceCount will not necessarily be zero because a race condition occurs between incrementing and decrementing the count. This effect is especially marked on a multiprocessor computer.
       /// @include interlocked_decrement.cpp
-      static int32_t increment(int32_t& location) noexcept;
+      static int32 increment(int32& location) noexcept;
       /// @brief Increments a specified variable and stores the result, as an atomic operation.
       /// @param location The variable whose value is to be incremented.
       /// @return The incremented value.

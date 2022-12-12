@@ -14,23 +14,23 @@ version::version(const ustring& version) {
   *this = parse(version);
 }
 
-version::version(int32_t major, int32_t minor) : major_(major), minor_(minor) {
+version::version(int32 major, int32 minor) : major_(major), minor_(minor) {
   if (major < 0 || minor < 0) throw argument_out_of_range_exception(csf_);
 }
 
-version::version(int32_t major, int32_t minor, int32_t build) : major_(major), minor_(minor), build_(build) {
+version::version(int32 major, int32 minor, int32 build) : major_(major), minor_(minor), build_(build) {
   if (major < 0 || minor < 0 || build < 0) throw argument_out_of_range_exception(csf_);
 }
 
-version::version(int32_t major, int32_t minor, int32_t build, int32_t revision) : major_(major), minor_(minor), build_(build), revision_(revision) {
+version::version(int32 major, int32 minor, int32 build, int32 revision) : major_(major), minor_(minor), build_(build), revision_(revision) {
   if (major < 0 || minor < 0 || build < 0 || revision < 0) throw argument_out_of_range_exception(csf_);
 }
 
-int32_t version::build() const noexcept {
+int32 version::build() const noexcept {
   return build_;
 }
 
-int32_t version::major() const noexcept {
+int32 version::major() const noexcept {
   return major_;
 }
 
@@ -38,7 +38,7 @@ int16_t version::major_revision() const noexcept {
   return as<int16_t>((revision_ & 0xFFFF0000) >> 16);
 }
 
-int32_t version::minor() const noexcept {
+int32 version::minor() const noexcept {
   return minor_;
 }
 
@@ -46,11 +46,11 @@ int16_t version::minor_revision() const noexcept {
   return as<int16_t>(revision_ & 0x0000FFFF);
 }
 
-int32_t version::revision() const noexcept {
+int32 version::revision() const noexcept {
   return revision_;
 }
 
-int32_t version::compare_to(const version& value) const noexcept {
+int32 version::compare_to(const version& value) const noexcept {
   if (major_ < value.major_) return -1;
   if (major_ > value.major_) return 1;
   if (minor_ < value.minor_) return -1;
@@ -73,9 +73,9 @@ version version::parse(const xtd::ustring& input) {
     versions.push_back(it->str());
     
   switch (versions.size()) {
-    case 2: return version(ustring::parse<int32_t>(versions[0]), ustring::parse<int32_t>(versions[1]));
-    case 3: return version(ustring::parse<int32_t>(versions[0]), ustring::parse<int32_t>(versions[1]), ustring::parse<int32_t>(versions[2]));
-    case 4: return version(ustring::parse<int32_t>(versions[0]), ustring::parse<int32_t>(versions[1]), ustring::parse<int32_t>(versions[2]), ustring::parse<int32_t>(versions[3]));
+    case 2: return version(ustring::parse<int32>(versions[0]), ustring::parse<int32>(versions[1]));
+    case 3: return version(ustring::parse<int32>(versions[0]), ustring::parse<int32>(versions[1]), ustring::parse<int32>(versions[2]));
+    case 4: return version(ustring::parse<int32>(versions[0]), ustring::parse<int32>(versions[1]), ustring::parse<int32>(versions[2]), ustring::parse<int32>(versions[3]));
   }
   
   throw xtd::argument_exception(csf_);

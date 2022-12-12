@@ -91,11 +91,11 @@ tcp_client& tcp_client::receive_buffer_size(size_t value) {
   return *this;
 }
 
-int32_t tcp_client::receive_timeout() const {
+int32 tcp_client::receive_timeout() const {
   return data_->client_socket.receive_timeout();
 }
 
-tcp_client& tcp_client::receive_timeout(int32_t value) {
+tcp_client& tcp_client::receive_timeout(int32 value) {
   data_->client_socket.receive_timeout(value);
   return *this;
 }
@@ -109,11 +109,11 @@ tcp_client& tcp_client::send_buffer_size(size_t value) {
   return *this;
 }
 
-int32_t tcp_client::send_timeout() const {
+int32 tcp_client::send_timeout() const {
   return data_->client_socket.send_timeout();
 }
 
-tcp_client& tcp_client::send_timeout(int32_t value) {
+tcp_client& tcp_client::send_timeout(int32 value) {
   data_->client_socket.send_timeout(value);
   return *this;
 }

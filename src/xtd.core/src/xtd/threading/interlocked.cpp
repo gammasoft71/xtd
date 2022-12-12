@@ -9,7 +9,7 @@ using namespace xtd::threading;
 
 std::mutex interlocked::guard;
 
-int32_t interlocked::add(int32_t& location, int32_t value) noexcept {
+int32 interlocked::add(int32& location, int32 value) noexcept {
   return native::interlocked::add(location, value);
 }
 
@@ -25,7 +25,7 @@ double interlocked::compare_exchange(double& location, double value, double comp
   return result;
 }
 
-int32_t interlocked::compare_exchange(int32_t& location, int32_t value, int32_t comparand) noexcept {
+int32 interlocked::compare_exchange(int32& location, int32 value, int32 comparand) noexcept {
   return native::interlocked::compare_exchange(location, value, comparand);
 }
 
@@ -49,7 +49,7 @@ float interlocked::compare_exchange(float& location, float value, float comparan
   return result;
 }
 
-int32_t interlocked::decrement(int32_t& location) noexcept {
+int32 interlocked::decrement(int32& location) noexcept {
   return native::interlocked::decrement(location);
 }
 
@@ -64,7 +64,7 @@ double interlocked::exchange(double& location, double value) noexcept {
   return original;
 }
 
-int32_t interlocked::exchange(int32_t& location, int32_t value) noexcept {
+int32 interlocked::exchange(int32& location, int32 value) noexcept {
   return native::interlocked::exchange(location, value);
 }
 
@@ -87,7 +87,7 @@ float interlocked::exchange(float& location, float value) noexcept {
   return original;
 }
 
-int32_t interlocked::increment(int32_t& location) noexcept {
+int32 interlocked::increment(int32& location) noexcept {
   return native::interlocked::increment(location);
 }
 

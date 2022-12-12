@@ -53,14 +53,14 @@ namespace xtd {
         const xtd::net::ip_address& address() const noexcept;
         
         /// @brief Gets the network interface information that is associated with a call to xtd::net::sockets::socket::receive_message_from method or xtd::net::sockets::socket::end_receive_message_from.
-        /// @return An int32_t value, which represents the index of the network interface. You can use this index with xtd::net::network_information::network_interface::get_all_network_interfaces() to get more information about the relevant interface.
-        int32_t interface() const noexcept;
+        /// @return An int32 value, which represents the index of the network interface. You can use this index with xtd::net::network_information::network_interface::get_all_network_interfaces() to get more information about the relevant interface.
+        int32 interface() const noexcept;
         /// @}
         
       private:
         friend class socket;
         xtd::net::ip_address address_;
-        int32_t address_interface_ = 0;
+        int32 address_interface_ = 0;
       };
     }
   }
