@@ -9,6 +9,7 @@
 #undef __XTD_CORE_INTERNAL__
 /// @endcond
 #include "number_styles.h"
+#include "types.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -73,7 +74,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  inline int8_t parse<int8_t>(const std::string& str, number_styles styles) {return __parse_number<int8_t>(str, styles);}
+  inline xtd::sbyte parse<xtd::sbyte>(const std::string& str, number_styles styles) {return __parse_number<xtd::sbyte>(str, styles);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -226,7 +227,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  inline int8_t parse<int8_t>(const std::string& str) {return parse<int8_t>(str, number_styles::integer);}
+  inline xtd::sbyte parse<xtd::sbyte>(const std::string& str) {return parse<xtd::sbyte>(str, number_styles::integer);}
   
   /// @brief Convert a string into a type.
   /// @par Namespace

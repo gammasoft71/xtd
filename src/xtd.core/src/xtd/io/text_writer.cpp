@@ -40,7 +40,7 @@ void text_writer::write(float value) {
   write(xtd::ustring::format("{}", value));
 }
 
-void text_writer::write(int8_t value) {
+void text_writer::write(sbyte value) {
   write(xtd::ustring::format("{}", value));
 }
 
@@ -91,7 +91,7 @@ void text_writer::write_line(float value) {
   write_line(xtd::ustring::format("{}", value));
 }
 
-void text_writer::write_line(int8_t value) {
+void text_writer::write_line(sbyte value) {
   write_line(xtd::ustring::format("{}", value));
 }
 

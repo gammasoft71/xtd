@@ -39,7 +39,7 @@ namespace xtd {
         static property from(bool value) {return property(ustring::format("{}", value));}
         static property from(double value) {return property(ustring::format("{}", value));}
         static property from(float value) {return property(ustring::format("{}", value));}
-        static property from(int8_t value) {return property(ustring::format("{}", value));}
+        static property from(sbyte value) {return property(ustring::format("{}", value));}
         static property from(int16 value) {return property(ustring::format("{}", value));}
         static property from(int32 value) {return property(ustring::format("{}", value));}
         static property from(int64 value) {return property(ustring::format("{}", value));}
@@ -53,7 +53,7 @@ namespace xtd {
         
         bool to_boolean() const {return xtd::parse<bool>(value_);}
         double to_double() const {return xtd::parse<double>(value_);}
-        int8_t to_int8() const {return xtd::parse<int8_t>(value_);}
+        sbyte to_int8() const {return xtd::parse<sbyte>(value_);}
         int16 to_int16() const {return xtd::parse<int16>(value_);}
         int32 to_int32() const {return xtd::parse<int32>(value_);}
         int64 to_int64() const {return xtd::parse<int64>(value_);}
