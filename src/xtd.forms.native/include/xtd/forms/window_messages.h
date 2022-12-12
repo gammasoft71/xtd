@@ -1893,7 +1893,7 @@ constexpr xtd::int32 HELPINFO_MENUITEM = 0x0002;
 
 struct NMHDR {
   HWND hwndFrom;
-  uintptr_t idFrom;
+  xtd::uintptr idFrom;
   xtd::uint32 code;
 };
 
@@ -1907,7 +1907,7 @@ struct HELPINFO {
   xtd::int32 iContextType;
   xtd::int32 iCtrlId;
   HWND hItemHandle;
-  uintptr_t dwContextId;
+  xtd::uintptr dwContextId;
   POINT MousePos;
 };
 

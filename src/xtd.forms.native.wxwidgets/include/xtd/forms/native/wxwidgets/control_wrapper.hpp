@@ -433,31 +433,31 @@ namespace xtd::forms::native {
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_calendar_doubleclicked(wxEvent& event) {
-    NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr_t>(event.GetId()), MCN_SELECT};
+    NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr>(event.GetId()), MCN_SELECT};
     event_handler_->send_message(reinterpret_cast<intptr>(event_handler_), WM_NOTIFY, static_cast<intptr>(event.GetId()), reinterpret_cast<intptr>(&nmhrd), reinterpret_cast<intptr>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_calendar_sel_changed(wxEvent& event) {
-    NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr_t>(event.GetId()), MCN_SELCHANGE};
+    NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr>(event.GetId()), MCN_SELCHANGE};
     event_handler_->send_message(reinterpret_cast<intptr>(event_handler_), WM_NOTIFY, static_cast<intptr>(event.GetId()), reinterpret_cast<intptr>(&nmhrd), reinterpret_cast<intptr>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_calendar_page_changed(wxEvent& event) {
-    NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr_t>(event.GetId()), MCN_VIEWCHANGE};
+    NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr>(event.GetId()), MCN_VIEWCHANGE};
     event_handler_->send_message(reinterpret_cast<intptr>(event_handler_), WM_NOTIFY, static_cast<intptr>(event.GetId()), reinterpret_cast<intptr>(&nmhrd), reinterpret_cast<intptr>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_calendar_week_clicked(wxEvent& event) {
-    NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr_t>(event.GetId()), MCN_VIEWCHANGE};
+    NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr>(event.GetId()), MCN_VIEWCHANGE};
     event_handler_->send_message(reinterpret_cast<intptr>(event_handler_), WM_NOTIFY, static_cast<intptr>(event.GetId()), reinterpret_cast<intptr>(&nmhrd), reinterpret_cast<intptr>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_calendar_weekday_clicked(wxEvent& event) {
-    NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr_t>(event.GetId()), MCN_VIEWCHANGE};
+    NMHDR nmhrd {reinterpret_cast<HWND>(event_handler_), static_cast<uintptr>(event.GetId()), MCN_VIEWCHANGE};
     event_handler_->send_message(reinterpret_cast<intptr>(event_handler_), WM_NOTIFY, static_cast<intptr>(event.GetId()), reinterpret_cast<intptr>(&nmhrd), reinterpret_cast<intptr>(&event));
   }
   
@@ -519,7 +519,7 @@ namespace xtd::forms::native {
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_date_changed(wxEvent& event) {
-    NMHDR nmhrd {reinterpret_cast<HWND>(get_control_handle_for_event(event, event_handler_)), static_cast<uintptr_t>(event.GetId()), DTN_DATETIMECHANGE};
+    NMHDR nmhrd {reinterpret_cast<HWND>(get_control_handle_for_event(event, event_handler_)), static_cast<uintptr>(event.GetId()), DTN_DATETIMECHANGE};
     event_handler_->send_message(reinterpret_cast<intptr>(event_handler_), WM_NOTIFY, static_cast<intptr>(event.GetId()), reinterpret_cast<intptr>(&nmhrd), reinterpret_cast<intptr>(&event));
   }
   
@@ -803,7 +803,7 @@ namespace xtd::forms::native {
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_time_changed(wxEvent& event) {
-    NMHDR nmhrd {reinterpret_cast<HWND>(get_control_handle_for_event(event, event_handler_)), static_cast<uintptr_t>(event.GetId()), DTN_DATETIMECHANGE};
+    NMHDR nmhrd {reinterpret_cast<HWND>(get_control_handle_for_event(event, event_handler_)), static_cast<uintptr>(event.GetId()), DTN_DATETIMECHANGE};
     event_handler_->send_message(reinterpret_cast<intptr>(event_handler_), WM_NOTIFY, static_cast<intptr>(event.GetId()), reinterpret_cast<intptr>(&nmhrd), reinterpret_cast<intptr>(&event));
   }
   
