@@ -1,6 +1,6 @@
 # debug_cassert
 
-Shows how to use [debug::cassert](../../../../src/xtd.core/include/xtd/diagnostics/debug.h) method.
+Shows how to use [debug::cassert](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1debug.html#acdb0d00e4b12fccc037cf3f965110d72) method.
 
 ## Sources
 

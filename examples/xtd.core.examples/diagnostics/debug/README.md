@@ -1,6 +1,6 @@
 # debug
 
-Shows how to use [debug](../../../../src/xtd.core/include/xtd/diagnostics/debug.h) class.
+Shows how to use [debug](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1debug.html) class.
 
 ## Sources
 
