@@ -1,6 +1,6 @@
 # date_time_day_of_week
 
-Shows how to use [xtd::date_time::day_of_week](../../../../src/xtd.core/include/xtd/date_time.h) property.
+Shows how to use [xtd::date_time::day_of_week](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a907e5ccf896744690074196778815697) property.
 
 # Sources
 

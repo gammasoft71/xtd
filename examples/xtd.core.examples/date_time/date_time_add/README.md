@@ -1,6 +1,6 @@
 # date_time_add
 
-Shows how to use [xtd::date_time::add](../../../../src/xtd.core/include/xtd/date_time.h) method.
+Shows how to use [xtd::date_time::add](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a383491b411dbc746d01caedb353882a4) method.
 
 # Sources
 
