@@ -17,7 +17,7 @@
 /// @ingroup xtd_core_native console_special_key
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t CONSOLE_SPECIAL_KEY_CTRL_BREAK = 0;
+constexpr int_least32_t CONSOLE_SPECIAL_KEY_CTRL_BREAK = 0;
 
 /// @brief The control modifier key plus the C console key.
 /// @par Library
@@ -25,7 +25,7 @@ constexpr int32_t CONSOLE_SPECIAL_KEY_CTRL_BREAK = 0;
 /// @ingroup xtd_core_native console_special_key
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t CONSOLE_SPECIAL_KEY_CTRL_C = 1;
+constexpr int_least32_t CONSOLE_SPECIAL_KEY_CTRL_C = 1;
 
 /// @brief The control modifier key plus the \\ console key.
 /// @par Library
@@ -33,7 +33,7 @@ constexpr int32_t CONSOLE_SPECIAL_KEY_CTRL_C = 1;
 /// @ingroup xtd_core_native console_special_key
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t CONSOLE_SPECIAL_KEY_CTRL_BS = 2;
+constexpr int_least32_t CONSOLE_SPECIAL_KEY_CTRL_BS = 2;
 
 /// @brief The control modifier key plus the Z console key.
 /// @par Library
@@ -41,4 +41,4 @@ constexpr int32_t CONSOLE_SPECIAL_KEY_CTRL_BS = 2;
 /// @ingroup xtd_core_native console_special_key
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t CONSOLE_SPECIAL_KEY_CTRL_Z = 3;
+constexpr int_least32_t CONSOLE_SPECIAL_KEY_CTRL_Z = 3;
