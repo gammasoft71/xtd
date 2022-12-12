@@ -1,6 +1,6 @@
 # enum_class_flags_without_helpers
 
-* Shows how to use [xtd::enum_object](../../../../src/xtd.core/include/xtd/xtd::enum_object.h) an [xtd::enum_register](../../../../src/xtd.core/include/xtd/xtd::enum_object.h) classes.
+* Shows how to use [xtd::enum_object](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object.html) an [xtd::enum_register](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__register.html) classes.
 
 ## Sources
 
