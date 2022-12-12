@@ -209,12 +209,12 @@ namespace xtd {
   /// The following example shows how to create and use xtd::uintptr_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
-  /// uintptr_t unboxed_object = 42;
+  /// uintptr unboxed_object = 42;
   /// uintptr_object boxed_object = unboxed_object;
   /// auto result = stringer(boxed_object);
   /// console::write_line("result = {}", result); // Display: result = 42;
   /// @endcode
-  using uintptr_object = box_integer<uintptr_t>;
+  using uintptr_object = box_integer<uintptr>;
   
   /// @brief Represent a boxed size_t.
   /// @par Namespace

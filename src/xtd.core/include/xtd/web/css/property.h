@@ -30,7 +30,7 @@ namespace xtd {
         /// @{
         const xtd::ustring& value() const noexcept {return value_;}
         template<typename value_t>
-        uintptr_t value() const noexcept {return xtd::parse<value_t>(value_);}
+        uintptr value() const noexcept {return xtd::parse<value_t>(value_);}
         /// @}
         
         /// @name Methods
@@ -64,9 +64,9 @@ namespace xtd {
         uint16_t to_uint16() const {return xtd::parse<uint16_t>(value_);}
         uint32 to_uint32() const {return xtd::parse<uint32>(value_);}
         uint64 to_uint64() const {return xtd::parse<uint64>(value_);}
-        uintptr_t to_uintptr() const {return xtd::parse<uintptr_t>(value_);}
+        uintptr to_uintptr() const {return xtd::parse<uintptr>(value_);}
         template<typename value_t>
-        uintptr_t to() const {return xtd::parse<value_t>(value_);}
+        uintptr to() const {return xtd::parse<value_t>(value_);}
         /// @}
         
       private:
