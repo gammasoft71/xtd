@@ -83,7 +83,7 @@ namespace xtd {
         /// @remarks This constructor creates an underlying xtd::net::sockets::socket and binds it to the port number from which you intend to communicate. Use this constructor if you are only interested in setting the local port number. The underlying service provider will assign the local IP address. If you pass 0 to the constructor, the underlying service provider will assign a port number. If this constructor is used, the xtd::net::sockets::udp_client instance is set with an address family of IPv4 that cannot be changed or overwritten by a connect method call with an IPv6 target.
         /// @remarks This constructor works only with IPv4 address types.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        explicit udp_client(uint16_t port);
+        explicit udp_client(uint16 port);
         /// @brief Initializes a new instance of the xtd::net::sockets::udp_client class and binds it to the specified local endpoint.
         /// @param local_end_point An xtd::net::ip_end_point that represents the local endpoint to which you bind the UDP connection.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
@@ -109,14 +109,14 @@ namespace xtd {
         /// @remarks The family parameter determines whether the listener uses an IP version 4 address (IPv4) or an IP version 6 (IPv6) address. To use an IPv4 address, pass the xtd::net::sockets::address_family::inter_network value. To use an IPv6 address, pass the xtd::net::sockets::address_family::inter_network_v6 value. Passing any other value will cause the method to throw an xtd::argument_exception.
         /// @remarks If this constructor is used, the xtd::net::sockets::udp_client instance is set with the address family specified by the family parameter that cannot be changed or overwritten by a connect method call with a different address family.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        udp_client(uint16_t port, xtd::net::sockets::address_family addressFamily);
+        udp_client(uint16 port, xtd::net::sockets::address_family addressFamily);
         /// @brief Initializes a new instance of the xtd::net::sockets::udp_client class and establishes a default remote host.
         /// @param hostname The name of the remote DNS host to which you intend to connect.
         /// @param port The remote port number to which you intend to connect.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
         /// @remarks This constructor initializes a new xtd::net::sockets::udp_client and establishes a remote host using the hostname and port parameters. Establishing a default remote host is optional. If you use this constructor, you do not have to specify a remote host in each call to the xtd::net::sockets::udp_client::send method. Specifying a default remote host limits you to that host only. You can change the default remote host at any time by calling the xtd::net::sockets::udp_client::connect method. If you want to specify a remote host in your call to the xtd::net::sockets::udp_client::send method, do not use this constructor.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        udp_client(const xtd::ustring& hostname, uint16_t port);
+        udp_client(const xtd::ustring& hostname, uint16 port);
         /// @}
         
         /// @cond
@@ -261,7 +261,7 @@ namespace xtd {
         /// @return An xtd::iasync_result object that references the asynchronous send.
         /// @remarks The asynchronous xtd::net::sockets::udp_client::begin_send operation must be completed by calling the xtd::net::sockets::udp_client::end_send method. Typically, the method is invoked by the callback delegate.
         /// @remarks This method does not block until the operation is complete. To block until the operation is complete, use one of the xtd::net::sockets::udp_client::send method overloads.
-        std::shared_ptr<xtd::iasync_result> begin_send(const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::ustring& hostname, uint16_t port, xtd::async_callback callback, const std::any& state);
+        std::shared_ptr<xtd::iasync_result> begin_send(const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::ustring& hostname, uint16 port, xtd::async_callback callback, const std::any& state);
         
         /// @brief xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is specified by a EndPoint.
         /// @param dgram A byte array that contains the data to be sent.
@@ -311,7 +311,7 @@ namespace xtd {
         /// @remarks You can however, broadcast data to the default broadcast address, 255.255.255.255, if you specify xtd::net::ip_address::broadcast in your call to the xtd::net::sockets::udp_client::send method. If your application requires greater control over broadcast addresses, you can also revert to using the xtd::net::sockets::socket class.
         /// @note Since the UDP protocol is connectionless, the xtd::net::sockets::udp_client::connect method does not block. Do not call the xtd::net::sockets::udp_client::connect method if you intend to receive multicasted datagrams.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        void connect(const xtd::net::ip_address& ip_address, uint16_t port);
+        void connect(const xtd::net::ip_address& ip_address, uint16 port);
         /// @brief Establishes a default remote host using the specified hostname and port number
         /// @param hostname the hostname to connect to.
         /// @param port The port number to which you intend send data
@@ -323,7 +323,7 @@ namespace xtd {
         /// @remarks You can however, broadcast data to the default broadcast address, 255.255.255.255, if you specify xtd::net::ip_address::broadcast in your call to the xtd::net::sockets::udp_client::send method. If your application requires greater control over broadcast addresses, you can also revert to using the xtd::net::sockets::socket class.
         /// @note Since the UDP protocol is connectionless, the xtd::net::sockets::udp_client::connect method does not block. Do not call the xtd::net::sockets::udp_client::connect method if you intend to receive multicasted datagrams.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        void connect(const xtd::ustring& hostname, uint16_t port);
+        void connect(const xtd::ustring& hostname, uint16 port);
         
         /// @brief Leaves a multicast group.
         /// @param multicast_address The xtd::net::ip_address of the multicast group to leave.
@@ -440,7 +440,7 @@ namespace xtd {
         /// @remarks If you want to send datagrams to any other broadcast address, use the xtd::net::sockets::udp_client::client method to obtain the underlying xtd::net::sockets::socket, and set the socket option to SocketOptionName.Broadcast. You can also revert to using the xtd::net::sockets::socket class.
         /// @note Do not provide a host name or port number to this method if you have already established a remote host with the xtd::net::sockets::udp_client::connect method. If you do, the xtd::net::sockets::udp_client::send method will throw a xtd::net::sockets::socket_exception. If you receive a xtd::net::sockets::socket_exception, use xtd::net::sockets::socket_exception.ErrorCode to obtain the specific error code. Once you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        size_t send(const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::ustring& hostname, uint16_t port);
+        size_t send(const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::ustring& hostname, uint16 port);
         /// @brief xtd::net::sockets::udp_client::sends a UDP datagram to the host at the specified remote endpoint.
         /// @param dgram An array of type Byte that specifies the UDP datagram that you intend to send, represented as an array of bytes.
         /// @param bytes The number of bytes in the datagram.

@@ -23,7 +23,7 @@ tcp_listener::tcp_listener(const ip_end_point& local_end_point) {
   data_->server_socket.set_socket_option(xtd::net::sockets::socket_option_level::socket, xtd::net::sockets::socket_option_name::reuse_address, true);
 }
 
-tcp_listener::tcp_listener(const ip_address& ip_address, uint16_t port) : tcp_listener(ip_end_point(ip_address, port)) {
+tcp_listener::tcp_listener(const ip_address& ip_address, uint16 port) : tcp_listener(ip_end_point(ip_address, port)) {
 }
 
 tcp_listener::~tcp_listener() {
@@ -92,7 +92,7 @@ std::shared_ptr<xtd::iasync_result> tcp_listener::begin_accept_tcp_client(xtd::a
   return ar;
 }
 
-tcp_listener tcp_listener::create(uint16_t port) {
+tcp_listener tcp_listener::create(uint16 port) {
   return tcp_listener(ip_address::any, port);
 }
 

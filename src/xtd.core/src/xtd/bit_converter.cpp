@@ -40,7 +40,7 @@ vector<xtd::byte> bit_converter::get_bytes(sbyte value) noexcept {
 }
 
 vector<xtd::byte> bit_converter::get_bytes(int16 value) noexcept {
-  return bit_converter::get_bytes(uint16_t(value));
+  return bit_converter::get_bytes(uint16(value));
 }
 
 vector<xtd::byte> bit_converter::get_bytes(int32 value) noexcept {
@@ -59,7 +59,7 @@ vector<xtd::byte> bit_converter::get_bytes(xtd::byte value) noexcept {
   return {value};
 }
 
-vector<xtd::byte> bit_converter::get_bytes(uint16_t value) noexcept {
+vector<xtd::byte> bit_converter::get_bytes(uint16 value) noexcept {
   if (is_little_endian) return {xtd::byte(value & 0x00FF), xtd::byte((value & 0xFF00) >> 8)};
   return {xtd::byte((value & 0xFF00) >> 8), xtd::byte(value & 0x00FF)};
 }
@@ -128,8 +128,8 @@ float bit_converter::to_single(const vector<xtd::byte>& value, size_t start_inde
   return int32_bits_to_single(to_int32(value, start_index));
 }
 
-uint16_t bit_converter::to_uint16(const vector<xtd::byte>& value, size_t start_index) {
-  return static_cast<uint16_t>(value.at(start_index)) + (static_cast<uint16_t>(value.at(start_index + 1)) << 8);
+uint16 bit_converter::to_uint16(const vector<xtd::byte>& value, size_t start_index) {
+  return static_cast<uint16>(value.at(start_index)) + (static_cast<uint16>(value.at(start_index + 1)) << 8);
 }
 
 uint32 bit_converter::to_uint32(const vector<xtd::byte>& value, size_t start_index) {

@@ -126,7 +126,7 @@ ustring binary_reader::read_string() {
   return ustring(read_chars(length).data(), static_cast<size_t>(length));
 }
 
-uint16_t binary_reader::read_uint16() {
+uint16 binary_reader::read_uint16() {
   return bit_converter::to_int16(read_bytes(sizeof(int16)), 0);
 }
 

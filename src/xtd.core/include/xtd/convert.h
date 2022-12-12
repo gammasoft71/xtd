@@ -170,15 +170,15 @@ namespace xtd {
     /// any result = convert::to_any(value);
     /// @endcode
     static std::any to_any(sbyte value) noexcept;
-    /// @brief Convert uint16_t to std::any.
+    /// @brief Convert uint16 to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// any result = convert::to_any(value);
     /// @endcode
-    static std::any to_any(uint16_t value) noexcept;
+    static std::any to_any(uint16 value) noexcept;
     /// @brief Convert uint32 to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
@@ -402,15 +402,15 @@ namespace xtd {
     /// bool result = convert::to_boolean(value);
     /// @endcode
     static bool to_boolean(sbyte value) noexcept;
-    /// @brief Convert uint16_t to bool.
+    /// @brief Convert uint16 to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// bool result = convert::to_boolean(value);
     /// @endcode
-    static bool to_boolean(uint16_t value) noexcept;
+    static bool to_boolean(uint16 value) noexcept;
     /// @brief Convert uint32 to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
@@ -636,16 +636,16 @@ namespace xtd {
     /// xtd::byte result = convert::to_byte(value);
     /// @endcode
     static xtd::byte to_byte(sbyte value);
-    /// @brief Convert uint16_t to byte.
+    /// @brief Convert uint16 to byte.
     /// @param value object to convert.
     /// @return A new xtd::byte object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static xtd::byte to_byte(uint16_t value);
+    static xtd::byte to_byte(uint16 value);
     /// @brief Convert uint32 to byte.
     /// @param value object to convert.
     /// @return A new xtd::byte object converted from value.
@@ -884,16 +884,16 @@ namespace xtd {
     /// char result = convert::to_char(value);
     /// @endcode
     static char to_char(sbyte value);
-    /// @brief Convert uint16_t to char.
+    /// @brief Convert uint16 to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// char result = convert::to_char(value);
     /// @endcode
-    static char to_char(uint16_t value);
+    static char to_char(uint16 value);
     /// @brief Convert uint32 to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
@@ -1121,16 +1121,16 @@ namespace xtd {
     /// char8 result = convert::to_char8(value);
     /// @endcode
     static char8 to_char8(sbyte value);
-    /// @brief Convert uint16_t to char8.
+    /// @brief Convert uint16 to char8.
     /// @param value object to convert.
     /// @return A new char8 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// char8 result = convert::to_char8(value);
     /// @endcode
-    static char8 to_char8(uint16_t value);
+    static char8 to_char8(uint16 value);
     /// @brief Convert uint32 to char8.
     /// @param value object to convert.
     /// @return A new char8 object converted from value.
@@ -1356,15 +1356,15 @@ namespace xtd {
     /// char16 result = convert::to_char16(value);
     /// @endcode
     static char16 to_char16(sbyte value);
-    /// @brief Convert uint16_t to char16.
+    /// @brief Convert uint16 to char16.
     /// @param value object to convert.
     /// @return A new char16 object converted from value.
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// char16 result = convert::to_char16(value);
     /// @endcode
-    static char16 to_char16(uint16_t value) noexcept;
+    static char16 to_char16(uint16 value) noexcept;
     /// @brief Convert uint32 to char16.
     /// @param value object to convert.
     /// @return A new char16 object converted from value.
@@ -1589,15 +1589,15 @@ namespace xtd {
     /// char32 result = convert::to_char32(value);
     /// @endcode
     static char32 to_char32(sbyte value);
-    /// @brief Convert uint16_t to char32.
+    /// @brief Convert uint16 to char32.
     /// @param value object to convert.
     /// @return A new char32 object converted from value.
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32 to_char32(uint16_t value) noexcept;
+    static char32 to_char32(uint16 value) noexcept;
     /// @brief Convert uint32 to char32.
     /// @param value object to convert.
     /// @return A new char32 object converted from value.
@@ -1822,15 +1822,15 @@ namespace xtd {
     /// wchar result = convert::to_wchar(value);
     /// @endcode
     static wchar to_wchar(sbyte value);
-    /// @brief Convert uint16_t to wchar.
+    /// @brief Convert uint16 to wchar.
     /// @param value object to convert.
     /// @return A new wchar object converted from value.
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar to_wchar(uint16_t value) noexcept;
+    static wchar to_wchar(uint16 value) noexcept;
     /// @brief Convert uint32 to wchar.
     /// @param value object to convert.
     /// @return A new wchar object converted from value.
@@ -2048,15 +2048,15 @@ namespace xtd {
     /// decimal result = convert::to_decimal(value);
     /// @endcode
     static decimal to_decimal(sbyte value) noexcept;
-    /// @brief Convert uint16_t to decimal.
+    /// @brief Convert uint16 to decimal.
     /// @param value object to convert.
     /// @return A new decimal object converted from value.
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal to_decimal(uint16_t value) noexcept;
+    static decimal to_decimal(uint16 value) noexcept;
     /// @brief Convert uint32 to decimal.
     /// @param value object to convert.
     /// @return A new decimal object converted from value.
@@ -2271,15 +2271,15 @@ namespace xtd {
     /// double result = convert::to_double(value);
     /// @endcode
     static double to_double(sbyte value) noexcept;
-    /// @brief Convert uint16_t to double.
+    /// @brief Convert uint16 to double.
     /// @param value object to convert.
     /// @return A new double object converted from value.
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// double result = convert::to_double(value);
     /// @endcode
-    static double to_double(uint16_t value) noexcept;
+    static double to_double(uint16 value) noexcept;
     /// @brief Convert uint32 to double.
     /// @param value object to convert.
     /// @return A new double object converted from value.
@@ -2494,15 +2494,15 @@ namespace xtd {
     /// float result = convert::to_single(value);
     /// @endcode
     static float to_single(sbyte value) noexcept;
-    /// @brief Convert uint16_t to single.
+    /// @brief Convert uint16 to single.
     /// @param value object to convert.
     /// @return A new float object converted from value.
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// float result = convert::to_single(value);
     /// @endcode
-    static float to_single(uint16_t value) noexcept;
+    static float to_single(uint16 value) noexcept;
     /// @brief Convert uint32 to single.
     /// @param value object to convert.
     /// @return A new float object converted from value.
@@ -2724,16 +2724,16 @@ namespace xtd {
     /// int16 result = convert::to_int16(value);
     /// @endcode
     static int16 to_int16(sbyte value) noexcept;
-    /// @brief Convert uint16_t to int16.
+    /// @brief Convert uint16 to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// int16 result = convert::to_int16(value);
     /// @endcode
-    static int16 to_int16(uint16_t value);
+    static int16 to_int16(uint16 value);
     /// @brief Convert uint32 to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
@@ -2966,15 +2966,15 @@ namespace xtd {
     /// int32 result = convert::to_int32(value);
     /// @endcode
     static int32 to_int32(sbyte value) noexcept;
-    /// @brief Convert uint16_t to int32.
+    /// @brief Convert uint16 to int32.
     /// @param value object to convert.
     /// @return A new int32 object converted from value.
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// int32 result = convert::to_int32(value);
     /// @endcode
-    static int32 to_int32(uint16_t value) noexcept;
+    static int32 to_int32(uint16 value) noexcept;
     /// @brief Convert uint32 to int32.
     /// @param value object to convert.
     /// @return A new int32 object converted from value.
@@ -3203,15 +3203,15 @@ namespace xtd {
     /// int64 result = convert::to_int64(value);
     /// @endcode
     static int64 to_int64(sbyte value) noexcept;
-    /// @brief Convert uint16_t to int64.
+    /// @brief Convert uint16 to int64.
     /// @param value object to convert.
     /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64 to_int64(uint16_t value) noexcept;
+    static int64 to_int64(uint16 value) noexcept;
     /// @brief Convert uint32 to int64.
     /// @param value object to convert.
     /// @return A new int64 object converted from value.
@@ -3439,15 +3439,15 @@ namespace xtd {
     /// llong_t result = convert::to_llong(value);
     /// @endcode
     static llong_t to_llong(sbyte value) noexcept;
-    /// @brief Convert uint16_t to llong.
+    /// @brief Convert uint16 to llong.
     /// @param value object to convert.
     /// @return A new llong_t object converted from value.
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// llong_t result = convert::to_llong(value);
     /// @endcode
-    static llong_t to_llong(uint16_t value) noexcept;
+    static llong_t to_llong(uint16 value) noexcept;
     /// @brief Convert uint32 to llong.
     /// @param value object to convert.
     /// @return A new llong_t object converted from value.
@@ -3686,16 +3686,16 @@ namespace xtd {
     /// sbyte result = convert::to_sbyte(value);
     /// @endcode
     static sbyte to_sbyte(sbyte value);
-    /// @brief Convert uint16_t to sbyte.
+    /// @brief Convert uint16 to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// sbyte result = convert::to_sbyte(value);
     /// @endcode
-    static sbyte to_sbyte(uint16_t value);
+    static sbyte to_sbyte(uint16 value);
     /// @brief Convert uint32 to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte object converted from value.
@@ -3779,209 +3779,209 @@ namespace xtd {
     
     /// @brief Convert std::any to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @par Examples
     /// @code
     /// std::any value = 42;
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(std::any value);
+    static uint16 to_uint16(std::any value);
     /// @brief Convert bool to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @par Examples
     /// @code
     /// bool value = true;
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(bool value) noexcept;
+    static uint16 to_uint16(bool value) noexcept;
     /// @brief Convert xtd::byte to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @par Examples
     /// @code
     /// xtd::byte value = 42;
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(xtd::byte value) noexcept;
+    static uint16 to_uint16(xtd::byte value) noexcept;
     /// @brief Convert char to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @par Examples
     /// @code
     /// char value = 'a';
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(char value) noexcept;
+    static uint16 to_uint16(char value) noexcept;
     /// @brief Convert char8 to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @par Examples
     /// @code
     /// char8 value = u8'a';
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(char8 value) noexcept;
+    static uint16 to_uint16(char8 value) noexcept;
     /// @brief Convert char16 to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @par Examples
     /// @code
     /// char16 value = u'a';
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(char16 value) noexcept;
+    static uint16 to_uint16(char16 value) noexcept;
     /// @brief Convert char32 to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// char32 value = U'a';
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(char32 value);
+    static uint16 to_uint16(char32 value);
     /// @brief Convert char32 to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @par Examples
     /// @code
     /// wchar value = L'a';
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(wchar value) noexcept;
+    static uint16 to_uint16(wchar value) noexcept;
     /// @brief Convert decimal to uint16.
     /// @param value object to convert.
     /// @remarks The result is rounded.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @par Examples
     /// @code
     /// decimal value = 42.50l;
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(decimal value);
+    static uint16 to_uint16(decimal value);
     /// @brief Convert double to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @remarks The result is rounded.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// double value = 42.50;
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(double value);
+    static uint16 to_uint16(double value);
     /// @brief Convert float to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @remarks The result is rounded.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// float value = 42.50f;
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(float value);
+    static uint16 to_uint16(float value);
     /// @brief Convert int16 to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// int16 value = 42;
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(int16 value);
+    static uint16 to_uint16(int16 value);
     /// @brief Convert int32 to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int32 value = 42;
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(int32 value);
+    static uint16 to_uint16(int32 value);
     /// @brief Convert int64 to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int64 value = 42l;
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(int64 value);
+    static uint16 to_uint16(int64 value);
     /// @brief Convert llong_t to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// llong_t value = 42ll;
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(llong_t value);
+    static uint16 to_uint16(llong_t value);
     /// @brief Convert sbyte to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// sbyte value = 42;
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(sbyte value);
-    /// @brief Convert uint16_t to uint16.
+    static uint16 to_uint16(sbyte value);
+    /// @brief Convert uint16 to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 value = 42u;
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(uint16_t value) noexcept;
+    static uint16 to_uint16(uint16 value) noexcept;
     /// @brief Convert uint32 to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint32 value = 42u;
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(uint32 value);
+    static uint16 to_uint16(uint32 value);
     /// @brief Convert uint64 to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42ul;
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(uint64 value);
+    static uint16 to_uint16(uint64 value);
     /// @brief Convert llong_t to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// ullong_t value = 42ull;
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(ullong_t value);
+    static uint16 to_uint16(ullong_t value);
     /// @brief Convert string to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
     /// ustring value = "42";
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(const xtd::ustring& value);
+    static uint16 to_uint16(const xtd::ustring& value);
     /// @brief Convert string to uint16.
     /// @param value object to convert.
     /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
@@ -3990,37 +3990,37 @@ namespace xtd {
     /// @par Examples
     /// @code
     /// ustring value = "42";
-    /// uint16_t result = convert::to_uuint16(value);
+    /// uint16 result = convert::to_uuint16(value);
     /// @endcode
-    static uint16_t to_uint16(const xtd::ustring& value, xtd::byte from_base);
+    static uint16 to_uint16(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
-    static uint16_t to_uint16(const std::string& value);
-    static uint16_t to_uint16(const std::u8string& value);
-    static uint16_t to_uint16(const std::u16string& value);
-    static uint16_t to_uint16(const std::u32string& value);
-    static uint16_t to_uint16(const std::wstring& value);
-    static uint16_t to_uint16(const char* value);
-    static uint16_t to_uint16(char* value);
-    static uint16_t to_uint16(const char8* value);
-    static uint16_t to_uint16(char8* value);
-    static uint16_t to_uint16(const char16* value);
-    static uint16_t to_uint16(char16* value);
-    static uint16_t to_uint16(const char32* value);
-    static uint16_t to_uint16(char32* value);
-    static uint16_t to_uint16(const wchar* value);
-    static uint16_t to_uint16(wchar* value);
+    static uint16 to_uint16(const std::string& value);
+    static uint16 to_uint16(const std::u8string& value);
+    static uint16 to_uint16(const std::u16string& value);
+    static uint16 to_uint16(const std::u32string& value);
+    static uint16 to_uint16(const std::wstring& value);
+    static uint16 to_uint16(const char* value);
+    static uint16 to_uint16(char* value);
+    static uint16 to_uint16(const char8* value);
+    static uint16 to_uint16(char8* value);
+    static uint16 to_uint16(const char16* value);
+    static uint16 to_uint16(char16* value);
+    static uint16 to_uint16(const char32* value);
+    static uint16 to_uint16(char32* value);
+    static uint16 to_uint16(const wchar* value);
+    static uint16 to_uint16(wchar* value);
     /// @endcond
     /// @brief Convert type_t to uint16.
     /// @param value object to convert.
-    /// @return A new uint16_t object converted from value.
+    /// @return A new uint16 object converted from value.
     /// @par Examples
     /// @code
     /// address_family value = address_family::inter_network;
-    /// uint16_t result = convert::to_uint16(value);
+    /// uint16 result = convert::to_uint16(value);
     /// @endcode
     template<typename type_t>
-    static uint16_t to_uint16(type_t value) noexcept {
-      return static_cast<uint16_t>(value);
+    static uint16 to_uint16(type_t value) noexcept {
+      return static_cast<uint16>(value);
     }
     
     /// @brief Convert std::any to uint32.
@@ -4178,15 +4178,15 @@ namespace xtd {
     /// uint32 result = convert::to_uint32(value);
     /// @endcode
     static uint32 to_uint32(sbyte value);
-    /// @brief Convert uint16_t to uint32.
+    /// @brief Convert uint16 to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// uint32 result = convert::to_uint32(value);
     /// @endcode
-    static uint32 to_uint32(uint16_t value) noexcept;
+    static uint32 to_uint32(uint16 value) noexcept;
     /// @brief Convert uint32 to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
@@ -4422,15 +4422,15 @@ namespace xtd {
     /// uint64 result = convert::to_uint64(value);
     /// @endcode
     static uint64 to_uint64(sbyte value);
-    /// @brief Convert uint16_t to uint64.
+    /// @brief Convert uint16 to uint64.
     /// @param value object to convert.
     /// @return A new uint64 object converted from value.
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// uint64 result = convert::to_uint64(value);
     /// @endcode
-    static uint64 to_uint64(uint16_t value) noexcept;
+    static uint64 to_uint64(uint16 value) noexcept;
     /// @brief Convert uint32 to uint64.
     /// @param value object to convert.
     /// @return A new uint64 object converted from value.
@@ -4664,15 +4664,15 @@ namespace xtd {
     /// ullong_t result = convert::to_ullong(value);
     /// @endcode
     static ullong_t to_ullong(sbyte value);
-    /// @brief Convert uint16_t to ullong.
+    /// @brief Convert uint16 to ullong.
     /// @param value object to convert.
     /// @return A new ullong_t object converted from value.
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// ullong_t result = convert::to_ullong(value);
     /// @endcode
-    static ullong_t to_ullong(uint16_t value) noexcept;
+    static ullong_t to_ullong(uint16 value) noexcept;
     /// @brief Convert uint32 to ullong.
     /// @param value object to convert.
     /// @return A new ullong_t object converted from value.
@@ -4972,15 +4972,15 @@ namespace xtd {
     /// ustring result = convert::to_string(value, 16);
     /// @endcode
     static ustring to_string(sbyte value, xtd::byte from_base);
-    /// @brief Convert uint16_t to ustring.
+    /// @brief Convert uint16 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// ustring result = convert::to_string(value);
     /// @endcode
-    static ustring to_string(uint16_t value) noexcept;
+    static ustring to_string(uint16 value) noexcept;
     /// @brief Convert string to ustring.
     /// @param value object to convert.
     /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
@@ -4988,10 +4988,10 @@ namespace xtd {
     /// @exception xtd::atgument_exception from_base is not 2 or 8 or 10 orr 16.
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// ustring result = convert::to_string(value, 16);
     /// @endcode
-    static ustring to_string(uint16_t value, xtd::byte from_base);
+    static ustring to_string(uint16 value, xtd::byte from_base);
     /// @brief Convert uint32 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
@@ -5313,15 +5313,15 @@ namespace xtd {
     /// ustring result = convert::to_ustring(value, 16);
     /// @endcode
     static ustring to_ustring(sbyte value, xtd::byte from_base);
-    /// @brief Convert uint16_t to ustring.
+    /// @brief Convert uint16 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// ustring result = convert::to_ustring(value);
     /// @endcode
-    static ustring to_ustring(uint16_t value) noexcept;
+    static ustring to_ustring(uint16 value) noexcept;
     /// @brief Convert string to ustring.
     /// @param value object to convert.
     /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
@@ -5329,10 +5329,10 @@ namespace xtd {
     /// @exception xtd::atgument_exception from_base is not 2 or 8 or 10 orr 16.
     /// @par Examples
     /// @code
-    /// uint16_t value = 42u;
+    /// uint16 value = 42u;
     /// ustring result = convert::to_ustring(value, 16);
     /// @endcode
-    static ustring to_ustring(uint16_t value, xtd::byte from_base);
+    static ustring to_ustring(uint16 value, xtd::byte from_base);
     /// @brief Convert uint32 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.

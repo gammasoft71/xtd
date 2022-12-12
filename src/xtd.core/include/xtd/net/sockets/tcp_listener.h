@@ -82,7 +82,7 @@ namespace xtd {
         /// @remarks If you do not care which local address is assigned, specify xtd::net::ip_address::any for the localaddr parameter, and the underlying service provider will assign the most appropriate network address. This might help simplify your application if you have multiple network interfaces. If you do not care which local port is used, you can specify 0 for the port number. In this case, the service provider will assign an available port number between 1024 and 5000. If you use this approach, you can discover what local network address and port number has been assigned by using the xtd::net::sockets::tcp_listener::local_end_point property.
         /// @remarks Call the xtd::net::sockets::tcp_listener::start method to begin listening for incoming connection attempts.
         /// @note The 0 for local port functionality is not available.
-        tcp_listener(const xtd::net::ip_address& ip_address, uint16_t port);
+        tcp_listener(const xtd::net::ip_address& ip_address, uint16 port);
         /// @}
         
         /// @cond
@@ -181,7 +181,7 @@ namespace xtd {
         /// @brief Creates a new xtd::net::sockets::tcp_listener instance to listen on the specified port.
         /// @param port The port on which to listen for incoming connection attempts.
         /// @return xtd::net::sockets::tcp_listener A new xtd::net::sockets::tcp_listener instance to listen on the specified port.
-        static tcp_listener create(uint16_t port);
+        static tcp_listener create(uint16 port);
         
         /// @brief Asynchronously accepts an incoming connection attempt and creates a new Socket to handle remote host communication.
         /// @param async_result tAn xtd::iasync_result returned by a call to the xtd::net::sockets::tcp_listener::begin_accept_socket(xtd::async_callback, std::any) method.

@@ -23,9 +23,9 @@ namespace xtd {
       
       /// @{
       /// @brief Specifies the minimum value that can be assigned to the port property. The min_port value is set to 0x0000. This field is read-only.
-      static constexpr const uint16_t min_port = 0x0000;
+      static constexpr const uint16 min_port = 0x0000;
       /// @brief Specifies the maximum value that can be assigned to the port property. The max_port value is set to 0xFFFF. This field is read-only.
-      static constexpr const uint16_t max_port = 0xFFFF;
+      static constexpr const uint16 max_port = 0xFFFF;
       /// @
       
       /// @name Constructors
@@ -34,12 +34,12 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::net::ip_end_point class.
       /// @param address The IP address of the Internet host.
       /// @param port The port number associated with the address, or 0 to specify any available port. port is in host order.
-      ip_end_point(uint32 address, uint16_t port);
+      ip_end_point(uint32 address, uint16 port);
       
       /// @brief Initializes a new instance of the xtd::net::ip_end_point class.
       /// @param address An xtd::net::ip_address.
       /// @param port The port number associated with the address, or 0 to specify any available port. port is in host order.
-      ip_end_point(const xtd::net::ip_address& address, uint16_t port);
+      ip_end_point(const xtd::net::ip_address& address, uint16 port);
       /// @}
       
       /// @cond
@@ -62,10 +62,10 @@ namespace xtd {
       
       /// @brief Gets or sets the port number of the endpoint.
       /// @param value An integer value in the range min_port to max_port indicating the port number of the endpoint.
-      uint16_t port() const noexcept;
+      uint16 port() const noexcept;
       /// @brief Sets the port number of the endpoint.
       /// @param value An integer value in the range min_port to max_port indicating the port number of the endpoint.
-      ip_end_point& port(uint16_t value);
+      ip_end_point& port(uint16 value);
       /// @}
       
       /// @name Methods
@@ -88,7 +88,7 @@ namespace xtd {
       
     private:
       xtd::net::ip_address address_;
-      uint16_t port_ = 0;
+      uint16 port_ = 0;
     };
   }
 }

@@ -49,7 +49,7 @@ ip_address::ip_address(const vector<xtd::byte>& address, uint32 scope_id) : addr
 ip_address::ip_address(xtd::byte quad_part_address1, xtd::byte quad_part_address2, xtd::byte quad_part_address3, xtd::byte quad_part_address4) : address_((quad_part_address4 << 24 | quad_part_address3 << 16 | quad_part_address2 << 8 | quad_part_address1) & 0x0FFFFFFFF) {
 }
 
-ip_address::ip_address(const std::vector<uint16_t>& numbers, uint32 scope_id) : numbers_(numbers), scope_id_(scope_id), address_family_(sockets::address_family::inter_network_v6) {
+ip_address::ip_address(const std::vector<uint16>& numbers, uint32 scope_id) : numbers_(numbers), scope_id_(scope_id), address_family_(sockets::address_family::inter_network_v6) {
 }
 
 sockets::address_family ip_address::address_family() const noexcept {
@@ -136,7 +136,7 @@ float ip_address::host_to_network_order(float host) {
   return bit_converter::int32_bits_to_single(host_to_network_order(bit_converter::single_to_int32_bits(host)));
 }
 
-uint16_t ip_address::host_to_network_order(uint16_t host) {
+uint16 ip_address::host_to_network_order(uint16 host) {
   if (bit_converter::is_little_endian == false) return host;
   return (host >> 8) | (host << 8);
 }
@@ -166,10 +166,10 @@ ip_address ip_address::map_to_ip_v4() const noexcept {
 
 ip_address ip_address::map_to_ip_v6() const noexcept {
   if (address_family_ == sockets::address_family::inter_network_v6) return *this;
-  vector<uint16_t> numbers(number_of_numbers_);
+  vector<uint16> numbers(number_of_numbers_);
   numbers[5] = 0xFFFF;
-  numbers[6] = static_cast<uint16_t>(((address_ & 0x0000FF00) >> 8) | ((address_ & 0x000000FF) << 8));
-  numbers[7] = static_cast<uint16_t>(((address_ & 0xFF000000) >> 24) | ((address_ & 0x00FF0000) >> 8));
+  numbers[6] = static_cast<uint16>(((address_ & 0x0000FF00) >> 8) | ((address_ & 0x000000FF) << 8));
+  numbers[7] = static_cast<uint16>(((address_ & 0xFF000000) >> 24) | ((address_ & 0x00FF0000) >> 8));
   return ip_address(numbers, 0);
 }
 
@@ -193,7 +193,7 @@ float ip_address::network_to_host_order(float network) {
   return host_to_network_order(network);
 }
 
-uint16_t ip_address::network_to_host_order(uint16_t network) {
+uint16 ip_address::network_to_host_order(uint16 network) {
   return host_to_network_order(network);
 }
 
@@ -235,7 +235,7 @@ ip_address ip_address::parse(const ustring& str) {
     
     if (address_parts.size() == 8) {
       for (auto index = 0U; index < address_parts.size(); index++)
-        value.numbers_[index] = xtd::parse<uint16_t>(ustring::is_empty(address_parts[index]) ? "0" : address_parts[index], number_styles::hex_number);
+        value.numbers_[index] = xtd::parse<uint16>(ustring::is_empty(address_parts[index]) ? "0" : address_parts[index], number_styles::hex_number);
       return value;
     }
   }

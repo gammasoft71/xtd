@@ -113,7 +113,7 @@ float math::clamp(float value, float min, float max) noexcept {
   return std::clamp(value, min, max);
 }
 
-uint16_t math::clamp(uint16_t value, uint16_t min, uint16_t max) noexcept {
+uint16 math::clamp(uint16 value, uint16 min, uint16 max) noexcept {
   return std::clamp(value, min, max);
 }
 
@@ -234,7 +234,7 @@ float math::max(float a, float b) noexcept {
   return a > b ? a : b;
 }
 
-uint16_t math::max(uint16_t a, uint16_t b) noexcept {
+uint16 math::max(uint16 a, uint16 b) noexcept {
   return a > b ? a : b;
 }
 
@@ -286,7 +286,7 @@ float math::min(float a, float b) noexcept {
   return a < b ? a : b;
 }
 
-uint16_t math::min(uint16_t a, uint16_t b) noexcept {
+uint16 math::min(uint16 a, uint16 b) noexcept {
   return a < b ? a : b;
 }
 
