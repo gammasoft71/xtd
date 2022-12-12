@@ -401,7 +401,7 @@ namespace xtd {
       static bool on_app_thread_exception();
       static void raise_enter_thread_modal(const event_args& e);
       static void raise_leave_thread_modal(const event_args& e);
-      static intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
+      static intptr_t wnd_proc_(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
       static void wnd_proc(message& message);
       static void wm_activate_app(message& message);
       static void wm_app_idle(message& message);

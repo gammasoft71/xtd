@@ -26,11 +26,11 @@ progress_bar& progress_bar::marquee_animation_speed(size_t marquee_animation_spe
   return *this;
 }
 
-int32_t progress_bar::maximum() const noexcept {
+int32 progress_bar::maximum() const noexcept {
   return data_->maximum;
 }
 
-progress_bar& progress_bar::maximum(int32_t maximum) {
+progress_bar& progress_bar::maximum(int32 maximum) {
   if (data_->maximum != maximum) {
     data_->maximum = maximum;
     if (is_handle_created()) native::progress_bar::maximum(handle(), data_->maximum);
@@ -40,11 +40,11 @@ progress_bar& progress_bar::maximum(int32_t maximum) {
   return *this;
 }
 
-int32_t progress_bar::minimum() const noexcept {
+int32 progress_bar::minimum() const noexcept {
   return data_->minimum;
 }
 
-progress_bar& progress_bar::minimum(int32_t minimum) {
+progress_bar& progress_bar::minimum(int32 minimum) {
   if (data_->minimum != minimum) {
     data_->minimum = minimum;
     if (is_handle_created()) native::progress_bar::minimum(handle(), data_->minimum);
@@ -67,11 +67,11 @@ progress_bar& progress_bar::orientation(forms::orientation orientation) {
   return *this;
 }
 
-int32_t progress_bar::step() const noexcept {
+int32 progress_bar::step() const noexcept {
   return data_->step;
 }
 
-progress_bar& progress_bar::step(int32_t step) {
+progress_bar& progress_bar::step(int32 step) {
   data_->step = step;
   return *this;
 }
@@ -91,11 +91,11 @@ progress_bar& progress_bar::style(progress_bar_style style) {
   return *this;
 }
 
-int32_t progress_bar::value() const noexcept {
+int32 progress_bar::value() const noexcept {
   return data_->value;
 }
 
-progress_bar& progress_bar::value(int32_t value) {
+progress_bar& progress_bar::value(int32 value) {
   if (data_->value != value) {
     data_->value = math::clamp(value, data_->minimum, data_->maximum);
     if (is_handle_created()) native::progress_bar::value(handle(), data_->value);
@@ -103,7 +103,7 @@ progress_bar& progress_bar::value(int32_t value) {
   return *this;
 }
 
-void progress_bar::increment(int32_t value) {
+void progress_bar::increment(int32 value) {
     this->value(data_->value + value);
 }
 
@@ -111,7 +111,7 @@ void progress_bar::perform_step() {
   increment(step());
 }
 
-void progress_bar::set_range(int32_t min_value, int32_t max_value) {
+void progress_bar::set_range(int32 min_value, int32 max_value) {
   minimum(min_value);
   maximum(min_value > max_value ? min_value : max_value);
 }

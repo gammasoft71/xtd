@@ -55,7 +55,7 @@ namespace xtd {
         /// @param index The screen index.
         /// @return The number of bits of memory, associated with one pixel of data.
         /// @warning Internal use only
-        static int32_t bits_per_pixel(size_t index);
+        static int32 bits_per_pixel(size_t index);
         /// @brief Gets the bounds of the display.
         /// @param index The screen index.
         /// @return A xtd::drawing::rectangle, representing the bounds of the display.
@@ -70,7 +70,7 @@ namespace xtd {
         /// @param index The screen index.
         /// @return The pixels per inch of the display.
         /// @warning Internal use only
-        static int32_t pixels_per_inch(size_t index);
+        static int32 pixels_per_inch(size_t index);
         /// @brief Gets a value indicating whether a particular display is the primary device.
         /// @param index The screen index.
         /// @return true if index display is primary; otherwise, false.
@@ -85,7 +85,7 @@ namespace xtd {
         /// @return The standard pixels per inch.
         /// @remarks The standard value is 72 for macOS; 96 for Windows and linux.
         /// @warning Internal use only
-        static int32_t standard_pixels_per_inch();
+        static int32 standard_pixels_per_inch();
         /// @brief Gets the working area of the display. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.
         /// @param index The screen index.
         /// @return A xtd::drawing::rectangle, representing the working area of the display.

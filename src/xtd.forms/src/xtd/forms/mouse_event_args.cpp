@@ -22,6 +22,6 @@ namespace {
   }
 }
 
-mouse_event_args mouse_event_args::create(const message& message, bool double_click_fired, int32_t delta) {
+mouse_event_args mouse_event_args::create(const message& message, bool double_click_fired, int32 delta) {
   return mouse_event_args(message_to_mouse_buttons(message), double_click_fired  ? 2 : 1, drawing::point{(int16)LOWORD(message.lparam()), (int16)HIWORD(message.lparam())}, delta);
 }

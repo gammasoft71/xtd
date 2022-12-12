@@ -42,19 +42,19 @@ namespace xtd {
         /// @brief Gets the active window tracking delay.
         /// @return The active window tracking delay, in milliseconds.
         /// @warning Internal use only
-        static int32_t active_window_tracking_delay();
+        static int32 active_window_tracking_delay();
         /// @brief Gets a value that indicates the direction in which the operating system arranges minimized windows.
         /// @return One of the ArrangeDirection values that indicates the direction in which the operating system arranges minimized windows.
         /// @warning Internal use only
-        static int32_t arrange_direction();
+        static int32 arrange_direction();
         /// @brief Gets an ArrangeStartingPosition value that indicates the starting position from which the operating system arranges minimized windows.
         /// @return One of the ArrangeStartingPosition values that indicates the starting position from which the operating system arranges minimized windows.
         /// @warning Internal use only
-        static int32_t arrange_starting_position();
+        static int32 arrange_starting_position();
         /// @brief Gets a BootMode value that indicates the boot mode the system was started in.
         /// @return One of the boot_mode values that indicates the boot mode the system was started in.
         /// @warning Internal use only
-        static int32_t boot_mode();
+        static int32 boot_mode();
         /// @brief Gets the thickness, in pixels, of a three-dimensional (3-D) style window or system control border.
         /// @return A size that indicates the width, in pixels, of a 3-D style vertical border, and the height, in pixels, of a 3-D style horizontal border.
         /// @warning Internal use only
@@ -62,7 +62,7 @@ namespace xtd {
         /// @brief Gets the border multiplier factor that is used when determining the thickness of a window's sizing border.
         /// @return The multiplier used to determine the thickness of a window's sizing border.
         /// @warning Internal use only
-        static int32_t border_multiplier_factor();
+        static int32 border_multiplier_factor();
         /// @brief Gets the thickness, in pixels, of a flat-style window or system control border.
         /// @return A size that indicates the width, in pixels, of a vertical border, and the height, in pixels, of a horizontal border.
         /// @warning Internal use only
@@ -74,15 +74,15 @@ namespace xtd {
         /// @brief Gets the height, in pixels, of the standard title bar area of a window.
         /// @return The height, in pixels, of the standard title bar area of a window.
         /// @warning Internal use only
-        static int32_t caption_height();
+        static int32 caption_height();
         /// @brief Gets the caret blink time
         /// @return The caret blink time.
         /// @warning Internal use only
-        static int32_t caret_blink_time();
+        static int32 caret_blink_time();
         /// @brief Gets the width, in pixels, of the caret in edit controls.
         /// @return The width, in pixels, of the caret in edit controls.
         /// @warning Internal use only
-        static int32_t caret_width();
+        static int32 caret_width();
         /// @brief Gets the NetBIOS computer name of the local computer.
         /// @return The name of this computer.
         /// @warning Internal use only
@@ -105,7 +105,7 @@ namespace xtd {
         /// @brief Gets the maximum number of milliseconds that can elapse between a first click and a second click for the OS to consider the mouse action a double-click.
         /// @return The maximum amount of time, in milliseconds, that can elapse between a first click and a second click for the OS to consider the mouse action a double-click.
         /// @warning Internal use only
-        static int32_t double_click_time();
+        static int32 double_click_time();
         /// @brief Gets a value indicating whether the user has enabled full window drag.
         /// @return true if the user has enabled full window drag; otherwise, false.
         /// @warning Internal use only
@@ -121,11 +121,11 @@ namespace xtd {
         /// @brief Gets the font smoothing contrast value used in ClearType smoothing.
         /// @return The ClearType font smoothing contrast value.
         /// @warning Internal use only
-        static int32_t font_smoothing_contrast();
+        static int32 font_smoothing_contrast();
         /// @brief Gets the current type of font smoothing.
         /// @return A value that indicates the current type of font smoothing.
         /// @warning Internal use only
-        static int32_t font_smoothing_type();
+        static int32 font_smoothing_type();
         /// @}
       };
     }

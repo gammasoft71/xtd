@@ -56,13 +56,13 @@ namespace xtd {
         /// @param handle The graphics handle.
         /// @param compositing_mode This property specifies a compositing mode value (see compositing_modes.h for more information).
         /// @warning Internal use only
-        static void compositing_mode(intptr_t handle, int32_t compositing_mode);
+        static void compositing_mode(intptr_t handle, int32 compositing_mode);
         
         /// @brief Sets the rendering quality of composited images drawn to the graphics.
         /// @param handle The graphics handle.
         /// @param compositing_quality This property specifies a compositing quality value (see compositing_qualities.h for more information).
         /// @warning Internal use only
-        static void compositing_quality(intptr_t handle, int32_t compositing_quality);
+        static void compositing_quality(intptr_t handle, int32 compositing_quality);
         
         /// @brief Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the screen to the drawing surface of the graphics.
         /// @param handle The graphics handle.
@@ -74,7 +74,7 @@ namespace xtd {
         /// @param block_region_height The height of the area to be transferred.
         /// @param copy_pixel_operation The copy pixel operation values (see copy_pixel_operations.h for more information).
         /// @warning Internal use only
-        static void copy_from_screen(intptr_t handle, int32_t source_x, int32_t source_y, int32_t destination_x, int32_t destination_y, int32_t block_region_width, int32_t block_region_height, int32_t copy_pixel_operation);
+        static void copy_from_screen(intptr_t handle, int32 source_x, int32 source_y, int32 destination_x, int32 destination_y, int32 block_region_width, int32 block_region_height, int32 copy_pixel_operation);
         
         /// @brief Destroys graphics_path.
         /// @param handle The graphics handle.
@@ -255,7 +255,7 @@ namespace xtd {
         /// @param hot_key_prefix The hotkey prefix value (see hot_key_prefixes.h for more information).
         /// @param trimming The trimming value for the text (see string_trimmings.h for more information).
         /// @warning Internal use only
-        static void draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming);
+        static void draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming);
         /// @brief Draws the specified text string at the specified rectangle with the specified brush and font handle using the formatting attributes of the format.
         /// @param handle The graphics handle.
         /// @param text String to draw.
@@ -271,7 +271,7 @@ namespace xtd {
         /// @param trimming The trimming value for the text (see string_trimmings.h for more information).
         /// @param no_wrap True if the text wrapping between lines when formatting within a rectangle is disabled; otherwise false.
         /// @warning Internal use only
-        static void draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float width, float height, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming, int32_t string_formats);
+        static void draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float width, float height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, int32 string_formats);
         
         /// @brief Fills the interior of a closed cardinal spline curve defined by an array of std::pair<float, float> structures.
         /// @param handle The graphics handle.
@@ -298,7 +298,7 @@ namespace xtd {
         /// @param path A graphics path handle that represents the path to fill.
         /// @param mode A fill mode value that specifies how the interiors of shapes in the graphics path are filled (see fill_modes.h for more information).
         /// @warning Internal use only
-        static void fill_path(intptr_t handle, intptr_t brush, intptr_t graphics_path, int32_t mode);
+        static void fill_path(intptr_t handle, intptr_t brush, intptr_t graphics_path, int32 mode);
         
         /// @brief Fills the interior of a pie section defined by an ellipse specified by a pair of coordinates, a width, a height, and two radial lines.
         /// @param handle The graphics handle.
@@ -318,7 +318,7 @@ namespace xtd {
         /// @param points Array of std::pair<float, float> structures that represent the vertices of the polygon to fill.
         /// @param fill_mode Member of the fill mode value that determines the style of the fill (see fill_modes.h for more information).
         /// @warning Internal use only
-        static void fill_polygon(intptr_t handle, intptr_t pen, const std::vector<std::pair<float, float>>& points, int32_t fill_mode);
+        static void fill_polygon(intptr_t handle, intptr_t pen, const std::vector<std::pair<float, float>>& points, int32 fill_mode);
         
         /// @brief Fills the interior of a rectangle specified by a pair of coordinates, a width, and a height.
         /// @param handle The graphics handle.
@@ -359,7 +359,7 @@ namespace xtd {
         /// @param handle The graphics handle.
         /// @param intention A flush intention value that specifies whether the method returns immediately or waits for any existing operations to finish (see flush_intentions.h for more information).
         /// @warning Internal use only
-        static void flush(intptr_t handle, int32_t intention);
+        static void flush(intptr_t handle, int32 intention);
         
         /// @brief Creates a new graphics from the specified handle to a device context.
         /// @param hdc Handle to a device context.
@@ -420,13 +420,13 @@ namespace xtd {
         /// @param handle The graphics handle.
         /// @param interpolation_mode An interpolation mode value (see interpolation_modes.h for more information).
         /// @warning Internal use only
-        static void interpolation_mode(intptr_t handle, int32_t interpolation_mode);
+        static void interpolation_mode(intptr_t handle, int32 interpolation_mode);
         
         /// @brief Sets a value specifying how pixels are offset during rendering of this graphics.
         /// @param handle The graphics handle.
         /// @param pixel_offst_mode This property specifies a pixel offset mode value (see pixel_offst_modes.h for more information).
         /// @warning Internal use only
-        static void pixel_offset_mode(intptr_t handle, int32_t pixel_offst_mode);
+        static void pixel_offset_mode(intptr_t handle, int32 pixel_offst_mode);
         
         /// @brief Measures the specified string when drawn with the specified font and formatted with the specified format.
         /// @param handle The graphics handle.
@@ -443,7 +443,7 @@ namespace xtd {
         /// @param characters_fitted Number of characters in the string.
         /// @param lines_filled Number of text lines in the string.
         /// @warning Internal use only
-        static void measure_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float& width, float& height, float max_width, float max_height, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming, size_t characters_fitted, size_t lines_filled, bool measure_trailing_spaces);
+        static void measure_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float& width, float& height, float max_width, float max_height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, size_t characters_fitted, size_t lines_filled, bool measure_trailing_spaces);
         
         /// @brief Releases a device context handle obtained by a previous call to the xtd::drawing::native::graphics::get_hdc() method of the graphics.
         /// @param handle The graphics handle.
@@ -467,7 +467,7 @@ namespace xtd {
         /// @param angle Angle of rotation in degrees.
         /// @param order A matrix order value that specifies whether the rotation is prepended or appended to the transformation matrix (see matrix_orders.h for more information).
         /// @warning Internal use only
-        static void rotate_transform(intptr_t handle, float angle, int32_t order);
+        static void rotate_transform(intptr_t handle, float angle, int32 order);
         
         /// @brief Saves the current state of the graphics and identifies the saved state with a graphics state.
         /// @param handle The graphics handle.
@@ -481,26 +481,26 @@ namespace xtd {
         /// @param sy Scale factor in the y direction.
         /// @param order A matrix order value that specifies whether the scaling operation is prepended or appended to the transformation matrix (see matrix_orders.h for more information).
         /// @warning Internal use only
-        static void scale_transform(intptr_t handle, float sx, float sy, int32_t order);
+        static void scale_transform(intptr_t handle, float sx, float sy, int32 order);
         
         /// @brief Sets the rendering quality for the graphics.
         /// @param handle The graphics handle.
         /// @param smoothing_mode A smoothing mode value (see smoothing_modes.h for more information).
         /// @warning Internal use only
-        static void smoothing_mode(intptr_t handle, int32_t smoothing_mode);
+        static void smoothing_mode(intptr_t handle, int32 smoothing_mode);
         
         /// @brief Sets the gamma correction value for rendering text.
         /// @param handle The graphics handle.
         /// @param text_contrast The gamma correction value used for rendering antialiased and ClearType text.
         /// @remarks The gamma correction value must be between 0 and 12. The default value is 4.
         /// @warning Internal use only
-        static void text_contrast(intptr_t handle, int32_t text_contrast);
+        static void text_contrast(intptr_t handle, int32 text_contrast);
         
         /// @brief Sets the rendering mode for text associated with the graphics.
         /// @param handle The graphics handle.
         /// @param text_rendering_hint A text rendering hint value (see text_rendering_hints.h for more information).
         /// @warning Internal use only
-        static void text_rendering_hint(intptr_t handle, int32_t text_rendering_hint);
+        static void text_rendering_hint(intptr_t handle, int32 text_rendering_hint);
         
         /// @brief Gets a copy of the geometric world transformation for the graphics.
         /// @param handle The graphics handle.
@@ -519,7 +519,7 @@ namespace xtd {
         /// @param dy The y-coordinate of the translation.
         /// @param order A matrix order value that specifies whether the translation is prepended or appended to the transformation matrix (see matrix_orders.h for more information).
         /// @warning Internal use only
-        static void translate_transform(intptr_t handle, float dx, float dy, int32_t order);
+        static void translate_transform(intptr_t handle, float dx, float dy, int32 order);
         
         /// @brief Trims the specified string for a specified width with the specified font and trimming.
         /// @param handle The graphics handle.
@@ -528,7 +528,7 @@ namespace xtd {
         /// @param width The width of the text.
         /// @param trimming The trimming value for the text (see string_trimmings.h for more information).
         /// @warning Internal use only
-        static xtd::ustring trim_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float width, int32_t trimming);
+        static xtd::ustring trim_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float width, int32 trimming);
 
         /// @brief Gets the bounding rectangle of the visible clipping region of the graphics.
         /// @param handle The graphics handle.

@@ -8,7 +8,7 @@ class lcd_label::idigit interface_ {
 public:
   virtual char32 get_character() const noexcept = 0;
   virtual std::u32string get_valid_characters() const noexcept = 0;
-  virtual int32_t get_thickness() const noexcept = 0;
+  virtual int32 get_thickness() const noexcept = 0;
   
   virtual void set_back_digit_color(const xtd::drawing::color& value) = 0;
   virtual void set_back_digit_opacity(double value) = 0;
@@ -16,7 +16,7 @@ public:
   virtual void set_segment_style(forms::segment_style value) = 0;
   virtual void set_dot_matrix_style(forms::dot_matrix_style value) = 0;
   virtual void set_show_back_digit(bool value) = 0;
-  virtual void set_thickness(int32_t value) = 0;
+  virtual void set_thickness(int32 value) = 0;
 };
 
 class lcd_label::dot_matrix_display_digit : public dot_matrix_display, public lcd_label::idigit {
@@ -25,7 +25,7 @@ public:
   
   char32 get_character() const noexcept override;
   std::u32string get_valid_characters() const noexcept override;
-  int32_t get_thickness() const noexcept override;
+  int32 get_thickness() const noexcept override;
   
   void set_back_digit_color(const xtd::drawing::color& value) override;
   void set_back_digit_opacity(double value) override;
@@ -33,7 +33,7 @@ public:
   void set_segment_style(forms::segment_style value) override;
   void set_dot_matrix_style(forms::dot_matrix_style value) override;
   void set_show_back_digit(bool value) override;
-  void set_thickness(int32_t value) override;
+  void set_thickness(int32 value) override;
   
 private:
   char32 character_ = U' ';
@@ -45,7 +45,7 @@ public:
   
   char32 get_character() const noexcept override;
   std::u32string get_valid_characters() const noexcept override;
-  int32_t get_thickness() const noexcept override;
+  int32 get_thickness() const noexcept override;
   
   void set_back_digit_color(const xtd::drawing::color& value) override;
   void set_back_digit_opacity(double value) override;
@@ -53,7 +53,7 @@ public:
   void set_segment_style(forms::segment_style value) override;
   void set_dot_matrix_style(forms::dot_matrix_style value) override;
   void set_show_back_digit(bool value) override;
-  void set_thickness(int32_t value) override;
+  void set_thickness(int32 value) override;
   
 private:
   char32 character_ = U' ';
@@ -65,7 +65,7 @@ public:
   
   char32 get_character() const noexcept override;
   std::u32string get_valid_characters() const noexcept override;
-  int32_t get_thickness() const noexcept override;
+  int32 get_thickness() const noexcept override;
   
   void set_back_digit_color(const xtd::drawing::color& value) override;
   void set_back_digit_opacity(double value) override;
@@ -73,7 +73,7 @@ public:
   void set_segment_style(forms::segment_style value) override;
   void set_dot_matrix_style(forms::dot_matrix_style value) override;
   void set_show_back_digit(bool value) override;
-  void set_thickness(int32_t value) override;
+  void set_thickness(int32 value) override;
   
 private:
   char32 character_ = U' ';
@@ -85,7 +85,7 @@ public:
   
   char32 get_character() const noexcept override;
   std::u32string get_valid_characters() const noexcept override;
-  int32_t get_thickness() const noexcept override;
+  int32 get_thickness() const noexcept override;
   
   void set_back_digit_color(const xtd::drawing::color& value) override;
   void set_back_digit_opacity(double value) override;
@@ -93,7 +93,7 @@ public:
   void set_segment_style(forms::segment_style value) override;
   void set_dot_matrix_style(forms::dot_matrix_style value) override;
   void set_show_back_digit(bool value) override;
-  void set_thickness(int32_t value) override;
+  void set_thickness(int32 value) override;
   
 private:
   char32 character_ = U' ';
@@ -105,7 +105,7 @@ public:
   
   char32 get_character() const noexcept override;
   std::u32string get_valid_characters() const noexcept override;
-  int32_t get_thickness() const noexcept override;
+  int32 get_thickness() const noexcept override;
   
   void set_back_digit_color(const xtd::drawing::color& value) override;
   void set_back_digit_opacity(double value) override;
@@ -113,7 +113,7 @@ public:
   void set_segment_style(forms::segment_style value) override;
   void set_dot_matrix_style(forms::dot_matrix_style value) override;
   void set_show_back_digit(bool value) override;
-  void set_thickness(int32_t value) override;
+  void set_thickness(int32 value) override;
   
 private:
   char32 character_ = U' ';
@@ -127,7 +127,7 @@ std::u32string lcd_label::dot_matrix_display_digit::get_valid_characters() const
   return U"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/%\\_°\"'[](){}<>| .,:;!?&$€";
 }
 
-int32_t lcd_label::dot_matrix_display_digit::get_thickness() const noexcept {
+int32 lcd_label::dot_matrix_display_digit::get_thickness() const noexcept {
   return thickness();
 }
 
@@ -253,7 +253,7 @@ void lcd_label::dot_matrix_display_digit::set_show_back_digit(bool value) {
   show_back_dot(value);
 }
 
-void lcd_label::dot_matrix_display_digit::set_thickness(int32_t value) {
+void lcd_label::dot_matrix_display_digit::set_thickness(int32 value) {
   thickness(value);
 }
 
@@ -265,7 +265,7 @@ std::u32string lcd_label::fourteen_segment_display_digit::get_valid_characters()
   return U"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/\\_°\"'[]()| .,:";
 }
 
-int32_t lcd_label::fourteen_segment_display_digit::get_thickness() const noexcept {
+int32 lcd_label::fourteen_segment_display_digit::get_thickness() const noexcept {
   return thickness();
 }
 
@@ -380,7 +380,7 @@ void lcd_label::fourteen_segment_display_digit::set_show_back_digit(bool value) 
   show_back_segment(value);
 }
 
-void lcd_label::fourteen_segment_display_digit::set_thickness(int32_t value) {
+void lcd_label::fourteen_segment_display_digit::set_thickness(int32 value) {
   thickness(value);
 }
 
@@ -392,7 +392,7 @@ std::u32string lcd_label::nine_segment_display_digit::get_valid_characters() con
   return U"0123456789ABCDEFGHIJLNOPQRSTUYabcdefghijlnopqrstuy=-_°\"'[]| .,:";
 }
 
-int32_t lcd_label::nine_segment_display_digit::get_thickness() const noexcept {
+int32 lcd_label::nine_segment_display_digit::get_thickness() const noexcept {
   return thickness();
 }
 
@@ -487,7 +487,7 @@ void lcd_label::nine_segment_display_digit::set_show_back_digit(bool value) {
   show_back_segment(value);
 }
 
-void lcd_label::nine_segment_display_digit::set_thickness(int32_t value) {
+void lcd_label::nine_segment_display_digit::set_thickness(int32 value) {
   thickness(value);
 }
 
@@ -499,7 +499,7 @@ std::u32string lcd_label::seven_segment_display_digit::get_valid_characters() co
   return U"0123456789ABCDEFGHIJLNOPQRSTUYabcdefghijlnopqrstuy=-_°\"'[]| .,:";
 }
 
-int32_t lcd_label::seven_segment_display_digit::get_thickness() const noexcept {
+int32 lcd_label::seven_segment_display_digit::get_thickness() const noexcept {
   return thickness();
 }
 
@@ -594,7 +594,7 @@ void lcd_label::seven_segment_display_digit::set_show_back_digit(bool value) {
   show_back_segment(value);
 }
 
-void lcd_label::seven_segment_display_digit::set_thickness(int32_t value) {
+void lcd_label::seven_segment_display_digit::set_thickness(int32 value) {
   thickness(value);
 }
 
@@ -606,7 +606,7 @@ std::u32string lcd_label::sixteen_segment_display_digit::get_valid_characters() 
   return U"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/\\_°\"'[]()| .,:";
 }
 
-int32_t lcd_label::sixteen_segment_display_digit::get_thickness() const noexcept {
+int32 lcd_label::sixteen_segment_display_digit::get_thickness() const noexcept {
   return sixteen_segment_display::thickness();
 }
 
@@ -715,7 +715,7 @@ void lcd_label::sixteen_segment_display_digit::set_show_back_digit(bool value) {
   show_back_segment(value);
 }
 
-void lcd_label::sixteen_segment_display_digit::set_thickness(int32_t value) {
+void lcd_label::sixteen_segment_display_digit::set_thickness(int32 value) {
   thickness(value);
 }
 
@@ -764,11 +764,11 @@ lcd_label& lcd_label::show_back_digit(bool value) {
   return *this;
 }
 
-int32_t lcd_label::digit_spacing() const noexcept {
+int32 lcd_label::digit_spacing() const noexcept {
   return data_->digit_spacing.value_or(data_->lcd_style == lcd_style::dot_matrix_display ? 0 : thickness());
 }
 
-lcd_label& lcd_label::digit_spacing(int32_t value) {
+lcd_label& lcd_label::digit_spacing(int32 value) {
   if (value < 0) throw argument_out_of_range_exception("value must be positive"_t, current_stack_frame_);
   if (data_->digit_spacing != value) {
     data_->digit_spacing = value;
@@ -817,11 +817,11 @@ lcd_label& lcd_label::dot_matrix_style(forms::dot_matrix_style value) {
   return *this;
 }
 
-int32_t lcd_label::thickness() const noexcept {
+int32 lcd_label::thickness() const noexcept {
   return data_->thickness.value_or(data_->digits.size() ? data_->digits[0]->get_thickness() : 1);
 }
 
-lcd_label& lcd_label::thickness(int32_t value) {
+lcd_label& lcd_label::thickness(int32 value) {
   if (data_->thickness != value) {
     data_->thickness = value;
     set_digits_params();
@@ -911,7 +911,7 @@ void lcd_label::on_resize(const event_args& e) {
 
 drawing::size lcd_label::measure_control() const noexcept {
   if (data_->digits.size() == 0) return {0, size().height()};
-  return drawing::size((dynamic_cast<control*>(data_->digits[0].get())->width() - 2 + digit_spacing()) * static_cast<int32_t>(data_->digits.size()) - digit_spacing() + 2, size().height());
+  return drawing::size((dynamic_cast<control*>(data_->digits[0].get())->width() - 2 + digit_spacing()) * static_cast<int32>(data_->digits.size()) - digit_spacing() + 2, size().height());
 }
 
 void lcd_label::on_digit_click(object& sender, const event_args& e) {
@@ -931,7 +931,7 @@ void lcd_label::on_digit_mouse_up(object& sender, const mouse_event_args& e) {
 }
 
 void lcd_label::set_digits_params() {
-  int32_t offset_left = 0;
+  int32 offset_left = 0;
   for (auto& digit : data_->digits) {
     dynamic_cast<control*>(digit.get())->height(size().height());
     dynamic_cast<control*>(digit.get())->left(offset_left);

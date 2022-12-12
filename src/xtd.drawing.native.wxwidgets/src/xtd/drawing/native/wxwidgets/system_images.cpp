@@ -11,12 +11,12 @@ using namespace xtd;
 using namespace xtd::drawing::native;
 
 #if defined(__WXGTK__)
-GdkPixbuf* __gtk_get_image_from_name__(const char* name, int32_t width, int32_t height);
+GdkPixbuf* __gtk_get_image_from_name__(const char* name, int32 width, int32 height);
 #elif defined(__APPLE__)
-intptr_t __macos_get_image_from_name__(const char* name, int32_t width, int32_t height);
+intptr_t __macos_get_image_from_name__(const char* name, int32 width, int32 height);
 #endif
 
-intptr_t system_images::from_name(const ustring& name, int32_t width, int32_t height) {
+intptr_t system_images::from_name(const ustring& name, int32 width, int32 height) {
   #if defined(__WXMSW__)
   return 0;
   #elif defined(__WXGTK__)

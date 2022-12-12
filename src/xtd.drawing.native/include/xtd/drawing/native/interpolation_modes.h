@@ -5,7 +5,7 @@
 #endif
 /// @endcond
 
-#include <cstdint>
+#include <xtd/types.h>
 
 /// @brief Equivalent to the xtd::drawing::drawing2d::quality_mode::invalid element of the xtd::drawing::drawing2d::quality_mode enumeration.
 /// @par Library
@@ -13,7 +13,7 @@
 /// @ingroup xtd_drawing_native im
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t IM_INVALID = -1;
+constexpr xtd::int32 IM_INVALID = -1;
 
 /// @brief Specifies default mode.
 /// @par Library
@@ -21,7 +21,7 @@ constexpr int32_t IM_INVALID = -1;
 /// @ingroup xtd_drawing_native im
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t IM_DEFAULT = 0;
+constexpr xtd::int32 IM_DEFAULT = 0;
 
 /// @brief Specifies low quality interpolation.
 /// @par Library
@@ -29,7 +29,7 @@ constexpr int32_t IM_DEFAULT = 0;
 /// @ingroup xtd_drawing_native im
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t IM_LOW = 1;
+constexpr xtd::int32 IM_LOW = 1;
 
 /// @brief Specifies high quality interpolation.
 /// @par Library
@@ -37,7 +37,7 @@ constexpr int32_t IM_LOW = 1;
 /// @ingroup xtd_drawing_native im
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t IM_HIGHT = 2;
+constexpr xtd::int32 IM_HIGHT = 2;
 
 /// @brief Specifies bilinear interpolation. No prefiltering is done. This mode is not suitable for shrinking an image below 50 percent of its original size.
 /// @par Library
@@ -45,7 +45,7 @@ constexpr int32_t IM_HIGHT = 2;
 /// @ingroup xtd_drawing_native im
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t IM_BILINEAR = 3;
+constexpr xtd::int32 IM_BILINEAR = 3;
 
 /// @brief Specifies bicubic interpolation. No prefiltering is done. This mode is not suitable for shrinking an image below 25 percent of its original size.
 /// @par Library
@@ -53,7 +53,7 @@ constexpr int32_t IM_BILINEAR = 3;
 /// @ingroup xtd_drawing_native im
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t IM_BICUBIC = 4;
+constexpr xtd::int32 IM_BICUBIC = 4;
 
 /// @brief Specifies nearest-neighbor interpolation.
 /// @par Library
@@ -61,7 +61,7 @@ constexpr int32_t IM_BICUBIC = 4;
 /// @ingroup xtd_drawing_native im
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t IM_NEAREST_NEIGHBOOR = 5;
+constexpr xtd::int32 IM_NEAREST_NEIGHBOOR = 5;
 
 /// @brief Specifies high-quality, bilinear interpolation. Prefiltering is performed to ensure high-quality shrinking.
 /// @par Library
@@ -69,7 +69,7 @@ constexpr int32_t IM_NEAREST_NEIGHBOOR = 5;
 /// @ingroup xtd_drawing_native im
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t IM_HIGH_QUALITY_BILINEAR = 6;
+constexpr xtd::int32 IM_HIGH_QUALITY_BILINEAR = 6;
 
 /// @brief Specifies high-quality, bicubic interpolation. Prefiltering is performed to ensure high-quality shrinking. This mode produces the highest quality transformed images.
 /// @par Library
@@ -77,4 +77,4 @@ constexpr int32_t IM_HIGH_QUALITY_BILINEAR = 6;
 /// @ingroup xtd_drawing_native im
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t IM_HIGH_QUALITY_BICUBIC = 7;
+constexpr xtd::int32 IM_HIGH_QUALITY_BICUBIC = 7;

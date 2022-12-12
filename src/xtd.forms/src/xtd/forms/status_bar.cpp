@@ -67,7 +67,7 @@ control& status_bar::dock(dock_style dock) {
     data_->non_system_dock = dock;
     if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
   } else {
-    int32_t current_size = is_horizontal() ? height() : width();
+    int32 current_size = is_horizontal() ? height() : width();
     control::dock(dock);
     if (is_horizontal()) height(current_size);
     else width(current_size);
@@ -335,7 +335,7 @@ void status_bar::resize_spring_panels() {
         remaining_size -= is_horizontal() ? status_bar_panel->size().width() : status_bar_panel->size().height();
     }
   
-    auto stretchable_size = remaining_size / as<int32_t>(data_->spring_panels.size());
+    auto stretchable_size = remaining_size / as<int32>(data_->spring_panels.size());
     for (auto stretchable_separator : data_->spring_panels) {
       auto default_stretchable_size = (is_horizontal() ? image_size().width() : image_size().height()) / 2;
       if (stretchable_size > default_stretchable_size) {
@@ -351,7 +351,7 @@ void status_bar::resize_spring_panels() {
    */
 }
 
-void status_bar::update_status_bar_panel_control(intptr_t handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, xtd::forms::horizontal_alignment alignment, xtd::forms::status_bar_panel_auto_size auto_size, xtd::forms::status_bar_panel_border_style border_style, xtd::forms::status_bar_panel_style panel_style, int32_t min_width, int32_t width) {
+void status_bar::update_status_bar_panel_control(intptr_t handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, xtd::forms::horizontal_alignment alignment, xtd::forms::status_bar_panel_auto_size auto_size, xtd::forms::status_bar_panel_border_style border_style, xtd::forms::status_bar_panel_style panel_style, int32 min_width, int32 width) {
   if (!handle) return;
   if (is_system_status_bar()) {
     //native::status_bar::update_status_bar_item(this->handle(), handle, text, tool_tip_text, image, visible(), 100, false);

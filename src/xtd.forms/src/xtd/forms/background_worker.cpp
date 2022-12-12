@@ -55,11 +55,11 @@ void background_worker::on_run_worker_completed(const run_worker_completed_event
   run_worker_completed(*this, e);
 }
 
-void background_worker::report_progress(int32_t percent_progress) {
+void background_worker::report_progress(int32 percent_progress) {
   report_progress(percent_progress, std::any());
 }
 
-void background_worker::report_progress(int32_t percent_progress, std::any user_state) {
+void background_worker::report_progress(int32 percent_progress, std::any user_state) {
   if (data_->worker_reports_progress) {
     data_->event = {percent_progress, user_state};
     data_->invoker->begin_invoke([&] {

@@ -49,7 +49,7 @@ bool color_dialog::run_dialog(intptr_t hwnd, const xtd::ustring& title, drawing:
   color_data.SetChooseFull((options & CC_FULLOPEN) == CC_FULLOPEN);
   color_data.SetColour(wxColour(color.r(), color.g(), color.b(), color.a()));
   for (size_t index = 0; index < custom_colors.size(); ++index)
-    color_data.SetCustomColour(static_cast<int32_t>(index), wxColour(custom_colors[index].r(), custom_colors[index].g(), custom_colors[index].b(), custom_colors[index].a()));
+    color_data.SetCustomColour(static_cast<int32>(index), wxColour(custom_colors[index].r(), custom_colors[index].g(), custom_colors[index].b(), custom_colors[index].a()));
   #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
   #endif
@@ -62,7 +62,7 @@ bool color_dialog::run_dialog(intptr_t hwnd, const xtd::ustring& title, drawing:
     color = drawing::color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
   }
   for (size_t index = 0; index < custom_colors.size(); ++index) {
-    wxColour custom_colour = dialog.GetColourData().GetCustomColour(static_cast<int32_t>(index));
+    wxColour custom_colour = dialog.GetColourData().GetCustomColour(static_cast<int32>(index));
     custom_colors[index] = xtd::drawing::color::from_argb(custom_colour.Alpha(), custom_colour.Red(), custom_colour.Green(), custom_colour.Blue());
   }
   return result;

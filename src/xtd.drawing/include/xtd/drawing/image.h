@@ -84,7 +84,7 @@ namespace xtd {
       /// | Iimage_flags_read_only           | 65536                  |
       /// | Iimage_flags_caching             | 131072                 |
       /// @remarks For example, if the Flags property for an image returned 77960, the image_flags for the image would be read_only, has_real_dpi, has_real_pixel_size, color_space_ycbcr, and partially_scalable.
-      int32_t flags() const noexcept;
+      int32 flags() const noexcept;
       
       /// @brief Gets an array of GUIDs that represent the dimensions of frames within this image.
       /// @return An array of GUIDs that specify the dimensions of frames within this xtd::drawing::image from most significant to least significant.
@@ -99,7 +99,7 @@ namespace xtd {
       
       /// @brief Gets the height, in pixels, of this image.
       /// @return The height, in pixels, of this image.
-      int32_t height() const noexcept;
+      int32 height() const noexcept;
       
       /// @brief Gets the horizontal resolution, in pixels per inch, of this image.
       /// @return The horizontal resolution, in pixels per inch, of this image.
@@ -125,7 +125,7 @@ namespace xtd {
       /// @brief Gets IDs of the property items stored in this image.
       /// @return An array of the property IDs, one for each property item stored in this image.
       /// @remarks If the image has no property items or if the image format does not support property items, the property_id_list property returns an empty array (that is, an array of length zero).
-      const std::vector<int32_t>& property_id_list() const noexcept;
+      const std::vector<int32>& property_id_list() const noexcept;
       
       /// @brief Gets all the property items (pieces of metadata) stored in this image.
       /// @return An array of xtd::drawing::imaging::property_item objects, one for each property item stored in the image.
@@ -153,7 +153,7 @@ namespace xtd {
       
       /// @brief Gets the width, in pixels, of this image.
       /// @return The width, in pixels, of this image.
-      int32_t width() const noexcept;
+      int32 width() const noexcept;
       /// @}
       
       /// @name Methods
@@ -212,7 +212,7 @@ namespace xtd {
       /// @brief Returns the color depth, in number of bits per pixel, of the specified pixel format.
       /// @param pixfmt The xtd::drawing::imaging::pixel_format member that specifies the format for which to find the size.
       /// @return The color depth of the specified pixel format.
-      static int32_t get_pixel_format_size(xtd::drawing::imaging::pixel_format pixfmt) noexcept;
+      static int32 get_pixel_format_size(xtd::drawing::imaging::pixel_format pixfmt) noexcept;
       
       /// @brief Gets the specified property item from this xtd::drawing::image.
       /// @param propid The ID of the property item to get.
@@ -220,7 +220,7 @@ namespace xtd {
       /// @exception xtd::argument_exception The image format of this image does not support property items.
       /// @remarks For a list of property item IDs and links to more information, see Id.
       /// @remarks It is difficult to set property items, because the xtd::drawing::imaging::property_item class has no public constructors. One way to work around this restriction is to obtain a xtd::drawing::imaging::property_item by retrieving the xtd::drawing::image::property_item property value or calling the xtd::drawing::image::get_property_item method of an xtd::drawing::image that already has property items. Then you can set the fields of the xtd::drawing::imaging::property_item and pass it to xtd::drawing::image::set_property_item.
-      xtd::drawing::imaging::property_item get_property_item(int32_t propid);
+      xtd::drawing::imaging::property_item get_property_item(int32 propid);
       
       /// @brief Returns a thumbnail for this xtd::drawing::image.
       /// @param thbmb_width The width, in pixels, of the requested thumbnail image.
@@ -228,7 +228,7 @@ namespace xtd {
       /// @return An xtd::drawing::image that represents the thumbnail.
       /// @remarks If the xtd::drawing::image contains an embedded thumbnail image, this method retrieves the embedded thumbnail and scales it to the requested size. If the xtd::drawing::image does not contain an embedded thumbnail image, this method creates a thumbnail image by scaling the main image.
       /// @remarks The xtd::drawing::image::get_thumbnail_image method works well when the requested thumbnail image has a size of about 120 x 120 pixels. If you request a large thumbnail image (for example, 300 x 300) from an xtd::drawing::image that has an embedded thumbnail, there could be a noticeable loss of quality in the thumbnail image. It might be better to scale the main image (instead of scaling the embedded thumbnail) by calling the xtd::drawing::graphics::draw_image method.
-      xtd::drawing::image get_thmbnail_image(int32_t thumb_width, int32_t thunb_height) noexcept;
+      xtd::drawing::image get_thmbnail_image(int32 thumb_width, int32 thunb_height) noexcept;
       
       /// @brief Returns a value that indicates whether the pixel format for this xtd::drawing::image contains alpha information.
       /// @param pixfmt The PixelFormat to test.
@@ -274,8 +274,8 @@ namespace xtd {
       explicit image(const xtd::ustring& fileName);
       explicit image(std::istream& stream);
       explicit image(const char* const* bits);
-      image(int32_t width, int32_t height);
-      image(const image& image, int32_t width, int32_t height);
+      image(int32 width, int32 height);
+      image(const image& image, int32 width, int32 height);
       image(const image& image, const rectangle& rect);
       /// @endcond
       
@@ -290,7 +290,7 @@ namespace xtd {
         imaging::color_palette palette_;
         imaging::pixel_format pixel_format_ = imaging::pixel_format::undefined;
         size_f physical_dimension_;
-        std::vector<int32_t> property_id_list_;
+        std::vector<int32> property_id_list_;
         std::vector<imaging::property_item> property_items_;
         imaging::image_format raw_format_;
         drawing::size size_;

@@ -92,7 +92,7 @@ check_box& check_box::check_state(forms::check_state check_state) {
       data_->checked = data_->check_state != forms::check_state::unchecked;
       on_checked_changed(event_args::empty);
     }
-    if (is_handle_created() && flat_style() == xtd::forms::flat_style::system) native::check_box::check_state(handle(), static_cast<int32_t>(data_->check_state));
+    if (is_handle_created() && flat_style() == xtd::forms::flat_style::system) native::check_box::check_state(handle(), static_cast<int32>(data_->check_state));
     on_check_state_changed(event_args::empty);
   }
   return *this;
@@ -181,7 +181,7 @@ void check_box::on_enabled_changed(const event_args& e) {
 
 void check_box::on_handle_created(const event_args& e) {
   button_base::on_handle_created(e);
-  if (flat_style() == xtd::forms::flat_style::system) native::check_box::check_state(handle(), static_cast<int32_t>(data_->check_state));
+  if (flat_style() == xtd::forms::flat_style::system) native::check_box::check_state(handle(), static_cast<int32>(data_->check_state));
   if (flat_style() != xtd::forms::flat_style::system && data_->check_state != xtd::forms::check_state::unchecked) invalidate();
 }
 

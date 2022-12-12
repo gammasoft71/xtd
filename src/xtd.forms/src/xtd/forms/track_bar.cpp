@@ -15,11 +15,11 @@ track_bar::track_bar() {
   set_style(control_styles::use_text_for_accessibility, false);
 }
 
-int32_t track_bar::large_change() const noexcept {
+int32 track_bar::large_change() const noexcept {
   return data_->large_change;
 }
 
-track_bar& track_bar::large_change(int32_t large_change) {
+track_bar& track_bar::large_change(int32 large_change) {
   if (data_->large_change != large_change) {
     data_->large_change = large_change;
     if (is_handle_created()) native::track_bar::large_change(handle(), data_->large_change);
@@ -27,11 +27,11 @@ track_bar& track_bar::large_change(int32_t large_change) {
   return *this;
 }
 
-int32_t track_bar::maximum() const noexcept {
+int32 track_bar::maximum() const noexcept {
   return data_->maximum;
 }
 
-track_bar& track_bar::maximum(int32_t maximum) {
+track_bar& track_bar::maximum(int32 maximum) {
   if (data_->maximum != maximum) {
     data_->maximum = maximum;
     if (is_handle_created()) native::track_bar::maximum(handle(), data_->maximum);
@@ -41,11 +41,11 @@ track_bar& track_bar::maximum(int32_t maximum) {
   return *this;
 }
 
-int32_t track_bar::minimum() const noexcept {
+int32 track_bar::minimum() const noexcept {
   return data_->minimum;
 }
 
-track_bar& track_bar::minimum(int32_t minimum) {
+track_bar& track_bar::minimum(int32 minimum) {
   if (data_->minimum != minimum) {
     data_->minimum = minimum;
     if (is_handle_created()) native::track_bar::minimum(handle(), data_->minimum);
@@ -67,11 +67,11 @@ track_bar& track_bar::orientation(forms::orientation orientation) {
   return *this;
 }
 
-int32_t track_bar::small_change() const noexcept {
+int32 track_bar::small_change() const noexcept {
   return data_->small_change;
 }
 
-track_bar& track_bar::small_change(int32_t small_change) {
+track_bar& track_bar::small_change(int32 small_change) {
   if (data_->small_change != small_change) {
     data_->small_change = small_change;
     if (is_handle_created()) native::track_bar::small_change(handle(), data_->small_change);
@@ -79,11 +79,11 @@ track_bar& track_bar::small_change(int32_t small_change) {
   return *this;
 }
 
-int32_t track_bar::tick_frequency() const noexcept {
+int32 track_bar::tick_frequency() const noexcept {
   return data_->tick_frequency;
 }
 
-track_bar& track_bar::tick_frequency(int32_t tick_frequency) {
+track_bar& track_bar::tick_frequency(int32 tick_frequency) {
   if (data_->tick_frequency != tick_frequency) {
     data_->tick_frequency = tick_frequency;
     if (is_handle_created()) native::track_bar::tick_frequency(handle(), data_->tick_frequency);
@@ -103,11 +103,11 @@ track_bar& track_bar::tick_style(forms::tick_style tick_style) {
   return *this;
 }
 
-int32_t track_bar::value() const noexcept {
+int32 track_bar::value() const noexcept {
   return data_->value;
 }
 
-track_bar& track_bar::value(int32_t value) {
+track_bar& track_bar::value(int32 value) {
   if (data_->value != value) {
     data_->value = std::clamp(value, data_->minimum, data_->maximum);
     if (is_handle_created()) native::track_bar::value(handle(), data_->value);
@@ -116,7 +116,7 @@ track_bar& track_bar::value(int32_t value) {
   return *this;
 }
 
-void track_bar::set_range(int32_t min_value, int32_t max_value) {
+void track_bar::set_range(int32 min_value, int32 max_value) {
   minimum(min_value);
   maximum(min_value > max_value ? min_value : max_value);
 }
@@ -164,13 +164,13 @@ void track_bar::on_value_changed(const event_args& e) {
   value_changed(*this, e);
 }
 
-void track_bar::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) {
+void track_bar::set_bounds_core(int32 x, int32 y, int32 width, int32 height, bounds_specified specified) {
   control::set_bounds_core(x, y, width, height, specified);
   if ((specified & bounds_specified::width) == bounds_specified::width || (specified & bounds_specified::height) == bounds_specified::height)
     post_recreate_handle();
 }
 
-void track_bar::set_client_size_core(int32_t width, int32_t height) {
+void track_bar::set_client_size_core(int32 width, int32 height) {
   control::set_client_size_core(width, height);
   post_recreate_handle();
 }

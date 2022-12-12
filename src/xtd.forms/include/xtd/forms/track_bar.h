@@ -59,30 +59,30 @@ namespace xtd {
       /// @brief Gets a value to be added to or subtracted from the value property when the scroll box is moved a large distance.
       /// @return A numeric value. The default is 5.
       /// @remarks When the user presses the PAGE UP or PAGE DOWN key or clicks the track bar on either side of the scroll box, the value property changes according to the value set in the large_change property. You might consider setting the large_change value to a percentage of the height (for a vertically oriented track bar) or width (for a horizontally oriented track bar) value. This keeps the distance your track bar moves proportionate to its size.
-      virtual int32_t large_change() const noexcept;
+      virtual int32 large_change() const noexcept;
       /// @brief Sets a value to be added to or subtracted from the value property when the scroll box is moved a large distance.
       /// @param large_change A numeric value. The default is 5.
       /// @return Current track_bar instance.
       /// @remarks When the user presses the PAGE UP or PAGE DOWN key or clicks the track bar on either side of the scroll box, the value property changes according to the value set in the large_change property. You might consider setting the large_change value to a percentage of the height (for a vertically oriented track bar) or width (for a horizontally oriented track bar) value. This keeps the distance your track bar moves proportionate to its size.
-      virtual track_bar& large_change(int32_t large_change);
+      virtual track_bar& large_change(int32 large_change);
       
       /// @brief Gets the upper limit of the range this track_bar is working with.
       /// @return The maximum value for the track_bar. The default is 10.
-      virtual int32_t maximum() const noexcept;
+      virtual int32 maximum() const noexcept;
       /// @brief sets the upper limit of the range this track_bar is working with.
       /// @param maximum The maximum value for the track_bar. The default is 10.
       /// @return Current track_bar instance.
       /// @remarks You can use the set_range method to set both the maximum and minimum properties at the same time.
-      virtual track_bar& maximum(int32_t maximum);
+      virtual track_bar& maximum(int32 maximum);
       
       /// @brief Gets the lower limit of the range this track_bar is working with.
       /// @return The minimum value for the track_bar. The default is 0.
-      virtual int32_t minimum() const noexcept;
+      virtual int32 minimum() const noexcept;
       /// @brief Sets the lower limit of the range this track_bar is working with.
       /// @param minimum The minimum value for the track_bar. The default is 0.
       /// @return Current track_bar instance.
       /// @remarks You can use the set_range method to set both the maximum and minimum properties at the same time.
-      virtual track_bar& minimum(int32_t minimum);
+      virtual track_bar& minimum(int32 minimum);
       
       /// @brief Gets a value indicating the horizontal or vertical orientation of the track bar.
       /// @return One of the orientation values.
@@ -97,23 +97,23 @@ namespace xtd {
       /// @return A numeric value. The default value is 1.
       /// @remarks When the user presses one of the arrow keys, the value property changes according to the value set in the small_change property.
       /// @remarks You might consider setting the value of small_change to a percentage of the value of the height (for a vertically oriented track bar) or width (for a horizontally oriented track bar) property. This sets the distance your track bar moves proportionate to its size.
-      virtual int32_t small_change() const noexcept;
+      virtual int32 small_change() const noexcept;
       /// @brief Sets the value added to or subtracted from the Value property when the scroll box is moved a small distance.
       /// @param small_change A numeric value. The default value is 1.
       /// @return Current track_bar instance.
       /// @remarks When the user presses one of the arrow keys, the value property changes according to the value set in the small_change property.
       /// @remarks You might consider setting the value of small_change to a percentage of the value of the height (for a vertically oriented track bar) or width (for a horizontally oriented track bar) property. This sets the distance your track bar moves proportionate to its size.
-      virtual track_bar& small_change(int32_t small_change);
+      virtual track_bar& small_change(int32 small_change);
       
       /// @brief Gets a value that specifies the delta between ticks drawn on the control.
       /// @return The numeric value representing the delta between ticks. The default is 1.
       /// @remarks For a track_bar with a large range of values between the minimum and the maximum properties, it might be impractical to draw all the ticks for values on the control. For example, if you have a control with a range of 100, passing in a value of 5 here causes the control to draw 20 ticks. In this case, each tick represents five units in the range of values.
-      virtual int32_t tick_frequency() const noexcept;
+      virtual int32 tick_frequency() const noexcept;
       /// @brief Sets a value that specifies the delta between ticks drawn on the control.
       /// @param tick_frequency The numeric value representing the delta between ticks. The default is 1.
       /// @return Current track_bar instance.
       /// @remarks For a track_bar with a large range of values between the minimum and the maximum properties, it might be impractical to draw all the ticks for values on the control. For example, if you have a control with a range of 100, passing in a value of 5 here causes the control to draw 20 ticks. In this case, each tick represents five units in the range of values.
-      virtual track_bar& tick_frequency(int32_t tick_frequency);
+      virtual track_bar& tick_frequency(int32 tick_frequency);
       
       /// @brief Gets a value indicating how to display the tick marks on the track bar.
       /// @return One of the Tick_style values. The default is bottom_right.
@@ -128,12 +128,12 @@ namespace xtd {
       /// @brief Gets a numeric value that represents the current position of the scroll box on the track bar.
       /// @return A numeric value that is within the minimum and maximum range. The default value is 0.
       /// @remarks The Value property contains the number that represents the current position of the scroll box on the track bar.
-      virtual int32_t value() const noexcept;
+      virtual int32 value() const noexcept;
       /// @brief Sets a numeric value that represents the current position of the scroll box on the track bar.
       /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
       /// @return Current track_bar instance.
       /// @remarks The Value property contains the number that represents the current position of the scroll box on the track bar.
-      virtual track_bar& value(int32_t value);
+      virtual track_bar& value(int32 value);
       /// @}
       
       /// @name Methods
@@ -143,7 +143,7 @@ namespace xtd {
       /// @param min_value The lower limit of the range of the track bar.
       /// @param max_value The upper limit of the range of the track bar.
       /// @remarks You can use this method to set the entire range for the xtd::forms::track_bar at the same time. To set the minimum or maximum values individually, use the xtd::forms::track_bar::minimum and xtd::forms::track_bar::maximum properties. If the min_value parameter is greater than the max_value parameter, max_value is set equal to min_value.
-      void set_range(int32_t min_value, int32_t max_value);
+      void set_range(int32 min_value, int32 max_value);
       
       /// @brief Returns a string that represents the track_bar control.
       /// @return A string that represents the current progress_bar.
@@ -202,12 +202,12 @@ namespace xtd {
       /// @param width The new width property value of the control.
       /// @param height The new height property value of the control.
       /// @param specified A bitwise combination of the bounds_specified values.
-      void set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) override;
+      void set_bounds_core(int32 x, int32 y, int32 width, int32 height, bounds_specified specified) override;
       
       /// @brief Sets the size of the client area of the control.
       /// @param width The client area width, in pixels.
       /// @param height The client area height, in pixels.
-      void set_client_size_core(int32_t width, int32_t height) override;
+      void set_client_size_core(int32 width, int32 height) override;
       
       /// @brief Processes Windows messages.
       /// @param m The Windows Message to process.
@@ -219,14 +219,14 @@ namespace xtd {
       void wm_scroll_control(message& message);
       
       struct data {
-        int32_t large_change = 5;
-        int32_t maximum = 10;
-        int32_t minimum = 0;
+        int32 large_change = 5;
+        int32 maximum = 10;
+        int32 minimum = 0;
         forms::orientation orientation = forms::orientation::horizontal;
-        int32_t small_change = 1;
-        int32_t tick_frequency = 1;
+        int32 small_change = 1;
+        int32 tick_frequency = 1;
         forms::tick_style tick_style = forms::tick_style::bottom_right;
-        int32_t value = 0;
+        int32 value = 0;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

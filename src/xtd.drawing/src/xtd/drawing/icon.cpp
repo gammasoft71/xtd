@@ -18,7 +18,7 @@ icon::icon(const ustring& filename) {
 icon::icon(const xtd::ustring& filename, const xtd::drawing::size& size) : icon(filename, size.width(), size.height()) {
 }
 
-icon::icon(const xtd::ustring& filename, int32_t width, int32_t height) {
+icon::icon(const xtd::ustring& filename, int32 width, int32 height) {
   data_->handle = native::icon::create(filename, width, height);
   data_->size = {width, height};
 }
@@ -31,7 +31,7 @@ icon::icon(std::istream& stream) {
 icon::icon(std::istream& stream, const xtd::drawing::size& size) : icon(stream, size.width(), size.height()) {
 }
 
-icon::icon(std::istream& stream, int32_t width, int32_t height) {
+icon::icon(std::istream& stream, int32 width, int32 height) {
   data_->handle = native::icon::create(stream, width, height);
   data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
 }
@@ -44,7 +44,7 @@ icon::icon(const char* const* bits) {
 icon::icon(const char* const* bits, const xtd::drawing::size& size) : icon(bits, size.width(), size.height()) {
 }
 
-icon::icon(const char* const* bits, int32_t width, int32_t height) {
+icon::icon(const char* const* bits, int32 width, int32 height) {
   data_->handle = native::icon::create(bits, width, height);
   data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
 }
@@ -52,7 +52,7 @@ icon::icon(const char* const* bits, int32_t width, int32_t height) {
 icon::icon(const icon& original, const xtd::drawing::size& size) : icon(original, size.width(), size.height()) {
 }
 
-icon::icon(const icon& original, int32_t width, int32_t height) {
+icon::icon(const icon& original, int32 width, int32 height) {
   data_->handle = native::icon::create(original.data_->handle, width, height);
   data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
 }
@@ -72,7 +72,7 @@ intptr_t icon::handle() const noexcept {
   return data_->handle;
 }
 
-int32_t icon::height() const noexcept {
+int32 icon::height() const noexcept {
   return data_->size.height();
 }
 
@@ -80,7 +80,7 @@ const xtd::drawing::size& icon::size() const noexcept {
   return data_->size;
 }
 
-int32_t icon::width() const noexcept {
+int32 icon::width() const noexcept {
   return data_->size.width();
 }
 

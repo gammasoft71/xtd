@@ -94,7 +94,7 @@ namespace xtd {
         /// @param matrix The matrix handle by which the matrix is to be multiplied.
         /// @param order The value that represents the order (see matrix_orders.h for more information).
         /// @warning Internal use only
-        static void multiply(intptr_t handle, intptr_t matrix, int32_t order);
+        static void multiply(intptr_t handle, intptr_t matrix, int32 order);
         
         /// @brief Resets the matrix to have the elements of the identity matrix.
         /// @param handle The matrix handle.
@@ -106,7 +106,7 @@ namespace xtd {
         /// @param angle The angle of the rotation, in degrees.
         /// @param order The value that represents the order (see matrix_orders.h for more information).
         /// @warning Internal use only
-        static void rotate(intptr_t handle, float angle, int32_t order);
+        static void rotate(intptr_t handle, float angle, int32 order);
         
         /// @brief Applies a clockwise rotation to the matrix around the point specified in the point parameter, and by prepending the rotation.
         /// @param handle The matrix handle.
@@ -115,7 +115,7 @@ namespace xtd {
         /// @param y The y-coordinate of the point that represents the center of the rotation.
         /// @param order The value that represents the order (see matrix_orders.h for more information).
         /// @warning Internal use only
-        static void rotate_at(intptr_t handle, float angle, float x, float y, int32_t order);
+        static void rotate_at(intptr_t handle, float angle, float x, float y, int32 order);
         
         /// @brief Applies the specified scale vector (scale_x and scale_y) to this xtd::drawing::drawing2d::matrix using the specified order.
         /// @param handle The matrix handle.
@@ -123,7 +123,7 @@ namespace xtd {
         /// @param scale_y The value by which to scale this xtd::drawing::drawing2d::matrix in the y-axis direction.
         /// @param order A value that specifies the order (append or prepend) in which the scale vector is applied to the matrix (see matrix_orders.h for more information).
         /// @warning Internal use only
-        static void scale(intptr_t handle, float scale_x, float scale_y, int32_t order);
+        static void scale(intptr_t handle, float scale_x, float scale_y, int32 order);
         
         /// @brief Applies the specified shear vector to the matrix in the specified order.
         /// @param handle The matrix handle.
@@ -131,14 +131,14 @@ namespace xtd {
         /// @param scale_y The vertical shear factor.
         /// @param order A xvalue that specifies the order (append or prepend) in which the shear is applied (see matrix_orders.h for more information).
         /// @warning Internal use only
-        static void shear(intptr_t handle, float scale_x, float scale_y, int32_t order);
+        static void shear(intptr_t handle, float scale_x, float scale_y, int32 order);
         
         /// @brief Applies the geometric transform represented by the matrix to a specified array of points.
         /// @param handle The matrix handle.
         /// @param x The x-coordinate of the point that represents the point to transform.
         /// @param y The y-coordinate of the point that represents the point to transform.
         /// @warning Internal use only
-        static void transform_point(intptr_t handle, int32_t& x, int32_t& y);
+        static void transform_point(intptr_t handle, int32& x, int32& y);
         /// @brief Applies the geometric transform represented by the matrix to a specified array of points.
         /// @param handle The matrix handle.
         /// @param x The x-coordinate of the point that represents the point to transform.
@@ -148,12 +148,12 @@ namespace xtd {
         
         /// @brief Applies only the scale and rotate components of the matrix to the specified array of points.
         /// @param handle The matrix handle.
-        /// @param x An array of std::pair<int32_t, int32_t>t structures that represents the points to transform.
+        /// @param x An array of std::pair<int32, int32>t structures that represents the points to transform.
         /// @warning Internal use only
-        static void transform_vectors(intptr_t handle, std::vector<std::pair<int32_t, int32_t>>& points);
+        static void transform_vectors(intptr_t handle, std::vector<std::pair<int32, int32>>& points);
         /// @brief Applies only the scale and rotate components of the matrix to the specified array of points.
         /// @param handle The matrix handle.
-        /// @param x An array of std::pair<int32_t, int32_t>t structures that represents the points to transform.
+        /// @param x An array of std::pair<int32, int32>t structures that represents the points to transform.
         /// @warning Internal use only
         static void transform_vectors(intptr_t handle, std::vector<std::pair<float, float>>& points);
         
@@ -163,13 +163,13 @@ namespace xtd {
         /// @param offset_y The y value by which to translate the matrix.
         /// @param order A value that specifies the order (append or prepend) in which the translation is applied to the matrix.
         /// @warning Internal use only
-        static void translate(intptr_t handle, float offset_x, float offset_y, int32_t order);
+        static void translate(intptr_t handle, float offset_x, float offset_y, int32 order);
         
         /// @brief Multiplies each vector in an array by the matrix. The translation elements of this matrix (third row) are ignored.
         /// @param handle The matrix handle.
-        /// @param points An array of std::pair<int32_t, int32_t> structures that represents the points to transform.
+        /// @param points An array of std::pair<int32, int32> structures that represents the points to transform.
         /// @warning Internal use only
-        static void vector_transform_points(intptr_t handle, std::vector<std::pair<int32_t, int32_t>>& points);
+        static void vector_transform_points(intptr_t handle, std::vector<std::pair<int32, int32>>& points);
         /// @}
       };
     }

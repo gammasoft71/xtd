@@ -3,11 +3,11 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-int32_t nine_segment_display::thickness() const noexcept {
+int32 nine_segment_display::thickness() const noexcept {
   return data_->thickness.value_or(size().height() < 20 ? 1 : (size().height() / 20 + ((size().height() / 20) % 2 ? 0 : 1)));
 }
 
-seven_segment_display& nine_segment_display::thickness(int32_t value) {
+seven_segment_display& nine_segment_display::thickness(int32 value) {
   if (!data_->thickness.has_value() || data_->thickness.value() != value) {
     data_->thickness = value;
     invalidate();
@@ -22,14 +22,14 @@ void nine_segment_display::draw_back_digit(drawing::graphics& graphics) {
 }
 
 void nine_segment_display::draw_segment_h(drawing::graphics& graphics, const drawing::color& color) {
-  for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++) {
+  for (int32 offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++) {
     graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness() - abs(offset), 2 + thickness(), 2 + thickness(), size().height() / 2 - 2 - thickness() / 2 - abs(offset));
     graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness(), 2 + thickness() + abs(offset), 2 + thickness() + abs(offset), size().height() / 2 - 2 - thickness() / 2);
   }
 }
 
 void nine_segment_display::draw_segment_i(drawing::graphics& graphics, const drawing::color& color) {
-  for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++) {
+  for (int32 offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++) {
     graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness() - abs(offset), size().height() / 2 + 2 + thickness() / 2, 2 + thickness(), size().height() - 3 - thickness() - abs(offset));
     graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness(), size().height() / 2 + 2 + thickness() / 2 + abs(offset), 2 + thickness() + abs(offset), size().height() - 3 - thickness());
   }

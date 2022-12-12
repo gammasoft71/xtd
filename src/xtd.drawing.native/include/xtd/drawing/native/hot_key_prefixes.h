@@ -5,7 +5,7 @@
 #endif
 /// @endcond
 
-#include <cstdint>
+#include <xtd/types.h>
 
 /// @brief No hot-key prefix.
 /// @par Library
@@ -13,7 +13,7 @@
 /// @ingroup xtd_drawing_native hkp
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t HKP_NONE = 0;
+constexpr xtd::int32 HKP_NONE = 0;
 
 /// @brief Display the hot-key prefix.
 /// @par Library
@@ -21,7 +21,7 @@ constexpr int32_t HKP_NONE = 0;
 /// @ingroup xtd_drawing_native hkp
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t HKP_SHOW = 1;
+constexpr xtd::int32 HKP_SHOW = 1;
 
 /// @brief Do not display the hot-key prefix.
 /// @par Library
@@ -29,4 +29,4 @@ constexpr int32_t HKP_SHOW = 1;
 /// @ingroup xtd_drawing_native hkp
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t HKP_HIDE = 2;
+constexpr xtd::int32 HKP_HIDE = 2;

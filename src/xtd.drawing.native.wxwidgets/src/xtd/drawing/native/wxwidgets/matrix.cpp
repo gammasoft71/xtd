@@ -56,7 +56,7 @@ float matrix::offset_y(intptr_t handle) {
   return as<float>(dy);
 }
 
-void matrix::multiply(intptr_t handle, intptr_t matrix, int32_t order) {
+void matrix::multiply(intptr_t handle, intptr_t matrix, int32 order) {
   if (!handle) return;
   /// Does not exist on wxWidgets...
 }
@@ -66,33 +66,33 @@ void matrix::reset(intptr_t handle) {
   reinterpret_cast<wxGraphicsMatrix*>(handle)->Set();
 }
 
-void matrix::rotate(intptr_t handle, float angle, int32_t order) {
+void matrix::rotate(intptr_t handle, float angle, int32 order) {
   if (!handle) return;
   reinterpret_cast<wxGraphicsMatrix*>(handle)->Rotate(math::degrees_to_radians(angle));
 }
 
-void matrix::rotate_at(intptr_t handle, float angle, float x, float y, int32_t order) {
+void matrix::rotate_at(intptr_t handle, float angle, float x, float y, int32 order) {
   if (!handle) return;
   reinterpret_cast<wxGraphicsMatrix*>(handle)->Translate(x, y);
   reinterpret_cast<wxGraphicsMatrix*>(handle)->Rotate(math::degrees_to_radians(angle));
 }
 
-void matrix::scale(intptr_t handle, float scale_x, float scale_y, int32_t order) {
+void matrix::scale(intptr_t handle, float scale_x, float scale_y, int32 order) {
   if (!handle) return;
   reinterpret_cast<wxGraphicsMatrix*>(handle)->Scale(scale_x, scale_y);
 }
 
-void matrix::shear(intptr_t handle, float scale_x, float scale_y, int32_t order) {
+void matrix::shear(intptr_t handle, float scale_x, float scale_y, int32 order) {
   if (!handle) return;
   /// Does not exist on wxWidgets...
 }
 
-void matrix::transform_point(intptr_t handle, int32_t& x, int32_t& y) {
+void matrix::transform_point(intptr_t handle, int32& x, int32& y) {
   if (!handle) return;
   double dx = x, dy = y;
   reinterpret_cast<wxGraphicsMatrix*>(handle)->TransformPoint(&dx, &dy);
-  x = as<int32_t>(dx);
-  y = as<int32_t>(dy);
+  x = as<int32>(dx);
+  y = as<int32>(dy);
 }
 
 void matrix::transform_point(intptr_t handle, float& x, float& y) {
@@ -103,7 +103,7 @@ void matrix::transform_point(intptr_t handle, float& x, float& y) {
   y = as<float>(dy);
 }
 
-void matrix::transform_vectors(intptr_t handle, std::vector<std::pair<int32_t, int32_t>>& points) {
+void matrix::transform_vectors(intptr_t handle, std::vector<std::pair<int32, int32>>& points) {
   if (!handle) return;
 }
 
@@ -111,11 +111,11 @@ void matrix::transform_vectors(intptr_t handle, std::vector<std::pair<float, flo
   if (!handle) return;
 }
 
-void matrix::translate(intptr_t handle, float ofset_x, float offset_y, int32_t order) {
+void matrix::translate(intptr_t handle, float ofset_x, float offset_y, int32 order) {
   if (!handle) return;
   reinterpret_cast<wxGraphicsMatrix*>(handle)->Translate(offset_y, offset_y);
 }
 
-void matrix::vector_transform_points(intptr_t handle, std::vector<std::pair<int32_t, int32_t>>& points) {
+void matrix::vector_transform_points(intptr_t handle, std::vector<std::pair<int32, int32>>& points) {
   if (!handle) return;
 }

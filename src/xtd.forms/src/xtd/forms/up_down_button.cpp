@@ -15,9 +15,9 @@ up_down_button::up_down_button() {
   flat_style(xtd::forms::flat_style::system);
 }
 
-int32_t up_down_button::maximum() const noexcept {return data_->maximum;}
+int32 up_down_button::maximum() const noexcept {return data_->maximum;}
 
-up_down_button& up_down_button::maximum(int32_t value) {
+up_down_button& up_down_button::maximum(int32 value) {
   if (data_->maximum != value) {
     data_->maximum = value;
     if (is_handle_created()) native::up_down_button::maximum(handle(), data_->maximum);
@@ -27,11 +27,11 @@ up_down_button& up_down_button::maximum(int32_t value) {
   return *this;
 }
 
-int32_t up_down_button::minimum() const noexcept {
+int32 up_down_button::minimum() const noexcept {
   return data_->minimum;
 }
 
-up_down_button& up_down_button::minimum(int32_t value) {
+up_down_button& up_down_button::minimum(int32 value) {
   if (data_->minimum != value) {
     data_->minimum = value;
     if (is_handle_created()) native::up_down_button::minimum(handle(), data_->minimum);
@@ -53,11 +53,11 @@ up_down_button& up_down_button::orientation(forms::orientation orientation) {
   return *this;
 }
 
-int32_t up_down_button::value() const noexcept {
+int32 up_down_button::value() const noexcept {
   return data_->value;
 }
 
-up_down_button& up_down_button::value(int32_t value) {
+up_down_button& up_down_button::value(int32 value) {
   if (data_->value != value) {
     if (value > data_->maximum) data_->value = data_->maximum;
     else if (value < data_->minimum) data_->value = data_->minimum;
@@ -80,7 +80,7 @@ up_down_button& up_down_button::wrapped(bool value) {
   return *this;
 }
 
-void up_down_button::set_range(int32_t min_value, int32_t max_value) {
+void up_down_button::set_range(int32 min_value, int32 max_value) {
   minimum(min_value);
   maximum(min_value > max_value ? min_value : max_value);
 }

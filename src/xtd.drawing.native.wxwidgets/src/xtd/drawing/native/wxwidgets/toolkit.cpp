@@ -19,7 +19,7 @@ namespace {
   wxAssertHandler_t original_assert_handler = nullptr;
   boolean_switch show_wx_assert("wx_assert", "Shows wxAssert log", "true");
   
-  void xtd_assert_handler(const wxString& file, int32_t line, const wxString& func, const wxString& cond, const wxString& msg) {
+  void xtd_assert_handler(const wxString& file, int32 line, const wxString& func, const wxString& cond, const wxString& msg) {
     // Workaround: wxWidgets generates an unknown assertion when there is a double mouse click event on an empty area of wxCalendarCtrl.
     if (func == "wxCalendarCtrl::HitTest" && cond == "\"Assert failure\"" && msg == "unexpected") return;
     // Workaround: wxWidgets generates an assert if wxApp is not running when call exit.
@@ -55,7 +55,7 @@ intptr_t toolkit::initialize() {
   wxSystemOptions::SetOption("gtk.tlw.can-set-transparent", 1);
   wxSystemOptions::SetOption("osx.openfiledialog.always-show-types", 1);
   wxApp::SetInstance(new wx_application());
-  int32_t argc = 0;
+  int32 argc = 0;
   wxEntryStart(argc, (wxChar**)nullptr);
   wxTheApp->CallOnInit();
   wxTheApp->SetExitOnFrameDelete(false);

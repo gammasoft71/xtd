@@ -134,8 +134,8 @@ intptr_t font::handle() const noexcept {
   return data_->handle_;
 }
 
-int32_t font::height() const noexcept {
-  return static_cast<int32_t>(std::ceil(get_height()));
+int32 font::height() const noexcept {
+  return static_cast<int32>(std::ceil(get_height()));
 }
 
 bool font::is_system_font() const noexcept {
@@ -235,5 +235,5 @@ intptr_t font::to_hfont() const {
 }
 
 xtd::ustring font::to_string() const noexcept {
-  return ustring::format("[{}: name={}, size={}, units={}, gdi_char_set={}, gdi_vertical_font={}]", ustring::class_name(*this), data_->font_family_.name(), data_->size_, (int32_t)data_->unit_, data_->gdi_char_set_, data_->gdi_vertical_font_);
+  return ustring::format("[{}: name={}, size={}, units={}, gdi_char_set={}, gdi_vertical_font={}]", ustring::class_name(*this), data_->font_family_.name(), data_->size_, (int32)data_->unit_, data_->gdi_char_set_, data_->gdi_vertical_font_);
 }

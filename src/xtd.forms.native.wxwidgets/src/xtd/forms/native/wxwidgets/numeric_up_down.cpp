@@ -8,7 +8,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-void numeric_up_down::decimal_place(intptr_t control, int32_t decimal_place) {
+void numeric_up_down::decimal_place(intptr_t control, int32 decimal_place) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

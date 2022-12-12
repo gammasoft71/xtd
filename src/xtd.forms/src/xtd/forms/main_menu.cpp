@@ -51,7 +51,7 @@ void main_menu::on_item_removed(size_t pos, menu_item_ref item) {
 }
 
 void main_menu::wm_click(message& message) {
-  auto it = handles_.find(static_cast<int32_t>(message.wparam()));
+  auto it = handles_.find(static_cast<int32>(message.wparam()));
   if (it != handles_.end()) {
     auto& menu = static_cast<menu_item&>(it->second.get());
     menu.perform_click();

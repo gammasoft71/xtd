@@ -6,7 +6,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-int32_t system_information::active_window_tracking_delay() {
+int32 system_information::active_window_tracking_delay() {
   return native::system_information::active_window_tracking_delay();
 }
 
@@ -26,7 +26,7 @@ xtd::drawing::size system_information::border_3d_size() {
   return native::system_information::border_3d_size();
 }
 
-int32_t system_information::border_multiplier_factor() {
+int32 system_information::border_multiplier_factor() {
   return native::system_information::border_multiplier_factor();
 }
 
@@ -38,15 +38,15 @@ xtd::drawing::size system_information::caption_button_size() {
   return native::system_information::caption_button_size();
 }
 
-int32_t system_information::caption_height() {
+int32 system_information::caption_height() {
   return native::system_information::caption_height();
 }
 
-int32_t system_information::caret_blink_time() {
+int32 system_information::caret_blink_time() {
   return native::system_information::caret_blink_time();
 }
 
-int32_t system_information::caret_width() {
+int32 system_information::caret_width() {
   return native::system_information::caret_width();
 }
 
@@ -70,7 +70,7 @@ xtd::drawing::size system_information::double_click_size() {
   return native::system_information::double_click_size();
 }
 
-int32_t system_information::double_click_time() {
+int32 system_information::double_click_time() {
   return native::system_information::double_click_time();
 }
 
@@ -86,18 +86,18 @@ xtd::drawing::size system_information::fixed_frame_border_size() {
   return native::system_information::fixed_frame_border_size();
 }
 
-int32_t system_information::font_smoothing_contrast() {
+int32 system_information::font_smoothing_contrast() {
   return native::system_information::font_smoothing_contrast();
 }
 
-int32_t system_information::font_smoothing_type() {
+int32 system_information::font_smoothing_type() {
   return native::system_information::font_smoothing_type();
 }
 
-int32_t system_information::horizontal_scroll_bar_height() {
+int32 system_information::horizontal_scroll_bar_height() {
   return 15;
 }
 
-int32_t system_information::vertical_scroll_bar_width() {
+int32 system_information::vertical_scroll_bar_width() {
   return 15;
 }

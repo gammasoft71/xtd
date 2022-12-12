@@ -216,7 +216,7 @@ namespace xtd {
       /// @param height The height of the control, in pixels. The value is assigned to the height property.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the control constructor sets the initial xtd::forms::control::text property value to the text parameter value. The initial xtd::forms::control::size and xtd::forms::control::location of the control are determined by the left, top, width and height parameter values.
-      control(const xtd::ustring& text, int32_t left, int32_t top, int32_t width, int32_t height);
+      control(const xtd::ustring& text, int32 left, int32 top, int32 width, int32 height);
       /// @brief Initializes a new instance of the xtd::forms::control class as a child control, with specific text, size, and location.
       /// @param parent The control to be the parent of the control.
       /// @param text The text displayed by the control.
@@ -226,7 +226,7 @@ namespace xtd {
       /// @param height The height of the control, in pixels. The value is assigned to the xtd::forms::control::height property.
       /// @remarks The xtd::forms::control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the xtd::forms::control constructor sets the initial xtd::forms::control::text property value to the text parameter value. The constructor also adds the control to the xtd::forms::control::parent control's control::control_collection. The initial xtd::forms::control::size and xtd::forms::control::location of the control are determined by the left, top, width and height parameter values.
-      control(const control& parent, const xtd::ustring& text, int32_t left, int32_t top, int32_t width, int32_t height);
+      control(const control& parent, const xtd::ustring& text, int32 left, int32 top, int32 width, int32 height);
       /// @}
       
       /// @cond
@@ -312,10 +312,10 @@ namespace xtd {
       virtual control& background_image_layout(xtd::forms::image_layout background_image_layout);
       
       /// @brief Gets the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
-      /// @return An int32_t representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
+      /// @return An int32 representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
       /// @remarks The value of this property is equal to the sum of the top property value, and the height property value.
       /// @remarks The bottom property is a read-only property. You can manipulate this property value by changing the value of the top or height properties or calling the set_bounds, set_bounds_core, update_bounds, or set_client_size_core methods.
-      virtual int32_t bottom() const noexcept;
+      virtual int32 bottom() const noexcept;
       
       /// @brief Gets the size and location of the control including its nonclient elements, in pixels, relative to the parent control.
       /// @return A rectangle in pixels relative to the parent control that represents the size and location of the control including its nonclient elements.
@@ -509,11 +509,11 @@ namespace xtd {
       
       /// @brief Gets the height of the control.
       /// @return The height of the control in pixels.
-      virtual int32_t height() const noexcept;
+      virtual int32 height() const noexcept;
       /// @brief Sets the height of the control.
       /// @param height The height of the control in pixels.
       /// @return Current control.
-      virtual control& height(int32_t height);
+      virtual control& height(int32 height);
       
       /// @brief Gets a value indicating whether the caller must call an invoke method when making method calls to the control because the caller is on a different thread than the one the control was created on.
       /// @return true if the control's xttd::forms::control::handle was created on a different thread than the calling thread (indicating that you must make calls to the control through an invoke method); otherwise, false.
@@ -525,12 +525,12 @@ namespace xtd {
       bool is_handle_created() const noexcept;
       
       /// @brief Gets the distance, in pixels, between the left edge of the control and the left edge of its container's client area.
-      /// @return An int32_t representing the distance, in pixels, between the left edge of the control and the left edge of its container's client area.
-      virtual int32_t left() const noexcept;
+      /// @return An int32 representing the distance, in pixels, between the left edge of the control and the left edge of its container's client area.
+      virtual int32 left() const noexcept;
       /// @brief Sets the distance, in pixels, between the left edge of the control and the left edge of its container's client area.
-      /// @param left An int32_t representing the distance, in pixels, between the left edge of the control and the left edge of its container's client area.
+      /// @param left An int32 representing the distance, in pixels, between the left edge of the control and the left edge of its container's client area.
       /// @return Current control.
-      virtual control& left(int32_t left);
+      virtual control& left(int32 left);
       
       /// @brief Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container.
       /// @return The point that represents the upper-left corner of the control relative to the upper-left corner of its container.
@@ -668,8 +668,8 @@ namespace xtd {
       virtual control& region(const xtd::drawing::region& value);
       
       /// @brief Gets the distance, in pixels, between the right edge of the control and the left edge of its container's client area.
-      /// @return An int32_t representing the distance, in pixels, between the right edge of the control and the left edge of its container's client area.
-      virtual int32_t right() const noexcept;
+      /// @return An int32 representing the distance, in pixels, between the right edge of the control and the left edge of its container's client area.
+      virtual int32 right() const noexcept;
       
       /// @brief Gets the height and width of the control.
       /// @return The size that represents the height and width of the control in pixels.
@@ -737,11 +737,11 @@ namespace xtd {
       
       /// @brief Gets the distance, in pixels, between the top edge of the control and the top edge of its container's client area.
       /// @return An Int32_t representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
-      virtual int32_t top() const noexcept;
+      virtual int32 top() const noexcept;
       /// @brief Sets the distance, in pixels, between the top edge of the control and the top edge of its container's client area.
       /// @param top An Int32_t representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
       /// @return Current control.
-      virtual control& top(int32_t top);
+      virtual control& top(int32 top);
       
       /// @brief Gets the parent control that is not parented by another Windows Forms control. Typically, this is the outermost Form that the control is contained in.
       /// @return The control that represents the top-level control that contains the current control.
@@ -757,11 +757,11 @@ namespace xtd {
       
       /// @brief Gets the width of the control.
       /// @return The width of the control in pixels.
-      virtual int32_t width() const noexcept;
+      virtual int32 width() const noexcept;
       /// @brief Sets the width of the control.
       /// @param width The width of the control in pixels.
       /// @return Current control.
-      virtual control& width(int32_t width);
+      virtual control& width(int32 width);
       /// @}
       
       /// @name Methods
@@ -790,7 +790,7 @@ namespace xtd {
       /// @remarks The control is moved to the front of the z-order. If the control is a child of another control, the child control is moved to the front of the z-order. bring_to_front does not make a control a top-level control, and it does not raise the paint event.
       virtual void bring_to_front();
 
-      int32_t compare_to(const control& value) const noexcept override;
+      int32 compare_to(const control& value) const noexcept override;
 
       /// @brief A factory to create a specified control with specified location ,size back_color and fore_color.
       /// @param location A xtd::drawing::point that represent location of the control.
@@ -1038,7 +1038,7 @@ namespace xtd {
       /// @param wparam The WParam field of the message.
       /// @param lparam The LParam field of the message.
       /// @return The return value of the message.
-      intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) const;
+      intptr_t send_message(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam) const;
       
       /// @brief Sets a value indicating how a control will behave when its auto_size property is enabled.
       /// @param auto_size_mode One of the xtd::forms::auto_size_mode values.
@@ -1049,7 +1049,7 @@ namespace xtd {
       /// @param y The new top property value of the control.
       /// @param width The new width property value of the control.
       /// @param height The new height property value of the control.
-      void set_bounds(int32_t x, int32_t y, int32_t width, int32_t height);
+      void set_bounds(int32 x, int32 y, int32 width, int32 height);
       
       /// @brief Sets the specified bounds of the control to the specified location and size.
       /// @param x The new left property value of the control.
@@ -1057,7 +1057,7 @@ namespace xtd {
       /// @param width The new width property value of the control.
       /// @param height The new height property value of the control.
       /// @param specified A bitwise combination of the xtd::forms::bounds_specified values. For any parameter not specified, the current value will be used.
-      void set_bounds(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified);
+      void set_bounds(int32 x, int32 y, int32 width, int32 height, bounds_specified specified);
       
       /// @brief Displays the control to the user.
       /// @remarks Showing the control is equivalent to setting the visible property to true. After the show method is called, the visible property returns a value of true until the hide method is called.
@@ -1918,8 +1918,8 @@ namespace xtd {
       /// @remarks Typically, the parameters that correspond to the bounds not included in the specified parameter are passed in with their current values. For example, the height, width, or the y or y properties of the location property can be passed in with a reference to the current instance of the control. However all values passed in are honored and applied to the control.
       /// @remarks The specified parameter represents the elements of the controls Bounds changed by your application. For example, if you change the size of the control, the specified parameter value is the size value of bounds_specified. However, if the size is adjusted in response to the dock property being set, the specified parameter value is the none value of bounds_specified.
       /// @par Notes to Inheritors
-      /// When overriding set_bounds_core(int32_t, int32_t, int32_t, int32_t, bounds_specified) in a derived class, be sure to call the base class's set_bounds_core(int32_t, int32_t, int32_t, int32_t, bounds_specified) method to force the bounds of the control to change. Derived classes can add size restrictions to the set_bounds_core(int32_t, int32_t, int32_t, int32_t, bounds_specified) method.
-      virtual void set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified);
+      /// When overriding set_bounds_core(int32, int32, int32, int32, bounds_specified) in a derived class, be sure to call the base class's set_bounds_core(int32, int32, int32, int32, bounds_specified) method to force the bounds of the control to change. Derived classes can add size restrictions to the set_bounds_core(int32, int32, int32, int32, bounds_specified) method.
+      virtual void set_bounds_core(int32 x, int32 y, int32 width, int32 height, bounds_specified specified);
       
       /// @brief Sets a value indicating whether the control can receive focus.
       /// @param value true if the control can receive focus; otherwise, false.
@@ -1937,8 +1937,8 @@ namespace xtd {
       /// @remarks The client area starts at the (0, 0) location and extends to the (width, height) location.
       /// @remarks Typically, you should not set the client_size of the control.
       /// @par Notes to Inheritors
-      /// When overriding set_client_size_core(int32_t, int32_t) in a derived class, be sure to call the base class's set_client_size_core(int32_t, int32_t) method so that the client_size property is adjusted.
-      virtual void set_client_size_core(int32_t width, int32_t height);
+      /// When overriding set_client_size_core(int32, int32) in a derived class, be sure to call the base class's set_client_size_core(int32, int32) method so that the client_size property is adjusted.
+      virtual void set_client_size_core(int32 width, int32 height);
       
       /// @brief Sets a value indicating which of the mouse buttons is in a pressed state.
       /// @param value A bitwise combination of the mouse_buttons enumeration values. The default is none.
@@ -1979,7 +1979,7 @@ namespace xtd {
       control(const xtd::ustring& name, bool);
       void show_context_menu(xtd::forms::context_menu& menu, const xtd::drawing::point& pos) const;
       void reflect_message(intptr_t handle, message& message);
-      intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
+      intptr_t wnd_proc_(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
       void wm_app_idle(message& message);
       void wm_child_activate(message& message);
       void wm_command(message& message);

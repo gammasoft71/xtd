@@ -5,7 +5,7 @@
 #endif
 /// @endcond
 
-#include <cstdint>
+#include <xtd/types.h>
 
 /// @brief Specifies the alternate fill mode.
 /// @par Library
@@ -13,7 +13,7 @@
 /// @ingroup xtd_drawing_native pfm
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t PFM_ALTERNATE = 0;
+constexpr xtd::int32 PFM_ALTERNATE = 0;
 
 /// @brief Specifies the winding fill mode.
 /// @par Library
@@ -21,4 +21,4 @@ constexpr int32_t PFM_ALTERNATE = 0;
 /// @ingroup xtd_drawing_native pfm
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t PFM_WINDING = 1;
+constexpr xtd::int32 PFM_WINDING = 1;

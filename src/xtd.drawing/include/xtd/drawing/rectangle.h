@@ -62,7 +62,7 @@ namespace xtd {
       /// @param y The y-coordinate of the upper-left corner of the rectangle.
       /// @param width The width of the rectangle.
       /// @param height The height of the rectangle.
-      rectangle(int32_t x, int32_t y, int32_t width, int32_t height) noexcept;
+      rectangle(int32 x, int32 y, int32 width, int32 height) noexcept;
       /// @brief Initializes a new instance of the xtd::drawing::rectangle class with the specified location and size.
       /// @param location A xtd::drawing::point that represents the upper-left corner of the rectangular region.
       /// @param size A xtd::drawing::size that represents the width and height of the rectangular region.
@@ -81,16 +81,16 @@ namespace xtd {
       /// @brief Gets the y-coordinate that is the sum of the xtd::drawing::rectangle::y and xtd::drawing::rectangle::height property values of this xtd::drawing::rectangle structure.
       /// @return The y-coordinate that is the sum of xtd::drawing::rectangle::y and xtd::drawing::rectangle::height of this xtd::drawing::rectangle.
       /// @remarks The value of the xtd::drawing::rectangle::bottom property represents the y-coordinate of the first point at the bottom edge of the xtd::drawing::rectangle that is not contained in the xtd::drawing::rectangle.
-      int32_t bottom() const noexcept;
+      int32 bottom() const noexcept;
       
       /// @brief Gets the height of this xtd::drawing::rectangle structure.
       /// @return The height of this Rectangle structure. The default is 0.
       /// @remarks Changing the xtd::drawing::rectangle::height property will also cause a change in the xtd::drawing::rectangle::bottom property of the xtd::drawing::rectangle. The units the rectangle is drawn in is determined by the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale properties of the graphics object used for drawing. The default unit is pixels.
-      int32_t height() const noexcept;
+      int32 height() const noexcept;
       /// @brief Sets the height of this xtd::drawing::rectangle structure.
       /// @param value The height of this Rectangle structure. The default is 0.
       /// @remarks Changing the xtd::drawing::rectangle::height property will also cause a change in the xtd::drawing::rectangle::bottom property of the xtd::drawing::rectangle. The units the rectangle is drawn in is determined by the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale properties of the graphics object used for drawing. The default unit is pixels.
-      void height(int32_t value) noexcept;
+      void height(int32 value) noexcept;
       
       /// @brief Tests whether all numeric properties of this xtd::drawing::rectangle have values of zero.
       /// @return This property returns true if the xtd::drawing::rectangle::width, xtd::drawing::rectangle::height, xtd::drawing::rectangle::x, and xtd::drawing::rectangle::y properties of this xtd::drawing::rectangle all have values of zero; otherwise, false.
@@ -98,7 +98,7 @@ namespace xtd {
       
       /// @brief Gets the x-coordinate of the left edge of this xtd::drawing::rectangle structure.
       /// @return The x-coordinate of the left edge of this xtd::drawing::rectangle structure.
-      int32_t left() const noexcept;
+      int32 left() const noexcept;
       
       /// @brief Gets the coordinates of the upper-left corner of this xtd::drawing::rectangle structure.
       /// @return A xtd::drawing::point that represents the upper-left corner of this xtd::drawing::rectangle structure.
@@ -109,7 +109,7 @@ namespace xtd {
       
       /// @brief Gets the x-coordinate that is the sum of xtd::drawing::rectangle::x and xtd::drawing::rectangle::width property values of this xtd::drawing::rectangle structure.
       /// @return The x-coordinate that is the sum of xtd::drawing::rectangle::x and xtd::drawing::rectangle::width of this xtd::drawing::rectangle.
-      int32_t right() const noexcept;
+      int32 right() const noexcept;
       
       /// @brief Gets the size of this xtd::drawing::rectangle.
       /// @return A xtd::drawing::size that represents the width and height of this xtd::drawing::rectangle structure.
@@ -120,34 +120,34 @@ namespace xtd {
       
       /// @brief Gets the y-coordinate of the top edge of this xtd::drawing::rectangle structure.
       /// @return The y-coordinate of the top edge of this xtd::drawing::rectangle structure.
-      int32_t top() const noexcept;
+      int32 top() const noexcept;
       
       /// @brief Gets the width of this xtd::drawing::rectangle structure.
       /// @return The width of this xtd::drawing::rectangle structure. The default is 0.
       /// @remarks Changing the xtd::drawing::rectangle::width property will also cause a change in the xtd::drawing::rectangle::bottom property of the xtd::drawing::rectangle. The units the rectangle is drawn in is determined by the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale properties of the graphics object used for drawing. The default unit is pixels.
-      int32_t width() const noexcept;
+      int32 width() const noexcept;
       /// @brief Sets the width of this xtd::drawing::rectangle structure.
       /// @param value The width of this xtd::drawing::rectangle structure. The default is 0.
       /// @remarks Changing the xtd::drawing::rectangle::width property will also cause a change in the xtd::drawing::rectangle::bottom property of the xtd::drawing::rectangle. The units the rectangle is drawn in is determined by the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale properties of the graphics object used for drawing. The default unit is pixels.
-      void width(int32_t value) noexcept;
+      void width(int32 value) noexcept;
       
       /// @brief Gets the x-coordinate of the upper-left corner of this xtd::drawing::rectangle structure.
       /// @return The x-coordinate of the upper-left corner of this xtd::drawing::rectangle structure. The default is 0.
       /// @remarks Changing the xtd::drawing::rectangle::x property will also cause a change in the xtd::drawing::rectangle::right property of the xtd::drawing::rectangle.
-      int32_t x() const noexcept;
+      int32 x() const noexcept;
       /// @brief Sets the x-coordinate of the upper-left corner of this xtd::drawing::rectangle structure.
       /// @param value The x-coordinate of the upper-left corner of this xtd::drawing::rectangle structure. The default is 0.
       /// @remarks Changing the xtd::drawing::rectangle::x property will also cause a change in the xtd::drawing::rectangle::right property of the xtd::drawing::rectangle.
-      void x(int32_t value) noexcept;
+      void x(int32 value) noexcept;
       
       /// @brief Gets the y-coordinate of the upper-left corner of this xtd::drawing::rectangle structure.
       /// @return The y-coordinate of the upper-left corner of this xtd::drawing::rectangle structure. The default is 0.
       /// @remarks Changing the xtd::drawing::rectangle::y property will also cause a change in the xtd::drawing::rectangle::bottom property of the xtd::drawing::rectangle.
-      int32_t y() const noexcept;
+      int32 y() const noexcept;
       /// @brief Sets the y-coordinate of the upper-left corner of this xtd::drawing::rectangle structure.
       /// @param value The y-coordinate of the upper-left corner of this xtd::drawing::rectangle structure. The default is 0.
       /// @remarks Changing the xtd::drawing::rectangle::y property will also cause a change in the xtd::drawing::rectangle::bottom property of the xtd::drawing::rectangle.
-      void y(int32_t value) noexcept;
+      void y(int32 value) noexcept;
       /// @}
       
       /// @name Methods
@@ -161,14 +161,14 @@ namespace xtd {
       /// @param width The amount to add this xtd::drawing::rectangle horizontally.
       /// @param height The amount to add this xtd::drawing::rectangle verticaly.
       /// @remarks This method adds this rectangle, not a copy of it.
-      void add(int32_t width, int32_t height) noexcept;
+      void add(int32 width, int32 height) noexcept;
       /// @brief Creates and returns an added copy of the specified xtd::drawing::rectangle structure. The copy is added by the specified amount. The original xtd::drawing::rectangle structure remains unmodified.
       /// @param rect The xtd::drawing::rectangle with which to start. This rectangle is not modified.
       /// @param x The amount to add the specified rectangle horizontally.
       /// @param y The amount to add the specified rectangle vertically.
       /// @return The added xtd::drawing::rectangle.
       /// @remarks This method makes a copy of rect, adds the copy, and then returns the added copy.
-      static rectangle add(const rectangle& rect, int32_t x, int32_t y) noexcept;
+      static rectangle add(const rectangle& rect, int32 x, int32 y) noexcept;
       /// @brief Creates and returns an added copy of the specified xtd::drawing::rectangle structure. The copy is added by the specified amount. The original xtd::drawing::rectangle structure remains unmodified.
       /// @param rect The xtd::drawing::rectangle with which to start. This rectangle is not modified.
       /// @param sz The amount to add the specified rectangle.
@@ -196,7 +196,7 @@ namespace xtd {
       /// @param y The y-coordinate of the point to test.
       /// @return This method returns true if the point defined by x and y is contained within this xtd::drawing::rectangle structure; otherwise false.
       /// @remarks The containing rectangle must be normalized for this method to return accurate results.
-      bool contains(int32_t x, int32_t y) const noexcept;
+      bool contains(int32 x, int32 y) const noexcept;
       
       bool equals(const rectangle& value) const noexcept override;
 
@@ -207,7 +207,7 @@ namespace xtd {
       /// @param bottom The y-coordinate of the lower-right corner of this xtd::drawing::rectangle structure.
       /// @return The new xtd::drawing::rectangle that this method creates.
       /// @remarks This method creates a xtd::drawing::rectangle with the specified upper-left and lower-right corners.
-      static rectangle from_ltrb(int32_t left, int32_t top, int32_t right, int32_t bottom) noexcept;
+      static rectangle from_ltrb(int32 left, int32 top, int32 right, int32 bottom) noexcept;
       
       /// @brief Enlarges this xtd::drawing::rectangle by the specified amount.
       /// @param sz The amount to inflate this rectangle.
@@ -218,14 +218,14 @@ namespace xtd {
       /// @param height The amount to inflate this xtd::drawing::rectangle verticaly.
       /// @remarks This method enlarges this rectangle, not a copy of it. The rectangle is enlarged in both directions along an axis. For example, if a 50 by 50 rectangle is enlarged by 50 in the x-axis, the resultant rectangle will be 150 units long (the original 50, the 50 in the minus direction, and the 50 in the plus direction) maintaining the rectangle's geometric center.
       /// @remarks If either x or y is negative, the xtd::drawing::rectangle structure is deflated in the corresponding direction.
-      void inflate(int32_t width, int32_t height) noexcept;
+      void inflate(int32 width, int32 height) noexcept;
       /// @brief Creates and returns an enlarged copy of the specified xtd::drawing::rectangle structure. The copy is enlarged by the specified amount. The original xtd::drawing::rectangle structure remains unmodified.
       /// @param rect The xtd::drawing::rectangle with which to start. This rectangle is not modified.
       /// @param x The amount to inflate the specified rectangle horizontally.
       /// @param y The amount to inflate the specified rectangle vertically.
       /// @return The enlarged xtd::drawing::rectangle.
       /// @remarks This method makes a copy of rect, enlarges the copy, and then returns the enlarged copy. The rectangle is enlarged in both directions along an axis. For example, if a 50 by 50 rectangle is enlarged by 50 in the x-axis, the resultant rectangle will be 150 units long (the original 50, the 50 in the minus direction, and the 50 in the plus direction) maintaining the rectangle's geometric center.
-      static rectangle inflate(const rectangle& rect, int32_t x, int32_t y) noexcept;
+      static rectangle inflate(const rectangle& rect, int32 x, int32 y) noexcept;
       /// @brief Creates and returns an enlarged copy of the specified xtd::drawing::rectangle structure. The copy is enlarged by the specified amount. The original xtd::drawing::rectangle structure remains unmodified.
       /// @param rect The xtd::drawing::rectangle with which to start. This rectangle is not modified.
       /// @param sz The amount to inflate the specified rectangle.
@@ -263,7 +263,7 @@ namespace xtd {
       /// @brief Adjusts the location of this rectangle by the specified amount.
       /// @param x The horizontal offset.
       /// @param y The vertical offset.
-      void offset(int32_t x, int32_t y) noexcept;
+      void offset(int32 x, int32 y) noexcept;
       /// @brief Creates and returns an offsetted copy of the specified xtd::drawing::rectangle structure. The copy is offsetted by the specified amount. The original xtd::drawing::rectangle structure remains unmodified.
       /// @param rect The xtd::drawing::rectangle with which to start. This rectangle is not modified.
       /// @param pos The amount to offset the specified rectangle.
@@ -276,7 +276,7 @@ namespace xtd {
       /// @param y The amount to offset the specified rectangle vertically.
       /// @return The offsetted xtd::drawing::rectangle.
       /// @remarks This method makes a copy of rect, offsets the copy, and then returns the offsetted copy.
-      static rectangle offset(const rectangle& rect, int32_t x, int32_t y) noexcept;
+      static rectangle offset(const rectangle& rect, int32 x, int32 y) noexcept;
       
       /// @brief Converts the specified xtd::drawing::rectangle_f to a xtd::drawing::rectangle by rounding the xtd::drawing::rectangle_f values to the nearest integer values.
       /// @param rect The xtd::drawing::rectangle_f to be converted.
@@ -294,10 +294,10 @@ namespace xtd {
       /// @}
       
     private:
-      int32_t x_ = 0;
-      int32_t y_ = 0;
-      int32_t width_ = 0;
-      int32_t height_ = 0;
+      int32 x_ = 0;
+      int32 y_ = 0;
+      int32 width_ = 0;
+      int32 height_ = 0;
     };
   }
 }

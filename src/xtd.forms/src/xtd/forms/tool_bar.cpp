@@ -145,7 +145,7 @@ control& tool_bar::dock(dock_style dock) {
     data_->non_system_dock = dock;
     if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
   } else {
-    int32_t current_size = is_horizontal() ? height() : width();
+    int32 current_size = is_horizontal() ? height() : width();
     control::dock(dock);
     if (is_horizontal()) height(current_size);
     else width(current_size);
@@ -462,7 +462,7 @@ void tool_bar::resize_stretchable_separtors() {
         remaining_size -= is_horizontal() ? tool_bar_button->size().width() : tool_bar_button->size().height();
     }
     
-    auto stretchable_size = remaining_size / as<int32_t>(data_->stretchable_separators.size());
+    auto stretchable_size = remaining_size / as<int32>(data_->stretchable_separators.size());
     for (auto stretchable_separator : data_->stretchable_separators) {
       auto default_stretchable_size = (is_horizontal() ? image_size().width() : image_size().height()) / 2;
       if (stretchable_size > default_stretchable_size) {

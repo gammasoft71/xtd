@@ -47,7 +47,7 @@ namespace xtd {
         /// @param height The desired height of the icon.
         /// @return A new icon handle.
         /// @warning Internal use only
-        static intptr_t create(const xtd::ustring& filename, int32_t width, int32_t height);
+        static intptr_t create(const xtd::ustring& filename, int32 width, int32 height);
         /// @brief Creates an icon from specified std::stream.
         /// @param stream The stream containing the icon.
         /// @return A new icon handle.
@@ -59,7 +59,7 @@ namespace xtd {
         /// @param height The desired height of the icon.
         /// @return A new icon handle.
         /// @warning Internal use only
-        static intptr_t create(std::istream& stream, int32_t width, int32_t height);
+        static intptr_t create(std::istream& stream, int32 width, int32 height);
         /// @brief Creates an icon from bits.
         /// @param bits The bits containing the icon.
         /// @return A new icon handle.
@@ -73,7 +73,7 @@ namespace xtd {
         /// @return A new icon handle.
         /// @remarks This method is used for creating an icons from an XPM (or XBM) image.
         /// @warning Internal use only
-        static intptr_t create(const char* const* bits, int32_t width, int32_t height);
+        static intptr_t create(const char* const* bits, int32 width, int32 height);
         /// @brief Creates an icon from image.
         /// @param image The image handle containing the icon.
         /// @return A new icon handle.
@@ -85,7 +85,7 @@ namespace xtd {
         /// @param height The desired height of the icon.
         /// @return A new icon handle.
         /// @warning Internal use only
-        static intptr_t create(intptr_t icon, int32_t width, int32_t height);
+        static intptr_t create(intptr_t icon, int32 width, int32 height);
         
         /// @brief Destroys the icon.
         /// @param icon The icon handle to destroy.
@@ -102,13 +102,13 @@ namespace xtd {
         /// @param icon The icon handle .
         /// @return The height of icon.
         /// @warning Internal use only
-        static int32_t get_height(intptr_t icon);
+        static int32 get_height(intptr_t icon);
         
         /// @brief Gets the width of icon.
         /// @param icon The icon handle .
         /// @return The width of icon.
         /// @warning Internal use only
-        static int32_t get_width(intptr_t icon);
+        static int32 get_width(intptr_t icon);
         
         /// @brief Saves icon to the specified output filename.
         /// @param icon The icon handle .

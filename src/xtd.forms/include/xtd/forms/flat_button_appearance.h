@@ -48,24 +48,24 @@ namespace xtd {
       flat_button_appearance& border_color(std::nullptr_t color);
       
       /// @brief Gets a value that specifies the radius, in pixels, of the border around the button.
-      /// @return An int32_t representing the radius, in pixels, of the border around the button.
-      std::optional<int32_t> border_radius() const noexcept;
+      /// @return An int32 representing the radius, in pixels, of the border around the button.
+      std::optional<int32> border_radius() const noexcept;
       /// @brief Sets a value that specifies the radius, in pixels, of the border around the button.
-      /// @param size An int32_t representing the radius, in pixels, of the border around the button.
+      /// @param size An int32 representing the radius, in pixels, of the border around the button.
       /// @return Current xtd::forms::flat_button_appearance.
-      flat_button_appearance& border_radius(int32_t radius);
+      flat_button_appearance& border_radius(int32 radius);
       /// @brief Resets a value that specifies the radius, in pixels, of the border around the button.
       /// @param size nullptr.
       /// @return Current xtd::forms::flat_button_appearance.
       flat_button_appearance& border_radius(std::nullptr_t radius);
       
       /// @brief Gets a value that specifies the size, in pixels, of the border around the button.
-      /// @return An int32_t representing the size, in pixels, of the border around the button.
-      std::optional<int32_t> border_size() const noexcept;
+      /// @return An int32 representing the size, in pixels, of the border around the button.
+      std::optional<int32> border_size() const noexcept;
       /// @brief Sets a value that specifies the size, in pixels, of the border around the button.
-      /// @param size An int32_t representing the size, in pixels, of the border around the button.
+      /// @param size An int32 representing the size, in pixels, of the border around the button.
       /// @return Current xtd::forms::flat_button_appearance.
-      flat_button_appearance& border_size(int32_t size);
+      flat_button_appearance& border_size(int32 size);
       /// @brief Resets a value that specifies the size, in pixels, of the border around the button.
       /// @param size nullptr.
       /// @return Current xtd::forms::flat_button_appearance.
@@ -117,8 +117,8 @@ namespace xtd {
     private:
       struct data {
         std::optional<xtd::drawing::color> border_color;
-        std::optional<int32_t> border_radius;
-        std::optional<int32_t> border_size;
+        std::optional<int32> border_radius;
+        std::optional<int32> border_size;
         std::optional<xtd::drawing::color> checked_back_color;
         std::optional<xtd::drawing::color> mouse_down_back_color;
         std::optional<xtd::drawing::color> mouse_over_back_color;

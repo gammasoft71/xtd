@@ -13,8 +13,8 @@ using namespace xtd;
 using namespace xtd::forms::native;
 
 namespace {
-  static int32_t convert_to_dialog_rsult(uint32_t style, NSModalResponse return_code) {
-    int32_t result = IDOK;
+  static int32 convert_to_dialog_rsult(uint32_t style, NSModalResponse return_code) {
+    int32 result = IDOK;
     if ((style & MB_RETRYCANCEL) == MB_RETRYCANCEL) result = return_code == NSAlertFirstButtonReturn ? IDRETRY : IDCANCEL;
     else if ((style & MB_YESNOCANCEL) == MB_YESNOCANCEL) result = return_code == NSAlertFirstButtonReturn ? IDYES : (return_code == NSAlertSecondButtonReturn ? IDNO : IDCANCEL);
     else if ((style & MB_YESNO) == MB_YESNO) result = return_code == NSAlertFirstButtonReturn ? IDYES : IDNO;
@@ -66,14 +66,14 @@ namespace {
   }
 }
 
-int32_t message_box::show(intptr_t control, const ustring& text, const ustring& caption, uint32_t style, bool display_help_button) {
+int32 message_box::show(intptr_t control, const ustring& text, const ustring& caption, uint32_t style, bool display_help_button) {
   @autoreleasepool {
     NSAlert* alert = create_alert(text, caption, style, display_help_button);
     return convert_to_dialog_rsult(style, [alert runModal]);
   }
 }
 
-void message_box::show_sheet(xtd::delegate<void(int32_t)> on_dialog_closed, intptr_t control, const ustring& text, const ustring& caption, uint32_t style, bool display_help_button) {
+void message_box::show_sheet(xtd::delegate<void(int32)> on_dialog_closed, intptr_t control, const ustring& text, const ustring& caption, uint32_t style, bool display_help_button) {
   @autoreleasepool {
     NSAlert* alert = create_alert(text, caption, style, display_help_button);
     [alert beginSheetModalForWindow:[reinterpret_cast<control_handler*>(control)->control()->GetHandle() window] completionHandler: ^ (NSModalResponse return_code) {

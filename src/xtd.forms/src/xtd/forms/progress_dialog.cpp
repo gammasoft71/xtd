@@ -65,11 +65,11 @@ progress_dialog& progress_dialog::marquee_animation_speed(size_t marquee_animati
   return *this;
 }
 
-int32_t progress_dialog::maximum() const noexcept {
+int32 progress_dialog::maximum() const noexcept {
   return data_->maximum;
 }
 
-progress_dialog& progress_dialog::maximum(int32_t maximum) {
+progress_dialog& progress_dialog::maximum(int32 maximum) {
   if (data_->maximum != maximum) {
     data_->maximum = maximum;
     native::progress_dialog::maximum(data_->handle, data_->maximum);
@@ -91,11 +91,11 @@ progress_dialog& progress_dialog::message(const xtd::ustring& message) {
   return *this;
 }
 
-int32_t progress_dialog::minimum() const noexcept {
+int32 progress_dialog::minimum() const noexcept {
   return data_->minimum;
 }
 
-progress_dialog& progress_dialog::minimum(int32_t minimum) {
+progress_dialog& progress_dialog::minimum(int32 minimum) {
   if (data_->minimum != minimum) {
     data_->minimum = minimum;
     native::progress_dialog::minimum(data_->handle, data_->minimum);
@@ -175,11 +175,11 @@ bool progress_dialog::skipped() const {
   return native::progress_dialog::skipped(data_->handle);
 }
 
-int32_t progress_dialog::step() const noexcept {
+int32 progress_dialog::step() const noexcept {
   return data_->step;
 }
 
-progress_dialog& progress_dialog::step(int32_t step) {
+progress_dialog& progress_dialog::step(int32 step) {
   data_->step = step;
   return *this;
 }
@@ -196,11 +196,11 @@ progress_dialog& progress_dialog::text(const xtd::ustring& text) {
   return *this;
 }
 
-int32_t progress_dialog::value() const noexcept {
+int32 progress_dialog::value() const noexcept {
   return data_->value;
 }
 
-progress_dialog& progress_dialog::value(int32_t value) {
+progress_dialog& progress_dialog::value(int32 value) {
   if (data_->value != value) {
     if (value > data_->maximum) data_->value = data_->maximum;
     else if (value < data_->minimum) data_->value = data_->minimum;
@@ -217,7 +217,7 @@ void progress_dialog::hide() {
   data_->handle = 0;
 }
 
-void progress_dialog::increment(int32_t increment) {
+void progress_dialog::increment(int32 increment) {
   value(data_->value + increment);
 }
 

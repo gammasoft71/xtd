@@ -125,11 +125,11 @@ label& label::image_align(content_alignment value) {
   return *this;
 }
 
-int32_t label::image_index() const noexcept {
+int32 label::image_index() const noexcept {
   return data_->image_index;
 }
 
-label& label::image_index(int32_t value) {
+label& label::image_index(int32 value) {
   if (data_->image_index != value) {
     if (value < -1 || static_cast<size_t>(value) >= data_->image_list.images().size()) throw argument_out_of_range_exception(current_stack_frame_);
     data_->image_index = value;

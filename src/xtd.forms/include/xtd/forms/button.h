@@ -81,19 +81,19 @@ namespace xtd {
       
       /// @brief Gets the auto repeat delay.
       /// @return Auto repeat delay in milliseconds. Default is 300 ms.
-      virtual int32_t auto_repeat_delay() const noexcept;
+      virtual int32 auto_repeat_delay() const noexcept;
       /// @brief Gets the auto repeat delay.
       /// @param auto_repeat_delay Auto repeat delay in milliseconds. Default is 300 ms.
       /// @return This button.
-      virtual button& auto_repeat_delay(int32_t auto_repeat_delay);
+      virtual button& auto_repeat_delay(int32 auto_repeat_delay);
       
       /// @brief Gets the auto repeat interval.
       /// @return Auto repeat interval in milliseconds. Default is 100 ms.
-      virtual int32_t auto_repeat_interval() const noexcept;
+      virtual int32 auto_repeat_interval() const noexcept;
       /// @brief Gets the auto repeat interval.
       /// @param auto_repeat_delay Auto repeat interval in milliseconds. Default is 100 ms.
       /// @return This button.
-      virtual button& auto_repeat_interval(int32_t auto_repeat_interval);
+      virtual button& auto_repeat_interval(int32 auto_repeat_interval);
       
       /// @brief Gets the mode by which the button automatically resizes itself.
       /// @return One of the AutoSizeMode values. The default value is grow_only.
@@ -146,8 +146,8 @@ namespace xtd {
       struct data {
         bool auto_repeat = false;
         timer auto_repeat_timer;
-        int32_t auto_repeat_delay = 300;
-        int32_t auto_repeat_interval = 100;
+        int32 auto_repeat_delay = 300;
+        int32 auto_repeat_interval = 100;
         forms::dialog_result dialog_result = forms::dialog_result::none;
         xtd::forms::visual_styles::push_button_state state = xtd::forms::visual_styles::push_button_state::normal;
       };

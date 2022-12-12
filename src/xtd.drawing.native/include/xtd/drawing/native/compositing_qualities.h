@@ -5,7 +5,7 @@
 #endif
 /// @endcond
 
-#include <cstdint>
+#include <xtd/types.h>
 
 /// @brief Invalid quality.
 /// @par Library
@@ -13,7 +13,7 @@
 /// @ingroup xtd_drawing_native cq
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t CQ_INVALID = -1;
+constexpr xtd::int32 CQ_INVALID = -1;
 
 /// @brief Default quality.
 /// @par Library
@@ -21,7 +21,7 @@ constexpr int32_t CQ_INVALID = -1;
 /// @ingroup xtd_drawing_native cq
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t CQ_DEFAULT_VALUE = 0;
+constexpr xtd::int32 CQ_DEFAULT_VALUE = 0;
 
 /// @brief High speed, low quality.
 /// @par Library
@@ -29,7 +29,7 @@ constexpr int32_t CQ_DEFAULT_VALUE = 0;
 /// @ingroup xtd_drawing_native cq
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t CQ_HIGH_SPEED = 1;
+constexpr xtd::int32 CQ_HIGH_SPEED = 1;
 
 /// @brief High quality, low speed compositing.
 /// @par Library
@@ -37,7 +37,7 @@ constexpr int32_t CQ_HIGH_SPEED = 1;
 /// @ingroup xtd_drawing_native cq
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t CQ_HIGH_QUALITY = 2;
+constexpr xtd::int32 CQ_HIGH_QUALITY = 2;
 
 /// @brief Gamma correction is used.
 /// @par Library
@@ -45,7 +45,7 @@ constexpr int32_t CQ_HIGH_QUALITY = 2;
 /// @ingroup xtd_drawing_native cq
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t CQ_GAMMA_CORRECTED = 3;
+constexpr xtd::int32 CQ_GAMMA_CORRECTED = 3;
 
 /// @brief Assume linear values.
 /// @par Library
@@ -53,4 +53,4 @@ constexpr int32_t CQ_GAMMA_CORRECTED = 3;
 /// @ingroup xtd_drawing_native cq
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t CQ_ASSUME_LINEAR = 4;
+constexpr xtd::int32 CQ_ASSUME_LINEAR = 4;

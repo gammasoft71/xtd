@@ -46,17 +46,17 @@ namespace xtd {
         /// @param control Control window handle.
         /// @param maximum The maximum value of the range.
         /// @warning Internal use only
-        static void maximum(intptr_t control, int32_t maximum);
+        static void maximum(intptr_t control, int32 maximum);
         /// @brief Sets the minimum value of the range of the control.
         /// @param control Control window handle.
         /// @param minimum The minimum value of the range.
         /// @warning Internal use only
-        static void minimum(intptr_t control, int32_t minimum);
+        static void minimum(intptr_t control, int32 minimum);
         /// @brief Sets the current position of the progress bar.
         /// @param control Control window handle.
         /// @param value The position within the range of the progress bar.
         /// @warning Internal use only
-        static void value(intptr_t control, int32_t value);
+        static void value(intptr_t control, int32 value);
         /// @}
       };
     }

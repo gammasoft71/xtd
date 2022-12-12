@@ -26,11 +26,11 @@ std::chrono::milliseconds timer::interval() const noexcept {
   return std::chrono::milliseconds(data_->interval);
 }
 
-int32_t timer::interval_milliseconds() const noexcept {
+int32 timer::interval_milliseconds() const noexcept {
   return data_->interval;
 }
 
-void timer::interval_milliseconds(int32_t interval) {
+void timer::interval_milliseconds(int32 interval) {
   if (data_->interval != interval) {
     data_->interval = interval;
     if (data_->enabled == true) restart();

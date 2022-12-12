@@ -148,7 +148,7 @@ forms::create_params text_box::create_params() const noexcept {
 }
 
 drawing::size text_box::measure_control() const noexcept {
-  return drawing::size(client_size().width(), static_cast<int32_t>(font().get_height()) + 2 + (border_style() == border_style::none ? 0 : 4));
+  return drawing::size(client_size().width(), static_cast<int32>(font().get_height()) + 2 + (border_style() == border_style::none ? 0 : 4));
 }
 
 void text_box::append_text(const xtd::ustring& value) {
@@ -215,8 +215,8 @@ void text_box::wm_key_char(message& message) {
       key_event_args key_event_args(static_cast<keys>(message.wparam()));
       on_key_down(key_event_args);
       message.result(key_event_args.suppress_key_press());
-    } else if (message.msg() == WM_CHAR && std::iscntrl(static_cast<int32_t>(message.wparam())) == 0) {
-      key_press_event_args key_event_args(static_cast<int32_t>(message.wparam()));
+    } else if (message.msg() == WM_CHAR && std::iscntrl(static_cast<int32>(message.wparam())) == 0) {
+      key_press_event_args key_event_args(static_cast<int32>(message.wparam()));
       set_text(control::text() + xtd::ustring::format("{}", key_event_args.key_char()));
       native::text_box::append(handle(), xtd::ustring::format("{}", data_->password_char));
       message.result(true);

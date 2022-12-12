@@ -172,7 +172,7 @@ void form::set_region(intptr_t control, intptr_t region) {
   static_cast<wxNonOwnedWindow*>(reinterpret_cast<control_handler*>(control)->control())->SetShape(*reinterpret_cast<wxRegion*>(region));
 }
 
-int32_t form::show_dialog(intptr_t control) {
+int32 form::show_dialog(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -197,7 +197,7 @@ void form::show_sheet(intptr_t control) {
   #endif
 }
 
-int32_t form::show_sheet_dialog(intptr_t control) {
+int32 form::show_sheet_dialog(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -207,7 +207,7 @@ int32_t form::show_sheet_dialog(intptr_t control) {
   auto dialog = static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control());
   #if defined(__APPLE__)
   if (!dialog->GetParent()) return dialog->ShowModal();
-  int32_t result = wxID_ANY;
+  int32 result = wxID_ANY;
   dialog->ShowWindowModal();
   dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [&](wxWindowModalDialogEvent & event) {
     dialog->Unlink();
@@ -225,7 +225,7 @@ int32_t form::show_sheet_dialog(intptr_t control) {
   #endif
 }
 
-void form::end_dialog(intptr_t control, int32_t result) {
+void form::end_dialog(intptr_t control, int32 result) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

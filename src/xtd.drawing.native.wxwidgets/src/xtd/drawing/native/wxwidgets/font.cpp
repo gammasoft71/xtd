@@ -13,7 +13,7 @@ using namespace xtd::drawing::native;
 bool __enable_font_size_correction__ = true;
 
 namespace {
-  int32_t dpi() {
+  int32 dpi() {
     if (!wxTheApp) return 72;
     wxScreenDC hdc;
     wxSize dpi = hdc.GetPPI();
@@ -56,7 +56,7 @@ void font::destroy(intptr_t font) {
   delete reinterpret_cast<wxFont*>(font);
 }
 
-int32_t font::dpi() {
+int32 font::dpi() {
   toolkit::initialize(); // Must be first
   return ::dpi();
 }

@@ -13,7 +13,7 @@
 /// @ingroup xtd_drawing_native mo
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t MO_PREPEEND = 0;
+constexpr int32 MO_PREPEEND = 0;
 
 /// @brief The new operation is applied after the old operation.
 /// @par Library
@@ -21,4 +21,4 @@ constexpr int32_t MO_PREPEEND = 0;
 /// @ingroup xtd_drawing_native mo
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t MO_APPEND = 1;
+constexpr int32 MO_APPEND = 1;

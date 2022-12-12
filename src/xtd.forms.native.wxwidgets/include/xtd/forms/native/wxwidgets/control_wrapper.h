@@ -75,7 +75,7 @@ namespace xtd {
         
         bool AcceptsFocus() const override;
         
-        intptr_t def_wnd_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle);
+        intptr_t def_wnd_proc(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle);
         
         bool ProcessEvent(wxEvent& event) override;
         
@@ -91,7 +91,7 @@ namespace xtd {
         void def_process_event(wxEvent& event);
         
         intptr_t get_control_handle_for_event(wxEvent& event, control_handler* handler);
-        int32_t get_virtual_keys(const wxMouseState& mouse_state);
+        int32 get_virtual_keys(const wxMouseState& mouse_state);
         
         void send_mouse_message(uint32_t message, size_t virtual_key, wxEvent& event);
         static std::string to_string(const wxEventType& eventType);

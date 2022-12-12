@@ -7,7 +7,7 @@ using namespace xtd::forms;
 horizontal_control_layout_style::horizontal_control_layout_style(float width) : width_(width) {
 }
 
-horizontal_control_layout_style::horizontal_control_layout_style(int32_t width) : width_(static_cast<float>(width)) {
+horizontal_control_layout_style::horizontal_control_layout_style(int32 width) : width_(static_cast<float>(width)) {
 }
 
 horizontal_control_layout_style::horizontal_control_layout_style(xtd::forms::size_type size_type) : control_layout_style(size_type) {
@@ -16,7 +16,7 @@ horizontal_control_layout_style::horizontal_control_layout_style(xtd::forms::siz
 horizontal_control_layout_style::horizontal_control_layout_style(float width, xtd::forms::size_type size_type) : control_layout_style(size_type), width_(width) {
 }
 
-horizontal_control_layout_style::horizontal_control_layout_style(int32_t width, xtd::forms::size_type size_type) : control_layout_style(size_type), width_(static_cast<float>(width)) {
+horizontal_control_layout_style::horizontal_control_layout_style(int32 width, xtd::forms::size_type size_type) : control_layout_style(size_type), width_(static_cast<float>(width)) {
 }
 
 horizontal_control_layout_style::horizontal_control_layout_style(bool expanded) : control_layout_style(expanded) {
@@ -25,7 +25,7 @@ horizontal_control_layout_style::horizontal_control_layout_style(bool expanded) 
 horizontal_control_layout_style::horizontal_control_layout_style(float width, bool expanded) : control_layout_style(expanded), width_(width) {
 }
 
-horizontal_control_layout_style::horizontal_control_layout_style(int32_t width, bool expanded) : control_layout_style(expanded), width_(static_cast<float>(width)) {
+horizontal_control_layout_style::horizontal_control_layout_style(int32 width, bool expanded) : control_layout_style(expanded), width_(static_cast<float>(width)) {
 }
 
 horizontal_control_layout_style::horizontal_control_layout_style(xtd::forms::content_alignment align) : control_layout_style(align) {
@@ -34,7 +34,7 @@ horizontal_control_layout_style::horizontal_control_layout_style(xtd::forms::con
 horizontal_control_layout_style::horizontal_control_layout_style(float width, xtd::forms::content_alignment align) : control_layout_style(align), width_(width) {
 }
 
-horizontal_control_layout_style::horizontal_control_layout_style(int32_t width, xtd::forms::content_alignment align) : control_layout_style(align), width_(static_cast<float>(width)) {
+horizontal_control_layout_style::horizontal_control_layout_style(int32 width, xtd::forms::content_alignment align) : control_layout_style(align), width_(static_cast<float>(width)) {
 }
 
 horizontal_control_layout_style::horizontal_control_layout_style(xtd::forms::size_type size_type, bool expanded) : control_layout_style(size_type, expanded) {
@@ -43,7 +43,7 @@ horizontal_control_layout_style::horizontal_control_layout_style(xtd::forms::siz
 horizontal_control_layout_style::horizontal_control_layout_style(float width, xtd::forms::size_type size_type, bool expanded) : control_layout_style(size_type, expanded), width_(width) {
 }
 
-horizontal_control_layout_style::horizontal_control_layout_style(int32_t width, xtd::forms::size_type size_type, bool expanded) : control_layout_style(size_type, expanded), width_(static_cast<float>(width)) {
+horizontal_control_layout_style::horizontal_control_layout_style(int32 width, xtd::forms::size_type size_type, bool expanded) : control_layout_style(size_type, expanded), width_(static_cast<float>(width)) {
 }
 
 horizontal_control_layout_style::horizontal_control_layout_style(xtd::forms::size_type size_type, xtd::forms::content_alignment align) : control_layout_style(size_type, align) {
@@ -52,7 +52,7 @@ horizontal_control_layout_style::horizontal_control_layout_style(xtd::forms::siz
 horizontal_control_layout_style::horizontal_control_layout_style(float width, xtd::forms::size_type size_type, xtd::forms::content_alignment align) : control_layout_style(size_type, align), width_(width) {
 }
 
-horizontal_control_layout_style::horizontal_control_layout_style(int32_t width, xtd::forms::size_type size_type, xtd::forms::content_alignment align) : control_layout_style(size_type, align), width_(static_cast<float>(width)) {
+horizontal_control_layout_style::horizontal_control_layout_style(int32 width, xtd::forms::size_type size_type, xtd::forms::content_alignment align) : control_layout_style(size_type, align), width_(static_cast<float>(width)) {
 }
 
 horizontal_control_layout_style::horizontal_control_layout_style(xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align) : control_layout_style(size_type, expanded, align) {
@@ -61,7 +61,7 @@ horizontal_control_layout_style::horizontal_control_layout_style(xtd::forms::siz
 horizontal_control_layout_style::horizontal_control_layout_style(float width, xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align) : control_layout_style(size_type, expanded, align), width_(width) {
 }
 
-horizontal_control_layout_style::horizontal_control_layout_style(int32_t width, xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align) : control_layout_style(size_type, expanded, align), width_(static_cast<float>(width)) {
+horizontal_control_layout_style::horizontal_control_layout_style(int32 width, xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align) : control_layout_style(size_type, expanded, align), width_(static_cast<float>(width)) {
 }
 
 horizontal_control_layout_style::horizontal_control_layout_style(bool expanded, xtd::forms::content_alignment align) : control_layout_style(expanded, align) {
@@ -70,7 +70,7 @@ horizontal_control_layout_style::horizontal_control_layout_style(bool expanded, 
 horizontal_control_layout_style::horizontal_control_layout_style(float width, bool expanded, xtd::forms::content_alignment align) : control_layout_style(expanded, align), width_(width) {
 }
 
-horizontal_control_layout_style::horizontal_control_layout_style(int32_t width, bool expanded, xtd::forms::content_alignment align) : control_layout_style(expanded, align), width_(static_cast<float>(width)) {
+horizontal_control_layout_style::horizontal_control_layout_style(int32 width, bool expanded, xtd::forms::content_alignment align) : control_layout_style(expanded, align), width_(static_cast<float>(width)) {
 }
 
 std::optional<float> horizontal_control_layout_style::width() const noexcept {

@@ -76,7 +76,7 @@ void matrix::multiply(const xtd::drawing::drawing2d::matrix& matrix) {
 }
 
 void matrix::multiply(const xtd::drawing::drawing2d::matrix& matrix, xtd::drawing::drawing2d::matrix_order order) {
-  native::matrix::multiply(handle(), matrix.handle(), static_cast<int32_t>(order));
+  native::matrix::multiply(handle(), matrix.handle(), static_cast<int32>(order));
 }
 
 void matrix::reset() {
@@ -88,7 +88,7 @@ void matrix::rotate(float angle) {
 }
 
 void matrix::rotate(float angle, xtd::drawing::drawing2d::matrix_order order) {
-  native::matrix::rotate(handle(), angle, static_cast<int32_t>(order));
+  native::matrix::rotate(handle(), angle, static_cast<int32>(order));
 }
 
 void matrix::rotate_at(float angle, const point_f& point) {
@@ -96,7 +96,7 @@ void matrix::rotate_at(float angle, const point_f& point) {
 }
 
 void matrix::rotate_at(float angle, const point_f& point, xtd::drawing::drawing2d::matrix_order order) {
-  native::matrix::rotate_at(handle(), angle, point.x(), point.y(), static_cast<int32_t>(order));
+  native::matrix::rotate_at(handle(), angle, point.x(), point.y(), static_cast<int32>(order));
 }
 
 void matrix::scale(float scale_x, float scale_y) {
@@ -104,7 +104,7 @@ void matrix::scale(float scale_x, float scale_y) {
 }
 
 void matrix::scale(float scale_x, float scale_y, xtd::drawing::drawing2d::matrix_order order) {
-  native::matrix::scale(handle(), scale_x, scale_y, static_cast<int32_t>(order));
+  native::matrix::scale(handle(), scale_x, scale_y, static_cast<int32>(order));
 }
 
 void matrix::shear(float scale_x, float scale_y) {
@@ -112,12 +112,12 @@ void matrix::shear(float scale_x, float scale_y) {
 }
 
 void matrix::shear(float scale_x, float scale_y, xtd::drawing::drawing2d::matrix_order order) {
-  native::matrix::shear(handle(), scale_x, scale_y, static_cast<int32_t>(order));
+  native::matrix::shear(handle(), scale_x, scale_y, static_cast<int32>(order));
 }
 
 void matrix::transform_points(std::vector<xtd::drawing::point>& points) {
   for (auto& point : points) {
-    int32_t tx = point.x(), ty = point.y();
+    int32 tx = point.x(), ty = point.y();
     native::matrix::transform_point(handle(), tx, ty);
     point.x(tx);
     point.y(ty);
@@ -134,7 +134,7 @@ void matrix::transform_points(std::vector<xtd::drawing::point_f>& points) {
 }
 
 void matrix::transform_vectors(std::vector<xtd::drawing::point>& points) {
-  vector<pair<int32_t, int32_t>> tr_points;
+  vector<pair<int32, int32>> tr_points;
   for (auto point : points)
     tr_points.emplace_back(point.x(), point.y());
   native::matrix::transform_vectors(handle(), tr_points);
@@ -158,11 +158,11 @@ void matrix::translate(float offset_x, float offset_y) {
 }
 
 void matrix::translate(float offset_x, float offset_y, xtd::drawing::drawing2d::matrix_order order) {
-  native::matrix::translate(handle(), offset_x, offset_y, static_cast<int32_t>(order));
+  native::matrix::translate(handle(), offset_x, offset_y, static_cast<int32>(order));
 }
 
 void matrix::vector_transform_points(std::vector<xtd::drawing::point>& points) {
-  vector<pair<int32_t, int32_t>> tr_points;
+  vector<pair<int32, int32>> tr_points;
   for (auto point : points)
     tr_points.emplace_back(point.x(), point.y());
   native::matrix::vector_transform_points(handle(), tr_points);
@@ -182,5 +182,5 @@ void matrix::init_from_rect_3points(const rectangle_f& rect, const point_f pt1, 
   auto m22 = (pt3.y() - pt1.y()) / rect.height();
   
   data_->handle = native::matrix::create(m11, m12, m21, m22, pt1.x(), pt1.y());
-  native::matrix::translate(handle(), -rect.x(), -rect.y(), static_cast<int32_t>(matrix_order::prepend));
+  native::matrix::translate(handle(), -rect.x(), -rect.y(), static_cast<int32>(matrix_order::prepend));
 }

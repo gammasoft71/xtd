@@ -44,9 +44,9 @@ namespace xtd {
           return wx_style;
         }
         
-        std::vector<int32_t> panel_styles;
+        std::vector<int32> panel_styles;
         std::vector<wxString> panel_texts;
-        std::vector<int32_t> panel_widths;
+        std::vector<int32> panel_widths;
       };
     }
   }

@@ -260,9 +260,9 @@ namespace xtd {
           /// | 0xA300 | property_tag_exif_file_Source                 |
           /// | 0xA301 | property_tag_exif_scene_type                  |
           /// | 0xA302 | property_tag_exif_cfa_pattern                 |
-          int32_t id = 0;
+          int32 id = 0;
           /// @brief The length (in bytes) of the value property.
-          int32_t len = 0;
+          int32 len = 0;
           /// @brief An integer that defines the type of data contained in the value property.
           /// @remarks The following table shows integers and the types they represent.
           /// | Integer | Represented Type                                                                                                                                                                                                                                            |
@@ -275,7 +275,7 @@ namespace xtd {
           /// | 6       | Specifies that Value is an array of bytes that can hold values of any data type.                                                                                                                                                                            |
           /// | 7       | Specifies that Value is an array of signed long (32-bit) integers.                                                                                                                                                                                          |
           /// | 10      | Specifies that Value is an array of pairs of signed long integers. Each pair represents a fraction; the first integer is the numerator and the second integer is the denominator.                                                                           |
-          int32_t type = 1;
+          int32 type = 1;
           /// @brief the value of the property item.
           std::vector<xtd::byte> value;
         };
@@ -292,7 +292,7 @@ namespace xtd {
         /// * 0x00000002 The colors in the array are grayscale values.
         /// * 0x00000004 The colors in the array are halftone values.
         /// @warning Internal use only
-        static void color_palette(intptr_t image, std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>& entries, int32_t& flags);
+        static void color_palette(intptr_t image, std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>& entries, int32& flags);
         
         /// @brief Creates an image from specified filename and get the frame_solution collection.
         /// @param filename The filename of the image.
@@ -320,13 +320,13 @@ namespace xtd {
         /// @param width The width for the empty image.
         /// @param height The height for the empty image.
         /// @warning Internal use only
-        static intptr_t create(int32_t width, int32_t height);
+        static intptr_t create(int32 width, int32 height);
         /// @brief Creates and rescales an image from specified image and size.
         /// @param image The image source handle.
         /// @param width The width for the new image.
         /// @param height The height for the new image.
         /// @warning Internal use only
-        static intptr_t create(intptr_t image, int32_t width, int32_t height);
+        static intptr_t create(intptr_t image, int32 width, int32 height);
         /// @brief Creates and crops an image from specified image, position and size.
         /// @param image The image source handle.
         /// @param left The left for the new image.
@@ -334,7 +334,7 @@ namespace xtd {
         /// @param width The width for the new image.
         /// @param height The height for the new image.
         /// @warning Internal use only
-        static intptr_t create(intptr_t image, int32_t left, int32_t top, int32_t width, int32_t height);
+        static intptr_t create(intptr_t image, int32 left, int32 top, int32 width, int32 height);
         
         /// @brief Destroys the image.
         /// @param image The image handle to destroy.
@@ -355,16 +355,16 @@ namespace xtd {
         
         /// @brief Gets the width and height of this image.
         /// @param image The image handle.
-        /// @param width A int32_t that represents the width of the image.
-        /// @param height A int32_t that represents the height of the image.
+        /// @param width A int32 that represents the width of the image.
+        /// @param height A int32 that represents the height of the image.
         /// @warning Internal use only
-        static void physical_dimension(intptr_t image, int32_t& width, int32_t& height);
+        static void physical_dimension(intptr_t image, int32& width, int32& height);
         
         /// @brief Gets IDs of the property items stored in the image.
         /// @param image The image handle.
         /// @return An array of the property IDs, one for each property item stored in the image.
         /// @warning Internal use only
-        static std::vector<int32_t> property_id_list(intptr_t image);
+        static std::vector<int32> property_id_list(intptr_t image);
         
         /// @brief Gets all the property items (pieces of metadata) stored in the image.
         /// @param image The image handle.
@@ -389,7 +389,7 @@ namespace xtd {
         /// @param width The width, in pixels, of the image.
         /// @param height The height, in pixels, of the image.
         /// @warning Internal use only
-        static void size(intptr_t image, int32_t& width, int32_t& height);
+        static void size(intptr_t image, int32& width, int32& height);
         
         /// @brief Gets the vertical resolution, in pixels per inch, of the image.
         /// @param image The image handle.
@@ -406,13 +406,13 @@ namespace xtd {
         /// @param g The green component of the color of the specified pixel.
         /// @param b The blue component of the color of the specified pixel.
         /// @warning Internal use only
-        static void get_pixel(intptr_t image, int32_t x, int32_t y, xtd::byte& a, xtd::byte& r, xtd::byte& g, xtd::byte& b);
+        static void get_pixel(intptr_t image, int32 x, int32 y, xtd::byte& a, xtd::byte& r, xtd::byte& g, xtd::byte& b);
         
         /// @brief Rotates, flips, or rotates and flips the image.
         /// @param image The image handle.
         /// @param rotate_flip_type A value that specifies the type of rotation and flip to apply to the image (see rotate_flip_types.h for more information).
         /// @warning Internal use only
-        static void rotate_flip(intptr_t image, int32_t rotate_flip_type);
+        static void rotate_flip(intptr_t image, int32 rotate_flip_type);
         
         /// @brief Sets the color of the specified pixel in the image.
         /// @param image The image handle.
@@ -423,7 +423,7 @@ namespace xtd {
         /// @param g The green component of the color of the specified pixel.
         /// @param b The blue component of the color of the specified pixel.
         /// @warning Internal use only
-        static void set_pixel(intptr_t image, int32_t x, int32_t y, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b);
+        static void set_pixel(intptr_t image, int32 x, int32 y, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b);
         
         /// @brief Saves image to the specified output filename.
         /// @param image The icon handle .

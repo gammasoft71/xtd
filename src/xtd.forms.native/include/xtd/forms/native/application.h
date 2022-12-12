@@ -104,7 +104,7 @@ namespace xtd {
         /// @brief Register a specified message filter from the message pump of the application.
         /// @param message_filter A message filter delegate to register.
         /// @warning Internal use only
-        static void register_message_filter(const delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& message_filter);
+        static void register_message_filter(const delegate<bool(intptr_t, int32, intptr_t, intptr_t, intptr_t)>& message_filter);
         /// @brief Register a specified thread_exception from the message pump of the application.
         /// @param thread_exception A thread exception delegate to register.
         /// @remarks The thread exception delegate return true if the user want quit application after exception.
@@ -113,7 +113,7 @@ namespace xtd {
         /// @brief Register a specified wnd proc from the message pump of the application.
         /// @param wnd_proc A wnd proc delegate to register.
         /// @warning Internal use only
-        static void register_wnd_proc(const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);
+        static void register_wnd_proc(const delegate<intptr_t(intptr_t, int32, intptr_t, intptr_t, intptr_t)>& wnd_proc);
         /// @brief Shuts down the application and starts a new instance immediately.
         /// @param exit_after_restart If this option is enabled, the current application will be closed after the new application is created.
         /// @warning Internal use only

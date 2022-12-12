@@ -81,11 +81,11 @@ namespace xtd {
       
       /// @brief Gets the initial height of the control.
       /// @return The numeric value that represents the initial height of the control.
-      int32_t height() const noexcept;
+      int32 height() const noexcept;
       /// @brief Sets the initial height of the control.
       /// @param height The numeric value that represents the initial height of the control.
       /// @return Current create_param instance.
-      create_params& height(int32_t height);
+      create_params& height(int32 height);
       
       /// @brief Gets the initial location of the control.
       /// @return The xtd::drawing::point that represents the initial location of the control.
@@ -131,27 +131,27 @@ namespace xtd {
       
       /// @brief Gets the initial width of the control.
       /// @return The numeric value that represents the initial width of the control.
-      int32_t width() const noexcept;
+      int32 width() const noexcept;
       /// @brief Sets the initial width of the control.
       /// @param height The numeric value that represents the initial width of the control.
       /// @return Current create_param instance.
-      create_params& width(int32_t width);
+      create_params& width(int32 width);
       
       /// @brief Gets the initial left position of the control.
       /// @return The numeric value that represents the initial left position of the control.
-      int32_t x() const noexcept;
+      int32 x() const noexcept;
       /// @brief Sets the initial left position of the control.
       /// @param x The numeric value that represents the initial left position of the control.
       /// @return Current create_param instance.
-      create_params& x(int32_t x);
+      create_params& x(int32 x);
       
       /// @brief Gets the initial top position of the control.
       /// @return The numeric value that represents the initial top position of the control.
-      int32_t y() const noexcept;
+      int32 y() const noexcept;
       /// @brief Sets the initial top position of the control.
       /// @param x The numeric value that represents the initial top position of the control.
       /// @return Current create_param instance.
-      create_params& y(int32_t y);
+      create_params& y(int32 y);
       /// @}
       
       /// @name Methods

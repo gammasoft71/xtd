@@ -99,20 +99,20 @@ namespace xtd {
       virtual const dot_matrix_display& dots(const dots_collection& dots);
       
       /// @brief Gets the matrix size. Number of height dots.
-      /// @return A int32_t represent the height dots of the matrix. The default is 7.
-      virtual int32_t matrix_height() const noexcept;
+      /// @return A int32 represent the height dots of the matrix. The default is 7.
+      virtual int32 matrix_height() const noexcept;
       /// @brief Sets the matrix size. Number of height dots.
-      /// @param value A int32_t represent the height dots of the matrix. The default is 7.
+      /// @param value A int32 represent the height dots of the matrix. The default is 7.
       /// @return Current dot_matrix_display.
-      virtual void matrix_height(int32_t value);
+      virtual void matrix_height(int32 value);
       
       /// @brief Gets the matrix size. Number height dots.
-      /// @return A int32_t that represent the width dots of the matrix. The default is 7.
-      virtual int32_t matrix_width() const noexcept;
+      /// @return A int32 that represent the width dots of the matrix. The default is 7.
+      virtual int32 matrix_width() const noexcept;
       /// @brief Sets the matrix size. Number height dots.
-      /// @param value A int32_t that represent the width dots of the matrix. The default is 7.
+      /// @param value A int32 that represent the width dots of the matrix. The default is 7.
       /// @return Current dot_matrix_display.
-      virtual void matrix_width(int32_t value);
+      virtual void matrix_width(int32 value);
       
       /// @brief Gets the matrix size. Number of width and height dots.
       /// @return A xtd::drawing::point that represent the width and height dots of the matrix. The default is {7, 7}.
@@ -131,12 +131,12 @@ namespace xtd {
       virtual dot_matrix_display& show_back_dot(bool value);
       
       /// @brief Gets thickness of dot.
-      /// @return A int32_t that represent the dot thickness.
-      virtual int32_t thickness() const noexcept;
+      /// @return A int32 that represent the dot thickness.
+      virtual int32 thickness() const noexcept;
       /// @brief Sets thickness of dot.
-      /// @param value A int32_t that represent the dot thickness.
+      /// @param value A int32 that represent the dot thickness.
       /// @return Current dot_matrix_display.
-      virtual dot_matrix_display& thickness(int32_t value);
+      virtual dot_matrix_display& thickness(int32 value);
       /// @}
       
       /// @name Methods
@@ -198,7 +198,7 @@ namespace xtd {
         std::optional<drawing::color> back_dot_color;
         double back_dot_opacity = 0.95;
         forms::dot_matrix_style dot_matrix_style = forms::dot_matrix_style::standard;
-        std::optional<int32_t> thickness;
+        std::optional<int32> thickness;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

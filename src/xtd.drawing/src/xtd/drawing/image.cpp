@@ -69,12 +69,12 @@ image::image(const char* const* bits) {
   update_properties();
 }
 
-image::image(int32_t width, int32_t height) {
+image::image(int32 width, int32 height) {
   data_->handle_ = native::image::create(width, height);
   update_properties();
 }
 
-image::image(const image& image, int32_t width, int32_t height) {
+image::image(const image& image, int32 width, int32 height) {
   data_->handle_ = native::image::create(image.handle(), width, height);
   update_properties();
 }
@@ -89,8 +89,8 @@ image::~image() {
     native::image::destroy(data_->handle_);
 }
 
-int32_t image::flags() const noexcept {
-  return static_cast<int32_t>(data_->flags_);
+int32 image::flags() const noexcept {
+  return static_cast<int32>(data_->flags_);
 }
 
 vector<guid> image::frame_dimentions_list() const noexcept {
@@ -104,7 +104,7 @@ intptr_t image::handle() const noexcept {
   return data_->handle_;
 }
 
-int32_t image::height() const noexcept {
+int32 image::height() const noexcept {
   return data_->size_.height();
 }
 
@@ -128,7 +128,7 @@ imaging::pixel_format image::pixel_format() const noexcept {
   return data_->pixel_format_;
 }
 
-const std::vector<int32_t>& image::property_id_list() const noexcept {
+const std::vector<int32>& image::property_id_list() const noexcept {
   return data_->property_id_list_;
 }
 
@@ -156,7 +156,7 @@ float image::vertical_resolution() const noexcept {
   return data_->vertical_resolution_;
 }
 
-int32_t image::width() const noexcept {
+int32 image::width() const noexcept {
   return data_->size_.width();
 }
 
@@ -195,17 +195,17 @@ size_t image::get_frame_count(const xtd::drawing::imaging::frame_dimension& dime
   throw argument_exception(csf_);
 }
 
-int32_t image::get_pixel_format_size(xtd::drawing::imaging::pixel_format pixfmt) noexcept {
-  return (static_cast<int32_t>(pixfmt) >> 8) & 0xFF;
+int32 image::get_pixel_format_size(xtd::drawing::imaging::pixel_format pixfmt) noexcept {
+  return (static_cast<int32>(pixfmt) >> 8) & 0xFF;
 }
 
-xtd::drawing::imaging::property_item image::get_property_item(int32_t propid) {
+xtd::drawing::imaging::property_item image::get_property_item(int32 propid) {
   for (auto property_tiem : data_->property_items_)
     if (property_tiem.id() == propid) return property_tiem;
   throw argument_exception(csf_);
 }
 
-xtd::drawing::image image::get_thmbnail_image(int32_t thumb_width, int32_t thunb_height) noexcept {
+xtd::drawing::image image::get_thmbnail_image(int32 thumb_width, int32 thunb_height) noexcept {
   return image(*this, thumb_width, thunb_height);
 }
 
@@ -222,7 +222,7 @@ bool image::is_extended_pixel_format(xtd::drawing::imaging::pixel_format pixfmt)
 }
 
 void image::rotate_flip(xtd::drawing::rotate_flip_type rotate_flip_type) {
-  native::image::rotate_flip(handle(), static_cast<int32_t>(rotate_flip_type));
+  native::image::rotate_flip(handle(), static_cast<int32>(rotate_flip_type));
 }
 
 void image::save(const ustring& filename) const {
@@ -249,7 +249,7 @@ void image::update_properties() {
     
   data_->pixel_format_ = static_cast<imaging::pixel_format>(native::image::pixel_format(data_->handle_));
   
-  int32_t physical_width, physical_height;
+  int32 physical_width, physical_height;
   native::image::physical_dimension(data_->handle_, physical_width, physical_height);
   data_->physical_dimension_ = drawing::size_f(static_cast<float>(physical_width), static_cast<float>(physical_height));
   
@@ -265,7 +265,7 @@ void image::update_properties() {
   
   data_->raw_format_ = to_image_format(native::image::raw_format(data_->handle_));
   
-  int32_t width, height;
+  int32 width, height;
   native::image::size(data_->handle_, width, height);
   data_->size_ = drawing::size(width, height);
   

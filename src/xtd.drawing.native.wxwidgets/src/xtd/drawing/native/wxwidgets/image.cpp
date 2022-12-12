@@ -115,10 +115,10 @@ namespace {
   }
 }
 
-void image::color_palette(intptr_t image, std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>& entries, int32_t& flags) {
+void image::color_palette(intptr_t image, std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>& entries, int32& flags) {
   wxPalette palette = reinterpret_cast<wxImage*>(image)->GetPalette();
   entries.clear();
-  for (int32_t index = 0; index < palette.GetColoursCount(); index++) {
+  for (int32 index = 0; index < palette.GetColoursCount(); index++) {
     xtd::byte a = 255, r = 0, g = 0, b = 0;
     palette.GetRGB(index, &r, &g, &b);
     entries.push_back({a, r, g, b});
@@ -146,17 +146,17 @@ intptr_t image::create(const char* const* bits) {
   return reinterpret_cast<intptr_t>(new wxImage(bits));
 }
 
-intptr_t image::create(int32_t width, int32_t height) {
+intptr_t image::create(int32 width, int32 height) {
   toolkit::initialize(); // Must be first
   wxImage* result = new wxImage(width, height);
   result->InitAlpha();
-  for (int32_t y = 0; y < height; y++)
-    for (int32_t x = 0; x < width; x++)
+  for (int32 y = 0; y < height; y++)
+    for (int32 x = 0; x < width; x++)
       result->SetAlpha(x, y, 0);
   return reinterpret_cast<intptr_t>(result);
 }
 
-intptr_t image::create(intptr_t image, int32_t width, int32_t height) {
+intptr_t image::create(intptr_t image, int32 width, int32 height) {
   toolkit::initialize(); // Must be first
   if (image == 0) return 0;
   wxImage* result = new wxImage(*reinterpret_cast<wxImage*>(image));
@@ -168,7 +168,7 @@ intptr_t image::create(intptr_t image, int32_t width, int32_t height) {
   return reinterpret_cast<intptr_t>(result);
 }
 
-intptr_t image::create(intptr_t image, int32_t left, int32_t top, int32_t width, int32_t height) {
+intptr_t image::create(intptr_t image, int32 left, int32 top, int32 width, int32 height) {
   toolkit::initialize(); // Must be first
   if (image == 0) return 0;
   wxImage* result = new wxImage(reinterpret_cast<wxImage*>(image)->GetSubImage({left, top, width, height}));
@@ -200,12 +200,12 @@ float image::horizontal_resolution(intptr_t image) {
   float horizontal_resolution = xtd::ustring::parse<float>(xtd::convert_string::to_string(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONX).c_str().AsWChar()));
   if (!reinterpret_cast<wxImage*>(image)->HasOption(wxIMAGE_OPTION_RESOLUTIONUNIT))
     return horizontal_resolution;
-  if (xtd::ustring::parse<int32_t>(xtd::convert_string::to_string(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONUNIT).c_str().AsWChar())) == wxIMAGE_RESOLUTION_CM)
+  if (xtd::ustring::parse<int32>(xtd::convert_string::to_string(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONUNIT).c_str().AsWChar())) == wxIMAGE_RESOLUTION_CM)
     horizontal_resolution *= 2.54f;
   return horizontal_resolution;
 }
 
-void image::physical_dimension(intptr_t image, int32_t& width, int32_t& height) {
+void image::physical_dimension(intptr_t image, int32& width, int32& height) {
   width = reinterpret_cast<wxImage*>(image)->GetWidth();
   height = reinterpret_cast<wxImage*>(image)->GetHeight();
 }
@@ -215,7 +215,7 @@ size_t image::pixel_format(intptr_t image) {
   return 0;
 }
 
-std::vector<int32_t> image::property_id_list(intptr_t image) {
+std::vector<int32> image::property_id_list(intptr_t image) {
   /// @todo see how to get property id list with wxWidgets.
   return {};
 }
@@ -229,7 +229,7 @@ size_t image::raw_format(intptr_t image) {
   return to_raw_format(reinterpret_cast<wxImage*>(image)->GetType());
 }
 
-void image::size(intptr_t image, int32_t& width, int32_t& height) {
+void image::size(intptr_t image, int32& width, int32& height) {
   width = reinterpret_cast<wxImage*>(image)->GetWidth();
   height = reinterpret_cast<wxImage*>(image)->GetHeight();
 }
@@ -240,12 +240,12 @@ float image::vertical_resolution(intptr_t image) {
   float vertical_resolution = xtd::ustring::parse<float>(xtd::convert_string::to_string(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONY).c_str().AsWChar()));
   if (!reinterpret_cast<wxImage*>(image)->HasOption(wxIMAGE_OPTION_RESOLUTIONUNIT))
     return vertical_resolution;
-  if (xtd::ustring::parse<int32_t>(xtd::convert_string::to_string(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONUNIT).c_str().AsWChar())) == wxIMAGE_RESOLUTION_CM)
+  if (xtd::ustring::parse<int32>(xtd::convert_string::to_string(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONUNIT).c_str().AsWChar())) == wxIMAGE_RESOLUTION_CM)
     vertical_resolution *= 2.54f;
   return vertical_resolution;
 }
 
-void image::get_pixel(intptr_t image, int32_t x, int32_t y, xtd::byte& a, xtd::byte& r, xtd::byte& g, xtd::byte& b) {
+void image::get_pixel(intptr_t image, int32 x, int32 y, xtd::byte& a, xtd::byte& r, xtd::byte& g, xtd::byte& b) {
   if (reinterpret_cast<wxImage*>(image)->IsTransparent(x, y, 1)) a = r = g = b = 0;
   else {
     a = reinterpret_cast<wxImage*>(image)->HasAlpha() ? reinterpret_cast<wxImage*>(image)->GetAlpha(x, y) : 255;
@@ -255,7 +255,7 @@ void image::get_pixel(intptr_t image, int32_t x, int32_t y, xtd::byte& a, xtd::b
   }
 }
 
-void image::rotate_flip(intptr_t image, int32_t rotate_flip_type) {
+void image::rotate_flip(intptr_t image, int32 rotate_flip_type) {
   auto wx_image = reinterpret_cast<wxImage*>(image);
   switch (rotate_flip_type) {
     case RFT_ROTATE_NONE_FLIP_NONE: break;
@@ -270,7 +270,7 @@ void image::rotate_flip(intptr_t image, int32_t rotate_flip_type) {
   }
 }
 
-void image::set_pixel(intptr_t image, int32_t x, int32_t y, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b) {
+void image::set_pixel(intptr_t image, int32 x, int32 y, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b) {
   if (reinterpret_cast<wxImage*>(image)->HasAlpha()) reinterpret_cast<wxImage*>(image)->SetAlpha(x, y, a);
   reinterpret_cast<wxImage*>(image)->SetRGB(x, y, r, g, b);
 }

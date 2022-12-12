@@ -123,7 +123,7 @@ void radial_gradient_brush::recreate_handle() {
   for (auto color : data_->radial_colors)
     colors.emplace_back(color.first.r(), color.first.g(), color.first.b(), color.first.a(), color.second);
     
-  native::brush::radial_gradient(handle(), as<int32_t>(data_->center_point.x()), as<int32_t>(data_->center_point.y()), as<int32_t>(data_->focal_point.x()), as<int32_t>(data_->focal_point.y()), colors, data_->radius);
+  native::brush::radial_gradient(handle(), as<int32>(data_->center_point.x()), as<int32>(data_->center_point.y()), as<int32>(data_->focal_point.x()), as<int32>(data_->focal_point.y()), colors, data_->radius);
 }
 
 radial_gradient_brush::radial_gradient_brush(const radial_gradient_brush& value) : brush(value), data_(value.data_) {

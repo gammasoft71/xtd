@@ -129,7 +129,7 @@ control::control(const control& parent, const xtd::ustring& text) : control() {
   this->text(text);
 }
 
-control::control(const xtd::ustring& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
+control::control(const xtd::ustring& text, int32 left, int32 top, int32 width, int32 height) : control() {
   this->text(text);
   this->left(left);
   this->top(top);
@@ -137,7 +137,7 @@ control::control(const xtd::ustring& text, int32_t left, int32_t top, int32_t wi
   this->height(height);
 }
 
-control::control(const control& parent, const xtd::ustring& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
+control::control(const control& parent, const xtd::ustring& text, int32 left, int32 top, int32 width, int32 height) : control() {
   this->parent(parent);
   this->text(text);
   this->left(left);
@@ -230,7 +230,7 @@ control& control::background_image_layout(xtd::forms::image_layout background_im
   return *this;
 }
 
-int32_t control::bottom() const noexcept {
+int32 control::bottom() const noexcept {
   return top() + height();
 }
 
@@ -461,11 +461,11 @@ intptr_t control::handle() const {
   return data_->handle;
 }
 
-int32_t control::height() const noexcept {
+int32 control::height() const noexcept {
   return size().height();
 }
 
-control& control::height(int32_t height) {
+control& control::height(int32 height) {
   if (size().height() == height) return *this;
   set_bounds_core(0, 0, 0, height, bounds_specified::height);
   return *this;
@@ -479,11 +479,11 @@ bool control::is_handle_created() const noexcept {
   return data_->handle != 0;
 }
 
-int32_t control::left() const noexcept {
+int32 control::left() const noexcept {
   return data_->location.x();
 }
 
-control& control::left(int32_t left) {
+control& control::left(int32 left) {
   if (data_->location.x() == left) return *this;
   set_bounds_core(left, 0, 0, 0, bounds_specified::x);
   return *this;
@@ -637,7 +637,7 @@ control& control::region(const xtd::drawing::region& value) {
   return *this;
 }
 
-int32_t control::right() const noexcept {
+int32 control::right() const noexcept {
   return left() + width();
 }
 
@@ -711,11 +711,11 @@ intptr_t control::toolkit_handle() const noexcept {
   return handle() ? native::control::toolkit_handle(handle()) : 0;
 }
 
-int32_t control::top() const noexcept {
+int32 control::top() const noexcept {
   return data_->location.y();
 }
 
-control& control::top(int32_t top) {
+control& control::top(int32 top) {
   if (data_->location.y() == top) return *this;
   set_bounds_core(0, top, 0, 0, bounds_specified::y);
   return *this;
@@ -741,11 +741,11 @@ control& control::visible(bool visible) {
   return *this;
 }
 
-int32_t control::width() const noexcept {
+int32 control::width() const noexcept {
   return size().width();
 }
 
-control& control::width(int32_t width) {
+control& control::width(int32 width) {
   if (size().width() == width) return *this;
   set_bounds_core(0, 0, width, 0, bounds_specified::width);
   return *this;
@@ -768,7 +768,7 @@ void control::bring_to_front() {
   focus();
 }
 
-int32_t control::compare_to(const control& value) const noexcept {
+int32 control::compare_to(const control& value) const noexcept {
   return this < &value ? -1 : this > &value ? 1 : 0;
 }
 
@@ -953,11 +953,11 @@ drawing::size control::default_size() const noexcept {
 }
 
 bool control::get_state(control::state flag) const noexcept {
-  return ((int32_t)data_->state & (int32_t)flag) == (int32_t)flag;
+  return ((int32)data_->state & (int32)flag) == (int32)flag;
 }
 
 bool control::get_style(control_styles flag) const noexcept {
-  return ((int32_t)data_->style & (int32_t)flag) == (int32_t)flag;
+  return ((int32)data_->style & (int32)flag) == (int32)flag;
 }
 
 drawing::size control::measure_control() const noexcept {
@@ -1365,7 +1365,7 @@ void control::refresh() const {
   update();
 }
 
-intptr_t control::send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) const {
+intptr_t control::send_message(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam) const {
   return is_handle_created() ? native::control::send_message(handle(), hwnd, msg, wparam, lparam) : static_cast<intptr_t>(-1);
 }
 
@@ -1376,16 +1376,16 @@ void control::set_auto_size_mode(forms::auto_size_mode value) {
   }
 }
 
-void control::set_bounds(int32_t x, int32_t y, int32_t width, int32_t height) {
+void control::set_bounds(int32 x, int32 y, int32 width, int32 height) {
   set_bounds(x, y, width, height, bounds_specified::all);
 }
 
-void control::set_bounds(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) {
+void control::set_bounds(int32 x, int32 y, int32 width, int32 height, bounds_specified specified) {
   set_bounds_core(x, y, width, height, specified);
 }
 
 void control::set_state(control::state flag, bool value) {
-  data_->state = static_cast<control::state>(value ? (static_cast<int32_t>(data_->state) | static_cast<int32_t>(flag)) : (static_cast<int32_t>(data_->state) & ~ static_cast<int32_t>(flag)));
+  data_->state = static_cast<control::state>(value ? (static_cast<int32>(data_->state) | static_cast<int32>(flag)) : (static_cast<int32>(data_->state) & ~ static_cast<int32>(flag)));
 }
 
 void control::set_can_focus(bool value) {
@@ -1405,7 +1405,7 @@ void control::set_parent(intptr_t handle) {
 }
 
 void control::set_style(control_styles flag, bool value) {
-  data_->style = value ? (control_styles)((int32_t)data_->style | (int32_t)flag) : (control_styles)((int32_t)data_->style & ~(int32_t)flag);
+  data_->style = value ? (control_styles)((int32)data_->style | (int32)flag) : (control_styles)((int32)data_->style & ~(int32)flag);
 }
 
 void control::show() {
@@ -1432,7 +1432,7 @@ void control::reflect_message(intptr_t handle, message& message) {
     from_handle(handle).value().get().send_message(handle, WM_REFLECT + message.msg(), message.wparam(), message.lparam());
 }
 
-intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
+intptr_t control::wnd_proc_(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
   //try {
   message message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
   wnd_proc(message);
@@ -1593,7 +1593,7 @@ void control::recreate_handle() {
   }
 }
 
-void control::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) {
+void control::set_bounds_core(int32 x, int32 y, int32 width, int32 height, bounds_specified specified) {
   if ((specified & bounds_specified::x) == bounds_specified::x) data_->location.x(x);
   if ((specified & bounds_specified::y) == bounds_specified::y) data_->location.y(y);
   if ((specified & bounds_specified::width) == bounds_specified::width) {
@@ -1628,7 +1628,7 @@ void control::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t heigh
   }
 }
 
-void control::set_client_size_core(int32_t width, int32_t height) {
+void control::set_client_size_core(int32 width, int32 height) {
   data_->client_size.width(width);
   data_->client_size.height(height);
   
@@ -1810,7 +1810,7 @@ void control::wm_key_char(message& message) {
     on_key_down(key_event_args);
     data_->suppress_key_press = key_event_args.suppress_key_press();
     if (!key_event_args.handled()) def_wnd_proc(message);
-  } else if ((message.msg() == WM_CHAR || message.msg() == WM_SYSCHAR) && data_->suppress_key_press == false && (message.wparam() > 255U || std::iscntrl(static_cast<int32_t>(message.wparam()))) == 0) {
+  } else if ((message.msg() == WM_CHAR || message.msg() == WM_SYSCHAR) && data_->suppress_key_press == false && (message.wparam() > 255U || std::iscntrl(static_cast<int32>(message.wparam()))) == 0) {
     key_press_event_args key_press_event_args(static_cast<char32>(message.wparam()));
     on_key_press(key_press_event_args);
     message.result(key_press_event_args.handled());
@@ -1903,9 +1903,9 @@ void control::wm_mouse_wheel(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), ustring::format("({}) receive message [{}]", *this, message));
   def_wnd_proc(message);
   if (message.msg() == WM_MOUSEHWHEEL)
-    on_mouse_horizontal_wheel(mouse_event_args::create(message, get_state(state::double_click_fired), static_cast<int32_t>(HIWORD(message.wparam()))));
+    on_mouse_horizontal_wheel(mouse_event_args::create(message, get_state(state::double_click_fired), static_cast<int32>(HIWORD(message.wparam()))));
   else
-    on_mouse_wheel(mouse_event_args::create(message, get_state(state::double_click_fired), static_cast<int32_t>(HIWORD(message.wparam()))));
+    on_mouse_wheel(mouse_event_args::create(message, get_state(state::double_click_fired), static_cast<int32>(HIWORD(message.wparam()))));
 }
 
 void control::wm_move(message& message) {

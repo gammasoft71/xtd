@@ -100,7 +100,7 @@ namespace {
   }
 }
 
-extern int32_t __mainloop_runnning__;
+extern int32 __mainloop_runnning__;
 
 void control::back_color(intptr_t control, const color& color) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
@@ -529,7 +529,7 @@ void control::invalidate(intptr_t control, const drawing::region& region, bool i
   invalidate(control, rectangle::round(region.get_bounds()), invalidate_children);
 }
 
-void control::register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
+void control::register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
   if (!control) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -550,7 +550,7 @@ void control::resume_layout(intptr_t control) {
   reinterpret_cast<control_handler*>(control)->DecrementLayoutSuspended();
 }
 
-intptr_t control::send_message(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) {
+intptr_t control::send_message(intptr_t control, intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam) {
   if (!control) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

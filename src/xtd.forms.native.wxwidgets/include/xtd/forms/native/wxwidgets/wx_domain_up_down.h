@@ -60,10 +60,10 @@ namespace xtd {
           upDown->SetSize(upDown->GetSize().GetWidth(), GetSize().GetHeight());
           #endif
           
-          upDown->SetRange(0, static_cast<int32_t>(items.GetCount()) - 1);
+          upDown->SetRange(0, static_cast<int32>(items.GetCount()) - 1);
           upDown->Bind(wxEVT_SPIN, [&](wxSpinEvent & event) {
             if (index == std::numeric_limits<size_t>::max())
-              upDown->SetValue(static_cast<int32_t>(items.GetCount() - 1));
+              upDown->SetValue(static_cast<int32>(items.GetCount() - 1));
             index = items.GetCount() - 1 - upDown->GetValue();
             SetTextWithSelectedIndex();
           });
@@ -84,8 +84,8 @@ namespace xtd {
         
         void SetSelectedIndex(size_t index) {
           this->index = index;
-          if (index != std::numeric_limits<size_t>::max()) upDown->SetValue(static_cast<int32_t>(items.GetCount() - 1 - index));
-          else upDown->SetValue(static_cast<int32_t>(items.GetCount() - 1));
+          if (index != std::numeric_limits<size_t>::max()) upDown->SetValue(static_cast<int32>(items.GetCount() - 1 - index));
+          else upDown->SetValue(static_cast<int32>(items.GetCount() - 1));
           SetTextWithSelectedIndex();
         }
         
@@ -94,7 +94,7 @@ namespace xtd {
         void SetLabel(const wxString& value) override {textBox->SetValue(value);}
         
         void updateSpin() {
-          upDown->SetRange(0, static_cast<int32_t>(items.GetCount() - 1));
+          upDown->SetRange(0, static_cast<int32>(items.GetCount() - 1));
         }
         
         void SetTextWithSelectedIndex() {
@@ -113,7 +113,7 @@ namespace xtd {
       private:
         explicit wx_domain_up_down(const xtd::forms::native::create_params& create_params) {
           if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
-          int32_t height = create_params.size.height();
+          int32 height = create_params.size.height();
           #if defined(__WXGTK__)
           if (height < 32) height = 32;
           #endif

@@ -105,12 +105,12 @@ namespace xtd {
       
       /// @brief Raises the ProgressChanged event.
       /// @param percent_progress The percentage, from 0 to 100, of the background operation that is complete.
-      void report_progress(int32_t percent_progress);
+      void report_progress(int32 percent_progress);
       
       /// @brief Raises the ProgressChanged event.
       /// @param percent_progress The percentage, from 0 to 100, of the background operation that is complete.
       /// @param user_state A unique object indicating the user state. Returned as the user_state property of the progress_changed_even_args.
-      void report_progress(int32_t percent_progress, std::any user_state);
+      void report_progress(int32 percent_progress, std::any user_state);
       /// @}
       
       /// @name Events
@@ -121,7 +121,7 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<background_worker, do_work_event_handler> do_work;
       
-      /// @brief Occurs when report_progress(int32_t) is called.
+      /// @brief Occurs when report_progress(int32) is called.
       /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<background_worker, progress_changed_event_handler> progress_changed;

@@ -126,7 +126,7 @@ namespace xtd {
         /// @brief Gets the legnth in pixels.
         /// @param rect The xtd::drawing::rectangle is used to compute the length for relative length units.
         /// @return The legnth in pixels.
-        int32_t get_pixels(const xtd::drawing::rectangle& rect) const noexcept;
+        int32 get_pixels(const xtd::drawing::rectangle& rect) const noexcept;
         
         xtd::ustring to_string() const noexcept override;
         /// @}

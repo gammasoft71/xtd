@@ -143,12 +143,12 @@ void graphics_path::add_rounded_rectangle(intptr_t handle, float x, float y, flo
   reinterpret_cast<wxGraphicsPath*>(handle)->AddRoundedRectangle(x, y, width, height, radius);
 }
 
-void graphics_path::add_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming) {
+void graphics_path::add_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming) {
   if (!handle) return;
   // Not supported by wxWidgets 3.1.5...
 }
 
-void graphics_path::add_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y, float w, float h, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming) {
+void graphics_path::add_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y, float w, float h, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming) {
   if (!handle) return;
   // Not supported by wxWidgets 3.1.5...
 }

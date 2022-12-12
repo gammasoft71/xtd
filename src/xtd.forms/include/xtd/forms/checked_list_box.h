@@ -105,7 +105,7 @@ namespace xtd {
         
         /// @{
         using list_box::item::compare_to;
-        int32_t compare_to(const item& value) const noexcept override;
+        int32 compare_to(const item& value) const noexcept override;
         using list_box::item::equals;
         bool equals(const item& value) const noexcept override;
         /// @}

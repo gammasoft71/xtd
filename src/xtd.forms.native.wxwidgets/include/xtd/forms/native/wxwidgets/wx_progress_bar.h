@@ -47,7 +47,7 @@ namespace xtd {
         }
         
         void marquee(bool marquee, size_t animation_speed) {
-          if (marquee) timer_marquee.Start(static_cast<int32_t>(animation_speed));
+          if (marquee) timer_marquee.Start(static_cast<int32>(animation_speed));
           else timer_marquee.Stop();
         }
         
@@ -62,8 +62,8 @@ namespace xtd {
           return wx_style;
         }
         
-        int32_t minimum_ = 0;
-        int32_t maximum_ = 100;
+        int32 minimum_ = 0;
+        int32 maximum_ = 100;
         wxTimer timer_marquee;
       };
     }

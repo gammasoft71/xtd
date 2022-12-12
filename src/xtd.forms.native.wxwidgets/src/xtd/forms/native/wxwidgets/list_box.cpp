@@ -29,7 +29,7 @@ void list_box::delete_item(intptr_t control, size_t index) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Delete(static_cast<int32_t>(index));
+  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Delete(static_cast<int32>(index));
 }
 
 void list_box::end_update(intptr_t control) {
@@ -47,7 +47,7 @@ void list_box::insert_item(intptr_t control, size_t index, const ustring& value)
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(convert_string::to_wstring(value), static_cast<int32_t>(index));
+  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(convert_string::to_wstring(value), static_cast<int32>(index));
 }
 
 size_t list_box::selected_index(intptr_t control) {
@@ -70,7 +70,7 @@ void list_box::selected_index(intptr_t control, size_t index) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  return static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(static_cast<int32_t>(index));
+  return static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(static_cast<int32>(index));
 }
 
 vector<size_t> list_box::selected_indices(intptr_t control) {
@@ -82,7 +82,7 @@ vector<size_t> list_box::selected_indices(intptr_t control) {
   vector<size_t> indices;
   wxArrayInt wx_indices;
   static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->GetSelections(wx_indices);
-  for (int32_t index : wx_indices)
+  for (int32 index : wx_indices)
     indices.push_back(index);
   return indices;
 }
@@ -93,5 +93,5 @@ void list_box::update_item(intptr_t control, size_t index, const ustring& value)
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(static_cast<int32_t>(index), convert_string::to_wstring(value));
+  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(static_cast<int32>(index), convert_string::to_wstring(value));
 }

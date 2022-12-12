@@ -24,11 +24,11 @@ namespace xtd {
         explicit wx_combo_box(const xtd::forms::native::create_params& create_params) {
           if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
           #if defined(__WXMSW__)
-          int32_t height = (create_params.style & CBS_SIMPLE) == CBS_SIMPLE ? 163 : 23;
+          int32 height = (create_params.style & CBS_SIMPLE) == CBS_SIMPLE ? 163 : 23;
           #elif defined(__WXGTK__)
-          int32_t height = 34;
+          int32 height = 34;
           #else
-          int32_t height = 26;
+          int32 height = 26;
           #endif
           control_handler::create<wxComboBox>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxEmptyString, wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), height), 0, nullptr, style_to_wx_style(create_params.style, create_params.ex_style));
           #if defined(__WIN32__)

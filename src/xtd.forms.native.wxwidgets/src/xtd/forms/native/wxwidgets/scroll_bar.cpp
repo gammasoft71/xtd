@@ -8,7 +8,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-void scroll_bar::large_change(intptr_t control, int32_t large_change) {
+void scroll_bar::large_change(intptr_t control, int32 large_change) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -19,7 +19,7 @@ void scroll_bar::large_change(intptr_t control, int32_t large_change) {
   static_cast<wxScrollBar*>(reinterpret_cast<control_handler*>(control)->control())->SetScrollbar(wxsb->minimum_ + wxsb->value_, wxsb->small_change_, wxsb->maximum_ - wxsb->minimum_, wxsb->large_change_);
 }
 
-void scroll_bar::maximum(intptr_t control, int32_t maximum) {
+void scroll_bar::maximum(intptr_t control, int32 maximum) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -30,7 +30,7 @@ void scroll_bar::maximum(intptr_t control, int32_t maximum) {
   static_cast<wxScrollBar*>(reinterpret_cast<control_handler*>(control)->control())->SetScrollbar(wxsb->minimum_ + wxsb->value_, wxsb->small_change_, wxsb->maximum_ - wxsb->minimum_, wxsb->large_change_);
 }
 
-void scroll_bar::minimum(intptr_t control, int32_t minimum) {
+void scroll_bar::minimum(intptr_t control, int32 minimum) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -41,7 +41,7 @@ void scroll_bar::minimum(intptr_t control, int32_t minimum) {
   static_cast<wxScrollBar*>(reinterpret_cast<control_handler*>(control)->control())->SetScrollbar(wxsb->minimum_ + wxsb->value_, wxsb->small_change_, wxsb->maximum_ - wxsb->minimum_, wxsb->large_change_);
 }
 
-void scroll_bar::small_change(intptr_t control, int32_t small_change) {
+void scroll_bar::small_change(intptr_t control, int32 small_change) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -52,7 +52,7 @@ void scroll_bar::small_change(intptr_t control, int32_t small_change) {
   static_cast<wxScrollBar*>(reinterpret_cast<control_handler*>(control)->control())->SetScrollbar(wxsb->minimum_ + wxsb->value_, wxsb->small_change_, wxsb->maximum_ - wxsb->minimum_, wxsb->large_change_);
 }
 
-int32_t scroll_bar::value(intptr_t control) {
+int32 scroll_bar::value(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -63,7 +63,7 @@ int32_t scroll_bar::value(intptr_t control) {
   return wxsb->value_;
 }
 
-void scroll_bar::value(intptr_t control, int32_t value) {
+void scroll_bar::value(intptr_t control, int32 value) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

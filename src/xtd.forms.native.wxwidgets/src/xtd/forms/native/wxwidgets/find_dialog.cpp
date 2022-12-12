@@ -28,9 +28,9 @@ namespace {
 
 class wxFindDialog : public wxFindReplaceDialog {
 public:
-  wxFindDialog(intptr_t hwnd, wxFindReplaceData* data, const wxString& title, int32_t style, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, bool, bool, bool)> find_next, xtd::delegate<void()> dialog_closed) : wxFindReplaceDialog(reinterpret_cast<control_handler*>(hwnd)->control(), data, title, style), style(style), find_next(find_next), dialog_closed(dialog_closed), hwnd(hwnd) {}
+  wxFindDialog(intptr_t hwnd, wxFindReplaceData* data, const wxString& title, int32 style, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, bool, bool, bool)> find_next, xtd::delegate<void()> dialog_closed) : wxFindReplaceDialog(reinterpret_cast<control_handler*>(hwnd)->control(), data, title, style), style(style), find_next(find_next), dialog_closed(dialog_closed), hwnd(hwnd) {}
   
-  int32_t style = 0;
+  int32 style = 0;
   bool downwards = true;
   bool whole_word = false;
   bool match_case = false;
@@ -43,7 +43,7 @@ public:
 intptr_t find_dialog::create(intptr_t hwnd, const std::optional<xtd::drawing::point>& location, const xtd::ustring& title, const xtd::ustring& find_string, bool show_up_down, bool show_whole_word, bool show_match_case, bool downwards, bool whole_word, bool match_case, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, bool, bool, bool)> find_next, xtd::delegate<void()> dialog_closed) {
   if (!wxTheApp) return 0;
   
-  int32_t find_replace_flags = 0;
+  int32 find_replace_flags = 0;
   if (downwards) find_replace_flags |= wxFindReplaceFlags::wxFR_DOWN;
   if (whole_word) find_replace_flags |= wxFindReplaceFlags::wxFR_WHOLEWORD;
   if (match_case) find_replace_flags |= wxFindReplaceFlags::wxFR_MATCHCASE;
@@ -55,7 +55,7 @@ intptr_t find_dialog::create(intptr_t hwnd, const std::optional<xtd::drawing::po
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
   #endif
   
-  int32_t dialog_style = 0;
+  int32 dialog_style = 0;
   if (!show_up_down) dialog_style |= wxFR_NOUPDOWN;
   if (!show_whole_word) dialog_style |= wxFR_NOWHOLEWORD;
   if (!show_match_case) dialog_style |= wxFR_NOMATCHCASE;

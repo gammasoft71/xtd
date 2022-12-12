@@ -39,7 +39,7 @@ bool folder_browser_dialog::run_dialog(intptr_t hwnd, const ustring& description
   BROWSEINFO browserInfo = { 0 };
   browserInfo.hwndOwner = hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control()->GetHandle();
   PIDLIST_ABSOLUTE pidlRoot;
-  SHGetSpecialFolderLocation(reinterpret_cast<HWND>(hwnd), static_cast<int32_t>(root_folder), &pidlRoot);
+  SHGetSpecialFolderLocation(reinterpret_cast<HWND>(hwnd), static_cast<int32>(root_folder), &pidlRoot);
   browserInfo.lpfn = OnBrowserCalllback;
   wstring wselected_path = xtd::convert_string::to_wstring(selected_path);
   browserInfo.lParam = reinterpret_cast<LPARAM>(wselected_path.c_str());

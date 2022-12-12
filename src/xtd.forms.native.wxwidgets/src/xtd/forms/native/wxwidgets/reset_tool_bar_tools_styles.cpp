@@ -2,6 +2,7 @@
 // To prevent destroy control and drop down menu change the tool bar tool style to wxTOOL_STYLE_BUTTON et set drop down menu to null...
 
 #include <wx/toolbar.h>
+#include <xtd/types.h>
 
 // We need to access the private members of the wxToolBarToolBase class.
 // See https://stackoverflow.com/questions/424104/can-i-access-private-members-from-outside-the-class-without-using-friends for more info.
@@ -30,7 +31,7 @@ namespace {
 
 void __reset_tool_bar_tools_styles__(wxToolBar* toolBar) {
   for (size_t index = 0; index < toolBar->GetToolsCount(); ++index) {
-    auto wx_tool_bar_tool = toolBar->GetToolByPos(static_cast<int32_t>(index));
+    auto wx_tool_bar_tool = toolBar->GetToolByPos(static_cast<xtd::int32>(index));
     wx_tool_bar_tool->*get(wxToolBarToolBase_m_dropdownMenu()) = nullptr;
     wx_tool_bar_tool->*get(wxToolBarToolBase_m_toolStyle()) = wxTOOL_STYLE_BUTTON;
   }

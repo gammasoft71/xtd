@@ -367,7 +367,7 @@ namespace xtd {
       /// @param x The xtd::drawing::point::x coordinate of the point to be hit tested.
       /// @param y The xtd::drawing::point::y coordinate of the point to be hit tested.
       /// @return A xtd::forms::month_calendar::hit_test_info that contains information about the specified point on the xtd::forms::month_calendar.
-      xtd::forms::month_calendar::hit_test_info hit_test(int32_t x, int32_t y) const;
+      xtd::forms::month_calendar::hit_test_info hit_test(int32 x, int32 y) const;
       /// @brief Returns an object with information on which portion of a month calendar control is at a location specified by a xtd::drawing::point.
       /// @param point A xtd::drawing::point containing the xtd::drawing::point::x and xtd::drawing::point::y coordinates of the point to be hit tested.
       /// @return A xtd::forms::month_calendar::hit_test_info that contains information about the specified point on the xtd::forms::month_calendar.
@@ -407,7 +407,7 @@ namespace xtd {
       /// @param x The number of columns.
       /// @param y The number of rows.
       /// @exception xtd::arguments x or y is less than 1.
-      void set_calendar_dimensions(int32_t x, int32_t y);
+      void set_calendar_dimensions(int32 x, int32 y);
       
       /// @brief Sets a date as the currently selected date.
       /// @param date The date to be selected.

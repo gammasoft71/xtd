@@ -8,49 +8,49 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-int32_t scroll_bar::large_change() const noexcept {
+int32 scroll_bar::large_change() const noexcept {
   return data_->large_change;
 }
 
-scroll_bar& scroll_bar::large_change(int32_t large_change) {
+scroll_bar& scroll_bar::large_change(int32 large_change) {
   if (large_change < 0) throw argument_out_of_range_exception(csf_);
   data_->large_change = large_change;
   return *this;
 }
 
-int32_t scroll_bar::maximum() const noexcept {
+int32 scroll_bar::maximum() const noexcept {
   return data_->maximum;
 }
 
-scroll_bar& scroll_bar::maximum(int32_t maximum) {
+scroll_bar& scroll_bar::maximum(int32 maximum) {
   data_->maximum = maximum;
   return *this;
 }
 
-int32_t scroll_bar::minimum() const noexcept {
+int32 scroll_bar::minimum() const noexcept {
   return data_->minimum;
 }
 
-scroll_bar& scroll_bar::minimum(int32_t minimum) {
+scroll_bar& scroll_bar::minimum(int32 minimum) {
   data_->minimum = minimum;
   return *this;
 }
 
-int32_t scroll_bar::small_change() const noexcept {
+int32 scroll_bar::small_change() const noexcept {
   return data_->small_change;
 }
 
-scroll_bar& scroll_bar::small_change(int32_t small_change) {
+scroll_bar& scroll_bar::small_change(int32 small_change) {
   if (small_change < 0) throw argument_out_of_range_exception(csf_);
   data_->small_change = small_change;
   return *this;
 }
 
-int32_t scroll_bar::value() const noexcept {
+int32 scroll_bar::value() const noexcept {
   return data_->value;
 }
 
-scroll_bar& scroll_bar::value(int32_t value) {
+scroll_bar& scroll_bar::value(int32 value) {
   if (value < data_->minimum || value > data_->maximum) throw argument_out_of_range_exception(csf_);
   if (data_->value != value) {
     data_->value = value;

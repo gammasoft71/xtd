@@ -416,7 +416,7 @@ xtd::forms::style_sheets::theme style_sheet::theme_from_css(const xtd::ustring& 
   return ss.theme();
 }
 
-std::tuple<border_type, int32_t, int32_t> style_sheet::to_border_type(xtd::forms::border_style border) {
+std::tuple<border_type, int32, int32> style_sheet::to_border_type(xtd::forms::border_style border) {
   switch (border) {
     case xtd::forms::border_style::none: return make_tuple(border_type::none, 0, 0); break;
     case xtd::forms::border_style::solid: return make_tuple(border_type::solid, 1, 0); break;
@@ -1087,7 +1087,7 @@ bool style_sheet::try_parse_hex_color(const ustring& text, color& result) const 
 bool style_sheet::try_parse_linear_gradient(const xtd::ustring& text, background_image& result) const noexcept {
   vector<ustring> arguments = split_values_from_text(text.remove(text.size() - 1).replace("linear-gradient(", ""));
   vector<color> colors;
-  int32_t angle = -1;
+  int32 angle = -1;
   for (auto argument : arguments) {
     drawing::color color;
     if (argument == "to top") {
@@ -1116,7 +1116,7 @@ bool style_sheet::try_parse_linear_gradient(const xtd::ustring& text, background
       angle = 315;
     } else if (argument.ends_with("deg")) {
       argument = argument.replace("deg", "");
-      if (angle != -1 || xtd::try_parse<int32_t>(argument, angle) == false) return false;
+      if (angle != -1 || xtd::try_parse<int32>(argument, angle) == false) return false;
     } else if (try_parse_color(argument, color))
       colors.push_back(color);
   }
@@ -1151,7 +1151,7 @@ bool style_sheet::try_parse_rgba_color(const ustring& text, color& result) const
   if (xtd::try_parse<xtd::byte>(color_parts[2], b) == false) return false;
   float a = 0;
   if (xtd::try_parse<float>(color_parts[3], a) == false) return false;
-  result = color::from_argb(as<xtd::byte>(as<int32_t>(a * 255) % 256), r, g, b);
+  result = color::from_argb(as<xtd::byte>(as<int32>(a * 255) % 256), r, g, b);
   return true;
 }
 
@@ -1181,7 +1181,7 @@ bool style_sheet::try_parse_hsva_color(const ustring& text, color& result) const
   if (xtd::try_parse<float>(color_parts[2], v) == false) return false;
   float a = 0;
   if (xtd::try_parse<float>(color_parts[3], a) == false) return false;
-  result = color::from_argb(as<xtd::byte>(as<int32_t>(a * 255) % 256), color::from_hsb(h, s, v));
+  result = color::from_argb(as<xtd::byte>(as<int32>(a * 255) % 256), color::from_hsb(h, s, v));
   return true;
 }
 
@@ -1211,7 +1211,7 @@ bool style_sheet::try_parse_hsla_color(const ustring& text, color& result) const
   if (xtd::try_parse<float>(color_parts[2], l) == false) return false;
   float a = 0;
   if (xtd::try_parse<float>(color_parts[3], a) == false) return false;
-  result = color::from_argb(as<xtd::byte>(as<int32_t>(a * 255) % 256), color::from_hsl(h, s, l));
+  result = color::from_argb(as<xtd::byte>(as<int32>(a * 255) % 256), color::from_hsl(h, s, l));
   return true;
 }
 

@@ -5,7 +5,7 @@
 #endif
 /// @endcond
 
-#include <cstdint>
+#include <xtd/types.h>
 
 /// @brief Specifies that the stack of all graphics operations is flushed immediately.
 /// @par Library
@@ -13,7 +13,7 @@
 /// @ingroup xtd_drawing_native fi
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t FI_FLUSH = 0;
+constexpr xtd::int32 FI_FLUSH = 0;
 
 /// @brief Specifies that all graphics operations on the stack are executed as soon as possible. This synchronizes the graphics state.
 /// @par Library
@@ -21,4 +21,4 @@ constexpr int32_t FI_FLUSH = 0;
 /// @ingroup xtd_drawing_native fi
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t FI_SYNC = 1;
+constexpr xtd::int32 FI_SYNC = 1;

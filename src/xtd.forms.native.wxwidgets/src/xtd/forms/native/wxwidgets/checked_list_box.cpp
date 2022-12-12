@@ -23,22 +23,22 @@ void checked_list_box::begin_update(intptr_t control) {
   reinterpret_cast<control_handler*>(control)->control()->Freeze();
 }
 
-void checked_list_box::check_state(intptr_t control, size_t index, int32_t check_state) {
+void checked_list_box::check_state(intptr_t control, size_t index, int32 check_state) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Check(static_cast<int32_t>(index), check_state != 0);
+  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Check(static_cast<int32>(index), check_state != 0);
 }
 
-int32_t checked_list_box::check_state(intptr_t control, size_t index) {
+int32 checked_list_box::check_state(intptr_t control, size_t index) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return 0;
   }
-  return static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->IsChecked(static_cast<int32_t>(index));
+  return static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->IsChecked(static_cast<int32>(index));
 }
 
 void checked_list_box::delete_item(intptr_t control, size_t index) {
@@ -47,7 +47,7 @@ void checked_list_box::delete_item(intptr_t control, size_t index) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Delete(static_cast<int32_t>(index));
+  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Delete(static_cast<int32>(index));
 }
 
 void checked_list_box::end_update(intptr_t control) {
@@ -59,14 +59,14 @@ void checked_list_box::end_update(intptr_t control) {
   reinterpret_cast<control_handler*>(control)->control()->Thaw();
 }
 
-void checked_list_box::insert_item(intptr_t control, size_t index, const ustring& value, int32_t check_state) {
+void checked_list_box::insert_item(intptr_t control, size_t index, const ustring& value, int32 check_state) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(xtd::convert_string::to_wstring(value), static_cast<int32_t>(index));
-  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Check(static_cast<int32_t>(index), check_state != 0);
+  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(xtd::convert_string::to_wstring(value), static_cast<int32>(index));
+  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Check(static_cast<int32>(index), check_state != 0);
   #if defined(__WXMSW__)
   static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->GetItem(index)->SetTextColour(static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->GetForegroundColour());
   #endif
@@ -92,7 +92,7 @@ void checked_list_box::selected_index(intptr_t control, size_t index) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  return static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(static_cast<int32_t>(index));
+  return static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(static_cast<int32>(index));
 }
 
 vector<size_t> checked_list_box::selected_indices(intptr_t control) {
@@ -104,18 +104,18 @@ vector<size_t> checked_list_box::selected_indices(intptr_t control) {
   vector<size_t> indices;
   wxArrayInt wx_indices;
   static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->GetSelections(wx_indices);
-  for (int32_t index : wx_indices)
+  for (int32 index : wx_indices)
     indices.push_back(index);
   return indices;
   
 }
 
-void checked_list_box::update_item(intptr_t control, size_t index, const xtd::ustring& value, int32_t check_state) {
+void checked_list_box::update_item(intptr_t control, size_t index, const xtd::ustring& value, int32 check_state) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(static_cast<int32_t>(index), xtd::convert_string::to_wstring(value));
-  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Check(static_cast<int32_t>(index), check_state != 0);
+  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(static_cast<int32>(index), xtd::convert_string::to_wstring(value));
+  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Check(static_cast<int32>(index), check_state != 0);
 }

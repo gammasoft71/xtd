@@ -59,22 +59,22 @@ namespace xtd {
       /// @brief Gets the maximum value for the up_down_button control.
       /// @return The maximum value for the up down button. The default value is 100.
       /// @remarks When the maximum property is set, the minimum property is evaluated and the update_edit_text method is called. If the minimum property is greater than the new maximum property, the minimum property value is set equal to the maximum value. If the current Value is greater than the new Maximum value. the value property value is set equal to the maximum value.
-      virtual int32_t maximum() const noexcept;
+      virtual int32 maximum() const noexcept;
       /// @brief Sets the maximum value for the up_down_button control.
       /// @param value The maximum value for the up down button. The default value is 100.
       /// @return Current numeric_up_down.
       /// @remarks When the maximum property is set, the minimum property is evaluated and the update_edit_text method is called. If the minimum property is greater than the new maximum property, the minimum property value is set equal to the maximum value. If the current Value is greater than the new Maximum value. the value property value is set equal to the maximum value.
-      virtual up_down_button& maximum(int32_t value);
+      virtual up_down_button& maximum(int32 value);
       
       /// @brief Gets the minimum allowed value for the up_down_button control.
       /// @return The minimum allowed value for the up down button. The default value is 0.
       /// @remarks When the maximum property is set, the minimum property is evaluated and the update_edit_text method is called. If the minimum property is greater than the new maximum property, the minimum property value is set equal to the maximum value. If the current Value is greater than the new Maximum value. the value property value is set equal to the maximum value.
-      virtual int32_t minimum() const noexcept;
+      virtual int32 minimum() const noexcept;
       /// @brief Sets the minimum allowed value for the up_down_button control.
       /// @param value The minimum allowed value for the up down button. The default value is 0.
       /// @return Current numeric_up_down.
       /// @remarks When the maximum property is set, the minimum property is evaluated and the update_edit_text method is called. If the minimum property is greater than the new maximum property, the minimum property value is set equal to the maximum value. If the current Value is greater than the new Maximum value. the value property value is set equal to the maximum value.
-      virtual up_down_button& minimum(int32_t value);
+      virtual up_down_button& minimum(int32 value);
       
       /// @brief Gets a value indicating the horizontal or vertical orientation of the up down button.
       /// @return One of the orientation values.
@@ -87,12 +87,12 @@ namespace xtd {
       /// @brief Gets the value assigned to the up_down_button control.
       /// @return The numeric value of the up down button control.
       /// @remarks When the value property is set, the new value is validated to be between the minimum and maximum values. Following this, the update_edit_text method is called to update the spin box's display with the new value in the appropriate format.
-      virtual int32_t value() const noexcept;
+      virtual int32 value() const noexcept;
       /// @brief Sets the value assigned to the up_down_button control.
       /// @param value The numeric value of the up down button control.
       /// @return Current numeric_up_down.
       /// @remarks When the value property is set, the new value is validated to be between the minimum and maximum values. Following this, the update_edit_text method is called to update the spin box's display with the new value in the appropriate format.
-      virtual up_down_button& value(int32_t value);
+      virtual up_down_button& value(int32 value);
       
       /// @brief Gets a value indicate if value can be wrapped.
       /// @return true if value can be wrapped; otherwise false. The default is false.
@@ -110,7 +110,7 @@ namespace xtd {
       /// @param min_value The lower limit of the range of the track bar.
       /// @param max_value The upper limit of the range of the track bar.
       /// @remarks You can use this method to set the entire range for the track_bar at the same time. To set the minimum or maximum values individually, use the minimum and maximum properties. If the min_value parameter is greater than the max_value parameter, max_value is set equal to min_value.
-      void set_range(int32_t min_value, int32_t max_value);
+      void set_range(int32 min_value, int32 max_value);
       
       /// @brief Returns a string that represents the track_bar control.
       /// @return A string that represents the current progress_bar.
@@ -171,10 +171,10 @@ namespace xtd {
       
       struct data {
         bool wrapped = false;
-        int32_t maximum = 100;
-        int32_t minimum = 0;
+        int32 maximum = 100;
+        int32 minimum = 0;
         forms::orientation orientation = forms::orientation::vertical;
-        int32_t value = 0;
+        int32 value = 0;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

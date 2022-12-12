@@ -73,11 +73,11 @@ status_bar_panel& status_bar_panel::image(const xtd::drawing::image& value) {
   return *this;
 }
 
-int32_t status_bar_panel::min_width() const noexcept {
+int32 status_bar_panel::min_width() const noexcept {
   return data_->min_width;
 }
 
-status_bar_panel& status_bar_panel::min_width(int32_t value) {
+status_bar_panel& status_bar_panel::min_width(int32 value) {
   if (data_->min_width != value) {
     data_->min_width = value;
     if (data_->parent && data_->init_mode == false) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image, data_->alignment, data_->auto_size, data_->border_style, data_->style, data_->min_width, data_->width);
@@ -143,11 +143,11 @@ status_bar_panel& status_bar_panel::tool_tip_text(const xtd::ustring& value) {
   return *this;
 }
 
-int32_t status_bar_panel::width() const noexcept {
+int32 status_bar_panel::width() const noexcept {
   return data_->width;
 }
 
-status_bar_panel& status_bar_panel::width(int32_t value) {
+status_bar_panel& status_bar_panel::width(int32 value) {
   if (data_->width != value) {
     data_->width = value;
     if (data_->parent && data_->init_mode == false) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image, data_->alignment, data_->auto_size, data_->border_style, data_->style, data_->min_width, data_->width);

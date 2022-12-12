@@ -133,7 +133,7 @@ namespace xtd {
               wxpen.SetStyle(wxPenStyle::wxPENSTYLE_SOLID);
             else {
               wxpen.SetStyle(wxPenStyle::wxPENSTYLE_USER_DASH);
-              wxpen.SetDashes(as<int32_t>(pen.get_solid_color_pen().dashes.size()), pen.get_solid_color_pen().dashes.data());
+              wxpen.SetDashes(as<int32>(pen.get_solid_color_pen().dashes.size()), pen.get_solid_color_pen().dashes.data());
             }
             wxpen.SetWidth(pen.get_solid_color_pen().width);
             wxpen.SetCap(pen.line_cap());
@@ -151,7 +151,7 @@ namespace xtd {
               pen_info.Style(wxPenStyle::wxPENSTYLE_SOLID);
             else {
               pen_info.Style(wxPenStyle::wxPENSTYLE_USER_DASH);
-              pen_info.Dashes(as<int32_t>(pen.get_solid_color_pen().dashes.size()), pen.get_solid_color_pen().dashes.data());
+              pen_info.Dashes(as<int32>(pen.get_solid_color_pen().dashes.size()), pen.get_solid_color_pen().dashes.data());
             }
             pen_info.Width(pen.get_solid_color_pen().width);
             pen_info.Cap(pen.line_cap());

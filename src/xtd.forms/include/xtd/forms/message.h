@@ -90,11 +90,11 @@ namespace xtd {
       /// @param lparam The message lparam field.
       /// @return A xtd::forms::message that represents the message that was created.
       /// @remarks Use the xtd::message::create method to create a xtd::forms::message to wrap a message sent by Windows.
-      static message create(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam);
+      static message create(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam);
       
       /// @cond
-      static message create(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result);
-      static message create(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle);
+      static message create(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam, intptr_t result);
+      static message create(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle);
       /// @endcond
       
       /// @brief Gets the lparam value and converts the value to an object.
@@ -109,9 +109,9 @@ namespace xtd {
       /// @}
       
     private:
-      message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam);
-      message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result);
-      message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle);
+      message(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam);
+      message(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam, intptr_t result);
+      message(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle);
       
       intptr_t hwnd_ = 0;
       uint32_t msg_ = 0;
@@ -119,7 +119,7 @@ namespace xtd {
       intptr_t lparam_ = 0;
       intptr_t result_ = 0;
       intptr_t handle_ = 0;
-      inline static int32_t id_ = 0;
+      inline static int32 id_ = 0;
     };
   }
 }

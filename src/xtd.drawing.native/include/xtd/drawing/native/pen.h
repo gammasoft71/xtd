@@ -69,7 +69,7 @@ namespace xtd {
         /// @param pen the pen handle.
         /// @param value A value that represents the cap style used at the end of lines drawn with the pen (see line_saps.h for more information).
         /// @warning Internal use only
-        static void end_cap(intptr_t pen, int32_t line_cap);
+        static void end_cap(intptr_t pen, int32 line_cap);
         
         /// @brief Sets linear gradient pen with specified linear gradient brush and width.
         /// @param pen the pen handle.
@@ -82,7 +82,7 @@ namespace xtd {
         /// @param pen the pen handle.
         /// @param line_join A value that represents the join style for the ends of two consecutive lines drawn with the pen (see line_joins.h for more information).
         /// @warning Internal use only
-        static void line_join(intptr_t pen, int32_t line_join);
+        static void line_join(intptr_t pen, int32 line_join);
         
         /// @brief Sets the limit of the thickness of the join on a mitered corner.
         /// @param pen the pen handle.
@@ -101,7 +101,7 @@ namespace xtd {
         /// @param pen the pen handle.
         /// @param value A value that represents the cap style used at the start of lines drawn with the pen (see line_saps.h for more information).
         /// @warning Internal use only
-        static void start_cap(intptr_t pen, int32_t line_cap);
+        static void start_cap(intptr_t pen, int32 line_cap);
         
         /// @brief Sets texture fill pen with specified texture fill brush and width.
         /// @param pen the pen handle.

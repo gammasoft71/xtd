@@ -29,7 +29,7 @@ void combo_box::delete_item(intptr_t control, size_t index) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->Delete(static_cast<int32_t>(index));
+  static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->Delete(static_cast<int32>(index));
 }
 
 void combo_box::dropped_down(intptr_t control, bool value) {
@@ -58,7 +58,7 @@ void combo_box::insert_item(intptr_t control, size_t index, const ustring& value
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(xtd::convert_string::to_wstring(value), static_cast<int32_t>(index));
+  static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(xtd::convert_string::to_wstring(value), static_cast<int32>(index));
 }
 
 size_t combo_box::selected_index(intptr_t control) {
@@ -76,7 +76,7 @@ void combo_box::selected_index(intptr_t control, size_t index) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  return static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(static_cast<int32_t>(index));
+  return static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(static_cast<int32>(index));
 }
 
 void combo_box::update_item(intptr_t control, size_t index, const ustring& value) {
@@ -85,5 +85,5 @@ void combo_box::update_item(intptr_t control, size_t index, const ustring& value
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(static_cast<int32_t>(index), xtd::convert_string::to_wstring(value));
+  static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(static_cast<int32>(index), xtd::convert_string::to_wstring(value));
 }

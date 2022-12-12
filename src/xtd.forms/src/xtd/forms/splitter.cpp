@@ -17,13 +17,13 @@ control& splitter::dock(dock_style dock) {
   return *this;
 }
 
-int32_t splitter::min_size() const noexcept {
+int32 splitter::min_size() const noexcept {
   return data_->min_size;
 }
 /// @brief Sets the minimum distance that must remain between the splitter control and the container edge that the control is docked to.
 /// @param min_size The minimum distance, in pixels, between the splitter control and the container edge that the control is docked to. The default is 25.
 /// @return Current splitter instance.
-splitter& splitter::min_size(int32_t min_size) {
+splitter& splitter::min_size(int32 min_size) {
   data_->min_size = min_size;
   return *this;
 }
@@ -73,8 +73,8 @@ void splitter::on_mouse_move(const mouse_event_args& e) {
     if (data_->splitter_style == splitter_style::draw_line) {
       
     } else {
-      int32_t delta_size = control::dock() == dock_style::left || control::dock() == dock_style::right ? (data_->next_control->width() + cursor::position().x()) : (data_->next_control->height() + cursor::position().y());
-      int32_t new_size = delta_size - data_->mouse_down_location;
+      int32 delta_size = control::dock() == dock_style::left || control::dock() == dock_style::right ? (data_->next_control->width() + cursor::position().x()) : (data_->next_control->height() + cursor::position().y());
+      int32 new_size = delta_size - data_->mouse_down_location;
       if (new_size < data_->min_size) new_size = data_->min_size;
       //if (data_->previous_control.size()  < data_->min_size_extra) new_size = data_->min_size;
       if (control::dock() == dock_style::left || control::dock() == dock_style::right) data_->next_control->width(new_size);
@@ -89,7 +89,7 @@ void splitter::on_mouse_up(const mouse_event_args& e) {
   if (data_->previous_control) data_->previous_control->cursor(data_->previous_control_cursor);
   if (data_->next_control) data_->next_control->cursor(data_->previous_control_cursor);
   if (data_->mouse_down_location != -1 && parent().has_value() && data_->next_control) {
-    int32_t new_size = (control::dock() == dock_style::left || control::dock() == dock_style::right ? (data_->next_control->width() + cursor::position().x()) : (data_->next_control->height() + cursor::position().y())) - data_->mouse_down_location;
+    int32 new_size = (control::dock() == dock_style::left || control::dock() == dock_style::right ? (data_->next_control->width() + cursor::position().x()) : (data_->next_control->height() + cursor::position().y())) - data_->mouse_down_location;
     if (new_size < data_->min_size) new_size = data_->min_size;
     if (control::dock() == dock_style::left || control::dock() == dock_style::right) data_->next_control->width(new_size);
     else data_->next_control->height(new_size);

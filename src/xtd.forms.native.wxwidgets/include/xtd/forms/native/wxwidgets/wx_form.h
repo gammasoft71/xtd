@@ -171,17 +171,17 @@ namespace xtd {
 
       class wx_form : public control_handler {
 #if defined(__WIN32__)
-        static const int32_t min_width = 122;
-        static const int32_t min_height = 32;
+        static const int32 min_width = 122;
+        static const int32 min_height = 32;
 #elif defined(__WXGTK__)
-        static const int32_t min_width = 107;
-        static const int32_t min_height = 46;
+        static const int32 min_width = 107;
+        static const int32 min_height = 46;
 #elif defined(__APPLE__)
-        static const int32_t min_width = 75;
-        static const int32_t min_height = 23;
+        static const int32 min_width = 75;
+        static const int32 min_height = 23;
 #else
-        static const int32_t min_width = 122;
-        static const int32_t min_height = 32;
+        static const int32 min_width = 122;
+        static const int32 min_height = 32;
 #endif
         
       public:
@@ -313,7 +313,7 @@ namespace xtd {
         }
         #endif
         
-        void SetClientSize(int32_t width, int32_t height) override {
+        void SetClientSize(int32 width, int32 height) override {
           if (width < min_width) width = min_width;
           #if defined(__APPLE__)
           if (fixed) {
@@ -360,7 +360,7 @@ namespace xtd {
         }
         #endif
         
-        void SetSize(int32_t width, int32_t height) override {
+        void SetSize(int32 width, int32 height) override {
           if (width < min_width) width = min_width;
           if (height < min_height) height = min_height;
           #if defined(__APPLE__)

@@ -57,7 +57,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the Bitmap class with the specified size.
       /// @param width The width, in pixels, of the new bitmap.
       /// @param height The height, in pixels, of the new bitmap.
-      bitmap(int32_t width, int32_t height);
+      bitmap(int32 width, int32 height);
       /// @brief Initializes a new instance of the Bitmap class with the specified size.
       /// @param size the size, in pixels, of the new bitmap.
       explicit bitmap(const xtd::drawing::size& size);
@@ -82,13 +82,13 @@ namespace xtd {
       /// @param x The x-coordinate of the pixel to retrieve.
       /// @param y The y-coordinate of the pixel to retrieve.
       /// @return A xtd::drawing::color structure that represents the color of the specified pixel.
-      drawing::color get_pixel(int32_t x, int32_t y)  const;
+      drawing::color get_pixel(int32 x, int32 y)  const;
       
       /// @brief Sets the color of the specified pixel in this bitmap.
       /// @param x The x-coordinate of the pixel to retrieve.
       /// @param y The y-coordinate of the pixel to retrieve.
       /// @param color A xtd::drawing::color structure that represents the color of the specified pixel.
-      void set_pixel(int32_t x, int32_t y, const drawing::color& color);
+      void set_pixel(int32 x, int32 y, const drawing::color& color);
       /// @}
       
     private:

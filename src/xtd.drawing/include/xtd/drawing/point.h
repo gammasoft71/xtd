@@ -89,7 +89,7 @@ namespace xtd {
       ///   label1.text = "Bottom Right Alignment";
       /// }
       /// @endcode
-      explicit point(int32_t dw) noexcept;
+      explicit point(int32 dw) noexcept;
       
       /// @brief Initializes a new instance of the xtd::drawing::point class with the specified coordinates.
       /// @param x The horizontal position of the point.
@@ -113,7 +113,7 @@ namespace xtd {
       ///   }
       /// }
       /// @endcode
-      point(int32_t x, int32_t y) noexcept;
+      point(int32 x, int32 y) noexcept;
       
       /// @brief Initializes a new instance of the xtd::drawing::point class from a xtd::drawing::size.
       /// @param sz A size that specifies the coordinates for the new point.
@@ -173,7 +173,7 @@ namespace xtd {
       ///   }
       /// }
       /// @endcode
-      int32_t x() const noexcept;
+      int32 x() const noexcept;
       
       /// @brief Sets the x-coordinate of this xtd::drawing::point.
       /// @param x The x-coordinate of this xtd::drawing::point.
@@ -196,7 +196,7 @@ namespace xtd {
       ///   }
       /// }
       /// @endcode
-      void x(int32_t x) noexcept;
+      void x(int32 x) noexcept;
       
       /// @brief Gets the y-coordinate of this xtd::drawing::point.
       /// @return The y-coordinate of this xtd::drawing::point.
@@ -219,7 +219,7 @@ namespace xtd {
       ///   }
       /// }
       /// @endcode
-      int32_t y() const noexcept;
+      int32 y() const noexcept;
       
       /// @brief Sets the y-coordinate of this xtd::drawing::point.
       /// @param y The x-coordinate of this xtd::drawing::point.
@@ -242,7 +242,7 @@ namespace xtd {
       ///   }
       /// }
       /// @endcode
-      void y(int32_t y) noexcept;
+      void y(int32 y) noexcept;
       /// @}
       
       /// @name Methods
@@ -279,7 +279,7 @@ namespace xtd {
       /// @brief Translates this xtd::drawing::point by the specified amount.
       /// @param dx The amount to offset the x-coordinate.
       /// @param dy The amount to offset the y-coordinate.
-      void offset(int32_t dx, int32_t dy) noexcept;
+      void offset(int32 dx, int32 dy) noexcept;
       
       /// @brief Translates this xtd::drawing::point by the specified xtd::drawing::point.
       /// @param p The xtd::drawing::point used offset this xtd::drawing::point.
@@ -364,14 +364,14 @@ namespace xtd {
       /// @}
       
     private:
-      int32_t x_ = 0;
-      int32_t y_ = 0;
+      int32 x_ = 0;
+      int32 y_ = 0;
     };
   }
   
   template<>
   inline drawing::point parse<drawing::point>(const std::string& str) {
     auto values = xtd::ustring(str).replace("}", "").replace(" y=", "").replace("{x=", "").split({','});
-    return {xtd::parse<int32_t>(values[0]), xtd::parse<int32_t>(values[1])};
+    return {xtd::parse<int32>(values[0]), xtd::parse<int32>(values[1])};
   }
 }
