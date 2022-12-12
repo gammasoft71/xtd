@@ -1,6 +1,6 @@
 # using
 
-Shows how to use [xtd::using](../../../../src/xtd.core/include/xtd/using.h) class.
+Shows how to use [xtd::using](https://codedocs.xyz/gammasoft71/xtd/using_8h.html) class.
 
 ## Sources
 

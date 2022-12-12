@@ -1,6 +1,6 @@
 # startup
 
-Shows how to use [xtd::startup](../../../../src/xtd.core/include/xtd/startup.h) class.
+Shows how to use [xtd::startup](https://codedocs.xyz/gammasoft71/xtd/startup_8h.html) class.
 
 ## Sources
 
