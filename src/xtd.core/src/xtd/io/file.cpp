@@ -198,7 +198,7 @@ ofstream file::open_write(const ustring& path) {
   return stream;
 }
 
-vector<uint8_t> file::read_all_bytes(const ustring& path) {
+vector<xtd::byte> file::read_all_bytes(const ustring& path) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);
@@ -206,7 +206,7 @@ vector<uint8_t> file::read_all_bytes(const ustring& path) {
   
   ifstream stream(path, ios::binary);
   if (!stream.good()) throw io_exception(csf_);
-  return vector<uint8_t> {istreambuf_iterator<char>(stream), istreambuf_iterator<char>()};
+  return vector<xtd::byte> {istreambuf_iterator<char>(stream), istreambuf_iterator<char>()};
 }
 
 vector<ustring> file::read_all_lines(const ustring& path) {

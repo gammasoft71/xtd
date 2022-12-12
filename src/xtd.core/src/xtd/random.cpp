@@ -29,14 +29,14 @@ int32 random::next(int32 min_value, int32 max_value) const {
   return min_value + static_cast<int32>(std::round(sample() * std::numeric_limits<int32>::max())) % ((max_value - 1) - min_value + 1);
 }
 
-void random::next_bytes(std::vector<uint8_t>& buffer) const {
+void random::next_bytes(std::vector<xtd::byte>& buffer) const {
   next_bytes(buffer.data(), buffer.size());
 }
 
-void random::next_bytes(uint8_t* buffer, size_t buffer_size) const {
+void random::next_bytes(xtd::byte* buffer, size_t buffer_size) const {
   if (buffer == nullptr) throw argument_null_exception(current_stack_frame_);
   for (size_t index = 0; index < buffer_size; index++)
-    buffer[index] = next<uint8_t>(0, std::numeric_limits<uint8_t>::max());
+    buffer[index] = next<xtd::byte>(0, std::numeric_limits<xtd::byte>::max());
 }
 
 double random::next_double() const {

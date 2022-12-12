@@ -49,7 +49,7 @@ namespace xtd {
   class core_export_ bit_converter final static_ {
   private:
     static constexpr uint32 __endian_value__ = 0x01020304;
-    static constexpr uint8_t __endian_query__ = static_cast<const uint8_t&>(__endian_value__);
+    static constexpr xtd::byte __endian_query__ = static_cast<const xtd::byte&>(__endian_value__);
     
   public:
     /// @brief Represents the byte_t order ("endianness") in which data is stored in this computer architecture.

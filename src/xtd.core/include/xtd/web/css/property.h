@@ -44,7 +44,7 @@ namespace xtd {
         static property from(int32 value) {return property(ustring::format("{}", value));}
         static property from(int64 value) {return property(ustring::format("{}", value));}
         static property from(const xtd::ustring& value) {return property(ustring::format("{}", value));}
-        static property from(uint8_t value) {return property(ustring::format("{}", value));}
+        static property from(xtd::byte value) {return property(ustring::format("{}", value));}
         static property from(uint16_t value) {return property(ustring::format("{}", value));}
         static property from(uint32 value) {return property(ustring::format("{}", value));}
         static property from(uint64_t value) {return property(ustring::format("{}", value));}
@@ -60,7 +60,7 @@ namespace xtd {
         intptr_t to_intptr() const {return xtd::parse<intptr_t>(value_);}
         float to_single() const {return xtd::parse<float>(value_);}
         xtd::ustring to_string() const noexcept override {return value_;}
-        uint8_t to_uint8() const {return xtd::parse<uint8_t>(value_);}
+        xtd::byte to_uint8() const {return xtd::parse<xtd::byte>(value_);}
         uint16_t to_uint16() const {return xtd::parse<uint16_t>(value_);}
         uint32 to_uint32() const {return xtd::parse<uint32>(value_);}
         uint64_t to_uint64() const {return xtd::parse<uint64_t>(value_);}
