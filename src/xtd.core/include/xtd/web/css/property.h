@@ -57,7 +57,7 @@ namespace xtd {
         int16 to_int16() const {return xtd::parse<int16>(value_);}
         int32 to_int32() const {return xtd::parse<int32>(value_);}
         int64 to_int64() const {return xtd::parse<int64>(value_);}
-        intptr_t to_intptr() const {return xtd::parse<intptr_t>(value_);}
+        intptr to_intptr() const {return xtd::parse<intptr>(value_);}
         float to_single() const {return xtd::parse<float>(value_);}
         xtd::ustring to_string() const noexcept override {return value_;}
         xtd::byte to_uint8() const {return xtd::parse<xtd::byte>(value_);}

@@ -34,8 +34,8 @@ bool secure_string::empty() const noexcept {
   return data_.size() == 0;
 }
 
-intptr_t secure_string::data() const noexcept {
-  return reinterpret_cast<intptr_t>(data_.data());
+intptr secure_string::data() const noexcept {
+  return reinterpret_cast<intptr>(data_.data());
 }
 
 size_t secure_string::size() const noexcept {

@@ -151,8 +151,8 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::net::sockets::socket class for the specified socket handle.
         /// @param handle The socket handle for the socket that the xtd::net::sockets::socket object will encapsulate.
         /// @exception xtd::argument_exception The handle is invalid.
-        /// @remarks This method populates the xtd::net::sockets::socket instance with data gathered from the supplied intptr_t. Different operating systems provide varying levels of support for querying a socket handle or file descriptor for its properties and configuration. Some of the public APIs on the resulting xtd::net::sockets::socket instance may differ based on operating system, such as xtd::net::sockets::socket::protocol_type and xtd::net::sockets::socket::blocking.
-        explicit socket(intptr_t handle);
+        /// @remarks This method populates the xtd::net::sockets::socket instance with data gathered from the supplied intptr. Different operating systems provide varying levels of support for querying a socket handle or file descriptor for its properties and configuration. Some of the public APIs on the resulting xtd::net::sockets::socket instance may differ based on operating system, such as xtd::net::sockets::socket::protocol_type and xtd::net::sockets::socket::blocking.
+        explicit socket(intptr handle);
         /// @brief Initializes a new instance of the xtd::net::sockets::socket class using the specified value returned from xtd::net::sockets::socket::duplicate_and_close.
         /// @param socket_information The socket information returned by xtd::net::sockets::socket::duplicate_and_close.
         /// @remarks If you call the xtd::net::sockets::socket constructor multiple times with the same byte array as the argument for each call, you will create multiple xtd::net::sockets::socket with the same underlying socket. This practice is strongly discouraged.
@@ -292,8 +292,8 @@ namespace xtd {
         socket& exclusive_address_use(bool value);
         
         /// @brief Gets the operating system handle for the xtd::net::sockets::socket.
-        /// @return An intptr_t that represents the operating system handle for the xtd::net::sockets::socket.
-        intptr_t handle() const noexcept;
+        /// @return An intptr that represents the operating system handle for the xtd::net::sockets::socket.
+        intptr handle() const noexcept;
         
         /// @brief Gets a value that indicates whether the xtd::net::sockets::socket is bound to a specific local port.
         /// @return true if the xtd::net::sockets::socket is bound to a local port; otherwise, false.
@@ -1001,7 +1001,7 @@ namespace xtd {
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
-        size_t get_raw_socket_option(int32 socket_option_level, int32 socket_option_name, intptr_t option_value, size_t size_option_value) const;
+        size_t get_raw_socket_option(int32 socket_option_level, int32 socket_option_name, intptr option_value, size_t size_option_value) const;
         
         /// @brief Returns the value of a specified xtd::net::sockets::socket option, represented as integer.
         /// @param socket_option_level One of the xtd::net::sockets::socket_option_level values.
@@ -1521,7 +1521,7 @@ namespace xtd {
         /// @remarks In general, the xtd::net::sockets::socket::set_socket_option method should be used whenever setting a xtd::net::sockets::socket option.
         /// @remarks The SetRawSocketOption(Int32, Int32, ReadOnlySpan<byte>) method should be used only when SocketOptionLevel and SocketOptionName do not expose the required option.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        void set_raw_socket_option(int32 socket_option_level, int32 socket_option_name, intptr_t option_value, size_t option_value_size);
+        void set_raw_socket_option(int32 socket_option_level, int32 socket_option_name, intptr option_value, size_t option_value_size);
         
         /// @brief Disables sends and receives on a xtd::net::sockets::socket.
         /// @param how One of the xtd::net::sockets::socket_shutdown values that specifies the operation that will no longer be allowed.

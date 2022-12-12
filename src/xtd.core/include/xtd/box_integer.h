@@ -125,12 +125,12 @@ namespace xtd {
   /// The following example shows how to create and use xtd::intptr_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
-  /// intptr_t unboxed_object = 42;
+  /// intptr unboxed_object = 42;
   /// intptr_object boxed_object = unboxed_object;
   /// auto result = stringer(boxed_object);
   /// console::write_line("result = {}", result); // Display: result = 42;
   /// @endcode
-  using intptr_object = box_integer<intptr_t>;
+  using intptr_object = box_integer<intptr>;
 
   /// @brief Represent a boxed sbyte.
   /// @par Namespace

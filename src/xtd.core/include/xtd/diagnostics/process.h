@@ -318,7 +318,7 @@ namespace xtd {
       /// @remarks An application can obtain a handle to a process that can be used as a parameter to many process-information and control functions. You can use this handle to initialize a xtd::diagnostics::wait_handle or to call native methods with platform invoke.
       /// @remarks This process handle is private to an application--in other words, process handles cannot be shared. A process also has a process Id which, unlike the xtd::diagnostics::process::handle, is unique and, therefore, valid throughout the system.
       /// @remarks Only processes started through a call to xtd::diagnostics::process::start set the xtd::diagnostics::process::handle property of the corresponding xtd::diagnostics::process instances.
-      intptr_t handle() const;
+      intptr handle() const;
       
       /// @brief Gets a value indicating whether the associated process has been terminated.
       /// @return true if the operating system process referenced by the process component has terminated; otherwise, false.
@@ -842,7 +842,7 @@ namespace xtd {
     private:
       struct data {
         xtd::diagnostics::process_start_info start_info_;
-        std::optional<intptr_t> handle_ = 0;
+        std::optional<intptr> handle_ = 0;
         int32 id_ = 0;
         ustring machine_name_;
         xtd::diagnostics::process_priority_class priority_class_ = xtd::diagnostics::process_priority_class::normal;
