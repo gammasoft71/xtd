@@ -17,7 +17,7 @@
 
 #if __APPLE__
 #ifndef KIOCSOUND
-const int32_t KIOCSOUND = 0x4B2F;
+const int_least32_t KIOCSOUND = 0x4B2F;
 #endif
 #else
 #include <linux/kd.h>
@@ -26,7 +26,7 @@ const int32_t KIOCSOUND = 0x4B2F;
 using namespace xtd::native;
 
 namespace {
-  std::function<bool(int32_t)> user_cancel_callback;
+  std::function<bool(int_least32_t)> user_cancel_callback;
   auto back_color = CONSOLE_COLOR_BLACK;
   auto fore_color = CONSOLE_COLOR_WHITE;
   auto cursor_visible = true;
@@ -45,7 +45,7 @@ namespace {
         ::signal(signal.first, SIG_DFL);
     }
     
-    static void signal_handler(int32_t signal) {
+    static void signal_handler(int_least32_t signal) {
       ::signal(signal, console_intercept_signals::signal_handler);
       //xtd::console_cancel_event_args console_cancel(false, signal_keys_[signal]);
       //xtd::console::__internal_cancel_key_press__(console_cancel);
@@ -53,7 +53,7 @@ namespace {
       if (user_cancel_callback && user_cancel_callback(signal_keys_[signal]) == false) exit(EXIT_FAILURE);
     }
     
-    inline static std::map<int32_t, int32_t> signal_keys_  {{SIGQUIT, CONSOLE_SPECIAL_KEY_CTRL_BS}, {SIGTSTP, CONSOLE_SPECIAL_KEY_CTRL_Z}, {SIGINT, CONSOLE_SPECIAL_KEY_CTRL_C}};
+    inline static std::map<int_least32_t, int_least32_t> signal_keys_  {{SIGQUIT, CONSOLE_SPECIAL_KEY_CTRL_BS}, {SIGTSTP, CONSOLE_SPECIAL_KEY_CTRL_Z}, {SIGINT, CONSOLE_SPECIAL_KEY_CTRL_C}};
     static console_intercept_signals console_intercept_signals_;
   };
   
@@ -68,9 +68,9 @@ namespace {
     }
     
   public:
-    int32_t getch() {
+    int_least32_t getch() {
       if (peek_character != -1) {
-        int8_t character = peek_character;
+        int_least8_t character = peek_character;
         peek_character = -1;
         return character;
       }
@@ -83,7 +83,7 @@ namespace {
       termioAttributes.c_cc[VMIN] = 1;
       tcsetattr(0, TCSANOW, &termioAttributes);
       
-      int8_t character = 0;
+      int_least8_t character = 0;
       while (read(0, &character, 1) != 1);
       
       tcsetattr(0, TCSANOW, &backupedTermioAttributes);
@@ -120,7 +120,7 @@ namespace {
     static terminal terminal_;
     
   private:
-    int8_t peek_character = -1;
+    int_least8_t peek_character = -1;
   };
   
   terminal terminal::terminal_;
@@ -130,8 +130,8 @@ namespace {
     class input_list {
     public:
       input_list() {}
-      explicit input_list(const std::list<int32_t>& chars) : chars(chars) {}
-      explicit input_list(std::initializer_list<int32_t> il) : chars(il) {}
+      explicit input_list(const std::list<int_least32_t>& chars) : chars(chars) {}
+      explicit input_list(std::initializer_list<int_least32_t> il) : chars(il) {}
       input_list(const input_list& il) : chars(il.chars) {}
       
       input_list& operator =(const input_list& il) {
@@ -142,8 +142,8 @@ namespace {
       bool operator ==(const input_list& il) const {return chars == il.chars;}
       bool operator !=(const input_list& il) const {return chars != il.chars;}
       
-      using const_iterator = std::list<int32_t>::const_iterator;
-      using iterator = std::list<int32_t>::iterator;
+      using const_iterator = std::list<int_least32_t>::const_iterator;
+      using iterator = std::list<int_least32_t>::iterator;
       
       const_iterator cbegin() const {return chars.begin();}
       const_iterator cend() const {return chars.end();}
@@ -152,18 +152,18 @@ namespace {
       const_iterator end() const {return chars.end();}
       iterator end() {return chars.end();}
       
-      void add(int32_t c) {chars.push_back(c);}
-      void add_front(int32_t c) {chars.push_front(c);}
-      void remove(int32_t c) {chars.remove(c);}
-      int32_t count() const {return static_cast<int32_t>(chars.size());}
-      int32_t pop() { int32_t c = chars.front();  chars.erase(chars.begin()); return c;}
+      void add(int_least32_t c) {chars.push_back(c);}
+      void add_front(int_least32_t c) {chars.push_front(c);}
+      void remove(int_least32_t c) {chars.remove(c);}
+      int_least32_t count() const {return static_cast<int_least32_t>(chars.size());}
+      int_least32_t pop() { int_least32_t c = chars.front();  chars.erase(chars.begin()); return c;}
       void clear() {chars.clear();}
       
       bool is_empty() const {return chars.empty();}
       
       std::string to_string() const {
         std::stringstream result;
-        std::list<int32_t>::const_iterator iterator = chars.begin();
+        std::list<int_least32_t>::const_iterator iterator = chars.begin();
         while (iterator != chars.end()) {
           if (char(*iterator & 0xFF) == 27)
             result << "^[";
@@ -189,7 +189,7 @@ namespace {
       }
       
     private:
-      std::list<int32_t> chars;
+      std::list<int_least32_t> chars;
     };
     
     key_info(const key_info& ki) : key_(ki.key_), key_char_(ki.key_char_), has_alt_modifier_(ki.has_alt_modifier_), has_control_modifier_(ki.has_control_modifier_), has_shift_modifier_(ki.has_shift_modifier_) {}
@@ -225,8 +225,8 @@ namespace {
       return to_key_info(inputs.pop(), true);
     }
     
-    int32_t key() const {return key_;}
-    int32_t key_char() const {return key_char_;}
+    int_least32_t key() const {return key_;}
+    int_least32_t key_char() const {return key_char_;}
     bool has_alt_modifier() const {return has_alt_modifier_;}
     bool has_control_modifier() const {return has_control_modifier_;}
     bool has_shift_modifier() const {return has_shift_modifier_;}
@@ -239,25 +239,25 @@ namespace {
     
   private:
     key_info() : key_(0), key_char_(0), has_alt_modifier_(false), has_control_modifier_(false), has_shift_modifier_(false) {}
-    key_info(int32_t key, int32_t key_char) : key_(key), key_char_(key_char), has_alt_modifier_(false), has_control_modifier_(false), has_shift_modifier_(false) {}
-    key_info(int32_t key, int32_t key_char, bool has_alt_modifier, bool has_control_modifier, bool has_shift_modifier) : key_(key), key_char_(key_char), has_alt_modifier_(has_alt_modifier), has_control_modifier_(has_control_modifier), has_shift_modifier_(has_shift_modifier) {}
+    key_info(int_least32_t key, int_least32_t key_char) : key_(key), key_char_(key_char), has_alt_modifier_(false), has_control_modifier_(false), has_shift_modifier_(false) {}
+    key_info(int_least32_t key, int_least32_t key_char, bool has_alt_modifier, bool has_control_modifier, bool has_shift_modifier) : key_(key), key_char_(key_char), has_alt_modifier_(has_alt_modifier), has_control_modifier_(has_control_modifier), has_shift_modifier_(has_shift_modifier) {}
     
     static std::string to_string(bool b) {return b ? "true" : "false";}
     
-    static int32_t to_key(input_list& inputs) {
-      int32_t result = 0;
-      int32_t index = 1;
+    static int_least32_t to_key(input_list& inputs) {
+      int_least32_t result = 0;
+      int_least32_t index = 1;
       for (auto c : inputs)
         result |= (c & 0xFF) << (8 * index--);
       inputs.clear();
       return result;
     }
     
-    static key_info to_key_info(int32_t key) {
+    static key_info to_key_info(int_least32_t key) {
       return to_key_info(key, false);
     }
     
-    static key_info to_key_info(int32_t key, bool alt) {
+    static key_info to_key_info(int_least32_t key, bool alt) {
       // Ctrl + Space
       if (key == 0)
         return key_info(' ', ' ', false, true, false);
@@ -367,14 +367,14 @@ namespace {
       return key_info(0, key, alt, false, key >= 'A' && key <= 'Z');
     }
     
-    int32_t key_;
-    int32_t key_char_;
+    int_least32_t key_;
+    int_least32_t key_char_;
     bool has_alt_modifier_;
     bool has_control_modifier_;
     bool has_shift_modifier_;
     struct key_key_char {
-      int32_t key;
-      int32_t key_char;
+      int_least32_t key;
+      int_least32_t key_char;
       bool alt;
       bool control;
       bool shift;
@@ -532,26 +532,26 @@ namespace {
   };
 }
 
-int32_t console::background_color() {
+int_least32_t console::background_color() {
   return back_color;
 }
 
-void console::background_color(int32_t color) {
+void console::background_color(int_least32_t color) {
   if (!terminal::is_ansi_supported()) return;
-  static std::map<int32_t, const char*> colors {{CONSOLE_COLOR_BLACK, "\033[40m"}, {CONSOLE_COLOR_DARK_BLUE, "\033[44m"}, {CONSOLE_COLOR_DARK_GREEN, "\033[42m"}, {CONSOLE_COLOR_DARK_CYAN, "\033[46m"}, {CONSOLE_COLOR_DARK_RED, "\033[41m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\033[45m"}, {CONSOLE_COLOR_DARK_YELLOW, "\033[43m"}, {CONSOLE_COLOR_GRAY, "\033[47m"}, {CONSOLE_COLOR_DARK_GRAY, "\033[100m"}, {CONSOLE_COLOR_BLUE, "\033[104m"}, {CONSOLE_COLOR_GREEN, "\033[102m"}, {CONSOLE_COLOR_CYAN, "\033[106m"}, {CONSOLE_COLOR_RED, "\033[101m"}, {CONSOLE_COLOR_MAGENTA, "\033[105m"}, {CONSOLE_COLOR_YELLOW, "\033[103m"}, {CONSOLE_COLOR_WHITE, "\033[107m"}};
+  static std::map<int_least32_t, const char*> colors {{CONSOLE_COLOR_BLACK, "\033[40m"}, {CONSOLE_COLOR_DARK_BLUE, "\033[44m"}, {CONSOLE_COLOR_DARK_GREEN, "\033[42m"}, {CONSOLE_COLOR_DARK_CYAN, "\033[46m"}, {CONSOLE_COLOR_DARK_RED, "\033[41m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\033[45m"}, {CONSOLE_COLOR_DARK_YELLOW, "\033[43m"}, {CONSOLE_COLOR_GRAY, "\033[47m"}, {CONSOLE_COLOR_DARK_GRAY, "\033[100m"}, {CONSOLE_COLOR_BLUE, "\033[104m"}, {CONSOLE_COLOR_GREEN, "\033[102m"}, {CONSOLE_COLOR_CYAN, "\033[106m"}, {CONSOLE_COLOR_RED, "\033[101m"}, {CONSOLE_COLOR_MAGENTA, "\033[105m"}, {CONSOLE_COLOR_YELLOW, "\033[103m"}, {CONSOLE_COLOR_WHITE, "\033[107m"}};
   auto it = colors.find(color);
   if (it == colors.end()) return;
   std::cout << it->second << std::flush;
   back_color = color;
 }
 
-void console::beep(uint32_t frequency, uint32_t duration) {
+void console::beep(uint_least32_t frequency, uint_least32_t duration) {
   if (frequency < 37 || frequency > 32767) return;
   
-  int32_t fd = open("/dev/console", O_WRONLY);
+  int_least32_t fd = open("/dev/console", O_WRONLY);
   if (fd == -1) std::cout << "\a" << std::flush;
   else {
-    if (ioctl(fd, KIOCSOUND, (int32_t)(1193180 / frequency)) < 0) std::cout << "\a" << std::flush;
+    if (ioctl(fd, KIOCSOUND, (int_least32_t)(1193180 / frequency)) < 0) std::cout << "\a" << std::flush;
     else {
       usleep(1000 * duration);
       ioctl(fd, KIOCSOUND, 0);
@@ -560,21 +560,21 @@ void console::beep(uint32_t frequency, uint32_t duration) {
   }
 }
 
-int32_t console::buffer_height() {
+int_least32_t console::buffer_height() {
   /// @todo console buffer Height on linux and macOS
   return console::window_height();
 }
 
-void console::buffer_height(int32_t height) {
+void console::buffer_height(int_least32_t height) {
   /// @todo set console buffer height on linux and macOS
 }
 
-int32_t console::buffer_width() {
+int_least32_t console::buffer_width() {
   /// @todo console buffer Width on linux and macOS
   return console::window_width();
 }
 
-void console::buffer_width(int32_t width) {
+void console::buffer_width(int_least32_t width) {
   /// @todo set console buffer width on linux and macOS
 }
 
@@ -588,7 +588,7 @@ void console::clear() {
   std::cout << "\x1b[H\x1b[2J" << std::flush;
 }
 
-int32_t console::cursor_left() {
+int_least32_t console::cursor_left() {
   if (!terminal::is_ansi_supported()) return 0;
   std::cout << "\x1b[6n" << std::flush;
   terminal::terminal_.getch();
@@ -600,17 +600,17 @@ int32_t console::cursor_left() {
   return atoi(left.c_str()) - 1;
 }
 
-int32_t console::cursor_size() {
+int_least32_t console::cursor_size() {
   return 100;
 }
 
-void console::cursor_size(int32_t size) {
+void console::cursor_size(int_least32_t size) {
   if (!terminal::is_ansi_supported()) return;
   if (size < 50) std::cout << "\x1b[4 q" << std::flush;
   else std::cout << "\x1b[2 q" << std::flush;
 }
 
-int32_t console::cursor_top() {
+int_least32_t console::cursor_top() {
   if (!terminal::is_ansi_supported()) return 0;
   std::cout << "\x1b[6n" << std::flush;
   terminal::terminal_.getch();
@@ -632,25 +632,25 @@ void console::cursor_visible(bool visible) {
   std::cout << (::cursor_visible ? "\x1b[?25h" : "\x1b[?25l") << std::flush;
 }
 
-int32_t console::foreground_color() {
+int_least32_t console::foreground_color() {
   return fore_color;
 }
 
-void console::foreground_color(int32_t color) {
+void console::foreground_color(int_least32_t color) {
   if (!terminal::is_ansi_supported()) return;
-  static std::map<int32_t, const char*> colors {{CONSOLE_COLOR_BLACK, "\033[30m"}, {CONSOLE_COLOR_DARK_BLUE, "\033[34m"}, {CONSOLE_COLOR_DARK_GREEN, "\033[32m"}, {CONSOLE_COLOR_DARK_CYAN, "\033[36m"}, {CONSOLE_COLOR_DARK_RED, "\033[31m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\033[35m"}, {CONSOLE_COLOR_DARK_YELLOW, "\033[33m"}, {CONSOLE_COLOR_GRAY, "\033[37m"}, {CONSOLE_COLOR_DARK_GRAY, "\033[90m"}, {CONSOLE_COLOR_BLUE, "\033[94m"}, {CONSOLE_COLOR_GREEN, "\033[92m"}, {CONSOLE_COLOR_CYAN, "\033[96m"}, {CONSOLE_COLOR_RED, "\033[91m"}, {CONSOLE_COLOR_MAGENTA, "\033[95m"}, {CONSOLE_COLOR_YELLOW, "\033[93m"}, {CONSOLE_COLOR_WHITE, "\033[97m"}};
+  static std::map<int_least32_t, const char*> colors {{CONSOLE_COLOR_BLACK, "\033[30m"}, {CONSOLE_COLOR_DARK_BLUE, "\033[34m"}, {CONSOLE_COLOR_DARK_GREEN, "\033[32m"}, {CONSOLE_COLOR_DARK_CYAN, "\033[36m"}, {CONSOLE_COLOR_DARK_RED, "\033[31m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\033[35m"}, {CONSOLE_COLOR_DARK_YELLOW, "\033[33m"}, {CONSOLE_COLOR_GRAY, "\033[37m"}, {CONSOLE_COLOR_DARK_GRAY, "\033[90m"}, {CONSOLE_COLOR_BLUE, "\033[94m"}, {CONSOLE_COLOR_GREEN, "\033[92m"}, {CONSOLE_COLOR_CYAN, "\033[96m"}, {CONSOLE_COLOR_RED, "\033[91m"}, {CONSOLE_COLOR_MAGENTA, "\033[95m"}, {CONSOLE_COLOR_YELLOW, "\033[93m"}, {CONSOLE_COLOR_WHITE, "\033[97m"}};
   auto it = colors.find(color);
   if (it == colors.end()) return;
   std::cout << it->second << std::flush;
   fore_color = color;
 }
 
-int32_t console::input_code_page() {
+int_least32_t console::input_code_page() {
   /// @todo console input code page status on linux and macOS
   return 65001;
 }
 
-void console::input_code_page(int32_t codePage) {
+void console::input_code_page(int_least32_t codePage) {
   /// @todo set console input code page on linux and macOS
 }
 
@@ -658,11 +658,11 @@ bool console::key_available() {
   return key_info::key_available();
 }
 
-int32_t console::largest_window_height() {
+int_least32_t console::largest_window_height() {
   return 1000;
 }
 
-int32_t console::largest_window_width() {
+int_least32_t console::largest_window_width() {
   return 1000;
 }
 
@@ -671,25 +671,25 @@ bool console::number_lock() {
   return false;
 }
 
-int32_t console::output_code_page() {
+int_least32_t console::output_code_page() {
   /// @todo console output code page status on linux and macOS
   return 65001;
 }
 
-void console::output_code_page(int32_t codePage) {
+void console::output_code_page(int_least32_t codePage) {
   /// @todo set console output code page on linux and macOS
 }
 
-void console::read_key(int32_t& key_char, int32_t& key_code, bool& alt, bool& shift, bool& ctrl) {
+void console::read_key(int_least32_t& key_char, int_least32_t& key_code, bool& alt, bool& shift, bool& ctrl) {
   auto key_info = key_info::read();
-  key_char = static_cast<int32_t>(key_info.key_char());
-  key_code = static_cast<int32_t>(key_info.key());
+  key_char = static_cast<int_least32_t>(key_info.key_char());
+  key_code = static_cast<int_least32_t>(key_info.key());
   alt = key_info.has_alt_modifier();
   ctrl = key_info.has_control_modifier();
   shift = key_info.has_shift_modifier();
 }
 
-void console::register_user_cancel_callback(std::function<bool(int32_t)> user_cancel_callback) {
+void console::register_user_cancel_callback(std::function<bool(int_least32_t)> user_cancel_callback) {
   ::user_cancel_callback = user_cancel_callback;
 }
 
@@ -698,7 +698,7 @@ void console::reset_color() {
   std::cout << "\033[49m\033[39m" << std::flush;
 }
 
-void console::set_cursor_position(int32_t left, int32_t top) {
+void console::set_cursor_position(int_least32_t left, int_least32_t top) {
   if (!terminal::is_ansi_supported()) return;
   std::cout << "\x1b[" << top + 1 << ";" << left + 1 << "f" << std::flush;
 }
@@ -738,12 +738,12 @@ void console::unregister_user_cancel_callback() {
   ::user_cancel_callback = nullptr;
 }
 
-int32_t console::window_left() {
+int_least32_t console::window_left() {
   /// @todo get console window left on linux and macOS
   return 0;
 }
 
-int32_t console::window_height() {
+int_least32_t console::window_height() {
   if (!terminal::is_ansi_supported()) return 24;
   auto top = console::cursor_top();
   console::set_cursor_position(console::cursor_left(), 999);
@@ -752,12 +752,12 @@ int32_t console::window_height() {
   return height;
 }
 
-int32_t console::window_top() {
+int_least32_t console::window_top() {
   /// @todo get console window top on linux and macOS
   return 0;
 }
 
-int32_t console::window_width() {
+int_least32_t console::window_width() {
   if (!terminal::is_ansi_supported()) return 80;
   auto left = console::cursor_left();
   console::set_cursor_position(999, console::cursor_top());
