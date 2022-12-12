@@ -148,13 +148,13 @@ namespace xtd::tests {
     }
     
     void test_method_(is_uint8_t_with_uint8_t) {
-      uint8_t v = 42;
-      assert::is_true(is<uint8_t>(v), csf_);
+      xtd::byte v = 42;
+      assert::is_true(is<xtd::byte>(v), csf_);
     }
     
     void test_method_(is_uint8_t_without_uint8_t) {
       bool v = true;
-      assert::is_false(is<uint8_t>(v), csf_);
+      assert::is_false(is<xtd::byte>(v), csf_);
     }
     
     void test_method_(is_uint16_t_with_uint16_t) {

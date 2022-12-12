@@ -35,7 +35,7 @@ namespace xtd::net::tests {
     }
     
     void test_method_(construstor_with_address_ip_v6_and_port) {
-      ip_end_point ep(ip_address(vector<byte_t> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}, 15), 9500);
+      ip_end_point ep(ip_address(vector<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}, 15), 9500);
       assert::are_equal("2001:0:5ef5:73b8:2c2c:3028:2a4e:b283%15", ep.address().to_string(), csf_);
       assert::are_equal(9500, ep.port(), csf_);
       assert::are_equal("[2001:0:5ef5:73b8:2c2c:3028:2a4e:b283%15]:9500", ep.to_string(), csf_);
@@ -51,11 +51,11 @@ namespace xtd::net::tests {
     }
     
     void test_method_(ip_end_point_ip_v4_create_with_socket_address_ip_v6) {
-      assert::throws<argument_exception>([] {ip_end_point(ip_address::none, 0).create(ip_end_point(ip_address(vector<byte_t> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}, 15), 9500).serialize());}, csf_);
+      assert::throws<argument_exception>([] {ip_end_point(ip_address::none, 0).create(ip_end_point(ip_address(vector<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}, 15), 9500).serialize());}, csf_);
     }
     
     void test_method_(ip_end_point_ip_v6_create_with_socket_address_ip_v6) {
-      unique_ptr<ip_end_point> ep = as<ip_end_point>(ip_end_point(ip_address::ip_v6_none, 0).create(ip_end_point(ip_address(vector<byte_t> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}, 15), 9500).serialize()));
+      unique_ptr<ip_end_point> ep = as<ip_end_point>(ip_end_point(ip_address::ip_v6_none, 0).create(ip_end_point(ip_address(vector<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}, 15), 9500).serialize()));
       assert::are_equal("2001:0:5ef5:73b8:2c2c:3028:2a4e:b283%15", ep->address().to_string(), csf_);
       assert::are_equal(9500, ep->port(), csf_);
       assert::are_equal("[2001:0:5ef5:73b8:2c2c:3028:2a4e:b283%15]:9500", ep->to_string(), csf_);

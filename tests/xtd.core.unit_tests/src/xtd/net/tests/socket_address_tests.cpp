@@ -85,7 +85,7 @@ namespace xtd::net::tests {
     
     void test_method_(socket_address_value_operator) {
       socket_address sa(address_family::inter_network);
-      assert::are_equal(static_cast<byte_t>(address_family::inter_network), sa[0], csf_);
+      assert::are_equal(static_cast<xtd::byte>(address_family::inter_network), sa[0], csf_);
       assert::are_equal(0, sa[1], csf_);
       assert::are_equal(0, sa[24], csf_);
       sa[24] = 42;
@@ -101,7 +101,7 @@ namespace xtd::net::tests {
     void test_method_(socket_address_to_string) {
       socket_address sa(address_family::inter_network);
       for (auto index = 2U; index < sa.size(); ++index)
-        sa[index] = static_cast<byte_t>(index);
+        sa[index] = static_cast<xtd::byte>(index);
       assert::are_equal("inter_network:32:{2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31}", sa.to_string(), csf_);
     }
   };

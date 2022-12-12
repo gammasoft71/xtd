@@ -137,7 +137,7 @@ namespace xtd::tests {
     }
     
     void test_method_(uint8_t_as_double) {
-      assert::is_true(is<double>(as<double>((uint8_t)42)), csf_);
+      assert::is_true(is<double>(as<double>((xtd::byte)42)), csf_);
     }
     
     void test_method_(uint16_t_as_double) {
