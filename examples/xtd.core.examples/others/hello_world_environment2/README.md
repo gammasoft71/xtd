@@ -1,6 +1,6 @@
 # hello_world_environment2
 
-The classic first application "Hello, World!" with [xtd::environment](../../../../src/xtd.core/include/xtd/environment.h) class.
+The classic first application "Hello, World!" with [xtd::environment](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html) class.
 
 ## Sources
 

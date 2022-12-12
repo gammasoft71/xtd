@@ -1,6 +1,6 @@
 # console_song2
 
-Shows how to use [xtd::beep](../../../../src/xtd.core/include/xtd/beep.h) class.
+Shows how to use [xtd::beep](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1beep.html) class.
 
 # Sources
 
