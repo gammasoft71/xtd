@@ -1,6 +1,6 @@
 # file_info_replace
 
-Show how to use [xtd::io::file_info::replace](../../../../src/xtd.core/include/xtd/io/file_info.h) method.
+Show how to use [xtd::io::file_info::replace](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1file__info.html#abb07c7523a23cb67975615bb76db17ec) method.
 
 ## Sources
 
