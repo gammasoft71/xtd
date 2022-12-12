@@ -76,13 +76,13 @@ namespace xtd {
       /// @return The character used to mask characters entered in a single-line text_box control. Set the value of this property to '0' (U+0000) if you do not want the control to mask characters as they are typed. The default value is '0' (U+0000).
       /// @remarks The use_system_password_char property has precedence over the password_char property. Whenever the use_system_password_char is set to true, the default system password character is used and any character set by password_char is ignored.
       /// @remarks When the password_char property is set, cut and copy actions in the control using the keyboard cannot be performed.
-      virtual char32_t password_char() const noexcept;
+      virtual char32 password_char() const noexcept;
       /// @brief Sets the character used to mask characters of a password in a single-line TextBox control.
       /// @param value The character used to mask characters entered in a single-line text_box control. Set the value of this property to '0' (U+0000) if you do not want the control to mask characters as they are typed. The default value is '0' (U+0000).
       /// @return Current text_box instance.
       /// @remarks The use_system_password_char property has precedence over the password_char property. Whenever the use_system_password_char is set to true, the default system password character is used and any character set by password_char is ignored.
       /// @remarks When the password_char property is set, cut and copy actions in the control using the keyboard cannot be performed.
-      virtual text_box& password_char(char32_t value);
+      virtual text_box& password_char(char32 value);
       
       /// @brief Gets the text that is displayed when the control has no text and does not have the focus.
       /// @return The text that is displayed when the control has no text and does not have the focus.
@@ -171,7 +171,7 @@ namespace xtd {
         xtd::ustring placeholder_text = xtd::ustring::empty_string();
         bool accepts_return = false;
         xtd::forms::character_casing character_casing = xtd::forms::character_casing::normal;
-        char32_t password_char = 0;
+        char32 password_char = 0;
         bool use_system_password_char = false;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();

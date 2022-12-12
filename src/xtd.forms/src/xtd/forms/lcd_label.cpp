@@ -6,13 +6,13 @@ using namespace xtd::forms;
 
 class lcd_label::idigit interface_ {
 public:
-  virtual char32_t get_character() const noexcept = 0;
+  virtual char32 get_character() const noexcept = 0;
   virtual std::u32string get_valid_characters() const noexcept = 0;
   virtual int32_t get_thickness() const noexcept = 0;
   
   virtual void set_back_digit_color(const xtd::drawing::color& value) = 0;
   virtual void set_back_digit_opacity(double value) = 0;
-  virtual void set_character(char32_t value) = 0;
+  virtual void set_character(char32 value) = 0;
   virtual void set_segment_style(forms::segment_style value) = 0;
   virtual void set_dot_matrix_style(forms::dot_matrix_style value) = 0;
   virtual void set_show_back_digit(bool value) = 0;
@@ -23,103 +23,103 @@ class lcd_label::dot_matrix_display_digit : public dot_matrix_display, public lc
 public:
   dot_matrix_display_digit() = default;
   
-  char32_t get_character() const noexcept override;
+  char32 get_character() const noexcept override;
   std::u32string get_valid_characters() const noexcept override;
   int32_t get_thickness() const noexcept override;
   
   void set_back_digit_color(const xtd::drawing::color& value) override;
   void set_back_digit_opacity(double value) override;
-  void set_character(char32_t value) override;
+  void set_character(char32 value) override;
   void set_segment_style(forms::segment_style value) override;
   void set_dot_matrix_style(forms::dot_matrix_style value) override;
   void set_show_back_digit(bool value) override;
   void set_thickness(int32_t value) override;
   
 private:
-  char32_t character_ = U' ';
+  char32 character_ = U' ';
 };
 
 class lcd_label::fourteen_segment_display_digit : public fourteen_segment_display, public lcd_label::idigit {
 public:
   fourteen_segment_display_digit() = default;
   
-  char32_t get_character() const noexcept override;
+  char32 get_character() const noexcept override;
   std::u32string get_valid_characters() const noexcept override;
   int32_t get_thickness() const noexcept override;
   
   void set_back_digit_color(const xtd::drawing::color& value) override;
   void set_back_digit_opacity(double value) override;
-  void set_character(char32_t value) override;
+  void set_character(char32 value) override;
   void set_segment_style(forms::segment_style value) override;
   void set_dot_matrix_style(forms::dot_matrix_style value) override;
   void set_show_back_digit(bool value) override;
   void set_thickness(int32_t value) override;
   
 private:
-  char32_t character_ = U' ';
+  char32 character_ = U' ';
 };
 
 class lcd_label::nine_segment_display_digit : public nine_segment_display, public lcd_label::idigit {
 public:
   nine_segment_display_digit() = default;
   
-  char32_t get_character() const noexcept override;
+  char32 get_character() const noexcept override;
   std::u32string get_valid_characters() const noexcept override;
   int32_t get_thickness() const noexcept override;
   
   void set_back_digit_color(const xtd::drawing::color& value) override;
   void set_back_digit_opacity(double value) override;
-  void set_character(char32_t value) override;
+  void set_character(char32 value) override;
   void set_segment_style(forms::segment_style value) override;
   void set_dot_matrix_style(forms::dot_matrix_style value) override;
   void set_show_back_digit(bool value) override;
   void set_thickness(int32_t value) override;
   
 private:
-  char32_t character_ = U' ';
+  char32 character_ = U' ';
 };
 
 class lcd_label::seven_segment_display_digit : public seven_segment_display, public lcd_label::idigit {
 public:
   seven_segment_display_digit() = default;
   
-  char32_t get_character() const noexcept override;
+  char32 get_character() const noexcept override;
   std::u32string get_valid_characters() const noexcept override;
   int32_t get_thickness() const noexcept override;
   
   void set_back_digit_color(const xtd::drawing::color& value) override;
   void set_back_digit_opacity(double value) override;
-  void set_character(char32_t value) override;
+  void set_character(char32 value) override;
   void set_segment_style(forms::segment_style value) override;
   void set_dot_matrix_style(forms::dot_matrix_style value) override;
   void set_show_back_digit(bool value) override;
   void set_thickness(int32_t value) override;
   
 private:
-  char32_t character_ = U' ';
+  char32 character_ = U' ';
 };
 
 class lcd_label::sixteen_segment_display_digit : public sixteen_segment_display, public lcd_label::idigit {
 public:
   sixteen_segment_display_digit() = default;
   
-  char32_t get_character() const noexcept override;
+  char32 get_character() const noexcept override;
   std::u32string get_valid_characters() const noexcept override;
   int32_t get_thickness() const noexcept override;
   
   void set_back_digit_color(const xtd::drawing::color& value) override;
   void set_back_digit_opacity(double value) override;
-  void set_character(char32_t value) override;
+  void set_character(char32 value) override;
   void set_segment_style(forms::segment_style value) override;
   void set_dot_matrix_style(forms::dot_matrix_style value) override;
   void set_show_back_digit(bool value) override;
   void set_thickness(int32_t value) override;
   
 private:
-  char32_t character_ = U' ';
+  char32 character_ = U' ';
 };
 
-char32_t lcd_label::dot_matrix_display_digit::get_character() const noexcept {
+char32 lcd_label::dot_matrix_display_digit::get_character() const noexcept {
   return character_;
 }
 
@@ -139,8 +139,8 @@ void lcd_label::dot_matrix_display_digit::set_back_digit_opacity(double value) {
   back_dot_opacity(value);
 }
 
-void lcd_label::dot_matrix_display_digit::set_character(char32_t value) {
-  static std::map<char32_t, points_collection> characters {
+void lcd_label::dot_matrix_display_digit::set_character(char32 value) {
+  static std::map<char32, points_collection> characters {
     {U'0', {{2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {1, 2}, {4, 2}, {5, 2}, {1, 3}, {3, 3}, {5, 3}, {1, 4}, {2, 4}, {5, 4}, {1, 5}, {5, 5}, {2, 6}, {3, 6}, {4, 6}}},
     {U'1', {{3, 0}, {2, 1}, {3, 1}, {3, 2}, {3, 3}, {3, 4}, {3, 5}, {3, 6}}},
     {U'2', {{2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {5, 2}, {4, 3}, {3, 4}, {2, 5}, {1, 6}, {2, 6}, {3, 6}, {4, 6}, {5, 6}}},
@@ -257,7 +257,7 @@ void lcd_label::dot_matrix_display_digit::set_thickness(int32_t value) {
   thickness(value);
 }
 
-char32_t lcd_label::fourteen_segment_display_digit::get_character() const noexcept {
+char32 lcd_label::fourteen_segment_display_digit::get_character() const noexcept {
   return character_;
 }
 
@@ -277,8 +277,8 @@ void lcd_label::fourteen_segment_display_digit::set_back_digit_opacity(double va
   back_segment_opacity(value);
 }
 
-void lcd_label::fourteen_segment_display_digit::set_character(char32_t value) {
-  static std::map<char32_t, forms::segments> characters {
+void lcd_label::fourteen_segment_display_digit::set_character(char32 value) {
+  static std::map<char32, forms::segments> characters {
     {U'0', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f},
     {U'1', forms::segments::b | forms::segments::c | forms::segments::j},
     {U'2', forms::segments::a | forms::segments::b | forms::segments::d | forms::segments::e | forms::segments::g1 | forms::segments::g2},
@@ -384,7 +384,7 @@ void lcd_label::fourteen_segment_display_digit::set_thickness(int32_t value) {
   thickness(value);
 }
 
-char32_t lcd_label::nine_segment_display_digit::get_character() const noexcept {
+char32 lcd_label::nine_segment_display_digit::get_character() const noexcept {
   return character_;
 }
 
@@ -404,8 +404,8 @@ void lcd_label::nine_segment_display_digit::set_back_digit_opacity(double value)
   back_segment_opacity(value);
 }
 
-void lcd_label::nine_segment_display_digit::set_character(char32_t value) {
-  static std::map<char32_t, forms::segments> characters {
+void lcd_label::nine_segment_display_digit::set_character(char32 value) {
+  static std::map<char32, forms::segments> characters {
     {U'0', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f},
     {U'1', forms::segments::b | forms::segments::c},
     {U'2', forms::segments::a | forms::segments::b | forms::segments::d | forms::segments::i},
@@ -491,7 +491,7 @@ void lcd_label::nine_segment_display_digit::set_thickness(int32_t value) {
   thickness(value);
 }
 
-char32_t lcd_label::seven_segment_display_digit::get_character() const noexcept {
+char32 lcd_label::seven_segment_display_digit::get_character() const noexcept {
   return character_;
 }
 
@@ -511,8 +511,8 @@ void lcd_label::seven_segment_display_digit::set_back_digit_opacity(double value
   back_segment_opacity(value);
 }
 
-void lcd_label::seven_segment_display_digit::set_character(char32_t value) {
-  static std::map<char32_t, forms::segments> characters {
+void lcd_label::seven_segment_display_digit::set_character(char32 value) {
+  static std::map<char32, forms::segments> characters {
     {U'0', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f},
     {U'1', forms::segments::b | forms::segments::c},
     {U'2', forms::segments::a | forms::segments::b | forms::segments::d | forms::segments::e | forms::segments::g},
@@ -598,7 +598,7 @@ void lcd_label::seven_segment_display_digit::set_thickness(int32_t value) {
   thickness(value);
 }
 
-char32_t lcd_label::sixteen_segment_display_digit::get_character() const noexcept {
+char32 lcd_label::sixteen_segment_display_digit::get_character() const noexcept {
   return character_;
 }
 
@@ -612,8 +612,8 @@ int32_t lcd_label::sixteen_segment_display_digit::get_thickness() const noexcept
 
 void lcd_label::sixteen_segment_display_digit::set_back_digit_color(const xtd::drawing::color& value) {sixteen_segment_display::back_segment_color(value);}
 void lcd_label::sixteen_segment_display_digit::set_back_digit_opacity(double value) {sixteen_segment_display::back_segment_opacity(value);}
-void lcd_label::sixteen_segment_display_digit::set_character(char32_t value) {
-  static std::map<char32_t, forms::segments> characters {
+void lcd_label::sixteen_segment_display_digit::set_character(char32 value) {
+  static std::map<char32, forms::segments> characters {
     {U'0', forms::segments::a1 | forms::segments::a2 | forms::segments::b | forms::segments::c | forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::f},
     {U'1', forms::segments::b | forms::segments::c | forms::segments::j},
     {U'2', forms::segments::a1 | forms::segments::a2 | forms::segments::b | forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::g1 | forms::segments::g2},
@@ -866,7 +866,7 @@ control& lcd_label::text(const xtd::ustring& value) {
   return *this;
 }
 
-std::vector<char32_t> lcd_label::valid_characters() {
+std::vector<char32> lcd_label::valid_characters() {
   std::shared_ptr<idigit> digit;
   switch (data_->lcd_style) {
     case lcd_style::seven_segment_display: digit = std::make_shared<seven_segment_display_digit>(); break;
