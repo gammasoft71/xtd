@@ -179,6 +179,7 @@ add_sources(
   include/xtd/internal/__as_enum.h
   include/xtd/internal/__binary_formatter.h
   include/xtd/internal/__boolean_formatter.h
+  include/xtd/internal/__char8_t.h
   include/xtd/internal/__character_formatter.h
   include/xtd/internal/__currency_formatter.h
   include/xtd/internal/__date_time_formatter.h
