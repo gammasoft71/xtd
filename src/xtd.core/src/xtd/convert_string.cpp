@@ -7,7 +7,7 @@ namespace {
   template<typename target_t, typename source_t>
   basic_string<target_t> convert_to_string(const basic_string<source_t>& str) noexcept {
     basic_string<target_t> out;
-    uint32_t codepoint = 0;
+    uint32 codepoint = 0;
     for (auto character : str) {
       if (character >= 0xd800 && character <= 0xdbff)
         codepoint = ((character - 0xd800) << 10) + 0x10000;

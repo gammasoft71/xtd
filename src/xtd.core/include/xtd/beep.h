@@ -32,7 +32,7 @@ namespace xtd {
     /// @par Examples
     /// This example demonstrates the beep method by playing the first few notes of a song through the console speaker.
     /// @include console_song3.cpp
-    beep(uint32_t frequency, uint32_t duration) : frequency_(frequency), duration_(duration) {}
+    beep(uint32 frequency, uint32 duration) : frequency_(frequency), duration_(duration) {}
     // @}
     
     /// @cond
@@ -44,7 +44,7 @@ namespace xtd {
     /// @endcond
     
   private:
-    uint32_t frequency_ {800};
-    uint32_t duration_ {200};
+    uint32 frequency_ {800};
+    uint32 duration_ {200};
   };
 }

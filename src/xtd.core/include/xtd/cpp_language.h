@@ -28,7 +28,7 @@ namespace xtd {
     
     /// @{
     /// @brief Initialize a new instance of xtd::cpp_language class.
-    explicit cpp_language(uint32_t cpp) noexcept;
+    explicit cpp_language(uint32 cpp) noexcept;
     /// @}
     
     /// @cond
@@ -67,7 +67,7 @@ namespace xtd {
     
     /// @brief Gets the value of cpp language.
     /// @return The value of cpp version.
-    uint32_t value() const noexcept;
+    uint32 value() const noexcept;
     
     /// @brief Gets the version string of cpp language.
     /// @return The version string.
@@ -91,6 +91,6 @@ namespace xtd {
     /// @}
     
   private:
-    uint32_t cpp_ = __cplusplus;
+    uint32 cpp_ = __cplusplus;
   };
 }

@@ -22,19 +22,19 @@ void trace::auto_flush(bool auto_flush) noexcept {
   auto_flush_ = auto_flush;
 }
 
-uint32_t trace::indent_level() noexcept {
+uint32 trace::indent_level() noexcept {
   return indent_level_;
 }
 
-void trace::indent_level(uint32_t indent_level) noexcept {
+void trace::indent_level(uint32 indent_level) noexcept {
   indent_level_ = indent_level;
 }
 
-uint32_t trace::indent_size() noexcept {
+uint32 trace::indent_size() noexcept {
   return indent_size_;
 }
 
-void trace::indent_size(uint32_t indent_size) noexcept {
+void trace::indent_size(uint32 indent_size) noexcept {
   indent_size_ = indent_size;
 }
 

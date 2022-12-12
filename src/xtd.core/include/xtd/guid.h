@@ -76,7 +76,7 @@ namespace xtd {
     /// @param i The next byte of the GUID.
     /// @param j The next byte of the GUID.
     /// @param k The next byte of the GUID.
-    guid(uint32_t a, uint16_t b, uint16_t c, byte_t d, byte_t e, byte_t f, byte_t g, byte_t h, byte_t i, byte_t j, byte_t k) noexcept;
+    guid(uint32 a, uint16_t b, uint16_t c, byte_t d, byte_t e, byte_t f, byte_t g, byte_t h, byte_t i, byte_t j, byte_t k) noexcept;
     /// @brief Initializes a new instance of the xtd::guid structure by using the value represented by the specified string.
     /// @param guid A string that contains a GUID in one of the following formats ("d" represents a hexadecimal digit whose case is ignored):
     /// 32 contiguous digits:

@@ -118,7 +118,7 @@ namespace xtd {
     
     /// @brief Gets Line number where the exception occurred
     /// @return the line number where exception occurred
-    virtual uint32_t line_number() const noexcept;
+    virtual uint32 line_number() const noexcept;
     
     /// @brief Gets file member where exception occurred
     /// @return A string represent member name where exception occurred

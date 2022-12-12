@@ -2,7 +2,7 @@
 
 using namespace xtd;
 
-cpp_language::cpp_language(uint32_t cpp) noexcept : cpp_(cpp) {
+cpp_language::cpp_language(uint32 cpp) noexcept : cpp_(cpp) {
 }
 
 bool cpp_language::is_experimental_language() const noexcept {
@@ -47,7 +47,7 @@ xtd::ustring cpp_language::name() const noexcept {
   return names[language()];
 }
 
-uint32_t cpp_language::value() const noexcept {
+uint32 cpp_language::value() const noexcept {
   return cpp_;
 }
 

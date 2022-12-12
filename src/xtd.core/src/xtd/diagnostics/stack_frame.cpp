@@ -49,19 +49,19 @@ stack_frame::stack_frame(size_t skip_frame, bool need_file_info) {
   }
 }
 
-stack_frame::stack_frame(const ustring& file_name, uint32_t line_number) : file_name_(file_name), file_line_number_(line_number) {
+stack_frame::stack_frame(const ustring& file_name, uint32 line_number) : file_name_(file_name), file_line_number_(line_number) {
 }
 
-stack_frame::stack_frame(const ustring& file_name, uint32_t line_number, const ustring& method_name) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name) {
+stack_frame::stack_frame(const ustring& file_name, uint32 line_number, const ustring& method_name) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name) {
 }
 
-stack_frame::stack_frame(const ustring& file_name, uint32_t line_number, const ustring& method_name, uint32_t column_number) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number) {
+stack_frame::stack_frame(const ustring& file_name, uint32 line_number, const ustring& method_name, uint32 column_number) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number) {
 }
 
-stack_frame::stack_frame(const ustring& file_name, uint32_t line_number, uint32_t column_number) : file_name_(file_name), file_line_number_(line_number), file_column_number_(column_number) {
+stack_frame::stack_frame(const ustring& file_name, uint32 line_number, uint32 column_number) : file_name_(file_name), file_line_number_(line_number), file_column_number_(column_number) {
 }
 
-stack_frame::stack_frame(const ustring& file_name, uint32_t line_number, const ustring& method_name, uint32_t column_number, uint32_t offset) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number), offset_(offset) {
+stack_frame::stack_frame(const ustring& file_name, uint32 line_number, const ustring& method_name, uint32 column_number, uint32 offset) : file_name_(file_name), file_line_number_(line_number), method_name_(method_name), file_column_number_(column_number), offset_(offset) {
 }
 
 stack_frame stack_frame::empty() noexcept {
@@ -72,11 +72,11 @@ bool stack_frame::equals(const stack_frame& sf) const noexcept {
   return file_name_ == sf.file_name_ && file_line_number_ == sf.file_line_number_ && method_name_ == sf.method_name_ && file_column_number_ == sf.file_column_number_ && offset_ == sf.offset_;
 }
 
-uint32_t stack_frame::get_file_column_number() const noexcept {
+uint32 stack_frame::get_file_column_number() const noexcept {
   return file_column_number_;
 }
 
-uint32_t stack_frame::get_file_line_number() const noexcept {
+uint32 stack_frame::get_file_line_number() const noexcept {
   return file_line_number_;
 }
 
@@ -88,7 +88,7 @@ const ustring& stack_frame::get_method() const noexcept {
   return method_name_;
 }
 
-uint32_t stack_frame::get_offset() const noexcept {
+uint32 stack_frame::get_offset() const noexcept {
   return offset_;
 }
 
@@ -113,6 +113,6 @@ std::vector<stack_frame> stack_frame::get_stack_frames(const ustring& str, size_
   std::vector<stack_frame> stack_frames;
   if (call_stack.stack.size() == 0) return stack_frames;
   for (size_t index = skip_frames_before_str + skip_frames; index < call_stack.stack.size() - 1; ++index)
-    stack_frames.emplace_back(stack_frame(need_file_info ? call_stack.stack[index].file : "", need_file_info ? static_cast<uint32_t>(call_stack.stack[index].line) : 0, call_stack.stack[index].function, need_file_info ? static_cast<uint32_t>(call_stack.stack[index].column) : 0, static_cast<uint32_t>(call_stack.stack[index].offset)));
+    stack_frames.emplace_back(stack_frame(need_file_info ? call_stack.stack[index].file : "", need_file_info ? static_cast<uint32>(call_stack.stack[index].line) : 0, call_stack.stack[index].function, need_file_info ? static_cast<uint32>(call_stack.stack[index].column) : 0, static_cast<uint32>(call_stack.stack[index].offset)));
   return stack_frames;
 }

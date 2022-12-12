@@ -73,20 +73,20 @@ namespace xtd {
       /// @brief Gets the indent level.
       /// @return The indent level. The default is zero.
       /// @remarks The xtd::diagnostics::debug::indent_level property represents the number of times the indent of size xtd::diagnostics::debug::indent_size is applied. This property is stored on per-thread/per-request basis.
-      static uint32_t indent_level() noexcept;
+      static uint32 indent_level() noexcept;
       /// @brief Sets the indent level.
       /// @param indent_level The indent level. The default is zero.
       /// @remarks The xtd::diagnostics::debug::indent_level property represents the number of times the indent of size xtd::diagnostics::debug::indent_size is applied. This property is stored on per-thread/per-request basis.
-      static void indent_level(uint32_t indent_level) noexcept;
+      static void indent_level(uint32 indent_level) noexcept;
       
       /// @brief Gets the number of spaces in an indent.
       /// @return The number of spaces in an indent. The default is four.
       /// @remarks A xtd::diagnostics::ostream_trace_listener interprets this number as spaces. An xtd::diagnostics::event_log_trace_listener ignores this value.
-      static uint32_t indent_size() noexcept;
+      static uint32 indent_size() noexcept;
       /// @brief Sets the number of spaces in an indent.
       /// @param indent_size The number of spaces in an indent. The default is four.
       /// @remarks A xtd::diagnostics::ostream_trace_listener interprets this number as spaces. An xtd::diagnostics::event_log_trace_listener ignores this value.
-      static void indent_size(uint32_t indent_size) noexcept;
+      static void indent_size(uint32 indent_size) noexcept;
       
       /// @brief Gets the collection of listeners that is monitoring the trace output.
       /// @return A xtd::diagnostics::debug::listener_collection that represents a collection of type xtd::diagnostics::trace_listener monitoring the trace output.
@@ -466,8 +466,8 @@ namespace xtd {
       static void write_line_(const xtd::ustring& message, const xtd::ustring& category);
       
       inline static bool auto_flush_ = false;
-      inline static uint32_t indent_level_ = 0;
-      inline static uint32_t indent_size_ = 4;
+      inline static uint32 indent_level_ = 0;
+      inline static uint32 indent_size_ = 4;
       static listener_collection& listeners_;
       static bool& show_assert_dialog_;
       inline static bool use_global_lock_ = true;

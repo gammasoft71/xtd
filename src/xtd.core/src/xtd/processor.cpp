@@ -2,7 +2,7 @@
 
 using namespace xtd;
 
-processor::processor(xtd::architecture_id architecture, bool is_64_bit, uint32_t core_count) : architecture_(architecture), is_64_bit_(is_64_bit), core_count_(core_count) {
+processor::processor(xtd::architecture_id architecture, bool is_64_bit, uint32 core_count) : architecture_(architecture), is_64_bit_(is_64_bit), core_count_(core_count) {
 }
 
 xtd::architecture_id processor::architecture() const noexcept {
@@ -19,7 +19,7 @@ xtd::ustring processor::architecture_string() const noexcept {
   return architecture_string_;
 }
 
-uint32_t processor::core_count() const noexcept {
+uint32 processor::core_count() const noexcept {
   return core_count_;
 }
 

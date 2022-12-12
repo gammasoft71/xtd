@@ -19,7 +19,7 @@ inline std::basic_string<char_t> __to_string(const char_t* fmt, const std::tm& v
   return result.str();
 }
 
-inline std::string __date_time_formatter(std::string fmt, const std::tm& time, uint32_t nanoseconds, const std::locale& loc) {
+inline std::string __date_time_formatter(std::string fmt, const std::tm& time, xtd::uint32 nanoseconds, const std::locale& loc) {
   if (fmt.empty()) fmt =  "G";
   if (fmt.size() > 1) __format_exception("Invalid format");
   
@@ -68,7 +68,7 @@ inline std::string __date_time_formatter(std::string fmt, const std::tm& time, u
   }
 }
 
-inline std::wstring __date_time_formatter(std::wstring fmt, const std::tm& time, uint32_t nanoseconds, const std::locale& loc) {
+inline std::wstring __date_time_formatter(std::wstring fmt, const std::tm& time, xtd::uint32 nanoseconds, const std::locale& loc) {
   if (fmt.empty()) fmt =  L"G";
   if (fmt.size() > 1) __format_exception("Invalid format");
   
@@ -117,11 +117,11 @@ inline std::wstring __date_time_formatter(std::wstring fmt, const std::tm& time,
   }
 }
 
-inline std::string __date_time_formatter(std::string fmt, time_t time, uint32_t nanoseconds, const std::locale& loc) {
+inline std::string __date_time_formatter(std::string fmt, time_t time, xtd::uint32 nanoseconds, const std::locale& loc) {
   return __date_time_formatter(fmt, *std::localtime(&time), nanoseconds, loc);
 }
 
-inline std::wstring __date_time_formatter(std::wstring fmt, time_t time, uint32_t nanoseconds, const std::locale& loc) {
+inline std::wstring __date_time_formatter(std::wstring fmt, time_t time, xtd::uint32 nanoseconds, const std::locale& loc) {
   return __date_time_formatter(fmt, *std::localtime(&time), nanoseconds, loc);
 }
 /// @endcond

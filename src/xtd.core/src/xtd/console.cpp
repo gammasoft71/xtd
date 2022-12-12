@@ -197,7 +197,7 @@ void console::beep() {
   beep(800, 200);
 }
 
-void console::beep(uint32_t frequency, uint32_t duration) {
+void console::beep(uint32 frequency, uint32 duration) {
   __opaque_console::beep(frequency, duration);
 }
 

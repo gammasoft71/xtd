@@ -45,8 +45,8 @@ namespace xtd {
       
     private:
       friend class system_sounds;
-      explicit system_sound(uint32_t type);
-      uint32_t type_ = 0;
+      explicit system_sound(uint32 type);
+      uint32 type_ = 0;
     };
   }
 }

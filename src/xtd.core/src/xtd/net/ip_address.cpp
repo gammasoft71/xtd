@@ -19,7 +19,7 @@ ip_address ip_address::ip_v6_none {vector<byte_t> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 ip_address ip_address::loopback {0x0100007FLL};
 ip_address ip_address::none {0xFFFFFFFFLL};
 
-ip_address::ip_address(uint32_t address) {
+ip_address::ip_address(uint32 address) {
   address_ = static_cast<int32>(address);
 }
 
@@ -38,7 +38,7 @@ ip_address::ip_address(const vector<byte_t>& address) {
   }
 }
 
-ip_address::ip_address(const vector<byte_t>& address, uint32_t scope_id) : address_family_(sockets::address_family::inter_network_v6) {
+ip_address::ip_address(const vector<byte_t>& address, uint32 scope_id) : address_family_(sockets::address_family::inter_network_v6) {
   if (address.size() != 16) throw argument_exception(csf_);
   
   scope_id_ = scope_id;
@@ -49,7 +49,7 @@ ip_address::ip_address(const vector<byte_t>& address, uint32_t scope_id) : addre
 ip_address::ip_address(byte_t quad_part_address1, byte_t quad_part_address2, byte_t quad_part_address3, byte_t quad_part_address4) : address_((quad_part_address4 << 24 | quad_part_address3 << 16 | quad_part_address2 << 8 | quad_part_address1) & 0x0FFFFFFFF) {
 }
 
-ip_address::ip_address(const std::vector<uint16_t>& numbers, uint32_t scope_id) : numbers_(numbers), scope_id_(scope_id), address_family_(sockets::address_family::inter_network_v6) {
+ip_address::ip_address(const std::vector<uint16_t>& numbers, uint32 scope_id) : numbers_(numbers), scope_id_(scope_id), address_family_(sockets::address_family::inter_network_v6) {
 }
 
 sockets::address_family ip_address::address_family() const noexcept {
@@ -65,7 +65,7 @@ bool ip_address::is_ip_v4_mapped_to_ip_v6() const noexcept {
 
 bool ip_address::is_ip_v6_link_local() const noexcept {
   if (address_family_ == sockets::address_family::inter_network) return false;
-  auto num = static_cast<uint32_t>(numbers_[0]) & 0xFFF0;
+  auto num = static_cast<uint32>(numbers_[0]) & 0xFFF0;
   return 0xFE80 <= num && num <= 0xFEC0;
 }
 
@@ -75,7 +75,7 @@ bool ip_address::is_ip_v6_multicast() const noexcept {
 
 bool ip_address::is_ip_v6_site_local() const noexcept {
   if (address_family_ == sockets::address_family::inter_network) return false;
-  auto num = static_cast<uint32_t>(static_cast<int16_t>(numbers_[0])) & 0xFFF0;
+  auto num = static_cast<uint32>(static_cast<int16_t>(numbers_[0])) & 0xFFF0;
   return 0xFEC0 <= num && num <= 0xFF00;
 }
 
@@ -83,15 +83,15 @@ bool ip_address::is_ip_v6_teredo() const noexcept {
   return address_family_ == sockets::address_family::inter_network_v6 && numbers_[0] == 0x2001 && numbers_[1] == 0;
 }
 
-uint32_t ip_address::scope_id() const {
+uint32 ip_address::scope_id() const {
   if (address_family_ == sockets::address_family::inter_network) throw socket_exception(socket_error::operation_not_supported, csf_);
   return scope_id_;
 }
 
-ip_address& ip_address::scope_id(uint32_t value) {
+ip_address& ip_address::scope_id(uint32 value) {
   if (address_family_ == sockets::address_family::inter_network) throw socket_exception(socket_error::operation_not_supported, csf_);
   
-  scope_id_ = static_cast<uint32_t>(value);
+  scope_id_ = static_cast<uint32>(value);
   return *this;
 }
 
@@ -141,7 +141,7 @@ uint16_t ip_address::host_to_network_order(uint16_t host) {
   return (host >> 8) | (host << 8);
 }
 
-uint32_t ip_address::host_to_network_order(uint32_t host) {
+uint32 ip_address::host_to_network_order(uint32 host) {
   if (bit_converter::is_little_endian == false) return host;
   return (host >> 24) | ((host << 8) & 0x00FF0000L) | ((host >> 8) & 0x0000FF00L) | (host << 24);
 }
@@ -160,7 +160,7 @@ bool ip_address::is_loopback(const ip_address& address) {
 
 ip_address ip_address::map_to_ip_v4() const noexcept {
   if (address_family_ == sockets::address_family::inter_network) return *this;
-  uint32_t address = (((static_cast<uint32_t>(numbers_[6]) & 0x0000FF00u) >> 8) | ((static_cast<uint32_t>(numbers_[6]) & 0x000000FFu) << 8)) | ((((static_cast<uint32_t>(numbers_[7]) & 0x0000FF00u) >> 8) | ((static_cast<uint32_t>(numbers_[7]) & 0x000000FFu) << 8)) << 16);
+  uint32 address = (((static_cast<uint32>(numbers_[6]) & 0x0000FF00u) >> 8) | ((static_cast<uint32>(numbers_[6]) & 0x000000FFu) << 8)) | ((((static_cast<uint32>(numbers_[7]) & 0x0000FF00u) >> 8) | ((static_cast<uint32>(numbers_[7]) & 0x000000FFu) << 8)) << 16);
   return ip_address(address);
 }
 
@@ -197,7 +197,7 @@ uint16_t ip_address::network_to_host_order(uint16_t network) {
   return host_to_network_order(network);
 }
 
-uint32_t ip_address::network_to_host_order(uint32_t network) {
+uint32 ip_address::network_to_host_order(uint32 network) {
   return host_to_network_order(network);
 }
 
@@ -219,7 +219,7 @@ ip_address ip_address::parse(const ustring& str) {
   ip_address value;
   value.address_family_ = sockets::address_family::inter_network_v6;
   if (work_ip_string.index_of('%') != work_ip_string.npos) {
-    value.scope_id_ = xtd::parse<uint32_t>(work_ip_string.substring(work_ip_string.index_of('%') + 1));
+    value.scope_id_ = xtd::parse<uint32>(work_ip_string.substring(work_ip_string.index_of('%') + 1));
     work_ip_string = work_ip_string.remove(work_ip_string.index_of('%'));
   };
   

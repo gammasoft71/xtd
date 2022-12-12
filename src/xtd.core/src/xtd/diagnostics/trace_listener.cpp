@@ -10,19 +10,19 @@ trace_listener::~trace_listener() {
 trace_listener::trace_listener(const ustring& name) : name_{name} {
 }
 
-uint32_t trace_listener::indent_level() const noexcept {
+uint32 trace_listener::indent_level() const noexcept {
   return indent_level_;
 }
 
-void trace_listener::indent_level(uint32_t indent_level) noexcept {
+void trace_listener::indent_level(uint32 indent_level) noexcept {
   indent_level_ = indent_level;
 }
 
-uint32_t trace_listener::indent_size() const noexcept {
+uint32 trace_listener::indent_size() const noexcept {
   return indent_size_;
 }
 
-void trace_listener::indent_size(uint32_t indent_size) noexcept {
+void trace_listener::indent_size(uint32 indent_size) noexcept {
   indent_size_ = indent_size;
 }
 

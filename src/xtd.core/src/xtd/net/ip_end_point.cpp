@@ -8,7 +8,7 @@ using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
-ip_end_point::ip_end_point(uint32_t address, uint16_t port) : ip_end_point(ip_address(address), port) {
+ip_end_point::ip_end_point(uint32 address, uint16_t port) : ip_end_point(ip_address(address), port) {
 }
 
 ip_end_point::ip_end_point(const ip_address& address, uint16_t port) : address_(address), port_(port) {
@@ -44,12 +44,12 @@ unique_ptr<end_point> ip_end_point::create(const socket_address& socket_address)
     vector<byte_t> address(16);
     for (auto i = 0U; i < address.size(); i++)
       address[i] = socket_address[i + 8];
-    //uint32_t scope = ip_address::network_to_host_order(bit_converter::to_uint32(socket_address.bytes_, 24));
-    uint32_t scope = bit_converter::to_uint32(socket_address.bytes_, 24);
+    //uint32 scope = ip_address::network_to_host_order(bit_converter::to_uint32(socket_address.bytes_, 24));
+    uint32 scope = bit_converter::to_uint32(socket_address.bytes_, 24);
     return make_unique<ip_end_point>(ip_address(address, scope), port);
   }
   
-  uint32_t address = bit_converter::to_uint32(socket_address.bytes_, 4);
+  uint32 address = bit_converter::to_uint32(socket_address.bytes_, 4);
   return make_unique<ip_end_point>(ip_address(address), port);
 }
 

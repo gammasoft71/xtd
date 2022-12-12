@@ -116,10 +116,10 @@ namespace xtd {
       /// @exception io::io_exception An I/O error occurs.
       void write(uint16_t value);
       
-      /// @brief Writes the specified uint32_t value to the text stream.
+      /// @brief Writes the specified uint32 value to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write(uint32_t value);
+      void write(uint32 value);
       
       /// @brief Writes the specified uint64_t value to the text stream.
       /// @param value The value to write.
@@ -194,10 +194,10 @@ namespace xtd {
       /// @exception io::io_exception An I/O error occurs.
       void write_line(uint16_t value);
       
-      /// @brief Writes the specified uint32_t value and new line to the text stream.
+      /// @brief Writes the specified uint32 value and new line to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write_line(uint32_t value);
+      void write_line(uint32 value);
       
       /// @brief Writes the specified uint64_t value and new line to the text stream.
       /// @param value The value to write.

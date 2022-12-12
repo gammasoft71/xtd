@@ -130,7 +130,7 @@ uint16_t binary_reader::read_uint16() {
   return bit_converter::to_int16(read_bytes(sizeof(int16_t)), 0);
 }
 
-uint32_t binary_reader::read_uint32() {
+uint32 binary_reader::read_uint32() {
   return bit_converter::to_int32(read_bytes(sizeof(int32)), 0);
 }
 

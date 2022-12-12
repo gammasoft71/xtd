@@ -80,7 +80,7 @@ namespace xtd {
       /// @remarks The xtd::time_zone_info::transition_time::day property returns a valid value only if the xtd::time_zone_info::transition_time::is_fixed_date_rule property is true.
       /// @remarks The xtd::time_zone_info::transition_time::day property value corresponds to the value of the day parameter of the xtd::time_zone_info::transition_time::create_fixed_date_rule method. If its value is greater than the number of days in the month of the transition, the transition occurs on the last day of the month.
       /// @remarks The xtd::time_zone_info::transition_time::day property indicates the day of the month on which a fixed-date rule is applied (for example, April 15). In contrast, the xtd::time_zone_info::transition_time::day_of_week property indicates the day of the week on which a floating-date rule is applied (for example, the second Sunday of November).
-      uint32_t day() const noexcept;
+      uint32 day() const noexcept;
       
       /// @brief Gets the day of the week on which the time change occurs.
       /// @return The day of the week on which the time change occurs.
@@ -105,7 +105,7 @@ namespace xtd {
       /// @return The month in which the time change occurs.
       /// @remarks Valid values for the xtd::time_zone_info::transition_time::month property range from 1 to 12.
       /// @remarks The xtd::time_zone_info::transition_time::month property is used for both fixed-date and floating-date rules.
-      uint32_t month() const noexcept;
+      uint32 month() const noexcept;
       
       /// @brief Gets the hour, minute, and second at which the time change occurs.
       /// @return The time of day at which the time change occurs.
@@ -126,7 +126,7 @@ namespace xtd {
       /// | 4                             | The fourth occurrence of the xtd::time_zone_info::transition_time::day_of_week value in xtd::time_zone_info::transition_time::month. |
       /// | 5                             | The last occurrence of the xtd::time_zone_info::transition_time::day_of_week value in xtd::time_zone_info::transition_time::month.   |
       /// @remarks For example, if a transition occurs on the first Sunday of March, the value of the xtd::time_zone_info::transition_time::week property is 1. If it occurs on the last Sunday of March, the value of the xtd::time_zone_info::transition_time::week property is 5.
-      uint32_t week() const noexcept;
+      uint32 week() const noexcept;
       /// @}
       
       /// @name Methods
@@ -141,7 +141,7 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception The month parameter is less than 1 or greater than 12.<br>-or-<br>The day parameter is less than 1 or greater than 31.
       /// @remarks This method creates a fixed-date rule (that is, a time change that occurs on a specific day of a specific month). For example, a time change that always occurs on October 28 follows a fixed-date rule.
       /// @remarks For transitions from standard time to daylight saving time, the timeOfDay argument represents the time of the transition in the time zone's standard time. For transitions from daylight saving time to standard time, it represents the time of the transition in the time zone's daylight saving time. Note that this is a xtd::date_time value whose year, month, and date values must all equal 1.
-      static transition_time create_fixed_date_rule(date_time time_of_day, uint32_t month, uint32_t day);
+      static transition_time create_fixed_date_rule(date_time time_of_day, uint32 month, uint32 day);
       
       /// @brief Defines a time change that uses a floating-date rule (that is, a time change that occurs on a specific day of a specific week of a specific month).
       /// @param time_of_day The time at which the time change occurs. This parameter corresponds to the xtd::time_zone_info::transition_time::ttime_of_day property.
@@ -153,18 +153,18 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception The month parameter is less than 1 or greater than 12.<br>-or-<br>The week parameter is less than 1 or greater than 5.
       /// @remarks This method creates a floating-date rule (that is, a time change that occurs on a specific day of a specific week of a specific month). For example, a time change that occurs on the last Sunday of October follows a floating-date rule.
       /// @remarks For transitions from standard time to daylight saving time, the time_of_day argument represents the time of the transition in the time zone's standard time. For transitions from daylight saving time to standard time, it represents the time of the transition in the time zone's daylight saving time. Note that this is a xtd::date_time value whose year, month, and date values must all equal 1.
-      static transition_time create_floating_date_rule(date_time time_of_day, uint32_t month, uint32_t week, xtd::day_of_week day_of_week);
+      static transition_time create_floating_date_rule(date_time time_of_day, uint32 month, uint32 week, xtd::day_of_week day_of_week);
       
       bool equals(const transition_time& tt) const noexcept override;
       /// @}
       
     private:
-      uint32_t day_ = 0;
+      uint32 day_ = 0;
       xtd::day_of_week day_of_week_ = xtd::day_of_week::sunday;
       bool is_fixed_date_rule_ = true;
-      uint32_t month_ = 0;
+      uint32 month_ = 0;
       xtd::date_time time_of_day_;
-      uint32_t week_ = 0;
+      uint32 week_ = 0;
     };
     
     /// @brief Provides information about a time zone adjustment, such as the transition to and from daylight saving time.

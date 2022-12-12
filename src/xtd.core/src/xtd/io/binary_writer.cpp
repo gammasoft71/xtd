@@ -164,7 +164,7 @@ void binary_writer::write(uint16_t value) {
   write(bit_converter::get_bytes(value));
 }
 
-void binary_writer::write(uint32_t value) {
+void binary_writer::write(uint32 value) {
   write(bit_converter::get_bytes(value));
 }
 

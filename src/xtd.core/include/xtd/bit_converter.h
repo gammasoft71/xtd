@@ -29,7 +29,7 @@ namespace xtd {
   /// | int64_t  | xtd::bit_converter::get_bytes(int64_t)                                    | xtd::bit_converter::to_int64(const std::vector< byte_t >&, int32)                                       |
   /// | float    | xtd::bit_converter::get_bytes(float) - or - single_to_int32_bits(float)   | xtd::bit_converter::to_single(const std::vector< byte_t >&, int32) - or - int32_bits_to_single(int32) |
   /// | uint16_t | xtd::bit_converter::get_bytes(uint16_t)                                   | xtd::bit_converter::to_uint16(const std::vector< byte_t >&, int32)                                      |
-  /// | uint32_t | xtd::bit_converter::get_bytes(uint32_t)                                   | xtd::bit_converter::to_uint32(const std::vector< byte_t >&, int32)                                      |
+  /// | uint32 | xtd::bit_converter::get_bytes(uint32)                                   | xtd::bit_converter::to_uint32(const std::vector< byte_t >&, int32)                                      |
   /// | uint64_t | xtd::bit_converter::get_bytes(uint64_t)                                   | xtd::bit_converter::to_uint64(const std::vector< byte_t >&, int32)                                      |
   /// If you use bit_converter methods to round-trip data, make sure that the xtd::bit_converter::get_bytes overload and the to_<type> method specify the same type. As the following example illustrates, restoring an std::vector that represents a signed integer by calling the xtd::bit_converter::to_uint32 method can result in a value that is different from the original.
   /// @include bit_converter_round_trips.cpp
@@ -48,7 +48,7 @@ namespace xtd {
   /// @include bit_converter.cpp
   class core_export_ bit_converter final static_ {
   private:
-    static constexpr uint32_t __endian_value__ = 0x01020304;
+    static constexpr uint32 __endian_value__ = 0x01020304;
     static constexpr uint8_t __endian_query__ = static_cast<const uint8_t&>(__endian_value__);
     
   public:
@@ -197,13 +197,13 @@ namespace xtd {
     /// @include bit_converterget_bytesUint16_t.cpp
     static std::vector<byte_t> get_bytes(uint16_t value) noexcept;
     
-    /// @brief Returns the specified uint32_t value as an std::vector of bytes.
-    /// @param value A uint32_t value.
+    /// @brief Returns the specified uint32 value as an std::vector of bytes.
+    /// @param value A uint32 value.
     /// @return An std::vector of bytes with length 4.
     /// @par Examples
-    /// The following code example converts the bit patterns of uint32_t values to byte_t std::vectors with the get_bytes method.
+    /// The following code example converts the bit patterns of uint32 values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesUint32_t.cpp;
-    static std::vector<byte_t> get_bytes(uint32_t value) noexcept;
+    static std::vector<byte_t> get_bytes(uint32 value) noexcept;
     
     /// @brief Returns the specified uint64_t value as an std::vector of bytes.
     /// @param value A uint64_t value.
@@ -325,7 +325,7 @@ namespace xtd {
     /// @exception argument_null_exception value is null
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The to_uint32 method converts the bytes from index start_index to start_index + 3 to an Uint32_t value. The order of bytes in the std::vector must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
-    static uint32_t to_uint32(const std::vector<byte_t>& value, size_t start_index);
+    static uint32 to_uint32(const std::vector<byte_t>& value, size_t start_index);
     
     /// @brief Returns a 64-bit unsigned integer converted from two bytes at a specified position in a byte_t std::vector.
     /// @param value An std::vector of bytes.

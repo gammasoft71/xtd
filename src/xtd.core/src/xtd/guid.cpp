@@ -52,7 +52,7 @@ guid::guid(int32 a, int16_t b, int16_t c, byte_t d, byte_t e, byte_t f, byte_t g
   data_[15] = k;
 }
 
-guid::guid(uint32_t a, uint16_t b, uint16_t c, byte_t d, byte_t e, byte_t f, byte_t g, byte_t h, byte_t i, byte_t j, byte_t k) noexcept {
+guid::guid(uint32 a, uint16_t b, uint16_t c, byte_t d, byte_t e, byte_t f, byte_t g, byte_t h, byte_t i, byte_t j, byte_t k) noexcept {
   data_[0] = static_cast<byte_t>((a & 0xFF000000) >> 24);
   data_[1] = static_cast<byte_t>((a & 0x00FF0000) >> 16);
   data_[2] = static_cast<byte_t>((a & 0x0000FF00) >> 8);
