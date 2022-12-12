@@ -1,6 +1,6 @@
 # csf
 
-Shows how to use [xtd::diagnostics::stack_frame](../../../../src/xtd.core/include/xtd/diagnostics/stack_frame.h) class.
+Shows how to use [xtd::diagnostics::stack_frame](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1stack__frame.html) class.
 
 ## Sources
 

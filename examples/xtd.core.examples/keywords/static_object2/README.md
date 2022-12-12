@@ -1,6 +1,6 @@
 # static_object2
 
-Shows how to use [xtd::static](../../../../src/xtd.core/include/xtd/static.h) class.
+Shows how to use [xtd::static](https://codedocs.xyz/gammasoft71/xtd/static_8h.html) class.
 
 ## Sources
 
