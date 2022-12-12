@@ -101,7 +101,7 @@ void binary_writer::write(int32 value) {
   write(bit_converter::get_bytes(value));
 }
 
-void binary_writer::write(int64_t value) {
+void binary_writer::write(int64 value) {
   write(bit_converter::get_bytes(value));
 }
 

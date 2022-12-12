@@ -27,6 +27,6 @@ ustring trace_event_cache::thread_id() const noexcept {
   return ustring::format("{}", std::this_thread::get_id());
 }
 
-int64_t trace_event_cache::timestamp() const noexcept {
+int64 trace_event_cache::timestamp() const noexcept {
   return stopwatch::get_timestamp();
 }

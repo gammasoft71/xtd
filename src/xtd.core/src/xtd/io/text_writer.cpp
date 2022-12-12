@@ -52,7 +52,7 @@ void text_writer::write(int32 value) {
   write(xtd::ustring::format("{}", value));
 }
 
-void text_writer::write(int64_t value) {
+void text_writer::write(int64 value) {
   write(xtd::ustring::format("{}", value));
 }
 
@@ -103,7 +103,7 @@ void text_writer::write_line(int32 value) {
   write_line(xtd::ustring::format("{}", value));
 }
 
-void text_writer::write_line(int64_t value) {
+void text_writer::write_line(int64 value) {
   write_line(xtd::ustring::format("{}", value));
 }
 

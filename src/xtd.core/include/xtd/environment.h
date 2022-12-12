@@ -414,7 +414,7 @@ namespace xtd {
     /// @par Example
     /// The following example displays the size of the working set of the computer that runs the code example.
     /// @include EnvironmentWorkingSet.cpp
-    static int64_t working_set();
+    static int64 working_set();
     /// @}
     
     /// @name Methods

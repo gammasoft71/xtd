@@ -69,7 +69,7 @@ namespace xtd {
       /// @brief Gets the current number of ticks in the timer mechanism.
       /// @return int64 The tick counter value of the underlying timer mechanism.
       /// @remarks The get accessor calls the Stopwatch.GetTimestamp method to get the timestamp. If the Stopwatch class uses a high-resolution performance counter, GetTimestamp returns the current value of that counter. If the Stopwatch class uses the system timer, GetTimestamp returns the Ticks property of DateTime.Now.
-      int64_t timestamp() const noexcept;
+      int64 timestamp() const noexcept;
       /// @}
       
     private:

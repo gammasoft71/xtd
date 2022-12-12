@@ -14,7 +14,7 @@ bool object::equals(const object& object_a, const object& object_b) noexcept {
 }
 
 size_t object::get_hash_code() const noexcept {
-  return static_cast<size_t>(reinterpret_cast<int64_t>(this) & 0x00000000FFFFFFFF) ^ static_cast<size_t>((reinterpret_cast<int64_t>(this) >> 32) & 0x00000000FFFFFFFF);
+  return static_cast<size_t>(reinterpret_cast<int64>(this) & 0x00000000FFFFFFFF) ^ static_cast<size_t>((reinterpret_cast<int64>(this) >> 32) & 0x00000000FFFFFFFF);
 }
 
 bool object::reference_equals(const object& object_a, const object& object_b) noexcept {

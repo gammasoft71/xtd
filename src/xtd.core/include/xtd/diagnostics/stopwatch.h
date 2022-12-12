@@ -53,7 +53,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the frequency of the timer as the number of nanoseconds per second. This field is read-only.
       /// @return The frequency of the timer as the number of nanoseconds per second.
-      static int64_t frequency() noexcept;
+      static int64 frequency() noexcept;
       
       /// @brief Indicates whether the timer is based on a high-resolution performance counter. This field is read-only.
       /// @return true if the timer is based on a high-resolution performance count; otherwise, false.
@@ -81,14 +81,14 @@ namespace xtd {
       /// @par Examples
       /// The following example demonstrates how to use the xtd::diagnostics::stopwatch class to determine the execution time for an application.
       /// @include stopwatch.cpp
-      int64_t elapsed_milliseconds() const noexcept;
+      int64 elapsed_milliseconds() const noexcept;
       
       /// @brief Gets the total elapsed time measured by the current instance, in nanoseconds.
       /// @return A long integer representing the total number of nanoseconds measured by the current instance.
       /// @remarks This property represents the number of elapsed nanoseconds in the underlying timer mechanism. A nanosecond is the smallest unit of time that the stopwatch timer can measure. Use the Frequency field to convert the ElapsedTicks value into a number of seconds.
       /// @remarks You can query the properties xtd::diagnostics::stopwatch::elapsed, xtd::diagnostics::stopwatch::elapsed_milliseconds, xtd::diagnostics::stopwatch::elapsed_ticks, and xtd::diagnostics::stopwatch::elapsed_nanoseconds while the xtd::diagnostics::stopwatch instance is running or stopped. The elapsed time properties steadily increase while the xtd::diagnostics::stopwatch is running; they remain constant when the instance is stopped.
       /// @remarks By default, the elapsed time value of a xtd::diagnostics::stopwatch instance equals the total of all measured time intervals. Each call to start begins counting at the cumulative elapsed time; each call to xtd::diagnostics::stopwatch::stop ends the current interval measurement and freezes the cumulative elapsed time value. Use the xtd::diagnostics::stopwatch::reset method to clear the cumulative elapsed time in an existing xtd::diagnostics::stopwatch instance.
-      int64_t elapsed_nanoseconds() const noexcept;
+      int64 elapsed_nanoseconds() const noexcept;
       
       /// @brief Gets the total elapsed time measured by the current instance, in timer ticks.
       /// @return A long integer representing the total number of timer ticks measured by the current instance.
@@ -98,7 +98,7 @@ namespace xtd {
       /// @par Examples
       /// The following example demonstrates how to use the xtd::diagnostics::stopwatch class to determine the execution time for an application.
       /// @include stopwatch.cpp
-      int64_t elapsed_ticks() const noexcept;
+      int64 elapsed_ticks() const noexcept;
       
       /// @brief Gets a value indicating whether the stopwatch timer is running.
       /// @return true if the xtd::diagnostics::stopwatch instance is currently running and measuring elapsed time for an interval; otherwise, false.
@@ -111,7 +111,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the current number of nanoseconds in the timer mechanism.
       /// @return A long integer representing the nanosecond counter value of the underlying timer mechanism.
-      static int64_t get_timestamp() noexcept;
+      static int64 get_timestamp() noexcept;
       
       /// @brief Stops time interval measurement and resets the elapsed time to zero.
       /// @remarks A xtd::diagnostics::stopwatch instance calculates and retains the cumulative elapsed time across multiple time intervals, until the instance is reset. Use xtd::diagnostics::stopwatch::stop to stop the current interval measurement and retain the cumulative elapsed time value. Use xtd::diagnostics::stopwatch::reset to stop any interval measurement in progress and clear the elapsed time value.
@@ -150,8 +150,8 @@ namespace xtd {
     private:
       explicit stopwatch(bool start);
       bool running_ = false;
-      int64_t start_ = 0;
-      int64_t stop_ = 0;
+      int64 start_ = 0;
+      int64 stop_ = 0;
     };
   }
 }

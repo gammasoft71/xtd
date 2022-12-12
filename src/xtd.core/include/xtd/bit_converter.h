@@ -23,10 +23,10 @@ namespace xtd {
   /// |----------|---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
   /// | bool     | xtd::bit_converter::get_bytes(bool)                                       | xtd::bit_converter::to_boolean(const std::vector< byte_t >&, int32)                                     |
   /// | char32_t | xtd::bit_converter::get_bytes(char32_t)                                   | xtd::bit_converter::to_char(const std::vector< byte_t >&, int32)                                        |
-  /// | double   | xtd::bit_converter::get_bytes(double) - or - double_to_int64_bits(double) | xtd::bit_converter::to_double(const std::vector< byte_t >&, int32) - or - int64_bits_to_double(int64_t) |
+  /// | double   | xtd::bit_converter::get_bytes(double) - or - double_to_int64_bits(double) | xtd::bit_converter::to_double(const std::vector< byte_t >&, int32) - or - int64_bits_to_double(int64) |
   /// | int16  | xtd::bit_converter::get_bytes(int16)                                    | xtd::bit_converter::to_int16(const std::vector< byte_t >&, int32)                                       |
   /// | int32  | xtd::bit_converter::get_bytes(int32)                                    | xtd::bit_converter::to_int32(const std::vector< byte_t >&, int32)                                       |
-  /// | int64_t  | xtd::bit_converter::get_bytes(int64_t)                                    | xtd::bit_converter::to_int64(const std::vector< byte_t >&, int32)                                       |
+  /// | int64  | xtd::bit_converter::get_bytes(int64)                                    | xtd::bit_converter::to_int64(const std::vector< byte_t >&, int32)                                       |
   /// | float    | xtd::bit_converter::get_bytes(float) - or - single_to_int32_bits(float)   | xtd::bit_converter::to_single(const std::vector< byte_t >&, int32) - or - int32_bits_to_single(int32) |
   /// | uint16_t | xtd::bit_converter::get_bytes(uint16_t)                                   | xtd::bit_converter::to_uint16(const std::vector< byte_t >&, int32)                                      |
   /// | uint32 | xtd::bit_converter::get_bytes(uint32)                                   | xtd::bit_converter::to_uint32(const std::vector< byte_t >&, int32)                                      |
@@ -95,9 +95,9 @@ namespace xtd {
     /// @return A 64-bit signed integer whose value is equivalent to value.
     /// @remarks The order of bits in the integer returned by the double_to_int64_bits method depends on whether the computer architecture is little-endian or big-endian.
     /// @par Examples
-    /// The following code example converts the bit patterns of several Double values to int64_t values with the double_to_int64_bits method.
+    /// The following code example converts the bit patterns of several Double values to int64 values with the double_to_int64_bits method.
     /// @include bit_converterdouble_to_int64_bits.cpp
-    static int64_t double_to_int64_bits(double value) noexcept;
+    static int64 double_to_int64_bits(double value) noexcept;
     
     /// @brief Returns the specified Boolean value as an std::vector of bytes.
     /// @param value A Boolean value.
@@ -168,13 +168,13 @@ namespace xtd {
     /// @include bit_converterget_bytesint32_t.cpp
     static std::vector<byte_t> get_bytes(int32 value) noexcept;
     
-    /// @brief Returns the specified int64_t value as an std::vector of bytes.
-    /// @param value A int64_t value.
+    /// @brief Returns the specified int64 value as an std::vector of bytes.
+    /// @param value A int64 value.
     /// @return An std::vector of bytes with length 8.
     /// @par Examples
-    /// The following code example converts the bit patterns of int64_t values to byte_t std::vectors with the get_bytes method.
+    /// The following code example converts the bit patterns of int64 values to byte_t std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesint64_t.cpp
-    static std::vector<byte_t> get_bytes(int64_t value) noexcept;
+    static std::vector<byte_t> get_bytes(int64 value) noexcept;
     
     /// @brief Returns the specified single value as an std::vector of bytes.
     /// @param value A single value.
@@ -228,7 +228,7 @@ namespace xtd {
     /// @param value The number to convert.
     /// @return A double-precision floating point number whose value is equivalent to value.
     /// @remarks Typically, value is an integer that is returned by the double_to_int64_bits method.
-    static double int64_bits_to_double(int64_t value) noexcept;
+    static double int64_bits_to_double(int64 value) noexcept;
     
     /// @brief Converts the specified single-precision floating point number to a 32-bit signed integer.
     /// @param value The number to convert.
@@ -294,8 +294,8 @@ namespace xtd {
     /// @exception argument_exception start_index equals the length of value minus 1.
     /// @exception argument_null_exception value is null
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
-    /// @remarks The to_int64 method converts the bytes from index start_index to start_index + 7 to an int64_t value. The order of bytes in the std::vector must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
-    static int64_t to_int64(const std::vector<byte_t>& value, size_t start_index);
+    /// @remarks The to_int64 method converts the bytes from index start_index to start_index + 7 to an int64 value. The order of bytes in the std::vector must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
+    static int64 to_int64(const std::vector<byte_t>& value, size_t start_index);
     
     /// @brief Returns a single-precision floating point number converted from eight bytes at a specified position in a byte_t std::vector.
     /// @param value An std::vector of bytes.
