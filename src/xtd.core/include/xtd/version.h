@@ -182,7 +182,7 @@ namespace xtd {
     /// @brief Gets the high 16 bits of the revision number.
     /// @return A 16-bit signed integer.
     /// @remarks Suppose you release an interim version of your application to temporarily correct a problem until you can release a permanent solution. The temporary version does not warrant a new revision number, but it does need to be identified as a different version. In this case, encode the identification information in the high and low 16-bit portions of the 32-bit revision number. Use the xtd::version::revision property to obtain the entire revision number, use the xtd::version::major_revision property to obtain the high 16 bits, and use the xtd::version::minor_revision property to obtain the low 16 bits.
-    int16_t major_revision() const noexcept;
+    int16 major_revision() const noexcept;
     
     /// @brief Gets the value of the minor component of the version number for the current xtd::version object.
     /// @return The minor version number.
@@ -192,7 +192,7 @@ namespace xtd {
     /// @brief Gets the low 16 bits of the revision number.
     /// @return A 16-bit signed integer.
     /// @remarks Suppose you release an interim version of your application to temporarily correct a problem until you can release a permanent solution. The temporary version does not warrant a new revision number, but it does need to be identified as a different version. In this case, encode the identification information in the high and low 16-bit portions of the 32-bit revision number. Use the xtd::version::revision property to obtain the entire revision number, use the xtd::version::major_revision property to obtain the high 16 bits, and use the xtd::version::minor_revision property to obtain the low 16 bits.
-    int16_t minor_revision() const noexcept;
+    int16 minor_revision() const noexcept;
     
     /// @brief Gets the value of the revision component of the version number for the current xtd::version object.
     /// @return The revision number, or -1 if the revision number is undefined.

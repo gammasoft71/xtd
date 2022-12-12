@@ -34,16 +34,16 @@ int32 version::major() const noexcept {
   return major_;
 }
 
-int16_t version::major_revision() const noexcept {
-  return as<int16_t>((revision_ & 0xFFFF0000) >> 16);
+int16 version::major_revision() const noexcept {
+  return as<int16>((revision_ & 0xFFFF0000) >> 16);
 }
 
 int32 version::minor() const noexcept {
   return minor_;
 }
 
-int16_t version::minor_revision() const noexcept {
-  return as<int16_t>(revision_ & 0x0000FFFF);
+int16 version::minor_revision() const noexcept {
+  return as<int16>(revision_ & 0x0000FFFF);
 }
 
 int32 version::revision() const noexcept {

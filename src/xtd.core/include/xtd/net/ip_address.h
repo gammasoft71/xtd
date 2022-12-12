@@ -154,7 +154,7 @@ namespace xtd {
       /// @return A short value, expressed in network byte order.
       /// @remarks Different computers use different conventions for ordering the bytes within multibyte integer values.Some computers put the most significant byte first (known as big-endian order) and others put the least-significant byte first (known as little-endian order). To work with computers that use different byte ordering, all integer values that are sent over the network are sent in network byte order which has the most significant byte first.
       /// @remarks The xtd::net::sockets::socket::host_to_network_order method converts multibyte integer values that are stored on the host system from the byte order used by the host to the byte order used by the network.
-      static int16_t host_to_network_order(int16_t host);
+      static int16 host_to_network_order(int16 host);
       
       /// @brief Converts a integer value from host byte order to network byte order.
       /// @param host The number to convert, expressed in host byte order.
@@ -225,7 +225,7 @@ namespace xtd {
       /// @return A short value, expressed in host byte order.
       /// @remarks Different computers use different conventions for ordering the bytes within multibyte integer values. Some computers put the most significant byte first (known as big-endian order) and others put the least-significant byte first (known as little-endian order). To work with computers that use different byte ordering, all integer values that are sent over the network are sent in network byte order which has the most significant byte first.
       /// @remarks The xtd::net::sockets::socket::network_to_host_order method converts multibyte integer values that are stored on the host system from the byte order used by the network to the byte order used by the host.
-      static int16_t network_to_host_order(int16_t network);
+      static int16 network_to_host_order(int16 network);
       
       /// @brief Converts a integer value from network byte order to host byte order.
       /// @param host The number to convert, expressed in network byte order.

@@ -101,8 +101,8 @@ double binary_reader::read_double() {
   return bit_converter::to_double(read_bytes(sizeof(double)), 0);
 }
 
-int16_t binary_reader::read_int16() {
-  return bit_converter::to_int16(read_bytes(sizeof(int16_t)), 0);
+int16 binary_reader::read_int16() {
+  return bit_converter::to_int16(read_bytes(sizeof(int16)), 0);
 }
 
 int32 binary_reader::read_int32() {
@@ -127,7 +127,7 @@ ustring binary_reader::read_string() {
 }
 
 uint16_t binary_reader::read_uint16() {
-  return bit_converter::to_int16(read_bytes(sizeof(int16_t)), 0);
+  return bit_converter::to_int16(read_bytes(sizeof(int16)), 0);
 }
 
 uint32 binary_reader::read_uint32() {

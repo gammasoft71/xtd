@@ -93,7 +93,7 @@ void binary_writer::write(double value) {
   write(bit_converter::get_bytes(value));
 }
 
-void binary_writer::write(int16_t value) {
+void binary_writer::write(int16 value) {
   write(bit_converter::get_bytes(value));
 }
 

@@ -63,7 +63,7 @@ namespace xtd {
     /// @param i The next byte of the GUID.
     /// @param j The next byte of the GUID.
     /// @param k The next byte of the GUID.
-    guid(int32 a, int16_t b, int16_t c, byte_t d, byte_t e, byte_t f, byte_t g, byte_t h, byte_t i, byte_t j, byte_t k) noexcept;
+    guid(int32 a, int16 b, int16 c, byte_t d, byte_t e, byte_t f, byte_t g, byte_t h, byte_t i, byte_t j, byte_t k) noexcept;
     /// @brief Initializes a new instance of the xtd::guid structure by using the specified uint32_integers and bytes.
     /// @param a The first 4 bytes of the GUID.
     /// @param b The next 2 bytes of the GUID.

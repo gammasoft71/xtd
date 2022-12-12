@@ -34,7 +34,7 @@ ip_address::ip_address(const vector<byte_t>& address) {
   if (address.size() == 16) {
     address_family_ = sockets::address_family::inter_network_v6;
     for (auto index = 0U; index < number_of_numbers_; index++)
-      numbers_[index] = (static_cast<int16_t>(address[index * 2]) << 8) + static_cast<int16_t>(address[(index * 2) + 1]);
+      numbers_[index] = (static_cast<int16>(address[index * 2]) << 8) + static_cast<int16>(address[(index * 2) + 1]);
   }
 }
 
@@ -43,7 +43,7 @@ ip_address::ip_address(const vector<byte_t>& address, uint32 scope_id) : address
   
   scope_id_ = scope_id;
   for (auto index = 0U; index < number_of_numbers_; index++)
-    numbers_[index] = (static_cast<int16_t>(address[index * 2]) << 8) + static_cast<int16_t>(address[(index * 2) + 1]);
+    numbers_[index] = (static_cast<int16>(address[index * 2]) << 8) + static_cast<int16>(address[(index * 2) + 1]);
 }
 
 ip_address::ip_address(byte_t quad_part_address1, byte_t quad_part_address2, byte_t quad_part_address3, byte_t quad_part_address4) : address_((quad_part_address4 << 24 | quad_part_address3 << 16 | quad_part_address2 << 8 | quad_part_address1) & 0x0FFFFFFFF) {
@@ -70,12 +70,12 @@ bool ip_address::is_ip_v6_link_local() const noexcept {
 }
 
 bool ip_address::is_ip_v6_multicast() const noexcept {
-  return address_family_ != sockets::address_family::inter_network && (static_cast<int16_t>(numbers_[0]) & 0xFF00) == 0xFF00;
+  return address_family_ != sockets::address_family::inter_network && (static_cast<int16>(numbers_[0]) & 0xFF00) == 0xFF00;
 }
 
 bool ip_address::is_ip_v6_site_local() const noexcept {
   if (address_family_ == sockets::address_family::inter_network) return false;
-  auto num = static_cast<uint32>(static_cast<int16_t>(numbers_[0])) & 0xFFF0;
+  auto num = static_cast<uint32>(static_cast<int16>(numbers_[0])) & 0xFFF0;
   return 0xFEC0 <= num && num <= 0xFF00;
 }
 
@@ -120,7 +120,7 @@ double ip_address::host_to_network_order(double host) {
   return bit_converter::int64_bits_to_double(host_to_network_order(bit_converter::double_to_int64_bits(host)));
 }
 
-int16_t ip_address::host_to_network_order(int16_t host) {
+int16 ip_address::host_to_network_order(int16 host) {
   return int16(host_to_network_order(static_cast<uint16>(host)));
 }
 
@@ -177,7 +177,7 @@ double ip_address::network_to_host_order(double network) {
   return host_to_network_order(network);
 }
 
-int16_t ip_address::network_to_host_order(int16_t network) {
+int16 ip_address::network_to_host_order(int16 network) {
   return host_to_network_order(network);
 }
 
