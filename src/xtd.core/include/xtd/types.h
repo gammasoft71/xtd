@@ -39,7 +39,7 @@ public:
   bool operator <=(char c) const {return value_ <= c;}
   bool operator >=(char c) const {return value_ >= c;}
   
-  friend std::ostream& operator <<(std::ostream& os, const char8_t& c) noexcept {return os << std::to_string(static_cast<int32_t>(c.value_));}
+  friend std::ostream& operator <<(std::ostream& os, const char8_t& c) noexcept {return os << std::to_string(static_cast<int>(c.value_));}
   
 private:
   char value_ = 0;
@@ -61,8 +61,9 @@ namespace xtd {
   using single_t = float;
   using uchar_t = unsigned char;
   using ushort_t = unsigned short;
+  using uint_t = unsigned int;
   using ulong_t = unsigned long;
-  
+
   #if defined(__linux__) && defined(_LP64)
   using llong_t = long long int;
   using ullong_t = unsigned long long int;
@@ -78,7 +79,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using byte = uint8_t;
+  using byte = uint_fast8_t;
   
   /// @brief Represents a 16-bit unicode character.
   /// @par Namespace
@@ -126,7 +127,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using int16 = int16_t;
+  using int16 = int_fast16_t;
   
   /// @brief Represents a 32-bit signed integer.
   /// @par Namespace
@@ -134,7 +135,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using int32 = int32_t;
+  using int32 = int_fast32_t;
   
   /// @brief Represents a 64-bit signed integer.
   /// @par Namespace
@@ -142,11 +143,11 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using int64 = int64_t;
+  using int64 = int_fast64_t;
   
   /// @brief Represent a pointer or a handle.
   /// @ingroup xtd_core types
-  using intptr = intptr_t;
+  using intptr = intmax_t;
   
   /// @brief Represents a null pointer value.
   /// @par Namespace
@@ -168,7 +169,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using sbyte = int8_t;
+  using sbyte = int_fast8_t;
   
   /// @brief Stores information about a type.
   /// @par Namespace
@@ -184,7 +185,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using uchar = unsigned char;
+  using uchar = uchar_t;
   
   /// @brief Represents a 32-bit unsigned integer.
   /// @par Namespace
@@ -192,7 +193,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using uint = unsigned int;
+  using uint = uint_t;
   
   /// @brief Represents a 16-bit unsigned integer.
   /// @par Namespace
@@ -200,7 +201,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using uint16 = uint16_t;
+  using uint16 = uint_fast16_t;
   
   /// @brief Represents a 32-bit unsigned integer.
   /// @par Namespace
@@ -208,7 +209,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using uint32 = uint32_t;
+  using uint32 = uint_fast32_t;
   
   /// @brief Represents a 64-bit unsigned integer.
   /// @par Namespace
@@ -216,7 +217,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using uint64 = uint64_t;
+  using uint64 = uint_fast64_t;
   
   /// @brief Represent a pointer or a handle.
   /// @par Namespace
@@ -224,7 +225,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using uintptr = uintptr_t;
+  using uintptr = uintmax_t;
   
   /// @brief Represents a 16-bit unsigned integer.
   /// @par Namespace
