@@ -1,6 +1,6 @@
 # enum_class_flags
 
-* Shows how to use [xtd::enum_object](../../../../src/xtd.core/include/xtd/xtd::enum_object.h) class, [enum_class_](../../../../src/xtd.core/include/xtd/xtd::enum_object.h) and [add_enum_flag_operators_](../../../../src/xtd.core/include/xtd/xtd::enum_object.h) helpers.
+* Shows how to use [xtd::enum_object](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object.html) class, [enum_class_](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object.html) and [add_enum_flag_operators_](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object.html) helpers.
 
 ## Sources
 
