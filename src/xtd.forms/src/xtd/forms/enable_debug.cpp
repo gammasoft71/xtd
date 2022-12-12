@@ -36,7 +36,7 @@ void enable_debug::set(const enable_debug& flags, bool on) {
   values_.value_ = on ? (values_.value_ | flags.value_) : (values_.value_ & ~flags.value_);
 }
 
-enable_debug::enable_debug(uint64_t value) : value_(value) {
+enable_debug::enable_debug(uint64 value) : value_(value) {
 }
 
 trace_switch enable_debug::trace_switch_ {"trace_switch_xtd_forms", "The trace switch for xtd forms library"};

@@ -77,9 +77,9 @@ namespace xtd {
       
       
     private:
-      explicit enable_debug(uint64_t value);
+      explicit enable_debug(uint64 value);
       
-      uint64_t value_ = 0;
+      uint64 value_ = 0;
       static xtd::diagnostics::trace_switch trace_switch_;
       static enable_debug values_;
     };
