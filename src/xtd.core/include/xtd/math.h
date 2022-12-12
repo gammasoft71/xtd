@@ -85,10 +85,10 @@ namespace xtd {
     static int32 abs(int32 value);
     
     /// @brief Returns the absolute value of a 64-bit signed integer
-    /// @param value A number in the range std::numeric_limit<int64_t>::min() <= value <= std::numeric_limit<int64_t>::max().
-    /// @return A 64-bit signed integer, x, such that 0 <= x <= std::numeric_limit<int64_t>::max().
-    /// @exception xtd::overflow_exception value equals std::numeric_limit<int64_t>::lowest().
-    static int64_t abs(int64_t value);
+    /// @param value A number in the range std::numeric_limit<int64>::min() <= value <= std::numeric_limit<int64>::max().
+    /// @return A 64-bit signed integer, x, such that 0 <= x <= std::numeric_limit<int64>::max().
+    /// @exception xtd::overflow_exception value equals std::numeric_limit<int64>::lowest().
+    static int64 abs(int64 value);
     
     /// @brief Returns the absolute value of a 8-bit signed integer.
     /// @param value A number in the range std::numeric_limit<sbyte_t>::lowest() <= value <= std::numeric_limit<sbyte_t>::max().
@@ -139,7 +139,7 @@ namespace xtd {
     /// @param a The first int32 to multiply.
     /// @param b The second int32 to multiply.
     /// @return The int64 containing the product of the specified numbers.
-    static int64_t big_mul(int32 a, int32 b);
+    static int64 big_mul(int32 a, int32 b);
     
     /// @brief Returns the smallest integer greater than or equal to the specified double-precision floating-point number.
     /// @param value A double-precision floating-point number.
@@ -186,7 +186,7 @@ namespace xtd {
     /// @param min The lower bound of the result.
     /// @param max The upper bound of the result.
     /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
-    static int64_t clamp(int64_t value, int64_t min, int64_t max) noexcept;
+    static int64 clamp(int64 value, int64 min, int64 max) noexcept;
     /// @brief Returns value clamped to the inclusive range of min and max.
     /// @param value The value to be clamped.
     /// @param min The lower bound of the result.
@@ -257,7 +257,7 @@ namespace xtd {
     /// @param divisor The divisor.
     /// @param remainder An angle, measured in radians.
     /// @return The remainder.
-    static int64_t div_rem(int64_t dividend, int64_t divisor, int64_t& remainder);
+    static int64 div_rem(int64 dividend, int64 divisor, int64& remainder);
     
     /// @brief Returns e raised to the specified power.
     /// @param value A number specifying a power.
@@ -387,7 +387,7 @@ namespace xtd {
     /// @param a The first of two 64-bit signed integers to compare.
     /// @param b The second of two 64-bit signed integers to compare.
     /// @return Parameter a or b, whichever is larger.
-    static int64_t max(int64_t a, int64_t b) noexcept;
+    static int64 max(int64 a, int64 b) noexcept;
     
     /// @brief Returns the larger of two 64-bit signed integers.
     /// @param a The first of two 64-bit signed integers to compare.
@@ -465,7 +465,7 @@ namespace xtd {
     /// @param a The first of two 64-bit signed integers to compare.
     /// @param b The second of two 64-bit signed integers to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static int64_t min(int64_t a, int64_t b) noexcept;
+    static int64 min(int64 a, int64 b) noexcept;
     
     /// @brief Returns the smaller of two 64-bit signed integers.
     /// @param a The first of two 64-bit signed integers to compare.
@@ -617,7 +617,7 @@ namespace xtd {
     /// | -1           | value is less than zero.    |
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
-    static int32 sign(int64_t value);
+    static int32 sign(int64 value);
     
     /// @brief Returns a value indicating the sign of a 64-bit signed integer.
     /// @param value A signed number.

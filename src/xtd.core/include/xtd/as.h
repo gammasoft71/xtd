@@ -266,11 +266,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42;
+  /// int64 value = 42;
   /// float result = as<float>(value);
   /// @endcode
   template<typename new_type_t>
-  new_type_t as(int64_t value) {
+  new_type_t as(int64 value) {
     return static_cast<new_type_t>(value);
   }
   
@@ -448,7 +448,7 @@ namespace xtd {
     throw invalid_cast_exception(csf_);
   }
   template<typename new_type_t>
-  new_type_t as(int64_t value, byte_t from_base) {
+  new_type_t as(int64 value, byte_t from_base) {
     throw invalid_cast_exception(csf_);
   }
   template<typename new_type_t>
@@ -1100,11 +1100,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42l;
+  /// int64 value = 42l;
   /// bool result = as<bool>(value);
   /// @endcode
   template<>
-  inline bool as<bool>(int64_t value) {
+  inline bool as<bool>(int64 value) {
     return xtd::convert::to_boolean(value);
   }
   
@@ -1770,11 +1770,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42l;
+  /// int64 value = 42l;
   /// byte_t result = as<byte_t>(value);
   /// @endcode
   template<>
-  inline byte_t as<byte_t>(int64_t value) {
+  inline byte_t as<byte_t>(int64 value) {
     return xtd::convert::to_byte(value);
   }
   
@@ -2460,11 +2460,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42l;
+  /// int64 value = 42l;
   /// char result = as<char>(value);
   /// @endcode
   template<>
-  inline char as<char>(int64_t value) {
+  inline char as<char>(int64 value) {
     return xtd::convert::to_char(value);
   }
   
@@ -3130,11 +3130,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42l;
+  /// int64 value = 42l;
   /// char8_t result = as<char8_t>(value);
   /// @endcode
   template<>
-  inline char8_t as<char8_t>(int64_t value) {
+  inline char8_t as<char8_t>(int64 value) {
     return xtd::convert::to_char8(value);
   }
   
@@ -3800,11 +3800,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42l;
+  /// int64 value = 42l;
   /// char16_t result = as<char16_t>(value);
   /// @endcode
   template<>
-  inline char16_t as<char16_t>(int64_t value) {
+  inline char16_t as<char16_t>(int64 value) {
     return xtd::convert::to_char16(value);
   }
   
@@ -4470,11 +4470,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42l;
+  /// int64 value = 42l;
   /// char32_t result = as<char32_t>(value);
   /// @endcode
   template<>
-  inline char32_t as<char32_t>(int64_t value) {
+  inline char32_t as<char32_t>(int64 value) {
     return xtd::convert::to_char32(value);
   }
   
@@ -5140,11 +5140,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42l;
+  /// int64 value = 42l;
   /// wchar_t result = as<wchar_t>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(int64_t value) {
+  inline wchar_t as<wchar_t>(int64 value) {
     return xtd::convert::to_wchar(value);
   }
   
@@ -5810,11 +5810,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42l;
+  /// int64 value = 42l;
   /// decimal_t result = as<decimal_t>(value);
   /// @endcode
   template<>
-  inline decimal_t as<decimal_t>(int64_t value) {
+  inline decimal_t as<decimal_t>(int64 value) {
     return xtd::convert::to_decimal(value);
   }
   
@@ -6480,11 +6480,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42l;
+  /// int64 value = 42l;
   /// double result = as<double>(value);
   /// @endcode
   template<>
-  inline double as<double>(int64_t value) {
+  inline double as<double>(int64 value) {
     return xtd::convert::to_double(value);
   }
   
@@ -7150,11 +7150,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42l;
+  /// int64 value = 42l;
   /// float result = as<float>(value);
   /// @endcode
   template<>
-  inline float as<float>(int64_t value) {
+  inline float as<float>(int64 value) {
     return xtd::convert::to_single(value);
   }
   
@@ -7820,11 +7820,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42l;
+  /// int64 value = 42l;
   /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16 as<int16>(int64_t value) {
+  inline int16 as<int16>(int64 value) {
     return xtd::convert::to_int16(value);
   }
   
@@ -8510,11 +8510,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42l;
+  /// int64 value = 42l;
   /// int32 result = as<int32>(value);
   /// @endcode
   template<>
-  inline int32 as<int32>(int64_t value) {
+  inline int32 as<int32>(int64 value) {
     return xtd::convert::to_int32(value);
   }
   
@@ -8952,7 +8952,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   /// @par Namespace
   /// xtd
@@ -8962,16 +8962,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// std::any value = true;
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(std::any value) {
+  inline int64 as<int64>(std::any value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8980,16 +8980,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// bool value = true;
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(bool value) {
+  inline int64 as<int64>(bool value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8998,16 +8998,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// byte_t value = 42;
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(byte_t value) {
+  inline int64 as<int64>(byte_t value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -9017,16 +9017,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char value = 'a';
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(char value) {
+  inline int64 as<int64>(char value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -9036,16 +9036,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char8_t value = u8'a';
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(char8_t value) {
+  inline int64 as<int64>(char8_t value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -9055,16 +9055,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char16_t value = u'a';
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(char16_t value) {
+  inline int64 as<int64>(char16_t value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -9074,16 +9074,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char32_t value = u'a';
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(char32_t value) {
+  inline int64 as<int64>(char32_t value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -9093,16 +9093,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// wchar_t value = u'a';
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(wchar_t value) {
+  inline int64 as<int64>(wchar_t value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9111,16 +9111,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// decimal_t value = 42.50l;
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(decimal_t value) {
+  inline int64 as<int64>(decimal_t value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9129,16 +9129,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// double value = 42.50;
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(double value) {
+  inline int64 as<int64>(double value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9147,16 +9147,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// float value = 42.50f;
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(float value) {
+  inline int64 as<int64>(float value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9165,16 +9165,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// int16 value = 42;
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(int16 value) {
+  inline int64 as<int64>(int16 value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9183,16 +9183,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// int32 value = 42;
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(int32 value) {
+  inline int64 as<int64>(int32 value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9200,17 +9200,17 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42l;
-  /// int64_t result = as<int64_t>(value);
+  /// int64 value = 42l;
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(int64_t value) {
+  inline int64 as<int64>(int64 value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9219,16 +9219,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// llong_t value = 42ll;
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(llong_t value) {
+  inline int64 as<int64>(llong_t value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9237,16 +9237,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// sbyte_t value = 42ll;
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(sbyte_t value) {
+  inline int64 as<int64>(sbyte_t value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9255,16 +9255,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// uint16_t value = 42u;
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(uint16_t value) {
+  inline int64 as<int64>(uint16_t value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9273,16 +9273,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// uint32 value = 42u;
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(uint32 value) {
+  inline int64 as<int64>(uint32 value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9291,16 +9291,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// uint64_t value = 42ul;
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(uint64_t value) {
+  inline int64 as<int64>(uint64_t value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9309,16 +9309,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// ullong_t value = 42ull;
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(ullong_t value) {
+  inline int64 as<int64>(ullong_t value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -9328,17 +9328,17 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// ustring value = "42";
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(const xtd::ustring& value) {
+  inline int64 as<int64>(const xtd::ustring& value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a int64.
   /// @par Namespace
   /// xtd
@@ -9348,16 +9348,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// ustring value = "0x2A";
-  /// int64_t result = as<int64_t>(value, 16);
+  /// int64 result = as<int64>(value, 16);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(const xtd::ustring& value, byte_t from_base) {
+  inline int64 as<int64>(const xtd::ustring& value, byte_t from_base) {
     return xtd::convert::to_int64(value, from_base);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -9367,16 +9367,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// string value = "42";
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(const std::string& value) {
+  inline int64 as<int64>(const std::string& value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -9386,16 +9386,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// u8string value = u8"42";
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(const std::u8string& value) {
+  inline int64 as<int64>(const std::u8string& value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -9405,16 +9405,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// u16string value = u"42";
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(const std::u16string& value) {
+  inline int64 as<int64>(const std::u16string& value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -9424,16 +9424,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// u32string value = U"42";
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(const std::u32string& value) {
+  inline int64 as<int64>(const std::u32string& value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -9443,16 +9443,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// wstring value = L"42";
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(const std::wstring& value) {
+  inline int64 as<int64>(const std::wstring& value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -9462,16 +9462,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const char* value = "42";
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(const char* value) {
+  inline int64 as<int64>(const char* value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -9481,16 +9481,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char* value = "42";
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(char* value) {
+  inline int64 as<int64>(char* value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -9500,16 +9500,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const char8_t* value = u8"42";
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(const char8_t* value) {
+  inline int64 as<int64>(const char8_t* value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -9519,16 +9519,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char8_t* value = u8"42";
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(char8_t* value) {
+  inline int64 as<int64>(char8_t* value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -9538,16 +9538,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const char16_t* value = u"42";
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(const char16_t* value) {
+  inline int64 as<int64>(const char16_t* value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -9557,16 +9557,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char16_t* value = u"42";
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(char16_t* value) {
+  inline int64 as<int64>(char16_t* value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -9576,16 +9576,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const char32_t* value = U"42";
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(const char32_t* value) {
+  inline int64 as<int64>(const char32_t* value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -9595,16 +9595,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char32_t* value = U"42";
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(char32_t* value) {
+  inline int64 as<int64>(char32_t* value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -9614,16 +9614,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const wchar_t* value = L"42";
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(const wchar_t* value) {
+  inline int64 as<int64>(const wchar_t* value) {
     return xtd::convert::to_int64(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int64_t object converted from value.
+  /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -9633,10 +9633,10 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// wchar_t* value = L"42";
-  /// int64_t result = as<int64_t>(value);
+  /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(wchar_t* value) {
+  inline int64 as<int64>(wchar_t* value) {
     return xtd::convert::to_int64(value);
   }
   
@@ -9890,11 +9890,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42l;
+  /// int64 value = 42l;
   /// llong_t result = as<llong_t>(value);
   /// @endcode
   template<>
-  inline llong_t as<llong_t>(int64_t value) {
+  inline llong_t as<llong_t>(int64 value) {
     return xtd::convert::to_llong(value);
   }
   
@@ -10580,11 +10580,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42l;
+  /// int64 value = 42l;
   /// sbyte_t result = as<sbyte_t>(value);
   /// @endcode
   template<>
-  inline sbyte_t as<sbyte_t>(int64_t value) {
+  inline sbyte_t as<sbyte_t>(int64 value) {
     return xtd::convert::to_sbyte(value);
   }
   
@@ -11270,11 +11270,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42l;
+  /// int64 value = 42l;
   /// uint16_t result = as<uint16_t>(value);
   /// @endcode
   template<>
-  inline uint16_t as<uint16_t>(int64_t value) {
+  inline uint16_t as<uint16_t>(int64 value) {
     return xtd::convert::to_uint16(value);
   }
   
@@ -11960,11 +11960,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42l;
+  /// int64 value = 42l;
   /// uint32 result = as<uint32>(value);
   /// @endcode
   template<>
-  inline uint32 as<uint32>(int64_t value) {
+  inline uint32 as<uint32>(int64 value) {
     return xtd::convert::to_uint32(value);
   }
   
@@ -12650,11 +12650,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42l;
+  /// int64 value = 42l;
   /// uint64_t result = as<uint64_t>(value);
   /// @endcode
   template<>
-  inline uint64_t as<uint64_t>(int64_t value) {
+  inline uint64_t as<uint64_t>(int64 value) {
     return xtd::convert::to_uint64(value);
   }
   
@@ -13340,11 +13340,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42l;
+  /// int64 value = 42l;
   /// ullong_t result = as<ullong_t>(value);
   /// @endcode
   template<>
-  inline ullong_t as<ullong_t>(int64_t value) {
+  inline ullong_t as<ullong_t>(int64 value) {
     return xtd::convert::to_ullong(value);
   }
   
@@ -14090,11 +14090,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42l;
+  /// int64 value = 42l;
   /// ullong_t result = as<ullong_t>(value);
   /// @endcode
   template<>
-  inline ustring as<ustring>(int64_t value) {
+  inline ustring as<ustring>(int64 value) {
     return xtd::convert::to_string(value);
   }
   
@@ -14110,11 +14110,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int64_t value = 42;
+  /// int64 value = 42;
   /// ustring result = as<ustring>(value, 16);
   /// @endcode
   template<>
-  inline ustring as<ustring>(int64_t value, byte_t from_base) {
+  inline ustring as<ustring>(int64 value, byte_t from_base) {
     return xtd::convert::to_string(value, from_base);
   }
   

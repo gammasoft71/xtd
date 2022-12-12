@@ -47,8 +47,8 @@ namespace xtd {
       /// @brief Adds two 64-bit integers and replaces the first integer with the sum, as an atomic operation.
       /// @param location A variable containing the first value to be added. The sum of the two values is stored in location.
       /// @param value The value to be added to the integer at location.
-      /// @return int64_t The new value stored at location.
-      static int64_t add(int64_t& location, int64_t value) noexcept;
+      /// @return int64 The new value stored at location.
+      static int64 add(int64& location, int64 value) noexcept;
       
       /// @brief Compares two Double for equality and, if they are equal, replaces one of the values.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
@@ -67,7 +67,7 @@ namespace xtd {
       /// @param value The value that replaces the destination value if the comparison results in equality.
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
-      static int64_t compare_exchange(int64_t& location, int64_t value, int64_t comparand) noexcept;
+      static int64 compare_exchange(int64& location, int64 value, int64 comparand) noexcept;
       /// @cond
       static llong_t compare_exchange(llong_t& location, llong_t value, llong_t comparand) noexcept;
       /// @endcond
@@ -120,7 +120,7 @@ namespace xtd {
       /// @brief Decrements a specified variable and stores the result, as an atomic operation.
       /// @param location The variable whose value is to be decremented.
       /// @return The decremented value.
-      static int64_t decrement(int64_t& location) noexcept;
+      static int64 decrement(int64& location) noexcept;
       
       /// @brief Sets a variable of the specified type type_t to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
@@ -150,7 +150,7 @@ namespace xtd {
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
       /// @return The original value of location.
-      static int64_t exchange(int64_t& location, int64_t value) noexcept;
+      static int64 exchange(int64& location, int64 value) noexcept;
       /// @cond
       static llong_t exchange(llong_t& location, llong_t value) noexcept;
       /// @endcond
@@ -186,7 +186,7 @@ namespace xtd {
       /// @brief Increments a specified variable and stores the result, as an atomic operation.
       /// @param location The variable whose value is to be incremented.
       /// @return The incremented value.
-      static int64_t increment(int64_t& location) noexcept;
+      static int64 increment(int64& location) noexcept;
       
       /// @brief Synchronizes memory access as follows: The processor that executes the current thread cannot reorder instructions in such a way that memory accesses before the call to xtd::threading::interlocked::memory_barrier execute after memory accesses that follow the call to xtd::threading::interlocked::memory_barrier.
       /// @remarks This method was added to the xtd::threading::interlocked class as a convenience; it's a wrapper for the xtd::threading::thread::memory_barrier method.
@@ -197,7 +197,7 @@ namespace xtd {
       /// @brief Returns a 64-bit value, loaded as an atomic operation.
       /// @param location The 64-bit value to be loaded.
       /// @return The loaded value.
-      static int64_t read(int64_t& location) noexcept;
+      static int64 read(int64& location) noexcept;
       
     private:
       /// @brief Represent The object used to create a lock section

@@ -13,7 +13,7 @@ int32 interlocked::add(int32& location, int32 value) noexcept {
   return native::interlocked::add(location, value);
 }
 
-int64_t interlocked::add(int64_t& location, int64_t value) noexcept {
+int64 interlocked::add(int64& location, int64 value) noexcept {
   return native::interlocked::add(location, value);
 }
 
@@ -29,7 +29,7 @@ int32 interlocked::compare_exchange(int32& location, int32 value, int32 comparan
   return native::interlocked::compare_exchange(location, value, comparand);
 }
 
-int64_t interlocked::compare_exchange(int64_t& location, int64_t value, int64_t comparand) noexcept {
+int64 interlocked::compare_exchange(int64& location, int64 value, int64 comparand) noexcept {
   return native::interlocked::compare_exchange(location, value, comparand);
 }
 
@@ -53,7 +53,7 @@ int32 interlocked::decrement(int32& location) noexcept {
   return native::interlocked::decrement(location);
 }
 
-int64_t interlocked::decrement(int64_t& location) noexcept {
+int64 interlocked::decrement(int64& location) noexcept {
   return native::interlocked::decrement(location);
 }
 
@@ -68,7 +68,7 @@ int32 interlocked::exchange(int32& location, int32 value) noexcept {
   return native::interlocked::exchange(location, value);
 }
 
-int64_t interlocked::exchange(int64_t& location, int64_t value) noexcept {
+int64 interlocked::exchange(int64& location, int64 value) noexcept {
   return native::interlocked::exchange(location, value);
 }
 
@@ -91,7 +91,7 @@ int32 interlocked::increment(int32& location) noexcept {
   return native::interlocked::increment(location);
 }
 
-int64_t interlocked::increment(int64_t& location) noexcept {
+int64 interlocked::increment(int64& location) noexcept {
   return native::interlocked::increment(location);
 }
 
@@ -99,7 +99,7 @@ void interlocked::memory_barrier() noexcept {
   std::atomic_thread_fence(std::memory_order_acquire);
 }
 
-int64_t interlocked::read(int64_t& location) noexcept {
-  std::atomic<int64_t> atomic(location);
+int64 interlocked::read(int64& location) noexcept {
+  std::atomic<int64> atomic(location);
   return std::atomic_load(&atomic);
 }

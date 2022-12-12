@@ -8,7 +8,7 @@ using namespace xtd::diagnostics;
 // For more info see note : https://en.cppreference.com/w/cpp/chrono/high_resolution_clock
 using stopwatch_clock_t = std::chrono::steady_clock;
 
-int64_t stopwatch::frequency() noexcept {
+int64 stopwatch::frequency() noexcept {
   return std::nano::den;
 }
 
@@ -20,16 +20,16 @@ std::chrono::nanoseconds stopwatch::elapsed() const noexcept {
   return std::chrono::nanoseconds(elapsed_nanoseconds());
 }
 
-int64_t stopwatch::elapsed_milliseconds() const noexcept {
+int64 stopwatch::elapsed_milliseconds() const noexcept {
   return std::chrono::duration_cast<std::chrono::milliseconds>(elapsed()).count();
 }
 
-int64_t stopwatch::elapsed_nanoseconds() const noexcept {
+int64 stopwatch::elapsed_nanoseconds() const noexcept {
   if (running_) return get_timestamp() - start_;
   return stop_ - start_;
 }
 
-int64_t stopwatch::elapsed_ticks() const noexcept {
+int64 stopwatch::elapsed_ticks() const noexcept {
   return std::chrono::duration_cast<ticks>(elapsed()).count();
 }
 
@@ -37,7 +37,7 @@ bool stopwatch::is_running() const noexcept {
   return running_;
 }
 
-int64_t stopwatch::get_timestamp() noexcept {
+int64 stopwatch::get_timestamp() noexcept {
   return std::chrono::nanoseconds(stopwatch_clock_t::now().time_since_epoch()).count();
 }
 

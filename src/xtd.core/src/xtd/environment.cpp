@@ -184,7 +184,7 @@ ustring environment::user_name() {
   return native::environment::get_user_name();
 }
 
-int64_t environment::working_set() {
+int64 environment::working_set() {
   return native::environment::working_set();
 }
 

@@ -128,7 +128,7 @@ int32 ip_address::host_to_network_order(int32 host) {
   return int32(host_to_network_order(static_cast<uint32>(host)));
 }
 
-int64_t ip_address::host_to_network_order(int64_t host) {
+int64 ip_address::host_to_network_order(int64 host) {
   return int64(host_to_network_order(static_cast<uint64>(host)));
 }
 
@@ -185,7 +185,7 @@ int32 ip_address::network_to_host_order(int32 network) {
   return host_to_network_order(network);
 }
 
-int64_t ip_address::network_to_host_order(int64_t network) {
+int64 ip_address::network_to_host_order(int64 network) {
   return int64(network_to_host_order(uint64(network)));
 }
 

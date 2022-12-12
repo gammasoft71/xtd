@@ -143,7 +143,7 @@ namespace xtd {
     /// any result = convert::to_any(value);
     /// @endcode
     static std::any to_any(int32 value) noexcept;
-    /// @brief Convert int64_t to std::any.
+    /// @brief Convert int64 to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
     /// @par Examples
@@ -151,7 +151,7 @@ namespace xtd {
     /// int6_4t value = 42l;
     /// any result = convert::to_any(value);
     /// @endcode
-    static std::any to_any(int64_t value) noexcept;
+    static std::any to_any(int64 value) noexcept;
     /// @brief Convert llong_t to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
@@ -375,7 +375,7 @@ namespace xtd {
     /// bool result = convert::to_boolean(value);
     /// @endcode
     static bool to_boolean(int32 value) noexcept;
-    /// @brief Convert int64_t to bool.
+    /// @brief Convert int64 to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
     /// @par Examples
@@ -383,7 +383,7 @@ namespace xtd {
     /// int6_4t value = 42l;
     /// bool result = convert::to_boolean(value);
     /// @endcode
-    static bool to_boolean(int64_t value) noexcept;
+    static bool to_boolean(int64 value) noexcept;
     /// @brief Convert llong_t to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
@@ -606,16 +606,16 @@ namespace xtd {
     /// byte_t result = convert::to_byte(value);
     /// @endcode
     static byte_t to_byte(int32 value);
-    /// @brief Convert int64_t to byte.
+    /// @brief Convert int64 to byte.
     /// @param value object to convert.
     /// @return A new byte_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// int64_t value = 42l;
+    /// int64 value = 42l;
     /// byte_t result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(int64_t value);
+    static byte_t to_byte(int64 value);
     /// @brief Convert llong_t to byte.
     /// @param value object to convert.
     /// @return A new byte_t object converted from value.
@@ -854,16 +854,16 @@ namespace xtd {
     /// char result = convert::to_char(value);
     /// @endcode
     static char to_char(int32 value);
-    /// @brief Convert int64_t to char.
+    /// @brief Convert int64 to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// int64_t value = 42l;
+    /// int64 value = 42l;
     /// char result = convert::to_char(value);
     /// @endcode
-    static char to_char(int64_t value);
+    static char to_char(int64 value);
     /// @brief Convert llong_t to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
@@ -1091,16 +1091,16 @@ namespace xtd {
     /// char8_t result = convert::to_char8(value);
     /// @endcode
     static char8_t to_char8(int32 value);
-    /// @brief Convert int64_t to char8.
+    /// @brief Convert int64 to char8.
     /// @param value object to convert.
     /// @return A new char8_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// int64_t value = 42l;
+    /// int64 value = 42l;
     /// char8_t result = convert::to_char8(value);
     /// @endcode
-    static char8_t to_char8(int64_t value);
+    static char8_t to_char8(int64 value);
     /// @brief Convert llong_t to char8.
     /// @param value object to convert.
     /// @return A new char8_t object converted from value.
@@ -1326,16 +1326,16 @@ namespace xtd {
     /// char16_t result = convert::to_char16(value);
     /// @endcode
     static char16_t to_char16(int32 value);
-    /// @brief Convert int64_t to char16.
+    /// @brief Convert int64 to char16.
     /// @param value object to convert.
     /// @return A new char16_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// int64_t value = 42l;
+    /// int64 value = 42l;
     /// char16_t result = convert::to_char16(value);
     /// @endcode
-    static char16_t to_char16(int64_t value);
+    static char16_t to_char16(int64 value);
     /// @brief Convert llong_t to char16.
     /// @param value object to convert.
     /// @return A new char16_t object converted from value.
@@ -1559,16 +1559,16 @@ namespace xtd {
     /// char32_t result = convert::to_char32(value);
     /// @endcode
     static char32_t to_char32(int32 value);
-    /// @brief Convert int64_t to char32.
+    /// @brief Convert int64 to char32.
     /// @param value object to convert.
     /// @return A new char32_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// int64_t value = 42l;
+    /// int64 value = 42l;
     /// char32_t result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(int64_t value);
+    static char32_t to_char32(int64 value);
     /// @brief Convert llong_t to char32.
     /// @param value object to convert.
     /// @return A new char32_t object converted from value.
@@ -1792,16 +1792,16 @@ namespace xtd {
     /// wchar_t result = convert::to_wchar(value);
     /// @endcode
     static wchar_t to_wchar(int32 value);
-    /// @brief Convert int64_t to wchar.
+    /// @brief Convert int64 to wchar.
     /// @param value object to convert.
     /// @return A new wchar_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// int64_t value = 42l;
+    /// int64 value = 42l;
     /// wchar_t result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(int64_t value);
+    static wchar_t to_wchar(int64 value);
     /// @brief Convert llong_t to wchar.
     /// @param value object to convert.
     /// @return A new wchar_t object converted from value.
@@ -2021,15 +2021,15 @@ namespace xtd {
     /// decimal_t result = convert::to_decimal(value);
     /// @endcode
     static decimal_t to_decimal(int32 value) noexcept;
-    /// @brief Convert int64_t to decimal.
+    /// @brief Convert int64 to decimal.
     /// @param value object to convert.
     /// @return A new decimal_t object converted from value.
     /// @par Examples
     /// @code
-    /// int64_t value = 42l;
+    /// int64 value = 42l;
     /// decimal_t result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(int64_t value) noexcept;
+    static decimal_t to_decimal(int64 value) noexcept;
     /// @brief Convert llong_t to decimal.
     /// @param value object to convert.
     /// @return A new decimal_t object converted from value.
@@ -2244,15 +2244,15 @@ namespace xtd {
     /// double result = convert::to_double(value);
     /// @endcode
     static double to_double(int32 value) noexcept;
-    /// @brief Convert int64_t to double.
+    /// @brief Convert int64 to double.
     /// @param value object to convert.
     /// @return A new double object converted from value.
     /// @par Examples
     /// @code
-    /// int64_t value = 42l;
+    /// int64 value = 42l;
     /// double result = convert::to_double(value);
     /// @endcode
-    static double to_double(int64_t value) noexcept;
+    static double to_double(int64 value) noexcept;
     /// @brief Convert llong_t to double.
     /// @param value object to convert.
     /// @return A new double object converted from value.
@@ -2467,15 +2467,15 @@ namespace xtd {
     /// float result = convert::to_single(value);
     /// @endcode
     static float to_single(int32 value) noexcept;
-    /// @brief Convert int64_t to single.
+    /// @brief Convert int64 to single.
     /// @param value object to convert.
     /// @return A new float object converted from value.
     /// @par Examples
     /// @code
-    /// int64_t value = 42l;
+    /// int64 value = 42l;
     /// float result = convert::to_single(value);
     /// @endcode
-    static float to_single(int64_t value) noexcept;
+    static float to_single(int64 value) noexcept;
     /// @brief Convert llong_t to single.
     /// @param value object to convert.
     /// @return A new float object converted from value.
@@ -2695,16 +2695,16 @@ namespace xtd {
     /// int16 result = convert::to_int16(value);
     /// @endcode
     static int16 to_int16(int32 value);
-    /// @brief Convert int64_t to int16.
+    /// @brief Convert int64 to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// int64_t value = 42l;
+    /// int64 value = 42l;
     /// int16 result = convert::to_int16(value);
     /// @endcode
-    static int16 to_int16(int64_t value);
+    static int16 to_int16(int64 value);
     /// @brief Convert llong_t to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
@@ -2938,15 +2938,15 @@ namespace xtd {
     /// int32 result = convert::to_int32(value);
     /// @endcode
     static int32 to_int32(int32 value) noexcept;
-    /// @brief Convert int64_t to int32.
+    /// @brief Convert int64 to int32.
     /// @param value object to convert.
     /// @return A new int32 object converted from value.
     /// @par Examples
     /// @code
-    /// int64_t value = 42l;
+    /// int64 value = 42l;
     /// int32 result = convert::to_int32(value);
     /// @endcode
-    static int32 to_int32(int64_t value);
+    static int32 to_int32(int64 value);
     /// @brief Convert llong_t to int32.
     /// @param value object to convert.
     /// @return A new int32 object converted from value.
@@ -3058,199 +3058,199 @@ namespace xtd {
     
     /// @brief Convert std::any to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
     /// std::any value = 42;
-    /// int64_t result = convert::to_int64(value);
+    /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64_t to_int64(std::any value);
+    static int64 to_int64(std::any value);
     /// @brief Convert bool to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
     /// bool value = true;
-    /// int64_t result = convert::to_int64(value);
+    /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64_t to_int64(bool value) noexcept;
+    static int64 to_int64(bool value) noexcept;
     /// @brief Convert byte_t to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
     /// byte_t value = 42;
-    /// int64_t result = convert::to_int64(value);
+    /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64_t to_int64(byte_t value) noexcept;
+    static int64 to_int64(byte_t value) noexcept;
     /// @brief Convert char to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
     /// char value = 'a';
-    /// int64_t result = convert::to_int64(value);
+    /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64_t to_int64(char value) noexcept;
+    static int64 to_int64(char value) noexcept;
     /// @brief Convert char8_t to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
     /// char8_t value = u8'a';
-    /// int64_t result = convert::to_int64(value);
+    /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64_t to_int64(char8_t value) noexcept;
+    static int64 to_int64(char8_t value) noexcept;
     /// @brief Convert char16_t to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
     /// char16_t value = u'a';
-    /// int64_t result = convert::to_int64(value);
+    /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64_t to_int64(char16_t value) noexcept;
+    static int64 to_int64(char16_t value) noexcept;
     /// @brief Convert char32_t to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
     /// char32_t value = U'a';
-    /// int64_t result = convert::to_int64(value);
+    /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64_t to_int64(char32_t value) noexcept;
+    static int64 to_int64(char32_t value) noexcept;
     /// @brief Convert char32_t to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
     /// wchar_t value = L'a';
-    /// int64_t result = convert::to_int64(value);
+    /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64_t to_int64(wchar_t value) noexcept;
+    static int64 to_int64(wchar_t value) noexcept;
     /// @brief Convert decimal_t to int64.
     /// @param value object to convert.
     /// @remarks The result is rounded.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
     /// decimal_t value = 42.50l;
-    /// int64_t result = convert::to_int64(value);
+    /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64_t to_int64(decimal_t value) noexcept;
+    static int64 to_int64(decimal_t value) noexcept;
     /// @brief Convert double to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @remarks The result is rounded.
     /// @par Examples
     /// @code
     /// double value = 42.50;
-    /// int64_t result = convert::to_int64(value);
+    /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64_t to_int64(double value) noexcept;
+    static int64 to_int64(double value) noexcept;
     /// @brief Convert float to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @remarks The result is rounded.
     /// @par Examples
     /// @code
     /// float value = 42.50f;
-    /// int64_t result = convert::to_int64(value);
+    /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64_t to_int64(float value) noexcept;
+    static int64 to_int64(float value) noexcept;
     /// @brief Convert int16 to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
     /// int16 value = 42;
-    /// int64_t result = convert::to_int64(value);
+    /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64_t to_int64(int16 value) noexcept;
+    static int64 to_int64(int16 value) noexcept;
     /// @brief Convert int32 to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
     /// int32 value = 42;
-    /// int64_t result = convert::to_int64(value);
+    /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64_t to_int64(int32 value) noexcept;
-    /// @brief Convert int64_t to int64.
+    static int64 to_int64(int32 value) noexcept;
+    /// @brief Convert int64 to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
-    /// int64_t value = 42l;
-    /// int64_t result = convert::to_int64(value);
+    /// int64 value = 42l;
+    /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64_t to_int64(int64_t value) noexcept;
+    static int64 to_int64(int64 value) noexcept;
     /// @brief Convert llong_t to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
     /// llong_t value = 42ll;
-    /// int64_t result = convert::to_int64(value);
+    /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64_t to_int64(llong_t value) noexcept;
+    static int64 to_int64(llong_t value) noexcept;
     /// @brief Convert sbyte_t to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
     /// sbyte_t value = 42;
-    /// int64_t result = convert::to_int64(value);
+    /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64_t to_int64(sbyte_t value) noexcept;
+    static int64 to_int64(sbyte_t value) noexcept;
     /// @brief Convert uint16_t to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
     /// uint16_t value = 42u;
-    /// int64_t result = convert::to_int64(value);
+    /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64_t to_int64(uint16_t value) noexcept;
+    static int64 to_int64(uint16_t value) noexcept;
     /// @brief Convert uint32 to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
     /// uint32 value = 42u;
-    /// int64_t result = convert::to_int64(value);
+    /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64_t to_int64(uint32 value) noexcept;
+    static int64 to_int64(uint32 value) noexcept;
     /// @brief Convert uint64_t to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42ul;
-    /// int64_t result = convert::to_int64(value);
+    /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64_t to_int64(uint64_t value);
+    static int64 to_int64(uint64_t value);
     /// @brief Convert llong_t to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
     /// @par Examples
     /// @code
     /// ullong_t value = 42ull;
-    /// int64_t result = convert::to_int64(value);
+    /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64_t to_int64(ullong_t value);
+    static int64 to_int64(ullong_t value);
     /// @brief Convert string to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
     /// ustring value = "42";
-    /// int64_t result = convert::to_int64(value);
+    /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64_t to_int64(const xtd::ustring& value);
+    static int64 to_int64(const xtd::ustring& value);
     /// @brief Convert string to int64.
     /// @param value object to convert.
     /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
@@ -3261,35 +3261,35 @@ namespace xtd {
     /// ustring value = "42";
     /// int16 result = convert::to_int16(value);
     /// @endcode
-    static int64_t to_int64(const xtd::ustring& value, byte_t from_base);
+    static int64 to_int64(const xtd::ustring& value, byte_t from_base);
     /// @cond
-    static int64_t to_int64(const std::string& value);
-    static int64_t to_int64(const std::u8string& value);
-    static int64_t to_int64(const std::u16string& value);
-    static int64_t to_int64(const std::u32string& value);
-    static int64_t to_int64(const std::wstring& value);
-    static int64_t to_int64(const char* value);
-    static int64_t to_int64(char* value);
-    static int64_t to_int64(const char8_t* value);
-    static int64_t to_int64(char8_t* value);
-    static int64_t to_int64(const char16_t* value);
-    static int64_t to_int64(char16_t* value);
-    static int64_t to_int64(const char32_t* value);
-    static int64_t to_int64(char32_t* value);
-    static int64_t to_int64(const wchar_t* value);
-    static int64_t to_int64(wchar_t* value);
+    static int64 to_int64(const std::string& value);
+    static int64 to_int64(const std::u8string& value);
+    static int64 to_int64(const std::u16string& value);
+    static int64 to_int64(const std::u32string& value);
+    static int64 to_int64(const std::wstring& value);
+    static int64 to_int64(const char* value);
+    static int64 to_int64(char* value);
+    static int64 to_int64(const char8_t* value);
+    static int64 to_int64(char8_t* value);
+    static int64 to_int64(const char16_t* value);
+    static int64 to_int64(char16_t* value);
+    static int64 to_int64(const char32_t* value);
+    static int64 to_int64(char32_t* value);
+    static int64 to_int64(const wchar_t* value);
+    static int64 to_int64(wchar_t* value);
     /// @endcond
     /// @brief Convert type_t to int64.
     /// @param value object to convert.
-    /// @return A new int64_t object converted from value.
+    /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
     /// address_family value = address_family::inter_network;
-    /// int64_t result = convert::to_int64(value);
+    /// int64 result = convert::to_int64(value);
     /// @endcode
     template<typename type_t>
-    static int64_t to_int64(type_t value) noexcept {
-      return static_cast<int64_t>(value);
+    static int64 to_int64(type_t value) noexcept {
+      return static_cast<int64>(value);
     }
     
     /// @brief Convert std::any to llong.
@@ -3412,15 +3412,15 @@ namespace xtd {
     /// llong_t result = convert::to_llong(value);
     /// @endcode
     static llong_t to_llong(int32 value) noexcept;
-    /// @brief Convert int64_t to llong.
+    /// @brief Convert int64 to llong.
     /// @param value object to convert.
     /// @return A new llong_t object converted from value.
     /// @par Examples
     /// @code
-    /// int64_t value = 42l;
+    /// int64 value = 42l;
     /// llong_t result = convert::to_llong(value);
     /// @endcode
-    static llong_t to_llong(int64_t value) noexcept;
+    static llong_t to_llong(int64 value) noexcept;
     /// @brief Convert llong_t to llong.
     /// @param value object to convert.
     /// @return A new llong_t object converted from value.
@@ -3656,16 +3656,16 @@ namespace xtd {
     /// sbyte_t result = convert::to_sbyte(value);
     /// @endcode
     static sbyte_t to_sbyte(int32 value);
-    /// @brief Convert int64_t to sbyte.
+    /// @brief Convert int64 to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// int64_t value = 42l;
+    /// int64 value = 42l;
     /// sbyte_t result = convert::to_sbyte(value);
     /// @endcode
-    static sbyte_t to_sbyte(int64_t value);
+    static sbyte_t to_sbyte(int64 value);
     /// @brief Convert llong_t to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte_t object converted from value.
@@ -3903,16 +3903,16 @@ namespace xtd {
     /// uint16_t result = convert::to_uint16(value);
     /// @endcode
     static uint16_t to_uint16(int32 value);
-    /// @brief Convert int64_t to uint16.
+    /// @brief Convert int64 to uint16.
     /// @param value object to convert.
     /// @return A new uint16_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// int64_t value = 42l;
+    /// int64 value = 42l;
     /// uint16_t result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(int64_t value);
+    static uint16_t to_uint16(int64 value);
     /// @brief Convert llong_t to uint16.
     /// @param value object to convert.
     /// @return A new uint16_t object converted from value.
@@ -4148,16 +4148,16 @@ namespace xtd {
     /// uint32 result = convert::to_uint32(value);
     /// @endcode
     static uint32 to_uint32(int32 value);
-    /// @brief Convert int64_t to uint32.
+    /// @brief Convert int64 to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// int64_t value = 42l;
+    /// int64 value = 42l;
     /// uint32 result = convert::to_uint32(value);
     /// @endcode
-    static uint32 to_uint32(int64_t value);
+    static uint32 to_uint32(int64 value);
     /// @brief Convert llong_t to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
@@ -4392,16 +4392,16 @@ namespace xtd {
     /// uint64_t result = convert::to_uint64(value);
     /// @endcode
     static uint64_t to_uint64(int32 value);
-    /// @brief Convert int64_t to uint64.
+    /// @brief Convert int64 to uint64.
     /// @param value object to convert.
     /// @return A new uint64_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// int64_t value = 42l;
+    /// int64 value = 42l;
     /// uint64_t result = convert::to_uint64(value);
     /// @endcode
-    static uint64_t to_uint64(int64_t value);
+    static uint64_t to_uint64(int64 value);
     /// @brief Convert llong_t to uint64.
     /// @param value object to convert.
     /// @return A new uint64_t object converted from value.
@@ -4634,16 +4634,16 @@ namespace xtd {
     /// ullong_t result = convert::to_ullong(value);
     /// @endcode
     static ullong_t to_ullong(int32 value);
-    /// @brief Convert int64_t to ullong.
+    /// @brief Convert int64 to ullong.
     /// @param value object to convert.
     /// @return A new ullong_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// int64_t value = 42l;
+    /// int64 value = 42l;
     /// ullong_t result = convert::to_ullong(value);
     /// @endcode
-    static ullong_t to_ullong(int64_t value);
+    static ullong_t to_ullong(int64 value);
     /// @brief Convert llong_t to ullong.
     /// @param value object to convert.
     /// @return A new ullong_t object converted from value.
@@ -4909,16 +4909,16 @@ namespace xtd {
     /// ustring result = convert::to_string(value, 16);
     /// @endcode
     static ustring to_string(int32 value, byte_t from_base);
-    /// @brief Convert int64_t to ustring.
+    /// @brief Convert int64 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// int64_t value = 42l;
+    /// int64 value = 42l;
     /// ustring result = convert::to_string(value);
     /// @endcode
-    static ustring to_string(int64_t value);
+    static ustring to_string(int64 value);
     /// @brief Convert string to ustring.
     /// @param value object to convert.
     /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
@@ -4926,10 +4926,10 @@ namespace xtd {
     /// @exception xtd::atgument_exception from_base is not 2 or 8 or 10 orr 16.
     /// @par Examples
     /// @code
-    /// int64_t value = 42;
+    /// int64 value = 42;
     /// ustring result = convert::to_string(value, 16);
     /// @endcode
-    static ustring to_string(int64_t value, byte_t from_base);
+    static ustring to_string(int64 value, byte_t from_base);
     /// @brief Convert llong_t to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
@@ -5250,16 +5250,16 @@ namespace xtd {
     /// ustring result = convert::to_ustring(value, 16);
     /// @endcode
     static ustring to_ustring(int32 value, byte_t from_base);
-    /// @brief Convert int64_t to ustring.
+    /// @brief Convert int64 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// int64_t value = 42l;
+    /// int64 value = 42l;
     /// ustring result = convert::to_ustring(value);
     /// @endcode
-    static ustring to_ustring(int64_t value);
+    static ustring to_ustring(int64 value);
     /// @brief Convert string to ustring.
     /// @param value object to convert.
     /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
@@ -5267,10 +5267,10 @@ namespace xtd {
     /// @exception xtd::atgument_exception from_base is not 2 or 8 or 10 orr 16.
     /// @par Examples
     /// @code
-    /// int64_t value = 42;
+    /// int64 value = 42;
     /// ustring result = convert::to_ustring(value, 16);
     /// @endcode
-    static ustring to_ustring(int64_t value, byte_t from_base);
+    static ustring to_ustring(int64 value, byte_t from_base);
     /// @brief Convert llong_t to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.

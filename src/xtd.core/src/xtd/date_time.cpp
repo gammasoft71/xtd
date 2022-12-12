@@ -16,32 +16,32 @@ using namespace xtd;
 
 namespace {
   // Number of ticks per time unit
-  const int64_t ticks_per_millisecond = 10000;
-  const int64_t ticks_per_second = ticks_per_millisecond * 1000;
-  const int64_t ticks_per_minute = ticks_per_second * 60;
-  const int64_t ticks_per_hour = ticks_per_minute * 60;
-  const int64_t ticks_per_day = ticks_per_hour * 24;
+  const int64 ticks_per_millisecond = 10000;
+  const int64 ticks_per_second = ticks_per_millisecond * 1000;
+  const int64 ticks_per_minute = ticks_per_second * 60;
+  const int64 ticks_per_hour = ticks_per_minute * 60;
+  const int64 ticks_per_day = ticks_per_hour * 24;
   
   // Number of seconds per time unit
-  const int64_t seconds_per_minute = 60;
-  const int64_t seconds_per_our = seconds_per_minute * 60;
-  const int64_t seconds_per_day = seconds_per_our * 24;
+  const int64 seconds_per_minute = 60;
+  const int64 seconds_per_our = seconds_per_minute * 60;
+  const int64 seconds_per_day = seconds_per_our * 24;
   
   // Number of days in a non-leap year
-  const int64_t days_per_year = 365;
+  const int64 days_per_year = 365;
   // Number of days in 4 years
-  const int64_t days_per_4_years = days_per_year * 4 + 1; // 1461
+  const int64 days_per_4_years = days_per_year * 4 + 1; // 1461
   // Number of days in 100 years
-  const int64_t days_per_100_years = days_per_4_years * 25 - 1; // 36524
+  const int64 days_per_100_years = days_per_4_years * 25 - 1; // 36524
   // Number of days in 400 years
-  const int64_t days_per_400_years = days_per_100_years * 4 + 1; // 146097
+  const int64 days_per_400_years = days_per_100_years * 4 + 1; // 146097
   
   // Number of days from 1/1/0001 to 12/31/1600
-  const int64_t days_to_1601 = days_per_400_years * 4; // 584388
+  const int64 days_to_1601 = days_per_400_years * 4; // 584388
   // Number of days from 1/1/0001 to 12/31/1969
-  const int64_t days_to_1970 = days_per_400_years * 4 + days_per_100_years * 3 + days_per_4_years * 17 + days_per_year; // 719,162
+  const int64 days_to_1970 = days_per_400_years * 4 + days_per_100_years * 3 + days_per_4_years * 17 + days_per_year; // 719,162
   // Number of days from 1/1/0001 to 12/31/9999
-  const int64_t days_to_10000 = days_per_400_years * 25 - 366; // 3652059
+  const int64 days_to_10000 = days_per_400_years * 25 - 366; // 3652059
   
   const ticks min_ticks = ticks(0);
   const ticks max_ticks = ticks(days_to_10000 * ticks_per_day - 1);
@@ -50,30 +50,30 @@ namespace {
   
   constexpr seconds seconds_offset_1970 = seconds(seconds_per_day* days_to_1970);
   
-  static uint32 get_years(int64_t& days) {
-    int64_t year = 1;
+  static uint32 get_years(int64& days) {
+    int64 year = 1;
     
     if (days >= days_per_400_years) {
-      int64_t chunks = days / days_per_400_years;
+      int64 chunks = days / days_per_400_years;
       year += chunks * 400;
       days -= chunks * days_per_400_years;
     }
     
     if (days >= days_per_100_years) {
-      int64_t chunks = days / days_per_100_years;
+      int64 chunks = days / days_per_100_years;
       if (chunks == 4) chunks = 3;
       year += chunks * 100;
       days -= chunks * days_per_100_years;
     }
     
     if (days >= days_per_4_years) {
-      int64_t chunks = days / days_per_4_years;
+      int64 chunks = days / days_per_4_years;
       year += chunks * 4;
       days -= chunks * days_per_4_years;
     }
     
     if (days >= days_per_year) {
-      int64_t chunks = days / days_per_year;
+      int64 chunks = days / days_per_year;
       if (chunks == 4) chunks = 3;
       year += chunks;
       days -= chunks * days_per_year;
@@ -82,10 +82,10 @@ namespace {
     return static_cast<uint32>(year);
   }
   
-  static uint32 get_months(int64_t& days, uint32 year) {
+  static uint32 get_months(int64& days, uint32 year) {
     uint32 month = 1;
     
-    for (int64_t days_in_month = date_time::days_in_month(year, month); days >= days_in_month; days_in_month = date_time::days_in_month(year, month)) {
+    for (int64 days_in_month = date_time::days_in_month(year, month); days >= days_in_month; days_in_month = date_time::days_in_month(year, month)) {
       ++month;
       days -= days_in_month;
     }
@@ -230,19 +230,19 @@ date_time date_time::add(time_span value) const {
 }
 
 date_time date_time::add_days(double days) const {
-  return date_time(value_ + xtd::ticks(static_cast<int64_t>(days * ticks_per_day)), kind_);
+  return date_time(value_ + xtd::ticks(static_cast<int64>(days * ticks_per_day)), kind_);
 }
 
 date_time date_time::add_hours(double hours) const {
-  return date_time(value_ + xtd::ticks(static_cast<int64_t>(hours * ticks_per_hour)), kind_);
+  return date_time(value_ + xtd::ticks(static_cast<int64>(hours * ticks_per_hour)), kind_);
 }
 
 date_time date_time::add_milliseconds(double milliseconds) const {
-  return date_time(value_ + xtd::ticks(static_cast<int64_t>(milliseconds * ticks_per_millisecond)), kind_);
+  return date_time(value_ + xtd::ticks(static_cast<int64>(milliseconds * ticks_per_millisecond)), kind_);
 }
 
 date_time date_time::add_minutes(double minute) const {
-  return date_time(value_ + xtd::ticks(static_cast<int64_t>(minute * ticks_per_minute)), kind_);
+  return date_time(value_ + xtd::ticks(static_cast<int64>(minute * ticks_per_minute)), kind_);
 }
 
 date_time date_time::add_months(int32 months) const {
@@ -267,7 +267,7 @@ date_time date_time::add_months(int32 months) const {
 }
 
 date_time date_time::add_seconds(double value) const {
-  return date_time(value_ + xtd::ticks(static_cast<int64_t>(value * ticks_per_second)), kind_);
+  return date_time(value_ + xtd::ticks(static_cast<int64>(value * ticks_per_second)), kind_);
 }
 
 date_time date_time::add_ticks(int64 value) const {
@@ -299,15 +299,15 @@ bool date_time::equals(const date_time& other) const noexcept {
   return value_.count() == other.value_.count();
 }
 
-date_time date_time::from_binary(int64_t date_data) {
+date_time date_time::from_binary(int64 date_data) {
   return date_time(xtd::ticks(date_data & 0x3FFFFFFFFFFFFFFFLL), static_cast<date_time_kind>(static_cast<int32>(((date_data & 0xC000000000000000LL) >> 62) & 0x0000000000000003LL)));
 }
 
-date_time date_time::from_file_time(int64_t file_time) {
+date_time date_time::from_file_time(int64 file_time) {
   return from_file_time_utc(file_time).to_local_time();
 }
 
-date_time date_time::from_file_time_utc(int64_t file_time) {
+date_time date_time::from_file_time_utc(int64 file_time) {
   if (file_time < 0) throw argument_out_of_range_exception(csf_);
   return date_time(xtd::ticks(file_time) + file_time_offset, date_time_kind::utc);
 }
@@ -365,17 +365,17 @@ date_time date_time::subtract(time_span value) const {
   return date_time(value_ - duration_cast<xtd::ticks>(value));
 }
 
-int64_t date_time::to_binary() const {
+int64 date_time::to_binary() const {
   return (duration_cast<chrono::seconds>(value_).count() & 0x3FFFFFFFFFFFFFFFLL) + ((static_cast<int64>(kind_) << 62) & 0xC000000000000000LL);
 }
 
-int64_t date_time::to_file_time() const {
+int64 date_time::to_file_time() const {
   return to_universal_time().to_file_time_utc();
 }
 
-int64_t date_time::to_file_time_utc() const {
+int64 date_time::to_file_time_utc() const {
   auto value = kind_ == date_time_kind::unspecified ? to_universal_time().value_ : value_;
-  int64_t result = (value - file_time_offset).count();
+  int64 result = (value - file_time_offset).count();
   if (result < 0) throw argument_out_of_range_exception(csf_);
   return result;
 }
@@ -562,7 +562,7 @@ date_time date_time::operator --(int32) {
 }
 
 void date_time::get_date_time(uint32& year, uint32& month, uint32& day, uint32& hour, uint32& minute, uint32& second, uint32& day_of_year, int32& day_of_week) const {
-  int64_t days = value_.count() / ticks_per_day;
+  int64 days = value_.count() / ticks_per_day;
   year = get_years(days);
   day_of_year = static_cast<uint32>(days + 1);
   month = get_months(days, year);
@@ -603,7 +603,7 @@ void date_time::set_date_time(uint32 year, uint32 month, uint32 day, uint32 hour
     (year == max_year && month == max_month && day == max_day && hour == max_hour && minute == max_minute && second > max_second))
     throw argument_out_of_range_exception(csf_);
     
-  int64_t days = day - 1;
+  int64 days = day - 1;
   
   for (uint32 index = 1; index < month; ++index)
     days += days_in_month(year, index);

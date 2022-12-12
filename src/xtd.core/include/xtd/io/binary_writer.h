@@ -170,7 +170,7 @@ namespace xtd {
       /// @param value The eight-byte signed integer to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
-      virtual void write(int64_t value);
+      virtual void write(int64 value);
       
       /// @brief Writes an signed byte to the current stream and advances the stream position by one byte.
       /// @param value The signed byte to write.
@@ -234,7 +234,7 @@ namespace xtd {
       binary_writer& operator <<(double value) {write(value); return *this;}
       binary_writer& operator <<(int16 value) {write(value); return *this;}
       binary_writer& operator <<(int32 value) {write(value); return *this;}
-      binary_writer& operator <<(int64_t value) {write(value); return *this;}
+      binary_writer& operator <<(int64 value) {write(value); return *this;}
       binary_writer& operator <<(sbyte value) {write(value); return *this;}
       binary_writer& operator <<(float value) {write(value); return *this;}
       binary_writer& operator <<(const ustring& value) {write(value); return *this;}

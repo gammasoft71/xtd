@@ -5,8 +5,8 @@
 using namespace std;
 using namespace xtd;
 
-int64_t bit_converter::double_to_int64_bits(double value) noexcept {
-  int64_t result = 0;
+int64 bit_converter::double_to_int64_bits(double value) noexcept {
+  int64 result = 0;
   memcpy(&result, &value, sizeof(value));
   return result;
 }
@@ -47,7 +47,7 @@ vector<byte_t> bit_converter::get_bytes(int32 value) noexcept {
   return bit_converter::get_bytes(uint32(value));
 }
 
-vector<byte_t> bit_converter::get_bytes(int64_t value) noexcept {
+vector<byte_t> bit_converter::get_bytes(int64 value) noexcept {
   return bit_converter::get_bytes(uint64_t(value));
 }
 
@@ -88,7 +88,7 @@ float bit_converter::int32_bits_to_single(int32 value) noexcept {
   return result;
 }
 
-double bit_converter::int64_bits_to_double(int64_t value) noexcept {
+double bit_converter::int64_bits_to_double(int64 value) noexcept {
   double result = 0;
   memcpy(&result, &value, sizeof(value));
   return result;
@@ -120,8 +120,8 @@ int32 bit_converter::to_int32(const vector<byte_t>& value, size_t start_index) {
   return static_cast<int32>(to_uint32(value, start_index));
 }
 
-int64_t bit_converter::to_int64(const vector<byte_t>& value, size_t start_index) {
-  return static_cast<int64_t>(to_uint64(value, start_index));
+int64 bit_converter::to_int64(const vector<byte_t>& value, size_t start_index) {
+  return static_cast<int64>(to_uint64(value, start_index));
 }
 
 float bit_converter::to_single(const vector<byte_t>& value, size_t start_index) {

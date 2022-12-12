@@ -34,8 +34,8 @@ int32 math::abs(int32 value) {
   return value < 0 ? -value : value;
 }
 
-int64_t math::abs(int64_t value) {
-  if (value == numeric_limits<int64_t>::lowest()) throw xtd::overflow_exception(csf_);
+int64 math::abs(int64 value) {
+  if (value == numeric_limits<int64>::lowest()) throw xtd::overflow_exception(csf_);
   return value < 0 ? -value : value;
 }
 
@@ -65,8 +65,8 @@ double math::atan2(double y, double x) {
   return is_infinity(y) && is_infinity(x) ? NaN : std::atan2(y, x);
 }
 
-int64_t math::big_mul(int32 a, int32 b) {
-  return as<int64_t>(a) * as<int64_t>(b);
+int64 math::big_mul(int32 a, int32 b) {
+  return as<int64>(a) * as<int64>(b);
 }
 
 decimal math::ceiling(decimal value) {
@@ -97,7 +97,7 @@ int32 math::clamp(int32 value, int32 min, int32 max) noexcept {
   return std::clamp(value, min, max);
 }
 
-int64_t math::clamp(int64_t value, int64_t min, int64_t max) noexcept {
+int64 math::clamp(int64 value, int64 min, int64 max) noexcept {
   return std::clamp(value, min, max);
 }
 
@@ -146,7 +146,7 @@ int32 math::div_rem(int32 dividend, int32 divisor, int32& remainder) {
   return dividend / divisor;
 }
 
-int64_t math::div_rem(int64_t dividend, int64_t divisor, int64_t& remainder) {
+int64 math::div_rem(int64 dividend, int64 divisor, int64& remainder) {
   remainder = dividend % divisor;
   return dividend / divisor;
 }
@@ -218,7 +218,7 @@ int32 math::max(int32 a, int32 b) noexcept {
   return a > b ? a : b;
 }
 
-int64_t math::max(int64_t a, int64_t b) noexcept {
+int64 math::max(int64 a, int64 b) noexcept {
   return a > b ? a : b;
 }
 
@@ -270,7 +270,7 @@ int32 math::min(int32 a, int32 b) noexcept {
   return a < b ? a : b;
 }
 
-int64_t math::min(int64_t a, int64_t b) noexcept {
+int64 math::min(int64 a, int64 b) noexcept {
   return a < b ? a : b;
 }
 
@@ -350,7 +350,7 @@ int32 math::sign(int32 value) {
   return value < 0 ? -1 : value == 0 ? 0 : 1;
 }
 
-int32 math::sign(int64_t value) {
+int32 math::sign(int64 value) {
   return value < 0 ? -1 : value == 0 ? 0 : 1;
 }
 
