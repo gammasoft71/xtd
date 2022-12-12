@@ -356,32 +356,32 @@ xtd::time_span xtd::operator""_t(unsigned long long s) {
   return xtd::ticks(s);
 }
 
-uint8_t xtd::operator""_u8(long double n) {
-  return as<uint8_t>(n);
+xtd::byte xtd::operator""_u8(long double n) {
+  return as<xtd::byte>(n);
 }
 
-uint8_t xtd::operator""_u8(unsigned long long n) {
-  return as<uint8_t>(n);
+xtd::byte xtd::operator""_u8(unsigned long long n) {
+  return as<xtd::byte>(n);
 }
 
-uint8_t xtd::operator""_u8(const char* s, size_t n) {
-  return as<uint8_t>(ustring(s, s + n));
+xtd::byte xtd::operator""_u8(const char* s, size_t n) {
+  return as<xtd::byte>(ustring(s, s + n));
 }
 
-uint8_t xtd::operator""_u8(const char8_t* s, size_t n) {
-  return as<uint8_t>(ustring(s, s + n));
+xtd::byte xtd::operator""_u8(const char8_t* s, size_t n) {
+  return as<xtd::byte>(ustring(s, s + n));
 }
 
-uint8_t xtd::operator""_u8(const char16_t* s, size_t n) {
-  return as<uint8_t>(u16string(s, s + n));
+xtd::byte xtd::operator""_u8(const char16_t* s, size_t n) {
+  return as<xtd::byte>(u16string(s, s + n));
 }
 
-uint8_t xtd::operator""_u8(const char32_t* s, size_t n) {
-  return as<uint8_t>(u32string(s, s + n));
+xtd::byte xtd::operator""_u8(const char32_t* s, size_t n) {
+  return as<xtd::byte>(u32string(s, s + n));
 }
 
-uint8_t xtd::operator""_u8(const wchar_t* s, size_t n) {
-  return as<uint8_t>(wstring(s, s + n));
+xtd::byte xtd::operator""_u8(const wchar_t* s, size_t n) {
+  return as<xtd::byte>(wstring(s, s + n));
 }
 
 uint16_t xtd::operator""_u16(long double n) {

@@ -1083,7 +1083,7 @@ namespace xtd {
   /// @code
   /// std::cout << 1.6_u8 << std::endl;
   /// @endcode
-  uint8_t operator""_u8(long double n);
+  xtd::byte operator""_u8(long double n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1095,7 +1095,7 @@ namespace xtd {
   /// @code
   /// std::cout << 54_u8 << std::endl;
   /// @endcode
-  uint8_t operator""_u8(unsigned long long n);
+  xtd::byte operator""_u8(unsigned long long n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1107,7 +1107,7 @@ namespace xtd {
   /// @code
   /// std::cout << "125"_u8 << std::endl;
   /// @endcode
-  uint8_t operator""_u8(const char* s, size_t n);
+  xtd::byte operator""_u8(const char* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1119,7 +1119,7 @@ namespace xtd {
   /// @code
   /// std::cout << u8"125"_u8 << std::endl;
   /// @endcode
-  uint8_t operator""_u8(const char8_t* s, size_t n);
+  xtd::byte operator""_u8(const char8_t* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1131,7 +1131,7 @@ namespace xtd {
   /// @code
   /// std::cout << u"125"_u8 << std::endl;
   /// @endcode
-  uint8_t operator""_u8(const char16_t* s, size_t n);
+  xtd::byte operator""_u8(const char16_t* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1143,7 +1143,7 @@ namespace xtd {
   /// @code
   /// std::cout << U"125"_u8 << std::endl;
   /// @endcode
-  uint8_t operator""_u8(const char32_t* s, size_t n);
+  xtd::byte operator""_u8(const char32_t* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1155,7 +1155,7 @@ namespace xtd {
   /// @code
   /// std::cout << L"125"_u8 << std::endl;
   /// @endcode
-  uint8_t operator""_u8(const wchar_t* s, size_t n);
+  xtd::byte operator""_u8(const wchar_t* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace

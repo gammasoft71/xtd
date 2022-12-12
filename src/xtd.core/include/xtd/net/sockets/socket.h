@@ -1044,7 +1044,7 @@ namespace xtd {
         /// @return The number of bytes in the option_out_value parameter.
         /// @remarks The xtd::net::sockets::socket::io_control method provides low-level access to the operating system xtd::net::sockets::socket underlying the current instance of the xtd::net::sockets::socket class.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
-        size_t io_control(int32 io_control_code, std::vector<uint8_t>& option_in_value, std::vector<uint8_t>& option_out_value);
+        size_t io_control(int32 io_control_code, std::vector<xtd::byte>& option_in_value, std::vector<xtd::byte>& option_out_value);
         /// @brief Sets low-level operating modes for the xtd::net::sockets::socket using xtd::net::sockets::io_control_code control codes.
         /// @param io_control_code A xtd::net::sockets::io_control_code value that specifies the control code of the operation to perform.
         /// @param option_in_value A byte array that contains the input data required by the operation.
@@ -1052,7 +1052,7 @@ namespace xtd {
         /// @return The number of bytes in the option_out_value parameter.
         /// @remarks The xtd::net::sockets::socket::io_control method provides low-level access to the operating system xtd::net::sockets::socket underlying the current instance of the xtd::net::sockets::socket class.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
-        size_t io_control(xtd::net::sockets::io_control_code io_control_code, std::vector<uint8_t>& option_in_value, std::vector<uint8_t>& option_out_value);
+        size_t io_control(xtd::net::sockets::io_control_code io_control_code, std::vector<xtd::byte>& option_in_value, std::vector<xtd::byte>& option_out_value);
         
         /// @brief Places a xtd::net::sockets::socket in a listening state.
         /// @param backlog The maximum length of the pending connections queue.

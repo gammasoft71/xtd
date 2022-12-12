@@ -712,20 +712,20 @@ xtd::net::sockets::multicast_option socket::get_socket_multicast_option(xtd::net
 xtd::net::sockets::ip_v6_multicast_option socket::get_socket_ip_v6_multicast_option(xtd::net::sockets::socket_option_name socket_option_name) const {
   if (data_->handle == 0) throw object_closed_exception(csf_);
   if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
-  vector<uint8_t> multicast_address;
+  vector<xtd::byte> multicast_address;
   uint32 interface_index = 0;
   if (native::socket::get_socket_ip_v6_multicast_option(data_->handle, static_cast<int32>(socket_option_name), multicast_address, interface_index) != 0) throw socket_exception(get_last_error_(), csf_);
   return ip_v6_multicast_option(ip_address(multicast_address), interface_index);
 }
 
-size_t socket::io_control(int32 io_control_code, std::vector<uint8_t>& option_in_value, std::vector<uint8_t>& option_out_value) {
+size_t socket::io_control(int32 io_control_code, std::vector<xtd::byte>& option_in_value, std::vector<xtd::byte>& option_out_value) {
   if (data_->handle == 0) throw object_closed_exception(csf_);
   int32 result = native::socket::io_control(data_->handle, io_control_code, option_in_value, option_out_value);
   if (result == -1)  throw socket_exception(get_last_error_(), csf_);
   return static_cast<size_t>(result);
 }
 
-size_t socket::io_control(xtd::net::sockets::io_control_code io_control_code, std::vector<uint8_t>& option_in_value, std::vector<uint8_t>& option_out_value) {
+size_t socket::io_control(xtd::net::sockets::io_control_code io_control_code, std::vector<xtd::byte>& option_in_value, std::vector<xtd::byte>& option_out_value) {
   return io_control(static_cast<int32>(io_control_code), option_in_value, option_out_value);
 }
 

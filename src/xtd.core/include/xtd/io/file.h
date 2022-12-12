@@ -215,7 +215,7 @@ namespace xtd {
       /// @exception xtd::io::file_not_found_exception if path does not exists.
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
-      static std::vector<uint8_t> read_all_bytes(const xtd::ustring& path);
+      static std::vector<xtd::byte> read_all_bytes(const xtd::ustring& path);
       
       /// @brief Opens a binary file, reads the contents of the file into a byte array, and then closes the file.
       /// @param path The file to open for reading.
@@ -224,7 +224,7 @@ namespace xtd {
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
       template<typename char_t>
-      static std::vector<uint8_t> read_all_bytes(const char_t* path) {return read_all_bytes(xtd::ustring(path));}
+      static std::vector<xtd::byte> read_all_bytes(const char_t* path) {return read_all_bytes(xtd::ustring(path));}
       
       /// @brief Opens a text file, reads all lines of the file, and then closes the file.
       /// @param path The file to open for reading.

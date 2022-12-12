@@ -121,14 +121,14 @@ namespace xtd {
     
     /// @brief Fills the elements of a specified array of bytes with random numbers.
     /// @param buffer An array of bytes to contain random numbers.
-    /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<uint8_t>::max().
-    virtual void next_bytes(std::vector<uint8_t>& buffer) const;
+    /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<xtd::byte>::max().
+    virtual void next_bytes(std::vector<xtd::byte>& buffer) const;
     
     /// @brief Fills the elements of a specified array of bytes with random numbers.
     /// @param buffer An array of bytes to contain random numbers.
     /// @exception argument_null_exception buffer is null.
-    /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<uint8_t>::max().
-    virtual void next_bytes(uint8_t* buffer, size_t buffer_size) const;
+    /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<xtd::byte>::max().
+    virtual void next_bytes(xtd::byte* buffer, size_t buffer_size) const;
     
     /// @brief Fills the elements of a specified array of bytes with random numbers.
     /// @param buffer An array of bytes to contain random numbers.
