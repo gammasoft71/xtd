@@ -35,32 +35,32 @@ namespace xtd {
       /// @brief Gets the background color of the console.
       /// @return the background console color.
       /// @warning Internal use only
-      static int32_t background_color();
+      static int_least32_t background_color();
       /// @brief Sets the background color of the console.
       /// @param color the background console color.
       /// @warning Internal use only
-      static void background_color(int32_t color);
+      static void background_color(int_least32_t color);
       /// @brief Plays the sound of a beep of a specified frequency and duration through the console speaker.
       /// @param frequency The frequency of the beep, ranging from 37 to 32767 hertz
       /// @param duration The duration of the beep measured in milliseconds
       /// @warning Internal use only
-      static void beep(uint32_t frequency, uint32_t duration);
+      static void beep(uint_least32_t frequency, uint_least32_t duration);
       /// @brief Gets the height of the buffer area.
       /// @return The current height, in rows, of the buffer area.
       /// @warning Internal use only
-      static int32_t buffer_height();
+      static int_least32_t buffer_height();
       /// @brief Sets or sets the height of the buffer area.
       /// @param height The current height, in rows, of the buffer area.
       /// @warning Internal use only
-      static void buffer_height(int32_t height);
+      static void buffer_height(int_least32_t height);
       /// @brief Gets the width of the buffer area.
       /// @return The current width, in columns, of the buffer area.
       /// @warning Internal use only
-      static int32_t buffer_width();
+      static int_least32_t buffer_width();
       /// @brief Sets the width of the buffer area.
       /// @param width The current width, in columns, of the buffer area.
       /// @warning Internal use only
-      static void buffer_width(int32_t width);
+      static void buffer_width(int_least32_t width);
       /// @brief Gets a value indicating whether the CAPS LOCK keyboard toggle is turned on or turned off.
       /// @return true if CAPS LOCK is turned on; false if CAPS LOCK is turned off.
       /// @warning Internal use only
@@ -71,19 +71,19 @@ namespace xtd {
       /// @brief Gets the column position of the cursor within the buffer area.
       /// @return The current position, in columns, of the cursor.
       /// @warning Internal use only
-      static int32_t cursor_left();
+      static int_least32_t cursor_left();
       /// @brief Gets or sets the height of the cursor within a character cell.
       /// @return The size of the cursor expressed as a percentage of the height of a character cell. The property value ranges from 1 to 100.
       /// @warning Internal use only
-      static int32_t cursor_size();
+      static int_least32_t cursor_size();
       /// @brief Sets the height of the cursor within a character cell.
       /// @param size The size of the cursor expressed as a percentage of the height of a character cell. The property value ranges from 1 to 100.
       /// @warning Internal use only
-      static void cursor_size(int32_t size);
+      static void cursor_size(int_least32_t size);
       /// @brief Gets the row position of the cursor within the buffer area.
       /// @return The current position, in rows, of the cursor.
       /// @warning Internal use only
-      static int32_t cursor_top();
+      static int_least32_t cursor_top();
       /// @brief Gets a value indicating whether the cursor is visible.
       /// @return  true if the cursor is visible; otherwise, false.
       /// @warning Internal use only
@@ -95,19 +95,19 @@ namespace xtd {
       /// @brief Gets the foreground color of the console.
       /// @return the foreground console color.
       /// @warning Internal use only
-      static int32_t foreground_color();
+      static int_least32_t foreground_color();
       /// @brief Sets the foreground color of the console.
       /// @param color the foreground console color.
       /// @warning Internal use only
-      static void foreground_color(int32_t color);
+      static void foreground_color(int_least32_t color);
       /// @brief Gets the code page the console uses to read input.
       /// @return The code page used to read console input.
       /// @warning Internal use only
-      static int32_t input_code_page();
+      static int_least32_t input_code_page();
       /// @brief Sets the code page the console uses to read input.
       /// @param code_page The code page used to read console input.
       /// @warning Internal use only
-      static void input_code_page(int32_t codePage);
+      static void input_code_page(int_least32_t codePage);
       /// @brief Gets a value indicating whether a key press is available in the input stream.
       /// @param true if a key press is available; otherwise, false
       /// @warning Internal use only
@@ -115,11 +115,11 @@ namespace xtd {
       /// @brief Gets the largest possible number of console window rows, based on the current font and screen resolution.
       /// @param The height of the largest possible console window measured in rows.
       /// @warning Internal use only
-      static int32_t largest_window_height();
+      static int_least32_t largest_window_height();
       /// @brief Gets the largest possible number of console window columns, based on the current font and screen resolution.
       /// @param The width of the largest possible console window measured in columns.
       /// @warning Internal use only
-      static int32_t largest_window_width();
+      static int_least32_t largest_window_width();
       /// @brief Gets a value indicating whether the NUM LOCK keyboard toggle is turned on or turned off.
       /// @param true if NUM LOCK is turned on; false if NUM LOCK is turned off.
       /// @warning Internal use only
@@ -127,17 +127,17 @@ namespace xtd {
       /// @brief Gets the code page the console uses to write output.
       /// @return The code page used to write console output.
       /// @warning Internal use only
-      static int32_t output_code_page();
+      static int_least32_t output_code_page();
       /// @brief Sets the code page the console uses to write output.
       /// @param code_page The code page used to write console output.
       /// @warning Internal use only
-      static void output_code_page(int32_t codePage);
+      static void output_code_page(int_least32_t codePage);
       /// @brief Register the user cancel callback.
       /// @param user_cancel_callback The user cancel callback method to register.
       /// @remarks This callback is call when when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break key are pressed simultaneously (Ctrl+C or Ctrl+Break).
       /// @remarks By default, the return of callback is false, which causes program execution to terminate when the event handler exits. Changing its return to true specifies that the application should continue to execute.
       /// @warning Internal use only
-      static void register_user_cancel_callback(std::function<bool(int32_t)> user_cancel_callback);
+      static void register_user_cancel_callback(std::function<bool(int_least32_t)> user_cancel_callback);
       /// @brief Obtains the next character or function key pressed by the user.
       /// @param key_char A bitwise combination of the enumeration values. There is no default value.
       /// @param key_code A value that identifies the console key that was pressed.
@@ -146,7 +146,7 @@ namespace xtd {
       /// @param ctrl true if control key modifier is pressed; otherwise false.
       /// @remarks The five parameters will contains informations on key pressed.
       /// @warning Internal use only
-      static void read_key(int32_t& key_char, int32_t& key_code, bool& alt, bool& shift, bool& ctrl);
+      static void read_key(int_least32_t& key_char, int_least32_t& key_code, bool& alt, bool& shift, bool& ctrl);
       /// @brief Sets the foreground and background console colors to their defaults.
       /// @remarks The foreground and background colors are restored to the colors that existed when the current process began. For more information, see the foreground_color and background_color properties.
       /// @warning Internal use only
@@ -155,7 +155,7 @@ namespace xtd {
       /// @param left The column position of the cursor. Columns are numbered from left to right starting at 0.
       /// @param top The row position of the cursor. Rows are numbered from top to bottom starting at 0.
       /// @warning Internal use only
-      static void set_cursor_position(int32_t left, int32_t top);
+      static void set_cursor_position(int_least32_t left, int_least32_t top);
       /// @brief Gets the title to display in the console title bar.
       /// @return The string to be displayed in the title bar of the console. The maximum length of the title string is 24500 characters.
       /// @warning Internal use only
@@ -178,35 +178,35 @@ namespace xtd {
       /// @brief Gets the height of the console window area.
       /// @return The height of the console window measured in rows.
       /// @warning Internal use only
-      static int32_t window_height();
+      static int_least32_t window_height();
       /// @brief Sets the height of the console window area.
       /// @param height The height of the console window measured in rows.
       /// @warning Internal use only
-      static void window_height(int32_t height);
+      static void window_height(int_least32_t height);
       /// @brief Gets the left of the console window area.
       /// @return The left of the console window measured in columns.
       /// @warning Internal use only
-      static int32_t window_left();
+      static int_least32_t window_left();
       /// @brief Sets the left of the console window area.
       /// @param left The left of the console window measured in columns.
       /// @warning Internal use only
-      static void window_left(int32_t left);
+      static void window_left(int_least32_t left);
       /// @brief Gets the top of the console window area.
       /// @return The top of the console window measured in rows.
       /// @warning Internal use only
-      static int32_t window_top();
+      static int_least32_t window_top();
       /// @brief Sets the top of the console window area.
       /// @param top The top of the console window measured in rows.
       /// @warning Internal use only
-      static void window_top(int32_t top);
+      static void window_top(int_least32_t top);
       /// @brief Gets the width of the console window area.
       /// @return The width of the console window measured in columns.
       /// @warning Internal use only
-      static int32_t window_width();
+      static int_least32_t window_width();
       /// @brief Sets the width of the console window area.
       /// @param width The width of the console window measured in columns.
       /// @warning Internal use only
-      static void window_width(int32_t width);
+      static void window_width(int_least32_t width);
       /// @}
     };
   }
