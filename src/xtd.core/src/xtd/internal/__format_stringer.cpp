@@ -10,7 +10,7 @@ std::string __object_to_string(const object& value) noexcept {
   return value.to_string();
 }
 
-std::ostream& operator <<(std::ostream& os, const char8_t* str) {
+std::ostream& operator <<(std::ostream& os, const char8* str) {
   return os << ustring(str); 
 }
 
@@ -30,7 +30,7 @@ string __format_stringer_to_std_string(const char& c) {
   return string(1, c);
 }
 
-string __format_stringer_to_std_string(const char8_t& c) {
+string __format_stringer_to_std_string(const char8& c) {
   return ustring(u8string(1, c));
 }
 
@@ -50,7 +50,7 @@ string __format_stringer_to_std_string(const char* str) {
   return str;
 }
 
-string __format_stringer_to_std_string(const char8_t* str) {
+string __format_stringer_to_std_string(const char8* str) {
   return ustring(str);
 }
 

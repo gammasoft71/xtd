@@ -64,7 +64,7 @@ namespace xtd {
   template<typename type_t, typename period_t = std::ratio<1>>
   inline std::string to_string(const std::chrono::duration<type_t, period_t>& value, const std::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const char8_t& value, const std::string& fmt, const std::locale& loc);
+  inline std::string to_string(const xtd::char8& value, const std::string& fmt, const std::locale& loc);
   template<>
   inline std::string to_string(const char16_t& value, const std::string& fmt, const std::locale& loc);
   template<>
@@ -112,7 +112,7 @@ namespace xtd {
   template<typename type_t, typename period_t = std::ratio<1>>
   inline std::wstring to_string(const std::chrono::duration<type_t, period_t>& value, const std::wstring& fmt, const std::locale& loc);
   template<>
-  inline std::wstring to_string(const char8_t& value, const std::wstring& fmt, const std::locale& loc);
+  inline std::wstring to_string(const xtd::char8& value, const std::wstring& fmt, const std::locale& loc);
   template<>
   inline std::wstring to_string(const char16_t& value, const std::wstring& fmt, const std::locale& loc);
   template<>
@@ -196,7 +196,7 @@ inline std::basic_string<char_t> __to_string(char16_t codepoint) {
 }
 
 template<typename char_t>
-inline std::basic_string<char_t> __to_string(char8_t codepoint) {
+inline std::basic_string<char_t> __to_string(xtd::char8 codepoint) {
   return __codepoint_to_string<char_t>(codepoint);
 }
 
@@ -234,7 +234,7 @@ std::basic_ostream<char_t>& operator <<(std::basic_ostream<char_t>& os, const st
   return os << xtd::to_string(value, std::basic_string<char_t> {'G'}, std::locale());
 }
 
-std::ostream& operator <<(std::ostream& os, const char8_t* str);
+std::ostream& operator <<(std::ostream& os, const xtd::char8* str);
 std::ostream& operator <<(std::ostream& os, const char16_t* str);
 std::ostream& operator <<(std::ostream& os, const char32_t* str);
 std::ostream& operator <<(std::ostream& os, const wchar_t* str);
@@ -288,12 +288,12 @@ std::string __format_stringer_to_std_string(const value_t& value) {
 }
 
 std::string __format_stringer_to_std_string(const char& c);
-std::string __format_stringer_to_std_string(const char8_t& c);
+std::string __format_stringer_to_std_string(const xtd::char8& c);
 std::string __format_stringer_to_std_string(const char16_t& c);
 std::string __format_stringer_to_std_string(const char32_t& c);
 std::string __format_stringer_to_std_string(const wchar_t& c);
 std::string __format_stringer_to_std_string(const char* str);
-std::string __format_stringer_to_std_string(const char8_t* str);
+std::string __format_stringer_to_std_string(const xtd::char8* str);
 std::string __format_stringer_to_std_string(const char16_t* str);
 std::string __format_stringer_to_std_string(const char32_t* str);
 std::string __format_stringer_to_std_string(const wchar_t* str);
@@ -333,7 +333,7 @@ inline std::basic_string<char_t> __format_stringer(const char* const& value) {
 }
 
 template<typename char_t, typename value_t>
-inline std::basic_string<char_t> __format_stringer(const char8_t*& value) {
+inline std::basic_string<char_t> __format_stringer(const xtd::char8*& value) {
   auto s = std::u8string(value);
   std::basic_stringstream<char_t> ss;
   ss << std::basic_string<char_t>(s.begin(), s.end());
@@ -341,7 +341,7 @@ inline std::basic_string<char_t> __format_stringer(const char8_t*& value) {
 }
 
 template<typename char_t, typename value_t>
-inline std::basic_string<char_t> __format_stringer(const char8_t* const& value) {
+inline std::basic_string<char_t> __format_stringer(const xtd::char8* const& value) {
   auto s = std::u8string(value);
   std::basic_stringstream<char_t> ss;
   ss << std::basic_string<char_t>(s.begin(), s.end());
@@ -509,7 +509,7 @@ inline std::string __format_stringer<char, wchar_t&>(wchar_t& value) {
 }
 
 template<>
-inline std::string __format_stringer<char, char8_t&>(char8_t& value) {
+inline std::string __format_stringer<char, xtd::char8&>(xtd::char8& value) {
   return xtd::to_string(value, "G", std::locale());
 }
 

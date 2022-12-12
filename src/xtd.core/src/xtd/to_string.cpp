@@ -8,7 +8,7 @@ namespace xtd {
     return __string_formatter(fmt, value, loc);
   }
   
-  std::string to_string(const char8_t* value, const std::string& fmt, const std::locale& loc) {
+  std::string to_string(const char8* value, const std::string& fmt, const std::locale& loc) {
     return __string_formatter(fmt, value, loc);
   }
   
