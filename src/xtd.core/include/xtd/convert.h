@@ -77,15 +77,15 @@ namespace xtd {
     /// any result = convert::to_any(value);
     /// @endcode
     static std::any to_any(char16 value) noexcept;
-    /// @brief Convert char32_t to std::any.
+    /// @brief Convert char32 to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
+    /// char32 value = U'a';
     /// any result = convert::to_any(value);
     /// @endcode
-    static std::any to_any(char32_t value) noexcept;
+    static std::any to_any(char32 value) noexcept;
     /// @brief Convert wchar_t to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
@@ -227,8 +227,8 @@ namespace xtd {
     static std::any to_any(char8* value);
     static std::any to_any(const char16* value) noexcept;
     static std::any to_any(char16* value) noexcept;
-    static std::any to_any(const char32_t* value) noexcept;
-    static std::any to_any(char32_t* value) noexcept;
+    static std::any to_any(const char32* value) noexcept;
+    static std::any to_any(char32* value) noexcept;
     static std::any to_any(const wchar_t* value) noexcept;
     static std::any to_any(wchar_t* value) noexcept;
     /// @endcond
@@ -307,16 +307,16 @@ namespace xtd {
     /// bool result = convert::to_boolean(value);
     /// @endcode
     static bool to_boolean(char16 value);
-    /// @brief Convert char32_t to bool.
+    /// @brief Convert char32 to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
     /// @exception xtd::invalid_cast_exception throws always exception.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
+    /// char32 value = U'a';
     /// bool result = convert::to_boolean(value);
     /// @endcode
-    static bool to_boolean(char32_t value);
+    static bool to_boolean(char32 value);
     /// @brief Convert wchar_t to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
@@ -460,8 +460,8 @@ namespace xtd {
     static bool to_boolean(char8* value);
     static bool to_boolean(const char16* value);
     static bool to_boolean(char16* value);
-    static bool to_boolean(const char32_t* value);
-    static bool to_boolean(char32_t* value);
+    static bool to_boolean(const char32* value);
+    static bool to_boolean(char32* value);
     static bool to_boolean(const wchar_t* value);
     static bool to_boolean(wchar_t* value);
     /// @endcond
@@ -533,17 +533,17 @@ namespace xtd {
     /// xtd::byte result = convert::to_byte(value);
     /// @endcode
     static xtd::byte to_byte(char16 value);
-    /// @brief Convert char32_t to byte.
+    /// @brief Convert char32 to byte.
     /// @param value object to convert.
     /// @return A new xtd::byte object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
+    /// char32 value = U'a';
     /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static xtd::byte to_byte(char32_t value);
-    /// @brief Convert char32_t to byte.
+    static xtd::byte to_byte(char32 value);
+    /// @brief Convert char32 to byte.
     /// @param value object to convert.
     /// @return A new xtd::byte object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
@@ -709,8 +709,8 @@ namespace xtd {
     static xtd::byte to_byte(char8* value);
     static xtd::byte to_byte(const char16* value);
     static xtd::byte to_byte(char16* value);
-    static xtd::byte to_byte(const char32_t* value);
-    static xtd::byte to_byte(char32_t* value);
+    static xtd::byte to_byte(const char32* value);
+    static xtd::byte to_byte(char32* value);
     static xtd::byte to_byte(const wchar_t* value);
     static xtd::byte to_byte(wchar_t* value);
     /// @endcond
@@ -782,17 +782,17 @@ namespace xtd {
     /// char result = convert::to_char(value);
     /// @endcode
     static char to_char(char16 value);
-    /// @brief Convert char32_t to char.
+    /// @brief Convert char32 to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
+    /// char32 value = U'a';
     /// char result = convert::to_char(value);
     /// @endcode
-    static char to_char(char32_t value);
-    /// @brief Convert char32_t to char.
+    static char to_char(char32 value);
+    /// @brief Convert char32 to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
@@ -946,8 +946,8 @@ namespace xtd {
     static char to_char(char8* value);
     static char to_char(const char16* value);
     static char to_char(char16* value);
-    static char to_char(const char32_t* value);
-    static char to_char(char32_t* value);
+    static char to_char(const char32* value);
+    static char to_char(char32* value);
     static char to_char(const wchar_t* value);
     static char to_char(wchar_t* value);
     /// @endcond
@@ -1019,17 +1019,17 @@ namespace xtd {
     /// char8 result = convert::to_char8(value);
     /// @endcode
     static char8 to_char8(char16 value);
-    /// @brief Convert char32_t to char8.
+    /// @brief Convert char32 to char8.
     /// @param value object to convert.
     /// @return A new char8 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
+    /// char32 value = U'a';
     /// char8 result = convert::to_char8(value);
     /// @endcode
-    static char8 to_char8(char32_t value);
-    /// @brief Convert char32_t to char8.
+    static char8 to_char8(char32 value);
+    /// @brief Convert char32 to char8.
     /// @param value object to convert.
     /// @return A new char8 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
@@ -1183,8 +1183,8 @@ namespace xtd {
     static char8 to_char8(char8* value);
     static char8 to_char8(const char16* value);
     static char8 to_char8(char16* value);
-    static char8 to_char8(const char32_t* value);
-    static char8 to_char8(char32_t* value);
+    static char8 to_char8(const char32* value);
+    static char8 to_char8(char32* value);
     static char8 to_char8(const wchar_t* value);
     static char8 to_char8(wchar_t* value);
     /// @endcond
@@ -1255,17 +1255,17 @@ namespace xtd {
     /// char16 result = convert::to_char16(value);
     /// @endcode
     static char16 to_char16(char16 value) noexcept;
-    /// @brief Convert char32_t to char16.
+    /// @brief Convert char32 to char16.
     /// @param value object to convert.
     /// @return A new char16 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
+    /// char32 value = U'a';
     /// char16 result = convert::to_char16(value);
     /// @endcode
-    static char16 to_char16(char32_t value);
-    /// @brief Convert char32_t to char16.
+    static char16 to_char16(char32 value);
+    /// @brief Convert char32 to char16.
     /// @param value object to convert.
     /// @return A new char16 object converted from value.
     /// @par Examples
@@ -1417,8 +1417,8 @@ namespace xtd {
     static char16 to_char16(char8* value);
     static char16 to_char16(const char16* value);
     static char16 to_char16(char16* value);
-    static char16 to_char16(const char32_t* value);
-    static char16 to_char16(char32_t* value);
+    static char16 to_char16(const char32* value);
+    static char16 to_char16(char32* value);
     static char16 to_char16(const wchar_t* value);
     static char16 to_char16(wchar_t* value);
     /// @endcond
@@ -1437,234 +1437,234 @@ namespace xtd {
     
     /// @brief Convert std::any to char32.
     /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @par Examples
     /// @code
     /// std::any value = 42;
-    /// char32_t result = convert::to_char32(value);
+    /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(std::any value);
+    static char32 to_char32(std::any value);
     /// @brief Convert bool to char32.
     /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @par Examples
     /// @code
     /// bool value = true;
-    /// char32_t result = convert::to_char32(value);
+    /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(bool value);
+    static char32 to_char32(bool value);
     /// @brief Convert xtd::byte to char32.
     /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @par Examples
     /// @code
     /// xtd::byte value = 42;
-    /// char32_t result = convert::to_char32(value);
+    /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(xtd::byte value) noexcept;
+    static char32 to_char32(xtd::byte value) noexcept;
     /// @brief Convert char to char32.
     /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @par Examples
     /// @code
     /// char value = 'a';
-    /// char32_t result = convert::to_char32(value);
+    /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(char value) noexcept;
+    static char32 to_char32(char value) noexcept;
     /// @brief Convert char8 to char32.
     /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @par Examples
     /// @code
     /// char8 value = u8'a';
-    /// char32_t result = convert::to_char32(value);
+    /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(char8 value) noexcept;
+    static char32 to_char32(char8 value) noexcept;
     /// @brief Convert char16 to char32.
     /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @par Examples
     /// @code
     /// char16 value = u'a';
-    /// char32_t result = convert::to_char32(value);
+    /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(char16 value) noexcept;
-    /// @brief Convert char32_t to char32.
+    static char32 to_char32(char16 value) noexcept;
+    /// @brief Convert char32 to char32.
     /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
-    /// char32_t result = convert::to_char32(value);
+    /// char32 value = U'a';
+    /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(char32_t value) noexcept;
-    /// @brief Convert char32_t to char32.
+    static char32 to_char32(char32 value) noexcept;
+    /// @brief Convert char32 to char32.
     /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @par Examples
     /// @code
     /// wchar_t value = L'a';
-    /// char32_t result = convert::to_char32(value);
+    /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(wchar_t value) noexcept;
+    static char32 to_char32(wchar_t value) noexcept;
     /// @brief Convert decimal_t to char32.
     /// @param value object to convert.
     /// @remarks The result is rounded.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @par Examples
     /// @code
     /// decimal_t value = 42.50l;
-    /// char32_t result = convert::to_char32(value);
+    /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(decimal_t value);
+    static char32 to_char32(decimal_t value);
     /// @brief Convert double to char32.
     /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @remarks The result is rounded.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// double value = 42.50;
-    /// char32_t result = convert::to_char32(value);
+    /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(double value);
+    static char32 to_char32(double value);
     /// @brief Convert float to char32.
     /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @remarks The result is rounded.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// float value = 42.50f;
-    /// char32_t result = convert::to_char32(value);
+    /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(float value);
+    static char32 to_char32(float value);
     /// @brief Convert int16 to char32.
     /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int16 value = 42;
-    /// char32_t result = convert::to_char32(value);
+    /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(int16 value);
+    static char32 to_char32(int16 value);
     /// @brief Convert int32 to char32.
     /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int32 value = 42;
-    /// char32_t result = convert::to_char32(value);
+    /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(int32 value);
+    static char32 to_char32(int32 value);
     /// @brief Convert int64 to char32.
     /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int64 value = 42l;
-    /// char32_t result = convert::to_char32(value);
+    /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(int64 value);
+    static char32 to_char32(int64 value);
     /// @brief Convert llong_t to char32.
     /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// llong_t value = 42ll;
-    /// char32_t result = convert::to_char32(value);
+    /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(llong_t value);
+    static char32 to_char32(llong_t value);
     /// @brief Convert sbyte to char32.
     /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is less than 0.
     /// @par Examples
     /// @code
     /// sbyte value = 42;
-    /// char32_t result = convert::to_char32(value);
+    /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(sbyte value);
+    static char32 to_char32(sbyte value);
     /// @brief Convert uint16_t to char32.
     /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @par Examples
     /// @code
     /// uint16_t value = 42u;
-    /// char32_t result = convert::to_char32(value);
+    /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(uint16_t value) noexcept;
+    static char32 to_char32(uint16_t value) noexcept;
     /// @brief Convert uint32 to char32.
     /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @par Examples
     /// @code
     /// uint32 value = 42u;
-    /// char32_t result = convert::to_char32(value);
+    /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(uint32 value) noexcept;
+    static char32 to_char32(uint32 value) noexcept;
     /// @brief Convert uint64 to char32.
     /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42ul;
-    /// char32_t result = convert::to_char32(value);
+    /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(uint64 value);
+    static char32 to_char32(uint64 value);
     /// @brief Convert llong_t to char32.
     /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// ullong_t value = 42ull;
-    /// char32_t result = convert::to_char32(value);
+    /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(ullong_t value);
+    static char32 to_char32(ullong_t value);
     /// @brief Convert string to char32.
     /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
     /// ustring value = "42";
-    /// char32_t result = convert::to_char32(value);
+    /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(const xtd::ustring& value);
+    static char32 to_char32(const xtd::ustring& value);
     /// @cond
-    static char32_t to_char32(const std::string& value);
-    static char32_t to_char32(const std::u8string& value);
-    static char32_t to_char32(const std::u16string& value);
-    static char32_t to_char32(const std::u32string& value);
-    static char32_t to_char32(const std::wstring& value);
-    static char32_t to_char32(const char* value);
-    static char32_t to_char32(char* value);
-    static char32_t to_char32(const char8* value);
-    static char32_t to_char32(char8* value);
-    static char32_t to_char32(const char16* value);
-    static char32_t to_char32(char16* value);
-    static char32_t to_char32(const char32_t* value);
-    static char32_t to_char32(char32_t* value);
-    static char32_t to_char32(const wchar_t* value);
-    static char32_t to_char32(wchar_t* value);
+    static char32 to_char32(const std::string& value);
+    static char32 to_char32(const std::u8string& value);
+    static char32 to_char32(const std::u16string& value);
+    static char32 to_char32(const std::u32string& value);
+    static char32 to_char32(const std::wstring& value);
+    static char32 to_char32(const char* value);
+    static char32 to_char32(char* value);
+    static char32 to_char32(const char8* value);
+    static char32 to_char32(char8* value);
+    static char32 to_char32(const char16* value);
+    static char32 to_char32(char16* value);
+    static char32 to_char32(const char32* value);
+    static char32 to_char32(char32* value);
+    static char32 to_char32(const wchar_t* value);
+    static char32 to_char32(wchar_t* value);
     /// @endcond
     /// @brief Convert type_t to char32.
     /// @param value object to convert.
-    /// @return A new char32_t object converted from value.
+    /// @return A new char32 object converted from value.
     /// @par Examples
     /// @code
     /// address_family value = address_family::inter_network;
-    /// char32_t result = convert::to_char32(value);
+    /// char32 result = convert::to_char32(value);
     /// @endcode
     template<typename type_t>
-    static char32_t to_char32(type_t value) noexcept {
-      return static_cast<char32_t>(value);
+    static char32 to_char32(type_t value) noexcept {
+      return static_cast<char32>(value);
     }
     
     /// @brief Convert std::any to wchar.
@@ -1721,17 +1721,17 @@ namespace xtd {
     /// wchar_t result = convert::to_wchar(value);
     /// @endcode
     static wchar_t to_wchar(char16 value) noexcept;
-    /// @brief Convert char32_t to wchar.
+    /// @brief Convert char32 to wchar.
     /// @param value object to convert.
     /// @return A new wchar_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
+    /// char32 value = U'a';
     /// wchar_t result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(char32_t value);
-    /// @brief Convert char32_t to wchar.
+    static wchar_t to_wchar(char32 value);
+    /// @brief Convert char32 to wchar.
     /// @param value object to convert.
     /// @return A new wchar_t object converted from value.
     /// @par Examples
@@ -1883,8 +1883,8 @@ namespace xtd {
     static wchar_t to_wchar(char8* value);
     static wchar_t to_wchar(const char16* value);
     static wchar_t to_wchar(char16* value);
-    static wchar_t to_wchar(const char32_t* value);
-    static wchar_t to_wchar(char32_t* value);
+    static wchar_t to_wchar(const char32* value);
+    static wchar_t to_wchar(char32* value);
     static wchar_t to_wchar(const wchar_t* value);
     static wchar_t to_wchar(wchar_t* value);
     /// @endcond
@@ -1955,16 +1955,16 @@ namespace xtd {
     /// decimal_t result = convert::to_decimal(value);
     /// @endcode
     static decimal_t to_decimal(char16 value) noexcept;
-    /// @brief Convert char32_t to decimal.
+    /// @brief Convert char32 to decimal.
     /// @param value object to convert.
     /// @return A new decimal_t object converted from value.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
+    /// char32 value = U'a';
     /// decimal_t result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(char32_t value) noexcept;
-    /// @brief Convert char32_t to decimal.
+    static decimal_t to_decimal(char32 value) noexcept;
+    /// @brief Convert char32 to decimal.
     /// @param value object to convert.
     /// @return A new decimal_t object converted from value.
     /// @par Examples
@@ -2106,8 +2106,8 @@ namespace xtd {
     static decimal_t to_decimal(char8* value);
     static decimal_t to_decimal(const char16* value);
     static decimal_t to_decimal(char16* value);
-    static decimal_t to_decimal(const char32_t* value);
-    static decimal_t to_decimal(char32_t* value);
+    static decimal_t to_decimal(const char32* value);
+    static decimal_t to_decimal(char32* value);
     static decimal_t to_decimal(const wchar_t* value);
     static decimal_t to_decimal(wchar_t* value);
     /// @endcond
@@ -2178,16 +2178,16 @@ namespace xtd {
     /// double result = convert::to_double(value);
     /// @endcode
     static double to_double(char16 value) noexcept;
-    /// @brief Convert char32_t to double.
+    /// @brief Convert char32 to double.
     /// @param value object to convert.
     /// @return A new double object converted from value.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
+    /// char32 value = U'a';
     /// double result = convert::to_double(value);
     /// @endcode
-    static double to_double(char32_t value) noexcept;
-    /// @brief Convert char32_t to double.
+    static double to_double(char32 value) noexcept;
+    /// @brief Convert char32 to double.
     /// @param value object to convert.
     /// @return A new double object converted from value.
     /// @par Examples
@@ -2329,8 +2329,8 @@ namespace xtd {
     static double to_double(char8* value);
     static double to_double(const char16* value);
     static double to_double(char16* value);
-    static double to_double(const char32_t* value);
-    static double to_double(char32_t* value);
+    static double to_double(const char32* value);
+    static double to_double(char32* value);
     static double to_double(const wchar_t* value);
     static double to_double(wchar_t* value);
     /// @endcond
@@ -2401,16 +2401,16 @@ namespace xtd {
     /// float result = convert::to_single(value);
     /// @endcode
     static float to_single(char16 value) noexcept;
-    /// @brief Convert char32_t to single.
+    /// @brief Convert char32 to single.
     /// @param value object to convert.
     /// @return A new float object converted from value.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
+    /// char32 value = U'a';
     /// float result = convert::to_single(value);
     /// @endcode
-    static float to_single(char32_t value) noexcept;
-    /// @brief Convert char32_t to single.
+    static float to_single(char32 value) noexcept;
+    /// @brief Convert char32 to single.
     /// @param value object to convert.
     /// @return A new float object converted from value.
     /// @par Examples
@@ -2552,8 +2552,8 @@ namespace xtd {
     static float to_single(char8* value);
     static float to_single(const char16* value);
     static float to_single(char16* value);
-    static float to_single(const char32_t* value);
-    static float to_single(char32_t* value);
+    static float to_single(const char32* value);
+    static float to_single(char32* value);
     static float to_single(const wchar_t* value);
     static float to_single(wchar_t* value);
     /// @endcond
@@ -2624,17 +2624,17 @@ namespace xtd {
     /// int16 result = convert::to_int16(value);
     /// @endcode
     static int16 to_int16(char16 value) noexcept;
-    /// @brief Convert char32_t to int16.
+    /// @brief Convert char32 to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
+    /// char32 value = U'a';
     /// int16 result = convert::to_int16(value);
     /// @endcode
-    static int16 to_int16(char32_t value);
-    /// @brief Convert char32_t to int16.
+    static int16 to_int16(char32 value);
+    /// @brief Convert char32 to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
     /// @par Examples
@@ -2797,8 +2797,8 @@ namespace xtd {
     static int16 to_int16(char8* value);
     static int16 to_int16(const char16* value);
     static int16 to_int16(char16* value);
-    static int16 to_int16(const char32_t* value);
-    static int16 to_int16(char32_t* value);
+    static int16 to_int16(const char32* value);
+    static int16 to_int16(char32* value);
     static int16 to_int16(const wchar_t* value);
     static int16 to_int16(wchar_t* value);
     /// @endcond
@@ -2869,16 +2869,16 @@ namespace xtd {
     /// int32 result = convert::to_int32(value);
     /// @endcode
     static int32 to_int32(char16 value) noexcept;
-    /// @brief Convert char32_t to int32.
+    /// @brief Convert char32 to int32.
     /// @param value object to convert.
     /// @return A new int32 object converted from value.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
+    /// char32 value = U'a';
     /// int32 result = convert::to_int32(value);
     /// @endcode
-    static int32 to_int32(char32_t value) noexcept;
-    /// @brief Convert char32_t to int32.
+    static int32 to_int32(char32 value) noexcept;
+    /// @brief Convert char32 to int32.
     /// @param value object to convert.
     /// @return A new int32 object converted from value.
     /// @par Examples
@@ -3038,8 +3038,8 @@ namespace xtd {
     static int32 to_int32(char8* value);
     static int32 to_int32(const char16* value);
     static int32 to_int32(char16* value);
-    static int32 to_int32(const char32_t* value);
-    static int32 to_int32(char32_t* value);
+    static int32 to_int32(const char32* value);
+    static int32 to_int32(char32* value);
     static int32 to_int32(const wchar_t* value);
     static int32 to_int32(wchar_t* value);
     /// @endcond
@@ -3110,16 +3110,16 @@ namespace xtd {
     /// int64 result = convert::to_int64(value);
     /// @endcode
     static int64 to_int64(char16 value) noexcept;
-    /// @brief Convert char32_t to int64.
+    /// @brief Convert char32 to int64.
     /// @param value object to convert.
     /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
+    /// char32 value = U'a';
     /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64 to_int64(char32_t value) noexcept;
-    /// @brief Convert char32_t to int64.
+    static int64 to_int64(char32 value) noexcept;
+    /// @brief Convert char32 to int64.
     /// @param value object to convert.
     /// @return A new int64 object converted from value.
     /// @par Examples
@@ -3274,8 +3274,8 @@ namespace xtd {
     static int64 to_int64(char8* value);
     static int64 to_int64(const char16* value);
     static int64 to_int64(char16* value);
-    static int64 to_int64(const char32_t* value);
-    static int64 to_int64(char32_t* value);
+    static int64 to_int64(const char32* value);
+    static int64 to_int64(char32* value);
     static int64 to_int64(const wchar_t* value);
     static int64 to_int64(wchar_t* value);
     /// @endcond
@@ -3346,16 +3346,16 @@ namespace xtd {
     /// llong_t result = convert::to_llong(value);
     /// @endcode
     static llong_t to_llong(char16 value) noexcept;
-    /// @brief Convert char32_t to llong.
+    /// @brief Convert char32 to llong.
     /// @param value object to convert.
     /// @return A new llong_t object converted from value.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
+    /// char32 value = U'a';
     /// llong_t result = convert::to_llong(value);
     /// @endcode
-    static llong_t to_llong(char32_t value) noexcept;
-    /// @brief Convert char32_t to llong.
+    static llong_t to_llong(char32 value) noexcept;
+    /// @brief Convert char32 to llong.
     /// @param value object to convert.
     /// @return A new llong_t object converted from value.
     /// @par Examples
@@ -3510,8 +3510,8 @@ namespace xtd {
     static llong_t to_llong(char8* value);
     static llong_t to_llong(const char16* value);
     static llong_t to_llong(char16* value);
-    static llong_t to_llong(const char32_t* value);
-    static llong_t to_llong(char32_t* value);
+    static llong_t to_llong(const char32* value);
+    static llong_t to_llong(char32* value);
     static llong_t to_llong(const wchar_t* value);
     static llong_t to_llong(wchar_t* value);
     /// @endcond
@@ -3583,17 +3583,17 @@ namespace xtd {
     /// sbyte result = convert::to_sbyte(value);
     /// @endcode
     static sbyte to_sbyte(char16 value);
-    /// @brief Convert char32_t to sbyte.
+    /// @brief Convert char32 to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
+    /// char32 value = U'a';
     /// sbyte result = convert::to_sbyte(value);
     /// @endcode
-    static sbyte to_sbyte(char32_t value);
-    /// @brief Convert char32_t to sbyte.
+    static sbyte to_sbyte(char32 value);
+    /// @brief Convert char32 to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
@@ -3759,8 +3759,8 @@ namespace xtd {
     static sbyte to_sbyte(char8* value);
     static sbyte to_sbyte(const char16* value);
     static sbyte to_sbyte(char16* value);
-    static sbyte to_sbyte(const char32_t* value);
-    static sbyte to_sbyte(char32_t* value);
+    static sbyte to_sbyte(const char32* value);
+    static sbyte to_sbyte(char32* value);
     static sbyte to_sbyte(const wchar_t* value);
     static sbyte to_sbyte(wchar_t* value);
     /// @endcond
@@ -3831,17 +3831,17 @@ namespace xtd {
     /// uint16_t result = convert::to_uint16(value);
     /// @endcode
     static uint16_t to_uint16(char16 value) noexcept;
-    /// @brief Convert char32_t to uint16.
+    /// @brief Convert char32 to uint16.
     /// @param value object to convert.
     /// @return A new uint16_t object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
+    /// char32 value = U'a';
     /// uint16_t result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(char32_t value);
-    /// @brief Convert char32_t to uint16.
+    static uint16_t to_uint16(char32 value);
+    /// @brief Convert char32 to uint16.
     /// @param value object to convert.
     /// @return A new uint16_t object converted from value.
     /// @par Examples
@@ -4005,8 +4005,8 @@ namespace xtd {
     static uint16_t to_uint16(char8* value);
     static uint16_t to_uint16(const char16* value);
     static uint16_t to_uint16(char16* value);
-    static uint16_t to_uint16(const char32_t* value);
-    static uint16_t to_uint16(char32_t* value);
+    static uint16_t to_uint16(const char32* value);
+    static uint16_t to_uint16(char32* value);
     static uint16_t to_uint16(const wchar_t* value);
     static uint16_t to_uint16(wchar_t* value);
     /// @endcond
@@ -4077,16 +4077,16 @@ namespace xtd {
     /// uint32 result = convert::to_uint32(value);
     /// @endcode
     static uint32 to_uint32(char16 value) noexcept;
-    /// @brief Convert char32_t to uint32.
+    /// @brief Convert char32 to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
+    /// char32 value = U'a';
     /// uint32 result = convert::to_uint32(value);
     /// @endcode
-    static uint32 to_uint32(char32_t value) noexcept;
-    /// @brief Convert char32_t to uint32.
+    static uint32 to_uint32(char32 value) noexcept;
+    /// @brief Convert char32 to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
     /// @par Examples
@@ -4249,8 +4249,8 @@ namespace xtd {
     static uint32 to_uint32(char8* value);
     static uint32 to_uint32(const char16* value);
     static uint32 to_uint32(char16* value);
-    static uint32 to_uint32(const char32_t* value);
-    static uint32 to_uint32(char32_t* value);
+    static uint32 to_uint32(const char32* value);
+    static uint32 to_uint32(char32* value);
     static uint32 to_uint32(const wchar_t* value);
     static uint32 to_uint32(wchar_t* value);
     /// @endcond
@@ -4321,16 +4321,16 @@ namespace xtd {
     /// uint64 result = convert::to_uint64(value);
     /// @endcode
     static uint64 to_uint64(char16 value) noexcept;
-    /// @brief Convert char32_t to uint64.
+    /// @brief Convert char32 to uint64.
     /// @param value object to convert.
     /// @return A new uint64 object converted from value.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
+    /// char32 value = U'a';
     /// uint64 result = convert::to_uint64(value);
     /// @endcode
-    static uint64 to_uint64(char32_t value) noexcept;
-    /// @brief Convert char32_t to uint64.
+    static uint64 to_uint64(char32 value) noexcept;
+    /// @brief Convert char32 to uint64.
     /// @param value object to convert.
     /// @return A new uint64 object converted from value.
     /// @par Examples
@@ -4491,8 +4491,8 @@ namespace xtd {
     static uint64 to_uint64(char8* value);
     static uint64 to_uint64(const char16* value);
     static uint64 to_uint64(char16* value);
-    static uint64 to_uint64(const char32_t* value);
-    static uint64 to_uint64(char32_t* value);
+    static uint64 to_uint64(const char32* value);
+    static uint64 to_uint64(char32* value);
     static uint64 to_uint64(const wchar_t* value);
     static uint64 to_uint64(wchar_t* value);
     /// @cond
@@ -4563,16 +4563,16 @@ namespace xtd {
     /// ullong_t result = convert::to_ullong(value);
     /// @endcode
     static ullong_t to_ullong(char16 value) noexcept;
-    /// @brief Convert char32_t to ullong.
+    /// @brief Convert char32 to ullong.
     /// @param value object to convert.
     /// @return A new ullong_t object converted from value.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
+    /// char32 value = U'a';
     /// ullong_t result = convert::to_ullong(value);
     /// @endcode
-    static ullong_t to_ullong(char32_t value) noexcept;
-    /// @brief Convert char32_t to ullong.
+    static ullong_t to_ullong(char32 value) noexcept;
+    /// @brief Convert char32 to ullong.
     /// @param value object to convert.
     /// @return A new ullong_t object converted from value.
     /// @par Examples
@@ -4733,8 +4733,8 @@ namespace xtd {
     static ullong_t to_ullong(char8* value);
     static ullong_t to_ullong(const char16* value);
     static ullong_t to_ullong(char16* value);
-    static ullong_t to_ullong(const char32_t* value);
-    static ullong_t to_ullong(char32_t* value);
+    static ullong_t to_ullong(const char32* value);
+    static ullong_t to_ullong(char32* value);
     static ullong_t to_ullong(const wchar_t* value);
     static ullong_t to_ullong(wchar_t* value);
     /// @endcond
@@ -4816,16 +4816,16 @@ namespace xtd {
     /// ustring result = convert::to_string(value);
     /// @endcode
     static ustring to_string(char16 value) noexcept;
-    /// @brief Convert char32_t to ustring.
+    /// @brief Convert char32 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
+    /// char32 value = U'a';
     /// ustring result = convert::to_string(value);
     /// @endcode
-    static ustring to_string(char32_t value) noexcept;
-    /// @brief Convert char32_t to ustring.
+    static ustring to_string(char32 value) noexcept;
+    /// @brief Convert char32 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
     /// @par Examples
@@ -5074,8 +5074,8 @@ namespace xtd {
     static ustring to_string(char8* value);
     static ustring to_string(const char16* value);
     static ustring to_string(char16* value);
-    static ustring to_string(const char32_t* value);
-    static ustring to_string(char32_t* value);
+    static ustring to_string(const char32* value);
+    static ustring to_string(char32* value);
     static ustring to_string(const wchar_t* value);
     static ustring to_string(wchar_t* value);
     /// @endcond
@@ -5157,16 +5157,16 @@ namespace xtd {
     /// ustring result = convert::to_ustring(value);
     /// @endcode
     static ustring to_ustring(char16 value) noexcept;
-    /// @brief Convert char32_t to ustring.
+    /// @brief Convert char32 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
     /// @par Examples
     /// @code
-    /// char32_t value = U'a';
+    /// char32 value = U'a';
     /// ustring result = convert::to_ustring(value);
     /// @endcode
-    static ustring to_ustring(char32_t value) noexcept;
-    /// @brief Convert char32_t to ustring.
+    static ustring to_ustring(char32 value) noexcept;
+    /// @brief Convert char32 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
     /// @par Examples
@@ -5415,8 +5415,8 @@ namespace xtd {
     static ustring to_ustring(char8* value);
     static ustring to_ustring(const char16* value);
     static ustring to_ustring(char16* value);
-    static ustring to_ustring(const char32_t* value);
-    static ustring to_ustring(char32_t* value);
+    static ustring to_ustring(const char32* value);
+    static ustring to_ustring(char32* value);
     static ustring to_ustring(const wchar_t* value);
     static ustring to_ustring(wchar_t* value);
     /// @endcond

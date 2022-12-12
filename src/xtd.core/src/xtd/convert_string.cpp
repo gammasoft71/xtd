@@ -83,11 +83,11 @@ string convert_string::to_string(const u32string& str) noexcept {
   return convert_to_string<char>(str);
 }
 
-string convert_string::to_string(const char32_t* str) noexcept {
+string convert_string::to_string(const char32* str) noexcept {
   return to_string(u32string(str));
 }
 
-string convert_string::to_string(char32_t* str) noexcept {
+string convert_string::to_string(char32* str) noexcept {
   return to_string(u32string(str));
 }
 
@@ -147,11 +147,11 @@ ustring convert_string::to_ustring(const u32string& str) noexcept {
   return to_string(str);
 }
 
-ustring convert_string::to_ustring(const char32_t* str) noexcept {
+ustring convert_string::to_ustring(const char32* str) noexcept {
   return to_string(u32string(str));
 }
 
-ustring convert_string::to_ustring(char32_t* str) noexcept {
+ustring convert_string::to_ustring(char32* str) noexcept {
   return to_string(u32string(str));
 }
 
@@ -211,11 +211,11 @@ u8string convert_string::to_u8string(const u32string& str) noexcept {
   return convert_to_string<char8>(str);
 }
 
-u8string convert_string::to_u8string(const char32_t* str) noexcept {
+u8string convert_string::to_u8string(const char32* str) noexcept {
   return to_u8string(u32string(str));
 }
 
-u8string convert_string::to_u8string(char32_t* str) noexcept {
+u8string convert_string::to_u8string(char32* str) noexcept {
   return to_u8string(u32string(str));
 }
 
@@ -293,11 +293,11 @@ u16string convert_string::to_u16string(const u32string& str) noexcept {
   return to_u16string(to_ustring(str));
 }
 
-u16string convert_string::to_u16string(const char32_t* str) noexcept {
+u16string convert_string::to_u16string(const char32* str) noexcept {
   return to_u16string(to_ustring(str));
 }
 
-u16string convert_string::to_u16string(char32_t* str) noexcept {
+u16string convert_string::to_u16string(char32* str) noexcept {
   return to_u16string(to_ustring(str));
 }
 
@@ -329,7 +329,7 @@ u32string convert_string::to_u32string(const char* str) noexcept {
     else codepoint = ch & 0x07;
     ++str;
     if (((*str & 0xc0) != 0x80) && (codepoint <= 0x10ffff))
-      out.append(1, static_cast<char32_t>(codepoint));
+      out.append(1, static_cast<char32>(codepoint));
   }
   return out;
 }
@@ -370,11 +370,11 @@ const u32string& convert_string::to_u32string(const u32string& str) noexcept {
   return str;
 }
 
-u32string convert_string::to_u32string(const char32_t* str) noexcept {
+u32string convert_string::to_u32string(const char32* str) noexcept {
   return str;
 }
 
-u32string convert_string::to_u32string(char32_t* str) noexcept {
+u32string convert_string::to_u32string(char32* str) noexcept {
   return str;
 }
 
@@ -454,11 +454,11 @@ wstring convert_string::to_wstring(const u32string& str) noexcept {
   return to_wstring(to_ustring(str));
 }
 
-wstring convert_string::to_wstring(const char32_t* str) noexcept {
+wstring convert_string::to_wstring(const char32* str) noexcept {
   return to_wstring(to_ustring(str));
 }
 
-wstring convert_string::to_wstring(char32_t* str) noexcept {
+wstring convert_string::to_wstring(char32* str) noexcept {
   return to_wstring(to_ustring(str));
 }
 

@@ -198,7 +198,7 @@ namespace xtd {
       virtual void write(const char* value);
       virtual void write(const char8* value);
       virtual void write(const char16* value);
-      virtual void write(const char32_t* value);
+      virtual void write(const char32* value);
       virtual void write(const wchar_t* value);
       /// @endcond
       
@@ -246,7 +246,7 @@ namespace xtd {
       binary_writer& operator <<(const char* value) {write(value); return *this;}
       binary_writer& operator <<(const char8* value) {write(value); return *this;}
       binary_writer& operator <<(const char16* value) {write(value); return *this;}
-      binary_writer& operator <<(const char32_t* value) {write(value); return *this;}
+      binary_writer& operator <<(const char32* value) {write(value); return *this;}
       binary_writer& operator <<(const wchar_t* value) {write(value); return *this;}
       binary_writer& operator <<(uint16_t value) {write(value); return *this;}
       binary_writer& operator <<(uint32 value) {write(value); return *this;}
