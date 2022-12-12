@@ -1912,27 +1912,27 @@ struct HELPINFO {
 };
 
 template<typename type1_t, typename type2_t>
-uint16_t MAKEWORD(type1_t a, type2_t b) {
-  return static_cast<uint16_t>((static_cast<uint16_t>((static_cast<uint32_t>(a)) & 0xff)) | (static_cast<uint16_t>(static_cast<uint16_t>((static_cast<uint32_t>(b)) & 0xff))) << 8);
+xtd::uint16 MAKEWORD(type1_t a, type2_t b) {
+  return static_cast<xtd::uint16>((static_cast<xtd::uint16>((static_cast<uint32_t>(a)) & 0xff)) | (static_cast<xtd::uint16>(static_cast<xtd::uint16>((static_cast<uint32_t>(b)) & 0xff))) << 8);
 }
 
 template<typename type1_t, typename type2_t>
 uint32_t MAKELONG(type1_t a, type2_t b) {
-  return static_cast<uint32_t>((static_cast<uint16_t>((static_cast<uint32_t>(a)) & 0xffff)) | (static_cast<uint32_t>(static_cast<uint16_t>((static_cast<uint32_t>(b)) & 0xffff))) << 16);
+  return static_cast<uint32_t>((static_cast<xtd::uint16>((static_cast<uint32_t>(a)) & 0xffff)) | (static_cast<uint32_t>(static_cast<xtd::uint16>((static_cast<uint32_t>(b)) & 0xffff))) << 16);
 }
 
 template<typename type_t>
-inline uint16_t LOWORD(type_t value) {
-  return static_cast<uint16_t>(static_cast<uint32_t>(value) & 0xFFFF);
+inline xtd::uint16 LOWORD(type_t value) {
+  return static_cast<xtd::uint16>(static_cast<uint32_t>(value) & 0xFFFF);
 }
 
 template<typename type_t>
-inline uint16_t HIWORD(type_t value) {
-  return static_cast<uint16_t>((static_cast<uint32_t>(value) >> 16) & 0xFFFF);
+inline xtd::uint16 HIWORD(type_t value) {
+  return static_cast<xtd::uint16>((static_cast<uint32_t>(value) >> 16) & 0xFFFF);
 }
 
 template<typename type_t>
-inline uint16_t LOBYTE(type_t value) {
+inline xtd::uint16 LOBYTE(type_t value) {
   return static_cast<xtd::byte>(static_cast<uint32_t>(value) & 0xFF);
 }
 
