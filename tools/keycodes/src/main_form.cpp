@@ -91,7 +91,7 @@ void main_form::on_form_resize(xtd::object& sender, const xtd::event_args& e) {
 
 void main_form::on_message_key_down(const xtd::forms::key_event_args& e) {
   if (!properties::settings::default_settings().show_key_down()) return;
-  suspend_layout();
+  main_panel_.suspend_layout();
   auto key_control = make_shared<keycodes::key_control>();
   key_control->parent(main_panel_);
   key_control->dock(xtd::forms::dock_style::top);
@@ -102,23 +102,23 @@ void main_form::on_message_key_down(const xtd::forms::key_event_args& e) {
   key_control->key_modfiers(ustring::format("{}", e.modifiers()));
   key_controls_.emplace_back(key_control);
   handled_key_press_ = false; // Prevents receive more than one WM_CHAR event.
-  resume_layout();
+  main_panel_.resume_layout();
 }
 
 void main_form::on_message_key_press(const xtd::forms::key_press_event_args& e) {
   if (handled_key_press_ || !properties::settings::default_settings().show_key_press()) return;
-  suspend_layout();
+  main_panel_.suspend_layout();
   auto key_press_control = make_shared<keycodes::key_press_control>();
   key_press_control->parent(main_panel_);
   key_press_control->dock(xtd::forms::dock_style::top);
   key_press_control->key_char(ustring::format("{} (0x{:X2})", e.key_char(), static_cast<int>(e.key_char())));
   key_controls_.emplace_back(key_press_control);
   handled_key_press_ = true; // Prevents receive more than one WM_CHAR event.
-  resume_layout();
+  main_panel_.resume_layout();
 }
 
 void main_form::on_message_key_up(const xtd::forms::key_event_args& e) {
-  suspend_layout();
+  main_panel_.suspend_layout();
   auto key_control = make_shared<keycodes::key_control>();
   key_control->parent(main_panel_);
   key_control->dock(xtd::forms::dock_style::top);
@@ -129,7 +129,7 @@ void main_form::on_message_key_up(const xtd::forms::key_event_args& e) {
   key_control->key_modfiers(ustring::format("{}", e.modifiers()));
   key_control->line_visible(e.modifiers() == keys::none);
   key_controls_.emplace_back(key_control);
-  resume_layout();
+  main_panel_.resume_layout();
 }
 
 void main_form::on_show_key_down_check_box_click(xtd::object& sender, const xtd::event_args& e) {
