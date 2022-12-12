@@ -104,22 +104,22 @@ namespace xtd {
   /// auto result = stringer(boxed_object);
   /// console::write_line("result = {}", result); // Display: result = 3.14;
   /// @endcode
-  using decimal_object = box_floating_point<decimal_t>;
+  using decimal_object = box_floating_point<decimal>;
   
   /// @cond
   inline single_object boxing(const float& value) noexcept {return single_object(value);}
   inline double_object boxing(const double& value) noexcept {return double_object(value);}
-  inline decimal_object boxing(const decimal_t& value) noexcept {return decimal_object(value);}
+  inline decimal_object boxing(const decimal& value) noexcept {return decimal_object(value);}
   inline single_object boxing(float& value) noexcept {return single_object(value);}
   inline double_object boxing(double& value) noexcept {return double_object(value);}
-  inline decimal_object boxing(decimal_t& value) noexcept {return decimal_object(value);}
+  inline decimal_object boxing(decimal& value) noexcept {return decimal_object(value);}
 
   inline float unboxing(const float& value) noexcept {return value;}
   inline double unboxing(const double& value) noexcept {return value;}
-  inline decimal_t unboxing(const decimal_t& value) noexcept {return value;}
+  inline decimal unboxing(const decimal& value) noexcept {return value;}
   inline float unboxing(float& value) noexcept {return value;}
   inline double unboxing(double& value) noexcept {return value;}
-  inline decimal_t unboxing(decimal_t& value) noexcept {return value;}
+  inline decimal unboxing(decimal& value) noexcept {return value;}
 
   template<typename type_t>
   inline std::string to_string(const xtd::box_floating_point<type_t>& value, const std::string& fmt, const std::locale& loc) {

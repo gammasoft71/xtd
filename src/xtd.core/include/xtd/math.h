@@ -58,9 +58,9 @@ namespace xtd {
     
     /// @{
     /// @brief Returns the absolute value of a decimal number
-    /// @param value A number in the range std::numeric_limit<decimal_t>::lowest() <= value <= std::numeric_limit<decimal_t>::max().
-    /// @return A decimal number, x, such that 0 <= x <= std::numeric_limit<decimal_t>::max()std::numeric_limit<decimal_t>::max().
-    static decimal_t abs(decimal_t value);
+    /// @param value A number in the range std::numeric_limit<decimal>::lowest() <= value <= std::numeric_limit<decimal>::max().
+    /// @return A decimal number, x, such that 0 <= x <= std::numeric_limit<decimal>::max()std::numeric_limit<decimal>::max().
+    static decimal abs(decimal value);
     
     /// @brief Returns the absolute value of a double-precision floating-point number
     /// @param value A number in the range std::numeric_limit<double>::lowest() <= value <= std::numeric_limit<double>::max().
@@ -162,7 +162,7 @@ namespace xtd {
     /// @param min The lower bound of the result.
     /// @param max The upper bound of the result.
     /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
-    static decimal_t clamp(decimal_t value, decimal_t min, decimal_t max) noexcept;
+    static decimal clamp(decimal value, decimal min, decimal max) noexcept;
     /// @brief Returns value clamped to the inclusive range of min and max.
     /// @param value The value to be clamped.
     /// @param min The lower bound of the result.
@@ -267,7 +267,7 @@ namespace xtd {
     /// @brief Returns the largest integer less than or equal to the specified decimal number.
     /// @param value A double-precision floating-point number.
     /// @return The largest integer less than or equal to value.
-    static decimal_t floor(decimal_t value);
+    static decimal floor(decimal value);
     
     /// @brief Returns the largest integer less than or equal to the specified decimal number.
     /// @param value A double-precision floating-point number.
@@ -363,7 +363,7 @@ namespace xtd {
     /// @param a The first of two double single to compare.
     /// @param b The second of two double single to compare.
     /// @return Parameter a or b, whichever is larger.
-    static decimal_t max(decimal_t a, decimal_t b) noexcept;
+    static decimal max(decimal a, decimal b) noexcept;
     
     /// @brief Returns the larger of two double single.
     /// @param a The first of two double single to compare.
@@ -441,7 +441,7 @@ namespace xtd {
     /// @param a The first of two double single to compare.
     /// @param b The second of two double single to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static decimal_t min(decimal_t a, decimal_t b) noexcept;
+    static decimal min(decimal a, decimal b) noexcept;
     
     /// @brief Returns the smaller of two double single.
     /// @param a The first of two double single to compare.
@@ -543,13 +543,13 @@ namespace xtd {
     /// @brief Rounds a double-precision floating-point value to the nearest integral value.
     /// @param value A double-precision floating-point number to be rounded.
     /// @return The integer nearest value. If the fractional component of a is halfway between two integers, one of which is even and the other odd, then the even number is returned. Note that this method returns a double instead of an integral type.
-    static decimal_t round(decimal_t value);
+    static decimal round(decimal value);
     
     /// @brief Rounds a decimal value to a specified number of fractional digits.
     /// @param value A double-precision floating-point number to be rounded.
     /// @param decimals The number of decimal places in the return value.
     /// @return The number nearest to d that contains a number of fractional digits equal to decimals.
-    static decimal_t round(decimal_t value, int32 decimals);
+    static decimal round(decimal value, int32 decimals);
     
     /// @brief Rounds a double-precision floating-point value to the nearest integral value.
     /// @param value A double-precision floating-point number to be rounded.
@@ -572,7 +572,7 @@ namespace xtd {
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
     /// @exception xtd::arithmetic_exception value is equal to NaN.
-    static int32 sign(decimal_t value);
+    static int32 sign(decimal value);
     
     /// @brief Returns a value indicating the sign of a double-precision floating-point number.
     /// @param value A signed number.
@@ -694,7 +694,7 @@ namespace xtd {
     /// | NaN              | NaN              |
     /// | NegativeInfinity | NegativeInfinity |
     /// | PositiveInfinity | PositiveInfinity |
-    static decimal_t truncate(decimal_t value);
+    static decimal truncate(decimal value);
     
     /// @brief Calculates the integral part of a specified double-precision floating-point number.
     /// @param value A number to truncate.

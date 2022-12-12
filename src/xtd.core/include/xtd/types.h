@@ -219,14 +219,6 @@ namespace xtd {
   /// @ingroup xtd_core types
   using uintptr = uintmax_t;
   
-  /// @brief Represents a 16-bit unsigned integer.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core types
-  using ushort = ushort_t;
-  
   /// @brief Represents a 32-bit or 64-bit unsigned integer.
   /// @par Namespace
   /// xtd
@@ -234,6 +226,14 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   using ulong = ulong_t;
+
+  /// @brief Represents a 16-bit unsigned integer.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core types
+  using ushort = ushort_t;
   
   /// @brief Represents a wide character.
   /// @par Namespace

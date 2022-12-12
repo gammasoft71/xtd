@@ -25,7 +25,7 @@ std::unordered_map<std::type_index, std::function<std::string(std::any const&)>>
   __to_any_stringer__<ullong_t>([](auto value)->std::string {return ustring::format("{}", value);}),
   __to_any_stringer__<float>([](auto value)->std::string {return ustring::format("{}", value);}),
   __to_any_stringer__<double>([](auto value)->std::string {return ustring::format("{}", value);}),
-  __to_any_stringer__<decimal_t>([](auto value)->std::string {return ustring::format("{}", value);}),
+  __to_any_stringer__<decimal>([](auto value)->std::string {return ustring::format("{}", value);}),
   __to_any_stringer__<ustring>([](auto value)->std::string {return ustring::format("{}", value);}),
   __to_any_stringer__<std::string>([](auto value)->std::string {return ustring::format("{}", value);}),
   __to_any_stringer__<std::u8string>([](auto value)->std::string {return ustring::format("{}", value);}),
