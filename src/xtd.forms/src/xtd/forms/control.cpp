@@ -1951,8 +1951,8 @@ void control::wm_set_focus(message& message) {
 
 void control::wm_set_text(message& message) {
   def_wnd_proc(message);
-  if (data_->text != reinterpret_cast<const wchar_t*>(message.lparam())) {
-    data_->text = reinterpret_cast<const wchar_t*>(message.lparam());
+  if (data_->text != reinterpret_cast<const wchar*>(message.lparam())) {
+    data_->text = reinterpret_cast<const wchar*>(message.lparam());
     on_text_changed(event_args::empty);
   }
 }
