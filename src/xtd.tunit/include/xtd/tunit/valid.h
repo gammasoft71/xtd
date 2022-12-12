@@ -96,7 +96,7 @@ namespace xtd {
         }
       }
       
-      static void are_equal(const char16_t* expected, const char16_t* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+      static void are_equal(const char16* expected, const char16* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::are_equal(expected, actual, message, stack_frame);
         } catch (...) {
@@ -390,7 +390,7 @@ namespace xtd {
         }
       }
       
-      static void are_not_equal(const char16_t* expected, const char16_t* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+      static void are_not_equal(const char16* expected, const char16* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::are_not_equal(expected, actual, message, stack_frame);
         } catch (...) {
@@ -637,7 +637,7 @@ namespace xtd {
         }
       }
       
-      static void contains(char16_t item, const char16_t* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+      static void contains(char16 item, const char16* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::contains(item, values, message, stack_frame);
         } catch (...) {
@@ -802,7 +802,7 @@ namespace xtd {
         }
       }
       
-      static void is_empty(const char16_t* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+      static void is_empty(const char16* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::is_empty(value, message, stack_frame);
         } catch (...) {
@@ -952,7 +952,7 @@ namespace xtd {
         }
       }
       
-      static void is_greater(const char16_t* val1, const char16_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+      static void is_greater(const char16* val1, const char16* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::is_greater(val1, val2, message, stack_frame);
         } catch (...) {
@@ -1052,7 +1052,7 @@ namespace xtd {
         }
       }
       
-      static void is_greater_or_equal(const char16_t* val1, const char16_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+      static void is_greater_or_equal(const char16* val1, const char16* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::is_greater_or_equal(val1, val2, message, stack_frame);
         } catch (...) {
@@ -1202,7 +1202,7 @@ namespace xtd {
         }
       }
       
-      static void is_less(const char16_t* val1, const char16_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+      static void is_less(const char16* val1, const char16* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::is_less(val1, val2, message, stack_frame);
         } catch (...) {
@@ -1302,7 +1302,7 @@ namespace xtd {
         }
       }
       
-      static void is_less_or_equal(const char16_t* val1, const char16_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+      static void is_less_or_equal(const char16* val1, const char16* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::is_less_or_equal(val1, val2, message, stack_frame);
         } catch (...) {
@@ -1637,7 +1637,7 @@ namespace xtd {
         }
       }
       
-      static void is_not_empty(const char16_t* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+      static void is_not_empty(const char16* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::is_not_empty(value, message, stack_frame);
         } catch (...) {
