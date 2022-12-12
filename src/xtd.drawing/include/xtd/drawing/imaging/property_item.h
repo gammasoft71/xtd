@@ -498,7 +498,7 @@ namespace xtd {
         /// | 6       | Specifies that Value is an array of bytes that can hold values of any data type.                                                                                                                                                                            |
         /// | 7       | Specifies that Value is an array of signed long (32-bit) integers.                                                                                                                                                                                          |
         /// | 10      | Specifies that Value is an array of pairs of signed long integers. Each pair represents a fraction; the first integer is the numerator and the second integer is the denominator.                                                                           |
-        int16_t type() const noexcept {return type_;}
+        int16 type() const noexcept {return type_;}
         /// @brief Sets an integer that defines the type of data contained in the value property.
         /// @param type An integer that defines the type of data contained in value.
         /// @remarks The following table shows integers and the types they represent.
@@ -512,7 +512,7 @@ namespace xtd {
         /// | 6       | Specifies that Value is an array of bytes that can hold values of any data type.                                                                                                                                                                            |
         /// | 7       | Specifies that Value is an array of signed long (32-bit) integers.                                                                                                                                                                                          |
         /// | 10      | Specifies that Value is an array of pairs of signed long integers. Each pair represents a fraction; the first integer is the numerator and the second integer is the denominator.                                                                           |
-        void type(int16_t type) noexcept {type_ = type;}
+        void type(int16 type) noexcept {type_ = type;}
         
         /// @brief Gets the value of the property item.
         /// @return A byte array that represents the value of the property item.
@@ -531,7 +531,7 @@ namespace xtd {
       private:
         int32_t id_ = 0;
         int32_t len_ = 0;
-        int16_t type_ = 1;
+        int16 type_ = 1;
         std::vector<xtd::byte> value_;
       };
     }

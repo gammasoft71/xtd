@@ -20,7 +20,7 @@ encoder_parameter::encoder_parameter(const imaging::encoder& encoder, xtd::byte 
   add_bytes(value_, value);
 }
 
-encoder_parameter::encoder_parameter(const imaging::encoder& encoder, int16_t value) : encoder_(encoder), number_of_values_(1), type_(xtd::drawing::imaging::encoder_parameter_value_type::value_type_short) {
+encoder_parameter::encoder_parameter(const imaging::encoder& encoder, int16 value) : encoder_(encoder), number_of_values_(1), type_(xtd::drawing::imaging::encoder_parameter_value_type::value_type_short) {
   if (value < 0) throw argument_out_of_range_exception(csf_);
   add_bytes(value_, value);
 }
@@ -44,7 +44,7 @@ encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encod
     add_bytes(value_, v);
 }
 
-encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, std::vector<int16_t> value) : encoder_(encoder), number_of_values_(value.size()), type_(xtd::drawing::imaging::encoder_parameter_value_type::value_type_short) {
+encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, std::vector<int16> value) : encoder_(encoder), number_of_values_(value.size()), type_(xtd::drawing::imaging::encoder_parameter_value_type::value_type_short) {
   for (auto v : value) {
     if (v < 0) throw argument_out_of_range_exception(csf_);
     add_bytes(value_, v);
