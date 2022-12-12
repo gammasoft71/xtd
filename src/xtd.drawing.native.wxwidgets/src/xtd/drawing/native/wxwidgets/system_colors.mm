@@ -1,5 +1,6 @@
 #if defined(__APPLE__)
 #include <AppKit/AppKit.h>
+#include <xtd/types.h>
 
 namespace {
 #pragma GCC diagnostic push
@@ -23,11 +24,11 @@ namespace {
   };
 #pragma GCC diagnostic pop
   
-  uint32_t to_argb(uint8_t alpha, uint8_t red, uint8_t green, uint8_t blue) {
+  uint32_t to_argb(xtd::byte alpha, xtd::byte red, xtd::byte green, xtd::byte blue) {
     return (alpha << 24) + (red << 16) + (green << 8) + blue;
   }
   
-  uint32_t to_argb(uint8_t red, uint8_t green, uint8_t blue) {
+  uint32_t to_argb(xtd::byte red, xtd::byte green, xtd::byte blue) {
     return to_argb(255, red, green, blue);
   }
   

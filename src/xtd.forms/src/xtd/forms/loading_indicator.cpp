@@ -73,7 +73,7 @@ void loading_indicator::on_paint(paint_event_args& e) {
     for (int32_t n = 0; n < data_->intervals; n++) {
       const int32_t opacity_index = enabled() ? n + 1 : 2;
       const int32_t opacity = opacity_index * (255 + 1) / data_->intervals - 1;
-      e.graphics().fill_ellipse(xtd::drawing::solid_brush(xtd::drawing::color::from_argb(static_cast<uint8_t>(opacity), fore_color())), -(data_->radius_factor / 2.f - 1.f) * width + width / data_->radius_factor * 2.f, -(data_->radius_factor / 2.f - 1.f) * height + height / data_->radius_factor * 2.f, 2.f * width, 2.f * height);
+      e.graphics().fill_ellipse(xtd::drawing::solid_brush(xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), fore_color())), -(data_->radius_factor / 2.f - 1.f) * width + width / data_->radius_factor * 2.f, -(data_->radius_factor / 2.f - 1.f) * height + height / data_->radius_factor * 2.f, 2.f * width, 2.f * height);
       e.graphics().rotate_transform(angle);
     }
   }

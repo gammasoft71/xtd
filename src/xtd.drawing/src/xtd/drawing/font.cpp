@@ -29,7 +29,7 @@ font::font(const font& prototype, font_style style) {
   data_->handle_ = native::font::create(data_->original_font_name_, size_in_points(), (data_->style_ & font_style::bold) == font_style::bold, (data_->style_ & font_style::italic) == font_style::italic, (data_->style_ & font_style::underline) == font_style::underline, (data_->style_ & font_style::strikeout) == font_style::strikeout, data_->gdi_char_set_, data_->gdi_vertical_font_);
 }
 
-font::font(ustring family_name, float em_size, font_style style, graphics_unit unit, uint8_t gdi_char_set, bool gdi_vertical_font) {
+font::font(ustring family_name, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set, bool gdi_vertical_font) {
   if (em_size <= 0 || em_size == std::numeric_limits<float>::infinity() || std::isnan(em_size)) throw xtd::argument_exception("em_size is less than or equal to 0, evaluates to infinity, or is not a valid number."_t, current_stack_frame_);
   if (unit == graphics_unit::display) throw xtd::argument_exception("unit can't be equal to graphics_unit::display."_t, current_stack_frame_);
   try {
@@ -71,13 +71,13 @@ font::font(const font& value) {
   data_ = value.data_;
 }
 
-font::font(const drawing::font_family& font_family, float em_size, font_style style, graphics_unit unit, uint8_t gdi_char_set, bool gdi_vertical_font) : font(font_family.name(), em_size, style, unit, gdi_char_set, gdi_vertical_font) {
+font::font(const drawing::font_family& font_family, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set, bool gdi_vertical_font) : font(font_family.name(), em_size, style, unit, gdi_char_set, gdi_vertical_font) {
 }
 
-font::font(xtd::ustring family_name, float em_size, font_style style, graphics_unit unit, uint8_t gdi_char_set) : font(family_name, em_size, style, unit, gdi_char_set, false) {
+font::font(xtd::ustring family_name, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set) : font(family_name, em_size, style, unit, gdi_char_set, false) {
 }
 
-font::font(const drawing::font_family& font_family, float em_size, font_style style, graphics_unit unit, uint8_t gdi_char_set) : font(font_family, em_size, style, unit, gdi_char_set, false) {
+font::font(const drawing::font_family& font_family, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set) : font(font_family, em_size, style, unit, gdi_char_set, false) {
 }
 
 font::font(xtd::ustring family_name, float em_size, font_style style, graphics_unit unit) : font(family_name, em_size, style, unit, 0, false) {
@@ -122,7 +122,7 @@ drawing::font_family font::font_family() const noexcept {
   return data_->font_family_;
 }
 
-uint8_t font::gdi_char_set() const noexcept {
+xtd::byte font::gdi_char_set() const noexcept {
   return data_->gdi_char_set_;
 }
 

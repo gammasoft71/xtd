@@ -44,7 +44,7 @@ namespace xtd {
         /// @param g The green component of the background color of the drawing surface.
         /// @param b The blue component of the background color of the drawing surface.
         /// @warning Internal use only
-        static void clear(intptr_t handle, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
+        static void clear(intptr_t handle, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b);
         
         /// @brief Sets a region handle that limits the drawing region of the graphics.
         /// @param handle The graphics handle.
@@ -414,7 +414,7 @@ namespace xtd {
         /// @param nearest_g The green component of color that represents the nearest color to the one specified with the color parameter.
         /// @param nearest_b The blue component of color that represents the nearest color to the one specified with the color parameter.
         /// @warning Internal use only
-        static void get_nearest_color(intptr_t handle, uint8_t original_a, uint8_t original_r, uint8_t original_g, uint8_t original_b, uint8_t& nearest_a, uint8_t& nearest_r, uint8_t& nearest_g, uint8_t& nearest_b);
+        static void get_nearest_color(intptr_t handle, xtd::byte original_a, xtd::byte original_r, xtd::byte original_g, xtd::byte original_b, xtd::byte& nearest_a, xtd::byte& nearest_r, xtd::byte& nearest_g, xtd::byte& nearest_b);
         
         /// @brief Sets the interpolation mode associated with the graphics.
         /// @param handle The graphics handle.

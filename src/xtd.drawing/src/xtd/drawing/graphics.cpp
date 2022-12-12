@@ -742,7 +742,7 @@ intptr_t graphics::get_hdc() const {
 }
 
 xtd::drawing::color graphics::get_nearest_color(const xtd::drawing::color& color) const {
-  uint8_t a, r, g, b;
+  xtd::byte a, r, g, b;
   native::graphics::get_nearest_color(handle(), color.a(), color.r(), color.g(), color.b(), a, r, g, b);
   return xtd::drawing::color::from_argb(a, r, g, b);
 }

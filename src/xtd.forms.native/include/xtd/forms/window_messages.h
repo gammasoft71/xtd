@@ -2,8 +2,7 @@
 /// @brief Contains windows messages constants.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <cstddef>
-#include <cstdint>
+#include <xtd/types.h>
 
 #ifndef WM_NULL
 struct HWND__ {};
@@ -1934,12 +1933,12 @@ inline uint16_t HIWORD(type_t value) {
 
 template<typename type_t>
 inline uint16_t LOBYTE(type_t value) {
-  return static_cast<uint8_t>(static_cast<uint32_t>(value) & 0xFF);
+  return static_cast<xtd::byte>(static_cast<uint32_t>(value) & 0xFF);
 }
 
 template<typename type_t>
-inline uint8_t HIBYTE(type_t value) {
-  return static_cast<uint8_t>((static_cast<uint32_t>(value) >> 8) & 0xFF);
+inline xtd::byte HIBYTE(type_t value) {
+  return static_cast<xtd::byte>((static_cast<uint32_t>(value) >> 8) & 0xFF);
 }
 
 #endif

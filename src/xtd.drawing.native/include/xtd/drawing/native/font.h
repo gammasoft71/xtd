@@ -46,7 +46,7 @@ namespace xtd {
         /// @param gdi_vertical_font A boolean value indicating whether the new xtd::drawing::font is derived from a GDI vertical font.
         /// @return The created font handle.
         /// @warning Internal use only
-        static intptr_t create(const xtd::ustring& family_name, float em_size, bool bold, bool italic, bool underline, bool strikeout, uint8_t gdi_char_set, bool gdi_vertical_font);
+        static intptr_t create(const xtd::ustring& family_name, float em_size, bool bold, bool italic, bool underline, bool strikeout, xtd::byte gdi_char_set, bool gdi_vertical_font);
         
         /// @brief Creates font from hdc.
         /// @param hdc The handle of the device context font.
@@ -103,7 +103,7 @@ namespace xtd {
         /// | MAC           | 77    |
         /// | BALTIC        | 186   |
         /// @warning Internal use only
-        static void get_information(intptr_t font, xtd::ustring& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, uint8_t& gdi_char_set, bool& gdi_vertical_font);
+        static void get_information(intptr_t font, xtd::ustring& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, xtd::byte& gdi_char_set, bool& gdi_vertical_font);
         
         /// @brief Gets the font height.
         /// @param font The font handle.

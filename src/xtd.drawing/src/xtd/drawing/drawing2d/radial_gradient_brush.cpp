@@ -118,7 +118,7 @@ bool radial_gradient_brush::equals(const radial_gradient_brush& value) const noe
 }
 
 void radial_gradient_brush::recreate_handle() {
-  vector<tuple<uint8_t, uint8_t, uint8_t, uint8_t, float>> colors;
+  vector<tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>> colors;
   
   for (auto color : data_->radial_colors)
     colors.emplace_back(color.first.r(), color.first.g(), color.first.b(), color.first.a(), color.second);
