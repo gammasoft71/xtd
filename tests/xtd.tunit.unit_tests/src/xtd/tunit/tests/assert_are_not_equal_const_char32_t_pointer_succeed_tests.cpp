@@ -5,7 +5,7 @@ namespace xtd::tunit::tests {
   class test_class_(assert_are_not_equal_const_char32_t_pointer_succeed_tests) {
   public:
     void test_method_(test_case_succeed) {
-      const char32_t* s = U"string";
+      const char32* s = U"string";
       xtd::tunit::assert::are_not_equal(U"str", s);
     }
   };
