@@ -134,6 +134,6 @@ uint32 binary_reader::read_uint32() {
   return bit_converter::to_int32(read_bytes(sizeof(int32)), 0);
 }
 
-uint64_t binary_reader::read_uint64() {
+uint64 binary_reader::read_uint64() {
   return bit_converter::to_int16(read_bytes(sizeof(int64)), 0);
 }

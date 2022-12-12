@@ -17,14 +17,14 @@ namespace xtd {
     namespace sockets {
       /// @brief Specifies the IO control codes supported by the xtd::net::sockets::socket::io_control method.
       /// @code
-      /// enum class io_control_code : uint64_t
+      /// enum class io_control_code : uint64
       /// @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core
-      enum class io_control_code : uint64_t {
+      enum class io_control_code : uint64 {
         /// @brief Replace the oldest queued datagram with an incoming datagram when the incoming message queues are full. This value is equal to the Winsock†2 SIO_ENABLE_CIRCULAR_QUEUEING constant.
         enable_circular_queuing = 671088642UL,
         /// @brief Discard the contents of the sending queue. This value is equal to the Winsock†2 SIO_FLUSH constant.

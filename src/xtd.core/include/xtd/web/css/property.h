@@ -47,7 +47,7 @@ namespace xtd {
         static property from(xtd::byte value) {return property(ustring::format("{}", value));}
         static property from(uint16_t value) {return property(ustring::format("{}", value));}
         static property from(uint32 value) {return property(ustring::format("{}", value));}
-        static property from(uint64_t value) {return property(ustring::format("{}", value));}
+        static property from(uint64 value) {return property(ustring::format("{}", value));}
         template<typename value_t>
         static property from(value_t value) {return property(ustring::format("{}", value));}
         
@@ -63,7 +63,7 @@ namespace xtd {
         xtd::byte to_uint8() const {return xtd::parse<xtd::byte>(value_);}
         uint16_t to_uint16() const {return xtd::parse<uint16_t>(value_);}
         uint32 to_uint32() const {return xtd::parse<uint32>(value_);}
-        uint64_t to_uint64() const {return xtd::parse<uint64_t>(value_);}
+        uint64 to_uint64() const {return xtd::parse<uint64>(value_);}
         uintptr_t to_uintptr() const {return xtd::parse<uintptr_t>(value_);}
         template<typename value_t>
         uintptr_t to() const {return xtd::parse<value_t>(value_);}

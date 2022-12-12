@@ -196,7 +196,7 @@ namespace xtd {
       /// @return A unsigned long value, expressed in network byte order.
       /// @remarks Different computers use different conventions for ordering the bytes within multibyte integer values.Some computers put the most significant byte first (known as big-endian order) and others put the least-significant byte first (known as little-endian order). To work with computers that use different byte ordering, all integer values that are sent over the network are sent in network byte order which has the most significant byte first.
       /// @remarks The xtd::net::sockets::socket::host_to_network_order method converts multibyte integer values that are stored on the host system from the byte order used by the host to the byte order used by the network.
-      static uint64_t host_to_network_order(uint64_t host);
+      static uint64 host_to_network_order(uint64 host);
       
       /// @brief Indicates whether the specified IP address is the loopback address.
       /// @param address An IP address.
