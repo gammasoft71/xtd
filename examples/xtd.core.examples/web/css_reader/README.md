@@ -1,6 +1,6 @@
 # css_reader
 
-Shows how to use [xtd::web::css:css_reader](../../../../src/xtd.core/include/xtd/web/css/css_reader.h) class.
+Shows how to use [xtd::web::css:css_reader](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1web_1_1css_1_1css__reader.html) class.
 
 ## Sources
 
