@@ -93,7 +93,7 @@ namespace xtd {
         void set_state(synthesizer_state value);
 
         struct data {
-          intptr_t handle = 0;
+          intptr handle = 0;
           int32 rate = 0;
           synthesizer_state state = synthesizer_state::ready;
           int32 volume = 100;

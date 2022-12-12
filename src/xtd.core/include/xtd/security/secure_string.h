@@ -42,7 +42,7 @@ namespace xtd {
       /// @{
       /// @brief Gets underlying encrypted data.
       /// @return The underlying encrypted data.
-      intptr_t data() const noexcept;
+      intptr data() const noexcept;
       
       /// @brief Gets underlying encrypted data size.
       /// @return The underlying encrypted data size.

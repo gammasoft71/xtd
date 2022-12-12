@@ -62,11 +62,11 @@ process_start_info& process_start_info::error_dialog(bool value) noexcept {
   return *this;
 }
 
-intptr_t process_start_info::error_dialog_parent_handle() const noexcept {
+intptr process_start_info::error_dialog_parent_handle() const noexcept {
   return error_dialog_parent_handle_;
 }
 
-process_start_info& process_start_info::error_dialog_parent_handle(intptr_t value) noexcept {
+process_start_info& process_start_info::error_dialog_parent_handle(intptr value) noexcept {
   error_dialog_parent_handle_ = value;
   return *this;
 }

@@ -139,7 +139,7 @@ date_time process::exit_time() const {
   return data_->exit_time_;
 }
 
-intptr_t process::handle() const {
+intptr process::handle() const {
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(current_stack_frame_);
   return data_->handle_.value();
 }

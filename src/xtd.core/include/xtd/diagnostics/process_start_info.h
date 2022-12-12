@@ -123,12 +123,12 @@ namespace xtd {
       /// @brief Gets the window handle to use when an error dialog box is shown for a process that cannot be started.
       /// @return A pointer to the handle of the error dialog box that results from a process start failure.
       /// @remarks If xtd::diagnostics::process_start_info::error_dialog is true, the xtd::diagnostics::process_start_info::error_dialog_parent_handle property specifies the parent window for the dialog box that is shown. It is useful to specify a parent to keep the dialog box in front of the application.
-      intptr_t error_dialog_parent_handle() const noexcept;
+      intptr error_dialog_parent_handle() const noexcept;
       /// @brief Sets the window handle to use when an error dialog box is shown for a process that cannot be started.
       /// @param value A pointer to the handle of the error dialog box that results from a process start failure.
       /// @return The current instance of process_start_info.
       /// @remarks If xtd::diagnostics::process_start_info::error_dialog is true, the xtd::diagnostics::process_start_info::error_dialog_parent_handle property specifies the parent window for the dialog box that is shown. It is useful to specify a parent to keep the dialog box in front of the application.
-      process_start_info& error_dialog_parent_handle(intptr_t value) noexcept;
+      process_start_info& error_dialog_parent_handle(intptr value) noexcept;
       
       /// @brief Gets the application or document to start.
       /// @return The name of the application to start, or the name of a document of a file type that is associated with an application and that has a default open action available to it. The default is an empty string ("").
@@ -866,7 +866,7 @@ namespace xtd {
       bool create_no_window_ = false;
       xtd::ustring domain_;
       bool error_dialog_ = false;
-      intptr_t error_dialog_parent_handle_ = 0;
+      intptr error_dialog_parent_handle_ = 0;
       std::map<xtd::ustring, xtd::ustring> environment_variables_;
       bool load_user_profile_ = false;
       xtd::security::secure_string password_;

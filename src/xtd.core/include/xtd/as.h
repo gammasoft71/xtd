@@ -678,7 +678,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const char* value = "Gammasoft";
-  /// intptr_t result = as<intptr_t>(value);
+  /// intptr result = as<intptr>(value);
   /// @endcode
   template<typename new_type_t>
   new_type_t as(const char* value) {
@@ -696,7 +696,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char* value = "Gammasoft";
-  /// intptr_t result = as<intptr_t>(value);
+  /// intptr result = as<intptr>(value);
   /// @endcode
   template<typename new_type_t>
   new_type_t as(char* value) {
@@ -714,7 +714,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const char8_t* value = u8"Gammasoft";
-  /// intptr_t result = as<intptr_t>(value);
+  /// intptr result = as<intptr>(value);
   /// @endcode
   template<typename new_type_t>
   new_type_t as(const char8_t* value) {
@@ -732,7 +732,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char8_t* value = u8"Gammasoft";
-  /// intptr_t result = as<intptr_t>(value);
+  /// intptr result = as<intptr>(value);
   /// @endcode
   template<typename new_type_t>
   new_type_t as(char8_t* value) {
@@ -750,7 +750,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const char16_t* value = u"Gammasoft";
-  /// intptr_t result = as<intptr_t>(value);
+  /// intptr result = as<intptr>(value);
   /// @endcode
   template<typename new_type_t>
   new_type_t as(const char16_t* value) {
@@ -768,7 +768,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char16_t* value = u"Gammasoft";
-  /// intptr_t result = as<intptr_t>(value);
+  /// intptr result = as<intptr>(value);
   /// @endcode
   template<typename new_type_t>
   new_type_t as(char16_t* value) {
@@ -786,7 +786,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const char32_t* value = U"Gammasoft";
-  /// intptr_t result = as<intptr_t>(value);
+  /// intptr result = as<intptr>(value);
   /// @endcode
   template<typename new_type_t>
   new_type_t as(const char32_t* value) {
@@ -804,7 +804,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char32_t* value = U"Gammasoft";
-  /// intptr_t result = as<intptr_t>(value);
+  /// intptr result = as<intptr>(value);
   /// @endcode
   template<typename new_type_t>
   new_type_t as(char32_t* value) {
@@ -822,7 +822,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const wchar_t* value = L"Gammasoft";
-  /// intptr_t result = as<intptr_t>(value);
+  /// intptr result = as<intptr>(value);
   /// @endcode
   template<typename new_type_t>
   new_type_t as(const wchar_t* value) {
@@ -840,7 +840,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// wchar_t* value = L"Gammasoft";
-  /// intptr_t result = as<intptr_t>(value);
+  /// intptr result = as<intptr>(value);
   /// @endcode
   template<typename new_type_t>
   new_type_t as(wchar_t* value) {
