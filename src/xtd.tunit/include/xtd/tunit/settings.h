@@ -137,12 +137,12 @@ namespace xtd {
       /// @brief Gets random seed value.
       /// @return Random seed value.
       /// @remarks By default is set to 0 (no seed).
-      uint32_t random_seed() const noexcept {return random_seed_;}
+      uint32 random_seed() const noexcept {return random_seed_;}
       
       /// @brief Sets random seed value.
       /// @param random_seed Random seed value.
       /// @remarks By default is set to 0 (no seed).
-      void random_seed(uint32_t random_seed) noexcept {random_seed_ = random_seed;}
+      void random_seed(uint32 random_seed) noexcept {random_seed_ = random_seed;}
       
       /// @brief Gets repeat tests count.
       /// @return Repeat test count.
@@ -209,7 +209,7 @@ namespace xtd {
       std::string file_name_ = xtd::io::path::get_full_path(xtd::environment::get_command_line_args()[0]);
       bool show_duration_ = true;
       bool shuffle_tests_ = false;
-      uint32_t random_seed_ = 0;
+      uint32 random_seed_ = 0;
       int32 repeat_tests_ = 1;
       bool enable_stack_trace_ = false;
       xtd::date_time start_time_;
