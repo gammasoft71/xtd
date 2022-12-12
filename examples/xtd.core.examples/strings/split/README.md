@@ -1,6 +1,6 @@
 # split
 
-Shows how to use [xtd::strings::split](../../../../src/xtd.core/include/xtd/strings.h) method.
+Shows how to use [xtd::ustring::split](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html#a96a729c2b591760cb0971d43418b3804) method.
 
 ## Sources
 

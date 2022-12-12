@@ -1,6 +1,6 @@
 # string_unicode
 
-Shows how to use [xtd::strings](../../../../src/xtd.core/include/xtd/strings.h) method.
+Shows how to use [xtd::ustring](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html) method.
 
 ## Sources
 
