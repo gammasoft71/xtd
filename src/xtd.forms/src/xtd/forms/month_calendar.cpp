@@ -284,7 +284,7 @@ void month_calendar::add_monthly_bolded_date(const xtd::date_time& date) {
   data_->monthly_bolded_dates.push_back(date);
 }
 
-month_calendar::hit_test_info month_calendar::hit_test(int32_t x, int32_t y) const {
+month_calendar::hit_test_info month_calendar::hit_test(int32 x, int32 y) const {
   return hit_test({x, y});
 }
 
@@ -320,7 +320,7 @@ void month_calendar::remove_monthly_bolded_dates(const xtd::date_time& date) {
   if (it != data_->monthly_bolded_dates.end()) data_->monthly_bolded_dates.erase(it);
 }
 
-void month_calendar::set_calendar_dimensions(int32_t x, int32_t y) {
+void month_calendar::set_calendar_dimensions(int32 x, int32 y) {
   calendar_dimensions({x, y});
 }
 

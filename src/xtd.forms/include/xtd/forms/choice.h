@@ -119,8 +119,8 @@ namespace xtd {
       /// @{
       void on_handle_created(const event_args& e) override;
       void on_selected_value_changed(const event_args& e) override;
-      void set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) override;
-      void set_client_size_core(int32_t width, int32_t height) override;
+      void set_bounds_core(int32 x, int32 y, int32 width, int32 height, bounds_specified specified) override;
+      void set_client_size_core(int32 width, int32 height) override;
       void wnd_proc(message& message) override;
   /// @}
       

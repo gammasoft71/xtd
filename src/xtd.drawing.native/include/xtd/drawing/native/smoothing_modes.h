@@ -5,7 +5,7 @@
 #endif
 /// @endcond
 
-#include <cstdint>
+#include <xtd/types.h>
 
 /// @brief Specifies an invalid mode.
 /// @par Library
@@ -13,7 +13,7 @@
 /// @ingroup xtd_drawing_native sm
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t SM_INVALID = -1;
+constexpr xtd::int32 SM_INVALID = -1;
 
 /// @brief Specifies no antialiasing.
 /// @par Library
@@ -21,7 +21,7 @@ constexpr int32_t SM_INVALID = -1;
 /// @ingroup xtd_drawing_native sm
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t SM_DEFAULT = 0;
+constexpr xtd::int32 SM_DEFAULT = 0;
 
 /// @brief Specifies no antialiasing.
 /// @par Library
@@ -29,7 +29,7 @@ constexpr int32_t SM_DEFAULT = 0;
 /// @ingroup xtd_drawing_native sm
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t SM_HIGH_SPEED = 1;
+constexpr xtd::int32 SM_HIGH_SPEED = 1;
 
 /// @brief Specifies antialiased rendering.
 /// @par Library
@@ -37,7 +37,7 @@ constexpr int32_t SM_HIGH_SPEED = 1;
 /// @ingroup xtd_drawing_native sm
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t SM_HIGHT_QUALITY = 2;
+constexpr xtd::int32 SM_HIGHT_QUALITY = 2;
 
 /// @brief Specifies no antialiasing.
 /// @par Library
@@ -45,7 +45,7 @@ constexpr int32_t SM_HIGHT_QUALITY = 2;
 /// @ingroup xtd_drawing_native sm
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t SM_NONE = 3;
+constexpr xtd::int32 SM_NONE = 3;
 
 /// @brief Specifies antialiased rendering.
 /// @par Library
@@ -53,4 +53,4 @@ constexpr int32_t SM_NONE = 3;
 /// @ingroup xtd_drawing_native sm
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t SM_ANTI_ALIAS = 4;
+constexpr xtd::int32 SM_ANTI_ALIAS = 4;

@@ -39,7 +39,7 @@ namespace {
     if ((options & OFN_ALLOWMULTISELECT) == OFN_ALLOWMULTISELECT) wx_style |= wxFD_MULTIPLE;
     if ((options & OFN_FORCESHOWHIDDEN) == OFN_FORCESHOWHIDDEN) wx_style |= wxFD_SHOW_HIDDEN;
     wxWindowPtr<FileDialog> file_dialog(new FileDialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), convert_string::to_wstring(title), convert_string::to_wstring(initial_directory), convert_string::to_wstring(file_name), convert_string::to_wstring(filter), wx_style));
-    if (!filter.empty()) file_dialog->SetFilterIndex(static_cast<int32_t>(filter_index - 1));
+    if (!filter.empty()) file_dialog->SetFilterIndex(static_cast<int32>(filter_index - 1));
     return file_dialog;
   }
   

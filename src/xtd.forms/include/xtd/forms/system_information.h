@@ -29,7 +29,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the active window tracking delay.
       /// @return The active window tracking delay, in milliseconds.
-      static int32_t active_window_tracking_delay();
+      static int32 active_window_tracking_delay();
       
       /// @brief Gets a value that indicates the direction in which the operating system arranges minimized windows.
       /// @return One of the ArrangeDirection values that indicates the direction in which the operating system arranges minimized windows.
@@ -55,7 +55,7 @@ namespace xtd {
       
       /// @brief Gets the border multiplier factor that is used when determining the thickness of a window's sizing border.
       /// @return The multiplier used to determine the thickness of a window's sizing border.
-      static int32_t border_multiplier_factor();
+      static int32 border_multiplier_factor();
       
       /// @brief Gets the thickness, in pixels, of a flat-style window or system control border.
       /// @return A size that indicates the width, in pixels, of a vertical border, and the height, in pixels, of a horizontal border.
@@ -73,15 +73,15 @@ namespace xtd {
       /// @brief Gets the height, in pixels, of the standard title bar area of a window.
       /// @return The height, in pixels, of the standard title bar area of a window.
       /// @remarks The caption_height property indicates the height of the standard window title bar area, in pixels.
-      static int32_t caption_height();
+      static int32 caption_height();
       
       /// @brief Gets the caret blink time
       /// @return The caret blink time.
-      static int32_t caret_blink_time();
+      static int32 caret_blink_time();
       
       /// @brief Gets the width, in pixels, of the caret in edit controls.
       /// @return The width, in pixels, of the caret in edit controls.
-      static int32_t caret_width();
+      static int32 caret_width();
       
       /// @brief Gets the NetBIOS computer name of the local computer.
       /// @return The name of this computer.
@@ -112,7 +112,7 @@ namespace xtd {
       /// @return The maximum amount of time, in milliseconds, that can elapse between a first click and a second click for the OS to consider the mouse action a double-click.
       /// @remarks A double-click is a series of two clicks of the mouse button, the second occurring within a specified length of time after, and within a specified distance from, the first. The double-click time is the maximum number of milliseconds that can elapse between the first and second click of a double-click.
       /// @remarks The double_click_time property indicates the maximum number of milliseconds that can elapse before a second click for the second click to cause a double-click.
-      static int32_t double_click_time();
+      static int32 double_click_time();
       
       /// @brief Gets a value indicating whether the user has enabled full window drag.
       /// @return true if the user has enabled full window drag; otherwise, false.
@@ -133,11 +133,11 @@ namespace xtd {
       
       /// @brief Gets the font smoothing contrast value used in ClearType smoothing.
       /// @return The ClearType font smoothing contrast value.
-      static int32_t font_smoothing_contrast();
+      static int32 font_smoothing_contrast();
       
       /// @brief Gets the current type of font smoothing.
       /// @return A value that indicates the current type of font smoothing.
-      static int32_t font_smoothing_type();
+      static int32 font_smoothing_type();
       
       /// @brief Gets the thickness, in pixels, of the resizing border that is drawn around the perimeter of a window that is being drag resized.
       /// @return A size that indicates the thickness, in pixels, of the width of a vertical resizing border and the height of a horizontal resizing border.
@@ -154,29 +154,29 @@ namespace xtd {
       /// @brief Gets the thickness of the left and right edges of the system focus rectangle, in pixels.
       /// @return The thickness of the left and right edges of the system focus rectangle, in pixels.
       /// @remarks The HorizontalFocusThickness property indicates the width of the left and right edges of the system focus rectangle, in pixels. The system focus rectangle is used to draw user's attention to a window or area by displaying a rectangular highlighted outline.
-      static int32_t horizontal_focus_thickness();
+      static int32 horizontal_focus_thickness();
       
       /// @brief Gets the thickness of the left and right edges of the sizing border around the perimeter of a window being resized, in pixels.
       /// @return The width of the left and right edges of the sizing border around the perimeter of a window being resized, in pixels.
       /// @remarks The HorizontalResizeBorderThickness property indicates the width of the vertical sizing border around the perimeter of a window being resized.
-      static int32_t horizontal_resize_border_thickness();
+      static int32 horizontal_resize_border_thickness();
       
       /// @brief Gets the width, in pixels, of the arrow bitmap on the horizontal scroll bar.
       /// @return The width, in pixels, of the arrow bitmap on the horizontal scroll bar.
-      static int32_t horizontal_scroll_bar_arrow_width();
+      static int32 horizontal_scroll_bar_arrow_width();
       
       /// @brief Gets the default height, in pixels, of the horizontal scroll bar.
       /// @return The default height, in pixels, of the horizontal scroll bar.
-      static int32_t horizontal_scroll_bar_height();
+      static int32 horizontal_scroll_bar_height();
       
       /// @brief Gets the width, in pixels, of the scroll box in a horizontal scroll bar.
       /// @return The width, in pixels, of the scroll box in a horizontal scroll bar.
-      static int32_t horizontal_scroll_bar_bhumb_width();
+      static int32 horizontal_scroll_bar_bhumb_width();
       
       /// @brief Gets the width, in pixels, of an icon arrangement cell in large icon view.
       /// @return The width, in pixels, of an icon arrangement cell in large icon view.
       /// @remarks The IconHorizontalSpacing property indicates the width of the space for an icon in large icon view. The system uses this distance to arrange icons in large icon view.
-      static int32_t icon_horizontal_spacing();
+      static int32 icon_horizontal_spacing();
       
       /// @brief Gets the dimensions, in pixels, of the Windows default program icon size.
       /// @return A size that indicates the default dimensions, in pixels, for a program icon.
@@ -190,7 +190,7 @@ namespace xtd {
       /// @brief Gets the height, in pixels, of an icon arrangement cell in large icon view.
       /// @return The height, in pixels, of an icon arrangement cell in large icon view.
       /// @remarks The icon_vertical_spacing property indicates the width of the space for an icon in large icon view. The system uses this distance to arrange icons in large icon view.
-      static int32_t icon_vertical_spacing();
+      static int32 icon_vertical_spacing();
       
       /// @brief Gets a value indicating whether active window tracking is enabled.
       /// @return true if active window tracking is enabled; otherwise, false.
@@ -277,19 +277,19 @@ namespace xtd {
       /// @brief Gets the height, in pixels, of the Kanji window at the bottom of the screen for double-byte character set (DBCS) versions of Windows.
       /// @return The height, in pixels, of the Kanji window.
       /// @remarks The kanji_window_height property indicates the height of the Kanji window on operating systems that support DBCS. The DbcsEnabled property indicates whether the operating system supports DBCS.
-      static int32_t kanji_window_height();
+      static int32 kanji_window_height();
       
       /// @brief Gets the keyboard repeat-delay setting.
       /// @return The keyboard repeat-delay setting, from 0 (approximately 250 millisecond delay) through 3 (approximately 1 second delay).
       /// @remarks This property indicates the amount of time that elapses after a key is pressed and held down until keystroke repeat messages are sent by the operating system. This value is in the range from 0 (approximately 250 millisecond delay) through 3 (approximately 1 second delay). The actual delay associated with each value may vary depending on the hardware.
       /// @remarks The keyboard_speed property indicates the repeat speed setting that determines the length of time between each keystroke repeat message sent by the operating system.
-      static int32_t keyboard_delay();
+      static int32 keyboard_delay();
       
       /// @brief Gets the keyboard repeat-speed setting.
       /// @return The keyboard repeat-speed setting, from 0 (approximately 2.5 repetitions per second) through 31 (approximately 30 repetitions per second).
       /// @remarks This property indicates the time between each keystroke repeat message that is sent when a user presses and holds a key down. This is a value in the range from 0 (approximately 2.5 repetitions per second) through 31 (approximately 30 repetitions per second). The actual repeat rates are hardware-dependent and may vary from a linear scale by as much as 20%.
       /// @remarks The keyboard_delay property indicates the length of time after a key is pressed and held down before keystroke repeat messages are sent by the operating system.
-      static int32_t keyboard_speed();
+      static int32 keyboard_speed();
       
       /// @brief Gets the default maximum dimensions, in pixels, of a window that has a caption and sizing borders.
       /// @return A size that specifies the maximum dimensions, in pixels, to which a window can be sized.
@@ -324,12 +324,12 @@ namespace xtd {
       /// @brief Gets the height, in pixels, of one line of a menu.
       /// @return The height, in pixels, of one line of a menu.
       /// @remarks The menu_height property indicates the height that is currently defined by Windows for a menu bar.
-      static int32_t menu_height();
+      static int32 menu_height();
       
       /// @brief Gets the time, in milliseconds, that the system waits before displaying a cascaded shortcut menu when the mouse cursor is over a submenu item.
       /// @return The time, in milliseconds, that the system waits before displaying a cascaded shortcut menu when the mouse cursor is over a submenu item.
       /// @remarks The menu_show_delay property indicates the time, in milliseconds, that the system waits before displaying a cascaded shortcut menu when the mouse cursor is over a submenu item.
-      static int32_t menu_show_delay();
+      static int32 menu_show_delay();
       
       /// @brief Gets a value indicating whether the operating system is enabled for the Hebrew and Arabic languages.
       /// @return true if the operating system is enabled for Hebrew or Arabic; otherwise, false.
@@ -363,7 +363,7 @@ namespace xtd {
       /// @return The number of monitors that make up the desktop.
       /// @remarks The monitor_count property indicates the number of monitors currently recognized by the operating system. This property returns a value greater than one only if multiple monitors are currently recognized by the operating system.
       /// @note This property is supported only on Windows 98, Windows Millennium Edition, Windows 2000, Windows XP, and the Windows Server 2003 family.
-      static int32_t monitor_count();
+      static int32 monitor_count();
       
       /// @brief Gets a value indicating whether all the display monitors are using the same pixel color format.
       /// @return true if all monitors are using the same pixel color format; otherwise, false.
@@ -377,7 +377,7 @@ namespace xtd {
       /// @return The number of buttons on the mouse, or zero if no mouse is installed.
       /// @remarks The mouse_buttons property indicates the number of mouse buttons recognized on the currently installed mouse.
       /// @remarks You can use mouse_buttons property to toggle additional functionality for users with more or less than the standard number of mouse buttons supported by your application.
-      static int32_t mouse_buttons();
+      static int32 mouse_buttons();
       
       /// @brief Gets a value indicating whether the functions of the left and right mouse buttons have been swapped.
       /// @return true if the functions of the left and right mouse buttons are swapped; otherwise, false.
@@ -393,7 +393,7 @@ namespace xtd {
       /// @return The time, in milliseconds, that the mouse pointer has to stay in the hover rectangle before a mouse hover message is generated.
       /// @remarks The mouse_hover_time property indicates the time, in milliseconds, that a mouse pointer must remain within an area the size of the MouseHoverSize property in order to generate a mouse hover message.
       /// @remarks The mouse_hover_size property indicates the size of the rectangle within which the mouse pointer has to stay for the mouse hover time before a mouse hover message is generated.
-      static int32_t mouse_hover_time();
+      static int32 mouse_hover_time();
       
       /// @brief Gets a value indicating whether the functions of the left and right mouse buttons have been swapped.
       /// @return true if a mouse is installed; otherwise, false.
@@ -403,7 +403,7 @@ namespace xtd {
       /// @brief Gets the current mouse speed.
       /// @return A mouse speed value between 1 (slowest) and 20 (fastest).
       /// @remarks The mouse speed determines how far the pointer will move based on the distance the mouse moves. The value of this property ranges between 1 (slowest) and 20 (fastest). A value of 10 is the default. The value can be set by an end user using the mouse control panel application or by an application using the SystemParametersInfo function of the Platform SDK.
-      static int32_t mouse_speed();
+      static int32 mouse_speed();
       
       /// @brief Gets a value indicating whether a mouse with a mouse wheel is installed.
       /// @return true if a mouse with a mouse wheel is installed; otherwise, false.
@@ -414,13 +414,13 @@ namespace xtd {
       /// @brief Gets the amount of the delta value of a single mouse wheel rotation increment.
       /// @return The amount of the delta value of a single mouse wheel rotation increment.
       /// @remarks The delta value is an integer value that represents a single mouse wheel rotation increment. A downward mouse wheel rotation produces a negative delta value.
-      static int32_t mouse_wheel_scroll_delta();
+      static int32 mouse_wheel_scroll_delta();
       
       /// @brief Gets the number of lines to scroll when the mouse wheel is rotated.
       /// @return The number of lines to scroll on a mouse wheel rotation, or -1 if the "One screen at a time" mouse option is selected.
       /// @remarks The mouse_wheel_scroll_lines property indicates how many lines to scroll, by default, in a multi-line control that has a scroll bar. The corresponding Platform SDK system-wide parameters are SPI_GETWHEELSCROLLLINES and SPI_SETWHEELSCROLLLINES. For more information about system-wide parameters, see "SystemParametersInfo" in the Platform SDK documentation at https://msdn.microsoft.com.
       /// @note Be sure to handle the special case that occurs if the "One screen at a time" mouse option is selected. In this case, the mouse_wheel_scroll_lines property has a value of -1.
-      static int32_t mouse_wheel_scroll_lines();
+      static int32 mouse_wheel_scroll_lines();
       
       /// @brief Gets a value indicating whether a mouse with a mouse wheel is installed.
       /// @return true if a mouse with a mouse wheel is installed; otherwise, false.
@@ -434,7 +434,7 @@ namespace xtd {
       /// @note This property always returns true on all platforms.
       static bool network();
       
-      static int32_t vertical_scroll_bar_width();
+      static int32 vertical_scroll_bar_width();
       /// @}
     };
   }

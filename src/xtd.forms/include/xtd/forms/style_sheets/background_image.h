@@ -80,7 +80,7 @@ namespace xtd {
         /// @param angle The angle specifies the gradient direction.
         /// @remarks A value of 0 for angle is equivalent to "to top", a value of 90 for rangle is equivalent to "to right". a value of 180 for angle is equivalent to "to bottom", ...
         /// @exception xtd::argument_exception colors is less than 2.
-        background_image(const std::vector<xtd::drawing::color>& colors, int32_t angle);
+        background_image(const std::vector<xtd::drawing::color>& colors, int32 angle);
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::background_image class with specified style and colors.
         /// @param image_type The style specifies what kind of image to display.
         /// @param color The colors that specifies the color for gradient image to display.
@@ -95,7 +95,7 @@ namespace xtd {
         /// @remarks A value of 0 for angle is equivalent to "to top", a value of 90 for rangle is equivalent to "to right". a value of 180 for angle is equivalent to "to bottom", ...
         /// @exception xtd::argument_exception colors is less than 2.
         /// @exception xtd::not_supported_exception if xtd::forms::style_sheets::background_image::image_type is not of xtd::forms::style_sheets::image_type::url and not xtd::forms::style_sheets::image_type::linear_gradient.
-        background_image(xtd::forms::style_sheets::image_type image_type, const std::vector<xtd::drawing::color>& colors, int32_t angle);
+        background_image(xtd::forms::style_sheets::image_type image_type, const std::vector<xtd::drawing::color>& colors, int32 angle);
         /// @}
         
         /// @cond
@@ -111,11 +111,11 @@ namespace xtd {
         /// @brief Gets the angle specifies the gradient direction.
         /// @return The angle specifies the gradient direction.
         /// @remarks A value of 0 for angle is equivalent to "to top", a value of 90 for rangle is equivalent to "to right". a value of 180 for angle is equivalent to "to bottom", ...
-        int32_t angle() const noexcept;
+        int32 angle() const noexcept;
         /// @brief Sets the angle specifies the gradient direction.
         /// @param value The angle specifies the gradient direction.
         /// @remarks A value of 0 for angle is equivalent to "to top", a value of 90 for rangle is equivalent to "to right". a value of 180 for angle is equivalent to "to bottom", ...
-        void angle(int32_t value) noexcept;
+        void angle(int32 value) noexcept;
         
         /// @brief Gets the colors specifies what colors to display.
         /// @return The colors specifies what colors to display.
@@ -161,7 +161,7 @@ namespace xtd {
         xtd::forms::style_sheets::image_type image_type_ = style_sheets::image_type::none;
         xtd::uri url_;
         std::vector<xtd::drawing::color> colors_ = {xtd::drawing::color::black, xtd::drawing::color::black};
-        int32_t angle_ = 180;
+        int32 angle_ = 180;
       };
     }
   }

@@ -22,7 +22,7 @@ namespace xtd::forms::native {
   }
   
   template<typename control_t>
-  inline intptr_t control_wrapper<control_t>::def_wnd_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) {
+  inline intptr_t control_wrapper<control_t>::def_wnd_proc(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) {
     if (handle != 0 && !control_t::IsBeingDeleted()) {
       wxEvent* event = reinterpret_cast<wxEvent*>(handle);
       event->Skip(!result);
@@ -334,8 +334,8 @@ namespace xtd::forms::native {
   }
   
   template<typename control_t>
-  inline int32_t control_wrapper<control_t>::get_virtual_keys(const wxMouseState& mouse_state) {
-    int32_t virtual_keys = 0;
+  inline int32 control_wrapper<control_t>::get_virtual_keys(const wxMouseState& mouse_state) {
+    int32 virtual_keys = 0;
     
 #if defined(__APPLE__)
     if (mouse_state.RawControlDown()) virtual_keys |= MK_COMMAND;
@@ -356,7 +356,7 @@ namespace xtd::forms::native {
   inline void control_wrapper<control_t>:: send_mouse_message(uint32_t msg, size_t virtual_key, wxEvent& event) {
     wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
     wxMouseState mouse_state = wxGetMouseState();
-    int32_t virtual_keys = get_virtual_keys(mouse_state);
+    int32 virtual_keys = get_virtual_keys(mouse_state);
     auto x = mouse_state.GetX();
     auto y = mouse_state.GetY();
     reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);
@@ -661,7 +661,7 @@ namespace xtd::forms::native {
   inline void control_wrapper<control_t>::wx_evt_mousewheel(wxEvent& event) {
     wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
     wxMouseState mouse_state = wxGetMouseState();
-    int32_t virtual_keys = get_virtual_keys(mouse_state);
+    int32 virtual_keys = get_virtual_keys(mouse_state);
     auto x = mouse_state.GetX();
     auto y = mouse_state.GetY();
     reinterpret_cast<wxWindow*>(event.GetEventObject())->ScreenToClient(&x, &y);

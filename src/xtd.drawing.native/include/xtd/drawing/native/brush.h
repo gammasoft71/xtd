@@ -78,7 +78,7 @@ namespace xtd {
         /// @remarks An offset value of 0.0 specifies that the stop is positioned at the beginning of the gradient vector, while a value of 1.0 specifies that the stop is positioned at the end of the gradient vector.
         /// @remarks The angle rotates in the clockwise direction. An angle of O° represents an angle from the center to the left. The angle turns in the clockwise direction. An angle of 90° represents an angle from the center downwards. An angle of 180° represents an angle from the center to the right. And so on.
         /// @warning Internal use only
-        static void conical_gradient(intptr_t brush, int32_t center_x, int32_t center_y, const std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>>& colors, float angle);
+        static void conical_gradient(intptr_t brush, int32 center_x, int32 center_y, const std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>>& colors, float angle);
         
         /// @brief Sets linear gradient brush.
         /// @brief x1 Contains the left value of the bound rectangle of the linear brush.
@@ -89,7 +89,7 @@ namespace xtd {
         /// @remarks An offset value of 0.0 specifies that the stop is positioned at the beginning of the gradient vector, while a value of 1.0 specifies that the stop is positioned at the end of the gradient vector.
         /// @remarks The angle rotates in the clockwise direction. An angle of O° represents an angle from the center to the left. The angle turns in the clockwise direction. An angle of 90° represents an angle from the center downwards. An angle of 180° represents an angle from the center to the right. And so on.
         /// @warning Internal use only
-        static void linear_gradient(intptr_t brush, int32_t x1, int32_t y1, int32_t x2, int32_t y2, const std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>>& colors, float angle);
+        static void linear_gradient(intptr_t brush, int32 x1, int32 y1, int32 x2, int32 y2, const std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>>& colors, float angle);
         
         /// @brief Sets radial gradient brush.
         /// @param brush The brush handle.
@@ -101,7 +101,7 @@ namespace xtd {
         /// @param radius The radius of the radial gradient.
         /// @remarks An offset value of 0.0 specifies that the stop is positioned at the beginning of the gradient vector, while a value of 1.0 specifies that the stop is positioned at the end of the gradient vector.
         /// @warning Internal use only
-        static void radial_gradient(intptr_t brush, int32_t center_x, int32_t center_y, int32_t focal_x, int32_t focal_y, const std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>>& colors, float radius);
+        static void radial_gradient(intptr_t brush, int32 center_x, int32 center_y, int32 focal_x, int32 focal_y, const std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>>& colors, float radius);
         
         /// @brief Sets texturebrush.
         /// @param brush The brush handle.

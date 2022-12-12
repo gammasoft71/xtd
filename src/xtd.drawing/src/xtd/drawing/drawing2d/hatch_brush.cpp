@@ -152,8 +152,8 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (int32_t y = 0, index = 0; y < 8; y++, index++)
-      for (int32_t x = 0; x < 8; x++, index++)
+    for (int32 y = 0, index = 0; y < 8; y++, index++)
+      for (int32 x = 0; x < 8; x++, index++)
         if (index % 2 == 0) graphics.draw_point(pen(fore_color, 1), x, y);
     return bitmap;
   }
@@ -403,8 +403,8 @@ namespace {
     graphics.clear(back_color);
     for (auto point : points)
       graphics.draw_point(pen(fore_color, 1), point);
-    for (int32_t y = 4, index = 0; y < 8; y++, index++)
-      for (int32_t x = 0; x < 8; x++, index++)
+    for (int32 y = 4, index = 0; y < 8; y++, index++)
+      for (int32 x = 0; x < 8; x++, index++)
         if (index % 2 == 0) graphics.draw_point(pen(fore_color, 1), x, y);
     return bitmap;
   }

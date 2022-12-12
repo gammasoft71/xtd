@@ -56,7 +56,7 @@ namespace xtd {
       /// @param height The desired height of the xtd::drawing::icon.
       /// @remarks If the specified file does not contain an image that matches the desired height and width, the icon that has the closest size is returned.
       /// @remarks The filename should include the complete path if it is not in the current application directory.
-      icon(const xtd::ustring& filename, int32_t width, int32_t height);
+      icon(const xtd::ustring& filename, int32 width, int32 height);
       /// @brief Initializes a new instance of the xtd::drawing::icon class from the specified data stream.
       /// @param stream The data stream from which to load the xtd::drawing::icon.
       /// @remarks An icon resource can contain multiple icon images. One icon file may contain images in several sizes and color depths. The image that is used in an application depends on the operating system and settings. The following list details the typical sizes for an icon:
@@ -73,7 +73,7 @@ namespace xtd {
       /// @param stream The data stream from which to load the xtd::drawing::icon.
       /// @param width The width, in pixels, of the icon.
       /// @param height The height, in pixels, of the icon.
-      icon(std::istream& stream, int32_t width, int32_t height);
+      icon(std::istream& stream, int32 width, int32 height);
       /// @brief Initializes a new instance of the xtd::drawing::icon class from the specified data.
       /// @param stream The data stream from which to load the xtd::drawing::icon.
       /// @remarks An icon resource can contain multiple icon images. One icon file may contain images in several sizes and color depths. The image that is used in an application depends on the operating system and settings. The following list details the typical sizes for an icon:
@@ -93,7 +93,7 @@ namespace xtd {
       /// @param width The width, in pixels, of the icon.
       /// @param height The height, in pixels, of the icon.
       /// @remarks This constructor is used for creating a xtd::drawing::icon from an xpm (or xbm) image.
-      icon(const char* const* bits, int32_t width, int32_t height);
+      icon(const char* const* bits, int32 width, int32 height);
       /// @brief Initializes a new instance of the xtd::drawing::icon class and attempts to find a version of the icon that matches the requested size.
       /// @param original The xtd::drawing::icon from which to load the newly sized icon.
       /// @param size A xtd::drawing::size structure that specifies the height and width of the new xtd::drawing::icon.
@@ -104,7 +104,7 @@ namespace xtd {
       /// @param width The width of the new icon.
       /// @param height The height of the new icon.
       /// @remarks If a version cannot be found that exactly matches the size, the closest match is used. If the original parameter is an xtd::drawing::icon that has a single size, this method only creates a duplicate icon. Use the stretching capabilities of the xtd::graphics::drawing::draw_image method to resize the icon.
-      icon(const icon& original, int32_t width, int32_t height);
+      icon(const icon& original, int32 width, int32 height);
       /// @}
       
       /// @cond
@@ -123,7 +123,7 @@ namespace xtd {
       
       /// @brief Gets the height of this xtd::drawing::icon.
       /// @return The height of this xtd::drawing::icon.
-      int32_t height() const noexcept;
+      int32 height() const noexcept;
       
       /// @brief Gets the size of this xtd::drawing::icon.
       /// @return The size of this xtd::drawing::icon.
@@ -131,7 +131,7 @@ namespace xtd {
       
       /// @brief Gets the width of this xtd::drawing::icon.
       /// @return The width of this xtd::drawing::icon.
-      int32_t width() const noexcept;
+      int32 width() const noexcept;
       /// @}
       
       /// @name Methods

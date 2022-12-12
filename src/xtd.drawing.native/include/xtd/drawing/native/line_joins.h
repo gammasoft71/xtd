@@ -5,7 +5,7 @@
 #endif
 /// @endcond
 
-#include <cstdint>
+#include <xtd/types.h>
 
 /// @brief Specifies a mitered join. This produces a sharp corner or a clipped corner, depending on whether the length of the miter exceeds the miter limit.
 /// @par Library
@@ -13,7 +13,7 @@
 /// @ingroup xtd_drawing_native lj
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t LJ_MITER = 0;
+constexpr xtd::int32 LJ_MITER = 0;
 
 /// @brief Specifies a beveled join. This produces a diagonal corner.
 /// @par Library
@@ -22,7 +22,7 @@ constexpr int32_t LJ_MITER = 0;
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
 
-constexpr int32_t LJ_BEVEL = 1;
+constexpr xtd::int32 LJ_BEVEL = 1;
 /// @brief Specifies a circular join. This produces a smooth, circular arc between the lines.
 /// @par Library
 /// xtd.drawing.native
@@ -30,11 +30,11 @@ constexpr int32_t LJ_BEVEL = 1;
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
 
-constexpr int32_t LJ_ROUND = 2;
+constexpr xtd::int32 LJ_ROUND = 2;
 /// @brief Specifies a mitered join. This produces a sharp corner or a beveled corner, depending on whether the length of the miter exceeds the miter limit.
 /// @par Library
 /// xtd.drawing.native
 /// @ingroup xtd_drawing_native lj
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t LJ_MITER_CLIPPED = 3;
+constexpr xtd::int32 LJ_MITER_CLIPPED = 3;

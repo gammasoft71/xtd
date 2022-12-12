@@ -80,7 +80,7 @@ namespace xtd {
       static xtd::drawing::color dark_dark(const xtd::drawing::color& base_color);
       
       static void draw_button(const xtd::forms::control& control, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& rectangle, xtd::forms::button_state state);
-      static void draw_button(const xtd::forms::control& control, xtd::drawing::graphics& graphics, int32_t x, int32_t y, int32_t width, int32_t height, xtd::forms::button_state state);
+      static void draw_button(const xtd::forms::control& control, xtd::drawing::graphics& graphics, int32 x, int32 y, int32 width, int32 height, xtd::forms::button_state state);
       
       
       static void draw_border(const xtd::forms::control& control, xtd::drawing::graphics& graphics, xtd::forms::border_style border, xtd::forms::border_sides sides, const xtd::drawing::color& color, const xtd::drawing::rectangle& rect);
@@ -103,7 +103,7 @@ namespace xtd {
       /// @param width The width of the drawn image.
       /// @param height The height of the drawn image.
       /// @param image_layout One of the values of xtd::forms::image_layout (center , none, stretch, tile, or zoom).
-      static void draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, int32_t x, int32_t y, int32_t width, int32_t height, xtd::forms::image_layout image_layout);
+      static void draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, int32 x, int32 y, int32 width, int32 height, xtd::forms::image_layout image_layout);
       
       /// @brief Draws the specified image in a disabled state.
       /// @param xtd::drawing::graphics The Graphics to draw on.
@@ -112,7 +112,7 @@ namespace xtd {
       /// @param y The y-coordinate of the top left of the border image.
       /// @param brightness The brightness (between 0.0 and 1.0 for drawing image disabled.
       /// @remarks The background parameter is used to calculate the fill color of the disabled image so that it is always visible against the background
-      static void draw_image_disabled(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, int32_t x, int32_t y, float brightness);
+      static void draw_image_disabled(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, int32 x, int32 y, float brightness);
       /// @brief Draws the specified image in a disabled state.
       /// @param xtd::drawing::graphics The Graphics to draw on.
       /// @param image The xtd::drawing::image to draw.
@@ -120,7 +120,7 @@ namespace xtd {
       /// @param y The y-coordinate of the top left of the border image.
       /// @param background The xtd::drawing::color of the background behind the image.
       /// @remarks The background parameter is used to calculate the fill color of the disabled image so that it is always visible against the background
-      static void draw_image_disabled(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, int32_t x, int32_t y, const xtd::drawing::color& background);
+      static void draw_image_disabled(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, int32 x, int32 y, const xtd::drawing::color& background);
       /// @brief Draws the specified image in a disabled state.
       /// @param xtd::drawing::graphics The Graphics to draw on.
       /// @param image The xtd::drawing::image to draw.

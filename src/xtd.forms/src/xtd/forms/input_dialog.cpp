@@ -210,7 +210,7 @@ bool input_dialog::run_dialog(intptr_t owner) {
     return result;
   }
   application::raise_enter_thread_modal(event_args::empty);
-  auto result = native::input_dialog::run_dialog(owner, data_->text, data_->message, data_->value, static_cast<int32_t>(data_->character_casing), data_->multiline, data_->use_system_password_char, data_->word_wrap);
+  auto result = native::input_dialog::run_dialog(owner, data_->text, data_->message, data_->value, static_cast<int32>(data_->character_casing), data_->multiline, data_->use_system_password_char, data_->word_wrap);
   application::raise_leave_thread_modal(event_args::empty);
   return result;
 }
@@ -234,7 +234,7 @@ void input_dialog::run_sheet(intptr_t owner) {
       return;
     }
     application::raise_enter_thread_modal(event_args::empty);
-    native::input_dialog::run_sheet({*new __xtd_forms_common_dialog_closed_caller__(this), &__xtd_forms_common_dialog_closed_caller__::on_common_dialog_closed}, owner, data_->text, data_->message, data_->value, static_cast<int32_t>(data_->character_casing), data_->multiline, data_->use_system_password_char, data_->word_wrap);
+    native::input_dialog::run_sheet({*new __xtd_forms_common_dialog_closed_caller__(this), &__xtd_forms_common_dialog_closed_caller__::on_common_dialog_closed}, owner, data_->text, data_->message, data_->value, static_cast<int32>(data_->character_casing), data_->multiline, data_->use_system_password_char, data_->word_wrap);
     application::raise_leave_thread_modal(event_args::empty);
   }
 }

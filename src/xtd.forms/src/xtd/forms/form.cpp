@@ -698,7 +698,7 @@ void form::fill_in_create_params_border_icons(xtd::forms::create_params& cp) con
 }
 
 void form::fill_in_create_params_start_position(xtd::forms::create_params& cp) const {
-  static int32_t default_location = 0;
+  static int32 default_location = 0;
   if (default_location == 0)
     default_location = xtd::random().next(4, 20) * 10;
     
@@ -763,7 +763,7 @@ void form::wm_close(message& message) {
       hide();
     else {
       if (data_->dialog_result == forms::dialog_result::none) data_->dialog_result = forms::dialog_result::cancel;
-      native::form::end_dialog(handle(), static_cast<int32_t>(data_->dialog_result));
+      native::form::end_dialog(handle(), static_cast<int32>(data_->dialog_result));
       set_parent(data_->parent_before_show_dialog);
       set_state(state::modal, false);
       post_recreate_handle();

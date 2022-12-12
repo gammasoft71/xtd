@@ -91,7 +91,7 @@ namespace xtd {
         
         wxPoint GetClientAreaOrigin() const override {return {inner_margin, inner_margin + extra_inner_margin_up};}
         
-        void DoGetClientSize(int32_t* width, int32_t* height) const override {
+        void DoGetClientSize(int32* width, int32* height) const override {
           wxStaticBox::DoGetSize(width, height);
           *width = *width - GetClientAreaOrigin().x - inner_margin;
           *height = *height - GetClientAreaOrigin().y - inner_margin;
@@ -115,8 +115,8 @@ namespace xtd {
         void set_wx_evt(iwx_evt* wx_evt) {
           inner_panel->set_wx_evt(wx_evt);
         }
-       static constexpr int32_t inner_margin = 3;
-        static constexpr int32_t extra_inner_margin_up = 5;
+       static constexpr int32 inner_margin = 3;
+        static constexpr int32 extra_inner_margin_up = 5;
         wxInnerGroupBoxPanel* inner_panel = new wxInnerGroupBoxPanel(this, wxID_ANY, get_inner_box_position(), get_inner_box_size());
       };
 
@@ -139,22 +139,22 @@ namespace xtd {
           return {inner_margin + (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" ? 2 : 0), inner_margin + (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" ? 13 : 5)};
         }
         
-        void DoSetSize(int32_t x, int32_t y, int32_t width, int32_t height, int32_t sizeFlags = wxSIZE_AUTO) override {
+        void DoSetSize(int32 x, int32 y, int32 width, int32 height, int32 sizeFlags = wxSIZE_AUTO) override {
           wxPanel::DoSetSize(x, y, width, height, sizeFlags);
         }
         
-        void DoGetClientSize(int32_t* width, int32_t* height) const override {
+        void DoGetClientSize(int32* width, int32* height) const override {
           wxPanel::DoGetSize(width, height);
           *width = *width - GetClientAreaOrigin().x - inner_margin - (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" ? 2 : 0);
           *height = *height - GetClientAreaOrigin().y - inner_margin - (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" ? 2 : 0);
         }
         
-        void DoSetClientSize(int32_t width, int32_t height) override {
+        void DoSetClientSize(int32 width, int32 height) override {
           DoSetSize(GetPosition().x, GetPosition().y, width + GetClientAreaOrigin().x + inner_margin + (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" ? 2 : 0), height + GetClientAreaOrigin().y + inner_margin + (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" ? 2 : 0));
         }
         
       private:
-        static constexpr int32_t inner_margin = 3;
+        static constexpr int32 inner_margin = 3;
       };
       
       class wx_group_box : public control_handler {

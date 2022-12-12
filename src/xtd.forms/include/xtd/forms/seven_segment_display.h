@@ -89,12 +89,12 @@ namespace xtd {
       virtual seven_segment_display& segment_style(forms::segment_style value);
       
       /// @brief Gets thickness of segment.
-      /// @return A int32_t that represent the segment thickness.
-      virtual int32_t thickness() const noexcept;
+      /// @return A int32 that represent the segment thickness.
+      virtual int32 thickness() const noexcept;
       /// @brief Sets thickness of segment.
-      /// @param value A int32_t that represent the segment thickness.
+      /// @param value A int32 that represent the segment thickness.
       /// @return Current seven_segment_display.
-      virtual seven_segment_display& thickness(int32_t value);
+      virtual seven_segment_display& thickness(int32 value);
       
       /// @brief Gets seven_segment_display value.
       /// @return A xtd::forms::segments combination that represent seven_segment_display.
@@ -139,9 +139,9 @@ namespace xtd {
       
       drawing::size measure_control() const noexcept override;
       
-      void set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) override;
+      void set_bounds_core(int32 x, int32 y, int32 width, int32 height, bounds_specified specified) override;
       
-      void set_client_size_core(int32_t width, int32_t height) override;
+      void set_client_size_core(int32 width, int32 height) override;
       
       /// @brief Draw all background digit on specified graphics.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
@@ -199,7 +199,7 @@ namespace xtd {
         double back_segment_opacity = 0.95;
         forms::segment_style segment_style = forms::segment_style::standard;
         bool show_back_segment = true;
-        std::optional<int32_t> thickness;
+        std::optional<int32> thickness;
         forms::segments value = forms::segments::none;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();

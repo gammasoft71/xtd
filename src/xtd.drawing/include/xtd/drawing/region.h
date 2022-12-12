@@ -180,7 +180,7 @@ namespace xtd {
       /// @param g A xtd::drawing::graphics that represents a graphics context.
       /// @return true when any portion of the specified rectangle is contained within this xtd::drawing::region; otherwise, false.
       /// @remarks The current transformation of the graphics context is used to compute the region interior and the rectangle coordinates on the drawing surface.
-      bool is_visible(int32_t x, int32_t y, int32_t width, int32_t height, const xtd::drawing::graphics& g) const noexcept;
+      bool is_visible(int32 x, int32 y, int32 width, int32 height, const xtd::drawing::graphics& g) const noexcept;
       /// @brief Tests whether any portion of the specified xtd::drawing::rectangle_f structure is contained within this xtd::drawing::region.
       /// @param rect The xtd::drawing::rectangle_f structure to test.
       /// @return true when any portion of rect is contained within this xtd::drawing::region; otherwise, false.
@@ -202,7 +202,7 @@ namespace xtd {
       /// @param width The width of the rectangle to test.
       /// @param height The height of the rectangle to test.
       /// @return true when any portion of the specified rectangle is contained within this xtd::drawing::region; otherwise, false.
-      bool is_visible(int32_t x, int32_t y, int32_t width, int32_t height) const noexcept;
+      bool is_visible(int32 x, int32 y, int32 width, int32 height) const noexcept;
       /// @brief Tests whether the specified PointF structure is contained within this xtd::drawing::region when drawn using the specified xtd::drawing::graphics.
       /// @param pt The PointF structure to test.
       /// @param g A xtd::drawing::graphics that represents a graphics context.
@@ -228,7 +228,7 @@ namespace xtd {
       /// @param g A xtd::drawing::graphics that represents a graphics context.
       /// @return true when the specified point is contained within this xtd::drawing::region; otherwise, false.
       /// @remarks The current transformation of the graphics context is used to compute the region interior and the rectangle coordinates on the drawing surface.
-      bool is_visible(int32_t x, int32_t y, const xtd::drawing::graphics& g) const noexcept;
+      bool is_visible(int32 x, int32 y, const xtd::drawing::graphics& g) const noexcept;
       /// @brief Tests whether the specified PointF structure is contained within this xtd::drawing::region.
       /// @param pt The PointF structure to test.
       /// @return true when point is contained within this xtd::drawing::region; otherwise, false.
@@ -246,7 +246,7 @@ namespace xtd {
       /// @param x The x-coordinate of the point to test.
       /// @param y The y-coordinate of the point to test.
       /// @return true when the specified point is contained within this xtd::drawing::region; otherwise, false.
-      bool is_visible(int32_t x, int32_t y) const noexcept;
+      bool is_visible(int32 x, int32 y) const noexcept;
       
       /// @brief Initializes this xtd::drawing::region to an empty interior.
       void make_empty();
@@ -287,7 +287,7 @@ namespace xtd {
       /// @brief Offsets the coordinates of this xtd::drawing::region by the specified amount.
       /// @param dx The amount to offset this xtd::drawing::region horizontally.
       /// @param dy The amount to offset this xtd::drawing::region vertically.
-      void translate(int32_t dx, int32_t dy) noexcept;
+      void translate(int32 dx, int32 dy) noexcept;
       /// @brief Offsets the coordinates of this xtd::drawing::region by the specified amount.
       /// @param dx The amount to offset this xtd::drawing::region horizontally.
       /// @param dy The amount to offset this xtd::drawing::region vertically.

@@ -34,7 +34,7 @@ public:
   
   bool is_horizontal() const {return dock() == dock_style::left || dock() == dock_style::right;}
   
-  void min_width(int32_t value) {
+  void min_width(int32 value) {
     data_->min_width = value;
   }
   
@@ -108,14 +108,14 @@ private:
       text_rect.x(image_rect.x() + image_rect.width());
       text_rect.width(text_rect.width() - image_rect.width());
     } else if (data_->alignment == horizontal_alignment::center) {
-      auto image_and_text_width = image().width() + as<int32_t>(e.graphics().measure_string(text(), current_style_sheet.font(), xtd::drawing::size_f(0.0f, 0.0f), xtd::drawing::string_format(xtd::drawing::string_format_flags::measure_trailing_spaces)).width());
+      auto image_and_text_width = image().width() + as<int32>(e.graphics().measure_string(text(), current_style_sheet.font(), xtd::drawing::size_f(0.0f, 0.0f), xtd::drawing::string_format(xtd::drawing::string_format_flags::measure_trailing_spaces)).width());
       image_rect.x(content_rectangle.width() / 2 - image_and_text_width / 2);
       image_rect.width(image().width());
       image_rect.height(image().height());
       text_rect.x(image_rect.x() + image_rect.width());
       text_rect.width(text_rect.width() - image_rect.width());
     } else if (data_->alignment == horizontal_alignment::right) {
-      auto text_width = as<int32_t>(e.graphics().measure_string(text(), current_style_sheet.font(), xtd::drawing::size_f(0.0f, 0.0f), xtd::drawing::string_format(xtd::drawing::string_format_flags::measure_trailing_spaces)).width());
+      auto text_width = as<int32>(e.graphics().measure_string(text(), current_style_sheet.font(), xtd::drawing::size_f(0.0f, 0.0f), xtd::drawing::string_format(xtd::drawing::string_format_flags::measure_trailing_spaces)).width());
       text_rect.x(text_rect.x() + content_rectangle.right() - text_width);
       text_rect.width(text_rect.width() - text_width);
       image_rect.x(text_rect.x() - image().width());
@@ -140,7 +140,7 @@ private:
   struct data {
     const xtd::forms::control* control = nullptr;
     xtd::forms::horizontal_alignment alignment = xtd::forms::horizontal_alignment::left;
-    int32_t min_width = 0;
+    int32 min_width = 0;
     std::optional<status_bar_panel_ref> status_bar_panel;
     xtd::forms::status_bar_panel_style style = xtd::forms::status_bar_panel_style::text;
     xtd::forms::status_bar_panel_border_style status_bar_panel_border_style = xtd::forms::status_bar_panel_border_style::none;

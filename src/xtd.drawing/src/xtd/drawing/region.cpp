@@ -137,7 +137,7 @@ bool region::is_visible(const xtd::drawing::rectangle& rect, const xtd::drawing:
   return is_visible(as<float>(rect.x()), as<float>(rect.y()), as<float>(rect.width()), as<float>(rect.height()), g);
 }
 
-bool region::is_visible(int32_t x, int32_t y, int32_t width, int32_t height, const xtd::drawing::graphics& g) const noexcept {
+bool region::is_visible(int32 x, int32 y, int32 width, int32 height, const xtd::drawing::graphics& g) const noexcept {
   return is_visible(as<float>(x), as<float>(y), as<float>(width), as<float>(height), g);
 }
 
@@ -153,7 +153,7 @@ bool region::is_visible(const xtd::drawing::rectangle& rect) const noexcept {
   return is_visible(as<float>(rect.x()), as<float>(rect.y()), as<float>(rect.width()), as<float>(rect.height()));
 }
 
-bool region::is_visible(int32_t x, int32_t y, int32_t width, int32_t height) const noexcept {
+bool region::is_visible(int32 x, int32 y, int32 width, int32 height) const noexcept {
   return is_visible(as<float>(x), as<float>(y), as<float>(width), as<float>(height));
 }
 
@@ -169,7 +169,7 @@ bool region::is_visible(xtd::drawing::point pt, const xtd::drawing::graphics& g)
   return is_visible(as<float>(pt.x()), as<float>(pt.y()), g);
 }
 
-bool region::is_visible(int32_t x, int32_t y, const xtd::drawing::graphics& g) const noexcept {
+bool region::is_visible(int32 x, int32 y, const xtd::drawing::graphics& g) const noexcept {
   return is_visible(as<float>(x), as<float>(y), g);
 }
 
@@ -185,7 +185,7 @@ bool region::is_visible(xtd::drawing::point pt) const noexcept {
   return is_visible(as<float>(pt.x()), as<float>(pt.y()));
 }
 
-bool region::is_visible(int32_t x, int32_t y) const noexcept {
+bool region::is_visible(int32 x, int32 y) const noexcept {
   return is_visible(as<float>(x), as<float>(y));
 }
 
@@ -233,7 +233,7 @@ void region::release_hrgn(intptr_t region_handle) {
   native::region::release_hrgn(region_handle);
 }
 
-void region::translate(int32_t dx, int32_t dy) noexcept {
+void region::translate(int32 dx, int32 dy) noexcept {
   translate(as<float>(dx), as<float>(dy));
 }
 

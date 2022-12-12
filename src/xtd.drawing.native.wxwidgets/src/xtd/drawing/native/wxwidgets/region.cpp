@@ -11,6 +11,7 @@
 #include <xtd/box.h>
 
 using namespace std;
+using namespace xtd;
 using namespace xtd::drawing::native;
 
 namespace {
@@ -18,7 +19,7 @@ namespace {
   static wxBitmap create_graphics_path_bitmap(wxGraphicsPath& path) noexcept {
     double x = .0f, y = .0f, width = .0f, height = .0f;
     path.GetBox(&x, &y, &width, &height);
-    wxBitmap bitmap(static_cast<int32_t>(x + width), static_cast<int32_t>(y + height));
+    wxBitmap bitmap(static_cast<int32>(x + width), static_cast<int32>(y + height));
     auto graphics = wxGraphicsContext::Create(wxMemoryDC(bitmap));
     graphics->SetPen(graphics->CreatePen(wxNullPen));
     graphics->SetBrush(graphics->CreateBrush(wxBrush((mask_color))));
@@ -31,7 +32,7 @@ namespace {
 
 intptr_t region::create_from_rect(float x, float y, float width, float height) {
   toolkit::initialize(); // Must be first
-  return reinterpret_cast<intptr_t>(new wxRegion(as<int32_t>(x), as<int32_t>(y), as<int32_t>(width), as<int32_t>(height)));
+  return reinterpret_cast<intptr_t>(new wxRegion(as<int32>(x), as<int32>(y), as<int32>(width), as<int32>(height)));
 }
 
 intptr_t region::create_from_graphics_path(intptr_t path) {
@@ -67,10 +68,10 @@ intptr_t region::from_hrgn(intptr_t hrgn) {
 
 void region::get_bounds(intptr_t handle, float& x, float& y, float& width, float& height) {
   auto wx_region = reinterpret_cast<wxRegion*>(handle);
-  x = as<int32_t>(wx_region->GetBox().x);
-  y = as<int32_t>(wx_region->GetBox().y);
-  width = as<int32_t>(wx_region->GetBox().width);
-  height = as<int32_t>(wx_region->GetBox().height);
+  x = as<int32>(wx_region->GetBox().x);
+  y = as<int32>(wx_region->GetBox().y);
+  width = as<int32>(wx_region->GetBox().width);
+  height = as<int32>(wx_region->GetBox().height);
 }
 
 intptr_t region::get_hrgn(intptr_t handle, intptr_t grpahics) {
@@ -99,28 +100,28 @@ bool region::is_empty(intptr_t handle, intptr_t grpahics) {
 
 bool region::is_infinite(intptr_t handle) {
   auto bounds = reinterpret_cast<wxRegion*>(handle)->GetBox();
-  return bounds.x == as<int32_t>(single_object::min_value) && bounds.y == as<int32_t>(single_object::min_value) && bounds.width == as<int32_t>(single_object::max_value) && bounds.height == as<int32_t>(single_object::max_value);
+  return bounds.x == as<int32>(single_object::min_value) && bounds.y == as<int32>(single_object::min_value) && bounds.width == as<int32>(single_object::max_value) && bounds.height == as<int32>(single_object::max_value);
 }
 
 bool region::is_infinite(intptr_t handle, intptr_t grpahics) {
   auto bounds = reinterpret_cast<wxRegion*>(handle)->GetBox();
-  return bounds.x == as<int32_t>(single_object::min_value) && bounds.y == as<int32_t>(single_object::min_value) && bounds.width == as<int32_t>(single_object::max_value) && bounds.height == as<int32_t>(single_object::max_value);
+  return bounds.x == as<int32>(single_object::min_value) && bounds.y == as<int32>(single_object::min_value) && bounds.width == as<int32>(single_object::max_value) && bounds.height == as<int32>(single_object::max_value);
 }
 
 bool region::is_visible(intptr_t handle, float x, float y) {
-  return reinterpret_cast<wxRegion*>(handle)->Contains(as<int32_t>(x), as<int32_t>(y)) == wxInRegion;
+  return reinterpret_cast<wxRegion*>(handle)->Contains(as<int32>(x), as<int32>(y)) == wxInRegion;
 }
 
 bool region::is_visible(intptr_t handle, float x, float y, intptr_t grpahics) {
-  return reinterpret_cast<wxRegion*>(handle)->Contains(as<int32_t>(x), as<int32_t>(y)) == wxInRegion;
+  return reinterpret_cast<wxRegion*>(handle)->Contains(as<int32>(x), as<int32>(y)) == wxInRegion;
 }
 
 bool region::is_visible(intptr_t handle, float x, float y, float width, float height) {
-  return reinterpret_cast<wxRegion*>(handle)->Contains(as<int32_t>(x), as<int32_t>(y), as<int32_t>(width), as<int32_t>(height)) != wxOutRegion;
+  return reinterpret_cast<wxRegion*>(handle)->Contains(as<int32>(x), as<int32>(y), as<int32>(width), as<int32>(height)) != wxOutRegion;
 }
 
 bool region::is_visible(intptr_t handle, float x, float y, float width, float height, intptr_t grpahics) {
-  return reinterpret_cast<wxRegion*>(handle)->Contains(as<int32_t>(x), as<int32_t>(y), as<int32_t>(width), as<int32_t>(height)) != wxOutRegion;
+  return reinterpret_cast<wxRegion*>(handle)->Contains(as<int32>(x), as<int32>(y), as<int32>(width), as<int32>(height)) != wxOutRegion;
 }
 
 void region::make_empty(intptr_t handle) {
@@ -144,5 +145,5 @@ void region::release_hrgn(intptr_t region_handle) {
 }
 
 void region::translate(intptr_t handle, float dx, float dy) {
-  reinterpret_cast<wxRegion*>(handle)->Offset(as<int32_t>(dx), as<int32_t>(dy));
+  reinterpret_cast<wxRegion*>(handle)->Offset(as<int32>(dx), as<int32>(dy));
 }

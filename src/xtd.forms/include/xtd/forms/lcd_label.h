@@ -97,13 +97,13 @@ namespace xtd {
       lcd_label& show_back_digit(bool value);
       
       /// @brief Gets the digit spacing.
-      /// @return A int32_t represent the digit spacing.
-      int32_t digit_spacing() const noexcept;
+      /// @return A int32 represent the digit spacing.
+      int32 digit_spacing() const noexcept;
       /// @brief Sets the digit spacing.
-      /// @param value A int32_t represent the digit spacing.
+      /// @param value A int32 represent the digit spacing.
       /// @return Current lcd_label.
       /// @exception xtd::argument_out_of_range_exception if value less than 0.
-      lcd_label& digit_spacing(int32_t value);
+      lcd_label& digit_spacing(int32 value);
       
       /// @brief Gets lcd style.
       /// @return One of xtd::forms::lcd_style values. The default is xtd::forms::lcd_style::seven_segment_display.
@@ -130,12 +130,12 @@ namespace xtd {
       lcd_label& dot_matrix_style(forms::dot_matrix_style value);
       
       /// @brief Gets thickness of lcd.
-      /// @return A int32_t that represent the lcd thickness.
-      int32_t thickness() const noexcept;
+      /// @return A int32 that represent the lcd thickness.
+      int32 thickness() const noexcept;
       /// @brief Sets thickness of lcd.
-      /// @param value A int32_t that represent the lcd thickness.
+      /// @param value A int32 that represent the lcd thickness.
       /// @return Current lcd_label.
-      lcd_label& thickness(int32_t value);
+      lcd_label& thickness(int32 value);
       
       using control::text;
       /// @brief Sets the text associated with this control.
@@ -178,12 +178,12 @@ namespace xtd {
         bool show_back_digit = true;
         std::optional<xtd::drawing::color> back_digit_color;
         double back_digit_opacity = 0.95;
-        std::optional<int32_t> digit_spacing;
+        std::optional<int32> digit_spacing;
         forms::lcd_style lcd_style = forms::lcd_style::seven_segment_display;
         forms::segment_style segment_style = forms::segment_style::standard;
         forms::dot_matrix_style dot_matrix_style = forms::dot_matrix_style::standard;
         std::vector<std::shared_ptr<idigit>> digits;
-        std::optional<int32_t> thickness;
+        std::optional<int32> thickness;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

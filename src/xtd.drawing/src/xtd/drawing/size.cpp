@@ -1,6 +1,7 @@
 #include "../../../include/xtd/drawing/point.h"
 #include "../../../include/xtd/drawing/size.h"
 
+using namespace xtd;
 using namespace xtd::drawing;
 
 const size size::empty;
@@ -8,18 +9,18 @@ const size size::empty;
 size::size(const point& point) noexcept : width_(point.x()), height_(point.y()) {
 }
 
-size::size(int32_t width, int32_t height) noexcept : width_(width), height_(height) {
+size::size(int32 width, int32 height) noexcept : width_(width), height_(height) {
 }
 
 size::operator size_f() const noexcept {
   return size_f(static_cast<float>(width_), static_cast<float>(height_));
 }
 
-int32_t size::height() const noexcept {
+int32 size::height() const noexcept {
   return height_;
 }
 
-void size::height(int32_t value) noexcept {
+void size::height(int32 value) noexcept {
   height_ = value;
 }
 
@@ -27,11 +28,11 @@ bool size::is_empty() const noexcept {
   return *this == size::empty;
 }
 
-int32_t size::width() const noexcept {
+int32 size::width() const noexcept {
   return width_;
 }
 
-void size::width(int32_t value) noexcept {
+void size::width(int32 value) noexcept {
   width_ = value;
 }
 
@@ -40,7 +41,7 @@ size size::add(const size& size1, const size& size2) noexcept {
 }
 
 size size::ceiling(const size_f& value) noexcept {
-  return {int32_t(std::ceil(value.width())), int32_t(std::ceil(value.height()))};
+  return {int32(std::ceil(value.width())), int32(std::ceil(value.height()))};
 }
 
 bool size::equals(const xtd::drawing::size& value) const noexcept {
@@ -48,11 +49,11 @@ bool size::equals(const xtd::drawing::size& value) const noexcept {
 }
 
 size size::round(const size_f& value) noexcept {
-  return {int32_t(std::round(value.width())), int32_t(std::round(value.height()))};
+  return {int32(std::round(value.width())), int32(std::round(value.height()))};
 }
 
 size size::truncate(const size_f& value)  noexcept {
-  return {int32_t(std::trunc(value.width())), int32_t(std::trunc(value.height()))};
+  return {int32(std::trunc(value.width())), int32(std::trunc(value.height()))};
 }
 
 size size::subtract(const size& size1, const size& size2) noexcept {

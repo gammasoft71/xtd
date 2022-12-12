@@ -26,20 +26,20 @@ namespace xtd {
     namespace native {
       class wxDrawString {
       public:
-        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float angle, wxAlignment align, int32_t hotKeyPrefix, int32_t trimming) {
+        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float angle, wxAlignment align, int32 hotKeyPrefix, int32 trimming) {
           DrawString(handle, text, font, brush, x, y, 0.0f, 0.0f, angle, align, hotKeyPrefix, trimming, 0);
         }
         
-        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float widthF, float heightF, float angle, wxAlignment align, int32_t hotKeyPrefix, int32_t trimming, int32_t stringFormats) {
-          auto width = static_cast<int32_t>(std::floor(widthF));
-          auto height = static_cast<int32_t>(std::floor(heightF));
+        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float widthF, float heightF, float angle, wxAlignment align, int32 hotKeyPrefix, int32 trimming, int32 stringFormats) {
+          auto width = static_cast<int32>(std::floor(widthF));
+          auto height = static_cast<int32>(std::floor(heightF));
           auto noClip = (stringFormats & SF_NO_CLIP) == SF_NO_CLIP || (width == 0 && height == 0); // && angle == 0;
           auto directionVertical = (stringFormats & SF_VERTICAL) == SF_VERTICAL;
           auto measureTrailingSpaces = (stringFormats & SF_MEASURE_TRAILING_SPACES) == SF_MEASURE_TRAILING_SPACES;
           auto rightToLeft = (stringFormats & SF_RIGHT_TO_LEFT) == SF_RIGHT_TO_LEFT;
 
           if (rightToLeft) {
-            auto newAlign = static_cast<int32_t>(align);
+            auto newAlign = static_cast<int32>(align);
             if ((align & wxALIGN_RIGHT) == wxALIGN_RIGHT) {
               newAlign &= ~wxALIGN_RIGHT;
               newAlign |= wxALIGN_LEFT;
@@ -89,7 +89,7 @@ namespace xtd {
           }
         }
         
-        static void MeasureString(wxDC& dc, const wxString& text, const wxFont& font, int32_t& width, int32_t& height, bool measureTrailingSpaces) {
+        static void MeasureString(wxDC& dc, const wxString& text, const wxFont& font, int32& width, int32& height, bool measureTrailingSpaces) {
           auto widthF = 0.0f;
           auto heightF = 0.0f;
           MeasureString(dc, text, font, widthF, heightF, measureTrailingSpaces);
@@ -97,11 +97,11 @@ namespace xtd {
           height = static_cast<float>(std::ceil(heightF));
         }
 
-        static wxString FormatString(wxDC& dc, const wxString& string, float width, int32_t hotKeyPrefix, int32_t trimming) {
+        static wxString FormatString(wxDC& dc, const wxString& string, float width, int32 hotKeyPrefix, int32 trimming) {
           return TrimString(dc, hotKeyPrefix != HKP_NONE ? RemoveHotKeyPrefixLocations(string) : string, dc.GetFont(), width, trimming);
         }
 
-        static wxString TrimString(wxDC& dc, const wxString& string, const wxFont& font, float width, int32_t trimming) {
+        static wxString TrimString(wxDC& dc, const wxString& string, const wxFont& font, float width, int32 trimming) {
           dc.SetFont(font);
           auto strings = wxSplit(string, '\n');
           for (auto& line : strings) {
@@ -160,8 +160,8 @@ namespace xtd {
           return result + xtd::io::path::directory_separator_char() + paths[paths.size() - 1];
         }
 
-        static void DrawStringWithSolidBrush(wxDC& dc, const wxString& string, const wxFont& font, const wx_brush& brush, int32_t x, int32_t y, int32_t width, int32_t height, float angle, wxAlignment align, int32_t hotKeyPrefix, bool noClip) {
-          if (!noClip) dc.SetClippingRegion({static_cast<int32_t>(x), static_cast<int32_t>(y)}, {static_cast<int32_t>(width), static_cast<int32_t>(height)});
+        static void DrawStringWithSolidBrush(wxDC& dc, const wxString& string, const wxFont& font, const wx_brush& brush, int32 x, int32 y, int32 width, int32 height, float angle, wxAlignment align, int32 hotKeyPrefix, bool noClip) {
+          if (!noClip) dc.SetClippingRegion({static_cast<int32>(x), static_cast<int32>(y)}, {static_cast<int32>(width), static_cast<int32>(height)});
           dc.SetTextForeground(brush.get_solid_brush().color);
           auto hotKeyPrefixLocation = GetFirstHotKeyPrefixLocations(string);
           if (angle == 0) dc.DrawLabel(string, wxRect(x, y, width, height), align, hotKeyPrefix == HKP_SHOW ? hotKeyPrefixLocation : -1);
@@ -169,15 +169,15 @@ namespace xtd {
           if (!noClip) dc.DestroyClippingRegion();
         }
 
-        static void DrawStringWithGradientBrush(intptr_t handle, const wxString& string, const wxFont& font, const wx_brush& brush, int32_t x, int32_t y, int32_t width, int32_t height, float angle, wxAlignment align, int32_t hotKeyPrefix, bool noClip) {
+        static void DrawStringWithGradientBrush(intptr_t handle, const wxString& string, const wxFont& font, const wx_brush& brush, int32 x, int32 y, int32 width, int32 height, float angle, wxAlignment align, int32 hotKeyPrefix, bool noClip) {
           auto maxSize = math::max(width, height);
           wxImage image(x + maxSize, y + maxSize);
           if (brush.is_conical_gradiant_brush())
             image = wxConicalGradient::CreateBitmap(wxSize(maxSize, maxSize), brush.get_conical_gradiant_brush().colors, brush.get_conical_gradiant_brush().center_point, brush.get_conical_gradiant_brush().angle).ConvertToImage();
           else {
             image.InitAlpha();
-            for (auto y1 = 0; y1 < static_cast<int32_t>(maxSize + y); y1++)
-              for (auto x1 = 0; x1 < static_cast<int32_t>(maxSize + x); x1++)
+            for (auto y1 = 0; y1 < static_cast<int32>(maxSize + y); y1++)
+              for (auto x1 = 0; x1 < static_cast<int32>(maxSize + x); x1++)
                 image.SetAlpha(x1, y1, 0);
             wxBitmap bitmap(image);
             auto bitmapGraphics = wxGraphicsContext::Create(wxMemoryDC(bitmap));
@@ -201,7 +201,7 @@ namespace xtd {
           if (!noClip) graphics.ResetClip();
         }
         
-        static wxArrayString FormatString(wxDC& dc, const wxArrayString& strings, int32_t width, int32_t height, int32_t hotKeyPrefix, int32_t trimming, bool directionVertical) {
+        static wxArrayString FormatString(wxDC& dc, const wxArrayString& strings, int32 width, int32 height, int32 hotKeyPrefix, int32 trimming, bool directionVertical) {
           if (directionVertical) {
             std::swap(width, height);
             height = std::abs(height);
@@ -212,21 +212,21 @@ namespace xtd {
           return results;
         }
         
-        static int32_t GetFirstHotKeyPrefixLocations(const wxString& str) {
+        static int32 GetFirstHotKeyPrefixLocations(const wxString& str) {
           if (str.IsEmpty()) return -1;
           for (auto index = 0U; index < str.size() - 1; index++)
-            if (str[index] == '&' && str[index + 1] != '&') return static_cast<int32_t>(index);
+            if (str[index] == '&' && str[index + 1] != '&') return static_cast<int32>(index);
           return -1;
         }
         
-        static int32_t GetTextHeight(wxDC& dc, const wxString& str, const wxFont& font) noexcept {
+        static int32 GetTextHeight(wxDC& dc, const wxString& str, const wxFont& font) noexcept {
           auto width = 0;
           auto height = 0;
           MeasureString(dc, str, font, width, height, true);
           return height;
         }
 
-        static int32_t GetTextWidth(wxDC& dc, const wxString& str, const wxFont& font, bool measureTrailingSpaces) noexcept {
+        static int32 GetTextWidth(wxDC& dc, const wxString& str, const wxFont& font, bool measureTrailingSpaces) noexcept {
           auto width = 0;
           auto height = 0;
           MeasureString(dc, str, font, width, height, measureTrailingSpaces);
@@ -242,7 +242,7 @@ namespace xtd {
           return result;
         }
 
-        static wxString ToString(wxDC& dc, const wxArrayString& strings, const wxFont& font, int32_t width, int32_t height, bool lineLimit, bool directionVertical) {
+        static wxString ToString(wxDC& dc, const wxArrayString& strings, const wxFont& font, int32 width, int32 height, bool lineLimit, bool directionVertical) {
           wxString result;
           if (directionVertical) {
             std::swap(width, height);
@@ -256,7 +256,7 @@ namespace xtd {
           return result;
         }
 
-        static wxArrayString WrapText(wxDC& dc, const wxString& string, const wxFont& font, int32_t width, int32_t height, bool directionVertical, bool measureTrailingSpaces) noexcept {
+        static wxArrayString WrapText(wxDC& dc, const wxString& string, const wxFont& font, int32 width, int32 height, bool directionVertical, bool measureTrailingSpaces) noexcept {
           if (directionVertical) std::swap(width, height);
           auto strings = wxSplit(string, '\n');
           wxArrayString results;

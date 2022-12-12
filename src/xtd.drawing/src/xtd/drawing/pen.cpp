@@ -182,9 +182,9 @@ xtd::ustring pen::to_string() const noexcept {
 void pen::recreate_handle() {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::pen::destroy(data_->handle_);
   data_->handle_ = native::pen::create();
-  native::pen::end_cap(data_->handle_, static_cast<int32_t>(data_->end_cap));
-  native::pen::line_join(data_->handle_, static_cast<int32_t>(data_->line_join));
-  native::pen::start_cap(data_->handle_, static_cast<int32_t>(data_->start_cap));
+  native::pen::end_cap(data_->handle_, static_cast<int32>(data_->end_cap));
+  native::pen::line_join(data_->handle_, static_cast<int32>(data_->line_join));
+  native::pen::start_cap(data_->handle_, static_cast<int32>(data_->start_cap));
   native::pen::miter_limit(data_->handle_, data_->miter_limit);
   
   vector<float> dashes;

@@ -23,7 +23,7 @@ background_image::background_image(const vector<color>& colors) : image_type_(st
   if (colors.size() < 2U) throw argument_exception(csf_);
 }
 
-background_image::background_image(const vector<color>& colors, int32_t angle) : image_type_(style_sheets::image_type::linear_gradient), colors_(colors), angle_((angle % 360) < 0 ? 360 + (angle % 360) : (angle % 360)) {
+background_image::background_image(const vector<color>& colors, int32 angle) : image_type_(style_sheets::image_type::linear_gradient), colors_(colors), angle_((angle % 360) < 0 ? 360 + (angle % 360) : (angle % 360)) {
   if (colors.size() < 2U) throw argument_exception(csf_);
 }
 
@@ -32,7 +32,7 @@ background_image::background_image(style_sheets::image_type image_type, const ve
   if (image_type != style_sheets::image_type::linear_gradient) throw not_supported_exception(csf_);
 }
 
-background_image::background_image(style_sheets::image_type image_type, const vector<color>& colors, int32_t angle) : image_type_(image_type), colors_(colors), angle_((angle % 360) < 0 ? 360 + (angle % 360) : (angle % 360)) {
+background_image::background_image(style_sheets::image_type image_type, const vector<color>& colors, int32 angle) : image_type_(image_type), colors_(colors), angle_((angle % 360) < 0 ? 360 + (angle % 360) : (angle % 360)) {
   if (colors.size() < 2U) throw argument_exception(csf_);
   if (image_type != style_sheets::image_type::linear_gradient) throw not_supported_exception(csf_);
 }
@@ -41,11 +41,11 @@ background_image::background_image(const std::initializer_list<xtd::drawing::col
   if (colors.size() < 2U) throw argument_exception(csf_);
 }
 
-int32_t background_image::angle() const noexcept {
+int32 background_image::angle() const noexcept {
   return angle_;
 }
 
-void background_image::angle(int32_t value) noexcept {
+void background_image::angle(int32 value) noexcept {
   angle_ = value;
 }
 

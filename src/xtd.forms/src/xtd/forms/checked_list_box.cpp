@@ -47,7 +47,7 @@ forms::check_state checked_list_box::item::check_state() const {
   return check_state_;
 }
 
-int32_t checked_list_box::item::compare_to(const item& value) const noexcept {
+int32 checked_list_box::item::compare_to(const item& value) const noexcept {
   return list_box::item::compare_to(value);
 }
 
@@ -234,7 +234,7 @@ void checked_list_box::wnd_proc(message& message) {
 }
 
 void checked_list_box::on_items_item_added(size_t pos, const item & item) {
-  if (is_handle_created()) native::checked_list_box::insert_item(handle(), pos, item.value(), static_cast<int32_t>(item.check_state()));
+  if (is_handle_created()) native::checked_list_box::insert_item(handle(), pos, item.value(), static_cast<int32>(item.check_state()));
   checked_list_box::item selected_item;
   if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
   this->selected_item(selected_item);
@@ -252,7 +252,7 @@ void checked_list_box::on_items_item_removed(size_t pos, const item & item)  {
 }
 
 void checked_list_box::on_items_item_updated(size_t pos, const item & item) {
-  if (is_handle_created()) native::checked_list_box::update_item(handle(), pos, item.value(), static_cast<int32_t>(item.check_state()));
+  if (is_handle_created()) native::checked_list_box::update_item(handle(), pos, item.value(), static_cast<int32>(item.check_state()));
   checked_list_box::item selected_item;
   if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
   this->selected_item(selected_item);
@@ -285,7 +285,7 @@ void checked_list_box::wm_command_control(message& message) {
     if (data_->items[selected_index].check_state() != check_state) {
       item_check_event_args item_check_event_args(selected_index, check_state, data_->items[selected_index].check_state());
       on_item_check(item_check_event_args);
-      if (item_check_event_args.new_value() != check_state) native::checked_list_box::check_state(handle(), selected_index, static_cast<int32_t>(item_check_event_args.new_value()));
+      if (item_check_event_args.new_value() != check_state) native::checked_list_box::check_state(handle(), selected_index, static_cast<int32>(item_check_event_args.new_value()));
       set_item_check_state(selected_index, item_check_event_args.new_value());
     }
   }

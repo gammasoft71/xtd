@@ -58,7 +58,7 @@ namespace xtd {
         /// @param options A bitwise progress dialog flags value.
         /// @return The created progress dialog window handle.
         /// @warning Internal use only
-        static intptr_t create(intptr_t hwnd, const xtd::ustring& text, const xtd::ustring& message, const std::vector<xtd::ustring>& informations, size_t marquee_animation_speed, int32_t minimum, int32_t maximum, int32_t value, size_t options);
+        static intptr_t create(intptr_t hwnd, const xtd::ustring& text, const xtd::ustring& message, const std::vector<xtd::ustring>& informations, size_t marquee_animation_speed, int32 minimum, int32 maximum, int32 value, size_t options);
         /// @brief Destroys progress dialog.
         /// @param dialog Progress dialog window handle to destroy.
         /// @warning Internal use only
@@ -77,7 +77,7 @@ namespace xtd {
         /// @param dialog Progress dialog window handle.
         /// @param maximum The maximum value of the range.
         /// @warning Internal use only
-        static void maximum(intptr_t dialog, int32_t maximum);
+        static void maximum(intptr_t dialog, int32 maximum);
         /// @brief Sets the message text.
         /// @param dialog Progress dialog window handle.
         /// @param description The message text.
@@ -87,7 +87,7 @@ namespace xtd {
         /// @param dialog Progress dialog window handle.
         /// @param minimum The minimum value of the range.
         /// @warning Internal use only
-        static void minimum(intptr_t dialog, int32_t minimum);
+        static void minimum(intptr_t dialog, int32 minimum);
         /// @brief Resume progress dialog box after Abort button clicked.
         /// @param dialog Progress dialog window handle.
         /// @warning Internal use only
@@ -109,7 +109,7 @@ namespace xtd {
         /// @param dialog Progress dialog window handle.
         /// @param value The position within the range of the progress bar. The default is 0.
         /// @warning Internal use only
-        static void value(intptr_t dialog, int32_t value);
+        static void value(intptr_t dialog, int32 value);
         /// @}
       };
     }

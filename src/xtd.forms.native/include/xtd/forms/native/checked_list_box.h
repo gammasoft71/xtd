@@ -47,13 +47,13 @@ namespace xtd {
         /// @param index The item index to set the check state for.
         /// @param check_state The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
-        static void check_state(intptr_t control, size_t index, int32_t check_state);
+        static void check_state(intptr_t control, size_t index, int32 check_state);
         /// @brief Gets check state from specified item index.
         /// @param control Checked list box window handle.
         /// @param index The item index to set the check state for.
         /// @return The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
-        static int32_t check_state(intptr_t control, size_t index);
+        static int32 check_state(intptr_t control, size_t index);
         /// @brief Deletes specified item index.
         /// @param control Checked list box window handle.
         /// @param index The item index to delete.
@@ -69,7 +69,7 @@ namespace xtd {
         /// @param value The text value.
         /// @param check_state The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
-        static void insert_item(intptr_t control, size_t index, const xtd::ustring& value, int32_t check_state);
+        static void insert_item(intptr_t control, size_t index, const xtd::ustring& value, int32 check_state);
         /// @brief Gets selected item index.
         /// @param control Checked list box window handle.
         /// @return The selected item index.
@@ -91,7 +91,7 @@ namespace xtd {
         /// @param value The text value.
         /// @param check_state The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
-        static void update_item(intptr_t control, size_t index, const xtd::ustring& value, int32_t check_state);
+        static void update_item(intptr_t control, size_t index, const xtd::ustring& value, int32 check_state);
         /// @}
       };
     }

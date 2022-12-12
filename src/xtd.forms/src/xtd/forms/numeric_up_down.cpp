@@ -19,7 +19,7 @@ double numeric_up_down::decimal_place() const noexcept {
   return data_->decimal_place;
 }
 
-numeric_up_down& numeric_up_down::decimal_place(int32_t value) {
+numeric_up_down& numeric_up_down::decimal_place(int32 value) {
   if (data_->decimal_place != value) {
     data_->decimal_place = value;
     if (is_handle_created()) native::numeric_up_down::decimal_place(handle(), data_->decimal_place);

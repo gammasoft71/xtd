@@ -91,7 +91,7 @@ namespace xtd {
         /// @param sweep_angle The angle between start_angle and the end of the arc.
         /// @remarks If there are previous lines or curves in the figure, a line is added to connect the endpoint of the previous segment to the beginning of the arc.
         /// @remarks The arc is traced along the perimeter of the ellipse bounded by the specified rectangle. The starting point of the arc is determined by measuring clockwise from the x-axis of the ellipse (at the 0-degree angle) by the number of degrees in the start angle. The endpoint is similarly located by measuring clockwise from the starting point by the number of degrees in the sweep angle. If the sweep angle is greater than 360 degrees or less than -360 degrees, the arc is swept by exactly 360 degrees or -360 degrees, respectively.
-        void add_arc(int32_t x, int32_t y, int32_t width, int32_t height, float start_angle, float sweep_angle);
+        void add_arc(int32 x, int32 y, int32 width, int32 height, float start_angle, float sweep_angle);
         /// @brief Appends an elliptical arc to the current figure.
         /// @param x The x-coordinate of the upper-left corner of the rectangular region that defines the ellipse from which the arc is drawn.
         /// @param y The y-coordinate of the upper-left corner of the rectangular region that defines the ellipse from which the arc is drawn.
@@ -130,7 +130,7 @@ namespace xtd {
         /// @param y4 The y-coordinate of the endpoint of the curve.
         /// @remarks The cubic curve is constructed from the first point to the fourth point by using the second and third points as control points.
         /// @remarks If there is a previous line or curve segment in the figure, a line is added to connect the endpoint of the previous segment to the starting point of the cubic curve.
-        void add_bezier(int32_t x1, int32_t y1, int32_t x2, int32_t y2, int32_t x3, int32_t y3, int32_t x4, int32_t y4);
+        void add_bezier(int32 x1, int32 y1, int32 x2, int32 y2, int32 x3, int32 y3, int32 x4, int32 y4);
         /// @brief Adds a cubic Bézier curve to the current figure.
         /// @param x1 The x-coordinate of the starting point of the curve.
         /// @param y1 The y-coordinate of the starting point of the curve.
@@ -221,7 +221,7 @@ namespace xtd {
         /// @param y The y-coordinate of the upper left corner of the bounding rectangle that defines the ellipse.
         /// @param width The width of the bounding rectangle that defines the ellipse.
         /// @param height The height of the bounding rectangle that defines the ellipse.
-        void add_ellipse(int32_t x, int32_t y, int32_t width, int32_t height);
+        void add_ellipse(int32 x, int32 y, int32 width, int32 height);
         /// @brief Adds an ellipse to the current path.
         /// @param x The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse.
         /// @param y The y-coordinate of the upper left corner of the bounding rectangle that defines the ellipse.
@@ -245,7 +245,7 @@ namespace xtd {
         /// @param x2 The x-coordinate of the endpoint of the line.
         /// @param y2 The y-coordinate of the endpoint of the line.
         /// @remarks This method adds the line segment defined by the specified points to the end of this xtd::drawing::drawing2d::graphics_path. If there are previous lines or curves in the xtd::drawing::drawing2d::graphics_path, a line segment is drawn to connect the last point in the path to the first point in the new line segment.
-        void add_line(int32_t x1, int32_t y1, int32_t x2, int32_t y2);
+        void add_line(int32 x1, int32 y1, int32 x2, int32 y2);
         /// @brief Appends a line segment to this xtd::drawing::drawing2d::graphics_path.
         /// @param x1 The x-coordinate of the starting point of the line.
         /// @param y1 The y-coordinate of the starting point of the line.
@@ -288,7 +288,7 @@ namespace xtd {
         /// @param start_angle The starting angle for the pie section, measured in degrees clockwise from the x-axis.
         /// @param sweep_angle The angle between start_angle and the end of the pie section, measured in degrees clockwise from start_angle.
         /// @remarks The pie shape is defined by a partial outline of an ellipse and the two radial lines that intersect the endpoints of the partial outline. The partial outline begins at start_angle (measured clockwise from the x-axis) and ends at start_angle + sweep_angle.
-        void add_pie(int32_t x, int32_t y, int32_t width, int32_t height, float start_angle, float sweep_angle);
+        void add_pie(int32 x, int32 y, int32 width, int32 height, float start_angle, float sweep_angle);
         /// @brief Adds the outline of a pie shape to this path.
         /// @param x The x-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie is drawn.
         /// @param y The y-coordinate of the upper-left corner of the bounding rectangle that defines the ellipse from which the pie is drawn.
@@ -319,7 +319,7 @@ namespace xtd {
         /// @param y The y-coordinate of the upper left corner of the rectangle.
         /// @param width The width of the rectangle.
         /// @param height The height of the rectangle.
-        void add_rectangle(int32_t x, int32_t y, int32_t width, int32_t height);
+        void add_rectangle(int32 x, int32 y, int32 width, int32 height);
         /// @brief Adds a rectangle to this path.
         /// @param x The x-coordinate of the upper-left corner of the rectangle.
         /// @param y The y-coordinate of the upper left corner of the rectangle.
@@ -348,7 +348,7 @@ namespace xtd {
         /// @param width The width of the rounded rectangle.
         /// @param height The height of the rounded rectangle.
         /// @param radius The radius of the rounded rectange angles.
-        void add_rounded_rectangle(int32_t x, int32_t y, int32_t width, int32_t height, float radius);
+        void add_rounded_rectangle(int32 x, int32 y, int32 width, int32 height, float radius);
         /// @brief Adds a rounded rectangle to this path.
         /// @param x The x-coordinate of the upper-left corner of the rounded rectangle.
         /// @param y The y-coordinate of the upper left corner of the rounded rectangle.
@@ -418,7 +418,7 @@ namespace xtd {
         /// @param x The x-coordinate of the point to test.
         /// @param y The y-coordinate of the point to test.
         /// @return This method returns true if the specified point is contained within this xtd::drawing::drawing2d::graphics_path; otherwise, false.
-        bool is_vsible(int32_t x, int32_t y) const;
+        bool is_vsible(int32 x, int32 y) const;
         /// @brief Indicates whether the specified point is contained within this xtd::drawing::drawing2d::graphics_path.
         /// @param x The x-coordinate of the point to test.
         /// @param y The y-coordinate of the point to test.

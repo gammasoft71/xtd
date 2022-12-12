@@ -29,13 +29,13 @@ namespace {
 
 class wxReplaceDialog : public wxFindReplaceDialog {
 public:
-  wxReplaceDialog(intptr_t hwnd, wxFindReplaceData* data, const wxString& title, int32_t style, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, const xtd::ustring&, bool, bool)> find_next, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, const xtd::ustring&, bool, bool, bool)> replace, xtd::delegate<void()> dialog_closed) : wxFindReplaceDialog(reinterpret_cast<control_handler*>(hwnd)->control(), data, title, style), style(style), find_next(find_next), replace(replace), dialog_closed(dialog_closed), hwnd(hwnd) {
+  wxReplaceDialog(intptr_t hwnd, wxFindReplaceData* data, const wxString& title, int32 style, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, const xtd::ustring&, bool, bool)> find_next, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, const xtd::ustring&, bool, bool, bool)> replace, xtd::delegate<void()> dialog_closed) : wxFindReplaceDialog(reinterpret_cast<control_handler*>(hwnd)->control(), data, title, style), style(style), find_next(find_next), replace(replace), dialog_closed(dialog_closed), hwnd(hwnd) {
     #if !defined(__WXMSW__)
     m_radioDir->Hide();
     #endif
   }
   
-  int32_t style = 0;
+  int32 style = 0;
   bool whole_word = false;
   bool match_case = false;
   wxString find_string;
@@ -49,7 +49,7 @@ public:
 intptr_t replace_dialog::create(intptr_t hwnd, const std::optional<xtd::drawing::point>& location, const xtd::ustring& title, const xtd::ustring& find_string, const xtd::ustring& replace_string, bool show_whole_word, bool show_match_case, bool whole_word, bool match_case, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, const xtd::ustring&, bool, bool)> find_next, xtd::delegate<void(const xtd::drawing::point&, const xtd::ustring&, const xtd::ustring&, bool, bool, bool)> replace, xtd::delegate<void()> dialog_closed) {
   if (!wxTheApp) return 0;
   
-  int32_t find_replace_flags = 0;
+  int32 find_replace_flags = 0;
   if (whole_word) find_replace_flags |= wxFindReplaceFlags::wxFR_WHOLEWORD;
   if (match_case) find_replace_flags |= wxFindReplaceFlags::wxFR_MATCHCASE;
   wxFindReplaceData* find_replace_data = new wxFindReplaceData();
@@ -61,7 +61,7 @@ intptr_t replace_dialog::create(intptr_t hwnd, const std::optional<xtd::drawing:
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
   #endif
   
-  int32_t dialog_style = wxFR_REPLACEDIALOG | wxFR_NOUPDOWN;
+  int32 dialog_style = wxFR_REPLACEDIALOG | wxFR_NOUPDOWN;
   if (!show_whole_word) dialog_style |= wxFR_NOWHOLEWORD;
   if (!show_match_case) dialog_style |= wxFR_NOMATCHCASE;
   wxReplaceDialog* replace_dialog = new wxReplaceDialog(hwnd, find_replace_data, convert_string::to_wstring(title), dialog_style, find_next, replace, dialog_closed);

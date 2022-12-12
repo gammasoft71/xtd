@@ -122,8 +122,8 @@ void menu_item::checked(intptr_t menu_item, bool checked) {
   reinterpret_cast<wxMenuItem*>(menu_item)->Check(checked);
 }
 
-intptr_t menu_item::create(intptr_t menu, const ustring& text, const xtd::drawing::image& image, int32_t kind, size_t shortcut) {
-  static map<int32_t, wxItemKind> kinds = {{MI_NORMAL, wxITEM_NORMAL}, {MI_CHECK, wxITEM_CHECK}, {MI_RADIO, wxITEM_RADIO}, {MI_DROPDOWN, wxITEM_DROPDOWN}, {MI_SEPARATOR, wxITEM_SEPARATOR}};
+intptr_t menu_item::create(intptr_t menu, const ustring& text, const xtd::drawing::image& image, int32 kind, size_t shortcut) {
+  static map<int32, wxItemKind> kinds = {{MI_NORMAL, wxITEM_NORMAL}, {MI_CHECK, wxITEM_CHECK}, {MI_RADIO, wxITEM_RADIO}, {MI_DROPDOWN, wxITEM_DROPDOWN}, {MI_SEPARATOR, wxITEM_SEPARATOR}};
   auto wx_menu_item = new wxMenuItem(menu == 0 ? nullptr : reinterpret_cast<wxMenu*>(menu), make_window_id(text), convert_string::to_wstring(make_item_text(text, shortcut)), wxEmptyString, kinds[kind]);
   if (image.handle() != 0) wx_menu_item->SetBitmap(wxBitmap(*reinterpret_cast<wxImage*>(image.handle())));
   return reinterpret_cast<intptr_t>(wx_menu_item);

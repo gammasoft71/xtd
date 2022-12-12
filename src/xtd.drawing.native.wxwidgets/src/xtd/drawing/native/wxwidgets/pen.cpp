@@ -33,7 +33,7 @@ void pen::conical_gradient(intptr_t pen, intptr_t brush, float width) {
   reinterpret_cast<wx_pen*>(pen)->create_conical_gradient_pen(*reinterpret_cast<wx_brush*>(brush), width);
 }
 
-void pen::end_cap(intptr_t pen, int32_t line_cap) {
+void pen::end_cap(intptr_t pen, int32 line_cap) {
   switch (line_cap) {
     case LC_FLAT: reinterpret_cast<wx_pen*>(pen)->line_cap(wxPenCap::wxCAP_BUTT); break;
     case LC_SQUARE: reinterpret_cast<wx_pen*>(pen)->line_cap(wxPenCap::wxCAP_PROJECTING); break;
@@ -46,7 +46,7 @@ void pen::linear_gradient(intptr_t pen, intptr_t brush, float width) {
   reinterpret_cast<wx_pen*>(pen)->create_linear_gradient_pen(*reinterpret_cast<wx_brush*>(brush), width);
 }
 
-void pen::line_join(intptr_t pen, int32_t line_join) {
+void pen::line_join(intptr_t pen, int32 line_join) {
   switch (line_join) {
     case LJ_MITER: reinterpret_cast<wx_pen*>(pen)->line_join(wxPenJoin::wxJOIN_MITER); break;
     case LJ_BEVEL: reinterpret_cast<wx_pen*>(pen)->line_join(wxPenJoin::wxJOIN_BEVEL); break;
@@ -64,7 +64,7 @@ void pen::radial_gradient(intptr_t pen, intptr_t brush, float width) {
   reinterpret_cast<wx_pen*>(pen)->create_radial_gradient_pen(*reinterpret_cast<wx_brush*>(brush), width);
 }
 
-void pen::start_cap(intptr_t pen, int32_t line_cap) {
+void pen::start_cap(intptr_t pen, int32 line_cap) {
   switch (line_cap) {
     case LC_FLAT: reinterpret_cast<wx_pen*>(pen)->line_cap(wxPenCap::wxCAP_BUTT); break;
     case LC_SQUARE: reinterpret_cast<wx_pen*>(pen)->line_cap(wxPenCap::wxCAP_PROJECTING); break;
@@ -125,7 +125,7 @@ void pen::dash_style(intptr_t pen, uint32_t dash_style) {
 
 void pen::width(intptr_t pen, float width) {
   toolkit::initialize(); // Must be first
-  reinterpret_cast<wxPen*>(pen)->SetWidth(static_cast<int32_t>(width));
+  reinterpret_cast<wxPen*>(pen)->SetWidth(static_cast<int32>(width));
 }
 
 void pen::destroy(intptr_t pen) {

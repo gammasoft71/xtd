@@ -30,7 +30,7 @@ namespace {
   
   class wx_progress_dialog : public wxProgressDialog {
   public:
-    wx_progress_dialog(const ustring& title, const ustring& message, int32_t maximum = 100, wxWindow* parent = nullptr, int32_t style = wxPD_APP_MODAL | wxPD_AUTO_HIDE) : wxProgressDialog(convert_string::to_wstring(title), convert_string::to_wstring(message), maximum, parent, style) {
+    wx_progress_dialog(const ustring& title, const ustring& message, int32 maximum = 100, wxWindow* parent = nullptr, int32 style = wxPD_APP_MODAL | wxPD_AUTO_HIDE) : wxProgressDialog(convert_string::to_wstring(title), convert_string::to_wstring(message), maximum, parent, style) {
       if (environment::os_version().is_macos()) SetBackgroundColour(wxColour(system_colors::control().r(), system_colors::control().g(), system_colors::control().b(), system_colors::control().a()));
       timer_marquee.Bind(wxEVT_TIMER, [&](wxTimerEvent & event) {
         if (event.GetTimer().GetId() == timer_marquee.GetId())
@@ -38,24 +38,24 @@ namespace {
       });
     }
     
-    void minimum(int32_t minimum) {
+    void minimum(int32 minimum) {
       minimum_ = minimum;
       if (maximum_ - minimum_ > 0) SetRange(maximum_ - minimum_);
     }
     
-    void maximum(int32_t maximum) {
+    void maximum(int32 maximum) {
       maximum_ = maximum;
       if (maximum_ - minimum_ > 0) SetRange(maximum_ - minimum_);
     }
     
-    void value(int32_t value) {
+    void value(int32 value) {
       value_ = value;
       if (value_ - minimum_ > 0) Update(value_ - minimum_);
     }
     
     void marquee(bool marquee, size_t animation_speed) {
       animation_speed_ = animation_speed;
-      if (marquee) timer_marquee.Start(static_cast<int32_t>(animation_speed));
+      if (marquee) timer_marquee.Start(static_cast<int32>(animation_speed));
       else timer_marquee.Stop();
     }
     
@@ -64,20 +64,20 @@ namespace {
       else {
         timer_marquee.Stop();
         Pulse(convert_string::to_wstring(message));
-        timer_marquee.Start(as<int32_t>(animation_speed_));
+        timer_marquee.Start(as<int32>(animation_speed_));
       }
     }
     
   private:
     size_t animation_speed_ = 0;
-    int32_t maximum_ = 0;
-    int32_t minimum_ = 0;
+    int32 maximum_ = 0;
+    int32 minimum_ = 0;
     wxTimer timer_marquee;
-    int32_t value_ = 0;
+    int32 value_ = 0;
   };
   
-  int32_t options_to_wx_style(size_t options) {
-    int32_t wx_style = wxPD_AUTO_HIDE;
+  int32 options_to_wx_style(size_t options) {
+    int32 wx_style = wxPD_AUTO_HIDE;
     
     if ((options & PROGDLG_MODAL) == PROGDLG_MODAL) wx_style |= wxPD_APP_MODAL;
     if ((options & PROGDLG_AUTOTIME) == PROGDLG_AUTOTIME) wx_style |= wxPD_REMAINING_TIME;
@@ -101,7 +101,7 @@ bool progress_dialog::cancelled(intptr_t dialog) {
   return reinterpret_cast<wx_progress_dialog*>(dialog)->WasCancelled();
 }
 
-intptr_t progress_dialog::create(intptr_t hwnd, const ustring& text, const ustring& message, const std::vector<ustring>& informations, size_t animation_speed, int32_t minimum, int32_t maximum, int32_t value, size_t options) {
+intptr_t progress_dialog::create(intptr_t hwnd, const ustring& text, const ustring& message, const std::vector<ustring>& informations, size_t animation_speed, int32 minimum, int32 maximum, int32 value, size_t options) {
   #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
   #endif
@@ -127,7 +127,7 @@ void progress_dialog::marquee(intptr_t dialog, bool marquee, size_t animation_sp
   reinterpret_cast<wx_progress_dialog*>(dialog)->marquee(marquee, animation_speed);
 }
 
-void progress_dialog::maximum(intptr_t dialog, int32_t maximum) {
+void progress_dialog::maximum(intptr_t dialog, int32 maximum) {
   if (dialog == 0) return;
   reinterpret_cast<wx_progress_dialog*>(dialog)->maximum(maximum);
 }
@@ -137,7 +137,7 @@ void progress_dialog::message(intptr_t dialog, const ustring& message) {
   reinterpret_cast<wx_progress_dialog*>(dialog)->message(message);
 }
 
-void progress_dialog::minimum(intptr_t dialog, int32_t minimum) {
+void progress_dialog::minimum(intptr_t dialog, int32 minimum) {
   if (dialog == 0) return;
   reinterpret_cast<wx_progress_dialog*>(dialog)->minimum(minimum);
 }
@@ -160,7 +160,7 @@ bool progress_dialog::skipped(intptr_t dialog) {
   return reinterpret_cast<wx_progress_dialog*>(dialog)->WasSkipped();
 }
 
-void progress_dialog::value(intptr_t dialog, int32_t value) {
+void progress_dialog::value(intptr_t dialog, int32 value) {
   if (dialog == 0) return;
   reinterpret_cast<wx_progress_dialog*>(dialog)->value(value);
 }

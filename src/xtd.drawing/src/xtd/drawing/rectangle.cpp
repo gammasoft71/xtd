@@ -7,7 +7,7 @@ using namespace xtd::drawing;
 
 const rectangle rectangle::empty;
 
-rectangle::rectangle(int32_t x, int32_t y, int32_t width, int32_t height) noexcept : x_(x), y_(y), width_(width), height_(height) {
+rectangle::rectangle(int32 x, int32 y, int32 width, int32 height) noexcept : x_(x), y_(y), width_(width), height_(height) {
 }
 
 rectangle::rectangle(const point& location, const drawing::size& size) noexcept : rectangle(location.x(), location.y(), size.width(), size.height()) {
@@ -17,15 +17,15 @@ rectangle::operator rectangle_f() const noexcept {
   return rectangle_f(as<float>(x_), as<float>(y_), as<float>(width_), as<float>(height_));
 }
 
-int32_t rectangle::bottom() const noexcept {
+int32 rectangle::bottom() const noexcept {
   return y_ + height_;
 }
 
-int32_t rectangle::height() const noexcept {
+int32 rectangle::height() const noexcept {
   return height_;
 }
 
-void rectangle::height(int32_t value) noexcept {
+void rectangle::height(int32 value) noexcept {
   height_ = value;
 }
 
@@ -33,7 +33,7 @@ bool rectangle::is_empty() const noexcept {
   return *this == rectangle::empty;
 }
 
-int32_t rectangle::left() const noexcept {
+int32 rectangle::left() const noexcept {
   return x_;
 }
 
@@ -46,7 +46,7 @@ void rectangle::location(const point& value) noexcept {
   y_ = value.y();
 }
 
-int32_t rectangle::right() const noexcept {
+int32 rectangle::right() const noexcept {
   return x_ + width_;
 }
 
@@ -59,31 +59,31 @@ void rectangle::size(const xtd::drawing::size& value) noexcept {
   height_ = value.height();
 }
 
-int32_t rectangle::top() const noexcept {
+int32 rectangle::top() const noexcept {
   return y_;
 }
 
-int32_t rectangle::width() const noexcept {
+int32 rectangle::width() const noexcept {
   return width_;
 }
 
-void rectangle::width(int32_t value) noexcept {
+void rectangle::width(int32 value) noexcept {
   width_ = value;
 }
 
-int32_t rectangle::x() const noexcept {
+int32 rectangle::x() const noexcept {
   return x_;
 }
 
-void rectangle::x(int32_t value) noexcept {
+void rectangle::x(int32 value) noexcept {
   x_ = value;
 }
 
-int32_t rectangle::y() const noexcept {
+int32 rectangle::y() const noexcept {
   return y_;
 }
 
-void rectangle::y(int32_t value) noexcept {
+void rectangle::y(int32 value) noexcept {
   y_ = value;
 }
 
@@ -91,12 +91,12 @@ void rectangle::add(const drawing::size& sz) noexcept {
   add(sz.width(), sz.height());
 }
 
-void rectangle::add(int32_t width, int32_t height) noexcept {
+void rectangle::add(int32 width, int32 height) noexcept {
   width_ += width;
   height_ += height;
 }
 
-rectangle rectangle::add(const rectangle& rect, int32_t x, int32_t y) noexcept {
+rectangle rectangle::add(const rectangle& rect, int32 x, int32 y) noexcept {
   auto result = rect;
   result.add(x, y);
   return result;
@@ -107,7 +107,7 @@ rectangle rectangle::add(const rectangle& rect, const drawing::size& sz) noexcep
 }
 
 rectangle rectangle::ceiling(const rectangle_f& rect) noexcept {
-  return rectangle(as<int32_t>(math::ceiling(rect.x())), as<int32_t>(math::ceiling(rect.y())), as<int32_t>(math::ceiling(rect.width())), as<int32_t>(math::ceiling(rect.height())));
+  return rectangle(as<int32>(math::ceiling(rect.x())), as<int32>(math::ceiling(rect.y())), as<int32>(math::ceiling(rect.width())), as<int32>(math::ceiling(rect.height())));
 }
 
 bool rectangle::contains(const point& pt) const noexcept {
@@ -118,7 +118,7 @@ bool rectangle::contains(const rectangle& rect) const noexcept {
   return x_ <= rect.x_ && (rect.x_ + rect.width_) <= (x_ + width_) && y_ <= rect.y_ && (rect.y_ + rect.height_) <= (y_ + height_);
 }
 
-bool rectangle::contains(int32_t x, int32_t y) const noexcept {
+bool rectangle::contains(int32 x, int32 y) const noexcept {
   return x_ <= x && x < x_ + width_ && y_ <= y && y < y_ + height_;
 }
 
@@ -126,7 +126,7 @@ bool rectangle::equals(const rectangle& value) const noexcept {
   return x_ == value.x_ && y_ == value.y_ && width_ == value.width_ && height_ == value.height_;
 }
 
-rectangle rectangle::from_ltrb(int32_t left, int32_t top, int32_t right, int32_t bottom) noexcept {
+rectangle rectangle::from_ltrb(int32 left, int32 top, int32 right, int32 bottom) noexcept {
   return rectangle(left, top, right - left, bottom - top);
 }
 
@@ -134,14 +134,14 @@ void rectangle::inflate(const drawing::size& sz) noexcept {
   inflate(sz.width(), sz.height());
 }
 
-void rectangle::inflate(int32_t width, int32_t height) noexcept {
+void rectangle::inflate(int32 width, int32 height) noexcept {
   x_ -= width;
   y_ -= height;
   width_ += 2 * width;
   height_ +=  2 * height;
 }
 
-rectangle rectangle::inflate(const rectangle& rect, int32_t x, int32_t y) noexcept {
+rectangle rectangle::inflate(const rectangle& rect, int32 x, int32 y) noexcept {
   auto result = rect;
   result.inflate(x, y);
   return result;
@@ -198,7 +198,7 @@ void rectangle::offset(const point& pos) noexcept {
   offset(pos.x(), pos.y());
 }
 
-void rectangle::offset(int32_t x, int32_t y) noexcept {
+void rectangle::offset(int32 x, int32 y) noexcept {
   x_ += x;
   y_ += y;
 }
@@ -207,18 +207,18 @@ rectangle rectangle::offset(const rectangle& rect, const point& pos) noexcept {
   return offset(rect, pos.x(), pos.y());
 }
 
-rectangle rectangle::offset(const rectangle& rect, int32_t x, int32_t y) noexcept {
+rectangle rectangle::offset(const rectangle& rect, int32 x, int32 y) noexcept {
   auto result = rect;
   result.offset(x, y);
   return result;
 }
 
 rectangle rectangle::round(const rectangle_f& rect) noexcept {
-  return rectangle(as<int32_t>(math::round(rect.x())), as<int32_t>(math::round(rect.y())), as<int32_t>(math::round(rect.width())), as<int32_t>(math::round(rect.height())));
+  return rectangle(as<int32>(math::round(rect.x())), as<int32>(math::round(rect.y())), as<int32>(math::round(rect.width())), as<int32>(math::round(rect.height())));
 }
 
 rectangle rectangle::truncate(const rectangle_f& rect) noexcept {
-  return rectangle(as<int32_t>(math::truncate(rect.x())), as<int32_t>(math::truncate(rect.y())), as<int32_t>(math::truncate(rect.width())), as<int32_t>(math::truncate(rect.height())));
+  return rectangle(as<int32>(math::truncate(rect.x())), as<int32>(math::truncate(rect.y())), as<int32>(math::truncate(rect.width())), as<int32>(math::truncate(rect.height())));
 }
 
 xtd::ustring rectangle::to_string() const noexcept {

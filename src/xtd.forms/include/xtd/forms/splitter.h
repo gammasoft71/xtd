@@ -45,11 +45,11 @@ namespace xtd {
       
       /// @brief Gets the minimum distance that must remain between the splitter control and the container edge that the control is docked to.
       /// @return The minimum distance, in pixels, between the splitter control and the container edge that the control is docked to. The default is 25.
-      virtual int32_t min_size() const noexcept;
+      virtual int32 min_size() const noexcept;
       /// @brief Sets the minimum distance that must remain between the splitter control and the container edge that the control is docked to.
       /// @param min_size The minimum distance, in pixels, between the splitter control and the container edge that the control is docked to. The default is 25.
       /// @return Current splitter instance.
-      virtual splitter& min_size(int32_t min_size);
+      virtual splitter& min_size(int32 min_size);
       
       /// @brief Gets the style of the splitter.
       /// @return One of xtd::forms::splitter_style values. The default is xtd::forms::splitter_style::update_children
@@ -80,10 +80,10 @@ namespace xtd {
     private:
       struct data {
         bool default_width = true;
-        int32_t min_size = 25;
-        //int32_t min_size_extra = 25;
-        //int32_t split_position = -1;
-        int32_t mouse_down_location = -1;
+        int32 min_size = 25;
+        //int32 min_size_extra = 25;
+        //int32 split_position = -1;
+        int32 mouse_down_location = -1;
         xtd::forms::splitter_style splitter_style = xtd::forms::splitter_style::update_children;
         xtd::forms::cursor previous_control_cursor;
         xtd::forms::cursor next_control_cursor;

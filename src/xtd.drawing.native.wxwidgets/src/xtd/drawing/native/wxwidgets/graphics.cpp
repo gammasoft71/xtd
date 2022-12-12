@@ -35,7 +35,7 @@ using namespace xtd;
 using namespace xtd::drawing::native;
 
 namespace {
-  std::map<intptr_t, int32_t> graphics_state;
+  std::map<intptr_t, int32> graphics_state;
   class graphics_context {
   public:
     explicit graphics_context(intptr_t handle) : hdc_(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc()) {
@@ -63,8 +63,8 @@ namespace {
     wxFont font_;
   };
   
-  wxAlignment to_wx_align(int32_t alignment, int32_t line_alignment) {
-    int32_t result = wxAlignment::wxALIGN_NOT;
+  wxAlignment to_wx_align(int32 alignment, int32 line_alignment) {
+    int32 result = wxAlignment::wxALIGN_NOT;
     if (alignment == SA_NEAR) result += wxAlignment::wxALIGN_LEFT;
     else if (alignment == SA_CENTER) result += wxAlignment::wxALIGN_CENTER_HORIZONTAL;
     else if (alignment == SA_FAR) result += wxAlignment::wxALIGN_RIGHT;
@@ -92,17 +92,17 @@ void graphics::clip(intptr_t handle, intptr_t region) {
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->Clip(*reinterpret_cast<wxRegion*>(region));
 }
 
-void graphics::compositing_mode(intptr_t handle, int32_t compositing_mode) {
+void graphics::compositing_mode(intptr_t handle, int32 compositing_mode) {
   if (!handle) return;
   // Not defined in wxWidgets
 }
 
-void graphics::compositing_quality(intptr_t handle, int32_t compositing_quality) {
+void graphics::compositing_quality(intptr_t handle, int32 compositing_quality) {
   if (!handle) return;
   // Not defined in wxWidgets
 }
 
-void graphics::copy_from_screen(intptr_t handle, int32_t source_x, int32_t source_y, int32_t destination_x, int32_t destination_y, int32_t block_region_width, int32_t block_region_height, int32_t copy_pixel_operation) {
+void graphics::copy_from_screen(intptr_t handle, int32 source_x, int32 source_y, int32 destination_x, int32 destination_y, int32 block_region_width, int32 block_region_height, int32 copy_pixel_operation) {
   if (!handle) return;
   wxScreenDC screen_dc;
   wxRasterOperationMode raster_operation_mode = wxRasterOperationMode::wxCOPY;
@@ -181,9 +181,9 @@ void graphics::draw_closed_curve(intptr_t handle, intptr_t pen, std::vector<std:
   dc.SetPen(wx_pen::to_pen(*reinterpret_cast<wx_pen*>(pen)));
   std::vector<wxPoint> wx_points;
   for (auto [x, y] : points)
-    wx_points.push_back(wxPoint(as<int32_t>(x), as<int32_t>(y)));
+    wx_points.push_back(wxPoint(as<int32>(x), as<int32>(y)));
   wx_points.push_back(wx_points[0]);
-  dc.DrawSpline(as<int32_t>(wx_points.size()), wx_points.data());
+  dc.DrawSpline(as<int32>(wx_points.size()), wx_points.data());
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
@@ -195,8 +195,8 @@ void graphics::draw_curve(intptr_t handle, intptr_t pen, std::vector<std::pair<f
   dc.SetPen(wx_pen::to_pen(*reinterpret_cast<wx_pen*>(pen)));
   std::vector<wxPoint> wx_points;
   for (auto [x, y] : points)
-    wx_points.push_back(wxPoint(as<int32_t>(x), as<int32_t>(y)));
-  dc.DrawSpline(as<int32_t>(wx_points.size()), wx_points.data());
+    wx_points.push_back(wxPoint(as<int32>(x), as<int32>(y)));
+  dc.DrawSpline(as<int32>(wx_points.size()), wx_points.data());
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
@@ -319,12 +319,12 @@ void graphics::draw_rounded_rectangle(intptr_t handle, intptr_t pen, float x, fl
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming) {
+void graphics::draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming) {
   wxDrawString::DrawString(handle, convert_string::to_wstring(text), *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, 0.0f, to_wx_align(alignment, line_alignment), hot_key_prefix, trimming);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float width, float height, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming, int32_t string_formats) {
+void graphics::draw_string(intptr_t handle, const xtd::ustring& text, intptr_t font, intptr_t brush, float x, float y, float width, float height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, int32 string_formats) {
   wxDrawString::DrawString(handle, convert_string::to_wstring(text), *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, width, height, 0.0f, to_wx_align(alignment, line_alignment), hot_key_prefix, trimming, string_formats);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
@@ -338,8 +338,8 @@ void graphics::fill_closed_curve(intptr_t handle, intptr_t brush, std::vector<st
   dc.SetPen(*wxTRANSPARENT_PEN);
   std::vector<wxPoint> wx_points;
   for (auto [x, y] : points)
-    wx_points.push_back(wxPoint(as<int32_t>(x), as<int32_t>(y)));
-  dc.DrawSpline(as<int32_t>(wx_points.size()), wx_points.data());
+    wx_points.push_back(wxPoint(as<int32>(x), as<int32>(y)));
+  dc.DrawSpline(as<int32>(wx_points.size()), wx_points.data());
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
@@ -364,7 +364,7 @@ void graphics::fill_ellipse(intptr_t handle, intptr_t brush, float x, float y, f
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::fill_path(intptr_t handle, intptr_t brush, intptr_t graphics_path, int32_t mode) {
+void graphics::fill_path(intptr_t handle, intptr_t brush, intptr_t graphics_path, int32 mode) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
@@ -409,7 +409,7 @@ void graphics::fill_pie(intptr_t handle, intptr_t brush, float x, float y, float
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::fill_polygon(intptr_t handle, intptr_t brush, const std::vector<std::pair<float, float>>& points, int32_t fill_mode) {
+void graphics::fill_polygon(intptr_t handle, intptr_t brush, const std::vector<std::pair<float, float>>& points, int32 fill_mode) {
   if (!handle) return;
   /// @todo Using graphics_path when done...
   std::vector<wxPoint2DDouble> wx_points;
@@ -440,8 +440,8 @@ void graphics::fill_rectangle(intptr_t handle, intptr_t brush, float x, float y,
     auto wx_radial_brush = reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush();
     wxImage image(width, height);
     image.InitAlpha();
-    for (int32_t y_ia = 0; y_ia < height; y_ia++)
-      for (int32_t x_ia = 0; x_ia < width; x_ia++)
+    for (int32 y_ia = 0; y_ia < height; y_ia++)
+      for (int32 x_ia = 0; x_ia < width; x_ia++)
         image.SetAlpha(x_ia, y_ia, 0);
     wxBitmap radial_gradient_bitmap(image);
     auto radial_gradient_graphics = wxGraphicsContext::Create(wxMemoryDC(radial_gradient_bitmap));
@@ -474,7 +474,7 @@ void graphics::fill_rectangles(intptr_t handle, intptr_t brush, std::vector<std:
 
 void graphics::fill_region(intptr_t handle, intptr_t brush, intptr_t region) {
   if (!handle) return;
-  int32_t x, y, width, height;
+  int32 x, y, width, height;
   wxRegion* wx_region = reinterpret_cast<wxRegion*>(region);
   wx_region->GetBox(x, y, width, height);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
@@ -514,8 +514,8 @@ void graphics::fill_rounded_rectangle(intptr_t handle, intptr_t brush, float x, 
     auto wx_radial_brush = reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush();
     wxImage image(width, height);
     image.InitAlpha();
-    for (int32_t y_ia = 0; y_ia < height; y_ia++)
-      for (int32_t x_ia = 0; x_ia < width; x_ia++)
+    for (int32 y_ia = 0; y_ia < height; y_ia++)
+      for (int32 x_ia = 0; x_ia < width; x_ia++)
         image.SetAlpha(x_ia, y_ia, 0);
     wxBitmap radial_gradient_bitmap(image);
     auto radial_gradient_graphics = wxGraphicsContext::Create(wxMemoryDC(radial_gradient_bitmap));
@@ -539,7 +539,7 @@ void graphics::fill_rounded_rectangle(intptr_t handle, intptr_t brush, float x, 
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::flush(intptr_t handle, int32_t intention) {
+void graphics::flush(intptr_t handle, int32 intention) {
   if (!handle) return;
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->Flush();
 }
@@ -591,7 +591,7 @@ void graphics::get_nearest_color(intptr_t handle, xtd::byte original_a, xtd::byt
   nearest_b = original_b;
 }
 
-void graphics::interpolation_mode(intptr_t handle, int32_t interpolation_mode) {
+void graphics::interpolation_mode(intptr_t handle, int32 interpolation_mode) {
   if (!handle) return;
   auto graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   switch (interpolation_mode) {
@@ -608,7 +608,7 @@ void graphics::interpolation_mode(intptr_t handle, int32_t interpolation_mode) {
 }
 
 /*
-void graphics::measure_string(intptr_t handle, const ustring& text, intptr_t font, float& width, float& height, float max_width, float max_height, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming, size_t characters_fitted, size_t lines_filled, bool measure_trailing_spaces) {
+void graphics::measure_string(intptr_t handle, const ustring& text, intptr_t font, float& width, float& height, float max_width, float max_height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, size_t characters_fitted, size_t lines_filled, bool measure_trailing_spaces) {
   if (!handle) return;
   width = 0;
   height = 0;
@@ -631,7 +631,7 @@ void graphics::measure_string(intptr_t handle, const ustring& text, intptr_t fon
 }
 */
  
-void graphics::measure_string(intptr_t handle, const ustring& text, intptr_t font, float& width, float& height, float max_width, float max_height, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming, size_t characters_fitted, size_t lines_filled, bool measure_trailing_spaces) {
+void graphics::measure_string(intptr_t handle, const ustring& text, intptr_t font, float& width, float& height, float max_width, float max_height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, size_t characters_fitted, size_t lines_filled, bool measure_trailing_spaces) {
   if (!handle) return;
   width = 0.0f;
   height = 0.0f;
@@ -647,7 +647,7 @@ void graphics::measure_string(intptr_t handle, const ustring& text, intptr_t fon
   wxDrawString::MeasureString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), formated_text, *reinterpret_cast<wxFont*>(font), width, height, measure_trailing_spaces);
 }
 
-void graphics::pixel_offset_mode(intptr_t handle, int32_t pixel_offset_mode) {
+void graphics::pixel_offset_mode(intptr_t handle, int32 pixel_offset_mode) {
   if (!handle) return;
   auto graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   switch (pixel_offset_mode) {
@@ -679,7 +679,7 @@ void graphics::restore(intptr_t handle, intptr_t& gstate) {
   gstate = 0;
 }
 
-void graphics::rotate_transform(intptr_t handle, float angle, int32_t order) {
+void graphics::rotate_transform(intptr_t handle, float angle, int32 order) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.Rotate(math::degrees_to_radians(-angle));
@@ -692,14 +692,14 @@ intptr_t graphics::save(intptr_t handle) {
   return as<intptr_t>(++graphics_state[handle]);
 }
 
-void graphics::scale_transform(intptr_t handle, float sx, float sy, int32_t order) {
+void graphics::scale_transform(intptr_t handle, float sx, float sy, int32 order) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.Scale(sx, sy);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::smoothing_mode(intptr_t handle, int32_t smoothing_mode) {
+void graphics::smoothing_mode(intptr_t handle, int32 smoothing_mode) {
   if (!handle) return;
   auto graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   switch (smoothing_mode) {
@@ -713,12 +713,12 @@ void graphics::smoothing_mode(intptr_t handle, int32_t smoothing_mode) {
   }
 }
 
-void graphics::text_contrast(intptr_t handle, int32_t text_contrast) {
+void graphics::text_contrast(intptr_t handle, int32 text_contrast) {
   if (!handle) return;
   // Not defined in wxWidgets
 }
 
-void graphics::text_rendering_hint(intptr_t handle, int32_t text_rendering_hint) {
+void graphics::text_rendering_hint(intptr_t handle, int32 text_rendering_hint) {
   if (!handle) return;
   // Not defined in wxWidgets
 }
@@ -731,14 +731,14 @@ void graphics::transform(intptr_t handle, intptr_t matrix) {
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->SetTransform(*reinterpret_cast<wxGraphicsMatrix*>(matrix));
 }
 
-void graphics::translate_transform(intptr_t handle, float dx, float dy, int32_t order) {
+void graphics::translate_transform(intptr_t handle, float dx, float dy, int32 order) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.Translate(dx, dy);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-xtd::ustring graphics::trim_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float width, int32_t trimming) {
+xtd::ustring graphics::trim_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float width, int32 trimming) {
   return convert_string::to_string(wxDrawString::TrimString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), convert_string::to_wstring(text), *reinterpret_cast<wxFont*>(font), width, trimming).c_str().AsWChar());
 }
 

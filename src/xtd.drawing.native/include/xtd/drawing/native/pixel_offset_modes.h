@@ -5,7 +5,7 @@
 #endif
 /// @endcond
 
-#include <cstdint>
+#include <xtd/types.h>
 
 /// @brief Specifies an invalid mode.
 /// @par Library
@@ -13,7 +13,7 @@
 /// @ingroup xtd_drawing_native po
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t PO_INVALID = -1;
+constexpr xtd::int32 PO_INVALID = -1;
 
 /// @brief Specifies default mode.
 /// @par Library
@@ -21,7 +21,7 @@ constexpr int32_t PO_INVALID = -1;
 /// @ingroup xtd_drawing_native po
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t PO_DEFAULT = 0;
+constexpr xtd::int32 PO_DEFAULT = 0;
 
 /// @brief Specifies high speed, low quality rendering.
 /// @par Library
@@ -29,7 +29,7 @@ constexpr int32_t PO_DEFAULT = 0;
 /// @ingroup xtd_drawing_native po
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t PO_HIGH_SPEED = 1;
+constexpr xtd::int32 PO_HIGH_SPEED = 1;
 
 /// @brief Specifies high quality, low speed rendering.
 /// @par Library
@@ -37,7 +37,7 @@ constexpr int32_t PO_HIGH_SPEED = 1;
 /// @ingroup xtd_drawing_native po
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t PO_HIGHT_QUALITY = 2;
+constexpr xtd::int32 PO_HIGHT_QUALITY = 2;
 
 /// @brief Specifies no pixel offset.
 /// @par Library
@@ -45,7 +45,7 @@ constexpr int32_t PO_HIGHT_QUALITY = 2;
 /// @ingroup xtd_drawing_native po
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t PO_NONE = 3;
+constexpr xtd::int32 PO_NONE = 3;
 
 /// @brief Specifies that pixels are offset by -.5 units, both horizontally and vertically, for high speed antialiasing.
 /// @par Library
@@ -53,4 +53,4 @@ constexpr int32_t PO_NONE = 3;
 /// @ingroup xtd_drawing_native po
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t PO_HALF = 4;
+constexpr xtd::int32 PO_HALF = 4;

@@ -70,12 +70,12 @@ void box_renderer::draw_line_top(graphics& graphics, const rectangle& bounds, co
   auto border_rect2 = rectangle::truncate(rectangle_f(bounds.left() + pen_width1 + pen_width2 / 2.0f,  bounds.top() + pen_width1 + pen_width2 / 2.0f, bounds.width() -  2 * pen_width1 - pen_width2, bounds.height() - 2 * pen_width1 - pen_width2));
   
   if (border_style.top() == border_type::double_border)
-    border_rect2 = rectangle::inflate(border_rect2, {-as<int32_t>(pen_width1), -as<int32_t>(pen_width1)});
+    border_rect2 = rectangle::inflate(border_rect2, {-as<int32>(pen_width1), -as<int32>(pen_width1)});
     
   auto radius_top_left1 = border_radius.top_left().get_pixels(bounds);
-  auto radius_top_left2 = border_radius.top_left().get_pixels(bounds) - as<int32_t>(pen_width1);
+  auto radius_top_left2 = border_radius.top_left().get_pixels(bounds) - as<int32>(pen_width1);
   auto radius_top_right1 = border_radius.top_right().get_pixels(bounds);
-  auto radius_top_right2 = border_radius.top_right().get_pixels(bounds) - as<int32_t>(pen_width1);
+  auto radius_top_right2 = border_radius.top_right().get_pixels(bounds) - as<int32>(pen_width1);
   if (radius_top_left1 < 0) radius_top_left1 = 0;
   if (radius_top_left2 < 0) radius_top_left2 = 0;
   if (radius_top_right1 < 0) radius_top_right1 = 0;
@@ -128,12 +128,12 @@ void box_renderer::draw_line_right(graphics& graphics, const rectangle& bounds, 
   auto border_rect2 = rectangle::truncate(rectangle_f(bounds.left() + pen_width1 + pen_width2 / 2.0f,  bounds.top() + pen_width1 + pen_width2 / 2.0f, bounds.width() -  2 * pen_width1 - pen_width2, bounds.height() - 2 * pen_width1 - pen_width2));
   
   if (border_style.top() == border_type::double_border)
-    border_rect2 = rectangle::inflate(border_rect2, {-as<int32_t>(pen_width1), -as<int32_t>(pen_width1)});
+    border_rect2 = rectangle::inflate(border_rect2, {-as<int32>(pen_width1), -as<int32>(pen_width1)});
     
   auto radius_top_right1 = border_radius.top_right().get_pixels(bounds);
-  auto radius_top_right2 = border_radius.top_right().get_pixels(bounds) - as<int32_t>(pen_width1);
+  auto radius_top_right2 = border_radius.top_right().get_pixels(bounds) - as<int32>(pen_width1);
   auto radius_bottom_right1 = border_radius.bottom_right().get_pixels(bounds);
-  auto radius_bottom_right2 = border_radius.bottom_right().get_pixels(bounds) - as<int32_t>(pen_width1);
+  auto radius_bottom_right2 = border_radius.bottom_right().get_pixels(bounds) - as<int32>(pen_width1);
   if (radius_top_right1 < 0) radius_top_right1 = 0;
   if (radius_top_right2 < 0) radius_top_right2 = 0;
   if (radius_bottom_right1 < 0) radius_bottom_right1 = 0;
@@ -186,12 +186,12 @@ void box_renderer::draw_line_bottom(graphics& graphics, const rectangle& bounds,
   auto border_rect2 = rectangle::truncate(rectangle_f(bounds.left() + pen_width1 + pen_width2 / 2.0f,  bounds.top() + pen_width1 + pen_width2 / 2.0f, bounds.width() -  2 * pen_width1 - pen_width2, bounds.height() - 2 * pen_width1 - pen_width2));
   
   if (border_style.top() == border_type::double_border)
-    border_rect2 = rectangle::inflate(border_rect2, {-as<int32_t>(pen_width1), -as<int32_t>(pen_width1)});
+    border_rect2 = rectangle::inflate(border_rect2, {-as<int32>(pen_width1), -as<int32>(pen_width1)});
     
   auto radius_bottom_right1 = border_radius.bottom_right().get_pixels(bounds);
-  auto radius_bottom_right2 = border_radius.bottom_right().get_pixels(bounds) - as<int32_t>(pen_width1);
+  auto radius_bottom_right2 = border_radius.bottom_right().get_pixels(bounds) - as<int32>(pen_width1);
   auto radius_bottom_left1 = border_radius.bottom_left().get_pixels(bounds);
-  auto radius_bottom_left2 = border_radius.bottom_left().get_pixels(bounds) - as<int32_t>(pen_width1);
+  auto radius_bottom_left2 = border_radius.bottom_left().get_pixels(bounds) - as<int32>(pen_width1);
   if (radius_bottom_right1 < 0) radius_bottom_right1 = 0;
   if (radius_bottom_right2 < 0) radius_bottom_right2 = 0;
   if (radius_bottom_left1 < 0) radius_bottom_left1 = 0;
@@ -244,12 +244,12 @@ void box_renderer::draw_line_left(graphics& graphics, const rectangle& bounds, c
   auto border_rect2 = rectangle::truncate(rectangle_f(bounds.left() + pen_width1 + pen_width2 / 2.0f,  bounds.top() + pen_width1 + pen_width2 / 2.0f, bounds.width() -  2 * pen_width1 - pen_width2, bounds.height() - 2 * pen_width1 - pen_width2));
   
   if (border_style.top() == border_type::double_border)
-    border_rect2 = rectangle::inflate(border_rect2, {-as<int32_t>(pen_width1), -as<int32_t>(pen_width1)});
+    border_rect2 = rectangle::inflate(border_rect2, {-as<int32>(pen_width1), -as<int32>(pen_width1)});
     
   auto radius_bottom_left1 = border_radius.bottom_left().get_pixels(bounds);
-  auto radius_bottom_left2 = border_radius.bottom_left().get_pixels(bounds) - as<int32_t>(pen_width1);
+  auto radius_bottom_left2 = border_radius.bottom_left().get_pixels(bounds) - as<int32>(pen_width1);
   auto radius_top_left1 = border_radius.top_left().get_pixels(bounds);
-  auto radius_top_left2 = border_radius.top_left().get_pixels(bounds) - as<int32_t>(pen_width1);
+  auto radius_top_left2 = border_radius.top_left().get_pixels(bounds) - as<int32>(pen_width1);
   if (radius_bottom_left1 < 0) radius_bottom_left1 = 0;
   if (radius_bottom_left2 < 0) radius_bottom_left2 = 0;
   if (radius_top_left1 < 0) radius_top_left1 = 0;

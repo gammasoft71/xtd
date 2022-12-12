@@ -34,7 +34,7 @@ bool domain_up_down::item::equals(const item& value) const noexcept {
   return value_ == value.value_;
 }
 
-int32_t domain_up_down::item::compare_to(const item& value) const noexcept {
+int32 domain_up_down::item::compare_to(const item& value) const noexcept {
   return value_ < value.value_ ? -1 : value_ > value.value_ ? 1 : 0;
 }
 

@@ -129,12 +129,12 @@ namespace xtd {
       /// @brief Gets the minimum allowed width of the status bar panel within the xtd::forms::status_bar control.
       /// @return The minimum width, in pixels, of the xtd::forms::status_bar_panel
       /// @remarks The xtd::forms::status_bar_panel::min_width property is used when the xtd::forms::status_bar_panel::auto_size property is set to xtd::forms::status_bar_panel_auto_size::contents or xtd::forms::status_bar_panel_auto_size::spring to prevent the xtd::forms::status_bar_panel from automatically resizing to a width that is too small. When the xtd::forms::status_bar_panel::auto_size property is set to xtd::forms::status_bar_panel_auto_size::none, the xtd::forms::status_bar_panel::min_width property is automatically set to the same value as the xtd::forms::status_bar_panel::width property.
-      int32_t min_width() const noexcept;
+      int32 min_width() const noexcept;
       /// @brief Sets the minimum allowed width of the status bar panel within the xtd::forms::status_bar control.
       /// @param value The minimum width, in pixels, of the xtd::forms::status_bar_panel
       /// @exception xtd::argument_exception A value less than 0 is assigned to the property.
       /// @remarks The xtd::forms::status_bar_panel::min_width property is used when the xtd::forms::status_bar_panel::auto_size property is set to xtd::forms::status_bar_panel_auto_size::contents or xtd::forms::status_bar_panel_auto_size::spring to prevent the xtd::forms::status_bar_panel from automatically resizing to a width that is too small. When the xtd::forms::status_bar_panel::auto_size property is set to xtd::forms::status_bar_panel_auto_size::none, the xtd::forms::status_bar_panel::min_width property is automatically set to the same value as the xtd::forms::status_bar_panel::width property.
-      status_bar_panel& min_width(int32_t value);
+      status_bar_panel& min_width(int32 value);
       
       /// @brief Gets the name of the xtd::forms::status_bar_panel.
       /// @return The name of the xtd::forms::status_bar_panel.
@@ -195,12 +195,12 @@ namespace xtd {
       /// @brief Gets the width of the status bar panel within the xtd::forms::status_bar control.
       /// @return The width, in pixels, of the xtd::forms::status_bar_panel.
       /// @remarks The xtd::forms::status_bar_panel::width property always reflects the actual width of a xtd::forms::status_bar_panel and cannot be smaller than the xtd::forms::status_bar_panel::min_width property. To automatically resize the width of the xtd::forms::status_bar_panel to the contents of the xtd::forms::status_bar_panel, you can use the xtd::forms::status_bar_panel::auto_size property.
-      int32_t width() const noexcept;
+      int32 width() const noexcept;
       /// @brief Sets the width of the status bar panel within the xtd::forms::status_bar control.
       /// @param value The width, in pixels, of the xtd::forms::status_bar_panel.
       /// @return This current instance.
       /// @remarks The xtd::forms::status_bar_panel::width property always reflects the actual width of a xtd::forms::status_bar_panel and cannot be smaller than the xtd::forms::status_bar_panel::min_width property. To automatically resize the width of the xtd::forms::status_bar_panel to the contents of the xtd::forms::status_bar_panel, you can use the xtd::forms::status_bar_panel::auto_size property.
-      status_bar_panel& width(int32_t value);
+      status_bar_panel& width(int32 value);
       /// @}
       
       /// @name Methods
@@ -255,14 +255,14 @@ namespace xtd {
         xtd::forms::control* control = nullptr;
         intptr_t handle = 0;
         xtd::drawing::image image;
-        int32_t min_width = 10;
+        int32 min_width = 10;
         xtd::ustring name;
         xtd::forms::status_bar* parent = nullptr;
         xtd::forms::status_bar_panel_style style = xtd::forms::status_bar_panel_style::text;
         std::any tag;
         xtd::ustring text;
         xtd::ustring tool_tip_text;
-        int32_t width = 100;
+        int32 width = 100;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

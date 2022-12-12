@@ -374,10 +374,10 @@ namespace xtd {
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/style_sheets_overview.md">Style sheets overview</a>.
         static xtd::forms::style_sheets::theme theme_from_css(const xtd::ustring& css_text);
         
-        /// @brief Converts xtd::forms::border_style in std::tuple<xtd::forms::style_sheets::border_type, int32_t, int32_t>.
+        /// @brief Converts xtd::forms::border_style in std::tuple<xtd::forms::style_sheets::border_type, int32, int32>.
         /// @param border The ::forms::border_style to convert.
-        /// @return A std::tuple<xtd::forms::style_sheets::border_type, int32_t, int32_t> class that containe, border type, border width and border radius.
-        static std::tuple<xtd::forms::style_sheets::border_type, int32_t, int32_t> to_border_type(xtd::forms::border_style border);
+        /// @return A std::tuple<xtd::forms::style_sheets::border_type, int32, int32> class that containe, border type, border width and border radius.
+        static std::tuple<xtd::forms::style_sheets::border_type, int32, int32> to_border_type(xtd::forms::border_style border);
         /// @}
         
         /// @name Events

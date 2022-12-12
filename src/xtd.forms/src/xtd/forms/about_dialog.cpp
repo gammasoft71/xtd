@@ -146,7 +146,7 @@ namespace {
         about_dialog->picture_box_icon_.image(xtd::drawing::bitmap(icon, {64, 64}));
       else
         about_dialog->picture_box_icon_.image(xtd::drawing::system_images::from_name("xtd-forms", xtd::drawing::size(64, 64)));
-      about_dialog->label_name_.height(static_cast<int32_t>(30 * name.split({'\n'}).size()));
+      about_dialog->label_name_.height(static_cast<int32>(30 * name.split({'\n'}).size()));
       about_dialog->label_name_.text(name);
       if (has_credit || has_license) {
         about_dialog->controls().push_back_range({about_dialog->tab_control_about_, about_dialog->label_name_, about_dialog->picture_box_icon_});
@@ -168,17 +168,17 @@ namespace {
       else if (!version.empty())
         about_dialog->label_version_.text(xtd::ustring::format("({})", version));
         
-      about_dialog->label_description_.height(static_cast<int32_t>(23 * description.split({'\n'}).size()));
+      about_dialog->label_description_.height(static_cast<int32>(23 * description.split({'\n'}).size()));
       about_dialog->label_description_.text(xtd::ustring::format("{}", description));
       
-      about_dialog->link_label_website_.height(static_cast<int32_t>(23 * (!website_label.empty() ? website_label : website).split({'\n'}).size()));
+      about_dialog->link_label_website_.height(static_cast<int32>(23 * (!website_label.empty() ? website_label : website).split({'\n'}).size()));
       about_dialog->link_label_website_.text(!website_label.empty() ? website_label : website);
       about_dialog->link_label_website_.link_clicked += [website](object & sender, link_label_clicked_event_args & e) {
         e.visited(true);
         diagnostics::process::start(website);
       };
       
-      about_dialog->label_copyright_.height(static_cast<int32_t>(23 * copyright.split({'\n'}).size()));
+      about_dialog->label_copyright_.height(static_cast<int32>(23 * copyright.split({'\n'}).size()));
       about_dialog->label_copyright_.text(xtd::ustring::format("{}", ustring(copyright).replace(u8"(c)"_s, u8"\u00A9"_s)));
       
       if (has_credit) {

@@ -40,13 +40,13 @@ namespace xtd {
       /// @param x The x-coordinate of a mouse click, in pixels.
       /// @param y The y-coordinate of a mouse click, in pixels.
       /// @param delta A signed count of the number of detents the wheel has rotated.
-      mouse_event_args(mouse_buttons button, int32_t clicks, int32_t x, int32_t y, int32_t delta) : button_(button), location_(x, y), clicks_(clicks), delta_(delta) {}
+      mouse_event_args(mouse_buttons button, int32 clicks, int32 x, int32 y, int32 delta) : button_(button), location_(x, y), clicks_(clicks), delta_(delta) {}
       /// @brief Initializes a new instance of the MouseEventArgs class.
       /// @param button One of the xtd::forms::mouse_buttons values that indicate which mouse button was pressed.
       /// @param clicks The number of times a mouse button was pressed.
       /// @param location The location of a mouse click, in pixels.
       /// @param delta A signed count of the number of detents the wheel has rotated.
-      mouse_event_args(mouse_buttons button, int32_t clicks, const drawing::point& location, int32_t delta) : button_(button), location_(location), clicks_(clicks), delta_(delta) {}
+      mouse_event_args(mouse_buttons button, int32 clicks, const drawing::point& location, int32 delta) : button_(button), location_(location), clicks_(clicks), delta_(delta) {}
       /// @}
       
       /// @cond
@@ -63,11 +63,11 @@ namespace xtd {
       
       /// @brief Gets the number of times the mouse button was pressed and released.
       /// @return An Int32_t that contains the number of times the mouse button was pressed and released.
-      int32_t clicks() const noexcept {return clicks_;}
+      int32 clicks() const noexcept {return clicks_;}
       
       /// @brief Gets a signed count of the number of detents the mouse wheel has rotated, multiplied by the WHEEL_DELTA constant. A detent is one notch of the mouse wheel.
       /// @return A signed count of the number of detents the mouse wheel has rotated, multiplied by the WHEEL_DELTA constant.
-      int32_t delta() const noexcept {return delta_;}
+      int32 delta() const noexcept {return delta_;}
       
       /// @brief Gets the location of the mouse during the generating mouse event.
       /// @return A xtd::drawing::point that contains the x- and y- mouse coordinates, in pixels, relative to the upper-left corner of the form.
@@ -75,11 +75,11 @@ namespace xtd {
       
       /// @brief Gets the x-coordinate of the mouse during the generating mouse event.
       /// @return The x-coordinate of the mouse, in pixels.
-      int32_t x() const noexcept {return location().x();}
+      int32 x() const noexcept {return location().x();}
       
       /// @brief Gets the y-coordinate of the mouse during the generating mouse event.
       /// @return The y-coordinate of the mouse, in pixels.
-      int32_t y() const noexcept {return location().y();}
+      int32 y() const noexcept {return location().y();}
       /// @}
       
     private:
@@ -89,11 +89,11 @@ namespace xtd {
       friend class light_button;
       friend class radio_button;
       friend class toggle_button;
-      static mouse_event_args create(const message& message, bool double_click_fired = false, int32_t delta = 0);
+      static mouse_event_args create(const message& message, bool double_click_fired = false, int32 delta = 0);
       mouse_buttons button_ = mouse_buttons::none;
       drawing::point location_;
-      int32_t clicks_ = 0;
-      int32_t delta_ = 0;
+      int32 clicks_ = 0;
+      int32 delta_ = 0;
     };
   }
 }

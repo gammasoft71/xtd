@@ -58,7 +58,7 @@ namespace xtd {
           return control()->GetSize();
         }
         
-        void SetClientSize(int32_t width, int32_t height) override {
+        void SetClientSize(int32 width, int32 height) override {
           control()->SetSize(width, height);
         }
         

@@ -27,11 +27,11 @@ flat_button_appearance& flat_button_appearance::border_color(std::nullptr_t) {
   return *this;
 }
 
-std::optional<int32_t> flat_button_appearance::border_radius() const noexcept {
+std::optional<int32> flat_button_appearance::border_radius() const noexcept {
   return data_->border_radius;
 }
 
-flat_button_appearance& flat_button_appearance::border_radius(int32_t radius) {
+flat_button_appearance& flat_button_appearance::border_radius(int32 radius) {
   data_->border_radius = radius;
   return *this;
 }
@@ -41,11 +41,11 @@ flat_button_appearance& flat_button_appearance::border_radius(std::nullptr_t) {
   return *this;
 }
 
-std::optional<int32_t> flat_button_appearance::border_size() const noexcept {
+std::optional<int32> flat_button_appearance::border_size() const noexcept {
   return data_->border_size;
 }
 
-flat_button_appearance& flat_button_appearance::border_size(int32_t size) {
+flat_button_appearance& flat_button_appearance::border_size(int32 size) {
   data_->border_size = size;
   return *this;
 }

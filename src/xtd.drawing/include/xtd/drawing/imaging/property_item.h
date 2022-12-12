@@ -253,7 +253,7 @@ namespace xtd {
         /// | 0xA300 | property_tag_exif_file_Source                 |
         /// | 0xA301 | property_tag_exif_scene_type                  |
         /// | 0xA302 | property_tag_exif_cfa_pattern                 |
-        int32_t id() const noexcept {return id_;}
+        int32 id() const noexcept {return id_;}
         /// @brief Sets the ID of the property.
         /// @param id The integer that represents the ID of the property.
         /// @remarks The following table shows the property tags and their IDs.
@@ -476,14 +476,14 @@ namespace xtd {
         /// | 0xA300 | property_tag_exif_file_Source                 |
         /// | 0xA301 | property_tag_exif_scene_type                  |
         /// | 0xA302 | property_tag_exif_cfa_pattern                 |
-        void id(int32_t id) noexcept {id_ = id;}
+        void id(int32 id) noexcept {id_ = id;}
         
         /// @brief Gets the length (in bytes) of the value property.
         /// @return An integer that represents the length (in bytes) of the value byte array.
-        int32_t len() const noexcept {return len_;}
+        int32 len() const noexcept {return len_;}
         /// @brief Sets the length (in bytes) of the value property.
         /// &param len An integer that represents the length (in bytes) of the value byte array.
-        void len(int32_t len) noexcept {len_ = len;}
+        void len(int32 len) noexcept {len_ = len;}
         
         /// @brief Gets an integer that defines the type of data contained in the value property.
         /// @return An integer that defines the type of data contained in value.
@@ -529,8 +529,8 @@ namespace xtd {
         /// @}
         
       private:
-        int32_t id_ = 0;
-        int32_t len_ = 0;
+        int32 id_ = 0;
+        int32 len_ = 0;
         int16 type_ = 1;
         std::vector<xtd::byte> value_;
       };

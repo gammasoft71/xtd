@@ -95,28 +95,28 @@ namespace xtd {
       /// @brief Returns the cell ascent, in design units, of the font_family of the specified style.
       /// @param style A font_style that contains style information for the font.
       /// @return The cell ascent for this font_family that uses the specified font_style.
-      int32_t get_cell_ascent(font_style style) const;
+      int32 get_cell_ascent(font_style style) const;
       
       /// @brief Returns the cell descent, in design units, of the font_family of the specified style.
       /// @param style A font_style that contains style information for the font.
       /// @return The cell ascent for this font_family that uses the specified font_style.
-      int32_t get_cell_descent(font_style style) const;
+      int32 get_cell_descent(font_style style) const;
       
       /// @brief Gets the height, in font design units, of the em square for the specified style.
       /// @param style A font_style that contains style information for the font.
       /// @return The height of the em square.
-      int32_t get_em_height(font_style style) const noexcept;
+      int32 get_em_height(font_style style) const noexcept;
       
       /// @brief Returns the line spacing, in design units, of the font_family of the specified style. The line spacing is the vertical distance between the base lines of two consecutive lines of text.
       /// @param style A font_style that contains style information for the font.
       /// @return The distance between two consecutive lines of text.
-      int32_t get_line_spacing(font_style style) const;
+      int32 get_line_spacing(font_style style) const;
       
       /// @brief Returns the name, in the specified language, of this font_family.
       /// @param language The language in which the name is returned.
       /// @return A String that represents the name, in the specified language, of this font_family.
       /// @remarks To indicate language neutral, you should specify 0 for the language parameter. For a listing of the available languages and sublanguages, see the Winnt.h header file. If you have Visual Studio installed, this header file can typically be found relative to the Visual Studio installation directory at \\VC\PlatformSDK\Include.
-      xtd::ustring get_name(int32_t language) const;
+      xtd::ustring get_name(int32 language) const;
       
       /// @brief Indicates whether the specified font_style enumeration is available.
       /// @param style The font_style to test.

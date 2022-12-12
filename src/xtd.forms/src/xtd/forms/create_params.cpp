@@ -48,11 +48,11 @@ create_params& create_params::ex_style(size_t ex_style) {
   return *this;
 }
 
-int32_t create_params::height() const noexcept {
+int32 create_params::height() const noexcept {
   return data_->size.height();
 }
 
-create_params& create_params::height(int32_t height) {
+create_params& create_params::height(int32 height) {
   data_->size.height(height);
   return *this;
 }
@@ -103,29 +103,29 @@ create_params& create_params::size(const drawing::size size) {
 }
 
 
-int32_t create_params::width() const noexcept {
+int32 create_params::width() const noexcept {
   return data_->size.width();
 }
 
-create_params& create_params::width(int32_t width) {
+create_params& create_params::width(int32 width) {
   data_->size.width(width);
   return *this;
 }
 
-int32_t create_params::x() const noexcept {
+int32 create_params::x() const noexcept {
   return data_->location.x();
 }
 
-create_params& create_params::x(int32_t x) {
+create_params& create_params::x(int32 x) {
   data_->location.x(x);
   return *this;
 }
 
-int32_t create_params::y() const noexcept {
+int32 create_params::y() const noexcept {
   return data_->location.y();
 }
 
-create_params& create_params::y(int32_t y) {
+create_params& create_params::y(int32 y) {
   data_->location.y(y);
   return *this;
 }

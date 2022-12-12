@@ -178,7 +178,7 @@ void combo_box::on_handle_created(const event_args& e) {
   list_control::on_handle_created(e);
 
   data_->drop_down_width = default_size().width();
-  data_->drop_down_height = static_cast<int32_t>(font().get_height()) * 9;
+  data_->drop_down_height = static_cast<int32>(font().get_height()) * 9;
   if (environment::os_version().is_windows_platform() && data_->drop_down_style == combo_box_style::simple && size().height() == default_size().height() && size().height() < data_->drop_down_height)
     size({size().width(), data_->drop_down_height});
     

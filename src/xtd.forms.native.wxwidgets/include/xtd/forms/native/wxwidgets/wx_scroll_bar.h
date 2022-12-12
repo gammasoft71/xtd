@@ -33,11 +33,11 @@ namespace xtd {
           #endif
         }
         
-        int32_t large_change_ = 1;
-        int32_t minimum_ = 0;
-        int32_t maximum_ = 100;
-        int32_t small_change_ = 1;
-        int32_t value_ = 0;
+        int32 large_change_ = 1;
+        int32 minimum_ = 0;
+        int32 maximum_ = 100;
+        int32 small_change_ = 1;
+        int32 value_ = 0;
       };
     }
   }

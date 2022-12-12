@@ -72,23 +72,23 @@ bool font_family::equals(const font_family& value) const noexcept {
   return data_->name_ == value.data_->name_;
 }
 
-int32_t font_family::get_cell_ascent(font_style style) const {
+int32 font_family::get_cell_ascent(font_style style) const {
   return native::font_family::get_cell_ascent(data_->handle_, get_em_height(style), (style & font_style::bold) == font_style::bold, (style & font_style::italic) == font_style::italic, (style & font_style::underline) == font_style::underline, (style & font_style::strikeout) == font_style::strikeout);
 }
 
-int32_t font_family::get_cell_descent(font_style style) const {
+int32 font_family::get_cell_descent(font_style style) const {
   return native::font_family::get_cell_descent(data_->handle_, get_em_height(style), (style & font_style::bold) == font_style::bold, (style & font_style::italic) == font_style::italic, (style & font_style::underline) == font_style::underline, (style & font_style::strikeout) == font_style::strikeout);
 }
 
-int32_t font_family::get_em_height(font_style style) const noexcept {
+int32 font_family::get_em_height(font_style style) const noexcept {
   return 2048;
 }
 
-int32_t font_family::get_line_spacing(font_style style) const {
+int32 font_family::get_line_spacing(font_style style) const {
   return native::font_family::get_line_spacing(data_->handle_, get_em_height(style), (style & font_style::bold) == font_style::bold, (style & font_style::italic) == font_style::italic, (style & font_style::underline) == font_style::underline, (style & font_style::strikeout) == font_style::strikeout);
 }
 
-ustring font_family::get_name(int32_t language) const {
+ustring font_family::get_name(int32 language) const {
   return native::font_family::get_name(data_->handle_, language);
 }
 

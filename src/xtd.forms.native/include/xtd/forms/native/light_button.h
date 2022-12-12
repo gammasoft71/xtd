@@ -41,7 +41,7 @@ namespace xtd {
         /// @param control Check box window handle.
         /// @param check_state The check state value : BST_UNCHECKED or BST_CHECKED or BST_INDETERMINATE.
         /// @warning Internal use only
-        static void check_state(intptr_t control, int32_t check_state);
+        static void check_state(intptr_t control, int32 check_state);
         /// @}
       };
     }

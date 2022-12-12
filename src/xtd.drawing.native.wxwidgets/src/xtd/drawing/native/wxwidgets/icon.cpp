@@ -73,7 +73,7 @@ intptr_t icon::create(const ustring& filename) {
   return reinterpret_cast<intptr_t>(new wxIconBundle(wxString(convert_string::to_wstring(filename))));
 }
 
-intptr_t icon::create(const xtd::ustring& filename, int32_t width, int32_t height) {
+intptr_t icon::create(const xtd::ustring& filename, int32 width, int32 height) {
   toolkit::initialize(); // Must be first
   //return reinterpret_cast<intptr_t>(new wxIconBundle(wxIcon(wxString(convert_string::to_wstring(filename)), wxICON_DEFAULT_TYPE, width, height)));
   return reinterpret_cast<intptr_t>(new wxIconBundle(wxIconBundle(wxString(convert_string::to_wstring(filename))).GetIcon({width, height})));
@@ -85,7 +85,7 @@ intptr_t icon::create(std::istream& stream) {
   return reinterpret_cast<intptr_t>(new wxIconBundle(std_stream));
 }
 
-intptr_t icon::create(std::istream& stream, int32_t width, int32_t height) {
+intptr_t icon::create(std::istream& stream, int32 width, int32 height) {
   toolkit::initialize(); // Must be first
   StdInputStreamAdapter std_stream(stream);
   return reinterpret_cast<intptr_t>(new wxIconBundle(wxIconBundle(std_stream).GetIcon({width, height})));
@@ -96,7 +96,7 @@ intptr_t icon::create(const char* const* bits) {
   return reinterpret_cast<intptr_t>(new wxIconBundle(wxIcon(bits)));
 }
 
-intptr_t icon::create(const char* const* bits, int32_t width, int32_t height) {
+intptr_t icon::create(const char* const* bits, int32 width, int32 height) {
   toolkit::initialize(); // Must be first
   return reinterpret_cast<intptr_t>(new wxIconBundle(wxIconBundle(wxIcon(bits)).GetIcon({width, height})));
 }
@@ -111,7 +111,7 @@ intptr_t icon::create(intptr_t image) {
   return reinterpret_cast<intptr_t>(result);
 }
 
-intptr_t icon::create(intptr_t icon, int32_t width, int32_t height) {
+intptr_t icon::create(intptr_t icon, int32 width, int32 height) {
   toolkit::initialize(); // Must be first
   if (icon == 0) return 0;
   wxIconBundle* result = new wxIconBundle(reinterpret_cast<wxIconBundle*>(icon)->GetIcon({width, height}));
@@ -126,11 +126,11 @@ intptr_t icon::from_handle(intptr_t handle) {
   return reinterpret_cast<intptr_t>(new wxIconBundle(wxIcon(*reinterpret_cast<wxIcon*>(handle))));
 }
 
-int32_t icon::get_height(intptr_t icon) {
+int32 icon::get_height(intptr_t icon) {
   return reinterpret_cast<wxIconBundle*>(icon)->GetIcon().GetHeight();
 }
 
-int32_t icon::get_width(intptr_t icon) {
+int32 icon::get_width(intptr_t icon) {
   return reinterpret_cast<wxIconBundle*>(icon)->GetIcon().GetWidth();
 }
 

@@ -63,7 +63,7 @@ namespace xtd {
       /// @param value The number of decimal places to display in the spin box. The default is 0.
       /// @return Current numeric_up_down.
       /// @remarks When the decimal_places property is set, the update_edit_text method is called to update the spin box's display to the new format.
-      virtual numeric_up_down& decimal_place(int32_t value);
+      virtual numeric_up_down& decimal_place(int32 value);
       
       /// @brief Gets the value to increment or decrement the spin box (also known as an up-down control) when the up or down buttons are clicked.
       /// @return The value to increment or decrement the Value property when the up or down buttons are clicked on the spin box. The default value is 1.
@@ -168,7 +168,7 @@ namespace xtd {
       
     private:
       struct data {
-        int32_t decimal_place = 0;
+        int32 decimal_place = 0;
         double increment = 1.0;
         double maximum = 100.0;
         double minimum = 0.0;

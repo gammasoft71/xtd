@@ -223,7 +223,7 @@ namespace xtd {
       /// @remarks If the unit property of the font is set to anything other than graphics_unit::pixel, the height (in pixels) is calculated using the vertical resolution of the screen display. For example, suppose the font unit is inches and the font size is 0.3. Also suppose that for the corresponding font family, the em-height is 2048 and the line spacing is 2355. For a screen display that has a vertical resolution of 96 dots per inch, you can calculate the height as follows:
       /// @remarks 2355*(0.3/2048)*96 = 33.11719
       /// @remarks The value returned by the get_height method would be 33.11719, and the value returned by the height property would be 34. The height property is the value returned by get_height, rounded up to the nearest integer.
-      int32_t height() const noexcept;
+      int32 height() const noexcept;
       
       /// @brief Gets a value indicating whether the font is a member of xtd::drawing::system_fonts.
       /// @return true if the font is a member of xtd::drawing::system_fonts; otherwise, false. The default is false.

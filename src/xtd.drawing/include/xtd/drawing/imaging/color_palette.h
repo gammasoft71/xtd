@@ -46,7 +46,7 @@ namespace xtd {
         /// * 0x00000001 The color values in the array contain alpha information.
         /// * 0x00000002 The colors in the array are grayscale values.
         /// * 0x00000004 The colors in the array are halftone values.
-        int32_t flags() const noexcept {return flags_;}
+        int32 flags() const noexcept {return flags_;}
         /// @}
 
         /// @name Methods
@@ -59,7 +59,7 @@ namespace xtd {
         friend class xtd::drawing::image;
         color_palette() = default;
         std::vector<color> entries_;
-        int32_t flags_ = 0;
+        int32 flags_ = 0;
       };
     }
   }

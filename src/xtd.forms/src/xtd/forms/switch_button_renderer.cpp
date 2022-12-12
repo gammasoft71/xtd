@@ -130,7 +130,7 @@ void switch_button_renderer::draw_button_kde_dark(graphics g, const rectangle& b
   auto border_color = application::style_sheet().system_colors().control_dark();
   auto button_color = background_color;
   auto text_color = foreground_color;
-  int32_t offset = 0;
+  int32 offset = 0;
   
   if (state == xtd::forms::visual_styles::push_button_state::hot)
     border_color = application::style_sheet().system_colors().accent();
@@ -164,7 +164,7 @@ void switch_button_renderer::draw_button_kde_light(graphics g, const rectangle& 
   auto border_color = application::style_sheet().system_colors().control_dark();
   auto button_color = background_color;
   auto text_color = foreground_color;
-  int32_t offset = 0;
+  int32 offset = 0;
   
   if (state == xtd::forms::visual_styles::push_button_state::hot)
     border_color = application::style_sheet().system_colors().accent();

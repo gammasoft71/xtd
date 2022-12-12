@@ -107,7 +107,7 @@ std::vector<ustring> font_family::installed_font_families() {
   return families;
 }
 
-int32_t font_family::get_cell_ascent(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout) {
+int32 font_family::get_cell_ascent(intptr_t font_family, int32 em_height, bool bold, bool italic, bool underline, bool strikeout) {
   toolkit::initialize(); // Must be first
   if (!wxTheApp) return em_height;
   wxScreenDC hdc;
@@ -120,7 +120,7 @@ int32_t font_family::get_cell_ascent(intptr_t font_family, int32_t em_height, bo
   return std::round(static_cast<double>(metrics.ascent) / metrics.height * em_height);
 }
 
-int32_t font_family::get_cell_descent(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout) {
+int32 font_family::get_cell_descent(intptr_t font_family, int32 em_height, bool bold, bool italic, bool underline, bool strikeout) {
   toolkit::initialize(); // Must be first
   if (!wxTheApp) return 0;
   wxScreenDC hdc;
@@ -133,7 +133,7 @@ int32_t font_family::get_cell_descent(intptr_t font_family, int32_t em_height, b
   return std::round(static_cast<double>(metrics.descent) / metrics.height * em_height);
 }
 
-int32_t font_family::get_line_spacing(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout) {
+int32 font_family::get_line_spacing(intptr_t font_family, int32 em_height, bool bold, bool italic, bool underline, bool strikeout) {
   toolkit::initialize(); // Must be first
   if (!wxTheApp) return em_height;
   wxScreenDC hdc;
@@ -146,7 +146,7 @@ int32_t font_family::get_line_spacing(intptr_t font_family, int32_t em_height, b
   return std::round(static_cast<double>(metrics.height + metrics.externalLeading) / metrics.height * em_height);
 }
 
-ustring font_family::get_name(intptr_t font_family, int32_t language) {
+ustring font_family::get_name(intptr_t font_family, int32 language) {
   toolkit::initialize(); // Must be first
   return *reinterpret_cast<ustring*>(font_family);
 }

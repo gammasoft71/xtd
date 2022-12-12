@@ -8,7 +8,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-void up_down_button::maximum(intptr_t control, int32_t maximum) {
+void up_down_button::maximum(intptr_t control, int32 maximum) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -17,7 +17,7 @@ void up_down_button::maximum(intptr_t control, int32_t maximum) {
   static_cast<wxSpinButton*>(reinterpret_cast<control_handler*>(control)->control())->SetRange(static_cast<wxSpinButton*>(reinterpret_cast<control_handler*>(control)->control())->GetMin(), maximum);
 }
 
-void up_down_button::minimum(intptr_t control, int32_t minimum) {
+void up_down_button::minimum(intptr_t control, int32 minimum) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -26,7 +26,7 @@ void up_down_button::minimum(intptr_t control, int32_t minimum) {
   static_cast<wxSpinButton*>(reinterpret_cast<control_handler*>(control)->control())->SetRange(minimum, static_cast<wxSpinButton*>(reinterpret_cast<control_handler*>(control)->control())->GetMax());
 }
 
-void up_down_button::value(intptr_t control, int32_t value) {
+void up_down_button::value(intptr_t control, int32 value) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -35,7 +35,7 @@ void up_down_button::value(intptr_t control, int32_t value) {
   static_cast<wxSpinButton*>(reinterpret_cast<control_handler*>(control)->control())->SetValue(value);
 }
 
-int32_t up_down_button::value(intptr_t control) {
+int32 up_down_button::value(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

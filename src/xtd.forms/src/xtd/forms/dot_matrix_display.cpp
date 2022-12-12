@@ -54,25 +54,25 @@ const dot_matrix_display::dots_collection& dot_matrix_display::dot_matrix_displa
 const dot_matrix_display& dot_matrix_display::dots(const dots_collection& dots) {
   if (data_->dots != dots) {
     data_->dots = dots;
-    data_->matrix_size = drawing::size(static_cast<int32_t>(data_->dots[0].size()), static_cast<int32_t>(data_->dots.size()));
+    data_->matrix_size = drawing::size(static_cast<int32>(data_->dots[0].size()), static_cast<int32>(data_->dots.size()));
     invalidate();
   }
   return *this;
 }
 
-int32_t dot_matrix_display::matrix_height() const noexcept {
+int32 dot_matrix_display::matrix_height() const noexcept {
   return data_->matrix_size.height();
 }
 
-void dot_matrix_display::matrix_height(int32_t value) {
+void dot_matrix_display::matrix_height(int32 value) {
   matrix_size({data_->matrix_size.width(), value});
 }
 
-int32_t dot_matrix_display::matrix_width() const noexcept {
+int32 dot_matrix_display::matrix_width() const noexcept {
   return data_->matrix_size.width();
 }
 
-void dot_matrix_display::matrix_width(int32_t value) {
+void dot_matrix_display::matrix_width(int32 value) {
   matrix_size({value, data_->matrix_size.height()});
 }
 
@@ -100,11 +100,11 @@ dot_matrix_display& dot_matrix_display::show_back_dot(bool value) {
   return *this;
 }
 
-int32_t dot_matrix_display::thickness() const noexcept {
+int32 dot_matrix_display::thickness() const noexcept {
   return data_->thickness.value_or(size().height() < (data_->matrix_size.height() * 2) ? 1 : (size().height() - data_->matrix_size.height()) / data_->matrix_size.height());
 }
 
-dot_matrix_display& dot_matrix_display::thickness(int32_t value) {
+dot_matrix_display& dot_matrix_display::thickness(int32 value) {
   if (!data_->thickness.has_value() || data_->thickness.value() != value) {
     data_->thickness = value;
     invalidate();
@@ -117,8 +117,8 @@ bool dot_matrix_display::get_dot(const drawing::point& point) const noexcept {
 }
 
 void dot_matrix_display::set_all_dots(bool on) {
-  for (int32_t y = 0; y < static_cast<int32_t>(data_->dots.size()); y++)
-    for (int32_t x = 0; x < static_cast<int32_t>(data_->dots[y].size()); x++)
+  for (int32 y = 0; y < static_cast<int32>(data_->dots.size()); y++)
+    for (int32 x = 0; x < static_cast<int32>(data_->dots[y].size()); x++)
       data_->dots[y][x] = on;
 }
 
@@ -155,8 +155,8 @@ void dot_matrix_display::on_fore_color_changed(const event_args& e) {
 
 void dot_matrix_display::on_paint(paint_event_args& e) {
   e.graphics().clear(back_color());
-  for (int32_t y = 0; y < static_cast<int32_t>(data_->dots.size()); y++) {
-    for (int32_t x = 0; x < static_cast<int32_t>(data_->dots[y].size()); x++) {
+  for (int32 y = 0; y < static_cast<int32>(data_->dots.size()); y++) {
+    for (int32 x = 0; x < static_cast<int32>(data_->dots[y].size()); x++) {
       if (data_->dots[y][x]) draw_dot(e.graphics(), fore_color(), {x, y});
       else if (data_->show_back_dot) draw_dot(e.graphics(), drawing::color::average(back_dot_color(), back_color(), data_->back_dot_opacity), {x, y});
     }
@@ -165,13 +165,13 @@ void dot_matrix_display::on_paint(paint_event_args& e) {
 }
 
 drawing::size dot_matrix_display::measure_control() const noexcept {
-  int32_t width = static_cast<int32_t>(static_cast<double>(height()) / matrix_height() * matrix_width());
+  int32 width = static_cast<int32>(static_cast<double>(height()) / matrix_height() * matrix_width());
   return drawing::size(width, height());
 }
 
 void dot_matrix_display::draw_dot(drawing::graphics& graphics, const drawing::color& color, const drawing::point& point) {
-  int32_t y = (height() - static_cast<int32_t>(data_->dots.size())) / static_cast<int32_t>(data_->dots.size());
-  int32_t x = (width() - static_cast<int32_t>(data_->dots[point.y()].size()))  / static_cast<int32_t>(data_->dots[point.y()].size());
+  int32 y = (height() - static_cast<int32>(data_->dots.size())) / static_cast<int32>(data_->dots.size());
+  int32 x = (width() - static_cast<int32>(data_->dots[point.y()].size()))  / static_cast<int32>(data_->dots[point.y()].size());
   if (data_->dot_matrix_style == dot_matrix_style::standard) graphics.fill_pie(drawing::solid_brush(color), (1 + x) * point.x(), (1 + y) * point.y(), thickness(), thickness(), 0, 360);
   else if (data_->dot_matrix_style == dot_matrix_style::square) graphics.fill_rectangle(drawing::solid_brush(color), (1 + x) * point.x(), (1 + y) * point.y(), thickness(), thickness());
 }

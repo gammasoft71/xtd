@@ -88,7 +88,7 @@ light_button& light_button::check_state(forms::check_state check_state) {
       data_->checked = data_->check_state != forms::check_state::unchecked;
       on_checked_changed(event_args::empty);
     }
-    if (is_handle_created() && flat_style() == xtd::forms::flat_style::system) native::light_button::check_state(handle(), static_cast<int32_t>(data_->check_state));
+    if (is_handle_created() && flat_style() == xtd::forms::flat_style::system) native::light_button::check_state(handle(), static_cast<int32>(data_->check_state));
     on_check_state_changed(event_args::empty);
   }
   return *this;
@@ -199,7 +199,7 @@ void light_button::on_enabled_changed(const event_args& e) {
 
 void light_button::on_handle_created(const event_args& e) {
   button_base::on_handle_created(e);
-  if (flat_style() == xtd::forms::flat_style::system) native::light_button::check_state(handle(), static_cast<int32_t>(data_->check_state));
+  if (flat_style() == xtd::forms::flat_style::system) native::light_button::check_state(handle(), static_cast<int32>(data_->check_state));
   if (flat_style() != xtd::forms::flat_style::system && data_->check_state != xtd::forms::check_state::unchecked) invalidate();
 }
 
@@ -250,10 +250,10 @@ void light_button::on_paint(paint_event_args& e) {
     if (data_->check_state == check_state::checked) light_color = light_on_color();
     else if (data_->check_state == check_state::indeterminate) light_color = drawing::color::dark(light_on_color());
     if (!enabled()) light_color = back_color();
-    int32_t left = e.clip_rectangle().left() + 5;
+    int32 left = e.clip_rectangle().left() + 5;
     if (data_->light_align == content_alignment::top_right || data_->light_align == content_alignment::middle_right || data_->light_align == content_alignment::bottom_right) left = e.clip_rectangle().right() - 15;
     else if (data_->light_align == content_alignment::top_center || data_->light_align == content_alignment::middle_center || data_->light_align == content_alignment::bottom_center) left = e.clip_rectangle().left() + (e.clip_rectangle().width() / 2) - 5;
-    int32_t top = e.clip_rectangle().top() + (e.clip_rectangle().height() / 2) - 7;
+    int32 top = e.clip_rectangle().top() + (e.clip_rectangle().height() / 2) - 7;
     if (data_->light_align == content_alignment::top_right || data_->light_align == content_alignment::top_center || data_->light_align == content_alignment::top_left) top = e.clip_rectangle().top() + 5;
     else if (data_->light_align == content_alignment::bottom_right || data_->light_align == content_alignment::bottom_center || data_->light_align == content_alignment::bottom_left) top = e.clip_rectangle().bottom() - 20;
     e.graphics().fill_rounded_rectangle(drawing::solid_brush(light_color), drawing::rectangle {left, top, 10, 16}, 2);

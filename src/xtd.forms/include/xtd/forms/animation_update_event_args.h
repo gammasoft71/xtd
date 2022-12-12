@@ -20,7 +20,7 @@ namespace xtd {
       /// @name Constructors
       
       /// @{
-      animation_updated_event_args(int32_t frame_counter, std::chrono::nanoseconds elapsed) : frame_counter_(frame_counter), elapsed_(elapsed) {}
+      animation_updated_event_args(int32 frame_counter, std::chrono::nanoseconds elapsed) : frame_counter_(frame_counter), elapsed_(elapsed) {}
       /// @}
       
       /// @name Properties
@@ -38,11 +38,11 @@ namespace xtd {
 
       /// @brief Gets frame counter.
       /// @return Frame counter.
-      int32_t frame_counter() const {return frame_counter_;}
+      int32 frame_counter() const {return frame_counter_;}
       /// @}
       
     private:
-      int32_t frame_counter_ = 0;
+      int32 frame_counter_ = 0;
       std::chrono::nanoseconds elapsed_ {0};
     };
   }

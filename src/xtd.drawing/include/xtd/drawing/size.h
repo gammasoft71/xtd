@@ -48,7 +48,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::drawing::size class from the specified dimensions.
       /// @param width The width component of the new xtd::drawing::size.
       /// @param height The height component of the new xtd::drawing::size.
-      size(int32_t width, int32_t height) noexcept;
+      size(int32 width, int32 height) noexcept;
       /// @}
       
       /// @cond
@@ -63,11 +63,11 @@ namespace xtd {
       /// @brief Gets he vertical component of this xtd::drawing::size class.
       /// @return The vertical component of this xtd::drawing::size class, typically measured in pixels.
       /// @remarks The unit for the xtd::drawing::size::height and xtd::drawing::size::width of the xtd::drawing::size class depend on the xtd::drawing::graphics:page_unit and xtd::drawing::graphics::page_scale settings for the xtd::drawing::::graphics object that is used to draw.
-      int32_t height() const noexcept;
+      int32 height() const noexcept;
       /// @brief Sets the vertical component of this xtd::drawing::size class.
       /// @param value The vertical component of this xtd::drawing::size class, typically measured in pixels.
       /// @remarks The unit for the xtd::drawing::size::height and xtd::drawing::size::width of the xtd::drawing::size class depend on the xtd::drawing::graphics:page_unit and xtd::drawing::graphics::page_scale settings for the xtd::drawing::::graphics object that is used to draw.
-      void height(int32_t value) noexcept;
+      void height(int32 value) noexcept;
       
       /// @brief Tests whether this xtd::drawing::size class has xtd::drawing::size_fwidth and xtd::drawing::size_fheight of 0.
       /// @return Returns true  when this xtd::drawing::size class has both a xtd::drawing::size::width and xtd::drawing::size::height of 0; otherwise, false.
@@ -76,11 +76,11 @@ namespace xtd {
       /// @brief Gets the horizontal component of this xtd::drawing::size class.
       /// @return int The horizontal component of this xtd::drawing::size class, typically measured in pixels.
       /// @remarks The unit for the xtd::drawing::size::height and xtd::drawing::size::width of the xtd::drawing::size class depend on the xtd::drawing::graphics:page_unit and xtd::drawing::graphics::page_scale settings for the xtd::drawing::::graphics object that is used to draw.
-      int32_t width() const noexcept;
+      int32 width() const noexcept;
       /// @brief Sets the horizontal component of this xtd::drawing::size class.
       /// @param value The horizontal component of this xtd::drawing::size class, typically measured in pixels.
       /// @remarks The unit for the xtd::drawing::size::height and xtd::drawing::size::width of the xtd::drawing::size class depend on the xtd::drawing::graphics:page_unit and xtd::drawing::graphics::page_scale settings for the xtd::drawing::::graphics object that is used to draw.
-      void width(int32_t value) noexcept;
+      void width(int32 value) noexcept;
       /// @}
       
       /// @name Methods
@@ -146,8 +146,8 @@ namespace xtd {
       /// @}
 
     private:
-      int32_t width_ = 0;
-      int32_t height_ = 0;
+      int32 width_ = 0;
+      int32 height_ = 0;
     };
   }
   
@@ -155,7 +155,7 @@ namespace xtd {
   template<>
   inline drawing::size parse<drawing::size>(const std::string& str) {
     auto values = xtd::ustring(str).replace("}", "").replace(" height=", "").replace("{width=", "").split({','});
-    return {xtd::parse<int32_t>(values[0]), xtd::parse<int32_t>(values[1])};
+    return {xtd::parse<int32>(values[0]), xtd::parse<int32>(values[1])};
   }
   /// @endcond
 }

@@ -16,7 +16,7 @@
 #include "control_handler.h"
 
 #if defined(__APPLE__)
-void __set_button_bezel_style__(wxAnyButton* control, int32_t height);
+void __set_button_bezel_style__(wxAnyButton* control, xtd::int32 height);
 #endif
 
 namespace xtd {
@@ -75,11 +75,11 @@ namespace xtd {
           return control()->GetSize();
         }
         
-        void SetClientSize(int32_t width, int32_t height) override {
+        void SetClientSize(xtd::int32 width, xtd::int32 height) override {
           SetSize(width, height);
         }
         
-        void SetSize(int32_t width, int32_t height) override {
+        void SetSize(xtd::int32 width, xtd::int32 height) override {
           #if defined(__APPLE__)
           if (!owner_draw_) __set_button_bezel_style__((wxAnyButton*)control(), height);
           #endif

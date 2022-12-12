@@ -11,14 +11,14 @@ using namespace xtd;
 using namespace xtd::forms::native;
 
 
-//int32_t convert_to_buttons(uint32_t style){
+//int32 convert_to_buttons(uint32_t style){
 //    switch(style)
 //    {
 //
 //    }
 //}
 
-int32_t convert_to_icon(uint32_t style) {
+int32 convert_to_icon(uint32_t style) {
   if ((style & NIIF_INFO) == NIIF_INFO) return wxICON_INFORMATION;
   if ((style & NIIF_WARNING) == NIIF_WARNING) return wxICON_WARNING;
   if ((style & NIIF_ERROR) == NIIF_ERROR) return wxICON_ERROR;
@@ -58,7 +58,7 @@ void message_notifier::show(intptr_t hwnd, const xtd::ustring& title,
   //       event.Skip();
   //    });
   
-  notifmsg->Show(close_timeout_enabled_ ? static_cast<int32_t>(std::chrono::duration_cast<std::chrono::seconds>(close_timeout_interval).count()) : static_cast<int32_t>(wxNotificationMessage::Timeout_Never));
+  notifmsg->Show(close_timeout_enabled_ ? static_cast<int32>(std::chrono::duration_cast<std::chrono::seconds>(close_timeout_interval).count()) : static_cast<int32>(wxNotificationMessage::Timeout_Never));
 }
 
 

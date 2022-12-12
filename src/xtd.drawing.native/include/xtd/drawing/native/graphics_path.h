@@ -160,7 +160,7 @@ namespace xtd {
         /// @param hot_key_prefix The hotkey prefix value (see hot_key_prefixes.h for more information).
         /// @param trimming The trimming value for the text (see string_trimmings.h for more information).
         /// @warning Internal use only
-        static void add_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming);
+        static void add_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming);
         /// @brief Adds a text string to the path.
         /// @param handle The graphics_path handle.
         /// @param s The xtd::ustring to add.
@@ -174,7 +174,7 @@ namespace xtd {
         /// @param hot_key_prefix The hotkey prefix value (see hot_key_prefixes.h for more information).
         /// @param trimming The trimming value for the text (see string_trimmings.h for more information).
         /// @warning Internal use only
-        static void add_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y, float w, float h, int32_t alignment, int32_t line_alignment, int32_t hot_key_prefix, int32_t trimming);
+        static void add_string(intptr_t handle, const xtd::ustring& text, intptr_t font, float x, float y, float w, float h, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming);
         
         /// @brief Closes all open figures in the path and starts a new figure. It closes each open figure by connecting a line from its endpoint to its starting point.
         /// @param handle The graphics_path handle.

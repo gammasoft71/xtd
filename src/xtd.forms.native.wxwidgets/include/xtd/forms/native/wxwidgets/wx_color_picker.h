@@ -23,7 +23,7 @@ namespace xtd {
       private:
         explicit wx_color_picker(const xtd::forms::native::create_params& create_params) {
           if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
-          int32_t style = wxCLRP_DEFAULT_STYLE;
+          int32 style = wxCLRP_DEFAULT_STYLE;
           if ((create_params.style & CC_ALPHACOLOR) == CC_ALPHACOLOR) style |= wxCLRP_SHOW_ALPHA;
           control_handler::create<wxColourPickerCtrl>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxColour(0, 0, 0), wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()), style);
           #if defined(__WIN32__)
@@ -47,7 +47,7 @@ namespace xtd {
           return control()->GetSize();
         }
         
-        void SetClientSize(int32_t width, int32_t height) override {
+        void SetClientSize(int32 width, int32 height) override {
           SetSize(width, height);
         }
       };

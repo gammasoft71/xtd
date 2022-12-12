@@ -59,19 +59,19 @@ namespace xtd {
       /// @remarks To get the number of seconds in the interval, divide this number by 1,000.
       virtual std::chrono::milliseconds interval() const noexcept;
       /// @brief Sets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
-      /// @param interval An int32_t specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
+      /// @param interval An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
       /// @remarks To get the number of seconds in the interval, divide this number by 1,000.
       template<typename rep_t, typename period_t = std::ratio<1>>
-      void interval(const std::chrono::duration<rep_t, period_t>& interval) {interval_milliseconds(static_cast<int32_t>(std::chrono::duration_cast<std::chrono::milliseconds>(interval).count()));}
+      void interval(const std::chrono::duration<rep_t, period_t>& interval) {interval_milliseconds(static_cast<int32>(std::chrono::duration_cast<std::chrono::milliseconds>(interval).count()));}
       
       /// @brief Gets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
       /// @return An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
       /// @remarks To get the number of seconds in the interval, divide this number by 1,000.
-      virtual int32_t interval_milliseconds() const noexcept;
+      virtual int32 interval_milliseconds() const noexcept;
       /// @brief Sets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
-      /// @param interval An int32_t specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
+      /// @param interval An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
       /// @remarks To get the number of seconds in the interval, divide this number by 1,000.
-      virtual void interval_milliseconds(int32_t interval);
+      virtual void interval_milliseconds(int32 interval);
       /// @}
       
       /// @name Metthods
@@ -110,7 +110,7 @@ namespace xtd {
       
       struct data {
         bool enabled = false;
-        int32_t interval = 100;
+        int32 interval = 100;
         intptr_t handle = 0;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();

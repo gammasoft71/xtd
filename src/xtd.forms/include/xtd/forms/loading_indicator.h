@@ -101,10 +101,10 @@ namespace xtd {
         bool is_running = false;
         xtd::forms::loading_indicator_style loading_indicator_style = xtd::forms::loading_indicator_style::standard;
         xtd::forms::timer timer;
-        int32_t intervals = 8;
-        int32_t radius_factor = 10;
-        int32_t frame = 0;
-        int32_t interval = 150;
+        int32 intervals = 8;
+        int32 radius_factor = 10;
+        int32 frame = 0;
+        int32 interval = 150;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

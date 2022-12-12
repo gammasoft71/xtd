@@ -93,7 +93,7 @@ namespace xtd {
       
       std::chrono::milliseconds close_timeout_interval() const noexcept { return close_timeout_interval_; }
       message_notifier& close_timeout_interval(std::chrono::milliseconds value) noexcept { close_timeout_interval_ = value; return *this;}
-      message_notifier& close_timeout_interval_milliseconds(int32_t value) noexcept { close_timeout_interval_ = std::chrono::milliseconds(value); return *this; }
+      message_notifier& close_timeout_interval_milliseconds(int32 value) noexcept { close_timeout_interval_ = std::chrono::milliseconds(value); return *this; }
       
       xtd::forms::notifier_style notifier_style() const noexcept {return notifier_style_; }
       message_notifier& notifier_style(xtd::forms::notifier_style notifier_style) noexcept { notifier_style_ = notifier_style; return *this; }

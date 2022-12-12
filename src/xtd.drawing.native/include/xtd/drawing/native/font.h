@@ -68,7 +68,7 @@ namespace xtd {
         /// @brief Gets the screen dpi .
         /// @return The screen dpi.
         /// @warning Internal use only
-        static int32_t dpi();
+        static int32 dpi();
         
         /// @brief Gets the font information from font hanfle.
         /// @param font The font handle to retrieve informations.

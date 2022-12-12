@@ -119,14 +119,14 @@ void choice::on_selected_value_changed(const event_args& e) {
   list_control::on_selected_value_changed(e);
 }
 
-void choice::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) {
+void choice::set_bounds_core(int32 x, int32 y, int32 width, int32 height, bounds_specified specified) {
   drawing::size current_size = size();
   list_control::set_bounds_core(x, y, width, height, specified);
   if (size() != current_size)
     post_recreate_handle();
 }
 
-void choice::set_client_size_core(int32_t width, int32_t height) {
+void choice::set_client_size_core(int32 width, int32 height) {
   drawing::size current_size = size();
   list_control::set_client_size_core(width, height);
   if (size() != current_size)

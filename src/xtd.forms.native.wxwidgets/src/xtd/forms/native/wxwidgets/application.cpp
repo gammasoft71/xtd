@@ -17,7 +17,7 @@
 
 #if defined(__WXMSW__)
 #include <wx/msw/registry.h>
-extern drawing_native_export_ int32_t __xtd_win32_enable_dark_mode__;
+extern drawing_native_export_ int32 __xtd_win32_enable_dark_mode__;
 static wxTimer* __system_color_detection_timer__;
 static bool __is_dark_mode__ = false;
 static void __on_timer_system_color_detection__(wxTimerEvent& e) {
@@ -74,7 +74,7 @@ namespace {
   }
 }
 
-event<wx_application, delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> wx_application::message_filter_proc;
+event<wx_application, delegate<bool(intptr_t, int32, intptr_t, intptr_t, intptr_t)>> wx_application::message_filter_proc;
 
 bool application::allow_quit() {
   initialize(); // Must be first
@@ -198,7 +198,7 @@ void application::initialize() {
   #endif
 }
 
-void application::register_message_filter(const delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& message_filter_proc) {
+void application::register_message_filter(const delegate<bool(intptr_t, int32, intptr_t, intptr_t, intptr_t)>& message_filter_proc) {
   initialize(); // Must be first
   static_cast<wx_application*>(wxTheApp)->message_filter_proc += message_filter_proc;
 }
@@ -208,7 +208,7 @@ void application::register_thread_exception(const delegate<bool()>& thread_excep
   static_cast<wx_application*>(wxTheApp)->thread_exception += thread_exception;
 }
 
-void application::register_wnd_proc(const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
+void application::register_wnd_proc(const delegate<intptr_t(intptr_t, int32, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
   initialize(); // Must be first
   static_cast<wx_application*>(wxTheApp)->wnd_proc += wnd_proc;
 }

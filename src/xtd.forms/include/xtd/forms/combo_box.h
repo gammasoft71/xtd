@@ -183,9 +183,9 @@ namespace xtd {
 
       struct data {
         bool drop_down = false;
-        int32_t drop_down_height = 0;
+        int32 drop_down_height = 0;
         combo_box_style drop_down_style = combo_box_style::drop_down;
-        int32_t drop_down_width = 0;
+        int32 drop_down_width = 0;
         object_collection items;
         item selected_item;
         bool sorted = false;

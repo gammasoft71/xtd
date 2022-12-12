@@ -200,7 +200,7 @@ namespace xtd {
       void on_item_removed(size_t pos, status_bar_panel_ref item);
       
       void resize_spring_panels();
-      void update_status_bar_panel_control(intptr_t handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, xtd::forms::horizontal_alignment alignment, xtd::forms::status_bar_panel_auto_size auto_size, xtd::forms::status_bar_panel_border_style border_style, xtd::forms::status_bar_panel_style panel_style, int32_t min_width, int32_t width);
+      void update_status_bar_panel_control(intptr_t handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, xtd::forms::horizontal_alignment alignment, xtd::forms::status_bar_panel_auto_size auto_size, xtd::forms::status_bar_panel_border_style border_style, xtd::forms::status_bar_panel_style panel_style, int32 min_width, int32 width);
       
       struct data {
         status_bar_panel_collection panels;

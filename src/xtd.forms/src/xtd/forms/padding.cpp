@@ -1,76 +1,77 @@
 #include "../../../include/xtd/forms/padding.h"
 
+using namespace xtd;
 using namespace xtd::forms;
 
 const padding padding::empty;
 
-padding::padding(int32_t all) : all_(true), left_(all), top_(all), right_(all), bottom_(all) {
+padding::padding(int32 all) : all_(true), left_(all), top_(all), right_(all), bottom_(all) {
 }
 
-padding::padding(int32_t left, int32_t top, int32_t right, int32_t bottom) : all_(left == top && left == right && left == bottom), left_(left), top_(top), right_(right), bottom_(bottom) {
+padding::padding(int32 left, int32 top, int32 right, int32 bottom) : all_(left == top && left == right && left == bottom), left_(left), top_(top), right_(right), bottom_(bottom) {
 }
 
-int32_t padding::all() const noexcept {
+int32 padding::all() const noexcept {
   return all_ ? top_ : -1;
 }
 
-void padding::all(int32_t all) {
+void padding::all(int32 all) {
   if (!all_ || left_ != all) {
     all_ = true;
     left_ = top_ = right_ = bottom_ = all;
   }
 }
 
-int32_t padding::bottom() const noexcept {
+int32 padding::bottom() const noexcept {
   return bottom_;
 }
 
-void padding::bottom(int32_t bottom) {
+void padding::bottom(int32 bottom) {
   if (all_ || bottom_ != bottom) {
     all_ = false;
     bottom_ = bottom;
   }
 }
 
-int32_t padding::horizontal() const noexcept {
+int32 padding::horizontal() const noexcept {
   return left_ + right_;
 }
 
 
-int32_t padding::left() const noexcept {
+int32 padding::left() const noexcept {
   return left_;
 }
 
-void padding::left(int32_t left) {
+void padding::left(int32 left) {
   if (all_ || left_ != left) {
     all_ = false;
     left_ = left;
   }
 }
 
-int32_t padding::right() const noexcept {
+int32 padding::right() const noexcept {
   return right_;
 }
 
-void padding::right(int32_t right) {
+void padding::right(int32 right) {
   if (all_ || right_ != right) {
     all_ = false;
     right_ = right;
   }
 }
 
-int32_t padding::top() const noexcept {
+int32 padding::top() const noexcept {
   return top_;
 }
 
-void padding::top(int32_t top) {
+void padding::top(int32 top) {
   if (all_ || top_ != top) {
     all_ = false;
     top_ = top;
   }
 }
 
-int32_t padding::vertical() const noexcept {
+int32 padding::vertical() const noexcept {
   return top_ + bottom_;
 }
 

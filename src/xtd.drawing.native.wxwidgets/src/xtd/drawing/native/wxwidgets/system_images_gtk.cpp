@@ -4,7 +4,7 @@
 #include <gtk/gtk.h>
 #pragma GCC diagnostic pop
 
-GdkPixbuf* __gtk_get_image_from_name__(const char* name, int32_t width, int32_t /*height*/) {
+GdkPixbuf* __gtk_get_image_from_name__(const char* name, int32 width, int32 /*height*/) {
   if (name[0] == 0) return 0;
   auto icon_theme = gtk_icon_theme_get_default();
   const char* icon_names[] = {name, nullptr};

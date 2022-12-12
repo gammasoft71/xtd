@@ -21,7 +21,7 @@ namespace xtd {
           def_wnd_proc = std::bind(&control_wrapper<control_type>::def_wnd_proc, static_cast<control_wrapper<control_type>*>(control_), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6);
         }
         
-        intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
+        intptr_t send_message(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
           if (xtd::drawing::native::wx_application::message_filter(hwnd, msg, wparam, lparam, handle)) return call_def_wnd_proc(hwnd, msg, wparam, lparam, 1, handle);
           if (!wnd_proc && msg == WM_DESTROY) return 0; // if wnd_proc not defined do not call def_wnd_proc when WM_DESTROY. The WM_DESTROY message occurs before the control is completely initialized
           if (!wnd_proc) return call_def_wnd_proc(hwnd, msg, wparam, lparam, 0, handle);
@@ -88,12 +88,12 @@ namespace xtd {
           control_->SetPosition(location);
         }
 
-        virtual void SetClientSize(int32_t width, int32_t height) {
+        virtual void SetClientSize(int32 width, int32 height) {
           if (!control_) return;
           control_->SetClientSize(width, height);
         }
         
-        virtual void SetSize(int32_t width, int32_t height) {
+        virtual void SetSize(int32 width, int32 height) {
           if (!control_) return;
           control_->SetSize(width, height);
         }
@@ -103,7 +103,7 @@ namespace xtd {
           control_->Show(visible);
         }
         
-        int32_t LayoutSuspendedCount() const noexcept {return suspended_count_;}
+        int32 LayoutSuspendedCount() const noexcept {return suspended_count_;}
         void IncrementLayoutSuspended() noexcept {++suspended_count_;}
         void DecrementLayoutSuspended() noexcept {if (suspended_count_ > 0) --suspended_count_;}
 
@@ -124,14 +124,14 @@ namespace xtd {
         
         void clear_control() { control_ = nullptr; }
         
-        intptr_t call_def_wnd_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) { return def_wnd_proc ? def_wnd_proc(hwnd, msg, wparam, lparam, result, handle) : 0; }
+        intptr_t call_def_wnd_proc(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) { return def_wnd_proc ? def_wnd_proc(hwnd, msg, wparam, lparam, result, handle) : 0; }
         
-        std::function<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)> wnd_proc;
-        std::function<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t, intptr_t)> def_wnd_proc;
+        std::function<intptr_t(intptr_t, int32, intptr_t, intptr_t, intptr_t)> wnd_proc;
+        std::function<intptr_t(intptr_t, int32, intptr_t, intptr_t, intptr_t, intptr_t)> def_wnd_proc;
         
       private:
         wxWindow* control_ = nullptr;
-        int32_t suspended_count_ = 0;
+        int32 suspended_count_ = 0;
       };
     }
   }

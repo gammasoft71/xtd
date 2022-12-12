@@ -10,7 +10,7 @@
 using namespace xtd;
 using namespace xtd::forms::native;
 
-intptr_t timer::create(int32_t interval, const delegate<void(const event_args&)>& tick) {
+intptr_t timer::create(int32 interval, const delegate<void(const event_args&)>& tick) {
   application::initialize(); // Must be first
   wx_timer* timer = new class wx_timer(tick);
   timer->timer().Start(interval);

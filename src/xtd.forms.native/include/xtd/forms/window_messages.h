@@ -952,7 +952,7 @@ constexpr uint32_t WM_CTLCOLORSTATIC = 0x0138;
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 /// @remarks For more info see https://docs.microsoft.com .
-constexpr int32_t MN_GETHMENU = 0x01E1;
+constexpr xtd::int32 MN_GETHMENU = 0x01E1;
 // not defined 0x01E2 - 0x019F
 /// @brief Posted to a window when the cursor moves. If the mouse is not captured, the message is posted to the window that contains the cursor. Otherwise, the message is posted to the window that has captured the mouse.
 /// @par Library
@@ -1355,7 +1355,7 @@ constexpr uint32_t WM_POINTERHWHEEL = 0x024F;
 /// @ingroup xtd_forms_native wm
 /// @remarks This value can be contained in the xtd::forms::message::msg property.
 /// @remarks For more info see https://docs.microsoft.com .
-constexpr int32_t DM_POINTERHITTEST = 0x0250;
+constexpr xtd::int32 DM_POINTERHITTEST = 0x0250;
 // not defined 0x0251 - 0x0280
 /// @brief Sent to an application when a window is activated. A window receives this message through its WindowProc function.v
 /// @par Library
@@ -1726,9 +1726,9 @@ constexpr uint32_t WM_USER = 0x0400;
 /// @remarks For more info see https://docs.microsoft.com .
 constexpr uint32_t WM_APP = 0x8000;
 
-constexpr int32_t WA_INACTIVE = 0;
-constexpr int32_t WA_ACTIVE = 1;
-constexpr int32_t WA_CLICKACTIVE = 2;
+constexpr xtd::int32 WA_INACTIVE = 0;
+constexpr xtd::int32 WA_ACTIVE = 1;
+constexpr xtd::int32 WA_CLICKACTIVE = 2;
 
 // Ranges definitions
 
@@ -1886,10 +1886,10 @@ constexpr uint32_t NM_CUSTOMTEXT = NM_FIRST-24; // uses NMCUSTOMTEXT struct
 constexpr uint32_t NM_TVSTATEIMAGECHANGING = NM_FIRST-24; // uses NMTVSTATEIMAGECHANGING struct, defined after HTREEITEM
 
 // Up down notifications
-constexpr int32_t UDN_DELTAPOS = UDN_FIRST - 1;
+constexpr xtd::int32 UDN_DELTAPOS = UDN_FIRST - 1;
 
-constexpr int32_t HELPINFO_WINDOW = 0x0001;
-constexpr int32_t HELPINFO_MENUITEM = 0x0002;
+constexpr xtd::int32 HELPINFO_WINDOW = 0x0001;
+constexpr xtd::int32 HELPINFO_MENUITEM = 0x0002;
 
 struct NMHDR {
   HWND hwndFrom;
@@ -1898,14 +1898,14 @@ struct NMHDR {
 };
 
 struct POINT {
-  int32_t x;
-  int32_t y;
+  xtd::int32 x;
+  xtd::int32 y;
 };
 
 struct HELPINFO {
   uint32_t cbSize;
-  int32_t iContextType;
-  int32_t iCtrlId;
+  xtd::int32 iContextType;
+  xtd::int32 iCtrlId;
   HWND hItemHandle;
   uintptr_t dwContextId;
   POINT MousePos;
@@ -1957,4 +1957,4 @@ constexpr uint32_t CPN_SELCHANGE = 1;
 
 constexpr uint32_t FPN_SELCHANGE = 1;
 
-intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam);
+intptr_t send_message(intptr_t hwnd, xtd::int32 msg, intptr_t wparam, intptr_t lparam);

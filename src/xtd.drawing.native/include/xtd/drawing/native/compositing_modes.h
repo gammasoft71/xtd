@@ -5,7 +5,7 @@
 #endif
 /// @endcond
 
-#include <cstdint>
+#include <xtd/types.h>
 
 /// @brief Specifies that when a color is rendered, it is blended with the background color. The blend is determined by the alpha component of the color being rendered.
 /// @par Library
@@ -13,7 +13,7 @@
 /// @ingroup xtd_drawing_native cm
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t CM_SOURCE_OVER = 0;
+constexpr xtd::int32 CM_SOURCE_OVER = 0;
 
 /// @brief Specifies that when a color is rendered, it overwrites the background color.
 /// @par Library
@@ -21,4 +21,4 @@ constexpr int32_t CM_SOURCE_OVER = 0;
 /// @ingroup xtd_drawing_native cm
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t CM_SOURCE_COPY = 1;
+constexpr xtd::int32 CM_SOURCE_COPY = 1;

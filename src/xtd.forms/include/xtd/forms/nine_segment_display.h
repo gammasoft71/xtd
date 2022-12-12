@@ -49,13 +49,13 @@ namespace xtd {
       
       /// @{
       /// @brief Sets thickness of segment.
-      /// @param value A int32_t that represent the segment thickness.
+      /// @param value A int32 that represent the segment thickness.
       /// @return Current seven_segment_display.
-      int32_t thickness() const noexcept override;
+      int32 thickness() const noexcept override;
       /// @brief Sets thickness of segment.
-      /// @param value A int32_t that represent the segment thickness.
+      /// @param value A int32 that represent the segment thickness.
       /// @return Current seven_segment_display.
-      seven_segment_display& thickness(int32_t value) override;
+      seven_segment_display& thickness(int32 value) override;
       /// @}
       
     protected:
@@ -79,7 +79,7 @@ namespace xtd {
       
     private:
       struct data {
-        std::optional<int32_t> thickness;
+        std::optional<int32> thickness;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

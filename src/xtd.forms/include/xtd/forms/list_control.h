@@ -78,7 +78,7 @@ namespace xtd {
         /// @name Methods
         
         /// @{
-        int32_t compare_to(const item& value) const noexcept override;
+        int32 compare_to(const item& value) const noexcept override;
 
         bool equals(const item& value) const noexcept override;
 
