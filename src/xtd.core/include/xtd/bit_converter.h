@@ -121,7 +121,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example converts the bit patterns of Char values to xtd::byte std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesChar.cpp
-    static std::vector<xtd::byte> get_bytes(char16_t value) noexcept;
+    static std::vector<xtd::byte> get_bytes(char16 value) noexcept;
     
     /// @brief Returns the specified Char value as an std::vector of bytes.
     /// @param value A Char value.

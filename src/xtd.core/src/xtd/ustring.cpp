@@ -44,11 +44,11 @@ ustring::ustring(size_t count, char8 character) : basic_string<value_type>(count
 ustring::ustring(size_t count, char8 character, const allocator_type& allocator) : basic_string<value_type>(count, static_cast<value_type>(character), allocator) {
 }
 
-ustring::ustring(size_t count, char16_t character) {
+ustring::ustring(size_t count, char16 character) {
   *this = convert_string::to_ustring(u16string(count, character));
 }
 
-ustring::ustring(size_t count, char16_t character, const allocator_type& allocator) : basic_string<value_type>(allocator) {
+ustring::ustring(size_t count, char16 character, const allocator_type& allocator) : basic_string<value_type>(allocator) {
   *this = convert_string::to_ustring(u16string(count, character));
 }
 
@@ -135,16 +135,16 @@ ustring::ustring(const std::u16string& str, const allocator_type& allocator) noe
   *this = convert_string::to_ustring(str);
 }
 
-ustring::ustring(const char16_t* str) : ustring(u16string(str)) {
+ustring::ustring(const char16* str) : ustring(u16string(str)) {
 }
 
-ustring::ustring(const char16_t* str, const allocator_type& allocator) : ustring(u16string(str), allocator) {
+ustring::ustring(const char16* str, const allocator_type& allocator) : ustring(u16string(str), allocator) {
 }
 
-ustring::ustring(char16_t* str) : ustring(u16string(str)) {
+ustring::ustring(char16* str) : ustring(u16string(str)) {
 }
 
-ustring::ustring(char16_t* str, const allocator_type& allocator) : ustring(u16string(str), allocator) {
+ustring::ustring(char16* str, const allocator_type& allocator) : ustring(u16string(str), allocator) {
 }
 
 ustring::ustring(const std::u32string& str) noexcept : ustring(str, allocator_type()) {
@@ -207,11 +207,11 @@ ustring::ustring(initializer_list<char8> il, const allocator_type& allocator) : 
     push_back(static_cast<value_type>(c));
 }
 
-ustring::ustring(initializer_list<char16_t> il) {
+ustring::ustring(initializer_list<char16> il) {
   *this = convert_string::to_ustring(u16string(il));
 }
 
-ustring::ustring(initializer_list<char16_t> il, const allocator_type& allocator) : basic_string<value_type>(allocator) {
+ustring::ustring(initializer_list<char16> il, const allocator_type& allocator) : basic_string<value_type>(allocator) {
   *this = convert_string::to_ustring(u16string(il));
 }
 
@@ -262,7 +262,7 @@ ustring& ustring::operator =(const std::u16string& str) {
   return *this;
 }
 
-ustring& ustring::operator =(const char16_t* str) {
+ustring& ustring::operator =(const char16* str) {
   return operator =(u16string(str));
 }
 
@@ -301,7 +301,7 @@ ustring& ustring::operator =(char8 character) {
   return  *this;
 }
 
-ustring& ustring::operator =(char16_t character) {
+ustring& ustring::operator =(char16 character) {
   *this = ustring(1, character);
   return  *this;
 }
@@ -327,7 +327,7 @@ ustring& ustring::operator =(const std::initializer_list<char8>& il) {
   return *this;
 }
 
-ustring& ustring::operator =(const std::initializer_list<char16_t>& il) {
+ustring& ustring::operator =(const std::initializer_list<char16>& il) {
   clear();
   *this = convert_string::to_ustring(u16string(il));
   return *this;
@@ -375,7 +375,7 @@ ustring& ustring::operator +=(const std::u16string& str) {
   return *this;
 }
 
-ustring& ustring::operator +=(const char16_t* str) {
+ustring& ustring::operator +=(const char16* str) {
   *this = *this + str;
   return *this;
 }
@@ -410,7 +410,7 @@ ustring& ustring::operator +=(char8 character) {
   return *this;
 }
 
-ustring& ustring::operator +=(char16_t character) {
+ustring& ustring::operator +=(char16 character) {
   *this = *this + character;
   return *this;
 }
@@ -435,7 +435,7 @@ ustring& ustring::operator +=(const std::initializer_list<char8>& il) {
   return *this;
 }
 
-ustring& ustring::operator +=(const std::initializer_list<char16_t>& il) {
+ustring& ustring::operator +=(const std::initializer_list<char16>& il) {
   *this = *this + il;
   return *this;
 }
@@ -490,11 +490,11 @@ bool ustring::operator !=(const std::u16string& other) const {
   return !operator ==(other);
 }
 
-bool ustring::operator ==(const char16_t* other) const {
+bool ustring::operator ==(const char16* other) const {
   return *this == ustring(other);
 }
 
-bool ustring::operator !=(const char16_t* other) const {
+bool ustring::operator !=(const char16* other) const {
   return !operator ==(other);
 }
 

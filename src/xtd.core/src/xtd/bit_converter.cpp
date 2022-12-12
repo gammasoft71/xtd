@@ -19,7 +19,7 @@ vector<xtd::byte> bit_converter::get_bytes(char value) noexcept {
   return bit_converter::get_bytes(((uint32)value));
 }
 
-vector<xtd::byte> bit_converter::get_bytes(char16_t value) noexcept {
+vector<xtd::byte> bit_converter::get_bytes(char16 value) noexcept {
   return bit_converter::get_bytes(((uint32)value));
 }
 
