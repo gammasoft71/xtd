@@ -1,6 +1,6 @@
 # math
 
-This example uses several mathematical and trigonometric functions from the [xtd::math](../../../../src/xtd.core/include/xtd/math.h) class to calculate the inner angles of a trapezoid.
+This example uses several mathematical and trigonometric functions from the [xtd::math](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1math.html) class to calculate the inner angles of a trapezoid.
 
 # Sources
 
