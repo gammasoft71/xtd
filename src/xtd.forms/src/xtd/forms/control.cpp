@@ -83,7 +83,7 @@ bool control::check_for_illegal_cross_thread_calls_ = diagnostics::debugger::is_
 std::thread::id control::handle_created_on_thread_id_ = std::this_thread::get_id();
 forms::keys control::modifier_keys_ = forms::keys::none;
 forms::mouse_buttons control::mouse_buttons_ = forms::mouse_buttons::none;
-map<intptr_t, control*> control::handles_;
+map<intptr, control*> control::handles_;
 control::control_collection control::top_level_controls_;
 
 control::control_collection::control_collection(const control::control_collection::allocator_type& allocator) : control::control_collection::base(allocator) {
@@ -455,7 +455,7 @@ control& control::fore_color(std::nullptr_t) {
   return *this;
 }
 
-intptr_t control::handle() const {
+intptr control::handle() const {
   if (check_for_illegal_cross_thread_calls() && invoke_required())
     throw invalid_operation_exception(ustring::format("Cross-thread operation not valid: {}"_t, to_string()), csf_);
   return data_->handle;
@@ -577,7 +577,7 @@ control& control::name(const xtd::ustring& name) {
   return*this;
 }
 
-intptr_t control::native_handle() const noexcept {
+intptr control::native_handle() const noexcept {
   return handle() ? native::control::native_handle(handle()) : 0;
 }
 
@@ -707,7 +707,7 @@ control& control::text(const ustring& text) {
   return *this;
 }
 
-intptr_t control::toolkit_handle() const noexcept {
+intptr control::toolkit_handle() const noexcept {
   return handle() ? native::control::toolkit_handle(handle()) : 0;
 }
 
@@ -819,7 +819,7 @@ bool control::focus() {
   return true;
 }
 
-optional<control_ref> control::from_child_handle(intptr_t handle) {
+optional<control_ref> control::from_child_handle(intptr handle) {
   try {
     auto it = handles_.find(handle);
     if (it != handles_.end())
@@ -830,7 +830,7 @@ optional<control_ref> control::from_child_handle(intptr_t handle) {
   }
 }
 
-optional<control_ref> control::from_handle(intptr_t handle) {
+optional<control_ref> control::from_handle(intptr handle) {
   try {
     auto it = handles_.find(handle);
     if (it != handles_.end())
@@ -845,14 +845,14 @@ forms::auto_size_mode control::get_auto_size_mode() const {
   return data_->auto_size_mode;
 }
 
-size_t control::get_child_index(intptr_t child) const {
+size_t control::get_child_index(intptr child) const {
   if (child == 0) return control_collection::npos;
   for (size_t index = 0; index < controls().size(); ++index)
     if (controls()[index].get().handle() == child) return index;
   throw xtd::argument_exception(current_stack_frame_);
 }
 
-size_t control::get_child_index(intptr_t child, bool& throw_exception) const {
+size_t control::get_child_index(intptr child, bool& throw_exception) const {
   throw_exception = false;
   try {
     return get_child_index(child);
@@ -1365,8 +1365,8 @@ void control::refresh() const {
   update();
 }
 
-intptr_t control::send_message(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam) const {
-  return is_handle_created() ? native::control::send_message(handle(), hwnd, msg, wparam, lparam) : static_cast<intptr_t>(-1);
+intptr control::send_message(intptr hwnd, int32 msg, intptr wparam, intptr lparam) const {
+  return is_handle_created() ? native::control::send_message(handle(), hwnd, msg, wparam, lparam) : static_cast<intptr>(-1);
 }
 
 void control::set_auto_size_mode(forms::auto_size_mode value) {
@@ -1400,7 +1400,7 @@ void control::set_mouse_buttons(forms::mouse_buttons value) {
   mouse_buttons_ = value;
 }
 
-void control::set_parent(intptr_t handle) {
+void control::set_parent(intptr handle) {
   data_->parent = handle;
 }
 
@@ -1427,12 +1427,12 @@ void control::update() const {
   if (is_handle_created()) native::control::update(handle());
 }
 
-void control::reflect_message(intptr_t handle, message& message) {
+void control::reflect_message(intptr handle, message& message) {
   if (handle != 0 && from_handle(handle).has_value())
     from_handle(handle).value().get().send_message(handle, WM_REFLECT + message.msg(), message.wparam(), message.lparam());
 }
 
-intptr_t control::wnd_proc_(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
+intptr control::wnd_proc_(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle) {
   //try {
   message message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
   wnd_proc(message);
@@ -1447,7 +1447,7 @@ intptr_t control::wnd_proc_(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t 
    */
 }
 
-bool control::on_context_menu_item_click(xtd::forms::context_menu& menu, intptr_t menu_id) const {
+bool control::on_context_menu_item_click(xtd::forms::context_menu& menu, intptr menu_id) const {
   return menu.on_item_click(menu_id);
 }
 
@@ -1919,7 +1919,7 @@ void control::wm_move(message& message) {
 
 void control::wm_notify(message& message) {
   def_wnd_proc(message);
-  reflect_message(reinterpret_cast<intptr_t>(reinterpret_cast<NMHDR*>(message.lparam())->hwndFrom), message);
+  reflect_message(reinterpret_cast<intptr>(reinterpret_cast<NMHDR*>(message.lparam())->hwndFrom), message);
 }
 
 void control::wm_notify_control(message& message) {

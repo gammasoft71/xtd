@@ -292,7 +292,7 @@ namespace xtd {
         /// * 0x00000002 The colors in the array are grayscale values.
         /// * 0x00000004 The colors in the array are halftone values.
         /// @warning Internal use only
-        static void color_palette(intptr_t image, std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>& entries, int32& flags);
+        static void color_palette(intptr image, std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>& entries, int32& flags);
         
         /// @brief Creates an image from specified filename and get the frame_solution collection.
         /// @param filename The filename of the image.
@@ -301,7 +301,7 @@ namespace xtd {
         /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
         /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
         /// @warning Internal use only
-        static intptr_t create(const xtd::ustring& filename, std::map<size_t, size_t>& frame_resolutions);
+        static intptr create(const xtd::ustring& filename, std::map<size_t, size_t>& frame_resolutions);
         /// @brief Creates an image from specified std::istream and get the frame_solution collection.
         /// @param stream The std::istream containing the image.
         /// @param frame_resolutions an std::map<size_t, size_t> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
@@ -309,24 +309,24 @@ namespace xtd {
         /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
         /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
         /// @warning Internal use only
-        static intptr_t create(std::istream& stream, std::map<size_t, size_t>& frame_resolutions);
+        static intptr create(std::istream& stream, std::map<size_t, size_t>& frame_resolutions);
         /// @brief Creates an image from bits.
         /// @param bits The bits containing the image.
         /// @return A new image handle.
         /// @remarks This method is used for creating an imgae from an XPM (or XBM) image.
         /// @warning Internal use only
-        static intptr_t create(const char* const* bits);
+        static intptr create(const char* const* bits);
         /// @brief Creates an empty image from size.
         /// @param width The width for the empty image.
         /// @param height The height for the empty image.
         /// @warning Internal use only
-        static intptr_t create(int32 width, int32 height);
+        static intptr create(int32 width, int32 height);
         /// @brief Creates and rescales an image from specified image and size.
         /// @param image The image source handle.
         /// @param width The width for the new image.
         /// @param height The height for the new image.
         /// @warning Internal use only
-        static intptr_t create(intptr_t image, int32 width, int32 height);
+        static intptr create(intptr image, int32 width, int32 height);
         /// @brief Creates and crops an image from specified image, position and size.
         /// @param image The image source handle.
         /// @param left The left for the new image.
@@ -334,68 +334,68 @@ namespace xtd {
         /// @param width The width for the new image.
         /// @param height The height for the new image.
         /// @warning Internal use only
-        static intptr_t create(intptr_t image, int32 left, int32 top, int32 width, int32 height);
+        static intptr create(intptr image, int32 left, int32 top, int32 width, int32 height);
         
         /// @brief Destroys the image.
         /// @param image The image handle to destroy.
         /// @warning Internal use only
-        static void destroy(intptr_t image);
+        static void destroy(intptr image);
         
         /// @brief Gets attribute flags for the pixel data of this Image.
         /// @param image The image handle.
         /// @return The integer representing a bitwise combination of image flags for this Image (see image_flags.h for more information).
         /// @warning Internal use only
-        static size_t flags(intptr_t image);
+        static size_t flags(intptr image);
         
         /// @brief Gets the horizontal resolution, in pixels per inch, of the image.
         /// @param image The image handle.
         /// @return The horizontal resolution, in pixels per inch, of the image.
         /// @warning Internal use only
-        static float horizontal_resolution(intptr_t image);
+        static float horizontal_resolution(intptr image);
         
         /// @brief Gets the width and height of this image.
         /// @param image The image handle.
         /// @param width A int32 that represents the width of the image.
         /// @param height A int32 that represents the height of the image.
         /// @warning Internal use only
-        static void physical_dimension(intptr_t image, int32& width, int32& height);
+        static void physical_dimension(intptr image, int32& width, int32& height);
         
         /// @brief Gets IDs of the property items stored in the image.
         /// @param image The image handle.
         /// @return An array of the property IDs, one for each property item stored in the image.
         /// @warning Internal use only
-        static std::vector<int32> property_id_list(intptr_t image);
+        static std::vector<int32> property_id_list(intptr image);
         
         /// @brief Gets all the property items (pieces of metadata) stored in the image.
         /// @param image The image handle.
         /// @return An array of xtd::drawing::native::image::property_item strutures, one for each property item stored in the image.
         /// @warning Internal use only
-        static std::vector<property_item> property_items(intptr_t image);
+        static std::vector<property_item> property_items(intptr image);
         
         /// @brief Gets the pixel format for the image.
         /// @param image The image handle.
         /// @return A pixel_format that represents the pixel format for the image.
         /// @warning Internal use only
-        static size_t pixel_format(intptr_t image);
+        static size_t pixel_format(intptr image);
         
         /// @brief Gets the file format of the image.
         /// @param image The image handle.
         /// @return The image format that represents the file format of this image (see image_formats.h for more information).
         /// @warning Internal use only
-        static size_t raw_format(intptr_t image);
+        static size_t raw_format(intptr image);
         
         /// @brief Gets the width and height, in pixels, of the image.
         /// @param image The image handle.
         /// @param width The width, in pixels, of the image.
         /// @param height The height, in pixels, of the image.
         /// @warning Internal use only
-        static void size(intptr_t image, int32& width, int32& height);
+        static void size(intptr image, int32& width, int32& height);
         
         /// @brief Gets the vertical resolution, in pixels per inch, of the image.
         /// @param image The image handle.
         /// @return The vertical resolution, in pixels per inch, of the image.
         /// @warning Internal use only
-        static float vertical_resolution(intptr_t image);
+        static float vertical_resolution(intptr image);
         
         /// @brief Gets the color of the specified pixel in the image.
         /// @param image The image handle.
@@ -406,13 +406,13 @@ namespace xtd {
         /// @param g The green component of the color of the specified pixel.
         /// @param b The blue component of the color of the specified pixel.
         /// @warning Internal use only
-        static void get_pixel(intptr_t image, int32 x, int32 y, xtd::byte& a, xtd::byte& r, xtd::byte& g, xtd::byte& b);
+        static void get_pixel(intptr image, int32 x, int32 y, xtd::byte& a, xtd::byte& r, xtd::byte& g, xtd::byte& b);
         
         /// @brief Rotates, flips, or rotates and flips the image.
         /// @param image The image handle.
         /// @param rotate_flip_type A value that specifies the type of rotation and flip to apply to the image (see rotate_flip_types.h for more information).
         /// @warning Internal use only
-        static void rotate_flip(intptr_t image, int32 rotate_flip_type);
+        static void rotate_flip(intptr image, int32 rotate_flip_type);
         
         /// @brief Sets the color of the specified pixel in the image.
         /// @param image The image handle.
@@ -423,25 +423,25 @@ namespace xtd {
         /// @param g The green component of the color of the specified pixel.
         /// @param b The blue component of the color of the specified pixel.
         /// @warning Internal use only
-        static void set_pixel(intptr_t image, int32 x, int32 y, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b);
+        static void set_pixel(intptr image, int32 x, int32 y, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b);
         
         /// @brief Saves image to the specified output filename.
         /// @param image The icon handle .
         /// @param filename The file to save to.
         /// @warning Internal use only
-        static void save(intptr_t image, const xtd::ustring& filename);
+        static void save(intptr image, const xtd::ustring& filename);
         /// @brief Saves image to the specified output filename and raw format.
         /// @param image The icon handle .
         /// @param filename The file to save to.
         /// @param raw_format The image format that represents the file format of this image (see image_formats.h for more information).
         /// @warning Internal use only
-        static void save(intptr_t image, const xtd::ustring& filename, size_t raw_format);
+        static void save(intptr image, const xtd::ustring& filename, size_t raw_format);
         /// @brief Saves image to the specified stream and raw format.
         /// @param image The icon handle .
         /// @param stream The stream to save to.
         /// @param raw_format The image format that represents the file format of this image (see image_formats.h for more information).
         /// @warning Internal use only
-        static void save(intptr_t image, std::ostream& stream, size_t raw_format);
+        static void save(intptr image, std::ostream& stream, size_t raw_format);
         
         /// @brief Get the screen dpi.
         /// @return The screen dpi.

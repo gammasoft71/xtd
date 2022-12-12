@@ -28,7 +28,7 @@ region::~region() {
   if (data_.use_count() == 1 && data_->handle != 0) native::region::destroy(data_->handle);
 }
 
-intptr_t region::handle() const noexcept {
+intptr region::handle() const noexcept {
   return data_->handle;
 }
 
@@ -68,7 +68,7 @@ void region::exclude(const xtd::drawing::region& region) noexcept {
   native::region::exclude(data_->handle, region.data_->handle);
 }
 
-xtd::drawing::region region::from_hrgn(intptr_t hrgn) {
+xtd::drawing::region region::from_hrgn(intptr hrgn) {
   region result;
   result.data_->handle = native::region::from_hrgn(hrgn);
   return result;
@@ -89,7 +89,7 @@ rectangle_f region::get_bounds(const xtd::drawing::graphics& g) const noexcept {
   return rect;
 }
 
-intptr_t region::get_hrgn(const xtd::drawing::graphics& g) const noexcept {
+intptr region::get_hrgn(const xtd::drawing::graphics& g) const noexcept {
   return native::region::get_hrgn(handle(), g.handle());
 }
 
@@ -229,7 +229,7 @@ void region::make_xor(const xtd::drawing::region& region) noexcept {
   native::region::make_xor(data_->handle, region.data_->handle);
 }
 
-void region::release_hrgn(intptr_t region_handle) {
+void region::release_hrgn(intptr region_handle) {
   native::region::release_hrgn(region_handle);
 }
 

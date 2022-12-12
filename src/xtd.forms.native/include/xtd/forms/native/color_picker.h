@@ -41,12 +41,12 @@ namespace xtd {
         /// @param control Control window handle.
         /// @return A xtd::drawing::color from picker.
         /// @warning Internal use only
-        static drawing::color color(intptr_t control);
+        static drawing::color color(intptr control);
         /// @brief Sets picker color.
         /// @param control Control window handle.
         /// @param color A xtd::drawing::color to picker.
         /// @warning Internal use only
-        static void color(intptr_t control, const drawing::color& color);
+        static void color(intptr control, const drawing::color& color);
         /// @}
       };
     }

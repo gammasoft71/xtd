@@ -41,43 +41,43 @@ namespace xtd {
         /// @brief Maintains performance while items are added to the combo_box one at a time by preventing the control from drawing until the end_update() method is called.
         /// @param control Combo box window handle.
         /// @warning Internal use only
-        static void begin_update(intptr_t control);
+        static void begin_update(intptr control);
         /// @brief Deletes specified item index.
         /// @param control Combo box window handle.
         /// @param index The item index to delete.
         /// @warning Internal use only
-        static void delete_item(intptr_t control, size_t index);
+        static void delete_item(intptr control, size_t index);
         /// @brief Sets a value indicating whether the combo box is displaying its drop-down portion.
         /// @param control Combo box window handle.
         /// @param value true if the drop-down portion is displayed; otherwise, false.
         /// @warning Internal use only
-        static void dropped_down(intptr_t control, bool value);
+        static void dropped_down(intptr control, bool value);
         /// @brief Resumes painting the combo_box control after painting is suspended by the begin_update method.
         /// @param control Combo box window handle.
         /// @warning Internal use only
-        static void end_update(intptr_t control);
+        static void end_update(intptr control);
         /// @brief Inserts at specified item index a specified value.
         /// @param control Combo box window handle.
         /// @param index The item index to insert.
         /// @param value The text value.
         /// @warning Internal use only
-        static void insert_item(intptr_t control, size_t index, const xtd::ustring& value);
+        static void insert_item(intptr control, size_t index, const xtd::ustring& value);
         /// @brief Gets selected item index.
         /// @param control Combo box window handle.
         /// @return The selected item index.
         /// @warning Internal use only
-        static size_t selected_index(intptr_t control);
+        static size_t selected_index(intptr control);
         /// @brief Sets selected item with specified index
         /// @param control Combo box window handle.
         /// @param index The selected item index.
         /// @warning Internal use only
-        static void selected_index(intptr_t control, size_t index);
+        static void selected_index(intptr control, size_t index);
         /// @brief Updates a specified item index with specified value.
         /// @param control Combo box window handle.
         /// @param index The item index to update.
         /// @param value The text value.
         /// @warning Internal use only
-        static void update_item(intptr_t control, size_t index, const xtd::ustring& value);
+        static void update_item(intptr control, size_t index, const xtd::ustring& value);
         /// @}
       };
     }

@@ -26,11 +26,11 @@ namespace xtd {
     namespace native {
       class wxDrawString {
       public:
-        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float angle, wxAlignment align, int32 hotKeyPrefix, int32 trimming) {
+        static void DrawString(intptr handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float angle, wxAlignment align, int32 hotKeyPrefix, int32 trimming) {
           DrawString(handle, text, font, brush, x, y, 0.0f, 0.0f, angle, align, hotKeyPrefix, trimming, 0);
         }
         
-        static void DrawString(intptr_t handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float widthF, float heightF, float angle, wxAlignment align, int32 hotKeyPrefix, int32 trimming, int32 stringFormats) {
+        static void DrawString(intptr handle, const wxString& text, const wxFont& font, const wx_brush& brush, float x, float y, float widthF, float heightF, float angle, wxAlignment align, int32 hotKeyPrefix, int32 trimming, int32 stringFormats) {
           auto width = static_cast<int32>(std::floor(widthF));
           auto height = static_cast<int32>(std::floor(heightF));
           auto noClip = (stringFormats & SF_NO_CLIP) == SF_NO_CLIP || (width == 0 && height == 0); // && angle == 0;
@@ -169,7 +169,7 @@ namespace xtd {
           if (!noClip) dc.DestroyClippingRegion();
         }
 
-        static void DrawStringWithGradientBrush(intptr_t handle, const wxString& string, const wxFont& font, const wx_brush& brush, int32 x, int32 y, int32 width, int32 height, float angle, wxAlignment align, int32 hotKeyPrefix, bool noClip) {
+        static void DrawStringWithGradientBrush(intptr handle, const wxString& string, const wxFont& font, const wx_brush& brush, int32 x, int32 y, int32 width, int32 height, float angle, wxAlignment align, int32 hotKeyPrefix, bool noClip) {
           auto maxSize = math::max(width, height);
           wxImage image(x + maxSize, y + maxSize);
           if (brush.is_conical_gradiant_brush())

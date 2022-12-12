@@ -7,6 +7,7 @@
 
 #include <cstdint>
 #include <xtd/static.h>
+#include <xtd/types.h>
 #include <xtd/drawing_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -40,36 +41,36 @@ namespace xtd {
         /// @param height A height of rectangle that defines the interior of the region.
         /// @return The created region handle.
         /// @warning Internal use only
-        static intptr_t create_from_rect(float x, float y, float width, float height);
+        static intptr create_from_rect(float x, float y, float width, float height);
         
         /// @brief Creates a region with the specified graphics path.
         /// @param path A graphics path handle that defines the region.
         /// @return The created region handle.
         /// @warning Internal use only
-        static intptr_t create_from_graphics_path(intptr_t path);
+        static intptr create_from_graphics_path(intptr path);
         
         /// @brief Destroys the region.
         /// @param handle The region handle to destroy.
         /// @warning Internal use only
-        static void destroy(intptr_t handle);
+        static void destroy(intptr handle);
         
         /// @brief Updates thie region to contain the portion of the specified region that does not intersect with the region.
         /// @param handle The region handle.
         /// @param region The region handle to complement the region.
         /// @warning Internal use only
-        static void complement(intptr_t handle, intptr_t region);
+        static void complement(intptr handle, intptr region);
         
         /// @brief Updates the region to contain only the portion of its interior that does not intersect with the specified region.
         /// @param handle The region handle.
         /// @param region The region handle to exclude from the region.
         /// @warning Internal use only
-        static void exclude(intptr_t handle, intptr_t region);
+        static void exclude(intptr handle, intptr region);
         
         /// @brief Creates a region from a handle to the specified existing GDI region.
         /// @param hrgn A handle to an existing region.
         /// @return The created region handle.
         /// @warning Internal use only
-        static intptr_t from_hrgn(intptr_t hrgn);
+        static intptr from_hrgn(intptr hrgn);
         
         /// @brief Gets a rectangle that represents a rectangle that bounds in pixels the region.
         /// @param handle The region handle.
@@ -78,44 +79,44 @@ namespace xtd {
         /// @param width The width of rectangle that represents the bounding rectangle in pixels for the region.
         /// @param height The height of rectangle that represents the bounding rectangle in pixels for the region.
         /// @warning Internal use only
-        static void get_bounds(intptr_t handle, float& x, float& y, float& width, float& height);
+        static void get_bounds(intptr handle, float& x, float& y, float& width, float& height);
         
         /// @brief Returns a Windows handle to the region in the specified graphics context.
         /// @param handle The region handle.
         /// @param graphics The graphics handle on which the region is drawn.
         /// @return A Windows handle to the region.
         /// @warning Internal use only
-        static intptr_t get_hrgn(intptr_t handle, intptr_t grpahics);
+        static intptr get_hrgn(intptr handle, intptr grpahics);
         
         /// @brief Updates the region to the intersection of itself with the specified region.
         /// @param handle The region handle.
         /// @param region The region handle to intersect with the region.
         /// @warning Internal use only
-        static void intersect(intptr_t handle, intptr_t region);
+        static void intersect(intptr handle, intptr region);
         
         /// @brief Tests whether the region has an empty interior.
         /// @param handle The region handle.
         /// @return true if the interior of the region is empty; otherwise, false.
         /// @warning Internal use only
-        static bool is_empty(intptr_t handle);
+        static bool is_empty(intptr handle);
         /// @brief Tests whether the region has an empty interior on the specified drawing surface.
         /// @param handle The region handle.
         /// @param graphics A graphics handle that represents a drawing surface.
         /// @return true if the interior of the region is empty when the transformation associated with graphics is applied; otherwise, false.
         /// @warning Internal use only
-        static bool is_empty(intptr_t handle, intptr_t grpahics);
+        static bool is_empty(intptr handle, intptr grpahics);
         
         /// @brief Tests whether the region has an infinite interior.
         /// @param handle The region handle.
         /// @return true if the interior of the region is infinite; otherwise, false.
         /// @warning Internal use only
-        static bool is_infinite(intptr_t handle);
+        static bool is_infinite(intptr handle);
         /// @brief Tests whether the region has an infinite interior on the specified drawing surface.
         /// @param handle The region handle.
         /// @param graphics A graphics handle that represents a drawing surface.
         /// @return true if the interior of the region is infinite when the transformation associated with graphics is applied; otherwise, false.
         /// @warning Internal use only
-        static bool is_infinite(intptr_t handle, intptr_t grpahics);
+        static bool is_infinite(intptr handle, intptr grpahics);
         
         /// @brief Tests whether the specified point is contained within the region when drawn using the specified graphics.
         /// @param handle The region handle.
@@ -123,7 +124,7 @@ namespace xtd {
         /// @param y The y-coordinate of the point to test.
         /// @return true when the specified point is contained within the region; otherwise, false.
         /// @warning Internal use only
-        static bool is_visible(intptr_t handle, float x, float y);
+        static bool is_visible(intptr handle, float x, float y);
         /// @brief Tests whether the specified point is contained within the region when drawn using the specified graphics.
         /// @param handle The region handle.
         /// @param x The x-coordinate of the point to test.
@@ -131,7 +132,7 @@ namespace xtd {
         /// @param graphics The graphics handle that represents a draing surface.
         /// @return true when the specified point is contained within the region; otherwise, false.
         /// @warning Internal use only
-        static bool is_visible(intptr_t handle, float x, float y, intptr_t grpahics);
+        static bool is_visible(intptr handle, float x, float y, intptr grpahics);
         /// @brief Tests whether any portion of the specified rectangle is contained within the region.
         /// @param handle The region handle.
         /// @param x The x-coordinate of the upper-left corner of the rectangle to test.
@@ -140,7 +141,7 @@ namespace xtd {
         /// @param height The height of the rectangle to test.
         /// @return true when any portion of the specified rectangle is contained within the region; otherwise, false.
         /// @warning Internal use only
-        static bool is_visible(intptr_t handle, float x, float y, float width, float height);
+        static bool is_visible(intptr handle, float x, float y, float width, float height);
         /// @brief Tests whether any portion of the specified rectangle is contained within this xtd::drawing::region when drawn using the specified xtd::drawing::graphics.
         /// @param handle The region handle.
         /// @param x The x-coordinate of the upper-left corner of the rectangle to test.
@@ -150,36 +151,36 @@ namespace xtd {
         /// @param graphics A graphics handle that represents a graphics context.
         /// @return true when any portion of the specified rectangle is contained within the region; otherwise, false.
         /// @warning Internal use only
-        static bool is_visible(intptr_t handle, float x, float y, float width, float height, intptr_t grpahics);
+        static bool is_visible(intptr handle, float x, float y, float width, float height, intptr grpahics);
         
         /// @brief Initializes the region to an empty interior.
         /// @param handle The region handle.
         /// @warning Internal use only
-        static void make_empty(intptr_t handle);
+        static void make_empty(intptr handle);
         
         /// @brief Updates the region to the union of itself and the specified region.
         /// @param handle The region handle.
         /// @param region The region handle to unite with the region.
         /// @warning Internal use only
-        static void make_union(intptr_t handle, intptr_t region);
+        static void make_union(intptr handle, intptr region);
         
         /// @brief Updates the region to the union minus the intersection of itself with the specified region.
         /// @param handle The region handle.
         /// @param path The region handle to Xor with this xtd::drawing::region.
         /// @warning Internal use only
-        static void make_xor(intptr_t handle, intptr_t region);
+        static void make_xor(intptr handle, intptr region);
         
         /// @brief Releases the handle of the region.
         /// @param region_handle The handle to the region.
         /// @warning Internal use only
-        static void release_hrgn(intptr_t region_handle);
+        static void release_hrgn(intptr region_handle);
         
         /// @brief Offsets the coordinates of the region by the specified amount.
         /// @param handle The region handle.
         /// @param dx The amount to offset the region horizontally.
         /// @param dy The amount to offset the region vertically.
         /// @warning Internal use only
-        static void translate(intptr_t handle, float dx, float dy);
+        static void translate(intptr handle, float dx, float dy);
         /// @}
       };
     }

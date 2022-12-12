@@ -44,17 +44,17 @@ namespace xtd {
         /// @param min_date: The minimum date allowable to the date time picker.
         /// @param max_date: The maximum date allowable to the date time picker.
         /// @warning Internal use only
-        static void allowable_dates(const intptr_t control, date_time min_date, date_time max_date);
+        static void allowable_dates(const intptr control, date_time min_date, date_time max_date);
         /// @brief Gets the date/time value assigned to the control.
         /// @param control Date time picker handle.
         /// @return The date and time value assign to the control.
         /// @warning Internal use only
-        static date_time value(intptr_t control);
+        static date_time value(intptr control);
         /// @brief Sets the date/time value assigned to the control.
         /// @param control Date time picker handle.
         /// @param value The date and time value assign to the control.
         /// @warning Internal use only
-        static void value(intptr_t control, date_time value);
+        static void value(intptr control, date_time value);
         /// @}
       };
     }

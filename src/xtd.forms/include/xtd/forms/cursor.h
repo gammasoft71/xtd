@@ -50,7 +50,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the Cursor class from the specified Windows handle.
       /// @param handle An IntPtr that represents the Windows handle of the cursor to create.
       /// @remarks You must free the cursor handle when you are done with it.
-      explicit cursor(intptr_t handle);
+      explicit cursor(intptr handle);
       /// @}
       
       /// @cond
@@ -69,9 +69,9 @@ namespace xtd {
       static void current(const xtd::forms::cursor& cursor);
       
       /// @brief Gets the handle of the cursor.
-      /// @return An intptr_t that represents the cursor's handle.
+      /// @return An intptr that represents the cursor's handle.
       /// @remarks This is not a copy of the handle; do not destroy it.
-      intptr_t handle() const noexcept;
+      intptr handle() const noexcept;
       
       /// @brief Gets the cursor hot spot.
       /// @return A point representing the cursor hot spot.
@@ -106,9 +106,9 @@ namespace xtd {
       
       /// @{
       /// @brief Copies the handle of this cursor.
-      /// @return An intptr_t that represents the cursor's handle.
+      /// @return An intptr that represents the cursor's handle.
       /// @remarks The handle created as a result of calling this method must be deleted of when you are done with it.
-      intptr_t copy_handle() const;
+      intptr copy_handle() const;
       
       bool equals(const cursor& value) const noexcept override;
 
@@ -139,10 +139,10 @@ namespace xtd {
     private:
       friend class xtd::forms::cursors;
       cursor(const xtd::drawing::bitmap& bitmap, const xtd::drawing::point& hot_spot);
-      cursor(intptr_t handle, bool destroyable, const xtd::ustring& name);
+      cursor(intptr handle, bool destroyable, const xtd::ustring& name);
       
       struct data {
-        intptr_t handle_ = 0;
+        intptr handle_ = 0;
         bool destroyable_ = true;
         xtd::drawing::point hot_spot_;
         xtd::ustring name_;

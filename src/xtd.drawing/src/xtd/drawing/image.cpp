@@ -30,7 +30,7 @@ namespace {
   }
 }
 
-image::image(intptr_t hbitmap) {
+image::image(intptr hbitmap) {
   if (hbitmap) {
     data_->handle_ = hbitmap;
     update_properties();
@@ -100,7 +100,7 @@ vector<guid> image::frame_dimentions_list() const noexcept {
   return result;
 }
 
-intptr_t image::handle() const noexcept {
+intptr image::handle() const noexcept {
   return data_->handle_;
 }
 
@@ -164,7 +164,7 @@ bool image::equals(const image& image) const noexcept {
   return data_->handle_ == image.data_->handle_;
 }
 
-bitmap image::from_hbitmap(intptr_t hbitmap) {
+bitmap image::from_hbitmap(intptr hbitmap) {
   return bitmap(image(hbitmap));
 }
 

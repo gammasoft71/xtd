@@ -28,11 +28,11 @@ main_menu::main_menu(const std::vector<menu_item_ref>& menu_items) {
   data_->menu_items.push_back_range(menu_items);
 }
 
-intptr_t main_menu::create_menu_handle() {
+intptr main_menu::create_menu_handle() {
   return native::main_menu::create();
 }
 
-void main_menu::destroy_menu_handle(intptr_t handle) {
+void main_menu::destroy_menu_handle(intptr handle) {
   if (handle) native::main_menu::destroy(handle);
 }
 

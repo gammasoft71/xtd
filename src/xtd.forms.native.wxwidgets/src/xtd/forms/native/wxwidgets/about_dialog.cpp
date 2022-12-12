@@ -16,8 +16,8 @@ namespace {
   HHOOK handle_hook;
   LRESULT CALLBACK callbackProc(INT ncode, WPARAM wparam, LPARAM lparam) {
     if (ncode == HCBT_ACTIVATE) {
-      allow_dark_mode_for_window(static_cast<intptr_t>(wparam));
-      refresh_title_bar_theme_color(static_cast<intptr_t>(wparam));
+      allow_dark_mode_for_window(static_cast<intptr>(wparam));
+      refresh_title_bar_theme_color(static_cast<intptr>(wparam));
       UnhookWindowsHookEx(handle_hook);
     } else
       CallNextHookEx(handle_hook, ncode, wparam, lparam);
@@ -26,7 +26,7 @@ namespace {
 }
 #endif
 
-void about_dialog::show(intptr_t hwnd, const xtd::drawing::icon& icon, const ustring& name, const ustring& description, const ustring& version, const ustring& long_version, const ustring& copyright, const ustring& website, const ustring& website_label, const std::vector<ustring>& creators, const std::vector<ustring>& designers, const std::vector<ustring>& doc_writers, const std::vector<ustring>& translators, const ustring& license) {
+void about_dialog::show(intptr hwnd, const xtd::drawing::icon& icon, const ustring& name, const ustring& description, const ustring& version, const ustring& long_version, const ustring& copyright, const ustring& website, const ustring& website_label, const std::vector<ustring>& creators, const std::vector<ustring>& designers, const std::vector<ustring>& doc_writers, const std::vector<ustring>& translators, const ustring& license) {
   wxAboutDialogInfo about_info;
   about_info.SetName(convert_string::to_wstring(name));
   about_info.SetDescription(convert_string::to_wstring(description));

@@ -10,7 +10,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-void month_calendar::annually_bolded_dates(intptr_t control, const std::vector<xtd::date_time>& dates) {
+void month_calendar::annually_bolded_dates(intptr control, const std::vector<xtd::date_time>& dates) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -21,7 +21,7 @@ void month_calendar::annually_bolded_dates(intptr_t control, const std::vector<x
   reinterpret_cast<wx_month_calendar*>(control)->change_attribute_dates(reinterpret_cast<wx_month_calendar*>(control));
 }
 
-void month_calendar::bolded_dates(intptr_t control, const std::vector<xtd::date_time>& dates) {
+void month_calendar::bolded_dates(intptr control, const std::vector<xtd::date_time>& dates) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -32,7 +32,7 @@ void month_calendar::bolded_dates(intptr_t control, const std::vector<xtd::date_
   reinterpret_cast<wx_month_calendar*>(control)->change_attribute_dates(reinterpret_cast<wx_month_calendar*>(control));
 }
 
-void month_calendar::calendar_dimensions(intptr_t control, const xtd::drawing::size& value) {
+void month_calendar::calendar_dimensions(intptr control, const xtd::drawing::size& value) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -42,7 +42,7 @@ void month_calendar::calendar_dimensions(intptr_t control, const xtd::drawing::s
   // Does not exists in wxWidgets...
 }
 
-void month_calendar::first_day_of_week(intptr_t control, uint32_t day) {
+void month_calendar::first_day_of_week(intptr control, uint32_t day) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -66,7 +66,7 @@ void month_calendar::first_day_of_week(intptr_t control, uint32_t day) {
   wx_calendar_ctrl->SetWindowStyle(style);
 }
 
-std::tuple<uint32_t, xtd::date_time> month_calendar::hit_test(intptr_t control, const xtd::drawing::point& point) {
+std::tuple<uint32_t, xtd::date_time> month_calendar::hit_test(intptr control, const xtd::drawing::point& point) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -92,7 +92,7 @@ std::tuple<uint32_t, xtd::date_time> month_calendar::hit_test(intptr_t control, 
   return make_tuple(hit_area, date_time(time.GetYear(), static_cast<uint32_t>(time.GetMonth()) + 1, time.GetDay(), 0, 0, 0, date_time_kind::unspecified));
 }
 
-void month_calendar::allowable_dates(intptr_t control, date_time min_date, date_time max_date) {
+void month_calendar::allowable_dates(intptr control, date_time min_date, date_time max_date) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -105,7 +105,7 @@ void month_calendar::allowable_dates(intptr_t control, date_time min_date, date_
   wx_calendar_ctrl->SetDateRange(wx_min_date_time, wx_max_date_time);
 }
 
-void month_calendar::max_selection_count(intptr_t control, uint32_t value) {
+void month_calendar::max_selection_count(intptr control, uint32_t value) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -115,7 +115,7 @@ void month_calendar::max_selection_count(intptr_t control, uint32_t value) {
   // Does not exists in wxWidgets...
 }
 
-void month_calendar::monthly_bolded_dates(intptr_t control, const std::vector<xtd::date_time>& dates) {
+void month_calendar::monthly_bolded_dates(intptr control, const std::vector<xtd::date_time>& dates) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -126,7 +126,7 @@ void month_calendar::monthly_bolded_dates(intptr_t control, const std::vector<xt
   reinterpret_cast<wx_month_calendar*>(control)->change_attribute_dates(reinterpret_cast<wx_month_calendar*>(control));
 }
 
-void month_calendar::selection_range(intptr_t control, date_time date_start, date_time date_end) {
+void month_calendar::selection_range(intptr control, date_time date_start, date_time date_end) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -141,7 +141,7 @@ void month_calendar::selection_range(intptr_t control, date_time date_start, dat
   wx_calendar_ctrl->SetDate(wx_date_time);
 }
 
-pair<date_time, date_time> month_calendar::selection_range(intptr_t control) {
+pair<date_time, date_time> month_calendar::selection_range(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -153,11 +153,11 @@ pair<date_time, date_time> month_calendar::selection_range(intptr_t control) {
   return {date, date};
 }
 
-xtd::drawing::size month_calendar::single_month_size(intptr_t control) {
+xtd::drawing::size month_calendar::single_month_size(intptr control) {
   return {240, 162};
 }
 
-void month_calendar::title_back_color(intptr_t control, const xtd::drawing::color& color) {
+void month_calendar::title_back_color(intptr control, const xtd::drawing::color& color) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -167,7 +167,7 @@ void month_calendar::title_back_color(intptr_t control, const xtd::drawing::colo
   wx_calendar_ctrl->SetHeaderColours(wx_calendar_ctrl->GetHeaderColourFg(), {color.r(), color.g(), color.b(), color.a()});
 }
 
-void month_calendar::title_fore_color(intptr_t control, const xtd::drawing::color& color) {
+void month_calendar::title_fore_color(intptr control, const xtd::drawing::color& color) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -177,7 +177,7 @@ void month_calendar::title_fore_color(intptr_t control, const xtd::drawing::colo
   wx_calendar_ctrl->SetHeaderColours({color.r(), color.g(), color.b(), color.a()}, wx_calendar_ctrl->GetHeaderColourBg());
 }
 
-void month_calendar::today_date(intptr_t control, const xtd::date_time& value) {
+void month_calendar::today_date(intptr control, const xtd::date_time& value) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -188,7 +188,7 @@ void month_calendar::today_date(intptr_t control, const xtd::date_time& value) {
   reinterpret_cast<wx_month_calendar*>(control)->change_attribute_dates(reinterpret_cast<wx_month_calendar*>(control));
 }
 
-void month_calendar::trailing_fore_color(intptr_t control, const xtd::drawing::color& color) {
+void month_calendar::trailing_fore_color(intptr control, const xtd::drawing::color& color) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

@@ -9,7 +9,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-void picture_box::image(intptr_t control, const drawing::image& image) {
+void picture_box::image(intptr control, const drawing::image& image) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -26,7 +26,7 @@ void picture_box::image(intptr_t control, const drawing::image& image) {
   reinterpret_cast<control_handler*>(control)->control()->SetSize(current_size);
 }
 
-void picture_box::reset(intptr_t control) {
+void picture_box::reset(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

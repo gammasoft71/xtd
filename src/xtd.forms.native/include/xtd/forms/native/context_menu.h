@@ -39,39 +39,39 @@ namespace xtd {
         /// @brief Creates context menu.
         /// @return The created context menu window handle.
         /// @warning Internal use only
-        static intptr_t create();
+        static intptr create();
         /// @brief Destroys context menu.
         /// @param context_menu Context menu window handle to destroy.
         /// @warning Internal use only
-        static void destroy(intptr_t context_menu);
+        static void destroy(intptr context_menu);
         /// @brief Insert specified item to specisified position.
         /// @param context_menu Context menu handle.
         /// @param pos Position to insert menu item.
         /// @param menu_item Menu item to insert.
         /// @warning Internal use only
-        static void insert_item(intptr_t context_menu, size_t pos,  intptr_t menu_item);
+        static void insert_item(intptr context_menu, size_t pos,  intptr menu_item);
         /// @brief Insert specified menu item to specisified position.
         /// @param context_menu Context menu handle.
         /// @param pos Position to insert menu item.
         /// @param menu_item Menu item to insert.
         /// @param text The text associated with this menu.
         /// @warning Internal use only
-        static void insert_menu(intptr_t context_menu, size_t pos,  intptr_t menu_item, const xtd::ustring& text);
+        static void insert_menu(intptr context_menu, size_t pos,  intptr menu_item, const xtd::ustring& text);
         /// @brief Gets native menu handle.
         /// @param context_menu Context menu handle.
         /// @return The native menu handle.
         /// @warning Internal use only
-        static intptr_t native_handle(intptr_t context_menu);
+        static intptr native_handle(intptr context_menu);
         /// @brief Remove menu item from specisified position.
         /// @param context_menu Context menu handle.
         /// @param pos Position to insert menu item.
         /// @warning Internal use only
-        static void remove_item(intptr_t context_menu, size_t pos);
+        static void remove_item(intptr context_menu, size_t pos);
         /// @brief Sets text menu.
         /// @param context_menu Context menu handle.
         /// @param text The text associated with this menu.
         /// @warning Internal use only
-        static void text(intptr_t context_menu, const xtd::ustring& text);
+        static void text(intptr context_menu, const xtd::ustring& text);
         /// @}
       };
     }

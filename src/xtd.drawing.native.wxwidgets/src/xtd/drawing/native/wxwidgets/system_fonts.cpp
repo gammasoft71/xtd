@@ -5,6 +5,7 @@
 #include <wx/font.h>
 #include <wx/settings.h>
 
+using namespace xtd;;
 using namespace xtd::drawing::native;
 
 bool __enable_system_font_size__ = false;
@@ -23,84 +24,84 @@ namespace {
 }
 #endif
 
-intptr_t system_fonts::caption_font() {
+intptr system_fonts::caption_font() {
   toolkit::initialize(); // Must be first
   #if defined(__APPLE__)
-  return reinterpret_cast<intptr_t>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
+  return reinterpret_cast<intptr>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
   #else
-  return reinterpret_cast<intptr_t>(new wxFont(GetDefaultGuiFont()));
+  return reinterpret_cast<intptr>(new wxFont(GetDefaultGuiFont()));
   #endif
 }
 
-intptr_t system_fonts::default_font() {
+intptr system_fonts::default_font() {
   toolkit::initialize(); // Must be first
   #if defined(__APPLE__)
-  return reinterpret_cast<intptr_t>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
+  return reinterpret_cast<intptr>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
   #else
-  return reinterpret_cast<intptr_t>(new wxFont(GetDefaultGuiFont()));
+  return reinterpret_cast<intptr>(new wxFont(GetDefaultGuiFont()));
   #endif
 }
 
-intptr_t system_fonts::dialog_font() {
+intptr system_fonts::dialog_font() {
   toolkit::initialize(); // Must be first
   #if defined(__APPLE__)
-  return reinterpret_cast<intptr_t>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
+  return reinterpret_cast<intptr>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
   #else
-  return reinterpret_cast<intptr_t>(new wxFont(GetDefaultGuiFont()));
+  return reinterpret_cast<intptr>(new wxFont(GetDefaultGuiFont()));
   #endif
 }
 
-intptr_t system_fonts::icon_title_font() {
+intptr system_fonts::icon_title_font() {
   toolkit::initialize(); // Must be first
   #if defined(__APPLE__)
-  return reinterpret_cast<intptr_t>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
+  return reinterpret_cast<intptr>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
   #else
-  return reinterpret_cast<intptr_t>(new wxFont(GetDefaultGuiFont()));
+  return reinterpret_cast<intptr>(new wxFont(GetDefaultGuiFont()));
   #endif
 }
 
-intptr_t system_fonts::menu_font() {
+intptr system_fonts::menu_font() {
   toolkit::initialize(); // Must be first
   #if defined(__APPLE__)
-  return reinterpret_cast<intptr_t>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
+  return reinterpret_cast<intptr>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
   #else
-  return reinterpret_cast<intptr_t>(new wxFont(GetDefaultGuiFont()));
+  return reinterpret_cast<intptr>(new wxFont(GetDefaultGuiFont()));
   #endif
 }
 
-intptr_t system_fonts::message_box_font() {
+intptr system_fonts::message_box_font() {
   toolkit::initialize(); // Must be first
   #if defined(__APPLE__)
-  return reinterpret_cast<intptr_t>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
+  return reinterpret_cast<intptr>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
   #else
-  return reinterpret_cast<intptr_t>(new wxFont(GetDefaultGuiFont()));
+  return reinterpret_cast<intptr>(new wxFont(GetDefaultGuiFont()));
   #endif
 }
 
-intptr_t system_fonts::small_caption_font() {
+intptr system_fonts::small_caption_font() {
   toolkit::initialize(); // Must be first
   #if defined(__APPLE__)
-  return reinterpret_cast<intptr_t>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
+  return reinterpret_cast<intptr>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
   #else
-  return reinterpret_cast<intptr_t>(new wxFont(GetDefaultGuiFont()));
+  return reinterpret_cast<intptr>(new wxFont(GetDefaultGuiFont()));
   #endif
 }
 
-intptr_t system_fonts::status_font() {
+intptr system_fonts::status_font() {
   toolkit::initialize(); // Must be first
   #if defined(__APPLE__)
-  return reinterpret_cast<intptr_t>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_SMALL));
+  return reinterpret_cast<intptr>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_SMALL));
   #else
-  return reinterpret_cast<intptr_t>(new wxFont(GetDefaultGuiFont()));
+  return reinterpret_cast<intptr>(new wxFont(GetDefaultGuiFont()));
   #endif
 }
 
-intptr_t system_fonts::tool_font() {
+intptr system_fonts::tool_font() {
   toolkit::initialize(); // Must be first
   #if defined(__APPLE__)
   auto font = new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_SMALL);
-  return reinterpret_cast<intptr_t>(font);
+  return reinterpret_cast<intptr>(font);
   #else
-  return reinterpret_cast<intptr_t>(new wxFont(GetDefaultGuiFont()));
+  return reinterpret_cast<intptr>(new wxFont(GetDefaultGuiFont()));
   #endif
 }

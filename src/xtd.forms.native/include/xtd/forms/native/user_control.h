@@ -40,7 +40,7 @@ namespace xtd {
         /// @param control User control window handle.
         /// @param size A virtual xtd::drawing::size.
         /// @warning Internal use only
-        static void virtual_size(intptr_t control, const drawing::size& size);
+        static void virtual_size(intptr control, const drawing::size& size);
         /// @}
       };
     }

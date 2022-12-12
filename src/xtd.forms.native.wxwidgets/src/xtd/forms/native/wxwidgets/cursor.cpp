@@ -17,26 +17,26 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-intptr_t cursor::create() {
-  return reinterpret_cast<intptr_t>(new wxCursor());
+intptr cursor::create() {
+  return reinterpret_cast<intptr>(new wxCursor());
 }
 
-intptr_t cursor::create(const xtd::drawing::image& image, const xtd::drawing::point& hot_spot) {
+intptr cursor::create(const xtd::drawing::image& image, const xtd::drawing::point& hot_spot) {
   wxImage wx_image(*reinterpret_cast<wxImage*>(image.handle()));
   wx_image.SetOption(wxIMAGE_OPTION_CUR_HOTSPOT_X, hot_spot.x());
   wx_image.SetOption(wxIMAGE_OPTION_CUR_HOTSPOT_Y, hot_spot.y());
-  return reinterpret_cast<intptr_t>(new wxCursor(wx_image));
+  return reinterpret_cast<intptr>(new wxCursor(wx_image));
 }
 
-intptr_t cursor::copy(intptr_t cursor) {
-  return reinterpret_cast<intptr_t>(new wxCursor(*reinterpret_cast<wxCursor*>(cursor)));
+intptr cursor::copy(intptr cursor) {
+  return reinterpret_cast<intptr>(new wxCursor(*reinterpret_cast<wxCursor*>(cursor)));
 }
 
-void cursor::current(intptr_t cursor) {
+void cursor::current(intptr cursor) {
   wxSetCursor(cursor ? *reinterpret_cast<wxCursor*>(cursor) : wxNullCursor);
 }
 
-void cursor::destroy(intptr_t cursor) {
+void cursor::destroy(intptr cursor) {
   if (cursor == 0) return;
   delete reinterpret_cast<wxCursor*>(cursor);
 }
@@ -50,7 +50,7 @@ void cursor::hide() {
 }
 #endif
 
-point cursor::hot_spot(intptr_t cursor) {
+point cursor::hot_spot(intptr cursor) {
   if (cursor == 0) return {};
   wxPoint hot_spot = reinterpret_cast<wxCursor*>(cursor)->GetHotSpot();
   if (hot_spot == wxDefaultPosition) return {};
@@ -76,7 +76,7 @@ void cursor::position(const point& position) {
 }
 #endif
 
-drawing::size cursor::size(intptr_t cursor) {
+drawing::size cursor::size(intptr cursor) {
   return {32, 32};
 }
 

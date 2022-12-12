@@ -24,7 +24,7 @@ namespace xtd {
       /// @brief Gets the handle to the window represented by the implementer.
       /// @return A handle to the window represented by the implementer.
       /// @remarks Depending on the implementer, the value of the Handle property could change during the life of the window.
-      virtual intptr_t handle() const = 0;
+      virtual intptr handle() const = 0;
       /// @}
     };
   }

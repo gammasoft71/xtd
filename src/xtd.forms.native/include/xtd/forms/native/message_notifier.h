@@ -23,7 +23,7 @@ namespace xtd {
         friend xtd::forms::message_notifier;
       protected:
         /// @param hwnd Parent window handle.
-        static void show(intptr_t hwnd,
+        static void show(intptr hwnd,
           const xtd::ustring& title,
           const xtd::ustring& message,
           const xtd::drawing::icon& icon,

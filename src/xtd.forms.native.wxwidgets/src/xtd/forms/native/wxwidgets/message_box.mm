@@ -66,14 +66,14 @@ namespace {
   }
 }
 
-int32 message_box::show(intptr_t control, const ustring& text, const ustring& caption, uint32_t style, bool display_help_button) {
+int32 message_box::show(intptr control, const ustring& text, const ustring& caption, uint32_t style, bool display_help_button) {
   @autoreleasepool {
     NSAlert* alert = create_alert(text, caption, style, display_help_button);
     return convert_to_dialog_rsult(style, [alert runModal]);
   }
 }
 
-void message_box::show_sheet(xtd::delegate<void(int32)> on_dialog_closed, intptr_t control, const ustring& text, const ustring& caption, uint32_t style, bool display_help_button) {
+void message_box::show_sheet(xtd::delegate<void(int32)> on_dialog_closed, intptr control, const ustring& text, const ustring& caption, uint32_t style, bool display_help_button) {
   @autoreleasepool {
     NSAlert* alert = create_alert(text, caption, style, display_help_button);
     [alert beginSheetModalForWindow:[reinterpret_cast<control_handler*>(control)->control()->GetHandle() window] completionHandler: ^ (NSModalResponse return_code) {

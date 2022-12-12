@@ -31,13 +31,13 @@ namespace {
   #endif
 }
 
-intptr_t font_family::create(const ustring& name) {
+intptr font_family::create(const ustring& name) {
   toolkit::initialize(); // Must be first
-  if (name == ".AppleSystemUIFont") return reinterpret_cast<intptr_t>(new ustring(name));
-  return wxFontEnumerator::IsValidFacename(name) ? reinterpret_cast<intptr_t>(new ustring(name)) : 0;
+  if (name == ".AppleSystemUIFont") return reinterpret_cast<intptr>(new ustring(name));
+  return wxFontEnumerator::IsValidFacename(name) ? reinterpret_cast<intptr>(new ustring(name)) : 0;
 }
 
-void font_family::destroy(intptr_t font_family) {
+void font_family::destroy(intptr font_family) {
   delete reinterpret_cast<ustring*>(font_family);
 }
 
@@ -107,7 +107,7 @@ std::vector<ustring> font_family::installed_font_families() {
   return families;
 }
 
-int32 font_family::get_cell_ascent(intptr_t font_family, int32 em_height, bool bold, bool italic, bool underline, bool strikeout) {
+int32 font_family::get_cell_ascent(intptr font_family, int32 em_height, bool bold, bool italic, bool underline, bool strikeout) {
   toolkit::initialize(); // Must be first
   if (!wxTheApp) return em_height;
   wxScreenDC hdc;
@@ -120,7 +120,7 @@ int32 font_family::get_cell_ascent(intptr_t font_family, int32 em_height, bool b
   return std::round(static_cast<double>(metrics.ascent) / metrics.height * em_height);
 }
 
-int32 font_family::get_cell_descent(intptr_t font_family, int32 em_height, bool bold, bool italic, bool underline, bool strikeout) {
+int32 font_family::get_cell_descent(intptr font_family, int32 em_height, bool bold, bool italic, bool underline, bool strikeout) {
   toolkit::initialize(); // Must be first
   if (!wxTheApp) return 0;
   wxScreenDC hdc;
@@ -133,7 +133,7 @@ int32 font_family::get_cell_descent(intptr_t font_family, int32 em_height, bool 
   return std::round(static_cast<double>(metrics.descent) / metrics.height * em_height);
 }
 
-int32 font_family::get_line_spacing(intptr_t font_family, int32 em_height, bool bold, bool italic, bool underline, bool strikeout) {
+int32 font_family::get_line_spacing(intptr font_family, int32 em_height, bool bold, bool italic, bool underline, bool strikeout) {
   toolkit::initialize(); // Must be first
   if (!wxTheApp) return em_height;
   wxScreenDC hdc;
@@ -146,12 +146,12 @@ int32 font_family::get_line_spacing(intptr_t font_family, int32 em_height, bool 
   return std::round(static_cast<double>(metrics.height + metrics.externalLeading) / metrics.height * em_height);
 }
 
-ustring font_family::get_name(intptr_t font_family, int32 language) {
+ustring font_family::get_name(intptr font_family, int32 language) {
   toolkit::initialize(); // Must be first
   return *reinterpret_cast<ustring*>(font_family);
 }
 
-bool font_family::is_style_available(intptr_t font_family, bool bold, bool italic, bool underline, bool strikeout) {
+bool font_family::is_style_available(intptr font_family, bool bold, bool italic, bool underline, bool strikeout) {
   toolkit::initialize(); // Must be first
   return true;
 }

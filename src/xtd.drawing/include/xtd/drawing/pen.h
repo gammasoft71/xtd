@@ -143,8 +143,8 @@ namespace xtd {
       xtd::drawing::pen& end_cap(xtd::drawing::drawing2d::line_cap value);
       
       /// @brief Gets the handle of the pen.
-      /// @return An intptr_t that contains the handle of the pen.
-      intptr_t handle() const noexcept;
+      /// @return An intptr that contains the handle of the pen.
+      intptr handle() const noexcept;
       
       /// @brief Gets the join style for the ends of two consecutive lines drawn with this xtd::drawing::pen.
       /// @return A xtd::drawing::drawing2d::line_join that represents the join style for the ends of two consecutive lines drawn with this xtd::drawing::pen.
@@ -210,7 +210,7 @@ namespace xtd {
       pen();
       void recreate_handle();
       struct data {
-        intptr_t handle_ = 0;
+        intptr handle_ = 0;
         xtd::drawing::drawing2d::pen_alignment alignment = xtd::drawing::drawing2d::pen_alignment::center;
         xtd::drawing::color color;
         std::unique_ptr<xtd::drawing::brush> brush;

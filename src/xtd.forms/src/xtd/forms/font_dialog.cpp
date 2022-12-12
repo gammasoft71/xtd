@@ -160,11 +160,11 @@ void font_dialog::on_apply(const event_args& e) {
   apply(*this, e);
 }
 
-bool font_dialog::run_dialog(intptr_t owner) {
+bool font_dialog::run_dialog(intptr owner) {
   return native::font_dialog::run_dialog(owner, data_->font, data_->color, data_->options, data_->min_size, data_->max_size, data_->show_color);
 }
 
-void font_dialog::run_sheet(intptr_t owner) {
+void font_dialog::run_sheet(intptr owner) {
   if (!owner) run_dialog(owner);
   else native::font_dialog::run_sheet({*new __xtd_forms_common_dialog_closed_caller__(this), &__xtd_forms_common_dialog_closed_caller__::on_common_dialog_closed}, owner, data_->font, data_->color, data_->options, data_->min_size, data_->max_size, data_->show_color);
 }

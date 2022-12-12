@@ -354,7 +354,7 @@ void tool_bar::fill() {
     size({padding().left() + padding().right(), padding().top() + padding().bottom()});
   for (size_t index = 0; index < reversed_buttons.size(); ++index) {
     auto& button_item = reversed_buttons[index].get();
-    intptr_t control_handle = 0;
+    intptr control_handle = 0;
     if (is_system_tool_bar()) {
       if (reversed_buttons[index].get().style() == tool_bar_button_style::push_button || (!data_->drop_down_arrows && button_item.style() == tool_bar_button_style::drop_down_button))
         control_handle = native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.tool_tip_text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, button_item.enabled(), button_item.visible());
@@ -375,7 +375,7 @@ void tool_bar::fill() {
       button_item.data_->rectangle = drawing::rectangle(native::tool_bar::tool_bar_item_rectangle(handle(), control_handle));
     } else {
       auto button_control = std::make_shared<tool_bar_button_control>();
-      button_item.data_->handle = reinterpret_cast<intptr_t>(button_control.get());
+      button_item.data_->handle = reinterpret_cast<intptr>(button_control.get());
       button_control->parent(*this);
       button_control->tool_bar_button(button_item);
       if (is_horizontal()) button_control->dock(dock_style::left);
@@ -477,7 +477,7 @@ void tool_bar::resize_stretchable_separtors() {
   }
 }
 
-void tool_bar::update_toolbar_button_control(intptr_t handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible) {
+void tool_bar::update_toolbar_button_control(intptr handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool pushed, bool enabled, bool visible) {
   if (!handle) return;
   if (is_system_tool_bar())
     native::tool_bar::update_tool_bar_item(this->handle(), handle, text, tool_tip_text, image, pushed, enabled, visible);

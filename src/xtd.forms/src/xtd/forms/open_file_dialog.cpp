@@ -21,11 +21,11 @@ open_file_dialog& open_file_dialog::multiselect(bool value) {
   return *this;
 }
 
-bool open_file_dialog::run_file_dialog(intptr_t owner) {
+bool open_file_dialog::run_file_dialog(intptr owner) {
   return native::file_dialog::run_open_dialog(owner, data_->default_ext, data_->file_name, data_->file_names, data_->filter, data_->filter_index, data_->initial_directory, data_->options, data_->support_multi_dotted_extensions, data_->title);
 }
 
-void open_file_dialog::run_file_sheet(intptr_t owner) {
+void open_file_dialog::run_file_sheet(intptr owner) {
   if (!owner) run_file_dialog(owner);
   else native::file_dialog::run_open_sheet({*new __xtd_forms_common_dialog_closed_caller__(this), &__xtd_forms_common_dialog_closed_caller__::on_common_dialog_closed}, owner, data_->default_ext, data_->file_name, data_->file_names, data_->filter, data_->filter_index, data_->initial_directory, data_->options, data_->support_multi_dotted_extensions, data_->title);
 }

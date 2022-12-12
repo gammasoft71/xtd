@@ -14,8 +14,8 @@ namespace {
   HHOOK handle_hook;
   LRESULT CALLBACK callbackProc(INT ncode, WPARAM wparam, LPARAM lparam) {
     if (ncode == HCBT_ACTIVATE) {
-      allow_dark_mode_for_window(static_cast<intptr_t>(wparam));
-      refresh_title_bar_theme_color(static_cast<intptr_t>(wparam));
+      allow_dark_mode_for_window(static_cast<intptr>(wparam));
+      refresh_title_bar_theme_color(static_cast<intptr>(wparam));
       UnhookWindowsHookEx(handle_hook);
     } else
       CallNextHookEx(handle_hook, ncode, wparam, lparam);
@@ -24,7 +24,7 @@ namespace {
 }
 #endif
 
-bool font_dialog::run_dialog(intptr_t hwnd, drawing::font& font, drawing::color& color, size_t options, size_t min_size, size_t max_size, bool show_color) {
+bool font_dialog::run_dialog(intptr hwnd, drawing::font& font, drawing::color& color, size_t options, size_t min_size, size_t max_size, bool show_color) {
   wxFontData font_data;
   font_data.SetColour(wxColour(color.r(), color.g(), color.b(), color.a()));
   font_data.SetInitialFont(*reinterpret_cast<wxFont*>(font.handle()));
@@ -36,12 +36,12 @@ bool font_dialog::run_dialog(intptr_t hwnd, drawing::font& font, drawing::color&
   wxFontDialog dialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), font_data);
   dialog.SetParent(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control());
   if (dialog.ShowModal() != wxID_OK) return false;
-  font = drawing::font(reinterpret_cast<intptr_t>(new wxFont(dialog.GetFontData().GetChosenFont())));
+  font = drawing::font(reinterpret_cast<intptr>(new wxFont(dialog.GetFontData().GetChosenFont())));
   wxColour colour = dialog.GetFontData().GetColour();
   color = drawing::color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
   return true;
 }
 
-void font_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, drawing::font& font, drawing::color& color, size_t options, size_t min_size, size_t max_size, bool show_color) {
+void font_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr hwnd, drawing::font& font, drawing::color& color, size_t options, size_t min_size, size_t max_size, bool show_color) {
   on_dialog_closed(run_dialog(hwnd, font, color, options, min_size, max_size, show_color));
 }

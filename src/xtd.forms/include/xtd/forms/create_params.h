@@ -96,20 +96,20 @@ namespace xtd {
       create_params& location(const drawing::point location);
       
       /// @brief Gets additional parameter information needed to create the control.
-      /// @return An intptr_t that holds additional parameter information needed to create the control.
-      intptr_t param() const noexcept;
+      /// @return An intptr that holds additional parameter information needed to create the control.
+      intptr param() const noexcept;
       /// @brief Sets additional parameter information needed to create the control.
-      /// @param param An intptr_t that holds additional parameter information needed to create the control.
+      /// @param param An intptr that holds additional parameter information needed to create the control.
       /// @return Current create_param instance.
-      create_params& param(intptr_t param);
+      create_params& param(intptr param);
       
       /// @brief Gets or sets the control's parent.
-      /// @return An intptr_t that contains the window handle of the control's parent.
-      intptr_t parent() const noexcept;
+      /// @return An intptr that contains the window handle of the control's parent.
+      intptr parent() const noexcept;
       /// @brief Sets or sets the control's parent.
-      /// @param parent An intptr_t that contains the window handle of the control's parent.
+      /// @param parent An intptr that contains the window handle of the control's parent.
       /// @return Current create_param instance.
-      create_params& parent(intptr_t parent);
+      create_params& parent(intptr parent);
       
       /// @brief Gets a bitwise combination of window style values.
       /// @return A bitwise combination of the window style values.
@@ -169,8 +169,8 @@ namespace xtd {
         size_t class_style = 0;
         size_t ex_style = 0;
         drawing::point location = {-1, -1};
-        intptr_t param = 0;
-        intptr_t parent = 0;
+        intptr param = 0;
+        intptr parent = 0;
         size_t style = 0;
         drawing::size size = {-1, -1};
       };

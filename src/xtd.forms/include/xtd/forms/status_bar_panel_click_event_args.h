@@ -34,7 +34,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::forms::status_bar_panel_click_event_args class.
       /// @param button The xtd::forms::status_bar_panel that was clicked.
       /// @param handle An internal handle.
-      status_bar_panel_click_event_args(const xtd::forms::status_bar_panel& panel, intptr_t handle) : panel_(panel), handle_(handle) {}
+      status_bar_panel_click_event_args(const xtd::forms::status_bar_panel& panel, intptr handle) : panel_(panel), handle_(handle) {}
       /// @}
       
       /// @name Properties
@@ -46,12 +46,12 @@ namespace xtd {
       
       /// @brief Gets internal handle.
       /// @return Internal handle.
-      intptr_t handle() const noexcept {return handle_;}
+      intptr handle() const noexcept {return handle_;}
       /// @}
       
     private:
       xtd::forms::status_bar_panel panel_;
-      intptr_t handle_ = 0;
+      intptr handle_ = 0;
     };
   }
 }

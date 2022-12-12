@@ -65,12 +65,12 @@ namespace xtd {
         /// @brief Initiazes toolkit
         /// @return The toolkit handle.
         /// @warning Internal use only
-        static intptr_t initialize();
+        static intptr initialize();
         
         /// @brief Shutdowns toolkit
         /// @param handle The toolkit handle.
         /// @warning Internal use only
-        static void shutdown(intptr_t handle);
+        static void shutdown(intptr handle);
         /// @}
       };
     }

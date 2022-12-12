@@ -46,19 +46,19 @@ namespace xtd {
         /// @param width The panel width.
         /// @param stretchable true if panel is stretchable; otherwise false.
         /// @warning Internal use only
-      //static intptr_t add_status_bar_panel(intptr_t status_bar, int border_style, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool visible, int width, bool stretchable);
-        static intptr_t add_status_bar_panel(intptr_t status_bar, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, int32 alignment, int32 auto_size, int32 border_style, int32 min_width, int32 width);
+      //static intptr add_status_bar_panel(intptr status_bar, int border_style, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool visible, int width, bool stretchable);
+        static intptr add_status_bar_panel(intptr status_bar, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, int32 alignment, int32 auto_size, int32 border_style, int32 min_width, int32 width);
         /// @brief Adds status bar control.
         /// @param status_bar The tool bar that contains the control.
         /// @param control The control handle.
         /// @param text The control text.
         /// @warning Internal use only
-        static intptr_t add_status_bar_control(intptr_t status_bar, intptr_t control, const xtd::ustring& text);
+        static intptr add_status_bar_control(intptr status_bar, intptr control, const xtd::ustring& text);
         /// @brief Sets the status_bar that is displayed in the form.
         /// @param control Control window handle.
         /// @param status_bar A tool bar handle that represents the status bar to display in the form.
         /// @warning Internal use only
-        static bool set_system_status_bar(intptr_t control, intptr_t status_bar);
+        static bool set_system_status_bar(intptr control, intptr status_bar);
         /// @brief Gets a value indicating whether OS displays a sizing grip.
         /// @return true if OS displays a sizing grip; otherwise, false.
         /// @warning Internal use only
@@ -77,7 +77,7 @@ namespace xtd {
         /// @param width The panel width.
         /// @param visible true if panel is stretchable; otherwise false.
         /// @warning Internal use only
-        static void update_status_bar_item(intptr_t status_bar, intptr_t handle, int32 border_style, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool visible, int32 width, bool stretchable);
+        static void update_status_bar_item(intptr status_bar, intptr handle, int32 border_style, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool visible, int32 width, bool stretchable);
         /// @}
       };
     }

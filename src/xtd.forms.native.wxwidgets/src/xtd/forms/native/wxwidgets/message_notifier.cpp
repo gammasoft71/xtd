@@ -26,7 +26,7 @@ int32 convert_to_icon(uint32_t style) {
 }
 
 
-void message_notifier::show(intptr_t hwnd, const xtd::ustring& title,
+void message_notifier::show(intptr hwnd, const xtd::ustring& title,
   const xtd::ustring& message,
   const xtd::drawing::icon& icon,
   uint32_t style,

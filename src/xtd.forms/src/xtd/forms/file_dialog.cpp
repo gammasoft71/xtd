@@ -183,11 +183,11 @@ xtd::ustring file_dialog::to_string() const noexcept {
   return ustring::format("{}: title: {}, filename: {}", ustring::full_class_name(*this), data_->title, data_->file_name);
 }
 
-bool file_dialog::run_dialog(intptr_t hwnd_owner) {
+bool file_dialog::run_dialog(intptr hwnd_owner) {
   return run_file_dialog(hwnd_owner);
 }
 
-void file_dialog::run_sheet(intptr_t hwnd_owner) {
+void file_dialog::run_sheet(intptr hwnd_owner) {
   return run_file_sheet(hwnd_owner);
 }
 

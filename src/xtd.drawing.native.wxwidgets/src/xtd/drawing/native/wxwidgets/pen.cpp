@@ -11,29 +11,30 @@
 #include <wx/pen.h>
 
 using namespace std;
+using namespace xtd;
 using namespace xtd::drawing::native;
 
-intptr_t pen::create() {
+intptr pen::create() {
   toolkit::initialize(); // Must be first
-  return reinterpret_cast<intptr_t>(new wx_pen());
+  return reinterpret_cast<intptr>(new wx_pen());
 }
 
-void pen::solid_color(intptr_t pen, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b, float width, float dash_offset, vector<float> dashes) {
+void pen::solid_color(intptr pen, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b, float width, float dash_offset, vector<float> dashes) {
   vector<xtd::sbyte> wx_dashes;
   for (auto dash : dashes)
     wx_dashes.push_back(static_cast<xtd::sbyte>(dash));
   reinterpret_cast<wx_pen*>(pen)->create_solid_color_pen({r, g, b, a}, width, dash_offset, wx_dashes);
 }
 
-void pen::hatch_fill(intptr_t pen, intptr_t brush, float width) {
+void pen::hatch_fill(intptr pen, intptr brush, float width) {
   reinterpret_cast<wx_pen*>(pen)->create_hatch_fill_pen(*reinterpret_cast<wx_brush*>(brush), width);
 }
 
-void pen::conical_gradient(intptr_t pen, intptr_t brush, float width) {
+void pen::conical_gradient(intptr pen, intptr brush, float width) {
   reinterpret_cast<wx_pen*>(pen)->create_conical_gradient_pen(*reinterpret_cast<wx_brush*>(brush), width);
 }
 
-void pen::end_cap(intptr_t pen, int32 line_cap) {
+void pen::end_cap(intptr pen, int32 line_cap) {
   switch (line_cap) {
     case LC_FLAT: reinterpret_cast<wx_pen*>(pen)->line_cap(wxPenCap::wxCAP_BUTT); break;
     case LC_SQUARE: reinterpret_cast<wx_pen*>(pen)->line_cap(wxPenCap::wxCAP_PROJECTING); break;
@@ -42,11 +43,11 @@ void pen::end_cap(intptr_t pen, int32 line_cap) {
   }
 }
 
-void pen::linear_gradient(intptr_t pen, intptr_t brush, float width) {
+void pen::linear_gradient(intptr pen, intptr brush, float width) {
   reinterpret_cast<wx_pen*>(pen)->create_linear_gradient_pen(*reinterpret_cast<wx_brush*>(brush), width);
 }
 
-void pen::line_join(intptr_t pen, int32 line_join) {
+void pen::line_join(intptr pen, int32 line_join) {
   switch (line_join) {
     case LJ_MITER: reinterpret_cast<wx_pen*>(pen)->line_join(wxPenJoin::wxJOIN_MITER); break;
     case LJ_BEVEL: reinterpret_cast<wx_pen*>(pen)->line_join(wxPenJoin::wxJOIN_BEVEL); break;
@@ -56,15 +57,15 @@ void pen::line_join(intptr_t pen, int32 line_join) {
   }
 }
 
-void pen::miter_limit(intptr_t pen, float miter_limit) {
+void pen::miter_limit(intptr pen, float miter_limit) {
   // WxWidgets has no mitter limit...
 }
 
-void pen::radial_gradient(intptr_t pen, intptr_t brush, float width) {
+void pen::radial_gradient(intptr pen, intptr brush, float width) {
   reinterpret_cast<wx_pen*>(pen)->create_radial_gradient_pen(*reinterpret_cast<wx_brush*>(brush), width);
 }
 
-void pen::start_cap(intptr_t pen, int32 line_cap) {
+void pen::start_cap(intptr pen, int32 line_cap) {
   switch (line_cap) {
     case LC_FLAT: reinterpret_cast<wx_pen*>(pen)->line_cap(wxPenCap::wxCAP_BUTT); break;
     case LC_SQUARE: reinterpret_cast<wx_pen*>(pen)->line_cap(wxPenCap::wxCAP_PROJECTING); break;
@@ -73,35 +74,35 @@ void pen::start_cap(intptr_t pen, int32 line_cap) {
   }
 }
 
-void pen::texture_fill(intptr_t pen, intptr_t brush, float width) {
+void pen::texture_fill(intptr pen, intptr brush, float width) {
   reinterpret_cast<wx_pen*>(pen)->create_texture_fill_pen(*reinterpret_cast<wx_brush*>(brush), width);
 }
 
-void pen::destroy(intptr_t pen) {
+void pen::destroy(intptr pen) {
   delete reinterpret_cast<wx_pen*>(pen);
 }
 
 /*
-intptr_t pen::create() {
+intptr pen::create() {
   toolkit::initialize(); // Must be first
   auto pen = new wx_pen();
   pen->SetQuality(wxPenQuality::wxPEN_QUALITY_HIGH);
   pen->SetCap(wxPenCap::wxCAP_BUTT);
-  return reinterpret_cast<intptr_t>(pen);
+  return reinterpret_cast<intptr>(pen);
 }
 
-void pen::color(intptr_t pen, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b) {
+void pen::color(intptr pen, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b) {
   toolkit::initialize(); // Must be first
   reinterpret_cast<wxPen*>(pen)->SetColour(wxColour(r, g, b, a));
 }
 
-void pen::image(intptr_t pen, intptr_t image) {
+void pen::image(intptr pen, intptr image) {
   toolkit::initialize(); // Must be first
   reinterpret_cast<wx_pen*>(pen)->SetStyle(wxPenStyle::wxPENSTYLE_STIPPLE);
   reinterpret_cast<wx_pen*>(pen)->SetStipple(*reinterpret_cast<wxImage*>(image));
 }
 
-void pen::dash_pattern(intptr_t pen, std::vector<float> dash_pattern) {
+void pen::dash_pattern(intptr pen, std::vector<float> dash_pattern) {
   toolkit::initialize(); // Must be first
   reinterpret_cast<wx_pen*>(pen)->dashes.clear();
   for (auto dash : dash_pattern)
@@ -109,7 +110,7 @@ void pen::dash_pattern(intptr_t pen, std::vector<float> dash_pattern) {
   reinterpret_cast<wxPen*>(pen)->SetDashes(reinterpret_cast<wx_pen*>(pen)->dashes.size(), reinterpret_cast<wx_pen*>(pen)->dashes.data());
 }
 
-void pen::dash_style(intptr_t pen, uint32_t dash_style) {
+void pen::dash_style(intptr pen, uint32_t dash_style) {
   toolkit::initialize(); // Must be first
   reinterpret_cast<wx_pen*>(pen)->SetStyle(wxPENSTYLE_USER_DASH);
   switch (dash_style) {
@@ -123,12 +124,12 @@ void pen::dash_style(intptr_t pen, uint32_t dash_style) {
   reinterpret_cast<wxPen*>(pen)->SetDashes(reinterpret_cast<wx_pen*>(pen)->dashes.size(), reinterpret_cast<wx_pen*>(pen)->dashes.data());
 }
 
-void pen::width(intptr_t pen, float width) {
+void pen::width(intptr pen, float width) {
   toolkit::initialize(); // Must be first
   reinterpret_cast<wxPen*>(pen)->SetWidth(static_cast<int32>(width));
 }
 
-void pen::destroy(intptr_t pen) {
+void pen::destroy(intptr pen) {
   delete reinterpret_cast<wx_pen*>(pen);
 }
 */

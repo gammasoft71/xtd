@@ -50,7 +50,7 @@ namespace xtd {
         /// @remarks If result is true, the color parameter contains the new chosen color.
         /// @remarks If the title is an empty string, the system uses a default title, which is "Color".
         /// @warning Internal use only
-        static bool run_dialog(intptr_t hwnd, const xtd::ustring& title, xtd::drawing::color& color, std::vector<xtd::drawing::color>& custom_colors, size_t options);
+        static bool run_dialog(intptr hwnd, const xtd::ustring& title, xtd::drawing::color& color, std::vector<xtd::drawing::color>& custom_colors, size_t options);
         /// @brief Shows async dialog as sheet.
         /// @param on_dialog_closed a dialog close delegate to call when the dialog is closed.
         /// @param hwnd Parent window handle.
@@ -61,7 +61,7 @@ namespace xtd {
         /// @remarks When dialog closed and if result is true, the color parameter contains the new chosen color.
         /// @remarks If the title is an empty string, the system uses a default title, which is "Color".
         /// @warning Internal use only
-        static void run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const xtd::ustring& title, xtd::drawing::color& color, std::vector<xtd::drawing::color>& custom_colors, size_t options);
+        static void run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr hwnd, const xtd::ustring& title, xtd::drawing::color& color, std::vector<xtd::drawing::color>& custom_colors, size_t options);
         /// @}
       };
     }

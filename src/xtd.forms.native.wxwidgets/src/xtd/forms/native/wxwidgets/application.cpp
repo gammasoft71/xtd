@@ -74,7 +74,7 @@ namespace {
   }
 }
 
-event<wx_application, delegate<bool(intptr_t, int32, intptr_t, intptr_t, intptr_t)>> wx_application::message_filter_proc;
+event<wx_application, delegate<bool(intptr, int32, intptr, intptr, intptr)>> wx_application::message_filter_proc;
 
 bool application::allow_quit() {
   initialize(); // Must be first
@@ -198,7 +198,7 @@ void application::initialize() {
   #endif
 }
 
-void application::register_message_filter(const delegate<bool(intptr_t, int32, intptr_t, intptr_t, intptr_t)>& message_filter_proc) {
+void application::register_message_filter(const delegate<bool(intptr, int32, intptr, intptr, intptr)>& message_filter_proc) {
   initialize(); // Must be first
   static_cast<wx_application*>(wxTheApp)->message_filter_proc += message_filter_proc;
 }
@@ -208,7 +208,7 @@ void application::register_thread_exception(const delegate<bool()>& thread_excep
   static_cast<wx_application*>(wxTheApp)->thread_exception += thread_exception;
 }
 
-void application::register_wnd_proc(const delegate<intptr_t(intptr_t, int32, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
+void application::register_wnd_proc(const delegate<intptr(intptr, int32, intptr, intptr, intptr)>& wnd_proc) {
   initialize(); // Must be first
   static_cast<wx_application*>(wxTheApp)->wnd_proc += wnd_proc;
 }

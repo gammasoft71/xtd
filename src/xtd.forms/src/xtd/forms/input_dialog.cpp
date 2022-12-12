@@ -71,7 +71,7 @@ namespace {
       return form::show_dialog();
     }
     
-    bool run_dialog(intptr_t owner) {
+    bool run_dialog(intptr owner) {
       if (!owner)
         start_position(form_start_position::center_screen);
       else {
@@ -82,7 +82,7 @@ namespace {
       return form::show_dialog() == dialog_result::ok;
     }
     
-    void run_sheet(intptr_t owner) {
+    void run_sheet(intptr owner) {
       if (!owner)
         run_dialog(owner);
       else {
@@ -197,7 +197,7 @@ void input_dialog::reset() noexcept {
   data_->word_wrap = true;
 }
 
-bool input_dialog::run_dialog(intptr_t owner) {
+bool input_dialog::run_dialog(intptr owner) {
   switch (data_->character_casing) {
     case xtd::forms::character_casing::upper: data_->value = data_->value.to_upper(); break;
     case xtd::forms::character_casing::lower: data_->value = data_->value.to_lower(); break;
@@ -215,7 +215,7 @@ bool input_dialog::run_dialog(intptr_t owner) {
   return result;
 }
 
-void input_dialog::run_sheet(intptr_t owner) {
+void input_dialog::run_sheet(intptr owner) {
   switch (data_->character_casing) {
     case xtd::forms::character_casing::upper: data_->value = data_->value.to_upper(); break;
     case xtd::forms::character_casing::lower: data_->value = data_->value.to_lower(); break;

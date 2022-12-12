@@ -41,28 +41,28 @@ namespace xtd {
         /// @param image_size A xtd::drawing::size image size.
         /// @return The created control window handle.
         /// @warning Internal use only
-        static intptr_t create(const drawing::size& image_size);
+        static intptr create(const drawing::size& image_size);
         /// @brief Deletes specified image index.
         /// @param image_list image list handle.
         /// @param index The item index to delete.
         /// @warning Internal use only
-        static void delete_item(intptr_t image_list, size_t index);
+        static void delete_item(intptr image_list, size_t index);
         /// @brief Destroys image list.
         /// @param image_list image list handle.
         /// @warning Internal use only
-        static void destroy(intptr_t image_list);
+        static void destroy(intptr image_list);
         /// @brief Inserts at specified image index a specified image.
         /// @param image_list image list handle.
         /// @param index The image index to insert.
         /// @param image The xtd::drawing::image image.
         /// @warning Internal use only
-        static void insert_item(intptr_t image_list, size_t index, const drawing::image& image);
+        static void insert_item(intptr image_list, size_t index, const drawing::image& image);
         /// @brief Updates a specified item index with specified value.
         /// @param image_list image list handle.
         /// @param index The image index to update.
         /// @param image The xtd::drawing::image image.
         /// @warning Internal use only
-        static void update_item(intptr_t image_list, size_t index, const drawing::image& image);
+        static void update_item(intptr image_list, size_t index, const drawing::image& image);
         /// @}
       };
     }

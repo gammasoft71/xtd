@@ -153,7 +153,7 @@ namespace xtd {
         xtd::ustring description;
         double opacity = 0.;
         bool native = false;
-        intptr_t handle = 0;
+        intptr handle = 0;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

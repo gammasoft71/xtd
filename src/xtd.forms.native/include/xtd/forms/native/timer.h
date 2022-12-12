@@ -43,11 +43,11 @@ namespace xtd {
         /// @param tick The delegate called at each elapsed interval until the destroy call.
         /// @return New created timer handle.
         /// @warning Internal use only
-        static intptr_t create(int32 interval, const delegate<void(const event_args&)>& tick);
+        static intptr create(int32 interval, const delegate<void(const event_args&)>& tick);
         /// @brief Stop and destroy timer.
         /// @param timer timer handle.
         /// @warning Internal use only
-        static void destroy(intptr_t timer);
+        static void destroy(intptr timer);
         /// @}
       };
     }

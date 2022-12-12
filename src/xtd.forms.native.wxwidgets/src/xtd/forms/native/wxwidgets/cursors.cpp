@@ -9,6 +9,7 @@
 #include <wx/cursor.h>
 #include <wx/image.h>
 
+using namespace xtd;
 using namespace xtd::forms::native;
 
 namespace {
@@ -20,182 +21,182 @@ namespace {
     return xtd::environment::get_folder_path(xtd::environment::special_folder::xtd_resources);
   }
   
-  static intptr_t create_cursor_from_resources(const std::string& name, const xtd::drawing::point& hot_spot) {
-    if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path(), "cursors", xtd::ustring::format("{}{}.png", name, get_os_postfix())))) return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_DEFAULT));
+  static intptr create_cursor_from_resources(const std::string& name, const xtd::drawing::point& hot_spot) {
+    if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path(), "cursors", xtd::ustring::format("{}{}.png", name, get_os_postfix())))) return reinterpret_cast<intptr>(new wxCursor(wxCURSOR_DEFAULT));
     wxImage image(std::string(xtd::io::path::combine(forms_resource_path(), "cursors", xtd::ustring::format("{}{}.png", name, get_os_postfix()))));
     image.SetOption(wxIMAGE_OPTION_CUR_HOTSPOT_X, hot_spot.x());
     image.SetOption(wxIMAGE_OPTION_CUR_HOTSPOT_Y, hot_spot.y());
     wxCursor* cursor = new wxCursor(image);
-    return reinterpret_cast<intptr_t>(cursor);
+    return reinterpret_cast<intptr>(cursor);
   }
 }
 
-intptr_t cursors::app_starting() {
+intptr cursors::app_starting() {
   if (environment::os_version().is_macos_platform()) return create_cursor_from_resources("app_starting", {0, 0});
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_ARROWWAIT));
+  return reinterpret_cast<intptr>(new wxCursor(wxCURSOR_ARROWWAIT));
 }
 
-intptr_t cursors::arrow() {
+intptr cursors::arrow() {
   //return create_cursor_from_resources("arrow", {0, 0});
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_ARROW));
+  return reinterpret_cast<intptr>(new wxCursor(wxCURSOR_ARROW));
 }
 
-intptr_t cursors::closed_hand() {
+intptr cursors::closed_hand() {
   return create_cursor_from_resources("closed_hand", {7, 7});
 }
 
-intptr_t cursors::contextual_menu() {
+intptr cursors::contextual_menu() {
   return create_cursor_from_resources("contextual_menu", {0, 0});
 }
 
-intptr_t cursors::cell() {
+intptr cursors::cell() {
   return create_cursor_from_resources("cell", {16, 16});
 }
 
-intptr_t cursors::cross() {
+intptr cursors::cross() {
   //return create_cursor_from_resources("cross", {16, 16});
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_CROSS));
+  return reinterpret_cast<intptr>(new wxCursor(wxCURSOR_CROSS));
 }
 
-intptr_t cursors::default_cursor() {
+intptr cursors::default_cursor() {
   return arrow();
 }
 
-intptr_t cursors::disappearing_item() {
+intptr cursors::disappearing_item() {
   return create_cursor_from_resources("disappearing_item", {0, 0});
 }
 
-intptr_t cursors::drag_copy() {
+intptr cursors::drag_copy() {
   return create_cursor_from_resources("drag_copy", {0, 0});
 }
 
-intptr_t cursors::drag_link() {
+intptr cursors::drag_link() {
   return create_cursor_from_resources("drag_link", {0, 0});
 }
 
-intptr_t cursors::hand() {
+intptr cursors::hand() {
   //return create_cursor_from_resources("hand", {0, 0});
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_HAND));
+  return reinterpret_cast<intptr>(new wxCursor(wxCURSOR_HAND));
 }
 
-intptr_t cursors::help() {
+intptr cursors::help() {
   return create_cursor_from_resources("help", {0, 0});
-  //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_QUESTION_ARROW));
+  //return reinterpret_cast<intptr>(new wxCursor(wxCURSOR_QUESTION_ARROW));
 }
 
-intptr_t cursors::hsplit() {
+intptr cursors::hsplit() {
   return create_cursor_from_resources("hsplit", {15, 15});
-  //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZENS));
+  //return reinterpret_cast<intptr>(new wxCursor(wxCURSOR_SIZENS));
 }
 
-intptr_t cursors::ibeam() {
+intptr cursors::ibeam() {
   return create_cursor_from_resources("ibeam", {8, 9});
-  //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_IBEAM));
+  //return reinterpret_cast<intptr>(new wxCursor(wxCURSOR_IBEAM));
 }
 
-intptr_t cursors::no() {
+intptr cursors::no() {
   return create_cursor_from_resources("no", {8, 8});
 }
 
-intptr_t cursors::no_drag() {
+intptr cursors::no_drag() {
   return create_cursor_from_resources("no_drag", {0, 0});
 }
 
-intptr_t cursors::no_move_2d() {
+intptr cursors::no_move_2d() {
   return create_cursor_from_resources("no_move_2d", {16, 15});
 }
 
-intptr_t cursors::no_move_horiz() {
+intptr cursors::no_move_horiz() {
   return create_cursor_from_resources("no_move_horiz", {16, 15});
 }
 
-intptr_t cursors::no_move_vert() {
+intptr cursors::no_move_vert() {
   return create_cursor_from_resources("no_move_vert", {16, 15});
 }
 
-intptr_t cursors::open_hand() {
+intptr cursors::open_hand() {
   return create_cursor_from_resources("open_hand", {0, 0});
 }
 
-intptr_t cursors::pan_east() {
+intptr cursors::pan_east() {
   return create_cursor_from_resources("pan_east", environment::os_version().is_unix_platform() ? drawing::point {17, 9} : drawing::point {10, 14});
 }
 
-intptr_t cursors::pan_ne() {
+intptr cursors::pan_ne() {
   return create_cursor_from_resources("pan_ne", environment::os_version().is_unix_platform() ? drawing::point {18, 5} : drawing::point {12, 18});
 }
 
-intptr_t cursors::pan_north() {
+intptr cursors::pan_north() {
   return create_cursor_from_resources("pan_north", environment::os_version().is_unix_platform() ? drawing::point {12, 6} : drawing::point {15, 20});
 }
 
-intptr_t cursors::pan_nw() {
+intptr cursors::pan_nw() {
   return create_cursor_from_resources("pan_nw", environment::os_version().is_unix_platform() ? drawing::point {5, 5} : drawing::point {19, 18});
 }
 
-intptr_t cursors::pan_se() {
+intptr cursors::pan_se() {
   return create_cursor_from_resources("pan_se", environment::os_version().is_unix_platform() ? drawing::point {19, 19} : drawing::point {12, 11});
 }
 
-intptr_t cursors::pan_south() {
+intptr cursors::pan_south() {
   return create_cursor_from_resources("pan_south", environment::os_version().is_unix_platform() ? drawing::point {12, 18} : drawing::point {16, 8});
 }
 
-intptr_t cursors::pan_sw() {
+intptr cursors::pan_sw() {
   return create_cursor_from_resources("pan_sw", environment::os_version().is_unix_platform() ? drawing::point {6, 19} : drawing::point {19, 10});
 }
 
-intptr_t cursors::pan_west() {
+intptr cursors::pan_west() {
   return create_cursor_from_resources("pan_west", environment::os_version().is_unix_platform() ? drawing::point {3, 9} : drawing::point {21, 14});
 }
 
-intptr_t cursors::size_all() {
+intptr cursors::size_all() {
   return create_cursor_from_resources("size_all", {11, 11});
-  //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZING));
+  //return reinterpret_cast<intptr>(new wxCursor(wxCURSOR_SIZING));
 }
 
-intptr_t cursors::size_nesw() {
+intptr cursors::size_nesw() {
   return create_cursor_from_resources("size_nesw", {8, 8});
-  //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZENESW));
+  //return reinterpret_cast<intptr>(new wxCursor(wxCURSOR_SIZENESW));
 }
 
-intptr_t cursors::size_ns() {
+intptr cursors::size_ns() {
   return create_cursor_from_resources("size_ns", environment::os_version().is_unix_platform() ? drawing::point {7, 11} : drawing::point {4, 11});
-  //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZENS));
+  //return reinterpret_cast<intptr>(new wxCursor(wxCURSOR_SIZENS));
 }
 
-intptr_t cursors::size_nwse() {
+intptr cursors::size_nwse() {
   return create_cursor_from_resources("size_nwse", {8, 8});
-  //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZENWSE));
+  //return reinterpret_cast<intptr>(new wxCursor(wxCURSOR_SIZENWSE));
 }
 
-intptr_t cursors::size_we() {
+intptr cursors::size_we() {
   return create_cursor_from_resources("size_we", environment::os_version().is_unix_platform() ? drawing::point {11, 8} : drawing::point {11, 4});
-  //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZEWE));
+  //return reinterpret_cast<intptr>(new wxCursor(wxCURSOR_SIZEWE));
 }
 
-intptr_t cursors::up_arrow() {
+intptr cursors::up_arrow() {
   return create_cursor_from_resources("up_arrow", {4, 0});
 }
 
-intptr_t cursors::vibeam() {
+intptr cursors::vibeam() {
   return create_cursor_from_resources("vibeam", {9, 9});
 }
 
-intptr_t cursors::vsplit() {
+intptr cursors::vsplit() {
   return create_cursor_from_resources("vsplit", {15, 15});
-  //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZEWE));
+  //return reinterpret_cast<intptr>(new wxCursor(wxCURSOR_SIZEWE));
 }
 
-intptr_t cursors::wait_cursor() {
+intptr cursors::wait_cursor() {
   if (environment::os_version().is_macos_platform()) return create_cursor_from_resources("wait", {7, 7});
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_WAIT));
+  return reinterpret_cast<intptr>(new wxCursor(wxCURSOR_WAIT));
 }
 
-intptr_t cursors::zoom_in() {
+intptr cursors::zoom_in() {
   return create_cursor_from_resources("zoom_in", {10, 10});
 }
 
-intptr_t cursors::zoom_out() {
+intptr cursors::zoom_out() {
   return create_cursor_from_resources("zoom_out", {10, 10});
 }

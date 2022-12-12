@@ -246,7 +246,7 @@ namespace xtd {
       
       struct data {
         xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::system;
-        intptr_t handle = 0;
+        intptr handle = 0;
         std::vector<xtd::ustring> informations;
         size_t marquee_animation_speed = 100;
         int32 maximum = 100;

@@ -472,7 +472,7 @@ namespace xtd {
         bool minimize_box = true;
         double opacity = 1.0;
         const control* owner = nullptr;
-        intptr_t parent_before_show_dialog = 0;
+        intptr parent_before_show_dialog = 0;
         std::shared_ptr<screen> previous_screen;
         bool show_icon = true;
         bool show_in_taskbar = true;

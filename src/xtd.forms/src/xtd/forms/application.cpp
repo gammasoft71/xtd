@@ -49,7 +49,7 @@ namespace {
   
   static message_filter_collection message_filters;
   
-  bool message_filter_proc(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
+  bool message_filter_proc(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle) {
     bool block = false;
     
     for (message_filter_ref message_filter : message_filters) {
@@ -150,7 +150,7 @@ const form_collection application::open_forms() noexcept {
   /*
   vector<reference_wrapper<form>> forms;
   
-  for (intptr_t handle : native::application::open_forms()) {
+  for (intptr handle : native::application::open_forms()) {
     control& control = control::from_handle(handle);
     forms.push_back(static_cast<form&>(control));
   }
@@ -328,9 +328,9 @@ void application::run(application_context& context) {
   if (application::application::message_loop_ == true) throw invalid_operation_exception("Application already running"_t, current_stack_frame_);
   
   context.thread_exit += application::on_app_thread_exit;
-  native::application::register_message_filter(delegate<bool(intptr_t, int32, intptr_t, intptr_t, intptr_t)>(message_filter_proc));
+  native::application::register_message_filter(delegate<bool(intptr, int32, intptr, intptr, intptr)>(message_filter_proc));
   native::application::register_thread_exception(delegate<bool()>(on_app_thread_exception));
-  native::application::register_wnd_proc(delegate<intptr_t(intptr_t, int32, intptr_t, intptr_t, intptr_t)>(application::wnd_proc_));
+  native::application::register_wnd_proc(delegate<intptr(intptr, int32, intptr, intptr, intptr)>(application::wnd_proc_));
   
   application::message_loop_ = true;
   if (context.data_->main_form != nullptr) context.main_form().show();
@@ -379,7 +379,7 @@ void application::raise_leave_thread_modal(const event_args& e) {
   application::leave_thread_modal(e);
 }
 
-intptr_t application::wnd_proc_(intptr_t hwnd, int32 msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
+intptr application::wnd_proc_(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle) {
   message message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
   wnd_proc(message);
   return message.result();

@@ -95,7 +95,7 @@ namespace xtd {
       
       /// @brief Gets the handle of this image.
       /// @return The handle of this image.
-      intptr_t handle() const noexcept;
+      intptr handle() const noexcept;
       
       /// @brief Gets the height, in pixels, of this image.
       /// @return The height, in pixels, of this image.
@@ -176,7 +176,7 @@ namespace xtd {
       /// @param hbitmap The GDI bitmap handle from which to create the xtd::drawing::bitmap.
       /// @return The xtd::drawing::bitmap this method creates.
       /// @remarks The xtd::drawing::image::from_hbitmap method makes a copy of the GDI bitmap; so you can release the incoming GDI bitmap using the GDI DeleteObject method immediately after creating the new xtd::drawing::image.
-      static bitmap from_hbitmap(intptr_t hbitmap);
+      static bitmap from_hbitmap(intptr hbitmap);
       
       /// @brief Creates an xtd::drawing::image from the specified data stream.
       /// @param stream A std::istream that contains the data for this xtd::drawing::image.
@@ -270,7 +270,7 @@ namespace xtd {
       
     protected:
       /// @cond
-      explicit image(intptr_t hbitmap);
+      explicit image(intptr hbitmap);
       explicit image(const xtd::ustring& fileName);
       explicit image(std::istream& stream);
       explicit image(const char* const* bits);
@@ -285,7 +285,7 @@ namespace xtd {
       struct data {
         imaging::image_flags flags_ = imaging::image_flags::none;
         std::map<xtd::guid, size_t> frame_dimensions = {{xtd::drawing::imaging::frame_dimension::page().guid(), 1}};
-        intptr_t handle_ = 0;
+        intptr handle_ = 0;
         float horizontal_resolution_ = .0f;
         imaging::color_palette palette_;
         imaging::pixel_format pixel_format_ = imaging::pixel_format::undefined;

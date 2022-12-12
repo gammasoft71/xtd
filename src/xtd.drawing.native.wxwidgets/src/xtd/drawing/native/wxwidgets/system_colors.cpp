@@ -12,6 +12,9 @@
 #include <wx/frame.h>
 #include <wx/textctrl.h>
 
+using namespace xtd;
+using namespace xtd::drawing::native;
+
 #if defined(__WXMSW__)
 #include <Windows.h>
 #undef max
@@ -20,18 +23,16 @@ drawing_native_export_ int32 __xtd_win32_enable_dark_mode__ = -1;
 #endif
 
 #if defined(__APPLE__)
-intptr_t __xtd__macos_system_colors_accent_control__();
-intptr_t __xtd__macos_system_colors_accent_text__();
-intptr_t __xtd__macos_system_colors_active_border__();
-intptr_t __xtd__macos_system_colors_button_face__();
-intptr_t __xtd__macos_system_colors_button_text__();
-intptr_t __xtd__macos_system_colors_control__();
-intptr_t __xtd__macos_system_colors_control_text__();
-intptr_t __xtd__macos_system_colors_text_box__();
-intptr_t __xtd__macos_system_colors_text_box_text__();
+intptr __xtd__macos_system_colors_accent_control__();
+intptr __xtd__macos_system_colors_accent_text__();
+intptr __xtd__macos_system_colors_active_border__();
+intptr __xtd__macos_system_colors_button_face__();
+intptr __xtd__macos_system_colors_button_text__();
+intptr __xtd__macos_system_colors_control__();
+intptr __xtd__macos_system_colors_control_text__();
+intptr __xtd__macos_system_colors_text_box__();
+intptr __xtd__macos_system_colors_text_box_text__();
 #endif
-
-using namespace xtd::drawing::native;
 
 namespace {
   bool is_windows_dark_mode() {
@@ -48,11 +49,11 @@ namespace {
   }
 }
 
-uint32_t system_colors::to_argb(intptr_t color) {
+uint32_t system_colors::to_argb(intptr color) {
   return as<uint32_t>(color);
 }
 
-intptr_t system_colors::accent() {
+intptr system_colors::accent() {
   toolkit::initialize(); // Must be first
   #if defined(__APPLE__)
   return __xtd__macos_system_colors_accent_control__();
@@ -64,7 +65,7 @@ intptr_t system_colors::accent() {
   #endif
 }
 
-intptr_t system_colors::accent_text() {
+intptr system_colors::accent_text() {
   toolkit::initialize(); // Must be first
   #if defined(__APPLE__)
   return __xtd__macos_system_colors_accent_text__();
@@ -74,7 +75,7 @@ intptr_t system_colors::accent_text() {
   #endif
 }
 
-intptr_t system_colors::active_border() {
+intptr system_colors::active_border() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF2C2C2C;
   #if defined(__APPLE__)
@@ -84,31 +85,31 @@ intptr_t system_colors::active_border() {
   #endif
 }
 
-intptr_t system_colors::active_caption() {
+intptr system_colors::active_caption() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF000000;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_ACTIVECAPTION));
 }
 
-intptr_t system_colors::active_caption_text() {
+intptr system_colors::active_caption_text() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFFFFFFFF;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_CAPTIONTEXT));
 }
 
-intptr_t system_colors::active_text() {
+intptr system_colors::active_text() {
   toolkit::initialize(); // Must be first
   if (wxSystemSettings::GetAppearance().IsDark() || is_windows_dark_mode()) return 0xFFD03E3D;
   return 0xFFFF0000;
 }
 
-intptr_t system_colors::app_workspace() {
+intptr system_colors::app_workspace() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF191919;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_APPWORKSPACE));
 }
 
-intptr_t system_colors::button_face() {
+intptr system_colors::button_face() {
   toolkit::initialize(); // Must be first
   #if defined(__APPLE__)
   return __xtd__macos_system_colors_button_face__();
@@ -120,19 +121,19 @@ intptr_t system_colors::button_face() {
   #endif
 }
 
-intptr_t system_colors::button_highlight() {
+intptr system_colors::button_highlight() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF00A0FA;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNHIGHLIGHT));
 }
 
-intptr_t system_colors::button_shadow() {
+intptr system_colors::button_shadow() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF232323;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNSHADOW));
 }
 
-intptr_t system_colors::control() {
+intptr system_colors::control() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF191919;
   #if defined(__APPLE__)
@@ -142,31 +143,31 @@ intptr_t system_colors::control() {
   #endif
 }
 
-intptr_t system_colors::control_dark() {
+intptr system_colors::control_dark() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF232323;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNSHADOW));
 }
 
-intptr_t system_colors::control_dark_dark() {
+intptr system_colors::control_dark_dark() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF171717;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_3DDKSHADOW));
 }
 
-intptr_t system_colors::control_light() {
+intptr system_colors::control_light() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF4A4A4A;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_3DLIGHT));
 }
 
-intptr_t system_colors::control_light_light() {
+intptr system_colors::control_light_light() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF4A4A4A;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNHIGHLIGHT));
 }
 
-intptr_t system_colors::control_text() {
+intptr system_colors::control_text() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0XFFFFFFFF;
   #if defined(__APPLE__)
@@ -176,114 +177,114 @@ intptr_t system_colors::control_text() {
   #endif
 }
 
-intptr_t system_colors::desktop() {
+intptr system_colors::desktop() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF0078D7;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_DESKTOP));
 }
 
-intptr_t system_colors::gradient_active_caption() {
+intptr system_colors::gradient_active_caption() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF000000;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_GRADIENTACTIVECAPTION));
 }
 
-intptr_t system_colors::gradient_inactive_caption() {
+intptr system_colors::gradient_inactive_caption() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF2B2B2B;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_GRADIENTINACTIVECAPTION));
 }
 
-intptr_t system_colors::gray_text() {
+intptr system_colors::gray_text() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF6B6B6B;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_GRAYTEXT));
 }
 
-intptr_t system_colors::highlight() {
+intptr system_colors::highlight() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF4D4D4D;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_HIGHLIGHT));
 }
 
-intptr_t system_colors::highlight_text() {
+intptr system_colors::highlight_text() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFFFFFFFF;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_HIGHLIGHTTEXT));
 }
 
-intptr_t system_colors::hot_track() {
+intptr system_colors::hot_track() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF4D4D4D;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_HOTLIGHT));
 }
 
-intptr_t system_colors::inactive_border() {
+intptr system_colors::inactive_border() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF414143;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INACTIVEBORDER));
 }
 
-intptr_t system_colors::inactive_caption() {
+intptr system_colors::inactive_caption() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF2B2B2B;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INACTIVECAPTION));
 }
 
-intptr_t system_colors::inactive_caption_text() {
+intptr system_colors::inactive_caption_text() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF494949;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INACTIVECAPTIONTEXT));
 }
 
-intptr_t system_colors::info() {
+intptr system_colors::info() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF2B2B2B;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INFOBK));
 }
 
-intptr_t system_colors::info_text() {
+intptr system_colors::info_text() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0XFFFFFFFF;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INFOTEXT));
 }
 
-intptr_t system_colors::link_text() {
+intptr system_colors::link_text() {
   toolkit::initialize(); // Must be first
   if (wxSystemSettings::GetAppearance().IsDark() || is_windows_dark_mode()) return 0xFF1E90FF;
   return 0xFF0000FF;
 }
 
-intptr_t system_colors::menu() {
+intptr system_colors::menu() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF2B2B2B;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_MENU));
 }
 
-intptr_t system_colors::menu_bar() {
+intptr system_colors::menu_bar() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0XFF000000;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_MENUBAR));
 }
 
-intptr_t system_colors::menu_highlight() {
+intptr system_colors::menu_highlight() {
   toolkit::initialize(); // Must be first
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_MENUHILIGHT));
 }
 
-intptr_t system_colors::menu_text() {
+intptr system_colors::menu_text() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFFFFFFFF;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_MENUTEXT));
 }
 
-intptr_t system_colors::scroll_bar() {
+intptr system_colors::scroll_bar() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF171717;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_SCROLLBAR));
 }
 
-intptr_t system_colors::text_box() {
+intptr system_colors::text_box() {
   toolkit::initialize(); // Must be first
   #if defined(__APPLE__)
   return __xtd__macos_system_colors_text_box__();
@@ -293,7 +294,7 @@ intptr_t system_colors::text_box() {
   #endif
 }
 
-intptr_t system_colors::text_box_text() {
+intptr system_colors::text_box_text() {
   toolkit::initialize(); // Must be first
   #if defined(__APPLE__)
   
@@ -304,25 +305,25 @@ intptr_t system_colors::text_box_text() {
   #endif
 }
 
-intptr_t system_colors::visited_text() {
+intptr system_colors::visited_text() {
   toolkit::initialize(); // Must be first
   if (wxSystemSettings::GetAppearance().IsDark() || is_windows_dark_mode()) return 0xFF87CEEB;
   return 0xFF800080;
 }
 
-intptr_t system_colors::window() {
+intptr system_colors::window() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF202020;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOW));
 }
 
-intptr_t system_colors::window_frame() {
+intptr system_colors::window_frame() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFF333333;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOWFRAME));
 }
 
-intptr_t system_colors::window_text() {
+intptr system_colors::window_text() {
   toolkit::initialize(); // Must be first
   if (is_windows_dark_mode()) return 0xFFFFFFFF;
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOWTEXT));

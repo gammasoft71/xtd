@@ -13,7 +13,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-size_t text_box::selection_length(intptr_t control) {
+size_t text_box::selection_length(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -24,7 +24,7 @@ size_t text_box::selection_length(intptr_t control) {
   return static_cast<size_t>(to - from);
 }
 
-size_t text_box::selection_start(intptr_t control) {
+size_t text_box::selection_start(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -35,7 +35,7 @@ size_t text_box::selection_start(intptr_t control) {
   return static_cast<size_t>(from);
 }
 
-void text_box::append(intptr_t control, const ustring& text) {
+void text_box::append(intptr control, const ustring& text) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -44,7 +44,7 @@ void text_box::append(intptr_t control, const ustring& text) {
   static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->AppendText(convert_string::to_wstring(text));
 }
 
-void text_box::select(intptr_t control, size_t start, size_t length) {
+void text_box::select(intptr control, size_t start, size_t length) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -52,7 +52,7 @@ void text_box::select(intptr_t control, size_t start, size_t length) {
   }
   return static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(start, start + length);
 }
-ustring text_box::text(intptr_t control) {
+ustring text_box::text(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -61,7 +61,7 @@ ustring text_box::text(intptr_t control) {
   return static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetValue().c_str().AsWChar();
 }
 
-void text_box::text(intptr_t control, const ustring& text) {
+void text_box::text(intptr control, const ustring& text) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -74,7 +74,7 @@ void text_box::text(intptr_t control, const ustring& text) {
   }
 }
 
-void text_box::placeholder_text(intptr_t control, const ustring& text) {
+void text_box::placeholder_text(intptr control, const ustring& text) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

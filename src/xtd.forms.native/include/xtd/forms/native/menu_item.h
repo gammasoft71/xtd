@@ -44,7 +44,7 @@ namespace xtd {
         /// @param menu_item Menu item handle.
         /// @param checked true if menu item is checked; otherwise false.
         /// @warning Internal use only
-        static void checked(intptr_t menu_item, bool checked);
+        static void checked(intptr menu_item, bool checked);
         /// @brief Creates menu item with specified menu.
         /// @param menu Menu handle.
         /// @param text The text associated with this menu_item.
@@ -53,27 +53,27 @@ namespace xtd {
         /// @param shortcut A bitwise virtual key and virtual key modifiers shortcut associate with this menu_item.
         /// @return The created menu handle.
         /// @warning Internal use only
-        static intptr_t create(intptr_t menu, const xtd::ustring& text, const xtd::drawing::image& image, int32 kind, size_t shortcut);
+        static intptr create(intptr menu, const xtd::ustring& text, const xtd::drawing::image& image, int32 kind, size_t shortcut);
         /// @brief Destroys menu_item.
         /// @param menu_item Menu item handle.
         /// @warning Internal use only
-        static void destroy(intptr_t menu_item);
+        static void destroy(intptr menu_item);
         /// @brief Enabled menu item.
         /// @param menu_item Menu item handle.
         /// @param enabled true if menu item is enabled; otherwise false.
         /// @warning Internal use only
-        static void enabled(intptr_t menu_item, bool enabled);
+        static void enabled(intptr menu_item, bool enabled);
         /// @brief Gets menu id.
         /// @param menu_item Menu item handle.
         /// @return Id corresponding to menu_item handle.
         /// @warning Internal use only
-        static intptr_t menu_id(intptr_t menu_item);
+        static intptr menu_id(intptr menu_item);
         /// @brief Sets text menu item.
         /// @param menu_item Menu item handle.
         /// @param text The text associated with this menu_item.
         /// @param shortcut A bitwise virtual key and virtual key modifiers shortcut associate with this menu_item.
         /// @warning Internal use only
-        static void text(intptr_t menu_item, const xtd::ustring& text, size_t shortcut);
+        static void text(intptr menu_item, const xtd::ustring& text, size_t shortcut);
         /// @}
       };
     }

@@ -43,7 +43,7 @@ namespace {
   }
 }
 
-intptr_t toolkit::initialize() {
+intptr toolkit::initialize() {
   if (wxTheApp) return 0;
   #ifdef _MSC_VER
   // Workaround : Dump memory leak : Remove temporary memory check...
@@ -63,7 +63,7 @@ intptr_t toolkit::initialize() {
   return 0;
 }
 
-void toolkit::shutdown(intptr_t handle) {
+void toolkit::shutdown(intptr handle) {
   if (!wxTheApp) return;
   
   wxImage::CleanUpHandlers();

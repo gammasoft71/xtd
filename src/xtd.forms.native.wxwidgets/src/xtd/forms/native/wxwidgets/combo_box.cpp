@@ -14,7 +14,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-void combo_box::begin_update(intptr_t control) {
+void combo_box::begin_update(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -23,7 +23,7 @@ void combo_box::begin_update(intptr_t control) {
   reinterpret_cast<control_handler*>(control)->control()->Freeze();
 }
 
-void combo_box::delete_item(intptr_t control, size_t index) {
+void combo_box::delete_item(intptr control, size_t index) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -32,7 +32,7 @@ void combo_box::delete_item(intptr_t control, size_t index) {
   static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->Delete(static_cast<int32>(index));
 }
 
-void combo_box::dropped_down(intptr_t control, bool value) {
+void combo_box::dropped_down(intptr control, bool value) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -43,7 +43,7 @@ void combo_box::dropped_down(intptr_t control, bool value) {
 }
 
 
-void combo_box::end_update(intptr_t control) {
+void combo_box::end_update(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -52,7 +52,7 @@ void combo_box::end_update(intptr_t control) {
   reinterpret_cast<control_handler*>(control)->control()->Thaw();
 }
 
-void combo_box::insert_item(intptr_t control, size_t index, const ustring& value) {
+void combo_box::insert_item(intptr control, size_t index, const ustring& value) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -61,7 +61,7 @@ void combo_box::insert_item(intptr_t control, size_t index, const ustring& value
   static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(xtd::convert_string::to_wstring(value), static_cast<int32>(index));
 }
 
-size_t combo_box::selected_index(intptr_t control) {
+size_t combo_box::selected_index(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -70,7 +70,7 @@ size_t combo_box::selected_index(intptr_t control) {
   return static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->GetSelection();
 }
 
-void combo_box::selected_index(intptr_t control, size_t index) {
+void combo_box::selected_index(intptr control, size_t index) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -79,7 +79,7 @@ void combo_box::selected_index(intptr_t control, size_t index) {
   return static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(static_cast<int32>(index));
 }
 
-void combo_box::update_item(intptr_t control, size_t index, const ustring& value) {
+void combo_box::update_item(intptr control, size_t index, const ustring& value) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

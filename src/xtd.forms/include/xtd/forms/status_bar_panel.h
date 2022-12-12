@@ -253,7 +253,7 @@ namespace xtd {
         bool init_mode = false;
         xtd::forms::status_bar_panel_border_style border_style = xtd::forms::status_bar_panel_border_style::sunken;
         xtd::forms::control* control = nullptr;
-        intptr_t handle = 0;
+        intptr handle = 0;
         xtd::drawing::image image;
         int32 min_width = 10;
         xtd::ustring name;

@@ -66,20 +66,20 @@ create_params& create_params::location(const drawing::point location) {
   return *this;
 }
 
-intptr_t create_params::param() const noexcept {
+intptr create_params::param() const noexcept {
   return data_->param;
 }
 
-create_params& create_params::param(intptr_t param) {
+create_params& create_params::param(intptr param) {
   data_->param = param;
   return *this;
 }
 
-intptr_t create_params::parent() const noexcept {
+intptr create_params::parent() const noexcept {
   return data_->parent;
 }
 
-create_params& create_params::parent(intptr_t parent) {
+create_params& create_params::parent(intptr parent) {
   data_->parent = parent;
   return *this;
 }

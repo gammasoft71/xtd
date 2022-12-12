@@ -63,14 +63,14 @@ namespace xtd {
         drawing::point location = {-1, -1};
 
         /// @brief Gets or sets additional parameter information needed to create the control.
-        /// @return An intptr_t that holds additional parameter information needed to create the control.
+        /// @return An intptr that holds additional parameter information needed to create the control.
         /// @warning Internal use only
-        intptr_t param = 0;
+        intptr param = 0;
 
         /// @brief Gets or sets the control's parent.
-        /// @return An intptr_t that contains the window handle of the control's parent.
+        /// @return An intptr that contains the window handle of the control's parent.
         /// @warning Internal use only
-        intptr_t parent = 0;
+        intptr parent = 0;
 
         /// @brief Gets or sets a bitwise combination of window style values.
         /// @return A bitwise combination of the window style values.

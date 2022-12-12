@@ -267,10 +267,10 @@ namespace xtd {
       /// @param hwnd_owner A value that represents the window handle of the owner window for the common dialog box.
       /// @return true if the file could be opened; otherwise, false.
       /// @remarks This method provides an implementation of run_dialog, and is invoked when the user of a file dialog invokes show_dialog.
-      bool run_dialog(intptr_t hwnd_owner) override;
+      bool run_dialog(intptr hwnd_owner) override;
       /// @brief Runs file dialog box in sheet mode.
       /// @param hwnd_owner A value that represents the window handle of the owner window for the common dialog box.
-      void run_sheet(intptr_t hwnd_owner) override;
+      void run_sheet(intptr hwnd_owner) override;
       /// @}
       
       /// @cond
@@ -281,8 +281,8 @@ namespace xtd {
     private:
       friend class open_file_dialog;
       friend class save_file_dialog;
-      virtual bool run_file_dialog(intptr_t hwnd_owner) = 0;
-      virtual void run_file_sheet(intptr_t hwnd_owner) = 0;
+      virtual bool run_file_dialog(intptr hwnd_owner) = 0;
+      virtual void run_file_sheet(intptr hwnd_owner) = 0;
       
       struct data {
         bool auto_upgrade_enabled = true;

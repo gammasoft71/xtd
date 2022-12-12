@@ -226,7 +226,7 @@ void status_bar::fill() {
     size({padding().left() + padding().right(), padding().top() + padding().bottom()});
   for (size_t index = 0; index < reversed_panels.size(); ++index) {
     auto& button_item = reversed_panels[index].get();
-    intptr_t control_handle = 0;
+    intptr control_handle = 0;
     if (is_system_status_bar()) {
       if (reversed_panels[index].get().style() == status_bar_panel_style::push_button || (!data_->drop_down_arrows && button_item.style() == status_bar_panel_style::drop_down_button))
         control_handle = native::status_bar::add_status_bar_panel(handle(), button_item.text(), button_item.tool_tip_text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, button_item.enabled(), button_item.visible());
@@ -247,7 +247,7 @@ void status_bar::fill() {
       button_item.data_->rectangle = drawing::rectangle(native::status_bar::status_bar_item_rectangle(handle(), control_handle));
     } else {
       auto button_control = std::make_shared<status_bar_panel_control>();
-      button_item.data_->handle = reinterpret_cast<intptr_t>(button_control.get());
+      button_item.data_->handle = reinterpret_cast<intptr>(button_control.get());
       button_control->parent(*this);
       button_control->status_bar_panel(button_item);
       if (is_horizontal()) button_control->dock(dock_style::left);
@@ -351,7 +351,7 @@ void status_bar::resize_spring_panels() {
    */
 }
 
-void status_bar::update_status_bar_panel_control(intptr_t handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, xtd::forms::horizontal_alignment alignment, xtd::forms::status_bar_panel_auto_size auto_size, xtd::forms::status_bar_panel_border_style border_style, xtd::forms::status_bar_panel_style panel_style, int32 min_width, int32 width) {
+void status_bar::update_status_bar_panel_control(intptr handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, xtd::forms::horizontal_alignment alignment, xtd::forms::status_bar_panel_auto_size auto_size, xtd::forms::status_bar_panel_border_style border_style, xtd::forms::status_bar_panel_style panel_style, int32 min_width, int32 width) {
   if (!handle) return;
   if (is_system_status_bar()) {
     //native::status_bar::update_status_bar_item(this->handle(), handle, text, tool_tip_text, image, visible(), 100, false);

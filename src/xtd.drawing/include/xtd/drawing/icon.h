@@ -119,7 +119,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the handle of this icon. This is not a copy of the handle; do not free it.
       /// @return The Windows handle for the icon.
-      intptr_t handle() const noexcept;
+      intptr handle() const noexcept;
       
       /// @brief Gets the height of this xtd::drawing::icon.
       /// @return The height of this xtd::drawing::icon.
@@ -143,7 +143,7 @@ namespace xtd {
       /// @param handle A Windows handle to an icon.
       /// @return The xtd::drawing::icon this method creates.
       /// @remarks When using this method, you must dispose of the original icon by using the DestroyIcon method in the Windows API to ensure that the resources are released.
-      static icon from_handle(intptr_t handle);
+      static icon from_handle(intptr handle);
       
       /// @brief Creates a GDI+ xtd::drawing::icon from the specified bitmap.
       /// @param bitmap A xtd::drawing::bitmap use to create xtd::drawing::icon.
@@ -170,7 +170,7 @@ namespace xtd {
     private:
       explicit icon(const bitmap& bitmap);
       struct data {
-        intptr_t handle = 0;
+        intptr handle = 0;
         xtd::drawing::size size;
       };
       

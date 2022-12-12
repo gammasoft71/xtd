@@ -59,7 +59,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the handle of the image list object.
       /// @return The handle for the image list. The default is 0.
-      intptr_t handle() const noexcept;
+      intptr handle() const noexcept;
       
       /// @brief Gets a value indicating whether the underlying Win32 handle has been created.
       /// @return true if the Handle has been created; otherwise, false. The default is false.
@@ -100,7 +100,7 @@ namespace xtd {
 
     private:
       struct data {
-        intptr_t handle_ = 0;
+        intptr handle_ = 0;
         drawing::size image_size_ {16, 16};
         image_collection images_;
         std::any tag_;

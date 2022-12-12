@@ -20,8 +20,8 @@ namespace {
   HHOOK handle_hook;
   LRESULT CALLBACK callbackProc(INT ncode, WPARAM wparam, LPARAM lparam) {
     if (ncode == HCBT_ACTIVATE) {
-      allow_dark_mode_for_window(static_cast<intptr_t>(wparam));
-      refresh_title_bar_theme_color(static_cast<intptr_t>(wparam));
+      allow_dark_mode_for_window(static_cast<intptr>(wparam));
+      refresh_title_bar_theme_color(static_cast<intptr>(wparam));
       UnhookWindowsHookEx(handle_hook);
     } else
       CallNextHookEx(handle_hook, ncode, wparam, lparam);
@@ -35,7 +35,7 @@ namespace {
   }
 }
 
-bool folder_browser_dialog::run_dialog(intptr_t hwnd, const ustring& description, environment::special_folder root_folder, ustring& selected_path, size_t options) {
+bool folder_browser_dialog::run_dialog(intptr hwnd, const ustring& description, environment::special_folder root_folder, ustring& selected_path, size_t options) {
   BROWSEINFO browserInfo = { 0 };
   browserInfo.hwndOwner = hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control()->GetHandle();
   PIDLIST_ABSOLUTE pidlRoot;
@@ -60,7 +60,7 @@ bool folder_browser_dialog::run_dialog(intptr_t hwnd, const ustring& description
   return false;
 }
 
-void folder_browser_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const ustring& description, environment::special_folder root_folder, ustring& selected_path, size_t options) {
+void folder_browser_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr hwnd, const ustring& description, environment::special_folder root_folder, ustring& selected_path, size_t options) {
   on_dialog_closed(run_dialog(hwnd, description, root_folder, selected_path, options));
 }
 
@@ -83,14 +83,14 @@ namespace {
   #endif
 }
 
-bool folder_browser_dialog::run_dialog(intptr_t hwnd, const ustring& description, environment::special_folder root_folder, ustring& selected_path, size_t options) {
+bool folder_browser_dialog::run_dialog(intptr hwnd, const ustring& description, environment::special_folder root_folder, ustring& selected_path, size_t options) {
   wxWindowPtr<DirDialog> dialog(new DirDialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), xtd::convert_string::to_wstring(description), convert_string::to_wstring((!selected_path.empty() && wxDirExists(wxString(convert_string::to_wstring(selected_path))) ? selected_path : environment::get_folder_path(root_folder))), wxDD_DEFAULT_STYLE));
   if (dialog->ShowModal() != wxID_OK) return false;
   selected_path = dialog->GetPath().c_str().AsWChar();
   return true;
 }
 
-void folder_browser_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const ustring& description, environment::special_folder root_folder, ustring& selected_path, size_t options) {
+void folder_browser_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr hwnd, const ustring& description, environment::special_folder root_folder, ustring& selected_path, size_t options) {
   wxWindowPtr<DirDialog> dialog(new DirDialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), xtd::convert_string::to_wstring(description), xtd::convert_string::to_wstring((!selected_path.empty() && wxDirExists(wxString(convert_string::to_wstring(selected_path))) ? selected_path : environment::get_folder_path(root_folder))), wxDD_DEFAULT_STYLE));
   dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [dialog, on_dialog_closed, &selected_path](wxWindowModalDialogEvent & event) {
     auto result = event.GetReturnCode() == wxID_OK;
