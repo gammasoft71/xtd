@@ -1,6 +1,6 @@
 # file_info2
 
-Show how to use [xtd::io::file_info](../../../../src/xtd.core/include/xtd/io/file_info.h) class.
+Show how to use [xtd::io::file_info](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1file__info.html) class.
 
 ## Sources
 
