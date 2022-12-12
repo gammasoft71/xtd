@@ -46,7 +46,7 @@ std::string environment::get_desktop_theme() {
   return value == 0 ? "windows" : "windows dark";
 }
 
-std::string environment::get_environment_variable(const std::string& variable, int32_t target) {
+std::string environment::get_environment_variable(const std::string& variable, int_least32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
     DWORD environent_variable_size = 65535;
     std::wstring environment_variable(environent_variable_size, 0);
@@ -63,7 +63,7 @@ std::string environment::get_environment_variable(const std::string& variable, i
   return "";
 }
 
-std::map<std::string, std::string>& environment::get_environment_variables(int32_t target) {
+std::map<std::string, std::string>& environment::get_environment_variables(int_least32_t target) {
   auto& envs = __none_envs__;
 
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
@@ -104,7 +104,7 @@ std::map<std::string, std::string>& environment::get_environment_variables(int32
   return envs;
 }
 
-std::string environment::get_know_folder_path(int32_t id) {
+std::string environment::get_know_folder_path(int_least32_t id) {
   if (id == CSIDL_HOME) {
     return get_environment_variable("HOMEPATH", ENVIRONMENT_VARIABLE_TARGET_PROCESS);
   }
@@ -122,11 +122,11 @@ std::string environment::get_machine_name() {
   return win32::strings::to_string(machine_name);
 }
 
-int32_t environment::get_os_platform_id() {
+int_least32_t environment::get_os_platform_id() {
   return PLATFORM_WIN32_NT;
 }
 
-void environment::get_os_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision) {
+void environment::get_os_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
   // GetVersionEx (https://docs.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversionexa) allows you to get the version for a Windows 8 at most. For Windows 10 and more see :
   // https://stackoverflow.com/questions/32115255/c-how-to-detect-windows-10
   NTSTATUS(WINAPI * RtlGetVersion)(LPOSVERSIONINFOEXW);
@@ -166,7 +166,7 @@ std::string environment::get_service_pack() {
   return "";
 }
 
-uint32_t environment::get_processor_count() {
+uint_least32_t environment::get_processor_count() {
   SYSTEM_INFO system_info {};
   GetNativeSystemInfo(&system_info);
   return system_info.dwNumberOfProcessors;
@@ -178,7 +178,7 @@ size_t environment::get_system_page_size() {
   return system_info.dwPageSize;
 }
 
-uint32_t environment::get_tick_count() {
+uint_least32_t environment::get_tick_count() {
   return GetTickCount();
 }
 
@@ -226,7 +226,7 @@ std::string environment::new_line() {
   return "\n";
 }
 
-void environment::set_environment_variable(const std::string& name, const std::string& value, int32_t target) {
+void environment::set_environment_variable(const std::string& name, const std::string& value, int_least32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS)
     SetEnvironmentVariable(win32::strings::to_wstring(name).c_str(), win32::strings::to_wstring(value).c_str());
   else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {
@@ -236,7 +236,7 @@ void environment::set_environment_variable(const std::string& name, const std::s
   }
 }
 
-void environment::unset_environment_variable(const std::string& name, int32_t target) {
+void environment::unset_environment_variable(const std::string& name, int_least32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS)
     SetEnvironmentVariable(win32::strings::to_wstring(name).c_str(), nullptr);
   else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {
@@ -246,6 +246,6 @@ void environment::unset_environment_variable(const std::string& name, int32_t ta
   }
 }
 
-int64_t environment::working_set() {
+int_least64_t environment::working_set() {
   return 0;
 }

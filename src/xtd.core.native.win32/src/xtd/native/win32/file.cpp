@@ -12,12 +12,12 @@ using namespace xtd::native;
 #undef max
 #undef min
 
-int32_t file::copy(const std::string& source_file, const std::string& target_file) {
+int_least32_t file::copy(const std::string& source_file, const std::string& target_file) {
   return CopyFile(win32::strings::to_wstring(source_file).c_str(), win32::strings::to_wstring(target_file).c_str(), TRUE) != FALSE ? 0 : -1;
 }
 
 bool file::exists(const std::string& path) {
-  int32_t attributes = 0;
+  int_least32_t attributes = 0;
   return file_system::get_attributes(path, attributes) == 0 && (attributes & FILE_ATTRIBUTE_DIRECTORY) != FILE_ATTRIBUTE_DIRECTORY;
 }
 
@@ -34,10 +34,10 @@ size_t file::get_size(const std::string& path) {
   return static_cast<size_t>(size.QuadPart);
 }
 
-int32_t file::move(const std::string& old_path, const std::string& new_path) {
+int_least32_t file::move(const std::string& old_path, const std::string& new_path) {
   return MoveFile(win32::strings::to_wstring(old_path).c_str(), win32::strings::to_wstring(new_path).c_str()) != FALSE ? 0 : -1;
 }
 
-int32_t file::remove(const std::string& file) {
+int_least32_t file::remove(const std::string& file) {
   return DeleteFile(win32::strings::to_wstring(file).c_str()) != FALSE ? 0 : -1;
 }
