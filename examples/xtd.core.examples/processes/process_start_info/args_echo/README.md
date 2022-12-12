@@ -1,6 +1,6 @@
 # args_echo
 
-This code example shows how to use [xtd::diagnostics::process_start_info](../../../../../src/xtd.core/include/xtd/diagnostics/process_start_info.h) class.
+This code example shows how to use [xtd::diagnostics::process_start_info](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1process__start__info.html) class.
 
 # Sources
 
