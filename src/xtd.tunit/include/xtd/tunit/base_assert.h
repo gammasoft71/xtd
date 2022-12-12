@@ -10,6 +10,7 @@
 #include "assert_error.h"
 #include "default_insert_basic_ostream_operator.h"
 #include "ignore_error.h"
+#include <xtd/types.h>
 #include <xtd/diagnostics/stack_frame.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
