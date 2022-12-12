@@ -27,7 +27,7 @@ namespace xtd {
           const xtd::ustring& title,
           const xtd::ustring& message,
           const xtd::drawing::icon& icon,
-          uint32_t style,
+          uint32 style,
           bool close_timeout_enabled_,
           std::chrono::system_clock::duration close_timeout_interval,
           xtd::delegate<void()> on_notifier_closed);

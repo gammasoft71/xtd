@@ -77,12 +77,12 @@ namespace xtd {
         /// | 6     | sunday      |
         /// | 7     | default_day |
         /// @warning Internal use only
-        static void first_day_of_week(intptr control, uint32_t day);
+        static void first_day_of_week(intptr control, uint32 day);
         
         /// @brief Returns informations on which portion of a month calendar control is at a location specified by a xtd::drawing::point.
         /// @param point A xtd::drawing::point containing the xtd::drawing::point::x and xtd::drawing::point::y coordinates of the point to be hit tested.
-        /// @return A std:tuple<uint32_t, xtd::date_time> that contains information about the specified point on the month calendar.
-        /// @remarks The value uint32_t represents the strike zone, see the following table for the correspondence:
+        /// @return A std:tuple<uint32, xtd::date_time> that contains information about the specified point on the month calendar.
+        /// @remarks The value uint32 represents the strike zone, see the following table for the correspondence:
         /// | Value | hit area            |
         /// |-------|---------------------|
         /// | 0     | nowhere             |
@@ -98,12 +98,12 @@ namespace xtd {
         /// | 10    | day_of_week         |
         /// | 11    | week_numbers        |
         /// | 12    | today_link          |
-        static std::tuple<uint32_t, xtd::date_time> hit_test(intptr control, const xtd::drawing::point& point);
+        static std::tuple<uint32, xtd::date_time> hit_test(intptr control, const xtd::drawing::point& point);
         
         /// @brief Sets the maximum number of days that can be selected in a month calendar control.
         /// @param control month calendar handle.
         /// @param value The maximum number of days that you can select. The default is 7.
-        static void max_selection_count(intptr control, uint32_t value);
+        static void max_selection_count(intptr control, uint32 value);
         
         /// @brief Sets the array of xtd::date_time objects that determine which monthly days to bold.
         /// @param control month calendar handle.

@@ -42,7 +42,7 @@ void month_calendar::calendar_dimensions(intptr control, const xtd::drawing::siz
   // Does not exists in wxWidgets...
 }
 
-void month_calendar::first_day_of_week(intptr control, uint32_t day) {
+void month_calendar::first_day_of_week(intptr control, uint32 day) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -66,7 +66,7 @@ void month_calendar::first_day_of_week(intptr control, uint32_t day) {
   wx_calendar_ctrl->SetWindowStyle(style);
 }
 
-std::tuple<uint32_t, xtd::date_time> month_calendar::hit_test(intptr control, const xtd::drawing::point& point) {
+std::tuple<uint32, xtd::date_time> month_calendar::hit_test(intptr control, const xtd::drawing::point& point) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -74,7 +74,7 @@ std::tuple<uint32_t, xtd::date_time> month_calendar::hit_test(intptr control, co
   }
   
   wxCalendarCtrl* wx_calendar_ctrl = static_cast<wxMonthCalendar*>(reinterpret_cast<control_handler*>(control)->control())->calendarCtrl;
-  uint32_t hit_area = 0;
+  uint32 hit_area = 0;
   wxDateTime time;
   
   wxCalendarHitTestResult result = wx_calendar_ctrl->HitTest({point.x(), point.y()}, &time);
@@ -89,7 +89,7 @@ std::tuple<uint32_t, xtd::date_time> month_calendar::hit_test(intptr control, co
     default: hit_area = 0; break;
   }
   
-  return make_tuple(hit_area, date_time(time.GetYear(), static_cast<uint32_t>(time.GetMonth()) + 1, time.GetDay(), 0, 0, 0, date_time_kind::unspecified));
+  return make_tuple(hit_area, date_time(time.GetYear(), static_cast<uint32>(time.GetMonth()) + 1, time.GetDay(), 0, 0, 0, date_time_kind::unspecified));
 }
 
 void month_calendar::allowable_dates(intptr control, date_time min_date, date_time max_date) {
@@ -105,7 +105,7 @@ void month_calendar::allowable_dates(intptr control, date_time min_date, date_ti
   wx_calendar_ctrl->SetDateRange(wx_min_date_time, wx_max_date_time);
 }
 
-void month_calendar::max_selection_count(intptr control, uint32_t value) {
+void month_calendar::max_selection_count(intptr control, uint32 value) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -149,7 +149,7 @@ pair<date_time, date_time> month_calendar::selection_range(intptr control) {
   }
   
   wxDateTime wx_date_time = static_cast<wxMonthCalendar*>(reinterpret_cast<control_handler*>(control)->control())->calendarCtrl->GetDate();
-  date_time date = date_time(wx_date_time.GetYear(), static_cast<uint32_t>(wx_date_time.GetMonth()) + 1, wx_date_time.GetDay(), 0, 0, 0, date_time_kind::unspecified);
+  date_time date = date_time(wx_date_time.GetYear(), static_cast<uint32>(wx_date_time.GetMonth()) + 1, wx_date_time.GetDay(), 0, 0, 0, date_time_kind::unspecified);
   return {date, date};
 }
 

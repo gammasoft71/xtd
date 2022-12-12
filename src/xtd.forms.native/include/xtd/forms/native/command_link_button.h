@@ -46,7 +46,7 @@ namespace xtd {
         /// @param control Command link button window handle.
         /// @param align A bitwise combination of the content alignment flags.
         /// @warning Internal use only
-        static void image_align(intptr control, uint32_t align);
+        static void image_align(intptr control, uint32 align);
         /// @}
       };
     }

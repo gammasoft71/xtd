@@ -29,19 +29,19 @@ int64 animation::elapsed_nanoseconds() const noexcept {
   return data_->stopwatch.elapsed_nanoseconds();
 }
 
-uint32_t animation::frame_counter() const noexcept {
+uint32 animation::frame_counter() const noexcept {
   return data_->frame_counter;
 }
 
-uint32_t animation::frames_per_second() const noexcept {
+uint32 animation::frames_per_second() const noexcept {
   return data_->frames_per_second;
 }
 
-animation& animation::frames_per_second(uint32_t value) {
+animation& animation::frames_per_second(uint32 value) {
   if (data_->frames_per_second != value) {
     data_->frames_per_second = value;
-    if (!data_->frames_per_second) data_->frames_timer.interval_milliseconds(std::numeric_limits<uint32_t>::max());
-    else data_->frames_timer.interval_milliseconds(static_cast<uint32_t>(ceil(1000.0 / data_->frames_per_second)));
+    if (!data_->frames_per_second) data_->frames_timer.interval_milliseconds(std::numeric_limits<uint32>::max());
+    else data_->frames_timer.interval_milliseconds(static_cast<uint32>(ceil(1000.0 / data_->frames_per_second)));
   }
   return *this;
 }

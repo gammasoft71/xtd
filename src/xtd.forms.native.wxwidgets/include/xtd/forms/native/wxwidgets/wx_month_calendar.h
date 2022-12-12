@@ -62,12 +62,12 @@ namespace xtd {
         }
         
         void on_page_changed(wxCalendarEvent& e) {
-          current_month = static_cast<uint32_t>(e.GetDate().GetMonth()) + 1;
+          current_month = static_cast<uint32>(e.GetDate().GetMonth()) + 1;
           change_attribute_dates(this);
         }
         
         void on_year_changed(wxCalendarEvent& e) {
-          current_year = static_cast<uint32_t>(e.GetDate().GetYear());
+          current_year = static_cast<uint32>(e.GetDate().GetYear());
           change_attribute_dates(this);
         }
         
@@ -77,7 +77,7 @@ namespace xtd {
           for (size_t day = 1; day <= 31; ++day)
             wx_calendar_ctrl->ResetAttr(day);
           for (auto date : wx_month_calendar->annually_bolded_dates) {
-            if (static_cast<uint32_t>(wx_calendar_ctrl->GetDate().GetMonth()) + 1 == date.month()) {
+            if (static_cast<uint32>(wx_calendar_ctrl->GetDate().GetMonth()) + 1 == date.month()) {
               wxCalendarDateAttr* attr = new wxCalendarDateAttr();
               if (wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day())) != nullptr)
                 *attr = *wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day()));
@@ -99,7 +99,7 @@ namespace xtd {
           }
           
           for (auto date : wx_month_calendar->bolded_dates) {
-            if (static_cast<uint32_t>(wx_calendar_ctrl->GetDate().GetMonth()) + 1 == date.month() && static_cast<uint32_t>(wx_calendar_ctrl->GetDate().GetYear()) == date.year()) {
+            if (static_cast<uint32>(wx_calendar_ctrl->GetDate().GetMonth()) + 1 == date.month() && static_cast<uint32>(wx_calendar_ctrl->GetDate().GetYear()) == date.year()) {
               wxCalendarDateAttr* attr = new wxCalendarDateAttr();
               if (wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day())) != nullptr)
                 *attr = *wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day()));
@@ -119,8 +119,8 @@ namespace xtd {
         std::vector<xtd::date_time> bolded_dates;
         std::vector<xtd::date_time> monthly_bolded_dates;
         xtd::date_time today_date = xtd::date_time::now();
-        uint32_t current_month = xtd::date_time::now().month();
-        uint32_t current_year = xtd::date_time::now().year();
+        uint32 current_month = xtd::date_time::now().month();
+        uint32 current_year = xtd::date_time::now().year();
         bool show_today = true;
         bool show_today_circle = true;
       };

@@ -46,14 +46,14 @@ namespace xtd {
       
       /// @brief Gets the current frame counter value.
       /// @return The current frame counter value.
-      virtual uint32_t frame_counter() const noexcept;
+      virtual uint32 frame_counter() const noexcept;
       
       /// @brief Gets the number of frame per second.
       /// @return The number if frame per seconds. The default is 10.
-      virtual uint32_t frames_per_second() const noexcept;
+      virtual uint32 frames_per_second() const noexcept;
       /// @brief Sets the number of frame per second.
       /// @para value The number if frame per seconds. The default is 10.
-      virtual animation& frames_per_second(uint32_t value);
+      virtual animation& frames_per_second(uint32 value);
       
       
       /// @brief Gets a valiue that indicates if the animation is started.
@@ -104,8 +104,8 @@ namespace xtd {
       void on_frames_timer_tick(object& timer, const xtd::event_args& e);
       
       struct data {
-        uint32_t frame_counter = 0;
-        uint32_t frames_per_second = 10;
+        uint32 frame_counter = 0;
+        uint32 frames_per_second = 10;
         xtd::diagnostics::stopwatch stopwatch;
         xtd::forms::timer frames_timer;
       };

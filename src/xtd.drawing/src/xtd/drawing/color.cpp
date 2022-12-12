@@ -227,7 +227,7 @@ bool color::equals(const color& value) const noexcept {
   return argb_ == value.argb_ && handle_ == value.handle_ && name_ == value.name_ && empty_ == value.empty_;
 }
 
-color color::from_argb(uint32_t argb) noexcept {
+color color::from_argb(uint32 argb) noexcept {
   return color(argb);
 }
 
@@ -236,7 +236,7 @@ color color::from_argb(xtd::byte alpha, const color& baseColor) noexcept {
 }
 
 color color::from_argb(xtd::byte alpha, xtd::byte red, xtd::byte green, xtd::byte blue) noexcept {
-  return color(((uint32_t)alpha << 24) + ((uint32_t)red << 16) + ((uint32_t)green << 8) + blue);
+  return color(((uint32)alpha << 24) + ((uint32)red << 16) + ((uint32)green << 8) + blue);
 }
 
 color color::from_argb(xtd::byte red, xtd::byte green, xtd::byte blue) noexcept {
@@ -543,14 +543,14 @@ color color::light(const color& color) noexcept {
 color color::parse(const ustring& color) noexcept {
   try {
     vector<ustring> argb = color.replace("color [a=", "").replace(" r=", "").replace(" g=", "").replace("b=", "").replace("]", "").split({','});
-    if (argb.size() == 1) return color::from_argb(xtd::parse<uint32_t>(argb.at(0), xtd::number_styles::hex_number));
+    if (argb.size() == 1) return color::from_argb(xtd::parse<uint32>(argb.at(0), xtd::number_styles::hex_number));
     return color::from_argb(ustring::parse<xtd::byte>(argb.at(0)), ustring::parse<xtd::byte>(argb.at(1)), ustring::parse<xtd::byte>(argb.at(2)), ustring::parse<xtd::byte>(argb.at(3)));
   } catch (...) {
     return color::from_name(color.replace("]", "").replace("color [", ""));
   }
 }
 
-uint32_t color::to_argb() const noexcept {
+uint32 color::to_argb() const noexcept {
   if (handle_) return native::system_colors::to_argb(handle_);
   return argb_;
 }
@@ -565,7 +565,7 @@ ustring color::to_string() const noexcept {
   return ustring::format("color [a={}, r={}, g={}, b={}]", a(), r(), g(), b());
 }
 
-color::color(uint32_t argb) : argb_(argb), name_(argb ? ustring::format("{:X8}", argb) : "0"), empty_(false) {
+color::color(uint32 argb) : argb_(argb), name_(argb ? ustring::format("{:X8}", argb) : "0"), empty_(false) {
 }
 
 color::color(intptr handle) : handle_(handle), name_(ustring::format("{:X}h", handle)), empty_(false) {

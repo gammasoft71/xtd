@@ -680,7 +680,7 @@ namespace xtd {
       ///   g.fill_ellipse(trns_blue_brush, x1 + tri_base, y1, 2 * tri_height, 2 * tri_height);
       /// }
       /// @endcode
-      static xtd::drawing::color from_argb(uint32_t argb) noexcept;
+      static xtd::drawing::color from_argb(uint32 argb) noexcept;
       
       /// @brief Creates a xtd::drawing::color class from the specified xtd::drawing::color structure, but with the new specified alpha value. Although this method allows a 32-bit value to be passed for the alpha value, the value is limited to 8 bits.
       /// @param alpha The alpha value for the new xtd::drawing::color. Valid values are 0 through 255.
@@ -1170,7 +1170,7 @@ namespace xtd {
       ///   }
       /// }
       /// @endcode
-      uint32_t to_argb() const noexcept;
+      uint32 to_argb() const noexcept;
       
       /// @brief Gets the xtd::drawing::known_color value of this xtd::drawing::color class.
       /// @return xtd::drawing::known_color An element of the xtd::drawing::known_color enumeration, if the xtd::drawing::color is created from a predefined color by using either the xtd::drawing::color::from_name method or the xtd::drawing::color::from_known_color method; otherwise, 0.
@@ -1230,11 +1230,11 @@ namespace xtd {
       /// @}
       
     private:
-      explicit color(uint32_t argb);
+      explicit color(uint32 argb);
       explicit color(intptr handle);
       color(const color& color, const xtd::drawing::known_color& know_color);
       
-      uint32_t argb_ = 0;
+      uint32 argb_ = 0;
       intptr handle_ = 0;
       xtd::drawing::known_color known_color_ = static_cast<xtd::drawing::known_color>(0);
       xtd::ustring name_ = "0";

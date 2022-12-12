@@ -47,7 +47,7 @@ namespace xtd {
         /// @param display_help_button true to show the Help button; otherwise, false.
         /// @return A dialog box ids.
         /// @warning Internal use only
-        static int32 show(intptr hwnd, const xtd::ustring& text, const xtd::ustring& caption, uint32_t options, bool display_help_button);
+        static int32 show(intptr hwnd, const xtd::ustring& text, const xtd::ustring& caption, uint32 options, bool display_help_button);
         /// @brief Shows async dialog as sheet.
         /// @param on_dialog_closed a dialog close delegate to call when the dialog is closed.
         /// @param hwnd Parent window handle.
@@ -56,7 +56,7 @@ namespace xtd {
         /// @param options A bitwise of message box styles.
         /// @param display_help_button true to show the Help button; otherwise, false.
         /// @warning Internal use only
-        static void show_sheet(xtd::delegate<void(int32)> on_dialog_closed, intptr hwnd, const xtd::ustring& text, const xtd::ustring& caption, uint32_t options, bool display_help_button);
+        static void show_sheet(xtd::delegate<void(int32)> on_dialog_closed, intptr hwnd, const xtd::ustring& text, const xtd::ustring& caption, uint32 options, bool display_help_button);
         /// @}
       };
     }

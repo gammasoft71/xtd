@@ -39,7 +39,7 @@ namespace xtd {
         /// @param color The color handle.
         /// @return The 32-bit ARGB value of system color.
         /// @warning Internal use only
-        static uint32_t to_argb(xtd::intptr color);
+        static uint32 to_argb(xtd::intptr color);
         
         /// @brief Gets a color that is the color used to accent a control.
         /// @return A color handle that is the color used to accent a control.

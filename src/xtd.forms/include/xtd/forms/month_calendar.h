@@ -179,14 +179,14 @@ namespace xtd {
       /// @exception xtd::argument_exception The value is less than 1.
       /// @remarks Setting this property does not effect the current selection range.
       /// @remarks It is important to remember that the xtd::forms::month_calendar::max_selection_count property represents the number of days in the selection, not the difference between xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end. For example, if xtd::forms::month_calendar::max_selection_count is 7 (the default), xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end can be no more than six days apart.
-      uint32_t max_selection_count() const noexcept;
+      uint32 max_selection_count() const noexcept;
       /// @brief Sets the maximum number of days that can be selected in a month calendar control.
       /// @param value The maximum number of days that you can select. The default is 7.
       /// @return Current month_calendar.
       /// @exception xtd::argument_exception The value is less than 1.
       /// @remarks Setting this property does not effect the current selection range.
       /// @remarks It is important to remember that the xtd::forms::month_calendar::max_selection_count property represents the number of days in the selection, not the difference between xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end. For example, if xtd::forms::month_calendar::max_selection_count is 7 (the default), xtd::forms::month_calendar::selection_start and xtd::forms::month_calendar::selection_end can be no more than six days apart.
-      month_calendar& max_selection_count(uint32_t value);
+      month_calendar& max_selection_count(uint32 value);
       
       /// @brief Gets the minimum date that can be selected in the control.
       /// @return The minimum date that can be selected in the control.
@@ -473,7 +473,7 @@ namespace xtd {
         xtd::forms::day first_day_of_week = xtd::forms::day::default_day;
         xtd::date_time min_date = date_time::min_value;
         date_time max_date = date_time::max_value;
-        uint32_t max_selection_count = 7;
+        uint32 max_selection_count = 7;
         std::vector<xtd::date_time> monthly_bolded_dates;
         xtd::date_time selection_start = date_time::now();
         xtd::date_time selection_end = date_time::now();
