@@ -14,7 +14,7 @@ std::ostream& operator <<(std::ostream& os, const char8* str) {
   return os << ustring(str); 
 }
 
-std::ostream& operator <<(std::ostream& os, const char16_t* str) {
+std::ostream& operator <<(std::ostream& os, const char16* str) {
   return os << ustring(str); 
 }
 
@@ -34,7 +34,7 @@ string __format_stringer_to_std_string(const char8& c) {
   return ustring(u8string(1, c));
 }
 
-string __format_stringer_to_std_string(const char16_t& c) {
+string __format_stringer_to_std_string(const char16& c) {
   return ustring(u16string(1, c));
 }
 
@@ -54,7 +54,7 @@ string __format_stringer_to_std_string(const char8* str) {
   return ustring(str);
 }
 
-string __format_stringer_to_std_string(const char16_t* str) {
+string __format_stringer_to_std_string(const char16* str) {
   return ustring(str);
 }
 

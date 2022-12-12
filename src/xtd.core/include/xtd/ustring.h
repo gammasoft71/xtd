@@ -90,13 +90,13 @@ namespace xtd {
     /// @param str The string to copy.
     /// @param count The number of copies of character.
     /// @param character The character copied.
-    ustring(size_t count, char16_t character);
+    ustring(size_t count, char16 character);
     /// @brief Initializes a new instance of xtd::ustring with specified count copies of character and specified allocator.
     /// @param str The string to copy.
     /// @param count The number of copies of character.
     /// @param character The character copied.
     /// @param allocator The allocator to use for all memory allocations of this string.
-    ustring(size_t count, char16_t character, const allocator_type& allocator);
+    ustring(size_t count, char16 character, const allocator_type& allocator);
     /// @brief Initializes a new instance of xtd::ustring with specified count copies of character.
     /// @param str The string to copy.
     /// @param count The number of copies of character.
@@ -211,18 +211,18 @@ namespace xtd {
     ustring(const std::u16string& str, const allocator_type& allocator) noexcept;
     
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
-    ustring(const char16_t* str);
+    ustring(const char16* str);
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
-    ustring(const char16_t* str, const allocator_type& allocator);
+    ustring(const char16* str, const allocator_type& allocator);
     
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
-    ustring(char16_t* str);
+    ustring(char16* str);
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
-    ustring(char16_t* str, const allocator_type& allocator);
+    ustring(char16* str, const allocator_type& allocator);
     
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     /// @param str The string to copy.
@@ -320,11 +320,11 @@ namespace xtd {
     
     /// @brief Initializes a new instance of xtd::ustring with specified initializer list.
     /// @param il The initializer list to fill.
-    ustring(std::initializer_list<char16_t> il);
+    ustring(std::initializer_list<char16> il);
     /// @brief Initializes a new instance of xtd::ustring with specified initializer list and allocator.
     /// @param il The initializer list to fill.
     /// @param allocator The allocator to use for all memory allocations of this string.
-    ustring(std::initializer_list<char16_t> il, const allocator_type& allocator);
+    ustring(std::initializer_list<char16> il, const allocator_type& allocator);
     
     /// @brief Initializes a new instance of xtd::ustring with specified initializer list.
     /// @param il The initializer list to fill.
@@ -365,7 +365,7 @@ namespace xtd {
     ustring& operator =(const std::u8string& str);
     ustring& operator =(const char8* str);
     ustring& operator =(const std::u16string& str);
-    ustring& operator =(const char16_t* str);
+    ustring& operator =(const char16* str);
     ustring& operator =(const std::u32string& str);
     ustring& operator =(const char32_t* str);
     ustring& operator =(const std::wstring& str);
@@ -374,12 +374,12 @@ namespace xtd {
     
     ustring& operator =(value_type character);
     ustring& operator =(char8 character);
-    ustring& operator =(char16_t character);
+    ustring& operator =(char16 character);
     ustring& operator =(char32_t character);
     ustring& operator =(wchar_t character);
     ustring& operator =(const std::initializer_list<value_type>& il);
     ustring& operator =(const std::initializer_list<char8>& il);
-    ustring& operator =(const std::initializer_list<char16_t>& il);
+    ustring& operator =(const std::initializer_list<char16>& il);
     ustring& operator =(const std::initializer_list<char32_t>& il);
     ustring& operator =(const std::initializer_list<wchar_t>& il);
     //template<typename type_t>
@@ -398,19 +398,19 @@ namespace xtd {
     ustring& operator +=(const std::u8string& str);
     ustring& operator +=(const char8* str);
     ustring& operator +=(const std::u16string& str);
-    ustring& operator +=(const char16_t* str);
+    ustring& operator +=(const char16* str);
     ustring& operator +=(const std::u32string& str);
     ustring& operator +=(const char32_t* str);
     ustring& operator +=(const std::wstring& str);
     ustring& operator +=(const wchar_t* str);
     ustring& operator +=(value_type character);
     ustring& operator +=(char8 character);
-    ustring& operator +=(char16_t character);
+    ustring& operator +=(char16 character);
     ustring& operator +=(char32_t character);
     ustring& operator +=(wchar_t character);
     ustring& operator +=(const std::initializer_list<value_type>& il);
     ustring& operator +=(const std::initializer_list<char8>& il);
-    ustring& operator +=(const std::initializer_list<char16_t>& il);
+    ustring& operator +=(const std::initializer_list<char16>& il);
     ustring& operator +=(const std::initializer_list<char32_t>& il);
     ustring& operator +=(const std::initializer_list<wchar_t>& il);
     template<typename type_t>
@@ -431,8 +431,8 @@ namespace xtd {
     bool operator !=(const char8* other) const;
     bool operator ==(const std::u16string& other) const;
     bool operator !=(const std::u16string& other) const;
-    bool operator ==(const char16_t* other) const;
-    bool operator !=(const char16_t* other) const;
+    bool operator ==(const char16* other) const;
+    bool operator !=(const char16* other) const;
     bool operator ==(const std::u32string& other) const;
     bool operator !=(const std::u32string& other) const;
     bool operator ==(const char32_t* other) const;
@@ -1318,7 +1318,7 @@ namespace xtd {
       return result;
     }
     
-    friend ustring operator +(const ustring& str_a, const char16_t* str_b) {
+    friend ustring operator +(const ustring& str_a, const char16* str_b) {
       ustring result = str_a;
       result.append(ustring(str_b));
       return result;
@@ -1360,7 +1360,7 @@ namespace xtd {
       return result;
     }
     
-    friend ustring operator +(const ustring& str_a, char16_t character) {
+    friend ustring operator +(const ustring& str_a, char16 character) {
       ustring result = str_a;
       result.append(ustring(1, character));
       return result;
@@ -1390,7 +1390,7 @@ namespace xtd {
       return result;
     }
     
-    friend ustring operator +(const ustring& str_a, const std::initializer_list<char16_t>& il) {
+    friend ustring operator +(const ustring& str_a, const std::initializer_list<char16>& il) {
       ustring result = str_a;
       result.append(ustring(il));
       return result;
@@ -1438,7 +1438,7 @@ namespace xtd {
       return result;
     }
     
-    friend ustring operator +(const char16_t* str_a, const ustring& str_b) {
+    friend ustring operator +(const char16* str_a, const ustring& str_b) {
       ustring result(str_a);
       result.append(str_b);
       return result;
@@ -1480,7 +1480,7 @@ namespace xtd {
       return result;
     }
     
-    friend ustring operator +(char16_t character, const ustring& str_b) {
+    friend ustring operator +(char16 character, const ustring& str_b) {
       ustring result(1, character);
       result.append(str_b);
       return result;
@@ -1510,7 +1510,7 @@ namespace xtd {
       return result;
     }
     
-    friend ustring operator +(const std::initializer_list<char16_t>& il, const ustring& str_b) {
+    friend ustring operator +(const std::initializer_list<char16>& il, const ustring& str_b) {
       ustring result(il);
       result.append(str_b);
       return result;

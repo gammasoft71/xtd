@@ -163,7 +163,7 @@ namespace xtd {
   inline const object& boxing(const object& value) noexcept {return value;}
   inline ustring boxing(const char* value) noexcept {return ustring(value);}
   inline ustring boxing(const char8* value) noexcept {return ustring(value);}
-  inline ustring boxing(const char16_t* value) noexcept {return ustring(value);}
+  inline ustring boxing(const char16* value) noexcept {return ustring(value);}
   inline ustring boxing(const char32_t* value) noexcept {return ustring(value);}
   inline ustring boxing(const wchar_t* value) noexcept {return ustring(value);}
   /// @endcond
@@ -242,13 +242,13 @@ namespace xtd {
   }
 
   template<>
-  inline const char16_t* unboxing<char16_t>(const ustring& value) {
+  inline const char16* unboxing<char16>(const ustring& value) {
     thread_local static std::u16string result;
     result = convert_string::to_u16string(value);
     return result.c_str();
   }
   template<>
-  inline const char16_t* unboxing<char16_t>(ustring& value) {
+  inline const char16* unboxing<char16>(ustring& value) {
     thread_local static std::u16string result;
     result = convert_string::to_u16string(value);
     return result.c_str();
