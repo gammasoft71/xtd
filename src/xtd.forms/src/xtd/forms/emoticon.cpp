@@ -1,35 +1,36 @@
 #include "../../../include/xtd/forms/emoticon.h"
 
+using namespace xtd;
 using namespace xtd::forms;
 
 const emoticon emoticon::empty() {
   return emoticon();
 }
 
-emoticon::emoticon(const xtd::ustring& name, std::initializer_list<char32_t> codepoints) {
+emoticon::emoticon(const xtd::ustring& name, std::initializer_list<char32> codepoints) {
   data_->name = name;
   data_->codepoints = codepoints;
 }
 
-emoticon::emoticon(const xtd::ustring& name, const std::vector<char32_t>& codepoints) {
+emoticon::emoticon(const xtd::ustring& name, const std::vector<char32>& codepoints) {
   data_->name = name;
   data_->codepoints = codepoints;
 }
 
-emoticon::emoticon(const xtd::ustring& name, char32_t codepoint) {
+emoticon::emoticon(const xtd::ustring& name, char32 codepoint) {
   data_->name = name;
   data_->codepoints = {codepoint};
 }
 
-emoticon::emoticon(std::initializer_list<char32_t> codepoints) {
+emoticon::emoticon(std::initializer_list<char32> codepoints) {
   data_->codepoints = codepoints;
 }
 
-emoticon::emoticon(const std::vector<char32_t>& codepoints) {
+emoticon::emoticon(const std::vector<char32>& codepoints) {
   data_->codepoints = codepoints;
 }
 
-emoticon::emoticon(char32_t codepoint) {
+emoticon::emoticon(char32 codepoint) {
   data_->codepoints = {codepoint};
 }
 
@@ -37,7 +38,7 @@ const xtd::ustring& emoticon::name() const noexcept {
   return data_->name;
 }
 
-const std::vector<char32_t>& emoticon::codepoints() const noexcept {
+const std::vector<char32>& emoticon::codepoints() const noexcept {
   return data_->codepoints;
 }
 

@@ -31,7 +31,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the KeyPressEventArgs class.
       /// @param key_char The ASCII character corresponding to the key the user pressed.
       /// @remarks Use the control::modifier_keys property to get the current state of the modifier keys.
-      explicit key_press_event_args(char32_t key_char) : key_char_(key_char) {}
+      explicit key_press_event_args(char32 key_char) : key_char_(key_char) {}
       /// @}
       
       /// @cond
@@ -70,7 +70,7 @@ namespace xtd {
       /// * CMD and ALT.
       /// * Arrow keys.
       /// @note For information about how to detect any of the non-character keys mentioned above, see the key_event_args class.
-      char32_t key_char() const noexcept {return key_char_;}
+      char32 key_char() const noexcept {return key_char_;}
       /// @brief Sets the character corresponding to the key pressed.
       /// @param key_char The ASCII character that is composed. For example, if the user presses SHIFT + K, this property returns an uppercase K.
       /// @remarks Use the key_char property to sample keystrokes at run time and to modify keystrokes under special run-time circumstances. For example, you can use key_char to disable non-numeric keypresses when the user enters a ZIP code, change all alphabetical keypresses to uppercase in a data entry field, or monitor the keyboard or other key input device for specific key combinations.
@@ -90,11 +90,11 @@ namespace xtd {
       /// * CMD and ALT.
       /// * Arrow keys.
       /// @note For information about how to detect any of the non-character keys mentioned above, see the key_event_args class.
-      void key_char(char32_t key_char) {key_char_ = key_char;}
+      void key_char(char32 key_char) {key_char_ = key_char;}
       /// @}
       
     private:
-      char32_t key_char_;
+      char32 key_char_;
       bool handled_ = false;
     };
   }

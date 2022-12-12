@@ -36,30 +36,30 @@ namespace xtd {
       /// @{
       /// @brief Initialize a new instance of emoticon class with specified name and codepoints.
       /// @param name A string that represent the name of emoticon
-      /// @param codepoints An initializer list of char32_t that represent the emoticon.
-      emoticon(const xtd::ustring& name, std::initializer_list<char32_t> codepoints);
+      /// @param codepoints An initializer list of char32 that represent the emoticon.
+      emoticon(const xtd::ustring& name, std::initializer_list<char32> codepoints);
       
       /// @brief Initialize a new instance of emoticon class with specified name and codepoints.
       /// @param name A string that represent the name of emoticon
-      /// @param codepoints An array of char32_t that represent the emoticon.
-      emoticon(const xtd::ustring& name, const std::vector<char32_t>& codepoints);
+      /// @param codepoints An array of char32 that represent the emoticon.
+      emoticon(const xtd::ustring& name, const std::vector<char32>& codepoints);
       
       /// @brief Initialize a new instance of emoticon class with specified name and codepoint.
       /// @param name A string that represent the name of emoticon
-      /// @param codepoint A char32_t that represent the emoticon.
-      emoticon(const xtd::ustring& name, char32_t codepoint);
+      /// @param codepoint A char32 that represent the emoticon.
+      emoticon(const xtd::ustring& name, char32 codepoint);
       
       /// @brief Initialize a new instance of emoticon class with specified codepoints.
-      /// @param codepoints An initializer list of char32_t that represent the emoticon.
-      explicit emoticon(std::initializer_list<char32_t> codepoints);
+      /// @param codepoints An initializer list of char32 that represent the emoticon.
+      explicit emoticon(std::initializer_list<char32> codepoints);
       
       /// @brief Initialize a new instance of emoticon class with specified codepoints.
-      /// @param codepoints An array of char32_t that represent the emoticon.
-      explicit emoticon(const std::vector<char32_t>& codepoints);
+      /// @param codepoints An array of char32 that represent the emoticon.
+      explicit emoticon(const std::vector<char32>& codepoints);
       
       /// @brief Initialize a new instance of emoticon class with specified codepoint.
-      /// @param codepoints A char32_t that represent the emoticon.
-      explicit emoticon(char32_t codepoint);
+      /// @param codepoints A char32 that represent the emoticon.
+      explicit emoticon(char32 codepoint);
       /// @}
       
       /// @cond
@@ -67,37 +67,37 @@ namespace xtd {
       emoticon(const xtd::ustring& name, std::initializer_list<type_t> codepoints) {
         data_->name = name;
         for (auto codepoint : codepoints)
-          data_->codepoints.push_back(static_cast<char32_t>(codepoint));
+          data_->codepoints.push_back(static_cast<char32>(codepoint));
       }
       
       template<typename type_t>
       emoticon(const xtd::ustring& name, const std::vector<type_t>& codepoints) {
         data_->name = name;
         for (auto codepoint : codepoints)
-          data_->codepoints.push_back(static_cast<char32_t>(codepoint));
+          data_->codepoints.push_back(static_cast<char32>(codepoint));
       }
       
       template<typename type_t>
       emoticon(const xtd::ustring& name, type_t codepoint) {
         data_->name = name;
-        data_->codepoints = {static_cast<char32_t>(codepoint)};
+        data_->codepoints = {static_cast<char32>(codepoint)};
       }
       
       template<typename type_t>
       explicit emoticon(std::initializer_list<type_t> codepoints) {
         for (auto codepoint : codepoints)
-          data_->codepoints.push_back(static_cast<char32_t>(codepoint));
+          data_->codepoints.push_back(static_cast<char32>(codepoint));
       }
       
       template<typename type_t>
       explicit emoticon(const std::vector<type_t>& codepoints) {
         for (auto codepoint : codepoints)
-          data_->codepoints.push_back(static_cast<char32_t>(codepoint));
+          data_->codepoints.push_back(static_cast<char32>(codepoint));
       }
       
       template<typename type_t>
       explicit emoticon(type_t codepoint) {
-        data_->codepoints = {static_cast<char32_t>(codepoint)};
+        data_->codepoints = {static_cast<char32>(codepoint)};
       }
       
       emoticon() = default;
@@ -119,8 +119,8 @@ namespace xtd {
       const xtd::ustring& name() const noexcept;
       
       /// @brief Gets codepoints of emoticon.
-      /// @return An array of char32_t that represent the emoticon.
-      const std::vector<char32_t>& codepoints() const noexcept;
+      /// @return An array of char32 that represent the emoticon.
+      const std::vector<char32>& codepoints() const noexcept;
       /// @}
       
       /// @name Methods
@@ -136,7 +136,7 @@ namespace xtd {
     private:
       struct data {
         xtd::ustring name;
-        std::vector<char32_t> codepoints;
+        std::vector<char32> codepoints;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

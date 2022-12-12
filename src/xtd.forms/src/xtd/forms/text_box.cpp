@@ -46,11 +46,11 @@ text_box& text_box::character_casing(xtd::forms::character_casing value) {
   return *this;
 }
 
-char32_t text_box::password_char() const noexcept {
+char32 text_box::password_char() const noexcept {
   return data_->password_char;
 }
 
-text_box& text_box::password_char(char32_t value) {
+text_box& text_box::password_char(char32 value) {
   if (data_->password_char != value) {
     data_->password_char = value;
     post_recreate_handle();
