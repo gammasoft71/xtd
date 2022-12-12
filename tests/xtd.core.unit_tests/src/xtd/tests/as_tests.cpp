@@ -21,7 +21,7 @@ namespace xtd::tests {
     }
     
     void test_method_(char8_t_as_int) {
-      assert::is_true(is<int>(as<int>((char8_t)'a')), csf_);
+      assert::is_true(is<int>(as<int>((char8)'a')), csf_);
     }
     
     void test_method_(char16_t_as_int) {
