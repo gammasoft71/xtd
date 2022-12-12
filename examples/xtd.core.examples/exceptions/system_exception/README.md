@@ -1,6 +1,6 @@
 # system_exception
 
-Shows how to use [system_exception](../../../../src/xtd.core/include/xtd/system_exception.h) exception.
+Shows how to use [system_exception](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1system__exception.html) exception.
 
 ## Sources
 
