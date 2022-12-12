@@ -2,6 +2,9 @@
 
 #include <cxxabi.h>
 #include "../../../include/xtd/tunit/__demangle.h"
+#include <xtd/types.h>
+
+using namespace xtd;
 
 std::string __tunit_demangle(const std::string& name) {
   class auto_delete_char_pointer {
@@ -12,7 +15,7 @@ std::string __tunit_demangle(const std::string& name) {
   private:
     char* value_;
   };
-  int32_t status = 0;
+  int32 status = 0;
   return auto_delete_char_pointer(abi::__cxa_demangle(name.c_str(), 0, 0, &status))();
 }
 

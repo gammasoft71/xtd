@@ -46,13 +46,13 @@ namespace xtd {
       /// @return exit status.
       /// @remarks The value by default is EXIT_SUCCESS.
       /// @remarks When an error occurred in unit test the value is set to EXIT_FAILURE.
-      int32_t exit_status() const noexcept {return exit_status_;}
+      int32 exit_status() const noexcept {return exit_status_;}
       
       /// @brief Sets exit status.
       /// @param exit_status exit status.
       /// @remarks The value by default is EXIT_SUCCESS.
       /// @remarks When an error occurred in unit test the value is set to EXIT_FAILURE.
-      void exit_status(int32_t exit_status) noexcept {exit_status_ = exit_status;}
+      void exit_status(int32 exit_status) noexcept {exit_status_ = exit_status;}
       
       /// @brief Gets filter tests.
       /// @return filter tests.
@@ -147,12 +147,12 @@ namespace xtd {
       /// @brief Gets repeat tests count.
       /// @return Repeat test count.
       /// @remarks By default is set to 1 (no repeat).
-      int32_t repeat_test() const noexcept {return repeat_tests_;}
+      int32 repeat_test() const noexcept {return repeat_tests_;}
       
       /// @brief Sets repeat tests count.
       /// @param repeat_tests Repeat test count.
       /// @remarks By default is set to 1 (no repeat).
-      void repeat_tests(int32_t repeat_tests) noexcept {repeat_tests_ = repeat_tests;}
+      void repeat_tests(int32 repeat_tests) noexcept {repeat_tests_ = repeat_tests;}
       
       /// @brief Gets if show duration for each test.
       /// @return true if show duration for each test; otherwise false.
@@ -198,7 +198,7 @@ namespace xtd {
       
       bool also_run_ignored_tests_ = false;
       std::string filter_tests_ = "*.*";
-      int32_t exit_status_ = EXIT_SUCCESS;
+      int32 exit_status_ = EXIT_SUCCESS;
       bool gtest_compatibility_ = false;
       bool list_tests_ = false;
       bool output_color_ = true;
@@ -210,7 +210,7 @@ namespace xtd {
       bool show_duration_ = true;
       bool shuffle_tests_ = false;
       uint32_t random_seed_ = 0;
-      int32_t repeat_tests_ = 1;
+      int32 repeat_tests_ = 1;
       bool enable_stack_trace_ = false;
       xtd::date_time start_time_;
       xtd::date_time end_time_;

@@ -20,7 +20,7 @@ void __opaque_foreground_color(__console_color color) {
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   
   csbi.wAttributes &= 0xFFF0;
-  csbi.wAttributes |= (int32_t)color;
+  csbi.wAttributes |= (int32)color;
   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes);
 }
 
