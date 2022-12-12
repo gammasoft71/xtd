@@ -1,6 +1,6 @@
 # date_time_add_years
 
-Shows how to use [xtd::date_time::add_years](../../../../src/xtd.core/include/xtd/date_time.h) method.
+Shows how to use [xtd::date_time::add_years](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a673fa2094f973e199e9ebcc1f6e48158) method.
 
 # Sources
 

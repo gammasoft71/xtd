@@ -1,6 +1,6 @@
 # date_time_add_milliseconds
 
-Shows how to use [xtd::date_time::add_milliseconds](../../../../src/xtd.core/include/xtd/date_time.h) method.
+Shows how to use [xtd::date_time::add_milliseconds](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a0c0b9b22d495ed1096b74dd9c72df2e4) method.
 
 # Sources
 

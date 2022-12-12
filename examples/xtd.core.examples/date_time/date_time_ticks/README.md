@@ -1,6 +1,6 @@
 # date_time_ticks
 
-Shows how to use [xtd::date_time](../../../../src/xtd.core/include/xtd/date_time.h) class with ticks constructors.
+Shows how to use [xtd::date_time](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html) class with ticks constructors.
 
 # Sources
 

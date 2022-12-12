@@ -1,6 +1,6 @@
 # date_time_add_months
 
-Shows how to use [xtd::date_time::add_months](../../../../src/xtd.core/include/xtd/date_time.h) method.
+Shows how to use [xtd::date_time::add_months](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a07d4f63d951d1e2674aadc064f533f0c) method.
 
 # Sources
 
