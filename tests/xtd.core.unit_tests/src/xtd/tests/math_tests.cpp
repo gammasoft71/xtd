@@ -451,9 +451,9 @@ namespace xtd::tests {
     }
     
     void test_method_(max_byte) {
-      assert::are_equal(52u, math::max(as<byte_t>(2), as<byte_t>(52)), csf_);
-      assert::are_equal(22u, math::max(as<byte_t>(22), as<byte_t>(5)), csf_);
-      assert::are_equal(16u, math::max(as<byte_t>(16), as<byte_t>(16)), csf_);
+      assert::are_equal(52u, math::max(as<xtd::byte>(2), as<xtd::byte>(52)), csf_);
+      assert::are_equal(22u, math::max(as<xtd::byte>(22), as<xtd::byte>(5)), csf_);
+      assert::are_equal(16u, math::max(as<xtd::byte>(16), as<xtd::byte>(16)), csf_);
     }
     
     void test_method_(max_decimal) {
@@ -529,9 +529,9 @@ namespace xtd::tests {
     }
     
     void test_method_(min_byte) {
-      assert::are_equal(2u, math::min(as<byte_t>(2), as<byte_t>(52)), csf_);
-      assert::are_equal(5u, math::min(as<byte_t>(22), as<byte_t>(5)), csf_);
-      assert::are_equal(16u, math::min(as<byte_t>(16), as<byte_t>(16)), csf_);
+      assert::are_equal(2u, math::min(as<xtd::byte>(2), as<xtd::byte>(52)), csf_);
+      assert::are_equal(5u, math::min(as<xtd::byte>(22), as<xtd::byte>(5)), csf_);
+      assert::are_equal(16u, math::min(as<xtd::byte>(16), as<xtd::byte>(16)), csf_);
     }
     
     void test_method_(min_decimal) {
