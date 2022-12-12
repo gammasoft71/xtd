@@ -21,11 +21,11 @@ std::chrono::nanoseconds animation::elapsed() const noexcept {
   return data_->stopwatch.elapsed();
 }
 
-int64_t animation::elapsed_milliseconds() const noexcept {
+int64 animation::elapsed_milliseconds() const noexcept {
   return data_->stopwatch.elapsed_milliseconds();
 }
 
-int64_t animation::elapsed_nanoseconds() const noexcept {
+int64 animation::elapsed_nanoseconds() const noexcept {
   return data_->stopwatch.elapsed_nanoseconds();
 }
 

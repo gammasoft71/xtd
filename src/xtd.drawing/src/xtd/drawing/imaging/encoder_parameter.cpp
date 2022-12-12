@@ -25,7 +25,7 @@ encoder_parameter::encoder_parameter(const imaging::encoder& encoder, int16 valu
   add_bytes(value_, value);
 }
 
-encoder_parameter::encoder_parameter(const imaging::encoder& encoder, int64_t value) : encoder_(encoder), number_of_values_(1), type_(xtd::drawing::imaging::encoder_parameter_value_type::value_type_long) {
+encoder_parameter::encoder_parameter(const imaging::encoder& encoder, int64 value) : encoder_(encoder), number_of_values_(1), type_(xtd::drawing::imaging::encoder_parameter_value_type::value_type_long) {
   if (value < 0) throw argument_out_of_range_exception(csf_);
   add_bytes(value_, as<int32>(value));
 }
@@ -58,7 +58,7 @@ encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encod
   }
 }
 
-encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, std::vector<int64_t> value) : encoder_(encoder), number_of_values_(value.size()), type_(xtd::drawing::imaging::encoder_parameter_value_type::value_type_long) {
+encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, std::vector<int64> value) : encoder_(encoder), number_of_values_(value.size()), type_(xtd::drawing::imaging::encoder_parameter_value_type::value_type_long) {
   for (auto v : value) {
     if (v < 0) throw argument_out_of_range_exception(csf_);
     add_bytes(value_, as<int32>(v));
@@ -94,7 +94,7 @@ encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encod
   }
 }
 
-encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, std::vector<int64_t> rangebegin, std::vector<int64_t> rangeend) : encoder_(encoder), number_of_values_(rangebegin.size()), type_(xtd::drawing::imaging::encoder_parameter_value_type::value_type_long_range) {
+encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, std::vector<int64> rangebegin, std::vector<int64> rangeend) : encoder_(encoder), number_of_values_(rangebegin.size()), type_(xtd::drawing::imaging::encoder_parameter_value_type::value_type_long_range) {
   if (rangebegin.size() != rangeend.size()) throw argument_out_of_range_exception(csf_);
   for (auto index = 0U; index < rangebegin.size(); ++index) {
     if (rangebegin[index] < 0 || rangeend[index] < 0) throw argument_out_of_range_exception(csf_);

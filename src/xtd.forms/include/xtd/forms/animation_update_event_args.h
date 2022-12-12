@@ -31,10 +31,10 @@ namespace xtd {
       std::chrono::nanoseconds elapsed() const {return elapsed_;}
       /// @brief Gets elepased time in milliseconds.
       /// @return Elapsed time in milliseconds
-      int64_t elapsed_milliseconds() const {return std::chrono::duration_cast<std::chrono::milliseconds>(elapsed_).count();}
+      int64 elapsed_milliseconds() const {return std::chrono::duration_cast<std::chrono::milliseconds>(elapsed_).count();}
       /// @brief Gets elepased time in nanoseconds.
       /// @return Elapsed time in nanoseconds
-      int64_t elapsed_nanoseconds() const {return std::chrono::duration_cast<std::chrono::nanoseconds>(elapsed_).count();}
+      int64 elapsed_nanoseconds() const {return std::chrono::duration_cast<std::chrono::nanoseconds>(elapsed_).count();}
 
       /// @brief Gets frame counter.
       /// @return Frame counter.
