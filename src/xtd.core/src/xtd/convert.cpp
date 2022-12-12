@@ -24,7 +24,7 @@ std::any convert::to_any(char value) noexcept {
   return value;
 }
 
-std::any convert::to_any(char8_t value) {
+std::any convert::to_any(char8 value) {
   //return value;
   throw invalid_cast_exception(csf_);
 }
@@ -121,12 +121,12 @@ std::any convert::to_any(char* value) noexcept {
   return value;
 }
 
-std::any convert::to_any(const char8_t* value) {
+std::any convert::to_any(const char8* value) {
   //return value;
   throw invalid_cast_exception(csf_);
 }
 
-std::any convert::to_any(char8_t* value) {
+std::any convert::to_any(char8* value) {
   //return value;
   throw invalid_cast_exception(csf_);
 }
@@ -175,7 +175,7 @@ bool convert::to_boolean(char value) {
   throw invalid_cast_exception(csf_);
 }
 
-bool convert::to_boolean(char8_t value) {
+bool convert::to_boolean(char8 value) {
   throw invalid_cast_exception(csf_);
 }
 
@@ -271,7 +271,7 @@ bool convert::to_boolean(char* value) {
   return ustring::parse<bool>(value);
 }
 
-bool convert::to_boolean(const char8_t* value) {
+bool convert::to_boolean(const char8* value) {
   return ustring::parse<bool>(value);
 }
 
@@ -319,7 +319,7 @@ xtd::byte convert::to_byte(char value) noexcept {
   return static_cast<xtd::byte>(value);
 }
 
-xtd::byte convert::to_byte(char8_t value) noexcept {
+xtd::byte convert::to_byte(char8 value) noexcept {
   return static_cast<xtd::byte>(value);
 }
 
@@ -440,11 +440,11 @@ xtd::byte convert::to_byte(char* value) {
   return ustring::parse<xtd::byte>(value);
 }
 
-xtd::byte convert::to_byte(const char8_t* value) {
+xtd::byte convert::to_byte(const char8* value) {
   return ustring::parse<xtd::byte>(value);
 }
 
-xtd::byte convert::to_byte(char8_t* value) {
+xtd::byte convert::to_byte(char8* value) {
   return ustring::parse<xtd::byte>(value);
 }
 
@@ -492,7 +492,7 @@ char convert::to_char(char value) noexcept {
   return value;
 }
 
-char convert::to_char(char8_t value) noexcept {
+char convert::to_char(char8 value) noexcept {
   return static_cast<char>(value);
 }
 
@@ -611,12 +611,12 @@ char convert::to_char(char* value) {
   return to_char(value[0]);
 }
 
-char convert::to_char(const char8_t* value) {
+char convert::to_char(const char8* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char convert::to_char(char8_t* value) {
+char convert::to_char(char8* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
@@ -651,177 +651,177 @@ char convert::to_char(wchar_t* value) {
   return to_char(value[0]);
 }
 
-char8_t convert::to_char8(any value) {
+char8 convert::to_char8(any value) {
   throw invalid_cast_exception(csf_);
 }
 
-char8_t convert::to_char8(bool value) {
+char8 convert::to_char8(bool value) {
   throw invalid_cast_exception(csf_);
 }
 
-char8_t convert::to_char8(xtd::byte value) noexcept {
-  return static_cast<char8_t>(value);
+char8 convert::to_char8(xtd::byte value) noexcept {
+  return static_cast<char8>(value);
 }
 
-char8_t convert::to_char8(char value) noexcept {
-  return static_cast<char8_t>(value);
+char8 convert::to_char8(char value) noexcept {
+  return static_cast<char8>(value);
 }
 
-char8_t convert::to_char8(char8_t value) noexcept {
+char8 convert::to_char8(char8 value) noexcept {
   return value;
 }
 
-char8_t convert::to_char8(char16_t value) {
+char8 convert::to_char8(char16_t value) {
   if (value > static_cast<char16_t>(255)) throw overflow_exception(csf_);
-  return static_cast<char8_t>(value);
+  return static_cast<char8>(value);
 }
 
-char8_t convert::to_char8(char32_t value) {
+char8 convert::to_char8(char32_t value) {
   if (value > static_cast<char32_t>(255)) throw overflow_exception(csf_);
-  return static_cast<char8_t>(value);
+  return static_cast<char8>(value);
 }
 
-char8_t convert::to_char8(wchar_t value) {
+char8 convert::to_char8(wchar_t value) {
   if (value > static_cast<wchar_t>(255)) throw overflow_exception(csf_);
-  return static_cast<char8_t>(value);
+  return static_cast<char8>(value);
 }
 
-char8_t convert::to_char8(decimal_t value) {
+char8 convert::to_char8(decimal_t value) {
   if (value < 0.0l || value > 255.0l) throw overflow_exception(csf_);
-  return static_cast<char8_t>(math::round(value));
+  return static_cast<char8>(math::round(value));
 }
 
-char8_t convert::to_char8(double value) {
+char8 convert::to_char8(double value) {
   if (value < 0.0 || value > 255.0) throw overflow_exception(csf_);
-  return static_cast<char8_t>(math::round(value));
+  return static_cast<char8>(math::round(value));
 }
 
-char8_t convert::to_char8(float value) {
+char8 convert::to_char8(float value) {
   if (value < 0.0f || value > 255.0f) throw overflow_exception(csf_);
-  return static_cast<char8_t>(math::round(value));
+  return static_cast<char8>(math::round(value));
 }
 
-char8_t convert::to_char8(int16 value) {
+char8 convert::to_char8(int16 value) {
   if (value < 0 || value > 255) throw overflow_exception(csf_);
-  return static_cast<char8_t>(value);
+  return static_cast<char8>(value);
 }
 
-char8_t convert::to_char8(int32 value) {
+char8 convert::to_char8(int32 value) {
   if (value < 0 || value > 255) throw overflow_exception(csf_);
-  return static_cast<char8_t>(value);
+  return static_cast<char8>(value);
 }
 
-char8_t convert::to_char8(int64 value) {
+char8 convert::to_char8(int64 value) {
   if (value < 0l || value > 255l) throw overflow_exception(csf_);
-  return static_cast<char8_t>(value);
+  return static_cast<char8>(value);
 }
 
-char8_t convert::to_char8(llong_t value) {
+char8 convert::to_char8(llong_t value) {
   if (value < 0ll || value > 255ll) throw overflow_exception(csf_);
-  return static_cast<char8_t>(value);
+  return static_cast<char8>(value);
 }
 
-char8_t convert::to_char8(sbyte value) {
+char8 convert::to_char8(sbyte value) {
   if (value < 0) throw overflow_exception(csf_);
-  return static_cast<char8_t>(value);
+  return static_cast<char8>(value);
 }
 
-char8_t convert::to_char8(uint16_t value) {
+char8 convert::to_char8(uint16_t value) {
   if (value > 255u) throw overflow_exception(csf_);
-  return static_cast<char8_t>(value);
+  return static_cast<char8>(value);
 }
 
-char8_t convert::to_char8(uint32 value) {
+char8 convert::to_char8(uint32 value) {
   if (value > 255u) throw overflow_exception(csf_);
-  return static_cast<char8_t>(value);
+  return static_cast<char8>(value);
 }
 
-char8_t convert::to_char8(uint64 value) {
+char8 convert::to_char8(uint64 value) {
   if (value > 255lu) throw overflow_exception(csf_);
-  return static_cast<char8_t>(value);
+  return static_cast<char8>(value);
 }
 
-char8_t convert::to_char8(ullong_t value) {
+char8 convert::to_char8(ullong_t value) {
   if (value > 255llu) throw overflow_exception(csf_);
-  return static_cast<char8_t>(value);
+  return static_cast<char8>(value);
 }
 
-char8_t convert::to_char8(const ustring& value) {
+char8 convert::to_char8(const ustring& value) {
   if (value.size() != 1) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char8_t convert::to_char8(const string& value) {
+char8 convert::to_char8(const string& value) {
   if (value.size() != 1) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char8_t convert::to_char8(const u8string& value) {
+char8 convert::to_char8(const u8string& value) {
   if (value.size() != 1) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char8_t convert::to_char8(const u16string& value) {
+char8 convert::to_char8(const u16string& value) {
   if (value.size() != 1) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char8_t convert::to_char8(const u32string& value) {
+char8 convert::to_char8(const u32string& value) {
   if (value.size() != 1) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char8_t convert::to_char8(const wstring& value) {
+char8 convert::to_char8(const wstring& value) {
   if (value.size() != 1) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char8_t convert::to_char8(const char* value) {
+char8 convert::to_char8(const char* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char8_t convert::to_char8(char* value) {
+char8 convert::to_char8(char* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char8_t convert::to_char8(const char8_t* value) {
+char8 convert::to_char8(const char8* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char8_t convert::to_char8(char8_t* value) {
+char8 convert::to_char8(char8* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char8_t convert::to_char8(const char16_t* value) {
+char8 convert::to_char8(const char16_t* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char8_t convert::to_char8(char16_t* value) {
+char8 convert::to_char8(char16_t* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char8_t convert::to_char8(const char32_t* value) {
+char8 convert::to_char8(const char32_t* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char8_t convert::to_char8(char32_t* value) {
+char8 convert::to_char8(char32_t* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char8_t convert::to_char8(const wchar_t* value) {
+char8 convert::to_char8(const wchar_t* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char8_t convert::to_char8(wchar_t* value) {
+char8 convert::to_char8(wchar_t* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
@@ -850,7 +850,7 @@ char16_t convert::to_char16(char value) noexcept {
   return static_cast<char16_t>(value);
 }
 
-char16_t convert::to_char16(char8_t value) noexcept {
+char16_t convert::to_char16(char8 value) noexcept {
   return static_cast<char16_t>(value);
 }
 
@@ -966,12 +966,12 @@ char16_t convert::to_char16(char* value) {
   return to_char(value[0]);
 }
 
-char16_t convert::to_char16(const char8_t* value) {
+char16_t convert::to_char16(const char8* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char16_t convert::to_char16(char8_t* value) {
+char16_t convert::to_char16(char8* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
@@ -1030,7 +1030,7 @@ char32_t convert::to_char32(char value) noexcept {
   return static_cast<char32_t>(value);
 }
 
-char32_t convert::to_char32(char8_t value) noexcept {
+char32_t convert::to_char32(char8 value) noexcept {
   return static_cast<char32_t>(value);
 }
 
@@ -1144,12 +1144,12 @@ char32_t convert::to_char32(char* value) {
   return to_char(value[0]);
 }
 
-char32_t convert::to_char32(const char8_t* value) {
+char32_t convert::to_char32(const char8* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char32_t convert::to_char32(char8_t* value) {
+char32_t convert::to_char32(char8* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
@@ -1208,7 +1208,7 @@ wchar_t convert::to_wchar(char value) noexcept {
   return static_cast<wchar_t>(value);
 }
 
-wchar_t convert::to_wchar(char8_t value) noexcept {
+wchar_t convert::to_wchar(char8 value) noexcept {
   return static_cast<wchar_t>(value);
 }
 
@@ -1324,12 +1324,12 @@ wchar_t convert::to_wchar(char* value) {
   return to_char(value[0]);
 }
 
-wchar_t convert::to_wchar(const char8_t* value) {
+wchar_t convert::to_wchar(const char8* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-wchar_t convert::to_wchar(char8_t* value) {
+wchar_t convert::to_wchar(char8* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
@@ -1384,7 +1384,7 @@ decimal_t convert::to_decimal(char value) noexcept {
   return static_cast<decimal_t>(value);
 }
 
-decimal_t convert::to_decimal(char8_t value) noexcept {
+decimal_t convert::to_decimal(char8 value) noexcept {
   return static_cast<decimal_t>(value);
 }
 
@@ -1480,11 +1480,11 @@ decimal_t convert::to_decimal(char* value) {
   return ustring::parse<decimal_t>(value);
 }
 
-decimal_t convert::to_decimal(const char8_t* value) {
+decimal_t convert::to_decimal(const char8* value) {
   return ustring::parse<decimal_t>(value);
 }
 
-decimal_t convert::to_decimal(char8_t* value) {
+decimal_t convert::to_decimal(char8* value) {
   return ustring::parse<decimal_t>(value);
 }
 
@@ -1532,7 +1532,7 @@ double convert::to_double(char value) noexcept {
   return static_cast<double>(value);
 }
 
-double convert::to_double(char8_t value) noexcept {
+double convert::to_double(char8 value) noexcept {
   return static_cast<double>(value);
 }
 
@@ -1628,11 +1628,11 @@ double convert::to_double(char* value) {
   return ustring::parse<double>(value);
 }
 
-double convert::to_double(const char8_t* value) {
+double convert::to_double(const char8* value) {
   return ustring::parse<double>(value);
 }
 
-double convert::to_double(char8_t* value) {
+double convert::to_double(char8* value) {
   return ustring::parse<double>(value);
 }
 
@@ -1680,7 +1680,7 @@ float convert::to_single(char value) noexcept {
   return static_cast<float>(value);
 }
 
-float convert::to_single(char8_t value) noexcept {
+float convert::to_single(char8 value) noexcept {
   return static_cast<float>(value);
 }
 
@@ -1776,11 +1776,11 @@ float convert::to_single(char* value) {
   return ustring::parse<float>(value);
 }
 
-float convert::to_single(const char8_t* value) {
+float convert::to_single(const char8* value) {
   return ustring::parse<float>(value);
 }
 
-float convert::to_single(char8_t* value) {
+float convert::to_single(char8* value) {
   return ustring::parse<float>(value);
 }
 
@@ -1828,7 +1828,7 @@ int16 convert::to_int16(char value) noexcept {
   return static_cast<int16>(value);
 }
 
-int16 convert::to_int16(char8_t value) noexcept {
+int16 convert::to_int16(char8 value) noexcept {
   return static_cast<int16>(value);
 }
 
@@ -1945,11 +1945,11 @@ int16 convert::to_int16(char* value) {
   return ustring::parse<int16>(value);
 }
 
-int16 convert::to_int16(const char8_t* value) {
+int16 convert::to_int16(const char8* value) {
   return ustring::parse<int16>(value);
 }
 
-int16 convert::to_int16(char8_t* value) {
+int16 convert::to_int16(char8* value) {
   return ustring::parse<int16>(value);
 }
 
@@ -1997,7 +1997,7 @@ int32 convert::to_int32(char value) noexcept {
   return static_cast<int32>(value);
 }
 
-int32 convert::to_int32(char8_t value) noexcept {
+int32 convert::to_int32(char8 value) noexcept {
   return static_cast<int32>(value);
 }
 
@@ -2110,11 +2110,11 @@ int32 convert::to_int32(char* value) {
   return ustring::parse<int32>(value);
 }
 
-int32 convert::to_int32(const char8_t* value) {
+int32 convert::to_int32(const char8* value) {
   return ustring::parse<int32>(value);
 }
 
-int32 convert::to_int32(char8_t* value) {
+int32 convert::to_int32(char8* value) {
   return ustring::parse<int32>(value);
 }
 
@@ -2162,7 +2162,7 @@ int64 convert::to_int64(char value) noexcept {
   return static_cast<int64>(value);
 }
 
-int64 convert::to_int64(char8_t value) noexcept {
+int64 convert::to_int64(char8 value) noexcept {
   return static_cast<int64>(value);
 }
 
@@ -2270,11 +2270,11 @@ int64 convert::to_int64(char* value) {
   return ustring::parse<int64>(value);
 }
 
-int64 convert::to_int64(const char8_t* value) {
+int64 convert::to_int64(const char8* value) {
   return ustring::parse<int64>(value);
 }
 
-int64 convert::to_int64(char8_t* value) {
+int64 convert::to_int64(char8* value) {
   return ustring::parse<int64>(value);
 }
 
@@ -2322,7 +2322,7 @@ llong_t convert::to_llong(char value) noexcept {
   return static_cast<llong_t>(value);
 }
 
-llong_t convert::to_llong(char8_t value) noexcept {
+llong_t convert::to_llong(char8 value) noexcept {
   return static_cast<llong_t>(value);
 }
 
@@ -2430,11 +2430,11 @@ llong_t convert::to_llong(char* value) {
   return ustring::parse<llong_t>(value);
 }
 
-llong_t convert::to_llong(const char8_t* value) {
+llong_t convert::to_llong(const char8* value) {
   return ustring::parse<llong_t>(value);
 }
 
-llong_t convert::to_llong(char8_t* value) {
+llong_t convert::to_llong(char8* value) {
   return ustring::parse<llong_t>(value);
 }
 
@@ -2482,7 +2482,7 @@ sbyte convert::to_sbyte(char value) noexcept {
   return static_cast<sbyte>(value);
 }
 
-sbyte convert::to_sbyte(char8_t value) noexcept {
+sbyte convert::to_sbyte(char8 value) noexcept {
   return static_cast<sbyte>(value);
 }
 
@@ -2602,11 +2602,11 @@ sbyte convert::to_sbyte(char* value) {
   return ustring::parse<sbyte>(value);
 }
 
-sbyte convert::to_sbyte(const char8_t* value) {
+sbyte convert::to_sbyte(const char8* value) {
   return ustring::parse<sbyte>(value);
 }
 
-sbyte convert::to_sbyte(char8_t* value) {
+sbyte convert::to_sbyte(char8* value) {
   return ustring::parse<sbyte>(value);
 }
 
@@ -2654,7 +2654,7 @@ uint16_t convert::to_uint16(char value) noexcept {
   return static_cast<uint16_t>(value);
 }
 
-uint16_t convert::to_uint16(char8_t value) noexcept {
+uint16_t convert::to_uint16(char8 value) noexcept {
   return static_cast<uint16_t>(value);
 }
 
@@ -2772,11 +2772,11 @@ uint16_t convert::to_uint16(char* value) {
   return ustring::parse<uint16_t>(value);
 }
 
-uint16_t convert::to_uint16(const char8_t* value) {
+uint16_t convert::to_uint16(const char8* value) {
   return ustring::parse<uint16_t>(value);
 }
 
-uint16_t convert::to_uint16(char8_t* value) {
+uint16_t convert::to_uint16(char8* value) {
   return ustring::parse<uint16_t>(value);
 }
 
@@ -2824,7 +2824,7 @@ uint32 convert::to_uint32(char value) noexcept {
   return static_cast<uint32>(value);
 }
 
-uint32 convert::to_uint32(char8_t value) noexcept {
+uint32 convert::to_uint32(char8 value) noexcept {
   return static_cast<uint32>(value);
 }
 
@@ -2940,11 +2940,11 @@ uint32 convert::to_uint32(char* value) {
   return ustring::parse<uint32>(value);
 }
 
-uint32 convert::to_uint32(const char8_t* value) {
+uint32 convert::to_uint32(const char8* value) {
   return ustring::parse<uint32>(value);
 }
 
-uint32 convert::to_uint32(char8_t* value) {
+uint32 convert::to_uint32(char8* value) {
   return ustring::parse<uint32>(value);
 }
 
@@ -2992,7 +2992,7 @@ uint64 convert::to_uint64(char value) noexcept {
   return static_cast<uint64>(value);
 }
 
-uint64 convert::to_uint64(char8_t value) noexcept {
+uint64 convert::to_uint64(char8 value) noexcept {
   return static_cast<uint64>(value);
 }
 
@@ -3106,11 +3106,11 @@ uint64 convert::to_uint64(char* value) {
   return ustring::parse<uint64>(value);
 }
 
-uint64 convert::to_uint64(const char8_t* value) {
+uint64 convert::to_uint64(const char8* value) {
   return ustring::parse<uint64>(value);
 }
 
-uint64 convert::to_uint64(char8_t* value) {
+uint64 convert::to_uint64(char8* value) {
   return ustring::parse<uint64>(value);
 }
 
@@ -3158,7 +3158,7 @@ ullong_t convert::to_ullong(char value) noexcept {
   return static_cast<ullong_t>(value);
 }
 
-ullong_t convert::to_ullong(char8_t value) noexcept {
+ullong_t convert::to_ullong(char8 value) noexcept {
   return static_cast<ullong_t>(value);
 }
 
@@ -3272,11 +3272,11 @@ ullong_t convert::to_ullong(char* value) {
   return ustring::parse<ullong_t>(value);
 }
 
-ullong_t convert::to_ullong(const char8_t* value) {
+ullong_t convert::to_ullong(const char8* value) {
   return ustring::parse<ullong_t>(value);
 }
 
-ullong_t convert::to_ullong(char8_t* value) {
+ullong_t convert::to_ullong(char8* value) {
   return ustring::parse<ullong_t>(value);
 }
 
@@ -3330,7 +3330,7 @@ ustring convert::to_string(char value) noexcept {
   return ustring::format("{}", value);
 }
 
-ustring convert::to_string(char8_t value) noexcept {
+ustring convert::to_string(char8 value) noexcept {
   return ustring::format("{}", value);
 }
 
@@ -3516,11 +3516,11 @@ ustring convert::to_string(char* value) {
   return value;
 }
 
-ustring convert::to_string(const char8_t* value) {
+ustring convert::to_string(const char8* value) {
   return value;
 }
 
-ustring convert::to_string(char8_t* value) {
+ustring convert::to_string(char8* value) {
   return value;
 }
 
@@ -3568,7 +3568,7 @@ ustring convert::to_ustring(char value) noexcept {
   return to_string(value);
 }
 
-ustring convert::to_ustring(char8_t value) noexcept {
+ustring convert::to_ustring(char8 value) noexcept {
   return to_string(value);
 }
 
@@ -3700,11 +3700,11 @@ ustring convert::to_ustring(char* value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(const char8_t* value) {
+ustring convert::to_ustring(const char8* value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(char8_t* value) {
+ustring convert::to_ustring(char8* value) {
   return to_string(value);
 }
 

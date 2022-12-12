@@ -144,7 +144,7 @@ void binary_writer::write(const char* value) {
   write(ustring(value));
 }
 
-void binary_writer::write(const char8_t* value) {
+void binary_writer::write(const char8* value) {
   write(ustring(value));
 }
 

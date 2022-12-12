@@ -21,11 +21,11 @@ namespace xtd {
   /// @remarks Use xtd::boxing to box an object.
   /// @remarks Use xtd::unboxing to unbox an object.
   /// @par Examples
-  /// The following example shows how to create and use xtd::box_char<char8_t>.
+  /// The following example shows how to create and use xtd::box_char<char8>.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
-  /// char8_t unboxed_object = u8'a';
-  /// box_char<char8_t> boxed_object = unboxed_object;
+  /// char8 unboxed_object = u8'a';
+  /// box_char<char8> boxed_object = unboxed_object;
   /// auto result = stringer(boxed_object);
   /// console::write_line("result = {}", result); // Display: result = a;
   /// @endcode
@@ -223,12 +223,12 @@ namespace xtd {
   /// The following example shows how to create and use xtd::char8_object.
   /// @code
   /// auto stringer = [](const object& value) {return value.to_string();};
-  /// char8_t unboxed_object = u8'a';
+  /// char8 unboxed_object = u8'a';
   /// char8_object boxed_object = unboxed_object;
   /// auto result = stringer(boxed_object);
   /// console::write_line("result = {}", result); // Display: result = a;
   /// @endcode
-  using char8_object = box_char<char8_t>;
+  using char8_object = box_char<char8>;
   
   /// @brief Represent a boxed char16.
   /// @par Namespace
@@ -283,23 +283,23 @@ namespace xtd {
   
   /// @cond
   inline char_object boxing(const char& value) noexcept {return char_object(value);}
-  inline char8_object boxing(const char8_t& value) noexcept {return char8_object(value);}
+  inline char8_object boxing(const char8& value) noexcept {return char8_object(value);}
   inline char16_object boxing(const char16_t& value) noexcept {return char16_object(value);}
   inline char32_object boxing(const char32_t& value) noexcept {return char32_object(value);}
   inline wchar_object boxing(const wchar_t& value) noexcept {return wchar_object(value);}
   inline char_object boxing(char& value) noexcept {return char_object(value);}
-  inline char8_object boxing(char8_t& value) noexcept {return char8_object(value);}
+  inline char8_object boxing(char8& value) noexcept {return char8_object(value);}
   inline char16_object boxing(char16_t& value) noexcept {return char16_object(value);}
   inline char32_object boxing(char32_t& value) noexcept {return char32_object(value);}
   inline wchar_object boxing(wchar_t& value) noexcept {return wchar_object(value);}
 
   inline char unboxing(const char& value) noexcept {return value;}
-  inline char8_t unboxing(const char8_t& value) noexcept {return value;}
+  inline char8 unboxing(const char8& value) noexcept {return value;}
   inline char16_t unboxing(const char16_t& value) noexcept {return value;}
   inline char32_t unboxing(const char32_t& value) noexcept {return value;}
   inline wchar_t unboxing(const wchar_t& value) noexcept {return value;}
   inline char unboxing(char& value) noexcept {return value;}
-  inline char8_t unboxing(char8_t& value) noexcept {return value;}
+  inline char8 unboxing(char8& value) noexcept {return value;}
   inline char16_t unboxing(char16_t& value) noexcept {return value;}
   inline char32_t unboxing(char32_t& value) noexcept {return value;}
   inline wchar_t unboxing(wchar_t& value) noexcept {return value;}
