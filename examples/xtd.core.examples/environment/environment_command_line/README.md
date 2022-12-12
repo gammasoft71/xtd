@@ -1,6 +1,6 @@
 # environment_command_line
 
-Shows how to use [xtd::environment::command_line](../../../../src/xtd.core/include/xtd/environment.h) method.
+Shows how to use [xtd::environment::command_line](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#a9e675a5b7bfbb96f8df5bca48051c0ee) method.
 
 ## Sources
 

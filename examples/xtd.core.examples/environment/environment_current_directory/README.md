@@ -1,6 +1,6 @@
 # environment_current_directory
 
-Shows how to use [xtd::environment::current_directory](../../../../src/xtd.core/include/xtd/environment.h) method.
+Shows how to use [xtd::environment::current_directory](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#a981ec9665ba83e12a0241c37017c9ec7) method.
 
 ## Sources
 
