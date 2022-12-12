@@ -156,7 +156,7 @@ void binary_writer::write(const char32* value) {
   write(ustring(value));
 }
 
-void binary_writer::write(const wchar_t* value) {
+void binary_writer::write(const wchar* value) {
   write(ustring(value));
 }
 

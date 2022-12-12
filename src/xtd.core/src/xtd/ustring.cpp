@@ -60,11 +60,11 @@ ustring::ustring(size_t count, char32 character, const allocator_type& allocator
   *this = convert_string::to_ustring(u32string(count, character));
 }
 
-ustring::ustring(size_t count, wchar_t character) {
+ustring::ustring(size_t count, wchar character) {
   *this = convert_string::to_ustring(wstring(count, character));
 }
 
-ustring::ustring(size_t count, wchar_t character, const allocator_type& allocator) : basic_string<value_type>(allocator) {
+ustring::ustring(size_t count, wchar character, const allocator_type& allocator) : basic_string<value_type>(allocator) {
   *this = convert_string::to_ustring(wstring(count, character));
 }
 
@@ -173,16 +173,16 @@ ustring::ustring(const std::wstring& str, const allocator_type& allocator) noexc
   *this = convert_string::to_ustring(str);
 }
 
-ustring::ustring(const wchar_t* str) : ustring(wstring(str)) {
+ustring::ustring(const wchar* str) : ustring(wstring(str)) {
 }
 
-ustring::ustring(const wchar_t* str, const allocator_type& allocator) : ustring(wstring(str), allocator) {
+ustring::ustring(const wchar* str, const allocator_type& allocator) : ustring(wstring(str), allocator) {
 }
 
-ustring::ustring(wchar_t* str) : ustring(wstring(str)) {
+ustring::ustring(wchar* str) : ustring(wstring(str)) {
 }
 
-ustring::ustring(wchar_t* str, const allocator_type& allocator) : ustring(wstring(str), allocator) {
+ustring::ustring(wchar* str, const allocator_type& allocator) : ustring(wstring(str), allocator) {
 }
 
 ustring::ustring(ustring&& str) noexcept : basic_string<value_type>(str) {
@@ -223,11 +223,11 @@ ustring::ustring(initializer_list<char32> il, const allocator_type& allocator) :
   *this = convert_string::to_ustring(u32string(il));
 }
 
-ustring::ustring(initializer_list<wchar_t> il) {
+ustring::ustring(initializer_list<wchar> il) {
   *this = convert_string::to_ustring(wstring(il));
 }
 
-ustring::ustring(initializer_list<wchar_t> il, const allocator_type& allocator) : basic_string<value_type>(allocator) {
+ustring::ustring(initializer_list<wchar> il, const allocator_type& allocator) : basic_string<value_type>(allocator) {
   *this = convert_string::to_ustring(wstring(il));
 }
 
@@ -282,7 +282,7 @@ ustring& ustring::operator =(const std::wstring& str) {
   return *this;
 }
 
-ustring& ustring::operator =(const wchar_t* str) {
+ustring& ustring::operator =(const wchar* str) {
   return operator =(wstring(str));
 }
 
@@ -311,7 +311,7 @@ ustring& ustring::operator =(char32 character) {
   return  *this;
 }
 
-ustring& ustring::operator =(wchar_t character) {
+ustring& ustring::operator =(wchar character) {
   *this = ustring(1, character);
   return  *this;
 }
@@ -339,7 +339,7 @@ ustring& ustring::operator =(const std::initializer_list<char32>& il) {
   return *this;
 }
 
-ustring& ustring::operator =(const std::initializer_list<wchar_t>& il) {
+ustring& ustring::operator =(const std::initializer_list<wchar>& il) {
   clear();
   *this = convert_string::to_ustring(wstring(il));
   return *this;
@@ -395,7 +395,7 @@ ustring& ustring::operator +=(const std::wstring& str) {
   return *this;
 }
 
-ustring& ustring::operator +=(const wchar_t* str) {
+ustring& ustring::operator +=(const wchar* str) {
   *this = *this + str;
   return *this;
 }
@@ -420,7 +420,7 @@ ustring& ustring::operator +=(char32 character) {
   return *this;
 }
 
-ustring& ustring::operator +=(wchar_t character) {
+ustring& ustring::operator +=(wchar character) {
   *this = *this + character;
   return *this;
 }
@@ -445,7 +445,7 @@ ustring& ustring::operator +=(const std::initializer_list<char32>& il) {
   return *this;
 }
 
-ustring& ustring::operator +=(const std::initializer_list<wchar_t>& il) {
+ustring& ustring::operator +=(const std::initializer_list<wchar>& il) {
   *this = *this + il;
   return *this;
 }
@@ -522,11 +522,11 @@ bool ustring::operator !=(const std::wstring& other) const {
   return !operator ==(other);
 }
 
-bool ustring::operator ==(const wchar_t* other) const {
+bool ustring::operator ==(const wchar* other) const {
   return *this == ustring(other);
 }
 
-bool ustring::operator !=(const wchar_t* other) const {
+bool ustring::operator !=(const wchar* other) const {
   return !operator ==(other);
 }
 

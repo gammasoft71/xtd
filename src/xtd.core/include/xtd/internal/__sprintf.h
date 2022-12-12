@@ -29,14 +29,14 @@ inline std::basic_string<char> __sprintf<char>(const char* fmt, ...) {
 }
 
 template <>
-inline std::basic_string<wchar_t> __sprintf<wchar_t>(const wchar_t* fmt, ...) {
+inline std::basic_string<xtd::wchar> __sprintf<xtd::wchar>(const xtd::wchar* fmt, ...) {
   va_list args;
   size_t size = 1024;
   int length = 0;
-  std::basic_string<wchar_t> formatted_string;
+  std::basic_string<xtd::wchar> formatted_string;
   bool error = false;
   do {
-    formatted_string = std::basic_string<wchar_t>(size, 0);
+    formatted_string = std::basic_string<xtd::wchar>(size, 0);
     va_start(args, fmt);
     length = vswprintf(&formatted_string[0], formatted_string.size() + 1, fmt, args);
     error = length < 0;

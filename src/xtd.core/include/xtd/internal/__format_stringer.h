@@ -70,7 +70,7 @@ namespace xtd {
   template<>
   inline std::string to_string(const xtd::char32& value, const std::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const wchar_t& value, const std::string& fmt, const std::locale& loc);
+  inline std::string to_string(const xtd::wchar& value, const std::string& fmt, const std::locale& loc);
   
   template<typename value_t>
   inline std::wstring to_string(const value_t& value, const std::wstring& fmt, const std::locale& loc);
@@ -118,7 +118,7 @@ namespace xtd {
   template<>
   inline std::wstring to_string(const xtd::char32& value, const std::wstring& fmt, const std::locale& loc);
   template<>
-  inline std::wstring to_string(const wchar_t& value, const std::wstring& fmt, const std::locale& loc);
+  inline std::wstring to_string(const xtd::wchar& value, const std::wstring& fmt, const std::locale& loc);
   
   template<typename type_t, typename string_t>
   inline string_t to_string(type_t value, const std::map<type_t, string_t, std::greater<type_t>>& values) {
@@ -201,7 +201,7 @@ inline std::basic_string<char_t> __to_string(xtd::char8 codepoint) {
 }
 
 template<typename char_t>
-inline std::basic_string<char_t> __to_string(wchar_t codepoint) {
+inline std::basic_string<char_t> __to_string(xtd::wchar codepoint) {
   return __codepoint_to_string<char_t>(codepoint);
 }
 
@@ -237,7 +237,7 @@ std::basic_ostream<char_t>& operator <<(std::basic_ostream<char_t>& os, const st
 std::ostream& operator <<(std::ostream& os, const xtd::char8* str);
 std::ostream& operator <<(std::ostream& os, const xtd::char16* str);
 std::ostream& operator <<(std::ostream& os, const xtd::char32* str);
-std::ostream& operator <<(std::ostream& os, const wchar_t* str);
+std::ostream& operator <<(std::ostream& os, const xtd::wchar* str);
 
 template<typename enum_t>
 std::string __enum_to_string(enum_t value) noexcept;
@@ -291,12 +291,12 @@ std::string __format_stringer_to_std_string(const char& c);
 std::string __format_stringer_to_std_string(const xtd::char8& c);
 std::string __format_stringer_to_std_string(const xtd::char16& c);
 std::string __format_stringer_to_std_string(const xtd::char32& c);
-std::string __format_stringer_to_std_string(const wchar_t& c);
+std::string __format_stringer_to_std_string(const xtd::wchar& c);
 std::string __format_stringer_to_std_string(const char* str);
 std::string __format_stringer_to_std_string(const xtd::char8* str);
 std::string __format_stringer_to_std_string(const xtd::char16* str);
 std::string __format_stringer_to_std_string(const xtd::char32* str);
-std::string __format_stringer_to_std_string(const wchar_t* str);
+std::string __format_stringer_to_std_string(const xtd::wchar* str);
 std::string __format_stringer_to_std_string(const std::string& str);
 std::string __format_stringer_to_std_string(const xtd::ustring& str);
 std::string __format_stringer_to_std_string(const std::u8string& str);
@@ -377,14 +377,14 @@ inline std::basic_string<char_t> __format_stringer(const xtd::char32* const& val
 }
 
 template<typename char_t, typename value_t>
-inline std::basic_string<char_t> __format_stringer(const wchar_t*& value) {
+inline std::basic_string<char_t> __format_stringer(const xtd::wchar*& value) {
   std::basic_stringstream<char_t> ss;
   ss << __to_string<char_t>(value);
   return ss.str();
 }
 
 template<typename char_t, typename value_t>
-inline std::basic_string<char_t> __format_stringer(const wchar_t* const& value) {
+inline std::basic_string<char_t> __format_stringer(const xtd::wchar* const& value) {
   std::basic_stringstream<char_t> ss;
   ss << __to_string<char_t>(value);
   return ss.str();
@@ -504,7 +504,7 @@ inline std::string __format_stringer<char, std::tm&> (tm& value) {
 }
 
 template<>
-inline std::string __format_stringer<char, wchar_t&>(wchar_t& value) {
+inline std::string __format_stringer<char, xtd::wchar&>(xtd::wchar& value) {
   return xtd::to_string(value, "G", std::locale());
 }
 
@@ -524,115 +524,115 @@ inline std::string __format_stringer<char, xtd::char32&>(xtd::char32& value) {
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, std::u8string&>(std::u8string& value) {
-  std::basic_stringstream<wchar_t> ss;
+inline std::wstring __format_stringer<xtd::wchar, std::u8string&>(std::u8string& value) {
+  std::basic_stringstream<xtd::wchar> ss;
   ss << std::wstring(value.begin(), value.end());
   return ss.str();
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, const std::u16string&>(const std::u16string& value) {
-  std::basic_stringstream<wchar_t> ss;
-  ss << __to_string<wchar_t>(value);
+inline std::wstring __format_stringer<xtd::wchar, const std::u16string&>(const std::u16string& value) {
+  std::basic_stringstream<xtd::wchar> ss;
+  ss << __to_string<xtd::wchar>(value);
   return ss.str();
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, const std::u32string&>(const std::u32string& value) {
-  std::basic_stringstream<wchar_t> ss;
-  ss << __to_string<wchar_t>(value);
+inline std::wstring __format_stringer<xtd::wchar, const std::u32string&>(const std::u32string& value) {
+  std::basic_stringstream<xtd::wchar> ss;
+  ss << __to_string<xtd::wchar>(value);
   return ss.str();
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, const std::string&>(const std::string& value) {
-  std::basic_stringstream<wchar_t> ss;
-  ss << __to_string<wchar_t>(value);
+inline std::wstring __format_stringer<xtd::wchar, const std::string&>(const std::string& value) {
+  std::basic_stringstream<xtd::wchar> ss;
+  ss << __to_string<xtd::wchar>(value);
   return ss.str();
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, bool&>(bool& value) {
+inline std::wstring __format_stringer<xtd::wchar, bool&>(bool& value) {
   return xtd::to_string(value, L"G", std::locale());
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, xtd::sbyte&>(xtd::sbyte& value) {
+inline std::wstring __format_stringer<xtd::wchar, xtd::sbyte&>(xtd::sbyte& value) {
   return xtd::to_string(value, L"G", std::locale());
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, char&>(char& value) {
+inline std::wstring __format_stringer<xtd::wchar, char&>(char& value) {
   return xtd::to_string(value, L"G", std::locale());
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, unsigned char&>(unsigned char& value) {
+inline std::wstring __format_stringer<xtd::wchar, unsigned char&>(unsigned char& value) {
   return xtd::to_string(value, L"G", std::locale());
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, short&>(short& value) {
+inline std::wstring __format_stringer<xtd::wchar, short&>(short& value) {
   return xtd::to_string(value, L"G", std::locale());
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, unsigned short&>(unsigned short& value) {
+inline std::wstring __format_stringer<xtd::wchar, unsigned short&>(unsigned short& value) {
   return xtd::to_string(value, L"G", std::locale());
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, int&>(int& value) {
+inline std::wstring __format_stringer<xtd::wchar, int&>(int& value) {
   return xtd::to_string(value, L"G", std::locale());
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, unsigned int&>(unsigned int& value) {
+inline std::wstring __format_stringer<xtd::wchar, unsigned int&>(unsigned int& value) {
   return xtd::to_string(value, L"G", std::locale());
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, long&>(long& value) {
+inline std::wstring __format_stringer<xtd::wchar, long&>(long& value) {
   return xtd::to_string(value, L"G", std::locale());
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, unsigned long&>(unsigned long& value) {
+inline std::wstring __format_stringer<xtd::wchar, unsigned long&>(unsigned long& value) {
   return xtd::to_string(value, L"G", std::locale());
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, long long&>(long long& value) {
+inline std::wstring __format_stringer<xtd::wchar, long long&>(long long& value) {
   return xtd::to_string(value, L"G", std::locale());
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, unsigned long long&>(unsigned long long& value) {
+inline std::wstring __format_stringer<xtd::wchar, unsigned long long&>(unsigned long long& value) {
   return xtd::to_string(value, L"G", std::locale());
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, float&>(float& value) {
+inline std::wstring __format_stringer<xtd::wchar, float&>(float& value) {
   return xtd::to_string(value, L"G", std::locale());
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, double&>(double& value) {
+inline std::wstring __format_stringer<xtd::wchar, double&>(double& value) {
   return xtd::to_string(value, L"G", std::locale());
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, long double&>(long double& value) {
+inline std::wstring __format_stringer<xtd::wchar, long double&>(long double& value) {
   return xtd::to_string(value, L"G", std::locale());
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, std::chrono::system_clock::time_point&> (std::chrono::system_clock::time_point& value) {
+inline std::wstring __format_stringer<xtd::wchar, std::chrono::system_clock::time_point&> (std::chrono::system_clock::time_point& value) {
   return xtd::to_string(value, L"G", std::locale());
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, std::tm&> (tm& value) {
+inline std::wstring __format_stringer<xtd::wchar, std::tm&> (tm& value) {
   return xtd::to_string(value, L"G", std::locale());
 }
 /// @endcond
