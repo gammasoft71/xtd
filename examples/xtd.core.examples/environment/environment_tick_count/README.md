@@ -1,6 +1,6 @@
 # environment_tick_count
 
-Shows how to use [xtd::environment::tick_count](../../../../src/xtd.core/include/xtd/environment.h) method.
+Shows how to use [xtd::environment::tick_count](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#a07572149363f8941095c1d6f6e40e6c5) method.
 
 ## Sources
 

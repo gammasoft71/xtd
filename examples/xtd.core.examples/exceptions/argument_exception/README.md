@@ -1,6 +1,6 @@
 # argument_exception
 
-Shows how to use [argument_exception](../../../../src/xtd.core/include/xtd/argument_exception.h) exception.
+Shows how to use [argument_exception](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1argument__exception.html) exception.
 
 ## Sources
 

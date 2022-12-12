@@ -1,6 +1,6 @@
 # interlocked_decrement
 
-Shows how to use [xtd::threading::interlocked::decrement](../../../../src/xtd.core/include/xtd/threading/interlocked.h) and [xtd::threading::interlocked::increment](../../../../src/xtd.core/include/xtd/threading/interlocked.h) methods.
+Shows how to use [xtd::threading::interlocked::decrement](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1threading_1_1interlocked.html#a4f4545f0c5952db7df8ff6fc4aa41067) and [xtd::threading::interlocked::increment](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1threading_1_1interlocked.html#acf60d0d23279ede3b23ddee39265aadd) methods.
 
 ## Sources
 

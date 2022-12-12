@@ -1,6 +1,6 @@
 # trace
 
-Shows how to use [trace](../../../../src/xtd.core/include/xtd/diagnostics/trace.h) class.
+Shows how to use [trace](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1trace.html) class.
 
 ## Sources
 

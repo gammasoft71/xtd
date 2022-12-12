@@ -2,20 +2,20 @@
 
 [This folder](.) contains others examples used by [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/) and more.
 
-* [bit_converter](bit_converter/README.md) shows hows how to use [xtd::bit_converter](../../../src/xtd.core/include/xtd/bit_converter.h) class.
-* [console_background_color2](console_background_color2/README.md) shows how to use [xtd::console::background_color](../../../src/xtd.core/include/xtd/console.h) method.
-* [console_background_color3](console_background_color3/README.md) shows how to use [xtd::console::background_color](../../../src/xtd.core/include/xtd/console.h) method.
-* [console_beep2](console_beep2/README.md) shows how to use [xtd::console::beep](../../../src/xtd.core/include/xtd/console.h) method.
-* [console_beep3](console_beep3/README.md) shows how to use [xtd::console::beep](../../../src/xtd.core/include/xtd/console.h) method.
-* [console_color2](console_color2/README.md) shows how to use [xtd::console::background_color](../../../src/xtd.core/include/xtd/console.h) and [xtd::console::foreground_color](../../../src/xtd.core/include/xtd/console.h) methods.
-* [console_color3](console_color3/README.md) shows how to use [xtd::console::background_color](../../../src/xtd.core/include/xtd/console.h) and [xtd::console::foreground_color](../../../src/xtd.core/include/xtd/console.h) methods.
-* [console_color4](console_color4/README.md) shows how to use [xtd::console::background_color](../../../src/xtd.core/include/xtd/console.h) and [xtd::console::foreground_color](../../../src/xtd.core/include/xtd/console.h) methods.
-* [console_read_line](console_read_line/README.md) shows how to use [xtd::console::in](../../../src/xtd.core/include/xtd/console.h) stream.
-* [console_song2](console_song2/README.md) shows how to use [xtd::beep](../../../src/xtd.core/include/xtd/beep.h) class.
-* [console_song3](console_song3/README.md) shows how to use [xtd::beep](../../../src/xtd.core/include/xtd/beep.h) class.
-* [fibonacci_series](fibonacci_series/README.md) shows how to use [xtd::console](../../../src/xtd.core/include/xtd/console.h) and [xtd::ustring](../../../src/xtd.core/include/xtd/ustring.h) classes.
+* [bit_converter](bit_converter/README.md) shows hows how to use [xtd::bit_converter](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1bit__converter.html) class.
+* [console_background_color2](console_background_color2/README.md) shows how to use [xtd::console::background_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1background__color.html) method.
+* [console_background_color3](console_background_color3/README.md) shows how to use [xtd::console::background_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1background__color.html) method.
+* [console_beep2](console_beep2/README.md) shows how to use [xtd::console::beep](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#aab2e161c3a72cb14f808ed40e2b59ef2) method.
+* [console_beep3](console_beep3/README.md) shows how to use [xtd::console::beep](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#aab2e161c3a72cb14f808ed40e2b59ef2) method.
+* [console_color2](console_color2/README.md) shows how to use [xtd::console::background_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1background__color.html) and [xtd::console::foreground_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1foreground__color.html) methods.
+* [console_color3](console_color3/README.md) shows how to use [xtd::console::background_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1background__color.html) and [xtd::console::foreground_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1foreground__color.html) methods.
+* [console_color4](console_color4/README.md) shows how to use [xtd::console::background_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1background__color.html) and [xtd::console::foreground_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1foreground__color.html) methods.
+* [console_read_line](console_read_line/README.md) shows how to use [xtd::console::in](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#a7c103233b3e74cb63538b48616b7fd02) stream.
+* [console_song2](console_song2/README.md) shows how to use [xtd::beep](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1beep.html) class.
+* [console_song3](console_song3/README.md) shows how to use [xtd::beep](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1beep.html) class.
+* [fibonacci_series](fibonacci_series/README.md) shows how to use [xtd::console](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html) and [xtd::ustring](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html) classes.
 * [hello_world_console2](hello_world_console2/README.md) The same classic first application "Hello World" on the standard output stream with another style.
 * [hello_world_console3](hello_world_console3/README.md) The same classic first application "Hello World" on the standard output stream with another style.
 * [hello_world_diagnostics2](hello_world_diagnostics2/README.md) The same classic first application "Hello World" on the debug output stream with another style.
 * [hello_world_environment2](hello_world_environment2/README.md) The same classic first application "Hello World" environment with another style.
-* [wconsole2](wconsole2/README.md) shows how to use [xtd::wconsole](../../../src/xtd.core/include/xtd/console.h) class.
+* [wconsole2](wconsole2/README.md) shows how to use [xtd::wconsole](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html) class.

@@ -1,6 +1,6 @@
 # date_time
 
-Shows how to use [xtd::date_time](../../../../src/xtd.core/include/xtd/date_time.h) class.
+Shows how to use [xtd::date_time](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html) class.
 
 # Sources
 

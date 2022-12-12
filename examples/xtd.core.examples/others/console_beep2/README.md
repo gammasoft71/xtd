@@ -1,6 +1,6 @@
 # console_beep2
 
-Shows how to use [xtd::console::beep](../../../../src/xtd.core/include/xtd/basic_console.h) method.
+Shows how to use [xtd::console::beep](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#aab2e161c3a72cb14f808ed40e2b59ef2) method.
 
 ## Sources
 

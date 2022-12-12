@@ -1,6 +1,6 @@
 # random1
 
-Shows how to use [xtd::random::next_bytes](../../../../src/xtd.core/include/xtd/basic_console.h) method.
+Shows how to use [xtd::random::next_bytes](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1random.html#a1075ee5aac60100ca2c6e60d2ac065d1) method.
 
 ## Sources
 
