@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains namespace aliases.
-/// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #undef linux
 

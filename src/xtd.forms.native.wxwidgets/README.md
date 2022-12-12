@@ -11,4 +11,4 @@ See [wxWidgets downloads](https://www.wxwidgets.org/downloads/) to install [wxWi
 
 ______________________________________________________________________________________________
 
-© 2021 Gammasoft.
+© 2022 Gammasoft.
