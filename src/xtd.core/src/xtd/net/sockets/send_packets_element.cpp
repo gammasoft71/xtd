@@ -4,13 +4,13 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::net::sockets;
 
-send_packets_element::send_packets_element(const std::vector<byte_t>& buffer) : buffer_(buffer) {
+send_packets_element::send_packets_element(const std::vector<xtd::byte>& buffer) : buffer_(buffer) {
 }
 
 send_packets_element::send_packets_element(const xtd::ustring& file_path, size_t offset, size_t count, bool end_of_packet) : count_(count), end_of_packet_(end_of_packet), file_path_(file_path), offset_(offset) {
 }
 
-send_packets_element::send_packets_element(const std::vector<byte_t>& buffer, size_t offset, size_t count, bool end_of_packet) : buffer_(buffer), count_(count), end_of_packet_(end_of_packet), offset_(offset) {
+send_packets_element::send_packets_element(const std::vector<xtd::byte>& buffer, size_t offset, size_t count, bool end_of_packet) : buffer_(buffer), count_(count), end_of_packet_(end_of_packet), offset_(offset) {
 }
 
 send_packets_element::send_packets_element(const xtd::ustring& file_path, size_t offset, size_t count) : count_(count), file_path_(file_path), offset_(offset) {
@@ -19,7 +19,7 @@ send_packets_element::send_packets_element(const xtd::ustring& file_path, size_t
 send_packets_element::send_packets_element(std::ifstream& file_stream, size_t offset, size_t count, bool end_of_packet) : count_(count), end_of_packet_(end_of_packet), file_stream_(&file_stream), offset_(offset), delete_file_stream_when_destroy_(true) {
 }
 
-send_packets_element::send_packets_element(const std::vector<byte_t>& buffer, size_t offset, size_t count) : buffer_(buffer), count_(count), offset_(offset) {
+send_packets_element::send_packets_element(const std::vector<xtd::byte>& buffer, size_t offset, size_t count) : buffer_(buffer), count_(count), offset_(offset) {
 }
 
 send_packets_element::send_packets_element(const xtd::ustring& file_path) : file_path_(file_path) {
@@ -32,7 +32,7 @@ send_packets_element::~send_packets_element() {
   if (delete_file_stream_when_destroy_ && file_stream_) delete file_stream_;
 }
 
-vector<byte_t> send_packets_element::buffer() const noexcept {
+vector<xtd::byte> send_packets_element::buffer() const noexcept {
   return buffer_;
 }
 

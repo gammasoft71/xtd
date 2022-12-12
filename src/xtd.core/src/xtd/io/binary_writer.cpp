@@ -57,7 +57,7 @@ void binary_writer::write(bool value) {
   write(bit_converter::get_bytes(value));
 }
 
-void binary_writer::write(byte_t value) {
+void binary_writer::write(xtd::byte value) {
   if (!stream_) throw io_exception(csf_);
   stream_->put(static_cast<char>(value));
 }
@@ -67,11 +67,11 @@ void binary_writer::write(char value) {
   stream_->put(value);
 }
 
-void binary_writer::write(const std::vector<byte_t>& buffer) {
+void binary_writer::write(const std::vector<xtd::byte>& buffer) {
   write(buffer, 0, buffer.size());
 }
 
-void binary_writer::write(const std::vector<byte_t>& buffer, size_t index, size_t count) {
+void binary_writer::write(const std::vector<xtd::byte>& buffer, size_t index, size_t count) {
   if (!stream_) throw io_exception(csf_);
   if (index + count > buffer.size()) throw argument_exception(csf_);
   for (size_t i = index; i < (index + count); ++i)

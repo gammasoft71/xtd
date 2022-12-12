@@ -54,7 +54,7 @@ namespace xtd {
     /// @}
     
     /// @cond
-    enum_object(byte_t value) : value_(to_enum(value)) {}
+    enum_object(xtd::byte value) : value_(to_enum(value)) {}
     enum_object(sbyte_t value) : value_(to_enum(value)) {}
     enum_object(int16 value) : value_(to_enum(value)) {}
     enum_object(int32 value) : value_(to_enum(value)) {}
@@ -98,8 +98,8 @@ namespace xtd {
     }
         
     /// @brief Converts this instance to byte.
-    /// @return A new byte_t object converted from this instance.
-    byte_t to_byte() const noexcept {return static_cast<byte_t>(value_);}
+    /// @return A new xtd::byte object converted from this instance.
+    xtd::byte to_byte() const noexcept {return static_cast<xtd::byte>(value_);}
     
     /// @brief Converts this instance to int16.
     /// @return A new to_int16 object converted from this instance.
@@ -305,11 +305,11 @@ namespace xtd {
       return enum_object<enum_t>().entries();
     }
     
-    /// @brief Retrieves an array of the std::pair<byte_t, xtd::ustring> of the constants in a specified enumeration.
+    /// @brief Retrieves an array of the std::pair<xtd::byte, xtd::ustring> of the constants in a specified enumeration.
     /// @return A xtd::ustring array of the values and names of the constants in enumType.
     template<typename enum_t>
-    static xtd::enum_collection<byte_t> get_entries_as_byte() noexcept {
-      xtd::enum_collection<byte_t> entries;
+    static xtd::enum_collection<xtd::byte> get_entries_as_byte() noexcept {
+      xtd::enum_collection<xtd::byte> entries;
       for (auto entry : enum_object<enum_t>().entries())
         entries.emplace_back(enum_object<enum_t>(entry.first).to_byte(), entry.second);
       return entries;
@@ -433,11 +433,11 @@ namespace xtd {
     }
     
     /// @brief Retrieves an array of the values of the constants in a specified enumeration.
-    /// @return Array<byte_t> An array that contains the values of the constants in enumType.
+    /// @return Array<xtd::byte> An array that contains the values of the constants in enumType.
     /// @exception xtd::argument_exception The value is ! a value of enumType.
     template<typename enum_t>
-    static std::vector<byte_t> get_values_as_byte() noexcept {
-      std::vector<byte_t> values;
+    static std::vector<xtd::byte> get_values_as_byte() noexcept {
+      std::vector<xtd::byte> values;
       for (auto entry : enum_object<enum_t>().entries())
         values.push_back(enum_object<enum_t>(entry.first).to_byte());
       return values;
@@ -550,10 +550,10 @@ namespace xtd {
     }
     
     /// @brief Converts this instance to byte.
-    /// @return A new byte_t object converted from this instance.
+    /// @return A new xtd::byte object converted from this instance.
     /// @param value The value to convert.
     template<typename enum_t>
-    static byte_t to_byte(enum_t value) noexcept {return enum_object<enum_t>(value).to_byte();}
+    static xtd::byte to_byte(enum_t value) noexcept {return enum_object<enum_t>(value).to_byte();}
     
     /// @brief Converts this instance to int16.
     /// @param value The value to convert.

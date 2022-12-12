@@ -84,12 +84,12 @@ namespace xtd {
         /// @return A Byte array that represents the data buffer to use with an asynchronous socket method.
         /// @remarks This property gets the data buffer currently associated with the xtd::net::sockets::socket_async_event_args instance. To set the buffer, the xtd::net::sockets::socket_async_event_args::set_buffer method must be used.
         /// @remarks This property is used with the xtd::net::sockets::socket::accept_async, xtd::net::sockets::socket::connect_async, xtd::net::sockets::socket::receive_async, xtd::net::sockets::socket::receive_from_async, xtd::net::sockets::socket::receive_message_from_async, xtd::net::sockets::socket::send_async, and xtd::net::sockets::socket::send_to_async methods.
-        const std::vector<byte_t>& buffer() const noexcept;
+        const std::vector<xtd::byte>& buffer() const noexcept;
         /// @brief Gets the data buffer to use with an asynchronous socket method.
         /// @return A Byte array that represents the data buffer to use with an asynchronous socket method.
         /// @remarks This property gets the data buffer currently associated with the xtd::net::sockets::socket_async_event_args instance. To set the buffer, the xtd::net::sockets::socket_async_event_args::set_buffer method must be used.
         /// @remarks This property is used with the xtd::net::sockets::socket::accept_async, xtd::net::sockets::socket::connect_async, xtd::net::sockets::socket::receive_async, xtd::net::sockets::socket::receive_from_async, xtd::net::sockets::socket::receive_message_from_async, xtd::net::sockets::socket::send_async, and xtd::net::sockets::socket::send_to_async methods.
-        std::vector<byte_t>& buffer() noexcept;
+        std::vector<xtd::byte>& buffer() noexcept;
         /// @}
         
         /// @name Methods
@@ -97,7 +97,7 @@ namespace xtd {
         /// @{
         /// @brief Sets the region of memory to use as a buffer with an asynchronous socket method.
         /// @param memory_buffer The region of memory to use as a buffer with an asynchronous socket method.
-        void set_buffer(const std::vector<byte_t>& memory_buffer);
+        void set_buffer(const std::vector<xtd::byte>& memory_buffer);
         
         /// @brief Sets the data buffer to use with an asynchronous socket method.
         /// @param offset The offset, in bytes, in the data buffer where the operation starts.
@@ -114,7 +114,7 @@ namespace xtd {
         /// @exception xtd::argument_out_of_range_exception An argument was out of range. This exception occurs if the offset parameter is greater than the length of the array in the xtd::net::sockets::socket_async_event_args::buffer property. This exception also occurs if the count parameter is greater than the length of the array in the xtd::net::sockets::socket_async_event_args::buffer property minus the offset parameter.
         /// @remarks The offset and count parameters can't be negative numbers. The combination of the offset and count parameters must be in bounds of the data array in the buffer parameter.
         /// @remarks This method sets the xtd::net::sockets::socket_async_event_args::buffer property to the buffer parameter, the xtd::net::sockets::socket_async_event_args::count property to the count parameter, and the xtd::net::sockets::socket_async_event_args::offset property to the offset parameter.
-        void set_buffer(const std::vector<byte_t>& buffer, size_t offset, size_t count);
+        void set_buffer(const std::vector<xtd::byte>& buffer, size_t offset, size_t count);
         /// @}
         
         /// @name Events
@@ -145,15 +145,15 @@ namespace xtd {
       private:
         friend socket;
         xtd::net::sockets::socket accept_socket_;
-        std::vector<byte_t> buffer_;
-        std::vector<std::vector<byte_t>> buffer_list_;
+        std::vector<xtd::byte> buffer_;
+        std::vector<std::vector<xtd::byte>> buffer_list_;
         size_t bytes_transferred_ = 0;
         std::unique_ptr<xtd::system_exception> connect_by_name_error_;
         xtd::net::sockets::socket connect_socket_;
         size_t count_ = 0;
         bool disconnect_reuse_socket_ = false;
         xtd::net::sockets::socket_async_operation last_operation = xtd::net::sockets::socket_async_operation::none;
-        std::vector<byte_t> memory_buffer_;
+        std::vector<xtd::byte> memory_buffer_;
         size_t offset_ = 0;
         xtd::net::sockets::ip_packet_information receive_message_from_packet_info_;
         std::unique_ptr<xtd::net::end_point> remote_end_point_;

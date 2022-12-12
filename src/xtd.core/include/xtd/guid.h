@@ -39,18 +39,18 @@ namespace xtd {
     /// @brief Initializes a new instance of the xtd::guid structure by using the specified array of bytes.
     /// @param bytes A 16-element byte array containing values with which to initialize the GUID.
     /// @exception xtd::argument_exception bytes is not 16 bytes long.
-    explicit guid(const std::vector<byte_t>& data);
+    explicit guid(const std::vector<xtd::byte>& data);
     /// @brief Initializes a new instance of the xtd::guid structure by using the specified array of bytes.
     /// @param bytes A 16-element byte array containing values with which to initialize the GUID.
     /// @exception xtd::argument_exception bytes is not 16 bytes long.
-    explicit guid(const std::initializer_list<byte_t>& data);
+    explicit guid(const std::initializer_list<xtd::byte>& data);
     /// @brief Initializes a new instance of the xtd::guid structure by using the specified integers and byte array.
     /// @param a The first 4 bytes of the GUID.
     /// @param b The next 2 bytes of the GUID.
     /// @param c The next 2 bytes of the GUID.
     /// @param d The remaining 8 bytes of the GUID.
     /// @exception xtd::argument_exception bytes is not 8 bytes long.
-    explicit guid(int32 a, int32 b, int32 c, const std::vector<byte_t>& d);
+    explicit guid(int32 a, int32 b, int32 c, const std::vector<xtd::byte>& d);
     /// @brief Initializes a new instance of the xtd::guid structure by using the specified integers and bytes.
     /// @param a The first 4 bytes of the GUID.
     /// @param b The next 2 bytes of the GUID.
@@ -63,7 +63,7 @@ namespace xtd {
     /// @param i The next byte of the GUID.
     /// @param j The next byte of the GUID.
     /// @param k The next byte of the GUID.
-    guid(int32 a, int16 b, int16 c, byte_t d, byte_t e, byte_t f, byte_t g, byte_t h, byte_t i, byte_t j, byte_t k) noexcept;
+    guid(int32 a, int16 b, int16 c, xtd::byte d, xtd::byte e, xtd::byte f, xtd::byte g, xtd::byte h, xtd::byte i, xtd::byte j, xtd::byte k) noexcept;
     /// @brief Initializes a new instance of the xtd::guid structure by using the specified uint32_integers and bytes.
     /// @param a The first 4 bytes of the GUID.
     /// @param b The next 2 bytes of the GUID.
@@ -76,7 +76,7 @@ namespace xtd {
     /// @param i The next byte of the GUID.
     /// @param j The next byte of the GUID.
     /// @param k The next byte of the GUID.
-    guid(uint32 a, uint16_t b, uint16_t c, byte_t d, byte_t e, byte_t f, byte_t g, byte_t h, byte_t i, byte_t j, byte_t k) noexcept;
+    guid(uint32 a, uint16_t b, uint16_t c, xtd::byte d, xtd::byte e, xtd::byte f, xtd::byte g, xtd::byte h, xtd::byte i, xtd::byte j, xtd::byte k) noexcept;
     /// @brief Initializes a new instance of the xtd::guid structure by using the value represented by the specified string.
     /// @param guid A string that contains a GUID in one of the following formats ("d" represents a hexadecimal digit whose case is ignored):
     /// 32 contiguous digits:
@@ -132,7 +132,7 @@ namespace xtd {
     
     /// @brief Returns a 16-element byte array that contains the value of this instance.
     /// @return A 16-element byte array.
-    const std::vector<byte_t>& to_byte_array() const noexcept;
+    const std::vector<xtd::byte>& to_byte_array() const noexcept;
     
     /// @brief Returns a string representation of the value of this instance in registry format.
     /// @return The value of this xtd::guid, formatted by using the "D" format specifier as follows:
@@ -161,7 +161,7 @@ namespace xtd {
     /// @}
     
   private:
-    std::vector<byte_t> data_ = std::vector<byte_t>(16);
+    std::vector<xtd::byte> data_ = std::vector<xtd::byte>(16);
   };
   
   /// @cond

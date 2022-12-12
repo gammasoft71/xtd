@@ -14,11 +14,11 @@ socket_information& socket_information::options(xtd::net::sockets::socket_inform
   return *this;
 }
 
-const std::vector<byte_t>& socket_information::protocol_information() const noexcept {
+const std::vector<xtd::byte>& socket_information::protocol_information() const noexcept {
   return protocol_information_;
 }
 
-socket_information& socket_information::protocol_information(const std::vector<byte_t>& value) noexcept {
+socket_information& socket_information::protocol_information(const std::vector<xtd::byte>& value) noexcept {
   protocol_information_ = value;
   return *this;
 }

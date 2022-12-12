@@ -77,7 +77,7 @@ double math::ceiling(double value) {
   return std::ceil(value);
 }
 
-byte_t math::clamp(byte_t value, byte_t min, byte_t max) noexcept {
+xtd::byte math::clamp(xtd::byte value, xtd::byte min, xtd::byte max) noexcept {
   return std::clamp(value, min, max);
 }
 
@@ -198,7 +198,7 @@ double math::log10(double value) {
   return std::log10(value);
 }
 
-byte_t math::max(byte_t a, byte_t b) noexcept {
+xtd::byte math::max(xtd::byte a, xtd::byte b) noexcept {
   return a > b ? a : b;
 }
 
@@ -250,7 +250,7 @@ ullong_t math::max(ullong_t a, ullong_t b) noexcept {
   return a > b ? a : b;
 }
 
-byte_t math::min(byte_t a, byte_t b) noexcept {
+xtd::byte math::min(xtd::byte a, xtd::byte b) noexcept {
   return a < b ? a : b;
 }
 

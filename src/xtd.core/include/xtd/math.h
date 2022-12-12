@@ -156,7 +156,7 @@ namespace xtd {
     /// @param min The lower bound of the result.
     /// @param max The upper bound of the result.
     /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
-    static byte_t clamp(byte_t value, byte_t min, byte_t max) noexcept;
+    static xtd::byte clamp(xtd::byte value, xtd::byte min, xtd::byte max) noexcept;
     /// @brief Returns value clamped to the inclusive range of min and max.
     /// @param value The value to be clamped.
     /// @param min The lower bound of the result.
@@ -357,7 +357,7 @@ namespace xtd {
     /// @param a The first of two 8-bit unsigned integers to compare.
     /// @param b The second of two 8-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is larger.
-    static byte_t max(byte_t a, byte_t b) noexcept;
+    static xtd::byte max(xtd::byte a, xtd::byte b) noexcept;
     
     /// @brief Returns the larger of two double single.
     /// @param a The first of two double single to compare.
@@ -435,7 +435,7 @@ namespace xtd {
     /// @param a The first of two 8-bit unsigned integers to compare.
     /// @param b The second of two 8-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static byte_t min(byte_t a, byte_t b) noexcept;
+    static xtd::byte min(xtd::byte a, xtd::byte b) noexcept;
     
     /// @brief Returns the smaller of two double single.
     /// @param a The first of two double single to compare.

@@ -53,7 +53,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::net::sockets::send_packets_element class using the specified buffer.
         /// @param buffer A byte array of data to send using the xtd::net::sockets::socket::send_packets_async method.
         /// @remarks The xtd::net::sockets::send_packets_element class is used with the xtd::net::sockets::socket::socket_async_event_args::send_packets_elements property to get or set a data buffer or file to be sent using the xtd::net::sockets::socket::socket::send_packets_async method.
-        explicit send_packets_element(const std::vector<byte_t>& buffer);
+        explicit send_packets_element(const std::vector<xtd::byte>& buffer);
         
         /// @brief Initializes a new instance of the xtd::net::sockets::send_packets_element class using the specified range of the file with an option to combine this element with the next element in a single send request from the sockets layer to the transport.
         /// @param file_path The filename of the file to be transmitted using the xtd::net::sockets::socket::send_packets_async method.
@@ -70,7 +70,7 @@ namespace xtd {
         /// @param count The number bytes to send starting from the offset parameter. If count is zero, no bytes are sent.
         /// @param end_of_packet Specifies that this element should not be combined with the next element in a single send request from the sockets layer to the transport. This flag is used for granular control of the content of each message on a datagram or message-oriented socket.
         /// @remarks The xtd::net::sockets::send_packets_element class is used with the xtd::net::sockets::socket::socket_async_event_args::send_packets_elements property to get or set a data buffer or file to be sent using the xtd::net::sockets::socket::socket::send_packets_async method.
-        send_packets_element(const std::vector<byte_t>& buffer, size_t offset, size_t count, bool end_of_packet);
+        send_packets_element(const std::vector<xtd::byte>& buffer, size_t offset, size_t count, bool end_of_packet);
         
         /// @brief Initializes a new instance of the xtd::net::sockets::send_packets_element class using the specified range of the file with an option to combine this element with the next element in a single send request from the sockets layer to the transport.
         /// @param file_path The filename of the file to be transmitted using the xtd::net::sockets::socket::send_packets_async method.
@@ -93,7 +93,7 @@ namespace xtd {
         /// @param offset The offset, in bytes, from the beginning of the buffer to the location in the buffer to start sending the data specified in the buffer parameter.
         /// @param count The number bytes to send starting from the offset parameter. If count is zero, no bytes are sent.
         /// @remarks The xtd::net::sockets::send_packets_element class is used with the xtd::net::sockets::socket::socket_async_event_args::send_packets_elements property to get or set a data buffer or file to be sent using the xtd::net::sockets::socket::socket::send_packets_async method.
-        send_packets_element(const std::vector<byte_t>& buffer, size_t offset, size_t count);
+        send_packets_element(const std::vector<xtd::byte>& buffer, size_t offset, size_t count);
         
         /// @brief Initializes a new instance of the xtd::net::sockets::send_packets_element class using the specified file.
         /// @param file_path The filename of the file to be transmitted using the xtd::net::sockets::socket::send_packets_async method.
@@ -118,7 +118,7 @@ namespace xtd {
         /// @brief Gets the buffer to be sent if the xtd::net::sockets::send_packets_element object was initialized with a buffer parameter.
         /// @return The byte buffer to send if the xtd::net::sockets::send_packets_element object was initialized with a buffer parameter.
         /// @remarks The default value for the xtd::net::sockets::send_packets_element::buffer property is empty if the xtd::net::sockets::send_packets_element object was not initialized with a buffer parameter.
-        std::vector<byte_t> buffer() const noexcept;
+        std::vector<xtd::byte> buffer() const noexcept;
         
         /// @brief Gets the count of bytes to be sent.
         /// @return The count of bytes to send if the xtd::net::sockets::send_packets_element class was initialized with a count parameter.
@@ -149,7 +149,7 @@ namespace xtd {
         /// @}
         
       private:
-        std::vector<byte_t> buffer_;
+        std::vector<xtd::byte> buffer_;
         size_t count_ = 0;
         bool end_of_packet_ = false;
         xtd::ustring file_path_;

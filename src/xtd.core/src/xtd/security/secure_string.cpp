@@ -9,16 +9,16 @@ using namespace xtd;
 using namespace xtd::security;
 
 namespace {
-  vector<byte_t> encrypt(const xtd::guid& guid, const char value[], size_t length) {
+  vector<xtd::byte> encrypt(const xtd::guid& guid, const char value[], size_t length) {
     // https://kylewbanks.com/blog/Simple-XOR-Encryption-Decryption-in-Cpp
     auto key = guid.to_string("D");
-    vector<byte_t> result;
+    vector<xtd::byte> result;
     for (auto index = 0U; index < length; ++index)
       result.push_back(value[index] != key[index % key.size()] ? value[index] ^ key[index % key.size()] : value[index]);
     return result;
   }
   
-  ustring decrypt(const xtd::guid& guid, const byte_t value[], size_t length) {
+  ustring decrypt(const xtd::guid& guid, const xtd::byte value[], size_t length) {
     // https://kylewbanks.com/blog/Simple-XOR-Encryption-Decryption-in-Cpp
     return ustring(reinterpret_cast<const char*>(encrypt(guid, reinterpret_cast<const char*>(value), length).data()), length);
   }

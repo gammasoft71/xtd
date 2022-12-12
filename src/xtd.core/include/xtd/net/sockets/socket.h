@@ -487,7 +487,7 @@ namespace xtd {
         /// @remarks The TTL value may be set to a value from 0 to 255. When this property is not set, the default TTL value for a socket is 32.
         /// @remarks Setting this property on a Transmission Control Protocol (TCP) socket is ignored by the TCP/IP stack if a successful connection has been established using the socket.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        byte_t ttl() const;
+        xtd::byte ttl() const;
         /// @brief Sets a value that specifies the Time To Live (TTL) value of Internet Protocol (IP) packets sent by the xtd::net::sockets::socket.
         /// @param value The TTL value.
         /// @return This current instance.
@@ -498,7 +498,7 @@ namespace xtd {
         /// @remarks The TTL value may be set to a value from 0 to 255. When this property is not set, the default TTL value for a socket is 32.
         /// @remarks Setting this property on a Transmission Control Protocol (TCP) socket is ignored by the TCP/IP stack if a successful connection has been established using the socket.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        socket& ttl(byte_t value);
+        socket& ttl(xtd::byte value);
         /// @}
         
         /// @name Methods
@@ -626,7 +626,7 @@ namespace xtd {
         std::shared_ptr<xtd::iasync_result> begin_disconnect(bool reuse_socket, xtd::async_callback callback, const std::any& state);
         
         /// @brief Begins to asynchronously receive data from a connected xtd::net::sockets::socket::socket.
-        /// @param buffer An array of type byte_t that is the storage location for the received data.
+        /// @param buffer An array of type xtd::byte that is the storage location for the received data.
         /// @param offset The zero-based position in the buffer parameter at which to store the received data.
         /// @param size The number of bytes to receive.
         /// @param socket_flags A bitwise combination of the xtd::net::sockets::socket_flags values.
@@ -642,9 +642,9 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         /// @note All I/O initiated by a given thread is canceled when that thread exits. A pending asynchronous operation can fail if the thread exits before the operation completes.
         /// @note state is an instantiation of a user-defined class.
-        std::shared_ptr<xtd::iasync_result> begin_receive(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::async_callback callback, const std::any& state);
+        std::shared_ptr<xtd::iasync_result> begin_receive(std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::async_callback callback, const std::any& state);
         /// @brief Begins to asynchronously receive data from a connected xtd::net::sockets::socket::socket.
-        /// @param buffer An array of type byte_t that is the storage location for the received data.
+        /// @param buffer An array of type xtd::byte that is the storage location for the received data.
         /// @param offset The zero-based position in the buffer parameter at which to store the received data.
         /// @param size The number of bytes to receive.
         /// @param socket_flags A bitwise combination of the xtd::net::sockets::socket_flags values.
@@ -661,10 +661,10 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         /// @note All I/O initiated by a given thread is canceled when that thread exits. A pending asynchronous operation can fail if the thread exits before the operation completes.
         /// @note state is an instantiation of a user-defined class.
-        std::shared_ptr<xtd::iasync_result> begin_receive(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error_code, xtd::async_callback callback, const std::any& state);
+        std::shared_ptr<xtd::iasync_result> begin_receive(std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error_code, xtd::async_callback callback, const std::any& state);
         
         /// @brief Begins to asynchronously receive data from a specified network device.
-        /// @param buffer An array of type byte_t that is the storage location for the received data.
+        /// @param buffer An array of type xtd::byte that is the storage location for the received data.
         /// @param offset The zero-based position in the buffer parameter at which to store the data.
         /// @param size The number of bytes to receive.
         /// @param socket_flags A bitwise combination of the xtd::net::sockets::socket_flags values.
@@ -685,10 +685,10 @@ namespace xtd {
         /// @remarks With connection-oriented sockets, xtd::net::sockets::socket::begin_receive_from will read as much data as is available up to the number of bytes specified by the size parameter.
         /// @remarks To cancel a pending xtd::net::sockets::socket::begin_receive_from, call the xtd::net::sockets::socket::socket::close method.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        std::shared_ptr<xtd::iasync_result> begin_receive_from(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state);
+        std::shared_ptr<xtd::iasync_result> begin_receive_from(std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state);
         
         /// @brief Begins to asynchronously receive the specified number of bytes of data into the specified location of the data buffer, using the specified xtd::net::sockets::socket_flags, and stores the endpoint and packet information.
-        /// @param buffer An array of type byte_t that is the storage location for the received data.
+        /// @param buffer An array of type xtd::byte that is the storage location for the received data.
         /// @param offset The zero-based position in the buffer parameter at which to store the data.
         /// @param size The number of bytes to receive.
         /// @param socket_flags A bitwise combination of the xtd::net::sockets::socket_flags values.
@@ -704,10 +704,10 @@ namespace xtd {
         /// @remarks To cancel a pending xtd::net::sockets::socket::begin_receive_message_from, call the xtd::net::sockets::socket::socket::close method.
         /// @remarks This method reads data into the buffer parameter, and captures the remote host endpoint from which the data is sent, as well as information about the received packet. For information on how to retrieve this endpoint, refer to xtd::net::sockets::socket::end_receive_from. This method is most useful if you intend to asynchronously receive connectionless datagrams from an unknown host or multiple hosts.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        std::shared_ptr<xtd::iasync_result> begin_receive_message_from(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state);
+        std::shared_ptr<xtd::iasync_result> begin_receive_message_from(std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state);
         
         /// @brief Sends data asynchronously to a connected xtd::net::sockets::socket::socket.
-        /// @param buffer An array of type byte_t that contains the data to send.
+        /// @param buffer An array of type xtd::byte that contains the data to send.
         /// @param offset The zero-based position in the buffer parameter at which to begin sending data.
         /// @param size The number of bytes to send.
         /// @param socket_flags A bitwise combination of the xtd::net::sockets::socket_flags values.
@@ -726,9 +726,9 @@ namespace xtd {
         /// @note All I/O initiated by a given thread is canceled when that thread exits. A pending asynchronous operation can fail if the thread exits before the operation completes.
         /// @note state is an instantiation of a user-defined class.
         /// @note The successful completion of a send does not indicate that the data was successfully delivered. If no buffer space is available within the transport system to hold the data to be transmitted, send will block unless the socket has been placed in nonblocking mode.
-        std::shared_ptr<xtd::iasync_result> begin_send(const std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::async_callback callback, const std::any& state);
+        std::shared_ptr<xtd::iasync_result> begin_send(const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::async_callback callback, const std::any& state);
         /// @brief Sends data asynchronously to a connected xtd::net::sockets::socket::socket.
-        /// @param buffer An array of type byte_t that contains the data to send.
+        /// @param buffer An array of type xtd::byte that contains the data to send.
         /// @param offset The zero-based position in the buffer parameter at which to begin sending data.
         /// @param size The number of bytes to send.
         /// @param socket_flags A bitwise combination of the xtd::net::sockets::socket_flags values.
@@ -748,10 +748,10 @@ namespace xtd {
         /// @note All I/O initiated by a given thread is canceled when that thread exits. A pending asynchronous operation can fail if the thread exits before the operation completes.
         /// @note state is an instantiation of a user-defined class.
         /// @note The successful completion of a send does not indicate that the data was successfully delivered. If no buffer space is available within the transport system to hold the data to be transmitted, send will block unless the socket has been placed in nonblocking mode.
-        std::shared_ptr<xtd::iasync_result> begin_send(const std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error_code, xtd::async_callback callback, const std::any& state);
+        std::shared_ptr<xtd::iasync_result> begin_send(const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error_code, xtd::async_callback callback, const std::any& state);
         
         /// @brief Sends data asynchronously to a specific remote host.
-        /// @param buffer An array of type byte_t that contains the data to send.
+        /// @param buffer An array of type xtd::byte that contains the data to send.
         /// @param offset The zero-based position in buffer at which to begin sending data.
         /// @param size The number of bytes to send.
         /// @param socket_flags A bitwise combination of the xtd::net::sockets::socket_flags values.
@@ -770,7 +770,7 @@ namespace xtd {
         /// @remarks If you want to send data to a broadcast address, you must first call the xtd::net::sockets::socket::set_socket_option method and set the socket option to xtd::net::sockets::socket::socket_option_name::broadcast. -You must also be sure that the size of your buffer does not exceed the maximum packet size of the underlying service provider. If it does, the datagram will not be sent and xtd::net::sockets::socket::end_send_to will throw a xtd::net::sockets::socket_exception.
         /// @remarks If you specify the xtd::net::sockets::socket_flags::dont_route flag as the socket_flags parameter, the data you are sending will not be routed.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        std::shared_ptr<xtd::iasync_result> begin_send_to(const std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state);
+        std::shared_ptr<xtd::iasync_result> begin_send_to(const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state);
         
         /// @brief Associates a xtd::net::sockets::socket with a local endpoint.
         /// @param localEndPoint The local xtd::net::sockets::end_point to associate with the xtd::net::sockets::socket.
@@ -1101,7 +1101,7 @@ namespace xtd {
         /// @remarks If you are using a connection-oriented xtd::net::sockets::socket, the xtd::net::sockets::socket::receive method will read as much data as is available, up to the size of the buffer. If the remote host shuts down the xtd::net::sockets::socket connection with the xtd::net::sockets::socket::shutdown method, and all available data has been received, the xtd::net::sockets::socket::receive method will complete immediately and return zero bytes.
         /// @remarks If you are using a connectionless xtd::net::sockets::socket, xtd::net::sockets::socket::receive will read the first queued datagram from the destination address you specify in the xtd::net::sockets::socket::connect method. If the datagram you receive is larger than the size of the buffer parameter, buffer gets filled with the first part of the message, the excess data is lost and a xtd::net::sockets::socket::socket_exception is thrown.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        size_t receive(std::vector<byte_t>& buffer);
+        size_t receive(std::vector<xtd::byte>& buffer);
         
         /// @brief Receives data from a bound xtd::net::sockets::socket into a receive buffer, using the specified xtd::net::sockets::socket_flags.
         /// @param buffer An array of type byte that is the storage location for the received data.
@@ -1116,7 +1116,7 @@ namespace xtd {
         /// @remarks If you are using a connection-oriented xtd::net::sockets::socket, the xtd::net::sockets::socket::receive method will read as much data as is available, up to the size of the buffer. If the remote host shuts down the xtd::net::sockets::socket connection with the xtd::net::sockets::socket::shutdown method, and all available data has been received, the xtd::net::sockets::socket::receive method will complete immediately and return zero bytes.
         /// @remarks If you are using a connectionless xtd::net::sockets::socket, xtd::net::sockets::socket::receive will read the first queued datagram from the destination address you specify in the xtd::net::sockets::socket::connect method. If the datagram you receive is larger than the size of the buffer parameter, buffer gets filled with the first part of the message, the excess data is lost and a xtd::net::sockets::socket::socket_exception is thrown.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        size_t receive(std::vector<byte_t>& buffer, xtd::net::sockets::socket_flags socket_flags);
+        size_t receive(std::vector<xtd::byte>& buffer, xtd::net::sockets::socket_flags socket_flags);
         
         /// @brief Receives the specified number of bytes of data from a bound xtd::net::sockets::socket into a receive buffer, using the specified xtd::net::sockets::socket_flags.
         /// @param buffer An array of type byte that is the storage location for the received data.
@@ -1133,7 +1133,7 @@ namespace xtd {
         /// @remarks If you are using a connection-oriented xtd::net::sockets::socket, the xtd::net::sockets::socket::receive method will read as much data as is available, up to the size of the buffer. If the remote host shuts down the xtd::net::sockets::socket connection with the xtd::net::sockets::socket::shutdown method, and all available data has been received, the xtd::net::sockets::socket::receive method will complete immediately and return zero bytes.
         /// @remarks If you are using a connectionless xtd::net::sockets::socket, xtd::net::sockets::socket::receive will read the first queued datagram from the destination address you specify in the xtd::net::sockets::socket::connect method. If the datagram you receive is larger than the size of the buffer parameter, buffer gets filled with the first part of the message, the excess data is lost and a xtd::net::sockets::socket::socket_exception is thrown.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        size_t receive(std::vector<byte_t>& buffer, size_t size, xtd::net::sockets::socket_flags socket_flags);
+        size_t receive(std::vector<xtd::byte>& buffer, size_t size, xtd::net::sockets::socket_flags socket_flags);
         
         /// @brief Receives the specified number of bytes from a bound xtd::net::sockets::socket into the specified offset position of the receive buffer, using the specified xtd::net::sockets::socket_flags.
         /// @param buffer An array of type byte that is the storage location for the received data.
@@ -1150,7 +1150,7 @@ namespace xtd {
         /// @remarks If you are using a connection-oriented xtd::net::sockets::socket, the xtd::net::sockets::socket::receive method will read as much data as is available, up to the size of the buffer. If the remote host shuts down the xtd::net::sockets::socket connection with the xtd::net::sockets::socket::shutdown method, and all available data has been received, the xtd::net::sockets::socket::receive method will complete immediately and return zero bytes.
         /// @remarks If you are using a connectionless xtd::net::sockets::socket, xtd::net::sockets::socket::receive will read the first queued datagram from the destination address you specify in the xtd::net::sockets::socket::connect method. If the datagram you receive is larger than the size of the buffer parameter, buffer gets filled with the first part of the message, the excess data is lost and a xtd::net::sockets::socket::socket_exception is thrown.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        size_t receive(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags);
+        size_t receive(std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags);
         
         /// @brief Receives the specified number of bytes from a bound xtd::net::sockets::socket into the specified offset position of the receive buffer, using the specified xtd::net::sockets::socket_flags.
         /// @param buffer An array of type byte that is the storage location for the received data.
@@ -1167,7 +1167,7 @@ namespace xtd {
         /// @remarks If you are using a connection-oriented xtd::net::sockets::socket, the xtd::net::sockets::socket::receive method will read as much data as is available, up to the size of the buffer. If the remote host shuts down the xtd::net::sockets::socket connection with the xtd::net::sockets::socket::shutdown method, and all available data has been received, the xtd::net::sockets::socket::receive method will complete immediately and return zero bytes.
         /// @remarks If you are using a connectionless xtd::net::sockets::socket, xtd::net::sockets::socket::receive will read the first queued datagram from the destination address you specify in the xtd::net::sockets::socket::connect method. If the datagram you receive is larger than the size of the buffer parameter, buffer gets filled with the first part of the message, the excess data is lost and a xtd::net::sockets::socket::socket_exception is thrown.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        size_t receive(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error);
+        size_t receive(std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error);
         
         /// @brief Receives data from a bound xtd::net::sockets::socket into a receive buffer.
         /// @param buffer An array of type byte that is the storage location for the received data.
@@ -1184,7 +1184,7 @@ namespace xtd {
         /// @remarks With connection-oriented sockets, xtd::net::sockets::socket::receive_from will read as much data as is available up to the size of buffer. If the remote host shuts down the xtd::net::sockets::socket connection with the xtd::net::sockets::socket::socket::shutdown method, and all available data has been received, the xtd::net::sockets::socket::receive_from method will complete immediately and return zero bytes.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         /// @note The xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::socket::receive_from needs to match the xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::sockets::socket::send_to.
-        size_t receive_from(std::vector<byte_t>& buffer, xtd::net::end_point& remote_end_point);
+        size_t receive_from(std::vector<xtd::byte>& buffer, xtd::net::end_point& remote_end_point);
         
         /// @brief Receives data from a bound xtd::net::sockets::socket into a receive buffer.
         /// @param buffer An array of type byte that is the storage location for the received data.
@@ -1202,7 +1202,7 @@ namespace xtd {
         /// @remarks With connection-oriented sockets, xtd::net::sockets::socket::receive_from will read as much data as is available up to the size of buffer. If the remote host shuts down the xtd::net::sockets::socket connection with the xtd::net::sockets::socket::socket::shutdown method, and all available data has been received, the xtd::net::sockets::socket::receive_from method will complete immediately and return zero bytes.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         /// @note The xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::socket::receive_from needs to match the xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::sockets::socket::send_to.
-        size_t receive_from(std::vector<byte_t>& buffer, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point);
+        size_t receive_from(std::vector<xtd::byte>& buffer, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point);
         
         /// @brief Receives data from a bound xtd::net::sockets::socket into a receive buffer.
         /// @param buffer An array of type byte that is the storage location for the received data.
@@ -1222,7 +1222,7 @@ namespace xtd {
         /// @remarks With connection-oriented sockets, xtd::net::sockets::socket::receive_from will read as much data as is available up to the size of buffer. If the remote host shuts down the xtd::net::sockets::socket connection with the xtd::net::sockets::socket::socket::shutdown method, and all available data has been received, the xtd::net::sockets::socket::receive_from method will complete immediately and return zero bytes.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         /// @note The xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::socket::receive_from needs to match the xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::sockets::socket::send_to.
-        size_t receive_from(std::vector<byte_t>& buffer, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point);
+        size_t receive_from(std::vector<xtd::byte>& buffer, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point);
         
         /// @brief Receives data from a bound xtd::net::sockets::socket into a receive buffer.
         /// @param buffer An array of type byte that is the storage location for the received data.
@@ -1242,9 +1242,9 @@ namespace xtd {
         /// @remarks With connection-oriented sockets, xtd::net::sockets::socket::receive_from will read as much data as is available up to the size of buffer. If the remote host shuts down the xtd::net::sockets::socket connection with the xtd::net::sockets::socket::socket::shutdown method, and all available data has been received, the xtd::net::sockets::socket::receive_from method will complete immediately and return zero bytes.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         /// @note The xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::socket::receive_from needs to match the xtd::net::sockets::sockets::address_family of the xtd::net::end_point used in xtd::net::sockets::sockets::socket::send_to.
-        size_t receive_from(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point);
+        size_t receive_from(std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point);
         
-        size_t receive_message_from(std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::net::sockets::ip_packet_information& ip_packet_information);
+        size_t receive_message_from(std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::net::sockets::ip_packet_information& ip_packet_information);
         
         /// @brief Determines the status of one or more sockets.
         /// @param check_read An array of xtd::net::sockets::socket instances to check for readability.
@@ -1275,7 +1275,7 @@ namespace xtd {
         /// @remarks If you are using a connection-oriented protocol, xtd::net::sockets::socket::send will block until all of the bytes in the buffer are sent, unless a time-out was set by using xtd::net::sockets::socket::send_timeout. If the time-out value was exceeded, the xtd::net::sockets::socket::send call will throw a xtd::net::sockets::socket_exception. In nonblocking mode, xtd::net::sockets::socket::send may complete successfully even if it sends less than the number of bytes in the buffer. It is your application's responsibility to keep track of the number of bytes sent and to retry the operation until the application sends the bytes in the buffer. There is also no guarantee that the data you send will appear on the network immediately. To increase network efficiency, the underlying system may delay transmission until a significant amount of outgoing data is collected. A successful completion of the Send method means that the underlying system has had room to buffer your data for a network send.
         /// @note The successful completion of a send does not indicate that the data was successfully delivered. If no buffer space is available within the transport system to hold the data to be transmitted, send will block unless the socket has been placed in nonblocking mode.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        size_t send(const std::vector<byte_t>& buffer);
+        size_t send(const std::vector<xtd::byte>& buffer);
         
         /// @brief Sends data to a connected xtd::net::sockets::socket using the specified xtd::net::sockets::socket_flags.
         /// @param buffer An array of type byte that contains the data to be sent.
@@ -1290,7 +1290,7 @@ namespace xtd {
         /// @remarks If you are using a connection-oriented protocol, xtd::net::sockets::socket::send will block until all of the bytes in the buffer are sent, unless a time-out was set by using xtd::net::sockets::socket::send_timeout. If the time-out value was exceeded, the xtd::net::sockets::socket::send call will throw a xtd::net::sockets::socket_exception. In nonblocking mode, xtd::net::sockets::socket::send may complete successfully even if it sends less than the number of bytes in the buffer. It is your application's responsibility to keep track of the number of bytes sent and to retry the operation until the application sends the bytes in the buffer. There is also no guarantee that the data you send will appear on the network immediately. To increase network efficiency, the underlying system may delay transmission until a significant amount of outgoing data is collected. A successful completion of the Send method means that the underlying system has had room to buffer your data for a network send.
         /// @note The successful completion of a send does not indicate that the data was successfully delivered. If no buffer space is available within the transport system to hold the data to be transmitted, send will block unless the socket has been placed in nonblocking mode.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        size_t send(const std::vector<byte_t>& buffer, xtd::net::sockets::socket_flags socket_flags);
+        size_t send(const std::vector<xtd::byte>& buffer, xtd::net::sockets::socket_flags socket_flags);
         
         /// @brief Sends the specified number of bytes of data to a connected xtd::net::sockets::socket, using the specified xtd::net::sockets::socket_flags.
         /// @param buffer An array of type byte that contains the data to be sent.
@@ -1307,7 +1307,7 @@ namespace xtd {
         /// @remarks If you are using a connection-oriented protocol, xtd::net::sockets::socket::send will block until all of the bytes in the buffer are sent, unless a time-out was set by using xtd::net::sockets::socket::send_timeout. If the time-out value was exceeded, the xtd::net::sockets::socket::send call will throw a xtd::net::sockets::socket_exception. In nonblocking mode, xtd::net::sockets::socket::send may complete successfully even if it sends less than the number of bytes in the buffer. It is your application's responsibility to keep track of the number of bytes sent and to retry the operation until the application sends the bytes in the buffer. There is also no guarantee that the data you send will appear on the network immediately. To increase network efficiency, the underlying system may delay transmission until a significant amount of outgoing data is collected. A successful completion of the Send method means that the underlying system has had room to buffer your data for a network send.
         /// @note The successful completion of a send does not indicate that the data was successfully delivered. If no buffer space is available within the transport system to hold the data to be transmitted, send will block unless the socket has been placed in nonblocking mode.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        size_t send(const std::vector<byte_t>& buffer, size_t size, xtd::net::sockets::socket_flags socket_flags);
+        size_t send(const std::vector<xtd::byte>& buffer, size_t size, xtd::net::sockets::socket_flags socket_flags);
         
         /// @brief Sends the specified number of bytes of data to a connected xtd::net::sockets::socket, starting at the specified offset, and using the specified xtd::net::sockets::socket_flags.
         /// @param buffer An array of type byte that contains the data to be sent.
@@ -1325,7 +1325,7 @@ namespace xtd {
         /// @remarks If you are using a connection-oriented protocol, xtd::net::sockets::socket::send will block until all of the bytes in the buffer are sent, unless a time-out was set by using xtd::net::sockets::socket::send_timeout. If the time-out value was exceeded, the xtd::net::sockets::socket::send call will throw a xtd::net::sockets::socket_exception. In nonblocking mode, xtd::net::sockets::socket::send may complete successfully even if it sends less than the number of bytes in the buffer. It is your application's responsibility to keep track of the number of bytes sent and to retry the operation until the application sends the bytes in the buffer. There is also no guarantee that the data you send will appear on the network immediately. To increase network efficiency, the underlying system may delay transmission until a significant amount of outgoing data is collected. A successful completion of the Send method means that the underlying system has had room to buffer your data for a network send.
         /// @note The successful completion of a send does not indicate that the data was successfully delivered. If no buffer space is available within the transport system to hold the data to be transmitted, send will block unless the socket has been placed in nonblocking mode.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        size_t send(const std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags);
+        size_t send(const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags);
         
         /// @brief Sends the specified number of bytes of data to a connected xtd::net::sockets::socket, starting at the specified offset, and using the specified xtd::net::sockets::socket_flags.
         /// @param buffer An array of type byte that contains the data to be sent.
@@ -1342,7 +1342,7 @@ namespace xtd {
         /// @remarks If you are using a connectionless protocol and plan to send data to several different hosts, you should use the xtd::net::sockets::socket::send_to method. If you do not use the xtd::net::sockets::socket::send_to method, you will have to call xtd::net::sockets::socket::connect before each call to xtd::net::sockets::socket::send. You can use xtd::net::sockets::socket::send_to even after you have established a default remote host with xtd::net::sockets::socket::connect. You can also change the default remote host prior to calling xtd::net::sockets::socket::send by making another call to xtd::net::sockets::socket::connect.
         /// @remarks If you are using a connection-oriented protocol, xtd::net::sockets::socket::send will block until all of the bytes in the buffer are sent, unless a time-out was set by using xtd::net::sockets::socket::send_timeout. If the time-out value was exceeded, the xtd::net::sockets::socket::send call will throw a xtd::net::sockets::socket_exception. In nonblocking mode, xtd::net::sockets::socket::send may complete successfully even if it sends less than the number of bytes in the buffer. It is your application's responsibility to keep track of the number of bytes sent and to retry the operation until the application sends the bytes in the buffer. There is also no guarantee that the data you send will appear on the network immediately. To increase network efficiency, the underlying system may delay transmission until a significant amount of outgoing data is collected. A successful completion of the Send method means that the underlying system has had room to buffer your data for a network send.
         /// @note The successful completion of a send does not indicate that the data was successfully delivered. If no buffer space is available within the transport system to hold the data to be transmitted, send will block unless the socket has been placed in nonblocking mode.
-        size_t send(const std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error_code);
+        size_t send(const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error_code);
         
         /// @brief Sends data to the specified endpoint.
         /// @param buffer An array of type byte that contains the data to be sent.
@@ -1356,7 +1356,7 @@ namespace xtd {
         /// @remarks Blocking sockets will block until the all of the bytes in the buffer are sent. Since a nonblocking xtd::net::sockets::socket completes immediately, it might not send all of the bytes in the buffer. It is your application's responsibility to keep track of the number of bytes sent and to retry the operation until the application sends all of the bytes in the buffer. There is also no guarantee that the data you send will appear on the network immediately. To increase network efficiency, the underlying system may delay transmission until a significant amount of outgoing data is collected. A successful completion of the xtd::net::sockets::socket::send_to method means that the underlying system has had room to buffer your data for a network send.
         /// @remarks If you are using a connectionless protocol in blocking mode, xtd::net::sockets::socket::send_to will block until the datagram is sent. If you want to send data to a broadcast address, you must first call the xtd::net::sockets::socket::set_socket_option method and set the socket option to xtd::net::sockets::socket_option_name::broadcast. You must also be sure that the number of bytes sent does not exceed the maximum packet size of the underlying service provider. If it does, the datagram will not be sent and xtd::net::sockets::socket::send_to will throw a xtd::net::sockets::socket_exception.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        size_t send_to(const std::vector<byte_t>& buffer, const xtd::net::end_point& remote_end_point);
+        size_t send_to(const std::vector<xtd::byte>& buffer, const xtd::net::end_point& remote_end_point);
         /// @brief Sends data to a specific endpoint using the specified xtd::net::sockets::socket_flags.
         /// @param socket_flags A bitwise combination of the xtd::net::sockets::socket_flags values.
         /// @param buffer An array of type byte that contains the data to be sent.
@@ -1370,7 +1370,7 @@ namespace xtd {
         /// @remarks Blocking sockets will block until the all of the bytes in the buffer are sent. Since a nonblocking xtd::net::sockets::socket completes immediately, it might not send all of the bytes in the buffer. It is your application's responsibility to keep track of the number of bytes sent and to retry the operation until the application sends all of the bytes in the buffer. There is also no guarantee that the data you send will appear on the network immediately. To increase network efficiency, the underlying system may delay transmission until a significant amount of outgoing data is collected. A successful completion of the xtd::net::sockets::socket::send_to method means that the underlying system has had room to buffer your data for a network send.
         /// @remarks If you are using a connectionless protocol in blocking mode, xtd::net::sockets::socket::send_to will block until the datagram is sent. If you want to send data to a broadcast address, you must first call the xtd::net::sockets::socket::set_socket_option method and set the socket option to xtd::net::sockets::socket_option_name::broadcast. You must also be sure that the number of bytes sent does not exceed the maximum packet size of the underlying service provider. If it does, the datagram will not be sent and xtd::net::sockets::socket::send_to will throw a xtd::net::sockets::socket_exception.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        size_t send_to(const std::vector<byte_t>& buffer, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point& remote_end_point);
+        size_t send_to(const std::vector<xtd::byte>& buffer, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point& remote_end_point);
         /// @brief Sends the specified number of bytes of data to the specified endpoint using the specified xtd::net::sockets::socket_flags.
         /// @param buffer An array of type byte that contains the data to be sent.
         /// @param size The number of bytes to send.
@@ -1386,7 +1386,7 @@ namespace xtd {
         /// @remarks Blocking sockets will block until the all of the bytes in the buffer are sent. Since a nonblocking xtd::net::sockets::socket completes immediately, it might not send all of the bytes in the buffer. It is your application's responsibility to keep track of the number of bytes sent and to retry the operation until the application sends all of the bytes in the buffer. There is also no guarantee that the data you send will appear on the network immediately. To increase network efficiency, the underlying system may delay transmission until a significant amount of outgoing data is collected. A successful completion of the xtd::net::sockets::socket::send_to method means that the underlying system has had room to buffer your data for a network send.
         /// @remarks If you are using a connectionless protocol in blocking mode, xtd::net::sockets::socket::send_to will block until the datagram is sent. If you want to send data to a broadcast address, you must first call the xtd::net::sockets::socket::set_socket_option method and set the socket option to xtd::net::sockets::socket_option_name::broadcast. You must also be sure that the number of bytes sent does not exceed the maximum packet size of the underlying service provider. If it does, the datagram will not be sent and xtd::net::sockets::socket::send_to will throw a xtd::net::sockets::socket_exception.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        size_t send_to(const std::vector<byte_t>& buffer, size_t size, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point& remote_end_point);
+        size_t send_to(const std::vector<xtd::byte>& buffer, size_t size, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point& remote_end_point);
         /// @brief Sends the specified number of bytes of data to the specified endpoint, starting at the specified location in the buffer, and using the specified xtd::net::sockets::socket_flags.
         /// @param buffer An array of type byte that contains the data to be sent.
         /// @param offset The position in the data buffer at which to begin sending data.
@@ -1403,7 +1403,7 @@ namespace xtd {
         /// @remarks Blocking sockets will block until the all of the bytes in the buffer are sent. Since a nonblocking xtd::net::sockets::socket completes immediately, it might not send all of the bytes in the buffer. It is your application's responsibility to keep track of the number of bytes sent and to retry the operation until the application sends all of the bytes in the buffer. There is also no guarantee that the data you send will appear on the network immediately. To increase network efficiency, the underlying system may delay transmission until a significant amount of outgoing data is collected. A successful completion of the xtd::net::sockets::socket::send_to method means that the underlying system has had room to buffer your data for a network send.
         /// @remarks If you are using a connectionless protocol in blocking mode, xtd::net::sockets::socket::send_to will block until the datagram is sent. If you want to send data to a broadcast address, you must first call the xtd::net::sockets::socket::set_socket_option method and set the socket option to xtd::net::sockets::socket_option_name::broadcast. You must also be sure that the number of bytes sent does not exceed the maximum packet size of the underlying service provider. If it does, the datagram will not be sent and xtd::net::sockets::socket::send_to will throw a xtd::net::sockets::socket_exception.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        size_t send_to(const std::vector<byte_t>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point& remote_end_point);
+        size_t send_to(const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point& remote_end_point);
         
         /// @brief Sets the IP protection level on a socket.
         /// @param level The IP protection level to set on this socket.The IP protection level to set on this socket.

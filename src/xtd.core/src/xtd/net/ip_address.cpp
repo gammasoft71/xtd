@@ -13,9 +13,9 @@ using namespace xtd::net::sockets;
 
 ip_address ip_address::any {0x00000000LL};
 ip_address ip_address::broadcast {0xFFFFFFFFLL};
-ip_address ip_address::ip_v6_any {vector<byte_t> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-ip_address ip_address::ip_v6_loopback {vector<byte_t> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}};
-ip_address ip_address::ip_v6_none {vector<byte_t> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+ip_address ip_address::ip_v6_any {vector<xtd::byte> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+ip_address ip_address::ip_v6_loopback {vector<xtd::byte> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}};
+ip_address ip_address::ip_v6_none {vector<xtd::byte> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 ip_address ip_address::loopback {0x0100007FLL};
 ip_address ip_address::none {0xFFFFFFFFLL};
 
@@ -23,7 +23,7 @@ ip_address::ip_address(uint32 address) {
   address_ = static_cast<int32>(address);
 }
 
-ip_address::ip_address(const vector<byte_t>& address) {
+ip_address::ip_address(const vector<xtd::byte>& address) {
   if (address.size() != 4 && address.size() != 16) throw argument_exception(csf_);
   
   if (address.size() == 4) {
@@ -38,7 +38,7 @@ ip_address::ip_address(const vector<byte_t>& address) {
   }
 }
 
-ip_address::ip_address(const vector<byte_t>& address, uint32 scope_id) : address_family_(sockets::address_family::inter_network_v6) {
+ip_address::ip_address(const vector<xtd::byte>& address, uint32 scope_id) : address_family_(sockets::address_family::inter_network_v6) {
   if (address.size() != 16) throw argument_exception(csf_);
   
   scope_id_ = scope_id;
@@ -46,7 +46,7 @@ ip_address::ip_address(const vector<byte_t>& address, uint32 scope_id) : address
     numbers_[index] = (static_cast<int16>(address[index * 2]) << 8) + static_cast<int16>(address[(index * 2) + 1]);
 }
 
-ip_address::ip_address(byte_t quad_part_address1, byte_t quad_part_address2, byte_t quad_part_address3, byte_t quad_part_address4) : address_((quad_part_address4 << 24 | quad_part_address3 << 16 | quad_part_address2 << 8 | quad_part_address1) & 0x0FFFFFFFF) {
+ip_address::ip_address(xtd::byte quad_part_address1, xtd::byte quad_part_address2, xtd::byte quad_part_address3, xtd::byte quad_part_address4) : address_((quad_part_address4 << 24 | quad_part_address3 << 16 | quad_part_address2 << 8 | quad_part_address1) & 0x0FFFFFFFF) {
 }
 
 ip_address::ip_address(const std::vector<uint16_t>& numbers, uint32 scope_id) : numbers_(numbers), scope_id_(scope_id), address_family_(sockets::address_family::inter_network_v6) {
@@ -99,13 +99,13 @@ bool ip_address::equals(const ip_address& other) const noexcept {
   return address_ == other.address_ && numbers_ == other.numbers_ && scope_id_ == other.scope_id_ && address_family_ == other.address_family_;
 }
 
-vector<byte_t> ip_address::get_address_bytes() const {
-  vector<byte_t> bytes;
+vector<xtd::byte> ip_address::get_address_bytes() const {
+  vector<xtd::byte> bytes;
   if (address_family_ == sockets::address_family::inter_network) {
-    bytes.push_back(static_cast<byte_t>(address_));
-    bytes.push_back(static_cast<byte_t>(address_ >> 8));
-    bytes.push_back(static_cast<byte_t>(address_ >> 16));
-    bytes.push_back(static_cast<byte_t>(address_ >> 24));
+    bytes.push_back(static_cast<xtd::byte>(address_));
+    bytes.push_back(static_cast<xtd::byte>(address_ >> 8));
+    bytes.push_back(static_cast<xtd::byte>(address_ >> 16));
+    bytes.push_back(static_cast<xtd::byte>(address_ >> 24));
     return bytes;
   }
   
@@ -152,7 +152,7 @@ uint64 ip_address::host_to_network_order(uint64 host) {
 }
 
 bool ip_address::is_loopback(const ip_address& address) {
-  if (address.address_family_ == sockets::address_family::inter_network) return static_cast<byte_t>(address.address_ & 0x00000000000000FF) == 0x7F;
+  if (address.address_family_ == sockets::address_family::inter_network) return static_cast<xtd::byte>(address.address_ & 0x00000000000000FF) == 0x7F;
   for (auto index = 0U; index < number_of_numbers_ - 2; index++)
     if (address.numbers_[index] != 0) return false;
   return address.numbers_[7] == 1U;
@@ -208,9 +208,9 @@ uint64 ip_address::network_to_host_order(uint64 network) {
 ip_address ip_address::parse(const ustring& str) {
   using_(vector<ustring> address_parts = str.split({'.'})) {
     if (address_parts.size() == 4) {
-      vector<byte_t> addresses(4);
+      vector<xtd::byte> addresses(4);
       for (auto index = 0U; index < address_parts.size(); index++)
-        addresses[index] = xtd::parse<byte_t>(address_parts[index]);
+        addresses[index] = xtd::parse<xtd::byte>(address_parts[index]);
       return ip_address(addresses);
     }
   }
