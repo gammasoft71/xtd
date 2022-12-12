@@ -230,7 +230,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
-      virtual uint64_t read_uint64();
+      virtual uint64 read_uint64();
       /// @}
       
       /// @cond
@@ -246,7 +246,7 @@ namespace xtd {
       binary_reader& operator >>(ustring& value) {value = read_string(); return *this;}
       binary_reader& operator >>(uint16_t& value) {value = read_uint16(); return *this;}
       binary_reader& operator >>(uint32& value) {value = read_uint32(); return *this;}
-      binary_reader& operator >>(uint64_t& value) {value = read_uint64(); return *this;}
+      binary_reader& operator >>(uint64& value) {value = read_uint64(); return *this;}
       /// @endcond
       
     private:

@@ -168,6 +168,6 @@ void binary_writer::write(uint32 value) {
   write(bit_converter::get_bytes(value));
 }
 
-void binary_writer::write(uint64_t value) {
+void binary_writer::write(uint64 value) {
   write(bit_converter::get_bytes(value));
 }

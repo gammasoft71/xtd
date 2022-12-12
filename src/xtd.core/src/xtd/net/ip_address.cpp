@@ -146,7 +146,7 @@ uint32 ip_address::host_to_network_order(uint32 host) {
   return (host >> 24) | ((host << 8) & 0x00FF0000L) | ((host >> 8) & 0x0000FF00L) | (host << 24);
 }
 
-uint64_t ip_address::host_to_network_order(uint64_t host) {
+uint64 ip_address::host_to_network_order(uint64 host) {
   if (bit_converter::is_little_endian == false) return host;
   return (host >> 56) | ((host << 40) & 0x00FF000000000000LL) | ((host << 24) & 0x0000FF0000000000LL) | ((host << 8) & 0x000000FF00000000LL) | ((host >> 8) & 0x00000000FF000000LL) | ((host >> 24) & 0x0000000000FF0000LL) | ((host >> 40) & 0x000000000000FF00LL) | (host << 56);
 }
@@ -201,7 +201,7 @@ uint32 ip_address::network_to_host_order(uint32 network) {
   return host_to_network_order(network);
 }
 
-uint64_t ip_address::network_to_host_order(uint64_t network) {
+uint64 ip_address::network_to_host_order(uint64 network) {
   return host_to_network_order(network);
 }
 

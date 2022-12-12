@@ -222,7 +222,7 @@ namespace xtd {
     /// @param min The lower bound of the result.
     /// @param max The upper bound of the result.
     /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
-    static uint64_t clamp(uint64_t value, uint64_t min, uint64_t max) noexcept;
+    static uint64 clamp(uint64 value, uint64 min, uint64 max) noexcept;
     /// @brief Returns value clamped to the inclusive range of min and max.
     /// @param value The value to be clamped.
     /// @param min The lower bound of the result.
@@ -423,7 +423,7 @@ namespace xtd {
     /// @param a The first of two 64-bit unsigned integers to compare.
     /// @param b The second of two 64-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is larger.
-    static uint64_t max(uint64_t a, uint64_t b) noexcept;
+    static uint64 max(uint64 a, uint64 b) noexcept;
     
     /// @brief Returns the larger of two 64-bit unsigned integers.
     /// @param a The first of two 64-bit unsigned integers to compare.
@@ -501,7 +501,7 @@ namespace xtd {
     /// @param a The first of two 64-bit unsigned integers to compare.
     /// @param b The second of two 64-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static uint64 min(uint64_t a, uint64_t b) noexcept;
+    static uint64 min(uint64 a, uint64 b) noexcept;
     
     /// @brief Returns the smaller of two 64-bit unsigned integers.
     /// @param a The first of two 64-bit unsigned integers to compare.
