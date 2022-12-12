@@ -26,20 +26,20 @@ namespace {
   };
 #pragma GCC diagnostic pop
   
-  uint32_t to_argb(xtd::byte alpha, xtd::byte red, xtd::byte green, xtd::byte blue) {
+  uint32 to_argb(xtd::byte alpha, xtd::byte red, xtd::byte green, xtd::byte blue) {
     return (alpha << 24) + (red << 16) + (green << 8) + blue;
   }
   
-  uint32_t to_argb(xtd::byte red, xtd::byte green, xtd::byte blue) {
+  uint32 to_argb(xtd::byte red, xtd::byte green, xtd::byte blue) {
     return to_argb(255, red, green, blue);
   }
   
-  uint32_t to_argb(const NSColor* color) {
+  uint32 to_argb(const NSColor* color) {
     const CGFloat* components = CGColorGetComponents([color CGColor]);
-    uint32_t alpha = CGColorGetAlpha([color CGColor]) * 0xFF;
-    uint32_t red = components[0] * 0xFF;
-    uint32_t green = components[1] * 0xFF;
-    uint32_t blue = components[2] * 0xFF;
+    uint32 alpha = CGColorGetAlpha([color CGColor]) * 0xFF;
+    uint32 red = components[0] * 0xFF;
+    uint32 green = components[1] * 0xFF;
+    uint32 blue = components[2] * 0xFF;
     return (alpha << 24) + (red << 16) + (green << 8) + blue;
   }
 }
@@ -66,7 +66,7 @@ intptr __xtd__macos_system_colors_active_caption__() {
 
 intptr __xtd__macos_system_colors_button_face__() {
   effective_appearance_setter helper;
-  uint32_t argb = to_argb(NSColor.controlColor);
+  uint32 argb = to_argb(NSColor.controlColor);
   if (argb != 0xFFFFFFFF) {
     argb &= 0x00FFFFFF;
     argb |= 0x40000000;
@@ -92,7 +92,7 @@ intptr __xtd__macos_system_colors_control_text__() {
 
 intptr __xtd__macos_system_colors_text_box__() {
   effective_appearance_setter helper;
-  uint32_t argb = to_argb([NSColor controlColor]);
+  uint32 argb = to_argb([NSColor controlColor]);
   if (argb != 0xFFFFFFFF) {
     argb &= 0x00FFFFFF;
     argb |= 0x10000000;

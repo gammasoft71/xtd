@@ -30,17 +30,17 @@ namespace {
   }
 }
 
-int32 message_box::show(intptr control, const ustring& text, const ustring& caption, uint32_t style, bool displayHelpButton) {
+int32 message_box::show(intptr control, const ustring& text, const ustring& caption, uint32 style, bool displayHelpButton) {
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
   return MessageBoxW(control == 0 ? ((!control && wxTheApp && wxTheApp->GetTopWindow()) ? wxTheApp->GetTopWindow()->GetHandle() : 0) : reinterpret_cast<control_handler*>(control)->control()->GetHandle(), convert_string::to_wstring(text).c_str(), convert_string::to_wstring(caption).c_str(), style + (displayHelpButton ? 0x00004000L : 0));
 }
 
-void message_box::show_sheet(xtd::delegate<void(int32)> on_dialog_closed, intptr control, const ustring& text, const ustring& caption, uint32_t style, bool display_help_button) {
+void message_box::show_sheet(xtd::delegate<void(int32)> on_dialog_closed, intptr control, const ustring& text, const ustring& caption, uint32 style, bool display_help_button) {
   on_dialog_closed(show(control, text, caption, style, display_help_button));
 }
 #elif !defined(__APPLE__)
 namespace {
-  int32 convert_to_dialog_result(int32 wx_result, uint32_t style) {
+  int32 convert_to_dialog_result(int32 wx_result, uint32 style) {
     switch (wx_result) {
       case wxID_OK: return (style & MB_RETRYCANCEL) == MB_RETRYCANCEL ? IDRETRY : IDOK;
       case wxID_CANCEL: return (style & MB_YESNOCANCEL) == MB_YESNOCANCEL ? IDCANCEL : (style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE ? IDIGNORE : (style & MB_RETRYCANCEL) == MB_RETRYCANCEL ? IDCANCEL : (style & MB_YESNO) == MB_YESNO ? IDNO : IDCANCEL;
@@ -50,7 +50,7 @@ namespace {
     return IDOK;
   }
   
-  int32 convert_to_buttons(uint32_t style) {
+  int32 convert_to_buttons(uint32 style) {
     if ((style & MB_RETRYCANCEL) == MB_RETRYCANCEL) return wxOK | wxCANCEL;
     if ((style & MB_YESNOCANCEL) == MB_YESNOCANCEL) return wxYES_NO | wxCANCEL;
     if ((style & MB_YESNO) == MB_YESNO) return wxYES_NO;
@@ -59,7 +59,7 @@ namespace {
     return wxOK;
   }
   
-  int32 convert_to_icon(uint32_t style) {
+  int32 convert_to_icon(uint32 style) {
     if ((style & MB_ICONINFORMATION) == MB_ICONINFORMATION) return wxICON_INFORMATION;
     if ((style & MB_ICONEXCLAMATION) == MB_ICONEXCLAMATION) return wxICON_EXCLAMATION;
     if ((style & MB_ICONQUESTION) == MB_ICONQUESTION) return wxICON_QUESTION;
@@ -67,27 +67,27 @@ namespace {
     return wxICON_NONE;
   }
   
-  int32 convert_to_option(uint32_t style) {
+  int32 convert_to_option(uint32 style) {
     int32 option = 0;
     if ((style & MB_RIGHT) == MB_RIGHT) option = wxRIGHT;
     return option;
   }
   
-  void set_button_labels(wxMessageDialog& dialog, uint32_t style) {
+  void set_button_labels(wxMessageDialog& dialog, uint32 style) {
     if ((style & MB_RETRYCANCEL) == MB_RETRYCANCEL) dialog.SetOKCancelLabels("Retry", wxID_CANCEL);
     if ((style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE) dialog.SetYesNoCancelLabels("Abort", "Retry", "Ignore");
     if ((style & MB_YESNOCANCEL) == MB_YESNOCANCEL) dialog.SetYesNoCancelLabels("Yes", "No", wxID_CANCEL);
   }
 }
 
-int32 message_box::show(intptr control, const ustring& text, const ustring& caption, uint32_t style, bool display_help_button) {
+int32 message_box::show(intptr control, const ustring& text, const ustring& caption, uint32 style, bool display_help_button) {
   native::application::initialize(); // Must be first
   wxMessageDialog dialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), convert_string::to_wstring(text), xtd::convert_string::to_wstring(caption), convert_to_buttons(style) + convert_to_icon(style) + convert_to_option(style) + (display_help_button ? wxHELP : 0));
   set_button_labels(dialog, style);
   return convert_to_dialog_result(dialog.ShowModal(), style);
 }
 
-void message_box::show_sheet(xtd::delegate<void(int32)> on_dialog_closed, intptr control, const ustring& text, const ustring& caption, uint32_t style, bool display_help_button) {
+void message_box::show_sheet(xtd::delegate<void(int32)> on_dialog_closed, intptr control, const ustring& text, const ustring& caption, uint32 style, bool display_help_button) {
   native::application::initialize(); // Must be first
   on_dialog_closed(show(control, text, caption, style, display_help_button));
 }

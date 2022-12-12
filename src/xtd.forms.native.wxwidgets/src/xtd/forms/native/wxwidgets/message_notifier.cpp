@@ -11,14 +11,14 @@ using namespace xtd;
 using namespace xtd::forms::native;
 
 
-//int32 convert_to_buttons(uint32_t style){
+//int32 convert_to_buttons(uint32 style){
 //    switch(style)
 //    {
 //
 //    }
 //}
 
-int32 convert_to_icon(uint32_t style) {
+int32 convert_to_icon(uint32 style) {
   if ((style & NIIF_INFO) == NIIF_INFO) return wxICON_INFORMATION;
   if ((style & NIIF_WARNING) == NIIF_WARNING) return wxICON_WARNING;
   if ((style & NIIF_ERROR) == NIIF_ERROR) return wxICON_ERROR;
@@ -29,7 +29,7 @@ int32 convert_to_icon(uint32_t style) {
 void message_notifier::show(intptr hwnd, const xtd::ustring& title,
   const xtd::ustring& message,
   const xtd::drawing::icon& icon,
-  uint32_t style,
+  uint32 style,
   bool close_timeout_enabled_,
   std::chrono::system_clock::duration close_timeout_interval,
   xtd::delegate<void()> on_notifier_closed) {

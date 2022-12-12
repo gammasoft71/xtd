@@ -1070,14 +1070,14 @@ bool style_sheet::try_parse_hex_color(const ustring& text, color& result) const 
     return true;
   }
   if (text.starts_with("#") && text.size() == 7U) {
-    uint32_t rgb;
-    if (xtd::try_parse<uint32_t>(text.substring(1), rgb, number_styles::hex_number) == false) return false;
+    uint32 rgb;
+    if (xtd::try_parse<uint32>(text.substring(1), rgb, number_styles::hex_number) == false) return false;
     result = color::from_argb(rgb + 0xFF000000U);
     return true;
   }
   if (text.starts_with("#") && text.size() == 9U) {
-    uint32_t argb;
-    if (xtd::try_parse<uint32_t>(text.substring(1), argb, number_styles::hex_number) == false) return false;
+    uint32 argb;
+    if (xtd::try_parse<uint32>(text.substring(1), argb, number_styles::hex_number) == false) return false;
     result = color::from_argb(argb);
     return true;
   }

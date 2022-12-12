@@ -110,7 +110,7 @@ void pen::dash_pattern(intptr pen, std::vector<float> dash_pattern) {
   reinterpret_cast<wxPen*>(pen)->SetDashes(reinterpret_cast<wx_pen*>(pen)->dashes.size(), reinterpret_cast<wx_pen*>(pen)->dashes.data());
 }
 
-void pen::dash_style(intptr pen, uint32_t dash_style) {
+void pen::dash_style(intptr pen, uint32 dash_style) {
   toolkit::initialize(); // Must be first
   reinterpret_cast<wx_pen*>(pen)->SetStyle(wxPENSTYLE_USER_DASH);
   switch (dash_style) {

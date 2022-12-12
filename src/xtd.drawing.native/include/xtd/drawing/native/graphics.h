@@ -280,7 +280,7 @@ namespace xtd {
         /// @param fill_mode A fill mode value that determines how the curve is filled (see fill_modes.h for more information).
         /// @param tension Value greater than or equal to 0.0F that specifies the tension of the curve.
         /// @warning Internal use only
-        static void fill_closed_curve(intptr handle, intptr brush, std::vector<std::pair<float, float>> points, uint32_t fill_mode, float tension);
+        static void fill_closed_curve(intptr handle, intptr brush, std::vector<std::pair<float, float>> points, uint32 fill_mode, float tension);
         
         /// @brief Fills the interior of an ellipse defined by a bounding rectangle specified by a pair of coordinates, a width, and a height.
         /// @param handle The graphics handle.

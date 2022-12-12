@@ -44,13 +44,13 @@ namespace {
     return false;
   }
   
-  uint32_t to_argb(const wxColour color) {
+  uint32 to_argb(const wxColour color) {
     return (color.Alpha() << 24) + (color.Red() << 16) + (color.Green() << 8) + color.Blue();
   }
 }
 
-uint32_t system_colors::to_argb(intptr color) {
-  return as<uint32_t>(color);
+uint32 system_colors::to_argb(intptr color) {
+  return as<uint32>(color);
 }
 
 intptr system_colors::accent() {

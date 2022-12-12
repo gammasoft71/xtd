@@ -44,7 +44,7 @@ void command_link_button::on_handle_created(const event_args& e) {
   if (image() != drawing::image::empty || (image_list().images().size() && image_index() > -1)) {
     if (flat_style() == flat_style::system) {
       native::command_link_button::image(handle(), image() != drawing::image::empty ? image() : image_list().images()[image_index()]);
-      native::command_link_button::image_align(handle(), static_cast<uint32_t>(image_align()));
+      native::command_link_button::image_align(handle(), static_cast<uint32>(image_align()));
     }
     if (image_align() != content_alignment::middle_center) native::control::text(handle(), text());
     native::control::location(handle(), location());

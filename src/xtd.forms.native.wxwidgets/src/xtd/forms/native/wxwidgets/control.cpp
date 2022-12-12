@@ -207,7 +207,7 @@ intptr control::create_graphics(intptr control) {
   return reinterpret_cast<intptr>(hdc_wrapper);
 }
 
-intptr control::def_wnd_proc(intptr control, intptr hwnd, uint32_t msg, intptr wparam, intptr lparam, intptr presult, intptr handle) {
+intptr control::def_wnd_proc(intptr control, intptr hwnd, uint32 msg, intptr wparam, intptr lparam, intptr presult, intptr handle) {
   if (!control || !handle) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

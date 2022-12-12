@@ -14,9 +14,9 @@ intptr message::lparam() const noexcept {return lparam_;}
 
 void message::lparam(intptr value) {lparam_ = value;}
 
-uint32_t message::msg() const noexcept {return msg_;}
+uint32 message::msg() const noexcept {return msg_;}
 
-void message::msg(uint32_t value) {msg_ = value;}
+void message::msg(uint32 value) {msg_ = value;}
 
 intptr message::result() const noexcept {return result_;}
 

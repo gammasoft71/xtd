@@ -80,7 +80,7 @@ xtd::forms::day month_calendar::first_day_of_week() const noexcept {
 month_calendar& month_calendar::first_day_of_week(xtd::forms::day value) {
   if (data_->first_day_of_week != value) {
     data_->first_day_of_week = value;
-    native::month_calendar::first_day_of_week(handle(), static_cast<uint32_t>(data_->first_day_of_week));
+    native::month_calendar::first_day_of_week(handle(), static_cast<uint32>(data_->first_day_of_week));
   }
   return *this;
 }
@@ -100,11 +100,11 @@ month_calendar& month_calendar::max_date(date_time value) {
   return *this;
 }
 
-uint32_t month_calendar::max_selection_count() const noexcept {
+uint32 month_calendar::max_selection_count() const noexcept {
   return data_->max_selection_count;
 }
 
-month_calendar& month_calendar::max_selection_count(uint32_t value) {
+month_calendar& month_calendar::max_selection_count(uint32 value) {
   if (data_->max_selection_count != value) {
     data_->max_selection_count = value;
     native::month_calendar::max_selection_count(handle(), data_->max_selection_count);
@@ -374,7 +374,7 @@ void month_calendar::on_date_selected(const date_range_event_args& e) {
 void month_calendar::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   native::month_calendar::allowable_dates(handle(), data_->min_date, data_->max_date);
-  native::month_calendar::first_day_of_week(handle(), static_cast<uint32_t>(data_->first_day_of_week));
+  native::month_calendar::first_day_of_week(handle(), static_cast<uint32>(data_->first_day_of_week));
   native::month_calendar::max_selection_count(handle(), data_->max_selection_count);
   native::month_calendar::selection_range(handle(), data_->selection_start, data_->selection_end);
   native::month_calendar::today_date(handle(), data_->today_date);

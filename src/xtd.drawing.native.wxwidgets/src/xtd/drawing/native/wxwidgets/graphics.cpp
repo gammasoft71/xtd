@@ -329,7 +329,7 @@ void graphics::draw_string(intptr handle, const xtd::ustring& text, intptr font,
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::fill_closed_curve(intptr handle, intptr brush, std::vector<std::pair<float, float>> points, uint32_t fill_mode, float tension) {
+void graphics::fill_closed_curve(intptr handle, intptr brush, std::vector<std::pair<float, float>> points, uint32 fill_mode, float tension) {
   /// @todo Using graphics_path when done...
   if (!handle) return;
   graphics_context gc(handle);
