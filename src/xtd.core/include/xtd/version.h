@@ -111,7 +111,7 @@ namespace xtd {
     /// @exception xtd::argument_exception version has fewer than two components or more than four components.
     /// @exception xtd::argument_out_of_range_exception A major, minor, build, or revision component is less than zero.
     /// @exception xtd::format_exception At least one component of version does not parse to an integer.
-    /// @exception xtd::overflow_exception At least one component of version represents a number greater than std::numeric_limits<int32_t>::max().
+    /// @exception xtd::overflow_exception At least one component of version represents a number greater than std::numeric_limits<int32>::max().
     /// @remarks The version parameter can contain only the components major, minor, build, and revision, in that order, and all separated by periods. There must be at least two components, and at most four. The first two components are assumed to be major and minor. The value of unspecified components is undefined.
     /// @remarks The format of the version number is as follows. Optional components are shown in square brackets ('[' and ']'):
     /// @verbatim major.minor[.build[.revision]] @endverbatim
@@ -128,7 +128,7 @@ namespace xtd {
     /// | xtd::version::minor    | minor          |
     /// | xtd::version::build    | undefined (-1) |
     /// | xtd::version::revision | undefined (-1) |
-    version(int32_t major, int32_t minor);
+    version(int32 major, int32 minor);
     /// @brief Initializes a new instance of the xtd::version class using the specified major, minor and build values.
     /// @param major The major version number.
     /// @param minor The minor version number.
@@ -141,7 +141,7 @@ namespace xtd {
     /// | xtd::version::minor    | minor          |
     /// | xtd::version::build    | build          |
     /// | xtd::version::revision | undefined (-1) |
-    version(int32_t major, int32_t minor, int32_t build);
+    version(int32 major, int32 minor, int32 build);
     /// @brief Initializes a new instance of the xtd::version class using the specified major, minor, build and revision values.
     /// @param major The major version number.
     /// @param minor The minor version number.
@@ -158,7 +158,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the xtd::version constructor, and xtd::version::major, xtd::version::minor, xtd::version::build, xtd::version::revision, xtd::version::major_revision, and xtd::version::minor_revision properties.
     /// @include version.cpp
-    version(int32_t major, int32_t minor, int32_t build, int32_t revision);
+    version(int32 major, int32 minor, int32 build, int32 revision);
     /// @}
     
     /// @cond
@@ -172,12 +172,12 @@ namespace xtd {
     /// @brief Gets the value of the build component of the version number for the current xtd::version object.
     /// @return The build number, or -1 if the build number is undefined.
     /// @remarks For example, if the version number is 6.2.1.3, the build number is 1. If the version number is 6.2, the build number is undefined.
-    int32_t build() const noexcept;
+    int32 build() const noexcept;
     
     /// @brief Gets the value of the major component of the version number for the current xtd::version object.
     /// @return The major version number.
     /// @remarks For example, if the version number is 6.2, the major version is 6.
-    int32_t major() const noexcept;
+    int32 major() const noexcept;
     
     /// @brief Gets the high 16 bits of the revision number.
     /// @return A 16-bit signed integer.
@@ -187,7 +187,7 @@ namespace xtd {
     /// @brief Gets the value of the minor component of the version number for the current xtd::version object.
     /// @return The minor version number.
     /// @remarks For example, if the version number is 6.2, the minor version is 2.
-    int32_t minor() const noexcept;
+    int32 minor() const noexcept;
     
     /// @brief Gets the low 16 bits of the revision number.
     /// @return A 16-bit signed integer.
@@ -197,7 +197,7 @@ namespace xtd {
     /// @brief Gets the value of the revision component of the version number for the current xtd::version object.
     /// @return The revision number, or -1 if the revision number is undefined.
     /// @remarks For example, if the version number is 6.2.1.3, the revision number is 3. If the version number is 6.2, the revision number is undefined.
-    int32_t revision() const noexcept;
+    int32 revision() const noexcept;
     /// @}
     
     /// @name Methods
@@ -218,7 +218,7 @@ namespace xtd {
     /// * xtd::version 1.1 is older than version 1.1.2.3
     /// * xtd::version 1.1.2 is older than version 1.1.2.4
     /// * xtd::version 1.2.5 is newer than version 1.2.3.4
-    int32_t compare_to(const version& version) const noexcept override;
+    int32 compare_to(const version& version) const noexcept override;
     
     bool equals(const version& v) const noexcept override;
 
@@ -227,7 +227,7 @@ namespace xtd {
     /// @return An object that is equivalent to the version number specified in the input parameter.
     /// @exception xtd::argument_out_of_range_exception A major, minor, build, or revision component is less than zero.
     /// @exception xtd::format_exception At least one component of input does not parse to an integer.
-    /// @exception xtd::overflow_exception At least one component of input represents a number greater than std::numeric_limits<int32_t>::max().
+    /// @exception xtd::overflow_exception At least one component of input represents a number greater than std::numeric_limits<int32>::max().
     /// @remarks The input parameter must have the following format:
     /// @verbatim major.minor[.build[.revision]] @endverbatim
     /// @remarks where major, minor, build, and revision are the string representations of the version number's four components: major version number, minor version number, build number, and revision number, respectively. Optional components are shown in square brackets ([ and ]). The components must appear in the specified order and must be separated by periods
@@ -258,7 +258,7 @@ namespace xtd {
     /// @param input A string that contains a version number to convert.
     /// @param result When this method returns, contains the xtd::version equivalent of the number that is contained in input, if the conversion succeeded. If input is empty, or if the conversion fails, result is empty when the method returns.
     /// @return true if the input parameter was converted successfully; otherwise, false.
-    /// @remarks The xtd::version::try_parse method is similar to the xtd::version::parse method, except that it doesn't throw an exception if the conversion fails. Instead, it returns false if input is null, has fewer than two or more than four components, has at least one component that is not an integer, has at least one component that is less than zero, or has at least one component that is greater than std::numeric_limits<int32_t>::max().
+    /// @remarks The xtd::version::try_parse method is similar to the xtd::version::parse method, except that it doesn't throw an exception if the conversion fails. Instead, it returns false if input is null, has fewer than two or more than four components, has at least one component that is not an integer, has at least one component that is less than zero, or has at least one component that is greater than std::numeric_limits<int32>::max().
     /// For the parse operation to succeed, the input parameter must be in the following format:
     /// @verbatim major.minor[.build[.revision]] @endverbatim
     /// where major, minor, build, and revision are the string representations of the version number's four components: major version number, minor version number, build number, and revision number, respectively. Optional components are shown in square brackets ([ and ]). The components must appear in order and must be separated by periods.
@@ -266,9 +266,9 @@ namespace xtd {
     /// @}
     
   private:
-    int32_t major_ = 0;
-    int32_t minor_ = 0;
-    int32_t build_ = -1;
-    int32_t revision_ = -1;
+    int32 major_ = 0;
+    int32 minor_ = 0;
+    int32 build_ = -1;
+    int32 revision_ = -1;
   };
 }

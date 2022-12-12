@@ -1,6 +1,7 @@
 #if defined(__linux__) || defined(__APPLE__)
 
 #include "../../../include/xtd/console.h"
+#include "../../../include/xtd/types.h"
 #define __XTD_CORE_INTERNAL__
 #include "../../../include/xtd/internal/__opaque_console.h"
 #undef __XTD_CORE_INTERNAL__
@@ -38,7 +39,7 @@ namespace {
         ::signal(signal.first, SIG_DFL);
     }
     
-    static void signal_handler(int32_t signal) {
+    static void signal_handler(xtd::int32 signal) {
       ::signal(signal, console_intercept_signals::signal_handler);
       #if _WIN32
       if (signal == SIGINT && xtd::console::treat_control_c_as_input()) return;
@@ -49,11 +50,11 @@ namespace {
         exit(EXIT_FAILURE);
     }
     
-    static std::map<int32_t, xtd::console_special_key> signal_keys_;
+    static std::map<xtd::int32, xtd::console_special_key> signal_keys_;
     static console_intercept_signals console_intercept_signals_;
   };
   
-  std::map<int32_t, xtd::console_special_key> console_intercept_signals::signal_keys_ {{SIGQUIT, xtd::console_special_key::control_backslash}, {SIGTSTP, xtd::console_special_key::control_z}, {SIGINT, xtd::console_special_key::control_c}};
+  std::map<xtd::int32, xtd::console_special_key> console_intercept_signals::signal_keys_ {{SIGQUIT, xtd::console_special_key::control_backslash}, {SIGTSTP, xtd::console_special_key::control_z}, {SIGINT, xtd::console_special_key::control_c}};
   console_intercept_signals console_intercept_signals::console_intercept_signals_;
   
   class terminal final {
@@ -65,7 +66,7 @@ namespace {
     }
     
   public:
-    int32_t getch() {
+    xtd::int32 getch() {
       if (peekCharacter != -1) {
         int8_t character = peekCharacter;
         peekCharacter = -1;
@@ -127,8 +128,8 @@ namespace {
     class input_list {
     public:
       input_list() {}
-      explicit input_list(const std::list<int32_t>& chars) : chars(chars) {}
-      explicit input_list(std::initializer_list<int32_t> il) : chars(il) {}
+      explicit input_list(const std::list<xtd::int32>& chars) : chars(chars) {}
+      explicit input_list(std::initializer_list<xtd::int32> il) : chars(il) {}
       input_list(const input_list& il) : chars(il.chars) {}
       
       input_list& operator =(const input_list& il) {
@@ -139,8 +140,8 @@ namespace {
       bool operator ==(const input_list& il) const noexcept {return chars == il.chars;}
       bool operator !=(const input_list& il) const noexcept {return chars != il.chars;}
       
-      using const_iterator = std::list<int32_t>::const_iterator;
-      using iterator = std::list<int32_t>::iterator;
+      using const_iterator = std::list<xtd::int32>::const_iterator;
+      using iterator = std::list<xtd::int32>::iterator;
       
       const_iterator cbegin() const {return chars.begin();}
       const_iterator cend() const {return chars.end();}
@@ -149,18 +150,18 @@ namespace {
       const_iterator end() const {return chars.end();}
       iterator end() {return chars.end();}
       
-      void add(int32_t c) {chars.push_back(c);}
-      void add_front(int32_t c) {chars.push_front(c);}
-      void remove(int32_t c) {chars.remove(c);}
-      int32_t count() const {return static_cast<int32_t>(chars.size());}
-      int32_t pop() { int32_t c = chars.front();  chars.erase(chars.begin()); return c;}
+      void add(xtd::int32 c) {chars.push_back(c);}
+      void add_front(xtd::int32 c) {chars.push_front(c);}
+      void remove(xtd::int32 c) {chars.remove(c);}
+      xtd::int32 count() const {return static_cast<xtd::int32>(chars.size());}
+      xtd::int32 pop() { xtd::int32 c = chars.front();  chars.erase(chars.begin()); return c;}
       void clear() {chars.clear();}
       
       bool is_empty() const {return chars.empty();}
       
       std::string to_string() const {
         std::stringstream result;
-        std::list<int32_t>::const_iterator iterator = chars.begin();
+        std::list<xtd::int32>::const_iterator iterator = chars.begin();
         while (iterator != chars.end()) {
           if (char(*iterator & 0xFF) == 27)
             result << "^[";
@@ -186,7 +187,7 @@ namespace {
       }
       
     private:
-      std::list<int32_t> chars;
+      std::list<xtd::int32> chars;
     };
     
     key_info(const key_info& ki) : key_(ki.key_), key_char_(ki.key_char_), has_alt_modifier_(ki.has_alt_modifier_), has_control_modifier_(ki.has_control_modifier_), has_shift_modifier_(ki.has_shift_modifier_) {}
@@ -226,9 +227,9 @@ namespace {
       return to_key_info(inputs.pop(), true);
     }
     
-    int32_t key() const {return key_;}
+    xtd::int32 key() const {return key_;}
     
-    int32_t key_char() const {return key_char_;}
+    xtd::int32 key_char() const {return key_char_;}
     
     bool has_alt_modifier() const {return has_alt_modifier_;}
     
@@ -244,25 +245,25 @@ namespace {
     
   private:
     key_info() : key_(0), key_char_(0), has_alt_modifier_(false), has_control_modifier_(false), has_shift_modifier_(false) {}
-    key_info(int32_t key, int32_t key_char) : key_(key), key_char_(key_char), has_alt_modifier_(false), has_control_modifier_(false), has_shift_modifier_(false) {}
-    key_info(int32_t key, int32_t key_char, bool has_alt_modifier, bool has_control_modifier, bool has_shift_modifier) : key_(key), key_char_(key_char), has_alt_modifier_(has_alt_modifier), has_control_modifier_(has_control_modifier), has_shift_modifier_(has_shift_modifier) {}
+    key_info(xtd::int32 key, xtd::int32 key_char) : key_(key), key_char_(key_char), has_alt_modifier_(false), has_control_modifier_(false), has_shift_modifier_(false) {}
+    key_info(xtd::int32 key, xtd::int32 key_char, bool has_alt_modifier, bool has_control_modifier, bool has_shift_modifier) : key_(key), key_char_(key_char), has_alt_modifier_(has_alt_modifier), has_control_modifier_(has_control_modifier), has_shift_modifier_(has_shift_modifier) {}
     
     static std::string to_string(bool b) {return b ? "true" : "false";}
     
-    static int32_t to_key(input_list& inputs) {
-      int32_t result = 0;
-      int32_t index = 1;
+    static xtd::int32 to_key(input_list& inputs) {
+      xtd::int32 result = 0;
+      xtd::int32 index = 1;
       for (auto c : inputs)
         result |= (c & 0xFF) << (8 * index--);
       inputs.clear();
       return result;
     }
     
-    static key_info to_key_info(int32_t key) {
+    static key_info to_key_info(xtd::int32 key) {
       return to_key_info(key, false);
     }
     
-    static key_info to_key_info(int32_t key, bool alt) {
+    static key_info to_key_info(xtd::int32 key, bool alt) {
       // Ctrl + Space
       if (key == 0)
         return key_info(' ', ' ', false, true, false);
@@ -372,14 +373,14 @@ namespace {
       return key_info(0, key, alt, false, key >= 'A' && key <= 'Z');
     }
     
-    int32_t key_;
-    int32_t key_char_;
+    xtd::int32 key_;
+    xtd::int32 key_char_;
     bool has_alt_modifier_;
     bool has_control_modifier_;
     bool has_shift_modifier_;
     struct key_key_char {
-      int32_t key;
-      int32_t key_char;
+      xtd::int32 key;
+      xtd::int32 key_char;
       bool alt;
       bool control;
       bool shift;
@@ -596,7 +597,7 @@ namespace {
     
   private:
     static OSStatus au_renderer_proc(void* in_ref_con, AudioUnitRenderActionFlags* io_action_flags, const AudioTimeStamp* in_time_stamp, uint32_t in_bus_number, uint32_t in_number_frames, AudioBufferList* io_data) {
-      static int32_t counter = 0;
+      static xtd::int32 counter = 0;
       while (counter == 0) {
         dispatch_semaphore_wait(start_playing_semaphore, DISPATCH_TIME_FOREVER);
         counter = beep_samples;
@@ -615,15 +616,15 @@ namespace {
       return 0;
     }
   
-    inline static constexpr const int32_t simple_rate = 8000;
-    inline static constexpr const int32_t bits_per_channel = 8;
+    inline static constexpr const xtd::int32 simple_rate = 8000;
+    inline static constexpr const xtd::int32 bits_per_channel = 8;
     inline static dispatch_semaphore_t idle_semaphore = dispatch_semaphore_create(1);
     inline static dispatch_semaphore_t start_playing_semaphore = dispatch_semaphore_create(0);
     inline static dispatch_semaphore_t end_playing_semaphore = dispatch_semaphore_create(0);
     inline static bool initialized = false;
     inline static AudioUnit audio_unit;
     inline static long beep_freq = 0;
-    inline static int32_t beep_samples = 0;
+    inline static xtd::int32 beep_samples = 0;
   };
 }
 
@@ -653,22 +654,22 @@ bool __opaque_console::beep(uint32_t frequency, uint32_t duration) {
 }
 #endif
 
-int32_t __opaque_console::buffer_height() {
+xtd::int32 __opaque_console::buffer_height() {
   /// @todo console buffer Height on linux and macOS
   return __opaque_console::window_height();
 }
 
-bool __opaque_console::buffer_height(int32_t height) {
+bool __opaque_console::buffer_height(xtd::int32 height) {
   /// @todo set console buffer height on linux and macOS
   return true;
 }
 
-int32_t __opaque_console::buffer_width() {
+xtd::int32 __opaque_console::buffer_width() {
   /// @todo console buffer Width on linux and macOS
   return __opaque_console::window_width();
 }
 
-bool __opaque_console::buffer_width(int32_t width) {
+bool __opaque_console::buffer_width(xtd::int32 width) {
   /// @todo set console buffer width on linux and macOS
   return true;
 }
@@ -684,7 +685,7 @@ bool __opaque_console::clear() {
   return true;
 }
 
-int32_t __opaque_console::cursor_left() {
+xtd::int32 __opaque_console::cursor_left() {
   if (!terminal::is_ansi_supported()) return 0;
   std::cout << "\x1b[6n" << std::flush;
   terminal::terminal_.getch();
@@ -696,11 +697,11 @@ int32_t __opaque_console::cursor_left() {
   return atoi(left.c_str()) - 1;
 }
 
-int32_t __opaque_console::cursor_size() {
+xtd::int32 __opaque_console::cursor_size() {
   return 100;
 }
 
-void __opaque_console::cursor_size(int32_t size) {
+void __opaque_console::cursor_size(xtd::int32 size) {
   if (terminal::is_ansi_supported()) {
     if (size < 50)
       std::cout << "\x1b[4 q" << std::flush;
@@ -709,7 +710,7 @@ void __opaque_console::cursor_size(int32_t size) {
   }
 }
 
-int32_t __opaque_console::cursor_top() {
+xtd::int32 __opaque_console::cursor_top() {
   if (!terminal::is_ansi_supported()) return 0;
   std::cout << "\x1b[6n" << std::flush;
   terminal::terminal_.getch();
@@ -746,12 +747,12 @@ bool __opaque_console::foreground_color(xtd::console_color color) {
   return true;
 }
 
-int32_t __opaque_console::input_code_page() {
+xtd::int32 __opaque_console::input_code_page() {
   /// @todo console input code page status on linux and macOS
   return 65001;
 }
 
-bool __opaque_console::input_code_page(int32_t codePage) {
+bool __opaque_console::input_code_page(xtd::int32 codePage) {
   /// @todo set console input code page on linux and macOS
   return true;
 }
@@ -760,11 +761,11 @@ bool __opaque_console::key_available() {
   return key_info::key_available();
 }
 
-int32_t __opaque_console::largest_window_height() {
+xtd::int32 __opaque_console::largest_window_height() {
   return 1000;
 }
 
-int32_t __opaque_console::largest_window_width() {
+xtd::int32 __opaque_console::largest_window_width() {
   return 1000;
 }
 
@@ -773,20 +774,20 @@ bool __opaque_console::number_lock() {
   return false;
 }
 
-int32_t __opaque_console::output_code_page() {
+xtd::int32 __opaque_console::output_code_page() {
   /// @todo console output code page status on linux and macOS
   return 65001;
 }
 
-bool __opaque_console::output_code_page(int32_t codePage) {
+bool __opaque_console::output_code_page(xtd::int32 codePage) {
   /// @todo set console output code page on linux and macOS
   return true;
 }
 
-void __opaque_console::read_key(int32_t& key_char, int32_t& key_code, bool& alt, bool& shift, bool& ctrl) {
+void __opaque_console::read_key(xtd::int32& key_char, xtd::int32& key_code, bool& alt, bool& shift, bool& ctrl) {
   key_info key_info = key_info::read();
-  key_char = static_cast<int32_t>(key_info.key_char());
-  key_code = static_cast<int32_t>(key_info.key());
+  key_char = static_cast<xtd::int32>(key_info.key_char());
+  key_code = static_cast<xtd::int32>(key_info.key());
   alt = key_info.has_alt_modifier();
   ctrl = key_info.has_control_modifier();
   shift = key_info.has_shift_modifier();
@@ -798,7 +799,7 @@ bool __opaque_console::reset_color() {
   return true;
 }
 
-bool __opaque_console::set_cursor_position(int32_t left, int32_t top) {
+bool __opaque_console::set_cursor_position(xtd::int32 left, xtd::int32 top) {
   if (!terminal::is_ansi_supported()) return false;
   std::cout << "\x1b[" << top + 1 << ";" << left + 1 << "f" << std::flush;
   return true;
@@ -835,47 +836,47 @@ void __opaque_console::treat_control_c_as_input(bool treat_control_c_as_input) {
   ::treat_control_c_as_input = treat_control_c_as_input;
 }
 
-int32_t __opaque_console::window_height() {
+xtd::int32 __opaque_console::window_height() {
   if (!terminal::is_ansi_supported()) return 24;
-  int32_t top = __opaque_console::cursor_top();
+  xtd::int32 top = __opaque_console::cursor_top();
   __opaque_console::set_cursor_position(__opaque_console::cursor_left(), 999);
-  int32_t height = __opaque_console::cursor_top() + 1;
+  xtd::int32 height = __opaque_console::cursor_top() + 1;
   __opaque_console::set_cursor_position(__opaque_console::cursor_left(), top);
   return height;
 }
 
-void __opaque_console::window_height(int32_t height) {
+void __opaque_console::window_height(xtd::int32 height) {
   /// @todo set console window height on linux and macOS
 }
 
-int32_t __opaque_console::window_left() {
+xtd::int32 __opaque_console::window_left() {
   /// @todo get console window left on linux and macOS
   return 0;
 }
 
-void __opaque_console::window_left(int32_t left) {
+void __opaque_console::window_left(xtd::int32 left) {
   /// @todo set console window left on linux and macOS
 }
 
-int32_t __opaque_console::window_top() {
+xtd::int32 __opaque_console::window_top() {
   /// @todo get console window top on linux and macOS
   return 0;
 }
 
-void __opaque_console::window_top(int32_t top) {
+void __opaque_console::window_top(xtd::int32 top) {
   /// @todo set console window top on linux and macOS
 }
 
-int32_t __opaque_console::window_width() {
+xtd::int32 __opaque_console::window_width() {
   if (!terminal::is_ansi_supported()) return 80;
-  int32_t left = __opaque_console::cursor_left();
+  xtd::int32 left = __opaque_console::cursor_left();
   __opaque_console::set_cursor_position(999, __opaque_console::cursor_top());
-  int32_t width = __opaque_console::cursor_left() + 1;
+  xtd::int32 width = __opaque_console::cursor_left() + 1;
   __opaque_console::set_cursor_position(left, __opaque_console::cursor_top());
   return width;
 }
 
-void __opaque_console::window_width(int32_t width) {
+void __opaque_console::window_width(xtd::int32 width) {
   /// @todo set console window width on linux and macOS
 }
 

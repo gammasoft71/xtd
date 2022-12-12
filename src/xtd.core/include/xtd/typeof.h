@@ -28,9 +28,9 @@ namespace xtd {
   /// @ingroup xtd_core keywords
   /// @par Examples
   /// @code
-  /// std::string type1 = typeof_<int32_t>();
+  /// std::string type1 = typeof_<int32>();
   ///
-  /// int32_t i = 42;
+  /// int32 i = 42;
   /// std::string type2 = typeof_(i);
   /// @endcode
   /// @remarks The typeof_ operator cannot be overloaded.

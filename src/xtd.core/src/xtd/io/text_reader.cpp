@@ -12,11 +12,11 @@ null_text_reader& text_reader::null() noexcept {
 void text_reader::close() {
 }
 
-int32_t text_reader::peek() const {
+int32 text_reader::peek() const {
   return EOF;
 }
 
-int32_t text_reader::read() {
+int32 text_reader::read() {
   return EOF;
 }
 
@@ -36,7 +36,7 @@ size_t text_reader::read_block(std::vector<char>& buffer, size_t index, size_t c
 
 ustring text_reader::read_line() {
   ustring line;
-  for (int32_t current = read(); current != EOF && current != '\n'; current = read()) {
+  for (int32 current = read(); current != EOF && current != '\n'; current = read()) {
     if (current == '\r') continue;
     line += static_cast<char>(current);
   }
@@ -45,7 +45,7 @@ ustring text_reader::read_line() {
 
 ustring text_reader::read_to_end() {
   std::string text;
-  for (int32_t current = read(); current != EOF; current = read()) {
+  for (int32 current = read(); current != EOF; current = read()) {
     if (current == '\r') continue;
     text += static_cast<char>(current);
   }
@@ -56,11 +56,11 @@ synchronized_text_reader text_reader::synchronised(text_reader& reader) noexcept
   return synchronized_text_reader(reader);
 }
 
-int32_t null_text_reader::read() {
+int32 null_text_reader::read() {
   return EOF;
 }
 
-int32_t synchronized_text_reader::read() {
+int32 synchronized_text_reader::read() {
   std::lock_guard<std::mutex> lock(mutex_);
   return reader_.read();
 }

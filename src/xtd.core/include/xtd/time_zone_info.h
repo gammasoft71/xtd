@@ -327,7 +327,7 @@ namespace xtd {
     /// @return An read-only Array of time_zone_info objects.
     static const std::list<time_zone_info>& get_system_time_zones() noexcept;
     
-    int32_t compare_to(const time_zone_info& tzi) const noexcept override;
+    int32 compare_to(const time_zone_info& tzi) const noexcept override;
     
     /// @brief Converts a time to the time in a particular time zone.
     /// @param date_time The date and time to convert.

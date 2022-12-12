@@ -38,7 +38,7 @@ directory_info::directory_iterator& directory_info::directory_iterator::operator
   return *this;
 }
 
-directory_info::directory_iterator directory_info::directory_iterator::operator ++(int32_t) {
+directory_info::directory_iterator directory_info::directory_iterator::operator ++(int32) {
   directory_iterator result = *this;
   ++(*this);
   return result;
@@ -88,7 +88,7 @@ directory_info::file_iterator& directory_info::file_iterator::operator ++() {
   return *this;
 }
 
-directory_info::file_iterator directory_info::file_iterator::operator ++(int32_t) {
+directory_info::file_iterator directory_info::file_iterator::operator ++(int32) {
   file_iterator result = *this;
   ++(*this);
   return result;
@@ -137,7 +137,7 @@ directory_info::file_system_info_iterator& directory_info::file_system_info_iter
   return *this;
 }
 
-directory_info::file_system_info_iterator directory_info::file_system_info_iterator::operator ++(int32_t) {
+directory_info::file_system_info_iterator directory_info::file_system_info_iterator::operator ++(int32) {
   file_system_info_iterator result = *this;
   ++(*this);
   return result;
@@ -165,7 +165,7 @@ ustring directory_info::file_system_info_iterator::pattern() const {
 
 directory_info::file_system_info_iterator::value_type directory_info::file_system_info_iterator::operator *() const {
   if (data_ == nullptr) return std::make_shared<file_info>("");
-  int32_t attributes = -1;
+  int32 attributes = -1;
   native::file_system::get_attributes(*data_->iterator_, attributes);
   if ((static_cast<file_attributes>(attributes) & file_attributes::directory) == file_attributes::directory) return std::make_shared<directory_info>(*data_->iterator_);
   return std::make_shared<file_info>(*data_->iterator_);
@@ -181,7 +181,7 @@ directory_info::directory_info(const xtd::ustring& path) {
 }
 
 bool directory_info::exists() const {
-  int32_t attributes = 0;
+  int32 attributes = 0;
   return native::file_system::get_attributes(full_path_, attributes) == 0 && (static_cast<file_attributes>(attributes) & file_attributes::directory) == file_attributes::directory;
 }
 

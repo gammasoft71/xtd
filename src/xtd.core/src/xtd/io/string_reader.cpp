@@ -6,10 +6,10 @@ using namespace xtd::io;
 string_reader::string_reader(const ustring& input) : stream_(input) {
 }
 
-int32_t string_reader::peek() const {
+xtd::int32 string_reader::peek() const {
   return stream_.peek();
 }
 
-int32_t string_reader::read() {
+xtd::int32 string_reader::read() {
   return stream_.get();
 }

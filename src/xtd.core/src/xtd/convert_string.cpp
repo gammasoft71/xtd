@@ -237,7 +237,7 @@ u16string convert_string::to_u16string(const string& str) noexcept {
 
 u16string convert_string::to_u16string(const char* str) noexcept {
   u16string out;
-  int32_t codepoint = 0;
+  int32 codepoint = 0;
   while (*str != 0) {
     unsigned char ch = static_cast<unsigned char>(*str);
     if (ch <= 0x7f) codepoint = ch;
@@ -319,7 +319,7 @@ u32string convert_string::to_u32string(const string& str) noexcept {
 
 u32string convert_string::to_u32string(const char* str) noexcept {
   u32string out;
-  int32_t codepoint = 0;
+  int32 codepoint = 0;
   while (*str != 0) {
     unsigned char ch = static_cast<unsigned char>(*str);
     if (ch <= 0x7f) codepoint = ch;
@@ -396,7 +396,7 @@ wstring convert_string::to_wstring(const string& str) noexcept {
 
 wstring convert_string::to_wstring(const char* str) noexcept {
   std::wstring out;
-  int32_t codepoint = 0;
+  int32 codepoint = 0;
   while (*str != 0) {
     unsigned char ch = static_cast<unsigned char>(*str);
     if (ch <= 0x7f) codepoint = ch;

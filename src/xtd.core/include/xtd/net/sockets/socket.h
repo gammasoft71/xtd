@@ -422,7 +422,7 @@ namespace xtd {
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks This option applies to synchronous xtd::net::sockets::socket::receive calls only. If the time-out period is exceeded, the xtd::net::sockets::socket::receive method will throw a xtd::net::sockets::socket_exception.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        int32_t receive_timeout() const;
+        int32 receive_timeout() const;
         /// @brief Sets a value that specifies the amount of time after which a synchronous xtd::net::sockets::socket::receive call will time out.
         /// @param value The time-out value, in milliseconds. The default value is 0, which indicates an infinite time-out period. Specifying -1 also indicates an infinite time-out period.
         /// @return This current instance.
@@ -431,7 +431,7 @@ namespace xtd {
         /// @exception xtd::argument_out_of_range_exception The value specified for a set operation is less than -1.
         /// @remarks This option applies to synchronous xtd::net::sockets::socket::receive calls only. If the time-out period is exceeded, the xtd::net::sockets::socket::receive method will throw a xtd::net::sockets::socket_exception.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        socket& receive_timeout(int32_t value);
+        socket& receive_timeout(int32 value);
         
         /// @brief Gets the remote endpoint.
         /// @return The xtd::net::end_point with which the xtd::net::sockets::socket is communicating.
@@ -462,7 +462,7 @@ namespace xtd {
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks This option applies to synchronous Send calls only. If the time-out period is exceeded, the Send method will throw a xtd::net::sockets::socket::socket_exception.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        int32_t send_timeout() const;
+        int32 send_timeout() const;
         /// @brief Sets a value that specifies the amount of time after which a synchronous xtd::net::sockets::socket::send call will time out.
         /// @param value The time-out value, in milliseconds. If you set the property with a value between 1 and 499, the value will be changed to 500. The default value is 0, which indicates an infinite time-out period. Specifying -1 also indicates an infinite time-out period.
         /// @return This current instance.
@@ -471,7 +471,7 @@ namespace xtd {
         /// @exception xtd::argument_out_of_range_exception The value specified for a set operation is less than -1.
         /// @remarks This option applies to synchronous Send calls only. If the time-out period is exceeded, the Send method will throw a xtd::net::sockets::socket::socket_exception.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        socket& send_timeout(int32_t value);
+        socket& send_timeout(int32 value);
         
         /// @brief Gets the type of the xtd::net::sockets::socket.
         /// @return One of the xtd::net::sockets::socket_type values.
@@ -1001,7 +1001,7 @@ namespace xtd {
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
-        size_t get_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, intptr_t option_value, size_t size_option_value) const;
+        size_t get_raw_socket_option(int32 socket_option_level, int32 socket_option_name, intptr_t option_value, size_t size_option_value) const;
         
         /// @brief Returns the value of a specified xtd::net::sockets::socket option, represented as integer.
         /// @param socket_option_level One of the xtd::net::sockets::socket_option_level values.
@@ -1014,7 +1014,7 @@ namespace xtd {
         /// @remarks Use xtd::net::sockets::socket::get_socket_multicast_option xtd::net::sockets::socket_option_name::add_membership, and xtd::net::sockets::socket_option_name::xtd::net::sockets::socket_option_name::drop_membership xtd::net::sockets::socket options for IP v4 socket.
         /// @remarks Use xtd::net::sockets::socket::get_socket_ip_v6__multicast_option xtd::net::sockets::socket_option_name::add_membership, and xtd::net::sockets::socket_option_name::xtd::net::sockets::socket_option_name::drop_membership xtd::net::sockets::socket options for IP v6 socket.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
-        int32_t get_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name) const;
+        int32 get_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name) const;
         /// @brief Returns the linger xtd::net::sockets::socket option, represented as xtd::net::sockets::linger_option.
         /// @return An xtd::net::sockets::linger_option that represents the value of the linger option.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
@@ -1038,13 +1038,13 @@ namespace xtd {
         xtd::net::sockets::ip_v6_multicast_option get_socket_ip_v6_multicast_option(xtd::net::sockets::socket_option_name socket_option_name) const;
         
         /// @brief Sets low-level operating modes for the xtd::net::sockets::socket using numerical control codes.
-        /// @param io_control_code An int32_t value that specifies the control code of the operation to perform.
+        /// @param io_control_code An int32 value that specifies the control code of the operation to perform.
         /// @param option_in_value A byte array that contains the input data required by the operation.
         /// @param option_out_value A byte array that contains the output data returned by the operation.
         /// @return The number of bytes in the option_out_value parameter.
         /// @remarks The xtd::net::sockets::socket::io_control method provides low-level access to the operating system xtd::net::sockets::socket underlying the current instance of the xtd::net::sockets::socket class.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
-        size_t io_control(int32_t io_control_code, std::vector<uint8_t>& option_in_value, std::vector<uint8_t>& option_out_value);
+        size_t io_control(int32 io_control_code, std::vector<uint8_t>& option_in_value, std::vector<uint8_t>& option_out_value);
         /// @brief Sets low-level operating modes for the xtd::net::sockets::socket using xtd::net::sockets::io_control_code control codes.
         /// @param io_control_code A xtd::net::sockets::io_control_code value that specifies the control code of the operation to perform.
         /// @param option_in_value A byte array that contains the input data required by the operation.
@@ -1087,7 +1087,7 @@ namespace xtd {
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks The xtd::net::sockets::socket::poll method checks the state of the xtd::net::sockets::socket. Specify xtd::net::sockets::select_mode::select_read for the select_mode parameter to determine if the xtd::net::sockets::socket is readable. Specify xtd::net::sockets::select_mode::select_write to determine if the xtd::net::sockets::socket is writable. Use SelectMode.SelectError to detect an error condition. Poll will block execution until the specified time period, measured in microseconds, elapses. Set the microSeconds parameter to a negative integer if you would like to wait indefinitely for a response. If you want to check the status of multiple sockets, you might prefer to use the xtd::net::sockets::socket::select method.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
-        bool poll(int32_t micro_seconds, xtd::net::sockets::select_mode mode);
+        bool poll(int32 micro_seconds, xtd::net::sockets::select_mode mode);
         
         /// @brief Receives data from a bound xtd::net::sockets::socket into a receive buffer.
         /// @param buffer An array of type byte that is the storage location for the received data.
@@ -1261,7 +1261,7 @@ namespace xtd {
         /// @remarks Use the xtd::net::sockets::socket::poll method if you only want to determine the status of a single xtd::net::sockets::socket.
         /// @note This method cannot detect certain kinds of connection problems, such as a broken network cable, or that the remote host was shut down ungracefully. You must attempt to send or receive data to detect these kinds of errors.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        static size_t select(std::vector<socket>& check_read, std::vector<socket>& check_write, std::vector<socket>& check_error, int32_t microseconds);
+        static size_t select(std::vector<socket>& check_read, std::vector<socket>& check_write, std::vector<socket>& check_error, int32 microseconds);
         
         /// @brief Sends data to a connected xtd::net::sockets::socket.
         /// @param buffer An array of type byte that contains the data to be sent.
@@ -1489,7 +1489,7 @@ namespace xtd {
         ///   * xtd::net::sockets::socket_option_name::hop_limit
         /// @remarks <br />For more information on these options, refer to the xtd::net::sockets::socket_option_name enumeration.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        void set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, int32_t option_value);
+        void set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, int32 option_value);
         /// @brief Sets the linger xtd::net::sockets::socket option to the specified integer value.
         /// @param option_value A value of the option.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
@@ -1521,7 +1521,7 @@ namespace xtd {
         /// @remarks In general, the xtd::net::sockets::socket::set_socket_option method should be used whenever setting a xtd::net::sockets::socket option.
         /// @remarks The SetRawSocketOption(Int32, Int32, ReadOnlySpan<byte>) method should be used only when SocketOptionLevel and SocketOptionName do not expose the required option.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        void set_raw_socket_option(int32_t socket_option_level, int32_t socket_option_name, intptr_t option_value, size_t option_value_size);
+        void set_raw_socket_option(int32 socket_option_level, int32 socket_option_name, intptr_t option_value, size_t option_value_size);
         
         /// @brief Disables sends and receives on a xtd::net::sockets::socket.
         /// @param how One of the xtd::net::sockets::socket_shutdown values that specifies the operation that will no longer be allowed.

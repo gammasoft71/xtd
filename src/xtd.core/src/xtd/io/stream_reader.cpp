@@ -37,14 +37,14 @@ void stream_reader::close() {
   stream_ = nullptr;
 }
 
-int32_t stream_reader::peek() const {
+int32 stream_reader::peek() const {
   if (!stream_) return EOF;
-  int32_t value = stream_->peek();
+  int32 value = stream_->peek();
   return value;
 }
 
-int32_t stream_reader::read() {
+int32 stream_reader::read() {
   if (!stream_) return EOF;
-  int32_t value = stream_->get();
+  int32 value = stream_->get();
   return value;
 }

@@ -90,10 +90,10 @@ namespace xtd {
       /// @{
       /// @brief Gets the current setting for this switch.
       /// @return The current setting for this switch. The default is zero.
-      int32_t switch_setting() const noexcept;
+      int32 switch_setting() const noexcept;
       /// @brief Sets the current setting for this switch.
       /// @param switch_setting The current setting for this switch. The default is zero.
-      void switch_setting(int32_t switch_setting);
+      void switch_setting(int32 switch_setting);
       
       /// @brief Gets the value of the switch.
       /// @return A string representing the value of the switch.
@@ -133,7 +133,7 @@ namespace xtd {
       xtd::ustring display_name_;
       xtd::ustring description_;
       std::map<xtd::ustring, xtd::ustring> attributes_;
-      int32_t switch_setting_ = 0;
+      int32 switch_setting_ = 0;
       xtd::ustring value_;
     };
   }

@@ -80,14 +80,14 @@ namespace xtd {
       /// @return The next available character, or EOF if no more characters are available or the stream does not support seeking.
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
-      int32_t peek_char() const;
+      int32 peek_char() const;
       
       /// @brief Reads characters from the underlying stream and advances the current position of the stream in accordance with the Encoding used and the specific character being read from the stream.
       /// @return The next character from the input stream, or EOF if no characters are currently available.
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
-      virtual int32_t read();
+      virtual int32 read();
       
       /// @brief Reads the specified number of bytes from the stream, starting from a specified point in the byte array.
       /// @param buffer The buffer to read data into.
@@ -174,7 +174,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
-      virtual int32_t read_int32();
+      virtual int32 read_int32();
       
       /// @brief Reads a 8-byte signed integer from the current stream and advances the current position of the stream by eight bytes.
       /// @return A 8-byte signed integer read from the current stream.
@@ -239,7 +239,7 @@ namespace xtd {
       binary_reader& operator >>(char& value) {value = read_char(); return *this;}
       binary_reader& operator >>(double& value) {value = read_double(); return *this;}
       binary_reader& operator >>(int16_t& value) {value = read_int16(); return *this;}
-      binary_reader& operator >>(int32_t& value) {value = read_int32(); return *this;}
+      binary_reader& operator >>(int32& value) {value = read_int32(); return *this;}
       binary_reader& operator >>(int64_t& value) {value = read_int64(); return *this;}
       binary_reader& operator >>(sbyte_t& value) {value = read_sbyte(); return *this;}
       binary_reader& operator >>(float& value) {value = read_single(); return *this;}

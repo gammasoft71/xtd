@@ -59,7 +59,7 @@ namespace xtd {
       /// @brief Gets the unique identifier of the current process.
       /// @return int32 The system-generated unique identifier of the current process.
       /// @remarks Until the process terminates, the process identifier uniquely identifies the process throughout the system.
-      int32_t process_id() const noexcept;
+      int32 process_id() const noexcept;
       
       /// @brief Gets a unique identifier for the current managed thread.
       /// @return string A string that represents a unique integer identifier for this managed thread.

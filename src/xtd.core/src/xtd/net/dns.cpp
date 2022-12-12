@@ -33,7 +33,7 @@ ip_host_entry dns::get_host_entry(const ustring& host_name_or_address) {
     host = native::dns::get_host_by_name(host_name_or_address);
     if (host == 0) throw invalid_operation_exception(csf_);
   } else {
-    host = native::dns::get_host_by_address(host_address.to_string(), static_cast<int32_t>(host_address.address_family()));
+    host = native::dns::get_host_by_address(host_address.to_string(), static_cast<int32>(host_address.address_family()));
     if (host == 0) throw invalid_operation_exception(csf_);
   }
   

@@ -30,7 +30,7 @@ ustring file_info::directory_name() const {
 
 bool file_info::exists() const {
   try {
-    int32_t attributes = 0;
+    int32 attributes = 0;
     return native::file_system::get_attributes(full_path_, attributes) == 0 && (static_cast<file_attributes>(attributes) & file_attributes::directory) != file_attributes::directory;
   } catch (...) {
     return false;
@@ -42,10 +42,10 @@ bool file_info::is_read_only() const {
 }
 
 void file_info::is_read_only(bool value) {
-  int32_t attributes;
+  int32 attributes;
   if (native::file_system::get_attributes(full_path_, attributes) != 0) throw io_exception(csf_);
-  if (value) attributes |= static_cast<int32_t>(file_attributes::read_only);
-  else attributes &= ~static_cast<int32_t>(file_attributes::read_only);
+  if (value) attributes |= static_cast<int32>(file_attributes::read_only);
+  else attributes &= ~static_cast<int32>(file_attributes::read_only);
   if (native::file_system::set_attributes(full_path_, attributes) != 0) throw io_exception(csf_);
 }
 

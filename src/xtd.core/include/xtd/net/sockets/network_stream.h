@@ -37,8 +37,8 @@ namespace xtd {
           socket_streambuf(const xtd::net::sockets::socket& socket, bool owns_socket);
           ~socket_streambuf();
           
-          int32_t underflow() override;
-          int32_t overflow(int32_t value) override;
+          int32 underflow() override;
+          int32 overflow(int32 value) override;
           
           xtd::net::sockets::socket socket_;
           bool owns_socket_ = false;

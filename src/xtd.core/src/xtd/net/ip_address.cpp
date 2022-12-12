@@ -20,7 +20,7 @@ ip_address ip_address::loopback {0x0100007FLL};
 ip_address ip_address::none {0xFFFFFFFFLL};
 
 ip_address::ip_address(uint32_t address) {
-  address_ = static_cast<int32_t>(address);
+  address_ = static_cast<int32>(address);
 }
 
 ip_address::ip_address(const vector<byte_t>& address) {
@@ -124,7 +124,7 @@ int16_t ip_address::host_to_network_order(int16_t host) {
   return int16(host_to_network_order(static_cast<uint16>(host)));
 }
 
-int32_t ip_address::host_to_network_order(int32_t host) {
+int32 ip_address::host_to_network_order(int32 host) {
   return int32(host_to_network_order(static_cast<uint32>(host)));
 }
 
@@ -181,7 +181,7 @@ int16_t ip_address::network_to_host_order(int16_t network) {
   return host_to_network_order(network);
 }
 
-int32_t ip_address::network_to_host_order(int32_t network) {
+int32 ip_address::network_to_host_order(int32 network) {
   return host_to_network_order(network);
 }
 

@@ -28,7 +28,7 @@ namespace xtd {
     /// | Less than zero    | This instance is less than obj.    |
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
-    virtual int32_t compare_to(const type_t& obj) const noexcept = 0;
+    virtual int32 compare_to(const type_t& obj) const noexcept = 0;
     /// @}
     
     ///@cond

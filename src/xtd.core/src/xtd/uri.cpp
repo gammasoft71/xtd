@@ -92,7 +92,7 @@ bool uri::is_default_port() const {
   if (kind_ != uri_kind::absolute) throw invalid_operation_exception(csf_);
   
   auto port = -1;
-  if (try_parse<int32_t>(get_components(uri_components::port, uri_format::uri_escaped), port) == true) return false;
+  if (try_parse<int32>(get_components(uri_components::port, uri_format::uri_escaped), port) == true) return false;
   return true;
 }
 
@@ -128,9 +128,9 @@ ustring uri::path_and_query() const {
   return get_components(uri_components::path_and_query, uri_format::uri_escaped);
 }
 
-int32_t uri::port() const {
+int32 uri::port() const {
   auto port = -1;
-  if (try_parse<int32_t>(get_components(uri_components::port, uri_format::uri_escaped), port) == true) return port;
+  if (try_parse<int32>(get_components(uri_components::port, uri_format::uri_escaped), port) == true) return port;
   if (scheme() == uri::uri_scheme_ftp) return 21;
   if (scheme() == uri::uri_scheme_gopher) return 70;
   if (scheme() == uri::uri_scheme_http) return 80;
@@ -228,7 +228,7 @@ ustring uri::escape_uri_string(const ustring& value) {
   return value;
 }
 
-int32_t uri::from_hex(char digit) {
+int32 uri::from_hex(char digit) {
   if ('0' <= digit && digit <= '9') return digit - '0';
   if ('a' <= digit && digit <= 'f') return 10 + digit - 'a';
   if ('A' <= digit && digit <= 'F') return 10 + digit - 'A';
@@ -274,7 +274,7 @@ ustring uri::hex_escape(char character) {
 
 char uri::hex_unescape(const ustring& pattern, size_t& index) {
   index += 3;
-  return as<char>(parse<int32_t>(pattern.substring(index - 2, 2), number_styles::hex_number));
+  return as<char>(parse<int32>(pattern.substring(index - 2, 2), number_styles::hex_number));
 }
 
 bool uri::is_base_of(const uri& uri) const {
@@ -431,7 +431,7 @@ void uri::set_port(ustring& escape_uri) {
     if (index_start == ustring::npos) return;
     
     port_ = escape_uri.remove(index_start);
-    parse<int32_t>(port_);
+    parse<int32>(port_);
     
     escape_uri = escape_uri.substring(index_start);
   } catch (...) {

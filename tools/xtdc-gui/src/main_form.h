@@ -18,6 +18,7 @@
 #include <xtd/forms/choice.h>
 #include <xtd/forms/form.h>
 #include <xtd/forms/label.h>
+#include <xtd/forms/link_label.h>
 #include <xtd/forms/list_box.h>
 #include <xtd/forms/main_menu.h>
 #include <xtd/forms/menu_images.h>

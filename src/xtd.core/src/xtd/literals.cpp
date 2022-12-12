@@ -276,32 +276,32 @@ int16_t xtd::operator""_s16(const wchar_t* s, size_t n) {
   return as<int16_t>(wstring(s, s + n));
 }
 
-int32_t xtd::operator""_s32(long double n) {
-  return as<int32_t>(n);
+int32 xtd::operator""_s32(long double n) {
+  return as<int32>(n);
 }
 
-int32_t xtd::operator""_s32(unsigned long long n) {
-  return as<int32_t>(n);
+int32 xtd::operator""_s32(unsigned long long n) {
+  return as<int32>(n);
 }
 
-int32_t xtd::operator""_s32(const char* s, size_t n) {
-  return as<int32_t>(ustring(s, s + n));
+int32 xtd::operator""_s32(const char* s, size_t n) {
+  return as<int32>(ustring(s, s + n));
 }
 
-int32_t xtd::operator""_s32(const char8_t* s, size_t n) {
-  return as<int32_t>(ustring(s, s + n));
+int32 xtd::operator""_s32(const char8_t* s, size_t n) {
+  return as<int32>(ustring(s, s + n));
 }
 
-int32_t xtd::operator""_s32(const char16_t* s, size_t n) {
-  return as<int32_t>(u16string(s, s + n));
+int32 xtd::operator""_s32(const char16_t* s, size_t n) {
+  return as<int32>(u16string(s, s + n));
 }
 
-int32_t xtd::operator""_s32(const char32_t* s, size_t n) {
-  return as<int32_t>(u32string(s, s + n));
+int32 xtd::operator""_s32(const char32_t* s, size_t n) {
+  return as<int32>(u32string(s, s + n));
 }
 
-int32_t xtd::operator""_s32(const wchar_t* s, size_t n) {
-  return as<int32_t>(wstring(s, s + n));
+int32 xtd::operator""_s32(const wchar_t* s, size_t n) {
+  return as<int32>(wstring(s, s + n));
 }
 
 int64_t xtd::operator""_s64(long double n) {

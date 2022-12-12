@@ -94,9 +94,9 @@ namespace xtd {
 
         struct data {
           intptr_t handle = 0;
-          int32_t rate = 0;
+          int32 rate = 0;
           synthesizer_state state = synthesizer_state::ready;
-          int32_t volume = 100;
+          int32 volume = 100;
           xtd::speech::synthesis::prompt prompt;
           xtd::speech::synthesis::prompt* used_prompt = &prompt;
         };

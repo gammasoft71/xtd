@@ -15,18 +15,18 @@ std::default_random_engine random::generator() const noexcept {
   return generator_;
 }
 
-int32_t random::next() const {
-  return next(std::numeric_limits<int32_t>::max());
+int32 random::next() const {
+  return next(std::numeric_limits<int32>::max());
 }
 
-int32_t random::next(int32_t max_value) const {
+int32 random::next(int32 max_value) const {
   return next(0, max_value);
 }
 
-int32_t random::next(int32_t min_value, int32_t max_value) const {
+int32 random::next(int32 min_value, int32 max_value) const {
   if (min_value > max_value) throw argument_out_of_range_exception(current_stack_frame_);
   if (min_value == max_value) return min_value;
-  return min_value + static_cast<int32_t>(std::round(sample() * std::numeric_limits<int32_t>::max())) % ((max_value - 1) - min_value + 1);
+  return min_value + static_cast<int32>(std::round(sample() * std::numeric_limits<int32>::max())) % ((max_value - 1) - min_value + 1);
 }
 
 void random::next_bytes(std::vector<uint8_t>& buffer) const {

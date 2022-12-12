@@ -54,7 +54,7 @@ namespace {
       GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
       
       csbi.wAttributes &= 0xFF0F;
-      csbi.wAttributes |= ((int32_t)backColor_ << 4) | (int32_t)foreColor_;
+      csbi.wAttributes |= ((int32)backColor_ << 4) | (int32)foreColor_;
       SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes);
     }
     
@@ -75,7 +75,7 @@ bool __opaque_console::background_color(xtd::console_color color) {
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   
   csbi.wAttributes &= 0xFF0F;
-  csbi.wAttributes |= (int32_t)color << 4;
+  csbi.wAttributes |= (int32)color << 4;
   return SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes) == TRUE;
 }
 
@@ -87,26 +87,26 @@ bool __opaque_console::beep(uint32_t frequency, uint32_t duration) {
   return true;
 }
 
-int32_t __opaque_console::buffer_height() {
+int32 __opaque_console::buffer_height() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   return csbi.dwSize.Y;
 }
 
-bool __opaque_console::buffer_height(int32_t height) {
+bool __opaque_console::buffer_height(int32 height) {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   csbi.dwSize.Y = static_cast<int16_t>(height);
   return SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwSize) == TRUE;
 }
 
-int32_t __opaque_console::buffer_width() {
+int32 __opaque_console::buffer_width() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   return csbi.dwSize.X;
 }
 
-bool __opaque_console::buffer_width(int32_t width) {
+bool __opaque_console::buffer_width(int32 width) {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   csbi.dwSize.X = static_cast<int16_t>(width);
@@ -128,19 +128,19 @@ bool __opaque_console::clear() {
   return __opaque_console::set_cursor_position(0, 0);
 }
 
-int32_t __opaque_console::cursor_left() {
+int32 __opaque_console::cursor_left() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   return csbi.dwCursorPosition.X;
 }
 
-int32_t __opaque_console::cursor_size() {
+int32 __opaque_console::cursor_size() {
   CONSOLE_CURSOR_INFO cci;
   GetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
   return cci.dwSize;
 }
 
-void __opaque_console::cursor_size(int32_t size) {
+void __opaque_console::cursor_size(int32 size) {
   CONSOLE_CURSOR_INFO cci;
   GetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
   
@@ -148,7 +148,7 @@ void __opaque_console::cursor_size(int32_t size) {
   SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
 }
 
-int32_t __opaque_console::cursor_top() {
+int32 __opaque_console::cursor_top() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   return csbi.dwCursorPosition.Y;
@@ -178,15 +178,15 @@ bool __opaque_console::foreground_color(xtd::console_color color) {
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   
   csbi.wAttributes &= 0xFFF0;
-  csbi.wAttributes |= (int32_t)color;
+  csbi.wAttributes |= (int32)color;
   return SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes) == TRUE;
 }
 
-int32_t __opaque_console::input_code_page() {
+int32 __opaque_console::input_code_page() {
   return GetConsoleCP();
 }
 
-bool __opaque_console::input_code_page(int32_t codePage) {
+bool __opaque_console::input_code_page(int32 codePage) {
   return SetConsoleCP(codePage) == TRUE;
 }
 
@@ -194,13 +194,13 @@ bool __opaque_console::key_available() {
   return _kbhit() != 0;
 }
 
-int32_t __opaque_console::largest_window_height() {
+int32 __opaque_console::largest_window_height() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   return csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
 }
 
-int32_t __opaque_console::largest_window_width() {
+int32 __opaque_console::largest_window_width() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   return csbi.srWindow.Left;
@@ -210,15 +210,15 @@ bool __opaque_console::number_lock() {
   return (GetKeyState(VK_NUMLOCK) & 0x0001) == 0x0001;
 }
 
-int32_t __opaque_console::output_code_page() {
+int32 __opaque_console::output_code_page() {
   return GetConsoleOutputCP();
 }
 
-bool __opaque_console::output_code_page(int32_t codePage) {
+bool __opaque_console::output_code_page(int32 codePage) {
   return SetConsoleOutputCP(codePage) == TRUE;
 }
 
-void __opaque_console::read_key(int32_t& key_char, int32_t& key_code, bool& alt, bool& shift, bool& ctrl) {
+void __opaque_console::read_key(int32& key_char, int32& key_code, bool& alt, bool& shift, bool& ctrl) {
   INPUT_RECORD input_record;
   do {
     DWORD nb_events_read = 0;
@@ -236,7 +236,7 @@ bool __opaque_console::reset_color() {
   return __opaque_console::background_color(backColor) && __opaque_console::foreground_color(foreColor);
 }
 
-bool __opaque_console::set_cursor_position(int32_t left, int32_t top) {
+bool __opaque_console::set_cursor_position(int32 left, int32 top) {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   csbi.dwCursorPosition.X = static_cast<int16_t>(left);
@@ -270,43 +270,43 @@ void __opaque_console::treat_control_c_as_input(bool treat_control_c_as_input) {
   SetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), mode);
 }
 
-int32_t __opaque_console::window_height() {
+int32 __opaque_console::window_height() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   return csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
 }
 
-void __opaque_console::window_height(int32_t height) {
+void __opaque_console::window_height(int32 height) {
   /// @todo set console window height on windows
 }
 
-int32_t __opaque_console::window_left() {
+int32 __opaque_console::window_left() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   return csbi.srWindow.Left;
 }
 
-void __opaque_console::window_left(int32_t left) {
+void __opaque_console::window_left(int32 left) {
   /// @todo set console window left on windows
 }
 
-int32_t __opaque_console::window_top() {
+int32 __opaque_console::window_top() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   return csbi.srWindow.Top;
 }
 
-void __opaque_console::window_top(int32_t top) {
+void __opaque_console::window_top(int32 top) {
   /// @todo set console window top on windows
 }
 
-int32_t __opaque_console::window_width() {
+int32 __opaque_console::window_width() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   return csbi.srWindow.Right - csbi.srWindow.Left + 1;
 }
 
-void __opaque_console::window_width(int32_t width) {
+void __opaque_console::window_width(int32 width) {
   /// @todo set console window width on windows
 }
 

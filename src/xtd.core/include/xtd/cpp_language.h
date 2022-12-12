@@ -59,7 +59,7 @@ namespace xtd {
     
     /// @brief Gets the month when the cpp language was released.
     /// @return The month when the cpp version was released.
-    int32_t month() const noexcept;
+    int32 month() const noexcept;
     
     /// @brief Gets the offical name of the cpp language.
     /// @return The offical name of the cpp version.
@@ -79,7 +79,7 @@ namespace xtd {
     
     /// @brief Gets the year when the cpp language was released.
     /// @return The year when the cpp version was released.
-    int32_t year() const noexcept;
+    int32 year() const noexcept;
     /// @}
     
     /// @name Methods

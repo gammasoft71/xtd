@@ -41,19 +41,19 @@ void console::background_color(console_color color) {
   __opaque_console::background_color(color);
 }
 
-int32_t console::buffer_height() {
+int32 console::buffer_height() {
   return __opaque_console::buffer_height();
 }
 
-void console::buffer_height(int32_t height) {
+void console::buffer_height(int32 height) {
   __opaque_console::buffer_height(height);
 }
 
-int32_t console::buffer_width() {
+int32 console::buffer_width() {
   return __opaque_console::buffer_width();
 }
 
-void console::buffer_width(int32_t width) {
+void console::buffer_width(int32 width) {
   __opaque_console::buffer_width(width);
 }
 
@@ -61,27 +61,27 @@ bool console::caps_lock() {
   return __opaque_console::caps_lock();
 }
 
-int32_t console::cursor_left() {
+int32 console::cursor_left() {
   return __opaque_console::cursor_left();
 }
 
-void console::cursor_left(int32_t left) {
+void console::cursor_left(int32 left) {
   set_cursor_position(left, cursor_top());
 }
 
-int32_t console::cursor_size() {
+int32 console::cursor_size() {
   return __opaque_console::cursor_size();
 }
 
-void console::cursor_size(int32_t size) {
+void console::cursor_size(int32 size) {
   __opaque_console::cursor_size(size);
 }
 
-int32_t console::cursor_top() {
+int32 console::cursor_top() {
   return __opaque_console::cursor_top();
 }
 
-void console::cursor_top(int32_t top) {
+void console::cursor_top(int32 top) {
   set_cursor_position(cursor_left(), top);
 }
 
@@ -101,11 +101,11 @@ bool console::foreground_color(console_color color) {
   return __opaque_console::foreground_color(color);
 }
 
-int32_t console::input_code_page() {
+int32 console::input_code_page() {
   return __opaque_console::input_code_page();
 }
 
-bool console::input_code_page(int32_t code_page) {
+bool console::input_code_page(int32 code_page) {
   return __opaque_console::input_code_page(code_page);
 }
 
@@ -125,11 +125,11 @@ bool console::key_available() {
   return __opaque_console::key_available();
 }
 
-int32_t console::largest_window_height() {
+int32 console::largest_window_height() {
   return __opaque_console::largest_window_height();
 }
 
-int32_t console::largest_window_width() {
+int32 console::largest_window_width() {
   return __opaque_console::largest_window_width();
 }
 
@@ -137,11 +137,11 @@ bool console::number_lock() {
   return __opaque_console::number_lock();
 }
 
-int32_t console::output_code_page() {
+int32 console::output_code_page() {
   return __opaque_console::output_code_page();
 }
 
-bool console::output_code_page(int32_t code_page) {
+bool console::output_code_page(int32 code_page) {
   return __opaque_console::output_code_page(code_page);
 }
 
@@ -161,31 +161,31 @@ void console::treat_control_c_as_input(bool treat_control_c_as_input) {
   return __opaque_console::treat_control_c_as_input(treat_control_c_as_input);
 }
 
-int32_t console::window_height() {
+int32 console::window_height() {
   return __opaque_console::window_height();
 }
 
-void console::window_height(int32_t height) {
+void console::window_height(int32 height) {
   __opaque_console::window_height(height);
 }
 
-int32_t console::window_left() {
+int32 console::window_left() {
   return __opaque_console::window_left();
 }
 
-void console::window_left(int32_t left) {
+void console::window_left(int32 left) {
   __opaque_console::window_left(left);
 }
 
-int32_t console::window_top() {
+int32 console::window_top() {
   return __opaque_console::window_top();
 }
 
-void console::window_top(int32_t top) {
+void console::window_top(int32 top) {
   __opaque_console::window_top(top);
 }
 
-int32_t console::window_width() {
+int32 console::window_width() {
   return __opaque_console::window_width();
 }
 
@@ -205,7 +205,7 @@ void console::clear() {
   __opaque_console::clear();
 }
 
-std::pair<int32_t, int32_t> console::get_cursor_position() {
+std::pair<int32, int32> console::get_cursor_position() {
   return {cursor_left(), cursor_top()};
 }
 
@@ -232,8 +232,8 @@ console_key_info console::read_key() {
 }
 
 console_key_info console::read_key(bool intercept) {
-  int32_t key_char = 0;
-  int32_t key_code = 0;
+  int32 key_char = 0;
+  int32 key_code = 0;
   bool alt = false;
   bool shift = false;
   bool ctrl = false;
@@ -251,7 +251,7 @@ bool console::reset_color() {
   return __opaque_console::reset_color();
 }
 
-void console::set_cursor_position(int32_t left, int32_t top) {
+void console::set_cursor_position(int32 left, int32 top) {
   __opaque_console::set_cursor_position(left, top);
 }
 
@@ -267,12 +267,12 @@ void console::set_out(const std::ostream& os)  {
   out.rdbuf(os.rdbuf());
 }
 
-void console::set_window_position(int32_t left, int32_t top) {
+void console::set_window_position(int32 left, int32 top) {
   window_left(left);
   window_top(top);
 }
 
-void console::set_window_size(int32_t width, int32_t height) {
+void console::set_window_size(int32 width, int32 height) {
   window_width(width);
   window_height(height);
 }

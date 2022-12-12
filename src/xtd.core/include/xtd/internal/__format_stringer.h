@@ -18,6 +18,7 @@
 #include <string>
 #include <type_traits>
 #include <vector>
+#include "../types.h"
 
 /// @cond
 namespace xtd {
@@ -317,14 +318,14 @@ inline std::basic_string<char_t> __format_stringer(const bool& value) {
   return ss.str();
 }
 
-template<typename char_t, typename value_t, int32_t len>
+template<typename char_t, typename value_t, xtd::int32 len>
 inline std::basic_string<char_t> __format_stringer(const char*& value) {
   std::basic_stringstream<char_t> ss;
   ss << __to_string<char_t>(value);
   return ss.str();
 }
 
-template<typename char_t, typename value_t, int32_t len>
+template<typename char_t, typename value_t, xtd::int32 len>
 inline std::basic_string<char_t> __format_stringer(const char* const& value) {
   std::basic_stringstream<char_t> ss;
   ss << __to_string<char_t>(value);

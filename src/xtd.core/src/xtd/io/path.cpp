@@ -94,7 +94,7 @@ ustring path::get_random_file_name() {
   ustring random_file_name;
   
   for (size_t i = 0; i < 11; i++) {
-    random_file_name += valid_chars[rand.next(0, as<int32_t>(valid_chars.size() - 1))];
+    random_file_name += valid_chars[rand.next(0, as<int32>(valid_chars.size() - 1))];
     if (i == 7)
       random_file_name += '.';
   }
@@ -113,7 +113,7 @@ ustring path::get_temp_file_name() {
       if (i == 0)
         temp_file_name += valid_chars[rand.next(0, 9)];
       else
-        temp_file_name += valid_chars[rand.next(0, as<int32_t>(valid_chars.size() - 1))];
+        temp_file_name += valid_chars[rand.next(0, as<int32>(valid_chars.size() - 1))];
     }
     temp_file_name += ".tmp";
   } while (file::exists(combine(get_temp_path(), temp_file_name)));
@@ -141,9 +141,9 @@ char path::volume_separator_char() noexcept {
   return native::path::volume_separator_char();
 }
 
-int32_t path::__get_index_path_rooted(const ustring& path) {
+int32 path::__get_index_path_rooted(const ustring& path) {
   size_t index = path.find(directory_separator_char());
-  return (index == ustring::npos || index == path.size() || (index != 0 && !__is_drive(path.substring(0, index + 1)))) ? -1 : static_cast<int32_t>(index);
+  return (index == ustring::npos || index == path.size() || (index != 0 && !__is_drive(path.substring(0, index + 1)))) ? -1 : static_cast<int32>(index);
 }
 
 bool path::__is_drive(const ustring& path) noexcept {
