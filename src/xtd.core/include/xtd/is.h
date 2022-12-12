@@ -36,7 +36,7 @@ namespace xtd {
   template<typename value_t>
   inline bool is(uint16_t value) {return false;}
   template<typename value_t>
-  inline bool is(uint32_t value) {return false;}
+  inline bool is(uint32 value) {return false;}
   template<typename value_t>
   inline bool is(uint64_t value) {return false;}
   template<typename value_t>
@@ -250,12 +250,12 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// int main() {
-  ///   uint32_t u = 42;
-  ///   std::cout << "u " << is<uint32_t>(u) ? "is" : "isn't" << " uint32_t" << endl;
+  ///   uint32 u = 42;
+  ///   std::cout << "u " << is<uint32>(u) ? "is" : "isn't" << " uint32" << endl;
   /// }
   /// @endcode
   template<>
-  inline bool is<uint32_t>(uint32_t value) {
+  inline bool is<uint32>(uint32 value) {
     return true;
   }
   

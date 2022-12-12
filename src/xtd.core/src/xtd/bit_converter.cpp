@@ -16,19 +16,19 @@ vector<byte_t> bit_converter::get_bytes(bool value) noexcept {
 }
 
 vector<byte_t> bit_converter::get_bytes(char value) noexcept {
-  return bit_converter::get_bytes(((uint32_t)value));
+  return bit_converter::get_bytes(((uint32)value));
 }
 
 vector<byte_t> bit_converter::get_bytes(char16_t value) noexcept {
-  return bit_converter::get_bytes(((uint32_t)value));
+  return bit_converter::get_bytes(((uint32)value));
 }
 
 vector<byte_t> bit_converter::get_bytes(char32_t value) noexcept {
-  return bit_converter::get_bytes(((uint32_t)value));
+  return bit_converter::get_bytes(((uint32)value));
 }
 
 vector<byte_t> bit_converter::get_bytes(wchar_t value) noexcept {
-  return bit_converter::get_bytes(((uint32_t)value));
+  return bit_converter::get_bytes(((uint32)value));
 }
 
 vector<byte_t> bit_converter::get_bytes(double value) noexcept {
@@ -44,7 +44,7 @@ vector<byte_t> bit_converter::get_bytes(int16_t value) noexcept {
 }
 
 vector<byte_t> bit_converter::get_bytes(int32 value) noexcept {
-  return bit_converter::get_bytes(uint32_t(value));
+  return bit_converter::get_bytes(uint32(value));
 }
 
 vector<byte_t> bit_converter::get_bytes(int64_t value) noexcept {
@@ -64,7 +64,7 @@ vector<byte_t> bit_converter::get_bytes(uint16_t value) noexcept {
   return {byte_t((value & 0xFF00) >> 8), byte_t(value & 0x00FF)};
 }
 
-vector<byte_t> bit_converter::get_bytes(uint32_t value) noexcept {
+vector<byte_t> bit_converter::get_bytes(uint32 value) noexcept {
   if (is_little_endian) return {byte_t(value & 0x000000FF), byte_t((value & 0x0000FF00) >> 8), byte_t((value & 0x00FF0000) >> 16), byte_t((value & 0xFF000000) >> 24)};
   return {byte_t((value & 0xFF000000) >> 24), byte_t((value & 0x00FF0000) >> 16), byte_t((value & 0x0000FF00) >> 8), byte_t(value & 0x000000FF)};
 }
@@ -132,8 +132,8 @@ uint16_t bit_converter::to_uint16(const vector<byte_t>& value, size_t start_inde
   return static_cast<uint16_t>(value.at(start_index)) + (static_cast<uint16_t>(value.at(start_index + 1)) << 8);
 }
 
-uint32_t bit_converter::to_uint32(const vector<byte_t>& value, size_t start_index) {
-  return static_cast<uint32_t>(value.at(start_index)) + (static_cast<uint32_t>(value.at(start_index + 1)) << 8) + (static_cast<uint32_t>(value.at(start_index + 2)) << 16) + (static_cast<uint32_t>(value.at(start_index + 3)) << 24);
+uint32 bit_converter::to_uint32(const vector<byte_t>& value, size_t start_index) {
+  return static_cast<uint32>(value.at(start_index)) + (static_cast<uint32>(value.at(start_index + 1)) << 8) + (static_cast<uint32>(value.at(start_index + 2)) << 16) + (static_cast<uint32>(value.at(start_index + 3)) << 24);
 }
 
 uint64_t bit_converter::to_uint64(const vector<byte_t>& value, size_t start_index) {

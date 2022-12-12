@@ -79,7 +79,7 @@ bool __opaque_console::background_color(xtd::console_color color) {
   return SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes) == TRUE;
 }
 
-bool __opaque_console::beep(uint32_t frequency, uint32_t duration) {
+bool __opaque_console::beep(uint32 frequency, uint32 duration) {
   if (frequency < 37 || frequency > 32767)
     return false;
     

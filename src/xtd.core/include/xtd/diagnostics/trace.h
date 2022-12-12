@@ -59,20 +59,20 @@ namespace xtd {
       /// @brief Gets the indent level.
       /// @return The indent level. The default is zero.
       /// @remarks The IndentLevel property represents the number of times the indent of size IndentSize is applied. This property is stored on per-thread/per-request basis.
-      static uint32_t indent_level() noexcept;
+      static uint32 indent_level() noexcept;
       /// @brief Sets the indent level.
       /// @param indent_level The indent level. The default is zero.
       /// @remarks The IndentLevel property represents the number of times the indent of size IndentSize is applied. This property is stored on per-thread/per-request basis.
-      static void indent_level(uint32_t indent_level) noexcept;
+      static void indent_level(uint32 indent_level) noexcept;
       
       /// @brief Gets the number of spaces in an indent.
       /// @return The number of spaces in an indent. The default is four.
       /// @remarks A ostream_trace_listener interprets this number as spaces. An event_log_trace_listener ignores this value.
-      static uint32_t indent_size() noexcept;
+      static uint32 indent_size() noexcept;
       /// @brief Sets the number of spaces in an indent.
       /// @param indent_size The number of spaces in an indent. The default is four.
       /// @remarks A ostream_trace_listener interprets this number as spaces. An event_log_trace_listener ignores this value.
-      static void indent_size(uint32_t indent_size) noexcept;
+      static void indent_size(uint32 indent_size) noexcept;
       
       /// @brief Gets the collection of listeners that is monitoring the trace output.
       /// @return A listener_collection that represents a collection of type trace_listener monitoring the trace output.
@@ -451,8 +451,8 @@ namespace xtd {
       static void write_line_(const xtd::ustring& message, const xtd::ustring& category);
       
       inline static bool auto_flush_ = false;
-      inline static uint32_t indent_level_ = 0;
-      inline static uint32_t indent_size_ = 4;
+      inline static uint32 indent_level_ = 0;
+      inline static uint32 indent_size_ = 4;
       static listener_collection& listeners_;
       static bool& show_assert_dialog_;
       inline static bool use_global_lock_ = true;

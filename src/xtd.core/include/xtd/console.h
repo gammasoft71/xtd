@@ -274,7 +274,7 @@ namespace xtd {
     /// @par Examples
     /// This example demonstrates the beep method by playing the first few notes of a song through the console speaker.
     /// @include console_song.cpp
-    static void beep(uint32_t frequency, uint32_t duration);
+    static void beep(uint32 frequency, uint32 duration);
     
     /// @brief Clears the console buffer and corresponding console window of display information.
     /// @remarks Using the clear method is equivalent invoking the MS-DOS cls command in the command prompt window.

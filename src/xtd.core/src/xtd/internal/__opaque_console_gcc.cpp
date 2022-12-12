@@ -562,7 +562,7 @@ bool __opaque_console::background_color(xtd::console_color color) {
 namespace {
   class audio {
   public:
-    static bool beep(uint32_t frequency, uint32_t duration) {
+    static bool beep(xtd::uint32 frequency, xtd::uint32 duration) {
       if (frequency < 37 || frequency > 32767) return false;
       
       dispatch_semaphore_wait(idle_semaphore, DISPATCH_TIME_FOREVER);
@@ -596,14 +596,14 @@ namespace {
     }
     
   private:
-    static OSStatus au_renderer_proc(void* in_ref_con, AudioUnitRenderActionFlags* io_action_flags, const AudioTimeStamp* in_time_stamp, uint32_t in_bus_number, uint32_t in_number_frames, AudioBufferList* io_data) {
+    static OSStatus au_renderer_proc(void* in_ref_con, AudioUnitRenderActionFlags* io_action_flags, const AudioTimeStamp* in_time_stamp, xtd::uint32 in_bus_number, xtd::uint32 in_number_frames, AudioBufferList* io_data) {
       static xtd::int32 counter = 0;
       while (counter == 0) {
         dispatch_semaphore_wait(start_playing_semaphore, DISPATCH_TIME_FOREVER);
         counter = beep_samples;
       }
 
-      for (uint32_t frames_index = 0; frames_index < in_number_frames; ++frames_index) {
+      for (xtd::uint32 frames_index = 0; frames_index < in_number_frames; ++frames_index) {
         static unsigned char theta = 0;
         reinterpret_cast<unsigned char*>(io_data->mBuffers[0].mData)[frames_index] = beep_freq > 0 ? (beep_freq * 255 * theta++ / simple_rate) : 0;
         if (--counter == 0) {
@@ -628,14 +628,14 @@ namespace {
   };
 }
 
-bool __opaque_console::beep(uint32_t frequency, uint32_t duration) {
+bool __opaque_console::beep(xtd::uint32 frequency, xtd::uint32 duration) {
   return audio::beep(frequency, duration);
 }
 #else
-bool __opaque_console::beep(uint32_t frequency, uint32_t duration) {
+bool __opaque_console::beep(xtd::uint32 frequency, xtd::uint32 duration) {
   if (frequency < 37 || frequency > 32767) return false;
   
-  static constexpr const uint32_t simple_rate = 8000;
+  static constexpr const xtd::uint32 simple_rate = 8000;
   static snd_pcm_t* pcm_handle = nullptr;
   if (pcm_handle == nullptr) {
     if (snd_pcm_open(&pcm_handle, "default", SND_PCM_STREAM_PLAYBACK, 0)) return false;
@@ -643,9 +643,9 @@ bool __opaque_console::beep(uint32_t frequency, uint32_t duration) {
   }
   
   unsigned char buffer[2400];
-  for (uint32_t duration_index = 0; duration_index < duration / 200; ++duration_index) {
+  for (xtd::uint32 duration_index = 0; duration_index < duration / 200; ++duration_index) {
     snd_pcm_prepare(pcm_handle);
-    for (uint32_t buffer_index = 0; buffer_index < sizeof(buffer); ++buffer_index)
+    for (xtd::uint32 buffer_index = 0; buffer_index < sizeof(buffer); ++buffer_index)
       buffer[buffer_index] = frequency > 0 ? (255 * buffer_index * frequency / simple_rate) : 0;
     snd_pcm_sframes_t written_frames = snd_pcm_writei(pcm_handle, buffer, sizeof(buffer));
     if (written_frames < 0) snd_pcm_recover(pcm_handle, written_frames, 0);

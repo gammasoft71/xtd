@@ -30,7 +30,7 @@ class core_export_ __opaque_console final {
   friend struct ::__console_intercept_signals;
   static xtd::console_color background_color();
   static bool background_color(xtd::console_color color);
-  static bool beep(uint32_t frequency, uint32_t duration);
+  static bool beep(xtd::uint32 frequency, xtd::uint32 duration);
   static xtd::int32 buffer_height();
   static bool buffer_height(xtd::int32 height);
   static xtd::int32 buffer_width();

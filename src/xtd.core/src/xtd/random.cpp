@@ -2,10 +2,10 @@
 
 using namespace xtd;
 
-random::random() : generator_(static_cast<uint32_t>(environment::tick_count().count())) {
+random::random() : generator_(static_cast<uint32>(environment::tick_count().count())) {
 }
 
-random::random(uint32_t seed) : generator_(seed + 1) {
+random::random(uint32 seed) : generator_(seed + 1) {
 }
 
 random::random(std::random_device& random_device) : generator_(random_device()) {

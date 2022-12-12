@@ -12,7 +12,7 @@ using namespace std;
 using namespace std::chrono;
 using namespace xtd;
 
-uint32_t time_zone_info::transition_time::day() const noexcept {
+uint32 time_zone_info::transition_time::day() const noexcept {
   return day_;
 }
 
@@ -24,7 +24,7 @@ bool time_zone_info::transition_time::is_fixed_rule() const noexcept {
   return is_fixed_date_rule_;
 }
 
-uint32_t time_zone_info::transition_time::month() const noexcept {
+uint32 time_zone_info::transition_time::month() const noexcept {
   return month_;
 }
 
@@ -32,11 +32,11 @@ xtd::date_time time_zone_info::transition_time::time_of_day() const noexcept {
   return time_of_day_;
 }
 
-uint32_t time_zone_info::transition_time::week() const noexcept {
+uint32 time_zone_info::transition_time::week() const noexcept {
   return week_;
 }
 
-time_zone_info::transition_time time_zone_info::transition_time::create_fixed_date_rule(date_time time_of_day, uint32_t month, uint32_t day) {
+time_zone_info::transition_time time_zone_info::transition_time::create_fixed_date_rule(date_time time_of_day, uint32 month, uint32 day) {
   if (time_of_day.year() != 1 || time_of_day.month() != 1 || time_of_day.day() != 1 || time_of_day.kind() != date_time_kind::unspecified) throw argument_exception(csf_);
   if (month < 1 || month > 12 || day < 1 || day > 31) throw argument_out_of_range_exception(csf_);
   transition_time result;
@@ -47,7 +47,7 @@ time_zone_info::transition_time time_zone_info::transition_time::create_fixed_da
   return result;
 }
 
-time_zone_info::transition_time time_zone_info::transition_time::create_floating_date_rule(date_time time_of_day, uint32_t month, uint32_t week, xtd::day_of_week day_of_week) {
+time_zone_info::transition_time time_zone_info::transition_time::create_floating_date_rule(date_time time_of_day, uint32 month, uint32 week, xtd::day_of_week day_of_week) {
   if (time_of_day.year() != 1 || time_of_day.month() != 1 || time_of_day.day() != 1 || time_of_day.kind() != date_time_kind::unspecified) throw argument_exception(csf_);
   if (month < 1 || month > 12 || week < 1 || week > 5) throw argument_out_of_range_exception(csf_);
   transition_time result;

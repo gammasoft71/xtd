@@ -44,7 +44,7 @@ namespace xtd {
     
     /// @brief Initializes a new instance of the random class, using a specified seed value.
     /// @param seed A number used to calculate a starting value for the pseudo-random number sequence.
-    explicit random(uint32_t seed);
+    explicit random(uint32 seed);
     
     /// @brief Initializes a new instance of the random class, using a specified random device value.
     /// @param random_device A random device value.

@@ -127,7 +127,7 @@ xtd::operating_system environment::os_version() noexcept {
   return os;
 }
 
-uint32_t environment::processor_count() {
+uint32 environment::processor_count() {
   return processor_information().core_count();
 }
 

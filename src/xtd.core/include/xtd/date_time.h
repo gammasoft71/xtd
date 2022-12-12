@@ -119,7 +119,7 @@ namespace xtd {
     /// @param day The day (1 through the number of days in month).
     /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.<br>-or-<br>month is less than 1 or greater than 12.<br>-or-<br>day is less than 1 or greater than the number of days in month.
     /// @par Examples
-    /// The following example uses the date_time(uint32_t, uint32_t, uint32_t) constructor to instantiate a xtd::date_time value. The example also illustrates that this overload creates a xtd::date_time value whose time component equals midnight (or 0:00).
+    /// The following example uses the date_time(uint32, uint32, uint32) constructor to instantiate a xtd::date_time value. The example also illustrates that this overload creates a xtd::date_time value whose time component equals midnight (or 0:00).
     /// @code
     /// date_time date1(2010, 8, 18);
     /// console::write_line(date1.to_string());
@@ -127,7 +127,7 @@ namespace xtd {
     /// //      8/18/2010 12:00:00 AM
     /// @endcode
     /// @remarks This constructor interprets year, month, and day as a year, month, and day in the Gregorian calendar.
-    date_time(uint32_t year, uint32_t month, uint32_t day);
+    date_time(uint32 year, uint32 month, uint32 day);
     /// @brief Initializes a new instance of the xttd::date_time structure to the specified year, month, day, hour, minute, and second.
     /// @param year The year (1 through 9999).
     /// @param month The month (1 through 12).
@@ -138,7 +138,7 @@ namespace xtd {
     /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.<br>-or-<br>month is less than 1 or greater than 12.<br>-or-<br>day is less than 1 or greater than the number of days in month.<br>-or-<br>hour is less than 0 or greater than 23.<br>-or-<br>minute is less than 0 or greater than 59.<br>-or-<br>second is less than 0 or greater than 59.
     /// @remarks The xtd::date_time::kind property is initialized to xtd::date_time_kind::unspecified.
     /// @remarks This constructor interpretsyear, month, and day as a year, month, and day in the Gregorian calendar.
-    date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second);
+    date_time(uint32 year, uint32 month, uint32 day, uint32 hour, uint32 minute, uint32 second);
     /// @brief Initializes a new instance of the xtd::date_time structure to the specified year, month, day, hour, minute, second, and Coordinated Universal Time (UTC) or local time.
     /// @param year The year (1 through 9999).
     /// @param month The month (1 through 12).
@@ -149,7 +149,7 @@ namespace xtd {
     /// @param kind One of the enumeration values that indicates whether year, month, day, hour, minute and second specify a local time, Coordinated Universal Time (UTC), or neither.
     /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.<br>-or-<br>month is less than 1 or greater than 12.<br>-or-<br>day is less than 1 or greater than the number of days in month.<br>-or-<br>hour is less than 0 or greater than 23.<br>-or-<br>minute is less than 0 or greater than 59<br>-or-<br>second is less than 0 or greater than 59.
     /// @par Examples
-    /// The following example uses the date_time(uint32_t, uint32_t, uint32_tt, uint32_tt, uint32_t, uint32_t, xtd::date_time_kind) constructor to instantiate a xtd::date_time value.
+    /// The following example uses the date_time(uint32, uint32, uint32_tt, uint32_tt, uint32, uint32, xtd::date_time_kind) constructor to instantiate a xtd::date_time value.
     /// @code
     /// date_time date1(2010, 8, 18, 16, 32, 0, date_time_kind::local);
     /// console::write_line("{0} {1}", date1, date1.kind());
@@ -158,7 +158,7 @@ namespace xtd {
     /// @endcode
     /// @remarks The xtd::date_time::kind property is initialized to xtd::date_time_kind::unspecified.
     /// @remarks This constructor interpretsyear, month, and day as a year, month, and day in the Gregorian calendar.
-    date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, date_time_kind kind);
+    date_time(uint32 year, uint32 month, uint32 day, uint32 hour, uint32 minute, uint32 second, date_time_kind kind);
     /// @brief Initializes a new instance of the xtd::date_time structure to the specified year, month, day, hour, minute, second, and millisecond.
     /// @param year The year (1 through 9999).
     /// @param month The month (1 through 12).
@@ -169,7 +169,7 @@ namespace xtd {
     /// @param millisecond The milliseconds (0 through 999).
     /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.<br>-or-<br>month is less than 1 or greater than 12.<br>-or-<br>day is less than 1 or greater than the number of days in month.<br>-or-<br>hour is less than 0 or greater than 23.<br>-or-<br>minute is less than 0 or greater than 59<br>-or-<br>second is less than 0 or greater than 59<br>-or-<br>millisecond is less than 0 or greater than 999.
     /// @remarks This constructor interpretsyear, month, and day as a year, month, and day in the Gregorian calendar.
-    date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, uint32_t millisecond);
+    date_time(uint32 year, uint32 month, uint32 day, uint32 hour, uint32 minute, uint32 second, uint32 millisecond);
     /// @brief Initializes a new instance of the xtd::date_time structure to the specified year, month, day, hour, minute, second, millisecond, and Coordinated Universal Time (UTC) or local time.
     /// @param year The year (1 through 9999).
     /// @param month The month (1 through 12).
@@ -181,7 +181,7 @@ namespace xtd {
     /// @param kind One of the enumeration values that indicates whether year, month, day, hour, minute and second specify a local time, Coordinated Universal Time (UTC), or neither.
     /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.<br>-or-<br>month is less than 1 or greater than 12.<br>-or-<br>day is less than 1 or greater than the number of days in month.<br>-or-<br>hour is less than 0 or greater than 23.<br>-or-<br>minute is less than 0 or greater than 59<br>-or-<br>second is less than 0 or greater than 59<br>-or-<br>millisecond is less than 0 or greater than 999.
     /// @remarks This constructor interpretsyear, month, and day as a year, month, and day in the Gregorian calendar.
-    date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, uint32_t millisecond, date_time_kind kind);
+    date_time(uint32 year, uint32 month, uint32 day, uint32 hour, uint32 minute, uint32 second, uint32 millisecond, date_time_kind kind);
     /// @}
     
     /// @cond
@@ -210,7 +210,7 @@ namespace xtd {
     /// @code
     /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
     /// // year gets 1999.
-    /// uint32_t year = moment.year();
+    /// uint32 year = moment.year();
     ///
     /// // month gets 1 (January).
     /// uint23_t month = moment.month();
@@ -231,7 +231,7 @@ namespace xtd {
     /// uint23_t millisecond = moment.millisecond();
     /// @endcode
     /// @remarks The xtd::date_time::day property always returns the day of the month in the Gregorian calendar.
-    uint32_t day() const noexcept;
+    uint32 day() const noexcept;
     
     /// @brief Gets the day of the week represented by this instance.
     /// @return An enumerated constant that indicates the day of the week of this xtd::date_time value.
@@ -248,7 +248,7 @@ namespace xtd {
     /// The following example displays the day of the year of December 31 for the years 2010-2020 in the Gregorian calendar. Note that the example shows that December 31 is the 366th day of the year in leap years.
     /// @include date_time_day_of_year.cpp
     /// @remarks The xtd::date_time::day_of_year property takes leap years into account when it calculates the day of the year. The property value always reflects the day of the year in the Gregorian calendar, regardless of the current culture's current calendar.
-    uint32_t day_of_year() const noexcept;
+    uint32 day_of_year() const noexcept;
     
     /// @brief Gets the hour component of the date represented by this instance.
     /// @return The hour component, expressed as a value between 0 and 23.
@@ -257,7 +257,7 @@ namespace xtd {
     /// @code
     /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
     /// // year gets 1999.
-    /// uint32_t year = moment.year();
+    /// uint32 year = moment.year();
     ///
     /// // month gets 1 (January).
     /// uint23_t month = moment.month();
@@ -283,7 +283,7 @@ namespace xtd {
     /// console::write_line(date1.to_string("X"));                                   // Displays 6
     /// console::write_line("{0}, {1}", date1.to_string("X"), date1.to_string("a")); // Displays 6 PM
     /// @endcode
-    uint32_t hour() const noexcept;
+    uint32 hour() const noexcept;
     
     /// @brief Gets a value that indicates whether the time represented by this instance is based on local time, Coordinated Universal Time (UTC), or neither.
     /// @return One of the enumeration values that indicates what the current time represents. The default is xtd::date_time_kind::unspecified.
@@ -301,7 +301,7 @@ namespace xtd {
     /// @code
     /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
     /// // year gets 1999.
-    /// uint32_t year = moment.year();
+    /// uint32 year = moment.year();
     ///
     /// // month gets 1 (January).
     /// uint23_t month = moment.month();
@@ -333,7 +333,7 @@ namespace xtd {
     /// // Displays the following output to the console:
     /// //      Date: 2008-01-01T00:30:45.1250000
     /// @endcode
-    uint32_t millisecond() const noexcept;
+    uint32 millisecond() const noexcept;
     
     /// @brief Gets the minute component of the date represented by this instance.
     /// @return The minute component, expressed as a value between 0 and 59.
@@ -342,7 +342,7 @@ namespace xtd {
     /// @code
     /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
     /// // year gets 1999.
-    /// uint32_t year = moment.year();
+    /// uint32 year = moment.year();
     ///
     /// // month gets 1 (January).
     /// uint23_t month = moment.month();
@@ -362,7 +362,7 @@ namespace xtd {
     /// // millisecond gets 11.
     /// uint23_t millisecond = moment.millisecond();
     /// @endcode
-    uint32_t minute() const noexcept;
+    uint32 minute() const noexcept;
     
     /// @brief Gets the month component of the date represented by this instance.
     /// @return The month component, expressed as a value between 1 and 12.
@@ -371,7 +371,7 @@ namespace xtd {
     /// @code
     /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
     /// // year gets 1999.
-    /// uint32_t year = moment.year();
+    /// uint32 year = moment.year();
     ///
     /// // month gets 1 (January).
     /// uint23_t month = moment.month();
@@ -391,7 +391,7 @@ namespace xtd {
     /// // millisecond gets 11.
     /// uint23_t millisecond = moment.millisecond();
     /// @endcode
-    uint32_t month() const noexcept;
+    uint32 month() const noexcept;
     
     /// @brief Gets a xtd::date_time object that is set to the current date and time on this computer, expressed as the local time.
     /// @return An object whose value is the current local date and time.
@@ -409,7 +409,7 @@ namespace xtd {
     /// @code
     /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
     /// // year gets 1999.
-    /// uint32_t year = moment.year();
+    /// uint32 year = moment.year();
     ///
     /// // month gets 1 (January).
     /// uint23_t month = moment.month();
@@ -429,7 +429,7 @@ namespace xtd {
     /// // millisecond gets 11.
     /// uint23_t millisecond = moment.millisecond();
     /// @endcode
-    uint32_t second() const noexcept;
+    uint32 second() const noexcept;
     /// @brief Gets the number of ticks that represent the date and time of this instance.
     /// @return The number of ticks that represent the date and time of this instance. The value is between xtd::date_time::min_value.ticks and xtd::date_time::max_value.ticks.
     /// @par Examples
@@ -472,7 +472,7 @@ namespace xtd {
     /// @code
     /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
     /// // year gets 1999.
-    /// uint32_t year = moment.year();
+    /// uint32 year = moment.year();
     ///
     /// // month gets 1 (January).
     /// uint23_t month = moment.month();
@@ -493,7 +493,7 @@ namespace xtd {
     /// uint23_t millisecond = moment.millisecond();
     /// @endcode
     /// @remarks The xtd::date_time::year property returns the year of the current instance in the Gregorian calendar.
-    uint32_t year() const noexcept;
+    uint32 year() const noexcept;
     /// @}
     
     /// @name Methods
@@ -630,7 +630,7 @@ namespace xtd {
     /// The following example displays the number of days in each month of a year specified in an integer array.
     /// @include date_time_days_in_month2.cpp
     /// @remarks The xtd::date_time::days_in_month method always interprets month and year as the month and year of the Gregorian calendar.
-    static int32 days_in_month(uint32_t year, month_of_year month);
+    static int32 days_in_month(uint32 year, month_of_year month);
     
     /// @brief Returns the number of days in the specified month and year.
     /// @param year The year.
@@ -645,7 +645,7 @@ namespace xtd {
     /// The following example displays the number of days in each month of a year specified in an integer array.
     /// @include date_time_days_in_month2.cpp
     /// @remarks The xtd::date_time::days_in_month method always interprets month and year as the month and year of the Gregorian calendar.
-    static int32 days_in_month(uint32_t year, uint32_t month);
+    static int32 days_in_month(uint32 year, uint32 month);
     
     bool equals(const date_time&) const noexcept override;
     
@@ -751,7 +751,7 @@ namespace xtd {
     /// @param year A 4-digit year.
     /// @return true if year is a leap year; otherwise, false.
     /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.
-    static bool is_leap_year(uint32_t year);
+    static bool is_leap_year(uint32 year);
     
     /// @brief Converts the string representation of a date and time to its xtd::date_time equivalent by using the conventions of the current culture.
     /// @param s A string that contains a date and time to convert. See The string to parse for more information.
@@ -1077,8 +1077,8 @@ namespace xtd {
   private:
     friend class time_zone_info;
     xtd::ticks utc_offset() const;
-    void get_date_time(uint32_t& year, uint32_t& month, uint32_t& day, uint32_t& hour, uint32_t& minute, uint32_t& second, uint32_t& day_of_year,  int32& day_of_week) const;
-    void set_date_time(uint32_t year, uint32_t month, uint32_t day, uint32_t hour, uint32_t minute, uint32_t second, uint32_t millisecond, date_time_kind kind);
+    void get_date_time(uint32& year, uint32& month, uint32& day, uint32& hour, uint32& minute, uint32& second, uint32& day_of_year,  int32& day_of_week) const;
+    void set_date_time(uint32 year, uint32 month, uint32 day, uint32 hour, uint32 minute, uint32 second, uint32 millisecond, date_time_kind kind);
     
     xtd::ticks value_ {0};
     date_time_kind kind_ {date_time_kind::unspecified};

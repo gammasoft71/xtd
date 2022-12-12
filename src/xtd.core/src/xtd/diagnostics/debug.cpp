@@ -26,19 +26,19 @@ void debug::auto_flush(bool auto_flush) noexcept {
   auto_flush_ = auto_flush;
 }
 
-uint32_t debug::indent_level() noexcept {
+uint32 debug::indent_level() noexcept {
   return indent_level_;
 }
 
-void debug::indent_level(uint32_t indent_level) noexcept {
+void debug::indent_level(uint32 indent_level) noexcept {
   indent_level_ = indent_level;
 }
 
-uint32_t debug::indent_size() noexcept {
+uint32 debug::indent_size() noexcept {
   return indent_size_;
 }
 
-void debug::indent_size(uint32_t indent_size) noexcept {
+void debug::indent_size(uint32 indent_size) noexcept {
   indent_size_ = indent_size;
 }
 

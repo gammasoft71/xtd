@@ -689,7 +689,7 @@ xtd::net::sockets::linger_option socket::get_socket_linger_option() const {
   if (data_->handle == 0) throw object_closed_exception(csf_);
   if (data_->socket_type == xtd::net::sockets::socket_type::dgram) throw socket_exception(socket_error::protocol_not_supported, csf_);
   bool enabled = false;
-  uint32_t linger_time = 0;
+  uint32 linger_time = 0;
   if (native::socket::get_socket_linger_option(data_->handle, enabled, linger_time) != 0) throw socket_exception(get_last_error_(), csf_);
   return linger_option(enabled, linger_time);
 }
@@ -697,8 +697,8 @@ xtd::net::sockets::linger_option socket::get_socket_linger_option() const {
 xtd::net::sockets::multicast_option socket::get_socket_multicast_option(xtd::net::sockets::socket_option_name socket_option_name) const {
   if (data_->handle == 0) throw object_closed_exception(csf_);
   if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
-  uint32_t multicast_address = 0;
-  uint32_t interface_index = 0;
+  uint32 multicast_address = 0;
+  uint32 interface_index = 0;
   if (native::socket::get_socket_multicast_option(data_->handle, static_cast<int32>(socket_option_name), multicast_address, interface_index) != 0) throw socket_exception(get_last_error_(), csf_);
   //if (!bit_converter::is_little_endian) {
   //  //multicast_address = ((multicast_address << 24) | ((multicast_address & 0x0000FF00) << 8) | ((multicast_address >> 8) & 0x0000FF00) | (multicast_address >> 24));
@@ -713,7 +713,7 @@ xtd::net::sockets::ip_v6_multicast_option socket::get_socket_ip_v6_multicast_opt
   if (data_->handle == 0) throw object_closed_exception(csf_);
   if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
   vector<uint8_t> multicast_address;
-  uint32_t interface_index = 0;
+  uint32 interface_index = 0;
   if (native::socket::get_socket_ip_v6_multicast_option(data_->handle, static_cast<int32>(socket_option_name), multicast_address, interface_index) != 0) throw socket_exception(get_last_error_(), csf_);
   return ip_v6_multicast_option(ip_address(multicast_address), interface_index);
 }
@@ -919,8 +919,8 @@ void socket::set_socket_option(xtd::net::sockets::linger_option option_value) {
 void socket::set_socket_option(xtd::net::sockets::socket_option_name socket_option_name, const xtd::net::sockets::multicast_option& option_value) {
   if (data_->handle == 0) throw object_closed_exception(csf_);
   if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
-  uint32_t multicast_address = option_value.group().address_;
-  uint32_t interface_index = option_value.local_address() != ip_address::none ? option_value.local_address().address_ : ip_address::host_to_network_order(option_value.interface_index());
+  uint32 multicast_address = option_value.group().address_;
+  uint32 interface_index = option_value.local_address() != ip_address::none ? option_value.local_address().address_ : ip_address::host_to_network_order(option_value.interface_index());
   if (native::socket::set_socket_multicast_option(data_->handle, static_cast<int32>(socket_option_name), multicast_address, interface_index) != 0) throw socket_exception(get_last_error_(), csf_);
 }
 

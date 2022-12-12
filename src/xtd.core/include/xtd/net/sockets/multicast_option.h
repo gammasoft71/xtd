@@ -51,7 +51,7 @@ namespace xtd {
         /// @param group The xtd::net::ip_address of the multicast group.
         /// @param interface_index The address of the interface.
         /// @exception xtd::argument_out_of_range_exception interface_index > 0x00FFFFFF.
-        multicast_option(const xtd::net::ip_address& group, uint32_t interface_index);
+        multicast_option(const xtd::net::ip_address& group, uint32 interface_index);
         /// @}
         
         /// @cond
@@ -72,15 +72,15 @@ namespace xtd {
         multicast_option& group(const xtd::net::ip_address& value) noexcept;
         
         /// @brief Gets the interface index that is associated with a multicast group.
-        /// @return A uint32_t value that specifies the address of the interface.
+        /// @return A uint32 value that specifies the address of the interface.
         /// @remarks This property specifies the interface on which data is received or sent.
-        uint32_t interface_index() const noexcept;
+        uint32 interface_index() const noexcept;
         /// @brief Sets the interface index that is associated with a multicast group.
-        /// @param value A uint32_t value that specifies the address of the interface.
+        /// @param value A uint32 value that specifies the address of the interface.
         /// @return the current instance.
         /// @exception xtd::argument_out_of_range_exception value > 0x00FFFFFF.
         /// @remarks This property specifies the interface on which data is received or sent.
-        multicast_option& interface_index(uint32_t value);
+        multicast_option& interface_index(uint32 value);
         
         /// @brief Gets the local IP address associated with a multicast group.
         /// @return An xtd::net::ip_address that contains the local address associated with a multicast group.
@@ -93,7 +93,7 @@ namespace xtd {
         
       private:
         xtd::net::ip_address group_ = xtd::net::ip_address::none;
-        uint32_t interface_index_ = 0;
+        uint32 interface_index_ = 0;
         xtd::net::ip_address local_address_ = xtd::net::ip_address::none;
       };
     }

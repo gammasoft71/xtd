@@ -59,24 +59,24 @@ namespace xtd {
       
       /// @{
       /// @brief Gets the indent level.
-      /// @return uint32_t The indent level. The default is zero.
+      /// @return uint32 The indent level. The default is zero.
       /// @remarks The IndentLevel property represents the number of times that the indent specified by the IndentSize property is applied. This property is stored on per-thread/per-request basis.
-      uint32_t indent_level() const noexcept;
+      uint32 indent_level() const noexcept;
       
       /// @brief Sets the indent level.
       /// @param indent_level The indent level. The default is zero.
       /// @remarks The IndentLevel property represents the number of times that the indent specified by the IndentSize property is applied. This property is stored on per-thread/per-request basis.
-      void indent_level(uint32_t indent_level) noexcept;
+      void indent_level(uint32 indent_level) noexcept;
       
       /// @brief Gets the number of spaces in an indent.
-      /// @return uint32_t The number of spaces in an indent. The default is four spaces.
+      /// @return uint32 The number of spaces in an indent. The default is four spaces.
       /// @remarks The property is stored on per-thread/per-request basis.
-      uint32_t indent_size() const noexcept;
+      uint32 indent_size() const noexcept;
       
       /// @brief Sets the number of spaces in an indent.
       /// @param int32 The number of spaces in an indent. The default is four spaces.
       /// @remarks The property is stored on per-thread/per-request basis.
-      void indent_size(uint32_t indent_size) noexcept;
+      void indent_size(uint32 indent_size) noexcept;
       
       /// @brief Gets a value indicating whether the trace listener is thread safe.
       /// @return bool true if the trace listener is thread safe; otherwise, false. The default is false.
@@ -333,7 +333,7 @@ namespace xtd {
       virtual void write_indent() {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         need_indent_ = false;
-        for (uint32_t i = 0; i < indent_level_; ++i)
+        for (uint32 i = 0; i < indent_level_; ++i)
           write(xtd::ustring(indent_size_, ' '));
         #endif
       }
@@ -342,8 +342,8 @@ namespace xtd {
     private:
       void write_event_cache(const trace_event_cache& event_cache);
       
-      uint32_t indent_level_ = 0;
-      uint32_t indent_size_ = 4;
+      uint32 indent_level_ = 0;
+      uint32 indent_size_ = 4;
       bool is_thread_safe_ = false;
       xtd::ustring name_;
       bool need_indent_ = true;

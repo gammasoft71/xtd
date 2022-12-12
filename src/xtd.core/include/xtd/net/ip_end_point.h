@@ -34,7 +34,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::net::ip_end_point class.
       /// @param address The IP address of the Internet host.
       /// @param port The port number associated with the address, or 0 to specify any available port. port is in host order.
-      ip_end_point(uint32_t address, uint16_t port);
+      ip_end_point(uint32 address, uint16_t port);
       
       /// @brief Initializes a new instance of the xtd::net::ip_end_point class.
       /// @param address An xtd::net::ip_address.

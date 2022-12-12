@@ -356,7 +356,7 @@ namespace xtd {
     
     /// @brief Gets the number of processors on the current machine.
     /// @return The 32-bit unsigned integer that specifies the number of processors on the current machine. There is no default. If the current machine contains multiple processor groups, this property returns the number of logical processors that are available for use.
-    static uint32_t processor_count();
+    static uint32 processor_count();
     
     /// @brief Gets an xtd::processor object that contains the processor identifier.
     /// @return An object that contains the procesor identifier.

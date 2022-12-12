@@ -117,7 +117,7 @@ uint16_t math::clamp(uint16_t value, uint16_t min, uint16_t max) noexcept {
   return std::clamp(value, min, max);
 }
 
-uint32_t math::clamp(uint32_t value, uint32_t min, uint32_t max) noexcept {
+uint32 math::clamp(uint32 value, uint32 min, uint32 max) noexcept {
   return std::clamp(value, min, max);
 }
 
@@ -238,7 +238,7 @@ uint16_t math::max(uint16_t a, uint16_t b) noexcept {
   return a > b ? a : b;
 }
 
-uint32_t math::max(uint32_t a, uint32_t b) noexcept {
+uint32 math::max(uint32 a, uint32 b) noexcept {
   return a > b ? a : b;
 }
 
@@ -290,7 +290,7 @@ uint16_t math::min(uint16_t a, uint16_t b) noexcept {
   return a < b ? a : b;
 }
 
-uint32_t math::min(uint32_t a, uint32_t b) noexcept {
+uint32 math::min(uint32 a, uint32 b) noexcept {
   return a < b ? a : b;
 }
 
