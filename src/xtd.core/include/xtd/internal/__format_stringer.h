@@ -68,7 +68,7 @@ namespace xtd {
   template<>
   inline std::string to_string(const xtd::char16& value, const std::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const char32_t& value, const std::string& fmt, const std::locale& loc);
+  inline std::string to_string(const xtd::char32& value, const std::string& fmt, const std::locale& loc);
   template<>
   inline std::string to_string(const wchar_t& value, const std::string& fmt, const std::locale& loc);
   
@@ -116,7 +116,7 @@ namespace xtd {
   template<>
   inline std::wstring to_string(const xtd::char16& value, const std::wstring& fmt, const std::locale& loc);
   template<>
-  inline std::wstring to_string(const char32_t& value, const std::wstring& fmt, const std::locale& loc);
+  inline std::wstring to_string(const xtd::char32& value, const std::wstring& fmt, const std::locale& loc);
   template<>
   inline std::wstring to_string(const wchar_t& value, const std::wstring& fmt, const std::locale& loc);
   
@@ -160,7 +160,7 @@ namespace xtd {
 }
 
 template<typename char_t>
-inline std::basic_string<char_t> __codepoint_to_string(char32_t codepoint) {
+inline std::basic_string<char_t> __codepoint_to_string(xtd::char32 codepoint) {
   std::basic_string<char_t> result;
   if (codepoint < 0x80)
     result.push_back(static_cast<char_t>(codepoint));
@@ -186,7 +186,7 @@ inline std::basic_string<char_t> __to_string(char codepoint) {
 }
 
 template<typename char_t>
-inline std::basic_string<char_t> __to_string(char32_t codepoint) {
+inline std::basic_string<char_t> __to_string(xtd::char32 codepoint) {
   return __codepoint_to_string<char_t>(codepoint);
 }
 
@@ -236,7 +236,7 @@ std::basic_ostream<char_t>& operator <<(std::basic_ostream<char_t>& os, const st
 
 std::ostream& operator <<(std::ostream& os, const xtd::char8* str);
 std::ostream& operator <<(std::ostream& os, const xtd::char16* str);
-std::ostream& operator <<(std::ostream& os, const char32_t* str);
+std::ostream& operator <<(std::ostream& os, const xtd::char32* str);
 std::ostream& operator <<(std::ostream& os, const wchar_t* str);
 
 template<typename enum_t>
@@ -290,12 +290,12 @@ std::string __format_stringer_to_std_string(const value_t& value) {
 std::string __format_stringer_to_std_string(const char& c);
 std::string __format_stringer_to_std_string(const xtd::char8& c);
 std::string __format_stringer_to_std_string(const xtd::char16& c);
-std::string __format_stringer_to_std_string(const char32_t& c);
+std::string __format_stringer_to_std_string(const xtd::char32& c);
 std::string __format_stringer_to_std_string(const wchar_t& c);
 std::string __format_stringer_to_std_string(const char* str);
 std::string __format_stringer_to_std_string(const xtd::char8* str);
 std::string __format_stringer_to_std_string(const xtd::char16* str);
-std::string __format_stringer_to_std_string(const char32_t* str);
+std::string __format_stringer_to_std_string(const xtd::char32* str);
 std::string __format_stringer_to_std_string(const wchar_t* str);
 std::string __format_stringer_to_std_string(const std::string& str);
 std::string __format_stringer_to_std_string(const xtd::ustring& str);
@@ -363,14 +363,14 @@ inline std::basic_string<char_t> __format_stringer(const xtd::char16* const& val
 }
 
 template<typename char_t, typename value_t>
-inline std::basic_string<char_t> __format_stringer(const char32_t*& value) {
+inline std::basic_string<char_t> __format_stringer(const xtd::char32*& value) {
   std::basic_stringstream<char_t> ss;
   ss << __to_string<char_t>(value);
   return ss.str();
 }
 
 template<typename char_t, typename value_t>
-inline std::basic_string<char_t> __format_stringer(const char32_t* const& value) {
+inline std::basic_string<char_t> __format_stringer(const xtd::char32* const& value) {
   std::basic_stringstream<char_t> ss;
   ss << __to_string<char_t>(value);
   return ss.str();
@@ -519,7 +519,7 @@ inline std::string __format_stringer<char, xtd::char16&>(xtd::char16& value) {
 }
 
 template<>
-inline std::string __format_stringer<char, char32_t&>(char32_t& value) {
+inline std::string __format_stringer<char, xtd::char32&>(xtd::char32& value) {
   return xtd::to_string(value, "G", std::locale());
 }
 

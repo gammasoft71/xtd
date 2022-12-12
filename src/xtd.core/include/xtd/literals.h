@@ -78,7 +78,7 @@ namespace xtd {
   /// @code
   /// std::cout << U"125"_b << std::endl;
   /// @endcode
-  xtd::byte operator""_b(const char32_t* s, size_t n);
+  xtd::byte operator""_b(const char32* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -162,7 +162,7 @@ namespace xtd {
   /// @code
   /// std::cout << U"125"_d << std::endl;
   /// @endcode
-  double operator""_d(const char32_t* s, size_t n);
+  double operator""_d(const char32* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -246,7 +246,7 @@ namespace xtd {
   /// @code
   /// std::cout << U"125"_f << std::endl;
   /// @endcode
-  float operator""_f(const char32_t* s, size_t n);
+  float operator""_f(const char32* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -270,7 +270,7 @@ namespace xtd {
   /// @code
   /// std::cout << 'a'_c << std::endl;
   /// @endcode
-  char32_t operator""_c(char c);
+  char32 operator""_c(char c);
   
   /// @brief Used to convert specified value into char32._t
   /// @par Namespace
@@ -282,7 +282,7 @@ namespace xtd {
   /// @code
   /// std::cout << u'a'_c << std::endl;
   /// @endcode
-  char32_t operator""_c(char16 c);
+  char32 operator""_c(char16 c);
   
   /// @brief Used to convert specified value into char32._t
   /// @par Namespace
@@ -294,7 +294,7 @@ namespace xtd {
   /// @code
   /// std::cout << U'a'_c << std::endl;
   /// @endcode
-  char32_t operator""_c(char32_t c);
+  char32 operator""_c(char32 c);
   
   /// @brief Used to convert specified value into char32._t
   /// @par Namespace
@@ -306,7 +306,7 @@ namespace xtd {
   /// @code
   /// std::cout << L'a'_c << std::endl;
   /// @endcode
-  char32_t operator""_c(wchar_t c);
+  char32 operator""_c(wchar_t c);
   
   /// @brief Used to convert specified value into char32._t
   /// @par Namespace
@@ -318,7 +318,7 @@ namespace xtd {
   /// @code
   /// std::cout << 49_c << std::endl;
   /// @endcode
-  char32_t operator""_c(unsigned long long c);
+  char32 operator""_c(unsigned long long c);
   
   /// @brief Used to convert the specified value as hours to xtd::time_span.
   /// @par Namespace
@@ -435,7 +435,7 @@ namespace xtd {
   /// xtd::ustring s = u"This is a "_s + u"simple test"_s;
   /// std::cout << s << std::endl;
   /// @endcode
-  xtd::ustring operator""_s(const char32_t* s, size_t n);
+  xtd::ustring operator""_s(const char32* s, size_t n);
   
   /// @brief Used to convert specified value into xtd::ustring.
   /// @par Namespace
@@ -754,7 +754,7 @@ namespace xtd {
   /// @code
   /// std::cout << U"125"_s8 << std::endl;
   /// @endcode
-  sbyte operator""_s8(const char32_t* s, size_t n);
+  sbyte operator""_s8(const char32* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -838,7 +838,7 @@ namespace xtd {
   /// @code
   /// std::cout << U"125"_s16 << std::endl;
   /// @endcode
-  int16 operator""_s16(const char32_t* s, size_t n);
+  int16 operator""_s16(const char32* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -922,7 +922,7 @@ namespace xtd {
   /// @code
   /// std::cout << U"125"_s32 << std::endl;
   /// @endcode
-  int32 operator""_s32(const char32_t* s, size_t n);
+  int32 operator""_s32(const char32* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1006,7 +1006,7 @@ namespace xtd {
   /// @code
   /// std::cout << U"125"_s64 << std::endl;
   /// @endcode
-  int64 operator""_s64(const char32_t* s, size_t n);
+  int64 operator""_s64(const char32* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1050,7 +1050,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals translate
-  xtd::ustring operator""_t(const char32_t* s, size_t n) noexcept;
+  xtd::ustring operator""_t(const char32* s, size_t n) noexcept;
   
   /// @brief Used to translate specified string into locale.
   /// @par Namespace
@@ -1143,7 +1143,7 @@ namespace xtd {
   /// @code
   /// std::cout << U"125"_u8 << std::endl;
   /// @endcode
-  xtd::byte operator""_u8(const char32_t* s, size_t n);
+  xtd::byte operator""_u8(const char32* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1227,7 +1227,7 @@ namespace xtd {
   /// @code
   /// std::cout << U"125"_u16 << std::endl;
   /// @endcode
-  uint16_t operator""_u16(const char32_t* s, size_t n);
+  uint16_t operator""_u16(const char32* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1311,7 +1311,7 @@ namespace xtd {
   /// @code
   /// std::cout << U"125"_u32 << std::endl;
   /// @endcode
-  uint32 operator""_u32(const char32_t* s, size_t n);
+  uint32 operator""_u32(const char32* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1395,7 +1395,7 @@ namespace xtd {
   /// @code
   /// std::cout << U"125"_u64 << std::endl;
   /// @endcode
-  uint64 operator""_u64(const char32_t* s, size_t n);
+  uint64 operator""_u64(const char32* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace

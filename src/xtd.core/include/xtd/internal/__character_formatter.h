@@ -13,7 +13,7 @@
 template<typename char_t, typename value_t>
 inline std::basic_string<char_t> __character_formatter(const std::basic_string<char_t>& fmt, value_t value, const std::locale& loc) {
   std::basic_string<char_t> result;
-  char32_t codepoint = value;
+  xtd::char32 codepoint = value;
   if (codepoint < 0x80)
     result.push_back(static_cast<char>(codepoint));
   else  if (codepoint < 0x800) {

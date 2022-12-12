@@ -36,7 +36,7 @@ namespace xtd {
     /// @param control true to indicate that a CTRL key was pressed; otherwise, false.
     /// @remarks This type is not intended to be created by users. Instead, it is returned to the user in response to calling the Console::ReadKey method.
     /// @remarks The console_key_info type does not specify whether the left or right SHIFT, ALT, or CTRL modifier key was pressed
-    console_key_info(char32_t key_char, console_key key, bool shift, bool alt, bool control) noexcept;
+    console_key_info(char32 key_char, console_key key, bool shift, bool alt, bool control) noexcept;
     /// @}
     
     /// @cond
@@ -53,7 +53,7 @@ namespace xtd {
     
     /// @brief Gets the Unicode character represented by the current console_key_info object.
     /// @param An char32 object that corresponds to the console key represented by the current console_key_info object.
-    char32_t key_char() const noexcept;
+    char32 key_char() const noexcept;
     
     /// @brief Gets a bitwise combination of console_modifiers values that specifies one or more modifier keys pressed simultaneously with the console key.
     /// @param A bitwise combination of console_modifiers values. There is no default value.
@@ -67,7 +67,7 @@ namespace xtd {
     /// @}
 
   private:
-    char32_t key_char_ {0};
+    char32 key_char_ {0};
     console_key key_ {static_cast<console_key>(0)};
     console_modifiers modifiers_ {static_cast<console_modifiers>(0)};
   };

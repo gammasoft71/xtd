@@ -22,7 +22,7 @@ namespace xtd {
   /// | Type     | To xtd::byte conversion                                                      | From xtd::byte conversion                                                                                    |
   /// |----------|---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
   /// | bool     | xtd::bit_converter::get_bytes(bool)                                       | xtd::bit_converter::to_boolean(const std::vector< xtd::byte >&, int32)                                     |
-  /// | char32_t | xtd::bit_converter::get_bytes(char32_t)                                   | xtd::bit_converter::to_char(const std::vector< xtd::byte >&, int32)                                        |
+  /// | char32 | xtd::bit_converter::get_bytes(char32)                                   | xtd::bit_converter::to_char(const std::vector< xtd::byte >&, int32)                                        |
   /// | double   | xtd::bit_converter::get_bytes(double) - or - double_to_int64_bits(double) | xtd::bit_converter::to_double(const std::vector< xtd::byte >&, int32) - or - int64_bits_to_double(int64) |
   /// | int16  | xtd::bit_converter::get_bytes(int16)                                    | xtd::bit_converter::to_int16(const std::vector< xtd::byte >&, int32)                                       |
   /// | int32  | xtd::bit_converter::get_bytes(int32)                                    | xtd::bit_converter::to_int32(const std::vector< xtd::byte >&, int32)                                       |
@@ -129,7 +129,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example converts the bit patterns of Char values to xtd::byte std::vectors with the get_bytes method.
     /// @include bit_converterget_bytesChar.cpp
-    static std::vector<xtd::byte> get_bytes(char32_t value) noexcept;
+    static std::vector<xtd::byte> get_bytes(char32 value) noexcept;
     
     /// @brief Returns the specified Char value as an std::vector of bytes.
     /// @param value A Char value.
@@ -247,15 +247,15 @@ namespace xtd {
     /// @include bit_converterto_boolean.cpp
     static bool to_boolean(const std::vector<xtd::byte>& value, size_t start_index);
     
-    /// @brief Returns a char32_t converted from two bytes at a specified position in a xtd::byte std::vector.
+    /// @brief Returns a char32 converted from two bytes at a specified position in a xtd::byte std::vector.
     /// @param value An std::vector of bytes.
     /// @param start_index The starting position within value.
-    /// @return A char32_t formed by four bytes beginning at start_index.
+    /// @return A char32 formed by four bytes beginning at start_index.
     /// @exception argument_exception start_index equals the length of value minus 1.
     /// @exception argument_null_exception value is null
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The to_char method converts the bytes from index start_index to start_index + 3 to an int32 value. The order of bytes in the std::vector must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
-    static char32_t to_char(const std::vector<xtd::byte>& value, size_t start_index);
+    static char32 to_char(const std::vector<xtd::byte>& value, size_t start_index);
     
     /// @brief Returns a double-precision floating point number converted from eight bytes at a specified position in a xtd::byte std::vector.
     /// @param value An std::vector of bytes.

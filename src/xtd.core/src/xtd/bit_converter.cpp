@@ -23,7 +23,7 @@ vector<xtd::byte> bit_converter::get_bytes(char16 value) noexcept {
   return bit_converter::get_bytes(((uint32)value));
 }
 
-vector<xtd::byte> bit_converter::get_bytes(char32_t value) noexcept {
+vector<xtd::byte> bit_converter::get_bytes(char32 value) noexcept {
   return bit_converter::get_bytes(((uint32)value));
 }
 
@@ -104,8 +104,8 @@ bool bit_converter::to_boolean(const vector<xtd::byte>& value, size_t start_inde
   return static_cast<bool>(value.at(start_index));
 }
 
-char32_t bit_converter::to_char(const vector<xtd::byte>& value, size_t start_index) {
-  return static_cast<char32_t>(to_uint32(value, start_index));
+char32 bit_converter::to_char(const vector<xtd::byte>& value, size_t start_index) {
+  return static_cast<char32>(to_uint32(value, start_index));
 }
 
 double bit_converter::to_double(const vector<xtd::byte>& value, size_t start_index) {
