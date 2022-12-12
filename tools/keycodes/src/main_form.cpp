@@ -76,6 +76,7 @@ bool main_form::pre_process_message(xtd::forms::message& message) {
 void main_form::on_clear_button_click(xtd::object& sender, const xtd::event_args& e) {
   main_panel_.controls().clear();
   key_controls_.clear();
+  main_panel_.invalidate(true);
 }
 
 void main_form::on_form_location_changed(xtd::object& sender, const xtd::event_args& e) {
