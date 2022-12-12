@@ -38,11 +38,11 @@ namespace xtd {
       
       /// @brief Gets the elapsed time for the current frame, in milliseconds.
       /// @return A long integer representing the elapsed time for the current frame, in milliseconds.
-      virtual int64_t elapsed_milliseconds() const noexcept;
+      virtual int64 elapsed_milliseconds() const noexcept;
       
       /// @brief Gets the elapsed time for the current frame, in nanoseconds.
       /// @return A long integer representing the elapsed time for the current frame, in nanoseconds.
-      virtual int64_t elapsed_nanoseconds() const noexcept;
+      virtual int64 elapsed_nanoseconds() const noexcept;
       
       /// @brief Gets the current frame counter value.
       /// @return The current frame counter value.
