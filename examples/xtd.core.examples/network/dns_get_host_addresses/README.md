@@ -1,6 +1,6 @@
 # dns_get_host_addresses
 
-Shows how to use [xtd::net::dns](../../../../src/xtd.core/include/xtd/net/dns.h) class.
+Shows how to use [xtd::net::dns](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1net_1_1dns.html) class.
 
 ## Sources
 
