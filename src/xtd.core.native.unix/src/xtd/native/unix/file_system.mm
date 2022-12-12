@@ -7,7 +7,7 @@ using namespace std;
 using namespace xtd::native;
 
 #if __APPLE__
-int32_t file_system::get_file_times(const std::string& path, time_t& creation_time, time_t& last_access_time, time_t& last_write_time) {
+int_least32_t file_system::get_file_times(const std::string& path, time_t& creation_time, time_t& last_access_time, time_t& last_write_time) {
   NSFileManager* fm = [NSFileManager defaultManager];
   creation_time = [[[fm attributesOfItemAtPath:[NSString stringWithUTF8String:path.c_str()] error:Nil] fileCreationDate] timeIntervalSince1970];
   last_access_time = [[[fm attributesOfItemAtPath:[NSString stringWithUTF8String:path.c_str()] error:Nil] fileModificationDate] timeIntervalSince1970];
