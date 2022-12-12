@@ -51,7 +51,7 @@ namespace xtd {
       
       /// @brief Runs all tests in this UnitTest object and prints the result.
       /// @return EXIT_SUCCESS (0) if succeed; otherwise return EXIT_FAILURE (1).
-      int32_t run() {
+      int32 run() {
         if (parse_arguments(arguments))
           return xtd::tunit::settings::default_settings().exit_status();
           
@@ -110,9 +110,9 @@ namespace xtd {
         return xtd::tunit::settings::default_settings().exit_status();
       }
       
-      int32_t repeat_iteration() const noexcept {return repeat_iteration_;}
+      int32 repeat_iteration() const noexcept {return repeat_iteration_;}
       
-      int32_t repeat_iteration_count() const noexcept {return xtd::tunit::settings::default_settings().repeat_test();}
+      int32 repeat_iteration_count() const noexcept {return xtd::tunit::settings::default_settings().repeat_test();}
       
       bool repeat_tests() const noexcept {return xtd::tunit::settings::default_settings().repeat_test() != 1;}
       
@@ -202,7 +202,7 @@ namespace xtd {
       }
       
     protected:
-      virtual int32_t list_tests(const std::vector<std::string>& tests) {
+      virtual int32 list_tests(const std::vector<std::string>& tests) {
         return xtd::tunit::settings::default_settings().exit_status();
       }
       
@@ -484,7 +484,7 @@ namespace xtd {
       std::string name_ = "AllTests";
       std::unique_ptr<xtd::tunit::event_listener> event_listener_;
       xtd::date_time end_time_point_;
-      int32_t repeat_iteration_ = 0;
+      int32 repeat_iteration_ = 0;
       xtd::date_time start_time_point_;
     };
   }
