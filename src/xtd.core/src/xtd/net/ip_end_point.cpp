@@ -8,10 +8,10 @@ using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
-ip_end_point::ip_end_point(uint32 address, uint16_t port) : ip_end_point(ip_address(address), port) {
+ip_end_point::ip_end_point(uint32 address, uint16 port) : ip_end_point(ip_address(address), port) {
 }
 
-ip_end_point::ip_end_point(const ip_address& address, uint16_t port) : address_(address), port_(port) {
+ip_end_point::ip_end_point(const ip_address& address, uint16 port) : address_(address), port_(port) {
   address_family_ = address_.address_family();
 }
 
@@ -25,11 +25,11 @@ ip_end_point& ip_end_point::address(const ip_address& address) {
   return *this;
 }
 
-uint16_t ip_end_point::port() const noexcept {
+uint16 ip_end_point::port() const noexcept {
   return port_;
 }
 
-ip_end_point& ip_end_point::port(uint16_t port) {
+ip_end_point& ip_end_point::port(uint16 port) {
   port_ = port;
   return *this;
 }
@@ -38,7 +38,7 @@ unique_ptr<end_point> ip_end_point::create(const socket_address& socket_address)
   if (socket_address.address_family() != address_family_ || socket_address.size() < 8) throw argument_exception(csf_);
   if (address_family_ != address_family::inter_network && address_family_ != address_family::inter_network_v6) throw socket_exception(socket_error::address_family_not_supported, csf_);
   
-  uint16_t port = ip_address::network_to_host_order(bit_converter::to_uint16(socket_address.bytes_, 2)); // static_cast<uint16_t>((socket_address[2] << 8 & 0xFF00) | (socket_address[3]));
+  uint16 port = ip_address::network_to_host_order(bit_converter::to_uint16(socket_address.bytes_, 2)); // static_cast<uint16>((socket_address[2] << 8 & 0xFF00) | (socket_address[3]));
   
   if (address_family_ == address_family::inter_network_v6) {
     vector<xtd::byte> address(16);

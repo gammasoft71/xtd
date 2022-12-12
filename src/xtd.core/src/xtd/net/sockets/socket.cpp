@@ -341,11 +341,11 @@ std::shared_ptr<xtd::iasync_result> socket::begin_accept(xtd::async_callback cal
   return ar;
 }
 
-std::shared_ptr<xtd::iasync_result> socket::begin_connect(const xtd::net::ip_address& address, uint16_t port, xtd::async_callback callback, const std::any& state) {
+std::shared_ptr<xtd::iasync_result> socket::begin_connect(const xtd::net::ip_address& address, uint16 port, xtd::async_callback callback, const std::any& state) {
   return begin_connect_(make_unique<ip_end_point>(ip_end_point(address, port)), callback, state);
 }
 
-std::shared_ptr<xtd::iasync_result> socket::begin_connect(const std::vector<xtd::net::ip_address>& addresses, uint16_t port, xtd::async_callback callback, const std::any& state) {
+std::shared_ptr<xtd::iasync_result> socket::begin_connect(const std::vector<xtd::net::ip_address>& addresses, uint16 port, xtd::async_callback callback, const std::any& state) {
   for (ip_address address : addresses) {
     if (data_->is_connected == false)
       return begin_connect(address, port, callback, state);
@@ -353,7 +353,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_connect(const std::vector<xtd:
   throw argument_exception(csf_);
 }
 
-std::shared_ptr<xtd::iasync_result> socket::begin_connect(const xtd::ustring& host, uint16_t port, xtd::async_callback callback, const std::any& state) {
+std::shared_ptr<xtd::iasync_result> socket::begin_connect(const xtd::ustring& host, uint16 port, xtd::async_callback callback, const std::any& state) {
   return begin_connect(dns::get_host_addresses(host), port, callback, state);
 }
 
@@ -551,11 +551,11 @@ void socket::close() {
   debug::write_line_if(show_debug_socket.enabled(), " succeed");
 }
 
-void socket::connect(const xtd::net::ip_address& address, uint16_t port) {
+void socket::connect(const xtd::net::ip_address& address, uint16 port) {
   connect_(make_unique<ip_end_point>(ip_end_point(address, port)));
 }
 
-void socket::connect(const std::vector<ip_address>& addresses, uint16_t port) {
+void socket::connect(const std::vector<ip_address>& addresses, uint16 port) {
   for (ip_address address : addresses) {
     if (data_->is_connected == false)
       connect(address, port);
@@ -563,7 +563,7 @@ void socket::connect(const std::vector<ip_address>& addresses, uint16_t port) {
   throw argument_exception(csf_);
 }
 
-void socket::connect(const xtd::ustring& host, uint16_t port) {
+void socket::connect(const xtd::ustring& host, uint16 port) {
   connect(dns::get_host_addresses(host), port);
 }
 

@@ -160,7 +160,7 @@ void binary_writer::write(const wchar* value) {
   write(ustring(value));
 }
 
-void binary_writer::write(uint16_t value) {
+void binary_writer::write(uint16 value) {
   write(bit_converter::get_bytes(value));
 }
 

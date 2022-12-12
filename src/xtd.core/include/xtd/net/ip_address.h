@@ -182,7 +182,7 @@ namespace xtd {
       /// @return A unsigned short value, expressed in network byte order.
       /// @remarks Different computers use different conventions for ordering the bytes within multibyte integer values.Some computers put the most significant byte first (known as big-endian order) and others put the least-significant byte first (known as little-endian order). To work with computers that use different byte ordering, all integer values that are sent over the network are sent in network byte order which has the most significant byte first.
       /// @remarks The xtd::net::sockets::socket::host_to_network_order method converts multibyte integer values that are stored on the host system from the byte order used by the host to the byte order used by the network.
-      static uint16_t host_to_network_order(uint16_t host);
+      static uint16 host_to_network_order(uint16 host);
       
       /// @brief Converts a integer value from host byte order to network byte order.
       /// @param host The number to convert, expressed in host byte order.
@@ -253,7 +253,7 @@ namespace xtd {
       /// @return A unsigned short value, expressed in host byte order.
       /// @remarks Different computers use different conventions for ordering the bytes within multibyte integer values. Some computers put the most significant byte first (known as big-endian order) and others put the least-significant byte first (known as little-endian order). To work with computers that use different byte ordering, all integer values that are sent over the network are sent in network byte order which has the most significant byte first.
       /// @remarks The xtd::net::sockets::socket::network_to_host_order method converts multibyte integer values that are stored on the host system from the byte order used by the network to the byte order used by the host.
-      static uint16_t network_to_host_order(uint16_t network);
+      static uint16 network_to_host_order(uint16 network);
       
       /// @brief Converts a integer value from network byte order to host byte order.
       /// @param network The number to convert, expressed in network byte order.
@@ -291,9 +291,9 @@ namespace xtd {
     private:
       friend xtd::net::sockets::socket;
       static constexpr const size_t number_of_numbers_ = 8;
-      ip_address(const std::vector<uint16_t>& numbers, uint32 scope_id);
+      ip_address(const std::vector<uint16>& numbers, uint32 scope_id);
       uint32 address_ = 0xFFFFFFFF;
-      std::vector<uint16_t> numbers_ = std::vector<uint16_t>(number_of_numbers_);
+      std::vector<uint16> numbers_ = std::vector<uint16>(number_of_numbers_);
       uint32 scope_id_ = 0;
       sockets::address_family address_family_ = sockets::address_family::inter_network;
     };

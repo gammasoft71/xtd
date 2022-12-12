@@ -1167,7 +1167,7 @@ namespace xtd {
   /// @code
   /// std::cout << 1.6_u16 << std::endl;
   /// @endcode
-  uint16_t operator""_u16(long double n);
+  uint16 operator""_u16(long double n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1179,7 +1179,7 @@ namespace xtd {
   /// @code
   /// std::cout << 54_u16 << std::endl;
   /// @endcode
-  uint16_t operator""_u16(unsigned long long n);
+  uint16 operator""_u16(unsigned long long n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1191,7 +1191,7 @@ namespace xtd {
   /// @code
   /// std::cout << "125"_u16 << std::endl;
   /// @endcode
-  uint16_t operator""_u16(const char* s, size_t n);
+  uint16 operator""_u16(const char* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1203,7 +1203,7 @@ namespace xtd {
   /// @code
   /// std::cout << u8"125"_u16 << std::endl;
   /// @endcode
-  uint16_t operator""_u16(const char8* s, size_t n);
+  uint16 operator""_u16(const char8* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1215,7 +1215,7 @@ namespace xtd {
   /// @code
   /// std::cout << u"125"_u16 << std::endl;
   /// @endcode
-  uint16_t operator""_u16(const char16* s, size_t n);
+  uint16 operator""_u16(const char16* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1227,7 +1227,7 @@ namespace xtd {
   /// @code
   /// std::cout << U"125"_u16 << std::endl;
   /// @endcode
-  uint16_t operator""_u16(const char32* s, size_t n);
+  uint16 operator""_u16(const char32* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1239,7 +1239,7 @@ namespace xtd {
   /// @code
   /// std::cout << L"125"_u16 << std::endl;
   /// @endcode
-  uint16_t operator""_u16(const wchar* s, size_t n);
+  uint16 operator""_u16(const wchar* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace

@@ -210,7 +210,7 @@ namespace xtd {
     /// @param min The lower bound of the result.
     /// @param max The upper bound of the result.
     /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
-    static uint16_t clamp(uint16_t value, uint16_t min, uint16_t max) noexcept;
+    static uint16 clamp(uint16 value, uint16 min, uint16 max) noexcept;
     /// @brief Returns value clamped to the inclusive range of min and max.
     /// @param value The value to be clamped.
     /// @param min The lower bound of the result.
@@ -411,7 +411,7 @@ namespace xtd {
     /// @param a The first of two 16-bit unsigned integers to compare.
     /// @param b The second of two 16-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is larger.
-    static uint16_t max(uint16_t a, uint16_t b) noexcept;
+    static uint16 max(uint16 a, uint16 b) noexcept;
     
     /// @brief Returns the larger of two 32-bit unsigned integers.
     /// @param a The first of two 32-bit unsigned integers to compare.
@@ -489,7 +489,7 @@ namespace xtd {
     /// @param a The first of two 16-bit unsigned integers to compare.
     /// @param b The second of two 16-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static uint16_t min(uint16_t a, uint16_t b) noexcept;
+    static uint16 min(uint16 a, uint16 b) noexcept;
     
     /// @brief Returns the smaller of two 32-bit unsigned integers.
     /// @param a The first of two 32-bit unsigned integers to compare.
