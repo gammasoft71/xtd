@@ -22,7 +22,7 @@ namespace xtd {
   template<typename value_t>
   inline bool is(float value) {return false;}
   template<typename value_t>
-  inline bool is(int8_t value) {return false;}
+  inline bool is(sbyte value) {return false;}
   template<typename value_t>
   inline bool is(int16 value) {return false;}
   template<typename value_t>
@@ -124,12 +124,12 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// int main() {
-  ///   int8_t i = 42;
-  ///   std::cout << "i " << is<int8_t>(i) ? "is" : "isn't" << " int8_t" << endl;
+  ///   sbyte i = 42;
+  ///   std::cout << "i " << is<sbyte>(i) ? "is" : "isn't" << " sbyte" << endl;
   /// }
   /// @endcode
   template<>
-  inline bool is<int8_t>(int8_t value) {
+  inline bool is<sbyte>(sbyte value) {
     return true;
   }
   

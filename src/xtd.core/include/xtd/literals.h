@@ -694,7 +694,7 @@ namespace xtd {
   /// @code
   /// std::cout << 1.6_s8 << std::endl;
   /// @endcode
-  int8_t operator""_s8(long double n);
+  sbyte operator""_s8(long double n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -706,7 +706,7 @@ namespace xtd {
   /// @code
   /// std::cout << 54_s8 << std::endl;
   /// @endcode
-  int8_t operator""_s8(unsigned long long n);
+  sbyte operator""_s8(unsigned long long n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -718,7 +718,7 @@ namespace xtd {
   /// @code
   /// std::cout << "125"_s8 << std::endl;
   /// @endcode
-  int8_t operator""_s8(const char* s, size_t n);
+  sbyte operator""_s8(const char* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -730,7 +730,7 @@ namespace xtd {
   /// @code
   /// std::cout << u8"125"_s8 << std::endl;
   /// @endcode
-  int8_t operator""_s8(const char8_t* s, size_t n);
+  sbyte operator""_s8(const char8_t* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -742,7 +742,7 @@ namespace xtd {
   /// @code
   /// std::cout << u"125"_s8 << std::endl;
   /// @endcode
-  int8_t operator""_s8(const char16_t* s, size_t n);
+  sbyte operator""_s8(const char16_t* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -754,7 +754,7 @@ namespace xtd {
   /// @code
   /// std::cout << U"125"_s8 << std::endl;
   /// @endcode
-  int8_t operator""_s8(const char32_t* s, size_t n);
+  sbyte operator""_s8(const char32_t* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -766,7 +766,7 @@ namespace xtd {
   /// @code
   /// std::cout << L"125"_s8 << std::endl;
   /// @endcode
-  int8_t operator""_s8(const wchar_t* s, size_t n);
+  sbyte operator""_s8(const wchar_t* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace

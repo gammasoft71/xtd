@@ -68,7 +68,7 @@ namespace {
   public:
     xtd::int32 getch() {
       if (peekCharacter != -1) {
-        int8_t character = peekCharacter;
+        xtd::sbyte character = peekCharacter;
         peekCharacter = -1;
         return character;
       }
@@ -81,7 +81,7 @@ namespace {
       termioAttributes.c_cc[VMIN] = 1;
       tcsetattr(0, TCSANOW, &termioAttributes);
       
-      int8_t character = 0;
+      xtd::sbyte character = 0;
       while (read(0, &character, 1) != 1);
       
       tcsetattr(0, TCSANOW, &backupedTermioAttributes);
@@ -118,7 +118,7 @@ namespace {
     static terminal terminal_;
     
   private:
-    int8_t peekCharacter {-1};
+    xtd::sbyte peekCharacter {-1};
   };
   
   terminal terminal::terminal_;

@@ -9,6 +9,7 @@
 #pragma once
 
 #include "../format_exception.h"
+#include "../types.h"
 #include "../ustring.h"
 #include "../enum_collection.h"
 

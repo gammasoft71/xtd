@@ -30,7 +30,7 @@ namespace xtd {
   template<>
   inline std::string to_string(const bool& value, const std::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const int8_t& value, const std::string& fmt, const std::locale& loc);
+  inline std::string to_string(const xtd::sbyte& value, const std::string& fmt, const std::locale& loc);
   template<>
   inline std::string to_string(const char& value, const std::string& fmt, const std::locale& loc);
   template<>
@@ -77,7 +77,7 @@ namespace xtd {
   template<>
   inline std::wstring to_string(const bool& value, const std::wstring& fmt, const std::locale& loc);
   template<>
-  inline std::wstring to_string(const int8_t& value, const std::wstring& fmt, const std::locale& loc);
+  inline std::wstring to_string(const xtd::sbyte& value, const std::wstring& fmt, const std::locale& loc);
   template<>
   inline std::wstring to_string(const char& value, const std::wstring& fmt, const std::locale& loc);
   template<>
@@ -424,7 +424,7 @@ inline std::string __format_stringer<char, bool&>(bool& value) {
 }
 
 template<>
-inline std::string __format_stringer<char, int8_t&>(int8_t& value) {
+inline std::string __format_stringer<char, xtd::sbyte&>(xtd::sbyte& value) {
   return xtd::to_string(value, "G", std::locale());
 }
 
@@ -557,7 +557,7 @@ inline std::wstring __format_stringer<wchar_t, bool&>(bool& value) {
 }
 
 template<>
-inline std::wstring __format_stringer<wchar_t, int8_t&>(int8_t& value) {
+inline std::wstring __format_stringer<wchar_t, xtd::sbyte&>(xtd::sbyte& value) {
   return xtd::to_string(value, L"G", std::locale());
 }
 

@@ -60,7 +60,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline std::string to_string(const int8_t& value, const std::string& fmt, const std::locale& loc) {return __numeric_formatter(fmt, value, loc);}
+  inline std::string to_string(const sbyte& value, const std::string& fmt, const std::locale& loc) {return __numeric_formatter(fmt, value, loc);}
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -389,7 +389,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline std::wstring to_string(const int8_t& value, const std::wstring& fmt, const std::locale& loc) {return __numeric_formatter(fmt, value, loc);}
+  inline std::wstring to_string(const sbyte& value, const std::wstring& fmt, const std::locale& loc) {return __numeric_formatter(fmt, value, loc);}
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
