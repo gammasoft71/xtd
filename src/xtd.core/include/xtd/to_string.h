@@ -320,14 +320,14 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline std::string to_string(const wchar_t& value, const std::string& fmt, const std::locale& loc) {return __character_formatter(fmt, value, loc);}
+  inline std::string to_string(const wchar& value, const std::string& fmt, const std::locale& loc) {return __character_formatter(fmt, value, loc);}
   
   /// @cond
   std::string to_string(const char* value, const std::string& fmt, const std::locale& loc);
   std::string to_string(const char8* value, const std::string& fmt, const std::locale& loc);
   std::string to_string(const char16* value, const std::string& fmt, const std::locale& loc);
   std::string to_string(const char32* value, const std::string& fmt, const std::locale& loc);
-  std::string to_string(const wchar_t* value, const std::string& fmt, const std::locale& loc);
+  std::string to_string(const wchar* value, const std::string& fmt, const std::locale& loc);
   std::string to_string(const std::string& value, const std::string& fmt, const std::locale& loc);
   std::string to_string(const xtd::ustring& value, const std::string& fmt, const std::locale& loc);
   std::string to_string(const std::u8string& value, const std::string& fmt, const std::locale& loc);
@@ -662,10 +662,10 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline std::wstring to_string(const wchar_t& value, const std::wstring& fmt, const std::locale& loc) {return __character_formatter(fmt, value, loc);}
+  inline std::wstring to_string(const wchar& value, const std::wstring& fmt, const std::locale& loc) {return __character_formatter(fmt, value, loc);}
   
   /// @cond
-  inline std::wstring to_string(const wchar_t*  value, const std::wstring& fmt, const std::locale& loc) {return __string_formatter(fmt, value, loc);}
+  inline std::wstring to_string(const wchar*  value, const std::wstring& fmt, const std::locale& loc) {return __string_formatter(fmt, value, loc);}
   /// @endcond
   
   /// @brief Convert a specified value into a string with specified format.
@@ -681,7 +681,7 @@ namespace xtd {
   inline std::wstring to_string(const value_t& value, const std::wstring& fmt) {return to_string(value, fmt, std::locale());}
   
   /// @cond
-  inline std::wstring to_string(const wchar_t*  value, const std::wstring& fmt) {return to_string(value, fmt, std::locale());}
+  inline std::wstring to_string(const wchar*  value, const std::wstring& fmt) {return to_string(value, fmt, std::locale());}
   /// @endcond
 }
 

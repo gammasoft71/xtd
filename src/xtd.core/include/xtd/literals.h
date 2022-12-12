@@ -90,7 +90,7 @@ namespace xtd {
   /// @code
   /// std::cout << L"125"_b << std::endl;
   /// @endcode
-  xtd::byte operator""_b(const wchar_t* s, size_t n);
+  xtd::byte operator""_b(const wchar* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -174,7 +174,7 @@ namespace xtd {
   /// @code
   /// std::cout << L"125"_d << std::endl;
   /// @endcode
-  double operator""_d(const wchar_t* s, size_t n);
+  double operator""_d(const wchar* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -258,7 +258,7 @@ namespace xtd {
   /// @code
   /// std::cout << L"125"_f << std::endl;
   /// @endcode
-  float operator""_f(const wchar_t* s, size_t n);
+  float operator""_f(const wchar* s, size_t n);
   
   /// @brief Used to convert specified value into char32._t
   /// @par Namespace
@@ -306,7 +306,7 @@ namespace xtd {
   /// @code
   /// std::cout << L'a'_c << std::endl;
   /// @endcode
-  char32 operator""_c(wchar_t c);
+  char32 operator""_c(wchar c);
   
   /// @brief Used to convert specified value into char32._t
   /// @par Namespace
@@ -448,7 +448,7 @@ namespace xtd {
   /// xtd::ustring s = L"This is a "_s + L"simple test"_s;
   /// std::cout << s << std::endl;
   /// @endcode
-  xtd::ustring operator""_s(const wchar_t* s, size_t n);
+  xtd::ustring operator""_s(const wchar* s, size_t n);
   
   /// @brief Used to convert the specified value as seconds to xtd::time_span.
   /// @par Namespace
@@ -766,7 +766,7 @@ namespace xtd {
   /// @code
   /// std::cout << L"125"_s8 << std::endl;
   /// @endcode
-  sbyte operator""_s8(const wchar_t* s, size_t n);
+  sbyte operator""_s8(const wchar* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -850,7 +850,7 @@ namespace xtd {
   /// @code
   /// std::cout << L"125"_s16 << std::endl;
   /// @endcode
-  int16 operator""_s16(const wchar_t* s, size_t n);
+  int16 operator""_s16(const wchar* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -934,7 +934,7 @@ namespace xtd {
   /// @code
   /// std::cout << L"125"_s32 << std::endl;
   /// @endcode
-  int32 operator""_s32(const wchar_t* s, size_t n);
+  int32 operator""_s32(const wchar* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1018,7 +1018,7 @@ namespace xtd {
   /// @code
   /// std::cout << L"125"_s64 << std::endl;
   /// @endcode
-  int64 operator""_s64(const wchar_t* s, size_t n);
+  int64 operator""_s64(const wchar* s, size_t n);
 
   /// @brief Used to translate specified string into locale.
   /// @par Namespace
@@ -1058,7 +1058,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core literals translate
-  xtd::ustring operator""_t(const wchar_t* s, size_t n) noexcept;
+  xtd::ustring operator""_t(const wchar* s, size_t n) noexcept;
 
   /// @brief Used to convert the specified value as tiks to xtd::time_span.
   /// @par Namespace
@@ -1155,7 +1155,7 @@ namespace xtd {
   /// @code
   /// std::cout << L"125"_u8 << std::endl;
   /// @endcode
-  xtd::byte operator""_u8(const wchar_t* s, size_t n);
+  xtd::byte operator""_u8(const wchar* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1239,7 +1239,7 @@ namespace xtd {
   /// @code
   /// std::cout << L"125"_u16 << std::endl;
   /// @endcode
-  uint16_t operator""_u16(const wchar_t* s, size_t n);
+  uint16_t operator""_u16(const wchar* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1323,7 +1323,7 @@ namespace xtd {
   /// @code
   /// std::cout << L"125"_u32 << std::endl;
   /// @endcode
-  uint32 operator""_u32(const wchar_t* s, size_t n);
+  uint32 operator""_u32(const wchar* s, size_t n);
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1407,7 +1407,7 @@ namespace xtd {
   /// @code
   /// std::cout << L"125"_u64 << std::endl;
   /// @endcode
-  uint64 operator""_u64(const wchar_t* s, size_t n);
+  uint64 operator""_u64(const wchar* s, size_t n);
   
   /// @brief Used to convert the specified value as microseconds to xtd::time_span.
   /// @par Namespace

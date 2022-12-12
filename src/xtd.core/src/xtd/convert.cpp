@@ -37,7 +37,7 @@ std::any convert::to_any(char32 value) noexcept {
   return value;
 }
 
-std::any convert::to_any(wchar_t value) noexcept {
+std::any convert::to_any(wchar value) noexcept {
   return value;
 }
 
@@ -147,11 +147,11 @@ std::any convert::to_any(char32* value) noexcept {
   return value;
 }
 
-std::any convert::to_any(const wchar_t* value) noexcept {
+std::any convert::to_any(const wchar* value) noexcept {
   return value;
 }
 
-std::any convert::to_any(wchar_t* value) noexcept {
+std::any convert::to_any(wchar* value) noexcept {
   return value;
 }
 
@@ -187,7 +187,7 @@ bool convert::to_boolean(char32 value) {
   throw invalid_cast_exception(csf_);
 }
 
-bool convert::to_boolean(wchar_t value) {
+bool convert::to_boolean(wchar value) {
   throw invalid_cast_exception(csf_);
 }
 
@@ -291,11 +291,11 @@ bool convert::to_boolean(char32* value) {
   return ustring::parse<bool>(value);
 }
 
-bool convert::to_boolean(const wchar_t* value) {
+bool convert::to_boolean(const wchar* value) {
   return ustring::parse<bool>(value);
 }
 
-bool convert::to_boolean(wchar_t* value) {
+bool convert::to_boolean(wchar* value) {
   return ustring::parse<bool>(value);
 }
 
@@ -333,8 +333,8 @@ xtd::byte convert::to_byte(char32 value) {
   return static_cast<xtd::byte>(value);
 }
 
-xtd::byte convert::to_byte(wchar_t value) {
-  if (value > static_cast<wchar_t>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
+xtd::byte convert::to_byte(wchar value) {
+  if (value > static_cast<wchar>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
   return static_cast<xtd::byte>(value);
 }
 
@@ -464,11 +464,11 @@ xtd::byte convert::to_byte(char32* value) {
   return ustring::parse<xtd::byte>(value);
 }
 
-xtd::byte convert::to_byte(const wchar_t* value) {
+xtd::byte convert::to_byte(const wchar* value) {
   return ustring::parse<xtd::byte>(value);
 }
 
-xtd::byte convert::to_byte(wchar_t* value) {
+xtd::byte convert::to_byte(wchar* value) {
   return ustring::parse<xtd::byte>(value);
 }
 
@@ -506,8 +506,8 @@ char convert::to_char(char32 value) {
   return static_cast<char>(value);
 }
 
-char convert::to_char(wchar_t value) {
-  if (value > static_cast<wchar_t>(255)) throw overflow_exception(csf_);
+char convert::to_char(wchar value) {
+  if (value > static_cast<wchar>(255)) throw overflow_exception(csf_);
   return static_cast<char>(value);
 }
 
@@ -641,12 +641,12 @@ char convert::to_char(char32* value) {
   return to_char(value[0]);
 }
 
-char convert::to_char(const wchar_t* value) {
+char convert::to_char(const wchar* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char convert::to_char(wchar_t* value) {
+char convert::to_char(wchar* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
@@ -681,8 +681,8 @@ char8 convert::to_char8(char32 value) {
   return static_cast<char8>(value);
 }
 
-char8 convert::to_char8(wchar_t value) {
-  if (value > static_cast<wchar_t>(255)) throw overflow_exception(csf_);
+char8 convert::to_char8(wchar value) {
+  if (value > static_cast<wchar>(255)) throw overflow_exception(csf_);
   return static_cast<char8>(value);
 }
 
@@ -816,12 +816,12 @@ char8 convert::to_char8(char32* value) {
   return to_char(value[0]);
 }
 
-char8 convert::to_char8(const wchar_t* value) {
+char8 convert::to_char8(const wchar* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char8 convert::to_char8(wchar_t* value) {
+char8 convert::to_char8(wchar* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
@@ -863,7 +863,7 @@ char16 convert::to_char16(char32 value) {
   return static_cast<char16>(value);
 }
 
-char16 convert::to_char16(wchar_t value) noexcept {
+char16 convert::to_char16(wchar value) noexcept {
   return static_cast<char16>(value);
 }
 
@@ -996,12 +996,12 @@ char16 convert::to_char16(char32* value) {
   return to_char(value[0]);
 }
 
-char16 convert::to_char16(const wchar_t* value) {
+char16 convert::to_char16(const wchar* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char16 convert::to_char16(wchar_t* value) {
+char16 convert::to_char16(wchar* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
@@ -1042,7 +1042,7 @@ char32 convert::to_char32(char32 value) noexcept {
   return value;
 }
 
-char32 convert::to_char32(wchar_t value) noexcept {
+char32 convert::to_char32(wchar value) noexcept {
   return static_cast<char32>(value);
 }
 
@@ -1174,192 +1174,192 @@ char32 convert::to_char32(char32* value) {
   return to_char(value[0]);
 }
 
-char32 convert::to_char32(const wchar_t* value) {
+char32 convert::to_char32(const wchar* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-char32 convert::to_char32(wchar_t* value) {
+char32 convert::to_char32(wchar* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-wchar_t convert::to_wchar(any value) {
+wchar convert::to_wchar(any value) {
   try {
-    return any_cast<wchar_t>(value);
+    return any_cast<wchar>(value);
   } catch (...) {
     try {
-      return *any_cast<wchar_t*>(value);
+      return *any_cast<wchar*>(value);
     } catch (...) {
       throw invalid_cast_exception(csf_);
     }
   }
 }
 
-wchar_t convert::to_wchar(bool value) {
+wchar convert::to_wchar(bool value) {
   throw invalid_cast_exception(csf_);
 }
 
-wchar_t convert::to_wchar(xtd::byte value) noexcept {
-  return static_cast<wchar_t>(value);
+wchar convert::to_wchar(xtd::byte value) noexcept {
+  return static_cast<wchar>(value);
 }
 
-wchar_t convert::to_wchar(char value) noexcept {
-  return static_cast<wchar_t>(value);
+wchar convert::to_wchar(char value) noexcept {
+  return static_cast<wchar>(value);
 }
 
-wchar_t convert::to_wchar(char8 value) noexcept {
-  return static_cast<wchar_t>(value);
+wchar convert::to_wchar(char8 value) noexcept {
+  return static_cast<wchar>(value);
 }
 
-wchar_t convert::to_wchar(char16 value) noexcept {
-  return static_cast<wchar_t>(value);
+wchar convert::to_wchar(char16 value) noexcept {
+  return static_cast<wchar>(value);
 }
 
-wchar_t convert::to_wchar(char32 value) {
+wchar convert::to_wchar(char32 value) {
   if (value > static_cast<char32>(65535)) throw overflow_exception(csf_);
-  return static_cast<wchar_t>(value);
+  return static_cast<wchar>(value);
 }
 
-wchar_t convert::to_wchar(wchar_t value) noexcept {
+wchar convert::to_wchar(wchar value) noexcept {
   return value;
 }
 
-wchar_t convert::to_wchar(decimal_t value) {
+wchar convert::to_wchar(decimal_t value) {
   if (value < 0.0l || value > 65535.0l) throw overflow_exception(csf_);
-  return static_cast<wchar_t>(math::round(value));
+  return static_cast<wchar>(math::round(value));
 }
 
-wchar_t convert::to_wchar(double value) {
+wchar convert::to_wchar(double value) {
   if (value < 0.0 || value > 65535.0) throw overflow_exception(csf_);
-  return static_cast<wchar_t>(math::round(value));
+  return static_cast<wchar>(math::round(value));
 }
 
-wchar_t convert::to_wchar(float value) {
+wchar convert::to_wchar(float value) {
   if (value < 0.0f || value > 65535.0f) throw overflow_exception(csf_);
-  return static_cast<wchar_t>(math::round(value));
+  return static_cast<wchar>(math::round(value));
 }
 
-wchar_t convert::to_wchar(int16 value) {
+wchar convert::to_wchar(int16 value) {
   if (value < 0) throw overflow_exception(csf_);
   return value;
 }
 
-wchar_t convert::to_wchar(int32 value) {
+wchar convert::to_wchar(int32 value) {
   if (value < 0 || value > 65535) throw overflow_exception(csf_);
-  return static_cast<wchar_t>(value);
+  return static_cast<wchar>(value);
 }
 
-wchar_t convert::to_wchar(int64 value) {
+wchar convert::to_wchar(int64 value) {
   if (value < 0l || value > 65535l) throw overflow_exception(csf_);
-  return static_cast<wchar_t>(value);
+  return static_cast<wchar>(value);
 }
 
-wchar_t convert::to_wchar(llong_t value) {
+wchar convert::to_wchar(llong_t value) {
   if (value < 0ll || value > 65535ll) throw overflow_exception(csf_);
-  return static_cast<wchar_t>(value);
+  return static_cast<wchar>(value);
 }
 
-wchar_t convert::to_wchar(sbyte value) {
+wchar convert::to_wchar(sbyte value) {
   if (value < 0) throw overflow_exception(csf_);
-  return static_cast<wchar_t>(value);
+  return static_cast<wchar>(value);
 }
 
-wchar_t convert::to_wchar(uint16_t value) noexcept {
-  return static_cast<wchar_t>(value);
+wchar convert::to_wchar(uint16_t value) noexcept {
+  return static_cast<wchar>(value);
 }
 
-wchar_t convert::to_wchar(uint32 value) {
+wchar convert::to_wchar(uint32 value) {
   if (value > 65535u) throw overflow_exception(csf_);
-  return static_cast<wchar_t>(value);
+  return static_cast<wchar>(value);
 }
 
-wchar_t convert::to_wchar(uint64 value) {
+wchar convert::to_wchar(uint64 value) {
   if (value > 65535lu) throw overflow_exception(csf_);
-  return static_cast<wchar_t>(value);
+  return static_cast<wchar>(value);
 }
 
-wchar_t convert::to_wchar(ullong_t value) {
+wchar convert::to_wchar(ullong_t value) {
   if (value > 65535llu) throw overflow_exception(csf_);
-  return static_cast<wchar_t>(value);
+  return static_cast<wchar>(value);
 }
 
-wchar_t convert::to_wchar(const ustring& value) {
+wchar convert::to_wchar(const ustring& value) {
   if (value.size() != 1) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-wchar_t convert::to_wchar(const string& value) {
+wchar convert::to_wchar(const string& value) {
   if (value.size() != 1) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-wchar_t convert::to_wchar(const u8string& value) {
+wchar convert::to_wchar(const u8string& value) {
   if (value.size() != 1) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-wchar_t convert::to_wchar(const u16string& value) {
+wchar convert::to_wchar(const u16string& value) {
   if (value.size() != 1) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-wchar_t convert::to_wchar(const u32string& value) {
+wchar convert::to_wchar(const u32string& value) {
   if (value.size() != 1) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-wchar_t convert::to_wchar(const wstring& value) {
+wchar convert::to_wchar(const wstring& value) {
   if (value.size() != 1) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-wchar_t convert::to_wchar(const char* value) {
+wchar convert::to_wchar(const char* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-wchar_t convert::to_wchar(char* value) {
+wchar convert::to_wchar(char* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-wchar_t convert::to_wchar(const char8* value) {
+wchar convert::to_wchar(const char8* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-wchar_t convert::to_wchar(char8* value) {
+wchar convert::to_wchar(char8* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-wchar_t convert::to_wchar(const char16* value) {
+wchar convert::to_wchar(const char16* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-wchar_t convert::to_wchar(char16* value) {
+wchar convert::to_wchar(char16* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-wchar_t convert::to_wchar(const char32* value) {
+wchar convert::to_wchar(const char32* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-wchar_t convert::to_wchar(char32* value) {
+wchar convert::to_wchar(char32* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-wchar_t convert::to_wchar(const wchar_t* value) {
+wchar convert::to_wchar(const wchar* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
 
-wchar_t convert::to_wchar(wchar_t* value) {
+wchar convert::to_wchar(wchar* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception(csf_);
   return to_char(value[0]);
 }
@@ -1396,7 +1396,7 @@ decimal_t convert::to_decimal(char32 value) noexcept {
   return static_cast<decimal_t>(value);
 }
 
-decimal_t convert::to_decimal(wchar_t value) noexcept {
+decimal_t convert::to_decimal(wchar value) noexcept {
   return static_cast<decimal_t>(value);
 }
 
@@ -1504,11 +1504,11 @@ decimal_t convert::to_decimal(char32* value) {
   return ustring::parse<decimal_t>(value);
 }
 
-decimal_t convert::to_decimal(const wchar_t* value) {
+decimal_t convert::to_decimal(const wchar* value) {
   return ustring::parse<decimal_t>(value);
 }
 
-decimal_t convert::to_decimal(wchar_t* value) {
+decimal_t convert::to_decimal(wchar* value) {
   return ustring::parse<decimal_t>(value);
 }
 
@@ -1544,7 +1544,7 @@ double convert::to_double(char32 value) noexcept {
   return static_cast<double>(value);
 }
 
-double convert::to_double(wchar_t value) noexcept {
+double convert::to_double(wchar value) noexcept {
   return static_cast<double>(value);
 }
 
@@ -1652,11 +1652,11 @@ double convert::to_double(char32* value) {
   return ustring::parse<double>(value);
 }
 
-double convert::to_double(const wchar_t* value) {
+double convert::to_double(const wchar* value) {
   return ustring::parse<double>(value);
 }
 
-double convert::to_double(wchar_t* value) {
+double convert::to_double(wchar* value) {
   return ustring::parse<double>(value);
 }
 
@@ -1692,7 +1692,7 @@ float convert::to_single(char32 value) noexcept {
   return static_cast<float>(value);
 }
 
-float convert::to_single(wchar_t value) noexcept {
+float convert::to_single(wchar value) noexcept {
   return static_cast<float>(value);
 }
 
@@ -1800,11 +1800,11 @@ float convert::to_single(char32* value) {
   return ustring::parse<float>(value);
 }
 
-float convert::to_single(const wchar_t* value) {
+float convert::to_single(const wchar* value) {
   return ustring::parse<float>(value);
 }
 
-float convert::to_single(wchar_t* value) {
+float convert::to_single(wchar* value) {
   return ustring::parse<float>(value);
 }
 
@@ -1841,7 +1841,7 @@ int16 convert::to_int16(char32 value) {
   return static_cast<int16>(value);
 }
 
-int16 convert::to_int16(wchar_t value) noexcept {
+int16 convert::to_int16(wchar value) noexcept {
   return static_cast<int16>(value);
 }
 
@@ -1969,11 +1969,11 @@ int16 convert::to_int16(char32* value) {
   return ustring::parse<int16>(value);
 }
 
-int16 convert::to_int16(const wchar_t* value) {
+int16 convert::to_int16(const wchar* value) {
   return ustring::parse<int16>(value);
 }
 
-int16 convert::to_int16(wchar_t* value) {
+int16 convert::to_int16(wchar* value) {
   return ustring::parse<int16>(value);
 }
 
@@ -2009,7 +2009,7 @@ int32 convert::to_int32(char32 value) noexcept {
   return static_cast<int32>(value);
 }
 
-int32 convert::to_int32(wchar_t value) noexcept {
+int32 convert::to_int32(wchar value) noexcept {
   return static_cast<int32>(value);
 }
 
@@ -2134,11 +2134,11 @@ int32 convert::to_int32(char32* value) {
   return ustring::parse<int32>(value);
 }
 
-int32 convert::to_int32(const wchar_t* value) {
+int32 convert::to_int32(const wchar* value) {
   return ustring::parse<int32>(value);
 }
 
-int32 convert::to_int32(wchar_t* value) {
+int32 convert::to_int32(wchar* value) {
   return ustring::parse<int32>(value);
 }
 
@@ -2174,7 +2174,7 @@ int64 convert::to_int64(char32 value) noexcept {
   return static_cast<int64>(value);
 }
 
-int64 convert::to_int64(wchar_t value) noexcept {
+int64 convert::to_int64(wchar value) noexcept {
   return static_cast<int64>(value);
 }
 
@@ -2294,11 +2294,11 @@ int64 convert::to_int64(char32* value) {
   return ustring::parse<int64>(value);
 }
 
-int64 convert::to_int64(const wchar_t* value) {
+int64 convert::to_int64(const wchar* value) {
   return ustring::parse<int64>(value);
 }
 
-int64 convert::to_int64(wchar_t* value) {
+int64 convert::to_int64(wchar* value) {
   return ustring::parse<int64>(value);
 }
 
@@ -2334,7 +2334,7 @@ llong_t convert::to_llong(char32 value) noexcept {
   return static_cast<llong_t>(value);
 }
 
-llong_t convert::to_llong(wchar_t value) noexcept {
+llong_t convert::to_llong(wchar value) noexcept {
   return static_cast<llong_t>(value);
 }
 
@@ -2454,11 +2454,11 @@ llong_t convert::to_llong(char32* value) {
   return ustring::parse<llong_t>(value);
 }
 
-llong_t convert::to_llong(const wchar_t* value) {
+llong_t convert::to_llong(const wchar* value) {
   return ustring::parse<llong_t>(value);
 }
 
-llong_t convert::to_llong(wchar_t* value) {
+llong_t convert::to_llong(wchar* value) {
   return ustring::parse<llong_t>(value);
 }
 
@@ -2496,8 +2496,8 @@ sbyte convert::to_sbyte(char32 value) {
   return static_cast<sbyte>(value);
 }
 
-sbyte convert::to_sbyte(wchar_t value) {
-  if (value > static_cast<wchar_t>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
+sbyte convert::to_sbyte(wchar value) {
+  if (value > static_cast<wchar>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
   return static_cast<sbyte>(value);
 }
 
@@ -2626,11 +2626,11 @@ sbyte convert::to_sbyte(char32* value) {
   return ustring::parse<sbyte>(value);
 }
 
-sbyte convert::to_sbyte(const wchar_t* value) {
+sbyte convert::to_sbyte(const wchar* value) {
   return ustring::parse<sbyte>(value);
 }
 
-sbyte convert::to_sbyte(wchar_t* value) {
+sbyte convert::to_sbyte(wchar* value) {
   return ustring::parse<sbyte>(value);
 }
 
@@ -2667,7 +2667,7 @@ uint16_t convert::to_uint16(char32 value) {
   return static_cast<uint16_t>(value);
 }
 
-uint16_t convert::to_uint16(wchar_t value) noexcept {
+uint16_t convert::to_uint16(wchar value) noexcept {
   return static_cast<uint16_t>(value);
 }
 
@@ -2796,11 +2796,11 @@ uint16_t convert::to_uint16(char32* value) {
   return ustring::parse<uint16_t>(value);
 }
 
-uint16_t convert::to_uint16(const wchar_t* value) {
+uint16_t convert::to_uint16(const wchar* value) {
   return ustring::parse<uint16_t>(value);
 }
 
-uint16_t convert::to_uint16(wchar_t* value) {
+uint16_t convert::to_uint16(wchar* value) {
   return ustring::parse<uint16_t>(value);
 }
 
@@ -2836,7 +2836,7 @@ uint32 convert::to_uint32(char32 value) noexcept {
   return static_cast<uint32>(value);
 }
 
-uint32 convert::to_uint32(wchar_t value) noexcept {
+uint32 convert::to_uint32(wchar value) noexcept {
   return static_cast<uint32>(value);
 }
 
@@ -2964,11 +2964,11 @@ uint32 convert::to_uint32(char32* value) {
   return ustring::parse<uint32>(value);
 }
 
-uint32 convert::to_uint32(const wchar_t* value) {
+uint32 convert::to_uint32(const wchar* value) {
   return ustring::parse<uint32>(value);
 }
 
-uint32 convert::to_uint32(wchar_t* value) {
+uint32 convert::to_uint32(wchar* value) {
   return ustring::parse<uint32>(value);
 }
 
@@ -3004,7 +3004,7 @@ uint64 convert::to_uint64(char32 value) noexcept {
   return static_cast<uint64>(value);
 }
 
-uint64 convert::to_uint64(wchar_t value) noexcept {
+uint64 convert::to_uint64(wchar value) noexcept {
   return static_cast<uint64>(value);
 }
 
@@ -3130,11 +3130,11 @@ uint64 convert::to_uint64(char32* value) {
   return ustring::parse<uint64>(value);
 }
 
-uint64 convert::to_uint64(const wchar_t* value) {
+uint64 convert::to_uint64(const wchar* value) {
   return ustring::parse<uint64>(value);
 }
 
-uint64 convert::to_uint64(wchar_t* value) {
+uint64 convert::to_uint64(wchar* value) {
   return ustring::parse<uint64>(value);
 }
 
@@ -3170,7 +3170,7 @@ ullong_t convert::to_ullong(char32 value) noexcept {
   return static_cast<ullong_t>(value);
 }
 
-ullong_t convert::to_ullong(wchar_t value) noexcept {
+ullong_t convert::to_ullong(wchar value) noexcept {
   return static_cast<ullong_t>(value);
 }
 
@@ -3296,11 +3296,11 @@ ullong_t convert::to_ullong(char32* value) {
   return ustring::parse<ullong_t>(value);
 }
 
-ullong_t convert::to_ullong(const wchar_t* value) {
+ullong_t convert::to_ullong(const wchar* value) {
   return ustring::parse<ullong_t>(value);
 }
 
-ullong_t convert::to_ullong(wchar_t* value) {
+ullong_t convert::to_ullong(wchar* value) {
   return ustring::parse<ullong_t>(value);
 }
 
@@ -3342,7 +3342,7 @@ ustring convert::to_string(char32 value) noexcept {
   return ustring::format("{}", value);
 }
 
-ustring convert::to_string(wchar_t value) noexcept {
+ustring convert::to_string(wchar value) noexcept {
   return ustring::format("{}", value);
 }
 
@@ -3540,11 +3540,11 @@ ustring convert::to_string(char32* value) {
   return value;
 }
 
-ustring convert::to_string(const wchar_t* value) {
+ustring convert::to_string(const wchar* value) {
   return value;
 }
 
-ustring convert::to_string(wchar_t* value) {
+ustring convert::to_string(wchar* value) {
   return value;
 }
 
@@ -3580,7 +3580,7 @@ ustring convert::to_ustring(char32 value) noexcept {
   return to_string(value);
 }
 
-ustring convert::to_ustring(wchar_t value) noexcept {
+ustring convert::to_ustring(wchar value) noexcept {
   return to_string(value);
 }
 
@@ -3724,10 +3724,10 @@ ustring convert::to_ustring(char32* value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(const wchar_t* value) {
+ustring convert::to_ustring(const wchar* value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(wchar_t* value) {
+ustring convert::to_ustring(wchar* value) {
   return to_string(value);
 }

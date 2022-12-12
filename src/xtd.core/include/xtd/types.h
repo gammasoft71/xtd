@@ -105,14 +105,6 @@ namespace xtd {
   /// @ingroup xtd_core types
   using char32 = char32_t;
   
-  /// @brief Represents a wide character.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core types
-  using wchar = wchar_t;
-
   /// @brief Represents a decimal-precision floating-point number.
   /// @par Namespace
   /// xtd

@@ -22,7 +22,7 @@ std::ostream& operator <<(std::ostream& os, const char32* str) {
   return os << ustring(str);
 }
 
-std::ostream& operator <<(std::ostream& os, const wchar_t* str) {
+std::ostream& operator <<(std::ostream& os, const wchar* str) {
   return os << ustring(str);
 }
 
@@ -42,7 +42,7 @@ string __format_stringer_to_std_string(const char32& c) {
   return ustring(u32string(1, c));
 }
 
-string __format_stringer_to_std_string(const wchar_t& c) {
+string __format_stringer_to_std_string(const wchar& c) {
   return ustring(wstring(1, c));
 }
 
@@ -62,7 +62,7 @@ string __format_stringer_to_std_string(const char32* str) {
   return ustring(str);
 }
 
-string __format_stringer_to_std_string(const wchar_t* str) {
+string __format_stringer_to_std_string(const wchar* str) {
   return ustring(str);
 }
 

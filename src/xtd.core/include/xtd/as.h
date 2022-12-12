@@ -162,7 +162,7 @@ namespace xtd {
   /// int result = as<int>(value);
   /// @endcode
   template<typename new_type_t>
-  new_type_t as(wchar_t value) {
+  new_type_t as(wchar value) {
     return static_cast<new_type_t>(value);
   }
   
@@ -821,11 +821,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"Gammasoft";
+  /// const wchar* value = L"Gammasoft";
   /// intptr result = as<intptr>(value);
   /// @endcode
   template<typename new_type_t>
-  new_type_t as(const wchar_t* value) {
+  new_type_t as(const wchar* value) {
     return reinterpret_cast<new_type_t>(value);
   }
   
@@ -839,11 +839,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"Gammasoft";
+  /// wchar* value = L"Gammasoft";
   /// intptr result = as<intptr>(value);
   /// @endcode
   template<typename new_type_t>
-  new_type_t as(wchar_t* value) {
+  new_type_t as(wchar* value) {
     return reinterpret_cast<new_type_t>(value);
   }
   
@@ -992,11 +992,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t value = u'a';
+  /// wchar value = u'a';
   /// bool result = as<bool>(value);
   /// @endcode
   template<>
-  inline bool as<bool>(wchar_t value) {
+  inline bool as<bool>(wchar value) {
     return xtd::convert::to_boolean(value);
   }
   
@@ -1493,11 +1493,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"42";
+  /// const wchar* value = L"42";
   /// bool result = as<bool>(value);
   /// @endcode
   template<>
-  inline bool as<bool>(const wchar_t* value) {
+  inline bool as<bool>(const wchar* value) {
     return xtd::convert::to_boolean(value);
   }
   
@@ -1512,11 +1512,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"42";
+  /// wchar* value = L"42";
   /// bool result = as<bool>(value);
   /// @endcode
   template<>
-  inline bool as<bool>(wchar_t* value) {
+  inline bool as<bool>(wchar* value) {
     return xtd::convert::to_boolean(value);
   }
   
@@ -1662,11 +1662,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t value = u'a';
+  /// wchar value = u'a';
   /// xtd::byte result = as<xtd::byte>(value);
   /// @endcode
   template<>
-  inline xtd::byte as<xtd::byte>(wchar_t value) {
+  inline xtd::byte as<xtd::byte>(wchar value) {
     return xtd::convert::to_byte(value);
   }
   
@@ -2183,11 +2183,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"42";
+  /// const wchar* value = L"42";
   /// xtd::byte result = as<xtd::byte>(value);
   /// @endcode
   template<>
-  inline xtd::byte as<xtd::byte>(const wchar_t* value) {
+  inline xtd::byte as<xtd::byte>(const wchar* value) {
     return xtd::convert::to_byte(value);
   }
   
@@ -2202,11 +2202,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"42";
+  /// wchar* value = L"42";
   /// xtd::byte result = as<xtd::byte>(value);
   /// @endcode
   template<>
-  inline xtd::byte as<xtd::byte>(wchar_t* value) {
+  inline xtd::byte as<xtd::byte>(wchar* value) {
     return xtd::convert::to_byte(value);
   }
   
@@ -2352,11 +2352,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t value = u'a';
+  /// wchar value = u'a';
   /// char result = as<char>(value);
   /// @endcode
   template<>
-  inline char as<char>(wchar_t value) {
+  inline char as<char>(wchar value) {
     return xtd::convert::to_char(value);
   }
   
@@ -2853,11 +2853,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"42";
+  /// const wchar* value = L"42";
   /// char result = as<char>(value);
   /// @endcode
   template<>
-  inline char as<char>(const wchar_t* value) {
+  inline char as<char>(const wchar* value) {
     return xtd::convert::to_char(value);
   }
   
@@ -2872,11 +2872,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"42";
+  /// wchar* value = L"42";
   /// char result = as<char>(value);
   /// @endcode
   template<>
-  inline char as<char>(wchar_t* value) {
+  inline char as<char>(wchar* value) {
     return xtd::convert::to_char(value);
   }
   
@@ -3022,11 +3022,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t value = u'a';
+  /// wchar value = u'a';
   /// char8 result = as<char8>(value);
   /// @endcode
   template<>
-  inline char8 as<char8>(wchar_t value) {
+  inline char8 as<char8>(wchar value) {
     return xtd::convert::to_char8(value);
   }
   
@@ -3523,11 +3523,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"42";
+  /// const wchar* value = L"42";
   /// char8 result = as<char8>(value);
   /// @endcode
   template<>
-  inline char8 as<char8>(const wchar_t* value) {
+  inline char8 as<char8>(const wchar* value) {
     return xtd::convert::to_char8(value);
   }
   
@@ -3542,11 +3542,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"42";
+  /// wchar* value = L"42";
   /// char8 result = as<char8>(value);
   /// @endcode
   template<>
-  inline char8 as<char8>(wchar_t* value) {
+  inline char8 as<char8>(wchar* value) {
     return xtd::convert::to_char8(value);
   }
   
@@ -3692,11 +3692,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t value = u'a';
+  /// wchar value = u'a';
   /// char16 result = as<char16>(value);
   /// @endcode
   template<>
-  inline char16 as<char16>(wchar_t value) {
+  inline char16 as<char16>(wchar value) {
     return xtd::convert::to_char16(value);
   }
   
@@ -4193,11 +4193,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"42";
+  /// const wchar* value = L"42";
   /// char16 result = as<char16>(value);
   /// @endcode
   template<>
-  inline char16 as<char16>(const wchar_t* value) {
+  inline char16 as<char16>(const wchar* value) {
     return xtd::convert::to_char16(value);
   }
   
@@ -4212,11 +4212,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"42";
+  /// wchar* value = L"42";
   /// char16 result = as<char16>(value);
   /// @endcode
   template<>
-  inline char16 as<char16>(wchar_t* value) {
+  inline char16 as<char16>(wchar* value) {
     return xtd::convert::to_char16(value);
   }
   
@@ -4362,11 +4362,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t value = u'a';
+  /// wchar value = u'a';
   /// char32 result = as<char32>(value);
   /// @endcode
   template<>
-  inline char32 as<char32>(wchar_t value) {
+  inline char32 as<char32>(wchar value) {
     return xtd::convert::to_char32(value);
   }
   
@@ -4863,11 +4863,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"42";
+  /// const wchar* value = L"42";
   /// char32 result = as<char32>(value);
   /// @endcode
   template<>
-  inline char32 as<char32>(const wchar_t* value) {
+  inline char32 as<char32>(const wchar* value) {
     return xtd::convert::to_char32(value);
   }
   
@@ -4882,17 +4882,17 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"42";
+  /// wchar* value = L"42";
   /// char32 result = as<char32>(value);
   /// @endcode
   template<>
-  inline char32 as<char32>(wchar_t* value) {
+  inline char32 as<char32>(wchar* value) {
     return xtd::convert::to_char32(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   /// @par Namespace
   /// xtd
@@ -4902,16 +4902,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// std::any value = true;
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(std::any value) {
+  inline wchar as<wchar>(std::any value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4920,16 +4920,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// bool value = true;
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(bool value) {
+  inline wchar as<wchar>(bool value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4938,16 +4938,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// xtd::byte value = 42;
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(xtd::byte value) {
+  inline wchar as<wchar>(xtd::byte value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -4957,16 +4957,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char value = 'a';
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(char value) {
+  inline wchar as<wchar>(char value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -4976,16 +4976,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char8 value = u8'a';
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(char8 value) {
+  inline wchar as<wchar>(char8 value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -4995,16 +4995,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char16 value = u'a';
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(char16 value) {
+  inline wchar as<wchar>(char16 value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -5014,16 +5014,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char32 value = u'a';
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(char32 value) {
+  inline wchar as<wchar>(char32 value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -5032,17 +5032,17 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t value = u'a';
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar value = u'a';
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(wchar_t value) {
+  inline wchar as<wchar>(wchar value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5051,16 +5051,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// decimal_t value = 42.50l;
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(decimal_t value) {
+  inline wchar as<wchar>(decimal_t value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5069,16 +5069,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// double value = 42.50;
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(double value) {
+  inline wchar as<wchar>(double value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5087,16 +5087,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// float value = 42.50f;
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(float value) {
+  inline wchar as<wchar>(float value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5105,16 +5105,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// int16 value = 42;
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(int16 value) {
+  inline wchar as<wchar>(int16 value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5123,16 +5123,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// int32 value = 42;
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(int32 value) {
+  inline wchar as<wchar>(int32 value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5141,16 +5141,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// int64 value = 42l;
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(int64 value) {
+  inline wchar as<wchar>(int64 value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5159,16 +5159,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// llong_t value = 42ll;
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(llong_t value) {
+  inline wchar as<wchar>(llong_t value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5177,16 +5177,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// sbyte value = 42ll;
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(sbyte value) {
+  inline wchar as<wchar>(sbyte value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5195,16 +5195,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// uint16_t value = 42u;
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(uint16_t value) {
+  inline wchar as<wchar>(uint16_t value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5213,16 +5213,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// uint32 value = 42u;
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(uint32 value) {
+  inline wchar as<wchar>(uint32 value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5231,16 +5231,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// uint64 value = 42ul;
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(uint64 value) {
+  inline wchar as<wchar>(uint64 value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5249,16 +5249,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// ullong_t value = 42ull;
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(ullong_t value) {
+  inline wchar as<wchar>(ullong_t value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -5268,16 +5268,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// ustring value = "42";
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(const xtd::ustring& value) {
+  inline wchar as<wchar>(const xtd::ustring& value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -5287,16 +5287,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// string value = "42";
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(const std::string& value) {
+  inline wchar as<wchar>(const std::string& value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -5306,16 +5306,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// u8string value = u8"42";
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(const std::u8string& value) {
+  inline wchar as<wchar>(const std::u8string& value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -5325,16 +5325,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// u16string value = u"42";
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(const std::u16string& value) {
+  inline wchar as<wchar>(const std::u16string& value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -5344,16 +5344,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// u32string value = U"42";
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(const std::u32string& value) {
+  inline wchar as<wchar>(const std::u32string& value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -5363,16 +5363,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// wstring value = L"42";
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(const std::wstring& value) {
+  inline wchar as<wchar>(const std::wstring& value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -5382,16 +5382,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const char* value = "42";
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(const char* value) {
+  inline wchar as<wchar>(const char* value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -5401,16 +5401,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char* value = "42";
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(char* value) {
+  inline wchar as<wchar>(char* value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -5420,16 +5420,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const char8* value = u8"42";
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(const char8* value) {
+  inline wchar as<wchar>(const char8* value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -5439,16 +5439,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char8* value = u8"42";
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(char8* value) {
+  inline wchar as<wchar>(char8* value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -5458,16 +5458,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const char16* value = u"42";
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(const char16* value) {
+  inline wchar as<wchar>(const char16* value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -5477,16 +5477,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char16* value = u"42";
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(char16* value) {
+  inline wchar as<wchar>(char16* value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -5496,16 +5496,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const char32* value = U"42";
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(const char32* value) {
+  inline wchar as<wchar>(const char32* value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -5515,16 +5515,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char32* value = U"42";
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(char32* value) {
+  inline wchar as<wchar>(char32* value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -5533,17 +5533,17 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"42";
-  /// wchar_t result = as<wchar_t>(value);
+  /// const wchar* value = L"42";
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(const wchar_t* value) {
+  inline wchar as<wchar>(const wchar* value) {
     return xtd::convert::to_wchar(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new wchar_t object converted from value.
+  /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -5552,11 +5552,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"42";
-  /// wchar_t result = as<wchar_t>(value);
+  /// wchar* value = L"42";
+  /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(wchar_t* value) {
+  inline wchar as<wchar>(wchar* value) {
     return xtd::convert::to_wchar(value);
   }
   
@@ -5702,11 +5702,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t value = u'a';
+  /// wchar value = u'a';
   /// decimal_t result = as<decimal_t>(value);
   /// @endcode
   template<>
-  inline decimal_t as<decimal_t>(wchar_t value) {
+  inline decimal_t as<decimal_t>(wchar value) {
     return xtd::convert::to_decimal(value);
   }
   
@@ -6203,11 +6203,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"42";
+  /// const wchar* value = L"42";
   /// decimal_t result = as<decimal_t>(value);
   /// @endcode
   template<>
-  inline decimal_t as<decimal_t>(const wchar_t* value) {
+  inline decimal_t as<decimal_t>(const wchar* value) {
     return xtd::convert::to_decimal(value);
   }
   
@@ -6222,11 +6222,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"42";
+  /// wchar* value = L"42";
   /// decimal_t result = as<decimal_t>(value);
   /// @endcode
   template<>
-  inline decimal_t as<decimal_t>(wchar_t* value) {
+  inline decimal_t as<decimal_t>(wchar* value) {
     return xtd::convert::to_decimal(value);
   }
   
@@ -6372,11 +6372,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t value = u'a';
+  /// wchar value = u'a';
   /// double result = as<double>(value);
   /// @endcode
   template<>
-  inline double as<double>(wchar_t value) {
+  inline double as<double>(wchar value) {
     return xtd::convert::to_double(value);
   }
   
@@ -6873,11 +6873,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"42";
+  /// const wchar* value = L"42";
   /// double result = as<double>(value);
   /// @endcode
   template<>
-  inline double as<double>(const wchar_t* value) {
+  inline double as<double>(const wchar* value) {
     return xtd::convert::to_double(value);
   }
   
@@ -6892,11 +6892,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"42";
+  /// wchar* value = L"42";
   /// double result = as<double>(value);
   /// @endcode
   template<>
-  inline double as<double>(wchar_t* value) {
+  inline double as<double>(wchar* value) {
     return xtd::convert::to_double(value);
   }
   
@@ -7042,11 +7042,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t value = u'a';
+  /// wchar value = u'a';
   /// float result = as<float>(value);
   /// @endcode
   template<>
-  inline float as<float>(wchar_t value) {
+  inline float as<float>(wchar value) {
     return xtd::convert::to_single(value);
   }
   
@@ -7543,11 +7543,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"42";
+  /// const wchar* value = L"42";
   /// float result = as<float>(value);
   /// @endcode
   template<>
-  inline float as<float>(const wchar_t* value) {
+  inline float as<float>(const wchar* value) {
     return xtd::convert::to_single(value);
   }
   
@@ -7562,11 +7562,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"42";
+  /// wchar* value = L"42";
   /// float result = as<float>(value);
   /// @endcode
   template<>
-  inline float as<float>(wchar_t* value) {
+  inline float as<float>(wchar* value) {
     return xtd::convert::to_single(value);
   }
   
@@ -7712,11 +7712,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t value = u'a';
+  /// wchar value = u'a';
   /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16 as<int16>(wchar_t value) {
+  inline int16 as<int16>(wchar value) {
     return xtd::convert::to_int16(value);
   }
   
@@ -8233,11 +8233,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"42";
+  /// const wchar* value = L"42";
   /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16 as<int16>(const wchar_t* value) {
+  inline int16 as<int16>(const wchar* value) {
     return xtd::convert::to_int16(value);
   }
   
@@ -8252,11 +8252,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"42";
+  /// wchar* value = L"42";
   /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16 as<int16>(wchar_t* value) {
+  inline int16 as<int16>(wchar* value) {
     return xtd::convert::to_int16(value);
   }
   
@@ -8402,11 +8402,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t value = u'a';
+  /// wchar value = u'a';
   /// int32 result = as<int32>(value);
   /// @endcode
   template<>
-  inline int32 as<int32>(wchar_t value) {
+  inline int32 as<int32>(wchar value) {
     return xtd::convert::to_int32(value);
   }
   
@@ -8923,11 +8923,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"42";
+  /// const wchar* value = L"42";
   /// int32 result = as<int32>(value);
   /// @endcode
   template<>
-  inline int32 as<int32>(const wchar_t* value) {
+  inline int32 as<int32>(const wchar* value) {
     return xtd::convert::to_int32(value);
   }
   
@@ -8942,11 +8942,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"42";
+  /// wchar* value = L"42";
   /// int32 result = as<int32>(value);
   /// @endcode
   template<>
-  inline int32 as<int32>(wchar_t* value) {
+  inline int32 as<int32>(wchar* value) {
     return xtd::convert::to_int32(value);
   }
   
@@ -9092,11 +9092,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t value = u'a';
+  /// wchar value = u'a';
   /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64 as<int64>(wchar_t value) {
+  inline int64 as<int64>(wchar value) {
     return xtd::convert::to_int64(value);
   }
   
@@ -9613,11 +9613,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"42";
+  /// const wchar* value = L"42";
   /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64 as<int64>(const wchar_t* value) {
+  inline int64 as<int64>(const wchar* value) {
     return xtd::convert::to_int64(value);
   }
   
@@ -9632,11 +9632,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"42";
+  /// wchar* value = L"42";
   /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64 as<int64>(wchar_t* value) {
+  inline int64 as<int64>(wchar* value) {
     return xtd::convert::to_int64(value);
   }
   
@@ -9782,11 +9782,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t value = u'a';
+  /// wchar value = u'a';
   /// llong_t result = as<llong_t>(value);
   /// @endcode
   template<>
-  inline llong_t as<llong_t>(wchar_t value) {
+  inline llong_t as<llong_t>(wchar value) {
     return xtd::convert::to_llong(value);
   }
   
@@ -10303,11 +10303,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"42";
+  /// const wchar* value = L"42";
   /// llong_t result = as<llong_t>(value);
   /// @endcode
   template<>
-  inline llong_t as<llong_t>(const wchar_t* value) {
+  inline llong_t as<llong_t>(const wchar* value) {
     return xtd::convert::to_llong(value);
   }
   
@@ -10322,11 +10322,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"42";
+  /// wchar* value = L"42";
   /// llong_t result = as<llong_t>(value);
   /// @endcode
   template<>
-  inline llong_t as<llong_t>(wchar_t* value) {
+  inline llong_t as<llong_t>(wchar* value) {
     return xtd::convert::to_llong(value);
   }
   
@@ -10472,11 +10472,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t value = u'a';
+  /// wchar value = u'a';
   /// sbyte result = as<sbyte>(value);
   /// @endcode
   template<>
-  inline sbyte as<sbyte>(wchar_t value) {
+  inline sbyte as<sbyte>(wchar value) {
     return xtd::convert::to_sbyte(value);
   }
   
@@ -10993,11 +10993,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"42";
+  /// const wchar* value = L"42";
   /// sbyte result = as<sbyte>(value);
   /// @endcode
   template<>
-  inline sbyte as<sbyte>(const wchar_t* value) {
+  inline sbyte as<sbyte>(const wchar* value) {
     return xtd::convert::to_sbyte(value);
   }
   
@@ -11012,11 +11012,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"42";
+  /// wchar* value = L"42";
   /// sbyte result = as<sbyte>(value);
   /// @endcode
   template<>
-  inline sbyte as<sbyte>(wchar_t* value) {
+  inline sbyte as<sbyte>(wchar* value) {
     return xtd::convert::to_sbyte(value);
   }
   
@@ -11162,11 +11162,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t value = u'a';
+  /// wchar value = u'a';
   /// uint16_t result = as<uint16_t>(value);
   /// @endcode
   template<>
-  inline uint16_t as<uint16_t>(wchar_t value) {
+  inline uint16_t as<uint16_t>(wchar value) {
     return xtd::convert::to_uint16(value);
   }
   
@@ -11683,11 +11683,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"42";
+  /// const wchar* value = L"42";
   /// uint16_t result = as<uint16_t>(value);
   /// @endcode
   template<>
-  inline uint16_t as<uint16_t>(const wchar_t* value) {
+  inline uint16_t as<uint16_t>(const wchar* value) {
     return xtd::convert::to_uint16(value);
   }
   
@@ -11702,11 +11702,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"42";
+  /// wchar* value = L"42";
   /// uint16_t result = as<uint16_t>(value);
   /// @endcode
   template<>
-  inline uint16_t as<uint16_t>(wchar_t* value) {
+  inline uint16_t as<uint16_t>(wchar* value) {
     return xtd::convert::to_uint16(value);
   }
   
@@ -11852,11 +11852,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t value = u'a';
+  /// wchar value = u'a';
   /// uint32 result = as<uint32>(value);
   /// @endcode
   template<>
-  inline uint32 as<uint32>(wchar_t value) {
+  inline uint32 as<uint32>(wchar value) {
     return xtd::convert::to_uint32(value);
   }
   
@@ -12373,11 +12373,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"42";
+  /// const wchar* value = L"42";
   /// uint32 result = as<uint32>(value);
   /// @endcode
   template<>
-  inline uint32 as<uint32>(const wchar_t* value) {
+  inline uint32 as<uint32>(const wchar* value) {
     return xtd::convert::to_uint32(value);
   }
   
@@ -12392,11 +12392,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"42";
+  /// wchar* value = L"42";
   /// uint32 result = as<uint32>(value);
   /// @endcode
   template<>
-  inline uint32 as<uint32>(wchar_t* value) {
+  inline uint32 as<uint32>(wchar* value) {
     return xtd::convert::to_uint32(value);
   }
   
@@ -12542,11 +12542,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t value = u'a';
+  /// wchar value = u'a';
   /// uint64 result = as<uint64>(value);
   /// @endcode
   template<>
-  inline uint64 as<uint64>(wchar_t value) {
+  inline uint64 as<uint64>(wchar value) {
     return xtd::convert::to_uint64(value);
   }
   
@@ -13063,11 +13063,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"42";
+  /// const wchar* value = L"42";
   /// uint64 result = as<uint64>(value);
   /// @endcode
   template<>
-  inline uint64 as<uint64>(const wchar_t* value) {
+  inline uint64 as<uint64>(const wchar* value) {
     return xtd::convert::to_uint64(value);
   }
   
@@ -13082,11 +13082,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"42";
+  /// wchar* value = L"42";
   /// uint64 result = as<uint64>(value);
   /// @endcode
   template<>
-  inline uint64 as<uint64>(wchar_t* value) {
+  inline uint64 as<uint64>(wchar* value) {
     return xtd::convert::to_uint64(value);
   }
   
@@ -13232,11 +13232,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t value = u'a';
+  /// wchar value = u'a';
   /// ullong_t result = as<ullong_t>(value);
   /// @endcode
   template<>
-  inline ullong_t as<ullong_t>(wchar_t value) {
+  inline ullong_t as<ullong_t>(wchar value) {
     return xtd::convert::to_ullong(value);
   }
   
@@ -13753,11 +13753,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"42";
+  /// const wchar* value = L"42";
   /// ullong_t result = as<ullong_t>(value);
   /// @endcode
   template<>
-  inline ullong_t as<ullong_t>(const wchar_t* value) {
+  inline ullong_t as<ullong_t>(const wchar* value) {
     return xtd::convert::to_ullong(value);
   }
   
@@ -13772,11 +13772,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"42";
+  /// wchar* value = L"42";
   /// ullong_t result = as<ullong_t>(value);
   /// @endcode
   template<>
-  inline ullong_t as<ullong_t>(wchar_t* value) {
+  inline ullong_t as<ullong_t>(wchar* value) {
     return xtd::convert::to_ullong(value);
   }
   
@@ -13942,11 +13942,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t value = u'a';
+  /// wchar value = u'a';
   /// ullong_t result = as<ullong_t>(value);
   /// @endcode
   template<>
-  inline ustring as<ustring>(wchar_t value) {
+  inline ustring as<ustring>(wchar value) {
     return xtd::convert::to_string(value);
   }
   
@@ -16423,11 +16423,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"Gammasoft";
+  /// const wchar* value = L"Gammasoft";
   /// string result = as<string>(value);
   /// @endcode
   template<>
-  inline std::string as<std::string>(const wchar_t* value) {
+  inline std::string as<std::string>(const wchar* value) {
     return xtd::convert_string::to_string(value);
   }
   
@@ -16439,11 +16439,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"Gammasoft";
+  /// const wchar* value = L"Gammasoft";
   /// ustring result = as<ustring>(value);
   /// @endcode
   template<>
-  inline xtd::ustring as<xtd::ustring>(const wchar_t* value) {
+  inline xtd::ustring as<xtd::ustring>(const wchar* value) {
     return xtd::convert_string::to_ustring(value);
   }
   
@@ -16455,11 +16455,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"Gammasoft";
+  /// const wchar* value = L"Gammasoft";
   /// u8string result = as<u8string>(value);
   /// @endcode
   template<>
-  inline std::u8string as<std::u8string>(const wchar_t* value) {
+  inline std::u8string as<std::u8string>(const wchar* value) {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -16471,11 +16471,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"Gammasoft";
+  /// const wchar* value = L"Gammasoft";
   /// u16string result = as<u16string>(value);
   /// @endcode
   template<>
-  inline std::u16string as<std::u16string>(const wchar_t* value) {
+  inline std::u16string as<std::u16string>(const wchar* value) {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -16487,11 +16487,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"Gammasoft";
+  /// const wchar* value = L"Gammasoft";
   /// u32string result = as<u32string>(value);
   /// @endcode
   template<>
-  inline std::u32string as<std::u32string>(const wchar_t* value) {
+  inline std::u32string as<std::u32string>(const wchar* value) {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -16503,11 +16503,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// const wchar_t* value = L"Gammasoft";
+  /// const wchar* value = L"Gammasoft";
   /// wstring result = as<wstring>(value);
   /// @endcode
   template<>
-  inline std::wstring as<std::wstring>(const wchar_t* value) {
+  inline std::wstring as<std::wstring>(const wchar* value) {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -16519,11 +16519,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"Gammasoft";
+  /// wchar* value = L"Gammasoft";
   /// string result = as<string>(value);
   /// @endcode
   template<>
-  inline std::string as<std::string>(wchar_t* value) {
+  inline std::string as<std::string>(wchar* value) {
     return xtd::convert_string::to_string(value);
   }
   
@@ -16535,11 +16535,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"Gammasoft";
+  /// wchar* value = L"Gammasoft";
   /// ustring result = as<ustring>(value);
   /// @endcode
   template<>
-  inline xtd::ustring as<xtd::ustring>(wchar_t* value) {
+  inline xtd::ustring as<xtd::ustring>(wchar* value) {
     return xtd::convert_string::to_ustring(value);
   }
   
@@ -16551,11 +16551,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"Gammasoft";
+  /// wchar* value = L"Gammasoft";
   /// u8string result = as<u8string>(value);
   /// @endcode
   template<>
-  inline std::u8string as<std::u8string>(wchar_t* value) {
+  inline std::u8string as<std::u8string>(wchar* value) {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -16567,11 +16567,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"Gammasoft";
+  /// wchar* value = L"Gammasoft";
   /// u16string result = as<u16string>(value);
   /// @endcode
   template<>
-  inline std::u16string as<std::u16string>(wchar_t* value) {
+  inline std::u16string as<std::u16string>(wchar* value) {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -16583,11 +16583,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"Gammasoft";
+  /// wchar* value = L"Gammasoft";
   /// u32string result = as<u32string>(value);
   /// @endcode
   template<>
-  inline std::u32string as<std::u32string>(wchar_t* value) {
+  inline std::u32string as<std::u32string>(wchar* value) {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -16599,11 +16599,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// wchar_t* value = L"Gammasoft";
+  /// wchar* value = L"Gammasoft";
   /// wstring result = as<wstring>(value);
   /// @endcode
   template<>
-  inline std::wstring as<std::wstring>(wchar_t* value) {
+  inline std::wstring as<std::wstring>(wchar* value) {
     return xtd::convert_string::to_wstring(value);
   }
 }

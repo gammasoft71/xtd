@@ -86,15 +86,15 @@ namespace xtd {
     /// any result = convert::to_any(value);
     /// @endcode
     static std::any to_any(char32 value) noexcept;
-    /// @brief Convert wchar_t to std::any.
+    /// @brief Convert wchar to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
+    /// wchar value = L'a';
     /// any result = convert::to_any(value);
     /// @endcode
-    static std::any to_any(wchar_t value) noexcept;
+    static std::any to_any(wchar value) noexcept;
     /// @brief Convert decimal_t to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
@@ -229,8 +229,8 @@ namespace xtd {
     static std::any to_any(char16* value) noexcept;
     static std::any to_any(const char32* value) noexcept;
     static std::any to_any(char32* value) noexcept;
-    static std::any to_any(const wchar_t* value) noexcept;
-    static std::any to_any(wchar_t* value) noexcept;
+    static std::any to_any(const wchar* value) noexcept;
+    static std::any to_any(wchar* value) noexcept;
     /// @endcond
     /// @brief Convert type_t to bool.
     /// @param value object to convert.
@@ -317,16 +317,16 @@ namespace xtd {
     /// bool result = convert::to_boolean(value);
     /// @endcode
     static bool to_boolean(char32 value);
-    /// @brief Convert wchar_t to bool.
+    /// @brief Convert wchar to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
     /// @exception xtd::invalid_cast_exception throws always exception.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
+    /// wchar value = L'a';
     /// bool result = convert::to_boolean(value);
     /// @endcode
-    static bool to_boolean(wchar_t value);
+    static bool to_boolean(wchar value);
     /// @brief Convert decimal_t to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
@@ -462,8 +462,8 @@ namespace xtd {
     static bool to_boolean(char16* value);
     static bool to_boolean(const char32* value);
     static bool to_boolean(char32* value);
-    static bool to_boolean(const wchar_t* value);
-    static bool to_boolean(wchar_t* value);
+    static bool to_boolean(const wchar* value);
+    static bool to_boolean(wchar* value);
     /// @endcond
     /// @brief Convert type_t to bool.
     /// @param value object to convert.
@@ -549,10 +549,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
+    /// wchar value = L'a';
     /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static xtd::byte to_byte(wchar_t value);
+    static xtd::byte to_byte(wchar value);
     /// @brief Convert decimal_t to byte.
     /// @param value object to convert.
     /// @remarks The result is rounded.
@@ -711,8 +711,8 @@ namespace xtd {
     static xtd::byte to_byte(char16* value);
     static xtd::byte to_byte(const char32* value);
     static xtd::byte to_byte(char32* value);
-    static xtd::byte to_byte(const wchar_t* value);
-    static xtd::byte to_byte(wchar_t* value);
+    static xtd::byte to_byte(const wchar* value);
+    static xtd::byte to_byte(wchar* value);
     /// @endcond
     /// @brief Convert type_t to byte.
     /// @param value object to convert.
@@ -798,10 +798,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
+    /// wchar value = L'a';
     /// char result = convert::to_char(value);
     /// @endcode
-    static char to_char(wchar_t value);
+    static char to_char(wchar value);
     /// @brief Convert decimal_t to char.
     /// @param value object to convert.
     /// @remarks The result is rounded.
@@ -948,8 +948,8 @@ namespace xtd {
     static char to_char(char16* value);
     static char to_char(const char32* value);
     static char to_char(char32* value);
-    static char to_char(const wchar_t* value);
-    static char to_char(wchar_t* value);
+    static char to_char(const wchar* value);
+    static char to_char(wchar* value);
     /// @endcond
     /// @brief Convert type_t to char.
     /// @param value object to convert.
@@ -1035,10 +1035,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
+    /// wchar value = L'a';
     /// char8 result = convert::to_char8(value);
     /// @endcode
-    static char8 to_char8(wchar_t value);
+    static char8 to_char8(wchar value);
     /// @brief Convert decimal_t to char8.
     /// @param value object to convert.
     /// @remarks The result is rounded.
@@ -1185,8 +1185,8 @@ namespace xtd {
     static char8 to_char8(char16* value);
     static char8 to_char8(const char32* value);
     static char8 to_char8(char32* value);
-    static char8 to_char8(const wchar_t* value);
-    static char8 to_char8(wchar_t* value);
+    static char8 to_char8(const wchar* value);
+    static char8 to_char8(wchar* value);
     /// @endcond
     /// @brief Convert type_t to char8.
     /// @param value object to convert.
@@ -1270,10 +1270,10 @@ namespace xtd {
     /// @return A new char16 object converted from value.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
+    /// wchar value = L'a';
     /// char16 result = convert::to_char16(value);
     /// @endcode
-    static char16 to_char16(wchar_t value) noexcept;
+    static char16 to_char16(wchar value) noexcept;
     /// @brief Convert decimal_t to char16.
     /// @param value object to convert.
     /// @remarks The result is rounded.
@@ -1419,8 +1419,8 @@ namespace xtd {
     static char16 to_char16(char16* value);
     static char16 to_char16(const char32* value);
     static char16 to_char16(char32* value);
-    static char16 to_char16(const wchar_t* value);
-    static char16 to_char16(wchar_t* value);
+    static char16 to_char16(const wchar* value);
+    static char16 to_char16(wchar* value);
     /// @endcond
     /// @brief Convert type_t to char16.
     /// @param value object to convert.
@@ -1503,10 +1503,10 @@ namespace xtd {
     /// @return A new char32 object converted from value.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
+    /// wchar value = L'a';
     /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32 to_char32(wchar_t value) noexcept;
+    static char32 to_char32(wchar value) noexcept;
     /// @brief Convert decimal_t to char32.
     /// @param value object to convert.
     /// @remarks The result is rounded.
@@ -1651,8 +1651,8 @@ namespace xtd {
     static char32 to_char32(char16* value);
     static char32 to_char32(const char32* value);
     static char32 to_char32(char32* value);
-    static char32 to_char32(const wchar_t* value);
-    static char32 to_char32(wchar_t* value);
+    static char32 to_char32(const wchar* value);
+    static char32 to_char32(wchar* value);
     /// @endcond
     /// @brief Convert type_t to char32.
     /// @param value object to convert.
@@ -1669,236 +1669,236 @@ namespace xtd {
     
     /// @brief Convert std::any to wchar.
     /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @par Examples
     /// @code
     /// std::any value = 42;
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(std::any value);
+    static wchar to_wchar(std::any value);
     /// @brief Convert bool to wchar.
     /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @par Examples
     /// @code
     /// bool value = true;
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(bool value);
+    static wchar to_wchar(bool value);
     /// @brief Convert xtd::byte to wchar.
     /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @par Examples
     /// @code
     /// xtd::byte value = 42;
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(xtd::byte value) noexcept;
+    static wchar to_wchar(xtd::byte value) noexcept;
     /// @brief Convert char to wchar.
     /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @par Examples
     /// @code
     /// char value = 'a';
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(char value) noexcept;
+    static wchar to_wchar(char value) noexcept;
     /// @brief Convert char8 to wchar.
     /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @par Examples
     /// @code
     /// char8 value = u8'a';
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(char8 value) noexcept;
+    static wchar to_wchar(char8 value) noexcept;
     /// @brief Convert char16 to wchar.
     /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @par Examples
     /// @code
     /// char16 value = u'a';
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(char16 value) noexcept;
+    static wchar to_wchar(char16 value) noexcept;
     /// @brief Convert char32 to wchar.
     /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// char32 value = U'a';
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(char32 value);
+    static wchar to_wchar(char32 value);
     /// @brief Convert char32 to wchar.
     /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar value = L'a';
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(wchar_t value) noexcept;
+    static wchar to_wchar(wchar value) noexcept;
     /// @brief Convert decimal_t to wchar.
     /// @param value object to convert.
     /// @remarks The result is rounded.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @par Examples
     /// @code
     /// decimal_t value = 42.50l;
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(decimal_t value);
+    static wchar to_wchar(decimal_t value);
     /// @brief Convert double to wchar.
     /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @remarks The result is rounded.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// double value = 42.50;
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(double value);
+    static wchar to_wchar(double value);
     /// @brief Convert float to wchar.
     /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @remarks The result is rounded.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// float value = 42.50f;
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(float value);
+    static wchar to_wchar(float value);
     /// @brief Convert int16 to wchar.
     /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int16 value = 42;
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(int16 value);
+    static wchar to_wchar(int16 value);
     /// @brief Convert int32 to wchar.
     /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int32 value = 42;
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(int32 value);
+    static wchar to_wchar(int32 value);
     /// @brief Convert int64 to wchar.
     /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int64 value = 42l;
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(int64 value);
+    static wchar to_wchar(int64 value);
     /// @brief Convert llong_t to wchar.
     /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// llong_t value = 42ll;
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(llong_t value);
+    static wchar to_wchar(llong_t value);
     /// @brief Convert sbyte to wchar.
     /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is less than 0.
     /// @par Examples
     /// @code
     /// sbyte value = 42;
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(sbyte value);
+    static wchar to_wchar(sbyte value);
     /// @brief Convert uint16_t to wchar.
     /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @par Examples
     /// @code
     /// uint16_t value = 42u;
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(uint16_t value) noexcept;
+    static wchar to_wchar(uint16_t value) noexcept;
     /// @brief Convert uint32 to wchar.
     /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint32 value = 42u;
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(uint32 value);
+    static wchar to_wchar(uint32 value);
     /// @brief Convert uint64 to wchar.
     /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42ul;
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(uint64 value);
+    static wchar to_wchar(uint64 value);
     /// @brief Convert llong_t to wchar.
     /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// ullong_t value = 42ull;
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(ullong_t value);
+    static wchar to_wchar(ullong_t value);
     /// @brief Convert string to wchar.
     /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
     /// ustring value = "42";
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(const xtd::ustring& value);
+    static wchar to_wchar(const xtd::ustring& value);
     /// @cond
-    static wchar_t to_wchar(const std::string& value);
-    static wchar_t to_wchar(const std::u8string& value);
-    static wchar_t to_wchar(const std::u16string& value);
-    static wchar_t to_wchar(const std::u32string& value);
-    static wchar_t to_wchar(const std::wstring& value);
-    static wchar_t to_wchar(const char* value);
-    static wchar_t to_wchar(char* value);
-    static wchar_t to_wchar(const char8* value);
-    static wchar_t to_wchar(char8* value);
-    static wchar_t to_wchar(const char16* value);
-    static wchar_t to_wchar(char16* value);
-    static wchar_t to_wchar(const char32* value);
-    static wchar_t to_wchar(char32* value);
-    static wchar_t to_wchar(const wchar_t* value);
-    static wchar_t to_wchar(wchar_t* value);
+    static wchar to_wchar(const std::string& value);
+    static wchar to_wchar(const std::u8string& value);
+    static wchar to_wchar(const std::u16string& value);
+    static wchar to_wchar(const std::u32string& value);
+    static wchar to_wchar(const std::wstring& value);
+    static wchar to_wchar(const char* value);
+    static wchar to_wchar(char* value);
+    static wchar to_wchar(const char8* value);
+    static wchar to_wchar(char8* value);
+    static wchar to_wchar(const char16* value);
+    static wchar to_wchar(char16* value);
+    static wchar to_wchar(const char32* value);
+    static wchar to_wchar(char32* value);
+    static wchar to_wchar(const wchar* value);
+    static wchar to_wchar(wchar* value);
     /// @endcond
     /// @brief Convert type_t to wchar.
     /// @param value object to convert.
-    /// @return A new wchar_t object converted from value.
+    /// @return A new wchar object converted from value.
     /// @par Examples
     /// @code
     /// address_family value = address_family::inter_network;
-    /// wchar_t result = convert::to_wchar(value);
+    /// wchar result = convert::to_wchar(value);
     /// @endcode
     template<typename type_t>
-    static wchar_t to_wchar(type_t value) noexcept {
-      return static_cast<wchar_t>(value);
+    static wchar to_wchar(type_t value) noexcept {
+      return static_cast<wchar>(value);
     }
     
     /// @brief Convert std::any to decimal.
@@ -1969,10 +1969,10 @@ namespace xtd {
     /// @return A new decimal_t object converted from value.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
+    /// wchar value = L'a';
     /// decimal_t result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(wchar_t value) noexcept;
+    static decimal_t to_decimal(wchar value) noexcept;
     /// @brief Convert decimal_t to decimal.
     /// @param value object to convert.
     /// @remarks The result is rounded.
@@ -2108,8 +2108,8 @@ namespace xtd {
     static decimal_t to_decimal(char16* value);
     static decimal_t to_decimal(const char32* value);
     static decimal_t to_decimal(char32* value);
-    static decimal_t to_decimal(const wchar_t* value);
-    static decimal_t to_decimal(wchar_t* value);
+    static decimal_t to_decimal(const wchar* value);
+    static decimal_t to_decimal(wchar* value);
     /// @endcond
     /// @brief Convert type_t to decimal.
     /// @param value object to convert.
@@ -2192,10 +2192,10 @@ namespace xtd {
     /// @return A new double object converted from value.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
+    /// wchar value = L'a';
     /// double result = convert::to_double(value);
     /// @endcode
-    static double to_double(wchar_t value) noexcept;
+    static double to_double(wchar value) noexcept;
     /// @brief Convert decimal_t to double.
     /// @param value object to convert.
     /// @remarks The result is rounded.
@@ -2331,8 +2331,8 @@ namespace xtd {
     static double to_double(char16* value);
     static double to_double(const char32* value);
     static double to_double(char32* value);
-    static double to_double(const wchar_t* value);
-    static double to_double(wchar_t* value);
+    static double to_double(const wchar* value);
+    static double to_double(wchar* value);
     /// @endcond
     /// @brief Convert type_t to double.
     /// @param value object to convert.
@@ -2415,10 +2415,10 @@ namespace xtd {
     /// @return A new float object converted from value.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
+    /// wchar value = L'a';
     /// float result = convert::to_single(value);
     /// @endcode
-    static float to_single(wchar_t value) noexcept;
+    static float to_single(wchar value) noexcept;
     /// @brief Convert decimal_t to single.
     /// @param value object to convert.
     /// @remarks The result is rounded.
@@ -2554,8 +2554,8 @@ namespace xtd {
     static float to_single(char16* value);
     static float to_single(const char32* value);
     static float to_single(char32* value);
-    static float to_single(const wchar_t* value);
-    static float to_single(wchar_t* value);
+    static float to_single(const wchar* value);
+    static float to_single(wchar* value);
     /// @endcond
     /// @brief Convert type_t to single.
     /// @param value object to convert.
@@ -2639,10 +2639,10 @@ namespace xtd {
     /// @return A new int16 object converted from value.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
+    /// wchar value = L'a';
     /// int16 result = convert::to_int16(value);
     /// @endcode
-    static int16 to_int16(wchar_t value) noexcept;
+    static int16 to_int16(wchar value) noexcept;
     /// @brief Convert decimal_t to int16.
     /// @param value object to convert.
     /// @remarks The result is rounded.
@@ -2799,8 +2799,8 @@ namespace xtd {
     static int16 to_int16(char16* value);
     static int16 to_int16(const char32* value);
     static int16 to_int16(char32* value);
-    static int16 to_int16(const wchar_t* value);
-    static int16 to_int16(wchar_t* value);
+    static int16 to_int16(const wchar* value);
+    static int16 to_int16(wchar* value);
     /// @endcond
     /// @brief Convert type_t to int16.
     /// @param value object to convert.
@@ -2883,10 +2883,10 @@ namespace xtd {
     /// @return A new int32 object converted from value.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
+    /// wchar value = L'a';
     /// int32 result = convert::to_int32(value);
     /// @endcode
-    static int32 to_int32(wchar_t value) noexcept;
+    static int32 to_int32(wchar value) noexcept;
     /// @brief Convert decimal_t to int32.
     /// @param value object to convert.
     /// @remarks The result is rounded.
@@ -3040,8 +3040,8 @@ namespace xtd {
     static int32 to_int32(char16* value);
     static int32 to_int32(const char32* value);
     static int32 to_int32(char32* value);
-    static int32 to_int32(const wchar_t* value);
-    static int32 to_int32(wchar_t* value);
+    static int32 to_int32(const wchar* value);
+    static int32 to_int32(wchar* value);
     /// @endcond
     /// @brief Convert type_t to int32.
     /// @param value object to convert.
@@ -3124,10 +3124,10 @@ namespace xtd {
     /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
+    /// wchar value = L'a';
     /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64 to_int64(wchar_t value) noexcept;
+    static int64 to_int64(wchar value) noexcept;
     /// @brief Convert decimal_t to int64.
     /// @param value object to convert.
     /// @remarks The result is rounded.
@@ -3276,8 +3276,8 @@ namespace xtd {
     static int64 to_int64(char16* value);
     static int64 to_int64(const char32* value);
     static int64 to_int64(char32* value);
-    static int64 to_int64(const wchar_t* value);
-    static int64 to_int64(wchar_t* value);
+    static int64 to_int64(const wchar* value);
+    static int64 to_int64(wchar* value);
     /// @endcond
     /// @brief Convert type_t to int64.
     /// @param value object to convert.
@@ -3360,10 +3360,10 @@ namespace xtd {
     /// @return A new llong_t object converted from value.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
+    /// wchar value = L'a';
     /// llong_t result = convert::to_llong(value);
     /// @endcode
-    static llong_t to_llong(wchar_t value) noexcept;
+    static llong_t to_llong(wchar value) noexcept;
     /// @brief Convert decimal_t to llong.
     /// @param value object to convert.
     /// @remarks The result is rounded.
@@ -3512,8 +3512,8 @@ namespace xtd {
     static llong_t to_llong(char16* value);
     static llong_t to_llong(const char32* value);
     static llong_t to_llong(char32* value);
-    static llong_t to_llong(const wchar_t* value);
-    static llong_t to_llong(wchar_t* value);
+    static llong_t to_llong(const wchar* value);
+    static llong_t to_llong(wchar* value);
     /// @endcond
     /// @brief Convert type_t to llong.
     /// @param value object to convert.
@@ -3599,10 +3599,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
+    /// wchar value = L'a';
     /// sbyte result = convert::to_sbyte(value);
     /// @endcode
-    static sbyte to_sbyte(wchar_t value);
+    static sbyte to_sbyte(wchar value);
     /// @brief Convert decimal_t to sbyte.
     /// @param value object to convert.
     /// @remarks The result is rounded.
@@ -3761,8 +3761,8 @@ namespace xtd {
     static sbyte to_sbyte(char16* value);
     static sbyte to_sbyte(const char32* value);
     static sbyte to_sbyte(char32* value);
-    static sbyte to_sbyte(const wchar_t* value);
-    static sbyte to_sbyte(wchar_t* value);
+    static sbyte to_sbyte(const wchar* value);
+    static sbyte to_sbyte(wchar* value);
     /// @endcond
     /// @brief Convert type_t to sbyte.
     /// @param value object to convert.
@@ -3846,10 +3846,10 @@ namespace xtd {
     /// @return A new uint16_t object converted from value.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
+    /// wchar value = L'a';
     /// uint16_t result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(wchar_t value) noexcept;
+    static uint16_t to_uint16(wchar value) noexcept;
     /// @brief Convert decimal_t to uint16.
     /// @param value object to convert.
     /// @remarks The result is rounded.
@@ -4007,8 +4007,8 @@ namespace xtd {
     static uint16_t to_uint16(char16* value);
     static uint16_t to_uint16(const char32* value);
     static uint16_t to_uint16(char32* value);
-    static uint16_t to_uint16(const wchar_t* value);
-    static uint16_t to_uint16(wchar_t* value);
+    static uint16_t to_uint16(const wchar* value);
+    static uint16_t to_uint16(wchar* value);
     /// @endcond
     /// @brief Convert type_t to uint16.
     /// @param value object to convert.
@@ -4091,10 +4091,10 @@ namespace xtd {
     /// @return A new uint32 object converted from value.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
+    /// wchar value = L'a';
     /// uint32 result = convert::to_uint32(value);
     /// @endcode
-    static uint32 to_uint32(wchar_t value) noexcept;
+    static uint32 to_uint32(wchar value) noexcept;
     /// @brief Convert decimal_t to uint32.
     /// @param value object to convert.
     /// @remarks The result is rounded.
@@ -4251,8 +4251,8 @@ namespace xtd {
     static uint32 to_uint32(char16* value);
     static uint32 to_uint32(const char32* value);
     static uint32 to_uint32(char32* value);
-    static uint32 to_uint32(const wchar_t* value);
-    static uint32 to_uint32(wchar_t* value);
+    static uint32 to_uint32(const wchar* value);
+    static uint32 to_uint32(wchar* value);
     /// @endcond
     /// @brief Convert type_t to uint32.
     /// @param value object to convert.
@@ -4335,10 +4335,10 @@ namespace xtd {
     /// @return A new uint64 object converted from value.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
+    /// wchar value = L'a';
     /// uint64 result = convert::to_uint64(value);
     /// @endcode
-    static uint64 to_uint64(wchar_t value) noexcept;
+    static uint64 to_uint64(wchar value) noexcept;
     /// @brief Convert decimal_t to uint64.
     /// @param value object to convert.
     /// @remarks The result is rounded.
@@ -4493,8 +4493,8 @@ namespace xtd {
     static uint64 to_uint64(char16* value);
     static uint64 to_uint64(const char32* value);
     static uint64 to_uint64(char32* value);
-    static uint64 to_uint64(const wchar_t* value);
-    static uint64 to_uint64(wchar_t* value);
+    static uint64 to_uint64(const wchar* value);
+    static uint64 to_uint64(wchar* value);
     /// @cond
     /// @brief Convert type_t to uint64.
     /// @param value object to convert.
@@ -4577,10 +4577,10 @@ namespace xtd {
     /// @return A new ullong_t object converted from value.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
+    /// wchar value = L'a';
     /// ullong_t result = convert::to_ullong(value);
     /// @endcode
-    static ullong_t to_ullong(wchar_t value) noexcept;
+    static ullong_t to_ullong(wchar value) noexcept;
     /// @brief Convert decimal_t to ullong.
     /// @param value object to convert.
     /// @remarks The result is rounded.
@@ -4735,8 +4735,8 @@ namespace xtd {
     static ullong_t to_ullong(char16* value);
     static ullong_t to_ullong(const char32* value);
     static ullong_t to_ullong(char32* value);
-    static ullong_t to_ullong(const wchar_t* value);
-    static ullong_t to_ullong(wchar_t* value);
+    static ullong_t to_ullong(const wchar* value);
+    static ullong_t to_ullong(wchar* value);
     /// @endcond
     /// @brief Convert type_t to ullong.
     /// @param value object to convert.
@@ -4830,10 +4830,10 @@ namespace xtd {
     /// @return A new ustring object converted from value.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
+    /// wchar value = L'a';
     /// ustring result = convert::to_string(value);
     /// @endcode
-    static ustring to_string(wchar_t value) noexcept;
+    static ustring to_string(wchar value) noexcept;
     /// @brief Convert decimal_t to ustring.
     /// @param value object to convert.
     /// @remarks The result is rounded.
@@ -5076,8 +5076,8 @@ namespace xtd {
     static ustring to_string(char16* value);
     static ustring to_string(const char32* value);
     static ustring to_string(char32* value);
-    static ustring to_string(const wchar_t* value);
-    static ustring to_string(wchar_t* value);
+    static ustring to_string(const wchar* value);
+    static ustring to_string(wchar* value);
     /// @endcond
     /// @brief Convert type_t to ustring.
     /// @param value object to convert.
@@ -5171,10 +5171,10 @@ namespace xtd {
     /// @return A new ustring object converted from value.
     /// @par Examples
     /// @code
-    /// wchar_t value = L'a';
+    /// wchar value = L'a';
     /// ustring result = convert::to_ustring(value);
     /// @endcode
-    static ustring to_ustring(wchar_t value) noexcept;
+    static ustring to_ustring(wchar value) noexcept;
     /// @brief Convert decimal_t to ustring.
     /// @param value object to convert.
     /// @remarks The result is rounded.
@@ -5417,8 +5417,8 @@ namespace xtd {
     static ustring to_ustring(char16* value);
     static ustring to_ustring(const char32* value);
     static ustring to_ustring(char32* value);
-    static ustring to_ustring(const wchar_t* value);
-    static ustring to_ustring(wchar_t* value);
+    static ustring to_ustring(const wchar* value);
+    static ustring to_ustring(wchar* value);
     /// @endcond
     /// @brief Convert type_t to ustring.
     /// @param value object to convert.

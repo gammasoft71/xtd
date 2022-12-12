@@ -165,7 +165,7 @@ namespace xtd {
   inline ustring boxing(const char8* value) noexcept {return ustring(value);}
   inline ustring boxing(const char16* value) noexcept {return ustring(value);}
   inline ustring boxing(const char32* value) noexcept {return ustring(value);}
-  inline ustring boxing(const wchar_t* value) noexcept {return ustring(value);}
+  inline ustring boxing(const wchar* value) noexcept {return ustring(value);}
   /// @endcond
   
   /// @brief Allows to box an object
@@ -268,13 +268,13 @@ namespace xtd {
   }
 
   template<>
-  inline const wchar_t* unboxing<wchar_t>(const ustring& value) {
+  inline const wchar* unboxing<wchar>(const ustring& value) {
     thread_local static std::wstring result;
     result = convert_string::to_wstring(value);
     return result.c_str();
   }
   template<>
-  inline const wchar_t* unboxing<wchar_t>(ustring& value) {
+  inline const wchar* unboxing<wchar>(ustring& value) {
     thread_local static std::wstring result;
     result = convert_string::to_wstring(value);
     return result.c_str();
