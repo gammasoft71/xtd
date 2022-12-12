@@ -51,12 +51,12 @@ int32 binary_reader::read() {
   return value;
 }
 
-size_t binary_reader::read(std::vector<byte_t>& buffer, size_t index, size_t count) {
+size_t binary_reader::read(std::vector<xtd::byte>& buffer, size_t index, size_t count) {
   if (index + count > buffer.size()) throw argument_exception(csf_);
   for (auto i = 0U; i < count; i++) {
     auto current = read();
     if (current == EOF) return i;
-    buffer[index + i] = static_cast<byte_t>(current);
+    buffer[index + i] = static_cast<xtd::byte>(current);
   }
   return count;
 }
@@ -75,12 +75,12 @@ bool binary_reader::read_boolean() {
   return bit_converter::to_boolean(read_bytes(sizeof(bool)), 0);
 }
 
-byte_t binary_reader::read_byte() {
-  return read_bytes(sizeof(byte_t))[0];
+xtd::byte binary_reader::read_byte() {
+  return read_bytes(sizeof(xtd::byte))[0];
 }
 
-std::vector<byte_t> binary_reader::read_bytes(size_t count) {
-  vector<byte_t> result(count);
+std::vector<xtd::byte> binary_reader::read_bytes(size_t count) {
+  vector<xtd::byte> result(count);
   if (read(result, 0, count) != count)
     throw end_of_stream_exception(csf_);
   return result;

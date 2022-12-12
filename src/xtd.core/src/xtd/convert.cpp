@@ -16,7 +16,7 @@ std::any convert::to_any(bool value) noexcept {
   return value;
 }
 
-std::any convert::to_any(byte_t value) noexcept {
+std::any convert::to_any(xtd::byte value) noexcept {
   return value;
 }
 
@@ -167,7 +167,7 @@ bool convert::to_boolean(bool value) noexcept {
   return value;
 }
 
-bool convert::to_boolean(byte_t value) noexcept {
+bool convert::to_boolean(xtd::byte value) noexcept {
   return value != 0u;
 }
 
@@ -299,177 +299,177 @@ bool convert::to_boolean(wchar_t* value) {
   return ustring::parse<bool>(value);
 }
 
-byte_t convert::to_byte(any value) {
+xtd::byte convert::to_byte(any value) {
   try {
-    return any_cast<byte_t>(value);
+    return any_cast<xtd::byte>(value);
   } catch (...) {
     throw invalid_cast_exception(csf_);
   }
 }
 
-byte_t convert::to_byte(bool value) noexcept {
-  return static_cast<byte_t>(value);
+xtd::byte convert::to_byte(bool value) noexcept {
+  return static_cast<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(byte_t value) noexcept {
+xtd::byte convert::to_byte(xtd::byte value) noexcept {
   return value;
 }
 
-byte_t convert::to_byte(char value) noexcept {
-  return static_cast<byte_t>(value);
+xtd::byte convert::to_byte(char value) noexcept {
+  return static_cast<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(char8_t value) noexcept {
-  return static_cast<byte_t>(value);
+xtd::byte convert::to_byte(char8_t value) noexcept {
+  return static_cast<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(char16_t value) {
-  if (value > static_cast<char16_t>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<byte_t>(value);
+xtd::byte convert::to_byte(char16_t value) {
+  if (value > static_cast<char16_t>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
+  return static_cast<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(char32_t value) {
-  if (value > static_cast<char32_t>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<byte_t>(value);
+xtd::byte convert::to_byte(char32_t value) {
+  if (value > static_cast<char32_t>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
+  return static_cast<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(wchar_t value) {
-  if (value > static_cast<wchar_t>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<byte_t>(value);
+xtd::byte convert::to_byte(wchar_t value) {
+  if (value > static_cast<wchar_t>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
+  return static_cast<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(decimal_t value) {
-  if (value < static_cast<decimal_t>(numeric_limits<byte_t>::lowest()) || value > static_cast<decimal_t>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<byte_t>(math::round(value));
+xtd::byte convert::to_byte(decimal_t value) {
+  if (value < static_cast<decimal_t>(numeric_limits<xtd::byte>::lowest()) || value > static_cast<decimal_t>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
+  return static_cast<xtd::byte>(math::round(value));
 }
 
-byte_t convert::to_byte(double value) {
-  if (value < static_cast<double>(numeric_limits<byte_t>::lowest()) || value > static_cast<double>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<byte_t>(math::round(value));
+xtd::byte convert::to_byte(double value) {
+  if (value < static_cast<double>(numeric_limits<xtd::byte>::lowest()) || value > static_cast<double>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
+  return static_cast<xtd::byte>(math::round(value));
 }
 
-byte_t convert::to_byte(float value) {
-  if (value < static_cast<float>(numeric_limits<byte_t>::lowest()) || value > static_cast<float>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<byte_t>(math::round(value));
+xtd::byte convert::to_byte(float value) {
+  if (value < static_cast<float>(numeric_limits<xtd::byte>::lowest()) || value > static_cast<float>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
+  return static_cast<xtd::byte>(math::round(value));
 }
 
-byte_t convert::to_byte(int16 value) {
-  if (value < static_cast<int16>(numeric_limits<byte_t>::lowest()) || value > static_cast<int16>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<byte_t>(value);
+xtd::byte convert::to_byte(int16 value) {
+  if (value < static_cast<int16>(numeric_limits<xtd::byte>::lowest()) || value > static_cast<int16>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
+  return static_cast<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(int32 value) {
-  if (value < static_cast<int32>(numeric_limits<byte_t>::lowest()) || value > static_cast<int32>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<byte_t>(value);
+xtd::byte convert::to_byte(int32 value) {
+  if (value < static_cast<int32>(numeric_limits<xtd::byte>::lowest()) || value > static_cast<int32>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
+  return static_cast<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(int64 value) {
-  if (value < static_cast<int64>(numeric_limits<byte_t>::lowest()) || value > static_cast<int64>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<byte_t>(value);
+xtd::byte convert::to_byte(int64 value) {
+  if (value < static_cast<int64>(numeric_limits<xtd::byte>::lowest()) || value > static_cast<int64>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
+  return static_cast<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(llong_t value) {
-  if (value < static_cast<llong_t>(numeric_limits<byte_t>::lowest()) || value > static_cast<llong_t>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<byte_t>(value);
+xtd::byte convert::to_byte(llong_t value) {
+  if (value < static_cast<llong_t>(numeric_limits<xtd::byte>::lowest()) || value > static_cast<llong_t>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
+  return static_cast<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(sbyte_t value) {
-  if (value < static_cast<sbyte_t>(numeric_limits<byte_t>::lowest())) throw overflow_exception(csf_);
-  return static_cast<byte_t>(value);
+xtd::byte convert::to_byte(sbyte_t value) {
+  if (value < static_cast<sbyte_t>(numeric_limits<xtd::byte>::lowest())) throw overflow_exception(csf_);
+  return static_cast<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(uint16_t value) {
-  if (value > static_cast<uint16_t>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<byte_t>(value);
+xtd::byte convert::to_byte(uint16_t value) {
+  if (value > static_cast<uint16_t>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
+  return static_cast<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(uint32 value) {
-  if (value > static_cast<uint32>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<byte_t>(value);
+xtd::byte convert::to_byte(uint32 value) {
+  if (value > static_cast<uint32>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
+  return static_cast<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(uint64 value) {
-  if (value > static_cast<uint64>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<byte_t>(value);
+xtd::byte convert::to_byte(uint64 value) {
+  if (value > static_cast<uint64>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
+  return static_cast<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(ullong_t value) {
-  if (value > static_cast<ullong_t>(numeric_limits<byte_t>::max())) throw overflow_exception(csf_);
-  return static_cast<byte_t>(value);
+xtd::byte convert::to_byte(ullong_t value) {
+  if (value > static_cast<ullong_t>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
+  return static_cast<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(const ustring& value) {
-  return ustring::parse<byte_t>(value);
+xtd::byte convert::to_byte(const ustring& value) {
+  return ustring::parse<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(const ustring& value, byte_t from_base) {
+xtd::byte convert::to_byte(const ustring& value, xtd::byte from_base) {
   switch (from_base) {
-    case 2: return parse<byte_t>(value, number_styles::binary_number); break;
-    case 8: return parse<byte_t>(value, number_styles::octal_number); break;
-    case 10: return parse<byte_t>(value, number_styles::integer); break;
-    case 16: return parse<byte_t>(value, number_styles::hex_number); break;
+    case 2: return parse<xtd::byte>(value, number_styles::binary_number); break;
+    case 8: return parse<xtd::byte>(value, number_styles::octal_number); break;
+    case 10: return parse<xtd::byte>(value, number_styles::integer); break;
+    case 16: return parse<xtd::byte>(value, number_styles::hex_number); break;
     default: throw argument_exception(csf_);
   }
 }
 
-byte_t convert::to_byte(const string& value) {
-  return ustring::parse<byte_t>(value);
+xtd::byte convert::to_byte(const string& value) {
+  return ustring::parse<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(const u8string& value) {
-  return ustring::parse<byte_t>(value);
+xtd::byte convert::to_byte(const u8string& value) {
+  return ustring::parse<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(const u16string& value) {
-  return ustring::parse<byte_t>(value);
+xtd::byte convert::to_byte(const u16string& value) {
+  return ustring::parse<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(const u32string& value) {
-  return ustring::parse<byte_t>(value);
+xtd::byte convert::to_byte(const u32string& value) {
+  return ustring::parse<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(const wstring& value) {
-  return ustring::parse<byte_t>(value);
+xtd::byte convert::to_byte(const wstring& value) {
+  return ustring::parse<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(const char* value) {
-  return ustring::parse<byte_t>(value);
+xtd::byte convert::to_byte(const char* value) {
+  return ustring::parse<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(char* value) {
-  return ustring::parse<byte_t>(value);
+xtd::byte convert::to_byte(char* value) {
+  return ustring::parse<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(const char8_t* value) {
-  return ustring::parse<byte_t>(value);
+xtd::byte convert::to_byte(const char8_t* value) {
+  return ustring::parse<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(char8_t* value) {
-  return ustring::parse<byte_t>(value);
+xtd::byte convert::to_byte(char8_t* value) {
+  return ustring::parse<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(const char16_t* value) {
-  return ustring::parse<byte_t>(value);
+xtd::byte convert::to_byte(const char16_t* value) {
+  return ustring::parse<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(char16_t* value) {
-  return ustring::parse<byte_t>(value);
+xtd::byte convert::to_byte(char16_t* value) {
+  return ustring::parse<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(const char32_t* value) {
-  return ustring::parse<byte_t>(value);
+xtd::byte convert::to_byte(const char32_t* value) {
+  return ustring::parse<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(char32_t* value) {
-  return ustring::parse<byte_t>(value);
+xtd::byte convert::to_byte(char32_t* value) {
+  return ustring::parse<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(const wchar_t* value) {
-  return ustring::parse<byte_t>(value);
+xtd::byte convert::to_byte(const wchar_t* value) {
+  return ustring::parse<xtd::byte>(value);
 }
 
-byte_t convert::to_byte(wchar_t* value) {
-  return ustring::parse<byte_t>(value);
+xtd::byte convert::to_byte(wchar_t* value) {
+  return ustring::parse<xtd::byte>(value);
 }
 
 char convert::to_char(any value) {
@@ -484,7 +484,7 @@ char convert::to_char(bool value) {
   throw invalid_cast_exception(csf_);
 }
 
-char convert::to_char(byte_t value) noexcept {
+char convert::to_char(xtd::byte value) noexcept {
   return static_cast<char>(value);
 }
 
@@ -523,7 +523,7 @@ char convert::to_char(double value) {
 
 char convert::to_char(float value) {
   if (value < 0.0f || value > 255.0f) throw overflow_exception(csf_);
-  return static_cast<byte_t>(math::round(value));
+  return static_cast<xtd::byte>(math::round(value));
 }
 
 char convert::to_char(int16 value) {
@@ -659,7 +659,7 @@ char8_t convert::to_char8(bool value) {
   throw invalid_cast_exception(csf_);
 }
 
-char8_t convert::to_char8(byte_t value) noexcept {
+char8_t convert::to_char8(xtd::byte value) noexcept {
   return static_cast<char8_t>(value);
 }
 
@@ -842,7 +842,7 @@ char16_t convert::to_char16(bool value) {
   throw invalid_cast_exception(csf_);
 }
 
-char16_t convert::to_char16(byte_t value) noexcept {
+char16_t convert::to_char16(xtd::byte value) noexcept {
   return static_cast<char16_t>(value);
 }
 
@@ -1022,7 +1022,7 @@ char32_t convert::to_char32(bool value) {
   throw invalid_cast_exception(csf_);
 }
 
-char32_t convert::to_char32(byte_t value) noexcept {
+char32_t convert::to_char32(xtd::byte value) noexcept {
   return static_cast<char32_t>(value);
 }
 
@@ -1200,7 +1200,7 @@ wchar_t convert::to_wchar(bool value) {
   throw invalid_cast_exception(csf_);
 }
 
-wchar_t convert::to_wchar(byte_t value) noexcept {
+wchar_t convert::to_wchar(xtd::byte value) noexcept {
   return static_cast<wchar_t>(value);
 }
 
@@ -1376,7 +1376,7 @@ decimal_t convert::to_decimal(bool value) noexcept {
   return static_cast<decimal_t>(value);
 }
 
-decimal_t convert::to_decimal(byte_t value) noexcept {
+decimal_t convert::to_decimal(xtd::byte value) noexcept {
   return static_cast<decimal_t>(value);
 }
 
@@ -1524,7 +1524,7 @@ double convert::to_double(bool value) noexcept {
   return static_cast<double>(value);
 }
 
-double convert::to_double(byte_t value) noexcept {
+double convert::to_double(xtd::byte value) noexcept {
   return static_cast<double>(value);
 }
 
@@ -1672,7 +1672,7 @@ float convert::to_single(bool value) noexcept {
   return static_cast<float>(value);
 }
 
-float convert::to_single(byte_t value) noexcept {
+float convert::to_single(xtd::byte value) noexcept {
   return static_cast<float>(value);
 }
 
@@ -1820,7 +1820,7 @@ int16 convert::to_int16(bool value) noexcept {
   return static_cast<int16>(value);
 }
 
-int16 convert::to_int16(byte_t value) noexcept {
+int16 convert::to_int16(xtd::byte value) noexcept {
   return static_cast<int16>(value);
 }
 
@@ -1907,7 +1907,7 @@ int16 convert::to_int16(const ustring& value) {
   return ustring::parse<int16>(value);
 }
 
-int16 convert::to_int16(const ustring& value, byte_t from_base) {
+int16 convert::to_int16(const ustring& value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return parse<int16>(value, number_styles::binary_number); break;
     case 8: return parse<int16>(value, number_styles::octal_number); break;
@@ -1989,7 +1989,7 @@ int32 convert::to_int32(bool value) noexcept {
   return static_cast<int32>(value);
 }
 
-int32 convert::to_int32(byte_t value) noexcept {
+int32 convert::to_int32(xtd::byte value) noexcept {
   return static_cast<int32>(value);
 }
 
@@ -2072,7 +2072,7 @@ int32 convert::to_int32(const ustring& value) {
   return ustring::parse<int32>(value);
 }
 
-int32 convert::to_int32(const ustring& value, byte_t from_base) {
+int32 convert::to_int32(const ustring& value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return parse<int32>(value, number_styles::binary_number); break;
     case 8: return parse<int32>(value, number_styles::octal_number); break;
@@ -2154,7 +2154,7 @@ int64 convert::to_int64(bool value) noexcept {
   return static_cast<int64>(value);
 }
 
-int64 convert::to_int64(byte_t value) noexcept {
+int64 convert::to_int64(xtd::byte value) noexcept {
   return static_cast<int64>(value);
 }
 
@@ -2232,7 +2232,7 @@ int64 convert::to_int64(const ustring& value) {
   return ustring::parse<int64>(value);
 }
 
-int64 convert::to_int64(const ustring& value, byte_t from_base) {
+int64 convert::to_int64(const ustring& value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return parse<int64>(value, number_styles::binary_number); break;
     case 8: return parse<int64>(value, number_styles::octal_number); break;
@@ -2314,7 +2314,7 @@ llong_t convert::to_llong(bool value) noexcept {
   return static_cast<llong_t>(value);
 }
 
-llong_t convert::to_llong(byte_t value) noexcept {
+llong_t convert::to_llong(xtd::byte value) noexcept {
   return static_cast<llong_t>(value);
 }
 
@@ -2392,7 +2392,7 @@ llong_t convert::to_llong(const ustring& value) {
   return ustring::parse<llong_t>(value);
 }
 
-llong_t convert::to_llong(const ustring& value, byte_t from_base) {
+llong_t convert::to_llong(const ustring& value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return parse<llong_t>(value, number_styles::binary_number); break;
     case 8: return parse<llong_t>(value, number_styles::octal_number); break;
@@ -2474,7 +2474,7 @@ sbyte_t convert::to_sbyte(bool value) noexcept {
   return static_cast<sbyte_t>(value);
 }
 
-sbyte_t convert::to_sbyte(byte_t value) noexcept {
+sbyte_t convert::to_sbyte(xtd::byte value) noexcept {
   return value;
 }
 
@@ -2564,7 +2564,7 @@ sbyte_t convert::to_sbyte(const ustring& value) {
   return ustring::parse<sbyte_t>(value);
 }
 
-sbyte_t convert::to_sbyte(const ustring& value, byte_t from_base) {
+sbyte_t convert::to_sbyte(const ustring& value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return parse<sbyte_t>(value, number_styles::binary_number); break;
     case 8: return parse<sbyte_t>(value, number_styles::octal_number); break;
@@ -2646,7 +2646,7 @@ uint16_t convert::to_uint16(bool value) noexcept {
   return static_cast<uint16_t>(value);
 }
 
-uint16_t convert::to_uint16(byte_t value) noexcept {
+uint16_t convert::to_uint16(xtd::byte value) noexcept {
   return static_cast<uint16_t>(value);
 }
 
@@ -2734,7 +2734,7 @@ uint16_t convert::to_uint16(const ustring& value) {
   return ustring::parse<uint16_t>(value);
 }
 
-uint16_t convert::to_uint16(const ustring& value, byte_t from_base) {
+uint16_t convert::to_uint16(const ustring& value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return parse<uint16_t>(value, number_styles::binary_number); break;
     case 8: return parse<uint16_t>(value, number_styles::octal_number); break;
@@ -2816,7 +2816,7 @@ uint32 convert::to_uint32(bool value) noexcept {
   return static_cast<uint32>(value);
 }
 
-uint32 convert::to_uint32(byte_t value) noexcept {
+uint32 convert::to_uint32(xtd::byte value) noexcept {
   return static_cast<uint32>(value);
 }
 
@@ -2902,7 +2902,7 @@ uint32 convert::to_uint32(const ustring& value) {
   return ustring::parse<uint32>(value);
 }
 
-uint32 convert::to_uint32(const ustring& value, byte_t from_base) {
+uint32 convert::to_uint32(const ustring& value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return parse<uint32>(value, number_styles::binary_number); break;
     case 8: return parse<uint32>(value, number_styles::octal_number); break;
@@ -2984,7 +2984,7 @@ uint64 convert::to_uint64(bool value) noexcept {
   return static_cast<uint64>(value);
 }
 
-uint64 convert::to_uint64(byte_t value) noexcept {
+uint64 convert::to_uint64(xtd::byte value) noexcept {
   return static_cast<uint64>(value);
 }
 
@@ -3072,7 +3072,7 @@ uint64 convert::to_uint64(const string& value) {
   return ustring::parse<uint64>(value);
 }
 
-uint64 convert::to_uint64(const ustring& value, byte_t from_base) {
+uint64 convert::to_uint64(const ustring& value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return parse<uint64>(value, number_styles::binary_number); break;
     case 8: return parse<uint64>(value, number_styles::octal_number); break;
@@ -3150,7 +3150,7 @@ ullong_t convert::to_ullong(bool value) noexcept {
   return static_cast<ullong_t>(value);
 }
 
-ullong_t convert::to_ullong(byte_t value) noexcept {
+ullong_t convert::to_ullong(xtd::byte value) noexcept {
   return static_cast<ullong_t>(value);
 }
 
@@ -3234,7 +3234,7 @@ ullong_t convert::to_ullong(const ustring& value) {
   return ustring::parse<ullong_t>(value);
 }
 
-ullong_t convert::to_ullong(const ustring& value, byte_t from_base) {
+ullong_t convert::to_ullong(const ustring& value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return parse<ullong_t>(value, number_styles::binary_number); break;
     case 8: return parse<ullong_t>(value, number_styles::octal_number); break;
@@ -3312,11 +3312,11 @@ ustring convert::to_string(bool value) noexcept {
   return ustring::format("{}", value);
 }
 
-ustring convert::to_string(byte_t value) noexcept {
+ustring convert::to_string(xtd::byte value) noexcept {
   return ustring::format("{}", value);
 }
 
-ustring convert::to_string(byte_t value, byte_t from_base) {
+ustring convert::to_string(xtd::byte value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return ustring::format("{:B}", value); break;
     case 8: return ustring::format("{:O}", value); break;
@@ -3362,7 +3362,7 @@ ustring convert::to_string(int16 value) {
   return ustring::format("{}", value);
 }
 
-ustring convert::to_string(int16 value, byte_t from_base) {
+ustring convert::to_string(int16 value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return ustring::format("{:B}", value); break;
     case 8: return ustring::format("{:O}", value); break;
@@ -3376,7 +3376,7 @@ ustring convert::to_string(int32 value) {
   return ustring::format("{}", value);
 }
 
-ustring convert::to_string(int32 value, byte_t from_base) {
+ustring convert::to_string(int32 value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return ustring::format("{:B}", value); break;
     case 8: return ustring::format("{:O}", value); break;
@@ -3390,7 +3390,7 @@ ustring convert::to_string(int64 value) {
   return ustring::format("{}", value);
 }
 
-ustring convert::to_string(int64 value, byte_t from_base) {
+ustring convert::to_string(int64 value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return ustring::format("{:B}", value); break;
     case 8: return ustring::format("{:O}", value); break;
@@ -3404,7 +3404,7 @@ ustring convert::to_string(llong_t value) {
   return ustring::format("{}", value);
 }
 
-ustring convert::to_string(llong_t value, byte_t from_base) {
+ustring convert::to_string(llong_t value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return ustring::format("{:B}", value); break;
     case 8: return ustring::format("{:O}", value); break;
@@ -3418,7 +3418,7 @@ ustring convert::to_string(sbyte_t value) {
   return ustring::format("{}", value);
 }
 
-ustring convert::to_string(sbyte_t value, byte_t from_base) {
+ustring convert::to_string(sbyte_t value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return ustring::format("{:B}", value); break;
     case 8: return ustring::format("{:O}", value); break;
@@ -3432,7 +3432,7 @@ ustring convert::to_string(uint16_t value) noexcept {
   return ustring::format("{}", value);
 }
 
-ustring convert::to_string(uint16_t value, byte_t from_base) {
+ustring convert::to_string(uint16_t value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return ustring::format("{:B}", value); break;
     case 8: return ustring::format("{:O}", value); break;
@@ -3446,7 +3446,7 @@ ustring convert::to_string(uint32 value) noexcept {
   return ustring::format("{}", value);
 }
 
-ustring convert::to_string(uint32 value, byte_t from_base) {
+ustring convert::to_string(uint32 value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return ustring::format("{:B}", value); break;
     case 8: return ustring::format("{:O}", value); break;
@@ -3460,7 +3460,7 @@ ustring convert::to_string(uint64 value) noexcept {
   return ustring::format("{}", value);
 }
 
-ustring convert::to_string(uint64 value, byte_t from_base) {
+ustring convert::to_string(uint64 value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return ustring::format("{:B}", value); break;
     case 8: return ustring::format("{:O}", value); break;
@@ -3474,7 +3474,7 @@ ustring convert::to_string(ullong_t value) noexcept {
   return ustring::format("{}", value);
 }
 
-ustring convert::to_string(ullong_t value, byte_t from_base) {
+ustring convert::to_string(ullong_t value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return ustring::format("{:B}", value); break;
     case 8: return ustring::format("{:O}", value); break;
@@ -3556,11 +3556,11 @@ ustring convert::to_ustring(bool value) noexcept {
   return to_string(value);
 }
 
-ustring convert::to_ustring(byte_t value) noexcept {
+ustring convert::to_ustring(xtd::byte value) noexcept {
   return to_string(value);
 }
 
-ustring convert::to_ustring(byte_t value, byte_t from_base) {
+ustring convert::to_ustring(xtd::byte value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
@@ -3600,7 +3600,7 @@ ustring convert::to_ustring(int16 value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(int16 value, byte_t from_base) {
+ustring convert::to_ustring(int16 value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
@@ -3608,7 +3608,7 @@ ustring convert::to_ustring(int32 value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(int32 value, byte_t from_base) {
+ustring convert::to_ustring(int32 value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
@@ -3616,7 +3616,7 @@ ustring convert::to_ustring(int64 value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(int64 value, byte_t from_base) {
+ustring convert::to_ustring(int64 value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
@@ -3624,7 +3624,7 @@ ustring convert::to_ustring(llong_t value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(llong_t value, byte_t from_base) {
+ustring convert::to_ustring(llong_t value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
@@ -3632,7 +3632,7 @@ ustring convert::to_ustring(sbyte_t value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(sbyte_t value, byte_t from_base) {
+ustring convert::to_ustring(sbyte_t value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
@@ -3640,7 +3640,7 @@ ustring convert::to_ustring(uint16_t value) noexcept {
   return to_string(value);
 }
 
-ustring convert::to_ustring(uint16_t value, byte_t from_base) {
+ustring convert::to_ustring(uint16_t value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
@@ -3648,7 +3648,7 @@ ustring convert::to_ustring(uint32 value) noexcept {
   return to_string(value);
 }
 
-ustring convert::to_ustring(uint32 value, byte_t from_base) {
+ustring convert::to_ustring(uint32 value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
@@ -3656,7 +3656,7 @@ ustring convert::to_ustring(uint64 value) noexcept {
   return to_string(value);
 }
 
-ustring convert::to_ustring(uint64 value, byte_t from_base) {
+ustring convert::to_ustring(uint64 value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
@@ -3664,7 +3664,7 @@ ustring convert::to_ustring(ullong_t value) noexcept {
   return to_string(value);
 }
 
-ustring convert::to_ustring(ullong_t value, byte_t from_base) {
+ustring convert::to_ustring(ullong_t value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 

@@ -57,16 +57,16 @@ namespace xtd {
         
         /// @brief Gets the protocol information for a xtd::net::sockets::socket.
         /// @return An array of byte.
-        const std::vector<byte_t>& protocol_information() const noexcept;
+        const std::vector<xtd::byte>& protocol_information() const noexcept;
         /// @brief Sets the protocol information for a xtd::net::sockets::socket.
         /// @param value An array of byte.
         /// @return This current instance.
-        socket_information& protocol_information(const std::vector<byte_t>& value) noexcept;
+        socket_information& protocol_information(const std::vector<xtd::byte>& value) noexcept;
         /// @}
         
       private:
         xtd::net::sockets::socket_information_options options_ = xtd::net::sockets::socket_information_options::none;
-        std::vector<byte_t> protocol_information_;
+        std::vector<xtd::byte> protocol_information_;
       };
     }
   }

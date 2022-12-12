@@ -9,39 +9,39 @@ using namespace xtd;
 
 const guid guid::empty;
 
-guid::guid(const std::vector<byte_t>& data) : data_(data) {
+guid::guid(const std::vector<xtd::byte>& data) : data_(data) {
   if (data.size() != 16) throw xtd::argument_exception("Vector size must be 16", current_stack_frame_);
 }
 
-guid::guid(const std::initializer_list<byte_t>& data) : data_(data) {
+guid::guid(const std::initializer_list<xtd::byte>& data) : data_(data) {
   if (data.size() != 16) throw xtd::argument_exception("Vector size must be 16", current_stack_frame_);
 }
 
-guid::guid(int32 a, int32 b, int32 c, const std::vector<byte_t>& d) {
+guid::guid(int32 a, int32 b, int32 c, const std::vector<xtd::byte>& d) {
   if (d.size() != 8) throw xtd::argument_exception("Vector size must be 8", current_stack_frame_);
   
-  data_[0] = static_cast<byte_t>((a & 0xFF000000) >> 24);
-  data_[1] = static_cast<byte_t>((a & 0x00FF0000) >> 16);
-  data_[2] = static_cast<byte_t>((a & 0x0000FF00) >> 8);
-  data_[3] = static_cast<byte_t>((a & 0x000000FF) >> 0);
-  data_[4] = static_cast<byte_t>((b & 0xFF00) >> 8);
-  data_[5] = static_cast<byte_t>((b & 0x00FF) >> 0);
-  data_[6] = static_cast<byte_t>((c & 0xFF00) >> 8);
-  data_[7] = static_cast<byte_t>((c & 0x00FF) >> 0);
+  data_[0] = static_cast<xtd::byte>((a & 0xFF000000) >> 24);
+  data_[1] = static_cast<xtd::byte>((a & 0x00FF0000) >> 16);
+  data_[2] = static_cast<xtd::byte>((a & 0x0000FF00) >> 8);
+  data_[3] = static_cast<xtd::byte>((a & 0x000000FF) >> 0);
+  data_[4] = static_cast<xtd::byte>((b & 0xFF00) >> 8);
+  data_[5] = static_cast<xtd::byte>((b & 0x00FF) >> 0);
+  data_[6] = static_cast<xtd::byte>((c & 0xFF00) >> 8);
+  data_[7] = static_cast<xtd::byte>((c & 0x00FF) >> 0);
   
   for (int32 index = 0; index < 8; index++)
     data_[8 + index] = d[index];
 }
 
-guid::guid(int32 a, int16 b, int16 c, byte_t d, byte_t e, byte_t f, byte_t g, byte_t h, byte_t i, byte_t j, byte_t k) noexcept {
-  data_[0] = static_cast<byte_t>((a & 0xFF000000) >> 24);
-  data_[1] = static_cast<byte_t>((a & 0x00FF0000) >> 16);
-  data_[2] = static_cast<byte_t>((a & 0x0000FF00) >> 8);
-  data_[3] = static_cast<byte_t>((a & 0x000000FF) >> 0);
-  data_[4] = static_cast<byte_t>((b & 0xFF00) >> 8);
-  data_[5] = static_cast<byte_t>((b & 0x00FF) >> 0);
-  data_[6] = static_cast<byte_t>((c & 0xFF00) >> 8);
-  data_[7] = static_cast<byte_t>((c & 0x00FF) >> 0);
+guid::guid(int32 a, int16 b, int16 c, xtd::byte d, xtd::byte e, xtd::byte f, xtd::byte g, xtd::byte h, xtd::byte i, xtd::byte j, xtd::byte k) noexcept {
+  data_[0] = static_cast<xtd::byte>((a & 0xFF000000) >> 24);
+  data_[1] = static_cast<xtd::byte>((a & 0x00FF0000) >> 16);
+  data_[2] = static_cast<xtd::byte>((a & 0x0000FF00) >> 8);
+  data_[3] = static_cast<xtd::byte>((a & 0x000000FF) >> 0);
+  data_[4] = static_cast<xtd::byte>((b & 0xFF00) >> 8);
+  data_[5] = static_cast<xtd::byte>((b & 0x00FF) >> 0);
+  data_[6] = static_cast<xtd::byte>((c & 0xFF00) >> 8);
+  data_[7] = static_cast<xtd::byte>((c & 0x00FF) >> 0);
   data_[8] = d;
   data_[9] = e;
   data_[10] = f;
@@ -52,15 +52,15 @@ guid::guid(int32 a, int16 b, int16 c, byte_t d, byte_t e, byte_t f, byte_t g, by
   data_[15] = k;
 }
 
-guid::guid(uint32 a, uint16_t b, uint16_t c, byte_t d, byte_t e, byte_t f, byte_t g, byte_t h, byte_t i, byte_t j, byte_t k) noexcept {
-  data_[0] = static_cast<byte_t>((a & 0xFF000000) >> 24);
-  data_[1] = static_cast<byte_t>((a & 0x00FF0000) >> 16);
-  data_[2] = static_cast<byte_t>((a & 0x0000FF00) >> 8);
-  data_[3] = static_cast<byte_t>((a & 0x000000FF) >> 0);
-  data_[4] = static_cast<byte_t>((b & 0xFF00) >> 8);
-  data_[5] = static_cast<byte_t>((b & 0x00FF) >> 0);
-  data_[6] = static_cast<byte_t>((c & 0xFF00) >> 8);
-  data_[7] = static_cast<byte_t>((c & 0x00FF) >> 0);
+guid::guid(uint32 a, uint16_t b, uint16_t c, xtd::byte d, xtd::byte e, xtd::byte f, xtd::byte g, xtd::byte h, xtd::byte i, xtd::byte j, xtd::byte k) noexcept {
+  data_[0] = static_cast<xtd::byte>((a & 0xFF000000) >> 24);
+  data_[1] = static_cast<xtd::byte>((a & 0x00FF0000) >> 16);
+  data_[2] = static_cast<xtd::byte>((a & 0x0000FF00) >> 8);
+  data_[3] = static_cast<xtd::byte>((a & 0x000000FF) >> 0);
+  data_[4] = static_cast<xtd::byte>((b & 0xFF00) >> 8);
+  data_[5] = static_cast<xtd::byte>((b & 0x00FF) >> 0);
+  data_[6] = static_cast<xtd::byte>((c & 0xFF00) >> 8);
+  data_[7] = static_cast<xtd::byte>((c & 0x00FF) >> 0);
   data_[8] = d;
   data_[9] = e;
   data_[10] = f;
@@ -74,7 +74,7 @@ guid::guid(uint32 a, uint16_t b, uint16_t c, byte_t d, byte_t e, byte_t f, byte_
 guid::guid(const ustring& guid) {
   ustring simple = guid.replace("0x", "").replace(",", "").replace("-", "").replace("(", "").replace(")", "").replace("{", "").replace("}", "");
   for (size_t i = 0; i < data_.size(); i ++) {
-    data_[i] = xtd::parse<byte_t>(simple.substring(0, 2), xtd::number_styles::hex_number);
+    data_[i] = xtd::parse<xtd::byte>(simple.substring(0, 2), xtd::number_styles::hex_number);
     simple = simple.remove(0, 2);
   }
 }
@@ -96,7 +96,7 @@ guid guid::new_guid() noexcept {
   return guid(native::guid::new_guid());
 }
 
-const std::vector<byte_t>& guid::to_byte_array() const noexcept {
+const std::vector<xtd::byte>& guid::to_byte_array() const noexcept {
   return data_;
 }
 

@@ -40,15 +40,15 @@ namespace xtd {
     /// any result = convert::to_any(value);
     /// @endcode
     static std::any to_any(bool value) noexcept;
-    /// @brief Convert byte_t to std::any.
+    /// @brief Convert xtd::byte to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// any result = convert::to_any(value);
     /// @endcode
-    static std::any to_any(byte_t value) noexcept;
+    static std::any to_any(xtd::byte value) noexcept;
     /// @brief Convert char to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
@@ -268,15 +268,15 @@ namespace xtd {
     /// bool result = convert::to_boolean(value);
     /// @endcode
     static bool to_boolean(bool value) noexcept;
-    /// @brief Convert byte_t to bool.
+    /// @brief Convert xtd::byte to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// bool result = convert::to_boolean(value);
     /// @endcode
-    static bool to_boolean(byte_t value) noexcept;
+    static bool to_boolean(xtd::byte value) noexcept;
     /// @brief Convert char to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
@@ -480,251 +480,251 @@ namespace xtd {
     
     /// @brief Convert std::any to byte.
     /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
+    /// @return A new xtd::byte object converted from value.
     /// @par Examples
     /// @code
     /// std::any value = 42;
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(std::any value);
+    static xtd::byte to_byte(std::any value);
     /// @brief Convert bool to byte.
     /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
+    /// @return A new xtd::byte object converted from value.
     /// @par Examples
     /// @code
     /// bool value = true;
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(bool value) noexcept;
-    /// @brief Convert byte_t to byte.
+    static xtd::byte to_byte(bool value) noexcept;
+    /// @brief Convert xtd::byte to byte.
     /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
+    /// @return A new xtd::byte object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte value = 42;
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(byte_t value) noexcept;
+    static xtd::byte to_byte(xtd::byte value) noexcept;
     /// @brief Convert char to byte.
     /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
+    /// @return A new xtd::byte object converted from value.
     /// @par Examples
     /// @code
     /// char value = 'a';
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(char value) noexcept;
+    static xtd::byte to_byte(char value) noexcept;
     /// @brief Convert char8_t to byte.
     /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
+    /// @return A new xtd::byte object converted from value.
     /// @par Examples
     /// @code
     /// char8_t value = u8'a';
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(char8_t value) noexcept;
+    static xtd::byte to_byte(char8_t value) noexcept;
     /// @brief Convert char16_t to byte.
     /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @return A new xtd::byte object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// char16_t value = u'a';
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(char16_t value);
+    static xtd::byte to_byte(char16_t value);
     /// @brief Convert char32_t to byte.
     /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @return A new xtd::byte object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// char32_t value = U'a';
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(char32_t value);
+    static xtd::byte to_byte(char32_t value);
     /// @brief Convert char32_t to byte.
     /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @return A new xtd::byte object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// wchar_t value = L'a';
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(wchar_t value);
+    static xtd::byte to_byte(wchar_t value);
     /// @brief Convert decimal_t to byte.
     /// @param value object to convert.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
-    /// @return A new byte_t object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
+    /// @return A new xtd::byte object converted from value.
     /// @par Examples
     /// @code
     /// decimal_t value = 42.50l;
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(decimal_t value);
+    static xtd::byte to_byte(decimal_t value);
     /// @brief Convert double to byte.
     /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
+    /// @return A new xtd::byte object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// double value = 42.50;
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(double value);
+    static xtd::byte to_byte(double value);
     /// @brief Convert float to byte.
     /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
+    /// @return A new xtd::byte object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// float value = 42.50f;
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(float value);
+    static xtd::byte to_byte(float value);
     /// @brief Convert int16 to byte.
     /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @return A new xtd::byte object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int16 value = 42;
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(int16 value);
+    static xtd::byte to_byte(int16 value);
     /// @brief Convert int32 to byte.
     /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @return A new xtd::byte object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int32 value = 42;
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(int32 value);
+    static xtd::byte to_byte(int32 value);
     /// @brief Convert int64 to byte.
     /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @return A new xtd::byte object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int64 value = 42l;
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(int64 value);
+    static xtd::byte to_byte(int64 value);
     /// @brief Convert llong_t to byte.
     /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @return A new xtd::byte object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// llong_t value = 42ll;
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(llong_t value);
+    static xtd::byte to_byte(llong_t value);
     /// @brief Convert sbyte_t to byte.
     /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
+    /// @return A new xtd::byte object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is less than 0.
     /// @par Examples
     /// @code
     /// sbyte_t value = 42;
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(sbyte_t value);
+    static xtd::byte to_byte(sbyte_t value);
     /// @brief Convert uint16_t to byte.
     /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @return A new xtd::byte object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint16_t value = 42u;
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(uint16_t value);
+    static xtd::byte to_byte(uint16_t value);
     /// @brief Convert uint32 to byte.
     /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @return A new xtd::byte object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint32 value = 42u;
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(uint32 value);
+    static xtd::byte to_byte(uint32 value);
     /// @brief Convert uint64 to byte.
     /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @return A new xtd::byte object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42ul;
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(uint64 value);
+    static xtd::byte to_byte(uint64 value);
     /// @brief Convert llong_t to byte.
     /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @return A new xtd::byte object converted from value.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// ullong_t value = 42ull;
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(ullong_t value);
+    static xtd::byte to_byte(ullong_t value);
     /// @brief Convert string to byte.
     /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
+    /// @return A new xtd::byte object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
     /// ustring value = "42";
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(const xtd::ustring& value);
+    static xtd::byte to_byte(const xtd::ustring& value);
     /// @brief Convert string to byte.
     /// @param value object to convert.
     /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
-    /// @return A new byte_t object converted from value.
+    /// @return A new xtd::byte object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
     /// ustring value = "42";
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static byte_t to_byte(const xtd::ustring& value, byte_t from_base);
+    static xtd::byte to_byte(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
-    static byte_t to_byte(const std::string& value);
-    static byte_t to_byte(const std::u8string& value);
-    static byte_t to_byte(const std::u16string& value);
-    static byte_t to_byte(const std::u32string& value);
-    static byte_t to_byte(const std::wstring& value);
-    static byte_t to_byte(const char* value);
-    static byte_t to_byte(char* value);
-    static byte_t to_byte(const char8_t* value);
-    static byte_t to_byte(char8_t* value);
-    static byte_t to_byte(const char16_t* value);
-    static byte_t to_byte(char16_t* value);
-    static byte_t to_byte(const char32_t* value);
-    static byte_t to_byte(char32_t* value);
-    static byte_t to_byte(const wchar_t* value);
-    static byte_t to_byte(wchar_t* value);
+    static xtd::byte to_byte(const std::string& value);
+    static xtd::byte to_byte(const std::u8string& value);
+    static xtd::byte to_byte(const std::u16string& value);
+    static xtd::byte to_byte(const std::u32string& value);
+    static xtd::byte to_byte(const std::wstring& value);
+    static xtd::byte to_byte(const char* value);
+    static xtd::byte to_byte(char* value);
+    static xtd::byte to_byte(const char8_t* value);
+    static xtd::byte to_byte(char8_t* value);
+    static xtd::byte to_byte(const char16_t* value);
+    static xtd::byte to_byte(char16_t* value);
+    static xtd::byte to_byte(const char32_t* value);
+    static xtd::byte to_byte(char32_t* value);
+    static xtd::byte to_byte(const wchar_t* value);
+    static xtd::byte to_byte(wchar_t* value);
     /// @endcond
     /// @brief Convert type_t to byte.
     /// @param value object to convert.
-    /// @return A new byte_t object converted from value.
+    /// @return A new xtd::byte object converted from value.
     /// @par Examples
     /// @code
     /// address_family value = address_family::inter_network;
-    /// byte_t result = convert::to_byte(value);
+    /// xtd::byte result = convert::to_byte(value);
     /// @endcode
     template<typename type_t>
-    static byte_t to_byte(type_t value) noexcept {
-      return static_cast<byte_t>(value);
+    static xtd::byte to_byte(type_t value) noexcept {
+      return static_cast<xtd::byte>(value);
     }
     
     /// @brief Convert std::any to char.
@@ -745,15 +745,15 @@ namespace xtd {
     /// char result = convert::to_char(value);
     /// @endcode
     static char to_char(bool value);
-    /// @brief Convert byte_t to char.
+    /// @brief Convert xtd::byte to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// char result = convert::to_char(value);
     /// @endcode
-    static char to_char(byte_t value) noexcept;
+    static char to_char(xtd::byte value) noexcept;
     /// @brief Convert char to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
@@ -775,7 +775,7 @@ namespace xtd {
     /// @brief Convert char16_t to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// char16_t value = u'a';
@@ -785,7 +785,7 @@ namespace xtd {
     /// @brief Convert char32_t to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// char32_t value = U'a';
@@ -795,7 +795,7 @@ namespace xtd {
     /// @brief Convert char32_t to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// wchar_t value = L'a';
@@ -816,7 +816,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new char object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// double value = 42.50;
@@ -827,7 +827,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new char object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// float value = 42.50f;
@@ -837,7 +837,7 @@ namespace xtd {
     /// @brief Convert int16 to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int16 value = 42;
@@ -847,7 +847,7 @@ namespace xtd {
     /// @brief Convert int32 to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int32 value = 42;
@@ -857,7 +857,7 @@ namespace xtd {
     /// @brief Convert int64 to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int64 value = 42l;
@@ -867,7 +867,7 @@ namespace xtd {
     /// @brief Convert llong_t to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// llong_t value = 42ll;
@@ -887,7 +887,7 @@ namespace xtd {
     /// @brief Convert uint16_t to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint16_t value = 42u;
@@ -897,7 +897,7 @@ namespace xtd {
     /// @brief Convert uint32 to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint32 value = 42u;
@@ -907,7 +907,7 @@ namespace xtd {
     /// @brief Convert uint64 to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42ul;
@@ -917,7 +917,7 @@ namespace xtd {
     /// @brief Convert llong_t to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// ullong_t value = 42ull;
@@ -982,15 +982,15 @@ namespace xtd {
     /// char8_t result = convert::to_char8(value);
     /// @endcode
     static char8_t to_char8(bool value);
-    /// @brief Convert byte_t to char8.
+    /// @brief Convert xtd::byte to char8.
     /// @param value object to convert.
     /// @return A new char8_t object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// char8_t result = convert::to_char8(value);
     /// @endcode
-    static char8_t to_char8(byte_t value) noexcept;
+    static char8_t to_char8(xtd::byte value) noexcept;
     /// @brief Convert char to char8.
     /// @param value object to convert.
     /// @return A new char8_t object converted from value.
@@ -1012,7 +1012,7 @@ namespace xtd {
     /// @brief Convert char16_t to char8.
     /// @param value object to convert.
     /// @return A new char8_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// char16_t value = u'a';
@@ -1022,7 +1022,7 @@ namespace xtd {
     /// @brief Convert char32_t to char8.
     /// @param value object to convert.
     /// @return A new char8_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// char32_t value = U'a';
@@ -1032,7 +1032,7 @@ namespace xtd {
     /// @brief Convert char32_t to char8.
     /// @param value object to convert.
     /// @return A new char8_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// wchar_t value = L'a';
@@ -1053,7 +1053,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new char8_t object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// double value = 42.50;
@@ -1064,7 +1064,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new char8_t object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// float value = 42.50f;
@@ -1074,7 +1074,7 @@ namespace xtd {
     /// @brief Convert int16 to char8.
     /// @param value object to convert.
     /// @return A new char8_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int16 value = 42;
@@ -1084,7 +1084,7 @@ namespace xtd {
     /// @brief Convert int32 to char8.
     /// @param value object to convert.
     /// @return A new char8_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int32 value = 42;
@@ -1094,7 +1094,7 @@ namespace xtd {
     /// @brief Convert int64 to char8.
     /// @param value object to convert.
     /// @return A new char8_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int64 value = 42l;
@@ -1104,7 +1104,7 @@ namespace xtd {
     /// @brief Convert llong_t to char8.
     /// @param value object to convert.
     /// @return A new char8_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// llong_t value = 42ll;
@@ -1124,7 +1124,7 @@ namespace xtd {
     /// @brief Convert uint16_t to char8.
     /// @param value object to convert.
     /// @return A new char8_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint16_t value = 42u;
@@ -1134,7 +1134,7 @@ namespace xtd {
     /// @brief Convert uint32 to char8.
     /// @param value object to convert.
     /// @return A new char8_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint32 value = 42u;
@@ -1144,7 +1144,7 @@ namespace xtd {
     /// @brief Convert uint64 to char8.
     /// @param value object to convert.
     /// @return A new char8_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42ul;
@@ -1154,7 +1154,7 @@ namespace xtd {
     /// @brief Convert llong_t to char8.
     /// @param value object to convert.
     /// @return A new char8_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// ullong_t value = 42ull;
@@ -1219,15 +1219,15 @@ namespace xtd {
     /// char16_t result = convert::to_char16(value);
     /// @endcode
     static char16_t to_char16(bool value);
-    /// @brief Convert byte_t to char16.
+    /// @brief Convert xtd::byte to char16.
     /// @param value object to convert.
     /// @return A new char16_t object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// char16_t result = convert::to_char16(value);
     /// @endcode
-    static char16_t to_char16(byte_t value) noexcept;
+    static char16_t to_char16(xtd::byte value) noexcept;
     /// @brief Convert char to char16.
     /// @param value object to convert.
     /// @return A new char16_t object converted from value.
@@ -1258,7 +1258,7 @@ namespace xtd {
     /// @brief Convert char32_t to char16.
     /// @param value object to convert.
     /// @return A new char16_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// char32_t value = U'a';
@@ -1288,7 +1288,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new char16_t object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// double value = 42.50;
@@ -1299,7 +1299,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new char16_t object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// float value = 42.50f;
@@ -1309,7 +1309,7 @@ namespace xtd {
     /// @brief Convert int16 to char16.
     /// @param value object to convert.
     /// @return A new char16_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int16 value = 42;
@@ -1319,7 +1319,7 @@ namespace xtd {
     /// @brief Convert int32 to char16.
     /// @param value object to convert.
     /// @return A new char16_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int32 value = 42;
@@ -1329,7 +1329,7 @@ namespace xtd {
     /// @brief Convert int64 to char16.
     /// @param value object to convert.
     /// @return A new char16_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int64 value = 42l;
@@ -1339,7 +1339,7 @@ namespace xtd {
     /// @brief Convert llong_t to char16.
     /// @param value object to convert.
     /// @return A new char16_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// llong_t value = 42ll;
@@ -1368,7 +1368,7 @@ namespace xtd {
     /// @brief Convert uint32 to char16.
     /// @param value object to convert.
     /// @return A new char16_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint32 value = 42u;
@@ -1378,7 +1378,7 @@ namespace xtd {
     /// @brief Convert uint64 to char16.
     /// @param value object to convert.
     /// @return A new char16_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42ul;
@@ -1388,7 +1388,7 @@ namespace xtd {
     /// @brief Convert llong_t to char16.
     /// @param value object to convert.
     /// @return A new char16_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// ullong_t value = 42ull;
@@ -1453,15 +1453,15 @@ namespace xtd {
     /// char32_t result = convert::to_char32(value);
     /// @endcode
     static char32_t to_char32(bool value);
-    /// @brief Convert byte_t to char32.
+    /// @brief Convert xtd::byte to char32.
     /// @param value object to convert.
     /// @return A new char32_t object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// char32_t result = convert::to_char32(value);
     /// @endcode
-    static char32_t to_char32(byte_t value) noexcept;
+    static char32_t to_char32(xtd::byte value) noexcept;
     /// @brief Convert char to char32.
     /// @param value object to convert.
     /// @return A new char32_t object converted from value.
@@ -1521,7 +1521,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new char32_t object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// double value = 42.50;
@@ -1532,7 +1532,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new char32_t object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// float value = 42.50f;
@@ -1542,7 +1542,7 @@ namespace xtd {
     /// @brief Convert int16 to char32.
     /// @param value object to convert.
     /// @return A new char32_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int16 value = 42;
@@ -1552,7 +1552,7 @@ namespace xtd {
     /// @brief Convert int32 to char32.
     /// @param value object to convert.
     /// @return A new char32_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int32 value = 42;
@@ -1562,7 +1562,7 @@ namespace xtd {
     /// @brief Convert int64 to char32.
     /// @param value object to convert.
     /// @return A new char32_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int64 value = 42l;
@@ -1572,7 +1572,7 @@ namespace xtd {
     /// @brief Convert llong_t to char32.
     /// @param value object to convert.
     /// @return A new char32_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// llong_t value = 42ll;
@@ -1610,7 +1610,7 @@ namespace xtd {
     /// @brief Convert uint64 to char32.
     /// @param value object to convert.
     /// @return A new char32_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42ul;
@@ -1620,7 +1620,7 @@ namespace xtd {
     /// @brief Convert llong_t to char32.
     /// @param value object to convert.
     /// @return A new char32_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// ullong_t value = 42ull;
@@ -1685,15 +1685,15 @@ namespace xtd {
     /// wchar_t result = convert::to_wchar(value);
     /// @endcode
     static wchar_t to_wchar(bool value);
-    /// @brief Convert byte_t to wchar.
+    /// @brief Convert xtd::byte to wchar.
     /// @param value object to convert.
     /// @return A new wchar_t object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// wchar_t result = convert::to_wchar(value);
     /// @endcode
-    static wchar_t to_wchar(byte_t value) noexcept;
+    static wchar_t to_wchar(xtd::byte value) noexcept;
     /// @brief Convert char to wchar.
     /// @param value object to convert.
     /// @return A new wchar_t object converted from value.
@@ -1724,7 +1724,7 @@ namespace xtd {
     /// @brief Convert char32_t to wchar.
     /// @param value object to convert.
     /// @return A new wchar_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// char32_t value = U'a';
@@ -1754,7 +1754,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new wchar_t object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// double value = 42.50;
@@ -1765,7 +1765,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new wchar_t object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// float value = 42.50f;
@@ -1775,7 +1775,7 @@ namespace xtd {
     /// @brief Convert int16 to wchar.
     /// @param value object to convert.
     /// @return A new wchar_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int16 value = 42;
@@ -1785,7 +1785,7 @@ namespace xtd {
     /// @brief Convert int32 to wchar.
     /// @param value object to convert.
     /// @return A new wchar_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int32 value = 42;
@@ -1795,7 +1795,7 @@ namespace xtd {
     /// @brief Convert int64 to wchar.
     /// @param value object to convert.
     /// @return A new wchar_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int64 value = 42l;
@@ -1805,7 +1805,7 @@ namespace xtd {
     /// @brief Convert llong_t to wchar.
     /// @param value object to convert.
     /// @return A new wchar_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// llong_t value = 42ll;
@@ -1834,7 +1834,7 @@ namespace xtd {
     /// @brief Convert uint32 to wchar.
     /// @param value object to convert.
     /// @return A new wchar_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint32 value = 42u;
@@ -1844,7 +1844,7 @@ namespace xtd {
     /// @brief Convert uint64 to wchar.
     /// @param value object to convert.
     /// @return A new wchar_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42ul;
@@ -1854,7 +1854,7 @@ namespace xtd {
     /// @brief Convert llong_t to wchar.
     /// @param value object to convert.
     /// @return A new wchar_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// ullong_t value = 42ull;
@@ -1919,15 +1919,15 @@ namespace xtd {
     /// decimal_t result = convert::to_decimal(value);
     /// @endcode
     static decimal_t to_decimal(bool value) noexcept;
-    /// @brief Convert byte_t to decimal.
+    /// @brief Convert xtd::byte to decimal.
     /// @param value object to convert.
     /// @return A new decimal_t object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// decimal_t result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(byte_t value) noexcept;
+    static decimal_t to_decimal(xtd::byte value) noexcept;
     /// @brief Convert char to decimal.
     /// @param value object to convert.
     /// @return A new decimal_t object converted from value.
@@ -2142,15 +2142,15 @@ namespace xtd {
     /// double result = convert::to_double(value);
     /// @endcode
     static double to_double(bool value) noexcept;
-    /// @brief Convert byte_t to double.
+    /// @brief Convert xtd::byte to double.
     /// @param value object to convert.
     /// @return A new double object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// double result = convert::to_double(value);
     /// @endcode
-    static double to_double(byte_t value) noexcept;
+    static double to_double(xtd::byte value) noexcept;
     /// @brief Convert char to double.
     /// @param value object to convert.
     /// @return A new double object converted from value.
@@ -2365,15 +2365,15 @@ namespace xtd {
     /// float result = convert::to_single(value);
     /// @endcode
     static float to_single(bool value) noexcept;
-    /// @brief Convert byte_t to single.
+    /// @brief Convert xtd::byte to single.
     /// @param value object to convert.
     /// @return A new float object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// float result = convert::to_single(value);
     /// @endcode
-    static float to_single(byte_t value) noexcept;
+    static float to_single(xtd::byte value) noexcept;
     /// @brief Convert char to single.
     /// @param value object to convert.
     /// @return A new float object converted from value.
@@ -2588,15 +2588,15 @@ namespace xtd {
     /// int16 result = convert::to_int16(value);
     /// @endcode
     static int16 to_int16(bool value) noexcept;
-    /// @brief Convert byte_t to int16.
+    /// @brief Convert xtd::byte to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// int16 result = convert::to_int16(value);
     /// @endcode
-    static int16 to_int16(byte_t value) noexcept;
+    static int16 to_int16(xtd::byte value) noexcept;
     /// @brief Convert char to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
@@ -2627,7 +2627,7 @@ namespace xtd {
     /// @brief Convert char32_t to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// char32_t value = U'a';
@@ -2646,7 +2646,7 @@ namespace xtd {
     /// @brief Convert decimal_t to int16.
     /// @param value object to convert.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @return A new int16 object converted from value.
     /// @par Examples
     /// @code
@@ -2658,7 +2658,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// double value = 42.50;
@@ -2669,7 +2669,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// float value = 42.50f;
@@ -2688,7 +2688,7 @@ namespace xtd {
     /// @brief Convert int32 to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int32 value = 42;
@@ -2698,7 +2698,7 @@ namespace xtd {
     /// @brief Convert int64 to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int64 value = 42l;
@@ -2708,7 +2708,7 @@ namespace xtd {
     /// @brief Convert llong_t to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// llong_t value = 42ll;
@@ -2727,7 +2727,7 @@ namespace xtd {
     /// @brief Convert uint16_t to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint16_t value = 42u;
@@ -2737,7 +2737,7 @@ namespace xtd {
     /// @brief Convert uint32 to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint32 value = 42u;
@@ -2747,7 +2747,7 @@ namespace xtd {
     /// @brief Convert uint64 to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42ul;
@@ -2757,7 +2757,7 @@ namespace xtd {
     /// @brief Convert llong_t to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// ullong_t value = 42ull;
@@ -2784,7 +2784,7 @@ namespace xtd {
     /// ustring value = "42";
     /// int16 result = convert::to_int16(value);
     /// @endcode
-    static int16 to_int16(const xtd::ustring& value, byte_t from_base);
+    static int16 to_int16(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
     static int16 to_int16(const std::string& value);
     static int16 to_int16(const std::u8string& value);
@@ -2833,15 +2833,15 @@ namespace xtd {
     /// int32 result = convert::to_int32(value);
     /// @endcode
     static int32 to_int32(bool value) noexcept;
-    /// @brief Convert byte_t to int32.
+    /// @brief Convert xtd::byte to int32.
     /// @param value object to convert.
     /// @return A new int32 object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// int32 result = convert::to_int32(value);
     /// @endcode
-    static int32 to_int32(byte_t value) noexcept;
+    static int32 to_int32(xtd::byte value) noexcept;
     /// @brief Convert char to int32.
     /// @param value object to convert.
     /// @return A new int32 object converted from value.
@@ -2890,7 +2890,7 @@ namespace xtd {
     /// @brief Convert decimal_t to int32.
     /// @param value object to convert.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @return A new int32 object converted from value.
     /// @par Examples
     /// @code
@@ -2902,7 +2902,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new int32 object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// double value = 42.50;
@@ -2931,7 +2931,7 @@ namespace xtd {
     /// @brief Convert int32 to int32.
     /// @param value object to convert.
     /// @return A new int32 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int32 value = 42;
@@ -2950,7 +2950,7 @@ namespace xtd {
     /// @brief Convert llong_t to int32.
     /// @param value object to convert.
     /// @return A new int32 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// llong_t value = 42ll;
@@ -2978,7 +2978,7 @@ namespace xtd {
     /// @brief Convert uint32 to int32.
     /// @param value object to convert.
     /// @return A new int32 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint32 value = 42u;
@@ -2988,7 +2988,7 @@ namespace xtd {
     /// @brief Convert uint64 to int32.
     /// @param value object to convert.
     /// @return A new int32 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42ul;
@@ -2998,7 +2998,7 @@ namespace xtd {
     /// @brief Convert llong_t to int32.
     /// @param value object to convert.
     /// @return A new int32 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// ullong_t value = 42ull;
@@ -3025,7 +3025,7 @@ namespace xtd {
     /// ustring value = "42";
     /// int32 result = convert::to_int32(value);
     /// @endcode
-    static int32 to_int32(const xtd::ustring& value, byte_t from_base);
+    static int32 to_int32(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
     static int32 to_int32(const std::string& value);
     static int32 to_int32(const std::u8string& value);
@@ -3074,15 +3074,15 @@ namespace xtd {
     /// int64 result = convert::to_int64(value);
     /// @endcode
     static int64 to_int64(bool value) noexcept;
-    /// @brief Convert byte_t to int64.
+    /// @brief Convert xtd::byte to int64.
     /// @param value object to convert.
     /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64 to_int64(byte_t value) noexcept;
+    static int64 to_int64(xtd::byte value) noexcept;
     /// @brief Convert char to int64.
     /// @param value object to convert.
     /// @return A new int64 object converted from value.
@@ -3224,7 +3224,7 @@ namespace xtd {
     /// @brief Convert uint64 to int64.
     /// @param value object to convert.
     /// @return A new int64 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42ul;
@@ -3234,7 +3234,7 @@ namespace xtd {
     /// @brief Convert llong_t to int64.
     /// @param value object to convert.
     /// @return A new int64 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// ullong_t value = 42ull;
@@ -3261,7 +3261,7 @@ namespace xtd {
     /// ustring value = "42";
     /// int16 result = convert::to_int16(value);
     /// @endcode
-    static int64 to_int64(const xtd::ustring& value, byte_t from_base);
+    static int64 to_int64(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
     static int64 to_int64(const std::string& value);
     static int64 to_int64(const std::u8string& value);
@@ -3310,15 +3310,15 @@ namespace xtd {
     /// llong_t result = convert::to_llong(value);
     /// @endcode
     static llong_t to_llong(bool value) noexcept;
-    /// @brief Convert byte_t to llong.
+    /// @brief Convert xtd::byte to llong.
     /// @param value object to convert.
     /// @return A new llong_t object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// llong_t result = convert::to_llong(value);
     /// @endcode
-    static llong_t to_llong(byte_t value) noexcept;
+    static llong_t to_llong(xtd::byte value) noexcept;
     /// @brief Convert char to llong.
     /// @param value object to convert.
     /// @return A new llong_t object converted from value.
@@ -3460,7 +3460,7 @@ namespace xtd {
     /// @brief Convert uint64 to llong.
     /// @param value object to convert.
     /// @return A new llong_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42ul;
@@ -3470,7 +3470,7 @@ namespace xtd {
     /// @brief Convert llong_t to llong.
     /// @param value object to convert.
     /// @return A new llong_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// ullong_t value = 42ull;
@@ -3497,7 +3497,7 @@ namespace xtd {
     /// ustring value = "42";
     /// llong_t result = convert::to_llong(value);
     /// @endcode
-    static llong_t to_llong(const xtd::ustring& value, byte_t from_base);
+    static llong_t to_llong(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
     static llong_t to_llong(const std::string& value);
     static llong_t to_llong(const std::u8string& value);
@@ -3546,15 +3546,15 @@ namespace xtd {
     /// sbyte_t result = convert::to_sbyte(value);
     /// @endcode
     static sbyte_t to_sbyte(bool value) noexcept;
-    /// @brief Convert byte_t to sbyte.
+    /// @brief Convert xtd::byte to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte_t object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// sbyte_t result = convert::to_sbyte(value);
     /// @endcode
-    static sbyte_t to_sbyte(byte_t value) noexcept;
+    static sbyte_t to_sbyte(xtd::byte value) noexcept;
     /// @brief Convert char to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte_t object converted from value.
@@ -3576,7 +3576,7 @@ namespace xtd {
     /// @brief Convert char16_t to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// char16_t value = u'a';
@@ -3586,7 +3586,7 @@ namespace xtd {
     /// @brief Convert char32_t to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// char32_t value = U'a';
@@ -3596,7 +3596,7 @@ namespace xtd {
     /// @brief Convert char32_t to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// wchar_t value = L'a';
@@ -3606,7 +3606,7 @@ namespace xtd {
     /// @brief Convert decimal_t to sbyte.
     /// @param value object to convert.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @return A new sbyte_t object converted from value.
     /// @par Examples
     /// @code
@@ -3618,7 +3618,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new sbyte_t object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// double value = 42.50;
@@ -3629,7 +3629,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new sbyte_t object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// float value = 42.50f;
@@ -3639,7 +3639,7 @@ namespace xtd {
     /// @brief Convert int16 to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int16 value = 42;
@@ -3649,7 +3649,7 @@ namespace xtd {
     /// @brief Convert int32 to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int32 value = 42;
@@ -3659,7 +3659,7 @@ namespace xtd {
     /// @brief Convert int64 to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int64 value = 42l;
@@ -3669,7 +3669,7 @@ namespace xtd {
     /// @brief Convert llong_t to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// llong_t value = 42ll;
@@ -3689,7 +3689,7 @@ namespace xtd {
     /// @brief Convert uint16_t to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint16_t value = 42u;
@@ -3699,7 +3699,7 @@ namespace xtd {
     /// @brief Convert uint32 to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint32 value = 42u;
@@ -3709,7 +3709,7 @@ namespace xtd {
     /// @brief Convert uint64 to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42ul;
@@ -3719,7 +3719,7 @@ namespace xtd {
     /// @brief Convert llong_t to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// ullong_t value = 42ull;
@@ -3746,7 +3746,7 @@ namespace xtd {
     /// ustring value = "42";
     /// sbyte_t result = convert::to_sbyte(value);
     /// @endcode
-    static sbyte_t to_sbyte(const xtd::ustring& value, byte_t from_base);
+    static sbyte_t to_sbyte(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
     static sbyte_t to_sbyte(const std::string& value);
     static sbyte_t to_sbyte(const std::u8string& value);
@@ -3795,15 +3795,15 @@ namespace xtd {
     /// uint16_t result = convert::to_uint16(value);
     /// @endcode
     static uint16_t to_uint16(bool value) noexcept;
-    /// @brief Convert byte_t to uint16.
+    /// @brief Convert xtd::byte to uint16.
     /// @param value object to convert.
     /// @return A new uint16_t object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// uint16_t result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(byte_t value) noexcept;
+    static uint16_t to_uint16(xtd::byte value) noexcept;
     /// @brief Convert char to uint16.
     /// @param value object to convert.
     /// @return A new uint16_t object converted from value.
@@ -3834,7 +3834,7 @@ namespace xtd {
     /// @brief Convert char32_t to uint16.
     /// @param value object to convert.
     /// @return A new uint16_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// char32_t value = U'a';
@@ -3853,7 +3853,7 @@ namespace xtd {
     /// @brief Convert decimal_t to uint16.
     /// @param value object to convert.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @return A new uint16_t object converted from value.
     /// @par Examples
     /// @code
@@ -3865,7 +3865,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new uint16_t object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// double value = 42.50;
@@ -3876,7 +3876,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new uint16_t object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// float value = 42.50f;
@@ -3886,7 +3886,7 @@ namespace xtd {
     /// @brief Convert int16 to uint16.
     /// @param value object to convert.
     /// @return A new uint16_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// int16 value = 42;
@@ -3896,7 +3896,7 @@ namespace xtd {
     /// @brief Convert int32 to uint16.
     /// @param value object to convert.
     /// @return A new uint16_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int32 value = 42;
@@ -3906,7 +3906,7 @@ namespace xtd {
     /// @brief Convert int64 to uint16.
     /// @param value object to convert.
     /// @return A new uint16_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int64 value = 42l;
@@ -3916,7 +3916,7 @@ namespace xtd {
     /// @brief Convert llong_t to uint16.
     /// @param value object to convert.
     /// @return A new uint16_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// llong_t value = 42ll;
@@ -3926,7 +3926,7 @@ namespace xtd {
     /// @brief Convert sbyte_t to uint16.
     /// @param value object to convert.
     /// @return A new uint16_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// sbyte_t value = 42;
@@ -3945,7 +3945,7 @@ namespace xtd {
     /// @brief Convert uint32 to uint16.
     /// @param value object to convert.
     /// @return A new uint16_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint32 value = 42u;
@@ -3955,7 +3955,7 @@ namespace xtd {
     /// @brief Convert uint64 to uint16.
     /// @param value object to convert.
     /// @return A new uint16_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42ul;
@@ -3965,7 +3965,7 @@ namespace xtd {
     /// @brief Convert llong_t to uint16.
     /// @param value object to convert.
     /// @return A new uint16_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// ullong_t value = 42ull;
@@ -3992,7 +3992,7 @@ namespace xtd {
     /// ustring value = "42";
     /// uint16_t result = convert::to_uuint16(value);
     /// @endcode
-    static uint16_t to_uint16(const xtd::ustring& value, byte_t from_base);
+    static uint16_t to_uint16(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
     static uint16_t to_uint16(const std::string& value);
     static uint16_t to_uint16(const std::u8string& value);
@@ -4041,15 +4041,15 @@ namespace xtd {
     /// uint32 result = convert::to_uint32(value);
     /// @endcode
     static uint32 to_uint32(bool value) noexcept;
-    /// @brief Convert byte_t to uint32.
+    /// @brief Convert xtd::byte to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// uint32 result = convert::to_uint32(value);
     /// @endcode
-    static uint32 to_uint32(byte_t value) noexcept;
+    static uint32 to_uint32(xtd::byte value) noexcept;
     /// @brief Convert char to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
@@ -4098,7 +4098,7 @@ namespace xtd {
     /// @brief Convert decimal_t to uint32.
     /// @param value object to convert.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @return A new uint32 object converted from value.
     /// @par Examples
     /// @code
@@ -4110,7 +4110,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// double value = 42.50;
@@ -4120,7 +4120,7 @@ namespace xtd {
     /// @brief Convert float to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @remarks The result is rounded.
     /// @par Examples
     /// @code
@@ -4131,7 +4131,7 @@ namespace xtd {
     /// @brief Convert int16 to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// int16 value = 42;
@@ -4141,7 +4141,7 @@ namespace xtd {
     /// @brief Convert int32 to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int32 value = 42;
@@ -4151,7 +4151,7 @@ namespace xtd {
     /// @brief Convert int64 to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int64 value = 42l;
@@ -4161,7 +4161,7 @@ namespace xtd {
     /// @brief Convert llong_t to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// llong_t value = 42ll;
@@ -4171,7 +4171,7 @@ namespace xtd {
     /// @brief Convert sbyte_t to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// sbyte_t value = 42;
@@ -4199,7 +4199,7 @@ namespace xtd {
     /// @brief Convert uint64 to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42ul;
@@ -4209,7 +4209,7 @@ namespace xtd {
     /// @brief Convert llong_t to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// ullong_t value = 42ull;
@@ -4236,7 +4236,7 @@ namespace xtd {
     /// ustring value = "42";
     /// uint32 result = convert::to_uint32(value);
     /// @endcode
-    static uint32 to_uint32(const xtd::ustring& value, byte_t from_base);
+    static uint32 to_uint32(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
     static uint32 to_uint32(const std::string& value);
     static uint32 to_uint32(const std::u8string& value);
@@ -4285,15 +4285,15 @@ namespace xtd {
     /// uint64 result = convert::to_uint64(value);
     /// @endcode
     static uint64 to_uint64(bool value) noexcept;
-    /// @brief Convert byte_t to uint64.
+    /// @brief Convert xtd::byte to uint64.
     /// @param value object to convert.
     /// @return A new uint64 object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// uint64 result = convert::to_uint64(value);
     /// @endcode
-    static uint64 to_uint64(byte_t value) noexcept;
+    static uint64 to_uint64(xtd::byte value) noexcept;
     /// @brief Convert char to uint64.
     /// @param value object to convert.
     /// @return A new uint64 object converted from value.
@@ -4342,7 +4342,7 @@ namespace xtd {
     /// @brief Convert decimal_t to uint64.
     /// @param value object to convert.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @return A new uint64 object converted from value.
     /// @par Examples
     /// @code
@@ -4354,7 +4354,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new uint64 object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// double value = 42.50;
@@ -4364,7 +4364,7 @@ namespace xtd {
     /// @brief Convert float to uint64.
     /// @param value object to convert.
     /// @return A new uint64 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @remarks The result is rounded.
     /// @par Examples
     /// @code
@@ -4375,7 +4375,7 @@ namespace xtd {
     /// @brief Convert int16 to uint64.
     /// @param value object to convert.
     /// @return A new uint64 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// int16 value = 42;
@@ -4385,7 +4385,7 @@ namespace xtd {
     /// @brief Convert int32 to uint64.
     /// @param value object to convert.
     /// @return A new uint64 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int32 value = 42;
@@ -4395,7 +4395,7 @@ namespace xtd {
     /// @brief Convert int64 to uint64.
     /// @param value object to convert.
     /// @return A new uint64 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int64 value = 42l;
@@ -4405,7 +4405,7 @@ namespace xtd {
     /// @brief Convert llong_t to uint64.
     /// @param value object to convert.
     /// @return A new uint64 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// llong_t value = 42ll;
@@ -4415,7 +4415,7 @@ namespace xtd {
     /// @brief Convert sbyte_t to uint64.
     /// @param value object to convert.
     /// @return A new uint64 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// sbyte_t value = 42;
@@ -4443,7 +4443,7 @@ namespace xtd {
     /// @brief Convert uint64 to uint64.
     /// @param value object to convert.
     /// @return A new uint64 object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42ul;
@@ -4478,7 +4478,7 @@ namespace xtd {
     /// ustring value = "42";
     /// uuint64_t result = convert::to_uint64(value);
     /// @endcode
-    static uint64 to_uint64(const xtd::ustring& value, byte_t from_base);
+    static uint64 to_uint64(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
     static uint64 to_uint64(const std::string& value);
     static uint64 to_uint64(const std::u8string& value);
@@ -4527,15 +4527,15 @@ namespace xtd {
     /// ullong_t result = convert::to_ullong(value);
     /// @endcode
     static ullong_t to_ullong(bool value) noexcept;
-    /// @brief Convert byte_t to ullong.
+    /// @brief Convert xtd::byte to ullong.
     /// @param value object to convert.
     /// @return A new ullong_t object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// ullong_t result = convert::to_ullong(value);
     /// @endcode
-    static ullong_t to_ullong(byte_t value) noexcept;
+    static ullong_t to_ullong(xtd::byte value) noexcept;
     /// @brief Convert char to ullong.
     /// @param value object to convert.
     /// @return A new ullong_t object converted from value.
@@ -4584,7 +4584,7 @@ namespace xtd {
     /// @brief Convert decimal_t to ullong.
     /// @param value object to convert.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @return A new ullong_t object converted from value.
     /// @par Examples
     /// @code
@@ -4596,7 +4596,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new ullong_t object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// double value = 42.50;
@@ -4606,7 +4606,7 @@ namespace xtd {
     /// @brief Convert float to ullong.
     /// @param value object to convert.
     /// @return A new ullong_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @remarks The result is rounded.
     /// @par Examples
     /// @code
@@ -4617,7 +4617,7 @@ namespace xtd {
     /// @brief Convert int16 to ullong.
     /// @param value object to convert.
     /// @return A new ullong_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// int16 value = 42;
@@ -4627,7 +4627,7 @@ namespace xtd {
     /// @brief Convert int32 to ullong.
     /// @param value object to convert.
     /// @return A new ullong_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int32 value = 42;
@@ -4637,7 +4637,7 @@ namespace xtd {
     /// @brief Convert int64 to ullong.
     /// @param value object to convert.
     /// @return A new ullong_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int64 value = 42l;
@@ -4647,7 +4647,7 @@ namespace xtd {
     /// @brief Convert llong_t to ullong.
     /// @param value object to convert.
     /// @return A new ullong_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// llong_t value = 42ll;
@@ -4657,7 +4657,7 @@ namespace xtd {
     /// @brief Convert sbyte_t to ullong.
     /// @param value object to convert.
     /// @return A new ullong_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// sbyte_t value = 42;
@@ -4685,7 +4685,7 @@ namespace xtd {
     /// @brief Convert uint64 to ullong.
     /// @param value object to convert.
     /// @return A new ullong_t object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42ul;
@@ -4720,7 +4720,7 @@ namespace xtd {
     /// ustring value = "42";
     /// ullong_t result = convert::to_ullong(value);
     /// @endcode
-    static ullong_t to_ullong(const xtd::ustring& value, byte_t from_base);
+    static ullong_t to_ullong(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
     static ullong_t to_ullong(const std::string& value);
     static ullong_t to_ullong(const std::u8string& value);
@@ -4769,15 +4769,15 @@ namespace xtd {
     /// ustring result = convert::to_string(value);
     /// @endcode
     static ustring to_string(bool value) noexcept;
-    /// @brief Convert byte_t to ustring.
+    /// @brief Convert xtd::byte to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// ustring result = convert::to_string(value);
     /// @endcode
-    static ustring to_string(byte_t value) noexcept;
+    static ustring to_string(xtd::byte value) noexcept;
     /// @brief Convert string to ustring.
     /// @param value object to convert.
     /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
@@ -4785,10 +4785,10 @@ namespace xtd {
     /// @exception xtd::atgument_exception from_base is not 2 or 8 or 10 orr 16.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// ustring result = convert::to_string(value, 16);
     /// @endcode
-    static ustring to_string(byte_t value, byte_t from_base);
+    static ustring to_string(xtd::byte value, xtd::byte from_base);
     /// @brief Convert char to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
@@ -4837,7 +4837,7 @@ namespace xtd {
     /// @brief Convert decimal_t to ustring.
     /// @param value object to convert.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @return A new ustring object converted from value.
     /// @par Examples
     /// @code
@@ -4849,7 +4849,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// double value = 42.50;
@@ -4859,7 +4859,7 @@ namespace xtd {
     /// @brief Convert float to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @remarks The result is rounded.
     /// @par Examples
     /// @code
@@ -4870,7 +4870,7 @@ namespace xtd {
     /// @brief Convert int16 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// int16 value = 42;
@@ -4887,11 +4887,11 @@ namespace xtd {
     /// int16 value = 42;
     /// ustring result = convert::to_string(value, 16);
     /// @endcode
-    static ustring to_string(int16 value, byte_t from_base);
+    static ustring to_string(int16 value, xtd::byte from_base);
     /// @brief Convert int32 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int32 value = 42;
@@ -4908,11 +4908,11 @@ namespace xtd {
     /// int32 value = 42;
     /// ustring result = convert::to_string(value, 16);
     /// @endcode
-    static ustring to_string(int32 value, byte_t from_base);
+    static ustring to_string(int32 value, xtd::byte from_base);
     /// @brief Convert int64 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int64 value = 42l;
@@ -4929,11 +4929,11 @@ namespace xtd {
     /// int64 value = 42;
     /// ustring result = convert::to_string(value, 16);
     /// @endcode
-    static ustring to_string(int64 value, byte_t from_base);
+    static ustring to_string(int64 value, xtd::byte from_base);
     /// @brief Convert llong_t to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// llong_t value = 42ll;
@@ -4950,11 +4950,11 @@ namespace xtd {
     /// llong_t value = 42;
     /// ustring result = convert::to_string(value, 16);
     /// @endcode
-    static ustring to_string(llong_t value, byte_t from_base);
+    static ustring to_string(llong_t value, xtd::byte from_base);
     /// @brief Convert sbyte_t to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// sbyte_t value = 42;
@@ -4971,7 +4971,7 @@ namespace xtd {
     /// sbyte_t value = 42;
     /// ustring result = convert::to_string(value, 16);
     /// @endcode
-    static ustring to_string(sbyte_t value, byte_t from_base);
+    static ustring to_string(sbyte_t value, xtd::byte from_base);
     /// @brief Convert uint16_t to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
@@ -4991,7 +4991,7 @@ namespace xtd {
     /// uint16_t value = 42u;
     /// ustring result = convert::to_string(value, 16);
     /// @endcode
-    static ustring to_string(uint16_t value, byte_t from_base);
+    static ustring to_string(uint16_t value, xtd::byte from_base);
     /// @brief Convert uint32 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
@@ -5011,11 +5011,11 @@ namespace xtd {
     /// uint32 value = 42;
     /// ustring result = convert::to_string(value, 16);
     /// @endcode
-    static ustring to_string(uint32 value, byte_t from_base);
+    static ustring to_string(uint32 value, xtd::byte from_base);
     /// @brief Convert uint64 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42u;
@@ -5032,7 +5032,7 @@ namespace xtd {
     /// uint64 value = 42ul;
     /// ustring result = convert::to_string(value, 16);
     /// @endcode
-    static ustring to_string(uint64 value, byte_t from_base);
+    static ustring to_string(uint64 value, xtd::byte from_base);
     /// @brief Convert llong_t to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
@@ -5052,7 +5052,7 @@ namespace xtd {
     /// ullong_t value = 42ull;
     /// ustring result = convert::to_string(value, 16);
     /// @endcode
-    static ustring to_string(ullong_t value, byte_t from_base);
+    static ustring to_string(ullong_t value, xtd::byte from_base);
     /// @brief Convert string to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
@@ -5110,15 +5110,15 @@ namespace xtd {
     /// ustring result = convert::to_ustring(value);
     /// @endcode
     static ustring to_ustring(bool value) noexcept;
-    /// @brief Convert byte_t to ustring.
+    /// @brief Convert xtd::byte to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// ustring result = convert::to_ustring(value);
     /// @endcode
-    static ustring to_ustring(byte_t value) noexcept;
+    static ustring to_ustring(xtd::byte value) noexcept;
     /// @brief Convert string to ustring.
     /// @param value object to convert.
     /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
@@ -5126,10 +5126,10 @@ namespace xtd {
     /// @exception xtd::atgument_exception from_base is not 2 or 8 or 10 orr 16.
     /// @par Examples
     /// @code
-    /// byte_t value = 42;
+    /// xtd::byte value = 42;
     /// ustring result = convert::to_ustring(value, 16);
     /// @endcode
-    static ustring to_ustring(byte_t value, byte_t from_base);
+    static ustring to_ustring(xtd::byte value, xtd::byte from_base);
     /// @brief Convert char to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
@@ -5178,7 +5178,7 @@ namespace xtd {
     /// @brief Convert decimal_t to ustring.
     /// @param value object to convert.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @return A new ustring object converted from value.
     /// @par Examples
     /// @code
@@ -5190,7 +5190,7 @@ namespace xtd {
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
     /// @remarks The result is rounded.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// double value = 42.50;
@@ -5200,7 +5200,7 @@ namespace xtd {
     /// @brief Convert float to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @remarks The result is rounded.
     /// @par Examples
     /// @code
@@ -5211,7 +5211,7 @@ namespace xtd {
     /// @brief Convert int16 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// int16 value = 42;
@@ -5228,11 +5228,11 @@ namespace xtd {
     /// int16 value = 42;
     /// ustring result = convert::to_ustring(value, 16);
     /// @endcode
-    static ustring to_ustring(int16 value, byte_t from_base);
+    static ustring to_ustring(int16 value, xtd::byte from_base);
     /// @brief Convert int32 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int32 value = 42;
@@ -5249,11 +5249,11 @@ namespace xtd {
     /// int32 value = 42;
     /// ustring result = convert::to_ustring(value, 16);
     /// @endcode
-    static ustring to_ustring(int32 value, byte_t from_base);
+    static ustring to_ustring(int32 value, xtd::byte from_base);
     /// @brief Convert int64 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int64 value = 42l;
@@ -5270,11 +5270,11 @@ namespace xtd {
     /// int64 value = 42;
     /// ustring result = convert::to_ustring(value, 16);
     /// @endcode
-    static ustring to_ustring(int64 value, byte_t from_base);
+    static ustring to_ustring(int64 value, xtd::byte from_base);
     /// @brief Convert llong_t to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max() or is less than 0.
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// llong_t value = 42ll;
@@ -5291,11 +5291,11 @@ namespace xtd {
     /// llong_t value = 42;
     /// ustring result = convert::to_ustring(value, 16);
     /// @endcode
-    static ustring to_ustring(llong_t value, byte_t from_base);
+    static ustring to_ustring(llong_t value, xtd::byte from_base);
     /// @brief Convert sbyte_t to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// sbyte_t value = 42;
@@ -5312,7 +5312,7 @@ namespace xtd {
     /// sbyte_t value = 42;
     /// ustring result = convert::to_ustring(value, 16);
     /// @endcode
-    static ustring to_ustring(sbyte_t value, byte_t from_base);
+    static ustring to_ustring(sbyte_t value, xtd::byte from_base);
     /// @brief Convert uint16_t to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
@@ -5332,7 +5332,7 @@ namespace xtd {
     /// uint16_t value = 42u;
     /// ustring result = convert::to_ustring(value, 16);
     /// @endcode
-    static ustring to_ustring(uint16_t value, byte_t from_base);
+    static ustring to_ustring(uint16_t value, xtd::byte from_base);
     /// @brief Convert uint32 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
@@ -5352,11 +5352,11 @@ namespace xtd {
     /// uint32 value = 42;
     /// ustring result = convert::to_ustring(value, 16);
     /// @endcode
-    static ustring to_ustring(uint32 value, byte_t from_base);
+    static ustring to_ustring(uint32 value, xtd::byte from_base);
     /// @brief Convert uint64 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
-    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<byte_t>::max().
+    /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42u;
@@ -5373,7 +5373,7 @@ namespace xtd {
     /// uint64 value = 42ul;
     /// ustring result = convert::to_ustring(value, 16);
     /// @endcode
-    static ustring to_ustring(uint64 value, byte_t from_base);
+    static ustring to_ustring(uint64 value, xtd::byte from_base);
     /// @brief Convert llong_t to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
@@ -5393,7 +5393,7 @@ namespace xtd {
     /// ullong_t value = 42ull;
     /// ustring result = convert::to_ustring(value, 16);
     /// @endcode
-    static ustring to_ustring(ullong_t value, byte_t from_base);
+    static ustring to_ustring(ullong_t value, xtd::byte from_base);
     /// @brief Convert string to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.

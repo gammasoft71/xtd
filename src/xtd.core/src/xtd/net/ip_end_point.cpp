@@ -41,7 +41,7 @@ unique_ptr<end_point> ip_end_point::create(const socket_address& socket_address)
   uint16_t port = ip_address::network_to_host_order(bit_converter::to_uint16(socket_address.bytes_, 2)); // static_cast<uint16_t>((socket_address[2] << 8 & 0xFF00) | (socket_address[3]));
   
   if (address_family_ == address_family::inter_network_v6) {
-    vector<byte_t> address(16);
+    vector<xtd::byte> address(16);
     for (auto i = 0U; i < address.size(); i++)
       address[i] = socket_address[i + 8];
     //uint32 scope = ip_address::network_to_host_order(bit_converter::to_uint32(socket_address.bytes_, 24));
@@ -56,19 +56,19 @@ unique_ptr<end_point> ip_end_point::create(const socket_address& socket_address)
 socket_address ip_end_point::serialize() const {
   socket_address result(address_family_, address_family_ == address_family::inter_network ? 16 : 28);
   size_t index = 2;
-  for (byte_t b : bit_converter::get_bytes(ip_address::host_to_network_order(port_)))
+  for (xtd::byte b : bit_converter::get_bytes(ip_address::host_to_network_order(port_)))
     result[index++] = b;
     
   if (address_.address_family() == address_family::inter_network_v6) {
     index = 8;
-    for (byte_t b : address_.get_address_bytes())
+    for (xtd::byte b : address_.get_address_bytes())
       result[index++] = b;
     //for (byte b : bit_converter::get_bytes(ip_address::host_to_network_order(address_.scope_id())))
-    for (byte_t b : bit_converter::get_bytes(address_.scope_id()))
+    for (xtd::byte b : bit_converter::get_bytes(address_.scope_id()))
       result[index++] = b;
   } else {
     index = 4;
-    for (byte_t b : address_.get_address_bytes())
+    for (xtd::byte b : address_.get_address_bytes())
       result[index++] = b;
   }
   

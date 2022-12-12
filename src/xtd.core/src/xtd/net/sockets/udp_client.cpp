@@ -15,7 +15,7 @@ struct udp_client::data {
   //static constexpr const size_t max_udp_size = 0x10000;
   socket client_socket {address_family::inter_network, socket_type::dgram, protocol_type::udp};
   bool active = false;
-  vector<byte_t> buffer = vector<byte_t>(0x10000);
+  vector<xtd::byte> buffer = vector<xtd::byte>(0x10000);
 };
 
 udp_client::udp_client() {
@@ -105,11 +105,11 @@ udp_client& udp_client::multicast_loopback(bool value) {
   return *this;
 }
 
-byte_t udp_client::ttl() const {
+xtd::byte udp_client::ttl() const {
   return data_->client_socket.ttl();
 }
 
-udp_client& udp_client::ttl(byte_t value) {
+udp_client& udp_client::ttl(xtd::byte value) {
   data_->client_socket.ttl(value);
   return *this;
 }
@@ -136,10 +136,10 @@ std::shared_ptr<xtd::iasync_result> udp_client::begin_receive(xtd::async_callbac
   return ar;
 }
 
-std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<byte_t>& dgram, size_t bytes, const xtd::ustring& hostname, uint16_t port, xtd::async_callback callback, const std::any& state) {
+std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::ustring& hostname, uint16_t port, xtd::async_callback callback, const std::any& state) {
   std::shared_ptr<async_result_send> ar = make_shared<async_result_send>(state);
   ar->async_mutex().lock();
-  thread operation_thread([](udp_client * udp_client, const std::vector<byte_t>& dgram, size_t bytes, const xtd::ustring & hostname, uint16_t port, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
+  thread operation_thread([](udp_client * udp_client, const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::ustring & hostname, uint16_t port, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = udp_client->send(dgram, bytes, hostname, port);
       ar->is_completed_ = true;
@@ -153,10 +153,10 @@ std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<byt
   return ar;
 }
 
-std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<byte_t>& dgram, size_t bytes, const xtd::net::ip_end_point& end_point, xtd::async_callback callback, const std::any& state) {
+std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::net::ip_end_point& end_point, xtd::async_callback callback, const std::any& state) {
   std::shared_ptr<async_result_send> ar = make_shared<async_result_send>(state);
   ar->async_mutex().lock();
-  thread operation_thread([](udp_client * udp_client, const std::vector<byte_t>& dgram, size_t bytes, const xtd::net::ip_end_point & end_point, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
+  thread operation_thread([](udp_client * udp_client, const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::net::ip_end_point & end_point, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = udp_client->send(dgram, bytes, end_point);
       ar->is_completed_ = true;
@@ -170,10 +170,10 @@ std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<byt
   return ar;
 }
 
-std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<byte_t>& dgram, size_t bytes, xtd::async_callback callback, const std::any& state) {
+std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<xtd::byte>& dgram, size_t bytes, xtd::async_callback callback, const std::any& state) {
   std::shared_ptr<async_result_send> ar = make_shared<async_result_send>(state);
   ar->async_mutex().lock();
-  thread operation_thread([](udp_client * udp_client, const std::vector<byte_t>& dgram, size_t bytes, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
+  thread operation_thread([](udp_client * udp_client, const std::vector<xtd::byte>& dgram, size_t bytes, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = udp_client->send(dgram, bytes);
       ar->is_completed_ = true;
@@ -217,7 +217,7 @@ void udp_client::drop_multicast_group(const xtd::net::ip_address& multicast_addr
   data_->client_socket.set_socket_option(socket_option_name::drop_membership, ip_v6_multicast_option(multicast_address, if_index));
 }
 
-vector<byte_t> udp_client::end_receive(shared_ptr<xtd::iasync_result> async_result, ip_end_point& remote_end_point) {
+vector<xtd::byte> udp_client::end_receive(shared_ptr<xtd::iasync_result> async_result, ip_end_point& remote_end_point) {
   if (async_result == nullptr) throw argument_null_exception(csf_);
   if (!is<async_result_receive>(async_result)) throw argument_exception(csf_);
   lock_guard<shared_mutex> lock(async_result->async_mutex());
@@ -248,7 +248,7 @@ void udp_client::join_multicast_group(uint32 if_index, const xtd::net::ip_addres
   data_->client_socket.set_socket_option(socket_option_name::add_membership, ip_v6_multicast_option(multicast_address, if_index));
 }
 
-void udp_client::join_multicast_group(const xtd::net::ip_address& multicast_address, byte_t ttl) {
+void udp_client::join_multicast_group(const xtd::net::ip_address& multicast_address, xtd::byte ttl) {
   join_multicast_group(multicast_address);
   data_->client_socket.ttl(ttl);
 }
@@ -258,23 +258,23 @@ void udp_client::join_multicast_group(const xtd::net::ip_address& multicast_addr
   data_->client_socket.set_socket_option(socket_option_name::add_membership, multicast_option(multicast_address, local_address));
 }
 
-vector<byte_t> udp_client::receive(ip_end_point& remote_end_point) {
+vector<xtd::byte> udp_client::receive(ip_end_point& remote_end_point) {
   auto received = data_->client_socket.receive_from(data_->buffer, remote_end_point);
-  return vector<byte_t>(data_->buffer.begin(), data_->buffer.begin() + received);
+  return vector<xtd::byte>(data_->buffer.begin(), data_->buffer.begin() + received);
 }
 
-size_t udp_client::send(const vector<byte_t>& dgram, size_t bytes, const ustring& hostname, uint16_t port) {
+size_t udp_client::send(const vector<xtd::byte>& dgram, size_t bytes, const ustring& hostname, uint16_t port) {
   if (hostname != ip_address::broadcast.to_string()) return data_->client_socket.send_to(dgram, 0, bytes, socket_flags::none, ip_end_point(dns::get_host_addresses(hostname)[0], port));
   data_->client_socket.enable_broadcast(true);
   return data_->client_socket.send_to(dgram, 0, bytes, socket_flags::none, ip_end_point(ip_address::broadcast, port));
 }
 
-size_t udp_client::send(const vector<byte_t>& dgram, size_t bytes, const ip_end_point& end_point) {
+size_t udp_client::send(const vector<xtd::byte>& dgram, size_t bytes, const ip_end_point& end_point) {
   if (end_point.address() == ip_address::broadcast) data_->client_socket.enable_broadcast(true);
   return data_->client_socket.send_to(dgram, 0, bytes, socket_flags::none, end_point);
 }
 
-size_t udp_client::send(const vector<byte_t>& dgram, size_t bytes) {
+size_t udp_client::send(const vector<xtd::byte>& dgram, size_t bytes) {
   return data_->client_socket.send(dgram, 0, bytes, socket_flags::none);
 }
 

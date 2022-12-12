@@ -98,7 +98,7 @@ namespace xtd {
       /// @exception xtd::io_io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
-      virtual size_t read(std::vector<byte_t>& buffer, size_t index, size_t count);
+      virtual size_t read(std::vector<xtd::byte>& buffer, size_t index, size_t count);
       
       /// @brief Reads the specified number of characters from the stream, starting from a specified point in the character array.
       /// @param buffer The buffer to read data into.
@@ -124,7 +124,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
-      virtual byte_t read_byte();
+      virtual xtd::byte read_byte();
       
       /// @brief Reads the specified number of bytes from the current stream into a byte array and advances the current position by that number of bytes.
       /// @param count The number of bytes to read. This value must be 0 or a non-negative number or an exception will occur.
@@ -133,7 +133,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
-      virtual std::vector<byte_t> read_bytes(size_t count);
+      virtual std::vector<xtd::byte> read_bytes(size_t count);
       
       /// @brief Reads the next character from the current stream and advances the current position of the stream by one byte.
       /// @return A character read from the current stream.
@@ -235,7 +235,7 @@ namespace xtd {
       
       /// @cond
       binary_reader& operator >>(bool& value) {value = read_boolean(); return *this;}
-      binary_reader& operator >>(byte_t& value) {value = read_byte(); return *this;}
+      binary_reader& operator >>(xtd::byte& value) {value = read_byte(); return *this;}
       binary_reader& operator >>(char& value) {value = read_char(); return *this;}
       binary_reader& operator >>(double& value) {value = read_double(); return *this;}
       binary_reader& operator >>(int16& value) {value = read_int16(); return *this;}

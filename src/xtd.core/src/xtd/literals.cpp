@@ -4,32 +4,32 @@
 using namespace std;
 using namespace xtd;
 
-byte_t xtd::operator""_b(long double n) {
-  return as<byte_t>(n);
+xtd::byte xtd::operator""_b(long double n) {
+  return as<xtd::byte>(n);
 }
 
-byte_t xtd::operator""_b(unsigned long long n) {
-  return as<byte_t>(n);
+xtd::byte xtd::operator""_b(unsigned long long n) {
+  return as<xtd::byte>(n);
 }
 
-byte_t xtd::operator""_b(const char* s, size_t n) {
-  return as<byte_t>(ustring(s, s + n));
+xtd::byte xtd::operator""_b(const char* s, size_t n) {
+  return as<xtd::byte>(ustring(s, s + n));
 }
 
-byte_t xtd::operator""_b(const char8_t* s, size_t n) {
-  return as<byte_t>(ustring(s, s + n));
+xtd::byte xtd::operator""_b(const char8_t* s, size_t n) {
+  return as<xtd::byte>(ustring(s, s + n));
 }
 
-byte_t xtd::operator""_b(const char16_t* s, size_t n) {
-  return as<byte_t>(u16string(s, s + n));
+xtd::byte xtd::operator""_b(const char16_t* s, size_t n) {
+  return as<xtd::byte>(u16string(s, s + n));
 }
 
-byte_t xtd::operator""_b(const char32_t* s, size_t n) {
-  return as<byte_t>(u32string(s, s + n));
+xtd::byte xtd::operator""_b(const char32_t* s, size_t n) {
+  return as<xtd::byte>(u32string(s, s + n));
 }
 
-byte_t xtd::operator""_b(const wchar_t* s, size_t n) {
-  return as<byte_t>(wstring(s, s + n));
+xtd::byte xtd::operator""_b(const wchar_t* s, size_t n) {
+  return as<xtd::byte>(wstring(s, s + n));
 }
 
 double xtd::operator""_d(long double n) {
