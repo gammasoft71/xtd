@@ -9,6 +9,6 @@ using namespace xtd::native;
 #undef max
 #undef min
 
-void system_sound::play(uint32_t sound) {
+void system_sound::play(uint_least32_t sound) {
   MessageBeep(sound);
 }

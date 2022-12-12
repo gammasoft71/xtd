@@ -238,7 +238,7 @@ const std::string& directory::file_and_directory_iterator::pattern() const {
   return data_->pattern_;
 }
 
-int32_t directory::create(const std::string& directory_name) {
+int_least32_t directory::create(const std::string& directory_name) {
   return CreateDirectory(win32::strings::to_wstring(directory_name).c_str(), nullptr) != FALSE ? 0 : -1;
 }
 
@@ -255,7 +255,7 @@ directory::file_and_directory_iterator directory::enumerate_files_and_directorie
 }
 
 bool directory::exists(const std::string& path) {
-  int32_t attributes = 0;
+  int_least32_t attributes = 0;
   return file_system::get_attributes(path, attributes) == 0 && (attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY;
 }
 
@@ -267,10 +267,10 @@ string directory::get_current_directory() {
   return win32::strings::to_string(current_directory);
 }
 
-int32_t directory::remove(const std::string& directory_name) {
+int_least32_t directory::remove(const std::string& directory_name) {
   return RemoveDirectory(win32::strings::to_wstring(directory_name).c_str()) != FALSE ? 0 : -1;
 }
 
-int32_t directory::set_current_directory(const std::string& directory_name) {
+int_least32_t directory::set_current_directory(const std::string& directory_name) {
   return SetCurrentDirectory(win32::strings::to_wstring(directory_name).c_str()) != FALSE ? 0 : -1;
 }
