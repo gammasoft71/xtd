@@ -1,6 +1,6 @@
 # interlocked
 
-Shows how to use [xtd::threading::interlocked](../../../../src/xtd.core/include/xtd/threading/interlocked.h) class.
+Shows how to use [xtd::threading::interlocked](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1threading_1_1interlocked.html) class.
 
 ## Sources
 
