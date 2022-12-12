@@ -179,7 +179,7 @@ intptr_t control::create_paint_graphics(intptr_t control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper;
 #if defined __UNIX__
-  hdc_wrapper->create<wxPaintDC>(reinterpret_cast<control_handler*>(control)->control());
+  hdc_wrapper->create<wxClientDC>(reinterpret_cast<control_handler*>(control)->main_control());
 #else
   hdc_wrapper->create<wxPaintDC>(reinterpret_cast<control_handler*>(control)->main_control());
 #endif
@@ -193,7 +193,7 @@ intptr_t control::create_double_buffered_paint_graphics(intptr_t control) {
   reinterpret_cast<control_handler*>(control)->main_control()->SetBackgroundStyle(wxBackgroundStyle::wxBG_STYLE_PAINT);
   //reinterpret_cast<control_handler*>(control)->graphic_control()->SetBackgroundColour(back_color);
 #if defined __UNIX__
-  hdc_wrapper->create<wxAutoBufferedPaintDC>(reinterpret_cast<control_handler*>(control)->control());
+  hdc_wrapper->create<wxClientDC>(reinterpret_cast<control_handler*>(control)->main_control());
 #else
   hdc_wrapper->create<wxAutoBufferedPaintDC>(reinterpret_cast<control_handler*>(control)->main_control());
 #endif
@@ -550,24 +550,6 @@ void control::resume_layout(intptr_t control) {
   reinterpret_cast<control_handler*>(control)->DecrementLayoutSuspended();
 }
 
-void control::unregister_wnd_proc(intptr_t control) {
-  if (!control) throw argument_exception(csf_);
-  if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
-    return;
-  }
-  reinterpret_cast<control_handler*>(control)->wnd_proc = nullptr;
-}
-
-void control::update(intptr_t control) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
-    return;
-  }
-  reinterpret_cast<control_handler*>(control)->main_control()->Update();
-}
-
 intptr_t control::send_message(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) {
   if (!control) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
@@ -586,4 +568,22 @@ void control::suspend_layout(intptr_t control) {
   
   if (reinterpret_cast<control_handler*>(control)->LayoutSuspendedCount() == 0) reinterpret_cast<control_handler*>(control)->control()->Freeze();
   reinterpret_cast<control_handler*>(control)->IncrementLayoutSuspended();
+}
+
+void control::unregister_wnd_proc(intptr_t control) {
+  if (!control) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
+  reinterpret_cast<control_handler*>(control)->wnd_proc = nullptr;
+}
+
+void control::update(intptr_t control) {
+  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
+  reinterpret_cast<control_handler*>(control)->main_control()->Update();
 }
