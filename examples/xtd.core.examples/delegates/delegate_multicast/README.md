@@ -1,6 +1,6 @@
 # delegate_multicast
 
-Shows how to use [xtd::delegate](../../../../src/xtd.core/include/xtd/delegate.h) class.
+Shows how to use [xtd::delegate](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1delegate_3_01result__t_07_08_4.html) class.
 
 ## Sources
 

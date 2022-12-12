@@ -1,6 +1,6 @@
 # event
 
-Shows how to use [xtd::event](../../../../src/xtd.core/include/xtd/event.h) class.
+Shows how to use [xtd::event](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1event.html) class.
 
 ## Sources
 
