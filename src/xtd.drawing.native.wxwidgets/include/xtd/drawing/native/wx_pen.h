@@ -48,7 +48,7 @@ namespace xtd {
           wxColour color;
           float width = 1.0f;
           float dash_offset = 0.0f;
-          std::vector<int8_t> dashes;
+          std::vector<xtd::sbyte> dashes;
         };
         struct texture_fill_pen {
           wx_brush brush;
@@ -81,7 +81,7 @@ namespace xtd {
           radial_gradiant_pen_.width = width;
         }
         
-        void create_solid_color_pen(const wxColour& color, float width, float dash_offset, const std::vector<int8_t>& dashes) {
+        void create_solid_color_pen(const wxColour& color, float width, float dash_offset, const std::vector<xtd::sbyte>& dashes) {
           pen_type_ = pen_type::solid_color;
           solid_color_pen_.color = color;
           solid_color_pen_.dash_offset = dash_offset;
