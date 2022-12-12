@@ -95,15 +95,15 @@ namespace xtd {
     /// any result = convert::to_any(value);
     /// @endcode
     static std::any to_any(wchar value) noexcept;
-    /// @brief Convert decimal_t to std::any.
+    /// @brief Convert decimal to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
+    /// decimal value = 42.50l;
     /// any result = convert::to_any(value);
     /// @endcode
-    static std::any to_any(decimal_t value) noexcept;
+    static std::any to_any(decimal value) noexcept;
     /// @brief Convert double to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
@@ -327,15 +327,15 @@ namespace xtd {
     /// bool result = convert::to_boolean(value);
     /// @endcode
     static bool to_boolean(wchar value);
-    /// @brief Convert decimal_t to bool.
+    /// @brief Convert decimal to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
+    /// decimal value = 42.50l;
     /// bool result = convert::to_boolean(value);
     /// @endcode
-    static bool to_boolean(decimal_t value) noexcept;
+    static bool to_boolean(decimal value) noexcept;
     /// @brief Convert double to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
@@ -553,17 +553,17 @@ namespace xtd {
     /// xtd::byte result = convert::to_byte(value);
     /// @endcode
     static xtd::byte to_byte(wchar value);
-    /// @brief Convert decimal_t to byte.
+    /// @brief Convert decimal to byte.
     /// @param value object to convert.
     /// @remarks The result is rounded.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @return A new xtd::byte object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
+    /// decimal value = 42.50l;
     /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static xtd::byte to_byte(decimal_t value);
+    static xtd::byte to_byte(decimal value);
     /// @brief Convert double to byte.
     /// @param value object to convert.
     /// @return A new xtd::byte object converted from value.
@@ -802,16 +802,16 @@ namespace xtd {
     /// char result = convert::to_char(value);
     /// @endcode
     static char to_char(wchar value);
-    /// @brief Convert decimal_t to char.
+    /// @brief Convert decimal to char.
     /// @param value object to convert.
     /// @remarks The result is rounded.
     /// @return A new char object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
+    /// decimal value = 42.50l;
     /// char result = convert::to_char(value);
     /// @endcode
-    static char to_char(decimal_t value);
+    static char to_char(decimal value);
     /// @brief Convert double to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
@@ -1039,16 +1039,16 @@ namespace xtd {
     /// char8 result = convert::to_char8(value);
     /// @endcode
     static char8 to_char8(wchar value);
-    /// @brief Convert decimal_t to char8.
+    /// @brief Convert decimal to char8.
     /// @param value object to convert.
     /// @remarks The result is rounded.
     /// @return A new char8 object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
+    /// decimal value = 42.50l;
     /// char8 result = convert::to_char8(value);
     /// @endcode
-    static char8 to_char8(decimal_t value);
+    static char8 to_char8(decimal value);
     /// @brief Convert double to char8.
     /// @param value object to convert.
     /// @return A new char8 object converted from value.
@@ -1274,16 +1274,16 @@ namespace xtd {
     /// char16 result = convert::to_char16(value);
     /// @endcode
     static char16 to_char16(wchar value) noexcept;
-    /// @brief Convert decimal_t to char16.
+    /// @brief Convert decimal to char16.
     /// @param value object to convert.
     /// @remarks The result is rounded.
     /// @return A new char16 object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
+    /// decimal value = 42.50l;
     /// char16 result = convert::to_char16(value);
     /// @endcode
-    static char16 to_char16(decimal_t value);
+    static char16 to_char16(decimal value);
     /// @brief Convert double to char16.
     /// @param value object to convert.
     /// @return A new char16 object converted from value.
@@ -1507,16 +1507,16 @@ namespace xtd {
     /// char32 result = convert::to_char32(value);
     /// @endcode
     static char32 to_char32(wchar value) noexcept;
-    /// @brief Convert decimal_t to char32.
+    /// @brief Convert decimal to char32.
     /// @param value object to convert.
     /// @remarks The result is rounded.
     /// @return A new char32 object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
+    /// decimal value = 42.50l;
     /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32 to_char32(decimal_t value);
+    static char32 to_char32(decimal value);
     /// @brief Convert double to char32.
     /// @param value object to convert.
     /// @return A new char32 object converted from value.
@@ -1740,16 +1740,16 @@ namespace xtd {
     /// wchar result = convert::to_wchar(value);
     /// @endcode
     static wchar to_wchar(wchar value) noexcept;
-    /// @brief Convert decimal_t to wchar.
+    /// @brief Convert decimal to wchar.
     /// @param value object to convert.
     /// @remarks The result is rounded.
     /// @return A new wchar object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
+    /// decimal value = 42.50l;
     /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar to_wchar(decimal_t value);
+    static wchar to_wchar(decimal value);
     /// @brief Convert double to wchar.
     /// @param value object to convert.
     /// @return A new wchar object converted from value.
@@ -1903,225 +1903,225 @@ namespace xtd {
     
     /// @brief Convert std::any to decimal.
     /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @par Examples
     /// @code
     /// std::any value = 42;
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(std::any value);
+    static decimal to_decimal(std::any value);
     /// @brief Convert bool to decimal.
     /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @par Examples
     /// @code
     /// bool value = true;
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(bool value) noexcept;
+    static decimal to_decimal(bool value) noexcept;
     /// @brief Convert xtd::byte to decimal.
     /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @par Examples
     /// @code
     /// xtd::byte value = 42;
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(xtd::byte value) noexcept;
+    static decimal to_decimal(xtd::byte value) noexcept;
     /// @brief Convert char to decimal.
     /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @par Examples
     /// @code
     /// char value = 'a';
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(char value) noexcept;
+    static decimal to_decimal(char value) noexcept;
     /// @brief Convert char8 to decimal.
     /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @par Examples
     /// @code
     /// char8 value = u8'a';
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(char8 value) noexcept;
+    static decimal to_decimal(char8 value) noexcept;
     /// @brief Convert char16 to decimal.
     /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @par Examples
     /// @code
     /// char16 value = u'a';
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(char16 value) noexcept;
+    static decimal to_decimal(char16 value) noexcept;
     /// @brief Convert char32 to decimal.
     /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @par Examples
     /// @code
     /// char32 value = U'a';
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(char32 value) noexcept;
+    static decimal to_decimal(char32 value) noexcept;
     /// @brief Convert char32 to decimal.
     /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @par Examples
     /// @code
     /// wchar value = L'a';
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(wchar value) noexcept;
-    /// @brief Convert decimal_t to decimal.
+    static decimal to_decimal(wchar value) noexcept;
+    /// @brief Convert decimal to decimal.
     /// @param value object to convert.
     /// @remarks The result is rounded.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal value = 42.50l;
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(decimal_t value) noexcept;
+    static decimal to_decimal(decimal value) noexcept;
     /// @brief Convert double to decimal.
     /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @remarks The result is rounded.
     /// @par Examples
     /// @code
     /// double value = 42.50;
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(double value) noexcept;
+    static decimal to_decimal(double value) noexcept;
     /// @brief Convert float to decimal.
     /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @remarks The result is rounded.
     /// @par Examples
     /// @code
     /// float value = 42.50f;
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(float value) noexcept;
+    static decimal to_decimal(float value) noexcept;
     /// @brief Convert int16 to decimal.
     /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @par Examples
     /// @code
     /// int16 value = 42;
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(int16 value) noexcept;
+    static decimal to_decimal(int16 value) noexcept;
     /// @brief Convert int32 to decimal.
     /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @par Examples
     /// @code
     /// int32 value = 42;
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(int32 value) noexcept;
+    static decimal to_decimal(int32 value) noexcept;
     /// @brief Convert int64 to decimal.
     /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @par Examples
     /// @code
     /// int64 value = 42l;
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(int64 value) noexcept;
+    static decimal to_decimal(int64 value) noexcept;
     /// @brief Convert llong_t to decimal.
     /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @par Examples
     /// @code
     /// llong_t value = 42ll;
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(llong_t value) noexcept;
+    static decimal to_decimal(llong_t value) noexcept;
     /// @brief Convert sbyte to decimal.
     /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @par Examples
     /// @code
     /// sbyte value = 42;
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(sbyte value) noexcept;
+    static decimal to_decimal(sbyte value) noexcept;
     /// @brief Convert uint16_t to decimal.
     /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @par Examples
     /// @code
     /// uint16_t value = 42u;
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(uint16_t value) noexcept;
+    static decimal to_decimal(uint16_t value) noexcept;
     /// @brief Convert uint32 to decimal.
     /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @par Examples
     /// @code
     /// uint32 value = 42u;
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(uint32 value) noexcept;
+    static decimal to_decimal(uint32 value) noexcept;
     /// @brief Convert uint64 to decimal.
     /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @par Examples
     /// @code
     /// uint64t value = 42ul;
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(uint64 value) noexcept;
+    static decimal to_decimal(uint64 value) noexcept;
     /// @brief Convert llong_t to decimal.
     /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @par Examples
     /// @code
     /// ullong_t value = 42ull;
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(ullong_t value) noexcept;
+    static decimal to_decimal(ullong_t value) noexcept;
     /// @brief Convert string to decimal.
     /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @exception xtd::atgument_exception value does not represent a byte.
     /// @par Examples
     /// @code
     /// ustring value = "42";
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal_t to_decimal(const xtd::ustring& value);
+    static decimal to_decimal(const xtd::ustring& value);
     /// @cond
-    static decimal_t to_decimal(const std::string& value);
-    static decimal_t to_decimal(const std::u8string& value);
-    static decimal_t to_decimal(const std::u16string& value);
-    static decimal_t to_decimal(const std::u32string& value);
-    static decimal_t to_decimal(const std::wstring& value);
-    static decimal_t to_decimal(const char* value);
-    static decimal_t to_decimal(char* value);
-    static decimal_t to_decimal(const char8* value);
-    static decimal_t to_decimal(char8* value);
-    static decimal_t to_decimal(const char16* value);
-    static decimal_t to_decimal(char16* value);
-    static decimal_t to_decimal(const char32* value);
-    static decimal_t to_decimal(char32* value);
-    static decimal_t to_decimal(const wchar* value);
-    static decimal_t to_decimal(wchar* value);
+    static decimal to_decimal(const std::string& value);
+    static decimal to_decimal(const std::u8string& value);
+    static decimal to_decimal(const std::u16string& value);
+    static decimal to_decimal(const std::u32string& value);
+    static decimal to_decimal(const std::wstring& value);
+    static decimal to_decimal(const char* value);
+    static decimal to_decimal(char* value);
+    static decimal to_decimal(const char8* value);
+    static decimal to_decimal(char8* value);
+    static decimal to_decimal(const char16* value);
+    static decimal to_decimal(char16* value);
+    static decimal to_decimal(const char32* value);
+    static decimal to_decimal(char32* value);
+    static decimal to_decimal(const wchar* value);
+    static decimal to_decimal(wchar* value);
     /// @endcond
     /// @brief Convert type_t to decimal.
     /// @param value object to convert.
-    /// @return A new decimal_t object converted from value.
+    /// @return A new decimal object converted from value.
     /// @par Examples
     /// @code
     /// address_family value = address_family::inter_network;
-    /// decimal_t result = convert::to_decimal(value);
+    /// decimal result = convert::to_decimal(value);
     /// @endcode
     template<typename type_t>
-    static decimal_t to_decimal(type_t value) noexcept {
-      return static_cast<decimal_t>(value);
+    static decimal to_decimal(type_t value) noexcept {
+      return static_cast<decimal>(value);
     }
     
     /// @brief Convert std::any to double.
@@ -2196,16 +2196,16 @@ namespace xtd {
     /// double result = convert::to_double(value);
     /// @endcode
     static double to_double(wchar value) noexcept;
-    /// @brief Convert decimal_t to double.
+    /// @brief Convert decimal to double.
     /// @param value object to convert.
     /// @remarks The result is rounded.
     /// @return A new double object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
+    /// decimal value = 42.50l;
     /// double result = convert::to_double(value);
     /// @endcode
-    static double to_double(decimal_t value) noexcept;
+    static double to_double(decimal value) noexcept;
     /// @brief Convert double to double.
     /// @param value object to convert.
     /// @return A new double object converted from value.
@@ -2419,16 +2419,16 @@ namespace xtd {
     /// float result = convert::to_single(value);
     /// @endcode
     static float to_single(wchar value) noexcept;
-    /// @brief Convert decimal_t to single.
+    /// @brief Convert decimal to single.
     /// @param value object to convert.
     /// @remarks The result is rounded.
     /// @return A new float object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
+    /// decimal value = 42.50l;
     /// float result = convert::to_single(value);
     /// @endcode
-    static float to_single(decimal_t value) noexcept;
+    static float to_single(decimal value) noexcept;
     /// @brief Convert double to single.
     /// @param value object to convert.
     /// @return A new float object converted from value.
@@ -2643,17 +2643,17 @@ namespace xtd {
     /// int16 result = convert::to_int16(value);
     /// @endcode
     static int16 to_int16(wchar value) noexcept;
-    /// @brief Convert decimal_t to int16.
+    /// @brief Convert decimal to int16.
     /// @param value object to convert.
     /// @remarks The result is rounded.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @return A new int16 object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
+    /// decimal value = 42.50l;
     /// int16 result = convert::to_int16(value);
     /// @endcode
-    static int16 to_int16(decimal_t value);
+    static int16 to_int16(decimal value);
     /// @brief Convert double to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
@@ -2887,17 +2887,17 @@ namespace xtd {
     /// int32 result = convert::to_int32(value);
     /// @endcode
     static int32 to_int32(wchar value) noexcept;
-    /// @brief Convert decimal_t to int32.
+    /// @brief Convert decimal to int32.
     /// @param value object to convert.
     /// @remarks The result is rounded.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @return A new int32 object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
+    /// decimal value = 42.50l;
     /// int32 result = convert::to_int32(value);
     /// @endcode
-    static int32 to_int32(decimal_t value);
+    static int32 to_int32(decimal value);
     /// @brief Convert double to int32.
     /// @param value object to convert.
     /// @return A new int32 object converted from value.
@@ -3128,16 +3128,16 @@ namespace xtd {
     /// int64 result = convert::to_int64(value);
     /// @endcode
     static int64 to_int64(wchar value) noexcept;
-    /// @brief Convert decimal_t to int64.
+    /// @brief Convert decimal to int64.
     /// @param value object to convert.
     /// @remarks The result is rounded.
     /// @return A new int64 object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
+    /// decimal value = 42.50l;
     /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64 to_int64(decimal_t value) noexcept;
+    static int64 to_int64(decimal value) noexcept;
     /// @brief Convert double to int64.
     /// @param value object to convert.
     /// @return A new int64 object converted from value.
@@ -3364,16 +3364,16 @@ namespace xtd {
     /// llong_t result = convert::to_llong(value);
     /// @endcode
     static llong_t to_llong(wchar value) noexcept;
-    /// @brief Convert decimal_t to llong.
+    /// @brief Convert decimal to llong.
     /// @param value object to convert.
     /// @remarks The result is rounded.
     /// @return A new llong_t object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
+    /// decimal value = 42.50l;
     /// llong_t result = convert::to_llong(value);
     /// @endcode
-    static llong_t to_llong(decimal_t value) noexcept;
+    static llong_t to_llong(decimal value) noexcept;
     /// @brief Convert double to llong.
     /// @param value object to convert.
     /// @return A new llong_t object converted from value.
@@ -3603,17 +3603,17 @@ namespace xtd {
     /// sbyte result = convert::to_sbyte(value);
     /// @endcode
     static sbyte to_sbyte(wchar value);
-    /// @brief Convert decimal_t to sbyte.
+    /// @brief Convert decimal to sbyte.
     /// @param value object to convert.
     /// @remarks The result is rounded.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @return A new sbyte object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
+    /// decimal value = 42.50l;
     /// sbyte result = convert::to_sbyte(value);
     /// @endcode
-    static sbyte to_sbyte(decimal_t value);
+    static sbyte to_sbyte(decimal value);
     /// @brief Convert double to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte object converted from value.
@@ -3850,17 +3850,17 @@ namespace xtd {
     /// uint16_t result = convert::to_uint16(value);
     /// @endcode
     static uint16_t to_uint16(wchar value) noexcept;
-    /// @brief Convert decimal_t to uint16.
+    /// @brief Convert decimal to uint16.
     /// @param value object to convert.
     /// @remarks The result is rounded.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @return A new uint16_t object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
+    /// decimal value = 42.50l;
     /// uint16_t result = convert::to_uint16(value);
     /// @endcode
-    static uint16_t to_uint16(decimal_t value);
+    static uint16_t to_uint16(decimal value);
     /// @brief Convert double to uint16.
     /// @param value object to convert.
     /// @return A new uint16_t object converted from value.
@@ -4095,17 +4095,17 @@ namespace xtd {
     /// uint32 result = convert::to_uint32(value);
     /// @endcode
     static uint32 to_uint32(wchar value) noexcept;
-    /// @brief Convert decimal_t to uint32.
+    /// @brief Convert decimal to uint32.
     /// @param value object to convert.
     /// @remarks The result is rounded.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @return A new uint32 object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
+    /// decimal value = 42.50l;
     /// uint32 result = convert::to_uint32(value);
     /// @endcode
-    static uint32 to_uint32(decimal_t value);
+    static uint32 to_uint32(decimal value);
     /// @brief Convert double to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
@@ -4339,17 +4339,17 @@ namespace xtd {
     /// uint64 result = convert::to_uint64(value);
     /// @endcode
     static uint64 to_uint64(wchar value) noexcept;
-    /// @brief Convert decimal_t to uint64.
+    /// @brief Convert decimal to uint64.
     /// @param value object to convert.
     /// @remarks The result is rounded.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @return A new uint64 object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
+    /// decimal value = 42.50l;
     /// uint64 result = convert::to_uint64(value);
     /// @endcode
-    static uint64 to_uint64(decimal_t value);
+    static uint64 to_uint64(decimal value);
     /// @brief Convert double to uint64.
     /// @param value object to convert.
     /// @return A new uint64 object converted from value.
@@ -4581,17 +4581,17 @@ namespace xtd {
     /// ullong_t result = convert::to_ullong(value);
     /// @endcode
     static ullong_t to_ullong(wchar value) noexcept;
-    /// @brief Convert decimal_t to ullong.
+    /// @brief Convert decimal to ullong.
     /// @param value object to convert.
     /// @remarks The result is rounded.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @return A new ullong_t object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
+    /// decimal value = 42.50l;
     /// ullong_t result = convert::to_ullong(value);
     /// @endcode
-    static ullong_t to_ullong(decimal_t value);
+    static ullong_t to_ullong(decimal value);
     /// @brief Convert double to ullong.
     /// @param value object to convert.
     /// @return A new ullong_t object converted from value.
@@ -4834,17 +4834,17 @@ namespace xtd {
     /// ustring result = convert::to_string(value);
     /// @endcode
     static ustring to_string(wchar value) noexcept;
-    /// @brief Convert decimal_t to ustring.
+    /// @brief Convert decimal to ustring.
     /// @param value object to convert.
     /// @remarks The result is rounded.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @return A new ustring object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
+    /// decimal value = 42.50l;
     /// ustring result = convert::to_string(value);
     /// @endcode
-    static ustring to_string(decimal_t value);
+    static ustring to_string(decimal value);
     /// @brief Convert double to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
@@ -5175,17 +5175,17 @@ namespace xtd {
     /// ustring result = convert::to_ustring(value);
     /// @endcode
     static ustring to_ustring(wchar value) noexcept;
-    /// @brief Convert decimal_t to ustring.
+    /// @brief Convert decimal to ustring.
     /// @param value object to convert.
     /// @remarks The result is rounded.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @return A new ustring object converted from value.
     /// @par Examples
     /// @code
-    /// decimal_t value = 42.50l;
+    /// decimal value = 42.50l;
     /// ustring result = convert::to_ustring(value);
     /// @endcode
-    static ustring to_ustring(decimal_t value);
+    static ustring to_ustring(decimal value);
     /// @brief Convert double to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.

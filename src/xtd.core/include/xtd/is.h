@@ -16,7 +16,7 @@ namespace xtd {
   template<typename value_t>
   inline bool is(bool value) {return false;}
   template<typename value_t>
-  inline bool is(decimal_t value) {return false;}
+  inline bool is(decimal value) {return false;}
   template<typename value_t>
   inline bool is(double value) {return false;}
   template<typename value_t>
@@ -70,12 +70,12 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// int main() {
-  ///   decimal_t d = 4.2;
-  ///   std::cout << "d " << is<decimal_t>(d) ? "is" : "isn't" << " decimal_t" << endl;
+  ///   decimal d = 4.2;
+  ///   std::cout << "d " << is<decimal>(d) ? "is" : "isn't" << " decimal" << endl;
   /// }
   /// @endcode
   template<>
-  inline bool is<decimal_t>(decimal_t value) {
+  inline bool is<decimal>(decimal value) {
     return true;
   }
   

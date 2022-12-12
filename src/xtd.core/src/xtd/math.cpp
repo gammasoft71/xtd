@@ -12,7 +12,7 @@ using namespace xtd;
 namespace {
 }
 
-decimal_t math::abs(decimal_t value) {
+decimal math::abs(decimal value) {
   return value < 0 ? -value : value;
 }
 
@@ -81,7 +81,7 @@ xtd::byte math::clamp(xtd::byte value, xtd::byte min, xtd::byte max) noexcept {
   return std::clamp(value, min, max);
 }
 
-decimal_t math::clamp(decimal_t value, decimal_t min, decimal_t max) noexcept {
+decimal math::clamp(decimal value, decimal min, decimal max) noexcept {
   return std::clamp(value, min, max);
 }
 
@@ -159,7 +159,7 @@ double math::ieee_remainder(double dividend, double divisor) {
   return divisor == 0 ? NaN : dividend - (divisor * math::round(dividend / divisor));
 }
 
-decimal_t math::floor(decimal_t value) {
+decimal math::floor(decimal value) {
   return std::floor(value);
 }
 
@@ -202,7 +202,7 @@ xtd::byte math::max(xtd::byte a, xtd::byte b) noexcept {
   return a > b ? a : b;
 }
 
-decimal_t math::max(decimal_t a, decimal_t b) noexcept {
+decimal math::max(decimal a, decimal b) noexcept {
   return a > b ? a : b;
 }
 
@@ -254,7 +254,7 @@ xtd::byte math::min(xtd::byte a, xtd::byte b) noexcept {
   return a < b ? a : b;
 }
 
-decimal_t math::min(decimal_t a, decimal_t b) noexcept {
+decimal math::min(decimal a, decimal b) noexcept {
   return a < b ? a : b;
 }
 
@@ -310,12 +310,12 @@ double math::radians_to_degrees(double radians) noexcept {
   return radians * (180 / math::pi);
 }
 
-decimal_t math::round(decimal_t value) {
+decimal math::round(decimal value) {
   return math::round(value, 0);
 }
 
-decimal_t math::round(decimal_t value, int32 decimals) {
-  decimal_t muliplicator = 1;
+decimal math::round(decimal value, int32 decimals) {
+  decimal muliplicator = 1;
   for (int32 index = 0; index < decimals; index++)
     muliplicator *= 10;
   return math::floor((value * muliplicator) + 0.5) / muliplicator;
@@ -332,7 +332,7 @@ double math::round(double value, int32 decimals) {
   return math::floor((value * multiplicator) + 0.5) / multiplicator;
 }
 
-int32 math::sign(decimal_t value) {
+int32 math::sign(decimal value) {
   if (value != value) throw arithmetic_exception(csf_);
   return value < 0 ? -1 : value == 0 ? 0 : 1;
 }

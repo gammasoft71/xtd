@@ -41,7 +41,7 @@ std::any convert::to_any(wchar value) noexcept {
   return value;
 }
 
-std::any convert::to_any(decimal_t value) noexcept {
+std::any convert::to_any(decimal value) noexcept {
   return value;
 }
 
@@ -191,7 +191,7 @@ bool convert::to_boolean(wchar value) {
   throw invalid_cast_exception(csf_);
 }
 
-bool convert::to_boolean(decimal_t value) noexcept {
+bool convert::to_boolean(decimal value) noexcept {
   return value != .0l;
 }
 
@@ -338,8 +338,8 @@ xtd::byte convert::to_byte(wchar value) {
   return static_cast<xtd::byte>(value);
 }
 
-xtd::byte convert::to_byte(decimal_t value) {
-  if (value < static_cast<decimal_t>(numeric_limits<xtd::byte>::lowest()) || value > static_cast<decimal_t>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
+xtd::byte convert::to_byte(decimal value) {
+  if (value < static_cast<decimal>(numeric_limits<xtd::byte>::lowest()) || value > static_cast<decimal>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
   return static_cast<xtd::byte>(math::round(value));
 }
 
@@ -511,7 +511,7 @@ char convert::to_char(wchar value) {
   return static_cast<char>(value);
 }
 
-char convert::to_char(decimal_t value) {
+char convert::to_char(decimal value) {
   if (value < 0.0l || value > 255.0l) throw overflow_exception(csf_);
   return static_cast<char>(math::round(value));
 }
@@ -686,7 +686,7 @@ char8 convert::to_char8(wchar value) {
   return static_cast<char8>(value);
 }
 
-char8 convert::to_char8(decimal_t value) {
+char8 convert::to_char8(decimal value) {
   if (value < 0.0l || value > 255.0l) throw overflow_exception(csf_);
   return static_cast<char8>(math::round(value));
 }
@@ -867,7 +867,7 @@ char16 convert::to_char16(wchar value) noexcept {
   return static_cast<char16>(value);
 }
 
-char16 convert::to_char16(decimal_t value) {
+char16 convert::to_char16(decimal value) {
   if (value < 0.0l || value > 65535.0l) throw overflow_exception(csf_);
   return static_cast<char16>(math::round(value));
 }
@@ -1046,7 +1046,7 @@ char32 convert::to_char32(wchar value) noexcept {
   return static_cast<char32>(value);
 }
 
-char32 convert::to_char32(decimal_t value) {
+char32 convert::to_char32(decimal value) {
   if (value < 0.0l || value > 4294967295.0l) throw overflow_exception(csf_);
   return static_cast<char32>(math::round(value));
 }
@@ -1225,7 +1225,7 @@ wchar convert::to_wchar(wchar value) noexcept {
   return value;
 }
 
-wchar convert::to_wchar(decimal_t value) {
+wchar convert::to_wchar(decimal value) {
   if (value < 0.0l || value > 65535.0l) throw overflow_exception(csf_);
   return static_cast<wchar>(math::round(value));
 }
@@ -1364,152 +1364,152 @@ wchar convert::to_wchar(wchar* value) {
   return to_char(value[0]);
 }
 
-decimal_t convert::to_decimal(any value) {
+decimal convert::to_decimal(any value) {
   try {
-    return any_cast<decimal_t>(value);
+    return any_cast<decimal>(value);
   } catch (...) {
     throw invalid_cast_exception(csf_);
   }
 }
 
-decimal_t convert::to_decimal(bool value) noexcept {
-  return static_cast<decimal_t>(value);
+decimal convert::to_decimal(bool value) noexcept {
+  return static_cast<decimal>(value);
 }
 
-decimal_t convert::to_decimal(xtd::byte value) noexcept {
-  return static_cast<decimal_t>(value);
+decimal convert::to_decimal(xtd::byte value) noexcept {
+  return static_cast<decimal>(value);
 }
 
-decimal_t convert::to_decimal(char value) noexcept {
-  return static_cast<decimal_t>(value);
+decimal convert::to_decimal(char value) noexcept {
+  return static_cast<decimal>(value);
 }
 
-decimal_t convert::to_decimal(char8 value) noexcept {
-  return static_cast<decimal_t>(value);
+decimal convert::to_decimal(char8 value) noexcept {
+  return static_cast<decimal>(value);
 }
 
-decimal_t convert::to_decimal(char16 value) noexcept {
-  return static_cast<decimal_t>(value);
+decimal convert::to_decimal(char16 value) noexcept {
+  return static_cast<decimal>(value);
 }
 
-decimal_t convert::to_decimal(char32 value) noexcept {
-  return static_cast<decimal_t>(value);
+decimal convert::to_decimal(char32 value) noexcept {
+  return static_cast<decimal>(value);
 }
 
-decimal_t convert::to_decimal(wchar value) noexcept {
-  return static_cast<decimal_t>(value);
+decimal convert::to_decimal(wchar value) noexcept {
+  return static_cast<decimal>(value);
 }
 
-decimal_t convert::to_decimal(decimal_t value) noexcept {
+decimal convert::to_decimal(decimal value) noexcept {
   return value;
 }
 
-decimal_t convert::to_decimal(double value) noexcept {
-  return static_cast<decimal_t>(value);
+decimal convert::to_decimal(double value) noexcept {
+  return static_cast<decimal>(value);
 }
 
-decimal_t convert::to_decimal(float value) noexcept {
-  return static_cast<decimal_t>(value);
+decimal convert::to_decimal(float value) noexcept {
+  return static_cast<decimal>(value);
 }
 
-decimal_t convert::to_decimal(int16 value) noexcept {
-  return static_cast<decimal_t>(value);
+decimal convert::to_decimal(int16 value) noexcept {
+  return static_cast<decimal>(value);
 }
 
-decimal_t convert::to_decimal(int32 value) noexcept {
-  return static_cast<decimal_t>(value);
+decimal convert::to_decimal(int32 value) noexcept {
+  return static_cast<decimal>(value);
 }
 
-decimal_t convert::to_decimal(int64 value) noexcept {
-  return static_cast<decimal_t>(value);
+decimal convert::to_decimal(int64 value) noexcept {
+  return static_cast<decimal>(value);
 }
 
-decimal_t convert::to_decimal(llong_t value) noexcept {
-  return static_cast<decimal_t>(value);
+decimal convert::to_decimal(llong_t value) noexcept {
+  return static_cast<decimal>(value);
 }
 
-decimal_t convert::to_decimal(sbyte value) noexcept {
-  return static_cast<decimal_t>(value);
+decimal convert::to_decimal(sbyte value) noexcept {
+  return static_cast<decimal>(value);
 }
 
-decimal_t convert::to_decimal(uint16_t value) noexcept {
-  return static_cast<decimal_t>(value);
+decimal convert::to_decimal(uint16_t value) noexcept {
+  return static_cast<decimal>(value);
 }
 
-decimal_t convert::to_decimal(uint32 value) noexcept {
-  return static_cast<decimal_t>(value);
+decimal convert::to_decimal(uint32 value) noexcept {
+  return static_cast<decimal>(value);
 }
 
-decimal_t convert::to_decimal(uint64 value) noexcept {
-  return static_cast<decimal_t>(value);
+decimal convert::to_decimal(uint64 value) noexcept {
+  return static_cast<decimal>(value);
 }
 
-decimal_t convert::to_decimal(ullong_t value) noexcept {
-  return static_cast<decimal_t>(value);
+decimal convert::to_decimal(ullong_t value) noexcept {
+  return static_cast<decimal>(value);
 }
 
-decimal_t convert::to_decimal(const ustring& value) {
-  return ustring::parse<decimal_t>(value);
+decimal convert::to_decimal(const ustring& value) {
+  return ustring::parse<decimal>(value);
 }
 
-decimal_t convert::to_decimal(const string& value) {
-  return ustring::parse<decimal_t>(value);
+decimal convert::to_decimal(const string& value) {
+  return ustring::parse<decimal>(value);
 }
 
-decimal_t convert::to_decimal(const u8string& value) {
-  return ustring::parse<decimal_t>(value);
+decimal convert::to_decimal(const u8string& value) {
+  return ustring::parse<decimal>(value);
 }
 
-decimal_t convert::to_decimal(const u16string& value) {
-  return ustring::parse<decimal_t>(value);
+decimal convert::to_decimal(const u16string& value) {
+  return ustring::parse<decimal>(value);
 }
 
-decimal_t convert::to_decimal(const u32string& value) {
-  return ustring::parse<decimal_t>(value);
+decimal convert::to_decimal(const u32string& value) {
+  return ustring::parse<decimal>(value);
 }
 
-decimal_t convert::to_decimal(const wstring& value) {
-  return ustring::parse<decimal_t>(value);
+decimal convert::to_decimal(const wstring& value) {
+  return ustring::parse<decimal>(value);
 }
 
-decimal_t convert::to_decimal(const char* value) {
-  return ustring::parse<decimal_t>(value);
+decimal convert::to_decimal(const char* value) {
+  return ustring::parse<decimal>(value);
 }
 
-decimal_t convert::to_decimal(char* value) {
-  return ustring::parse<decimal_t>(value);
+decimal convert::to_decimal(char* value) {
+  return ustring::parse<decimal>(value);
 }
 
-decimal_t convert::to_decimal(const char8* value) {
-  return ustring::parse<decimal_t>(value);
+decimal convert::to_decimal(const char8* value) {
+  return ustring::parse<decimal>(value);
 }
 
-decimal_t convert::to_decimal(char8* value) {
-  return ustring::parse<decimal_t>(value);
+decimal convert::to_decimal(char8* value) {
+  return ustring::parse<decimal>(value);
 }
 
-decimal_t convert::to_decimal(const char16* value) {
-  return ustring::parse<decimal_t>(value);
+decimal convert::to_decimal(const char16* value) {
+  return ustring::parse<decimal>(value);
 }
 
-decimal_t convert::to_decimal(char16* value) {
-  return ustring::parse<decimal_t>(value);
+decimal convert::to_decimal(char16* value) {
+  return ustring::parse<decimal>(value);
 }
 
-decimal_t convert::to_decimal(const char32* value) {
-  return ustring::parse<decimal_t>(value);
+decimal convert::to_decimal(const char32* value) {
+  return ustring::parse<decimal>(value);
 }
 
-decimal_t convert::to_decimal(char32* value) {
-  return ustring::parse<decimal_t>(value);
+decimal convert::to_decimal(char32* value) {
+  return ustring::parse<decimal>(value);
 }
 
-decimal_t convert::to_decimal(const wchar* value) {
-  return ustring::parse<decimal_t>(value);
+decimal convert::to_decimal(const wchar* value) {
+  return ustring::parse<decimal>(value);
 }
 
-decimal_t convert::to_decimal(wchar* value) {
-  return ustring::parse<decimal_t>(value);
+decimal convert::to_decimal(wchar* value) {
+  return ustring::parse<decimal>(value);
 }
 
 double convert::to_double(any value) {
@@ -1548,7 +1548,7 @@ double convert::to_double(wchar value) noexcept {
   return static_cast<double>(value);
 }
 
-double convert::to_double(decimal_t value) noexcept {
+double convert::to_double(decimal value) noexcept {
   return static_cast<double>(value);
 }
 
@@ -1696,7 +1696,7 @@ float convert::to_single(wchar value) noexcept {
   return static_cast<float>(value);
 }
 
-float convert::to_single(decimal_t value) noexcept {
+float convert::to_single(decimal value) noexcept {
   return static_cast<float>(value);
 }
 
@@ -1845,8 +1845,8 @@ int16 convert::to_int16(wchar value) noexcept {
   return static_cast<int16>(value);
 }
 
-int16 convert::to_int16(decimal_t value) {
-  if (value < static_cast<decimal_t>(numeric_limits<int16>::lowest()) || value > static_cast<decimal_t>(numeric_limits<int16>::max())) throw overflow_exception(csf_);
+int16 convert::to_int16(decimal value) {
+  if (value < static_cast<decimal>(numeric_limits<int16>::lowest()) || value > static_cast<decimal>(numeric_limits<int16>::max())) throw overflow_exception(csf_);
   return static_cast<int16>(math::round(value));
 }
 
@@ -2013,8 +2013,8 @@ int32 convert::to_int32(wchar value) noexcept {
   return static_cast<int32>(value);
 }
 
-int32 convert::to_int32(decimal_t value) {
-  if (value < static_cast<decimal_t>(numeric_limits<int32>::lowest()) || value > static_cast<decimal_t>(numeric_limits<int32>::max())) throw overflow_exception(csf_);
+int32 convert::to_int32(decimal value) {
+  if (value < static_cast<decimal>(numeric_limits<int32>::lowest()) || value > static_cast<decimal>(numeric_limits<int32>::max())) throw overflow_exception(csf_);
   return static_cast<int32>(math::round(value));
 }
 
@@ -2178,7 +2178,7 @@ int64 convert::to_int64(wchar value) noexcept {
   return static_cast<int64>(value);
 }
 
-int64 convert::to_int64(decimal_t value) noexcept {
+int64 convert::to_int64(decimal value) noexcept {
   return static_cast<int64>(math::round(value));
 }
 
@@ -2338,7 +2338,7 @@ llong_t convert::to_llong(wchar value) noexcept {
   return static_cast<llong_t>(value);
 }
 
-llong_t convert::to_llong(decimal_t value) noexcept {
+llong_t convert::to_llong(decimal value) noexcept {
   return static_cast<llong_t>(math::round(value));
 }
 
@@ -2501,8 +2501,8 @@ sbyte convert::to_sbyte(wchar value) {
   return static_cast<sbyte>(value);
 }
 
-sbyte convert::to_sbyte(decimal_t value) {
-  if (value < static_cast<decimal_t>(numeric_limits<sbyte>::lowest()) || value > static_cast<decimal_t>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
+sbyte convert::to_sbyte(decimal value) {
+  if (value < static_cast<decimal>(numeric_limits<sbyte>::lowest()) || value > static_cast<decimal>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
   return static_cast<sbyte>(math::round(value));
 }
 
@@ -2671,8 +2671,8 @@ uint16_t convert::to_uint16(wchar value) noexcept {
   return static_cast<uint16_t>(value);
 }
 
-uint16_t convert::to_uint16(decimal_t value) {
-  if (value < static_cast<decimal_t>(numeric_limits<uint16_t>::lowest()) || value > static_cast<decimal_t>(numeric_limits<uint16_t>::max())) throw overflow_exception(csf_);
+uint16_t convert::to_uint16(decimal value) {
+  if (value < static_cast<decimal>(numeric_limits<uint16_t>::lowest()) || value > static_cast<decimal>(numeric_limits<uint16_t>::max())) throw overflow_exception(csf_);
   return static_cast<uint16_t>(math::round(value));
 }
 
@@ -2840,8 +2840,8 @@ uint32 convert::to_uint32(wchar value) noexcept {
   return static_cast<uint32>(value);
 }
 
-uint32 convert::to_uint32(decimal_t value) {
-  if (value < static_cast<decimal_t>(numeric_limits<uint32>::lowest()) || value > static_cast<decimal_t>(numeric_limits<uint32>::max())) throw overflow_exception(csf_);
+uint32 convert::to_uint32(decimal value) {
+  if (value < static_cast<decimal>(numeric_limits<uint32>::lowest()) || value > static_cast<decimal>(numeric_limits<uint32>::max())) throw overflow_exception(csf_);
   return static_cast<uint32>(math::round(value));
 }
 
@@ -3008,8 +3008,8 @@ uint64 convert::to_uint64(wchar value) noexcept {
   return static_cast<uint64>(value);
 }
 
-uint64 convert::to_uint64(decimal_t value) {
-  if (value < static_cast<decimal_t>(numeric_limits<uint64>::lowest()) || value > static_cast<decimal_t>(numeric_limits<uint64>::max())) throw overflow_exception(csf_);
+uint64 convert::to_uint64(decimal value) {
+  if (value < static_cast<decimal>(numeric_limits<uint64>::lowest()) || value > static_cast<decimal>(numeric_limits<uint64>::max())) throw overflow_exception(csf_);
   return static_cast<uint64>(math::round(value));
 }
 
@@ -3174,8 +3174,8 @@ ullong_t convert::to_ullong(wchar value) noexcept {
   return static_cast<ullong_t>(value);
 }
 
-ullong_t convert::to_ullong(decimal_t value) {
-  if (value < static_cast<decimal_t>(numeric_limits<ullong_t>::lowest()) || value > static_cast<decimal_t>(numeric_limits<ullong_t>::max())) throw overflow_exception(csf_);
+ullong_t convert::to_ullong(decimal value) {
+  if (value < static_cast<decimal>(numeric_limits<ullong_t>::lowest()) || value > static_cast<decimal>(numeric_limits<ullong_t>::max())) throw overflow_exception(csf_);
   return static_cast<ullong_t>(math::round(value));
 }
 
@@ -3346,7 +3346,7 @@ ustring convert::to_string(wchar value) noexcept {
   return ustring::format("{}", value);
 }
 
-ustring convert::to_string(decimal_t value) {
+ustring convert::to_string(decimal value) {
   return ustring::format("{}", value);
 }
 
@@ -3584,7 +3584,7 @@ ustring convert::to_ustring(wchar value) noexcept {
   return to_string(value);
 }
 
-ustring convert::to_ustring(decimal_t value) {
+ustring convert::to_ustring(decimal value) {
   return to_string(value);
 }
 
