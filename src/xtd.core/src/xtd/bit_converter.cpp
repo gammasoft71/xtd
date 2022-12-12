@@ -39,7 +39,7 @@ vector<byte_t> bit_converter::get_bytes(sbyte_t value) noexcept {
   return bit_converter::get_bytes(byte_t(value));
 }
 
-vector<byte_t> bit_converter::get_bytes(int16_t value) noexcept {
+vector<byte_t> bit_converter::get_bytes(int16 value) noexcept {
   return bit_converter::get_bytes(uint16_t(value));
 }
 
@@ -112,8 +112,8 @@ double bit_converter::to_double(const vector<byte_t>& value, size_t start_index)
   return int64_bits_to_double(to_int64(value, start_index));
 }
 
-int16_t bit_converter::to_int16(const vector<byte_t>& value, size_t start_index) {
-  return int16_t(to_uint16(value, start_index));
+int16 bit_converter::to_int16(const vector<byte_t>& value, size_t start_index) {
+  return int16(to_uint16(value, start_index));
 }
 
 int32 bit_converter::to_int32(const vector<byte_t>& value, size_t start_index) {

@@ -24,8 +24,8 @@ float math::abs(float value) {
   return value < 0 ? -value : value;
 }
 
-int16_t math::abs(int16_t value) {
-  if (value == numeric_limits<int16_t>::lowest()) throw xtd::overflow_exception(csf_);
+int16 math::abs(int16 value) {
+  if (value == numeric_limits<int16>::lowest()) throw xtd::overflow_exception(csf_);
   return value < 0 ? -value : value;
 }
 
@@ -89,7 +89,7 @@ double math::clamp(double value, double min, double max) noexcept {
   return std::clamp(value, min, max);
 }
 
-int16_t math::clamp(int16_t value, int16_t min, int16_t max) noexcept {
+int16 math::clamp(int16 value, int16 min, int16 max) noexcept {
   return std::clamp(value, min, max);
 }
 
@@ -210,7 +210,7 @@ double math::max(double a, double b) noexcept {
   return a > b ? a : b;
 }
 
-int16_t math::max(int16_t a, int16_t b) noexcept {
+int16 math::max(int16 a, int16 b) noexcept {
   return a > b ? a : b;
 }
 
@@ -262,7 +262,7 @@ double math::min(double a, double b) noexcept {
   return a < b ? a : b;
 }
 
-int16_t math::min(int16_t a, int16_t b) noexcept {
+int16 math::min(int16 a, int16 b) noexcept {
   return a < b ? a : b;
 }
 
@@ -342,7 +342,7 @@ int32 math::sign(double value) {
   return value < 0.0 ? -1 : value == 0.0 ? 0 : 1;
 }
 
-int32 math::sign(int16_t value) {
+int32 math::sign(int16 value) {
   return value < 0 ? -1 : value == 0 ? 0 : 1;
 }
 

@@ -73,10 +73,10 @@ namespace xtd {
     static float abs(float value);
     
     /// @brief Returns the absolute value of a 16-bit signed integer.
-    /// @param value A number in the range std::numeric_limit<int16_t>::lowest() <= value <= std::numeric_limit<int16_t>::max().
-    /// @return A 16-bit signed integer, x, such that 0 <= x <= std::numeric_limit<int16_t>::max().
-    /// @exception xtd::overflow_exception value equals std::numeric_limit<int16_t>::lowest().
-    static int16_t abs(int16_t value);
+    /// @param value A number in the range std::numeric_limit<int16>::lowest() <= value <= std::numeric_limit<int16>::max().
+    /// @return A 16-bit signed integer, x, such that 0 <= x <= std::numeric_limit<int16>::max().
+    /// @exception xtd::overflow_exception value equals std::numeric_limit<int16>::lowest().
+    static int16 abs(int16 value);
     
     /// @brief Returns the absolute value of a 32-bit signed integer
     /// @param value A number in the range std::numeric_limit<int32>::lowest() <= value <= std::numeric_limit<int32>::max().
@@ -174,7 +174,7 @@ namespace xtd {
     /// @param min The lower bound of the result.
     /// @param max The upper bound of the result.
     /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
-    static int16_t clamp(int16_t value, int16_t min, int16_t max) noexcept;
+    static int16 clamp(int16 value, int16 min, int16 max) noexcept;
     /// @brief Returns value clamped to the inclusive range of min and max.
     /// @param value The value to be clamped.
     /// @param min The lower bound of the result.
@@ -375,7 +375,7 @@ namespace xtd {
     /// @param a The first of two 16-bit signed integers to compare.
     /// @param b The second of two 16-bit signed integers to compare.
     /// @return Parameter a or b, whichever is larger.
-    static int16_t max(int16_t a, int16_t b) noexcept;
+    static int16 max(int16 a, int16 b) noexcept;
     
     /// @brief Returns the larger of two 32-bit signed integers.
     /// @param a The first of two 32-bit signed integers to compare.
@@ -453,7 +453,7 @@ namespace xtd {
     /// @param a The first of two 16-bit signed integers to compare.
     /// @param b The second of two 16-bit signed integers to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static int16_t min(int16_t a, int16_t b) noexcept;
+    static int16 min(int16 a, int16 b) noexcept;
     
     /// @brief Returns the smaller of two 32-bit signed integers.
     /// @param a The first of two 32-bit signed integers to compare.
@@ -595,7 +595,7 @@ namespace xtd {
     /// | -1           | value is less than zero.    |
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
-    static int32 sign(int16_t value);
+    static int32 sign(int16 value);
     
     /// @brief Returns a value indicating the sign of a 32-bit signed integer.
     /// @param value A signed number.

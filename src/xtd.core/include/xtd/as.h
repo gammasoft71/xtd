@@ -230,11 +230,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
+  /// int16 value = 42;
   /// float result = as<float>(value);
   /// @endcode
   template<typename new_type_t>
-  new_type_t as(int16_t value) {
+  new_type_t as(int16 value) {
     return static_cast<new_type_t>(value);
   }
   
@@ -440,7 +440,7 @@ namespace xtd {
     throw invalid_cast_exception(csf_);
   }
   template<typename new_type_t>
-  new_type_t as(int16_t value, byte_t from_base) {
+  new_type_t as(int16 value, byte_t from_base) {
     throw invalid_cast_exception(csf_);
   }
   template<typename new_type_t>
@@ -1064,11 +1064,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
+  /// int16 value = 42;
   /// bool result = as<bool>(value);
   /// @endcode
   template<>
-  inline bool as<bool>(int16_t value) {
+  inline bool as<bool>(int16 value) {
     return xtd::convert::to_boolean(value);
   }
   
@@ -1734,11 +1734,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
+  /// int16 value = 42;
   /// byte_t result = as<byte_t>(value);
   /// @endcode
   template<>
-  inline byte_t as<byte_t>(int16_t value) {
+  inline byte_t as<byte_t>(int16 value) {
     return xtd::convert::to_byte(value);
   }
   
@@ -2424,11 +2424,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
+  /// int16 value = 42;
   /// char result = as<char>(value);
   /// @endcode
   template<>
-  inline char as<char>(int16_t value) {
+  inline char as<char>(int16 value) {
     return xtd::convert::to_char(value);
   }
   
@@ -3094,11 +3094,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
+  /// int16 value = 42;
   /// char8_t result = as<char8_t>(value);
   /// @endcode
   template<>
-  inline char8_t as<char8_t>(int16_t value) {
+  inline char8_t as<char8_t>(int16 value) {
     return xtd::convert::to_char8(value);
   }
   
@@ -3764,11 +3764,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
+  /// int16 value = 42;
   /// char16_t result = as<char16_t>(value);
   /// @endcode
   template<>
-  inline char16_t as<char16_t>(int16_t value) {
+  inline char16_t as<char16_t>(int16 value) {
     return xtd::convert::to_char16(value);
   }
   
@@ -4434,11 +4434,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
+  /// int16 value = 42;
   /// char32_t result = as<char32_t>(value);
   /// @endcode
   template<>
-  inline char32_t as<char32_t>(int16_t value) {
+  inline char32_t as<char32_t>(int16 value) {
     return xtd::convert::to_char32(value);
   }
   
@@ -5104,11 +5104,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
+  /// int16 value = 42;
   /// wchar_t result = as<wchar_t>(value);
   /// @endcode
   template<>
-  inline wchar_t as<wchar_t>(int16_t value) {
+  inline wchar_t as<wchar_t>(int16 value) {
     return xtd::convert::to_wchar(value);
   }
   
@@ -5774,11 +5774,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
+  /// int16 value = 42;
   /// decimal_t result = as<decimal_t>(value);
   /// @endcode
   template<>
-  inline decimal_t as<decimal_t>(int16_t value) {
+  inline decimal_t as<decimal_t>(int16 value) {
     return xtd::convert::to_decimal(value);
   }
   
@@ -6444,11 +6444,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
+  /// int16 value = 42;
   /// double result = as<double>(value);
   /// @endcode
   template<>
-  inline double as<double>(int16_t value) {
+  inline double as<double>(int16 value) {
     return xtd::convert::to_double(value);
   }
   
@@ -7114,11 +7114,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
+  /// int16 value = 42;
   /// float result = as<float>(value);
   /// @endcode
   template<>
-  inline float as<float>(int16_t value) {
+  inline float as<float>(int16 value) {
     return xtd::convert::to_single(value);
   }
   
@@ -7572,7 +7572,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   /// @par Namespace
   /// xtd
@@ -7582,16 +7582,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// std::any value = true;
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(std::any value) {
+  inline int16 as<int16>(std::any value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7600,16 +7600,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// bool value = true;
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(bool value) {
+  inline int16 as<int16>(bool value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7618,16 +7618,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// byte_t value = 42;
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(byte_t value) {
+  inline int16 as<int16>(byte_t value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -7637,16 +7637,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char value = 'a';
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(char value) {
+  inline int16 as<int16>(char value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -7656,16 +7656,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char8_t value = u8'a';
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(char8_t value) {
+  inline int16 as<int16>(char8_t value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -7675,16 +7675,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char16_t value = u'a';
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(char16_t value) {
+  inline int16 as<int16>(char16_t value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -7694,16 +7694,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char32_t value = u'a';
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(char32_t value) {
+  inline int16 as<int16>(char32_t value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -7713,16 +7713,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// wchar_t value = u'a';
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(wchar_t value) {
+  inline int16 as<int16>(wchar_t value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7731,16 +7731,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// decimal_t value = 42.50l;
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(decimal_t value) {
+  inline int16 as<int16>(decimal_t value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7749,16 +7749,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// double value = 42.50;
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(double value) {
+  inline int16 as<int16>(double value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7767,16 +7767,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// float value = 42.50f;
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(float value) {
+  inline int16 as<int16>(float value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7784,17 +7784,17 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
-  /// int16_t result = as<int16_t>(value);
+  /// int16 value = 42;
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(int16_t value) {
+  inline int16 as<int16>(int16 value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7803,16 +7803,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// int32 value = 42;
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(int32 value) {
+  inline int16 as<int16>(int32 value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7821,16 +7821,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// int64_t value = 42l;
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(int64_t value) {
+  inline int16 as<int16>(int64_t value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7839,16 +7839,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// llong_t value = 42ll;
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(llong_t value) {
+  inline int16 as<int16>(llong_t value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7857,16 +7857,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// sbyte_t value = 42ll;
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(sbyte_t value) {
+  inline int16 as<int16>(sbyte_t value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7875,16 +7875,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// uint16_t value = 42u;
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(uint16_t value) {
+  inline int16 as<int16>(uint16_t value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7893,16 +7893,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// uint32 value = 42u;
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(uint32 value) {
+  inline int16 as<int16>(uint32 value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7911,16 +7911,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// uint64_t value = 42ul;
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(uint64_t value) {
+  inline int16 as<int16>(uint64_t value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7929,16 +7929,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// ullong_t value = 42ull;
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(ullong_t value) {
+  inline int16 as<int16>(ullong_t value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -7948,17 +7948,17 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// ustring value = "42";
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(const xtd::ustring& value) {
+  inline int16 as<int16>(const xtd::ustring& value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a int16.
   /// @par Namespace
   /// xtd
@@ -7968,16 +7968,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// ustring value = "0x2A";
-  /// int16_t result = as<int16_t>(value, 16);
+  /// int16 result = as<int16>(value, 16);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(const xtd::ustring& value, byte_t from_base) {
+  inline int16 as<int16>(const xtd::ustring& value, byte_t from_base) {
     return xtd::convert::to_int16(value, from_base);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -7987,16 +7987,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// string value = "42";
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(const std::string& value) {
+  inline int16 as<int16>(const std::string& value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -8006,16 +8006,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// u8string value = u8"42";
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(const std::u8string& value) {
+  inline int16 as<int16>(const std::u8string& value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -8025,16 +8025,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// u16string value = u"42";
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(const std::u16string& value) {
+  inline int16 as<int16>(const std::u16string& value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -8044,16 +8044,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// u32string value = U"42";
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(const std::u32string& value) {
+  inline int16 as<int16>(const std::u32string& value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -8063,16 +8063,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// wstring value = L"42";
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(const std::wstring& value) {
+  inline int16 as<int16>(const std::wstring& value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -8082,16 +8082,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const char* value = "42";
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(const char* value) {
+  inline int16 as<int16>(const char* value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -8101,16 +8101,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char* value = "42";
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(char* value) {
+  inline int16 as<int16>(char* value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -8120,16 +8120,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const char8_t* value = u8"42";
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(const char8_t* value) {
+  inline int16 as<int16>(const char8_t* value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -8139,16 +8139,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char8_t* value = u8"42";
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(char8_t* value) {
+  inline int16 as<int16>(char8_t* value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -8158,16 +8158,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const char16_t* value = u"42";
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(const char16_t* value) {
+  inline int16 as<int16>(const char16_t* value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -8177,16 +8177,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char16_t* value = u"42";
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(char16_t* value) {
+  inline int16 as<int16>(char16_t* value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -8196,16 +8196,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const char32_t* value = U"42";
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(const char32_t* value) {
+  inline int16 as<int16>(const char32_t* value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -8215,16 +8215,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char32_t* value = U"42";
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(char32_t* value) {
+  inline int16 as<int16>(char32_t* value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -8234,16 +8234,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const wchar_t* value = L"42";
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(const wchar_t* value) {
+  inline int16 as<int16>(const wchar_t* value) {
     return xtd::convert::to_int16(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new int16_t object converted from value.
+  /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -8253,10 +8253,10 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// wchar_t* value = L"42";
-  /// int16_t result = as<int16_t>(value);
+  /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16_t as<int16_t>(wchar_t* value) {
+  inline int16 as<int16>(wchar_t* value) {
     return xtd::convert::to_int16(value);
   }
   
@@ -8474,11 +8474,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
+  /// int16 value = 42;
   /// int32 result = as<int32>(value);
   /// @endcode
   template<>
-  inline int32 as<int32>(int16_t value) {
+  inline int32 as<int32>(int16 value) {
     return xtd::convert::to_int32(value);
   }
   
@@ -9164,11 +9164,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
+  /// int16 value = 42;
   /// int64_t result = as<int64_t>(value);
   /// @endcode
   template<>
-  inline int64_t as<int64_t>(int16_t value) {
+  inline int64_t as<int64_t>(int16 value) {
     return xtd::convert::to_int64(value);
   }
   
@@ -9854,11 +9854,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
+  /// int16 value = 42;
   /// llong_t result = as<llong_t>(value);
   /// @endcode
   template<>
-  inline llong_t as<llong_t>(int16_t value) {
+  inline llong_t as<llong_t>(int16 value) {
     return xtd::convert::to_llong(value);
   }
   
@@ -10544,11 +10544,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
+  /// int16 value = 42;
   /// sbyte_t result = as<sbyte_t>(value);
   /// @endcode
   template<>
-  inline sbyte_t as<sbyte_t>(int16_t value) {
+  inline sbyte_t as<sbyte_t>(int16 value) {
     return xtd::convert::to_sbyte(value);
   }
   
@@ -11234,11 +11234,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
+  /// int16 value = 42;
   /// uint16_t result = as<uint16_t>(value);
   /// @endcode
   template<>
-  inline uint16_t as<uint16_t>(int16_t value) {
+  inline uint16_t as<uint16_t>(int16 value) {
     return xtd::convert::to_uint16(value);
   }
   
@@ -11924,11 +11924,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
+  /// int16 value = 42;
   /// uint32 result = as<uint32>(value);
   /// @endcode
   template<>
-  inline uint32 as<uint32>(int16_t value) {
+  inline uint32 as<uint32>(int16 value) {
     return xtd::convert::to_uint32(value);
   }
   
@@ -12614,11 +12614,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
+  /// int16 value = 42;
   /// uint64_t result = as<uint64_t>(value);
   /// @endcode
   template<>
-  inline uint64_t as<uint64_t>(int16_t value) {
+  inline uint64_t as<uint64_t>(int16 value) {
     return xtd::convert::to_uint64(value);
   }
   
@@ -13304,11 +13304,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
+  /// int16 value = 42;
   /// ullong_t result = as<ullong_t>(value);
   /// @endcode
   template<>
-  inline ullong_t as<ullong_t>(int16_t value) {
+  inline ullong_t as<ullong_t>(int16 value) {
     return xtd::convert::to_ullong(value);
   }
   
@@ -14014,11 +14014,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
+  /// int16 value = 42;
   /// ullong_t result = as<ullong_t>(value);
   /// @endcode
   template<>
-  inline ustring as<ustring>(int16_t value) {
+  inline ustring as<ustring>(int16 value) {
     return xtd::convert::to_string(value);
   }
   
@@ -14034,11 +14034,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// int16_t value = 42;
+  /// int16 value = 42;
   /// ustring result = as<ustring>(value, 16);
   /// @endcode
   template<>
-  inline ustring as<ustring>(int16_t value, byte_t from_base) {
+  inline ustring as<ustring>(int16 value, byte_t from_base) {
     return xtd::convert::to_string(value, from_base);
   }
   
