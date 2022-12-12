@@ -75,7 +75,7 @@ namespace {
   }
 }
 
-void graphics::clear(intptr_t handle, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
+void graphics::clear(intptr_t handle, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b) {
   if (handle == 0) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   auto path = graphics.CreatePath();
@@ -220,7 +220,7 @@ void graphics::draw_image(intptr_t handle, intptr_t image, float x, float y) {
 void graphics::draw_image_disabled(intptr_t handle, intptr_t image, float x, float y, float brightness) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
-  wxBitmap bitmap = wxBitmap(*reinterpret_cast<wxImage*>(image)).ConvertToDisabled(static_cast<uint8_t>(255 * brightness));
+  wxBitmap bitmap = wxBitmap(*reinterpret_cast<wxImage*>(image)).ConvertToDisabled(static_cast<xtd::byte>(255 * brightness));
   graphics.DrawBitmap(bitmap, x, y, bitmap.GetWidth(), bitmap.GetHeight());
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
@@ -583,7 +583,7 @@ intptr_t graphics::get_hdc(intptr_t handle) {
   return reinterpret_cast<intptr_t>(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc().GetHandle());
 }
 
-void graphics::get_nearest_color(intptr_t handle, uint8_t original_a, uint8_t original_r, uint8_t original_g, uint8_t original_b, uint8_t& nearest_a, uint8_t& nearest_r, uint8_t& nearest_g, uint8_t& nearest_b) {
+void graphics::get_nearest_color(intptr_t handle, xtd::byte original_a, xtd::byte original_r, xtd::byte original_g, xtd::byte original_b, xtd::byte& nearest_a, xtd::byte& nearest_r, xtd::byte& nearest_g, xtd::byte& nearest_b) {
   // Not defined in wxWidgets
   nearest_a = original_a;
   nearest_r = original_r;

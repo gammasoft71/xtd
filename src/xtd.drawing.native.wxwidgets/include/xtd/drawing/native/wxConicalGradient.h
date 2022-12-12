@@ -36,7 +36,7 @@ private:
     return degrees * (PI / 180);
   }
   
-  static uint8_t Alpha(float angle, float startAngle, float endAngle, const wxColour& startColor, const wxColor& endColor) noexcept {
+  static xtd::byte Alpha(float angle, float startAngle, float endAngle, const wxColour& startColor, const wxColor& endColor) noexcept {
     auto percent = (angle - startAngle) / (endAngle - startAngle);
     return LerpAlpha(startColor, endColor, percent);
   }
@@ -89,8 +89,8 @@ private:
     return wxColour(red, green, blue);
   }
   
-  static uint8_t LerpAlpha(const wxColour& startColor, const wxColour& endColor, float percent) noexcept {
-    return static_cast<uint8_t>(static_cast<float>(startColor.Alpha()) + percent * (endColor.Alpha() - startColor.Alpha()));
+  static xtd::byte LerpAlpha(const wxColour& startColor, const wxColour& endColor, float percent) noexcept {
+    return static_cast<xtd::byte>(static_cast<float>(startColor.Alpha()) + percent * (endColor.Alpha() - startColor.Alpha()));
   }
   
   static wxPoint GetPointForAngle(double angle, const wxSize& size, const wxPoint& center) noexcept {

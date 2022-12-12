@@ -159,16 +159,16 @@ const color color::yellow_green = color::from_known_color(known_color::yellow_gr
 color::color(const color& color, const known_color& known_color) : argb_(color.argb_), handle_(color.handle_), known_color_(known_color), name_(ustring::format("{}", known_color)), empty_(false) {
 }
 
-uint8_t color::a() const noexcept {
-  return (uint8_t)((to_argb() & 0xFF000000) >> 24);
+xtd::byte color::a() const noexcept {
+  return (xtd::byte)((to_argb() & 0xFF000000) >> 24);
 }
 
-uint8_t color::b() const noexcept {
-  return (uint8_t)(to_argb() & 0x000000FF);
+xtd::byte color::b() const noexcept {
+  return (xtd::byte)(to_argb() & 0x000000FF);
 }
 
-uint8_t color::g() const noexcept {
-  return (uint8_t)((to_argb() & 0x0000FF00) >> 8);
+xtd::byte color::g() const noexcept {
+  return (xtd::byte)((to_argb() & 0x0000FF00) >> 8);
 }
 
 intptr_t color::handle() const noexcept {
@@ -203,12 +203,12 @@ xtd::ustring color::name() const noexcept {
   return name_;
 }
 
-uint8_t color::r() const noexcept {
-  return (uint8_t)((to_argb() & 0x00FF0000) >> 16);
+xtd::byte color::r() const noexcept {
+  return (xtd::byte)((to_argb() & 0x00FF0000) >> 16);
 }
 
 color color::average(const color& color1, const color& color2, double weight, bool average_alpha) noexcept {
-  return from_argb(average_alpha ? static_cast<uint8_t>(color1.a() * (1 - weight) + color2.a() * weight) : static_cast<uint8_t>(color1.a()), static_cast<uint8_t>(color1.r() * (1 - weight) + color2.r() * weight), static_cast<uint8_t>(color1.g() * (1 - weight) + color2.g() * weight), static_cast<uint8_t>(color1.b() * (1 - weight) + color2.b() * weight));
+  return from_argb(average_alpha ? static_cast<xtd::byte>(color1.a() * (1 - weight) + color2.a() * weight) : static_cast<xtd::byte>(color1.a()), static_cast<xtd::byte>(color1.r() * (1 - weight) + color2.r() * weight), static_cast<xtd::byte>(color1.g() * (1 - weight) + color2.g() * weight), static_cast<xtd::byte>(color1.b() * (1 - weight) + color2.b() * weight));
 }
 
 color color::average(const color& color1, const color& color2, double weight) noexcept {
@@ -231,15 +231,15 @@ color color::from_argb(uint32_t argb) noexcept {
   return color(argb);
 }
 
-color color::from_argb(uint8_t alpha, const color& baseColor) noexcept {
+color color::from_argb(xtd::byte alpha, const color& baseColor) noexcept {
   return color((alpha << 24) + ((baseColor.handle_ ? native::system_colors::to_argb(baseColor.handle_) : baseColor.argb_) & 0x00FFFFFF));
 }
 
-color color::from_argb(uint8_t alpha, uint8_t red, uint8_t green, uint8_t blue) noexcept {
+color color::from_argb(xtd::byte alpha, xtd::byte red, xtd::byte green, xtd::byte blue) noexcept {
   return color(((uint32_t)alpha << 24) + ((uint32_t)red << 16) + ((uint32_t)green << 8) + blue);
 }
 
-color color::from_argb(uint8_t red, uint8_t green, uint8_t blue) noexcept {
+color color::from_argb(xtd::byte red, xtd::byte green, xtd::byte blue) noexcept {
   return from_argb(0xFF, red, green, blue);
 }
 
@@ -249,7 +249,7 @@ color color::from_handle(intptr_t handle) noexcept {
 
 color color::from_hsb(float hue, float saturation, float brightness) noexcept {
   // algorithm version (see https://www.programmingalgorithms.com/algorithm/hsv-to-rgb)
-  if (saturation == 0) return color::from_argb(255, static_cast<uint8_t>(brightness * 255.0f), static_cast<uint8_t>(brightness * 255.0f), static_cast<uint8_t>(brightness * 255.0f));
+  if (saturation == 0) return color::from_argb(255, static_cast<xtd::byte>(brightness * 255.0f), static_cast<xtd::byte>(brightness * 255.0f), static_cast<xtd::byte>(brightness * 255.0f));
   
   hue = hue >= 360 ? 0 : hue / 60;
   
@@ -259,18 +259,18 @@ color color::from_hsb(float hue, float saturation, float brightness) noexcept {
   float t = brightness * (1.0f - (saturation * (1.0f - f)));
   
   switch (static_cast<int32_t>(trunc(hue))) {
-    case 0: return color::from_argb(255, static_cast<uint8_t>(brightness * 255.0f), static_cast<uint8_t>(t * 255.0f), static_cast<uint8_t>(p * 255.0f));
-    case 1: return color::from_argb(255, static_cast<uint8_t>(q * 255.0f), static_cast<uint8_t>(brightness * 255.0f), static_cast<uint8_t>(p * 255.0f));
-    case 2: return color::from_argb(255, static_cast<uint8_t>(p * 255.0f),  static_cast<uint8_t>(brightness * 255.0f), static_cast<uint8_t>(t * 255.0f));
-    case 3: return color::from_argb(255, static_cast<uint8_t>(p * 255.0f), static_cast<uint8_t>(q * 255.0f), static_cast<uint8_t>(brightness * 255.0f));
-    case 4: return color::from_argb(255, static_cast<uint8_t>(t * 255.0f), static_cast<uint8_t>(p * 255.0f), static_cast<uint8_t>(brightness * 255.0f));
-    default: return color::from_argb(255, static_cast<uint8_t>(brightness * 255.0f), static_cast<uint8_t>(p * 255.0f), static_cast<uint8_t>(q * 255.0f));
+    case 0: return color::from_argb(255, static_cast<xtd::byte>(brightness * 255.0f), static_cast<xtd::byte>(t * 255.0f), static_cast<xtd::byte>(p * 255.0f));
+    case 1: return color::from_argb(255, static_cast<xtd::byte>(q * 255.0f), static_cast<xtd::byte>(brightness * 255.0f), static_cast<xtd::byte>(p * 255.0f));
+    case 2: return color::from_argb(255, static_cast<xtd::byte>(p * 255.0f),  static_cast<xtd::byte>(brightness * 255.0f), static_cast<xtd::byte>(t * 255.0f));
+    case 3: return color::from_argb(255, static_cast<xtd::byte>(p * 255.0f), static_cast<xtd::byte>(q * 255.0f), static_cast<xtd::byte>(brightness * 255.0f));
+    case 4: return color::from_argb(255, static_cast<xtd::byte>(t * 255.0f), static_cast<xtd::byte>(p * 255.0f), static_cast<xtd::byte>(brightness * 255.0f));
+    default: return color::from_argb(255, static_cast<xtd::byte>(brightness * 255.0f), static_cast<xtd::byte>(p * 255.0f), static_cast<xtd::byte>(q * 255.0f));
   }
 }
 
 color color::from_hsl(float hue, float saturation, float lightness) noexcept {
   // algorithm version (see https://www.programmingalgorithms.com/algorithm/hsl-to-rgb)
-  if (saturation == 0) return color::from_argb(255, static_cast<uint8_t>(lightness * 255.0f), static_cast<uint8_t>(lightness * 255.0f), static_cast<uint8_t>(lightness * 255.0f));
+  if (saturation == 0) return color::from_argb(255, static_cast<xtd::byte>(lightness * 255.0f), static_cast<xtd::byte>(lightness * 255.0f), static_cast<xtd::byte>(lightness * 255.0f));
   
   auto hue_to_rgb = [](float v1, float v2, float vh)->float {
     if (vh < 0) vh += 1;
@@ -285,7 +285,7 @@ color color::from_hsl(float hue, float saturation, float lightness) noexcept {
   float v2 = (lightness < 0.5f) ? (lightness * (1 + saturation)) : ((lightness + saturation) - (lightness * saturation));
   float v1 = 2 * lightness - v2;
   
-  return color::from_argb(255, static_cast<uint8_t>(hue_to_rgb(v1, v2, hue + (1.0f / 3)) * 255.0f), static_cast<uint8_t>(hue_to_rgb(v1, v2, hue) * 255.0f), static_cast<uint8_t>(hue_to_rgb(v1, v2, hue - (1.0f / 3)) * 255.0f));
+  return color::from_argb(255, static_cast<xtd::byte>(hue_to_rgb(v1, v2, hue + (1.0f / 3)) * 255.0f), static_cast<xtd::byte>(hue_to_rgb(v1, v2, hue) * 255.0f), static_cast<xtd::byte>(hue_to_rgb(v1, v2, hue - (1.0f / 3)) * 255.0f));
 }
 
 color color::from_known_color(known_color color) {
@@ -544,7 +544,7 @@ color color::parse(const ustring& color) noexcept {
   try {
     vector<ustring> argb = color.replace("color [a=", "").replace(" r=", "").replace(" g=", "").replace("b=", "").replace("]", "").split({','});
     if (argb.size() == 1) return color::from_argb(xtd::parse<uint32_t>(argb.at(0), xtd::number_styles::hex_number));
-    return color::from_argb(ustring::parse<uint8_t>(argb.at(0)), ustring::parse<uint8_t>(argb.at(1)), ustring::parse<uint8_t>(argb.at(2)), ustring::parse<uint8_t>(argb.at(3)));
+    return color::from_argb(ustring::parse<xtd::byte>(argb.at(0)), ustring::parse<xtd::byte>(argb.at(1)), ustring::parse<xtd::byte>(argb.at(2)), ustring::parse<xtd::byte>(argb.at(3)));
   } catch (...) {
     return color::from_name(color.replace("]", "").replace("color [", ""));
   }

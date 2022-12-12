@@ -72,7 +72,7 @@ namespace xtd {
       /// @param gdi_vertical_font A boolean value indicating whether the new xtd::drawing::font is derived from a GDI vertical font.
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
       /// @remarks The gdiCharSet parameter takes a value from the list defined in the Windows SDK header file WinGDI.h. If the familyName parameter specifies a font that is not installed on the machine running the application or is not supported, Microsoft Sans Serif will be substituted.
-      font(xtd::ustring family_name, float em_size, font_style style, graphics_unit unit, uint8_t gdi_char_set, bool gdi_vertical_font);
+      font(xtd::ustring family_name, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set, bool gdi_vertical_font);
       
       /// @brief Initializes a new xtd::drawing::font using the specified size, style, unit, and character set.
       /// @param font_family The font_family of the new Font.
@@ -83,7 +83,7 @@ namespace xtd {
       /// @param gdi_vertical_font A boolean value indicating whether the new xtd::drawing::font is derived from a GDI vertical font.
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
       /// @remarks The gdiCharSet parameter takes a value from the list defined in the Windows SDK header file WinGDI.h. If the familyName parameter specifies a font that is not installed on the machine running the application or is not supported, Microsoft Sans Serif will be substituted.
-      font(const drawing::font_family& font_family, float em_size, font_style style, graphics_unit unit, uint8_t gdi_char_set, bool gdi_vertical_font);
+      font(const drawing::font_family& font_family, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set, bool gdi_vertical_font);
       
       /// @brief Initializes a new xtd::drawing::font using the specified size, style, unit, and character set.
       /// @param family_name A string representation of the font_family for the new xtd::drawing::font.
@@ -93,7 +93,7 @@ namespace xtd {
       /// @param gdi_char_set A byte that specifies a GDI character set to use for this font.
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
       /// @remarks The gdiCharSet parameter takes a value from the list defined in the Windows SDK header file WinGDI.h. If the familyName parameter specifies a font that is not installed on the machine running the application or is not supported, Microsoft Sans Serif will be substituted.
-      font(xtd::ustring family_name, float em_size, font_style style, graphics_unit unit, uint8_t gdi_char_set);
+      font(xtd::ustring family_name, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set);
       
       /// @brief Initializes a new xtd::drawing::font using the specified size, style, unit, and character set.
       /// @param font_family The font_family of the new Font.
@@ -103,7 +103,7 @@ namespace xtd {
       /// @param gdi_char_set A byte that specifies a GDI character set to use for this font.
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
       /// @remarks The gdiCharSet parameter takes a value from the list defined in the Windows SDK header file WinGDI.h. If the familyName parameter specifies a font that is not installed on the machine running the application or is not supported, Microsoft Sans Serif will be substituted.
-      font(const drawing::font_family& font_family, float em_size, font_style style, graphics_unit unit, uint8_t gdi_char_set);
+      font(const drawing::font_family& font_family, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set);
       
       /// @brief Initializes a new xtd::drawing::font using the specified size, style and unit.
       /// @param family_name A string representation of the font_family for the new xtd::drawing::font.
@@ -182,7 +182,7 @@ namespace xtd {
       
       /// @brief Gets a byte value that specifies the GDI character set that this xtd::drawing::font uses.
       /// @return A byte value that specifies the GDI character set that this xtd::drawing::font uses. The default is 1.
-      /// @remarks This property returns 1, unless a different character set is specified in the font(string, float, font_style, graphics_unit, uint8_t) constructor. This property takes a value from the list defined in the Windows SDK header file WinGDI.h. The character sets and byte values are listed in the following table.
+      /// @remarks This property returns 1, unless a different character set is specified in the font(string, float, font_style, graphics_unit, xtd::byte) constructor. This property takes a value from the list defined in the Windows SDK header file WinGDI.h. The character sets and byte values are listed in the following table.
       /// | Character set | Value |
       /// |---------------|-------|
       /// | ANSI          | 0     |
@@ -205,7 +205,7 @@ namespace xtd {
       /// | RUSSIAN       | 204   |
       /// | MAC           | 77    |
       /// | BALTIC        | 186   |
-      uint8_t gdi_char_set() const noexcept;
+      xtd::byte gdi_char_set() const noexcept;
       
       /// @brief Gets a Boolean value that indicates whether this xtd::drawing::font is derived from a GDI vertical font.
       /// @return true if this xtd::drawing::font is derived from a GDI vertical font; otherwise, false.
@@ -320,7 +320,7 @@ namespace xtd {
       struct data {
         intptr_t handle_ = 0;
         drawing::font_family font_family_;
-        uint8_t gdi_char_set_ = 1;
+        xtd::byte gdi_char_set_ = 1;
         bool gdi_vertical_font_ = false;
         bool is_system_font_ = false;
         xtd::ustring original_font_name_;

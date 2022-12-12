@@ -41,7 +41,7 @@ bitmap bitmap::clone(const rectangle_f& rect) const {
 }
 
 drawing::color bitmap::get_pixel(int32_t x, int32_t y) const {
-  uint8_t a = 0, r = 0, g = 0, b = 0;
+  xtd::byte a = 0, r = 0, g = 0, b = 0;
   native::image::get_pixel(handle(), x, y, a, r, g, b);
   return color::from_argb(a, r, g, b);
 }

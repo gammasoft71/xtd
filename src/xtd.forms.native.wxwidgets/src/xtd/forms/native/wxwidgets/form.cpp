@@ -241,7 +241,7 @@ void form::opacity(intptr_t control, double opacity) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->SetTransparent(static_cast<uint8_t>(255 * opacity));
+  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->SetTransparent(static_cast<xtd::byte>(255 * opacity));
 }
 
 void form::virtual_size(intptr_t control, const drawing::size& size) {

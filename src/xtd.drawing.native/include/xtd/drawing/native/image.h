@@ -277,7 +277,7 @@ namespace xtd {
           /// | 10      | Specifies that Value is an array of pairs of signed long integers. Each pair represents a fraction; the first integer is the numerator and the second integer is the denominator.                                                                           |
           int32_t type = 1;
           /// @brief the value of the property item.
-          std::vector<uint8_t> value;
+          std::vector<xtd::byte> value;
         };
         
         /// @name Protected methods
@@ -285,14 +285,14 @@ namespace xtd {
         /// @{
         /// @brief Gets the color palette used for the image.
         /// @param image The image handle.
-        /// @param entries A std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t>> (alpha, red, green and blue componenents of color) that represents the color palette used for the image.
+        /// @param entries A std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>> (alpha, red, green and blue componenents of color) that represents the color palette used for the image.
         /// @param flags A value that specifies how to interpret the color information in the array of colors
         /// @remarks The following flag values are valid:
         /// * 0x00000001 The color values in the array contain alpha information.
         /// * 0x00000002 The colors in the array are grayscale values.
         /// * 0x00000004 The colors in the array are halftone values.
         /// @warning Internal use only
-        static void color_palette(intptr_t image, std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t>>& entries, int32_t& flags);
+        static void color_palette(intptr_t image, std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>& entries, int32_t& flags);
         
         /// @brief Creates an image from specified filename and get the frame_solution collection.
         /// @param filename The filename of the image.
@@ -406,7 +406,7 @@ namespace xtd {
         /// @param g The green component of the color of the specified pixel.
         /// @param b The blue component of the color of the specified pixel.
         /// @warning Internal use only
-        static void get_pixel(intptr_t image, int32_t x, int32_t y, uint8_t& a, uint8_t& r, uint8_t& g, uint8_t& b);
+        static void get_pixel(intptr_t image, int32_t x, int32_t y, xtd::byte& a, xtd::byte& r, xtd::byte& g, xtd::byte& b);
         
         /// @brief Rotates, flips, or rotates and flips the image.
         /// @param image The image handle.
@@ -423,7 +423,7 @@ namespace xtd {
         /// @param g The green component of the color of the specified pixel.
         /// @param b The blue component of the color of the specified pixel.
         /// @warning Internal use only
-        static void set_pixel(intptr_t image, int32_t x, int32_t y, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
+        static void set_pixel(intptr_t image, int32_t x, int32_t y, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b);
         
         /// @brief Saves image to the specified output filename.
         /// @param image The icon handle .

@@ -18,7 +18,7 @@ intptr_t pen::create() {
   return reinterpret_cast<intptr_t>(new wx_pen());
 }
 
-void pen::solid_color(intptr_t pen, uint8_t a, uint8_t r, uint8_t g, uint8_t b, float width, float dash_offset, vector<float> dashes) {
+void pen::solid_color(intptr_t pen, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b, float width, float dash_offset, vector<float> dashes) {
   vector<int8_t> wx_dashes;
   for (auto dash : dashes)
     wx_dashes.push_back(static_cast<int8_t>(dash));
@@ -90,7 +90,7 @@ intptr_t pen::create() {
   return reinterpret_cast<intptr_t>(pen);
 }
 
-void pen::color(intptr_t pen, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
+void pen::color(intptr_t pen, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b) {
   toolkit::initialize(); // Must be first
   reinterpret_cast<wxPen*>(pen)->SetColour(wxColour(r, g, b, a));
 }

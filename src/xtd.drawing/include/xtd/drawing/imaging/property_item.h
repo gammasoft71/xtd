@@ -517,22 +517,22 @@ namespace xtd {
         /// @brief Gets the value of the property item.
         /// @return A byte array that represents the value of the property item.
         /// @remarks The byte array returned by the Value property contains data in one of several different primitive types. To use the data, determine the data type using the type property and convert the byte array accordingly.
-        const std::vector<uint8_t>& value() const noexcept {return value_;}
+        const std::vector<xtd::byte>& value() const noexcept {return value_;}
         /// @brief Gets the value of the property item.
         /// @return A byte array that represents the value of the property item.
         /// @remarks The byte array returned by the Value property contains data in one of several different primitive types. To use the data, determine the data type using the type property and convert the byte array accordingly.
-        std::vector<uint8_t>& value() noexcept {return value_;}
+        std::vector<xtd::byte>& value() noexcept {return value_;}
         /// @brief Sets the value of the property item.
         /// @param value A byte array that represents the value of the property item.
         /// @remarks The byte array returned by the Value property contains data in one of several different primitive types. To use the data, determine the data type using the type property and convert the byte array accordingly.
-        void value(const std::vector<uint8_t>& value) noexcept {value_ = value;}
+        void value(const std::vector<xtd::byte>& value) noexcept {value_ = value;}
         /// @}
         
       private:
         int32_t id_ = 0;
         int32_t len_ = 0;
         int16_t type_ = 1;
-        std::vector<uint8_t> value_;
+        std::vector<xtd::byte> value_;
       };
     }
   }

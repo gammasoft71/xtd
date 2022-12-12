@@ -9,6 +9,7 @@
 #include <tuple>
 #include <vector>
 #include <xtd/static.h>
+#include <xtd/types.h>
 #include <xtd/drawing_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -66,7 +67,7 @@ namespace xtd {
         /// @param g The green component of the color.
         /// @param b The blue component of the color.
         /// @warning Internal use only
-        static void solid(intptr_t brush, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
+        static void solid(intptr_t brush, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b);
         
         /// @brief Sets conical gradient brush.
         /// @param brush The brush handle.
@@ -77,7 +78,7 @@ namespace xtd {
         /// @remarks An offset value of 0.0 specifies that the stop is positioned at the beginning of the gradient vector, while a value of 1.0 specifies that the stop is positioned at the end of the gradient vector.
         /// @remarks The angle rotates in the clockwise direction. An angle of O° represents an angle from the center to the left. The angle turns in the clockwise direction. An angle of 90° represents an angle from the center downwards. An angle of 180° represents an angle from the center to the right. And so on.
         /// @warning Internal use only
-        static void conical_gradient(intptr_t brush, int32_t center_x, int32_t center_y, const std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t, float>>& colors, float angle);
+        static void conical_gradient(intptr_t brush, int32_t center_x, int32_t center_y, const std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>>& colors, float angle);
         
         /// @brief Sets linear gradient brush.
         /// @brief x1 Contains the left value of the bound rectangle of the linear brush.
@@ -88,7 +89,7 @@ namespace xtd {
         /// @remarks An offset value of 0.0 specifies that the stop is positioned at the beginning of the gradient vector, while a value of 1.0 specifies that the stop is positioned at the end of the gradient vector.
         /// @remarks The angle rotates in the clockwise direction. An angle of O° represents an angle from the center to the left. The angle turns in the clockwise direction. An angle of 90° represents an angle from the center downwards. An angle of 180° represents an angle from the center to the right. And so on.
         /// @warning Internal use only
-        static void linear_gradient(intptr_t brush, int32_t x1, int32_t y1, int32_t x2, int32_t y2, const std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t, float>>& colors, float angle);
+        static void linear_gradient(intptr_t brush, int32_t x1, int32_t y1, int32_t x2, int32_t y2, const std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>>& colors, float angle);
         
         /// @brief Sets radial gradient brush.
         /// @param brush The brush handle.
@@ -100,7 +101,7 @@ namespace xtd {
         /// @param radius The radius of the radial gradient.
         /// @remarks An offset value of 0.0 specifies that the stop is positioned at the beginning of the gradient vector, while a value of 1.0 specifies that the stop is positioned at the end of the gradient vector.
         /// @warning Internal use only
-        static void radial_gradient(intptr_t brush, int32_t center_x, int32_t center_y, int32_t focal_x, int32_t focal_y, const std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t, float>>& colors, float radius);
+        static void radial_gradient(intptr_t brush, int32_t center_x, int32_t center_y, int32_t focal_x, int32_t focal_y, const std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>>& colors, float radius);
         
         /// @brief Sets texturebrush.
         /// @param brush The brush handle.

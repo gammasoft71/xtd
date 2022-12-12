@@ -34,7 +34,7 @@ namespace {
   }
 }
 
-intptr_t font::create(const ustring& name, float em_size, bool bold, bool italic, bool underline, bool strikeout, uint8_t gdi_char_set, bool gdi_vertical_font) {
+intptr_t font::create(const ustring& name, float em_size, bool bold, bool italic, bool underline, bool strikeout, xtd::byte gdi_char_set, bool gdi_vertical_font) {
   toolkit::initialize(); // Must be first
   wxFont* font = new wxFont(points_to_native_font_size_correction(em_size), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, name == ".AppleSystemUIFont" ? L"" : convert_string::to_wstring(name));
   font->SetPointSize(points_to_native_font_size_correction(em_size));
@@ -61,7 +61,7 @@ int32_t font::dpi() {
   return ::dpi();
 }
 
-void font::get_information(intptr_t font, ustring& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, uint8_t& gdi_char_set, bool& gdi_vertical_font) {
+void font::get_information(intptr_t font, ustring& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, xtd::byte& gdi_char_set, bool& gdi_vertical_font) {
   toolkit::initialize(); // Must be first
   wxFont* wx_font = reinterpret_cast<wxFont*>(font);
   name = wx_font->GetFaceName().c_str().AsWChar();

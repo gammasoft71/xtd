@@ -514,7 +514,7 @@ namespace xtd {
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
       /// @endcode
-      uint8_t a() const noexcept;
+      xtd::byte a() const noexcept;
       
       /// @brief Gets the blue component value of this xtd::drawing::color class.
       /// @return byte The blue component value of this xtd::drawing::color.
@@ -533,7 +533,7 @@ namespace xtd {
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
       /// @endcode
-      uint8_t b() const noexcept;
+      xtd::byte b() const noexcept;
       
       /// @brief Gets the green component value of this xtd::drawing::color class.
       /// @return byte The green component value of this xtd::drawing::color.
@@ -552,7 +552,7 @@ namespace xtd {
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
       /// @endcode
-      uint8_t g() const noexcept;
+      xtd::byte g() const noexcept;
       
       /// @brief Gets the native handle of this xtd::drawing::color class.
       /// @remarks For internal use only, needed for system_colors.
@@ -604,7 +604,7 @@ namespace xtd {
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
       /// @endcode
-      uint8_t r() const noexcept;
+      xtd::byte r() const noexcept;
       /// @}
       
       /// @name Methods
@@ -745,7 +745,7 @@ namespace xtd {
       ///   }
       /// }
       /// @endcode
-      static xtd::drawing::color from_argb(uint8_t alpha, const xtd::drawing::color& base_color) noexcept;
+      static xtd::drawing::color from_argb(xtd::byte alpha, const xtd::drawing::color& base_color) noexcept;
       
       /// @brief Creates a xtd::drawing::color class from the four ARGB component (alpha, red, green, and blue) values. Although this method allows a 32-bit value to be passed for each component, the value of each component is limited to 8 bits.
       /// @param alpha The alpha value for the new xtd::drawing::color. Valid values are 0 through 255.
@@ -781,7 +781,7 @@ namespace xtd {
       ///   g.fill_ellipse(trns_blue_brush, x1 + tri_base, y1, 2 * tri_height, 2 * tri_height);
       /// }
       /// @endcode
-      static xtd::drawing::color from_argb(uint8_t alpha, uint8_t red, uint8_t green, uint8_t blue) noexcept;
+      static xtd::drawing::color from_argb(xtd::byte alpha, xtd::byte red, xtd::byte green, xtd::byte blue) noexcept;
       
       /// @brief Creates a xtd::drawing::color structure from the specified 8-bit color values (red, green, and blue). The alpha value is implicitly 255 (fully opaque). Although this method allows a 32-bit value to be passed for each color component, the value of each component is limited to 8 bits.
       /// @param red The red component. Valid values are 0 through 255.
@@ -847,7 +847,7 @@ namespace xtd {
       ///   }
       /// }
       /// @endcode
-      static xtd::drawing::color from_argb(uint8_t red, uint8_t green, uint8_t blue) noexcept;
+      static xtd::drawing::color from_argb(xtd::byte red, xtd::byte green, xtd::byte blue) noexcept;
       
       /// @brief Creates a xtd::drawing::color class from native handle.
       /// @param handle the handle for the new xtd::drawing::color.

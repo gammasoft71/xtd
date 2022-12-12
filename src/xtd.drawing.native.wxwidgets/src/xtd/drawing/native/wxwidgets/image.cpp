@@ -115,11 +115,11 @@ namespace {
   }
 }
 
-void image::color_palette(intptr_t image, std::vector<std::tuple<uint8_t, uint8_t, uint8_t, uint8_t>>& entries, int32_t& flags) {
+void image::color_palette(intptr_t image, std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>& entries, int32_t& flags) {
   wxPalette palette = reinterpret_cast<wxImage*>(image)->GetPalette();
   entries.clear();
   for (int32_t index = 0; index < palette.GetColoursCount(); index++) {
-    uint8_t a = 255, r = 0, g = 0, b = 0;
+    xtd::byte a = 255, r = 0, g = 0, b = 0;
     palette.GetRGB(index, &r, &g, &b);
     entries.push_back({a, r, g, b});
   }
@@ -245,7 +245,7 @@ float image::vertical_resolution(intptr_t image) {
   return vertical_resolution;
 }
 
-void image::get_pixel(intptr_t image, int32_t x, int32_t y, uint8_t& a, uint8_t& r, uint8_t& g, uint8_t& b) {
+void image::get_pixel(intptr_t image, int32_t x, int32_t y, xtd::byte& a, xtd::byte& r, xtd::byte& g, xtd::byte& b) {
   if (reinterpret_cast<wxImage*>(image)->IsTransparent(x, y, 1)) a = r = g = b = 0;
   else {
     a = reinterpret_cast<wxImage*>(image)->HasAlpha() ? reinterpret_cast<wxImage*>(image)->GetAlpha(x, y) : 255;
@@ -270,7 +270,7 @@ void image::rotate_flip(intptr_t image, int32_t rotate_flip_type) {
   }
 }
 
-void image::set_pixel(intptr_t image, int32_t x, int32_t y, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
+void image::set_pixel(intptr_t image, int32_t x, int32_t y, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b) {
   if (reinterpret_cast<wxImage*>(image)->HasAlpha()) reinterpret_cast<wxImage*>(image)->SetAlpha(x, y, a);
   reinterpret_cast<wxImage*>(image)->SetRGB(x, y, r, g, b);
 }

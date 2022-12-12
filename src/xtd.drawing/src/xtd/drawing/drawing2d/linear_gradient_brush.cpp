@@ -136,7 +136,7 @@ float linear_gradient_brush::linear_gradient_mode_to_angle(xtd::drawing::drawing
 }
 
 void linear_gradient_brush::recreate_handle() {
-  vector<tuple<uint8_t, uint8_t, uint8_t, uint8_t, float>> colors;
+  vector<tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>> colors;
   
   for (auto color : data_->linear_colors)
     colors.emplace_back(color.first.r(), color.first.g(), color.first.b(), color.first.a(), color.second);
