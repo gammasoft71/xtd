@@ -61,41 +61,34 @@ namespace xtd {
     /// @param value A number in the range std::numeric_limit<decimal>::lowest() <= value <= std::numeric_limit<decimal>::max().
     /// @return A decimal number, x, such that 0 <= x <= std::numeric_limit<decimal>::max()std::numeric_limit<decimal>::max().
     static decimal abs(decimal value);
-    
     /// @brief Returns the absolute value of a double-precision floating-point number
     /// @param value A number in the range std::numeric_limit<double>::lowest() <= value <= std::numeric_limit<double>::max().
     /// @return A double-precision floating-point number, x, such that 0 <= x <= std::numeric_limit<double>::max().
     static double abs(double value);
-    
     /// @brief Returns the absolute value of a single-precision floating-point number
     /// @param value A number in the range std::numeric_limit<float>::lowest() <= value <= std::numeric_limit<float>::max().
     /// @return A single-precision floating-point number, x, such that 0 <= x <= std::numeric_limit<float>::max().
     static float abs(float value);
-    
     /// @brief Returns the absolute value of a 16-bit signed integer.
     /// @param value A number in the range std::numeric_limit<int16>::lowest() <= value <= std::numeric_limit<int16>::max().
     /// @return A 16-bit signed integer, x, such that 0 <= x <= std::numeric_limit<int16>::max().
     /// @exception xtd::overflow_exception value equals std::numeric_limit<int16>::lowest().
     static int16 abs(int16 value);
-    
     /// @brief Returns the absolute value of a 32-bit signed integer
     /// @param value A number in the range std::numeric_limit<int32>::lowest() <= value <= std::numeric_limit<int32>::max().
     /// @return A 32-bit signed integer, x, such that 0 <= x <= std::numeric_limit<int32>::max().
     /// @exception xtd::overflow_exception value equals std::numeric_limit<int32>::lowest().
     static int32 abs(int32 value);
-    
     /// @brief Returns the absolute value of a 64-bit signed integer
     /// @param value A number in the range std::numeric_limit<int64>::min() <= value <= std::numeric_limit<int64>::max().
     /// @return A 64-bit signed integer, x, such that 0 <= x <= std::numeric_limit<int64>::max().
     /// @exception xtd::overflow_exception value equals std::numeric_limit<int64>::lowest().
     static int64 abs(int64 value);
-    
     /// @brief Returns the absolute value of a 8-bit signed integer.
     /// @param value A number in the range std::numeric_limit<sbyte>::lowest() <= value <= std::numeric_limit<sbyte>::max().
     /// @return A 8-bit signed integer, x, such that 0 <= x <= std::numeric_limit<sbyte>::max().
     /// @exception xtd::overflow_exception value equals std::numeric_limit<sbyte_tsbyte_t>::lowest().
     static sbyte abs(sbyte value);
-    
     /// @brief Returns the absolute value of a 64-bit signed integer
     /// @param value A number in the range std::numeric_limit<llong_t>::lowest() <= value <= std::numeric_limit<llong_t>::max().
     /// @return A 8-bit signed integer, x, such that 0 <= x <= std::numeric_limit<llong_t>::max().
@@ -251,7 +244,6 @@ namespace xtd {
     /// @param remainder An angle, measured in radians.
     /// @return The remainder.
     static int32 div_rem(int32 dividend, int32 divisor, int32& remainder);
-    
     /// @brief Calculates the quotient of two 64-bit signed integers and also returns the remainder in an output parameter.
     /// @param dividend The dividend.
     /// @param divisor The divisor.
@@ -268,7 +260,6 @@ namespace xtd {
     /// @param value A double-precision floating-point number.
     /// @return The largest integer less than or equal to value.
     static decimal floor(decimal value);
-    
     /// @brief Returns the largest integer less than or equal to the specified decimal number.
     /// @param value A double-precision floating-point number.
     /// @return The largest integer less than or equal to value.
@@ -358,73 +349,61 @@ namespace xtd {
     /// @param b The second of two 8-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is larger.
     static xtd::byte max(xtd::byte a, xtd::byte b) noexcept;
-    
     /// @brief Returns the larger of two double single.
     /// @param a The first of two double single to compare.
     /// @param b The second of two double single to compare.
     /// @return Parameter a or b, whichever is larger.
     static decimal max(decimal a, decimal b) noexcept;
-    
     /// @brief Returns the larger of two double single.
     /// @param a The first of two double single to compare.
     /// @param b The second of two double single to compare.
     /// @return Parameter a or b, whichever is larger.
     static double max(double a, double b) noexcept;
-    
     /// @brief Returns the larger of two 16-bit signed integers.
     /// @param a The first of two 16-bit signed integers to compare.
     /// @param b The second of two 16-bit signed integers to compare.
     /// @return Parameter a or b, whichever is larger.
     static int16 max(int16 a, int16 b) noexcept;
-    
     /// @brief Returns the larger of two 32-bit signed integers.
     /// @param a The first of two 32-bit signed integers to compare.
     /// @param b The second of two 32-bit signed integers to compare.
     /// @return Parameter a or b, whichever is larger.
     static int32 max(int32 a, int32 b) noexcept;
-    
     /// @brief Returns the larger of two 64-bit signed integers.
     /// @param a The first of two 64-bit signed integers to compare.
     /// @param b The second of two 64-bit signed integers to compare.
     /// @return Parameter a or b, whichever is larger.
     static int64 max(int64 a, int64 b) noexcept;
-    
     /// @brief Returns the larger of two 64-bit signed integers.
     /// @param a The first of two 64-bit signed integers to compare.
     /// @param b The second of two 64-bit signed integers to compare.
     /// @return Parameter a or b, whichever is larger.
     static llong_t max(llong_t a, llong_t b) noexcept;
-    
     /// @brief Returns the larger of two 8-bit signed integers.
     /// @param a The first of two 8-bit signed integers to compare.
     /// @param b The second of two 8-bit signed integers to compare.
     /// @return Parameter a or b, whichever is larger.
     static sbyte max(sbyte a, sbyte b) noexcept;
-    
     /// @brief Returns the larger of two single single.
     /// @param a The first of two single single to compare.
     /// @param b The second of two single single to compare.
     /// @return Parameter a or b, whichever is larger.
     static float max(float a, float b) noexcept;
-    
     /// @brief Returns the larger of two 16-bit unsigned integers.
     /// @param a The first of two 16-bit unsigned integers to compare.
     /// @param b The second of two 16-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is larger.
     static uint16 max(uint16 a, uint16 b) noexcept;
-    
     /// @brief Returns the larger of two 32-bit unsigned integers.
     /// @param a The first of two 32-bit unsigned integers to compare.
     /// @param b The second of two 32-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is larger.
     static uint32 max(uint32 a, uint32 b) noexcept;
-    
     /// @brief Returns the larger of two 64-bit unsigned integers.
     /// @param a The first of two 64-bit unsigned integers to compare.
     /// @param b The second of two 64-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is larger.
     static uint64 max(uint64 a, uint64 b) noexcept;
-    
     /// @brief Returns the larger of two 64-bit unsigned integers.
     /// @param a The first of two 64-bit unsigned integers to compare.
     /// @param b The second of two 64-bit unsigned integers to compare.
@@ -436,73 +415,61 @@ namespace xtd {
     /// @param b The second of two 8-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is smaller.
     static xtd::byte min(xtd::byte a, xtd::byte b) noexcept;
-    
     /// @brief Returns the smaller of two double single.
     /// @param a The first of two double single to compare.
     /// @param b The second of two double single to compare.
     /// @return Parameter a or b, whichever is smaller.
     static decimal min(decimal a, decimal b) noexcept;
-    
     /// @brief Returns the smaller of two double single.
     /// @param a The first of two double single to compare.
     /// @param b The second of two double single to compare.
     /// @return Parameter a or b, whichever is smaller.
     static double min(double a, double b) noexcept;
-    
     /// @brief Returns the smaller of two 16-bit signed integers.
     /// @param a The first of two 16-bit signed integers to compare.
     /// @param b The second of two 16-bit signed integers to compare.
     /// @return Parameter a or b, whichever is smaller.
     static int16 min(int16 a, int16 b) noexcept;
-    
     /// @brief Returns the smaller of two 32-bit signed integers.
     /// @param a The first of two 32-bit signed integers to compare.
     /// @param b The second of two 32-bit signed integers to compare.
     /// @return Parameter a or b, whichever is smaller.
     static int32 min(int32 a, int32 b) noexcept;
-    
     /// @brief Returns the smaller of two 64-bit signed integers.
     /// @param a The first of two 64-bit signed integers to compare.
     /// @param b The second of two 64-bit signed integers to compare.
     /// @return Parameter a or b, whichever is smaller.
     static int64 min(int64 a, int64 b) noexcept;
-    
     /// @brief Returns the smaller of two 64-bit signed integers.
     /// @param a The first of two 64-bit signed integers to compare.
     /// @param b The second of two 64-bit signed integers to compare.
     /// @return Parameter a or b, whichever is smaller.
     static llong_t min(llong_t a, llong_t b) noexcept;
-    
     /// @brief Returns the smaller of two 8-bit signed integers.
     /// @param a The first of two 8-bit signed integers to compare.
     /// @param b The second of two 8-bit signed integers to compare.
     /// @return Parameter a or b, whichever is smaller.
     static sbyte min(sbyte a, sbyte b) noexcept;
-    
     /// @brief Returns the smaller of two single single.
     /// @param a The first of two single single to compare.
     /// @param b The second of two single single to compare.
     /// @return Parameter a or b, whichever is smaller.
     static float min(float a, float b) noexcept;
-    
     /// @brief Returns the smaller of two 16-bit unsigned integers.
     /// @param a The first of two 16-bit unsigned integers to compare.
     /// @param b The second of two 16-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is smaller.
     static uint16 min(uint16 a, uint16 b) noexcept;
-    
     /// @brief Returns the smaller of two 32-bit unsigned integers.
     /// @param a The first of two 32-bit unsigned integers to compare.
     /// @param b The second of two 32-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is smaller.
     static uint32 min(uint32 a, uint32 b) noexcept;
-    
     /// @brief Returns the smaller of two 64-bit unsigned integers.
     /// @param a The first of two 64-bit unsigned integers to compare.
     /// @param b The second of two 64-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is smaller.
     static uint64 min(uint64 a, uint64 b) noexcept;
-    
     /// @brief Returns the smaller of two 64-bit unsigned integers.
     /// @param a The first of two 64-bit unsigned integers to compare.
     /// @param b The second of two 64-bit unsigned integers to compare.
@@ -544,18 +511,15 @@ namespace xtd {
     /// @param value A double-precision floating-point number to be rounded.
     /// @return The integer nearest value. If the fractional component of a is halfway between two integers, one of which is even and the other odd, then the even number is returned. Note that this method returns a double instead of an integral type.
     static decimal round(decimal value);
-    
     /// @brief Rounds a decimal value to a specified number of fractional digits.
     /// @param value A double-precision floating-point number to be rounded.
     /// @param decimals The number of decimal places in the return value.
     /// @return The number nearest to d that contains a number of fractional digits equal to decimals.
     static decimal round(decimal value, int32 decimals);
-    
     /// @brief Rounds a double-precision floating-point value to the nearest integral value.
     /// @param value A double-precision floating-point number to be rounded.
     /// @return The integer nearest value. If the fractional component of a is halfway between two integers, one of which is even and the other odd, then the even number is returned. Note that this method returns a double instead of an integral type.
     static double round(double value);
-    
     /// @brief Rounds a decimal value to a specified number of fractional digits.
     /// @param value A double-precision floating-point number to be rounded.
     /// @param decimals The number of decimal places in the return value.
@@ -573,7 +537,6 @@ namespace xtd {
     /// | 1            | value is greater than zero. |
     /// @exception xtd::arithmetic_exception value is equal to NaN.
     static int32 sign(decimal value);
-    
     /// @brief Returns a value indicating the sign of a double-precision floating-point number.
     /// @param value A signed number.
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
@@ -585,7 +548,6 @@ namespace xtd {
     /// | 1            | value is greater than zero. |
     /// @exception xtd::arithmetic_exception value is equal to NaN.
     static int32 sign(double value);
-    
     /// @brief Returns a value indicating the sign of a 16-bit signed integer.
     /// @param value A signed number.
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
@@ -596,7 +558,6 @@ namespace xtd {
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
     static int32 sign(int16 value);
-    
     /// @brief Returns a value indicating the sign of a 32-bit signed integer.
     /// @param value A signed number.
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
@@ -607,7 +568,6 @@ namespace xtd {
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
     static int32 sign(int32 value);
-    
     /// @brief Returns a value indicating the sign of a 64-bit signed integer.
     /// @param value A signed number.
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
@@ -618,7 +578,6 @@ namespace xtd {
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
     static int32 sign(int64 value);
-    
     /// @brief Returns a value indicating the sign of a 64-bit signed integer.
     /// @param value A signed number.
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
@@ -629,7 +588,6 @@ namespace xtd {
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
     static int32 sign(llong_t value);
-    
     /// @brief Returns a value indicating the sign of an 8-bit signed integer.
     /// @param value A signed number.
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
@@ -640,7 +598,6 @@ namespace xtd {
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
     static int32 sign(sbyte value);
-    
     /// @brief Returns a value indicating the sign of a single-precision floating-point number.
     /// @param value A signed number.
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
@@ -695,7 +652,6 @@ namespace xtd {
     /// | NegativeInfinity | NegativeInfinity |
     /// | PositiveInfinity | PositiveInfinity |
     static decimal truncate(decimal value);
-    
     /// @brief Calculates the integral part of a specified double-precision floating-point number.
     /// @param value A number to truncate.
     /// @return The integral part of d; that is, the number that remains after any fractional digits have been discarded, or one of the values listed in the following table.
