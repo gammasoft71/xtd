@@ -35,7 +35,7 @@ int main() {
   console::write_line("-------------------------");
   console::write_line("filter = {}", reader.selectors().at(".user_box").properties().at("filter"));
   console::write_line("opacity = {}", reader.selectors().at(".user_box").properties().at("opacity").to_single());
-  console::write_line("z-index = {}", reader.selectors().at(".user_box").properties().at("z-index").to<int32_t>());
+  console::write_line("z-index = {}", reader.selectors().at(".user_box").properties().at("z-index").to<int32>());
 }
 
 // This code can produces the following output :
