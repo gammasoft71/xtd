@@ -58,13 +58,13 @@ namespace xtd::threading::tests {
     }
     
     void test_method_(compare_exchange_intptr_if_comparand_equal) {
-      intptr_t location = 42;
+      intptr location = 42;
       assert::are_equal(42, interlocked::compare_exchange(location, 24, 42), csf_);
       assert::are_equal(24, location, csf_);
     }
     
     void test_method_(compare_exchange_intptr_if_comparand_different) {
-      intptr_t location = 42;
+      intptr location = 42;
       assert::are_equal(42, interlocked::compare_exchange(location, 24, 33), csf_);
       assert::are_equal(42, location, csf_);
     }
@@ -140,7 +140,7 @@ namespace xtd::threading::tests {
     }
     
     void test_method_(exchange_intptr) {
-      intptr_t location = 42;
+      intptr location = 42;
       assert::are_equal(42, interlocked::exchange(location, 24), csf_);
       assert::are_equal(24, location, csf_);
     }
