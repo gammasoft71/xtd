@@ -8,7 +8,7 @@ find_package(xtd REQUIRED)
 target_startup("target_startup::program" src/target_startup.cpp)
 
 # Sources
-add_sources(src/target_startup.cpp)
+add_sources(README.md src/target_startup.cpp)
 
 # Target
 target_type(GUI_APPLICATION)

@@ -8,7 +8,7 @@ find_package(xtd REQUIRED)
 target_name("xtd_forms_target")
 
 # Sources
-add_sources(src/target_name.cpp)
+add_sources(README.md src/target_name.cpp)
 
 # Target
 target_type(GUI_APPLICATION)

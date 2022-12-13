@@ -5,7 +5,7 @@ project(target_type)
 find_package(xtd REQUIRED)
 
 # Sources
-add_sources(src/target_type.cpp)
+add_sources(README.md src/target_type.cpp)
 
 # Target
 target_type(CONSOLE_APPLICATION)

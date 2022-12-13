@@ -2,5 +2,5 @@ cmake_minimum_required(VERSION 3.3)
 
 project(boxing)
 find_package(xtd REQUIRED)
-add_sources(src/boxing.cpp)
+add_sources(README.md src/boxing.cpp)
 target_type(CONSOLE_APPLICATION)

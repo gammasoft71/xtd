@@ -2,5 +2,5 @@ cmake_minimum_required(VERSION 3.3)
 
 project(check_box_renderer)
 find_package(xtd REQUIRED)
-add_sources(src/check_box_renderer.cpp)
+add_sources(README.md src/check_box_renderer.cpp)
 target_type(GUI_APPLICATION)
