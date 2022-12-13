@@ -25,7 +25,9 @@ namespace xtd {
         
         wxGraphicsContext* graphics() {
           /// @Workaround : With wxWidgets on Gtk, we need recreate graphics context otherwise only the first operation is taken into account.
-          if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix" && bitmap_ && image_) return wxGraphicsContext::Create(wxMemoryDC(*bitmap_));
+          #if defined(__WXGTK__)
+          if (bitmap_ && image_) return wxGraphicsContext::Create(wxMemoryDC(*bitmap_));
+          #endif
           return graphics_;
         }
         
