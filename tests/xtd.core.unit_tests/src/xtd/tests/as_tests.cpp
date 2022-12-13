@@ -189,7 +189,7 @@ namespace xtd::tests {
     }
     
     void test_method_(decimal_as_int) {
-      assert::is_true(is<int>(as<int>((decimal_t)42.)), csf_);
+      assert::is_true(is<int>(as<int>((decimal)42.)), csf_);
     }
     
     void test_method_(long_double_as_int) {
