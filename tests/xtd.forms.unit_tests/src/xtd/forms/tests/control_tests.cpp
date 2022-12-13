@@ -22,8 +22,8 @@ namespace xtd::forms::tests {
       control_for_test() = default;
       explicit control_for_test(const xtd::ustring& text) : control(text) {}
       control_for_test(const control& parent, const xtd::ustring& text) : control(parent, text) {}
-      control_for_test(const xtd::ustring& text, int32_t left, int32_t top, int32_t width, int32_t height) : control(text, left, top, width, height) {}
-      control_for_test(const control& parent, const xtd::ustring& text, int32_t left, int32_t top, int32_t width, int32_t height) : control(parent, text, left, top, width, height) {}
+      control_for_test(const xtd::ustring& text, int32 left, int32 top, int32 width, int32 height) : control(text, left, top, width, height) {}
+      control_for_test(const control& parent, const xtd::ustring& text, int32 left, int32 top, int32 width, int32 height) : control(parent, text, left, top, width, height) {}
 
       using control::default_back_color;
       using control::default_cursor;

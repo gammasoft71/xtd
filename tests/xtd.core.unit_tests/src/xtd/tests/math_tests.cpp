@@ -84,11 +84,11 @@ namespace xtd::tests {
     }
     
     void test_method_(abs_int32) {
-      assert::are_equal(numeric_limits<int32_t>::max(), math::abs(numeric_limits<int32_t>::max()), csf_);
+      assert::are_equal(numeric_limits<int32>::max(), math::abs(numeric_limits<int32>::max()), csf_);
       assert::are_equal(16921, math::abs(16921), csf_);
       assert::are_equal(0, math::abs(0), csf_);
       assert::are_equal(804128, math::abs(-804128), csf_);
-      assert::throws<overflow_exception>([] {math::abs(numeric_limits<int32_t>::lowest());}, csf_);
+      assert::throws<overflow_exception>([] {math::abs(numeric_limits<int32>::lowest());}, csf_);
     }
     
     void test_method_(abs_int64) {
@@ -166,7 +166,7 @@ namespace xtd::tests {
     }
     
     void test_method_(big_mul) {
-      assert::are_equal(4611686014132420609LL, math::big_mul(numeric_limits<int32_t>::max(), numeric_limits<int32_t>::max()), csf_);
+      assert::are_equal(4611686014132420609LL, math::big_mul(numeric_limits<int32>::max(), numeric_limits<int32>::max()), csf_);
     }
     
     void test_method_(ceiling) {
@@ -208,53 +208,53 @@ namespace xtd::tests {
     }
     
     void test_method_(div_rem_int32) {
-      using_(int32_t remainder = 0) {
-        assert::are_equal(1073741, math::div_rem(numeric_limits<int32_t>::max(), as<int32_t>(2000), remainder), csf_);
+      using_(int32 remainder = 0) {
+        assert::are_equal(1073741, math::div_rem(numeric_limits<int32>::max(), as<int32>(2000), remainder), csf_);
         assert::are_equal(1647, remainder, csf_);
       }
       
-      using_(int32_t remainder = 0) {
-        assert::are_equal(6, math::div_rem(as<int32_t>(13952), as<int32_t>(2000), remainder), csf_);
+      using_(int32 remainder = 0) {
+        assert::are_equal(6, math::div_rem(as<int32>(13952), as<int32>(2000), remainder), csf_);
         assert::are_equal(1952, remainder, csf_);
       }
       
-      using_(int32_t remainder = 0) {
-        assert::are_equal(0, math::div_rem(as<int32_t>(0), as<int32_t>(2000), remainder), csf_);
+      using_(int32 remainder = 0) {
+        assert::are_equal(0, math::div_rem(as<int32>(0), as<int32>(2000), remainder), csf_);
         assert::are_equal(0, remainder, csf_);
       }
       
-      using_(int32_t remainder = 0) {
-        assert::are_equal(-7, math::div_rem(as<int32_t>(-14032), as<int32_t>(2000), remainder), csf_);
+      using_(int32 remainder = 0) {
+        assert::are_equal(-7, math::div_rem(as<int32>(-14032), as<int32>(2000), remainder), csf_);
         assert::are_equal(-32, remainder, csf_);
       }
       
-      using_(int32_t remainder = 0) {
-        assert::are_equal(-1073741, math::div_rem(numeric_limits<int32_t>::lowest(), as<int32_t>(2000), remainder), csf_);
+      using_(int32 remainder = 0) {
+        assert::are_equal(-1073741, math::div_rem(numeric_limits<int32>::lowest(), as<int32>(2000), remainder), csf_);
         assert::are_equal(-1648, remainder, csf_);
       }
       
-      using_(int32_t remainder = 0) {
-        assert::are_equal(-1073741, math::div_rem(numeric_limits<int32_t>::max(), as<int32_t>(-2000), remainder), csf_);
+      using_(int32 remainder = 0) {
+        assert::are_equal(-1073741, math::div_rem(numeric_limits<int32>::max(), as<int32>(-2000), remainder), csf_);
         assert::are_equal(1647, remainder, csf_);
       }
       
-      using_(int32_t remainder = 0) {
-        assert::are_equal(-6, math::div_rem(as<int32_t>(13952), as<int32_t>(-2000), remainder), csf_);
+      using_(int32 remainder = 0) {
+        assert::are_equal(-6, math::div_rem(as<int32>(13952), as<int32>(-2000), remainder), csf_);
         assert::are_equal(1952, remainder, csf_);
       }
       
-      using_(int32_t remainder = 0) {
-        assert::are_equal(0, math::div_rem(as<int32_t>(0), as<int32_t>(-2000), remainder), csf_);
+      using_(int32 remainder = 0) {
+        assert::are_equal(0, math::div_rem(as<int32>(0), as<int32>(-2000), remainder), csf_);
         assert::are_equal(0, remainder, csf_);
       }
       
-      using_(int32_t remainder = 0) {
-        assert::are_equal(7, math::div_rem(as<int32_t>(-14032), as<int32_t>(-2000), remainder), csf_);
+      using_(int32 remainder = 0) {
+        assert::are_equal(7, math::div_rem(as<int32>(-14032), as<int32>(-2000), remainder), csf_);
         assert::are_equal(-32, remainder, csf_);
       }
       
-      using_(int32_t remainder = 0) {
-        assert::are_equal(1073741, math::div_rem(numeric_limits<int32_t>::lowest(), as<int32_t>(-2000), remainder), csf_);
+      using_(int32 remainder = 0) {
+        assert::are_equal(1073741, math::div_rem(numeric_limits<int32>::lowest(), as<int32>(-2000), remainder), csf_);
         assert::are_equal(-1648, remainder, csf_);
       }
     }

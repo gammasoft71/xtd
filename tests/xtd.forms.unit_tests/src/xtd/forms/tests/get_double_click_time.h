@@ -1,6 +1,5 @@
 #pragma once
-#include <cstddef>
-#include <cstdint>
+#include <xtd/types.h>
 #if defined(__APPLE__)
-int32_t get_double_click_time();
+xtd::int32 get_double_click_time();
 #endif

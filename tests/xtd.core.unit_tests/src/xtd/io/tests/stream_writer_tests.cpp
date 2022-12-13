@@ -21,7 +21,7 @@ namespace xtd::io::tests {
       stream_reader sr(s);
       size_t index = 0;
       for (auto value = sr.read(); value != EOF; value = sr.read())
-        assert::are_equal(data[index++], ustring::parse<int32_t>(ustring(1, static_cast<char>(value))), csf_);
+        assert::are_equal(data[index++], ustring::parse<int32>(ustring(1, static_cast<char>(value))), csf_);
       assert::are_equal(10U, index, csf_);
     }
     
@@ -36,7 +36,7 @@ namespace xtd::io::tests {
       stream_reader sr(s);
       size_t index = 0;
       for (auto value = sr.read(); value != EOF; value = sr.read())
-        assert::are_equal(data[index++], ustring::parse<int32_t>(ustring(1, static_cast<char>(value))), csf_);
+        assert::are_equal(data[index++], ustring::parse<int32>(ustring(1, static_cast<char>(value))), csf_);
       assert::are_equal(10U, index, csf_);
     }
     
@@ -54,7 +54,7 @@ namespace xtd::io::tests {
       assert::are_equal('c', sr.read(), csf_);
       size_t index = 0;
       for (auto value = sr.read(); value != EOF; value = sr.read())
-        assert::are_equal(data[index++], ustring::parse<int32_t>(ustring(1, static_cast<char>(value))), csf_);
+        assert::are_equal(data[index++], ustring::parse<int32>(ustring(1, static_cast<char>(value))), csf_);
       assert::are_equal(10U, index, csf_);
     }
   };

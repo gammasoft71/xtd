@@ -88,13 +88,13 @@ namespace xtd::tests {
     }
     
     void test_method_(is_int32_t_with_int32_t) {
-      int32_t v = 42;
-      assert::is_true(is<int32_t>(v), csf_);
+      int32 v = 42;
+      assert::is_true(is<int32>(v), csf_);
     }
     
     void test_method_(is_int32_t_without_int32_t) {
       bool v = true;
-      assert::is_false(is<int32_t>(v), csf_);
+      assert::is_false(is<int32>(v), csf_);
     }
     
     void test_method_(is_int64_t_with_int64_t) {
