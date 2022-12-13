@@ -37,6 +37,7 @@ namespace xtd {
         void create(args_type&& ...args) {
           hdc_t* handle = new hdc_t(args...);
           hdc_ = handle;
+          if (graphics_) delete graphics_;
           graphics_ = create_graphics(*handle);
         }
         
