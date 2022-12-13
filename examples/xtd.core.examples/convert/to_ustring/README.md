@@ -40,13 +40,13 @@ as<ustring>(any_value)           = 42
 convert::to_ustring(any_value)   = 42
 ustring::format("{}", any_value) = 42
 
-Convert const char16_t to ustring :
+Convert const char16 to ustring :
 -----------------------------------
-to_ustring(wstring_value)                        = A string value
-as<ustring>(const_char16_t_value)                = A string value
-convert::to_ustring(const_char16_t_value)        = A string value
-convert_string::to_ustring(const_char16_t_value) = A string value
-ustring::format("{}", const_char16_t_value)      = A string value
+to_ustring(wstring_value)                      = A string value
+as<ustring>(const_char16_value)                = A string value
+convert::to_ustring(const_char16_value)        = A string value
+convert_string::to_ustring(const_char16_value) = A string value
+ustring::format("{}", const_char16_value)      = A string value
 
 Convert wstring to ustring :
 ----------------------------
@@ -55,4 +55,5 @@ as<ustring>(wstring_value)                = A string value
 convert::to_ustring(wstring_value)        = A string value
 convert_string::to_ustring(wstring_value) = A string value
 ustring::format("{}", wstring_value)      = A string value
+Program ended with exit code: 0
 ```

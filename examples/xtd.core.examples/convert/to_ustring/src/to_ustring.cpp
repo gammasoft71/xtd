@@ -34,7 +34,7 @@ int main() {
   console::write_line("Convert const char16 to ustring :");
   console::write_line("-----------------------------------");
   auto const_char16_value = u"A string value";
-  console::write_line("to_ustring(wstring_value)                        = {}", to_ustring(const_char16_value));
+  console::write_line("to_ustring(wstring_value)                      = {}", to_ustring(const_char16_value));
   console::write_line("as<ustring>(const_char16_value)                = {}", as<ustring>(const_char16_value));
   console::write_line("convert::to_ustring(const_char16_value)        = {}", convert::to_ustring(const_char16_value));
   console::write_line("convert_string::to_ustring(const_char16_value) = {}", convert_string::to_ustring(const_char16_value));
@@ -53,17 +53,19 @@ int main() {
 
 // This code can produces the following output:
 //
-// Convert unsigned int to int :
-// -----------------------------
-// static_cast<int32>(value) = 42
-// as<int32>(value)          = 42
-// convert::to_int32(value)    = 42
+// Convert int to ustring :
+// ------------------------
+// to_ustring(value)            = 42
+// as<ustring>(value)           = 42
+// convert::to_ustring(value)   = 42
+// ustring::format("{}", value) = 42
 //
-// Convert float to int :
-// ----------------------
-// static_cast<int32>(float_value) = 42
-// as<int32>(float_value)          = 43
-// convert::to_int32(float_value)    = 43
+// Convert float to ustring :
+// --------------------------
+// to_ustring(float_value)            = 42.5
+// as<ustring>(float_value)           = 42.5
+// convert::to_ustring(float_value)   = 42.5
+// ustring::format("{}", float_value) = 42.5
 //
 // Convert any to ustring :
 // ------------------------
@@ -72,20 +74,18 @@ int main() {
 // convert::to_ustring(any_value)   = 42
 // ustring::format("{}", any_value) = 42
 //
-// Convert string to int :
-// -----------------------
-// parse<int32>(string_value))   = 42
-// as<int32>(string_value)       = 42
-// convert::to_int32(string_value) = 42
+// Convert const char16 to ustring :
+// -----------------------------------
+// to_ustring(wstring_value)                      = A string value
+// as<ustring>(const_char16_value)                = A string value
+// convert::to_ustring(const_char16_value)        = A string value
+// convert_string::to_ustring(const_char16_value) = A string value
+// ustring::format("{}", const_char16_value)      = A string value
 //
-// Convert hexa string to int :
+// Convert wstring to ustring :
 // ----------------------------
-// parse<int32>(string_hex_value, number_styles::hex_number) = 42
-// as<int32>(string_hex_value, 16)                           = 42
-// convert::to_int32(string_hex_value, 16))                    = 42
-//
-// Convert unsigned int to int with overflow :
-// -------------------------------------------
-// static_cast<int32>(overflow_value) = -2147483648
-// (ERROR) as : Overflow exception
-// (ERROR) convert::to_int32 : Overflow exception
+// to_ustring(wstring_value)                 = A string value
+// as<ustring>(wstring_value)                = A string value
+// convert::to_ustring(wstring_value)        = A string value
+// convert_string::to_ustring(wstring_value) = A string value
+// ustring::format("{}", wstring_value)      = A string value
