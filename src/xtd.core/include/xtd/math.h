@@ -90,10 +90,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value equals std::numeric_limit<sbyte_tsbyte_t>::lowest().
     static sbyte abs(sbyte value);
     /// @brief Returns the absolute value of a 64-bit signed integer
-    /// @param value A number in the range std::numeric_limit<llong_t>::lowest() <= value <= std::numeric_limit<llong_t>::max().
-    /// @return A 8-bit signed integer, x, such that 0 <= x <= std::numeric_limit<llong_t>::max().
-    /// @exception xtd::overflow_exception value equals std::numeric_limit<llong_t>::lowest().
-    static llong_t abs(llong_t value);
+    /// @param value A number in the range std::numeric_limit<llong>::lowest() <= value <= std::numeric_limit<llong>::max().
+    /// @return A 8-bit signed integer, x, such that 0 <= x <= std::numeric_limit<llong>::max().
+    /// @exception xtd::overflow_exception value equals std::numeric_limit<llong>::lowest().
+    static llong abs(llong value);
     
     /// @brief Returns the angle whose cosine is the specified number.
     /// @param value A number representing a cosine, where -1 <= value <= 1.
@@ -185,7 +185,7 @@ namespace xtd {
     /// @param min The lower bound of the result.
     /// @param max The upper bound of the result.
     /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
-    static llong_t clamp(llong_t value, llong_t min, llong_t max) noexcept;
+    static llong clamp(llong value, llong min, llong max) noexcept;
     /// @brief Returns value clamped to the inclusive range of min and max.
     /// @param value The value to be clamped.
     /// @param min The lower bound of the result.
@@ -221,7 +221,7 @@ namespace xtd {
     /// @param min The lower bound of the result.
     /// @param max The upper bound of the result.
     /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
-    static ullong_t clamp(ullong_t value, ullong_t min, ullong_t max) noexcept;
+    static ullong clamp(ullong value, ullong min, ullong max) noexcept;
 
     /// @brief Returns the cosine of the specified angle.
     /// @param value An angle, measured in radians.
@@ -378,7 +378,7 @@ namespace xtd {
     /// @param a The first of two 64-bit signed integers to compare.
     /// @param b The second of two 64-bit signed integers to compare.
     /// @return Parameter a or b, whichever is larger.
-    static llong_t max(llong_t a, llong_t b) noexcept;
+    static llong max(llong a, llong b) noexcept;
     /// @brief Returns the larger of two 8-bit signed integers.
     /// @param a The first of two 8-bit signed integers to compare.
     /// @param b The second of two 8-bit signed integers to compare.
@@ -408,7 +408,7 @@ namespace xtd {
     /// @param a The first of two 64-bit unsigned integers to compare.
     /// @param b The second of two 64-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is larger.
-    static ullong_t max(ullong_t a, ullong_t b) noexcept;
+    static ullong max(ullong a, ullong b) noexcept;
     
     /// @brief Returns the smaller of two 8-bit unsigned integers.
     /// @param a The first of two 8-bit unsigned integers to compare.
@@ -444,7 +444,7 @@ namespace xtd {
     /// @param a The first of two 64-bit signed integers to compare.
     /// @param b The second of two 64-bit signed integers to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static llong_t min(llong_t a, llong_t b) noexcept;
+    static llong min(llong a, llong b) noexcept;
     /// @brief Returns the smaller of two 8-bit signed integers.
     /// @param a The first of two 8-bit signed integers to compare.
     /// @param b The second of two 8-bit signed integers to compare.
@@ -474,7 +474,7 @@ namespace xtd {
     /// @param a The first of two 64-bit unsigned integers to compare.
     /// @param b The second of two 64-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static ullong_t min(ullong_t a, ullong_t b) noexcept;
+    static ullong min(ullong a, ullong b) noexcept;
     
     /// @brief Returns a specified number raised to the specified power.
     /// @param x A double-precision floating-point number to be raised to a power.
@@ -587,7 +587,7 @@ namespace xtd {
     /// | -1           | value is less than zero.    |
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
-    static int32 sign(llong_t value);
+    static int32 sign(llong value);
     /// @brief Returns a value indicating the sign of an 8-bit signed integer.
     /// @param value A signed number.
     /// @return int32 A number that indicates the sign of value, as shown in the following table.

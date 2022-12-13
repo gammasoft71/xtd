@@ -47,6 +47,7 @@ add_sources(
   include/xtd/native/speech_synthesizer.h
   include/xtd/native/system_sound.h
   include/xtd/native/translator.h
+  include/xtd/native/types.h
 )
 target_type(INTERFACE_LIBRARY)
 

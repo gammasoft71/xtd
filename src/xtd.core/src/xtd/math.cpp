@@ -44,8 +44,8 @@ sbyte math::abs(sbyte value) {
   return value < 0 ? -value : value;
 }
 
-llong_t math::abs(llong_t value) {
-  if (value == numeric_limits<llong_t>::lowest()) throw xtd::overflow_exception(csf_);
+llong math::abs(llong value) {
+  if (value == numeric_limits<llong>::lowest()) throw xtd::overflow_exception(csf_);
   return value < 0 ? -value : value;
 }
 
@@ -101,7 +101,7 @@ int64 math::clamp(int64 value, int64 min, int64 max) noexcept {
   return std::clamp(value, min, max);
 }
 
-llong_t math::clamp(llong_t value, llong_t min, llong_t max) noexcept {
+llong math::clamp(llong value, llong min, llong max) noexcept {
   return std::clamp(value, min, max);
 }
 
@@ -125,7 +125,7 @@ uint64 math::clamp(uint64 value, uint64 min, uint64 max) noexcept {
   return std::clamp(value, min, max);
 }
 
-ullong_t math::clamp(ullong_t value, ullong_t min, ullong_t max) noexcept {
+ullong math::clamp(ullong value, ullong min, ullong max) noexcept {
   return std::clamp(value, min, max);
 }
 
@@ -222,7 +222,7 @@ int64 math::max(int64 a, int64 b) noexcept {
   return a > b ? a : b;
 }
 
-llong_t math::max(llong_t a, llong_t b) noexcept {
+llong math::max(llong a, llong b) noexcept {
   return a > b ? a : b;
 }
 
@@ -246,7 +246,7 @@ uint64 math::max(uint64 a, uint64 b) noexcept {
   return a > b ? a : b;
 }
 
-ullong_t math::max(ullong_t a, ullong_t b) noexcept {
+ullong math::max(ullong a, ullong b) noexcept {
   return a > b ? a : b;
 }
 
@@ -274,7 +274,7 @@ int64 math::min(int64 a, int64 b) noexcept {
   return a < b ? a : b;
 }
 
-llong_t math::min(llong_t a, llong_t b) noexcept {
+llong math::min(llong a, llong b) noexcept {
   return a < b ? a : b;
 }
 
@@ -298,7 +298,7 @@ uint64 math::min(uint64 a, uint64 b) noexcept {
   return a < b ? a : b;
 }
 
-ullong_t math::min(ullong_t a, ullong_t b) noexcept {
+ullong math::min(ullong a, ullong b) noexcept {
   return a < b ? a : b;
 }
 

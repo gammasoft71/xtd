@@ -108,11 +108,11 @@ namespace xtd::tests {
     }
     
     void test_method_(abs_llong) {
-      assert::are_equal(numeric_limits<llong_t>::max(), math::abs(numeric_limits<llong_t>::max()), csf_);
+      assert::are_equal(numeric_limits<llong>::max(), math::abs(numeric_limits<llong>::max()), csf_);
       assert::are_equal(109013ll, math::abs(109013ll), csf_);
       assert::are_equal(0ll, math::abs(0ll), csf_);
       assert::are_equal(6871982ll, math::abs(-6871982ll), csf_);
-      assert::throws<overflow_exception>([] {math::abs(numeric_limits<llong_t>::lowest());}, csf_);
+      assert::throws<overflow_exception>([] {math::abs(numeric_limits<llong>::lowest());}, csf_);
     }
     
     void test_method_(acos) {
@@ -487,9 +487,9 @@ namespace xtd::tests {
     }
     
     void test_method_(max_llong) {
-      assert::are_equal(52, math::max(as<llong_t>(2), as<llong_t>(52)), csf_);
-      assert::are_equal(22, math::max(as<llong_t>(22), as<llong_t>(5)), csf_);
-      assert::are_equal(16, math::max(as<llong_t>(16), as<llong_t>(16)), csf_);
+      assert::are_equal(52, math::max(as<llong>(2), as<llong>(52)), csf_);
+      assert::are_equal(22, math::max(as<llong>(22), as<llong>(5)), csf_);
+      assert::are_equal(16, math::max(as<llong>(16), as<llong>(16)), csf_);
     }
     
     void test_method_(max_sbyte) {
@@ -523,9 +523,9 @@ namespace xtd::tests {
     }
     
     void test_method_(max_ullong) {
-      assert::are_equal(52u, math::max(as<ullong_t>(2), as<ullong_t>(52)), csf_);
-      assert::are_equal(22u, math::max(as<ullong_t>(22), as<ullong_t>(5)), csf_);
-      assert::are_equal(16u, math::max(as<ullong_t>(16), as<ullong_t>(16)), csf_);
+      assert::are_equal(52u, math::max(as<ullong>(2), as<ullong>(52)), csf_);
+      assert::are_equal(22u, math::max(as<ullong>(22), as<ullong>(5)), csf_);
+      assert::are_equal(16u, math::max(as<ullong>(16), as<ullong>(16)), csf_);
     }
     
     void test_method_(min_byte) {
@@ -565,9 +565,9 @@ namespace xtd::tests {
     }
     
     void test_method_(min_llong) {
-      assert::are_equal(2, math::min(as<llong_t>(2), as<llong_t>(52)), csf_);
-      assert::are_equal(5, math::min(as<llong_t>(22), as<llong_t>(5)), csf_);
-      assert::are_equal(16, math::min(as<llong_t>(16), as<llong_t>(16)), csf_);
+      assert::are_equal(2, math::min(as<llong>(2), as<llong>(52)), csf_);
+      assert::are_equal(5, math::min(as<llong>(22), as<llong>(5)), csf_);
+      assert::are_equal(16, math::min(as<llong>(16), as<llong>(16)), csf_);
     }
     
     void test_method_(min_sbyte) {
@@ -601,9 +601,9 @@ namespace xtd::tests {
     }
     
     void test_method_(min_ullong) {
-      assert::are_equal(2u, math::min(as<ullong_t>(2), as<ullong_t>(52)), csf_);
-      assert::are_equal(5u, math::min(as<ullong_t>(22), as<ullong_t>(5)), csf_);
-      assert::are_equal(16u, math::min(as<ullong_t>(16), as<ullong_t>(16)), csf_);
+      assert::are_equal(2u, math::min(as<ullong>(2), as<ullong>(52)), csf_);
+      assert::are_equal(5u, math::min(as<ullong>(22), as<ullong>(5)), csf_);
+      assert::are_equal(16u, math::min(as<ullong>(16), as<ullong>(16)), csf_);
     }
     
     void test_method_(pow) {
