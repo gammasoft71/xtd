@@ -330,7 +330,7 @@ namespace xtdc_command {
     }
     
     xtd::ustring build_path() const {return xtd::io::path::combine(path_, "build");}
-    int32_t last_exit_code() const {return last_exit_code_;}
+    xtd::int32 last_exit_code() const {return last_exit_code_;}
     
     void create_blank_solution(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) {
       std::map<project_sdk, xtd::action<const xtd::ustring&, bool>> {{project_sdk::none, {blank_solution_project {path_}, &blank_solution_project::create}}, {project_sdk::xtd, {xtd_blank_solution_project {path_}, &xtd_blank_solution_project::create}}, {project_sdk::xtd_c, {xtd_c_blank_solution_project {path_}, &xtd_c_blank_solution_project::create}}
@@ -444,6 +444,6 @@ namespace xtdc_command {
     }
     
     mutable xtd::ustring path_ = xtd::environment::current_directory();
-    mutable int32_t last_exit_code_ = EXIT_SUCCESS;
+    mutable xtd::int32 last_exit_code_ = EXIT_SUCCESS;
   };
 }

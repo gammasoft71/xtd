@@ -25,7 +25,7 @@ namespace sleepfor {
       
       if (show_version) console::write_line(get_version());
       else if (show_help) console::write_line("{0}{1}{1}{2}", get_version(), environment::new_line(), get_usage());
-      else if (indefinitely) while (true) sleep_for(hours(numeric_limits<int32_t>::max()));
+      else if (indefinitely) while (true) sleep_for(hours(numeric_limits<int32>::max()));
       else if (type == period_type::nanoseconds) sleep_for(nanoseconds(duration));
       else if (type == period_type::seconds) sleep_for(seconds(duration));
       else if (type == period_type::minutes) sleep_for(minutes(duration));
@@ -56,7 +56,7 @@ namespace sleepfor {
       return ustring::format("sleepfor version {}, (c) {:L} by Gammasoft", environment::version(), date_time::now());
     }
     
-    static bool process_arguments(const vector<ustring>& args, int32_t& duration, period_type& type, bool& indefinitely, bool& show_version, bool& show_help) {
+    static bool process_arguments(const vector<ustring>& args, int32& duration, period_type& type, bool& indefinitely, bool& show_version, bool& show_help) {
       for (size_t index = 0; index < args.size(); index += 1) {
         if (args[index] == "-ns" || args[index] == "--nanoseconds") type = period_type::nanoseconds;
         else if (args[index] == "-ms" || args[index] == "--milliseconds") type = period_type::milliseconds;
