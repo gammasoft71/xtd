@@ -9,7 +9,7 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(date_time_tests) {
-    static std::tm make_tm(int32_t year, int32_t month, int32_t day, int32_t hour, int32_t minute, int32_t second) {
+    static std::tm make_tm(int32 year, int32 month, int32 day, int32 hour, int32 minute, int32 second) {
       std::tm date = {};
       date.tm_year = year - 1900;
       date.tm_mon = month - 1;

@@ -26,7 +26,7 @@ namespace xtd::tests {
       
       assert::are_equal("10203040-5060-7080-90a0-b0c0d0e0f001", guid(0x10203040, 0x5060, 0x7080, vector<xtd::byte> {0x90, 0xA0, 0xB0, 0xC0, 0xD0, 0xE0, 0xF0, 0x01}).to_string(), csf_);
       
-      assert::are_equal("01020304-0506-0708-090a-0b0c0d0e0f10", guid(int32_t(0x01020304), int16(0x0506), int16(0x0708), 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x10).to_string(), csf_);
+      assert::are_equal("01020304-0506-0708-090a-0b0c0d0e0f10", guid(int32(0x01020304), int16(0x0506), int16(0x0708), 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x10).to_string(), csf_);
       assert::are_equal("10203040-5060-7080-90a0-b0c0d0e0f001", guid(uint32_t(0x10203040), uint16_t(0x5060), uint16_t(0x7080), 0x90, 0xA0, 0xB0, 0xC0, 0xD0, 0xE0, 0xF0, 0x01).to_string(), csf_);
     }
     
@@ -49,7 +49,7 @@ namespace xtd::tests {
     
     void test_method_(new_guid) {
       map<guid, guid> guids;
-      for (int32_t i = 0; i < 1'000; i++) {
+      for (int32 i = 0; i < 1'000; i++) {
         xtd::guid guid = xtd::guid::new_guid();
         assert::is_true(guids.find(guid) == guids.end(), csf_);
         guids[guid] = guid;

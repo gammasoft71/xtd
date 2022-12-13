@@ -54,7 +54,7 @@ namespace xtd::forms::tests {
     
     void test_method_(border_multiplier_factor) {
       #if defined(_WIN32)
-      int32_t border_multiplier_factor = 0;
+      int32 border_multiplier_factor = 0;
       SystemParametersInfo(SPI_GETBORDER, 0, &border_multiplier_factor, 0);
       assert::are_equal(border_multiplier_factor, system_information::border_multiplier_factor(), csf_);
       #else
@@ -99,7 +99,7 @@ namespace xtd::forms::tests {
     
     void test_method_(caret_width) {
       #if defined(_WIN32)
-      int32_t caret_width = 0;
+      int32 caret_width = 0;
       SystemParametersInfo(SPI_GETCARETWIDTH, 0, &caret_width, 0);
       assert::are_equal(caret_width, system_information::caret_width(), csf_);
       #else
@@ -155,7 +155,7 @@ namespace xtd::forms::tests {
     
     void test_method_(drag_full_windows) {
       #if defined(_WIN32)
-      int32_t drag_full_windows = 0;
+      int32 drag_full_windows = 0;
       SystemParametersInfo(SPI_GETDRAGFULLWINDOWS, 0, &drag_full_windows, 0);
       assert::are_equal(drag_full_windows != 0, system_information::drag_full_windows(), csf_);
       #else
@@ -181,7 +181,7 @@ namespace xtd::forms::tests {
     
     void test_method_(font_smoothing_contrast) {
       #if defined(_WIN32)
-      int32_t font_smoothing_contrast = 0;
+      int32 font_smoothing_contrast = 0;
       SystemParametersInfo(SPI_GETFONTSMOOTHINGCONTRAST, 0, &font_smoothing_contrast, 0);
       assert::are_equal(font_smoothing_contrast, system_information::font_smoothing_contrast(), csf_);
       #else
@@ -191,7 +191,7 @@ namespace xtd::forms::tests {
     
     void test_method_(font_smoothing_type) {
       #if defined(_WIN32)
-      int32_t font_smoothing_type = 0;
+      int32 font_smoothing_type = 0;
       SystemParametersInfo(SPI_GETFONTSMOOTHINGTYPE, 0, &font_smoothing_type, 0);
       assert::are_equal(font_smoothing_type, system_information::font_smoothing_type(), csf_);
       #else

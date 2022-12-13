@@ -10,7 +10,7 @@ namespace xtd::threading::tests {
   class test_class_(interlocked_tests) {
   public:
     void test_method_(add_int32) {
-      int32_t location = 42;
+      int32 location = 42;
       assert::are_equal(45, interlocked::add(location, 3), csf_);
       assert::are_equal(45, location, csf_);
     }
@@ -34,13 +34,13 @@ namespace xtd::threading::tests {
     }
     
     void test_method_(compare_exchange_int32_if_comparand_equal) {
-      int32_t location = 42;
+      int32 location = 42;
       assert::are_equal(42, interlocked::compare_exchange(location, 24, 42), csf_);
       assert::are_equal(24, location, csf_);
     }
     
     void test_method_(compare_exchange_int32_if_comparand_different) {
-      int32_t location = 42;
+      int32 location = 42;
       assert::are_equal(42, interlocked::compare_exchange(location, 24, 33));
       assert::are_equal(42, location);
     }
@@ -110,7 +110,7 @@ namespace xtd::threading::tests {
     }
     
     void test_method_(decrement_int32) {
-      int32_t location = 42;
+      int32 location = 42;
       assert::are_equal(41, interlocked::decrement(location), csf_);
       assert::are_equal(41, location, csf_);
     }
@@ -128,7 +128,7 @@ namespace xtd::threading::tests {
     }
     
     void test_method_(exchange_int32) {
-      int32_t location = 42;
+      int32 location = 42;
       assert::are_equal(42, interlocked::exchange(location, 24), csf_);
       assert::are_equal(24, location, csf_);
     }
@@ -166,7 +166,7 @@ namespace xtd::threading::tests {
     }
     
     void test_method_(increment_int32) {
-      int32_t location = 42;
+      int32 location = 42;
       assert::are_equal(43, interlocked::increment(location), csf_);
       assert::are_equal(43, location, csf_);
     }

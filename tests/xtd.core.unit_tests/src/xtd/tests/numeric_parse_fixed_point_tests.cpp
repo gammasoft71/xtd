@@ -23,7 +23,7 @@ namespace xtd::tests {
   test_class_attribute<numeric_parse_string_fixed_point_tests<unsigned long long>> numeric_parse_string_fixed_point_tests_class_unsigned_long_long_attr {"numeric_parse_string_fixed_point_tests<unsigned_long_long>"};
   test_class_attribute<numeric_parse_string_fixed_point_tests<sbyte>> numeric_parse_string_fixed_point_tests_class_int8_t_attr {"numeric_parse_string_fixed_point_tests<sbyte>"};
   test_class_attribute<numeric_parse_string_fixed_point_tests<int16>> numeric_parse_string_fixed_point_tests_class_int16_t_attr {"numeric_parse_string_fixed_point_tests<int16>"};
-  test_class_attribute<numeric_parse_string_fixed_point_tests<int32_t>> numeric_parse_string_fixed_point_tests_class_int32_t_attr {"numeric_parse_string_fixed_point_tests<int32_t>"};
+  test_class_attribute<numeric_parse_string_fixed_point_tests<int32>> numeric_parse_string_fixed_point_tests_class_int32_t_attr {"numeric_parse_string_fixed_point_tests<int32>"};
   test_class_attribute<numeric_parse_string_fixed_point_tests<int64_t>> numeric_parse_string_fixed_point_tests_class_int64_t_attr {"numeric_parse_string_fixed_point_tests<int64_t>"};
   test_class_attribute<numeric_parse_string_fixed_point_tests<intptr_t>> numeric_parse_string_fixed_point_tests_class_intptr_t_attr {"numeric_parse_string_fixed_point_tests<intptr_t>"};
   test_class_attribute<numeric_parse_string_fixed_point_tests<ptrdiff_t>> numeric_parse_string_fixed_point_tests_class_ptrdiff_t_attr {"numeric_parse_string_fixed_point_tests<ptrdiff_t>"};

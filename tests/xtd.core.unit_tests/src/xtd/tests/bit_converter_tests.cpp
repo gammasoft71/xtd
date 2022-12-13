@@ -181,11 +181,11 @@ namespace xtd::tests {
         bytes_assert::are_equal(0x00, 0x36, 0x65, 0xC4, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int32_t>::lowest())) {
+      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int32>::lowest())) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x80, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int32_t>::max())) {
+      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int32>::max())) {
         bytes_assert::are_equal(0xFF, 0xFF, 0xFF, 0x7F, bytes, csf_);
       }
     }
@@ -472,8 +472,8 @@ namespace xtd::tests {
       assert::are_equal(-1048576, bit_converter::to_int32({0x00, 0x00, 0xF0, 0xFF}, 0), csf_);
       assert::are_equal(1000000000, bit_converter::to_int32({0x00, 0xCA, 0x9A, 0x3B}, 0), csf_);
       assert::are_equal(-1000000000, bit_converter::to_int32({0x00, 0x36, 0x65, 0xC4}, 0), csf_);
-      assert::are_equal(std::numeric_limits<int32_t>::lowest(), bit_converter::to_int32({0x00, 0x00, 0x00, 0x80}, 0), csf_);
-      assert::are_equal(std::numeric_limits<int32_t>::max(), bit_converter::to_int32({0xFF, 0xFF, 0xFF, 0x7F}, 0), csf_);
+      assert::are_equal(std::numeric_limits<int32>::lowest(), bit_converter::to_int32({0x00, 0x00, 0x00, 0x80}, 0), csf_);
+      assert::are_equal(std::numeric_limits<int32>::max(), bit_converter::to_int32({0xFF, 0xFF, 0xFF, 0x7F}, 0), csf_);
     }
     
     void test_method_(to_int64) {
