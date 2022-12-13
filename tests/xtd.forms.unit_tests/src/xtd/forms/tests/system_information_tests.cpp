@@ -91,7 +91,7 @@ namespace xtd::forms::tests {
     
     void test_method_(caret_blink_time) {
       #if defined(_WIN32)
-      assert::are_equal(GetCaretBlinkTime(), static_cast<uint32_t>(system_information::caret_blink_time()), csf_);
+      assert::are_equal(GetCaretBlinkTime(), static_cast<uint32>(system_information::caret_blink_time()), csf_);
       #else
       assert::are_equal(530, system_information::caret_blink_time(), csf_);
       #endif
@@ -145,7 +145,7 @@ namespace xtd::forms::tests {
     
     void test_method_(double_click_time) {
       #if defined(_WIN32)
-      assert::are_equal(GetDoubleClickTime(), static_cast<uint32_t>(system_information::double_click_time()), csf_);
+      assert::are_equal(GetDoubleClickTime(), static_cast<uint32>(system_information::double_click_time()), csf_);
       #elif (__APPLE__)
       assert::are_equal(get_double_click_time(), system_information::double_click_time(), csf_);
       #else
