@@ -123,31 +123,31 @@ namespace xtd::tests {
     }
     
     void test_method_(get_bytes_int16) {
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<int16_t>(0))) {
+      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<int16>(0))) {
         bytes_assert::are_equal(0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<int16_t>(15))) {
+      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<int16>(15))) {
         bytes_assert::are_equal(0x0F, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<int16_t>(-15))) {
+      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<int16>(-15))) {
         bytes_assert::are_equal(0xF1, 0xFF, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<int16_t>(10000))) {
+      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<int16>(10000))) {
         bytes_assert::are_equal(0x10, 0x27, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<int16_t>(-10000))) {
+      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<int16>(-10000))) {
         bytes_assert::are_equal(0xF0, 0xD8, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int16_t>::lowest())) {
+      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int16>::lowest())) {
         bytes_assert::are_equal(0x00, 0x80, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int16_t>::max())) {
+      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int16>::max())) {
         bytes_assert::are_equal(0xFF, 0x7F, bytes, csf_);
       }
     }
@@ -457,8 +457,8 @@ namespace xtd::tests {
       assert::are_equal(-15, bit_converter::to_int16({0xF1, 0xFF}, 0), csf_);
       assert::are_equal(10000, bit_converter::to_int16({0x10, 0x27}, 0), csf_);
       assert::are_equal(-10000, bit_converter::to_int16({0xF0, 0xD8}, 0), csf_);
-      assert::are_equal(std::numeric_limits<int16_t>::lowest(), bit_converter::to_int16({0x00, 0x80}, 0), csf_);
-      assert::are_equal(std::numeric_limits<int16_t>::max(), bit_converter::to_int16({0xFF, 0x7F}, 0), csf_);
+      assert::are_equal(std::numeric_limits<int16>::lowest(), bit_converter::to_int16({0x00, 0x80}, 0), csf_);
+      assert::are_equal(std::numeric_limits<int16>::max(), bit_converter::to_int16({0xFF, 0x7F}, 0), csf_);
     }
     
     void test_method_(to_int32) {
