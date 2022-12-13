@@ -30,7 +30,7 @@ Unlike other members, properties should be given noun phrase or adjective names.
 ```c++
 ustring text_writer() const { ... }
 void textt_writer(const ustring& value) { ... }
-ustring get_text_writer(int32_t value) { ... }
+ustring get_text_writer(int value) { ... }
 ```
 
 This pattern typically indicates that the property should really be a method.
