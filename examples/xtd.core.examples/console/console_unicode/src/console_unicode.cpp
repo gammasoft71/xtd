@@ -9,7 +9,7 @@ int main() {
   
   // Create a Char array for the modern Cyrillic alphabet, from U+0410 to U+044F.
   auto nchars = 0x044F - 0x0410 + 1;
-  vector<char32_t> chars(nchars);
+  vector<char32> chars(nchars);
   auto code_point = U'\U00000410';
   for (auto ctr = 0U; ctr < chars.size(); ctr++) {
     chars[ctr] = code_point;
