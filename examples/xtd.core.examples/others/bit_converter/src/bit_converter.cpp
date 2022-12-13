@@ -15,7 +15,7 @@ int main() {
   
   console::write_line("This example of methods of the BitConverter class"
     "\ngenerates the following output.\n");
-  console::write_line(formatter, "argument", "byte array");
+  console::write_line(formatter, "argument", "xtd::byte array");
   console::write_line(formatter, "--------", "----------");
   
   // Convert values to Byte arrays and display them.
@@ -33,7 +33,7 @@ int main() {
 // This example of methods of the BitConverter class
 // generates the following output.
 //
-//                  argument                    byte array
+//                  argument                    xtd::byte array
 //                  --------                    ----------
 //         0.111111111111111       1C-C7-71-1C-C7-71-BC-3F
 //                 0.1111111                   39-8E-E3-3D

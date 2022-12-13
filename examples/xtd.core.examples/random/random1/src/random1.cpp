@@ -4,8 +4,8 @@ using namespace std;
 using namespace xtd;
 
 int main() {
-  vector<uint8_t> bytes1(100);
-  vector<uint8_t> bytes2(100);
+  vector<xtd::byte> bytes1(100);
+  vector<xtd::byte> bytes2(100);
   xtd::random rnd1;
   xtd::random rnd2;
   

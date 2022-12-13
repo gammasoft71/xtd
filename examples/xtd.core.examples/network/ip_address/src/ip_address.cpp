@@ -40,7 +40,7 @@ private:
   /**
    * The IPAddresses method obtains the selected server IP address information.
    * It then displays the type of address family supported by the server and its
-   * IP address in standard and byte format.
+   * IP address in standard and xtd::byte format.
    **/
   static void ip_addresses(const ustring& server) {
     try {
@@ -64,7 +64,7 @@ private:
         // in in colon-hexadecimal notation.
         console::write_line("address: {}", cur_add);
         
-        // Display the server IP address in byte format.
+        // Display the server IP address in xtd::byte format.
         console::write("address_bytes: ");
         
         auto bytes = cur_add.get_address_bytes();
