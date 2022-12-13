@@ -8,7 +8,7 @@ find_package(xtd REQUIRED)
 target_registered(OFF)
 
 # Sources
-add_sources(src/target_registered.cpp)
+add_sources(README.md src/target_registered.cpp)
 
 # Target
 target_type(GUI_APPLICATION)

@@ -2,5 +2,5 @@ cmake_minimum_required(VERSION 3.3)
 
 project(date_time_add_milliseconds)
 find_package(xtd REQUIRED)
-add_sources(src/date_time_add_milliseconds.cpp)
+add_sources(README.md src/date_time_add_milliseconds.cpp)
 target_type(CONSOLE_APPLICATION)

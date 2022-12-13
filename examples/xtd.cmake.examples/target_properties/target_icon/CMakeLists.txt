@@ -8,7 +8,7 @@ find_package(xtd REQUIRED)
 target_icon(resources/xtd_forms)
 
 # Sources
-add_sources(src/target_icon.cpp)
+add_sources(README.md src/target_icon.cpp)
 
 # Target
 target_type(GUI_APPLICATION)

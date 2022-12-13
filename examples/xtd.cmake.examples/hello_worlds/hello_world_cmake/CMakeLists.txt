@@ -5,5 +5,5 @@ find_package(xtd REQUIRED)
 
 message(STATUS "Hello, World!\n")
 
-add_sources(src/hello_world_cmake.cpp)
+add_sources(README.md src/hello_world_cmake.cpp)
 target_type(GUI_APPLICATION)

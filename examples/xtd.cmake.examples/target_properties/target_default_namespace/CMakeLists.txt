@@ -8,7 +8,7 @@ find_package(xtd REQUIRED)
 target_default_namespace(other_namespace)
 
 # Sources
-add_sources(src/target_default_namespace.cpp)
+add_sources(README.md src/target_default_namespace.cpp)
 
 # Target
 target_type(GUI_APPLICATION)
