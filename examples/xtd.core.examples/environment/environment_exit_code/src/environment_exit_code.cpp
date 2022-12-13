@@ -12,7 +12,7 @@ namespace examples {
       if (args.size() == 1)
         environment::exit_code(ECANCELED);
       else {
-        int64 value = 0;
+        long long value = 0;
         if (try_parse(args[1], value))
           if (value <= numeric_limits<int>::min() || value >= numeric_limits<int>::max())
             environment::exit_code(ERANGE);
