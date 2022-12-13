@@ -81,7 +81,7 @@ namespace xtd::tests {
     }
     
     void test_method_(int8_t_as_double) {
-      assert::is_true(is<double>(as<double>((int8_t)42)), csf_);
+      assert::is_true(is<double>(as<double>((sbyte)42)), csf_);
     }
     
     void test_method_(int16_t_as_double) {

@@ -22,7 +22,7 @@ namespace xtd::tests {
   test_class_attribute<numeric_parse_string_default_tests<unsigned long>> numeric_parse_string_default_tests_class_unsigned_long_attr {"numeric_parse_string_default_tests<unsigned_long>"};
   test_class_attribute<numeric_parse_string_default_tests<long long>> numeric_parse_string_default_tests_class_long_long_attr {"numeric_parse_string_default_tests<long_long>"};
   test_class_attribute<numeric_parse_string_default_tests<unsigned long long>> numeric_parse_string_default_tests_class_unsigned_long_long_attr {"numeric_parse_string_default_tests<unsigned_long_long>"};
-  test_class_attribute<numeric_parse_string_default_tests<int8_t>> numeric_parse_string_default_tests_class_int8_t_attr {"numeric_parse_string_default_tests<int8_t>"};
+  test_class_attribute<numeric_parse_string_default_tests<sbyte>> numeric_parse_string_default_tests_class_int8_t_attr {"numeric_parse_string_default_tests<sbyte>"};
   test_class_attribute<numeric_parse_string_default_tests<int16>> numeric_parse_string_default_tests_class_int16_t_attr {"numeric_parse_string_default_tests<int16>"};
   test_class_attribute<numeric_parse_string_default_tests<int32_t>> numeric_parse_string_default_tests_class_int32_t_attr {"numeric_parse_string_default_tests<int32_t>"};
   test_class_attribute<numeric_parse_string_default_tests<int64_t>> numeric_parse_string_default_tests_class_int64_t_attr {"numeric_parse_string_default_tests<int64_t>"};
@@ -112,12 +112,12 @@ namespace xtd::tests {
     }
     
     void test_method_(parse_default_with_thousands) {
-      if (!std::is_same<Value, int8_t>::value && !std::is_same<Value, char>::value && !std::is_same<Value, unsigned char>::value)
+      if (!std::is_same<Value, sbyte>::value && !std::is_same<Value, char>::value && !std::is_same<Value, unsigned char>::value)
         assert::throws<format_exception>([] {xtd::parse<Value>("1,234");}, csf_);
     }
     
     void test_method_(parse_default_with_two_thousands) {
-      if (!std::is_same<Value, int8_t>::value && !std::is_same<Value, char>::value && !std::is_same<Value, unsigned char>::value)
+      if (!std::is_same<Value, sbyte>::value && !std::is_same<Value, char>::value && !std::is_same<Value, unsigned char>::value)
         assert::throws<format_exception>([] {xtd::parse<Value>("1,,234");}, csf_);
     }
     

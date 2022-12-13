@@ -21,7 +21,7 @@ namespace xtd::tests {
   test_class_attribute<string_numeric_format_tests<unsigned long>> string_numeric_format_tests_class_unsigned_long_attr {"string_numeric_format_tests<unsigned_long>"};
   test_class_attribute<string_numeric_format_tests<long long>> string_numeric_format_tests_class_long_long_attr {"string_numeric_format_tests<long_long>"};
   test_class_attribute<string_numeric_format_tests<unsigned long long>> string_numeric_format_tests_class_unsigned_long_long_attr {"string_numeric_format_tests<unsigned_long_long>"};
-  test_class_attribute<string_numeric_format_tests<int8_t>> string_numeric_format_tests_class_int8_t_attr {"string_numeric_format_tests<int8_t>"};
+  test_class_attribute<string_numeric_format_tests<sbyte>> string_numeric_format_tests_class_int8_t_attr {"string_numeric_format_tests<sbyte>"};
   test_class_attribute<string_numeric_format_tests<int16>> string_numeric_format_tests_class_int16_t_attr {"string_numeric_format_tests<int16>"};
   test_class_attribute<string_numeric_format_tests<int32_t>> string_numeric_format_tests_class_int32_t_attr {"string_numeric_format_tests<int32_t>"};
   test_class_attribute<string_numeric_format_tests<int64_t>> string_numeric_format_tests_class_int64_t_attr {"string_numeric_format_tests<int64_t>"};
@@ -265,7 +265,7 @@ namespace xtd::tests {
     }
     
     void test_method_(format_with_number_argument) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, xtd::byte>::value)
+      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, sbyte>::value || std::is_same<Value, xtd::byte>::value)
         assert::are_equal("123.00", ustring::format("{0:n}", static_cast<Value>(123)), csf_);
       else if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
         assert::are_equal("1,234.00", ustring::format("{0:n}", static_cast<Value>(1234)), csf_);
@@ -274,7 +274,7 @@ namespace xtd::tests {
     }
     
     void test_method_(format_with_number_argument_and_one_digit_precision) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, xtd::byte>::value)
+      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, sbyte>::value || std::is_same<Value, xtd::byte>::value)
         assert::are_equal("123.0000", ustring::format("{0:N4}", static_cast<Value>(123)), csf_);
       else if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
         assert::are_equal("1,234.0000", ustring::format("{0:N4}", static_cast<Value>(1234)), csf_);
@@ -283,7 +283,7 @@ namespace xtd::tests {
     }
     
     void test_method_(format_with_number_argument_and_two_digits_precision) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, xtd::byte>::value)
+      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, sbyte>::value || std::is_same<Value, xtd::byte>::value)
         assert::are_equal("123.0000000000", ustring::format("{0:N10}", static_cast<Value>(123)), csf_);
       else if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
         assert::are_equal("1,234.0000000000", ustring::format("{0:N10}", static_cast<Value>(1234)), csf_);
