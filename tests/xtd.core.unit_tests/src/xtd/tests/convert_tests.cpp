@@ -96,8 +96,8 @@ namespace xtd::tests {
     }
     
     void test_method_(to_any_from_uint16) {
-      uint16_t value = 42u;
-      assert::are_equal(42u, any_cast<uint16_t>(convert::to_any(value)), csf_);
+      uint16 value = 42u;
+      assert::are_equal(42u, any_cast<uint16>(convert::to_any(value)), csf_);
     }
     
     void test_method_(to_any_from_uint32) {
@@ -283,7 +283,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_boolean_from_uint16) {
-      uint16_t value = 42;
+      uint16 value = 42;
       assert::is_true(convert::to_boolean(value), csf_);
       value = 0;
       assert::is_false(convert::to_boolean(value), csf_);
@@ -582,7 +582,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_byte_from_uint16) {
-      uint16_t value = 42u;
+      uint16 value = 42u;
       assert::are_equal(42u, convert::to_byte(value), csf_);
       value = 0u;
       assert::is_zero(convert::to_byte(value), csf_);
@@ -895,7 +895,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_char_from_uint16) {
-      uint16_t value = 97u;
+      uint16 value = 97u;
       assert::are_equal('a', convert::to_char(value), csf_);
       value = 0u;
       assert::is_zero(convert::to_char(value), csf_);
@@ -1177,7 +1177,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_char8_from_uint16) {
-      uint16_t value = 97u;
+      uint16 value = 97u;
       assert::are_equal(u8'a', convert::to_char8(value), csf_);
         value = 0u;
         assert::is_zero(convert::to_char8(value), csf_);
@@ -1454,7 +1454,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_char16_from_uint16) {
-      uint16_t value = 97u;
+      uint16 value = 97u;
       assert::are_equal(u'a', convert::to_char16(value), csf_);
       value = 0u;
       assert::is_zero(convert::to_char16(value), csf_);
@@ -1721,7 +1721,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_char32_from_uint16) {
-      uint16_t value = 97u;
+      uint16 value = 97u;
       assert::are_equal(U'a', convert::to_char32(value), csf_);
       value = 0u;
       assert::is_zero(convert::to_char32(value), csf_);
@@ -1992,7 +1992,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_wchar_from_uint16) {
-      uint16_t value = 97u;
+      uint16 value = 97u;
       assert::are_equal(L'a', convert::to_wchar(value), csf_);
       value = 0u;
       assert::is_zero(convert::to_wchar(value), csf_);
@@ -2228,7 +2228,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_decimal_from_uint16) {
-      uint16_t value = 42u;
+      uint16 value = 42u;
       assert::are_equal(42.0l, convert::to_decimal(value), csf_);
       value = 0;
       assert::is_zero(convert::to_decimal(value), csf_);
@@ -2480,7 +2480,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_double_from_uint16) {
-      uint16_t value = 42u;
+      uint16 value = 42u;
       assert::are_equal(42.0, convert::to_double(value), csf_);
       value = 0;
       assert::is_zero(convert::to_double(value), csf_);
@@ -2732,7 +2732,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_single_from_uint16) {
-      uint16_t value = 42u;
+      uint16 value = 42u;
       assert::are_equal(42.0f, convert::to_single(value), csf_);
       value = 0;
       assert::is_zero(convert::to_single(value), csf_);
@@ -3009,7 +3009,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_int16_from_uint16) {
-      uint16_t value = 42u;
+      uint16 value = 42u;
       assert::are_equal(42, convert::to_int16(value), csf_);
       value = 0u;
       assert::is_zero(convert::to_int16(value), csf_);
@@ -3294,7 +3294,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_int32_from_uint16) {
-      uint16_t value = 42u;
+      uint16 value = 42u;
       assert::are_equal(42, convert::to_int32(value), csf_);
       value = 0u;
       assert::is_zero(convert::to_int32(value), csf_);
@@ -3571,7 +3571,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_int64_from_uint16) {
-      uint16_t value = 42u;
+      uint16 value = 42u;
       assert::are_equal(42l, convert::to_int64(value), csf_);
       value = 0u;
       assert::is_zero(convert::to_int64(value), csf_);
@@ -3844,7 +3844,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_llong_from_uint16) {
-      uint16_t value = 42u;
+      uint16 value = 42u;
       assert::are_equal(42ll, convert::to_llong(value), csf_);
       value = 0u;
       assert::is_zero(convert::to_llong(value), csf_);
@@ -4137,7 +4137,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_sbyte_from_uint16) {
-      uint16_t value = 42u;
+      uint16 value = 42u;
       assert::are_equal(42, convert::to_sbyte(value), csf_);
       value = 0u;
       assert::is_zero(convert::to_sbyte(value), csf_);
@@ -4287,9 +4287,9 @@ namespace xtd::tests {
     }
     
     void test_method_(to_uint16_from_any) {
-      any value = static_cast<uint16_t>(42);
+      any value = static_cast<uint16>(42);
       assert::are_equal(42u, convert::to_uint16(value), csf_);
-      value = static_cast<uint16_t>(0);
+      value = static_cast<uint16>(0);
       assert::is_zero(convert::to_uint16(value), csf_);
     }
     
@@ -4430,7 +4430,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_uint16_from_uint16) {
-      uint16_t value = 42u;
+      uint16 value = 42u;
       assert::are_equal(42u, convert::to_uint16(value), csf_);
       value = 0u;
       assert::is_zero(convert::to_uint16(value), csf_);
@@ -4713,7 +4713,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_uint32_from_uint16) {
-      uint16_t value = 42u;
+      uint16 value = 42u;
       assert::are_equal(42u, convert::to_uint32(value), csf_);
       value = 0u;
       assert::is_zero(convert::to_uint32(value), csf_);
@@ -4986,7 +4986,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_uint64_from_uint16) {
-      uint16_t value = 42u;
+      uint16 value = 42u;
       assert::are_equal(42u, convert::to_uint64(value), csf_);
       value = 0u;
       assert::is_zero(convert::to_uint64(value), csf_);
@@ -5257,7 +5257,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_ullong_from_uint16) {
-      uint16_t value = 42u;
+      uint16 value = 42u;
       assert::are_equal(42llu, convert::to_ullong(value), csf_);
       value = 0u;
       assert::is_zero(convert::to_ullong(value), csf_);

@@ -505,9 +505,9 @@ namespace xtd::tests {
     }
     
     void test_method_(max_uint16) {
-      assert::are_equal(52u, math::max(as<uint16_t>(2), as<uint16_t>(52)), csf_);
-      assert::are_equal(22u, math::max(as<uint16_t>(22), as<uint16_t>(5)), csf_);
-      assert::are_equal(16u, math::max(as<uint16_t>(16), as<uint16_t>(16)), csf_);
+      assert::are_equal(52u, math::max(as<uint16>(2), as<uint16>(52)), csf_);
+      assert::are_equal(22u, math::max(as<uint16>(22), as<uint16>(5)), csf_);
+      assert::are_equal(16u, math::max(as<uint16>(16), as<uint16>(16)), csf_);
     }
     
     void test_method_(max_uint32) {
@@ -583,9 +583,9 @@ namespace xtd::tests {
     }
     
     void test_method_(min_uint16) {
-      assert::are_equal(2u, math::min(as<uint16_t>(2), as<uint16_t>(52)), csf_);
-      assert::are_equal(5u, math::min(as<uint16_t>(22), as<uint16_t>(5)), csf_);
-      assert::are_equal(16u, math::min(as<uint16_t>(16), as<uint16_t>(16)), csf_);
+      assert::are_equal(2u, math::min(as<uint16>(2), as<uint16>(52)), csf_);
+      assert::are_equal(5u, math::min(as<uint16>(22), as<uint16>(5)), csf_);
+      assert::are_equal(16u, math::min(as<uint16>(16), as<uint16>(16)), csf_);
     }
     
     void test_method_(min_uint32) {
