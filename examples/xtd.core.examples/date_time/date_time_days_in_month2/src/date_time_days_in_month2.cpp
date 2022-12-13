@@ -6,12 +6,12 @@ using namespace xtd;
 class program {
 public:
   static void main() {
-    array<uint32_t, 2> years = {2012, 2014};
+    array<uint32, 2> years = {2012, 2014};
     console::write_line("Days in the Month for the Gregorian calendar\n");
     console::write_line("{0,-10}{1,-15}{2,4}\n", "Year", "Month", "Days");
     
     for (auto year : years) {
-      for (uint32_t ctr = 1; ctr <= 12; ctr++)
+      for (uint32 ctr = 1; ctr <= 12; ctr++)
         console::write_line("{0,-10}{1,-15}{2,4}", year, as<month_of_year>(ctr), date_time::days_in_month(year, ctr));
       console::write_line();
     }
