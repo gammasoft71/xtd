@@ -29,7 +29,7 @@ namespace xtd::tests {
   test_class_attribute<numeric_parse_string_none_tests<ptrdiff_t>> numeric_parse_string_none_tests_class_ptrdiff_t_attr {"numeric_parse_string_none_tests<ptrdiff_t>"};
   test_class_attribute<numeric_parse_string_none_tests<size_t>> numeric_parse_string_none_tests_class_size_t_attr {"numeric_parse_string_none_tests<size_t>"};
   test_class_attribute<numeric_parse_string_none_tests<xtd::byte>> numeric_parse_string_none_tests_class_uint8_t_attr {"numeric_parse_string_none_tests<xtd::byte>"};
-  test_class_attribute<numeric_parse_string_none_tests<uint16_t>> numeric_parse_string_none_tests_class_uint16_t_attr {"numeric_parse_string_none_tests<uint16_t>"};
+  test_class_attribute<numeric_parse_string_none_tests<uint16>> numeric_parse_string_none_tests_class_uint16_t_attr {"numeric_parse_string_none_tests<uint16>"};
   test_class_attribute<numeric_parse_string_none_tests<uint32_t>> numeric_parse_string_none_tests_class_uint32_t_attr {"numeric_parse_string_none_tests<uint32_t>"};
   test_class_attribute<numeric_parse_string_none_tests<uint64_t>> numeric_parse_string_none_tests_class_uint64_t_attr {"numeric_parse_string_none_tests<uint64_t>"};
   test_class_attribute<numeric_parse_string_none_tests<uintptr_t>> numeric_parse_string_none_tests_class_uintptr_t_attr {"numeric_parse_string_none_tests<uintptr_t>"};

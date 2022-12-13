@@ -29,7 +29,7 @@ namespace xtd::tests {
   test_class_attribute<wstring_numeric_format_tests<ptrdiff_t>> wstring_numeric_format_tests_class_ptrdiff_t_attr {"wstring_numeric_format_tests<ptrdiff_t>"};
   test_class_attribute<wstring_numeric_format_tests<size_t>> wstring_numeric_format_tests_class_size_t_attr {"wstring_numeric_format_tests<size_t>"};
   test_class_attribute<wstring_numeric_format_tests<xtd::byte>> wstring_numeric_format_tests_class_uint8_t_attr {"wstring_numeric_format_tests<xtd::byte>"};
-  test_class_attribute<wstring_numeric_format_tests<uint16_t>> wstring_numeric_format_tests_class_uint16_t_attr {"wstring_numeric_format_tests<uint16_t>"};
+  test_class_attribute<wstring_numeric_format_tests<uint16>> wstring_numeric_format_tests_class_uint16_t_attr {"wstring_numeric_format_tests<uint16>"};
   test_class_attribute<wstring_numeric_format_tests<uint32_t>> wstring_numeric_format_tests_class_uint32_t_attr {"wstring_numeric_format_tests<uint32_t>"};
   test_class_attribute<wstring_numeric_format_tests<uint64_t>> wstring_numeric_format_tests_class_uint64_t_attr {"wstring_numeric_format_tests<uint64_t>"};
   test_class_attribute<wstring_numeric_format_tests<uintptr_t>> wstring_numeric_format_tests_class_uintptr_t_attr {"wstring_numeric_format_tests<uintptr_t>"};
