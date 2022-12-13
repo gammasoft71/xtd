@@ -15,7 +15,7 @@ namespace examples {
       }
       
       cout << ustring::format("The factorial of {0} is {1}", number, [&] {
-        int64_t result = 1;
+        int64 result = 1;
         for (int i = 1; i <= number; ++i)
           result *= i;
         return result;
