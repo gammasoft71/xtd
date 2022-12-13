@@ -122,7 +122,7 @@ namespace examples {
       track_bar_alpha.tick_style(tick_style::none);
       track_bar_alpha.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
       track_bar_alpha.value_changed += [&] {
-        color(drawing::color::from_argb(as<uint8_t>(track_bar_alpha.value()), color_.r(), color_.g(), color_.b()));
+        color(drawing::color::from_argb(as<xtd::byte>(track_bar_alpha.value()), color_.r(), color_.g(), color_.b()));
       };
       
       numeric_up_down_alpha.parent(*this);
@@ -131,7 +131,7 @@ namespace examples {
       numeric_up_down_alpha.maximum(255);
       numeric_up_down_alpha.anchor(anchor_styles::top | anchor_styles::right);
       numeric_up_down_alpha.value_changed += [&] {
-        color(drawing::color::from_argb(as<uint8_t>(numeric_up_down_alpha.value()), color_.r(), color_.g(), color_.b()));
+        color(drawing::color::from_argb(as<xtd::byte>(numeric_up_down_alpha.value()), color_.r(), color_.g(), color_.b()));
       };
       
       label_red.parent(*this);
@@ -147,7 +147,7 @@ namespace examples {
       track_bar_red.tick_style(tick_style::none);
       track_bar_red.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
       track_bar_red.value_changed += [&] {
-        color(drawing::color::from_argb(color_.a(), as<uint8_t>(track_bar_red.value()), color_.g(), color_.b()));
+        color(drawing::color::from_argb(color_.a(), as<xtd::byte>(track_bar_red.value()), color_.g(), color_.b()));
       };
       
       numeric_up_down_red.parent(*this);
@@ -156,7 +156,7 @@ namespace examples {
       numeric_up_down_red.maximum(255);
       numeric_up_down_red.anchor(anchor_styles::top | anchor_styles::right);
       numeric_up_down_red.value_changed += [&] {
-        color(drawing::color::from_argb(color_.a(), as<uint8_t>(numeric_up_down_red.value()), color_.g(), color_.b()));
+        color(drawing::color::from_argb(color_.a(), as<xtd::byte>(numeric_up_down_red.value()), color_.g(), color_.b()));
       };
       
       label_green.parent(*this);
@@ -172,7 +172,7 @@ namespace examples {
       track_bar_green.tick_style(tick_style::none);
       track_bar_green.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
       track_bar_green.value_changed += [&] {
-        color(drawing::color::from_argb(color_.a(), color_.r(), as<uint8_t>(track_bar_green.value()), color_.b()));
+        color(drawing::color::from_argb(color_.a(), color_.r(), as<xtd::byte>(track_bar_green.value()), color_.b()));
       };
       
       numeric_up_down_green.parent(*this);
@@ -181,7 +181,7 @@ namespace examples {
       numeric_up_down_green.maximum(255);
       numeric_up_down_green.anchor(anchor_styles::top | anchor_styles::right);
       numeric_up_down_green.value_changed += [&] {
-        color(drawing::color::from_argb(color_.a(), color_.r(), as<uint8_t>(numeric_up_down_green.value()), color_.b()));
+        color(drawing::color::from_argb(color_.a(), color_.r(), as<xtd::byte>(numeric_up_down_green.value()), color_.b()));
       };
       
       label_blue.parent(*this);
@@ -197,7 +197,7 @@ namespace examples {
       track_bar_blue.tick_style(tick_style::none);
       track_bar_blue.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
       track_bar_blue.value_changed += [&] {
-        color(drawing::color::from_argb(color_.a(), color_.r(), color_.g(), as<uint8_t>(track_bar_blue.value())));
+        color(drawing::color::from_argb(color_.a(), color_.r(), color_.g(), as<xtd::byte>(track_bar_blue.value())));
       };
       
       numeric_up_down_blue.parent(*this);
@@ -206,7 +206,7 @@ namespace examples {
       numeric_up_down_blue.maximum(255);
       numeric_up_down_blue.anchor(anchor_styles::top | anchor_styles::right);
       numeric_up_down_blue.value_changed += [&] {
-        color(drawing::color::from_argb(color_.a(), color_.r(), color_.g(), as<uint8_t>(numeric_up_down_blue.value())));
+        color(drawing::color::from_argb(color_.a(), color_.r(), color_.g(), as<xtd::byte>(numeric_up_down_blue.value())));
       };
       
       panel_color_box.parent(*this);
@@ -248,7 +248,7 @@ namespace examples {
   private:
   
     void on_argb_changed() {
-      color(drawing::color::from_argb(as<uint8_t>(track_bar_alpha.value()), as<uint8_t>(track_bar_red.value()), as<uint8_t>(track_bar_green.value()), as<uint8_t>(track_bar_blue.value())));
+      color(drawing::color::from_argb(as<xtd::byte>(track_bar_alpha.value()), as<xtd::byte>(track_bar_red.value()), as<xtd::byte>(track_bar_green.value()), as<xtd::byte>(track_bar_blue.value())));
     }
     
     label label_alpha;
