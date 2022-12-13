@@ -18,7 +18,7 @@ namespace examples {
         console_color new_fore_color = console_color::white;
         console_color new_back_color = console_color::black;
         
-        char32 fore_color_selection = get_key_press("Select Text Color (B for Blue, R for Red, Y for Yellow): ", vector<char32> { 'B', 'R', 'Y' });
+        char32_t fore_color_selection = get_key_press("Select Text Color (B for Blue, R for Red, Y for Yellow): ", vector<char32_t> { 'B', 'R', 'Y' });
         switch (fore_color_selection) {
           case 'B':
           case 'b': new_fore_color = console_color::dark_blue; break;
@@ -28,7 +28,7 @@ namespace examples {
           case 'y': new_fore_color = console_color::dark_yellow; break;
         }
         
-        char32 back_color_selection = get_key_press("Select Background Color (W for White, G for Green, M for Magenta): ", vector<char32> { 'W', 'G', 'M' });
+        char32_t back_color_selection = get_key_press("Select Background Color (W for White, G for Green, M for Magenta): ", vector<char32_t> { 'W', 'G', 'M' });
         switch (back_color_selection) {
           case 'W':
           case 'w': new_back_color = console_color::white; break;
@@ -46,7 +46,7 @@ namespace examples {
         console::background_color(new_back_color);
         console::write_line(text_to_display);
         console::write_line();
-        if (char32_object::to_upper(get_key_press("Display another message (Y/N): ", vector<char32> { 'Y', 'N' })) == 'N')
+        if (char32_object::to_upper(get_key_press("Display another message (Y/N): ", vector<char32_t> { 'Y', 'N' })) == 'N')
           continue_flag = false;
         
         // Restore the default settings and clear the screen.
@@ -57,7 +57,7 @@ namespace examples {
     }
     
   private:
-    static char32 get_key_press(const ustring& msg, const vector<char32>& valid_chars) {
+    static char32_t get_key_press(const ustring& msg, const vector<char32_t>& valid_chars) {
       console_key_info key_pressed;
       bool valid = false;
       
