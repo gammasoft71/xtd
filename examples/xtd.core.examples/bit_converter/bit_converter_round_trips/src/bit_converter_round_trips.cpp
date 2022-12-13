@@ -9,12 +9,12 @@ namespace examples {
     // The main entry point for the application.
     static void main() {
       int value = -16;
-      vector<byte_t> bytes = bit_converter::get_bytes(value);
+      vector<xtd::byte> bytes = bit_converter::get_bytes(value);
       
-      // Convert bytes back to int32.
+      // Convert bytes back to int.
       int int_value = bit_converter::to_int32(bytes, 0);
       console::write_line("{0} = {1}: {2}", value, int_value, value == int_value ? "Round-trips" : "Does not round-trip");
-      // Convert bytes to uint32.
+      // Convert bytes to unsigned int.
       uint uint_value = bit_converter::to_uint32(bytes, 0);
       console::write_line("{0} = {1}: {2}", value, uint_value, static_cast<uint>(value) == uint_value ? "Round-trips" : "Does not round-trip");
     }
