@@ -25,7 +25,7 @@ namespace xtd::tests {
   test_class_attribute<numeric_parse_string_integer_tests<int16>> numeric_parse_string_integer_tests_class_int16_t_attr {"numeric_parse_string_integer_tests<int16>"};
   test_class_attribute<numeric_parse_string_integer_tests<int32>> numeric_parse_string_integer_tests_class_int32_t_attr {"numeric_parse_string_integer_tests<int32>"};
   test_class_attribute<numeric_parse_string_integer_tests<int64>> numeric_parse_string_integer_tests_class_int64_t_attr {"numeric_parse_string_integer_tests<int64>"};
-  test_class_attribute<numeric_parse_string_integer_tests<intptr_t>> numeric_parse_string_integer_tests_class_intptr_t_attr {"numeric_parse_string_integer_tests<intptr_t>"};
+  test_class_attribute<numeric_parse_string_integer_tests<intptr>> numeric_parse_string_integer_tests_class_intptr_t_attr {"numeric_parse_string_integer_tests<intptr>"};
   test_class_attribute<numeric_parse_string_integer_tests<ptrdiff_t>> numeric_parse_string_integer_tests_class_ptrdiff_t_attr {"numeric_parse_string_integer_tests<ptrdiff_t>"};
   test_class_attribute<numeric_parse_string_integer_tests<size_t>> numeric_parse_string_integer_tests_class_size_t_attr {"numeric_parse_string_integer_tests<size_t>"};
   test_class_attribute<numeric_parse_string_integer_tests<xtd::byte>> numeric_parse_string_integer_tests_class_uint8_t_attr {"numeric_parse_string_integer_tests<xtd::byte>"};
