@@ -14,7 +14,7 @@ int main() {
     server_socket.bind(ip_end_point(ip_address::any, 9400));
     
     while (!terminate_app) {
-      vector<byte_t> buffer(256);
+      vector<unsigned char> buffer(256);
       ip_end_point incoming_end_point;
       size_t number_of_byte_received = server_socket.receive_from(buffer, incoming_end_point);
       if (!(number_of_byte_received == 1 && buffer[0] == 0xFF))
@@ -28,11 +28,11 @@ int main() {
     auto counter = 1;
     while (!terminate_app) {
       auto str = ustring::format("counter={}", counter++);
-      client_socket.send_to(vector<byte_t>(str.begin(), str.end()), ip_end_point(ip_address::loopback, 9400));
+      client_socket.send_to(vector<unsigned char>(str.begin(), str.end()), ip_end_point(ip_address::loopback, 9400));
       this_thread::sleep_for(50ms);
     }
     
-    client_socket.send_to(vector<byte_t> {0xFF}, ip_end_point(ip_address::loopback, 9400));
+    client_socket.send_to(vector<unsigned char> {0xFF}, ip_end_point(ip_address::loopback, 9400));
   });
   
   console::read_key();

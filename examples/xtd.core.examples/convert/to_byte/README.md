@@ -19,37 +19,37 @@ xtdc run
 # Output
 
 ```
-Convert int to xtd::byte :
+Convert int to byte :
 ---------------------
 static_cast<unsigned char>(value) = 42
 as<unsigned char>(value)          = 42
 convert::to_byte(value)           = 42
 
-Convert float to xtd::byte :
+Convert float to byte :
 -----------------------
 static_cast<unsigned char>(float_value) = 42
 as<unsigned char>(float_value)          = 43
 convert::to_byte(float_value)           = 43
 
-Convert any to xtd::byte :
+Convert any to byte :
 ---------------------
 any_cast<unsigned char>(any_value) = 42
 as<unsigned char>(any_value)       = 42
 convert::to_byte(any_value)        = 42
 
-Convert string to xtd::byte :
+Convert string to byte :
 ------------------------
 parse<unsigned char>(string_value))   = 42
 as<unsigned char>(string_value)       = 42
 convert::to_byte(string_value)        = 42
 
-Convert hexa string to xtd::byte :
+Convert hexa string to byte :
 -----------------------------
 parse<unsigned char>(string_hex_value, number_styles::hex_number) = 42
 as<unsigned char>(string_hex_value, 16)                           = 42
 convert::to_byte(string_hex_value, 16))                           = 42
 
-Convert int to xtd::byte with overflow :
+Convert int to byte with overflow :
 -----------------------------------
 static_cast<unsigned char>(overflow_value) = 1
 (ERROR) as : Overflow exception
