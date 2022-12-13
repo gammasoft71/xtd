@@ -13,7 +13,7 @@ int main() {
     xtd::net::sockets::socket socket = as<xtd::net::sockets::socket>(ar->async_state()).end_accept(ar);
     
     while (!terminate_app) {
-      vector<byte_t> buffer(256);
+      vector<unsigned char> buffer(256);
       size_t number_of_byte_received = socket.receive(buffer);
       if (number_of_byte_received) console::write_line(ustring(buffer.begin(), buffer.begin() + number_of_byte_received));
     }
@@ -26,7 +26,7 @@ int main() {
     auto counter = 1;
     while (!terminate_app) {
       auto str = ustring::format("socket={}, counter={}", socket.handle(), counter++);
-      socket.send(vector<byte_t>(str.begin(), str.end()));
+      socket.send(vector<unsigned char>(str.begin(), str.end()));
       this_thread::sleep_for(50ms);
     }
   };

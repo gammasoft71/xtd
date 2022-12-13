@@ -16,7 +16,7 @@ int main() {
     socket new_socket = server_socket.accept();
     
     while (!terminate_app) {
-      vector<byte_t> buffer(256);
+      vector<unsigned char> buffer(256);
       size_t number_of_byte_received = new_socket.receive(buffer);
       if (number_of_byte_received) console::write_line(ustring(buffer.begin(), buffer.begin() + number_of_byte_received));
     }
@@ -29,7 +29,7 @@ int main() {
     auto counter = 1;
     while (!terminate_app) {
       auto str = ustring::format("counter={}", counter++);
-      client_socket.send(vector<byte_t>(str.begin(), str.end()));
+      client_socket.send(vector<unsigned char>(str.begin(), str.end()));
       this_thread::sleep_for(50ms);
     }
   });

@@ -26,11 +26,11 @@ int main() {
     auto counter = 1;
     while (!terminate_app) {
       auto str = ustring::format("counter={}", counter++);
-      udp.send(vector<byte_t>(str.begin(), str.end()), str.size(), ip_end_point(ip_address::loopback, 9400));
+      udp.send(vector<unsigned char>(str.begin(), str.end()), str.size(), ip_end_point(ip_address::loopback, 9400));
       this_thread::sleep_for(50ms);
     }
     
-    udp.send(vector<byte_t> {0xFF}, 1, ip_end_point(ip_address::loopback, 9400));
+    udp.send(vector<unsigned char> {0xFF}, 1, ip_end_point(ip_address::loopback, 9400));
   });
   
   console::read_key();
