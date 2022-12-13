@@ -17,7 +17,7 @@ public:
     .size({ 150, 35 })
     .click += [this] {
       progress_box::show(*this, "Downloading", "Please wait...", 0, 0, 100, progress_box_options::show_cancel_button | progress_box_options::show_skip_button);
-      for (int32_t i = progress_box::minimum(); i <= progress_box::maximum(); ++i) {
+      for (int32 i = progress_box::minimum(); i <= progress_box::maximum(); ++i) {
         std::this_thread::sleep_for(100ms); // Do some work...
         progress_box::update(i, "Downloading", xtd::ustring::format("{}/{}", i, progress_box::maximum()));
         if (progress_box::skipped()) i++;
