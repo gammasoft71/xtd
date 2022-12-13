@@ -31,14 +31,14 @@ int main() {
   console::write_line("ustring::format(\"{{}}\", any_value) = {}", ustring::format("{}", any_value));
   console::write_line();
   
-  console::write_line("Convert const char16_t to ustring :");
+  console::write_line("Convert const char16 to ustring :");
   console::write_line("-----------------------------------");
-  auto const_char16_t_value = u"A string value";
-  console::write_line("to_ustring(wstring_value)                        = {}", to_ustring(const_char16_t_value));
-  console::write_line("as<ustring>(const_char16_t_value)                = {}", as<ustring>(const_char16_t_value));
-  console::write_line("convert::to_ustring(const_char16_t_value)        = {}", convert::to_ustring(const_char16_t_value));
-  console::write_line("convert_string::to_ustring(const_char16_t_value) = {}", convert_string::to_ustring(const_char16_t_value));
-  console::write_line("ustring::format(\"{{}}\", const_char16_t_value)      = {}", ustring::format("{}", const_char16_t_value));
+  auto const_char16_value = u"A string value";
+  console::write_line("to_ustring(wstring_value)                        = {}", to_ustring(const_char16_value));
+  console::write_line("as<ustring>(const_char16_value)                = {}", as<ustring>(const_char16_value));
+  console::write_line("convert::to_ustring(const_char16_value)        = {}", convert::to_ustring(const_char16_value));
+  console::write_line("convert_string::to_ustring(const_char16_value) = {}", convert_string::to_ustring(const_char16_value));
+  console::write_line("ustring::format(\"{{}}\", const_char16_value)      = {}", ustring::format("{}", const_char16_value));
   console::write_line();
   
   console::write_line("Convert wstring to ustring :");
