@@ -13,14 +13,14 @@ public:
     else
       console::write_line("Operations timed using the standard date time.");
       
-    int64 frequency = stopwatch::frequency();
+    long long frequency = stopwatch::frequency();
     console::write_line("  Timer frequency in ticks per second = {0}", frequency);
-    int64 nanosec_per_tick = (1000L * 1000L * 1000L) / frequency;
+    long long nanosec_per_tick = (1000L * 1000L * 1000L) / frequency;
     console::write_line("  Timer is accurate within {0} nanoseconds", nanosec_per_tick);
   }
   
   static void time_operations() {
-    int64 nanosec_per_tick = (1000L * 1000L * 1000L) / stopwatch::frequency();
+    long long nanosec_per_tick = (1000L * 1000L * 1000L) / stopwatch::frequency();
     const long num_iterations = 10000;
     
     // Define the operation title names.
@@ -31,13 +31,13 @@ public:
     
     for (int operation = 0; operation <= 3; operation++) {
       // Define variables for operation statistics.
-      int64 num_ticks = 0;
-      int64 num_rollovers = 0;
-      int64 max_ticks = 0;
-      int64 min_ticks = numeric_limits<long>::max();
+      long long num_ticks = 0;
+      long long num_rollovers = 0;
+      long long max_ticks = 0;
+      long long min_ticks = numeric_limits<long>::max();
       int index_fastest = -1;
       int index_slowest = -1;
-      int64 milli_sec = 0;
+      long long milli_sec = 0;
       
       stopwatch time_10k_operations = stopwatch::start_new();
       
@@ -45,7 +45,7 @@ public:
       // The first execution time will be tossed out, since it can skew the average time.
       
       for (int i = 0; i <= num_iterations; i++) {
-        int64 ticks_this_time = 0;
+        long long ticks_this_time = 0;
         int input_num;
         stopwatch time_per_parse;
         
