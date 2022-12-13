@@ -517,9 +517,9 @@ namespace xtd::tests {
     }
     
     void test_method_(max_uint64) {
-      assert::are_equal(52u, math::max(as<uint64_t>(2), as<uint64_t>(52)), csf_);
-      assert::are_equal(22u, math::max(as<uint64_t>(22), as<uint64_t>(5)), csf_);
-      assert::are_equal(16u, math::max(as<uint64_t>(16), as<uint64_t>(16)), csf_);
+      assert::are_equal(52u, math::max(as<uint64>(2), as<uint64>(52)), csf_);
+      assert::are_equal(22u, math::max(as<uint64>(22), as<uint64>(5)), csf_);
+      assert::are_equal(16u, math::max(as<uint64>(16), as<uint64>(16)), csf_);
     }
     
     void test_method_(max_ullong) {
@@ -595,9 +595,9 @@ namespace xtd::tests {
     }
     
     void test_method_(min_uint64) {
-      assert::are_equal(2u, math::min(as<uint64_t>(2), as<uint64_t>(52)), csf_);
-      assert::are_equal(5u, math::min(as<uint64_t>(22), as<uint64_t>(5)), csf_);
-      assert::are_equal(16u, math::min(as<uint64_t>(16), as<uint64_t>(16)), csf_);
+      assert::are_equal(2u, math::min(as<uint64>(2), as<uint64>(52)), csf_);
+      assert::are_equal(5u, math::min(as<uint64>(22), as<uint64>(5)), csf_);
+      assert::are_equal(16u, math::min(as<uint64>(16), as<uint64>(16)), csf_);
     }
     
     void test_method_(min_ullong) {

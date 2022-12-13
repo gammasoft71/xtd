@@ -149,7 +149,7 @@ namespace xtd::tests {
     }
     
     void test_method_(uint64_t_as_double) {
-      assert::is_true(is<double>(as<double>((uint64_t)42)), csf_);
+      assert::is_true(is<double>(as<double>((uint64)42)), csf_);
     }
     
     void test_method_(ullong_t_as_double) {
