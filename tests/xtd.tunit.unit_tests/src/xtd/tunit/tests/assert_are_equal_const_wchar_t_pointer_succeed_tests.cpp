@@ -5,7 +5,7 @@ namespace xtd::tunit::tests {
   class test_class_(assert_are_equal_const_wchar_t_pointer_succeed_tests) {
   public:
     void test_method_(test_case_succeed) {
-      const wchar_t* s = L"string";
+      const wchar* s = L"string";
       xtd::tunit::assert::are_equal(L"string", s);
     }
   };

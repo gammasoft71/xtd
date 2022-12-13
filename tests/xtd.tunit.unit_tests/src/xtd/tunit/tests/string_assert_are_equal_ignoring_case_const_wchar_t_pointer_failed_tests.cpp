@@ -5,7 +5,7 @@ namespace xtd::tunit::tests {
   class test_class_(string_assert_are_equal_ignoring_case_const_wchar_t_pointer_failed_tests) {
   public:
     void test_method_(test_case_failed) {
-      const wchar_t* s = L"VALUE";
+      const wchar* s = L"VALUE";
       xtd::tunit::string_assert::are_equal_ignoring_case(L"key", s);
     }
   };
