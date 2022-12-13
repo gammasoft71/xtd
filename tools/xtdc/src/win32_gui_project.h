@@ -72,7 +72,7 @@ namespace xtdc_command {
         "  return CallWindowProc(window1.defWndProc, hwnd, message, wParam, lParam);",
         "}",
         "",
-        "int wmain(int argc, wchar_t* argv[]) {",
+        "int wmain(int argc, wchar* argv[]) {",
         "  window1.handle = CreateWindowEx(0, WC_DIALOG, L\"Window1\", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 800, 450, NULL, NULL, NULL, NULL);",
         "  window1.defWndProc = (WNDPROC)SetWindowLongPtr(window1.handle, GWLP_WNDPROC, (LONG_PTR)Window1WndProc);",
         "",

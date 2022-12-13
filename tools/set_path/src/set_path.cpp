@@ -130,7 +130,7 @@ namespace set_path {
 
     static ustring win32_read_system_path(bool system_path) {
       /// @todo Replace by xtd::microsoft::registry when xtd::microsoft::registry class is ready...
-      wchar_t current_directory[4097] = L"";
+      wchar current_directory[4097] = L"";
 #ifdef WIN32
       DWORD size = 4097;
       auto status = RegGetValue(system_path ? HKEY_LOCAL_MACHINE : HKEY_CURRENT_USER, system_path ? L"SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment" : L"Environment", L"Path", RRF_RT_REG_SZ, nullptr, reinterpret_cast<PVOID>(current_directory), &size);
