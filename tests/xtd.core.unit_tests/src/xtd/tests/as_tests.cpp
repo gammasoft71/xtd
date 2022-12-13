@@ -177,7 +177,7 @@ namespace xtd::tests {
     }
     
     void test_method_(uintptr_t_as_int) {
-      assert::is_true(is<int>(as<int>((uintptr_t)42)), csf_);
+      assert::is_true(is<int>(as<int>((uintptr)42)), csf_);
     }
     
     void test_method_(float_as_int) {

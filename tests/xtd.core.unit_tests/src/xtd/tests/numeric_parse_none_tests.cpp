@@ -32,7 +32,7 @@ namespace xtd::tests {
   test_class_attribute<numeric_parse_string_none_tests<uint16>> numeric_parse_string_none_tests_class_uint16_t_attr {"numeric_parse_string_none_tests<uint16>"};
   test_class_attribute<numeric_parse_string_none_tests<uint32>> numeric_parse_string_none_tests_class_uint32_t_attr {"numeric_parse_string_none_tests<uint32>"};
   test_class_attribute<numeric_parse_string_none_tests<uint64>> numeric_parse_string_none_tests_class_uint64_t_attr {"numeric_parse_string_none_tests<uint64>"};
-  test_class_attribute<numeric_parse_string_none_tests<uintptr_t>> numeric_parse_string_none_tests_class_uintptr_t_attr {"numeric_parse_string_none_tests<uintptr_t>"};
+  test_class_attribute<numeric_parse_string_none_tests<uintptr>> numeric_parse_string_none_tests_class_uintptr_t_attr {"numeric_parse_string_none_tests<uintptr>"};
   
   template <typename Value>
   class numeric_parse_string_none_tests : public test_class {
