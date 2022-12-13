@@ -38,13 +38,13 @@ namespace xtd::tests {
     }
     
     void test_method_(is_decimal_t_with_decimal_t) {
-      decimal_t v = 4.2;
-      assert::is_true(is<decimal_t>(v), csf_);
+      decimal v = 4.2;
+      assert::is_true(is<decimal>(v), csf_);
     }
     
     void test_method_(is_decimal_t_without_decimal_t) {
       bool v = true;
-      assert::is_false(is<decimal_t>(v), csf_);
+      assert::is_false(is<decimal>(v), csf_);
     }
     
     void test_method_(is_double_with_double) {

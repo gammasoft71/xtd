@@ -46,13 +46,13 @@ namespace xtd::tests {
     }
     
     void test_method_(abs_decimal) {
-      assert::are_equal(numeric_limits<decimal_t>::max(), math::abs(numeric_limits<decimal_t>::max()), csf_);
+      assert::are_equal(numeric_limits<decimal>::max(), math::abs(numeric_limits<decimal>::max()), csf_);
       assert::are_equal(1.6354E-16l, math::abs(1.6354E-16l), csf_);
       assert::are_equal(15.098123l, math::abs(15.098123l), csf_);
       assert::are_equal(.0l, math::abs(.0), csf_);
       assert::are_equal(19.069713l, math::abs(-19.069713l), csf_);
       assert::are_equal(15.058e18l, math::abs(-15.058e18l), csf_);
-      assert::are_equal(-numeric_limits<decimal_t>::lowest(), math::abs(numeric_limits<decimal_t>::lowest()), csf_);
+      assert::are_equal(-numeric_limits<decimal>::lowest(), math::abs(numeric_limits<decimal>::lowest()), csf_);
     }
     
     void test_method_(abs_double) {
@@ -670,7 +670,7 @@ namespace xtd::tests {
       assert::are_equal(-1.0l, math::sign(-10.0l), csf_);
       assert::are_equal(0.0l, math::sign(0.0l), csf_);
       assert::are_equal(1.0l, math::sign(10.0l), csf_);
-      assert::throws<arithmetic_exception>([] {math::sign(numeric_limits<decimal_t>::quiet_NaN());}, csf_);
+      assert::throws<arithmetic_exception>([] {math::sign(numeric_limits<decimal>::quiet_NaN());}, csf_);
     }
     
     void test_method_(sign_double) {
