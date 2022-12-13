@@ -33,7 +33,7 @@ namespace xtd::tests {
     }
     
     void test_method_(wchar_t_as_int) {
-      assert::is_true(is<int>(as<int>((wchar_t)'a')), csf_);
+      assert::is_true(is<int>(as<int>((wchar)'a')), csf_);
     }
     
     void test_method_(unsigned_char_as_int) {

@@ -5,7 +5,7 @@ namespace xtd::tunit::tests {
   class test_class_(assert_are_not_equal_const_wchar_t_pointer_failed__tests) {
   public:
     void test_method_(test_case_failed) {
-      const wchar_t* s = L"value";
+      const wchar* s = L"value";
       xtd::tunit::assert::are_not_equal(L"value", s);
     }
   };
