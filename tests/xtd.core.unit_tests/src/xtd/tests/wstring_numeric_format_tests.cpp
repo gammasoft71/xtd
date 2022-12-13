@@ -31,7 +31,7 @@ namespace xtd::tests {
   test_class_attribute<wstring_numeric_format_tests<xtd::byte>> wstring_numeric_format_tests_class_uint8_t_attr {"wstring_numeric_format_tests<xtd::byte>"};
   test_class_attribute<wstring_numeric_format_tests<uint16>> wstring_numeric_format_tests_class_uint16_t_attr {"wstring_numeric_format_tests<uint16>"};
   test_class_attribute<wstring_numeric_format_tests<uint32>> wstring_numeric_format_tests_class_uint32_t_attr {"wstring_numeric_format_tests<uint32>"};
-  test_class_attribute<wstring_numeric_format_tests<uint64_t>> wstring_numeric_format_tests_class_uint64_t_attr {"wstring_numeric_format_tests<uint64_t>"};
+  test_class_attribute<wstring_numeric_format_tests<uint64>> wstring_numeric_format_tests_class_uint64_t_attr {"wstring_numeric_format_tests<uint64>"};
   test_class_attribute<wstring_numeric_format_tests<uintptr_t>> wstring_numeric_format_tests_class_uintptr_t_attr {"wstring_numeric_format_tests<uintptr_t>"};
   
   template<typename Value>
