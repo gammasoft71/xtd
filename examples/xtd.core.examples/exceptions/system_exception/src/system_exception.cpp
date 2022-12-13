@@ -2,18 +2,18 @@
 
 using namespace xtd;
 
-intptr_t create_handle() {
-  return reinterpret_cast<intptr_t>(new guid());
+intptr create_handle() {
+  return reinterpret_cast<intptr>(new guid());
 }
 
-void destroy_handle(intptr_t handle) {
+void destroy_handle(intptr handle) {
   if (handle == 0) throw system_exception("The handle is null",  csf_);
   delete reinterpret_cast<object*>(handle);
 }
 
 int main() {
   try {
-    intptr_t handle = 0;
+    intptr handle = 0;
     // The following line is commented out so that the exception is generated.
     //handle = create_handle();
     
