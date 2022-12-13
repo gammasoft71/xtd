@@ -28,7 +28,7 @@ int main() {
 //   SUCCEED test.test_case_succeed (0 ms total)
 //   FAILED  test.test_case_Failed (0 ms total)
 //     Expected: all items instance of <std::__1::basic_ostream<char, std::__1::char_traits<char> >*>
-//     But was:  < 8-xtd::byte object <78-37 1D-8C FF-7F 00-00>, 8-xtd::byte object <B8-38 1D-8C FF-7F 00-00>, 8-xtd::byte object <30-36 1D-8C FF-7F 00-00> >
+//     But was:  < 8-byte object <78-37 1D-8C FF-7F 00-00>, 8-byte object <B8-38 1D-8C FF-7F 00-00>, 8-byte object <30-36 1D-8C FF-7F 00-00> >
 //     Stack Trace: in |---OMITTED---|/collection_assert_all_items_are_instances_of.cpp:13
 //
 // Test results:
