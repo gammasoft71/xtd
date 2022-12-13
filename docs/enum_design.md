@@ -30,7 +30,7 @@ Although they are sometimes helpful to framework developers, sentinel values are
 
 Consider calling the value something like "none". If such a value is not appropriate for this particular enum, the most common default value for the enum should be assigned the underlying value of zero.
 
-**✔️ CONSIDER** using int32_t (the default in C++ language) as the underlying type of an enum unless any of the following is true:
+**✔️ CONSIDER** using int as the underlying type of an enum unless any of the following is true:
 
 * The enum is a flags enum and you have more than 32 flags, or expect to have more in the future.
 * The underlying type needs to be different than int32 for easier interoperability with unmanaged code expecting different-size enums.

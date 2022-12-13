@@ -112,13 +112,13 @@ public:
 struct unsigned_integer {
   ...
 private:
-  uint32_t value_;
+  unsignecd int value_;
 };
  
 struct date_time {
   ...
 private:
-  int64_t value_;
+  long long value_;
   date_time_kind kind_;
   ...
 };

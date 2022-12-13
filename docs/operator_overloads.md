@@ -63,7 +63,7 @@ static ustring form1::check_points(const point& p1, const point& p2) {
 
 # xtd::icomparable
 
-The [xtd::icomparable<type_t>](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1icomparable.html) interface implement the <, <=, > and >= operators. and used the `virtual int32_t compare_to(const type_t&) const noexcept;` method.
+The [xtd::icomparable<type_t>](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1icomparable.html) interface implement the <, <=, > and >= operators. and used the `virtual int compare_to(const type_t&) const noexcept;` method.
 You must just overload this method for used your own implementation.
 
 The time_span class show how to used compare_to method:
