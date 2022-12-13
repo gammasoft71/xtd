@@ -19,39 +19,39 @@ xtdc run
 # Output
 
 ```
-Convert int to byte :
+Convert int to xtd::byte :
 ---------------------
-static_cast<byte_t>(value) = 42
-as<byte_t>(value)          = 42
-convert::to_byte(value)    = 42
+static_cast<unsigned char>(value) = 42
+as<unsigned char>(value)          = 42
+convert::to_byte(value)           = 42
 
-Convert float to byte :
+Convert float to xtd::byte :
 -----------------------
-static_cast<byte_t>(float_value) = 42
-as<byte_t>(float_value)          = 43
-convert::to_byte(float_value)    = 43
+static_cast<unsigned char>(float_value) = 42
+as<unsigned char>(float_value)          = 43
+convert::to_byte(float_value)           = 43
 
-Convert any to byte :
+Convert any to xtd::byte :
 ---------------------
-any_cast<byte_t>(any_value) = 42
-as<byte_t>(any_value)       = 42
-convert::to_byte(any_value) = 42
+any_cast<unsigned char>(any_value) = 42
+as<unsigned char>(any_value)       = 42
+convert::to_byte(any_value)        = 42
 
-Convert string to byte :
+Convert string to xtd::byte :
 ------------------------
-parse<byte_t>(string_value))   = 42
-as<byte_t>(string_value)       = 42
-convert::to_byte(string_value) = 42
+parse<unsigned char>(string_value))   = 42
+as<unsigned char>(string_value)       = 42
+convert::to_byte(string_value)        = 42
 
-Convert hexa string to byte :
+Convert hexa string to xtd::byte :
 -----------------------------
-parse<byte_t>(string_hex_value, number_styles::hex_number) = 42
-as<byte_t>(string_hex_value, 16)                           = 42
-convert::to_byte(string_hex_value, 16))                    = 42
+parse<unsigned char>(string_hex_value, number_styles::hex_number) = 42
+as<unsigned char>(string_hex_value, 16)                           = 42
+convert::to_byte(string_hex_value, 16))                           = 42
 
-Convert int to byte with overflow :
+Convert int to xtd::byte with overflow :
 -----------------------------------
-static_cast<byte_t>(overflow_value) = 1
+static_cast<unsigned char>(overflow_value) = 1
 (ERROR) as : Overflow exception
 (ERROR) convert::to_byte : Overflow exception
 ```

@@ -9,7 +9,7 @@ namespace examples {
     // The main entry point for the application.
     static void main() {
       int value = -16;
-      vector<xtd::byte> bytes = bit_converter::get_bytes(value);
+      vector<unsigned char> bytes = bit_converter::get_bytes(value);
       
       // Convert bytes back to int.
       int int_value = bit_converter::to_int32(bytes, 0);
