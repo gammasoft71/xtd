@@ -231,11 +231,11 @@ namespace xtd::tests {
         bytes_assert::are_equal(0x00, 0x00, 0x9C, 0x58, 0x4C, 0x49, 0x1F, 0xF2, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int64_t>::lowest())) {
+      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int64>::lowest())) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int64_t>::max())) {
+      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int64>::max())) {
         bytes_assert::are_equal(0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x7F, bytes, csf_);
       }
     }
@@ -490,8 +490,8 @@ namespace xtd::tests {
       assert::are_equal(-0xAAAAAAAAAAAALL, bit_converter::to_int64({0x56, 0x55, 0x55, 0x55, 0x55, 0x55, 0xFF, 0xFF}, 0), csf_);
       assert::are_equal(1000000000000000000LL, bit_converter::to_int64({0x00, 0x00, 0x64, 0xA7, 0xB3, 0xB6, 0xE0, 0x0D}, 0), csf_);
       assert::are_equal(-1000000000000000000LL, bit_converter::to_int64({0x00, 0x00, 0x9C, 0x58, 0x4C, 0x49, 0x1F, 0xF2}, 0), csf_);
-      assert::are_equal(std::numeric_limits<int64_t>::lowest(), bit_converter::to_int64({0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80}, 0), csf_);
-      assert::are_equal(std::numeric_limits<int64_t>::max(), bit_converter::to_int64({0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x7F}, 0), csf_);
+      assert::are_equal(std::numeric_limits<int64>::lowest(), bit_converter::to_int64({0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80}, 0), csf_);
+      assert::are_equal(std::numeric_limits<int64>::max(), bit_converter::to_int64({0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x7F}, 0), csf_);
     }
     
     void test_method_(to_single) {
