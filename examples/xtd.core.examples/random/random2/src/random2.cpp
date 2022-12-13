@@ -7,12 +7,12 @@ int main() {
   // Instantiate random number generator using system-supplied value as seed.
   xtd::random rand;
   
-  // Generate and display 5 random xtd::byte (integer) values.
-  vector<xtd::byte> bytes(5);
+  // Generate and display 5 random byte (integer) values.
+  vector<unsigned char> bytes(5);
   rand.next_bytes(bytes);
   
-  console::write_line("Five random xtd::byte values:");
-  for (xtd::byte byte_value : bytes)
+  console::write_line("Five random byte values:");
+  for (unsigned char byte_value : bytes)
     console::write("{, 5}", byte_value);
   console::write_line();
   
@@ -49,7 +49,7 @@ int main() {
 
 // This code can produces the following output:
 //
-// Five random xtd::byte values:
+// Five random byte values:
 //   150  243   92  141    0
 // Five random integer values:
 //     4.14343E+08    2.14086E+09    1.73486E+09    1.88133E+09    1.69685E+09
