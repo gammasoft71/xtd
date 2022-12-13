@@ -172,7 +172,7 @@ namespace xtd {
         case 'f':
         case 'F':
         case 'g':
-        case 'G': return __format_stringer<char_t>(value_);
+        case 'G': return __format_stringer<char>(value_);
       }
       throw format_exception("Invalid format");
     }

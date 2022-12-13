@@ -30,7 +30,7 @@ namespace xtd {
   template<typename value_t>
   inline bool is(int64 value) {return false;}
   template<typename value_t>
-  inline bool is(llong_t value) {return false;}
+  inline bool is(llong value) {return false;}
   template<typename value_t>
   inline bool is(xtd::byte value) {return false;}
   template<typename value_t>
@@ -40,7 +40,7 @@ namespace xtd {
   template<typename value_t>
   inline bool is(uint64 value) {return false;}
   template<typename value_t>
-  inline bool is(ullong_t value) {return false;}
+  inline bool is(ullong value) {return false;}
   /// @endcond
   
   /// @brief Checks if the result of an expression is compatible with a given type.
@@ -196,12 +196,12 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// int main() {
-  ///   llong_t i = 42;
-  ///   std::cout << "i " << is<llong_t>(i) ? "is" : "isn't" << " llong_t" << endl;
+  ///   llong i = 42;
+  ///   std::cout << "i " << is<llong>(i) ? "is" : "isn't" << " llong" << endl;
   /// }
   /// @endcode
   template<>
-  inline bool is<llong_t>(llong_t value) {
+  inline bool is<llong>(llong value) {
     return true;
   }
   
@@ -286,12 +286,12 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// int main() {
-  ///   ullong_t u = 42;
-  ///   std::cout << "u " << is<ullong_t>(i) ? "is" : "isn't" << " ullong_t" << endl;
+  ///   ullong u = 42;
+  ///   std::cout << "u " << is<ullong>(i) ? "is" : "isn't" << " ullong" << endl;
   /// }
   /// @endcode
   template<>
-  inline bool is<ullong_t>(ullong_t value) {
+  inline bool is<ullong>(ullong value) {
     return true;
   }
   

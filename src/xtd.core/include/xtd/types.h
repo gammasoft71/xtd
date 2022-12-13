@@ -10,30 +10,14 @@
 #define __XTD_CORE_CHAR8_T_INTERNAL__
 #include "internal/__char8_t.h"
 #undef __XTD_CORE_CHAR8_T_INTERNAL__
+
+#define __XTD_CORE_NATIVE_LIBRARY__
+#include <xtd/native/types.h>
+#undef __XTD_CORE_NATIVE_LIBRARY__
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @cond
-  using byte_t = uint_least8_t;
-  using char_t = char;
-  using decimal_t = long double;
-  using sbyte_t = int_least8_t;
-  using single_t = float;
-  using uchar_t = unsigned char;
-  using ushort_t = unsigned short;
-  using uint_t = unsigned int;
-  using ulong_t = unsigned long;
-
-  #if defined(__linux__) && defined(_LP64)
-  using llong_t = long long int;
-  using ullong_t = unsigned long long int;
-  #else
-  using llong_t = long;
-  using ullong_t = unsigned long;
-  #endif
-  /// @endcond
-  
   /// @brief Represents a 8-bit unsigned integer.
   /// @par Namespace
   /// xtd
@@ -72,7 +56,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using decimal = decimal_t;
+  using decimal = long double;
   
   /// @brief Represents a 16-bit signed integer.
   /// @par Namespace
@@ -102,6 +86,14 @@ namespace xtd {
   /// @ingroup xtd_core types
   using intptr = intmax_t;
   
+  /// @brief Represents a 32-bit or 64-bit signed integer.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core types
+  using llong = xtd::native::__llong__;
+
   /// @brief Represents a null pointer value.
   /// @par Namespace
   /// xtd
@@ -138,7 +130,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using uchar = uchar_t;
+  using uchar = unsigned char;
   
   /// @brief Represents a 32-bit unsigned integer.
   /// @par Namespace
@@ -146,7 +138,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using uint = uint_t;
+  using uint = unsigned int;
   
   /// @brief Represents a 16-bit unsigned integer.
   /// @par Namespace
@@ -186,7 +178,15 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using ulong = ulong_t;
+  using ulong = unsigned long;
+
+  /// @brief Represents a 32-bit or 64-bit unsigned integer.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core types
+  using ullong = xtd::native::__ullong__;
 
   /// @brief Represents a 16-bit unsigned integer.
   /// @par Namespace
@@ -194,7 +194,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using ushort = ushort_t;
+  using ushort = unsigned short;
   
   /// @brief Represents a wide character.
   /// @par Namespace

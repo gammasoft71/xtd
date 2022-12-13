@@ -234,50 +234,50 @@ namespace xtd {
   using size_object = box_integer<size_t>;
   
   /// @cond
-  using llong_object = box_integer<llong_t>;
-  using ullong_object = box_integer<ullong_t>;
+  using llong_object = box_integer<llong>;
+  using ullong_object = box_integer<ullong>;
   
   inline byte_object boxing(const xtd::byte& value) noexcept {return byte_object(value);}
   inline int16_object boxing(const int16& value) noexcept {return int16_object(value);}
   inline int32_object boxing(const int32& value) noexcept {return int32_object(value);}
   inline int64_object boxing(const int64& value) noexcept {return int64_object(value);}
-  inline llong_object boxing(const llong_t& value) noexcept {return llong_object(value);}
+  inline llong_object boxing(const llong& value) noexcept {return llong_object(value);}
   inline sbyte_object boxing(const sbyte& value) noexcept {return sbyte_object(value);}
   inline uint16_object boxing(const uint16& value) noexcept {return uint16_object(value);}
   inline uint32_object boxing(const uint32& value) noexcept {return uint32_object(value);}
   inline uint64_object boxing(const uint64& value) noexcept {return uint64_object(value);}
-  inline ullong_object boxing(const ullong_t& value) noexcept {return ullong_object(value);}
+  inline ullong_object boxing(const ullong& value) noexcept {return ullong_object(value);}
   inline byte_object boxing(xtd::byte& value) noexcept {return byte_object(value);}
   inline int16_object boxing(int16& value) noexcept {return int16_object(value);}
   inline int32_object boxing(int32& value) noexcept {return int32_object(value);}
   inline int64_object boxing(int64& value) noexcept {return int64_object(value);}
-  inline llong_object boxing(llong_t& value) noexcept {return llong_object(value);}
+  inline llong_object boxing(llong& value) noexcept {return llong_object(value);}
   inline sbyte_object boxing(sbyte& value) noexcept {return sbyte_object(value);}
   inline uint16_object boxing(uint16& value) noexcept {return uint16_object(value);}
   inline uint32_object boxing(uint32& value) noexcept {return uint32_object(value);}
   inline uint64_object boxing(uint64& value) noexcept {return uint64_object(value);}
-  inline ullong_object boxing(ullong_t& value) noexcept {return ullong_object(value);}
+  inline ullong_object boxing(ullong& value) noexcept {return ullong_object(value);}
 
   inline xtd::byte unboxing(const xtd::byte& value) noexcept {return value;}
   inline int16 unboxing(const int16& value) noexcept {return value;}
   inline int32 unboxing(const int32& value) noexcept {return value;}
   inline int64 unboxing(const int64& value) noexcept {return value;}
-  inline llong_t unboxing(const llong_t& value) noexcept {return value;}
+  inline llong unboxing(const llong& value) noexcept {return value;}
   inline sbyte unboxing(const sbyte& value) noexcept {return value;}
   inline uint16 unboxing(const uint16& value) noexcept {return value;}
   inline uint32 unboxing(const uint32& value) noexcept {return value;}
   inline uint64 unboxing(const uint64& value) noexcept {return value;}
-  inline ullong_t unboxing(const ullong_t& value) noexcept {return value;}
+  inline ullong unboxing(const ullong& value) noexcept {return value;}
   inline xtd::byte unboxing(xtd::byte& value) noexcept {return value;}
   inline int16 unboxing(int16& value) noexcept {return value;}
   inline int32 unboxing(int32& value) noexcept {return value;}
   inline int64 unboxing(int64& value) noexcept {return value;}
-  inline llong_t unboxing(llong_t& value) noexcept {return value;}
+  inline llong unboxing(llong& value) noexcept {return value;}
   inline sbyte unboxing(sbyte& value) noexcept {return value;}
   inline uint16 unboxing(uint16& value) noexcept {return value;}
   inline uint32 unboxing(uint32& value) noexcept {return value;}
   inline uint64 unboxing(uint64& value) noexcept {return value;}
-  inline ullong_t unboxing(ullong_t& value) noexcept {return value;}
+  inline ullong unboxing(ullong& value) noexcept {return value;}
 
   template<typename type_t>
   inline std::string to_string(const xtd::box_integer<type_t>& value, const std::string& fmt, const std::locale& loc) {

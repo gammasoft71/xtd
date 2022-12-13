@@ -37,12 +37,12 @@ namespace xtd::tests {
       assert::is_false(is<bool>(v), csf_);
     }
     
-    void test_method_(is_decimal_t_with_decimal_t) {
+    void test_method_(is_decimal_with_decimal) {
       decimal v = 4.2;
       assert::is_true(is<decimal>(v), csf_);
     }
     
-    void test_method_(is_decimal_t_without_decimal_t) {
+    void test_method_(is_decimal_without_decimal) {
       bool v = true;
       assert::is_false(is<decimal>(v), csf_);
     }
@@ -67,42 +67,42 @@ namespace xtd::tests {
       assert::is_false(is<float>(v), csf_);
     }
     
-    void test_method_(is_int8_t_with_int8_t) {
+    void test_method_(is_int8_with_int8) {
       sbyte v = 42;
       assert::is_true(is<sbyte>(v), csf_);
     }
     
-    void test_method_(is_int8_t_without_int8_t) {
+    void test_method_(is_int8_without_int8) {
       bool v = true;
       assert::is_false(is<sbyte>(v), csf_);
     }
     
-    void test_method_(is_int16_t_with_int16_t) {
+    void test_method_(is_int16_with_int16) {
       int16 v = 42;
       assert::is_true(is<int16>(v), csf_);
     }
     
-    void test_method_(is_int16_t_without_int16_t) {
+    void test_method_(is_int16_without_int16) {
       bool v = true;
       assert::is_false(is<int16>(v), csf_);
     }
     
-    void test_method_(is_int32_t_with_int32_t) {
+    void test_method_(is_int32_with_int32) {
       int32 v = 42;
       assert::is_true(is<int32>(v), csf_);
     }
     
-    void test_method_(is_int32_t_without_int32_t) {
+    void test_method_(is_int32_without_int32) {
       bool v = true;
       assert::is_false(is<int32>(v), csf_);
     }
     
-    void test_method_(is_int64_t_with_int64_t) {
+    void test_method_(is_int64_with_int64) {
       int64 v = 42;
       assert::is_true(is<int64>(v), csf_);
     }
     
-    void test_method_(is_int64_t_without_int64_t) {
+    void test_method_(is_int64_without_int64) {
       bool v = true;
       assert::is_false(is<int64>(v), csf_);
     }
@@ -137,52 +137,52 @@ namespace xtd::tests {
       assert::is_false(is<long>(v), csf_);
     }
     
-    void test_method_(is_llong_t_with_llong_t) {
-      llong_t v = 42;
-      assert::is_true(is<llong_t>(v), csf_);
+    void test_method_(is_llong_with_llong) {
+      llong v = 42;
+      assert::is_true(is<llong>(v), csf_);
     }
     
-    void test_method_(is_llong_t_without_llong_t) {
+    void test_method_(is_llong_without_llong) {
       bool v = true;
-      assert::is_false(is<llong_t>(v), csf_);
+      assert::is_false(is<llong>(v), csf_);
     }
     
-    void test_method_(is_uint8_t_with_uint8_t) {
+    void test_method_(is_uint8_with_uint8) {
       xtd::byte v = 42;
       assert::is_true(is<xtd::byte>(v), csf_);
     }
     
-    void test_method_(is_uint8_t_without_uint8_t) {
+    void test_method_(is_uint8_without_uint8) {
       bool v = true;
       assert::is_false(is<xtd::byte>(v), csf_);
     }
     
-    void test_method_(is_uint16_t_with_uint16_t) {
+    void test_method_(is_uint16_with_uint16) {
       uint16 v = 42;
       assert::is_true(is<uint16>(v), csf_);
     }
     
-    void test_method_(is_uint16_t_without_uint16_t) {
+    void test_method_(is_uint16_without_uint16) {
       bool v = true;
       assert::is_false(is<uint16>(v), csf_);
     }
     
-    void test_method_(is_uint32_t_with_uint32_t) {
+    void test_method_(is_uint32_with_uint32) {
       uint32 v = 42;
       assert::is_true(is<uint32>(v), csf_);
     }
     
-    void test_method_(is_uint32_t_without_uint32_t) {
+    void test_method_(is_uint32_without_uint32) {
       bool v = true;
       assert::is_false(is<uint32>(v), csf_);
     }
     
-    void test_method_(is_uint64_t_with_uint64_t) {
+    void test_method_(is_uint64_with_uint64) {
       uint64 v = 42;
       assert::is_true(is<uint64>(v), csf_);
     }
     
-    void test_method_(is_uint64_t_without_uint64_t) {
+    void test_method_(is_uint64_without_uint64) {
       bool v = true;
       assert::is_false(is<uint64>(v), csf_);
     }
@@ -217,14 +217,14 @@ namespace xtd::tests {
       assert::is_false(is<ulong>(v), csf_);
     }
     
-    void test_method_(is_ullong_t_with_ullong_t) {
-      ullong_t v = 42;
-      assert::is_true(is<ullong_t>(v), csf_);
+    void test_method_(is_ullong_with_ullong) {
+      ullong v = 42;
+      assert::is_true(is<ullong>(v), csf_);
     }
     
-    void test_method_(is_ullong_t_without_ullong_t) {
+    void test_method_(is_ullong_without_ullong) {
       bool v = true;
-      assert::is_false(is<ullong_t>(v), csf_);
+      assert::is_false(is<ullong>(v), csf_);
     }
   };
 }

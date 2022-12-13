@@ -20,19 +20,19 @@ namespace xtd::tests {
       assert::is_true(is<int>(as<int>((char)'a')), csf_);
     }
     
-    void test_method_(char8_t_as_int) {
+    void test_method_(char8_as_int) {
       assert::is_true(is<int>(as<int>((char8)'a')), csf_);
     }
     
-    void test_method_(char16_t_as_int) {
+    void test_method_(char16_as_int) {
       assert::is_true(is<int>(as<int>((char16)'a')), csf_);
     }
     
-    void test_method_(char32_t_as_int) {
+    void test_method_(char32_as_int) {
       assert::is_true(is<int>(as<int>((char32)'a')), csf_);
     }
     
-    void test_method_(wchar_t_as_int) {
+    void test_method_(wchar_as_int) {
       assert::is_true(is<int>(as<int>((wchar)'a')), csf_);
     }
     
@@ -44,19 +44,19 @@ namespace xtd::tests {
       assert::is_true(is<int>(as<int>('a')), csf_);
     }
     
-    void test_method_(literal_char8_t_as_int) {
+    void test_method_(literal_char8_as_int) {
       assert::is_true(is<int>(as<int>(u8'a')), csf_);
     }
     
-    void test_method_(literal_char16_t_as_int) {
+    void test_method_(literal_char16_as_int) {
       assert::is_true(is<int>(as<int>(u'a')), csf_);
     }
     
-    void test_method_(literal_char32_t_as_int) {
+    void test_method_(literal_char32_as_int) {
       assert::is_true(is<int>(as<int>(U'a')), csf_);
     }
     
-    void test_method_(literal_wchar_t_as_int) {
+    void test_method_(literal_wchar_as_int) {
       assert::is_true(is<int>(as<int>(L'a')), csf_);
     }
     
@@ -80,24 +80,24 @@ namespace xtd::tests {
       assert::is_true(is<double>(as<double>((long long int)42)), csf_);
     }
     
-    void test_method_(int8_t_as_double) {
+    void test_method_(int8_as_double) {
       assert::is_true(is<double>(as<double>((sbyte)42)), csf_);
     }
     
-    void test_method_(int16_t_as_double) {
+    void test_method_(int16_as_double) {
       assert::is_true(is<double>(as<double>((int16)42)), csf_);
     }
     
-    void test_method_(int32_t_as_double) {
+    void test_method_(int32_as_double) {
       assert::is_true(is<double>(as<double>((int32)42)), csf_);
     }
     
-    void test_method_(int64_t_as_double) {
+    void test_method_(int64_as_double) {
       assert::is_true(is<double>(as<double>((int64)42)), csf_);
     }
     
-    void test_method_(llong_t_as_double) {
-      assert::is_true(is<double>(as<double>((llong_t)42)), csf_);
+    void test_method_(llong_as_double) {
+      assert::is_true(is<double>(as<double>((llong)42)), csf_);
     }
     
     void test_method_(literal_int_as_double) {
@@ -136,24 +136,24 @@ namespace xtd::tests {
       assert::is_true(is<double>(as<double>((unsigned)42)), csf_);
     }
     
-    void test_method_(uint8_t_as_double) {
+    void test_method_(uint8_as_double) {
       assert::is_true(is<double>(as<double>((xtd::byte)42)), csf_);
     }
     
-    void test_method_(uint16_t_as_double) {
+    void test_method_(uint16_as_double) {
       assert::is_true(is<double>(as<double>((uint16)42)), csf_);
     }
     
-    void test_method_(uint32_t_as_double) {
+    void test_method_(uint32_as_double) {
       assert::is_true(is<double>(as<double>((uint32)42)), csf_);
     }
     
-    void test_method_(uint64_t_as_double) {
+    void test_method_(uint64_as_double) {
       assert::is_true(is<double>(as<double>((uint64)42)), csf_);
     }
     
-    void test_method_(ullong_t_as_double) {
-      assert::is_true(is<double>(as<double>((ullong_t)42)), csf_);
+    void test_method_(ullong_as_double) {
+      assert::is_true(is<double>(as<double>((ullong)42)), csf_);
     }
     
     void test_method_(literal_unsigned_int_as_double) {
@@ -172,11 +172,11 @@ namespace xtd::tests {
       assert::is_true(is<int>(as<int>((size_t)42)), csf_);
     }
     
-    void test_method_(intptr_t_as_int) {
+    void test_method_(intptr_as_int) {
       assert::is_true(is<int>(as<int>((intptr)42)), csf_);
     }
     
-    void test_method_(uintptr_t_as_int) {
+    void test_method_(uintptr_as_int) {
       assert::is_true(is<int>(as<int>((uintptr)42)), csf_);
     }
     
