@@ -7,7 +7,7 @@
 * [Operating Systems](#operating-ystems)
 * [Architectures](#architectures)
 * [Compilers](#compilers)
-* [C++ Standards](#c--tandards)
+* [Standards](#standards)
 * [Build types](#build-ypes)
 * [xtd targets](#xtd-targets)
 * [xtd paths](#xtd-paths)
@@ -214,7 +214,7 @@ It is better to use [xtd::environment::compiler_version](https://codedocs.xyz/ga
 
 But it can be useful for your own developments.
 
-## C++ Standards
+## Standards
 
 The following table represents the different preprocessor symbols for the C++ standard supported by xtd:
 
