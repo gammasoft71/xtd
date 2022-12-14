@@ -32,6 +32,7 @@ The xtd guides provide an explanation on how to use the important features of th
   * Entry point
     * [main and startup_](main_and_startup.md)
   * Types overview
+    * [Preprocessor symbols](preprocessor_symbols.md)
     * [Native types, boxing and unboxing](types.md)
     * [enum, enum class and enum struct](enum_class.md)
     * [ustring](ustring.md)
