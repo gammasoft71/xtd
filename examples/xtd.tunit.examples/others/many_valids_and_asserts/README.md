@@ -1,6 +1,6 @@
 # many_valids_and_asserts
 
-Shows how to use [xtd::tunit::valid](../../../../src/xtd.tunit/include/xtd/tunit/valid.h) and [xtd::tunit::assert](../../../../src/xtd.tunit/include/xtd/tunit/assert.h) classes.
+Shows how to use [xtd::tunit::valid](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1valid.html) and [xtd::tunit::assert](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1assert.html) classes.
 
 ## Sources
 
