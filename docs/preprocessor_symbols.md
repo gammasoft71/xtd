@@ -7,7 +7,7 @@
 * [Operating Systems](#operating-ystems)
 * [Architectures](#architectures)
 * [Compilers](#compilers)
-* [C++ Standards](#c++-tandards)
+* [C++ Standards](#c-tandards)
 * [Build types](#build-ypes)
 * [xtd targets](#xtd-targets)
 * [xtd paths](#xtd-paths)
