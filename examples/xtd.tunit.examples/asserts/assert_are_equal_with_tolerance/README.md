@@ -1,10 +1,10 @@
-# assert_are_equal_with_tolerence
+# assert_are_equal_with_tolerance
 
-Shows how to use [xtd::tunit::assert::are_equal_with_tolerence](../../../../src/xtd.tunit/include/xtd/tunit/assert.h) method.
+Shows how to use [xtd::tunit::assert::are_equal_with_tolerance](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1assert.html#a026c2256bbe03ed84b6c118e0184a419) method.
 
 ## Sources
 
-[src/assert_are_equal_with_tolerence.cpp](src/assert_are_equal_with_tolerence.cpp)
+[src/assert_are_equal_with_tolerance.cpp](src/assert_are_equal_with_tolerance.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -25,7 +25,7 @@ Run tests:
   FAILED  test.test_case_failed (0 ms total)
     Expected: 0.6
     But was:  0.6
-    Stack Trace: in |---OMITTED---|/assert_are_equal_with_tolerence.cpp:13
+    Stack Trace: in |---OMITTED---|/assert_are_equal_with_tolerance.cpp:13
 
 Test results:
   SUCCEED 1 test.

@@ -1,6 +1,6 @@
 # assert_is_not_zero
 
-Shows how to use [xtd::tunit::assert::is_not_zero](../../../../src/xtd.tunit/include/xtd/tunit/assert.h) method.
+Shows how to use [xtd::tunit::assert::is_not_zero](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1assert.html#a7e123d3181be696041b36190264a92d9) method.
 
 ## Sources
 

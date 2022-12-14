@@ -2,4 +2,4 @@
 
 [This folder](..) contains xtd.drawing "Hello, World!" examples.
 
-* [hello_world_png](hello_world_png/README.md) The classic first application "Hello, Wrold!" with GDI+ drawing objects and write png.
+* [hello_world_png](hello_world_png/README.md) The classic first application "Hello, World!" with GDI+ drawing objects and write png.
