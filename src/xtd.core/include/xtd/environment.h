@@ -67,56 +67,75 @@ namespace xtd {
     /// @remarks The xtd::environment::get_folder_path method returns the locations associated with this enumeration. The locations of these folders can have different values on different operating systems, the user can change some of the locations, and the locations are localized.
     /// @remarks For more information about special folders, see the KNOWNFOLDERID constants in the Windows documentation.
     /// @remarks The list below typically represents special folders by OS :
-    /// | Name                     | android                    | iOS                              | Linux                      | macOS                            | Windows                                                                                              |
-    /// |--------------------------|----------------------------|----------------------------------|----------------------------|----------------------------------|------------------------------------------------------------------------------------------------------|
-    /// | desktop                  | /home/${User}/Desktop      | /Users/${User}/Desktop           | /home/${User}/Desktop      | /Users/${User}/Desktop           | C:\\Users\\${User}\\Desktop                                                                          |
-    /// | programs                 |                            |                                  |                            |                                  | C:\\Users\\${User}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs                       |
-    /// | my_documents             | /home/${User}              | /Users/${User}                   | /home/${User}              | /Users/${User}                   | C:\\Users\\${User}\\Documents                                                                        |
-    /// | personal                 | /home/${User}              | /Users/${User}                   | /home/${User}              | /Users/${User}                   | C:\\Users\\${User}\\Documents                                                                        |
-    /// | favorites                |                            | /Users/${User}/Library/Favorites |                            | /Users/${User}/Library/Favorites | C:\\Users\\${User}\\Favorites                                                                        |
-    /// | startup                  |                            |                                  |                            |                                  | C:\\Users\\${User}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup              |
-    /// | recent                   |                            |                                  |                            |                                  | C:\\Users\\${User}\\AppData\\Roaming\\Microsoft\\Windows\\Recent                                     |
-    /// | send_to                  |                            |                                  |                            |                                  | C:\\Users\\${User}\\AppData\\Roaming\\Microsoft\\Windows\\SendTo                                     |
-    /// | start_menu               |                            |                                  |                            |                                  | C:\\Users\\${User}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu                                 |
-    /// | my_music                 | /home/${User}/Music        | /Users/${User}/Music             | /home/${User}/Music        | /Users/${User}/Music             | C:\\Users\\${User}\\Music                                                                            |
-    /// | my_videos                | /home/${User}/Videos       | /Users/${User}/Videos            | /home/${User}/Videos       | /Users/${User}/Videos            | C:\\Users\\${User}\\Videos                                                                           |
-    /// | desktop_directory        | /home/${User}/Desktop      | /Users/${User}/Desktop           | /home/${User}/Desktop      | /Users/${User}/Desktop           | C:\\Users\\${User}\\Desktop                                                                          |
-    /// | my_computer              |                            |                                  |                            |                                  |                                                                                                      |
-    /// | network_shortcuts        |                            |                                  |                            |                                  | C:\\Users\\${User}\\AppData\\Roaming\\Microsoft\\Windows\\Network Shortcuts                          |
-    /// | fonts                    | /home/${User}/.fonts       | /Users/${User}/Library/Fonts     | /home/${User}/.fonts       | /Users/${User}/Library/Fonts     | C:\\Windows\\Fonts                                                                                   |
-    /// | templates                | /home/${User}/Templates    | /Users/${User}/Templates         | /home/${User}/Templates    | /Users/${User}/Templates         | C:\\Users\\${User}\\AppData\\Roaming\\Microsoft\\Windows\\Templates                                  |
-    /// | common_start_menu        |                            |                                  |                            |                                  | C:\\ProgramData\\Microsoft\\Windows\\Start Menu                                                      |
-    /// | common_programs          |                            |                                  |                            |                                  | C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs                                            |
-    /// | common_startup           |                            |                                  |                            |                                  | C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Startup                                   |
-    /// | common_desktop_directory |                            |                                  |                            |                                  | C:\\Users\\Public\\Desktop                                                                           |
-    /// | application_data         | /home/${User}/.config      | /Users/${User}/.config           | /home/${User}/.config      | /Users/${User}/.config           | C:\\Users\\${User}\\AppData\\Roaming                                                                 |
-    /// | printer_shortcuts        |                            |                                  |                            |                                  | C:\\Users\\${User}\\AppData\\Roaming\\Microsoft\\Windows\\Printer Shortcuts                          |
-    /// | local_application_data   | /home/${User}/.local/share | /Users/${User}/.local/share      | /home/${User}/.local/share | /Users/${User}/.local/share      | C:\\Users\\${User}\\AppData\\Local                                                                   |
-    /// | internet_cache           |                            | /Users/${User}/Library/Caches    |                            | /Users/${User}/Library/Caches    | C:\\Users\\${User}\\AppData\\Local\\Microsoft\\Windows\\Temporary Internet Files                     |
-    /// | cookies                  |                            |                                  |                            |                                  | C:\\Users\\${User}\\AppData\\Roaming\\Microsoft\\Windows\\Cookies                                    |
-    /// | history                  |                            |                                  |                            |                                  | C:\\Users\\${User}\\AppData\\Local\\Microsoft\\Windows\\History                                      |
-    /// | common_application_data  | /usr/share                 | /usr/share                       | /usr/share                 | /usr/share                       | C:\\ProgramData                                                                                      |
-    /// | windows                  |                            |                                  |                            |                                  | C:\\Windows                                                                                          |
-    /// | system                   |                            |                                  |                            |  /System                         | C:\\Windows\\system32                                                                                |
-    /// | program_files            |                            | /Applications                    |                            | /Applications                    | C:\\Program Files (x86)                                                                              |
-    /// | my_pictures              | /home/${User}/Pictures     | /Users/${User}/Pictures          | /home/${User}/Pictures     | /Users/${User}/Pictures          | C:\\Users\\${User}\\Pictures                                                                         |
-    /// | user_profile             | /home/${User}              | /Users/${User}                   | /home/${User}              | /Users/${User}                   | C:\\Users\\${User}                                                                                   |
-    /// | system_x86               |                            |                                  |                            |                                  | C:\\Windows\\SysWOW64                                                                                |
-    /// | program_files_x86        |                            |                                  |                            |                                  | C:\\Program Files (x86)                                                                              |
-    /// | common_program_files     |                            |                                  |                            |                                  | C:\\Program Files (x86)\\Common Files                                                                |
-    /// | common_program_files_x86 |                            |                                  |                            |                                  | C:\\Program Files (x86)\\Common Files                                                                |
-    /// | common_templates         | /usr/share/templates       | /usr/share/templates             | /usr/share/templates       | /usr/share/templates             | C:\\ProgramData\\Microsoft\\Windows\\Templates                                                       |
-    /// | common_documents         |                            |                                  |                            |                                  | C:\\Users\\Public\\Documents                                                                         |
-    /// | common_admin_tools       |                            |                                  |                            |                                  | C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Administrative Tools                      |
-    /// | admin_tools              |                            |                                  |                            |                                  | C:\\Users\\${User}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Administrative Tools |
-    /// | common_music             |                            |                                  |                            |                                  | C:\\Users\\Public\\Music                                                                             |
-    /// | common_pictures          |                            |                                  |                            |                                  | C:\\Users\\Public\\Pictures                                                                          |
-    /// | common_videos            |                            |                                  |                            |                                  | C:\\Users\\Public\\Videos                                                                            |
-    /// | resources                |                            |                                  |                            |                                  | C:\\Windows\\resources                                                                               |
-    /// | localized_resources      |                            |                                  |                            |                                  |                                                                                                      |
-    /// | common_oem_links         |                            |                                  |                            |                                  |                                                                                                      |
-    /// | cd_burning               |                            |                                  |                            |                                  | C:\\Users\\${User}\\AppData\\Local\\Microsoft\\Windows\\Burn\\Burn                                   |
+    /// | Name                     | android                              | iOS                                  | Linux                                | macOS                                     | Windows                                                                                              |
+    /// |--------------------------|--------------------------------------|--------------------------------------|--------------------------------------|-------------------------------------------|------------------------------------------------------------------------------------------------------|
+    /// | desktop                  | /home/${User}/Desktop                | /Users/${User}/Desktop               | /home/${User}/Desktop                | /Users/${User}/Desktop                    | C:\\Users\\${User}\\Desktop                                                                          |
+    /// | programs                 |                                      |                                      |                                      |                                           | C:\\Users\\${User}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs                       |
+    /// | my_documents             | /home/${User}                        | /Users/${User}                       | /home/${User}                        | /Users/${User}                            | C:\\Users\\${User}\\Documents                                                                        |
+    /// | personal                 | /home/${User}                        | /Users/${User}                       | /home/${User}                        | /Users/${User}                            | C:\\Users\\${User}\\Documents                                                                        |
+    /// | favorites                |                                      | /Users/${User}/Library/Favorites     |                                      | /Users/${User}/Library/Favorites          | C:\\Users\\${User}\\Favorites                                                                        |
+    /// | startup                  |                                      |                                      |                                      |                                           | C:\\Users\\${User}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup              |
+    /// | recent                   |                                      |                                      |                                      |                                           | C:\\Users\\${User}\\AppData\\Roaming\\Microsoft\\Windows\\Recent                                     |
+    /// | send_to                  |                                      |                                      |                                      |                                           | C:\\Users\\${User}\\AppData\\Roaming\\Microsoft\\Windows\\SendTo                                     |
+    /// | start_menu               |                                      |                                      |                                      |                                           | C:\\Users\\${User}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu                                 |
+    /// | my_music                 | /home/${User}/Music                  | /Users/${User}/Music                 | /home/${User}/Music                  | /Users/${User}/Music                      | C:\\Users\\${User}\\Music                                                                            |
+    /// | my_videos                | /home/${User}/Videos                 | /Users/${User}/Videos                | /home/${User}/Videos                 | /Users/${User}/Videos                     | C:\\Users\\${User}\\Videos                                                                           |
+    /// | desktop_directory        | /home/${User}/Desktop                | /Users/${User}/Desktop               | /home/${User}/Desktop                | /Users/${User}/Desktop                    | C:\\Users\\${User}\\Desktop                                                                          |
+    /// | my_computer              |                                      |                                      |                                      |                                           |                                                                                                      |
+    /// | network_shortcuts        |                                      |                                      |                                      |                                           | C:\\Users\\${User}\\AppData\\Roaming\\Microsoft\\Windows\\Network Shortcuts                          |
+    /// | fonts                    | /home/${User}/.fonts                 | /Users/${User}/Library/Fonts         | /home/${User}/.fonts                 | /Users/${User}/Library/Fonts              | C:\\Windows\\Fonts                                                                                   |
+    /// | templates                | /home/${User}/Templates              | /Users/${User}/Templates             | /home/${User}/Templates              | /Users/${User}/Templates                  | C:\\Users\\${User}\\AppData\\Roaming\\Microsoft\\Windows\\Templates                                  |
+    /// | common_start_menu        |                                      |                                      |                                      |                                           | C:\\ProgramData\\Microsoft\\Windows\\Start Menu                                                      |
+    /// | common_programs          |                                      |                                      |                                      |                                           | C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs                                            |
+    /// | common_startup           |                                      |                                      |                                      |                                           | C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Startup                                   |
+    /// | common_desktop_directory |                                      |                                      |                                      |                                           | C:\\Users\\Public\\Desktop                                                                           |
+    /// | application_data         | /home/${User}/.config                | /Users/${User}/.config               | /home/${User}/.config                | /Users/${User}/.config                    | C:\\Users\\${User}\\AppData\\Roaming                                                                 |
+    /// | printer_shortcuts        |                                      |                                      |                                      |                                           | C:\\Users\\${User}\\AppData\\Roaming\\Microsoft\\Windows\\Printer Shortcuts                          |
+    /// | local_application_data   | /home/${User}/.local/share           | /Users/${User}/.local/share          | /home/${User}/.local/share           | /Users/${User}/.local/share               | C:\\Users\\${User}\\AppData\\Local                                                                   |
+    /// | internet_cache           |                                      | /Users/${User}/Library/Caches        |                                      | /Users/${User}/Library/Caches             | C:\\Users\\${User}\\AppData\\Local\\Microsoft\\Windows\\Temporary Internet Files                     |
+    /// | cookies                  |                                      |                                      |                                      |                                           | C:\\Users\\${User}\\AppData\\Roaming\\Microsoft\\Windows\\Cookies                                    |
+    /// | history                  |                                      |                                      |                                      |                                           | C:\\Users\\${User}\\AppData\\Local\\Microsoft\\Windows\\History                                      |
+    /// | common_application_data  | /usr/share                           | /usr/share                           | /usr/share                           | /usr/share                                | C:\\ProgramData                                                                                      |
+    /// | windows                  |                                      |                                      |                                      |                                           | C:\\Windows                                                                                          |
+    /// | system                   |                                      |                                      |                                      |  /System                                  | C:\\Windows\\system32                                                                                |
+    /// | program_files            |                                      | /Applications                        |                                      | /Applications                             | C:\\Program Files (x86)                                                                              |
+    /// | my_pictures              | /home/${User}/Pictures               | /Users/${User}/Pictures              | /home/${User}/Pictures               | /Users/${User}/Pictures                   | C:\\Users\\${User}\\Pictures                                                                         |
+    /// | user_profile             | /home/${User}                        | /Users/${User}                       | /home/${User}                        | /Users/${User}                            | C:\\Users\\${User}                                                                                   |
+    /// | system_x86               |                                      |                                      |                                      |                                           | C:\\Windows\\SysWOW64                                                                                |
+    /// | program_files_x86        |                                      |                                      |                                      |                                           | C:\\Program Files (x86)                                                                              |
+    /// | common_program_files     |                                      |                                      |                                      |                                           | C:\\Program Files (x86)\\Common Files                                                                |
+    /// | common_program_files_x86 |                                      |                                      |                                      |                                           | C:\\Program Files (x86)\\Common Files                                                                |
+    /// | common_templates         | /usr/share/templates                 | /usr/share/templates                 | /usr/share/templates                 | /usr/share/templates                      | C:\\ProgramData\\Microsoft\\Windows\\Templates                                                       |
+    /// | common_documents         |                                      |                                      |                                      |                                           | C:\\Users\\Public\\Documents                                                                         |
+    /// | common_admin_tools       |                                      |                                      |                                      |                                           | C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Administrative Tools                      |
+    /// | admin_tools              |                                      |                                      |                                      |                                           | C:\\Users\\${User}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Administrative Tools |
+    /// | common_music             |                                      |                                      |                                      |                                           | C:\\Users\\Public\\Music                                                                             |
+    /// | common_pictures          |                                      |                                      |                                      |                                           | C:\\Users\\Public\\Pictures                                                                          |
+    /// | common_videos            |                                      |                                      |                                      |                                           | C:\\Users\\Public\\Videos                                                                            |
+    /// | resources                |                                      |                                      |                                      |                                           | C:\\Windows\\resources                                                                               |
+    /// | localized_resources      |                                      |                                      |                                      |                                           |                                                                                                      |
+    /// | common_oem_links         |                                      |                                      |                                      |                                           |                                                                                                      |
+    /// | cd_burning               |                                      |                                      |                                      |                                           | C:\\Users\\${User}\\AppData\\Local\\Microsoft\\Windows\\Burn\\Burn                                   |
+    /// | xtd_install **           | /usr/local                           | /usr/local                           | /usr/local                           | /usr/local                                | C:\Program Files\xtd                                                                                 |
+    /// | xtd_locale  **           | /usr/local/share/xtd/locale          | /usr/local/share/xtd/locale          | /usr/local/share/xtd/locale          | /usr/local/share/xtd/locale               | C:\Program Files\xtd\locale                                                                          |
+    /// | xtd_reference_guide **   | /usr/local/share/xtd/reference_guide | /usr/local/share/xtd/reference_guide | /usr/local/share/xtd/reference_guide | /usr/local/share/xtd/reference_guide      | C:\Program Files\xtd\reference_guide                                                                 |
+    /// | xtd_themes **            | /usr/local/share/xtd/themes          | /usr/local/share/xtd/themes          | /usr/local/share/xtd/themes          | /usr/local/share/xtd/themes               | C:\Program Files\xtd\themes                                                                          |
+    /// | xtd_include **           | /usr/local/include                   | /usr/local/include                   | /usr/local/include                   | /usr/local/include                        | C:\Program Files\xtd\include                                                                         |
+    /// | xtd_libraries **         | /usr/local/lib                       | /usr/local/lib                       | /usr/local/lib                       | /usr/local/lib                            | C:\Program Files\xtd\lib                                                                             |
+    /// | xtd_resources **         | /usr/local/share/xtd/resources       | /usr/local/share/xtd/resources       | /usr/local/share/xtd/resources       | /usr/local/share/xtd/resources            | C:\Program Files\xtd\resources                                                                       |
+    /// | xtd_console_include **   | /usr/local/include                   | /usr/local/include                   | /usr/local/include                   | /usr/local/include                        | C:\Program Files\xtd\include                                                                         |
+    /// | xtd_console_libraries ** | /usr/local/lib                       | /usr/local/lib                       | /usr/local/lib                       | /usr/local/lib                            | C:\Program Files\xtd\lib                                                                             |
+    /// | xtd_drawing_include **   | /usr/local/include                   | /usr/local/include                   | /usr/local/include                   | /usr/local/include                        | C:\Program Files\xtd\include                                                                         |
+    /// | xtd_drawing_libraries ** | /usr/local/lib                       | /usr/local/lib                       | /usr/local/lib                       | /usr/local/lib                            | C:\Program Files\xtd\lib                                                                             |
+    /// | xtd_drawing_resources ** | /usr/local/share/xtd/resources       | /usr/local/share/xtd/resources       | /usr/local/share/xtd/resources       | /usr/local/share/xtd/resources            | C:\Program Files\xtd\resources                                                                       |
+    /// | xtd_forms_include **     | /usr/local/include                   | /usr/local/include                   | /usr/local/include                   | /usr/local/include                        | C:\Program Files\xtd\include                                                                         |
+    /// | xtd_forms_libraries **   | /usr/local/lib                       | /usr/local/lib                       | /usr/local/lib                       | /usr/local/lib                            | C:\Program Files\xtd\lib                                                                             |
+    /// | xtd_forms_resources **   | /usr/local/share/xtd/resources       | /usr/local/share/xtd/resources       | /usr/local/share/xtd/resources       | /usr/local/share/xtd/resources            | C:\Program Files\xtd\resources                                                                       |
+    /// | xtd_tunit_include **     | /usr/local/include                   | /usr/local/include                   | /usr/local/include                   | /usr/local/include                        | C:\Program Files\xtd\include                                                                         |
+    /// | xtd_tunit_libraries **   | /usr/local/lib                       | /usr/local/lib                       | /usr/local/lib                       | /usr/local/lib                            | C:\Program Files\xtd\lib                                                                             |
     /// * ${User} represent the login user name.
+    /// ** xtd::environment::special_folder_option has no effect with these values.
+    ///
     /// @see environment
     enum class special_folder {
       /// @brief The logical Desktop rather than the physical file system location.
@@ -215,39 +234,39 @@ namespace xtd {
       cd_burning = 59,
       /// @brief The file system directory that contains home folder.
       home = 64,
-      /// @brief
+      /// @brief The installation folder of xtd.
       xtd_install = 1000,
-      /// @brief
+      /// @brief The xtd locale folder.
       xtd_locale = 1001,
-      /// @brief
+      /// @brief The xtd reference guide folder.
       xtd_reference_guide = 1002,
-      /// @brief
+      /// @brief The xtd themes folder.
       xtd_themes = 1003,
-      /// @brief
+      /// @brief The xtd inlude folder.
       xtd_include = 1004,
-      /// @brief
+      /// @brief The xtd libraries folder.
       xtd_libraries = 1005,
-      /// @brief
+      /// @brief The xtd resources folder.
       xtd_resources = 1006,
-      /// @brief
+      /// @brief The xtd::console include folder.
       xtd_console_include = 1007,
-      /// @brief
+      /// @brief The xtd::console libraries folder.
       xtd_console_libraries = 1008,
-      /// @brief
+      /// @brief The xtd::drawing include folder.
       xtd_drawing_include = 1009,
-      /// @brief
+      /// @brief The xtd::drawing libraries folder.
       xtd_drawing_libraries = 1010,
-      /// @brief
+      /// @brief The xtd::drawing resources folder.
       xtd_drawing_resources = 1011,
-      /// @brief
+      /// @brief The xtd::forms include folder.
       xtd_forms_include = 1012,
-      /// @brief
+      /// @brief The xtd::forms libraries folder.
       xtd_forms_libraries = 1013,
-      /// @brief
+      /// @brief The xtd::forms resources folder.
       xtd_forms_resources = 1014,
-      /// @brief
+      /// @brief The xtd::tunit include folder.
       xtd_tunit_include = 1015,
-      /// @brief
+      /// @brief The xtd::tunit libraries folder.
       xtd_tunit_libraries = 1016,
     };
     
