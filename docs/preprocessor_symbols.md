@@ -4,20 +4,20 @@
 
 ## Operating Systems
 
-The following table represents the different preprocessor symbols for the platforms supported by xtd.
+The following table represents the different preprocessor symbols for the platforms supported by xtd:
 
-| Defines          | OS                                                                     |
-|------------------|------------------------------------------------------------------------|
-| `__ANDROID__`    | [Android](http://en.wikipedia.org/wiki/Android_%28operating_system%29) |
-| `__APPLE__`      | [macOS](http://en.wikipedia.org/wiki/Mac_OS)                           |
-| `__linux__`      | [Linux](http://en.wikipedia.org/wiki/Linux_kernel)                     |
-| `__unix__`       | [Unix](http://en.wikipedia.org/wiki/unix)                              |
-| `_POSIX_VERSION` | [Posix](http://en.wikipedia.org/wiki/posix)                            |
-| `_WIN32`         | [Windows](http://en.wikipedia.org/wiki/Category:Microsoft_Windows)     |
+| Symbols          | OS                                                                      |
+|------------------|-------------------------------------------------------------------------|
+| `__ANDROID__`    | [Android](https://en.wikipedia.org/wiki/Android_%28operating_system%29) |
+| `__APPLE__`      | [macOS](https://en.wikipedia.org/wiki/Mac_OS)                           |
+| `__linux__`      | [Linux](https://en.wikipedia.org/wiki/Linux_kernel)                     |
+| `__unix__`       | [Unix](https://en.wikipedia.org/wiki/unix)                              |
+| `_POSIX_VERSION` | [Posix](https://en.wikipedia.org/wiki/posix)                            |
+| `_WIN32`         | [Windows](https://en.wikipedia.org/wiki/Category:Microsoft_Windows)     |
 
 To detect the different Apple platforms, it is necessary to include the `TargetConditionals.h` file which contains the different target definitions.
 
-For a more complete list of platforms see [Pre-defined Compiler Macros Wiki - Operating system](https://sourceforge.net/p/predef/wiki/OperatingSystems/).
+For a more complete list of platforms see [Pre-defined Compiler Macros Wiki - Operating systems](https://sourceforge.net/p/predef/wiki/OperatingSystems/).
 
 ### Examples
 
@@ -32,51 +32,51 @@ The following code shows how to detect the operating system with the preprocesso
 #  endif
 #elif defined(__APPLE__)
 #  include <TargetConditionals.h>
-#  if defined(TARGET_OS_MAC)
-#    if defined (TARGET_OS_OSX)
+#  if TARGET_OS_WIN32 != 0
+#    define __platform_name__ "WIN32 API"
+#  elif TARGET_OS_WINDOWS != 0
+#    define __platform_name__ "Windows"
+#  elif TARGET_OS_UNIX != 0
+#    define __platform_name__ "Unix"
+#  elif TARGET_OS_LINUX != 0
+#    define __platform_name__ "Linux"
+#  elif TARGET_OS_MAC != 0
+#    if TARGET_OS_OSX != 0
 #      define __platform_name__ "macOS"
-#    elif TARGET_OS_IPHONE
+#    elif TARGET_OS_IPHONE != 0
 #      if TARGET_OS_IOS
 #        define __platform_name__ "iOS"
-#      elif TARGET_OS_TV
+#      elif TARGET_OS_TV != 0
 #        define __platform_name__ "Apple TV OS"
-#      elif TARGET_OS_WATCH
+#      elif TARGET_OS_WATCH != 0
 #        define __platform_name__ "Apple Watch OS"
-#      elif TARGET_OS_BRIDGE
+#      elif TARGET_OS_BRIDGE != 0
 #        define __platform_name__ "Bridge device"
-#      elif TARGET_OS_MACCATALYST
-#        define __platform_name__ "iPhone Simulator"
+#      elif TARGET_OS_MACCATALYST != 0
+#        define __platform_name__ "Catalyst macOS"
 #      else
 #        error "Unknown iPhone platform"
 #      endif
-#    elif TARGET_OS_DRIVERKIT
+#    elif TARGET_OS_DRIVERKIT != 0
 #      define __platform_name__ "macOS, iOS, Apple TV OS, or Apple Watch OS"
-#    elif TARGET_IPHONE_SIMULATOR
+#    elif TARGET_IPHONE_SIMULATOR != 0
 #      define __platform_name__ "iPhone Simulator"
 #    else
 #      error "Unknown Apple platform"
 #    endif
-#  elif defined(TARGET_OS_WIN32)
-#    define __platform_name__ "WIN32 API"
-#  elif defined(TARGET_OS_WINDOWS)
-#    define __platform_name__ "Windows"
-#  elif defined(TARGET_OS_UNIX)
-#    define __platform_name__ "Unix"
-#  elif defined(TARGET_OS_LINUX)
-#    define __platform_name__ "Linux"
 #  else
-#    error "Unknown Target"
+#    error "Unknown target"
 #  endif
-#elif __ANDROID__
+#elif defined(__ANDROID__)
 #  define __platform_name__ "Android"
-#elif __linux__
+#elif defined(__linux__)
 #  define __platform_name__ "Linux"
-#elif __unix__
+#elif defined(__unix__)
 #  define __platform_name__ "Unix"
 #elif defined(_POSIX_VERSION)
 #  define __platform_name__ "Posix"
 #else
-#  error "Unknown Platform"
+#  error "Unknown platform"
 #endif
 
 #include <xtd/xtd.core>
@@ -93,7 +93,157 @@ int main() {
 ### Remarks
 
 When using xtd, you do not need to use these preprocessor symbols.
+
 It is better to use [xtd::environment::os_version](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#a7eb460253deb58efb3bfdfbb71904119).
+
+But it can be useful for your own developments.
+
+## Architectures
+
+The following table represents the different preprocessor symbols for the architectures supported by xtd:
+
+| Symbols       | Architectures                                                  |
+|---------------|----------------------------------------------------------------|
+| `__amd64__`   | [AMD64](https://en.wikipedia.org/wiki/Amd64)                   |
+| `__arm__`     | [ARM](https://en.wikipedia.org/wiki/ARM_architecture)          |
+| `__aarch64__` | [ARM64](https://en.wikipedia.org/wiki/ARM64)                   |
+| `__i386__`    | [Intel x86](https://en.wikipedia.org/wiki/X86)                 |
+| `__ia64__`    | [Intel Itanium (IA-64)](https://en.wikipedia.org/wiki/Itanium) |
+
+For a more complete list of compiler see [Pre-defined Compiler Macros Wiki - Architectures](https://sourceforge.net/p/predef/wiki/Architectures/).
+
+### Examples
+
+```c++
+#if defined(__amd64__)
+#  define __architecture_name__ "AMD64"
+#elif defined(__arm__)
+#  define __architecture_name__ "ARM"
+#elif defined(__aarch64__)
+#  define __architecture_name__ "ARM64"
+#elif defined(__i386__)
+#  define __architecture_name__ "Intel x86"
+#elif defined(__ia64__)
+#  define __architecture_name__ "Intel Itanium (IA-64)"
+#else
+#  error "Unknown compiler"
+#endif
+
+#include <xtd/xtd.core>
+
+int main() {
+  xtd::console::write_line("architecture_name=\"{}\"", __architecture_name__);
+}
+
+// This code produces the following output if architecture is ARM64:
+//
+// platform_name="ARM64"
+```
+
+### Remarks
+
+When using xtd, you do not need to use these preprocessor symbols.
+
+It is better to use [xtd::environment::processor_information](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#aece4cd0bcb92930816937b8c7b45a7a1).
+
+But it can be useful for your own developments.
+
+## Compilers
+
+The following table represents the different preprocessor symbols for the compilers supported by xtd:
+
+| Symbols     | Compiler                                                            |
+|-------------|---------------------------------------------------------------------|
+| `__clang__` | [Clang](https://en.wikipedia.org/wiki/Clang)                        |
+| `__GNUC__`  | [GCC C/C++](https://en.wikipedia.org/wiki/GNU_Compiler_Collection)  |
+| `_MSC_VER`  | [Microsoft Visual C++](https://en.wikipedia.org/wiki/Visual_studio) |
+
+For a more complete list of compiler see [Pre-defined Compiler Macros Wiki - Compilers](https://sourceforge.net/p/predef/wiki/Compilers/).
+
+### Examples
+
+```c++
+#if defined(_MSC_VER)
+#  define __comiler_name__ "Microsoft Visual C++"
+#elif defined(__clang__)
+#  define __comiler_name__ "Clang"
+#elif defined(__GNUC__)
+#  define __comiler_name__ "GCC C/C++"
+#else
+#  error "Unknown compiler"
+#endif
+
+#include <xtd/xtd.core>
+
+int main() {
+  xtd::console::write_line("compiler_name=\"{}\"", __comiler_name__);
+}
+
+// This code produces the following output if compiler is Microsoft Visual C++:
+//
+// platform_name="Microsoft Visual C++"
+```
+
+### Remarks
+
+When using xtd, you do not need to use these preprocessor symbols.
+
+It is better to use [xtd::environment::compiler_version](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#a86156ba949fd043f918a879faed73d86).
+
+But it can be useful for your own developments.
+
+## C++ Standrds
+
+The following table represents the different preprocessor symbols for the C++ standard supported by xtd:
+
+| Symbols                | Standard                                                          |
+|------------------------|-------------------------------------------------------------------|
+| `__cplusplus = 199711L`| [C++98](https://www.open-std.org/jtc1/sc22/wg21/) (not supported) |
+| `__cplusplus = 201103L`| [C++11](https://en.wikipedia.org/wiki/C%2B%2B11) (not supported)  |
+| `__cplusplus = 201402L`| [C++14](https://en.wikipedia.org/wiki/C%2B%2B14) (not supported)  |
+| `__cplusplus = 201703L`| [C++17](https://en.wikipedia.org/wiki/C%2B%2B17)                  |
+| `__cplusplus = 202002L`| [C++20](https://en.wikipedia.org/wiki/C%2B%2B20)                  |
+
+For a more complete list of compiler see [Pre-defined Compiler Macros Wiki - Standards](https://sourceforge.net/p/predef/wiki/Standards/).
+
+### Examples
+
+```c++
+#if defined(__cplusplus)
+#  if __cplusplus == 202002L
+#    define __standard_name__ "C++20"
+#  elif __cplusplus == 201703L
+#    define __standard_name__ "C++17"
+#  elif __cplusplus == 201402L
+#    define __standard_name__ "C++14 (not supported)"
+#  elif __cplusplus == 201103L
+#    define __standard_name__ "C++11 (not supported)"
+#  elif __cplusplus == 199711L
+#    define __standard_name__ "C++98 (not supported)"
+#  else
+#    define __standard_name__ "Unknown C++ standard"
+#  endif
+#else
+#  error "Not C++ standard"
+#endif
+
+#include <xtd/xtd.core>
+
+int main() {
+  xtd::console::write_line("standard_name=\"{}\"", __standard_name__);
+}
+
+// This code produces the following output if C++20:
+//
+// platform_name="C++20"
+```
+
+### Remarks
+
+When using xtd, you do not need to use these preprocessor symbols.
+
+It is better to use [xtd::environment::cpp_version](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#a605f670a384617410e0e52765765b167).
+
 But it can be useful for your own developments.
 
 ## Build types
