@@ -1,6 +1,6 @@
 # target_name
 
-Shows how to set target name with cmake [target_name()](../../../../scripts/cmake/xtd_commands.cmake).
+Shows how to set target name with cmake [target_name()](https://codedocs.xyz/gammasoft71/xtd/_c_make_commands.html#TargetNameSubSection).
 
 # Sources
 

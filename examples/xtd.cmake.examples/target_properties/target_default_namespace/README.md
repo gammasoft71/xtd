@@ -1,6 +1,6 @@
 # target_default_namespace
 
-Shows how to set target default namespace with cmake [target_default_namespace()](../../../../scripts/cmake/xtd_commands.cmake).
+Shows how to set target default namespace with cmake [target_default_namespace()](https://codedocs.xyz/gammasoft71/xtd/_c_make_commands.html#TargetDefaultNamespaceSubSection).
 
 # Sources
 
