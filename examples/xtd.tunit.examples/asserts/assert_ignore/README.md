@@ -1,6 +1,6 @@
 # assert_ignore
 
-Shows how to use [xtd::tunit::assert::ignore](../../../../src/xtd.tunit/include/xtd/tunit/assert.h) method.
+Shows how to use [xtd::tunit::assert::ignore](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1base__assert.html#a43955cabe9ead93bb75087f7057b7b47) method.
 
 ## Sources
 
