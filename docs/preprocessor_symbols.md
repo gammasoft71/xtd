@@ -6,14 +6,14 @@
 
 The following table represents the different preprocessor symbols for the platforms supported by xtd.
 
-| Defines           | OS                                                                     |
-|-------------------|------------------------------------------------------------------------|
-| `__ANDROID__`     | [Android](http://en.wikipedia.org/wiki/Android_%28operating_system%29) |
-| `\__APPLE__`      | [macOS](http://en.wikipedia.org/wiki/Mac_OS)                           |
-| `\__linux__`      | [Linux](http://en.wikipedia.org/wiki/Linux_kernel)                     |
-| `\__unix__`       | [Unix](http://en.wikipedia.org/wiki/unix)                              |
-| `\_POSIX_VERSION` | [Posix](http://en.wikipedia.org/wiki/posix)                            |
-| `\_WIN32`         | [Windows](http://en.wikipedia.org/wiki/Category:Microsoft_Windows)     |
+| Defines          | OS                                                                     |
+|------------------|------------------------------------------------------------------------|
+| `__ANDROID__`    | [Android](http://en.wikipedia.org/wiki/Android_%28operating_system%29) |
+| `__APPLE__`      | [macOS](http://en.wikipedia.org/wiki/Mac_OS)                           |
+| `__linux__`      | [Linux](http://en.wikipedia.org/wiki/Linux_kernel)                     |
+| `__unix__`       | [Unix](http://en.wikipedia.org/wiki/unix)                              |
+| `_POSIX_VERSION` | [Posix](http://en.wikipedia.org/wiki/posix)                            |
+| `_WIN32`         | [Windows](http://en.wikipedia.org/wiki/Category:Microsoft_Windows)     |
 
 To detect the different Apple platforms, it is necessary to include the `TargetConditionals.h` file which contains the different target definitions.
 
