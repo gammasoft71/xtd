@@ -25,11 +25,7 @@ The following code shows how to detect the operating system with the preprocesso
 
 ```c++
 #if defined(_WIN32)
-#  ifdef _WIN64
-#    define __platform_name__ "Windows 64 bits"
-#  else
-#    define __platform_name__ "Windows 32 bits"
-#  endif
+#  define __platform_name__ "Microsoft Windows"
 #elif defined(__APPLE__)
 #  include <TargetConditionals.h>
 #  if TARGET_OS_WIN32 != 0
@@ -47,9 +43,9 @@ The following code shows how to detect the operating system with the preprocesso
 #      if TARGET_OS_IOS
 #        define __platform_name__ "iOS"
 #      elif TARGET_OS_TV != 0
-#        define __platform_name__ "Apple TV OS"
+#        define __platform_name__ "tvOS"
 #      elif TARGET_OS_WATCH != 0
-#        define __platform_name__ "Apple Watch OS"
+#        define __platform_name__ "watchOS"
 #      elif TARGET_OS_BRIDGE != 0
 #        define __platform_name__ "Bridge device"
 #      elif TARGET_OS_MACCATALYST != 0
@@ -58,7 +54,7 @@ The following code shows how to detect the operating system with the preprocesso
 #        error "Unknown iPhone platform"
 #      endif
 #    elif TARGET_OS_DRIVERKIT != 0
-#      define __platform_name__ "macOS, iOS, Apple TV OS, or Apple Watch OS"
+#      define __platform_name__ "macOS, iOS, tvOS, or watchOS"
 #    elif TARGET_IPHONE_SIMULATOR != 0
 #      define __platform_name__ "iPhone Simulator"
 #    else
@@ -81,13 +77,17 @@ The following code shows how to detect the operating system with the preprocesso
 
 #include <xtd/xtd.core>
 
+using namespace xtd;
+
 int main() {
-  xtd::console::write_line("platform_name=\"{}\"", __platform_name__);
+  console::write_line("platform_name=\"{}\"", __platform_name__);
+  console::write_line("platform_name=\"{}\"", environment::os_version().name());
 }
 
-// This code produces the following output if under Windows 64 bits :
+// This code produces the following output if under macOS :
 //
-// platform_name="Windows 64 bits"
+// platform_name="macOS"
+// platform_name="macOS"
 ```
 
 ### Remarks
@@ -114,30 +114,36 @@ For a more complete list of compiler see [Pre-defined Compiler Macros Wiki - Arc
 
 ### Examples
 
+The following code shows how to detect the architecture with the preprocessor symbols:
+
 ```c++
 #if defined(__amd64__)
-#  define __architecture_name__ "AMD64"
+#  define __architecture_name__ "amd64"
 #elif defined(__arm__)
-#  define __architecture_name__ "ARM"
+#  define __architecture_name__ "arm"
 #elif defined(__aarch64__)
-#  define __architecture_name__ "ARM64"
+#  define __architecture_name__ "arm64"
 #elif defined(__i386__)
-#  define __architecture_name__ "Intel x86"
+#  define __architecture_name__ "intel x86"
 #elif defined(__ia64__)
-#  define __architecture_name__ "Intel Itanium (IA-64)"
+#  define __architecture_name__ "intel itanium (IA-64)"
 #else
 #  error "Unknown compiler"
 #endif
 
 #include <xtd/xtd.core>
 
+using namespace xtd;
+
 int main() {
-  xtd::console::write_line("architecture_name=\"{}\"", __architecture_name__);
+  console::write_line("architecture_name=\"{}\"", __architecture_name__);
+  console::write_line("architecture_name=\"{}\"", environment::processor_information().architecture_string());
 }
 
 // This code produces the following output if architecture is ARM64:
 //
-// platform_name="ARM64"
+// architecture_name="arm64"
+// architecture_name="arm64"
 ```
 
 ### Remarks
@@ -162,26 +168,32 @@ For a more complete list of compiler see [Pre-defined Compiler Macros Wiki - Com
 
 ### Examples
 
+The following code shows how to detect the compiler with the preprocessor symbols:
+
 ```c++
 #if defined(_MSC_VER)
-#  define __comiler_name__ "Microsoft Visual C++"
+#  define __comiler_name__ "Microsoft Visual Studio"
 #elif defined(__clang__)
-#  define __comiler_name__ "Clang"
+#  define __comiler_name__ "clang"
 #elif defined(__GNUC__)
-#  define __comiler_name__ "GCC C/C++"
+#  define __comiler_name__ "gcc"
 #else
 #  error "Unknown compiler"
 #endif
 
 #include <xtd/xtd.core>
 
+using namespace xtd;
+
 int main() {
-  xtd::console::write_line("compiler_name=\"{}\"", __comiler_name__);
+  console::write_line("compiler_name=\"{}\"", __comiler_name__);
+  console::write_line("compiler_name=\"{}\"", environment::compiler_version().name());
 }
 
-// This code produces the following output if compiler is Microsoft Visual C++:
+// This code produces the following output if compiler is Clang:
 //
-// platform_name="Microsoft Visual C++"
+// compiler_name="clang"
+// compiler_name="clang"
 ```
 
 ### Remarks
@@ -208,18 +220,20 @@ For a more complete list of compiler see [Pre-defined Compiler Macros Wiki - Sta
 
 ### Examples
 
+The following code shows how to detect the C++ standard with the preprocessor symbols:
+
 ```c++
 #if defined(__cplusplus)
 #  if __cplusplus == 202002L
-#    define __standard_name__ "C++20"
+#    define __standard_name__ "C++ 20"
 #  elif __cplusplus == 201703L
-#    define __standard_name__ "C++17"
+#    define __standard_name__ "C++ 17"
 #  elif __cplusplus == 201402L
-#    define __standard_name__ "C++14 (not supported)"
+#    define __standard_name__ "C++ 14 (not supported)"
 #  elif __cplusplus == 201103L
-#    define __standard_name__ "C++11 (not supported)"
+#    define __standard_name__ "C++ 11 (not supported)"
 #  elif __cplusplus == 199711L
-#    define __standard_name__ "C++98 (not supported)"
+#    define __standard_name__ "C++ 98 (not supported)"
 #  else
 #    define __standard_name__ "Unknown C++ standard"
 #  endif
@@ -229,13 +243,17 @@ For a more complete list of compiler see [Pre-defined Compiler Macros Wiki - Sta
 
 #include <xtd/xtd.core>
 
+using namespace xtd;
+
 int main() {
-  xtd::console::write_line("standard_name=\"{}\"", __standard_name__);
+  console::write_line("standard_name=\"{}\"", __standard_name__);
+  console::write_line("standard_name=\"{}\"", environment::cpp_version().name());
 }
 
 // This code produces the following output if C++20:
 //
-// platform_name="C++20"
+// platform_name="C++ 20"
+// platform_name="C++ 20"
 ```
 
 ### Remarks
@@ -248,7 +266,99 @@ But it can be useful for your own developments.
 
 ## Build types
 
+The following table represents the different preprocessor symbols for the build type by xtd:
+
+| Symbols  | Build type                |
+|----------|---------------------------|
+| `NDBUG`  | The build type is release |
+
+`NDEBUG` is the only definition in the C++ standard for whether the build type is debug or release.
+
+### Examples
+
+The following code shows how to detect the buil type with the preprocessor symbols:
+
+```c++
+#if defined(NDEBUG)
+#  define __build_type__ "release"
+#else
+#  define __build_type__ "debug"
+#endif
+
+#include <xtd/xtd.core>
+
+using namespace xtd;
+
+int main() {
+  console::write_line("build_type=\"{}\"", __build_type__);
+  console::write_line("build_type=\"{}\"", environment::compiler_version().build_type());
+}
+
+// This code produces the following output if build type debug:
+//
+// build_type="debug"
+// build_type="debug"
+```
+
+### Remarks
+
+When using xtd, you do not need to use these preprocessor symbols.
+
+It is better to use [xtd::environment::compiler_version().build_type](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1compiler.html#a26e8527d072bb9417298a60a27046ad5).
+
+But it can be useful for your own developments.
+
 ## xtd paths
+
+The following table represents the different preprocessor symbols for the xtd paths:
+
+| Symbols                          | Path                               | Value                                            |
+|----------------------------------|------------------------------------|--------------------------------------------------|
+| `__XTD_INSTALL_PATH__`           | The installation folder of xtd     | ${XTD_INSTALL_PATH}/include"                     |
+| `__XTD_LOCALE_PATH__`            | The xtd locale folder              | ${XTD_INSTALL_PATH}/include"                     |
+| `__XTD_REFERENCE_GUIDE_PATH__`   | The xtd reference guide folder     | ${XTD_INSTALL_PATH}/include"                     |
+| `__XTD_THEMES_PATH__`            | The xtd themes folder              | ${XTD_INSTALL_PATH}/include"                     |
+| `__XTD_INCLUDE_PATH__`           | The xtd inlude folder              | ${XTD_INSTALL_PATH}/include"                     |
+| `__XTD_LIB_PATH__`               | The xtd libraries folder           | ${XTD_INSTALL_PATH}/lib"                         |
+| `__XTD_REOURCES_PATH__`          | The xtd resources folder           | ${XTD_INSTALL_PATH}/lib"                         |
+| `__XTD_CONSOLE_INCLUDE_PATH__`   | The xtd::console inlude folder     | ${XTD_CONSOLE_INSTALL_PATH}/include"             |
+| `__XTD_CONSOLE_LIB_PATH__`       | The xtd::console libraries folder  | ${XTD_CONSOLE_INSTALL_PATH}/lib"                 |
+| `__XTD_DRAWING_INCLUDE_PATH__`   | The xtd::drawing inlude folder     | ${XTD_DRAWING_INSTALL_PATH}/include"             |
+| `__XTD_DRAWING_LIB_PATH__`       | The xtd::drawing libraries folder  | ${XTD_DRAWING_INSTALL_PATH}/lib"                 |
+| `__XTD_DRAWING_RESOURCES_PATH__` | The xtd::drawing resources folder  | ${XTD_DRAWING_INSTALL_PATH}/share/xtd/resources" |
+| `__XTD_FORMS_INCLUDE_PATH__`     | The xtd::forms inlude folder       | ${XTD_FORMS_INSTALL_PATH}/include"               |
+| `__XTD_FORMS_LIB_PATH__`         | The xtd::forms libraries folder    | ${XTD_FORMS_INSTALL_PATH}/lib"                   |
+| `__XTD_FORMS_RESOURCES_PATH__`   | The xtd::forms resources folder    | ${XTD_FORMS_INSTALL_PATH}/share/xtd/resources"   |
+| `__XTD_TUNIT_INCLUDE_PATH__`     | The xtd::tunit inlude folder       | ${XTD_TUNIT_INSTALL_PATH}/include"               |
+| `__XTD_TUNIT_LIB_PATH__`         | The xtd::tunit libraries folder    | ${XTD_TUNIT_INSTALL_PATH}/lib"                   |
+
+If you are not using CMake to generate your project, you must define them. See the [xtd.cmake overview](xtd_cmake_overview.md) section for more information.
+
+### Examples
+
+The following code shows how to detect the xtd folder with the preprocessor symbols:
+
+```c++
+#include <xtd/xtd.core>
+
+using namespace xtd;
+
+int main() {
+  console::write_line("xtd_themes=\"{}\"", __XTD_THEMES_PATH__);
+  console::write_line("xtd_themes=\"{}\"", environment::get_folder_path(environment::special_folder::xtd_themes));
+}
+
+// This code produces the following output if build type debug:
+//
+// xtd_themes="/usr/local/share/xtd/themes"
+// xtd_themes="/usr/local/share/xtd/themes"
+```
+
+### Remarks
+
+When using xtd, you do not need to use these preprocessor symbols.
+
+It is better to use [xtd::environment::get_folder_path](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#a0bcc0c727357a767874cfc4970df1414).
 
 # See also
 ​
