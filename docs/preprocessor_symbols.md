@@ -308,6 +308,77 @@ It is better to use [xtd::environment::compiler_version().build_type](https://co
 
 But it can be useful for your own developments.
 
+## xtd targets
+
+The following table represents the different preprocessor symbols for the xtd targets:
+
+| Symbols                                 | Target                            | Value   |
+|-----------------------------------------|-----------------------------------|---------|
+| `__XTD_CURRENT_TARGET_ID__`             | The current target id             | [0...8] |
+| `__XTD_TARGET_ID_UNKNOWN__`             | The target is unknown             | 0       |
+| `__XTD_TARGET_ID_CONSOLE_APPLICATION__` | The target is console application | 1       |
+| `__XTD_TARGET_ID_GUI_APPLICATION__`     | The target is gui application     | 2       |
+| `__XTD_TARGET_ID_TEST_APPLICATION__`    | The target is test application    | 3       |
+| `__XTD_TARGET_ID_INTERFACE_LIBRARY__`   | The target is interface library   | 4       |
+| `__XTD_TARGET_ID_MODULE_LIBRARY__`      | The target is interface library   | 5       |
+| `__XTD_TARGET_ID_SHARED_LIBRARY__`      | The target is shared library      | 6       |
+| `__XTD_TARGET_ID_STATIC_LIBRARY__`      | The target is static library      | 7       |
+| `__XTD_TARGET_ID_CUSTOM_TARGET__`       | The target is custom target       | 8       |
+
+If you are not using CMake to generate your project, you must define them. See the [xtd.cmake overview](cmake_overview.md) section for more information.
+
+### Examples
+
+The following code shows how to detect the xtd folder with the folder symbols:
+
+```c++
+#include <xtd/xtd.core>
+
+#if defined(__XTD_CURRENT_TARGET_ID__)
+#  if __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_UNKNOWN__
+#    define __TARGET_ID_NAME__ "unknown"
+#  elif __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_CONSOLE_APPLICATION__
+#    define __TARGET_ID_NAME__ "console application"
+#  elif __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_GUI_APPLICATION__
+#    define __TARGET_ID_NAME__ "gui application"
+#  elif __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_TEST_APPLICATION__
+#    define __TARGET_ID_NAME__ "test application"
+#  elif __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_INTERFACE_LIBRARY__
+#    define __TARGET_ID_NAME__ "interface library"
+#  elif __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_MODULE_LIBRARY__
+#    define __TARGET_ID_NAME__ "module library"
+#  elif __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_SHARED_LIBRARY__
+#    define __TARGET_ID_NAME__ "shared library"
+#  elif __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_STATIC_LIBRARY__
+#    define __TARGET_ID_NAME__ "static library"
+#  elif __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_CUSTOM_TARGET__
+#    define __TARGET_ID_NAME__ "custom target"
+#  else
+#    error "Current target id invalid"
+#  endif
+#else
+# error "Current target id not defined"
+#endif
+
+using namespace xtd;
+
+int main() {
+  console::write_line("target_type=\"{}\"", __TARGET_ID_NAME__);
+  console::write_line("target_type=\"{}\"", environment::target_type().name());
+}
+
+// This code produces the following output for a consome application:
+//
+// target_type="console application"
+// target_type="console application"
+```
+
+### Remarks
+
+When using xtd, you do not need to use these preprocessor symbols.
+
+It is better to use [xtd::environment::target_type](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#a48fc0632092489172357d69eb5bbccd4).
+
 ## xtd paths
 
 The following table represents the different preprocessor symbols for the xtd paths:
