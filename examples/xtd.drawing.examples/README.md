@@ -6,7 +6,7 @@
 
 ## [Hello Worlds](hello_worlds/README.md)
 
-* [hello_world_png](hello_worlds/hello_world_png/README.md) The classic first application "Hello, Wrold!" with GDI+ drawing objects and write png.
+* [hello_world_png](hello_worlds/hello_world_png/README.md) The classic first application "Hello, World!" with GDI+ drawing objects and write png.
 
 ## [Colors](colors/README.md)
 
