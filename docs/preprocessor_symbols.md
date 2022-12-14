@@ -4,7 +4,7 @@
 
 ## Operating Systems
 
-The following table represents the different preprocessor symbols for the platforms supported by xtd:
+The following table represents the different preprocessor symbols for the operating systems supported by xtd:
 
 | Symbols          | OS                                                                      |
 |------------------|-------------------------------------------------------------------------|
@@ -332,11 +332,11 @@ The following table represents the different preprocessor symbols for the xtd pa
 | `__XTD_TUNIT_INCLUDE_PATH__`     | The xtd::tunit inlude folder       | ${XTD_TUNIT_INSTALL_PATH}/include"               |
 | `__XTD_TUNIT_LIB_PATH__`         | The xtd::tunit libraries folder    | ${XTD_TUNIT_INSTALL_PATH}/lib"                   |
 
-If you are not using CMake to generate your project, you must define them. See the [xtd.cmake overview](xtd_cmake_overview.md) section for more information.
+If you are not using CMake to generate your project, you must define them. See the [xtd.cmake overview](cmake_overview.md) section for more information.
 
 ### Examples
 
-The following code shows how to detect the xtd folder with the preprocessor symbols:
+The following code shows how to detect the xtd folder with the folder symbols:
 
 ```c++
 #include <xtd/xtd.core>
@@ -348,7 +348,7 @@ int main() {
   console::write_line("xtd_themes=\"{}\"", environment::get_folder_path(environment::special_folder::xtd_themes));
 }
 
-// This code produces the following output if build type debug:
+// This code produces the following output if under unix like system:
 //
 // xtd_themes="/usr/local/share/xtd/themes"
 // xtd_themes="/usr/local/share/xtd/themes"
