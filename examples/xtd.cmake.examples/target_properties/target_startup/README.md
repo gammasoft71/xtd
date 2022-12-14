@@ -1,6 +1,6 @@
 # target_startup
 
-Shows how to set target startup with cmake [target_startup()](../../../../scripts/cmake/xtd_commands.cmake).
+Shows how to set target startup with cmake [target_startup()](https://codedocs.xyz/gammasoft71/xtd/_c_make_commands.html#TargetStartupSubSection).
 
 # Sources
 
