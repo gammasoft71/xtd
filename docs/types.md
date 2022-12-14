@@ -3,7 +3,7 @@
 # Types in xtd
 
 * By design xtd has defined its own types which are only ever aliases to the [fixed integer types of c++](https://en.cppreference.com/w/cpp/types/integer).
-* You are absolutely not obliged to use the xtd types, you are even encouraged to use the standard types or those you want.
+* You are not obliged to use the xtd types, you are even encouraged to use the standard types or those you want.
 * The xtd defines `unboxed` and `boxed` types listed below. The `unboxed` types is same as the native type. The `boxed` type is an [xtd::box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1box.html) inherited from [xtd::object](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1object.html).
 
 ## Remarks
