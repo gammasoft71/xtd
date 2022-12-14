@@ -1,6 +1,6 @@
 # math_assert
 
-Shows how to create your own [xtd::tunit::assert](../../../../src/xtd.tunit/include/xtd/tunit/assert.h) class.
+Shows how to create your own [xtd::tunit::assert](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1assert.html) class.
 
 ## Sources
 
