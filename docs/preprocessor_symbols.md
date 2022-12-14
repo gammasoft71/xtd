@@ -2,6 +2,16 @@
 
 # Preprocessor Symbols
 
+## Table of content
+
+* [Operating Systems](#operating-ystems)
+* [Architectures](#architectures)
+* [Compilers](#compilers)
+* [C++ Standards](#c++-tandards)
+* [Build types](#build-ypes)
+* [xtd targets](#xtd-targets)
+* [xtd paths](#xtd-paths)
+
 ## Operating Systems
 
 The following table represents the different preprocessor symbols for the operating systems supported by xtd:
@@ -204,7 +214,7 @@ It is better to use [xtd::environment::compiler_version](https://codedocs.xyz/ga
 
 But it can be useful for your own developments.
 
-## C++ Standrds
+## C++ Standards
 
 The following table represents the different preprocessor symbols for the C++ standard supported by xtd:
 
