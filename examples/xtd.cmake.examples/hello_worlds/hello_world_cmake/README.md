@@ -1,6 +1,6 @@
 # hello_world_cmake
 
-The classic first application "Hello, World!" with cmake [xtd_commands.cmake](../../../../scripts/cmake/xtd_commands.cmake).
+The classic first application "Hello, World!" with cmake [xtd_commands.cmake](https://codedocs.xyz/gammasoft71/xtd/_c_make_commands.html).
 
 # Sources
 
