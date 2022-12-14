@@ -1,6 +1,6 @@
 # assert_abort
 
-Shows how to use [xtd::tunit::assert::abort](../../../../src/xtd.tunit/include/xtd/tunit/assert.h) method.
+Shows how to use [xtd::tunit::assert::abort](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1base__assert.html#a12d0a475e319dc4ad8a7f7823eab9cd4) method.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # line_info
 
-Shows how to use [xtd::diagnostics::stack_frame](../../../../src/xtd.core/include/xtd/diagnostics/stack_frame.h) class and [csf_](../../../../src/xtd.core/include/xtd/diagnostics/stack_frame.h) keyword.
+Shows how to use [xtd::diagnostics::stack_frame](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1stack__frame.html) class and [csf_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6) keyword.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # assert_is_not_instance_of
 
-Shows how to use [xtd::tunit::assert::is_not_instance_of](../../../../src/xtd.tunit/include/xtd/tunit/assert.h) method.
+Shows how to use [xtd::tunit::assert::is_not_instance_of](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1assert.html#a63001d4e702709dfe771b27484b076bd) method.
 
 ## Sources
 
