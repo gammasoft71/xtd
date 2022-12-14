@@ -1,6 +1,6 @@
 # hello_world_tunit
 
-The classic first application "Hello, World!" with [xtd::tunit::console_unit_test](../../../../src/xtd.tunit/include/xtd/console_unit_test.h) class.
+The classic first application "Hello, World!" with [xtd::tunit::console_unit_test](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1console__unit__test.html) class.
 
 ## Sources
 
