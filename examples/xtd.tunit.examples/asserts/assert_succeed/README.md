@@ -1,6 +1,6 @@
 # assert_succeed
 
-Shows how to use [xtd::tunit::assert::succeed](../../../../src/xtd.tunit/include/xtd/tunit/assert.h) method.
+Shows how to use [xtd::tunit::assert::succeed](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1base__assert.html#afb1ba9d11011565681ff2b7ff593272a) method.
 
 ## Sources
 

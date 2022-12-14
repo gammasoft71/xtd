@@ -1,6 +1,6 @@
 # assert_throws_any
 
-Shows how to use [xtd::tunit::throws_any](../../../../src/xtd.tunit/include/xtd/assert.h) method.
+Shows how to use [xtd::tunit::assert::throws_any](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1assert.html#a891f8351d58d5bb9a1e3e721cc6bc469) method.
 
 ## Sources
 

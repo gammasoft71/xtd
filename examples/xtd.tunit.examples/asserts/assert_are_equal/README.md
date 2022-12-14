@@ -1,6 +1,6 @@
 # assert_are_equal
 
-Shows how to use [xtd::tunit::assert::are_equal](../../../../src/xtd.tunit/include/xtd/tunit/assert.h) method.
+Shows how to use [xtd::tunit::assert::are_equal](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1assert.html#acc7ffa142d7355b0d1edc11d2867627d) method.
 
 ## Sources
 
