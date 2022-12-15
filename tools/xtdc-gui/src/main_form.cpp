@@ -899,7 +899,7 @@ void main_form::update_open_xtd_examples(const xtd_example_item& item) {
   else if (not item.output().empty())
     update_open_xtd_examples_output(item.output());
   else
-    update_open_xtd_examples_picture(xtd::drawing::bitmap(xtd_open_examples_icon));
+    update_open_xtd_examples_picture(xtd::drawing::bitmap(xtd_gui_icon));
 }
 
 void main_form::update_open_xtd_examples_description(const xtd::ustring& description) {
