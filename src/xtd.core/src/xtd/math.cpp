@@ -125,7 +125,7 @@ uint64 math::clamp(uint64 value, uint64 min, uint64 max) noexcept {
   return std::clamp(value, min, max);
 }
 
-ullong math::clamp(ullong value, ullong min, ullong max) noexcept {
+ulong math::clamp(ulong value, ulong min, ulong max) noexcept {
   return std::clamp(value, min, max);
 }
 
@@ -246,7 +246,7 @@ uint64 math::max(uint64 a, uint64 b) noexcept {
   return a > b ? a : b;
 }
 
-ullong math::max(ullong a, ullong b) noexcept {
+ulong math::max(ulong a, ulong b) noexcept {
   return a > b ? a : b;
 }
 
@@ -298,7 +298,7 @@ uint64 math::min(uint64 a, uint64 b) noexcept {
   return a < b ? a : b;
 }
 
-ullong math::min(ullong a, ullong b) noexcept {
+ulong math::min(ulong a, ulong b) noexcept {
   return a < b ? a : b;
 }
 
