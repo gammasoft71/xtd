@@ -62,7 +62,7 @@ namespace xtdc_gui {
     void run_project(const xtd::ustring& project_path);
     void set_auto_close();
     void show_about_dialog();
-    void update_open_xtd_examples(const xtd_example_item& item);
+    void update_open_xtd_examples(const xtd_example_item& item, const xtd::ustring& context);
     void update_open_xtd_examples_description(const xtd::ustring& description);
     void update_open_xtd_examples_picture(const xtd::drawing::image& picture);
     void update_open_xtd_examples_output(const xtd::ustring& output);
