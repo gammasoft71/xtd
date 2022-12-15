@@ -11,7 +11,7 @@ namespace examples {
         "This example of the bit_converter::is_big_endian field "
         "generates \nthe following output when run on "
         "x86-class computers.\n");
-      console::write_line("is_big_endian:  {0}",
+      console::write_line("is_big_endian:  {}",
         bit_converter::is_big_endian);
     }
   };
