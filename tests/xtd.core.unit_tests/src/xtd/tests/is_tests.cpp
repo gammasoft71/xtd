@@ -207,14 +207,14 @@ namespace xtd::tests {
       assert::is_false(is<uint>(v), csf_);
     }
     
-    void test_method_(is_ulong_with_ulong) {
-      ulong v = 42;
-      assert::is_true(is<ulong>(v), csf_);
+    void test_method_(is_ulong_with_unsigned_long) {
+      unsigned long v = 42;
+      assert::is_true(is<unsigned long>(v), csf_);
     }
     
-    void test_method_(is_ulong_without_ulong) {
+    void test_method_(is_ulong_without_unsigned_long) {
       bool v = true;
-      assert::is_false(is<ulong>(v), csf_);
+      assert::is_false(is<unsigned long>(v), csf_);
     }
     
     void test_method_(is_ullong_with_ullong) {
