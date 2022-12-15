@@ -34,6 +34,10 @@ For a more complete list of platforms see [Pre-defined Compiler Macros Wiki - Op
 The following code shows how to detect the operating system with the preprocessor symbols:
 
 ```c++
+#ifdef HAVE_UNISTD_H // needed for _POSIX_VERSION (see https://www.gnu.org/software/autoconf/manual/autoconf-2.64/html_node/Particular-Headers.html#index-g_t_005fPOSIX_005fVERSION-585)
+#  include <unistd.h>
+#endif
+
 #if defined(_WIN32)
 #  define __platform_name__ "Microsoft Windows"
 #elif defined(__APPLE__)
