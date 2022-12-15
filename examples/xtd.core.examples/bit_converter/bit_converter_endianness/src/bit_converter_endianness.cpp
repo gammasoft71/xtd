@@ -11,7 +11,7 @@ namespace examples {
         "This example of the bit_converter::endianness field "
         "generates \nthe following output when run on "
         "x86-class computers.\n");
-      console::write_line("endianness:  {0}",
+      console::write_line("endianness:  {}",
         bit_converter::endianness);
     }
   };
