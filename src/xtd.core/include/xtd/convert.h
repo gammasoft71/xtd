@@ -202,10 +202,10 @@ namespace xtd {
     /// @return A new std::any object converted from value.
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// any result = convert::to_any(value);
     /// @endcode
-    static std::any to_any(ulong value) noexcept;
+    static std::any to_any(xtd::ulong value) noexcept;
     /// @brief Convert string to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
@@ -434,10 +434,10 @@ namespace xtd {
     /// @return A new bool object converted from value.
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// bool result = convert::to_boolean(value);
     /// @endcode
-    static bool to_boolean(ulong value) noexcept;
+    static bool to_boolean(xtd::ulong value) noexcept;
     /// @brief Convert string to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
@@ -672,10 +672,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// xtd::byte result = convert::to_byte(value);
     /// @endcode
-    static xtd::byte to_byte(ulong value);
+    static xtd::byte to_byte(xtd::ulong value);
     /// @brief Convert string to byte.
     /// @param value object to convert.
     /// @return A new xtd::byte object converted from value.
@@ -920,10 +920,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// char result = convert::to_char(value);
     /// @endcode
-    static char to_char(ulong value);
+    static char to_char(xtd::ulong value);
     /// @brief Convert string to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
@@ -1157,10 +1157,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// char8 result = convert::to_char8(value);
     /// @endcode
-    static char8 to_char8(ulong value);
+    static char8 to_char8(xtd::ulong value);
     /// @brief Convert string to char8.
     /// @param value object to convert.
     /// @return A new char8 object converted from value.
@@ -1391,10 +1391,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// char16 result = convert::to_char16(value);
     /// @endcode
-    static char16 to_char16(ulong value);
+    static char16 to_char16(xtd::ulong value);
     /// @brief Convert string to char16.
     /// @param value object to convert.
     /// @return A new char16 object converted from value.
@@ -1623,10 +1623,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// char32 result = convert::to_char32(value);
     /// @endcode
-    static char32 to_char32(ulong value);
+    static char32 to_char32(xtd::ulong value);
     /// @brief Convert string to char32.
     /// @param value object to convert.
     /// @return A new char32 object converted from value.
@@ -1857,10 +1857,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// wchar result = convert::to_wchar(value);
     /// @endcode
-    static wchar to_wchar(ulong value);
+    static wchar to_wchar(xtd::ulong value);
     /// @brief Convert string to wchar.
     /// @param value object to convert.
     /// @return A new wchar object converted from value.
@@ -2080,10 +2080,10 @@ namespace xtd {
     /// @return A new decimal object converted from value.
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// decimal result = convert::to_decimal(value);
     /// @endcode
-    static decimal to_decimal(ulong value) noexcept;
+    static decimal to_decimal(xtd::ulong value) noexcept;
     /// @brief Convert string to decimal.
     /// @param value object to convert.
     /// @return A new decimal object converted from value.
@@ -2303,10 +2303,10 @@ namespace xtd {
     /// @return A new double object converted from value.
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// double result = convert::to_double(value);
     /// @endcode
-    static double to_double(ulong value) noexcept;
+    static double to_double(xtd::ulong value) noexcept;
     /// @brief Convert string to double.
     /// @param value object to convert.
     /// @return A new double object converted from value.
@@ -2526,10 +2526,10 @@ namespace xtd {
     /// @return A new float object converted from value.
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// float result = convert::to_single(value);
     /// @endcode
-    static float to_single(ulong value) noexcept;
+    static float to_single(xtd::ulong value) noexcept;
     /// @brief Convert string to single.
     /// @param value object to convert.
     /// @return A new float object converted from value.
@@ -2760,10 +2760,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// int16 result = convert::to_int16(value);
     /// @endcode
-    static int16 to_int16(ulong value);
+    static int16 to_int16(xtd::ulong value);
     /// @brief Convert string to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
@@ -3001,10 +3001,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// int32 result = convert::to_int32(value);
     /// @endcode
-    static int32 to_int32(ulong value);
+    static int32 to_int32(xtd::ulong value);
     /// @brief Convert string to int32.
     /// @param value object to convert.
     /// @return A new int32 object converted from value.
@@ -3237,10 +3237,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// int64 result = convert::to_int64(value);
     /// @endcode
-    static int64 to_int64(ulong value);
+    static int64 to_int64(xtd::ulong value);
     /// @brief Convert string to int64.
     /// @param value object to convert.
     /// @return A new int64 object converted from value.
@@ -3473,10 +3473,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// slong result = convert::to_llong(value);
     /// @endcode
-    static slong to_llong(ulong value);
+    static slong to_llong(xtd::ulong value);
     /// @brief Convert string to slong.
     /// @param value object to convert.
     /// @return A new slong object converted from value.
@@ -3722,10 +3722,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// sbyte result = convert::to_sbyte(value);
     /// @endcode
-    static sbyte to_sbyte(ulong value);
+    static sbyte to_sbyte(xtd::ulong value);
     /// @brief Convert string to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte object converted from value.
@@ -3968,10 +3968,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// uint16 result = convert::to_uint16(value);
     /// @endcode
-    static uint16 to_uint16(ulong value);
+    static uint16 to_uint16(xtd::ulong value);
     /// @brief Convert string to uint16.
     /// @param value object to convert.
     /// @return A new uint16 object converted from value.
@@ -4212,10 +4212,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// uint32 result = convert::to_uint32(value);
     /// @endcode
-    static uint32 to_uint32(ulong value);
+    static uint32 to_uint32(xtd::ulong value);
     /// @brief Convert string to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
@@ -4455,10 +4455,10 @@ namespace xtd {
     /// @return A new uint64 object converted from value.
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// uint64 result = convert::to_uint64(value);
     /// @endcode
-    static uint64 to_uint64(ulong value) noexcept;
+    static uint64 to_uint64(xtd::ulong value) noexcept;
     /// @brief Convert string to uint64.
     /// @param value object to convert.
     /// @return A new uint64 object converted from value.
@@ -4509,246 +4509,246 @@ namespace xtd {
       return static_cast<uint64>(value);
     }
     
-    /// @brief Convert std::any to ulong.
+    /// @brief Convert std::any to xtd::ulong.
     /// @param value object to convert.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @par Examples
     /// @code
     /// std::any value = 42;
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(std::any value);
-    /// @brief Convert bool to ulong.
+    static xtd::ulong to_ullong(std::any value);
+    /// @brief Convert bool to xtd::ulong.
     /// @param value object to convert.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @par Examples
     /// @code
     /// bool value = true;
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(bool value) noexcept;
-    /// @brief Convert xtd::byte to ulong.
+    static xtd::ulong to_ullong(bool value) noexcept;
+    /// @brief Convert xtd::byte to xtd::ulong.
     /// @param value object to convert.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @par Examples
     /// @code
     /// xtd::byte value = 42;
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(xtd::byte value) noexcept;
-    /// @brief Convert char to ulong.
+    static xtd::ulong to_ullong(xtd::byte value) noexcept;
+    /// @brief Convert char to xtd::ulong.
     /// @param value object to convert.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @par Examples
     /// @code
     /// char value = 'a';
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(char value) noexcept;
-    /// @brief Convert char8 to ulong.
+    static xtd::ulong to_ullong(char value) noexcept;
+    /// @brief Convert char8 to xtd::ulong.
     /// @param value object to convert.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @par Examples
     /// @code
     /// char8 value = u8'a';
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(char8 value) noexcept;
-    /// @brief Convert char16 to ulong.
+    static xtd::ulong to_ullong(char8 value) noexcept;
+    /// @brief Convert char16 to xtd::ulong.
     /// @param value object to convert.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @par Examples
     /// @code
     /// char16 value = u'a';
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(char16 value) noexcept;
-    /// @brief Convert char32 to ulong.
+    static xtd::ulong to_ullong(char16 value) noexcept;
+    /// @brief Convert char32 to xtd::ulong.
     /// @param value object to convert.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @par Examples
     /// @code
     /// char32 value = U'a';
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(char32 value) noexcept;
-    /// @brief Convert char32 to ulong.
+    static xtd::ulong to_ullong(char32 value) noexcept;
+    /// @brief Convert char32 to xtd::ulong.
     /// @param value object to convert.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @par Examples
     /// @code
     /// wchar value = L'a';
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(wchar value) noexcept;
-    /// @brief Convert decimal to ulong.
+    static xtd::ulong to_ullong(wchar value) noexcept;
+    /// @brief Convert decimal to xtd::ulong.
     /// @param value object to convert.
     /// @remarks The result is rounded.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @par Examples
     /// @code
     /// decimal value = 42.50l;
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(decimal value);
-    /// @brief Convert double to ulong.
+    static xtd::ulong to_ullong(decimal value);
+    /// @brief Convert double to xtd::ulong.
     /// @param value object to convert.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @remarks The result is rounded.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// double value = 42.50;
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(double value);
-    /// @brief Convert float to ulong.
+    static xtd::ulong to_ullong(double value);
+    /// @brief Convert float to xtd::ulong.
     /// @param value object to convert.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @remarks The result is rounded.
     /// @par Examples
     /// @code
     /// float value = 42.50f;
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(float value);
-    /// @brief Convert int16 to ulong.
+    static xtd::ulong to_ullong(float value);
+    /// @brief Convert int16 to xtd::ulong.
     /// @param value object to convert.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// int16 value = 42;
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(int16 value);
-    /// @brief Convert int32 to ulong.
+    static xtd::ulong to_ullong(int16 value);
+    /// @brief Convert int32 to xtd::ulong.
     /// @param value object to convert.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int32 value = 42;
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(int32 value);
-    /// @brief Convert int64 to ulong.
+    static xtd::ulong to_ullong(int32 value);
+    /// @brief Convert int64 to xtd::ulong.
     /// @param value object to convert.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// int64 value = 42l;
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(int64 value);
-    /// @brief Convert slong to ulong.
+    static xtd::ulong to_ullong(int64 value);
+    /// @brief Convert slong to xtd::ulong.
     /// @param value object to convert.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max() or is less than 0.
     /// @par Examples
     /// @code
     /// slong value = 42ll;
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(slong value);
-    /// @brief Convert sbyte to ulong.
+    static xtd::ulong to_ullong(slong value);
+    /// @brief Convert sbyte to xtd::ulong.
     /// @param value object to convert.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// sbyte value = 42;
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(sbyte value);
-    /// @brief Convert uint16 to ulong.
+    static xtd::ulong to_ullong(sbyte value);
+    /// @brief Convert uint16 to xtd::ulong.
     /// @param value object to convert.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @par Examples
     /// @code
     /// uint16 value = 42u;
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(uint16 value) noexcept;
-    /// @brief Convert uint32 to ulong.
+    static xtd::ulong to_ullong(uint16 value) noexcept;
+    /// @brief Convert uint32 to xtd::ulong.
     /// @param value object to convert.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @par Examples
     /// @code
     /// uint32 value = 42u;
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(uint32 value) noexcept;
-    /// @brief Convert uint64 to ulong.
+    static xtd::ulong to_ullong(uint32 value) noexcept;
+    /// @brief Convert uint64 to xtd::ulong.
     /// @param value object to convert.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @exception xtd::overflow_exception value represents a number that is greater than std::numric_limit<xtd::byte>::max().
     /// @par Examples
     /// @code
     /// uint64t value = 42ul;
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(uint64 value) noexcept;
-    /// @brief Convert slong to ulong.
+    static xtd::ulong to_ullong(uint64 value) noexcept;
+    /// @brief Convert slong to xtd::ulong.
     /// @param value object to convert.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong value = 42ull;
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(ulong value) noexcept;
-    /// @brief Convert string to ulong.
+    static xtd::ulong to_ullong(xtd::ulong value) noexcept;
+    /// @brief Convert string to xtd::ulong.
     /// @param value object to convert.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @par Examples
     /// @code
     /// ustring value = "42";
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(const xtd::ustring& value);
-    /// @brief Convert string to ulong.
+    static xtd::ulong to_ullong(const xtd::ustring& value);
+    /// @brief Convert string to xtd::ulong.
     /// @param value object to convert.
     /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
-    /// @return A new ulong object converted from value.
-    /// @exception xtd::atgument_exception value does not represent a ulong.
+    /// @return A new xtd::ulong object converted from value.
+    /// @exception xtd::atgument_exception value does not represent a xtd::ulong.
     /// @par Examples
     /// @code
     /// ustring value = "42";
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
-    static ulong to_ullong(const xtd::ustring& value, xtd::byte from_base);
+    static xtd::ulong to_ullong(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
-    static ulong to_ullong(const std::string& value);
-    static ulong to_ullong(const std::u8string& value);
-    static ulong to_ullong(const std::u16string& value);
-    static ulong to_ullong(const std::u32string& value);
-    static ulong to_ullong(const std::wstring& value);
-    static ulong to_ullong(const char* value);
-    static ulong to_ullong(char* value);
-    static ulong to_ullong(const char8* value);
-    static ulong to_ullong(char8* value);
-    static ulong to_ullong(const char16* value);
-    static ulong to_ullong(char16* value);
-    static ulong to_ullong(const char32* value);
-    static ulong to_ullong(char32* value);
-    static ulong to_ullong(const wchar* value);
-    static ulong to_ullong(wchar* value);
+    static xtd::ulong to_ullong(const std::string& value);
+    static xtd::ulong to_ullong(const std::u8string& value);
+    static xtd::ulong to_ullong(const std::u16string& value);
+    static xtd::ulong to_ullong(const std::u32string& value);
+    static xtd::ulong to_ullong(const std::wstring& value);
+    static xtd::ulong to_ullong(const char* value);
+    static xtd::ulong to_ullong(char* value);
+    static xtd::ulong to_ullong(const char8* value);
+    static xtd::ulong to_ullong(char8* value);
+    static xtd::ulong to_ullong(const char16* value);
+    static xtd::ulong to_ullong(char16* value);
+    static xtd::ulong to_ullong(const char32* value);
+    static xtd::ulong to_ullong(char32* value);
+    static xtd::ulong to_ullong(const wchar* value);
+    static xtd::ulong to_ullong(wchar* value);
     /// @endcond
-    /// @brief Convert type_t to ulong.
+    /// @brief Convert type_t to xtd::ulong.
     /// @param value object to convert.
-    /// @return A new ulong object converted from value.
+    /// @return A new xtd::ulong object converted from value.
     /// @par Examples
     /// @code
     /// address_family value = address_family::inter_network;
-    /// ulong result = convert::to_ullong(value);
+    /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
     template<typename type_t>
-    static ulong to_ullong(type_t value) noexcept {
-      return static_cast<ulong>(value);
+    static xtd::ulong to_ullong(type_t value) noexcept {
+      return static_cast<xtd::ulong>(value);
     }
     
     /// @brief Convert std::any to ustring.
@@ -5038,10 +5038,10 @@ namespace xtd {
     /// @return A new ustring object converted from value.
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// ustring result = convert::to_string(value);
     /// @endcode
-    static ustring to_string(ulong value) noexcept;
+    static ustring to_string(xtd::ulong value) noexcept;
     /// @brief Convert string to ustring.
     /// @param value object to convert.
     /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
@@ -5049,10 +5049,10 @@ namespace xtd {
     /// @exception xtd::atgument_exception from_base is not 2 or 8 or 10 orr 16.
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// ustring result = convert::to_string(value, 16);
     /// @endcode
-    static ustring to_string(ulong value, xtd::byte from_base);
+    static ustring to_string(xtd::ulong value, xtd::byte from_base);
     /// @brief Convert string to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
@@ -5379,10 +5379,10 @@ namespace xtd {
     /// @return A new ustring object converted from value.
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// ustring result = convert::to_ustring(value);
     /// @endcode
-    static ustring to_ustring(ulong value) noexcept;
+    static ustring to_ustring(xtd::ulong value) noexcept;
     /// @brief Convert string to ustring.
     /// @param value object to convert.
     /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
@@ -5390,10 +5390,10 @@ namespace xtd {
     /// @exception xtd::atgument_exception from_base is not 2 or 8 or 10 orr 16.
     /// @par Examples
     /// @code
-    /// ulong value = 42ull;
+    /// xtd::ulong value = 42ull;
     /// ustring result = convert::to_ustring(value, 16);
     /// @endcode
-    static ustring to_ustring(ulong value, xtd::byte from_base);
+    static ustring to_ustring(xtd::ulong value, xtd::byte from_base);
     /// @brief Convert string to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.

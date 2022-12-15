@@ -218,13 +218,13 @@ namespace xtd::tests {
     }
     
     void test_method_(is_ullong_with_ullong) {
-      ulong v = 42;
-      assert::is_true(is<ulong>(v), csf_);
+      xtd::ulong v = 42;
+      assert::is_true(is<xtd::ulong>(v), csf_);
     }
     
     void test_method_(is_ullong_without_ullong) {
       bool v = true;
-      assert::is_false(is<ulong>(v), csf_);
+      assert::is_false(is<xtd::ulong>(v), csf_);
     }
   };
 }

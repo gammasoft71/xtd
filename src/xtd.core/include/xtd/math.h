@@ -221,7 +221,7 @@ namespace xtd {
     /// @param min The lower bound of the result.
     /// @param max The upper bound of the result.
     /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
-    static ulong clamp(ulong value, ulong min, ulong max) noexcept;
+    static xtd::ulong clamp(xtd::ulong value, xtd::ulong min, xtd::ulong max) noexcept;
 
     /// @brief Returns the cosine of the specified angle.
     /// @param value An angle, measured in radians.
@@ -408,7 +408,7 @@ namespace xtd {
     /// @param a The first of two 64-bit unsigned integers to compare.
     /// @param b The second of two 64-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is larger.
-    static ulong max(ulong a, ulong b) noexcept;
+    static xtd::ulong max(xtd::ulong a, xtd::ulong b) noexcept;
     
     /// @brief Returns the smaller of two 8-bit unsigned integers.
     /// @param a The first of two 8-bit unsigned integers to compare.
@@ -474,7 +474,7 @@ namespace xtd {
     /// @param a The first of two 64-bit unsigned integers to compare.
     /// @param b The second of two 64-bit unsigned integers to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static ulong min(ulong a, ulong b) noexcept;
+    static xtd::ulong min(xtd::ulong a, xtd::ulong b) noexcept;
     
     /// @brief Returns a specified number raised to the specified power.
     /// @param x A double-precision floating-point number to be raised to a power.
