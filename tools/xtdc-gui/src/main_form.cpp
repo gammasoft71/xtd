@@ -205,10 +205,10 @@ main_form::main_form() {
   open_xtd_examples_information_link_label_.font({open_xtd_examples_information_link_label_.font(), 12.0f});
   open_xtd_examples_information_link_label_.anchor(anchor_styles::top | anchor_styles::bottom | anchor_styles::right);
   open_xtd_examples_information_link_label_.text_align(content_alignment::top_left);
+  open_xtd_examples_information_link_label_.padding(xtd::forms::padding(5));
   open_xtd_examples_information_link_label_.link_clicked += [](object& sender, link_label_clicked_event_args& e) {
     process::start(as<ustring>(e.link().link_data()));
   };
-  open_xtd_examples_information_link_label_.auto_ellipsis(true);
 
   open_xtd_examples_information_picture_label_.parent(open_xtd_examples_panel_);
   open_xtd_examples_information_picture_label_.location({550, open_xtd_examples_panel_.size().height() - 270});
@@ -225,6 +225,17 @@ main_form::main_form() {
   open_xtd_examples_information_picture_box_.size_mode(picture_box_size_mode::zoom);
   open_xtd_examples_information_picture_box_.anchor(anchor_styles::bottom | anchor_styles::right);
   
+  open_xtd_examples_information_output_text_box_.parent(open_xtd_examples_panel_);
+  open_xtd_examples_information_output_text_box_.back_color(xtd::forms::application::style_sheet().system_colors().window());
+  open_xtd_examples_information_output_text_box_.border_style(xtd::forms::border_style::solid);
+  open_xtd_examples_information_output_text_box_.location({ 550, open_xtd_examples_panel_.size().height() - 230 });
+  open_xtd_examples_information_output_text_box_.size({ 400, 230 });
+  open_xtd_examples_information_output_text_box_.anchor(anchor_styles::bottom | anchor_styles::right);
+  open_xtd_examples_information_output_text_box_.word_wrap(false);
+  open_xtd_examples_information_output_text_box_.multiline(true);
+  open_xtd_examples_information_output_text_box_.read_only(true);
+  open_xtd_examples_information_output_text_box_.font({ drawing::font_family::generic_monospace(), open_xtd_examples_information_output_text_box_.font().size()});
+
   open_xtd_example_core_tab_page_.text("xtd.core");
   open_xtd_example_core_tab_page_.parent(open_xtd_example_tab_control_);
   
@@ -309,9 +320,7 @@ main_form::main_form() {
   open_xtd_example_core_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_core_list_box_.selected_index() != open_xtd_example_core_list_box_.npos) {
       current_open_xtd_example_core_list_box_index_ = open_xtd_example_core_list_box_.selected_index();
-      update_open_xtd_examples_information(any_cast<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag()).description());
-      //open_xtd_examples_information_link_label_.text(any_cast<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag()).description());
-      open_xtd_examples_information_picture_box_.image(any_cast<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag()).picture());
+      update_open_xtd_examples(any_cast<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag()));
     }
   };
   open_xtd_example_core_list_box_.double_click += [&] {
@@ -327,8 +336,7 @@ main_form::main_form() {
   open_xtd_example_drawing_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_drawing_list_box_.selected_index() != open_xtd_example_drawing_list_box_.npos) {
       current_open_xtd_example_drawing_list_box_index_ = open_xtd_example_drawing_list_box_.selected_index();
-      update_open_xtd_examples_information(any_cast<xtd_example_item>(open_xtd_example_drawing_list_box_.selected_item().tag()).description());
-      open_xtd_examples_information_picture_box_.image(any_cast<xtd_example_item>(open_xtd_example_drawing_list_box_.selected_item().tag()).picture());
+      update_open_xtd_examples(any_cast<xtd_example_item>(open_xtd_example_drawing_list_box_.selected_item().tag()));
     }
   };
   open_xtd_example_drawing_list_box_.double_click += [&] {
@@ -344,8 +352,7 @@ main_form::main_form() {
   open_xtd_example_forms_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_forms_list_box_.selected_index() != open_xtd_example_forms_list_box_.npos) {
       current_open_xtd_example_forms_list_box_index_ = open_xtd_example_forms_list_box_.selected_index();
-      update_open_xtd_examples_information(any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()).description());
-      open_xtd_examples_information_picture_box_.image(any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()).picture());
+      update_open_xtd_examples(any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()));
     }
   };
   open_xtd_example_forms_list_box_.double_click += [&] {
@@ -361,8 +368,7 @@ main_form::main_form() {
   open_xtd_example_tunit_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_tunit_list_box_.selected_index() != open_xtd_example_tunit_list_box_.npos) {
       current_open_xtd_example_tunit_list_box_index_ = open_xtd_example_tunit_list_box_.selected_index();
-      update_open_xtd_examples_information(any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()).description());
-      open_xtd_examples_information_picture_box_.image(any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()).picture());
+      update_open_xtd_examples(any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()));
     }
   };
   open_xtd_example_tunit_list_box_.double_click += [&] {
@@ -378,8 +384,7 @@ main_form::main_form() {
   open_xtd_example_cmake_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_cmake_list_box_.selected_index() != open_xtd_example_cmake_list_box_.npos) {
       current_open_xtd_example_cmake_list_box_index_ = open_xtd_example_cmake_list_box_.selected_index();
-      update_open_xtd_examples_information(any_cast<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag()).description());
-      open_xtd_examples_information_picture_box_.image(any_cast<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag()).picture());
+      update_open_xtd_examples(any_cast<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag()));
     }
   };
   open_xtd_example_cmake_list_box_.double_click += [&] {
@@ -885,7 +890,19 @@ void main_form::show_about_dialog() {
   dialog.show();
 }
 
-void main_form::update_open_xtd_examples_information(const xtd::ustring& description) {
+void main_form::update_open_xtd_examples(const xtd_example_item& item) {
+  // Description 
+  update_open_xtd_examples_description(item.description().empty() ? "Coming soon..."_s : item.description());
+  // Picture or Output
+  if (item.picture() != xtd::drawing::image::empty)
+    update_open_xtd_examples_picture(item.picture());
+  else if (not item.output().empty())
+    update_open_xtd_examples_output(item.output());
+  else
+    update_open_xtd_examples_picture(xtd::drawing::bitmap(xtd_gui_icon));
+}
+
+void main_form::update_open_xtd_examples_description(const xtd::ustring& description) {
   open_xtd_examples_information_link_label_.text("");
   open_xtd_examples_information_link_label_.links().clear();
   if (description.empty()) return;
@@ -906,9 +923,21 @@ void main_form::update_open_xtd_examples_information(const xtd::ustring& descrip
       open_xtd_examples_information_link_label_.links().push_back(xtd::forms::link(it->position(), title.length(), link));
     }
   }
-  
+
   open_xtd_examples_information_link_label_.text(text);
   if (iterator == end) open_xtd_examples_information_link_label_.links().clear();
+}
+
+void main_form::update_open_xtd_examples_picture(const xtd::drawing::image& picture) {
+  open_xtd_examples_information_output_text_box_.visible(false);
+  open_xtd_examples_information_picture_box_.visible(true);
+  open_xtd_examples_information_picture_box_.image(picture);
+}
+
+void main_form::update_open_xtd_examples_output(const xtd::ustring& output) {
+  open_xtd_examples_information_output_text_box_.visible(true);
+  open_xtd_examples_information_picture_box_.visible(false);
+  open_xtd_examples_information_output_text_box_.text(output);
 }
 
 void main_form::main() {
