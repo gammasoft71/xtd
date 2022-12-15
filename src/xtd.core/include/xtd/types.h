@@ -114,7 +114,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using llong = xtd::native::__slong__;
+  using slong = xtd::native::__slong__;
 
   /// @brief Stores information about a type.
   /// @par Namespace

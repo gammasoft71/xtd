@@ -138,13 +138,13 @@ namespace xtd::tests {
     }
     
     void test_method_(is_llong_with_llong) {
-      llong v = 42;
-      assert::is_true(is<llong>(v), csf_);
+      slong v = 42;
+      assert::is_true(is<slong>(v), csf_);
     }
     
     void test_method_(is_llong_without_llong) {
       bool v = true;
-      assert::is_false(is<llong>(v), csf_);
+      assert::is_false(is<slong>(v), csf_);
     }
     
     void test_method_(is_uint8_with_uint8) {

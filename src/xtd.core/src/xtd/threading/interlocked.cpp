@@ -33,7 +33,7 @@ int64 interlocked::compare_exchange(int64& location, int64 value, int64 comparan
   return native::interlocked::compare_exchange(location, value, comparand);
 }
 
-llong interlocked::compare_exchange(llong& location, llong value, llong comparand) noexcept {
+slong interlocked::compare_exchange(slong& location, slong value, slong comparand) noexcept {
   return native::interlocked::compare_exchange(location, value, comparand);
 }
 
@@ -72,7 +72,7 @@ int64 interlocked::exchange(int64& location, int64 value) noexcept {
   return native::interlocked::exchange(location, value);
 }
 
-llong interlocked::exchange(llong& location, llong value) noexcept {
+slong interlocked::exchange(slong& location, slong value) noexcept {
   return native::interlocked::exchange(location, value);
 }
 

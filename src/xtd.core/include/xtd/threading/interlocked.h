@@ -69,7 +69,7 @@ namespace xtd {
       /// @return The original value in location.
       static int64 compare_exchange(int64& location, int64 value, int64 comparand) noexcept;
       /// @cond
-      static llong compare_exchange(llong& location, llong value, llong comparand) noexcept;
+      static slong compare_exchange(slong& location, slong value, slong comparand) noexcept;
       /// @endcond
       /// @brief Compares two platform-specific handles or pointers for equality and, if they are equal, replaces one of them.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
@@ -152,7 +152,7 @@ namespace xtd {
       /// @return The original value of location.
       static int64 exchange(int64& location, int64 value) noexcept;
       /// @cond
-      static llong exchange(llong& location, llong value) noexcept;
+      static slong exchange(slong& location, slong value) noexcept;
       /// @endcond
       /// @brief Sets a platform-specific handles or pointers to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.

@@ -108,11 +108,11 @@ namespace xtd::tests {
     }
     
     void test_method_(abs_llong) {
-      assert::are_equal(numeric_limits<llong>::max(), math::abs(numeric_limits<llong>::max()), csf_);
+      assert::are_equal(numeric_limits<slong>::max(), math::abs(numeric_limits<slong>::max()), csf_);
       assert::are_equal(109013ll, math::abs(109013ll), csf_);
       assert::are_equal(0ll, math::abs(0ll), csf_);
       assert::are_equal(6871982ll, math::abs(-6871982ll), csf_);
-      assert::throws<overflow_exception>([] {math::abs(numeric_limits<llong>::lowest());}, csf_);
+      assert::throws<overflow_exception>([] {math::abs(numeric_limits<slong>::lowest());}, csf_);
     }
     
     void test_method_(acos) {
@@ -487,9 +487,9 @@ namespace xtd::tests {
     }
     
     void test_method_(max_llong) {
-      assert::are_equal(52, math::max(as<llong>(2), as<llong>(52)), csf_);
-      assert::are_equal(22, math::max(as<llong>(22), as<llong>(5)), csf_);
-      assert::are_equal(16, math::max(as<llong>(16), as<llong>(16)), csf_);
+      assert::are_equal(52, math::max(as<slong>(2), as<slong>(52)), csf_);
+      assert::are_equal(22, math::max(as<slong>(22), as<slong>(5)), csf_);
+      assert::are_equal(16, math::max(as<slong>(16), as<slong>(16)), csf_);
     }
     
     void test_method_(max_sbyte) {
@@ -565,9 +565,9 @@ namespace xtd::tests {
     }
     
     void test_method_(min_llong) {
-      assert::are_equal(2, math::min(as<llong>(2), as<llong>(52)), csf_);
-      assert::are_equal(5, math::min(as<llong>(22), as<llong>(5)), csf_);
-      assert::are_equal(16, math::min(as<llong>(16), as<llong>(16)), csf_);
+      assert::are_equal(2, math::min(as<slong>(2), as<slong>(52)), csf_);
+      assert::are_equal(5, math::min(as<slong>(22), as<slong>(5)), csf_);
+      assert::are_equal(16, math::min(as<slong>(16), as<slong>(16)), csf_);
     }
     
     void test_method_(min_sbyte) {

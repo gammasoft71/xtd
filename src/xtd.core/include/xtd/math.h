@@ -90,10 +90,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value equals std::numeric_limit<sbyte_tsbyte_t>::lowest().
     static sbyte abs(sbyte value);
     /// @brief Returns the absolute value of a 64-bit signed integer
-    /// @param value A number in the range std::numeric_limit<llong>::lowest() <= value <= std::numeric_limit<llong>::max().
-    /// @return A 8-bit signed integer, x, such that 0 <= x <= std::numeric_limit<llong>::max().
-    /// @exception xtd::overflow_exception value equals std::numeric_limit<llong>::lowest().
-    static llong abs(llong value);
+    /// @param value A number in the range std::numeric_limit<slong>::lowest() <= value <= std::numeric_limit<slong>::max().
+    /// @return A 8-bit signed integer, x, such that 0 <= x <= std::numeric_limit<slong>::max().
+    /// @exception xtd::overflow_exception value equals std::numeric_limit<slong>::lowest().
+    static slong abs(slong value);
     
     /// @brief Returns the angle whose cosine is the specified number.
     /// @param value A number representing a cosine, where -1 <= value <= 1.
@@ -185,7 +185,7 @@ namespace xtd {
     /// @param min The lower bound of the result.
     /// @param max The upper bound of the result.
     /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
-    static llong clamp(llong value, llong min, llong max) noexcept;
+    static slong clamp(slong value, slong min, slong max) noexcept;
     /// @brief Returns value clamped to the inclusive range of min and max.
     /// @param value The value to be clamped.
     /// @param min The lower bound of the result.
@@ -378,7 +378,7 @@ namespace xtd {
     /// @param a The first of two 64-bit signed integers to compare.
     /// @param b The second of two 64-bit signed integers to compare.
     /// @return Parameter a or b, whichever is larger.
-    static llong max(llong a, llong b) noexcept;
+    static slong max(slong a, slong b) noexcept;
     /// @brief Returns the larger of two 8-bit signed integers.
     /// @param a The first of two 8-bit signed integers to compare.
     /// @param b The second of two 8-bit signed integers to compare.
@@ -444,7 +444,7 @@ namespace xtd {
     /// @param a The first of two 64-bit signed integers to compare.
     /// @param b The second of two 64-bit signed integers to compare.
     /// @return Parameter a or b, whichever is smaller.
-    static llong min(llong a, llong b) noexcept;
+    static slong min(slong a, slong b) noexcept;
     /// @brief Returns the smaller of two 8-bit signed integers.
     /// @param a The first of two 8-bit signed integers to compare.
     /// @param b The second of two 8-bit signed integers to compare.
@@ -587,7 +587,7 @@ namespace xtd {
     /// | -1           | value is less than zero.    |
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
-    static int32 sign(llong value);
+    static int32 sign(slong value);
     /// @brief Returns a value indicating the sign of an 8-bit signed integer.
     /// @param value A signed number.
     /// @return int32 A number that indicates the sign of value, as shown in the following table.

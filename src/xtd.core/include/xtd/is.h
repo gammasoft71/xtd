@@ -30,7 +30,7 @@ namespace xtd {
   template<typename value_t>
   inline bool is(int64 value) {return false;}
   template<typename value_t>
-  inline bool is(llong value) {return false;}
+  inline bool is(slong value) {return false;}
   template<typename value_t>
   inline bool is(xtd::byte value) {return false;}
   template<typename value_t>
@@ -196,12 +196,12 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// int main() {
-  ///   llong i = 42;
-  ///   std::cout << "i " << is<llong>(i) ? "is" : "isn't" << " llong" << endl;
+  ///   slong i = 42;
+  ///   std::cout << "i " << is<slong>(i) ? "is" : "isn't" << " slong" << endl;
   /// }
   /// @endcode
   template<>
-  inline bool is<llong>(llong value) {
+  inline bool is<slong>(slong value) {
     return true;
   }
   

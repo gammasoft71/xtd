@@ -65,7 +65,7 @@ std::any convert::to_any(int64 value) noexcept {
   return value;
 }
 
-std::any convert::to_any(llong value) noexcept {
+std::any convert::to_any(slong value) noexcept {
   return value;
 }
 
@@ -215,7 +215,7 @@ bool convert::to_boolean(int64 value) noexcept {
   return value != 0;
 }
 
-bool convert::to_boolean(llong value) noexcept {
+bool convert::to_boolean(slong value) noexcept {
   return value != 0;
 }
 
@@ -368,8 +368,8 @@ xtd::byte convert::to_byte(int64 value) {
   return static_cast<xtd::byte>(value);
 }
 
-xtd::byte convert::to_byte(llong value) {
-  if (value < static_cast<llong>(numeric_limits<xtd::byte>::lowest()) || value > static_cast<llong>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
+xtd::byte convert::to_byte(slong value) {
+  if (value < static_cast<slong>(numeric_limits<xtd::byte>::lowest()) || value > static_cast<slong>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
   return static_cast<xtd::byte>(value);
 }
 
@@ -541,7 +541,7 @@ char convert::to_char(int64 value) {
   return static_cast<char>(value);
 }
 
-char convert::to_char(llong value) {
+char convert::to_char(slong value) {
   if (value < 0ll || value > 255ll) throw overflow_exception(csf_);
   return static_cast<char>(value);
 }
@@ -716,7 +716,7 @@ char8 convert::to_char8(int64 value) {
   return static_cast<char8>(value);
 }
 
-char8 convert::to_char8(llong value) {
+char8 convert::to_char8(slong value) {
   if (value < 0ll || value > 255ll) throw overflow_exception(csf_);
   return static_cast<char8>(value);
 }
@@ -897,7 +897,7 @@ char16 convert::to_char16(int64 value) {
   return static_cast<char16>(value);
 }
 
-char16 convert::to_char16(llong value) {
+char16 convert::to_char16(slong value) {
   if (value < 0ll || value > 65535ll) throw overflow_exception(csf_);
   return static_cast<char16>(value);
 }
@@ -1076,7 +1076,7 @@ char32 convert::to_char32(int64 value) {
   return static_cast<char32>(value);
 }
 
-char32 convert::to_char32(llong value) {
+char32 convert::to_char32(slong value) {
   if (value < 0ll || value > 4294967295ll) throw overflow_exception(csf_);
   return static_cast<char32>(value);
 }
@@ -1255,7 +1255,7 @@ wchar convert::to_wchar(int64 value) {
   return static_cast<wchar>(value);
 }
 
-wchar convert::to_wchar(llong value) {
+wchar convert::to_wchar(slong value) {
   if (value < 0ll || value > 65535ll) throw overflow_exception(csf_);
   return static_cast<wchar>(value);
 }
@@ -1424,7 +1424,7 @@ decimal convert::to_decimal(int64 value) noexcept {
   return static_cast<decimal>(value);
 }
 
-decimal convert::to_decimal(llong value) noexcept {
+decimal convert::to_decimal(slong value) noexcept {
   return static_cast<decimal>(value);
 }
 
@@ -1572,7 +1572,7 @@ double convert::to_double(int64 value) noexcept {
   return static_cast<double>(value);
 }
 
-double convert::to_double(llong value) noexcept {
+double convert::to_double(slong value) noexcept {
   return static_cast<double>(value);
 }
 
@@ -1720,7 +1720,7 @@ float convert::to_single(int64 value) noexcept {
   return static_cast<float>(value);
 }
 
-float convert::to_single(llong value) noexcept {
+float convert::to_single(slong value) noexcept {
   return static_cast<float>(value);
 }
 
@@ -1874,8 +1874,8 @@ int16 convert::to_int16(int64 value) {
   return static_cast<int16>(value);
 }
 
-int16 convert::to_int16(llong value) {
-  if (value < static_cast<llong>(numeric_limits<int16>::lowest()) || value > static_cast<llong>(numeric_limits<int16>::max())) throw overflow_exception(csf_);
+int16 convert::to_int16(slong value) {
+  if (value < static_cast<slong>(numeric_limits<int16>::lowest()) || value > static_cast<slong>(numeric_limits<int16>::max())) throw overflow_exception(csf_);
   return static_cast<int16>(value);
 }
 
@@ -2040,8 +2040,8 @@ int32 convert::to_int32(int64 value) {
   return static_cast<int32>(value);
 }
 
-int32 convert::to_int32(llong value) {
-  if (value < static_cast<llong>(numeric_limits<int32>::lowest()) || value > static_cast<llong>(numeric_limits<int32>::max())) throw overflow_exception(csf_);
+int32 convert::to_int32(slong value) {
+  if (value < static_cast<slong>(numeric_limits<int32>::lowest()) || value > static_cast<slong>(numeric_limits<int32>::max())) throw overflow_exception(csf_);
   return static_cast<int32>(value);
 }
 
@@ -2202,7 +2202,7 @@ int64 convert::to_int64(int64 value) noexcept {
   return static_cast<int64>(value);
 }
 
-int64 convert::to_int64(llong value) noexcept {
+int64 convert::to_int64(slong value) noexcept {
   return static_cast<int64>(value);
 }
 
@@ -2302,164 +2302,164 @@ int64 convert::to_int64(wchar* value) {
   return ustring::parse<int64>(value);
 }
 
-llong convert::to_llong(any value) {
+slong convert::to_llong(any value) {
   try {
-    return any_cast<llong>(value);
+    return any_cast<slong>(value);
   } catch (...) {
     throw invalid_cast_exception(csf_);
   }
 }
 
-llong convert::to_llong(bool value) noexcept {
-  return static_cast<llong>(value);
+slong convert::to_llong(bool value) noexcept {
+  return static_cast<slong>(value);
 }
 
-llong convert::to_llong(xtd::byte value) noexcept {
-  return static_cast<llong>(value);
+slong convert::to_llong(xtd::byte value) noexcept {
+  return static_cast<slong>(value);
 }
 
-llong convert::to_llong(char value) noexcept {
-  return static_cast<llong>(value);
+slong convert::to_llong(char value) noexcept {
+  return static_cast<slong>(value);
 }
 
-llong convert::to_llong(char8 value) noexcept {
-  return static_cast<llong>(value);
+slong convert::to_llong(char8 value) noexcept {
+  return static_cast<slong>(value);
 }
 
-llong convert::to_llong(char16 value) noexcept {
-  return static_cast<llong>(value);
+slong convert::to_llong(char16 value) noexcept {
+  return static_cast<slong>(value);
 }
 
-llong convert::to_llong(char32 value) noexcept {
-  return static_cast<llong>(value);
+slong convert::to_llong(char32 value) noexcept {
+  return static_cast<slong>(value);
 }
 
-llong convert::to_llong(wchar value) noexcept {
-  return static_cast<llong>(value);
+slong convert::to_llong(wchar value) noexcept {
+  return static_cast<slong>(value);
 }
 
-llong convert::to_llong(decimal value) noexcept {
-  return static_cast<llong>(math::round(value));
+slong convert::to_llong(decimal value) noexcept {
+  return static_cast<slong>(math::round(value));
 }
 
-llong convert::to_llong(double value) noexcept {
-  return static_cast<llong>(math::round(value));
+slong convert::to_llong(double value) noexcept {
+  return static_cast<slong>(math::round(value));
 }
 
-llong convert::to_llong(float value) noexcept {
-  return static_cast<llong>(math::round(value));
+slong convert::to_llong(float value) noexcept {
+  return static_cast<slong>(math::round(value));
 }
 
-llong convert::to_llong(int16 value) noexcept {
-  return static_cast<llong>(value);
+slong convert::to_llong(int16 value) noexcept {
+  return static_cast<slong>(value);
 }
 
-llong convert::to_llong(int32 value) noexcept {
-  return static_cast<llong>(value);
+slong convert::to_llong(int32 value) noexcept {
+  return static_cast<slong>(value);
 }
 
-llong convert::to_llong(int64 value) noexcept {
-  return static_cast<llong>(value);
+slong convert::to_llong(int64 value) noexcept {
+  return static_cast<slong>(value);
 }
 
-llong convert::to_llong(llong value) noexcept {
-  return static_cast<llong>(value);
+slong convert::to_llong(slong value) noexcept {
+  return static_cast<slong>(value);
 }
 
-llong convert::to_llong(sbyte value) noexcept {
-  return static_cast<llong>(value);
+slong convert::to_llong(sbyte value) noexcept {
+  return static_cast<slong>(value);
 }
 
-llong convert::to_llong(uint16 value) noexcept {
-  return static_cast<llong>(value);
+slong convert::to_llong(uint16 value) noexcept {
+  return static_cast<slong>(value);
 }
 
-llong convert::to_llong(uint32 value) noexcept {
-  return static_cast<llong>(value);
+slong convert::to_llong(uint32 value) noexcept {
+  return static_cast<slong>(value);
 }
 
-llong convert::to_llong(uint64 value) {
-  if (value > static_cast<uint64>(numeric_limits<llong>::max())) throw overflow_exception(csf_);
-  return static_cast<llong>(value);
+slong convert::to_llong(uint64 value) {
+  if (value > static_cast<uint64>(numeric_limits<slong>::max())) throw overflow_exception(csf_);
+  return static_cast<slong>(value);
 }
 
-llong convert::to_llong(ullong value) {
-  if (value > static_cast<ullong>(numeric_limits<llong>::max())) throw overflow_exception(csf_);
-  return static_cast<llong>(value);
+slong convert::to_llong(ullong value) {
+  if (value > static_cast<ullong>(numeric_limits<slong>::max())) throw overflow_exception(csf_);
+  return static_cast<slong>(value);
 }
 
-llong convert::to_llong(const ustring& value) {
-  return ustring::parse<llong>(value);
+slong convert::to_llong(const ustring& value) {
+  return ustring::parse<slong>(value);
 }
 
-llong convert::to_llong(const ustring& value, xtd::byte from_base) {
+slong convert::to_llong(const ustring& value, xtd::byte from_base) {
   switch (from_base) {
-    case 2: return parse<llong>(value, number_styles::binary_number); break;
-    case 8: return parse<llong>(value, number_styles::octal_number); break;
-    case 10: return parse<llong>(value, number_styles::integer); break;
-    case 16: return parse<llong>(value, number_styles::hex_number); break;
+    case 2: return parse<slong>(value, number_styles::binary_number); break;
+    case 8: return parse<slong>(value, number_styles::octal_number); break;
+    case 10: return parse<slong>(value, number_styles::integer); break;
+    case 16: return parse<slong>(value, number_styles::hex_number); break;
     default: throw argument_exception(csf_);
   }
 }
 
-llong convert::to_llong(const string& value) {
-  return ustring::parse<llong>(value);
+slong convert::to_llong(const string& value) {
+  return ustring::parse<slong>(value);
 }
 
-llong convert::to_llong(const u8string& value) {
-  return ustring::parse<llong>(value);
+slong convert::to_llong(const u8string& value) {
+  return ustring::parse<slong>(value);
 }
 
-llong convert::to_llong(const u16string& value) {
-  return ustring::parse<llong>(value);
+slong convert::to_llong(const u16string& value) {
+  return ustring::parse<slong>(value);
 }
 
-llong convert::to_llong(const u32string& value) {
-  return ustring::parse<llong>(value);
+slong convert::to_llong(const u32string& value) {
+  return ustring::parse<slong>(value);
 }
 
-llong convert::to_llong(const wstring& value) {
-  return ustring::parse<llong>(value);
+slong convert::to_llong(const wstring& value) {
+  return ustring::parse<slong>(value);
 }
 
-llong convert::to_llong(const char* value) {
-  return ustring::parse<llong>(value);
+slong convert::to_llong(const char* value) {
+  return ustring::parse<slong>(value);
 }
 
-llong convert::to_llong(char* value) {
-  return ustring::parse<llong>(value);
+slong convert::to_llong(char* value) {
+  return ustring::parse<slong>(value);
 }
 
-llong convert::to_llong(const char8* value) {
-  return ustring::parse<llong>(value);
+slong convert::to_llong(const char8* value) {
+  return ustring::parse<slong>(value);
 }
 
-llong convert::to_llong(char8* value) {
-  return ustring::parse<llong>(value);
+slong convert::to_llong(char8* value) {
+  return ustring::parse<slong>(value);
 }
 
-llong convert::to_llong(const char16* value) {
-  return ustring::parse<llong>(value);
+slong convert::to_llong(const char16* value) {
+  return ustring::parse<slong>(value);
 }
 
-llong convert::to_llong(char16* value) {
-  return ustring::parse<llong>(value);
+slong convert::to_llong(char16* value) {
+  return ustring::parse<slong>(value);
 }
 
-llong convert::to_llong(const char32* value) {
-  return ustring::parse<llong>(value);
+slong convert::to_llong(const char32* value) {
+  return ustring::parse<slong>(value);
 }
 
-llong convert::to_llong(char32* value) {
-  return ustring::parse<llong>(value);
+slong convert::to_llong(char32* value) {
+  return ustring::parse<slong>(value);
 }
 
-llong convert::to_llong(const wchar* value) {
-  return ustring::parse<llong>(value);
+slong convert::to_llong(const wchar* value) {
+  return ustring::parse<slong>(value);
 }
 
-llong convert::to_llong(wchar* value) {
-  return ustring::parse<llong>(value);
+slong convert::to_llong(wchar* value) {
+  return ustring::parse<slong>(value);
 }
 
 sbyte convert::to_sbyte(any value) {
@@ -2531,8 +2531,8 @@ sbyte convert::to_sbyte(int64 value) {
   return static_cast<sbyte>(value);
 }
 
-sbyte convert::to_sbyte(llong value) {
-  if (value < static_cast<llong>(numeric_limits<sbyte>::lowest()) || value > static_cast<llong>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
+sbyte convert::to_sbyte(slong value) {
+  if (value < static_cast<slong>(numeric_limits<sbyte>::lowest()) || value > static_cast<slong>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
   return static_cast<sbyte>(value);
 }
 
@@ -2701,8 +2701,8 @@ uint16 convert::to_uint16(int64 value) {
   return static_cast<uint16>(value);
 }
 
-uint16 convert::to_uint16(llong value) {
-  if (value < static_cast<llong>(numeric_limits<uint16>::lowest()) || value > static_cast<llong>(numeric_limits<uint16>::max())) throw overflow_exception(csf_);
+uint16 convert::to_uint16(slong value) {
+  if (value < static_cast<slong>(numeric_limits<uint16>::lowest()) || value > static_cast<slong>(numeric_limits<uint16>::max())) throw overflow_exception(csf_);
   return static_cast<uint16>(value);
 }
 
@@ -2870,8 +2870,8 @@ uint32 convert::to_uint32(int64 value) {
   return static_cast<uint32>(value);
 }
 
-uint32 convert::to_uint32(llong value) {
-  if (value < static_cast<llong>(numeric_limits<uint32>::lowest())) throw overflow_exception(csf_);
+uint32 convert::to_uint32(slong value) {
+  if (value < static_cast<slong>(numeric_limits<uint32>::lowest())) throw overflow_exception(csf_);
   return static_cast<uint32>(value);
 }
 
@@ -3038,8 +3038,8 @@ uint64 convert::to_uint64(int64 value) {
   return static_cast<uint32>(value);
 }
 
-uint64 convert::to_uint64(llong value) {
-  if (value < static_cast<llong>(numeric_limits<uint64>::lowest())) throw overflow_exception(csf_);
+uint64 convert::to_uint64(slong value) {
+  if (value < static_cast<slong>(numeric_limits<uint64>::lowest())) throw overflow_exception(csf_);
   return static_cast<uint64>(value);
 }
 
@@ -3204,8 +3204,8 @@ ullong convert::to_ullong(int64 value) {
   return static_cast<ullong>(value);
 }
 
-ullong convert::to_ullong(llong value) {
-  if (value < static_cast<llong>(numeric_limits<ullong>::lowest())) throw overflow_exception(csf_);
+ullong convert::to_ullong(slong value) {
+  if (value < static_cast<slong>(numeric_limits<ullong>::lowest())) throw overflow_exception(csf_);
   return static_cast<ullong>(value);
 }
 
@@ -3400,11 +3400,11 @@ ustring convert::to_string(int64 value, xtd::byte from_base) {
   }
 }
 
-ustring convert::to_string(llong value) {
+ustring convert::to_string(slong value) {
   return ustring::format("{}", value);
 }
 
-ustring convert::to_string(llong value, xtd::byte from_base) {
+ustring convert::to_string(slong value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return ustring::format("{:B}", value); break;
     case 8: return ustring::format("{:O}", value); break;
@@ -3620,11 +3620,11 @@ ustring convert::to_ustring(int64 value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
-ustring convert::to_ustring(llong value) {
+ustring convert::to_ustring(slong value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(llong value, xtd::byte from_base) {
+ustring convert::to_ustring(slong value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 

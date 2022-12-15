@@ -214,7 +214,7 @@ namespace xtd {
     static std::vector<xtd::byte> get_bytes(uint64 value) noexcept;
     
     /// @cond
-    static std::vector<xtd::byte> get_bytes(llong value) noexcept;
+    static std::vector<xtd::byte> get_bytes(slong value) noexcept;
     static std::vector<xtd::byte> get_bytes(ullong value) noexcept;
     /// @endcond
     
