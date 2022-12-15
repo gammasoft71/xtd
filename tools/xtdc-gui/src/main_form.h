@@ -62,8 +62,11 @@ namespace xtdc_gui {
     void run_project(const xtd::ustring& project_path);
     void set_auto_close();
     void show_about_dialog();
-    void update_open_xtd_examples_information(const xtd::ustring& description);
-    
+    void update_open_xtd_examples(const xtd_example_item& item);
+    void update_open_xtd_examples_description(const xtd::ustring& description);
+    void update_open_xtd_examples_picture(const xtd::drawing::image& picture);
+    void update_open_xtd_examples_output(const xtd::ustring& output);
+
     std::unique_ptr<xtd::forms::background_worker> background_worker_;
     std::unique_ptr<xtd::forms::progress_dialog> progress_dialog_;
     xtd::forms::panel startup_panel_;
@@ -102,6 +105,7 @@ namespace xtdc_gui {
     xtd::forms::label open_xtd_examples_information_label_;
     xtd::forms::link_label open_xtd_examples_information_link_label_;
     xtd::forms::label open_xtd_examples_information_picture_label_;
+    xtd::forms::text_box open_xtd_examples_information_output_text_box_;
     xtd::forms::picture_box open_xtd_examples_information_picture_box_;
     
     xtd::forms::panel create_panel_;
