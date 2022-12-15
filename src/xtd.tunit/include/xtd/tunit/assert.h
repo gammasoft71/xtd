@@ -2371,14 +2371,83 @@ namespace xtd {
 #define __CMD_ASSERT_ARGS(cmd, ...) __CMD_ASSERT_MACRO_CHOOSER(cmd, __VA_ARGS__)(cmd, __VA_ARGS__)
 /// @endcond
 
+/// @brief Abort current test. This is used by the other assert functions.
+/// @exception xtd::tunit::assert_error If bad assertion.
+/// @ingroup xtd_tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// xtd::tunit::assert::abort_(); // test throws an abort_error exception.
+/// xtd::tunit::assume::abort_(); // test throws an abort_error exception.
+/// xtd::tunit::valid::abort_(); // test throws an abort_error exception.
+/// @endcode
 #define abort_() abort(csf_)
 
+/// @brief Asserts that two type are equal.
+/// @param expected the expected value.
+/// @param actual the actual value.
+/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results .
+/// @ingroup xtd_tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// xtd::tunit::assert::are_equal_(24, int(24)); // test throws an abort_error exception.
+/// xtd::tunit::assume::are_equal_(24, int(24), "User message"); // test throws an abort_error exception.
+/// xtd::tunit::valid::are_equal_(24, int(24)); // test throws an abort_error exception.
+/// @endcode
 #define are_equal_(...) __CMD_ASSERT_ARGS(are_equal, __VA_ARGS__)
 
+/// @brief Asserts that two type are not equal.
+/// @param expected the expected value.
+/// @param actual the actual value.
+/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results .
+/// @ingroup xtd_tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// xtd::tunit::assert::are_not_equal_(24, int(42)); // test throws an abort_error exception.
+/// xtd::tunit::assume::are_not_equal_(24, int(42), "User message..."); // test throws an abort_error exception.
+/// xtd::tunit::valid::are_not_equal_(24, int(42)); // test throws an abort_error exception.
+/// @endcode
 #define are_not_equal_(...) __CMD_ASSERT_ARGS(are_not_equal, __VA_ARGS__)
 
+/// @brief Asserts that two objects do refer to differents objects.
+/// @param expected the expected value.
+/// @param actual the actual value.
+/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @par Examples
+/// @code
+/// int a = 24;
+/// int& b = a;
+/// int c=  24;
+/// xtd::tunit::assert::are_not_same_(c, a); // test ok.
+/// xtd::tunit::assert::are_not_same_(b, a, "User message..."); // test error.
+/// xtd::tunit::assume::are_not_same_(c, a); // test ok.
+/// xtd::tunit::assume::are_not_same_(b, a, "User message..."); // test error.
+/// xtd::tunit::valid::are_not_same_(c, a); // test ok.
+/// xtd::tunit::valid::are_not_same_(b, a, "User message..."); // test error.
+/// @endcode
 #define are_not_same_(...) __CMD_ASSERT_ARGS(are_not_same, __VA_ARGS__)
 
+/// @brief Asserts that two objects do refer to same objects.
+/// @param expected the expected value.
+/// @param actual the actual value.
+/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @par Examples
+/// @code
+/// int a = 24;
+/// int& b = a;
+/// int c=  24;
+/// xtd::tunit::assert::are__same_(c, a, "User message..."); // test error.
+/// xtd::tunit::assert::are_same_(b, a); // test ok.
+/// xtd::tunit::assume::are_same_(c, a, "User message..."); // test error.
+/// xtd::tunit::assume::are_same_(b, a); // test ok.
+/// xtd::tunit::valid::are_same_(c, a, "User message..."); // test error.
+/// xtd::tunit::valid::are_same_(b, a); // test ok.
+/// @endcode
 #define are_same_(...) __CMD_ASSERT_ARGS(are_same, __VA_ARGS__)
 
 #define contains_(...) __CMD_ASSERT_ARGS(contains, __VA_ARGS__)
