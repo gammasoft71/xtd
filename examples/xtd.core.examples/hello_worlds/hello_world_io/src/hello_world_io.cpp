@@ -4,7 +4,7 @@ using namespace xtd;
 using namespace xtd::io;
 
 int main(int argc, char* argv[]) {
-  auto file_name = path::combine(path::get_temp_path(), "file.txt");
+  auto file_name = path::combine(path::get_temp_path(), "hello_world.txt");
   
   file::write_all_text(file_name, "Hello, World!");
   console::write_line(file::read_all_text(file_name));
