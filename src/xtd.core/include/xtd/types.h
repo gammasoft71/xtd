@@ -114,7 +114,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using slong = xtd::native::__slong__;
+  using slong = xtd::native::__slong__; // Workaround: On linux 64 bits unfortunately 'int_least64_t' is an alias on 'long' and not on 'long long int' as other platforms. In order to avoid conflicts in operator or method overloads, it is necessary to give the type that is not taken into account.
 
   /// @brief Stores information about a type.
   /// @par Namespace
@@ -178,7 +178,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using ulong = xtd::native::__ulong__;
+  using ulong = xtd::native::__ulong__; // Workaround: On linux 64 bits unfortunately 'uint_least64_t' is an alias on 'unigned long' and not on 'unsigned long long int' as other platforms. In order to avoid conflicts in operator or method overloads, it is necessary to give the type that is not taken into account.
 
   /// @brief Represents a 16-bit unsigned integer.
   /// @par Namespace
