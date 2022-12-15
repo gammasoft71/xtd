@@ -320,7 +320,7 @@ main_form::main_form() {
   open_xtd_example_core_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_core_list_box_.selected_index() != open_xtd_example_core_list_box_.npos) {
       current_open_xtd_example_core_list_box_index_ = open_xtd_example_core_list_box_.selected_index();
-      update_open_xtd_examples(any_cast<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag()));
+      update_open_xtd_examples(any_cast<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag()), "core");
     }
   };
   open_xtd_example_core_list_box_.double_click += [&] {
@@ -336,7 +336,7 @@ main_form::main_form() {
   open_xtd_example_drawing_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_drawing_list_box_.selected_index() != open_xtd_example_drawing_list_box_.npos) {
       current_open_xtd_example_drawing_list_box_index_ = open_xtd_example_drawing_list_box_.selected_index();
-      update_open_xtd_examples(any_cast<xtd_example_item>(open_xtd_example_drawing_list_box_.selected_item().tag()));
+      update_open_xtd_examples(any_cast<xtd_example_item>(open_xtd_example_drawing_list_box_.selected_item().tag()), "drawing");
     }
   };
   open_xtd_example_drawing_list_box_.double_click += [&] {
@@ -352,7 +352,7 @@ main_form::main_form() {
   open_xtd_example_forms_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_forms_list_box_.selected_index() != open_xtd_example_forms_list_box_.npos) {
       current_open_xtd_example_forms_list_box_index_ = open_xtd_example_forms_list_box_.selected_index();
-      update_open_xtd_examples(any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()));
+      update_open_xtd_examples(any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()), "forms");
     }
   };
   open_xtd_example_forms_list_box_.double_click += [&] {
@@ -368,7 +368,7 @@ main_form::main_form() {
   open_xtd_example_tunit_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_tunit_list_box_.selected_index() != open_xtd_example_tunit_list_box_.npos) {
       current_open_xtd_example_tunit_list_box_index_ = open_xtd_example_tunit_list_box_.selected_index();
-      update_open_xtd_examples(any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()));
+      update_open_xtd_examples(any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()), "tunit");
     }
   };
   open_xtd_example_tunit_list_box_.double_click += [&] {
@@ -384,7 +384,7 @@ main_form::main_form() {
   open_xtd_example_cmake_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_cmake_list_box_.selected_index() != open_xtd_example_cmake_list_box_.npos) {
       current_open_xtd_example_cmake_list_box_index_ = open_xtd_example_cmake_list_box_.selected_index();
-      update_open_xtd_examples(any_cast<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag()));
+      update_open_xtd_examples(any_cast<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag()), "cmake");
     }
   };
   open_xtd_example_cmake_list_box_.double_click += [&] {
@@ -890,7 +890,7 @@ void main_form::show_about_dialog() {
   dialog.show();
 }
 
-void main_form::update_open_xtd_examples(const xtd_example_item& item) {
+void main_form::update_open_xtd_examples(const xtd_example_item& item, const xtd::ustring& context) {
   // Description 
   update_open_xtd_examples_description(item.description().empty() ? "Coming soon..."_s : item.description());
   // Picture or Output
@@ -899,7 +899,16 @@ void main_form::update_open_xtd_examples(const xtd_example_item& item) {
   else if (not item.output().empty())
     update_open_xtd_examples_output(item.output());
   else
-    update_open_xtd_examples_picture(xtd::drawing::bitmap(xtd_gui_icon));
+  {
+    auto get_context_picture = [&context]() {
+      if (context == "core")  return xtd::drawing::bitmap(xtd_console_icon);
+      if (context == "forms") return xtd::drawing::bitmap(xtd_gui_icon);
+      if (context == "tunit") return xtd::drawing::bitmap(xtd_tunit_icon);
+      if (context == "cmake") return xtd::drawing::bitmap(xtd_cmake_icon);
+      return xtd::drawing::bitmap::empty;
+    };
+    update_open_xtd_examples_picture(get_context_picture());
+  }
 }
 
 void main_form::update_open_xtd_examples_description(const xtd::ustring& description) {
