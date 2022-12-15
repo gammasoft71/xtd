@@ -94,15 +94,14 @@ namespace xtdc_gui {
       const auto contents = xtd::io::file::read_all_lines(readme_md);
       bool found_output = false;
       xtd::ustring output = "";
-      for (xtd::ustring line : contents) {
-        line = line.trim();
+      for (const xtd::ustring& line : contents) {
         if (line.empty()) continue;
         if (not found_output and line.to_lower().starts_with("# output")) {
           found_output = true;
           continue;
         }
         else if (found_output) {
-          if (line.starts_with("```") or line.starts_with("![")) continue; // skip ``` sections and ![Screenshots]
+          if (line.starts_with("#") or line.starts_with("```") or line.starts_with("![")) continue; // skip other # ``` sections and ![Screenshots]
           output += line + '\n';
         }
       }
