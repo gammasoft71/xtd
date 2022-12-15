@@ -235,7 +235,7 @@ namespace xtd {
   
   /// @cond
   using llong_object = box_integer<slong>;
-  using ullong_object = box_integer<ulong>;
+  using ullong_object = box_integer<xtd::ulong>;
   
   inline byte_object boxing(const xtd::byte& value) noexcept {return byte_object(value);}
   inline int16_object boxing(const int16& value) noexcept {return int16_object(value);}
@@ -246,7 +246,7 @@ namespace xtd {
   inline uint16_object boxing(const uint16& value) noexcept {return uint16_object(value);}
   inline uint32_object boxing(const uint32& value) noexcept {return uint32_object(value);}
   inline uint64_object boxing(const uint64& value) noexcept {return uint64_object(value);}
-  inline ullong_object boxing(const ulong& value) noexcept {return ullong_object(value);}
+  inline ullong_object boxing(const xtd::ulong& value) noexcept {return ullong_object(value);}
   inline byte_object boxing(xtd::byte& value) noexcept {return byte_object(value);}
   inline int16_object boxing(int16& value) noexcept {return int16_object(value);}
   inline int32_object boxing(int32& value) noexcept {return int32_object(value);}
@@ -256,7 +256,7 @@ namespace xtd {
   inline uint16_object boxing(uint16& value) noexcept {return uint16_object(value);}
   inline uint32_object boxing(uint32& value) noexcept {return uint32_object(value);}
   inline uint64_object boxing(uint64& value) noexcept {return uint64_object(value);}
-  inline ullong_object boxing(ulong& value) noexcept {return ullong_object(value);}
+  inline ullong_object boxing(xtd::ulong& value) noexcept {return ullong_object(value);}
 
   inline xtd::byte unboxing(const xtd::byte& value) noexcept {return value;}
   inline int16 unboxing(const int16& value) noexcept {return value;}
@@ -267,7 +267,7 @@ namespace xtd {
   inline uint16 unboxing(const uint16& value) noexcept {return value;}
   inline uint32 unboxing(const uint32& value) noexcept {return value;}
   inline uint64 unboxing(const uint64& value) noexcept {return value;}
-  inline ulong unboxing(const ulong& value) noexcept {return value;}
+  inline xtd::ulong unboxing(const xtd::ulong& value) noexcept {return value;}
   inline xtd::byte unboxing(xtd::byte& value) noexcept {return value;}
   inline int16 unboxing(int16& value) noexcept {return value;}
   inline int32 unboxing(int32& value) noexcept {return value;}
@@ -277,7 +277,7 @@ namespace xtd {
   inline uint16 unboxing(uint16& value) noexcept {return value;}
   inline uint32 unboxing(uint32& value) noexcept {return value;}
   inline uint64 unboxing(uint64& value) noexcept {return value;}
-  inline ulong unboxing(ulong& value) noexcept {return value;}
+  inline xtd::ulong unboxing(xtd::ulong& value) noexcept {return value;}
 
   template<typename type_t>
   inline std::string to_string(const xtd::box_integer<type_t>& value, const std::string& fmt, const std::locale& loc) {

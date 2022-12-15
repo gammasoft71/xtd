@@ -153,7 +153,7 @@ namespace xtd::tests {
     }
     
     void test_method_(ullong_as_double) {
-      assert::is_true(is<double>(as<double>((ulong)42)), csf_);
+      assert::is_true(is<double>(as<double>((xtd::ulong)42)), csf_);
     }
     
     void test_method_(literal_unsigned_int_as_double) {

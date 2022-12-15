@@ -40,7 +40,7 @@ namespace xtd {
   template<typename value_t>
   inline bool is(uint64 value) {return false;}
   template<typename value_t>
-  inline bool is(ulong value) {return false;}
+  inline bool is(xtd::ulong value) {return false;}
   /// @endcond
   
   /// @brief Checks if the result of an expression is compatible with a given type.
@@ -286,12 +286,12 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// int main() {
-  ///   ulong u = 42;
-  ///   std::cout << "u " << is<ulong>(i) ? "is" : "isn't" << " ulong" << endl;
+  ///   xtd::ulong u = 42;
+  ///   std::cout << "u " << is<xtd::ulong>(i) ? "is" : "isn't" << " xtd::ulong" << endl;
   /// }
   /// @endcode
   template<>
-  inline bool is<ulong>(ulong value) {
+  inline bool is<xtd::ulong>(xtd::ulong value) {
     return true;
   }
   

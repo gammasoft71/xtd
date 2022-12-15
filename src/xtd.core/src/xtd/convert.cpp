@@ -85,7 +85,7 @@ std::any convert::to_any(uint64 value) noexcept {
   return value;
 }
 
-std::any convert::to_any(ulong value) noexcept {
+std::any convert::to_any(xtd::ulong value) noexcept {
   return value;
 }
 
@@ -235,7 +235,7 @@ bool convert::to_boolean(uint64 value) noexcept {
   return value != 0;
 }
 
-bool convert::to_boolean(ulong value) noexcept {
+bool convert::to_boolean(xtd::ulong value) noexcept {
   return value != 0;
 }
 
@@ -393,8 +393,8 @@ xtd::byte convert::to_byte(uint64 value) {
   return static_cast<xtd::byte>(value);
 }
 
-xtd::byte convert::to_byte(ulong value) {
-  if (value > static_cast<ulong>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
+xtd::byte convert::to_byte(xtd::ulong value) {
+  if (value > static_cast<xtd::ulong>(numeric_limits<xtd::byte>::max())) throw overflow_exception(csf_);
   return static_cast<xtd::byte>(value);
 }
 
@@ -566,7 +566,7 @@ char convert::to_char(uint64 value) {
   return static_cast<char>(value);
 }
 
-char convert::to_char(ulong value) {
+char convert::to_char(xtd::ulong value) {
   if (value > 255llu) throw overflow_exception(csf_);
   return static_cast<char>(value);
 }
@@ -741,7 +741,7 @@ char8 convert::to_char8(uint64 value) {
   return static_cast<char8>(value);
 }
 
-char8 convert::to_char8(ulong value) {
+char8 convert::to_char8(xtd::ulong value) {
   if (value > 255llu) throw overflow_exception(csf_);
   return static_cast<char8>(value);
 }
@@ -921,7 +921,7 @@ char16 convert::to_char16(uint64 value) {
   return static_cast<char16>(value);
 }
 
-char16 convert::to_char16(ulong value) {
+char16 convert::to_char16(xtd::ulong value) {
   if (value > 65535llu) throw overflow_exception(csf_);
   return static_cast<char16>(value);
 }
@@ -1099,7 +1099,7 @@ char32 convert::to_char32(uint64 value) {
   return static_cast<char32>(value);
 }
 
-char32 convert::to_char32(ulong value) {
+char32 convert::to_char32(xtd::ulong value) {
   if (value > 4294967295llu) throw overflow_exception(csf_);
   return static_cast<char32>(value);
 }
@@ -1279,7 +1279,7 @@ wchar convert::to_wchar(uint64 value) {
   return static_cast<wchar>(value);
 }
 
-wchar convert::to_wchar(ulong value) {
+wchar convert::to_wchar(xtd::ulong value) {
   if (value > 65535llu) throw overflow_exception(csf_);
   return static_cast<wchar>(value);
 }
@@ -1444,7 +1444,7 @@ decimal convert::to_decimal(uint64 value) noexcept {
   return static_cast<decimal>(value);
 }
 
-decimal convert::to_decimal(ulong value) noexcept {
+decimal convert::to_decimal(xtd::ulong value) noexcept {
   return static_cast<decimal>(value);
 }
 
@@ -1592,7 +1592,7 @@ double convert::to_double(uint64 value) noexcept {
   return static_cast<double>(value);
 }
 
-double convert::to_double(ulong value) noexcept {
+double convert::to_double(xtd::ulong value) noexcept {
   return static_cast<double>(value);
 }
 
@@ -1740,7 +1740,7 @@ float convert::to_single(uint64 value) noexcept {
   return static_cast<float>(value);
 }
 
-float convert::to_single(ulong value) noexcept {
+float convert::to_single(xtd::ulong value) noexcept {
   return static_cast<float>(value);
 }
 
@@ -1898,8 +1898,8 @@ int16 convert::to_int16(uint64 value) {
   return static_cast<int16>(value);
 }
 
-int16 convert::to_int16(ulong value) {
-  if (value > static_cast<ulong>(numeric_limits<int16>::max())) throw overflow_exception(csf_);
+int16 convert::to_int16(xtd::ulong value) {
+  if (value > static_cast<xtd::ulong>(numeric_limits<int16>::max())) throw overflow_exception(csf_);
   return static_cast<int16>(value);
 }
 
@@ -2063,8 +2063,8 @@ int32 convert::to_int32(uint64 value) {
   return static_cast<int32>(value);
 }
 
-int32 convert::to_int32(ulong value) {
-  if (value > static_cast<ulong>(numeric_limits<int32>::max())) throw overflow_exception(csf_);
+int32 convert::to_int32(xtd::ulong value) {
+  if (value > static_cast<xtd::ulong>(numeric_limits<int32>::max())) throw overflow_exception(csf_);
   return static_cast<int32>(value);
 }
 
@@ -2223,8 +2223,8 @@ int64 convert::to_int64(uint64 value) {
   return static_cast<int64>(value);
 }
 
-int64 convert::to_int64(ulong value) {
-  if (value > static_cast<ulong>(numeric_limits<int64>::max())) throw overflow_exception(csf_);
+int64 convert::to_int64(xtd::ulong value) {
+  if (value > static_cast<xtd::ulong>(numeric_limits<int64>::max())) throw overflow_exception(csf_);
   return static_cast<int64>(value);
 }
 
@@ -2383,8 +2383,8 @@ slong convert::to_llong(uint64 value) {
   return static_cast<slong>(value);
 }
 
-slong convert::to_llong(ulong value) {
-  if (value > static_cast<ulong>(numeric_limits<slong>::max())) throw overflow_exception(csf_);
+slong convert::to_llong(xtd::ulong value) {
+  if (value > static_cast<xtd::ulong>(numeric_limits<slong>::max())) throw overflow_exception(csf_);
   return static_cast<slong>(value);
 }
 
@@ -2555,8 +2555,8 @@ sbyte convert::to_sbyte(uint64 value) {
   return static_cast<sbyte>(value);
 }
 
-sbyte convert::to_sbyte(ulong value) {
-  if (value > static_cast<ulong>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
+sbyte convert::to_sbyte(xtd::ulong value) {
+  if (value > static_cast<xtd::ulong>(numeric_limits<sbyte>::max())) throw overflow_exception(csf_);
   return static_cast<sbyte>(value);
 }
 
@@ -2725,8 +2725,8 @@ uint16 convert::to_uint16(uint64 value) {
   return static_cast<uint16>(value);
 }
 
-uint16 convert::to_uint16(ulong value) {
-  if (value > static_cast<ulong>(numeric_limits<uint16>::max())) throw overflow_exception(csf_);
+uint16 convert::to_uint16(xtd::ulong value) {
+  if (value > static_cast<xtd::ulong>(numeric_limits<uint16>::max())) throw overflow_exception(csf_);
   return static_cast<uint16>(value);
 }
 
@@ -2893,8 +2893,8 @@ uint32 convert::to_uint32(uint64 value) {
   return static_cast<uint32>(value);
 }
 
-uint32 convert::to_uint32(ulong value) {
-  if (value > static_cast<ulong>(numeric_limits<uint32>::max())) throw overflow_exception(csf_);
+uint32 convert::to_uint32(xtd::ulong value) {
+  if (value > static_cast<xtd::ulong>(numeric_limits<uint32>::max())) throw overflow_exception(csf_);
   return static_cast<uint32>(value);
 }
 
@@ -3060,7 +3060,7 @@ uint64 convert::to_uint64(uint64 value) noexcept {
   return value;
 }
 
-uint64 convert::to_uint64(ulong value) noexcept {
+uint64 convert::to_uint64(xtd::ulong value) noexcept {
   return static_cast<uint64>(value);
 }
 
@@ -3138,170 +3138,170 @@ uint64 convert::to_uint64(wchar* value) {
   return ustring::parse<uint64>(value);
 }
 
-ulong convert::to_ullong(any value) {
+xtd::ulong convert::to_ullong(any value) {
   try {
-    return any_cast<ulong>(value);
+    return any_cast<xtd::ulong>(value);
   } catch (...) {
     throw invalid_cast_exception(csf_);
   }
 }
 
-ulong convert::to_ullong(bool value) noexcept {
-  return static_cast<ulong>(value);
+xtd::ulong convert::to_ullong(bool value) noexcept {
+  return static_cast<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(xtd::byte value) noexcept {
-  return static_cast<ulong>(value);
+xtd::ulong convert::to_ullong(xtd::byte value) noexcept {
+  return static_cast<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(char value) noexcept {
-  return static_cast<ulong>(value);
+xtd::ulong convert::to_ullong(char value) noexcept {
+  return static_cast<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(char8 value) noexcept {
-  return static_cast<ulong>(value);
+xtd::ulong convert::to_ullong(char8 value) noexcept {
+  return static_cast<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(char16 value) noexcept {
-  return static_cast<ulong>(value);
+xtd::ulong convert::to_ullong(char16 value) noexcept {
+  return static_cast<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(char32 value) noexcept {
-  return static_cast<ulong>(value);
+xtd::ulong convert::to_ullong(char32 value) noexcept {
+  return static_cast<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(wchar value) noexcept {
-  return static_cast<ulong>(value);
+xtd::ulong convert::to_ullong(wchar value) noexcept {
+  return static_cast<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(decimal value) {
-  if (value < static_cast<decimal>(numeric_limits<ulong>::lowest()) || value > static_cast<decimal>(numeric_limits<ulong>::max())) throw overflow_exception(csf_);
-  return static_cast<ulong>(math::round(value));
+xtd::ulong convert::to_ullong(decimal value) {
+  if (value < static_cast<decimal>(numeric_limits<xtd::ulong>::lowest()) || value > static_cast<decimal>(numeric_limits<xtd::ulong>::max())) throw overflow_exception(csf_);
+  return static_cast<xtd::ulong>(math::round(value));
 }
 
-ulong convert::to_ullong(double value) {
-  if (value < static_cast<double>(numeric_limits<ulong>::lowest())) throw overflow_exception(csf_);
-  return static_cast<ulong>(math::round(value));
+xtd::ulong convert::to_ullong(double value) {
+  if (value < static_cast<double>(numeric_limits<xtd::ulong>::lowest())) throw overflow_exception(csf_);
+  return static_cast<xtd::ulong>(math::round(value));
 }
 
-ulong convert::to_ullong(float value) {
-  if (value < static_cast<float>(numeric_limits<ulong>::lowest())) throw overflow_exception(csf_);
-  return static_cast<ulong>(math::round(value));
+xtd::ulong convert::to_ullong(float value) {
+  if (value < static_cast<float>(numeric_limits<xtd::ulong>::lowest())) throw overflow_exception(csf_);
+  return static_cast<xtd::ulong>(math::round(value));
 }
 
-ulong convert::to_ullong(int16 value) {
-  if (value < static_cast<int16>(numeric_limits<ulong>::lowest())) throw overflow_exception(csf_);
-  return static_cast<ulong>(value);
+xtd::ulong convert::to_ullong(int16 value) {
+  if (value < static_cast<int16>(numeric_limits<xtd::ulong>::lowest())) throw overflow_exception(csf_);
+  return static_cast<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(int32 value) {
-  if (value < static_cast<int32>(numeric_limits<ulong>::lowest())) throw overflow_exception(csf_);
-  return static_cast<ulong>(value);
+xtd::ulong convert::to_ullong(int32 value) {
+  if (value < static_cast<int32>(numeric_limits<xtd::ulong>::lowest())) throw overflow_exception(csf_);
+  return static_cast<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(int64 value) {
-  if (value < static_cast<int64>(numeric_limits<ulong>::lowest())) throw overflow_exception(csf_);
-  return static_cast<ulong>(value);
+xtd::ulong convert::to_ullong(int64 value) {
+  if (value < static_cast<int64>(numeric_limits<xtd::ulong>::lowest())) throw overflow_exception(csf_);
+  return static_cast<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(slong value) {
-  if (value < static_cast<slong>(numeric_limits<ulong>::lowest())) throw overflow_exception(csf_);
-  return static_cast<ulong>(value);
+xtd::ulong convert::to_ullong(slong value) {
+  if (value < static_cast<slong>(numeric_limits<xtd::ulong>::lowest())) throw overflow_exception(csf_);
+  return static_cast<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(sbyte value) {
-  if (value < static_cast<sbyte>(numeric_limits<ulong>::lowest())) throw overflow_exception(csf_);
-  return static_cast<ulong>(value);
+xtd::ulong convert::to_ullong(sbyte value) {
+  if (value < static_cast<sbyte>(numeric_limits<xtd::ulong>::lowest())) throw overflow_exception(csf_);
+  return static_cast<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(uint16 value) noexcept {
-  return static_cast<ulong>(value);
+xtd::ulong convert::to_ullong(uint16 value) noexcept {
+  return static_cast<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(uint32 value) noexcept {
-  return static_cast<ulong>(value);
+xtd::ulong convert::to_ullong(uint32 value) noexcept {
+  return static_cast<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(uint64 value) noexcept {
-  return static_cast<ulong>(value);
+xtd::ulong convert::to_ullong(uint64 value) noexcept {
+  return static_cast<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(ulong value) noexcept {
+xtd::ulong convert::to_ullong(xtd::ulong value) noexcept {
   return value;
 }
 
-ulong convert::to_ullong(const ustring& value) {
-  return ustring::parse<ulong>(value);
+xtd::ulong convert::to_ullong(const ustring& value) {
+  return ustring::parse<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(const ustring& value, xtd::byte from_base) {
+xtd::ulong convert::to_ullong(const ustring& value, xtd::byte from_base) {
   switch (from_base) {
-    case 2: return parse<ulong>(value, number_styles::binary_number); break;
-    case 8: return parse<ulong>(value, number_styles::octal_number); break;
-    case 10: return parse<ulong>(value, number_styles::integer); break;
-    case 16: return parse<ulong>(value, number_styles::hex_number); break;
+    case 2: return parse<xtd::ulong>(value, number_styles::binary_number); break;
+    case 8: return parse<xtd::ulong>(value, number_styles::octal_number); break;
+    case 10: return parse<xtd::ulong>(value, number_styles::integer); break;
+    case 16: return parse<xtd::ulong>(value, number_styles::hex_number); break;
     default: throw argument_exception(csf_);
   }
 }
 
-ulong convert::to_ullong(const string& value) {
-  return ustring::parse<ulong>(value);
+xtd::ulong convert::to_ullong(const string& value) {
+  return ustring::parse<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(const u8string& value) {
-  return ustring::parse<ulong>(value);
+xtd::ulong convert::to_ullong(const u8string& value) {
+  return ustring::parse<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(const u16string& value) {
-  return ustring::parse<ulong>(value);
+xtd::ulong convert::to_ullong(const u16string& value) {
+  return ustring::parse<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(const u32string& value) {
-  return ustring::parse<ulong>(value);
+xtd::ulong convert::to_ullong(const u32string& value) {
+  return ustring::parse<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(const wstring& value) {
-  return ustring::parse<ulong>(value);
+xtd::ulong convert::to_ullong(const wstring& value) {
+  return ustring::parse<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(const char* value) {
-  return ustring::parse<ulong>(value);
+xtd::ulong convert::to_ullong(const char* value) {
+  return ustring::parse<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(char* value) {
-  return ustring::parse<ulong>(value);
+xtd::ulong convert::to_ullong(char* value) {
+  return ustring::parse<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(const char8* value) {
-  return ustring::parse<ulong>(value);
+xtd::ulong convert::to_ullong(const char8* value) {
+  return ustring::parse<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(char8* value) {
-  return ustring::parse<ulong>(value);
+xtd::ulong convert::to_ullong(char8* value) {
+  return ustring::parse<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(const char16* value) {
-  return ustring::parse<ulong>(value);
+xtd::ulong convert::to_ullong(const char16* value) {
+  return ustring::parse<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(char16* value) {
-  return ustring::parse<ulong>(value);
+xtd::ulong convert::to_ullong(char16* value) {
+  return ustring::parse<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(const char32* value) {
-  return ustring::parse<ulong>(value);
+xtd::ulong convert::to_ullong(const char32* value) {
+  return ustring::parse<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(char32* value) {
-  return ustring::parse<ulong>(value);
+xtd::ulong convert::to_ullong(char32* value) {
+  return ustring::parse<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(const wchar* value) {
-  return ustring::parse<ulong>(value);
+xtd::ulong convert::to_ullong(const wchar* value) {
+  return ustring::parse<xtd::ulong>(value);
 }
 
-ulong convert::to_ullong(wchar* value) {
-  return ustring::parse<ulong>(value);
+xtd::ulong convert::to_ullong(wchar* value) {
+  return ustring::parse<xtd::ulong>(value);
 }
 
 ustring convert::to_string(any value) {
@@ -3470,11 +3470,11 @@ ustring convert::to_string(uint64 value, xtd::byte from_base) {
   }
 }
 
-ustring convert::to_string(ulong value) noexcept {
+ustring convert::to_string(xtd::ulong value) noexcept {
   return ustring::format("{}", value);
 }
 
-ustring convert::to_string(ulong value, xtd::byte from_base) {
+ustring convert::to_string(xtd::ulong value, xtd::byte from_base) {
   switch (from_base) {
     case 2: return ustring::format("{:B}", value); break;
     case 8: return ustring::format("{:O}", value); break;
@@ -3660,11 +3660,11 @@ ustring convert::to_ustring(uint64 value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 
-ustring convert::to_ustring(ulong value) noexcept {
+ustring convert::to_ustring(xtd::ulong value) noexcept {
   return to_string(value);
 }
 
-ustring convert::to_ustring(ulong value, xtd::byte from_base) {
+ustring convert::to_ustring(xtd::ulong value, xtd::byte from_base) {
   return to_string(value, from_base);
 }
 

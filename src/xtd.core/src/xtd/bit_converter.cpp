@@ -78,7 +78,7 @@ vector<xtd::byte> bit_converter::get_bytes(slong value) noexcept {
   return bit_converter::get_bytes(uint64(value));
 }
 
-vector<xtd::byte> bit_converter::get_bytes(ulong value) noexcept {
+vector<xtd::byte> bit_converter::get_bytes(xtd::ulong value) noexcept {
   return bit_converter::get_bytes(uint64(value));
 }
 
