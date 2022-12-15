@@ -1,12 +1,10 @@
 #include <xtd/xtd>
-#include <iostream>
 
-using namespace std;
 using namespace xtd;
 
 int main() {
-  for (size_t index = 0; index < 10; index++)
-    cout << ustring::format("{:X}", guid::new_guid()) << endl;
+  for (auto counter = 0; counter < 10; ++counter)
+    console::write_line("{:X}", guid::new_guid());
 }
 
 // This code can produces the following output:
