@@ -85,14 +85,6 @@ namespace xtd {
   /// @brief Represent a pointer or a handle.
   /// @ingroup xtd_core types
   using intptr = intmax_t;
-  
-  /// @brief Represents a 32-bit or 64-bit signed integer.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core types
-  using llong = xtd::native::__llong__;
 
   /// @brief Represents a null pointer value.
   /// @par Namespace
@@ -116,6 +108,14 @@ namespace xtd {
   /// @ingroup xtd_core types
   using sbyte = int_least8_t;
   
+  /// @brief Represents a 32-bit or 64-bit signed integer.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core types
+  using llong = xtd::native::__slong__;
+
   /// @brief Stores information about a type.
   /// @par Namespace
   /// xtd
@@ -178,15 +178,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using ulong = unsigned long;
-
-  /// @brief Represents a 32-bit or 64-bit unsigned integer.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core types
-  using ullong = xtd::native::__ullong__;
+  using ullong = xtd::native::__ulong__;
 
   /// @brief Represents a 16-bit unsigned integer.
   /// @par Namespace
