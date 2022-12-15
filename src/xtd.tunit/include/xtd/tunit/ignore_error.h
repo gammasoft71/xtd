@@ -2,7 +2,6 @@
 /// @brief Contains xtd::tunit::ignore_error exception.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
 #include <xtd/system_exception.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -17,25 +16,70 @@ namespace xtd {
     /// @ingroup xtd_tunit exceptions
     class ignore_error : public xtd::system_exception {
     public:
-      /// @brief Create a new instance of ignore_error class.
-      /// @param message Message string associate to the error.
-      explicit ignore_error(const xtd::ustring& message) : message_(message) {}
+      /// @name Constructors
       
-      /// @brief Create a new instance of ignore_error class.
-      /// @param message Message string associate to the error.
-      explicit ignore_error(const char* message) : message_(message) {}
+      /// @{
+      /// @brief Create a new instance of class ignore_error
+      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      /// @remarks Message is set with the default message associate to the exception.
+      ignore_error(const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(default_message(), info) {}
+      /// @brief Create a new instance of class ignore_error
+      /// @param message Message string associate to the exception.
+      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      explicit ignore_error(const xtd::ustring& message, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, info) {}
+      /// @brief Create a new instance of class ignore_error
+      /// @param message Message string associate to the exception.
+      /// @param error Error code associate to the exception.
+      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      explicit ignore_error(const xtd::ustring& message, const std::error_code& error, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, error, info) {}
+      /// @brief Create a new instance of class ignore_error
+      /// @param message Message string associate to the exception.
+      /// @param help_link Help link string associate to the exception.
+      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      explicit ignore_error(const xtd::ustring& message, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, help_link, info) {}
+      /// @brief Create a new instance of class ignore_error
+      /// @param message Message string associate to the exception.
+      /// @param error Error code associate to the exception.
+      /// @param help_link Help link string associate to the exception.
+      explicit ignore_error(const xtd::ustring& message, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, error, help_link, info) {}
+      /// @brief Create a new instance of class ignore_error
+      /// @param inner_exception The exception that is the cause of the current exception.
+      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      /// @remarks Message is set with the default message associate to the exception.
+      explicit ignore_error(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(default_message(), inner_exception, info) {}
+      /// @brief Create a new instance of class ignore_error
+      /// @param message Message string associate to the exception.
+      /// @param inner_exception The exception that is the cause of the current exception.
+      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      explicit ignore_error(const xtd::ustring& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, info) {}
+      /// @brief Create a new instance of class ignore_error
+      /// @param message Message string associate to the exception.
+      /// @param inner_exception The exception that is the cause of the current exception.
+      /// @param error Error code associate to the exception.
+      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      explicit ignore_error(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, error, info) {}
+      /// @brief Create a new instance of class ignore_error
+      /// @param message Message string associate to the exception.
+      /// @param inner_exception The exception that is the cause of the current exception.
+      /// @param help_link Help link string associate to the exception.
+      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      explicit ignore_error(const xtd::ustring& message, const std::exception& inner_exception, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, help_link, info) {}
+      /// @brief Create a new instance of class ignore_error
+      /// @param message Message string associate to the exception.
+      /// @param inner_exception The exception that is the cause of the current exception.
+      /// @param error Error code associate to the exception.
+      /// @param help_link Help link string associate to the exception.
+      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      explicit ignore_error(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, error, help_link, info) {}
+      /// @}
       
       /// @cond
       ignore_error(const ignore_error&) = default;
       ignore_error& operator =(const ignore_error&) = default;
       /// @endcond
       
-      /// @brief Returns a string that represents the current ignore_error.
-      /// @return string A string that represents the current ignore_error.
-      const char* what() const noexcept {return message_.c_str();}
-      
     private:
-      xtd::ustring message_;
+      const char* default_message() const noexcept {return "Abort error."_t;}
     };
   }
 }
