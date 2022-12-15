@@ -898,14 +898,14 @@ void main_form::update_open_xtd_examples(const xtd_example_item& item, const xtd
     update_open_xtd_examples_picture(item.picture());
   else if (not item.output().empty())
     update_open_xtd_examples_output(item.output());
-  else
-  {
+  else {
     auto get_context_picture = [&context]() {
-      if (context == "core")  return xtd::drawing::bitmap(xtd_console_icon);
-      if (context == "forms") return xtd::drawing::bitmap(xtd_gui_icon);
-      if (context == "tunit") return xtd::drawing::bitmap(xtd_tunit_icon);
-      if (context == "cmake") return xtd::drawing::bitmap(xtd_cmake_icon);
-      return xtd::drawing::bitmap::empty;
+      if (context == "core")  return images::from_name("xtd-console", drawing::size {1024, 1024});
+      if (context == "drawing") return images::from_name("xtd-drawing", drawing::size {1024, 1024});
+      if (context == "forms") return images::from_name("xtd-forms", drawing::size {1024, 1024});
+      if (context == "tunit") return images::from_name("xtd-tunit", drawing::size {1024, 1024});
+      if (context == "cmake") return images::from_name("xtd-cmake", drawing::size {1024, 1024});
+      return xtd::drawing::image::empty;
     };
     update_open_xtd_examples_picture(get_context_picture());
   }
