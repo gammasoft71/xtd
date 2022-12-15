@@ -59,6 +59,7 @@ add_sources(
   src/xtd/tunit/__demangle_gcc.cpp
   src/xtd/tunit/__demangle_win32.cpp
   src/xtd/tunit/assert.cpp
+  src/xtd/tunit/assume.cpp
   src/xtd/tunit/base_assert.cpp
   src/xtd/tunit/settings.cpp
   src/xtd/tunit/tunit_main.cpp
