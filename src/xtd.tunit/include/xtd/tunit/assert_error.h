@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/system_exception.h>
-#include <xtd/ustring.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -17,25 +16,70 @@ namespace xtd {
     /// @ingroup xtd_tunit exceptions
     class assert_error : public xtd::system_exception {
     public:
-      /// @brief Create a new instance of assert_error class.
-      /// @param message Message string associate to the error.
-      explicit assert_error(const xtd::ustring& message) : message_(message) {}
+      /// @name Constructors
       
-      /// @brief Create a new instance of assert_error class.
-      /// @param message Message string associate to the error.
-      explicit assert_error(const char* message) : message_(message) {}
+      /// @{
+      /// @brief Create a new instance of class assert_error
+      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      /// @remarks Message is set with the default message associate to the exception.
+      assert_error(const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(default_message(), info) {}
+      /// @brief Create a new instance of class assert_error
+      /// @param message Message string associate to the exception.
+      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      explicit assert_error(const xtd::ustring& message, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, info) {}
+      /// @brief Create a new instance of class assert_error
+      /// @param message Message string associate to the exception.
+      /// @param error Error code associate to the exception.
+      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      explicit assert_error(const xtd::ustring& message, const std::error_code& error, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, error, info) {}
+      /// @brief Create a new instance of class assert_error
+      /// @param message Message string associate to the exception.
+      /// @param help_link Help link string associate to the exception.
+      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      explicit assert_error(const xtd::ustring& message, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, help_link, info) {}
+      /// @brief Create a new instance of class assert_error
+      /// @param message Message string associate to the exception.
+      /// @param error Error code associate to the exception.
+      /// @param help_link Help link string associate to the exception.
+      explicit assert_error(const xtd::ustring& message, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, error, help_link, info) {}
+      /// @brief Create a new instance of class assert_error
+      /// @param inner_exception The exception that is the cause of the current exception.
+      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      /// @remarks Message is set with the default message associate to the exception.
+      explicit assert_error(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(default_message(), inner_exception, info) {}
+      /// @brief Create a new instance of class assert_error
+      /// @param message Message string associate to the exception.
+      /// @param inner_exception The exception that is the cause of the current exception.
+      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      explicit assert_error(const xtd::ustring& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, info) {}
+      /// @brief Create a new instance of class assert_error
+      /// @param message Message string associate to the exception.
+      /// @param inner_exception The exception that is the cause of the current exception.
+      /// @param error Error code associate to the exception.
+      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      explicit assert_error(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, error, info) {}
+      /// @brief Create a new instance of class assert_error
+      /// @param message Message string associate to the exception.
+      /// @param inner_exception The exception that is the cause of the current exception.
+      /// @param help_link Help link string associate to the exception.
+      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      explicit assert_error(const xtd::ustring& message, const std::exception& inner_exception, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, help_link, info) {}
+      /// @brief Create a new instance of class assert_error
+      /// @param message Message string associate to the exception.
+      /// @param inner_exception The exception that is the cause of the current exception.
+      /// @param error Error code associate to the exception.
+      /// @param help_link Help link string associate to the exception.
+      /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
+      explicit assert_error(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, error, help_link, info) {}
+      /// @}
       
       /// @cond
       assert_error(const assert_error&) = default;
       assert_error& operator =(const assert_error&) = default;
       /// @endcond
       
-      /// @brief Returns a string that represents the current assert_error.
-      /// @return string A string that represents the current assert_error.
-      const char* what() const noexcept {return message_.c_str();}
-      
     private:
-      xtd::ustring message_;
+      const char* default_message() const noexcept {return "Abort error."_t;}
     };
   }
 }
