@@ -215,7 +215,7 @@ namespace xtd {
     
     /// @cond
     static std::vector<xtd::byte> get_bytes(slong value) noexcept;
-    static std::vector<xtd::byte> get_bytes(ullong value) noexcept;
+    static std::vector<xtd::byte> get_bytes(ulong value) noexcept;
     /// @endcond
     
     /// @brief Converts the specified 32-bit signed integer to a single-precision floating point number.

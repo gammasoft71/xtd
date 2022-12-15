@@ -178,7 +178,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using ullong = xtd::native::__ulong__;
+  using ulong = xtd::native::__ulong__;
 
   /// @brief Represents a 16-bit unsigned integer.
   /// @par Namespace

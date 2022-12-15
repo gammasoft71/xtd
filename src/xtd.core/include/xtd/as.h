@@ -374,11 +374,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42;
+  /// ulong value = 42;
   /// float result = as<float>(value);
   /// @endcode
   template<typename new_type_t>
-  new_type_t as(ullong value) {
+  new_type_t as(ulong value) {
     return static_cast<new_type_t>(value);
   }
   
@@ -472,7 +472,7 @@ namespace xtd {
     throw invalid_cast_exception(csf_);
   }
   template<typename new_type_t>
-  new_type_t as(ullong value, xtd::byte from_base) {
+  new_type_t as(ulong value, xtd::byte from_base) {
     throw invalid_cast_exception(csf_);
   }
   /// @endcond
@@ -1208,11 +1208,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42ull;
+  /// ulong value = 42ull;
   /// bool result = as<bool>(value);
   /// @endcode
   template<>
-  inline bool as<bool>(ullong value) {
+  inline bool as<bool>(ulong value) {
     return xtd::convert::to_boolean(value);
   }
   
@@ -1878,11 +1878,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42ull;
+  /// ulong value = 42ull;
   /// xtd::byte result = as<xtd::byte>(value);
   /// @endcode
   template<>
-  inline xtd::byte as<xtd::byte>(ullong value) {
+  inline xtd::byte as<xtd::byte>(ulong value) {
     return xtd::convert::to_byte(value);
   }
   
@@ -2568,11 +2568,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42ull;
+  /// ulong value = 42ull;
   /// char result = as<char>(value);
   /// @endcode
   template<>
-  inline char as<char>(ullong value) {
+  inline char as<char>(ulong value) {
     return xtd::convert::to_char(value);
   }
   
@@ -3238,11 +3238,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42ull;
+  /// ulong value = 42ull;
   /// char8 result = as<char8>(value);
   /// @endcode
   template<>
-  inline char8 as<char8>(ullong value) {
+  inline char8 as<char8>(ulong value) {
     return xtd::convert::to_char8(value);
   }
   
@@ -3908,11 +3908,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42ull;
+  /// ulong value = 42ull;
   /// char16 result = as<char16>(value);
   /// @endcode
   template<>
-  inline char16 as<char16>(ullong value) {
+  inline char16 as<char16>(ulong value) {
     return xtd::convert::to_char16(value);
   }
   
@@ -4578,11 +4578,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42ull;
+  /// ulong value = 42ull;
   /// char32 result = as<char32>(value);
   /// @endcode
   template<>
-  inline char32 as<char32>(ullong value) {
+  inline char32 as<char32>(ulong value) {
     return xtd::convert::to_char32(value);
   }
   
@@ -5248,11 +5248,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42ull;
+  /// ulong value = 42ull;
   /// wchar result = as<wchar>(value);
   /// @endcode
   template<>
-  inline wchar as<wchar>(ullong value) {
+  inline wchar as<wchar>(ulong value) {
     return xtd::convert::to_wchar(value);
   }
   
@@ -5918,11 +5918,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42ull;
+  /// ulong value = 42ull;
   /// decimal result = as<decimal>(value);
   /// @endcode
   template<>
-  inline decimal as<decimal>(ullong value) {
+  inline decimal as<decimal>(ulong value) {
     return xtd::convert::to_decimal(value);
   }
   
@@ -6588,11 +6588,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42ull;
+  /// ulong value = 42ull;
   /// double result = as<double>(value);
   /// @endcode
   template<>
-  inline double as<double>(ullong value) {
+  inline double as<double>(ulong value) {
     return xtd::convert::to_double(value);
   }
   
@@ -7258,11 +7258,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42ull;
+  /// ulong value = 42ull;
   /// float result = as<float>(value);
   /// @endcode
   template<>
-  inline float as<float>(ullong value) {
+  inline float as<float>(ulong value) {
     return xtd::convert::to_single(value);
   }
   
@@ -7928,11 +7928,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42ull;
+  /// ulong value = 42ull;
   /// int16 result = as<int16>(value);
   /// @endcode
   template<>
-  inline int16 as<int16>(ullong value) {
+  inline int16 as<int16>(ulong value) {
     return xtd::convert::to_int16(value);
   }
   
@@ -8618,11 +8618,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42ull;
+  /// ulong value = 42ull;
   /// int32 result = as<int32>(value);
   /// @endcode
   template<>
-  inline int32 as<int32>(ullong value) {
+  inline int32 as<int32>(ulong value) {
     return xtd::convert::to_int32(value);
   }
   
@@ -9308,11 +9308,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42ull;
+  /// ulong value = 42ull;
   /// int64 result = as<int64>(value);
   /// @endcode
   template<>
-  inline int64 as<int64>(ullong value) {
+  inline int64 as<int64>(ulong value) {
     return xtd::convert::to_int64(value);
   }
   
@@ -9998,11 +9998,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42ull;
+  /// ulong value = 42ull;
   /// slong result = as<slong>(value);
   /// @endcode
   template<>
-  inline slong as<slong>(ullong value) {
+  inline slong as<slong>(ulong value) {
     return xtd::convert::to_llong(value);
   }
   
@@ -10688,11 +10688,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42ull;
+  /// ulong value = 42ull;
   /// sbyte result = as<sbyte>(value);
   /// @endcode
   template<>
-  inline sbyte as<sbyte>(ullong value) {
+  inline sbyte as<sbyte>(ulong value) {
     return xtd::convert::to_sbyte(value);
   }
   
@@ -11378,11 +11378,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42ull;
+  /// ulong value = 42ull;
   /// uint16 result = as<uint16>(value);
   /// @endcode
   template<>
-  inline uint16 as<uint16>(ullong value) {
+  inline uint16 as<uint16>(ulong value) {
     return xtd::convert::to_uint16(value);
   }
   
@@ -12068,11 +12068,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42ull;
+  /// ulong value = 42ull;
   /// uint32 result = as<uint32>(value);
   /// @endcode
   template<>
-  inline uint32 as<uint32>(ullong value) {
+  inline uint32 as<uint32>(ulong value) {
     return xtd::convert::to_uint32(value);
   }
   
@@ -12758,11 +12758,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42ull;
+  /// ulong value = 42ull;
   /// uint64 result = as<uint64>(value);
   /// @endcode
   template<>
-  inline uint64 as<uint64>(ullong value) {
+  inline uint64 as<uint64>(ulong value) {
     return xtd::convert::to_uint64(value);
   }
   
@@ -13092,7 +13092,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   /// @par Namespace
   /// xtd
@@ -13102,16 +13102,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// std::any value = true;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(std::any value) {
+  inline ulong as<ulong>(std::any value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13120,16 +13120,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// bool value = true;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(bool value) {
+  inline ulong as<ulong>(bool value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13138,16 +13138,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// xtd::byte value = 42;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(xtd::byte value) {
+  inline ulong as<ulong>(xtd::byte value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -13157,16 +13157,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char value = 'a';
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(char value) {
+  inline ulong as<ulong>(char value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -13176,16 +13176,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char8 value = u8'a';
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(char8 value) {
+  inline ulong as<ulong>(char8 value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -13195,16 +13195,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char16 value = u'a';
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(char16 value) {
+  inline ulong as<ulong>(char16 value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -13214,16 +13214,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char32 value = u'a';
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(char32 value) {
+  inline ulong as<ulong>(char32 value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -13233,16 +13233,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// wchar value = u'a';
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(wchar value) {
+  inline ulong as<ulong>(wchar value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13251,16 +13251,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// decimal value = 42.50l;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(decimal value) {
+  inline ulong as<ulong>(decimal value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13269,16 +13269,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// double value = 42.50;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(double value) {
+  inline ulong as<ulong>(double value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13287,16 +13287,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// float value = 42.50f;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(float value) {
+  inline ulong as<ulong>(float value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13305,16 +13305,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// int16 value = 42;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(int16 value) {
+  inline ulong as<ulong>(int16 value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13323,16 +13323,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// int32 value = 42;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(int32 value) {
+  inline ulong as<ulong>(int32 value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13341,16 +13341,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// int64 value = 42l;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(int64 value) {
+  inline ulong as<ulong>(int64 value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13359,16 +13359,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// slong value = 42ll;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(slong value) {
+  inline ulong as<ulong>(slong value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13377,16 +13377,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// sbyte value = 42ll;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(sbyte value) {
+  inline ulong as<ulong>(sbyte value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13395,16 +13395,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// uint16 value = 42u;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(uint16 value) {
+  inline ulong as<ulong>(uint16 value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13413,16 +13413,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// uint32 value = 42u;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(uint32 value) {
+  inline ulong as<ulong>(uint32 value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13431,16 +13431,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// uint64 value = 42ul;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(uint64 value) {
+  inline ulong as<ulong>(uint64 value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13448,17 +13448,17 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42ull;
-  /// ullong result = as<ullong>(value);
+  /// ulong value = 42ull;
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(ullong value) {
+  inline ulong as<ulong>(ulong value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -13468,18 +13468,18 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// ustring value = "42";
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(const xtd::ustring& value) {
+  inline ulong as<ulong>(const xtd::ustring& value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
-  /// @return A new ullong object converted from value.
-  /// @exception xtd::argument_exception value does not represent a ullong.
+  /// @return A new ulong object converted from value.
+  /// @exception xtd::argument_exception value does not represent a ulong.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13488,16 +13488,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// ustring value = "0x2A";
-  /// ullong result = as<ullong>(value, 16);
+  /// ulong result = as<ulong>(value, 16);
   /// @endcode
   template<>
-  inline ullong as<ullong>(const xtd::ustring& value, xtd::byte from_base) {
+  inline ulong as<ulong>(const xtd::ustring& value, xtd::byte from_base) {
     return xtd::convert::to_ullong(value, from_base);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -13507,16 +13507,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// string value = "42";
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(const std::string& value) {
+  inline ulong as<ulong>(const std::string& value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -13526,16 +13526,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// u8string value = u8"42";
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(const std::u8string& value) {
+  inline ulong as<ulong>(const std::u8string& value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -13545,16 +13545,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// u16string value = u"42";
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(const std::u16string& value) {
+  inline ulong as<ulong>(const std::u16string& value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -13564,16 +13564,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// u32string value = U"42";
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(const std::u32string& value) {
+  inline ulong as<ulong>(const std::u32string& value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -13583,16 +13583,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// wstring value = L"42";
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(const std::wstring& value) {
+  inline ulong as<ulong>(const std::wstring& value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -13602,16 +13602,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const char* value = "42";
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(const char* value) {
+  inline ulong as<ulong>(const char* value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -13621,16 +13621,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char* value = "42";
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(char* value) {
+  inline ulong as<ulong>(char* value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -13640,16 +13640,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const char8* value = u8"42";
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(const char8* value) {
+  inline ulong as<ulong>(const char8* value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -13659,16 +13659,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char8* value = u8"42";
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(char8* value) {
+  inline ulong as<ulong>(char8* value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -13678,16 +13678,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const char16* value = u"42";
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(const char16* value) {
+  inline ulong as<ulong>(const char16* value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -13697,16 +13697,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char16* value = u"42";
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(char16* value) {
+  inline ulong as<ulong>(char16* value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -13716,16 +13716,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const char32* value = U"42";
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(const char32* value) {
+  inline ulong as<ulong>(const char32* value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -13735,16 +13735,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char32* value = U"42";
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(char32* value) {
+  inline ulong as<ulong>(char32* value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -13754,16 +13754,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// const wchar* value = L"42";
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(const wchar* value) {
+  inline ulong as<ulong>(const wchar* value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Namespace
   /// xtd
@@ -13773,16 +13773,16 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// wchar* value = L"42";
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ullong as<ullong>(wchar* value) {
+  inline ulong as<ulong>(wchar* value) {
     return xtd::convert::to_ullong(value);
   }
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   /// @par Namespace
   /// xtd
@@ -13792,7 +13792,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// std::any value = true;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
   inline ustring as<ustring>(std::any value) {
@@ -13801,7 +13801,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13810,7 +13810,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// bool value = true;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
   inline ustring as<ustring>(bool value) {
@@ -13819,7 +13819,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13828,7 +13828,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// xtd::byte value = 42;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
   inline ustring as<ustring>(xtd::byte value) {
@@ -13857,7 +13857,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -13867,7 +13867,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char value = 'a';
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
   inline ustring as<ustring>(char value) {
@@ -13876,7 +13876,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -13886,7 +13886,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char8 value = u8'a';
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
   inline ustring as<ustring>(char8 value) {
@@ -13895,7 +13895,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -13905,7 +13905,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char16 value = u'a';
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
   inline ustring as<ustring>(char16 value) {
@@ -13914,7 +13914,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -13924,7 +13924,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// char32 value = u'a';
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
   inline ustring as<ustring>(char32 value) {
@@ -13933,7 +13933,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Namespace
   /// xtd
@@ -13943,7 +13943,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// wchar value = u'a';
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
   inline ustring as<ustring>(wchar value) {
@@ -13952,7 +13952,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13961,7 +13961,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// decimal value = 42.50l;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
   inline ustring as<ustring>(decimal value) {
@@ -13970,7 +13970,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13979,7 +13979,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// double value = 42.50;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
   inline ustring as<ustring>(double value) {
@@ -13988,7 +13988,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13997,7 +13997,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// float value = 42.50f;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
   inline ustring as<ustring>(float value) {
@@ -14006,7 +14006,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14015,7 +14015,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// int16 value = 42;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
   inline ustring as<ustring>(int16 value) {
@@ -14044,7 +14044,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14053,7 +14053,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// int32 value = 42;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
   inline ustring as<ustring>(int32 value) {
@@ -14082,7 +14082,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14091,7 +14091,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// int64 value = 42l;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
   inline ustring as<ustring>(int64 value) {
@@ -14120,7 +14120,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14129,7 +14129,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// slong value = 42ll;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
   inline ustring as<ustring>(slong value) {
@@ -14158,7 +14158,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14167,7 +14167,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// sbyte value = 42ll;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
   inline ustring as<ustring>(sbyte value) {
@@ -14196,7 +14196,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14205,7 +14205,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// uint16 value = 42u;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
   inline ustring as<ustring>(uint16 value) {
@@ -14234,7 +14234,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14243,7 +14243,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// uint32 value = 42u;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
   inline ustring as<ustring>(uint32 value) {
@@ -14272,7 +14272,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14281,7 +14281,7 @@ namespace xtd {
   /// @par Examples
   /// @code
   /// uint64 value = 42ul;
-  /// ullong result = as<ullong>(value);
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
   inline ustring as<ustring>(uint64 value) {
@@ -14310,7 +14310,7 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
-  /// @return A new ullong object converted from value.
+  /// @return A new ulong object converted from value.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14318,11 +14318,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42ull;
-  /// ullong result = as<ullong>(value);
+  /// ulong value = 42ull;
+  /// ulong result = as<ulong>(value);
   /// @endcode
   template<>
-  inline ustring as<ustring>(ullong value) {
+  inline ustring as<ustring>(ulong value) {
     return xtd::convert::to_string(value);
   }
   
@@ -14338,11 +14338,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
-  /// ullong value = 42;
+  /// ulong value = 42;
   /// ustring result = as<ustring>(value, 16);
   /// @endcode
   template<>
-  inline ustring as<ustring>(ullong value, xtd::byte from_base) {
+  inline ustring as<ustring>(ulong value, xtd::byte from_base) {
     return xtd::convert::to_string(value, from_base);
   }
   
