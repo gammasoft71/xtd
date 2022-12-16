@@ -38,10 +38,13 @@ namespace xtd {
 }
 
 /// @brief add initialize class method to class test.
-/// @param method_name cleanup class method to add.
+/// @param method_name The class initilize method to add.
 /// @par Library
 /// xtd.tunit
 /// @ingroup xtd_tunit
+/// @par Examples
+/// The following example shows how to use #class_initialize_ helper.
+/// @include test_class.cpp
 #define class_initialize_(method_name) \
   __##method_name##_static() {} \
   class __class_initialize_attribute : public xtd::tunit::class_initialize_attribute { \
