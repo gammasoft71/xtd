@@ -62,6 +62,7 @@ add_sources(
   src/xtd/tunit/assume.cpp
   src/xtd/tunit/console_unit_test.cpp
   src/xtd/tunit/base_assert.cpp
+  src/xtd/tunit/directory_assert.cpp
   src/xtd/tunit/settings.cpp
   src/xtd/tunit/tunit_main.cpp
   src/xtd/tunit/test.cpp
