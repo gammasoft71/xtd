@@ -187,24 +187,24 @@ namespace xtd::tests {
       assert::is_false(is<uint64>(v), csf_);
     }
     
-    void test_method_(is_ushort_with_ushort) {
-      ushort v = 42;
-      assert::is_true(is<ushort>(v), csf_);
+    void test_method_(is_unsigned_short_with_unsigned_short) {
+      unsigned short v = 42;
+      assert::is_true(is<unsigned short>(v), csf_);
     }
     
-    void test_method_(is_ushort_without_ushort) {
+    void test_method_(is_unsigned_short_without_unsigned_short) {
       bool v = true;
-      assert::is_false(is<ushort>(v), csf_);
+      assert::is_false(is<unsigned short>(v), csf_);
     }
     
-    void test_method_(is_uint_with_uint) {
-      uint v = 42;
-      assert::is_true(is<uint>(v), csf_);
+    void test_method_(is_unsigned_int_with_unsigned_int) {
+      unsigned int v = 42;
+      assert::is_true(is<unsigned int>(v), csf_);
     }
     
-    void test_method_(is_uint_without_uint) {
+    void test_method_(is_unsigned_int_without_unsigned_int) {
       bool v = true;
-      assert::is_false(is<uint>(v), csf_);
+      assert::is_false(is<unsigned int>(v), csf_);
     }
     
     void test_method_(is_ulong_with_unsigned_long) {
