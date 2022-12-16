@@ -14,8 +14,8 @@ namespace {
     int y = 0;
   };
   
-  template<typename Char>
-  std::basic_ostream<Char>& operator <<(std::basic_ostream<Char>& os, const ::point& p) {
+  template<typename char_t>
+  std::basic_ostream<char_t>& operator <<(std::basic_ostream<char_t>& os, const ::point& p) {
     return os << xtd::to_string(p, ustring::empty_string());
   }
 }

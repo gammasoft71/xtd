@@ -13,8 +13,8 @@ public:
   int h = 0;
 };
 
-template<typename Char>
-std::basic_ostream<Char>& operator <<(std::basic_ostream<Char>& os, const ::size_wsof& p) {
+template<typename char_t>
+std::basic_ostream<char_t>& operator <<(std::basic_ostream<char_t>& os, const ::size_wsof& p) {
   return os << "(" << p.w << ", " << p.h << ")";
 }
 
