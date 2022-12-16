@@ -22,7 +22,7 @@ namespace xtd {
     /// @ingroup xtd_tunit tunit
     class tunit_export_ settings final {
     public:
-      /// @name Methods
+      /// @name Properties
       
       /// @{
       /// @brief Creates new instance of settings.
