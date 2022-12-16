@@ -4,11 +4,11 @@
 #pragma once
 
 #include "../tunit_export.h"
+#include "__default_insert_basic_ostream_operator.h"
 #include "__demangle.h"
 #include "__tunit_join__items.h"
 #include "abort_error.h"
 #include "assert_error.h"
-#include "default_insert_basic_ostream_operator.h"
 #include "ignore_error.h"
 #include <xtd/types.h>
 #include <xtd/diagnostics/stack_frame.h>
