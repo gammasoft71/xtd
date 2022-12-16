@@ -17,7 +17,6 @@
 #include "tunit/collection_assume.h"
 #include "tunit/collection_valid.h"
 #include "tunit/console_unit_test.h"
-#include "tunit/default_insert_basic_ostream_operator.h"
 #include "tunit/default_main.h"
 #include "tunit/directory_assert.h"
 #include "tunit/directory_assume.h"

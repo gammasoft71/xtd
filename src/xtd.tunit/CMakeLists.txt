@@ -8,6 +8,7 @@ add_include_directories(include)
 add_references(xtd.core)
 add_sources(
   include/xtd/tunit/__console_color.h
+  include/xtd/tunit/__default_insert_basic_ostream_operator.h
   include/xtd/tunit/__demangle.h
   include/xtd/tunit/__google_test_markers.h
   include/xtd/tunit/__tunit_join__items.h
@@ -23,7 +24,6 @@ add_sources(
   include/xtd/tunit/collection_assume.h
   include/xtd/tunit/collection_valid.h
   include/xtd/tunit/console_unit_test.h
-  include/xtd/tunit/default_insert_basic_ostream_operator.h
   include/xtd/tunit/default_main.h
   include/xtd/tunit/directory_assert.h
   include/xtd/tunit/directory_assume.h
