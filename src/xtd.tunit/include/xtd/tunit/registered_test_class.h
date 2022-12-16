@@ -18,12 +18,15 @@ namespace xtd {
     /// @ingroup xtd_tunit tunit
     class registered_test_class final {
     public:
-      registered_test_class(const std::string& name, std::shared_ptr<xtd::tunit::test_class> test_class) noexcept : tc_(test_class) {tc_->name_ = ustring(name).replace(' ', '_');}
+      /// @brief Initialize a new registered_test_class instance.
+      /// @param name The name associate to the test_class.
+      /// @remarks The name is the name of the test class displayed when running the tests.
+      registered_test_class(const std::string& name, std::shared_ptr<xtd::tunit::test_class> test_class) noexcept;
       
     private:
       friend class xtd::tunit::unit_test;
       
-      const std::shared_ptr<xtd::tunit::test_class>& test() const noexcept {return tc_;}
+      const std::shared_ptr<xtd::tunit::test_class>& test() const noexcept;
       
       std::shared_ptr<xtd::tunit::test_class> tc_;
     };
