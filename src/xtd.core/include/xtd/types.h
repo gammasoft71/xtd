@@ -26,7 +26,7 @@ namespace xtd {
   /// @ingroup xtd_core types
   using byte = uint_least8_t;
   
-  /// @brief Represents a 16-bit unicode character.
+  /// @brief Represents a 8-bit unicode character.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -34,7 +34,7 @@ namespace xtd {
   /// @ingroup xtd_core types
   using char8 = char8_t;
   
-  /// @brief Represents a 8-bit unicode character.
+  /// @brief Represents a 16-bit unicode character.
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -170,6 +170,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
+  /// @remarks Represents a 32-bit unicode character on Linux and many other non-Windows systems, but a 16-bit unicode character on Windows.
   using wchar = wchar_t;
 }
 
