@@ -1083,7 +1083,7 @@ namespace xtd {
       /// @code
       /// std::invalid_argument except("invalid argument");
       /// xtd::tunit::valid::is_instance_of<std::logic_error>(except); // test ok.
-      /// xtd::tunit::valid::is_instance_of<std::bad_cast>(except); test fails
+      /// xtd::tunit::valid::is_instance_of<std::bad_cast>(except); // test fails
       /// @endcode
       template<typename type_t, typename value_t>
       static void is_instance_of(const value_t& value) {is_instance_of<type_t>(value, "", xtd::diagnostics::stack_frame::empty());}
@@ -1095,7 +1095,7 @@ namespace xtd {
       /// @code
       /// std::invalid_argument except("invalid argument");
       /// xtd::tunit::valid::is_instance_of<std::logic_error>(except, csf_); // test ok.
-      /// xtd::tunit::valid::is_instance_of<std::bad_cast>(except, csf_); test fails
+      /// xtd::tunit::valid::is_instance_of<std::bad_cast>(except, csf_); // test fails
       /// @endcode
       template<typename type_t, typename value_t>
       static void is_instance_of(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame) {is_instance_of<type_t>(value, "", stack_frame);}
@@ -1107,7 +1107,7 @@ namespace xtd {
       /// @code
       /// std::invalid_argument except("invalid argument");
       /// xtd::tunit::valid::is_instance_of<std::logic_error>(except, "User message..."); // test ok.
-      /// xtd::tunit::valid::is_instance_of<std::bad_cast>(except, "User message..."); test fails
+      /// xtd::tunit::valid::is_instance_of<std::bad_cast>(except, "User message..."); // test fails
       /// @endcode
       template<typename type_t, typename value_t>
       static void is_instance_of(const value_t& value, const xtd::ustring& message) {is_instance_of<type_t>(value, message, xtd::diagnostics::stack_frame::empty());}
@@ -1120,7 +1120,7 @@ namespace xtd {
       /// @code
       /// std::invalid_argument except("invalid argument");
       /// xtd::tunit::valid::is_instance_of<std::logic_error>(except, "User message...", csf_); // test ok.
-      /// xtd::tunit::valid::is_instance_of<std::bad_cast>(except, "User message...", csf_); test fails
+      /// xtd::tunit::valid::is_instance_of<std::bad_cast>(except, "User message...", csf_); // test fails
       /// @endcode
       template<typename type_t, typename value_t>
       static void is_instance_of(const value_t& value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
@@ -1668,7 +1668,7 @@ namespace xtd {
       /// @code
       /// std::invalid_argument except("invalid argument");
       /// xtd::tunit::valid::is_not_instance_of<std::bad_cast>(except); // test ok.
-      /// xtd::tunit::valid::is_not_instance_of<std::logic_error>(except); test fails
+      /// xtd::tunit::valid::is_not_instance_of<std::logic_error>(except); // test fails
       /// @endcode
       template<typename type_t, typename value_t>
       static void is_not_instance_of(const value_t& value) {is_not_instance_of<type_t>(value, "", xtd::diagnostics::stack_frame::empty());}
@@ -1680,7 +1680,7 @@ namespace xtd {
       /// @code
       /// std::invalid_argument except("invalid argument");
       /// xtd::tunit::valid::is_not_instance_of<std::bad_cast>(except, csf_); // test ok.
-      /// xtd::tunit::valid::is_not_instance_of<std::logic_error>(except, csf_); test fails
+      /// xtd::tunit::valid::is_not_instance_of<std::logic_error>(except, csf_); // test fails
       /// @endcode
       template<typename type_t, typename value_t>
       static void is_not_instance_of(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame) {is_not_instance_of<type_t>(value, "", stack_frame);}
@@ -1692,7 +1692,7 @@ namespace xtd {
       /// @code
       /// std::invalid_argument except("invalid argument");
       /// xtd::tunit::valid::is_not_instance_of<std::bad_cast>(except, "User message..."); // test ok.
-      /// xtd::tunit::valid::is_not_instance_of<std::logic_error>(except, "User message..."); test fails
+      /// xtd::tunit::valid::is_not_instance_of<std::logic_error>(except, "User message..."); // test fails
       /// @endcode
       template<typename type_t, typename value_t>
       static void is_not_instance_of(const value_t& value, const xtd::ustring& message) {is_not_instance_of<type_t>(value, message, xtd::diagnostics::stack_frame::empty());}
@@ -1705,7 +1705,7 @@ namespace xtd {
       /// @code
       /// std::invalid_argument except("invalid argument");
       /// xtd::tunit::valid::is_not_instance_of<std::bad_cast>(except, "User message...", csf_); // test ok.
-      /// xtd::tunit::valid::is_not_instance_of<std::logic_error>(except, "User message...", csf_); test fails
+      /// xtd::tunit::valid::is_not_instance_of<std::logic_error>(except, "User message...", csf_); // test fails
       /// @endcode
       template<typename type_t, typename value_t>
       static void is_not_instance_of(const value_t& value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
