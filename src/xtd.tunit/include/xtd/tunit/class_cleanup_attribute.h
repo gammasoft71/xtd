@@ -22,7 +22,6 @@ namespace xtd {
       /// @param method Cleanup class method.
       template<typename test_class_t>
       class_cleanup_attribute(const std::string& name, test_class_t& test_class, void (*method)()) noexcept :  class_cleanup_attribute(name, test_class, method, xtd::diagnostics::stack_frame()) {}
-      
       /// @brief Creates new instance of class_cleanup_attribute attribute.
       /// @param name Name of attribute
       /// @param test_class xtd::tunit::class_test containing clean_up method.
