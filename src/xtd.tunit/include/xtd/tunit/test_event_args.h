@@ -18,7 +18,7 @@ namespace xtd {
     /// @ingroup xtd_tunit tunit events
     class test_event_args : public xtd::tunit::tunit_event_args {
     public:
-      /// @name Constructoers
+      /// @name Constructors
       
       /// @{
       /// @brief Create a new instance of class class_event_args.
