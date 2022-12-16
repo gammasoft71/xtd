@@ -75,6 +75,10 @@ namespace xtd {
       /// @return The actual value string. Can be empty.
       const std::string& actual() const noexcept;
       
+      /// @brief Gets the elapsed time of the test method.
+      /// @return The elapsed time of the test method.
+      std::chrono::milliseconds elapsed_time() const noexcept;
+
       /// @brief Gets the expect value string.
       /// @return The expect value string. Can be empty.
       const std::string& expect() const noexcept;
@@ -118,10 +122,6 @@ namespace xtd {
       /// @brief Gets the user message.
       /// @return The user message.
       const std::string& user_message() const noexcept;
-      
-      /// @brief Gets the elapsed time of the test method.
-      /// @return The elapsed time of the test method.
-      std::chrono::milliseconds elapsed_time() const noexcept;
       /// @}
       
       /// @cond
