@@ -5,6 +5,7 @@
 #include "tunit_main.h"
 
 /// @brief If you define TUNIT_CONFIG_MAIN before including xtd.tunit.h include, a main entry point is generated for you.
+/// @ingroup xtd_tunit tunit
 /// @par Examples
 /// This example shows how to use
 /// @include tunit_config_main.cpp TUNIT_CONFIG_MAIN
