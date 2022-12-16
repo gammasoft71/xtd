@@ -124,22 +124,6 @@ namespace xtd {
   /// @ingroup xtd_core types
   using type = std::type_info;
   
-  /// @brief Represents a 8-bit unsigned integer.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core types
-  using uchar = unsigned char;
-  
-  /// @brief Represents a 32-bit unsigned integer.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core types
-  using uint = unsigned int;
-  
   /// @brief Represents a 16-bit unsigned integer.
   /// @par Namespace
   /// xtd
@@ -179,14 +163,6 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   using ulong = xtd::native::__ulong__; // Workaround: On linux 64 bits unfortunately 'uint_least64_t' is an alias on 'unigned long' and not on 'unsigned long long int' as other platforms. In order to avoid conflicts in operator or method overloads, it is necessary to give the type that is not taken into account.
-
-  /// @brief Represents a 16-bit unsigned integer.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core types
-  using ushort = unsigned short;
   
   /// @brief Represents a wide character.
   /// @par Namespace
