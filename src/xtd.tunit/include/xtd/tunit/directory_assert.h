@@ -41,8 +41,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::are_equal(d1, d2); // test ok.
       /// xtd::tunit::directory_assert::are_equal(d1, d2); // test throws an assert_error exception.
       /// @endcode
-      static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual) {are_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
-      
+      static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual);
       /// @brief Asserts that two directories are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -54,8 +53,7 @@ namespace xtd {
       /// xtd::tunit::file_assert::are_equal(d1, d2, csf_); // test ok.
       /// xtd::tunit::file_assert::are_equal(d1, d2, csf_); // test throws an assert_error exception.
       /// @endcode
-      static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(expected, actual, "", stack_frame);}
-      
+      static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Asserts that two directories are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -67,8 +65,7 @@ namespace xtd {
       /// xtd::tunit::file_assert::are_equal(d1, d2, "User message..."); // test ok.
       /// xtd::tunit::file_assert::are_equal(d1, d2, "User message..."); // test throws an assert_error exception.
       /// @endcode
-      static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message) {are_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
-      
+      static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message);
       /// @brief Asserts that two directories are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -81,12 +78,7 @@ namespace xtd {
       /// xtd::tunit::file_assert::are_equal(d1, d2, "User message...", csf_); // test ok.
       /// xtd::tunit::file_assert::are_equal(d1, d2, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
-      static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        if (expected != actual)
-          base_assert::fail(base_assert::to_string(expected.path().string()), base_assert::to_string(actual.path().string()), message, stack_frame);
-        else
-          assert::succeed(message, stack_frame);
-      }
+      static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Asserts that two std::filesystem::directory_entry are not equal.
       /// @param expected the expected value.
@@ -98,8 +90,7 @@ namespace xtd {
       /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", csf_); // test ok.
       /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
-      static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual) {are_not_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
-      
+      static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual);
       /// @brief Asserts that two std::filesystem::directory_entry are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -111,8 +102,7 @@ namespace xtd {
       /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", csf_); // test ok.
       /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
-      static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(expected, actual, "", stack_frame);}
-      
+      static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Asserts that two std::filesystem::directory_entry are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -124,8 +114,7 @@ namespace xtd {
       /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", csf_); // test ok.
       /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
-      static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message) {are_not_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
-      
+      static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message);
       /// @brief Asserts that two std::filesystem::directory_entry are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -138,12 +127,7 @@ namespace xtd {
       /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", csf_); // test ok.
       /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
-      static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        if (expected != actual)
-          base_assert::fail(base_assert::to_string(expected.path().string()), base_assert::to_string(actual.path().string()), message, stack_frame);
-        else
-          assert::succeed(message, stack_frame);
-      }
+      static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
       #endif
       
       /// @brief Asserts that directory exists.
@@ -157,9 +141,8 @@ namespace xtd {
       /// xtd::tunit::file_assert::exists("Test1.txt"); // test ok.
       /// xtd::tunit::file_assert::exists("Test2.txt"); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void exists(const std::basic_string<Char>& directory) {exists(directory, "", xtd::diagnostics::stack_frame::empty());}
-      
+      template<typename char_t>
+      static void exists(const std::basic_string<char_t>& directory) {exists(directory, "", xtd::diagnostics::stack_frame::empty());}
       /// @brief Asserts that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -172,9 +155,8 @@ namespace xtd {
       /// xtd::tunit::file_assert::exists("Test1.txt", csf_); // test ok.
       /// xtd::tunit::file_assert::exists("Test2.txt", csf_); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void exists(const std::basic_string<Char>& directory, const xtd::diagnostics::stack_frame& stack_frame) {exists(directory, "", stack_frame);}
-      
+      template<typename char_t>
+      static void exists(const std::basic_string<char_t>& directory, const xtd::diagnostics::stack_frame& stack_frame) {exists(directory, "", stack_frame);}
       /// @brief Asserts that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -187,9 +169,8 @@ namespace xtd {
       /// xtd::tunit::file_assert::exists("Test1.txt", "User message..."); // test ok.
       /// xtd::tunit::file_assert::exists("Test2.txt", "User message..."); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void exists(const std::basic_string<Char>& directory, const std::string& message) {exists(directory, message, xtd::diagnostics::stack_frame::empty());}
-      
+      template<typename char_t>
+      static void exists(const std::basic_string<char_t>& directory, const std::string& message) {exists(directory, message, xtd::diagnostics::stack_frame::empty());}
       /// @brief Asserts that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -203,8 +184,8 @@ namespace xtd {
       /// xtd::tunit::file_assert::exists("Test1.txt" "User message...", csf_); // test ok.
       /// xtd::tunit::file_assert::exists("Test2.txt", "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void exists(const std::basic_string<Char>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+      template<typename char_t>
+      static void exists(const std::basic_string<char_t>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         struct stat info;
         if (stat(directory.c_str(), &info) != 0 || (info.st_mode & S_IFDIR) != S_IFDIR)
           base_assert::fail("directory exists", base_assert::to_string(directory), message, stack_frame);
@@ -213,14 +194,14 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename Char>
-      static void exists(const Char* directory) {exists(directory, "", xtd::diagnostics::stack_frame::empty());}
-      template<typename Char>
-      static void exists(const Char* directory, const xtd::diagnostics::stack_frame& stack_frame) {exists(directory, "", stack_frame);}
-      template<typename Char>
-      static void exists(const Char* directory, const std::string& message) {exists(directory, message, xtd::diagnostics::stack_frame::empty());}
-      template<typename Char>
-      static void exists(const Char* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {exists(std::basic_string<Char>(directory), message, stack_frame);}
+      template<typename char_t>
+      static void exists(const char_t* directory) {exists(directory, "", xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void exists(const char_t* directory, const xtd::diagnostics::stack_frame& stack_frame) {exists(directory, "", stack_frame);}
+      template<typename char_t>
+      static void exists(const char_t* directory, const std::string& message) {exists(directory, message, xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void exists(const char_t* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {exists(std::basic_string<char_t>(directory), message, stack_frame);}
       /// @endcond
       
       /// @brief Asserts that file not exists.
@@ -234,9 +215,8 @@ namespace xtd {
       /// xtd::tunit::file_assert::does_not_exist("Test2.txt"); // test ok.
       /// xtd::tunit::file_assert::does_not_exist("Test1.txt"); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void does_not_exist(const std::basic_string<Char>& directory) {does_not_exist(directory, "", xtd::diagnostics::stack_frame::empty());}
-      
+      template<typename char_t>
+      static void does_not_exist(const std::basic_string<char_t>& directory) {does_not_exist(directory, "", xtd::diagnostics::stack_frame::empty());}
       /// @brief Asserts that file not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -249,9 +229,8 @@ namespace xtd {
       /// xtd::tunit::file_assert::does_not_exist("Test2.txt", csf_); // test ok.
       /// xtd::tunit::file_assert::does_not_exist("Test1.txt", csf_); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void does_not_exist(const std::basic_string<Char>& directory, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(directory, "", stack_frame);}
-      
+      template<typename char_t>
+      static void does_not_exist(const std::basic_string<char_t>& directory, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(directory, "", stack_frame);}
       /// @brief Asserts that file not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -264,9 +243,8 @@ namespace xtd {
       /// xtd::tunit::file_assert::does_not_exist("Test2.txt", "User message..."); // test ok.
       /// xtd::tunit::file_assert::does_not_exist("Test1.txt", "User message..."); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void does_not_exist(const std::basic_string<Char>& directory, const std::string& message) {does_not_exist(directory, message, xtd::diagnostics::stack_frame::empty());}
-      
+      template<typename char_t>
+      static void does_not_exist(const std::basic_string<char_t>& directory, const std::string& message) {does_not_exist(directory, message, xtd::diagnostics::stack_frame::empty());}
       /// @brief Asserts that file not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -280,8 +258,8 @@ namespace xtd {
       /// xtd::tunit::file_assert::does_not_exist("Test2.txt" "User message...", csf_); // test ok.
       /// xtd::tunit::file_assert::does_not_exist("Test1.txt", "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void does_not_exist(const std::basic_string<Char>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+      template<typename char_t>
+      static void does_not_exist(const std::basic_string<char_t>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         struct stat info;
         if (stat(directory.c_str(), &info) == 0 && (info.st_mode & S_IFDIR) == S_IFDIR)
           base_assert::fail("not directory exists", base_assert::to_string(directory), message, stack_frame);
@@ -290,14 +268,14 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename Char>
-      static void does_not_exist(const Char* directory) {does_not_exist(directory, "", xtd::diagnostics::stack_frame::empty());}
-      template<typename Char>
-      static void does_not_exist(const Char* directory, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(directory, "", stack_frame);}
-      template<typename Char>
-      static void does_not_exist(const Char* directory, const std::string& message) {does_not_exist(directory, message, xtd::diagnostics::stack_frame::empty());}
-      template<typename Char>
-      static void does_not_exist(const Char* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(std::basic_string<Char>(directory), message, stack_frame);}
+      template<typename char_t>
+      static void does_not_exist(const char_t* directory) {does_not_exist(directory, "", xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void does_not_exist(const char_t* directory, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(directory, "", stack_frame);}
+      template<typename char_t>
+      static void does_not_exist(const char_t* directory, const std::string& message) {does_not_exist(directory, message, xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void does_not_exist(const char_t* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(std::basic_string<char_t>(directory), message, stack_frame);}
       /// @endcond
     };
   }
