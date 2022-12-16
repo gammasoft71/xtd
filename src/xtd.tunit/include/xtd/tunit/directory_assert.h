@@ -288,7 +288,7 @@ namespace xtd {
 /// @brief Asserts that directory exists.
 /// @param expected the expected value.
 /// @param actual the actual value.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::directory_assert, xtd::tunit::directory_assume and xtd::tunit::directory_valid classes.
@@ -304,7 +304,7 @@ namespace xtd {
 /// @brief Asserts that file not exists.
 /// @param expected the expected value.
 /// @param actual the actual value.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::directory_assert, xtd::tunit::directory_assume and xtd::tunit::directory_valid classes.
