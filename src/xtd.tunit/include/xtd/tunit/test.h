@@ -32,7 +32,7 @@ namespace xtd {
       
     public:
       test() = default;
-      test(const std::string& name, const std::function<void()>& method, const xtd::diagnostics::stack_frame& caller) noexcept : test(name, method, false, caller) {}
+      test(const std::string& name, const std::function<void()>& method, const xtd::diagnostics::stack_frame& stack_frame) noexcept : test(name, method, false, stack_frame) {}
       test(const std::string& name, const std::function<void()>& method, bool ignore, const xtd::diagnostics::stack_frame& stack_frame) noexcept :  stack_frame_(stack_frame), method_(method), name_(name), status_(ignore ? test_status::ignored : test_status::not_started) {}
       
       bool aborted() const noexcept {return status_ == test_status::aborted;}

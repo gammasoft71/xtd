@@ -14,7 +14,7 @@ namespace xtd {
       test_cleanup_attribute(const std::string& name, test_class_t& test_class, void (*method)()) noexcept :  test_cleanup_attribute(name, test_class, method, xtd::diagnostics::stack_frame()) {}
       
       template<typename test_class_t>
-      test_cleanup_attribute(const std::string& name, test_class_t& test_class, void (*method)(), const xtd::diagnostics::stack_frame& caller) noexcept {test_class.add_test_cleanup({name, method, caller});}
+      test_cleanup_attribute(const std::string& name, test_class_t& test_class, void (*method)(), const xtd::diagnostics::stack_frame& stack_frame) noexcept {test_class.add_test_cleanup({name, method, stack_frame});}
     };
   }
 }
