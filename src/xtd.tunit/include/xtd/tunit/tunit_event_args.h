@@ -19,16 +19,24 @@ namespace xtd {
     /// @ingroup xtd_tunit tunit events
     class tunit_event_args {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Create a new instance of class tunit_event_args
       explicit tunit_event_args(const xtd::tunit::unit_test& unit_test) : ut_(unit_test) {};
+      /// @}
       
       /// @cond
       tunit_event_args(const tunit_event_args&) = default;
       /// @endcond
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets current unit test.
       /// @return Current unit test.
       const xtd::tunit::unit_test& unit_test() const {return ut_;}
+      /// @}
       
     private:
       const xtd::tunit::unit_test& ut_;
