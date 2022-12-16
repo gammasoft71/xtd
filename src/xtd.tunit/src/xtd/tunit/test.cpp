@@ -24,6 +24,13 @@ const std::string& test::actual() const noexcept {
   return actual_;
 }
 
+std::chrono::milliseconds test::elapsed_time() const noexcept {
+  using namespace std::chrono_literals;
+  if (start_time_.ticks() == 0ms && end_time_point.ticks() == 0ms) return 0ms;
+  if (end_time_point.ticks() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>((date_time::now() - start_time_).ticks());
+  return std::chrono::duration_cast<std::chrono::milliseconds>((end_time_point - start_time_).ticks());
+}
+
 const std::string& test::expect() const noexcept {
   return expect_;
 }
@@ -66,13 +73,6 @@ const std::string& test::name() const noexcept {
 
 const std::string& test::user_message() const noexcept {
   return user_message_;
-}
-
-std::chrono::milliseconds test::elapsed_time() const noexcept {
-  using namespace std::chrono_literals;
-  if (start_time_.ticks() == 0ms && end_time_point.ticks() == 0ms) return 0ms;
-  if (end_time_point.ticks() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>((date_time::now() - start_time_).ticks());
-  return std::chrono::duration_cast<std::chrono::milliseconds>((end_time_point - start_time_).ticks());
 }
 
 test& test::current_test() {
