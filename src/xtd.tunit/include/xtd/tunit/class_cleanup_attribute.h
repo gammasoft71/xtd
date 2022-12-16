@@ -16,6 +16,9 @@ namespace xtd {
     /// @ingroup xtd_tunit tunit
     class class_cleanup_attribute {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Creates new instance of class_cleanup_attribute attribute.
       /// @param name Name of attribute
       /// @param test_class xtd::tunit::class_test containing clean_up method.
@@ -29,6 +32,7 @@ namespace xtd {
       /// @param stack_frame Contains information about current file and current line.
       template<typename test_class_t>
       class_cleanup_attribute(const std::string& name, test_class_t& test_class, void (*method)(), const xtd::diagnostics::stack_frame& stack_frame) noexcept {test_class.add_class_cleanup({name, method, stack_frame});}
+      /// @}
     };
   }
 }

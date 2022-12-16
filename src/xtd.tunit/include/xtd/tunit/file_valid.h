@@ -26,6 +26,9 @@ namespace xtd {
       file_valid() = delete;
       /// @endcond
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Validate that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -538,6 +541,7 @@ namespace xtd {
       template<typename char_t>
       static void does_not_exist(const char_t* file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(std::basic_string<char_t>(file), message, stack_frame);}
       /// @endcond
+      /// @}
     };
   }
 }

@@ -18,10 +18,14 @@ namespace xtd {
     /// @ingroup xtd_tunit tunit
     class registered_test_class final {
     public:
-      /// @brief Initialize a new registered_test_class instance.
+      /// @name Constructors
+      
+      /// @{
+      /// @brief Creates a new registered_test_class instance.
       /// @param name The name associate to the test_class.
       /// @remarks The name is the name of the test class displayed when running the tests.
       registered_test_class(const std::string& name, std::shared_ptr<xtd::tunit::test_class> test_class) noexcept;
+      /// @}
       
     private:
       friend class xtd::tunit::unit_test;

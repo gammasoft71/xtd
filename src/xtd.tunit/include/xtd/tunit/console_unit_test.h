@@ -22,6 +22,9 @@ namespace xtd {
     /// @include console_unit_test.cpp
     class console_unit_test final : public ostream_unit_test {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Create a new console unit test
       console_unit_test();
       
@@ -29,6 +32,7 @@ namespace xtd {
       /// @param argc Argument count from main method.
       /// @param argv Arguments array from main method.
       console_unit_test(int argc, char* argv[]);
+      /// @}
     };
   }
 }

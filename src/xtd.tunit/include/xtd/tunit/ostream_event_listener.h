@@ -23,10 +23,17 @@ namespace xtd {
     /// @include ostream_unit_test.cpp
     class ostream_event_listener : public xtd::tunit::event_listener {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Creates new instance ostream event lister with ostream specified.
       /// @param os std::ostream where events are written.
       ostream_event_listener(std::ostream& os) noexcept;
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Occurs when class is ended.
       /// @param class_event_args Contains class event parameters.
       void on_class_end(const xtd::tunit::class_event_args& e) const override;
@@ -70,6 +77,7 @@ namespace xtd {
       /// @brief Occurs when unit test cleanup is started.
       /// @param tunit_event_args Contains unit test event parameters.
       void on_unit_test_start(const xtd::tunit::tunit_event_args& e) const override;
+      /// @}
       
     private:
       std::ostream& os_;
