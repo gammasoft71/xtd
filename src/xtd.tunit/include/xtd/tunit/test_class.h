@@ -32,19 +32,26 @@ namespace xtd {
     /// @remarks Typically this is a representation a test class that contains test methods.
     class tunit_export_ test_class {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Creates a new test_class instance.
       test_class() {
         // The following variables are a hack to ensure that GoogleTestAdapter (Microsoft Visual Studio) will detect the tunit application as a google test application...
         // See https://github.com/csoltenborn/GoogleTestAdapter/blob/master/GoogleTestAdapter/Core/GoogleTestConstants.cs
         __unused_google_test_markers__();
       }
+      /// @}
+      
       /// @cond
       test_class(const test_class&) = default;
       test_class& operator =(const test_class&) = default;
       virtual ~test_class() = default;
       /// @endcond
       
+      /// @name Properties
       
+      /// @{
       /// @brief Gets the elapsed time of the test class.
       /// @return The elapsed time of the test class.
       std::chrono::milliseconds elapsed_time() const noexcept;
@@ -80,8 +87,12 @@ namespace xtd {
       /// @brief Gets the tests array of this test class.
       /// @return The tests array.
       const std::vector<xtd::tunit::test>& tests() const noexcept;
+      /// @}
       
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @brief Adds the class cleanup method.
       /// @param class_cleanup The class cleanup method.
       void add_class_cleanup(const xtd::tunit::test& class_cleanup) noexcept;
@@ -101,6 +112,7 @@ namespace xtd {
       /// @brief Adds a test method.
       /// @param test The a test method.
       void add_test_method(const xtd::tunit::test& test) noexcept;
+      /// @}
       
     private:
       friend class xtd::tunit::test;
