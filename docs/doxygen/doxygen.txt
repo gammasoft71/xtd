@@ -349,7 +349,8 @@ PREDEFINED             = "abstract_=: public xtd::static_object" \
                          "tunit_export_=" \
                          "typeof_=xtd::__s__::__typeof_" \
                          "unused_=" \
-                         "using_="
+                         "using_=" \
+                         __cpp_lib_filesystem
 EXPAND_AS_DEFINED      = 
 SKIP_FUNCTION_MACROS   = YES
 
