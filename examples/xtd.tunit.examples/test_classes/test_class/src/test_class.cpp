@@ -6,19 +6,19 @@ namespace unit_tests {
   // The class test must be declared with test_class_ helper.
   class test_class_(test) {
   public:
-    // This is the method that is called 1 time before test class run.
+    // This method is the method that is called just before the start of all tests. It is called only once.
     static void class_initialize_(class_initialize) {
     }
     
-    // This is the method that is called 1 time after test class run.
+    // This method is the method that is called just after all the tests are finished. It is called only once.
     static void class_cleanup_(class_cleanup) {
     }
     
-    // This is the method that is called before any tests in a fixture are run.
+    // This method is the method that is called just before a test method starts. It is called for each test.
     static void test_initialize_(test_initialize) {
     }
     
-    // This is the method that is called after any tests in a fixture are run.
+    // This method is the method that is called right after a test method is finished. It is called for each test.
     static void test_cleanup_(test_cleanup) {
     }
     
