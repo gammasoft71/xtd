@@ -1162,7 +1162,7 @@ namespace xtd {
 
 /// @brief Asserts that all collection items are of the type supplied or a derived type.
 /// @param value The object to verify
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::collection_assert, xtd::tunit::collection_assume and xtd::tunit::collection_valid classes.
@@ -1180,7 +1180,7 @@ namespace xtd {
 
 /// @brief Asserts that all collection items are not null.
 /// @param value The object to verify
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::collection_assert, xtd::tunit::collection_assume and xtd::tunit::collection_valid classes.
@@ -1200,7 +1200,7 @@ namespace xtd {
 
 /// @brief Asserts that all collection items are unique.
 /// @param value The object to verify
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::collection_assert, xtd::tunit::collection_assume and xtd::tunit::collection_valid classes.
@@ -1219,7 +1219,7 @@ namespace xtd {
 
 /// @brief Asserts that all collection items are equivalent.
 /// @param value The object to verify
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::collection_assert, xtd::tunit::collection_assume and xtd::tunit::collection_valid classes.
@@ -1237,7 +1237,7 @@ namespace xtd {
 
 /// @brief Asserts that all collection items are equivalent.
 /// @param value The object to verify
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::collection_assert, xtd::tunit::collection_assume and xtd::tunit::collection_valid classes.
@@ -1255,7 +1255,7 @@ namespace xtd {
 
 /// @brief Asserts that collection is ordered.
 /// @param value The value to check is empty.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::collection_assert, xtd::tunit::collection_assume and xtd::tunit::collection_valid classes.

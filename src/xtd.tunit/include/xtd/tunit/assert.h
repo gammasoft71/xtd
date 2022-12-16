@@ -2387,7 +2387,7 @@ namespace xtd {
 /// @brief Asserts that two type are equal.
 /// @param expected the expected value.
 /// @param actual the actual value.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results .
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results .
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
@@ -2402,7 +2402,7 @@ namespace xtd {
 /// @brief Asserts that two type are not equal.
 /// @param expected the expected value.
 /// @param actual the actual value.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results .
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results .
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
@@ -2417,7 +2417,7 @@ namespace xtd {
 /// @brief Asserts that two objects do refer to differents objects.
 /// @param expected the expected value.
 /// @param actual the actual value.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
@@ -2438,7 +2438,7 @@ namespace xtd {
 /// @brief Asserts that two objects do refer to same objects.
 /// @param expected the expected value.
 /// @param actual the actual value.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
@@ -2459,7 +2459,7 @@ namespace xtd {
 /// @brief Asserts that collection contains an item.
 /// @param item object to verify.
 /// @param collection that contains object.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
@@ -2477,7 +2477,7 @@ namespace xtd {
 
 /// @brief Asserts that the staement does not throw an exception.
 /// @param statement The statement that verify.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
@@ -2494,7 +2494,7 @@ namespace xtd {
 #define does_not_throw_(...) __CMD_ASSERT_ARGS(does_not_throw, __VA_ARGS__)
 
 /// @brief Throws an xtd::tunit::assert_error exception. This is used by the other assert functions.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @exception xtd::tunit::assert_error If bad assertion.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
@@ -2522,7 +2522,7 @@ namespace xtd {
 
 /// @brief Asserts that collection contains an item.
 /// @param value The value to check is empty.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
@@ -2599,7 +2599,7 @@ namespace xtd {
 
 /// @brief Asserts that an object is of the type supplied or a derived type.
 /// @param value The object to verify
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
@@ -2636,7 +2636,7 @@ namespace xtd {
 /// @brief Asserts that the first value is is_less than or equal to the second value.
 /// @param val1 the first value.
 /// @param val2 the second value.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
@@ -2656,7 +2656,7 @@ namespace xtd {
 
 /// @brief Asserts that a value is NaN.
 /// @param value The value to check is NaN.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
@@ -2675,7 +2675,7 @@ namespace xtd {
 
 /// @brief Asserts that ta condition is negative.
 /// @param value The value to check is negative.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
@@ -2694,7 +2694,7 @@ namespace xtd {
 
 /// @brief Asserts that collection does not contain any item.
 /// @param value The value to check is empty.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
@@ -2731,7 +2731,7 @@ namespace xtd {
 
 /// @brief Asserts that the pointer is not null.
 /// @param pointer The pointer to check is null.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
@@ -2751,7 +2751,7 @@ namespace xtd {
 
 /// @brief Asserts that ta condition is not zero.
 /// @param value The value to check is not zero.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
@@ -2770,7 +2770,7 @@ namespace xtd {
 
 /// @brief Asserts that the pointer is null.
 /// @param pointer The pointer to check is null.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
@@ -2790,7 +2790,7 @@ namespace xtd {
 
 /// @brief Asserts that ta condition is positive.
 /// @param value The value to check is positive.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
@@ -2809,7 +2809,7 @@ namespace xtd {
 
 /// @brief Asserts that a condition is true.
 /// @param condition The condition to check is true.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
@@ -2846,7 +2846,7 @@ namespace xtd {
 #define is_zero_(...) __CMD_ASSERT_ARGS(is_zero, __VA_ARGS__)
 
 /// @brief Generates a success with a generic message. This is used by the other assert functions.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
@@ -2861,7 +2861,7 @@ namespace xtd {
 /// @brief Asserts that the statement throws a particular exception when called.
 /// @tparam exception_t The exception type that must be throw.
 /// @param statement The statement that verify.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
@@ -2879,7 +2879,7 @@ namespace xtd {
 
 /// @brief Asserts that the staement does not throw an exception.
 /// @param statement The statement that verify.
-/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @param message An optional user message to display if the assertion fails. This message can be seen in the unit test results.
 /// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
