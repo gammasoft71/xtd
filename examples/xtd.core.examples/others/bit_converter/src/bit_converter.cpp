@@ -5,8 +5,8 @@ using namespace xtd;
 int main() {
   const ustring formatter = "{0,25}{1,30}";
   
-  double a_doubl = 0.1111111111111111111;
-  float a_singl = 0.1111111111111111111F;
+  double a_double = 0.1111111111111111111;
+  float a_single = 0.1111111111111111111F;
   long long a_long = 1111111111111111111;
   int an_int = 1111111111;
   short a_short = 11111;
@@ -19,8 +19,8 @@ int main() {
   console::write_line(formatter, "--------", "----------");
   
   // Convert values to Byte arrays and display them.
-  console::write_line(formatter, a_doubl, bit_converter::to_string(bit_converter::get_bytes(a_doubl)));
-  console::write_line(formatter, a_singl, bit_converter::to_string(bit_converter::get_bytes(a_singl)));
+  console::write_line(formatter, a_double, bit_converter::to_string(bit_converter::get_bytes(a_double)));
+  console::write_line(formatter, a_single, bit_converter::to_string(bit_converter::get_bytes(a_single)));
   console::write_line(formatter, a_long, bit_converter::to_string(bit_converter::get_bytes(a_long)));
   console::write_line(formatter, an_int, bit_converter::to_string(bit_converter::get_bytes(an_int)));
   console::write_line(formatter, a_short, bit_converter::to_string(bit_converter::get_bytes(a_short)));
