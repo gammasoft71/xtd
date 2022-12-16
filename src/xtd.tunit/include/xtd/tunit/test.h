@@ -21,7 +21,7 @@ namespace xtd {
     class valid;
     /// @endcond
     
-    /// @brief Represents a test class.
+    /// @brief Represents a test method.
     /// @par Namespace
     /// xtd::tunit
     /// @par Library
