@@ -71,6 +71,7 @@ add_sources(
   src/xtd/tunit/settings.cpp
   src/xtd/tunit/string_assert.cpp
   src/xtd/tunit/string_assume.cpp
+  src/xtd/tunit/string_valid.cpp
   src/xtd/tunit/tunit_main.cpp
   src/xtd/tunit/test.cpp
   src/xtd/tunit/test_class.cpp
