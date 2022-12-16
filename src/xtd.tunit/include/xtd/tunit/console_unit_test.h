@@ -23,12 +23,12 @@ namespace xtd {
     class console_unit_test final : public ostream_unit_test {
     public:
       /// @brief Create a new console unit test
-      console_unit_test() : ostream_unit_test(std::cout) {}
+      console_unit_test();
       
       /// @brief Create a new console unit test with argv specified and argc specified.
       /// @param argc Argument count from main method.
       /// @param argv Arguments array from main method.
-      console_unit_test(int argc, char* argv[]) : ostream_unit_test(std::cout, argc, argv) {}
+      console_unit_test(int argc, char* argv[]);
     };
   }
 }
