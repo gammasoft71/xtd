@@ -10,6 +10,95 @@ const test_class* test::current_test_class_ = nullptr;
 const unit_test* test::current_unit_test_ = nullptr;
 intptr test::__internal_tunit_unit_tests_mode__ = reinterpret_cast<intptr>("");
 
+test::test(const std::string& name, const std::function<void()>& method, const xtd::diagnostics::stack_frame& stack_frame) noexcept : test(name, method, false, stack_frame) {
+}
+
+test::test(const std::string& name, const std::function<void()>& method, bool ignore, const xtd::diagnostics::stack_frame& stack_frame) noexcept : stack_frame_(stack_frame), method_(method), name_(name), status_(ignore ? test_status::ignored : test_status::not_started) {
+}
+
+bool test::aborted() const noexcept {
+  return status_ == test_status::aborted;
+}
+
+const std::string& test::actual() const noexcept {
+  return actual_;
+}
+
+const std::string& test::expect() const noexcept {
+  return expect_;
+}
+
+bool test::failed() const noexcept {
+  return status_ == test_status::failed;
+}
+
+bool test::ignored() const noexcept {
+  return status_ == test_status::ignored;
+}
+
+bool test::not_started() const noexcept {
+  return status_ == test_status::not_started;
+}
+
+bool test::succeed() const noexcept {
+  return status_ == test_status::succeed;
+}
+
+const xtd::diagnostics::stack_frame test::stack_frame() const noexcept {
+  return stack_frame_;
+}
+
+const xtd::date_time& test::start_time() const noexcept {
+  return start_time_;
+}
+
+std::function<void()> test::method() const noexcept {
+  return method_;
+}
+
+const std::string& test::message() const noexcept {
+  return message_;
+}
+
+const std::string& test::name() const noexcept {
+  return name_;
+}
+
+const std::string& test::user_message() const noexcept {
+  return user_message_;
+}
+
+std::chrono::milliseconds test::elapsed_time() const noexcept {
+  using namespace std::chrono_literals;
+  if (start_time_.ticks() == 0ms && end_time_point.ticks() == 0ms) return 0ms;
+  if (end_time_point.ticks() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>((date_time::now() - start_time_).ticks());
+  return std::chrono::duration_cast<std::chrono::milliseconds>((end_time_point - start_time_).ticks());
+}
+
+test& test::current_test() {
+  return *current_test_;
+}
+
+const test_class& test::current_test_class() {
+  return *current_test_class_;
+}
+
+const unit_test& test::current_unit_test() {
+  return *current_unit_test_;
+}
+
+bool test::has_current_test() {
+  return current_test_ != nullptr;
+}
+
+bool test::has_current_test_class() {
+  return current_test_class_ != nullptr;
+}
+
+bool test::has_current_unit_test() {
+  return current_unit_test_ != nullptr;
+}
+
 void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_class) {
   current_test_ = this;
   current_test_class_ = &test_class;
