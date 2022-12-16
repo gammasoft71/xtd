@@ -34,7 +34,7 @@ namespace xtd {
       settings& operator =(const settings&) = default;
       /// @endcond
       
-      /// @name Methods
+      /// @name Properties
       
       /// @{
       /// @brief Gets default settings instance.
