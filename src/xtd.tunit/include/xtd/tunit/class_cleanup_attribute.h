@@ -14,6 +14,10 @@ namespace xtd {
     /// @par Library
     /// xtd.tunit
     /// @ingroup xtd_tunit tunit
+    /// @remarks The class cleanup method is the method that is called just after all the tests are finished. It is called only once.
+    /// @par Examples
+    /// The following example shows how to use xtd::tunit::class_initialize_attribute class.
+    /// @include test_class_without_helpers.cpp
     class class_cleanup_attribute {
     public:
       /// @name Constructors
