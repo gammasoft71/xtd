@@ -29,7 +29,7 @@ namespace xtd {
     /// @par Library
     /// xtd.tunit
     /// @ingroup xtd_tunit tunit
-    /// @remarks Typically this is a representation a test class that contains test methods.
+    /// @remarks The class test_class must be the base class for all test classes defined in a test unit.
     /// @par Examples
     /// The following example shows how to use xtd::tunit::test_class class.
     /// @include test_class_without_helpers.cpp
@@ -146,49 +146,3 @@ namespace xtd {
     };
   }
 }
-
-/// @brief Helper to create a test_class in a test unit.
-/// @param class_name The name of the test class.
-/// @ingroup xtd_tunit tunit
-/// @par Examples
-/// The following example shows how to use #test_class_ helper.
-/// @include test_class.cpp
-#define test_class_(class_name) \
-  class_name;\
-  xtd::tunit::test_class_attribute<class_name> __##class_name##_attribute {#class_name}; \
-  class class_name : public xtd::tunit::test_class
-
-/// @brief Helper to create a test_class in a test unit from a specified class base.
-/// @param class_name The name of the test class.
-/// @ingroup xtd_tunit tunit
-/// @par Examples
-/// The following code show how to create a test class @c derived_class inherited from @c base_class :
-/// @code
-/// #include <xtd/xtd.tunit>
-///
-/// using namespace xtd::tunit;
-///
-/// namespace unit_tests {
-///   test_class_(base_class) {
-///   public:
-///     void test_method_(test1) {
-///       // Do test...
-///     }
-///   };
-///
-///   test_class_from_(derived_class, base_class) {
-///   public:
-///     void test_method_(test2) {
-///       // Do test...
-///     }
-///   };
-/// }
-///
-/// int main() {
-///   return console_unit_test().run();
-/// }
-/// @endcode
-#define test_class_from_(class_name, from_class_name) \
-  class_name;\
-  xtd::tunit::test_class_attribute<class_name> __##class_name##_attribute {#class_name}; \
-  class class_name : public from_class_name
