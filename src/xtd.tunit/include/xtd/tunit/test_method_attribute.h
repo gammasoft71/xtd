@@ -10,6 +10,11 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief Represents a test method attribute.
+    /// @par Namespace
+    /// xtd::tunit
+    /// @par Library
+    /// xtd.tunit
+    /// @ingroup xtd_tunit tunit
     /// @remarks The test method is the method that performs the unit test.
     /// @par Examples
     /// The following example shows how to use xtd::tunit::test_method_attribute class.
