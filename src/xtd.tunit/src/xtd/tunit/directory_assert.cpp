@@ -1,10 +1,11 @@
 #include "../../../include/xtd/tunit/directory_assert.h"
 
-using namespace std::filesystem;
 using namespace xtd;
 using namespace xtd::tunit;
 
 #if defined(__cpp_lib_filesystem)
+using namespace std::filesystem;
+
 void directory_assert::are_equal(const directory_entry& expected, const directory_entry& actual) {
   are_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());
 }
