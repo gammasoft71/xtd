@@ -67,6 +67,7 @@ add_sources(
   src/xtd/tunit/directory_valid.cpp
   src/xtd/tunit/ostream_event_listener.cpp
   src/xtd/tunit/ostream_unit_test.cpp
+  src/xtd/tunit/registered_test_class.cpp
   src/xtd/tunit/settings.cpp
   src/xtd/tunit/tunit_main.cpp
   src/xtd/tunit/test.cpp
