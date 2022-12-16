@@ -13,7 +13,7 @@ namespace xtd {
     /// @brief Represents a test class attribute.
     /// @remarks The test class attribute is used to to declare a test class in a unit test.
     /// @par Examples
-    /// The following example shows how to use xtd::tunit::test_class class.
+    /// The following example shows how to use xtd::tunit::test_class_attribute class.
     /// @include test_class_without_helpers.cpp
     template <typename test_class_t>
     class test_class_attribute final {
@@ -30,7 +30,7 @@ namespace xtd {
 }
 
 /// @brief Helper to create a test_class in a test unit.
-/// @param class_name The name of the test class.
+/// @param class_name The test class to add to unit test.
 /// @ingroup xtd_tunit tunit
 /// @par Examples
 /// The following example shows how to use #test_class_ helper.

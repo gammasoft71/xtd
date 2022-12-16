@@ -18,11 +18,18 @@ namespace xtd {
     /// @ingroup xtd_tunit tunit events
     class test_event_args : public xtd::tunit::tunit_event_args {
     public:
+      /// @name Constructoers
+      
+      /// @{
       /// @brief Create a new instance of class class_event_args.
       /// @param test Current test.
       /// @param test_class Current test_class.
       explicit test_event_args(const xtd::tunit::test& test, const xtd::tunit::test_class& test_class, const xtd::tunit::unit_test& unit_test) : xtd::tunit::tunit_event_args(unit_test), t_(test), tc_(test_class) {}
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets current test.
       /// @return Current test.
       const xtd::tunit::test& test() const noexcept {return t_;}
@@ -30,6 +37,7 @@ namespace xtd {
       /// @brief Gets current class test.
       /// @return Current class test.
       const xtd::tunit::test_class& test_class() const noexcept {return tc_;}
+      /// @}
       
     private:
       const xtd::tunit::test& t_;

@@ -37,11 +37,14 @@ namespace xtd {
   }
 }
 
-/// @brief Add cleanup class method to class test.
+/// @brief Add class cleanup method to class test.
+/// @param method_name The class cleanup method to add.
 /// @par Library
 /// xtd.tunit
 /// @ingroup xtd_tunit tunit
-/// @param method_name cleanup class method to add.
+/// @par Examples
+/// The following example shows how to use #class_cleanup_ helper.
+/// @include test_class.cpp
 #define class_cleanup_(method_name) \
   __##method_name##_static() {} \
   class __class_cleanup_attribute : public xtd::tunit::class_cleanup_attribute { \
