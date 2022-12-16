@@ -8,13 +8,27 @@
 namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
+    /// @brief Represents a test cleanup attribute.
     class test_cleanup_attribute {
     public:
+      /// @name Constructors
+      
+      /// @{
+      /// @brief Creates a new instance of test_cleanup_attribute with specified name, test_class and method.
+      /// @param name The name of the test class attribute.
+      /// @param test_class The test_class that will contians the test cleanup attribute.
+      /// @param method The test cleanup method.
       template<typename test_class_t>
       test_cleanup_attribute(const std::string& name, test_class_t& test_class, void (*method)()) noexcept :  test_cleanup_attribute(name, test_class, method, xtd::diagnostics::stack_frame()) {}
       
+      /// @brief Creates a new instance of test_cleanup_attribute with specified name, test class, method and stack frame.
+      /// @param name The name of the test class attribute.
+      /// @param test_class The test_class that will contians the test cleanup attribute.
+      /// @param method The test cleanup method.
+      /// @param stack_frame The stack frame of test cleanup method.
       template<typename test_class_t>
       test_cleanup_attribute(const std::string& name, test_class_t& test_class, void (*method)(), const xtd::diagnostics::stack_frame& stack_frame) noexcept {test_class.add_test_cleanup({name, method, stack_frame});}
+      /// @}
     };
   }
 }
