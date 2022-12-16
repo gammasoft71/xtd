@@ -22,17 +22,21 @@ namespace xtd {
     /// @ingroup xtd_tunit tunit
     class tunit_export_ settings final {
     public:
-      /// @name Properties
+      /// @name Constructors
       
       /// @{
       /// @brief Creates new instance of settings.
       settings() = default;
+      /// @}
       
       /// @cond
       settings(const settings&) = default;
       settings& operator =(const settings&) = default;
       /// @endcond
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Gets default settings instance.
       /// @return Default settings instance.
       static xtd::tunit::settings& default_settings() noexcept;

@@ -21,6 +21,9 @@ namespace xtd {
     /// @remarks All messages are written on the specified ostream.
     class ostream_unit_test : public xtd::tunit::unit_test {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Create a new console unit test with ostream specified.
       /// @param os The ostream to write events.
       explicit ostream_unit_test(std::ostream& os) noexcept;
@@ -30,17 +33,26 @@ namespace xtd {
       /// @param argc Argument count from main method.
       /// @param argv Arguments array from main method.
       ostream_unit_test(std::ostream& os, int argc, char* argv[]);
+      /// @}
       
+      /// @name Properties
+      
+      /// @{
       /// @brief Gets the ostream used by this instance.
       /// @return The ostream used by this instance.
       /// @warning Used it only if you need to write specific user messages. If you change or redirect it when tests running, the unit test output result will be indeterminate.
       std::ostream& ostream();
+      /// @}
       
+      /// @name Methods
+      
+      /// @{
       int list_tests(const std::vector<std::string>& tests) override;
       bool parse_arguments(const std::vector<std::string>& args) override;
       
       /// @brief Write usage help on the ostream of this instance.
       void write_help();
+      /// @}
 
     private:
       std::ostream& os_;

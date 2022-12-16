@@ -16,6 +16,9 @@ namespace xtd {
     /// @ingroup xtd_tunit tunit
     class class_initialize_attribute {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Creates new instance of class initialize_attribute attribute.
       /// @param name Name of attribute
       /// @param test_class xtd::tunit::class_test containing initialize method.
@@ -29,6 +32,7 @@ namespace xtd {
       /// @param stack_frame Contains information about current file and current line.
       template<typename test_class_t>
       class_initialize_attribute(const std::string& name, test_class_t& test_class, void (*method)(), const xtd::diagnostics::stack_frame& caller) noexcept {test_class.add_class_initialize({name, method, caller});}
+      /// @}
     };
   }
 }

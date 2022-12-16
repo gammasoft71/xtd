@@ -26,6 +26,9 @@ namespace xtd {
       virtual ~event_listener() = default;
       /// @endcond
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Occurs when class cleanup is ended.
       /// @param class_event_args Contains class event parameters.
       virtual void on_class_cleanup_end(const xtd::tunit::class_event_args& e) const {}
@@ -113,6 +116,7 @@ namespace xtd {
       /// @brief Occurs when unit test cleanup is started.
       /// @param tunit_event_args Contains unit test event parameters.
       virtual void on_unit_test_start(const xtd::tunit::tunit_event_args& e) const {}
+      /// @}
     };
   }
 }

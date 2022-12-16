@@ -29,6 +29,9 @@ namespace xtd {
       base_assert() = delete;
       /// @endcond
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Abort current test. This is used by the other assert functions.
       /// @par Examples
       /// @code
@@ -151,8 +154,12 @@ namespace xtd {
       /// xtd::tunit::assert::succeed("User message...", csf_); // test ok.
       /// @endcode
       static void succeed(const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+      /// @}
       
     protected:
+      /// @name Protected methods
+      
+      /// @{
       /// @brief Throws an xtd::tunit::assert_error exception. This is used by the other assert functions.
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
@@ -203,6 +210,7 @@ namespace xtd {
       /// @param str The joined to join into std::string.
       /// @return The std::string that contains the joined string.
       static std::string join_items(const std::string& str);
+      /// @}
     };
   }
 }

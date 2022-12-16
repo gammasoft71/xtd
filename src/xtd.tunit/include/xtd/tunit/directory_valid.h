@@ -26,6 +26,9 @@ namespace xtd {
       directory_valid() = delete;
       /// @endcond
       
+      /// @name Methods
+      
+      /// @{
       #if defined(__cpp_lib_filesystem)
       /// @brief Asserts that two directories are equal.
       /// @param expected the expected value.
@@ -257,6 +260,7 @@ namespace xtd {
       template<typename char_t>
       static void does_not_exist(const char_t* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(std::basic_string<char_t>(directory), message, stack_frame);}
       /// @endcond
+      /// @}
     };
   }
 }
