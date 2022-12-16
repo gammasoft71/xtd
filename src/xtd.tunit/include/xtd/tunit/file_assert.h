@@ -43,9 +43,8 @@ namespace xtd {
       /// s2.seekg(0, std::ios::beg);
       /// xtd::tunit::file_assert::are_equal(s2, s1); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void are_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual) {are_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
-      
+      template<typename char_t>
+      static void are_equal(const std::basic_istream<char_t>& expected, const std::basic_istream<char_t>& actual) {are_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
       /// @brief Asserts that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -64,9 +63,8 @@ namespace xtd {
       /// s2.seekg(0, std::ios::beg);
       /// xtd::tunit::file_assert::are_equal(s2, s1, csf_); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void are_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(expected, actual, "", stack_frame);}
-      
+      template<typename char_t>
+      static void are_equal(const std::basic_istream<char_t>& expected, const std::basic_istream<char_t>& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(expected, actual, "", stack_frame);}
       /// @brief Asserts that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -85,9 +83,8 @@ namespace xtd {
       /// s2.seekg(0, std::ios::beg);
       /// xtd::tunit::file_assert::are_equal(s2, s1, "User message..."); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void are_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual, const std::string& message) {are_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
-      
+      template<typename char_t>
+      static void are_equal(const std::basic_istream<char_t>& expected, const std::basic_istream<char_t>& actual, const std::string& message) {are_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
       /// @brief Asserts that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -107,10 +104,10 @@ namespace xtd {
       /// s2.seekg(0, std::ios::beg);
       /// xtd::tunit::file_assert::are_equal(s2, s1, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void are_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        std::basic_istream<Char> if_expected(expected.rdbuf());
-        std::basic_istream<Char> if_actual(actual.rdbuf());
+      template<typename char_t>
+      static void are_equal(const std::basic_istream<char_t>& expected, const std::basic_istream<char_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+        std::basic_istream<char_t> if_expected(expected.rdbuf());
+        std::basic_istream<char_t> if_actual(actual.rdbuf());
         
         if_expected.seekg(0, std::ios::end);
         if_actual.seekg(0, std::ios::end);
@@ -124,8 +121,8 @@ namespace xtd {
         if_expected.seekg(0, std::ios::beg);
         if_actual.seekg(0, std::ios::beg);
         for (size_t offset = 0; offset < size_actual; ++offset) {
-          Char value_expected = if_expected.get();
-          Char value_actual = if_actual.get();
+          char_t value_expected = if_expected.get();
+          char_t value_actual = if_actual.get();
           if (value_expected != value_actual) {
             base_assert::fail("istream at offset " + base_assert::to_string(offset) + " value " + base_assert::to_string(value_expected), base_assert::to_string(value_actual), message, stack_frame);
             return;
@@ -133,7 +130,6 @@ namespace xtd {
         }
         assert::succeed(message, stack_frame);
       }
-      
       /// @brief Asserts that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -151,9 +147,8 @@ namespace xtd {
       /// s2.seekg(0, std::ios::beg);
       /// xtd::tunit::file_assert::are_equal(s2, s1); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void are_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual) {are_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
-      
+      template<typename char_t>
+      static void are_equal(const std::basic_string<char_t>& expected, const std::basic_string<char_t>& actual) {are_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
       /// @brief Asserts that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -172,9 +167,8 @@ namespace xtd {
       /// s2.seekg(0, std::ios::beg);
       /// xtd::tunit::file_assert::are_equal(s2, s1, csf_); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void are_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(expected, actual, "", stack_frame);}
-      
+      template<typename char_t>
+      static void are_equal(const std::basic_string<char_t>& expected, const std::basic_string<char_t>& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(expected, actual, "", stack_frame);}
       /// @brief Asserts that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -193,9 +187,8 @@ namespace xtd {
       /// s2.seekg(0, std::ios::beg);
       /// xtd::tunit::file_assert::are_equal(s2, s1, "User message..."); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void are_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual, const std::string& message) {are_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
-      
+      template<typename char_t>
+      static void are_equal(const std::basic_string<char_t>& expected, const std::basic_string<char_t>& actual, const std::string& message) {are_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
       /// @brief Asserts that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -215,34 +208,34 @@ namespace xtd {
       /// s2.seekg(0, std::ios::beg);
       /// xtd::tunit::file_assert::are_equal(s2, s1, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void are_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, stack_frame);}
+      template<typename char_t>
+      static void are_equal(const std::basic_string<char_t>& expected, const std::basic_string<char_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(std::basic_ifstream<char_t>(expected), std::basic_ifstream<char_t>(actual), message, stack_frame);}
       
       /// @cond
-      template<typename Char>
-      static void are_equal(const std::basic_string<Char>& expected, const Char* actual) {are_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
-      template<typename Char>
-      static void are_equal(const std::basic_string<Char>& expected, const Char* actual, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(expected, actual, "", stack_frame);}
-      template<typename Char>
-      static void are_equal(const std::basic_string<Char>& expected, const Char* actual, const std::string& message) {are_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
-      template<typename Char>
-      static void are_equal(const std::basic_string<Char>& expected, const Char* actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, stack_frame);}
-      template<typename Char>
-      static void are_equal(const Char* expected, const std::basic_string<Char>& actual) {are_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
-      template<typename Char>
-      static void are_equal(const Char* expected, const std::basic_string<Char>& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(expected, actual, "", stack_frame);}
-      template<typename Char>
-      static void are_equal(const Char* expected, const std::basic_string<Char>& actual, const std::string& message) {are_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
-      template<typename Char>
-      static void are_equal(const Char* expected, const std::basic_string<Char>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, stack_frame);}
-      template<typename Char>
-      static void are_equal(const Char* expected, const Char* actual) {are_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
-      template<typename Char>
-      static void are_equal(const Char* expected, const Char* actual, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(expected, actual, "", stack_frame);}
-      template<typename Char>
-      static void are_equal(const Char* expected, const Char* actual, const std::string& message) {are_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
-      template<typename Char>
-      static void are_equal(const Char* expected, const Char* actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, stack_frame);}
+      template<typename char_t>
+      static void are_equal(const std::basic_string<char_t>& expected, const char_t* actual) {are_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void are_equal(const std::basic_string<char_t>& expected, const char_t* actual, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(expected, actual, "", stack_frame);}
+      template<typename char_t>
+      static void are_equal(const std::basic_string<char_t>& expected, const char_t* actual, const std::string& message) {are_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void are_equal(const std::basic_string<char_t>& expected, const char_t* actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(std::basic_ifstream<char_t>(expected), std::basic_ifstream<char_t>(actual), message, stack_frame);}
+      template<typename char_t>
+      static void are_equal(const char_t* expected, const std::basic_string<char_t>& actual) {are_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void are_equal(const char_t* expected, const std::basic_string<char_t>& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(expected, actual, "", stack_frame);}
+      template<typename char_t>
+      static void are_equal(const char_t* expected, const std::basic_string<char_t>& actual, const std::string& message) {are_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void are_equal(const char_t* expected, const std::basic_string<char_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(std::basic_ifstream<char_t>(expected), std::basic_ifstream<char_t>(actual), message, stack_frame);}
+      template<typename char_t>
+      static void are_equal(const char_t* expected, const char_t* actual) {are_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void are_equal(const char_t* expected, const char_t* actual, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(expected, actual, "", stack_frame);}
+      template<typename char_t>
+      static void are_equal(const char_t* expected, const char_t* actual, const std::string& message) {are_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void are_equal(const char_t* expected, const char_t* actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(std::basic_ifstream<char_t>(expected), std::basic_ifstream<char_t>(actual), message, stack_frame);}
       /// @endcond
       
       /// @brief Asserts that two files are not equal.
@@ -262,9 +255,8 @@ namespace xtd {
       /// s2.seekg(0, std::ios::beg);
       /// xtd::tunit::file_assert::are_not_equal(s2, s1); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void are_not_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual) {are_not_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
-      
+      template<typename char_t>
+      static void are_not_equal(const std::basic_istream<char_t>& expected, const std::basic_istream<char_t>& actual) {are_not_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
       /// @brief Asserts that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -283,9 +275,8 @@ namespace xtd {
       /// s2.seekg(0, std::ios::beg);
       /// xtd::tunit::file_assert::are_not_equal(s2, s1, csf_); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void are_not_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(expected, actual, "", stack_frame);}
-      
+      template<typename char_t>
+      static void are_not_equal(const std::basic_istream<char_t>& expected, const std::basic_istream<char_t>& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(expected, actual, "", stack_frame);}
       /// @brief Asserts that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -304,9 +295,8 @@ namespace xtd {
       /// s2.seekg(0, std::ios::beg);
       /// xtd::tunit::file_assert::are_not_equal(s2, s1, "User message..."); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void are_not_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual, const std::string& message) {are_not_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
-      
+      template<typename char_t>
+      static void are_not_equal(const std::basic_istream<char_t>& expected, const std::basic_istream<char_t>& actual, const std::string& message) {are_not_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
       /// @brief Asserts that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -326,10 +316,10 @@ namespace xtd {
       /// s2.seekg(0, std::ios::beg);
       /// xtd::tunit::file_assert::are_not_equal(s2, s1, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void are_not_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        std::basic_istream<Char> if_expected(expected.rdbuf());
-        std::basic_istream<Char> if_actual(actual.rdbuf());
+      template<typename char_t>
+      static void are_not_equal(const std::basic_istream<char_t>& expected, const std::basic_istream<char_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+        std::basic_istream<char_t> if_expected(expected.rdbuf());
+        std::basic_istream<char_t> if_actual(actual.rdbuf());
         
         if_expected.seekg(0, std::ios::end);
         if_actual.seekg(0, std::ios::end);
@@ -343,8 +333,8 @@ namespace xtd {
         if_expected.seekg(0, std::ios::beg);
         if_actual.seekg(0, std::ios::beg);
         for (size_t offset = 0; offset < size_actual; ++offset) {
-          Char value_expected = if_expected.get();
-          Char value_actual = if_actual.get();
+          char_t value_expected = if_expected.get();
+          char_t value_actual = if_actual.get();
           if (value_expected != value_actual) {
             assert::succeed(message, stack_frame);
             return;
@@ -352,7 +342,6 @@ namespace xtd {
         }
         base_assert::fail("not equal <" + __tunit_demangle(typeid(expected).name()) + ">", "<" + __tunit_demangle(typeid(expected).name()) + ">", message, stack_frame);
       }
-      
       /// @brief Asserts that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -370,8 +359,8 @@ namespace xtd {
       /// s2.seekg(0, std::ios::beg);
       /// xtd::tunit::file_assert::are_not_equal(s2, s1); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void are_not_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual) {are_not_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void are_not_equal(const std::basic_string<char_t>& expected, const std::basic_string<char_t>& actual) {are_not_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
       
       /// @brief Asserts that two files are not equal.
       /// @param expected the expected value.
@@ -391,9 +380,8 @@ namespace xtd {
       /// s2.seekg(0, std::ios::beg);
       /// xtd::tunit::file_assert::are_not_equal(s2, s1, csf_); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void are_not_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(expected, actual, "", stack_frame);}
-      
+      template<typename char_t>
+      static void are_not_equal(const std::basic_string<char_t>& expected, const std::basic_string<char_t>& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(expected, actual, "", stack_frame);}
       /// @brief Asserts that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -412,9 +400,8 @@ namespace xtd {
       /// s2.seekg(0, std::ios::beg);
       /// xtd::tunit::file_assert::are_not_equal(s2, s1, "User message..."); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void are_not_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual, const std::string& message) {are_not_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
-      
+      template<typename char_t>
+      static void are_not_equal(const std::basic_string<char_t>& expected, const std::basic_string<char_t>& actual, const std::string& message) {are_not_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
       /// @brief Asserts that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -434,34 +421,34 @@ namespace xtd {
       /// s2.seekg(0, std::ios::beg);
       /// xtd::tunit::file_assert::are_not_equal(s2, s1, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void are_not_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, stack_frame);}
+      template<typename char_t>
+      static void are_not_equal(const std::basic_string<char_t>& expected, const std::basic_string<char_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(std::basic_ifstream<char_t>(expected), std::basic_ifstream<char_t>(actual), message, stack_frame);}
       
       /// @cond
-      template<typename Char>
-      static void are_not_equal(const std::basic_string<Char>& expected, const Char* actual) {are_not_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
-      template<typename Char>
-      static void are_not_equal(const std::basic_string<Char>& expected, const Char* actual, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(expected, actual, "", stack_frame);}
-      template<typename Char>
-      static void are_not_equal(const std::basic_string<Char>& expected, const Char* actual, const std::string& message) {are_not_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
-      template<typename Char>
-      static void are_not_equal(const std::basic_string<Char>& expected, const Char* actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, stack_frame);}
-      template<typename Char>
-      static void are_not_equal(const Char* expected, const std::basic_string<Char>& actual) {are_not_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
-      template<typename Char>
-      static void are_not_equal(const Char* expected, const std::basic_string<Char>& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(expected, actual, "", stack_frame);}
-      template<typename Char>
-      static void are_not_equal(const Char* expected, const std::basic_string<Char>& actual, const std::string& message) {are_not_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
-      template<typename Char>
-      static void are_not_equal(const Char* expected, const std::basic_string<Char>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, stack_frame);}
-      template<typename Char>
-      static void are_not_equal(const Char* expected, const Char* actual) {are_not_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
-      template<typename Char>
-      static void are_not_equal(const Char* expected, const Char* actual, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(expected, actual, "", stack_frame);}
-      template<typename Char>
-      static void are_not_equal(const Char* expected, const Char* actual, const std::string& message) {are_not_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
-      template<typename Char>
-      static void are_not_equal(const Char* expected, const Char* actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, stack_frame);}
+      template<typename char_t>
+      static void are_not_equal(const std::basic_string<char_t>& expected, const char_t* actual) {are_not_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void are_not_equal(const std::basic_string<char_t>& expected, const char_t* actual, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(expected, actual, "", stack_frame);}
+      template<typename char_t>
+      static void are_not_equal(const std::basic_string<char_t>& expected, const char_t* actual, const std::string& message) {are_not_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void are_not_equal(const std::basic_string<char_t>& expected, const char_t* actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(std::basic_ifstream<char_t>(expected), std::basic_ifstream<char_t>(actual), message, stack_frame);}
+      template<typename char_t>
+      static void are_not_equal(const char_t* expected, const std::basic_string<char_t>& actual) {are_not_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void are_not_equal(const char_t* expected, const std::basic_string<char_t>& actual, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(expected, actual, "", stack_frame);}
+      template<typename char_t>
+      static void are_not_equal(const char_t* expected, const std::basic_string<char_t>& actual, const std::string& message) {are_not_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void are_not_equal(const char_t* expected, const std::basic_string<char_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(std::basic_ifstream<char_t>(expected), std::basic_ifstream<char_t>(actual), message, stack_frame);}
+      template<typename char_t>
+      static void are_not_equal(const char_t* expected, const char_t* actual) {are_not_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void are_not_equal(const char_t* expected, const char_t* actual, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(expected, actual, "", stack_frame);}
+      template<typename char_t>
+      static void are_not_equal(const char_t* expected, const char_t* actual, const std::string& message) {are_not_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void are_not_equal(const char_t* expected, const char_t* actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(std::basic_ifstream<char_t>(expected), std::basic_ifstream<char_t>(actual), message, stack_frame);}
       /// @endcond
       
       /// @brief Asserts that file exists.
@@ -475,9 +462,8 @@ namespace xtd {
       /// xtd::tunit::file_assert::exists("Test1.txt"); // test ok.
       /// xtd::tunit::file_assert::exists("Test2.txt"); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void exists(const std::basic_string<Char>& file) {exists(file, "", xtd::diagnostics::stack_frame::empty());}
-      
+      template<typename char_t>
+      static void exists(const std::basic_string<char_t>& file) {exists(file, "", xtd::diagnostics::stack_frame::empty());}
       /// @brief Asserts that file exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -490,9 +476,8 @@ namespace xtd {
       /// xtd::tunit::file_assert::exists("Test1.txt", csf_); // test ok.
       /// xtd::tunit::file_assert::exists("Test2.txt", csf_); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void exists(const std::basic_string<Char>& file, const xtd::diagnostics::stack_frame& stack_frame) {exists(file, "", stack_frame);}
-      
+      template<typename char_t>
+      static void exists(const std::basic_string<char_t>& file, const xtd::diagnostics::stack_frame& stack_frame) {exists(file, "", stack_frame);}
       /// @brief Asserts that file exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -505,9 +490,8 @@ namespace xtd {
       /// xtd::tunit::file_assert::exists("Test1.txt", "User message..."); // test ok.
       /// xtd::tunit::file_assert::exists("Test2.txt", "User message..."); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void exists(const std::basic_string<Char>& file, const std::string& message) {exists(file, message, xtd::diagnostics::stack_frame::empty());}
-      
+      template<typename char_t>
+      static void exists(const std::basic_string<char_t>& file, const std::string& message) {exists(file, message, xtd::diagnostics::stack_frame::empty());}
       /// @brief Asserts that file exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -521,23 +505,23 @@ namespace xtd {
       /// xtd::tunit::file_assert::exists("Test1.txt" "User message...", csf_); // test ok.
       /// xtd::tunit::file_assert::exists("Test2.txt", "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void exists(const std::basic_string<Char>& file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        if (std::basic_ifstream<Char>(file).good() == false)
+      template<typename char_t>
+      static void exists(const std::basic_string<char_t>& file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+        if (std::basic_ifstream<char_t>(file).good() == false)
           base_assert::fail("file exists", base_assert::to_string(file), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
       }
       
       /// @cond
-      template<typename Char>
-      static void exists(const Char* file) {exists(file, "", xtd::diagnostics::stack_frame::empty());}
-      template<typename Char>
-      static void exists(const Char* file, const xtd::diagnostics::stack_frame& stack_frame) {exists(file, "", stack_frame);}
-      template<typename Char>
-      static void exists(const Char* file, const std::string& message) {exists(file, message, xtd::diagnostics::stack_frame::empty());}
-      template<typename Char>
-      static void exists(const Char* file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {exists(std::basic_string<Char>(file), message, stack_frame);}
+      template<typename char_t>
+      static void exists(const char_t* file) {exists(file, "", xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void exists(const char_t* file, const xtd::diagnostics::stack_frame& stack_frame) {exists(file, "", stack_frame);}
+      template<typename char_t>
+      static void exists(const char_t* file, const std::string& message) {exists(file, message, xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void exists(const char_t* file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {exists(std::basic_string<char_t>(file), message, stack_frame);}
       /// @endcond
       
       /// @brief Asserts that file not exists.
@@ -551,9 +535,8 @@ namespace xtd {
       /// xtd::tunit::file_assert::does_not_exist("Test2.txt"); // test ok.
       /// xtd::tunit::file_assert::does_not_exist("Test1.txt"); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void does_not_exist(const std::basic_string<Char>& file) {does_not_exist(file, "", xtd::diagnostics::stack_frame::empty());}
-      
+      template<typename char_t>
+      static void does_not_exist(const std::basic_string<char_t>& file) {does_not_exist(file, "", xtd::diagnostics::stack_frame::empty());}
       /// @brief Asserts that file not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -566,9 +549,8 @@ namespace xtd {
       /// xtd::tunit::file_assert::does_not_exist("Test2.txt", csf_); // test ok.
       /// xtd::tunit::file_assert::does_not_exist("Test1.txt", csf_); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void does_not_exist(const std::basic_string<Char>& file, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(file, "", stack_frame);}
-      
+      template<typename char_t>
+      static void does_not_exist(const std::basic_string<char_t>& file, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(file, "", stack_frame);}
       /// @brief Asserts that file not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -581,9 +563,8 @@ namespace xtd {
       /// xtd::tunit::file_assert::does_not_exist("Test2.txt", "User message..."); // test ok.
       /// xtd::tunit::file_assert::does_not_exist("Test1.txt", "User message..."); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void does_not_exist(const std::basic_string<Char>& file, const std::string& message) {does_not_exist(file, message, xtd::diagnostics::stack_frame::empty());}
-      
+      template<typename char_t>
+      static void does_not_exist(const std::basic_string<char_t>& file, const std::string& message) {does_not_exist(file, message, xtd::diagnostics::stack_frame::empty());}
       /// @brief Asserts that file not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -597,23 +578,23 @@ namespace xtd {
       /// xtd::tunit::file_assert::does_not_exist("Test2.txt" "User message...", csf_); // test ok.
       /// xtd::tunit::file_assert::does_not_exist("Test1.txt", "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
-      template<typename Char>
-      static void does_not_exist(const std::basic_string<Char>& file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        if (std::basic_ifstream<Char>(file).good() == true)
+      template<typename char_t>
+      static void does_not_exist(const std::basic_string<char_t>& file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+        if (std::basic_ifstream<char_t>(file).good() == true)
           base_assert::fail("not file exists", base_assert::to_string(file), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
       }
       
       /// @cond
-      template<typename Char>
-      static void does_not_exist(const Char* file) {does_not_exist(file, "", xtd::diagnostics::stack_frame::empty());}
-      template<typename Char>
-      static void does_not_exist(const Char* file, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(file, "", stack_frame);}
-      template<typename Char>
-      static void does_not_exist(const Char* file, const std::string& message) {does_not_exist(file, message, xtd::diagnostics::stack_frame::empty());}
-      template<typename Char>
-      static void does_not_exist(const Char* file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(std::basic_string<Char>(file), message, stack_frame);}
+      template<typename char_t>
+      static void does_not_exist(const char_t* file) {does_not_exist(file, "", xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void does_not_exist(const char_t* file, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(file, "", stack_frame);}
+      template<typename char_t>
+      static void does_not_exist(const char_t* file, const std::string& message) {does_not_exist(file, message, xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void does_not_exist(const char_t* file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(std::basic_string<char_t>(file), message, stack_frame);}
       /// @endcond
     };
   }
