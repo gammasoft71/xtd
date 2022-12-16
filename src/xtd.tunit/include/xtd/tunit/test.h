@@ -21,52 +21,108 @@ namespace xtd {
     class valid;
     /// @endcond
     
+    /// @brief Represents a test class.
+    /// @par Namespace
+    /// xtd::tunit
+    /// @par Library
+    /// xtd.tunit
+    /// @ingroup xtd_tunit tunit
+    /// @remarks Typically this is a representation a test method in a test class.
+    /// @remakrs This test contains among others: a name that represents the name of the method, a pointer to the method to call and a status on the state of the test.
     class tunit_export_ test final {
+      /// @brief Represents a test status.
+      /// @remarks The test status enmeration is know the state of the test.
       enum class test_status {
+        /// @brief The test is not started.
         not_started,
+        /// @brief The test is ignored.
         ignored,
+        /// @brief The test is succeed.
         succeed,
+        /// @brief The test is aborted.
         aborted,
+        /// @brief The test is failed.
         failed
       };
       
     public:
+      /// @name Constructors
+      
+      /// @{
+      /// @brief Creates a new test instance.
       test() = default;
-      test(const std::string& name, const std::function<void()>& method, const xtd::diagnostics::stack_frame& stack_frame) noexcept : test(name, method, false, stack_frame) {}
-      test(const std::string& name, const std::function<void()>& method, bool ignore, const xtd::diagnostics::stack_frame& stack_frame) noexcept :  stack_frame_(stack_frame), method_(method), name_(name), status_(ignore ? test_status::ignored : test_status::not_started) {}
+      /// @brief Creates a new test instance with specified name, method and stack frame.
+      /// @param name Represents the name of the method. Generally is the same name as the method name.
+      /// @param method The method that contains the test.
+      /// @param stack_frame The stack frame of the method.
+      test(const std::string& name, const std::function<void()>& method, const xtd::diagnostics::stack_frame& stack_frame) noexcept;
+      /// @brief Creates a new test instance with specified name, method and stack frame.
+      /// @param name Represents the name of the method. Generally is the same name as the method name.
+      /// @param method The method that contains the test.
+      /// @param ignored If true, the test will be ignored during tests execution; otherwise, the test will be taken into account during tests execution.
+      /// @param stack_frame The stack frame of the method.
+      test(const std::string& name, const std::function<void()>& method, bool ignore, const xtd::diagnostics::stack_frame& stack_frame) noexcept;
+      /// @}
       
-      bool aborted() const noexcept {return status_ == test_status::aborted;}
+      /// @name Properties
       
-      const std::string& actual() const noexcept {return actual_;}
+      /// @{
+      /// @brief Gets a value that represent an aborted test.
+      /// @return true is the test is aborted; otherwise false.
+      bool aborted() const noexcept;
       
-      const std::string& expect() const noexcept {return expect_;}
+      /// @brief Gets the actual value string.
+      /// @return The actual value string. Can be empty.
+      const std::string& actual() const noexcept;
       
-      bool failed() const noexcept {return status_ == test_status::failed;}
+      /// @brief Gets the expect value string.
+      /// @return The expect value string. Can be empty.
+      const std::string& expect() const noexcept;
       
-      bool ignored() const noexcept {return status_ == test_status::ignored;}
+      /// @brief Gest a value that represent an failed test.
+      /// @return tru is the test is failed; otherwise false.
+      bool failed() const noexcept;
       
-      bool not_started() const noexcept {return status_ == test_status::not_started;}
+      /// @brief Get a value that represent an ignored test.
+      /// @return true is the test is ignored; otherwise false.
+      bool ignored() const noexcept;
       
-      bool succeed() const noexcept {return status_ == test_status::succeed;}
+      /// @brief Get a value that represent a not started test.
+      /// @return true is the test is not started; otherwise false.
+      bool not_started() const noexcept;
       
-      const xtd::diagnostics::stack_frame stack_frame() const noexcept {return stack_frame_;}
+      /// @brief Gets a value that represent an succeed test.
+      /// @return true is the test is succeed; otherwise false.
+      bool succeed() const noexcept;
       
-      const xtd::date_time& start_time() const noexcept {return start_time_;}
+      /// @brief Gets the stack frame of the test method.
+      /// @return The stack frame of the test method.
+      const xtd::diagnostics::stack_frame stack_frame() const noexcept;
       
-      std::function<void()> method() const noexcept {return method_;}
+      /// @brief Gets the start time of the test method.
+      /// @return The start time of the test method.
+      const xtd::date_time& start_time() const noexcept;
       
-      const std::string& message() const noexcept {return message_;}
+      /// @brief Gets the test method.
+      /// @return The test method.
+      std::function<void()> method() const noexcept;
       
-      const std::string& name() const noexcept {return name_;}
+      /// @brief Gets the message.
+      /// @return The message.
+      const std::string& message() const noexcept;
       
-      const std::string& user_message() const noexcept {return user_message_;}
+      /// @brief Gets the name of the test method.
+      /// @return The nzme of the test method.
+      const std::string& name() const noexcept;
       
-      std::chrono::milliseconds elapsed_time() const noexcept {
-        using namespace std::chrono_literals;
-        if (start_time_.ticks() == 0ms && end_time_point.ticks() == 0ms) return 0ms;
-        if (end_time_point.ticks() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>((date_time::now() - start_time_).ticks());
-        return std::chrono::duration_cast<std::chrono::milliseconds>((end_time_point - start_time_).ticks());
-      }
+      /// @brief Gets the user message.
+      /// @return The user message.
+      const std::string& user_message() const noexcept;
+      
+      /// @brief Gets the elapsed time of the test method.
+      /// @return The elapsed time of the test method.
+      std::chrono::milliseconds elapsed_time() const noexcept;
+      /// @}
       
       /// @cond
       static intptr __internal_tunit_unit_tests_mode__;
@@ -77,12 +133,12 @@ namespace xtd {
       friend class xtd::tunit::base_assert;
       friend class xtd::tunit::test_class;
       friend class xtd::tunit::valid;
-      static test& current_test() {return *current_test_;}
-      static const test_class& current_test_class() {return *current_test_class_;}
-      static const unit_test& current_unit_test() {return *current_unit_test_;}
-      static bool has_current_test() {return current_test_ != nullptr;}
-      static bool has_current_test_class() {return current_test_class_ != nullptr;}
-      static bool has_current_unit_test() {return current_unit_test_ != nullptr;}
+      static test& current_test();
+      static const test_class& current_test_class();
+      static const unit_test& current_unit_test();
+      static bool has_current_test();
+      static bool has_current_test_class();
+      static bool has_current_unit_test();
 
       void run(const xtd::tunit::unit_test& unit_test, const xtd::tunit::test_class& test_class);
       
