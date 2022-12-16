@@ -848,7 +848,7 @@ namespace xtd {
       /// @code
       /// std::invalid_argument except("invalid argument");
       /// xtd::tunit::assert::is_instance_of<std::logic_error>(except); // test ok.
-      /// xtd::tunit::assert::is_instance_of<std::bad_cast>(except); test throws an assert_error exception.
+      /// xtd::tunit::assert::is_instance_of<std::bad_cast>(except); // test throws an assert_error exception.
       /// @endcode
       template<typename type_t, typename value_t>
       static void is_instance_of(const value_t& value) {is_instance_of<type_t>(value, "", xtd::diagnostics::stack_frame::empty());}
@@ -860,7 +860,7 @@ namespace xtd {
       /// @code
       /// std::invalid_argument except("invalid argument");
       /// xtd::tunit::assert::is_instance_of<std::logic_error>(except, csf_); // test ok.
-      /// xtd::tunit::assert::is_instance_of<std::bad_cast>(except, csf_); test throws an assert_error exception.
+      /// xtd::tunit::assert::is_instance_of<std::bad_cast>(except, csf_); // test throws an assert_error exception.
       /// @endcode
       template<typename type_t, typename value_t>
       static void is_instance_of(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame) {is_instance_of<type_t>(value, "", stack_frame);}
@@ -872,7 +872,7 @@ namespace xtd {
       /// @code
       /// std::invalid_argument except("invalid argument");
       /// xtd::tunit::assert::is_instance_of<std::logic_error>(except, "User message..."); // test ok.
-      /// xtd::tunit::assert::is_instance_of<std::bad_cast>(except, "User message..."); test throws an assert_error exception.
+      /// xtd::tunit::assert::is_instance_of<std::bad_cast>(except, "User message..."); // test throws an assert_error exception.
       /// @endcode
       template<typename type_t, typename value_t>
       static void is_instance_of(const value_t& value, const xtd::ustring& message) {is_instance_of<type_t>(value, message, xtd::diagnostics::stack_frame::empty());}
@@ -885,7 +885,7 @@ namespace xtd {
       /// @code
       /// std::invalid_argument except("invalid argument");
       /// xtd::tunit::assert::is_instance_of<std::logic_error>(except, "User message...", csf_); // test ok.
-      /// xtd::tunit::assert::is_instance_of<std::bad_cast>(except, "User message...", csf_); test throws an assert_error exception.
+      /// xtd::tunit::assert::is_instance_of<std::bad_cast>(except, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
       template<typename type_t, typename value_t>
       static void is_instance_of(const value_t& value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
@@ -1313,7 +1313,7 @@ namespace xtd {
       /// @code
       /// std::invalid_argument except("invalid argument");
       /// xtd::tunit::assert::is_not_instance_of<std::bad_cast>(except); // test ok.
-      /// xtd::tunit::assert::is_not_instance_of<std::logic_error>(except); test throws an assert_error exception.
+      /// xtd::tunit::assert::is_not_instance_of<std::logic_error>(except); // test throws an assert_error exception.
       /// @endcode
       template<typename type_t, typename value_t>
       static void is_not_instance_of(const value_t& value) {is_not_instance_of<type_t>(value, "", xtd::diagnostics::stack_frame::empty());}
@@ -1325,7 +1325,7 @@ namespace xtd {
       /// @code
       /// std::invalid_argument except("invalid argument");
       /// xtd::tunit::assert::is_not_instance_of<std::bad_cast>(except, csf_); // test ok.
-      /// xtd::tunit::assert::is_not_instance_of<std::logic_error>(except, csf_); test throws an assert_error exception.
+      /// xtd::tunit::assert::is_not_instance_of<std::logic_error>(except, csf_); // test throws an assert_error exception.
       /// @endcode
       template<typename type_t, typename value_t>
       static void is_not_instance_of(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame) {is_not_instance_of<type_t>(value, "", stack_frame);}
@@ -1337,7 +1337,7 @@ namespace xtd {
       /// @code
       /// std::invalid_argument except("invalid argument");
       /// xtd::tunit::assert::is_not_instance_of<std::bad_cast>(except, "User message..."); // test ok.
-      /// xtd::tunit::assert::is_not_instance_of<std::logic_error>(except, "User message..."); test throws an assert_error exception.
+      /// xtd::tunit::assert::is_not_instance_of<std::logic_error>(except, "User message..."); // test throws an assert_error exception.
       /// @endcode
       template<typename type_t, typename value_t>
       static void is_not_instance_of(const value_t& value, const xtd::ustring& message) {is_not_instance_of<type_t>(value, message, xtd::diagnostics::stack_frame::empty());}
@@ -1350,7 +1350,7 @@ namespace xtd {
       /// @code
       /// std::invalid_argument except("invalid argument");
       /// xtd::tunit::assert::is_not_instance_of<std::bad_cast>(except, "User message...", csf_); // test ok.
-      /// xtd::tunit::assert::is_not_instance_of<std::logic_error>(except, "User message...", csf_); test throws an assert_error exception.
+      /// xtd::tunit::assert::is_not_instance_of<std::logic_error>(except, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
       template<typename type_t, typename value_t>
       static void is_not_instance_of(const value_t& value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
@@ -2373,7 +2373,7 @@ namespace xtd {
 
 /// @brief Abort current test. This is used by the other assert functions.
 /// @exception xtd::tunit::assert_error If bad assertion.
-/// @ingroup xtd_tunit
+/// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
 /// @par Examples
@@ -2388,7 +2388,7 @@ namespace xtd {
 /// @param expected the expected value.
 /// @param actual the actual value.
 /// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results .
-/// @ingroup xtd_tunit
+/// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
 /// @par Examples
@@ -2403,7 +2403,7 @@ namespace xtd {
 /// @param expected the expected value.
 /// @param actual the actual value.
 /// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results .
-/// @ingroup xtd_tunit
+/// @ingroup xtd_tunit tunit
 /// @remarks Contains information about current file and current line.
 /// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
 /// @par Examples
@@ -2418,6 +2418,9 @@ namespace xtd {
 /// @param expected the expected value.
 /// @param actual the actual value.
 /// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
 /// @par Examples
 /// @code
 /// int a = 24;
@@ -2436,6 +2439,9 @@ namespace xtd {
 /// @param expected the expected value.
 /// @param actual the actual value.
 /// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
 /// @par Examples
 /// @code
 /// int a = 24;
@@ -2450,50 +2456,441 @@ namespace xtd {
 /// @endcode
 #define are_same_(...) __CMD_ASSERT_ARGS(are_same, __VA_ARGS__)
 
+/// @brief Asserts that collection contains an item.
+/// @param item object to verify.
+/// @param collection that contains object.
+/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// std::vector<int> v1 = {0, 1, 2, 3};
+/// xtd::tunit::assert::contains_(2, v1); // test ok.
+/// xtd::tunit::assert::contains_(4, v1, "User message..."); // test error.
+/// xtd::tunit::assume::contains_(2, v1); // test ok.
+/// xtd::tunit::assume::contains_(4, v1, "User message..."); // test error.
+/// xtd::tunit::valid::contains_(2, v1); // test ok.
+/// xtd::tunit::valid::contains_(4, v1, "User message..."); // test error.
+/// @endcode
 #define contains_(...) __CMD_ASSERT_ARGS(contains, __VA_ARGS__)
 
+/// @brief Asserts that the staement does not throw an exception.
+/// @param statement The statement that verify.
+/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// std::vector<int> v1 = {1, 2, 3, 4};
+/// xtd::tunit::assert::does_not_throw_([&] {v1.at(2);}); // test ok.
+/// xtd::tunit::assert::does_not_throw_([&] {v1.at(5);}, "User message..."); // test error.
+/// xtd::tunit::assume::does_not_throw_([&] {v1.at(2);}); // test ok.
+/// xtd::tunit::assume::does_not_throw_([&] {v1.at(5);}, "User message..."); // test error.
+/// xtd::tunit::valid::does_not_throw_([&] {v1.at(2);}); // test ok.
+/// xtd::tunit::valid::does_not_throw_([&] {v1.at(5);}, "User message..."); // test error.
+/// @endcode
 #define does_not_throw_(...) __CMD_ASSERT_ARGS(does_not_throw, __VA_ARGS__)
 
-#define fail_() base_assert::fail(csf_)
+/// @brief Throws an xtd::tunit::assert_error exception. This is used by the other assert functions.
+/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @exception xtd::tunit::assert_error If bad assertion.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// xtd::tunit::assert::fail_("User message..."); // test throws an assert_error exception.
+/// xtd::tunit::assume::fail_("User message..."); // test throws an assert_error exception.
+/// xtd::tunit::valid::fail_("User message..."); // test throws an assert_error exception.
+/// @endcode
+#define fail_(...) __CMD_ASSERT_ARGS(fail, __VA_ARGS__)
 
-#define ignore_() ignore(csf_)
+/// @brief Ignore current test. This is used by the other assert functions.
+/// @param message A user facultative message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// xtd::tunit::assert::ignore_("User message..."); // test throws an ignore_error exception.
+/// xtd::tunit::assume::ignore_("User message..."); // test throws an ignore_error exception.
+/// xtd::tunit::valid::ignore_("User message..."); // test throws an ignore_error exception.
+/// @endcode
+#define ignore_(...) __CMD_ASSERT_ARGS(ignore, __VA_ARGS__)
 
+/// @brief Asserts that collection contains an item.
+/// @param value The value to check is empty.
+/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// std::vector<int> v1;
+/// std::vector<int> v2 = {0, 1, 2, 3};
+/// xtd::tunit::assert::is_empty_(v1; // test ok.
+/// xtd::tunit::assert::is_empty_(v2, "User message..."); // test error.
+/// xtd::tunit::assume::is_empty_(v1); // test ok.
+/// xtd::tunit::assume::is_empty_(v2, "User message..."); // test error.
+/// xtd::tunit::valid::is_empty_(v1); // test ok.
+/// xtd::tunit::valid::is_empty_(v2, "User message..."); // test error.
+/// @endcode
 #define is_empty_(...) __CMD_ASSERT_ARGS(is_empty, __VA_ARGS__)
 
+/// @brief Asserts that a condition is false.
+/// @param condition The condition to check is false.
+/// @param message A facutative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// std::string s1 = "Anything";
+/// std::string s2;
+/// xtd::tunit::assert::is_false_(std::empty(s1)); // test ok.
+/// xtd::tunit::assert::is_false_(std::empty(s2), "User message..."); // test error.
+/// xtd::tunit::assume::is_false_(std::empty(s1)); // test ok.
+/// xtd::tunit::assume::is_false_(std::empty(s2), "User message..."); // test error.
+/// xtd::tunit::valid::is_false_(std::empty(s1)); // test ok.
+/// xtd::tunit::valid::is_false_(std::empty(s2), "User message..."); // test error.
+/// @endcode
 #define is_false_(...) __CMD_ASSERT_ARGS(is_false, __VA_ARGS__)
 
+/// @brief Asserts that the first value is greater than the second value.
+/// @param val1 the first value.
+/// @param val2 the second value.
+/// @param message A facutative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// xtd::tunit::assert::is_greater_(24, 12); // test ok.
+/// xtd::tunit::assert::is_greater_(24, 48, "User message..."); // test error.
+/// xtd::tunit::assume::is_greater_(24, 12); // test ok.
+/// xtd::tunit::assume::is_greater_(24, 48, "User message..."); // test error.
+/// xtd::tunit::valid::is_greater_(24, 12); // test ok.
+/// xtd::tunit::valid::is_greater_(24, 48, "User message..."); // test error.
+/// @endcode
 #define is_greater_(...) __CMD_ASSERT_ARGS(is_greater, __VA_ARGS__)
 
+/// @brief Asserts that the first value is greater than or equal to the second value.
+/// @param val1 the first value.
+/// @param val2 the second value.
+/// @param message A facutative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// xtd::tunit::assert::is_greater_or_equal_(24, 12); // test ok.
+/// xtd::tunit::assert::is_greater_or_equal_(24, 24); // test ok.
+/// xtd::tunit::assert::is_greater_or_equal_(24, 48, "User message..."); // test error.
+/// xtd::tunit::assume::is_greater_or_equal_(24, 12); // test ok.
+/// xtd::tunit::assume::is_greater_or_equal_(24, 24); // test ok.
+/// xtd::tunit::assume::is_greater_or_equal_(24, 48, "User message..."); // test error.
+/// xtd::tunit::valid::is_greater_or_equal_(24, 12); // test ok.
+/// xtd::tunit::valid::is_greater_or_equal_(24, 24); // test ok.
+/// xtd::tunit::valid::is_greater_or_equal_(24, 48, "User message..."); // test error.
+/// @endcode
 #define is_greater_or_equal_(...) __CMD_ASSERT_ARGS(is_greater_or_equal, __VA_ARGS__)
 
+/// @brief Asserts that an object is of the type supplied or a derived type.
+/// @param value The object to verify
+/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// std::invalid_argument except("invalid argument");
+/// xtd::tunit::assert::is_instance_of_(std::logic_error, except; // test ok.
+/// xtd::tunit::assert::is_instance_of_(std::bad_cast, except, "User message..."); // test error.
+/// xtd::tunit::assume::is_instance_of_(std::logic_error, except; // test ok.
+/// xtd::tunit::assume::is_instance_of_(std::bad_cast, except, "User message..."); // test error.
+/// xtd::tunit::valid::is_instance_of_(std::logic_error, except; // test ok.
+/// xtd::tunit::valid::is_instance_of_(std::bad_cast, except, "User message..."); // test error.
+/// @endcode
 #define is_instance_of_(type_t, ...) __CMD_ASSERT_ARGS(is_instance_of<type_t>, __VA_ARGS__)
 
+/// @brief Asserts that the first value is is_less than the second value.
+/// @param val1 the first value.
+/// @param val2 the second value.
+/// @param message A facutative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// xtd::tunit::assert::is_less_(24, 48); // test ok.
+/// xtd::tunit::assert::is_less_(24, 12, "User message..."); // test error.
+/// xtd::tunit::assume::is_less_(24, 48); // test ok.
+/// xtd::tunit::assume::is_less_(24, 12, "User message..."); // test error.
+/// xtd::tunit::valid::is_less_(24, 48); // test ok.
+/// xtd::tunit::valid::is_less_(24, 12, "User message..."); // test error.
+/// @endcode
 #define is_less_(...) __CMD_ASSERT_ARGS(is_less, __VA_ARGS__)
 
+/// @brief Asserts that the first value is is_less than or equal to the second value.
+/// @param val1 the first value.
+/// @param val2 the second value.
+/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// xtd::tunit::assert::is_less_or_equal_(24, 48); // test ok.
+/// xtd::tunit::assert::is_less_or_equal_(24, 24); // test ok.
+/// xtd::tunit::assert::is_less_or_equal_(24, 12, "User message..."); // test error.
+/// xtd::tunit::assume::is_less_or_equal_(24, 48); // test ok.
+/// xtd::tunit::assume::is_less_or_equal_(24, 24); // test ok.
+/// xtd::tunit::assume::is_less_or_equal_(24, 12, "User message..."); // test error.
+/// xtd::tunit::valid::is_less_or_equal_(24, 48); // test ok.
+/// xtd::tunit::valid::is_less_or_equal_(24, 24); // test ok.
+/// xtd::tunit::valid::is_less_or_equal_(24, 12, "User message..."); // test error.
+/// @endcode
 #define is_less_or_equal_(...) __CMD_ASSERT_ARGS(is_less_or_equal, __VA_ARGS__)
 
+/// @brief Asserts that a value is NaN.
+/// @param value The value to check is NaN.
+/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// double v1 = std::numeric_limits<double>::quiet_NaN();
+/// double v2 = 3.14159265358979323846;
+/// xtd::tunit::assert::is_NaN_(v1); // test ok.
+/// xtd::tunit::assert::is_NaN_(v2, "User message..."); // test error.
+/// xtd::tunit::assume::is_NaN_(v1); // test ok.
+/// xtd::tunit::assume::is_NaN_(v2, "User message..."); // test error.
+/// xtd::tunit::valid::is_NaN_(v1); // test ok.
+/// xtd::tunit::valid::is_NaN_(v2, "User message..."); // test error.
+/// @endcode
 #define is_NaN_(...) __CMD_ASSERT_ARGS(is_NaN, __VA_ARGS__)
 
+/// @brief Asserts that ta condition is negative.
+/// @param value The value to check is negative.
+/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// int i1 = -1;
+/// int i2 = 1;
+/// xtd::tunit::assert::is_negative_(i1); // test ok.
+/// xtd::tunit::assert::is_negative_(i2, "User message..."); // test error.
+/// xtd::tunit::assume::is_negative_(i1); // test ok.
+/// xtd::tunit::assume::is_negative_(i2, "User message..."); // test error.
+/// xtd::tunit::valid::is_negative_(i1); // test ok.
+/// xtd::tunit::valid::is_negative_(i2, "User message..."); // test error.
+/// @endcode
 #define is_negative_(...) __CMD_ASSERT_ARGS(is_negative, __VA_ARGS__)
 
+/// @brief Asserts that collection does not contain any item.
+/// @param value The value to check is empty.
+/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// std::vector<int> v1 = {0, 1, 2, 3};
+/// std::vector<int> v2;
+/// xtd::tunit::assert::is_not_empty_(v1); // test ok.
+/// xtd::tunit::assert::is_not_empty_(v2, "User message..."); // test error.
+/// xtd::tunit::assume::is_not_empty_(v1); // test ok.
+/// xtd::tunit::assume::is_not_empty_(v2, "User message..."); // test error.
+/// xtd::tunit::valid::is_not_empty_(v1); // test ok.
+/// xtd::tunit::valid::is_not_empty_(v2, "User message..."); // test error.
+/// @endcode
 #define is_not_empty_(...) __CMD_ASSERT_ARGS(is_not_empty, __VA_ARGS__)
 
+/// @brief Asserts that an object is not of the type supplied or a derived type.
+/// @param value The object to verify
+/// @param message A facutative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// std::invalid_argument except("invalid argument");
+/// xtd::tunit::assert::is_not_instance_of_(std::bad_cast, except); // test ok.
+/// xtd::tunit::assert::is_not_instance_of_(std::logic_error, except, "User message..."); // test error.
+/// xtd::tunit::assume::is_not_instance_of_(std::bad_cast, except); // test ok.
+/// xtd::tunit::assume::is_not_instance_of_(std::logic_error, except, "User message..."); // test error.
+/// xtd::tunit::valid::is_not_instance_of_(std::bad_cast, except); // test ok.
+/// xtd::tunit::valid::is_not_instance_of_(std::logic_error, except, "User message..."); // test error.
+/// @endcode
 #define is_not_instance_of_(type_t, ...) __CMD_ASSERT_ARGS(is_not_instance_of<type_t>, __VA_ARGS__)
 
+/// @brief Asserts that the pointer is not null.
+/// @param pointer The pointer to check is null.
+/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// std::string str = "Anything";
+/// std::string* s1 = &str;
+/// std::string* s2 = nullptr;
+/// xtd::tunit::assert::is_not_null_(s1); // test ok.
+/// xtd::tunit::assert::is_not_null_(s2, "User message..."); // test error.
+/// xtd::tunit::assume::is_not_null_(s1); // test ok.
+/// xtd::tunit::assume::is_not_null_(s2, "User message..."); // test error.
+/// xtd::tunit::valid::is_not_null_(s1); // test ok.
+/// xtd::tunit::valid::is_not_null_(s2, "User message..."); // test error.
+/// @endcode
 #define is_not_null_(...) __CMD_ASSERT_ARGS(is_not_null, __VA_ARGS__)
 
+/// @brief Asserts that ta condition is not zero.
+/// @param value The value to check is not zero.
+/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// int i1 = 42;
+/// int i2 = 0;
+/// xtd::tunit::assert::is_not_zero_(i1); // test ok.
+/// xtd::tunit::assert::is_not_zero_(i2, "User message..."); // test error.
+/// xtd::tunit::assume::is_not_zero_(i1); // test ok.
+/// xtd::tunit::assume::is_not_zero_(i2, "User message..."); // test error.
+/// xtd::tunit::valid::is_not_zero_(i1); // test ok.
+/// xtd::tunit::valid::is_not_zero_(i2, "User message..."); // test error.
+/// @endcode
 #define is_not_zero_(...) __CMD_ASSERT_ARGS(is_not_zero, __VA_ARGS__)
 
+/// @brief Asserts that the pointer is null.
+/// @param pointer The pointer to check is null.
+/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// std::string str = "Anything";
+/// std::string* s1 = nullptr;
+/// std::string* s2 = &str;
+/// xtd::tunit::assert::is_null_(s1); // test ok.
+/// xtd::tunit::assert::is_null_(s2, "User message..."); // test error.
+/// xtd::tunit::assume::is_null_(s1); // test ok.
+/// xtd::tunit::assume::is_null_(s2, "User message..."); // test error.
+/// xtd::tunit::valid::is_null_(s1); // test ok.
+/// xtd::tunit::valid::is_null_(s2, "User message..."); // test error.
+/// @endcode
 #define is_null_(...) __CMD_ASSERT_ARGS(is_null, __VA_ARGS__)
 
+/// @brief Asserts that ta condition is positive.
+/// @param value The value to check is positive.
+/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// int i1 = 1;
+/// int i2 = -1;
+/// xtd::tunit::assert::is_positive_(i1); // test ok.
+/// xtd::tunit::assert::is_positive_(i2, "User message..."); // test error.
+/// xtd::tunit::assume::is_positive_(i1); // test ok.
+/// xtd::tunit::assume::is_positive_(i2, "User message..."); // test error.
+/// xtd::tunit::valid::is_positive_(i1); // test ok.
+/// xtd::tunit::valid::is_positive_(i2, "User message..."); // test error.
+/// @endcode
 #define is_positive_(...) __CMD_ASSERT_ARGS(is_positive, __VA_ARGS__)
 
+/// @brief Asserts that a condition is true.
+/// @param condition The condition to check is true.
+/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// std::string s1;
+/// std::string s2 = "Anything";
+/// xtd::tunit::assert::is_false_(std::empty(s1)); // test ok.
+/// xtd::tunit::assert::is_false_(std::empty(s2), "User message..."); // test error.
+/// xtd::tunit::assume::is_false_(std::empty(s1)); // test ok.
+/// xtd::tunit::assume::is_false_(std::empty(s2), "User message..."); // test error.
+/// xtd::tunit::valid::is_false_(std::empty(s1)); // test ok.
+/// xtd::tunit::valid::is_false_(std::empty(s2), "User message..."); // test error.
+/// @endcode
 #define is_true_(...) __CMD_ASSERT_ARGS(is_true, __VA_ARGS__)
 
+/// @brief Asserts that ta condition is zero.
+/// @param value The value to check is zero.
+/// @param message A facutative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// int i1 = 0;
+/// int i2 = 42;
+/// xtd::tunit::assert::is_zero_(i1); // test ok.
+/// xtd::tunit::assert::is_zero_(i2, "User message..."); // test error.
+/// xtd::tunit::assume::is_zero_(i1); // test ok.
+/// xtd::tunit::assume::is_zero_(i2, "User message..."); // test error.
+/// xtd::tunit::valid::is_zero_(i1); // test ok.
+/// xtd::tunit::valid::is_zero_(i2, "User message..."); // test error.
+/// @endcode
 #define is_zero_(...) __CMD_ASSERT_ARGS(is_zero, __VA_ARGS__)
 
-#define succeed_() succeed(csf_)
+/// @brief Generates a success with a generic message. This is used by the other assert functions.
+/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// xtd::tunit::assert::succeed("User message..."); // test ok.
+/// xtd::tunit::assume::succeed("User message..."); // test ok.
+/// xtd::tunit::valid::succeed("User message..."); // test ok.
+/// @endcode
+#define succeed_(...) __CMD_ASSERT_ARGS(succeed, __VA_ARGS__)
 
+/// @brief Asserts that the statement throws a particular exception when called.
+/// @tparam exception_t The exception type that must be throw.
+/// @param statement The statement that verify.
+/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// std::vector<int> v1 = {1, 2, 3, 4};
+/// xtd::tunit::assert::throws_(std::out_of_range, [&] {v1.at(5);}); // test ok.
+/// xtd::tunit::assert::throws_(std::out_of_range, [&] {v1.at(2);}, "User message..."); // test error.
+/// xtd::tunit::assume::throws_(std::out_of_range, [&] {v1.at(5);}); // test ok.
+/// xtd::tunit::assume::throws_(std::out_of_range, [&] {v1.at(2);}, "User message..."); // test error.
+/// xtd::tunit::valid::throws_(std::out_of_range, [&] {v1.at(5);}); // test ok.
+/// xtd::tunit::valid::throws_(std::out_of_range, [&] {v1.at(2);}, "User message..."); // test error.
+/// @endcode
 #define throws_(exception_t, ...) __CMD_ASSERT_ARGS(throws<exception_t>, __VA_ARGS__)
 
+/// @brief Asserts that the staement does not throw an exception.
+/// @param statement The statement that verify.
+/// @param message A facultative user message to display if the assertion fails. This message can be seen in the unit test results.
+/// @ingroup xtd_tunit tunit
+/// @remarks Contains information about current file and current line.
+/// @remarks Can be used with xtd::tunit::assert, xtd::tunit::assume and xtd::tunit::valid classes.
+/// @par Examples
+/// @code
+/// std::vector<int> v1 = {1, 2, 3, 4};
+/// xtd::tunit::assert::throws_any_([&] {v1.at(5);}); // test ok.
+/// xtd::tunit::assert::throws_any_([&] {v1.at(2);}, "User message..."); // test error.
+/// xtd::tunit::assume::throws_any_([&] {v1.at(5);}); // test ok.
+/// xtd::tunit::assume::throws_any_([&] {v1.at(2);}, "User message..."); // test error.
+/// xtd::tunit::valid::throws_any_([&] {v1.at(5);}); // test ok.
+/// xtd::tunit::valid::throws_any_([&] {v1.at(2);}, "User message..."); // test error.
+/// @endcode
 #define throws_any_(...) __CMD_ASSERT_ARGS(throws_any, __VA_ARGS__)
