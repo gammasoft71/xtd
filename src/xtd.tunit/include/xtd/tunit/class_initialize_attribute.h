@@ -22,7 +22,6 @@ namespace xtd {
       /// @param method Initialize class method.
       template<typename test_class_t>
       class_initialize_attribute(const std::string& name, test_class_t& test_class, void (*method)()) noexcept :  class_initialize_attribute(name, test_class, method, xtd::diagnostics::stack_frame()) {}
-      
       /// @brief Creates new instance of class initialize_attribute attribute.
       /// @param name Name of attribute
       /// @param test_class xtd::tunit::class_test containing initialize method.
