@@ -25,272 +25,51 @@ namespace xtd {
     public:
       /// @brief Creates new instance ostream event lister with ostream specified.
       /// @param os std::ostream where events are written.
-      ostream_event_listener(std::ostream& os) noexcept : os_(os) {}
+      ostream_event_listener(std::ostream& os) noexcept;
       
       /// @brief Occurs when class is ended.
       /// @param class_event_args Contains class event parameters.
-      void on_class_end(const xtd::tunit::class_event_args& e) const override {
-        if (settings::default_settings().gtest_compatibility()) {
-          os_ << __foreground_color(__console_color::dark_green);
-          os_ << "[----------] ";
-          os_ << __reset_color();
-          os_ << e.test_class().test_count() << " tests from " << e.test_class().name() << " (" << e.test_class().elapsed_time().count() << " ms total)" << std::endl << std::endl;
-        }
-        event_listener::on_class_end(e);
-      }
+      void on_class_end(const xtd::tunit::class_event_args& e) const override;
       
       /// @brief Occurs when class cleanup is started.
       /// @param class_event_args Contains class event parameters.
-      void on_class_start(const xtd::tunit::class_event_args& e) const override {
-        if (settings::default_settings().gtest_compatibility()) {
-          os_ << __foreground_color(__console_color::dark_green);
-          os_ << "[----------] ";
-          os_ << __reset_color();
-          os_ << e.test_class().test_count() << " tests from " << e.test_class().name() << std::endl;
-        }
-        event_listener::on_class_start(e);
-      }
+      void on_class_start(const xtd::tunit::class_event_args& e) const override;
 
       /// @brief Occurs when test is aborted.
       /// @param test_event_args Contains test event parameters.
-      void on_test_aborted(const xtd::tunit::test_event_args& e) const override {
-        event_listener::on_test_aborted(e);
-        if (settings::default_settings().gtest_compatibility()) {
-          os_ << e.test().stack_frame().get_file_name() << ":" << e.test().stack_frame().get_file_line_number() << ": Failure" << std::endl;
-          if (e.test().actual() != "") os_ << "Value of: " << e.test().actual() << std::endl;
-          if (e.test().actual() != "") os_ << "  Actual: " << e.test().actual() << std::endl;
-          if (e.test().expect() != "") os_ << "Expected: " << e.test().expect() << std::endl;
-          if (e.test().message() != "") os_ << e.test().message() << std::endl;
-          os_ << __foreground_color(__console_color::dark_red);
-          os_ << "[  ABORTED ] ";
-          os_ << __reset_color();
-          os_ << e.test_class().name() << "." << e.test().name() << " (" << e.test().elapsed_time().count() << " ms)" << std::endl;
-        } else {
-          os_ << __foreground_color(__console_color::magenta);
-          os_ << "  ABORTED ";
-          os_ << __reset_color();
-          os_ << e.test_class().name() << "." << e.test().name();
-          if (xtd::tunit::settings::default_settings().show_duration())
-            os_ << " (" << e.test().elapsed_time().count() << " ms total)";
-          os_ << std::endl;
-          if (e.test().message() != "")
-            os_ << "    " << e.test().message() << std::endl;
-          if (e.test().expect() != "")
-            os_ << "    Expected: " << e.test().expect() << std::endl;
-          if (e.test().actual() != "")
-            os_ << "    But was:  " << e.test().actual() << std::endl;
-          if ((e.test().expect() != "" || e.test().actual() != "") && e.test().stack_frame() != xtd::diagnostics::stack_frame::empty()) {
-            os_ << "    Stack Trace: in " << e.test().stack_frame().get_file_name();
-            if (e.test().stack_frame().get_file_line_number() != 0) os_ << ":" << e.test().stack_frame().get_file_line_number();
-          }
-          os_ << std::endl;
-        }
-      }
+      void on_test_aborted(const xtd::tunit::test_event_args& e) const override;
       
       /// @brief Occurs when test initialize is started.
       /// @param test_event_args Contains test event parameters.
-      void on_unit_test_cleanup_start(const xtd::tunit::tunit_event_args& e) const override {
-        if (settings::default_settings().gtest_compatibility()) {
-          os_ << __foreground_color(__console_color::dark_green);
-          os_ << "[----------] ";
-          os_ << __reset_color();
-          os_ << "Global test environment tear-down" << std::endl;
-        }
-        event_listener::on_unit_test_cleanup_start(e);
-      }
+      void on_unit_test_cleanup_start(const xtd::tunit::tunit_event_args& e) const override;
       
       /// @brief Occurs when unit test initialize is started.
       /// @param tunit_event_args Contains unit test event parameters.
-      void on_unit_test_initialize_start(const xtd::tunit::tunit_event_args& e) const override {
-        if (settings::default_settings().gtest_compatibility()) {
-          os_ << __foreground_color(__console_color::dark_green);
-          os_ << "[----------] ";
-          os_ << __reset_color();
-          os_ << "Global test environment set-up." << std::endl;
-        }
-        event_listener::on_unit_test_initialize_start(e);
-      }
+      void on_unit_test_initialize_start(const xtd::tunit::tunit_event_args& e) const override;
 
       /// @brief Occurs when test is failed.
       /// @param test_event_args Contains test event parameters.
-      void on_test_failed(const xtd::tunit::test_event_args& e) const override {
-        event_listener::on_test_failed(e);
-        if (settings::default_settings().gtest_compatibility()) {
-          os_ << e.test().stack_frame().get_file_name() << ":" << e.test().stack_frame().get_file_line_number() << ": Failure" << std::endl;
-          if (e.test().actual() != "") os_ << "Value of: " << e.test().actual() << std::endl;
-          if (e.test().actual() != "") os_ << "  Actual: " << e.test().actual() << std::endl;
-          if (e.test().expect() != "") os_ << "Expected: " << e.test().expect() << std::endl;
-          if (e.test().message() != "") os_ << e.test().message() << std::endl;
-          os_ << __foreground_color(__console_color::dark_red);
-          os_ << "[  FAILED  ] ";
-          os_ << __reset_color();
-          os_ << e.test_class().name() << "." << e.test().name() << " (" << e.test().elapsed_time().count() << " ms)" << std::endl;
-        } else {
-          os_ << __foreground_color(__console_color::red);
-          os_ << "  FAILED  ";
-          os_ << __reset_color();
-          os_ << e.test_class().name() << "." << e.test().name();
-          if (xtd::tunit::settings::default_settings().show_duration())
-            os_ << " (" << e.test().elapsed_time().count() << " ms total)";
-          os_ << std::endl;
-          if (e.test().message() != "")
-            os_ << "    " << e.test().message() << std::endl;
-          if (e.test().expect() != "")
-            os_ << "    Expected: " << e.test().expect() << std::endl;
-          if (e.test().actual() != "")
-            os_ << "    But was:  " << e.test().actual() << std::endl;
-          if (e.test().stack_frame() != xtd::diagnostics::stack_frame::empty()) {
-            os_ << "    Stack Trace: in " << e.test().stack_frame().get_file_name();
-            if (e.test().stack_frame().get_file_line_number() != 0) os_ << ":" << e.test().stack_frame().get_file_line_number();
-          }
-          os_ << std::endl;
-        }
-      }
+      void on_test_failed(const xtd::tunit::test_event_args& e) const override;
       
       /// @brief Occurs when test is ignored.
       /// @param test_event_args Contains test event parameters.
-      void on_test_ignored(const xtd::tunit::test_event_args& e) const override {
-        event_listener::on_test_ignored(e);
-        if (settings::default_settings().gtest_compatibility()) {
-          os_ << __foreground_color(__console_color::dark_yellow);
-          os_ << "[ DISABLED ] ";
-          os_ << __reset_color();
-          os_ << e.test_class().name() << "." << e.test().name() << std::endl;
-        } else {
-          os_ << __foreground_color(__console_color::yellow);
-          os_ << "  IGNORED ";
-          os_ << __reset_color();
-          os_ << e.test_class().name() << "." << e.test().name();
-          if (xtd::tunit::settings::default_settings().show_duration())
-            os_ << " (" << e.test().elapsed_time().count() << " ms total)";
-          os_ << std::endl;
-          if (e.test().message() != "")
-            os_ << "    " << e.test().message() << std::endl;
-        }
-      }
+      void on_test_ignored(const xtd::tunit::test_event_args& e) const override;
       
       /// @brief Occurs when test initialize is started.
       /// @param test_event_args Contains test event parameters.
-      void on_test_start(const xtd::tunit::test_event_args& e) const override {
-        if (settings::default_settings().gtest_compatibility()) {
-          os_ << __foreground_color(__console_color::dark_green);
-          os_ << "[ RUN      ] ";
-          os_ << __reset_color();
-          os_ << e.test_class().name() << "." << e.test().name() << std::endl;
-        }
-        event_listener::on_test_start(e);
-      }
+      void on_test_start(const xtd::tunit::test_event_args& e) const override;
 
       /// @brief Occurs when test is succeed.
       /// @param test_event_args Contains test event parameters.
-      void on_test_succeed(const xtd::tunit::test_event_args& e) const override {
-        event_listener::on_test_succeed(e);
-        if (settings::default_settings().gtest_compatibility()) {
-          os_ << __foreground_color(__console_color::dark_green);
-          os_ << "[       OK ] ";
-          os_ << __reset_color();
-          os_ << e.test_class().name() << "." << e.test().name() << " (" << e.test().elapsed_time().count() << " ms)" << std::endl;
-        } else {
-          os_ << __foreground_color(__console_color::green);
-          os_ << "  SUCCEED ";
-          os_ << __reset_color();
-          os_ << e.test_class().name() << "." << e.test().name();
-          if (xtd::tunit::settings::default_settings().show_duration())
-            os_ << " (" << e.test().elapsed_time().count() << " ms total)";
-          os_ << std::endl;
-          if (e.test().message() != "")
-            os_ << "    " << e.test().message() << std::endl;
-        }
-      }
+      void on_test_succeed(const xtd::tunit::test_event_args& e) const override;
       
       /// @brief Occurs when unit test is ended.
       /// @param tunit_event_args Contains unit test event parameters.
-      void on_unit_test_end(const xtd::tunit::tunit_event_args& e) const override {
-        event_listener::on_unit_test_end(e);
-        if (settings::default_settings().gtest_compatibility()) {
-          os_ << __foreground_color(__console_color::dark_green);
-          os_ << "[==========] ";
-          os_ << __reset_color();
-          os_ << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test suite" << (e.unit_test().test_cases_count() > 1 ?  "s" : "") <<  " ran. (" << e.unit_test().elapsed_time().count() << " ms total)" << std::endl;
-          os_ << __foreground_color(__console_color::dark_green);
-          os_ << "[  PASSED  ] ";
-          os_ << __reset_color();
-          os_ << e.unit_test().succeed_test_count() << " tests." << std::endl;
-          if (e.unit_test().failed_test_count()) {
-            os_ << __foreground_color(__console_color::dark_red);
-            os_ << "[  FAILED  ] ";
-            os_ << __reset_color();
-            os_ << e.unit_test().failed_test_count() << " test, listed below:" << std::endl;
-            for (std::string name : e.unit_test().failed_test_names()) {
-              os_ << __foreground_color(__console_color::dark_red);
-              os_ << "[  FAILED  ] ";
-              os_ << __reset_color();
-              os_ << name << std::endl;
-            }
-            os_ << std::endl;
-            os_ << " " << e.unit_test().failed_test_count() << " FAILED TEST" << std::endl;
-          }
-          if (!e.unit_test().failed_test_count() && e.unit_test().ignored_test_count()) os_ << std::endl;
-          if (e.unit_test().ignored_test_count()) {
-            os_ << __foreground_color(__console_color::dark_yellow);
-            os_ << "  YOU HAVE " << e.unit_test().ignored_test_count() << " DISABLED TEST" << (e.unit_test().ignored_test_count() > 1 ? "S" : "") << std::endl << std::endl;
-            os_ << __reset_color();
-          }
-        } else {
-          os_ << std::endl;
-          os_ << "Test results:" << std::endl;
-          if (e.unit_test().succeed_test_count()) {
-            os_ << __foreground_color(__console_color::green);
-            os_ << "  SUCCEED ";
-            os_ << __reset_color();
-            os_ << e.unit_test().succeed_test_count() << " test" << (e.unit_test().succeed_test_count() > 1 ? "s" : "") << "." << std::endl;
-          }
-          if (e.unit_test().aborted_test_count()) {
-            os_ << __foreground_color(__console_color::magenta);
-            os_ << "  ABORTED ";
-            os_ << __reset_color();
-            os_ << e.unit_test().aborted_test_count() << " test" << (e.unit_test().aborted_test_count() > 1 ? "s" : "") << "." << std::endl;
-          }
-          if (e.unit_test().failed_test_count()) {
-            os_ << __foreground_color(__console_color::red);
-            os_ << "  FAILED  ";
-            os_ << __reset_color();
-            os_ << e.unit_test().failed_test_count() << " test" << (e.unit_test().failed_test_count() > 1 ? "s" : "") << "." << std::endl;
-          }
-          if (e.unit_test().ignored_test_count()) {
-            os_ << __foreground_color(__console_color::yellow);
-            os_ << "  IGNORED ";
-            os_ << __reset_color();
-            os_ << e.unit_test().ignored_test_count() << " test" << (e.unit_test().ignored_test_count() > 1 ? "s" : "") << "." << std::endl;
-          }
-          
-          os_ << "End " << e.unit_test().test_count() << " test" << (e.unit_test().test_count() > 1 ? "s" : "") << " from " << e.unit_test().test_cases_count() << " test case" << (e.unit_test().test_cases_count() > 1 ? "s" : "") << " ran.";
-          if (xtd::tunit::settings::default_settings().show_duration())
-            os_ << " (" << e.unit_test().elapsed_time().count() << " ms total)";
-          os_ << std::endl << std::endl;
-        }
-      }
+      void on_unit_test_end(const xtd::tunit::tunit_event_args& e) const override;
       
       /// @brief Occurs when unit test cleanup is started.
       /// @param tunit_event_args Contains unit test event parameters.
-      void on_unit_test_start(const xtd::tunit::tunit_event_args& e) const override {
-        if (e.unit_test().repeat_tests()) {
-          if (!settings::default_settings().gtest_compatibility()) os_ << __foreground_color(__console_color::cyan);
-          os_ << "Repeating all tests (iteration " << e.unit_test().repeat_iteration() << ") . . ." << std::endl << std::endl;
-          os_ << __reset_color();
-        }
-        if (settings::default_settings().gtest_compatibility()) {
-          os_ << "Running main() from " << settings::default_settings().file_name_ << std::endl;
-          os_ << __foreground_color(__console_color::dark_green);
-          os_ << "[==========] ";
-          os_ << __reset_color();
-          os_ << "Running " << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test suite" << (e.unit_test().test_cases_count() > 1 ? "s" : "") << "." << std::endl;
-        } else {
-          os_ << "Start " << e.unit_test().test_count() << " test" << (e.unit_test().test_count() > 1 ? "s" : "") << " from " << e.unit_test().test_cases_count() << " test case" << (e.unit_test().test_cases_count() > 1 ? "s" : "") << std::endl;
-          os_ << "Run tests:" << std::endl;
-        }
-        event_listener::on_unit_test_start(e);
-      }
+      void on_unit_test_start(const xtd::tunit::tunit_event_args& e) const override;
       
     private:
       std::ostream& os_;
