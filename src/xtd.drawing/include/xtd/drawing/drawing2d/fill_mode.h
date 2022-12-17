@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::fill_mode enum class.
+/// @brief Contains xtd::drawing::drawing2d::fill_mode enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/enum.h>
