@@ -107,7 +107,15 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   using sbyte = int_least8_t;
-  
+
+  /// @brief Represents a size of any object in bytes
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core types
+  using size = size_t;
+
   /// @brief Represents a 32-bit or 64-bit signed integer.
   /// @par Namespace
   /// xtd

@@ -48,7 +48,7 @@ namespace xtd::forms::tests {
       #if defined(_WIN32)
       assert::are_equal(size(GetSystemMetrics(SM_CXEDGE), GetSystemMetrics(SM_CYEDGE)), system_information::border_3d_size(), csf_);
       #else
-      assert::are_equal(size(0, 0), system_information::border_3d_size(), csf_);
+      assert::are_equal(drawing::size(0, 0), system_information::border_3d_size(), csf_);
       #endif
     }
     
@@ -66,7 +66,7 @@ namespace xtd::forms::tests {
       #if defined(_WIN32)
       assert::are_equal(size(GetSystemMetrics(SM_CXBORDER), GetSystemMetrics(SM_CYBORDER)), system_information::border_size(), csf_);
       #else
-      assert::are_equal(size(0, 0), system_information::border_size(), csf_);
+      assert::are_equal(drawing::size(0, 0), system_information::border_size(), csf_);
       #endif
     }
     
@@ -74,7 +74,7 @@ namespace xtd::forms::tests {
       #if defined(_WIN32)
       assert::are_equal(size(GetSystemMetrics(SM_CXSIZE), GetSystemMetrics(SM_CYSIZE)), system_information::caption_button_size(), csf_);
       #else
-      assert::are_equal(size(16, 16), system_information::caption_button_size(), csf_);
+      assert::are_equal(drawing::size(16, 16), system_information::caption_button_size(), csf_);
       #endif
     }
     
@@ -115,7 +115,7 @@ namespace xtd::forms::tests {
       #if defined(_WIN32)
       assert::are_equal(size(GetSystemMetrics(SM_CXCURSOR), GetSystemMetrics(SM_CYCURSOR)), system_information::cursor_size(), csf_);
       #else
-      assert::are_equal(size(32, 32), system_information::cursor_size(), csf_);
+      assert::are_equal(drawing::size(32, 32), system_information::cursor_size(), csf_);
       #endif
     }
     
@@ -139,7 +139,7 @@ namespace xtd::forms::tests {
       #if defined(_WIN32)
       assert::are_equal(size(GetSystemMetrics(SM_CXDOUBLECLK), GetSystemMetrics(SM_CYDOUBLECLK)), system_information::double_click_size(), csf_);
       #else
-      assert::are_equal(size(4, 4), system_information::double_click_size(), csf_);
+      assert::are_equal(drawing::size(4, 4), system_information::double_click_size(), csf_);
       #endif
     }
     
@@ -167,7 +167,7 @@ namespace xtd::forms::tests {
       #if defined(_WIN32)
       assert::are_equal(size(GetSystemMetrics(SM_CXDRAG), GetSystemMetrics(SM_CYDRAG)), system_information::drag_size(), csf_);
       #else
-      assert::are_equal(size(4, 4), system_information::drag_size(), csf_);
+      assert::are_equal(drawing::size(4, 4), system_information::drag_size(), csf_);
       #endif
     }
     
@@ -175,7 +175,7 @@ namespace xtd::forms::tests {
       #if defined(_WIN32)
       assert::are_equal(size(GetSystemMetrics(SM_CXFRAME), GetSystemMetrics(SM_CYFRAME)), system_information::fixed_frame_border_size(), csf_);
       #else
-      assert::are_equal(size(0, 0), system_information::fixed_frame_border_size(), csf_);
+      assert::are_equal(drawing::size(0, 0), system_information::fixed_frame_border_size(), csf_);
       #endif
     }
     
