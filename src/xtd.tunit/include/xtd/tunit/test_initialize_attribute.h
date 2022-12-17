@@ -15,6 +15,9 @@ namespace xtd {
     /// @include test_class_without_helpers.cpp
     class test_initialize_attribute {
     public:
+      /// @name Constructors
+      
+      /// @{
       /// @brief Creates a new instance of test_initialize_attribute with specified name, test_class and method.
       /// @param name The name of the test initialize attribute.
       /// @param test_class The test_class that will contians the test initialize attribute.
@@ -29,6 +32,7 @@ namespace xtd {
       /// @param stack_frame The stack frame of test initialize method.
       template<typename test_class_t>
       test_initialize_attribute(const std::string& name, test_class_t& test_class, void (*method)(), const xtd::diagnostics::stack_frame& stack_frame) noexcept {test_class.add_test_initialize({name, method, stack_frame});}
+      /// @}
     };
   }
 }
