@@ -76,6 +76,7 @@ add_sources(
   src/xtd/tunit/test.cpp
   src/xtd/tunit/test_class.cpp
   src/xtd/tunit/unit_test.cpp
+  src/xtd/tunit/valid.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})
 
