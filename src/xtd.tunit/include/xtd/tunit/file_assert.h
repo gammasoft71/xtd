@@ -20,7 +20,7 @@ namespace xtd {
     /// @par Examples
     /// This example show how to used some methods :
     /// @include assert.cpp
-    class file_assert final : private base_assert {
+    class tunit_export_ file_assert final : private base_assert {
     public:
       /// @cond
       file_assert() = delete;

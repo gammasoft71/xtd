@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "test_class.h"
+#include "../tunit_export.h"
 #include <memory>
 #include <xtd/ustring.h>
 
@@ -16,7 +17,7 @@ namespace xtd {
     /// @par Library
     /// xtd.tunit
     /// @ingroup xtd_tunit tunit
-    class registered_test_class final {
+    class tunit_export_ registered_test_class final {
     public:
       /// @name Constructors
       

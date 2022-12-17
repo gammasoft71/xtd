@@ -19,7 +19,7 @@ namespace xtd {
     /// @par Examples
     /// This example show how to used some methods :
     /// @include assert.cpp
-    class string_assume final : private base_assert {
+    class tunit_export_ string_assume final : private base_assert {
     public:
       /// @cond
       string_assume() = delete;

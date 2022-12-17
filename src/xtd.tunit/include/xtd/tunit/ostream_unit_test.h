@@ -19,7 +19,7 @@ namespace xtd {
     /// xtd.tunit
     /// @ingroup xtd_tunit tunit
     /// @remarks All messages are written on the specified ostream.
-    class ostream_unit_test : public xtd::tunit::unit_test {
+    class tunit_export_ ostream_unit_test : public xtd::tunit::unit_test {
     public:
       /// @name Constructors
       
