@@ -20,7 +20,7 @@ namespace xtd {
     /// @par Examples
     /// This example shows how to instantiate and launch tests with console unit test.
     /// @include console_unit_test.cpp
-    class console_unit_test final : public ostream_unit_test {
+    class tunit_export_ console_unit_test final : public ostream_unit_test {
     public:
       /// @name Constructors
       

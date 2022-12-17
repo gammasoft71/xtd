@@ -21,7 +21,7 @@ namespace xtd {
     /// @par Examples
     /// The following examples show how to use ostream_event_listener.
     /// @include ostream_unit_test.cpp
-    class ostream_event_listener : public xtd::tunit::event_listener {
+    class tunit_export_ ostream_event_listener : public xtd::tunit::event_listener {
     public:
       /// @name Constructors
       
