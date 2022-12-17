@@ -80,69 +80,14 @@ namespace xtd {
       }
       
       /// @cond
-      static void are_equal(const char* expected, const char* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::are_equal(expected, actual, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void are_equal(const char8* expected, const char8* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::are_equal(expected, actual, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void are_equal(const char16* expected, const char16* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::are_equal(expected, actual, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void are_equal(const char32* expected, const char32* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::are_equal(expected, actual, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void are_equal(const wchar_t* expected, const wchar_t* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::are_equal(expected, actual, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void are_equal(float expected, float actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::are_equal(expected, actual, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void are_equal(double expected, double actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::are_equal(expected, actual, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void are_equal(long double expected, long double actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::are_equal(expected, actual, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
+      static void are_equal(const char* expected, const char* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void are_equal(const char8* expected, const char8* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void are_equal(const char16* expected, const char16* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void are_equal(const char32* expected, const char32* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void are_equal(const wchar_t* expected, const wchar_t* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void are_equal(float expected, float actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void are_equal(double expected, double actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void are_equal(long double expected, long double actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       /// @endcond
       
       /// @brief Validates that two type are equal.
@@ -155,8 +100,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal_(0.00008f, f, 0.0000000000001f); // test ok.
       /// xtd::tunit::valid::are_equal_(0.00008f, f, 0.00000000000001f); // test fails.
       /// @endcode
-      static void are_equal(float expected, float actual, float tolerance) {are_equal(expected, actual, tolerance, "", csf_);}
-      
+      static void are_equal(float expected, float actual, float tolerance);
       /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -168,8 +112,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal_(0.00008f, f, 0.0000000000001f, csf_); // test ok.
       /// xtd::tunit::valid::are_equal_(0.00008f, f, 0.00000000000001f, csf_); // test fails.
       /// @endcode
-      static void are_equal(float expected, float actual, float tolerance, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(expected, actual, tolerance, "", stack_frame);}
-      
+      static void are_equal(float expected, float actual, float tolerance, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -181,8 +124,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal_(0.00008f, f, 0.0000000000001f, "User message..."); // test ok.
       /// xtd::tunit::valid::are_equal_(0.00008f, f, 0.00000000000001f, "User message..."); // test fails.
       /// @endcode
-      static void are_equal(float expected, float& actual, float tolerance, const xtd::ustring& message) {are_equal(expected, actual, tolerance, message, xtd::diagnostics::stack_frame::empty());}
-      
+      static void are_equal(float expected, float& actual, float tolerance, const xtd::ustring& message);
       /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -195,14 +137,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal_(0.00008f, f, 0.0000000000001f, "User message...", csf_); // test ok.
       /// xtd::tunit::valid::are_equal_(0.00008f, f, 0.00000000000001f, "User message...", csf_); // test fails.
       /// @endcode
-      static void are_equal(float expected, float actual, float tolerance, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::are_equal(expected, actual, tolerance, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
+      static void are_equal(float expected, float actual, float tolerance, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -213,8 +148,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal_(0.00008, d, 0.0000000000001); // test ok.
       /// xtd::tunit::valid::are_equal_(0.00008, d, 0.00000000000001); // test fails.
       /// @endcode
-      static void are_equal(double expected, double actual, double tolerance) {are_equal(expected, actual, tolerance, "", csf_);}
-      
+      static void are_equal(double expected, double actual, double tolerance);
       /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -226,8 +160,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal_(0.00008, d, 0.0000000000001, csf_); // test ok.
       /// xtd::tunit::valid::are_equal_(0.00008, d, 0.00000000000001, csf_); // test fails.
       /// @endcode
-      static void are_equal(double expected, double actual, double tolerance, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(expected, actual, tolerance, "", stack_frame);}
-      
+      static void are_equal(double expected, double actual, double tolerance, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -239,8 +172,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal_(0.00008, d, 0.0000000000001, "User message..."); // test ok.
       /// xtd::tunit::valid::are_equal_(0.00008, d, 0.00000000000001, "User message..."); // test fails.
       /// @endcode
-      static void are_equal(double expected, double actual, double tolerance, const xtd::ustring& message) {are_equal(expected, actual, tolerance, message, xtd::diagnostics::stack_frame::empty());}
-      
+      static void are_equal(double expected, double actual, double tolerance, const xtd::ustring& message);
       /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -253,14 +185,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal_(0.00008, d, 0.0000000000001, "User message...", csf_); // test ok.
       /// xtd::tunit::valid::are_equal_(0.00008, d, 0.00000000000001, "User message...", csf_); // test fails.
       /// @endcode
-      static void are_equal(double expected, double actual, double tolerance, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::are_equal(expected, actual, tolerance, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
+      static void are_equal(double expected, double actual, double tolerance, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -271,8 +196,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal_(0.00008l, ld, 0.0000000000001l); // test ok.
       /// xtd::tunit::valid::are_equal_(0.00008l, ld, 0.00000000000001l); // test fails.
       /// @endcode
-      static void are_equal(long double expected, long double actual, long double tolerance) {are_equal(expected, actual, tolerance, "", csf_);}
-      
+      static void are_equal(long double expected, long double actual, long double tolerance);
       /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -284,8 +208,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal_(0.00008l, ld, 0.0000000000001l, csf_); // test ok.
       /// xtd::tunit::valid::are_equal_(0.00008l, ld, 0.00000000000001l, csf_); // test fails.
       /// @endcode
-      static void are_equal(long double expected, long double actual, long double tolerance, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(expected, actual, tolerance, "", stack_frame);}
-      
+      static void are_equal(long double expected, long double actual, long double tolerance, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -297,8 +220,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal_(0.00008l, ld, 0.0000000000001l, "User message..."); // test ok.
       /// xtd::tunit::valid::are_equal_(0.00008l, ld, 0.00000000000001l, "User message..."); // test fails.
       /// @endcode
-      static void are_equal(long double expected, long double actual, long double tolerance, const xtd::ustring& message) {are_equal(expected, actual, tolerance, message, xtd::diagnostics::stack_frame::empty());}
-      
+      static void are_equal(long double expected, long double actual, long double tolerance, const xtd::ustring& message);
       /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -311,13 +233,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal_(0.00008l, ld, 0.0000000000001l, "User message...", csf_); // test ok.
       /// xtd::tunit::valid::are_equal_(0.00008l, ld, 0.00000000000001l, "User message...", csf_); // test fails.
       /// @endcode
-      static void are_equal(long double expected, long double actual, long double tolerance, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::are_equal(expected, actual, tolerance, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
+      static void are_equal(long double expected, long double actual, long double tolerance, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Validates that two type are not equal.
       /// @param expected the expected value.
@@ -374,45 +290,11 @@ namespace xtd {
       }
       
       /// @cond
-      static void are_not_equal(const char* expected, const char* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::are_not_equal(expected, actual, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void are_not_equal(const char8* expected, const char8* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::are_not_equal(expected, actual, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void are_not_equal(const char16* expected, const char16* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::are_not_equal(expected, actual, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void are_not_equal(const char32* expected, const char32* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::are_not_equal(expected, actual, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void are_not_equal(const wchar_t* expected, const wchar_t* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::are_not_equal(expected, actual, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
+      static void are_not_equal(const char* expected, const char* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void are_not_equal(const char8* expected, const char8* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void are_not_equal(const char16* expected, const char16* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void are_not_equal(const char32* expected, const char32* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void are_not_equal(const wchar_t* expected, const wchar_t* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       /// @endcond
       
       /// @brief Validates that two objects do refer to different objects.
@@ -621,45 +503,11 @@ namespace xtd {
         }
       }
       
-      static void contains(char item, const char* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::contains(item, values, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void contains(char8 item, const char8* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::contains(item, values, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void contains(char16 item, const char16* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::contains(item, values, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void contains(char32 item, const char32* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::contains(item, values, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void contains(wchar_t item, const wchar_t* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::contains(item, values, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
+      static void contains(char item, const char* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void contains(char8 item, const char8* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void contains(char16 item, const char16* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void contains(char32 item, const char32* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void contains(wchar_t item, const wchar_t* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       /// @endcond
       
       /// @brief Validates that the statement does not throw an exception.
@@ -670,8 +518,7 @@ namespace xtd {
       /// xtd::tunit::valid::does_not_throw([&] {v1.at(2);}); // test ok.
       /// xtd::tunit::valid::does_not_throw([&] {v1.at(5);}); // test fails.
       /// @endcode
-      static void does_not_throw(const std::function<void()>& statement) {does_not_throw(statement, "", xtd::diagnostics::stack_frame::empty());}
-      
+      static void does_not_throw(const std::function<void()>& statement);
       /// @brief Validates that the statement does not throw an exception.
       /// @param statement The statement that verify.
       /// @param stack_frame Contains information about current file and current line.
@@ -681,8 +528,7 @@ namespace xtd {
       /// xtd::tunit::valid::does_not_throw([&] {v1.at(2);}, csf_); // test ok.
       /// xtd::tunit::valid::does_not_throw([&] {v1.at(5);}, csf_); // test fails.
       /// @endcode
-      static void does_not_throw(const std::function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame) {does_not_throw(statement, "", stack_frame);}
-      
+      static void does_not_throw(const std::function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that the statement does not throw an exception.
       /// @param statement The statement that verify.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -692,8 +538,7 @@ namespace xtd {
       /// xtd::tunit::valid::does_not_throw([&] {v1.at(2);}, "User message..."); // test ok.
       /// xtd::tunit::valid::does_not_throw([&] {v1.at(5);}, "User message..."); // test fails.
       /// @endcode
-      static void does_not_throw(const std::function<void()>& statement, const xtd::ustring& message) {does_not_throw(statement, message, xtd::diagnostics::stack_frame::empty());}
-      
+      static void does_not_throw(const std::function<void()>& statement, const xtd::ustring& message);
       /// @brief Validates that the statement does not throw an exception.
       /// @param statement The statement that verify.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -704,13 +549,7 @@ namespace xtd {
       /// xtd::tunit::valid::does_not_throw([&] {v1.at(2);}, "User message...", csf_); // test ok.
       /// xtd::tunit::valid::does_not_throw([&] {v1.at(5);}, "User message...", csf_); // test fails.
       /// @endcode
-      static void does_not_throw(const std::function<void()>& statement, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::does_not_throw(statement, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
+      static void does_not_throw(const std::function<void()>& statement, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Validates that collection contains an item.
       /// @param value The value to check is empty.
@@ -786,45 +625,11 @@ namespace xtd {
         }
       }
       
-      static void is_empty(const char* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_empty(value, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_empty(const char8* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_empty(value, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_empty(const char16* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_empty(value, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_empty(const char32* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_empty(value, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_empty(const wchar_t* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_empty(value, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
+      static void is_empty(const char* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_empty(const char8* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_empty(const char16* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_empty(const char32* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_empty(const wchar_t* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       /// @endocnd
       
       /// @brief Validates that ta condition is false.
@@ -836,8 +641,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_false(std::empty(s1)); // test ok.
       /// xtd::tunit::valid::is_false(std::empty(s2)); // test fails.
       /// @endcode
-      static void is_false(bool condition) {is_false(condition, "", xtd::diagnostics::stack_frame::empty());}
-      
+      static void is_false(bool condition);
       /// @brief Validates that a condition is false.
       /// @param condition The condition to check is false.
       /// @param stack_frame Contains information about current file and current line.
@@ -848,8 +652,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_false(std::empty(s1), csf_); // test ok.
       /// xtd::tunit::valid::is_false(std::empty(s2), csf_); // test fails.
       /// @endcode
-      static void is_false(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {is_false(condition, "", stack_frame);}
-      
+      static void is_false(bool condition, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that a condition is false.
       /// @param condition The condition to check is false.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -860,8 +663,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_false(std::empty(s1), "User message..."); // test ok.
       /// xtd::tunit::valid::is_false(std::empty(s2), "User message..."); // test fails.
       /// @endcode
-      static void is_false(bool condition, const xtd::ustring& message) {is_false(condition, message, xtd::diagnostics::stack_frame::empty());}
-      
+      static void is_false(bool condition, const xtd::ustring& message);
       /// @brief Validates that a condition is false.
       /// @param condition The condition to check is false.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -873,13 +675,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_false(std::empty(s1), "User message...", csf_); // test ok.
       /// xtd::tunit::valid::is_false(std::empty(s2), "User message...", csf_); // test fails.
       /// @endcode
-      static void is_false(bool condition, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_false(condition, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
+      static void is_false(bool condition, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Validates that the first value is greater than the second value.
       /// @param val1 the first value.
@@ -936,45 +732,11 @@ namespace xtd {
       }
       
       /// @cond
-      static void is_greater(const char* val1, const char* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_greater(val1, val2, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_greater(const char8* val1, const char8* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_greater(val1, val2, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_greater(const char16* val1, const char16* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_greater(val1, val2, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_greater(const char32* val1, const char32* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_greater(val1, val2, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_greater(const wchar_t* val1, const wchar_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_greater(val1, val2, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
+      static void is_greater(const char* val1, const char* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_greater(const char8* val1, const char8* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_greater(const char16* val1, const char16* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_greater(const char32* val1, const char32* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_greater(const wchar_t* val1, const wchar_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       /// @endcond
       
       /// @brief Validates that the first value is greater than or equal to the second value.
@@ -1036,45 +798,11 @@ namespace xtd {
       }
       
       /// @cond
-      static void is_greater_or_equal(const char* val1, const char* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_greater_or_equal(val1, val2, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_greater_or_equal(const char8* val1, const char8* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_greater_or_equal(val1, val2, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_greater_or_equal(const char16* val1, const char16* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_greater_or_equal(val1, val2, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_greater_or_equal(const char32* val1, const char32* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_greater_or_equal(val1, val2, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_greater_or_equal(const wchar_t* val1, const wchar_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_greater_or_equal(val1, val2, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
+      static void is_greater_or_equal(const char* val1, const char* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_greater_or_equal(const char8* val1, const char8* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_greater_or_equal(const char16* val1, const char16* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_greater_or_equal(const char32* val1, const char32* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_greater_or_equal(const wchar_t* val1, const wchar_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       /// @endcond
       
       /// @brief Validates that an object is of the type supplied or a derived type.
@@ -1186,45 +914,11 @@ namespace xtd {
       }
       
       /// @cond
-      static void is_less(const char* val1, const char* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_less(val1, val2, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_less(const char8* val1, const char8* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_less(val1, val2, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_less(const char16* val1, const char16* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_less(val1, val2, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_less(const char32* val1, const char32* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_less(val1, val2, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_less(const wchar_t* val1, const wchar_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_less(val1, val2, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
+      static void is_less(const char* val1, const char* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_less(const char8* val1, const char8* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_less(const char16* val1, const char16* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_less(const char32* val1, const char32* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_less(const wchar_t* val1, const wchar_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       /// @endcond
       
       /// @brief Validates that the first value is is_less than or equal to the second value.
@@ -1286,45 +980,11 @@ namespace xtd {
       }
       
       /// @cond
-      static void is_less_or_equal(const char* val1, const char* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_less_or_equal(val1, val2, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_less_or_equal(const char8* val1, const char8* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_less_or_equal(val1, val2, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_less_or_equal(const char16* val1, const char16* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_less_or_equal(val1, val2, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_less_or_equal(const char32* val1, const char32* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_less_or_equal(val1, val2, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_less_or_equal(const wchar_t* val1, const wchar_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_less_or_equal(val1, val2, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
+      static void is_less_or_equal(const char* val1, const char* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_less_or_equal(const char8* val1, const char8* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_less_or_equal(const char16* val1, const char16* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_less_or_equal(const char32* val1, const char32* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_less_or_equal(const wchar_t* val1, const wchar_t* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       /// @endcond
       
       /// @brief that a value is NaN.
@@ -1336,8 +996,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_NaN(v1); // test ok.
       /// xtd::tunit::valid::is_NaN(v2); // test fails.
       /// @endcode
-      static void is_NaN(double value) {is_NaN(value, "", xtd::diagnostics::stack_frame::empty());}
-      
+      static void is_NaN(double value);
       /// @brief that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param stack_frame Contains information about current file and current line.
@@ -1348,8 +1007,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_NaN(v1, csf_); // test ok.
       /// xtd::tunit::valid::is_NaN(v2, csf_); // test fails.
       /// @endcode
-      static void is_NaN(double value, const xtd::diagnostics::stack_frame& stack_frame) {is_NaN(value, "", stack_frame);}
-      
+      static void is_NaN(double value, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1360,8 +1018,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_NaN(v1, "User message..."); // test ok.
       /// xtd::tunit::valid::is_NaN(v2, "User message..."); // test fails.
       /// @endcode
-      static void is_NaN(double value, const xtd::ustring& message) {is_NaN(value, message, xtd::diagnostics::stack_frame::empty());}
-      
+      static void is_NaN(double value, const xtd::ustring& message);
       /// @brief Validates that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1373,14 +1030,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_NaN(v1, "User message...", csf_); // test ok.
       /// xtd::tunit::valid::is_NaN(v2, "User message...", csf_); // test fails.
       /// @endcode
-      static void is_NaN(double value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_NaN(value, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
+      static void is_NaN(double value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief that a value is NaN.
       /// @param value The value to check is NaN.
       /// @par Examples
@@ -1390,8 +1040,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_NaN(v1); // test ok.
       /// xtd::tunit::valid::is_NaN(v2); // test fails.
       /// @endcode
-      static void is_NaN(long double value) {is_NaN(value, "", xtd::diagnostics::stack_frame::empty());}
-      
+      static void is_NaN(long double value);
       /// @brief that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param stack_frame Contains information about current file and current line.
@@ -1402,8 +1051,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_NaN(v1, csf_); // test ok.
       /// xtd::tunit::valid::is_NaN(v2, csf_); // test fails.
       /// @endcode
-      static void is_NaN(long double value, const xtd::diagnostics::stack_frame& stack_frame) {is_NaN(value, "", stack_frame);}
-      
+      static void is_NaN(long double value, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1414,8 +1062,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_NaN(v1, "User message..."); // test ok.
       /// xtd::tunit::valid::is_NaN(v2, "User message..."); // test fails.
       /// @endcode
-      static void is_NaN(long double value, const xtd::ustring& message) {is_NaN(value, message, xtd::diagnostics::stack_frame::empty());}
-      
+      static void is_NaN(long double value, const xtd::ustring& message);
       /// @brief Validates that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1427,14 +1074,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_NaN(v1, "User message...", csf_); // test ok.
       /// xtd::tunit::valid::is_NaN(v2, "User message...", csf_); // test fails.
       /// @endcode
-      static void is_NaN(long double value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_NaN(value, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
+      static void is_NaN(long double value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief that a value is NaN.
       /// @param value The value to check is NaN.
       /// @par Examples
@@ -1444,8 +1084,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_NaN(v1); // test ok.
       /// xtd::tunit::valid::is_NaN(v2); // test fails.
       /// @endcode
-      static void is_NaN(float value) {is_NaN(value, "", xtd::diagnostics::stack_frame::empty());}
-      
+      static void is_NaN(float value);
       /// @brief that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param stack_frame Contains information about current file and current line.
@@ -1456,8 +1095,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_NaN(v1, csf_); // test ok.
       /// xtd::tunit::valid::is_NaN(v2, csf_); // test fails.
       /// @endcode
-      static void is_NaN(float value, const xtd::diagnostics::stack_frame& stack_frame) {is_NaN(value, "", stack_frame);}
-      
+      static void is_NaN(float value, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1468,8 +1106,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_NaN(v1, "User message..."); // test ok.
       /// xtd::tunit::valid::is_NaN(v2, "User message..."); // test fails.
       /// @endcode
-      static void is_NaN(float value, const xtd::ustring& message) {is_NaN(value, message, xtd::diagnostics::stack_frame::empty());}
-      
+      static void is_NaN(float value, const xtd::ustring& message);
       /// @brief Validates that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1481,13 +1118,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_NaN(v1, "User message...", csf_); // test ok.
       /// xtd::tunit::valid::is_NaN(v2, "User message...", csf_); // test fails.
       /// @endcode
-      static void is_NaN(float value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_NaN(value, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
+      static void is_NaN(float value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Validates that ta condition is negative.
       /// @param value The value to check is negative.
@@ -1621,45 +1252,11 @@ namespace xtd {
         }
       }
       
-      static void is_not_empty(const char* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_not_empty(value, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_not_empty(const char8* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_not_empty(value, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_not_empty(const char16* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_not_empty(value, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_not_empty(const char32* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_not_empty(value, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      static void is_not_empty(const wchar_t* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_not_empty(value, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
+      static void is_not_empty(const char* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_not_empty(const char8* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_not_empty(const char16* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_not_empty(const char32* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void is_not_empty(const wchar_t* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       /// @endcond
       
       /// @brief Validates that an object is not of the type supplied or a derived type.
@@ -2019,8 +1616,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::valid::is_not_null(nullptr); // test fails.
       /// @endcode
-      static void is_not_null(std::nullptr_t pointer) {is_not_null(pointer, "", xtd::diagnostics::stack_frame::empty());}
-      
+      static void is_not_null(std::nullptr_t pointer);
       /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
@@ -2029,8 +1625,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::valid::is_not_null(nullptr, csf_); // test fails.
       /// @endcode
-      static void is_not_null(std::nullptr_t pointer, const xtd::diagnostics::stack_frame& stack_frame) {is_not_null(pointer, "", stack_frame);}
-      
+      static void is_not_null(std::nullptr_t pointer, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2039,8 +1634,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::valid::is_not_null(nullptr, "User message..."); // test fails.
       /// @endcode
-      static void is_not_null(std::nullptr_t pointer, const xtd::ustring& message) {is_not_null(pointer, message, xtd::diagnostics::stack_frame::empty());}
-      
+      static void is_not_null(std::nullptr_t pointer, const xtd::ustring& message);
       /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2050,13 +1644,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::valid::is_not_null(nullptr, "User message...", csf_); // test fails.
       /// @endcode
-      static void is_not_null(std::nullptr_t pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_not_null(pointer, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
+      static void is_not_null(std::nullptr_t pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Validates that ta condition is not zero.
       /// @param value The value to check is not zero.
@@ -2425,8 +2013,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::valid::is_null(nullptr); // test ok.
       /// @endcode
-      static void is_null(std::nullptr_t pointer) {is_null(pointer, "", xtd::diagnostics::stack_frame::empty());}
-      
+      static void is_null(std::nullptr_t pointer);
       /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
@@ -2435,8 +2022,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::valid::is_null(nullptr, csf_); // test ok.
       /// @endcode
-      static void is_null(std::nullptr_t pointer, const xtd::diagnostics::stack_frame& stack_frame) {is_null(pointer, "", stack_frame);}
-      
+      static void is_null(std::nullptr_t pointer, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2445,8 +2031,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::valid::is_null(nullptr, "User message..."); // test ok.
       /// @endcode
-      static void is_null(std::nullptr_t pointer, const xtd::ustring& message) {is_null(pointer, message, xtd::diagnostics::stack_frame::empty());}
-      
+      static void is_null(std::nullptr_t pointer, const xtd::ustring& message);
       /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2456,7 +2041,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::valid::is_null(nullptr, "User message...", csf_); // test ok.
       /// @endcode
-      static void is_null(std::nullptr_t pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {assert::succeed(message, stack_frame);}
+      static void is_null(std::nullptr_t pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Validates that ta condition is positive.
       /// @param value The value to check is positive.
@@ -2525,8 +2110,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_false(std::empty(s1)); // test ok.
       /// xtd::tunit::valid::is_false(std::empty(s2)); // test fails.
       /// @endcode
-      static void is_true(bool condition) {is_true(condition, "", xtd::diagnostics::stack_frame::empty());}
-      
+      static void is_true(bool condition);
       /// @brief Validates that a condition is true.
       /// @param condition The condition to check is true.
       /// @param stack_frame Contains information about current file and current line.
@@ -2537,8 +2121,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_false(std::empty(s1), csf_); // test ok.
       /// xtd::tunit::valid::is_false(std::empty(s2), csf_); // test fails.
       /// @endcode
-      static void is_true(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {is_true(condition, "", stack_frame);}
-      
+      static void is_true(bool condition, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that a condition is true.
       /// @param condition The condition to check is true.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2549,8 +2132,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_false(std::empty(s1), "User message..."); // test ok.
       /// xtd::tunit::valid::is_false(std::empty(s2), "User message..."); // test fails.
       /// @endcode
-      static void is_true(bool condition, const xtd::ustring& message) {is_true(condition, message, xtd::diagnostics::stack_frame::empty());}
-      
+      static void is_true(bool condition, const xtd::ustring& message);
       /// @brief Validates that a condition is true.
       /// @param condition The condition to check is true.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2562,13 +2144,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_false(std::empty(s1), "User message...", csf_); // test ok.
       /// xtd::tunit::valid::is_false(std::empty(s2), "User message...", csf_); // test fails.
       /// @endcode
-      static void is_true(bool condition, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::is_true(condition, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
+      static void is_true(bool condition, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Validates that ta condition is zero.
       /// @param value The value to check is zero.
@@ -2694,8 +2270,7 @@ namespace xtd {
       /// xtd::tunit::valid::throws_any([&] {v1.at(5);}); // test ok.
       /// xtd::tunit::valid::throws_any([&] {v1.at(2);}); // test fails.
       /// @endcode
-      static void throws_any(const std::function<void()>& statement) {throws_any(statement, "", xtd::diagnostics::stack_frame::empty());}
-      
+      static void throws_any(const std::function<void()>& statement);
       /// @brief Validates that the statement does not throw an exception.
       /// @param statement The statement that verify.
       /// @param stack_frame Contains information about current file and current line.
@@ -2705,8 +2280,7 @@ namespace xtd {
       /// xtd::tunit::valid::throws_any([&] {v1.at(5);}, csf_); // test ok.
       /// xtd::tunit::valid::throws_any([&] {v1.at(2);}, csf_); // test fails.
       /// @endcode
-      static void throws_any(const std::function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame) {throws_any(statement, "", stack_frame);}
-      
+      static void throws_any(const std::function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Validates that the statement does not throw an exception.
       /// @param statement The statement that verify.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2716,8 +2290,7 @@ namespace xtd {
       /// xtd::tunit::valid::throws_any([&] {v1.at(5);}, "User message..."); // test ok.
       /// xtd::tunit::valid::throws_any([&] {v1.at(2);}, "User message..."); // test fails.
       /// @endcode
-      static void throws_any(const std::function<void()>& statement, const xtd::ustring& message) {throws_any(statement, message, xtd::diagnostics::stack_frame::empty());}
-      
+      static void throws_any(const std::function<void()>& statement, const xtd::ustring& message);
       /// @brief Validates that the statement does not throw an exception.
       /// @param statement The statement that verify.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2728,13 +2301,7 @@ namespace xtd {
       /// xtd::tunit::valid::throws_any([&] {v1.at(5);}, "User message...", csf_); // test ok.
       /// xtd::tunit::valid::throws_any([&] {v1.at(2);}, "User message...", csf_); // test fails.
       /// @endcode
-      static void throws_any(const std::function<void()>& statement, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          assert::throws_any(statement, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
+      static void throws_any(const std::function<void()>& statement, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
     };
   }
 }
