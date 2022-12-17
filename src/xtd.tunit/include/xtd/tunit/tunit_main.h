@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains main entry point.
+/// @brief Contains unit test application main entry point.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/startup.h>
