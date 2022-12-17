@@ -25,6 +25,9 @@ namespace xtd {
       valid() = delete;
       /// @endcond
       
+      /// @name Methods
+      
+      /// @{
       /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -2302,6 +2305,7 @@ namespace xtd {
       /// xtd::tunit::valid::throws_any([&] {v1.at(2);}, "User message...", csf_); // test fails.
       /// @endcode
       static void throws_any(const std::function<void()>& statement, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      /// @}
     };
   }
 }
