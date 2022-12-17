@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::graphics_path class.
+/// @brief Contains xtd::drawing::drawing2d::graphics_path class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
