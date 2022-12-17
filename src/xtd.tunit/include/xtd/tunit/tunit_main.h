@@ -22,7 +22,7 @@ public:
 /// @par Library
 /// xtd.tunit
 /// @ingroup xtd_tunit tunit
-/// @remarks The #tunit_main_ launch xtd::tunit::console_unit_test().run() for you.
+/// @remarks The #tunit_main_ launch xtd::tunit::console_unit_test::run for you.
 /// @par Examples
 /// The followng code shows ho to use #tunit_main_.
 /// @code
@@ -48,7 +48,7 @@ __tunit_main
 /// @par Library
 /// xtd.tunit
 /// @ingroup xtd_tunit tunit
-/// @remarks The #tunit_main_ launch xtd::tunit::console_unit_test().run() for you and set xtd::tunit::settings::default_settings().gtest_compatibility to true.
+/// @remarks The #tunit_main_ launch xtd::tunit::console_unit_test::run for you and set xtd::tunit::settings::gtest_compatibility to true.
 /// @par Examples
 /// The followng code shows ho to use #tunit_main_with_gtest_compatibility_.
 /// @code
