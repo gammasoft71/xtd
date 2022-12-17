@@ -18,8 +18,54 @@ public:
 };
 /// @endcond
 
+/// @brief Defines the entry point to be called with #startup_ for unit test application.
+/// @par Library
+/// xtd.tunit
+/// @ingroup xtd_tunit tunit
+/// @remarks The #tunit_main_ launch xtd::tunit::console_unit_test().run() for you.
+/// @par Examples
+/// The followng code shows ho to use #tunit_main_.
+/// @code
+/// #include <xtd/xtd.tunit>
+///
+/// using namespace xtd::tunit;
+///
+/// namespace unit_tests {
+///   test_class_(class_to_test) {
+///   public:
+///     void test_method_(test1) {
+///       // Do test...
+///     }
+///   };
+/// }
+///
+/// startup_(tunit_main_);
+/// @endcode
 #define tunit_main_ \
 __tunit_main
 
+/// @brief Defines the entry point to be called with #startup_ for unit test application with Google test compatibility.
+/// @par Library
+/// xtd.tunit
+/// @ingroup xtd_tunit tunit
+/// @remarks The #tunit_main_ launch xtd::tunit::console_unit_test().run() for you and set xtd::tunit::settings::default_settings().gtest_compatibility to true.
+/// @par Examples
+/// The followng code shows ho to use #tunit_main_with_gtest_compatibility_.
+/// @code
+/// #include <xtd/xtd.tunit>
+///
+/// using namespace xtd::tunit;
+///
+/// namespace unit_tests {
+///   test_class_(class_to_test) {
+///   public:
+///     void test_method_(test1) {
+///       // Do test...
+///     }
+///   };
+/// }
+///
+/// startup_(tunit_main_with_gtest_compatibility_);
+/// @endcode
 #define tunit_main_with_gtest_compatibility_ \
 __tunit_main_with_gtest_compatibility
