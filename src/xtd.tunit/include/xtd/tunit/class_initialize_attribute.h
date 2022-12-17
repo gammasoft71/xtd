@@ -45,7 +45,7 @@ namespace xtd {
 /// @param method_name The class initilize method to add.
 /// @par Library
 /// xtd.tunit
-/// @ingroup xtd_tunit
+/// @ingroup xtd_tunit tunit
 /// @par Examples
 /// The following example shows how to use #class_initialize_ helper.
 /// @include test_class.cpp
