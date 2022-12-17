@@ -103,7 +103,7 @@ namespace xtd::forms::tests {
       check_box_for_test check_box;
       check_box.parent(form);
       check_box.client_size({100, 50});
-      assert::are_equal(size(100, 50), check_box.client_size(), csf_);
+      assert::are_equal(drawing::size(100, 50), check_box.client_size(), csf_);
     }
     
     void test_method_(set_size) {
@@ -111,7 +111,7 @@ namespace xtd::forms::tests {
       check_box_for_test check_box;
       check_box.parent(form);
       check_box.size({100, 50});
-      assert::are_equal(size(100, 50), check_box.size(), csf_);
+      assert::are_equal(drawing::size(100, 50), check_box.size(), csf_);
     }
   };
 }

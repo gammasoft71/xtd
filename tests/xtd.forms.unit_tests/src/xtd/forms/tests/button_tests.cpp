@@ -130,7 +130,7 @@ namespace xtd::forms::tests {
       button_for_test button;
       button.parent(form);
       button.client_size({100, 50});
-      assert::are_equal(size(100, 50), button.client_size(), csf_);
+      assert::are_equal(drawing::size(100, 50), button.client_size(), csf_);
     }
     
     void test_method_(set_size) {
@@ -138,7 +138,7 @@ namespace xtd::forms::tests {
       button_for_test button;
       button.parent(form);
       button.size({100, 50});
-      assert::are_equal(size(100, 50), button.size(), csf_);
+      assert::are_equal(drawing::size(100, 50), button.size(), csf_);
     }
   };
 }
