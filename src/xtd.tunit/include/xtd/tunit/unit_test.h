@@ -26,7 +26,8 @@ namespace xtd {
     class test_class_attribute;
     /// @endcond
     
-    /// @brief The template class.
+    /// @brief The unit_test class is unit test base interface.
+    /// @remarks This class can be instantiated or inherited as for example xtd::tunit::ostream_unit_test.
     /// @par Namespace
     /// xtd::tunit
     /// @par Library
@@ -56,32 +57,62 @@ namespace xtd {
       /// @name Properties
       
       /// @{
+      /// @brief Gets the repeat iteration number. A number between 0 and xtd::tunit::unit_test::repeat_iteration_count.
+      /// @return The repeat iteration number.
       int32 repeat_iteration() const noexcept;
       
+      /// @brief Gets the repeat iteration count.
+      /// @return The repeat iteration count.
+      /// @remarks Is the xtd::tunit::settings::repeat_test for the current setting.
       int32 repeat_iteration_count() const noexcept;
       
+      /// @brief Gets a boolean indictaes if there is repeat tests.
+      /// @return true is repart test; otherwhise false.
+      /// @remarks Returns true if xtd::tunit::unit_test::repeat_test_count greater than 0.
       bool repeat_tests() const noexcept;
       
+      /// @brief Gets the test cases count.
+      /// @return The test cases count.
       size_t test_cases_count() const noexcept;
       
+      /// @brief Gets the test count.
+      /// @return The test count.
       size_t test_count() const noexcept;
       
+      /// @brief Gets the aborted test count.
+      /// @return The aborted test count.
       size_t aborted_test_count() const noexcept;
       
+      /// @brief Gets the array of aborted test names.
+      /// @return The array of aborted test names.
       std::vector<std::string> aborted_test_names() const noexcept;
       
+      /// @brief Gets the elapsed time for the execution of all tests in the unit test.
+      /// @return The elapsed time for the execution of all tests in the unit test.
       std::chrono::milliseconds elapsed_time() const noexcept;
       
+      /// @brief Gets the ignored test count.
+      /// @return The ignored test count.
       size_t ignored_test_count() const noexcept;
       
+      /// @brief Gets the array of ignored test names.
+      /// @return The array of ignored test names.
       std::vector<std::string> ignored_test_names() const noexcept;
       
+      /// @brief Gets the failed test count.
+      /// @return The failed test count.
       size_t failed_test_count() const noexcept;
       
+      /// @brief Gets the array of failed test names.
+      /// @return The array of failed test names.
       std::vector<std::string> failed_test_names() const noexcept;
       
+      /// @brief Gets the succeed test count.
+      /// @return The succeed test count.
       size_t succeed_test_count() const noexcept;
       
+      /// @brief Gets the array of succeed test names.
+      /// @return The array of succeed test names.
       std::vector<std::string> succeed_test_names() const noexcept;
       /// @}
       
@@ -99,8 +130,17 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
+      /// @brief Lists the test names contained in the specified tests.
+      /// @param tests The list of test names.
+      /// @return The xtd::tunit::settings::exit_status value.
+      /// @remarks This method does nothing by default. The inheritor must overload this method to act as it wants when the unit_lest is asked for the test list.
+      /// @remarks This method is typically used to display the list of tests in a stream, or whatever. It depends on the implementation chosen by the inheritor.
       virtual int32 list_tests(const std::vector<std::string>& tests);
       
+      /// @brief Parses the specified arguments.
+      /// @param The arguments to parse.
+      /// @return true the execution process stops immediately after the analysis of the arguments; otherwise false the execution process continues its execution.
+      /// @remarks This method can be overloaded by the heirs. It is typically in this method that the heirs can react to their own arguments. Like for example display a helper when the @p -help argument is passed.
       virtual bool parse_arguments(const std::vector<std::string>& args);
       /// @}
       
