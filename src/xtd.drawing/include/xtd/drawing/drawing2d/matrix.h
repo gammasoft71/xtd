@@ -71,6 +71,8 @@ namespace xtd {
       /// my_matrix.translate(5, 0, matrix_order::append);
       /// @endcode
       class drawing_export_ matrix final : public object, public xtd::iequatable<matrix> {
+        struct data;
+
       public:
         /// @name Constructors
         
@@ -226,10 +228,8 @@ namespace xtd {
         void init_from_rect_3points(const xtd::drawing::rectangle_f& rect, const xtd::drawing::point_f pt1, const xtd::drawing::point_f pt2, const xtd::drawing::point_f pt3);
         friend class xtd::drawing::graphics;
         matrix(intptr handle);
-        struct data {
-          intptr handle = 0;
-        };
-        std::shared_ptr<data> data_ = std::make_shared<data>();
+
+        std::shared_ptr<data> data_;
       };
     }
   }
