@@ -11,6 +11,13 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing2d;
 
+struct radial_gradient_brush::data {
+  xtd::drawing::point_f center_point;
+  xtd::drawing::point_f focal_point;
+  float radius = 0;
+  xtd::drawing::drawing2d::gradient_stop_collection radial_colors;
+};
+
 radial_gradient_brush::radial_gradient_brush() : radial_gradient_brush(point_f(.0f, .0f), {color::transparent, color::transparent}, .0f) {
 }
 
@@ -35,7 +42,7 @@ radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point_f& center
 radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point& center, const std::vector<xtd::drawing::color>& radial_colors,  float radius) : radial_gradient_brush(point_f(as<float>(center.x()), as<float>(center.y())), radial_colors, radius) {
 }
 
-radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point_f& center, const std::vector<xtd::drawing::color>& radial_colors, float radius) {
+radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point_f& center, const std::vector<xtd::drawing::color>& radial_colors, float radius) : data_(std::make_shared<data>()) {
   if (radial_colors.size() < 2) throw argument_exception(csf_);
   
   data_->center_point = center;
