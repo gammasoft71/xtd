@@ -16,17 +16,31 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing2d;
 
-graphics::graphics(intptr handle) {
+struct graphics::data {
+  xtd::drawing::region clip;
+  xtd::drawing::drawing2d::compositing_mode compositing_mode = xtd::drawing::drawing2d::compositing_mode::source_over;
+  xtd::drawing::drawing2d::compositing_quality compositing_quality = xtd::drawing::drawing2d::compositing_quality::default_value;
+  intptr handle = 0;
+  xtd::drawing::drawing2d::interpolation_mode interpolation_mode = xtd::drawing::drawing2d::interpolation_mode::default_value;
+  float page_scale = 1.0f;
+  xtd::drawing::graphics_unit page_unit = xtd::drawing::graphics_unit::pixel;
+  xtd::drawing::drawing2d::pixel_offset_mode pixel_offset_mode = xtd::drawing::drawing2d::pixel_offset_mode::default_value;
+  xtd::drawing::drawing2d::smoothing_mode smoothing_mode = xtd::drawing::drawing2d::smoothing_mode::default_value;
+  xtd::drawing::text::text_rendering_hint text_rendering_hint = xtd::drawing::text::text_rendering_hint::system_default;
+  int32 text_contrast = 4;
+};
+
+graphics::graphics(intptr handle) : data_(std::make_shared<data>()) {
   data_->handle = handle;
 }
 
-graphics::graphics(intptr handle, const drawing::region& region) {
+graphics::graphics(intptr handle, const drawing::region& region) : data_(std::make_shared<data>()) {
   data_->handle = handle;
   if (!region.is_empty() && !region.is_infinite())
     clip(region);
 }
 
-graphics::graphics(const graphics& value) {
+graphics::graphics(const graphics& value) : data_(std::make_shared<data>()) {
   if (data_.use_count() == 1 && handle() != 0) native::graphics::destroy(handle());
   data_ = value.data_;
 }

@@ -68,6 +68,8 @@ namespace xtd {
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
     class drawing_export_ graphics : public xtd::object {
+      struct data;
+      
     public:
       /// @cond
       graphics(const graphics& value);
@@ -1295,7 +1297,6 @@ namespace xtd {
       static float to_page_unit(float value, xtd::drawing::graphics_unit page_unit, float page_scale, float dpi);
       float to_pixels(float value) const;
       static float to_pixels(float value, xtd::drawing::graphics_unit page_unit, float page_scale, float dpi);
-      friend xtd::drawing::font;
       friend xtd::forms::control;
       friend xtd::forms::control_paint;
       friend xtd::forms::paint_event_args;
@@ -1305,20 +1306,7 @@ namespace xtd {
       graphics(intptr handle, const drawing::region& region);
       void draw_image_disabled(const xtd::drawing::image& image, float x, float y, float brightness);
       
-      struct data {
-        xtd::drawing::region clip;
-        xtd::drawing::drawing2d::compositing_mode compositing_mode = xtd::drawing::drawing2d::compositing_mode::source_over;
-        xtd::drawing::drawing2d::compositing_quality compositing_quality = xtd::drawing::drawing2d::compositing_quality::default_value;
-        intptr handle = 0;
-        xtd::drawing::drawing2d::interpolation_mode interpolation_mode = xtd::drawing::drawing2d::interpolation_mode::default_value;
-        float page_scale = 1.0f;
-        xtd::drawing::graphics_unit page_unit = xtd::drawing::graphics_unit::pixel;
-        xtd::drawing::drawing2d::pixel_offset_mode pixel_offset_mode = xtd::drawing::drawing2d::pixel_offset_mode::default_value;
-        xtd::drawing::drawing2d::smoothing_mode smoothing_mode = xtd::drawing::drawing2d::smoothing_mode::default_value;
-        xtd::drawing::text::text_rendering_hint text_rendering_hint = xtd::drawing::text::text_rendering_hint::system_default;
-        int32 text_contrast = 4;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
