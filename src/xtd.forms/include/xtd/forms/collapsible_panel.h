@@ -20,6 +20,8 @@ namespace xtd {
     /// The following code example demonstrates the use of collapsible_panel container.
     /// @include collapsible_panel.cpp
     class forms_export_ collapsible_panel : public control {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -113,12 +115,7 @@ namespace xtd {
       control& size(const xtd::drawing::size& size) override;
       void wm_command_control(message& message);
       
-      struct data {
-        forms::border_sides border_sides = forms::border_sides::all;
-        forms::border_style border_style = forms::border_style::none;
-        bool expanded = false;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }

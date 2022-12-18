@@ -9,7 +9,13 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-collapsible_panel::collapsible_panel() {
+struct collapsible_panel::data {
+  forms::border_sides border_sides = forms::border_sides::all;
+  forms::border_style border_style = forms::border_style::none;
+  bool expanded = false;
+};
+
+collapsible_panel::collapsible_panel() : data_(std::make_shared<data>()) {
   control_appearance(forms::control_appearance::system);
   set_auto_size_mode(forms::auto_size_mode::grow_and_shrink);
   set_can_focus(false);
