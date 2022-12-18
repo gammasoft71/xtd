@@ -44,6 +44,8 @@ namespace xtd {
     /// The following code example demonstrates the use of color_dialog dialog.
     /// @include color_dialog.cpp
     class forms_export_ color_dialog : public common_dialog {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -61,7 +63,7 @@ namespace xtd {
       /// | show_help        | false                 |
       /// | solid_color_only | false                 |
       /// @remarks You can change the value for any of these properties through a separate call to the property.
-      color_dialog() = default;
+      color_dialog();
       /// @}
       
       /// @name Properties
@@ -176,13 +178,7 @@ namespace xtd {
       bool get_option(size_t flag) const noexcept;
       void set_option(size_t flag, bool value);
       
-      struct data {
-        drawing::color color = drawing::color::black;
-        std::vector<xtd::drawing::color> custom_colors {16, xtd::drawing::color::white};
-        size_t options = CC_ALPHACOLOR | CC_PREVENTFULLOPEN;
-        xtd::ustring title;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }

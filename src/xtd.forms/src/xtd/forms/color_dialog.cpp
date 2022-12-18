@@ -7,6 +7,16 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+struct color_dialog::data {
+  drawing::color color = drawing::color::black;
+  std::vector<xtd::drawing::color> custom_colors {16, xtd::drawing::color::white};
+  size_t options = CC_ALPHACOLOR | CC_PREVENTFULLOPEN;
+  xtd::ustring title;
+};
+
+color_dialog::color_dialog() : data_(std::make_shared<data>()) {
+}
+
 bool color_dialog::alpha_color() const noexcept {
   return get_option(CC_ALPHACOLOR);
 }
