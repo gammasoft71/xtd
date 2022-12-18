@@ -11,9 +11,22 @@ using namespace xtd::io;
 
 const vector<ustring> country::enclosed_letters {"\U0001F1E6", "\U0001F1E7", "\U0001F1E8", "\U0001F1E9", "\U0001F1EA", "\U0001F1EB", "\U0001F1EC", "\U0001F1ED", "\U0001F1EE", "\U0001F1EF", "\U0001F1F0", "\U0001F1F1", "\U0001F1F2", "\U0001F1F3", "\U0001F1F4", "\U0001F1F5", "\U0001F1F6", "\U0001F1F7", "\U0001F1F8", "\U0001F1F9", "\U0001F1FA", "\U0001F1FB", "\U0001F1FC", "\U0001F1FD", "\U0001F1FE", "\U0001F1FF"};
 
-country::country(const country& other) {
+struct country::data {
+  xtd::ustring name;
+  xtd::ustring alpha_2_code;
+  xtd::ustring alpha_3_code;
+  int32 numeric_code = 0;
+  xtd::ustring emoticon;
+};
+
+country::country() : data_(std::make_shared<data>()) {
+  
+}
+
+country::country(const country& other) : data_(std::make_shared<data>()) {
   *data_ = *other.data_;
 }
+
 country& country::operator =(const country& other) {
   *data_ = *other.data_;
   return *this;
@@ -81,7 +94,7 @@ ustring country::to_string() const noexcept {
   return ustring::format("country [name={}, alpha_2_code={}, alpha_3_code={}, numeric_code={}]", name(), alpha_2_code(), alpha_3_code(), numeric_code());
 }
 
-country::country(const xtd::ustring& name, const xtd::ustring& alpha_2_code, const xtd::ustring& alpha_3_code, int32 numeric_code) {
+country::country(const xtd::ustring& name, const xtd::ustring& alpha_2_code, const xtd::ustring& alpha_3_code, int32 numeric_code) : data_(std::make_shared<data>()) {
   data_->name = name;
   data_->alpha_2_code = alpha_2_code;
   data_->alpha_3_code = alpha_3_code;

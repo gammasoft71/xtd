@@ -28,9 +28,11 @@ namespace xtd {
     /// The following code example demonstrates the use of country component.
     /// @include countries.cpp
     class forms_export_ country : public object, public xtd::iequatable<country> {
+      struct data;
+      
     public:
       /// @cond
-      country() = default;
+      country();
       country(const country& other);
       country& operator =(const country& other);
       /// @endcond
@@ -106,14 +108,7 @@ namespace xtd {
       static const std::vector<xtd::ustring> enclosed_letters;
       country(const xtd::ustring& name, const xtd::ustring& alpha_2_code, const xtd::ustring& alpha_3_code, int32 numeric_code);
       
-      struct data {
-        xtd::ustring name;
-        xtd::ustring alpha_2_code;
-        xtd::ustring alpha_3_code;
-        int32 numeric_code = 0;
-        xtd::ustring emoticon;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
