@@ -55,7 +55,12 @@ bool checked_list_box::item::equals(const item& value) const noexcept {
   return list_box::item::equals(value);
 }
 
-checked_list_box::checked_list_box() {
+struct checked_list_box::data {
+  object_collection items;
+  item selected_item;
+};
+
+checked_list_box::checked_list_box() : data_(std::make_shared<data>()) {
   set_style(control_styles::resize_redraw, true);
   data_->items.item_added += {*this, &checked_list_box::on_items_item_added};  
   data_->items.item_removed += {*this, &checked_list_box::on_items_item_removed};

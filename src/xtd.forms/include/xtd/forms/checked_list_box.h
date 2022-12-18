@@ -46,6 +46,8 @@ namespace xtd {
     /// The following code example demonstrates the use of checked_list_box control.
     /// @include checked_list_box.cpp
     class forms_export_ checked_list_box : public list_box {
+      struct data;
+      
     public:
       /// @brief Represent an item contained in the checked_list_box::object_collection collection.
       class item : public list_box::item, public xtd::icomparable<item>, public xtd::iequatable<item> {
@@ -279,11 +281,7 @@ namespace xtd {
       void wm_mouse_down(message& message);
       void wm_mouse_up(message& message);
 
-      struct data {
-        object_collection items;
-        item selected_item;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
