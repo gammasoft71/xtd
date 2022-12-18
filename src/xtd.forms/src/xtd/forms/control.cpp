@@ -59,7 +59,13 @@ namespace {
   }
 }
 
-control::async_result_invoke::async_result_invoke(std::any async_state) {
+struct control::async_result_invoke::data {
+  std::any async_state;
+  std::shared_ptr<bool> is_completed = std::make_shared<bool>(false);
+  std::shared_ptr<std::shared_mutex> async_mutex = std::make_shared<std::shared_mutex>();
+};
+
+control::async_result_invoke::async_result_invoke(std::any async_state) : data_(std::make_shared<data>()) {
   data_->async_state = async_state;
 }
 

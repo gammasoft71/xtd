@@ -126,6 +126,7 @@ namespace xtd {
       };
       
       class async_result_invoke : public xtd::iasync_result {
+        struct data;
       public:
         explicit async_result_invoke(std::any async_state);
         std::any async_state() const noexcept override;
@@ -133,12 +134,7 @@ namespace xtd {
         bool completed_synchronously() const noexcept override;
         bool is_completed() const noexcept override;
         
-        struct data {
-          std::any async_state;
-          std::shared_ptr<bool> is_completed = std::make_shared<bool>(false);
-          std::shared_ptr<std::shared_mutex> async_mutex = std::make_shared<std::shared_mutex>();
-        };
-        std::shared_ptr<data> data_ = std::make_shared<data>();
+        std::shared_ptr<data> data_;
       };
       /// @endcond
       
