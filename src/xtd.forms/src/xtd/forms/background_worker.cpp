@@ -13,7 +13,7 @@ struct background_worker::data {
   bool worker_supports_cancellation = false;
   progress_changed_event_args event {0, any()};
   unique_ptr<form> invoker;
-  thread thread;
+  std::thread thread;
 };
 
 background_worker::background_worker() noexcept : data_(make_shared<data>()) {
