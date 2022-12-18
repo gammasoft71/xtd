@@ -27,11 +27,15 @@ namespace xtd {
     /// The following code example demonstrates the use of texture_brush class.
     /// @include fill_rectangle.cpp
     class drawing_export_ texture_brush final : public brush, public xtd::iequatable<texture_brush> {
+      struct data;
+      
     public:
       /// @name Constructors
       
       /// @{
-      explicit texture_brush(const drawing::image& image) {this->image(image);}
+      /// @brief Initializes a new xtd::drawing::texture_brush object that uses the specified image.
+      /// @param image The xtd::drawing::image object with which this xtd::drawing::texture_brush object fills interiors.
+      explicit texture_brush(const drawing::image& image);
       /// @}
       
       /// @cond
@@ -42,7 +46,11 @@ namespace xtd {
       /// @name Properties
       
       /// @{
+      /// @brief Gets the xtd::drawing::image object associated with this xtd::drawing::texture_brush object.
+      /// @return An xtd::drawing::image object that represents the image with which this xtd::drawing::texture_brush object fills shapes.
       const drawing::image& image() const noexcept;
+      /// @brief Sets the xtd::drawing::image object associated with this xtd::drawing::texture_brush object.
+      /// @param image An xtd::drawing::image object that represents the image with which this xtd::drawing::texture_brush object fills shapes.
       texture_brush& image(const drawing::image& image);
       /// @}
       
@@ -55,10 +63,8 @@ namespace xtd {
 
     private:
       texture_brush();
-      struct data {
-        drawing::image image_;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+
+      std::shared_ptr<data> data_;
     };
   }
 }

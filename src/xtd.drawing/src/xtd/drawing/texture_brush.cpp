@@ -6,7 +6,15 @@
 using namespace xtd;
 using namespace xtd::drawing;
 
-texture_brush::texture_brush() {
+struct texture_brush::data {
+  drawing::image image_;
+};
+
+texture_brush::texture_brush(const drawing::image& image) : data_(std::make_shared<data>()) {
+  this->image(image);
+}
+
+texture_brush::texture_brush() : data_(std::make_shared<data>()) {
 }
 
 texture_brush& texture_brush::operator =(const texture_brush& value) {
