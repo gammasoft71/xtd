@@ -19,12 +19,14 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms
     class control_layout_style : public object, public xtd::iequatable<control_layout_style> {
+      struct data;
+      
     protected:
       /// @name Protected Constructors
       
       /// @{
       /// @brief Initialises a new instance of control layout style class.
-      control_layout_style() = default;
+      control_layout_style();
       /// @brief Initialises a new instance of control layout style class with specified size type.
       /// @param size_type One of the xtd::forms::size_type values that specifies how layout container of user interface (UI) elements should be sized relative to their container.
       explicit control_layout_style(xtd::forms::size_type size_type);
@@ -98,12 +100,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        xtd::forms::size_type size_type = xtd::forms::size_type::absolute;
-        bool expanded = false;
-        xtd::forms::content_alignment align = xtd::forms::content_alignment::top_left;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
