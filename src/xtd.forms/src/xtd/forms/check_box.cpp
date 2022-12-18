@@ -33,7 +33,17 @@ namespace {
   }
 }
 
-check_box::check_box() {
+struct check_box::data {
+  forms::appearance appearance = forms::appearance::normal;
+  bool auto_check = true;
+  bool three_state = 0;
+  bool checked = false;
+  content_alignment check_align = content_alignment::middle_left;
+  forms::check_state check_state = forms::check_state::unchecked;
+  xtd::forms::visual_styles::check_box_state state = xtd::forms::visual_styles::check_box_state::unchecked_normal;
+};
+
+check_box::check_box() : data_(std::make_shared<data>()) {
   set_style(control_styles::standard_click | control_styles::standard_double_click, false);
   text_align(content_alignment::middle_left);
 }

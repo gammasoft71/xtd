@@ -55,6 +55,8 @@ namespace xtd {
     /// The following code example demonstrates the use of check_box control.
     /// @include check_box.cpp
     class forms_export_ check_box : public xtd::forms::button_base {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -231,16 +233,7 @@ namespace xtd {
       void wm_mouse_down(message& message);
       void wm_mouse_up(message& message);
 
-      struct data {
-        forms::appearance appearance = forms::appearance::normal;
-        bool auto_check = true;
-        bool three_state = 0;
-        bool checked = false;
-        content_alignment check_align = content_alignment::middle_left;
-        forms::check_state check_state = forms::check_state::unchecked;
-        xtd::forms::visual_styles::check_box_state state = xtd::forms::visual_styles::check_box_state::unchecked_normal;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
