@@ -29,12 +29,14 @@ namespace xtd {
     /// @ingroup xtd_forms
     /// @remarks Inherited classes are required to implement run_dialog by invoking show_dialog to create a specific common dialog box. Inherited classes can optionally override hook_proc to implement specific dialog box hook functionality.
     class common_dialog : public component {
+      struct data;
+      
     public:
       /// @name Constructors
       
       /// @{
       /// @brief Initializes a new instance of the common_dialog class.
-      common_dialog() = default;
+      common_dialog();
       /// @}
       
       /// @name Properties
@@ -131,11 +133,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        std::any tag;
-        xtd::forms::dialog_result dialog_result = xtd::forms::dialog_result::none;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
