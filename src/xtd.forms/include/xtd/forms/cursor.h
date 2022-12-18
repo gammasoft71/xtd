@@ -34,6 +34,8 @@ namespace xtd {
     /// The following code example demonstrates the use of cursor component.
     /// @include cursors.cpp
     class forms_export_ cursor : public object, public xtd::iequatable<cursor> {
+      struct data;
+      
     public:
       /// @name Fields
       
@@ -141,15 +143,7 @@ namespace xtd {
       cursor(const xtd::drawing::bitmap& bitmap, const xtd::drawing::point& hot_spot);
       cursor(intptr handle, bool destroyable, const xtd::ustring& name);
       
-      struct data {
-        intptr handle_ = 0;
-        bool destroyable_ = true;
-        xtd::drawing::point hot_spot_;
-        xtd::ustring name_;
-        xtd::drawing::size size_;
-        std::any tag_;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }

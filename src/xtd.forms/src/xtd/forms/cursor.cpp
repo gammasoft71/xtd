@@ -13,9 +13,18 @@ namespace {
   std::optional<cursor> current_cursor;
 }
 
+struct cursor::data {
+  intptr handle_ = 0;
+  bool destroyable_ = true;
+  xtd::drawing::point hot_spot_;
+  xtd::ustring name_;
+  xtd::drawing::size size_;
+  std::any tag_;
+};
+
 cursor cursor::none(0, false, "none");
 
-cursor::cursor(intptr handle, bool destroyable, const xtd::ustring& name) {
+cursor::cursor(intptr handle, bool destroyable, const xtd::ustring& name) : data_(std::make_shared<data>()) {
   data_->handle_ = handle;
   data_->destroyable_ = destroyable;
   data_->name_ = name;
@@ -23,7 +32,7 @@ cursor::cursor(intptr handle, bool destroyable, const xtd::ustring& name) {
   data_->size_ = native::cursor::size(data_->handle_);
 }
 
-cursor::cursor() {
+cursor::cursor() : data_(std::make_shared<data>()) {
   data_->handle_ = native::cursor::create();
   data_->hot_spot_ = native::cursor::hot_spot(data_->handle_);
   data_->size_ = native::cursor::size(data_->handle_);
@@ -32,7 +41,7 @@ cursor::cursor() {
 cursor::cursor(intptr handle) : cursor(handle, false, "") {
 }
 
-cursor::cursor(const bitmap& bitmap, const xtd::drawing::point& hot_spot) {
+cursor::cursor(const bitmap& bitmap, const xtd::drawing::point& hot_spot) : data_(std::make_shared<data>()) {
   data_->handle_ = native::cursor::create(bitmap, hot_spot);
   data_->hot_spot_ = hot_spot;
   data_->size_ = native::cursor::size(data_->handle_);
