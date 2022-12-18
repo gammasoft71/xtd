@@ -11,6 +11,12 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing2d;
 
+struct conical_gradient_brush::data {
+  xtd::drawing::point_f center_point;
+  float angle = 0;
+  xtd::drawing::drawing2d::gradient_stop_collection conical_colors;
+};
+
 conical_gradient_brush::conical_gradient_brush() : conical_gradient_brush(point_f(.0f, .0f), {color::transparent, color::transparent}, .0f) {
 }
 
@@ -35,7 +41,7 @@ conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point_f& cent
 conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point& center, const std::vector<xtd::drawing::color>& conical_colors,  float angle) : conical_gradient_brush(point_f(as<float>(center.x()), as<float>(center.y())), conical_colors, angle) {
 }
 
-conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point_f& center, const std::vector<xtd::drawing::color>& conical_colors, float angle) {
+conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point_f& center, const std::vector<xtd::drawing::color>& conical_colors, float angle) : data_(std::make_shared<data>()) {
   if (conical_colors.size() < 2) throw argument_exception(csf_);
   
   data_->center_point = center;

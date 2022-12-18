@@ -33,6 +33,8 @@ namespace xtd {
       /// The following code example demonstrates the use of conical_gradient_brush class.
       /// @include fill_rectangle.cpp
       class drawing_export_ conical_gradient_brush final : public brush, public xtd::iequatable<conical_gradient_brush> {
+        struct data;
+
       public:
         /// @name Constructors
         
@@ -134,12 +136,8 @@ namespace xtd {
         
       private:
         void recreate_handle();
-        struct data {
-          xtd::drawing::point_f center_point;
-          float angle = 0;
-          xtd::drawing::drawing2d::gradient_stop_collection conical_colors;
-        };
-        std::shared_ptr<data> data_ = std::make_shared<data>();
+
+        std::shared_ptr<data> data_;
       };
     }
   }
