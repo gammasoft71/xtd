@@ -98,6 +98,8 @@ namespace xtd {
     public:
       /// @brief Represent directory iterator used by xtd::io::directory.
       class directory_iterator : public xtd::iequatable<directory_iterator> {
+        struct data;
+        
         explicit directory_iterator(const xtd::ustring& path, const xtd::ustring& pattern);
       public:
         /// @cond
@@ -121,12 +123,14 @@ namespace xtd {
         
       private:
         friend xtd::io::directory;
-        struct data;
+
         std::shared_ptr<data> data_;
       };
       
       /// @brief Represent file iterator used by xtd::io::directory.
       class file_iterator : public xtd::iequatable<file_iterator> {
+        struct data;
+
         explicit file_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
@@ -150,12 +154,14 @@ namespace xtd {
         
       private:
         friend xtd::io::directory;
-        struct data;
+
         std::shared_ptr<data> data_;
       };
       
       /// @brief Represent file system iterator used by xtd::io::directory.
       class file_system_entry_iterator : public xtd::iequatable<file_system_entry_iterator> {
+        struct data;
+
         explicit file_system_entry_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
@@ -179,7 +185,7 @@ namespace xtd {
         
       private:
         friend xtd::io::directory;
-        struct data;
+
         std::shared_ptr<data> data_;
       };
       

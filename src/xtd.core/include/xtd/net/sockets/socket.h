@@ -140,6 +140,8 @@ namespace xtd {
           explicit async_result_send_to(std::any async_state) : async_result_socket(async_state) {}
           size_t number_of_bytes_sent_ = 0;
         };
+
+        struct data;
         
       public:
         /// @name Constructors
@@ -1550,8 +1552,7 @@ namespace xtd {
         std::shared_ptr<xtd::iasync_result> begin_connect_(std::shared_ptr<xtd::net::end_point> remote_end_point, xtd::async_callback callback, const std::any& state);
         void bind_(std::shared_ptr<xtd::net::end_point> local_end_point);
         void connect_(std::shared_ptr<xtd::net::end_point> remote_end_point);
-        struct data;
-        
+
         std::shared_ptr<data> data_;
       };
     }

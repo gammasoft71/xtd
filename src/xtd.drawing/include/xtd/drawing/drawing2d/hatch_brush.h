@@ -31,6 +31,7 @@ namespace xtd {
       /// @include fill_rectangle.cpp
       class drawing_export_ hatch_brush final : public brush, public xtd::iequatable<hatch_brush> {
         struct data;
+        
       public:
         /// @name Constructors
         

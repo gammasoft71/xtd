@@ -30,6 +30,7 @@ namespace xtd {
       /// @include fill_rectangle.cpp
       class drawing_export_ linear_gradient_brush final : public brush, xtd::iequatable<linear_gradient_brush> {
         struct data;
+        
       public:
         /// @name Constructors
         

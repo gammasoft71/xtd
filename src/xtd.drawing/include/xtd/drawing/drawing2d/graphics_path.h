@@ -34,6 +34,7 @@ namespace xtd {
       /// @ingroup xtd_drawing drawing
       class drawing_export_ graphics_path final : public xtd::object, xtd::iequatable<graphics_path> {
         struct data;
+        
       public:
         /// @name Constructors
         

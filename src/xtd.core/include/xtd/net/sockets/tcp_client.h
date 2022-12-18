@@ -43,6 +43,8 @@ namespace xtd {
       /// The following example shows how to use IPv6 xtd::net::sockets::tcp_client class with xtd::net::sockets::network_stream, xtd::net::sockets::socket, xtd::io::stream_reader and xtd::io::stream_writer classes.
       /// @include tcp_client_ip_v6.cpp
       class core_export_ tcp_client : public xtd::object, public xtd::iequatable<tcp_client> {
+        struct data;
+
       public:
         /// @name Constructors
         
@@ -351,7 +353,7 @@ namespace xtd {
       private:
         friend tcp_listener;
         explicit tcp_client(const xtd::net::sockets::socket& socket);
-        struct data;
+
         std::shared_ptr<data> data_;
       };
     }

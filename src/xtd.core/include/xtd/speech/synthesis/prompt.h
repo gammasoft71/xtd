@@ -33,6 +33,7 @@ namespace xtd {
       class core_export_ prompt : public xtd::object {
         friend class speech_synthesizer;
         struct data;
+        
       public:
         /// @name Constructors
         

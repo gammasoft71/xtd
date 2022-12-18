@@ -43,6 +43,10 @@ font_family::font_family(const font_family& value) : data_(std::make_shared<data
   data_ = value.data_;
 }
 
+font_family::font_family() : data_(std::make_shared<data>()) {
+  
+}
+
 font_family& font_family::operator =(const font_family& value) {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::font_family::destroy(data_->handle_);
   data_ = value.data_;

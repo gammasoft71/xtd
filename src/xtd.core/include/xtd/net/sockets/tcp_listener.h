@@ -61,6 +61,8 @@ namespace xtd {
           xtd::net::sockets::tcp_client tcp_client_;
         };
         
+        struct data;
+
       public:
         /// @name Constructors
         
@@ -255,7 +257,6 @@ namespace xtd {
         /// @}
         
       private:
-        struct data;
         std::shared_ptr<data> data_;
       };
     }
