@@ -67,9 +67,24 @@ namespace xtd {
       xtd::ustring thread_id() const noexcept;
       
       /// @brief Gets the current number of ticks in the timer mechanism.
+      /// @return std::chrono::nanoseconds The nanoseconds counter value of the underlying timer mechanism.
+      /// @remarks The get accessor calls the Stopwatch.GetTimestamp method to get the timestamp. If the Stopwatch class uses a high-resolution performance counter, GetTimestamp returns the current value of that counter. If the Stopwatch class uses the system timer, GetTimestamp returns the Ticks property of DateTime.Now.
+      std::chrono::nanoseconds timestamp() const noexcept;
+      
+      /// @brief Gets the current number of ticks in the timer mechanism, in milliseconds.
+      /// @return int64 The millisecond counter value of the underlying timer mechanism.
+      /// @remarks The get accessor calls the Stopwatch.GetTimestamp method to get the timestamp. If the Stopwatch class uses a high-resolution performance counter, GetTimestamp returns the current value of that counter. If the Stopwatch class uses the system timer, GetTimestamp returns the Ticks property of DateTime.Now.
+      int64 timestamp_milliseconds() const noexcept;
+      
+      /// @brief Gets the current number of ticks in the timer mechanism, in nanoseconds.
+      /// @return int64 The nanosecond counter value of the underlying timer mechanism.
+      /// @remarks The get accessor calls the Stopwatch.GetTimestamp method to get the timestamp. If the Stopwatch class uses a high-resolution performance counter, GetTimestamp returns the current value of that counter. If the Stopwatch class uses the system timer, GetTimestamp returns the Ticks property of DateTime.Now.
+      int64 timestamp_nanoseconds() const noexcept;
+      
+      /// @brief Gets the current number of ticks in the timer mechanism, in nanoseconds.
       /// @return int64 The tick counter value of the underlying timer mechanism.
       /// @remarks The get accessor calls the Stopwatch.GetTimestamp method to get the timestamp. If the Stopwatch class uses a high-resolution performance counter, GetTimestamp returns the current value of that counter. If the Stopwatch class uses the system timer, GetTimestamp returns the Ticks property of DateTime.Now.
-      int64 timestamp() const noexcept;
+      int64 timestamp_ticks() const noexcept;
       /// @}
       
     private:
