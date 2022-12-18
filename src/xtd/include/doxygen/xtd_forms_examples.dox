@@ -59,7 +59,7 @@
 /// @par Gnome
 /// @image html application_g.png
 /// <br>
-/// @image html applicationapplication_gd.png
+/// @image html application_gd.png
 ///
 /// @example application_and_exception.cpp
 ///  following code example demonstrate the use of following code example demonstrate how to manage exception with xtd::forms::application class.
