@@ -42,6 +42,7 @@ size_t stack_trace::frame_count() const noexcept {
 }
 
 const xtd::diagnostics::stack_frame& stack_trace::get_frame(size_t index) noexcept {
+  if (index > frames_.size() - 1) index = frames_.size() - 1;
   return frames_[index];
 }
 
