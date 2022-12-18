@@ -3,6 +3,15 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+struct control_layout_style::data {
+  xtd::forms::size_type size_type = xtd::forms::size_type::absolute;
+  bool expanded = false;
+  xtd::forms::content_alignment align = xtd::forms::content_alignment::top_left;
+};
+
+control_layout_style::control_layout_style() : data_(std::make_shared<data>()) {
+}
+
 control_layout_style::control_layout_style(xtd::forms::size_type size_type) {
   data_->size_type = size_type;
 }
