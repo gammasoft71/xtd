@@ -1478,6 +1478,17 @@ void control::update() const {
   if (is_handle_created()) native::control::update(handle());
 }
 
+control& control::operator <<(control& child) {
+  child.parent(*this);
+  return *this;
+}
+
+control& control::operator >>(control& child) {
+  if (child.parent().has_value() && &child.parent().value().get() == this)
+    child.parent(nullptr);
+  return *this;
+}
+
 void control::reflect_message(intptr handle, message& message) {
   if (handle != 0 && from_handle(handle).has_value())
     from_handle(handle).value().get().send_message(handle, WM_REFLECT + message.msg(), message.wparam(), message.lparam());
