@@ -1,10 +1,22 @@
 #include "../../../include/xtd/forms/background_worker.h"
 #include "../../../include/xtd/forms/application.h"
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
-background_worker::background_worker() noexcept {
+struct background_worker::data {
+  any argument;
+  bool cancellation_pending = false;
+  bool is_busy = false;
+  bool worker_reports_progress = false;
+  bool worker_supports_cancellation = false;
+  progress_changed_event_args event {0, any()};
+  unique_ptr<form> invoker;
+  thread thread;
+};
+
+background_worker::background_worker() noexcept : data_(make_shared<data>()) {
 }
 
 background_worker::~background_worker() noexcept {
@@ -56,10 +68,10 @@ void background_worker::on_run_worker_completed(const run_worker_completed_event
 }
 
 void background_worker::report_progress(int32 percent_progress) {
-  report_progress(percent_progress, std::any());
+  report_progress(percent_progress, any());
 }
 
-void background_worker::report_progress(int32 percent_progress, std::any user_state) {
+void background_worker::report_progress(int32 percent_progress, any user_state) {
   if (data_->worker_reports_progress) {
     data_->event = {percent_progress, user_state};
     data_->invoker->begin_invoke([&] {
@@ -71,15 +83,19 @@ void background_worker::report_progress(int32 percent_progress, std::any user_st
 void background_worker::run_worker_async() {
   data_->is_busy = true;
   if (data_->thread.joinable()) data_->thread.join();
-  data_->invoker = std::make_unique<form>();
-  data_->thread = std::thread([&] {
+  data_->invoker = make_unique<form>();
+  data_->thread = thread([&] {
     do_work_event_args e(data_->argument);
     on_do_work(e);
     data_->is_busy = false;
     data_->invoker->begin_invoke([&] {
-      on_run_worker_completed(run_worker_completed_event_args(std::any(), std::optional<std::reference_wrapper<std::exception>>(), data_->cancellation_pending));
+      on_run_worker_completed(run_worker_completed_event_args(any(), optional<reference_wrapper<exception>>(), data_->cancellation_pending));
       data_->invoker = nullptr;
       data_->cancellation_pending = false;
     });
   });
+}
+
+void background_worker::argument_(any&& argument) {
+  data_->argument = move(argument);
 }
