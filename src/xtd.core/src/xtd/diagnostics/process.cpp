@@ -20,6 +20,26 @@ namespace {
   boolean_switch show_debug_process("process", "Shows xtd::diagnostics::process log", "false");
 }
 
+struct process::data {
+  xtd::diagnostics::process_start_info start_info_;
+  std::optional<intptr> handle_ = 0;
+  int32 id_ = 0;
+  ustring machine_name_;
+  xtd::diagnostics::process_priority_class priority_class_ = xtd::diagnostics::process_priority_class::normal;
+  std::unique_ptr<std::ostream> standard_input_;
+  std::unique_ptr<std::istream> standard_output_;
+  std::unique_ptr<std::istream> standard_error_;
+  std::thread thread_;
+  xtd::date_time start_time_;
+  xtd::date_time exit_time_;
+  bool enable_raising_events_ = false;
+  std::optional<int32> exit_code_;
+  event_handler exit_callback_;
+  data_received_event_handler error_data_received_callback_;
+  data_received_event_handler output_data_received_callback_;
+  std::exception_ptr exception_pointer_;
+};
+
 // This delegate will be initialized by __init_process_message_box_message__ in xtd.forms/src/xtd/forms/application.cpp file.
 // This operation can be done only if xtd.forms lib is present.
 //xtd::delegate<void(const xtd::ustring&)> process::message_box_message_;
@@ -48,6 +68,10 @@ data_received_event_handler& process::error_data_received_event::operator -=(con
   return data_received_event_handler::operator -=(function);
 }
 
+data_received_event_handler& process::error_data_received_event::error_data_received_callback() noexcept {
+  return data_->error_data_received_callback_;
+}
+
 bool process::exit_event::is_empty() const noexcept {
   return event_handler::is_empty();
 }
@@ -70,6 +94,10 @@ event_handler& process::exit_event::operator -=(const event_handler& handler) no
 event_handler& process::exit_event::operator -=(const typename event_handler::function_t& function) noexcept {
   data_->exit_callback_ -= (function);
   return event_handler::operator -=(function);
+}
+
+event_handler& process::exit_event::exit_callback() noexcept {
+  return data_->exit_callback_;
 }
 
 bool process::output_data_received_event::is_empty() const noexcept {
@@ -96,7 +124,12 @@ data_received_event_handler& process::output_data_received_event::operator -=(co
   return data_received_event_handler::operator -=(function);
 }
 
+data_received_event_handler& process::output_data_received_event::output_data_received_callback() noexcept {
+  return data_->output_data_received_callback_;
+}
+
 process::process() {
+  data_ = std::make_shared<data>();
   exited.set_data(data_.get());
 }
 
