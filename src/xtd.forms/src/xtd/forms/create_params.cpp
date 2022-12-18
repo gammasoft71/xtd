@@ -3,7 +3,22 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-create_params::create_params(const create_params& other) {
+struct create_params::data {
+  xtd::ustring caption;
+  xtd::ustring class_name;
+  size_t class_style = 0;
+  size_t ex_style = 0;
+  drawing::point location = {-1, -1};
+  intptr param = 0;
+  intptr parent = 0;
+  size_t style = 0;
+  drawing::size size = {-1, -1};
+};
+
+create_params::create_params() : data_(std::make_shared<data>()) {
+}
+
+create_params::create_params(const create_params& other) : data_(std::make_shared<data>()) {
   *data_ = *other.data_;
 }
 
