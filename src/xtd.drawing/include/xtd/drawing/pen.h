@@ -33,6 +33,8 @@ namespace xtd {
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
     class drawing_export_ pen final : public xtd::object, public xtd::iequatable<pen> {
+      struct data;
+
     public:
       /// @name Constructors
       
@@ -43,6 +45,7 @@ namespace xtd {
       /// @remarks The width property of the new xtd::drawing::pen  is set to 1 (the default).
       template <typename brush_t>
       explicit pen(const brush_t& brush) {
+        create_data();
         this->brush(brush);
       }
       
@@ -53,6 +56,7 @@ namespace xtd {
       /// @remarks The width property of the new xtd::drawing::pen  is set to 1 (the default).
       template<typename brush_t>
       pen(const brush_t& brush, float width) {
+        create_data();
         this->width(width);
         this->brush(brush);
       }
@@ -97,8 +101,8 @@ namespace xtd {
       /// @remarks Assigning this property causes the pen to draw filled lines and curves. It overrides thextd::drawing::pen::color property of the xtd::drawing::pen.
       template<typename brush_t>
       xtd::drawing::pen& brush(const brush_t& value) {
-        data_->brush = value.template memberwise_clone<brush_t>();
-        data_->color = xtd::drawing::color::empty;
+        brush_(value.template memberwise_clone<brush_t>());
+        color_(xtd::drawing::color::empty);
         recreate_handle();
         return *this;
       }
@@ -208,23 +212,12 @@ namespace xtd {
       
     private:
       pen();
+      void brush_(std::unique_ptr<xtd::drawing::brush>&& brush);
+      void color_(const xtd::drawing::color& color);
+      void create_data();
       void recreate_handle();
-      struct data {
-        intptr handle_ = 0;
-        xtd::drawing::drawing2d::pen_alignment alignment = xtd::drawing::drawing2d::pen_alignment::center;
-        xtd::drawing::color color;
-        std::unique_ptr<xtd::drawing::brush> brush;
-        float dash_offset = 0.0f;
-        std::vector<float> dash_pattern;
-        xtd::drawing::dash_style dash_style = xtd::drawing::dash_style::solid;
-        xtd::drawing::drawing2d::line_cap end_cap = xtd::drawing::drawing2d::line_cap::flat;
-        xtd::drawing::drawing2d::line_join line_join = xtd::drawing::drawing2d::line_join::miter;
-        float miter_limit = 10.0f;
-        xtd::drawing::drawing2d::line_cap start_cap = xtd::drawing::drawing2d::line_cap::flat;
-        xtd::drawing::drawing2d::pen_type type = xtd::drawing::drawing2d::pen_type::solid_color;
-        float width = 1.0f;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+
+      std::shared_ptr<data> data_;
     };
   }
 }
