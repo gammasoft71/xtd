@@ -19,12 +19,14 @@ namespace xtd {
     /// @ingroup xtd_forms components
     /// @remarks component is the base class for all components and controls.
     class component : public xtd::object {
+      struct data;
+      
     protected:
       /// @name Protected constructors
       
       /// @{
       /// @brief Initialises a new instance of the component class.
-      component() = default;
+      component();
       /// @}
       
       /// @name Protected properties
@@ -41,11 +43,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        bool can_raise_event = true;
-        bool design_mode = false;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
