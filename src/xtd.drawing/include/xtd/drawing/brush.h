@@ -49,6 +49,8 @@ namespace xtd {
     ///   </tr>
     /// </table>
     class drawing_export_ brush : public xtd::object, public xtd::iequatable<brush> {
+      struct data;
+      
     public:
       /// @cond
       brush(const brush& value);
@@ -91,13 +93,7 @@ namespace xtd {
       /// @}
       
     private:
-      /// @cond
-      struct data {
-        intptr handle_ = 0;
-      };
-      
-      std::shared_ptr<data> data_ = std::make_shared<data>();
-      /// @endcond
+      std::shared_ptr<data> data_;
     };
   }
 }
