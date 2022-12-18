@@ -248,6 +248,26 @@ namespace {
   };
 }
 
+struct about_dialog::data {
+  xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::standard;
+  xtd::drawing::image icon;
+  xtd::ustring name;
+  xtd::ustring version;
+  xtd::ustring long_version;
+  xtd::ustring description;
+  xtd::ustring copyright;
+  xtd::ustring website;
+  xtd::ustring website_label;
+  author_collection authors;
+  documenter_collection documenters;
+  translator_collection translators;
+  artist_collection artists;
+  xtd::ustring license;
+};
+
+about_dialog::about_dialog() : data_(std::make_shared<data>()) {  
+}
+
 const about_dialog::artist_collection& about_dialog::artists() const noexcept {
   return data_->artists;
 }
