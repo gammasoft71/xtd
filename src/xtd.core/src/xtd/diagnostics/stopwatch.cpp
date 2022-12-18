@@ -25,7 +25,7 @@ int64 stopwatch::elapsed_milliseconds() const noexcept {
 }
 
 int64 stopwatch::elapsed_nanoseconds() const noexcept {
-  if (running_) return get_timestamp() - start_;
+  if (running_) return get_timestamp_nanoseconds() - start_;
   return stop_ - start_;
 }
 
@@ -37,8 +37,20 @@ bool stopwatch::is_running() const noexcept {
   return running_;
 }
 
-int64 stopwatch::get_timestamp() noexcept {
-  return std::chrono::nanoseconds(stopwatch_clock_t::now().time_since_epoch()).count();
+std::chrono::nanoseconds stopwatch::get_timestamp() noexcept {
+  return std::chrono::nanoseconds(stopwatch_clock_t::now().time_since_epoch());
+}
+
+int64 stopwatch::get_timestamp_milliseconds() noexcept {
+  return std::chrono::duration_cast<std::chrono::milliseconds>(get_timestamp()).count();
+}
+
+int64 stopwatch::get_timestamp_nanoseconds() noexcept {
+  return get_timestamp().count();
+}
+
+int64 stopwatch::get_timestamp_ticks() noexcept {
+  return std::chrono::duration_cast<xtd::ticks>(get_timestamp()).count();
 }
 
 void stopwatch::reset() noexcept {
@@ -53,7 +65,7 @@ void stopwatch::restart() noexcept {
 
 void stopwatch::start() noexcept {
   if (running_) return;
-  start_ = get_timestamp() - (stop_ - start_);
+  start_ = get_timestamp_nanoseconds() - (stop_ - start_);
   running_ = true;
 }
 
@@ -63,7 +75,7 @@ stopwatch stopwatch::start_new() noexcept {
 
 void stopwatch::stop() noexcept {
   if (!running_) return;
-  stop_ = get_timestamp();
+  stop_ = get_timestamp_nanoseconds();
   running_ = false;
 }
 
