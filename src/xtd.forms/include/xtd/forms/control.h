@@ -73,7 +73,9 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of control control.
     /// @include control.cpp
-    class forms_export_ control : public component, public iwin32_window, public icomparable<control>, public xtd::iequatable<control> {
+    class forms_export_ control : public component, public iwin32_window, public icomparable<control>, public xtd::iequatable<control> {      
+      struct data;
+
     protected:
       /// @cond
       enum class state {
@@ -909,17 +911,17 @@ namespace xtd {
       
       /// @cond
       /// @todo Remove when render is done.
-      std::optional<xtd::drawing::color> get_back_color() const {return data_->back_color;}
+      std::optional<xtd::drawing::color> get_back_color() const noexcept;
       /// @endcond
       
       /// @cond
       /// @todo Remove when render is done.
-      std::optional<xtd::drawing::font> get_font() const {return data_->font;}
+      std::optional<xtd::drawing::font> get_font() const noexcept;
       /// @endcond
       
       /// @cond
       /// @todo Remove when render is done.
-      std::optional<xtd::drawing::color> get_fore_color() const {return data_->fore_color;}
+      std::optional<xtd::drawing::color> get_fore_color() const noexcept;
       /// @endcond
       
       /// @brief Retrieves the index of a control within the control collection.
@@ -2012,49 +2014,6 @@ namespace xtd {
       void wm_size(message& message);
       void wm_sizing(message& message);
       void wm_style_sheet_changed(message& message);
-
-      struct data {
-        anchor_styles anchor = anchor_styles::top | anchor_styles::left;
-        forms::padding anchoring;
-        drawing::point auto_scroll_point;
-        forms::auto_size_mode auto_size_mode = forms::auto_size_mode::grow_and_shrink;
-        std::optional<drawing::color> back_color;
-        xtd::drawing::image background_image = xtd::drawing::image::empty;
-        xtd::forms::image_layout background_image_layout = xtd::forms::image_layout::tile;
-        bool can_focus = true;
-        bool can_raise_events = true;
-        drawing::rectangle client_rectangle;
-        drawing::size client_size;
-        forms::control_appearance control_appearance = forms::control_appearance::standard;
-        xtd::forms::visual_styles::control_state control_state = xtd::forms::visual_styles::control_state::normal;
-        control_collection controls;
-        std::optional<context_menu_ref> context_menu;
-        std::optional<forms::cursor> cursor;
-        dock_style dock = dock_style::none;
-        bool focused = false;
-        std::optional<drawing::color> fore_color;
-        std::optional<drawing::font> font;
-        intptr handle = 0;
-        drawing::point location;
-        drawing::region region;
-        forms::padding margin {3};
-        drawing::size maximum_client_size;
-        drawing::size maximum_size;
-        drawing::size minimum_client_size;
-        drawing::size minimum_size;
-        forms::padding padding;
-        bool mouse_in = false;
-        xtd::ustring name;
-        intptr parent = 0;
-        bool recreate_handle_posted = false;
-        std::optional<drawing::size> size;
-        control::state state = control::state::empty;
-        control_styles style = control_styles::none;
-        style_sheets::style_sheet style_sheet;
-        bool suppress_key_press = false;
-        std::any tag;
-        xtd::ustring text;
-      };
       
       static bool check_for_illegal_cross_thread_calls_;
       static std::thread::id handle_created_on_thread_id_;
@@ -2063,7 +2022,7 @@ namespace xtd {
       static std::map<intptr, control*> handles_;
       static control_collection top_level_controls_;
       
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }

@@ -108,7 +108,51 @@ optional<control::control_collection::value_type> control::control_collection::o
   return {};
 }
 
+struct control::data {
+  anchor_styles anchor = anchor_styles::top | anchor_styles::left;
+  forms::padding anchoring;
+  drawing::point auto_scroll_point;
+  forms::auto_size_mode auto_size_mode = forms::auto_size_mode::grow_and_shrink;
+  std::optional<drawing::color> back_color;
+  xtd::drawing::image background_image = xtd::drawing::image::empty;
+  xtd::forms::image_layout background_image_layout = xtd::forms::image_layout::tile;
+  bool can_focus = true;
+  bool can_raise_events = true;
+  drawing::rectangle client_rectangle;
+  drawing::size client_size;
+  forms::control_appearance control_appearance = forms::control_appearance::standard;
+  xtd::forms::visual_styles::control_state control_state = xtd::forms::visual_styles::control_state::normal;
+  control_collection controls;
+  std::optional<context_menu_ref> context_menu;
+  std::optional<forms::cursor> cursor;
+  dock_style dock = dock_style::none;
+  bool focused = false;
+  std::optional<drawing::color> fore_color;
+  std::optional<drawing::font> font;
+  intptr handle = 0;
+  drawing::point location;
+  drawing::region region;
+  forms::padding margin {3};
+  drawing::size maximum_client_size;
+  drawing::size maximum_size;
+  drawing::size minimum_client_size;
+  drawing::size minimum_size;
+  forms::padding padding;
+  bool mouse_in = false;
+  xtd::ustring name;
+  intptr parent = 0;
+  bool recreate_handle_posted = false;
+  std::optional<drawing::size> size;
+  control::state state = control::state::empty;
+  control_styles style = control_styles::none;
+  style_sheets::style_sheet style_sheet;
+  bool suppress_key_press = false;
+  std::any tag;
+  xtd::ustring text;
+};
+
 control::control() {
+  data_ = std::make_shared<data>();
   if (application::use_system_controls()) data_->control_appearance = xtd::forms::control_appearance::system;
   native::application::initialize();
   set_state(state::enabled, true);
@@ -147,6 +191,7 @@ control::control(const control& parent, const xtd::ustring& text, int32 left, in
 }
 
 control::control(const xtd::ustring& name, bool) {
+  data_ = std::make_shared<data>();
   data_->name = name;
 }
 
@@ -843,6 +888,18 @@ optional<control_ref> control::from_handle(intptr handle) {
 
 forms::auto_size_mode control::get_auto_size_mode() const {
   return data_->auto_size_mode;
+}
+
+std::optional<xtd::drawing::color> control::get_back_color() const noexcept {
+  return data_->back_color;
+}
+
+std::optional<xtd::drawing::font> control::get_font() const noexcept {
+  return data_->font;
+}
+
+std::optional<xtd::drawing::color> control::get_fore_color() const noexcept {
+  return data_->fore_color;
 }
 
 size_t control::get_child_index(intptr child) const {
