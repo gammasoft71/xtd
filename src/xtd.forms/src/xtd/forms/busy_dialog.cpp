@@ -11,7 +11,19 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
-namespace {
+struct busy_dialog::data {
+  xtd::drawing::color back_color = application::style_sheet().system_colors().control();
+  xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::system;
+  xtd::drawing::color fore_color = application::style_sheet().system_colors().control_text();
+  xtd::drawing::image icon;
+  xtd::ustring text;
+  xtd::ustring description;
+  double opacity = 0.;
+  bool native = false;
+  intptr handle = 0;
+};
+
+busy_dialog::busy_dialog() : data_(std::make_shared<data>()) {
 }
 
 busy_dialog* busy_box::dialog_ = nullptr;

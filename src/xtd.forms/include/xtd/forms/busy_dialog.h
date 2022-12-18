@@ -47,12 +47,14 @@ namespace xtd {
     /// The following code example demonstrates the use of busy_dialog dialog.
     /// @include busy_dialog.cpp
     class forms_export_ busy_dialog  final : public component {
+      struct data;
+      
     public:
       /// @name Constructors
       
       /// @{
       /// @brief Initializes a new instance of the busy_dialog class.
-      busy_dialog() = default;
+      busy_dialog();
       /// @}
       /// @cond
       ~busy_dialog();
@@ -144,18 +146,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        xtd::drawing::color back_color = application::style_sheet().system_colors().control();
-        xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::system;
-        xtd::drawing::color fore_color = application::style_sheet().system_colors().control_text();
-        xtd::drawing::image icon;
-        xtd::ustring text;
-        xtd::ustring description;
-        double opacity = 0.;
-        bool native = false;
-        intptr handle = 0;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
