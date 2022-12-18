@@ -13,7 +13,13 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-choice::choice() {
+struct choice::data {
+  object_collection items;
+  item selected_item;
+  bool sorted = false;
+};
+
+choice::choice() : data_(std::make_shared<data>()) {
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::user_paint | control_styles::use_text_for_accessibility | control_styles::standard_click, false);
   data_->items.item_added += {*this, &choice::on_items_item_added};

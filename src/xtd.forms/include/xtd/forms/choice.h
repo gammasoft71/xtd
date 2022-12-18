@@ -47,6 +47,8 @@ namespace xtd {
     /// The following code example demonstrates the use of choice control.
     /// @include choice.cpp
     class forms_export_ choice : public list_control {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -133,12 +135,7 @@ namespace xtd {
       void wm_mouse_down(message& message);
       void wm_mouse_up(message& message);
 
-      struct data {
-        object_collection items;
-        item selected_item;
-        bool sorted = false;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
