@@ -37,6 +37,7 @@ namespace xtd {
     /// @ingroup xtd_drawing drawing
     class drawing_export_ font_family final : public xtd::object , public xtd::iequatable<font_family> {
       struct data;
+      
     public:
       /// @name Constructors
       
@@ -60,7 +61,7 @@ namespace xtd {
       /// @cond
       ~font_family();
       font_family(const font_family& value);
-      font_family() = default;
+      font_family();
       font_family& operator =(const font_family& value);
       /// @endcond
       

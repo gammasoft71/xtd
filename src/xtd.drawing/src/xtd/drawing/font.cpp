@@ -59,6 +59,9 @@ font::font(ustring family_name, float em_size, font_style style, graphics_unit u
   data_->handle_ = native::font::create(data_->original_font_name_, size_in_points(), (data_->style_ & font_style::bold) == font_style::bold, (data_->style_ & font_style::italic) == font_style::italic, (data_->style_ & font_style::underline) == font_style::underline, (data_->style_ & font_style::strikeout) == font_style::strikeout, data_->gdi_char_set_, data_->gdi_vertical_font_);
 }
 
+font::font() : data_(std::make_shared<data>()) {
+}
+
 font::font(intptr handle) : data_(std::make_shared<data>()) {
   data_->handle_ = handle;
   ustring family_name;

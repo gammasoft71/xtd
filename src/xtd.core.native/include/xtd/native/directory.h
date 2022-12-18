@@ -52,6 +52,8 @@ namespace xtd {
       /// @brief Represent directory iterator used by xtd::native::directtory::enumerate_directories.
       /// @warning Internal use only
       class directory_iterator {
+        struct data;
+
         explicit directory_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
@@ -82,13 +84,15 @@ namespace xtd {
       private:
         friend xtd::io::directory_info;
         friend xtd::native::directory;
-        struct data;
+
         std::shared_ptr<data> data_;
       };
       
       /// @brief Represent file iterator used by xtd::native::directtory::enumerate_files.
       /// @warning Internal use only
       class file_iterator {
+        struct data;
+
         explicit file_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
@@ -118,13 +122,15 @@ namespace xtd {
       private:
         friend xtd::io::directory_info;
         friend xtd::native::directory;
-        struct data;
+
         std::shared_ptr<data> data_;
       };
       
       /// @brief Represent file iterator used by xtd::native::directtory::enumerate_files.
       /// @warning Internal use only
       class file_and_directory_iterator {
+        struct data;
+
         explicit file_and_directory_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
@@ -154,7 +160,7 @@ namespace xtd {
       private:
         friend xtd::io::directory_info;
         friend xtd::native::directory;
-        struct data;
+
         std::shared_ptr<data> data_;
       };
       

@@ -67,6 +67,8 @@ namespace xtd {
           size_t number_of_bytes_sent_ = 0;
         };
         
+        struct data;
+
       public:
         /// @name Constructors
         
@@ -482,7 +484,7 @@ namespace xtd {
         
       private:
         udp_client(const xtd::net::sockets::socket& socket);
-        struct data;
+
         std::shared_ptr<data> data_;
       };
     }

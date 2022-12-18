@@ -31,6 +31,8 @@ namespace xtd {
       /// @ingroup xtd_core synthesis
       class core_export_ speech_synthesizer : public xtd::object {
         struct data;
+        
+        
       public:
         /// @name Constructors
         
