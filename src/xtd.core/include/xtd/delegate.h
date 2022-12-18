@@ -30,6 +30,10 @@ namespace xtd {
   /// @include delegate.cpp
   template<typename result_t>
   class delegate<result_t()> : public xtd::object, public xtd::iequatable<delegate<result_t()>> {
+    struct data {
+      std::vector<std::function <result_t()>> functions;
+    };
+    
   public:
     /// @name Alias
     
@@ -261,10 +265,6 @@ namespace xtd {
           return iterator;
       return end;
     }
-    
-    struct data {
-      std::vector<function_t> functions;
-    };
     std::shared_ptr<data> data_ = std::make_shared<data>();
   };
   
@@ -280,6 +280,11 @@ namespace xtd {
   /// @include delegate.cpp
   template<typename result_t, typename... arguments_t>
   class delegate<result_t(arguments_t...)> : public object, public xtd::iequatable<delegate<result_t(arguments_t...)>> {
+    struct data {
+      std::vector<std::function <result_t()>> no_arguments_functions;
+      std::vector<std::function <result_t(arguments_t...)>> functions;
+    };
+
   public:
     /// @name Alias
     
@@ -744,10 +749,7 @@ namespace xtd {
           return iterator;
       return end;
     }
-    struct data {
-      std::vector<no_arguments_function_t> no_arguments_functions;
-      std::vector<function_t> functions;
-    };
+
     std::shared_ptr<data> data_ = std::make_shared<data>();
   };
 }
