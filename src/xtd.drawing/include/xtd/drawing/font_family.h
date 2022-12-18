@@ -36,6 +36,7 @@ namespace xtd {
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
     class drawing_export_ font_family final : public xtd::object , public xtd::iequatable<font_family> {
+      struct data;
     public:
       /// @name Constructors
       
@@ -129,11 +130,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        intptr handle_ = 0;
-        xtd::ustring name_;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
