@@ -6,11 +6,15 @@
 using namespace xtd;
 using namespace xtd::drawing;
 
-solid_brush::solid_brush() {
+struct solid_brush::data {
+  drawing::color color_;
+};
+
+solid_brush::solid_brush() : data_(std::make_shared<data>()) {
   color(drawing::color::black);
 }
 
-solid_brush::solid_brush(const xtd::drawing::color& color) {
+solid_brush::solid_brush(const xtd::drawing::color& color) : data_(std::make_shared<data>()) {
   this->color(color);
 }
 
