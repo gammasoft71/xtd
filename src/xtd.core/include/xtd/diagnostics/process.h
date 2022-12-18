@@ -82,7 +82,7 @@ namespace xtd {
         /// @return The current event instance.
         template<typename fn_t>
         xtd::diagnostics::data_received_event_handler& operator +=(fn_t function) noexcept {
-          data_->error_data_received_callback_ += (function);
+          error_data_received_callback() += (function);
           return xtd::diagnostics::data_received_event_handler::operator +=(function);
         }
         
@@ -101,12 +101,13 @@ namespace xtd {
         /// @return The current event instance.
         template<typename fn_t>
         xtd::diagnostics::data_received_event_handler& operator -=(fn_t function) noexcept {
-          data_->error_data_received_callback_ -= (function);
+          error_data_received_callback() -= (function);
           return data_received_event_handler::operator -=(function);
         }
         /// @}
         
       private:
+        data_received_event_handler& error_data_received_callback() noexcept;
         process::data* data_ = nullptr;
       };
       
@@ -145,7 +146,7 @@ namespace xtd {
         /// @return The current event instance.
         template<typename fn_t>
         xtd::event_handler& operator +=(fn_t function) noexcept {
-          data_->exit_callback_ += (function);
+          exit_callback() += (function);
           return xtd::event_handler::operator +=(function);
         }
         
@@ -164,12 +165,13 @@ namespace xtd {
         /// @return The current event instance.
         template<typename fn_t>
         xtd::event_handler& operator -=(fn_t function) noexcept {
-          data_->exit_callback_ -= (function);
+          exit_callback() -= (function);
           return xtd::event_handler::operator -=(function);
         }
         /// @}
         
       private:
+        event_handler& exit_callback() noexcept;
         process::data* data_ = nullptr;
       };
       
@@ -208,7 +210,7 @@ namespace xtd {
         /// @return The current event instance.
         template<typename fn_t>
         xtd::diagnostics::data_received_event_handler& operator +=(fn_t function) noexcept {
-          data_->output_data_received_callback_ += (function);
+          output_data_received_callback() += (function);
           return xtd::diagnostics::data_received_event_handler::operator +=(function);
         }
         
@@ -227,12 +229,13 @@ namespace xtd {
         /// @return The current event instance.
         template<typename fn_t>
         xtd::diagnostics::data_received_event_handler& operator -=(fn_t function) noexcept {
-          data_->output_data_received_callback_ -= (function);
+          output_data_received_callback() -= (function);
           return xtd::diagnostics::data_received_event_handler::operator -=(function);
         }
         /// @}
         
       private:
+        data_received_event_handler& output_data_received_callback() noexcept;
         process::data* data_ = nullptr;
       };
       
@@ -840,26 +843,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        xtd::diagnostics::process_start_info start_info_;
-        std::optional<intptr> handle_ = 0;
-        int32 id_ = 0;
-        ustring machine_name_;
-        xtd::diagnostics::process_priority_class priority_class_ = xtd::diagnostics::process_priority_class::normal;
-        std::unique_ptr<std::ostream> standard_input_;
-        std::unique_ptr<std::istream> standard_output_;
-        std::unique_ptr<std::istream> standard_error_;
-        std::thread thread_;
-        xtd::date_time start_time_;
-        xtd::date_time exit_time_;
-        bool enable_raising_events_ = false;
-        std::optional<int32> exit_code_;
-        event_handler exit_callback_;
-        data_received_event_handler error_data_received_callback_;
-        data_received_event_handler output_data_received_callback_;
-        std::exception_ptr exception_pointer_;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
       friend __init_process_message_box_message__;
       inline static xtd::delegate<void(const ustring&)> message_box_message_;
     };
