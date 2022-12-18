@@ -84,7 +84,7 @@ void background_worker::run_worker_async() {
   data_->is_busy = true;
   if (data_->thread.joinable()) data_->thread.join();
   data_->invoker = make_unique<form>();
-  data_->thread = thread([&] {
+  data_->thread = std::thread([&] {
     do_work_event_args e(data_->argument);
     on_do_work(e);
     data_->is_busy = false;
