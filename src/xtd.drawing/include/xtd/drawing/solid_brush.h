@@ -28,6 +28,8 @@ namespace xtd {
     /// @include fill_rectangle.cpp
     /// @remarks This class inherits from the xtd::drawing::brush class.
     class drawing_export_ solid_brush final : public xtd::drawing::brush, public xtd::iequatable<solid_brush> {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -63,10 +65,8 @@ namespace xtd {
 
     private:
       solid_brush();
-      struct data {
-        drawing::color color_;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+
+      std::shared_ptr<data> data_;
     };
   }
 }
