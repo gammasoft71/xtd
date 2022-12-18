@@ -33,6 +33,7 @@ namespace xtd {
       /// xtd.drawing
       /// @ingroup xtd_drawing drawing
       class drawing_export_ graphics_path final : public xtd::object, xtd::iequatable<graphics_path> {
+        struct data;
       public:
         /// @name Constructors
         
@@ -441,11 +442,8 @@ namespace xtd {
         
       private:
         void recreate_handle();
-        struct data {
-          intptr handle = 0;
-          xtd::drawing::drawing2d::fill_mode fill_mode = xtd::drawing::drawing2d::fill_mode::alternate;
-        };
-        std::shared_ptr<data> data_ = std::make_shared<data>();
+        
+        std::shared_ptr<data> data_;
       };
     }
   }

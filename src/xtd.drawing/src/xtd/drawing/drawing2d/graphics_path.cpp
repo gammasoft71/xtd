@@ -13,10 +13,15 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing2d;
 
+struct graphics_path::data {
+  intptr handle = 0;
+  xtd::drawing::drawing2d::fill_mode fill_mode = xtd::drawing::drawing2d::fill_mode::alternate;
+};
+
 graphics_path::graphics_path() : graphics_path(drawing2d::fill_mode::alternate) {
 }
 
-graphics_path::graphics_path(drawing2d::fill_mode mode) {
+graphics_path::graphics_path(drawing2d::fill_mode mode) : data_(std::make_shared<data>()) {
   data_->fill_mode = mode;
   recreate_handle();
 }
