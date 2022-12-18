@@ -36,6 +36,10 @@ int64 animation::elapsed_nanoseconds() const noexcept {
   return data_->stopwatch.elapsed_nanoseconds();
 }
 
+int64 animation::elapsed_ticks() const noexcept {
+  return data_->stopwatch.elapsed_ticks();
+}
+
 uint32 animation::frame_counter() const noexcept {
   return data_->frame_counter;
 }
