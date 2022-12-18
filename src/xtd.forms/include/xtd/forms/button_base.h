@@ -31,6 +31,8 @@ namespace xtd {
     /// @remarks To have the derived button control display an image, set the Image property or the image_list and image_index properties. The image can be aligned on the button control by setting the image_align property. Likewise, to align the text displayed on the button control, set the text_align property.
     /// @remarks The flat_style property determines the style and appearance of the control. If the flat_style property is set to flat_style::system, the user's operating system determines the appearance of the control.
     class forms_export_ button_base : public xtd::forms::control {
+      struct data;
+      
     public:
       /// @name Properties
       
@@ -185,18 +187,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      struct data {
-        bool auto_ellipsis = false;
-        xtd::forms::flat_button_appearance flat_appearance;
-        xtd::forms::flat_style flat_style = xtd::forms::flat_style::standard;
-        xtd::drawing::image image = xtd::drawing::image::empty;
-        xtd::forms::image_list image_list = xtd::forms::image_list::empty;
-        int32 image_index = -1;
-        content_alignment image_align = content_alignment::middle_center;
-        bool is_default = false;
-        content_alignment text_align = content_alignment::middle_center;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
