@@ -530,17 +530,19 @@ namespace {
   }
 }
 
-hatch_brush::hatch_brush() {
-  data_->hatch_style_ = xtd::drawing::drawing2d::hatch_style::horizontal;
-  data_->fore_color_ = xtd::drawing::color::black;
-  data_->back_color_ = xtd::drawing::color::black;
-  recreate_handle();
+struct hatch_brush::data {
+  xtd::drawing::drawing2d::hatch_style hatch_style_ = xtd::drawing::drawing2d::hatch_style::horizontal;
+  xtd::drawing::color fore_color_;
+  xtd::drawing::color back_color_;
+};
+
+hatch_brush::hatch_brush() : hatch_brush(xtd::drawing::drawing2d::hatch_style::horizontal, xtd::drawing::color::black, xtd::drawing::color::black) {
 }
 
 hatch_brush::hatch_brush(xtd::drawing::drawing2d::hatch_style hatch_style, const xtd::drawing::color& fore_color) : hatch_brush(hatch_style, fore_color, xtd::drawing::color::black) {
 }
 
-hatch_brush::hatch_brush(xtd::drawing::drawing2d::hatch_style hatch_style, const xtd::drawing::color& fore_color, const xtd::drawing::color& back_color) {
+hatch_brush::hatch_brush(xtd::drawing::drawing2d::hatch_style hatch_style, const xtd::drawing::color& fore_color, const xtd::drawing::color& back_color) : data_(std::make_shared<data>()) {
   data_->hatch_style_ = hatch_style;
   data_->fore_color_ = fore_color;
   data_->back_color_ = back_color;

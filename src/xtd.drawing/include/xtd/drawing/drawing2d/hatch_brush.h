@@ -30,6 +30,7 @@ namespace xtd {
       /// The following code example demonstrates the use of hatch_brush class.
       /// @include fill_rectangle.cpp
       class drawing_export_ hatch_brush final : public brush, public xtd::iequatable<hatch_brush> {
+        struct data;
       public:
         /// @name Constructors
         
@@ -77,12 +78,8 @@ namespace xtd {
       private:
         hatch_brush();
         void recreate_handle();
-        struct data {
-          xtd::drawing::drawing2d::hatch_style hatch_style_ = xtd::drawing::drawing2d::hatch_style::horizontal;
-          xtd::drawing::color fore_color_;
-          xtd::drawing::color back_color_;
-        };
-        std::shared_ptr<data> data_ = std::make_shared<data>();
+        
+        std::shared_ptr<data> data_;
       };
     }
   }
