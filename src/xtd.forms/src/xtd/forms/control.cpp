@@ -151,8 +151,7 @@ struct control::data {
   xtd::ustring text;
 };
 
-control::control() {
-  data_ = std::make_shared<data>();
+control::control() : data_(std::make_shared<data>()) {
   if (application::use_system_controls()) data_->control_appearance = xtd::forms::control_appearance::system;
   native::application::initialize();
   set_state(state::enabled, true);
@@ -188,11 +187,6 @@ control::control(const control& parent, const xtd::ustring& text, int32 left, in
   this->top(top);
   this->width(width);
   this->height(height);
-}
-
-control::control(const xtd::ustring& name, bool) {
-  data_ = std::make_shared<data>();
-  data_->name = name;
 }
 
 control::~control() {

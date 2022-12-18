@@ -73,7 +73,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of control control.
     /// @include control.cpp
-    class forms_export_ control : public component, public iwin32_window, public icomparable<control>, public xtd::iequatable<control> {      
+    class forms_export_ control : public component, public iwin32_window, public icomparable<control>, public xtd::iequatable<control> {
       struct data;
 
     protected:
@@ -1978,7 +1978,6 @@ namespace xtd {
       void do_layout_children_with_dock_style();
       void do_layout_with_auto_size_mode();
       void do_layout_with_anchor_styles();
-      control(const xtd::ustring& name, bool);
       void show_context_menu(xtd::forms::context_menu& menu, const xtd::drawing::point& pos) const;
       void reflect_message(intptr handle, message& message);
       intptr wnd_proc_(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle);
