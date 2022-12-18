@@ -30,6 +30,7 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core synthesis
       class core_export_ speech_synthesizer : public xtd::object {
+        struct data;
       public:
         /// @name Constructors
         
@@ -46,7 +47,9 @@ namespace xtd {
         /// @name Properties
         
         /// @{
-        synthesizer_state state() const {return data_->state;}
+        /// @brief Gets the current speaking state of the xtd::speech::speech_synthesizer object.
+        /// @return Returns the current speaking state of the xtd::speech::speech_synthesizer object.
+        synthesizer_state state() const noexcept;
         /// @}
 
         /// @name Methods
@@ -92,15 +95,7 @@ namespace xtd {
         void on_speak_started();
         void set_state(synthesizer_state value);
 
-        struct data {
-          intptr handle = 0;
-          int32 rate = 0;
-          synthesizer_state state = synthesizer_state::ready;
-          int32 volume = 100;
-          xtd::speech::synthesis::prompt prompt;
-          xtd::speech::synthesis::prompt* used_prompt = &prompt;
-        };
-        std::shared_ptr<data> data_ = std::make_shared<data>();
+        std::shared_ptr<data> data_;
       };
     }
   }
