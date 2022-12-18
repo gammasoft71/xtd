@@ -26,6 +26,8 @@ namespace xtd {
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
     class drawing_export_ icon : public xtd::object, public xtd::iequatable<icon> {
+      struct data;
+      
     public:
       /// @name Fileds
       
@@ -108,7 +110,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      icon() = default;
+      icon();
       icon(const icon& icon) = default;
       icon& operator =(const icon& icon) = default;
       ~icon();
@@ -169,12 +171,8 @@ namespace xtd {
       
     private:
       explicit icon(const bitmap& bitmap);
-      struct data {
-        intptr handle = 0;
-        xtd::drawing::size size;
-      };
-      
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+
+      std::shared_ptr<data> data_;
     };
   }
 }
