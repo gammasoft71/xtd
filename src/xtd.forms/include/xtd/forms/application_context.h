@@ -9,10 +9,6 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @cond
-    class application;
-    /// @endcond
-    
     /// @brief Specifies the contextual information about an application thread.
     /// @par Namespace
     /// xtd::forms
@@ -24,12 +20,14 @@ namespace xtd {
     /// The following code example demonstrates the use of application and application_context classes.
     /// @include application_context.cpp
     class application_context : public object {
+      struct data;
+
     public:
       /// @name Constructors
       
       /// @{
       /// @brief Initializes a new instance of the application_context class with no context.
-      application_context() = default;
+      application_context();
       /// @brief Initializes a new instance of the application_context class with the specified Form.
       /// @param main_form The main form of the application to use for context.
       /// @remarks If on_main_form_closed is not overridden, the message loop of the thread terminates when main_form is closed.
@@ -46,16 +44,20 @@ namespace xtd {
       /// @brief Gets the form to use as context.
       /// @return The form to use as context.
       /// @remarks This property determines the main form for this context. This property can change at any time. If on_main_form_closed is not overridden, the message loop of the thread terminates when the main_form parameter closes.
-      const form& main_form() const noexcept;
+      std::optional<const_form_ref> main_form() const noexcept;
       /// @brief Gets or sets the Form to use as context.
       /// @return The form to use as context.
       /// @remarks This property determines the main form for this context. This property can change at any time. If on_main_form_closed is not overridden, the message loop of the thread terminates when the main_form parameter closes.
-      form& main_form() noexcept;
+      std::optional<form_ref> main_form() noexcept;
       /// @brief Sets the Form to use as context.
       /// @param main_form The form to use as context.
       /// @remarks This property determines the main form for this context. This property can change at any time. If on_main_form_closed is not overridden, the message loop of the thread terminates when the main_form parameter closes.
       void main_form(const form& main_form);
-      
+      /// @brief Resets the Form to use as context.
+      /// @param nullptr
+      /// @remarks This property determines the main form for this context. This property can change at any time. If on_main_form_closed is not overridden, the message loop of the thread terminates when the main_form parameter closes.
+      void main_form(std::nullptr_t);
+
       /// @brief Gets an object that contains data about the control.
       /// @return A std::any that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
@@ -99,13 +101,7 @@ namespace xtd {
       virtual void on_main_form_closed(object& sender, const event_args& e);
       
     private:
-      friend class application;
-      
-      struct data {
-        form* main_form = nullptr;
-        std::any tag;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }

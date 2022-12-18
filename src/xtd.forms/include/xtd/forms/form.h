@@ -8,6 +8,7 @@
 #include "form_border_style.h"
 #include "form_closed_event_handler.h"
 #include "form_closing_event_handler.h"
+#include "form_ref.h"
 #include "form_start_position.h"
 #include "form_window_state.h"
 #include "container_control.h"
@@ -25,6 +26,7 @@ namespace xtd {
     /// @cond
     class application;
     class application_context;
+    class form;
     /// @endcond
     
     /// @brief Represents a window or dialog box that makes up an application's user interface.
@@ -65,9 +67,6 @@ namespace xtd {
       /// @name Alias
       
       /// @{
-      /// @brief Represent an xtd::forms::form reference.
-      using form_ref = std::reference_wrapper<xtd::forms::form>;
-      
       /// @brief Represent an xtd::forms::ibutton_control reference.
       using ibutton_control_ref = std::reference_wrapper<xtd::forms::ibutton_control>;
       
