@@ -11,6 +11,12 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing2d;
 
+struct linear_gradient_brush::data {
+  xtd::drawing::rectangle_f rect;
+  float angle = 0;
+  xtd::drawing::drawing2d::gradient_stop_collection linear_colors;
+};
+
 linear_gradient_brush::linear_gradient_brush() : linear_gradient_brush(rectangle_f(.0f, .0f, .0f, .0f), {color::transparent, color::transparent}) {
 }
 
@@ -53,7 +59,7 @@ linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle& rect
 linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::color>& linear_colors, xtd::drawing::drawing2d::linear_gradient_mode linear_gradient_mode) : linear_gradient_brush(rect, linear_colors, linear_gradient_mode_to_angle(linear_gradient_mode)) {
 }
 
-linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::color>& linear_colors, float angle) {
+linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::color>& linear_colors, float angle) : data_(std::make_shared<data>()) {
   if (linear_colors.size() < 2) throw argument_exception(csf_);
   while (angle < 0)
     angle = 360 - angle;
