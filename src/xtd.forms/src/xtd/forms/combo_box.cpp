@@ -14,7 +14,18 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-combo_box::combo_box() {
+struct combo_box::data {
+  bool drop_down = false;
+  int32 drop_down_height = 0;
+  combo_box_style drop_down_style = combo_box_style::drop_down;
+  int32 drop_down_width = 0;
+  object_collection items;
+  item selected_item;
+  bool sorted = false;
+  //bool user_set_size = false;
+};
+
+combo_box::combo_box() : data_(std::make_shared<data>()) {
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::user_paint | control_styles::use_text_for_accessibility | control_styles::standard_click, false);
   data_->items.item_added += [&](size_t pos, const item & item) {
