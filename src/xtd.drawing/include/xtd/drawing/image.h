@@ -46,9 +46,11 @@ namespace xtd {
     /// @ingroup xtd_drawing drawing
     /// @remarks To draw an image on a Windows Form, you should use one of the draw_image methods.
     class drawing_export_ image : public xtd::object, public xtd::iequatable<image> {
+      struct data;
+
     public:
       /// @cond
-      image() = default;
+      image();
       image(const image& image) = default;
       image& operator =(const image& image) = default;
       ~image();
@@ -282,23 +284,7 @@ namespace xtd {
     private:
       void update_properties();
       
-      struct data {
-        imaging::image_flags flags_ = imaging::image_flags::none;
-        std::map<xtd::guid, size_t> frame_dimensions = {{xtd::drawing::imaging::frame_dimension::page().guid(), 1}};
-        intptr handle_ = 0;
-        float horizontal_resolution_ = .0f;
-        imaging::color_palette palette_;
-        imaging::pixel_format pixel_format_ = imaging::pixel_format::undefined;
-        size_f physical_dimension_;
-        std::vector<int32> property_id_list_;
-        std::vector<imaging::property_item> property_items_;
-        imaging::image_format raw_format_;
-        drawing::size size_;
-        std::any tag_;
-        float vertical_resolution_ = .0f;
-        xtd::drawing::imaging::encoder_parameters encoder_parameter_list_;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }

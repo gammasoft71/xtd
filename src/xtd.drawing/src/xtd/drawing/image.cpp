@@ -30,14 +30,34 @@ namespace {
   }
 }
 
-image::image(intptr hbitmap) {
+struct image::data {
+  imaging::image_flags flags_ = imaging::image_flags::none;
+  std::map<xtd::guid, size_t> frame_dimensions = {{xtd::drawing::imaging::frame_dimension::page().guid(), 1}};
+  intptr handle_ = 0;
+  float horizontal_resolution_ = .0f;
+  imaging::color_palette palette_;
+  imaging::pixel_format pixel_format_ = imaging::pixel_format::undefined;
+  size_f physical_dimension_;
+  std::vector<int32> property_id_list_;
+  std::vector<imaging::property_item> property_items_;
+  imaging::image_format raw_format_;
+  drawing::size size_;
+  std::any tag_;
+  float vertical_resolution_ = .0f;
+  xtd::drawing::imaging::encoder_parameters encoder_parameter_list_;
+};
+
+image::image() : data_(std::make_shared<data>()) {
+}
+
+image::image(intptr hbitmap) : data_(std::make_shared<data>()) {
   if (hbitmap) {
     data_->handle_ = hbitmap;
     update_properties();
   }
 }
 
-image::image(const ustring& filename) {
+image::image(const ustring& filename) : data_(std::make_shared<data>()) {
   map<size_t, size_t> frame_resolutions;
   data_->handle_ = native::image::create(filename, frame_resolutions);
   data_->frame_dimensions.clear();
@@ -50,7 +70,7 @@ image::image(const ustring& filename) {
   update_properties();
 }
 
-image::image(std::istream& stream) {
+image::image(std::istream& stream) : data_(std::make_shared<data>()) {
   map<size_t, size_t> frame_resolutions;
   data_->handle_ = native::image::create(stream, frame_resolutions);
   data_->frame_dimensions.clear();
@@ -63,23 +83,23 @@ image::image(std::istream& stream) {
   update_properties();
 }
 
-image::image(const char* const* bits) {
+image::image(const char* const* bits) : data_(std::make_shared<data>()) {
   data_->handle_ = native::image::create(bits);
   data_->raw_format_ = imaging::image_format::memory_xpm();
   update_properties();
 }
 
-image::image(int32 width, int32 height) {
+image::image(int32 width, int32 height) : data_(std::make_shared<data>()) {
   data_->handle_ = native::image::create(width, height);
   update_properties();
 }
 
-image::image(const image& image, int32 width, int32 height) {
+image::image(const image& image, int32 width, int32 height) : data_(std::make_shared<data>()) {
   data_->handle_ = native::image::create(image.handle(), width, height);
   update_properties();
 }
 
-image::image(const image& image, const rectangle& rect) {
+image::image(const image& image, const rectangle& rect) : data_(std::make_shared<data>()) {
   data_->handle_ = native::image::create(image.handle(), rect.left(), rect.top(), rect.width(), rect.height());
   update_properties();
 }
