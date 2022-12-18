@@ -6,7 +6,14 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::forms;
 
-animation::animation() {
+struct animation::data {
+  uint32 frame_counter = 0;
+  uint32 frames_per_second = 10;
+  xtd::diagnostics::stopwatch stopwatch;
+  xtd::forms::timer frames_timer;
+};
+
+animation::animation() : data_(std::make_shared<data>()) {
   double_buffered(true);
   set_can_focus(false);
   set_style(control_styles::resize_redraw, true);

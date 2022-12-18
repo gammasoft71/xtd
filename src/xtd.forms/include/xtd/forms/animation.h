@@ -21,6 +21,8 @@ namespace xtd {
     /// The following code example demonstrates the use of animation control.
     /// @include animation.cpp
     class animation : public xtd::forms::control {
+      struct data;
+
     public:
       /// @name Constructors
       
@@ -103,13 +105,7 @@ namespace xtd {
     private:
       void on_frames_timer_tick(object& timer, const xtd::event_args& e);
       
-      struct data {
-        uint32 frame_counter = 0;
-        uint32 frames_per_second = 10;
-        xtd::diagnostics::stopwatch stopwatch;
-        xtd::forms::timer frames_timer;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
