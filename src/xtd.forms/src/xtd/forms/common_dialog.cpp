@@ -3,6 +3,14 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+struct common_dialog::data {
+  std::any tag;
+  xtd::forms::dialog_result dialog_result = xtd::forms::dialog_result::none;
+};
+
+common_dialog::common_dialog() : data_(std::make_shared<data>()) {  
+}
+
 xtd::forms::dialog_result common_dialog::dialog_result() const noexcept {
   return data_->dialog_result;
 }
