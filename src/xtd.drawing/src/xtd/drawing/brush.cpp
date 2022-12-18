@@ -6,11 +6,15 @@
 using namespace xtd;
 using namespace xtd::drawing;
 
-brush::brush() {
+struct brush::data {
+  intptr handle_ = 0;
+};
+
+brush::brush() : data_(std::make_shared<data>()) {
   set_native_brush(native::brush::create());
 }
 
-brush::brush(const brush& value) {
+brush::brush(const brush& value) : data_(std::make_shared<data>()) {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::brush::destroy(data_->handle_);
   data_ = value.data_;
 }
