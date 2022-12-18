@@ -29,6 +29,26 @@ namespace {
   }
 }
 
+struct style_sheet::data {
+  buttons_t buttons;
+  controls_t controls;
+  buttons_t flat_buttons;
+  toggle_buttons_t flat_toggle_buttons;
+  forms_t forms;
+  labels_t labels;
+  panels_t panels;
+  buttons_t popup_buttons;
+  status_bars_t status_bars;
+  status_bar_panels_t status_bar_panels;
+  toggle_buttons_t popup_toggle_buttons;
+  toggle_buttons_t toggle_buttons;
+  tool_bars_t tool_bars;
+  tool_bar_buttons_t tool_bar_buttons;
+  user_controls_t user_controls;
+  xtd::forms::style_sheets::system_colors system_colors;
+  xtd::forms::style_sheets::theme theme;
+};
+
 const style_sheet style_sheet::empty;
 event<style_sheet, event_handler> style_sheet::style_sheet_changed;
 style_sheet style_sheet::current_style_sheet_;
@@ -36,10 +56,13 @@ style_sheet::style_sheets_t style_sheet::style_sheets_;
 style_sheet::style_sheet_names_t style_sheet::style_sheet_names_;
 style_sheet style_sheet::system_style_sheet_;
 
+style_sheet::style_sheet() : data_(std::make_shared<data>()) {
+}
+
 style_sheet::style_sheet(const ustring& css_text) : style_sheet(css_text, true) {
 }
 
-style_sheet::style_sheet(const xtd::ustring& css_text, bool init_system) {
+style_sheet::style_sheet(const xtd::ustring& css_text, bool init_system) : data_(std::make_shared<data>()) {
   if (init_system) *this = system_style_sheet();
   else {
     data_->system_colors.accent(drawing::system_colors::accent());
@@ -103,7 +126,7 @@ style_sheet::style_sheet(const xtd::ustring& css_text, bool init_system) {
   user_control_reader(reader);
 }
 
-style_sheet::style_sheet(const style_sheet& value) {
+style_sheet::style_sheet(const style_sheet& value) : data_(std::make_shared<data>()) {
   // memberwise clone...
   *data_ = *value.data_;
 }
@@ -1236,4 +1259,16 @@ bool style_sheet::try_parse_uri(const xtd::ustring& text, xtd::uri& result) cons
   if (!text.starts_with("url", true) || !text.ends_with(")", true)) return false;
   result = uri(text.remove(text.size() - 1, 1).remove(0, 4));
   return true;
+}
+
+void style_sheet::system_colors_(const xtd::forms::style_sheets::system_colors& system_colors) {
+  data_->system_colors = system_colors;
+}
+
+void style_sheet::theme_(const xtd::forms::style_sheets::theme& theme) {
+  data_->theme = theme;
+}
+
+void style_sheet::theme_name_(const xtd::ustring& name) {
+  data_->theme.name(name);
 }
