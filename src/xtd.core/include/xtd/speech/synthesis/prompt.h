@@ -32,6 +32,7 @@ namespace xtd {
       /// @remarks To generate speech from the contents of a xtd::speech::synthesis::prompt object, use the xtd::speech::synthesis::speach_synthesizer::speak method.
       class core_export_ prompt : public xtd::object {
         friend class speech_synthesizer;
+        struct data;
       public:
         /// @name Constructors
         
@@ -42,7 +43,7 @@ namespace xtd {
         /// @}
         
         /// @cond
-        prompt() = default;
+        prompt();
         prompt(const prompt&) = default;
         prompt(prompt&&) = default;
         prompt& operator =(const prompt&) = default;
@@ -55,11 +56,9 @@ namespace xtd {
         /// @}
 
       private:
-        struct data {
-          xtd::ustring text_to_speak;
-          const speech_synthesizer* synthesizer = nullptr;
-        };
-        std::shared_ptr<data> data_ = std::make_shared<data>();
+        xtd::ustring& text_to_speak();
+        void synthesizer(const speech_synthesizer* synthesizer);
+        std::shared_ptr<data> data_;
       };
     }
   }
