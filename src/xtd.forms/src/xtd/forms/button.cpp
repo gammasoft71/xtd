@@ -16,7 +16,16 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-button::button() {
+struct button::data {
+  bool auto_repeat = false;
+  timer auto_repeat_timer;
+  int32 auto_repeat_delay = 300;
+  int32 auto_repeat_interval = 100;
+  forms::dialog_result dialog_result = forms::dialog_result::none;
+  xtd::forms::visual_styles::push_button_state state = xtd::forms::visual_styles::push_button_state::normal;
+};
+
+button::button() : data_(std::make_shared<data>()) {
   set_style(control_styles::standard_click | control_styles::standard_double_click, false);
   data_->auto_repeat_timer.tick += {*this, &button::on_auto_repeat_timer_tick};
 }
@@ -91,6 +100,10 @@ forms::create_params button::create_params() const noexcept {
   create_params.style(create_params.style() | BS_PUSHBUTTON | BS_MULTILINE | BS_CENTER | BS_VCENTER);
   
   return create_params;
+}
+
+xtd::forms::visual_styles::push_button_state button::state() const noexcept {
+  return data_->state;
 }
 
 drawing::size button::measure_control() const noexcept {

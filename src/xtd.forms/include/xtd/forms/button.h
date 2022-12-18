@@ -59,6 +59,8 @@ namespace xtd {
     /// The following code example demonstrates the use of button control with bitmap.
     /// @include bitmap_button.cpp
     class forms_export_ button : public ibutton_control, public button_base {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -122,7 +124,7 @@ namespace xtd {
 
       /// @brief Gets state.
       /// @return One of xtd::forms::visual_styles::push_button_state values.
-      xtd::forms::visual_styles::push_button_state state() const noexcept {return data_->state;}
+      xtd::forms::visual_styles::push_button_state state() const noexcept;
       /// @}
       
       /// @name Protected methods
@@ -143,15 +145,7 @@ namespace xtd {
     private:
       void on_auto_repeat_timer_tick(object& sender, const event_args& e);
       
-      struct data {
-        bool auto_repeat = false;
-        timer auto_repeat_timer;
-        int32 auto_repeat_delay = 300;
-        int32 auto_repeat_interval = 100;
-        forms::dialog_result dialog_result = forms::dialog_result::none;
-        xtd::forms::visual_styles::push_button_state state = xtd::forms::visual_styles::push_button_state::normal;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
