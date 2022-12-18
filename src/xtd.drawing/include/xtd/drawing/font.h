@@ -43,6 +43,8 @@ namespace xtd {
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
     class drawing_export_ font final : public xtd::object, public xtd::iequatable<font> {
+      struct data;
+
     public:
       /// @name Constructors
       
@@ -317,19 +319,8 @@ namespace xtd {
       friend class xtd::forms::native::font_dialog;
       font() = default;
       explicit font(intptr hfont);
-      struct data {
-        intptr handle_ = 0;
-        drawing::font_family font_family_;
-        xtd::byte gdi_char_set_ = 1;
-        bool gdi_vertical_font_ = false;
-        bool is_system_font_ = false;
-        xtd::ustring original_font_name_;
-        float size_ = 8.25f;
-        xtd::ustring system_font_name_;
-        font_style style_ = font_style::regular;
-        graphics_unit unit_ = graphics_unit::point;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+
+      std::shared_ptr<data> data_;
     };
   }
 }

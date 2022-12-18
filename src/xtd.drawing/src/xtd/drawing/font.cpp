@@ -10,26 +10,39 @@
 using namespace xtd;
 using namespace xtd::drawing;
 
-font::font(const font& prototype, float em_size) {
+struct font::data {
+  intptr handle_ = 0;
+  drawing::font_family font_family_;
+  xtd::byte gdi_char_set_ = 1;
+  bool gdi_vertical_font_ = false;
+  bool is_system_font_ = false;
+  xtd::ustring original_font_name_;
+  float size_ = 8.25f;
+  xtd::ustring system_font_name_;
+  font_style style_ = font_style::regular;
+  graphics_unit unit_ = graphics_unit::point;
+};
+
+font::font(const font& prototype, float em_size) : data_(std::make_shared<data>()) {
   *data_ = *prototype.data_;
   data_->size_ = em_size;
   data_->handle_ = native::font::create(data_->original_font_name_, size_in_points(), (data_->style_ & font_style::bold) == font_style::bold, (data_->style_ & font_style::italic) == font_style::italic, (data_->style_ & font_style::underline) == font_style::underline, (data_->style_ & font_style::strikeout) == font_style::strikeout, data_->gdi_char_set_, data_->gdi_vertical_font_);
 }
 
-font::font(const font& prototype, float em_size, font_style style) {
+font::font(const font& prototype, float em_size, font_style style) : data_(std::make_shared<data>()) {
   *data_ = *prototype.data_;
   data_->size_ = em_size;
   data_->style_ = style;
   data_->handle_ = native::font::create(data_->original_font_name_, size_in_points(), (data_->style_ & font_style::bold) == font_style::bold, (data_->style_ & font_style::italic) == font_style::italic, (data_->style_ & font_style::underline) == font_style::underline, (data_->style_ & font_style::strikeout) == font_style::strikeout, data_->gdi_char_set_, data_->gdi_vertical_font_);
 }
 
-font::font(const font& prototype, font_style style) {
+font::font(const font& prototype, font_style style) : data_(std::make_shared<data>()) {
   *data_ = *prototype.data_;
   data_->style_ = style;
   data_->handle_ = native::font::create(data_->original_font_name_, size_in_points(), (data_->style_ & font_style::bold) == font_style::bold, (data_->style_ & font_style::italic) == font_style::italic, (data_->style_ & font_style::underline) == font_style::underline, (data_->style_ & font_style::strikeout) == font_style::strikeout, data_->gdi_char_set_, data_->gdi_vertical_font_);
 }
 
-font::font(ustring family_name, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set, bool gdi_vertical_font) {
+font::font(ustring family_name, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set, bool gdi_vertical_font) : data_(std::make_shared<data>()) {
   if (em_size <= 0 || em_size == std::numeric_limits<float>::infinity() || std::isnan(em_size)) throw xtd::argument_exception("em_size is less than or equal to 0, evaluates to infinity, or is not a valid number."_t, current_stack_frame_);
   if (unit == graphics_unit::display) throw xtd::argument_exception("unit can't be equal to graphics_unit::display."_t, current_stack_frame_);
   try {
@@ -46,7 +59,7 @@ font::font(ustring family_name, float em_size, font_style style, graphics_unit u
   data_->handle_ = native::font::create(data_->original_font_name_, size_in_points(), (data_->style_ & font_style::bold) == font_style::bold, (data_->style_ & font_style::italic) == font_style::italic, (data_->style_ & font_style::underline) == font_style::underline, (data_->style_ & font_style::strikeout) == font_style::strikeout, data_->gdi_char_set_, data_->gdi_vertical_font_);
 }
 
-font::font(intptr handle) {
+font::font(intptr handle) : data_(std::make_shared<data>()) {
   data_->handle_ = handle;
   ustring family_name;
   bool bold = false, italic = false, underline = false, strikeout = false;
@@ -66,7 +79,7 @@ font::font(intptr handle) {
   data_->unit_ = graphics_unit::point;
 }
 
-font::font(const font& value) {
+font::font(const font& value) : data_(std::make_shared<data>()) {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::font::destroy(data_->handle_);
   data_ = value.data_;
 }
