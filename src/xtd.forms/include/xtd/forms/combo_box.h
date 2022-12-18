@@ -46,6 +46,8 @@ namespace xtd {
     /// The following code example demonstrates the use of combo box control.
     /// @include combo_box.cpp
     class forms_export_ combo_box : public list_control {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -181,17 +183,7 @@ namespace xtd {
       void wm_mouse_down(message& message);
       void wm_mouse_up(message& message);
 
-      struct data {
-        bool drop_down = false;
-        int32 drop_down_height = 0;
-        combo_box_style drop_down_style = combo_box_style::drop_down;
-        int32 drop_down_width = 0;
-        object_collection items;
-        item selected_item;
-        bool sorted = false;
-        //bool user_set_size = false;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
