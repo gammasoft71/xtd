@@ -698,7 +698,7 @@ style_sheets::style_sheet control::style_sheet() const noexcept {
 control& control::style_sheet(const style_sheets::style_sheet& value) {
   if (data_->style_sheet == value) return *this;
   data_->style_sheet = value;
-  if (data_->style_sheet.data_->theme.name().empty()) data_->style_sheet.data_->theme.name("-- user style sheet --");
+  if (data_->style_sheet.theme().name().empty()) data_->style_sheet.theme_name_("-- user style sheet --");
   on_style_sheet_changed(event_args::empty);
   return *this;
 }

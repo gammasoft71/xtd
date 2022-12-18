@@ -57,6 +57,8 @@ namespace xtd {
       /// @remarks This class is used by xtd::forms::style_sheets::ibox_model.
       /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/style_sheets_overview.md">Style sheets overview</a>.
       class forms_export_ style_sheet final : public xtd::iequatable<style_sheet>, public xtd::object {
+        struct data;
+        
       public:
         /// @name Alias
         
@@ -99,7 +101,7 @@ namespace xtd {
         /// @name Constructors
         
         /// @brief Initialize a new xtd::forms::style_sheets::style_sheet instance.
-        style_sheet() = default;
+        style_sheet();
         /// @brief Initialize a new xtd::forms::style_sheets::style_sheet instance from specified css forrmated text.
         /// @param css_text The css forrmated text that contains the style sheet definition.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/style_sheets_overview.md">Style sheets overview</a>.
@@ -477,33 +479,17 @@ namespace xtd {
         bool try_parse_hsla_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_system_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_uri(const xtd::ustring& text, xtd::uri& result) const noexcept;
-        
-        struct data {
-          buttons_t buttons;
-          controls_t controls;
-          buttons_t flat_buttons;
-          toggle_buttons_t flat_toggle_buttons;
-          forms_t forms;
-          labels_t labels;
-          panels_t panels;
-          buttons_t popup_buttons;
-          status_bars_t status_bars;
-          status_bar_panels_t status_bar_panels;
-          toggle_buttons_t popup_toggle_buttons;
-          toggle_buttons_t toggle_buttons;
-          tool_bars_t tool_bars;
-          tool_bar_buttons_t tool_bar_buttons;
-          user_controls_t user_controls;
-          xtd::forms::style_sheets::system_colors system_colors;
-          xtd::forms::style_sheets::theme theme;
-        };
-        
+
+        void system_colors_(const xtd::forms::style_sheets::system_colors& system_colors);
+        void theme_(const xtd::forms::style_sheets::theme& theme);
+        void theme_name_(const xtd::ustring& name);
+
         static style_sheet current_style_sheet_;
         static style_sheets_t style_sheets_;
         static style_sheet_names_t style_sheet_names_;
         static style_sheet system_style_sheet_;
         
-        std::shared_ptr<data> data_ = std::make_shared<data>();
+        std::shared_ptr<data> data_;
       };
     }
   }

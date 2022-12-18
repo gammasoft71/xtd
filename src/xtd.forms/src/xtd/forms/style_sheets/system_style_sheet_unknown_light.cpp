@@ -54,7 +54,7 @@ namespace {
 
 style_sheet style_sheet::system_style_sheet_unknown_light() noexcept {
   style_sheet ss;
-  ss.data_->theme = style_sheets::theme("Unknown (light)", "Contains Unknown (light) theme.", "Gammasoft", uri("https://gammasoft71.wixsite.com/gammasoft"));
-  ss.data_->system_colors = get_system_colors();
+  ss.theme_(style_sheets::theme("Unknown (light)", "Contains Unknown (light) theme.", "Gammasoft", uri("https://gammasoft71.wixsite.com/gammasoft")));
+  ss.system_colors_(get_system_colors());
   return ss;
 }
