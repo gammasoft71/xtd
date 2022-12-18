@@ -27,7 +27,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-std::optional<form::form_ref> form::active_form_;
+std::optional<form_ref> form::active_form_;
 
 form::form() {
   set_auto_size_mode(forms::auto_size_mode::grow_only);
@@ -62,7 +62,7 @@ form& form::accept_button(std::nullptr_t) {
   return *this;
 }
 
-std::optional<form::form_ref> form::active_form() noexcept {
+std::optional<form_ref> form::active_form() noexcept {
   return active_form_;
 }
 
