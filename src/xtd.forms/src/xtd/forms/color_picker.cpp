@@ -11,7 +11,12 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-color_picker::color_picker() {
+struct color_picker::data {
+  drawing::color color = drawing::color::white;
+  bool alpha_color = true;
+};
+
+color_picker::color_picker() : data_(std::make_shared<data>()) {
   control_appearance(forms::control_appearance::system);
   set_can_focus(false);
 }

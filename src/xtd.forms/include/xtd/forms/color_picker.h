@@ -42,6 +42,8 @@ namespace xtd {
     /// The following code example demonstrates the use of color_picker picker.
     /// @include color_picker.cpp
     class forms_export_ color_picker : public control {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -101,11 +103,7 @@ namespace xtd {
       void wm_command_control(message& message);
       void wm_command_control_selchange(message& message);
       
-      struct data {
-        drawing::color color = drawing::color::white;
-        bool alpha_color = true;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
