@@ -128,8 +128,7 @@ data_received_event_handler& process::output_data_received_event::output_data_re
   return data_->output_data_received_callback_;
 }
 
-process::process() {
-  data_ = std::make_shared<data>();
+process::process() : data_(std::make_shared<data>()) {
   exited.set_data(data_.get());
 }
 
