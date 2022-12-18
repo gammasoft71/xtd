@@ -48,6 +48,8 @@ namespace xtd {
     /// The following code example demonstrates the use of about_dialog dialog with dialog_styledialog_style to system.
     /// @include about_dialog_system.cpp
     class forms_export_ about_dialog final : public component {
+      struct data;
+
     public:
       /// @name Alias
       
@@ -66,7 +68,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the about_dialog class.
-      about_dialog() = default;
+      about_dialog();
       /// @}
       
       /// @name Properties
@@ -218,23 +220,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::standard;
-        xtd::drawing::image icon;
-        xtd::ustring name;
-        xtd::ustring version;
-        xtd::ustring long_version;
-        xtd::ustring description;
-        xtd::ustring copyright;
-        xtd::ustring website;
-        xtd::ustring website_label;
-        author_collection authors;
-        documenter_collection documenters;
-        translator_collection translators;
-        artist_collection artists;
-        xtd::ustring license;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
