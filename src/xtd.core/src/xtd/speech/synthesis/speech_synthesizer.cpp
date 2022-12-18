@@ -18,21 +18,21 @@ speech_synthesizer::~speech_synthesizer() {
 
 void speech_synthesizer::speak(const ustring& text_to_speak) {
   data_->used_prompt = &data_->prompt;
-  data_->used_prompt->data_->text_to_speak = text_to_speak;
+  data_->used_prompt->text_to_speak() = text_to_speak;
   speak(*data_->used_prompt);
 }
 
 void speech_synthesizer::speak(xtd::speech::synthesis::prompt& prompt) {
   data_->used_prompt = &prompt;
   on_speak_started();
-  native::speech_synthesizer::speak(data_->handle, data_->used_prompt->data_->text_to_speak);
-  data_->used_prompt->data_->synthesizer = this;
+  native::speech_synthesizer::speak(data_->handle, data_->used_prompt->text_to_speak());
+  data_->used_prompt->synthesizer(this);
   on_speak_completed();
 }
 
 xtd::speech::synthesis::prompt& speech_synthesizer::speak_async(const ustring& text_to_speak) {
   data_->used_prompt = &data_->prompt;
-  data_->used_prompt->data_->text_to_speak = text_to_speak;
+  data_->used_prompt->text_to_speak() = text_to_speak;
   speak_async(*data_->used_prompt);
   return *data_->used_prompt;
 }
@@ -40,8 +40,8 @@ xtd::speech::synthesis::prompt& speech_synthesizer::speak_async(const ustring& t
 void speech_synthesizer::speak_async(xtd::speech::synthesis::prompt& prompt) {
   data_->used_prompt = &prompt;
   on_speak_started();
-  native::speech_synthesizer::speak_async(data_->handle, data_->used_prompt->data_->text_to_speak, bind(&speech_synthesizer::on_speak_completed, this));
-  data_->used_prompt->data_->synthesizer = this;
+  native::speech_synthesizer::speak_async(data_->handle, data_->used_prompt->text_to_speak(), bind(&speech_synthesizer::on_speak_completed, this));
+  data_->used_prompt->synthesizer(this);
 }
 
 void speech_synthesizer::on_speak_completed() {
