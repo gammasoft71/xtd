@@ -10,17 +10,21 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing2d;
 
+struct region::data {
+  intptr handle = 0;
+};
+
 region::region() : region(rectangle_f(single_object::min_value, single_object::min_value, single_object::max_value, single_object::max_value)) {
 }
 
-region::region(const graphics_path& path) {
+region::region(const graphics_path& path) : data_(std::make_shared<data>()) {
   data_->handle = native::region::create_from_graphics_path(path.handle());
 }
 
 region::region(const rectangle& rect) : region(rectangle_f(rect)) {
 }
 
-region::region(const rectangle_f& rect) {
+region::region(const rectangle_f& rect) : data_(std::make_shared<data>()) {
   data_->handle = native::region::create_from_rect(rect.x(), rect.y(), rect.width(), rect.height());
 }
 

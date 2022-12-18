@@ -30,6 +30,8 @@ namespace xtd {
     /// @remarks An application can also use regions in hit-testing operations, such as checking whether a point or a rectangle intersects a region.
     /// @remarks An application can fill a region by using the xtd::drawing::graphics::fill_region method and a xtd::drawing::brush object.
     class drawing_export_ region final : public xtd::object, public xtd::iequatable<region> {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -295,10 +297,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        intptr handle = 0;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
