@@ -29,6 +29,8 @@ namespace xtd {
     /// The following code example demonstrates the use of background_worker component.
     /// @include background_worker.cpp
     class forms_export_ background_worker : public component {
+      struct data;
+
     public:
       /// @name Constructors
       
@@ -99,7 +101,7 @@ namespace xtd {
       /// @param argument A parameter for use by the background operation to be executed in the do_work event handler.
       template<typename argument_t>
       void run_worker_async(argument_t argument) {
-        data_->argument = argument;
+        argument_(std::any(argument));
         run_worker_async();
       }
       
@@ -133,17 +135,9 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        std::any argument;
-        bool cancellation_pending = false;
-        bool is_busy = false;
-        bool worker_reports_progress = false;
-        bool worker_supports_cancellation = false;
-        progress_changed_event_args event {0, std::any()};
-        std::unique_ptr<form> invoker;
-        std::thread thread;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      void argument_(std::any&& argument);
+      
+      std::shared_ptr<data> data_;
     };
   }
 }
