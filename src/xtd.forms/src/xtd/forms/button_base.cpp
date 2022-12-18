@@ -8,7 +8,20 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-button_base::button_base() noexcept {
+struct button_base::data {
+  bool auto_ellipsis = false;
+  xtd::forms::flat_button_appearance flat_appearance;
+  xtd::forms::flat_style flat_style = xtd::forms::flat_style::standard;
+  xtd::drawing::image image = xtd::drawing::image::empty;
+  xtd::forms::image_list image_list = xtd::forms::image_list::empty;
+  int32 image_index = -1;
+  content_alignment image_align = content_alignment::middle_center;
+  bool is_default = false;
+  content_alignment text_align = content_alignment::middle_center;
+};
+
+
+button_base::button_base() noexcept : data_(std::make_shared<data>()) {
   if (application::use_system_controls()) data_->flat_style = xtd::forms::flat_style::system;
   set_auto_size_mode(forms::auto_size_mode::grow_only);
   set_style(control_styles::user_mouse | control_styles::user_paint, control_appearance() == forms::control_appearance::standard);
