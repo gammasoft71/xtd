@@ -23,12 +23,14 @@ namespace xtd {
     /// @remarks The information in a create_params can be used to pass information about the initial state and appearance of a control. Most control derived controls override the create_params property to pass in the appropriate values or include additional information in the create_params.
     /// @note The constants used to set the style, ex_style, and class_style properties are defined in the xtd.forms.native library as constants.
     class create_params : public object {
+      struct data;
+      
     public:
       /// @name Constructors
       
       /// @{
       /// @brief Initializes a new instance of the create_params class.
-      create_params() = default;
+      create_params();
       /// @}
       
       /// @cond
@@ -163,18 +165,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        xtd::ustring caption;
-        xtd::ustring class_name;
-        size_t class_style = 0;
-        size_t ex_style = 0;
-        drawing::point location = {-1, -1};
-        intptr param = 0;
-        intptr parent = 0;
-        size_t style = 0;
-        drawing::size size = {-1, -1};
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
