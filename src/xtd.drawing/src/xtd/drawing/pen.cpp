@@ -19,6 +19,22 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing2d;
 
+struct pen::data {
+  intptr handle_ = 0;
+  xtd::drawing::drawing2d::pen_alignment alignment = xtd::drawing::drawing2d::pen_alignment::center;
+  std::unique_ptr<xtd::drawing::brush> brush;
+  xtd::drawing::color color;
+  float dash_offset = 0.0f;
+  std::vector<float> dash_pattern;
+  xtd::drawing::dash_style dash_style = xtd::drawing::dash_style::solid;
+  xtd::drawing::drawing2d::line_cap end_cap = xtd::drawing::drawing2d::line_cap::flat;
+  xtd::drawing::drawing2d::line_join line_join = xtd::drawing::drawing2d::line_join::miter;
+  float miter_limit = 10.0f;
+  xtd::drawing::drawing2d::line_cap start_cap = xtd::drawing::drawing2d::line_cap::flat;
+  xtd::drawing::drawing2d::pen_type type = xtd::drawing::drawing2d::pen_type::solid_color;
+  float width = 1.0f;
+};
+
 pen::pen(const drawing::color& color) : pen(color, 1) {
 }
 
@@ -26,11 +42,11 @@ pen::pen(const drawing::color& color, float width) : pen(solid_brush(color), wid
   data_->color = color;
 }
 
-pen::pen() {
+pen::pen() : data_(std::make_shared<data>()) {
   recreate_handle();
 }
 
-pen::pen(const pen& value) {
+pen::pen(const pen& value) : data_(std::make_shared<data>()) {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::pen::destroy(data_->handle_);
   data_ = value.data_;
 }
@@ -177,6 +193,18 @@ bool pen::equals(const xtd::drawing::pen& value) const noexcept {
 
 xtd::ustring pen::to_string() const noexcept {
   return ustring::full_class_name(*this);
+}
+
+void pen::brush_(std::unique_ptr<xtd::drawing::brush>&& brush) {
+  data_->brush = move(brush);
+}
+
+void pen::color_(const xtd::drawing::color& color) {
+  data_->color = color;
+}
+
+void pen::create_data() {
+  data_ = std::make_shared<data>();
 }
 
 void pen::recreate_handle() {
