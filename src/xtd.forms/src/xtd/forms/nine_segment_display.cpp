@@ -3,6 +3,13 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+struct nine_segment_display::data {
+  std::optional<int32> thickness;
+};
+
+nine_segment_display::nine_segment_display() : data_(std::make_shared<data>()) {
+}
+
 int32 nine_segment_display::thickness() const noexcept {
   return data_->thickness.value_or(size().height() < 20 ? 1 : (size().height() / 20 + ((size().height() / 20) % 2 ? 0 : 1)));
 }
