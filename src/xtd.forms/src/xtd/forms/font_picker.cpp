@@ -10,7 +10,12 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-font_picker::font_picker() {
+struct font_picker::data {
+  drawing::color color;
+  drawing::font font = xtd::drawing::system_fonts::default_font();
+};
+
+font_picker::font_picker() : data_(std::make_shared<data>()) {
   control_appearance(forms::control_appearance::system);
 }
 
