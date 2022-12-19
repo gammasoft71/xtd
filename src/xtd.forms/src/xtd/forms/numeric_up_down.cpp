@@ -11,7 +11,16 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-numeric_up_down::numeric_up_down() {
+struct numeric_up_down::data {
+  int32 decimal_place = 0;
+  double increment = 1.0;
+  double maximum = 100.0;
+  double minimum = 0.0;
+  double value = 0.0;
+  bool wrapped = false;
+};
+
+numeric_up_down::numeric_up_down() : data_(std::make_shared<data>()) {
   control_appearance(forms::control_appearance::system);
 }
 
