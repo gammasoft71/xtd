@@ -19,6 +19,8 @@ namespace xtd {
     /// @remarks The list_control class provides implementations of common elements for the list_box and combo_box controls.
     /// @remarks The following properties are of primary concern to users of a data-bound list_box, choice or combo_box: data_source, display_member, selected_value, and value_member properties.
     class forms_export_ list_control : public control {
+      struct data;
+      
     public:
       /// @brief Represent an item contained in the list_control::object_collection collection.
       class item : public object, public icomparable<item>, public xtd::iequatable<item> {
@@ -166,10 +168,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        size_t selected_index = npos;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
