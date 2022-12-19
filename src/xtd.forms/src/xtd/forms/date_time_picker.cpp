@@ -11,7 +11,14 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-date_time_picker::date_time_picker() {
+struct date_time_picker::data {
+  date_time_picker_format format = date_time_picker_format::long_format;
+  date_time max_date = date_time::max_value;
+  date_time min_date = date_time::min_value;
+  date_time value = date_time::now();
+};
+
+date_time_picker::date_time_picker() : data_(std::make_shared<data>()) {
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::fixed_height, true);
   set_style(control_styles::user_paint | control_styles::standard_click, false);  
