@@ -177,6 +177,7 @@ add_sources(
   include/xtd/forms/menu.h
   include/xtd/forms/menu_item.h
   include/xtd/forms/menu_item_kind.h
+  include/xtd/forms/menu_item_ref.h
   include/xtd/forms/menu_images.h
   include/xtd/forms/message.h
   include/xtd/forms/message_box.h
