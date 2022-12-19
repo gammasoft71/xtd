@@ -6,6 +6,8 @@ Shows how to use [xtd::drawing::image](https://codedocs.xyz/gammasoft71/xtd/clas
 
 [src/image.cpp](src/image.cpp)
 
+[src/logo.xpm](src/logo.xpm)
+
 [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
