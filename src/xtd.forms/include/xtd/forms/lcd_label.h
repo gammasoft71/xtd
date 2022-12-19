@@ -52,6 +52,7 @@ namespace xtd {
     /// @include lcd_label2.cpp
     class lcd_label : public control {
       class idigit;
+      struct data;
       class dot_matrix_display_digit;
       class fourteen_segment_display_digit;
       class nine_segment_display_digit;
@@ -174,18 +175,7 @@ namespace xtd {
       void on_digit_mouse_up(object& sender, const mouse_event_args& e);
       void set_digits_params();
       
-      struct data {
-        bool show_back_digit = true;
-        std::optional<xtd::drawing::color> back_digit_color;
-        double back_digit_opacity = 0.95;
-        std::optional<int32> digit_spacing;
-        forms::lcd_style lcd_style = forms::lcd_style::seven_segment_display;
-        forms::segment_style segment_style = forms::segment_style::standard;
-        forms::dot_matrix_style dot_matrix_style = forms::dot_matrix_style::standard;
-        std::vector<std::shared_ptr<idigit>> digits;
-        std::optional<int32> thickness;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
