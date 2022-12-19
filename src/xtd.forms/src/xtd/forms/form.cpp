@@ -27,9 +27,36 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
+struct form::data {
+  std::optional<ibutton_control_ref> accept_button;
+  std::optional<ibutton_control_ref> cancel_button;
+  bool closed = false;
+  bool close_box = true;
+  bool control_box = true;
+  forms::dialog_result dialog_result = forms::dialog_result::none;
+  forms::form_border_style form_border_style = form_border_style::sizable;
+  bool help_button = false;
+  xtd::drawing::icon icon = xtd::drawing::icon::empty;
+  bool maximize_box = true;
+  std::optional<main_menu_ref> menu;
+  bool minimize_box = true;
+  double opacity = 1.0;
+  const control* owner = nullptr;
+  intptr parent_before_show_dialog = 0;
+  std::shared_ptr<screen> previous_screen;
+  bool show_icon = true;
+  bool show_in_taskbar = true;
+  form_start_position start_position = form_start_position::windows_default_location;
+  std::optional<status_bar_ref> status_bar;
+  std::optional<tool_bar_ref> tool_bar;
+  bool top_most = false;
+  form_window_state window_state = form_window_state::normal;
+};
+
+
 std::optional<form_ref> form::active_form_;
 
-form::form() {
+form::form() : data_(std::make_shared<data>()) {
   set_auto_size_mode(forms::auto_size_mode::grow_only);
   data_->icon = system_icons::xtd_forms_logo();
   set_state(state::visible, false);
@@ -599,6 +626,10 @@ void form::wnd_proc(message& message) {
     case WM_RECREATE: wm_recreate(message); break;
     default: container_control::wnd_proc(message); break;
   }
+}
+
+bool form::closed_() const noexcept {
+  return data_->closed;
 }
 
 void form::internal_set_window_state() {
