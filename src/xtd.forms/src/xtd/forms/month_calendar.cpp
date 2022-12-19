@@ -12,6 +12,28 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+struct month_calendar::data {
+  std::vector<xtd::date_time> annually_bolded_dates;
+  std::vector<xtd::date_time> bolded_dates;
+  xtd::drawing::size calendar_dimensions = {1, 1};
+  xtd::forms::day first_day_of_week = xtd::forms::day::default_day;
+  xtd::date_time min_date = date_time::min_value;
+  date_time max_date = date_time::max_value;
+  uint32 max_selection_count = 7;
+  std::vector<xtd::date_time> monthly_bolded_dates;
+  xtd::date_time selection_start = date_time::now();
+  xtd::date_time selection_end = date_time::now();
+  mutable xtd::drawing::size single_month_size = {225, 143};
+  bool show_today = true;
+  bool show_today_circle = true;
+  bool show_week_numbers = false;
+  std::optional<xtd::drawing::color> title_back_color;
+  std::optional<xtd::drawing::color> title_fore_color;
+  xtd::date_time today_date = xtd::date_time::now();
+  bool today_date_set = false;
+  std::optional<xtd::drawing::color> trailing_fore_color;
+};
+
 xtd::forms::month_calendar::hit_area month_calendar::hit_test_info::hit_area() const noexcept {
   return hit_area_;
 }
@@ -32,7 +54,7 @@ const xtd::date_time& month_calendar::hit_test_info::time() const noexcept {
 month_calendar::hit_test_info::hit_test_info(xtd::forms::month_calendar::hit_area hit_area, const xtd::drawing::point& point, const xtd::date_time& time) : hit_area_(hit_area), point_(point), time_(time) {
 }
 
-month_calendar::month_calendar() {
+month_calendar::month_calendar() : data_(std::make_shared<data>()) {
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::user_paint, false);
   set_style(control_styles::standard_click, false);
