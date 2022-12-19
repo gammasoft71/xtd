@@ -7,6 +7,16 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+struct folder_browser_dialog::data {
+  xtd::ustring description;
+  environment::special_folder root_folder = environment::special_folder::desktop;
+  xtd::ustring selected_path;
+  size_t options =  BIF_RETURNONLYFSDIRS | BIF_NEWDIALOGSTYLE;
+};
+
+folder_browser_dialog::folder_browser_dialog() : data_(std::make_shared<data>()) {
+}
+
 bool folder_browser_dialog::auto_upgrade_enable() const noexcept {
   return get_option(BIF_USENEWUI);
 }
