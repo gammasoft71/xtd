@@ -37,12 +37,14 @@ namespace xtd {
     /// The following code example demonstrates the use of nine segment display control.
     /// @include nine_segment_display.cpp
     class nine_segment_display : public seven_segment_display {
+      struct data;
+      
     public:
       /// @name Constructors
       
       /// @{
       /// @brief Initialize a new instance of nine_segment_display class.
-      nine_segment_display() = default;
+      nine_segment_display();
       /// @}
       
       /// @name Properties
@@ -78,10 +80,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        std::optional<int32> thickness;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
