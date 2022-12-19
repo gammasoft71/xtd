@@ -8,6 +8,7 @@ public:
   form1() {
     text("Save file dialog example");
     controls().push_back(button1);
+    auto_scroll(true);
     
     button1.location({10, 10});
     button1.text("Save...");
