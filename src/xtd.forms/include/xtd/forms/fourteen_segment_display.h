@@ -37,12 +37,14 @@ namespace xtd {
     /// The following code example demonstrates the use of fourteen segment display control.
     /// @include fourteen_segment_display.cpp
     class fourteen_segment_display : public seven_segment_display {
+      struct data;
+      
     public:
       /// @name Constructors
       
       /// @{
       /// @brief Initialize a new instance of fourteen_segment_display class.
-      fourteen_segment_display() = default;
+      fourteen_segment_display();
       /// @}
       
       /// @name Properties
@@ -110,10 +112,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        std::optional<int32> thickness;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
