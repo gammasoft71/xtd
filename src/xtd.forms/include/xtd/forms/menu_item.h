@@ -25,6 +25,8 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms menus_and_toolbars
     class forms_export_ menu_item : public xtd::forms::menu {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -116,7 +118,6 @@ namespace xtd {
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
       menu_item(const xtd::ustring& text, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut);
-      
       /// @brief Initializes a new instance of the class with a specified caption and event handler for the Click event of the menu item.
       /// @param text The caption for the menu item.
       /// @param on_click The event_handler that handles the Click event for this menu item.
@@ -216,25 +217,26 @@ namespace xtd {
       
       /// @cond
       template<typename delegate_type>
-      menu_item(const xtd::ustring& text, delegate_type on_click) : menu_item(text, xtd::event_handler(on_click)) {}
+      menu_item(const xtd::ustring& text, delegate_type on_click) : menu_item(text, xtd::event_handler(on_click)) {create_data();}
       template<typename delegate_type>
-      menu_item(const xtd::ustring& text, delegate_type on_click, xtd::forms::shortcut shortcut) : menu_item(text, xtd::event_handler(on_click), shortcut) {}
+      menu_item(const xtd::ustring& text, delegate_type on_click, xtd::forms::shortcut shortcut) : menu_item(text, xtd::event_handler(on_click), shortcut) {create_data();}
       template<typename delegate_type>
-      menu_item(const xtd::ustring& text, delegate_type on_click, const xtd::drawing::image& image) : menu_item(text, xtd::event_handler(on_click), image) {}
+      menu_item(const xtd::ustring& text, delegate_type on_click, const xtd::drawing::image& image) : menu_item(text, xtd::event_handler(on_click), image) {create_data();}
       template<typename delegate_type>
-      menu_item(const xtd::ustring& text, delegate_type on_click, const xtd::drawing::image& image, xtd::forms::shortcut shortcut) : menu_item(text, xtd::event_handler(on_click), image, shortcut) {}
+      menu_item(const xtd::ustring& text, delegate_type on_click, const xtd::drawing::image& image, xtd::forms::shortcut shortcut) : menu_item(text, xtd::event_handler(on_click), image, shortcut) {create_data();}
       template<typename delegate_type>
-      menu_item(const xtd::ustring& text, delegate_type on_click, xtd::forms::menu_item_kind kind) : menu_item(text, xtd::event_handler(on_click), kind) {}
+      menu_item(const xtd::ustring& text, delegate_type on_click, xtd::forms::menu_item_kind kind) : menu_item(text, xtd::event_handler(on_click), kind) {create_data();}
       template<typename delegate_type>
-      menu_item(const xtd::ustring& text, delegate_type on_click, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut) : menu_item(text, xtd::event_handler(on_click), kind, shortcut) {}
+      menu_item(const xtd::ustring& text, delegate_type on_click, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut) : menu_item(text, xtd::event_handler(on_click), kind, shortcut) {create_data();}
       template<typename delegate_type>
-      menu_item(const xtd::ustring& text, delegate_type on_click, xtd::forms::menu_item_kind kind, bool checked) : menu_item(text, xtd::event_handler(on_click), kind, checked) {}
+      menu_item(const xtd::ustring& text, delegate_type on_click, xtd::forms::menu_item_kind kind, bool checked) : menu_item(text, xtd::event_handler(on_click), kind, checked) {create_data();}
       template<typename delegate_type>
-      menu_item(const xtd::ustring& text, delegate_type on_click, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) : menu_item(text, xtd::event_handler(on_click), kind, checked, shortcut) {}
+      menu_item(const xtd::ustring& text, delegate_type on_click, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) : menu_item(text, xtd::event_handler(on_click), kind, checked, shortcut) {create_data();}
       template<typename delegate_type>
-      menu_item(const xtd::ustring& text, delegate_type on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked) : menu_item(text, xtd::event_handler(on_click), image, kind, checked) {}
+      menu_item(const xtd::ustring& text, delegate_type on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked) : menu_item(text, xtd::event_handler(on_click), image, kind, checked) {create_data();}
       template<typename delegate_type>
-      menu_item(const xtd::ustring& text, delegate_type on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) : menu_item(text, xtd::event_handler(on_click), image, kind, checked, shortcut) {}
+      menu_item(const xtd::ustring& text, delegate_type on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) : menu_item(text, xtd::event_handler(on_click), image, kind, checked, shortcut) {create_data();}
+      menu_item(const xtd::ustring& text, const std::initializer_list<const_menu_item_ref>& items);
       /// @endcond
       
       /// @brief Initializes a new instance of the class with a specified caption and an array of submenu items defined for the menu item.
@@ -245,10 +247,6 @@ namespace xtd {
       /// @remarks The items parameter enables you to assign an array of menu items to define a submenu of this menu item. Each item in the array can also have an array of menu items assigned to it. This enables you to create complete menu structures and assign them to the constructor for the menu item.
       menu_item(const xtd::ustring& text, const std::vector<menu_item_ref>& items);
       /// @}
-      
-      /// @cond
-      menu_item(const xtd::ustring& text, const std::initializer_list<const_menu_item_ref>& items);
-      /// @endcond
       
       /// @name Properties
       
@@ -346,16 +344,9 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        xtd::ustring text;
-        xtd::drawing::image image = xtd::drawing::image::empty;
-        xtd::forms::menu_item_kind kind = xtd::forms::menu_item_kind::normal;
-        bool checked = false;
-        xtd::forms::shortcut shortcut = xtd::forms::shortcut::none;
-        bool enabled = true;
-        bool is_parent = false;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      void create_data();
+      
+      std::shared_ptr<data> data_;
     };
   }
 }
