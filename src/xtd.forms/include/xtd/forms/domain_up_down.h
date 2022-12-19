@@ -41,6 +41,8 @@ namespace xtd {
     /// The following code example demonstrates the use of domain up down control.
     /// @include domain_up_down.cpp
     class forms_export_ domain_up_down : public up_down_base {
+      struct data;
+      
     public:
       /// @brief Represent an item contained in the domain_up_down::object_collection collection.
       class item : public object, public icomparable<item>, public xtd::iequatable<item> {
@@ -200,13 +202,7 @@ namespace xtd {
       void on_items_item_removed(size_t pos, const item & item);
       void on_items_item_updated(size_t pos, const item & item);
 
-      struct data {
-        object_collection items;
-        size_t selected_index = npos;
-        item selected_item;
-        bool wrap = false;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }

@@ -42,7 +42,14 @@ xtd::ustring domain_up_down::item::to_string() const noexcept {
   return value_;
 }
 
-domain_up_down::domain_up_down() {
+struct domain_up_down::data {
+  object_collection items;
+  size_t selected_index = npos;
+  item selected_item;
+  bool wrap = false;
+};
+
+domain_up_down::domain_up_down() : data_(std::make_shared<data>()) {
   control_appearance(forms::control_appearance::system);
   
   data_->items.item_added += {*this, &domain_up_down::on_items_item_added};
