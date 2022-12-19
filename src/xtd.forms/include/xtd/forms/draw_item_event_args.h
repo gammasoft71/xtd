@@ -11,6 +11,7 @@
 #include <xtd/drawing/system_fonts.h>
 #include "control.h"
 #include "draw_item_state.h"
+#include "../forms_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -23,7 +24,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms events
     /// @remarks The @verbatim draw_item @endverbatim event is raised by owner draw controls, such as the xtd::forms::list_box and xtd::forms::combo_box controls. It contains all the information that is needed for the user to paint the specified item, including the item index, the xtd::drawing::rectangle, and the xtd::drawing::graphics on which the drawing should be done.
-    class draw_item_event_args : public event_args {
+    class forms_export_ draw_item_event_args : public event_args {
       struct data;
       
     public:
