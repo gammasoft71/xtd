@@ -43,6 +43,8 @@ namespace xtd {
     /// The following code example demonstrates the use of list_box control.
     /// @include list_box.cpp
     class forms_export_ list_box : public list_control {
+      struct data;
+      
     public:
       /// @name Alias
       
@@ -186,15 +188,7 @@ namespace xtd {
       void wm_mouse_down(message& message);
       void wm_mouse_up(message& message);
 
-      struct data {
-        forms::border_sides border_sides = forms::border_sides::all;
-        forms::border_style border_style = forms::border_style::fixed_single;
-        object_collection items;
-        item selected_item;
-        forms::selection_mode selection_mode = forms::selection_mode::one;
-        bool sorted = false;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }

@@ -17,7 +17,16 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-list_box::list_box() {
+struct list_box::data {
+  forms::border_sides border_sides = forms::border_sides::all;
+  forms::border_style border_style = forms::border_style::fixed_single;
+  object_collection items;
+  item selected_item;
+  forms::selection_mode selection_mode = forms::selection_mode::one;
+  bool sorted = false;
+};
+
+list_box::list_box() : data_(std::make_shared<data>()) {
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::user_paint | control_styles::standard_click | control_styles::use_text_for_accessibility, false);
   data_->items.item_added += {*this, &list_box::on_items_item_added};
