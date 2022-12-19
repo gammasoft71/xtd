@@ -3,7 +3,17 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-dot_matrix_display::dot_matrix_display() {
+struct dot_matrix_display::data {
+  drawing::size matrix_size = {7, 7};
+  dots_collection dots = dots_collection(matrix_size.width(), std::vector<bool>(matrix_size.height(), false));
+  bool show_back_dot = true;
+  std::optional<drawing::color> back_dot_color;
+  double back_dot_opacity = 0.95;
+  forms::dot_matrix_style dot_matrix_style = forms::dot_matrix_style::standard;
+  std::optional<int32> thickness;
+};
+
+dot_matrix_display::dot_matrix_display() : data_(std::make_shared<data>()) {
   auto_size(true);
   double_buffered(true);
 }
