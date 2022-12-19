@@ -101,6 +101,20 @@ namespace {
   };
 }
 
+struct input_dialog::data {
+  xtd::forms::character_casing character_casing = xtd::forms::character_casing::normal;
+  xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::standard;
+  bool multiline = false;
+  xtd::ustring message;
+  xtd::ustring text;
+  bool use_system_password_char = false;
+  xtd::ustring value;
+  bool word_wrap = true;
+};
+
+input_dialog::input_dialog() :data_(std::make_shared<data>()) {
+}
+
 xtd::forms::character_casing input_dialog::character_casing() const noexcept {
   return data_->character_casing;
 }
