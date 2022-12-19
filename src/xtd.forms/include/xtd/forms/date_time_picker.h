@@ -43,6 +43,8 @@ namespace xtd {
     /// The following code example demonstrates the use of date_time_picker picker.
     /// @include date_time_picker.cpp
     class forms_export_ date_time_picker : public control {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -137,13 +139,7 @@ namespace xtd {
       void wm_nottify_control_dropdown(message& message);
       void wm_nottify_control_datetimechange(message& message);
       
-      struct data {
-        date_time_picker_format format = date_time_picker_format::long_format;
-        date_time max_date = date_time::max_value;
-        date_time min_date = date_time::min_value;
-        date_time value = date_time::now();
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
