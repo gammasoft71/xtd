@@ -44,6 +44,8 @@ namespace xtd {
     /// The following code example demonstrates the use of numeric up down control.
     /// @include numeric_up_down.cpp
     class forms_export_ numeric_up_down : public up_down_base {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -167,15 +169,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      struct data {
-        int32 decimal_place = 0;
-        double increment = 1.0;
-        double maximum = 100.0;
-        double minimum = 0.0;
-        double value = 0.0;
-        bool wrapped = false;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
