@@ -6,6 +6,7 @@
 #include <xtd/event_args.h>
 #include "message.h"
 #include "search_direction.h"
+#include "../forms_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -17,35 +18,26 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    class find_event_args : public event_args {
+    class forms_export_ find_event_args : public event_args {
+      struct data;
+      
     public:
       /// @name Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::find_event_args class.
-      find_event_args() = default;
+      find_event_args();
       /// @brief Initializes a new instance of the xtd::forms::find_event_args class.
       /// @param find_string The string to find.
       /// @param match_case true if match case option selected; otherwise false.
       /// @param search_direction true if match case option selected; otherwise false.
       /// @param whole_word One of xtd::forms::search_direction values.
-      find_event_args(const xtd::ustring& find_string, bool match_case, xtd::forms::search_direction search_direction, bool whole_word) {
-        data_->find_string = find_string;
-        data_->match_case = match_case;
-        data_->search_direction = search_direction;
-        data_->whole_word = whole_word;
-      }
+      find_event_args(const xtd::ustring& find_string, bool match_case, xtd::forms::search_direction search_direction, bool whole_word);
       /// @}
       
       /// @cond
-      find_event_args(const find_event_args& other) {
-        *data_ = *other.data_;
-      }
-      
-      find_event_args& operator =(const find_event_args& other) {
-        *data_ = *other.data_;
-        return *this;
-      }
+      find_event_args(const find_event_args& other);
+      find_event_args& operator =(const find_event_args& other);
       /// @endcond
       
       /// @name Properties
@@ -53,30 +45,24 @@ namespace xtd {
       /// @{
       /// @brief Gets the string to find.
       /// @return The string to find.
-      const xtd::ustring& find_string() const noexcept {return data_->find_string;}
+      const xtd::ustring& find_string() const noexcept;
       
       /// @brief Gets the match case value.
       /// @return true if match case option selected; otherwise false. The default is false.
-      bool match_case() const noexcept {return data_->match_case;}
+      bool match_case() const noexcept;
       
       /// @brief Gets the search direction value.
       /// @return One of xtd::forms::search_direction values; The default is xtd::forms::search_direction::down.
-      xtd::forms::search_direction search_direction() const noexcept {return data_->search_direction;}
+      xtd::forms::search_direction search_direction() const noexcept;
       
       /// @brief Gets the whole word value.
       /// @return true if whole word option selected; otherwise false. The default is false.
-      bool whole_word() const noexcept {return data_->whole_word;}
+      bool whole_word() const noexcept;
       
       /// @}
       
     private:
-      struct data {
-        xtd::ustring find_string;
-        bool match_case = false;
-        xtd::forms::search_direction search_direction = xtd::forms::search_direction::down;
-        bool whole_word = false;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
