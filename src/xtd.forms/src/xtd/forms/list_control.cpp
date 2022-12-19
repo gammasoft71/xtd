@@ -3,6 +3,10 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+struct list_control::data {
+  size_t selected_index = npos;
+};
+
 list_control::item::item(const xtd::ustring& value) : value_(value) {
 }
 
@@ -32,7 +36,7 @@ xtd::ustring list_control::item::to_string() const noexcept {
   return value_;
 }
 
-list_control::list_control() {
+list_control::list_control() : data_(std::make_shared<data>()) {
   //back_color_ = default_back_color();
   //fore_color_ = default_fore_color();
 }
