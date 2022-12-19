@@ -47,6 +47,8 @@ namespace xtd {
     /// The following code example demonstrates the use of label control.
     /// @include hello_world_label.cpp
     class forms_export_ label : public control {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -207,19 +209,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        bool auto_ellipsis = false;
-        xtd::forms::border_sides border_sides = xtd::forms::border_sides::all;
-        std::optional<xtd::forms::border_style> border_style;
-        xtd::drawing::image image = xtd::drawing::image::empty;
-        xtd::forms::image_list image_list = xtd::forms::image_list::empty;
-        int32 image_index = -1;
-        content_alignment image_align = content_alignment::middle_center;
-        xtd::forms::flat_style flat_style = xtd::forms::flat_style::standard;
-        bool shadow = false;
-        xtd::forms::content_alignment text_align = xtd::forms::content_alignment::top_left;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
