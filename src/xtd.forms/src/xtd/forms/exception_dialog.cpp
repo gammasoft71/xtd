@@ -187,6 +187,16 @@ namespace {
   };
 }
 
+struct exception_dialog::data {
+  xtd::forms::dialog_result dialog_result = xtd::forms::dialog_result::none;
+  xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::standard;
+  const std::exception* exception = nullptr;
+  xtd::ustring text;
+};
+
+exception_dialog::exception_dialog() : data_(std::make_shared<data>()) {
+}
+
 xtd::forms::dialog_result exception_dialog::dialog_result() const noexcept {
   return data_->dialog_result;
 }
