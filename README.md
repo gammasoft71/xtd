@@ -52,7 +52,7 @@ The [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) lib
 
 * [Installation](https://gammasoft71.wixsite.com/xtdpro/download) provides download, install and uninstall documentation.
 * [Guides](https://gammasoft71.wixsite.com/xtdpro/guides) provides xtd guides and tutorials.
-* [Examples](https://github.com/gammasoft71/xtd/blob/master/examples/README.md) provides some examples.
+* [Examples](https://github.com/gammasoft71/xtd/blob/master/examples/README.md) provides over 500 examples to help you use xtd, grouped by libraries and topics.
 
 ## Development status
 
