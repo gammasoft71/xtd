@@ -19,6 +19,18 @@ public:
   virtual void set_thickness(int32 value) = 0;
 };
 
+struct lcd_label::data {
+  bool show_back_digit = true;
+  std::optional<xtd::drawing::color> back_digit_color;
+  double back_digit_opacity = 0.95;
+  std::optional<int32> digit_spacing;
+  forms::lcd_style lcd_style = forms::lcd_style::seven_segment_display;
+  forms::segment_style segment_style = forms::segment_style::standard;
+  forms::dot_matrix_style dot_matrix_style = forms::dot_matrix_style::standard;
+  std::vector<std::shared_ptr<idigit>> digits;
+  std::optional<int32> thickness;
+};
+
 class lcd_label::dot_matrix_display_digit : public dot_matrix_display, public lcd_label::idigit {
 public:
   dot_matrix_display_digit() = default;
@@ -719,7 +731,7 @@ void lcd_label::sixteen_segment_display_digit::set_thickness(int32 value) {
   thickness(value);
 }
 
-lcd_label::lcd_label() {
+lcd_label::lcd_label() :data_(std::make_shared<data>()) {
   set_auto_size_mode(forms::auto_size_mode::grow_and_shrink);
   set_can_focus(false);
   set_style(control_styles::user_paint | control_styles::supports_transparent_back_color | control_styles::optimized_double_buffer, control::control_appearance() == forms::control_appearance::standard);
