@@ -11,7 +11,11 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-group_box::group_box() {
+struct group_box::data {
+  xtd::forms::flat_style flat_style = xtd::forms::flat_style::system;
+};
+
+group_box::group_box() : data_(std::make_shared<data>()) {
   if (application::use_system_controls()) data_->flat_style = xtd::forms::flat_style::system;
   control_appearance(forms::control_appearance::system);
   set_auto_size_mode(forms::auto_size_mode::grow_only);

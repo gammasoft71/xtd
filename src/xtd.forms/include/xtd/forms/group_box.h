@@ -47,6 +47,8 @@ namespace xtd {
     /// The following code example demonstrates the use of group_box container and radio_button controls.
     /// @include group_box_and_radio_button.cpp
     class forms_export_ group_box : public control {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -94,10 +96,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        xtd::forms::flat_style flat_style = xtd::forms::flat_style::system;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
