@@ -3,35 +3,52 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+struct emoticon::data {
+  xtd::ustring name;
+  std::vector<char32> codepoints;
+};
+
 const emoticon emoticon::empty() {
   return emoticon();
 }
 
-emoticon::emoticon(const xtd::ustring& name, std::initializer_list<char32> codepoints) {
+emoticon::emoticon() : data_(std::make_shared<data>()) {
+}
+
+emoticon::emoticon(const xtd::ustring& name, std::initializer_list<char32> codepoints) : data_(std::make_shared<data>()) {
   data_->name = name;
   data_->codepoints = codepoints;
 }
 
-emoticon::emoticon(const xtd::ustring& name, const std::vector<char32>& codepoints) {
+emoticon::emoticon(const xtd::ustring& name, const std::vector<char32>& codepoints) : data_(std::make_shared<data>()) {
   data_->name = name;
   data_->codepoints = codepoints;
 }
 
-emoticon::emoticon(const xtd::ustring& name, char32 codepoint) {
+emoticon::emoticon(const xtd::ustring& name, char32 codepoint) : data_(std::make_shared<data>()) {
   data_->name = name;
   data_->codepoints = {codepoint};
 }
 
-emoticon::emoticon(std::initializer_list<char32> codepoints) {
+emoticon::emoticon(std::initializer_list<char32> codepoints) : data_(std::make_shared<data>()) {
   data_->codepoints = codepoints;
 }
 
-emoticon::emoticon(const std::vector<char32>& codepoints) {
+emoticon::emoticon(const std::vector<char32>& codepoints) : data_(std::make_shared<data>()) {
   data_->codepoints = codepoints;
 }
 
-emoticon::emoticon(char32 codepoint) {
+emoticon::emoticon(char32 codepoint) : data_(std::make_shared<data>()) {
   data_->codepoints = {codepoint};
+}
+
+emoticon::emoticon(const emoticon& other) : data_(std::make_shared<data>()) {
+  *data_ = *other.data_;
+}
+
+emoticon& emoticon::operator =(const emoticon& other) {
+  *data_ = *other.data_;
+  return *this;
 }
 
 const xtd::ustring& emoticon::name() const noexcept {
@@ -66,4 +83,20 @@ xtd::ustring emoticon::to_string() const noexcept {
     }
   }
   return result;
+}
+
+void emoticon::create_data() {
+  data_ = std::make_shared<data>();
+}
+
+void emoticon::name_(const ustring& name) {
+  data_->name = name;
+}
+
+std::vector<char32>& emoticon::codepoints_() {
+  return data_->codepoints;
+}
+
+void emoticon::codepoints_(std::vector<char32>&& codepoints) {
+  data_->codepoints = std::move(codepoints);
 }
