@@ -12,40 +12,40 @@ struct control_layout_style::data {
 control_layout_style::control_layout_style() : data_(std::make_shared<data>()) {
 }
 
-control_layout_style::control_layout_style(xtd::forms::size_type size_type) {
+control_layout_style::control_layout_style(xtd::forms::size_type size_type) : data_(std::make_shared<data>()) {
   data_->size_type = size_type;
 }
 
-control_layout_style::control_layout_style(bool expanded)  {
+control_layout_style::control_layout_style(bool expanded) : data_(std::make_shared<data>())  {
   data_->expanded = expanded;
 }
 
-control_layout_style::control_layout_style(xtd::forms::content_alignment align) {
+control_layout_style::control_layout_style(xtd::forms::content_alignment align) : data_(std::make_shared<data>()) {
   data_->align = align;
 }
 
-control_layout_style::control_layout_style(xtd::forms::size_type size_type, bool expanded) {
+control_layout_style::control_layout_style(xtd::forms::size_type size_type, bool expanded) : data_(std::make_shared<data>()) {
   data_->size_type = size_type;
   data_->expanded = expanded;
 }
 
-control_layout_style::control_layout_style(xtd::forms::size_type size_type, xtd::forms::content_alignment align) {
+control_layout_style::control_layout_style(xtd::forms::size_type size_type, xtd::forms::content_alignment align) : data_(std::make_shared<data>()) {
   data_->size_type = size_type;
   data_->align = align;
 }
 
-control_layout_style::control_layout_style(xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align) {
+control_layout_style::control_layout_style(xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align) : data_(std::make_shared<data>()) {
   data_->size_type = size_type;
-  data_->expanded = expanded;
-  data_->align = align;
-}
-
-control_layout_style::control_layout_style(bool expanded, xtd::forms::content_alignment align) {
   data_->expanded = expanded;
   data_->align = align;
 }
 
-control_layout_style::control_layout_style(const control_layout_style& other) {
+control_layout_style::control_layout_style(bool expanded, xtd::forms::content_alignment align) : data_(std::make_shared<data>()) {
+  data_->expanded = expanded;
+  data_->align = align;
+}
+
+control_layout_style::control_layout_style(const control_layout_style& other) : data_(std::make_shared<data>()) {
   *data_ = *other.data_;
 }
 
