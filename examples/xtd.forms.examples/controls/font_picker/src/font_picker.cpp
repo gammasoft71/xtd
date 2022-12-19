@@ -9,6 +9,7 @@ public:
     text("Font picker example");
     client_size({400, 400});
     controls().push_back_range({picker1, label1});
+    auto_scroll(true);
     
     picker1.location({10, 10});
     picker1.color(label1.fore_color());
@@ -19,8 +20,7 @@ public:
     };
     
     label1.location({10, 50});
-    label1.size({380, 340});
-    label1.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
+    label1.auto_size(true);
     label1.text(u8"The quick brown fox jumps over the lazy dog.\n"
       u8"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.\n"
       u8"0123456789+-*/%~^&|=<>≤≥±÷≠{{[()]}},;:.?¿!¡\n"
