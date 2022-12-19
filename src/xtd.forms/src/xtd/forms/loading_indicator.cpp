@@ -14,7 +14,17 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-loading_indicator::loading_indicator() {
+struct loading_indicator::data {
+  bool is_running = false;
+  xtd::forms::loading_indicator_style loading_indicator_style = xtd::forms::loading_indicator_style::standard;
+  xtd::forms::timer timer;
+  int32 intervals = 8;
+  int32 radius_factor = 10;
+  int32 frame = 0;
+  int32 interval = 150;
+};
+
+loading_indicator::loading_indicator() : data_(std::make_shared<data>()) {
   if (control_appearance() == forms::control_appearance::system) data_->loading_indicator_style = loading_indicator_style::system;
   set_can_focus(false);
   data_->timer.interval_milliseconds(data_->interval);
@@ -38,7 +48,7 @@ loading_indicator& loading_indicator::loading_indicator_style(xtd::forms::loadin
   if (data_->loading_indicator_style != loading_indicator_style) {
     data_->loading_indicator_style = loading_indicator_style;
     control_appearance(data_->loading_indicator_style == loading_indicator_style::system ? forms::control_appearance::system : forms::control_appearance::standard);
-    post_recreate_handle();
+    recreate_handle();
   }
   return *this;
 }
