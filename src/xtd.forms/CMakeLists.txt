@@ -391,6 +391,7 @@ add_sources(
   src/xtd/forms/file_dialog.cpp
   src/xtd/forms/file_dialog_data.h
   src/xtd/forms/find_dialog.cpp
+  src/xtd/forms/find_event_args.cpp
   src/xtd/forms/fixed_layout_panel.cpp
   src/xtd/forms/flow_layout_panel.cpp
   src/xtd/forms/folder_browser_dialog.cpp
