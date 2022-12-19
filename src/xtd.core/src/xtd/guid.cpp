@@ -10,84 +10,73 @@ using namespace xtd;
 const guid guid::empty;
 
 guid::guid(const std::vector<xtd::byte>& data) : data_(data) {
-  if (data.size() != 16) throw xtd::argument_exception("Vector size must be 16", current_stack_frame_);
+  if (data.size() != data_.size()) throw xtd::argument_exception(ustring::format("Vector size must be {}", data_.size()), current_stack_frame_);
 }
 
 guid::guid(const std::initializer_list<xtd::byte>& data) : data_(data) {
-  if (data.size() != 16) throw xtd::argument_exception("Vector size must be 16", current_stack_frame_);
+  if (data.size() != data_.size()) throw xtd::argument_exception(ustring::format("Vector size must be {}", data_.size()), current_stack_frame_);
 }
 
-guid::guid(int32 a, int32 b, int32 c, const std::vector<xtd::byte>& d) {
-  if (d.size() != 8) throw xtd::argument_exception("Vector size must be 8", current_stack_frame_);
-  
-  data_[0] = static_cast<xtd::byte>((a & 0xFF000000) >> 24);
-  data_[1] = static_cast<xtd::byte>((a & 0x00FF0000) >> 16);
-  data_[2] = static_cast<xtd::byte>((a & 0x0000FF00) >> 8);
-  data_[3] = static_cast<xtd::byte>((a & 0x000000FF) >> 0);
-  data_[4] = static_cast<xtd::byte>((b & 0xFF00) >> 8);
-  data_[5] = static_cast<xtd::byte>((b & 0x00FF) >> 0);
-  data_[6] = static_cast<xtd::byte>((c & 0xFF00) >> 8);
-  data_[7] = static_cast<xtd::byte>((c & 0x00FF) >> 0);
-  
-  for (int32 index = 0; index < 8; index++)
-    data_[8 + index] = d[index];
+guid::guid(int32 a, int16 b, int16 c, const std::vector<xtd::byte>& d) : guid(static_cast<uint32>(a), static_cast<uint16>(b), static_cast<uint16>(c), d) {
 }
 
-guid::guid(int32 a, int16 b, int16 c, xtd::byte d, xtd::byte e, xtd::byte f, xtd::byte g, xtd::byte h, xtd::byte i, xtd::byte j, xtd::byte k) noexcept {
-  data_[0] = static_cast<xtd::byte>((a & 0xFF000000) >> 24);
-  data_[1] = static_cast<xtd::byte>((a & 0x00FF0000) >> 16);
-  data_[2] = static_cast<xtd::byte>((a & 0x0000FF00) >> 8);
-  data_[3] = static_cast<xtd::byte>((a & 0x000000FF) >> 0);
-  data_[4] = static_cast<xtd::byte>((b & 0xFF00) >> 8);
-  data_[5] = static_cast<xtd::byte>((b & 0x00FF) >> 0);
-  data_[6] = static_cast<xtd::byte>((c & 0xFF00) >> 8);
-  data_[7] = static_cast<xtd::byte>((c & 0x00FF) >> 0);
-  data_[8] = d;
-  data_[9] = e;
-  data_[10] = f;
-  data_[11] = g;
-  data_[12] = h;
-  data_[13] = i;
-  data_[14] = j;
-  data_[15] = k;
+guid::guid(uint32 a, uint16 b, uint16 c, const std::vector<xtd::byte>& d) {
+  if (d.size() != data_.size() - 8) throw xtd::argument_exception(ustring::format("Vector size must be {}", data_.size() - 8), current_stack_frame_);
+  
+  auto index = 0U;
+  data_[index++] = static_cast<xtd::byte>((a & 0xFF000000) >> 24);
+  data_[index++] = static_cast<xtd::byte>((a & 0x00FF0000) >> 16);
+  data_[index++] = static_cast<xtd::byte>((a & 0x0000FF00) >> 8);
+  data_[index++] = static_cast<xtd::byte>((a & 0x000000FF) >> 0);
+  data_[index++] = static_cast<xtd::byte>((b & 0xFF00) >> 8);
+  data_[index++] = static_cast<xtd::byte>((b & 0x00FF) >> 0);
+  data_[index++] = static_cast<xtd::byte>((c & 0xFF00) >> 8);
+  data_[index++] = static_cast<xtd::byte>((c & 0x00FF) >> 0);
+  
+  for (;index < data_.size(); ++index)
+    data_[index] = d[index - 8];
+}
+
+guid::guid(int32 a, int16 b, int16 c, xtd::byte d, xtd::byte e, xtd::byte f, xtd::byte g, xtd::byte h, xtd::byte i, xtd::byte j, xtd::byte k) noexcept : guid(static_cast<uint32>(a), static_cast<uint16>(b), static_cast<uint16>(c), d, e, f, g, h, i, j, k) {
 }
 
 guid::guid(uint32 a, uint16 b, uint16 c, xtd::byte d, xtd::byte e, xtd::byte f, xtd::byte g, xtd::byte h, xtd::byte i, xtd::byte j, xtd::byte k) noexcept {
-  data_[0] = static_cast<xtd::byte>((a & 0xFF000000) >> 24);
-  data_[1] = static_cast<xtd::byte>((a & 0x00FF0000) >> 16);
-  data_[2] = static_cast<xtd::byte>((a & 0x0000FF00) >> 8);
-  data_[3] = static_cast<xtd::byte>((a & 0x000000FF) >> 0);
-  data_[4] = static_cast<xtd::byte>((b & 0xFF00) >> 8);
-  data_[5] = static_cast<xtd::byte>((b & 0x00FF) >> 0);
-  data_[6] = static_cast<xtd::byte>((c & 0xFF00) >> 8);
-  data_[7] = static_cast<xtd::byte>((c & 0x00FF) >> 0);
-  data_[8] = d;
-  data_[9] = e;
-  data_[10] = f;
-  data_[11] = g;
-  data_[12] = h;
-  data_[13] = i;
-  data_[14] = j;
-  data_[15] = k;
+  auto index = 0U;
+  data_[index++] = static_cast<xtd::byte>((a & 0xFF000000) >> 24);
+  data_[index++] = static_cast<xtd::byte>((a & 0x00FF0000) >> 16);
+  data_[index++] = static_cast<xtd::byte>((a & 0x0000FF00) >> 8);
+  data_[index++] = static_cast<xtd::byte>((a & 0x000000FF) >> 0);
+  data_[index++] = static_cast<xtd::byte>((b & 0xFF00) >> 8);
+  data_[index++] = static_cast<xtd::byte>((b & 0x00FF) >> 0);
+  data_[index++] = static_cast<xtd::byte>((c & 0xFF00) >> 8);
+  data_[index++] = static_cast<xtd::byte>((c & 0x00FF) >> 0);
+  data_[index++] = d;
+  data_[index++] = e;
+  data_[index++] = f;
+  data_[index++] = g;
+  data_[index++] = h;
+  data_[index++] = i;
+  data_[index++] = j;
+  data_[index++] = k;
 }
 
 guid::guid(const ustring& guid) {
   ustring simple = guid.replace("0x", "").replace(",", "").replace("-", "").replace("(", "").replace(")", "").replace("{", "").replace("}", "");
-  for (size_t i = 0; i < data_.size(); i ++) {
-    data_[i] = xtd::parse<xtd::byte>(simple.substring(0, 2), xtd::number_styles::hex_number);
+  for (auto index = 0U; index < data_.size(); ++index) {
+    data_[index] = xtd::parse<xtd::byte>(simple.substring(0, 2), xtd::number_styles::hex_number);
     simple = simple.remove(0, 2);
   }
 }
 
 int32 guid::compare_to(const guid& value) const noexcept {
-  for (size_t i = 0; i < data_.size(); i++)
-    if (data_[i] > value.data_[i]) return 1;
-    else if (data_[i] < value.data_[i]) return -1;
+  for (auto index = 0U; index < data_.size(); ++index)
+    if (data_[index] > value.data_[index]) return 1;
+    else if (data_[index] < value.data_[index]) return -1;
   return 0;
 }
 
 bool guid::equals(const guid& g) const noexcept {
-  for (size_t index = 0; index < 16; index++)
+  for (auto index = 0U; index < data_.size(); ++index)
     if (data_[index] != g.data_[index]) return false;
   return true;
 }
