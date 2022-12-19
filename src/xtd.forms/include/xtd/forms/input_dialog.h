@@ -49,12 +49,13 @@ namespace xtd {
     /// The following code example demonstrates the use of input_dialog dialog with password.
     /// @include input_dialog_password.cpp
     class forms_export_ input_dialog : public common_dialog {
+      struct data;
     public:
       /// @name Constructors
       
       /// @{
       /// @brief Initializes a new instance of the input_dialog class.
-      input_dialog() = default;
+      input_dialog();
       /// @}
       
       /// @name Properties
@@ -147,17 +148,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        xtd::forms::character_casing character_casing = xtd::forms::character_casing::normal;
-        xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::standard;
-        bool multiline = false;
-        xtd::ustring message;
-        xtd::ustring text;
-        bool use_system_password_char = false;
-        xtd::ustring value;
-        bool word_wrap = true;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
