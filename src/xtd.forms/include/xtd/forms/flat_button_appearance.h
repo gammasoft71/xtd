@@ -18,12 +18,14 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms
     class flat_button_appearance : public object, public xtd::iequatable<flat_button_appearance> {
+      struct data;
+      
     public:
       /// @name Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::flat_button_appearance class.
-      flat_button_appearance() = default;
+      flat_button_appearance();
       /// @}
       
       /// @cond
@@ -115,15 +117,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        std::optional<xtd::drawing::color> border_color;
-        std::optional<int32> border_radius;
-        std::optional<int32> border_size;
-        std::optional<xtd::drawing::color> checked_back_color;
-        std::optional<xtd::drawing::color> mouse_down_back_color;
-        std::optional<xtd::drawing::color> mouse_over_back_color;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }

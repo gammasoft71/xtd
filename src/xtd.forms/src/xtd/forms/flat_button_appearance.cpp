@@ -4,7 +4,19 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
-flat_button_appearance::flat_button_appearance(const flat_button_appearance& other) {
+struct flat_button_appearance::data {
+  std::optional<xtd::drawing::color> border_color;
+  std::optional<int32> border_radius;
+  std::optional<int32> border_size;
+  std::optional<xtd::drawing::color> checked_back_color;
+  std::optional<xtd::drawing::color> mouse_down_back_color;
+  std::optional<xtd::drawing::color> mouse_over_back_color;
+};
+
+flat_button_appearance::flat_button_appearance() : data_(std::make_shared<data>()) {
+}
+
+flat_button_appearance::flat_button_appearance(const flat_button_appearance& other) : data_(std::make_shared<data>()) {
   *data_ = *other.data_;
 }
 
