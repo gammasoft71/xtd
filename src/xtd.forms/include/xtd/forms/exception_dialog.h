@@ -49,12 +49,14 @@ namespace xtd {
     /// The following code example demonstrates the use of exception_dialog dialog.
     /// @include exception_dialog.cpp
     class forms_export_ exception_dialog final : public component {
+      struct data;
+      
     public:
       /// @name Constructors
       
       /// @{
       /// @brief Initializes a new instance of the exception_dialog class.
-      exception_dialog() = default;
+      exception_dialog();
       /// @}
       
       /// @name Properties
@@ -127,13 +129,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        xtd::forms::dialog_result dialog_result = xtd::forms::dialog_result::none;
-        xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::standard;
-        const std::exception* exception = nullptr;
-        xtd::ustring text;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
