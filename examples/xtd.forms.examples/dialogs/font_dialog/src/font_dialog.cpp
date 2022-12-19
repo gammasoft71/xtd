@@ -25,7 +25,6 @@ public:
     
     label1.location({10, 50});
     label1.auto_size(true);
-    label1.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
     label1.text(u8"The quick brown fox jumps over the lazy dog.\n"
       u8"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.\n"
       u8"0123456789+-*/%~^&|=<>≤≥±÷≠{{[()]}},;:.?¿!¡\n"
