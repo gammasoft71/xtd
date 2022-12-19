@@ -40,6 +40,8 @@ namespace xtd {
     /// The following code example demonstrates the use of font_picker picker.
     /// @include font_picker.cpp
     class forms_export_ font_picker : public control {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -104,11 +106,8 @@ namespace xtd {
     private:
       void wm_command_control(message& message);
       void wm_command_control_selchange(message& message);
-      struct data {
-        drawing::color color;
-        drawing::font font = xtd::drawing::system_fonts::default_font();
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+
+      std::shared_ptr<data> data_;
     };
   }
 }
