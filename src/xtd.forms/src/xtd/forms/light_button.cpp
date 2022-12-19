@@ -36,7 +36,19 @@ namespace {
   }
 }
 
-light_button::light_button() {
+struct light_button::data {
+  bool auto_check = true;
+  bool three_state = 0;
+  bool checked = false;
+  content_alignment light_align = content_alignment::middle_left;
+  forms::check_state check_state = forms::check_state::unchecked;
+  std::optional<xtd::drawing::color> light_on_color;
+  std::optional<xtd::drawing::color> light_off_color;
+  xtd::forms::visual_styles::check_box_state state = xtd::forms::visual_styles::check_box_state::unchecked_normal;
+};
+
+
+light_button::light_button() : data_(std::make_shared<data>()) {
   set_style(control_styles::standard_click | control_styles::standard_double_click, false);
 }
 

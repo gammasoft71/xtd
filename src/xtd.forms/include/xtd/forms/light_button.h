@@ -55,6 +55,8 @@ namespace xtd {
     /// The following code example demonstrates the use of light_button control with bitmap.
     /// @include light_button.cpp
     class forms_export_ light_button : public xtd::forms::button_base {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -223,17 +225,7 @@ namespace xtd {
       void wm_mouse_down(message& message);
       void wm_mouse_up(message& message);
  
-      struct data {
-        bool auto_check = true;
-        bool three_state = 0;
-        bool checked = false;
-        content_alignment light_align = content_alignment::middle_left;
-        forms::check_state check_state = forms::check_state::unchecked;
-        std::optional<xtd::drawing::color> light_on_color;
-        std::optional<xtd::drawing::color> light_off_color;
-        xtd::forms::visual_styles::check_box_state state = xtd::forms::visual_styles::check_box_state::unchecked_normal;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
