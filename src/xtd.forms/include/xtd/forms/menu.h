@@ -8,6 +8,7 @@
 #include <string>
 #include <xtd/iequatable.h>
 #include "component.h"
+#include "menu_item_ref.h"
 #include "layout/arranged_element_collection.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -17,24 +18,7 @@ namespace xtd {
     /// @cond
     class context_menu;
     class main_menu;
-    class menu_item;
     /// @endcond
-    
-    /// @brief Represents a menu item reference.
-    /// @par Namespace
-    /// xtd::forms
-    /// @par Library
-    /// xtd.forms
-    /// @ingroup xtd_forms
-    using menu_item_ref = std::reference_wrapper<menu_item>;
-    
-    /// @brief Represents a menu item reference.
-    /// @par Namespace
-    /// xtd::forms
-    /// @par Library
-    /// xtd.forms
-    /// @ingroup xtd_forms
-    using const_menu_item_ref = std::reference_wrapper<const menu_item>;
     
     /// @brief Represents the base functionality for all menus. Although tool_strip_drop_down and tool_strip_drop_down_menu replace and add functionality to the menu control of previous versions, menu is retained for both backward compatibility and future use if you choose.
     /// @par Namespace
