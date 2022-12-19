@@ -50,7 +50,26 @@ namespace xtd {
     /// @param c The next 2 bytes of the GUID.
     /// @param d The remaining 8 bytes of the GUID.
     /// @exception xtd::argument_exception bytes is not 8 bytes long.
-    explicit guid(int32 a, int32 b, int32 c, const std::vector<xtd::byte>& d);
+    /// @brief Initializes a new instance of the xtd::guid structure by using the specified integers and byte array.
+    /// @param a The first 4 bytes of the GUID.
+    /// @param b The next 2 bytes of the GUID.
+    /// @param c The next 2 bytes of the GUID.
+    /// @param d The remaining 8 bytes of the GUID.
+    /// @exception xtd::argument_exception bytes is not 8 bytes long.
+    explicit guid(int32 a, int16 b, int16 c, const std::vector<xtd::byte>& d);
+    /// @brief Initializes a new instance of the xtd::guid structure by using the specified  unsigned integers and byte array.
+    /// @param a The first 4 bytes of the GUID.
+    /// @param b The next 2 bytes of the GUID.
+    /// @param c The next 2 bytes of the GUID.
+    /// @param d The remaining 8 bytes of the GUID.
+    /// @exception xtd::argument_exception bytes is not 8 bytes long.
+    /// @brief Initializes a new instance of the xtd::guid structure by using the specified integers and byte array.
+    /// @param a The first 4 bytes of the GUID.
+    /// @param b The next 2 bytes of the GUID.
+    /// @param c The next 2 bytes of the GUID.
+    /// @param d The remaining 8 bytes of the GUID.
+    /// @exception xtd::argument_exception bytes is not 8 bytes long.
+    explicit guid(uint32 a, uint16 b, uint16 c, const std::vector<xtd::byte>& d);
     /// @brief Initializes a new instance of the xtd::guid structure by using the specified integers and bytes.
     /// @param a The first 4 bytes of the GUID.
     /// @param b The next 2 bytes of the GUID.
@@ -64,7 +83,7 @@ namespace xtd {
     /// @param j The next byte of the GUID.
     /// @param k The next byte of the GUID.
     guid(int32 a, int16 b, int16 c, xtd::byte d, xtd::byte e, xtd::byte f, xtd::byte g, xtd::byte h, xtd::byte i, xtd::byte j, xtd::byte k) noexcept;
-    /// @brief Initializes a new instance of the xtd::guid structure by using the specified uint32_integers and bytes.
+    /// @brief Initializes a new instance of the xtd::guid structure by using the specified unsigned integers and bytes.
     /// @param a The first 4 bytes of the GUID.
     /// @param b The next 2 bytes of the GUID.
     /// @param c The next 2 bytes of the GUID.
