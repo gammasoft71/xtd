@@ -4,6 +4,7 @@
 #include <xtd/forms/native/menu_item.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/menu_item.h"
+#include "menu_data.h"
 
 using namespace std;
 using namespace xtd;

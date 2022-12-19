@@ -31,6 +31,7 @@ namespace xtd {
     /// @remarks In addition to the properties that are provided for all the derived menu classes, the menu class also provides methods, such as clone_menu and merge_menu, that enable you to create new menus from existing menus, and also merge two menu structures together.
     /// @remarks The menu class also defines the nested class menu::menu_item_collection. This class defines the collection of menu_item objects used by the menu_items property. You can use the methods of the menu::menu_item_collection class to add and remove menu items from a main_menu, context_menu, or menu_item.
     class forms_export_ menu : public component, public xtd::iequatable<menu> {
+      struct data;
     public:
       /// @name Alias
       
@@ -179,16 +180,6 @@ namespace xtd {
       virtual void destroy_menu();
       void recreate_menu();
       
-      struct data {
-        intptr handle = 0;
-        std::optional<std::reference_wrapper<menu>> context_menu;
-        menu_item_collection menu_items;
-        std::unique_ptr<menu_item> mdi_list_item;
-        std::optional<std::reference_wrapper<menu>> main_menu;
-        xtd::ustring name;
-        std::optional<std::reference_wrapper<menu>> parent;
-        std::any tag;
-      };
       std::shared_ptr<data> data_;
       static std::map<intptr, std::reference_wrapper<menu>> handles_;
       /// @endcond
