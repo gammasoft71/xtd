@@ -181,12 +181,9 @@ Test results:
 End 2 tests from 1 test case ran. (0 ms total)
 ```
 
-Click [here](../examples/README.md) to see more [examples](../examples/README.md) about xtd:
-* [xtd.core](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.core.examples/README.md)
-* [xtd.drawing](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.drawing.examples/README.md)
-* [xtd.forms](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/README.md)
-* [xtd.tunit](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.tunit.examples/README.md)
-* [xtd.cmake](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.cmake.examples/README.md)
+
+[Example](../examples/README.md) provides over 500 examples to help you use xtd, grouped by libraries and topics.
+
 
 # Support
 
