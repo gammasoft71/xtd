@@ -4,6 +4,7 @@
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/open_file_dialog.h"
 #include "xtd_forms_common_dialog_closed_caller.h"
+#include "file_dialog_data.h"
 
 using namespace xtd;
 using namespace xtd::forms;

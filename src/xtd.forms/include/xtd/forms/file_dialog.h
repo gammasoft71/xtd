@@ -39,12 +39,14 @@ namespace xtd {
     /// @par Important
     /// If the user of your application changes the folder in the file_dialog, then the current working directory for your application is set to the location specified in the file_dialog. To prevent this, set the restore_directory property to true.
     class forms_export_ file_dialog : public common_dialog {
+      struct data;
+      
     public:
       /// @name Constructors
       
       /// @{
       /// @brief Initializes a new instance of the common_dialog class.
-      file_dialog() = default;
+      file_dialog();
       /// @}
       
       /// @name Properties
@@ -284,19 +286,7 @@ namespace xtd {
       virtual bool run_file_dialog(intptr hwnd_owner) = 0;
       virtual void run_file_sheet(intptr hwnd_owner) = 0;
       
-      struct data {
-        bool auto_upgrade_enabled = true;
-        xtd::ustring default_ext = "";
-        xtd::ustring file_name = "";
-        std::vector<xtd::ustring> file_names;
-        xtd::ustring filter = "";
-        size_t filter_index = 1;
-        xtd::ustring initial_directory = "";
-        size_t options = OFN_HIDEREADONLY | OFN_PATHMUSTEXIST | OFN_ADDEXTENSION;
-        bool support_multi_dotted_extensions = true;
-        xtd::ustring title = "";
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
