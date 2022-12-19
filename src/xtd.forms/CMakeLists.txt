@@ -422,6 +422,7 @@ add_sources(
   src/xtd/forms/loading_indicator.cpp
   src/xtd/forms/main_menu.cpp
   src/xtd/forms/menu.cpp
+  src/xtd/forms/menu_data.h
   src/xtd/forms/menu_item.cpp
   src/xtd/forms/message.cpp
   src/xtd/forms/message_dialog.cpp

@@ -9,6 +9,7 @@
 #include "../../../include/xtd/forms/menu_images.h"
 #include "../../../include/xtd/forms/shortcut.h"
 #include "../../../include/xtd/forms/system_texts.h"
+#include "menu_data.h"
 
 using namespace xtd;
 using namespace xtd::forms;
