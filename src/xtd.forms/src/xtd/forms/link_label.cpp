@@ -12,6 +12,19 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
+struct link_label::data {
+  bool mouse_hover = false;
+  std::optional<xtd::drawing::color> active_link_color;
+  std::optional<xtd::drawing::color> disabled_link_color;
+  xtd::forms::link_area link_area;
+  xtd::forms::link_behavior link_behavior = xtd::forms::link_behavior::system_default;
+  std::optional<xtd::drawing::color> link_color;
+  link_collection links;
+  xtd::forms::cursor original_cursor;
+  std::optional<xtd::forms::cursor> override_cursor;
+  std::optional<xtd::drawing::color> visited_link_color;
+};
+
 link_label::link_collection::link_collection(const link_label::link_collection::allocator_type& allocator) : link_label::link_collection::base(allocator) {
 }
 
@@ -34,7 +47,7 @@ link_label::link_collection::reference link_label::link_collection::operator [](
   return empty_;
 }
 
-link_label::link_label() {
+link_label::link_label() : data_(std::make_shared<data>()) {
   double_buffered(true);
   set_style(control_styles::all_painting_in_wm_paint | control_styles::optimized_double_buffer | control_styles::opaque | control_styles::user_paint | control_styles::standard_click | control_styles::resize_redraw, true);
   data_->links.item_added += [&] {

@@ -53,6 +53,8 @@ namespace xtd {
     /// The following code example demonstrates the use of link_label control.
     /// @include link_label.cpp
     class link_label : public label {
+      struct data;
+      
     public:
       /// @name Alias
       
@@ -197,19 +199,7 @@ namespace xtd {
       std::vector<std::tuple<xtd::drawing::rectangle, bool>> generate_text_rects() const noexcept;
       xtd::drawing::font link_font() const noexcept;
       
-      struct data {
-        bool mouse_hover = false;
-        std::optional<xtd::drawing::color> active_link_color;
-        std::optional<xtd::drawing::color> disabled_link_color;
-        xtd::forms::link_area link_area;
-        xtd::forms::link_behavior link_behavior = xtd::forms::link_behavior::system_default;
-        std::optional<xtd::drawing::color> link_color;
-        link_collection links;
-        xtd::forms::cursor original_cursor;
-        std::optional<xtd::forms::cursor> override_cursor;
-        std::optional<xtd::drawing::color> visited_link_color;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
       inline static link link_empty_;
     };
   }
