@@ -8,9 +8,16 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+struct image_list::data {
+  intptr handle_ = 0;
+  drawing::size image_size_ {16, 16};
+  image_collection images_;
+  std::any tag_;
+};
+
 image_list image_list::empty;
 
-image_list::image_list() {
+image_list::image_list() : data_(std::make_shared<data>()) {
   data_->handle_ = native::image_list::create(data_->image_size_);
   data_->images_.item_added += [&](size_t pos, drawing::image & item) {
     if (data_->image_size_ != item.size()) item = drawing::bitmap(item, data_->image_size_);

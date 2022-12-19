@@ -24,6 +24,8 @@ namespace xtd {
     /// The following code example demonstrates the use of image_list class.
     /// @include image_list.cpp
     class forms_export_ image_list final : public component, public xtd::iequatable<image_list> {
+      struct data;
+      
     public:
       /// @name Alias
       
@@ -99,13 +101,7 @@ namespace xtd {
       /// @}
 
     private:
-      struct data {
-        intptr handle_ = 0;
-        drawing::size image_size_ {16, 16};
-        image_collection images_;
-        std::any tag_;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
