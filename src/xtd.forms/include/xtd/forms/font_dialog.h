@@ -46,6 +46,8 @@ namespace xtd {
     /// The following code example demonstrates the use of font_dialog dialog.
     /// @include font_dialog.cpp
     class forms_export_ font_dialog : public common_dialog {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -68,7 +70,7 @@ namespace xtd {
       /// | show_effects         | true          |
       /// | show_help            | false         |
       /// @remarks You can change the value for any of these properties through a separate call to the property.
-      font_dialog() = default;
+      font_dialog();
       /// @}
       
       /// @name Properties
@@ -246,15 +248,7 @@ namespace xtd {
       bool get_option(size_t flag) const noexcept;
       void set_option(size_t flag, bool value);
       
-      struct data {
-        drawing::color color = application::style_sheet().system_colors().control_text();
-        drawing::font font = drawing::system_fonts::default_font();
-        size_t max_size = 0;
-        size_t min_size = 0;
-        size_t options = CF_TTONLY;
-        bool show_color = false;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }

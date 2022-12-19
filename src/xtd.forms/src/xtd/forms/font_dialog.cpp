@@ -7,6 +7,18 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+struct font_dialog::data {
+  drawing::color color = application::style_sheet().system_colors().control_text();
+  drawing::font font = drawing::system_fonts::default_font();
+  size_t max_size = 0;
+  size_t min_size = 0;
+  size_t options = CF_TTONLY;
+  bool show_color = false;
+};
+
+font_dialog::font_dialog() : data_(std::make_shared<data>()) {
+}
+
 bool font_dialog::allow_script_change() const noexcept {
   return !get_option(CF_SELECTSCRIPT);
 }
