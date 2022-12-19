@@ -27,12 +27,14 @@ namespace xtd {
     /// @remarks In addition to information related to the link, the properties of the xtd::forms::link_label::link class also help define the text of the xtd::forms::link_label::lLink and its display state. The xtd::forms::link_label::start and xtd::forms::link_label::length properties define the location and length of text from the text of the xtd::forms::link_label control to display as a link. The xtd::forms::link_label::enabled property allows you to display the link as a disabled link, and the xtd::forms::link_label::visited property can alert the user that they already visited the specified link in the current instance of the xtd::forms::link_label.
     /// @remarks You can display multiple links in a single xtd::forms::link_label control. Each xtd::forms::link_label::link is added into the xtd::forms::link_label::link_collection associated with the xtd::forms::link_label control. To obtain the collection of links defined in a xtd::forms::link_label control, use the xtd::forms::link_label::links property.
     class forms_export_ link : public object, public xtd::iequatable<link> {
+      struct data;
+      
     public:
       /// @name Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::link class.
-      link() = default;
+      link();
       /// @brief Initializes a new instance of the xtd::forms::link_label::link class with the specified starting location and number of characters after the starting location within the xtd::forms::link_label.
       /// @param start The zero-based starting location of the link area within the text of the xtd::forms::link_label.
       /// @param length The number of characters, after the starting character, to include in the link area.
@@ -133,23 +135,15 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      bool equals(const link& other) const noexcept override {return data_->enabled == other.data_->enabled && data_->length == other.data_->length && data_->name == other.data_->name && data_->start == other.data_->start;}
+      bool equals(const link& other) const noexcept override;
       /// @}
 
     private:
       friend link_label;
-      struct data {
-        xtd::ustring description;
-        bool enabled = true;
-        size_t length = 0;
-        std::any link_data;
-        xtd::ustring name;
-        size_t start = 0;
-        std::any tag;
-        bool visited = false;
-        bool active = false;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      bool active_() const noexcept;
+      void active_(bool active) noexcept;
+
+      std::shared_ptr<data> data_;
     };
   }
 }

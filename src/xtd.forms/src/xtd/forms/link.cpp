@@ -3,18 +3,33 @@
 using namespace std;
 using namespace xtd;
 
-xtd::forms::link::link(size_t start, size_t length) {
+struct xtd::forms::link::data {
+  xtd::ustring description;
+  bool enabled = true;
+  size_t length = 0;
+  std::any link_data;
+  xtd::ustring name;
+  size_t start = 0;
+  std::any tag;
+  bool visited = false;
+  bool active = false;
+};
+
+xtd::forms::link::link() : data_(std::make_shared<data>()) {
+}
+
+xtd::forms::link::link(size_t start, size_t length) : data_(std::make_shared<data>()) {
   data_->length = length;
   data_->start = start;
 }
 
-xtd::forms::link::link(size_t start, size_t length, std::any link_data) {
+xtd::forms::link::link(size_t start, size_t length, std::any link_data) : data_(std::make_shared<data>()) {
   data_->length = length;
   data_->link_data = link_data;
   data_->start = start;
 }
 
-xtd::forms::link::link(const link& value) {
+xtd::forms::link::link(const link& value) : data_(std::make_shared<data>()) {
   *data_ = *value.data_;
 }
 
@@ -93,4 +108,17 @@ bool xtd::forms::link::visited() const noexcept {
 xtd::forms::link& xtd::forms::link::visited(bool value) {
   data_->visited = value;
   return *this;
+}
+
+bool xtd::forms::link::equals(const xtd::forms::link& other) const noexcept {
+  return data_->enabled == other.data_->enabled && data_->length == other.data_->length && data_->name == other.data_->name && data_->start == other.data_->start;
+}
+
+bool xtd::forms::link::active_() const noexcept {
+  return data_->active;
+}
+
+
+void xtd::forms::link::active_(bool active) noexcept {
+  data_->active = active;
 }

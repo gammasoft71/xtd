@@ -172,7 +172,7 @@ void link_label::on_mouse_down(const mouse_event_args& e) {
   if (!enabled()) return;
   auto& link = point_in_link(e.location());
   if (link != link_empty_) {
-    link.data_->active = true;
+    link.active_(true);
     invalidate();
   }
 }
@@ -181,7 +181,7 @@ void link_label::on_mouse_up(const mouse_event_args& e) {
   label::on_mouse_up(e);
   if (!enabled()) return;
   for (auto& link : data_->links)
-    link.data_->active = false;
+    link.active_(false);
   invalidate();
 }
 
@@ -210,7 +210,7 @@ void link_label::on_paint(paint_event_args& e) {
     for (auto link : data_->links) {
       drawing::color color = link_color();
       if (!link.enabled()) color = disabled_link_color();
-      else if (link.data_->active) color = active_link_color();
+      else if (link.active_()) color = active_link_color();
       else if (link.visited()) color = visited_link_color();
       
       if (index < link.start()) {
