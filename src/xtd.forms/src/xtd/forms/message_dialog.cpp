@@ -13,6 +13,21 @@ using namespace std::this_thread;
 using namespace xtd;
 using namespace xtd::forms;
 
+struct message_dialog::data {
+  xtd::forms::message_dialog_buttons buttons = xtd::forms::message_dialog_buttons::ok;
+  xtd::forms::message_dialog_default_button default_button = xtd::forms::message_dialog_default_button::button1;
+  xtd::forms::dialog_result dialog_result = xtd::forms::dialog_result::none;
+  xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::system;
+  bool display_help_button = false;
+  xtd::forms::message_dialog_icon icon = xtd::forms::message_dialog_icon::none;
+  xtd::forms::message_dialog_options options = static_cast<xtd::forms::message_dialog_options>(0);
+  xtd::ustring message;
+  xtd::ustring text;
+};
+
+message_dialog::message_dialog() : data_(std::make_shared<data>()) {
+}
+
 xtd::forms::message_dialog_buttons message_dialog::buttons() const noexcept {
   return data_->buttons;
 }

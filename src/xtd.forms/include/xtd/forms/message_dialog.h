@@ -53,12 +53,14 @@ namespace xtd {
     /// The following code example demonstrates the use of message_dialog dialog.
     /// @include message_dialog.cpp
     class forms_export_ message_dialog final : public component {
+      struct data;
+      
     public:
       /// @name Constructors
       
       /// @{
       /// @brief Initializes a new instance of the message_dialog class.
-      message_dialog() = default;
+      message_dialog();
       /// @}
       
       /// @name Properties
@@ -172,19 +174,8 @@ namespace xtd {
       /// @param e An message_dialog_close_event_args that provides the event data.
       /// @remarks This method is invoked when the message dialog box is closed.
       virtual void on_dialog_closed(const dialog_closed_event_args& e);
-      
-      struct data {
-        xtd::forms::message_dialog_buttons buttons = xtd::forms::message_dialog_buttons::ok;
-        xtd::forms::message_dialog_default_button default_button = xtd::forms::message_dialog_default_button::button1;
-        xtd::forms::dialog_result dialog_result = xtd::forms::dialog_result::none;
-        xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::system;
-        bool display_help_button = false;
-        xtd::forms::message_dialog_icon icon = xtd::forms::message_dialog_icon::none;
-        xtd::forms::message_dialog_options options = static_cast<xtd::forms::message_dialog_options>(0);
-        xtd::ustring message;
-        xtd::ustring text;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+
+      std::shared_ptr<data> data_;
     };
   }
 }
