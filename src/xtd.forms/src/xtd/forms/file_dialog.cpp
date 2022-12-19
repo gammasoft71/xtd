@@ -1,7 +1,11 @@
 #include "../../../include/xtd/forms/file_dialog.h"
+#include "file_dialog_data.h"
 
 using namespace xtd;
 using namespace xtd::forms;
+
+file_dialog::file_dialog() : data_(std::make_shared<data>()) {
+}
 
 bool file_dialog::add_extension() const noexcept {
   return get_option(OFN_ADDEXTENSION);
