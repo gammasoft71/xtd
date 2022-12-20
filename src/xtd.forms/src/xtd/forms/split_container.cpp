@@ -3,7 +3,17 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-split_container::split_container() {
+struct split_container::data {
+  xtd::forms::orientation orientation = xtd::forms::orientation::vertical;
+  splitter_panel panel1;
+  splitter_panel panel2;
+  xtd::forms::splitter splitter;
+  int32 splitter_distance = 50;
+  //int32 splitter_increment = 1;
+  int32 splitter_width = 4;
+};
+
+split_container::split_container() : data_(std::make_shared<data>()) {
   set_can_focus(false);
   set_style(control_styles::supports_transparent_back_color, true);
   set_style(control_styles::optimized_double_buffer, true);

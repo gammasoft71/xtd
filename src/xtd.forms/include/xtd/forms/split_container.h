@@ -21,6 +21,8 @@ namespace xtd {
     /// The following code example demonstrates the use of split_container container.
     /// @include split_container.cpp
     class forms_export_ split_container : public  xtd::forms::scrollable_control {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -97,16 +99,7 @@ namespace xtd {
     private:
       void arrange_children();
       
-      struct data {
-        xtd::forms::orientation orientation = xtd::forms::orientation::vertical;
-        splitter_panel panel1;
-        splitter_panel panel2;
-        xtd::forms::splitter splitter;
-        int32 splitter_distance = 50;
-        //int32 splitter_increment = 1;
-        int32 splitter_width = 4;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
