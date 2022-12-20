@@ -178,7 +178,7 @@ intptr control::create(const forms::native::create_params& create_params) {
 intptr control::create_paint_graphics(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper;
-#if defined __UNIX__
+#if defined(__WXGTK__)
   hdc_wrapper->create<wxClientDC>(reinterpret_cast<control_handler*>(control)->main_control());
 #else
   hdc_wrapper->create<wxPaintDC>(reinterpret_cast<control_handler*>(control)->main_control());
@@ -192,7 +192,7 @@ intptr control::create_double_buffered_paint_graphics(intptr control) {
   //wxColour back_color = reinterpret_cast<control_handler*>(control)->main_control()->GetBackgroundColour();
   reinterpret_cast<control_handler*>(control)->main_control()->SetBackgroundStyle(wxBackgroundStyle::wxBG_STYLE_PAINT);
   //reinterpret_cast<control_handler*>(control)->graphic_control()->SetBackgroundColour(back_color);
-#if defined __UNIX__
+#if defined(__WXGTK__)
   hdc_wrapper->create<wxClientDC>(reinterpret_cast<control_handler*>(control)->main_control());
 #else
   hdc_wrapper->create<wxAutoBufferedPaintDC>(reinterpret_cast<control_handler*>(control)->main_control());
