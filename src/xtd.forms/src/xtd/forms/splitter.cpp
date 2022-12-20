@@ -3,7 +3,20 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-splitter::splitter() {
+struct splitter::data {
+  bool default_width = true;
+  int32 min_size = 25;
+  //int32 min_size_extra = 25;
+  //int32 split_position = -1;
+  int32 mouse_down_location = -1;
+  xtd::forms::splitter_style splitter_style = xtd::forms::splitter_style::update_children;
+  xtd::forms::cursor previous_control_cursor;
+  xtd::forms::cursor next_control_cursor;
+  control* previous_control = nullptr;
+  control* next_control = nullptr;
+};
+
+splitter::splitter() : data_(std::make_shared<data>()) {
   dock(xtd::forms::dock_style::left);
   set_style(control_styles::selectable, false);
 }
