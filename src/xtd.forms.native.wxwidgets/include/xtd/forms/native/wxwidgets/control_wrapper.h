@@ -25,10 +25,6 @@
 #include <xtd/forms/native/scroll_bar_styles.h>
 #include <xtd/forms/native/virtual_keys.h>
 #include <xtd/forms/native/window_styles.h>
-#ifdef WIN32
-#include <Windows.h>
-#include <Commctrl.h>
-#endif
 #include <wx/calctrl.h>
 #include <wx/checkbox.h>
 #include <wx/choice.h>
@@ -47,6 +43,10 @@
 #include <wx/textctrl.h>
 #include <wx/timer.h>
 #include <wx/tglbtn.h>
+#if defined(__WXMSW__)
+#include <Windows.h>
+#include <Commctrl.h>
+#endif
 
 /// @todo implement in wx_evt_event_size..
 // Add wxEVT_ENTER_SIZEMOVE event for send a WM_ENTERSIZEMOVE event to wxControl...
