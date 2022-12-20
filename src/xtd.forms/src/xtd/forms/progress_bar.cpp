@@ -8,7 +8,17 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-progress_bar::progress_bar() {
+struct progress_bar::data {
+  size_t marquee_animation_speed = 100;
+  int32 maximum = 100;
+  int32 minimum = 0;
+  forms::orientation orientation = forms::orientation::horizontal;
+  int32 step = 10;
+  progress_bar_style style = progress_bar_style::blocks;
+  int32 value = 0;
+};
+
+progress_bar::progress_bar() : data_(std::make_shared<data>()) {
   control_appearance(forms::control_appearance::system);
   set_can_focus(false);
   set_style(control_styles::user_paint | control_styles::use_text_for_accessibility | control_styles::selectable, false);

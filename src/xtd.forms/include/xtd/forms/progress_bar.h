@@ -50,6 +50,8 @@ namespace xtd {
     /// The following code example demonstrates the use of progress_bar control.
     /// @include progress_bar.cpp
     class forms_export_ progress_bar : public control {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -179,16 +181,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        size_t marquee_animation_speed = 100;
-        int32 maximum = 100;
-        int32 minimum = 0;
-        forms::orientation orientation = forms::orientation::horizontal;
-        int32 step = 10;
-        progress_bar_style style = progress_bar_style::blocks;
-        int32 value = 0;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
