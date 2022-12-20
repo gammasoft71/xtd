@@ -1,9 +1,13 @@
 #include "../../../include/xtd/forms/status_bar_panel.h"
 #include "../../../include/xtd/forms/status_bar.h"
+#include "status_bar_panel_data.h"
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
+
+status_bar_panel::status_bar_panel() : data_(std::make_shared<data>()) {  
+}
 
 xtd::forms::horizontal_alignment status_bar_panel::alignment() const noexcept {
   return data_->alignment;
