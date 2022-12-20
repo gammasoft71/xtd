@@ -32,7 +32,7 @@ void about_dialog::show(intptr hwnd, const xtd::drawing::icon& icon, const ustri
   about_info.SetDescription(convert_string::to_wstring(description));
   about_info.SetVersion(convert_string::to_wstring(version), convert_string::to_wstring(long_version));
   about_info.SetCopyright(convert_string::to_wstring(ustring(copyright).replace(u8"\u00A9"_s, u8"(c)"_s)));
-  if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix") {
+#if defined(__WXGTK__)
     about_info.SetIcon(reinterpret_cast<wxIconBundle*>(icon.handle())->GetIcon());
     about_info.SetWebSite(convert_string::to_wstring(website), convert_string::to_wstring(website_label));
     for (auto creator : creators)
@@ -44,9 +44,10 @@ void about_dialog::show(intptr hwnd, const xtd::drawing::icon& icon, const ustri
     for (auto designer : designers)
       about_info.AddArtist(convert_string::to_wstring(designer));
     about_info.SetLicense(convert_string::to_wstring(license));
-  }
-  #if defined(__WXMSW__)
+#endif
+
+#if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
-  #endif
+#endif
   wxAboutBox(about_info, hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control());
 }
