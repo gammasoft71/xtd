@@ -43,12 +43,13 @@ namespace xtd {
     /// The following code example demonstrates the use of progress_dialog dialog.
     /// @include progress_dialog.cpp
     class forms_export_ progress_dialog  final : public component {
+      struct data;
     public:
       /// @name Constructors
       
       /// @{
       /// @brief Initializes a new instance of the progress_dialog class.
-      progress_dialog() = default;
+      progress_dialog();
       /// @}
       
       /// @cond
@@ -244,22 +245,7 @@ namespace xtd {
       void set_option(size_t flag, bool value);
       void recreate_dialog();
       
-      struct data {
-        xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::system;
-        intptr handle = 0;
-        std::vector<xtd::ustring> informations;
-        size_t marquee_animation_speed = 100;
-        int32 maximum = 100;
-        xtd::ustring message;
-        int32 minimum = 0;
-        bool native = false;
-        size_t options = PROGDLG_NORMAL | PROGDLG_NOCANCEL | PROGDLG_NOSKIP;
-        const iwin32_window* owner = nullptr;
-        int32 step = 10;
-        xtd::ustring text;
-        int32 value = 0;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
