@@ -656,7 +656,7 @@ namespace xtd {
     /// //
     /// // name = N3xtd9date_timeE
     /// // demangled name = xtd::date_time
-    /// @enndcode
+    /// @endcode
     static ustring demangle(const ustring& name);
     
     /// @brief Returns a value indicating whether a specified substring occurs within this string.
