@@ -17,6 +17,8 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms
     class forms_export_ up_down_base : public container_control {
+      struct data;
+      
     public:
       /// @name Properties
       
@@ -52,11 +54,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        forms::border_sides border_sides = forms::border_sides::all;
-        forms::border_style border_style = forms::border_style::fixed_single;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }

@@ -7,6 +7,11 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+struct up_down_base::data {
+  forms::border_sides border_sides = forms::border_sides::all;
+  forms::border_style border_style = forms::border_style::fixed_single;
+};
+
 forms::border_sides up_down_base::border_sides() const noexcept {
   return data_->border_sides;
 }
@@ -31,7 +36,7 @@ up_down_base& up_down_base::border_style(forms::border_style value) {
   return *this;
 }
 
-up_down_base::up_down_base() {
+up_down_base::up_down_base() : data_(std::make_shared<data>()) {
   set_style(control_styles::opaque | control_styles::fixed_height | control_styles::resize_redraw, true);
   set_style(control_styles::standard_click, false);
   set_style(control_styles::use_text_for_accessibility, false);
