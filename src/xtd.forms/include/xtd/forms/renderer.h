@@ -29,6 +29,8 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms renderers
     class forms_export_ renderer : public object, public xtd::iequatable<renderer> {
+      struct data;
+      
     public:
       /// @name Alias
       
@@ -47,7 +49,7 @@ namespace xtd {
       /// @name Constructors
       
       /// @{
-      renderer() = default;
+      renderer();
       explicit renderer(const xtd::ustring& name);
       /// @}
       
@@ -89,14 +91,7 @@ namespace xtd {
       static void default_check_box_renderer(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color);
       static void default_radio_button_renderer(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color);
       
-      struct data {
-        data();
-        xtd::ustring name;
-        xtd::forms::renderer::button_renderer button_renderer;
-        xtd::forms::renderer::check_box_renderer check_box_renderer;
-        xtd::forms::renderer::radio_button_renderer radio_button_renderer;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
