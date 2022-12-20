@@ -30,5 +30,6 @@ namespace examples {
 }
 
 int main() {
+  debug_form df;
   application::run(examples::form1 {});
 }
