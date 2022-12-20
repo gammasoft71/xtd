@@ -7,6 +7,7 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/tab_control.h"
 #include "../../../include/xtd/forms/tab_page.h"
+#include "tab_control_data.h"
 
 using namespace xtd;
 using namespace xtd::forms;
