@@ -28,7 +28,7 @@ macro(xtd_update_export_file path keyword export)
       "/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.\n"
       "#pragma once\n"
       "\n"
-      "#if defined(WIN32)\n"
+      "#if defined(_WIN32)\n"
       "#  if defined(${keyword})\n"
       "#    define ${export} __declspec(dllexport)\n"
       "#  else\n"

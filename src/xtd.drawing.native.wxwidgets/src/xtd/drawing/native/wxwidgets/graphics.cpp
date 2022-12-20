@@ -435,7 +435,7 @@ void graphics::fill_rectangle(intptr handle, intptr brush, float x, float y, flo
   }
   
   // Workaround : with wxWidgets version <= 3.1.5 Radial gradient does not fill rectangle with end color on Windows.
-  #if defined(WIN32)
+#if defined(__WXMSW__)
   if (reinterpret_cast<wx_brush*>(brush)->is_radial_gradiant_brush()) {
     auto wx_radial_brush = reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush();
     wxImage image(width, height);
@@ -461,7 +461,7 @@ void graphics::fill_rectangle(intptr handle, intptr brush, float x, float y, flo
     radial_gradient_bitmap = radial_gradient_image;
     graphics.DrawBitmap(radial_gradient_bitmap, x, y, width, height);
   }
-  #endif
+#endif
   
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
@@ -509,7 +509,7 @@ void graphics::fill_rounded_rectangle(intptr handle, intptr brush, float x, floa
   }
   
   // Workaround : with wxWidgets version <= 3.1.5 Radial gradient does not fill rounded rectangle with end color on Windows.
-  #if defined(WIN32)
+#if defined(__WXMSW__)
   if (reinterpret_cast<wx_brush*>(brush)->is_radial_gradiant_brush()) {
     auto wx_radial_brush = reinterpret_cast<wx_brush*>(brush)->get_radial_gradiant_brush();
     wxImage image(width, height);
@@ -534,7 +534,7 @@ void graphics::fill_rounded_rectangle(intptr handle, intptr brush, float x, floa
     radial_gradient_bitmap = radial_gradient_image;
     graphics.DrawBitmap(radial_gradient_bitmap, x, y, width, height);
   }
-  #endif
+#endif
   
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }

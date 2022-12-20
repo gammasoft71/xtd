@@ -1,6 +1,6 @@
 #include <xtd/xtd.core>
 #include <chrono>
-#ifdef WIN32
+#if defined(_WIN32)
 #define UNICODE
 #include <Windows.h>
 #endif
@@ -131,7 +131,7 @@ namespace set_path {
     static ustring win32_read_system_path(bool system_path) {
       /// @todo Replace by xtd::microsoft::registry when xtd::microsoft::registry class is ready...
       wchar current_directory[4097] = L"";
-#ifdef WIN32
+#if defined(_WIN32)
       DWORD size = 4097;
       auto status = RegGetValue(system_path ? HKEY_LOCAL_MACHINE : HKEY_CURRENT_USER, system_path ? L"SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment" : L"Environment", L"Path", RRF_RT_REG_SZ, nullptr, reinterpret_cast<PVOID>(current_directory), &size);
       if (status != ERROR_SUCCESS) {
@@ -145,7 +145,7 @@ namespace set_path {
 
     static int win32_write_system_path(bool system_path, const ustring& path) {
       /// @todo Replace by xtd::microsoft::registry when xtd::microsoft::registry class is ready...
-#ifdef WIN32
+#if defined(_WIN32)
       auto new_path = convert_string::to_wstring(path);
       HKEY environment_key;
       auto status = RegOpenKey(system_path ? HKEY_LOCAL_MACHINE : HKEY_CURRENT_USER, system_path ? L"SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment" : L"Environment", &environment_key);
@@ -173,7 +173,7 @@ namespace set_path {
       }
 #endif
 
-#ifdef WIN32
+#if defined(_WIN32)
       auto result = SendMessageTimeout(HWND_BROADCAST, WM_SETTINGCHANGE, 0, (LPARAM)L"Environment", SMTO_ABORTIFHUNG, 5000, NULL);
       if (result == 0) {
         console::write_line("An error 0x{:X8} occured when SendMessageTimeout", GetLastError());

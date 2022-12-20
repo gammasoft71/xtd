@@ -59,7 +59,7 @@ void region::exclude(intptr handle, intptr region) {
 }
 
 intptr region::from_hrgn(intptr hrgn) {
-  #if defined(__APPLE__) || defined(WIN32)
+  #if defined(__WXOSX__) || defined(__WXMSW__)
   return reinterpret_cast<intptr>(new wxRegion(reinterpret_cast<WXHRGN>(hrgn)));
   #else
   return hrgn;
@@ -75,9 +75,9 @@ void region::get_bounds(intptr handle, float& x, float& y, float& width, float& 
 }
 
 intptr region::get_hrgn(intptr handle, intptr grpahics) {
-  #if defined(__APPLE__)
+  #if defined(__WXOSX__)
   return reinterpret_cast<intptr>(reinterpret_cast<wxRegion*>(handle)->GetWXHRGN());
-  #elif defined(WIN32)
+  #elif defined(__WXMSW__)
   return reinterpret_cast<intptr>(reinterpret_cast<wxRegion*>(handle)->GetHRGN());
   #else
   return reinterpret_cast<intptr>(handle);

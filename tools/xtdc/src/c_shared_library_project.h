@@ -103,7 +103,7 @@ namespace xtdc_command {
         "#pragma once",
         "",
         "/** @cond */",
-        "#if defined(WIN32)",
+        "#if defined(_WIN32)",
         xtd::ustring::format("#  if defined({}_EXPORT)", name.to_upper()),
         xtd::ustring::format("#    define {}_export_ __declspec(dllexport)", name.to_lower()),
         "#  else",
