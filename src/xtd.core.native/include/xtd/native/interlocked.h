@@ -13,6 +13,7 @@
 #include <ctime>
 #include <string>
 #include <vector>
+#include "types.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -36,11 +37,6 @@ namespace xtd {
     public:
     private:
       interlocked() = delete;
-      #if defined(__linux__) && defined(_LP64)
-      using llong_t = long long int;
-      #else
-      using llong_t = long;
-      #endif
       
     protected:
       friend xtd::threading::interlocked;
@@ -74,13 +70,13 @@ namespace xtd {
       /// @return The original value in location.
       /// @warning Internal use only
       static int_least64_t compare_exchange(int_least64_t& location, int_least64_t value, int_least64_t comparand);
-      /// @brief Compares two llong_t signed integers for equality and, if they are equal, replaces one of the values.
+      /// @brief Compares two __slong__ signed integers for equality and, if they are equal, replaces one of the values.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
       /// @param value The value that replaces the destination value if the comparison results in equality.
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
       /// @warning Internal use only
-      static llong_t compare_exchange(llong_t& location, llong_t value, llong_t comparand);
+      static __slong__ compare_exchange(__slong__& location, __slong__ value, __slong__ comparand);
       /// @brief Compares two platform-specific handles or pointers for equality and, if they are equal, replaces one of them.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
       /// @param value The value that replaces the destination value if the comparison results in equality.
@@ -112,12 +108,12 @@ namespace xtd {
       /// @return The original value of location.
       /// @warning Internal use only
       static int_least64_t exchange(int_least64_t& location, int_least64_t value);
-      /// @brief Sets a llong_t signed integer to a specified value and returns the original value, as an atomic operation.
+      /// @brief Sets a __slong__ signed integer to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
       /// @return The original value of location.
       /// @warning Internal use only
-      static llong_t exchange(llong_t& location, llong_t value);
+      static __slong__ exchange(__slong__& location, __slong__ value);
       /// @brief Sets a platform-specific handles or pointers to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
