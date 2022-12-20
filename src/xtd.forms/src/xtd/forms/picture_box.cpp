@@ -25,7 +25,14 @@ namespace {
   }
 }
 
-picture_box::picture_box() {
+struct picture_box::data {
+  forms::border_sides border_sides = forms::border_sides::all;
+  forms::border_style border_style = forms::border_style::none;
+  std::optional<drawing::image> image;
+  picture_box_size_mode size_mode = picture_box_size_mode::normal;
+};
+
+picture_box::picture_box() : data_(std::make_shared<data>()) {
   set_can_focus(false);
   set_style(control_styles::opaque | control_styles::selectable, false);
   set_style(control_styles::optimized_double_buffer|control_styles::supports_transparent_back_color, true);
