@@ -32,7 +32,7 @@ namespace xtd {
       /// @ingroup xtd_forms_native native
       /// @remarks No member for the moment.
       /// @warning Internal use only
-      class toolkit final static_ {
+      class forms_native_export_ toolkit final static_ {
       public:
         /// @name Protected methods
         
