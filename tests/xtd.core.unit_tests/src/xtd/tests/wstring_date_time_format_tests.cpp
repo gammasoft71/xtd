@@ -4,7 +4,7 @@
 #include <xtd/xtd.tunit>
 
 #include <time.h>
-#if defined (WIN32)
+#if defined(WIN32)
 static time_t __make_utc_date_time(struct tm* tm) noexcept { return _mkgmtime(tm); }
 #else
 static time_t __make_utc_date_time(struct tm* tm) noexcept { return timegm(tm); }

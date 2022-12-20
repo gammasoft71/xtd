@@ -170,7 +170,7 @@ size_t environment::get_system_page_size() {
 }
 
 uint_least32_t environment::get_tick_count() {
-  #if defined (__APPLE__)
+  #if defined(__APPLE__)
   // https://stackoverflow.com/questions/3269321/osx-programmatically-get-uptime
   struct timeval boottime {};
   struct timeval nowtime {};
