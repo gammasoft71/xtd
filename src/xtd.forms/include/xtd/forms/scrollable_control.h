@@ -16,6 +16,8 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms
     class forms_export_ scrollable_control : public control {
+      struct data;
+      
     public:
       /// @name Properties
       
@@ -78,14 +80,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        bool auto_scroll = false;
-        bool h_scroll = false;
-        bool v_scroll = false;
-        drawing::rectangle display_rectangle;
-        drawing::size auto_scroll_margin;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
