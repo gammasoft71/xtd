@@ -85,7 +85,9 @@ namespace xtd {
             height += static_cast<float>(lineHeight);
             
             // Workaround : with wxWidgets version <= 3.1.5 width size text is too small on macOS and linux.
-            if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Windows" && font.GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(dc.GetFontMetrics().averageWidth / 2.3f);
+#if !defined (__WXMSW__)
+            if (font.GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(dc.GetFontMetrics().averageWidth / 2.3f);
+#endif
           }
         }
         
