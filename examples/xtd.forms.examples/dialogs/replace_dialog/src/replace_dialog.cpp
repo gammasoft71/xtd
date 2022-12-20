@@ -30,6 +30,7 @@ public:
   }
   
 private:
+  debug_form df;
   button replace_button;
   xtd::forms::replace_dialog replace_dialog;
 };
