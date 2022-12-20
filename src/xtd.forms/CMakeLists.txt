@@ -479,6 +479,7 @@ add_sources(
   src/xtd/forms/tool_bar.cpp
   src/xtd/forms/tool_bar_button.cpp
   src/xtd/forms/tool_bar_button_control.h
+  src/xtd/forms/tool_bar_button_data.h
   src/xtd/forms/tool_bar_button_renderer.cpp
   src/xtd/forms/tool_bar_renderer.cpp
   src/xtd/forms/trace_form_base.cpp
