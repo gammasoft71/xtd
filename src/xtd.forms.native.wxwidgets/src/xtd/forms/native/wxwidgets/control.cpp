@@ -10,6 +10,14 @@
 #include <xtd/drawing/native/hdc_wrapper.h>
 #include <xtd/drawing/native/system_colors.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#if defined(_WIN32)
+#include <winsock2.h>
+#include <Windows.h>
+#include <windowsx.h>
+#include <Commctrl.h>
+#undef max
+#undef min
+#endif
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/control.h>
@@ -58,14 +66,6 @@
 #include <wx/dcscreen.h>
 #include <wx/font.h>
 #include <wx/frame.h>
-#if defined(__WXMSW__)
-#include <winsock2.h>
-#include <Windows.h>
-#include <windowsx.h>
-#include <Commctrl.h>
-#undef max
-#undef min
-#endif
 
 wxDEFINE_EVENT(wxEVT_ENTER_SIZEMOVE, wxCommandEvent);
 wxDEFINE_EVENT(wxEVT_EXIT_SIZEMOVE, wxCommandEvent);
