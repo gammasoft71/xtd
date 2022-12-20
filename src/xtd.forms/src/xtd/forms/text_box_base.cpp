@@ -3,6 +3,17 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+struct text_box_base::data {
+  bool accepts_tab = false;
+  xtd::forms::border_sides border_sides = xtd::forms::border_sides::all;
+  xtd::forms::border_style border_style = xtd::forms::border_style::fixed_single;
+  bool multiline = false;
+  bool read_only = false;
+  bool word_wrap = true;
+  mutable size_t selection_start = 0;
+  mutable size_t selection_length = 0;
+};
+
 bool text_box_base::accepts_tab() const noexcept {
   return data_->accepts_tab;
 }
@@ -130,7 +141,7 @@ void text_box_base::select_all() {
   select(0, text().size());
 }
 
-text_box_base::text_box_base() {
+text_box_base::text_box_base() : data_(std::make_shared<data>()) {
   set_style(control_styles::fixed_height, auto_size());
   set_style(control_styles::standard_click | control_styles::standard_double_click | control_styles::use_text_for_accessibility | control_styles::user_paint, false);
 }

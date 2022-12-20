@@ -20,6 +20,8 @@ namespace xtd {
     /// @ingroup xtd_forms
     /// @remarks This class implements the core features of text manipulation controls, such as xtd::forms::text_box and xtd::forms::rich_text_box. These include text selection, xtd::forms::clipboard functionality, multiline text control support, and many events.
     class text_box_base : public control {
+      struct data;
+      
     public:
       /// @name Properties
       
@@ -187,17 +189,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        bool accepts_tab = false;
-        xtd::forms::border_sides border_sides = xtd::forms::border_sides::all;
-        xtd::forms::border_style border_style = xtd::forms::border_style::fixed_single;
-        bool multiline = false;
-        bool read_only = false;
-        bool word_wrap = true;
-        mutable size_t selection_start = 0;
-        mutable size_t selection_length = 0;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
