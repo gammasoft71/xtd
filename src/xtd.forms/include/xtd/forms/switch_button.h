@@ -42,6 +42,8 @@ namespace xtd {
     /// The following code example demonstrates the use of switch button control.
     /// @include switch_button.cpp
     class switch_button : public xtd::forms::button_base {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -142,15 +144,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        std::optional<xtd::drawing::color> checked_back_color;
-        std::optional<xtd::drawing::color> slider_color;
-        bool rounded = true;
-        bool auto_check = true;
-        bool show_text = false;
-        bool checked = false;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
