@@ -39,6 +39,8 @@ namespace xtd {
     /// The following code example demonstrates the use of popup_panel container.
     /// @include popup_panel.cpp
     class forms_export_ popup_panel : public panel {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -78,10 +80,7 @@ namespace xtd {
     private:
       void wm_show(message& message);
       
-      struct data {
-        bool ignore_mouse_messages = false;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
