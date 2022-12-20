@@ -62,6 +62,7 @@ namespace xtd {
     /// @remarks If you specify a value for the xtd::forms::tool_bar::button_size property, all buttons in the tool bar are restricted to the specified size. Otherwise, the buttons adjust their size depending on their content, and the xtd::forms::tool_bar::button_size property returns the initial size of the largest button.
     /// @remarks To create a collection of xtd::forms::tool_bar_button controls to display on the xtd::forms::tool_bar, add the buttons individually by using the xtd::forms::tool_bar::tool_bar_button_collection::push_back or xtd::forms::tool_bar::tool_bar_button_collection::insert methods of the xtd::forms::tool_bar::buttons property.
     class forms_export_ tool_bar : public control {
+      struct data;
       class tool_bar_button_control;
       
     public:
@@ -297,27 +298,7 @@ namespace xtd {
       
       void wm_click(const message& message);
       
-      struct data {
-        xtd::forms::tool_bar_appearance appearance = xtd::forms::tool_bar_appearance::normal;
-        forms::border_sides border_sides = forms::border_sides::all;
-        std::optional<xtd::forms::border_style> border_style;
-        std::optional<xtd::drawing::size> button_size;
-        bool divider = true;
-        bool drop_down_arrows = true;
-        xtd::forms::image_list image_list;
-        tool_bar_button_collection buttons;
-        bool is_system_tool_bar = false;
-        dock_style non_system_dock = dock_style::none;
-        bool show_icon = true;
-        bool show_text = false;
-        bool show_tool_tips = false;
-        std::vector<std::shared_ptr<xtd::forms::tool_bar::tool_bar_button_control>> stretchable_separators;
-        std::vector<std::shared_ptr<xtd::forms::tool_bar::tool_bar_button_control>> tool_bar_buttons;
-        std::vector<intptr> system_tool_bar_button_handles;
-        xtd::forms::tool_bar_text_align text_align = xtd::forms::tool_bar_text_align::underneath;
-        bool wrappable = false;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
