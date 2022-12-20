@@ -6,7 +6,11 @@
 
 using namespace xtd::forms;
 
-settings::settings() {
+struct settings::data {
+  intptr settings_;
+};
+
+settings::settings() : data_(std::make_shared<data>()) {
   data_->settings_ = native::settings::create(application::product_name(), application::company_name());
 }
 
