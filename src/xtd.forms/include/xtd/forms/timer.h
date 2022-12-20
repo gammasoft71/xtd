@@ -27,6 +27,8 @@ namespace xtd {
     /// The following code example demonstrates the use of timer component.
     /// @include timer.cpp
     class forms_export_ timer : public component {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -34,7 +36,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the timer class.
       /// @remarks When a new timer is created, it is disabled; that is, enabled is set to false. To enable the timer, call the start method or set enabled to true.
       /// @remarks If the timer is disabled and the timer is out of scope, the timer will be destroyed.
-      timer() = default;
+      timer();
       /// @}
       
       /// @cond
@@ -108,12 +110,7 @@ namespace xtd {
     private:
       void restart();
       
-      struct data {
-        bool enabled = false;
-        int32 interval = 100;
-        intptr handle = 0;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }

@@ -6,6 +6,15 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+struct timer::data {
+  bool enabled = false;
+  int32 interval = 100;
+  intptr handle = 0;
+};
+
+timer::timer() : data_(std::make_shared<data>()) {  
+}
+
 timer::~timer() {
   stop();
 }
