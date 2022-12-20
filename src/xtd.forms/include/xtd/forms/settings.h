@@ -24,6 +24,8 @@ namespace xtd {
     /// The following code example demonstrates the use of settings class.
     /// @include settings_example.cpp
     class forms_export_ settings : public object {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -78,11 +80,8 @@ namespace xtd {
     private:
       xtd::ustring read_string(const xtd::ustring& key, const xtd::ustring& default_value);
       void write_string(const xtd::ustring& key, const xtd::ustring& value);
-      struct data {
-        intptr settings_;
-      };
       
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
