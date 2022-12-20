@@ -11,7 +11,15 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-up_down_button::up_down_button() {
+struct up_down_button::data {
+  bool wrapped = false;
+  int32 maximum = 100;
+  int32 minimum = 0;
+  forms::orientation orientation = forms::orientation::vertical;
+  int32 value = 0;
+};
+
+up_down_button::up_down_button() : data_(std::make_shared<data>()) {
   flat_style(xtd::forms::flat_style::system);
 }
 

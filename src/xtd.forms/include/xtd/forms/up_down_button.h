@@ -45,6 +45,8 @@ namespace xtd {
     /// The following code example demonstrates the use of up down button control.
     /// @include up_down_button.cpp
     class forms_export_ up_down_button : public button_base {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -169,14 +171,7 @@ namespace xtd {
     private:
       void wm_scroll_control(message& message);
       
-      struct data {
-        bool wrapped = false;
-        int32 maximum = 100;
-        int32 minimum = 0;
-        forms::orientation orientation = forms::orientation::vertical;
-        int32 value = 0;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
