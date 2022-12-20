@@ -15,7 +15,7 @@
 #include "wx_user_window.h"
 #include "control_handler.h"
 
-#if defined(__APPLE__)
+#if defined(__WXOSX__)
 void __set_button_bezel_style__(wxAnyButton* control, xtd::int32 height);
 #endif
 
@@ -33,15 +33,17 @@ namespace xtd {
           owner_draw_ = (create_params.style & BS_OWNERDRAW) == BS_OWNERDRAW;
           if (owner_draw_) {
             control_handler::create<wx_user_window>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()));
-            reinterpret_cast<wx_user_window*>(control())->set_accepts_focus(wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Macintosh");
+#if !defined(__WXOSX__)
+            reinterpret_cast<wx_user_window*>(control())->set_accepts_focus(true);
+#endif
           } else control_handler::create<wxButton>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption)), wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()), style_to_wx_style(create_params.style, create_params.ex_style));
           SetSize(create_params.size.width(), create_params.size.height());
-          #if defined(__WIN32__)
+#if defined(__WXMSW__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
             control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
-          #endif
+#endif
         }
         
         static long style_to_wx_style(size_t style, size_t ex_style) {
@@ -65,9 +67,9 @@ namespace xtd {
         }
         
         virtual void SetPosition(const wxPoint& pt) override {
-          #if defined(__APPLE__)
+#if defined(__WXOSX__)
           if (!owner_draw_) __set_button_bezel_style__((wxAnyButton*)control(), control()->GetSize().GetHeight());
-          #endif
+#endif
           control_handler::SetPosition(pt);
         }
         
@@ -80,9 +82,9 @@ namespace xtd {
         }
         
         void SetSize(xtd::int32 width, xtd::int32 height) override {
-          #if defined(__APPLE__)
+#if defined(__WXOSX__)
           if (!owner_draw_) __set_button_bezel_style__((wxAnyButton*)control(), height);
-          #endif
+#endif
           control_handler::SetSize(width, height);
         }
         
