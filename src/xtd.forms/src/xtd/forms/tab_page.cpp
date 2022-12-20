@@ -12,6 +12,13 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+struct tab_page::data {
+  size_t image_index = image_list::npos;
+};
+
+tab_page::tab_page() : data_(std::make_shared<data>()) {
+}
+
 forms::create_params tab_page::create_params() const noexcept {
   forms::create_params create_params = panel::create_params();
   

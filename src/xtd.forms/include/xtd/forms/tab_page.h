@@ -43,12 +43,14 @@ namespace xtd {
     /// The following code example demonstrates the use of tab_control and colored tab_page containers.
     /// @include colored_tab_pages.cpp
     class forms_export_ tab_page : public panel {
+      struct data;
+      
     public:
       /// @name Constructors
       
       /// @{
       /// @brief Initializes a new instance of the tab_page class.
-      tab_page() = default;
+      tab_page();
       /// @}
       
       /// @name Properties
@@ -100,10 +102,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        size_t image_index = image_list::npos;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
