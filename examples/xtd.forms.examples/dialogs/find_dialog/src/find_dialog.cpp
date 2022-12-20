@@ -23,6 +23,7 @@ public:
   }
   
 private:
+  debug_form df;
   button find_button;
   xtd::forms::find_dialog find_dialog;
 };
