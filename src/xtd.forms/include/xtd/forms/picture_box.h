@@ -44,6 +44,8 @@ namespace xtd {
     /// The following code example demonstrates the use of picture box control.
     /// @include picture_box.cpp
     class forms_export_ picture_box : public control {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -117,13 +119,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        forms::border_sides border_sides = forms::border_sides::all;
-        forms::border_style border_style = forms::border_style::none;
-        std::optional<drawing::image> image;
-        picture_box_size_mode size_mode = picture_box_size_mode::normal;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
