@@ -466,6 +466,7 @@ add_sources(
   src/xtd/forms/system_information.cpp
   src/xtd/forms/system_texts.cpp
   src/xtd/forms/tab_control.cpp
+  src/xtd/forms/tab_control_data.h
   src/xtd/forms/tab_page.cpp
   src/xtd/forms/table_layout_panel.cpp
   src/xtd/forms/text_box.cpp

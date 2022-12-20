@@ -10,11 +10,12 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/tab_control.h"
 #include "../../../include/xtd/forms/tab_page.h"
+#include "tab_control_data.h"
 
 using namespace xtd;
 using namespace xtd::forms;
 
-tab_control::tab_control() {
+tab_control::tab_control() : data_(std::make_shared<data>()) {
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::user_paint, false);
 }

@@ -45,6 +45,8 @@ namespace xtd {
     /// The following code example demonstrates the use of tab_control container.
     /// @include tab_control.cpp
     class forms_export_ tab_control : public control {
+      struct data;
+      
     public:
       /// @name Fields
       
@@ -146,12 +148,7 @@ namespace xtd {
     private:
       void wm_command_control(message& message);
 
-      struct data {
-        tab_alignment alignment = tab_alignment::top;
-        forms::image_list image_list;
-        size_t selected_index = npos;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
