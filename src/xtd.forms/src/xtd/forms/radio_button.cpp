@@ -29,7 +29,15 @@ namespace {
   }
 }
 
-radio_button::radio_button() {
+struct radio_button::data {
+  forms::appearance appearance = forms::appearance::normal;
+  bool auto_check = true;
+  bool checked = false;
+  content_alignment check_align = content_alignment::middle_left;
+  xtd::forms::visual_styles::radio_button_state state = xtd::forms::visual_styles::radio_button_state::unchecked_normal;
+};
+
+radio_button::radio_button() : data_(std::make_shared<data>()) {
   set_style(control_styles::standard_click | control_styles::standard_double_click, false);
   text_align(content_alignment::middle_left);
 }
