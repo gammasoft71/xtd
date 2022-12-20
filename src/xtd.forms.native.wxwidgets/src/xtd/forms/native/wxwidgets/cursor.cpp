@@ -41,7 +41,7 @@ void cursor::destroy(intptr cursor) {
   delete reinterpret_cast<wxCursor*>(cursor);
 }
 
-#if defined (__WXMSW__)
+#if defined(__WXMSW__)
 void cursor::hide() {
   ShowCursor(FALSE);
 }
@@ -62,7 +62,7 @@ point cursor::position() {
   return {position.x, position.y};
 }
 
-#if defined (__WXMSW__)
+#if defined(__WXMSW__)
 void cursor::position(const point& position) {
   SetCursorPos(position.x(), position.y());
 }
@@ -80,7 +80,7 @@ drawing::size cursor::size(intptr cursor) {
   return {32, 32};
 }
 
-#if defined (__WXMSW__)
+#if defined(__WXMSW__)
 void cursor::show() {
   ShowCursor(TRUE);
 }
