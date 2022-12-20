@@ -12,6 +12,7 @@
 #include "../../../include/xtd/forms/tool_bar_renderer.h"
 #include "../../../include/xtd/forms/tool_bar_button_renderer.h"
 #include "tool_bar_button_control.h"
+#include "tool_bar_button_data.h"
 
 using namespace std;
 using namespace xtd;

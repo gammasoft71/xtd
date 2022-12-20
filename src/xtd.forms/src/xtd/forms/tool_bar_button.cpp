@@ -1,11 +1,15 @@
 #include "../../../include/xtd/forms/tool_bar_button.h"
 #include "../../../include/xtd/forms/tool_bar.h"
+#include "tool_bar_button_data.h"
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
-tool_bar_button::tool_bar_button(const ustring& text) {
+tool_bar_button::tool_bar_button() : data_(std::make_shared<data>()) {
+}
+
+tool_bar_button::tool_bar_button(const ustring& text) : data_(std::make_shared<data>()) {
   data_->text = text;
 }
 

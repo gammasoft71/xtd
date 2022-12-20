@@ -35,13 +35,15 @@ namespace xtd {
     /// @remarks You can assign a xtd::forms::context_menu to a button if the xtd::forms::tool_bar_button::style property is set to xtd::forms::tool_bar_button_style::drop_down. When the button is clicked, the assigned menu is displayed.
     /// @remarks To create a collection of xtd::forms::tool_bar_button controls to display on a xtd::forms::tool_bar, add the buttons individually by using the xtd::forms::tool_bar::tool_bar_button_collection::push_back method of the xtd::forms::tool_bar::buttons property. Alternatively, you can add several toolbar buttons using the xtd::forms::tool_bar::tool_bar_button_collection.push_back_range method.
     class tool_bar_button : public xtd::forms::component, public xtd::iequatable<tool_bar_button> {
+      struct data;
+      
     public:
       /// @name Constructors
       
       /// @{
       /// @brief Initialises a new instance of xtd::forms::tool_bar_button class.
       /// @remarks A newly created xtd::forms::tool_bar_button has no default xtd::forms::tool_bar_button::text or xtd::drawing::image assigned to it. The button's default style is xtd::tool_bar_button_style::push_button.
-      tool_bar_button() = default;
+      tool_bar_button();
       /// @brief Initializes a new instance of the xtd::forms::tool_bar_button class and displays the assigned text on the button.
       /// @param text The text to display on the new xtd::forms::tool_bar_button.
       /// @remarks The newly created xtd::forms::tool_bar_button has no xtd::drawing::image assigned assigned to it. The button's default style is xtd::tool_bar_button_style::push_button. The text parameter is assigned to the xtd::forms::tool_bar_button::text property and is displayed on the new toolbar button control.
@@ -262,25 +264,7 @@ namespace xtd {
       
     private:
       friend xtd::forms::tool_bar;
-      struct data {
-        xtd::forms::control* control = nullptr;
-        std::optional<std::reference_wrapper<xtd::forms::context_menu>> drop_down_menu;
-        bool enabled = true;
-        size_t image_index = xtd::forms::image_list::image_collection::npos;
-        xtd::drawing::image image_key;
-        xtd::ustring name;
-        bool partial_push = false;
-        bool pushed = false;
-        xtd::drawing::rectangle rectangle;
-        xtd::forms::tool_bar_button_style style = xtd::forms::tool_bar_button_style::push_button;
-        std::any tag;
-        xtd::ustring text;
-        xtd::ustring tool_tip_text;
-        bool visible = true;
-        xtd::forms::tool_bar* parent = nullptr;
-        intptr handle = 0;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
