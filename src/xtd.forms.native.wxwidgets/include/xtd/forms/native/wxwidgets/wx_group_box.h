@@ -59,9 +59,7 @@ namespace xtd {
           else if (event.GetEventType() == wxEVT_SET_FOCUS) wx_evt_->wx_evt_set_focus(event);
           else if (event.GetEventType() == wxEVT_KILL_FOCUS) wx_evt_->wx_evt_kill_focus(event);
           else if (event.GetEventType() == wxEVT_CHILD_FOCUS) wx_evt_->wx_evt_child_focus(event);
-#if !defined __UNIX__
           else if (event.GetEventType() == wxEVT_PAINT) wx_evt_->wx_evt_paint(event);
-#endif
           return result;
         }
 
