@@ -47,6 +47,7 @@ add_sources(
   src/xtd/native/unix/speech_synthesizer.cpp
   src/xtd/native/unix/system_sound.cpp
   src/xtd/native/unix/translator.cpp
+  src/xtd/native/unix/types.cpp
 )
 if (APPLE)
   add_sources(

@@ -30,6 +30,7 @@ add_sources(
   src/xtd/native/win32/speech_synthesizer.cpp
   src/xtd/native/win32/system_sound.cpp
   src/xtd/native/win32/translator.cpp
+  src/xtd/native/win32/types.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})
 

@@ -8,8 +8,15 @@
 #endif
 /// @endcond
 
+#include <xtd/core_native_export.h>
+#include <string>
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
+  class ustring;
+  /// @endcond
+  
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
@@ -28,6 +35,27 @@ namespace xtd {
     /// @warning Internal use only
     using __ulong__ = unsigned long; // Workaround: On linux 64 bits unfortunately 'uint_least64_t' is an alias on 'unigned long' and not on 'unsigned long long int' as other platforms. In order to avoid conflicts in operator or method overloads, it is necessary to give the type that is not taken into account.
 #endif
-    /// @endcond
+
+    /// @brief Contains type native API.
+    /// @par Namespace
+    /// xtd::native
+    /// @par Library
+    /// xtd.core.native
+    /// @ingroup xtd_core_native native
+    /// @warning Internal use only
+    class core_native_export_ types final {
+      types() = delete;
+      friend xtd::ustring;
+    protected:
+      /// @name Protected methods
+      
+      /// @{
+      /// @brief Gets demangled string of name,.
+      /// @param name The name to demangle.
+      /// @return The demangled string of name.
+      /// @warning Internal use only
+      static std::string demangle(const std::string& name);
+      /// @}
+    };
   }
 }

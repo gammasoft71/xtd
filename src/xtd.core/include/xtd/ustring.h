@@ -638,7 +638,25 @@ namespace xtd {
     }
     
     /// @brief Gets demangled string of name,.
+    /// @param name The name to demangle.
     /// @return The demangled string of name.
+    /// @par Examples
+    /// The following example shows how to use xtd::ustring::demangle.
+    /// @code
+    /// #include <xtd/xtd>
+    ///
+    /// using namespace xtd;
+    ///
+    /// int main() {
+    ///   console::write_line("name = {}", typeid(xtd::date_time).name());
+    ///   console::write_line("demangled name = {}", ustring::demangle(typeid(xtd::date_time).name()));
+    /// }
+    ///
+    /// // This code produces the following output on macOS :
+    /// //
+    /// // name = N3xtd9date_timeE
+    /// // demangled name = xtd::date_time
+    /// @enndcode
     static ustring demangle(const ustring& name);
     
     /// @brief Returns a value indicating whether a specified substring occurs within this string.
