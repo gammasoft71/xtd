@@ -9,7 +9,18 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-track_bar::track_bar() {
+struct track_bar::data {
+  int32 large_change = 5;
+  int32 maximum = 10;
+  int32 minimum = 0;
+  forms::orientation orientation = forms::orientation::horizontal;
+  int32 small_change = 1;
+  int32 tick_frequency = 1;
+  forms::tick_style tick_style = forms::tick_style::bottom_right;
+  int32 value = 0;
+};
+
+track_bar::track_bar() : data_(std::make_shared<data>()) {
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::user_paint, false);
   set_style(control_styles::use_text_for_accessibility, false);

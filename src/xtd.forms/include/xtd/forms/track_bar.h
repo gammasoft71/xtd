@@ -44,6 +44,8 @@ namespace xtd {
     /// The following code example demonstrates the use of track_bar control.
     /// @include track_bar.cpp
     class forms_export_ track_bar : public control {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -218,17 +220,7 @@ namespace xtd {
     private:
       void wm_scroll_control(message& message);
       
-      struct data {
-        int32 large_change = 5;
-        int32 maximum = 10;
-        int32 minimum = 0;
-        forms::orientation orientation = forms::orientation::horizontal;
-        int32 small_change = 1;
-        int32 tick_frequency = 1;
-        forms::tick_style tick_style = forms::tick_style::bottom_right;
-        int32 value = 0;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
