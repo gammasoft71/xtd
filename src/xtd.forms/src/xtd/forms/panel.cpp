@@ -14,7 +14,12 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-panel::panel() {
+struct panel::data {
+  forms::border_sides border_sides = forms::border_sides::all;
+  std::optional<forms::border_style> border_style;
+};
+
+panel::panel() : data_(std::make_shared<data>()) {
   set_auto_size_mode(forms::auto_size_mode::grow_only);
   set_can_focus(false);
   set_style(control_styles::selectable | control_styles::all_painting_in_wm_paint, false);
