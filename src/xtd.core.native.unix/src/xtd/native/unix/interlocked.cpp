@@ -30,7 +30,7 @@ int_least64_t interlocked::compare_exchange(int_least64_t& location, int_least64
   return __sync_val_compare_and_swap(&location, comparand, value);
 }
 
-interlocked::llong_t interlocked::compare_exchange(llong_t& location, llong_t value, llong_t comparand) {
+__slong__ interlocked::compare_exchange(__slong__& location, __slong__ value, __slong__ comparand) {
   return __sync_val_compare_and_swap(&location, comparand, value);
 }
 
@@ -56,7 +56,7 @@ int_least64_t interlocked::exchange(int_least64_t& location, int_least64_t value
   return __sync_val_compare_and_swap(&location, location, value);
 }
 
-interlocked::llong_t interlocked::exchange(llong_t& location, llong_t value) {
+__slong__ interlocked::exchange(__slong__& location, __slong__ value) {
   return __sync_val_compare_and_swap(&location, location, value);
 }
 
