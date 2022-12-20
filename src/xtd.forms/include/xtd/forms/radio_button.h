@@ -50,6 +50,8 @@ namespace xtd {
     /// The following code example demonstrates the use of radio_button control.
     /// @include radio_button.cpp
     class forms_export_ radio_button : public xtd::forms::button_base {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -188,14 +190,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      struct data {
-        forms::appearance appearance = forms::appearance::normal;
-        bool auto_check = true;
-        bool checked = false;
-        content_alignment check_align = content_alignment::middle_left;
-        xtd::forms::visual_styles::radio_button_state state = xtd::forms::visual_styles::radio_button_state::unchecked_normal;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
