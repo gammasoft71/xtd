@@ -2,10 +2,9 @@
 #include "../../include/xtd/convert_string.h"
 #include "../../include/xtd/format_exception.h"
 #include "../../include/xtd/diagnostics/stack_frame.h"
-
-#if !defined(_WIN32)
-#include <cxxabi.h>
-#endif
+#define __XTD_CORE_NATIVE_LIBRARY__
+#include <xtd/native/types.h>
+#undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace std;
 using namespace xtd;
@@ -635,23 +634,7 @@ ustring ustring::concat(const std::initializer_list<const char8*>& values) noexc
 }
 
 ustring ustring::demangle(const ustring& name) {
-#if defined(_WIN32)
-  ustring result = name;
-  for (auto& item : {"enum ", "class ", "union ", "struct "})
-    result = result.replace(item, "");
-  return result;
-#else
-  class auto_delete_char_pointer {
-  public:
-    auto_delete_char_pointer(char* value) : value_(value) {}
-    ~auto_delete_char_pointer() {free(value_);}
-    char* operator ()() const {return value_;}
-  private:
-    char* value_;
-  };
-  int32 status = 0;
-  return auto_delete_char_pointer(abi::__cxa_demangle(name.c_str(), 0, 0, &status))();
-#endif
+  return native::types::demangle(name);
 }
 
 bool ustring::contains(const ustring& value) const noexcept {
