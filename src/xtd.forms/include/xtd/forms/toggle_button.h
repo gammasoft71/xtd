@@ -54,6 +54,8 @@ namespace xtd {
     /// The following code example demonstrates the use of toggle_button control.
     /// @include toggle_button.cpp
     class forms_export_ toggle_button : public xtd::forms::button_base {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -188,15 +190,7 @@ namespace xtd {
       void wm_mouse_down(message& message);
       void wm_mouse_up(message& message);
 
-      struct data {
-        bool auto_check = true;
-        bool three_state = 0;
-        bool checked = false;
-        content_alignment check_align = content_alignment::middle_left;
-        forms::check_state check_state = forms::check_state::unchecked;
-        xtd::forms::visual_styles::toggle_button_state state = xtd::forms::visual_styles::toggle_button_state::unchecked_normal;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }

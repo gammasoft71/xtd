@@ -13,7 +13,16 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-toggle_button::toggle_button() {
+struct toggle_button::data {
+  bool auto_check = true;
+  bool three_state = 0;
+  bool checked = false;
+  content_alignment check_align = content_alignment::middle_left;
+  forms::check_state check_state = forms::check_state::unchecked;
+  xtd::forms::visual_styles::toggle_button_state state = xtd::forms::visual_styles::toggle_button_state::unchecked_normal;
+};
+
+toggle_button::toggle_button() : data_(std::make_shared<data>()) {
   set_style(control_styles::standard_click | control_styles::standard_double_click, false);
 }
 
