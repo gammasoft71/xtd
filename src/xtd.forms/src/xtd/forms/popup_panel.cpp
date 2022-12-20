@@ -11,7 +11,11 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-popup_panel::popup_panel() {
+struct popup_panel::data {
+  bool ignore_mouse_messages = false;
+};
+
+popup_panel::popup_panel() : data_(std::make_shared<data>()) {
   visible(false);
 }
 
