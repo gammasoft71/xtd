@@ -5,7 +5,16 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-switch_button::switch_button() {
+struct switch_button::data {
+  std::optional<xtd::drawing::color> checked_back_color;
+  std::optional<xtd::drawing::color> slider_color;
+  bool rounded = true;
+  bool auto_check = true;
+  bool show_text = false;
+  bool checked = false;
+};
+
+switch_button::switch_button() : data_(std::make_shared<data>()) {
   set_style(control_styles::standard_click | control_styles::standard_double_click, false);
 }
 
@@ -18,7 +27,6 @@ switch_button& switch_button::auto_check(bool auto_check) {
     data_->auto_check = auto_check;
   return *this;
 }
-
 
 xtd::drawing::color switch_button::checked_back_color() const noexcept {
   return data_->checked_back_color.value_or(application::style_sheet().system_colors().accent());
