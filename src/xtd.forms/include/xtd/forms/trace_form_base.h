@@ -18,6 +18,8 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms debug
     class trace_form_base : public xtd::forms::form {
+      struct data;
+      
     public:
       /// @name Properties
       
@@ -94,15 +96,7 @@ namespace xtd {
       
       void update_format();
       
-      struct data {
-        bool need_header = true;
-        bool show_date = true;
-        bool show_time = true;
-        xtd::ustring format = "{0}";
-        xtd::ustring header_separator = "|";
-        xtd::forms::text_box text;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
