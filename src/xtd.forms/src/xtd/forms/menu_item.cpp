@@ -313,7 +313,3 @@ void menu_item::perform_click() {
 ustring menu_item::to_string() const noexcept {
   return ustring::format("{}, text: {}", menu::to_string(), data_->text);
 }
-
-void menu_item::create_data() {
-  data_ = std::make_shared<data>();
-}
