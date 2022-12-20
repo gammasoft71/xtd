@@ -15,6 +15,8 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms
     class forms_export_ scroll_bar : public control {
+      struct data;
+      
     public:
       /// @name Properties
       
@@ -134,15 +136,7 @@ namespace xtd {
     private:
       void wm_scroll_control(message& message);
 
-      struct data {
-        int32 large_change = 10;
-        int32 maximum = 100;
-        int32 minimum = 0;
-        int32 small_change = 1;
-        int32 value = 0;
-        bool v_scroll = true;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }

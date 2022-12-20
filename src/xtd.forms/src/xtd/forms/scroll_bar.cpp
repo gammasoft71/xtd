@@ -8,6 +8,16 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
+struct scroll_bar::data {
+  int32 large_change = 10;
+  int32 maximum = 100;
+  int32 minimum = 0;
+  int32 small_change = 1;
+  int32 value = 0;
+  bool v_scroll = true;
+};
+
+
 int32 scroll_bar::large_change() const noexcept {
   return data_->large_change;
 }
@@ -60,7 +70,7 @@ scroll_bar& scroll_bar::value(int32 value) {
   return *this;
 }
 
-scroll_bar::scroll_bar(bool vertical) {
+scroll_bar::scroll_bar(bool vertical) : data_(std::make_shared<data>()) {
   set_style(control_styles::user_paint, false);
   set_style(control_styles::standard_click, false);
   set_style(control_styles::use_text_for_accessibility, false);
