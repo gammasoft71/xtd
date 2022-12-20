@@ -41,6 +41,8 @@ namespace xtd {
     /// The following code example demonstrates the use of text box control.
     /// @include text_box.cpp
     class forms_export_ text_box : public text_box_base {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -167,14 +169,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      struct data {
-        xtd::ustring placeholder_text = xtd::ustring::empty_string();
-        bool accepts_return = false;
-        xtd::forms::character_casing character_casing = xtd::forms::character_casing::normal;
-        char32 password_char = 0;
-        bool use_system_password_char = false;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
