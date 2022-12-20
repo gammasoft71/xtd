@@ -48,12 +48,14 @@ namespace xtd {
     /// The following code example demonstrates the use of replace_dialog dialog.
     /// @include replace_dialog.cpp
     class forms_export_ replace_dialog final : public component {
+      struct data;
+      
     public:
       /// @name Constructors
       
       /// @{
       /// @brief Initializes a new instance of the replace_dialog class.
-      replace_dialog() = default;
+      replace_dialog();
       /// @}
       
       /// @cond
@@ -186,21 +188,7 @@ namespace xtd {
       void on_dialog_find(const xtd::drawing::point& location, const ustring& find_string, const ustring& replace_string, bool whole_word, bool match_case);
       void on_dialog_replace(const xtd::drawing::point& location, const ustring& find_string, const ustring& replace_string, bool replace_all, bool whole_word, bool match_case);
 
-      struct data {
-        xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::standard;
-        xtd::ustring find_string;
-        xtd::ustring replace_string;
-        intptr handle = 0;
-        std::optional<xtd::drawing::point> location;
-        bool match_case = false;
-        const iwin32_window* owner;
-        bool show_match_case = true;
-        bool show_whole_word = true;
-        xtd::ustring title;
-        bool visible = false;
-        bool whole_word = false;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }

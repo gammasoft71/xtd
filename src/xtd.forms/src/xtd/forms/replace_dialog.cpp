@@ -15,6 +15,24 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
+struct replace_dialog::data {
+  xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::standard;
+  xtd::ustring find_string;
+  xtd::ustring replace_string;
+  intptr handle = 0;
+  std::optional<xtd::drawing::point> location;
+  bool match_case = false;
+  const iwin32_window* owner;
+  bool show_match_case = true;
+  bool show_whole_word = true;
+  xtd::ustring title;
+  bool visible = false;
+  bool whole_word = false;
+};
+
+replace_dialog::replace_dialog() : data_(std::make_shared<data>()) {
+}
+
 replace_dialog::~replace_dialog() {
   destroy_handle();
 }
