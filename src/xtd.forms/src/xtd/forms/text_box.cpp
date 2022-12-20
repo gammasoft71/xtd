@@ -17,7 +17,15 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-text_box::text_box() {
+struct text_box::data {
+  xtd::ustring placeholder_text = xtd::ustring::empty_string();
+  bool accepts_return = false;
+  xtd::forms::character_casing character_casing = xtd::forms::character_casing::normal;
+  char32 password_char = 0;
+  bool use_system_password_char = false;
+};
+
+text_box::text_box() : data_(std::make_shared<data>()) {
   control_appearance(forms::control_appearance::system);
 }
 
