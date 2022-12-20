@@ -458,6 +458,7 @@ add_sources(
   src/xtd/forms/status_bar.cpp
   src/xtd/forms/status_bar_panel.cpp
   src/xtd/forms/status_bar_panel_control.h
+  src/xtd/forms/status_bar_panel_data.h
   src/xtd/forms/status_bar_panel_renderer.cpp
   src/xtd/forms/status_bar_renderer.cpp
   src/xtd/forms/switch_button.cpp

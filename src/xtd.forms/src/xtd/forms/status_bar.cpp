@@ -13,6 +13,7 @@
 #include "../../../include/xtd/forms/status_bar_panel_renderer.h"
 #include "sizing_grip_control.h"
 #include "status_bar_panel_control.h"
+#include "status_bar_panel_data.h"
 
 using namespace std;
 using namespace xtd;

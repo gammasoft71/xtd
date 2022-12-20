@@ -38,6 +38,8 @@ namespace xtd {
     /// @remarks Although the xtd::forms::status_bar control is typically used to display textual information, you can also provide your own type of display to a xtd::forms::status_bar_panel. The xtd::forms::status_bar_panel::style property enables you to specify how the xtd::forms::status_bar_panel will be drawn. By default, the xtd::forms::status_bar_panel::style property is used to display the value of the xtd::forms::status_bar_panel_style::text property (and an image, if specified in the xtd::forms::status_bar_panel::image property). If the property is set to xtd::forms::status_bar_panel_style::owner_draw, you can draw your own information into the panel. You can use this feature to draw a progress bar or an animated image in the panel.
     /// @remarks When you create an instance of the xtd::forms::status_bar_panel class, the read/write properties are set to initial values. For a list of these values, see the xtd::forms::status_bar_panel::status_bar_panel constructor.
     class status_bar_panel : public xtd::forms::component, public xtd::iequatable<status_bar_panel> {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -55,7 +57,7 @@ namespace xtd {
       /// | xtd::forms::status_bar_panel::text          | xtd::ustring::empty_string                        |
       /// | xtd::forms::status_bar_panel::tool_tip_text | xtd::ustring::empty_string                        |
       /// | xtd::forms::status_bar_panel::width         | 100                                               |
-      status_bar_panel() = default;
+      status_bar_panel();
       /// @}
       
       /// @cond
@@ -247,24 +249,7 @@ namespace xtd {
       
     private:
       friend xtd::forms::status_bar;
-      struct data {
-        xtd::forms::horizontal_alignment alignment = xtd::forms::horizontal_alignment::left;
-        xtd::forms::status_bar_panel_auto_size auto_size = xtd::forms::status_bar_panel_auto_size::none;
-        bool init_mode = false;
-        xtd::forms::status_bar_panel_border_style border_style = xtd::forms::status_bar_panel_border_style::sunken;
-        xtd::forms::control* control = nullptr;
-        intptr handle = 0;
-        xtd::drawing::image image;
-        int32 min_width = 10;
-        xtd::ustring name;
-        xtd::forms::status_bar* parent = nullptr;
-        xtd::forms::status_bar_panel_style style = xtd::forms::status_bar_panel_style::text;
-        std::any tag;
-        xtd::ustring text;
-        xtd::ustring tool_tip_text;
-        int32 width = 100;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
     
     /// @brief Represents a xtd::forms::status_bar_item reference.
