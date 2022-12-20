@@ -96,16 +96,24 @@ namespace xtd {
         }
         
         wxPoint get_inner_box_position() const {
-          if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") return {0, inner_margin + extra_inner_margin_up};
-          if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") return {inner_margin, inner_margin + extra_inner_margin_up};
-          if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix") return {inner_margin, 0};
+#if defined(__WXMSW__)
+          return {0, inner_margin + extra_inner_margin_up};
+#elif defined(__WXOSX__)
+          return {inner_margin, inner_margin + extra_inner_margin_up};
+#elif defined(__WXGTK__)
+          return {inner_margin, 0};
+#endif
           return {0, 0};
         }
         
         wxSize get_inner_box_size() const {
-          if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") return {GetClientSize().GetWidth(), GetClientSize().GetHeight() - GetClientAreaOrigin().y};
-          if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") return {GetClientSize().GetWidth() - GetClientAreaOrigin().x - inner_margin, GetClientSize().GetHeight() - GetClientAreaOrigin().y - inner_margin};
-          if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix") return {GetClientSize().GetWidth() - inner_margin, GetClientSize().GetHeight() - GetClientAreaOrigin().y - inner_margin};
+#if defined(__WXMSW__)
+          return {GetClientSize().GetWidth(), GetClientSize().GetHeight() - GetClientAreaOrigin().y};
+#elif defined(__WXOSX__)
+          return {GetClientSize().GetWidth() - GetClientAreaOrigin().x - inner_margin, GetClientSize().GetHeight() - GetClientAreaOrigin().y - inner_margin};
+#elif defined(__WXGTK__)
+          return {GetClientSize().GetWidth() - inner_margin, GetClientSize().GetHeight() - GetClientAreaOrigin().y - inner_margin};
+#endif
           return GetClientSize();
         }
         
@@ -134,7 +142,10 @@ namespace xtd {
         //bool AcceptsFocusFromKeyboard() const override {return false;}
         
         wxPoint GetClientAreaOrigin() const override {
-          return {inner_margin + (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" ? 2 : 0), inner_margin + (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" ? 13 : 5)};
+#if defined(__WXOSX__)
+          return {inner_margin + 2, inner_margin + 13};
+#endif
+          return {inner_margin, inner_margin + 5};
         }
         
         void DoSetSize(int32 x, int32 y, int32 width, int32 height, int32 sizeFlags = wxSIZE_AUTO) override {
@@ -143,12 +154,21 @@ namespace xtd {
         
         void DoGetClientSize(int32* width, int32* height) const override {
           wxPanel::DoGetSize(width, height);
-          *width = *width - GetClientAreaOrigin().x - inner_margin - (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" ? 2 : 0);
-          *height = *height - GetClientAreaOrigin().y - inner_margin - (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" ? 2 : 0);
+#if defined(__WXOSX__)
+          *width = *width - GetClientAreaOrigin().x - inner_margin - 2;
+          *height = *height - GetClientAreaOrigin().y - inner_margin - 2;
+#else
+          *width = *width - GetClientAreaOrigin().x - inner_margin;
+          *height = *height - GetClientAreaOrigin().y - inner_margin;
+#endif
         }
         
         void DoSetClientSize(int32 width, int32 height) override {
-          DoSetSize(GetPosition().x, GetPosition().y, width + GetClientAreaOrigin().x + inner_margin + (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" ? 2 : 0), height + GetClientAreaOrigin().y + inner_margin + (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" ? 2 : 0));
+#if defined(__WXOSX__)
+          DoSetSize(GetPosition().x, GetPosition().y, width + GetClientAreaOrigin().x + inner_margin + 2, height + GetClientAreaOrigin().y + inner_margin + 2);
+#else
+          DoSetSize(GetPosition().x, GetPosition().y, width + GetClientAreaOrigin().x + inner_margin, height + GetClientAreaOrigin().y + inner_margin);
+#endif
         }
         
       private:
