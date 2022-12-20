@@ -24,6 +24,7 @@ namespace examples {
     }
     
   private:
+    debug_form df;
     h_scroll_bar h_scroll_bar1;
     h_scroll_bar h_scroll_bar2;
   };
