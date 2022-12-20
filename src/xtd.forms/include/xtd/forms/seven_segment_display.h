@@ -42,6 +42,8 @@ namespace xtd {
     /// The following code example demonstrates the use of seven segment display control.
     /// @include seven_segment_display.cpp
     class seven_segment_display : public control {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -194,15 +196,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        std::optional<drawing::color> back_segment_color;
-        double back_segment_opacity = 0.95;
-        forms::segment_style segment_style = forms::segment_style::standard;
-        bool show_back_segment = true;
-        std::optional<int32> thickness;
-        forms::segments value = forms::segments::none;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }

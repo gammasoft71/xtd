@@ -3,7 +3,16 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-seven_segment_display::seven_segment_display() {
+struct seven_segment_display::data {
+  std::optional<drawing::color> back_segment_color;
+  double back_segment_opacity = 0.95;
+  forms::segment_style segment_style = forms::segment_style::standard;
+  bool show_back_segment = true;
+  std::optional<int32> thickness;
+  forms::segments value = forms::segments::none;
+};
+
+seven_segment_display::seven_segment_display() : data_(std::make_shared<data>()) {
   back_color(application::style_sheet().system_colors().control());
   double_buffered(true);
 }
