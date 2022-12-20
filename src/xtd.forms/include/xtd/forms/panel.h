@@ -42,6 +42,8 @@ namespace xtd {
     /// The following code example demonstrates the use of panel container.
     /// @include panel.cpp
     class forms_export_ panel : public scrollable_control {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -100,11 +102,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        forms::border_sides border_sides = forms::border_sides::all;
-        std::optional<forms::border_style> border_style;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
