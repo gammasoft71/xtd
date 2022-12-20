@@ -9,17 +9,21 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtd::forms::visual_styles;
 
-renderer::data::data() {
+struct renderer::data {
+  xtd::ustring name;
   xtd::forms::renderer::button_renderer button_renderer = xtd::forms::renderer::button_renderer(default_button_renderer);
   xtd::forms::renderer::check_box_renderer check_box_renderer = xtd::forms::renderer::check_box_renderer(default_check_box_renderer);
   xtd::forms::renderer::radio_button_renderer radio_button_renderer = xtd::forms::renderer::radio_button_renderer(default_radio_button_renderer);
+};
+
+renderer::renderer() : data_(std::make_shared<data>()) {
 }
 
-renderer::renderer(const xtd::ustring& name) {
+renderer::renderer(const xtd::ustring& name) : data_(std::make_shared<data>()) {
   data_->name = name;
 }
 
-renderer::renderer(const renderer& value) {
+renderer::renderer(const renderer& value) : data_(std::make_shared<data>()) {
   *data_ = *value.data_;
 }
 
