@@ -281,8 +281,9 @@ add_sources(
   include/xtd/forms/tool_bar_button.h
   include/xtd/forms/tool_bar_button_click_event_args.h
   include/xtd/forms/tool_bar_button_click_event_handler.h
-  include/xtd/forms/tool_bar_button_style.h
+  include/xtd/forms/tool_bar_button_ref.h
   include/xtd/forms/tool_bar_button_renderer.h
+  include/xtd/forms/tool_bar_button_style.h
   include/xtd/forms/tool_bar_images.h
   include/xtd/forms/tool_bar_renderer.h
   include/xtd/forms/tool_bar_text_align.h

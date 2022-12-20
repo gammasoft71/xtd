@@ -9,6 +9,7 @@
 #include <xtd/iequatable.h>
 #include <xtd/forms/image_list.h>
 #include <xtd/forms/context_menu.h>
+#include <xtd/forms/tool_bar_button_ref.h>
 #include <xtd/forms/tool_bar_button_style.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -281,13 +282,5 @@ namespace xtd {
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };
-    
-    /// @brief Represents a xtd::forms::tool_bar_item reference.
-    /// @par Namespace
-    /// xtd::forms
-    /// @par Library
-    /// xtd.forms
-    /// @ingroup xtd_forms
-    using tool_bar_button_ref = std::reference_wrapper<tool_bar_button>;
   }
 }
