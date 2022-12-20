@@ -34,7 +34,28 @@ namespace {
   };
 }
 
-tool_bar::tool_bar() {
+struct tool_bar::data {
+  xtd::forms::tool_bar_appearance appearance = xtd::forms::tool_bar_appearance::normal;
+  forms::border_sides border_sides = forms::border_sides::all;
+  std::optional<xtd::forms::border_style> border_style;
+  std::optional<xtd::drawing::size> button_size;
+  bool divider = true;
+  bool drop_down_arrows = true;
+  xtd::forms::image_list image_list;
+  tool_bar_button_collection buttons;
+  bool is_system_tool_bar = false;
+  dock_style non_system_dock = dock_style::none;
+  bool show_icon = true;
+  bool show_text = false;
+  bool show_tool_tips = false;
+  std::vector<std::shared_ptr<xtd::forms::tool_bar::tool_bar_button_control>> stretchable_separators;
+  std::vector<std::shared_ptr<xtd::forms::tool_bar::tool_bar_button_control>> tool_bar_buttons;
+  std::vector<intptr> system_tool_bar_button_handles;
+  xtd::forms::tool_bar_text_align text_align = xtd::forms::tool_bar_text_align::underneath;
+  bool wrappable = false;
+};
+
+tool_bar::tool_bar() : data_(std::make_shared<data>()) {
   data_->buttons.item_added += {*this, &tool_bar::on_item_added};
   data_->buttons.item_updated += {*this, &tool_bar::on_item_updated};
   data_->buttons.item_removed += {*this, &tool_bar::on_item_removed};
