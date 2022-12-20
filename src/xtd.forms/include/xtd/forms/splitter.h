@@ -20,6 +20,8 @@ namespace xtd {
     /// The following code example demonstrates the use of splitter control.
     /// @include splitter.cpp
     class forms_export_ splitter : public xtd::forms::control {
+      struct data;
+      
     public:
       /// @name Constructors
       
@@ -78,19 +80,7 @@ namespace xtd {
       /// @}
       
     private:
-      struct data {
-        bool default_width = true;
-        int32 min_size = 25;
-        //int32 min_size_extra = 25;
-        //int32 split_position = -1;
-        int32 mouse_down_location = -1;
-        xtd::forms::splitter_style splitter_style = xtd::forms::splitter_style::update_children;
-        xtd::forms::cursor previous_control_cursor;
-        xtd::forms::cursor next_control_cursor;
-        control* previous_control = nullptr;
-        control* next_control = nullptr;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }
