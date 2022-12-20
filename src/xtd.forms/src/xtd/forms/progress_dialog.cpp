@@ -8,6 +8,25 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
+struct progress_dialog::data {
+  xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::system;
+  intptr handle = 0;
+  std::vector<xtd::ustring> informations;
+  size_t marquee_animation_speed = 100;
+  int32 maximum = 100;
+  xtd::ustring message;
+  int32 minimum = 0;
+  bool native = false;
+  size_t options = PROGDLG_NORMAL | PROGDLG_NOCANCEL | PROGDLG_NOSKIP;
+  const iwin32_window* owner = nullptr;
+  int32 step = 10;
+  xtd::ustring text;
+  int32 value = 0;
+};
+
+progress_dialog::progress_dialog() : data_(std::make_shared<data>()) {
+}
+
 progress_dialog::~progress_dialog() {
   hide();
 }
