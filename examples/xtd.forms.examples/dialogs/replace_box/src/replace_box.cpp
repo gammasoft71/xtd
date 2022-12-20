@@ -27,5 +27,6 @@ private:
 };
 
 int main() {
+  debug_form df;
   application::run(form1 {});
 }
