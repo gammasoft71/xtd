@@ -3,6 +3,15 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+struct trace_form_base::data {
+  bool need_header = true;
+  bool show_date = true;
+  bool show_time = true;
+  xtd::ustring format = "{0}";
+  xtd::ustring header_separator = "|";
+  xtd::forms::text_box text;
+};
+
 xtd::forms::control& trace_form_base::dock(xtd::forms::dock_style dock) {
   if (dock == xtd::forms::dock_style::left) bounds({xtd::forms::screen::get_working_area(handle()).left(), xtd::forms::screen::get_working_area(handle()).top(), xtd::forms::screen::get_working_area(handle()).width() / 4, xtd::forms::screen::get_working_area(handle()).height()});
   else if (dock == xtd::forms::dock_style::top) bounds({xtd::forms::screen::get_working_area(handle()).left(), xtd::forms::screen::get_working_area(handle()).top(), xtd::forms::screen::get_working_area(handle()).width(), xtd::forms::screen::get_working_area(handle()).height() / 4});
@@ -52,7 +61,7 @@ trace_form_base& trace_form_base::show_time(bool value) {
   return *this;
 }
 
-trace_form_base::trace_form_base(const xtd::ustring& text) {
+trace_form_base::trace_form_base(const xtd::ustring& text) : data_(std::make_shared<data>()) {
   close_box(false);
   minimize_box(false);
   name("9f5767d6-7a21-4ebe-adfe-2427b2024a55");
