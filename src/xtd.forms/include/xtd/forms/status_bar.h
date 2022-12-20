@@ -58,6 +58,7 @@ namespace xtd {
     /// @remarks If you want to determine when a xtd::forms::status_bar_panel object within a xtd::forms::status_bar control is clicked, you can create an event handler for the xtd::forms::status_bar::panel_click event. To perform owner-draw operations on a panel, you can create an event handler for the xtd::forms::status_bar::draw_item event. The event data passed to the event handler provides information on the panel to draw and a xtd::drawing::graphics object to use to perform drawing tasks.
     /// @remarks When you create an instance of xtd::forms::status_bar, the read/write properties are set to initial values. For a list of these values, see the xtd::forms::status_bar constructor.
     class forms_export_ status_bar : public control {
+      struct data;
       class status_bar_panel_control;
       class sizing_grip_control;
 
@@ -202,20 +203,7 @@ namespace xtd {
       void resize_spring_panels();
       void update_status_bar_panel_control(intptr handle, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, xtd::forms::horizontal_alignment alignment, xtd::forms::status_bar_panel_auto_size auto_size, xtd::forms::status_bar_panel_border_style border_style, xtd::forms::status_bar_panel_style panel_style, int32 min_width, int32 width);
       
-      struct data {
-        status_bar_panel_collection panels;
-        bool is_system_status_bar = false;
-        dock_style non_system_dock = dock_style::none;
-        bool show_panels = false;
-        bool show_tool_tips = false;
-        bool sizing_grip = true;
-        panel main_panel;
-        std::shared_ptr<class sizing_grip_control> sizing_grip_control;
-        std::vector<std::shared_ptr<xtd::forms::status_bar::status_bar_panel_control>> spring_panels;
-        std::vector<std::shared_ptr<xtd::forms::status_bar::status_bar_panel_control>> status_bar_panels;
-        std::vector<intptr> system_status_bar_panel_handles;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::shared_ptr<data> data_;
     };
   }
 }

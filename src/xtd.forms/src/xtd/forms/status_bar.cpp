@@ -35,7 +35,21 @@ namespace {
   };
 }
 
-status_bar::status_bar() {
+struct status_bar::data {
+  status_bar_panel_collection panels;
+  bool is_system_status_bar = false;
+  dock_style non_system_dock = dock_style::none;
+  bool show_panels = false;
+  bool show_tool_tips = false;
+  bool sizing_grip = true;
+  panel main_panel;
+  std::shared_ptr<class sizing_grip_control> sizing_grip_control;
+  std::vector<std::shared_ptr<xtd::forms::status_bar::status_bar_panel_control>> spring_panels;
+  std::vector<std::shared_ptr<xtd::forms::status_bar::status_bar_panel_control>> status_bar_panels;
+  std::vector<intptr> system_status_bar_panel_handles;
+};
+
+status_bar::status_bar() : data_(std::make_shared<data>()) {
   data_->main_panel.parent(*this);
   data_->main_panel.dock(dock_style::fill);
   data_->main_panel.paint += {*this, &status_bar::on_main_panel_paint};
