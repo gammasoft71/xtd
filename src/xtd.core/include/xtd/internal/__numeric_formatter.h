@@ -2,7 +2,7 @@
 /// @brief Contains __numeric_formatter method.
 #pragma once
 /// @cond
-#ifndef __XTD_CORE_INTERNAL__
+#if !defined(__XTD_CORE_INTERNAL__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond

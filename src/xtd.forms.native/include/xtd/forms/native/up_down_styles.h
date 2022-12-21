@@ -3,14 +3,14 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
-#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#if !defined(__XTD_FORMS_NATIVE_LIBRARY__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
 
 #include <cstddef>
 
-#ifndef UDS_WRAP
+#if !defined(UDS_WRAP)
 /// @brief Causes the position to "wrap" if it is incremented or decremented beyond the ending or beginning of the range.
 /// @par Library
 /// xtd.forms.native

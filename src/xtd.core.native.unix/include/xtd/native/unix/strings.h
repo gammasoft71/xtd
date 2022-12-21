@@ -1,6 +1,6 @@
 #pragma once
 /// @cond
-#ifndef __XTD_CORE_NATIVE_LIBRARY__
+#if !defined(__XTD_CORE_NATIVE_LIBRARY__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond

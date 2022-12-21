@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
-#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#if !defined(__XTD_FORMS_NATIVE_LIBRARY__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
@@ -13,7 +13,7 @@
 
 // https://docs.microsoft.com/en-us/cpp/mfc/reference/styles-used-by-mfc
 
-#ifndef WS_OVERLAPPED
+#if !defined(WS_OVERLAPPED)
 /// @brief Creates an overlapped window. An overlapped window usually has a caption and a border.
 /// @par Library
 /// xtd.forms.native

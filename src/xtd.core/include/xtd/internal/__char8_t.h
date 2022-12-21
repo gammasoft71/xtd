@@ -2,7 +2,7 @@
 /// @brief Contains internal char8_t type.
 #pragma once
 /// @cond
-#ifndef __XTD_CORE_CHAR8_T_INTERNAL__
+#if !defined(__XTD_CORE_CHAR8_T_INTERNAL__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond

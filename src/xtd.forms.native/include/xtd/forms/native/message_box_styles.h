@@ -3,14 +3,14 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
-#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#if !defined(__XTD_FORMS_NATIVE_LIBRARY__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
 
 #include <cstddef>
 
-#ifndef MB_OK
+#if !defined(MB_OK)
 /// @brief The message box contains one push button: OK. This is the default.
 /// @par Library
 /// xtd.forms.native

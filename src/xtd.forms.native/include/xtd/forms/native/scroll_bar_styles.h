@@ -3,14 +3,14 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
-#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#if !defined(__XTD_FORMS_NATIVE_LIBRARY__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
 
 #include <cstddef>
 
-#ifndef SBS_HORZ
+#if !defined(SBS_HORZ)
 // Scroll Bar Control Styles
 
 /// @brief Designates a horizontal scroll bar. If neither the SBS_BOTTOMALIGN nor SBS_TOPALIGN style is specified, the scroll bar has the height, width, and position specified by the x, y, nWidth, and nHeight parameters of CreateWindowEx.

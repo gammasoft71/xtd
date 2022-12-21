@@ -3,14 +3,14 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
-#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#if !defined(__XTD_FORMS_NATIVE_LIBRARY__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
 
 #include <cstddef>
 
-#ifndef TBS_AUTOTICKS
+#if !defined(TBS_AUTOTICKS)
 /// @brief The trackbar control has a tick mark for each increment in its range of values.
 /// @par Namespace
 /// xtd::forms::native

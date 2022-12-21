@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
-#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#if !defined(__XTD_FORMS_NATIVE_LIBRARY__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
@@ -366,7 +366,7 @@ constexpr size_t VK_META_MODIFIER = 0x00100000;
 /// @warning Internal use only
 constexpr size_t VK_FUNCTION_MODIFIER = 0x00200000;
 
-#ifndef VK_LBUTTON
+#if !defined(VK_LBUTTON)
 /// @brief
 /// @par Library
 /// xtd.forms.native

@@ -3,14 +3,14 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
-#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#if !defined(__XTD_FORMS_NATIVE_LIBRARY__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
 
 #include <cstddef>
 
-#ifndef CBS_SIMPLE
+#if !defined(CBS_SIMPLE)
 /// @brief Displays the list box at all times. The current selection in the list box is displayed in the edit control.
 /// @par Library
 /// xtd.forms.native

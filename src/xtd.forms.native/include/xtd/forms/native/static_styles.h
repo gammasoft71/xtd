@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
-#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#if !defined(__XTD_FORMS_NATIVE_LIBRARY__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
@@ -12,7 +12,7 @@
 
 // https://docs.microsoft.com/en-us/cpp/mfc/reference/styles-used-by-mfc
 
-#ifndef SS_LEFT
+#if !defined(SS_LEFT)
 /// @brief Designates a simple rectangle and displays the given text flush-left in the rectangle. The text is formatted before it is displayed. Words that would extend past the end of a line are automatically wrapped to the beginning of the next flush-left line.
 /// @par Library
 /// xtd.forms.native

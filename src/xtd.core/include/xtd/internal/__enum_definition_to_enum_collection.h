@@ -2,7 +2,7 @@
 /// @brief Contains __enum_definition_to_enum_collection__ method.
 #pragma once
 /// @cond
-#ifndef __XTD_CORE_INTERNAL__
+#if !defined(__XTD_CORE_INTERNAL__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond

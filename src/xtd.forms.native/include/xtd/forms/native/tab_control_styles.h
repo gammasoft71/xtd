@@ -3,14 +3,14 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
-#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#if !defined(__XTD_FORMS_NATIVE_LIBRARY__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
 
 #include <cstddef>
 
-#ifndef TCS_SCROLLOPPOSITE
+#if !defined(TCS_SCROLLOPPOSITE)
 /// @brief Unneeded tabs scroll to the opposite side of the control when a tab is selected.
 /// @par Library
 /// xtd.forms.native

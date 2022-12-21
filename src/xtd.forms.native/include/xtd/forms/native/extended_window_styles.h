@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
-#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#if !defined(__XTD_FORMS_NATIVE_LIBRARY__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
@@ -13,7 +13,7 @@
 
 // https://docs.microsoft.com/en-us/cpp/mfc/reference/styles-used-by-mfc
 
-#ifndef WS_EX_DLGMODALFRAME
+#if !defined(WS_EX_DLGMODALFRAME)
 /// @brief Designates a window with a double border that may (optionally) be created with a title bar when you specify the WS_CAPTION style flag in the dwStyle parameter.
 /// @par Library
 /// xtd.forms.native
