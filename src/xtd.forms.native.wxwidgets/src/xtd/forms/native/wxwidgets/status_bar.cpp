@@ -83,12 +83,14 @@ bool status_bar::set_system_status_bar(intptr control, intptr status_bar) {
 }
 
 bool status_bar::sizing_grip() {
-  if (environment::os_version().is_macos()) return false;
+  static auto is_macos = environment::os_version().is_macos();
+  if (is_macos) return false;
   return true;
 }
 
 xtd::ustring status_bar::sizing_grip_cursor_name() {
-  if (environment::os_version().is_linux()) return "pan_se";
+  static auto is_linux = environment::os_version().is_linux();
+  if (is_linux) return "pan_se";
   return "size_nwse";
 }
 
