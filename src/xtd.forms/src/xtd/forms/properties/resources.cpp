@@ -10,7 +10,9 @@ using namespace forms;
 using namespace forms::properties;
 
 namespace {
-  ustring get_os_postfix() noexcept {return environment::os_version().is_windows_platform() ? "_w" : environment::os_version().is_unix_platform() ? "_g" : environment::os_version().is_macos_platform() ? "_m" : "";}
+  ustring get_os_postfix() noexcept {
+    return environment::os_version().is_windows_platform() ? "_w" : environment::os_version().is_unix_platform() ? "_g" : environment::os_version().is_macos_platform() ? "_m" : "";
+  }
 }
 
 const bitmap& resources::cursor_arrow() {
