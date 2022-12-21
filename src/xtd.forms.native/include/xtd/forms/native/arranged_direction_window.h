@@ -3,14 +3,14 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
-#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#if !defined(__XTD_FORMS_NATIVE_LIBRARY__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
 
 #include <cstddef>
 
-#ifndef ARW_BOTTOMLEFT
+#if !defined(ARW_BOTTOMLEFT)
 /// @brief Start at the lower-left corner of the work area.
 /// @par Library
 /// xtd.forms.native

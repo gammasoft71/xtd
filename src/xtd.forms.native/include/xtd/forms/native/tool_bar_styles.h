@@ -3,14 +3,14 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
-#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#if !defined(__XTD_FORMS_NATIVE_LIBRARY__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
 
 #include <cstddef>
 
-#ifndef TBSTYLE_TOOLTIPS
+#if !defined(TBSTYLE_TOOLTIPS)
 /// @brief Creates a tooltip control that an application can use to display descriptive text for the buttons in the toolbar.
 /// @par Library
 /// xtd.forms.native

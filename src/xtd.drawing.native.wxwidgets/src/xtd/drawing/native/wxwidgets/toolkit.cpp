@@ -45,7 +45,7 @@ namespace {
 
 intptr toolkit::initialize() {
   if (wxTheApp) return 0;
-  #ifdef _MSC_VER
+  #if defined(_MSC_VER)
   // Workaround : Dump memory leak : Remove temporary memory check...
   _CrtSetDbgFlag(_CRTDBG_CHECK_DEFAULT_DF);
   #endif

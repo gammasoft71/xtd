@@ -4,7 +4,7 @@
 #pragma once
 #include <xtd/types.h>
 
-#ifndef WM_NULL
+#if !defined(WM_NULL)
 struct HWND__ {};
 typedef struct HWND__* HWND;
 

@@ -3,14 +3,14 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
-#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#if !defined(__XTD_FORMS_NATIVE_LIBRARY__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
 
 #include <cstddef>
 
-#ifndef PBS_SMOOTH
+#if !defined(PBS_SMOOTH)
 /// @brief The progress bar displays progress status in a smooth scrolling bar instead of the default segmented bar.
 /// @par Library
 /// xtd.forms.native

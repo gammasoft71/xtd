@@ -3,14 +3,14 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
-#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#if !defined(__XTD_FORMS_NATIVE_LIBRARY__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
 
 #include <cstddef>
 
-#ifndef CS_VREDRAW
+#if !defined(CS_VREDRAW)
 /// @brief Redraws the entire window if a movement or size adjustment changes the height of the client area.
 /// @par Library
 /// xtd.forms.native

@@ -3,14 +3,14 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
-#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#if !defined(__XTD_FORMS_NATIVE_LIBRARY__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
 
 #include <cstddef>
 
-#ifndef BST_UNCHECKED
+#if !defined(BST_UNCHECKED)
 /// @brief Creates a push button that posts a WM_COMMAND message to the owner window when the user selects the button.
 /// @par Library
 /// xtd.forms.native

@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
-#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#if !defined(__XTD_FORMS_NATIVE_LIBRARY__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
@@ -16,7 +16,7 @@
 /// @ingroup xtd_forms_native id
 /// @warning Internal use only
 constexpr size_t IDNONE = 0;
-#ifndef IDOK
+#if !defined(IDOK)
 /// @brief The OK button was selected.
 /// @par Library
 /// xtd.forms.native
@@ -85,7 +85,7 @@ constexpr size_t IDTRYAGAIN = 10;
 constexpr size_t IDCONTINUE = 11;
 #endif
 
-#ifndef IDTIMEOUT
+#if !defined(IDTIMEOUT)
 /// @brief The bWait parameter was TRUE and the time-out interval elapsed.
 /// @par Library
 /// xtd.forms.native

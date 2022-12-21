@@ -1,6 +1,6 @@
 #pragma once
 /// @cond
-#ifndef __XTD_DRAWING_NATIVE_LIBRARY__
+#if !defined(__XTD_DRAWING_NATIVE_LIBRARY__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
@@ -18,9 +18,9 @@ namespace xtd {
   namespace drawing {
     namespace native {
       class wx_application : public wxApp {
-        #ifndef WM_ACTIVATEAPP
+#if !defined(WM_ACTIVATEAPP)
         static constexpr int32 WM_ACTIVATEAPP = 0x001C;
-        #endif
+#endif
         static constexpr int32 WM_APPIDLE = 0x0401;
       public:
         wx_application() = default;

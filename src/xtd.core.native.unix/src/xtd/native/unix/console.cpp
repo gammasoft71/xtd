@@ -16,7 +16,7 @@
 #include <sys/ioctl.h>
 
 #if __APPLE__
-#ifndef KIOCSOUND
+#if !defined(KIOCSOUND)
 const int_least32_t KIOCSOUND = 0x4B2F;
 #endif
 #else

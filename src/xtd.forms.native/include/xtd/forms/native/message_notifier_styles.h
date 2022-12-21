@@ -1,5 +1,5 @@
 #pragma once
-#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#if !defined(__XTD_FORMS_NATIVE_LIBRARY__)
 #error "Do not include this file: Internal use only"
 #endif
 
@@ -8,7 +8,7 @@
 
 // https://docs.microsoft.com/en-us/windows/win32/api/shellapi/ns-shellapi-notifyicondataa
 
-#ifndef NIIF_INFO
+#if !defined(NIIF_INFO)
 
 // An information icon.
 constexpr size_t NIIF_INFO = 0x00000001;

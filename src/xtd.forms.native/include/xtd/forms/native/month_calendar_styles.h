@@ -3,14 +3,14 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
-#ifndef __XTD_FORMS_NATIVE_LIBRARY__
+#if !defined(__XTD_FORMS_NATIVE_LIBRARY__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
 
 #include <cstddef>
 
-#ifndef MCS_DAYSTATE
+#if !defined(MCS_DAYSTATE)
 /// @brief The month calendar sends MCN_GETDAYSTATE notifications to request information about which days should be displayed in bold.
 /// @par Library
 /// xtd.forms.native

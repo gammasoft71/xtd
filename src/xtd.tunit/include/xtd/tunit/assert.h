@@ -13,7 +13,7 @@
 #include <string>
 
 /// @cond
-#ifdef assert
+#if defined(assert)
 #undef assert
 #endif
 /// @endcond
