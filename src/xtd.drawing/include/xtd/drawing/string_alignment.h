@@ -4,10 +4,10 @@
 #pragma once
 #include <xtd/enum.h>
 
-#if defined(_WIN32)
+/// @cond
 #undef far
 #undef near
-#endif
+/// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
