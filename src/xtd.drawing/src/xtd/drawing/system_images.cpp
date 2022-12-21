@@ -157,7 +157,8 @@ image system_images::from_name(const ustring& theme, const ustring& name, const 
 }
 
 ustring system_images::default_theme() noexcept {
-  return xtd::environment::os_version().desktop_environment() == "" ? "symbolic" :  xtd::environment::os_version().desktop_environment();
+  static auto default_theme = xtd::environment::os_version().desktop_environment() == "" ? "symbolic" :  xtd::environment::os_version().desktop_environment();
+  return default_theme;
 }
 
 ustring system_images::fallback_theme() noexcept {
