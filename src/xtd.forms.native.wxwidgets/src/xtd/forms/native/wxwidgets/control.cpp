@@ -10,7 +10,7 @@
 #include <xtd/drawing/native/hdc_wrapper.h>
 #include <xtd/drawing/native/system_colors.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
-#if defined(_WIN32)
+#if defined(__WXMSW__)
 #include <winsock2.h>
 #include <Windows.h>
 #include <windowsx.h>

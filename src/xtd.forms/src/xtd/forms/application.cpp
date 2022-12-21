@@ -1,7 +1,4 @@
 /// @todo Remove following includes when xtd::diagnostics::process will used for restart see below..
-#if !defined(_WIN32)
-#include <unistd.h>
-#endif
 #include <xtd/io/path.h>
 #include <xtd/date_time.h>
 #include <xtd/environment.h>

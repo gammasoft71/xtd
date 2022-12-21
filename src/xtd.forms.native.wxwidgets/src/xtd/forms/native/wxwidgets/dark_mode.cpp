@@ -8,7 +8,7 @@
 
 using namespace xtd;
 
-#if defined(_WIN32)
+#if defined(__WXMSW__)
 #include <Windows.h>
 #include <Uxtheme.h>
 #undef max

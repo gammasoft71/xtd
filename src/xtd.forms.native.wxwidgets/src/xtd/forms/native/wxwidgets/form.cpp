@@ -2,7 +2,8 @@
 #include <thread>
 #include <xtd/argument_exception.h>
 #include <xtd/not_implemented_exception.h>
-#if defined(_WIN32)
+#include <wx/apptrait.h>
+#if defined(__WXMSW__)
 #include <winsock2.h>
 #include <Windows.h>
 #include <Windowsx.h>
@@ -17,7 +18,6 @@
 #include <xtd/forms/native/screen.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_form.h"
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <wx/apptrait.h>
 
 using namespace std::literals;
 using namespace std::this_thread;
