@@ -47,7 +47,7 @@ bool __xtd_gtk_enable_menu_images__ = false;
 void __gtk_button_images__(bool enable);
 void __gtk_menu_images__(bool enable);
 void __gtk_application_prefer_dark_theme__(bool prefer_dark_theme);
-#elif defined(__APPLE__)
+#elif defined(__WXOSX__)
 void __xtd_macos_enable_dark_mode__();
 void __xtd_macos_enable_light_mode__();
 bool __xtd_macos_dark_mode_enabled__();
@@ -97,7 +97,7 @@ bool application::dark_mode_enabled() {
    return __xtd_win32_enable_dark_mode__ != 0 && (value == 0 || __xtd_win32_enable_dark_mode__ == 1);
    #elif defined(__WXGTK__)
    return drawing::system_colors::window().get_lightness() < 0.5;
-   #elif defined(__APPLE__)
+   #elif defined(__WXOSX__)
    return __xtd_macos_dark_mode_enabled__();
    #endif
    */
@@ -122,7 +122,7 @@ void application::enable_dark_mode() {
   __xtd_win32_enable_dark_mode__ = 1;
   #elif defined(__WXGTK__)
   __xtd_gtk_enable_dark_mode__ = true;
-  #elif defined(__APPLE__)
+  #elif defined(__WXOSX__)
   initialize();
   __xtd_macos_enable_dark_mode__();
   #endif
@@ -139,7 +139,7 @@ void application::enable_light_mode() {
   __xtd_win32_enable_dark_mode__ = 0;
   #elif defined(__WXGTK__)
   __xtd_gtk_enable_dark_mode__ = false;
-  #elif defined(__APPLE__)
+  #elif defined(__WXOSX__)
   initialize(); // Must be first
   __xtd_macos_enable_light_mode__();
   #endif
@@ -193,7 +193,7 @@ void application::initialize() {
   __gtk_button_images__(__xtd_gtk_enable_button_images__);
   __gtk_menu_images__(__xtd_gtk_enable_menu_images__);
   __gtk_application_prefer_dark_theme__(__xtd_gtk_enable_dark_mode__);
-  #elif defined(__APPLE__)
+  #elif defined(__WXOSX__)
   wxMenuBar::MacSetCommonMenuBar(__create_default_menu_bar__());
   #endif
 }

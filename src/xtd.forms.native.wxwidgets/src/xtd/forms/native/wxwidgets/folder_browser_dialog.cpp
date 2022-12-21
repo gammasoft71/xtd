@@ -67,7 +67,7 @@ void folder_browser_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed
 #else
 namespace {
   // Workaround : with wxWidgets version <= 3.1.4 wxDirDialog ShowWindowModal method doesn't exists on other platform that macOS
-  #if defined(__APPLE__)
+  #if defined(__WXOSX__)
   using DirDialog = wxDirDialog;
   #else
   class DirDialog : public wxDirDialog {

@@ -66,7 +66,7 @@ bool form::full_screen(intptr control) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return false;
   }
-  #if defined(__APPLE__)
+  #if defined(__WXOSX__)
   return __toggle_full_screen_frame__(static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()));
   #else
   return static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->IsFullScreen();
@@ -79,7 +79,7 @@ void form::full_screen(intptr control, bool full_screen) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  #if defined(__APPLE__)
+  #if defined(__WXOSX__)
   __toggle_full_screen_frame__(static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()), full_screen);
   #else
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->ShowFullScreen(full_screen, wxFULLSCREEN_NOMENUBAR | wxFULLSCREEN_NOBORDER | wxFULLSCREEN_NOCAPTION);
@@ -190,7 +190,7 @@ void form::show_sheet(intptr control) {
     return;
   }
   if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("show_sheet work only with dialog"_t, current_stack_frame_);
-  #if defined(__APPLE__)
+  #if defined(__WXOSX__)
   static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())->ShowWindowModal();
   #else
   static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())->ShowModal();
@@ -205,7 +205,7 @@ int32 form::show_sheet_dialog(intptr control) {
   }
   if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("show_sheet_dialog work only with dialog"_t, current_stack_frame_);
   auto dialog = static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control());
-  #if defined(__APPLE__)
+  #if defined(__WXOSX__)
   if (!dialog->GetParent()) return dialog->ShowModal();
   int32 result = wxID_ANY;
   dialog->ShowWindowModal();

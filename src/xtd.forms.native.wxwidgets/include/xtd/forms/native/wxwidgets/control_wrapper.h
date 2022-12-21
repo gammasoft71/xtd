@@ -177,7 +177,7 @@ namespace xtd {
 
         control_handler* event_handler_;
         bool process_result_ = true;
-        #if defined(__APPLE__)
+        #if defined(__WXOSX__)
         static constexpr size_t functionRawKeyCode = 0x0000003F;
         #endif
         bool functionKeyModifierIsDown = false;

@@ -15,7 +15,7 @@
 #include "wx_user_window.h"
 #include "control_handler.h"
 
-#if defined(__APPLE__)
+#if defined(__WXOSX__)
 void __set_button_bezel_style__(wxAnyButton* control, xtd::int32 height);
 #endif
 

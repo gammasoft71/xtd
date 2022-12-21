@@ -16,7 +16,7 @@
 #include "control_handler.h"
 #include "wx_user_window.h"
 
-#if defined(__APPLE__)
+#if defined(__WXOSX__)
 void __set_button_bezel_style__(wxAnyButton* control, xtd::int32 height);
 #endif
 
@@ -60,14 +60,14 @@ namespace xtd {
         }
         
         virtual void SetPosition(const wxPoint& pt) override {
-          #if defined(__APPLE__)
+          #if defined(__WXOSX__)
           if (!owner_draw_) __set_button_bezel_style__((wxAnyButton*)control(), control()->GetSize().GetHeight());
           #endif
           control_handler::SetPosition(pt);
         }
         
         void SetSize(xtd::int32 width, xtd::int32 height) override {
-          #if defined(__APPLE__)
+          #if defined(__WXOSX__)
           if (!owner_draw_) __set_button_bezel_style__((wxAnyButton*)control(), height);
           #endif
           control_handler::SetSize(width, height);
