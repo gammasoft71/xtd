@@ -1,6 +1,7 @@
 #define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/interlocked.h>
+#include <xtd/native/types.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <Windows.h>
 
@@ -25,8 +26,8 @@ int_least64_t interlocked::compare_exchange(int_least64_t& location, int_least64
   return InterlockedCompareExchange64((long long*)&location, value, comparand);
 }
 
-interlocked::llong_t interlocked::compare_exchange(llong_t& location, llong_t value, llong_t comparand) {
-  return InterlockedCompareExchange((llong_t*)&location, value, comparand);
+__slong__ interlocked::compare_exchange(__slong__& location, __slong__ value, __slong__ comparand) {
+  return InterlockedCompareExchange((__slong__*)&location, value, comparand);
 }
 
 #pragma warning(push)
@@ -56,8 +57,8 @@ int_least64_t interlocked::exchange(int_least64_t& location, int_least64_t value
   return InterlockedExchange64((long long*)&location, value);
 }
 
-interlocked::llong_t interlocked::exchange(llong_t& location, llong_t value) {
-  return InterlockedExchange((llong_t*)&location, value);
+__slong__ interlocked::exchange(__slong__& location, __slong__ value) {
+  return InterlockedExchange((__slong__*)&location, value);
 }
 
 #pragma warning(push)

@@ -102,8 +102,9 @@ namespace xtd {
           return {inner_margin, inner_margin + extra_inner_margin_up};
 #elif defined(__WXGTK__)
           return {inner_margin, 0};
+#else
+          return { 0, 0 };
 #endif
-          return {0, 0};
         }
         
         wxSize get_inner_box_size() const {
@@ -113,8 +114,9 @@ namespace xtd {
           return {GetClientSize().GetWidth() - GetClientAreaOrigin().x - inner_margin, GetClientSize().GetHeight() - GetClientAreaOrigin().y - inner_margin};
 #elif defined(__WXGTK__)
           return {GetClientSize().GetWidth() - inner_margin, GetClientSize().GetHeight() - GetClientAreaOrigin().y - inner_margin};
-#endif
+#else
           return GetClientSize();
+#endif
         }
         
         
@@ -144,8 +146,9 @@ namespace xtd {
         wxPoint GetClientAreaOrigin() const override {
 #if defined(__WXOSX__)
           return {inner_margin + 2, inner_margin + 13};
-#endif
+#else
           return {inner_margin, inner_margin + 5};
+#endif
         }
         
         void DoSetSize(int32 x, int32 y, int32 width, int32 height, int32 sizeFlags = wxSIZE_AUTO) override {
