@@ -276,8 +276,7 @@ xtd::drawing::image tool_bar_images::help_about(const xtd::ustring& theme, const
 }
 
 xtd::drawing::size tool_bar_images::size() {
-  static auto is_windows = xtd::environment::os_version().is_windows_platform();
-  return is_windows ? xtd::drawing::size {16, 16} : xtd::drawing::size {64, 64};
+  return xtd::environment::os_version().is_windows_platform() ? xtd::drawing::size {16, 16} : xtd::drawing::size {64, 64};
 }
 
 xtd::drawing::image tool_bar_images::from_name(const xtd::ustring& name) {
