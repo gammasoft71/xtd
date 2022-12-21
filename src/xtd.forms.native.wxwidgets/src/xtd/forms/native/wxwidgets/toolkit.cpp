@@ -19,5 +19,6 @@ xtd::version toolkit::version() {
 }
 
 bool toolkit::is_operating_system_double_buffered() {
-  return !xtd::environment::os_version().is_windows_platform();
+  static auto is_operating_system_double_buffered = !xtd::environment::os_version().is_windows_platform();
+  return is_operating_system_double_buffered;
 }
