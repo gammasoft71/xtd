@@ -24,7 +24,7 @@ namespace {
   }
   
   static std::tm to_universal_time(time_t time) noexcept {return *std::gmtime(&time);}
-  #if !defined (_WIN32)
+  #if !defined(_WIN32)
   static std::tm to_universal_time(const std::chrono::system_clock::time_point& time) noexcept {return to_universal_time(std::chrono::system_clock::to_time_t(time));}
   #endif
   static std::tm to_universal_time(std::tm time) noexcept {
@@ -43,7 +43,7 @@ namespace {
     time.tm_wday = 0;
     time.tm_yday = 0;
     time.tm_isdst = -1;
-    #if !defined (_WIN32)
+    #if !defined(_WIN32)
     time.tm_gmtoff = 0;
     time.tm_zone = nullptr;
     #endif

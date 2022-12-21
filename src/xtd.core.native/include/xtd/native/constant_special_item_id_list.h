@@ -11,7 +11,7 @@
 
 #include <cstdint>
 
-#if !defined (CSIDL_DESKTOP)
+#if !defined(CSIDL_DESKTOP)
 /// @brief The logical Desktop rather than the physical file system location.
 /// @par Library
 /// xtd.core.native

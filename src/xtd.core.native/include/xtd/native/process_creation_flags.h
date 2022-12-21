@@ -11,7 +11,7 @@
 
 #include <cstdint>
 
-#if !defined (DEBUG_PROCESS)
+#if !defined(DEBUG_PROCESS)
 /// @brief The calling thread starts and debugs the new process and all child processes created by the new process. It can receive all related debug events using the WaitForDebugEvent function.
 /// @par Library
 /// xtd.core.native
