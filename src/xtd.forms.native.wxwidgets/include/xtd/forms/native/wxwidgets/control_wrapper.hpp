@@ -151,7 +151,7 @@ namespace xtd::forms::native {
     else {
       switch (key_event.GetKeyCode()) {
         case WXK_NONE:
-#if defined(__APPLE__)
+#if defined(__WXOSX__)
           if (key_event.GetRawKeyCode() == functionRawKeyCode) key_data = VK_FUNCTION;
 #endif
           break;
@@ -169,7 +169,7 @@ namespace xtd::forms::native {
         case WXK_CLEAR: key_data = VK_CLEAR; break;
         case WXK_SHIFT: key_data = VK_SHIFT; break;
         case WXK_ALT: key_data = VK_MENU; break;
-#if defined(__APPLE__)
+#if defined(__WXOSX__)
         case WXK_RAW_CONTROL: key_data = VK_CONTROL; break;
         case WXK_CONTROL: key_data = VK_COMMAND; break;
 #else
@@ -305,7 +305,7 @@ namespace xtd::forms::native {
     }
     
     if ((key_event.GetModifiers() & wxMOD_ALT) == wxMOD_ALT) key_data += VK_ALT_MODIFIER;
-#if defined(__APPLE__)
+#if defined(__WXOSX__)
     if ((key_event.GetModifiers() & wxMOD_CONTROL) == wxMOD_CONTROL) key_data += VK_COMMAND_MODIFIER;
     if ((key_event.GetModifiers() & wxMOD_RAW_CONTROL) == wxMOD_RAW_CONTROL) key_data += VK_CONTROL_MODIFIER;
     if (functionKeyModifierIsDown) key_data += VK_FUNCTION_MODIFIER;
@@ -337,7 +337,7 @@ namespace xtd::forms::native {
   inline int32 control_wrapper<control_t>::get_virtual_keys(const wxMouseState& mouse_state) {
     int32 virtual_keys = 0;
     
-#if defined(__APPLE__)
+#if defined(__WXOSX__)
     if (mouse_state.RawControlDown()) virtual_keys |= MK_COMMAND;
     if (mouse_state.ControlDown()) virtual_keys |= MK_CONTROL;
 #else
@@ -579,7 +579,7 @@ namespace xtd::forms::native {
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_key_down(wxEvent& event) {
-#if defined(__APPLE__)
+#if defined(__WXOSX__)
     if (static_cast<wxKeyEvent&>(event).GetKeyCode() == WXK_NONE && static_cast<wxKeyEvent&>(event).GetRawKeyCode() == functionRawKeyCode) {
       if (!functionKeyModifierIsDown) functionKeyModifierIsDown = true;
       else {

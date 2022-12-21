@@ -1,4 +1,4 @@
-#if defined(__APPLE__)
+#if defined(__WXOSX__)
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/dialog_box_identifiers.h>

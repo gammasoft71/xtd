@@ -78,7 +78,7 @@ xtd::drawing::size system_information::caption_button_size() {
 int32 system_information::caption_height() {
   #if defined(__WXMSW__)
   return wxSystemSettings::GetMetric(wxSystemMetric::wxSYS_CAPTION_Y);
-  #elif defined(__APPLE__)
+  #elif defined(__WXOSX__)
   // return 22;
   wxFrame* frame = new wxFrame(nullptr, wxID_ANY, wxEmptyString);
   int32 height = frame->GetSize().GetHeight() - frame->GetClientSize().GetHeight();

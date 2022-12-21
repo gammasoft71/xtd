@@ -38,7 +38,7 @@ int32 message_box::show(intptr control, const ustring& text, const ustring& capt
 void message_box::show_sheet(xtd::delegate<void(int32)> on_dialog_closed, intptr control, const ustring& text, const ustring& caption, uint32 style, bool display_help_button) {
   on_dialog_closed(show(control, text, caption, style, display_help_button));
 }
-#elif !defined(__APPLE__)
+#elif !defined(__WXOSX__)
 namespace {
   int32 convert_to_dialog_result(int32 wx_result, uint32 style) {
     switch (wx_result) {

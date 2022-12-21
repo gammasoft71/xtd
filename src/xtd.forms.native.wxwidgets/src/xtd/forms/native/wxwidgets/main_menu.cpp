@@ -10,7 +10,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-#if defined(__APPLE__)
+#if defined(__WXOSX__)
 namespace {
   static bool is_help_item(const xtd::ustring& text) {
     wxString itemText = text;
@@ -46,7 +46,7 @@ void main_menu::insert_item(intptr main_menu, size_t pos, intptr menu_item, cons
   
   auto wx_main_menu = reinterpret_cast<wxMenuBar*>(main_menu);
   
-  #if defined(__APPLE__)
+  #if defined(__WXOSX__)
   // If the user doesn't have a "Window" menu and has a "Help" menu, the "Window" menu will be generated and
   // added automatically by macOS and added at the end of the menu.
   // Generally we want the last menu to be the "Help" menu, so we will create the "Window" menu so that

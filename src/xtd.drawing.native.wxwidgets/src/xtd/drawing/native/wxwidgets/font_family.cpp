@@ -51,7 +51,7 @@ ustring font_family::generic_serif_name() {
    */
   #if defined(__WXMSW__)
   return L"Times New Roman";
-  #elif defined(__APPLE__)
+  #elif defined(__WXOSX__)
   return L"Times New Roman";
   #elif defined(__WXGTK__)
   return L"Serif";
@@ -70,7 +70,7 @@ ustring font_family::generic_sans_serif_name() {
    */
   #if defined(__WXMSW__)
   return L"Microsoft Sans Serif";
-  #elif defined(__APPLE__)
+  #elif defined(__WXOSX__)
   return L"Arial";
   #elif defined(__WXGTK__)
   return L"Sans";
@@ -89,7 +89,7 @@ ustring font_family::generic_monospace_name() {
    */
   #if defined(__WXMSW__)
   return L"Courier New";
-  #elif defined(__APPLE__)
+  #elif defined(__WXOSX__)
   return L"Courier New";
   #elif defined(__WXGTK__)
   return L"Monospace";

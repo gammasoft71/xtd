@@ -106,7 +106,7 @@ namespace xtd {
         }
         
         bool SetBackgroundColour(const wxColour& colour) override {
-#if !defined(__APPLE__)
+#if !defined(__WXOSX__)
           inner_panel->SetBackgroundColour(colour);
 #endif
           return wxFrame::SetBackgroundColour(colour);
@@ -143,7 +143,7 @@ namespace xtd {
         wxWindow* GetMainWindowOfCompositeControl() override {return inner_panel;}
         
         bool SetBackgroundColour(const wxColour& colour) override {
-#if !defined(__APPLE__)
+#if !defined(__WXOSX__)
           inner_panel->SetBackgroundColour(colour);
 #endif
           return wxDialog::SetBackgroundColour(colour);
@@ -174,7 +174,7 @@ namespace xtd {
 #elif defined(__WXGTK__)
         static const int32 min_width = 107;
         static const int32 min_height = 46;
-#elif defined(__APPLE__)
+#elif defined(__WXOSX__)
         static const int32 min_width = 75;
         static const int32 min_height = 23;
 #else
@@ -196,7 +196,7 @@ namespace xtd {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
             control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
-          #elif defined(__APPLE__)
+          #elif defined(__WXOSX__)
           control()->Bind(wxEVT_MAXIMIZE, [this](wxMaximizeEvent & e) {
             if (fixed) {
               wxTopLevelWindow* frame = static_cast<wxTopLevelWindow*>(control());
@@ -313,7 +313,7 @@ namespace xtd {
         
         void SetClientSize(int32 width, int32 height) override {
           if (width < min_width) width = min_width;
-          #if defined(__APPLE__)
+          #if defined(__WXOSX__)
           if (fixed) {
             auto current_size = control()->GetMinClientSize();
             if (current_size.GetWidth() > wxDefaultSize.GetWidth() || current_size.GetHeight() > wxDefaultSize.GetHeight()) {
@@ -326,7 +326,7 @@ namespace xtd {
           }
           #endif
           control()->SetClientSize(wxSize(width, height));
-          #if defined(__APPLE__)
+          #if defined(__WXOSX__)
           if (fixed) {
             auto current_size = control()->GetMinClientSize();
             if (current_size.GetWidth() > width || current_size.GetHeight() > height) {
@@ -361,7 +361,7 @@ namespace xtd {
         void SetSize(int32 width, int32 height) override {
           if (width < min_width) width = min_width;
           if (height < min_height) height = min_height;
-          #if defined(__APPLE__)
+          #if defined(__WXOSX__)
           if (fixed) {
             auto current_size = control()->GetMinSize();
             if (current_size.GetWidth() > wxDefaultSize.GetWidth() || current_size.GetHeight() > wxDefaultSize.GetHeight()) {
@@ -374,7 +374,7 @@ namespace xtd {
           }
           #endif
           control_handler::SetSize(width, height);
-          #if defined(__APPLE__)
+          #if defined(__WXOSX__)
           if (fixed) {
             auto current_size = control()->GetMinSize();
             if (current_size.GetWidth() > width || current_size.GetHeight() > height) {
@@ -406,7 +406,7 @@ namespace xtd {
         #if defined(__WXGTK__)
         wxPoint location_;
         inline static const wxPoint invalid_location {-100000, -100000};
-        #elif defined(__APPLE__)
+        #elif defined(__WXOSX__)
         bool fixed = false;
         wxSize previous_size = wxDefaultSize;
         bool is_maximize_or_fullscreen = false;

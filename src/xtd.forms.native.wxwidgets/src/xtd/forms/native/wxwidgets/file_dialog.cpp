@@ -15,7 +15,7 @@ using namespace xtd::forms::native;
 
 namespace {
   // Workaround : with wxWidgets version <= 3.1.4 FileDialog ShowWindowModal method doesn't exists on other platform that macOS
-  #if defined(__APPLE__)
+  #if defined(__WXOSX__)
   using FileDialog = wxFileDialog;
   #else
   class FileDialog : public wxFileDialog {

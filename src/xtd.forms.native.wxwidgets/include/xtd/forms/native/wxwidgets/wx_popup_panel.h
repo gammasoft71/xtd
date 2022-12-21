@@ -84,7 +84,7 @@ namespace xtd {
         
         void Popup(wxWindow* focus = nullptr) override {
           /// Workaround : with wxWidgets version <= 3.1.5 the wxPopupTransientWindow, it does not respond on macOS....
-#if defined(__APPLE__)
+#if defined(__WXOSX__)
           Raise();
 #endif
           wxPopupTransientWindow::Popup(focus);
@@ -98,7 +98,7 @@ namespace xtd {
         }
         
         bool SetBackgroundColour(const wxColour& colour) override {
-#if !defined(__APPLE__)
+#if !defined(__WXOSX__)
           inner_panel->SetBackgroundColour(colour);
 #endif
           return wxPopupTransientWindow::SetBackgroundColour(colour);
@@ -142,7 +142,7 @@ namespace xtd {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
             control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
-#elif defined(__APPLE__)
+#elif defined(__WXOSX__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
             control()->SetForegroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));

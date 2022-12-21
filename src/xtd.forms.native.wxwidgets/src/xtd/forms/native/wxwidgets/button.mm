@@ -1,4 +1,4 @@
-#if defined(__APPLE__)
+#if defined(__WXOSX__)
 #include <xtd/argument_exception.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/button.h>
