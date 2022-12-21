@@ -45,7 +45,7 @@ namespace xtd {
           if ((create_params.style & MCS_NOTODAYCIRCLE) == MCS_NOTODAYCIRCLE) show_today_circle = false;
           static_cast<wxMonthCalendar*>(control())->calendarCtrl->Bind(wxEVT_CALENDAR_PAGE_CHANGED, &wx_month_calendar::on_page_changed, this);
           static_cast<wxMonthCalendar*>(control())->calendarCtrl->Bind(wxEVT_CALENDAR_YEAR_CHANGED, &wx_month_calendar::on_year_changed, this);
-          #if defined(__WIN32__)
+          #if defined(__WXMSW__)
           if (xtd::drawing::system_colors::window().is_dark()) {
             static_cast<wxMonthCalendar*>(control())->SetBackgroundColour(wxColour(xtd::drawing::system_colors::button_face().r(), xtd::drawing::system_colors::button_face().g(), xtd::drawing::system_colors::button_face().b(), xtd::drawing::system_colors::button_face().a()));
             static_cast<wxMonthCalendar*>(control())->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));

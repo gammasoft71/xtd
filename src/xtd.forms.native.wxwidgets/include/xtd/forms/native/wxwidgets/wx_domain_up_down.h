@@ -118,7 +118,7 @@ namespace xtd {
           if (height < 32) height = 32;
           #endif
           control_handler::create<wxDomainSpinCtrl>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), height), style_to_wx_text_box_style(create_params.style, create_params.ex_style), style_to_wx_spin_style(create_params.style, create_params.ex_style));
-          #if defined(__WIN32__)
+          #if defined(__WXMSW__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->GetChildren()[0]->SetForegroundColour(wxColour(xtd::drawing::system_colors::window_text().r(), xtd::drawing::system_colors::window_text().g(), xtd::drawing::system_colors::window_text().b(), xtd::drawing::system_colors::window_text().a()));
             control()->GetChildren()[0]->SetBackgroundColour(wxColour(xtd::drawing::system_colors::window().r(), xtd::drawing::system_colors::window().g(), xtd::drawing::system_colors::window().b(), xtd::drawing::system_colors::window().a()));

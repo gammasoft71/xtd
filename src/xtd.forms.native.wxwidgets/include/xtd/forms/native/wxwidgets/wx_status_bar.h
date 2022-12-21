@@ -26,7 +26,7 @@ namespace xtd {
         explicit wx_status_bar(const xtd::forms::native::create_params& create_params) {
           if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
           control_handler::create<wxStatusBar>(reinterpret_cast<control_handler*>(create_params.parent)->control(), wxID_ANY, style_to_wx_style(create_params.style, create_params.ex_style));
-          #if defined(__WIN32__)
+          #if defined(__WXMSW__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
             control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));

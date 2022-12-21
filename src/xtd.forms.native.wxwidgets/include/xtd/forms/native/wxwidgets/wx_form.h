@@ -97,7 +97,7 @@ namespace xtd {
           boxSizer->Add(inner_panel, wxSizerFlags().Proportion(-1).Expand());
           SetSizerAndFit(boxSizer);
           
-#if defined(__WIN32__)
+#if defined(__WXMSW__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             inner_panel->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
             inner_panel->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
@@ -168,7 +168,7 @@ namespace xtd {
       };
 
       class wx_form : public control_handler {
-#if defined(__WIN32__)
+#if defined(__WXMSW__)
         static const int32 min_width = 122;
         static const int32 min_height = 32;
 #elif defined(__WXGTK__)
@@ -191,7 +191,7 @@ namespace xtd {
           if ((create_params.ex_style & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW || (create_params.ex_style & WS_EX_DLGMODALFRAME) == WS_EX_DLGMODALFRAME) control_handler::create<wxFormDialog>(create_params.parent ? (reinterpret_cast<control_handler*>(create_params.parent)->control()) : nullptr, wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption)), location, size, form_style_to_wx_style(create_params.style, create_params.ex_style, create_params.class_style, create_params.parent));
           else control_handler::create<wxForm>(create_params.parent && (create_params.ex_style & WS_EX_TOPMOST) != WS_EX_TOPMOST ? (reinterpret_cast<control_handler*>(create_params.parent)->control()) : nullptr, wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption)), location, size, form_style_to_wx_style(create_params.style, create_params.ex_style, create_params.class_style, create_params.parent));
           dynamic_cast<iform_control_handler*>(control())->set_wx_evt(dynamic_cast<iwx_evt*>(control()));
-          #if defined(__WIN32__)
+          #if defined(__WXMSW__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
             control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));

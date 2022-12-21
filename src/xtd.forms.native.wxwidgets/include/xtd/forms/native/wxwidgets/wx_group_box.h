@@ -194,7 +194,7 @@ namespace xtd {
             #endif
             control_handler::create<wxGroupBox>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(caption)), wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()), style_to_wx_style(create_params.style, create_params.ex_style));
             dynamic_cast<wxGroupBox*>(control())->set_wx_evt(dynamic_cast<iwx_evt*>(control()));
-            #if defined(__WIN32__)
+            #if defined(__WXMSW__)
             if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
               control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
               control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
