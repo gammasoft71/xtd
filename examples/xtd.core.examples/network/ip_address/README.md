@@ -4,7 +4,7 @@ Shows how to use [xtd::net::dns](https://codedocs.xyz/gammasoft71/xtd/classxtd_1
 
 ## Sources
 
-[src/dns_get_host_addresses.cpp](src/ip_address.cpp)
+[src/ip_addresses.cpp](src/ip_address.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
