@@ -24,7 +24,6 @@ using __slong__ = signed long; // Workaround: On linux 64 bits unfortunately 'in
 using __ulong__ = unsigned long; // Workaround: On linux 64 bits unfortunately 'uint_least64_t' is an alias on 'unigned long' and not on 'unsigned long long int' as other platforms. In order to avoid conflicts in operator or method overloads, it is necessary to give the type that is not taken into account.
 #endif
 
-
 #if defined(__XTD_CORE_NATIVE_LIBRARY__)
 #include <xtd/core_native_export.h>
 #include <string>
