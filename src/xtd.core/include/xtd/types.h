@@ -180,13 +180,3 @@ namespace xtd {
   /// @remarks Represents a 32-bit unicode character on Linux and many other non-Windows systems, but a 16-bit unicode character on Windows.
   using wchar = wchar_t;
 }
-
-/*
-/// @cond
-namespace __ {
-  /// @endcond
-  /// @brief The system namespace contains all fundamental classes to access Hardware, Os, System, and more.
-  namespace system = xtd;
-}
-using namespace __;
-*/
