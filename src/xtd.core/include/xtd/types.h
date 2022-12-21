@@ -10,7 +10,6 @@
 #define __XTD_CORE_CHAR8_T_INTERNAL__
 #include "internal/__char8_t.h"
 #undef __XTD_CORE_CHAR8_T_INTERNAL__
-
 #define __XTD_TYPE_NATIVE__
 #include <xtd/native/types.h>
 #undef __XTD_TYPE_NATIVE__
