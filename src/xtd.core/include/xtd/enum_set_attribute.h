@@ -61,12 +61,12 @@ namespace xtd {
 /// |----------|------------------------|
 /// | ^=       | Bitwise XOR assignment |
 /// | &=       | Bitwise AND assignment |
-/// | |=       | Bitwise OR assignment  |
+/// | \|=      | Bitwise OR assignment  |
 /// | +=       | Addition assignment    |
 /// | -=       | Subtraction assignment |
 /// | ^        | Bitwise XOR            |
 /// | &        | Bitwise AND            |
-/// | |        | Bitwise OR             |
+/// | \|       | Bitwise OR             |
 /// | +        | Addition               |
 /// | -        | Subtraction            |
 /// | ~        | Bitwise NOT            |
