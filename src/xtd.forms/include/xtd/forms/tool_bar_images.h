@@ -24,316 +24,316 @@ namespace xtd {
       /// @{
       /// @brief File new image object.
       /// @return A xtd::drawing::image that represent "document-new".
-      static xtd::drawing::image file_new() {return file_new(application::style_sheet().theme().name(), size());}
+      static xtd::drawing::image file_new();
       /// @brief File new image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "document-new".
-      static xtd::drawing::image file_new(const xtd::ustring& theme) {return file_new(theme, size());}
+      static xtd::drawing::image file_new(const xtd::ustring& theme);
       /// @brief File new image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-new".
-      static xtd::drawing::image file_new(const xtd::drawing::size& size) {return file_new(application::style_sheet().theme().name(), size);}
+      static xtd::drawing::image file_new(const xtd::drawing::size& size);
       /// @brief File new image object with specified theme and size.
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-new".
-      static xtd::drawing::image file_new(const xtd::ustring& theme, const xtd::drawing::size& size) {return from_name(theme, "document-new", size);}
+      static xtd::drawing::image file_new(const xtd::ustring& theme, const xtd::drawing::size& size);
       
       /// @brief File open image object.
       /// @return A xtd::drawing::image that represent "document-open".
-      static xtd::drawing::image file_open() {return file_open(application::style_sheet().theme().name(), size());}
+      static xtd::drawing::image file_open();
       /// @brief File open image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "document-open".
-      static xtd::drawing::image file_open(const xtd::ustring& theme) {return file_open(theme, size());}
+      static xtd::drawing::image file_open(const xtd::ustring& theme);
       /// @brief File open image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-open".
-      static xtd::drawing::image file_open(const xtd::drawing::size& size) {return file_open(application::style_sheet().theme().name(), size);}
+      static xtd::drawing::image file_open(const xtd::drawing::size& size);
       /// @brief File open image object with specified theme and size.
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-open".
-      static xtd::drawing::image file_open(const xtd::ustring& theme, const xtd::drawing::size& size) {return from_name(theme, "document-open", size);}
+      static xtd::drawing::image file_open(const xtd::ustring& theme, const xtd::drawing::size& size);
       
       /// @brief File save image object.
       /// @return A xtd::drawing::image that represent "document-save".
-      static xtd::drawing::image file_save() {return file_save(application::style_sheet().theme().name(), size());}
+      static xtd::drawing::image file_save();
       /// @brief File save image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "document-save".
-      static xtd::drawing::image file_save(const xtd::ustring& theme) {return file_save(theme, size());}
+      static xtd::drawing::image file_save(const xtd::ustring& theme);
       /// @brief File save image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-save".
-      static xtd::drawing::image file_save(const xtd::drawing::size& size) {return file_save(application::style_sheet().theme().name(), size);}
+      static xtd::drawing::image file_save(const xtd::drawing::size& size);
       /// @brief File save image object with specified theme and size.
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-save".
-      static xtd::drawing::image file_save(const xtd::ustring& theme, const xtd::drawing::size& size) {return from_name(theme, "document-save", size);}
+      static xtd::drawing::image file_save(const xtd::ustring& theme, const xtd::drawing::size& size);
       
       /// @brief File save as image object.
       /// @return A xtd::drawing::image that represent "document-save-as".
-      static xtd::drawing::image file_save_as() {return file_save_as(application::style_sheet().theme().name(), size());}
+      static xtd::drawing::image file_save_as();
       /// @brief File save as image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "document-save-as".
-      static xtd::drawing::image file_save_as(const xtd::ustring& theme) {return file_save_as(theme, size());}
+      static xtd::drawing::image file_save_as(const xtd::ustring& theme);
       /// @brief File save as image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-save-as".
-      static xtd::drawing::image file_save_as(const xtd::drawing::size& size) {return file_save_as(application::style_sheet().theme().name(), size);}
+      static xtd::drawing::image file_save_as(const xtd::drawing::size& size);
       /// @brief File save as image object with specified theme and size.
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-save-as".
-      static xtd::drawing::image file_save_as(const xtd::ustring& theme, const xtd::drawing::size& size) {return from_name(theme, "document-save-as", size);}
+      static xtd::drawing::image file_save_as(const xtd::ustring& theme, const xtd::drawing::size& size);
       
       /// @brief File print image object.
       /// @return A xtd::drawing::image that represent "document-print".
-      static xtd::drawing::image file_print() {return file_print(application::style_sheet().theme().name(), size());}
+      static xtd::drawing::image file_print();
       /// @brief File print image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "document-print".
-      static xtd::drawing::image file_print(const xtd::ustring& theme) {return file_print(theme, size());}
+      static xtd::drawing::image file_print(const xtd::ustring& theme);
       /// @brief File print image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-print".
-      static xtd::drawing::image file_print(const xtd::drawing::size& size) {return file_print(application::style_sheet().theme().name(), size);}
+      static xtd::drawing::image file_print(const xtd::drawing::size& size);
       /// @brief File print image object with specified theme and size.
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-print".
-      static xtd::drawing::image file_print(const xtd::ustring& theme, const xtd::drawing::size& size) {return from_name(theme, "document-print", size);}
+      static xtd::drawing::image file_print(const xtd::ustring& theme, const xtd::drawing::size& size);
       
       /// @brief File print preview image object.
       /// @return A xtd::drawing::image that represent "document-print-preview".
-      static xtd::drawing::image file_print_preview() {return file_print_preview(application::style_sheet().theme().name(), size());}
+      static xtd::drawing::image file_print_preview();
       /// @brief File print preview image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "document-print-preview".
-      static xtd::drawing::image file_print_preview(const xtd::ustring& theme) {return file_print_preview(theme, size());}
+      static xtd::drawing::image file_print_preview(const xtd::ustring& theme);
       /// @brief File print preview image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-print-preview".
-      static xtd::drawing::image file_print_preview(const xtd::drawing::size& size) {return file_print_preview(application::style_sheet().theme().name(), size);}
+      static xtd::drawing::image file_print_preview(const xtd::drawing::size& size);
       /// @brief File print preview image object with specified theme and size.
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-print-preview".
-      static xtd::drawing::image file_print_preview(const xtd::ustring& theme, const xtd::drawing::size& size) {return from_name(theme, "document-print-preview", size);}
+      static xtd::drawing::image file_print_preview(const xtd::ustring& theme, const xtd::drawing::size& size);
       
       /// @brief File page setup image object.
       /// @return A xtd::drawing::image that represent "document-page-setup".
-      static xtd::drawing::image file_page_setup() {return file_page_setup(application::style_sheet().theme().name(), size());}
+      static xtd::drawing::image file_page_setup();
       /// @brief File page setup image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "document-page-setup".
-      static xtd::drawing::image file_page_setup(const xtd::ustring& theme) {return file_page_setup(theme, size());}
+      static xtd::drawing::image file_page_setup(const xtd::ustring& theme);
       /// @brief File page setup image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-page-setup".
-      static xtd::drawing::image file_page_setup(const xtd::drawing::size& size) {return file_page_setup(application::style_sheet().theme().name(), size);}
+      static xtd::drawing::image file_page_setup(const xtd::drawing::size& size);
       /// @brief File page setup image object with specified theme and size.
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "document-page-setup".
-      static xtd::drawing::image file_page_setup(const xtd::ustring& theme, const xtd::drawing::size& size) {return from_name(theme, "document-page-setup", size);}
+      static xtd::drawing::image file_page_setup(const xtd::ustring& theme, const xtd::drawing::size& size);
       
       /// @brief File exit image object.
       /// @return A xtd::drawing::image that represent  "application-exit".
-      static xtd::drawing::image file_exit() {return file_exit(application::style_sheet().theme().name(), size());}
+      static xtd::drawing::image file_exit();
       /// @brief File exit image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "application-exit".
-      static xtd::drawing::image file_exit(const xtd::ustring& theme) {return file_exit(theme, size());}
+      static xtd::drawing::image file_exit(const xtd::ustring& theme);
       /// @brief File exit image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "application-exit".
-      static xtd::drawing::image file_exit(const xtd::drawing::size& size) {return file_exit(application::style_sheet().theme().name(), size);}
+      static xtd::drawing::image file_exit(const xtd::drawing::size& size);
       /// @brief File exit image object with specified theme and size.
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "application-exit".
-      static xtd::drawing::image file_exit(const xtd::ustring& theme, const xtd::drawing::size& size) {return from_name(theme, "application-exit", size);}
+      static xtd::drawing::image file_exit(const xtd::ustring& theme, const xtd::drawing::size& size);
       
       /// @brief Edit undo image object.
       /// @return A xtd::drawing::image that represent "edit-undo".
-      static xtd::drawing::image edit_undo() {return edit_undo(application::style_sheet().theme().name(), size());}
+      static xtd::drawing::image edit_undo();
       /// @brief Edit undo image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "edit-undo".
-      static xtd::drawing::image edit_undo(const xtd::ustring& theme) {return edit_undo(theme, size());}
+      static xtd::drawing::image edit_undo(const xtd::ustring& theme);
       /// @brief Edit undoEdit undo image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "edit-undo".
-      static xtd::drawing::image edit_undo(const xtd::drawing::size& size) {return edit_undo(application::style_sheet().theme().name(), size);}
+      static xtd::drawing::image edit_undo(const xtd::drawing::size& size);
       /// @brief Edit undo image object with specified theme and size.
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "edit-undo".
-      static xtd::drawing::image edit_undo(const xtd::ustring& theme, const xtd::drawing::size& size) {return from_name(theme, "edit-undo", size);}
+      static xtd::drawing::image edit_undo(const xtd::ustring& theme, const xtd::drawing::size& size);
       
       /// @brief Edit undo image object.
       /// @return A xtd::drawing::image that represent  "edit-redo".
-      static xtd::drawing::image edit_redo() {return edit_redo(application::style_sheet().theme().name(), size());}
+      static xtd::drawing::image edit_redo();
       /// @brief Edit undo image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "edit-redo".
-      static xtd::drawing::image edit_redo(const xtd::ustring& theme) {return edit_redo(theme, size());}
+      static xtd::drawing::image edit_redo(const xtd::ustring& theme);
       /// @brief Edit undo image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "edit-redo".
-      static xtd::drawing::image edit_redo(const xtd::drawing::size& size) {return edit_redo(application::style_sheet().theme().name(), size);}
+      static xtd::drawing::image edit_redo(const xtd::drawing::size& size);
       /// @brief Edit undo image object with specified theme and size.
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent  "edit-redo" "edit-redo".
-      static xtd::drawing::image edit_redo(const xtd::ustring& theme, const xtd::drawing::size& size) {return from_name(theme, "edit-redo", size);}
+      static xtd::drawing::image edit_redo(const xtd::ustring& theme, const xtd::drawing::size& size);
       
       /// @brief Edit cut image object.
       /// @return A xtd::drawing::image that represent "edit-cut".
-      static xtd::drawing::image edit_cut() {return edit_cut(application::style_sheet().theme().name(), size());}
+      static xtd::drawing::image edit_cut();
       /// @brief Edit cut image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "edit-cut".
-      static xtd::drawing::image edit_cut(const xtd::ustring& theme) {return edit_cut(theme, size());}
+      static xtd::drawing::image edit_cut(const xtd::ustring& theme);
       /// @brief Edit cut image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "edit-cut".
-      static xtd::drawing::image edit_cut(const xtd::drawing::size& size) {return edit_cut(application::style_sheet().theme().name(), size);}
+      static xtd::drawing::image edit_cut(const xtd::drawing::size& size);
       /// @brief Edit cut image object with specified theme and size.
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "edit-cut".
-      static xtd::drawing::image edit_cut(const xtd::ustring& theme, const xtd::drawing::size& size) {return from_name(theme, "edit-cut", size);}
+      static xtd::drawing::image edit_cut(const xtd::ustring& theme, const xtd::drawing::size& size);
       
       /// @brief Edit copy image object.
       /// @return A xtd::drawing::image that represent "edit-copy".
-      static xtd::drawing::image edit_copy() {return edit_copy(application::style_sheet().theme().name(), size());}
+      static xtd::drawing::image edit_copy();
       /// @brief Edit copy image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "edit-copy".
-      static xtd::drawing::image edit_copy(const xtd::ustring& theme) {return edit_copy(theme, size());}
+      static xtd::drawing::image edit_copy(const xtd::ustring& theme);
       /// @brief Edit copy image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "edit-copy".
-      static xtd::drawing::image edit_copy(const xtd::drawing::size& size) {return edit_copy(application::style_sheet().theme().name(), size);}
+      static xtd::drawing::image edit_copy(const xtd::drawing::size& size);
       /// @brief Edit copy image object with specified theme and size.
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "edit-copy".
-      static xtd::drawing::image edit_copy(const xtd::ustring& theme, const xtd::drawing::size& size) {return from_name(theme, "edit-copy", size);}
+      static xtd::drawing::image edit_copy(const xtd::ustring& theme, const xtd::drawing::size& size);
       
       /// @brief Edit paste image object.
       /// @return A xtd::drawing::image that represent "edit-paste".
-      static xtd::drawing::image edit_paste() {return edit_paste(application::style_sheet().theme().name(), size());}
+      static xtd::drawing::image edit_paste();
       /// @brief Edit paste image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent  "edit-paste".
-      static xtd::drawing::image edit_paste(const xtd::ustring& theme) {return edit_paste(theme, size());}
+      static xtd::drawing::image edit_paste(const xtd::ustring& theme);
       /// @brief Edit paste image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent  "edit-paste".
-      static xtd::drawing::image edit_paste(const xtd::drawing::size& size) {return edit_paste(application::style_sheet().theme().name(), size);}
+      static xtd::drawing::image edit_paste(const xtd::drawing::size& size);
       /// @brief Edit paste image object with specified theme and size.
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "edit-paste".
-      static xtd::drawing::image edit_paste(const xtd::ustring& theme, const xtd::drawing::size& size) {return from_name(theme, "edit-paste", size);}
+      static xtd::drawing::image edit_paste(const xtd::ustring& theme, const xtd::drawing::size& size);
       
       /// @brief View back image object.
       /// @return A xtd::drawing::image that represent "go-previous".
-      static xtd::drawing::image view_back() {return view_back(application::style_sheet().theme().name(), size());}
+      static xtd::drawing::image view_back();
       /// @brief View back image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "go-previous".
-      static xtd::drawing::image view_back(const xtd::ustring& theme) {return view_back(theme, size());}
+      static xtd::drawing::image view_back(const xtd::ustring& theme);
       /// @brief View back image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "go-previous".
-      static xtd::drawing::image view_back(const xtd::drawing::size& size) {return view_back(application::style_sheet().theme().name(), size);}
+      static xtd::drawing::image view_back(const xtd::drawing::size& size);
       /// @brief View back image object with specified theme and size.
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "go-previous".
-      static xtd::drawing::image view_back(const xtd::ustring& theme, const xtd::drawing::size& size) {return from_name(theme, "go-previous", size);}
+      static xtd::drawing::image view_back(const xtd::ustring& theme, const xtd::drawing::size& size);
       
       /// @brief View forward image object.
       /// @return A xtd::drawing::image that represent  "go-next".
-      static xtd::drawing::image view_forward() {return view_forward(application::style_sheet().theme().name(), size());}
+      static xtd::drawing::image view_forward();
       /// @brief View forward image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent  "go-next".
-      static xtd::drawing::image view_forward(const xtd::ustring& theme) {return view_forward(theme, size());}
+      static xtd::drawing::image view_forward(const xtd::ustring& theme);
       /// @brief View forward image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent  "go-next".
-      static xtd::drawing::image view_forward(const xtd::drawing::size& size) {return view_forward(application::style_sheet().theme().name(), size);}
+      static xtd::drawing::image view_forward(const xtd::drawing::size& size);
       /// @brief View forward image object with specified theme and size.
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent  "go-next".
-      static xtd::drawing::image view_forward(const xtd::ustring& theme, const xtd::drawing::size& size) {return from_name(theme, "go-next", size);}
+      static xtd::drawing::image view_forward(const xtd::ustring& theme, const xtd::drawing::size& size);
       
       /// @brief Help about image object.
       /// @return A xtd::drawing::image that represent "help-about".
-      static xtd::drawing::image help() {return help(application::style_sheet().theme().name(), size());}
+      static xtd::drawing::image help();
       /// @brief Help about image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "help-about".
-      static xtd::drawing::image help(const xtd::ustring& theme) {return help(theme, size());}
+      static xtd::drawing::image help(const xtd::ustring& theme);
       /// @brief Help about image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "help-about".
-      static xtd::drawing::image help(const xtd::drawing::size& size) {return help(application::style_sheet().theme().name(), size);}
+      static xtd::drawing::image help(const xtd::drawing::size& size);
       /// @brief Help about image object with specified theme and size.
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "help-about".
-      static xtd::drawing::image help(const xtd::ustring& theme, const xtd::drawing::size& size) {return from_name(theme, "help", size);}
+      static xtd::drawing::image help(const xtd::ustring& theme, const xtd::drawing::size& size);
       
       /// @brief Help about image object.
       /// @return A xtd::drawing::image that represent "help-about".
-      static xtd::drawing::image help_about() {return help_about(application::style_sheet().theme().name(), size());}
+      static xtd::drawing::image help_about();
       /// @brief Help about image object with specified theme.
       /// @param theme A string that represent a theme
       /// @return A xtd::drawing::image that represent "help-about".
-      static xtd::drawing::image help_about(const xtd::ustring& theme) {return help_about(theme, size());}
+      static xtd::drawing::image help_about(const xtd::ustring& theme);
       /// @brief Help about image object with specified size.
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "help-about".
-      static xtd::drawing::image help_about(const xtd::drawing::size& size) {return help_about(application::style_sheet().theme().name(), size);}
+      static xtd::drawing::image help_about(const xtd::drawing::size& size);
       /// @brief Help about image object with specified theme and size.
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "help-about".
-      static xtd::drawing::image help_about(const xtd::ustring& theme, const xtd::drawing::size& size) {return from_name(theme, "help-about", size);}
+      static xtd::drawing::image help_about(const xtd::ustring& theme, const xtd::drawing::size& size);
       
       /// @brief Gets the height and width of the menu images.
       /// @return The size that represents the height and width of the menu images in pixels (16 x 16).
-      static xtd::drawing::size size() {return xtd::environment::os_version().is_windows_platform() ? xtd::drawing::size {16, 16} : xtd::drawing::size {64, 64};}
+      static xtd::drawing::size size();
       
       /// @brief Gets image object with specified name.
       /// @param name the image name to get.
       /// @return A xtd::drawing::image that represent the specified name.
       /// @remarks Use xtd::drawing::system_images::context_names to get names by context.
-      static xtd::drawing::image from_name(const xtd::ustring& name) {return from_name(name, size());}
+      static xtd::drawing::image from_name(const xtd::ustring& name);
       /// @brief Gets image object with specified theme and name.
       /// @param theme the theme name that contains the image to get.
       /// @param name the image name to get.
       /// @return A xtd::drawing::image that represent the specified name.
       /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
       /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
-      static xtd::drawing::image from_name(const xtd::ustring& theme, const xtd::ustring& name) {return from_name(theme, name, size());}
+      static xtd::drawing::image from_name(const xtd::ustring& theme, const xtd::ustring& name);
       /// @brief Gets image object with specified name and size.
       /// @param name the image name to get.
       /// @param size The size that represents the height and width of the button images in pixels.
       /// @return A xtd::drawing::image that represent the specified name.
       /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
       /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
-      static xtd::drawing::image from_name(const xtd::ustring& name, const xtd::drawing::size& size) {return from_name(application::style_sheet().theme().name(), name, size);}
+      static xtd::drawing::image from_name(const xtd::ustring& name, const xtd::drawing::size& size);
       /// @brief Gets image object with specified theme, name and size.
       /// @param theme the theme name that contains the image to get.
       /// @param name the image name to get.
@@ -341,7 +341,7 @@ namespace xtd {
       /// @return A xtd::drawing::image that represent the specified name.
       /// @remarks Use xtd::drawing::system_images::themes to get valid themes.
       /// @remarks Use xtd::drawing::system_images::context_names to get valid names by context.
-      static xtd::drawing::image from_name(const xtd::ustring& theme, const xtd::ustring& name, const xtd::drawing::size& size) {return images::from_name(theme, name, size);}
+      static xtd::drawing::image from_name(const xtd::ustring& theme, const xtd::ustring& name, const xtd::drawing::size& size);
       /// @}
     };
   }
