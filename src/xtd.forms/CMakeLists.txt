@@ -400,6 +400,7 @@ add_sources(
   src/xtd/forms/font_dialog.cpp
   src/xtd/forms/font_picker.cpp
   src/xtd/forms/form.cpp
+  src/xtd/forms/form_button_images.cpp
   src/xtd/forms/form_renderer.cpp
   src/xtd/forms/fourteen_segment_display.cpp
   src/xtd/forms/group_box.cpp
