@@ -16,7 +16,9 @@ std::string __tunit_demangle(const std::string& name) {
     char* value_;
   };
   int32 status = 0;
-  return auto_delete_char_pointer(abi::__cxa_demangle(name.c_str(), 0, 0, &status))();
+  auto result = abi::__cxa_demangle(name.c_str(), 0, 0, &status);
+  if (result == nullptr) return name;
+  return auto_delete_char_pointer(result)();
 }
 
 #endif
