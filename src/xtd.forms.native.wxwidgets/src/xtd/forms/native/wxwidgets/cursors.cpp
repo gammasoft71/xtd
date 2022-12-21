@@ -14,7 +14,8 @@ using namespace xtd::forms::native;
 
 namespace {
   static std::string get_os_postfix() noexcept {
-    return xtd::environment::os_version().is_windows_platform() ? "_w" : xtd::environment::os_version().is_unix_platform() ? "_g" : xtd::environment::os_version().is_macos_platform() ? "_m" : "";
+    static auto os_postfix = xtd::environment::os_version().is_windows_platform() ? "_w" : xtd::environment::os_version().is_unix_platform() ? "_g" : xtd::environment::os_version().is_macos_platform() ? "_m" : "";
+    return os_postfix;
   }
   
   static std::string forms_resource_path() {
