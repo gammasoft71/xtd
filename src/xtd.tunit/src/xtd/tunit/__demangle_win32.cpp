@@ -1,22 +1,17 @@
 #if defined(_WIN32)
 
 #include "../../../include/xtd/tunit/__demangle.h"
-#include <algorithm>
-#include <functional>
-#include <vector>
-
-namespace {
-  void erase_all_sub_str(std::string& main_str, const std::string& to_erase) {
-    size_t pos;
-    while ((pos = main_str.find(to_erase)) != std::string::npos)
-      main_str.erase(pos, to_erase.length());
-  }
-}
 
 std::string __tunit_demangle(const std::string& name) {
-  std::vector<std::string> types = {"enum ", "class ", "union ", "struct "};
-  std::string result = name;
-  std::for_each(types.begin(), types.end(), std::bind(erase_all_sub_str, std::ref(result), std::placeholders::_1));
+  string result = name;
+  for (auto& item : {"enum "s, "class "s, "union "s, "struct "s}) {
+    size_t index = 0;
+    while (true) {
+      index = result.find(item, index);
+      if (index == std::string::npos) break;
+      result.replace(index, item.size(), "");
+    }
+  }
   return result;
 }
 
