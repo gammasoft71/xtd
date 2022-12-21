@@ -628,51 +628,6 @@ namespace xtd {
   /// @endcond
 }
 
-#define flags_attribute_(namespace_name, enum_type) \
-  namespace namespace_name { \
-    [[maybe_unused]] inline enum_type& operator ^=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) ^ static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
-    [[maybe_unused]] inline enum_type& operator &=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) & static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
-    [[maybe_unused]] inline enum_type& operator |=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) | static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
-    [[maybe_unused]] inline enum_type& operator +=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) + static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
-    [[maybe_unused]] inline enum_type& operator -=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) - static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
-    [[maybe_unused]] inline enum_type operator ^(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) ^ static_cast<std::underlying_type<enum_type>::type>(rhs));} \
-    [[maybe_unused]] inline enum_type operator &(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) & static_cast<std::underlying_type<enum_type>::type>(rhs));} \
-    [[maybe_unused]] inline enum_type operator |(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) | static_cast<std::underlying_type<enum_type>::type>(rhs));} \
-    [[maybe_unused]] inline enum_type operator +(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) + static_cast<std::underlying_type<enum_type>::type>(rhs));} \
-    [[maybe_unused]] inline enum_type operator -(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) - static_cast<std::underlying_type<enum_type>::type>(rhs));} \
-    [[maybe_unused]] inline enum_type operator ~(enum_type lhs) {return static_cast<enum_type>(~static_cast<std::underlying_type<enum_type>::type>(lhs));} \
-  }\
-  template<> struct xtd::enum_set_attribute<namespace_name::enum_type> { \
-    explicit operator auto() const noexcept {return xtd::enum_attribute::flags;} \
-  }
-
-#define enum_ut_(namespace_name, enum_type, underlying_type, ...) \
-  namespace namespace_name { enum enum_type : underlying_type {__VA_ARGS__}; } \
-  template<> struct xtd::enum_register<namespace_name::enum_type> { \
-    explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_type>(#__VA_ARGS__);} \
-  }
-
-#define enum_class_ut_(namespace_name, enum_class_type, underlying_type, ...) \
-  namespace namespace_name { enum class enum_class_type : underlying_type { __VA_ARGS__ }; } \
-  template<> struct xtd::enum_register<namespace_name::enum_class_type> { \
-    explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_class_type>(#__VA_ARGS__);} \
-  }
-
-#define enum_struct_ut_(namespace_name, enum_struct_type, underlying_type, ...) \
-  namespace namespace_name { enum struct enum_struct_type : underlying_type { __VA_ARGS__ }; } \
-  template<> struct xtd::enum_register<namespace_name::enum_struct_type> { \
-    explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_struct_type>(#__VA_ARGS__);} \
-  }
-
-#define enum_(namespace_name, enum_type, ...) \
-  enum_ut_(namespace_name, enum_type, int32, __VA_ARGS__)
-
-#define enum_class_(namespace_name, enum_class_type, ...) \
-  enum_class_ut_(namespace_name, enum_class_type, int32, __VA_ARGS__)
-
-#define enum_struct_(namespace_name, enum_struct_type, ...) \
-  enum_struct_ut_(namespace_name, enum_struct_type, int32, __VA_ARGS__)
-
 /// @cond
 template<typename enum_t>
 inline std::string __enum_to_string(enum_t value) noexcept {
