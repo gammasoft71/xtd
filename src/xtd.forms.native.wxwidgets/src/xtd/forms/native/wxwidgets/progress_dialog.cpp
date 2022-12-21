@@ -31,7 +31,8 @@ namespace {
   class wx_progress_dialog : public wxProgressDialog {
   public:
     wx_progress_dialog(const ustring& title, const ustring& message, int32 maximum = 100, wxWindow* parent = nullptr, int32 style = wxPD_APP_MODAL | wxPD_AUTO_HIDE) : wxProgressDialog(convert_string::to_wstring(title), convert_string::to_wstring(message), maximum, parent, style) {
-      if (environment::os_version().is_macos()) SetBackgroundColour(wxColour(system_colors::control().r(), system_colors::control().g(), system_colors::control().b(), system_colors::control().a()));
+      static auto is_macos = environment::os_version().is_macos();
+      if (is_macos) SetBackgroundColour(wxColour(system_colors::control().r(), system_colors::control().g(), system_colors::control().b(), system_colors::control().a()));
       timer_marquee.Bind(wxEVT_TIMER, [&](wxTimerEvent & event) {
         if (event.GetTimer().GetId() == timer_marquee.GetId())
           Pulse();
