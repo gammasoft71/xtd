@@ -12,7 +12,7 @@ using namespace xtd::drawing::native;
 
 #if defined(__WXGTK__)
 GdkPixbuf* __gtk_get_image_from_name__(const char* name, int32 width, int32 height);
-#elif defined(__APPLE__)
+#elif defined(__WXOSX__)
 intptr __macos_get_image_from_name__(const char* name, int32 width, int32 height);
 #endif
 
@@ -23,7 +23,7 @@ intptr system_images::from_name(const ustring& name, int32 width, int32 height) 
   GdkPixbuf* icon = __gtk_get_image_from_name__(name.c_str(), width, height);
   if (icon) return reinterpret_cast<intptr>(new wxImage(wxBitmap(icon).ConvertToImage()));
   return 0;
-  #elif defined(__APPLE__)
+  #elif defined(__WXOSX__)
   intptr icon = __macos_get_image_from_name__(name.c_str(), width, height);
   if (icon) return icon;
   return 0;

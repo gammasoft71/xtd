@@ -1,4 +1,4 @@
-#if defined(__APPLE__)
+#if defined(__WXOSX__)
 #include <AppKit/AppKit.h>
 #include <xtd/types.h>
 
