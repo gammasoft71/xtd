@@ -11,9 +11,9 @@
 #include "internal/__char8_t.h"
 #undef __XTD_CORE_CHAR8_T_INTERNAL__
 
-#define __XTD_CORE_NATIVE_LIBRARY__
+#define __XTD_TYPE_NATIVE__
 #include <xtd/native/types.h>
-#undef __XTD_CORE_NATIVE_LIBRARY__
+#undef __XTD_TYPE_NATIVE__
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -122,7 +122,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using slong = xtd::native::__slong__; // Workaround: On linux 64 bits unfortunately 'int_least64_t' is an alias on 'long' and not on 'long long int' as other platforms. In order to avoid conflicts in operator or method overloads, it is necessary to give the type that is not taken into account.
+  using slong = __slong__; // Workaround: On linux 64 bits unfortunately 'int_least64_t' is an alias on 'long' and not on 'long long int' as other platforms. In order to avoid conflicts in operator or method overloads, it is necessary to give the type that is not taken into account.
 
   /// @brief Stores information about a type.
   /// @par Namespace
@@ -170,7 +170,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  using ulong = xtd::native::__ulong__; // Workaround: On linux 64 bits unfortunately 'uint_least64_t' is an alias on 'unigned long' and not on 'unsigned long long int' as other platforms. In order to avoid conflicts in operator or method overloads, it is necessary to give the type that is not taken into account.
+  using ulong = __ulong__; // Workaround: On linux 64 bits unfortunately 'uint_least64_t' is an alias on 'unigned long' and not on 'unsigned long long int' as other platforms. In order to avoid conflicts in operator or method overloads, it is necessary to give the type that is not taken into account.
   
   /// @brief Represents a wide character.
   /// @par Namespace

@@ -1,10 +1,10 @@
+#define __XTD_CORE_NATIVE_LIBRARY__
+#include <xtd/native/types.h>
+#undef __XTD_CORE_NATIVE_LIBRARY__
 #include "../../include/xtd/ustring.h"
 #include "../../include/xtd/convert_string.h"
 #include "../../include/xtd/format_exception.h"
 #include "../../include/xtd/diagnostics/stack_frame.h"
-#define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/types.h>
-#undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace std;
 using namespace xtd;
