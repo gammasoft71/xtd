@@ -1,4 +1,6 @@
-#if !defined(_WIN32)
+#include <wx/string.h>
+#include <wx/config.h>
+#if !defined(__WXMSW__)
 #include <unistd.h>
 #endif
 #include <xtd/argument_exception.h>
@@ -7,8 +9,6 @@
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/settings.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <wx/string.h>
-#include <wx/config.h>
 
 using namespace std;
 using namespace std::literals;

@@ -25,7 +25,7 @@
 #include <xtd/forms/native/scroll_bar_styles.h>
 #include <xtd/forms/native/virtual_keys.h>
 #include <xtd/forms/native/window_styles.h>
-#if defined(_WIN32)
+#if defined(__WXMSW__)
 #include <Windows.h>
 #include <Commctrl.h>
 #endif
