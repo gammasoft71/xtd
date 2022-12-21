@@ -15,7 +15,7 @@ using namespace xtd;
 using namespace xtd::drawing::native;
 
 namespace {
-  #if defined(__APPLE__)
+  #if defined(__WXOSX__)
   float pixel_to_native_font_graphics_untit(float size) {
     return size;  // font is in points
   }
