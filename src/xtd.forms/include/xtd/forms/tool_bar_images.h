@@ -16,7 +16,7 @@ namespace xtd {
     /// xtd::forms
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms
+    /// @ingroup xtd_forms components
     class tool_bar_images final static_ {
     public:
       /// @name Methods
