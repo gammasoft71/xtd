@@ -289,5 +289,5 @@ void image::save(intptr image, std::ostream& stream, size_t raw_format) {
 }
 
 float image::screen_dpi() {
-  return wxDisplay::GetStdPPI().GetWidth();
+  return static_cast<float>(wxDisplay::GetStdPPIValue());
 }
