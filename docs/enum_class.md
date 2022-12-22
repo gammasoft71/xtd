@@ -186,7 +186,7 @@ By default, an enum class attribute is [xtd::enum_attribute::standard](https://c
 Write the following code to set the attribute of an enum class :
 
 ```c++
-enum clas enum_flags { /*...*/; }
+enum class enum_flags { /*...*/; }
 
 template<> struct xtd::enum_set_attribute<enum_flags> {
   explicit operator auto() const noexcept {return xtd::enum_attribute::flags;}
@@ -408,6 +408,40 @@ There are some helpers in xtd to make your job easier:
 * [enum_struct_ut_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga341342381ae697a142233d256948df84)
 
 ### flags_attribute_
+
+Provides the set attribute struct for enumerations.
+
+This helper is created to facilitate to set the [xtd::enum_set_attribute](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__set__attribute.html) with the [xtd::enum_attribute::flags](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf) atribute and the implementation of the following operators for enum flags:
+
+| Operator | Name                   |
+|----------|------------------------|
+| ^=       | Bitwise XOR assignment |
+| &=       | Bitwise AND assignment |
+| \|=      | Bitwise OR assignment  |
+| +=       | Addition assignment    |
+| -=       | Subtraction assignment |
+| ^        | Bitwise XOR            |
+| &        | Bitwise AND            |
+| \|       | Bitwise OR             |
+| +        | Addition               |
+| -        | Subtraction            |
+| ~        | Bitwise NOT            |
+
+See [operators](https://en.cppreference.com/w/cpp/language/operators) for more information about operators.
+
+The following code shows how to use [flags_attribute_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gaea49fae71107df8769685efb159c181a) helper.
+
+```c++
+enum class enum_flags { /*...*/; }
+
+flags_attribute(, enum_flags);
+```
+
+#### Warning
+
+The [flags_attribute_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gaea49fae71107df8769685efb159c181a) helper as one limitiation :
+
+* The enum's flags cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enum flags is in a class or struct, add operators manually and use xtd::enum_set_attribute to register the xtd::enum_attribute::flags attribute.
 
 ### enum_
 
