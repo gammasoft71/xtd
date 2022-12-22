@@ -7,7 +7,7 @@ enum class text_attribute {
   bold = 0b1,
   italic = 0b10,
   underline = 0b100,
-  strikeout = 0b1000,
+  strikeout = 0b1000
 };
 
 text_attribute operator|(text_attribute lhs, text_attribute rhs) {return static_cast<text_attribute>(static_cast<std::underlying_type<text_attribute>::type>(lhs) | static_cast<std::underlying_type<text_attribute>::type>(rhs));}

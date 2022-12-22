@@ -4,6 +4,12 @@
 #pragma once
 
 #include "enum_collection.h"
+#include "types.h"
+
+#define __XTD_CORE_INTERNAL__
+#include "internal/__enum_introspection.h"
+#include "internal/__enum_definition_to_enum_collection.h"
+#undef __XTD_CORE_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -65,10 +71,11 @@ namespace xtd {
 /// @par Examples
 /// The following code show how to use #enum_ut_ helper.
 /// @include enum_ut.cpp
-#define enum_ut_(namespace_name, enum_type, underlying_type, ...) \
-  namespace namespace_name { enum enum_type : underlying_type {__VA_ARGS__}; } \
-  template<> struct xtd::enum_register<namespace_name::enum_type> { \
-    explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_type>(#__VA_ARGS__);} \
+#define enum_ut_(namespace_name, enum_t, underlying_t, ...) \
+  namespace namespace_name { enum enum_t : underlying_t {__VA_ARGS__}; } \
+  __enum_introspection__(namespace_name, enum_t, underlying_t, __VA_ARGS__) \
+  template<> struct xtd::enum_register<namespace_name::enum_t> { \
+    explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_t>(#__VA_ARGS__);} \
   }
 
 /// @brief Provides the registration struct for enum class helper with specified underlying type.
@@ -88,10 +95,11 @@ namespace xtd {
 /// @par Examples
 /// The following code show how to use #enum_class_ut_ helper.
 /// @include enum_class_ut.cpp
-#define enum_class_ut_(namespace_name, enum_class_type, underlying_type, ...) \
-  namespace namespace_name { enum class enum_class_type : underlying_type { __VA_ARGS__ }; } \
-  template<> struct xtd::enum_register<namespace_name::enum_class_type> { \
-    explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_class_type>(#__VA_ARGS__);} \
+#define enum_class_ut_(namespace_name, enum_class_t, underlying_t, ...) \
+  namespace namespace_name { enum class enum_class_t : underlying_t { __VA_ARGS__ }; } \
+  __enum_introspection__(namespace_name, enum_class_t, underlying_t, __VA_ARGS__) \
+  template<> struct xtd::enum_register<namespace_name::enum_class_t> { \
+    explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_class_t>(#__VA_ARGS__);} \
   }
 
 /// @brief Provides the registration struct for enum helper with specified underlying type.
@@ -111,10 +119,11 @@ namespace xtd {
 /// @par Examples
 /// The following code show how to use #enum_struct_ut_ helper.
 /// @include enum_struct_ut.cpp
-#define enum_struct_ut_(namespace_name, enum_struct_type, underlying_type, ...) \
-  namespace namespace_name { enum struct enum_struct_type : underlying_type { __VA_ARGS__ }; } \
-  template<> struct xtd::enum_register<namespace_name::enum_struct_type> { \
-    explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_struct_type>(#__VA_ARGS__);} \
+#define enum_struct_ut_(namespace_name, enum_struct_t, underlying_t, ...) \
+  namespace namespace_name { enum struct enum_struct_t : underlying_t { __VA_ARGS__ }; } \
+  __enum_introspection__(namespace_name, enum_struct_t, underlying_t, __VA_ARGS__) \
+  template<> struct xtd::enum_register<namespace_name::enum_struct_t> { \
+    explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_struct_t>(#__VA_ARGS__);} \
   }
 
 /// @brief Provides the registration struct for enum helper.
@@ -133,8 +142,8 @@ namespace xtd {
 /// @par Examples
 /// The following code show how to use #enum_ helper.
 /// @include enum.cpp
-#define enum_(namespace_name, enum_type, ...) \
-  enum_ut_(namespace_name, enum_type, int32, __VA_ARGS__)
+#define enum_(namespace_name, enum_t, ...) \
+  enum_ut_(namespace_name, enum_t, xtd::int32, __VA_ARGS__)
 
 /// @brief Provides the registration struct for enum class helper.
 /// @par Namespace
@@ -152,8 +161,8 @@ namespace xtd {
 /// @par Examples
 /// The following code show how to use #enum_ helper.
 /// @include enum_class.cpp
-#define enum_class_(namespace_name, enum_class_type, ...) \
-  enum_class_ut_(namespace_name, enum_class_type, int32, __VA_ARGS__)
+#define enum_class_(namespace_name, enum_class_t, ...) \
+  enum_class_ut_(namespace_name, enum_class_t, xtd::int32, __VA_ARGS__)
 
 /// @brief Provides the registration struct for enum struct helper.
 /// @par Namespace
@@ -171,5 +180,5 @@ namespace xtd {
 /// @par Examples
 /// The following code show how to use #enum_ helper.
 /// @include enum_struct.cpp
-#define enum_struct_(namespace_name, enum_struct_type, ...) \
-  enum_struct_ut_(namespace_name, enum_struct_type, int32, __VA_ARGS__)
+#define enum_struct_(namespace_name, enum_struct_t, ...) \
+  enum_struct_ut_(namespace_name, enum_struct_t, xtd::int32, __VA_ARGS__)

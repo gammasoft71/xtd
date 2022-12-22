@@ -7,7 +7,7 @@ enum_class_(, text_attribute,
   bold = 0b1,
   italic = 0b10,
   underline = 0b100,
-  strikeout = 0b1000,
+  strikeout = 0b1000
 );
 
 flags_attribute_(, text_attribute);
