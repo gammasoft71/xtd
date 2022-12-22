@@ -12,6 +12,10 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
+namespace {
+  link_label::link link_empty;
+};
+
 struct link_label::data {
   bool mouse_hover = false;
   std::optional<xtd::drawing::color> active_link_color;
@@ -36,15 +40,17 @@ link_label::link_collection& link_label::link_collection::operator =(const link_
 }
 
 link_label::link_collection::const_reference link_label::link_collection::operator [](const ustring& name) const noexcept {
+  static value_type link_empty;
   for (auto& item : *this)
     if (item.name() == name) return item;
-  return empty_;
+  return link_empty;
 }
 
 link_label::link_collection::reference link_label::link_collection::operator [](const ustring& name) noexcept {
+  static value_type link_empty;
   for (auto& item : *this)
     if (item.name() == name) return item;
-  return empty_;
+  return link_empty;
 }
 
 link_label::link_label() : data_(std::make_shared<data>()) {
@@ -170,7 +176,7 @@ void link_label::on_mouse_click(const mouse_event_args& e) {
   label::on_mouse_click(e);
   if (!enabled()) return;
   auto& link = point_in_link(e.location());
-  if (link != link_empty_ && link.enabled()) {
+  if (link != link_empty && link.enabled()) {
     link_label_clicked_event_args args(link, e.button());
     link_clicked(*this, args);
     if (args.visited()) {
@@ -184,7 +190,7 @@ void link_label::on_mouse_down(const mouse_event_args& e) {
   label::on_mouse_down(e);
   if (!enabled()) return;
   auto& link = point_in_link(e.location());
-  if (link != link_empty_) {
+  if (link != link_empty) {
     link.active_(true);
     invalidate();
   }
@@ -203,7 +209,7 @@ void link_label::on_mouse_move(const mouse_event_args& e) {
   if (!enabled()) return;
   data_->mouse_hover = true;
   auto& link = point_in_link(e.location());
-  cursor(link != link_empty_ && link.enabled() ? override_cursor() : data_->original_cursor);
+  cursor(link != link_empty && link.enabled() ? override_cursor() : data_->original_cursor);
   data_->mouse_hover = false;
 }
 
@@ -282,7 +288,7 @@ link_label::link& link_label::point_in_link(const xtd::drawing::point& point) {
       ++link_index;
     }
     
-  return link_empty_;
+  return link_empty;
 }
 
 xtd::drawing::point link_label::get_text_location(size_t line_number) const noexcept {

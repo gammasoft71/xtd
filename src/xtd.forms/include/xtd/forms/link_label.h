@@ -106,9 +106,6 @@ namespace xtd {
         /// @remarks The operator [] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator [] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
         reference operator [](const xtd::ustring& name) noexcept;
         /// @}
-        
-      private:
-        inline static value_type empty_;
       };
       
       /// @name Constructors
@@ -200,7 +197,6 @@ namespace xtd {
       xtd::drawing::font link_font() const noexcept;
       
       std::shared_ptr<data> data_;
-      inline static link link_empty_;
     };
   }
 }
