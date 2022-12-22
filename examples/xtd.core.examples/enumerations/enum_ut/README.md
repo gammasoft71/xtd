@@ -2,7 +2,6 @@
 
 * Shows how to use [xtd::enum_object](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object.html) class and [enum_ut_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gabe13d52c924723772f27878f606210cd) helper.
 
-
 ## Sources
 
 [src/enum_ut.cpp](src/enum_ut.cpp)
