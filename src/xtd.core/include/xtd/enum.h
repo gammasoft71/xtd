@@ -15,11 +15,6 @@
 #include "enum_collection.h"
 #include "enum_register.h"
 #include "enum_set_attribute.h"
-/// @cond
-#define __XTD_CORE_INTERNAL__
-#include "internal/__enum_definition_to_enum_collection.h"
-#undef __XTD_CORE_INTERNAL__
-/// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
