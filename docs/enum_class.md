@@ -395,7 +395,7 @@ enum_test::value_six does not exists!
 ## helpers
 
 Registering an `enum class flags` is unfortunately verbose. 
-Registering an `enum, `enum class` or an `enum struct` is unfortunately verbose too. 
+Registering an `enum`, `enum class` or an `enum struct` is unfortunately verbose too. 
 
 There are some helpers in xtd to make your job easier:
 
