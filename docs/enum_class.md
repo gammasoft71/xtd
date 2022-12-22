@@ -399,18 +399,27 @@ Registering an `enum, `enum class` or an `enum struct` is unfortunately verbose 
 
 There are some helpers in xtd to make your job easier:
 
-* [flags_attribute_]()
-* [enum_]() and [enum_ut_]()
-* [enum_class_]() and [enum_class_ut_]()
-* [enum_struct_]() and [enum_struct_ut_]()
+* [flags_attribute_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gaea49fae71107df8769685efb159c181a)
+* [enum_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga6c6a896cbec833fa1fac13b700cf8691)
+* [enum_ut_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gabe13d52c924723772f27878f606210cd)
+* [enum_class_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gade4794e2743558ee1eb5bbad10c7f6d4)
+* [enum_class_ut_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga6918e267c2970d28460e6c42a3b03f4a)
+* [enum_struct_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga85a4f5366ae461ca1e20872d39a0b440)
+* [enum_struct_ut_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga341342381ae697a142233d256948df84)
 
 ### flags_attribute_
 
-### enum_ and enum_ut_
+### enum_
 
-### enum_class_ and enum_class_ut_
+### enum_ut_
 
-### enum_struct_ and enum_struct_ut_
+### enum_class_
+
+### enum_class_ut_
+
+### enum_struct_
+
+### enum_struct_ut_
 
 # See also
 ​
