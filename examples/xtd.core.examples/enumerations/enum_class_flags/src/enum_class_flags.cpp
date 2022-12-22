@@ -20,3 +20,12 @@ int main() {
   console::write_line("names = {}", enum_object<>::get_names<text_attribute>());
   console::write_line("entries = {}", enum_object<>::get_entries_as_int32<text_attribute>());
 }
+
+// This code produces the following output :
+//
+// name = bold, italic
+// value = 3
+// as<int> = 3
+// values = [0, 1, 2, 4, 8]
+// names = [normal, bold, italic, underline, strikeout]
+// entries = [(0, normal), (1, bold), (2, italic), (4, underline), (8, strikeout)]
