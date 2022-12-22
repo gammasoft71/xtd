@@ -71,7 +71,7 @@ namespace xtd {
 /// | -        | Subtraction            |
 /// | ~        | Bitwise NOT            |
 /// @warning The helper as one limitiation :
-///  * The enum's flags cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enum flags is in a class or struct, add operators mnually and use xtd::enum_set_attribute to register the xtd::enum_attribute::flags attribute.
+///  * The enum's flags cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enum flags is in a class or struct, add operators manually and use xtd::enum_set_attribute to register the xtd::enum_attribute::flags attribute.
 /// @par Examples
 /// The following code show how to use #flags_attribute_ helper.
 /// @include format_enum_class_flags.cpp

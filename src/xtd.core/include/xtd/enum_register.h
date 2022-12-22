@@ -48,29 +48,128 @@ namespace xtd {
   };
 }
 
+/// @brief Provides the registration struct for enum helper with specified underlying type.
+/// @par Namespace
+/// xtd
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core system keywords
+/// @param namespace_name The name of the the namespace. Empty if no namespace.
+/// @param enum_type The name of the enum.
+/// @param underlying_type The underying type.
+/// @param ... The nemumeration lists.
+/// @remaks This helper is created to facilitate to set the xtd::enum_register with the enumeration identifiers.
+/// @warning The helper as some limitiations :
+///  * The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use xtd::enum_register to register the enumeration identifiers.
+///  * The value of identifier does not support constant value, defines, arithmetics exression, ... The value of identifier must be an integral value. If you want use other values than integral values, you must add operators manually and use xtd::enum_register to register the enumeration identifiers. This limitation will be removed in a future version of xtd.
+/// @par Examples
+/// The following code show how to use #enum_ut_ helper.
+/// @include enum_ut.cpp
 #define enum_ut_(namespace_name, enum_type, underlying_type, ...) \
   namespace namespace_name { enum enum_type : underlying_type {__VA_ARGS__}; } \
-    template<> struct xtd::enum_register<namespace_name::enum_type> { \
+  template<> struct xtd::enum_register<namespace_name::enum_type> { \
     explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_type>(#__VA_ARGS__);} \
   }
 
+/// @brief Provides the registration struct for enum class helper with specified underlying type.
+/// @par Namespace
+/// xtd
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core system keywords
+/// @param namespace_name The name of the the namespace. Empty if no namespace.
+/// @param enum_class_type The name of the enum class.
+/// @param underlying_type The underying type.
+/// @param ... The nemumeration lists.
+/// @remaks This helper is created to facilitate to set the xtd::enum_register with the enumeration identifiers.
+/// @warning The helper as some limitiations :
+///  * The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use xtd::enum_register to register the enumeration identifiers.
+///  * The value of identifier does not support constant value, defines, arithmetics exression, ... The value of identifier must be an integral value. If you want use other values than integral values, you must add operators manually and use xtd::enum_register to register the enumeration identifiers. This limitation will be removed in a future version of xtd.
+/// @par Examples
+/// The following code show how to use #enum_class_ut_ helper.
+/// @include enum_class_ut.cpp
 #define enum_class_ut_(namespace_name, enum_class_type, underlying_type, ...) \
   namespace namespace_name { enum class enum_class_type : underlying_type { __VA_ARGS__ }; } \
-    template<> struct xtd::enum_register<namespace_name::enum_class_type> { \
+  template<> struct xtd::enum_register<namespace_name::enum_class_type> { \
     explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_class_type>(#__VA_ARGS__);} \
   }
 
+/// @brief Provides the registration struct for enum helper with specified underlying type.
+/// @par Namespace
+/// xtd
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core system keywords
+/// @param namespace_name The name of the the namespace. Empty if no namespace.
+/// @param enum_struct_type The name of the enum struct.
+/// @param underlying_type The underying type.
+/// @param ... The nemumeration lists.
+/// @remaks This helper is created to facilitate to set the xtd::enum_register with the enumeration identifiers.
+/// @warning The helper as some limitiations :
+///  * The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use xtd::enum_register to register the enumeration identifiers.
+///  * The value of identifier does not support constant value, defines, arithmetics exression, ... The value of identifier must be an integral value. If you want use other values than integral values, you must add operators manually and use xtd::enum_register to register the enumeration identifiers. This limitation will be removed in a future version of xtd.
+/// @par Examples
+/// The following code show how to use #enum_struct_ut_ helper.
+/// @include enum_struct_ut.cpp
 #define enum_struct_ut_(namespace_name, enum_struct_type, underlying_type, ...) \
   namespace namespace_name { enum struct enum_struct_type : underlying_type { __VA_ARGS__ }; } \
-    template<> struct xtd::enum_register<namespace_name::enum_struct_type> { \
+  template<> struct xtd::enum_register<namespace_name::enum_struct_type> { \
     explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_struct_type>(#__VA_ARGS__);} \
-}
+  }
 
+/// @brief Provides the registration struct for enum helper.
+/// @par Namespace
+/// xtd
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core system keywords
+/// @param namespace_name The name of the the namespace. Empty if no namespace.
+/// @param enum_type The name of the enum.
+/// @param ... The nemumeration lists.
+/// @remaks This helper is created to facilitate to set the xtd::enum_register with the enumeration identifiers.
+/// @warning The helper as some limitiations :
+///  * The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use xtd::enum_register to register the enumeration identifiers.
+///  * The value of identifier does not support constant value, defines, arithmetics exression, ... The value of identifier must be an integral value. If you want use other values than integral values, you must add operators manually and use xtd::enum_register to register the enumeration identifiers. This limitation will be removed in a future version of xtd.
+/// @par Examples
+/// The following code show how to use #enum_ helper.
+/// @include enum.cpp
 #define enum_(namespace_name, enum_type, ...) \
   enum_ut_(namespace_name, enum_type, int32, __VA_ARGS__)
 
+/// @brief Provides the registration struct for enum class helper.
+/// @par Namespace
+/// xtd
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core system keywords
+/// @param namespace_name The name of the the namespace. Empty if no namespace.
+/// @param enum_class_type The name of the enum class.
+/// @param ... The nemumeration lists.
+/// @remaks This helper is created to facilitate to set the xtd::enum_register with the enumeration identifiers.
+/// @warning The helper as some limitiations :
+///  * The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use xtd::enum_register to register the enumeration identifiers.
+///  * The value of identifier does not support constant value, defines, arithmetics exression, ... The value of identifier must be an integral value. If you want use other values than integral values, you must add operators manually and use xtd::enum_register to register the enumeration identifiers. This limitation will be removed in a future version of xtd.
+/// @par Examples
+/// The following code show how to use #enum_ helper.
+/// @include enum_class.cpp
 #define enum_class_(namespace_name, enum_class_type, ...) \
   enum_class_ut_(namespace_name, enum_class_type, int32, __VA_ARGS__)
 
+/// @brief Provides the registration struct for enum struct helper.
+/// @par Namespace
+/// xtd
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core system keywords
+/// @param namespace_name The name of the the namespace. Empty if no namespace.
+/// @param enum_struct_type The name of the enum struct.
+/// @param ... The nemumeration lists.
+/// @remaks This helper is created to facilitate to set the xtd::enum_register with the enumeration identifiers.
+/// @warning The helper as some limitiations :
+///  * The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use xtd::enum_register to register the enumeration identifiers.
+///  * The value of identifier does not support constant value, defines, arithmetics exression, ... The value of identifier must be an integral value. If you want use other values than integral values, you must add operators manually and use xtd::enum_register to register the enumeration identifiers. This limitation will be removed in a future version of xtd.
+/// @par Examples
+/// The following code show how to use #enum_ helper.
+/// @include enum_struct.cpp
 #define enum_struct_(namespace_name, enum_struct_type, ...) \
-  @enum_struct_ut_(namespace_name, enum_struct_type, int32, __VA_ARGS__)
+  enum_struct_ut_(namespace_name, enum_struct_type, int32, __VA_ARGS__)
