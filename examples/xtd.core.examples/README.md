@@ -225,6 +225,11 @@
 * [udp_client_ip_v4](network/udp_client_ip_v4/README.md) shows hows how to use [xtd::net::sockets::udp_client](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1net_1_1sockets_1_1udp__client.html) class.
 * [udp_client_ip_v6](network/udp_client_ip_v6/README.md) shows hows how to use [xtd::net::sockets::udp_client](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1net_1_1sockets_1_1udp__client.html) class.
 
+## [Parse](parse/README.md)
+
+* [parse_boolean](parse/parse_boolean/README.md) shows how to use [xtd::parse](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4) method with boolean value.
+* [parse_numeric](parse/parse_numeric/README.md) shows how to use [xtd::parse](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4) method with numeric (int8, int16, int32, int64, uint8, uint16, uint32 and uint64).
+
 ## [Processes](processes/README.md)
 
 * [process_start_info](processes/process_start_info/README.md) shows how to use [xtd::diagnostics::process_start_info](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1process__start__info.html) class.

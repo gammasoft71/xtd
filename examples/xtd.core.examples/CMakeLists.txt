@@ -25,6 +25,7 @@ add_projects(
   math
   media
   network
+  parse
   processes
   random
   sprintf
