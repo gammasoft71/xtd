@@ -83,6 +83,18 @@ namespace __enumeration_introspection {
     template <class type_t>
     constexpr explicit operator type_t() const {return type_t(value);}
   };
+  
+  template <class base_t>
+  struct value_assigner {
+    base_t value {};
+    
+    constexpr value_assigner& operator ,(enumeration_maker<base_t>& other) {
+      if (other.is_set) value = other.value;
+      else other = value;
+      ++value;
+      return *this;
+    }
+  };
 
   class string_block_iterator {
     char const* data {};
@@ -231,6 +243,7 @@ namespace __enumeration_introspection {
       enum_t __enumeration_internal_values__[enum_type_info_base<enum_t>::num_states]; \
       constexpr enum_value_list_base() : __enumeration_internal_values__() { \
         enumeration_maker<base_t> __VA_ARGS__; \
+        value_assigner<base_t> {}, __VA_ARGS__; \
         enumeration_maker<base_t> __enum_introspection_vals[] {__VA_ARGS__}; \
         for (size_t i = 0; i < enum_type_info_base<enum_t>::num_states; i++) \
           this->__enumeration_internal_values__[i] = enum_t(__enum_introspection_vals[i]); \
