@@ -1,14 +1,16 @@
 /// @file
 /// @brief Contains dark_mode methods
 /// @remarks Code from https://github.com/ysc3839/win32-darkmode
+#define TRACE
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/types.h>
+#include <xtd/diagnostics/trace.h>
 
 using namespace xtd;
 
-#if defined(__WXMSW__)
+#if defined(_WIN32)
 #include <Windows.h>
 #include <Uxtheme.h>
 #undef max
@@ -243,7 +245,7 @@ constexpr bool CheckBuildNumber(DWORD buildNumber) {
   return (buildNumber == 17763 || // 1809
       buildNumber == 18362 || // 1903
       buildNumber == 18363 || // 1909
-      buildNumber >= 19041); // 2004, 20H2, 21H1, ...
+      buildNumber >= 19041); // 2004, 20H2, 21H1, 21H2, ...
 }
 
 void init_dark_mode(xtd::int32 enableDarkMode) {
@@ -252,6 +254,7 @@ void init_dark_mode(xtd::int32 enableDarkMode) {
     DWORD major, minor;
     RtlGetNtVersionNumbers(&major, &minor, &g_buildNumber);
     g_buildNumber &= ~0xF0000000;
+    xtd::diagnostics::trace::write_line("build_number= {}", g_buildNumber);
     if (major == 10 && minor == 0 && CheckBuildNumber(g_buildNumber)) {
       HMODULE hUxtheme = LoadLibraryExW(L"uxtheme.dll", nullptr, LOAD_LIBRARY_SEARCH_SYSTEM32);
       if (hUxtheme) {
