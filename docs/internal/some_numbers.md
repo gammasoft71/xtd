@@ -4,7 +4,7 @@
 
 ## Key dates
 
-* start project : 2019-02-06
+* start project : 2022-12-23
 * First release (beta) : 2021-10-10
 
 ## Team
@@ -20,53 +20,50 @@
 
 ### src
 
-* Files : 1169
-* Lines : 180827
-  * 82973 code lines (46%)
-  * 16999 blank lines (9%)
-  * 80395 comment lines (44%)
-  * 515 mixed lines 1%)
+* Files : 1623
+* Lines : 258330
+  * 117635 code lines (46%)
+  * 114432 comment lines (44%)
+  *  26263 blank lines (10%)
 
 ### tests
 
-* Files : 254
-* Lines : 40974
-  * 34144 code lines (83%)
-  * 5614 blank lines (14%)
-  * 756 comment lines (3%)
-  * 466 mixed lines (1%)
+* Files : 324
+* Lines : 49595
+  * 41906 code lines (85%)
+  *   715 comment lines (#%)
+  *  6974 blank lines (14%)
 
 ### examples
 
-* Files : 458
-* Lines : 24897
-  * 18609 code lines (75%)
-  * 3401 blank lines (14%)
-  * 2839 comment lines (11%)
-  * 48 mixed lines (0%)
+* Examples : 529
+* Files : 1773
+* Lines : 54250
+  * 38430 code lines (71%)
+  *  3959 comment lines (7%)
+  * 11861 blank lines (12%)
 
 ### tools
 
-* Files : 22
-* Lines : 5760
-  * 5063 code lines (88%)
-  * 532 blank lines (9%)
-  * 61 comment lines (1%)
-  * 104 mixed lines (2%)
+* Files : 94
+* Lines : 8422
+  * 7361 code lines (87%)
+  *  121 comment lines (1%)
+  *  940 blank lines (12%)
   
 ## Unit tests
 
 * xtd.core.unit_tests : 
-   * test_case : 280
-   * tests : 9249
+   * test_case : 284
+   * tests : 9374
    
 * xtd.drawing.unit_tests : 
    * test_case : 3
    * tests : 319
    
 * xtd.forms.unit_tests : 
-   * test_case : 9
-   * tests : 87
+   * test_case : 28
+   * tests : 386
    
 * xtd.forms.unit_tests : 
    * tests : 282
