@@ -1990,6 +1990,13 @@ add_definitions(-D__XTD_TARGET_ID_SHARED_LIBRARY__=${__CMAKE_TARGET_ID_SHARED_LI
 add_definitions(-D__XTD_TARGET_ID_STATIC_LIBRARY__=${__CMAKE_TARGET_ID_STATIC_LIBRARY__})
 add_definitions(-D__XTD_TARGET_ID_CUSTOM_TARGET__=${__CMAKE_TARGET_ID_CUSTOM_TARGET__})
 
+# Enumeration introspection
+# brief The following option activate the enum introspection.
+option(XTD_USE_ENUMERATION_INTROSPECTION "Activate the enumeration introspection." ON)
+if (XTD_USE_ENUMERATION_INTROSPECTION)
+  add_definitions(-D__XTD_USE_ENUMERATION_INTROSPECTION__)
+endif ()
+
 # standard C
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
