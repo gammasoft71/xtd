@@ -9,6 +9,7 @@ add_projects(
   enum_class
   enum_class_ut
   enum_class_flags
+  enum_class_flags_introspection
   enum_class_flags_without_helpers
   enum_class_parse
   enum_class_without_helper
