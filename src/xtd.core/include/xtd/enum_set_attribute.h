@@ -89,6 +89,4 @@ namespace xtd {
     [[maybe_unused]] inline enum_type operator -(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) - static_cast<std::underlying_type<enum_type>::type>(rhs));} \
     [[maybe_unused]] inline enum_type operator ~(enum_type lhs) {return static_cast<enum_type>(~static_cast<std::underlying_type<enum_type>::type>(lhs));} \
   }\
-    template<> struct xtd::enum_set_attribute<namespace_name::enum_type> { \
-    explicit operator auto() const noexcept {return xtd::enum_attribute::flags;} \
-  }
+  template<> struct xtd::enum_set_attribute<namespace_name::enum_type> {explicit operator auto() const noexcept {return xtd::enum_attribute::flags;}}
