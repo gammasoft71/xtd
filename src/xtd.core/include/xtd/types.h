@@ -99,6 +99,10 @@ namespace xtd {
   /// @ingroup xtd_core types
   extern core_export_ std::nullptr_t null;
   
+  /// @brief Represent the signed integer type of the result of subtracting two pointers.
+  /// @ingroup xtd_core types
+  using ptrdiff = std::ptrdiff_t;
+  
   /// @brief Represents a 8-bit signed integer.
   /// @par Namespace
   /// xtd
