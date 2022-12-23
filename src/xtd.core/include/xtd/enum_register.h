@@ -54,7 +54,7 @@ namespace xtd {
   };
 }
 
-/// @brief Provides the registration struct for enum helper with specified underlying type.
+/// @brief Provides the registration struct for enum with specified underlying type.
 /// @par Namespace
 /// xtd
 /// @par Library
@@ -72,13 +72,11 @@ namespace xtd {
 /// The following code show how to use #enum_ut_ helper.
 /// @include enum_ut.cpp
 #define enum_ut_(namespace_name, enum_t, underlying_t, ...) \
-  namespace namespace_name { enum enum_t : underlying_t {__VA_ARGS__}; } \
+  namespace namespace_name {enum enum_t : underlying_t {__VA_ARGS__};} \
   __enum_introspection__(namespace_name, enum_t, underlying_t, __VA_ARGS__) \
-  template<> struct xtd::enum_register<namespace_name::enum_t> { \
-    explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_t>(#__VA_ARGS__);} \
-  }
+  template<> struct xtd::enum_register<namespace_name::enum_t> {explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_t>(#__VA_ARGS__);}}
 
-/// @brief Provides the registration struct for enum class helper with specified underlying type.
+/// @brief Provides the registration struct for enum class with specified underlying type.
 /// @par Namespace
 /// xtd
 /// @par Library
@@ -96,13 +94,11 @@ namespace xtd {
 /// The following code show how to use #enum_class_ut_ helper.
 /// @include enum_class_ut.cpp
 #define enum_class_ut_(namespace_name, enum_class_t, underlying_t, ...) \
-  namespace namespace_name { enum class enum_class_t : underlying_t { __VA_ARGS__ }; } \
+  namespace namespace_name {enum class enum_class_t : underlying_t { __VA_ARGS__ };} \
   __enum_introspection__(namespace_name, enum_class_t, underlying_t, __VA_ARGS__) \
-  template<> struct xtd::enum_register<namespace_name::enum_class_t> { \
-    explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_class_t>(#__VA_ARGS__);} \
-  }
+  template<> struct xtd::enum_register<namespace_name::enum_class_t> {explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_class_t>(#__VA_ARGS__);}}
 
-/// @brief Provides the registration struct for enum helper with specified underlying type.
+/// @brief Provides the registration struct for enum with specified underlying type.
 /// @par Namespace
 /// xtd
 /// @par Library
@@ -120,13 +116,11 @@ namespace xtd {
 /// The following code show how to use #enum_struct_ut_ helper.
 /// @include enum_struct_ut.cpp
 #define enum_struct_ut_(namespace_name, enum_struct_t, underlying_t, ...) \
-  namespace namespace_name { enum struct enum_struct_t : underlying_t { __VA_ARGS__ }; } \
+  namespace namespace_name {enum struct enum_struct_t : underlying_t { __VA_ARGS__ };} \
   __enum_introspection__(namespace_name, enum_struct_t, underlying_t, __VA_ARGS__) \
-  template<> struct xtd::enum_register<namespace_name::enum_struct_t> { \
-    explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_struct_t>(#__VA_ARGS__);} \
-  }
+  template<> struct xtd::enum_register<namespace_name::enum_struct_t> {explicit operator auto() const {return __enum_definition_to_enum_collection__<namespace_name::enum_struct_t>(#__VA_ARGS__);}}
 
-/// @brief Provides the registration struct for enum helper.
+/// @brief Provides the registration struct for enum.
 /// @par Namespace
 /// xtd
 /// @par Library
@@ -145,7 +139,7 @@ namespace xtd {
 #define enum_(namespace_name, enum_t, ...) \
   enum_ut_(namespace_name, enum_t, xtd::int32, __VA_ARGS__)
 
-/// @brief Provides the registration struct for enum class helper.
+/// @brief Provides the registration struct for enum class.
 /// @par Namespace
 /// xtd
 /// @par Library
@@ -164,7 +158,7 @@ namespace xtd {
 #define enum_class_(namespace_name, enum_class_t, ...) \
   enum_class_ut_(namespace_name, enum_class_t, xtd::int32, __VA_ARGS__)
 
-/// @brief Provides the registration struct for enum struct helper.
+/// @brief Provides the registration struct for enum struct.
 /// @par Namespace
 /// xtd
 /// @par Library

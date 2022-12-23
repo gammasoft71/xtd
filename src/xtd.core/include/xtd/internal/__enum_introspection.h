@@ -47,14 +47,9 @@ namespace __enumeration_introspection {
       bool is_set = false;
       enum_maker() = default;
       enum_maker(enum_maker const&) = default;
-      
-      // Ignore values on creation. We only care about these on assignment
       constexpr enum_maker(base_t) : enum_maker() {}
-      
-      // Copy assignment should operate like normal
       enum_maker& operator =(enum_maker const&) = default;
       
-      // Assigning a value results in is_set being true
       template <class type_t>
       constexpr enum_maker& operator =(type_t const& v) {
         value = base_t(v);
@@ -62,13 +57,9 @@ namespace __enumeration_introspection {
         return *this;
       }
       
-      constexpr operator base_t() const {
-        return value;
-      }
+      constexpr operator base_t() const {return value;}
       template <class type_t>
-      constexpr explicit operator type_t() const {
-        return type_t(value);
-      }
+      constexpr explicit operator type_t() const {return type_t(value);}
     };
     
     template <class base_t>
@@ -76,14 +67,8 @@ namespace __enumeration_introspection {
       base_t value {};
       
       constexpr value_assigner& operator ,(enum_maker<base_t>& other) {
-        if (other.is_set) {
-          // Update the current value to be the one stored in the enum
-          value = other.value;
-        } else {
-          // set the enum value to be the current value
-          other = value;
-        }
-        // Also we increment the value we hold
+        if (other.is_set) value = other.value;
+        else other = value;
         value++;
         return *this;
       }
@@ -91,16 +76,10 @@ namespace __enumeration_introspection {
     
     constexpr std::string_view trim_whitespace(std::string_view view) {
       size_t start = view.find_first_not_of(' ');
-      if (start == std::string_view::npos) {
-        return "";
-      } else {
-        size_t end = view.find_first_of(" =", start);
-        if (end == std::string_view::npos) {
-          return view.substr(start);
-        } else {
-          return view.substr(start, end - start);
-        }
-      }
+      if (start == std::string_view::npos) return "";
+      size_t end = view.find_first_of(" =", start);
+      if (end == std::string_view::npos) return view.substr(start);
+      return view.substr(start, end - start);
     }
     template <size_t count, size_t str_size, class function_t>
     constexpr void split_trim_apply(char const (&str)[str_size], function_t func) {
@@ -109,49 +88,38 @@ namespace __enumeration_introspection {
       for (size_t i = 0; i < count; i++) {
         auto new_pos = view.find(',');
         func(trim_whitespace(view.substr(0, new_pos)));
-        if (new_pos != std::string_view::npos) {
-          view = view.substr(new_pos + 1);
-        } else {
-          break;
-        }
+        if (new_pos != std::string_view::npos) view = view.substr(new_pos + 1);
+        else break;
       }
     }
     template <size_t count, size_t str_size>
     constexpr size_t compute_name_block_size(char const (&str)[str_size]) {
       size_t total = 0;
-      split_trim_apply<count>(str, [&](std::string_view sv) { total += sv.size(); });
+      split_trim_apply<count>(str, [&](std::string_view sv) {total += sv.size();});
       return total;
     }
-    // Copy characters into the destination buffer and store the offsets in the offsets variable. Names are separated by a '\0' character for compatibility with C.
     template <size_t count, size_t str_size>
     constexpr void write_names_and_sizes(char const (&str)[str_size], char* destination, unsigned* offsets) {
       unsigned current_offset = 0;
       split_trim_apply<count>(str, [&](std::string_view sv) {
         char const* source = sv.data();
         size_t size = sv.size();
-        for (size_t i = 0; i < size; i++) {
+        for (size_t i = 0; i < size; i++)
           destination[i] = source[i];
-        }
         *offsets++ = current_offset;
         destination += size;
         current_offset += size;
       });
-      // The last offset holds the total length of the name block.
       *offsets = current_offset;
     }
     
     constexpr auto get_top_name(std::string_view view) {
       auto pos = view.find_last_of(':');
-      if (pos == view.npos) {
-        return view;
-      } else {
-        return view.substr(pos + 1);
-      }
+      if (pos == view.npos) return view;
+      return view.substr(pos + 1);
     }
     template <size_t count>
-    constexpr auto get_top_name(char const (&str)[count]) {
-      return get_top_name(std::string_view(str, count - 1));
-    }
+    constexpr auto get_top_name(char const (&str)[count]) {return get_top_name(std::string_view(str, count - 1));}
   }
 
   class string_block_iterator {
@@ -172,15 +140,9 @@ namespace __enumeration_introspection {
       indices++;
       return previous_state;
     }
-    constexpr intptr_t operator -(string_block_iterator const& other) const noexcept {
-      return indices - other.indices;
-    }
-    constexpr bool operator ==(string_block_iterator const& other) const noexcept {
-      return indices == other.indices;
-    }
-    constexpr bool operator !=(string_block_iterator const& other) const noexcept {
-      return indices != other.indices;
-    }
+    constexpr intptr_t operator -(string_block_iterator const& other) const noexcept {return indices - other.indices;}
+    constexpr bool operator ==(string_block_iterator const& other) const noexcept {return indices == other.indices;}
+    constexpr bool operator !=(string_block_iterator const& other) const noexcept {return indices != other.indices;}
     constexpr auto operator *() const noexcept -> std::string_view {
       int off0 = indices[0];
       int off1 = indices[1];
@@ -197,31 +159,17 @@ namespace __enumeration_introspection {
     string_block(string_block const&) = default;
     
     template <class function_t>
-    constexpr string_block(function_t&& func)
-    : string_block() {
-      func(*this);
-    }
+    constexpr string_block(function_t&& func) : string_block() {func(*this);}
     
     template <class function_t>
-    constexpr string_block(string_block const& source, function_t&& func)
-    : string_block() {
-      func(source, *this);
-    }
+    constexpr string_block(string_block const& source, function_t&& func) : string_block() {func(source, *this);}
     
     using iterator = string_block_iterator;
     using const_iterator = iterator;
-    constexpr iterator begin() const noexcept {
-      return iterator(data, offsets);
-    }
-    constexpr iterator end() const noexcept {
-      return iterator(data, offsets + count);
-    }
-    constexpr static size_t size() noexcept {
-      return count;
-    }
-    constexpr static size_t block_size() noexcept {
-      return blk_size;
-    }
+    constexpr iterator begin() const noexcept {return iterator(data, offsets);}
+    constexpr iterator end() const noexcept {return iterator(data, offsets + count);}
+    constexpr static size_t size() noexcept {return count;}
+    constexpr static size_t block_size() noexcept {return blk_size;}
     constexpr std::string_view operator [](size_t i) const noexcept {
       auto off1 = offsets[i];
       auto off2 = offsets[i + 1];
@@ -230,26 +178,18 @@ namespace __enumeration_introspection {
   };
 
   namespace detail {
-    // Base type for enum_type_info
     template <class enum_t>
     struct enum_type_info_base {
       constexpr static std::string_view qualified_type_name {name_of_type<enum_t>};
-      constexpr static std::string_view type_name {
-        get_top_name(name_of_type<enum_t>)};
+      constexpr static std::string_view type_name {get_top_name(name_of_type<enum_t>)};
       constexpr static size_t num_states = 0;
       constexpr static bool is_enumeration = false;
-      constexpr static size_t size() noexcept {
-        return 0;
-      }
+      constexpr static size_t size() noexcept {return 0;}
     };
     
-    // Base type for enum_values
     template <class enum_t>
-    struct enum_value_list_base : enum_type_info_base<enum_t> {
-      //enum_t __enumeration_internal_values__[0] {};
-    };
+    struct enum_value_list_base : enum_type_info_base<enum_t> {/*enum_t __enumeration_internal_values__[0] {};*/};
     
-    // Base type for enum_names
     template <class enum_t>
     struct enum_name_list_base : enum_type_info_base<enum_t> {
       using enum_type_info_base<enum_t>::num_states;
@@ -281,15 +221,9 @@ namespace __enumeration_introspection {
   public:
     using iterator = enum_t const*;
     using const_iterator = enum_t const*;
-    constexpr enum_t const* begin() const noexcept {
-      return values.__enumeration_internal_values__;
-    }
-    constexpr enum_t const* end() const noexcept {
-      return values.__enumeration_internal_values__ + super::num_states;
-    }
-    constexpr enum_t const& operator [](size_t i) const noexcept {
-      return values.__enumeration_internal_values__[i];
-    }
+    constexpr enum_t const* begin() const noexcept {return values.__enumeration_internal_values__;}
+    constexpr enum_t const* end() const noexcept {return values.__enumeration_internal_values__ + super::num_states;}
+    constexpr enum_t const& operator [](size_t i) const noexcept {return values.__enumeration_internal_values__[i];}
   };
   
   template <class enum_t>
@@ -302,18 +236,10 @@ namespace __enumeration_introspection {
     using block_type = typename detail::enum_name_list_base<enum_t>::block_type;
     using iterator = string_block_iterator;
     using const_iterator = iterator;
-    constexpr static block_type const& get_name_block() noexcept {
-      return name_info.name_block;
-    }
-    constexpr iterator begin() const noexcept {
-      return name_info.name_block.begin();
-    }
-    constexpr iterator end() const noexcept {
-      return name_info.name_block.end();
-    }
-    constexpr std::string_view operator [](size_t i) const noexcept {
-      return name_info.name_block[i];
-    }
+    constexpr static block_type const& get_name_block() noexcept {return name_info.name_block;}
+    constexpr iterator begin() const noexcept {return name_info.name_block.begin();}
+    constexpr iterator end() const noexcept {return name_info.name_block.end();}
+    constexpr std::string_view operator [](size_t i) const noexcept {return name_info.name_block[i];}
   };
   
   template <class enum_t>
@@ -333,8 +259,7 @@ namespace __enumeration_introspection {
 
 #define __enum_introspection__(namespace_name, enum_t, base_t, ...) \
   namespace __enumeration_introspection::detail { \
-    template <> \
-    struct enum_type_info_base<enum_t> { \
+    template <> struct enum_type_info_base<enum_t> { \
       using base_type = base_t; \
       constexpr static std::string_view qualified_type_name = __enumeration_concat__(namespace_name, enum_t); \
       constexpr static std::string_view type_name = get_top_name(__enumeration_concat__(namespace_name, enum_t)); \
@@ -344,12 +269,9 @@ namespace __enumeration_introspection {
         enum_maker<base_t> NAV_DECLARE_ENUM_vals[] {__VA_ARGS__}; \
         return sizeof(NAV_DECLARE_ENUM_vals) / sizeof(enum_maker<base_t>); \
       }(); \
-      constexpr static size_t size() noexcept { \
-        return num_states; \
-      } \
+      constexpr static size_t size() noexcept {return num_states;} \
     }; \
-    template <> \
-    struct enum_value_list_base<enum_t> : enum_type_info_base<enum_t> { \
+    template <> struct enum_value_list_base<enum_t> : enum_type_info_base<enum_t> { \
       enum_t __enumeration_internal_values__[enum_type_info_base<enum_t>::num_states]; \
       constexpr enum_value_list_base() : __enumeration_internal_values__() { \
         enum_maker<base_t> __VA_ARGS__; \
@@ -359,8 +281,7 @@ namespace __enumeration_introspection {
           this->__enumeration_internal_values__[i] = enum_t(NAV_DECLARE_ENUM_vals[i]); \
       } \
     }; \
-    template <> \
-    struct enum_name_list_base<enum_t> : enum_type_info_base<enum_t> { \
+    template <> struct enum_name_list_base<enum_t> : enum_type_info_base<enum_t> { \
       using enum_type_info_base<enum_t>::num_states; \
       constexpr static size_t name_block_size = compute_name_block_size<num_states>(#__VA_ARGS__); \
       using block_type = string_block<num_states, name_block_size>; \
