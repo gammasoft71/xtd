@@ -10,7 +10,7 @@
 * [xtd::enum_set_attribute](#xtd-enum_set-attribute)
 * [Format](#format)
 * [Parse](#parse)
-* [helpers](#helpers)
+* [Introspection](#introspection)
 
 ## Overview
 
@@ -32,7 +32,9 @@ Several external libraries solve theses problems with elegance. Here is a non-ex
 * [wise_enum](https://github.com/quicknir/wise_enum)
 * And probably still others...
 
-But in the context of xtd, after testing these different external libraries, none of them have been retained for different reasons such as limitations, macros for the declaration of enums and others.
+In the context of xtd, after testing these different external libraries, none of them was chosen for various reasons such as limitations and others.
+
+xtd has therefore its own enumeration management
 
 This does not prevent you, of course, from using them in your own projects. As xtd is non-intrusive, you can easily combine them with xtd and with some xtd enum class definitions (if the limitations of the library do not prevent this).
 
@@ -124,7 +126,7 @@ entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]
 
 ## xtd::enum_register
 
-Unlike some external libraries, xtd does not yet have `enum class` introspection. So you have to register the `enum class` with the class [xtd::enum_register](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__register.html). 
+xtd can introspect `enum`, `enum class` and `enum struct` with [introspection helper macros](#introspection) or simply register the `enum` class with the [xtd::enum_register](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__register.html) class. 
 The advantage is that it has no limitation and the disadvantage is that it is more verbose.
 
 ### Note
@@ -181,7 +183,13 @@ entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]
 ## xtd::enum_set_attribute
 
 The [xtd::enum_set_attribute](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__set__attribute.html) class is used to qualify an enum class attribute. 
-By default, an enum class attribute is [xtd::enum_attribute::standard](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga21077f4832fc4718f7095d1a560a89cd).
+
+There are two types of attributes:
+
+* [xtd::enum_attribute::standard](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga21077f4832fc4718f7095d1a560a89cd) : Enum standard attribute. The default value.
+* [xtd::enum_attribute::fmagts](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf) : Enum flags attribute.
+
+The class [xtd::enum_set_attribute](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__set__attribute.html) is only used when we want to qualify the enumeration with the attribute flags.
 
 Write the following code to set the attribute of an enum class :
 
@@ -222,7 +230,7 @@ enum class test_enum {
   value_four = 4
 };
 
-test_enum operator|(test_enum lhs, test_enum rhs) {return static_cast<test_enum>(static_cast<std::underlying_type<test_enum>::type>(lhs) | static_cast<std::underlying_type<test_enum>::type>(rhs));}
+test_enum operator |(test_enum lhs, test_enum rhs) {return static_cast<test_enum>(static_cast<std::underlying_type<test_enum>::type>(lhs) | static_cast<std::underlying_type<test_enum>::type>(rhs));}
 
 template<> struct xtd::enum_set_attribute<test_enum> {
   explicit operator auto() const noexcept {return xtd::enum_attribute::flags;}
@@ -260,7 +268,7 @@ enum class test_enum {
   value_four = 4
 };
 
-test_enum operator|(test_enum lhs, test_enum rhs) {return static_cast<test_enum>(static_cast<std::underlying_type<test_enum>::type>(lhs) | static_cast<std::underlying_type<test_enum>::type>(rhs));}
+test_enum operator |(test_enum lhs, test_enum rhs) {return static_cast<test_enum>(static_cast<std::underlying_type<test_enum>::type>(lhs) | static_cast<std::underlying_type<test_enum>::type>(rhs));}
 
 template<> struct xtd::enum_register<test_enum> {
   explicit operator auto() const noexcept {return xtd::enum_collection<test_enum> {{test_enum::value_one, "value_one"}, {test_enum::value_two, "value_two"}, {test_enum::value_three, "value_three"}, {test_enum::value_four, "value_four"}};}
@@ -280,6 +288,67 @@ value = 3
 
 Error, this is not the expected value.
 Indeed, when the `value` is displayed, there is no member variable in `enum_test` that corresponds to `3`.
+
+
+### flags_attribute_
+
+To facilitate the writing of the flags attribute, there is the [flags_attribute helper](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gaea49fae71107df8769685efb159c181a).
+
+The [flags_attribute helper](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gaea49fae71107df8769685efb159c181a) helper sets the [xtd::enum_set_attribute](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__set__attribute.html) with the [xtd::enum_attribute::flags](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf) atribute and implements the following operators for enum flags:
+
+| Operator | Name                   |
+|----------|------------------------|
+| ^=       | Bitwise XOR assignment |
+| &=       | Bitwise AND assignment |
+| \|=      | Bitwise OR assignment  |
+| +=       | Addition assignment    |
+| -=       | Subtraction assignment |
+| ^        | Bitwise XOR            |
+| &        | Bitwise AND            |
+| \|       | Bitwise OR             |
+| +        | Addition               |
+| -        | Subtraction            |
+| ~        | Bitwise NOT            |
+
+See [operators](https://en.cppreference.com/w/cpp/language/operators) for more information about operators.
+
+The following code shows how to use [flags_attribute_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gaea49fae71107df8769685efb159c181a) helper.
+
+```c++
+#include <xtd/xtd.core.h>
+
+using namespace xtd;
+
+enum class test_enum {
+  value_one = 0,
+  value_two = 1,
+  value_three = 2,
+  value_four = 4
+};
+
+flags_attribute(, test_enum);
+
+template<> struct xtd::enum_register<test_enum> {
+  explicit operator auto() const noexcept {return xtd::enum_collection<test_enum> {{test_enum::value_one, "value_one"}, {test_enum::value_two, "value_two"}, {test_enum::value_three, "value_three"}, {test_enum::value_four, "value_four"}};}
+};
+
+int main() {
+  auto value = test_enum::value_two | test_enum::value_three;
+  console::write_line("value = {}", value);
+}
+```
+
+output:
+
+```
+value = value_two, value_three
+```
+
+#### Warning
+
+The [flags_attribute_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gaea49fae71107df8769685efb159c181a) helper has one limitiation :
+
+* The enum's flags cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enum flags is in a class or struct, add operators manually and use [xtd::enum_set_attribute](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga21077f4832fc4718f7095d1a560a89cd) to register the [xtd::enum_attribute::flags](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf) attribute.
 
 ## Format
 
@@ -392,14 +461,12 @@ result = value_one
 enum_test::value_six does not exists!
 ```
 
-## helpers
+## Introspection
 
-Registering an `enum class flags` is unfortunately verbose. 
-Registering an `enum`, `enum class` or an `enum struct` is unfortunately verbose too. 
+Registering an `enum`, `enum class` or an `enum struct` is unfortunately verbose. 
 
-There are some helpers in xtd to make your job easier:
+There are some introspection helpers in xtd to facilitate the work:
 
-* [flags_attribute_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gaea49fae71107df8769685efb159c181a)
 * [enum_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga6c6a896cbec833fa1fac13b700cf8691)
 * [enum_ut_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gabe13d52c924723772f27878f606210cd)
 * [enum_class_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gade4794e2743558ee1eb5bbad10c7f6d4)
@@ -407,43 +474,48 @@ There are some helpers in xtd to make your job easier:
 * [enum_struct_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga85a4f5366ae461ca1e20872d39a0b440)
 * [enum_struct_ut_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga341342381ae697a142233d256948df84)
 
-### flags_attribute_
+### Warning
 
-Provides the set attribute struct for enumerations.
+The introspection helpers have one limitiation :
 
-This helper is created to facilitate to set the [xtd::enum_set_attribute](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__set__attribute.html) with the [xtd::enum_attribute::flags](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf) atribute and the implementation of the following operators for enum flags:
-
-| Operator | Name                   |
-|----------|------------------------|
-| ^=       | Bitwise XOR assignment |
-| &=       | Bitwise AND assignment |
-| \|=      | Bitwise OR assignment  |
-| +=       | Addition assignment    |
-| -=       | Subtraction assignment |
-| ^        | Bitwise XOR            |
-| &        | Bitwise AND            |
-| \|       | Bitwise OR             |
-| +        | Addition               |
-| -        | Subtraction            |
-| ~        | Bitwise NOT            |
-
-See [operators](https://en.cppreference.com/w/cpp/language/operators) for more information about operators.
-
-The following code shows how to use [flags_attribute_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gaea49fae71107df8769685efb159c181a) helper.
-
-```c++
-enum class enum_flags { /*...*/; }
-
-flags_attribute(, enum_flags);
-```
-
-#### Warning
-
-The [flags_attribute_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gaea49fae71107df8769685efb159c181a) helper as one limitiation :
-
-* The enum's flags cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enum flags is in a class or struct, add operators manually and use xtd::enum_set_attribute to register the xtd::enum_attribute::flags attribute.
+* The enumeration cannot be in a class or struct. The enumeration must be in the global namespace or in a namespace hierarchy. If the enumumeration is in a class or struct, add operators manually and use [xtd::enum_register](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__register.html) to register the enumeration.
 
 ### enum_
+
+This helper provides the registration struct for `enum`.
+
+Thr following example shows how to use [enum_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga6c6a896cbec833fa1fac13b700cf8691) helper.
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd;
+
+enum_(, enum_test,
+  value_one,
+  value_two,
+  value_three,
+  value_four
+);
+
+int main() {
+  console::write_line("name = {}", enum_test::value_four);
+  console::write_line("value = {}", enum_object(enum_test::value_four).to_int32());
+  console::write_line("as<int> = {}", as<int>(enum_test::value_four));
+  console::write_line("values = {}", enum_object<>::get_values_as_int32<enum_test>());
+  console::write_line("names = {}", enum_object<>::get_names<enum_test>());
+  console::write_line("entries = {}", enum_object<>::get_entries_as_int32<enum_test>());
+}
+
+// This code produces the following output :
+//
+// name = value_four
+// value = 3
+// as<int> = 3
+// values = [0, 1, 2, 3]
+// names = [value_one, value_two, value_three, value_four]
+// entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]
+```
 
 ### enum_ut_
 
