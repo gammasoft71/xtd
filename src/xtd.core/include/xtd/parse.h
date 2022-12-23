@@ -357,6 +357,8 @@ namespace xtd {
     std::string lower_str = str;
     while (lower_str.size() > 0 && (lower_str[0] == 9 || lower_str[0] == 10 || lower_str[0] == 11 || lower_str[0] == 12 || lower_str[0] == 13 || lower_str[0] == 32))
       lower_str.erase(0, 1);
+    while (lower_str.size() > 0 && (lower_str[lower_str.size() - 1] == 9 || lower_str[lower_str.size() - 1] == 10 || lower_str[lower_str.size() - 1] == 11 || lower_str[lower_str.size() - 1] == 12 || lower_str[lower_str.size() - 1] == 13 || lower_str[lower_str.size() - 1] == 32))
+      lower_str.erase(lower_str.size() - 1, 1);
     for (auto& c : lower_str)
       c = static_cast<char>(std::tolower(c));
     if (lower_str != "true" && lower_str != "1" && lower_str != "false" && lower_str != "0")  __throw_parse_format_exception("Invalid string format");
