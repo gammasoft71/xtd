@@ -1,10 +1,10 @@
-# parse_boolean
+# parse_enum
 
-Shows how to use format [xtd::parse<bool>](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4) method with boolean values.
+Shows how to use format [xtd::parse<enum>](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4) method with enum values.
 
 ## Sources
 
-[src/parse_boolean.cpp](src/parse_boolean.cpp)
+[src/parse_enum.cpp](src/parse_enum.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -19,14 +19,9 @@ xtdc run
 # Output (with colors)
 
 ```
-true
-false
-true
-false
-true
-false
-true
-false
-Exception : Invalid string format
+wednesday
+wednesday
+wednesday
+Exception : invalid character found
 ```
 
