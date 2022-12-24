@@ -1,6 +1,6 @@
 # parse_floating_point
 
-Shows how to use format [xtd::parse](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4) method with numeric values (float, double and decimal).
+Shows how to use format [xtd::parse](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4) method with floating point values (float, double and decimal).
 
 ## Sources
 
