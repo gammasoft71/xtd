@@ -5,6 +5,7 @@ find_package(xtd REQUIRED)
 
 add_projects(
   parse_boolean
+  parse_floating_point
   parse_numeric
 )
 
