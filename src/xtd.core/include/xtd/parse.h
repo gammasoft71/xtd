@@ -20,7 +20,11 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename value_t>
-  inline value_t parse(const std::string& str) {__throw_parse_format_exception("Parse specialisation not found"); return {};}
+  inline value_t parse(const std::string& str) {
+    if (std::is_enum<value_t>::value) return __parse_enum<value_t>(str);
+    __throw_parse_format_exception("Parse specialisation not found");
+    return {};
+  }
   
   /// @brief Convert a string into a type.
   /// @par Namespace
