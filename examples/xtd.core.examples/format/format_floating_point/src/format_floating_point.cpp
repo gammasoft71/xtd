@@ -19,6 +19,7 @@ int main() {
   cout << ustring::format("{:p}", .0012345) << endl;
   cout << ustring::format("{:P}", .0012345) << endl;
   cout << ustring::format("{}", std::numeric_limits<double>::infinity()) << endl;
+  cout << ustring::format("{}", -std::numeric_limits<double>::infinity()) << endl;
   cout << ustring::format("{}", std::numeric_limits<double>::quiet_NaN()) << endl;
   cout << ustring::format("{}", std::numeric_limits<double>::signaling_NaN()) << endl;
 }
@@ -39,5 +40,6 @@ int main() {
 // 0.12 %
 // 0.12 %
 // inf
+// -inf
 // nan
 // nan
