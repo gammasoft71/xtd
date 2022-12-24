@@ -533,7 +533,7 @@ namespace xtd {
     /// @return enum_object An enum whose value is represented by value.
     /// @exception xtd::argument_exception The value is ! a value of enumType.
     template<typename enum_t>
-    static enum_t parse(const xtd::ustring& value) noexcept {return parse<enum_t>(value, false);}
+    static enum_t parse(const xtd::ustring& value) {return parse<enum_t>(value, false);}
     /// @brief Converts the xtd::ustring representation of the name or numeric value of one or more enumerated constants to an equivalent enumerated object.
     /// @param str An A xtd::ustring containing the name or value to convert.
     /// @param ignore_case true to Ignore case; false to regard case.
