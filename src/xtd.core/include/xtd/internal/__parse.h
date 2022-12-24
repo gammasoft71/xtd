@@ -227,4 +227,8 @@ inline value_t __parse_unsigned_number(const std::basic_string<char_t>& s, xtd::
   if ((styles & xtd::number_styles::allow_exponent) == xtd::number_styles::allow_exponent) return __parse_floating_point<value_t>(str, 0, styles);
   return __parse_unsigned<value_t>(str, base, styles);
 }
+
+template<typename value_t>
+value_t __parse_enum(const std::string& str);
 /// @endcond
+

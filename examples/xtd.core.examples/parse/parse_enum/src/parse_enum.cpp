@@ -19,14 +19,14 @@ template<> struct xtd::enum_register<week_day> {
 };
 
 int main() {
-  week_day wd1 = enum_object<>::parse<week_day>("wednesday");
+  week_day wd1 = parse<week_day>("wednesday");
   console::write_line(wd1);
   week_day wd2 = enum_object<>::parse<week_day>("WEDNESDAY", true);
   console::write_line(wd2);
-  week_day wd3 = enum_object<>::parse<week_day>("2");
+  week_day wd3 = parse<week_day>("2");
   console::write_line(wd3);
   try {
-    week_day wd4 = enum_object<>::parse<week_day>("january");
+    week_day wd4 = parse<week_day>("january");
     console::write_line(wd4);
   } catch(const exception& e) {
     console::write_line("Exception : {}", e.what());

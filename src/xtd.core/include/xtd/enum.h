@@ -648,4 +648,10 @@ template<> struct xtd::enum_register<xtd::string_comparison> {
 template<> struct xtd::enum_register<xtd::string_split_options> {
   explicit operator auto() const noexcept {return xtd::enum_collection<xtd::string_split_options> {{xtd::string_split_options::none, "none"}, {xtd::string_split_options::remove_empty_entries, "remove_empty_entries"}};}
 };
+
+template<typename value_t>
+value_t __parse_enum(const std::string& str) {
+  return xtd::enum_object<>::parse<value_t>(str);
+}
 /// @endcond
+
