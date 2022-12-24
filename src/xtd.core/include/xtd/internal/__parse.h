@@ -162,6 +162,13 @@ inline value_t __parse_floating_point_number(const std::basic_string<char_t>& s,
   if ((styles & xtd::number_styles::octal_number) == xtd::number_styles::octal_number) __throw_parse_format_exception("xtd::number_styles::octal_number not supported by floating point");
   if ((styles & xtd::number_styles::hex_number) == xtd::number_styles::hex_number) __throw_parse_format_exception("xtd::number_styles::hex_number not supported by floating point");
   
+  auto lower_str = s;
+  for (auto& c : lower_str)
+    c = static_cast<char>(std::tolower(c));
+  if (s == "inf") return std::numeric_limits<value_t>::infinity();
+  if (s == "-inf") return -std::numeric_limits<value_t>::infinity();
+  if (s == "nan") return std::numeric_limits<value_t>::quiet_NaN();
+
   std::basic_string<char_t> str = __parse_remove_decorations(s, styles);
   int sign = __parse_remove_signs(str, styles);
   
