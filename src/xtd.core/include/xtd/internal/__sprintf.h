@@ -24,6 +24,7 @@ inline std::basic_string<char> __sprintf<char>(const char* fmt, ...) {
   vsnprintf(&formatted_string[0], formatted_string.size() + 1, fmt, args);
   va_end(args);
   if (formatted_string == "INF") formatted_string = {'i', 'n', 'f'};
+  if (formatted_string == "-INF") formatted_string = {'-', 'i', 'n', 'f'};
   if (formatted_string == "NAN") formatted_string = {'n', 'a', 'n'};
   return formatted_string;
 }
