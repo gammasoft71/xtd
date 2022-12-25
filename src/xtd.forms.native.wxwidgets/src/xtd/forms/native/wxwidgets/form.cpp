@@ -1,6 +1,7 @@
 #include <chrono>
 #include <thread>
 #include <xtd/argument_exception.h>
+#include <xtd/diagnostics/debug.h>
 #include <xtd/not_implemented_exception.h>
 #include <wx/apptrait.h>
 #if defined(__WXMSW__)
@@ -216,8 +217,8 @@ int32 form::show_sheet_dialog(intptr control) {
     event.Skip(true);
   });
   while (result == wxID_ANY) {
-    if (wxTheApp) wxTheApp->Yield(true);
-    //sleep_for(10ms);
+    application::do_events();
+    sleep_for(10ms);
   }
   return result;
   #else

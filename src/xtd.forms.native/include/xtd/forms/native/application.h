@@ -28,6 +28,7 @@ namespace xtd {
     namespace native {
       /// @cond
       class control;
+      class form;
       class message_box;
       class screen;
       class settings;
@@ -46,6 +47,7 @@ namespace xtd {
         friend xtd::forms::application;
         friend xtd::forms::control;
         friend xtd::forms::native::control;
+        friend xtd::forms::native::form;
         friend xtd::forms::native::message_box;
         friend xtd::forms::native::screen;
         friend xtd::forms::native::settings;
