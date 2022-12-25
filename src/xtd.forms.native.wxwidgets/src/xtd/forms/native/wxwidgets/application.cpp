@@ -13,6 +13,7 @@
 #include <xtd/forms/window_messages.h>
 #include <xtd/drawing/system_colors.h>
 #include <wx/aboutdlg.h>
+#include <wx/evtloop.h>
 #include <wx/sysopt.h>
 
 #if defined(__WXMSW__)
@@ -109,7 +110,8 @@ void application::disable_font_size_correction() {
 
 void application::do_events() {
   initialize(); // Must be first
-  if (wxTheApp) wxTheApp->Yield();
+  if (wxTheApp && wxTheApp->GetMainLoop())
+    wxTheApp->GetMainLoop()->Dispatch();
 }
 
 void application::do_idle() {
