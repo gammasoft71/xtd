@@ -6,6 +6,7 @@ find_package(xtd REQUIRED)
 add_projects(
   parse_boolean
   parse_enum
+  parse_enum_class
   parse_floating_point
   parse_numeric
 )
