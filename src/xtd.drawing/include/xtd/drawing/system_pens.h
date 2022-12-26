@@ -26,10 +26,14 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      /// @brief Gets a pen that is the color of the accent
+      /// @brief Gets a pen that is the color of the accent.
       /// @return A xtd::drawing::pen that is the color of the accent.
       static xtd::drawing::pen accent();
       
+      /// @brief Gets a pen that is the color of the accent text.
+      /// @return A xtd::drawing::pen that is the color of the accent ext.
+      static xtd::drawing::pen accent_text();
+
       /// @brief Gets a pen that is the color of the active border.
       /// @return A xtd::drawing::pen that is the color of the active window's border.
       static xtd::drawing::pen active_border();
@@ -42,10 +46,26 @@ namespace xtd {
       /// @return A xtd::drawing::pen that is the color of the active caption text.
       static xtd::drawing::pen active_caption_text();
       
+      /// @brief Gets a pen that is the color of the active text.
+      /// @return A xtd::drawing::pen that is the color of the active text.
+      static xtd::drawing::pen active_text();
+
       /// @brief Gets a pen that is the color of the app workspace.
       /// @return A xtd::drawing::pen that is the color of the app workspace.
       static xtd::drawing::pen app_workspace();
       
+      /// @brief Gets a pen that is the color of the button face.
+      /// @return A xtd::drawing::pen that is the color of the button face.
+      static xtd::drawing::pen button_face();
+      
+      /// @brief Gets a pen that is the color of the button highlight.
+      /// @return A xtd::drawing::pen that is the color of the button highlight.
+      static xtd::drawing::pen button_highlight();
+      
+      /// @brief Gets a pen that is the color of the button shadow.
+      /// @return A xtd::drawing::pen that is the color of the button shadow.
+      static xtd::drawing::pen button_shadow();
+
       /// @brief Gets a pen that is the color of the control.
       /// @return A xtd::drawing::pen that is the color of the control.
       static xtd::drawing::pen control();
@@ -74,6 +94,14 @@ namespace xtd {
       /// @return A xtd::drawing::pen that is the color of the desktop.
       static xtd::drawing::pen desktop();
       
+      /// @brief Gets a pen that is the color of the gradient active caption.
+      /// @return A xtd::drawing::pen that is the color of the gradient active caption.
+      static xtd::drawing::pen gradient_active_caption();
+      
+      /// @brief Gets a pen that is the color of the gradient inactive caption.
+      /// @return A xtd::drawing::pen that is the color of the gradient inactive caption.
+      static xtd::drawing::pen gradient_inactive_caption();
+
       /// @brief Gets a pen that is the color of the gray text.
       /// @return A xtd::drawing::pen that is the color of the gray text.
       static xtd::drawing::pen gray_text();
@@ -110,10 +138,22 @@ namespace xtd {
       /// @return A xtd::drawing::pen that is the color of the info text.
       static xtd::drawing::pen info_text();
       
+      /// @brief Gets a pen that is the color of the link text.
+      /// @return A xtd::drawing::pen that is the color of the link text.
+      static xtd::drawing::pen link_text();
+
       /// @brief Gets a pen that is the color of the menu.
       /// @return A xtd::drawing::pen that is the color of the menu.
       static xtd::drawing::pen menu();
       
+      /// @brief Gets a pen that is the color of the menu bar.
+      /// @return A xtd::drawing::pen that is the color of the menu bar.
+      static xtd::drawing::pen menu_bar();
+      
+      /// @brief Gets a pen that is the color of the menu highlight.
+      /// @return A xtd::drawing::pen that is the color of the menu highlight.
+      static xtd::drawing::pen menu_highlight();
+
       /// @brief Gets a pen that is the color of the menu text.
       /// @return A xtd::drawing::pen that is the color of the menu text.
       static xtd::drawing::pen menu_text();
@@ -122,6 +162,18 @@ namespace xtd {
       /// @return A xtd::drawing::pen that is the color of the scroll bar.
       static xtd::drawing::pen scroll_bar();
       
+      /// @brief Gets a pen that is the color of the text box.
+      /// @return A xtd::drawing::pen that is the color of the text box.
+      static xtd::drawing::pen text_box();
+      
+      /// @brief Gets a pen that is the color of the text box text.
+      /// @return A xtd::drawing::pen that is the color of the text box text.
+      static xtd::drawing::pen text_box_text();
+      
+      /// @brief Gets a pen that is the color of the visited text.
+      /// @return A xtd::drawing::pen that is the color of the visited text.
+      static xtd::drawing::pen visited_text();
+
       /// @brief Gets a pen that is the color of the window.
       /// @return A xtd::drawing::pen that is the color of the window.
       static xtd::drawing::pen window();
@@ -133,34 +185,13 @@ namespace xtd {
       /// @brief Gets a pen that is the color of the window text.
       /// @return A xtd::drawing::pen that is the color of the window text.
       static xtd::drawing::pen window_text();
+      /// @}
+
+      /// @name Public methods
       
-      /// @brief Gets a pen that is the color of the button face.
-      /// @return A xtd::drawing::pen that is the color of the button face.
-      static xtd::drawing::pen button_face();
-      
-      /// @brief Gets a pen that is the color of the button highlight.
-      /// @return A xtd::drawing::pen that is the color of the button highlight.
-      static xtd::drawing::pen button_highlight();
-      
-      /// @brief Gets a pen that is the color of the button shadow.
-      /// @return A xtd::drawing::pen that is the color of the button shadow.
-      static xtd::drawing::pen button_shadow();
-      
-      /// @brief Gets a pen that is the color of the gradient active caption.
-      /// @return A xtd::drawing::pen that is the color of the gradient active caption.
-      static xtd::drawing::pen gradient_active_caption();
-      
-      /// @brief Gets a pen that is the color of the gradient inactive caption.
-      /// @return A xtd::drawing::pen that is the color of the gradient inactive caption.
-      static xtd::drawing::pen gradient_inactive_caption();
-      
-      /// @brief Gets a pen that is the color of the menu bar.
-      /// @return A xtd::drawing::pen that is the color of the menu bar.
-      static xtd::drawing::pen menu_bar();
-      
-      /// @brief Gets a pen that is the color of the menu highlight.
-      /// @return A xtd::drawing::pen that is the color of the menu highlight.
-      static xtd::drawing::pen menu_highlight();
+      /// @{
+      /// @brief Gets an array of system colors.
+      static const std::vector<xtd::drawing::pen>& get_pens();
       /// @}
     };
   }
