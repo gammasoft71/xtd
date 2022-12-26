@@ -71,6 +71,7 @@ color white_colors::white_smoke() {
   return color::from_known_color(known_color::white_smoke);
 }
 
-vector<color> white_colors::get_colors() {
-  return {white_colors::misty_rose(), white_colors::antique_white(), white_colors::linen(), white_colors::beige(), white_colors::white_smoke(), white_colors::lavender_blush(), white_colors::old_lace(), white_colors::alice_blue(), white_colors::sea_shell(), white_colors::ghost_white(), white_colors::honeydew(), white_colors::floral_white(), white_colors::azure(), white_colors::mint_cream(), white_colors::snow(), white_colors::ivory(), white_colors::white()};
+const vector<color>& white_colors::get_colors() {
+  static vector<color> colors {white_colors::misty_rose(), white_colors::antique_white(), white_colors::linen(), white_colors::beige(), white_colors::white_smoke(), white_colors::lavender_blush(), white_colors::old_lace(), white_colors::alice_blue(), white_colors::sea_shell(), white_colors::ghost_white(), white_colors::honeydew(), white_colors::floral_white(), white_colors::azure(), white_colors::mint_cream(), white_colors::snow(), white_colors::ivory(), white_colors::white()};
+  return colors;
 }
