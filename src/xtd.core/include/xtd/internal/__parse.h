@@ -28,7 +28,7 @@ inline std::basic_string<char_t> __parse_remove_decorations(const std::basic_str
       str.erase(str.size() - 1, 1);
   }
   if ((styles & xtd::number_styles::allow_currency_symbol) == xtd::number_styles::allow_currency_symbol && str.find(std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol()) == 0) str.erase(0, std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol().size());
-  if ((styles & xtd::number_styles::allow_currency_symbol) == xtd::number_styles::allow_currency_symbol && str.rfind(std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol()) + std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol().size() == str.size()) str = str.substr(0, str.size() - std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol().size());
+  if ((styles & xtd::number_styles::allow_currency_symbol) == xtd::number_styles::allow_currency_symbol && str.rfind(std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol()) + std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol().size() == str.size()) str.resize(str.size() - std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol().size());
   if ((styles & xtd::number_styles::allow_binary_specifier) == xtd::number_styles::allow_binary_specifier && (str.find("0b") == 0 || str.find("0B") == 0)) str.erase(0, 2);
   if ((styles & xtd::number_styles::allow_octal_specifier) == xtd::number_styles::allow_octal_specifier && str.find('0') == 0) str.erase(0, 1);
   if ((styles & xtd::number_styles::allow_hex_specifier) == xtd::number_styles::allow_hex_specifier && (str.find("0x") == 0 || str.find("0X") == 0)) str.erase(0, 2);
@@ -53,13 +53,13 @@ inline int __parse_remove_signs(std::basic_string<char_t>& str, xtd::number_styl
   
   while ((styles & xtd::number_styles::allow_trailing_sign) == xtd::number_styles::allow_trailing_sign && str.rfind('+') + 1 == str.size()) {
     if (sign != 0) __throw_parse_format_exception("String contains more than one sign");
-    str = str.substr(0, str.size() - 1);
+    str.pop_back();
     sign += 1;
   }
   
   while ((styles & xtd::number_styles::allow_trailing_sign) == xtd::number_styles::allow_trailing_sign && str.rfind('-') + 1 == str.size()) {
     if (sign != 0) __throw_parse_format_exception("String contains more than one sign");
-    str = str.substr(0, str.size() - 1);
+    str.pop_back();
     sign -= 1;
   }
   
