@@ -38,8 +38,8 @@ namespace examples {
       choose_color_label.location({20, 40});
       choose_color_label.text("Choose color");
       
-      colors_chooser.items().push_back_range(system_colors::get_color_names());
       colors_chooser.items().push_back_range(colors::get_color_names());
+      colors_chooser.items().push_back_range(system_colors::get_color_names());
       colors_chooser.bounds({120, 37, 220, colors_chooser.size().height()});
       colors_chooser.selected_index_changed += [&] {
         auto color = color::from_name(colors_chooser.selected_item().value());
