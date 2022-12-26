@@ -47,6 +47,7 @@ color yellow_colors::yellow() {
   return color::from_known_color(known_color::yellow);
 }
 
-vector<color> yellow_colors::get_colors() {
-  return {yellow_colors::dark_khaki(), yellow_colors::gold(), yellow_colors::khaki(), yellow_colors::peach_puff(), yellow_colors::yellow(), yellow_colors::pale_goldenrod(), yellow_colors::moccasin(), yellow_colors::papaya_whip(), yellow_colors::light_goldenrod_yellow(), yellow_colors::lemon_chiffon(), yellow_colors::light_yellow()};
+const vector<color>& yellow_colors::get_colors() {
+  static vector<color> colors {yellow_colors::dark_khaki(), yellow_colors::gold(), yellow_colors::khaki(), yellow_colors::peach_puff(), yellow_colors::yellow(), yellow_colors::pale_goldenrod(), yellow_colors::moccasin(), yellow_colors::papaya_whip(), yellow_colors::light_goldenrod_yellow(), yellow_colors::lemon_chiffon(), yellow_colors::light_yellow()};
+  return colors;
 }

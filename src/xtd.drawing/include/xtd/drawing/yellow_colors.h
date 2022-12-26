@@ -76,7 +76,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets an array of known colors.
-      static std::vector<xtd::drawing::color> get_colors();
+      static const std::vector<xtd::drawing::color>& get_colors();
       /// @}
     };
   }
