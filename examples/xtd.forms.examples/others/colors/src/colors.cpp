@@ -40,14 +40,26 @@ namespace examples {
       fore_color(system_colors::window_text());
       auto_scroll(true);
       
-      for (drawing::known_color known_color = drawing::known_color::visited_text; known_color >= drawing::known_color::active_border; known_color = drawing::known_color(int(known_color) - 1)) {
-        auto color = std::make_shared<color_panel>();
-        color->dock(dock_style::top);
-        color->color(drawing::color::from_known_color(known_color));
-        color->tag(colors_.size());
-        colors_.push_back(color);
-        controls().push_back(*color);
-        color->click += [&](object & sender, const event_args & e) {
+      for (auto iterator = system_colors::get_colors().rbegin(); iterator != system_colors::get_colors().rend(); ++iterator) {
+        auto color_panel = std::make_shared<color_chooser::color_panel>();
+        color_panel->dock(dock_style::top);
+        color_panel->color(*iterator);
+        color_panel->tag(colors_.size());
+        colors_.push_back(color_panel);
+        controls().push_back(*color_panel);
+        color_panel->click += [&](object & sender, const event_args & e) {
+          selected_index(colors_.size() - 1 - std::any_cast<size_t>(as<control>(sender).tag()));
+        };
+      }
+
+      for (auto iterator = colors::get_colors().rbegin(); iterator != colors::get_colors().rend(); ++iterator) {
+        auto color_panel = std::make_shared<color_chooser::color_panel>();
+        color_panel->dock(dock_style::top);
+        color_panel->color(*iterator);
+        color_panel->tag(colors_.size());
+        colors_.push_back(color_panel);
+        controls().push_back(*color_panel);
+        color_panel->click += [&](object & sender, const event_args & e) {
           selected_index(colors_.size() - 1 - std::any_cast<size_t>(as<control>(sender).tag()));
         };
       }
