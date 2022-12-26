@@ -78,7 +78,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets an array of system fonts.
-      static std::vector<xtd::drawing::font> get_fonts();
+      static std::vector<xtd::drawing::font> get_system_fonts();
       /// @}
     };
   }
