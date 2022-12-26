@@ -20,7 +20,7 @@ void dns::cleanup() {
 }
 
 void dns::destroy(intmax_t host) {
-  delete (hostent*)host;
+  delete reinterpret_cast<hostent*>(host);
 }
 
 intmax_t dns::get_host_by_address(const string& host_address, int_least32_t host_address_type) {
