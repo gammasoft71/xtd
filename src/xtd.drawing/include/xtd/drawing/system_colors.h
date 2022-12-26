@@ -206,7 +206,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets an array of system colors.
-      static std::vector<xtd::drawing::color> get_colors();
+      static std::vector<xtd::drawing::color> get_system_colors();
       /// @}
     };
   }
