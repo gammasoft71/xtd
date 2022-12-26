@@ -117,11 +117,11 @@ inline std::wstring __date_time_formatter(std::wstring fmt, const std::tm& time,
   }
 }
 
-inline std::string __date_time_formatter(std::string fmt, time_t time, xtd::uint32 nanoseconds, const std::locale& loc) {
+inline std::string __date_time_formatter(const std::string& fmt, time_t time, xtd::uint32 nanoseconds, const std::locale& loc) {
   return __date_time_formatter(fmt, *std::localtime(&time), nanoseconds, loc);
 }
 
-inline std::wstring __date_time_formatter(std::wstring fmt, time_t time, xtd::uint32 nanoseconds, const std::locale& loc) {
+inline std::wstring __date_time_formatter(const std::wstring& fmt, time_t time, xtd::uint32 nanoseconds, const std::locale& loc) {
   return __date_time_formatter(fmt, *std::localtime(&time), nanoseconds, loc);
 }
 /// @endcond
