@@ -196,7 +196,7 @@ bool color::is_named_color() const noexcept {
 }
 
 bool color::is_system_color() const noexcept {
-  return known_color_ != (known_color)0 && (known_color_ <= known_color::window_text || known_color_ >= drawing::known_color::button_face);
+  return known_color_ >= start_know_system_colors_range;
 }
 
 xtd::ustring color::name() const noexcept {
