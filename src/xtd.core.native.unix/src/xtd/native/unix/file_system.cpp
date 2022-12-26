@@ -55,7 +55,7 @@ string file_system::get_full_path(const string& relative_path) {
   if (relative_path[0] != path::directory_separator_char())
     full_path = directory::get_current_directory();
     
-  for (string& item : directories) {
+  for (const string& item : directories) {
     if (item == ".." && native::unix::strings::last_index_of(full_path, path::directory_separator_char()) != full_path.npos)
       full_path = native::unix::strings::remove(full_path, native::unix::strings::last_index_of(full_path, path::directory_separator_char()));
     else if (item != ".")
