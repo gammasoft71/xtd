@@ -164,6 +164,6 @@ color xtd::drawing::system_colors::window_text() {
   return color::from_known_color(xtd::drawing::known_color::window_text);
 }
 
-vector<color> system_colors::get_colors() {
+vector<color> system_colors::get_system_colors() {
   return {system_colors::accent(), system_colors::accent_text(), system_colors::active_border(), system_colors::active_caption(), system_colors::active_caption_text(), system_colors::accent_text(), system_colors::app_workspace(), system_colors::button_face(), system_colors::button_highlight(), system_colors::button_shadow(), system_colors::control(), system_colors::control_dark(), system_colors::control_dark_dark(), system_colors::control_light(), system_colors::control_light_light(), system_colors::control_text(), system_colors::desktop(), system_colors::gradient_active_caption(), system_colors::gradient_inactive_caption(), system_colors::gray_text(), system_colors::highlight(), system_colors::highlight_text(), system_colors::hot_track(), system_colors::inactive_border(), system_colors::inactive_caption(), system_colors::inactive_caption_text(), system_colors::info(), system_colors::info_text(), system_colors::link_text(), system_colors::menu(), system_colors::menu_bar(), system_colors::menu_highlight(), system_colors::menu_text(), system_colors::scroll_bar(), system_colors::text_box(), system_colors::text_box_text(), system_colors::visited_text(), system_colors::window(), system_colors::window_frame(), system_colors::window_text(),};
 }
