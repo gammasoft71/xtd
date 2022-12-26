@@ -267,7 +267,7 @@ vector<date_time::time_zone_info> date_time::get_system_time_zones() {
 }
 
 bool date_time::is_daylight(time_t time) {
-  tm value;
+  tm value {};
   localtime_s(&value, &time);
   return value.tm_isdst != 0;
 }
