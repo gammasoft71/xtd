@@ -1,6 +1,7 @@
 #include "../../../include/xtd/drawing/gray_colors.h"
 
 using namespace std;
+using namespace xtd;
 using namespace xtd::drawing;
 
 color gray_colors::black() {
@@ -43,6 +44,12 @@ color gray_colors::slate_gray() {
   return color::from_known_color(known_color::slate_gray);
 }
 
-vector<color> gray_colors::get_colors() {
-  return {gray_colors::black(), gray_colors::dark_slate_gray(), gray_colors::dim_gray(), gray_colors::slate_gray(), gray_colors::gray(), gray_colors::light_slate_gray(), gray_colors::dark_gray(), gray_colors::silver(), gray_colors::light_gray(), gray_colors::gainsboro()};
+const vector<color>& gray_colors::get_colors() {
+  static vector colors {gray_colors::black(), gray_colors::dark_slate_gray(), gray_colors::dim_gray(), gray_colors::slate_gray(), gray_colors::gray(), gray_colors::light_slate_gray(), gray_colors::dark_gray(), gray_colors::silver(), gray_colors::light_gray(), gray_colors::gainsboro()};
+  return colors;
+}
+
+const vector<ustring>& gray_colors::get_color_names() {
+  static vector color_names {gray_colors::black().name(), gray_colors::dark_slate_gray().name(), gray_colors::dim_gray().name(), gray_colors::slate_gray().name(), gray_colors::gray().name(), gray_colors::light_slate_gray().name(), gray_colors::dark_gray().name(), gray_colors::silver().name(), gray_colors::light_gray().name(), gray_colors::gainsboro().name()};
+  return color_names;
 }
