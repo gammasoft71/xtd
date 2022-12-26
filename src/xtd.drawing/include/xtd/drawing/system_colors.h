@@ -42,15 +42,15 @@ namespace xtd {
       /// @brief Gets a xtd::drawing::color structure that is the color of the background of the active window's title bar.
       /// @return A xtd::drawing::color that is the color of the active window's title bar.
       static xtd::drawing::color active_caption();
-      
-      /// @brief Gets a xtd::drawing::color structure that is the color of a active text.
-      /// @return A xtd::drawing::color that is the color of a active text.
-      /// @remark The active text color is the text color of an html link text when mouse down.
-      static xtd::drawing::color active_text();
 
       /// @brief Gets a xtd::drawing::color structure that is the color of the text in the active window's title bar.
       /// @return A xtd::drawing::color that is the color of the text in the active window's title bar.
       static xtd::drawing::color active_caption_text();
+
+      /// @brief Gets a xtd::drawing::color structure that is the color of a active text.
+      /// @return A xtd::drawing::color that is the color of a active text.
+      /// @remark The active text color is the text color of an html link text when mouse down.
+      static xtd::drawing::color active_text();
       
       /// @brief Gets a xtd::drawing::color structure that is the color of the application workspace.
       /// @return A xtd::drawing::color that is the color of the application workspace.
@@ -200,6 +200,13 @@ namespace xtd {
       /// @brief Gets a xtd::drawing::color structure that is the color of the text in the client area of a window.
       /// @return A xtd::drawing::color that is the color of the text in the client area of a window.
       static xtd::drawing::color window_text();
+      /// @}
+
+      /// @name Public methods
+      
+      /// @{
+      /// @brief Gets an array of system colors.
+      static std::vector<xtd::drawing::color> get_colors();
       /// @}
     };
   }
