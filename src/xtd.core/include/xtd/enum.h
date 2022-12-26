@@ -45,18 +45,18 @@ namespace xtd {
     enum_object() noexcept = default;
     /// @brief Initializes a new instance of the xtd::enum_object class with specified value.
     /// @param value Value to set to this instance.
-    enum_object(enum_type value) : value_(value) {}
+    explicit enum_object(enum_type value) : value_(value) {}
     /// @}
     
     /// @cond
-    enum_object(xtd::byte value) : value_(to_enum(value)) {}
-    enum_object(sbyte value) : value_(to_enum(value)) {}
-    enum_object(int16 value) : value_(to_enum(value)) {}
-    enum_object(int32 value) : value_(to_enum(value)) {}
-    enum_object(int64 value) : value_(to_enum(value)) {}
-    enum_object(uint16 value) : value_(to_enum(value)) {}
-    enum_object(uint32 value) : value_(to_enum(value)) {}
-    enum_object(uint64 value) : value_(to_enum(value)) {}
+    explicit enum_object(xtd::byte value) : value_(to_enum(value)) {}
+    explicit enum_object(sbyte value) : value_(to_enum(value)) {}
+    explicit enum_object(int16 value) : value_(to_enum(value)) {}
+    explicit enum_object(int32 value) : value_(to_enum(value)) {}
+    explicit enum_object(int64 value) : value_(to_enum(value)) {}
+    explicit enum_object(uint16 value) : value_(to_enum(value)) {}
+    explicit enum_object(uint32 value) : value_(to_enum(value)) {}
+    explicit enum_object(uint64 value) : value_(to_enum(value)) {}
     enum_object(enum_object&&) noexcept = default;
     enum_object(const enum_object&) noexcept = default;
     enum_object& operator =(const enum_object&) noexcept = default;
