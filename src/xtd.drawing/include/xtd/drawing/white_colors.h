@@ -102,7 +102,7 @@ namespace xtd {
       /// @brief Gets an array of colors.
       static const std::vector<xtd::drawing::color>& get_colors();
       
-      /// @brief Gets an array of colors.
+      /// @brief Gets an array of color names.
       static const std::vector<xtd::ustring>& get_color_names();
       /// @}
     };
