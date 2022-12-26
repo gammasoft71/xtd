@@ -69,7 +69,7 @@ public:
     OptionsAll = 0x3F
   } StackWalkOptions;
   
-  StackWalker(
+  explicit StackWalker(
     int options = OptionsAll, // 'int' is by design, to combine the enum-flags
     LPCSTR szSymPath = NULL,
     DWORD dwProcessId = GetCurrentProcessId(),
