@@ -73,6 +73,13 @@ namespace xtd {
       /// @return A xtd::drawing::font that is used to display text in the tool bar.
       static xtd::drawing::font tool_font();
       /// @}
+
+      /// @name Public methods
+      
+      /// @{
+      /// @brief Gets an array of system fonts.
+      static std::vector<xtd::drawing::font> get_fonts();
+      /// @}
     };
   }
 }
