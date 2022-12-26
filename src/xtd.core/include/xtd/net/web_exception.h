@@ -25,7 +25,7 @@ namespace xtd {
       /// @brief Create a new instance of class web_exception
       /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       /// @remarks Message is set with the default message associate to the exception.
-      web_exception(const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : format_exception(default_message(), info) {}
+      explicit web_exception(const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : format_exception(default_message(), info) {}
       /// @brief Create a new instance of class web_exception
       /// @param message Message string associate to the exception.
       /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.

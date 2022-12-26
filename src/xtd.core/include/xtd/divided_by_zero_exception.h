@@ -23,7 +23,7 @@ namespace xtd {
     /// @brief Create a new instance of class divided_by_zero_exception
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @remarks Message is set with the default message associate to the exception.
-    divided_by_zero_exception(const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : arithmetic_exception(default_message(), info) {}
+    explicit divided_by_zero_exception(const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : arithmetic_exception(default_message(), info) {}
     /// @brief Create a new instance of class divided_by_zero_exception
     /// @param message Message string associate to the exception.
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.

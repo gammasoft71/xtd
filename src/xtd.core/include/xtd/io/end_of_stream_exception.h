@@ -30,7 +30,7 @@ namespace xtd {
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
       /// @remarks Message is set with the default message associate to the exception.
-      end_of_stream_exception(const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : io_exception(default_message(), info) {}
+      explicit end_of_stream_exception(const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : io_exception(default_message(), info) {}
       /// @brief Create a new instance of class end_of_stream_exception
       /// @param message Message string associate to the exception.
       /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
