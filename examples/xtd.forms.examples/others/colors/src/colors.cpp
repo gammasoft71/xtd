@@ -40,29 +40,11 @@ namespace examples {
       fore_color(system_colors::window_text());
       auto_scroll(true);
       
-      for (auto iterator = system_colors::get_colors().rbegin(); iterator != system_colors::get_colors().rend(); ++iterator) {
-        auto color_panel = std::make_shared<color_chooser::color_panel>();
-        color_panel->dock(dock_style::top);
-        color_panel->color(*iterator);
-        color_panel->tag(colors_.size());
-        colors_.push_back(color_panel);
-        controls().push_back(*color_panel);
-        color_panel->click += [&](object & sender, const event_args & e) {
-          selected_index(colors_.size() - 1 - std::any_cast<size_t>(as<control>(sender).tag()));
-        };
-      }
+      for (auto iterator = system_colors::get_colors().rbegin(); iterator != system_colors::get_colors().rend(); ++iterator)
+        add_color_panel(*iterator);
 
-      for (auto iterator = colors::get_colors().rbegin(); iterator != colors::get_colors().rend(); ++iterator) {
-        auto color_panel = std::make_shared<color_chooser::color_panel>();
-        color_panel->dock(dock_style::top);
-        color_panel->color(*iterator);
-        color_panel->tag(colors_.size());
-        colors_.push_back(color_panel);
-        controls().push_back(*color_panel);
-        color_panel->click += [&](object & sender, const event_args & e) {
-          selected_index(colors_.size() - 1 - std::any_cast<size_t>(as<control>(sender).tag()));
-        };
-      }
+      for (auto iterator = colors::get_colors().rbegin(); iterator != colors::get_colors().rend(); ++iterator)
+        add_color_panel(*iterator);
     }
     
     size_t selected_index() const {return selected_index_;}
@@ -87,6 +69,18 @@ namespace examples {
     static const size_t npos = std::numeric_limits<size_t>::max();
     
   private:
+    void add_color_panel(const drawing::color& color) {
+      auto color_panel = std::make_shared<color_chooser::color_panel>();
+      color_panel->dock(dock_style::top);
+      color_panel->color(color);
+      color_panel->tag(colors_.size());
+      colors_.push_back(color_panel);
+      controls().push_back(*color_panel);
+      color_panel->click += [&](object & sender, const event_args & e) {
+        selected_index(colors_.size() - 1 - std::any_cast<size_t>(as<control>(sender).tag()));
+      };
+    }
+    
     void on_selected_index_changed(const event_args& e) {
       if (previous_selected_index_ != npos) colors_[colors_.size() - 1 - previous_selected_index_]->back_color(back_color());
       if (previous_selected_index_ != npos) colors_[colors_.size() - 1 - previous_selected_index_]->fore_color(fore_color());
