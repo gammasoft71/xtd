@@ -453,6 +453,13 @@ namespace xtd {
       /// @brief A system-defined brush object.
       static xtd::drawing::solid_brush yellow_green();
       /// @}
+
+      /// @name Public methods
+      
+      /// @{
+      /// @brief Gets an array of brushes.
+      static const std::vector<xtd::drawing::solid_brush>& get_brushes();
+      /// @}
     };
   }
 }
