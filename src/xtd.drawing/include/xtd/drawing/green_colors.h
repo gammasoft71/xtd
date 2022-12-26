@@ -111,8 +111,11 @@ namespace xtd {
       /// @name Public methods
       
       /// @{
-      /// @brief Gets an array of known colors.
-      static std::vector<xtd::drawing::color> get_colors();
+      /// @brief Gets an array of colors.
+      static const std::vector<xtd::drawing::color>& get_colors();
+
+      /// @brief Gets an array of color_names.
+      static const std::vector<xtd::ustring>& get_color_names();
       /// @}
     };
   }
