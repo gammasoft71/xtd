@@ -84,7 +84,6 @@ std::vector<std::string> drive::get_drives() {
       for (string drive : directory::enumerate_directories(amovible_mounted_point, "*")) {
         struct statfs stat;
         #if defined(__APPLE__)
-        string mntonname = stat.f_mntonname;
         if (statfs(drive.c_str(), &stat) == 0 && string(stat.f_mntonname) != root_drive)
         #else
         if (statfs(drive.c_str(), &stat) == 0)
