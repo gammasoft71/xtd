@@ -1,6 +1,7 @@
 #include "../../../include/xtd/drawing/white_colors.h"
 
 using namespace std;
+using namespace xtd;
 using namespace xtd::drawing;
 
 color white_colors::alice_blue() {
@@ -72,6 +73,11 @@ color white_colors::white_smoke() {
 }
 
 const vector<color>& white_colors::get_colors() {
-  static vector<color> colors {white_colors::misty_rose(), white_colors::antique_white(), white_colors::linen(), white_colors::beige(), white_colors::white_smoke(), white_colors::lavender_blush(), white_colors::old_lace(), white_colors::alice_blue(), white_colors::sea_shell(), white_colors::ghost_white(), white_colors::honeydew(), white_colors::floral_white(), white_colors::azure(), white_colors::mint_cream(), white_colors::snow(), white_colors::ivory(), white_colors::white()};
+  static vector colors {white_colors::misty_rose(), white_colors::antique_white(), white_colors::linen(), white_colors::beige(), white_colors::white_smoke(), white_colors::lavender_blush(), white_colors::old_lace(), white_colors::alice_blue(), white_colors::sea_shell(), white_colors::ghost_white(), white_colors::honeydew(), white_colors::floral_white(), white_colors::azure(), white_colors::mint_cream(), white_colors::snow(), white_colors::ivory(), white_colors::white()};
   return colors;
+}
+
+const vector<ustring>& white_colors::get_color_names() {
+  static vector color_names {white_colors::misty_rose().name(), white_colors::antique_white().name(), white_colors::linen().name(), white_colors::beige().name(), white_colors::white_smoke().name(), white_colors::lavender_blush().name(), white_colors::old_lace().name(), white_colors::alice_blue().name(), white_colors::sea_shell().name(), white_colors::ghost_white().name(), white_colors::honeydew().name(), white_colors::floral_white().name(), white_colors::azure().name(), white_colors::mint_cream().name(), white_colors::snow().name(), white_colors::ivory().name(), white_colors::white().name()};
+  return color_names;
 }
