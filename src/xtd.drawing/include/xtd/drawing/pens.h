@@ -453,6 +453,13 @@ namespace xtd {
       /// @brief A system-defined pen object with a width of 1.
       static xtd::drawing::pen yellow_green();
       /// @}
+
+      /// @name Public methods
+      
+      /// @{
+      /// @brief Gets an array of pens.
+      static const std::vector<xtd::drawing::pen>& get_pens();
+      /// @}
     };
   }
 }
