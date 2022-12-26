@@ -270,7 +270,7 @@ namespace examples {
     numeric_up_down numeric_up_down_green;
     numeric_up_down numeric_up_down_blue;
     panel panel_color_box;
-    drawing::color color_ = color::transparent;
+    drawing::color color_ = color::empty;
   };
   
   class main_form : public form {
