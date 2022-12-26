@@ -127,9 +127,8 @@ namespace xtd::native {
       }
       
       static const std::string to_lower(const std::string& str) noexcept {
-        std::string result;
-        for (auto c : str)
-          result.push_back(static_cast<char>(tolower(c)));
+        std::string result = str;
+        std::transform(result.begin(), result.end(), result.begin(), ::tolower);
         return result;
       }
       
