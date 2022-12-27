@@ -1,25 +1,46 @@
 // __________________________________________________________________________________________________________________________
+//                                                                                                    xtd.3rdparty.call_stack
+cstyleCast:@CMAKE_SOURCE_DIR@/src/xtd.3rdparty.call_stack/stack_walker.cpp //:459, :460, :461, :526, :527, :528, :529, :536, :537, :538, :539, :729, :529, :863
+
+unusedStructMember:@CMAKE_SOURCE_DIR@/src/xtd.3rdparty.call_stack/stack_walker.cpp //:69
+
+// __________________________________________________________________________________________________________________________
 //                                                                                                                   xtd.dore
-sizeofDivisionMemfunc:@CMAKE_SOURCE_DIR@/src/xtd.3rdparty.call_stack/stack_walker.cpp //:536
-unusedStructMember:@CMAKE_SOURCE_DIR@/src/xtd.core.native.unix/src/xtd/native/unix/console.cpp //:378
-unusedStructMember:@CMAKE_SOURCE_DIR@/src/xtd.core.native.unix/src/xtd/native/unix/console.cpp //:379
 constParameter:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/convert_pointer.h
-knownConditionTrueFalse:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/file_system_info.cpp //:21
-knownConditionTrueFalse:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/file_system_info.cpp //:33
-knownConditionTrueFalse:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/file_system_info.cpp //:61
-knownConditionTrueFalse:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/file_system_info.cpp //:81
+
+invalidContainer:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/net/ip_address.cpp //:227
+
+noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/internal/__enum_introspection.h //:72
+
+knownConditionTrueFalse:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/internal/__opaque_console_gcc.cpp //:570
+knownConditionTrueFalse:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/file_system_info.cpp //:21, :33, :61, :81
+
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/delegate.h
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/ustring.h
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/diagnostics/trace_listener_collection.h
+
+sizeofDivisionMemfunc:@CMAKE_SOURCE_DIR@/src/xtd.3rdparty.call_stack/stack_walker.cpp //:536
+
+stlcstrStream:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/internal/__format_stringer.h //:310
+
 StlMissingComparison:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/ustring.h //:714
-unreadVariable:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/ustring.h //:712
-unreadVariable:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/ustring.h //:713
+
+uninitMemberVar:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/diagnostics/switch_base.cpp //:30, :33
+
+unreadVariable:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/ustring.h //:712, :713
+
 unusedPrivateFunction:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/diagnostics/trace.h
-virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/diagnostics/default_trace_listener.h //:126
+
+unusedStructMember:@CMAKE_SOURCE_DIR@/src/xtd.core.native.unix/src/xtd/native/unix/console.cpp //:376, :377, :378, :379, :380
+unusedStructMember:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/internal/__opaque_console_gcc.cpp //:382, :383, :384, :385, :386
+unusedStructMember:@CMAKE_SOURCE_DIR@/src/xtd.forms.native.wxwidgets/src/xtd/forms/native/wxwidgets/dark_mode.cpp //:129
+
+uselessAssignmentPtrArg:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/internal/__enum_introspection.h //:51
+
+virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/diagnostics/default_trace_listener.h //:126, :52
 virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/diagnostics/ostream_trace_listener.h //:52
 virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/diagnostics/trace_listener.h //:120
-virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/io/binary_writer.h //:73
-virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/io/stream_writer.h //:85
+virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/io/binary_writer.h //:73, :85, :59
 virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/io/string_writer.h //:59
 
 // __________________________________________________________________________________________________________________________
@@ -37,6 +58,7 @@ duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/input_dia
 duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/theme_colors.h
 duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/theme_images.h
 duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/theme_renderers.h
+
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/layout/arranged_element_collection.h
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/checked_list_box.h
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/context_menu.h
@@ -44,6 +66,7 @@ noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/domain_
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/list_box.h
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/list_control.h
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/padding.h
+
 virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/control.h //:849
 virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/context_menu.h //:44
 virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/menu.h //:208
@@ -67,35 +90,20 @@ useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/io/path.h //:156
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/directory.cpp //:261
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/drive_info.cpp //:71
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/stream_writer.h //:85
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/net/sockets/socket.cpp //:812
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/net/sockets/socket.cpp //:816
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/net/sockets/socket.cpp //:820
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/time_zone_info.cpp //:50
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/time_zone_info.cpp //:123
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/net/sockets/socket.cpp //:812, :816, :820
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/time_zone_info.cpp //:50, :123
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/translator.cpp //:40
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp //:595
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp //:602
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp //:609
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp //:616
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp //:623
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp //:630
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp //:930
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp //:944
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp //:595, :602, :609, :616, :623, :630, :930, :944
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/font_family.cpp //:28
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/system_images.cpp //:89
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/system_images.cpp //:115
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/system_images.cpp //:89, :115
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/text/installed_font_collection.cpp //:12
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms.native.wxwidgets/src/xtd/forms/native/wxwidgets/checked_list_box.cpp //:108
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms.native.wxwidgets/src/xtd/forms/native/wxwidgets/file_dialog.cpp //:53
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms.native.wxwidgets/src/xtd/forms/native/wxwidgets/list_box.cpp //:86
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/layout/arranged_element_collection.h //:409
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/emoticon.h //:68
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/emoticon.h //:74
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/emoticon.h //:83
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/emoticon.h //:89
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/emoticon.h //:68, :74, :83, :89
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/application.cpp //:122
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/checked_list_box.cpp //:55
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/checked_list_box.cpp //:98
+useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/checked_list_box.cpp //:55, :98
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/country.cpp //:28
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/list_box.cpp //:102
 useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd/src/xtd/system_report.cpp //:152
