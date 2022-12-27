@@ -85,10 +85,10 @@ list_control& combo_box::selected_index(size_t selected_index) {
     set_selected_index(selected_index);
     if (is_handle_created()) native::combo_box::selected_index(handle(), this->selected_index());
     
-    item selected_item;
-    if (this->selected_index() != npos) selected_item = data_->items[this->selected_index()];
-    //this->selected_item(selected_item);
-    data_->selected_item = selected_item;
+    item selected;
+    if (this->selected_index() != npos) selected = data_->items[this->selected_index()];
+    //this->selected_item(selected);
+    data_->selected_item = selected;
     on_selected_value_changed(event_args::empty);
     
     on_selected_index_changed(event_args::empty);
