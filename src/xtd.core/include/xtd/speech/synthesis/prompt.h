@@ -40,7 +40,7 @@ namespace xtd {
         /// @{
         /// @brief Initializes a new instance of the xtd::speech::synthesis::speech_synthesizer class.
         /// @remarks When you initialize a new xtd::speech::synthesis::speech_synthesizer instance, it uses the default system voice. To configure the xtd::speech::synthesis::speech_synthesizer to use one of the installed speech synthesis (text-to-speech) voices, use the xtd::speech::synthesis::speech_synthesizer::select_voice or xtd::speech::synthesis::speech_synthesizer::select_voice_by_hints method. To get information about which voices are installed, use the xtd::speech::synthesis::speech_synthesizer::get_installed_voices method and the xtd::speech::synthesis::voice_info class.
-        prompt(const xtd::ustring& text_to_speak);
+        explicit prompt(const xtd::ustring& text_to_speak);
         /// @}
         
         /// @cond
