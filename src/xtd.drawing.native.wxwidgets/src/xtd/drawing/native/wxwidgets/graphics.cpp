@@ -131,7 +131,7 @@ void graphics::copy_from_screen(intptr handle, int32 source_x, int32 source_y, i
 
 void graphics::destroy(intptr handle) {
   if (!handle) return;
-  if (graphics_state.find(handle) != graphics_state.end()) graphics_state.erase(handle);
+  graphics_state.erase(handle);
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle);
   delete hdc_wrapper;
 }
