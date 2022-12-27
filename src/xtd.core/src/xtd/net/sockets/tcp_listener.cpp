@@ -16,8 +16,7 @@ struct tcp_listener::data {
   bool active = false;
 };
 
-tcp_listener::tcp_listener(const ip_end_point& local_end_point) {
-  data_ = make_shared<tcp_listener::data>();
+tcp_listener::tcp_listener(const ip_end_point& local_end_point) : data_(make_shared<tcp_listener::data>()) {
   data_->local_end_point = local_end_point;
   data_->server_socket = socket(data_->local_end_point.address_family(), socket_type::stream, protocol_type::tcp);
   data_->server_socket.set_socket_option(xtd::net::sockets::socket_option_level::socket, xtd::net::sockets::socket_option_name::reuse_address, true);
