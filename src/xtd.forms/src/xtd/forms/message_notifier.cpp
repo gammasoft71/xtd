@@ -18,7 +18,7 @@ using namespace xtd::forms;
 namespace {
   class message_notifier_standard : public form {
   public:
-    message_notifier_standard(const message_notifier& mn)
+    explicit message_notifier_standard(const message_notifier& mn)
     {
       maximize_box(false);
       minimize_box(false);
