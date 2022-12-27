@@ -9,7 +9,7 @@ namespace xtd {
     class message_notifier_button : public xtd::forms::component, public xtd::iequatable<message_notifier_button> {
     public:
       message_notifier_button() = default;
-      message_notifier_button(const xtd::ustring& text) : text_(text) {}
+      explicit message_notifier_button(const xtd::ustring& text) : text_(text) {}
       
       const xtd::ustring& text() const noexcept {
         return text_;
