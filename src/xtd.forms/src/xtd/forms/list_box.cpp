@@ -77,10 +77,10 @@ list_control& list_box::selected_index(size_t selected_index) {
     set_selected_index(selected_index);
     if (is_handle_created()) native::list_box::selected_index(handle(), this->selected_index());
     
-    item selected_item;
-    if (this->selected_index() != npos) selected_item = data_->items[this->selected_index()];
-    //this->selected_item(selected_item);
-    data_->selected_item = selected_item;
+    item selected;
+    if (this->selected_index() != npos) selected = data_->items[this->selected_index()];
+    //this->selected_item(selected);
+    data_->selected_item = selected;
     on_selected_value_changed(event_args::empty);
     
     on_selected_index_changed(event_args::empty);
@@ -116,10 +116,10 @@ const list_box::item& list_box::selected_item() const noexcept {
 }
 
 vector<list_box::item> list_box::selected_items() const noexcept {
-  vector<item> items;
+  vector<item> itms;
   for (size_t index : selected_indices())
-    items.push_back(data_->items[index]);
-  return items;
+    itms.push_back(data_->items[index]);
+  return itms;
 }
 
 forms::selection_mode list_box::selection_mode() const noexcept {
@@ -221,16 +221,16 @@ void list_box::wnd_proc(message& message) {
 
 void list_box::on_items_item_added(size_t pos, const item & item) {
   if (is_handle_created()) native::list_box::insert_item(handle(), pos, item.value());
-  list_box::item selected_item;
-  if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
-  this->selected_item(selected_item);
+  list_box::item selected;
+  if (selected_index() != npos && selected_index() < data_->items.size()) selected = data_->items[selected_index()];
+  this->selected_item(selected);
 }
 
 void list_box::on_items_item_removed(size_t pos, const item & item)   {
   if (is_handle_created()) native::list_box::delete_item(handle(), pos);
-  list_box::item selected_item;
-  if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
-  this->selected_item(selected_item);
+  list_box::item selected;
+  if (selected_index() != npos && selected_index() < data_->items.size()) selected = data_->items[selected_index()];
+  this->selected_item(selected);
   
   if (this->items().size() == 1) // not 0! --> the item_remove occure before erase!
     this->selected_index(npos);
@@ -238,9 +238,9 @@ void list_box::on_items_item_removed(size_t pos, const item & item)   {
 
 void list_box::on_items_item_updated(size_t pos, const item & item)   {
   if (is_handle_created()) native::list_box::update_item(handle(), pos, item.value());
-  list_box::item selected_item;
-  if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
-  this->selected_item(selected_item);
+  list_box::item selected;
+  if (selected_index() != npos && selected_index() < data_->items.size()) selected = data_->items[selected_index()];
+  this->selected_item(selected);
 }
 
 void list_box::wm_mouse_double_click(message& message) {
