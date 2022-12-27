@@ -27,7 +27,7 @@ namespace xtd {
         
         struct conical_gradiant_brush {
           wxPoint center_point;
-          float angle;
+          float angle = .0f;
           wxGraphicsGradientStops colors;
           //const wxGraphicsMatrix* graphics_matrix;
         };
@@ -40,7 +40,7 @@ namespace xtd {
         struct radial_gradiant_brush {
           wxPoint center_point;
           wxPoint focal_point;
-          float radius;
+          float radius = .0f;
           wxGraphicsGradientStops colors;
           //const wxGraphicsMatrix* graphics_matrix;
         };
