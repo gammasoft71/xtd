@@ -47,7 +47,7 @@ xtd::forms::style_sheets::border_radius style_sheets::control::border_radius() c
   return border_radius_;
 }
 
-style_sheets::control& style_sheets::control::border_radius(xtd::forms::style_sheets::border_radius value) noexcept {
+style_sheets::control& style_sheets::control::border_radius(const xtd::forms::style_sheets::border_radius& value) noexcept {
   border_radius_ = value;
   return *this;
 }

@@ -80,7 +80,7 @@ namespace xtd {
         /// @param value The radius is used to add rounded borders to an element.
         /// @return This current instance.
         /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/style_sheets_box_model.md">Box Model</a>.
-        control& border_radius(xtd::forms::style_sheets::border_radius value) noexcept;
+        control& border_radius(const xtd::forms::style_sheets::border_radius& value) noexcept;
         
         xtd::forms::style_sheets::border_style border_style() const noexcept override;
         /// @brief Sets the style specifies what kind of borders to display.
