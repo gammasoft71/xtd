@@ -26,7 +26,6 @@ namespace {
 
 secure_string::secure_string(const char value[], size_t length) {
   if (value == nullptr) return;
-  guid machine_guid(native::cryptography::machine_guid());
   data_ = encrypt(guid(native::cryptography::machine_guid()), value, length);
 }
 
