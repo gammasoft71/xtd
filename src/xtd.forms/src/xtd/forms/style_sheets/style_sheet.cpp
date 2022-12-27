@@ -809,21 +809,21 @@ void style_sheet::control_reader(xtd::web::css::css_reader& reader) noexcept {
 
 void style_sheet::fill_control(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::control& control) noexcept {
   for (auto property : selectors_iterator->second.properties()) {
-    if (property.first == "margin") control.margin(margin_from_css(property.second.to_string(), margin(0)));
+    if (property.first == "margin") control.margin(margin_from_css(property.second.to_string(), margin(length(0))));
     if (property.first == "margin-bottom") control.margin(margin_bottom_from_css(property.second.to_string(), control.margin()));
     if (property.first == "margin-left") control.margin(margin_left_from_css(property.second.to_string(), control.margin()));
     if (property.first == "margin-right") control.margin(margin_right_from_css(property.second.to_string(), control.margin()));
     if (property.first == "margin-top") control.margin(margin_top_from_css(property.second.to_string(), control.margin()));
     if (property.first == "border-style") control.border_style(border_style_from_css(property.second.to_string(), border_style(border_type::none)));
     if (property.first == "border-color") control.border_color(border_color_from_css(property.second.to_string(), border_color(color::transparent)));
-    if (property.first == "border-width") control.border_width(border_width_from_css(property.second.to_string(), border_width(1)));
-    if (property.first == "border-radius") control.border_radius(border_radius_from_css(property.second.to_string(), border_radius(0)));
+    if (property.first == "border-width") control.border_width(border_width_from_css(property.second.to_string(), border_width(length(1))));
+    if (property.first == "border-radius") control.border_radius(border_radius_from_css(property.second.to_string(), border_radius(length(0))));
     if (property.first == "outline-style") control.outline_style(border_style_from_css(property.second.to_string(), outline_style(border_type::none)));
     if (property.first == "outline-color") control.outline_color(border_color_from_css(property.second.to_string(), outline_color(color::transparent)));
-    if (property.first == "outline-offset") control.outline_offset(border_width_from_css(property.second.to_string(), outline_offset(1)));
-    if (property.first == "outline-width") control.outline_width(border_width_from_css(property.second.to_string(), outline_width(1)));
-    if (property.first == "outline-radius") control.outline_radius(border_radius_from_css(property.second.to_string(), outline_radius(0)));
-    if (property.first == "padding") control.padding(margin_from_css(property.second.to_string(), padding(0)));
+    if (property.first == "outline-offset") control.outline_offset(border_width_from_css(property.second.to_string(), outline_offset(length(1))));
+    if (property.first == "outline-width") control.outline_width(border_width_from_css(property.second.to_string(), outline_width(length(1))));
+    if (property.first == "outline-radius") control.outline_radius(border_radius_from_css(property.second.to_string(), outline_radius(length(0))));
+    if (property.first == "padding") control.padding(margin_from_css(property.second.to_string(), padding(length(0))));
     if (property.first == "padding-bottom") control.padding(margin_bottom_from_css(property.second.to_string(), control.padding()));
     if (property.first == "padding-left") control.padding(margin_left_from_css(property.second.to_string(), control.padding()));
     if (property.first == "padding-right") control.padding(margin_right_from_css(property.second.to_string(), control.padding()));

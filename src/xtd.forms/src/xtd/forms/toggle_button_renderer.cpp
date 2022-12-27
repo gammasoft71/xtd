@@ -64,8 +64,8 @@ void toggle_button_renderer::draw_flat_toggle_button(const style_sheets::style_s
   if (font.has_value()) current_style_sheet.font(font.value());
   if (image_align.has_value()) current_style_sheet.image_alignment(image_align.value());
   
-  if (appearance.border_radius().has_value()) current_style_sheet.border_radius(xtd::forms::style_sheets::border_radius(appearance.border_radius().value()));
-  if (appearance.border_size().has_value()) current_style_sheet.border_width(xtd::forms::style_sheets::border_width(appearance.border_size().value()));
+  if (appearance.border_radius().has_value()) current_style_sheet.border_radius(xtd::forms::style_sheets::border_radius(length(appearance.border_radius().value())));
+  if (appearance.border_size().has_value()) current_style_sheet.border_width(xtd::forms::style_sheets::border_width(length(appearance.border_size().value())));
   if (appearance.border_color().has_value()) current_style_sheet.border_color(xtd::forms::style_sheets::border_color(appearance.border_color().value()));
   if (appearance.checked_back_color().has_value() && state == toggle_button_state::checked_normal) current_style_sheet.background_color(appearance.checked_back_color().value());
   if (appearance.mouse_down_back_color().has_value() && (state == toggle_button_state::unchecked_pressed || state == toggle_button_state::checked_pressed || state == toggle_button_state::mixed_pressed)) current_style_sheet.background_color(appearance.mouse_down_back_color().value());
@@ -100,8 +100,8 @@ void toggle_button_renderer::draw_popup_toggle_button(const style_sheets::style_
   if (font.has_value()) current_style_sheet.font(font.value());
   if (image_align.has_value()) current_style_sheet.image_alignment(image_align.value());
   
-  if (appearance.border_radius().has_value()) current_style_sheet.border_radius(xtd::forms::style_sheets::border_radius(appearance.border_radius().value()));
-  if (appearance.border_size().has_value()) current_style_sheet.border_width(xtd::forms::style_sheets::border_width(appearance.border_size().value()));
+  if (appearance.border_radius().has_value()) current_style_sheet.border_radius(xtd::forms::style_sheets::border_radius(length(appearance.border_radius().value())));
+  if (appearance.border_size().has_value()) current_style_sheet.border_width(xtd::forms::style_sheets::border_width(length(appearance.border_size().value())));
   if (appearance.border_color().has_value()) current_style_sheet.border_color(xtd::forms::style_sheets::border_color(appearance.border_color().value()));
   if (appearance.checked_back_color().has_value() && state == toggle_button_state::checked_normal) current_style_sheet.background_color(appearance.checked_back_color().value());
   if (appearance.mouse_down_back_color().has_value() && (state == toggle_button_state::unchecked_pressed || state == toggle_button_state::checked_pressed || state == toggle_button_state::mixed_pressed)) current_style_sheet.background_color(appearance.mouse_down_back_color().value());

@@ -31,8 +31,8 @@ void tool_bar_button_renderer::draw_tool_bar_button(const style_sheets::style_sh
   if (font.has_value()) current_style_sheet.font(font.value());
   if (image_align.has_value()) current_style_sheet.image_alignment(image_align.value());
   
-  if (appearance.border_radius().has_value()) current_style_sheet.border_radius(xtd::forms::style_sheets::border_radius(appearance.border_radius().value()));
-  if (appearance.border_size().has_value()) current_style_sheet.border_width(xtd::forms::style_sheets::border_width(appearance.border_size().value()));
+  if (appearance.border_radius().has_value()) current_style_sheet.border_radius(xtd::forms::style_sheets::border_radius(length(appearance.border_radius().value())));
+  if (appearance.border_size().has_value()) current_style_sheet.border_width(xtd::forms::style_sheets::border_width(length(appearance.border_size().value())));
   if (appearance.border_color().has_value()) current_style_sheet.border_color(xtd::forms::style_sheets::border_color(appearance.border_color().value()));
   if (appearance.checked_back_color().has_value() && button_state == push_button_state::checked) current_style_sheet.background_color(appearance.checked_back_color().value());
   if (appearance.mouse_down_back_color().has_value() && button_state == push_button_state::pressed) current_style_sheet.background_color(appearance.mouse_down_back_color().value());
