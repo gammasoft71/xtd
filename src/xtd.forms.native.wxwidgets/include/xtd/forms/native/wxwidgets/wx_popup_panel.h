@@ -27,7 +27,7 @@ namespace xtd {
       class wxPopupPanel : public wxScrolled<wxPanel> {
         friend xtd::forms::native::wxPopup;
       private:
-        wxPopupPanel(wxWindow* parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxScrolledWindowStyle, const wxString& name = wxPanelNameStr) : wxScrolled<wxPanel>(parent, winid, pos, size, style, name) {}
+        explicit wxPopupPanel(wxWindow* parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxScrolledWindowStyle, const wxString& name = wxPanelNameStr) : wxScrolled<wxPanel>(parent, winid, pos, size, style, name) {}
         
         bool ProcessEvent(wxEvent& event) override {
           bool result = wxPanel::ProcessEvent(event);
