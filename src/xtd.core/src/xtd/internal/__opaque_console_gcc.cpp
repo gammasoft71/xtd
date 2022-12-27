@@ -605,7 +605,7 @@ namespace {
 
       for (xtd::uint32 frames_index = 0; frames_index < in_number_frames; ++frames_index) {
         static unsigned char theta = 0;
-        reinterpret_cast<unsigned char*>(io_data->mBuffers[0].mData)[frames_index] = beep_freq > 0 ? (beep_freq * 255 * theta++ / simple_rate) : 0;
+        reinterpret_cast<unsigned char*>(io_data->mBuffers[0].mData)[frames_index] = (beep_freq * 255 * theta++ / simple_rate);
         if (--counter == 0) {
           theta = 0;
           counter = 0;
@@ -623,7 +623,7 @@ namespace {
     inline static dispatch_semaphore_t end_playing_semaphore = dispatch_semaphore_create(0);
     inline static bool initialized = false;
     inline static AudioUnit audio_unit;
-    inline static long beep_freq = 0;
+    inline static unsigned int beep_freq = 0;
     inline static xtd::int32 beep_samples = 0;
   };
 }
