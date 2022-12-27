@@ -227,7 +227,7 @@ namespace xtd {
       private:
         void init_from_rect_3points(const xtd::drawing::rectangle_f& rect, const xtd::drawing::point_f pt1, const xtd::drawing::point_f pt2, const xtd::drawing::point_f pt3);
         friend class xtd::drawing::graphics;
-        matrix(intptr handle);
+        explicit matrix(intptr handle);
 
         std::shared_ptr<data> data_;
       };
