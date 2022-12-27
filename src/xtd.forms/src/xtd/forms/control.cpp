@@ -731,7 +731,7 @@ control& control::style_sheet(std::nullptr_t) {
 }
 
 control& control::style_sheet(const ustring& value) {
-  return style_sheet(style_sheets::style_sheet(value));
+  return control::style_sheet(style_sheets::style_sheet(value));
 }
 
 bool control::tab_stop() const noexcept {
