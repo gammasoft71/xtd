@@ -59,7 +59,7 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the trace_form_base class with specified caption text.
       /// @param text A string that represent the caption text oof the debug form.
-      trace_form_base(const xtd::ustring& text);
+      explicit trace_form_base(const xtd::ustring& text);
       /// @}
       
       /// @name Protected methods
