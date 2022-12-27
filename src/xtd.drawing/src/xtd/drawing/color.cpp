@@ -504,19 +504,19 @@ float color::get_hue() const noexcept {
   if (r() == g() && g() == b())
     return 0.0;
     
-  float r = (float)this->r() / 255.0f;
-  float g = (float)this->g() / 255.0f;
-  float b = (float)this->b() / 255.0f;
+  float rc = static_cast<float>(r()) / 255.0f;
+  float gc = static_cast<float>(g()) / 255.0f;
+  float bc = static_cast<float>(b()) / 255.0f;
   
-  float max = (float)std::max(std::max(r, g), b);
-  float min = (float)std::min(std::min(r, g), b);
+  float max = (float)std::max(std::max(rc, gc), bc);
+  float min = (float)std::min(std::min(rc, gc), bc);
   
   float delta = max - min;
   
   float hue = 0.0;
-  if (r == max) hue = (g - b) / delta;
-  else if (g == max) hue = 2 + (b - r) / delta;
-  else if (b == max) hue = 4 + (r - g) / delta;
+  if (rc == max) hue = (gc - bc) / delta;
+  else if (gc == max) hue = 2 + (bc - rc) / delta;
+  else if (bc == max) hue = 4 + (rc - gc) / delta;
   hue *= 60;
   
   if (hue < 0.0) hue += 360.0;
