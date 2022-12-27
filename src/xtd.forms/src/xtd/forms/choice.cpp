@@ -46,10 +46,10 @@ list_control& choice::selected_index(size_t selected_index) {
     set_selected_index(selected_index);
     if (is_handle_created()) native::choice::selected_index(handle(), this->selected_index());
     
-    item selected_item;
-    if (this->selected_index() != npos) selected_item = data_->items[this->selected_index()];
+    item selected;
+    if (this->selected_index() != npos) selected = data_->items[this->selected_index()];
     //this->selected_item(selected_item);
-    data_->selected_item = selected_item;
+    data_->selected_item = selected;
     on_selected_value_changed(event_args::empty);
     
     on_selected_index_changed(event_args::empty);
@@ -151,17 +151,17 @@ void choice::wnd_proc(message& message) {
 
 void choice::on_items_item_added(size_t pos, const item & item) {
   if (is_handle_created()) native::choice::insert_item(handle(), pos, item.value());
-  size_t selected_index = npos;
-  if (this->selected_index() != npos && this->selected_index() < data_->items.size()) selected_index = this->selected_index();
-  this->selected_index(selected_index);
+  size_t selected = npos;
+  if (this->selected_index() != npos && this->selected_index() < data_->items.size()) selected = this->selected_index();
+  this->selected_index(selected);
 }
 
 void choice::on_items_item_removed(size_t pos, const item & item)  {
   if (is_handle_created()) native::choice::delete_item(handle(), pos);
   
-  size_t selected_index = npos;
-  if (this->selected_index() != npos && this->selected_index() < data_->items.size()) selected_index = this->selected_index();
-  this->selected_index(selected_index);
+  size_t selected = npos;
+  if (this->selected_index() != npos && this->selected_index() < data_->items.size()) selected = this->selected_index();
+  this->selected_index(selected);
   
   if (this->items().size() == 1) // not 0! --> the item_remove occure before erase!
     this->selected_index(npos);
@@ -169,9 +169,9 @@ void choice::on_items_item_removed(size_t pos, const item & item)  {
 
 void choice::on_items_item_updated(size_t pos, const item & item) {
   if (is_handle_created()) native::choice::update_item(handle(), pos, item.value());
-  size_t selected_index = npos;
-  if (this->selected_index() != npos && this->selected_index() < data_->items.size()) selected_index = this->selected_index();
-  this->selected_index(selected_index);
+  size_t selected = npos;
+  if (this->selected_index() != npos && this->selected_index() < data_->items.size()) selected = this->selected_index();
+  this->selected_index(selected);
 }
 
 void choice::wm_command_control(message& message) {
