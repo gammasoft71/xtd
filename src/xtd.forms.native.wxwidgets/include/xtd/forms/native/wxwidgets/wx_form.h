@@ -307,7 +307,6 @@ namespace xtd {
         #if defined(__WXGTK__)
         wxPoint GetPosition() const override {
           return location_;
-          return control_handler::GetPosition();
         }
         #endif
         
