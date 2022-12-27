@@ -96,8 +96,8 @@ private:
   friend status_bar;
   
   void draw_panel(xtd::forms::paint_event_args& e) {
-    auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-    xtd::forms::style_sheets::status_bar_panel current_style_sheet = style.status_bar_panel(xtd::forms::style_sheets::pseudo_state::standard);
+    auto sstyle = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
+    xtd::forms::style_sheets::status_bar_panel current_style_sheet = sstyle.status_bar_panel(xtd::forms::style_sheets::pseudo_state::standard);
     current_style_sheet.font(font());
     auto content_rectangle = current_style_sheet.get_content_rectangle(e.clip_rectangle());
     auto image_rect = content_rectangle;
@@ -127,14 +127,14 @@ private:
   }
   
   void draw_control(xtd::forms::paint_event_args& e) {
-    auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-    status_bar_panel_renderer::draw_status_bar_panel(style, e.graphics(), e.clip_rectangle(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font(), image(), image_align());
+    auto sstyle = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
+    status_bar_panel_renderer::draw_status_bar_panel(sstyle, e.graphics(), e.clip_rectangle(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font(), image(), image_align());
   }
   
   void update_size() {
-    auto size = this->size();
+    auto current_size = this->size();
     
-    this->size(size);
+    this->size(current_size);
   }
   
   struct data {
