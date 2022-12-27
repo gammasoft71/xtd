@@ -87,7 +87,7 @@ namespace xtd {
         
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::length class with specifed value in pixels.
         /// @param value The number of pixels to be used for xtd::forms::style_sheets::length.
-        length(double value);
+        explicit length(double value);
         
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::length class with specifed value and unit.
         /// @param value The number of unit to be used for xtd::forms::style_sheets::length.

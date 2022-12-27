@@ -330,10 +330,10 @@ namespace xtd::forms::style_sheets::tests {
     void test_method_(rect_test) {
       auto bounds = drawing::rectangle(100, 200, 300, 400);
       style_sheets::control ctrl;
-      ctrl.margin({1, 2, 3, 4});
-      ctrl.border_width({5, 6, 7, 8});
+      ctrl.margin({length(1), length(2), length(3), length(4)});
+      ctrl.border_width({length(5), length(6), length(7), length(8)});
       ctrl.border_style(border_type::solid);
-      ctrl.padding({9, 10, 11, 12});
+      ctrl.padding({length(9), length(10), length(11), length(12)});
       assert::are_equal(drawing::rectangle(101, 202, 296, 394), ctrl.get_border_rectangle(bounds));
       assert::are_equal(drawing::rectangle(106, 208, 284, 380), ctrl.get_fill_rectangle(bounds));
       assert::are_equal(drawing::rectangle(115, 218, 264, 358), ctrl.get_content_rectangle(bounds));

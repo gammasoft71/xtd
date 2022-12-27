@@ -32,8 +32,8 @@ void label_renderer::draw_label(const xtd::forms::style_sheets::style_sheet& sty
     else current_style_sheet.border_color(border_color(current_style_sheet.background_color().is_dark() ? color::light(current_style_sheet.background_color(), 2.0 / 3) : color::dark(current_style_sheet.background_color(), 1.0 / 3)));
     auto [border_type, border_width, border_radius] = style_sheets::style_sheet::to_border_type(border.value());
     current_style_sheet.border_style(style_sheets::border_style((sides & border_sides::left) == border_sides::left ? border_type : style_sheets::border_type::none, (sides & border_sides::top) == border_sides::top ? border_type : style_sheets::border_type::none, (sides & border_sides::right) == border_sides::right ? border_type : style_sheets::border_type::none, (sides & border_sides::bottom) == border_sides::bottom ? border_type : style_sheets::border_type::none));
-    current_style_sheet.border_width(style_sheets::border_width(border_width));
-    current_style_sheet.border_radius(style_sheets::border_radius(border_radius));
+    current_style_sheet.border_width(style_sheets::border_width(length(border_width)));
+    current_style_sheet.border_radius(style_sheets::border_radius(length(border_radius)));
   }
   current_style_sheet.auto_ellipsis(auto_ellipsis);
   
