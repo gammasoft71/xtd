@@ -486,7 +486,11 @@ color color::from_name(const ustring& name) noexcept {
     result.name_ = name;
     return result;
   }
-  return color::from_known_color(it->second);
+  try {
+    return color::from_known_color(it->second);
+  } catch(...) {
+    return color::empty;
+  }
 }
 
 float color::get_brightness() const noexcept {
