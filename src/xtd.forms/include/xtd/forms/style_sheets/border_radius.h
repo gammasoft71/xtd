@@ -44,7 +44,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_radius class using the supplied xtd::forms::style_sheets::border_radius size for all edges.
         /// @param all The number of pixels to be used for xtd::forms::style_sheets::border_radius for all edges.
         /// @remarks This constructor sets the bottom_left, top_left, bottom_right, top_right and all properties to the value of the all parameter.
-        border_radius(xtd::forms::style_sheets::length all);
+        explicit border_radius(xtd::forms::style_sheets::length all);
         
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_radius class using a separate xtd::forms::style_sheets::border_radius size for each edge.
         /// @param top_left The xtd::forms::style_sheets::border_radius size, in pixels, for the top_left edge.
