@@ -332,7 +332,7 @@ namespace xtd::forms::style_sheets::tests {
       style_sheets::control ctrl;
       ctrl.margin({length(1), length(2), length(3), length(4)});
       ctrl.border_width({length(5), length(6), length(7), length(8)});
-      ctrl.border_style(border_type::solid);
+      ctrl.border_style(border_style(border_type::solid));
       ctrl.padding({length(9), length(10), length(11), length(12)});
       assert::are_equal(drawing::rectangle(101, 202, 296, 394), ctrl.get_border_rectangle(bounds));
       assert::are_equal(drawing::rectangle(106, 208, 284, 380), ctrl.get_fill_rectangle(bounds));
