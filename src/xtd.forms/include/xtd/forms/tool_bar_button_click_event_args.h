@@ -30,7 +30,7 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::tool_bar_button_click_event_args class.
       /// @param button The xtd::forms::tool_bar_button that was clicked.
-      tool_bar_button_click_event_args(const xtd::forms::tool_bar_button& button) : button_(button) {}
+      explicit tool_bar_button_click_event_args(const xtd::forms::tool_bar_button& button) : button_(button) {}
       /// @brief Initializes a new instance of the xtd::forms::tool_bar_button_click_event_args class.
       /// @param button The xtd::forms::tool_bar_button that was clicked.
       /// @param handle An internal handle.
