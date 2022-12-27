@@ -22,7 +22,7 @@ create_params::create_params(const create_params& other) : data_(std::make_share
   *data_ = *other.data_;
 }
 
-create_params& create_params::operator =(create_params& other) {
+create_params& create_params::operator =(const create_params& other) {
   *data_ = *other.data_;
   return *this;
 }
