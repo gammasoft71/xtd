@@ -285,9 +285,9 @@ void image::update_properties() {
   
   data_->raw_format_ = to_image_format(native::image::raw_format(data_->handle_));
   
-  int32 width, height;
-  native::image::size(data_->handle_, width, height);
-  data_->size_ = drawing::size(width, height);
+  int32 w = 0, h = 0;
+  native::image::size(data_->handle_, w, h);
+  data_->size_ = drawing::size(w, h);
   
   data_->vertical_resolution_ = native::image::vertical_resolution(data_->handle_);
 }
