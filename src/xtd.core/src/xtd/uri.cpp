@@ -352,7 +352,11 @@ bool uri::equals(const uri& uri) const noexcept {
 }
 
 ustring uri::to_string() const noexcept {
-  return get_components(uri_components::absolute_uri, uri_format::unescaped);
+  try {
+    return get_components(uri_components::absolute_uri, uri_format::unescaped);
+  } catch(...) {
+    return "";
+  }
 }
 
 ustring uri::format_componant(const ustring& str, uri_format format) {
