@@ -103,7 +103,7 @@ encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encod
   }
 }
 
-encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, int32 number_values, xtd::drawing::imaging::encoder_parameter_value_type type, std::vector<xtd::byte> value) : encoder_(encoder), number_of_values_(number_values), type_(type), value_(value) {
+encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, int32 number_values, xtd::drawing::imaging::encoder_parameter_value_type type, const std::vector<xtd::byte>& value) : encoder_(encoder), number_of_values_(number_values), type_(type), value_(value) {
 }
 
 const xtd::drawing::imaging::encoder& encoder_parameter::encoder() const noexcept {
