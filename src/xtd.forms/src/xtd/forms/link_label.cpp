@@ -208,7 +208,7 @@ void link_label::on_mouse_move(const mouse_event_args& e) {
   label::on_mouse_move(e);
   if (!enabled()) return;
   data_->mouse_hover = true;
-  auto& link = point_in_link(e.location());
+  const auto& link = point_in_link(e.location());
   cursor(link != link_empty && link.enabled() ? override_cursor() : data_->original_cursor);
   data_->mouse_hover = false;
 }
