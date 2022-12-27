@@ -18,37 +18,31 @@ struct udp_client::data {
   vector<xtd::byte> buffer = vector<xtd::byte>(0x10000);
 };
 
-udp_client::udp_client() {
-  data_ = make_shared<udp_client::data>();
+udp_client::udp_client() : data_(make_shared<udp_client::data>()) {
   active(true);
 }
 
-udp_client::udp_client(uint16 port) {
-  data_ = make_shared<udp_client::data>();
+udp_client::udp_client(uint16 port) : data_(make_shared<udp_client::data>()) {
   data_->client_socket.bind(ip_end_point(ip_address::any, port));
 }
 
-udp_client::udp_client(const xtd::net::ip_end_point& local_end_point) {
-  data_ = make_shared<udp_client::data>();
+udp_client::udp_client(const xtd::net::ip_end_point& local_end_point) : data_(make_shared<udp_client::data>()) {
   data_->client_socket = socket(local_end_point.address_family(), socket_type::dgram, protocol_type::udp);
   data_->client_socket.bind(local_end_point);
 }
 
-udp_client::udp_client(address_family address_family) {
-  data_ = make_shared<udp_client::data>();
+udp_client::udp_client(address_family address_family) : data_(make_shared<udp_client::data>()) {
   if (address_family != xtd::net::sockets::address_family::inter_network && address_family != xtd::net::sockets::address_family::inter_network_v6) throw argument_exception(csf_);
   data_->client_socket = socket(address_family, socket_type::dgram, protocol_type::udp);
 }
 
-udp_client::udp_client(uint16 port, xtd::net::sockets::address_family address_family) {
-  data_ = make_shared<udp_client::data>();
+udp_client::udp_client(uint16 port, xtd::net::sockets::address_family address_family) : data_(make_shared<udp_client::data>()) {
   if (address_family != xtd::net::sockets::address_family::inter_network && address_family != xtd::net::sockets::address_family::inter_network_v6) throw argument_exception(csf_);
   data_->client_socket = socket(address_family, socket_type::dgram, protocol_type::udp);
   data_->client_socket.bind(ip_end_point(dns::get_host_addresses(dns::get_host_name())[0], port));
 }
 
-udp_client::udp_client(const xtd::ustring& hostname, uint16 port) {
-  data_ = make_shared<udp_client::data>();
+udp_client::udp_client(const xtd::ustring& hostname, uint16 port) : data_(make_shared<udp_client::data>()) {
   connect(hostname, port);
 }
 

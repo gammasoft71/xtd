@@ -13,23 +13,19 @@ struct tcp_client::data {
   bool active = false;
 };
 
-tcp_client::tcp_client() {
-  data_ = make_shared<data>();
+tcp_client::tcp_client() : data_(make_shared<data>()) {
 }
 
-tcp_client::tcp_client(const ip_end_point& local_end_point) {
-  data_ = make_shared<tcp_client::data>();
+tcp_client::tcp_client(const ip_end_point& local_end_point) : data_(make_shared<tcp_client::data>()) {
   data_->client_socket.bind(local_end_point);
 }
 
-tcp_client::tcp_client(address_family address_family) {
-  data_ = make_shared<tcp_client::data>();
+tcp_client::tcp_client(address_family address_family) : data_(make_shared<tcp_client::data>()) {
   if (address_family != address_family::inter_network && address_family != address_family::inter_network_v6) throw argument_exception(csf_);
   data_->client_socket = socket(address_family, socket_type::stream, protocol_type::tcp);
 }
 
-tcp_client::tcp_client(const xtd::ustring& hostname, uint16 port) {
-  data_ = make_shared<tcp_client::data>();
+tcp_client::tcp_client(const xtd::ustring& hostname, uint16 port) : data_(make_shared<tcp_client::data>()) {
   connect(hostname, port);
 }
 
@@ -180,8 +176,7 @@ tcp_client& tcp_client::active(bool value) noexcept {
   return *this;
 }
 
-tcp_client::tcp_client(const xtd::net::sockets::socket& socket) {
-  data_ = make_shared<tcp_client::data>();
+tcp_client::tcp_client(const xtd::net::sockets::socket& socket) : data_(make_shared<tcp_client::data>()) {
   data_->client_socket = socket;
   active(data_->client_socket.connected());
 }
