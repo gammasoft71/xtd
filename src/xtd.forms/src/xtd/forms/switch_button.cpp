@@ -125,13 +125,13 @@ void switch_button::on_handle_created(const event_args& e) {
 void switch_button::on_paint(paint_event_args& e) {
   drawing::color button_back_color = data_->checked ? checked_back_color() : application::style_sheet().system_colors().gray_text();
   drawing::color text_color = data_->checked ? fore_color() : drawing::color::average(button_back_color, fore_color(), .33);
-  drawing::color slider_color = this->slider_color();
+  drawing::color sld_color = this->slider_color();
   xtd::ustring text = data_->checked ? "ON" : "OFF";
   
   if (!enabled()) {
     button_back_color = drawing::color::average(back_color(), button_back_color, .33);
     text_color = drawing::color::average(button_back_color, text_color, .33);
-    slider_color = drawing::color::average(button_back_color, slider_color, .33);
+    sld_color = drawing::color::average(button_back_color, sld_color, .33);
   }
   
   if (data_->rounded) {
@@ -142,7 +142,7 @@ void switch_button::on_paint(paint_event_args& e) {
     drawing::point_f string_location(data_->checked ? drawing::point_f(slider_location.x() - string_size.width() - 2, (height - string_size.height()) / 2) : drawing::point_f(slider_location.x() + static_cast<float>(height - 4) + 2, (height - string_size.height()) / 2));
     
     e.graphics().fill_rounded_rectangle(drawing::solid_brush(button_back_color), .0f, .0f, static_cast<float>(e.clip_rectangle().width()), static_cast<float>(height), static_cast<float>(height) / 2);
-    e.graphics().fill_ellipse(drawing::solid_brush(slider_color), slider_location.x(), slider_location.y(), static_cast<float>(height - 4), static_cast<float>(height - 4));
+    e.graphics().fill_ellipse(drawing::solid_brush(sld_color), slider_location.x(), slider_location.y(), static_cast<float>(height - 4), static_cast<float>(height - 4));
     if (data_->show_text) e.graphics().draw_string(text, font(), drawing::solid_brush(text_color), string_location);
   } else {
     drawing::size_f slider_size(static_cast<float>((e.clip_rectangle().width() - 6) / 2), static_cast<float>(e.clip_rectangle().height() - 6));
@@ -158,11 +158,11 @@ void switch_button::on_paint(paint_event_args& e) {
     e.graphics().draw_line(drawing::pen(control_paint::light(button_back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().bottom(), e.clip_rectangle().right(), e.clip_rectangle().bottom());
     e.graphics().draw_line(drawing::pen(control_paint::light(button_back_color), 2), e.clip_rectangle().right(), e.clip_rectangle().top() + 2, e.clip_rectangle().right(), e.clip_rectangle().bottom());
     
-    e.graphics().fill_rectangle(drawing::solid_brush(slider_color), {slider_location, slider_size});
-    e.graphics().draw_line(drawing::pen(control_paint::light(slider_color)), slider_location.x(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y());
-    e.graphics().draw_line(drawing::pen(control_paint::light(slider_color)), slider_location.x(), slider_location.y(), slider_location.x(), slider_location.y() + slider_size.height() - 2);
-    e.graphics().draw_line(drawing::pen(control_paint::dark(slider_color)), slider_location.x(), slider_location.y() + slider_size.height() - 1, slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
-    e.graphics().draw_line(drawing::pen(control_paint::dark(slider_color)), slider_location.x() + slider_size.width(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
+    e.graphics().fill_rectangle(drawing::solid_brush(sld_color), {slider_location, slider_size});
+    e.graphics().draw_line(drawing::pen(control_paint::light(sld_color)), slider_location.x(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y());
+    e.graphics().draw_line(drawing::pen(control_paint::light(sld_color)), slider_location.x(), slider_location.y(), slider_location.x(), slider_location.y() + slider_size.height() - 2);
+    e.graphics().draw_line(drawing::pen(control_paint::dark(sld_color)), slider_location.x(), slider_location.y() + slider_size.height() - 1, slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
+    e.graphics().draw_line(drawing::pen(control_paint::dark(sld_color)), slider_location.x() + slider_size.width(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
   }
   button_base::on_paint(e);
 }
