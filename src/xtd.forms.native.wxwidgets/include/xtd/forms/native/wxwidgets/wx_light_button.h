@@ -71,7 +71,7 @@ namespace xtd {
         
         virtual void SetPosition(const wxPoint& pt) override {
 #if defined(__WXOSX__)
-          if (!owner_draw_) __set_button_bezel_style__((wxAnyButton*)control(), control()->GetSize().GetHeight());
+          if (!owner_draw_) __set_button_bezel_style__(reinterpret_cast<wxAnyButton*>(control()), control()->GetSize().GetHeight());
 #endif
           control_handler::SetPosition(pt);
         }
@@ -86,7 +86,7 @@ namespace xtd {
         
         void SetSize(xtd::int32 width, xtd::int32 height) override {
 #if defined(__WXOSX__)
-          if (!owner_draw_) __set_button_bezel_style__((wxAnyButton*)control(), height);
+          if (!owner_draw_) __set_button_bezel_style__(reinterpret_cast<wxAnyButton*>(control()), height);
 #endif
           control_handler::SetSize(width, height);
         }
