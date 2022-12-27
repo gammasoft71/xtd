@@ -56,7 +56,7 @@ intptr toolkit::initialize() {
   wxSystemOptions::SetOption("osx.openfiledialog.always-show-types", 1);
   wxApp::SetInstance(new wx_application());
   int32 argc = 0;
-  wxEntryStart(argc, (wxChar**)nullptr);
+  wxEntryStart(argc, reinterpret_cast<wxChar**>(0));
   wxTheApp->CallOnInit();
   wxTheApp->SetExitOnFrameDelete(false);
   wxInitAllImageHandlers();
