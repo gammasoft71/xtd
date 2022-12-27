@@ -91,8 +91,8 @@ bool uri::is_absolute_uri() const {
 bool uri::is_default_port() const {
   if (kind_ != uri_kind::absolute) throw invalid_operation_exception(csf_);
   
-  auto port = -1;
-  if (try_parse<int32>(get_components(uri_components::port, uri_format::uri_escaped), port) == true) return false;
+  auto prt = -1;
+  if (try_parse<int32>(get_components(uri_components::port, uri_format::uri_escaped), prt) == true) return false;
   return true;
 }
 
@@ -150,23 +150,23 @@ ustring uri::scheme() const {
 }
 
 vector<ustring> uri::segments() const {
-  auto absolute_path = this->absolute_path();
-  if (absolute_path.empty()) return {};
+  auto path = this->absolute_path();
+  if (path.empty()) return {};
   
   vector<ustring> segments;
   size_t start_index = 0;
   size_t length = 1;
   
-  if (absolute_path[start_index] == '/') {
-    segments.push_back(absolute_path.substring(start_index, length));
+  if (path[start_index] == '/') {
+    segments.push_back(path.substring(start_index, length));
     start_index += length;
   }
   
-  while (start_index < absolute_path.size()) {
-    length = absolute_path.index_of('/', start_index);
-    if (length == ustring::npos) length = absolute_path.size() - start_index;
+  while (start_index < path.size()) {
+    length = path.index_of('/', start_index);
+    if (length == ustring::npos) length = path.size() - start_index;
     
-    segments.push_back(absolute_path.substring(start_index, length));
+    segments.push_back(path.substring(start_index, length));
     start_index += length;
   }
   return segments;
