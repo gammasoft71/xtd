@@ -137,7 +137,7 @@ namespace xtd {
         
         size_t number_of_values_ = 0;
         
-        xtd::drawing::imaging::encoder_parameter_value_type type_;
+        xtd::drawing::imaging::encoder_parameter_value_type type_ = static_cast<xtd::drawing::imaging::encoder_parameter_value_type>(0);
         
         std::vector<xtd::byte> value_;
       };
