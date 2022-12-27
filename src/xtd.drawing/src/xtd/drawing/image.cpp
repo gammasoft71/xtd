@@ -115,8 +115,7 @@ int32 image::flags() const noexcept {
 
 vector<guid> image::frame_dimentions_list() const noexcept {
   vector<guid> result;
-  for (auto frame : data_->frame_dimensions)
-    result.push_back(frame.first);
+  for_each(data_->frame_dimensions.begin(), data_->frame_dimensions.end(), [&](auto frame) {result.push_back(frame.first);});
   return result;
 }
 
