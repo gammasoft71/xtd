@@ -289,16 +289,20 @@ control& control::bounds(const drawing::rectangle& bounds) {
 }
 
 bool control::can_focus() const noexcept {
-  bool visible_and_enabled = handle() && get_state(state::visible) && get_state(state::enabled);
-  
-  optional<control_ref> top_level_control = const_cast<control&>(*this);
-  while (visible_and_enabled && top_level_control.has_value() && !top_level_control.value().get().get_state(state::top_level)) {
-    top_level_control = top_level_control.value().get().parent();
-    if (top_level_control.has_value()) visible_and_enabled = top_level_control.value().get().get_state(state::visible) && get_state(state::enabled);
+  try {
+    bool visible_and_enabled = handle() && get_state(state::visible) && get_state(state::enabled);
+    
+    optional<control_ref> top_level_control = const_cast<control&>(*this);
+    while (visible_and_enabled && top_level_control.has_value() && !top_level_control.value().get().get_state(state::top_level)) {
+      top_level_control = top_level_control.value().get().parent();
+      if (top_level_control.has_value()) visible_and_enabled = top_level_control.value().get().get_state(state::visible) && get_state(state::enabled);
+    }
+    
+    if (!visible_and_enabled) return false;
+    return data_->can_focus;
+  } catch(...) {
+    return false;
   }
-  
-  if (!visible_and_enabled) return false;
-  return data_->can_focus;
 }
 
 bool control::can_select() const noexcept {
@@ -318,13 +322,19 @@ void control::check_for_illegal_cross_thread_calls(bool value) {
 }
 
 const drawing::rectangle& control::client_rectangle() const noexcept {
-  if (!handle()) data_->client_rectangle = {point {0, 0}, client_size()};
+  try {
+    if (!handle()) data_->client_rectangle = {point {0, 0}, client_size()};
+  } catch(...) {
+  }
   return data_->client_rectangle;
 }
 
 const drawing::size& control::client_size() const noexcept {
-  if (!handle() && data_->client_size.width() == 0 && width() != 0) data_->client_size = {width(), data_->client_size.height()};
-  if (!handle() && data_->client_size.height() == 0 && height() != 0) data_->client_size = {data_->client_size.width(), height()};
+  try {
+    if (!handle() && data_->client_size.width() == 0 && width() != 0) data_->client_size = {width(), data_->client_size.height()};
+    if (!handle() && data_->client_size.height() == 0 && height() != 0) data_->client_size = {data_->client_size.width(), height()};
+  } catch(...) {
+  }
   return data_->client_size;
 }
 
@@ -623,7 +633,11 @@ control& control::name(const xtd::ustring& name) {
 }
 
 intptr control::native_handle() const noexcept {
-  return handle() ? native::control::native_handle(handle()) : 0;
+  try {
+    return handle() ? native::control::native_handle(handle()) : 0;
+  } catch(...) {
+    return 0;
+  }
 }
 
 forms::padding control::padding() const noexcept {
@@ -753,7 +767,11 @@ control& control::text(const ustring& text) {
 }
 
 intptr control::toolkit_handle() const noexcept {
-  return handle() ? native::control::toolkit_handle(handle()) : 0;
+  try {
+    return handle() ? native::control::toolkit_handle(handle()) : 0;
+  } catch(...) {
+    return 0;
+  }
 }
 
 int32 control::top() const noexcept {
