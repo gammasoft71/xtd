@@ -75,10 +75,10 @@ checked_list_box::checked_index_collection checked_list_box::checked_indices() c
 }
 
 checked_list_box::checked_item_collection checked_list_box::checked_items() const noexcept {
-  checked_item_collection items;
+  checked_item_collection itms;
   for (checked_list_box::item item : data_->items)
-    if (item.checked()) items.push_back(item);
-  return items;
+    if (item.checked()) itms.push_back(item);
+  return itms;
 }
 
 checked_list_box::object_collection& checked_list_box::items() noexcept {
@@ -100,10 +100,10 @@ list_control& checked_list_box::selected_index(size_t selected_index) {
     set_selected_index(selected_index);
     if (is_handle_created()) native::checked_list_box::selected_index(handle(), selected_index);
     
-    item selected_item;
-    if (this->selected_index() != npos) selected_item = data_->items[this->selected_index()];
-    //this->selected_item(selected_item);
-    data_->selected_item = selected_item;
+    item selected;
+    if (this->selected_index() != npos) selected = data_->items[this->selected_index()];
+    //this->selected_item(selected);
+    data_->selected_item = selected;
     on_selected_value_changed(event_args::empty);
     
     on_selected_index_changed(event_args::empty);
@@ -135,10 +135,10 @@ list_box& checked_list_box::selected_item(const item& selected_item) {
 }
 
 vector<checked_list_box::item> checked_list_box::selected_items() const noexcept {
-  vector<item> items;
+  vector<item> itms;
   for (size_t index : selected_indices())
-    items.push_back(data_->items[index]);
-  return items;
+    itms.push_back(data_->items[index]);
+  return itms;
 }
 
 control& checked_list_box::text(const xtd::ustring& text) {
@@ -240,17 +240,17 @@ void checked_list_box::wnd_proc(message& message) {
 
 void checked_list_box::on_items_item_added(size_t pos, const item & item) {
   if (is_handle_created()) native::checked_list_box::insert_item(handle(), pos, item.value(), static_cast<int32>(item.check_state()));
-  checked_list_box::item selected_item;
-  if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
-  this->selected_item(selected_item);
+  checked_list_box::item selected;
+  if (selected_index() != npos && selected_index() < data_->items.size()) selected = data_->items[selected_index()];
+  this->selected_item(selected);
 }
 
 void checked_list_box::on_items_item_removed(size_t pos, const item & item)  {
   if (is_handle_created()) native::checked_list_box::delete_item(handle(), pos);
   
-  checked_list_box::item selected_item;
-  if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
-  this->selected_item(selected_item);
+  checked_list_box::item selected;
+  if (selected_index() != npos && selected_index() < data_->items.size()) selected = data_->items[selected_index()];
+  this->selected_item(selected);
   
   if (this->items().size() == 1) // not 0! --> the item_remove occure before erase!
     this->selected_index(npos);
@@ -258,9 +258,9 @@ void checked_list_box::on_items_item_removed(size_t pos, const item & item)  {
 
 void checked_list_box::on_items_item_updated(size_t pos, const item & item) {
   if (is_handle_created()) native::checked_list_box::update_item(handle(), pos, item.value(), static_cast<int32>(item.check_state()));
-  checked_list_box::item selected_item;
-  if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
-  this->selected_item(selected_item);
+  checked_list_box::item selected;
+  if (selected_index() != npos && selected_index() < data_->items.size()) selected = data_->items[selected_index()];
+  this->selected_item(selected);
 }
 
 void checked_list_box::wm_mouse_double_click(message& message) {
@@ -284,16 +284,16 @@ void checked_list_box::wm_mouse_up(message& message) {
 
 void checked_list_box::wm_command_control(message& message) {
   def_wnd_proc(message);
-  size_t selected_index = native::checked_list_box::selected_index(handle());
-  if (selected_index != npos) {
-    forms::check_state check_state = static_cast<forms::check_state>(native::checked_list_box::check_state(handle(), selected_index));
-    if (data_->items[selected_index].check_state() != check_state) {
-      item_check_event_args item_check_event_args(selected_index, check_state, data_->items[selected_index].check_state());
+  size_t selected = native::checked_list_box::selected_index(handle());
+  if (selected != npos) {
+    forms::check_state check_state = static_cast<forms::check_state>(native::checked_list_box::check_state(handle(), selected));
+    if (data_->items[selected].check_state() != check_state) {
+      item_check_event_args item_check_event_args(selected, check_state, data_->items[selected].check_state());
       on_item_check(item_check_event_args);
-      if (item_check_event_args.new_value() != check_state) native::checked_list_box::check_state(handle(), selected_index, static_cast<int32>(item_check_event_args.new_value()));
-      set_item_check_state(selected_index, item_check_event_args.new_value());
+      if (item_check_event_args.new_value() != check_state) native::checked_list_box::check_state(handle(), selected, static_cast<int32>(item_check_event_args.new_value()));
+      set_item_check_state(selected, item_check_event_args.new_value());
     }
   }
-  this->selected_index(selected_index);
+  this->selected_index(selected);
   if (this->selected_index() != npos) selected_item(data_->items[this->selected_index()]);
 }
