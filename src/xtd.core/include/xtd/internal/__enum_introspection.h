@@ -132,7 +132,7 @@ namespace __enumeration_introspection {
     string_block(string_block const&) = default;
     
     template <class function_t>
-    constexpr string_block(function_t&& func) : string_block() {func(*this);}
+    explicit constexpr string_block(function_t&& func) : string_block() {func(*this);}
     
     template <class function_t>
     constexpr string_block(string_block const& source, function_t&& func) : string_block() {func(source, *this);}
