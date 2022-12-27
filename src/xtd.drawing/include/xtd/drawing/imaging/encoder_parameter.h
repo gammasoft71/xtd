@@ -92,7 +92,7 @@ namespace xtd {
         /// @param encoder An xtd::drawing::imaging::encoder object that encapsulates the globally unique identifier of the parameter category.
         /// @param type
         /// @param value
-        encoder_parameter(const xtd::drawing::imaging::encoder& encoder, int32 number_values, xtd::drawing::imaging::encoder_parameter_value_type type, std::vector<xtd::byte> value);
+        encoder_parameter(const xtd::drawing::imaging::encoder& encoder, int32 number_values, xtd::drawing::imaging::encoder_parameter_value_type type, const std::vector<xtd::byte>& value);
         /// @}
         
         /// @cond
