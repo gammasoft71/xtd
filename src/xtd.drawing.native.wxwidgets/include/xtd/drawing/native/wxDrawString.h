@@ -209,8 +209,7 @@ namespace xtd {
             height = std::abs(height);
           }
           auto results = strings;
-          for (auto& string : results)
-            string = FormatString(dc, string, width, hotKeyPrefix, trimming);
+          std::transform(results.begin(), results.end(), results.begin(), [&](auto string) {return FormatString(dc, string, width, hotKeyPrefix, trimming);});
           return results;
         }
         
