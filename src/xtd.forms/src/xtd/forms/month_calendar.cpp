@@ -438,16 +438,16 @@ void month_calendar::wm_notify_control(message& message) {
 }
 
 void month_calendar::wm_date_selected(message& message) {
-  auto selection_range = native::month_calendar::selection_range(handle());
-  data_->selection_start = selection_range.first;
-  data_->selection_end = selection_range.second;
+  auto range = native::month_calendar::selection_range(handle());
+  data_->selection_start = range.first;
+  data_->selection_end = range.second;
   on_date_selected(date_range_event_args(data_->selection_start, data_->selection_end));
 }
 
 void month_calendar::wm_date_changed(message& message) {
-  auto selection_range = native::month_calendar::selection_range(handle());
-  data_->selection_start = selection_range.first;
-  data_->selection_end = selection_range.second;
+  auto range = native::month_calendar::selection_range(handle());
+  data_->selection_start = range.first;
+  data_->selection_end = range.second;
   on_date_changed(date_range_event_args(data_->selection_start, data_->selection_end));
 }
 
