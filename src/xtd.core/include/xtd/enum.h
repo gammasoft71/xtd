@@ -305,8 +305,7 @@ namespace xtd {
     template<typename enum_t>
     static xtd::enum_collection<xtd::byte> get_entries_as_byte() noexcept {
       xtd::enum_collection<xtd::byte> entries;
-      for (auto entry : enum_object<enum_t>().entries())
-        entries.emplace_back(enum_object<enum_t>(entry.first).to_byte(), entry.second);
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {entries.emplace_back(enum_object<enum_t>(entry.first).to_byte(), entry.second);});
       return entries;
     }
     
@@ -315,8 +314,7 @@ namespace xtd {
     template<typename enum_t>
     static xtd::enum_collection<int16> get_entries_as_int16() noexcept {
       xtd::enum_collection<int16> entries;
-      for (auto entry : enum_object<enum_t>().entries())
-        entries.emplace_back(enum_object<enum_t>(entry.first).to_int16(), entry.second);
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {entries.emplace_back(enum_object<enum_t>(entry.first).to_int16(), entry.second);});
       return entries;
     }
     
@@ -325,8 +323,7 @@ namespace xtd {
     template<typename enum_t>
     static xtd::enum_collection<int32> get_entries_as_int32() noexcept {
       xtd::enum_collection<int32> entries;
-      for (auto entry : enum_object<enum_t>().entries())
-        entries.emplace_back(enum_object<enum_t>(entry.first).to_int32(), entry.second);
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {entries.emplace_back(enum_object<enum_t>(entry.first).to_int32(), entry.second);});
       return entries;
     }
     
@@ -335,8 +332,7 @@ namespace xtd {
     template<typename enum_t>
     static xtd::enum_collection<int64> get_entries_as_int64() noexcept {
       xtd::enum_collection<int64> entries;
-      for (auto entry : enum_object<enum_t>().entries())
-        entries.emplace_back(enum_object<enum_t>(entry.first).to_int64(), entry.second);
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {entries.emplace_back(enum_object<enum_t>(entry.first).to_int64(), entry.second);});
       return entries;
     }
     
@@ -345,8 +341,7 @@ namespace xtd {
     template<typename enum_t>
     static xtd::enum_collection<sbyte> get_entries_as_sbyte() noexcept {
       xtd::enum_collection<sbyte> entries;
-      for (auto entry : enum_object<enum_t>().entries())
-        entries.emplace_back(enum_object<enum_t>(entry.first).to_sbyte(), entry.second);
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {entries.emplace_back(enum_object<enum_t>(entry.first).to_sbyte(), entry.second);});
       return entries;
     }
     
@@ -355,8 +350,7 @@ namespace xtd {
     template<typename enum_t>
     static xtd::enum_collection<uint16> get_entries_as_uint16() noexcept {
       xtd::enum_collection<uint16> entries;
-      for (auto entry : enum_object<enum_t>().entries())
-        entries.emplace_back(enum_object<enum_t>(entry.first).to_int16(), entry.second);
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {entries.emplace_back(enum_object<enum_t>(entry.first).to_uint16(), entry.second);});
       return entries;
     }
     
@@ -365,8 +359,7 @@ namespace xtd {
     template<typename enum_t>
     static xtd::enum_collection<uint32> get_entries_as_uint32() noexcept {
       xtd::enum_collection<uint32> entries;
-      for (auto entry : enum_object<enum_t>().entries())
-        entries.emplace_back(enum_object<enum_t>(entry.first).to_uint32(), entry.second);
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {entries.emplace_back(enum_object<enum_t>(entry.first).to_uint32(), entry.second);});
       return entries;
     }
     
@@ -375,8 +368,7 @@ namespace xtd {
     template<typename enum_t>
     static xtd::enum_collection<uint64> get_entries_as_uint64() noexcept {
       xtd::enum_collection<uint64> entries;
-      for (auto entry : enum_object<enum_t>().entries())
-        entries.emplace_back(enum_object<enum_t>(entry.first).to_uint64(), entry.second);
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {entries.emplace_back(enum_object<enum_t>(entry.first).to_uint64(), entry.second);});
       return entries;
     }
     
@@ -411,8 +403,7 @@ namespace xtd {
     template<typename enum_t>
     static std::vector<xtd::ustring> get_names() noexcept {
       std::vector<xtd::ustring> names;
-      for (auto entry : enum_object<enum_t>().entries())
-        names.push_back(entry.second);
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {names.push_back(entry.second);});
       return names;
     }
     
@@ -422,8 +413,7 @@ namespace xtd {
     template<typename enum_t>
     static std::vector<enum_t> get_values() noexcept {
       std::vector<enum_t> values;
-      for (auto entry : enum_object<enum_t>().entries())
-        values.push_back(entry);
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.push_back(entry);});
       return values;
     }
     
@@ -433,8 +423,7 @@ namespace xtd {
     template<typename enum_t>
     static std::vector<xtd::byte> get_values_as_byte() noexcept {
       std::vector<xtd::byte> values;
-      for (auto entry : enum_object<enum_t>().entries())
-        values.push_back(enum_object<enum_t>(entry.first).to_byte());
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.push_back(enum_object<enum_t>(entry.first).to_byte());});
       return values;
     }
     
@@ -444,8 +433,7 @@ namespace xtd {
     template<typename enum_t>
     static std::vector<int16> get_values_as_int16() noexcept {
       std::vector<int16> values;
-      for (auto entry : enum_object<enum_t>().entries())
-        values.push_back(enum_object<enum_t>(entry.first).to_int16());
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.push_back(enum_object<enum_t>(entry.first).to_int16());});
       return values;
     }
     
@@ -455,9 +443,8 @@ namespace xtd {
     template<typename enum_t>
     static std::vector<int32> get_values_as_int32() noexcept {
       std::vector<int32> values;
-      for (auto entry : enum_object<enum_t>().entries())
-        values.push_back(enum_object<enum_t>(entry.first).to_int32());
-      return values;
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.push_back(enum_object<enum_t>(entry.first).to_int32());});
+     return values;
     }
     
     /// @brief Retrieves an array of the values of the constants in a specified enumeration.
@@ -466,8 +453,7 @@ namespace xtd {
     template<typename enum_t>
     static std::vector<int64> get_values_as_int64() noexcept {
       std::vector<int64> values;
-      for (auto entry : enum_object<enum_t>().entries())
-        values.push_back(enum_object<enum_t>(entry.first).to_int64());
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.push_back(enum_object<enum_t>(entry.first).to_int64());});
       return values;
     }
     
@@ -477,8 +463,7 @@ namespace xtd {
     template<typename enum_t>
     static std::vector<sbyte> get_values_as_sbyte() noexcept {
       std::vector<sbyte> values;
-      for (auto entry : enum_object<enum_t>().entries())
-        values.push_back(enum_object<enum_t>(entry.first).to_sbyte());
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.push_back(enum_object<enum_t>(entry.first).to_sbyte());});
       return values;
     }
     
@@ -488,8 +473,7 @@ namespace xtd {
     template<typename enum_t>
     static std::vector<uint16> get_values_as_uint16() noexcept {
       std::vector<uint16> values;
-      for (auto entry : enum_object<enum_t>().entries())
-        values.push_back(enum_object<enum_t>(entry.first).to_uint16());
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.push_back(enum_object<enum_t>(entry.first).to_uint16());});
       return values;
     }
     
@@ -499,8 +483,7 @@ namespace xtd {
     template<typename enum_t>
     static std::vector<uint32> get_values_as_uint32() noexcept {
       std::vector<uint32> values;
-      for (auto entry : enum_object<enum_t>().entries())
-        values.push_back(enum_object<enum_t>(entry.first).to_uint32());
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.push_back(enum_object<enum_t>(entry.first).to_uint32());});
       return values;
     }
     
@@ -510,8 +493,7 @@ namespace xtd {
     template<typename enum_t>
     static std::vector<uint64> get_values_as_uint64() noexcept {
       std::vector<uint64> values;
-      for (auto entry : enum_object<enum_t>().entries())
-        values.push_back(enum_object<enum_t>(entry.first).to_uint64());
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.push_back(enum_object<enum_t>(entry.first).to_uint64());});
       return values;
     }
     
