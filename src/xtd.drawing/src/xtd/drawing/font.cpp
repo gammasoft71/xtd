@@ -65,17 +65,17 @@ font::font() : data_(std::make_shared<data>()) {
 font::font(intptr handle) : data_(std::make_shared<data>()) {
   data_->handle_ = handle;
   ustring family_name;
-  bool bold = false, italic = false, underline = false, strikeout = false;
-  native::font::get_information(data_->handle_, family_name, data_->size_, bold, italic, underline, strikeout, data_->gdi_char_set_, data_->gdi_vertical_font_);
+  bool fbold = false, fitalic = false, funderline = false, fstrikeout = false;
+  native::font::get_information(data_->handle_, family_name, data_->size_, fbold, fitalic, funderline, fstrikeout, data_->gdi_char_set_, data_->gdi_vertical_font_);
   try {
     data_->font_family_ = drawing::font_family(family_name);
   } catch (...) {
     data_->font_family_ = drawing::font_family::generic_sans_serif();
   }
-  if (bold) data_->style_ |= font_style::bold;
-  if (italic) data_->style_ |= font_style::italic;
-  if (underline) data_->style_ |= font_style::underline;
-  if (strikeout) data_->style_ |= font_style::strikeout;
+  if (fbold) data_->style_ |= font_style::bold;
+  if (fitalic) data_->style_ |= font_style::italic;
+  if (funderline) data_->style_ |= font_style::underline;
+  if (fstrikeout) data_->style_ |= font_style::strikeout;
   data_->original_font_name_ = family_name;
   data_->system_font_name_ = family_name;
   data_->is_system_font_ = true;
@@ -211,17 +211,17 @@ font font::from_hdc(const intptr hdc) {
   font font;
   font.data_->handle_ = native::font::create_from_hdc(hdc);
   ustring family_name;
-  bool bold = false, italic = false, underline = false, strikeout = false;
-  native::font::get_information(font.data_->handle_, family_name, font.data_->size_, bold, italic, underline, strikeout, font.data_->gdi_char_set_, font.data_->gdi_vertical_font_);
+  bool fbold = false, fitalic = false, funderline = false, fstrikeout = false;
+  native::font::get_information(font.data_->handle_, family_name, font.data_->size_, fbold, fitalic, funderline, fstrikeout, font.data_->gdi_char_set_, font.data_->gdi_vertical_font_);
   try {
     font.data_->font_family_ = drawing::font_family(family_name);
   } catch (...) {
     font.data_->font_family_ = drawing::font_family::generic_sans_serif();
   }
-  if (bold) font.data_->style_ |= font_style::bold;
-  if (italic) font.data_->style_ |= font_style::italic;
-  if (underline) font.data_->style_ |= font_style::underline;
-  if (strikeout) font.data_->style_ |= font_style::strikeout;
+  if (fbold) font.data_->style_ |= font_style::bold;
+  if (fitalic) font.data_->style_ |= font_style::italic;
+  if (funderline) font.data_->style_ |= font_style::underline;
+  if (fstrikeout) font.data_->style_ |= font_style::strikeout;
   font.data_->original_font_name_ = family_name;
   font.data_->is_system_font_ = true;
   font.data_->unit_ = graphics_unit::point;
