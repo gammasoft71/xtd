@@ -23,8 +23,7 @@ bool switch_button::auto_check() const noexcept {
 }
 
 switch_button& switch_button::auto_check(bool auto_check) {
-  if (data_->auto_check != auto_check)
-    data_->auto_check = auto_check;
+  data_->auto_check = auto_check;
   return *this;
 }
 
