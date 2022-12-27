@@ -832,7 +832,7 @@ void control::bring_to_front() {
 }
 
 int32 control::compare_to(const control& value) const noexcept {
-  return this < &value ? -1 : this > &value ? 1 : 0;
+  return this < &value ? -1 : (this > &value ? 1 : 0);
 }
 
 void control::create_control() {
