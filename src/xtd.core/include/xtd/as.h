@@ -14363,8 +14363,8 @@ namespace xtd {
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<typename new_type_t, typename current_type_t>
   const new_type_t& as(const current_type_t& value) {
-    //return xtd::convert_pointer::to_ref<new_type_t>(value);
-    return __as_enum__<new_type_t, current_type_t, typename std::conditional<std::is_enum<current_type_t>::value, std::true_type, std::false_type>::type>().convert(value);
+    thread_local static __as_enum__<new_type_t, current_type_t, typename std::conditional<std::is_enum<current_type_t>::value, std::true_type, std::false_type>::type> e;
+    return e.convert(value);
   }
   
   /// @brief Casts a type into another type.
@@ -14381,8 +14381,8 @@ namespace xtd {
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<typename new_type_t, typename current_type_t>
   new_type_t& as(current_type_t& value) {
-    //return xtd::convert_pointer::to_ref<new_type_t>(value);
-    return __as_enum__<new_type_t, current_type_t, typename std::conditional<std::is_enum<current_type_t>::value, std::true_type, std::false_type>::type>().convert(value);
+    thread_local static __as_enum__<new_type_t, current_type_t, typename std::conditional<std::is_enum<current_type_t>::value, std::true_type, std::false_type>::type> e;
+    return e.convert(value);
   }
   
   /// @brief Casts a type into another type.
