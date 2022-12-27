@@ -106,7 +106,7 @@ ustring::ustring(const ustring& str, const allocator_type& allocator) noexcept :
 ustring::ustring(const std::string& str) noexcept : basic_string<value_type>(str) {
 }
 
-ustring::ustring(const std::string& str, const allocator_type& allocator) noexcept : basic_string<value_type>((value_type*)str.c_str(), allocator) {
+ustring::ustring(const std::string& str, const allocator_type& allocator) noexcept : basic_string<value_type>(reinterpret_cast<const value_type*>(str.c_str()), allocator) {
 }
 
 ustring::ustring(const u8string& str) noexcept : basic_string<value_type>(reinterpret_cast<const value_type*>(str.c_str())) {
