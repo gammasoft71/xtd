@@ -30,7 +30,7 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::status_bar_panel_click_event_args class.
       /// @param button The xtd::forms::status_bar_panel that was clicked.
-      status_bar_panel_click_event_args(const xtd::forms::status_bar_panel& panel) : panel_(panel) {}
+      explicit status_bar_panel_click_event_args(const xtd::forms::status_bar_panel& panel) : panel_(panel) {}
       /// @brief Initializes a new instance of the xtd::forms::status_bar_panel_click_event_args class.
       /// @param button The xtd::forms::status_bar_panel that was clicked.
       /// @param handle An internal handle.
