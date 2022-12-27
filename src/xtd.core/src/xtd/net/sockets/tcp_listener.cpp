@@ -138,10 +138,10 @@ void tcp_listener::start(size_t backlog) {
 }
 
 void tcp_listener::stop() {
-  bool exclusive_address_use = data_->server_socket.exclusive_address_use();
+  bool eau = data_->server_socket.exclusive_address_use();
   data_->active = false;
   data_->server_socket = socket(data_->local_end_point.address_family(), socket_type::stream, protocol_type::tcp);
-  data_->server_socket.exclusive_address_use(exclusive_address_use);
+  data_->server_socket.exclusive_address_use(eau);
 }
 
 bool tcp_listener::active() const noexcept {
