@@ -29,7 +29,7 @@ void label_renderer::draw_label(const xtd::forms::style_sheets::style_sheet& sty
   if (image_align.has_value()) current_style_sheet.image_alignment(image_align.value());
   if (border) {
     if (current_style_sheet.background_color() == color::transparent) current_style_sheet.border_color(xtd::forms::style_sheets::border_color(style_sheet::current_style_sheet().label().color()));
-    else current_style_sheet.border_color(current_style_sheet.background_color().is_dark() ? color::light(current_style_sheet.background_color(), 2.0 / 3) : color::dark(current_style_sheet.background_color(), 1.0 / 3));
+    else current_style_sheet.border_color(border_color(current_style_sheet.background_color().is_dark() ? color::light(current_style_sheet.background_color(), 2.0 / 3) : color::dark(current_style_sheet.background_color(), 1.0 / 3)));
     auto [border_type, border_width, border_radius] = style_sheets::style_sheet::to_border_type(border.value());
     current_style_sheet.border_style(style_sheets::border_style((sides & border_sides::left) == border_sides::left ? border_type : style_sheets::border_type::none, (sides & border_sides::top) == border_sides::top ? border_type : style_sheets::border_type::none, (sides & border_sides::right) == border_sides::right ? border_type : style_sheets::border_type::none, (sides & border_sides::bottom) == border_sides::bottom ? border_type : style_sheets::border_type::none));
     current_style_sheet.border_width(style_sheets::border_width(border_width));

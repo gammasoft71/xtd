@@ -44,7 +44,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_color class using the supplied border_color for all edges.
         /// @param all The xtd::forms::style_sheets::color_data to be used for border_color for all edges.
         /// @remarks This constructor sets the right, left, bottom, top and all properties to the value of the all parameter.
-        border_color(const xtd::drawing::color& all);
+        explicit border_color(const xtd::drawing::color& all);
         
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_color class using a separate border_color for each edge.
         /// @param left The border_color for the left edge.
