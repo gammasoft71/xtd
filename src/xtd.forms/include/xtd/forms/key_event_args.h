@@ -97,7 +97,7 @@ namespace xtd {
       /// @}
       
     private:
-      xtd::forms::keys key_data_;
+      xtd::forms::keys key_data_ = xtd::forms::keys::none;
       bool handled_ = false;
       bool suppress_key_press_ = false;
     };
