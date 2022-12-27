@@ -139,22 +139,18 @@ void matrix::transform_points(std::vector<xtd::drawing::point_f>& points) {
 
 void matrix::transform_vectors(std::vector<xtd::drawing::point>& points) {
   vector<pair<int32, int32>> tr_points;
-  for (auto point : points)
-    tr_points.emplace_back(point.x(), point.y());
+  for_each(points.begin(), points.end(), [&](auto point) {tr_points.emplace_back(point.x(), point.y());});
   native::matrix::transform_vectors(handle(), tr_points);
   points.clear();
-  for (auto point : tr_points)
-    points.push_back(xtd::drawing::point(point.first, point.second));
+  for_each(tr_points.begin(), tr_points.end(), [&](auto point) {points.push_back(xtd::drawing::point(point.first, point.second));});
 }
 
 void matrix::transform_vectors(std::vector<xtd::drawing::point_f>& points) {
   vector<pair<float, float>> tr_points;
-  for (auto point : points)
-    tr_points.push_back({point.x(), point.y()});
+  for_each(points.begin(), points.end(), [&](auto point) {tr_points.emplace_back(point.x(), point.y());});
   native::matrix::transform_vectors(handle(), tr_points);
   points.clear();
-  for (auto point : tr_points)
-    points.push_back(xtd::drawing::point_f(point.first, point.second));
+  for_each(tr_points.begin(), tr_points.end(), [&](auto point) {points.push_back(xtd::drawing::point_f(point.first, point.second));});
 }
 
 void matrix::translate(float offset_x, float offset_y) {
@@ -167,12 +163,10 @@ void matrix::translate(float offset_x, float offset_y, xtd::drawing::drawing2d::
 
 void matrix::vector_transform_points(std::vector<xtd::drawing::point>& points) {
   vector<pair<int32, int32>> tr_points;
-  for (auto point : points)
-    tr_points.emplace_back(point.x(), point.y());
+  for_each(points.begin(), points.end(), [&](auto point) {tr_points.emplace_back(point.x(), point.y());});
   native::matrix::vector_transform_points(handle(), tr_points);
   points.clear();
-  for (auto point : tr_points)
-    points.push_back(xtd::drawing::point(point.first, point.second));
+  for_each(tr_points.begin(), tr_points.end(), [&](auto point) {points.push_back(xtd::drawing::point(point.first, point.second));});
 }
 
 xtd::ustring matrix::to_string() const noexcept {
