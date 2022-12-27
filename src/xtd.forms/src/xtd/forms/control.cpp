@@ -292,10 +292,10 @@ bool control::can_focus() const noexcept {
   try {
     bool visible_and_enabled = handle() && get_state(state::visible) && get_state(state::enabled);
     
-    optional<control_ref> top_level_control = const_cast<control&>(*this);
-    while (visible_and_enabled && top_level_control.has_value() && !top_level_control.value().get().get_state(state::top_level)) {
-      top_level_control = top_level_control.value().get().parent();
-      if (top_level_control.has_value()) visible_and_enabled = top_level_control.value().get().get_state(state::visible) && get_state(state::enabled);
+    optional<control_ref> tlc = const_cast<control&>(*this);
+    while (visible_and_enabled && tlc.has_value() && !tlc.value().get().get_state(state::top_level)) {
+      tlc = tlc.value().get().parent();
+      if (tlc.has_value()) visible_and_enabled = tlc.value().get().get_state(state::visible) && get_state(state::enabled);
     }
     
     if (!visible_and_enabled) return false;
