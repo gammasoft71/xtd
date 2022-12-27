@@ -42,15 +42,15 @@ namespace xtd {
       /// @brief Initializes a new xtd::drawing::region with the specified xtd::drawing::graphics_path.
       /// @param path A xtd::drawing::graphics_path that defines the new xtd::drawing::region.
       /// @remarks This method creates a new xtd::drawing::region with a xtd::drawing::graphics_path. The new region is defined as the interior of the xtd::drawing::graphics_path specified by the path parameter.
-      region(const xtd::drawing::drawing2d::graphics_path& path);
+      explicit region(const xtd::drawing::drawing2d::graphics_path& path);
       /// @brief Initializes a new xtd::drawing::region from the specified xtd::drawing::rectangle structure.
       /// @param rect A xtd::drawing::rectangle structure that defines the interior of the new xtd::drawing::region.
       /// @remarks This method creates a new xtd::drawing::region with a rectangular interior. The interior is defined by the rect parameter.
-      region(const xtd::drawing::rectangle& rect);
+      explicit region(const xtd::drawing::rectangle& rect);
       /// @brief Initializes a new xtd::drawing::region from the specified xtd::drawing::rectangle_f structure.
       /// @param rect A xtd::drawing::rectangle_f structure that defines the interior of the new xtd::drawing::region.
       /// @remarks This method creates a new xtd::drawing::region with a rectangular interior. The interior is defined by the rect parameter.
-      region(const xtd::drawing::rectangle_f& rect);
+      explicit region(const xtd::drawing::rectangle_f& rect);
       /// @}
       
       /// @cond
