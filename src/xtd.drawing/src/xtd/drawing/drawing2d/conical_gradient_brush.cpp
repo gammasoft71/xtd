@@ -108,10 +108,7 @@ bool conical_gradient_brush::equals(const conical_gradient_brush& value) const n
 
 void conical_gradient_brush::recreate_handle() {
   vector<tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>> colors;
-  
-  for (auto color : data_->conical_colors)
-    colors.emplace_back(color.first.r(), color.first.g(), color.first.b(), color.first.a(), color.second);
-    
+  for_each(data_->conical_colors.begin(), data_->conical_colors.end(), [&](auto color) {colors.emplace_back(color.first.r(), color.first.g(), color.first.b(), color.first.a(), color.second);});
   native::brush::conical_gradient(handle(), as<int32>(data_->center_point.x()), as<int32>(data_->center_point.y()), colors, data_->angle);
 }
 
