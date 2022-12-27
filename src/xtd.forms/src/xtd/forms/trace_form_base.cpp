@@ -111,8 +111,7 @@ bool trace_form_base::need_header() const {
 }
 
 trace_form_base& trace_form_base::need_header(bool value) {
-  if (data_->need_header != value)
-    data_->need_header = value;
+  data_->need_header = value;
   return *this;
 }
 
