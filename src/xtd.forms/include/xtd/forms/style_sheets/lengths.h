@@ -44,7 +44,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::lengths class using the supplied xtd::forms::style_sheets::lengths size for all edges.
         /// @param all The number of pixels to be used for xtd::forms::style_sheets::lengths for all edges.
         /// @remarks This constructor sets the right, left, bottom, top and all properties to the value of the all parameter.
-        lengths(xtd::forms::style_sheets::length all);
+        explicit lengths(xtd::forms::style_sheets::length all);
         
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::lengths class using a separate xtd::forms::style_sheets::lengths size for each edge.
         /// @param left The xtd::forms::style_sheets::lengths size, in pixels, for the left edge.
