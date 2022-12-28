@@ -104,8 +104,7 @@ vector<size_t> checked_list_box::selected_indices(intptr control) {
   vector<size_t> indices;
   wxArrayInt wx_indices;
   static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->GetSelections(wx_indices);
-  for (int32 index : wx_indices)
-    indices.push_back(index);
+  for_each(wx_indices.begin(), wx_indices.end(), [&](int32 index) {indices.push_back(index);});
   return indices;
   
 }
