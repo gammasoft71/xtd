@@ -593,43 +593,37 @@ ustring ustring::concat(const ustring& str_a, const ustring& str_b) noexcept {
 
 ustring ustring::concat(const std::vector<ustring>& values) noexcept {
   ustring result;
-  for (const auto& item : values)
-    result += item;
+  for_each(values.begin(), values.end(), [&](const auto& item) {result += item;});
   return result;
 }
 
 ustring ustring::concat(const std::vector<const value_type*>& values) noexcept {
   ustring result;
-  for (const auto& item : values)
-    result += item;
+  for_each(values.begin(), values.end(), [&](const auto& item) {result += item;});
   return result;
 }
 
 ustring ustring::concat(const std::vector<const char8*>& values) noexcept {
   ustring result;
-  for (const auto& item : values)
-    result += ustring(item);
+  for_each(values.begin(), values.end(), [&](const auto& item) {result += ustring(item);});
   return result;
 }
 
 ustring ustring::concat(const std::initializer_list<ustring>& values) noexcept {
   ustring result;
-  for (const auto& item : values)
-    result += item;
+  for_each(values.begin(), values.end(), [&](const auto& item) {result += item;});
   return result;
 }
 
 ustring ustring::concat(const std::initializer_list<const value_type*>& values) noexcept {
   ustring result;
-  for (const auto& item : values)
-    result += item;
+  for_each(values.begin(), values.end(), [&](const auto& item) {result += item;});
   return result;
 }
 
 ustring ustring::concat(const std::initializer_list<const char8*>& values) noexcept {
   ustring result;
-  for (const auto& item : values)
-    result += ustring(item);
+  for_each(values.begin(), values.end(), [&](const auto& item) {result += ustring(item);});
   return result;
 }
 
@@ -929,8 +923,8 @@ std::vector<ustring::value_type> ustring::to_array(size_t start_index, size_t le
 }
 
 ustring ustring::to_lower() const noexcept {
-  ustring result;
-  for (auto c : *this) result.push_back(static_cast<value_type>(tolower(c)));
+  ustring result = *this;
+  transform(result.begin(), result.end(), result.begin(), ::tolower);
   return result;
 }
 
@@ -938,13 +932,9 @@ ustring ustring::to_string() const noexcept {
   return *this;
 }
 
-//ustring ustring::to_string() const noexcept {
-//  return *this;
-//}
-
 ustring ustring::to_upper() const noexcept {
-  ustring result;
-  for (auto c : *this) result.push_back(static_cast<value_type>(toupper(c)));
+  ustring result = *this;
+  transform(result.begin(), result.end(), result.begin(), ::toupper);
   return result;
 }
 
