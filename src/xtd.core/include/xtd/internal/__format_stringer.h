@@ -7,6 +7,7 @@
 #endif
 /// @endcond
 
+#include <algorithm>
 #include <chrono>
 #include <cctype>
 #include <cstddef>
@@ -208,8 +209,7 @@ inline std::basic_string<char_t> __to_string(xtd::wchar codepoint) {
 template<typename char_t>
 inline std::basic_string<char_t> __to_string(const std::basic_string<char_t>& str) {
   std::basic_string<char_t> result;
-  for (auto codepoint : str)
-    result += __to_string<char_t>(codepoint);
+  std::for_each(str.begin(), str.end(), [&](auto codepoint) {result += __to_string<char_t>(codepoint);});
   return result;
 }
 
