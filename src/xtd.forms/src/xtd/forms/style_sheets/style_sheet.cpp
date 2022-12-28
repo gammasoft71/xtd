@@ -326,17 +326,21 @@ const xtd::forms::style_sheets::system_colors& style_sheet::system_colors()const
 }
 
 const style_sheet& style_sheet::system_style_sheet() noexcept {
-  if (system_style_sheet_ != style_sheet::empty)
+  try {
+    if (system_style_sheet_ != style_sheet::empty)
+      return system_style_sheet_;
+    if (environment::os_version().is_windows_platform())
+      return (system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_themes), application::dark_mode_enabled() ? "windows_dark" : "windows_light")), false));
+    if (environment::os_version().is_macos_platform())
+      return (system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_themes), application::dark_mode_enabled() ? "macos_dark" : "macos_light")), false));
+    if (environment::os_version().is_unix_platform() && environment::os_version().desktop_environment() == "kde")
+      return (system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_themes),  application::dark_mode_enabled() ? "kde_dark" : "kde_light")), false));
+    if (environment::os_version().is_unix_platform())
+      return (system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_themes), application::dark_mode_enabled() ? "gnome_dark" : "gnome_light")), false));
+    return (system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_themes), "default")), false));
+  } catch (...) {
     return system_style_sheet_;
-  if (environment::os_version().is_windows_platform())
-    return (system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_themes), application::dark_mode_enabled() ? "windows_dark" : "windows_light")), false));
-  if (environment::os_version().is_macos_platform())
-    return (system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_themes), application::dark_mode_enabled() ? "macos_dark" : "macos_light")), false));
-  if (environment::os_version().is_unix_platform() && environment::os_version().desktop_environment() == "kde")
-    return (system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_themes),  application::dark_mode_enabled() ? "kde_dark" : "kde_light")), false));
-  if (environment::os_version().is_unix_platform())
-    return (system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_themes), application::dark_mode_enabled() ? "gnome_dark" : "gnome_light")), false));
-  return (system_style_sheet_ = style_sheet(get_css_string_from_path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_themes), "default")), false));
+  }
 }
 
 const xtd::forms::style_sheets::theme& style_sheet::theme() const noexcept {
