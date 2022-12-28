@@ -25,17 +25,17 @@ public:
     label1.lcd_style(lcd_style::dot_matrix_display);
     label1.parent(*this);
     label1.text("LCD DISPLAY");
-
+    
     label1.mouse_down += [&](object & sender, const mouse_event_args & e) {
       mouse_location = e.location();
       label1.cursor(cursors::no_move_2d());
     };
-
+    
     label1.mouse_up += [&](object & sender, const mouse_event_args & e) {
       mouse_location = point::empty;
       label1.cursor(cursors::default_cursor());
     };
-
+    
     label1.mouse_move += [&](object & sender, const mouse_event_args & e) {
       if (mouse_location != point::empty) location(location() + e.location() - mouse_location);
     };

@@ -33,7 +33,7 @@ namespace examples {
       tool_bar1.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});
       tool_bar1.buttons().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, choice_tool_bar_button, tool_bar1_separator3, help_tool_bar_button});
       tool_bar1.button_click += {*this, &form1::on_tool_bar_button_click};
-
+      
       tool_bar2.dock(dock_style::bottom);
       tool_bar2.show_text(true);
       tool_bar2.text_align(xtd::forms::tool_bar_text_align::right);
@@ -41,7 +41,7 @@ namespace examples {
       tool_bar2.image_list().images().push_back_range({tool_bar_images::from_name("media-playback-start"), tool_bar_images::from_name("media-skip-backward"), tool_bar_images::from_name("media-playback-stop"), tool_bar_images::from_name("media-skip-forward"), tool_bar_images::from_name("media-record"), tool_bar_images::from_name("media-eject")});
       tool_bar2.buttons().push_back_range({play_tool_bar_button, tool_bar2_separator1, skip_backward_tool_bar_button, stop_tool_bar_button, skip_forward_tool_bar_button, tool_bar2_separator2, record_tool_bar_button, tool_bar2_separator3, progress_tool_bar_button, tool_bar2_separator4, eject_tool_bar_button});
       tool_bar2.button_click += {*this, &form1::on_tool_bar_button_click};
-
+      
       record_tool_bar_button.enabled(false);
     }
     
@@ -58,9 +58,9 @@ namespace examples {
       list_box1.items().push_back(ustring::format("Menu item {} clicked", as<menu_item>(sender).text()));
       list_box1.selected_index(list_box1.items().size() - 1);
     }
-
+    
     list_box list_box1;
- 
+    
     menu_item context_help_context_menu_item {"Help context", {*this, &form1::on_menu_click}};
     menu_item context_help_index_menu_item {"Help index", {*this, &form1::on_menu_click}};
     menu_item context_help_search_menu_item {"Help search", {*this, &form1::on_menu_click}};

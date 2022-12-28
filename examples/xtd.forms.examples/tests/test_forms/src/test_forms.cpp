@@ -19,9 +19,9 @@ protected:
   xtd::drawing::font default_font() const noexcept override {return xtd::drawing::font(xtd::drawing::font_family::generic_monospace(), 10);}
   xtd::drawing::color default_fore_color() const noexcept override {return xtd::drawing::color::lime;}
   xtd::drawing::size default_size() const noexcept override {return {300, 200};}
-
+  
   void on_key_down(xtd::forms::key_event_args& e) override {
-    switch(e.key_code()) {
+    switch (e.key_code()) {
       case xtd::forms::keys::down: key_down_pressed(e); break;
       case xtd::forms::keys::up: key_up_pressed(e); break;
       case xtd::forms::keys::enter: key_enter_pressed(e); break;
@@ -55,12 +55,12 @@ private:
         start_info.file_name(args[0]);
         if (args.size() > 1)
           start_info.arguments(xtd::ustring::join(" ", std::vector<xtd::ustring>(args.begin() + 1, args.end())));
-        
+          
         append_text(xtd::environment::new_line());
         start_info.use_shell_execute(false);
         start_info.redirect_standard_error(true);
         start_info.redirect_standard_output(true);
-
+        
         if (start_info.file_name() == "cd" && !start_info.arguments().empty()) {
           if (xtd::io::directory::exists(start_info.arguments())) {
             xtd::environment::current_directory(start_info.arguments());
@@ -75,20 +75,20 @@ private:
           process.start();
           std::istream& standard_error = process.standard_error();
           std::istream& standard_output = process.standard_output();
-
+          
           xtd::io::stream_reader error_reader(standard_error);
           while (!error_reader.end_of_stream()) {
             append_text(error_reader.read_line());
             append_text(xtd::environment::new_line());
           }
-
+          
           xtd::io::stream_reader output_reader(standard_output);
           while (!output_reader.end_of_stream()) {
             append_text(output_reader.read_line());
             append_text(xtd::environment::new_line());
           }
         }
-      } catch(...) {
+      } catch (...) {
         append_text(xtd::ustring::format("command not found: {}", start_info.file_name()));
         append_text(xtd::environment::new_line());
       }

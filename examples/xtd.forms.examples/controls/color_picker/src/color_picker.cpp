@@ -20,7 +20,7 @@ namespace examples {
         e.graphics().fill_rectangle(solid_brush(color_picker.color()), e.clip_rectangle());
         control_paint::draw_border(test_zone, e.graphics(), test_zone.border_style(), test_zone.border_sides(), application::style_sheet().system_colors().control_text(), e.clip_rectangle());
       };
-
+      
       color_picker.parent(*this);
       color_picker.color(color::red);
       color_picker.location({10, 10});

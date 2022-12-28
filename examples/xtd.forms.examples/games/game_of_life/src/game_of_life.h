@@ -61,7 +61,7 @@ namespace game_of_life {
       label_iterations_.width(150);
       label_iterations_.location({555, 12});
       label_iterations_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
-
+      
       label_zoom_.parent(*this);
       label_zoom_.location({10, 45});
       label_zoom_.text(xtd::ustring::format("Zoom : {}", zoom_));
@@ -103,7 +103,7 @@ namespace game_of_life {
       };
       track_bar_speed_.size({200, 25});
       track_bar_speed_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
-
+      
       panel_grid_.parent(*this);
       panel_grid_.back_color(empty_color_);
       panel_grid_.border_style(xtd::forms::border_style::fixed_single);

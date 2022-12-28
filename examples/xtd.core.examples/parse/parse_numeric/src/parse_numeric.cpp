@@ -24,7 +24,7 @@ int main() {
   try {
     int i9 = xtd::parse<int>("Not number", number_styles::any);
     console::write_line(i9);
-  } catch(const exception& e) {
+  } catch (const exception& e) {
     console::write_line("Exception : {}", e.what());
   }
 }

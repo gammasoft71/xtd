@@ -9,7 +9,7 @@ public:
   form1() {
     text("About dialog example");
     controls().push_back(button1);
-
+    
     about_dialog1.icon(xtd::drawing::bitmap(gammasoft_64x64_xpm));
     about_dialog1.name("About dialog");
     about_dialog1.version("1.0");
@@ -31,7 +31,7 @@ public:
       "The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n"
       "\n"
       "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n");
-
+      
     button1.location({10, 10});
     button1.text("About...");
     button1.click += [&] {

@@ -22,7 +22,7 @@ public:
       label1.text(ustring::format("rounded switch: {}", switch_button2.checked() ? "On" : "Off"));
     };
     switch_button2.checked(true);
-
+    
     label1.parent(*this);
     label1.location({110, 72});
     label1.auto_size(true);
@@ -34,7 +34,7 @@ public:
       label2.text(ustring::format("square switch: {}", switch_button3.checked() ? "On" : "Off"));
     };
     switch_button3.checked(true);
-
+    
     label2.parent(*this);
     label2.location({110, 112});
     label2.auto_size(true);

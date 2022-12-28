@@ -15,7 +15,7 @@ namespace examples {
   protected:
     void on_paint(paint_event_args& e) override {
       form::on_paint(e);
-
+      
       e.graphics().draw_rectangle(pen(color::red, 5), 10, 10, 100, 100);
       
       auto dot_pen = pen(color::green, 5);

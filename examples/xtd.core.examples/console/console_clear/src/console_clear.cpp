@@ -48,7 +48,7 @@ namespace examples {
         console::write_line();
         if (char32_object::to_upper(get_key_press("Display another message (Y/N): ", vector<char32_t> { 'Y', 'N' })) == 'N')
           continue_flag = false;
-        
+          
         // Restore the default settings and clear the screen.
         console::foreground_color(dft_fore_color);
         console::background_color(dft_back_color);
@@ -68,11 +68,11 @@ namespace examples {
         console::write_line();
         if (find(valid_chars.begin(), valid_chars.end(), char32_object::to_upper(key_pressed.key_char())) != valid_chars.end())
           valid = true;
-        
+          
       } while (!valid);
       return key_pressed.key_char();
     }
   };
 }
-  
+
 startup_(examples::program);

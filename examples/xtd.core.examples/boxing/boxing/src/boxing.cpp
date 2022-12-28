@@ -7,9 +7,9 @@ using namespace xtd::collections::specialized;
 class setup_serializer : public object {
 public:
   using pair_collection = std::vector<string_pair>;
-
+  
   setup_serializer() = default;
-
+  
   // The add_key_value method has an xtd::object as the second parameter to force
   // the application to use the boxing method for native and non-native setup parameters.
   void add_key_value(const ustring& key, const object& value) {
@@ -50,7 +50,7 @@ int main() {
   serializer.add_key_value("height", boxing(my_application_setup.height));
   serializer.add_key_value("text", boxing(my_application_setup.text));
   serializer.add_key_value("version", boxing(my_application_setup.version));
-
+  
   console::write_line("result :{0}{0}{1}", environment::new_line(), serializer);
 }
 

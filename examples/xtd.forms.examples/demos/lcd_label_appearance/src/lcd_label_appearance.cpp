@@ -22,7 +22,7 @@ namespace examples {
       panel_properties.auto_scroll(true);
       panel_properties.controls().push_back_range({lcd_style_label, lcd_style_choice, segment_style_label, segment_style_choice, height_label, height_numeric_up_down, fore_color_label, fore_color_color_picker, show_digit_background_label, show_digit_background_togle_button});
       panel_properties.dock(dock_style::fill);
-
+      
       lcd_style_label.auto_size(true);
       lcd_style_label.location({10, 13});
       lcd_style_label.text("Lcd style: ");
@@ -103,7 +103,7 @@ namespace examples {
   private:
     group_box group_box_properties;
     panel panel_properties;
-
+    
     label lcd_style_label;
     choice lcd_style_choice;
     label segment_style_label;
@@ -114,7 +114,7 @@ namespace examples {
     color_picker fore_color_color_picker;
     label show_digit_background_label;
     toggle_button show_digit_background_togle_button;
-
+    
     lcd_label label_lcd_label;
   };
 }

@@ -49,7 +49,7 @@ namespace examples {
           bordered_label.back_color(color);
       };
       colors_chooser.selected_item("control");
-
+      
       select_sides_label.auto_size(true);
       select_sides_label.location({380, 40});
       select_sides_label.text("Select sides");

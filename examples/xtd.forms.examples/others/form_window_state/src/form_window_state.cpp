@@ -10,10 +10,10 @@ public:
     *this << button_full_screen << button_maximize << button_minimize << button_normal;
     text("Window state example");
     resize += [&] {
-      button_full_screen.enabled(window_state() != form_window_state::full_screen && window_state() != form_window_state::maximized);
-      button_maximize.enabled(window_state() != form_window_state::maximized && window_state() != form_window_state::full_screen);
+      button_full_screen.enabled(window_state() != form_window_state::full_screen&& window_state() != form_window_state::maximized);
+      button_maximize.enabled(window_state() != form_window_state::maximized&& window_state() != form_window_state::full_screen);
       button_normal.enabled(window_state() != form_window_state::normal);
-      button_minimize.enabled(window_state() != form_window_state::minimized && window_state() != form_window_state::full_screen);
+      button_minimize.enabled(window_state() != form_window_state::minimized&& window_state() != form_window_state::full_screen);
       
       ctrace << ustring::format("resize: {}, {}", size(), window_state()) << std::endl;
     };

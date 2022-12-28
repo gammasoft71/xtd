@@ -13,7 +13,7 @@ public:
     minimum_client_size({client_size()});
     start_position(form_start_position::manual);
     text("Form decoration example");
-
+    
     form_border_style_choice.location({10, 10});
     form_border_style_choice.width(300);
     form_border_style_choice.items().push_back_range({{"none", forms::form_border_style::none}, {"fixed_single", forms::form_border_style::fixed_single}, {"fixed_3d", forms::form_border_style::fixed_3d}, {"fixed_dialog", forms::form_border_style::fixed_dialog}, {"sizable", forms::form_border_style::sizable}, {"fixed_tool_window", forms::form_border_style::fixed_tool_window}, {"sizable_tool_window", forms::form_border_style::sizable_tool_window}});
@@ -102,7 +102,7 @@ public:
     show_in_taskbar_switch_button.checked_changed += [&] {
       show_in_taskbar(show_in_taskbar_switch_button.checked());
     };
-}
+  }
   
 private:
   choice form_border_style_choice;

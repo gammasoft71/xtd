@@ -90,7 +90,7 @@ namespace examples {
       panel_main.location({10, 90});
       panel_main.size({620, 380});
       panel_main.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
-
+      
       panel_painting.parent(panel_main);
       panel_painting.back_color(color::white_smoke);
       panel_painting.size({picture.width() * zoom, picture.height() * zoom});

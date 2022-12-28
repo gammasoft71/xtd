@@ -23,7 +23,7 @@ public:
     tab_control_controls.parent(main_panel);
     tab_control_controls.dock(dock_style::fill);
     tab_control_controls.selected_index_changed +=  {*this, &form1::update_status_bar_text};
-
+    
     tab_page_buttons.parent(tab_control_controls);
     tab_page_buttons.auto_scroll(true);
     tab_page_buttons.text("Buttons");

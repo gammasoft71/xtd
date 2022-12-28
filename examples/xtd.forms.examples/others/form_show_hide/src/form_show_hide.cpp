@@ -9,7 +9,7 @@ public:
     client_size({320, 325});
     controls().push_back_range({close_button, show_button, hide_button, cancel_close_check_box});
     text("Form shaw and hide example");
-
+    
     close_button.location({10, 10});
     close_button.size({100, 40});
     close_button.text("Close");
@@ -34,7 +34,7 @@ public:
     cancel_close_check_box.location({10, 160});
     cancel_close_check_box.size({100, 40});
     cancel_close_check_box.text("cancel close");
-
+    
     form2.text("Close count = 0");
     form2.form_closing += [&](object& seander, form_closing_event_args& e) {
       e.cancel(cancel_close_check_box.checked());

@@ -18,13 +18,13 @@ namespace examples {
       status_bar_panel1.auto_size(xtd::forms::status_bar_panel_auto_size::contents);
       status_bar_panel1.border_style(xtd::forms::status_bar_panel_border_style::sunken);
       status_bar_panel1.tool_tip_text("Status one tool tip text");
-
+      
       status_bar_panel2.auto_size(xtd::forms::status_bar_panel_auto_size::contents);
       status_bar_panel2.border_style(xtd::forms::status_bar_panel_border_style::sunken);
-
+      
       status_bar_panel3.auto_size(xtd::forms::status_bar_panel_auto_size::spring);
       status_bar_panel3.border_style(xtd::forms::status_bar_panel_border_style::sunken);
-
+      
       status_bar_panel4.auto_size(xtd::forms::status_bar_panel_auto_size::contents);
       status_bar_panel4.border_style(xtd::forms::status_bar_panel_border_style::sunken);
       
@@ -43,7 +43,7 @@ namespace examples {
       g.draw_ellipse(pens::black(), 0, 0, bitmap.width() - 1, bitmap.height() - 1);
       return bitmap;
     }
-
+    
     forms::status_bar status_bar1;
     status_bar_panel status_bar_panel1 = status_bar_panel::create_panel("Status one", image_from_color(color::light_green));
     status_bar_panel status_bar_panel2 = status_bar_panel::create_panel("Status two");

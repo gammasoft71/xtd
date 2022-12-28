@@ -22,7 +22,7 @@ namespace example {
       picture.bounds({75, 125, 280, 280});
       picture.anchor(anchor_styles::all);
       picture.size_mode(picture_box_size_mode::center_image);
-
+      
       choice_theme.bounds({75, 25, 280, 25});
       choice_theme.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
       choice_theme.items().push_back("current theme");
@@ -31,7 +31,7 @@ namespace example {
       choice_theme.items().push_back_range(names);
       choice_theme.selected_index(0);
       choice_theme.selected_index_changed += event_handler(*this, &form1::update_form);
-
+      
       choice_context.bounds({75, 55, 280, 25});
       choice_context.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
       choice_context.items().push_back_range(images::contexts());
@@ -47,11 +47,11 @@ namespace example {
         choice_size.items().push_back({ustring::format("{}x{} pixels", size.width(), size.height()), size});
       choice_size.selected_index(7);
       choice_size.selected_index_changed += event_handler(*this, &form1::update_form);
-
+      
       label_picture_name.bounds({75, 420, 280, label_picture_name.height()});
       label_picture_name.anchor(anchor_styles::bottom | anchor_styles::left | anchor_styles::right);
       label_picture_name.text_align(content_alignment::middle_center);
-
+      
       button_previous.auto_repeat(true);
       button_previous.bounds({75, 460, 125, 40});
       button_previous.anchor(anchor_styles::bottom | anchor_styles::left);
@@ -63,7 +63,7 @@ namespace example {
         if (current_image_index > 0) --current_image_index;
         update_form();
       };
-
+      
       button_next.auto_repeat(true);
       button_next.bounds({230, 460, 125, 40});
       button_next.anchor(anchor_styles::bottom | anchor_styles::right);

@@ -23,7 +23,7 @@ int main() {
   try {
     week_day wd4 = parse<week_day>("january");
     console::write_line(wd4);
-  } catch(const exception& e) {
+  } catch (const exception& e) {
     console::write_line("Exception : {}", e.what());
   }
 }
