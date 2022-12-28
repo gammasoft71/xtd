@@ -13,7 +13,7 @@ public:
     lcd_label1.parent(*this);
     lcd_label1.segment_style(segment_style::modern);
     lcd_label1.auto_size(true);
-
+    
     numeric_up_down1.location({10, 10});
     numeric_up_down1.parent(*this);
     numeric_up_down1.set_range(0, 15000000);

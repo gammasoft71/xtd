@@ -65,7 +65,7 @@ namespace examples {
       auto environment_variables = environment::get_environment_variables();
       for (auto de : environment_variables)
         console::write_line(" {} = {1}", de.first, de.second);
-      
+        
       console::write_line("get_folder_path: {}", environment::get_folder_path(environment::special_folder::system));
       
       auto drives = environment::get_logical_drives();

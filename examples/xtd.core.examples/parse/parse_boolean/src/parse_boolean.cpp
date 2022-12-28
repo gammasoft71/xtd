@@ -23,7 +23,7 @@ int main() {
   try {
     bool b9 = xtd::parse<bool>("None");
     console::write_line(b9);
-  } catch(const exception& e) {
+  } catch (const exception& e) {
     console::write_line("Exception : {}", e.what());
   }
 }

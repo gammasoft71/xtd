@@ -57,8 +57,8 @@ private:
         // Display the ScopeId property in case of IPV6 addresses.
         if (cur_add.address_family() == address_family::inter_network_v6)
           console::write_line("scope id: {}", cur_add.scope_id());
-        
-        
+          
+          
         // Display the server IP address in the standard format. In
         // IPv4 the format will be dotted-quad notation, in IPv6 it will be
         // in in colon-hexadecimal notation.
@@ -68,16 +68,15 @@ private:
         console::write("address_bytes: ");
         
         auto bytes = cur_add.get_address_bytes();
-        for (size_t i = 0; i < bytes.size(); i++) {
+        for (size_t i = 0; i < bytes.size(); i++)
           console::write(bytes[i]);
-        }
         console::write_line("\r\n");
       }
     } catch (const system_exception& e) {
       console::write_line("[do_resolve] exception: {}", e);
     }
   }
-
+  
   // This IPAddressAdditionalInfo displays additional server address information.
   static void ip_address_additional_info() {
     try {
@@ -107,7 +106,7 @@ private:
 };
 
 startup_(test_ip_address);
-  
+
 // This code produces the following output if no args:
 //
 // Using current host: !---OMITTED---!.local

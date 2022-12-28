@@ -42,7 +42,7 @@ namespace examples {
       
       for (auto iterator = system_colors::get_colors().rbegin(); iterator != system_colors::get_colors().rend(); ++iterator)
         add_color_panel(*iterator);
-
+        
       for (auto iterator = colors::get_colors().rbegin(); iterator != colors::get_colors().rend(); ++iterator)
         add_color_panel(*iterator);
     }

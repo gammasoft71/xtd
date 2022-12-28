@@ -115,7 +115,7 @@ public:
     command_link_button1.parent(tab_page_buttons);
     command_link_button1.texts("Command link button", "Information");
     command_link_button1.location({10, 250});
-
+    
     up_down_button1.parent(tab_page_buttons);
     up_down_button1.location({10, 320});
     
@@ -240,13 +240,13 @@ public:
     loading_indicator1.start();
     
     menu(*main_menu1);
-
+    
     tool_bar(tool_bar1);
     tool_bar1.parent(*this);
     tool_bar1.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});
     tool_bar1.buttons().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, help_tool_bar_button});
     tool_bar1.button_click += {*this, &form1::tool_bar_button_click};
-
+    
     status_bar1.parent(*this);
     update_status_bar_text();
   }
@@ -287,7 +287,7 @@ private:
       default: break;
     }
   }
-
+  
   panel main_panel;
   tab_control tab_control_controls;
   tab_page tab_page_buttons;
@@ -346,10 +346,10 @@ private:
   v_scroll_bar v_scroll_bar1;
   
   loading_indicator loading_indicator1;
-
+  
   vector<unique_ptr<menu_item>> menu_items;
   unique_ptr<main_menu> main_menu1 = main_menu::create_standard_items(menu_items, {*this, &form1::menu_click});
-
+  
   xtd::forms::tool_bar tool_bar1;
   tool_bar_button new_tool_bar_button = tool_bar_button::create_push_button(system_texts::new_(), 0);
   tool_bar_button open_tool_bar_button = tool_bar_button::create_push_button(system_texts::open(), 1);
@@ -361,7 +361,7 @@ private:
   tool_bar_button paste_tool_bar_button = tool_bar_button::create_push_button(system_texts::paste(), 6);
   tool_bar_button tool_bar1_separator2 = tool_bar_button::create_stretchable_separator();
   tool_bar_button help_tool_bar_button = tool_bar_button::create_push_button(system_texts::help(), 7);
-
+  
   forms::status_bar status_bar1;
 };
 

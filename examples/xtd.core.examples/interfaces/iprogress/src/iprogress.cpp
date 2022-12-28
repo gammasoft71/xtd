@@ -18,7 +18,7 @@ public:
     value_ = math::min(value(), maximum);
     return *this;
   }
-
+  
   int minimum() const noexcept {return minimum_;}
   generic_progress& minimum(int minimum) noexcept {
     minimum_ = minimum;
@@ -32,32 +32,32 @@ public:
     message_ = message;
     return *this;
   }
-
+  
   float percent() const noexcept {return maximum_ - minimum_ ? as<float>(value() - minimum()) / (maximum() - minimum()) : 1;}
-
+  
   generic_progress& increment(int increment) noexcept {
     value(value() + increment);
     return *this;
   }
-
+  
   generic_progress& perform_step() noexcept {return increment(step());}
   generic_progress& perform_step(const ustring& message) noexcept {
     message_ = message;
     return perform_step();
   }
-
+  
   int value() const noexcept {return value_;}
   generic_progress& value(int value) noexcept {
     value_ = math::clamp(value, minimum(), maximum());
     return *this;
   }
-
+  
   int step() const noexcept {return step_;}
   generic_progress& step(int step) noexcept {
     step_ = step;
     return *this;
   }
-
+  
 private:
   int minimum_ = 0;
   int maximum_ = 100;
@@ -77,7 +77,7 @@ public:
 
 int main() {
   console::write_line("Started");
-
+  
   print_generic_progress print_progress;
   generic_progress progress {0, 0, 5, "Initialized"};
   print_progress.report(progress);

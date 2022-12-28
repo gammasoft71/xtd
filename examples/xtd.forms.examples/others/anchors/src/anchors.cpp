@@ -9,7 +9,7 @@ public:
     client_size({360, 130});
     minimum_client_size(client_size());
     text("form");
-
+    
     top_left_button.location({10, 10});
     top_left_button.text("top-left");
     top_left_button.size({100, 30});
@@ -22,7 +22,7 @@ public:
     top_right_button.location({250, 10});
     top_right_button.text("top-right");
     top_right_button.size({100, 30});
-    top_right_button.anchor(anchor_styles::top|anchor_styles::right);
+    top_right_button.anchor(anchor_styles::top | anchor_styles::right);
     
     left_button.location({10, 50});
     left_button.text("left");
@@ -32,7 +32,7 @@ public:
     all_button.location({130, 50});
     all_button.text("all");
     all_button.size({100, 30});
-    all_button.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+    all_button.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
     
     right_button.location({250, 50});
     right_button.text("right");
@@ -42,7 +42,7 @@ public:
     bottom_left_button.location({10, 90});
     bottom_left_button.text("bottom-left");
     bottom_left_button.size({100, 30});
-    bottom_left_button.anchor(anchor_styles::bottom|anchor_styles::left);
+    bottom_left_button.anchor(anchor_styles::bottom | anchor_styles::left);
     
     bottom_button.location({130, 90});
     bottom_button.text("bottom");
@@ -52,7 +52,7 @@ public:
     bottom_right_button.location({250, 90});
     bottom_right_button.text("bottom-right");
     bottom_right_button.size({100, 30});
-    bottom_right_button.anchor(anchor_styles::bottom|anchor_styles::right);
+    bottom_right_button.anchor(anchor_styles::bottom | anchor_styles::right);
   }
   
 private:

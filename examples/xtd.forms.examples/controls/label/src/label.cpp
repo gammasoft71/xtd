@@ -12,7 +12,7 @@ namespace examples {
       label1.parent(*this);
       label1.text("Lorem ipsum");
       label1.location({10, 50});
-
+      
       label2.parent(*this);
       label2.auto_size(true);
       label2.text("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");

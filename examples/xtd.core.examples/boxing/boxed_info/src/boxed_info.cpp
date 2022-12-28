@@ -8,12 +8,12 @@ public:
   foo(int value) : value_(value) {}
   
   int value() const noexcept {return value_;}
-
+  
   // For boxing a struct, it must implements oprtat = and operator <.
   // Or the struct must xtd::inherites from icomparable and xtd::iequatble interfaces.
   bool operator ==(const foo& v) const noexcept {return value_ == v.value_;}
   bool operator <(const foo& v) const noexcept {return value_ < v.value_;}
-
+  
 private:
   int value_ = 0;
 };

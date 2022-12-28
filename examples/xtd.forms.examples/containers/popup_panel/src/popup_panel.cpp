@@ -30,7 +30,7 @@ public:
     button1.click += [&] {
       popup_panel1.show();
     };
-
+    
     popup_panel1.location(button1.location());
     popup_panel1.width(button1.width());
   }

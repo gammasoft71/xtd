@@ -37,7 +37,7 @@ public:
     text_box1.text("Test box 1");
     text_box1.location({100, 10});
     text_box1.width(170);
-
+    
     list_box1.parent(left_panel);
     list_box1.location({10, 50});
     list_box1.size({260, 100});

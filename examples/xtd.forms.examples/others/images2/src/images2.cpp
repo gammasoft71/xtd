@@ -21,7 +21,7 @@ namespace example {
       label_picture_kde_theme.text("kde");
       label_picture_kde_theme.border_style(forms::border_style::fixed_3d);
       label_picture_kde_theme.back_color(label_picture_kde_theme.text() == application::system_style_sheet().theme().name() ? system_colors::accent() : system_colors::window());
-      label_picture_kde_theme.fore_color(label_picture_kde_theme.text() == application::system_style_sheet().theme().name()? system_colors::accent() : system_colors::window_text());
+      label_picture_kde_theme.fore_color(label_picture_kde_theme.text() == application::system_style_sheet().theme().name() ? system_colors::accent() : system_colors::window_text());
       
       label_picture_gnome_theme.text_align(content_alignment::middle_center);
       label_picture_gnome_theme.bounds({300, 25, 280, label_picture_name.height()});
@@ -29,7 +29,7 @@ namespace example {
       label_picture_gnome_theme.border_style(forms::border_style::fixed_3d);
       label_picture_gnome_theme.back_color(application::system_style_sheet().theme().name().to_lower().contains(label_picture_gnome_theme.text()) ? system_colors::accent() : system_colors::window());
       label_picture_gnome_theme.fore_color(application::system_style_sheet().theme().name().to_lower().contains(label_picture_gnome_theme.text()) ? system_colors::accent_text() : system_colors::window_text());
-
+      
       label_picture_macos_theme.text_align(content_alignment::middle_center);
       label_picture_macos_theme.bounds({590, 25, 280, label_picture_name.height()});
       label_picture_macos_theme.text("macos");
@@ -43,21 +43,21 @@ namespace example {
       label_picture_symbolic_theme.border_style(forms::border_style::fixed_3d);
       label_picture_symbolic_theme.back_color(application::system_style_sheet().theme().name().to_lower().contains(label_picture_symbolic_theme.text()) ? system_colors::accent() : system_colors::window());
       label_picture_symbolic_theme.fore_color(application::system_style_sheet().theme().name().to_lower().contains(label_picture_symbolic_theme.text()) ? system_colors::accent_text() : system_colors::window_text());
-
+      
       label_picture_windows_theme.text_align(content_alignment::middle_center);
       label_picture_windows_theme.bounds({300, 360, 280, label_picture_name.height()});
       label_picture_windows_theme.text("windows");
       label_picture_windows_theme.border_style(forms::border_style::fixed_3d);
       label_picture_windows_theme.back_color(application::system_style_sheet().theme().name().to_lower().contains(label_picture_windows_theme.text()) ? system_colors::accent() : system_colors::window());
       label_picture_windows_theme.fore_color(application::system_style_sheet().theme().name().to_lower().contains(label_picture_windows_theme.text()) ? system_colors::accent_text() : system_colors::window_text());
-
+      
       label_picture_xtd_theme.text_align(content_alignment::middle_center);
       label_picture_xtd_theme.bounds({590, 360, 280, label_picture_name.height()});
       label_picture_xtd_theme.text("xtd");
       label_picture_xtd_theme.border_style(forms::border_style::fixed_3d);
       label_picture_xtd_theme.back_color(application::system_style_sheet().theme().name().to_lower().contains(label_picture_xtd_theme.text()) ? system_colors::accent() : system_colors::window());
       label_picture_xtd_theme.fore_color(application::system_style_sheet().theme().name().to_lower().contains(label_picture_xtd_theme.text()) ? system_colors::accent_text() : system_colors::window_text());
-
+      
       picture_kde_theme.back_color(system_colors::window());
       picture_kde_theme.border_style(forms::border_style::fixed_3d);
       picture_kde_theme.bounds({10, 65, 280, 280});

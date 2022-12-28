@@ -18,7 +18,7 @@ int main() {
   using example_function = delegate<void(const ustring&)>;
   ::object instance;
   ustring str("World");
-
+  
   //equivanet to : example_function f = {std::bind(&::object::hello, &instance, std::placeholders::_1)};
   example_function f = {instance, &::object::hello};
   

@@ -20,7 +20,7 @@ int main() {
   try {
     double d7 = xtd::parse<int>("Not floating point", number_styles::any);
     console::write_line(d7);
-  } catch(const exception& e) {
+  } catch (const exception& e) {
     console::write_line("Exception : {}", e.what());
   }
 }

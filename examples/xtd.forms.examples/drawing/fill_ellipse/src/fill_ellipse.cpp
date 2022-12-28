@@ -16,28 +16,28 @@ namespace examples {
   protected:
     void on_paint(paint_event_args& e) override {
       form::on_paint(e);
-
+      
       auto back_color = color::navy;
       auto fore_color = color::white;
       
       e.graphics().fill_ellipse(solid_brush(color::transparent), rectangle(10, 10, 150, 150));
       e.graphics().draw_ellipse(pen(fore_color, 4), rectangle(10, 10, 150, 150));
-
+      
       e.graphics().fill_ellipse(solid_brush(back_color), rectangle(180, 10, 150, 150));
       e.graphics().draw_ellipse(pen(fore_color, 4), rectangle(180, 10, 150, 150));
-
+      
       e.graphics().fill_ellipse(texture_brush(create_circle_texture(fore_color, back_color)), rectangle(350, 10, 150, 150));
       e.graphics().draw_ellipse(pen(fore_color, 4), rectangle(350, 10, 150, 150));
-
+      
       e.graphics().fill_ellipse(hatch_brush(xtd::drawing::drawing2d::hatch_style::diagonal_brick, color::white, back_color), rectangle(520, 10, 150, 150));
       e.graphics().draw_ellipse(pen(color::white, 4), rectangle(520, 10, 150, 150));
-
+      
       e.graphics().fill_ellipse(conical_gradient_brush(point(85, 255), back_color, fore_color, 0), rectangle(10, 180, 150, 150));
       e.graphics().draw_ellipse(pen(color::white, 4), rectangle(10, 180, 150, 150));
-
+      
       e.graphics().fill_ellipse(linear_gradient_brush(rectangle(180, 180, 150, 150), back_color, fore_color, 315), rectangle(180, 180, 150, 150));
       e.graphics().draw_ellipse(pen(color::white, 4), rectangle(180, 180, 150, 150));
-
+      
       e.graphics().fill_ellipse(radial_gradient_brush(point(425, 255), fore_color, back_color, 73), rectangle(350, 180, 150, 150));
       e.graphics().draw_ellipse(pen(color::white, 4), rectangle(350, 180, 150, 150));
     }

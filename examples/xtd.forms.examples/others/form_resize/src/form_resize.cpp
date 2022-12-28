@@ -47,7 +47,7 @@ public:
     shrink_button.click += [&] {
       size(size() - drawing::size {10, 10});
     };
-
+    
     grow_button.auto_repeat(true);
     grow_button.bounds({185, 45, 25, 25});
     grow_button.image(button_images::from_name("zoom-in"));
