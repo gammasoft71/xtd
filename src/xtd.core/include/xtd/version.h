@@ -221,7 +221,7 @@ namespace xtd {
     int32 compare_to(const version& version) const noexcept override;
     
     bool equals(const version& v) const noexcept override;
-
+    
     /// @brief Converts the string representation of a version number to an equivalent Version object.
     /// @param input A string that contains a version number to convert.
     /// @return An object that is equivalent to the version number specified in the input parameter.

@@ -53,7 +53,7 @@ namespace xtd {
         /// @param value true if the additional control text is to be indicated by an ellipsis; otherwise, false.
         /// @return This current instance.
         control& auto_ellipsis(bool value) noexcept;
-
+        
         const xtd::drawing::color& background_color() const noexcept override;
         /// @brief Sets the background color is used to add background effects to the box.
         /// @param value The background color is used to add background effects to the box.

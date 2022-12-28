@@ -261,7 +261,7 @@ bool directory::exists(const std::string& path) {
 
 string directory::get_current_directory() {
   DWORD length = GetCurrentDirectory(0, nullptr);
-
+  
   wstring current_directory(static_cast<size_t>(length), 0);
   GetCurrentDirectory(length, current_directory.data());
   return win32::strings::to_string(current_directory);

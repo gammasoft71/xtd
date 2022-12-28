@@ -73,7 +73,7 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception if value less than 0.0 or greater than 1.0.
       /// @return Current seven_segment_display.
       virtual seven_segment_display& back_segment_opacity(double value);
-            
+      
       /// @brief Gets a value indicate if background segments are shown.
       /// @return true if background segments are shown; otherwise false
       virtual bool show_back_segment() const noexcept;
@@ -125,7 +125,7 @@ namespace xtd {
       /// @{
       drawing::size default_size() const noexcept override;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{

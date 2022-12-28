@@ -87,7 +87,7 @@ namespace {
     for (auto child : wnd->GetChildren())
       RefreshRect(child, xtd::drawing::rectangle::make_intersect(rect, {child->GetRect().x, child->GetRect().y, child->GetRect().width, child->GetRect().height}), invalidate_children);
   }
-
+  
   intptr init_dark_mode_control(intptr control) {
     allow_dark_mode_for_window(reinterpret_cast<intptr>(reinterpret_cast<xtd::forms::native::control_handler*>(control)->control()->GetHandle()));
     return control;
@@ -178,11 +178,11 @@ intptr control::create(const forms::native::create_params& create_params) {
 intptr control::create_paint_graphics(intptr control) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper;
-#if defined(__WXGTK__)
+  #if defined(__WXGTK__)
   hdc_wrapper->create<wxClientDC>(reinterpret_cast<control_handler*>(control)->main_control());
-#else
+  #else
   hdc_wrapper->create<wxPaintDC>(reinterpret_cast<control_handler*>(control)->main_control());
-#endif
+  #endif
   return reinterpret_cast<intptr>(hdc_wrapper);
 }
 
@@ -192,11 +192,11 @@ intptr control::create_double_buffered_paint_graphics(intptr control) {
   //wxColour back_color = reinterpret_cast<control_handler*>(control)->main_control()->GetBackgroundColour();
   reinterpret_cast<control_handler*>(control)->main_control()->SetBackgroundStyle(wxBackgroundStyle::wxBG_STYLE_PAINT);
   //reinterpret_cast<control_handler*>(control)->graphic_control()->SetBackgroundColour(back_color);
-#if defined(__WXGTK__)
+  #if defined(__WXGTK__)
   hdc_wrapper->create<wxClientDC>(reinterpret_cast<control_handler*>(control)->main_control());
-#else
+  #else
   hdc_wrapper->create<wxAutoBufferedPaintDC>(reinterpret_cast<control_handler*>(control)->main_control());
-#endif
+  #endif
   return reinterpret_cast<intptr>(hdc_wrapper);
 }
 
@@ -220,7 +220,7 @@ intptr control::def_wnd_proc(intptr control, intptr hwnd, uint32 msg, intptr wpa
 xtd::drawing::size control::default_size(const xtd::ustring& class_name) {
   static auto is_gnome = environment::os_version().desktop_environment() == "gnome";
   static auto is_macos = environment::os_version().desktop_environment() == "macos";
-
+  
   if (class_name == "button") return {75, __enable_system_font_size__ ? 34 : 25};
   if (class_name == "checkbox") return {104, 25};
   if (class_name == "checkedlistbox") return {120, 90};
@@ -229,7 +229,7 @@ xtd::drawing::size control::default_size(const xtd::ustring& class_name) {
   if (class_name == "colorpicker") return {104, __enable_system_font_size__ ? 34 : 25};
   if (class_name == "combobox") return {130, __enable_system_font_size__ ? 34 : is_macos ? 21 : 23};
   if (class_name == "commandlinkbutton") return {200, 60};
-  if (class_name == "datetimepicker") return {104, __enable_system_font_size__ ? 34:  25};
+  if (class_name == "datetimepicker") return {104, __enable_system_font_size__ ? 34 :  25};
   if (class_name == "domainupdown") return {150, is_gnome ? 34 : 23};
   if (class_name == "fontpicker") return {104, __enable_system_font_size__ ? 34 : 25};
   if (class_name == "form") return {300, 300};
@@ -544,7 +544,7 @@ void control::resume_layout(intptr control) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-
+  
   if (reinterpret_cast<control_handler*>(control)->LayoutSuspendedCount() == 0) return;
   if (reinterpret_cast<control_handler*>(control)->LayoutSuspendedCount() == 1) reinterpret_cast<control_handler*>(control)->control()->Thaw();
   reinterpret_cast<control_handler*>(control)->DecrementLayoutSuspended();

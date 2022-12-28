@@ -39,7 +39,7 @@ namespace xtd {
       /// xtd::tunit::directory_assume::are_equal(d1, d2); // test ok.
       /// xtd::tunit::directory_assume::are_equal(d1, d2); // test throws an abort_error exception.
       /// @endcode
-      static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual);      
+      static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual);
       /// @brief Asserts that two directories are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.

@@ -75,7 +75,7 @@ namespace xtd {
         using brush::equals;
         bool equals(const hatch_brush& value) const noexcept override;
         /// @}
-
+        
       private:
         hatch_brush();
         void recreate_handle();

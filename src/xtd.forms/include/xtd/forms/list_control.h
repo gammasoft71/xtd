@@ -36,7 +36,7 @@ namespace xtd {
           /// @param last the last iterator to sort.
           /// @remarks same as std::sort.
           template<typename type_t>
-          void operator ()(type_t first, type_t last) {
+          void operator()(type_t first, type_t last) {
             std::sort(first, last);
           }
           /// @}
@@ -81,9 +81,9 @@ namespace xtd {
         
         /// @{
         int32 compare_to(const item& value) const noexcept override;
-
+        
         bool equals(const item& value) const noexcept override;
-
+        
         /// @brief Returns a string containing the value of the item.
         /// @return A string containing the value of the item.
         xtd::ustring to_string() const noexcept override;

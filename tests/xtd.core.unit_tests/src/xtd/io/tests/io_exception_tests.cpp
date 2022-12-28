@@ -17,7 +17,7 @@ namespace xtd::io::tests {
     void test_cleanup_(test_cleanup) {
       system_exception::enable_stack_trace(stack_trace_enabled);
     }
-
+    
     void test_method_(default_creator) {
       io_exception e;
       assert::are_equal(std::system_category(), e.error_code().category(), csf_);

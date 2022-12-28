@@ -267,7 +267,7 @@ namespace xtd {
       /// @remarks It is not possible to change the compression status of a xtd::io::file object using the xtd::io::file::set_attributes method.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
       static void set_attributes(const xtd::ustring& path, xtd::io::file_attributes attributes);
-
+      
       /// @brief Sets the date and time the file was created.
       /// @param path The file for which to set the creation date and time information.
       /// @param creation_time A xtd::date_time containing the value to set for the creation date and time of path. This value is expressed in local time.
@@ -280,7 +280,7 @@ namespace xtd {
       /// @remarks NTFS-formatted drives may cache file meta-info, such as file creation time, for a short period of time. As a result, it may be necessary to explicitly set the creation time of a file if you are overwriting or replacing an existing file.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
       static void set_creation_time(const xtd::ustring& path, const xtd::date_time& creation_time);
-
+      
       /// @brief Sets the date and time the specified file was last accessed.
       /// @param path The file for which to set the access date and time information.
       /// @param last_access_time A xtd::date_time containing the value to set for the last access date and time of path. This value is expressed in local
@@ -292,7 +292,7 @@ namespace xtd {
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
       static void set_last_access_time(const xtd::ustring& path, const xtd::date_time& last_access_time);
-
+      
       /// @brief Sets the date and time that the specified file was last written to.
       /// @param path The file for which to set the date and time information.
       /// @param last_write_time A xtd::date_time containing the value to set for the last write date and time of path. This value is expressed in local time.
@@ -304,7 +304,7 @@ namespace xtd {
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
       static void set_last_write_time(const xtd::ustring& path, const xtd::date_time& last_write_time);
-
+      
       /// @brief Sets the specified xtd::io::file_permissions of the file on the specified path.
       /// @param path The path to the file.
       /// @param attributes A bitwise combination of the enumeration values.
@@ -316,7 +316,7 @@ namespace xtd {
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
       static void set_permissions(const xtd::ustring& path, xtd::io::file_permissions permissions);
-
+      
       /// @brief Writes lines to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
       /// @param path The file to write to.
       /// @param contents The lines to write to the file.

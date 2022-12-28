@@ -30,7 +30,7 @@ namespace xtd {
     /// @include background_worker.cpp
     class forms_export_ background_worker : public component {
       struct data;
-
+      
     public:
       /// @name Constructors
       

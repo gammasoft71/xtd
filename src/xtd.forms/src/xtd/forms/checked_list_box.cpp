@@ -62,7 +62,7 @@ struct checked_list_box::data {
 
 checked_list_box::checked_list_box() : data_(std::make_shared<data>()) {
   set_style(control_styles::resize_redraw, true);
-  data_->items.item_added += {*this, &checked_list_box::on_items_item_added};  
+  data_->items.item_added += {*this, &checked_list_box::on_items_item_added};
   data_->items.item_removed += {*this, &checked_list_box::on_items_item_removed};
   data_->items.item_updated += {*this, &checked_list_box::on_items_item_updated};
 }
@@ -238,14 +238,14 @@ void checked_list_box::wnd_proc(message& message) {
   }
 }
 
-void checked_list_box::on_items_item_added(size_t pos, const item & item) {
+void checked_list_box::on_items_item_added(size_t pos, const item& item) {
   if (is_handle_created()) native::checked_list_box::insert_item(handle(), pos, item.value(), static_cast<int32>(item.check_state()));
   checked_list_box::item selected;
   if (selected_index() != npos && selected_index() < data_->items.size()) selected = data_->items[selected_index()];
   this->selected_item(selected);
 }
 
-void checked_list_box::on_items_item_removed(size_t pos, const item & item)  {
+void checked_list_box::on_items_item_removed(size_t pos, const item& item)  {
   if (is_handle_created()) native::checked_list_box::delete_item(handle(), pos);
   
   checked_list_box::item selected;
@@ -256,7 +256,7 @@ void checked_list_box::on_items_item_removed(size_t pos, const item & item)  {
     this->selected_index(npos);
 }
 
-void checked_list_box::on_items_item_updated(size_t pos, const item & item) {
+void checked_list_box::on_items_item_updated(size_t pos, const item& item) {
   if (is_handle_created()) native::checked_list_box::update_item(handle(), pos, item.value(), static_cast<int32>(item.check_state()));
   checked_list_box::item selected;
   if (selected_index() != npos && selected_index() < data_->items.size()) selected = data_->items[selected_index()];

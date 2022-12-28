@@ -15,7 +15,7 @@ public:
   void alignment(xtd::forms::horizontal_alignment value) {
     data_->alignment = value;
   }
-
+  
   void control(const xtd::forms::control* value) {
     if (data_->control != value) {
       data_->control = value;
@@ -69,7 +69,7 @@ public:
   void tool_tip_text(const xtd::ustring& value) {
     data_->tool_tip_text = value;
   }
-
+  
   void status_bar_panel_auto_size(xtd::forms::status_bar_panel_auto_size value) {
     if (data_->status_bar_panel_auto_size != value) {
       data_->status_bar_panel_auto_size = value;
@@ -77,15 +77,15 @@ public:
     }
   }
   
-  void status_bar_panel_border_style( xtd::forms::status_bar_panel_border_style value) {
+  void status_bar_panel_border_style(xtd::forms::status_bar_panel_border_style value) {
     data_->status_bar_panel_border_style = value;
   }
   
   void status_bar_panel(status_bar_panel_ref value) {data_->status_bar_panel = value;}
   
-protected:  
+protected:
   xtd::drawing::font default_font() const noexcept override {return xtd::drawing::system_fonts::tool_font();}
-
+  
   void on_paint(paint_event_args& e) override {
     if (data_->style == status_bar_panel_style::text) draw_panel(e);
     else if (data_->style == status_bar_panel_style::control) draw_control(e);

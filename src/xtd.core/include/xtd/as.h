@@ -14348,7 +14348,7 @@ namespace xtd {
   
   // ___________________________________________________________________________________________
   //                                                         xtd::convert_pointer specialization
-
+  
   /// @brief Casts a type into another type.
   /// @par Namespace
   /// xtd

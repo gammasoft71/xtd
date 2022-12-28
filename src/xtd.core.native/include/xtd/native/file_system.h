@@ -24,7 +24,7 @@ namespace xtd {
     class file_info;
     class file_system_info;
     class path;
-
+    
   }
   /// @endcond
   

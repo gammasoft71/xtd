@@ -35,7 +35,7 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    class drawing_export_ font_family final : public xtd::object , public xtd::iequatable<font_family> {
+    class drawing_export_ font_family final : public xtd::object, public xtd::iequatable<font_family> {
       struct data;
       
     public:
@@ -93,7 +93,7 @@ namespace xtd {
       
       /// @{
       bool equals(const font_family& value) const noexcept override;
-
+      
       /// @brief Returns the cell ascent, in design units, of the font_family of the specified style.
       /// @param style A font_style that contains style information for the font.
       /// @return The cell ascent for this font_family that uses the specified font_style.

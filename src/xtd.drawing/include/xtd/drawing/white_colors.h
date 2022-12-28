@@ -26,7 +26,7 @@ namespace xtd {
     public:
       /// @name Public properties
       
-      /// @{                  
+      /// @{
       /// @brief A system-defined color object.
       /// @image html colors_alice_blue.png
       static xtd::drawing::color alice_blue();
@@ -38,7 +38,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_azure.png
       static xtd::drawing::color azure();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_beige.png
       static xtd::drawing::color beige();
@@ -46,7 +46,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_floral_white.png
       static xtd::drawing::color floral_white();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_ghost_white.png
       static xtd::drawing::color ghost_white();
@@ -58,11 +58,11 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_ivory.png
       static xtd::drawing::color ivory();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_lavender_blush.png
       static xtd::drawing::color lavender_blush();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_linen.png
       static xtd::drawing::color linen();
@@ -70,7 +70,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_mint_cream.png
       static xtd::drawing::color mint_cream();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_misty_rose.png
       static xtd::drawing::color misty_rose();
@@ -90,12 +90,12 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_white.png
       static xtd::drawing::color white();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_white_smoke.png
       static xtd::drawing::color white_smoke();
       /// @}
-
+      
       /// @name Public methods
       
       /// @{

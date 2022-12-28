@@ -17,10 +17,10 @@
 template<typename enum_t>
 xtd::enum_collection<enum_t> __enum_definition_to_enum_collection__(const xtd::ustring& enum_definition) {
   xtd::enum_collection<enum_t> entries;
-#if defined(__XTD_USE_ENUMERATION_INTROSPECTION__)
+  #if defined(__XTD_USE_ENUMERATION_INTROSPECTION__)
   for (size_t num_state = 0; num_state < __enumeration_introspection::num_states<enum_t>; ++num_state)
     entries.emplace_back(static_cast<enum_t>(__enumeration_introspection::enum_values<enum_t>[num_state]), __enumeration_introspection::enum_names<enum_t>[num_state]);
-#else
+  #else
   if (enum_definition.empty()) return entries;
   xtd::int64 current_value = 0;
   for (auto entry : enum_definition.split({','})) {
@@ -32,7 +32,7 @@ xtd::enum_collection<enum_t> __enum_definition_to_enum_collection__(const xtd::u
       if (!xtd::try_parse<xtd::int64>(key_value[1].trim(), value, xtd::number_styles::number) && xtd::try_parse<xtd::int64>(key_value[1].trim(), value, xtd::number_styles::hex_number) && xtd::try_parse<xtd::int64>(key_value[1].trim(), value, xtd::number_styles::binary_number) && xtd::try_parse<xtd::int64>(key_value[1].trim(), value, xtd::number_styles::octal_number)) {
         auto iterator = std::find_if(entries.begin(), entries.end(), [&](auto item)->bool {return item.second == key_value[1].trim();});
         if (iterator != entries.end()) value = static_cast<xtd::int64>(iterator->first);
-        
+    
         /// @todo Add parse arithmetic operation...
         throw xtd::format_exception("Not a valid enum declaration", csf_);
       }
@@ -41,7 +41,7 @@ xtd::enum_collection<enum_t> __enum_definition_to_enum_collection__(const xtd::u
     entries.emplace_back(static_cast<enum_t>(value), key_value[0].trim());
     current_value++;
   }
-#endif  
+  #endif
   return entries;
 }
 // @endcond

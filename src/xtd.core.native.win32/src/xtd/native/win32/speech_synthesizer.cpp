@@ -52,11 +52,11 @@ void speech_synthesizer::destroy(intmax_t handle) {
 }
 
 void speech_synthesizer::pause(intmax_t handle) {
-  
+
 }
 
 void speech_synthesizer::resume(intmax_t handle) {
-  
+
 }
 
 void speech_synthesizer::speak(intmax_t handle, const string& text_to_speak) {
@@ -76,5 +76,5 @@ void speech_synthesizer::speak_async(intmax_t handle, const string& text_to_spea
 }
 
 void speech_synthesizer::stop(intmax_t handle) {
-  
+
 }

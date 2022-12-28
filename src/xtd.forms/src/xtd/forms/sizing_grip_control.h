@@ -9,7 +9,7 @@ public:
     set_can_focus(false);
     cursor(xtd::forms::cursors::size_nwse());
   }
-   
+  
 protected:
   void on_paint(paint_event_args& e) override {
     /// @todo Replace following code by drawing style_sheet sizing grip image.
@@ -20,19 +20,19 @@ protected:
     control::on_paint(e);
   }
   
-  void on_mouse_down(const mouse_event_args & e) override {
+  void on_mouse_down(const mouse_event_args& e) override {
     mouse_location = e.location();
   };
   
-  void on_mouse_up(const mouse_event_args & e) override {
+  void on_mouse_up(const mouse_event_args& e) override {
     mouse_location = xtd::drawing::point::empty;
   };
   
-  void on_mouse_move(const mouse_event_args & e) override {
+  void on_mouse_move(const mouse_event_args& e) override {
     if (mouse_location != xtd::drawing::point::empty && top_level_control().has_value())
       top_level_control().value().get().size(top_level_control().value().get().size() + xtd::drawing::size(e.location() - mouse_location));
   };
-
+  
   
 private:
   friend status_bar;

@@ -75,7 +75,7 @@ namespace xtd {
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
       virtual void draw_segment_i(drawing::graphics& graphics, const drawing::color& color);
-
+      
       void on_paint(paint_event_args& e) override;
       /// @}
       

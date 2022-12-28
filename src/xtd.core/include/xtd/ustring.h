@@ -301,7 +301,7 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this string.
     template<typename string_view_like_t>
     constexpr ustring(const string_view_like_t& string_view, size_type index, size_type count, const allocator_type& allocator = allocator_type()) : std::basic_string<value_type>(string_view, index, count, allocator) {}
-
+    
     /// @brief Initializes a new instance of xtd::ustring with specified initializer list.
     /// @param il The initializer list to fill.
     ustring(std::initializer_list<value_type> il);
@@ -1017,7 +1017,7 @@ namespace xtd {
     static value_t parse(const ustring& str) {
       return xtd::parse<value_t>(str);
     }
-
+    
     /// @brief Deletes all the characters from this string beginning at a specified position and continuing through the last position.
     /// @param start_index The position to begin deleting characters.
     /// @return A new string object that is equivalent to this string less the removed characters.

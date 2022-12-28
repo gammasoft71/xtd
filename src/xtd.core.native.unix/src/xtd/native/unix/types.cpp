@@ -12,12 +12,12 @@ string types::demangle(const string& name) {
   public:
     explicit auto_delete_char_pointer(char* value) : value_(value) {}
     ~auto_delete_char_pointer() {free(value_);}
-    char* operator ()() const {return value_;}
+    char* operator()() const {return value_;}
   private:
     char* value_;
   };
   int status = 0;
-  auto result =__cxa_demangle(name.c_str(), 0, 0, &status);
+  auto result = __cxa_demangle(name.c_str(), 0, 0, &status);
   if (result == nullptr) return name;
   return auto_delete_char_pointer(result)();
 }

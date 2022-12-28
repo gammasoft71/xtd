@@ -113,7 +113,7 @@ namespace xtd {
       intptr copy_handle() const;
       
       bool equals(const cursor& value) const noexcept override;
-
+      
       /// @brief Create a cursor form a specified bitmap with specified hot spot.
       /// @param bitmap A xtd::drawing::bitmap image will be use by cursor.
       /// @param hot_spot A xtd::drawing::point hot spot location.

@@ -153,7 +153,7 @@ namespace xtd {
       /// @return Current domain_up_down.
       virtual domain_up_down& wrap(bool value);
       /// @}
-            
+      
       /// @name Events
       
       /// @{
@@ -176,7 +176,7 @@ namespace xtd {
       drawing::color default_back_color() const noexcept override;
       drawing::color default_fore_color() const noexcept override;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{
@@ -196,12 +196,12 @@ namespace xtd {
       /// @cond
       void wm_scroll_control(message& message);
       /// @endcond
-
+      
     private:
-      void on_items_item_added(size_t pos, const item & item);
-      void on_items_item_removed(size_t pos, const item & item);
-      void on_items_item_updated(size_t pos, const item & item);
-
+      void on_items_item_added(size_t pos, const item& item);
+      void on_items_item_removed(size_t pos, const item& item);
+      void on_items_item_updated(size_t pos, const item& item);
+      
       std::shared_ptr<data> data_;
     };
   }

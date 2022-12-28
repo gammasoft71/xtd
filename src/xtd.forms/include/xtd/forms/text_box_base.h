@@ -48,7 +48,7 @@ namespace xtd {
       /// @param border_style A xtd::forms::border_style that represents the border type of the text box control. The default is fixed_single.
       /// @return Current text_box_base instance.
       virtual text_box_base& border_style(forms::border_style border_style);
-            
+      
       /// @brief Gets the lines of text in a text box control.
       /// @return An array of strings that contains the text in a text box control.
       /// @remarks Each element in the array becomes a line of text in the text box control. If the multiline property of the text box control is set to true and a newline character appears in the text, the text following the newline character is added to a new element in the array and displayed on a separate line.
@@ -167,7 +167,7 @@ namespace xtd {
       /// @{
       forms::cursor default_cursor() const noexcept override;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{

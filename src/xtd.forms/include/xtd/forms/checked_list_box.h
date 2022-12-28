@@ -111,7 +111,7 @@ namespace xtd {
         using list_box::item::equals;
         bool equals(const item& value) const noexcept override;
         /// @}
-
+        
       private:
         forms::check_state check_state_ = forms::check_state::unchecked;
       };
@@ -273,14 +273,14 @@ namespace xtd {
       /// @}
       
     private:
-      void on_items_item_added(size_t pos, const item & item);
-      void on_items_item_removed(size_t pos, const item & item);
-      void on_items_item_updated(size_t pos, const item & item);
+      void on_items_item_added(size_t pos, const item& item);
+      void on_items_item_removed(size_t pos, const item& item);
+      void on_items_item_updated(size_t pos, const item& item);
       void wm_command_control(message& message);
       void wm_mouse_double_click(message& message);
       void wm_mouse_down(message& message);
       void wm_mouse_up(message& message);
-
+      
       std::shared_ptr<data> data_;
     };
   }

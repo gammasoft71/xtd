@@ -244,7 +244,7 @@ namespace xtd {
         /// *** is 34 on "gnome" environment
         /// **** is 71 on "gnome" environment
         /// @warning Internal use only
-
+        
         static xtd::drawing::size default_size(const xtd::ustring& class_name);
         
         /// @brief Destroys context menu.
@@ -306,7 +306,7 @@ namespace xtd {
         /// @param invalidate_children true to invalidate the control's child controls; otherwise, false.
         /// @warning Internal use only
         static void invalidate(intptr control, const drawing::region& region, bool invalidate_children);
-
+        
         /// @brief Executes the specified delegate, on the thread that owns the control's underlying window handle, with the specified list of arguments and mutex.
         /// @param control Control window handle.
         /// @param invoker A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.

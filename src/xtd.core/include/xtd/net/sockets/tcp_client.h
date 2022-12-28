@@ -44,7 +44,7 @@ namespace xtd {
       /// @include tcp_client_ip_v6.cpp
       class core_export_ tcp_client : public xtd::object, public xtd::iequatable<tcp_client> {
         struct data;
-
+        
       public:
         /// @name Constructors
         
@@ -326,7 +326,7 @@ namespace xtd {
         void end_connect(std::shared_ptr<xtd::iasync_result> async_result);
         
         bool equals(const tcp_client& s) const noexcept override;
-
+        
         /// @brief Returns the xtd::net::sockets::network_stream used to send and receive data.
         /// @return The underlying xtd::net::sockets::network_stream.
         /// @remarks xtd::net::sockets::tcp_client::get_stream returns a xtd::net::sockets::network_stream that you can use to send and receive data. The xtd::net::sockets::network_stream class inherits from the std::iostream class, which provides a rich collection of methods and properties used to facilitate network communications.You must call the xtd::net::sockets::tcp_client::connect method first, or the xtd::net::sockets::tcp_client::get_stream method will throw an xtd::invalid_operation_exception. After you have obtained the xtd::net::sockets::network_stream, call the std::iostream::write method to send data to the remote host. Call the std::iostream::read method to receive data arriving from the remote host. Both of these methods block until the specified operation is performed. You can avoid blocking on a read operation by checking the xtd::net::sockets::network_stream::data_available property. A true value means that data has arrived from the remote host and is available for reading. In this case, std::iostream::read is guaranteed to complete immediately. If the remote host has shutdown its connection, std::iostream::read will immediately return with zero bytes.
@@ -353,7 +353,7 @@ namespace xtd {
       private:
         friend tcp_listener;
         explicit tcp_client(const xtd::net::sockets::socket& socket);
-
+        
         std::shared_ptr<data> data_;
       };
     }

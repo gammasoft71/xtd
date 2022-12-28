@@ -26,7 +26,7 @@ namespace xtd {
     public:
       /// @name Public properties
       
-      /// @{            
+      /// @{
       /// @brief A system-defined color object.
       /// @image html colors_bisque.png
       static xtd::drawing::color bisque();
@@ -34,7 +34,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_blanched_almond.png
       static xtd::drawing::color blanched_almond();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_brown.png
       static xtd::drawing::color brown();
@@ -42,7 +42,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_burly_wood.png
       static xtd::drawing::color burly_wood();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_chocolate.png
       static xtd::drawing::color chocolate();
@@ -50,7 +50,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_cornsilk.png
       static xtd::drawing::color cornsilk();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_dark_goldenrod.png
       static xtd::drawing::color dark_goldenrod();
@@ -58,7 +58,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_goldenrod.png
       static xtd::drawing::color goldenrod();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_maroon.png
       static xtd::drawing::color maroon();
@@ -66,7 +66,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_navajo_white.png
       static xtd::drawing::color navajo_white();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_peru.png
       static xtd::drawing::color peru();
@@ -74,15 +74,15 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_rosy_brown.png
       static xtd::drawing::color rosy_brown();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_saddle_brown.png
-      static xtd::drawing::color saddle_brown();      
+      static xtd::drawing::color saddle_brown();
       
       /// @brief A system-defined color object.
       /// @image html colors_sandy_brown.png
       static xtd::drawing::color sandy_brown();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_sienna.png
       static xtd::drawing::color sienna();
@@ -95,13 +95,13 @@ namespace xtd {
       /// @image html colors_wheat.png
       static xtd::drawing::color wheat();
       /// @}
-
+      
       /// @name Public methods
       
       /// @{
       /// @brief Gets an array of colors.
       static const std::vector<xtd::drawing::color>& get_colors();
-
+      
       /// @brief Gets an array of color names.
       static const std::vector<xtd::ustring>& get_color_names();
       /// @}

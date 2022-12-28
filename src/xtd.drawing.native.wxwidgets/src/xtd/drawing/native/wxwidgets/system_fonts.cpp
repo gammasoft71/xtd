@@ -16,9 +16,9 @@ namespace {
   wxFont GetDefaultGuiFont() {
     auto font = wxSystemSettings::GetFont(wxSystemFont::wxSYS_DEFAULT_GUI_FONT);
     auto pointSize = font.GetPointSize();
-#if defined(__WXGTK__)
+    #if defined(__WXGTK__)
     if (!__enable_system_font_size__ && pointSize > 9) pointSize = 9;
-#endif
+    #endif
     return wxFont(pointSize, font.GetFamily(), font.GetStyle(), font.GetWeight(), font.GetUnderlined(), font.GetFaceName(), font.GetEncoding());
   }
 }

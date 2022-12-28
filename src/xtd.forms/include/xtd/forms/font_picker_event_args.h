@@ -43,7 +43,7 @@ namespace xtd {
       /// @brief Gets the xtd::drawing::color that represent the xtd::forms::font_picker::color.
       /// @return The xtd::drawing::color that represent the xtd::forms::font_picker::color.
       const xtd::drawing::color& color() const noexcept {return color_;}
-
+      
       /// @brief Gets the xtd::drawing::font that represent the xtd::forms::font_picker::font.
       /// @return The xtd::drawing::font that represent the xtd::forms::font_picker::font.
       const xtd::drawing::font& font() const noexcept {return font_;}

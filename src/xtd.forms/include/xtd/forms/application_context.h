@@ -21,7 +21,7 @@ namespace xtd {
     /// @include application_context.cpp
     class application_context : public object {
       struct data;
-
+      
     public:
       /// @name Constructors
       
@@ -57,7 +57,7 @@ namespace xtd {
       /// @param nullptr
       /// @remarks This property determines the main form for this context. This property can change at any time. If on_main_form_closed is not overridden, the message loop of the thread terminates when the main_form parameter closes.
       void main_form(std::nullptr_t);
-
+      
       /// @brief Gets an object that contains data about the control.
       /// @return A std::any that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.

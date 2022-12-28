@@ -26,7 +26,7 @@ namespace xtd {
     public:
       /// @name Public properties
       
-      /// @{                  
+      /// @{
       /// @brief A system-defined color object.
       /// @image html colors_aqua.png
       static xtd::drawing::color aqua();
@@ -34,7 +34,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_aquamarine.png
       static xtd::drawing::color aquamarine();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_cadet_blue.png
       static xtd::drawing::color cadet_blue();
@@ -42,7 +42,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_cyan.png
       static xtd::drawing::color cyan();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_dark_cyan.png
       static xtd::drawing::color dark_cyan();
@@ -54,7 +54,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_light_cyan.png
       static xtd::drawing::color light_cyan();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_light_sea_green.png
       static xtd::drawing::color light_sea_green();
@@ -66,7 +66,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_pale_turquoise.png
       static xtd::drawing::color pale_turquoise();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_teal.png
       static xtd::drawing::color teal();
@@ -75,13 +75,13 @@ namespace xtd {
       /// @image html colors_turquoise.png
       static xtd::drawing::color turquoise();
       /// @}
-
+      
       /// @name Public methods
       
       /// @{
       /// @brief Gets an array of colors.
       static const std::vector<xtd::drawing::color>& get_colors();
-
+      
       /// @brief Gets an array of color names.
       static const std::vector<xtd::ustring>& get_color_names();
       /// @}

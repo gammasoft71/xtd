@@ -52,13 +52,13 @@ namespace xtd {
         /// @param value The array of xtd::drawing::imaging::encoder_parameter objects.
         void params(const std::vector<xtd::drawing::imaging::encoder_parameter>& value) noexcept {params_ = value;}
         /// @}
-
+        
         /// @name Methods
         
         /// @{
         bool equals(const encoder_parameters& value) const noexcept override {return params_ == value.params_;}
         /// @}
-
+        
       private:
         std::vector<xtd::drawing::imaging::encoder_parameter> params_;
       };

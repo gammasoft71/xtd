@@ -128,7 +128,7 @@ namespace xtd {
       /// @brief Represent directory iterator used by xtd::io::directory_info.
       class directory_iterator : public xtd::iequatable<directory_iterator> {
         struct data;
-
+        
         explicit directory_iterator(const xtd::ustring& path, const xtd::ustring& pattern);
       public:
         /// @cond
@@ -148,7 +148,7 @@ namespace xtd {
         xtd::io::directory_info::directory_iterator begin() const;
         xtd::io::directory_info::directory_iterator end() const;
         bool equals(const directory_iterator& other) const noexcept override;
-
+        
         xtd::ustring path() const;
         xtd::ustring pattern() const;
         /// @endcond
@@ -156,14 +156,14 @@ namespace xtd {
       private:
         friend xtd::io::directory;
         friend xtd::io::directory_info;
-
+        
         std::shared_ptr<data> data_;
       };
       
       /// @brief Represent file iterator used by xtd::io::directory_info.
       class file_iterator : public xtd::iequatable<file_iterator> {
         struct data;
-
+        
         explicit file_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
@@ -183,7 +183,7 @@ namespace xtd {
         xtd::io::directory_info::file_iterator begin() const;
         xtd::io::directory_info::file_iterator end() const;
         bool equals(const file_iterator& other) const noexcept override;
-
+        
         xtd::ustring path() const;
         xtd::ustring pattern() const;
         /// @endcond
@@ -191,14 +191,14 @@ namespace xtd {
       private:
         friend xtd::io::directory;
         friend xtd::io::directory_info;
-
+        
         std::shared_ptr<data> data_;
       };
       
       /// @brief Represent file system iterator used by xtd::io::directory_info.
       class file_system_info_iterator : public xtd::iequatable<file_system_info_iterator> {
         struct data;
-
+        
         explicit file_system_info_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
@@ -218,7 +218,7 @@ namespace xtd {
         xtd::io::directory_info::file_system_info_iterator begin() const;
         xtd::io::directory_info::file_system_info_iterator end() const;
         bool equals(const file_system_info_iterator& other) const noexcept override;
-
+        
         xtd::ustring path() const;
         xtd::ustring pattern() const;
         /// @endcond
@@ -226,7 +226,7 @@ namespace xtd {
       private:
         friend xtd::io::directory;
         friend xtd::io::directory_info;
-
+        
         std::shared_ptr<data> data_;
       };
       

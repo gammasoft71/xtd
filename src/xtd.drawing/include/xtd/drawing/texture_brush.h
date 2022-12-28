@@ -60,10 +60,10 @@ namespace xtd {
       using brush::equals;
       bool equals(const texture_brush& value) const noexcept override;
       /// @}
-
+      
     private:
       texture_brush();
-
+      
       std::shared_ptr<data> data_;
     };
   }

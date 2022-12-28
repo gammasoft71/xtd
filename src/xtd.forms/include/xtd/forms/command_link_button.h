@@ -80,12 +80,12 @@ namespace xtd {
       /// @{
       forms::create_params create_params() const noexcept override;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{
       drawing::size measure_control() const noexcept override;
-      void on_handle_created(const event_args& e) override;      
+      void on_handle_created(const event_args& e) override;
       /// @}
     };
   }

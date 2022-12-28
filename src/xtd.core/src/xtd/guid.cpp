@@ -33,7 +33,7 @@ guid::guid(uint32 a, uint16 b, uint16 c, const std::vector<xtd::byte>& d) {
   data_[index++] = static_cast<xtd::byte>((c & 0xFF00) >> 8);
   data_[index++] = static_cast<xtd::byte>((c & 0x00FF) >> 0);
   
-  for (;index < data_.size(); ++index)
+  for (; index < data_.size(); ++index)
     data_[index] = d[index - 8];
 }
 

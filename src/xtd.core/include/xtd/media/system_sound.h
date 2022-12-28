@@ -32,7 +32,7 @@ namespace xtd {
       
       /// @{
       bool equals(const system_sound& sound) const noexcept override;
-
+      
       /// @brief Plays the system sound type.
       /// @par Examples
       /// The following code example demonstrates the use of the xtd::media::system_sounds::asterisk property.

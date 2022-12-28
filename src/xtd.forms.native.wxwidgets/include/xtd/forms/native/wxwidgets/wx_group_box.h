@@ -26,7 +26,7 @@ namespace xtd {
       
       class wxInnerGroupBoxPanel : public wxPanel {
       public:
-        explicit wxInnerGroupBoxPanel(wxWindow *parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxTAB_TRAVERSAL | wxNO_BORDER, const wxString& name = wxASCII_STR(wxPanelNameStr)) : wxPanel(parent, winid, pos, size, style, name) {}
+        explicit wxInnerGroupBoxPanel(wxWindow* parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxTAB_TRAVERSAL | wxNO_BORDER, const wxString& name = wxASCII_STR(wxPanelNameStr)) : wxPanel(parent, winid, pos, size, style, name) {}
         
         bool ProcessEvent(wxEvent& event) override {
           bool result = wxPanel::ProcessEvent(event);
@@ -62,7 +62,7 @@ namespace xtd {
           else if (event.GetEventType() == wxEVT_PAINT) wx_evt_->wx_evt_paint(event);
           return result;
         }
-
+        
         wxWindow* GetMainWindowOfCompositeControl() override {return GetParent();}
         
         void set_wx_evt(iwx_evt* wx_evt) {
@@ -96,38 +96,38 @@ namespace xtd {
         }
         
         wxPoint get_inner_box_position() const {
-#if defined(__WXMSW__)
+          #if defined(__WXMSW__)
           return {0, inner_margin + extra_inner_margin_up};
-#elif defined(__WXOSX__)
+          #elif defined(__WXOSX__)
           return {inner_margin, inner_margin + extra_inner_margin_up};
-#elif defined(__WXGTK__)
+          #elif defined(__WXGTK__)
           return {inner_margin, 0};
-#else
+          #else
           return { 0, 0 };
-#endif
+          #endif
         }
         
         wxSize get_inner_box_size() const {
-#if defined(__WXMSW__)
+          #if defined(__WXMSW__)
           return {GetClientSize().GetWidth(), GetClientSize().GetHeight() - GetClientAreaOrigin().y};
-#elif defined(__WXOSX__)
+          #elif defined(__WXOSX__)
           return {GetClientSize().GetWidth() - GetClientAreaOrigin().x - inner_margin, GetClientSize().GetHeight() - GetClientAreaOrigin().y - inner_margin};
-#elif defined(__WXGTK__)
+          #elif defined(__WXGTK__)
           return {GetClientSize().GetWidth() - inner_margin, GetClientSize().GetHeight() - GetClientAreaOrigin().y - inner_margin};
-#else
+          #else
           return GetClientSize();
-#endif
+          #endif
         }
         
         
         void set_wx_evt(iwx_evt* wx_evt) {
           inner_panel->set_wx_evt(wx_evt);
         }
-       static constexpr int32 inner_margin = 3;
+        static constexpr int32 inner_margin = 3;
         static constexpr int32 extra_inner_margin_up = 5;
         wxInnerGroupBoxPanel* inner_panel = new wxInnerGroupBoxPanel(this, wxID_ANY, get_inner_box_position(), get_inner_box_size());
       };
-
+      
       class wxGroupBoxOwnerDraw : public wxPanel {
         template<typename control_t>
         friend class control_wrapper;
@@ -144,11 +144,11 @@ namespace xtd {
         //bool AcceptsFocusFromKeyboard() const override {return false;}
         
         wxPoint GetClientAreaOrigin() const override {
-#if defined(__WXOSX__)
+          #if defined(__WXOSX__)
           return {inner_margin + 2, inner_margin + 13};
-#else
+          #else
           return {inner_margin, inner_margin + 5};
-#endif
+          #endif
         }
         
         void DoSetSize(int32 x, int32 y, int32 width, int32 height, int32 sizeFlags = wxSIZE_AUTO) override {
@@ -157,21 +157,21 @@ namespace xtd {
         
         void DoGetClientSize(int32* width, int32* height) const override {
           wxPanel::DoGetSize(width, height);
-#if defined(__WXOSX__)
+          #if defined(__WXOSX__)
           *width = *width - GetClientAreaOrigin().x - inner_margin - 2;
           *height = *height - GetClientAreaOrigin().y - inner_margin - 2;
-#else
+          #else
           *width = *width - GetClientAreaOrigin().x - inner_margin;
           *height = *height - GetClientAreaOrigin().y - inner_margin;
-#endif
+          #endif
         }
         
         void DoSetClientSize(int32 width, int32 height) override {
-#if defined(__WXOSX__)
+          #if defined(__WXOSX__)
           DoSetSize(GetPosition().x, GetPosition().y, width + GetClientAreaOrigin().x + inner_margin + 2, height + GetClientAreaOrigin().y + inner_margin + 2);
-#else
+          #else
           DoSetSize(GetPosition().x, GetPosition().y, width + GetClientAreaOrigin().x + inner_margin, height + GetClientAreaOrigin().y + inner_margin);
-#endif
+          #endif
         }
         
       private:
@@ -207,9 +207,9 @@ namespace xtd {
           long wx_style = 0;
           return wx_style;
         }
-
+        
         wxWindow* main_control() const override { return control()->GetChildren()[0]; }
-
+        
         void SetLabel(const wxString& label) override {
           auto caption = label;
           #if defined(__WXOSX__)

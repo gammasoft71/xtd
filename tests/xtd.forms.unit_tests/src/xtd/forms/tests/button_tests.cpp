@@ -87,7 +87,7 @@ namespace xtd::forms::tests {
       assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons(), csf_);
       // The following test may fail: The user can place the mouse in the upper left position of the screen {0, 0}...
       // assert::are_not_equal(drawing::point::empty, forms::control::mouse_position(), csf_);
-
+      
       assert::is_false(button.auto_ellipsis(), csf_);
       assert::are_equal(flat_button_appearance(), button.flat_appearance(), csf_);
       assert::are_equal(flat_style::standard, button.flat_style(), csf_);
@@ -97,7 +97,7 @@ namespace xtd::forms::tests {
       assert::are_equal(image_list::empty, button.image_list(), csf_);
       assert::are_equal(content_alignment::middle_center, button.text_align(), csf_);
     }
-
+    
     void test_method_(perform_click_form_button) {
       form form;
       button_for_test button;

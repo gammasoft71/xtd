@@ -92,7 +92,7 @@ namespace xtd {
       /// @brief Return true if dark mode is enabled for the application; otherwise return false.
       /// @return True is light mode enabled; otherwise false.
       static bool light_mode_enabled() noexcept;
-
+      
       /// @brief Gets the executable name for the executable file that started the application, including the executable extension.
       /// @return The executable name and executable name for the executable file that started the application.<br><br>
       static xtd::ustring executable_name() noexcept;
@@ -160,13 +160,13 @@ namespace xtd {
        /// @remarks Data stored in this key is part of user profile that is enabled for roaming. A roaming user works on more than one computer in a network. The user profile for a roaming user is kept on a server on the network and is loaded onto a system when the user logs on. For a user profile to be considered for roaming, the operating system must support roaming profiles and it must be enabled.
        static microsoft::win32::registry_key user_app_data_registry();
        */
-
+      
       /// @brief Gets a value that indicates whether system controls are enabled for the application.
       /// @return true if system_control are enabled; otherwise, false.
       /// @remarks The system_controls can be enabled by calling enable_xtd::forms::application::system_controls.
       static bool use_system_controls() noexcept;
       
-
+      
       /// @brief Gets a value that indicates whether visual styles are enabled for the application.
       /// @return true if visual styles are enabled; otherwise, false.
       /// @remarks The visual styles can be enabled by calling enable_xtd::forms::application::visual_styles.
@@ -233,7 +233,7 @@ namespace xtd {
       static event<application, delegate<void(const event_args&)>> thread_exit;
       /// @}
       
-     /// @name Methods
+      /// @name Methods
       
       /// @{
       /// @brief Adds a message filter to monitor Windows messages as they are routed to their destinations.
@@ -247,7 +247,7 @@ namespace xtd {
       /// @remarks This method has an effect only on non Windows operating system.
       /// @warning You must call this method before xtd::forms::application::run.
       static void disable_font_size_correction();
-
+      
       /// @brief Processes all Windows messages currently in the message queue.
       /// @remarks When you run a Windows form, it creates the new form, which then waits for events to handle. Each time the form handles an event, it processes all the code associated with that event. All other events wait in the queue. While your code handles the event, your application does not respond. For example, the window does not repaint if another window is dragged on top.
       /// @remarks If you call do_events in your code, your application can handle the other events. For example, if you have a form that adds data to a list_box and add do_events to your code, your form repaints when another window is dragged over it. If you remove do_events from your code, your form will not repaint until the click event handler of the button is finished executing.
@@ -289,7 +289,7 @@ namespace xtd {
       /// @remarks This method has an effect only on Gtk.
       /// @warning You must call this method before xtd::forms::application::run.
       static void enable_system_font_size();
-
+      
       /// @brief Enables visual styles for the application.
       /// @remarks This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, enable_visual_styles() must be called before creating any controls in the application; typically, enable_visual_styles() is the first line in the Main function. A separate manifest is not required to enable visual styles when calling enable_visual_styles().
       /// @remarks This method has an effect only on Windows.

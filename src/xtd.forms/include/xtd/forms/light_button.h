@@ -186,7 +186,7 @@ namespace xtd {
       
       /// @{
       forms::create_params create_params() const noexcept override;
-
+      
       /// @brief Gets state.
       /// @return One of xtd::forms::visual_styles::push_button_state values.
       xtd::forms::visual_styles::check_box_state state() const noexcept;
@@ -224,7 +224,7 @@ namespace xtd {
       void wm_mouse_double_click(message& message);
       void wm_mouse_down(message& message);
       void wm_mouse_up(message& message);
- 
+      
       std::shared_ptr<data> data_;
     };
   }

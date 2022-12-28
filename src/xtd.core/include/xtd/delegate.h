@@ -89,7 +89,7 @@ namespace xtd {
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The parameter list.
     /// @return result_t The return value.
-    result_t invoke() const { return operator ()(); }
+    result_t invoke() const { return operator()(); }
     
     /// @brief Concatenates the invocation lists of an array of delegates.
     /// @param delegates The array of delegates to combine.
@@ -123,14 +123,14 @@ namespace xtd {
     bool equals(const delegate& delegate) const noexcept override {
       if (data_->functions.size() != delegate.data_->functions.size())
         return false;
-      
+        
       for (size_t i = 0; i < data_->functions.size(); i++)
         if (!are_equals(data_->functions[i], delegate.data_->functions[i]))
           return false;
-      
+          
       return true;
     }
-
+    
     /// @brief Return if the delegate is empty.
     /// @return bool Return true if delegate is empty; otherwise false.
     bool is_empty() const noexcept { return data_->functions.size() == 0; }
@@ -184,7 +184,7 @@ namespace xtd {
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The parameter list.
     /// @return result_t The return value.
-    result_t operator ()() const {
+    result_t operator()() const {
       if (data_->functions.size() == 0) return result_t();
       
       for (size_t i = 0; i < data_->functions.size() - 1; i++) {
@@ -284,7 +284,7 @@ namespace xtd {
       std::vector<std::function <result_t()>> no_arguments_functions;
       std::vector<std::function <result_t(arguments_t...)>> functions;
     };
-
+    
   public:
     /// @name Alias
     
@@ -464,7 +464,7 @@ namespace xtd {
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The parameter list.
     /// @return result_t The return value.
-    result_t invoke(arguments_t... arguments) const { return operator ()(arguments...); }
+    result_t invoke(arguments_t... arguments) const { return operator()(arguments...); }
     
     /// @brief Concatenates the invocation lists of an array of delegates.
     /// @param delegates The array of delegates to combine.
@@ -502,18 +502,18 @@ namespace xtd {
     bool equals(const delegate& delegate) const noexcept override {
       if (data_->functions.size() != delegate.data_->functions.size() || data_->no_arguments_functions.size() != delegate.data_->no_arguments_functions.size())
         return false;
-      
+        
       for (size_t i = 0; i < data_->no_arguments_functions.size(); i++)
         if (!are_equals(data_->no_arguments_functions[i], delegate.data_->no_arguments_functions[i]))
           return false;
-      
+          
       for (size_t i = 0; i < data_->functions.size(); i++)
         if (!are_equals(data_->functions[i], delegate.data_->functions[i]))
           return false;
-      
+          
       return true;
     }
-
+    
     /// @brief Return if the delegate is empty.
     /// @return bool Return true if delegate is empty; otherwise false.
     bool is_empty() const noexcept { return data_->functions.size() == 0 && data_->no_arguments_functions.size() == 0; }
@@ -587,7 +587,7 @@ namespace xtd {
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The parameter list.
     /// @return result_t The return value.
-    result_t operator ()(arguments_t... arguments) const {
+    result_t operator()(arguments_t... arguments) const {
       if (data_->no_arguments_functions.size() == 0 && data_->functions.size() == 0) return result_t();
       
       if (data_->no_arguments_functions.size()) {
@@ -749,7 +749,7 @@ namespace xtd {
           return iterator;
       return end;
     }
-
+    
     std::shared_ptr<data> data_ = std::make_shared<data>();
   };
 }

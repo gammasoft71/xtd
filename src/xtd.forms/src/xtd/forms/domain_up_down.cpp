@@ -188,14 +188,14 @@ void domain_up_down::wm_scroll_control(message& message) {
   }
 }
 
-void domain_up_down::on_items_item_added(size_t pos, const item & item) {
+void domain_up_down::on_items_item_added(size_t pos, const item& item) {
   if (is_handle_created()) native::domain_up_down::insert_item(handle(), pos, item.value());
   domain_up_down::item selected;
   if (data_->selected_index != npos && data_->selected_index < data_->items.size()) selected = data_->items[data_->selected_index];
   this->selected_item(selected);
 }
 
-void domain_up_down::on_items_item_removed(size_t pos, const item & item) {
+void domain_up_down::on_items_item_removed(size_t pos, const item& item) {
   if (is_handle_created()) native::domain_up_down::delete_item(handle(), pos);
   
   domain_up_down::item selected;
@@ -203,7 +203,7 @@ void domain_up_down::on_items_item_removed(size_t pos, const item & item) {
   this->selected_item(selected);
 }
 
-void domain_up_down::on_items_item_updated(size_t pos, const item & item) {
+void domain_up_down::on_items_item_updated(size_t pos, const item& item) {
   static bool update_disabled = false;
   if (update_disabled) return;
   if (is_handle_created()) native::domain_up_down::update_item(handle(), pos, item.value());

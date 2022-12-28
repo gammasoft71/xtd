@@ -22,20 +22,20 @@ namespace {
   
   float points_to_native_font_size_correction(float size) {
     if (!__enable_font_size_correction__) return size;
-#if defined(__WXOSX__)
+    #if defined(__WXOSX__)
     return size / dpi() * 96.0f;
-#elif defined (__WXGTK__)
+    #elif defined (__WXGTK__)
     return size / dpi() * 92.0f;
-#endif
+    #endif
     return size;
   }
   float native_font_size_correction_to_points(float size) {
     if (!__enable_font_size_correction__) return size;
-#if defined(__WXOSX__)
+    #if defined(__WXOSX__)
     return size / 96.0f * dpi();
-#elif defined (__WXGTK__)
+    #elif defined (__WXGTK__)
     return size / 92.0f * dpi();
-#endif
+    #endif
     return size;
   }
 }

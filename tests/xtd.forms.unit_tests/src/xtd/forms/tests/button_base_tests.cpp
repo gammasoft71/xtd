@@ -13,20 +13,20 @@ namespace xtd::forms::tests {
     class button_base_for_test : public button_base {
     public:
       button_base_for_test() = default;
-
+      
       bool on_image_changed_raised = false;
-      void on_image_changed(const xtd::event_args &e) override {
+      void on_image_changed(const xtd::event_args& e) override {
         button_base::on_image_changed(e);
         on_image_changed_raised = true;
       }
-
+      
       using button_base::default_back_color;
       using button_base::default_cursor;
       using button_base::default_font;
       using button_base::default_fore_color;
       using button_base::default_size;
     };
-
+    
   public:
     void test_method_(constructor) {
       button_base_for_test button;
@@ -156,7 +156,7 @@ namespace xtd::forms::tests {
       assert::are_equal(xtd::forms::control_appearance::standard, button.control_appearance(), csf_);
       assert::are_equal(xtd::forms::flat_style::standard, button.flat_style(), csf_);
     }
-
+    
     void test_method_(flat_appearance_without_parent) {
       button_base_for_test button;
       auto appearance = flat_button_appearance().border_color(drawing::color::spring_green);
@@ -174,13 +174,13 @@ namespace xtd::forms::tests {
       assert::are_equal(appearance, button.flat_appearance(), csf_);
       assert::are_equal(drawing::color::spring_green, button.flat_appearance().border_color(), csf_);
     }
-
+    
     void test_method_(flat_style_without_parent) {
       button_base_for_test button;
       button.flat_style(xtd::forms::flat_style::flat);
       assert::are_equal(xtd::forms::flat_style::flat, button.flat_style(), csf_);
       assert::are_equal(xtd::forms::control_appearance::standard, button.control_appearance(), csf_);
-
+      
       button.flat_style(xtd::forms::flat_style::system);
       assert::are_equal(xtd::forms::flat_style::system, button.flat_style(), csf_);
       assert::are_equal(xtd::forms::control_appearance::system, button.control_appearance(), csf_);
@@ -198,7 +198,7 @@ namespace xtd::forms::tests {
       assert::are_equal(xtd::forms::flat_style::system, button.flat_style(), csf_);
       assert::are_equal(xtd::forms::control_appearance::system, button.control_appearance(), csf_);
     }
-
+    
     void test_method_(image_changed) {
       bool image_changed_raised = false;
       button_base_for_test button;

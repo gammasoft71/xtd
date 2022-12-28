@@ -317,7 +317,7 @@ namespace xtd {
         xtd::forms::style_sheets::user_control user_control(xtd::forms::style_sheets::pseudo_state state) const noexcept;
         /// @brief Gets the style sheet user_control collection of this instance.
         /// @return The style sheet controls collection.
-        const user_controls_t& user_controls() const noexcept;        
+        const user_controls_t& user_controls() const noexcept;
         /// @}
         
         /// @name Methods
@@ -479,11 +479,11 @@ namespace xtd {
         bool try_parse_hsla_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_system_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_uri(const xtd::ustring& text, xtd::uri& result) const noexcept;
-
+        
         void system_colors_(const xtd::forms::style_sheets::system_colors& system_colors);
         void theme_(const xtd::forms::style_sheets::theme& theme);
         void theme_name_(const xtd::ustring& name);
-
+        
         static style_sheet current_style_sheet_;
         static style_sheets_t style_sheets_;
         static style_sheet_names_t style_sheet_names_;

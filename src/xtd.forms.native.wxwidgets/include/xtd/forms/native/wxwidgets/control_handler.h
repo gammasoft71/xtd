@@ -87,7 +87,7 @@ namespace xtd {
           if (!control_) return;
           control_->SetPosition(location);
         }
-
+        
         virtual void SetClientSize(int32 width, int32 height) {
           if (!control_) return;
           control_->SetClientSize(width, height);
@@ -106,7 +106,7 @@ namespace xtd {
         int32 LayoutSuspendedCount() const noexcept {return suspended_count_;}
         void IncrementLayoutSuspended() noexcept {++suspended_count_;}
         void DecrementLayoutSuspended() noexcept {if (suspended_count_ > 0) --suspended_count_;}
-
+        
         static long common_window_style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = 0;
           

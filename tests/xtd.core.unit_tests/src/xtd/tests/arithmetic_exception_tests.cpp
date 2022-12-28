@@ -16,7 +16,7 @@ namespace xtd::tests {
     void test_cleanup_(test_cleanup) {
       system_exception::enable_stack_trace(stack_trace_enabled);
     }
-
+    
     void test_method_(default_creator) {
       arithmetic_exception e;
       assert::are_equal_(std::system_category(), e.error_code().category());

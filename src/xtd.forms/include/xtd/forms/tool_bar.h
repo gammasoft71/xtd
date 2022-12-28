@@ -140,7 +140,7 @@ namespace xtd {
       /// @return Current tool_bar instance.
       /// @remarks If the xtd::forms::tool_bar::button_size is not set, it is set to its default. Alternatively, a xtd::forms::tool_bar::size is computed to accommodate the largest xtd::drawing::image and text assigned to the xtd::forms::tool_bar_button controls.
       virtual tool_bar& button_size(std::nullptr_t value);
-            
+      
       /// @brief Gets a value indicating whether the toolbar displays a divider.
       /// @return true if the toolbar displays a divider; otherwise, false. The default is true.
       /// @remarks Dividers are displayed to help distinguish the toolbar from adjacent controls, such as menus. A divider is displayed as a raised edge along the top of the xtd::forms::tool_bar control.

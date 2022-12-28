@@ -566,29 +566,29 @@ namespace {
       if (frequency < 37 || frequency > 32767) return false;
       
       dispatch_semaphore_wait(idle_semaphore, DISPATCH_TIME_FOREVER);
-
+      
       if (!initialized) {
         initialized = true;
         AudioComponentDescription audio_component_description {kAudioUnitType_Output, kAudioUnitSubType_DefaultOutput, kAudioUnitManufacturer_Apple, 0, 0};
         AudioComponentInstanceNew(AudioComponentFindNext(nullptr, &audio_component_description), &audio_unit);
-
+        
         AURenderCallbackStruct au_render_callback_struct {&audio::au_renderer_proc, nullptr};
         AudioUnitSetProperty(audio_unit, kAudioUnitProperty_SetRenderCallback, kAudioUnitScope_Input, 0, &au_render_callback_struct, sizeof(au_render_callback_struct));
-
+        
         AudioStreamBasicDescription audio_stream_basic_description {simple_rate, kAudioFormatLinearPCM, 0, 1, 1, 1, 1, bits_per_channel, 0};
         AudioUnitSetProperty(audio_unit, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &audio_stream_basic_description, sizeof(audio_stream_basic_description));
-
+        
         AudioUnitInitialize(audio_unit);
         AudioOutputUnitStart(audio_unit);
       }
-
+      
       beep_freq = frequency;
       beep_samples = duration * bits_per_channel;
-
+      
       dispatch_semaphore_signal(start_playing_semaphore);
-
+      
       dispatch_semaphore_wait(end_playing_semaphore, DISPATCH_TIME_FOREVER);
-
+      
       //AudioOutputUnitStop(audio_unit);
       //AudioUnitUninitialize(audio_unit);
       dispatch_semaphore_signal(idle_semaphore);
@@ -602,7 +602,7 @@ namespace {
         dispatch_semaphore_wait(start_playing_semaphore, DISPATCH_TIME_FOREVER);
         counter = beep_samples;
       }
-
+      
       for (xtd::uint32 frames_index = 0; frames_index < in_number_frames; ++frames_index) {
         static unsigned char theta = 0;
         reinterpret_cast<unsigned char*>(io_data->mBuffers[0].mData)[frames_index] = (beep_freq * 255 * theta++ / simple_rate);
@@ -615,7 +615,7 @@ namespace {
       }
       return 0;
     }
-  
+    
     inline static constexpr const xtd::int32 simple_rate = 8000;
     inline static constexpr const xtd::int32 bits_per_channel = 8;
     inline static dispatch_semaphore_t idle_semaphore = dispatch_semaphore_create(1);

@@ -91,7 +91,7 @@ namespace xtd {
       if (to_int(value_) < to_int(value.value_)) return -1;
       return 1;
     }
-        
+    
     /// @brief Converts this instance to byte.
     /// @return A new xtd::byte object converted from this instance.
     xtd::byte to_byte() const noexcept {return static_cast<xtd::byte>(value_);}
@@ -196,7 +196,7 @@ namespace xtd {
       std::vector<xtd::ustring> values = value.split({','});
       for (xtd::ustring& str : values)
         str = str.trim_start(' ').trim_end(' ');
-      
+        
       if (values.size() == 1) {
         for (auto item : enum_object<enum_type>().entries()) {
           if (xtd::ustring::compare(value, item.second, ignore_case) == 0)
@@ -444,7 +444,7 @@ namespace xtd {
     static std::vector<int32> get_values_as_int32() noexcept {
       std::vector<int32> values;
       std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.push_back(enum_object<enum_t>(entry.first).to_int32());});
-     return values;
+      return values;
     }
     
     /// @brief Retrieves an array of the values of the constants in a specified enumeration.

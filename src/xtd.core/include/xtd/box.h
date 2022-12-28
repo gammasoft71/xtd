@@ -211,23 +211,23 @@ namespace xtd {
   
   template<typename type_t>
   inline type_t unboxing(xtd::enum_object<type_t>& value) noexcept {return value.value();}
-
+  
   inline const object& unboxing(const object& value) noexcept {return value;}
   inline object& unboxing(object& value) noexcept {return value;}
-
+  
   inline const char* unboxing(const ustring& value) noexcept {return value.c_str();}
   inline const char* unboxing(ustring& value) noexcept {return value.c_str();}
-
+  
   template<typename char_t>
   inline const char_t* unboxing(const ustring& value) {throw invalid_cast_exception("Invalid character type");}
   template<typename char_t>
   inline const char_t* unboxing(ustring& value) {throw invalid_cast_exception("Invalid character type");}
-
+  
   template<>
   inline const char* unboxing<char>(const ustring& value) {return value.c_str();}
   template<>
   inline const char* unboxing<char>(ustring& value) {return value.c_str();}
-
+  
   template<>
   inline const char8* unboxing<char8>(const ustring& value) {
     thread_local static std::u8string result;
@@ -240,7 +240,7 @@ namespace xtd {
     result = convert_string::to_u8string(value);
     return result.c_str();
   }
-
+  
   template<>
   inline const char16* unboxing<char16>(const ustring& value) {
     thread_local static std::u16string result;
@@ -253,7 +253,7 @@ namespace xtd {
     result = convert_string::to_u16string(value);
     return result.c_str();
   }
-
+  
   template<>
   inline const char32* unboxing<char32>(const ustring& value) {
     thread_local static std::u32string result;
@@ -266,7 +266,7 @@ namespace xtd {
     result = convert_string::to_u32string(value);
     return result.c_str();
   }
-
+  
   template<>
   inline const wchar* unboxing<wchar>(const ustring& value) {
     thread_local static std::wstring result;
@@ -279,7 +279,7 @@ namespace xtd {
     result = convert_string::to_wstring(value);
     return result.c_str();
   }
-
+  
   /*
   template<typename type_t>
   inline const type_t& unboxing(const type_t& value) noexcept {
@@ -304,7 +304,7 @@ namespace xtd {
     return value;
   }
    */
-
+  
   template<typename type_t>
   inline std::string to_string(const xtd::box<type_t>& value, const std::string& fmt, const std::locale& loc) {
     return value.to_string(fmt);

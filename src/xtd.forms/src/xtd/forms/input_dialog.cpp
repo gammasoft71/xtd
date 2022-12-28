@@ -112,7 +112,7 @@ struct input_dialog::data {
   bool word_wrap = true;
 };
 
-input_dialog::input_dialog() :data_(std::make_shared<data>()) {
+input_dialog::input_dialog() : data_(std::make_shared<data>()) {
 }
 
 xtd::forms::character_casing input_dialog::character_casing() const noexcept {

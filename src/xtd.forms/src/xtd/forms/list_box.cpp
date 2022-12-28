@@ -219,14 +219,14 @@ void list_box::wnd_proc(message& message) {
   }
 }
 
-void list_box::on_items_item_added(size_t pos, const item & item) {
+void list_box::on_items_item_added(size_t pos, const item& item) {
   if (is_handle_created()) native::list_box::insert_item(handle(), pos, item.value());
   list_box::item selected;
   if (selected_index() != npos && selected_index() < data_->items.size()) selected = data_->items[selected_index()];
   this->selected_item(selected);
 }
 
-void list_box::on_items_item_removed(size_t pos, const item & item)   {
+void list_box::on_items_item_removed(size_t pos, const item& item)   {
   if (is_handle_created()) native::list_box::delete_item(handle(), pos);
   list_box::item selected;
   if (selected_index() != npos && selected_index() < data_->items.size()) selected = data_->items[selected_index()];
@@ -236,7 +236,7 @@ void list_box::on_items_item_removed(size_t pos, const item & item)   {
     this->selected_index(npos);
 }
 
-void list_box::on_items_item_updated(size_t pos, const item & item)   {
+void list_box::on_items_item_updated(size_t pos, const item& item)   {
   if (is_handle_created()) native::list_box::update_item(handle(), pos, item.value());
   list_box::item selected;
   if (selected_index() != npos && selected_index() < data_->items.size()) selected = data_->items[selected_index()];

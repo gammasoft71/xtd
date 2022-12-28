@@ -160,11 +160,11 @@ intptr image::create(intptr image, int32 width, int32 height) {
   toolkit::initialize(); // Must be first
   if (image == 0) return 0;
   wxImage* result = new wxImage(*reinterpret_cast<wxImage*>(image));
-#if defined(__WXMSW__)
-    result->Rescale(width, height, wxIMAGE_QUALITY_BILINEAR);
-#else
+  #if defined(__WXMSW__)
+  result->Rescale(width, height, wxIMAGE_QUALITY_BILINEAR);
+  #else
   result->Rescale(width, height);
-#endif
+  #endif
   return reinterpret_cast<intptr>(result);
 }
 

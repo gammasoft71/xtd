@@ -453,7 +453,7 @@ namespace xtd {
       /// @brief A system-defined brush object.
       static xtd::drawing::solid_brush yellow_green();
       /// @}
-
+      
       /// @name Public methods
       
       /// @{

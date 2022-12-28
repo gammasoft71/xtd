@@ -52,14 +52,14 @@ namespace xtd {
       
       using control::control_appearance;
       control& control_appearance(forms::control_appearance value) override;
-
+      
       /// @brief Gets the appearance of the border and the colors used to indicate check state and mouse state.
       /// @return The xtd::forms::flat_button_appearance appearance.
       virtual const xtd::forms::flat_button_appearance& flat_appearance() const noexcept;
       /// @brief Sets the appearance of the border and the colors used to indicate check state and mouse state.
       /// @param value The xtd::forms::flat_button_appearance appearance.
       virtual xtd::forms::button_base& flat_appearance(const xtd::forms::flat_button_appearance& value);
-
+      
       /// @brief Gets the flat style appearance of the button control.
       /// @return One of the xtd::forms::flat_style values. The default value is xtd::forms::flat_style::standard.
       virtual xtd::forms::flat_style flat_style() const noexcept;
@@ -107,7 +107,7 @@ namespace xtd {
       /// @brief Sets the image_list that contains the image displayed on a button control.
       /// @return An xtd::drawing::image_list. The default value is xtd::drawing::image_list::empty.
       virtual button_base& image_list(const forms::image_list& value);
-
+      
       /// @brief Gets the alignment of the text on the button control.
       /// @return One of the content_alignment values. The default is middle_center.
       virtual content_alignment text_align() const noexcept ;
@@ -133,7 +133,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the ButtonBase class.
       button_base() noexcept;
       /// @}
-
+      
       /// @name Protected properties
       
       /// @{
@@ -152,7 +152,7 @@ namespace xtd {
       /// @remarks To specify the default button of a form, set the xtd::forms::form::accept_button property of the form to the desired button.
       button_base& is_default(bool value);
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{
@@ -179,7 +179,7 @@ namespace xtd {
       void on_resize(const xtd::event_args& e) override;
       void on_text_changed(const xtd::event_args& e) override;
       /// @}
-
+      
       /// @cond
       xtd::drawing::rectangle compute_image_bounds();
       xtd::drawing::rectangle compute_image_bounds(const xtd::drawing::rectangle& rectangle);

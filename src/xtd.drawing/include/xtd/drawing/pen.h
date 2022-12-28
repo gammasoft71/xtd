@@ -34,7 +34,7 @@ namespace xtd {
     /// @ingroup xtd_drawing drawing
     class drawing_export_ pen final : public xtd::object, public xtd::iequatable<pen> {
       struct data;
-
+      
     public:
       /// @name Constructors
       
@@ -206,7 +206,7 @@ namespace xtd {
       
       /// @{
       bool equals(const xtd::drawing::pen& value) const noexcept override;
-
+      
       xtd::ustring to_string() const noexcept override;
       /// @}
       
@@ -216,7 +216,7 @@ namespace xtd {
       void color_(const xtd::drawing::color& color);
       void create_data();
       void recreate_handle();
-
+      
       std::shared_ptr<data> data_;
     };
   }

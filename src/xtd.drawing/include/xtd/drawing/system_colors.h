@@ -42,11 +42,11 @@ namespace xtd {
       /// @brief Gets a xtd::drawing::color structure that is the color of the background of the active window's title bar.
       /// @return A xtd::drawing::color that is the color of the active window's title bar.
       static xtd::drawing::color active_caption();
-
+      
       /// @brief Gets a xtd::drawing::color structure that is the color of the text in the active window's title bar.
       /// @return A xtd::drawing::color that is the color of the text in the active window's title bar.
       static xtd::drawing::color active_caption_text();
-
+      
       /// @brief Gets a xtd::drawing::color structure that is the color of a active text.
       /// @return A xtd::drawing::color that is the color of a active text.
       /// @remark The active text color is the text color of an html link text when mouse down.
@@ -188,7 +188,7 @@ namespace xtd {
       /// @return A xtd::drawing::color that is the color of a link text.
       /// @remark The visited text color is the text color of an html visited link text.
       static xtd::drawing::color visited_text();
-
+      
       /// @brief Gets a xtd::drawing::color structure that is the color of the background in the client area of a window.
       /// @return A xtd::drawing::color that is the color of the background in the client area of a window.
       static xtd::drawing::color window();
@@ -201,7 +201,7 @@ namespace xtd {
       /// @return A xtd::drawing::color that is the color of the text in the client area of a window.
       static xtd::drawing::color window_text();
       /// @}
-
+      
       /// @name Public methods
       
       /// @{

@@ -66,7 +66,7 @@ namespace xtd {
       
       /// @{
       bool equals(const enable_debug& value) const noexcept override;
-
+      
       /// @brief Gets enable_debug flags status.
       /// @return true if enable_debug flags is on; otherwise false.
       static bool get(const enable_debug& flags);

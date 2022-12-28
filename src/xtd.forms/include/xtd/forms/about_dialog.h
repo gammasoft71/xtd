@@ -49,7 +49,7 @@ namespace xtd {
     /// @include about_dialog_system.cpp
     class forms_export_ about_dialog final : public component {
       struct data;
-
+      
     public:
       /// @name Alias
       

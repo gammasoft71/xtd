@@ -417,7 +417,7 @@ namespace xtd {
       /// xtd::tunit::string_valid::matches("^Salut", "Hello, World!", xtd::ustring("User message..."), csf_); // test fails.
       /// @endcode
       static void matches(const xtd::ustring& regex_pattern, const xtd::ustring& actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
-
+      
       /// @brief Validates that string starts with a specific item.
       /// @param item object to verify.
       /// @param collection that contains object.

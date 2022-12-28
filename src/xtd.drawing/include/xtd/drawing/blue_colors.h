@@ -26,7 +26,7 @@ namespace xtd {
     public:
       /// @name Public properties
       
-      /// @{            
+      /// @{
       /// @brief A system-defined color object.
       /// @image html colors_blue.png
       static xtd::drawing::color blue();
@@ -34,7 +34,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_cornflower_blue.png
       static xtd::drawing::color cornflower_blue();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_dark_blue.png
       static xtd::drawing::color dark_blue();
@@ -42,7 +42,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_deep_sky_blue.png
       static xtd::drawing::color deep_sky_blue();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_dodger_blue.png
       static xtd::drawing::color dodger_blue();
@@ -50,7 +50,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_light_blue.png
       static xtd::drawing::color light_blue();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_light_sky_blue.png
       static xtd::drawing::color light_sky_blue();
@@ -58,11 +58,11 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_light_steel_blue.png
       static xtd::drawing::color light_steel_blue();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_medium_blue.png
       static xtd::drawing::color medium_blue();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_midnight_blue.png
       static xtd::drawing::color midnight_blue();
@@ -74,7 +74,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_powder_blue.png
       static xtd::drawing::color powder_blue();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_royal_blue.png
       static xtd::drawing::color royal_blue();
@@ -82,18 +82,18 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_sky_blue.png
       static xtd::drawing::color sky_blue();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_steel_blue.png
       static xtd::drawing::color steel_blue();
       /// @}
-
+      
       /// @name Public methods
       
       /// @{
       /// @brief Gets an array of colors.
       static const std::vector<xtd::drawing::color>& get_colors();
-
+      
       /// @brief Gets an array of color names.
       static const std::vector<xtd::ustring>& get_color_names();
       /// @}

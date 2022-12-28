@@ -166,7 +166,7 @@ namespace xtd {
     /// }
     /// @endcode
     virtual void on_completed() noexcept = 0;
-
+    
     /// @brief Notifies the observer that the provider has experienced an error condition.
     /// @param error n object that provides additional information about the error.
     /// @par Examples
@@ -177,7 +177,7 @@ namespace xtd {
     /// }
     /// @endcode
     virtual void on_error(const std::exception& error) noexcept = 0;
-
+    
     /// @brief Provides the observer with new data.
     /// @param value The current notification information.
     /// @par Examples

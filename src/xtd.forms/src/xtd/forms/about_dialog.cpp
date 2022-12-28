@@ -265,7 +265,7 @@ struct about_dialog::data {
   xtd::ustring license;
 };
 
-about_dialog::about_dialog() : data_(std::make_shared<data>()) {  
+about_dialog::about_dialog() : data_(std::make_shared<data>()) {
 }
 
 const about_dialog::artist_collection& about_dialog::artists() const noexcept {

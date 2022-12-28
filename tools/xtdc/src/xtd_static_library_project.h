@@ -5,7 +5,7 @@ namespace xtdc_command {
   class xtd_static_library_project : public base_project {
   public:
     explicit xtd_static_library_project(const xtd::ustring& path) : base_project(path) {}
-
+    
     void create(const xtd::ustring& name, bool create_solution) const {
       xtd::io::directory::create_directory(create_solution ? xtd::io::path::combine(current_path(), name, "include") : xtd::io::path::combine(current_path(), "include"));
       xtd::io::directory::create_directory(create_solution ? xtd::io::path::combine(current_path(), name, "properties") : xtd::io::path::combine(current_path(), "properties"));

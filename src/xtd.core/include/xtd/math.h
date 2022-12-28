@@ -222,7 +222,7 @@ namespace xtd {
     /// @param max The upper bound of the result.
     /// @return value if min <= value <= max.<br>-or-<br>min if value < min.<br>>-or-<br>max if max < value.
     static xtd::ulong clamp(xtd::ulong value, xtd::ulong min, xtd::ulong max) noexcept;
-
+    
     /// @brief Returns the cosine of the specified angle.
     /// @param value An angle, measured in radians.
     /// @return The cosine of value. If value is equal to xtd::math::NaN, xtd::math::negative_infinity, or xtd::math::positive_infinity, this method returns xtd::math::NaN.

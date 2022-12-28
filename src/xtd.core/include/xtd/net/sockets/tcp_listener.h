@@ -62,7 +62,7 @@ namespace xtd {
         };
         
         struct data;
-
+        
       public:
         /// @name Constructors
         
@@ -209,7 +209,7 @@ namespace xtd {
         xtd::net::sockets::tcp_client end_accept_tcp_client(std::shared_ptr<xtd::iasync_result> async_result);
         
         bool equals(const tcp_listener& s) const noexcept override;
-
+        
         /// @brief Determines if there are pending connection requests.
         /// @return true if connections are pending; otherwise, false.
         /// @exception xtd::invalid_operation_exception The listener has not been started with a call to xtd::net::sockets::tcp_listener::start.

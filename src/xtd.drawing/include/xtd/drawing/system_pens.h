@@ -33,7 +33,7 @@ namespace xtd {
       /// @brief Gets a pen that is the color of the accent text.
       /// @return A xtd::drawing::pen that is the color of the accent ext.
       static xtd::drawing::pen accent_text();
-
+      
       /// @brief Gets a pen that is the color of the active border.
       /// @return A xtd::drawing::pen that is the color of the active window's border.
       static xtd::drawing::pen active_border();
@@ -49,7 +49,7 @@ namespace xtd {
       /// @brief Gets a pen that is the color of the active text.
       /// @return A xtd::drawing::pen that is the color of the active text.
       static xtd::drawing::pen active_text();
-
+      
       /// @brief Gets a pen that is the color of the app workspace.
       /// @return A xtd::drawing::pen that is the color of the app workspace.
       static xtd::drawing::pen app_workspace();
@@ -65,7 +65,7 @@ namespace xtd {
       /// @brief Gets a pen that is the color of the button shadow.
       /// @return A xtd::drawing::pen that is the color of the button shadow.
       static xtd::drawing::pen button_shadow();
-
+      
       /// @brief Gets a pen that is the color of the control.
       /// @return A xtd::drawing::pen that is the color of the control.
       static xtd::drawing::pen control();
@@ -101,7 +101,7 @@ namespace xtd {
       /// @brief Gets a pen that is the color of the gradient inactive caption.
       /// @return A xtd::drawing::pen that is the color of the gradient inactive caption.
       static xtd::drawing::pen gradient_inactive_caption();
-
+      
       /// @brief Gets a pen that is the color of the gray text.
       /// @return A xtd::drawing::pen that is the color of the gray text.
       static xtd::drawing::pen gray_text();
@@ -141,7 +141,7 @@ namespace xtd {
       /// @brief Gets a pen that is the color of the link text.
       /// @return A xtd::drawing::pen that is the color of the link text.
       static xtd::drawing::pen link_text();
-
+      
       /// @brief Gets a pen that is the color of the menu.
       /// @return A xtd::drawing::pen that is the color of the menu.
       static xtd::drawing::pen menu();
@@ -153,7 +153,7 @@ namespace xtd {
       /// @brief Gets a pen that is the color of the menu highlight.
       /// @return A xtd::drawing::pen that is the color of the menu highlight.
       static xtd::drawing::pen menu_highlight();
-
+      
       /// @brief Gets a pen that is the color of the menu text.
       /// @return A xtd::drawing::pen that is the color of the menu text.
       static xtd::drawing::pen menu_text();
@@ -173,7 +173,7 @@ namespace xtd {
       /// @brief Gets a pen that is the color of the visited text.
       /// @return A xtd::drawing::pen that is the color of the visited text.
       static xtd::drawing::pen visited_text();
-
+      
       /// @brief Gets a pen that is the color of the window.
       /// @return A xtd::drawing::pen that is the color of the window.
       static xtd::drawing::pen window();
@@ -186,7 +186,7 @@ namespace xtd {
       /// @return A xtd::drawing::pen that is the color of the window text.
       static xtd::drawing::pen window_text();
       /// @}
-
+      
       /// @name Public methods
       
       /// @{

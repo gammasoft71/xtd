@@ -362,7 +362,7 @@ void directory::set_last_write_time(const xtd::ustring& path, const xtd::date_ti
   if (native::file_system::set_last_write_time(path, last_write_time.to_time_t()) != 0) throw io_exception(csf_);
 }
 
-void directory::set_permissions(const xtd::ustring &path, xtd::io::file_permissions permissions) {
+void directory::set_permissions(const xtd::ustring& path, xtd::io::file_permissions permissions) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception(csf_);
   if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception(csf_);

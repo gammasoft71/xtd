@@ -84,7 +84,7 @@ namespace xtd {
   /// @brief Represent a pointer or a handle.
   /// @ingroup xtd_core types
   using intptr = intmax_t;
-
+  
   /// @brief Represents a null pointer value.
   /// @par Namespace
   /// xtd
@@ -110,7 +110,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   using sbyte = int_least8_t;
-
+  
   /// @brief Represents a size of any object in bytes
   /// @par Namespace
   /// xtd
@@ -118,7 +118,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   using size = size_t;
-
+  
   /// @brief Represents a 32-bit or 64-bit signed integer.
   /// @par Namespace
   /// xtd
@@ -126,7 +126,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   using slong = __slong__; // Workaround: On linux 64 bits unfortunately 'int_least64_t' is an alias on 'long' and not on 'long long int' as other platforms. In order to avoid conflicts in operator or method overloads, it is necessary to give the type that is not taken into account.
-
+  
   /// @brief Stores information about a type.
   /// @par Namespace
   /// xtd

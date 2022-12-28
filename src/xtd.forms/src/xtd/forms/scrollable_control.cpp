@@ -100,4 +100,4 @@ void scrollable_control::on_layout(const event_args& e) {
     data_->display_rectangle.width(data_->display_rectangle.width() + data_->auto_scroll_margin.width());
     data_->display_rectangle.height(data_->display_rectangle.height() + data_->auto_scroll_margin.height());
   }
-  }
+}

@@ -99,7 +99,7 @@ namespace xtd {
       /// @{
       bool equals(const image_list& value) const noexcept override;
       /// @}
-
+      
     private:
       std::shared_ptr<data> data_;
     };

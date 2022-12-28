@@ -90,7 +90,7 @@ namespace xtd {
         virtual void wx_evt_text(wxEvent& event) = 0;
         virtual void wx_evt_time_changed(wxEvent& event) = 0;
         virtual void wx_evt_togglebutton(wxEvent& event) = 0;
-     };
+      };
     }
   }
 }

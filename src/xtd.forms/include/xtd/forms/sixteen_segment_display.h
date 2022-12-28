@@ -66,7 +66,7 @@ namespace xtd {
       void draw_back_digit(drawing::graphics& graphics) override;
       
       void draw_segment_a(drawing::graphics& graphics, const drawing::color& color) override;
-
+      
       /// @brief Draw segment a1 on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
@@ -78,7 +78,7 @@ namespace xtd {
       virtual void draw_segment_a2(drawing::graphics& graphics, const drawing::color& color);
       
       void draw_segment_d(drawing::graphics& graphics, const drawing::color& color) override;
-
+      
       /// @brief Draw segment d1 on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
@@ -98,8 +98,8 @@ namespace xtd {
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
       void draw_segment_l(drawing::graphics& graphics, const drawing::color& color) override;
-
-      void on_paint(paint_event_args& e) override;      
+      
+      void on_paint(paint_event_args& e) override;
       /// @}
       
     private:

@@ -65,11 +65,11 @@ std::string environment::get_environment_variable(const std::string& variable, i
 
 std::map<std::string, std::string>& environment::get_environment_variables(int_least32_t target) {
   auto& envs = __none_envs__;
-
+  
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
     envs = __process_envs__;
     envs.clear();
-
+    
     for (size_t index = 0; environ[index] != nullptr; index++) {
       std::vector<std::string> key_value = win32::strings::split(environ[index], {'='});
       if (key_value.size() == 2)
@@ -77,11 +77,11 @@ std::map<std::string, std::string>& environment::get_environment_variables(int_l
     }
     return envs;
   }
-
+  
   if (target == ENVIRONMENT_VARIABLE_TARGET_USER || target == ENVIRONMENT_VARIABLE_TARGET_MACHINE) {
     envs = target == ENVIRONMENT_VARIABLE_TARGET_USER ? __user_envs__ : __machine_envs__;
     envs.clear();
-
+    
     HKEY root_key = target == ENVIRONMENT_VARIABLE_TARGET_USER ? HKEY_CURRENT_USER : HKEY_LOCAL_MACHINE;
     std::wstring sub_key = target == ENVIRONMENT_VARIABLE_TARGET_USER ? L"Environment" : L"System\\CurrentControlSet\\Control\\Session Manager\\Environment";
     HKEY environment_key = 0;
@@ -97,7 +97,7 @@ std::map<std::string, std::string>& environment::get_environment_variables(int_l
       result = RegEnumValue(environment_key, index, value.data(), &value_size, nullptr, &data_type, reinterpret_cast<LPBYTE>(data.data()), &data_size);
       if (value[0] != 0) envs.insert({ win32::strings::to_string(value), win32::strings::to_string(data)});
     }
-
+    
     RegCloseKey(environment_key);
     return envs;
   }
@@ -105,9 +105,8 @@ std::map<std::string, std::string>& environment::get_environment_variables(int_l
 }
 
 std::string environment::get_know_folder_path(int_least32_t id) {
-  if (id == CSIDL_HOME) {
+  if (id == CSIDL_HOME)
     return get_environment_variable("HOMEPATH", ENVIRONMENT_VARIABLE_TARGET_PROCESS);
-  }
   DWORD path_size = 65535;
   std::wstring path;
   path.resize(path_size);
@@ -205,7 +204,7 @@ bool environment::has_shutdown_started() {
 }
 
 bool environment::is_processor_arm() {
-  
+
   SYSTEM_INFO system_info {};
   GetNativeSystemInfo(&system_info);
   if ((system_info.wProcessorArchitecture & PROCESSOR_ARCHITECTURE_ARM) == PROCESSOR_ARCHITECTURE_ARM) return true;

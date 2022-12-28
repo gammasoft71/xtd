@@ -20,7 +20,7 @@ struct country::data {
 };
 
 country::country() : data_(std::make_shared<data>()) {
-  
+
 }
 
 country::country(const country& other) : data_(std::make_shared<data>()) {

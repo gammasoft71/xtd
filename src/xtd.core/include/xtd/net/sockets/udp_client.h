@@ -68,7 +68,7 @@ namespace xtd {
         };
         
         struct data;
-
+        
       public:
         /// @name Constructors
         
@@ -365,9 +365,9 @@ namespace xtd {
         /// @remarks To perform this operation synchronously, use the xtd::net::sockets::udp_client::send method.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         size_t end_send(std::shared_ptr<xtd::iasync_result> async_result);
-
+        
         bool equals(const udp_client& s) const noexcept override;
-
+        
         /// @brief Adds a xtd::net::sockets::udp_client to a multicast group.
         /// @param multicast_address The multicast xtd::net::ip_address of the group you want to join.
         /// @exception argument_exception The IP address is not compatible with the xtd::net::sockets::address_family value that defines the addressing scheme of the socket.
@@ -484,7 +484,7 @@ namespace xtd {
         
       private:
         udp_client(const xtd::net::sockets::socket& socket);
-
+        
         std::shared_ptr<data> data_;
       };
     }

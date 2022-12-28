@@ -37,7 +37,7 @@ namespace xtd {
           auto directionVertical = (stringFormats & SF_VERTICAL) == SF_VERTICAL;
           auto measureTrailingSpaces = (stringFormats & SF_MEASURE_TRAILING_SPACES) == SF_MEASURE_TRAILING_SPACES;
           auto rightToLeft = (stringFormats & SF_RIGHT_TO_LEFT) == SF_RIGHT_TO_LEFT;
-
+          
           if (rightToLeft) {
             auto newAlign = static_cast<int32>(align);
             if ((align & wxALIGN_RIGHT) == wxALIGN_RIGHT) {
@@ -49,7 +49,7 @@ namespace xtd {
             }
             align = static_cast<wxAlignment>(newAlign);
           }
-
+          
           if (width == 0 && height == 0) MeasureString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), text, font, width, height, measureTrailingSpaces);
           
           if (directionVertical) {
@@ -60,12 +60,12 @@ namespace xtd {
           
           auto& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
           dc.SetFont(font);
-
+          
           wxArrayString strings;
           if ((stringFormats & SF_NO_WRAP) != SF_NO_WRAP) strings = WrapText(dc, text, font, width, height, directionVertical, measureTrailingSpaces);
           else strings.push_back(text);
           auto string = ToString(dc, FormatString(dc, strings, width, height, hotKeyPrefix, trimming, directionVertical), font, width, height, (stringFormats & SF_LINE_LIMIT) == SF_LINE_LIMIT, directionVertical);
-
+          
           if (brush.is_solid_brush()) DrawStringWithSolidBrush(dc, string, font, brush, x, y, width, height, angle, align, hotKeyPrefix, noClip);
           else DrawStringWithGradientBrush(handle, string, font, brush, x, y, width, height, angle, align, hotKeyPrefix, noClip);
         }
@@ -85,9 +85,9 @@ namespace xtd {
             height += static_cast<float>(lineHeight);
             
             // Workaround : with wxWidgets version <= 3.1.5 width size text is too small on macOS and linux.
-#if !defined(__WXMSW__)
+            #if !defined(__WXMSW__)
             if (font.GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(dc.GetFontMetrics().averageWidth / 2.3f);
-#endif
+            #endif
           }
         }
         
@@ -98,11 +98,11 @@ namespace xtd {
           width = static_cast<float>(std::ceil(widthF));
           height = static_cast<float>(std::ceil(heightF));
         }
-
+        
         static wxString FormatString(wxDC& dc, const wxString& string, float width, int32 hotKeyPrefix, int32 trimming) {
           return TrimString(dc, hotKeyPrefix != HKP_NONE ? RemoveHotKeyPrefixLocations(string) : string, dc.GetFont(), width, trimming);
         }
-
+        
         static wxString TrimString(wxDC& dc, const wxString& string, const wxFont& font, float width, int32 trimming) {
           dc.SetFont(font);
           auto strings = wxSplit(string, '\n');
@@ -119,11 +119,11 @@ namespace xtd {
           }
           return wxJoin(strings, '\n');
         }
-
+        
       private:
         static wxString TrimmingCharacter(wxDC& dc, const wxString& string, const wxFont& font, float width, const wxString& ellips) {
           if (GetTextWidth(dc, string, font, true) < width)  return string;
-
+          
           wxString result;
           for (auto index = 0U; index < string.size(); ++index) {
             if (GetTextWidth(dc, (result + string[index]).Trim() + ellips, font, true) > width) return result + ellips;
@@ -132,7 +132,7 @@ namespace xtd {
           
           return result;
         }
-
+        
         static wxString TrimmingWord(wxDC& dc, const wxString& string, const wxFont& font, float width, const wxString& ellips) {
           if (GetTextWidth(dc, string, font, false) < width) return string;
           
@@ -146,7 +146,7 @@ namespace xtd {
           
           return result;
         }
-
+        
         static wxString TrimmingPath(wxDC& dc, const wxString& string, const wxFont& font, float width, const wxString& ellips) {
           if (GetTextWidth(dc, string, font, true) < width)  return string;
           
@@ -161,7 +161,7 @@ namespace xtd {
           
           return result + xtd::io::path::directory_separator_char() + paths[paths.size() - 1];
         }
-
+        
         static void DrawStringWithSolidBrush(wxDC& dc, const wxString& string, const wxFont& font, const wx_brush& brush, int32 x, int32 y, int32 width, int32 height, float angle, wxAlignment align, int32 hotKeyPrefix, bool noClip) {
           if (!noClip) dc.SetClippingRegion({static_cast<int32>(x), static_cast<int32>(y)}, {static_cast<int32>(width), static_cast<int32>(height)});
           dc.SetTextForeground(brush.get_solid_brush().color);
@@ -170,7 +170,7 @@ namespace xtd {
           else dc.DrawRotatedText(string, x, y, -angle);
           if (!noClip) dc.DestroyClippingRegion();
         }
-
+        
         static void DrawStringWithGradientBrush(intptr handle, const wxString& string, const wxFont& font, const wx_brush& brush, int32 x, int32 y, int32 width, int32 height, float angle, wxAlignment align, int32 hotKeyPrefix, bool noClip) {
           auto maxSize = math::max(width, height);
           wxImage image(x + maxSize, y + maxSize);
@@ -226,14 +226,14 @@ namespace xtd {
           MeasureString(dc, str, font, width, height, true);
           return height;
         }
-
+        
         static int32 GetTextWidth(wxDC& dc, const wxString& str, const wxFont& font, bool measureTrailingSpaces) noexcept {
           auto width = 0;
           auto height = 0;
           MeasureString(dc, str, font, width, height, measureTrailingSpaces);
           return width;
         }
-
+        
         static wxString RemoveHotKeyPrefixLocations(const wxString& str) {
           wxString result;
           if (str.IsEmpty() && GetFirstHotKeyPrefixLocations(str) == -1) return str;
@@ -242,7 +242,7 @@ namespace xtd {
           result += str[str.size() - 1];
           return result;
         }
-
+        
         static wxString ToString(wxDC& dc, const wxArrayString& strings, const wxFont& font, int32 width, int32 height, bool lineLimit, bool directionVertical) {
           wxString result;
           if (directionVertical) {
@@ -256,20 +256,20 @@ namespace xtd {
           if (result.size() > 0) result.Remove(result.size() - 1);
           return result;
         }
-
+        
         static wxArrayString WrapText(wxDC& dc, const wxString& string, const wxFont& font, int32 width, int32 height, bool directionVertical, bool measureTrailingSpaces) noexcept {
           if (directionVertical) std::swap(width, height);
           auto strings = wxSplit(string, '\n');
           wxArrayString results;
-
+          
           for (auto sentence : strings) {
             auto words = wxSplit(sentence, ' ');
             if (words.size() == 0) results.push_back(" ");
             else for (auto index = 0U; index < words.size(); ++index) {
-              results.push_back(words[index]);
-              while (index + 1 < words.size() && GetTextWidth(dc, results[results.size() - 1] + " " + words[index + 1], font, measureTrailingSpaces) <= width)
-                results[results.size() - 1] += " " + words[++index];
-            }
+                results.push_back(words[index]);
+                while (index + 1 < words.size() && GetTextWidth(dc, results[results.size() - 1] + " " + words[index + 1], font, measureTrailingSpaces) <= width)
+                  results[results.size() - 1] += " " + words[++index];
+              }
           }
           return results;
         }

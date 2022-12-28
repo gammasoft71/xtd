@@ -59,13 +59,13 @@ namespace xtd {
     /// @param A bitwise combination of console_modifiers values. There is no default value.
     console_modifiers modifiers() const noexcept;
     /// @}
-
+    
     /// @name Methods
-
+    
     /// @{
     bool equals(const console_key_info& key_info) const noexcept override;
     /// @}
-
+    
   private:
     char32 key_char_ {0};
     console_key key_ {static_cast<console_key>(0)};

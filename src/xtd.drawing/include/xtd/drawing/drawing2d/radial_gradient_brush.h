@@ -29,7 +29,7 @@ namespace xtd {
       /// @include fill_rectangle.cpp
       class drawing_export_ radial_gradient_brush final : public brush, public xtd::iequatable<radial_gradient_brush> {
         struct data;
-
+        
       public:
         /// @name Constructors
         
@@ -122,7 +122,7 @@ namespace xtd {
         /// @param radial_colors An array of two xtd::drawing::color structures that represents the starting and ending colors of the gradient.
         /// @return Current radial_gradient_brush instance.
         xtd::drawing::drawing2d::radial_gradient_brush& radial_colors(const xtd::drawing::drawing2d::gradient_stop_collection& radial_colors);
-
+        
         /// @brief Gets the angle of the gradient.
         /// @return A float that specifies the angle of the linear gradient.
         float radius() const noexcept;
@@ -131,17 +131,17 @@ namespace xtd {
         /// @return Current linear_gradient_brush instance.
         radial_gradient_brush& radius(float value) noexcept;
         /// @}
-
+        
         /// @name Methods
         
         /// @{
         using brush::equals;
         bool equals(const radial_gradient_brush& value) const noexcept override;
         /// @}
-
+        
       private:
         void recreate_handle();
-
+        
         std::shared_ptr<data> data_;
       };
     }

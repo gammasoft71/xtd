@@ -18,7 +18,7 @@ namespace xtd::forms::tests {
       using form::default_fore_color;
       using form::default_size;
     };
-      
+    
   public:
     void test_method_(new_form_back_color) {
       form_for_test form;

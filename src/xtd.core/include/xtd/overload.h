@@ -19,7 +19,7 @@ namespace xtd {
     /// @param method is the pointer to the (member) method
     /// @return Pointer to an overloaded method.
     template <typename result_t, typename type_t>
-    constexpr auto operator ()(result_t (type_t::*method)(args_t...)) const noexcept -> decltype(method) {return method;}
+    constexpr auto operator()(result_t (type_t::*method)(args_t...)) const noexcept -> decltype(method) {return method;}
     /// @brief Returns a pointer to an overloaded method. The template parameter is the list of the argument types of the method.
     /// @param method is the pointer to the (member) method
     /// @return Pointer to an overloaded method.
@@ -40,7 +40,7 @@ namespace xtd {
     /// @param method is the pointer to the (member) method
     /// @return Pointer to an overloaded method.
     template <typename result_t, typename type_t>
-    constexpr auto operator ()(result_t (type_t::*method)(args_t...) const) const noexcept -> decltype(method) {return method;}
+    constexpr auto operator()(result_t (type_t::*method)(args_t...) const) const noexcept -> decltype(method) {return method;}
     /// @}
     
     /// @name Methods
@@ -62,9 +62,9 @@ namespace xtd {
   struct overload : const_overload<args_t...>, non_const_overload<args_t...> {
     /// @cond
     using const_overload<args_t...>::of;
-    using const_overload<args_t...>::operator ();
+    using const_overload<args_t...>::operator();
     using non_const_overload<args_t...>::of;
-    using non_const_overload<args_t...>::operator ();
+    using non_const_overload<args_t...>::operator();
     /// @endcond
     
     /// @name Operators
@@ -74,7 +74,7 @@ namespace xtd {
     /// @param method is the pointer to the (member) method
     /// @return Pointer to an overloaded method.
     template <typename result_t>
-    constexpr auto operator ()(result_t (*method)(args_t...)) const noexcept -> decltype(method) {return method;}
+    constexpr auto operator()(result_t (*method)(args_t...)) const noexcept -> decltype(method) {return method;}
     /// @}
     
     /// @name Methods

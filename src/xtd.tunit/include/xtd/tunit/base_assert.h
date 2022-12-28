@@ -116,7 +116,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::ignore("User message..."); // test throws an ignore_error exception.
       /// @endcode
-      static void ignore(const std::string& message);      
+      static void ignore(const std::string& message);
       /// @brief Ignore current test. This is used by the other assert functions.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -145,7 +145,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::succeed("User message..."); // test ok.
       /// @endcode
-      static void succeed(const std::string& message);      
+      static void succeed(const std::string& message);
       /// @brief Generates a success with a generic message. This is used by the other assert functions.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.

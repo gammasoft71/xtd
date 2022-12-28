@@ -115,7 +115,7 @@ namespace xtd {
       drawing::color default_back_color() const noexcept override;
       drawing::color default_fore_color() const noexcept override;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{
@@ -128,7 +128,7 @@ namespace xtd {
       /// @brief Raises the date_time_picker::value_changed event.
       /// @param e An event_args that contains the event data.
       virtual void on_value_changed(const event_args& e);
-
+      
       void on_handle_created(const event_args& e) override;
       void wnd_proc(message& message) override;
       /// @}

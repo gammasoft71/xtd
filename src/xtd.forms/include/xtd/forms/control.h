@@ -57,7 +57,7 @@ namespace xtd {
     class horizontal_layout_panel;
     class screen;
     class vertical_layout_panel;
-
+    
     /// @endcond
     
     /// @brief Defines the base class for controls, which are components with visual representation.
@@ -75,7 +75,7 @@ namespace xtd {
     /// @include control.cpp
     class forms_export_ control : public component, public iwin32_window, public icomparable<control>, public xtd::iequatable<control> {
       struct data;
-
+      
     protected:
       /// @cond
       enum class state {
@@ -145,7 +145,7 @@ namespace xtd {
       /// @brief Represent an xtd::forms::context_menu reference.
       using context_menu_ref = std::reference_wrapper<xtd::forms::context_menu>;
       /// @}
-
+      
       /// @brief Represents a collection of controls.
       class control_collection : public xtd::forms::layout::arranged_element_collection<control_ref> {
       public:
@@ -695,7 +695,7 @@ namespace xtd {
       /// @return Current control.
       /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/style_sheets_overview.md">Style sheets overview</a>.
       virtual control& style_sheet(std::nullptr_t);
-
+      
       /// @brief Gets a value indicating whether the user can give the focus to this control using the TAB key.
       /// @return true if the user can give the focus to the control using the TAB key; otherwise, false. The default is true.
       /// @note Note: This property will always return true for an instance of the xtd::forms::form class.
@@ -787,9 +787,9 @@ namespace xtd {
       /// @brief Brings the control to the front of the z-order.
       /// @remarks The control is moved to the front of the z-order. If the control is a child of another control, the child control is moved to the front of the z-order. bring_to_front does not make a control a top-level control, and it does not raise the paint event.
       virtual void bring_to_front();
-
+      
       int32 compare_to(const control& value) const noexcept override;
-
+      
       /// @brief A factory to create a specified control with specified location ,size back_color and fore_color.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @param size A xtd::drawing::size that represent size of the control.
@@ -882,9 +882,9 @@ namespace xtd {
       /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
       /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke(delegate).
       void end_invoke(std::shared_ptr<xtd::iasync_result> async);
-
+      
       bool equals(const control& value) const noexcept override;
-
+      
       /// @brief Sets input focus to the control.
       /// @return true if the input focus request was successful; otherwise, false.
       /// @remarks The focus method returns true if the control successfully received input focus. The control can have the input focus while not displaying any visual cues of having the focus. This behavior is primarily observed by the unselectable controls listed below, or any controls derived from them.
@@ -965,7 +965,7 @@ namespace xtd {
       /// @param invalidate_children true to invalidate the control's child controls; otherwise, false.
       /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
       virtual void invalidate(const drawing::region& region, bool invalidate_children) const;
-
+      
       /// @brief Executes the specified delegate on the thread that owns the control's underlying window handle.
       /// @param value A delegate that contains a method to be called in the control's thread context.
       void invoke(delegate<void()> value);
@@ -1536,7 +1536,7 @@ namespace xtd {
       /// @remarks This event is raised if the xtd::forms::control::style_sheet property is changed or when xtd::application::style_sheet property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<control, event_handler> style_sheet_changed;
-
+      
       /// @brief Occurs when the xtd::forms::control::tab_stop property value changes.
       /// @ingroup events
       /// @remarks This event is raised if the xtd::forms::control::tab_stop property is changed by either a programmatic modification or user interaction.
@@ -1564,7 +1564,7 @@ namespace xtd {
       friend class screen;
       friend class vertical_layout_panel;
       friend class style_sheets::style_sheet;
-
+      
       /// @name Protected properties
       
       /// @{
@@ -1600,7 +1600,7 @@ namespace xtd {
       /// @return The default size of the control.
       virtual drawing::size default_size() const noexcept;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{
@@ -1614,7 +1614,7 @@ namespace xtd {
       /// @par Notes to Inheritors
       /// When overriding destroy_handle() in a derived class, be sure to call the base class's destroy_handle() method to ensure that the handle is destroyed.
       virtual void destroy_handle();
-
+      
       /// @brief Sends the specified message to the default window procedure.
       /// @param message The Windows Message to process.
       virtual void def_wnd_proc(message& message);
@@ -1657,7 +1657,7 @@ namespace xtd {
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_control_appearance_changed(const event_args& e);
-
+      
       /// @brief Raises the xtd::forms::control::click event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
@@ -1692,7 +1692,7 @@ namespace xtd {
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_destroy_control();
-
+      
       /// @brief Raises the xtd::forms::control::dock_changed event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
@@ -1812,12 +1812,12 @@ namespace xtd {
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_mouse_wheel(const mouse_event_args& e);
-
+      
       /// @brief Raises the xtd::forms::control::move event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events
       virtual void on_move(const event_args& e);
-
+      
       /// @brief Raises the xtd::forms::control::paint event.
       /// @param e An xtd::event_args that contains the event data.
       /// @ingroup events

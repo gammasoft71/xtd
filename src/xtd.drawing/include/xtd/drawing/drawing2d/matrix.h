@@ -72,7 +72,7 @@ namespace xtd {
       /// @endcode
       class drawing_export_ matrix final : public object, public xtd::iequatable<matrix> {
         struct data;
-
+        
       public:
         /// @name Constructors
         
@@ -137,7 +137,7 @@ namespace xtd {
         
         /// @{
         bool equals(const xtd::drawing::drawing2d::matrix& value) const noexcept override;
-
+        
         /// @brief Inverts this xtd::drawing::drawing2d::matrix, if it is invertible.
         void invert();
         
@@ -228,7 +228,7 @@ namespace xtd {
         void init_from_rect_3points(const xtd::drawing::rectangle_f& rect, const xtd::drawing::point_f pt1, const xtd::drawing::point_f pt2, const xtd::drawing::point_f pt3);
         friend class xtd::drawing::graphics;
         explicit matrix(intptr handle);
-
+        
         std::shared_ptr<data> data_;
       };
     }

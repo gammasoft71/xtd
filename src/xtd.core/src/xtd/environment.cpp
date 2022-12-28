@@ -91,7 +91,7 @@ ustring environment::get_folder_path(environment::special_folder folder, environ
     case environment::special_folder::xtd_tunit_libraries: return environment::xtd_tunit_libraries_path;
     default: break;
   }
-    
+  
   ustring path = native::environment::get_know_folder_path(static_cast<int32>(folder));
   if (path.empty()) return path;
   if (option == environment::special_folder_option::none) return !xtd::io::directory::exists(path) ? "" :  path;
@@ -140,7 +140,7 @@ xtd::processor environment::processor_information() {
 
 void environment::set_environment_variable(const ustring& variable, const ustring& value, environment_variable_target target) {
   if (ustring::is_empty(variable)) throw xtd::argument_exception("Environment variable name is empty"_t, csf_);
-
+  
   if (!enum_object<>::is_defined<environment_variable_target>(target)) throw xtd::argument_exception("Invalid environment variable target value"_t, csf_);
   
   if (ustring::is_empty(value)) {

@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-link_area::link_area(size_t start, size_t length) noexcept : start_(start), length_(length) {  
+link_area::link_area(size_t start, size_t length) noexcept : start_(start), length_(length) {
 }
 
 bool link_area::is_empty() const noexcept {

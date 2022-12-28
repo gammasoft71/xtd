@@ -18,7 +18,7 @@
 
 namespace xtd {
   namespace forms {
-    
+  
     // TODO: IMPL + move to seperate file
     class notifier_button_click_event_args : public xtd::event_args {
     public:
@@ -33,14 +33,14 @@ namespace xtd {
       message_notifier_button button_;
       //...
     };
-
+    
     using notifier_button_click_event_handler = delegate<void(object& sender, const notifier_button_click_event_args& e)>;
     
     
     // TODO: IMPL + move to seperate file
     class notifier_closed_event_args : public xtd::event_args {
     public:
-      explicit notifier_closed_event_args(const std::optional<xtd::forms::message_notifier_button>& button) : button_(button){}
+      explicit notifier_closed_event_args(const std::optional<xtd::forms::message_notifier_button>& button) : button_(button) {}
       
       std::optional<xtd::forms::message_notifier_button> button() const noexcept {
         return button_;
@@ -50,7 +50,7 @@ namespace xtd {
         return close_on_timeout_;
       }
       
-      bool close_on_click_message() const noexcept{
+      bool close_on_click_message() const noexcept {
         return close_on_click_message_;
       }
       

@@ -372,7 +372,7 @@ namespace xtd {
     static xtd::date_time convert_to_utc(const xtd::date_time& date_time);
     
     bool equals(const time_zone_info& tzi) const noexcept override;
-
+    
     /// @brief Retrieves an array of xtd::time_zone_info::adjustment_rule objects that apply to the current xtd::time_zone_info object.
     /// @return An array of objects for this time zone.
     std::vector<adjustement_rule> get_adjustement_rules() const noexcept;

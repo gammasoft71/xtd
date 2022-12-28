@@ -85,7 +85,7 @@ namespace xtd {
         
       private:
         intptr convert_to_virtual_key(const wxKeyEvent& key_event);
-
+        
         void def_process_event(intptr result, wxEvent& event);
         
         void def_process_event(wxEvent& event);
@@ -174,7 +174,7 @@ namespace xtd {
         void wx_evt_text(wxEvent& event) override;
         void wx_evt_time_changed(wxEvent& event) override;
         void wx_evt_togglebutton(wxEvent& event) override;
-
+        
         control_handler* event_handler_;
         bool process_result_ = true;
         #if defined(__WXOSX__)

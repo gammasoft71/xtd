@@ -23,7 +23,7 @@ namespace xtd {
     /// @param target_id One of xtd::target_id values.
     target_type(xtd::target_id target_id);
     /// @}
-
+    
     /// @cond
     target_type() = default;
     target_type(const target_type&) = default;
@@ -36,19 +36,19 @@ namespace xtd {
     /// @brief Gets target id is console application.
     /// @return true if target id is console application; otherwise false.
     bool is_console_application() const noexcept;
-
+    
     /// @brief Gets target id is gui application.
     /// @return true if target id is gui application; otherwise false.
     bool is_guid_application() const noexcept;
-
+    
     /// @brief Gets target id is test application.
     /// @return true if target id is test application; otherwise false.
     bool is_test_application() const noexcept;
-
+    
     /// @brief Gets target id is shared library.
     /// @return true if target id is shared library; otherwise false.
     bool is_shared_library() const noexcept;
-
+    
     /// @brief Gets target id is static library.
     /// @return true if target id is static library; otherwise false.
     bool is_static_library() const noexcept;
@@ -61,13 +61,13 @@ namespace xtd {
     /// @return One of xtd::target_id values.
     xtd::target_id target_id() const noexcept;
     /// @}
-
+    
     /// @name Methods
     
     /// @{
     ustring to_string() const noexcept override;
     /// @}
-
+    
   private:
     xtd::target_id target_id_ = xtd::target_id::unknown;
   };

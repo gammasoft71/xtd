@@ -38,11 +38,11 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_dark_orchid.png
       static xtd::drawing::color dark_orchid();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_dark_slate_blue.png
       static xtd::drawing::color dark_slate_blue();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_dark_violet.png
       static xtd::drawing::color dark_violet();
@@ -50,7 +50,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_fuchsia.png
       static xtd::drawing::color fuchsia();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_indigo.png
       static xtd::drawing::color indigo();
@@ -58,7 +58,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_lavender.png
       static xtd::drawing::color lavender();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_magenta.png
       static xtd::drawing::color magenta();
@@ -70,7 +70,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_medium_purple.png
       static xtd::drawing::color medium_purple();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_medium_slate_blue.png
       static xtd::drawing::color medium_slate_blue();
@@ -82,15 +82,15 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_plum.png
       static xtd::drawing::color plum();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_purple.png
       static xtd::drawing::color purple();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_rebecca_purple.png
       static xtd::drawing::color rebecca_purple();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_slate_blue.png
       static xtd::drawing::color slate_blue();
@@ -98,18 +98,18 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_thistle.png
       static xtd::drawing::color thistle();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_violet.png
       static xtd::drawing::color violet();
       /// @}
-
+      
       /// @name Public methods
       
       /// @{
       /// @brief Gets an array of colors.
       static const std::vector<xtd::drawing::color>& get_colors();
-
+      
       /// @brief Gets an array of color names.
       static const std::vector<xtd::ustring>& get_color_names();
       /// @}

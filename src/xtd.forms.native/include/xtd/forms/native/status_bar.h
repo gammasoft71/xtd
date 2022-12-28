@@ -46,7 +46,7 @@ namespace xtd {
         /// @param width The panel width.
         /// @param stretchable true if panel is stretchable; otherwise false.
         /// @warning Internal use only
-      //static intptr add_status_bar_panel(intptr status_bar, int border_style, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool visible, int width, bool stretchable);
+        //static intptr add_status_bar_panel(intptr status_bar, int border_style, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, bool visible, int width, bool stretchable);
         static intptr add_status_bar_panel(intptr status_bar, const xtd::ustring& text, const xtd::ustring& tool_tip_text, const xtd::drawing::image& image, int32 alignment, int32 auto_size, int32 border_style, int32 min_width, int32 width);
         /// @brief Adds status bar control.
         /// @param status_bar The tool bar that contains the control.

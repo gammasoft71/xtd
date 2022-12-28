@@ -46,7 +46,7 @@ namespace xtdc_gui {
       if (examples.empty()) examples = xtd_example_item::get_examples(xtd::io::path::combine(xtd_share_path_, "examples", "xtd.forms.examples"));
       return examples;
     }
-
+    
     static const std::vector<xtd_example_item>& get_tunit_examples() {
       static std::vector<xtd_example_item> examples;
       if (examples.empty()) examples = xtd_example_item::get_examples(xtd::io::path::combine(xtd_share_path_, "examples", "xtd.tunit.examples"));
@@ -73,7 +73,7 @@ namespace xtdc_gui {
       if (content.size() < 2) return "";
       return content[2];
     }
-
+    
     static xtd::ustring get_image_path(const xtd::ustring& name) {
       auto base_path = xtd::io::path::combine(xtd_share_path_, "resources", "pictures", "examples");
       return "";
@@ -99,15 +99,14 @@ namespace xtdc_gui {
         if (not found_output and line.to_lower().starts_with("# output")) {
           found_output = true;
           continue;
-        }
-        else if (found_output) {
+        } else if (found_output) {
           if (line.starts_with("#") or line.starts_with("```") or line.starts_with("![")) continue; // skip other # ``` sections and ![Screenshots]
           output += line + '\n';
         }
       }
       return output;
     }
-
+    
     static xtd::ustring get_os_postfix() noexcept {return xtd::environment::os_version().is_windows_platform() ? "w" : xtd::environment::os_version().is_unix_platform() ? "g" : "m";}
     static xtd::ustring get_theme_postfix() noexcept {return xtd::forms::application::dark_mode_enabled() ? "d" : "";}
     

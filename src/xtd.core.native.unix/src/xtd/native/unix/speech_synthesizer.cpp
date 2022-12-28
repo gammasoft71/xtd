@@ -20,12 +20,12 @@ namespace {
     string say_cmd_file_name;
     intmax_t process_handle = 0;
   };
-
+  
   static string get_temp_path() {
     auto tmp_path = getenv("TMPDIR");
     return tmp_path ? tmp_path : "/tmp/";
   }
-
+  
   static string get_unique_speak_cmd_file_name() {
     static int_least32_t cpt = 0;
     stringstream ss;
@@ -38,11 +38,11 @@ intmax_t speech_synthesizer::create() {
   speech_synthesizer_data* data = new speech_synthesizer_data {get_unique_speak_cmd_file_name(), 0};
   ofstream cmd_file;
   cmd_file.open(data->say_cmd_file_name);
-#if (__APPLE__)
+  #if (__APPLE__)
   cmd_file << "say \"$*\"\n";
-#else
+  #else
   cmd_file << "spd-say \"$*\"\n";
-#endif
+  #endif
   cmd_file.close();
   native::file_system::set_permissions(data->say_cmd_file_name, FILE_PERMISSIONS_OWNER_ALL);
   return reinterpret_cast<intmax_t>(data);
@@ -54,11 +54,11 @@ void speech_synthesizer::destroy(intmax_t handle) {
 }
 
 void speech_synthesizer::pause(intmax_t handle) {
-  
+
 }
 
 void speech_synthesizer::resume(intmax_t handle) {
-  
+
 }
 
 void speech_synthesizer::speak(intmax_t handle, const string& text_to_speak) {
@@ -78,5 +78,5 @@ void speech_synthesizer::speak_async(intmax_t handle, const string& text_to_spea
 }
 
 void speech_synthesizer::stop(intmax_t handle) {
-  
+
 }

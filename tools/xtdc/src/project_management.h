@@ -196,7 +196,7 @@ namespace xtdc_command {
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
       auto target_path = target.empty() ? get_first_target_path(release) : get_target_path(target, release);
       if (target_path.empty()) return "The target does not exist! Run project aborted.";
-
+      
       xtd::console::clear();
       xtd::diagnostics::process process;
       process.start_info(xtd::diagnostics::process_start_info(target_path));
@@ -334,10 +334,10 @@ namespace xtdc_command {
     
     void create_blank_solution(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) {
       std::map<project_sdk, xtd::action<const xtd::ustring&, bool>> {{project_sdk::none, {blank_solution_project {path_}, &blank_solution_project::create}}, {project_sdk::xtd, {xtd_blank_solution_project {path_}, &xtd_blank_solution_project::create}}, {project_sdk::xtd_c, {xtd_c_blank_solution_project {path_}, &xtd_c_blank_solution_project::create}}
-
+      
       } [sdk](name, create_solution);
     }
-            
+    
     void create_console(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
       switch (sdk) {
         case project_sdk::xtd: xtd_console_project(path_).create(name, create_solution); break;

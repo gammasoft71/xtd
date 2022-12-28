@@ -438,7 +438,7 @@ namespace xtd {
       xtd::drawing::color default_back_color() const noexcept override;
       xtd::drawing::color default_fore_color() const noexcept override;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{

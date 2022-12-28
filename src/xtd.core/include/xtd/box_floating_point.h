@@ -113,14 +113,14 @@ namespace xtd {
   inline single_object boxing(float& value) noexcept {return single_object(value);}
   inline double_object boxing(double& value) noexcept {return double_object(value);}
   inline decimal_object boxing(decimal& value) noexcept {return decimal_object(value);}
-
+  
   inline float unboxing(const float& value) noexcept {return value;}
   inline double unboxing(const double& value) noexcept {return value;}
   inline decimal unboxing(const decimal& value) noexcept {return value;}
   inline float unboxing(float& value) noexcept {return value;}
   inline double unboxing(double& value) noexcept {return value;}
   inline decimal unboxing(decimal& value) noexcept {return value;}
-
+  
   template<typename type_t>
   inline std::string to_string(const xtd::box_floating_point<type_t>& value, const std::string& fmt, const std::locale& loc) {
     return value.to_string(fmt);
