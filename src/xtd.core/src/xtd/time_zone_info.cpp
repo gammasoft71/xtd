@@ -143,9 +143,9 @@ xtd::date_time time_zone_info::convert_time_to_utc(const xtd::date_time& date_ti
 
 const list<time_zone_info>& time_zone_info::get_system_time_zones() noexcept {
   static list<time_zone_info> system_time_zones;
-  if (!system_time_zones.size())
-    for (auto item : native::date_time::get_system_time_zones())
-      system_time_zones.emplace_back(time_zone_info(item.id, ticks(item.base_utc_offset), item.daylight_name, item.display_name, item.standard_name, item.supports_daylight_saving_time));
+  if (system_time_zones.size()) return system_time_zones;
+  auto stzs = native::date_time::get_system_time_zones();
+  for_each(stzs.begin(), stzs.end(), [&](auto item) {system_time_zones.emplace_back(time_zone_info(item.id, ticks(item.base_utc_offset), item.daylight_name, item.display_name, item.standard_name, item.supports_daylight_saving_time));});
   return system_time_zones;
 }
 
@@ -209,8 +209,9 @@ const time_zone_info& time_zone_info::time_find_system_time_zone_by_id(const ust
   if (local().id_ == id) return local();
   if (utc().id_ == id) return utc();
   
-  for (const time_zone_info& item : get_system_time_zones())
-    if (item.id_ == id) return item;
+  auto stzs = get_system_time_zones();
+  auto iterator = find_if(stzs.begin(), stzs.end(), [&](auto item) {return item.id_ == id;});
+  if (iterator != stzs.end()) return *iterator;
     
   throw time_zone_not_found_exception(csf_);
 }
