@@ -224,12 +224,14 @@ namespace {
     return formatted_string;
   }
   
+  /*
   string alias_to_time_zone_info_id(const string& alias) {
     static map<string, string> aliases {{"CET", "Central Europe Standard Time"}};
     auto it = aliases.find(alias);
     if (it != aliases.end()) return it->second;
     return alias;
   }
+   */
 }
 
 date_time::time_zone_info date_time::get_local_time_zone() {
