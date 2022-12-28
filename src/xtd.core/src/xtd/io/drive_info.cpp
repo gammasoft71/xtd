@@ -67,8 +67,8 @@ ustring drive_info::volume_label() const {
 
 vector<drive_info> drive_info::get_drives() noexcept {
   vector<drive_info> drives;
-  for (auto drive : native::drive::get_drives())
-    drives.emplace_back(drive_info(drive));
+  auto native_drives = native::drive::get_drives();
+  for_each(native_drives.begin(), native_drives.end(), [&](auto drive) {drives.emplace_back(drive_info(drive));});
   return drives;
 }
 
