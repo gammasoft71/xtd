@@ -213,7 +213,10 @@ xtd_update_export_file(src/xtd.forms/include/xtd/forms_export.h XTD_FORMS_EXPORT
 xtd_update_export_file(src/xtd.tunit/include/xtd/tunit_export.h XTD_TUNIT_EXPORT tunit_export_)
 xtd_update_export_file(src/xtd/include/xtd/export.h XTD_EXPORT export_)
 
-# install
+# Run tests
+set(CMAKE_CTEST_ARGUMENTS ${CMAKE_CTEST_ARGUMENTS} --output-on-failure)
+
+# Install
 install_package()
 # override with specific xtd cmake config file
 set(XTD_CONFIG_CMAKE_FILE ${CMAKE_CURRENT_BINARY_DIR}/xtdConfig.cmake)
