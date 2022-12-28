@@ -41,10 +41,8 @@ std::vector<xtd::ustring> translator::languages() {
   } catch (...) {
   }
   static std::vector<xtd::ustring> languages;
-  if (languages.empty()) {
-    for (auto language_value : language_values_)
-      languages.push_back(language_value.first);
-  }
+  if (!languages.empty()) return languages;
+  for_each(language_values_.begin(), language_values_.end(), [&](auto language_value) {languages.push_back(language_value.first);});
   return languages;
 }
 
