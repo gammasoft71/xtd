@@ -37,7 +37,7 @@ virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/io/binary_w
 virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/io/string_writer.h //:59
 
 // __________________________________________________________________________________________________________________________
-//                                                                                                            xtd.dore.native
+//                                                                                                            xtd.core.native
 
 unusedStructMember:@CMAKE_SOURCE_DIR@/src/xtd.core.native.unix/src/xtd/native/unix/console.cpp //:376, :377, :378, :379, :380
 
@@ -50,7 +50,6 @@ duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.drawing/include/xtd/drawing/drawi
 duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.drawing/include/xtd/drawing/bitmap.h
 duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.drawing/include/xtd/drawing/solid_brush.h
 duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.drawing/include/xtd/drawing/texture_brush.h
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/image.cpp //:213
 
 // __________________________________________________________________________________________________________________________
 //                                                                                                                  xtd.forms
@@ -97,33 +96,3 @@ internalAstError:@CMAKE_SOURCE_DIR@/src/xtd.tunit/include/xtd/tunit/assert.h
 //                                                                                       To be remove when developement ended
 
 unusedStructMember:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/status_bar.cpp //:48, :49
-
-// __________________________________________________________________________________________________________________________
-//                                                                                                             To be reviewed
-
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core.native.unix/src/xtd/native/unix/process.cpp //:108
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core.native.unix/src/xtd/native/unix/date_time.cpp //:239
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core.native.win32/include/xtd/native/win32/strings.h //:82
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core.native.win32/src/xtd/native/win32/date_time.cpp //:246
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/internal/__format_stringer.h //:209
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/io/path.h //:156
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/directory.cpp //:261
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/drive_info.cpp //:71
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/stream_writer.h //:85
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/net/sockets/socket.cpp //:812, :816, :820
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/time_zone_info.cpp //:50, :123
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/translator.cpp //:40
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/ustring.cpp //:595, :602, :609, :616, :623, :630, :930, :944
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/text/installed_font_collection.cpp //:12
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/font_family.cpp //:28
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.drawing/src/xtd/drawing/system_images.cpp //:89, :115
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/layout/arranged_element_collection.h //:409
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/emoticon.h //:68, :74, :83, :89
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/application.cpp //:122
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/checked_list_box.cpp //:55, :98
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/country.cpp //:28
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/list_box.cpp //:102
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms.native.wxwidgets/src/xtd/forms/native/wxwidgets/checked_list_box.cpp //:108
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms.native.wxwidgets/src/xtd/forms/native/wxwidgets/file_dialog.cpp //:53
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd.forms.native.wxwidgets/src/xtd/forms/native/wxwidgets/list_box.cpp //:86
-useStlAlgorithm:@CMAKE_SOURCE_DIR@/src/xtd/src/xtd/system_report.cpp //:152
