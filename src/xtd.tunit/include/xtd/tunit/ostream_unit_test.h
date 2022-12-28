@@ -53,7 +53,7 @@ namespace xtd {
       /// @brief Write usage help on the ostream of this instance.
       void write_help();
       /// @}
-
+      
     private:
       std::ostream& os_;
     };

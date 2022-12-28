@@ -151,14 +151,14 @@ namespace xtd {
       /// @param bitmap A xtd::drawing::bitmap use to create xtd::drawing::icon.
       /// @return The xtd::drawing::icon this method creates.
       static icon from_bitmap(const xtd::drawing::bitmap& bitmap);
-
+      
       /// @brief Saves this xtd::drawing::icon to the specified output filename.
       /// @param filename The file to save to.
       void save(const xtd::ustring& filename) const;
       /// @brief Saves this xtd::drawing::icon to the specified output std::ostream.
       /// @param stream The std::ostream to save to.
       void save(std::ostream& stream) const;
-
+      
       /// @brief Converts this xtd::drawing::icon to a GDI+ xtd::drawing::bitmap.
       /// @return A Bitmap that represents the converted xtd::drawing::icon.
       /// @remarks The transparent areas of the icon are lost when it is converted to a bitmap, and the transparent color of the resulting bitmap is set to RGB(13,11,12). The returned bitmap has the same height and width as the original icon.
@@ -171,7 +171,7 @@ namespace xtd {
       
     private:
       explicit icon(const bitmap& bitmap);
-
+      
       std::shared_ptr<data> data_;
     };
   }

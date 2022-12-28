@@ -168,7 +168,7 @@ inline value_t __parse_floating_point_number(const std::basic_string<char_t>& s,
   if (s == "inf") return std::numeric_limits<value_t>::infinity();
   if (s == "-inf") return -std::numeric_limits<value_t>::infinity();
   if (s == "nan") return std::numeric_limits<value_t>::quiet_NaN();
-
+  
   std::basic_string<char_t> str = __parse_remove_decorations(s, styles);
   int sign = __parse_remove_signs(str, styles);
   

@@ -114,7 +114,7 @@ progress_bar& progress_bar::value(int32 value) {
 }
 
 void progress_bar::increment(int32 value) {
-    this->value(data_->value + value);
+  this->value(data_->value + value);
 }
 
 void progress_bar::perform_step() {

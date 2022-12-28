@@ -49,13 +49,13 @@ namespace xtd {
         prompt(prompt&&) = default;
         prompt& operator =(const prompt&) = default;
         /// @endcond
-
+        
         /// @name Properties
         
         /// @{
         bool is_completed() const noexcept;
         /// @}
-
+        
       private:
         xtd::ustring& text_to_speak();
         void synthesizer(const speech_synthesizer* synthesizer);

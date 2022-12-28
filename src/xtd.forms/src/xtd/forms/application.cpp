@@ -82,7 +82,7 @@ event<application, delegate<void(const event_args&)>> application::thread_exit;
 bool application::allow_quit() noexcept {
   try {
     return native::application::allow_quit();
-  } catch(...) {
+  } catch (...) {
     return true;
   }
 }
@@ -92,7 +92,7 @@ xtd::ustring application::common_app_data_path() noexcept {
   try {
     if (!io::directory::exists(common_app_data_path))
       io::directory::create_directory(common_app_data_path);
-  } catch(...) {
+  } catch (...) {
     assert_(io::directory::exists(common_app_data_path), ustring::format("The {} path does not exist.", common_app_data_path));
   }
   return common_app_data_path;
@@ -108,7 +108,7 @@ xtd::ustring application::company_name() noexcept {
   try {
     if (assembly::get_executing_assembly().company() == "") return xtd::io::path::get_file_name_without_extension(executable_path());
     return assembly::get_executing_assembly().company();
-  } catch(...) {
+  } catch (...) {
     return assembly::get_executing_assembly().company();
   }
 }

@@ -62,10 +62,10 @@ namespace xtd {
       using brush::equals;
       bool equals(const solid_brush& value) const noexcept override;
       /// @}
-
+      
     private:
       solid_brush();
-
+      
       std::shared_ptr<data> data_;
     };
   }

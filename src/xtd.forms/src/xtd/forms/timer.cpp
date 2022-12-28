@@ -12,7 +12,7 @@ struct timer::data {
   intptr handle = 0;
 };
 
-timer::timer() : data_(std::make_shared<data>()) {  
+timer::timer() : data_(std::make_shared<data>()) {
 }
 
 timer::~timer() {

@@ -65,7 +65,7 @@ namespace xtd {
       /// @{
       bool equals(const switch_base& value) const noexcept override;
       /// @}
-
+      
     protected:
       /// @name Protected constructors
       

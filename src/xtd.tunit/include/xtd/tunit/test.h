@@ -78,7 +78,7 @@ namespace xtd {
       /// @brief Gets the elapsed time of the test method.
       /// @return The elapsed time of the test method.
       std::chrono::milliseconds elapsed_time() const noexcept;
-
+      
       /// @brief Gets the expect value string.
       /// @return The expect value string. Can be empty.
       const std::string& expect() const noexcept;
@@ -139,7 +139,7 @@ namespace xtd {
       static bool has_current_test();
       static bool has_current_test_class();
       static bool has_current_unit_test();
-
+      
       void run(const xtd::tunit::unit_test& unit_test, const xtd::tunit::test_class& test_class);
       
       xtd::date_time end_time_point;

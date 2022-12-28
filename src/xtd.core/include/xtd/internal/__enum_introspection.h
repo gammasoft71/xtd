@@ -21,7 +21,7 @@ namespace __enumeration_introspection {
   }
   
   template <size_t count, size_t str_size, class function_t>
-  constexpr void split_trim_apply(char const (&str)[str_size], function_t func) {
+  constexpr void split_trim_apply(char const(&str)[str_size], function_t func) {
     std::string_view view(str, str_size - 1);
     
     for (size_t i = 0; i < count; i++) {
@@ -33,14 +33,14 @@ namespace __enumeration_introspection {
   }
   
   template <size_t count, size_t str_size>
-  constexpr size_t compute_name_block_size(char const (&str)[str_size]) {
+  constexpr size_t compute_name_block_size(char const(&str)[str_size]) {
     size_t total = 0;
     split_trim_apply<count>(str, [&](std::string_view sv) {total += sv.size();});
     return total;
   }
   
   template <size_t count, size_t str_size>
-  constexpr void write_names_and_sizes(char const (&str)[str_size], char* destination, unsigned* offsets) {
+  constexpr void write_names_and_sizes(char const(&str)[str_size], char* destination, unsigned* offsets) {
     unsigned current_offset = 0;
     split_trim_apply<count>(str, [&](std::string_view sv) {
       char const* source = sv.data();
@@ -61,8 +61,8 @@ namespace __enumeration_introspection {
   }
   
   template <size_t count>
-  constexpr auto get_top_name(char const (&str)[count]) {return get_top_name(std::string_view(str, count - 1));}
-
+  constexpr auto get_top_name(char const(&str)[count]) {return get_top_name(std::string_view(str, count - 1));}
+  
   template <class base_t>
   struct enumeration_maker {
     base_t value {};
@@ -88,14 +88,14 @@ namespace __enumeration_introspection {
   struct value_assigner {
     base_t value {};
     
-    constexpr value_assigner& operator ,(enumeration_maker<base_t>& other) {
+    constexpr value_assigner& operator, (enumeration_maker<base_t>& other) {
       if (other.is_set) value = other.value;
       else other = value;
       ++value;
       return *this;
     }
   };
-
+  
   class string_block_iterator {
     char const* data {};
     unsigned const* indices {};
@@ -149,10 +149,10 @@ namespace __enumeration_introspection {
       return std::string_view(data + off1, off2 - off1);
     }
   };
-
+  
   template <class type_t>
   constexpr std::string_view name_of_type = xtd::ustring::class_name<type_t>();
-
+  
   template <class enum_t>
   struct enum_type_info_base {
     constexpr static std::string_view qualified_type_name {name_of_type<enum_t>};
@@ -171,7 +171,7 @@ namespace __enumeration_introspection {
     using block_type = string_block<num_states, name_block_size>;
     block_type name_block;
   };
-
+  
   template <class enum_t>
   struct enum_type_info : public enum_type_info_base<enum_t> {
   private:

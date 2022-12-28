@@ -395,7 +395,7 @@ namespace xtd {
         void close_figure();
         
         bool equals(const xtd::drawing::drawing2d::graphics_path& value) const noexcept override;
-
+        
         /// @brief Converts each curve in this path into a sequence of connected line segments.
         void flatten();
         

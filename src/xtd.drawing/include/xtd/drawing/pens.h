@@ -453,7 +453,7 @@ namespace xtd {
       /// @brief A system-defined pen object with a width of 1.
       static xtd::drawing::pen yellow_green();
       /// @}
-
+      
       /// @name Public methods
       
       /// @{

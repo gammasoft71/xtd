@@ -11,11 +11,11 @@ std::string __object_to_string(const object& value) noexcept {
 }
 
 std::ostream& operator <<(std::ostream& os, const char8* str) {
-  return os << ustring(str); 
+  return os << ustring(str);
 }
 
 std::ostream& operator <<(std::ostream& os, const char16* str) {
-  return os << ustring(str); 
+  return os << ustring(str);
 }
 
 std::ostream& operator <<(std::ostream& os, const char32* str) {

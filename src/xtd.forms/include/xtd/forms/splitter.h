@@ -69,7 +69,7 @@ namespace xtd {
       forms::cursor default_cursor() const noexcept override;
       drawing::size default_size() const noexcept override;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{

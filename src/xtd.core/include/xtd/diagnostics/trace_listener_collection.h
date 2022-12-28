@@ -52,7 +52,7 @@ namespace xtd {
       /// @{
       bool equals(const trace_listener_collection& value) const noexcept override;
       /// @}
-
+      
       /// @name Operators
       
       /// @{
@@ -90,9 +90,9 @@ namespace xtd {
       /// @endcode
       reference operator [](const xtd::ustring& name);
       /// @}
-
+      
       /// @name Methods
-
+      
     private:
       inline static value_type empty_;
     };

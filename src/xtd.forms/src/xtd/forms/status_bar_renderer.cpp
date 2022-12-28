@@ -30,7 +30,7 @@ void status_bar_renderer::draw_status_bar(const xtd::forms::style_sheets::style_
 
 void status_bar_renderer::draw_text_status_bar(const style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font) {
   status_bar_panel current_style_sheet = style_sheet.status_bar(pseudo_state::standard);
-
+  
   if (fore_color.has_value()) current_style_sheet.color(fore_color.value());
   if (font.has_value()) current_style_sheet.font(font.value());
   

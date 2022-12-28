@@ -332,8 +332,8 @@ namespace tunit::tests {
   
   class class_without_insert_stream_operator {
   public:
-    class_without_insert_stream_operator () = default;
-    explicit class_without_insert_stream_operator (int value) : value_(value) {}
+    class_without_insert_stream_operator() = default;
+    explicit class_without_insert_stream_operator(int value) : value_(value) {}
     
     int value() const noexcept {return value_;}
     
@@ -350,8 +350,8 @@ namespace tunit::tests {
   
   class class_with_insert_stream_operator {
   public:
-    class_with_insert_stream_operator () = default;
-    explicit class_with_insert_stream_operator (int value) : value_(value) {}
+    class_with_insert_stream_operator() = default;
+    explicit class_with_insert_stream_operator(int value) : value_(value) {}
     
     int value() const noexcept {return value_;}
     

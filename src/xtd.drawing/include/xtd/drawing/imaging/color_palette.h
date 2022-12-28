@@ -48,13 +48,13 @@ namespace xtd {
         /// * 0x00000004 The colors in the array are halftone values.
         int32 flags() const noexcept {return flags_;}
         /// @}
-
+        
         /// @name Methods
         
         /// @{
         bool equals(const color_palette& value) const noexcept override {return entries_ == value.entries_ && flags_ == value.flags_;}
         /// @}
-
+        
       private:
         friend class xtd::drawing::image;
         color_palette() = default;

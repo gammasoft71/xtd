@@ -17,7 +17,7 @@ namespace xtd {
     /// @see xtd::drawing::color
     enum class known_color {
       // 0 - reserved for "not a known color"
-
+      
       // "Web" colors.
       /// @brief A system-defined color.
       transparent = 1,

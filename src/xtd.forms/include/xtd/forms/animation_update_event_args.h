@@ -35,7 +35,7 @@ namespace xtd {
       /// @brief Gets elepased time in nanoseconds.
       /// @return Elapsed time in nanoseconds
       int64 elapsed_nanoseconds() const {return std::chrono::duration_cast<std::chrono::nanoseconds>(elapsed_).count();}
-
+      
       /// @brief Gets frame counter.
       /// @return Frame counter.
       int32 frame_counter() const {return frame_counter_;}

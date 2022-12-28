@@ -21,7 +21,7 @@ struct date_time_picker::data {
 date_time_picker::date_time_picker() : data_(std::make_shared<data>()) {
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::fixed_height, true);
-  set_style(control_styles::user_paint | control_styles::standard_click, false);  
+  set_style(control_styles::user_paint | control_styles::standard_click, false);
 }
 
 date_time_picker_format date_time_picker::format() const noexcept {
@@ -126,7 +126,7 @@ void date_time_picker::wnd_proc(message& message) {
 
 void date_time_picker::wm_nottify_control(message& message) {
   NMHDR* nmhdr = reinterpret_cast<NMHDR*>(message.lparam());
-  switch(nmhdr->code) {
+  switch (nmhdr->code) {
     case DTN_CLOSEUP: wm_nottify_control_closeup(message); break;
     case DTN_DROPDOWN: wm_nottify_control_dropdown(message); break;
     case DTN_DATETIMECHANGE: wm_nottify_control_datetimechange(message); break;

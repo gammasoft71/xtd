@@ -24,16 +24,16 @@ namespace xtd::forms::tests {
       control_for_test(const control& parent, const xtd::ustring& text) : control(parent, text) {}
       control_for_test(const xtd::ustring& text, int32 left, int32 top, int32 width, int32 height) : control(text, left, top, width, height) {}
       control_for_test(const control& parent, const xtd::ustring& text, int32 left, int32 top, int32 width, int32 height) : control(parent, text, left, top, width, height) {}
-
+      
       using control::default_back_color;
       using control::default_cursor;
       using control::default_font;
       using control::default_fore_color;
       using control::default_size;
-
+      
       using control::create_params;
     };
-
+    
   public:
     void test_method_(constructor) {
       control_for_test control;
@@ -380,7 +380,7 @@ namespace xtd::forms::tests {
       // The following test may fail: The user can place the mouse in the upper left position of the screen {0, 0}...
       // assert::are_not_equal(drawing::point::empty, forms::control::mouse_position(), csf_);
     }
- 
+    
     void test_method_(create_params_default_values) {
       control_for_test control;
       
@@ -393,7 +393,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::point::empty, cp.location(), csf_);
       assert::is_zero(cp.param(), csf_);
       assert::is_zero(cp.parent(), csf_);
-      assert::are_equal(WS_VISIBLE|WS_CHILD|WS_TABSTOP, cp.style(), csf_);
+      assert::are_equal(WS_VISIBLE | WS_CHILD | WS_TABSTOP, cp.style(), csf_);
       assert::are_equal(drawing::size::empty, cp.size(), csf_);
       assert::is_zero(cp.width(), csf_);
       assert::is_zero(cp.x(), csf_);
@@ -413,7 +413,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::point::empty, cp.location(), csf_);
       assert::is_zero(cp.param(), csf_);
       assert::is_zero(cp.parent(), csf_);
-      assert::are_equal(WS_VISIBLE|WS_DISABLED|WS_CHILD|WS_TABSTOP, cp.style(), csf_);
+      assert::are_equal(WS_VISIBLE | WS_DISABLED | WS_CHILD | WS_TABSTOP, cp.style(), csf_);
       assert::are_equal(drawing::size::empty, cp.size(), csf_);
       assert::is_zero(cp.width(), csf_);
       assert::is_zero(cp.x(), csf_);
@@ -433,13 +433,13 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::point(10, 20), cp.location(), csf_);
       assert::is_zero(cp.param(), csf_);
       assert::is_zero(cp.parent(), csf_);
-      assert::are_equal(WS_VISIBLE|WS_CHILD|WS_TABSTOP, cp.style(), csf_);
+      assert::are_equal(WS_VISIBLE | WS_CHILD | WS_TABSTOP, cp.style(), csf_);
       assert::are_equal(drawing::size::empty, cp.size(), csf_);
       assert::is_zero(cp.width(), csf_);
       assert::are_equal(10, cp.x(), csf_);
       assert::are_equal(20, cp.y(), csf_);
     }
-
+    
     void test_method_(create_params_parent) {
       forms::form form;
       control_for_test control;
@@ -454,7 +454,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::point::empty, cp.location(), csf_);
       assert::is_zero(cp.param(), csf_);
       assert::are_equal(form.handle(), cp.parent(), csf_);
-      assert::are_equal(WS_VISIBLE|WS_CHILD|WS_TABSTOP, cp.style(), csf_);
+      assert::are_equal(WS_VISIBLE | WS_CHILD | WS_TABSTOP, cp.style(), csf_);
       assert::are_equal(drawing::size::empty, cp.size(), csf_);
       assert::is_zero(cp.width(), csf_);
       assert::is_zero(cp.x(), csf_);
@@ -474,7 +474,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::point::empty, cp.location(), csf_);
       assert::is_zero(cp.param(), csf_);
       assert::is_zero(cp.parent(), csf_);
-      assert::are_equal(WS_VISIBLE|WS_CHILD|WS_TABSTOP, cp.style(), csf_);
+      assert::are_equal(WS_VISIBLE | WS_CHILD | WS_TABSTOP, cp.style(), csf_);
       assert::are_equal(drawing::size(100, 50), cp.size(), csf_);
       assert::are_equal(100, cp.width(), csf_);
       assert::is_zero(cp.x(), csf_);
@@ -494,13 +494,13 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::point::empty, cp.location(), csf_);
       assert::is_zero(cp.param(), csf_);
       assert::is_zero(cp.parent(), csf_);
-      assert::are_equal(WS_VISIBLE|WS_CHILD, cp.style(), csf_);
+      assert::are_equal(WS_VISIBLE | WS_CHILD, cp.style(), csf_);
       assert::are_equal(drawing::size::empty, cp.size(), csf_);
       assert::is_zero(cp.width(), csf_);
       assert::is_zero(cp.x(), csf_);
       assert::is_zero(cp.y(), csf_);
     }
-
+    
     void test_method_(create_params_text) {
       control_for_test control;
       control.text("Value");
@@ -514,13 +514,13 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::point::empty, cp.location(), csf_);
       assert::is_zero(cp.param(), csf_);
       assert::is_zero(cp.parent(), csf_);
-      assert::are_equal(WS_CHILD|WS_TABSTOP|WS_VISIBLE, cp.style(), csf_);
+      assert::are_equal(WS_CHILD | WS_TABSTOP | WS_VISIBLE, cp.style(), csf_);
       assert::are_equal(drawing::size::empty, cp.size(), csf_);
       assert::is_zero(cp.width(), csf_);
       assert::is_zero(cp.x(), csf_);
       assert::is_zero(cp.y(), csf_);
     }
-
+    
     void test_method_(create_params_visible_false) {
       control_for_test control;
       control.visible(false);
@@ -534,13 +534,13 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::point::empty, cp.location(), csf_);
       assert::is_zero(cp.param(), csf_);
       assert::is_zero(cp.parent(), csf_);
-      assert::are_equal(WS_CHILD|WS_TABSTOP, cp.style(), csf_);
+      assert::are_equal(WS_CHILD | WS_TABSTOP, cp.style(), csf_);
       assert::are_equal(drawing::size::empty, cp.size(), csf_);
       assert::is_zero(cp.width(), csf_);
       assert::is_zero(cp.x(), csf_);
       assert::is_zero(cp.y(), csf_);
     }
-
+    
     void test_method_(create_params_with_some_values) {
       forms::form form;
       control_for_test control;
@@ -561,7 +561,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::point(10, 20), cp.location(), csf_);
       assert::is_zero(cp.param(), csf_);
       assert::are_equal(form.handle(), cp.parent(), csf_);
-      assert::are_equal(WS_DISABLED|WS_CHILD, cp.style(), csf_);
+      assert::are_equal(WS_DISABLED | WS_CHILD, cp.style(), csf_);
       assert::are_equal(drawing::size(100, 50), cp.size(), csf_);
       assert::are_equal(100, cp.width(), csf_);
       assert::are_equal(10, cp.x(), csf_);
@@ -585,7 +585,7 @@ namespace xtd::forms::tests {
       assert::are_equal(control, form.controls()[0].get(), csf_);
       assert::is_not_zero(control.handle(), csf_);
     }
-
+    
     void test_method_(ambient_property_back_color) {
       forms::form form;
       control_for_test control;
@@ -606,14 +606,14 @@ namespace xtd::forms::tests {
       control.parent(form);
       assert::are_equal(form.font(), control.font(), csf_);
     }
-
+    
     void test_method_(ambient_property_fore_color) {
       forms::form form;
       control_for_test control;
       control.parent(form);
       assert::are_equal(form.fore_color(), control.fore_color(), csf_);
     }
-
+    
     void test_method_(ambient_property_change_parent_back_color) {
       forms::form form;
       control_for_test control;
@@ -622,7 +622,7 @@ namespace xtd::forms::tests {
       assert::are_equal(color::spring_green, form.back_color(), csf_);
       assert::are_equal(form.back_color(), control.back_color(), csf_);
     }
-
+    
     void test_method_(ambient_property_change_parent_cursor) {
       forms::form form;
       control_for_test control;
@@ -649,7 +649,7 @@ namespace xtd::forms::tests {
       assert::are_equal(color::spring_green, form.fore_color(), csf_);
       assert::are_equal(form.fore_color(), control.fore_color(), csf_);
     }
-
+    
     void test_method_(anchor_without_parent) {
       control_for_test control;
       control.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
@@ -857,13 +857,13 @@ namespace xtd::forms::tests {
       control.cursor(nullptr);
       assert::are_equal(control.default_cursor(), control.cursor(), csf_);
     }
-
+    
     void test_method_(dock_without_parent) {
       control_for_test control;
       control.dock(dock_style::fill);
       assert::are_equal(dock_style::fill, control.dock(), csf_);
     }
-
+    
     void test_method_(dock_with_parent) {
       forms::form form;
       control_for_test control;
@@ -931,7 +931,7 @@ namespace xtd::forms::tests {
       control.font(nullptr);
       assert::are_equal(control.default_font(), control.font(), csf_);
     }
-
+    
     void test_method_(fore_color_without_parent) {
       control_for_test control;
       control.fore_color(color::spring_green);
@@ -963,7 +963,7 @@ namespace xtd::forms::tests {
       control.fore_color(nullptr);
       assert::are_equal(control.default_fore_color(), control.fore_color(), csf_);
     }
-
+    
     void test_method_(height_without_parent) {
       control_for_test control;
       control.height(50);
@@ -1003,7 +1003,7 @@ namespace xtd::forms::tests {
       assert::are_equal(10, control.left(), csf_);
       assert::are_equal(20, control.top(), csf_);
     }
-
+    
     void test_method_(location_with_parent) {
       forms::form form;
       control_for_test control;
@@ -1013,7 +1013,7 @@ namespace xtd::forms::tests {
       assert::are_equal(10, control.left(), csf_);
       assert::are_equal(20, control.top(), csf_);
     }
-
+    
     void test_method_(margin_without_parent) {
       control_for_test control;
       control.margin(forms::padding(10));
@@ -1109,7 +1109,7 @@ namespace xtd::forms::tests {
       control.name("Value");
       assert::are_equal("Value", control.name(), csf_);
     }
-
+    
     void test_method_(padding_without_parent) {
       control_for_test control;
       control.padding(forms::padding(10));
@@ -1173,13 +1173,13 @@ namespace xtd::forms::tests {
       assert::are_equal(1U, form1.controls().size(), csf_);
       assert::are_equal(0U, form2.controls().size(), csf_);
       assert::are_same(form1, control.parent().value().get(), csf_);
-
+      
       control.parent(form2);
       assert::are_equal(0U, form1.controls().size(), csf_);
       assert::are_equal(1U, form2.controls().size(), csf_);
       assert::are_same(form2, control.parent().value().get(), csf_);
     }
-
+    
     void test_method_(region_without_parent) {
       control_for_test control;
       drawing::region region1;
@@ -1217,9 +1217,9 @@ namespace xtd::forms::tests {
     void test_method_(style_sheet_without_parent) {
       control_for_test control;
       style_sheets::style_sheet ss("control {"
-                                   "  border-style: solid;"
-                                   "  border-color: blue;"
-                                   "}");
+        "  border-style: solid;"
+        "  border-color: blue;"
+        "}");
       control.style_sheet(ss);
       assert::are_equal(ss, control.style_sheet(), csf_);
     }
@@ -1229,9 +1229,9 @@ namespace xtd::forms::tests {
       control_for_test control;
       control.parent(form);
       style_sheets::style_sheet ss("control {"
-                                   "  border-style: solid;"
-                                   "  border-color: blue;"
-                                   "}");
+        "  border-style: solid;"
+        "  border-color: blue;"
+        "}");
       control.style_sheet(ss);
       assert::are_equal(ss, control.style_sheet(), csf_);
     }
@@ -1333,7 +1333,7 @@ namespace xtd::forms::tests {
       // The application's message loop must be running to execute begin_invoke: not testable in unit tests.
       assert::is_false(invoked, csf_);
     }
-
+    
     void test_method_(bring_to_front_without_parent) {
       control_for_test control;
       control.bring_to_front();
@@ -1430,10 +1430,10 @@ namespace xtd::forms::tests {
       control_for_test control;
       control.parent(form);
       assert::is_true(control.created(), csf_);
-      assert::does_not_throw([&]{control.create_control();});
+      assert::does_not_throw([&] {control.create_control();});
       assert::is_true(control.created(), csf_);
     }
-
+    
     void test_method_(create_graphics_without_parent) {
       control_for_test control;
       assert::throws<invalid_operation_exception>([&] {control.create_graphics();}, csf_);
@@ -1455,8 +1455,8 @@ namespace xtd::forms::tests {
       control.destroy_control();
       assert::is_false(control.created(), csf_);
       assert::is_null(control.parent(), csf_);
-   }
-
+    }
+    
     void test_method_(focus_without_parent) {
       control_for_test control;
       assert::is_false(control.focus(), csf_);
@@ -1523,14 +1523,14 @@ namespace xtd::forms::tests {
       control_for_test control;
       control.parent(form);
       control.suspend_layout();
-      assert::does_not_throw([&]{control.resume_layout();}, csf_);
+      assert::does_not_throw([&] {control.resume_layout();}, csf_);
     }
     
     void test_method_(resume_layout_without_suspend_layout) {
       forms::form form;
       control_for_test control;
       control.parent(form);
-      assert::does_not_throw([&]{control.resume_layout();}, csf_);
+      assert::does_not_throw([&] {control.resume_layout();}, csf_);
     }
     
     void test_method_(show_without_parent) {
@@ -1615,7 +1615,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::color::cyan, control->back_color(), csf_);
       assert::are_equal(drawing::color::black, control->fore_color(), csf_);
     }
-
+    
     void test_method_(create_with_text_and_default_arguments) {
       auto control = forms::control::create<control_for_test>("my_text");
       assert::is_not_null(control, csf_);
@@ -1640,7 +1640,7 @@ namespace xtd::forms::tests {
       assert::are_equal(control->default_back_color(), control->back_color(), csf_);
       assert::are_equal(control->default_fore_color(), control->fore_color(), csf_);
     }
-
+    
     void test_method_(create_with_text_and_arguments) {
       auto control = forms::control::create<control_for_test>("my_text", drawing::point(10, 20), drawing::size(100, 50), drawing::color::cyan, drawing::color::black);
       assert::is_not_null(control, csf_);
@@ -1679,7 +1679,7 @@ namespace xtd::forms::tests {
       assert::are_same(control1, forms::control::from_child_handle(control2.handle()).value().get(), csf_);
       assert::is_null(forms::control::from_child_handle(control3.handle()), csf_);
       assert::is_null(forms::control::from_handle(1234), csf_);
-   }
+    }
     
     void test_method_(from_handle) {
       forms::form form;
@@ -1700,7 +1700,7 @@ namespace xtd::forms::tests {
       forms::form form;
       control_for_test control1;
       control_for_test control2;
-
+      
       form << control1;
       control1 << control2;
       
@@ -1723,7 +1723,7 @@ namespace xtd::forms::tests {
       
       control1 >> control2;
       form >> control1;
-
+      
       assert::is_null(form.parent(), csf_);
       assert::is_null(control1.parent(), csf_);
       assert::is_null(control2.parent(), csf_);
@@ -1748,7 +1748,7 @@ namespace xtd::forms::tests {
       control.back_color_changed += [&] {
         back_color_changed_raised = true;
       };
-
+      
       control.back_color(nullptr);
       assert::is_false(back_color_changed_raised, csf_);
       control.back_color(color::spring_green);
@@ -1761,7 +1761,7 @@ namespace xtd::forms::tests {
       control.background_image_changed += [&] {
         background_image_changed_raised = true;
       };
-
+      
       control.background_image(image::empty);
       assert::is_false(background_image_changed_raised, csf_);
       control.background_image(system_images::from_name("xtd"));
@@ -1774,7 +1774,7 @@ namespace xtd::forms::tests {
       control.background_image_layout_changed += [&] {
         background_image_layout_changed_raised = true;
       };
-
+      
       control.background_image_layout(image_layout::tile);
       assert::is_false(background_image_layout_changed_raised, csf_);
       control.background_image_layout(image_layout::zoom);
@@ -1787,7 +1787,7 @@ namespace xtd::forms::tests {
       control.control_appearance_changed += [&] {
         control_appearance_changed_raised = true;
       };
-
+      
       control.control_appearance(forms::control_appearance::standard);
       assert::is_false(control_appearance_changed_raised, csf_);
       control.control_appearance(forms::control_appearance::system);
@@ -1800,7 +1800,7 @@ namespace xtd::forms::tests {
       control.client_size_changed += [&] {
         client_size_changed_raised = true;
       };
-
+      
       //control.client_size({0, 0}); // Do not activate this line because if client_size is not activated, it will be activated even for an identical value.
       assert::is_false(client_size_changed_raised, csf_);
       control.client_size({100, 50});
@@ -1813,7 +1813,7 @@ namespace xtd::forms::tests {
       control.control_added += [&] {
         control_added_raised = true;
       };
-
+      
       control_for_test child_control;
       assert::is_false(control_added_raised, csf_);
       control.controls().push_back(child_control);
@@ -1826,7 +1826,7 @@ namespace xtd::forms::tests {
       control.control_removed += [&] {
         control_removed_raised = true;
       };
-
+      
       control_for_test child_control;
       control.controls().push_back(child_control);
       assert::is_false(control_removed_raised, csf_);
@@ -1840,7 +1840,7 @@ namespace xtd::forms::tests {
       control.cursor_changed += [&] {
         cursor_changed_raised = true;
       };
-
+      
       control.cursor(nullptr);
       assert::is_false(cursor_changed_raised, csf_);
       control.cursor(cursors::cross());
@@ -1853,7 +1853,7 @@ namespace xtd::forms::tests {
       control.dock_changed += [&] {
         dock_changed_raised = true;
       };
-
+      
       control.dock(dock_style::none);
       assert::is_false(dock_changed_raised, csf_);
       control.dock(dock_style::fill);
@@ -1866,7 +1866,7 @@ namespace xtd::forms::tests {
       control.enabled_changed += [&] {
         enabled_changed_raised = true;
       };
-
+      
       control.enabled(true);
       assert::is_false(enabled_changed_raised, csf_);
       control.enabled(false);
@@ -1879,7 +1879,7 @@ namespace xtd::forms::tests {
       control.fore_color_changed += [&] {
         fore_color_changed_raised = true;
       };
-
+      
       control.fore_color(nullptr);
       assert::is_false(fore_color_changed_raised, csf_);
       control.fore_color(color::spring_green);
@@ -1892,7 +1892,7 @@ namespace xtd::forms::tests {
       control.font_changed += [&] {
         font_changed_raised = true;
       };
-
+      
       control.font(nullptr);
       assert::is_false(font_changed_raised, csf_);
       control.font(system_fonts::tool_font());
@@ -1905,7 +1905,7 @@ namespace xtd::forms::tests {
       control.handle_created += [&] {
         handle_created_raised = true;
       };
-
+      
       forms::form form;
       assert::is_false(handle_created_raised, csf_);
       control.parent(form);
@@ -1918,7 +1918,7 @@ namespace xtd::forms::tests {
       control.handle_destroyed += [&] {
         handle_destroyed_raised = true;
       };
-
+      
       forms::form form;
       control.parent(form);
       assert::is_false(handle_destroyed_raised, csf_);
@@ -1932,14 +1932,14 @@ namespace xtd::forms::tests {
       control.layout += [&] {
         layout_raised = true;
       };
-
+      
       forms::form form;
       control.parent(form);
       layout_raised = false;
       assert::is_false(layout_raised, csf_);
       control.perform_layout();
       assert::is_true(layout_raised, csf_);
-
+      
       layout_raised = false;
       assert::is_false(layout_raised, csf_);
       control.resume_layout();
@@ -1952,7 +1952,7 @@ namespace xtd::forms::tests {
       control.location_changed += [&] {
         location_changed_raised = true;
       };
-
+      
       control.location({0, 0});
       assert::is_false(location_changed_raised, csf_);
       control.location({10, 20});
@@ -1981,7 +1981,7 @@ namespace xtd::forms::tests {
       control.resize += [&] {
         resize_raised = true;
       };
-
+      
       control.size({0, 0});
       assert::is_false(resize_raised, csf_);
       control.size({100, 50});
@@ -1994,7 +1994,7 @@ namespace xtd::forms::tests {
       control.region_changed += [&] {
         region_changed_raised = true;
       };
-
+      
       control.region(control.region());
       assert::is_false(region_changed_raised, csf_);
       control.region(xtd::drawing::region());
@@ -2007,7 +2007,7 @@ namespace xtd::forms::tests {
       control.size_changed += [&] {
         size_changed_raised = true;
       };
-
+      
       control.size({0, 0});
       assert::is_false(size_changed_raised, csf_);
       control.size({100, 50});
@@ -2020,7 +2020,7 @@ namespace xtd::forms::tests {
       control.tab_stop_changed += [&] {
         tab_stop_changed_raised = true;
       };
-
+      
       control.tab_stop(true);
       assert::is_false(tab_stop_changed_raised, csf_);
       control.tab_stop(false);
@@ -2033,7 +2033,7 @@ namespace xtd::forms::tests {
       control.text_changed += [&] {
         text_changed_raised = true;
       };
-
+      
       control.text("");
       assert::is_false(text_changed_raised, csf_);
       control.text("Value");
@@ -2046,19 +2046,19 @@ namespace xtd::forms::tests {
       control.visible_changed += [&] {
         visible_changed_raised = true;
       };
-
+      
       control.visible(true);
       assert::is_false(visible_changed_raised, csf_);
       control.visible(false);
       assert::is_true(visible_changed_raised, csf_);
     }
-
+    
     void test_method_(on_auto_size_changed) {
       class control_for_test : public control {
       public:
         control_for_test() = default;
         bool on_auto_size_changed_raised = false;
-
+        
       protected:
         void on_auto_size_changed(const event_args& e) override {
           control::on_auto_size_changed(e);
@@ -2072,7 +2072,7 @@ namespace xtd::forms::tests {
       control.auto_size(true);
       assert::is_true(control.on_auto_size_changed_raised, csf_);
     }
-
+    
     void test_method_(on_back_color_changed) {
       class control_for_test : public control {
       public:
@@ -2092,7 +2092,7 @@ namespace xtd::forms::tests {
       control.back_color(color::spring_green);
       assert::is_true(control.on_back_color_changed_raised, csf_);
     }
-
+    
     void test_method_(on_background_image_changed) {
       class control_for_test : public control {
       public:
@@ -2112,7 +2112,7 @@ namespace xtd::forms::tests {
       control.background_image(system_images::from_name("xtd"));
       assert::is_true(control.on_background_image_changed_raised, csf_);
     }
-
+    
     void test_method_(on_background_image_layout_changed) {
       class control_for_test : public control {
       public:
@@ -2132,7 +2132,7 @@ namespace xtd::forms::tests {
       control.background_image_layout(image_layout::zoom);
       assert::is_true(control.on_background_image_layout_changed_raised, csf_);
     }
-
+    
     void test_method_(on_control_appearance_changed) {
       class control_for_test : public control {
       public:
@@ -2152,7 +2152,7 @@ namespace xtd::forms::tests {
       control.control_appearance(forms::control_appearance::system);
       assert::is_true(control.on_control_appearance_changed_raised, csf_);
     }
-
+    
     void test_method_(on_client_size_changed) {
       class control_for_test : public control {
       public:
@@ -2172,7 +2172,7 @@ namespace xtd::forms::tests {
       control.client_size({100, 50});
       assert::is_true(control.on_client_size_changed_raised, csf_);
     }
-
+    
     void test_method_(on_control_added) {
       class control_for_test : public control {
       public:
@@ -2192,7 +2192,7 @@ namespace xtd::forms::tests {
       control.controls().push_back(child_control);
       assert::is_true(control.on_control_added_raised, csf_);
     }
-
+    
     void test_method_(on_control_removed) {
       class control_for_test : public control {
       public:
@@ -2213,7 +2213,7 @@ namespace xtd::forms::tests {
       control.controls().erase_at(0);
       assert::is_true(control.on_control_removed_raised, csf_);
     }
-
+    
     void test_method_(on_create_control) {
       class control_for_test : public control {
       public:
@@ -2234,7 +2234,7 @@ namespace xtd::forms::tests {
       control.parent(form);
       assert::is_true(control.on_create_control_raised, csf_);
     }
-
+    
     void test_method_(on_cursor_changed) {
       class control_for_test : public control {
       public:
@@ -2254,7 +2254,7 @@ namespace xtd::forms::tests {
       control.cursor(cursors::cross());
       assert::is_true(control.on_cursor_changed_raised, csf_);
     }
-
+    
     void test_method_(on_dock_changed) {
       class control_for_test : public control {
       public:
@@ -2274,7 +2274,7 @@ namespace xtd::forms::tests {
       control.dock(dock_style::fill);
       assert::is_true(control.on_dock_changed_raised, csf_);
     }
-
+    
     void test_method_(on_enabled_changed) {
       class control_for_test : public control {
       public:
@@ -2294,7 +2294,7 @@ namespace xtd::forms::tests {
       control.enabled(false);
       assert::is_true(control.on_enabled_changed_raised, csf_);
     }
-
+    
     void test_method_(on_fore_color_changed) {
       class control_for_test : public control {
       public:
@@ -2314,7 +2314,7 @@ namespace xtd::forms::tests {
       control.fore_color(color::spring_green);
       assert::is_true(control.on_fore_color_changed_raised, csf_);
     }
-
+    
     void test_method_(on_font_changed) {
       class control_for_test : public control {
       public:
@@ -2334,7 +2334,7 @@ namespace xtd::forms::tests {
       control.font(system_fonts::tool_font());
       assert::is_true(control.on_font_changed_raised, csf_);
     }
-
+    
     void test_method_(on_handle_created) {
       class control_for_test : public control {
       public:
@@ -2354,7 +2354,7 @@ namespace xtd::forms::tests {
       control.parent(form);
       assert::is_true(control.on_handle_created_raised, csf_);
     }
-
+    
     void test_method_(on_handle_destroyed) {
       class control_for_test : public control {
       public:
@@ -2375,7 +2375,7 @@ namespace xtd::forms::tests {
       control.parent(nullptr);
       assert::is_true(control.on_handle_destroyed_raised, csf_);
     }
-
+    
     void test_method_(on_layout) {
       class control_for_test : public control {
       public:
@@ -2396,13 +2396,13 @@ namespace xtd::forms::tests {
       assert::is_false(control.on_layout_raised, csf_);
       control.perform_layout();
       assert::is_true(control.on_layout_raised, csf_);
-
+      
       control.on_layout_raised = false;
       assert::is_false(control.on_layout_raised, csf_);
       control.resume_layout();
       assert::is_true(control.on_layout_raised, csf_);
     }
-
+    
     void test_method_(on_location_changed) {
       class control_for_test : public control {
       public:
@@ -2422,7 +2422,7 @@ namespace xtd::forms::tests {
       control.location({10, 20});
       assert::is_true(control.on_location_changed_raised, csf_);
     }
-
+    
     void test_method_(on_parent_back_color_changed) {
       class control_for_test : public control {
       public:
@@ -2444,7 +2444,7 @@ namespace xtd::forms::tests {
       form.back_color(color::spring_green);
       assert::is_true(control.on_parent_back_color_changed_raised, csf_);
     }
-
+    
     void test_method_(on_parent_cursor_changed) {
       class control_for_test : public control {
       public:
@@ -2466,7 +2466,7 @@ namespace xtd::forms::tests {
       form.cursor(cursors::cross());
       assert::is_true(control.on_parent_cursor_changed_raised, csf_);
     }
-
+    
     void test_method_(on_parent_changed) {
       class control_for_test : public control {
       public:
@@ -2489,7 +2489,7 @@ namespace xtd::forms::tests {
       control.parent(nullptr);
       assert::is_true(control.on_parent_changed_raised, csf_);
     }
-
+    
     void test_method_(on_parent_enabled_changed) {
       class control_for_test : public control {
       public:
@@ -2505,7 +2505,7 @@ namespace xtd::forms::tests {
       control_for_test control;
       forms::form form;
       control.parent(form);
-
+      
       form.enabled(true);
       assert::is_false(control.on_parent_enabled_changed_raised, csf_);
       form.enabled(false);
@@ -2527,7 +2527,7 @@ namespace xtd::forms::tests {
       control_for_test control;
       forms::form form;
       control.parent(form);
-
+      
       form.fore_color(nullptr);
       assert::is_false(control.on_parent_fore_color_changed_raised, csf_);
       form.fore_color(color::spring_green);
@@ -2549,13 +2549,13 @@ namespace xtd::forms::tests {
       control_for_test control;
       forms::form form;
       control.parent(form);
-
+      
       form.font(nullptr);
       assert::is_false(control.on_parent_font_changed_raised, csf_);
       form.font({form.font(), 32});
       assert::is_true(control.on_parent_font_changed_raised, csf_);
     }
-
+    
     void test_method_(on_resize) {
       class control_for_test : public control {
       public:
@@ -2575,7 +2575,7 @@ namespace xtd::forms::tests {
       control.size({100, 50});
       assert::is_true(control.on_resize_raised, csf_);
     }
-
+    
     void test_method_(on_region_changed) {
       class control_for_test : public control {
       public:
@@ -2595,7 +2595,7 @@ namespace xtd::forms::tests {
       control.region(xtd::drawing::region());
       assert::is_true(control.on_region_changed_raised, csf_);
     }
-
+    
     void test_method_(on_size_changed) {
       class control_for_test : public control {
       public:
@@ -2615,7 +2615,7 @@ namespace xtd::forms::tests {
       control.size({100, 50});
       assert::is_true(control.on_size_changed_raised, csf_);
     }
-
+    
     void test_method_(on_tab_stop_changed) {
       class control_for_test : public control {
       public:
@@ -2635,7 +2635,7 @@ namespace xtd::forms::tests {
       control.tab_stop(false);
       assert::is_true(control.on_tab_stop_changed_raised, csf_);
     }
-
+    
     void test_method_(on_text_changed) {
       class control_for_test : public control {
       public:
@@ -2655,7 +2655,7 @@ namespace xtd::forms::tests {
       control.text("Value");
       assert::is_true(control.on_text_changed_raised, csf_);
     }
-
+    
     void test_method_(on_visible_changed) {
       class control_for_test : public control {
       public:

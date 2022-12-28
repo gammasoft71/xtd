@@ -300,7 +300,7 @@ bool control::can_focus() const noexcept {
     
     if (!visible_and_enabled) return false;
     return data_->can_focus;
-  } catch(...) {
+  } catch (...) {
     return false;
   }
 }
@@ -324,7 +324,7 @@ void control::check_for_illegal_cross_thread_calls(bool value) {
 const drawing::rectangle& control::client_rectangle() const noexcept {
   try {
     if (!handle()) data_->client_rectangle = {point {0, 0}, client_size()};
-  } catch(...) {
+  } catch (...) {
   }
   return data_->client_rectangle;
 }
@@ -333,7 +333,7 @@ const drawing::size& control::client_size() const noexcept {
   try {
     if (!handle() && data_->client_size.width() == 0 && width() != 0) data_->client_size = {width(), data_->client_size.height()};
     if (!handle() && data_->client_size.height() == 0 && height() != 0) data_->client_size = {data_->client_size.width(), height()};
-  } catch(...) {
+  } catch (...) {
   }
   return data_->client_size;
 }
@@ -635,7 +635,7 @@ control& control::name(const xtd::ustring& name) {
 intptr control::native_handle() const noexcept {
   try {
     return handle() ? native::control::native_handle(handle()) : 0;
-  } catch(...) {
+  } catch (...) {
     return 0;
   }
 }
@@ -769,7 +769,7 @@ control& control::text(const ustring& text) {
 intptr control::toolkit_handle() const noexcept {
   try {
     return handle() ? native::control::toolkit_handle(handle()) : 0;
-  } catch(...) {
+  } catch (...) {
     return 0;
   }
 }
@@ -994,12 +994,12 @@ forms::create_params control::create_params() const noexcept {
   
   create_params.caption(data_->text);
   create_params.class_style(CS_DBLCLKS);
-
+  
   create_params.style(WS_CHILD);
   if (!enabled()) create_params.style(create_params.style() | WS_DISABLED);
   if (get_state(control::state::tab_stop)) create_params.style(create_params.style() | WS_TABSTOP);
   if (visible()) create_params.style(create_params.style() | WS_VISIBLE);
-
+  
   if (parent().has_value()) create_params.parent(parent().value().get().handle());
   create_params.location(data_->location);
   create_params.size(data_->size.value_or(drawing::size(0, 0)));
@@ -1333,33 +1333,33 @@ void control::on_region_changed(const event_args& e) {
 void control::on_resize(const event_args& e) {
   if (minimum_client_size() != xtd::drawing::size::empty && client_size().width() < minimum_client_size().width())
     client_size({minimum_client_size().width(), client_size().height()});
-  
+    
   if (minimum_client_size() != xtd::drawing::size::empty && client_size().height() < minimum_client_size().height())
     client_size({client_size().width(), minimum_client_size().height()});
-  
+    
   if (minimum_size() != xtd::drawing::size::empty && size().width() < minimum_size().width())
     size({minimum_size().width(), size().height()});
-  
+    
   if (minimum_size() != xtd::drawing::size::empty && size().height() < minimum_size().height())
     size({size().width(), minimum_size().height()});
-  
+    
   if (maximum_client_size() != xtd::drawing::size::empty && client_size().width() > maximum_client_size().width())
     client_size({maximum_client_size().width(), client_size().height()});
-  
+    
   if (maximum_client_size() != xtd::drawing::size::empty && client_size().height() > maximum_client_size().height())
     client_size({client_size().width(), maximum_client_size().height()});
-  
+    
   if (maximum_size() != xtd::drawing::size::empty && size().width() > maximum_size().width())
     size({maximum_size().width(), size().height()});
-  
+    
   if (maximum_size() != xtd::drawing::size::empty && size().height() > maximum_size().height())
     size({size().width(), maximum_size().height()});
-
+    
   if (is_handle_created()) data_->client_rectangle = native::control::client_rectangle(handle());
   if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
   perform_layout();
   invalidate();
-
+  
   if (can_raise_events()) resize(*this, e);
 }
 
@@ -1702,12 +1702,12 @@ void control::set_bounds_core(int32 x, int32 y, int32 width, int32 height, bound
     on_size_changed(event_args::empty);
     on_resize(event_args::empty);
   }
-
+  
   if ((specified & bounds_specified::x) == bounds_specified::x || (specified & bounds_specified::y) == bounds_specified::y) {
     if (is_handle_created()) native::control::location(handle(), location());
     on_location_changed(event_args::empty);
   }
-
+  
   if (specified != bounds_specified::none) {
     if (parent().has_value()) parent().value().get().perform_layout();
     perform_layout();

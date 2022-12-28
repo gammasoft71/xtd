@@ -187,12 +187,12 @@ namespace xtd {
       /// @remarks The default value is false for increase the unit test execution.
       void enable_stack_trace(bool enable_stack_trace) noexcept;
       /// @}
-
+      
     private:
       friend class unit_test;
       friend class ostream_event_listener;
       friend class ostream_unit_test;
-
+      
       bool pattern_compare(const std::string& name, const std::string& pattern) const noexcept;
       
       void end_time(const xtd::date_time& end_time) noexcept;

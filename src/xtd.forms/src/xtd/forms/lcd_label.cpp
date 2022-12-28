@@ -731,7 +731,7 @@ void lcd_label::sixteen_segment_display_digit::set_thickness(int32 value) {
   thickness(value);
 }
 
-lcd_label::lcd_label() :data_(std::make_shared<data>()) {
+lcd_label::lcd_label() : data_(std::make_shared<data>()) {
   set_auto_size_mode(forms::auto_size_mode::grow_and_shrink);
   set_can_focus(false);
   set_style(control_styles::user_paint | control_styles::supports_transparent_back_color | control_styles::optimized_double_buffer, control::control_appearance() == forms::control_appearance::standard);

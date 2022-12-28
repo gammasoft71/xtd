@@ -49,10 +49,10 @@ namespace xtd {
         /// @return The state of the synthesizer after the state changed.
         /// @remarks The xtd::speech::synthesis::state_changed_event_args::state property represents the synthesizer state with a member of the xtd::speech::synthesis::synthesizer_state enumeration.
         synthesizer_state state() const noexcept {return state_;}
-
+        
       private:
         state_changed_event_args(synthesizer_state previous_state, synthesizer_state state) : previous_state_(previous_state), state_(state)  {}
-
+        
         synthesizer_state previous_state_;
         synthesizer_state state_;
       };

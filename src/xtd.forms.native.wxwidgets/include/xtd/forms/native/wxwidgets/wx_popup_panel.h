@@ -65,7 +65,7 @@ namespace xtd {
         }
         
         wxWindow* GetMainWindowOfCompositeControl() override {return GetParent();}
-
+        
         void set_wx_evt(iwx_evt* wx_evt) {wx_evt_ = wx_evt;}
         
         iwx_evt* wx_evt_ = nullptr;
@@ -84,9 +84,9 @@ namespace xtd {
         
         void Popup(wxWindow* focus = nullptr) override {
           /// Workaround : with wxWidgets version <= 3.1.5 the wxPopupTransientWindow, it does not respond on macOS....
-#if defined(__WXOSX__)
+          #if defined(__WXOSX__)
           Raise();
-#endif
+          #endif
           wxPopupTransientWindow::Popup(focus);
         }
         
@@ -98,9 +98,9 @@ namespace xtd {
         }
         
         bool SetBackgroundColour(const wxColour& colour) override {
-#if !defined(__WXOSX__)
+          #if !defined(__WXOSX__)
           inner_panel->SetBackgroundColour(colour);
-#endif
+          #endif
           return wxPopupTransientWindow::SetBackgroundColour(colour);
         }
         
@@ -137,17 +137,17 @@ namespace xtd {
           dynamic_cast<wxPopup*>(control())->set_wx_evt(dynamic_cast<iwx_evt*>(control()));
           SetPosition({create_params.location.x(), create_params.location.y()});
           control()->SetSize(create_params.size.width(), create_params.size.height());
-#if defined(__WXMSW__)
+          #if defined(__WXMSW__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
             control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
-#elif defined(__WXOSX__)
+          #elif defined(__WXOSX__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
             control()->SetForegroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
           }
-#endif
+          #endif
         }
         
         static long popup_panel_style_to_wx_style(size_t style, size_t ex_style) {
@@ -173,7 +173,7 @@ namespace xtd {
         }
         
         wxWindow* main_control() const override { return control()->GetChildren()[0]; }
-
+        
         wxRect GetClientRect() const override {
           auto rect = control()->GetClientRect();
           rect.x = location_.x;

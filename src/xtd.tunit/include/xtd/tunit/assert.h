@@ -2145,7 +2145,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_false(std::empty(s1)); // test ok.
       /// xtd::tunit::assert::is_false(std::empty(s2)); // test throws an assert_error exception.
       /// @endcode
-      static void is_true(bool condition);      
+      static void is_true(bool condition);
       /// @brief Asserts that a condition is true.
       /// @param condition The condition to check is true.
       /// @param stack_frame Contains information about current file and current line.

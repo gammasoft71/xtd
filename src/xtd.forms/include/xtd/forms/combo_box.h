@@ -152,7 +152,7 @@ namespace xtd {
       /// @{
       forms::create_params create_params() const noexcept override;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{
@@ -182,7 +182,7 @@ namespace xtd {
       void wm_mouse_double_click(message& message);
       void wm_mouse_down(message& message);
       void wm_mouse_up(message& message);
-
+      
       std::shared_ptr<data> data_;
     };
   }

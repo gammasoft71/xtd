@@ -137,12 +137,12 @@ namespace xtd {
       /// @{
       bool equals(const link& other) const noexcept override;
       /// @}
-
+      
     private:
       friend link_label;
       bool active_() const noexcept;
       void active_(bool active) noexcept;
-
+      
       std::shared_ptr<data> data_;
     };
   }

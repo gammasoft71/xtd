@@ -74,10 +74,10 @@ namespace xtd {
       
       /// @brief Represent an xtd::forms::main_menu reference.
       using main_menu_ref = std::reference_wrapper<xtd::forms::main_menu>;
-
+      
       /// @brief Represent an xtd::forms::status_bar reference.
       using status_bar_ref = std::reference_wrapper<xtd::forms::status_bar>;
-
+      
       /// @brief Represent an xtd::forms::tool_bar reference.
       using tool_bar_ref = std::reference_wrapper<xtd::forms::tool_bar>;
       /// @}
@@ -144,7 +144,7 @@ namespace xtd {
       /// @param value true if the form displays a control box in the upper-right corner of the form; otherwise, false. The default is true.
       /// @return Current form.
       virtual form& control_box(bool value);
-            
+      
       /// @brief Gets the dialog result for the form.
       /// @return A dialog_result that represents the result of the form when used as a dialog box.
       virtual forms::dialog_result dialog_result() const noexcept;
@@ -157,7 +157,7 @@ namespace xtd {
       using container_control::font;
       control& font(std::nullptr_t) override;
       /// @endcond
-
+      
       /// @brief Gets the border style of the form.
       /// @return A form_border_style that represents the style of border to display for the form. The default is form_border_style::sizable.
       virtual forms::form_border_style form_border_style() const noexcept;
@@ -181,7 +181,7 @@ namespace xtd {
       /// @param value An icon that represents the icon for the form.
       /// @return Current form.
       virtual form& icon(const xtd::drawing::icon& value);
-
+      
       /// @brief Gets a value indicating whether the Maximize button is displayed in the caption bar of the form.
       /// @return true to display a Maximize button for the form; otherwise, false. The default is true.
       virtual bool maximize_box() const noexcept;
@@ -220,7 +220,7 @@ namespace xtd {
       /// @brief Sets form opacity.
       /// @param opacity A double-precision value between 0.0 and 1.0 that represent the form opacity.
       virtual form& opacity(double opacity);
-
+      
       /// @brief Gets the form that owns this form.
       /// @return A form that represents the form that is the owner of this form.
       virtual std::optional<control_ref> owner() const noexcept;
@@ -404,7 +404,7 @@ namespace xtd {
       forms::create_params create_params() const noexcept override;
       drawing::size default_size() const noexcept override;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{
@@ -453,12 +453,12 @@ namespace xtd {
       void fill_in_create_params_border_styles(xtd::forms::create_params& cp) const;
       void fill_in_create_params_start_position(xtd::forms::create_params& cp) const;
       void fill_in_create_params_window_state(xtd::forms::create_params& cp) const;
-
+      
       void wm_activate(message& message);
       void wm_close(message& message);
       void wm_recreate(message& message);
       void wm_syscolor_change(message& message);
-
+      
       std::shared_ptr<data> data_;
       static std::optional<form_ref> active_form_;
     };

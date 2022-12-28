@@ -364,9 +364,9 @@ void button_renderer::draw_button_macos_light(graphics g, const rectangle& bound
   auto button_color = application::style_sheet().system_colors().button_face();
   auto text_color = foreground_color;
   
-  if (state == xtd::forms::visual_styles::push_button_state::pressed || state == xtd::forms::visual_styles::push_button_state::checked) {
+  if (state == xtd::forms::visual_styles::push_button_state::pressed || state == xtd::forms::visual_styles::push_button_state::checked)
     button_color = color::from_argb(240, 240, 240);
-  } else if (state == xtd::forms::visual_styles::push_button_state::disabled) {
+  else if (state == xtd::forms::visual_styles::push_button_state::disabled) {
     button_color = back_color.has_value() ? color::from_argb(210, 255, 255, 255) : control_paint::dark(button_color, 0.04);
     text_color = application::style_sheet().system_colors().gray_text();
   } else if (state == xtd::forms::visual_styles::push_button_state::default_state) {

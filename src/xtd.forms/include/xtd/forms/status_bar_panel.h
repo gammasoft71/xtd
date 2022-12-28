@@ -237,7 +237,7 @@ namespace xtd {
       static status_bar_panel create_panel(const xtd::ustring& text, const xtd::drawing::image& image);
       
       bool equals(const status_bar_panel& other) const noexcept override;
-
+      
       /// @brief Ends the initialization of a xtd::forms::status_bar_panel.
       /// @remarks This method is used to end the initialization of a component that is used on a form or used by another component. The xtd::forms::status_bar_panel::end_init method ends the initialization. Using the xtd::forms::status_bar_panel::begin_init and xtd::forms::status_bar_panel::end_init methods prevents the control from being used before it is fully initialized.
       void end_init();

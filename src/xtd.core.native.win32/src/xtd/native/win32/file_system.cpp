@@ -23,7 +23,7 @@ namespace {
     file_time.dwHighDateTime = time_value.HighPart;
     return file_time;
   }
-
+  
   static time_t file_time_to_time_t(FILETIME const& time) {
     ULARGE_INTEGER time_value;
     time_value.LowPart = time.dwLowDateTime;
@@ -42,18 +42,18 @@ int_least32_t file_system::get_file_times(const string& path, time_t& creation_t
   HANDLE file_handle = CreateFile(win32::strings::to_wstring(path).c_str(), 0, 0, nullptr, OPEN_EXISTING, 0, nullptr);
   if (file_handle == INVALID_HANDLE_VALUE) file_handle = CreateFile(win32::strings::to_wstring(path).c_str(), 0, 0, nullptr, OPEN_EXISTING, FILE_FLAG_BACKUP_SEMANTICS, nullptr);
   if (file_handle == INVALID_HANDLE_VALUE) return 1;
-
+  
   FILETIME creation_time_file_time = time_t_to_file_time(creation_time);
   FILETIME last_access_time_file_time = time_t_to_file_time(last_access_time);
   FILETIME last_write_time_time = time_t_to_file_time(last_write_time);
-
+  
   auto result = GetFileTime(file_handle, &creation_time_file_time, &last_access_time_file_time, &last_write_time_time);
   CloseHandle(file_handle);
-
+  
   creation_time = file_time_to_time_t(creation_time_file_time);
   last_access_time = file_time_to_time_t(last_access_time_file_time);
   last_write_time = file_time_to_time_t(last_write_time_time);
-
+  
   return result == TRUE ? 0 : 2;
 }
 
@@ -97,7 +97,7 @@ bool file_system::is_path_too_long(const string& path) {
 }
 
 int_least32_t file_system::set_attributes(const std::string& path, int_least32_t attributes) {
- return SetFileAttributes(win32::strings::to_wstring(path).c_str(), attributes) == TRUE ? 0 : -1;
+  return SetFileAttributes(win32::strings::to_wstring(path).c_str(), attributes) == TRUE ? 0 : -1;
 }
 
 int_least32_t file_system::set_creation_time(const string& path, time_t creation_time) {
@@ -164,7 +164,7 @@ int_least32_t file_system::set_permissions(const std::string& path, int_least32_
   
   try {
     std::filesystem::permissions(std::filesystem::path(path), file_permission_to_system_permission_converter()(permissions));
-  } catch(...) {
+  } catch (...) {
     return -1;
   }
   return 0;

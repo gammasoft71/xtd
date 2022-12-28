@@ -22,7 +22,7 @@ namespace xtd {
     /// @include animation.cpp
     class animation : public xtd::forms::control {
       struct data;
-
+      
     public:
       /// @name Constructors
       
@@ -49,7 +49,7 @@ namespace xtd {
       /// @brief Gets the elapsed time for the current frame, in ticks.
       /// @return A long integer representing the elapsed time for the current frame, in ticks.
       virtual int64 elapsed_ticks() const noexcept;
-
+      
       /// @brief Gets the current frame counter value.
       /// @return The current frame counter value.
       virtual uint32 frame_counter() const noexcept;
@@ -97,7 +97,7 @@ namespace xtd {
       /// @{
       drawing::size default_size() const noexcept override;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{

@@ -87,7 +87,7 @@ namespace xtd {
       /// @param theme A string that represent a theme
       /// @param size A xtd::drawing::size size for the image
       /// @return A xtd::drawing::image that represent "dialog-cancel".
-      static xtd::drawing::image cancel(const xtd::ustring& theme, const xtd::drawing::size& size) {return from_name(theme,"dialog-cancel", size);}
+      static xtd::drawing::image cancel(const xtd::ustring& theme, const xtd::drawing::size& size) {return from_name(theme, "dialog-cancel", size);}
       
       /// @brief Next image object.
       /// @return A xtd::drawing::image that represent "go-next".

@@ -44,7 +44,7 @@ font_family::font_family(const font_family& value) : data_(std::make_shared<data
 }
 
 font_family::font_family() : data_(std::make_shared<data>()) {
-  
+
 }
 
 font_family& font_family::operator =(const font_family& value) {

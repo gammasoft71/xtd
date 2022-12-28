@@ -292,7 +292,7 @@ namespace xtd {
   inline char16_object boxing(char16& value) noexcept {return char16_object(value);}
   inline char32_object boxing(char32& value) noexcept {return char32_object(value);}
   inline wchar_object boxing(wchar& value) noexcept {return wchar_object(value);}
-
+  
   inline char unboxing(const char& value) noexcept {return value;}
   inline char8 unboxing(const char8& value) noexcept {return value;}
   inline char16 unboxing(const char16& value) noexcept {return value;}
@@ -303,7 +303,7 @@ namespace xtd {
   inline char16 unboxing(char16& value) noexcept {return value;}
   inline char32 unboxing(char32& value) noexcept {return value;}
   inline wchar unboxing(wchar& value) noexcept {return value;}
-
+  
   template<typename type_t>
   inline std::string to_string(const xtd::box_char<type_t>& value, const std::string& fmt, const std::locale& loc) {
     return value.to_string(fmt);

@@ -529,7 +529,7 @@ namespace xtd {
         /// @param trimming The trimming value for the text (see string_trimmings.h for more information).
         /// @warning Internal use only
         static xtd::ustring trim_string(intptr handle, const xtd::ustring& text, intptr font, float width, int32 trimming);
-
+        
         /// @brief Gets the bounding rectangle of the visible clipping region of the graphics.
         /// @param handle The graphics handle.
         /// @param x The x-coordinate of the upper-left corner of the bounding rectangle for the visible clipping region of the graphics.

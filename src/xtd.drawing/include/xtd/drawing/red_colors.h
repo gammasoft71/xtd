@@ -26,11 +26,11 @@ namespace xtd {
     public:
       /// @name Public properties
       
-      /// @{            
+      /// @{
       /// @brief A system-defined color object.
       /// @image html colors_crimson.png
       static xtd::drawing::color crimson();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_dark_red.png
       static xtd::drawing::color dark_red();
@@ -38,7 +38,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_dark_salmon.png
       static xtd::drawing::color dark_salmon();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_firebrick.png
       static xtd::drawing::color firebrick();
@@ -54,7 +54,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_light_salmon.png
       static xtd::drawing::color light_salmon();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_red.png
       static xtd::drawing::color red();
@@ -63,13 +63,13 @@ namespace xtd {
       /// @image html colors_salmon.png
       static xtd::drawing::color salmon();
       /// @}
-
+      
       /// @name Public methods
       
       /// @{
       /// @brief Gets an array of colors.
       static const std::vector<xtd::drawing::color>& get_colors();
-
+      
       /// @brief Gets an array of color names.
       static const std::vector<xtd::ustring>& get_color_names();
       /// @}

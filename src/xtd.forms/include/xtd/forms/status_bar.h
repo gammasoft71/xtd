@@ -61,7 +61,7 @@ namespace xtd {
       struct data;
       class status_bar_panel_control;
       class sizing_grip_control;
-
+      
     public:
       /// @name Alias
       
@@ -154,8 +154,8 @@ namespace xtd {
       /// @{
       forms::create_params create_params() const noexcept override;
       xtd::drawing::font default_font() const noexcept override;
-      drawing::size default_size() const noexcept override;      
-     /// @}
+      drawing::size default_size() const noexcept override;
+      /// @}
       
       /// @name Protetced methods
       
@@ -180,7 +180,7 @@ namespace xtd {
       
       void on_handle_created(const event_args& e) override;
       void on_handle_destroyed(const event_args& e) override;
-     
+      
       void on_main_panel_paint(object& sender, xtd::forms::paint_event_args& e);
       
       void on_paint(xtd::forms::paint_event_args& e) override;

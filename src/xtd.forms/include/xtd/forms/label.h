@@ -71,7 +71,7 @@ namespace xtd {
       /// @remarks Set xtd::forms::label::auto_ellipsis to true to display text that extends beyond the width of the xtd::forms::label in a tooltip when the user passes over the control with the mouse. If xtd::forms::label::auto_size is true, the label will grow to fit the text and an ellipsis will not appear.
       /// @note If the font is taller than the height of the xtd::forms::label and xtd::forms::label::auto_ellipsis is true, you must set xtd::forms::label::auto_size to false for text to be drawn.
       virtual label& auto_ellipsis(bool value);
-
+      
       /// @brief Gets the border sides for the control.
       /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
       virtual forms::border_sides border_sides() const noexcept;
@@ -96,7 +96,7 @@ namespace xtd {
       
       using control::control_appearance;
       control& control_appearance(forms::control_appearance value) override;
-
+      
       /// @brief Gets the flat style appearance of the label control.
       /// @return One of the xtd::forms::flat_style values. The default value is xtd::forms::flat_style::standard.
       /// @remarks When the flat_style property is set to xtd::forms::flat_style::system, any values assigned to the image_list, image, image_index, and image_align properties are ignored. In addition, the text_align property ignores any property values that are not vertical property settings. Horizontally aligned settings of the text_align property are aligned to the top of the control. For example, if you set the text_align property to content_alignment::top_center, content_alignment::middle_center, or content_alignment::bottom_center, when the flat_style property is set to xtd::forms::flat_style::system, the text in the label control will be aligned to the top and center locations within the bounds of the control.
@@ -185,7 +185,7 @@ namespace xtd {
       /// @{
       xtd::forms::create_params create_params() const noexcept override;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{

@@ -488,7 +488,7 @@ color color::from_name(const ustring& name) noexcept {
   }
   try {
     return color::from_known_color(it->second);
-  } catch(...) {
+  } catch (...) {
     return color::empty;
   }
 }

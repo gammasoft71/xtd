@@ -37,47 +37,47 @@ namespace xtd {
         /// @return The control's initial text.
         /// @warning Internal use only
         xtd::ustring caption;
-
+        
         /// @brief Gets or sets the name of the Windows class to derive the control from.
         /// @return The name of the Windows class to derive the control from.
         /// @remarks The default value for this property is empty (""), indicating that the control is not derived from an existing control class. To derive from an existing control class, store the system class name in this property. For example, to derive from the standard Button control, set this property to "button".
         /// @warning Internal use only
         xtd::ustring class_name;
-
+        
         /// @brief Gets or sets a bitwise combination of class style values.
         /// @return A bitwise combination of the class style values.
         /// @remarks see class_styles.h file
         /// @warning Internal use only
         size_t class_style = 0;
-
+        
         /// @brief Gets or sets a bitwise combination of extended window style values.
         /// @return A bitwise combination of the extended window style values.
         /// @remarks The ex_style property supports extended appearance and initial state values to apply to the control.
         /// @remarks see window_styles.h file
         /// @warning Internal use only
         size_t ex_style = 0;
-
+        
         /// @brief Gets or sets the initial location of the control.
         /// @return The xtd::drawing::point that represents the initial location of the control.
         /// @warning Internal use only
         drawing::point location = {-1, -1};
-
+        
         /// @brief Gets or sets additional parameter information needed to create the control.
         /// @return An intptr that holds additional parameter information needed to create the control.
         /// @warning Internal use only
         intptr param = 0;
-
+        
         /// @brief Gets or sets the control's parent.
         /// @return An intptr that contains the window handle of the control's parent.
         /// @warning Internal use only
         intptr parent = 0;
-
+        
         /// @brief Gets or sets a bitwise combination of window style values.
         /// @return A bitwise combination of the window style values.
         /// @remarks The Style property controls the appearance of the control and its initial state.
         /// @warning Internal use only
         size_t style = 0;
-
+        
         /// @brief Gets or sets the initial size of the control.
         /// @return The xtd::drawing::size that represents the initial size of the control.
         /// @warning Internal use only

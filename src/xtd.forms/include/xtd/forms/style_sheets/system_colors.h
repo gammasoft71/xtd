@@ -247,7 +247,7 @@ namespace xtd {
         /// @brief Sets the text color of an html link text.
         /// @param value The text color of an html link text.
         void link_text(const xtd::drawing::color& value) noexcept;
-
+        
         /// @brief Gets the menu system color;
         /// @return The menu system color.
         const xtd::drawing::color& menu() const noexcept;
@@ -303,7 +303,7 @@ namespace xtd {
         /// @brief Sets the text color of an html visited link text.
         /// @param value The text color of an html visited link text.
         void visited_text(const xtd::drawing::color& value) noexcept;
-
+        
         /// @brief Gets the window system color;
         /// @return The window system color.
         const xtd::drawing::color& window() const noexcept;

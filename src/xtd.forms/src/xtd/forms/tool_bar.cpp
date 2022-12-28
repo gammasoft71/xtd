@@ -72,7 +72,7 @@ tool_bar::tool_bar() : data_(std::make_shared<data>()) {
   set_style(control_styles::user_paint, false);
   set_style(control_styles::fixed_height, auto_size());
   set_style(control_styles::fixed_width, false);
-
+  
 }
 
 xtd::forms::tool_bar_appearance tool_bar::appearance() const noexcept {

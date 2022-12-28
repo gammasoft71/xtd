@@ -86,7 +86,7 @@ namespace xtd {
       /// @brief Gets the start time of the test class.
       /// @return The start time of the test class.
       const xtd::date_time& start_time() const noexcept;
-
+      
       /// @brief Gets the tests array of this test class.
       /// @return The tests array.
       const std::vector<xtd::tunit::test>& tests() const noexcept;

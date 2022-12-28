@@ -105,7 +105,7 @@ namespace xtd {
       /// @{
       xtd::forms::create_params create_params() const noexcept override;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{
@@ -126,16 +126,16 @@ namespace xtd {
       /// @par Notes to Inheritors
       /// When overriding xtd::forms::scroll_bar::on_value_changed in a derived class, be sure to call the base class' xtd::forms::scroll_bar::on_value_changed method so that registered delegates receive the event.
       virtual void on_value_changed(const event_args& e);
-
+      
       /// @brief Processes Windows messages.
       /// @param m The Windows Message to process.
       /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.
       void wnd_proc(message& message) override;
       /// @}
-
+      
     private:
       void wm_scroll_control(message& message);
-
+      
       std::shared_ptr<data> data_;
     };
   }

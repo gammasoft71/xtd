@@ -1435,7 +1435,7 @@ namespace xtd {
           base_assert::error();
         }
       }
-
+      
       /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @par Examples

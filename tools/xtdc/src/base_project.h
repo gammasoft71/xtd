@@ -17,7 +17,7 @@ namespace xtdc_command {
         xtd::environment::current_directory(current_directory);
       }
       ~change_current_directory() {xtd::environment::current_directory(previous_current_directoy_);}
-    
+      
     private:
       xtd::ustring previous_current_directoy_ = xtd::environment::current_directory();
     };
@@ -25,11 +25,11 @@ namespace xtdc_command {
   public:
     base_project() = delete;
     explicit base_project(const xtd::ustring& path) : current_path_(path) {}
-
+    
     virtual void create(const xtd::ustring& name, bool create_solution) const = 0;
     
     const xtd::ustring& current_path() const noexcept {return current_path_;}
-
+    
   private:
     xtd::ustring current_path_ = xtd::environment::current_directory();
   };

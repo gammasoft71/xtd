@@ -100,7 +100,7 @@ namespace xtd {
       
       /// @{
       bool equals(const stack_frame& sf) const noexcept override;
-
+      
       /// @brief Gets the column number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.
       /// @return The file column number, or 0 (zero) if the file column number cannot be determined.
       /// @par Examples

@@ -35,7 +35,7 @@ struct picture_box::data {
 picture_box::picture_box() : data_(std::make_shared<data>()) {
   set_can_focus(false);
   set_style(control_styles::opaque | control_styles::selectable, false);
-  set_style(control_styles::optimized_double_buffer|control_styles::supports_transparent_back_color, true);
+  set_style(control_styles::optimized_double_buffer | control_styles::supports_transparent_back_color, true);
 }
 
 forms::border_sides picture_box::border_sides() const noexcept {

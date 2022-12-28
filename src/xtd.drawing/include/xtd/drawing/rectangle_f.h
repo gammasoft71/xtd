@@ -183,7 +183,7 @@ namespace xtd {
       bool contains(float x, float y) const noexcept;
       
       bool equals(const rectangle_f& value) const noexcept override;
-
+      
       /// @brief Creates a xtd::drawing::rectangle_f structure with the specified edge locations.
       /// @param left The x-coordinate of the upper-left corner of this xtd::drawing::rectangle_f structure.
       /// @param top The y-coordinate of the upper-left corner of this xtd::drawing::rectangle_f structure.

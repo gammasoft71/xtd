@@ -61,7 +61,7 @@ namespace xtd {
       /// @brief Sets a value indicating whether the user can use the dialog box to define custom colors.
       /// @param alpha_color true if the dialog box  shows alpha values and an opacity selector (slider); otherwise, false.
       virtual color_picker& alpha_color(bool alpha_color);
-
+      
       /// @brief Gets the color selected by the user.
       /// @return The color selected by the user. If a color is not selected, the default value is black.
       /// @remarks The color selected by the user in the color picker at run time, as defined in color structure.
@@ -87,14 +87,14 @@ namespace xtd {
       /// @{
       forms::create_params create_params() const noexcept override;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{
       /// @brief Raises the color_changed event.
       /// @param e An event_args that contains the event data.
       void on_color_picker_changed(const color_picker_event_args& e);
-
+      
       void on_handle_created(const event_args& e) override;
       void wnd_proc(message& message) override;
       /// @}

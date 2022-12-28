@@ -100,7 +100,7 @@ const std::vector<xtd::tunit::test>& test_class::test_methods() const noexcept {
 void test_class::run(const unit_test& unit_test) {
   if (xtd::tunit::settings::default_settings().shuffle_test())
     std::shuffle(tests_.begin(), tests_.end(), xtd::tunit::settings::default_settings().random_seed() ? xtd::random(xtd::tunit::settings::default_settings().random_seed()).generator() : xtd::random().generator());
-  
+    
   unit_test.event_listener_->on_class_initialize_start(xtd::tunit::class_event_args(*this, unit_test));
   if (class_initialize().method() != nullptr)
     class_initialize().method()();

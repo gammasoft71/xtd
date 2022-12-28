@@ -224,7 +224,7 @@ namespace xtd {
       void on_mouse_up(const mouse_event_args& e) override;
       
       void on_paint(paint_event_args& e) override;
-
+      
       void wnd_proc(message& message) override;
       /// @}
       
@@ -232,7 +232,7 @@ namespace xtd {
       void wm_mouse_double_click(message& message);
       void wm_mouse_down(message& message);
       void wm_mouse_up(message& message);
-
+      
       std::shared_ptr<data> data_;
     };
   }

@@ -26,11 +26,11 @@ namespace xtd {
     public:
       /// @name Public properties
       
-      /// @{                  
+      /// @{
       /// @brief A system-defined color object.
       /// @image html colors_chartreuse.png
       static xtd::drawing::color chartreuse();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_dark_green.png
       static xtd::drawing::color dark_green();
@@ -42,7 +42,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_dark_sea_green.png
       static xtd::drawing::color dark_sea_green();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_green.png
       static xtd::drawing::color green();
@@ -50,7 +50,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_green_yellow.png
       static xtd::drawing::color green_yellow();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_forest_green.png
       static xtd::drawing::color forest_green();
@@ -62,11 +62,11 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_light_green.png
       static xtd::drawing::color light_green();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_lime.png
       static xtd::drawing::color lime();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_lime_green.png
       static xtd::drawing::color lime_green();
@@ -74,7 +74,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_medium_aquamarine.png
       static xtd::drawing::color medium_aquamarine();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_medium_sea_green.png
       static xtd::drawing::color medium_sea_green();
@@ -82,7 +82,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_medium_spring_green.png
       static xtd::drawing::color medium_spring_green();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_olive.png
       static xtd::drawing::color olive();
@@ -94,7 +94,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_pale_green.png
       static xtd::drawing::color pale_green();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_sea_green.png
       static xtd::drawing::color sea_green();
@@ -107,13 +107,13 @@ namespace xtd {
       /// @image html colors_yellow_green.png
       static xtd::drawing::color yellow_green();
       /// @}
-
+      
       /// @name Public methods
       
       /// @{
       /// @brief Gets an array of colors.
       static const std::vector<xtd::drawing::color>& get_colors();
-
+      
       /// @brief Gets an array of color_names.
       static const std::vector<xtd::ustring>& get_color_names();
       /// @}

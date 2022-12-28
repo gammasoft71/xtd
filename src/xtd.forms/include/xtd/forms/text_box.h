@@ -93,7 +93,7 @@ namespace xtd {
       /// @param value The text that is displayed when the control has no text and does not have the focus.
       /// @return Current text_box instance.
       text_box& placeholder_text(const xtd::ustring& value);
-
+      
       using text_box_base::selection_length;
       /// @brief Gets the number of characters selected in the text box.
       /// @return The number of characters selected in the text box.

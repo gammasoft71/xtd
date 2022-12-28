@@ -75,12 +75,12 @@ namespace xtd {
     /// @remarks If no translation is found, the result is the same as the value.
     static xtd::ustring translate(const xtd::ustring& language, const xtd::ustring& value) noexcept;
     /// @}
-
+    
     /// @cond
     static const char* translate(const char* value) noexcept;
     static const char* translate(const xtd::ustring& language, const char* value) noexcept;
     /// @endcond
-
+    
   private:
     static void initialize();
     static std::map<xtd::ustring, xtd::collections::specialized::string_map> language_values_;

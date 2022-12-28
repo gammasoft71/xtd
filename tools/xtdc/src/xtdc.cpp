@@ -35,7 +35,7 @@ namespace xtdc_command {
     
   private:
     static ustring get_full_path() noexcept {return xtd::environment::get_folder_path(xtd::environment::special_folder::xtd_resources);}
-
+    
     static ustring get_project_full_path_from_path(const xtd::ustring& path) noexcept {
       if (path.empty() || path == ".") return environment::current_directory();
       else if (path == "..") {
@@ -418,7 +418,7 @@ namespace xtdc_command {
         if (type.empty()) type = "gui";
         if (sdk.empty()) sdk = "xtd";
         if (name.empty()) name = get_project_name_from_path(path);
-
+        
         if (name.empty()) {
           console::write_line("The name is empty.");
           return -1;
@@ -431,7 +431,7 @@ namespace xtdc_command {
           console::write_line("The size of the name is invalid, the size must be less than or equal to 128.");
           return -1;
         }
-
+        
         xtdc_command::project_type project_type = map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
         xtdc_command::project_sdk project_sdk = map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtk+4", xtdc_command::project_sdk::gtk4}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"qt6", xtdc_command::project_sdk::qt6}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}, {"xtd_c", xtdc_command::project_sdk::xtd_c}} [sdk];
         xtdc_command::project_language project_language = map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtk+4", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"qt6", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"xtd_c", xtdc_command::project_language::c}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
@@ -528,7 +528,7 @@ namespace xtdc_command {
         if (type.empty()) type = "gui";
         if (sdk.empty()) sdk = "xtd";
         if (name.empty()) name = get_project_name_from_path(path);
-
+        
         if (name.empty()) {
           console::write_line("The name is empty.");
           return -1;

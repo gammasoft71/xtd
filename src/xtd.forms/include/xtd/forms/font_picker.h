@@ -87,7 +87,7 @@ namespace xtd {
       /// @{
       forms::create_params create_params() const noexcept override;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{
@@ -106,7 +106,7 @@ namespace xtd {
     private:
       void wm_command_control(message& message);
       void wm_command_control_selchange(message& message);
-
+      
       std::shared_ptr<data> data_;
     };
   }

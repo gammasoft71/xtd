@@ -124,7 +124,7 @@ namespace xtd {
       /// @return EXIT_SUCCESS (0) if succeed; otherwise return EXIT_FAILURE (1).
       int32 run();
       /// @}
-
+      
       
     protected:
       /// @name Protected methods
@@ -170,7 +170,7 @@ namespace xtd {
       void write_list_tests_xml();
       void write_tests_json();
       void write_tests_xml();
-
+      
       std::vector<std::string> arguments;
       std::string name_ = "AllTests";
       std::unique_ptr<xtd::tunit::event_listener> event_listener_;

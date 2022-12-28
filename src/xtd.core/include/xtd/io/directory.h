@@ -123,14 +123,14 @@ namespace xtd {
         
       private:
         friend xtd::io::directory;
-
+        
         std::shared_ptr<data> data_;
       };
       
       /// @brief Represent file iterator used by xtd::io::directory.
       class file_iterator : public xtd::iequatable<file_iterator> {
         struct data;
-
+        
         explicit file_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
@@ -154,14 +154,14 @@ namespace xtd {
         
       private:
         friend xtd::io::directory;
-
+        
         std::shared_ptr<data> data_;
       };
       
       /// @brief Represent file system iterator used by xtd::io::directory.
       class file_system_entry_iterator : public xtd::iequatable<file_system_entry_iterator> {
         struct data;
-
+        
         explicit file_system_entry_iterator(const std::string& path, const std::string& pattern);
       public:
         /// @cond
@@ -185,7 +185,7 @@ namespace xtd {
         
       private:
         friend xtd::io::directory;
-
+        
         std::shared_ptr<data> data_;
       };
       
@@ -1176,7 +1176,7 @@ namespace xtd {
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
       static xtd::date_time get_last_access_time(const xtd::ustring& path);
-
+      
       /// @brief Returns the date and time the specified file or directory was last written to.
       /// @param path The file or directory for which to obtain modification date and time information.
       /// @return A xtd::date_time class that is set to the date and time the specified file or directory was last written to. This value is expressed in local time.
@@ -1453,7 +1453,7 @@ namespace xtd {
       /// @return The xtd::io::file_permissions of the directory on the path.
       /// @exception xtd::io::directory_not_found_exception if directory src does not exists.
       static xtd::io::file_permissions get_permissions(const xtd::ustring& path);
-
+      
       /// @brief Moves a file or a directory and its contents to a new location.
       /// @param source_dir_name The path of the file or directory to move.
       /// @param dest_dir_name The path to the new location for source_dir_name. If source_dir_name is a file, then dest_dir_name must also be a file name.
@@ -1841,7 +1841,7 @@ namespace xtd {
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
       static void set_last_write_time(const xtd::ustring& path, const xtd::date_time& last_write_time);
-
+      
       /// @brief Sets the specified xtd::io::file_permissions of the directory on the specified path.
       /// @param path The path to the directory.
       /// @param attributes A bitwise combination of the enumeration values.

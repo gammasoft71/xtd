@@ -61,7 +61,7 @@ status_bar::status_bar() : data_(std::make_shared<data>()) {
   data_->sizing_grip_control->parent(*this);
   data_->sizing_grip_control->visible(data_->sizing_grip && native::status_bar::sizing_grip());
   data_->sizing_grip_control->size({16, 16});
-
+  
   data_->panels.item_added += {*this, &status_bar::on_item_added};
   data_->panels.item_updated += {*this, &status_bar::on_item_updated};
   data_->panels.item_removed += {*this, &status_bar::on_item_removed};

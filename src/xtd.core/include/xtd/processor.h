@@ -44,7 +44,7 @@ namespace xtd {
     /// @brief Gets architecture string.
     /// @return The architecture string.
     xtd::ustring architecture_string() const noexcept;
-
+    
     /// @brief Gets the number of processors on the current machine.
     /// @return The 32-bit unsigned integer that specifies the number of processors on the current machine. There is no default. If the current machine contains multiple processor groups, this property returns the number of logical processors that are available for use.
     uint32 core_count() const noexcept;

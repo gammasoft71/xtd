@@ -32,7 +32,7 @@ namespace {
       ustring target_file_path = path::combine(destination_dir, file.name());
       file.copy_to(target_file_path);
     }
-
+    
     if (recursive) {
       vector<directory_info> dirs = dir.get_directories();
       for (const directory_info& sub_dir : dirs) {
@@ -188,14 +188,14 @@ main_form::main_form() {
       open_xtd_example_cmake_list_box_.selected_index(current_open_xtd_example_cmake_list_box_index_);
     }
   };
-
+  
   open_xtd_examples_information_label_.parent(open_xtd_examples_panel_);
   open_xtd_examples_information_label_.location({550, 60});
   open_xtd_examples_information_label_.auto_size(true);
   open_xtd_examples_information_label_.font({open_xtd_examples_information_label_.font(), 16.0});
   open_xtd_examples_information_label_.text("Description");
   open_xtd_examples_information_label_.anchor(anchor_styles::top | anchor_styles::right);
-
+  
   open_xtd_examples_information_link_label_.parent(open_xtd_examples_panel_);
   open_xtd_examples_information_link_label_.back_color(xtd::forms::application::style_sheet().system_colors().window());
   open_xtd_examples_information_link_label_.border_style(xtd::forms::border_style::solid);
@@ -205,17 +205,17 @@ main_form::main_form() {
   open_xtd_examples_information_link_label_.anchor(anchor_styles::top | anchor_styles::bottom | anchor_styles::right);
   open_xtd_examples_information_link_label_.text_align(content_alignment::top_left);
   open_xtd_examples_information_link_label_.padding(xtd::forms::padding(5));
-  open_xtd_examples_information_link_label_.link_clicked += [](object& sender, link_label_clicked_event_args& e) {
+  open_xtd_examples_information_link_label_.link_clicked += [](object & sender, link_label_clicked_event_args & e) {
     process::start(as<ustring>(e.link().link_data()));
   };
-
+  
   open_xtd_examples_information_picture_label_.parent(open_xtd_examples_panel_);
   open_xtd_examples_information_picture_label_.location({550, open_xtd_examples_panel_.size().height() - 270});
   open_xtd_examples_information_picture_label_.auto_size(true);
   open_xtd_examples_information_picture_label_.font({open_xtd_examples_information_picture_label_.font(), 16.0});
   open_xtd_examples_information_picture_label_.text("Output");
   open_xtd_examples_information_picture_label_.anchor(anchor_styles::bottom | anchor_styles::right);
-
+  
   open_xtd_examples_information_picture_box_.parent(open_xtd_examples_panel_);
   open_xtd_examples_information_picture_box_.back_color(xtd::forms::application::style_sheet().system_colors().window());
   open_xtd_examples_information_picture_box_.border_style(xtd::forms::border_style::solid);
@@ -234,16 +234,16 @@ main_form::main_form() {
   open_xtd_examples_information_output_text_box_.multiline(true);
   open_xtd_examples_information_output_text_box_.read_only(true);
   open_xtd_examples_information_output_text_box_.font({ drawing::font_family::generic_monospace(), open_xtd_examples_information_output_text_box_.font().size()});
-
+  
   open_xtd_example_core_tab_page_.text("xtd.core");
   open_xtd_example_core_tab_page_.parent(open_xtd_example_tab_control_);
   
   open_xtd_example_drawing_tab_page_.text("xtd.drawing");
   open_xtd_example_drawing_tab_page_.parent(open_xtd_example_tab_control_);
-
+  
   open_xtd_example_forms_tab_page_.text("xtd.forms");
   open_xtd_example_forms_tab_page_.parent(open_xtd_example_tab_control_);
-
+  
   open_xtd_example_tunit_tab_page_.text("xtd.tunit");
   open_xtd_example_tunit_tab_page_.parent(open_xtd_example_tab_control_);
   
@@ -255,19 +255,19 @@ main_form::main_form() {
   open_xtd_example_core_picture_box_.location({30, 30});
   open_xtd_example_core_picture_box_.size({40, 40});
   open_xtd_example_core_picture_box_.size_mode(picture_box_size_mode::zoom);
-
+  
   open_xtd_example_drawing_picture_box_.parent(open_xtd_example_drawing_tab_page_);
   open_xtd_example_drawing_picture_box_.image(images::from_name("xtd-drawing"));
   open_xtd_example_drawing_picture_box_.location({30, 30});
   open_xtd_example_drawing_picture_box_.size({40, 40});
   open_xtd_example_drawing_picture_box_.size_mode(picture_box_size_mode::zoom);
-
+  
   open_xtd_example_forms_picture_box_.parent(open_xtd_example_forms_tab_page_);
   open_xtd_example_forms_picture_box_.image(images::from_name("xtd-forms"));
   open_xtd_example_forms_picture_box_.location({30, 30});
   open_xtd_example_forms_picture_box_.size({40, 40});
   open_xtd_example_forms_picture_box_.size_mode(picture_box_size_mode::zoom);
-
+  
   open_xtd_example_tunit_picture_box_.parent(open_xtd_example_tunit_tab_page_);
   open_xtd_example_tunit_picture_box_.size_mode(picture_box_size_mode::zoom);
   open_xtd_example_tunit_picture_box_.location({30, 30});
@@ -279,7 +279,7 @@ main_form::main_form() {
   open_xtd_example_cmake_picture_box_.location({30, 30});
   open_xtd_example_cmake_picture_box_.size({40, 40});
   open_xtd_example_cmake_picture_box_.size_mode(picture_box_size_mode::zoom);
-
+  
   open_xtd_example_core_title_label_.parent(open_xtd_example_core_tab_page_);
   open_xtd_example_core_title_label_.text("xtd Console Application (c++)");
   open_xtd_example_core_title_label_.font({open_xtd_example_core_title_label_.font(), 16.0});
@@ -297,7 +297,7 @@ main_form::main_form() {
   open_xtd_example_forms_title_label_.font({open_xtd_example_forms_title_label_.font(), 16.0});
   open_xtd_example_forms_title_label_.location({80, 35});
   open_xtd_example_forms_title_label_.auto_size(true);
-
+  
   open_xtd_example_tunit_title_label_.parent(open_xtd_example_tunit_tab_page_);
   open_xtd_example_tunit_title_label_.text("xtd Unit Test Project (c++)");
   open_xtd_example_tunit_title_label_.font({open_xtd_example_tunit_title_label_.font(), 16.0});
@@ -357,7 +357,7 @@ main_form::main_form() {
   open_xtd_example_forms_list_box_.double_click += [&] {
     next_button_.perform_click();
   };
-
+  
   open_xtd_example_tunit_list_box_.parent(open_xtd_example_tunit_tab_page_);
   open_xtd_example_tunit_list_box_.location({30, 110});
   open_xtd_example_tunit_list_box_.size(open_xtd_example_tunit_tab_page_.size() - drawing::size {60, 140});
@@ -667,7 +667,7 @@ void main_form::on_system_colors_changed(const event_args& e) {
   
   open_xtd_examples_information_link_label_.back_color(xtd::forms::application::style_sheet().system_colors().window());
   open_xtd_examples_information_picture_box_.back_color(xtd::forms::application::style_sheet().system_colors().window());
-
+  
   auto selected_index = open_xtd_example_forms_list_box_.selected_index();
   open_xtd_example_forms_list_box_.selected_index(open_xtd_example_forms_list_box_.npos);
   open_xtd_example_forms_list_box_.items().clear();
@@ -890,14 +890,14 @@ void main_form::show_about_dialog() {
 }
 
 void main_form::update_open_xtd_examples(const xtd_example_item& item, const xtd::ustring& context) {
-  // Description 
+  // Description
   update_open_xtd_examples_description(item.description().empty() ? "Coming soon..."_s : item.description());
   // Picture or Output
   if (item.picture() != xtd::drawing::image::empty)
     update_open_xtd_examples_picture(item.picture());
   else if (not item.output().empty())
     update_open_xtd_examples_output(item.output());
-  else 
+  else
     update_open_xtd_examples_picture(images::from_name(context, drawing::size{ 1024, 1024 }));
 }
 
@@ -909,7 +909,7 @@ void main_form::update_open_xtd_examples_description(const xtd::ustring& descrip
   xtd::ustring text = description;
   std::sregex_iterator iterator(description.begin(), description.end(), rgx_md_link), end{};
   for (auto it = iterator; it != end; ++it) {
-    if (it->size() == 3) { // 3 matches: whole []() + sub [] + sub ()   
+    if (it->size() == 3) { // 3 matches: whole []() + sub [] + sub ()
       const xtd::ustring whole = it->str(0); // []()
       const xtd::ustring title = it->str(1); // [] contents
       xtd::ustring link = it->str(2);        // () contents
@@ -922,7 +922,7 @@ void main_form::update_open_xtd_examples_description(const xtd::ustring& descrip
       open_xtd_examples_information_link_label_.links().push_back(xtd::forms::link(it->position(), title.length(), link));
     }
   }
-
+  
   open_xtd_examples_information_link_label_.text(text);
   if (iterator == end) open_xtd_examples_information_link_label_.links().clear();
 }

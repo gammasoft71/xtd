@@ -306,10 +306,9 @@ string_format style_sheets::control::control::make_string_format() const noexcep
     format.line_alignment(xtd::drawing::string_alignment::far);
   }
   
-  if (white_space() == xtd::forms::style_sheets::white_space::no_wrap) {
+  if (white_space() == xtd::forms::style_sheets::white_space::no_wrap)
     format.format_flags(format.format_flags() | xtd::drawing::string_format_flags::no_wrap);
-  }
-  
+    
   format.hotkey_prefix(xtd::drawing::text::hotkey_prefix::hide);
   if (auto_ellipsis()) {
     format.trimming(xtd::drawing::string_trimming::ellipsis_character);

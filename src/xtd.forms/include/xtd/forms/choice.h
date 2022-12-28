@@ -115,7 +115,7 @@ namespace xtd {
       /// @{
       forms::create_params create_params() const noexcept override;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{
@@ -124,17 +124,17 @@ namespace xtd {
       void set_bounds_core(int32 x, int32 y, int32 width, int32 height, bounds_specified specified) override;
       void set_client_size_core(int32 width, int32 height) override;
       void wnd_proc(message& message) override;
-  /// @}
+      /// @}
       
     private:
-      void on_items_item_added(size_t pos, const item & item);
-      void on_items_item_removed(size_t pos, const item & item);
-      void on_items_item_updated(size_t pos, const item & item);
+      void on_items_item_added(size_t pos, const item& item);
+      void on_items_item_removed(size_t pos, const item& item);
+      void on_items_item_updated(size_t pos, const item& item);
       void wm_command_control(message& message);
       void wm_mouse_double_click(message& message);
       void wm_mouse_down(message& message);
       void wm_mouse_up(message& message);
-
+      
       std::shared_ptr<data> data_;
     };
   }

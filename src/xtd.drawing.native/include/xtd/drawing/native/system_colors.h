@@ -70,7 +70,7 @@ namespace xtd {
         /// @return A color handle that is the color of an html link text when mouse down.
         /// @warning Internal use only
         static xtd::intptr active_text();
-
+        
         /// @brief Gets a color that is the color of the application workspace.
         /// @return A color handle that is the color of the application workspace.
         /// @warning Internal use only
@@ -185,7 +185,7 @@ namespace xtd {
         /// @return A color handle that is the color of an html link text.
         /// @warning Internal use only
         static xtd::intptr link_text();
-
+        
         /// @brief Gets a color that is the color of a menu's background.
         /// @return A color handle that is the color of a menu's background.
         /// @warning Internal use only
@@ -225,7 +225,7 @@ namespace xtd {
         /// @return A color handle that is the color of an html visited link text.
         /// @warning Internal use only
         static xtd::intptr visited_text();
-
+        
         /// @brief Gets a color that is the color of the background in the client area of a window.
         /// @return A color handle that is the color of the background in the client area of a window.
         /// @warning Internal use only

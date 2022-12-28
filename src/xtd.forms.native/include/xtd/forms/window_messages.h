@@ -1732,71 +1732,71 @@ constexpr xtd::int32 WA_CLICKACTIVE = 2;
 
 // Ranges definitions
 
-constexpr xtd::uint32 NM_FIRST = 0U-0U; // generic to all controls
-constexpr xtd::uint32 NM_LAST = 0U-99U;
+constexpr xtd::uint32 NM_FIRST = 0U - 0U; // generic to all controls
+constexpr xtd::uint32 NM_LAST = 0U - 99U;
 
-constexpr xtd::uint32 LVN_FIRST = 0U-100U; // listview
-constexpr xtd::uint32 LVN_LAST = 0U-199U;
+constexpr xtd::uint32 LVN_FIRST = 0U - 100U; // listview
+constexpr xtd::uint32 LVN_LAST = 0U - 199U;
 
 // Property sheet reserved (0U-200U) -  (0U-299U) - see prsht.h
 
-constexpr xtd::uint32 HDN_FIRST = 0U-300U; // header
-constexpr xtd::uint32 HDN_LAST = 0U-399U;
+constexpr xtd::uint32 HDN_FIRST = 0U - 300U; // header
+constexpr xtd::uint32 HDN_LAST = 0U - 399U;
 
-constexpr xtd::uint32 TVN_FIRST = 0U-400U; // treeview
-constexpr xtd::uint32 TVN_LAST = 0U-499U;
+constexpr xtd::uint32 TVN_FIRST = 0U - 400U; // treeview
+constexpr xtd::uint32 TVN_LAST = 0U - 499U;
 
-constexpr xtd::uint32 TTN_FIRST = 0U-520U; // tooltips
-constexpr xtd::uint32 TTN_LAST = 0U-549U;
+constexpr xtd::uint32 TTN_FIRST = 0U - 520U; // tooltips
+constexpr xtd::uint32 TTN_LAST = 0U - 549U;
 
-constexpr xtd::uint32 TCN_FIRST = 0U-550U; // tab control
-constexpr xtd::uint32 TCN_LAST = 0U-580U;
+constexpr xtd::uint32 TCN_FIRST = 0U - 550U; // tab control
+constexpr xtd::uint32 TCN_LAST = 0U - 580U;
 
 // Shell reserved               (0U-580U) -  (0U-589U)
 
-constexpr xtd::uint32 CDN_FIRST = 0U-601U; // common dialog (new)
-constexpr xtd::uint32 CDN_LAST = 0U-699U;
+constexpr xtd::uint32 CDN_FIRST = 0U - 601U; // common dialog (new)
+constexpr xtd::uint32 CDN_LAST = 0U - 699U;
 
-constexpr xtd::uint32 TBN_FIRST = 0U-700U; // toolbar
-constexpr xtd::uint32 TBN_LAST = 0U-720U;
+constexpr xtd::uint32 TBN_FIRST = 0U - 700U; // toolbar
+constexpr xtd::uint32 TBN_LAST = 0U - 720U;
 
-constexpr xtd::uint32 UDN_FIRST = 0U-721U; // updown
-constexpr xtd::uint32 UDN_LAST = 0U-729U;
-constexpr xtd::uint32 DTN_FIRST = 0U-740U; // datetimepick
-constexpr xtd::uint32 DTN_LAST = 0U-745U; // DTN_FIRST - 5
+constexpr xtd::uint32 UDN_FIRST = 0U - 721U; // updown
+constexpr xtd::uint32 UDN_LAST = 0U - 729U;
+constexpr xtd::uint32 DTN_FIRST = 0U - 740U; // datetimepick
+constexpr xtd::uint32 DTN_LAST = 0U - 745U; // DTN_FIRST - 5
 
-constexpr xtd::uint32 MCN_FIRST = 0U-746U; // monthcal
-constexpr xtd::uint32 MCN_LAST = 0U-752U; // MCN_FIRST - 6
+constexpr xtd::uint32 MCN_FIRST = 0U - 746U; // monthcal
+constexpr xtd::uint32 MCN_LAST = 0U - 752U; // MCN_FIRST - 6
 
-constexpr xtd::uint32 DTN_FIRST2 = 0U-753U; // datetimepick2
-constexpr xtd::uint32 DTN_LAST2 = 0U-799U;
+constexpr xtd::uint32 DTN_FIRST2 = 0U - 753U; // datetimepick2
+constexpr xtd::uint32 DTN_LAST2 = 0U - 799U;
 
-constexpr xtd::uint32 CBEN_FIRST = 0U-800U; // combo box ex
-constexpr xtd::uint32 CBEN_LAST = 0U-830U;
+constexpr xtd::uint32 CBEN_FIRST = 0U - 800U; // combo box ex
+constexpr xtd::uint32 CBEN_LAST = 0U - 830U;
 
-constexpr xtd::uint32 RBN_FIRST = 0U-831U; // rebar
-constexpr xtd::uint32 RBN_LAST = 0U-859U;
+constexpr xtd::uint32 RBN_FIRST = 0U - 831U; // rebar
+constexpr xtd::uint32 RBN_LAST = 0U - 859U;
 
-constexpr xtd::uint32 IPN_FIRST = 0U-860U; // internet address
-constexpr xtd::uint32 IPN_LAST = 0U-879U; // internet address
+constexpr xtd::uint32 IPN_FIRST = 0U - 860U; // internet address
+constexpr xtd::uint32 IPN_LAST = 0U - 879U; // internet address
 
-constexpr xtd::uint32 SBN_FIRST = 0U-880U; // status bar
-constexpr xtd::uint32 SBN_LAST = 0U-899U;
+constexpr xtd::uint32 SBN_FIRST = 0U - 880U; // status bar
+constexpr xtd::uint32 SBN_LAST = 0U - 899U;
 
-constexpr xtd::uint32 PGN_FIRST = 0U-900U; // Pager Control
-constexpr xtd::uint32 PGN_LAST = 0U-950U;
+constexpr xtd::uint32 PGN_FIRST = 0U - 900U; // Pager Control
+constexpr xtd::uint32 PGN_LAST = 0U - 950U;
 
-constexpr xtd::uint32 WMN_FIRST = 0U-1000U;
-constexpr xtd::uint32 WMN_LAST = 0U-1200U;
+constexpr xtd::uint32 WMN_FIRST = 0U - 1000U;
+constexpr xtd::uint32 WMN_LAST = 0U - 1200U;
 
-constexpr xtd::uint32 BCN_FIRST = 0U-1250U;
-constexpr xtd::uint32 BCN_LAST = 0U-1350U;
+constexpr xtd::uint32 BCN_FIRST = 0U - 1250U;
+constexpr xtd::uint32 BCN_LAST = 0U - 1350U;
 
-constexpr xtd::uint32 TRBN_FIRST = 0U-1501U; // trackbar
-constexpr xtd::uint32 TRBN_LAST = 0U-1519U;
+constexpr xtd::uint32 TRBN_FIRST = 0U - 1501U; // trackbar
+constexpr xtd::uint32 TRBN_LAST = 0U - 1519U;
 
-constexpr xtd::uint32 EN_FIRST = 0U-1520U; // edit control
-constexpr xtd::uint32 EN_LAST = 0U-1540U;
+constexpr xtd::uint32 EN_FIRST = 0U - 1520U; // edit control
+constexpr xtd::uint32 EN_LAST = 0U - 1540U;
 
 // Button notifications
 constexpr xtd::uint32 BN_CLICKED = 0;
@@ -1862,28 +1862,28 @@ constexpr xtd::uint32 MCN_GETDAYSTATE = MCN_FIRST - 1;
 constexpr xtd::uint32 MCN_SELECT = MCN_FIRST;
 
 // Window notifications
-constexpr xtd::uint32 NM_OUTOFMEMORY = NM_FIRST-1;
-constexpr xtd::uint32 NM_CLICK = NM_FIRST-2; // uses NMCLICK struct
-constexpr xtd::uint32 NM_DBLCLK = NM_FIRST-3;
-constexpr xtd::uint32 NM_RETURN = NM_FIRST-4;
-constexpr xtd::uint32 NM_RCLICK = NM_FIRST-5; // uses NMCLICK struct
-constexpr xtd::uint32 NM_RDBLCLK = NM_FIRST-6;
-constexpr xtd::uint32 NM_SETFOCUS = NM_FIRST-7;
-constexpr xtd::uint32 NM_KILLFOCUS = NM_FIRST-8;
-constexpr xtd::uint32 NM_CUSTOMDRAW = NM_FIRST-12;
-constexpr xtd::uint32 NM_HOVER = NM_FIRST-13;
-constexpr xtd::uint32 NM_NCHITTEST = NM_FIRST-14; // uses NMMOUSE struct
-constexpr xtd::uint32 NM_KEYDOWN = NM_FIRST-15; // uses NMKEY struct
-constexpr xtd::uint32 NM_RELEASEDCAPTURE = NM_FIRST-16;
-constexpr xtd::uint32 NM_SETCURSOR = NM_FIRST-17; // uses NMMOUSE struct
-constexpr xtd::uint32 NM_CHAR = NM_FIRST-18; // uses NMCHAR struct
-constexpr xtd::uint32 NM_TOOLTIPSCREATED = NM_FIRST-19; // notify of when the tooltips window is create
-constexpr xtd::uint32 NM_LDOWN = NM_FIRST-20;
-constexpr xtd::uint32 NM_RDOWN = NM_FIRST-21;
-constexpr xtd::uint32 NM_THEMECHANGED = NM_FIRST-22;
-constexpr xtd::uint32 NM_FONTCHANGED = NM_FIRST-23;
-constexpr xtd::uint32 NM_CUSTOMTEXT = NM_FIRST-24; // uses NMCUSTOMTEXT struct
-constexpr xtd::uint32 NM_TVSTATEIMAGECHANGING = NM_FIRST-24; // uses NMTVSTATEIMAGECHANGING struct, defined after HTREEITEM
+constexpr xtd::uint32 NM_OUTOFMEMORY = NM_FIRST - 1;
+constexpr xtd::uint32 NM_CLICK = NM_FIRST - 2; // uses NMCLICK struct
+constexpr xtd::uint32 NM_DBLCLK = NM_FIRST - 3;
+constexpr xtd::uint32 NM_RETURN = NM_FIRST - 4;
+constexpr xtd::uint32 NM_RCLICK = NM_FIRST - 5; // uses NMCLICK struct
+constexpr xtd::uint32 NM_RDBLCLK = NM_FIRST - 6;
+constexpr xtd::uint32 NM_SETFOCUS = NM_FIRST - 7;
+constexpr xtd::uint32 NM_KILLFOCUS = NM_FIRST - 8;
+constexpr xtd::uint32 NM_CUSTOMDRAW = NM_FIRST - 12;
+constexpr xtd::uint32 NM_HOVER = NM_FIRST - 13;
+constexpr xtd::uint32 NM_NCHITTEST = NM_FIRST - 14; // uses NMMOUSE struct
+constexpr xtd::uint32 NM_KEYDOWN = NM_FIRST - 15; // uses NMKEY struct
+constexpr xtd::uint32 NM_RELEASEDCAPTURE = NM_FIRST - 16;
+constexpr xtd::uint32 NM_SETCURSOR = NM_FIRST - 17; // uses NMMOUSE struct
+constexpr xtd::uint32 NM_CHAR = NM_FIRST - 18; // uses NMCHAR struct
+constexpr xtd::uint32 NM_TOOLTIPSCREATED = NM_FIRST - 19; // notify of when the tooltips window is create
+constexpr xtd::uint32 NM_LDOWN = NM_FIRST - 20;
+constexpr xtd::uint32 NM_RDOWN = NM_FIRST - 21;
+constexpr xtd::uint32 NM_THEMECHANGED = NM_FIRST - 22;
+constexpr xtd::uint32 NM_FONTCHANGED = NM_FIRST - 23;
+constexpr xtd::uint32 NM_CUSTOMTEXT = NM_FIRST - 24; // uses NMCUSTOMTEXT struct
+constexpr xtd::uint32 NM_TVSTATEIMAGECHANGING = NM_FIRST - 24; // uses NMTVSTATEIMAGECHANGING struct, defined after HTREEITEM
 
 // Up down notifications
 constexpr xtd::int32 UDN_DELTAPOS = UDN_FIRST - 1;

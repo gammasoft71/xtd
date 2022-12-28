@@ -60,7 +60,7 @@ namespace xtd {
     /// The following code example compares the current instance with another object.
     /// @include object_equals.cpp
     bool equals(const object& obj) const noexcept;
-
+    
     /// @brief Determines whether the specified object instances are considered equal.
     /// @param object_a The first object to compare.
     /// @param object_b The second object to compare.
@@ -112,7 +112,7 @@ namespace xtd {
       if (dynamic_cast<const iequatable<object_t>*>(this)) return dynamic_cast<const iequatable<object_t>*>(this)->equals(obj);
       return this == &obj;
     }
-
+    
     template<typename object_t>
     static bool equals(const iequatable<object_t>& object_a, const iequatable<object_t>& object_b) noexcept {
       return object_a.equals(object_b);

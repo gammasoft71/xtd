@@ -145,7 +145,7 @@ namespace xtd {
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
       forms::create_params create_params() const noexcept override;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{
@@ -181,7 +181,7 @@ namespace xtd {
       /// @brief Gets state.
       /// @return One of xtd::forms::visual_styles::toggle_button_state values.
       xtd::forms::visual_styles::toggle_button_state state() const noexcept;
-
+      
       void wnd_proc(message& message) override;
       /// @}
       
@@ -189,7 +189,7 @@ namespace xtd {
       void wm_mouse_double_click(message& message);
       void wm_mouse_down(message& message);
       void wm_mouse_up(message& message);
-
+      
       std::shared_ptr<data> data_;
     };
   }

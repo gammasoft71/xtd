@@ -7,7 +7,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 struct __message_sender__ {
-  intptr operator ()(intptr hwnd, int32 msg, intptr wparam, intptr lparam) {
+  intptr operator()(intptr hwnd, int32 msg, intptr wparam, intptr lparam) {
     return xtd::forms::native::control::send_message(hwnd, hwnd, msg, wparam, lparam);
   }
 };

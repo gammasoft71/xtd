@@ -84,7 +84,7 @@ void splitter::on_mouse_move(const mouse_event_args& e) {
   if (data_->next_control) data_->next_control->cursor(default_cursor());
   if (data_->mouse_down_location != -1 && data_->next_control) {
     if (data_->splitter_style == splitter_style::draw_line) {
-      
+    
     } else {
       int32 delta_size = control::dock() == dock_style::left || control::dock() == dock_style::right ? (data_->next_control->width() + cursor::position().x()) : (data_->next_control->height() + cursor::position().y());
       int32 new_size = delta_size - data_->mouse_down_location;

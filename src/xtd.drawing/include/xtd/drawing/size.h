@@ -98,7 +98,7 @@ namespace xtd {
       static size ceiling(const size_f& value) noexcept;
       
       bool equals(const xtd::drawing::size& value) const noexcept override;
-
+      
       /// @brief Converts the specified xtd::drawing::size_f to a xtd::drawing::size object by rounding the xtd::drawing::size_f values to the nearest integer.
       /// @param value The xtd::drawing::size_f to convert.
       /// @return The xtd::drawing::size this method converts to.
@@ -119,7 +119,7 @@ namespace xtd {
       /// @return The xtd::drawing::size this method converts to.
       static size truncate(const size_f& value) noexcept;
       /// @}
-
+      
       
       /// @name Operators
       
@@ -128,23 +128,23 @@ namespace xtd {
       /// @param size A xtd::drawing::size that specifies the pair of numbers to add to the size of this xtd::drawing::size.
       /// @return The increased xtd::drawing::size.
       size operator +(const xtd::drawing::size& size) const noexcept;
-
+      
       /// @brief Increases a xtd::drawing::size wuth a given xtd::drawing::size.
       /// @param size A xtd::drawing::size that specifies the pair of numbers to add to the size of this xtd::drawing::size.
       /// @return The increased xtd::drawing::size.
       size& operator +=(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Decreases a xtd::drawing::size with the a given xtd::drawing::size.
       /// @param size A xtd::drawing::size that specifies the pair of numbers to subtract from the size of this xtd::drawing::size.
       /// @return The decreased xtd::drawing::size.
       size operator -(const xtd::drawing::size& size) const noexcept;
-
+      
       /// @brief Decreases a xtd::drawing::size with the a given xtd::drawing::size.
       /// @param size A xtd::drawing::size that specifies the pair of numbers to subtract from the size of this xtd::drawing::size.
       /// @return The decreased xtd::drawing::size.
       size& operator -=(const xtd::drawing::size& size) noexcept;
       /// @}
-
+      
     private:
       int32 width_ = 0;
       int32 height_ = 0;

@@ -199,7 +199,7 @@ namespace xtd {
       bool contains(int32 x, int32 y) const noexcept;
       
       bool equals(const rectangle& value) const noexcept override;
-
+      
       /// @brief Creates a xtd::drawing::rectangle structure with the specified edge locations.
       /// @param left The x-coordinate of the upper-left corner of this xtd::drawing::rectangle structure.
       /// @param top The y-coordinate of the upper-left corner of this xtd::drawing::rectangle structure.

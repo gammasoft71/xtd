@@ -596,7 +596,7 @@ namespace xtd {
       /// @image html colors_yellow_green.png
       static xtd::drawing::color yellow_green();
       /// @}
-
+      
       /// @name Public methods
       
       /// @{

@@ -124,7 +124,7 @@ namespace xtd::io::tests {
     void test_method_(get_extension_with_empty_source) {
       assert::are_equal("", path::get_extension(""), csf_);
     }
-
+    
     // Remove following tests as they do not work on Github actions...
     /*
     void test_method_(get_full_path) {
@@ -132,19 +132,19 @@ namespace xtd::io::tests {
       console::write_line(path::get_full_path(path));
       assert::are_equal(path::combine(directory::get_current_directory(), path), path::get_full_path(path), csf_);
     }
-
+    
     void test_method_(get_full_path_recursive) {
       ustring file = "xtd_test_file.txt";
       ustring path = path::combine("dir1", "dir2", file);
       assert::are_equal(path::combine(directory::get_current_directory(), "dir1", "dir2", file), path::get_full_path(path), csf_);
     }
-
+    
     void test_method_(get_full_path_with_temp) {
       ustring file = "xtd_test_file.txt";
       ustring path = path::combine(path::get_temp_path(), file);
       assert::are_equal(path::combine(path::get_temp_path(), file), path::get_full_path(path), csf_);
     }
-
+    
     void test_method_(get_full_path_recursive_with_temp) {
       ustring file = "xtd_test_file.txt";
       ustring path = path::combine(path::get_temp_path(), "dir1", "dir2", file);

@@ -56,12 +56,12 @@ namespace xtd {
       control_layout_style(bool expanded, xtd::forms::content_alignment align);
       /// @}
       
-    public:      
+    public:
       /// @cond
       control_layout_style(const control_layout_style& other);
       control_layout_style& operator =(const control_layout_style& other);
       /// @endcond
-
+      
       /// @name Properties
       
       /// @{
@@ -93,7 +93,7 @@ namespace xtd {
       
       /// @{
       bool equals(const control_layout_style& value) const noexcept override;
-
+      
       /// @brief Returns a string that represent xtd::forms::control_layout_style.
       /// @return A string containing that represent xtd::forms::control_layout_style.
       xtd::ustring to_string() const noexcept override;

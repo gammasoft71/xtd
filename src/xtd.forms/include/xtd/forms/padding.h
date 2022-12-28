@@ -119,7 +119,7 @@ namespace xtd {
       static padding add(const padding& p1, const padding& p2);
       
       bool equals(const padding& value) const noexcept override;
-
+      
       /// @brief Subtracts one specified Padding value from another.
       /// @param p1 A padding.
       /// @param p2 A padding.

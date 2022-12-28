@@ -97,18 +97,18 @@ namespace xtd {
           boxSizer->Add(inner_panel, wxSizerFlags().Proportion(-1).Expand());
           SetSizerAndFit(boxSizer);
           
-#if defined(__WXMSW__)
+          #if defined(__WXMSW__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             inner_panel->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
             inner_panel->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
-#endif
+          #endif
         }
         
         bool SetBackgroundColour(const wxColour& colour) override {
-#if !defined(__WXOSX__)
+          #if !defined(__WXOSX__)
           inner_panel->SetBackgroundColour(colour);
-#endif
+          #endif
           return wxFrame::SetBackgroundColour(colour);
         }
         
@@ -143,9 +143,9 @@ namespace xtd {
         wxWindow* GetMainWindowOfCompositeControl() override {return inner_panel;}
         
         bool SetBackgroundColour(const wxColour& colour) override {
-#if !defined(__WXOSX__)
+          #if !defined(__WXOSX__)
           inner_panel->SetBackgroundColour(colour);
-#endif
+          #endif
           return wxDialog::SetBackgroundColour(colour);
         }
         
@@ -162,25 +162,25 @@ namespace xtd {
         void set_wx_evt(iwx_evt* wx_evt) override {
           inner_panel->set_wx_evt(wx_evt);
         }
-
+        
         wxBoxSizer* boxSizer = new wxBoxSizer(wxVERTICAL);
         wxMainPanel* inner_panel = new wxMainPanel(this);
       };
-
+      
       class wx_form : public control_handler {
-#if defined(__WXMSW__)
+        #if defined(__WXMSW__)
         static const int32 min_width = 122;
         static const int32 min_height = 32;
-#elif defined(__WXGTK__)
+        #elif defined(__WXGTK__)
         static const int32 min_width = 107;
         static const int32 min_height = 46;
-#elif defined(__WXOSX__)
+        #elif defined(__WXOSX__)
         static const int32 min_width = 75;
         static const int32 min_height = 23;
-#else
+        #else
         static const int32 min_width = 122;
         static const int32 min_height = 32;
-#endif
+        #endif
         
       public:
         explicit wx_form(const xtd::forms::native::create_params& create_params) {
@@ -349,7 +349,7 @@ namespace xtd {
           wxSize min_size(size.GetWidth() < min_width ? min_width : size.GetWidth(), size.GetHeight() < min_height ? min_height : size.GetHeight());
           control_handler::SetMinSize(min_size);
         }
-
+        
         #if defined(__WXGTK__)
         void SetPosition(const wxPoint& location) override {
           location_ = location;

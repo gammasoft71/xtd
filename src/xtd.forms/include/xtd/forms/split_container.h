@@ -89,7 +89,7 @@ namespace xtd {
       /// @{
       drawing::size default_size() const noexcept override;
       /// @}
-
+      
       /// @name Protected methods
       
       /// @{

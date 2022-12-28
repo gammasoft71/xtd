@@ -81,7 +81,7 @@ namespace xtd::tests {
       box<int32> b3(41);
       assert::is_true(b1 != b3, csf_);
     }
-
+    
     void test_method_(box_compare_to) {
       box<int32> b1(42);
       box<int32> b2(42);
@@ -93,7 +93,7 @@ namespace xtd::tests {
       box<int32> b4(43);
       assert::is_negative(b1.compare_to(b4), csf_);
     }
-
+    
     void test_method_(box_operator_less) {
       box<int32> b1(42);
       box<int32> b2(42);
@@ -105,7 +105,7 @@ namespace xtd::tests {
       box<int32> b4(43);
       assert::is_true(b1 < b4, csf_);
     }
-
+    
     void test_method_(box_operator_less_equal) {
       box<int32> b1(42);
       box<int32> b2(42);
@@ -143,7 +143,7 @@ namespace xtd::tests {
       box<int32> b4(43);
       assert::is_false(b1 >= b4, csf_);
     }
-
+    
     void test_method_(box_parse) {
       assert::are_equal(42, box<int32>::parse("42"));
     }

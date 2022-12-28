@@ -26,11 +26,11 @@ namespace xtd {
     public:
       /// @name Public properties
       
-      /// @{      
+      /// @{
       /// @brief A system-defined color object.
       /// @image html colors_aqua.png
       static xtd::drawing::color aqua();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_black.png
       static xtd::drawing::color black();
@@ -42,7 +42,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_fuchsia.png
       static xtd::drawing::color fuchsia();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_gray.png
       static xtd::drawing::color gray();
@@ -50,11 +50,11 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_green.png
       static xtd::drawing::color green();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_lime.png
       static xtd::drawing::color lime();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_maroon.png
       static xtd::drawing::color maroon();
@@ -62,7 +62,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_navy.png
       static xtd::drawing::color navy();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_olive.png
       static xtd::drawing::color olive();
@@ -70,11 +70,11 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_purple.png
       static xtd::drawing::color purple();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_red.png
       static xtd::drawing::color red();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_silver.png
       static xtd::drawing::color silver();
@@ -82,7 +82,7 @@ namespace xtd {
       /// @brief A system-defined color object.
       /// @image html colors_teal.png
       static xtd::drawing::color teal();
-
+      
       /// @brief A system-defined color object.
       /// @image html colors_white.png
       static xtd::drawing::color white();
@@ -91,7 +91,7 @@ namespace xtd {
       /// @image html colors_yellow.png
       static xtd::drawing::color yellow();
       /// @}
-
+      
       /// @name Public methods
       
       /// @{

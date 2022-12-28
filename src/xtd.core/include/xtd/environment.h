@@ -44,7 +44,7 @@
 // | __XTD_TUNIT_INCLUDE_PATH__     | ${XTD_TUNIT_INSTALL_PATH}/include"               |
 // | __XTD_TUNIT_LIB_PATH__         | ${XTD_TUNIT_INSTALL_PATH}/lib"                   |
 #if !defined(__XTD_INCLUDE_PATH__) || !defined(__XTD_LIB_PATH__) || !defined(__XTD_CONSOLE_INCLUDE_PATH__) || !defined(__XTD_CONSOLE_LIB_PATH__) || !defined(__XTD_DRAWING_INCLUDE_PATH__) || !defined(__XTD_DRAWING_LIB_PATH__) || !defined(__XTD_DRAWING_RESOURCES_PATH__) || !defined(__XTD_FORMS_INCLUDE_PATH__) || !defined(__XTD_FORMS_LIB_PATH__) || !defined(__XTD_FORMS_RESOURCES_PATH__) || !defined(__XTD_TUNIT_INCLUDE_PATH__) || !defined(__XTD_TUNIT_LIB_PATH__)
-  #error "Some variables (like __XTD_INCLUDE_PATH__) are not defined. This is probably because you are not using CMake to generate your project. See the following link for more information: https://github.com/gammasoft71/xtd/blob/master/docs/cmake_overview.md..."
+#error "Some variables (like __XTD_INCLUDE_PATH__) are not defined. This is probably because you are not using CMake to generate your project. See the following link for more information: https://github.com/gammasoft71/xtd/blob/master/docs/cmake_overview.md..."
 #endif
 /// @endcond
 
@@ -340,7 +340,7 @@ namespace xtd {
     /// @return bool true if the current application domain is shutting down; otherwise, false.
     /// @remarks At this time the return value is always false for macOS and linux.
     static bool has_shutdown_started();
-
+    
     /// @brief Determines whether the current operating system is a 64-bit operating system.
     /// @return true if the operating system is 64-bit; otherwise, false.
     static bool is_64_bit_operating_system() noexcept;
@@ -403,7 +403,7 @@ namespace xtd {
     /// @brief Gets the number of milliseconds elapsed since the system started.
     /// @return A 32-bit unsigned integer containing the amount of time in milliseconds that has passed since the last time the computer was started.
     static std::chrono::milliseconds tick_count();
-
+    
     /// @brief Gets a value indicating whether the current user is an administrator.
     /// @return bool true if the current user is an administrator; otherwise, false.
     static bool user_administrator();
@@ -426,7 +426,7 @@ namespace xtd {
     /// @brief Gets a version consisting of the major, minor, build, and revision numbers of the xtd framework.
     /// @return The version of the xtd framework.
     static xtd::version version() noexcept;
-
+    
     /// @brief Gets the amount of physical memory mapped to the process context.
     /// @return Int64 A 64-bit signed integer containing the number of bytes of physical memory mapped to the process context.
     /// @remarks Windows 98, Windows Millennium Edition, Linux, macOS, Android,... Platform Note: This property always returns zero.

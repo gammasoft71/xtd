@@ -128,7 +128,7 @@ namespace xtd {
       
       /// @{
       bool equals(const emoticon& value) const noexcept override;
-
+      
       /// @brief Returns a string containing the codepoints of the emoticons.
       /// @return A string containing the codepoints of the emoticon. Empty string ("") for none codepoints.
       xtd::ustring to_string() const noexcept override;
@@ -139,7 +139,7 @@ namespace xtd {
       void name_(const ustring& name);
       std::vector<char32>& codepoints_();
       void codepoints_(std::vector<char32>&& codepoints);
-
+      
       std::shared_ptr<data> data_;
     };
   }

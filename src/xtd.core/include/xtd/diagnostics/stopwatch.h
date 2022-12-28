@@ -124,7 +124,7 @@ namespace xtd {
       /// @brief Gets the current number of nanoseconds in the timer mechanism, in ticks.
       /// @return A long integer representing the ticks counter value of the underlying timer mechanism.
       static int64 get_timestamp_ticks() noexcept;
-
+      
       /// @brief Stops time interval measurement and resets the elapsed time to zero.
       /// @remarks A xtd::diagnostics::stopwatch instance calculates and retains the cumulative elapsed time across multiple time intervals, until the instance is reset. Use xtd::diagnostics::stopwatch::stop to stop the current interval measurement and retain the cumulative elapsed time value. Use xtd::diagnostics::stopwatch::reset to stop any interval measurement in progress and clear the elapsed time value.
       void reset() noexcept;

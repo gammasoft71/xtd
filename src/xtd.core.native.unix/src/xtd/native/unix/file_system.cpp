@@ -19,7 +19,7 @@ using namespace xtd::native;
 
 int_least32_t file_system::get_attributes(const std::string& path, int_least32_t& attributes) {
   struct system_attribute_to_file_attribute_converter {
-    int_least32_t operator ()(int_least32_t attribute) {
+    int_least32_t operator()(int_least32_t attribute) {
       int_least32_t file_attributes = 0;
       if ((attribute & S_IRUSR) == S_IRUSR && (attribute & S_IWUSR) != S_IWUSR) file_attributes |= FILE_ATTRIBUTE_READONLY;
       if ((attribute & S_IFSOCK) == S_IFSOCK || (attribute & S_IFIFO) == S_IFIFO) file_attributes |= FILE_ATTRIBUTE_SYSTEM;
@@ -64,7 +64,7 @@ string file_system::get_full_path(const string& relative_path) {
   
   if (relative_path[relative_path.size() - 1] == path::directory_separator_char())
     full_path += path::directory_separator_char();
- 
+    
   auto index = native::unix::strings::last_index_of(full_path, "/./");
   while (index != full_path.npos) {
     full_path = native::unix::strings::remove(full_path, index, 2);
@@ -76,7 +76,7 @@ string file_system::get_full_path(const string& relative_path) {
 
 int_least32_t file_system::get_permissions(const std::string& path, int_least32_t& permissions) {
   struct system_permission_to_file_permission_converter {
-    int_least32_t operator ()(mode_t permission) {
+    int_least32_t operator()(mode_t permission) {
       int_least32_t file_permissions = 0;
       if ((permission & S_IRUSR) == S_IRUSR) file_permissions |= FILE_PERMISSIONS_OWNER_READ;
       if ((permission & S_IWUSR) == S_IWUSR) file_permissions |= FILE_PERMISSIONS_OWNER_WRITE;
@@ -122,7 +122,7 @@ int_least32_t file_system::set_attributes(const std::string& path, int_least32_t
     s.st_mode |= S_IWUSR;
   else if ((attributes & FILE_ATTRIBUTE_READONLY) == FILE_ATTRIBUTE_READONLY)
     s.st_mode &= ~S_IWUSR;
-  
+    
   // The other attributes can be modified under linux.
   
   return chmod(path.c_str(), s.st_mode);
@@ -158,7 +158,7 @@ int_least32_t file_system::set_last_write_time(const std::string& path, time_t l
 
 int_least32_t file_system::set_permissions(const std::string& path, int_least32_t permissions) {
   struct file_permission_to_system_permission_converter {
-    mode_t operator ()(int_least32_t permission) {
+    mode_t operator()(int_least32_t permission) {
       int_least32_t system_permissions = 0;
       if ((permission & FILE_PERMISSIONS_OWNER_READ) == FILE_PERMISSIONS_OWNER_READ) system_permissions |= S_IRUSR;
       if ((permission & FILE_PERMISSIONS_OWNER_WRITE) == FILE_PERMISSIONS_OWNER_WRITE) system_permissions |= S_IWUSR;
@@ -175,7 +175,7 @@ int_least32_t file_system::set_permissions(const std::string& path, int_least32_
       if ((permission & FILE_PERMISSIONS_SET_UID) == FILE_PERMISSIONS_SET_UID) system_permissions |= S_ISUID;
       if ((permission & FILE_PERMISSIONS_SET_GID) == FILE_PERMISSIONS_SET_GID) system_permissions |= S_ISGID;
       if ((permission & FILE_PERMISSIONS_STICKY_BIT) == FILE_PERMISSIONS_STICKY_BIT) system_permissions |= S_ISVTX;
-
+      
       return system_permissions;
     }
   };

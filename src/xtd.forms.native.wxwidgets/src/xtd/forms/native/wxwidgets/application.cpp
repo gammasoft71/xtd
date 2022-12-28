@@ -156,9 +156,9 @@ void application::enable_menu_images() {
 
 void application::enable_system_font_size() {
   initialize(); // Must be first
-#if defined(__WXGTK__)
+  #if defined(__WXGTK__)
   __enable_system_font_size__ = true;
-#endif
+  #endif
 }
 
 void application::enable_visual_style() {

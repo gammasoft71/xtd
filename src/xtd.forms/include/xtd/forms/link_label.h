@@ -143,13 +143,13 @@ namespace xtd {
       /// @remarks his property enables you to specify the color for links that are disabled in the xtd::forms::link_label. Disabled links do not cause the xtd::forms::link_label::link_clicked event to be raised.
       /// @remarks There are a number of colors associated with a link. All links in the xtd::forms::link_label are initially displayed with the color defined in the xtd::forms::link_label::link_color property. The xtd::forms::link_label::active_link_color property enables you to specify the color of the link when it is in the process of being clicked. The xtd::forms::link_label::visited_link_color property enables you to specify the color of a link after it has been visited by the user.
       link_label& disabled_link_color(const xtd::drawing::color& color);
-
+      
       xtd::forms::link_area link_area() const noexcept;
       link_label& link_area(xtd::forms::link_area value);
-
+      
       xtd::forms::link_behavior link_behavior() const noexcept;
       link_label& link_behavior(xtd::forms::link_behavior value);
-
+      
       xtd::drawing::color link_color() const noexcept;
       link_label& link_color(const xtd::drawing::color& color);
       
@@ -158,7 +158,7 @@ namespace xtd {
       
       xtd::forms::cursor override_cursor() const noexcept;
       link_label& override_cursor(const xtd::forms::cursor& cursor);
-
+      
       xtd::drawing::color visited_link_color() const noexcept;
       link_label& visited_link_color(const xtd::drawing::color& color);
       /// @}

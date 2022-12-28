@@ -80,7 +80,7 @@ namespace xtd {
       
       /// @{
       bool equals(const country& value) const noexcept override;
-
+      
       /// @brief Gets a country from alpha 2 code.
       /// @return If exist a xtd::forms::country that represent alpha 2 coded; otherwise xtd::forms::country::empty.
       static country from_alpha_2_code(const xtd::ustring& alpha_2_code);

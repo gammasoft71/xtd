@@ -96,7 +96,7 @@ namespace xtd::forms::tests {
       assert::are_equal(progress_bar_style::blocks, progress_bar.style(), csf_);
       assert::is_zero(progress_bar.value(), csf_);
     }
-
+    
     void test_method_(set_animation_speed) {
       progress_bar_for_test progress_bar;
       valid::are_equal(100U, progress_bar.marquee_animation_speed(), csf_);
@@ -104,19 +104,19 @@ namespace xtd::forms::tests {
       progress_bar.marquee_animation_speed(50U);
       assert::are_equal(50U, progress_bar.marquee_animation_speed(), csf_);
     }
-
+    
     void test_method_(set_maximum) {
       progress_bar_for_test progress_bar;
       valid::are_equal(100, progress_bar.maximum(), csf_);
       valid::is_zero(progress_bar.minimum(), csf_);
       valid::is_zero(progress_bar.value(), csf_);
-
+      
       progress_bar.maximum(10);
       assert::are_equal(10, progress_bar.maximum(), csf_);
       assert::is_zero(progress_bar.minimum(), csf_);
       assert::is_zero(progress_bar.value(), csf_);
     }
-
+    
     void test_method_(set_maximum_less_than_minimum) {
       progress_bar_for_test progress_bar;
       progress_bar.maximum(200);
@@ -130,13 +130,13 @@ namespace xtd::forms::tests {
       assert::are_equal(50, progress_bar.minimum(), csf_);
       assert::are_equal(50, progress_bar.value(), csf_);
     }
-
+    
     void test_method_(set_minimum) {
       progress_bar_for_test progress_bar;
       valid::are_equal(100, progress_bar.maximum(), csf_);
       valid::is_zero(progress_bar.minimum(), csf_);
       valid::is_zero(progress_bar.value(), csf_);
-
+      
       progress_bar.minimum(10);
       assert::are_equal(100, progress_bar.maximum(), csf_);
       assert::are_equal(10, progress_bar.minimum(), csf_);
@@ -148,7 +148,7 @@ namespace xtd::forms::tests {
       valid::are_equal(100, progress_bar.maximum(), csf_);
       valid::is_zero(progress_bar.minimum(), csf_);
       valid::is_zero(progress_bar.value(), csf_);
-
+      
       progress_bar.minimum(200);
       assert::are_equal(200, progress_bar.maximum(), csf_);
       assert::are_equal(200, progress_bar.minimum(), csf_);
@@ -169,7 +169,7 @@ namespace xtd::forms::tests {
       
       assert::throws<argument_out_of_range_exception>([&] {progress_bar.orientation(as<forms::orientation>(2));}, csf_);
     }
-
+    
     void test_method_(set_step_1) {
       progress_bar_for_test progress_bar;
       valid::are_equal(10, progress_bar.step(), csf_);
@@ -181,11 +181,11 @@ namespace xtd::forms::tests {
     void test_method_(set_step_50) {
       progress_bar_for_test progress_bar;
       valid::are_equal(10, progress_bar.step(), csf_);
-
+      
       progress_bar.step((50));
       assert::are_equal(50, progress_bar.step(), csf_);
     }
-
+    
     void test_method_(set_style_continuous) {
       progress_bar_for_test progress_bar;
       valid::are_equal(progress_bar_style::blocks, progress_bar.style(), csf_);
@@ -207,14 +207,14 @@ namespace xtd::forms::tests {
       valid::are_equal(progress_bar_style::blocks, progress_bar.style(), csf_);
       
       assert::throws<argument_out_of_range_exception>([&] {progress_bar.style(as<progress_bar_style>(3));}, csf_);
-     }
-
+    }
+    
     void test_method_(set_value_in_range) {
       progress_bar_for_test progress_bar;
       valid::are_equal(100, progress_bar.maximum(), csf_);
       valid::is_zero(progress_bar.minimum(), csf_);
       valid::is_zero(progress_bar.value(), csf_);
-
+      
       progress_bar.value(10);
       assert::are_equal(100, progress_bar.maximum(), csf_);
       assert::is_zero(progress_bar.minimum(), csf_);
@@ -226,7 +226,7 @@ namespace xtd::forms::tests {
       valid::are_equal(100, progress_bar.maximum(), csf_);
       valid::is_zero(progress_bar.minimum(), csf_);
       valid::is_zero(progress_bar.value(), csf_);
-
+      
       progress_bar.value(110);
       assert::are_equal(100, progress_bar.maximum(), csf_);
       assert::is_zero(progress_bar.minimum(), csf_);
@@ -260,12 +260,12 @@ namespace xtd::forms::tests {
       assert::are_equal(100, progress_bar.maximum(), csf_);
       assert::is_zero(progress_bar.minimum(), csf_);
       assert::are_equal(1, progress_bar.value(), csf_);
-
+      
       progress_bar.increment(5);
       assert::are_equal(100, progress_bar.maximum(), csf_);
       assert::is_zero(progress_bar.minimum(), csf_);
       assert::are_equal(6, progress_bar.value(), csf_);
-
+      
       progress_bar.increment(10);
       assert::are_equal(100, progress_bar.maximum(), csf_);
       assert::is_zero(progress_bar.minimum(), csf_);
@@ -334,10 +334,10 @@ namespace xtd::forms::tests {
       valid::is_zero(progress_bar.minimum(), csf_);
       valid::is_zero(progress_bar.value(), csf_);
       valid::are_equal(10, progress_bar.step(), csf_);
-
+      
       progress_bar.step(20);
       valid::are_equal(20, progress_bar.step(), csf_);
-
+      
       progress_bar.perform_step();
       assert::are_equal(100, progress_bar.maximum(), csf_);
       assert::is_zero(progress_bar.minimum(), csf_);
@@ -356,13 +356,13 @@ namespace xtd::forms::tests {
       assert::is_zero(progress_bar.minimum(), csf_);
       assert::are_equal(progress_bar.maximum(), progress_bar.value(), csf_);
     }
-
+    
     void test_method_(set_range) {
       progress_bar_for_test progress_bar;
       valid::are_equal(100, progress_bar.maximum(), csf_);
       valid::is_zero(progress_bar.minimum(), csf_);
       valid::is_zero(progress_bar.value(), csf_);
-
+      
       progress_bar.set_range(100, 200);
       assert::are_equal(200, progress_bar.maximum(), csf_);
       assert::are_equal(100, progress_bar.minimum(), csf_);

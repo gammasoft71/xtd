@@ -5,7 +5,7 @@ using namespace xtd;
 using namespace xtd::tunit;
 
 ostream_unit_test::ostream_unit_test(std::ostream& os) noexcept : xtd::tunit::unit_test(std::make_unique<xtd::tunit::ostream_event_listener>(os)), os_(os) {
-  
+
 }
 
 ostream_unit_test::ostream_unit_test(std::ostream& os, int argc, char* argv[]) : xtd::tunit::unit_test(std::make_unique<xtd::tunit::ostream_event_listener>(os), argc, argv), os_(os) {

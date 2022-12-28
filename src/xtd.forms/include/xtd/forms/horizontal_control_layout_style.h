@@ -122,7 +122,7 @@ namespace xtd {
       /// @param align One of the content_alignment values. The default is middle_center.
       horizontal_control_layout_style(int32 width, bool expanded, xtd::forms::content_alignment align);
       /// @}
-
+      
       /// @name Properties
       
       /// @{
@@ -133,7 +133,7 @@ namespace xtd {
       /// @param width The preferred width, in pixels or percentage, depending on the xtd::forms::control_layout_style::size_type property.
       void width(float width);
       /// @}
-
+      
       /// @name Methods
       
       /// @{

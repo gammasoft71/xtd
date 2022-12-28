@@ -223,7 +223,7 @@ namespace xtd {
         /// @return The GUID that identifies an image encoder parameter category.
         const xtd::guid& guid() const noexcept {return guid_;}
         /// @}
-
+        
         /// @name Methods
         
         /// @{

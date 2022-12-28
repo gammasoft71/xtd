@@ -69,7 +69,7 @@ button_base& button_base::flat_appearance(const xtd::forms::flat_button_appearan
 }
 
 xtd::forms::flat_style button_base::flat_style() const noexcept {
-  return data_->flat_style;  
+  return data_->flat_style;
 }
 
 button_base& button_base::flat_style(xtd::forms::flat_style value) {

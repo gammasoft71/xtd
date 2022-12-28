@@ -70,7 +70,7 @@ namespace xtd {
       
       /// @{
       bool equals(const brush& value) const noexcept override;
-
+      
       /// @brief Converts this brush object to a human-readable string.
       /// @return A string that represents this brush object.
       xtd::ustring to_string() const noexcept override;

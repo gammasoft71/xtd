@@ -358,7 +358,7 @@ namespace xtd {
   /// std::cout << ts << std::endl;
   /// @endcode
   xtd::time_span operator""_min(unsigned long long s);
-
+  
   /// @brief Used to convert the specified value as millisconds to xtd::time_span.
   /// @par Namespace
   /// xtd
@@ -384,7 +384,7 @@ namespace xtd {
   /// std::cout << ts << std::endl;
   /// @endcode
   xtd::time_span operator""_ns(unsigned long long s);
-
+  
   /// @brief Used to convert specified value into xtd::ustring.
   /// @par Namespace
   /// xtd
@@ -579,7 +579,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   xtd::ustring operator""_sd(unsigned long long s);
-
+  
   /// @brief Used to convert specified value into xtd::ustring.
   /// @par Namespace
   /// xtd
@@ -1019,7 +1019,7 @@ namespace xtd {
   /// std::cout << L"125"_s64 << std::endl;
   /// @endcode
   int64 operator""_s64(const wchar* s, size_t n);
-
+  
   /// @brief Used to translate specified string into locale.
   /// @par Namespace
   /// xtd
@@ -1059,7 +1059,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core literals translate
   xtd::ustring operator""_t(const wchar* s, size_t n) noexcept;
-
+  
   /// @brief Used to convert the specified value as tiks to xtd::time_span.
   /// @par Namespace
   /// xtd
@@ -1072,7 +1072,7 @@ namespace xtd {
   /// std::cout << ts << std::endl;
   /// @endcode
   xtd::time_span operator""_t(unsigned long long s);
-
+  
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
   /// xtd

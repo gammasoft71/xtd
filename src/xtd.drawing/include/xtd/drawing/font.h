@@ -44,7 +44,7 @@ namespace xtd {
     /// @ingroup xtd_drawing drawing
     class drawing_export_ font final : public xtd::object, public xtd::iequatable<font> {
       struct data;
-
+      
     public:
       /// @name Constructors
       
@@ -273,7 +273,7 @@ namespace xtd {
       
       /// @{
       bool equals(const font& value) const noexcept override;
-
+      
       /// @brief Creates a font from the specified Windows handle to a device context.
       /// @param hdc A handle to a device context.
       /// @return The font this method creates.
@@ -319,7 +319,7 @@ namespace xtd {
       friend class xtd::forms::native::font_dialog;
       font();
       explicit font(intptr hfont);
-
+      
       std::shared_ptr<data> data_;
     };
   }

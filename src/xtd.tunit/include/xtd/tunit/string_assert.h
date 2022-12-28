@@ -314,7 +314,7 @@ namespace xtd {
       /// xtd::tunit::string_assert::does_not_match("^Hello", "Hello, World!", xtd::ustring("User message..."), csf_); // test throws an assert_error exception.
       /// @endcode
       static void does_not_match(const xtd::ustring& regex_pattern, const xtd::ustring& actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
-
+      
       /// @brief Asserts that string does not start with a specific item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -457,7 +457,7 @@ namespace xtd {
       /// xtd::tunit::string_assert::matches("^Salut", "Hello, World!", xtd::ustring("User message..."), csf_); // test throws an assert_error exception.
       /// @endcode
       static void matches(const xtd::ustring& regex_pattern, const xtd::ustring& actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
-
+      
       /// @brief Asserts that string starts witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.

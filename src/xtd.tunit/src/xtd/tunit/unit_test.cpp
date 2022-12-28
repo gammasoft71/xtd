@@ -129,13 +129,13 @@ std::vector<std::string> unit_test::succeed_test_names() const noexcept {
 int32 unit_test::run() {
   if (parse_arguments(arguments))
     return xtd::tunit::settings::default_settings().exit_status();
-  
+    
   if (xtd::tunit::settings::default_settings().list_tests()) {
     std::vector<std::string> tests;
     for (auto test_class : test_classes())
       for (auto test : test_class.test()->tests())
         tests.push_back(test_class.test()->name() + '.' + test.name());
-    
+        
     if (xtd::tunit::settings::default_settings().output_json()) write_list_tests_json();
     if (xtd::tunit::settings::default_settings().output_xml()) write_list_tests_xml();
     
@@ -149,7 +149,7 @@ int32 unit_test::run() {
   for (repeat_iteration_ = 1; repeat_iteration_ <= xtd::tunit::settings::default_settings().repeat_test() || xtd::tunit::settings::default_settings().repeat_test() < 0; ++repeat_iteration_) {
     if (xtd::tunit::settings::default_settings().shuffle_test())
       std::shuffle(test_classes().begin(), test_classes().end(), random.generator());
-    
+      
     try {
       event_listener_->on_unit_test_start(xtd::tunit::tunit_event_args(*this));
       
@@ -249,7 +249,7 @@ std::string unit_test::get_filename(const std::string& path) {
   const size_t last_slash_idx = filename.find_last_of("\\/");
   if (std::string::npos != last_slash_idx)
     filename.erase(0, last_slash_idx + 1);
-  
+    
   const size_t period_idx = filename.rfind('.');
   if (std::string::npos != period_idx)
     filename.erase(period_idx);
@@ -378,9 +378,8 @@ void unit_test::write_list_tests_xml() {
   file << "<testsuites tests=\"" << test_count() << "\" name=\"" << name_to_string(name_) << "\">" << std::endl;
   for (auto& test_class : test_classes()) {
     file << "  <testsuite name=\"" << escape_to_xml_string(test_class.test()->name()) << "\" tests=\"" << test_class.test()->test_count() << "\">" << std::endl;
-    for (auto& test : test_class.test()->tests()) {
+    for (auto& test : test_class.test()->tests())
       file << "    <testcase name=\"" << test.name() << "\" file=\"" << test.stack_frame().get_file_name() << "\" line=\"" << test.stack_frame().get_file_line_number() << "\" />" << std::endl;
-    }
     file << "  </testsuite>" << std::endl;
   }
   file << "</testsuites>" << std::endl;
@@ -393,7 +392,7 @@ void unit_test::write_tests_json() {
   file << "  \"tests\": " << test_count() << "," << std::endl;
   file << "  \"failures\": " << failed_test_count() << "," << std::endl;
   file << "  \"disabled\": " << ignored_test_count() << "," << std::endl;
-  file << "  \"errors\": " << 0  << ","<< std::endl;
+  file << "  \"errors\": " << 0  << "," << std::endl;
   file << "  \"timestamp\": \"" << ustring::format("{0:L}-{0:k}-{0:i}T{0:t}Z", xtd::tunit::settings::default_settings().start_time()) << "\"," << std::endl;
   file << "  \"time\": \"" << to_string(elapsed_time()) << "s\"," << std::endl;
   file << "  \"name\": \"" << name_to_string(name_) << "\"," << std::endl;
@@ -421,7 +420,7 @@ void unit_test::write_tests_json() {
       if (test.failed()) {
         file << "          \"failures\": [" << std::endl;
         file << "            {" << std::endl;
-        file << "              \"failure\": \"" << test.stack_frame().get_file_name() << ":" << test.stack_frame().get_file_line_number() << "\\n" <<message_to_json_string(test) <<"\"" << std::endl;
+        file << "              \"failure\": \"" << test.stack_frame().get_file_name() << ":" << test.stack_frame().get_file_line_number() << "\\n" << message_to_json_string(test) << "\"" << std::endl;
         file << "              \"type\": \"\"" << std::endl;
         file << "            }" << std::endl;
         file << "          ]" << std::endl;

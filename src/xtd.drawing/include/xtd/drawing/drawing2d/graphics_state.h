@@ -33,13 +33,13 @@ namespace xtd {
         graphics_state(const graphics_state& value) = default;
         graphics_state& operator =(const graphics_state& value) = default;
         /// @endcond
-
+        
         /// @name Methods
         
         /// @{
         bool equals(const graphics_state& value) const noexcept override;
         /// @}
-
+        
         
       private:
         friend xtd::drawing::graphics;

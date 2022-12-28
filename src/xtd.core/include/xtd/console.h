@@ -258,7 +258,7 @@ namespace xtd {
     /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
     static event<console, console_cancel_event_handler> cancel_key_press;
     /// @}
-
+    
     /// @name Methods
     
     /// @{

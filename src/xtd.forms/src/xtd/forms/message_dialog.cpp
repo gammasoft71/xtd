@@ -142,4 +142,4 @@ xtd::forms::dialog_result message_dialog::show_sheet_dialog(const iwin32_window&
 void message_dialog::on_dialog_closed(const dialog_closed_event_args& e) {
   data_->dialog_result = e.dialog_result();
   dialog_closed(*this, e);
-  }
+}

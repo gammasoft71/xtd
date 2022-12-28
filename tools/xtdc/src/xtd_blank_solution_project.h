@@ -5,7 +5,7 @@ namespace xtdc_command {
   class xtd_blank_solution_project : public base_project {
   public:
     explicit xtd_blank_solution_project(const xtd::ustring& path) : base_project(path) {}
-
+    
     void create(const xtd::ustring& name, bool create_solution) const {
       create_solution_cmakelists_txt(name);
     }

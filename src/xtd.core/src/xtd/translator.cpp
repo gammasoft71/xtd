@@ -22,7 +22,7 @@ ustring translator::language_;
 xtd::ustring translator::language() {
   try {
     initialize(); // Must be first
-  }catch(...) {
+  } catch (...) {
   }
   return language_;
 }
@@ -30,7 +30,7 @@ xtd::ustring translator::language() {
 void translator::language(const xtd::ustring& language) {
   try {
     initialize(); // Must be first
-  }catch(...) {
+  } catch (...) {
   }
   language_ = language.to_lower();
 }
@@ -38,7 +38,7 @@ void translator::language(const xtd::ustring& language) {
 std::vector<xtd::ustring> translator::languages() {
   try {
     initialize(); // Must be first
-  }catch(...) {
+  } catch (...) {
   }
   static std::vector<xtd::ustring> languages;
   if (languages.empty()) {

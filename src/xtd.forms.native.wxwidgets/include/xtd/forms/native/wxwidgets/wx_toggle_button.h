@@ -34,21 +34,21 @@ namespace xtd {
           owner_draw_ = (create_params.style & BS_OWNERDRAW) == BS_OWNERDRAW;
           if (owner_draw_) {
             control_handler::create<wx_user_window>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()));
-#if defined(__WXOSX__)
+            #if defined(__WXOSX__)
             reinterpret_cast<wx_user_window*>(control())->set_accepts_focus(false);
-#else
+            #else
             reinterpret_cast<wx_user_window*>(control())->set_accepts_focus(true);
-#endif
+            #endif
           } else
             control_handler::create<wxToggleButton>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption)), wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()));
           SetSize(create_params.size.width(), create_params.size.height());
           SetPosition({create_params.location.x(), create_params.location.y()});
-#if defined(__WXMSW__)
+          #if defined(__WXMSW__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
             control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
-#endif
+          #endif
         }
         
         wxSize GetClientSize() const override {
@@ -72,7 +72,7 @@ namespace xtd {
           #endif
           control_handler::SetSize(width, height);
         }
-
+        
         bool owner_draw_ = false;
       };
     }

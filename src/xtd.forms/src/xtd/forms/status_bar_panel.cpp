@@ -6,7 +6,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
-status_bar_panel::status_bar_panel() : data_(std::make_shared<data>()) {  
+status_bar_panel::status_bar_panel() : data_(std::make_shared<data>()) {
 }
 
 xtd::forms::horizontal_alignment status_bar_panel::alignment() const noexcept {

@@ -32,22 +32,22 @@ void about_dialog::show(intptr hwnd, const xtd::drawing::icon& icon, const ustri
   about_info.SetDescription(convert_string::to_wstring(description));
   about_info.SetVersion(convert_string::to_wstring(version), convert_string::to_wstring(long_version));
   about_info.SetCopyright(convert_string::to_wstring(ustring(copyright).replace(u8"\u00A9"_s, u8"(c)"_s)));
-#if defined(__WXGTK__)
-    about_info.SetIcon(reinterpret_cast<wxIconBundle*>(icon.handle())->GetIcon());
-    about_info.SetWebSite(convert_string::to_wstring(website), convert_string::to_wstring(website_label));
-    for (auto creator : creators)
-      about_info.AddDeveloper(convert_string::to_wstring(creator));
-    for (auto doc_writer : doc_writers)
-      about_info.AddDocWriter(convert_string::to_wstring(doc_writer));
-    for (auto translator : translators)
-      about_info.AddTranslator(convert_string::to_wstring(translator));
-    for (auto designer : designers)
-      about_info.AddArtist(convert_string::to_wstring(designer));
-    about_info.SetLicense(convert_string::to_wstring(license));
-#endif
-
-#if defined(__WXMSW__)
+  #if defined(__WXGTK__)
+  about_info.SetIcon(reinterpret_cast<wxIconBundle*>(icon.handle())->GetIcon());
+  about_info.SetWebSite(convert_string::to_wstring(website), convert_string::to_wstring(website_label));
+  for (auto creator : creators)
+    about_info.AddDeveloper(convert_string::to_wstring(creator));
+  for (auto doc_writer : doc_writers)
+    about_info.AddDocWriter(convert_string::to_wstring(doc_writer));
+  for (auto translator : translators)
+    about_info.AddTranslator(convert_string::to_wstring(translator));
+  for (auto designer : designers)
+    about_info.AddArtist(convert_string::to_wstring(designer));
+  about_info.SetLicense(convert_string::to_wstring(license));
+  #endif
+  
+  #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
-#endif
+  #endif
   wxAboutBox(about_info, hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control());
 }

@@ -63,9 +63,9 @@ namespace xtd {
           if ((style & SS_VCENTER) == SS_VCENTER) wx_style |= wxALIGN_CENTRE_VERTICAL;
           else if ((style & SS_RIGHT) == SS_BOTTOM) wx_style |= wxALIGN_BOTTOM;
           else wx_style |= wxALIGN_TOP;
-
+          
           if ((style & SS_ENDELLIPSIS) == SS_ENDELLIPSIS) wx_style |= wxST_ELLIPSIZE_END;
-
+          
           return wx_style;
         }
         
