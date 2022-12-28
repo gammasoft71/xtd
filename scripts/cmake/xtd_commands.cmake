@@ -5,6 +5,7 @@
 # Includes
 
 include(ExternalProject)
+include(ProcessorCount)
 
 ################################################################################
 # Target type Settings
@@ -1969,6 +1970,10 @@ set(PROJECT_PATH "${PROJECT_PATH}/${PROJECT_NAME}")
 ################################################################################
 # Globals settings
 
+# set processor count
+ProcessorCount(XTD_PROCESSOR_COUNT)
+
+
 # set target informations  (properties/assembly_info.cpp)
 read_assembly_informations()
 
@@ -2254,7 +2259,7 @@ if (XTD_ENABLE_RUN_CPPCHECK AND NOT RUN_CPPCHECK_ONLY_ONCE)
   list(APPEND CPPCHECK_ARGS
     --enable=warning,style,performance,portability,unusedFunction,missingInclude
     --error-exitcode=1
-    -j 8
+    -j ${XTD_PROCESSOR_COUNT}
     --language=c++
     --report-progress
     --std=c++17
