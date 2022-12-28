@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 
+#include <algorithm>
 #include <cstdlib>
 #include <random>
 #include <regex>
@@ -152,8 +153,7 @@ namespace xtd {
       template<typename path_t>
       static xtd::ustring combine(path_t paths) noexcept {
         xtd::ustring result;
-        for (auto path : paths)
-          result = combine(result, path);
+        std::for_each(paths.begin(), paths.end(), [&](auto path) {result = combine(result, path);});
         return result;
       }
       
