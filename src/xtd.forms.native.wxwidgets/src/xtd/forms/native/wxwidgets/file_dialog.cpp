@@ -8,6 +8,7 @@
 #include <wx/filedlg.h>
 #include <wx/windowptr.h>
 
+using namespace std;
 using namespace std::literals;
 using namespace xtd;
 using namespace xtd::io;
@@ -49,8 +50,7 @@ namespace {
     else {
       wxArrayString files;
       dialog.GetFilenames(files);
-      for (wxString file : files)
-        file_names.push_back(path::combine(convert_string::to_string(dialog.GetDirectory().c_str().AsWChar()), convert_string::to_string(file.c_str().AsWChar())));
+      for_each(files.begin(), files.end(), [&](wxString file) {file_names.push_back(path::combine(convert_string::to_string(dialog.GetDirectory().c_str().AsWChar()), convert_string::to_string(file.c_str().AsWChar())));});
       file_name = file_names[0];
     }
   }
