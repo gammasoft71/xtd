@@ -814,7 +814,7 @@ void style_sheet::control_reader(xtd::web::css::css_reader& reader) noexcept {
   }
 }
 
-void style_sheet::fill_control(xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::control& control) noexcept {
+void style_sheet::fill_control(const xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::control& control) noexcept {
   for (auto property : selectors_iterator->second.properties()) {
     if (property.first == "margin") control.margin(margin_from_css(property.second.to_string(), margin(length(0))));
     if (property.first == "margin-bottom") control.margin(margin_bottom_from_css(property.second.to_string(), control.margin()));
