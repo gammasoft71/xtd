@@ -1,6 +1,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/date_time.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include <algorithm>
 #include <chrono>
 #include <cmath>
 #include <cstdarg>
@@ -233,17 +234,11 @@ namespace {
 
 date_time::time_zone_info date_time::get_local_time_zone() {
   time_zone_info local_time_zone;
-  bool local_time_zone_found = false;
   tzset();
-  for (auto tzi : get_system_time_zones()) {
-    if (tzi.id == alias_to_time_zone_info_id(reinterpret_cast<const char*>(tzname[0]))) {
-      local_time_zone = tzi;
-      local_time_zone_found = true;
-      break;
-    }
-  }
-  
-  if (!local_time_zone_found) {
+  auto stzis = get_system_time_zones();
+  auto iterator = std::find_if(stzis.begin(), stzis.end(), [&](auto tzi) {return tzi.id == reinterpret_cast<const char*>(tzname[0]);});
+  if (iterator != stzis.end()) {
+    local_time_zone = *iterator;
     local_time_zone.id = reinterpret_cast<const char*>(tzname[0]);
     local_time_zone.base_utc_offset = static_cast<int_least64_t>(-timezone * ticks_per_second);
     local_time_zone.daylight_name = reinterpret_cast<const char*>(tzname[1]);
@@ -251,7 +246,6 @@ date_time::time_zone_info date_time::get_local_time_zone() {
     local_time_zone.standard_name = reinterpret_cast<const char*>(tzname[0]);
     local_time_zone.supports_daylight_saving_time = daylight != 0;
   }
-  
   return local_time_zone;
 }
 
