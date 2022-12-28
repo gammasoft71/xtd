@@ -241,8 +241,8 @@ private:
   }
   
   void draw_control(xtd::forms::paint_event_args& e) {
-    auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-    xtd::forms::style_sheets::tool_bar_button current_style_sheet = style.tool_bar_button(xtd::forms::style_sheets::pseudo_state::standard);
+    auto sstyle = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
+    xtd::forms::style_sheets::tool_bar_button current_style_sheet = sstyle.tool_bar_button(xtd::forms::style_sheets::pseudo_state::standard);
     current_style_sheet.font(font());
     xtd::drawing::rectangle text_rect = current_style_sheet.get_content_rectangle(e.clip_rectangle());
     if (data_->show_text == true && data_->tool_bar_text_align == tool_bar_text_align::right) {
