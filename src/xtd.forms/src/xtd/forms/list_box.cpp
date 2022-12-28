@@ -117,8 +117,8 @@ const list_box::item& list_box::selected_item() const noexcept {
 
 vector<list_box::item> list_box::selected_items() const noexcept {
   vector<item> itms;
-  for (size_t index : selected_indices())
-    itms.push_back(data_->items[index]);
+  auto indices = selected_indices();
+  for_each(indices.begin(), indices.end(), [&](size_t index) {itms.push_back(data_->items[index]);});
   return itms;
 }
 
