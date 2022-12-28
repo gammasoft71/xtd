@@ -76,8 +76,7 @@ checked_list_box::checked_index_collection checked_list_box::checked_indices() c
 
 checked_list_box::checked_item_collection checked_list_box::checked_items() const noexcept {
   checked_item_collection itms;
-  for (checked_list_box::item item : data_->items)
-    if (item.checked()) itms.push_back(item);
+  copy_if(data_->items.begin(), data_->items.end(), itms.end(), [&](auto item) {return item.checked();});
   return itms;
 }
 
@@ -136,8 +135,8 @@ list_box& checked_list_box::selected_item(const item& selected_item) {
 
 vector<checked_list_box::item> checked_list_box::selected_items() const noexcept {
   vector<item> itms;
-  for (size_t index : selected_indices())
-    itms.push_back(data_->items[index]);
+  auto indices = selected_indices();
+  for_each(indices.begin(), indices.end(), [&](size_t index) {itms.push_back(data_->items[index]);});
   return itms;
 }
 
