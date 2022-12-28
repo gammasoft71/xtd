@@ -104,9 +104,8 @@ namespace {
   
   bool is_valid_uri(const string& command_line) {
     static vector<string> schemes = {"file", "ftp", "gopher", "http", "https", "mailto", "net.pipe", "net.tcp", "news", "nntp"};
-    for (auto scheme : schemes)
-      if (command_line.find(scheme + ":") == 0) return true;
-    return false;
+    auto iterator = find_if(schemes.begin(), schemes.end(), [&](auto scheme) {return command_line.find(scheme + ":") == 0;});
+    return iterator != schemes.end();
   }
   
   bool is_valid_shell_execute_process(function<vector<string>(const string& str, const vector<char>& separators, size_t count, bool)> splitter, const string& command_line, const string& working_directory) {
