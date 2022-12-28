@@ -209,9 +209,9 @@ xtd::drawing::imaging::encoder_parameters image::get_encoder_parameter_list(xtd:
 }
 
 size_t image::get_frame_count(const xtd::drawing::imaging::frame_dimension& dimension) const {
-  for (auto frame : data_->frame_dimensions)
-    if (frame.first == dimension.guid()) return frame.second;
-  throw argument_exception(csf_);
+  auto iterator = find_if(data_->frame_dimensions.begin(), data_->frame_dimensions.end(), [&](auto frame) {return frame.first == dimension.guid();});
+  if (iterator == data_->frame_dimensions.end()) throw argument_exception(csf_);
+  return iterator->second;
 }
 
 int32 image::get_pixel_format_size(xtd::drawing::imaging::pixel_format pixfmt) noexcept {
