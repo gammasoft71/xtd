@@ -11,6 +11,7 @@
 #include "../../../include/xtd/not_supported_exception.h"
 #include "../../../include/xtd/unauthorized_access_exception.h"
 #include "../../../include/xtd/diagnostics/debug.h"
+#include <algorithm>
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/directory.h>
 #include <xtd/native/file.h>
@@ -280,10 +281,10 @@ date_time directory::get_last_write_time(const ustring& path) {
 }
 
 vector<ustring> directory::get_logical_drives() {
-  vector<ustring> drives;
-  for (auto drive : drive_info::get_drives())
-    drives.emplace_back(drive.name());
-  return drives;
+  vector<ustring> logical_drives;
+  auto drives = drive_info::get_drives();
+  for_each (drives.begin(), drives.end(), [&](auto drive) {logical_drives.emplace_back(drive.name());});
+  return logical_drives;
 }
 
 directory_info directory::get_parent(const ustring& path) {
