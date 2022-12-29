@@ -82,7 +82,7 @@ vector<size_t> list_box::selected_indices(intptr control) {
   vector<size_t> indices;
   wxArrayInt wx_indices;
   static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->GetSelections(wx_indices);
-  for_each (wx_indices.begin(), wx_indices.end(), [&](int32 index) {indices.push_back(index);});
+  for_each(wx_indices.begin(), wx_indices.end(), [&](int32 index) {indices.push_back(index);});
   return indices;
 }
 

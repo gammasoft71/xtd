@@ -149,7 +149,7 @@ xtd::system_report::xtd_library_collection system_report::xtd_libraries() noexce
 system_report::environment_variable_collection system_report::environment_variables() noexcept {
   environment_variable_collection environment_variables;
   auto envs = xtd::environment::get_environment_variables();
-  for_each (envs.begin(), envs.end(), [&](auto environment_variable) {environment_variables.push_back(environment_variable);});
+  for_each(envs.begin(), envs.end(), [&](auto environment_variable) {environment_variables.push_back(environment_variable);});
   return environment_variables;
 }
 

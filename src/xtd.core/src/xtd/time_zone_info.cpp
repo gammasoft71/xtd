@@ -212,7 +212,7 @@ const time_zone_info& time_zone_info::time_find_system_time_zone_by_id(const ust
   auto stzs = get_system_time_zones();
   auto iterator = find_if(stzs.begin(), stzs.end(), [&](auto item) {return item.id_ == id;});
   if (iterator != stzs.end()) return *iterator;
-    
+  
   throw time_zone_not_found_exception(csf_);
 }
 

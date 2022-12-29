@@ -817,13 +817,13 @@ size_t socket::select(std::vector<socket>& check_read, std::vector<socket>& chec
   
   vector<intptr> check_read_handles;
   for_each(check_read.begin(), check_read.end(), [&](auto s) {check_read_handles.push_back(s.data_->handle);});
-    
+  
   vector<intptr> check_write_handles;
   for_each(check_write.begin(), check_write.end(), [&](auto s) {check_write_handles.push_back(s.data_->handle);});
-    
+  
   vector<intptr> check_error_handles;
   for_each(check_error.begin(), check_error.end(), [&](auto s) {check_error_handles.push_back(s.data_->handle);});
-        
+  
   int32 status = native::socket::select(check_read_handles, check_write_handles, check_error_handles, microseconds);
   if (status < 0) throw socket_exception(get_last_error_(), csf_);
   
