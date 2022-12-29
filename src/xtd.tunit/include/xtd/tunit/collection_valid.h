@@ -664,7 +664,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
-      /// xtd::tunit::collection_valid::contains({1, 2, a); // test ok.
+      /// xtd::tunit::collection_valid::contains({1, 2}, a); // test ok.
       /// xtd::tunit::collection_valid::contains({1, 2, 6}, a); // test fails.
       /// @endcode
       template<typename expected_t, typename actual_t>
@@ -764,7 +764,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
-      /// xtd::tunit::collection_valid::does_not_contain({1, 2, a); // test ok.
+      /// xtd::tunit::collection_valid::does_not_contain({1, 2}, a); // test ok.
       /// xtd::tunit::collection_valid::does_not_contain({1, 2, 6}, a); // test fails.
       /// @endcode
       template<typename expected_t, typename actual_t>
