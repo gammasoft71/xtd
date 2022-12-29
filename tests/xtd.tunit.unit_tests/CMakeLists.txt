@@ -118,6 +118,30 @@ add_sources(
   src/xtd/tunit/tests/one_test_one_test_case_tests.cpp
   src/xtd/tunit/tests/one_test_two_test_cases_tests.cpp
   src/xtd/tunit/tests/one_test_two_test_cases_and_one_ignore_test_case_tests.cpp
+  src/xtd/tunit/tests/collection_assert_all_items_are_instances_of_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_all_items_are_instances_of_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_all_items_are_not_null_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_all_items_are_not_null_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_all_items_are_unique_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_all_items_are_unique_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_are_equal_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_are_equal_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_are_equivalent_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_are_equivalent_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_are_not_equal_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_are_not_equal_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_are_not_equivalent_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_are_not_equivalent_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_contains_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_contains_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_does_not_contain_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_does_not_contain_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_is_empty_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_is_empty_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_is_not_empty_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_is_ordered_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_is_ordered_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assert_is_not_empty_vector_succeed_tests.cpp
   src/xtd/tunit/tests/string_assert_are_equal_ignoring_case_const_char_pointer_failed_tests.cpp
   src/xtd/tunit/tests/string_assert_are_equal_ignoring_case_const_char_pointer_succeed_tests.cpp
   src/xtd/tunit/tests/string_assert_are_equal_ignoring_case_const_char16_t_pointer_failed_tests.cpp
