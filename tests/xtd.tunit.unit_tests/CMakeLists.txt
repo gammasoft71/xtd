@@ -142,6 +142,14 @@ add_sources(
   src/xtd/tunit/tests/collection_assert_is_ordered_vector_failed_tests.cpp
   src/xtd/tunit/tests/collection_assert_is_ordered_vector_succeed_tests.cpp
   src/xtd/tunit/tests/collection_assert_is_not_empty_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/directory_assert_are_equal_filesystem_directory_entry_failed_tests.cpp
+  src/xtd/tunit/tests/directory_assert_are_equal_filesystem_directory_entry_succeed_tests.cpp
+  src/xtd/tunit/tests/directory_assert_are_not_equal_filesystem_directory_entry_failed_tests.cpp
+  src/xtd/tunit/tests/directory_assert_are_not_equal_filesystem_directory_entry_succeed_tests.cpp
+  src/xtd/tunit/tests/directory_assert_does_not_exist_string_failed_tests.cpp
+  src/xtd/tunit/tests/directory_assert_does_not_exist_string_succeed_tests.cpp
+  src/xtd/tunit/tests/directory_assert_exists_string_failed_tests.cpp
+  src/xtd/tunit/tests/directory_assert_exists_string_succeed_tests.cpp
   src/xtd/tunit/tests/string_assert_are_equal_ignoring_case_const_char_pointer_failed_tests.cpp
   src/xtd/tunit/tests/string_assert_are_equal_ignoring_case_const_char_pointer_succeed_tests.cpp
   src/xtd/tunit/tests/string_assert_are_equal_ignoring_case_const_char16_t_pointer_failed_tests.cpp
