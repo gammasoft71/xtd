@@ -19,7 +19,7 @@ void test_(collection_assert_all_items_are_not_null_vector_failed_tests, test_ou
   assert_value_("Start 1 test from 1 test case\n"
     "  FAILED  collection_assert_all_items_are_not_null_vector_failed_tests.test_case_failed\n"
     "    Expected: all items are not null\n"
-    "    But was:  < 0x0 >\n"
+    "    But was:  < 0 >\n"
     "End 1 test from 1 test case ran.\n", ss.str());
 }
 
