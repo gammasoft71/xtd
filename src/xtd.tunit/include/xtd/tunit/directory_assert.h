@@ -7,6 +7,7 @@
 #if defined(__cpp_lib_filesystem)
 #include <filesystem>
 #endif
+#include <xtd/io/directory_info.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -34,7 +35,7 @@ namespace xtd {
       
       /// @{
       #if defined(__cpp_lib_filesystem)
-      /// @brief Asserts that two directories are equal.
+      /// @brief Asserts that two std::filesystem::directory_entry are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @exception xtd::tunit::assert_error If bad assertion.
@@ -47,7 +48,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::are_equal(d1, d3); // test throws an assert_error exception.
       /// @endcode
       static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual);
-      /// @brief Asserts that two directories are equal.
+      /// @brief Asserts that two std::filesystem::directory_entry are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param stack_frame Contains information about current file and current line.
@@ -61,7 +62,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::are_equal(d1, d3, csf_); // test throws an assert_error exception.
       /// @endcode
       static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const xtd::diagnostics::stack_frame& stack_frame);
-      /// @brief Asserts that two directories are equal.
+      /// @brief Asserts that two std::filesystem::directory_entry are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -75,7 +76,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::are_equal(d1, d3, "User message..."); // test throws an assert_error exception.
       /// @endcode
       static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message);
-      /// @brief Asserts that two directories are equal.
+      /// @brief Asserts that two std::filesystem::directory_entry are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -90,7 +91,65 @@ namespace xtd {
       /// xtd::tunit::directory_assert::are_equal(d1, d3, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
       static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
-      
+#endif
+      /// @brief Asserts that two xtd::io::directory_info are equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::io::directory_info d1(".");
+      /// xtd::io::directory_info d2(".")
+      /// xtd::io::directory_info d3("..")
+      /// xtd::tunit::directory_assert::are_equal(d1, d2); // test ok.
+      /// xtd::tunit::directory_assert::are_equal(d1, d3); // test throws an assert_error exception.
+      /// @endcode
+      static void are_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual);
+      /// @brief Asserts that two xtd::io::directory_info are equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::io::directory_info d1(".");
+      /// xtd::io::directory_info d2(".")
+      /// xtd::io::directory_info d3("..")
+      /// xtd::tunit::directory_assert::are_equal(d1, d2, csf_); // test ok.
+      /// xtd::tunit::directory_assert::are_equal(d1, d3, csf_); // test throws an assert_error exception.
+      /// @endcode
+      static void are_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const xtd::diagnostics::stack_frame& stack_frame);
+      /// @brief Asserts that two xtd::io::directory_info are equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::io::directory_info d1(".");
+      /// xtd::io::directory_info d2(".")
+      /// xtd::io::directory_info d3("..")
+      /// xtd::tunit::directory_assert::are_equal(d1, d2, "User message..."); // test ok.
+      /// xtd::tunit::directory_assert::are_equal(d1, d3, "User message..."); // test throws an assert_error exception.
+      /// @endcode
+      static void are_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const std::string& message);
+      /// @brief Asserts that two xtd::io::directory_info are equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::io::directory_info d1(".");
+      /// xtd::io::directory_info d2(".")
+      /// xtd::io::directory_info d3("..")
+      /// xtd::tunit::directory_assert::are_equal(d1, d2, "User message...", csf_); // test ok.
+      /// xtd::tunit::directory_assert::are_equal(d1, d3, "User message...", csf_); // test throws an assert_error exception.
+      /// @endcode
+      static void are_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+
+#if defined(__cpp_lib_filesystem)
       /// @brief Asserts that two std::filesystem::directory_entry are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -148,8 +207,64 @@ namespace xtd {
       /// @endcode
       static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
       #endif
-      
-      /// @brief Asserts that file not exists.
+      /// @brief Asserts that two xtd::io::directory_info are not equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::io::directory_info d1(".");
+      /// xtd::io::directory_info d2(".")
+      /// xtd::io::directory_info d3("..")
+      /// xtd::tunit::directory_assert::are_not_equal(d1, d3, "User message...", csf_); // test ok.
+      /// xtd::tunit::directory_assert::are_not_equal(d1, d2, "User message...", csf_); // test throws an assert_error exception.
+      /// @endcode
+      static void are_not_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual);
+      /// @brief Asserts that two xtd::io::directory_info are not equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::io::directory_info d1(".");
+      /// xtd::io::directory_info d2(".")
+      /// xtd::io::directory_info d3("..")
+      /// xtd::tunit::directory_assert::are_not_equal(d1, d3, "User message...", csf_); // test ok.
+      /// xtd::tunit::directory_assert::are_not_equal(d1, d2, "User message...", csf_); // test throws an assert_error exception.
+      /// @endcode
+      static void are_not_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const xtd::diagnostics::stack_frame& stack_frame);
+      /// @brief Asserts that two xtd::io::directory_info are not equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::io::directory_info d1(".");
+      /// xtd::io::directory_info d2(".")
+      /// xtd::io::directory_info d3("..")
+      /// xtd::tunit::directory_assert::are_not_equal(d1, d3, "User message...", csf_); // test ok.
+      /// xtd::tunit::directory_assert::are_not_equal(d1, d2, "User message...", csf_); // test throws an assert_error exception.
+      /// @endcode
+      static void are_not_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const std::string& message);
+      /// @brief Asserts that two xtd::io::directory_info are not equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::io::directory_info d1(".");
+      /// xtd::io::directory_info d2(".")
+      /// xtd::io::directory_info d3("..")
+      /// xtd::tunit::directory_assert::are_not_equal(d1, d3, "User message...", csf_); // test ok.
+      /// xtd::tunit::directory_assert::are_not_equal(d1, d2, "User message...", csf_); // test throws an assert_error exception.
+      /// @endcode
+      static void are_not_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+
+      /// @brief Asserts that directory not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @exception xtd::tunit::assert_error If bad assertion.
@@ -162,7 +277,7 @@ namespace xtd {
       /// @endcode
       template<typename char_t>
       static void does_not_exist(const std::basic_string<char_t>& directory) {does_not_exist(directory, "", xtd::diagnostics::stack_frame::empty());}
-      /// @brief Asserts that file not exists.
+      /// @brief Asserts that directory not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param stack_frame Contains information about current file and current line.
@@ -176,7 +291,7 @@ namespace xtd {
       /// @endcode
       template<typename char_t>
       static void does_not_exist(const std::basic_string<char_t>& directory, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(directory, "", stack_frame);}
-      /// @brief Asserts that file not exists.
+      /// @brief Asserts that directory not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -190,7 +305,7 @@ namespace xtd {
       /// @endcode
       template<typename char_t>
       static void does_not_exist(const std::basic_string<char_t>& directory, const std::string& message) {does_not_exist(directory, message, xtd::diagnostics::stack_frame::empty());}
-      /// @brief Asserts that file not exists.
+      /// @brief Asserts that directory not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
