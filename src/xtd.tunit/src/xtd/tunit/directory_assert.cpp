@@ -38,8 +38,8 @@ void directory_assert::are_not_equal(const directory_entry& expected, const dire
 }
 
 void directory_assert::are_not_equal(const directory_entry& expected, const directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-  if (expected != actual)
-    base_assert::fail(base_assert::to_string(expected.path().string()), base_assert::to_string(actual.path().string()), message, stack_frame);
+  if (expected == actual)
+    base_assert::fail("not " + base_assert::to_string(expected.path().string()), base_assert::to_string(actual.path().string()), message, stack_frame);
   else
     assert::succeed(message, stack_frame);
 }
