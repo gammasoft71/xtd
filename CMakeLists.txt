@@ -20,6 +20,7 @@ option(XTD_BUILD_TOOL_SLEEPFOR_COMMAND_LINE "Build tool sleepfor command line" O
 option(XTD_BUILD_TOOL_SET_PATH "Enable tool set path" ON)
 option(XTD_BUILD_TOOL_XTDC_COMMAND_LINE "Build tool xtdc command line" ON)
 option(XTD_BUILD_TOOL_XTDC_GUI "Enable tool xtdc-gui GUI" ON)
+option(XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM "Build with the continuous integration (CI) system. This flag should always be set to OFF. It is only needed for continuous integration." OFF)
 option(XTD_DOWNLOAD_ASTYLE "Download and build astyle from Github" OFF)
 option(XTD_DOWNLOAD_CPPCHECK "Download and build cppcheck from Github" OFF)
 option(XTD_DOWNLOAD_DOXYGEN "Download and build doxygen from Github" OFF)
@@ -49,6 +50,10 @@ set(ASTYLE_SOURCE_FILES
 )
 
 set(CPPCHECK_SOURCE_ROOTS ${CMAKE_SOURCE_DIR}/src)
+
+if (XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM)
+  add_definitions(-D__XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM__)
+endif ()
 
 # incldue xtd cmake scripts
 include(scripts/cmake/xtd_commands.cmake)
