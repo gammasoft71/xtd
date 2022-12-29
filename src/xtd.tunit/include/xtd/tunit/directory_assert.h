@@ -40,9 +40,11 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// @code
-      /// ...
+      /// std::filesystem::directory_entry d1(std::filesystem::path("."));
+      /// std::filesystem::directory_entry d2(std::filesystem::path("."));
+      /// std::filesystem::directory_entry d3(std::filesystem::path(".."));
       /// xtd::tunit::directory_assert::are_equal(d1, d2); // test ok.
-      /// xtd::tunit::directory_assert::are_equal(d1, d2); // test throws an assert_error exception.
+      /// xtd::tunit::directory_assert::are_equal(d1, d3); // test throws an assert_error exception.
       /// @endcode
       static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual);
       /// @brief Asserts that two directories are equal.
@@ -52,9 +54,11 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// @code
-      /// ...
+      /// std::filesystem::directory_entry d1(std::filesystem::path("."));
+      /// std::filesystem::directory_entry d2(std::filesystem::path("."));
+      /// std::filesystem::directory_entry d3(std::filesystem::path(".."));
       /// xtd::tunit::directory_assert::are_equal(d1, d2, csf_); // test ok.
-      /// xtd::tunit::directory_assert::are_equal(d1, d2, csf_); // test throws an assert_error exception.
+      /// xtd::tunit::directory_assert::are_equal(d1, d3, csf_); // test throws an assert_error exception.
       /// @endcode
       static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Asserts that two directories are equal.
@@ -64,9 +68,11 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// @code
-      /// ...
+      /// std::filesystem::directory_entry d1(std::filesystem::path("."));
+      /// std::filesystem::directory_entry d2(std::filesystem::path("."));
+      /// std::filesystem::directory_entry d3(std::filesystem::path(".."));
       /// xtd::tunit::directory_assert::are_equal(d1, d2, "User message..."); // test ok.
-      /// xtd::tunit::directory_assert::are_equal(d1, d2, "User message..."); // test throws an assert_error exception.
+      /// xtd::tunit::directory_assert::are_equal(d1, d3, "User message..."); // test throws an assert_error exception.
       /// @endcode
       static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message);
       /// @brief Asserts that two directories are equal.
@@ -77,9 +83,11 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// @code
-      /// ...
+      /// std::filesystem::directory_entry d1(std::filesystem::path("."));
+      /// std::filesystem::directory_entry d2(std::filesystem::path("."));
+      /// std::filesystem::directory_entry d3(std::filesystem::path(".."));
       /// xtd::tunit::directory_assert::are_equal(d1, d2, "User message...", csf_); // test ok.
-      /// xtd::tunit::directory_assert::are_equal(d1, d2, "User message...", csf_); // test throws an assert_error exception.
+      /// xtd::tunit::directory_assert::are_equal(d1, d3, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
       static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
       
@@ -89,8 +97,10 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// @code
-      /// ...
-      /// xtd::tunit::directory_assert::are_not_equal(d1, d2, "User message...", csf_); // test ok.
+      /// std::filesystem::directory_entry d1(std::filesystem::path("."));
+      /// std::filesystem::directory_entry d2(std::filesystem::path("."));
+      /// std::filesystem::directory_entry d3(std::filesystem::path(".."));
+      /// xtd::tunit::directory_assert::are_not_equal(d1, d3, "User message...", csf_); // test ok.
       /// xtd::tunit::directory_assert::are_not_equal(d1, d2, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
       static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual);
@@ -101,8 +111,10 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// @code
-      /// ...
-      /// xtd::tunit::directory_assert::are_not_equal(d1, d2, "User message...", csf_); // test ok.
+      /// std::filesystem::directory_entry d1(std::filesystem::path("."));
+      /// std::filesystem::directory_entry d2(std::filesystem::path("."));
+      /// std::filesystem::directory_entry d3(std::filesystem::path(".."));
+      /// xtd::tunit::directory_assert::are_not_equal(d1, d3, "User message...", csf_); // test ok.
       /// xtd::tunit::directory_assert::are_not_equal(d1, d2, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
       static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const xtd::diagnostics::stack_frame& stack_frame);
@@ -113,8 +125,10 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// @code
-      /// ...
-      /// xtd::tunit::directory_assert::are_not_equal(d1, d2, "User message...", csf_); // test ok.
+      /// std::filesystem::directory_entry d1(std::filesystem::path("."));
+      /// std::filesystem::directory_entry d2(std::filesystem::path("."));
+      /// std::filesystem::directory_entry d3(std::filesystem::path(".."));
+      /// xtd::tunit::directory_assert::are_not_equal(d1, d3, "User message...", csf_); // test ok.
       /// xtd::tunit::directory_assert::are_not_equal(d1, d2, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
       static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message);
@@ -126,8 +140,10 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// @code
-      /// ...
-      /// xtd::tunit::directory_assert::are_not_equal(d1, d2, "User message...", csf_); // test ok.
+      /// std::filesystem::directory_entry d1(std::filesystem::path("."));
+      /// std::filesystem::directory_entry d2(std::filesystem::path("."));
+      /// std::filesystem::directory_entry d3(std::filesystem::path(".."));
+      /// xtd::tunit::directory_assert::are_not_equal(d1, d3, "User message...", csf_); // test ok.
       /// xtd::tunit::directory_assert::are_not_equal(d1, d2, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
       static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
