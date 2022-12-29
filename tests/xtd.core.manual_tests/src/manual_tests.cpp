@@ -15,6 +15,9 @@ int main() {
   console::write_line();
   console::write_line("nameof=\"{}\", sizeof(slong)=\"{}\"", nameof_(xtd::ulong), sizeof(xtd::ulong));
   console::write_line("nameof=\"{}\", sizeof(unsigned long)=\"{}\"", nameof_(unsigned long), sizeof(unsigned long));
+
+  console::write_line("name = {}", typeid(xtd::date_time).name());
+  console::write_line("demangled name = {}", ustring::demangle(typeid(xtd::date_time).name()));
 }
 
 // This code produces the following output for a consome application:

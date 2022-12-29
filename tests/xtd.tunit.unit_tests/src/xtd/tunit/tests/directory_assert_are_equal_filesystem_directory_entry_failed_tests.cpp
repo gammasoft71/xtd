@@ -6,8 +6,8 @@ namespace xtd::tunit::tests {
   class test_class_(directory_assert_are_equal_filesystem_directory_entry_failed_tests) {
   public:
     void test_method_(test_case_failed) {
-      std::filesystem::directory_entry d1(std::filesystem::path(xtd::environment::get_folder_path(xtd::environment::special_folder::common_application_data)));
-      std::filesystem::directory_entry d2(std::filesystem::path(xtd::environment::get_folder_path(xtd::environment::special_folder::common_application_data)) / "subdir");
+      std::filesystem::directory_entry d1(std::filesystem::path(xtd::environment::get_folder_path(xtd::environment::special_folder::common_application_data).c_str()));
+      std::filesystem::directory_entry d2(std::filesystem::path(xtd::environment::get_folder_path(xtd::environment::special_folder::common_application_data).c_str()) / "subdir");
       xtd::tunit::directory_assert::are_equal(d1, d2);
     }
   };
