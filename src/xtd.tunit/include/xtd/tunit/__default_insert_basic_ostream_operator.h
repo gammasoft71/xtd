@@ -706,7 +706,14 @@ inline std::string __tunit_to_string(const value_t& value) {
 template <typename value_t>
 inline std::string __tunit_to_string(const value_t* value) {
   std::stringstream ss;
-  ss << value;
+  ss << reinterpret_cast<xtd::intptr>(value);
+  return ss.str();
+}
+
+template <typename value_t>
+inline std::string __tunit_to_string(value_t* value) {
+  std::stringstream ss;
+  ss << reinterpret_cast<xtd::intptr>(value);
   return ss.str();
 }
 /// @endcond
