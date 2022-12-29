@@ -796,8 +796,8 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
-      /// xtd::tunit::collection_assume::does_not_contain({1, 2}, a); // test ok.
-      /// xtd::tunit::collection_assume::does_not_contain({1, 2, 6}, a);// test throws an abort_error exception..
+      /// xtd::tunit::collection_assume::does_not_contain({1, 2, 6}, a); // test ok.
+      /// xtd::tunit::collection_assume::does_not_contain({1, 2}, a);// test throws an abort_error exception..
       /// @endcode
       template<typename expected_t, typename actual_t>
       static void does_not_contain(const expected_t& expected, const actual_t& actual) {does_not_contain(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
@@ -809,8 +809,8 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
-      /// xtd::tunit::collection_assume::does_not_contain({1, 2}, a, "User message..."); // test ok.
-      /// xtd::tunit::collection_assume::does_not_contain({1, 2, 6}, a, "User message...");// test throws an abort_error exception..
+      /// xtd::tunit::collection_assume::does_not_contain({1, 2, 6}, a, "User message..."); // test ok.
+      /// xtd::tunit::collection_assume::does_not_contain({1, 2}, a, "User message...");// test throws an abort_error exception..
       /// @endcode
       template<typename expected_t, typename actual_t>
       static void does_not_contain(const expected_t& expected, const actual_t& actual, const std::string& message) {does_not_contain(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
@@ -822,8 +822,8 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
-      /// xtd::tunit::collection_assume::does_not_contain({1, 2}, a, csf_); // test ok.
-      /// xtd::tunit::collection_assume::does_not_contain({1, 2, 6}, a, csf_);// test throws an abort_error exception..
+      /// xtd::tunit::collection_assume::does_not_contain({1, 2, 6}, a, csf_); // test ok.
+      /// xtd::tunit::collection_assume::does_not_contain({1, 2}, a, csf_);// test throws an abort_error exception..
       /// @endcode
       template<typename expected_t, typename actual_t>
       static void does_not_contain(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame) {does_not_contain(expected, actual, "", stack_frame);}
@@ -835,8 +835,8 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
-      /// xtd::tunit::collection_assume::does_not_contain({1, 2}, a, "User message...", csf_); // test ok.
-      /// xtd::tunit::collection_assume::does_not_contain({1, 2, 6}, a, "User message...", csf_);// test throws an abort_error exception..
+      /// xtd::tunit::collection_assume::does_not_contain({1, 2, 6}, a, "User message...", csf_); // test ok.
+      /// xtd::tunit::collection_assume::does_not_contain({1, 2}, a, "User message...", csf_);// test throws an abort_error exception..
       /// @endcode
       template<typename expected_t, typename actual_t>
       static void does_not_contain(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
