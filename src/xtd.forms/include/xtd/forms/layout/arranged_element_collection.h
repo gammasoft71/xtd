@@ -439,7 +439,7 @@ namespace xtd {
         /// @return The array that contains elements of the container.
         std::vector<type_t> to_array() const noexcept {
           std::vector<type_t> array;
-          std::for_each(collection_.begin(), collection_.end(), [&](auto item ) {array.push_back(item);});
+          std::for_each(collection_.begin(), collection_.end(), [&](auto item) {array.push_back(item);});
           return array;
         }
         

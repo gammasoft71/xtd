@@ -593,37 +593,37 @@ ustring ustring::concat(const ustring& str_a, const ustring& str_b) noexcept {
 
 ustring ustring::concat(const std::vector<ustring>& values) noexcept {
   ustring result;
-  for_each(values.begin(), values.end(), [&](const auto& item) {result += item;});
+  for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
   return result;
 }
 
 ustring ustring::concat(const std::vector<const value_type*>& values) noexcept {
   ustring result;
-  for_each(values.begin(), values.end(), [&](const auto& item) {result += item;});
+  for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
   return result;
 }
 
 ustring ustring::concat(const std::vector<const char8*>& values) noexcept {
   ustring result;
-  for_each(values.begin(), values.end(), [&](const auto& item) {result += ustring(item);});
+  for_each(values.begin(), values.end(), [&](const auto & item) {result += ustring(item);});
   return result;
 }
 
 ustring ustring::concat(const std::initializer_list<ustring>& values) noexcept {
   ustring result;
-  for_each(values.begin(), values.end(), [&](const auto& item) {result += item;});
+  for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
   return result;
 }
 
 ustring ustring::concat(const std::initializer_list<const value_type*>& values) noexcept {
   ustring result;
-  for_each(values.begin(), values.end(), [&](const auto& item) {result += item;});
+  for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
   return result;
 }
 
 ustring ustring::concat(const std::initializer_list<const char8*>& values) noexcept {
   ustring result;
-  for_each(values.begin(), values.end(), [&](const auto& item) {result += ustring(item);});
+  for_each(values.begin(), values.end(), [&](const auto & item) {result += ustring(item);});
   return result;
 }
 

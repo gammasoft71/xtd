@@ -283,7 +283,7 @@ date_time directory::get_last_write_time(const ustring& path) {
 vector<ustring> directory::get_logical_drives() {
   vector<ustring> logical_drives;
   auto drives = drive_info::get_drives();
-  for_each (drives.begin(), drives.end(), [&](auto drive) {logical_drives.emplace_back(drive.name());});
+  for_each(drives.begin(), drives.end(), [&](auto drive) {logical_drives.emplace_back(drive.name());});
   return logical_drives;
 }
 
