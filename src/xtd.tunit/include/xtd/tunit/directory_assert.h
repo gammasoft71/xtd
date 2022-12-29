@@ -3,10 +3,10 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
 #include "assert.h"
-#include <sys/stat.h>
 #if defined(__cpp_lib_filesystem)
 #include <filesystem>
 #endif
+#include <xtd/io/directory.h>
 #include <xtd/io/directory_info.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -264,16 +264,124 @@ namespace xtd {
       /// @endcode
       static void are_not_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
 
+#if defined(__cpp_lib_filesystem)
       /// @brief Asserts that directory not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::ifstream f1("Test1.txt");
-      /// f1.close();
-      /// xtd::tunit::directory_assert::does_not_exist("Test2.txt"); // test ok.
-      /// xtd::tunit::directory_assert::does_not_exist("Test1.txt"); // test throws an assert_error exception.
+      /// xtd::io::directory_info d1(std::filesystem::directory_entry d1(std::filesystem::path(environment::get_folder_path(environment::special_folder::common_application_data)));
+      /// xtd::io::directory_info d2(std::filesystem::directory_entry d1(std::filesystem::path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data)) / "__xtd_test_directory_not_found__");
+      /// xtd::tunit::directory_assert::does_not_exist(d2); // test ok.
+      /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
+      /// @endcode
+      static void does_not_exist(const std::filesystem::directory_entry& directory);
+      /// @brief Asserts that directory not exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::io::directory_info d1(std::filesystem::directory_entry d1(std::filesystem::path(environment::get_folder_path(environment::special_folder::common_application_data)));
+      /// xtd::io::directory_info d2(std::filesystem::directory_entry d1(std::filesystem::path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data)) / "__xtd_test_directory_not_found__");
+      /// xtd::tunit::directory_assert::does_not_exist(d2); // test ok.
+      /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
+      /// @endcode
+      static void does_not_exist(const std::filesystem::directory_entry& directory, const xtd::diagnostics::stack_frame& stack_frame);
+      /// @brief Asserts that directory not exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::io::directory_info d1(std::filesystem::directory_entry d1(std::filesystem::path(environment::get_folder_path(environment::special_folder::common_application_data)));
+      /// xtd::io::directory_info d2(std::filesystem::directory_entry d1(std::filesystem::path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data)) / "__xtd_test_directory_not_found__");
+      /// xtd::tunit::directory_assert::does_not_exist(d2); // test ok.
+      /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
+      /// @endcode
+      static void does_not_exist(const std::filesystem::directory_entry& directory, const std::string& message);
+      /// @brief Asserts that directory not exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::io::directory_info d1(std::filesystem::directory_entry d1(std::filesystem::path(environment::get_folder_path(environment::special_folder::common_application_data)));
+      /// xtd::io::directory_info d2(std::filesystem::directory_entry d1(std::filesystem::path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data)) / "__xtd_test_directory_not_found__");
+      /// xtd::tunit::directory_assert::does_not_exist(d2); // test ok.
+      /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
+      /// @endcode
+      static void does_not_exist(const std::filesystem::directory_entry& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+#endif
+
+      /// @brief Asserts that directory not exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::io::directory_info d1(environment::get_folder_path(environment::special_folder::common_application_data));
+      /// xtd::io::directory_info d2(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__"));
+      /// xtd::tunit::directory_assert::does_not_exist(d2); // test ok.
+      /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
+      /// @endcode
+      static void does_not_exist(const xtd::io::directory_info& directory);
+      /// @brief Asserts that directory not exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::io::directory_info d1(environment::get_folder_path(environment::special_folder::common_application_data));
+      /// xtd::io::directory_info d2(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__"));
+      /// xtd::tunit::directory_assert::does_not_exist(d2); // test ok.
+      /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
+      /// @endcode
+      static void does_not_exist(const xtd::io::directory_info& directory, const xtd::diagnostics::stack_frame& stack_frame);
+      /// @brief Asserts that directory not exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::io::directory_info d1(environment::get_folder_path(environment::special_folder::common_application_data));
+      /// xtd::io::directory_info d2(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__"));
+      /// xtd::tunit::directory_assert::does_not_exist(d2); // test ok.
+      /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
+      /// @endcode
+      static void does_not_exist(const xtd::io::directory_info& directory, const std::string& message);
+      /// @brief Asserts that directory not exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::io::directory_info d1(environment::get_folder_path(environment::special_folder::common_application_data));
+      /// xtd::io::directory_info d2(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__"));
+      /// xtd::tunit::directory_assert::does_not_exist(d2); // test ok.
+      /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
+      /// @endcode
+      static void does_not_exist(const xtd::io::directory_info& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+
+      /// @brief Asserts that directory not exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtdd;;utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
+      /// xtd::tunit::directory_assert::does_not_exist(d2); // test ok.
+      /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
       /// @endcode
       template<typename char_t>
       static void does_not_exist(const std::basic_string<char_t>& directory) {does_not_exist(directory, "", xtd::diagnostics::stack_frame::empty());}
@@ -284,10 +392,10 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::ifstream f1("Test1.txt");
-      /// f1.close();
-      /// xtd::tunit::directory_assert::does_not_exist("Test2.txt", csf_); // test ok.
-      /// xtd::tunit::directory_assert::does_not_exist("Test1.txt", csf_); // test throws an assert_error exception.
+      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtdd;;utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
+      /// xtd::tunit::directory_assert::does_not_exist(d2); // test ok.
+      /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
       /// @endcode
       template<typename char_t>
       static void does_not_exist(const std::basic_string<char_t>& directory, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(directory, "", stack_frame);}
@@ -298,10 +406,10 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::ifstream f1("Test1.txt");
-      /// f1.close();
-      /// xtd::tunit::directory_assert::does_not_exist("Test2.txt", "User message..."); // test ok.
-      /// xtd::tunit::directory_assert::does_not_exist("Test1.txt", "User message..."); // test throws an assert_error exception.
+      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtdd;;utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
+      /// xtd::tunit::directory_assert::does_not_exist(d2); // test ok.
+      /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
       /// @endcode
       template<typename char_t>
       static void does_not_exist(const std::basic_string<char_t>& directory, const std::string& message) {does_not_exist(directory, message, xtd::diagnostics::stack_frame::empty());}
@@ -313,19 +421,13 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::ifstream f1("Test1.txt");
-      /// f1.close();
-      /// xtd::tunit::directory_assert::does_not_exist("Test2.txt" "User message...", csf_); // test ok.
-      /// xtd::tunit::directory_assert::does_not_exist("Test1.txt", "User message...", csf_); // test throws an assert_error exception.
+      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtdd;;utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
+      /// xtd::tunit::directory_assert::does_not_exist(d2); // test ok.
+      /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
       /// @endcode
       template<typename char_t>
-      static void does_not_exist(const std::basic_string<char_t>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        struct stat info;
-        if (stat(directory.c_str(), &info) == 0 && (info.st_mode & S_IFDIR) == S_IFDIR)
-          base_assert::fail("not directory exists", base_assert::to_string(directory), message, stack_frame);
-        else
-          assert::succeed(message, stack_frame);
-      }
+      static void does_not_exist(const std::basic_string<char_t>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(xtd::io::directory_info(directory), message, stack_frame);}
       
       /// @cond
       template<typename char_t>
@@ -336,7 +438,62 @@ namespace xtd {
       static void does_not_exist(const char_t* directory, const std::string& message) {does_not_exist(directory, message, xtd::diagnostics::stack_frame::empty());}
       template<typename char_t>
       static void does_not_exist(const char_t* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(std::basic_string<char_t>(directory), message, stack_frame);}
+
+#if defined(__cpp_lib_filesystem)
       /// @endcond
+      /// @brief Asserts that directory exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::io::directory_info d1(std::filesystem::directory_entry d1(std::filesystem::path(environment::get_folder_path(environment::special_folder::common_application_data)));
+      /// xtd::io::directory_info d2(std::filesystem::directory_entry d1(std::filesystem::path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data)) / "__xtd_test_directory_not_found__");
+      /// xtd::tunit::directory_assert::exists(d1); // test ok.
+      /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
+      /// @endcode
+      static void exists(const std::filesystem::directory_entry& directory);
+      /// @brief Asserts that directory exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::io::directory_info d1(std::filesystem::directory_entry d1(std::filesystem::path(environment::get_folder_path(environment::special_folder::common_application_data)));
+      /// xtd::io::directory_info d2(std::filesystem::directory_entry d1(std::filesystem::path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data)) / "__xtd_test_directory_not_found__");
+      /// xtd::tunit::directory_assert::exists(d1); // test ok.
+      /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
+      /// @endcode
+      static void exists(const std::filesystem::directory_entry& directory, const xtd::diagnostics::stack_frame& stack_frame);
+      /// @brief Asserts that directory exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::io::directory_info d1(std::filesystem::directory_entry d1(std::filesystem::path(environment::get_folder_path(environment::special_folder::common_application_data)));
+      /// xtd::io::directory_info d2(std::filesystem::directory_entry d1(std::filesystem::path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data)) / "__xtd_test_directory_not_found__");
+      /// xtd::tunit::directory_assert::exists(d1); // test ok.
+      /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
+      /// @endcode
+      static void exists(const std::filesystem::directory_entry& directory, const std::string& message);
+      /// @brief Asserts that directory exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::io::directory_info d1(std::filesystem::directory_entry d1(std::filesystem::path(environment::get_folder_path(environment::special_folder::common_application_data)));
+      /// xtd::io::directory_info d2(std::filesystem::directory_entry d1(std::filesystem::path(xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data)) / "__xtd_test_directory_not_found__");
+      /// xtd::tunit::directory_assert::exists(d1); // test ok.
+      /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
+      /// @endcode
+      static void exists(const std::filesystem::directory_entry& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+#endif
 
       /// @brief Asserts that directory exists.
       /// @param expected the expected value.
@@ -344,10 +501,63 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::ifstream f1("Test1.txt");
-      /// f1.close();
-      /// xtd::tunit::directory_assert::exists("Test1.txt"); // test ok.
-      /// xtd::tunit::directory_assert::exists("Test2.txt"); // test throws an assert_error exception.
+      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtdd;;utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
+      /// xtd::tunit::directory_assert::exists(d1); // test ok.
+      /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
+      /// @endcode
+      static void exists(const xtd::io::directory_info& directory);
+      /// @brief Asserts that directory exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtdd;;utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
+      /// xtd::tunit::directory_assert::exists(d1); // test ok.
+      /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
+      /// @endcode
+      static void exists(const xtd::io::directory_info& directory, const xtd::diagnostics::stack_frame& stack_frame);
+      /// @brief Asserts that directory exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtdd;;utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
+      /// xtd::tunit::directory_assert::exists(d1); // test ok.
+      /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
+      /// @endcode
+      static void exists(const xtd::io::directory_info& directory, const std::string& message);
+      /// @brief Asserts that directory exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtdd;;utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
+      /// xtd::tunit::directory_assert::exists(d1); // test ok.
+      /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
+      /// @endcode
+      static void exists(const xtd::io::directory_info& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+
+      /// @brief Asserts that directory exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtdd;;utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
+      /// xtd::tunit::directory_assert::exists(d1); // test ok.
+      /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
       /// @endcode
       template<typename char_t>
       static void exists(const std::basic_string<char_t>& directory) {exists(directory, "", xtd::diagnostics::stack_frame::empty());}
@@ -358,10 +568,10 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::ifstream f1("Test1.txt");
-      /// f1.close();
-      /// xtd::tunit::directory_assert::exists("Test1.txt", csf_); // test ok.
-      /// xtd::tunit::directory_assert::exists("Test2.txt", csf_); // test throws an assert_error exception.
+      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtdd;;utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
+      /// xtd::tunit::directory_assert::exists(d1); // test ok.
+      /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
       /// @endcode
       template<typename char_t>
       static void exists(const std::basic_string<char_t>& directory, const xtd::diagnostics::stack_frame& stack_frame) {exists(directory, "", stack_frame);}
@@ -372,10 +582,10 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::ifstream f1("Test1.txt");
-      /// f1.close();
-      /// xtd::tunit::directory_assert::exists("Test1.txt", "User message..."); // test ok.
-      /// xtd::tunit::directory_assert::exists("Test2.txt", "User message..."); // test throws an assert_error exception.
+      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtdd;;utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
+      /// xtd::tunit::directory_assert::exists(d1); // test ok.
+      /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
       /// @endcode
       template<typename char_t>
       static void exists(const std::basic_string<char_t>& directory, const std::string& message) {exists(directory, message, xtd::diagnostics::stack_frame::empty());}
@@ -387,19 +597,13 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::ifstream f1("Test1.txt");
-      /// f1.close();
-      /// xtd::tunit::directory_assert::exists("Test1.txt" "User message...", csf_); // test ok.
-      /// xtd::tunit::directory_assert::exists("Test2.txt", "User message...", csf_); // test throws an assert_error exception.
+      /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
+      /// xtdd;;utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
+      /// xtd::tunit::directory_assert::exists(d1); // test ok.
+      /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
       /// @endcode
       template<typename char_t>
-      static void exists(const std::basic_string<char_t>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        struct stat info;
-        if (stat(directory.c_str(), &info) != 0 || (info.st_mode & S_IFDIR) != S_IFDIR)
-          base_assert::fail("directory exists", base_assert::to_string(directory), message, stack_frame);
-        else
-          assert::succeed(message, stack_frame);
-      }
+      static void exists(const std::basic_string<char_t>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {exists(xtd::io::directory_info(directory), message, stack_frame);}
       
       /// @cond
       template<typename char_t>
