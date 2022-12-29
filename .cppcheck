@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 /// @remarks The list is organized by library and then by error type.
 /// @remarks The XTD_ENABLE_RUN_CPPCHECK option must be enabled to run cppcheck.
-/// @remarks The label @CMAKE_SOURCE_DIR@ represents the source directory. And will be replaced by the exact path where the sources of xtd are located by cmake.
+/// @remarks The label @CMAKE_SOURCE_DIR@ represents the source directory. It will be replaced by the real path of the xtd sources located by cmake.
 
 // __________________________________________________________________________________________________________________________
 //                                                                                                    xtd.3rdparty.call_stack
