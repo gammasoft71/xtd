@@ -1,0 +1,24 @@
+/// @file
+/// @brief Contains xtd.drawing examples.
+///
+/// @example color.cpp
+/// Shows how to use xtd::drawing::color class.
+///
+/// @example font.cpp
+/// Shows how to use xtd::drawing::font class.
+///
+/// @example system_fonts.cpp
+/// Shows how to use xtd::drawing::system_fonts class.
+///
+/// @example graphics.cpp
+/// Shows how to use xtd::drawing::graphics class.
+///
+/// @example hello_world_png.cpp
+/// The classic first application "Hello, World!" with GDI+ drawing objects.
+///
+/// @example image.cpp
+/// Shows how to use xtd::drawing::image class.
+///
+/// @example point.cpp
+/// Shows how to use xtd::drawing::point class.
+///
