@@ -3,7 +3,7 @@
 
 /*
  This test is commented, it can't work because the pointer addresses change at each build...
- 
+
 namespace xtd::tunit::tests {
   class test_class_(collection_assert_all_items_are_instances_of_vector_failed_tests) {
   public:

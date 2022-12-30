@@ -20,7 +20,7 @@ namespace xtd::tests {
     private:
       int value_ = 0;
     };
-
+    
   public:
     void test_method_(equals) {
       iequatable_test ie1 {42};
@@ -30,7 +30,7 @@ namespace xtd::tests {
       assert::is_true(ie1.equals(ie2), csf_);
       assert::is_false(ie1.equals(ie3), csf_);
     }
-
+    
     void test_method_(opearator_equal) {
       iequatable_test ie1 {42};
       iequatable_test ie2 {42};
@@ -40,7 +40,7 @@ namespace xtd::tests {
       assert::is_false(ie1 == ie3, csf_);
       assert::is_false(ie1 == "a"_s);
     }
-
+    
     void test_method_(opearator_inequal) {
       iequatable_test ie1 {42};
       iequatable_test ie2 {42};
