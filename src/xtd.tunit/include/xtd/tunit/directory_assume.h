@@ -77,7 +77,7 @@ namespace xtd {
       /// xtd::tunit::directory_assume::are_equal(d1, d2, "User message...", csf_); // test throws an abort_error exception.
       /// @endcode
       static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
-#endif
+      #endif
       /// @brief Assumes that two xtd::io::directory_info are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -134,8 +134,8 @@ namespace xtd {
       /// xtd::tunit::directory_assume::are_equal(d1, d3, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
       static void are_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
-
-#if defined(__cpp_lib_filesystem)
+      
+      #if defined(__cpp_lib_filesystem)
       /// @brief Assumes that two std::filesystem::directory_entry are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -241,8 +241,8 @@ namespace xtd {
       /// xtd::tunit::directory_assume::are_not_equal(d1, d2, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
       static void are_not_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
-
-#if defined(__cpp_lib_filesystem)
+      
+      #if defined(__cpp_lib_filesystem)
       /// @brief Assumes that directory not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -295,7 +295,7 @@ namespace xtd {
       /// xtd::tunit::directory_assume::does_not_exist(d1); // test throws an assert_error exception.
       /// @endcode
       static void does_not_exist(const std::filesystem::directory_entry& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
-#endif
+      #endif
       
       /// @brief Assumes that directory not exists.
       /// @param expected the expected value.
@@ -349,7 +349,7 @@ namespace xtd {
       /// xtd::tunit::directory_assume::does_not_exist(d1); // test throws an assert_error exception.
       /// @endcode
       static void does_not_exist(const xtd::io::directory_info& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
-
+      
       /// @brief Assumes that file not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -423,8 +423,8 @@ namespace xtd {
       template<typename char_t>
       static void does_not_exist(const char_t* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(std::basic_string<char_t>(directory), message, stack_frame);}
       /// @endcond
-
-#if defined(__cpp_lib_filesystem)
+      
+      #if defined(__cpp_lib_filesystem)
       /// @endcond
       /// @brief Assumes that directory exists.
       /// @param expected the expected value.
@@ -478,7 +478,7 @@ namespace xtd {
       /// xtd::tunit::directory_assume::exists(d2); // test throws an assert_error exception.
       /// @endcode
       static void exists(const std::filesystem::directory_entry& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
-#endif
+      #endif
       
       /// @brief Assumes that directory exists.
       /// @param expected the expected value.
@@ -532,7 +532,7 @@ namespace xtd {
       /// xtd::tunit::directory_assume::exists(d2); // test throws an assert_error exception.
       /// @endcode
       static void exists(const xtd::io::directory_info& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
-
+      
       /// @brief Assumes that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -607,6 +607,6 @@ namespace xtd {
       static void exists(const char_t* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {exists(std::basic_string<char_t>(directory), message, stack_frame);}
       /// @endcond
       /// @}
-     };
+    };
   }
 }
