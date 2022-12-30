@@ -1,7 +1,7 @@
 /// @file
 /// @brief Contains xtd.forms examples.
 ///
-/// @example application
+/// @example application.cpp
 /// Shows how to create an application with  xtd::forms::application class.
 /// @par Windows
 /// @image html application_w.png
@@ -16,7 +16,7 @@
 /// <br>
 /// @image html application_gd.png
 ///
-/// @example application_and_assert
+/// @example application_and_assert.cpp
 /// Shows how to create an application with  xtd::forms::application class and how to manage assert.
 /// @par Windows
 /// @image html application_and_assert_w.png
@@ -31,7 +31,7 @@
 /// <br>
 /// @image html application_and_assert_gd.png
 ///
-/// @example application_and_exception
+/// @example application_and_exception.cpp
 /// Shows how to create an application with  xtd::forms::application class and how to manage exception.
 /// @par Windows
 /// @image html application_and_exception_w.png
@@ -46,7 +46,7 @@
 /// <br>
 /// @image html application_and_exception_gd.png
 ///
-/// @example application_context
+/// @example application_context.cpp
 /// Shows how to create an application with  xtd::forms::application class with  xtd::forms::application_context class.
 /// @par Windows
 /// @image html application_context_w.png
@@ -61,7 +61,7 @@
 /// <br>
 /// @image html application_context_gd.png
 ///
-/// @example application_restart
+/// @example application_restart.cpp
 /// Shows how to create an application with  xtd::forms::application::restart method.
 /// @par Windows
 /// @image html application_restart_w.png
@@ -76,7 +76,7 @@
 /// <br>
 /// @image html application_restart_gd.png
 ///
-/// @example application_use_wait_cursor
+/// @example application_use_wait_cursor.cpp
 /// Shows how to create an application_use_wait_cursor with  xtd::forms::application::use_wait_cursor method.
 /// @par Windows
 /// @image html application_use_wait_cursor_w.png
@@ -91,7 +91,7 @@
 /// <br>
 /// @image html application_use_wait_cursor_gd.png
 ///
-/// @example application_with_cmake_assembly_info
+/// @example application_with_cmake_assembly_info.cpp
 /// This example demonstrates the use of xtd::reflection::assembly attributes, xtd::forms::form classes.
 /// @par Windows
 /// @image html application_with_cmake_assembly_info_w.png
@@ -106,7 +106,7 @@
 /// <br>
 /// @image html application_with_cmake_assembly_info_gd.png
 ///
-/// @example application_with_manual_assembly_info
+/// @example application_with_manual_assembly_info.cpp
 /// This example demonstrates the use of xtd::reflection::assembly attributes, xtd::forms::form classes.
 /// @par Windows
 /// @image html application_with_manual_assembly_info_w.png
@@ -121,7 +121,7 @@
 /// <br>
 /// @image html application_with_manual_assembly_info_gd.png
 ///
-/// @example background_worker
+/// @example background_worker.cpp
 /// demonstrates the use of xtd::forms::background_worker component.
 /// @par Windows
 /// @image html background_worker_w.png
@@ -136,7 +136,7 @@
 /// <br>
 /// @image html background_worker_gd.png
 ///
-/// @example button_images
+/// @example button_images.cpp
 /// demonstrates the use of xtd::forms::button_images control.
 /// @par Windows
 /// @image html button_images_w.png
@@ -151,7 +151,7 @@
 /// <br>
 /// @image html button_images_gd.png
 ///
-/// @example button_renderer
+/// @example button_renderer.cpp
 /// demonstrates the use of xtd::forms::button_renderer control.
 /// @par Windows
 /// @image html button_renderer_w.png
@@ -166,7 +166,7 @@
 /// <br>
 /// @image html button_renderer_gd.png
 ///
-/// @example check_box_renderer
+/// @example check_box_renderer.cpp
 /// demonstrates the use of xtd::forms::check_box_renderer control.
 /// @par Windows
 /// @image html check_box_renderer_w.png
@@ -181,7 +181,7 @@
 /// <br>
 /// @image html check_box_renderer_gd.png
 ///
-/// @example countries
+/// @example countries.cpp
 /// demonstrates the use of xtd::forms::countries component.
 /// @par Windows
 /// @image html countries_w.png
@@ -196,7 +196,7 @@
 /// <br>
 /// @image html countries_gd.png
 ///
-/// @example cursors
+/// @example cursors.cpp
 /// demonstrates the use of xtd::forms::cursor component.
 /// @par Windows
 /// @image html cursors_w.png
@@ -211,7 +211,7 @@
 /// <br>
 /// @image html cursors_gd.png
 ///
-/// @example emoticons
+/// @example emoticons.cpp
 /// demonstrates the use of xtd::forms::emoticons control.
 /// @par Windows
 /// @image html emoticons_w.png
@@ -226,7 +226,7 @@
 /// <br>
 /// @image html emoticons_gd.png
 ///
-/// @example enable_debug
+/// @example enable_debug.cpp
 /// demonstrates the use of xtd::enable_debugs::enable_debug container.
 /// @par Windows
 /// @image html enable_debug_w.png
@@ -241,7 +241,7 @@
 /// <br>
 /// @image html enable_debug_gd.png
 ///
-/// @example image_list
+/// @example image_list.cpp
 /// demonstrates the use of xtd::forms::image_list component.
 /// @par Windows
 /// @image html image_list_w.png
@@ -256,7 +256,7 @@
 /// <br>
 /// @image html image_list_gd.png
 ///
-/// @example images
+/// @example images.cpp
 /// demonstrates the use of xtd::forms::images component.
 /// @par Windows
 /// @image html images_w.png
@@ -271,7 +271,7 @@
 /// <br>
 /// @image html images_gd.png
 ///
-/// @example process_form
+/// @example process_form.cpp
 /// Shows how to launch process from forms.
 /// @par Windows
 /// @image html process_form_w.png
@@ -286,7 +286,7 @@
 /// <br>
 /// @image html process_form_gd.png
 ///
-/// @example radio_button_renderer
+/// @example radio_button_renderer.cpp
 /// demonstrates the use of xtd::forms::radio_button_renderer control.
 /// @par Windows
 /// @image html radio_button_renderer_w.png
@@ -301,7 +301,7 @@
 /// <br>
 /// @image html radio_button_renderer_gd.png
 ///
-/// @example screen
+/// @example screen.cpp
 /// demonstrates the use of xtd::forms::screen component.
 /// @par Windows
 /// @image html screen_w.png
@@ -316,7 +316,7 @@
 /// <br>
 /// @image html screen_gd.png
 ///
-/// @example settings_example
+/// @example settings_example.cpp
 /// demonstrates the use of xtd::forms::settings component.
 /// @par Windows
 /// @image html settings_example_w.png
@@ -331,7 +331,7 @@
 /// <br>
 /// @image html settings_example_gd.png
 ///
-/// @example texts
+/// @example texts.cpp
 /// demonstrates the use of xtd::forms::system_texts strings.
 /// @par Windows
 /// @image html texts_w.png
@@ -346,7 +346,7 @@
 /// <br>
 /// @image html texts_gd.png
 ///
-/// @example timer
+/// @example timer.cpp
 /// demonstrates the use of xtd::forms::timer component.
 /// @par Windows
 /// @image html timer_w.png
@@ -361,7 +361,7 @@
 /// <br>
 /// @image html timer_gd.png
 ///
-/// @example translator
+/// @example translator.cpp
 /// demonstrates the use of xtd::forms::translator strings.
 /// @par Windows
 /// @image html translator_w.png
@@ -376,7 +376,7 @@
 /// <br>
 /// @image html translator_gd.png
 ///
-/// @example use_wait_cursor
+/// @example use_wait_cursor.cpp
 /// Shows how to create an use_wait_cursor with  xtd::forms::application class.
 /// @par Windows
 /// @image html use_wait_cursor_w.png
@@ -391,7 +391,7 @@
 /// <br>
 /// @image html use_wait_cursor_gd.png
 ///
-/// @example collapsible_panel
+/// @example collapsible_panel.cpp
 /// demonstrates the use of xtd::forms::collapsible_panel container.
 /// @par Windows
 /// @image html collapsible_panel_w.png
@@ -406,7 +406,7 @@
 /// <br>
 /// @image html collapsible_panel_gd.png
 ///
-/// @example group_box
+/// @example group_box.cpp
 /// demonstrates the use of xtd::forms::group_box container.
 /// @par Windows
 /// @image html group_box_w.png
@@ -421,7 +421,7 @@
 /// <br>
 /// @image html group_box_gd.png
 ///
-/// @example horizontal_layout_panel
+/// @example horizontal_layout_panel.cpp
 /// demonstrates the use of xtd::forms::horizontal_layout_panel container.
 /// @par Windows
 /// @image html horizontal_layout_panel_w.png
@@ -436,7 +436,7 @@
 /// <br>
 /// @image html horizontal_layout_panel_gd.png
 ///
-/// @example panel
+/// @example panel.cpp
 /// demonstrates the use of xtd::forms::panel container.
 /// @par Windows
 /// @image html panel_w.png
@@ -451,7 +451,7 @@
 /// <br>
 /// @image html panel_gd.png
 ///
-/// @example popup_panel
+/// @example popup_panel.cpp
 /// demonstrates the use of xtd::forms::popup_panel container.
 /// @par Windows
 /// @image html popup_panel_w.png
@@ -466,7 +466,7 @@
 /// <br>
 /// @image html popup_panel_gd.png
 ///
-/// @example split_container
+/// @example split_container.cpp
 /// demonstrates the use of xtd::forms::split_container container.
 /// @par Windows
 /// @image html split_container_w.png
@@ -481,7 +481,7 @@
 /// <br>
 /// @image html split_container_gd.png
 ///
-/// @example tab_control
+/// @example tab_control.cpp
 /// demonstrates the use of xtd::forms::tab_control container.
 /// @par Windows
 /// @image html tab_control_w.png
@@ -496,7 +496,7 @@
 /// <br>
 /// @image html tab_control_gd.png
 ///
-/// @example vertical_layout_panel
+/// @example vertical_layout_panel.cpp
 /// demonstrates the use of xtd::forms::vertical_layout_panel container.
 /// @par Windows
 /// @image html vertical_layout_panel_w.png
@@ -511,7 +511,7 @@
 /// <br>
 /// @image html vertical_layout_panel_gd.png
 ///
-/// @example animation
+/// @example animation.cpp
 /// demonstrates the use of xtd::forms::animation control.
 /// @par Windows
 /// @image html animation_w.png
@@ -526,7 +526,7 @@
 /// <br>
 /// @image html animation_gd.png
 ///
-/// @example button
+/// @example button.cpp
 /// demonstrates the use of xtd::forms::button control.
 /// @par Windows
 /// @image html button_w.png
@@ -541,7 +541,7 @@
 /// <br>
 /// @image html button_gd.png
 ///
-/// @example buttons
+/// @example buttons.cpp
 /// demonstrates the use of xtd::forms::buttons button object collection.
 /// @par Windows
 /// @image html buttons_w.png
@@ -556,7 +556,7 @@
 /// <br>
 /// @image html buttons_gd.png
 ///
-/// @example check_box
+/// @example check_box.cpp
 /// demonstrates the use of xtd::forms::check_box control.
 /// @par Windows
 /// @image html check_box_w.png
@@ -571,7 +571,7 @@
 /// <br>
 /// @image html check_box_gd.png
 ///
-/// @example check_boxes
+/// @example check_boxes.cpp
 /// demonstrates the use of xtd::forms::check_boxes check_box object collection.
 /// @par Windows
 /// @image html check_boxes_w.png
@@ -586,7 +586,7 @@
 /// <br>
 /// @image html check_boxes_gd.png
 ///
-/// @example checked_list_box
+/// @example checked_list_box.cpp
 /// demonstrates the use of xtd::forms::checked_list_box control.
 /// @par Windows
 /// @image html checked_list_box_w.png
@@ -601,7 +601,7 @@
 /// <br>
 /// @image html checked_list_box_gd.png
 ///
-/// @example choice
+/// @example choice.cpp
 /// demonstrates the use of xtd::forms::choice control.
 /// @par Windows
 /// @image html choice_w.png
@@ -616,7 +616,7 @@
 /// <br>
 /// @image html choice_gd.png
 ///
-/// @example color_picker
+/// @example color_picker.cpp
 /// demonstrates the use of xtd::forms::color_picker control.
 /// @par Windows
 /// @image html color_picker_w.png
@@ -631,7 +631,7 @@
 /// <br>
 /// @image html color_picker_gd.png
 ///
-/// @example combo_box
+/// @example combo_box.cpp
 /// demonstrates the use of xtd::forms::combo_box control.
 /// @par Windows
 /// @image html combo_box_w.png
@@ -646,7 +646,7 @@
 /// <br>
 /// @image html combo_box_gd.png
 ///
-/// @example command_link_button
+/// @example command_link_button.cpp
 /// demonstrates the use of xtd::forms::command_link_button control.
 /// @par Windows
 /// @image html command_link_button_w.png
@@ -661,7 +661,7 @@
 /// <br>
 /// @image html command_link_button_gd.png
 ///
-/// @example control
+/// @example control.cpp
 /// demonstrates the use of xtd::forms::control control.
 /// @par Windows
 /// @image html control_w.png
@@ -676,7 +676,7 @@
 /// <br>
 /// @image html control_gd.png
 ///
-/// @example date_time_picker
+/// @example date_time_picker.cpp
 /// demonstrates the use of xtd::forms::date_time_picker dialog.
 /// @par Windows
 /// @image html date_time_picker_w.png
@@ -691,7 +691,7 @@
 /// <br>
 /// @image html date_time_picker_gd.png
 ///
-/// @example domain_up_down
+/// @example domain_up_down.cpp
 /// demonstrates the use of xtd::forms::domain_up_down control.
 /// @par Windows
 /// @image html domain_up_down_w.png
@@ -706,7 +706,7 @@
 /// <br>
 /// @image html domain_up_down_gd.png
 ///
-/// @example dot_matrix_display
+/// @example dot_matrix_display.cpp
 /// demonstrates how to use xtd::forms::dot_matrix_display control.
 /// @par Windows
 /// @image html dot_matrix_display_w.png
@@ -721,7 +721,7 @@
 /// <br>
 /// @image html dot_matrix_display_gd.png
 ///
-/// @example font_picker
+/// @example font_picker.cpp
 /// demonstrates the use of xtd::forms::font_picker dialog.
 /// @par Windows
 /// @image html font_picker_w.png
@@ -736,7 +736,7 @@
 /// <br>
 /// @image html font_picker_gd.png
 ///
-/// @example fourteen_segment_display
+/// @example fourteen_segment_display.cpp
 /// demonstrates how to use xtd::forms::fourteen_segment_display control.
 /// @par Windows
 /// @image html fourteen_segment_display_w.png
@@ -751,7 +751,7 @@
 /// <br>
 /// @image html fourteen_segment_display_gd.png
 ///
-/// @example h_scroll_bar
+/// @example h_scroll_bar.cpp
 /// demonstrates the use of xtd::forms::h_scroll_bar control.
 /// @par Windows
 /// @image html h_scroll_bar_w.png
@@ -766,7 +766,7 @@
 /// <br>
 /// @image html h_scroll_bar_gd.png
 ///
-/// @example label
+/// @example label.cpp
 /// demonstrates the use of xtd::forms::label control.
 /// @par Windows
 /// @image html label_w.png
@@ -781,7 +781,7 @@
 /// <br>
 /// @image html label_gd.png
 ///
-/// @example lcd_label
+/// @example lcd_label.cpp
 /// demonstrates how to use xtd::forms::lcd_label control.
 /// @par Windows
 /// @image html lcd_label_w.png
@@ -796,7 +796,7 @@
 /// <br>
 /// @image html lcd_label_gd.png
 ///
-/// @example light_button
+/// @example light_button.cpp
 /// demonstrates the use of xtd::forms::light_button control.
 /// @par Windows
 /// @image html light_button_w.png
@@ -811,7 +811,7 @@
 /// <br>
 /// @image html light_button_gd.png
 ///
-/// @example link_label
+/// @example link_label.cpp
 /// demonstrates the use of xtd::forms::link_label control.
 /// @par Windows
 /// @image html link_label_w.png
@@ -826,7 +826,7 @@
 /// <br>
 /// @image html link_label_gd.png
 ///
-/// @example list_box
+/// @example list_box.cpp
 /// demonstrates the use of xtd::forms::list_box control.
 /// @par Windows
 /// @image html list_box_w.png
@@ -841,7 +841,7 @@
 /// <br>
 /// @image html list_box_gd.png
 ///
-/// @example loading_indicator
+/// @example loading_indicator.cpp
 /// xtd::forms::loading_indicator represents a Windows control to display a loading indicator animation.
 /// @par Windows
 /// @image html loading_indicator_w.png
@@ -856,7 +856,7 @@
 /// <br>
 /// @image html loading_indicator_gd.png
 ///
-/// @example month_calendar
+/// @example month_calendar.cpp
 /// demonstrates the use of xtd::forms::month_calendar control.
 /// @par Windows
 /// @image html month_calendar_w.png
@@ -871,7 +871,7 @@
 /// <br>
 /// @image html month_calendar_gd.png
 ///
-/// @example nine_segment_display
+/// @example nine_segment_display.cpp
 /// demonstrates how to use xtd::forms::nine_segment_display control.
 /// @par Windows
 /// @image html nine_segment_display_w.png
@@ -886,7 +886,7 @@
 /// <br>
 /// @image html nine_segment_display_gd.png
 ///
-/// @example numeric_up_down
+/// @example numeric_up_down.cpp
 /// demonstrates the use of xtd::forms::numeric_up_down control.
 /// @par Windows
 /// @image html numeric_up_down_w.png
@@ -901,7 +901,7 @@
 /// <br>
 /// @image html numeric_up_down_gd.png
 ///
-/// @example picture_box
+/// @example picture_box.cpp
 /// demonstrates the use of xtd::forms::picture_box control.
 /// @par Windows
 /// @image html picture_box_w.png
@@ -916,7 +916,7 @@
 /// <br>
 /// @image html picture_box_gd.png
 ///
-/// @example progress_bar
+/// @example progress_bar.cpp
 /// demonstrates the use of xtd::forms::progress_bar control.
 /// @par Windows
 /// @image html progress_bar_w.png
@@ -931,7 +931,7 @@
 /// <br>
 /// @image html progress_bar_gd.png
 ///
-/// @example radio_button
+/// @example radio_button.cpp
 /// demonstrates the use of xtd::forms::radio_button control.
 /// @par Windows
 /// @image html radio_button_w.png
@@ -946,7 +946,7 @@
 /// <br>
 /// @image html radio_button_gd.png
 ///
-/// @example radio_buttons
+/// @example radio_buttons.cpp
 /// demonstrates the use of xtd::forms::radio_buttons radio_button object collection.
 /// @par Windows
 /// @image html radio_buttons_w.png
@@ -961,7 +961,7 @@
 /// <br>
 /// @image html radio_buttons_gd.png
 ///
-/// @example seven_segment_display
+/// @example seven_segment_display.cpp
 /// demonstrates how to use xtd::forms::seven_segment_display control.
 /// @par Windows
 /// @image html seven_segment_display_w.png
@@ -976,7 +976,7 @@
 /// <br>
 /// @image html seven_segment_display_gd.png
 ///
-/// @example sixteen_segment_display
+/// @example sixteen_segment_display.cpp
 /// demonstrates how to use xtd::forms::sixteen_segment_display control.
 /// @par Windows
 /// @image html sixteen_segment_display_w.png
@@ -991,7 +991,7 @@
 /// <br>
 /// @image html sixteen_segment_display_gd.png
 ///
-/// @example splitter
+/// @example splitter.cpp
 /// demonstrates the use of xtd::forms::splitter control.
 /// @par Windows
 /// @image html splitter_w.png
@@ -1006,7 +1006,7 @@
 /// <br>
 /// @image html splitter_gd.png
 ///
-/// @example switch_button
+/// @example switch_button.cpp
 /// demonstrates how to use xtd::forms::switch_button control.
 /// @par Windows
 /// @image html switch_button_w.png
@@ -1021,7 +1021,7 @@
 /// <br>
 /// @image html switch_button_gd.png
 ///
-/// @example text_box
+/// @example text_box.cpp
 /// demonstrates the use of xtd::forms::text_box control.
 /// @par Windows
 /// @image html text_box_w.png
@@ -1036,7 +1036,7 @@
 /// <br>
 /// @image html text_box_gd.png
 ///
-/// @example toggle_button
+/// @example toggle_button.cpp
 /// demonstrates the use of xtd::forms::toggle_button control.
 /// @par Windows
 /// @image html toggle_button_w.png
@@ -1051,7 +1051,7 @@
 /// <br>
 /// @image html toggle_button_gd.png
 ///
-/// @example toggle_buttons
+/// @example toggle_buttons.cpp
 /// demonstrates the use of xtd::forms::toggle_buttons toggle_button object collection.
 /// @par Windows
 /// @image html toggle_buttons_w.png
@@ -1066,7 +1066,7 @@
 /// <br>
 /// @image html toggle_buttons_gd.png
 ///
-/// @example track_bar
+/// @example track_bar.cpp
 /// demonstrates the use of xtd::forms::track_bar control.
 /// @par Windows
 /// @image html track_bar_w.png
@@ -1081,7 +1081,7 @@
 /// <br>
 /// @image html track_bar_gd.png
 ///
-/// @example up_down_button
+/// @example up_down_button.cpp
 /// demonstrates the use of xtd::forms::up_down_button control.
 /// @par Windows
 /// @image html up_down_button_w.png
@@ -1096,7 +1096,7 @@
 /// <br>
 /// @image html up_down_button_gd.png
 ///
-/// @example user_control
+/// @example user_control.cpp
 /// demonstrates the use of xtd::forms::user_control control.
 /// @par Windows
 /// @image html user_control_w.png
@@ -1111,7 +1111,7 @@
 /// <br>
 /// @image html user_control_gd.png
 ///
-/// @example v_scroll_bar
+/// @example v_scroll_bar.cpp
 /// demonstrates the use of xtd::forms::v_scroll_bar control.
 /// @par Windows
 /// @image html v_scroll_bar_w.png
@@ -1126,7 +1126,7 @@
 /// <br>
 /// @image html v_scroll_bar_gd.png
 ///
-/// @example button_appearance
+/// @example button_appearance.cpp
 /// demonstrates how to use xtd::forms::button control.
 /// @par Windows
 /// @image html button_appearance_w.png
@@ -1141,7 +1141,7 @@
 /// <br>
 /// @image html button_appearance_gd.png
 ///
-/// @example check_box_appearance
+/// @example check_box_appearance.cpp
 /// demonstrates how to use xtd::forms::check_box control.
 /// @par Windows
 /// @image html check_box_appearance_w.png
@@ -1156,7 +1156,7 @@
 /// <br>
 /// @image html check_box_appearance_gd.png
 ///
-/// @example demo
+/// @example demo.cpp
 /// Shows controls and dialogs appearances.
 /// @par Windows
 /// @image html demo_w.png
@@ -1171,7 +1171,7 @@
 /// <br>
 /// @image html demo_gd.png
 ///
-/// @example lcd_label_appearance
+/// @example lcd_label_appearance.cpp
 /// demonstrates how to use xtd::forms::lcd_label control.
 /// @par Windows
 /// @image html lcd_label_appearance_w.png
@@ -1186,7 +1186,7 @@
 /// <br>
 /// @image html lcd_label_appearance_gd.png
 ///
-/// @example message_box_appearance
+/// @example message_box_appearance.cpp
 /// demonstrates how to use xtd::forms::message_box control.
 /// @par Windows
 /// @image html message_box_appearance_w.png
@@ -1201,7 +1201,7 @@
 /// <br>
 /// @image html message_box_appearance_gd.png
 ///
-/// @example about_box
+/// @example about_box.cpp
 /// demonstrates the use of xtd::forms::about_box dialog.
 /// @par Windows
 /// @image html about_box_w.png
@@ -1216,7 +1216,7 @@
 /// <br>
 /// @image html about_box_gd.png
 ///
-/// @example about_dialog
+/// @example about_dialog.cpp
 /// demonstrates the use of xtd::forms::about_dialog dialog.
 /// @par Windows
 /// @image html about_dialog_w.png
@@ -1231,7 +1231,7 @@
 /// <br>
 /// @image html about_dialog_gd.png
 ///
-/// @example busy_box
+/// @example busy_box.cpp
 /// demonstrates the use of xtd::forms::busy_box dialog.
 /// @par Windows
 /// @image html busy_box_w.png
@@ -1246,7 +1246,7 @@
 /// <br>
 /// @image html busy_box_gd.png
 ///
-/// @example busy_dialog
+/// @example busy_dialog.cpp
 /// demonstrates the use of xtd::forms::busy_dialog dialog.
 /// @par Windows
 /// @image html busy_dialog_w.png
@@ -1261,7 +1261,7 @@
 /// <br>
 /// @image html busy_dialog_gd.png
 ///
-/// @example color_box
+/// @example color_box.cpp
 /// demonstrates the use of xtd::forms::color_box dialog.
 /// @par Windows
 /// @image html color_box_w.png
@@ -1276,7 +1276,7 @@
 /// <br>
 /// @image html color_box_gd.png
 ///
-/// @example color_dialog
+/// @example color_dialog.cpp
 /// demonstrates the use of xtd::forms::color_dialog dialog.
 /// @par Windows
 /// @image html color_dialog_w.png
@@ -1291,7 +1291,7 @@
 /// <br>
 /// @image html color_dialog_gd.png
 ///
-/// @example debug_message_box
+/// @example debug_message_box.cpp
 /// demonstrates the use of xtd::forms::debug_message_box dialog.
 /// @par Windows
 /// @image html debug_message_box_w.png
@@ -1306,7 +1306,7 @@
 /// <br>
 /// @image html debug_message_box_gd.png
 ///
-/// @example exception_box
+/// @example exception_box.cpp
 /// demonstrates the use of xtd::forms::exception_box dialog.
 /// @par Windows
 /// @image html exception_box_w.png
@@ -1321,7 +1321,7 @@
 /// <br>
 /// @image html exception_box_gd.png
 ///
-/// @example exception_dialog
+/// @example exception_dialog.cpp
 /// demonstrates the use of xtd::forms::exception_dialog dialog.
 /// @par Windows
 /// @image html exception_dialog_w.png
@@ -1336,7 +1336,7 @@
 /// <br>
 /// @image html exception_dialog_gd.png
 ///
-/// @example find_box
+/// @example find_box.cpp
 /// demonstrates the use of xtd::forms::find_box dialog.
 /// @par Windows
 /// @image html find_box_w.png
@@ -1351,7 +1351,7 @@
 /// <br>
 /// @image html find_box_gd.png
 ///
-/// @example find_dialog
+/// @example find_dialog.cpp
 /// demonstrates the use of xtd::forms::find_dialog dialog.
 /// @par Windows
 /// @image html find_dialog_w.png
@@ -1366,7 +1366,7 @@
 /// <br>
 /// @image html find_dialog_gd.png
 ///
-/// @example folder_browser_box
+/// @example folder_browser_box.cpp
 /// demonstrates the use of xtd::forms::folder_browser_box dialog.
 /// @par Windows
 /// @image html folder_browser_box_w.png
@@ -1381,7 +1381,7 @@
 /// <br>
 /// @image html folder_browser_box_gd.png
 ///
-/// @example folder_browser_dialog
+/// @example folder_browser_dialog.cpp
 /// demonstrates the use of xtd::forms::folder_browser_dialog dialog.
 /// @par Windows
 /// @image html folder_browser_dialog_w.png
@@ -1396,7 +1396,7 @@
 /// <br>
 /// @image html folder_browser_dialog_gd.png
 ///
-/// @example font_box
+/// @example font_box.cpp
 /// demonstrates the use of xtd::forms::font_box font dialog.
 /// @par Windows
 /// @image html font_box_w.png
@@ -1411,7 +1411,7 @@
 /// <br>
 /// @image html font_box_gd.png
 ///
-/// @example font_dialog
+/// @example font_dialog.cpp
 /// demonstrates the use of xtd::forms::font_dialog dialog.
 /// @par Windows
 /// @image html font_dialog_w.png
@@ -1426,7 +1426,7 @@
 /// <br>
 /// @image html font_dialog_gd.png
 ///
-/// @example input_box
+/// @example input_box.cpp
 /// demonstrates the use of xtd::forms::font_dialog dialog.
 /// @par Windows
 /// @image html input_box_w.png
@@ -1441,7 +1441,7 @@
 /// <br>
 /// @image html input_box_gd.png
 ///
-/// @example input_dialog
+/// @example input_dialog.cpp
 /// demonstrates the use of xtd::forms::input_dialog dialog.
 /// @par Windows
 /// @image html input_dialog_w.png
@@ -1456,7 +1456,7 @@
 /// <br>
 /// @image html input_dialog_gd.png
 ///
-/// @example message_box
+/// @example message_box.cpp
 /// demonstrates the use of xtd::forms::message_box dialog.
 /// @par Windows
 /// @image html message_box_w.png
@@ -1471,7 +1471,7 @@
 /// <br>
 /// @image html message_box_gd.png
 ///
-/// @example message_dialog
+/// @example message_dialog.cpp
 /// demonstrates the use of xtd::forms::message_dialog dialog.
 /// @par Windows
 /// @image html message_dialog_w.png
@@ -1486,7 +1486,7 @@
 /// <br>
 /// @image html message_dialog_gd.png
 ///
-/// @example open_file_box
+/// @example open_file_box.cpp
 /// demonstrates the use of xtd::forms::open_file_box file dialog.
 /// @par Windows
 /// @image html open_file_box_w.png
@@ -1501,7 +1501,7 @@
 /// <br>
 /// @image html open_file_box_gd.png
 ///
-/// @example open_file_dialog
+/// @example open_file_dialog.cpp
 /// demonstrates the use of xtd::forms::open_file_dialog dialog.
 /// @par Windows
 /// @image html open_file_dialog_w.png
@@ -1516,7 +1516,7 @@
 /// <br>
 /// @image html open_file_dialog_gd.png
 ///
-/// @example progress_box
+/// @example progress_box.cpp
 /// demonstrates the use of xtd::forms::progress_box  progress dialog.
 /// @par Windows
 /// @image html progress_box_w.png
@@ -1531,7 +1531,7 @@
 /// <br>
 /// @image html progress_box_gd.png
 ///
-/// @example progress_dialog
+/// @example progress_dialog.cpp
 /// demonstrates the use of xtd::forms::progress_dialog dialog.
 /// @par Windows
 /// @image html progress_dialog_w.png
@@ -1546,7 +1546,7 @@
 /// <br>
 /// @image html progress_dialog_gd.png
 ///
-/// @example replace_box
+/// @example replace_box.cpp
 /// demonstrates the use of xtd::forms::replace_box dialog.
 /// @par Windows
 /// @image html replace_box_w.png
@@ -1561,7 +1561,7 @@
 /// <br>
 /// @image html replace_box_gd.png
 ///
-/// @example replace_dialog
+/// @example replace_dialog.cpp
 /// demonstrates the use of xtd::forms::replace_dialog dialog.
 /// @par Windows
 /// @image html replace_dialog_w.png
@@ -1576,7 +1576,7 @@
 /// <br>
 /// @image html replace_dialog_gd.png
 ///
-/// @example save_file_box
+/// @example save_file_box.cpp
 /// demonstrates the use of xtd::forms::save_file_box file dialog.
 /// @par Windows
 /// @image html save_file_box_w.png
@@ -1591,7 +1591,7 @@
 /// <br>
 /// @image html save_file_box_gd.png
 ///
-/// @example save_file_dialog
+/// @example save_file_dialog.cpp
 /// demonstrates the use of xtd::forms::save_file_dialog dialog.
 /// @par Windows
 /// @image html save_file_dialog_w.png
@@ -1606,7 +1606,7 @@
 /// <br>
 /// @image html save_file_dialog_gd.png
 ///
-/// @example trace_message_box
+/// @example trace_message_box.cpp
 /// demonstrates the use of xtd::forms::trace_message_box dialog.
 /// @par Windows
 /// @image html trace_message_box_w.png
@@ -1621,7 +1621,7 @@
 /// <br>
 /// @image html trace_message_box_gd.png
 ///
-/// @example draw_ellipse
+/// @example draw_ellipse.cpp
 /// shows how to draw ellipse in paint event using xtd::drawing::graphics::draw_ellipse.
 /// @par Windows
 /// @image html draw_ellipse_w.png
@@ -1636,7 +1636,7 @@
 /// <br>
 /// @image html draw_ellipse_gd.png
 ///
-/// @example draw_image
+/// @example draw_image.cpp
 /// shows how to draw image in paint event using xtd::drawing::graphics::draw_image.
 /// @par Windows
 /// @image html draw_image_w.png
@@ -1651,7 +1651,7 @@
 /// <br>
 /// @image html draw_image_gd.png
 ///
-/// @example draw_line
+/// @example draw_line.cpp
 /// shows how to draw line in paint event using xtd::drawing::graphics::draw_line.
 /// @par Windows
 /// @image html draw_line_w.png
@@ -1666,7 +1666,7 @@
 /// <br>
 /// @image html draw_line_gd.png
 ///
-/// @example draw_point
+/// @example draw_point.cpp
 /// shows how to draw point in paint event using xtd::drawing::graphics::draw_point.
 /// @par Windows
 /// @image html draw_point_w.png
@@ -1681,7 +1681,7 @@
 /// <br>
 /// @image html draw_point_gd.png
 ///
-/// @example draw_rectangle
+/// @example draw_rectangle.cpp
 /// shows how to draw rectangle in paint event using xtd::drawing::graphics::draw_rectangle.
 /// @par Windows
 /// @image html draw_rectangle_w.png
@@ -1696,7 +1696,7 @@
 /// <br>
 /// @image html draw_rectangle_gd.png
 ///
-/// @example draw_rounded_rectangle
+/// @example draw_rounded_rectangle.cpp
 /// shows how to draw rounded rectangle in paint event using xtd::drawing::graphics::draw_rounded_rectangle.
 /// @par Windows
 /// @image html draw_rounded_rectangle_w.png
@@ -1711,7 +1711,7 @@
 /// <br>
 /// @image html draw_rounded_rectangle_gd.png
 ///
-/// @example fill_ellipse
+/// @example fill_ellipse.cpp
 /// shows how to fill ellipse in paint event using xtd::drawing::graphics::fill_ellipse.
 /// @par Windows
 /// @image html fill_ellipse_w.png
@@ -1726,7 +1726,7 @@
 /// <br>
 /// @image html fill_ellipse_gd.png
 ///
-/// @example fill_rectangle
+/// @example fill_rectangle.cpp
 /// shows how to fill rectangle in paint event using xtd::drawing::graphics::fill_rectangle.
 /// @par Windows
 /// @image html fill_rectangle_w.png
@@ -1741,7 +1741,7 @@
 /// <br>
 /// @image html fill_rectangle_gd.png
 ///
-/// @example fill_rounded_rectangle
+/// @example fill_rounded_rectangle.cpp
 /// shows how to fill rounded rectangle in paint event using xtd::drawing::graphics::fill_rounded_rectangle.
 /// @par Windows
 /// @image html fill_rounded_rectangle_w.png
@@ -1756,7 +1756,7 @@
 /// <br>
 /// @image html fill_rounded_rectangle_gd.png
 ///
-/// @example application_events
+/// @example application_events.cpp
 /// demonstrates the use of application events.
 /// @par Windows
 /// @image html application_events_w.png
@@ -1771,7 +1771,7 @@
 /// <br>
 /// @image html application_events_gd.png
 ///
-/// @example application_idle
+/// @example application_idle.cpp
 /// demonstrates the use of idle event.
 /// @par Windows
 /// @image html application_idle_w.png
@@ -1786,7 +1786,7 @@
 /// <br>
 /// @image html application_idle_gd.png
 ///
-/// @example enable_changed_event
+/// @example enable_changed_event.cpp
 /// demonstrates the use of idle event.
 /// @par Windows
 /// @image html enable_changed_event_w.png
@@ -1801,7 +1801,7 @@
 /// <br>
 /// @image html enable_changed_event_gd.png
 ///
-/// @example font_changed_event
+/// @example font_changed_event.cpp
 /// demonstrates the use of idle event.
 /// @par Windows
 /// @image html font_changed_event_w.png
@@ -1816,7 +1816,7 @@
 /// <br>
 /// @image html font_changed_event_gd.png
 ///
-/// @example form_and_messages
+/// @example form_and_messages.cpp
 /// demonstrates some events received by form.
 /// @par Windows
 /// @image html form_and_messages_w.png
@@ -1831,7 +1831,7 @@
 /// <br>
 /// @image html form_and_messages_gd.png
 ///
-/// @example form_click
+/// @example form_click.cpp
 /// demonstrates the use of form event.
 /// @par Windows
 /// @image html form_click_w.png
@@ -1846,7 +1846,7 @@
 /// <br>
 /// @image html form_click_gd.png
 ///
-/// @example form_paint
+/// @example form_paint.cpp
 /// demonstrates paint event with form.
 /// @par Windows
 /// @image html form_paint_w.png
@@ -1861,7 +1861,7 @@
 /// <br>
 /// @image html form_paint_gd.png
 ///
-/// @example key_events
+/// @example key_events.cpp
 /// demonstrates some events received by form.
 /// @par Windows
 /// @image html key_events_w.png
@@ -1876,7 +1876,7 @@
 /// <br>
 /// @image html key_events_gd.png
 ///
-/// @example mouse_events
+/// @example mouse_events.cpp
 /// demonstrates some events received by form.
 /// @par Windows
 /// @image html mouse_events_w.png
@@ -1891,7 +1891,7 @@
 /// <br>
 /// @image html mouse_events_gd.png
 ///
-/// @example move_form
+/// @example move_form.cpp
 /// demonstrates the use of form event.
 /// @par Windows
 /// @image html move_form_w.png
@@ -1906,7 +1906,7 @@
 /// <br>
 /// @image html move_form_gd.png
 ///
-/// @example send_message_to_form
+/// @example send_message_to_form.cpp
 /// demonstrates some events received by form.
 /// @par Windows
 /// @image html send_message_to_form_w.png
@@ -1921,7 +1921,7 @@
 /// <br>
 /// @image html send_message_to_form_gd.png
 ///
-/// @example wnd_proc
+/// @example wnd_proc.cpp
 /// demonstrates the use of wnd_proc method.
 /// @par Windows
 /// @image html wnd_proc_w.png
@@ -1936,7 +1936,7 @@
 /// <br>
 /// @image html wnd_proc_gd.png
 ///
-/// @example circular_form
+/// @example circular_form.cpp
 /// demonstrates the use of xtd::forms::control::region property for create a circular form.
 /// @par Windows
 /// @image html circular_form_w.png
@@ -1951,7 +1951,7 @@
 /// <br>
 /// @image html circular_form_gd.png
 ///
-/// @example debug_form
+/// @example debug_form.cpp
 /// demonstrates the use of xtd::debug_forms::debug_form container.
 /// @par Windows
 /// @image html debug_form_w.png
@@ -1966,7 +1966,7 @@
 /// <br>
 /// @image html debug_form_gd.png
 ///
-/// @example dialog
+/// @example dialog.cpp
 /// demonstrates the use of xtd::forms::form container as dialog.
 /// @par Windows
 /// @image html dialog_w.png
@@ -1981,7 +1981,7 @@
 /// <br>
 /// @image html dialog_gd.png
 ///
-/// @example form
+/// @example form.cpp
 /// demonstrates the use of xtd::forms::form container.
 /// @par Windows
 /// @image html form_w.png
@@ -1996,7 +1996,7 @@
 /// <br>
 /// @image html form_gd.png
 ///
-/// @example popup_form
+/// @example popup_form.cpp
 /// demonstrates the use of xtd::forms::form container.
 /// @par Windows
 /// @image html popup_form_w.png
@@ -2011,7 +2011,7 @@
 /// <br>
 /// @image html popup_form_gd.png
 ///
-/// @example trace_form
+/// @example trace_form.cpp
 /// demonstrates the use of xtd::trace_forms::trace_form container.
 /// @par Windows
 /// @image html trace_form_w.png
@@ -2026,7 +2026,7 @@
 /// <br>
 /// @image html trace_form_gd.png
 ///
-/// @example game_of_life
+/// @example game_of_life.cpp
 /// The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.
 /// @par Windows
 /// @image html game_of_life_w.png
@@ -2041,7 +2041,7 @@
 /// <br>
 /// @image html game_of_life_gd.png
 ///
-/// @example minesweeper
+/// @example minesweeper.cpp
 /// The goal of the game is to uncover all the squares that do not contain mines.
 /// @par Windows
 /// @image html minesweeper_w.png
@@ -2056,7 +2056,7 @@
 /// <br>
 /// @image html minesweeper_gd.png
 ///
-/// @example hello_world_emoticons
+/// @example hello_world_emoticons.cpp
 /// The classic first application "Hello, World!" with  xtd::forms::emoticon control.
 /// @par Windows
 /// @image html hello_world_emoticons_w.png
@@ -2071,7 +2071,7 @@
 /// <br>
 /// @image html hello_world_emoticons_gd.png
 ///
-/// @example hello_world_label
+/// @example hello_world_label.cpp
 /// The classic first application "Hello, World!" with  xtd::forms::label control.
 /// @par Windows
 /// @image html hello_world_label_w.png
@@ -2086,7 +2086,7 @@
 /// <br>
 /// @image html hello_world_label_gd.png
 ///
-/// @example hello_world_message_box
+/// @example hello_world_message_box.cpp
 /// The classic first application "Hello, World!" with  xtd::forms::message_box control.
 /// @par Windows
 /// @image html hello_world_message_box_w.png
@@ -2101,7 +2101,7 @@
 /// <br>
 /// @image html hello_world_message_box_gd.png
 ///
-/// @example hello_world_message_box2
+/// @example hello_world_message_box2.cpp
 /// The classic first application "Hello, World!" with  xtd::forms::message_box control.
 /// @par Windows
 /// @image html hello_world_message_box2_w.png
@@ -2116,7 +2116,7 @@
 /// <br>
 /// @image html hello_world_message_box2_gd.png
 ///
-/// @example hello_world_message_box3
+/// @example hello_world_message_box3.cpp
 /// The classic first application "Hello, World!" with  xtd::forms::message_box control.
 /// @par Windows
 /// @image html hello_world_message_box3_w.png
@@ -2131,7 +2131,7 @@
 /// <br>
 /// @image html hello_world_message_box3_gd.png
 ///
-/// @example hello_world_paint
+/// @example hello_world_paint.cpp
 /// The classic first application "Hello, World!" with GDI+ drawing objects.
 /// @par Windows
 /// @image html hello_world_paint_w.png
@@ -2146,7 +2146,7 @@
 /// <br>
 /// @image html hello_world_paint_gd.png
 ///
-/// @example hello_world_say
+/// @example hello_world_say.cpp
 /// The classic first application "Hello, World!" with xtd::forms::button control an xtd::speech::synthesis::speech_synthesizer class.
 /// @par Windows
 /// @image html hello_world_say_w.png
@@ -2161,7 +2161,7 @@
 /// <br>
 /// @image html hello_world_say_gd.png
 ///
-/// @example context_menu
+/// @example context_menu.cpp
 /// demonstrates the use of xtd::forms::context_menu component.
 /// @par Windows
 /// @image html context_menu_w.png
@@ -2176,7 +2176,7 @@
 /// <br>
 /// @image html context_menu_gd.png
 ///
-/// @example main_menu
+/// @example main_menu.cpp
 /// demonstrates the use of xtd::forms::main_menu component.
 /// @par Windows
 /// @image html main_menu_w.png
@@ -2191,7 +2191,7 @@
 /// <br>
 /// @image html main_menu_gd.png
 ///
-/// @example status_bar
+/// @example status_bar.cpp
 /// demonstrates the use of xtd::forms::tool_bar component.
 /// @par Windows
 /// @image html status_bar_w.png
@@ -2206,7 +2206,7 @@
 /// <br>
 /// @image html status_bar_gd.png
 ///
-/// @example tool_bar
+/// @example tool_bar.cpp
 /// demonstrates the use of xtd::forms::tool_bar component.
 /// @par Windows
 /// @image html tool_bar_w.png
@@ -2221,7 +2221,7 @@
 /// <br>
 /// @image html tool_bar_gd.png
 ///
-/// @example about_dialog_system
+/// @example about_dialog_system.cpp
 /// demonstrates the use of xtd::forms::about_dialog dialog.
 /// @par Windows
 /// @image html about_dialog_system_w.png
@@ -2236,7 +2236,7 @@
 /// <br>
 /// @image html about_dialog_system_gd.png
 ///
-/// @example anchors
+/// @example anchors.cpp
 /// demonstrates the use of xtd::forms::control::button control with xtd::forms::control::anchor.
 /// @par Windows
 /// @image html anchors_w.png
@@ -2251,7 +2251,7 @@
 /// <br>
 /// @image html anchors_gd.png
 ///
-/// @example application_run
+/// @example application_run.cpp
 /// Shows how to create an application with  xtd::forms::application class.
 /// @par Windows
 /// @image html application_run_w.png
@@ -2266,7 +2266,7 @@
 /// <br>
 /// @image html application_run_gd.png
 ///
-/// @example auto_scroll
+/// @example auto_scroll.cpp
 /// demonstrates the use of xtd::forms::panel.
 /// @par Windows
 /// @image html auto_scroll_w.png
@@ -2281,7 +2281,7 @@
 /// <br>
 /// @image html auto_scroll_gd.png
 ///
-/// @example bitmap_button
+/// @example bitmap_button.cpp
 /// demonstrates the use of xtd::forms::button control with image.
 /// @par Windows
 /// @image html bitmap_button_w.png
@@ -2296,7 +2296,7 @@
 /// <br>
 /// @image html bitmap_button_gd.png
 ///
-/// @example border_style
+/// @example border_style.cpp
 /// demonstrates the use of xtd::forms::label::border_style property.
 /// @par Windows
 /// @image html border_style_w.png
@@ -2311,7 +2311,7 @@
 /// <br>
 /// @image html border_style_gd.png
 ///
-/// @example button2
+/// @example button2.cpp
 /// demonstrates the use of xtd::forms::form control.
 /// @par Windows
 /// @image html button2_w.png
@@ -2326,7 +2326,7 @@
 /// <br>
 /// @image html button2_gd.png
 ///
-/// @example button3
+/// @example button3.cpp
 /// demonstrates the use of xtd::forms::form control.
 /// @par Windows
 /// @image html button3_w.png
@@ -2341,7 +2341,7 @@
 /// <br>
 /// @image html button3_gd.png
 ///
-/// @example button4
+/// @example button4.cpp
 /// demonstrates the use of xtd::forms::form control.
 /// @par Windows
 /// @image html button4_w.png
@@ -2356,7 +2356,7 @@
 /// <br>
 /// @image html button4_gd.png
 ///
-/// @example calculator
+/// @example calculator.cpp
 /// represents a calculator application that performs arithmetic operations on numbers.
 /// @par Windows
 /// @image html calculator_w.png
@@ -2371,7 +2371,7 @@
 /// <br>
 /// @image html calculator_gd.png
 ///
-/// @example change_color
+/// @example change_color.cpp
 /// demonstrates the use of xtd::forms::control back_color and fore_color properties.
 /// @par Windows
 /// @image html change_color_w.png
@@ -2386,7 +2386,7 @@
 /// <br>
 /// @image html change_color_gd.png
 ///
-/// @example change_parent
+/// @example change_parent.cpp
 /// demonstrates the use of xtd::forms::control parent property.
 /// @par Windows
 /// @image html change_parent_w.png
@@ -2401,7 +2401,7 @@
 /// <br>
 /// @image html change_parent_gd.png
 ///
-/// @example clock
+/// @example clock.cpp
 /// demonstrates the use of xtd::forms::lcd_label control.
 /// @par Windows
 /// @image html clock_w.png
@@ -2416,7 +2416,7 @@
 /// <br>
 /// @image html clock_gd.png
 ///
-/// @example colored_forms
+/// @example colored_forms.cpp
 /// demonstrates the use of xtd::forms::form control with unicode text.
 /// @par Windows
 /// @image html colored_forms_w.png
@@ -2431,7 +2431,7 @@
 /// <br>
 /// @image html colored_forms_gd.png
 ///
-/// @example colored_tab_pages
+/// @example colored_tab_pages.cpp
 /// demonstrates the use of xtd::forms::tab_page control with unicode text.
 /// @par Windows
 /// @image html colored_tab_pages_w.png
@@ -2446,7 +2446,7 @@
 /// <br>
 /// @image html colored_tab_pages_gd.png
 ///
-/// @example colors
+/// @example colors.cpp
 /// demonstrates the use of xtd::forms::user_control control with xtd::drawing::color.
 /// @par Windows
 /// @image html colors_w.png
@@ -2461,7 +2461,7 @@
 /// <br>
 /// @image html colors_gd.png
 ///
-/// @example docked_panels
+/// @example docked_panels.cpp
 /// demonstrates the use of xtd::forms::panel.
 /// @par Windows
 /// @image html docked_panels_w.png
@@ -2476,7 +2476,7 @@
 /// <br>
 /// @image html docked_panels_gd.png
 ///
-/// @example flat_button
+/// @example flat_button.cpp
 /// demonstrates the use of xtd::forms::button control with flat style.
 /// @par Windows
 /// @image html flat_button_w.png
@@ -2491,7 +2491,7 @@
 /// <br>
 /// @image html flat_button_gd.png
 ///
-/// @example font_families
+/// @example font_families.cpp
 /// demonstrates the use of xtd::drawing::font_families method, which returns an array of xtd::drawing::font_family objects associated with the current graphics context.
 /// @par Windows
 /// @image html font_families_w.png
@@ -2506,7 +2506,7 @@
 /// <br>
 /// @image html font_families_gd.png
 ///
-/// @example form2
+/// @example form2.cpp
 /// represents a window or dialog box that makes up an application's user interface.
 /// @par Windows
 /// @image html form2_w.png
@@ -2521,7 +2521,7 @@
 /// <br>
 /// @image html form2_gd.png
 ///
-/// @example form_and_main
+/// @example form_and_main.cpp
 /// demonstrates how to use startup_ keyword.
 /// @par Windows
 /// @image html form_and_main_w.png
@@ -2536,7 +2536,7 @@
 /// <br>
 /// @image html form_and_main_gd.png
 ///
-/// @example form_and_thread
+/// @example form_and_thread.cpp
 /// demonstrates how a thread can update ui with xtd::forms::control::invoke method.
 /// @par Windows
 /// @image html form_and_thread_w.png
@@ -2551,7 +2551,7 @@
 /// <br>
 /// @image html form_and_thread_gd.png
 ///
-/// @example form_background_image
+/// @example form_background_image.cpp
 /// demonstrates how to use of xtd::forms::form control with background_image.
 /// @par Windows
 /// @image html form_background_image_w.png
@@ -2566,7 +2566,7 @@
 /// <br>
 /// @image html form_background_image_gd.png
 ///
-/// @example form_decoration
+/// @example form_decoration.cpp
 /// demonstrates the use of xtd::forms::form.
 /// @par Windows
 /// @image html form_decoration_w.png
@@ -2581,7 +2581,7 @@
 /// <br>
 /// @image html form_decoration_gd.png
 ///
-/// @example form_resize
+/// @example form_resize.cpp
 /// Shows how to set minimum size, set maximum size, move and resize a form.
 /// @par Windows
 /// @image html form_resize_w.png
@@ -2596,7 +2596,7 @@
 /// <br>
 /// @image html form_resize_gd.png
 ///
-/// @example form_show
+/// @example form_show.cpp
 /// This example demonstrates how to launch form as normal window , model-less window and modal window.
 /// @par Windows
 /// @image html form_show_w.png
@@ -2611,7 +2611,7 @@
 /// <br>
 /// @image html form_show_gd.png
 ///
-/// @example form_show_hide
+/// @example form_show_hide.cpp
 /// demonstrates the use of xtd::forms::form show, hide and close methods.
 /// @par Windows
 /// @image html form_show_hide_w.png
@@ -2626,7 +2626,7 @@
 /// <br>
 /// @image html form_show_hide_gd.png
 ///
-/// @example form_window_state
+/// @example form_window_state.cpp
 /// demonstrates the use of xtd::forms::form window state.
 /// @par Windows
 /// @image html form_window_state_w.png
@@ -2641,7 +2641,7 @@
 /// <br>
 /// @image html form_window_state_gd.png
 ///
-/// @example group_box_and_check_box
+/// @example group_box_and_check_box.cpp
 /// demonstrates the use of xtd::forms::group_box container and  xtd::forms::check_box control.
 /// @par Windows
 /// @image html group_box_and_check_box_w.png
@@ -2656,7 +2656,7 @@
 /// <br>
 /// @image html group_box_and_check_box_gd.png
 ///
-/// @example group_box_and_radio_button
+/// @example group_box_and_radio_button.cpp
 /// demonstrates the use of xtd::forms::group_box container and  xtd::forms::radio_button control.
 /// @par Windows
 /// @image html group_box_and_radio_button_w.png
@@ -2671,7 +2671,7 @@
 /// <br>
 /// @image html group_box_and_radio_button_gd.png
 ///
-/// @example images2
+/// @example images2.cpp
 /// demonstrates the use of xtd::forms::images component.
 /// @par Windows
 /// @image html images2_w.png
@@ -2686,7 +2686,7 @@
 /// <br>
 /// @image html images2_gd.png
 ///
-/// @example images3
+/// @example images3.cpp
 /// demonstrates the use of xtd::forms::images component.
 /// @par Windows
 /// @image html images3_w.png
@@ -2701,7 +2701,7 @@
 /// <br>
 /// @image html images3_gd.png
 ///
-/// @example input_dialog_multiline
+/// @example input_dialog_multiline.cpp
 /// demonstrates the use of xtd::forms::input_dialog dialog.
 /// @par Windows
 /// @image html input_dialog_multiline_w.png
@@ -2716,7 +2716,7 @@
 /// <br>
 /// @image html input_dialog_multiline_gd.png
 ///
-/// @example input_dialog_password
+/// @example input_dialog_password.cpp
 /// demonstrates the use of xtd::forms::input_dialog dialog.
 /// @par Windows
 /// @image html input_dialog_password_w.png
@@ -2731,7 +2731,7 @@
 /// <br>
 /// @image html input_dialog_password_gd.png
 ///
-/// @example labels_and_unicode_text
+/// @example labels_and_unicode_text.cpp
 /// demonstrates the use of xtd::forms::label control with unicode text.
 /// @par Windows
 /// @image html labels_and_unicode_text_w.png
@@ -2746,7 +2746,7 @@
 /// <br>
 /// @image html labels_and_unicode_text_gd.png
 ///
-/// @example lcd_label2
+/// @example lcd_label2.cpp
 /// demonstrates how to use xtd::forms::lcd_label control.
 /// @par Windows
 /// @image html lcd_label2_w.png
@@ -2761,7 +2761,7 @@
 /// <br>
 /// @image html lcd_label2_gd.png
 ///
-/// @example lcd_label3
+/// @example lcd_label3.cpp
 /// demonstrates how to use xtd::forms::lcd_label control.
 /// @par Windows
 /// @image html lcd_label3_w.png
@@ -2776,7 +2776,7 @@
 /// <br>
 /// @image html lcd_label3_gd.png
 ///
-/// @example lcd_label_with_dot_matrix
+/// @example lcd_label_with_dot_matrix.cpp
 /// demonstrates how to use xtd::forms::lcd_label_with_dot_matrix control.
 /// @par Windows
 /// @image html lcd_label_with_dot_matrix_w.png
@@ -2791,7 +2791,7 @@
 /// <br>
 /// @image html lcd_label_with_dot_matrix_gd.png
 ///
-/// @example lcd_label_with_fourteen_segment
+/// @example lcd_label_with_fourteen_segment.cpp
 /// demonstrates how to use xtd::forms::lcd_label_with_fourteen_segment control.
 /// @par Windows
 /// @image html lcd_label_with_fourteen_segment_w.png
@@ -2806,7 +2806,7 @@
 /// <br>
 /// @image html lcd_label_with_fourteen_segment_gd.png
 ///
-/// @example lcd_label_with_nine_segment
+/// @example lcd_label_with_nine_segment.cpp
 /// demonstrates how to use xtd::forms::lcd_label_with_nine_segment control.
 /// @par Windows
 /// @image html lcd_label_with_nine_segment_w.png
@@ -2821,7 +2821,7 @@
 /// <br>
 /// @image html lcd_label_with_nine_segment_gd.png
 ///
-/// @example lcd_label_with_seven_segment
+/// @example lcd_label_with_seven_segment.cpp
 /// demonstrates how to use xtd::forms::lcd_label_with_seven_segment control.
 /// @par Windows
 /// @image html lcd_label_with_seven_segment_w.png
@@ -2836,7 +2836,7 @@
 /// <br>
 /// @image html lcd_label_with_seven_segment_gd.png
 ///
-/// @example lcd_label_with_sixteen_segment
+/// @example lcd_label_with_sixteen_segment.cpp
 /// demonstrates how to use xtd::forms::lcd_label_with_sixteen_segment control.
 /// @par Windows
 /// @image html lcd_label_with_sixteen_segment_w.png
@@ -2851,7 +2851,7 @@
 /// <br>
 /// @image html lcd_label_with_sixteen_segment_gd.png
 ///
-/// @example main_menu_create_standard_items
+/// @example main_menu_create_standard_items.cpp
 /// demonstrates the use of xtd::forms::main_menu::create_standard_items method.
 /// @par Windows
 /// @image html main_menu_create_standard_items_w.png
@@ -2866,7 +2866,7 @@
 /// <br>
 /// @image html main_menu_create_standard_items_gd.png
 ///
-/// @example message_dialog_show_sheet
+/// @example message_dialog_show_sheet.cpp
 /// demonstrates the use of xtd::forms::message_dialog dialog.
 /// @par Windows
 /// @image html message_dialog_show_sheet_w.png
@@ -2881,7 +2881,7 @@
 /// <br>
 /// @image html message_dialog_show_sheet_gd.png
 ///
-/// @example painting
+/// @example painting.cpp
 /// demonstrates the use of xtd::forms::form controls with mouse_down, mouse_move and paint events.
 /// @par Windows
 /// @image html painting_w.png
@@ -2896,7 +2896,7 @@
 /// <br>
 /// @image html painting_gd.png
 ///
-/// @example screen_informations
+/// @example screen_informations.cpp
 /// shows how to get screen informations of xtd::forms::screen component.
 /// @par Windows
 /// @image html screen_informations_w.png
@@ -2911,7 +2911,7 @@
 /// <br>
 /// @image html screen_informations_gd.png
 ///
-/// @example settings_example2
+/// @example settings_example2.cpp
 /// demonstrates the use of xtd::forms::settings component.
 /// @par Windows
 /// @image html settings_example2_w.png
@@ -2926,7 +2926,7 @@
 /// <br>
 /// @image html settings_example2_gd.png
 ///
-/// @example smileys
+/// @example smileys.cpp
 /// demonstrates the use of xtd::forms::label control.
 /// @par Windows
 /// @image html smileys_w.png
@@ -2941,7 +2941,7 @@
 /// <br>
 /// @image html smileys_gd.png
 ///
-/// @example some_controls
+/// @example some_controls.cpp
 /// This example demonstrates the use of some controls.
 /// @par Windows
 /// @image html some_controls_w.png
@@ -2956,7 +2956,7 @@
 /// <br>
 /// @image html some_controls_gd.png
 ///
-/// @example status_bar_without_panels
+/// @example status_bar_without_panels.cpp
 /// demonstrates the use of xtd::forms::tool_bar component.
 /// @par Windows
 /// @image html status_bar_without_panels_w.png
@@ -2971,7 +2971,7 @@
 /// <br>
 /// @image html status_bar_without_panels_gd.png
 ///
-/// @example stopwatch_form
+/// @example stopwatch_form.cpp
 /// demonstrates the use of xtd::forms::button, xtd::forms::label controls and xtd::forms::timer component.
 /// @par Windows
 /// @image html stopwatch_form_w.png
@@ -2986,7 +2986,7 @@
 /// <br>
 /// @image html stopwatch_form_gd.png
 ///
-/// @example system_report
+/// @example system_report.cpp
 /// represents an example of system_report with xtd::forms::text_box control.
 /// @par Windows
 /// @image html system_report_w.png
@@ -3001,7 +3001,7 @@
 /// <br>
 /// @image html system_report_gd.png
 ///
-/// @example system_sound
+/// @example system_sound.cpp
 /// This example demonstrates the use of xtd::media::system_sound component.
 /// @par Windows
 /// @image html system_sound_w.png
@@ -3016,7 +3016,7 @@
 /// <br>
 /// @image html system_sound_gd.png
 ///
-/// @example text_box_multiline
+/// @example text_box_multiline.cpp
 /// demonstrates the use of xtd::forms::text_box_multiline control.
 /// @par Windows
 /// @image html text_box_multiline_w.png
@@ -3031,7 +3031,7 @@
 /// <br>
 /// @image html text_box_multiline_gd.png
 ///
-/// @example text_box_password
+/// @example text_box_password.cpp
 /// demonstrates the use of xtd::forms::text_box_password control.
 /// @par Windows
 /// @image html text_box_password_w.png
@@ -3046,7 +3046,7 @@
 /// <br>
 /// @image html text_box_password_gd.png
 ///
-/// @example text_box_password2
+/// @example text_box_password2.cpp
 /// demonstrates the use of xtd::forms::text_box_password control.
 /// @par Windows
 /// @image html text_box_password2_w.png
@@ -3061,7 +3061,7 @@
 /// <br>
 /// @image html text_box_password2_gd.png
 ///
-/// @example toggle_button2
+/// @example toggle_button2.cpp
 /// demonstrates the use of xtd::forms::check_box control.
 /// @par Windows
 /// @image html toggle_button2_w.png
@@ -3076,7 +3076,7 @@
 /// <br>
 /// @image html toggle_button2_gd.png
 ///
-/// @example track_bar2
+/// @example track_bar2.cpp
 /// demonstrates the use of xtd::forms::track_bar control.
 /// @par Windows
 /// @image html track_bar2_w.png
@@ -3091,7 +3091,7 @@
 /// <br>
 /// @image html track_bar2_gd.png
 ///
-/// @example wiggly
+/// @example wiggly.cpp
 /// The Wiggly example shows how to animate a user control using timer and timer::tick event. In addition, the example demonstrates how to use graphics::measure_string to determine the size of text on screen.
 /// @par Windows
 /// @image html wiggly_w.png
@@ -3106,7 +3106,7 @@
 /// <br>
 /// @image html wiggly_gd.png
 ///
-/// @example test_forms
+/// @example test_forms.cpp
 /// tests forms control
 /// @par Windows
 /// @image html test_forms_w.png
@@ -3121,7 +3121,7 @@
 /// <br>
 /// @image html test_forms_gd.png
 ///
-/// @example application_enable_dark_mode
+/// @example application_enable_dark_mode.cpp
 /// Shows how to create an application with  xtd::forms::application::enable_dark_mode method.
 /// @par Windows
 /// @image html application_enable_dark_mode_w.png
@@ -3136,7 +3136,7 @@
 /// <br>
 /// @image html application_enable_dark_mode_gd.png
 ///
-/// @example application_enable_light_mode
+/// @example application_enable_light_mode.cpp
 /// Shows how to create an application with  xtd::forms::application::enable_light_mode method.
 /// @par Windows
 /// @image html application_enable_light_mode_w.png
@@ -3151,7 +3151,7 @@
 /// <br>
 /// @image html application_enable_light_mode_gd.png
 ///
-/// @example themes
+/// @example themes.cpp
 /// Shows how to use xtd::forms::theme class.
 /// @par Windows
 /// @image html themes_w.png
@@ -3166,7 +3166,7 @@
 /// <br>
 /// @image html themes_gd.png
 ///
-/// @example tutorial_application_icon
+/// @example tutorial_application_icon.cpp
 /// First we create the very basic xtd::forms program.
 /// @par Windows
 /// @image html tutorial_application_icon_w.png
@@ -3181,7 +3181,7 @@
 /// <br>
 /// @image html tutorial_application_icon_gd.png
 ///
-/// @example tutorial_button
+/// @example tutorial_button.cpp
 /// First we create the very basic xtd::forms program.
 /// @par Windows
 /// @image html tutorial_button_w.png
@@ -3196,7 +3196,7 @@
 /// <br>
 /// @image html tutorial_button_gd.png
 ///
-/// @example tutorial_communicate
+/// @example tutorial_communicate.cpp
 /// First we create the very basic xtd::forms program.
 /// @par Windows
 /// @image html tutorial_communicate_w.png
@@ -3211,7 +3211,7 @@
 /// <br>
 /// @image html tutorial_communicate_gd.png
 ///
-/// @example tutorial_console
+/// @example tutorial_console.cpp
 /// First we create the very basic xtd_forms program.
 /// @par Windows
 /// @image html tutorial_console_w.png
@@ -3226,7 +3226,7 @@
 /// <br>
 /// @image html tutorial_console_gd.png
 ///
-/// @example tutorial_console_write_line
+/// @example tutorial_console_write_line.cpp
 /// First we create the very basic xtd_forms program.
 /// @par Windows
 /// @image html tutorial_console_write_line_w.png
@@ -3241,7 +3241,7 @@
 /// <br>
 /// @image html tutorial_console_write_line_gd.png
 ///
-/// @example tutorial_environment
+/// @example tutorial_environment.cpp
 /// First we create the very basic xtd_forms program.
 /// @par Windows
 /// @image html tutorial_environment_w.png
@@ -3256,7 +3256,7 @@
 /// <br>
 /// @image html tutorial_environment_gd.png
 ///
-/// @example tutorial_simple_application
+/// @example tutorial_simple_application.cpp
 /// First we create the very basic xtd_forms program.
 /// @par Windows
 /// @image html tutorial_simple_application_w.png
@@ -3271,7 +3271,7 @@
 /// <br>
 /// @image html tutorial_simple_application_gd.png
 ///
-/// @example tutorial_strings
+/// @example tutorial_strings.cpp
 /// First we create the very basic xtd_forms program.
 /// @par Windows
 /// @image html tutorial_strings_w.png
@@ -3286,7 +3286,7 @@
 /// <br>
 /// @image html tutorial_strings_gd.png
 ///
-/// @example button_with_style_sheet
+/// @example button_with_style_sheet.cpp
 /// demonstrates how to create a xtd::forms::button control with style_sheet.
 /// @par Windows
 /// @image html button_with_style_sheet_w.png
@@ -3301,7 +3301,7 @@
 /// <br>
 /// @image html button_with_style_sheet_gd.png
 ///
-/// @example line
+/// @example line.cpp
 /// demonstrates how to create a custom control with xtd::forms::user_control control.
 /// @par Windows
 /// @image html line_w.png
@@ -3316,7 +3316,7 @@
 /// <br>
 /// @image html line_gd.png
 ///
-/// @example numeric_text_box
+/// @example numeric_text_box.cpp
 /// demonstrates how to create a custom control with xtd::forms::text_box control.
 /// @par Windows
 /// @image html numeric_text_box_w.png
@@ -3331,7 +3331,7 @@
 /// <br>
 /// @image html numeric_text_box_gd.png
 ///
-/// @example owner_button
+/// @example owner_button.cpp
 /// demonstrates how to create a custom button with xtd::forms::button control.
 /// @par Windows
 /// @image html owner_button_w.png
@@ -3346,7 +3346,7 @@
 /// <br>
 /// @image html owner_button_gd.png
 ///
-/// @example user_dialog
+/// @example user_dialog.cpp
 /// demonstrates the use of xtd::forms::form as dialog.
 /// @par Windows
 /// @image html user_dialog_w.png
@@ -3361,7 +3361,7 @@
 /// <br>
 /// @image html user_dialog_gd.png
 ///
-/// @example user_dialog_show_sheet
+/// @example user_dialog_show_sheet.cpp
 /// demonstrates the use of xtd::forms::form as dialog.
 /// @par Windows
 /// @image html user_dialog_show_sheet_w.png
