@@ -1,0 +1,30 @@
+/// @file
+/// @brief Contains xtd.cmake examples.
+///
+/// @example build_output_directory.cpp
+/// Shows how to set build output directory with cmake build_output_directory().
+///
+/// @example hello_world_cmake.cpp
+/// The classic first application "Hello, World!" with cmake xtd_commands.cmake.
+///
+/// @example target_default_namespace.cpp
+/// Shows how to set target default namespace with cmake target_default_namespace().
+///
+/// @example target_display.cpp
+/// Shows how to set target display with cmake target_display().
+///
+/// @example target_icon.cpp
+/// Shows how to set target icon with cmake target_icon().
+///
+/// @example target_name.cpp
+/// Shows how to set target name with cmake target_name().
+///
+/// @example target_registered.cpp
+/// Shows how to set target registered with cmake target_registered().
+///
+/// @example target_startup.cpp
+/// Shows how to set target startup with cmake target_startup().
+///
+/// @example target_type.cpp
+/// Shows how to set target startup with cmake target_type().
+///

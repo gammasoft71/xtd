@@ -1,2 +1,153 @@
 /// @file
 /// @brief Contains xtd.tunit examples.
+///
+/// @example assert.cpp
+/// Shows how to use xtd::tunit::assert class.
+///
+/// @example assert_abort.cpp
+/// Shows how to use xtd::tunit::assert::abort method.
+///
+/// @example assert_are_equal.cpp
+/// Shows how to use xtd::tunit::assert::are_equal method.
+///
+/// @example assert_are_equal_with_tolerance.cpp
+/// Shows how to use xtd::tunit::assert::are_equal_with_tolerance method.
+///
+/// @example assert_are_not_equal.cpp
+/// Shows how to use xtd::tunit::assert::are_not_equal method.
+///
+/// @example assert_are_not_same.cpp
+/// Shows how to use xtd::tunit::assert::are_not_same method.
+///
+/// @example assert_are_same.cpp
+/// Shows how to use xtd::tunit::assert::are_same method.
+///
+/// @example assert_contains.cpp
+/// Shows how to use xtd::tunit::assert::contains method.
+///
+/// @example assert_does_not_throw.cpp
+/// Shows how to use xtd::tunit::assert::does_not_throw method.
+///
+/// @example assert_fail.cpp
+/// Shows how to use xtd::tunit::assert::fail method.
+///
+/// @example assert_ignore.cpp
+/// Shows how to use xtd::tunit::assert::ignore method.
+///
+/// @example assert_is_NaN.cpp
+/// Shows how to use xtd::tunit::assert::is_NaN method.
+///
+/// @example assert_is_empty.cpp
+/// Shows how to use xtd::tunit::assert::is_empty method.
+///
+/// @example assert_is_false.cpp
+/// Shows how to use xtd::tunit::assert::is_false method.
+///
+/// @example assert_is_greater.cpp
+/// Shows how to use xtd::tunit::assert::is_greater method.
+///
+/// @example assert_is_greater_or_equal.cpp
+/// Shows how to use xtd::tunit::assert::is_greater_or_equal method.
+///
+/// @example assert_is_instance_of.cpp
+/// Shows how to use xtd::tunit::assert::is_instance_of method.
+///
+/// @example assert_is_less.cpp
+/// Shows how to use xtd::tunit::assert::is_less method.
+///
+/// @example assert_is_less_or_equal.cpp
+/// Shows how to use xtd::tunit::assert::is_less_or_equal method.
+///
+/// @example assert_is_negative.cpp
+/// Shows how to use xtd::tunit::assert::is_negative method.
+///
+/// @example assert_is_not_empty.cpp
+/// Shows how to use xtd::tunit::assert::is_not_empty method.
+///
+/// @example assert_is_not_instance_of.cpp
+/// Shows how to use xtd::tunit::assert::is_not_instance_of method.
+///
+/// @example assert_is_not_null.cpp
+/// Shows how to use xtd::tunit::assert::is_not_null method.
+///
+/// @example assert_is_not_zero.cpp
+/// Shows how to use xtd::tunit::assert::is_not_zero method.
+///
+/// @example assert_is_null.cpp
+/// Shows how to use xtd::tunit::assert::is_null method.
+///
+/// @example assert_is_positive.cpp
+/// Shows how to use xtd::tunit::assert::is_positive method.
+///
+/// @example assert_is_true.cpp
+/// Shows how to use xtd::tunit::assert::is_true method.
+///
+/// @example assert_is_zero.cpp
+/// Shows how to use xtd::tunit::assert::is_zero method.
+///
+/// @example assert_succeed.cpp
+/// Shows how to use xtd::tunit::assert::succeed method.
+///
+/// @example assert_throws.cpp
+/// Shows how to use xtd::tunit::assert::throws method.
+///
+/// @example assert_throws_any.cpp
+/// Shows how to use xtd::tunit::assert::throws_any method.
+///
+/// @example all_items_are_instances_of.cpp
+/// Shows how to use xtd::tunit::collection_assert::all_items_are_instances_of method.
+///
+/// @example all_items_are_not_null.cpp
+/// Shows how to use xtd::tunit::collection_assert::all_items_are_not_null method.
+///
+/// @example hello_world_tunit.cpp
+/// The classic first application "Hello, World!" with xtd::tunit::console_unit_test class.
+///
+/// @example class_with_insert_stream_operator.cpp
+/// Shows how to use xtd::tunit::assert class with a class to test that contains insert stream operator.
+///
+/// @example class_without_insert_stream_operator.cpp
+/// Shows how to use xtd::tunit::assert class with a class to test that does not contain insert stream operator.
+///
+/// @example create_gtest_like_event_listener.cpp
+/// Shows how to create your own xtd::tunit::event_listener class.
+///
+/// @example line_info.cpp
+/// Shows how to use xtd::diagnostics::stack_frame class and csf_ keyword.
+///
+/// @example many_asserts.cpp
+/// Shows how to use xtd::tunit::assert class with many asserts.
+///
+/// @example many_valids_and_asserts.cpp
+/// Shows how to use xtd::tunit::valid and xtd::tunit::assert classes.
+///
+/// @example tunit_config_main.cpp
+/// Shows how to use TUNIT_CONFIG_MAIN define to generate automatically entry point.
+///
+/// @example string_assert_are_equal_ignoring_case.cpp
+/// Shows how to use xtd::tunit::string_assert::are_equal_ignoring_case method.
+///
+/// @example string_assert_are_not_equal_ignoring_case.cpp
+/// Shows how to use xtd::tunit::string_assert::are_not_equal_ignoring_case method.
+///
+/// @example string_assert_contains.cpp
+/// Shows how to use xtd::tunit::string_assert::contains method.
+///
+/// @example generic_test_class.cpp
+/// Shows how to use generic xtd::tunit::test_class class.
+///
+/// @example test_class.cpp
+/// Shows how to use xtd::tunit::test_class class.
+///
+/// @example test_class_without_helpers.cpp
+/// Shows how to use xtd::tunit::test_class class without helpers.
+///
+/// @example console_unit_test.cpp
+/// Shows how to use generic xtd::tunit::console_unit_test class.
+///
+/// @example ostream_unit_test.cpp
+/// Shows how to use generic xtd::tunit::ostream_unit_test class.
+///
+/// @example math_assert.cpp
+/// Shows how to create your own xtd::tunit::assert class.
+///
