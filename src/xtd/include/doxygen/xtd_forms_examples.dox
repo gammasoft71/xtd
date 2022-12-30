@@ -1,53 +1,8 @@
 /// @file
 /// @brief Contains xtd.forms examples.
 ///
-/// @example about_box.cpp
-/// The following code example demonstrates the use of about_box dialog.
-/// @par Windows
-/// @image html about_box_w.png
-/// <br>
-/// @image html about_box_wd.png
-/// @par macOS
-/// @image html about_box_m.png
-/// <br>
-/// @image html about_box_md.png
-/// @par Gnome
-/// @image html about_box_g.png
-/// <br>
-/// @image html about_box_gd.png
-///
-/// @example about_dialog.cpp
-/// The following code example demonstrates the use of xtd::forms::about_dialog dialog.
-/// @par Windows
-/// @image html about_dialog_w.png
-/// <br>
-/// @image html about_dialog_wd.png
-/// @par macOS
-/// @image html about_dialog_m.png
-/// <br>
-/// @image html about_dialog_md.png
-/// @par Gnome
-/// @image html about_dialog_g.png
-/// <br>
-/// @image html about_dialog_gd.png
-///
-/// @example about_dialog_system.cpp
-/// The following code example demonstrates the use of xtd::forms::about_dialog dialog with dialog_style to system.
-/// @par Windows
-/// @image html about_dialog_system_w.png
-/// <br>
-/// @image html about_dialog_system_wd.png
-/// @par macOS
-/// @image html about_dialog_system_m.png
-/// <br>
-/// @image html about_dialog_system_md.png
-/// @par Gnome
-/// @image html about_dialog_system_g.png
-/// <br>
-/// @image html about_dialog_system_gd.png
-///
-/// @example application.cpp
-/// The following code example demonstrates the use of xtd::forms::application class.
+/// @example application
+/// Shows how to create an application with  xtd::forms::application class.
 /// @par Windows
 /// @image html application_w.png
 /// <br>
@@ -61,8 +16,23 @@
 /// <br>
 /// @image html application_gd.png
 ///
-/// @example application_and_exception.cpp
-///  following code example demonstrate the use of following code example demonstrate how to manage exception with xtd::forms::application class.
+/// @example application_and_assert
+/// Shows how to create an application with  xtd::forms::application class and how to manage assert.
+/// @par Windows
+/// @image html application_and_assert_w.png
+/// <br>
+/// @image html application_and_assert_wd.png
+/// @par macOS
+/// @image html application_and_assert_m.png
+/// <br>
+/// @image html application_and_assert_md.png
+/// @par Gnome
+/// @image html application_and_assert_g.png
+/// <br>
+/// @image html application_and_assert_gd.png
+///
+/// @example application_and_exception
+/// Shows how to create an application with  xtd::forms::application class and how to manage exception.
 /// @par Windows
 /// @image html application_and_exception_w.png
 /// <br>
@@ -76,8 +46,8 @@
 /// <br>
 /// @image html application_and_exception_gd.png
 ///
-/// @example application_context.cpp
-/// The following code example demonstrates the use of xtd::forms::application and xtd::forms::application_context classes.
+/// @example application_context
+/// Shows how to create an application with  xtd::forms::application class with  xtd::forms::application_context class.
 /// @par Windows
 /// @image html application_context_w.png
 /// <br>
@@ -91,263 +61,128 @@
 /// <br>
 /// @image html application_context_gd.png
 ///
-/// @example busy_box.cpp
-/// The following code example demonstrates the use of xtd::forms::busy_box dialog.
+/// @example application_restart
+/// Shows how to create an application with  xtd::forms::application::restart method.
 /// @par Windows
-/// @image html busy_box_w.png
+/// @image html application_restart_w.png
 /// <br>
-/// @image html busy_box_wd.png
+/// @image html application_restart_wd.png
 /// @par macOS
-/// @image html busy_box_m.png
+/// @image html application_restart_m.png
 /// <br>
-/// @image html busy_box_md.png
+/// @image html application_restart_md.png
 /// @par Gnome
-/// @image html busy_box_g.png
+/// @image html application_restart_g.png
 /// <br>
-/// @image html busy_box_gd.png
+/// @image html application_restart_gd.png
 ///
-/// @example busy_dialog.cpp
-/// The following code example demonstrates the use of busy_dialog dialog.
+/// @example application_use_wait_cursor
+/// Shows how to create an application_use_wait_cursor with  xtd::forms::application::use_wait_cursor method.
 /// @par Windows
-/// @image html busy_dialog_w.png
+/// @image html application_use_wait_cursor_w.png
 /// <br>
-/// @image html busy_dialog_wd.png
+/// @image html application_use_wait_cursor_wd.png
 /// @par macOS
-/// @image html busy_dialog_m.png
+/// @image html application_use_wait_cursor_m.png
 /// <br>
-/// @image html busy_dialog_md.png
+/// @image html application_use_wait_cursor_md.png
 /// @par Gnome
-/// @image html busy_dialog_g.png
+/// @image html application_use_wait_cursor_g.png
 /// <br>
-/// @image html busy_dialog_gd.png
+/// @image html application_use_wait_cursor_gd.png
 ///
-/// @example button.cpp
-/// The following code example demonstrates the use of button control.
+/// @example application_with_cmake_assembly_info
+/// This example demonstrates the use of xtd::reflection::assembly attributes, xtd::forms::form classes.
 /// @par Windows
-/// @image html button_w.png
+/// @image html application_with_cmake_assembly_info_w.png
 /// <br>
-/// @image html button_wd.png
+/// @image html application_with_cmake_assembly_info_wd.png
 /// @par macOS
-/// @image html button_m.png
+/// @image html application_with_cmake_assembly_info_m.png
 /// <br>
-/// @image html button_md.png
+/// @image html application_with_cmake_assembly_info_md.png
 /// @par Gnome
-/// @image html button_g.png
+/// @image html application_with_cmake_assembly_info_g.png
 /// <br>
-/// @image html button_gd.png
+/// @image html application_with_cmake_assembly_info_gd.png
 ///
-/// @example bitmap_button.cpp
-/// The following code example demonstrates the use of button control with bitmap.
+/// @example application_with_manual_assembly_info
+/// This example demonstrates the use of xtd::reflection::assembly attributes, xtd::forms::form classes.
 /// @par Windows
-/// @image html bitmap_button_w.png
+/// @image html application_with_manual_assembly_info_w.png
 /// <br>
-/// @image html bitmap_button_wd.png
+/// @image html application_with_manual_assembly_info_wd.png
 /// @par macOS
-/// @image html bitmap_button_m.png
+/// @image html application_with_manual_assembly_info_m.png
 /// <br>
-/// @image html bitmap_button_md.png
+/// @image html application_with_manual_assembly_info_md.png
 /// @par Gnome
-/// @image html bitmap_button_g.png
+/// @image html application_with_manual_assembly_info_g.png
 /// <br>
-/// @image html bitmap_button_gd.png
+/// @image html application_with_manual_assembly_info_gd.png
 ///
-/// @example buttons.cpp
-/// The following code example demonstrates the use of buttons control factory.
+/// @example background_worker
+/// demonstrates the use of xtd::forms::background_worker component.
 /// @par Windows
-/// @image html buttons_w.png
+/// @image html background_worker_w.png
 /// <br>
-/// @image html buttons_wd.png
+/// @image html background_worker_wd.png
 /// @par macOS
-/// @image html buttons_m.png
+/// @image html background_worker_m.png
 /// <br>
-/// @image html buttons_md.png
+/// @image html background_worker_md.png
 /// @par Gnome
-/// @image html buttons_g.png
+/// @image html background_worker_g.png
 /// <br>
-/// @image html buttons_gd.png
+/// @image html background_worker_gd.png
 ///
-/// @example check_box.cpp
-/// The following code example demonstrates the use of check_box control.
+/// @example button_images
+/// demonstrates the use of xtd::forms::button_images control.
 /// @par Windows
-/// @image html check_box_w.png
+/// @image html button_images_w.png
 /// <br>
-/// @image html check_box_wd.png
+/// @image html button_images_wd.png
 /// @par macOS
-/// @image html check_box_m.png
+/// @image html button_images_m.png
 /// <br>
-/// @image html check_box_md.png
+/// @image html button_images_md.png
 /// @par Gnome
-/// @image html check_box_g.png
+/// @image html button_images_g.png
 /// <br>
-/// @image html check_box_gd.png
+/// @image html button_images_gd.png
 ///
-/// @example check_boxes.cpp
-/// The following code example demonstrates the use of check_boxes control factory.
+/// @example button_renderer
+/// demonstrates the use of xtd::forms::button_renderer control.
 /// @par Windows
-/// @image html check_boxescheck_boxes_w.png
+/// @image html button_renderer_w.png
 /// <br>
-/// @image html check_boxes_wd.png
+/// @image html button_renderer_wd.png
 /// @par macOS
-/// @image html check_boxescheck_boxes_m.png
+/// @image html button_renderer_m.png
 /// <br>
-/// @image html check_boxes_md.png
+/// @image html button_renderer_md.png
 /// @par Gnome
-/// @image html check_boxes_g.png
+/// @image html button_renderer_g.png
 /// <br>
-/// @image html check_boxes_gd.png
+/// @image html button_renderer_gd.png
 ///
-/// @example checked_list_box.cpp
-/// The following code example demonstrates the use of checked_list_box control.
+/// @example check_box_renderer
+/// demonstrates the use of xtd::forms::check_box_renderer control.
 /// @par Windows
-/// @image html checked_list_box_w.png
+/// @image html check_box_renderer_w.png
 /// <br>
-/// @image html checked_list_box_wd.png
+/// @image html check_box_renderer_wd.png
 /// @par macOS
-/// @image html checked_list_box_m.png
+/// @image html check_box_renderer_m.png
 /// <br>
-/// @image html checked_list_box_md.png
+/// @image html check_box_renderer_md.png
 /// @par Gnome
-/// @image html checked_list_box_g.png
+/// @image html check_box_renderer_g.png
 /// <br>
-/// @image html checked_list_box_gd.png
+/// @image html check_box_renderer_gd.png
 ///
-/// @example choice.cpp
-/// The following code example demonstrates the use of choice control.
-/// @par Windows
-/// @image html choice_w.png
-/// <br>
-/// @image html choice_wd.png
-/// @par macOS
-/// @image html choice_m.png
-/// <br>
-/// @image html choice_md.png
-/// @par Gnome
-/// @image html choice_g.png
-/// <br>
-/// @image html choice_gd.png
-///
-/// @example collapsible_panel.cpp
-/// The following code example demonstrates the use of collapsible_panel container.
-/// @par Windows
-/// @image html collapsible_panel_w.png
-/// <br>
-/// @image html collapsible_panel_wd.png
-/// @par macOS
-/// @image html collapsible_panel_m.png
-/// <br>
-/// @image html collapsible_panel_md.png
-/// @par Gnome
-/// @image html collapsible_panel_g.png
-/// <br>
-/// @image html collapsible_panel_gd.png
-///
-/// @example color_box.cpp
-/// The following code example demonstrates the use of color_box dialog.
-/// @par Windows
-/// @image html color_box_w.png
-/// <br>
-/// @image html color_box_wd.png
-/// @par macOS
-/// @image html color_box_m.png
-/// <br>
-/// @image html color_box_md.png
-/// @par Gnome
-/// @image html color_box_g.png
-/// <br>
-/// @image html color_box_gd.png
-///
-/// @example color_dialog.cpp
-/// The following code example demonstrates the use of color_dialog dialog.
-/// @par Windows
-/// @image html color_dialog_w.png
-/// <br>
-/// @image html color_dialog_wd.png
-/// @par macOS
-/// @image html color_dialog_md.png
-/// <br>
-/// @image html color_dialog_md.png
-/// @par Gnome
-/// @image html color_dialog_g.png
-/// <br>
-/// @image html color_dialog_gd.png
-///
-/// @example color_picker.cpp
-/// The following code example demonstrates the use of color_picker picker.
-/// @par Windows
-/// @image html color_picker_w.png
-/// <br>
-/// @image html color_picker_wd.png
-/// @par macOS
-/// @image html color_picker_m.png
-/// <br>
-/// @image html color_picker_md.png
-/// @par Gnome
-/// @image html color_picker_g.png
-/// <br>
-/// @image html color_picker_gd.png
-///
-/// @example colored_tab_pages.cpp
-/// The following code example demonstrates the use of tab_control and colored tab_page containers.
-/// @par Windows
-/// @image html colored_tab_pages_w.png
-/// <br>
-/// @image html colored_tab_pages_wd.png
-/// @par macOS
-/// @image html colored_tab_pages_m.png
-/// <br>
-/// @image html colored_tab_pages_md.png
-/// @par Gnome
-/// @image html colored_tab_pages_g.png
-/// <br>
-/// @image html colored_tab_pages_gd.png
-///
-/// @example combo_box.cpp
-/// The following code example demonstrates the use of combo box control.
-/// @par Windows
-/// @image html combo_box_w.png
-/// <br>
-/// @image html combo_box_wd.png
-/// @par macOS
-/// @image html combo_box_m.png
-/// <br>
-/// @image html combo_box_md.png
-/// @par Gnome
-/// @image html combo_box_g.png
-/// <br>
-/// @image html combo_box_gd.png
-///
-/// @example command_link_button.cpp
-/// The following code example demonstrates the use of command link button control.
-/// @par Windows
-/// @image html command_link_button_w.png
-/// <br>
-/// @image html command_link_button_wd.png
-/// @par macOS
-/// @image html command_link_button_m.png
-/// <br>
-/// @image html command_link_button_md.png
-/// @par Gnome
-/// @image html command_link_button_g.png
-/// <br>
-/// @image html command_link_button_gd.png
-///
-/// @example control.cpp
-/// The following code example demonstrates the use of control control.
-/// @par Windows
-/// @image html control_w.png
-/// <br>
-/// @image html control_wd.png
-/// @par macOS
-/// @image html control_m.png
-/// <br>
-/// @image html control_md.png
-/// @par Gnome
-/// @image html control_g.png
-/// <br>
-/// @image html control_gd.png
-///
-/// @example countries.cpp
-/// The following code example demonstrates the use of countries and country components.
+/// @example countries
+/// demonstrates the use of xtd::forms::countries component.
 /// @par Windows
 /// @image html countries_w.png
 /// <br>
@@ -361,8 +196,8 @@
 /// <br>
 /// @image html countries_gd.png
 ///
-/// @example cursors.cpp
-/// The following code example demonstrates the use of cursors component.
+/// @example cursors
+/// demonstrates the use of xtd::forms::cursor component.
 /// @par Windows
 /// @image html cursors_w.png
 /// <br>
@@ -376,68 +211,8 @@
 /// <br>
 /// @image html cursors_gd.png
 ///
-/// @example date_time_picker.cpp
-/// The following code example demonstrates the use of date_time_picker picker.
-/// @par Windows
-/// @image html date_time_picker_w.png
-/// <br>
-/// @image html date_time_picker_wd.png
-/// @par macOS
-/// @image html date_time_picker_m.png
-/// <br>
-/// @image html date_time_picker_md.png
-/// @par Gnome
-/// @image html date_time_picker_g.png
-/// <br>
-/// @image html date_time_picker_gd.png
-///
-/// @example debug_form.cpp
-/// The following code example demonstrates the use of debug_form form.
-/// @par Windows
-/// @image html debug_form_w.png
-/// <br>
-/// @image html debug_form_wd.png
-/// @par macOS
-/// @image html debug_form_m.png
-/// <br>
-/// @image html debug_form_md.png
-/// @par Gnome
-/// @image html debug_form_g.png
-/// <br>
-/// @image html debug_form_gd.png
-///
-/// @example dot_matrix_display.cpp
-/// The following code example demonstrates the use of dot matrix display control.
-/// @par Windows
-/// @image html dot_matrix_display_w.png
-/// <br>
-/// @image html dot_matrix_display_wd.png
-/// @par macOS
-/// @image html dot_matrix_display_m.png
-/// <br>
-/// @image html dot_matrix_display_md.png
-/// @par Gnome
-/// @image html dot_matrix_display_g.png
-/// <br>
-/// @image html dot_matrix_display_gd.png
-///
-/// @example fill_rectangle.cpp
-/// The following code example demonstrates the use of brush classes.
-/// @par Windows
-/// @image html fill_rectangle_w.png
-/// <br>
-/// @image html fill_rectangle_wd.png
-/// @par macOS
-/// @image html fill_rectangle_m.png
-/// <br>
-/// @image html fill_rectangle_md.png
-/// @par Gnome
-/// @image html fill_rectangle_g.png
-/// <br>
-/// @image html fill_rectangle_gd.png
-///
-/// @example emoticons.cpp
-/// The following code example demonstrates the use of emoticon and emoticons classes.
+/// @example emoticons
+/// demonstrates the use of xtd::forms::emoticons control.
 /// @par Windows
 /// @image html emoticons_w.png
 /// <br>
@@ -451,8 +226,8 @@
 /// <br>
 /// @image html emoticons_gd.png
 ///
-/// @example enable_debug.cpp
-/// The following code example demonstrates the use of enable_debug class.
+/// @example enable_debug
+/// demonstrates the use of xtd::enable_debugs::enable_debug container.
 /// @par Windows
 /// @image html enable_debug_w.png
 /// <br>
@@ -466,173 +241,8 @@
 /// <br>
 /// @image html enable_debug_gd.png
 ///
-/// @example exception_box.cpp
-/// The following code example demonstrates the use of exception_dialog dialog.
-/// @par Windows
-/// @image html exception_box_w.png
-/// <br>
-/// @image html exception_box_wd.png
-/// @par macOS
-/// @image html exception_box_m.png
-/// <br>
-/// @image html exception_box_md.png
-/// @par Gnome
-/// @image html exception_box_g.png
-/// <br>
-/// @image html exception_box_gd.png
-///
-/// @example exception_dialog.cpp
-/// The following code example demonstrates the use of exception_dialog dialog.
-/// @par Windows
-/// @image html exception_dialog_w.png
-/// <br>
-/// @image html exception_dialog_wd.png
-/// @par macOS
-/// @image html exception_dialog_m.png
-/// <br>
-/// @image html exception_dialog_md.png
-/// @par Gnome
-/// @image html exception_dialog_g.png
-/// <br>
-/// @image html exception_dialog_gd.png
-///
-/// @example folder_browser_dialog.cpp
-/// The following code example demonstrates the use of folder_browser_dialog dialog.
-/// @par Windows
-/// @image html folder_browser_dialog_w.png
-/// <br>
-/// @image html folder_browser_dialog_wd.png
-/// @par macOS
-/// @image html folder_browser_dialog_m.png
-/// <br>
-/// @image html folder_browser_dialog_md.png
-/// @par Gnome
-/// @image html folder_browser_dialog_g.png
-/// <br>
-/// @image html folder_browser_dialog_gd.png
-///
-/// @example font_dialog.cpp
-/// The following code example demonstrates the use of font_dialog dialog.
-/// @par Windows
-/// @image html font_dialog_w.png
-/// <br>
-/// @image html font_dialog_wd.png
-/// @par macOS
-/// @image html font_dialog_m.png
-/// <br>
-/// @image html font_dialog_md.png
-/// @par Gnome
-/// @image html font_dialog_g.png
-/// <br>
-/// @image html font_dialog_gd.png
-///
-/// @example font_picker.cpp
-/// The following code example demonstrates the use of font_picker picker.
-/// @par Windows
-/// @image html font_picker_w.png
-/// <br>
-/// @image html font_picker_wd.png
-/// @par macOS
-/// @image html font_picker_m.png
-/// <br>
-/// @image html font_picker_md.png
-/// @par Gnome
-/// @image html font_picker_g.png
-/// <br>
-/// @image html font_picker_gd.png
-///
-/// @example form.cpp
-/// The following code example demonstrates the use of form control.
-/// @par Windows
-/// @image html form_w.png
-/// <br>
-/// @image html form_wd.png
-/// @par macOS
-/// @image html form_m.png
-/// <br>
-/// @image html form_md.png
-/// @par Gnome
-/// @image html form_g.png
-/// <br>
-/// @image html form_gd.png
-///
-/// @example fourteen_segment_display.cpp
-/// The following code example demonstrates the use of fourteen segment display control.
-/// @par Windows
-/// @image html fourteen_segment_display_w.png
-/// <br>
-/// @image html fourteen_segment_display_wd.png
-/// @par macOS
-/// @image html fourteen_segment_display_m.png
-/// <br>
-/// @image html fourteen_segment_display_md.png
-/// @par Gnome
-/// @image html fourteen_segment_display_g.png
-/// <br>
-/// @image html fourteen_segment_display_gd.png
-///
-/// @example group_box.cpp
-/// The following code example demonstrates the use of group_box control.
-/// @par Windows
-/// @image html group_box_w.png
-/// <br>
-/// @image html group_box_wd.png
-/// @par macOS
-/// @image html group_box_m.png
-/// <br>
-/// @image html group_box_md.png
-/// @par Gnome
-/// @image html group_box_g.png
-/// <br>
-/// @image html group_box_gd.png
-///
-/// @example group_box_and_check_box.cpp
-/// The following code example demonstrates the use of group_box container and check_box controls.
-/// @par Windows
-/// @image html group_box_and_check_box_w.png
-/// <br>
-/// @image html group_box_and_check_box_wd.png
-/// @par macOS
-/// @image html group_box_and_check_box_m.png
-/// <br>
-/// @image html group_box_and_check_box_md.png
-/// @par Gnome
-/// @image html group_box_and_check_box_g.png
-/// <br>
-/// @image html group_box_and_check_box_gd.png
-///
-/// @example group_box_and_radio_button.cpp
-/// The following code example demonstrates the use of group_box container and radio_button controls.
-/// @par Windows
-/// @image html group_box_and_radio_button_w.png
-/// <br>
-/// @image html group_box_and_radio_button_wd.png
-/// @par macOS
-/// @image html group_box_and_radio_button_m.png
-/// <br>
-/// @image html group_box_and_radio_button_md.png
-/// @par Gnome
-/// @image html group_box_and_radio_button_g.png
-/// <br>
-/// @image html group_box_and_radio_button_gd.png
-///
-/// @example hello_world_label.cpp
-/// The following code example demonstrates the use of label control.
-/// @par Windows
-/// @image html hello_world_label_w.png
-/// <br>
-/// @image html hello_world_label_wd.png
-/// @par macOS
-/// @image html hello_world_label_m.png
-/// <br>
-/// @image html hello_world_label_md.png
-/// @par Gnome
-/// @image html hello_world_label_g.png
-/// <br>
-/// @image html hello_world_label_gd.png
-///
-/// @example image_list.cpp
-/// The following code example demonstrates the use of image_list class.
+/// @example image_list
+/// demonstrates the use of xtd::forms::image_list component.
 /// @par Windows
 /// @image html image_list_w.png
 /// <br>
@@ -646,338 +256,53 @@
 /// <br>
 /// @image html image_list_gd.png
 ///
-/// @example input_box.cpp
-/// The following code example demonstrates the use of input_box dialog.
+/// @example images
+/// demonstrates the use of xtd::forms::images component.
 /// @par Windows
-/// @image html input_box_w.png
+/// @image html images_w.png
 /// <br>
-/// @image html input_box_wd.png
+/// @image html images_wd.png
 /// @par macOS
-/// @image html input_box_m.png
+/// @image html images_m.png
 /// <br>
-/// @image html input_box_md.png
+/// @image html images_md.png
 /// @par Gnome
-/// @image html input_box_g.png
+/// @image html images_g.png
 /// <br>
-/// @image html input_box_gd.png
+/// @image html images_gd.png
 ///
-/// @example input_dialog.cpp
-/// The following code example demonstrates the use of input_dialog dialog.
+/// @example process_form
+/// Shows how to launch process from forms.
 /// @par Windows
-/// @image html input_dialog_w.png
+/// @image html process_form_w.png
 /// <br>
-/// @image html input_dialog_wd.png
+/// @image html process_form_wd.png
 /// @par macOS
-/// @image html input_dialog_m.png
+/// @image html process_form_m.png
 /// <br>
-/// @image html input_dialog_md.png
+/// @image html process_form_md.png
 /// @par Gnome
-/// @image html input_dialog_g.png
+/// @image html process_form_g.png
 /// <br>
-/// @image html input_dialog_gd.png
+/// @image html process_form_gd.png
 ///
-/// @example input_dialog_multiline.cpp
-/// The following code example demonstrates the use of input_dialog dialog with multiline.
+/// @example radio_button_renderer
+/// demonstrates the use of xtd::forms::radio_button_renderer control.
 /// @par Windows
-/// @image html input_dialog_multiline_w.png
+/// @image html radio_button_renderer_w.png
 /// <br>
-/// @image html input_dialog_multiline_wd.png
+/// @image html radio_button_renderer_wd.png
 /// @par macOS
-/// @image html input_dialog_multiline_m.png
+/// @image html radio_button_renderer_m.png
 /// <br>
-/// @image html input_dialog_multiline_md.png
+/// @image html radio_button_renderer_md.png
 /// @par Gnome
-/// @image html input_dialog_multiline_g.png
+/// @image html radio_button_renderer_g.png
 /// <br>
-/// @image html input_dialog_multiline_gd.png
+/// @image html radio_button_renderer_gd.png
 ///
-/// @example input_dialog_password.cpp
-/// The following code example demonstrates the use of input_dialog dialog with password.
-/// @par Windows
-/// @image html input_dialog_password_w.png
-/// <br>
-/// @image html input_dialog_password_wd.png
-/// @par macOS
-/// @image html input_dialog_passwordpassword_m.png
-/// <br>
-/// @image html input_dialog_password_md.png
-/// @par Gnome
-/// @image html input_dialog_password_g.png
-/// <br>
-/// @image html input_dialog_multiline_gd.png
-///
-/// @example label.cpp
-/// The following code example demonstrates the use of label control.
-/// @par Windows
-/// @image html label_w.png
-/// <br>
-/// @image html label_wd.png
-/// @par macOS
-/// @image html label_m.png
-/// <br>
-/// @image html label_md.png
-/// @par Gnome
-/// @image html label_g.png
-/// <br>
-/// @image html label_gd.png
-///
-/// @example lcd_label.cpp
-/// The following code example demonstrates the use of lcd_label control.
-/// @par Windows
-/// @image html lcd_label_w.png
-/// <br>
-/// @image html lcd_label_wdbel_wd.png
-/// @par macOS
-/// @image html lcd_label_m.png
-/// <br>
-/// @image html lcd_label_md.png
-/// @par Gnome
-/// @image html lcd_label_g.png
-/// <br>
-/// @image html lcd_label_gd.png
-///
-/// @example lcd_label2.cpp
-/// The following code example demonstrates the use of lcd_label control.
-/// @par Windows
-/// @image html lcd_label2_w.png
-/// <br>
-/// @image html lcd_label2_wd.png
-/// @par macOS
-/// @image html lcd_label2_m.png
-/// <br>
-/// @image html lcd_label2_md.png
-/// @par Gnome
-/// @image html lcd_label2_g.png
-/// <br>
-/// @image html lcd_label2_gd.png
-///
-/// @example list_box.cpp
-/// The following code example demonstrates the use of list_box control.
-/// @par Windows
-/// @image html list_box_w.png
-/// <br>
-/// @image html list_box_wd.png
-/// @par macOS
-/// @image html list_box_m.png
-/// <br>
-/// @image html list_box_md.png
-/// @par Gnome
-/// @image html list_box_g.png
-/// <br>
-/// @image html list_box_gd.png
-///
-/// @example main_menu.cpp
-/// The following code example demonstrates the use of main_menu control.
-/// @par Windows
-/// @image html main_menu_w.png
-/// <br>
-/// @image html main_menu_wd.png
-/// @par macOS
-/// @image html main_menu_m.png
-/// <br>
-/// @image html main_menu_md.png
-/// @par Gnome
-/// @image html main_menu_g.png
-/// <br>
-/// @image html main_menu_gd.png
-///
-/// @example main_menu_create_standard_items.cpp
-/// The following code example demonstrates the use of main_menu::create_standard_items factory.
-/// @par Windows
-/// @image html main_menu_create_standard_items_w.png
-/// <br>
-/// @image html main_menu_create_standard_itemsmain_menu_create_standard_items_wd.png
-/// @par macOS
-/// @image html main_menu_create_standard_items_m.png
-/// <br>
-/// @image html main_menu_create_standard_items_md.png
-/// @par Gnome
-/// @image html main_menu_create_standard_items_g.png
-/// <br>
-/// @image html main_menu_create_standard_items_gd.png
-///
-/// @example message_box.cpp
-/// The following code example demonstrates the use of message_box dialog.
-/// @par Windows
-/// @image html message_box_w.png
-/// <br>
-/// @image html message_box_wd.png
-/// @par macOS
-/// @image html message_box_m.png
-/// <br>
-/// @image html message_box_md.png
-/// @par Gnome
-/// @image html message_box_g.png
-/// <br>
-/// @image html message_box_gd.png
-///
-/// @example message_dialog.cpp
-/// The following code example demonstrates the use of message_dialog dialog.
-/// @par Windows
-/// @image html message_dialog_w.png
-/// <br>
-/// @image html message_dialog_wd.png
-/// @par macOS
-/// @image html message_dialog_m.png
-/// <br>
-/// @image html message_dialog_md.png
-/// @par Gnome
-/// @image html message_dialog_g.png
-/// <br>
-/// @image html message_dialog_gd.png
-///
-/// @example nine_segment_display.cpp
-/// The following code example demonstrates the use of nine segment display control.
-/// @par Windows
-/// @image html nine_segment_display_w.png
-/// <br>
-/// @image html nine_segment_display_wd.png
-/// @par macOS
-/// @image html nine_segment_display_m.png
-/// <br>
-/// @image html nine_segment_display_md.png
-/// @par Gnome
-/// @image html nine_segment_display_g.png
-/// <br>
-/// @image html nine_segment_display_gd.png
-///
-/// @example numeric_up_down.cpp
-/// The following code example demonstrates the use of numeric up down control.
-/// @par Windows
-/// @image html numeric_up_down_w.png
-/// <br>
-/// @image html numeric_up_down_wd.png
-/// @par macOS
-/// @image html numeric_up_down_m.png
-/// <br>
-/// @image html numeric_up_down_md.png
-/// @par Gnome
-/// @image html numeric_up_down_g.png
-/// <br>
-/// @image html numeric_up_down_gd.png
-///
-/// @example open_file_dialog.cpp
-/// The following code example demonstrates the use of open_file_dialog dialog.
-/// @par Windows
-/// @image html open_file_dialog_w.png
-/// <br>
-/// @image html open_file_dialog_wd.png
-/// @par macOS
-/// @image html open_file_dialog_m.png
-/// <br>
-/// @image html open_file_dialog_md.png
-/// @par Gnome
-/// @image html open_file_dialog_g.png
-/// <br>
-/// @image html open_file_dialog_gd.png
-///
-/// @example panel.cpp
-/// The following code example demonstrates the use of panel container.
-/// @par Windows
-/// @image html panel_w.png
-/// <br>
-/// @image html panel_wd.png
-/// @par macOS
-/// @image html panel_m.png
-/// <br>
-/// @image html panel_md.png
-/// @par Gnome
-/// @image html panel_g.png
-/// <br>
-/// @image html panel_gd.png
-///
-/// @example picture_box.cpp
-/// The following code example demonstrates the use of picture box control.
-/// @par Windows
-/// @image html picture_box_w.png
-/// <br>
-/// @image html picture_box_wd.png
-/// @par macOS
-/// @image html picture_box_m.png
-/// <br>
-/// @image html picture_box_md.png
-/// @par Gnome
-/// @image html picture_box_g.png
-/// <br>
-/// @image html picture_box_gd.png
-///
-/// @example progress_bar.cpp
-/// The following code example demonstrates the use of progress_bar control.
-/// @par Windows
-/// @image html progress_bar_w.png
-/// <br>
-/// @image html progress_bar_wd.png
-/// @par macOS
-/// @image html progress_bar_m.png
-/// <br>
-/// @image html progress_bar_md.png
-/// @par Gnome
-/// @image html progress_bar_g.png
-/// <br>
-/// @image html progress_bar_gd.png
-///
-/// @example progress_dialog.cpp
-/// The following code example demonstrates the use of progress_dialog dialog.
-/// @par Windows
-/// @image html progress_dialog_w.png
-/// <br>
-/// @image html progress_dialog_wd.png
-/// @par macOS
-/// @image html progress_dialog_m.png
-/// <br>
-/// @image html progress_dialog_md.png
-/// @par Gnome
-/// @image html progress_dialog_g.png
-/// <br>
-/// @image html progress_dialog_gd.png
-///
-/// @example radio_button.cpp
-/// The following code example demonstrates the use of radio_button control.
-/// @par Windows
-/// @image html radio_button_w.png
-/// <br>
-/// @image html radio_button_wd.png
-/// @par macOS
-/// @image html radio_button_m.png
-/// <br>
-/// @image html radio_button_md.png
-/// @par Gnome
-/// @image html radio_button_g.png
-/// <br>
-/// @image html radio_button_gd.png
-///
-/// @example radio_buttons.cpp
-/// The following code example demonstrates the use of radio_button control factory.
-/// @par Windows
-/// @image html radio_buttons_w.png
-/// <br>
-/// @image html radio_buttons_wd.png
-/// @par macOS
-/// @image html radio_buttons_m.png
-/// <br>
-/// @image html radio_buttons_md.png
-/// @par Gnome
-/// @image html radio_buttons_g.png
-/// <br>
-/// @image html radio_buttons_gd.png
-///
-/// @example save_file_dialog.cpp
-/// The following code example demonstrates the use of save_file_dialog dialog.
-/// @par Windows
-/// @image html save_file_dialog_w.png
-/// <br>
-/// @image html save_file_dialog_wd.png
-/// @par macOS
-/// @image html save_file_dialog_m.png
-/// <br>
-/// @image html save_file_dialog_md.png
-/// @par Gnome
-/// @image html save_file_dialog_g.png
-/// <br>
-/// @image html save_file_dialog_gd.png
-///
-/// @example screen.cpp
-/// The following code example demonstrates the use of screen class.
+/// @example screen
+/// demonstrates the use of xtd::forms::screen component.
 /// @par Windows
 /// @image html screen_w.png
 /// <br>
@@ -991,8 +316,8 @@
 /// <br>
 /// @image html screen_gd.png
 ///
-/// @example settings_example.cpp
-/// The following code example demonstrates the use of settings class.
+/// @example settings_example
+/// demonstrates the use of xtd::forms::settings component.
 /// @par Windows
 /// @image html settings_example_w.png
 /// <br>
@@ -1006,113 +331,8 @@
 /// <br>
 /// @image html settings_example_gd.png
 ///
-/// @example seven_segment_display.cpp
-/// The following code example demonstrates the use of seven segment display control.
-/// @par Windows
-/// @image html seven_segment_display_w.png
-/// <br>
-/// @image html seven_segment_display_wd.png
-/// @par macOS
-/// @image html seven_segment_display_m.png
-/// <br>
-/// @image html seven_segment_display_md.png
-/// @par Gnome
-/// @image html seven_segment_display_g.png
-/// <br>
-/// @image html seven_segment_display_gd.png
-///
-/// @example sixteen_segment_display.cpp
-/// The following code example demonstrates the use of sixteen segment display control.
-/// @par Windows
-/// @image html sixteen_segment_display_w.png
-/// <br>
-/// @image html sixteen_segment_display_wd.png
-/// @par macOS
-/// @image html sixteen_segment_display_m.png
-/// <br>
-/// @image html sixteen_segment_display_md.png
-/// @par Gnome
-/// @image html sixteen_segment_display_g.png
-/// <br>
-/// @image html sixteen_segment_display_gd.png
-///
-/// @example split_container.cpp
-/// The following code example demonstrates the use of split_container container.
-/// @par Windows
-/// @image html split_container_w.png
-/// <br>
-/// @image html split_container_wd.png
-/// @par macOS
-/// @image html split_container_m.png
-/// <br>
-/// @image html split_container_md.png
-/// @par Gnome
-/// @image html split_container_g.png
-/// <br>
-/// @image html split_container_gd.png
-///
-/// @example splitter.cpp
-/// The following code example demonstrates the use of splitter control.
-/// @par Windows
-/// @image html splitter_w.png
-/// <br>
-/// @image html splitter_wd.png
-/// @par macOS
-/// @image html splitter_m.png
-/// <br>
-/// @image html splitter_md.png
-/// @par Gnome
-/// @image html splitter_g.png
-/// <br>
-/// @image html splitter_gd.png
-///
-/// @example switch_button.cpp
-/// The following code example demonstrates the use of switch button control.
-/// @par Windows
-/// @image html switch_button_w.png
-/// <br>
-/// @image html switch_button_wd.png
-/// @par macOS
-/// @image html switch_button_m.png
-/// <br>
-/// @image html switch_button_md.png
-/// @par Gnome
-/// @image html switch_button_g.png
-/// <br>
-/// @image html switch_button_gd.png
-///
-/// @example tab_control.cpp
-/// The following code example demonstrates the use of tab_control container.
-/// @par Windows
-/// @image html tab_control_w.png
-/// <br>
-/// @image html tab_control_wd.png
-/// @par macOS
-/// @image html tab_control_m.png
-/// <br>
-/// @image html tab_control_md.png
-/// @par Gnome
-/// @image html tab_control_g.png
-/// <br>
-/// @image html tab_control_gd.png
-///
-/// @example text_box.cpp
-/// The following code example demonstrates the use of text box control.
-/// @par Windows
-/// @image html text_box_w.png
-/// <br>
-/// @image html text_box_wd.png
-/// @par macOS
-/// @image html text_box_m.png
-/// <br>
-/// @image html text_box_md.png
-/// @par Gnome
-/// @image html text_box_g.png
-/// <br>
-/// @image html text_box_gd.png
-///
-/// @example texts.cpp
-/// The following code example demonstrates the use of texts class.
+/// @example texts
+/// demonstrates the use of xtd::forms::system_texts strings.
 /// @par Windows
 /// @image html texts_w.png
 /// <br>
@@ -1126,8 +346,8 @@
 /// <br>
 /// @image html texts_gd.png
 ///
-/// @example timer.cpp
-/// The following code example demonstrates the use of timer component.
+/// @example timer
+/// demonstrates the use of xtd::forms::timer component.
 /// @par Windows
 /// @image html timer_w.png
 /// <br>
@@ -1141,83 +361,23 @@
 /// <br>
 /// @image html timer_gd.png
 ///
-/// @example toggle_button.cpp
-/// The following code example demonstrates the use of toggle_button control.
+/// @example translator
+/// demonstrates the use of xtd::forms::translator strings.
 /// @par Windows
-/// @image html toggle_button_w.png
+/// @image html translator_w.png
 /// <br>
-/// @image html toggle_button_wd.png
+/// @image html translator_wd.png
 /// @par macOS
-/// @image html toggle_button_m.png
+/// @image html translator_m.png
 /// <br>
-/// @image html toggle_button_md.png
+/// @image html translator_md.png
 /// @par Gnome
-/// @image html toggle_button_g.png
+/// @image html translator_g.png
 /// <br>
-/// @image html toggle_button_gd.png
+/// @image html translator_gd.png
 ///
-/// @example toggle_buttons.cpp
-/// The following code example demonstrates the use of toggle_buttons factory.
-/// @par Windows
-/// @image html toggle_buttons_w.png
-/// <br>
-/// @image html toggle_buttons_wd.png
-/// @par macOS
-/// @image html toggle_buttons_m.png
-/// <br>
-/// @image html toggle_buttons_md.png
-/// @par Gnome
-/// @image html toggle_buttons_g.png
-/// <br>
-/// @image html toggle_buttons_gd.png
-///
-/// @example trace_form.cpp
-/// The following code example demonstrates the use of trace_form form.
-/// @par Windows
-/// @image html trace_form_w.png
-/// <br>
-/// @image html trace_form_wd.png
-/// @par macOS
-/// @image html trace_form_m.png
-/// <br>
-/// @image html trace_form_md.png
-/// @par Gnome
-/// @image html trace_form_g.png
-/// <br>
-/// @image html trace_form_gd.png
-///
-/// @example track_bar.cpp
-/// The following code example demonstrates the use of track_bar control.
-/// @par Windows
-/// @image html track_bar_w.png
-/// <br>
-/// @image html track_bar_wd.png
-/// @par macOS
-/// @image html track_bar_m.png
-/// <br>
-/// @image html track_bar_md.png
-/// @par Gnome
-/// @image html track_bar_g.png
-/// <br>
-/// @image html track_bar_gd.png
-///
-/// @example up_down_button.cpp
-/// The following code example demonstrates the use of up down button control.
-/// @par Windows
-/// @image html up_down_button_w.png
-/// <br>
-/// @image html up_down_button_wd.png
-/// @par macOS
-/// @image html up_down_button_m.png
-/// <br>
-/// @image html up_down_button_md.png
-/// @par Gnome
-/// @image html up_down_button_g.png
-/// <br>
-/// @image html up_down_button_gd.png
-///
-/// @example use_wait_cursor.cpp
-/// The following code example demonstrates the use of use_wait_cursor class.
+/// @example use_wait_cursor
+/// Shows how to create an use_wait_cursor with  xtd::forms::application class.
 /// @par Windows
 /// @image html use_wait_cursor_w.png
 /// <br>
@@ -1231,8 +391,713 @@
 /// <br>
 /// @image html use_wait_cursor_gd.png
 ///
-/// @example user_control.cpp
-/// The following code example demonstrates the use of user control.
+/// @example collapsible_panel
+/// demonstrates the use of xtd::forms::collapsible_panel container.
+/// @par Windows
+/// @image html collapsible_panel_w.png
+/// <br>
+/// @image html collapsible_panel_wd.png
+/// @par macOS
+/// @image html collapsible_panel_m.png
+/// <br>
+/// @image html collapsible_panel_md.png
+/// @par Gnome
+/// @image html collapsible_panel_g.png
+/// <br>
+/// @image html collapsible_panel_gd.png
+///
+/// @example group_box
+/// demonstrates the use of xtd::forms::group_box container.
+/// @par Windows
+/// @image html group_box_w.png
+/// <br>
+/// @image html group_box_wd.png
+/// @par macOS
+/// @image html group_box_m.png
+/// <br>
+/// @image html group_box_md.png
+/// @par Gnome
+/// @image html group_box_g.png
+/// <br>
+/// @image html group_box_gd.png
+///
+/// @example horizontal_layout_panel
+/// demonstrates the use of xtd::forms::horizontal_layout_panel container.
+/// @par Windows
+/// @image html horizontal_layout_panel_w.png
+/// <br>
+/// @image html horizontal_layout_panel_wd.png
+/// @par macOS
+/// @image html horizontal_layout_panel_m.png
+/// <br>
+/// @image html horizontal_layout_panel_md.png
+/// @par Gnome
+/// @image html horizontal_layout_panel_g.png
+/// <br>
+/// @image html horizontal_layout_panel_gd.png
+///
+/// @example panel
+/// demonstrates the use of xtd::forms::panel container.
+/// @par Windows
+/// @image html panel_w.png
+/// <br>
+/// @image html panel_wd.png
+/// @par macOS
+/// @image html panel_m.png
+/// <br>
+/// @image html panel_md.png
+/// @par Gnome
+/// @image html panel_g.png
+/// <br>
+/// @image html panel_gd.png
+///
+/// @example popup_panel
+/// demonstrates the use of xtd::forms::popup_panel container.
+/// @par Windows
+/// @image html popup_panel_w.png
+/// <br>
+/// @image html popup_panel_wd.png
+/// @par macOS
+/// @image html popup_panel_m.png
+/// <br>
+/// @image html popup_panel_md.png
+/// @par Gnome
+/// @image html popup_panel_g.png
+/// <br>
+/// @image html popup_panel_gd.png
+///
+/// @example split_container
+/// demonstrates the use of xtd::forms::split_container container.
+/// @par Windows
+/// @image html split_container_w.png
+/// <br>
+/// @image html split_container_wd.png
+/// @par macOS
+/// @image html split_container_m.png
+/// <br>
+/// @image html split_container_md.png
+/// @par Gnome
+/// @image html split_container_g.png
+/// <br>
+/// @image html split_container_gd.png
+///
+/// @example tab_control
+/// demonstrates the use of xtd::forms::tab_control container.
+/// @par Windows
+/// @image html tab_control_w.png
+/// <br>
+/// @image html tab_control_wd.png
+/// @par macOS
+/// @image html tab_control_m.png
+/// <br>
+/// @image html tab_control_md.png
+/// @par Gnome
+/// @image html tab_control_g.png
+/// <br>
+/// @image html tab_control_gd.png
+///
+/// @example vertical_layout_panel
+/// demonstrates the use of xtd::forms::vertical_layout_panel container.
+/// @par Windows
+/// @image html vertical_layout_panel_w.png
+/// <br>
+/// @image html vertical_layout_panel_wd.png
+/// @par macOS
+/// @image html vertical_layout_panel_m.png
+/// <br>
+/// @image html vertical_layout_panel_md.png
+/// @par Gnome
+/// @image html vertical_layout_panel_g.png
+/// <br>
+/// @image html vertical_layout_panel_gd.png
+///
+/// @example animation
+/// demonstrates the use of xtd::forms::animation control.
+/// @par Windows
+/// @image html animation_w.png
+/// <br>
+/// @image html animation_wd.png
+/// @par macOS
+/// @image html animation_m.png
+/// <br>
+/// @image html animation_md.png
+/// @par Gnome
+/// @image html animation_g.png
+/// <br>
+/// @image html animation_gd.png
+///
+/// @example button
+/// demonstrates the use of xtd::forms::button control.
+/// @par Windows
+/// @image html button_w.png
+/// <br>
+/// @image html button_wd.png
+/// @par macOS
+/// @image html button_m.png
+/// <br>
+/// @image html button_md.png
+/// @par Gnome
+/// @image html button_g.png
+/// <br>
+/// @image html button_gd.png
+///
+/// @example buttons
+/// demonstrates the use of xtd::forms::buttons button object collection.
+/// @par Windows
+/// @image html buttons_w.png
+/// <br>
+/// @image html buttons_wd.png
+/// @par macOS
+/// @image html buttons_m.png
+/// <br>
+/// @image html buttons_md.png
+/// @par Gnome
+/// @image html buttons_g.png
+/// <br>
+/// @image html buttons_gd.png
+///
+/// @example check_box
+/// demonstrates the use of xtd::forms::check_box control.
+/// @par Windows
+/// @image html check_box_w.png
+/// <br>
+/// @image html check_box_wd.png
+/// @par macOS
+/// @image html check_box_m.png
+/// <br>
+/// @image html check_box_md.png
+/// @par Gnome
+/// @image html check_box_g.png
+/// <br>
+/// @image html check_box_gd.png
+///
+/// @example check_boxes
+/// demonstrates the use of xtd::forms::check_boxes check_box object collection.
+/// @par Windows
+/// @image html check_boxes_w.png
+/// <br>
+/// @image html check_boxes_wd.png
+/// @par macOS
+/// @image html check_boxes_m.png
+/// <br>
+/// @image html check_boxes_md.png
+/// @par Gnome
+/// @image html check_boxes_g.png
+/// <br>
+/// @image html check_boxes_gd.png
+///
+/// @example checked_list_box
+/// demonstrates the use of xtd::forms::checked_list_box control.
+/// @par Windows
+/// @image html checked_list_box_w.png
+/// <br>
+/// @image html checked_list_box_wd.png
+/// @par macOS
+/// @image html checked_list_box_m.png
+/// <br>
+/// @image html checked_list_box_md.png
+/// @par Gnome
+/// @image html checked_list_box_g.png
+/// <br>
+/// @image html checked_list_box_gd.png
+///
+/// @example choice
+/// demonstrates the use of xtd::forms::choice control.
+/// @par Windows
+/// @image html choice_w.png
+/// <br>
+/// @image html choice_wd.png
+/// @par macOS
+/// @image html choice_m.png
+/// <br>
+/// @image html choice_md.png
+/// @par Gnome
+/// @image html choice_g.png
+/// <br>
+/// @image html choice_gd.png
+///
+/// @example color_picker
+/// demonstrates the use of xtd::forms::color_picker control.
+/// @par Windows
+/// @image html color_picker_w.png
+/// <br>
+/// @image html color_picker_wd.png
+/// @par macOS
+/// @image html color_picker_m.png
+/// <br>
+/// @image html color_picker_md.png
+/// @par Gnome
+/// @image html color_picker_g.png
+/// <br>
+/// @image html color_picker_gd.png
+///
+/// @example combo_box
+/// demonstrates the use of xtd::forms::combo_box control.
+/// @par Windows
+/// @image html combo_box_w.png
+/// <br>
+/// @image html combo_box_wd.png
+/// @par macOS
+/// @image html combo_box_m.png
+/// <br>
+/// @image html combo_box_md.png
+/// @par Gnome
+/// @image html combo_box_g.png
+/// <br>
+/// @image html combo_box_gd.png
+///
+/// @example command_link_button
+/// demonstrates the use of xtd::forms::command_link_button control.
+/// @par Windows
+/// @image html command_link_button_w.png
+/// <br>
+/// @image html command_link_button_wd.png
+/// @par macOS
+/// @image html command_link_button_m.png
+/// <br>
+/// @image html command_link_button_md.png
+/// @par Gnome
+/// @image html command_link_button_g.png
+/// <br>
+/// @image html command_link_button_gd.png
+///
+/// @example control
+/// demonstrates the use of xtd::forms::control control.
+/// @par Windows
+/// @image html control_w.png
+/// <br>
+/// @image html control_wd.png
+/// @par macOS
+/// @image html control_m.png
+/// <br>
+/// @image html control_md.png
+/// @par Gnome
+/// @image html control_g.png
+/// <br>
+/// @image html control_gd.png
+///
+/// @example date_time_picker
+/// demonstrates the use of xtd::forms::date_time_picker dialog.
+/// @par Windows
+/// @image html date_time_picker_w.png
+/// <br>
+/// @image html date_time_picker_wd.png
+/// @par macOS
+/// @image html date_time_picker_m.png
+/// <br>
+/// @image html date_time_picker_md.png
+/// @par Gnome
+/// @image html date_time_picker_g.png
+/// <br>
+/// @image html date_time_picker_gd.png
+///
+/// @example domain_up_down
+/// demonstrates the use of xtd::forms::domain_up_down control.
+/// @par Windows
+/// @image html domain_up_down_w.png
+/// <br>
+/// @image html domain_up_down_wd.png
+/// @par macOS
+/// @image html domain_up_down_m.png
+/// <br>
+/// @image html domain_up_down_md.png
+/// @par Gnome
+/// @image html domain_up_down_g.png
+/// <br>
+/// @image html domain_up_down_gd.png
+///
+/// @example dot_matrix_display
+/// demonstrates how to use xtd::forms::dot_matrix_display control.
+/// @par Windows
+/// @image html dot_matrix_display_w.png
+/// <br>
+/// @image html dot_matrix_display_wd.png
+/// @par macOS
+/// @image html dot_matrix_display_m.png
+/// <br>
+/// @image html dot_matrix_display_md.png
+/// @par Gnome
+/// @image html dot_matrix_display_g.png
+/// <br>
+/// @image html dot_matrix_display_gd.png
+///
+/// @example font_picker
+/// demonstrates the use of xtd::forms::font_picker dialog.
+/// @par Windows
+/// @image html font_picker_w.png
+/// <br>
+/// @image html font_picker_wd.png
+/// @par macOS
+/// @image html font_picker_m.png
+/// <br>
+/// @image html font_picker_md.png
+/// @par Gnome
+/// @image html font_picker_g.png
+/// <br>
+/// @image html font_picker_gd.png
+///
+/// @example fourteen_segment_display
+/// demonstrates how to use xtd::forms::fourteen_segment_display control.
+/// @par Windows
+/// @image html fourteen_segment_display_w.png
+/// <br>
+/// @image html fourteen_segment_display_wd.png
+/// @par macOS
+/// @image html fourteen_segment_display_m.png
+/// <br>
+/// @image html fourteen_segment_display_md.png
+/// @par Gnome
+/// @image html fourteen_segment_display_g.png
+/// <br>
+/// @image html fourteen_segment_display_gd.png
+///
+/// @example h_scroll_bar
+/// demonstrates the use of xtd::forms::h_scroll_bar control.
+/// @par Windows
+/// @image html h_scroll_bar_w.png
+/// <br>
+/// @image html h_scroll_bar_wd.png
+/// @par macOS
+/// @image html h_scroll_bar_m.png
+/// <br>
+/// @image html h_scroll_bar_md.png
+/// @par Gnome
+/// @image html h_scroll_bar_g.png
+/// <br>
+/// @image html h_scroll_bar_gd.png
+///
+/// @example label
+/// demonstrates the use of xtd::forms::label control.
+/// @par Windows
+/// @image html label_w.png
+/// <br>
+/// @image html label_wd.png
+/// @par macOS
+/// @image html label_m.png
+/// <br>
+/// @image html label_md.png
+/// @par Gnome
+/// @image html label_g.png
+/// <br>
+/// @image html label_gd.png
+///
+/// @example lcd_label
+/// demonstrates how to use xtd::forms::lcd_label control.
+/// @par Windows
+/// @image html lcd_label_w.png
+/// <br>
+/// @image html lcd_label_wd.png
+/// @par macOS
+/// @image html lcd_label_m.png
+/// <br>
+/// @image html lcd_label_md.png
+/// @par Gnome
+/// @image html lcd_label_g.png
+/// <br>
+/// @image html lcd_label_gd.png
+///
+/// @example light_button
+/// demonstrates the use of xtd::forms::light_button control.
+/// @par Windows
+/// @image html light_button_w.png
+/// <br>
+/// @image html light_button_wd.png
+/// @par macOS
+/// @image html light_button_m.png
+/// <br>
+/// @image html light_button_md.png
+/// @par Gnome
+/// @image html light_button_g.png
+/// <br>
+/// @image html light_button_gd.png
+///
+/// @example link_label
+/// demonstrates the use of xtd::forms::link_label control.
+/// @par Windows
+/// @image html link_label_w.png
+/// <br>
+/// @image html link_label_wd.png
+/// @par macOS
+/// @image html link_label_m.png
+/// <br>
+/// @image html link_label_md.png
+/// @par Gnome
+/// @image html link_label_g.png
+/// <br>
+/// @image html link_label_gd.png
+///
+/// @example list_box
+/// demonstrates the use of xtd::forms::list_box control.
+/// @par Windows
+/// @image html list_box_w.png
+/// <br>
+/// @image html list_box_wd.png
+/// @par macOS
+/// @image html list_box_m.png
+/// <br>
+/// @image html list_box_md.png
+/// @par Gnome
+/// @image html list_box_g.png
+/// <br>
+/// @image html list_box_gd.png
+///
+/// @example loading_indicator
+/// xtd::forms::loading_indicator represents a Windows control to display a loading indicator animation.
+/// @par Windows
+/// @image html loading_indicator_w.png
+/// <br>
+/// @image html loading_indicator_wd.png
+/// @par macOS
+/// @image html loading_indicator_m.png
+/// <br>
+/// @image html loading_indicator_md.png
+/// @par Gnome
+/// @image html loading_indicator_g.png
+/// <br>
+/// @image html loading_indicator_gd.png
+///
+/// @example month_calendar
+/// demonstrates the use of xtd::forms::month_calendar control.
+/// @par Windows
+/// @image html month_calendar_w.png
+/// <br>
+/// @image html month_calendar_wd.png
+/// @par macOS
+/// @image html month_calendar_m.png
+/// <br>
+/// @image html month_calendar_md.png
+/// @par Gnome
+/// @image html month_calendar_g.png
+/// <br>
+/// @image html month_calendar_gd.png
+///
+/// @example nine_segment_display
+/// demonstrates how to use xtd::forms::nine_segment_display control.
+/// @par Windows
+/// @image html nine_segment_display_w.png
+/// <br>
+/// @image html nine_segment_display_wd.png
+/// @par macOS
+/// @image html nine_segment_display_m.png
+/// <br>
+/// @image html nine_segment_display_md.png
+/// @par Gnome
+/// @image html nine_segment_display_g.png
+/// <br>
+/// @image html nine_segment_display_gd.png
+///
+/// @example numeric_up_down
+/// demonstrates the use of xtd::forms::numeric_up_down control.
+/// @par Windows
+/// @image html numeric_up_down_w.png
+/// <br>
+/// @image html numeric_up_down_wd.png
+/// @par macOS
+/// @image html numeric_up_down_m.png
+/// <br>
+/// @image html numeric_up_down_md.png
+/// @par Gnome
+/// @image html numeric_up_down_g.png
+/// <br>
+/// @image html numeric_up_down_gd.png
+///
+/// @example picture_box
+/// demonstrates the use of xtd::forms::picture_box control.
+/// @par Windows
+/// @image html picture_box_w.png
+/// <br>
+/// @image html picture_box_wd.png
+/// @par macOS
+/// @image html picture_box_m.png
+/// <br>
+/// @image html picture_box_md.png
+/// @par Gnome
+/// @image html picture_box_g.png
+/// <br>
+/// @image html picture_box_gd.png
+///
+/// @example progress_bar
+/// demonstrates the use of xtd::forms::progress_bar control.
+/// @par Windows
+/// @image html progress_bar_w.png
+/// <br>
+/// @image html progress_bar_wd.png
+/// @par macOS
+/// @image html progress_bar_m.png
+/// <br>
+/// @image html progress_bar_md.png
+/// @par Gnome
+/// @image html progress_bar_g.png
+/// <br>
+/// @image html progress_bar_gd.png
+///
+/// @example radio_button
+/// demonstrates the use of xtd::forms::radio_button control.
+/// @par Windows
+/// @image html radio_button_w.png
+/// <br>
+/// @image html radio_button_wd.png
+/// @par macOS
+/// @image html radio_button_m.png
+/// <br>
+/// @image html radio_button_md.png
+/// @par Gnome
+/// @image html radio_button_g.png
+/// <br>
+/// @image html radio_button_gd.png
+///
+/// @example radio_buttons
+/// demonstrates the use of xtd::forms::radio_buttons radio_button object collection.
+/// @par Windows
+/// @image html radio_buttons_w.png
+/// <br>
+/// @image html radio_buttons_wd.png
+/// @par macOS
+/// @image html radio_buttons_m.png
+/// <br>
+/// @image html radio_buttons_md.png
+/// @par Gnome
+/// @image html radio_buttons_g.png
+/// <br>
+/// @image html radio_buttons_gd.png
+///
+/// @example seven_segment_display
+/// demonstrates how to use xtd::forms::seven_segment_display control.
+/// @par Windows
+/// @image html seven_segment_display_w.png
+/// <br>
+/// @image html seven_segment_display_wd.png
+/// @par macOS
+/// @image html seven_segment_display_m.png
+/// <br>
+/// @image html seven_segment_display_md.png
+/// @par Gnome
+/// @image html seven_segment_display_g.png
+/// <br>
+/// @image html seven_segment_display_gd.png
+///
+/// @example sixteen_segment_display
+/// demonstrates how to use xtd::forms::sixteen_segment_display control.
+/// @par Windows
+/// @image html sixteen_segment_display_w.png
+/// <br>
+/// @image html sixteen_segment_display_wd.png
+/// @par macOS
+/// @image html sixteen_segment_display_m.png
+/// <br>
+/// @image html sixteen_segment_display_md.png
+/// @par Gnome
+/// @image html sixteen_segment_display_g.png
+/// <br>
+/// @image html sixteen_segment_display_gd.png
+///
+/// @example splitter
+/// demonstrates the use of xtd::forms::splitter control.
+/// @par Windows
+/// @image html splitter_w.png
+/// <br>
+/// @image html splitter_wd.png
+/// @par macOS
+/// @image html splitter_m.png
+/// <br>
+/// @image html splitter_md.png
+/// @par Gnome
+/// @image html splitter_g.png
+/// <br>
+/// @image html splitter_gd.png
+///
+/// @example switch_button
+/// demonstrates how to use xtd::forms::switch_button control.
+/// @par Windows
+/// @image html switch_button_w.png
+/// <br>
+/// @image html switch_button_wd.png
+/// @par macOS
+/// @image html switch_button_m.png
+/// <br>
+/// @image html switch_button_md.png
+/// @par Gnome
+/// @image html switch_button_g.png
+/// <br>
+/// @image html switch_button_gd.png
+///
+/// @example text_box
+/// demonstrates the use of xtd::forms::text_box control.
+/// @par Windows
+/// @image html text_box_w.png
+/// <br>
+/// @image html text_box_wd.png
+/// @par macOS
+/// @image html text_box_m.png
+/// <br>
+/// @image html text_box_md.png
+/// @par Gnome
+/// @image html text_box_g.png
+/// <br>
+/// @image html text_box_gd.png
+///
+/// @example toggle_button
+/// demonstrates the use of xtd::forms::toggle_button control.
+/// @par Windows
+/// @image html toggle_button_w.png
+/// <br>
+/// @image html toggle_button_wd.png
+/// @par macOS
+/// @image html toggle_button_m.png
+/// <br>
+/// @image html toggle_button_md.png
+/// @par Gnome
+/// @image html toggle_button_g.png
+/// <br>
+/// @image html toggle_button_gd.png
+///
+/// @example toggle_buttons
+/// demonstrates the use of xtd::forms::toggle_buttons toggle_button object collection.
+/// @par Windows
+/// @image html toggle_buttons_w.png
+/// <br>
+/// @image html toggle_buttons_wd.png
+/// @par macOS
+/// @image html toggle_buttons_m.png
+/// <br>
+/// @image html toggle_buttons_md.png
+/// @par Gnome
+/// @image html toggle_buttons_g.png
+/// <br>
+/// @image html toggle_buttons_gd.png
+///
+/// @example track_bar
+/// demonstrates the use of xtd::forms::track_bar control.
+/// @par Windows
+/// @image html track_bar_w.png
+/// <br>
+/// @image html track_bar_wd.png
+/// @par macOS
+/// @image html track_bar_m.png
+/// <br>
+/// @image html track_bar_md.png
+/// @par Gnome
+/// @image html track_bar_g.png
+/// <br>
+/// @image html track_bar_gd.png
+///
+/// @example up_down_button
+/// demonstrates the use of xtd::forms::up_down_button control.
+/// @par Windows
+/// @image html up_down_button_w.png
+/// <br>
+/// @image html up_down_button_wd.png
+/// @par macOS
+/// @image html up_down_button_m.png
+/// <br>
+/// @image html up_down_button_md.png
+/// @par Gnome
+/// @image html up_down_button_g.png
+/// <br>
+/// @image html up_down_button_gd.png
+///
+/// @example user_control
+/// demonstrates the use of xtd::forms::user_control control.
 /// @par Windows
 /// @image html user_control_w.png
 /// <br>
@@ -1245,4 +1110,2268 @@
 /// @image html user_control_g.png
 /// <br>
 /// @image html user_control_gd.png
-
+///
+/// @example v_scroll_bar
+/// demonstrates the use of xtd::forms::v_scroll_bar control.
+/// @par Windows
+/// @image html v_scroll_bar_w.png
+/// <br>
+/// @image html v_scroll_bar_wd.png
+/// @par macOS
+/// @image html v_scroll_bar_m.png
+/// <br>
+/// @image html v_scroll_bar_md.png
+/// @par Gnome
+/// @image html v_scroll_bar_g.png
+/// <br>
+/// @image html v_scroll_bar_gd.png
+///
+/// @example button_appearance
+/// demonstrates how to use xtd::forms::button control.
+/// @par Windows
+/// @image html button_appearance_w.png
+/// <br>
+/// @image html button_appearance_wd.png
+/// @par macOS
+/// @image html button_appearance_m.png
+/// <br>
+/// @image html button_appearance_md.png
+/// @par Gnome
+/// @image html button_appearance_g.png
+/// <br>
+/// @image html button_appearance_gd.png
+///
+/// @example check_box_appearance
+/// demonstrates how to use xtd::forms::check_box control.
+/// @par Windows
+/// @image html check_box_appearance_w.png
+/// <br>
+/// @image html check_box_appearance_wd.png
+/// @par macOS
+/// @image html check_box_appearance_m.png
+/// <br>
+/// @image html check_box_appearance_md.png
+/// @par Gnome
+/// @image html check_box_appearance_g.png
+/// <br>
+/// @image html check_box_appearance_gd.png
+///
+/// @example demo
+/// Shows controls and dialogs appearances.
+/// @par Windows
+/// @image html demo_w.png
+/// <br>
+/// @image html demo_wd.png
+/// @par macOS
+/// @image html demo_m.png
+/// <br>
+/// @image html demo_md.png
+/// @par Gnome
+/// @image html demo_g.png
+/// <br>
+/// @image html demo_gd.png
+///
+/// @example lcd_label_appearance
+/// demonstrates how to use xtd::forms::lcd_label control.
+/// @par Windows
+/// @image html lcd_label_appearance_w.png
+/// <br>
+/// @image html lcd_label_appearance_wd.png
+/// @par macOS
+/// @image html lcd_label_appearance_m.png
+/// <br>
+/// @image html lcd_label_appearance_md.png
+/// @par Gnome
+/// @image html lcd_label_appearance_g.png
+/// <br>
+/// @image html lcd_label_appearance_gd.png
+///
+/// @example message_box_appearance
+/// demonstrates how to use xtd::forms::message_box control.
+/// @par Windows
+/// @image html message_box_appearance_w.png
+/// <br>
+/// @image html message_box_appearance_wd.png
+/// @par macOS
+/// @image html message_box_appearance_m.png
+/// <br>
+/// @image html message_box_appearance_md.png
+/// @par Gnome
+/// @image html message_box_appearance_g.png
+/// <br>
+/// @image html message_box_appearance_gd.png
+///
+/// @example about_box
+/// demonstrates the use of xtd::forms::about_box dialog.
+/// @par Windows
+/// @image html about_box_w.png
+/// <br>
+/// @image html about_box_wd.png
+/// @par macOS
+/// @image html about_box_m.png
+/// <br>
+/// @image html about_box_md.png
+/// @par Gnome
+/// @image html about_box_g.png
+/// <br>
+/// @image html about_box_gd.png
+///
+/// @example about_dialog
+/// demonstrates the use of xtd::forms::about_dialog dialog.
+/// @par Windows
+/// @image html about_dialog_w.png
+/// <br>
+/// @image html about_dialog_wd.png
+/// @par macOS
+/// @image html about_dialog_m.png
+/// <br>
+/// @image html about_dialog_md.png
+/// @par Gnome
+/// @image html about_dialog_g.png
+/// <br>
+/// @image html about_dialog_gd.png
+///
+/// @example busy_box
+/// demonstrates the use of xtd::forms::busy_box dialog.
+/// @par Windows
+/// @image html busy_box_w.png
+/// <br>
+/// @image html busy_box_wd.png
+/// @par macOS
+/// @image html busy_box_m.png
+/// <br>
+/// @image html busy_box_md.png
+/// @par Gnome
+/// @image html busy_box_g.png
+/// <br>
+/// @image html busy_box_gd.png
+///
+/// @example busy_dialog
+/// demonstrates the use of xtd::forms::busy_dialog dialog.
+/// @par Windows
+/// @image html busy_dialog_w.png
+/// <br>
+/// @image html busy_dialog_wd.png
+/// @par macOS
+/// @image html busy_dialog_m.png
+/// <br>
+/// @image html busy_dialog_md.png
+/// @par Gnome
+/// @image html busy_dialog_g.png
+/// <br>
+/// @image html busy_dialog_gd.png
+///
+/// @example color_box
+/// demonstrates the use of xtd::forms::color_box dialog.
+/// @par Windows
+/// @image html color_box_w.png
+/// <br>
+/// @image html color_box_wd.png
+/// @par macOS
+/// @image html color_box_m.png
+/// <br>
+/// @image html color_box_md.png
+/// @par Gnome
+/// @image html color_box_g.png
+/// <br>
+/// @image html color_box_gd.png
+///
+/// @example color_dialog
+/// demonstrates the use of xtd::forms::color_dialog dialog.
+/// @par Windows
+/// @image html color_dialog_w.png
+/// <br>
+/// @image html color_dialog_wd.png
+/// @par macOS
+/// @image html color_dialog_m.png
+/// <br>
+/// @image html color_dialog_md.png
+/// @par Gnome
+/// @image html color_dialog_g.png
+/// <br>
+/// @image html color_dialog_gd.png
+///
+/// @example debug_message_box
+/// demonstrates the use of xtd::forms::debug_message_box dialog.
+/// @par Windows
+/// @image html debug_message_box_w.png
+/// <br>
+/// @image html debug_message_box_wd.png
+/// @par macOS
+/// @image html debug_message_box_m.png
+/// <br>
+/// @image html debug_message_box_md.png
+/// @par Gnome
+/// @image html debug_message_box_g.png
+/// <br>
+/// @image html debug_message_box_gd.png
+///
+/// @example exception_box
+/// demonstrates the use of xtd::forms::exception_box dialog.
+/// @par Windows
+/// @image html exception_box_w.png
+/// <br>
+/// @image html exception_box_wd.png
+/// @par macOS
+/// @image html exception_box_m.png
+/// <br>
+/// @image html exception_box_md.png
+/// @par Gnome
+/// @image html exception_box_g.png
+/// <br>
+/// @image html exception_box_gd.png
+///
+/// @example exception_dialog
+/// demonstrates the use of xtd::forms::exception_dialog dialog.
+/// @par Windows
+/// @image html exception_dialog_w.png
+/// <br>
+/// @image html exception_dialog_wd.png
+/// @par macOS
+/// @image html exception_dialog_m.png
+/// <br>
+/// @image html exception_dialog_md.png
+/// @par Gnome
+/// @image html exception_dialog_g.png
+/// <br>
+/// @image html exception_dialog_gd.png
+///
+/// @example find_box
+/// demonstrates the use of xtd::forms::find_box dialog.
+/// @par Windows
+/// @image html find_box_w.png
+/// <br>
+/// @image html find_box_wd.png
+/// @par macOS
+/// @image html find_box_m.png
+/// <br>
+/// @image html find_box_md.png
+/// @par Gnome
+/// @image html find_box_g.png
+/// <br>
+/// @image html find_box_gd.png
+///
+/// @example find_dialog
+/// demonstrates the use of xtd::forms::find_dialog dialog.
+/// @par Windows
+/// @image html find_dialog_w.png
+/// <br>
+/// @image html find_dialog_wd.png
+/// @par macOS
+/// @image html find_dialog_m.png
+/// <br>
+/// @image html find_dialog_md.png
+/// @par Gnome
+/// @image html find_dialog_g.png
+/// <br>
+/// @image html find_dialog_gd.png
+///
+/// @example folder_browser_box
+/// demonstrates the use of xtd::forms::folder_browser_box dialog.
+/// @par Windows
+/// @image html folder_browser_box_w.png
+/// <br>
+/// @image html folder_browser_box_wd.png
+/// @par macOS
+/// @image html folder_browser_box_m.png
+/// <br>
+/// @image html folder_browser_box_md.png
+/// @par Gnome
+/// @image html folder_browser_box_g.png
+/// <br>
+/// @image html folder_browser_box_gd.png
+///
+/// @example folder_browser_dialog
+/// demonstrates the use of xtd::forms::folder_browser_dialog dialog.
+/// @par Windows
+/// @image html folder_browser_dialog_w.png
+/// <br>
+/// @image html folder_browser_dialog_wd.png
+/// @par macOS
+/// @image html folder_browser_dialog_m.png
+/// <br>
+/// @image html folder_browser_dialog_md.png
+/// @par Gnome
+/// @image html folder_browser_dialog_g.png
+/// <br>
+/// @image html folder_browser_dialog_gd.png
+///
+/// @example font_box
+/// demonstrates the use of xtd::forms::font_box font dialog.
+/// @par Windows
+/// @image html font_box_w.png
+/// <br>
+/// @image html font_box_wd.png
+/// @par macOS
+/// @image html font_box_m.png
+/// <br>
+/// @image html font_box_md.png
+/// @par Gnome
+/// @image html font_box_g.png
+/// <br>
+/// @image html font_box_gd.png
+///
+/// @example font_dialog
+/// demonstrates the use of xtd::forms::font_dialog dialog.
+/// @par Windows
+/// @image html font_dialog_w.png
+/// <br>
+/// @image html font_dialog_wd.png
+/// @par macOS
+/// @image html font_dialog_m.png
+/// <br>
+/// @image html font_dialog_md.png
+/// @par Gnome
+/// @image html font_dialog_g.png
+/// <br>
+/// @image html font_dialog_gd.png
+///
+/// @example input_box
+/// demonstrates the use of xtd::forms::font_dialog dialog.
+/// @par Windows
+/// @image html input_box_w.png
+/// <br>
+/// @image html input_box_wd.png
+/// @par macOS
+/// @image html input_box_m.png
+/// <br>
+/// @image html input_box_md.png
+/// @par Gnome
+/// @image html input_box_g.png
+/// <br>
+/// @image html input_box_gd.png
+///
+/// @example input_dialog
+/// demonstrates the use of xtd::forms::input_dialog dialog.
+/// @par Windows
+/// @image html input_dialog_w.png
+/// <br>
+/// @image html input_dialog_wd.png
+/// @par macOS
+/// @image html input_dialog_m.png
+/// <br>
+/// @image html input_dialog_md.png
+/// @par Gnome
+/// @image html input_dialog_g.png
+/// <br>
+/// @image html input_dialog_gd.png
+///
+/// @example message_box
+/// demonstrates the use of xtd::forms::message_box dialog.
+/// @par Windows
+/// @image html message_box_w.png
+/// <br>
+/// @image html message_box_wd.png
+/// @par macOS
+/// @image html message_box_m.png
+/// <br>
+/// @image html message_box_md.png
+/// @par Gnome
+/// @image html message_box_g.png
+/// <br>
+/// @image html message_box_gd.png
+///
+/// @example message_dialog
+/// demonstrates the use of xtd::forms::message_dialog dialog.
+/// @par Windows
+/// @image html message_dialog_w.png
+/// <br>
+/// @image html message_dialog_wd.png
+/// @par macOS
+/// @image html message_dialog_m.png
+/// <br>
+/// @image html message_dialog_md.png
+/// @par Gnome
+/// @image html message_dialog_g.png
+/// <br>
+/// @image html message_dialog_gd.png
+///
+/// @example open_file_box
+/// demonstrates the use of xtd::forms::open_file_box file dialog.
+/// @par Windows
+/// @image html open_file_box_w.png
+/// <br>
+/// @image html open_file_box_wd.png
+/// @par macOS
+/// @image html open_file_box_m.png
+/// <br>
+/// @image html open_file_box_md.png
+/// @par Gnome
+/// @image html open_file_box_g.png
+/// <br>
+/// @image html open_file_box_gd.png
+///
+/// @example open_file_dialog
+/// demonstrates the use of xtd::forms::open_file_dialog dialog.
+/// @par Windows
+/// @image html open_file_dialog_w.png
+/// <br>
+/// @image html open_file_dialog_wd.png
+/// @par macOS
+/// @image html open_file_dialog_m.png
+/// <br>
+/// @image html open_file_dialog_md.png
+/// @par Gnome
+/// @image html open_file_dialog_g.png
+/// <br>
+/// @image html open_file_dialog_gd.png
+///
+/// @example progress_box
+/// demonstrates the use of xtd::forms::progress_box  progress dialog.
+/// @par Windows
+/// @image html progress_box_w.png
+/// <br>
+/// @image html progress_box_wd.png
+/// @par macOS
+/// @image html progress_box_m.png
+/// <br>
+/// @image html progress_box_md.png
+/// @par Gnome
+/// @image html progress_box_g.png
+/// <br>
+/// @image html progress_box_gd.png
+///
+/// @example progress_dialog
+/// demonstrates the use of xtd::forms::progress_dialog dialog.
+/// @par Windows
+/// @image html progress_dialog_w.png
+/// <br>
+/// @image html progress_dialog_wd.png
+/// @par macOS
+/// @image html progress_dialog_m.png
+/// <br>
+/// @image html progress_dialog_md.png
+/// @par Gnome
+/// @image html progress_dialog_g.png
+/// <br>
+/// @image html progress_dialog_gd.png
+///
+/// @example replace_box
+/// demonstrates the use of xtd::forms::replace_box dialog.
+/// @par Windows
+/// @image html replace_box_w.png
+/// <br>
+/// @image html replace_box_wd.png
+/// @par macOS
+/// @image html replace_box_m.png
+/// <br>
+/// @image html replace_box_md.png
+/// @par Gnome
+/// @image html replace_box_g.png
+/// <br>
+/// @image html replace_box_gd.png
+///
+/// @example replace_dialog
+/// demonstrates the use of xtd::forms::replace_dialog dialog.
+/// @par Windows
+/// @image html replace_dialog_w.png
+/// <br>
+/// @image html replace_dialog_wd.png
+/// @par macOS
+/// @image html replace_dialog_m.png
+/// <br>
+/// @image html replace_dialog_md.png
+/// @par Gnome
+/// @image html replace_dialog_g.png
+/// <br>
+/// @image html replace_dialog_gd.png
+///
+/// @example save_file_box
+/// demonstrates the use of xtd::forms::save_file_box file dialog.
+/// @par Windows
+/// @image html save_file_box_w.png
+/// <br>
+/// @image html save_file_box_wd.png
+/// @par macOS
+/// @image html save_file_box_m.png
+/// <br>
+/// @image html save_file_box_md.png
+/// @par Gnome
+/// @image html save_file_box_g.png
+/// <br>
+/// @image html save_file_box_gd.png
+///
+/// @example save_file_dialog
+/// demonstrates the use of xtd::forms::save_file_dialog dialog.
+/// @par Windows
+/// @image html save_file_dialog_w.png
+/// <br>
+/// @image html save_file_dialog_wd.png
+/// @par macOS
+/// @image html save_file_dialog_m.png
+/// <br>
+/// @image html save_file_dialog_md.png
+/// @par Gnome
+/// @image html save_file_dialog_g.png
+/// <br>
+/// @image html save_file_dialog_gd.png
+///
+/// @example trace_message_box
+/// demonstrates the use of xtd::forms::trace_message_box dialog.
+/// @par Windows
+/// @image html trace_message_box_w.png
+/// <br>
+/// @image html trace_message_box_wd.png
+/// @par macOS
+/// @image html trace_message_box_m.png
+/// <br>
+/// @image html trace_message_box_md.png
+/// @par Gnome
+/// @image html trace_message_box_g.png
+/// <br>
+/// @image html trace_message_box_gd.png
+///
+/// @example draw_ellipse
+/// shows how to draw ellipse in paint event using xtd::drawing::graphics::draw_ellipse.
+/// @par Windows
+/// @image html draw_ellipse_w.png
+/// <br>
+/// @image html draw_ellipse_wd.png
+/// @par macOS
+/// @image html draw_ellipse_m.png
+/// <br>
+/// @image html draw_ellipse_md.png
+/// @par Gnome
+/// @image html draw_ellipse_g.png
+/// <br>
+/// @image html draw_ellipse_gd.png
+///
+/// @example draw_image
+/// shows how to draw image in paint event using xtd::drawing::graphics::draw_image.
+/// @par Windows
+/// @image html draw_image_w.png
+/// <br>
+/// @image html draw_image_wd.png
+/// @par macOS
+/// @image html draw_image_m.png
+/// <br>
+/// @image html draw_image_md.png
+/// @par Gnome
+/// @image html draw_image_g.png
+/// <br>
+/// @image html draw_image_gd.png
+///
+/// @example draw_line
+/// shows how to draw line in paint event using xtd::drawing::graphics::draw_line.
+/// @par Windows
+/// @image html draw_line_w.png
+/// <br>
+/// @image html draw_line_wd.png
+/// @par macOS
+/// @image html draw_line_m.png
+/// <br>
+/// @image html draw_line_md.png
+/// @par Gnome
+/// @image html draw_line_g.png
+/// <br>
+/// @image html draw_line_gd.png
+///
+/// @example draw_point
+/// shows how to draw point in paint event using xtd::drawing::graphics::draw_point.
+/// @par Windows
+/// @image html draw_point_w.png
+/// <br>
+/// @image html draw_point_wd.png
+/// @par macOS
+/// @image html draw_point_m.png
+/// <br>
+/// @image html draw_point_md.png
+/// @par Gnome
+/// @image html draw_point_g.png
+/// <br>
+/// @image html draw_point_gd.png
+///
+/// @example draw_rectangle
+/// shows how to draw rectangle in paint event using xtd::drawing::graphics::draw_rectangle.
+/// @par Windows
+/// @image html draw_rectangle_w.png
+/// <br>
+/// @image html draw_rectangle_wd.png
+/// @par macOS
+/// @image html draw_rectangle_m.png
+/// <br>
+/// @image html draw_rectangle_md.png
+/// @par Gnome
+/// @image html draw_rectangle_g.png
+/// <br>
+/// @image html draw_rectangle_gd.png
+///
+/// @example draw_rounded_rectangle
+/// shows how to draw rounded rectangle in paint event using xtd::drawing::graphics::draw_rounded_rectangle.
+/// @par Windows
+/// @image html draw_rounded_rectangle_w.png
+/// <br>
+/// @image html draw_rounded_rectangle_wd.png
+/// @par macOS
+/// @image html draw_rounded_rectangle_m.png
+/// <br>
+/// @image html draw_rounded_rectangle_md.png
+/// @par Gnome
+/// @image html draw_rounded_rectangle_g.png
+/// <br>
+/// @image html draw_rounded_rectangle_gd.png
+///
+/// @example fill_ellipse
+/// shows how to fill ellipse in paint event using xtd::drawing::graphics::fill_ellipse.
+/// @par Windows
+/// @image html fill_ellipse_w.png
+/// <br>
+/// @image html fill_ellipse_wd.png
+/// @par macOS
+/// @image html fill_ellipse_m.png
+/// <br>
+/// @image html fill_ellipse_md.png
+/// @par Gnome
+/// @image html fill_ellipse_g.png
+/// <br>
+/// @image html fill_ellipse_gd.png
+///
+/// @example fill_rectangle
+/// shows how to fill rectangle in paint event using xtd::drawing::graphics::fill_rectangle.
+/// @par Windows
+/// @image html fill_rectangle_w.png
+/// <br>
+/// @image html fill_rectangle_wd.png
+/// @par macOS
+/// @image html fill_rectangle_m.png
+/// <br>
+/// @image html fill_rectangle_md.png
+/// @par Gnome
+/// @image html fill_rectangle_g.png
+/// <br>
+/// @image html fill_rectangle_gd.png
+///
+/// @example fill_rounded_rectangle
+/// shows how to fill rounded rectangle in paint event using xtd::drawing::graphics::fill_rounded_rectangle.
+/// @par Windows
+/// @image html fill_rounded_rectangle_w.png
+/// <br>
+/// @image html fill_rounded_rectangle_wd.png
+/// @par macOS
+/// @image html fill_rounded_rectangle_m.png
+/// <br>
+/// @image html fill_rounded_rectangle_md.png
+/// @par Gnome
+/// @image html fill_rounded_rectangle_g.png
+/// <br>
+/// @image html fill_rounded_rectangle_gd.png
+///
+/// @example application_events
+/// demonstrates the use of application events.
+/// @par Windows
+/// @image html application_events_w.png
+/// <br>
+/// @image html application_events_wd.png
+/// @par macOS
+/// @image html application_events_m.png
+/// <br>
+/// @image html application_events_md.png
+/// @par Gnome
+/// @image html application_events_g.png
+/// <br>
+/// @image html application_events_gd.png
+///
+/// @example application_idle
+/// demonstrates the use of idle event.
+/// @par Windows
+/// @image html application_idle_w.png
+/// <br>
+/// @image html application_idle_wd.png
+/// @par macOS
+/// @image html application_idle_m.png
+/// <br>
+/// @image html application_idle_md.png
+/// @par Gnome
+/// @image html application_idle_g.png
+/// <br>
+/// @image html application_idle_gd.png
+///
+/// @example enable_changed_event
+/// demonstrates the use of idle event.
+/// @par Windows
+/// @image html enable_changed_event_w.png
+/// <br>
+/// @image html enable_changed_event_wd.png
+/// @par macOS
+/// @image html enable_changed_event_m.png
+/// <br>
+/// @image html enable_changed_event_md.png
+/// @par Gnome
+/// @image html enable_changed_event_g.png
+/// <br>
+/// @image html enable_changed_event_gd.png
+///
+/// @example font_changed_event
+/// demonstrates the use of idle event.
+/// @par Windows
+/// @image html font_changed_event_w.png
+/// <br>
+/// @image html font_changed_event_wd.png
+/// @par macOS
+/// @image html font_changed_event_m.png
+/// <br>
+/// @image html font_changed_event_md.png
+/// @par Gnome
+/// @image html font_changed_event_g.png
+/// <br>
+/// @image html font_changed_event_gd.png
+///
+/// @example form_and_messages
+/// demonstrates some events received by form.
+/// @par Windows
+/// @image html form_and_messages_w.png
+/// <br>
+/// @image html form_and_messages_wd.png
+/// @par macOS
+/// @image html form_and_messages_m.png
+/// <br>
+/// @image html form_and_messages_md.png
+/// @par Gnome
+/// @image html form_and_messages_g.png
+/// <br>
+/// @image html form_and_messages_gd.png
+///
+/// @example form_click
+/// demonstrates the use of form event.
+/// @par Windows
+/// @image html form_click_w.png
+/// <br>
+/// @image html form_click_wd.png
+/// @par macOS
+/// @image html form_click_m.png
+/// <br>
+/// @image html form_click_md.png
+/// @par Gnome
+/// @image html form_click_g.png
+/// <br>
+/// @image html form_click_gd.png
+///
+/// @example form_paint
+/// demonstrates paint event with form.
+/// @par Windows
+/// @image html form_paint_w.png
+/// <br>
+/// @image html form_paint_wd.png
+/// @par macOS
+/// @image html form_paint_m.png
+/// <br>
+/// @image html form_paint_md.png
+/// @par Gnome
+/// @image html form_paint_g.png
+/// <br>
+/// @image html form_paint_gd.png
+///
+/// @example key_events
+/// demonstrates some events received by form.
+/// @par Windows
+/// @image html key_events_w.png
+/// <br>
+/// @image html key_events_wd.png
+/// @par macOS
+/// @image html key_events_m.png
+/// <br>
+/// @image html key_events_md.png
+/// @par Gnome
+/// @image html key_events_g.png
+/// <br>
+/// @image html key_events_gd.png
+///
+/// @example mouse_events
+/// demonstrates some events received by form.
+/// @par Windows
+/// @image html mouse_events_w.png
+/// <br>
+/// @image html mouse_events_wd.png
+/// @par macOS
+/// @image html mouse_events_m.png
+/// <br>
+/// @image html mouse_events_md.png
+/// @par Gnome
+/// @image html mouse_events_g.png
+/// <br>
+/// @image html mouse_events_gd.png
+///
+/// @example move_form
+/// demonstrates the use of form event.
+/// @par Windows
+/// @image html move_form_w.png
+/// <br>
+/// @image html move_form_wd.png
+/// @par macOS
+/// @image html move_form_m.png
+/// <br>
+/// @image html move_form_md.png
+/// @par Gnome
+/// @image html move_form_g.png
+/// <br>
+/// @image html move_form_gd.png
+///
+/// @example send_message_to_form
+/// demonstrates some events received by form.
+/// @par Windows
+/// @image html send_message_to_form_w.png
+/// <br>
+/// @image html send_message_to_form_wd.png
+/// @par macOS
+/// @image html send_message_to_form_m.png
+/// <br>
+/// @image html send_message_to_form_md.png
+/// @par Gnome
+/// @image html send_message_to_form_g.png
+/// <br>
+/// @image html send_message_to_form_gd.png
+///
+/// @example wnd_proc
+/// demonstrates the use of wnd_proc method.
+/// @par Windows
+/// @image html wnd_proc_w.png
+/// <br>
+/// @image html wnd_proc_wd.png
+/// @par macOS
+/// @image html wnd_proc_m.png
+/// <br>
+/// @image html wnd_proc_md.png
+/// @par Gnome
+/// @image html wnd_proc_g.png
+/// <br>
+/// @image html wnd_proc_gd.png
+///
+/// @example circular_form
+/// demonstrates the use of xtd::forms::control::region property for create a circular form.
+/// @par Windows
+/// @image html circular_form_w.png
+/// <br>
+/// @image html circular_form_wd.png
+/// @par macOS
+/// @image html circular_form_m.png
+/// <br>
+/// @image html circular_form_md.png
+/// @par Gnome
+/// @image html circular_form_g.png
+/// <br>
+/// @image html circular_form_gd.png
+///
+/// @example debug_form
+/// demonstrates the use of xtd::debug_forms::debug_form container.
+/// @par Windows
+/// @image html debug_form_w.png
+/// <br>
+/// @image html debug_form_wd.png
+/// @par macOS
+/// @image html debug_form_m.png
+/// <br>
+/// @image html debug_form_md.png
+/// @par Gnome
+/// @image html debug_form_g.png
+/// <br>
+/// @image html debug_form_gd.png
+///
+/// @example dialog
+/// demonstrates the use of xtd::forms::form container as dialog.
+/// @par Windows
+/// @image html dialog_w.png
+/// <br>
+/// @image html dialog_wd.png
+/// @par macOS
+/// @image html dialog_m.png
+/// <br>
+/// @image html dialog_md.png
+/// @par Gnome
+/// @image html dialog_g.png
+/// <br>
+/// @image html dialog_gd.png
+///
+/// @example form
+/// demonstrates the use of xtd::forms::form container.
+/// @par Windows
+/// @image html form_w.png
+/// <br>
+/// @image html form_wd.png
+/// @par macOS
+/// @image html form_m.png
+/// <br>
+/// @image html form_md.png
+/// @par Gnome
+/// @image html form_g.png
+/// <br>
+/// @image html form_gd.png
+///
+/// @example popup_form
+/// demonstrates the use of xtd::forms::form container.
+/// @par Windows
+/// @image html popup_form_w.png
+/// <br>
+/// @image html popup_form_wd.png
+/// @par macOS
+/// @image html popup_form_m.png
+/// <br>
+/// @image html popup_form_md.png
+/// @par Gnome
+/// @image html popup_form_g.png
+/// <br>
+/// @image html popup_form_gd.png
+///
+/// @example trace_form
+/// demonstrates the use of xtd::trace_forms::trace_form container.
+/// @par Windows
+/// @image html trace_form_w.png
+/// <br>
+/// @image html trace_form_wd.png
+/// @par macOS
+/// @image html trace_form_m.png
+/// <br>
+/// @image html trace_form_md.png
+/// @par Gnome
+/// @image html trace_form_g.png
+/// <br>
+/// @image html trace_form_gd.png
+///
+/// @example game_of_life
+/// The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.
+/// @par Windows
+/// @image html game_of_life_w.png
+/// <br>
+/// @image html game_of_life_wd.png
+/// @par macOS
+/// @image html game_of_life_m.png
+/// <br>
+/// @image html game_of_life_md.png
+/// @par Gnome
+/// @image html game_of_life_g.png
+/// <br>
+/// @image html game_of_life_gd.png
+///
+/// @example minesweeper
+/// The goal of the game is to uncover all the squares that do not contain mines.
+/// @par Windows
+/// @image html minesweeper_w.png
+/// <br>
+/// @image html minesweeper_wd.png
+/// @par macOS
+/// @image html minesweeper_m.png
+/// <br>
+/// @image html minesweeper_md.png
+/// @par Gnome
+/// @image html minesweeper_g.png
+/// <br>
+/// @image html minesweeper_gd.png
+///
+/// @example hello_world_emoticons
+/// The classic first application "Hello, World!" with  xtd::forms::emoticon control.
+/// @par Windows
+/// @image html hello_world_emoticons_w.png
+/// <br>
+/// @image html hello_world_emoticons_wd.png
+/// @par macOS
+/// @image html hello_world_emoticons_m.png
+/// <br>
+/// @image html hello_world_emoticons_md.png
+/// @par Gnome
+/// @image html hello_world_emoticons_g.png
+/// <br>
+/// @image html hello_world_emoticons_gd.png
+///
+/// @example hello_world_label
+/// The classic first application "Hello, World!" with  xtd::forms::label control.
+/// @par Windows
+/// @image html hello_world_label_w.png
+/// <br>
+/// @image html hello_world_label_wd.png
+/// @par macOS
+/// @image html hello_world_label_m.png
+/// <br>
+/// @image html hello_world_label_md.png
+/// @par Gnome
+/// @image html hello_world_label_g.png
+/// <br>
+/// @image html hello_world_label_gd.png
+///
+/// @example hello_world_message_box
+/// The classic first application "Hello, World!" with  xtd::forms::message_box control.
+/// @par Windows
+/// @image html hello_world_message_box_w.png
+/// <br>
+/// @image html hello_world_message_box_wd.png
+/// @par macOS
+/// @image html hello_world_message_box_m.png
+/// <br>
+/// @image html hello_world_message_box_md.png
+/// @par Gnome
+/// @image html hello_world_message_box_g.png
+/// <br>
+/// @image html hello_world_message_box_gd.png
+///
+/// @example hello_world_message_box2
+/// The classic first application "Hello, World!" with  xtd::forms::message_box control.
+/// @par Windows
+/// @image html hello_world_message_box2_w.png
+/// <br>
+/// @image html hello_world_message_box2_wd.png
+/// @par macOS
+/// @image html hello_world_message_box2_m.png
+/// <br>
+/// @image html hello_world_message_box2_md.png
+/// @par Gnome
+/// @image html hello_world_message_box2_g.png
+/// <br>
+/// @image html hello_world_message_box2_gd.png
+///
+/// @example hello_world_message_box3
+/// The classic first application "Hello, World!" with  xtd::forms::message_box control.
+/// @par Windows
+/// @image html hello_world_message_box3_w.png
+/// <br>
+/// @image html hello_world_message_box3_wd.png
+/// @par macOS
+/// @image html hello_world_message_box3_m.png
+/// <br>
+/// @image html hello_world_message_box3_md.png
+/// @par Gnome
+/// @image html hello_world_message_box3_g.png
+/// <br>
+/// @image html hello_world_message_box3_gd.png
+///
+/// @example hello_world_paint
+/// The classic first application "Hello, World!" with GDI+ drawing objects.
+/// @par Windows
+/// @image html hello_world_paint_w.png
+/// <br>
+/// @image html hello_world_paint_wd.png
+/// @par macOS
+/// @image html hello_world_paint_m.png
+/// <br>
+/// @image html hello_world_paint_md.png
+/// @par Gnome
+/// @image html hello_world_paint_g.png
+/// <br>
+/// @image html hello_world_paint_gd.png
+///
+/// @example hello_world_say
+/// The classic first application "Hello, World!" with xtd::forms::button control an xtd::speech::synthesis::speech_synthesizer class.
+/// @par Windows
+/// @image html hello_world_say_w.png
+/// <br>
+/// @image html hello_world_say_wd.png
+/// @par macOS
+/// @image html hello_world_say_m.png
+/// <br>
+/// @image html hello_world_say_md.png
+/// @par Gnome
+/// @image html hello_world_say_g.png
+/// <br>
+/// @image html hello_world_say_gd.png
+///
+/// @example context_menu
+/// demonstrates the use of xtd::forms::context_menu component.
+/// @par Windows
+/// @image html context_menu_w.png
+/// <br>
+/// @image html context_menu_wd.png
+/// @par macOS
+/// @image html context_menu_m.png
+/// <br>
+/// @image html context_menu_md.png
+/// @par Gnome
+/// @image html context_menu_g.png
+/// <br>
+/// @image html context_menu_gd.png
+///
+/// @example main_menu
+/// demonstrates the use of xtd::forms::main_menu component.
+/// @par Windows
+/// @image html main_menu_w.png
+/// <br>
+/// @image html main_menu_wd.png
+/// @par macOS
+/// @image html main_menu_m.png
+/// <br>
+/// @image html main_menu_md.png
+/// @par Gnome
+/// @image html main_menu_g.png
+/// <br>
+/// @image html main_menu_gd.png
+///
+/// @example status_bar
+/// demonstrates the use of xtd::forms::tool_bar component.
+/// @par Windows
+/// @image html status_bar_w.png
+/// <br>
+/// @image html status_bar_wd.png
+/// @par macOS
+/// @image html status_bar_m.png
+/// <br>
+/// @image html status_bar_md.png
+/// @par Gnome
+/// @image html status_bar_g.png
+/// <br>
+/// @image html status_bar_gd.png
+///
+/// @example tool_bar
+/// demonstrates the use of xtd::forms::tool_bar component.
+/// @par Windows
+/// @image html tool_bar_w.png
+/// <br>
+/// @image html tool_bar_wd.png
+/// @par macOS
+/// @image html tool_bar_m.png
+/// <br>
+/// @image html tool_bar_md.png
+/// @par Gnome
+/// @image html tool_bar_g.png
+/// <br>
+/// @image html tool_bar_gd.png
+///
+/// @example about_dialog_system
+/// demonstrates the use of xtd::forms::about_dialog dialog.
+/// @par Windows
+/// @image html about_dialog_system_w.png
+/// <br>
+/// @image html about_dialog_system_wd.png
+/// @par macOS
+/// @image html about_dialog_system_m.png
+/// <br>
+/// @image html about_dialog_system_md.png
+/// @par Gnome
+/// @image html about_dialog_system_g.png
+/// <br>
+/// @image html about_dialog_system_gd.png
+///
+/// @example anchors
+/// demonstrates the use of xtd::forms::control::button control with xtd::forms::control::anchor.
+/// @par Windows
+/// @image html anchors_w.png
+/// <br>
+/// @image html anchors_wd.png
+/// @par macOS
+/// @image html anchors_m.png
+/// <br>
+/// @image html anchors_md.png
+/// @par Gnome
+/// @image html anchors_g.png
+/// <br>
+/// @image html anchors_gd.png
+///
+/// @example application_run
+/// Shows how to create an application with  xtd::forms::application class.
+/// @par Windows
+/// @image html application_run_w.png
+/// <br>
+/// @image html application_run_wd.png
+/// @par macOS
+/// @image html application_run_m.png
+/// <br>
+/// @image html application_run_md.png
+/// @par Gnome
+/// @image html application_run_g.png
+/// <br>
+/// @image html application_run_gd.png
+///
+/// @example auto_scroll
+/// demonstrates the use of xtd::forms::panel.
+/// @par Windows
+/// @image html auto_scroll_w.png
+/// <br>
+/// @image html auto_scroll_wd.png
+/// @par macOS
+/// @image html auto_scroll_m.png
+/// <br>
+/// @image html auto_scroll_md.png
+/// @par Gnome
+/// @image html auto_scroll_g.png
+/// <br>
+/// @image html auto_scroll_gd.png
+///
+/// @example bitmap_button
+/// demonstrates the use of xtd::forms::button control with image.
+/// @par Windows
+/// @image html bitmap_button_w.png
+/// <br>
+/// @image html bitmap_button_wd.png
+/// @par macOS
+/// @image html bitmap_button_m.png
+/// <br>
+/// @image html bitmap_button_md.png
+/// @par Gnome
+/// @image html bitmap_button_g.png
+/// <br>
+/// @image html bitmap_button_gd.png
+///
+/// @example border_style
+/// demonstrates the use of xtd::forms::label::border_style property.
+/// @par Windows
+/// @image html border_style_w.png
+/// <br>
+/// @image html border_style_wd.png
+/// @par macOS
+/// @image html border_style_m.png
+/// <br>
+/// @image html border_style_md.png
+/// @par Gnome
+/// @image html border_style_g.png
+/// <br>
+/// @image html border_style_gd.png
+///
+/// @example button2
+/// demonstrates the use of xtd::forms::form control.
+/// @par Windows
+/// @image html button2_w.png
+/// <br>
+/// @image html button2_wd.png
+/// @par macOS
+/// @image html button2_m.png
+/// <br>
+/// @image html button2_md.png
+/// @par Gnome
+/// @image html button2_g.png
+/// <br>
+/// @image html button2_gd.png
+///
+/// @example button3
+/// demonstrates the use of xtd::forms::form control.
+/// @par Windows
+/// @image html button3_w.png
+/// <br>
+/// @image html button3_wd.png
+/// @par macOS
+/// @image html button3_m.png
+/// <br>
+/// @image html button3_md.png
+/// @par Gnome
+/// @image html button3_g.png
+/// <br>
+/// @image html button3_gd.png
+///
+/// @example button4
+/// demonstrates the use of xtd::forms::form control.
+/// @par Windows
+/// @image html button4_w.png
+/// <br>
+/// @image html button4_wd.png
+/// @par macOS
+/// @image html button4_m.png
+/// <br>
+/// @image html button4_md.png
+/// @par Gnome
+/// @image html button4_g.png
+/// <br>
+/// @image html button4_gd.png
+///
+/// @example calculator
+/// represents a calculator application that performs arithmetic operations on numbers.
+/// @par Windows
+/// @image html calculator_w.png
+/// <br>
+/// @image html calculator_wd.png
+/// @par macOS
+/// @image html calculator_m.png
+/// <br>
+/// @image html calculator_md.png
+/// @par Gnome
+/// @image html calculator_g.png
+/// <br>
+/// @image html calculator_gd.png
+///
+/// @example change_color
+/// demonstrates the use of xtd::forms::control back_color and fore_color properties.
+/// @par Windows
+/// @image html change_color_w.png
+/// <br>
+/// @image html change_color_wd.png
+/// @par macOS
+/// @image html change_color_m.png
+/// <br>
+/// @image html change_color_md.png
+/// @par Gnome
+/// @image html change_color_g.png
+/// <br>
+/// @image html change_color_gd.png
+///
+/// @example change_parent
+/// demonstrates the use of xtd::forms::control parent property.
+/// @par Windows
+/// @image html change_parent_w.png
+/// <br>
+/// @image html change_parent_wd.png
+/// @par macOS
+/// @image html change_parent_m.png
+/// <br>
+/// @image html change_parent_md.png
+/// @par Gnome
+/// @image html change_parent_g.png
+/// <br>
+/// @image html change_parent_gd.png
+///
+/// @example clock
+/// demonstrates the use of xtd::forms::lcd_label control.
+/// @par Windows
+/// @image html clock_w.png
+/// <br>
+/// @image html clock_wd.png
+/// @par macOS
+/// @image html clock_m.png
+/// <br>
+/// @image html clock_md.png
+/// @par Gnome
+/// @image html clock_g.png
+/// <br>
+/// @image html clock_gd.png
+///
+/// @example colored_forms
+/// demonstrates the use of xtd::forms::form control with unicode text.
+/// @par Windows
+/// @image html colored_forms_w.png
+/// <br>
+/// @image html colored_forms_wd.png
+/// @par macOS
+/// @image html colored_forms_m.png
+/// <br>
+/// @image html colored_forms_md.png
+/// @par Gnome
+/// @image html colored_forms_g.png
+/// <br>
+/// @image html colored_forms_gd.png
+///
+/// @example colored_tab_pages
+/// demonstrates the use of xtd::forms::tab_page control with unicode text.
+/// @par Windows
+/// @image html colored_tab_pages_w.png
+/// <br>
+/// @image html colored_tab_pages_wd.png
+/// @par macOS
+/// @image html colored_tab_pages_m.png
+/// <br>
+/// @image html colored_tab_pages_md.png
+/// @par Gnome
+/// @image html colored_tab_pages_g.png
+/// <br>
+/// @image html colored_tab_pages_gd.png
+///
+/// @example colors
+/// demonstrates the use of xtd::forms::user_control control with xtd::drawing::color.
+/// @par Windows
+/// @image html colors_w.png
+/// <br>
+/// @image html colors_wd.png
+/// @par macOS
+/// @image html colors_m.png
+/// <br>
+/// @image html colors_md.png
+/// @par Gnome
+/// @image html colors_g.png
+/// <br>
+/// @image html colors_gd.png
+///
+/// @example docked_panels
+/// demonstrates the use of xtd::forms::panel.
+/// @par Windows
+/// @image html docked_panels_w.png
+/// <br>
+/// @image html docked_panels_wd.png
+/// @par macOS
+/// @image html docked_panels_m.png
+/// <br>
+/// @image html docked_panels_md.png
+/// @par Gnome
+/// @image html docked_panels_g.png
+/// <br>
+/// @image html docked_panels_gd.png
+///
+/// @example flat_button
+/// demonstrates the use of xtd::forms::button control with flat style.
+/// @par Windows
+/// @image html flat_button_w.png
+/// <br>
+/// @image html flat_button_wd.png
+/// @par macOS
+/// @image html flat_button_m.png
+/// <br>
+/// @image html flat_button_md.png
+/// @par Gnome
+/// @image html flat_button_g.png
+/// <br>
+/// @image html flat_button_gd.png
+///
+/// @example font_families
+/// demonstrates the use of xtd::drawing::font_families method, which returns an array of xtd::drawing::font_family objects associated with the current graphics context.
+/// @par Windows
+/// @image html font_families_w.png
+/// <br>
+/// @image html font_families_wd.png
+/// @par macOS
+/// @image html font_families_m.png
+/// <br>
+/// @image html font_families_md.png
+/// @par Gnome
+/// @image html font_families_g.png
+/// <br>
+/// @image html font_families_gd.png
+///
+/// @example form2
+/// represents a window or dialog box that makes up an application's user interface.
+/// @par Windows
+/// @image html form2_w.png
+/// <br>
+/// @image html form2_wd.png
+/// @par macOS
+/// @image html form2_m.png
+/// <br>
+/// @image html form2_md.png
+/// @par Gnome
+/// @image html form2_g.png
+/// <br>
+/// @image html form2_gd.png
+///
+/// @example form_and_main
+/// demonstrates how to use startup_ keyword.
+/// @par Windows
+/// @image html form_and_main_w.png
+/// <br>
+/// @image html form_and_main_wd.png
+/// @par macOS
+/// @image html form_and_main_m.png
+/// <br>
+/// @image html form_and_main_md.png
+/// @par Gnome
+/// @image html form_and_main_g.png
+/// <br>
+/// @image html form_and_main_gd.png
+///
+/// @example form_and_thread
+/// demonstrates how a thread can update ui with xtd::forms::control::invoke method.
+/// @par Windows
+/// @image html form_and_thread_w.png
+/// <br>
+/// @image html form_and_thread_wd.png
+/// @par macOS
+/// @image html form_and_thread_m.png
+/// <br>
+/// @image html form_and_thread_md.png
+/// @par Gnome
+/// @image html form_and_thread_g.png
+/// <br>
+/// @image html form_and_thread_gd.png
+///
+/// @example form_background_image
+/// demonstrates how to use of xtd::forms::form control with background_image.
+/// @par Windows
+/// @image html form_background_image_w.png
+/// <br>
+/// @image html form_background_image_wd.png
+/// @par macOS
+/// @image html form_background_image_m.png
+/// <br>
+/// @image html form_background_image_md.png
+/// @par Gnome
+/// @image html form_background_image_g.png
+/// <br>
+/// @image html form_background_image_gd.png
+///
+/// @example form_decoration
+/// demonstrates the use of xtd::forms::form.
+/// @par Windows
+/// @image html form_decoration_w.png
+/// <br>
+/// @image html form_decoration_wd.png
+/// @par macOS
+/// @image html form_decoration_m.png
+/// <br>
+/// @image html form_decoration_md.png
+/// @par Gnome
+/// @image html form_decoration_g.png
+/// <br>
+/// @image html form_decoration_gd.png
+///
+/// @example form_resize
+/// Shows how to set minimum size, set maximum size, move and resize a form.
+/// @par Windows
+/// @image html form_resize_w.png
+/// <br>
+/// @image html form_resize_wd.png
+/// @par macOS
+/// @image html form_resize_m.png
+/// <br>
+/// @image html form_resize_md.png
+/// @par Gnome
+/// @image html form_resize_g.png
+/// <br>
+/// @image html form_resize_gd.png
+///
+/// @example form_show
+/// This example demonstrates how to launch form as normal window , model-less window and modal window.
+/// @par Windows
+/// @image html form_show_w.png
+/// <br>
+/// @image html form_show_wd.png
+/// @par macOS
+/// @image html form_show_m.png
+/// <br>
+/// @image html form_show_md.png
+/// @par Gnome
+/// @image html form_show_g.png
+/// <br>
+/// @image html form_show_gd.png
+///
+/// @example form_show_hide
+/// demonstrates the use of xtd::forms::form show, hide and close methods.
+/// @par Windows
+/// @image html form_show_hide_w.png
+/// <br>
+/// @image html form_show_hide_wd.png
+/// @par macOS
+/// @image html form_show_hide_m.png
+/// <br>
+/// @image html form_show_hide_md.png
+/// @par Gnome
+/// @image html form_show_hide_g.png
+/// <br>
+/// @image html form_show_hide_gd.png
+///
+/// @example form_window_state
+/// demonstrates the use of xtd::forms::form window state.
+/// @par Windows
+/// @image html form_window_state_w.png
+/// <br>
+/// @image html form_window_state_wd.png
+/// @par macOS
+/// @image html form_window_state_m.png
+/// <br>
+/// @image html form_window_state_md.png
+/// @par Gnome
+/// @image html form_window_state_g.png
+/// <br>
+/// @image html form_window_state_gd.png
+///
+/// @example group_box_and_check_box
+/// demonstrates the use of xtd::forms::group_box container and  xtd::forms::check_box control.
+/// @par Windows
+/// @image html group_box_and_check_box_w.png
+/// <br>
+/// @image html group_box_and_check_box_wd.png
+/// @par macOS
+/// @image html group_box_and_check_box_m.png
+/// <br>
+/// @image html group_box_and_check_box_md.png
+/// @par Gnome
+/// @image html group_box_and_check_box_g.png
+/// <br>
+/// @image html group_box_and_check_box_gd.png
+///
+/// @example group_box_and_radio_button
+/// demonstrates the use of xtd::forms::group_box container and  xtd::forms::radio_button control.
+/// @par Windows
+/// @image html group_box_and_radio_button_w.png
+/// <br>
+/// @image html group_box_and_radio_button_wd.png
+/// @par macOS
+/// @image html group_box_and_radio_button_m.png
+/// <br>
+/// @image html group_box_and_radio_button_md.png
+/// @par Gnome
+/// @image html group_box_and_radio_button_g.png
+/// <br>
+/// @image html group_box_and_radio_button_gd.png
+///
+/// @example images2
+/// demonstrates the use of xtd::forms::images component.
+/// @par Windows
+/// @image html images2_w.png
+/// <br>
+/// @image html images2_wd.png
+/// @par macOS
+/// @image html images2_m.png
+/// <br>
+/// @image html images2_md.png
+/// @par Gnome
+/// @image html images2_g.png
+/// <br>
+/// @image html images2_gd.png
+///
+/// @example images3
+/// demonstrates the use of xtd::forms::images component.
+/// @par Windows
+/// @image html images3_w.png
+/// <br>
+/// @image html images3_wd.png
+/// @par macOS
+/// @image html images3_m.png
+/// <br>
+/// @image html images3_md.png
+/// @par Gnome
+/// @image html images3_g.png
+/// <br>
+/// @image html images3_gd.png
+///
+/// @example input_dialog_multiline
+/// demonstrates the use of xtd::forms::input_dialog dialog.
+/// @par Windows
+/// @image html input_dialog_multiline_w.png
+/// <br>
+/// @image html input_dialog_multiline_wd.png
+/// @par macOS
+/// @image html input_dialog_multiline_m.png
+/// <br>
+/// @image html input_dialog_multiline_md.png
+/// @par Gnome
+/// @image html input_dialog_multiline_g.png
+/// <br>
+/// @image html input_dialog_multiline_gd.png
+///
+/// @example input_dialog_password
+/// demonstrates the use of xtd::forms::input_dialog dialog.
+/// @par Windows
+/// @image html input_dialog_password_w.png
+/// <br>
+/// @image html input_dialog_password_wd.png
+/// @par macOS
+/// @image html input_dialog_password_m.png
+/// <br>
+/// @image html input_dialog_password_md.png
+/// @par Gnome
+/// @image html input_dialog_password_g.png
+/// <br>
+/// @image html input_dialog_password_gd.png
+///
+/// @example labels_and_unicode_text
+/// demonstrates the use of xtd::forms::label control with unicode text.
+/// @par Windows
+/// @image html labels_and_unicode_text_w.png
+/// <br>
+/// @image html labels_and_unicode_text_wd.png
+/// @par macOS
+/// @image html labels_and_unicode_text_m.png
+/// <br>
+/// @image html labels_and_unicode_text_md.png
+/// @par Gnome
+/// @image html labels_and_unicode_text_g.png
+/// <br>
+/// @image html labels_and_unicode_text_gd.png
+///
+/// @example lcd_label2
+/// demonstrates how to use xtd::forms::lcd_label control.
+/// @par Windows
+/// @image html lcd_label2_w.png
+/// <br>
+/// @image html lcd_label2_wd.png
+/// @par macOS
+/// @image html lcd_label2_m.png
+/// <br>
+/// @image html lcd_label2_md.png
+/// @par Gnome
+/// @image html lcd_label2_g.png
+/// <br>
+/// @image html lcd_label2_gd.png
+///
+/// @example lcd_label3
+/// demonstrates how to use xtd::forms::lcd_label control.
+/// @par Windows
+/// @image html lcd_label3_w.png
+/// <br>
+/// @image html lcd_label3_wd.png
+/// @par macOS
+/// @image html lcd_label3_m.png
+/// <br>
+/// @image html lcd_label3_md.png
+/// @par Gnome
+/// @image html lcd_label3_g.png
+/// <br>
+/// @image html lcd_label3_gd.png
+///
+/// @example lcd_label_with_dot_matrix
+/// demonstrates how to use xtd::forms::lcd_label_with_dot_matrix control.
+/// @par Windows
+/// @image html lcd_label_with_dot_matrix_w.png
+/// <br>
+/// @image html lcd_label_with_dot_matrix_wd.png
+/// @par macOS
+/// @image html lcd_label_with_dot_matrix_m.png
+/// <br>
+/// @image html lcd_label_with_dot_matrix_md.png
+/// @par Gnome
+/// @image html lcd_label_with_dot_matrix_g.png
+/// <br>
+/// @image html lcd_label_with_dot_matrix_gd.png
+///
+/// @example lcd_label_with_fourteen_segment
+/// demonstrates how to use xtd::forms::lcd_label_with_fourteen_segment control.
+/// @par Windows
+/// @image html lcd_label_with_fourteen_segment_w.png
+/// <br>
+/// @image html lcd_label_with_fourteen_segment_wd.png
+/// @par macOS
+/// @image html lcd_label_with_fourteen_segment_m.png
+/// <br>
+/// @image html lcd_label_with_fourteen_segment_md.png
+/// @par Gnome
+/// @image html lcd_label_with_fourteen_segment_g.png
+/// <br>
+/// @image html lcd_label_with_fourteen_segment_gd.png
+///
+/// @example lcd_label_with_nine_segment
+/// demonstrates how to use xtd::forms::lcd_label_with_nine_segment control.
+/// @par Windows
+/// @image html lcd_label_with_nine_segment_w.png
+/// <br>
+/// @image html lcd_label_with_nine_segment_wd.png
+/// @par macOS
+/// @image html lcd_label_with_nine_segment_m.png
+/// <br>
+/// @image html lcd_label_with_nine_segment_md.png
+/// @par Gnome
+/// @image html lcd_label_with_nine_segment_g.png
+/// <br>
+/// @image html lcd_label_with_nine_segment_gd.png
+///
+/// @example lcd_label_with_seven_segment
+/// demonstrates how to use xtd::forms::lcd_label_with_seven_segment control.
+/// @par Windows
+/// @image html lcd_label_with_seven_segment_w.png
+/// <br>
+/// @image html lcd_label_with_seven_segment_wd.png
+/// @par macOS
+/// @image html lcd_label_with_seven_segment_m.png
+/// <br>
+/// @image html lcd_label_with_seven_segment_md.png
+/// @par Gnome
+/// @image html lcd_label_with_seven_segment_g.png
+/// <br>
+/// @image html lcd_label_with_seven_segment_gd.png
+///
+/// @example lcd_label_with_sixteen_segment
+/// demonstrates how to use xtd::forms::lcd_label_with_sixteen_segment control.
+/// @par Windows
+/// @image html lcd_label_with_sixteen_segment_w.png
+/// <br>
+/// @image html lcd_label_with_sixteen_segment_wd.png
+/// @par macOS
+/// @image html lcd_label_with_sixteen_segment_m.png
+/// <br>
+/// @image html lcd_label_with_sixteen_segment_md.png
+/// @par Gnome
+/// @image html lcd_label_with_sixteen_segment_g.png
+/// <br>
+/// @image html lcd_label_with_sixteen_segment_gd.png
+///
+/// @example main_menu_create_standard_items
+/// demonstrates the use of xtd::forms::main_menu::create_standard_items method.
+/// @par Windows
+/// @image html main_menu_create_standard_items_w.png
+/// <br>
+/// @image html main_menu_create_standard_items_wd.png
+/// @par macOS
+/// @image html main_menu_create_standard_items_m.png
+/// <br>
+/// @image html main_menu_create_standard_items_md.png
+/// @par Gnome
+/// @image html main_menu_create_standard_items_g.png
+/// <br>
+/// @image html main_menu_create_standard_items_gd.png
+///
+/// @example message_dialog_show_sheet
+/// demonstrates the use of xtd::forms::message_dialog dialog.
+/// @par Windows
+/// @image html message_dialog_show_sheet_w.png
+/// <br>
+/// @image html message_dialog_show_sheet_wd.png
+/// @par macOS
+/// @image html message_dialog_show_sheet_m.png
+/// <br>
+/// @image html message_dialog_show_sheet_md.png
+/// @par Gnome
+/// @image html message_dialog_show_sheet_g.png
+/// <br>
+/// @image html message_dialog_show_sheet_gd.png
+///
+/// @example painting
+/// demonstrates the use of xtd::forms::form controls with mouse_down, mouse_move and paint events.
+/// @par Windows
+/// @image html painting_w.png
+/// <br>
+/// @image html painting_wd.png
+/// @par macOS
+/// @image html painting_m.png
+/// <br>
+/// @image html painting_md.png
+/// @par Gnome
+/// @image html painting_g.png
+/// <br>
+/// @image html painting_gd.png
+///
+/// @example screen_informations
+/// shows how to get screen informations of xtd::forms::screen component.
+/// @par Windows
+/// @image html screen_informations_w.png
+/// <br>
+/// @image html screen_informations_wd.png
+/// @par macOS
+/// @image html screen_informations_m.png
+/// <br>
+/// @image html screen_informations_md.png
+/// @par Gnome
+/// @image html screen_informations_g.png
+/// <br>
+/// @image html screen_informations_gd.png
+///
+/// @example settings_example2
+/// demonstrates the use of xtd::forms::settings component.
+/// @par Windows
+/// @image html settings_example2_w.png
+/// <br>
+/// @image html settings_example2_wd.png
+/// @par macOS
+/// @image html settings_example2_m.png
+/// <br>
+/// @image html settings_example2_md.png
+/// @par Gnome
+/// @image html settings_example2_g.png
+/// <br>
+/// @image html settings_example2_gd.png
+///
+/// @example smileys
+/// demonstrates the use of xtd::forms::label control.
+/// @par Windows
+/// @image html smileys_w.png
+/// <br>
+/// @image html smileys_wd.png
+/// @par macOS
+/// @image html smileys_m.png
+/// <br>
+/// @image html smileys_md.png
+/// @par Gnome
+/// @image html smileys_g.png
+/// <br>
+/// @image html smileys_gd.png
+///
+/// @example some_controls
+/// This example demonstrates the use of some controls.
+/// @par Windows
+/// @image html some_controls_w.png
+/// <br>
+/// @image html some_controls_wd.png
+/// @par macOS
+/// @image html some_controls_m.png
+/// <br>
+/// @image html some_controls_md.png
+/// @par Gnome
+/// @image html some_controls_g.png
+/// <br>
+/// @image html some_controls_gd.png
+///
+/// @example status_bar_without_panels
+/// demonstrates the use of xtd::forms::tool_bar component.
+/// @par Windows
+/// @image html status_bar_without_panels_w.png
+/// <br>
+/// @image html status_bar_without_panels_wd.png
+/// @par macOS
+/// @image html status_bar_without_panels_m.png
+/// <br>
+/// @image html status_bar_without_panels_md.png
+/// @par Gnome
+/// @image html status_bar_without_panels_g.png
+/// <br>
+/// @image html status_bar_without_panels_gd.png
+///
+/// @example stopwatch_form
+/// demonstrates the use of xtd::forms::button, xtd::forms::label controls and xtd::forms::timer component.
+/// @par Windows
+/// @image html stopwatch_form_w.png
+/// <br>
+/// @image html stopwatch_form_wd.png
+/// @par macOS
+/// @image html stopwatch_form_m.png
+/// <br>
+/// @image html stopwatch_form_md.png
+/// @par Gnome
+/// @image html stopwatch_form_g.png
+/// <br>
+/// @image html stopwatch_form_gd.png
+///
+/// @example system_report
+/// represents an example of system_report with xtd::forms::text_box control.
+/// @par Windows
+/// @image html system_report_w.png
+/// <br>
+/// @image html system_report_wd.png
+/// @par macOS
+/// @image html system_report_m.png
+/// <br>
+/// @image html system_report_md.png
+/// @par Gnome
+/// @image html system_report_g.png
+/// <br>
+/// @image html system_report_gd.png
+///
+/// @example system_sound
+/// This example demonstrates the use of xtd::media::system_sound component.
+/// @par Windows
+/// @image html system_sound_w.png
+/// <br>
+/// @image html system_sound_wd.png
+/// @par macOS
+/// @image html system_sound_m.png
+/// <br>
+/// @image html system_sound_md.png
+/// @par Gnome
+/// @image html system_sound_g.png
+/// <br>
+/// @image html system_sound_gd.png
+///
+/// @example text_box_multiline
+/// demonstrates the use of xtd::forms::text_box_multiline control.
+/// @par Windows
+/// @image html text_box_multiline_w.png
+/// <br>
+/// @image html text_box_multiline_wd.png
+/// @par macOS
+/// @image html text_box_multiline_m.png
+/// <br>
+/// @image html text_box_multiline_md.png
+/// @par Gnome
+/// @image html text_box_multiline_g.png
+/// <br>
+/// @image html text_box_multiline_gd.png
+///
+/// @example text_box_password
+/// demonstrates the use of xtd::forms::text_box_password control.
+/// @par Windows
+/// @image html text_box_password_w.png
+/// <br>
+/// @image html text_box_password_wd.png
+/// @par macOS
+/// @image html text_box_password_m.png
+/// <br>
+/// @image html text_box_password_md.png
+/// @par Gnome
+/// @image html text_box_password_g.png
+/// <br>
+/// @image html text_box_password_gd.png
+///
+/// @example text_box_password2
+/// demonstrates the use of xtd::forms::text_box_password control.
+/// @par Windows
+/// @image html text_box_password2_w.png
+/// <br>
+/// @image html text_box_password2_wd.png
+/// @par macOS
+/// @image html text_box_password2_m.png
+/// <br>
+/// @image html text_box_password2_md.png
+/// @par Gnome
+/// @image html text_box_password2_g.png
+/// <br>
+/// @image html text_box_password2_gd.png
+///
+/// @example toggle_button2
+/// demonstrates the use of xtd::forms::check_box control.
+/// @par Windows
+/// @image html toggle_button2_w.png
+/// <br>
+/// @image html toggle_button2_wd.png
+/// @par macOS
+/// @image html toggle_button2_m.png
+/// <br>
+/// @image html toggle_button2_md.png
+/// @par Gnome
+/// @image html toggle_button2_g.png
+/// <br>
+/// @image html toggle_button2_gd.png
+///
+/// @example track_bar2
+/// demonstrates the use of xtd::forms::track_bar control.
+/// @par Windows
+/// @image html track_bar2_w.png
+/// <br>
+/// @image html track_bar2_wd.png
+/// @par macOS
+/// @image html track_bar2_m.png
+/// <br>
+/// @image html track_bar2_md.png
+/// @par Gnome
+/// @image html track_bar2_g.png
+/// <br>
+/// @image html track_bar2_gd.png
+///
+/// @example wiggly
+/// The Wiggly example shows how to animate a user control using timer and timer::tick event. In addition, the example demonstrates how to use graphics::measure_string to determine the size of text on screen.
+/// @par Windows
+/// @image html wiggly_w.png
+/// <br>
+/// @image html wiggly_wd.png
+/// @par macOS
+/// @image html wiggly_m.png
+/// <br>
+/// @image html wiggly_md.png
+/// @par Gnome
+/// @image html wiggly_g.png
+/// <br>
+/// @image html wiggly_gd.png
+///
+/// @example test_forms
+/// tests forms control
+/// @par Windows
+/// @image html test_forms_w.png
+/// <br>
+/// @image html test_forms_wd.png
+/// @par macOS
+/// @image html test_forms_m.png
+/// <br>
+/// @image html test_forms_md.png
+/// @par Gnome
+/// @image html test_forms_g.png
+/// <br>
+/// @image html test_forms_gd.png
+///
+/// @example application_enable_dark_mode
+/// Shows how to create an application with  xtd::forms::application::enable_dark_mode method.
+/// @par Windows
+/// @image html application_enable_dark_mode_w.png
+/// <br>
+/// @image html application_enable_dark_mode_wd.png
+/// @par macOS
+/// @image html application_enable_dark_mode_m.png
+/// <br>
+/// @image html application_enable_dark_mode_md.png
+/// @par Gnome
+/// @image html application_enable_dark_mode_g.png
+/// <br>
+/// @image html application_enable_dark_mode_gd.png
+///
+/// @example application_enable_light_mode
+/// Shows how to create an application with  xtd::forms::application::enable_light_mode method.
+/// @par Windows
+/// @image html application_enable_light_mode_w.png
+/// <br>
+/// @image html application_enable_light_mode_wd.png
+/// @par macOS
+/// @image html application_enable_light_mode_m.png
+/// <br>
+/// @image html application_enable_light_mode_md.png
+/// @par Gnome
+/// @image html application_enable_light_mode_g.png
+/// <br>
+/// @image html application_enable_light_mode_gd.png
+///
+/// @example themes
+/// Shows how to use xtd::forms::theme class.
+/// @par Windows
+/// @image html themes_w.png
+/// <br>
+/// @image html themes_wd.png
+/// @par macOS
+/// @image html themes_m.png
+/// <br>
+/// @image html themes_md.png
+/// @par Gnome
+/// @image html themes_g.png
+/// <br>
+/// @image html themes_gd.png
+///
+/// @example tutorial_application_icon
+/// First we create the very basic xtd::forms program.
+/// @par Windows
+/// @image html tutorial_application_icon_w.png
+/// <br>
+/// @image html tutorial_application_icon_wd.png
+/// @par macOS
+/// @image html tutorial_application_icon_m.png
+/// <br>
+/// @image html tutorial_application_icon_md.png
+/// @par Gnome
+/// @image html tutorial_application_icon_g.png
+/// <br>
+/// @image html tutorial_application_icon_gd.png
+///
+/// @example tutorial_button
+/// First we create the very basic xtd::forms program.
+/// @par Windows
+/// @image html tutorial_button_w.png
+/// <br>
+/// @image html tutorial_button_wd.png
+/// @par macOS
+/// @image html tutorial_button_m.png
+/// <br>
+/// @image html tutorial_button_md.png
+/// @par Gnome
+/// @image html tutorial_button_g.png
+/// <br>
+/// @image html tutorial_button_gd.png
+///
+/// @example tutorial_communicate
+/// First we create the very basic xtd::forms program.
+/// @par Windows
+/// @image html tutorial_communicate_w.png
+/// <br>
+/// @image html tutorial_communicate_wd.png
+/// @par macOS
+/// @image html tutorial_communicate_m.png
+/// <br>
+/// @image html tutorial_communicate_md.png
+/// @par Gnome
+/// @image html tutorial_communicate_g.png
+/// <br>
+/// @image html tutorial_communicate_gd.png
+///
+/// @example tutorial_console
+/// First we create the very basic xtd_forms program.
+/// @par Windows
+/// @image html tutorial_console_w.png
+/// <br>
+/// @image html tutorial_console_wd.png
+/// @par macOS
+/// @image html tutorial_console_m.png
+/// <br>
+/// @image html tutorial_console_md.png
+/// @par Gnome
+/// @image html tutorial_console_g.png
+/// <br>
+/// @image html tutorial_console_gd.png
+///
+/// @example tutorial_console_write_line
+/// First we create the very basic xtd_forms program.
+/// @par Windows
+/// @image html tutorial_console_write_line_w.png
+/// <br>
+/// @image html tutorial_console_write_line_wd.png
+/// @par macOS
+/// @image html tutorial_console_write_line_m.png
+/// <br>
+/// @image html tutorial_console_write_line_md.png
+/// @par Gnome
+/// @image html tutorial_console_write_line_g.png
+/// <br>
+/// @image html tutorial_console_write_line_gd.png
+///
+/// @example tutorial_environment
+/// First we create the very basic xtd_forms program.
+/// @par Windows
+/// @image html tutorial_environment_w.png
+/// <br>
+/// @image html tutorial_environment_wd.png
+/// @par macOS
+/// @image html tutorial_environment_m.png
+/// <br>
+/// @image html tutorial_environment_md.png
+/// @par Gnome
+/// @image html tutorial_environment_g.png
+/// <br>
+/// @image html tutorial_environment_gd.png
+///
+/// @example tutorial_simple_application
+/// First we create the very basic xtd_forms program.
+/// @par Windows
+/// @image html tutorial_simple_application_w.png
+/// <br>
+/// @image html tutorial_simple_application_wd.png
+/// @par macOS
+/// @image html tutorial_simple_application_m.png
+/// <br>
+/// @image html tutorial_simple_application_md.png
+/// @par Gnome
+/// @image html tutorial_simple_application_g.png
+/// <br>
+/// @image html tutorial_simple_application_gd.png
+///
+/// @example tutorial_strings
+/// First we create the very basic xtd_forms program.
+/// @par Windows
+/// @image html tutorial_strings_w.png
+/// <br>
+/// @image html tutorial_strings_wd.png
+/// @par macOS
+/// @image html tutorial_strings_m.png
+/// <br>
+/// @image html tutorial_strings_md.png
+/// @par Gnome
+/// @image html tutorial_strings_g.png
+/// <br>
+/// @image html tutorial_strings_gd.png
+///
+/// @example button_with_style_sheet
+/// demonstrates how to create a xtd::forms::button control with style_sheet.
+/// @par Windows
+/// @image html button_with_style_sheet_w.png
+/// <br>
+/// @image html button_with_style_sheet_wd.png
+/// @par macOS
+/// @image html button_with_style_sheet_m.png
+/// <br>
+/// @image html button_with_style_sheet_md.png
+/// @par Gnome
+/// @image html button_with_style_sheet_g.png
+/// <br>
+/// @image html button_with_style_sheet_gd.png
+///
+/// @example line
+/// demonstrates how to create a custom control with xtd::forms::user_control control.
+/// @par Windows
+/// @image html line_w.png
+/// <br>
+/// @image html line_wd.png
+/// @par macOS
+/// @image html line_m.png
+/// <br>
+/// @image html line_md.png
+/// @par Gnome
+/// @image html line_g.png
+/// <br>
+/// @image html line_gd.png
+///
+/// @example numeric_text_box
+/// demonstrates how to create a custom control with xtd::forms::text_box control.
+/// @par Windows
+/// @image html numeric_text_box_w.png
+/// <br>
+/// @image html numeric_text_box_wd.png
+/// @par macOS
+/// @image html numeric_text_box_m.png
+/// <br>
+/// @image html numeric_text_box_md.png
+/// @par Gnome
+/// @image html numeric_text_box_g.png
+/// <br>
+/// @image html numeric_text_box_gd.png
+///
+/// @example owner_button
+/// demonstrates how to create a custom button with xtd::forms::button control.
+/// @par Windows
+/// @image html owner_button_w.png
+/// <br>
+/// @image html owner_button_wd.png
+/// @par macOS
+/// @image html owner_button_m.png
+/// <br>
+/// @image html owner_button_md.png
+/// @par Gnome
+/// @image html owner_button_g.png
+/// <br>
+/// @image html owner_button_gd.png
+///
+/// @example user_dialog
+/// demonstrates the use of xtd::forms::form as dialog.
+/// @par Windows
+/// @image html user_dialog_w.png
+/// <br>
+/// @image html user_dialog_wd.png
+/// @par macOS
+/// @image html user_dialog_m.png
+/// <br>
+/// @image html user_dialog_md.png
+/// @par Gnome
+/// @image html user_dialog_g.png
+/// <br>
+/// @image html user_dialog_gd.png
+///
+/// @example user_dialog_show_sheet
+/// demonstrates the use of xtd::forms::form as dialog.
+/// @par Windows
+/// @image html user_dialog_show_sheet_w.png
+/// <br>
+/// @image html user_dialog_show_sheet_wd.png
+/// @par macOS
+/// @image html user_dialog_show_sheet_m.png
+/// <br>
+/// @image html user_dialog_show_sheet_md.png
+/// @par Gnome
+/// @image html user_dialog_show_sheet_g.png
+/// <br>
+/// @image html user_dialog_show_sheet_gd.png
