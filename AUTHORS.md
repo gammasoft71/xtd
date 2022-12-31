@@ -13,3 +13,7 @@ This file lists all persons who contributed to xtd (in order of appearance). If 
 * [GermanAizek](https://github.com/GermanAizek) - Contributor
 * [jimorc](https://github.com/jimorc) - Contributor
 * [niansa](https://github.com/niansa) - Contributor
+
+## Remarks
+
+Please respect the alphabetical order.
