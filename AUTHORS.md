@@ -5,6 +5,7 @@ This file lists all persons who contributed to xtd (in order of appearance). If 
 ## Developers
 
 * [gammasoft71](https://gammasoft71.wixsite.com/gammasoft) - Main developer, owner
+* [Arsero](https://github.com/Arsero) - Developer
 * [Bader](https://github.com/BaderEddineOuaich) - Developer
 
 ## Contributors
