@@ -1387,4 +1387,4 @@ The following table shows the different types of resources supported:
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

@@ -29,4 +29,4 @@ Get started developing xtd applications by following a step-by-step [tutorials](
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

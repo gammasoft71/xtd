@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::animation control.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/diagnostics/stopwatch.h>
 #include "animation_update_event_handler.h"

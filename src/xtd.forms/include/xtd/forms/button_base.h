@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::button_base class.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/drawing/image.h>
 #include "control.h"

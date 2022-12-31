@@ -39,4 +39,4 @@ The xtd tutorials provide an overview of the important features of the xtd Frame
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

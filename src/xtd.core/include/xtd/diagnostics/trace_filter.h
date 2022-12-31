@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::diagnostics::trace_filter class.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <any>
 #include <map>

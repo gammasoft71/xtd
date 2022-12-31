@@ -65,4 +65,4 @@ Now you are ready to make your first contribution to xtd.
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

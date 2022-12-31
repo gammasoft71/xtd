@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::drawing::size_f class.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <ostream>
 #include <xtd/iequatable.h>

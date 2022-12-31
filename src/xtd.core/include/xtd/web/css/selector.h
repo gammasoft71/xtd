@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::web::css::selector class.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "../../object.h"
 #include "property_map.h"

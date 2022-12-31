@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::text_box_base control.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/bit_converter.h>
 #include <xtd/argument_out_of_range_exception.h>

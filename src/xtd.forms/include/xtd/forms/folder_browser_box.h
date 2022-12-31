@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::folder_browser_box control.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/static.h>
 #include "folder_browser_dialog.h"

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::speech::synthesis::speech_synthesizer class.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
 #include "../../event.h"

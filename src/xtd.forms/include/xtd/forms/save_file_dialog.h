@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::save_file_dialog dialog.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/io/file.h>
 #include "file_dialog.h"

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains__tunit_join__items functions.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "__default_insert_basic_ostream_operator.h"
 #include <sstream>

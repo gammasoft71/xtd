@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::translator class.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <string>
 #include <vector>

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::style_sheets::ibox_model class.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <array>
 #include <xtd/iequatable.h>

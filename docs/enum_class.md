@@ -709,6 +709,6 @@ int main() {
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.
 
 [comment]: <> (https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-timespan-format-strings)

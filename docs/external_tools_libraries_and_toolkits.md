@@ -36,4 +36,4 @@ At this time only wxWidgets toolkit is supported.
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

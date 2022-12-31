@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::diagnostics::boolean_switch class.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <optional>
 #include "switch_base.h"

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains unit test application main entry point.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/startup.h>
 #include "../tunit_export.h"

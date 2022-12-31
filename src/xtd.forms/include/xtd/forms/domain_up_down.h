@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::domain_up_down control.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/iequatable.h>
 #include "up_down_base.h"

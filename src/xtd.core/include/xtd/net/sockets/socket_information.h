@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::net::sockets::socket_information class.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
 #include "../../core_export.h"

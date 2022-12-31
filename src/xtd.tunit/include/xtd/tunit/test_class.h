@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::test_class class.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "../tunit_export.h"
 #include "__google_test_markers.h"

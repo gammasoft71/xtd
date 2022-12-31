@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::drawing::system_fonts factory.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/static.h>
 #include "../drawing_export.h"

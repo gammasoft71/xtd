@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::iwin32_window interface.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
 #include <xtd/interface.h>

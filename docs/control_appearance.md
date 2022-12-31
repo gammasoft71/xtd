@@ -49,4 +49,4 @@ For any control or dialog box, you can decide to use the native version in the f
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

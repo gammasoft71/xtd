@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::drawing::drawing2d::gradient_stop alias.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "gradient_stop.h"
 #include <vector>

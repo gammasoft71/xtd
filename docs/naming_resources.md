@@ -30,4 +30,4 @@ The resource identifier should be the exception type name plus a short identifie
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

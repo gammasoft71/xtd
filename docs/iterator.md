@@ -34,4 +34,4 @@ This structural code demonstrates the Iterator pattern which provides for a way 
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

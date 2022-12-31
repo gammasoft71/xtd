@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::application_context class.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/object.h>
 #include "form.h"

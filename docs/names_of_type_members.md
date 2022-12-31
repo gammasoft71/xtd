@@ -102,4 +102,4 @@ For example, do not use "g_" or "s_" to indicate static fields.
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

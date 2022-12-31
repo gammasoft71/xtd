@@ -30,4 +30,4 @@ In general, structs can be very useful but should only be used for small, single
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

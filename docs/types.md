@@ -110,6 +110,6 @@ autp value_unboxed3 = xtd::unboxing(value_boxed);  // explict with auto is bool
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.
 
 [comment]: <> (https://learn.microsoft.com/en-us/dotnet/standard/base-types/type-conversion)

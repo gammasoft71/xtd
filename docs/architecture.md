@@ -33,4 +33,4 @@ The [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) lib
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

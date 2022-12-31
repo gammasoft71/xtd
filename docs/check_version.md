@@ -32,4 +32,4 @@ You'll also get other environmental related information, such as the operating s
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

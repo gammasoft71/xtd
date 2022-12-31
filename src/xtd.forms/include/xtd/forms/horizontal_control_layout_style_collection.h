@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::horizontal_control_layout_style_collection typedef.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <utility>
 #include <vector>

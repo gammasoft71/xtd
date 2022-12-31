@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::cpp_language class.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
 #include <map>

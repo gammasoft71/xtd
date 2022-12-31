@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::color_box control.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "color_dialog.h"
 #include "color_box_styles.h"

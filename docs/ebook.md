@@ -36,4 +36,4 @@ This is [xtd](https://github.com/gammasoft71/xtd) tutorial for the [C++](c++.md)
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.
