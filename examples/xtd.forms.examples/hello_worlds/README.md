@@ -1,6 +1,6 @@
 # xtd.forms "Hello, World!" examples
 
-[This folder](..) contains xtd.forms "Hello, World!" examples.
+[This folder](.) contains xtd.forms "Hello, World!" examples.
 
 * [hello_world_emoticons](hello_world_emoticons/README.md) The classic first application "Hello, World!" with  [xtd::forms::emoticons](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1emoticons.html) component.
 * [hello_world_label](hello_world_label/README.md) The classic first application "Hello, World!" with  [xtd::forms::label](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1label.html) control.

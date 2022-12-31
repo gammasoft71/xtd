@@ -1,6 +1,6 @@
 # Dialog examples
 
-[This folder](..) contains xtd.forms dialog examples.
+[This folder](.) contains xtd.forms dialog examples.
 
 * [about_box](about_box/README.md) represents a dialog box that displays about box.
 * [about_dialog](about_dialog/README.md) represents a dialog box that displays about dialog.
