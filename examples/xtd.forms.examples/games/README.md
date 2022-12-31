@@ -1,6 +1,6 @@
 # Games examples
 
-[This folder](..) contains xtd.forms game examples.
+[This folder](.) contains xtd.forms game examples.
 
 ## Games
 

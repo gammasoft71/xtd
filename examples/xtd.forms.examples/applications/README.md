@@ -1,6 +1,6 @@
 # Applications examples
 
-[This folder](..) contains xtd.forms application examples.
+[This folder](.) contains xtd.forms application examples.
 
 * [application](application/README.md) shows how to create an application with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class.
 * [application_and_assert](application_and_assert/README.md) shows how to create an application with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class and hot to manage assert.
