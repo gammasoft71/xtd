@@ -48,4 +48,4 @@ Also, members that throw exceptions are not getting inlined. Moving the throw st
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

@@ -32,4 +32,4 @@ This structural code demonstrates the Bridge pattern which separates (decouples)
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

@@ -265,4 +265,4 @@ If you are not using CMake for your project creation, it is advisable to add thi
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

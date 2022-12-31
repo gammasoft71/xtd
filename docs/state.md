@@ -34,4 +34,4 @@ This structural code demonstrates the State pattern which allows an Account to b
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

@@ -38,4 +38,4 @@ Except for the situations described in these guidelines, you should, in general,
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

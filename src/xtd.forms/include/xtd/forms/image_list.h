@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::image_list component.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <any>
 #include <xtd/iequatable.h>

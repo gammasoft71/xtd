@@ -62,7 +62,7 @@ startup_(program);
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.
 
 <!---
 https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-copy-directories

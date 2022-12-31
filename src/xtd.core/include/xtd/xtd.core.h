@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd.core library headers.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
 #include "xtd_namespace_aliases.h"

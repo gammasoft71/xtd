@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::ostream_event_listener class.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "__console_color.h"
 #include "event_listener.h"

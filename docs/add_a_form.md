@@ -11,6 +11,6 @@ Coming soon...
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.
 
 [comment]: <> (https://learn.microsoft.com/en-us/dotnet/desktop/winforms/forms/how-to-add?view=netdesktop-6.0)

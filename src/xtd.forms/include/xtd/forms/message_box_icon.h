@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::message_box_icon enum class.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/forms/message_dialog_icon.h>
 

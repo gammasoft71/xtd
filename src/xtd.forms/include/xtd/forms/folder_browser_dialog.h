@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::folder_browser_dialog dialog.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/environment.h>
 #include <xtd/forms/browser_info_flags.h>

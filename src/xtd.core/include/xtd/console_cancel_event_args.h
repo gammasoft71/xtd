@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::console_cancel_event_args event args.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "event_args.h"
 #include "console_special_key.h"

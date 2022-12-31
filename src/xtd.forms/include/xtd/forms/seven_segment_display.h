@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::seven_segment_display control.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/argument_out_of_range_exception.h>
 #include <xtd/drawing/system_colors.h>

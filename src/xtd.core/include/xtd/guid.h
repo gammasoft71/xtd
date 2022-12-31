@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::guid class.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <vector>
 #include "core_export.h"

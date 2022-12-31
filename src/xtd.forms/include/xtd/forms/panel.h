@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::panel container.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <optional>
 #include "scrollable_control.h"

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::net::ip_host_entry class.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
 #include <vector>

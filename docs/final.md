@@ -31,4 +31,4 @@ Problems that can result from introducing virtual members (discussed in [Virtual
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

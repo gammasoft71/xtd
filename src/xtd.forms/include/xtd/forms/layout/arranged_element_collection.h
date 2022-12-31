@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::layout::arranged_element_collection collection.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <limits>
 #include <ostream>

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::user_control control.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <optional>
 #include "container_control.h"

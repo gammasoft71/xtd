@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::date_range_event_args event args.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
 #include <xtd/date_time.h>

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::v_scroll_bar control.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "scroll_bar.h"
 

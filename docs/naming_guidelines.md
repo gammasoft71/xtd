@@ -26,4 +26,4 @@ Although adopting these naming conventions as general code development guideline
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

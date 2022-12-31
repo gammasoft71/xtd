@@ -44,4 +44,4 @@ There are specific guidelines for avoiding type name conflicts for different cat
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

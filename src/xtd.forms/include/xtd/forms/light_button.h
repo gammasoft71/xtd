@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::light_button control.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/drawing/system_colors.h>
 #include "appearance.h"

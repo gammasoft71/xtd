@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::convert class.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <any>
 #include "static.h"
