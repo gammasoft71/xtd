@@ -15,7 +15,7 @@ xtdc --version
 You get output similar to the following.
 
 ```
-xtdc version 0.2.0, © 2022 by Gammasoft
+xtdc version 0.2.0, © 2023 by Gammasoft
 ```
 
 The [xtdc](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc/README.md) version corresponds to the xtd version.

@@ -6,7 +6,7 @@
  
 [MIT License](https://opensource.org/licenses/MIT)
 
-Copyright (c) 2022 [Gammasoft](https://gammasoft71.wixsite.com/gammasoft).
+Copyright (c) 2023 [Gammasoft](https://gammasoft71.wixsite.com/gammasoft).
 
 
 
