@@ -17,7 +17,7 @@ int main() {
 
 // This code produces the following output :
 //
-// xtdc version 1.0.0, © 2022 by Gammasoft
+// xtdc version 0.2.0, © 2023 by Gammasoft
 //
 // Usage: xtdc [<options> | command [<command-argument>] [<command-options>]]
 //
