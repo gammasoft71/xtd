@@ -7,6 +7,7 @@
 
 #include <cstdint>
 #include <wx/dc.h>
+#include <wx/dcbuffer.h>
 #include <wx/dcmemory.h>
 #include <wx/dcscreen.h>
 #include <wx/graphics.h>
@@ -21,6 +22,7 @@ namespace xtd {
           if (graphics_) delete graphics_;
           if (bitmap_) delete bitmap_;
           if (hdc_) delete hdc_;
+          if (hdc_base_) delete hdc_base_;
         }
         
         wxGraphicsContext* graphics() {
@@ -41,6 +43,13 @@ namespace xtd {
           graphics_ = create_graphics(*handle);
         }
         
+        void create_buffered_hdc(wxDC* hdc_base) {
+          auto handle = new wxBufferedDC(hdc_base);
+          hdc_ = handle;
+          hdc_base_ = hdc_base;
+          graphics_ = create_graphics(*handle);
+        }
+        
         void create_memory_hdc(wxBitmap* bitmap, wxImage* image) {
           auto handle = new wxMemoryDC(*bitmap);
           hdc_ = handle;
@@ -48,7 +57,7 @@ namespace xtd {
           image_ = image;
           graphics_ = create_graphics(*handle);
         }
-        
+
         void apply_update() {
           if (bitmap_ && image_) *image_ = bitmap_->ConvertToImage();
         }
@@ -61,6 +70,7 @@ namespace xtd {
         wxBitmap* bitmap_ = nullptr;
         wxImage* image_ = nullptr;
         wxGraphicsContext* graphics_ = nullptr;
+        wxDC* hdc_base_ = nullptr;
       };
     }
   }
