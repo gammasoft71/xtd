@@ -2,14 +2,14 @@
 
 using namespace std::literals;
 using namespace xtd;
+using namespace xtd::diagnostics;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
 int main() {
-  auto counter = 0;
-  
   timer timer;
   timer.interval(100ms);
+  stopwatch chrono;
   
   form form_main;
   form_main.text("Lcd label example 2");
@@ -25,14 +25,17 @@ int main() {
   label.text("  0.0");
   
   timer.tick += [&] {
-    label.text(ustring::format("{,5:F1}", counter++ / 10.0));
+    label.text(ustring::format("{,5:F1}", chrono.elapsed_milliseconds() / 1000.0));
   };
   
   label.mouse_down += [&] {
-    if (control::mouse_buttons() == mouse_buttons::left)
+    if (control::mouse_buttons() == mouse_buttons::left) {
       timer.enabled(!timer.enabled());
-    else {
-      counter = 0;
+      if (timer.enabled()) chrono.start();
+      else chrono.stop();
+    } else {
+      if (timer.enabled()) chrono.restart();
+      else chrono.reset();
       label.text("  0.0");
     }
   };
