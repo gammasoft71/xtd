@@ -2,8 +2,7 @@
 /* Copyright (c) 2023 Gammasoft. All rights reserved. */
 
 button {
-  margin: 0px 1px 1px 0px;
-  border-style: outset;
+  border-style: solid;
   border-color: system-color(control-dark);
   border-width: 1px;
   border-radius: 4px;
@@ -17,19 +16,13 @@ button:hover {
 }
 
 button:pressed {
-  margin: 1px 0px 0px 1px;
-  border-style: inset;
   border-color: system-color(accent);
-  background-color: system-color(accent);
-  color: system-color(accent-text);
-}
+  background-color: #FFC3E1F4;
+ }
 
 button:checked {
-  margin: 1px 0px 0px 1px;
-  border-style: inset;
   border-color: system-color(accent);
-  background-color: system-color(accent);
-  color: system-color(accent-text);
+  background-color: #FFC3E1F4;
 }
 
 button:disabled {  
@@ -38,14 +31,10 @@ button:disabled {
 }
 
 button:default {
-  margin: 0px 1px 1px 0px;
-  border-style: outset;
   border-color: system-color(accent);
   border-width: 1px;
   border-radius: 4px;
-  background-color: system-color(accent);
   padding: 1px 1px 3px 1px;
-  color: system-color(accent-text);
 }
 
 button:default:hover {
@@ -53,19 +42,13 @@ button:default:hover {
 }
 
 button:default:pressed {
-  margin: 1px 0px 0px 1px;
-  border-style: inset;
   border-color: system-color(accent);
-  background-color: system-color(accent);
-  color: system-color(accent-text);
+  background-color: s#FFC3E1F4;
 }
 
 button:default:checked {
-  margin: 1px 0px 0px 1px;
-  border-style: inset;
   border-color: system-color(accent);
-  background-color: system-color(accent);
-  color: system-color(accent-text);
+  background-color: #FFC3E1F4;
 }
 
 button:default:disabled {  
