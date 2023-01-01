@@ -299,14 +299,14 @@ private:
     if (*menu_items[4] == sender) save_file_box::show(file_name, *this);
     if (*menu_items[5] == sender) save_file_box::show(file_name, *this, "Save as...");
     if (*menu_items[10] == sender) application::exit();
-    if (*menu_items[28] == sender) about_box::show(*this, "Shows some controls with theme", "Themes example", xtd::drawing::system_icons::xtd_logo(), environment::version().to_string(2), environment::version().to_string(), "Copygight (c) 2022 Gammasoft.", "https://gammasoft71.wixsite.com/xtdpro", "xtd");
+    if (*menu_items[28] == sender) about_box::show(*this, "Shows some controls with theme", "Themes example", xtd::drawing::system_icons::xtd_logo(), environment::version().to_string(2), environment::version().to_string(), "Copygight (c) 2023 Gammasoft.", "https://gammasoft71.wixsite.com/xtdpro", "xtd");
   }
   
   void tool_bar_button_click(object& sender, const tool_bar_button_click_event_args& e) {
     ustring file_name;
     if (e.button() == open_tool_bar_button) open_file_box::show(file_name, *this);
     if (e.button() == save_tool_bar_button) save_file_box::show(file_name, *this);
-    if (e.button() == help_tool_bar_button) about_box::show(*this, "Shows some controls with theme", "Themes example", xtd::drawing::system_icons::xtd_logo(), environment::version().to_string(2), environment::version().to_string(), "Copygight (c) 2022 Gammasoft.", "https://gammasoft71.wixsite.com/xtdpro", "xtd");
+    if (e.button() == help_tool_bar_button) about_box::show(*this, "Shows some controls with theme", "Themes example", xtd::drawing::system_icons::xtd_logo(), environment::version().to_string(2), environment::version().to_string(), "Copygight (c) 2023 Gammasoft.", "https://gammasoft71.wixsite.com/xtdpro", "xtd");
   }
   
   void update_status_bar_text() {
