@@ -123,7 +123,6 @@ namespace xtd {
       event<background_worker, do_work_event_handler> do_work;
       
       /// @brief Occurs when report_progress(int32) is called.
-      /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<background_worker, progress_changed_event_handler> progress_changed;
       

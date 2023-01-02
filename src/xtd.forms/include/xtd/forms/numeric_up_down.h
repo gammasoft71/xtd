@@ -135,7 +135,6 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the value property has been changed in some way.
-      /// @ingroup events
       event<numeric_up_down, event_handler> value_changed;
       /// @}
       

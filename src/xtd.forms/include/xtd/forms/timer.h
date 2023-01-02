@@ -92,7 +92,6 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the specified timer interval has elapsed and the timer is enabled.
-      /// @ingroup events
       /// @remarks Calling the Assert method on the xtd::diagnostics::debug class from within the tick event may not behave as expected, as displaying the assertion dialog box may cause Windows to raise the tick event repeatedly. We recommend that you refrain from testing assertions within this event, and use the write, write_if, write_line, or write_line_if methods instead.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<timer, event_handler> tick;
