@@ -20,7 +20,10 @@ public:
       graphics.draw_ellipse(pens::black(), 0, 0, bitmap.width() - 1, bitmap.height() - 1);
       image_list_.images().push_back(bitmap);
       
-      auto tab_page = control::create<forms::tab_page>(tab_control_colored, color.name(), drawing::point::empty, drawing::size::empty, color);
+      auto tab_page = make_unique<forms::tab_page>();
+      tab_page->parent(tab_control_colored);
+      tab_page->text(color.name());
+      tab_page->back_color(color);
       tab_page->image_index(tab_pages.size());
       tab_pages.push_back(std::move(tab_page));
     });
