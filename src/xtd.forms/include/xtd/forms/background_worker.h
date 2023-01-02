@@ -119,7 +119,6 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when run_worker_async() is called.
-      /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<background_worker, do_work_event_handler> do_work;
       
@@ -129,7 +128,6 @@ namespace xtd {
       event<background_worker, progress_changed_event_handler> progress_changed;
       
       /// @brief Occurs when the background operation has completed, has been canceled, or has raised an exception.
-      /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<background_worker, run_worker_completed_event_handler> run_worker_completed;
       /// @}

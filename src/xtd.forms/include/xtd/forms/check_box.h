@@ -158,17 +158,14 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the value of the appearance property changes.
-      /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<check_box, event_handler> appearance_changed;
       
       /// @brief Occurs when the value of the checked property changes.
-      /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<check_box, event_handler> checked_changed;
       
       /// @brief Occurs when the value of the check_state property changes.
-      /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<check_box, event_handler> check_state_changed;
       /// @}
@@ -212,19 +209,12 @@ namespace xtd {
       virtual void on_check_state_changed(const event_args& e);
       
       void on_enabled_changed(const event_args& e) override;
-      
       void on_handle_created(const event_args& e) override;
-      
       void on_mouse_down(const mouse_event_args& e) override;
-      
       void on_mouse_enter(const event_args& e) override;
-      
       void on_mouse_leave(const event_args& e) override;
-      
       void on_mouse_up(const mouse_event_args& e) override;
-      
       void on_paint(paint_event_args& e) override;
-      
       void wnd_proc(message& message) override;
       /// @}
       
