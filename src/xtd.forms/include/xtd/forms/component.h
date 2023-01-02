@@ -29,12 +29,6 @@ namespace xtd {
       component();
       /// @}
 
-      /// @cond
-      component(component&&) = default;
-      component(const component&) = default;
-      component& operator=(const component&) = default;
-      /// @endcond
-      
       /// @name Protected properties
       
       /// @{
