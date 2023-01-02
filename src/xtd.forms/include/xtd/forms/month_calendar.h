@@ -332,13 +332,11 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the date selected in the xtd::forms::month_calendar changes.
-      /// @ingroup events
       /// @remarks The xtd::forms::month_calendar::date_changed event occurs during any date selection, whether by mouse, keyboard, or code. The xtd::forms::month_calendar::date_selected event is similar, but it occurs only at the end of a date selection made using the mouse.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<month_calendar, xtd::forms::date_range_event_handler> date_changed;
       
       /// @brief Occurs when the user makes an explicit date selection using the mouse.
-      /// @ingroup events
       /// @remarks This event is similar to the xtd::forms::month_calendar::date_changed event, but it occurs at the end of a date selection made using the mouse. The xtd::forms::month_calendar::date_changed event occurs during any date selection, whether by mouse, keyboard, or code.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<month_calendar, xtd::forms::date_range_event_handler> date_selected;
