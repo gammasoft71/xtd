@@ -216,7 +216,6 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the user clicks the Apply button in the font dialog box.
-      /// @ingroup events
       /// @remarks Every time the Apply button is clicked, another apply event is raised.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<font_dialog, event_handler> apply;
