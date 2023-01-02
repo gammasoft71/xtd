@@ -85,7 +85,6 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the specified interval specified by xtd::forms::animation::frames_per_second has elapsed and the animation is started.
-      /// @ingroup events
       /// @remarks You can use this event to do things like advancing animation parameters, checking the mouse position, etc.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       xtd::event<animation, animation_updated_event_handler> updated;

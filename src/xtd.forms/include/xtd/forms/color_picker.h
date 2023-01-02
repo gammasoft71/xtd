@@ -76,7 +76,6 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the value of the color property changes.
-      /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<color_picker, color_picker_event_handler> color_picker_changed;
       /// @}

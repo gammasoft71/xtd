@@ -268,7 +268,6 @@ namespace xtd {
       virtual void on_item_check(item_check_event_args& e);
       
       void on_selected_value_changed(const event_args& e) override;
-      
       void wnd_proc(message& message) override;
       /// @}
       
