@@ -133,7 +133,7 @@ ustring menu::to_string() const noexcept {
 }
 
 void menu::clone_menu(const menu& menu_src) {
-  *data_->mdi_list_item = *menu_src.data_->mdi_list_item;
+  data_->mdi_list_item = menu_src.data_->mdi_list_item;
   data_->menu_items = menu_src.data_->menu_items;
   data_->name = menu_src.data_->name;
   data_->tag = menu_src.data_->tag;

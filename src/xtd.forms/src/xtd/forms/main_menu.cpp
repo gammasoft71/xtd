@@ -59,19 +59,19 @@ void main_menu::wm_click(message& message) {
   }
 }
 
-unique_ptr<main_menu> main_menu::create_standard_items(vector<unique_ptr<menu_item>>& menu_items, const xtd::event_handler& on_click) {
-  return create_standard_items(menu_items, application::style_sheet().theme().name(), menu_images::size(), on_click);
+main_menu main_menu::create_standard_items( const xtd::event_handler& on_click) {
+  return create_standard_items(application::style_sheet().theme().name(), menu_images::size(), on_click);
 }
 
-unique_ptr<xtd::forms::main_menu> main_menu::create_standard_items(vector<unique_ptr<menu_item>>& menu_items, const drawing::size& size, const xtd::event_handler& on_click) {
-  return create_standard_items(menu_items, application::style_sheet().theme().name(), size, on_click);
+xtd::forms::main_menu main_menu::create_standard_items(const drawing::size& size, const xtd::event_handler& on_click) {
+  return create_standard_items(application::style_sheet().theme().name(), size, on_click);
 }
 
-unique_ptr<xtd::forms::main_menu> main_menu::create_standard_items(vector<unique_ptr<menu_item>>& menu_items, const xtd::ustring& theme, const xtd::event_handler& on_click) {
-  return create_standard_items(menu_items, application::style_sheet().theme().name(), menu_images::size(), on_click);
+xtd::forms::main_menu main_menu::create_standard_items(const xtd::ustring& theme, const xtd::event_handler& on_click) {
+  return create_standard_items(application::style_sheet().theme().name(), menu_images::size(), on_click);
 }
 
-unique_ptr<xtd::forms::main_menu> main_menu::create_standard_items(vector<unique_ptr<menu_item>>& menu_items, const xtd::ustring& theme, const drawing::size& size, const xtd::event_handler& on_click) {
+xtd::forms::main_menu main_menu::create_standard_items(const xtd::ustring& theme, const drawing::size& size, const xtd::event_handler& on_click) {
   auto file_new_menu_item = make_unique<menu_item>(system_texts::new_(), on_click, menu_images::file_new(theme, size), shortcut::cmd_n);
   auto file_open_menu_item = make_unique<menu_item>(system_texts::open(), on_click, menu_images::file_open(theme, size), shortcut::cmd_o);
   auto file_separator1_menu_item = make_unique<menu_item>("-");
@@ -106,38 +106,38 @@ unique_ptr<xtd::forms::main_menu> main_menu::create_standard_items(vector<unique
   auto tools_menu_item = make_unique<menu_item>(system_texts::tools(), vector<menu_item_ref> {*tools_customize_menu_item, *tools_options_menu_item});
   auto help_menu_item = make_unique<menu_item>(system_texts::help(), vector<menu_item_ref> {*help_contents_menu_item, *help_index_menu_item, *help_search_menu_item, *help_separator1_menu_item, *help_about_menu_item});
   
-  auto main_menu_with__standard_items = make_unique<main_menu>(vector<menu_item_ref> {*file_menu_item, *edit_menu_item, *tools_menu_item, *help_menu_item});
+  auto main_menu_with_standard_items = main_menu(vector<menu_item_ref> {*file_menu_item, *edit_menu_item, *tools_menu_item, *help_menu_item});
   
-  menu_items.clear();
-  menu_items.emplace_back(move(file_menu_item));
-  menu_items.emplace_back(move(file_new_menu_item));
-  menu_items.emplace_back(move(file_open_menu_item));
-  menu_items.emplace_back(move(file_separator1_menu_item));
-  menu_items.emplace_back(move(file_save_menu_item));
-  menu_items.emplace_back(move(file_save_as_menu_item));
-  menu_items.emplace_back(move(file_separator2_menu_item));
-  menu_items.emplace_back(move(file_print_menu_item));
-  menu_items.emplace_back(move(file_print_preview_menu_item));
-  menu_items.emplace_back(move(file_separator3_menu_item));
-  menu_items.emplace_back(move(file_exit_menu_item));
-  menu_items.emplace_back(move(edit_menu_item));
-  menu_items.emplace_back(move(edit_undo_menu_item));
-  menu_items.emplace_back(move(edit_redo_menu_item));
-  menu_items.emplace_back(move(edit_separator1_menu_item));
-  menu_items.emplace_back(move(edit_cut_menu_item));
-  menu_items.emplace_back(move(edit_copy_menu_item));
-  menu_items.emplace_back(move(edit_paste_menu_item));
-  menu_items.emplace_back(move(edit_separator2_menu_item));
-  menu_items.emplace_back(move(edit_select_all_menu_item));
-  menu_items.emplace_back(move(tools_menu_item));
-  menu_items.emplace_back(move(tools_customize_menu_item));
-  menu_items.emplace_back(move(tools_options_menu_item));
-  menu_items.emplace_back(move(help_menu_item));
-  menu_items.emplace_back(move(help_contents_menu_item));
-  menu_items.emplace_back(move(help_index_menu_item));
-  menu_items.emplace_back(move(help_search_menu_item));
-  menu_items.emplace_back(move(help_separator1_menu_item));
-  menu_items.emplace_back(move(help_about_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.clear();
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(file_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(file_new_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(file_open_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(file_separator1_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(file_save_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(file_save_as_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(file_separator2_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(file_print_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(file_print_preview_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(file_separator3_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(file_exit_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(edit_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(edit_undo_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(edit_redo_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(edit_separator1_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(edit_cut_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(edit_copy_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(edit_paste_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(edit_separator2_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(edit_select_all_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(tools_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(tools_customize_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(tools_options_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(help_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(help_contents_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(help_index_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(help_search_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(help_separator1_menu_item));
+  main_menu_with_standard_items.standard_menu_items_.emplace_back(move(help_about_menu_item));
   
-  return main_menu_with__standard_items;
+  return main_menu_with_standard_items;
 }
