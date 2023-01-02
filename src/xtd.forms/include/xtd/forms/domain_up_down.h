@@ -158,12 +158,10 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the selected_item property has been changed.
-      /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<domain_up_down, event_handler> selected_item_changed;
       
       /// @brief Occurs when the value property has been changed.
-      /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<domain_up_down, event_handler> value_changed;
       /// @}
@@ -189,7 +187,6 @@ namespace xtd {
       virtual void on_selected_item_changed(const event_args& e);
       
       void on_text_changed(const event_args& e) override;
-      
       void wnd_proc(message& message) override;
       /// @}
       

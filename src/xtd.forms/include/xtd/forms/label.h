@@ -170,7 +170,6 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the value of the image property changes.
-      /// @ingroup events
       /// @remarks This event is raised if the image property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<label, event_handler> image_changed;

@@ -119,12 +119,10 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the appearance property value changes.
-      /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<radio_button, event_handler> appearance_changed;
       
       /// @brief Occurs when the value of the checked property changes.
-      /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       event<radio_button, event_handler> checked_changed;
       /// @}
