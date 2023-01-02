@@ -10,7 +10,7 @@ namespace examples {
     struct colored_point {
       point location;
       xtd::drawing::color color;
-      int width;
+      int width = 0;
     };
     
   public:

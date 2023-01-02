@@ -80,7 +80,6 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the expanded property changes.
-      /// @ingroup events
       /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
       xtd::event<collapsible_panel, xtd::event_handler> expanded_changed;
       /// @}
@@ -98,7 +97,6 @@ namespace xtd {
       drawing::size measure_control() const noexcept override;
       
       void on_control_added(const control_event_args& e) override;
-      
       void on_control_removed(const control_event_args& e) override;
       
       /// @brief Raises the collapsible_panel::expanded_changed event.
