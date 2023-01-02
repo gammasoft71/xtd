@@ -78,7 +78,7 @@ namespace xtd {
       
     protected:
       /// @cond
-      enum class state {
+      enum class state : int64 {
         empty = 0,
         creating = 0b1,
         created = 0b10,
@@ -103,26 +103,23 @@ namespace xtd {
         
         double_click_fired = 0b1000000000000000000,
         double_buffered = 0b10000000000000000000,
-        /*
-        mouse_enter_pending = 0,
-        tracking_mouse_event = 0,
-        mouse_pressed = 0,
-        use_wait_cursor = 0,
-         */
-        
-        /*
-        is_accessible = 0,
-        no_zorder = 0,
-        size_locked_by_os = 0,
-        causes_validation = 0,
-        own_ctl_brush = 0,
-        exception_while_painting = 0,
-        layout_sis_dirty = 0,
-        checked_host = 0,
-        hosted_in_dialog = 0,
-        validation_cancelled = 0,
-        mirrored = 0,
-        */
+
+        mouse_enter_pending = 0b100000000000000000000,
+        tracking_mouse_event = 0b1000000000000000000000,
+        mouse_pressed = 0b10000000000000000000000,
+        use_wait_cursor = 0b100000000000000000000000,
+
+        is_accessible = 0b1000000000000000000000000,
+        no_zorder = 0b10000000000000000000000000,
+        size_locked_by_os = 0b10000000000000000000000000,
+        causes_validation = 0b100000000000000000000000000,
+        own_ctl_brush = 0b1000000000000000000000000000,
+        exception_while_painting = 0b10000000000000000000000000000,
+        layout_sis_dirty = 0b100000000000000000000000000000,
+        checked_host = 0b1000000000000000000000000000000,
+        hosted_in_dialog = 0b10000000000000000000000000000000,
+        validation_cancelled = 0b100000000000000000000000000000000,
+        mirrored = 0b1000000000000000000000000000000000,
       };
       
       class async_result_invoke : public xtd::iasync_result {
