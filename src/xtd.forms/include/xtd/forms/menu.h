@@ -152,6 +152,7 @@ namespace xtd {
       /// @cond
       explicit menu(const std::initializer_list<menu_item_ref>& items);
       explicit menu(const std::vector<menu_item_ref>& items);
+      menu(menu&&) = default;
       menu(const menu&) = delete;
       /// @endcond
       

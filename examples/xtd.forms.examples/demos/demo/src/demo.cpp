@@ -8,14 +8,13 @@ using namespace xtd::forms;
 using namespace std::literals;
 
 int main() {
-  vector<unique_ptr<menu_item>> menu_items;
-  unique_ptr<main_menu> main_menu1 = forms::main_menu::create_standard_items(menu_items, [&](object & sender, const event_args & e) {
+  main_menu main_menu1 = forms::main_menu::create_standard_items([&](object & sender, const event_args & e) {
     if (as<menu_item&>(sender).text() == system_texts::exit()) application::exit();
   });
   form form_main;
   form_main.size({1024, 768});
   form_main.text("Demo forms");
-  form_main.menu(*main_menu1);
+  form_main.menu(main_menu1);
   
   tab_control tab_control_main;
   tab_control_main.location({10, 10});

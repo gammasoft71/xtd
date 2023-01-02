@@ -240,13 +240,13 @@ public:
     loading_indicator1.location({10, 10});
     loading_indicator1.start();
     
-    menu(*main_menu1);
+    menu(main_menu1);
     
     tool_bar(tool_bar1);
     tool_bar1.parent(*this);
     tool_bar1.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});
     tool_bar1.buttons().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, help_tool_bar_button});
-    tool_bar1.button_click += {*this, &form1::tool_bar_button_click};
+    tool_bar1.button_click += {*this, &form1::on_tool_bar_button_click};
     
     status_bar1.parent(*this);
     update_status_bar_text();
@@ -258,16 +258,16 @@ protected:
   };
   
 private:
-  void menu_click(object& sender, const event_args& e) {
+  void on_menu_click(object& sender, const event_args& e) {
     ustring file_name;
-    if (*menu_items[2] == sender) open_file_box::show(file_name, *this);
-    if (*menu_items[4] == sender) save_file_box::show(file_name, *this);
-    if (*menu_items[5] == sender) save_file_box::show(file_name, *this, "Save as...");
-    if (*menu_items[10] == sender) application::exit();
-    if (*menu_items[28] == sender) about_box::show(*this, "Shows some controls in dark mode", "Dark mode example", xtd::drawing::system_icons::xtd_logo(), environment::version().to_string(2), environment::version().to_string(), "Copygight (c) 2023 Gammasoft.", "https://gammasoft71.wixsite.com/xtdpro", "xtd");
+    if (main_menu1.menu_items()[0].get().menu_items()[1].get() == sender) open_file_box::show(file_name, *this);
+    if (main_menu1.menu_items()[0].get().menu_items()[3].get() == sender) save_file_box::show(file_name, *this);
+    if (main_menu1.menu_items()[0].get().menu_items()[4].get() == sender) save_file_box::show(file_name, *this, "Save as...");
+    if (main_menu1.menu_items()[0].get().menu_items()[9].get() == sender) application::exit();
+    if (main_menu1.menu_items()[3].get().menu_items()[4].get() == sender) about_box::show(*this, "Shows some controls in dark mode", "Dark mode example", xtd::drawing::system_icons::xtd_logo(), environment::version().to_string(2), environment::version().to_string(), "Copygight (c) 2023 Gammasoft.", "https://gammasoft71.wixsite.com/xtdpro", "xtd");
   }
   
-  void tool_bar_button_click(object& sender, const tool_bar_button_click_event_args& e) {
+  void on_tool_bar_button_click(object& sender, const tool_bar_button_click_event_args& e) {
     ustring file_name;
     if (e.button() == open_tool_bar_button) open_file_box::show(file_name, *this);
     if (e.button() == save_tool_bar_button) save_file_box::show(file_name, *this);
@@ -348,8 +348,7 @@ private:
   
   loading_indicator loading_indicator1;
   
-  vector<unique_ptr<menu_item>> menu_items;
-  unique_ptr<main_menu> main_menu1 = main_menu::create_standard_items(menu_items, {*this, &form1::menu_click});
+  main_menu main_menu1 = main_menu::create_standard_items({*this, &form1::on_menu_click});
   
   xtd::forms::tool_bar tool_bar1;
   tool_bar_button new_tool_bar_button = tool_bar_button::create_push_button(system_texts::new_(), 0);
