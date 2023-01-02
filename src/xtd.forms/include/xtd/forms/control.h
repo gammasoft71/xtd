@@ -228,7 +228,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      control(control&&) = delete;
+      control(control&&) = default;
       control(const control&) = delete;
       ~control();
       /// @endcond
@@ -797,12 +797,12 @@ namespace xtd {
       /// @param fore_color A xtd::drawing::color that represent foreground color of the control.
       /// @return New control created.
       template<typename control_t>
-      static std::unique_ptr<control_t> create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
-        std::unique_ptr<control_t> item = std::make_unique<control_t>();
-        if (location != drawing::point {-1, -1}) item->location(location);
-        if (size != drawing::size {-1, -1}) item->size(size);
-        if (back_color != drawing::color::empty) item->back_color(back_color);
-        if (fore_color != drawing::color::empty) item->fore_color(fore_color);
+      static control_t create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
+        control_t item;
+        if (location != drawing::point {-1, -1}) item.location(location);
+        if (size != drawing::size {-1, -1}) item.size(size);
+        if (back_color != drawing::color::empty) item.back_color(back_color);
+        if (fore_color != drawing::color::empty) item.fore_color(fore_color);
         return item;
       }
       
@@ -814,13 +814,13 @@ namespace xtd {
       /// @param fore_color A xtd::drawing::color that represent foreground color of the control.
       /// @return New control created.
       template<typename control_t>
-      static std::unique_ptr<control_t> create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
-        std::unique_ptr<control_t> item = std::make_unique<control_t>();
-        item->parent(parent);
-        if (location != drawing::point {-1, -1}) item->location(location);
-        if (size != drawing::size {-1, -1}) item->size(size);
-        if (back_color != drawing::color::empty) item->back_color(back_color);
-        if (fore_color != drawing::color::empty) item->fore_color(fore_color);
+      static control_t create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
+        control_t item;
+        item.parent(parent);
+        if (location != drawing::point {-1, -1}) item.location(location);
+        if (size != drawing::size {-1, -1}) item.size(size);
+        if (back_color != drawing::color::empty) item.back_color(back_color);
+        if (fore_color != drawing::color::empty) item.fore_color(fore_color);
         return item;
       }
       
@@ -832,13 +832,13 @@ namespace xtd {
       /// @param fore_color A xtd::drawing::color that represent foreground color of the control.
       /// @return New control created.
       template<typename control_t>
-      static std::unique_ptr<control_t> create(const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
-        std::unique_ptr<control_t> item = std::make_unique<control_t>();
-        item->text(text);
-        if (location != drawing::point {-1, -1}) item->location(location);
-        if (size != drawing::size {-1, -1}) item->size(size);
-        if (back_color != drawing::color::empty) item->back_color(back_color);
-        if (fore_color != drawing::color::empty) item->fore_color(fore_color);
+      static control_t create(const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
+        control_t item;
+        item.text(text);
+        if (location != drawing::point {-1, -1}) item.location(location);
+        if (size != drawing::size {-1, -1}) item.size(size);
+        if (back_color != drawing::color::empty) item.back_color(back_color);
+        if (fore_color != drawing::color::empty) item.fore_color(fore_color);
         return item;
       }
       
@@ -851,14 +851,14 @@ namespace xtd {
       /// @param fore_color A xtd::drawing::color that represent foreground color of the control.
       /// @return New control created.
       template<typename control_t>
-      static std::unique_ptr<control_t> create(const control& parent, const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
-        std::unique_ptr<control_t> item = std::make_unique<control_t>();
-        item->parent(parent);
-        item->text(text);
-        if (location != drawing::point {-1, -1}) item->location(location);
-        if (size != drawing::size {-1, -1}) item->size(size);
-        if (back_color != drawing::color::empty) item->back_color(back_color);
-        if (fore_color != drawing::color::empty) item->fore_color(fore_color);
+      static control_t create(const control& parent, const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
+        control_t item;
+        item.parent(parent);
+        item.text(text);
+        if (location != drawing::point {-1, -1}) item.location(location);
+        if (size != drawing::size {-1, -1}) item.size(size);
+        if (back_color != drawing::color::empty) item.back_color(back_color);
+        if (fore_color != drawing::color::empty) item.fore_color(fore_color);
         return item;
       }
       

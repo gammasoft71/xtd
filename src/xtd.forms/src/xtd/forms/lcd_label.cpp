@@ -864,6 +864,7 @@ control& lcd_label::text(const xtd::ustring& value) {
           default: throw argument_exception("lcd_style invalid", current_stack_frame_);
         }
         dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->parent(*this);
+        dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->double_buffered(double_buffered());
         dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->click += {*this, &lcd_label::on_digit_click};
         dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->mouse_down += {*this, &lcd_label::on_digit_mouse_down};
         dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->mouse_move += {*this, &lcd_label::on_digit_mouse_move};

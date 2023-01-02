@@ -28,6 +28,12 @@ namespace xtd {
       /// @brief Initialises a new instance of the component class.
       component();
       /// @}
+
+      /// @cond
+      component(component&&) = default;
+      component(const component&) = default;
+      component& operator=(const component&) = default;
+      /// @endcond
       
       /// @name Protected properties
       
