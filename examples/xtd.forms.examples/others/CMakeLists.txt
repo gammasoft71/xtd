@@ -20,6 +20,7 @@ add_projects(
   colored_forms
   colored_tab_pages
   colors
+  control_with_name_operator
   docked_panels
   flat_button
   font_families
