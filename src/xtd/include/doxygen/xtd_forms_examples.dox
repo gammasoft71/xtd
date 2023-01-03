@@ -2462,7 +2462,7 @@
 /// @image html colors_gd.png
 ///
 /// @example control_with_name_operator.cpp
-/// shows how to use xtd::forms::control::name property and xtd::forms::layout::arranged_element_collection name operator.
+/// shows how to use xtd::forms::control::name property and xtd::forms::layout::arranged_element_collection::operator[] name operator.
 /// @par Windows
 /// @image html control_with_name_operator_w.png
 /// <br>
