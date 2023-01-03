@@ -27,12 +27,28 @@ tab_control::tab_page_collection& tab_control::tab_page_collection::operator =(c
   return *this;
 }
 
+tab_control::tab_page_collection::iterator tab_control::tab_page_collection::insert(const_iterator pos, const xtd::ustring& text) {
+  return insert(pos, text, "");
+}
+
+tab_control::tab_page_collection::iterator tab_control::tab_page_collection::insert(const_iterator pos, const xtd::ustring& text, const xtd::ustring& name) {
+  return text_inserted(pos, text, name);
+}
+
+void tab_control::tab_page_collection::insert_at(size_t index, const xtd::ustring& text) {
+  return insert_at(index, text, "");
+}
+
+void tab_control::tab_page_collection::insert_at(size_t index, const xtd::ustring& text, const xtd::ustring& name) {
+  text_added(index, text, name);
+}
+
 void tab_control::tab_page_collection::push_back(const xtd::ustring& text) {
   push_back(text, "");
 }
 
 void tab_control::tab_page_collection::push_back(const xtd::ustring& text, const ustring& name) {
-  text_added(text, name);
+  text_added(npos, text, name);
 }
 
 void tab_control::tab_page_collection::push_back(const char* text) {
@@ -188,12 +204,28 @@ void tab_control::on_tab_pages_item_removed(size_t index, control_ref item) {
   controls().erase_at(index);
 }
 
-void tab_control::on_tab_pages_text_added(const ustring& text, const ustring& name) {
+void tab_control::on_tab_pages_text_added(size_t index, const ustring& text, const ustring& name) {
   auto item = std::make_unique<tab_page>();
   item->text(text);
   item->name(name);
-  tab_pages().push_back(*item);
-  data_->text_tab_pages.push_back(std::move(item));
+  if (index == tab_pages().npos) {
+    tab_pages().push_back(*item);
+    data_->text_tab_pages.push_back(std::move(item));
+  } else {
+    tab_pages().insert_at(index, *item);
+    data_->text_tab_pages.insert(data_->text_tab_pages.begin() + index, std::move(item));
+  }
+}
+
+tab_control::tab_page_collection::iterator tab_control::on_tab_pages_text_inserted(tab_page_collection::const_iterator pos, const ustring& text, const ustring& name) {
+  auto item = std::make_unique<tab_page>();
+  item->text(text);
+  item->name(name);
+  tab_page_collection::iterator it = tab_pages().end();
+  it = tab_pages().insert(pos, *item);
+  if (pos == tab_pages().end()) data_->text_tab_pages.push_back(std::move(item));
+  else data_->text_tab_pages.insert(data_->text_tab_pages.begin() + (pos - tab_pages().begin()), std::move(item));
+  return it;
 }
 
 void tab_control::wm_command_control(message& message) {
