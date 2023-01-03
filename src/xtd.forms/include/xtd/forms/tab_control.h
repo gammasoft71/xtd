@@ -78,9 +78,37 @@ namespace xtd {
         /// @name Methods
         
         /// @{
+        using xtd::forms::layout::arranged_element_collection<tab_page_ref>::insert;
+        /// @brief Inserts specified element at specified position.
+        /// @param pos The iterator before which the content will be inserted. pos may be the arranged_element_collection::end iterator.
+        /// @param text The text of element to insert.
+        iterator insert(const_iterator pos, const xtd::ustring& text);
+        /// @brief Inserts specified element at specified position.
+        /// @param pos The iterator before which the content will be inserted. pos may be the arranged_element_collection::end iterator.
+        /// @param text The text of element to insert.
+        /// @param name The name of element to insert.
+        iterator insert(const_iterator pos, const xtd::ustring& text, const xtd::ustring& name);
+        
+        using xtd::forms::layout::arranged_element_collection<tab_page_ref>::insert_at;
+        /// @brief Inserts specified element at specified index.
+        /// @param pos The index before which the content will be inserted.
+        /// @param text The text of element to insert.
+        void insert_at(size_t index, const xtd::ustring& text);
+        /// @brief Inserts specified element at specified index.
+        /// @param pos The index before which the content will be inserted.
+        /// @param text The text of element to insert.
+        /// @param name The name of element to insert.
+        void insert_at(size_t index, const xtd::ustring& text, const xtd::ustring& name);
+
         using xtd::forms::layout::arranged_element_collection<tab_page_ref>::push_back;
+        /// @brief Adds an element to the end.
+        /// @param text The text of element to add.
         void push_back(const xtd::ustring& text);
+        /// @brief Adds an element to the end.
+        /// @param text The text of element to add.
+        /// @param name The name of element to add.
         void push_back(const xtd::ustring& text, const ustring& name);
+
         /// @}
         
         /// @cond
@@ -108,7 +136,8 @@ namespace xtd {
         /// @}
       private:
         friend tab_control;
-        event<tab_page_collection, delegate<void(const ustring& text, const ustring& name)>> text_added;
+        event<tab_page_collection, delegate<void(size_t index, const ustring& text, const ustring& name)>> text_added;
+        event<tab_page_collection, delegate<iterator(const_iterator pos, const ustring& text, const ustring& name)>> text_inserted;
       };
 
       /// @name Fields
@@ -213,7 +242,8 @@ namespace xtd {
 
       void on_tab_pages_item_added(size_t, control_ref item);
       void on_tab_pages_item_removed(size_t, control_ref item);
-      void on_tab_pages_text_added(const ustring& text, const ustring& name);
+      void on_tab_pages_text_added(size_t index, const ustring& text, const ustring& name);
+      tab_page_collection::iterator on_tab_pages_text_inserted(tab_page_collection::const_iterator pos, const ustring& text, const ustring& name);
 
       void wm_command_control(message& message);
       
