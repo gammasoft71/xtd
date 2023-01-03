@@ -24,7 +24,7 @@ public:
     label1.text_align(xtd::forms::content_alignment::top_left);
     
     label2.dock(dock_style::fill);
-    label2.parent(tab_control1.tab_pages()[1].get());
+    label2.parent(tab_control1.tab_pages()["Tab page 2"].value().get());
     label2.text_align(xtd::forms::content_alignment::middle_center);
     label2.text("label2");
     
