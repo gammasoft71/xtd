@@ -5,13 +5,14 @@
 #include "control.h"
 #include "image_list.h"
 #include "tab_alignment.h"
+#include "tab_page_ref.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @cond
-    class tab_page;
+    class form;
     /// @endcond
     
     /// @brief Manages a related set of tab pages.
@@ -48,6 +49,68 @@ namespace xtd {
       struct data;
       
     public:
+      /// @brief Represents a collection of controls.
+      class tab_page_collection : public xtd::forms::layout::arranged_element_collection<tab_page_ref> {
+      public:
+        /// @name Alias
+        
+        /// @{
+        /// @brief Represents the base type of the collection.
+        using base = xtd::forms::layout::arranged_element_collection<tab_page_ref>;
+        /// @}
+        
+        /// @name Constructors
+        
+        /// @{
+        /// @brief Creates a new object xtd::forms::control::tab_page_collection with specified allocator (optional).
+        /// @param allocator The allocator associate to the collection (optional).
+        /// @remarks If allocator not specified, the std::allocator<value_type> is used.
+        explicit tab_page_collection(const allocator_type& allocator = allocator_type());
+        /// @}
+        
+        /// @cond
+        explicit tab_page_collection(const base& collection);
+        tab_page_collection(const tab_page_collection& collection);
+        tab_page_collection& operator =(const tab_page_collection& collection);
+        tab_page_collection(tab_page_collection&&) = default;
+        /// @endcond
+        
+        /// @name Methods
+        
+        /// @{
+        using xtd::forms::layout::arranged_element_collection<tab_page_ref>::push_back;
+        void push_back(const xtd::ustring& text);
+        void push_back(const xtd::ustring& text, const ustring& name);
+        /// @}
+        
+        /// @cond
+        void push_back(const char* text);
+        void push_back(const char8* text);
+        void push_back(const char16* text);
+        void push_back(const char32* text);
+        void push_back(const wchar* text);
+        /// @endcond
+
+        /// @name Operators
+        
+        /// @{
+        using base::operator [];
+        /// @brief Gets the first xtd::forms::control::tab_page_collection in the list with the specified name.
+        /// @param name The name of the xtd::forms::control to get from the list.
+        /// @return The first xtd::forms::control in the list with the given Name. This item returns optional with no value if no xtd::forms::control with the given name can be found.
+        /// @remarks The operator [] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator [] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
+        std::optional<value_type> operator [](const xtd::ustring& name) const;
+        /// @brief Gets the first xtd::forms::control::tab_page_collection in the list with the specified name.
+        /// @param name The name of the xtd::forms::control to get from the list.
+        /// @return The first xtd::forms::control in the list with the given Name. This item returns optional with no value if no xtd::forms::control with the given name can be found.
+        /// @remarks The operator [] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator [] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
+        std::optional<value_type> operator [](const xtd::ustring& name);
+        /// @}
+      private:
+        friend tab_control;
+        event<tab_page_collection, delegate<void(const ustring& text, const ustring& name)>> text_added;
+      };
+
       /// @name Fields
       
       /// @{
@@ -98,13 +161,13 @@ namespace xtd {
       virtual tab_control& selected_index(size_t selected_index);
       
       /// @brief Gets the collection of tab pages in this tab control.
-      /// @return A control_collection that contains the control objects in this tab_control.
+      /// @return A tab_page_collection that contains the control objects in this tab_control.
       /// @remarks The order of tab pages in this collection reflects the order the tabs appear in the control.
-      virtual control_collection& tab_pages() noexcept;
+      virtual tab_page_collection& tab_pages() noexcept;
       /// @brief Gets the collection of tab pages in this tab control.
-      /// @return A control_collection that contains the control objects in this tab_control.
+      /// @return A tab_page_collection that contains the control objects in this tab_control.
       /// @remarks The order of tab pages in this collection reflects the order the tabs appear in the control.
-      virtual const control_collection& tab_pages() const noexcept;
+      virtual const tab_page_collection& tab_pages() const noexcept;
       /// @}
       
       /// @name Events
@@ -145,6 +208,13 @@ namespace xtd {
       /// @endcond
       
     private:
+      friend class xtd::forms::form;
+      using control::controls;
+
+      void on_tab_pages_item_added(size_t, control_ref item);
+      void on_tab_pages_item_removed(size_t, control_ref item);
+      void on_tab_pages_text_added(const ustring& text, const ustring& name);
+
       void wm_command_control(message& message);
       
       std::shared_ptr<data> data_;
