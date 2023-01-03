@@ -75,6 +75,9 @@ namespace xtd {
       /// @remarks If the image_list property value is changed to xtd::forms::image_list::empty, the image_index property returns its default value, -1. However, the assigned image_index value is retained internally and used when another image_list object is assigned to the image_list property. If the new image_list assigned to the image_list property has an imageList::_image_collection::size property value that is less than or equal to the value assigned to the image_index property minus one (to account for the collection being a zero-based index), the image_index property value is adjusted to one less than the size property value. For example, consider a tab_page control whose image_list has three images and whose image_index property is set to 2. If a new image_list that has only two images is assigned to the tab_page, the image_index value changes to 1.
       virtual tab_page& image_index(size_t value);
       
+      using panel::parent;
+      control& parent(const control& parent) override;
+
       using panel::text;
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.
