@@ -266,6 +266,7 @@ add_sources(
   include/xtd/forms/tab_alignment.h
   include/xtd/forms/tab_control.h
   include/xtd/forms/tab_page.h
+  include/xtd/forms/tab_page_ref.h
   include/xtd/forms/table_layout_panel.h
   include/xtd/forms/text_box_base.h
   include/xtd/forms/text_box.h
