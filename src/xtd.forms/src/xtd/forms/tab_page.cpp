@@ -5,6 +5,8 @@
 #include <xtd/forms/native/tab_page.h>
 #include <xtd/forms/native/window_styles.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/as.h>
+#include <xtd/is.h>
 #include "../../../include/xtd/forms/tab_control.h"
 #include "../../../include/xtd/forms/tab_page.h"
 #include "tab_control_data.h"
@@ -44,6 +46,12 @@ tab_page& tab_page::image_index(size_t value) {
     data_->image_index = value;
     if (is_handle_created() && parent().has_value()) native::tab_page::image_index(handle(), data_->image_index);
   }
+  return *this;
+}
+
+control& tab_page::parent(const control& parent) {
+  if (!is<tab_control>(parent)) throw argument_exception(ustring::format("tab_page cannot be added to a '{}'.  tab_page can only be added to tab_control"), ustring::full_class_name(parent));
+  as<tab_control>(const_cast<control&>(parent)).tab_pages().push_back(*this);
   return *this;
 }
 
