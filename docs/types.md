@@ -88,7 +88,7 @@ By default, the boxing implicit in the corresponding object is used.
 bool value_unboxed = true;
 xtd::boolean_object value_boxed1 = value_unboxed;               // implicit
 xtd::boolean_object value_boxed2 = xtd::boxing(value_unboxed);  // explicit
-aito ready_boxed3 = xtd::boxing(value_unboxed);                 // explicit with auto is xtd::boolean_object type
+auto ready_boxed3 = xtd::boxing(value_unboxed);                 // explicit with auto is xtd::boolean_object type
 ```
 
 ## Unboxing
@@ -100,7 +100,7 @@ By default, the unboxing implicit in the corresponding type is used.
 xtd::boolean_object value_boxed = true;
 bool value_unboxed1 = value_boxed;                 // implicit
 bool value_unboxed2 = xtd::unboxing(value_boxed);  // explict
-autp value_unboxed3 = xtd::unboxing(value_boxed);  // explict with auto is bool
+auto value_unboxed3 = xtd::unboxing(value_boxed);  // explict with auto is bool
 ```
 
 # See also
