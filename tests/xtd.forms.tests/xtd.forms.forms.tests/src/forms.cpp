@@ -19,7 +19,7 @@ public:
     padding(10);
     
     form_styles_tab_control.dock(dock_style::fill);
-    form_styles_tab_control.controls().push_back_range({decorations_tab_page, window_state_tab_page, show_tab_page});
+    form_styles_tab_control.tab_pages().push_back_range({decorations_tab_page, window_state_tab_page, show_tab_page});
     
     decorations_tab_page.text("decorations");
     decorations_tab_page.controls().push_back_range({form_border_style_choice, caption_label, caption_text_box, minimize_box_label, minimize_box_switch_button, maximize_box_label, maximize_box_switch_button, close_box_label, close_box_switch_button, control_box_label, control_box_switch_button, help_button_label, help_button_switch_button, show_icon_label, show_icon_switch_button, show_in_taskbar_label, show_in_taskbar_switch_button});
