@@ -13,7 +13,7 @@ public:
     tab_control1.size({370, 250});
     tab_control1.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
     tab_control1.tab_pages().push_back("Tab page 1");
-    tab_control1.tab_pages().push_back("Tab page 2", "Tab page 2");
+    tab_control1.tab_pages().push_back("Tab page 2", "tab_page2");
     tab_control1.tab_pages().push_back(tab_page3);
 
     tab_page3.text("Tab page 3");
@@ -24,7 +24,7 @@ public:
     label1.text_align(xtd::forms::content_alignment::top_left);
     
     label2.dock(dock_style::fill);
-    label2.parent(tab_control1.tab_pages()["Tab page 2"].value().get());
+    label2.parent(tab_control1.tab_pages()["tab_page2"].value().get());
     label2.text_align(xtd::forms::content_alignment::middle_center);
     label2.text("label2");
     
