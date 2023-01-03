@@ -2461,6 +2461,21 @@
 /// <br>
 /// @image html colors_gd.png
 ///
+/// @example control_with_name_operator.cpp
+/// shows how to use xtd::forms::control::name property and xtd::forms::layout::arranged_element_collection name operator.
+/// @par Windows
+/// @image html control_with_name_operator_w.png
+/// <br>
+/// @image html control_with_name_operator_wd.png
+/// @par macOS
+/// @image html control_with_name_operator_m.png
+/// <br>
+/// @image html control_with_name_operator_md.png
+/// @par Gnome
+/// @image html control_with_name_operator_g.png
+/// <br>
+/// @image html control_with_name_operator_gd.png
+///
 /// @example docked_panels.cpp
 /// demonstrates the use of xtd::forms::panel.
 /// @par Windows
