@@ -17,8 +17,8 @@ add_projects(
   themes
   events
   drawing
-  user_controls
   user_dialogs
+  user_controls
   games
   others
   tests
