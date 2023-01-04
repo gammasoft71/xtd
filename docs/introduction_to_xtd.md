@@ -73,7 +73,7 @@ Hello, World!
 You can write `xtd` apps in modern **C++17** or above and **C** (For more info about c binding see [xtd_c project](https://github.com/gammasoft71/xtd_c).
 
 * **C++17** is a simple, modern, object-oriented, and type-safe programming language (For more information about c++ see [cppreference](https://en.cppreference.com/w/cpp)).
-* **C** is an approachable language with a simple syntax for building type-safe (For more information about c++ see [cppreference](https://en.cppreference.com/w/c)).
+* **C** is an approachable language with a simple syntax for building type-safe (For more information about c see [cppreference](https://en.cppreference.com/w/c)).
 
 ## Compilers
 
