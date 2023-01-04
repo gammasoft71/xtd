@@ -103,12 +103,12 @@ namespace xtd {
         
         double_click_fired = 0b1000000000000000000,
         double_buffered = 0b10000000000000000000,
-
+        
         mouse_enter_pending = 0b100000000000000000000,
         tracking_mouse_event = 0b1000000000000000000000,
         mouse_pressed = 0b10000000000000000000000,
         use_wait_cursor = 0b100000000000000000000000,
-
+        
         is_accessible = 0b1000000000000000000000000,
         no_zorder = 0b10000000000000000000000000,
         size_locked_by_os = 0b10000000000000000000000000,

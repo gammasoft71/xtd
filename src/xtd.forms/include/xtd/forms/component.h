@@ -28,7 +28,7 @@ namespace xtd {
       /// @brief Initialises a new instance of the component class.
       component();
       /// @}
-
+      
       /// @name Protected properties
       
       /// @{

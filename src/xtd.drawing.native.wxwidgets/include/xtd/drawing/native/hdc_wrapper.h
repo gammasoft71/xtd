@@ -57,7 +57,7 @@ namespace xtd {
           image_ = image;
           graphics_ = create_graphics(*handle);
         }
-
+        
         void apply_update() {
           if (bitmap_ && image_) *image_ = bitmap_->ConvertToImage();
         }
