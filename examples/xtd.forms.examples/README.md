@@ -208,17 +208,17 @@
 * [send_message_to_form](events/send_message_to_form/README.md) demonstrates how to send message to form.
 * [wnd_proc](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#ac75d78bfc73154decabddc734cd28096) demonstrates the use of [wnd_proc](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#ac75d78bfc73154decabddc734cd28096) method.
 
+## [User Dialogs](user_dialogs/README.md)
+
+* [user_dialog](user_dialogs/user_dialog/README.md) demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) as dialog.
+* [user_dialog_show_sheet](user_dialogs/user_dialog_show_sheet/README.md) demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) as dialog.
+
 ## [User Controls](user_controls/README.md)
 
 * [button_with_style_sheet](user_controls/button_with_style_sheet/README.md) demonstrates the [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control with style_sheet.
 * [line](user_controls/line/README.md) demonstrates the use of [xtd::forms::user_control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1user__control.html)control to draw simple lines.
 * [numeric_text_box](user_controls/numeric_text_box/README.md) demonstrates the customize [xtd::forms::text_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1text__box.html) control.
 * [owner_button](user_controls/owner_button/README.md) demonstrates the customize [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control.
-
-## [User Dialogs](user_dialogs/README.md)
-
-* [user_dialog](user_dialogs/user_dialog/README.md) demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) as dialog.
-* [user_dialog_show_sheet](user_dialogs/user_dialog_show_sheet/README.md) demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) as dialog.
 
 ## [Drawing](drawing/README.md)
 
