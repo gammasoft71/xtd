@@ -80,8 +80,8 @@ namespace xtd::native {
       }
       
       static const std::string to_lower(const std::string& str) noexcept {
-        std::string result = str;
-        std::transform(result.begin(), result.end(), result.begin(), ::tolower);
+        std::string result;
+        std::for_each(str.begin(), str.end(), [&](auto c) {result += static_cast<char>(std::tolower(c)); });
         return result;
       }
       
