@@ -77,7 +77,7 @@ namespace xtd {
       
       using panel::parent;
       control& parent(const control& parent) override;
-
+      
       using panel::text;
       /// @brief Sets the text associated with this control.
       /// @param text The text associated with this control.

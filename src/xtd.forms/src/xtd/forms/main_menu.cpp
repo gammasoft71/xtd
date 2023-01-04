@@ -59,7 +59,7 @@ void main_menu::wm_click(message& message) {
   }
 }
 
-main_menu main_menu::create_standard_items( const xtd::event_handler& on_click) {
+main_menu main_menu::create_standard_items(const xtd::event_handler& on_click) {
   return create_standard_items(application::style_sheet().theme().name(), menu_images::size(), on_click);
 }
 
