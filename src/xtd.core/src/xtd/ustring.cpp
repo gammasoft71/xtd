@@ -924,7 +924,7 @@ std::vector<ustring::value_type> ustring::to_array(size_t start_index, size_t le
 
 ustring ustring::to_lower() const noexcept {
   ustring result;
-  for_each(begin(), end(), [&](auto c) {result += static_cast<char>(::tolower(c));});
+  for_each(begin(), end(), [&](auto c) {result += static_cast<char>(std::tolower(c));});
   return result;
 }
 
@@ -934,7 +934,7 @@ ustring ustring::to_string() const noexcept {
 
 ustring ustring::to_upper() const noexcept {
   ustring result;
-  for_each(begin(), end(), [&](auto c) {result += static_cast<char>(::toupper(c));});
+  for_each(begin(), end(), [&](auto c) {result += static_cast<char>(std::toupper(c));});
   return result;
 }
 
