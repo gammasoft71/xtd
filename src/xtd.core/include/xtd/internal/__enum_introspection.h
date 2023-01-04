@@ -230,8 +230,8 @@ namespace __enumeration_introspection {
   namespace __enumeration_introspection { \
     template <> struct enum_type_info_base<enum_t> { \
       using base_type = base_t; \
-      constexpr static std::string_view qualified_type_name = __enum_introspection_concat__(namespace_name, enum_t); \
-      constexpr static std::string_view type_name = get_top_name(__enum_introspection_concat__(namespace_name, enum_t)); \
+      [[maybe_unused]] constexpr static std::string_view qualified_type_name = __enum_introspection_concat__(namespace_name, enum_t); \
+      [[maybe_unused]] constexpr static std::string_view type_name = get_top_name(__enum_introspection_concat__(namespace_name, enum_t)); \
       constexpr static size_t num_states = []() -> size_t { \
         enumeration_maker<base_t> __VA_ARGS__; \
         enumeration_maker<base_t> __enum_introspection_vals[] {__VA_ARGS__}; \
