@@ -98,15 +98,15 @@ cd xtd_path_name
 ### Linux distribution fully supported by xtd install 
 
 The following list contains the Linux distributions fully supported by the xtd installation:
-* CentOS 7 or later;
-* Debian 9.7 or later;
-* Elementary OS 5.0 or later;
-* Fedora 29 or later;
-* LinuxMint 19.1 or later;
-* openSUSE Tumbleweed;
-* RedHat 7.5 or later;
-* Rocky 9 or later;
-* Ubuntu 19.04 or later;
+* [CentOS 7 or later](https://www.centos.org/);
+* [Debian 9.7 or later](https://www.debian.org/);
+* [Elementary OS 5.0 or later](https://elementary.io/);
+* [Fedora 29 or later](https://getfedora.org/);
+* [LinuxMint 19.1 or later](https://www.linuxmint.com/);
+* [openSUSE Tumbleweed](https://get.opensuse.org/tumbleweed/);
+* [RedHat 7.5 or later](https://www.redhat.com/);
+* [Rocky 9 or later](https://rockylinux.org/);
+* [Ubuntu 19.04 or later](https://ubuntu.com/);
 
 1. Do the following in "Terminal" to Build and install xtd :
 
