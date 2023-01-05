@@ -48,7 +48,7 @@ case "$OSTYPE" in
   *"Debian"* | *"elementary"* | *"LinuxMint"* | *"Ubuntu"*) sudo apt update; sudo apt install build-essential codeblocks doxygen libasound2-dev libgsound-dev libgtk-3-dev cmake -y;;
   *"openSUSE"*) sudo zypper update; sudo zypper install -y -t pattern devel_basis; sudo zypper install -y alsa-devel doxygen gsound-devel gtk3-devel cmake;;
   *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum install alsa-lib-devel cmake gtk3-devel gsound-devel gtk3-devel -y;;
-  *"Rocky"*) sudo yum update; sudo yum install alsa-lib-devel cmake gsound gtk3-devel -y;;
+  *"Rocky"*) sudo yum update; sudo yum groupinstall 'Development Tools' -y; sudo yum install alsa-lib-devel cmake libuiid-devel gsound gtk3-devel -y;;
 esac
 
 #_______________________________________________________________________________
