@@ -10,8 +10,8 @@
 * [Installation](#installation)
   * [Windows 10 or later](#windows-10-or-later)
   * [macOS 10.15 or later](#macos-10%2E15-or-later)
-  * [CentOS 7, Debian 9.7, Elementary OS 5.0, Fedora 29, LinuxMint 19.1, openSUSE Tumbleweed, RedHat 7.5 and Ubuntu 19.04 or later](#centos-7-debian-9-7-elementary-os-5-0-fedora-29-linuxmint-19-1-opensuse-tumbleweed-edHat-7-5-and-ubuntu-19-04-or-later)
-  * [Other linux Distribution](#Other-linux-distribution)
+  * [Linux distribution fully supported by xtd install](#Linux-distribution-fully-supported-by-xtd-install)
+  * [Other linux distribution](#other-linux-distribution)
 * [Build and run your first xtd application](#build-and-run-your-first-xtd-application)
   * [xtdc-gui (gui)](#xtdc-gui-gui)
   * [xtdc (console)](#xtdc-console)
@@ -95,7 +95,18 @@ cd xtd_path_name
 
 4. Create as many applications as you want with xtd.
 
-### CentOS 7, Debian 9.7, Elementary OS 5.0, Fedora 29, LinuxMint 19.1, openSUSE Tumbleweed, RedHat 7.5 and Ubuntu 19.04 or later
+### Linux distribution fully supported by xtd install 
+
+The following list contains the Linux distributions fully supported by the xtd installation:
+* CentOS 7 or later;
+* Debian 9.7 or later;
+* Elementary OS 5.0 or later;
+* Fedora 29 or later;
+* LinuxMint 19.1 or later;
+* openSUSE Tumbleweed;
+* RedHat 7.5 or later;
+* Rocky 9 or later;
+* Ubuntu 19.04 or later;
 
 1. Do the following in "Terminal" to Build and install xtd :
 
@@ -108,7 +119,7 @@ cd xtd_path_name
 
 2. Create as many applications as you want with xtd.
 
-### Other linux Distribution
+### Other linux distribution
 
 1. Install g++ 9 or later
   
