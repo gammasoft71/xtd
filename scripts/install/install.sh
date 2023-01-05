@@ -19,7 +19,7 @@ echo ""
 echo "Detecting operating system..."
 OSTYPE=`uname -a`
 if [[ "$OSTYPE" == *"Linux"* ]]; then
-  OSTYPE=`lsb_release -si`;
+  OSTYPE=`cat /etc/*-release | grep -w 'NAME='`;
 fi
 
 if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
@@ -47,7 +47,7 @@ case "$OSTYPE" in
   *"Darwin"*) brew update; brew install cmake;;
   *"Debian"* | *"elementary"* | *"LinuxMint"* | *"Ubuntu"*) sudo apt update; sudo apt install build-essential codeblocks doxygen libasound2-dev libgsound-dev libgtk-3-dev cmake -y;;
   *"openSUSE"*) sudo zypper update; sudo zypper install -y -t pattern devel_basis; sudo zypper install -y alsa-devel doxygen gsound-devel gtk3-devel cmake;;
-  *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum install alsa-lib-devel cmake gsound-devel gtk3-devel -y;;
+  *"CentOS"* | *"Fedora"* | *"RedHat"* | *"Rocky"*) sudo yum update; sudo yum install alsa-lib-devel cmake gsound-devel gtk3-devel -y;;
 esac
 
 #_______________________________________________________________________________
