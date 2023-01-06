@@ -756,10 +756,14 @@ namespace xtd {
             formats.push_back(fi);
           }
         } else if (*iterator == '}') {
-          if (++iterator == fmt.end())
+          if (++iterator == fmt.end()) {
             __throw_ustring_format_exception_close_bracket();
-          if (*iterator != '}')
+            break;
+          }
+          if (*iterator != '}') {
             __throw_ustring_format_exception_close_bracket();
+            break;
+          }
           result += *iterator;
         } else
           result += *iterator;
