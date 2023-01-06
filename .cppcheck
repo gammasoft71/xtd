@@ -16,15 +16,12 @@ unusedStructMember:@CMAKE_SOURCE_DIR@/src/xtd.3rdparty.call_stack/stack_walker.c
 //                                                                                                                   xtd.dore
 
 constParameter:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/convert_pointer.h
-knownConditionTrueFalse:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/file_system_info.cpp //:21, :33, :61, :81
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/internal/__enum_introspection.h //:72
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/diagnostics/trace_listener_collection.h
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/delegate.h
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/ustring.h
 stlcstrStream:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/internal/__format_stringer.h //:310
 uninitMemberVar:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/diagnostics/switch_base.cpp //:30, :33
-unreadVariable:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/ustring.h //:712, :713
-unusedPrivateFunction:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/diagnostics/trace.h
 unusedStructMember:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/internal/__opaque_console_gcc.cpp //:382, :383, :384, :385, :386
 uselessAssignmentPtrArg:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/internal/__enum_introspection.h //:51
 virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/diagnostics/default_trace_listener.h //:126, :52
@@ -62,10 +59,6 @@ duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/menu_item
 duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/theme_colors.h
 duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/theme_images.h
 duplInheritedMember:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/theme_renderers.h
-knownConditionTrueFalse:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/button.cpp //:86
-knownConditionTrueFalse:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/emoticons.cpp //:1350
-knownConditionTrueFalse:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/status_bar_panel.cpp //:209
-knownConditionTrueFalse:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/tool_bar_button_control.h //:266, :268, :300, :303
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/layout/arranged_element_collection.h
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/checked_list_box.h
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/context_menu.h
