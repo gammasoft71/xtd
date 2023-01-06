@@ -23,7 +23,6 @@ noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/diagnostics/tr
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/delegate.h
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/ustring.h
 stlcstrStream:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/internal/__format_stringer.h //:310
-StlMissingComparison:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/ustring.h //:714
 uninitMemberVar:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/diagnostics/switch_base.cpp //:30, :33
 unreadVariable:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/ustring.h //:712, :713
 unusedPrivateFunction:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/diagnostics/trace.h
