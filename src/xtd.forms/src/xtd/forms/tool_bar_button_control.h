@@ -263,9 +263,9 @@ private:
   void update_layout() {
     if (data_->show_text == false)
       image_align(content_alignment::middle_center);
-    else if (data_->show_text == true && data_->show_icon == false)
+    else if (data_->show_icon == false)
       text_align(content_alignment::middle_center);
-    else if (data_->show_text == true && data_->show_icon == true && data_->tool_bar_text_align == tool_bar_text_align::right) {
+    else if (data_->tool_bar_text_align == tool_bar_text_align::right) {
       image_align(content_alignment::middle_left);
       text_align(content_alignment::middle_left);
     }  else {
@@ -297,10 +297,10 @@ private:
       if (data_->show_text == false) {
         if (current_size.width() < image_size().width() + drop_down_size.width()) current_size.width(image_size().width() + drop_down_size.width() + 12);
         if (current_size.height() < image_size().height()) current_size.height(image_size().height() + 12);
-      } else if (data_->show_text == true && data_->show_icon == false) {
+      } else if (data_->show_icon == false) {
         if (current_size.width() < text_size.width() + drop_down_size.width()) current_size.width(text_size.width() + drop_down_size.width());
         if (current_size.height() < text_size.height()) current_size.height(text_size.height());
-      } else if (data_->show_text == true && data_->show_icon == true && data_->tool_bar_text_align == tool_bar_text_align::right) {
+      } else if (data_->tool_bar_text_align == tool_bar_text_align::right) {
         if (current_size.width() < (image_size().width() + text_size.width() + drop_down_size.width() + 4)) current_size.width(image_size().width() + text_size.width() + drop_down_size.width() + 4);
         if (current_size.height() < text_size.height()) current_size.height(text_size.height());
       }  else {
