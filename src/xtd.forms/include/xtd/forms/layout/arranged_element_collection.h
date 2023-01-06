@@ -109,7 +109,7 @@ namespace xtd {
         /// @}
         
         /// @cond
-        arranged_element_collection(const std::vector<type_t>& collection) {
+        explicit arranged_element_collection(const std::vector<type_t>& collection) {
           for (auto item : collection)
             push_back(item);
         }
