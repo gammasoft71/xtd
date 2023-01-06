@@ -229,7 +229,7 @@ ip_address ip_address::parse(const ustring& str) {
         *it = "0";
         auto fill_count = 8 - address_parts.size();
         for (size_t fc = 0; fc < fill_count; ++fc)
-          address_parts.insert(it, "0");
+          it = address_parts.insert(it, "0");
       }
     }
     
