@@ -126,7 +126,7 @@ namespace {
   };
   
   struct WINDOWCOMPOSITIONATTRIBDATA {
-    WINDOWCOMPOSITIONATTRIB Attrib;
+    [[maybe_unused]] WINDOWCOMPOSITIONATTRIB Attrib;
     PVOID pvData;
     SIZE_T cbData;
   };
