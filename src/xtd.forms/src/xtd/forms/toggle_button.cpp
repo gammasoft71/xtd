@@ -204,14 +204,14 @@ void toggle_button::wm_mouse_double_click(message& message) {
   on_double_click(event_args::empty);
 }
 
-void toggle_button::wm_mouse_down(message& message) {
+void toggle_button::wm_mouse_down(message& message) { // message parameter can't be const by design.
   set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
   mouse_event_args e = mouse_event_args::create(message, get_state(state::double_click_fired));
   set_mouse_buttons(mouse_buttons() | e.button());
   on_mouse_down(e);
 }
 
-void toggle_button::wm_mouse_up(message& message) {
+void toggle_button::wm_mouse_up(message& message) { // message parameter can't be const by design.
   if (data_->auto_check)
     switch (check_state()) {
       case forms::check_state::unchecked: check_state(forms::check_state::checked); break;

@@ -36,7 +36,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the padding class using the supplied padding size for all edges.
       /// @param all The number of pixels to be used for padding for all edges.
       /// @remarks This constructor sets the right, left, bottom, top and all properties to the value of the all parameter.
-      padding(int32 all);
+      padding(int32 all); // Can't be explicit by design.
       
       /// @brief Initializes a new instance of the padding class using a separate padding size for each edge.
       /// @param left The padding size, in pixels, for the left edge.

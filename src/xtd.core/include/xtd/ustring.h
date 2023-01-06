@@ -151,14 +151,14 @@ namespace xtd {
     ustring(const value_type* str, size_t count, const allocator_type& allocator);
     
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
-    ustring(const value_type* str);
+    ustring(const value_type* str); // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const value_type* str, const allocator_type& allocator);
     
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
-    ustring(value_type* str);
+    ustring(value_type* str); // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
@@ -174,7 +174,7 @@ namespace xtd {
     
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     /// @param str The string to copy.
-    ustring(const std::string& str) noexcept;
+    ustring(const std::string& str) noexcept; // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
@@ -182,21 +182,21 @@ namespace xtd {
     
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     /// @param str The string to copy.
-    ustring(const std::u8string& str) noexcept;
+    ustring(const std::u8string& str) noexcept; // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const std::u8string& str, const allocator_type& allocator) noexcept;
     
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
-    ustring(const char8* str);
+    ustring(const char8* str); // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const char8* str, const allocator_type& allocator);
     
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
-    ustring(char8* str);
+    ustring(char8* str); // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
@@ -204,21 +204,21 @@ namespace xtd {
     
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     /// @param str The string to copy.
-    ustring(const std::u16string& str) noexcept;
+    ustring(const std::u16string& str) noexcept; // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const std::u16string& str, const allocator_type& allocator) noexcept;
     
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
-    ustring(const char16* str);
+    ustring(const char16* str); // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const char16* str, const allocator_type& allocator);
     
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
-    ustring(char16* str);
+    ustring(char16* str); // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
@@ -226,21 +226,21 @@ namespace xtd {
     
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     /// @param str The string to copy.
-    ustring(const std::u32string& str) noexcept;
+    ustring(const std::u32string& str) noexcept; // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const std::u32string& str, const allocator_type& allocator) noexcept;
     
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
-    ustring(const char32* str);
+    ustring(const char32* str); // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const char32* str, const allocator_type& allocator);
     
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
-    ustring(char32* str);
+    ustring(char32* str); // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
@@ -248,21 +248,21 @@ namespace xtd {
     
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     /// @param str The string to copy.
-    ustring(const std::wstring& str) noexcept;
+    ustring(const std::wstring& str) noexcept; // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const std::wstring& str, const allocator_type& allocator) noexcept;
     
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
-    ustring(const wchar* str);
+    ustring(const wchar* str); // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const wchar* str, const allocator_type& allocator);
     
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
-    ustring(wchar* str);
+    ustring(wchar* str); // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.

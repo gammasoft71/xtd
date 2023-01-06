@@ -187,7 +187,7 @@ bitmap image::from_hbitmap(intptr hbitmap) {
   return bitmap(image(hbitmap));
 }
 
-image image::from_stream(std::istream& stream) {
+image image::from_stream(std::istream& stream) { // stream param can't be const by design.
   return image(stream);
 }
 

@@ -83,7 +83,7 @@ namespace xtd {
     /// @endcode
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename type_t>
-    static type_t& to_ref(type_t* value) {
+    static type_t& to_ref(type_t* value) { // value parameter can't be const by design.
       return *value;
     }
     

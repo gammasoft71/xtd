@@ -307,7 +307,7 @@ std::string __format_stringer_to_std_string(const std::wstring& str);
 template<typename char_t, typename value_t>
 inline std::basic_string<char_t> __format_stringer(value_t value) {
   std::basic_stringstream<char_t> ss;
-  ss << __format_stringer_to_std_string(value).c_str();
+  ss << __format_stringer_to_std_string(value).c_str(); // Using "c_str()" is not the best method, but it is the only possibility if "char_t" is of another type than "char".
   return ss.str();
 }
 

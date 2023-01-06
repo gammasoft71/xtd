@@ -40,7 +40,7 @@ namespace xtd {
       explicit trace_listener_collection(const allocator_type& allocator = allocator_type());
       /// @brief Creates a new object xtd::diagnostics::trace_listener_collection with specified initializer list.
       /// @param il The initializer list that contains xtd::diagnostics::trace_listener items to fill the collection.
-      trace_listener_collection(const std::initializer_list<value_type>& il);
+      trace_listener_collection(const std::initializer_list<value_type>& il); // Can't be explicit by design.
       /// @}
       /// @cond
       explicit trace_listener_collection(const base& collection);

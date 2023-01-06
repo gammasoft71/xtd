@@ -1513,7 +1513,7 @@ control& control::operator >>(control& child) {
   return *this;
 }
 
-void control::reflect_message(intptr handle, message& message) {
+void control::reflect_message(intptr handle, message& message) { // message parameter can't be const by design.
   if (handle != 0 && from_handle(handle).has_value())
     from_handle(handle).value().get().send_message(handle, WM_REFLECT + message.msg(), message.wparam(), message.lparam());
 }
@@ -2012,7 +2012,7 @@ void control::wm_notify_control(message& message) {
   def_wnd_proc(message);
 }
 
-void control::wm_paint(message& message) {
+void control::wm_paint(message& message) { // message parameter can't be const by design.
   paint_event_args e(*this, data_->client_rectangle);
   e.message_ = message;
   //auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
