@@ -373,11 +373,11 @@ namespace {
     bool has_control_modifier_;
     bool has_shift_modifier_;
     struct key_key_char {
-      int_least32_t key;
-      int_least32_t key_char;
-      bool alt;
-      bool control;
-      bool shift;
+      [[maybe_unused]] int_least32_t key;
+      [[maybe_unused]] int_least32_t key_char;
+      [[maybe_unused]] bool alt;
+      [[maybe_unused]] bool control;
+      [[maybe_unused]] bool shift;
     };
     static std::map<std::string, key_key_char> keys;
     static input_list inputs;
