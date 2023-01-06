@@ -379,11 +379,11 @@ namespace {
     bool has_control_modifier_;
     bool has_shift_modifier_;
     struct key_key_char {
-      xtd::int32 key;
-      xtd::int32 key_char;
-      bool alt;
-      bool control;
-      bool shift;
+      [[maybe_unused]] xtd::int32 key;
+      [[maybe_unused]] xtd::int32 key_char;
+      [[maybe_unused]] bool alt;
+      [[maybe_unused]] bool control;
+      [[maybe_unused]] bool shift;
     };
     static std::map<std::string, key_key_char> keys;
     static input_list inputs;
