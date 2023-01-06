@@ -16,7 +16,6 @@ unusedStructMember:@CMAKE_SOURCE_DIR@/src/xtd.3rdparty.call_stack/stack_walker.c
 //                                                                                                                   xtd.dore
 
 constParameter:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/convert_pointer.h
-knownConditionTrueFalse:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/internal/__opaque_console_gcc.cpp //:570
 knownConditionTrueFalse:@CMAKE_SOURCE_DIR@/src/xtd.core/src/xtd/io/file_system_info.cpp //:21, :33, :61, :81
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/internal/__enum_introspection.h //:72
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/diagnostics/trace_listener_collection.h
