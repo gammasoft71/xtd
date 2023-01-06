@@ -53,7 +53,7 @@ namespace xtd {
       data_->functions = delegate.data_->functions;
     }
     /// @cond
-    delegate(const function_t& function) noexcept { data_->functions.push_back(function); }
+    delegate(const function_t& function) noexcept { data_->functions.push_back(function); } // Can't be explicit by design.
     delegate& operator =(const delegate& delegate) noexcept {
       data_->functions = delegate.data_->functions;
       return *this;
@@ -319,10 +319,10 @@ namespace xtd {
     
     /// @brief Initializes a delegate that invokes the specified instance method.
     /// @param function the method instance.
-    delegate(const function_t& function) noexcept {data_->functions.push_back(function);}
+    delegate(const function_t& function) noexcept {data_->functions.push_back(function);} // Can't be explicit by design.
     
     /// @cond
-    delegate(const no_arguments_function_t& function) noexcept { data_->no_arguments_functions.push_back(function); }
+    delegate(const no_arguments_function_t& function) noexcept { data_->no_arguments_functions.push_back(function); } // Can't be explicit by design.
     /// @endcond
     
     /// @brief Initializes a delegate that invokes the specified instance method on the specified class instance.

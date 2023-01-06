@@ -48,7 +48,7 @@ namespace __enumeration_introspection {
       for (size_t i = 0; i < size; i++)
         destination[i] = source[i];
       *offsets++ = current_offset;
-      destination += size;
+      destination += size; // Known errors with assignment pointer parameter.
       current_offset += size;
     });
     *offsets = current_offset;

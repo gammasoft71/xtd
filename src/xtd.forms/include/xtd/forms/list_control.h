@@ -49,7 +49,7 @@ namespace xtd {
         item() = default;
         /// @brief Initializes a new instance of the item class with specified value.
         /// @param value a string that represent the item.
-        item(const xtd::ustring& value);
+        item(const xtd::ustring& value); // Can't be explicit by design.
         /// @brief Initializes a new instance of the item class with specified value and tag.
         /// @param value a string that represent the item.
         /// @param tag an object that contains data about the item.
@@ -57,7 +57,7 @@ namespace xtd {
         /// @}
         
         /// @cond
-        item(const char* value);
+        item(const char* value); // Can't be explicit by design.
         item(const item& value) = default;
         item(item&& value) = default;
         item& operator =(const item& value) = default;
