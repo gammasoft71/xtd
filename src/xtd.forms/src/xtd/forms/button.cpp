@@ -83,7 +83,7 @@ void button::notify_default(bool value) {
   if (enabled()) data_->state = is_default() ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal;
   if (flat_style() != xtd::forms::flat_style::system) invalidate();
   else {
-    if (is_handle_created() && value && flat_style() == xtd::forms::flat_style::system) native::button::set_default_button(handle());
+    if (is_handle_created() && value) native::button::set_default_button(handle());
     else post_recreate_handle();
   }
 }
