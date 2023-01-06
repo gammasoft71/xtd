@@ -53,11 +53,11 @@ namespace xtd {
       context_menu();
       /// @brief Initialize a new instance of context_menu class.
       /// @param menu_items An array of menu_item objects that will be added to the main_menu.
-      context_menu(const std::vector<menu_item_ref>& menu_items);
+      explicit context_menu(const std::vector<menu_item_ref>& menu_items);
       /// @}
       
       /// @cond
-      context_menu(const std::initializer_list<const_menu_item_ref>& menu_items);
+      explicit context_menu(const std::initializer_list<const_menu_item_ref>& menu_items);
       ~context_menu();
       /// @endcond
       
