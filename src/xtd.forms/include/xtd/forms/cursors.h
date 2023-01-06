@@ -692,7 +692,7 @@ namespace xtd {
       /// @{
       /// @brief Gets cursor from name.
       /// @param name The name to retreive the corresponding xtd::forms::cursor.
-      /// @return xtd::forms::cursor corrstandigng to tha paramter name..
+      /// @return xtd::forms::cursor corrstandigng to tha parameter name..
       /// @exception xtd::argument_exception xtd::forms::cursor not found with specified name.
       static cursor from_name(const xtd::ustring& name);
       
