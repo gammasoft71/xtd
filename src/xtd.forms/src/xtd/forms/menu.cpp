@@ -116,15 +116,21 @@ bool menu::equals(const menu& value) const noexcept {
 
 optional<reference_wrapper<context_menu>> menu::get_context_menu() const noexcept {
   menu* item = const_cast<menu*>(this);
-  while (item)
+  while (item) {
     if (dynamic_cast<context_menu*>(item)) return static_cast<context_menu&>(*item);
+    if (item->data_->parent.has_value())item = &item->data_->parent.value().get();
+    else item = nullptr;
+  }
   return {};
 }
 
 optional<reference_wrapper<main_menu>> menu::get_main_menu() const noexcept {
   menu* item = const_cast<menu*>(this);
-  while (item)
+  while (item) {
     if (dynamic_cast<main_menu*>(item)) return static_cast<main_menu&>(*item);
+    if (item->data_->parent.has_value())item = &item->data_->parent.value().get();
+    else item = nullptr;
+  }
   return {};
 }
 
