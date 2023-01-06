@@ -567,8 +567,8 @@ namespace {
       
       dispatch_semaphore_wait(idle_semaphore, DISPATCH_TIME_FOREVER);
       
+      static bool initialized = false;
       if (!initialized) {
-        initialized = true;
         AudioComponentDescription audio_component_description {kAudioUnitType_Output, kAudioUnitSubType_DefaultOutput, kAudioUnitManufacturer_Apple, 0, 0};
         AudioComponentInstanceNew(AudioComponentFindNext(nullptr, &audio_component_description), &audio_unit);
         
@@ -581,7 +581,8 @@ namespace {
         AudioUnitInitialize(audio_unit);
         AudioOutputUnitStart(audio_unit);
       }
-      
+      initialized = true;
+
       beep_freq = frequency;
       beep_samples = duration * bits_per_channel;
       
@@ -621,7 +622,6 @@ namespace {
     inline static dispatch_semaphore_t idle_semaphore = dispatch_semaphore_create(1);
     inline static dispatch_semaphore_t start_playing_semaphore = dispatch_semaphore_create(0);
     inline static dispatch_semaphore_t end_playing_semaphore = dispatch_semaphore_create(0);
-    inline static bool initialized = false;
     inline static AudioUnit audio_unit;
     inline static unsigned int beep_freq = 0;
     inline static xtd::int32 beep_samples = 0;
