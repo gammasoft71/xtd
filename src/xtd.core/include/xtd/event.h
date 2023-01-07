@@ -81,7 +81,7 @@ namespace xtd {
     
     /// @brief Clear event.
     void clear() noexcept {
-      handler_t::clear();
+      *this = event {};
     }
     /// @}
   };
