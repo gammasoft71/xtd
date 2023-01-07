@@ -146,16 +146,10 @@ namespace xtd {
     /// @remarks If the invocation list of value matches a contiguous set of elements in the invocation list of source, then the invocation list of value is said to occur within the invocation list of source. If the invocation list of value occurs more than once in the invocation list of source, the last occurrence is removed.
     static delegate remove(const delegate& source, const delegate& value) noexcept {
       delegate result = source;
-      for (const function_t& function : value.data_->functions) {
-        if (find(result.data_->functions.begin(), result.data_->functions.end(), function) != result.data_->functions.end()) {
-          for (typename std::vector<function_t>::reverse_iterator iterator = result.data_->functions.rbegin(); iterator != result.data_->functions.rend(); ++iterator) {
-            if (are_equals(*iterator, function)) {
-              result.data_->functions.erase((iterator + 1).base());
-              break;
-            }
-          }
-        }
-      }
+      std::for_each(value.data_->functions.begin(), value.data_->functions.end(), [&](auto function) {
+        auto iterator = std::find_if(result.data_->functions.rbegin(), result.data_->functions.rend(), [&](auto item) {return are_equals(item, function);});
+        if (iterator != result.data_->functions.rend()) result.data_->functions.erase((iterator + 1).base());
+      });
       return result;
     }
     
@@ -260,9 +254,8 @@ namespace xtd {
     }
     
     static typename std::vector<function_t>::const_iterator find(typename std::vector<function_t>::const_iterator begin, typename std::vector<function_t>::const_iterator end, const function_t& function) noexcept {
-      for (typename std::vector<function_t>::const_iterator iterator = begin; iterator != end; ++iterator)
-        if (are_equals(*iterator, function))
-          return iterator;
+      auto iterator = std::find_if(begin, end, [&](auto item) {return are_equals(item, function);});
+      if (iterator != end) return iterator;
       return end;
     }
     std::shared_ptr<data> data_ = std::make_shared<data>();
@@ -455,12 +448,6 @@ namespace xtd {
     /// @return The delegates array.
     const std::vector<function_t>& functions() const {return data_->functions;}
     
-    /// @brief Clear delegates array.
-    void clear() {
-      data_->no_arguments_functions.clear();
-      data_->functions.clear();
-    }
-    
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The parameter list.
     /// @return result_t The return value.
@@ -529,27 +516,15 @@ namespace xtd {
     /// @remarks If the invocation list of value matches a contiguous set of elements in the invocation list of source, then the invocation list of value is said to occur within the invocation list of source. If the invocation list of value occurs more than once in the invocation list of source, the last occurrence is removed.
     static delegate remove(const delegate& source, const delegate& value) noexcept {
       delegate result = source;
-      for (const no_arguments_function_t& function : value.data_->no_arguments_functions) {
-        if (find(result.data_->no_arguments_functions.begin(), result.data_->no_arguments_functions.end(), function) != result.data_->no_arguments_functions.end()) {
-          for (typename std::vector<no_arguments_function_t>::reverse_iterator iterator = result.data_->no_arguments_functions.rbegin(); iterator != result.data_->no_arguments_functions.rend(); ++iterator) {
-            if (are_equals(*iterator, function)) {
-              result.data_->no_arguments_functions.erase((iterator + 1).base());
-              break;
-            }
-          }
-        }
-      }
+      std::for_each(value.data_->no_arguments_functions.begin(), value.data_->no_arguments_functions.end(), [&](auto no_arguments_function) {
+        auto iterator = std::find_if(result.data_->no_arguments_functions.rbegin(), result.data_->no_arguments_functions.rend(), [&](auto item) {return are_equals(item, no_arguments_function);});
+        if (iterator != result.data_->no_arguments_functions.rend()) result.data_->no_arguments_functions.erase((iterator + 1).base());
+      });
       
-      for (const function_t& function : value.data_->functions) {
-        if (find(result.data_->functions.begin(), result.data_->functions.end(), function) != result.data_->functions.end()) {
-          for (typename std::vector<function_t>::reverse_iterator iterator = result.data_->functions.rbegin(); iterator != result.data_->functions.rend(); ++iterator) {
-            if (are_equals(*iterator, function)) {
-              result.data_->functions.erase((iterator + 1).base());
-              break;
-            }
-          }
-        }
-      }
+      std::for_each(value.data_->functions.begin(), value.data_->functions.end(), [&](auto function) {
+        auto iterator = std::find_if(result.data_->functions.rbegin(), result.data_->functions.rend(), [&](auto item) {return are_equals(item, function);});
+        if (iterator != result.data_->functions.rend()) result.data_->functions.erase((iterator + 1).base());
+      });
       return result;
     }
     
@@ -737,16 +712,14 @@ namespace xtd {
     }
     
     static typename std::vector<no_arguments_function_t>::const_iterator find(typename std::vector<no_arguments_function_t>::const_iterator begin, typename std::vector<no_arguments_function_t>::const_iterator end, const no_arguments_function_t& function) noexcept {
-      for (typename std::vector<no_arguments_function_t>::const_iterator iterator = begin; iterator != end; ++iterator)
-        if (are_equals(*iterator, function))
-          return iterator;
+      auto iterator = std::find_if(begin, end, [&](auto item) {return are_equals(item, function);});
+      if (iterator != end) return iterator;
       return end;
     }
     
     static typename std::vector<function_t>::const_iterator find(typename std::vector<function_t>::const_iterator begin, typename std::vector<function_t>::const_iterator end, const function_t& function) noexcept {
-      for (typename std::vector<function_t>::const_iterator iterator = begin; iterator != end; ++iterator)
-        if (are_equals(*iterator, function))
-          return iterator;
+      auto iterator = std::find_if(begin, end, [&](auto item) {return are_equals(item, function);});
+      if (iterator != end) return iterator;
       return end;
     }
     
