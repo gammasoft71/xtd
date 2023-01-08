@@ -4,6 +4,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 selection_range::selection_range(date_time start, date_time end) : start_(start), end_(end) {
+  if (start_ > end_) start_ = end_;
 }
 
 date_time selection_range::end() const noexcept {
