@@ -582,7 +582,7 @@ namespace {
         AudioOutputUnitStart(audio_unit);
       }
       initialized = true;
-
+      
       beep_freq = frequency;
       beep_samples = duration * bits_per_channel;
       

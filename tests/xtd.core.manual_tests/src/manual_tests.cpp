@@ -4,11 +4,11 @@
 using namespace xtd;
 
 enum_(, enum_test,
-      value_one,
-      value_two,
-      value_three,
-      value_four
-      );
+  value_one,
+  value_two,
+  value_three,
+  value_four
+);
 
 int main() {
   console::write_line("name = {}", enum_test::value_four);

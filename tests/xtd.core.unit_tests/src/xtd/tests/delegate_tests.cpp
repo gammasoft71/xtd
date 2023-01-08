@@ -16,7 +16,7 @@ namespace xtd::tests {
       void member_method2(string& result) {
         result += "member_method2;";
       }
-
+      
       string operator()() {
         return "functor_method1";
       }
@@ -29,7 +29,7 @@ namespace xtd::tests {
       return "static_method1";
     }
     
-    static void static_method2(string& result) {
+    static void static_method2(string & result) {
       result += "static_method2;";
     }
     
@@ -48,7 +48,7 @@ namespace xtd::tests {
       delegate<void()> d;
       assert::does_not_throw([&] {d();}, csf_);
     }
-
+    
     void test_method_(create_delegate_with_static_method_and_test_is_empty) {
       delegate<string()> d(static_method1);
       assert::is_false(d.is_empty(), csf_);
@@ -69,7 +69,7 @@ namespace xtd::tests {
       d = delegate<string()>::remove(d, {static_method1});
       assert::is_true(d.is_empty(), csf_);
     }
-
+    
     void test_method_(create_delegate_with_member_method_and_test_is_empty) {
       container c;
       delegate<string()> d = {c, &container::member_method1};
@@ -136,7 +136,7 @@ namespace xtd::tests {
       d = delegate<string()>::remove(d, {l});
       assert::is_true(d.is_empty(), csf_);
     }
-
+    
     void test_method_(create_delegate_with_lambda_expression_and_invoke_it_with_functor) {
       delegate<string()> d([]()->string {return "lambda_expression1";});
       assert::are_equal("lambda_expression1", d(), csf_);
@@ -144,7 +144,7 @@ namespace xtd::tests {
     
     void test_method_(create_delegate_add_with_with_static_method_member_method_functor_method_lambda_expression_and_invoke_it) {
       container c;
-      auto l = [](string& result) {result += "lambda_expression2;";};
+      auto l = [](string & result) {result += "lambda_expression2;";};
       delegate<void(string&)> d;
       d += delegate<void(string&)> {static_method2};
       d += delegate<void(string&)> {c, &container::member_method2};
@@ -154,10 +154,10 @@ namespace xtd::tests {
       d.invoke(result);
       assert::are_equal("static_method2;member_method2;lambda_expression2;", result, csf_);
     }
-
+    
     void test_method_(create_delegate_add_with_with_static_method_member_method_functor_method_lambda_expression_and_invoke_it_with_functor) {
       container c;
-      auto l = [](string& result) {result += "lambda_expression2;";};
+      auto l = [](string & result) {result += "lambda_expression2;";};
       delegate<void(string&)> d;
       d += delegate<void(string&)> {static_method2};
       d += delegate<void(string&)> {c, &container::member_method2};
@@ -170,7 +170,7 @@ namespace xtd::tests {
     
     void test_method_(create_delegate_add_with_with_static_method_member_method_functor_method_lambda_expression_and_remove_static_method) {
       container c;
-      auto l = [](string& result) {result += "lambda_expression2;";};
+      auto l = [](string & result) {result += "lambda_expression2;";};
       delegate<void(string&)> d;
       d += delegate<void(string&)> {static_method2};
       d += delegate<void(string&)> {c, &container::member_method2};
@@ -186,7 +186,7 @@ namespace xtd::tests {
     
     void test_method_(create_delegate_add_with_with_static_method_member_method_functor_method_lambda_expression_and_remove_member_method) {
       container c;
-      auto l = [](string& result) {result += "lambda_expression2;";};
+      auto l = [](string & result) {result += "lambda_expression2;";};
       delegate<void(string&)> d;
       d += delegate<void(string&)> {static_method2};
       d += delegate<void(string&)> {c, &container::member_method2};
@@ -202,7 +202,7 @@ namespace xtd::tests {
     
     void test_method_(create_delegate_add_with_with_static_method_member_method_functor_method_lambda_expression_and_remove_lambda_expression) {
       container c;
-      auto l = [](string& result) {result += "lambda_expression2;";};
+      auto l = [](string & result) {result += "lambda_expression2;";};
       delegate<void(string&)> d;
       d += delegate<void(string&)> {static_method2};
       d += delegate<void(string&)> {c, &container::member_method2};
@@ -218,7 +218,7 @@ namespace xtd::tests {
     
     void test_method_(create_delegate_add_with_with_static_method_member_method_functor_method_lambda_expression_and_reset_it) {
       container c;
-      auto l = [](string& result) {result += "lambda_expression2;";};
+      auto l = [](string & result) {result += "lambda_expression2;";};
       delegate<void(string&)> d;
       d += delegate<void(string&)> {static_method2};
       d += delegate<void(string&)> {c, &container::member_method2};
