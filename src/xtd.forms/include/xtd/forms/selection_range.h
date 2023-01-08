@@ -72,7 +72,12 @@ namespace xtd {
       /// @return This current instance.
       virtual selection_range& start(date_time value);
       /// @}
-     
+      
+      /// @Name Methods
+      /// @{
+      xtd::ustring to_string() const noexcept override;
+      /// @}
+      
     private:
       date_time start_;
       date_time end_;
