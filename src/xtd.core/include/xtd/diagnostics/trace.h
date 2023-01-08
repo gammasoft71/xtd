@@ -260,8 +260,8 @@ namespace xtd {
       /// @param message A message to write.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
-      template<typename object>
-      static void write(const object& message) {
+      template<typename object_t>
+      static void write(const object_t& message) {
         #if defined(TRACE)
         write_(xtd::ustring::format("{}", message));
         #endif
@@ -272,8 +272,8 @@ namespace xtd {
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks Use the category parameter to group output messages.
       /// @remarks This method calls the write method of the trace listener.
-      template<typename object>
-      static void write(const object& message, const xtd::ustring& category) {
+      template<typename object_t>
+      static void write(const object_t& message, const xtd::ustring& category) {
         #if defined(TRACE)
         write_(xtd::ustring::format("{}", message), category);
         #endif
@@ -313,8 +313,8 @@ namespace xtd {
       /// @param message A message to write.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
-      template<typename object>
-      static void write_if(bool condition, const object& message) {
+      template<typename object_t>
+      static void write_if(bool condition, const object_t& message) {
         #if defined(TRACE)
         if (condition) write_(xtd::ustring::format("{}", message));
         #endif
@@ -325,8 +325,8 @@ namespace xtd {
       /// @param category A category name used to organize the output.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
-      template<typename object>
-      static void write_if(bool condition, const object& message, const xtd::ustring& category) {
+      template<typename object_t>
+      static void write_if(bool condition, const object_t& message, const xtd::ustring& category) {
         #if defined(TRACE)
         if (condition) write_(xtd::ustring::format("{}", message), category);
         #endif
@@ -354,8 +354,8 @@ namespace xtd {
       /// @param message A message to write.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
-      template<typename object>
-      static void write_line(const object& message) {
+      template<typename object_t>
+      static void write_line(const object_t& message) {
         #if defined(TRACE)
         write_line_(xtd::ustring::format("{}", message));
         #endif
@@ -366,8 +366,8 @@ namespace xtd {
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks Use the category parameter to group output messages.
       /// @remarks This method calls the write method of the trace listener.
-      template<typename object>
-      static void write_line(const object& message, const xtd::ustring& category) {
+      template<typename object_t>
+      static void write_line(const object_t& message, const xtd::ustring& category) {
         #if defined(TRACE)
         write_line_(xtd::ustring::format("{}", message), category);
         #endif
@@ -406,8 +406,8 @@ namespace xtd {
       /// @param message A message to write.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
-      template<typename object>
-      static void write_line_if(bool condition, const object& message) {
+      template<typename object_t>
+      static void write_line_if(bool condition, const object_t& message) {
         #if defined(TRACE)
         if (condition) write_line_(xtd::ustring::format("{}", message));
         #endif
@@ -418,8 +418,8 @@ namespace xtd {
       /// @param category A category name used to organize the output.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
-      template<typename object>
-      static void write_line_if(bool condition, const object& message, const xtd::ustring& category) {
+      template<typename object_t>
+      static void write_line_if(bool condition, const object_t& message, const xtd::ustring& category) {
         #if defined(TRACE)
         if (condition) write_line_(xtd::ustring::format("{}", message), category);
         #endif
