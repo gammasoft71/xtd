@@ -428,7 +428,6 @@ void month_calendar::wnd_proc(message& message) {
 
 void month_calendar::wm_notify_control(message& message) {
   NMHDR* nmhdr = reinterpret_cast<NMHDR*>(message.lparam());
-  diagnostics::debug::write_line("month_calendar::wm_notify_control");
   switch (nmhdr->code) {
     case MCN_SELECT: wm_date_selected(message); break;
     case MCN_SELCHANGE: wm_date_changed(message); break;
