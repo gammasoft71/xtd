@@ -11,7 +11,7 @@ namespace xtd::tests {
     class test_object : public object {
     public:
       event<test_object, event_handler> updated;
-
+      
       void update() {
         updated(*this, event_args::empty);
       }
@@ -20,7 +20,7 @@ namespace xtd::tests {
   public:
     void test_method_(add_event) {
       auto c = 0;
-      auto l = [&](const object& sender, const event_args& e) {++c;};
+      auto l = [&](const object & sender, const event_args & e) {++c;};
       auto o = test_object {};
       o.updated += l;
       assert::is_zero(c, csf_);
@@ -28,7 +28,7 @@ namespace xtd::tests {
     
     void test_method_(add_event_and_invoke_it) {
       auto c = 0;
-      auto l = [&](const object& sender, const event_args& e) {++c;};
+      auto l = [&](const object & sender, const event_args & e) {++c;};
       auto o = test_object {};
       o.updated += l;
       o.update();
@@ -61,7 +61,7 @@ namespace xtd::tests {
       o.update();
       assert::are_equal(5, c, csf_);
     }
-
+    
     void test_method_(add_event_without_argument) {
       auto c = 0;
       auto l = [&] {++c;};
