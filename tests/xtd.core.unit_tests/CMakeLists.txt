@@ -24,6 +24,7 @@ add_sources(
   src/xtd/tests/domain_exception_tests.cpp
   src/xtd/tests/delegate_tests.cpp
   src/xtd/tests/environment_tests.cpp
+  src/xtd/tests/event_tests.cpp
   src/xtd/tests/format_exception_tests.cpp
   src/xtd/tests/generic_stream_output_tests.cpp
   src/xtd/tests/guid_tests.cpp
