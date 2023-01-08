@@ -276,7 +276,7 @@ namespace xtd {
       template<typename object_t>
       static void write(const object_t& message) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write_(xtd::ustring::format("", message));
+        write_(xtd::ustring::format("{}", message));
         #endif
       }
       /// @brief Writes a category name and message to the trace listeners in the listeners collection.
@@ -288,7 +288,7 @@ namespace xtd {
       template<typename object_t>
       static void write(const object_t& message, const xtd::ustring& category) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write_(xtd::ustring::format("", message), category);
+        write_(xtd::ustring::format("{}", message), category);
         #endif
       }
       /// @brief Writes a formatted string to the trace listeners in the listeners collection.
@@ -329,7 +329,7 @@ namespace xtd {
       /// @remarks This method calls the write method of the trace listener.
       static void write_if(bool condition, const object_t& message) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (condition) write_(xtd::ustring::format("", message));
+        if (condition) write_(xtd::ustring::format("{}", message));
         #endif
       }
       /// @brief Writes a category name and message to the trace listeners in the Listeners collection if a condition is true.
@@ -341,7 +341,7 @@ namespace xtd {
       template<typename object_t>
       static void write_if(bool condition, const object_t& message, const xtd::ustring& category) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (condition) write_(xtd::ustring::format("", message), category);
+        if (condition) write_(xtd::ustring::format("{}", message), category);
         #endif
       }
       
@@ -370,7 +370,7 @@ namespace xtd {
       template<typename object_t>
       static void write_line(const object_t& message) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write_line_(xtd::ustring::format("", message));
+        write_line_(xtd::ustring::format("{}", message));
         #endif
       }
       /// @brief Writes a category name and message followed by a line terminator to the trace listeners in the listeners collection.
@@ -382,7 +382,7 @@ namespace xtd {
       template<typename object_t>
       static void write_line(const object_t& message, const xtd::ustring& category) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write_line_(xtd::ustring::format("", message), category);
+        write_line_(xtd::ustring::format("{}", message), category);
         #endif
       }
       /// @brief Writes a formatted string followed by a line terminator to the trace listeners in the listeners collection.
