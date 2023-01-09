@@ -14,7 +14,7 @@ namespace xtd {
     /// class core_export_ console_trace_listener : public xtd::diagnostics::ostream_trace_listener
     /// @endcode
     /// @par Inheritance
-    /// xtd::diagnostics::ostream_trace_listener → xtd::diagnostics::console_trace_listener
+    /// xtd::object →  xtd::abstract_object → xtd::diagnostics::trace_listener → xtd::diagnostics::ostream_trace_listener → xtd::diagnostics::console_trace_listener
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
