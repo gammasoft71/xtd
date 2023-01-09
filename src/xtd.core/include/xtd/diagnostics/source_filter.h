@@ -13,7 +13,7 @@ namespace xtd {
     /// class core_export_ source_filter : public xtd::diagnostics::trace_filter
     /// @endcode
     /// @par Inheritance
-    /// xtd::diagnostics::trace_filter → xtd::diagnostics::source_filter
+    /// xtd::object → xtd::abstract_object → xtd::diagnostics::trace_filter → xtd::diagnostics::source_filter
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
