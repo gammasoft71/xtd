@@ -14,7 +14,7 @@ namespace xtd {
     /// class data_received_event_args final : public xtd::event_args
     /// @endcode
     /// @par Inheritance
-    /// xtd::event_args → xtd::diagnostics::data_received_event_args
+    /// xtd::object → xtd::event_args → xtd::diagnostics::data_received_event_args
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
