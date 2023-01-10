@@ -2,46 +2,67 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Introduction
 
-Let's discover **Docusaurus in less than 5 minutes**.
+[![xtd_background](/pictures/xtd_background.png)](https://gammasoft71.wixsite.com/xtdpro)
 
-## Getting Started
+(\*) See [portability](portability.md#the-xtd-libraries-portability-list) for more information.
 
-Get started by **creating a new site**.
+# Latest news
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+- [Release xtd 0.1.0 (beta) - October 10, 2021](news.md#release-xtd-010-beta-october-10-2021)
 
-### What you'll need
+## Features
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+- Free and open-source ([MIT License](https://github.com/gammasoft71/xtd/blob/master/docs/license.md));
+- a collection of native C++ classes libraries, to complete std;
+- API close to the .net API with a modern C++ approach and full integration with the std standard;
+- written in efficient, modern C++17/20 with [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom;
+- and [highly portable](portability.md#the-xtd-libraries-portability-list) and available on [many different platforms](portability.md#operating-system-supported);
 
-## Generate a new site
+## xtd libraries architecture
 
-Generate a new Docusaurus site using the **classic template**.
+[![architecture_logo](/pictures/block_diagram_onion.png)](hierarchy.md)
 
-The classic template will automatically be added to your project after you run the command:
+xtd is composed of several libraries grouped by package.
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+### system
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+[![core](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.core.png)](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html)
+The [xtd.core](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html) library is modern C++17/20 libraries of classes, interfaces, and value types that provide access to system functionality. It is the foundation on which c++ applications, components, and controls are built.
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+### drawing
 
-## Start your site
+[![drawing](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.drawing.png)](https://codedocs.xyz/gammasoft71/xtd/group__xtd__drawing.html)
+The [xtd.drawing](https://codedocs.xyz/gammasoft71/xtd/group__xtd__drawing.html) library contains types that support basic GDI+ graphics functionality. Child namespaces support advanced two-dimensional and vector graphics functionality, advanced imaging functionality, and print-related and typographical services. A child namespace also contains types that extend design-time user-interface logic and drawing.
 
-Run the development server:
+### forms
 
-```bash
-cd my-website
-npm run start
-```
+[![forms](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.forms.png)](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html)
+The [xtd.forms](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html) library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows, Apple macOS and linux base operating system.
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+### tunit
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+[![tunit](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.tunit.png)](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html)
+The [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) library is a unit-testing framework for modern C++17/20, inspired by [Microsoft.VisualStudio.TestTools.Cpp](https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference).
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+See [xtd libraries hierarchy](hierarchy.md).
+
+# Objectives and Mission
+
+- xtd is a powerful, yet easy to use platform to build your applications upon
+- xtd is modular and scalable from embedded applications
+- xtd provides consistent, comprehensive and comprehensible programming interfaces
+- xtd favors simplicity over complexity ("as simple as possible, but not simpler")
+- xtd aims for consistency in [design](https://github.com/gammasoft71/xtd/blob/master/docs/documentation.md), [coding style](https://github.com/gammasoft71/xtd/blob/master/docs/coding_conventions_guidelines.md) and [documentation](https://codedocs.xyz/gammasoft71/xtd/index.html)
+- xtd emphasizes source code quality, in terms of readability, comprehensiveness, consistency, style and testability
+- xtd aims to make C++ programming fun again Guiding Principles
+- Strong focus on code quality, style, consistency and code readability – all code must satisfy our [coding style guide](https://github.com/gammasoft71/xtd/blob/master/docs/design_guidelines.md)
+- Strong focus on tests (automated [unit tests](https://github.com/gammasoft71/xtd/tree/master/tests) with high coverage)
+- Build on top of solid foundations – use existing proven C, C++ or Objective-C libraries (e.g. Win32 APi, Gtk4, AppKit,...) where it makes sense
+
+# Getting Started
+
+- [Installation](downloads.md) provides download and install documentation.
+- [Guides](guides.md) provides xtd guides and tutorials.
+- [Examples](../examples/README.md) provides over 500 examples to help you use xtd, grouped by libraries and topics.
