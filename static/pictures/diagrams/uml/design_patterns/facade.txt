@@ -1,0 +1,26 @@
+@startuml
+
+skinparam backgroundcolor transparent
+skinparam classBackgroundColor white
+skinparam classBorderColor #60A5FF
+skinparam classArrowColor #60A5FF
+skinparam noteBackgroundColor white
+skinparam noteBorderColor #60A5FF
+skinparam packageBorderColor #60A5FF
+skinparam packageFontColor #60A5FF
+
+class facade
+
+package subsystem <<Folder>> {
+  class sub_system_four
+  class sub_system_three
+  class sub_system_two
+  class sub_system_one
+}
+
+facade --> sub_system_one
+facade --> sub_system_two
+facade --> sub_system_three
+facade --> sub_system_four
+
+@enduml

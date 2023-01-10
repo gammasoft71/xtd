@@ -1,0 +1,32 @@
+@startuml
+
+skinparam backgroundcolor transparent
+skinparam classBackgroundColor white
+skinparam classBorderColor #60A5FF
+skinparam classArrowColor #60A5FF
+skinparam noteBackgroundColor white
+skinparam noteBorderColor #60A5FF
+
+class client
+
+class target {
+  +request()
+}
+
+class adapter {
+  +request()
+}
+
+note left of adapter::request
+  adaptee.specific_request()
+end note
+
+class adaptee {
+  +specific_request()
+}
+
+client --> target
+target <|-- adapter
+adaptee <-- adapter
+
+@enduml

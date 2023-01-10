@@ -1,0 +1,40 @@
+@startuml
+
+skinparam backgroundcolor transparent
+skinparam classBackgroundColor white
+skinparam classBorderColor #60A5FF
+skinparam classArrowColor #60A5FF
+skinparam noteBackgroundColor white
+skinparam noteBorderColor #60A5FF
+
+class client
+
+class component {
+  +operation()
+  +add(in component)
+  +remove(in component)
+  +get_child(in index : int)
+}
+
+class composite {
+  +operation()
+  +add(in component)
+  +remove(in component)
+  +get_child(in index : int)
+}
+
+note left of composite::operation
+  foreach child in children
+    child.operation()
+end note
+
+class leaf {
+  +operation()
+}
+
+client --> component
+component <|-- leaf
+component <--o composite : children
+component <|-- composite
+
+@enduml

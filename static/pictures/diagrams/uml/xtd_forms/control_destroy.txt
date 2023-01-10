@@ -1,0 +1,25 @@
+@startuml
+
+skinparam backgroundcolor transparent
+skinparam classBackgroundColor white
+skinparam classBorderColor #60A5FF
+skinparam classArrowColor #60A5FF
+skinparam noteBackgroundColor white
+skinparam noteBorderColor #60A5FF
+skinparam packageBorderColor #60A5FF
+skinparam packageFontColor #60A5FF
+skinparam classArrowFontColor #60A5FF
+
+actor user as user
+participant xtd.forms as form
+participant xtd.forms.native as native
+participant xtd.forms.native.xxx as xxx
+
+user -> form : call my_button destructor
+form -> user : xtd::forms::control::destroy_control
+form -> form : children.parent(nullptr)
+form -> user : send my_form.control_removed(my_button) event
+form -> user : send my_button.handle_destroyed event
+form -> xxx  : xtd::forms::native::control::destroy(handle)
+
+@enduml

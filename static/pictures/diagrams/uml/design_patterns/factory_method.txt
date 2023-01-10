@@ -1,0 +1,35 @@
+@startuml
+
+skinparam backgroundcolor transparent
+skinparam classBackgroundColor white
+skinparam classBorderColor #60A5FF
+skinparam classArrowColor #60A5FF
+skinparam noteBackgroundColor white
+skinparam noteBorderColor #60A5FF
+
+abstract product
+
+class concrete_product
+
+abstract creator {
+  +factory_method()
+  +an_operation()
+}
+
+note left of creator::factory_method
+  product = factory_method()
+end note
+
+class concrete_creator {
+  +factory_method()
+}
+
+note left of concrete_creator::factory_method
+  return new concrete_product
+end note
+
+product <|-- concrete_product
+concrete_creator ..> concrete_product
+concrete_creator --|> creator
+
+@enduml
