@@ -74,6 +74,70 @@ const config = {
       footer: {
         style: 'dark',
         links: [
+          {
+            title: 'Learn',
+            items: [
+              {
+                label: 'Introduction',
+                to: '/docs/intro',
+              },
+              {
+                label: 'Installation',
+                href: '/docs/downloads',
+              },
+              {
+                label: 'Documentation',
+                href: '/docs/documentation',
+              },
+            ]
+          },
+          {
+            title: 'Social',
+            items: [
+              {
+                label: 'Discord',
+                href: 'https://discordapp.com/users/gammasoft#9288',
+              },
+              {
+                label: 'Facebook',
+                href: 'https://www.facebook.com/gammasoft71',
+              },
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/gammasoft71',
+              },
+            ]
+          },
+          {
+            title: 'Support',
+            items: [
+              {
+                label: 'Issues tracker',
+                href: 'https://github.com/gammasoft71/xtd/issues',
+              },
+              {
+                label: 'Github',
+                href: 'https://github.com/gammasoft71',
+              },
+            ]
+          },
+          {
+            title: 'More',
+            items: [
+              {
+                label: 'Design Guidelines',
+                to: '/documentation/design_guidelines',
+              },
+              {
+                label: 'License',
+                to: '/documentation/license',
+              },
+              {
+                label: 'Roadmap',
+                to: '/documentation/roadmap',
+              },
+            ]
+          }
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Gammasoft, Inc. Built with Docusaurus.`,
       },
