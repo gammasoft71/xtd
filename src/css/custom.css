@@ -29,4 +29,8 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-footer-link-hover-color: #52a9ff;
+
+  --ifm-heading-color: #fff;
+  --ifm-hero-text-color: #fff;
+  --ifm-font-color-base-inverse: #fff;
 }
