@@ -233,7 +233,7 @@ The following tables, organized by project, show the availability of SDKs and la
 | catch2   | ✔️  | ❌ | ❌  | ❌           | c++              |
 | cocoa    | ❌  | ❌ | ❌  | ❌           | NA               |
 | fltk     | ❌  | ❌ | ❌  | ❌           | NA               |
-| gtest    | ✔️  | ✔️ | ❌  | ❌           | c++              |
+| gtest    | ✔️  | ❌ | ❌  | ❌           | c++              |
 | gtk+2    | ❌  | ❌ | ❌  | ❌           | NA               |
 | gtk+3    | ❌  | ❌ | ❌  | ❌           | NA               |
 | gtk+4    | ❌  | ❌ | ❌  | ❌           | NA               |
