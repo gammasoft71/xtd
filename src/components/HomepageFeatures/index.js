@@ -4,32 +4,36 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Feature',
+    Svg: require('@site/static/img/undraw_in_sync_re_jlqd.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+      Free and open-source (MIT License). A collection of native C++ classes libraries, to complete std.
+      <br/>API close to the .net API with modern C++ approach and full integration with the std standard.
+      <br/>xtd is designed to manage GUI controls and dialogs in pure native mode or with CSS styles.
+      <br/>Written in efficient, modern c++17/20 with RAII programming idiom.
+      And highly portable and available on many different platforms.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Objectives and Mission',
+    Svg: require('@site/static/img/undraw_next_tasks_re_5eyy.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+      xtd is a powerful, yet easy to use platform to build your applications upon. xtd is modular and scalable from embedded applications.
+      xtd provides consistent, comprehensive and comprehensible programming interfaces. xtd favors simplicity over complexity ("as simple as possible, but not simpler").
+      xtd aims for consistency in design, coding style and documentation. xtd emphasizes source code quality, in terms of readability, comprehensiveness, consistency, style and testability.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Getting started',
+    Svg: require('@site/static/img/undraw_programming_re_kg9v.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+      Installation provides download and install documentation. Guides provides xtd guides and tutorials.
+      Examples provides over 500 examples to help you use xtd, grouped by libraries and topics.
       </>
     ),
   },
