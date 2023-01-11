@@ -11,6 +11,7 @@
   min-height: 100px;
   text-shadow: rgb(37, 44, 56) 2px 0 10px;
   background-size: cover;
+  background-position: center;
 }
 
 @media screen and (max-width: 996px) {
