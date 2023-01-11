@@ -126,15 +126,15 @@ const config = {
             items: [
               {
                 label: 'Design Guidelines',
-                to: '/documentation/design_guidelines',
+                to: '/docs/documentation/design_guidelines',
               },
               {
                 label: 'License',
-                to: '/documentation/license',
+                to: '/docs/documentation/license',
               },
               {
                 label: 'Roadmap',
-                to: '/documentation/roadmap',
+                to: '/docs/documentation/roadmap',
               },
             ]
           }
