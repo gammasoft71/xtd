@@ -6,11 +6,11 @@ sidebar_position: 1
 
 [![xtd_background](/pictures/xtd_background.png)](https://gammasoft71.wixsite.com/xtdpro)
 
-(\*) See [portability](portability.md#the-xtd-libraries-portability-list) for more information.
+(\*) See [portability](#) for more information.
 
 # Latest news
 
-- [Release xtd 0.1.0 (beta) - October 10, 2021](news.md#release-xtd-010-beta-october-10-2021)
+- [Release xtd 0.1.0 (beta) - October 10, 2021](#)
 
 ## Features
 
@@ -18,11 +18,11 @@ sidebar_position: 1
 - a collection of native C++ classes libraries, to complete std;
 - API close to the .net API with a modern C++ approach and full integration with the std standard;
 - written in efficient, modern C++17/20 with [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom;
-- and [highly portable](portability.md#the-xtd-libraries-portability-list) and available on [many different platforms](portability.md#operating-system-supported);
+- and [highly portable](#) and available on [many different platforms](#);
 
 ## xtd libraries architecture
 
-[![architecture_logo](/pictures/block_diagram_onion.png)](hierarchy.md)
+[![architecture_logo](/pictures/block_diagram_onion.png)](#)
 
 xtd is composed of several libraries grouped by package.
 
@@ -46,7 +46,7 @@ The [xtd.forms](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html) lib
 [![tunit](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.tunit.png)](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html)
 The [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd/group__xtd__tunit.html) library is a unit-testing framework for modern C++17/20, inspired by [Microsoft.VisualStudio.TestTools.Cpp](https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference).
 
-See [xtd libraries hierarchy](hierarchy.md).
+See [xtd libraries hierarchy](#).
 
 # Objectives and Mission
 
@@ -64,5 +64,5 @@ See [xtd libraries hierarchy](hierarchy.md).
 # Getting Started
 
 - [Installation](downloads.md) provides download and install documentation.
-- [Guides](guides.md) provides xtd guides and tutorials.
-- [Examples](../examples/README.md) provides over 500 examples to help you use xtd, grouped by libraries and topics.
+- [Guides](#) provides xtd guides and tutorials.
+- [Examples](#) provides over 500 examples to help you use xtd, grouped by libraries and topics.

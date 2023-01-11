@@ -124,10 +124,10 @@ const config = {
           {
             title: 'More',
             items: [
-              {
+/*               {
                 label: 'Design Guidelines',
                 to: '/docs/documentation/design_guidelines',
-              },
+              }, */
               {
                 label: 'License',
                 to: '/docs/documentation/license',

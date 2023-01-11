@@ -10,7 +10,7 @@ You can download latest stable version on [SourceForge](https://sourceforge.net/
 
 [![Downloadxtd](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/xtdpro/files/latest/download)
 
-See [release notes](release_notes.md) to know the latest xtd version.
+See [release notes](/docs/documentation/release_notes.md) to know the latest xtd version.
 
 ## Clone the latest xtd commit
 
@@ -152,9 +152,9 @@ xtdc open
 
 ### Remarks
 
-See [xtdc-gui](../tools/xtdc-gui/README.md) for more info.
+See [xtdc-gui](#) for more info.
 
-See [xtdc](../tools/xtdc/README.md) for more info.
+See [xtdc](#) for more info.
 
 ## Uninstall
 
