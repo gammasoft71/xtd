@@ -6,6 +6,7 @@
 
 # Latest news
 
+* [xtd.tunit is compatible with Test Explorer window of Visual Studio 2019 or later - November 18, 2022](news.md#xtdtunit-is-compatible-with-test-explorer-window-of-visual-studio-2019-or-later-november-18-2022) 
 * [Release xtd 0.1.0 (beta) - October 10, 2021](news.md#release-xtd-010-beta-october-10-2021) 
 
 ## Features
