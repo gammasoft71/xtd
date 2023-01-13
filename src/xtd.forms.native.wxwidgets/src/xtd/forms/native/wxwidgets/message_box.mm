@@ -34,23 +34,23 @@ namespace {
   static NSAlert* create_alert(const ustring& text, const ustring& caption, uint32 style, bool display_help_button) {
     NSAlert* alert = [[NSAlert alloc] init];
     if ((style & MB_RETRYCANCEL) == MB_RETRYCANCEL) {
-      [alert addButtonWithTitle:@"Retry"];
-      [alert addButtonWithTitle:@"Cancel"];
+      [alert addButtonWithTitle:[NSString stringWithUTF8String:"Retry"_t]];
+      [alert addButtonWithTitle:[NSString stringWithUTF8String:"Cancel"_t]];
     } else if ((style & MB_YESNOCANCEL) == MB_YESNOCANCEL) {
-      [alert addButtonWithTitle:@"Yes"];
-      [alert addButtonWithTitle:@"No"];
-      [alert addButtonWithTitle:@"Cancel"];
+      [alert addButtonWithTitle:[NSString stringWithUTF8String:"Yes"_t]];
+      [alert addButtonWithTitle:[NSString stringWithUTF8String:"No"_t]];
+      [alert addButtonWithTitle:[NSString stringWithUTF8String:"Cancel"_t]];
     } else if ((style & MB_YESNO) == MB_YESNO) {
-      [alert addButtonWithTitle:@"Yes"];
-      [alert addButtonWithTitle:@"No"];
+      [alert addButtonWithTitle:[NSString stringWithUTF8String:"Yes"_t]];
+      [alert addButtonWithTitle:[NSString stringWithUTF8String:"No"_t]];
     } else if ((style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE) {
-      [alert addButtonWithTitle:@"Abort"];
-      [alert addButtonWithTitle:@"Retry"];
-      [alert addButtonWithTitle:@"Ignore"];
+      [alert addButtonWithTitle:[NSString stringWithUTF8String:"Abort"_t]];
+      [alert addButtonWithTitle:[NSString stringWithUTF8String:"Retry"_t]];
+      [alert addButtonWithTitle:[NSString stringWithUTF8String:"Ignore"_t]];
     } else if ((style & MB_OKCANCEL) == MB_OKCANCEL) {
-      [alert addButtonWithTitle:@"OK"];
-      [alert addButtonWithTitle:@"Cancel"];
-    } else [alert addButtonWithTitle:@"OK"];
+      [alert addButtonWithTitle:[NSString stringWithUTF8String:"OK"_t]];
+      [alert addButtonWithTitle:[NSString stringWithUTF8String:"Cancel"_t]];
+    } else [alert addButtonWithTitle:[NSString stringWithUTF8String:"OK"_t]];
     [alert setMessageText:[NSString stringWithUTF8String:caption.c_str()]];
     [alert setInformativeText:[NSString stringWithUTF8String:text.c_str()]];
     [alert setAlertStyle:convert_to_icon(style)];
