@@ -1,0 +1,20 @@
+key "Abort"
+value "Abort"
+
+key "Cancel"
+value "Cancel"
+
+key "Ignore"
+value "Ignore"
+
+key "No"
+value "No"
+
+key "OK"
+value "OK"
+
+key "Retry"
+value "Retry"
+
+key "Yes"
+value "Yes"
