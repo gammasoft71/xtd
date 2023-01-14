@@ -84,7 +84,7 @@ namespace xtd {
   };
 }
 
-/// @brief Helper on xtd::null_pointer_exception to call it with caller information
+/// @brief Helper on xtd::null_pointer_exception to call it with current stack frame information.
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions

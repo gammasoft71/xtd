@@ -85,7 +85,7 @@ namespace xtd {
   };
 }
 
-/// @brief Helper on xtd::unauthorized_access_exception to call it with caller information
+/// @brief Helper on xtd::unauthorized_access_exception to call it with current stack frame information.
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
