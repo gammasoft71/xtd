@@ -169,7 +169,7 @@ namespace xtd {
         case 'g':
         case 'G': return __format_stringer<char>(value_);
       }
-      throw format_exception("Invalid format");
+      throw format_exception("Invalid format"_t);
     }
     /// @}
     

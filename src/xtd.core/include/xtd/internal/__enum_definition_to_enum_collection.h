@@ -26,7 +26,7 @@ xtd::enum_collection<enum_t> __enum_definition_to_enum_collection__(const xtd::u
   for (auto entry : enum_definition.split({','})) {
     auto key_value = entry.trim().split({'='});
     if (key_value.size() < 1 || key_value.size() > 2 || (key_value.size() == 2 && xtd::ustring::is_empty(key_value[1])))
-      throw xtd::format_exception("Not a valid enum declaration", csf_);
+      throw xtd::format_exception("Not a valid enum declaration"_t, csf_);
     xtd::int64 value = current_value;
     if (key_value.size() == 2) {
       if (!xtd::try_parse<xtd::int64>(key_value[1].trim(), value, xtd::number_styles::number) && xtd::try_parse<xtd::int64>(key_value[1].trim(), value, xtd::number_styles::hex_number) && xtd::try_parse<xtd::int64>(key_value[1].trim(), value, xtd::number_styles::binary_number) && xtd::try_parse<xtd::int64>(key_value[1].trim(), value, xtd::number_styles::octal_number)) {
@@ -34,7 +34,7 @@ xtd::enum_collection<enum_t> __enum_definition_to_enum_collection__(const xtd::u
         if (iterator != entries.end()) value = static_cast<xtd::int64>(iterator->first);
     
         /// @todo Add parse arithmetic operation...
-        throw xtd::format_exception("Not a valid enum declaration", csf_);
+        throw xtd::format_exception("Not a valid enum declaration"_t, csf_);
       }
     }
     current_value = value;

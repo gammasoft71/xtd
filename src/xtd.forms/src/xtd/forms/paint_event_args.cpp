@@ -23,7 +23,7 @@ const drawing::rectangle& paint_event_args::clip_rectangle() const noexcept {
 }
 
 drawing::graphics& paint_event_args::graphics() {
-  if (!control_) throw xtd::argument_exception("The control is null", csf_);
+  if (!control_) throw xtd::argument_exception("The control is null"_t, csf_);
   auto using_double_buffered_graphics = control_->get_state(control::state::double_buffered) && !native::toolkit::is_operating_system_double_buffered();
   if (!graphics_) graphics_ = new drawing::graphics(using_double_buffered_graphics ? native::control::create_double_buffered_paint_graphics(control_->handle()) : native::control::create_paint_graphics(control_->handle()), control_->region());
   return *graphics_;

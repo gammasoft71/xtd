@@ -21,7 +21,7 @@ bool boolean_switch::enabled() const {
     else if (try_parse(this->value(), int_value) == true)
       enabled_ = int_value != 0;
     else
-      throw format_exception("Input xtd::ustring was not in a correct format.", csf_);
+      throw format_exception("Input xtd::ustring was not in a correct format."_t, csf_);
   }
   return enabled_.value();
 }

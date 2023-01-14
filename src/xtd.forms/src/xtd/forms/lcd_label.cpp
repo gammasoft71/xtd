@@ -861,7 +861,7 @@ control& lcd_label::text(const xtd::ustring& value) {
           case lcd_style::fourteen_segment_display: data_->digits.push_back(std::make_shared<fourteen_segment_display_digit>()); break;
           case lcd_style::sixteen_segment_display: data_->digits.push_back(std::make_shared<sixteen_segment_display_digit>()); break;
           case lcd_style::dot_matrix_display: data_->digits.push_back(std::make_shared<dot_matrix_display_digit>()); break;
-          default: throw argument_exception("lcd_style invalid", csf_);
+          default: throw argument_exception("lcd_style invalid"_t, csf_);
         }
         dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->parent(*this);
         dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->double_buffered(double_buffered());
@@ -887,7 +887,7 @@ std::vector<char32> lcd_label::valid_characters() {
     case lcd_style::fourteen_segment_display: digit = std::make_shared<fourteen_segment_display_digit>(); break;
     case lcd_style::sixteen_segment_display: digit = std::make_shared<sixteen_segment_display_digit>(); break;
     case lcd_style::dot_matrix_display: digit = std::make_shared<dot_matrix_display_digit>(); break;
-    default: throw argument_exception("lcd_style invalid", csf_);
+    default: throw argument_exception("lcd_style invalid"_t, csf_);
   }
   auto vc = digit->get_valid_characters();
   return {vc.begin(), vc.end()};
