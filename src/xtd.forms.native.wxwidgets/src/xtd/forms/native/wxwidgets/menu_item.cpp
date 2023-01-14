@@ -22,7 +22,11 @@ namespace {
     itemText.Replace("&", "");
     itemText.Replace(".", "");
     itemText.LowerCase();
-    return itemText == "about";
+    wxString aboutText = "&About..."_t;
+    aboutText.Replace("&", "");
+    aboutText.Replace(".", "");
+    aboutText.LowerCase();
+    return itemText == aboutText || itemText == "about";
   }
   
   static bool is_quit_item(const xtd::ustring& text) {
@@ -30,7 +34,11 @@ namespace {
     itemText.Replace("&", "");
     itemText.Replace(".", "");
     itemText.LowerCase();
-    return itemText == "exit" || itemText == "quit";
+    wxString exitText = "E&xit"_t;
+    exitText.Replace("&", "");
+    exitText.Replace(".", "");
+    exitText.LowerCase();
+    return itemText == exitText || itemText == "exit" || itemText == "quit";
   }
   
   static bool is_preferences_item(const xtd::ustring& text) {
@@ -38,7 +46,11 @@ namespace {
     itemText.Replace("&", "");
     itemText.Replace(".", "");
     itemText.LowerCase();
-    return itemText == "preferences" || itemText == "options";
+    wxString preferenceText = "E&xit"_t;
+    preferenceText.Replace("&", "");
+    preferenceText.Replace(".", "");
+    preferenceText.LowerCase();
+    return itemText == preferenceText || itemText == "preferences" || itemText == "options";
   }
   #endif
   
