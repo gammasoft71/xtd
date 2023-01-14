@@ -88,7 +88,7 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to arithmetic_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::arithmetic_exception({any argument}, csf_)
 /// @code
 /// void my_func() {
 ///   if (invalid_info) throw arithmetic_exception_(); // same as : throw arithmetic_exception(csf_);

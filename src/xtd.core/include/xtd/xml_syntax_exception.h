@@ -89,7 +89,7 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xml_syntax_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::xml_syntax_exception({any argument}, csf_)
 /// @code
 /// void my_func() {
 ///   if (invalid_info) throw xml_syntax_exception_(); // same as : throw xml_syntax_exception(csf_);

@@ -95,7 +95,7 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to directory_not_found_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::io::directory_not_found_exception({any argument}, csf_)
 /// @code
 /// void my_func() {
 ///   if (invalid_info) throw directory_not_found_exception_(); // same as : throw directory_not_found_exception(csf_);

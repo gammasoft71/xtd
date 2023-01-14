@@ -88,7 +88,7 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to platform_not_supported_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::platform_not_supported_exception({any argument}, csf_)
 /// @code
 /// void my_func() {
 ///   if (invalid_info) throw platform_not_supported_exception_(); // same as : throw platform_not_supported_exception(csf_);

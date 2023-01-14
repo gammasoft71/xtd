@@ -88,7 +88,7 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to underflow_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::underflow_exception({any argument}, csf_)
 /// @code
 /// void my_func() {
 ///   if (invalid_info) throw underflow_exception_(); // same as : throw underflow_exception(csf_);

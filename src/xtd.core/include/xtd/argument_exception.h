@@ -89,7 +89,7 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to argument_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::argument_exception({any argument}, csf_)
 /// @code
 /// void my_func() {
 ///   if (invalid_info) throw argument_exception_(); // same as : throw argument_exception(csf_);
