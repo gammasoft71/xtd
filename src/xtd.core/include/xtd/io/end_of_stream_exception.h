@@ -92,7 +92,7 @@ namespace xtd {
   }
 }
 
-/// @brief Helper on system_exception to call it with caller information
+/// @brief Helper on xtd::io::end_of_stream_exception to call it with caller information
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions

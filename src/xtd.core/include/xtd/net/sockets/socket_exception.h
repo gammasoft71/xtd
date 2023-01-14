@@ -100,7 +100,7 @@ namespace xtd {
   }
 }
 
-/// @brief Helper on system_exception to call it with caller information
+/// @brief Helper on xtd::net::sockets::socket_exception to call it with caller information
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
