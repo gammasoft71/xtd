@@ -27,7 +27,7 @@ namespace xtd {
         friend xtd::forms::native::label;
       private:
         explicit wx_tool_bar(const xtd::forms::native::create_params& create_params) {
-          if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
+          if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, csf_);
           control_handler::create<wxToolBar>(reinterpret_cast<control_handler*>(create_params.parent)->control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, style_to_wx_style(create_params.style, create_params.ex_style));
           // On Windows the default size icon of toolbar is 16x16, on macOS is 32x32 and on gtk is 24x24...
           #if defined(__WXMSW__)

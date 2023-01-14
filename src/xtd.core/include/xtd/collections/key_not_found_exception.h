@@ -90,3 +90,17 @@ namespace xtd {
     };
   }
 }
+
+/// @brief Helper on system_exception to call it with caller information
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core exceptions
+/// @remarks Is equivalent to key_not_found_exception({any argument}, csf_)
+/// @code
+/// void my_func() {
+///   if (invalid_info) throw key_not_found_exception_(); // same as : throw key_not_found_exception(csf_);
+///   if (invalid_value) throw key_not_found_exception_("Bad value"); // same as : throw key_not_found_exception("Bad value", csf_);
+///   ...
+/// }
+/// @endcode
+#define key_not_found_exception_(...) key_not_found_exception(add_csf_(__VA_ARGS__))

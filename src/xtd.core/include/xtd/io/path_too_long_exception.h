@@ -90,3 +90,17 @@ namespace xtd {
     };
   }
 }
+
+/// @brief Helper on system_exception to call it with caller information
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core exceptions
+/// @remarks Is equivalent to path_too_long_exception({any argument}, csf_)
+/// @code
+/// void my_func() {
+///   if (invalid_info) throw path_too_long_exception_(); // same as : throw path_too_long_exception(csf_);
+///   if (invalid_value) throw path_too_long_exception_("Bad value"); // same as : throw path_too_long_exception("Bad value", csf_);
+///   ...
+/// }
+/// @endcode
+#define path_too_long_exception_(...) path_too_long_exception(add_csf_(__VA_ARGS__))

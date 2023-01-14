@@ -83,3 +83,17 @@ namespace xtd {
     const char* default_message() const noexcept {return "Specified argument is out of range of valid values."_t;}
   };
 }
+
+/// @brief Helper on system_exception to call it with caller information
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core exceptions
+/// @remarks Is equivalent to argument_out_of_range_exception({any argument}, csf_)
+/// @code
+/// void my_func() {
+///   if (invalid_info) throw argument_out_of_range_exception_(); // same as : throw argument_out_of_range_exception(csf_);
+///   if (invalid_value) throw argument_out_of_range_exception_("Bad value"); // same as : throw argument_out_of_range_exception("Bad value", csf_);
+///   ...
+/// }
+/// @endcode
+#define argument_out_of_range_exception_(...) argument_out_of_range_exception(add_csf_(__VA_ARGS__))

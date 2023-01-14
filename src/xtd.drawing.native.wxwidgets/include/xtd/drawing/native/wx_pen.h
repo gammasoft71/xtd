@@ -140,7 +140,7 @@ namespace xtd {
             wxpen.SetJoin(pen.line_join());
             return wxpen;
           }
-          throw xtd::argument_exception("brush not defined"_t, current_stack_frame_);
+          throw xtd::argument_exception("brush not defined"_t, csf_);
         }
         
         static wxGraphicsPen to_graphics_pen(wxGraphicsContext& graphics, const wx_pen& pen) {
@@ -203,7 +203,7 @@ namespace xtd {
             return graphics.CreatePen(pen_info);
           }
           
-          throw xtd::argument_exception("brush not defined"_t, current_stack_frame_);
+          throw xtd::argument_exception("brush not defined"_t, csf_);
         }
         
       private:

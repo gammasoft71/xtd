@@ -23,7 +23,7 @@ namespace xtd {
         friend xtd::forms::native::scroll_bar;
       private:
         explicit wx_scroll_bar(const xtd::forms::native::create_params& create_params) {
-          if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
+          if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, csf_);
           control_handler::create<wxScrollBar>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()), (create_params.style & SBS_VERT) == SBS_VERT ? wxSB_VERTICAL : wxSB_HORIZONTAL);
           #if defined(__WXMSW__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {

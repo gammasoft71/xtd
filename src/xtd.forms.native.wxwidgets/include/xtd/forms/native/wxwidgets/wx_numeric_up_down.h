@@ -24,7 +24,7 @@ namespace xtd {
         friend xtd::forms::native::numeric_up_down;
       private:
         explicit wx_numeric_up_down(const xtd::forms::native::create_params& create_params) {
-          if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
+          if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, csf_);
           int32 height = create_params.size.height();
           #if defined(__WXGTK__)
           if (height < 32) height = 32;

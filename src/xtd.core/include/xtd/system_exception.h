@@ -168,13 +168,13 @@ namespace xtd {
 /// @brief Helper on system_exception to call it with caller information
 /// @par Library
 /// xtd.core
-/// @ingroup xtd_core keywords
-/// @remarks Is equivalent to system_exception({any argument}, current_stack_frame_)
+/// @ingroup xtd_core exceptions
+/// @remarks Is equivalent to system_exception({any argument}, csf_)
 /// @code
 /// void my_func() {
-///   if (invalid_info) throw system_exception_(); // same as : throw system_exception(current_stack_frame_)
-///   if (invalid_value) throw system_exception_("Bad value"); // same as : throw system_exception("Bad value", current_stack_frame_)
+///   if (invalid_info) throw system_exception_(); // same as : throw system_exception(csf_);
+///   if (invalid_value) throw system_exception_("Bad value"); // same as : throw system_exception("Bad value", csf_);
 ///   ...
 /// }
 /// @endcode
-#define system_exception_(...) system_exception(add_current_stack_frame_(__VA_ARGS__))
+#define system_exception_(...) system_exception(add_csf_(__VA_ARGS__))

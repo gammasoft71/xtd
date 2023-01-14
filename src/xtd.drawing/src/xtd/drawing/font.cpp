@@ -43,8 +43,8 @@ font::font(const font& prototype, font_style style) : data_(std::make_shared<dat
 }
 
 font::font(ustring family_name, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set, bool gdi_vertical_font) : data_(std::make_shared<data>()) {
-  if (em_size <= 0 || em_size == std::numeric_limits<float>::infinity() || std::isnan(em_size)) throw xtd::argument_exception("em_size is less than or equal to 0, evaluates to infinity, or is not a valid number."_t, current_stack_frame_);
-  if (unit == graphics_unit::display) throw xtd::argument_exception("unit can't be equal to graphics_unit::display."_t, current_stack_frame_);
+  if (em_size <= 0 || em_size == std::numeric_limits<float>::infinity() || std::isnan(em_size)) throw xtd::argument_exception("em_size is less than or equal to 0, evaluates to infinity, or is not a valid number."_t, csf_);
+  if (unit == graphics_unit::display) throw xtd::argument_exception("unit can't be equal to graphics_unit::display."_t, csf_);
   try {
     data_->font_family_ = drawing::font_family(family_name);
   } catch (...) {

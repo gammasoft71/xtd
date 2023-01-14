@@ -84,3 +84,17 @@ namespace xtd {
     const char* default_message() const noexcept {return "Value does not fall within the expected range."_t;}
   };
 }
+
+/// @brief Helper on system_exception to call it with caller information
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core exceptions
+/// @remarks Is equivalent to argument_exception({any argument}, csf_)
+/// @code
+/// void my_func() {
+///   if (invalid_info) throw argument_exception_(); // same as : throw argument_exception(csf_);
+///   if (invalid_value) throw argument_exception_("Bad value"); // same as : throw argument_exception("Bad value", csf_);
+///   ...
+/// }
+/// @endcode
+#define argument_exception_(...) argument_exception(add_csf_(__VA_ARGS__))

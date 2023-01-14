@@ -80,3 +80,17 @@ namespace xtd {
     const char* default_message() const noexcept {return "System error."_t;}
   };
 }
+
+/// @brief Helper on system_exception to call it with caller information
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core exceptions
+/// @remarks Is equivalent to uri_template_match_exception({any argument}, csf_)
+/// @code
+/// void my_func() {
+///   if (invalid_info) throw uri_template_match_exception_(); // same as : throw uri_template_match_exception(csf_);
+///   if (invalid_value) throw uri_template_match_exception_("Bad value"); // same as : throw uri_template_match_exception("Bad value", csf_);
+///   ...
+/// }
+/// @endcode
+#define uri_template_match_exception_(...) uri_template_match_exception(add_csf_(__VA_ARGS__))

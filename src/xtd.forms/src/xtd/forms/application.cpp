@@ -231,7 +231,7 @@ void application::add_message_filter(const imessage_filter& value) {
 }
 
 void application::disable_font_size_correction() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::disable_font_size_correction() before application::run()"_t, current_stack_frame_);
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::disable_font_size_correction() before application::run()"_t, csf_);
   native::application::disable_font_size_correction();
 }
 
@@ -240,37 +240,37 @@ void application::do_events() {
 }
 
 void application::enable_dark_mode() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_dark_mode() before application::run()"_t, current_stack_frame_);
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_dark_mode() before application::run()"_t, csf_);
   native::application::enable_dark_mode();
 }
 
 void application::enable_button_images() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_button_images() before application::run()"_t, current_stack_frame_);
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_button_images() before application::run()"_t, csf_);
   native::application::enable_button_images();
 }
 
 void application::enable_light_mode() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_light_mode() before application::run()"_t, current_stack_frame_);
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_light_mode() before application::run()"_t, csf_);
   native::application::enable_light_mode();
 }
 
 void application::enable_menu_images() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_menu_images() before application::run()"_t, current_stack_frame_);
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_menu_images() before application::run()"_t, csf_);
   native::application::enable_menu_images();
 }
 
 void application::enable_system_controls() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_system_controls() before application::run()"_t, current_stack_frame_);
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_system_controls() before application::run()"_t, csf_);
   application::use_system_controls_ = true;
 }
 
 void application::enable_system_font_size() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_system_font_size() before application::run()"_t, current_stack_frame_);
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_system_font_size() before application::run()"_t, csf_);
   native::application::enable_system_font_size();
 }
 
 void application::enable_visual_styles() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_visual_styles() before application::run()"_t, current_stack_frame_);
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_visual_styles() before application::run()"_t, csf_);
   application::use_visual_styles_ = true;
   native::application::enable_visual_style();
 }
@@ -322,7 +322,7 @@ void application::run() {
 }
 
 void application::run(application_context& context) {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Application already running"_t, current_stack_frame_);
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Application already running"_t, csf_);
   
   context.thread_exit += application::on_app_thread_exit;
   native::application::register_message_filter(delegate<bool(intptr, int32, intptr, intptr, intptr)>(message_filter_proc));

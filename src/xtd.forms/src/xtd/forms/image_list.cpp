@@ -62,7 +62,7 @@ const drawing::size image_list::image_size() const noexcept {
 }
 
 const image_list& image_list::image_size(const drawing::size& value) {
-  if (value.width() < 16 || value.width() > 256 || value.height() < 16 || value.height() > 256) throw argument_out_of_range_exception("The values for width and height must be between 16 and 256."_t, current_stack_frame_);
+  if (value.width() < 16 || value.width() > 256 || value.height() < 16 || value.height() > 256) throw argument_out_of_range_exception("The values for width and height must be between 16 and 256."_t, csf_);
   if (data_->image_size_ != value) {
     data_->image_size_ = value;
     images().clear();

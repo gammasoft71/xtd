@@ -91,3 +91,17 @@ namespace xtd {
     };
   }
 }
+
+/// @brief Helper on system_exception to call it with caller information
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core exceptions
+/// @remarks Is equivalent to end_of_stream_exception({any argument}, csf_)
+/// @code
+/// void my_func() {
+///   if (invalid_info) throw end_of_stream_exception_(); // same as : throw end_of_stream_exception(csf_);
+///   if (invalid_value) throw end_of_stream_exception_("Bad value"); // same as : throw end_of_stream_exception("Bad value", csf_);
+///   ...
+/// }
+/// @endcode
+#define end_of_stream_exception_(...) end_of_stream_exception(add_csf_(__VA_ARGS__))

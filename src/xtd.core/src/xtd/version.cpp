@@ -100,7 +100,7 @@ xtd::ustring version::to_string() const noexcept {
 
 xtd::ustring version::to_string(size_t field_count) const {
   if (field_count > 4 || (field_count >= 3 && build_ == -1) || (field_count == 4 && revision_ == -1))
-    throw xtd::argument_exception("Field count invalid"_t, current_stack_frame_);
+    throw xtd::argument_exception("Field count invalid"_t, csf_);
   std::stringstream result;
   if (field_count >= 1)
     result << std::to_string(major_);

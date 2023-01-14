@@ -248,7 +248,7 @@ void lcd_label::dot_matrix_display_digit::set_character(char32 value) {
   };
   if (character_ != value) {
     auto it = characters.find(value);
-    if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
+    if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), csf_);
     character_ = value;
     set_dots(it->second);
   }
@@ -375,7 +375,7 @@ void lcd_label::fourteen_segment_display_digit::set_character(char32 value) {
   };
   if (character_ != value) {
     auto it = characters.find(value);
-    if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
+    if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), csf_);
     character_ = value;
     fourteen_segment_display_digit::value(it->second);
   }
@@ -482,7 +482,7 @@ void lcd_label::nine_segment_display_digit::set_character(char32 value) {
   };
   if (character_ != value) {
     auto it = characters.find(value);
-    if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
+    if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), csf_);
     character_ = value;
     nine_segment_display_digit::value(it->second);
   }
@@ -589,7 +589,7 @@ void lcd_label::seven_segment_display_digit::set_character(char32 value) {
     {U':', forms::segments::pc}};
   if (character_ != value) {
     auto it = characters.find(value);
-    if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
+    if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), csf_);
     character_ = value;
     seven_segment_display::value(it->second);
   }
@@ -710,7 +710,7 @@ void lcd_label::sixteen_segment_display_digit::set_character(char32 value) {
   };
   if (character_ != value) {
     auto it = characters.find(value);
-    if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), current_stack_frame_);
+    if (it == characters.end()) throw argument_exception(ustring::format("Only characters : \"{}\" are valid"_t, get_valid_characters()), csf_);
     character_ = value;
     sixteen_segment_display::value(it->second);
   }
@@ -756,7 +756,7 @@ double lcd_label::back_digit_opacity() const noexcept {
 }
 
 lcd_label& lcd_label::back_digit_opacity(double value) {
-  if (value < 0.0 || value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t, current_stack_frame_);
+  if (value < 0.0 || value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t, csf_);
   if (data_->back_digit_opacity != value) {
     data_->back_digit_opacity = value;
     set_digits_params();
@@ -781,7 +781,7 @@ int32 lcd_label::digit_spacing() const noexcept {
 }
 
 lcd_label& lcd_label::digit_spacing(int32 value) {
-  if (value < 0) throw argument_out_of_range_exception("value must be positive"_t, current_stack_frame_);
+  if (value < 0) throw argument_out_of_range_exception("value must be positive"_t, csf_);
   if (data_->digit_spacing != value) {
     data_->digit_spacing = value;
     set_digits_params();
@@ -861,7 +861,7 @@ control& lcd_label::text(const xtd::ustring& value) {
           case lcd_style::fourteen_segment_display: data_->digits.push_back(std::make_shared<fourteen_segment_display_digit>()); break;
           case lcd_style::sixteen_segment_display: data_->digits.push_back(std::make_shared<sixteen_segment_display_digit>()); break;
           case lcd_style::dot_matrix_display: data_->digits.push_back(std::make_shared<dot_matrix_display_digit>()); break;
-          default: throw argument_exception("lcd_style invalid", current_stack_frame_);
+          default: throw argument_exception("lcd_style invalid", csf_);
         }
         dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->parent(*this);
         dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->double_buffered(double_buffered());
@@ -887,7 +887,7 @@ std::vector<char32> lcd_label::valid_characters() {
     case lcd_style::fourteen_segment_display: digit = std::make_shared<fourteen_segment_display_digit>(); break;
     case lcd_style::sixteen_segment_display: digit = std::make_shared<sixteen_segment_display_digit>(); break;
     case lcd_style::dot_matrix_display: digit = std::make_shared<dot_matrix_display_digit>(); break;
-    default: throw argument_exception("lcd_style invalid", current_stack_frame_);
+    default: throw argument_exception("lcd_style invalid", csf_);
   }
   auto vc = digit->get_valid_characters();
   return {vc.begin(), vc.end()};

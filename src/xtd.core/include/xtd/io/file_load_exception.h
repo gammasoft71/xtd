@@ -91,3 +91,17 @@ namespace xtd {
     };
   }
 }
+
+/// @brief Helper on system_exception to call it with caller information
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core exceptions
+/// @remarks Is equivalent to file_load_exception({any argument}, csf_)
+/// @code
+/// void my_func() {
+///   if (invalid_info) throw file_load_exception_(); // same as : throw file_load_exception(csf_);
+///   if (invalid_value) throw file_load_exception_("Bad value"); // same as : throw file_load_exception("Bad value", csf_);
+///   ...
+/// }
+/// @endcode
+#define file_load_exception_(...) file_load_exception(add_csf_(__VA_ARGS__))

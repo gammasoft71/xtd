@@ -182,10 +182,10 @@ namespace xtd {
       if (data_->functions.size() == 0) return result_t();
       
       for (size_t i = 0; i < data_->functions.size() - 1; i++) {
-        if (data_->functions[i] == nullptr) throw xtd::argument_null_exception(current_stack_frame_);
+        if (data_->functions[i] == nullptr) throw xtd::argument_null_exception(csf_);
         data_->functions[i]();
       }
-      if (data_->functions.back() == nullptr) throw xtd::argument_null_exception(current_stack_frame_);
+      if (data_->functions.back() == nullptr) throw xtd::argument_null_exception(csf_);
       return data_->functions.back()();
     }
     
@@ -567,21 +567,21 @@ namespace xtd {
       
       if (data_->no_arguments_functions.size()) {
         for (size_t i = 0; i < data_->no_arguments_functions.size() - (data_->functions.size() == 0 ? 1 : 0); i++) {
-          if (data_->no_arguments_functions[i] == nullptr) throw xtd::argument_null_exception(current_stack_frame_);
+          if (data_->no_arguments_functions[i] == nullptr) throw xtd::argument_null_exception(csf_);
           data_->no_arguments_functions[i]();
         }
         
         if (data_->functions.size() == 0) {
-          if (data_->no_arguments_functions.back() == nullptr) throw xtd::argument_null_exception(current_stack_frame_);
+          if (data_->no_arguments_functions.back() == nullptr) throw xtd::argument_null_exception(csf_);
           return data_->no_arguments_functions.back()();
         }
       }
       
       for (size_t i = 0; i < data_->functions.size() - 1; i++) {
-        if (data_->functions[i] == nullptr) throw xtd::argument_null_exception(current_stack_frame_);
+        if (data_->functions[i] == nullptr) throw xtd::argument_null_exception(csf_);
         data_->functions[i](arguments...);
       }
-      if (data_->functions.back() == nullptr) throw xtd::argument_null_exception(current_stack_frame_);
+      if (data_->functions.back() == nullptr) throw xtd::argument_null_exception(csf_);
       return data_->functions.back()(arguments...);
     }
     /// @}

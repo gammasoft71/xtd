@@ -92,7 +92,7 @@ intptr tool_bar::add_tool_bar_control(intptr tool_bar, intptr control, const xtd
 
 bool tool_bar::set_system_tool_bar(intptr control, intptr tool_bar) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (tool_bar != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("dialog can't have tool bar"_t, current_stack_frame_);
+  if (tool_bar != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("dialog can't have tool bar"_t, csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return false;
