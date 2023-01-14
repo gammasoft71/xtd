@@ -54,8 +54,7 @@ namespace {
       label_exception_.location({85, 10});
       label_exception_.size({385, 95});
       label_exception_.text_align(content_alignment::top_left);
-      auto text_m = ustring::format("Unhandled exception occurred in your application. If you click\nContinue, the application will ignore this error and attempt to\ncontinue. If you click Quit, the application will close immediately.\n\n{}"_t, exception_ ? exception_->what() : "(Unknown exception)"_t);
-      label_exception_.text(text_m);
+      label_exception_.text(ustring::format("Unhandled exception occurred in your application. If you click Continue, the application will ignore this error and attempt to continue. If you click Quit, the application will close immediately.{0}{0}{1}"_t, environment::new_line(), exception_ ? exception_->what() : "(Unknown exception)"_t));
       
       button_details_.location({10, 115});
       button_details_.width(100);
