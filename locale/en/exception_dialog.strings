@@ -4,11 +4,11 @@ value "Exception {} occurred"
 key "Unknown exception occurred"
 value "Unknown exception occurred"
 
-key "Unhandled exception occurred in your application. If you click\nContinue, the application will ignore this error and attempt to continue.\nIf you click Quit, the application will close immediately.\n\n{}"
-value "Unhandled exception occurred in your application. If you click\nContinue, the application will ignore this error and attempt to continue.\nIf you click Quit, the application will close immediately.\n\n{}"
+key "Unhandled exception occurred in your application. If you click Continue, the application will ignore this error and attempt to continue. If you click Quit, the application will close immediately.{0}{0}{1}"
+value "Unhandled exception occurred in your application. If you click Continue, the application will ignore this error and attempt to continue. If you click Quit, the application will close immediately.{0}{0}{1}"
 
-key  "(Unknown exception)"
-value  "(Unknown exception)"
+key "(Unknown exception)"
+value "(Unknown exception)"
 
 key "Details"
 value "Details"
