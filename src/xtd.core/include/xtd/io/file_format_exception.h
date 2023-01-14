@@ -91,3 +91,17 @@ namespace xtd {
     };
   }
 }
+
+/// @brief Helper on system_exception to call it with caller information
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core exceptions
+/// @remarks Is equivalent to file_format_exception({any argument}, csf_)
+/// @code
+/// void my_func() {
+///   if (invalid_info) throw file_format_exception_(); // same as : throw file_format_exception(csf_);
+///   if (invalid_value) throw file_format_exception_("Bad value"); // same as : throw file_format_exception("Bad value", csf_);
+///   ...
+/// }
+/// @endcode
+#define file_format_exception_(...) file_format_exception(add_csf_(__VA_ARGS__))

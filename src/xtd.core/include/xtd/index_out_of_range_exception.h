@@ -83,3 +83,17 @@ namespace xtd {
     const char* default_message() const noexcept {return "Index was outside the bounds of the array."_t;}
   };
 }
+
+/// @brief Helper on system_exception to call it with caller information
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core exceptions
+/// @remarks Is equivalent to index_out_of_range_exception({any argument}, csf_)
+/// @code
+/// void my_func() {
+///   if (invalid_info) throw index_out_of_range_exception_(); // same as : throw index_out_of_range_exception(csf_);
+///   if (invalid_value) throw index_out_of_range_exception_("Bad value"); // same as : throw index_out_of_range_exception("Bad value", csf_);
+///   ...
+/// }
+/// @endcode
+#define index_out_of_range_exception_(...) index_out_of_range_exception(add_csf_(__VA_ARGS__))

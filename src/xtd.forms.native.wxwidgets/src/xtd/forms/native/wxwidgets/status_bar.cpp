@@ -66,7 +66,7 @@ intptr status_bar::add_status_bar_control(intptr status_bar, intptr control, con
 
 bool status_bar::set_system_status_bar(intptr control, intptr status_bar) {
   if (!control || !wxTheApp) throw argument_exception(csf_);
-  if (status_bar != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("dialog can't have tool bar"_t, current_stack_frame_);
+  if (status_bar != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) throw argument_exception("dialog can't have tool bar"_t, csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return false;

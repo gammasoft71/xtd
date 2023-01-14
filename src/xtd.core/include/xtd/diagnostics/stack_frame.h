@@ -228,3 +228,5 @@ namespace xtd {
 
 #define add_current_stack_frame_(...) \
   __VA_ARGS__ __VA_ARGS_COMMA__(__VA_ARGS__) current_stack_frame_
+
+#define add_csf_ add_current_stack_frame_

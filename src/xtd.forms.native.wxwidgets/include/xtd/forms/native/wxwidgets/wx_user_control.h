@@ -23,7 +23,7 @@ namespace xtd {
         friend xtd::forms::native::user_control;
       private:
         explicit wx_user_control(const xtd::forms::native::create_params& create_params) {
-          if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, current_stack_frame_);
+          if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, csf_);
           if ((create_params.ex_style & WS_EX_AUTOSCROLL) == WS_EX_AUTOSCROLL)
             control_handler::create<wxScrolled<wx_user_panel>>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()), style_to_wx_style(create_params.style, create_params.ex_style));
           else

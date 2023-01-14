@@ -83,3 +83,17 @@ namespace xtd {
     const char* default_message() const noexcept {return "The method or operation is not implemented."_t;}
   };
 }
+
+/// @brief Helper on system_exception to call it with caller information
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core exceptions
+/// @remarks Is equivalent to not_implemented_exception({any argument}, csf_)
+/// @code
+/// void my_func() {
+///   if (invalid_info) throw not_implemented_exception_(); // same as : throw not_implemented_exception(csf_);
+///   if (invalid_value) throw not_implemented_exception_("Bad value"); // same as : throw not_implemented_exception("Bad value", csf_);
+///   ...
+/// }
+/// @endcode
+#define not_implemented_exception_(...) not_implemented_exception(add_csf_(__VA_ARGS__))

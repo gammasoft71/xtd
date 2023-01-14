@@ -146,7 +146,7 @@ void menu::clone_menu(const menu& menu_src) {
 }
 
 void menu::merge_menu(const menu& menu_src) {
-  if (data_.get() == menu_src.data_.get()) throw argument_exception("It was attempted to merge the menu with itself"_t, current_stack_frame_);
+  if (data_.get() == menu_src.data_.get()) throw argument_exception("It was attempted to merge the menu with itself"_t, csf_);
   data_->menu_items.push_back_range(menu_src.data_->menu_items);
 }
 

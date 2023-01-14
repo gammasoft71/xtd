@@ -83,3 +83,17 @@ namespace xtd {
     const char* default_message() const noexcept {return "Specified cast is not valid."_t;}
   };
 }
+
+/// @brief Helper on system_exception to call it with caller information
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core exceptions
+/// @remarks Is equivalent to invalid_cast_exception({any argument}, csf_)
+/// @code
+/// void my_func() {
+///   if (invalid_info) throw invalid_cast_exception_(); // same as : throw invalid_cast_exception(csf_);
+///   if (invalid_value) throw invalid_cast_exception_("Bad value"); // same as : throw invalid_cast_exception("Bad value", csf_);
+///   ...
+/// }
+/// @endcode
+#define invalid_cast_exception_(...) invalid_cast_exception(add_csf_(__VA_ARGS__))

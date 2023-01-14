@@ -10,18 +10,18 @@ using namespace xtd;
 const guid guid::empty;
 
 guid::guid(const std::vector<xtd::byte>& data) : data_(data) {
-  if (data.size() != data_.size()) throw xtd::argument_exception(ustring::format("Vector size must be {}", data_.size()), current_stack_frame_);
+  if (data.size() != data_.size()) throw xtd::argument_exception(ustring::format("Vector size must be {}", data_.size()), csf_);
 }
 
 guid::guid(const std::initializer_list<xtd::byte>& data) : data_(data) {
-  if (data.size() != data_.size()) throw xtd::argument_exception(ustring::format("Vector size must be {}", data_.size()), current_stack_frame_);
+  if (data.size() != data_.size()) throw xtd::argument_exception(ustring::format("Vector size must be {}", data_.size()), csf_);
 }
 
 guid::guid(int32 a, int16 b, int16 c, const std::vector<xtd::byte>& d) : guid(static_cast<uint32>(a), static_cast<uint16>(b), static_cast<uint16>(c), d) {
 }
 
 guid::guid(uint32 a, uint16 b, uint16 c, const std::vector<xtd::byte>& d) {
-  if (d.size() != data_.size() - 8) throw xtd::argument_exception(ustring::format("Vector size must be {}", data_.size() - 8), current_stack_frame_);
+  if (d.size() != data_.size() - 8) throw xtd::argument_exception(ustring::format("Vector size must be {}", data_.size() - 8), csf_);
   
   auto index = 0U;
   data_[index++] = static_cast<xtd::byte>((a & 0xFF000000) >> 24);
@@ -97,7 +97,7 @@ ustring guid::to_string(ustring format) const {
   format = format.empty() ? "d" : format.to_lower();
   
   if (format.size() != 1 || ustring("ndbpx").index_of(format) == ustring::npos)
-    throw xtd::format_exception(current_stack_frame_);
+    throw xtd::format_exception(csf_);
     
   bool hyphens = format != "n" && format != "x";
   bool braces = format == "b";

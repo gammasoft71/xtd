@@ -34,7 +34,7 @@ double seven_segment_display::back_segment_opacity() const noexcept {
 }
 
 seven_segment_display& seven_segment_display::back_segment_opacity(double value) {
-  if (value < 0.0 || value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t, current_stack_frame_);
+  if (value < 0.0 || value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t, csf_);
   if (data_->back_segment_opacity != value) {
     data_->back_segment_opacity = value;
     invalidate();

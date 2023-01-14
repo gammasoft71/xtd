@@ -86,3 +86,17 @@ namespace xtd {
     };
   }
 }
+
+/// @brief Helper on system_exception to call it with caller information
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core exceptions
+/// @remarks Is equivalent to cookie_exception({any argument}, csf_)
+/// @code
+/// void my_func() {
+///   if (invalid_info) throw cookie_exception_(); // same as : throw cookie_exception(csf_);
+///   if (invalid_value) throw cookie_exception_("Bad value"); // same as : throw cookie_exception("Bad value", csf_);
+///   ...
+/// }
+/// @endcode
+#define cookie_exception_(...) cookie_exception(add_csf_(__VA_ARGS__))
