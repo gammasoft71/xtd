@@ -88,7 +88,7 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to index_out_of_range_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::index_out_of_range_exception({any argument}, csf_)
 /// @code
 /// void my_func() {
 ///   if (invalid_info) throw index_out_of_range_exception_(); // same as : throw index_out_of_range_exception(csf_);

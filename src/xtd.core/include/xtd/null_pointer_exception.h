@@ -88,7 +88,7 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to null_pointer_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::null_pointer_exception({any argument}, csf_)
 /// @code
 /// void my_func() {
 ///   if (invalid_info) throw null_pointer_exception_(); // same as : throw null_pointer_exception(csf_);

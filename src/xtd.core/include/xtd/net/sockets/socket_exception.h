@@ -104,7 +104,7 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to socket_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::net::sockets::socket_exception({any argument}, csf_)
 /// @code
 /// void my_func() {
 ///   if (invalid_info) throw socket_exception_(); // same as : throw socket_exception(csf_);

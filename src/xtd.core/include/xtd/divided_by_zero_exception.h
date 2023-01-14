@@ -88,7 +88,7 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to divided_by_zero_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::divided_by_zero_exception({any argument}, csf_)
 /// @code
 /// void my_func() {
 ///   if (invalid_info) throw divided_by_zero_exception_(); // same as : throw divided_by_zero_exception(csf_);

@@ -95,7 +95,7 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to path_too_long_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::io::path_too_long_exception({any argument}, csf_)
 /// @code
 /// void my_func() {
 ///   if (invalid_info) throw path_too_long_exception_(); // same as : throw path_too_long_exception(csf_);

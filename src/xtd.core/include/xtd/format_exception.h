@@ -88,7 +88,7 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to format_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::format_exception({any argument}, csf_)
 /// @code
 /// void my_func() {
 ///   if (invalid_info) throw format_exception_(); // same as : throw format_exception(csf_);

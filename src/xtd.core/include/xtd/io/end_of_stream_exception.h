@@ -96,7 +96,7 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to end_of_stream_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::io::end_of_stream_exception({any argument}, csf_)
 /// @code
 /// void my_func() {
 ///   if (invalid_info) throw end_of_stream_exception_(); // same as : throw end_of_stream_exception(csf_);
