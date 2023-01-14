@@ -1,0 +1,8 @@
+key "expected end comment"
+value "commentaire final attendu"
+
+key "key cannot be empty"
+value "la clé ne peut pas être vide"
+
+key "value cannot be empty"
+value "la valeur ne peut pas être vide"

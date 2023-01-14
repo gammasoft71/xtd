@@ -285,7 +285,7 @@ bool process::start() {
         process.data_->standard_output_ = move(standard_output);
         process.data_->standard_error_ = move(standard_error);
       }
-      if (process.data_->handle_ == 0) throw invalid_operation_exception("The system cannot find the file specified", csf_);
+      if (process.data_->handle_ == 0) throw invalid_operation_exception("The system cannot find the file specified"_t, csf_);
       allow_to_continue = true;
       debug::write_line_if(show_debug_process.enabled(), ustring::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle_, ustring::format("{}{}", process.start_info().file_name(), process.start_info().arguments() == "" ? "" : ustring::format(" {}", process.start_info().arguments())), process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.ticks())).count() % 1000000));
       int32 exit_code = 0;

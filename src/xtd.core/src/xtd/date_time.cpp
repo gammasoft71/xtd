@@ -416,7 +416,7 @@ xtd::ustring date_time::to_string() const noexcept {
 ustring date_time::to_string(const ustring& format) const {
   auto fmt = format;
   if (fmt.empty()) fmt =  "G";
-  if (fmt.size() > 1) throw format_exception("Invalid format", csf_);
+  if (fmt.size() > 1) throw format_exception("Invalid format"_t, csf_);
   
   uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
   int32 day_of_week = 0;
@@ -471,7 +471,7 @@ ustring date_time::to_string(const ustring& format) const {
     case 'z':
     case 'Z': return kind_ == date_time_kind::local ? time_zone_info::local().id().c_str() : time_zone_info::utc().id().c_str();
   }
-  throw format_exception("Invalid format");
+  throw format_exception("Invalid format"_t);
 }
 
 std::time_t date_time::to_time_t() const {

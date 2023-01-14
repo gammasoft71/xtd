@@ -9,6 +9,7 @@ include(../scripts/cmake/xtd_version.cmake)
 add_sources(
   en/about_dialog.strings
   en/application.strings
+  en/boolean_switch.strings
   en/busy_box.strings
   en/checked_list_box.strings
   en/choice.strings
@@ -16,12 +17,17 @@ add_sources(
   en/combo_box.strings
   en/control.strings
   en/countries.strings
+  en/css_reader.strings
+  en/date_time.strings
   en/domain_up_down.strings
+  en/enumeration.strings
   en/environment.strings
   en/exception_dialog.strings
+  en/paint_event_args.strings
+  en/process.strings
   en/exceptions.strings
-  en/font.strings
   en/font_family.strings
+  en/font.strings
   en/form.strings
   en/graphics.strings
   en/guid.strings
@@ -29,6 +35,7 @@ add_sources(
   en/lcd_label.strings
   en/list_box.strings
   en/menu.strings
+  en/message_box.strings
   en/pen.strings
   en/splitter.strings
   en/strings.strings
@@ -52,9 +59,15 @@ add_sources(
   fr/domain_up_down.strings
   fr/environment.strings
   fr/exception_dialog.strings
+  fr/enumeration.strings
+  fr/css_reader.strings
+  fr/date_time.strings
+  fr/boolean_switch.strings
+  fr/paint_evant_args.strings
+  fr/process.strings
   fr/exceptions.strings
-  fr/font.strings
   fr/font_family.strings
+  fr/font.strings
   fr/form.strings
   fr/graphics.strings
   fr/guid.strings
@@ -62,6 +75,7 @@ add_sources(
   fr/lcd_label.strings
   fr/list_box.strings
   fr/menu.strings
+  fr/message_box.strings
   fr/pen.strings
   fr/splitter.strings
   fr/strings.strings
