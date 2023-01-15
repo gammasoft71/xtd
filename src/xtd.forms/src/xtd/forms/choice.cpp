@@ -96,6 +96,27 @@ void choice::begin_update() {
   if (is_handle_created()) native::choice::begin_update(handle());
 }
 
+choice choice::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  choice item;
+  item.items(items);
+  item.selected_index(selected_index);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+choice choice::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  choice item;
+  item.parent(parent);
+  item.items(items);
+  item.selected_index(selected_index);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 void choice::end_update() {
   if (is_handle_created()) native::choice::end_update(handle());
 }
