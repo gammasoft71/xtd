@@ -118,7 +118,7 @@ const checked_list_box::item& checked_list_box::selected_item() const noexcept {
   return data_->selected_item;
 }
 
-list_box& checked_list_box::selected_item(const item& selected_item) {
+checked_list_box& checked_list_box::selected_item(const item& selected_item) {
   if (data_->selected_item != selected_item) {
     auto it = std::find(data_->items.begin(), data_->items.end(), selected_item);
     if (it == data_->items.end())
@@ -147,6 +147,27 @@ control& checked_list_box::text(const xtd::ustring& text) {
 
 void checked_list_box::begin_update() {
   if (is_handle_created()) native::checked_list_box::begin_update(handle());
+}
+
+checked_list_box checked_list_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  checked_list_box item;
+  item.items(items);
+  item.selected_index(selected_index);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+checked_list_box checked_list_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  checked_list_box item;
+  item.parent(parent);
+  item.items(items);
+  item.selected_index(selected_index);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
 }
 
 void checked_list_box::end_update() {

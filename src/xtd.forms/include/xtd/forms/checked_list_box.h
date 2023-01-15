@@ -167,7 +167,7 @@ namespace xtd {
       
       using list_box::selected_index;
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
-      /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
+      /// @param selected_index A zero-based index of the currently selected item. The xtd::checked_list_box::object_collection::npos is returned if no item is selected.
       /// @return Current list_control.
       list_control& selected_index(size_t selected_index) override;
       
@@ -182,7 +182,7 @@ namespace xtd {
       /// @param selected_item An object that represents the current selection in the control.
       /// @remarks For a standard list_box, you can use this property to determine which item is selected in the list_box. If the selection_mode property of the list_box is set to either selection_mode::multi_simple or selection_mode::multi_extended (which indicates a multiple-selection list_box) and multiple items are selected in the list, this property can return any selected item.
       /// @remarks To retrieve a collection containing all selected items in a multiple-selection list_box, use the selected_items property. If you want to obtain the index position of the currently selected item in the list_box, use the selected_index property. In addition, you can use the selected_indices property to obtain all the selected indexes in a multiple-selection list_box.
-      list_box& selected_item(const item& selected_item);
+      checked_list_box& selected_item(const item& selected_item);
       
       /// @brief Gets a collection containing the currently selected items in the list_box.
       /// @return A list_box::selected_object_collection containing the currently selected items in the control.
@@ -202,6 +202,24 @@ namespace xtd {
       /// @brief Maintains performance while items are added to the checked_list_box one at a time by preventing the control from drawing until the end_update() method is called.
       /// @remarks The preferred way to add multiple items to the list_box is to use the push_back_range method of the list_box::object_collection class (through the items property of the list_box). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the list_box::object_collection class, you can use the begin_update method to prevent the control from repainting the list_box each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the list_box to repaint. This way of adding items can prevent flickered drawing of the list_box when a large number of items are being added to the list.
       void begin_update();
+
+      using list_box::create;
+      /// @brief A factory to create an xtd::forms::checked_list_box with specified items, selected_index, location ,size, and name.
+      /// @param items A string that represent text of the control.
+      /// @param selected_index A zero-based index of the currently selected item. The xtd::checked_list_box::object_collection::npos is returned if no item is selected.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::checked_list_box.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::checked_list_box.
+      /// @return New xtd::forms::checked_list_box created.
+      static checked_list_box create(const object_collection& items, size_t selected_index, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @brief A factory to create a specified control with specified parent, items, selected_index, location ,size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::checked_list_box.
+      /// @param items A string that represent text of the control.
+      /// @param selected_index A zero-based index of the currently selected item. The xtd::checked_list_box::object_collection::npos is returned if no item is selected.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::checked_list_box.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::checked_list_box.
+      /// @return New xtd::forms::checked_list_box created.
+      static checked_list_box create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+
       /// @brief Resumes painting the checked_list_box control after painting is suspended by the begin_update method.
       /// @remarks The preferred way to add multiple items to the list_box is to use the push_back_range method of the list_box::object_collection class (through the items property of the list_box). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the list_box::object_collection class, you can use the begin_update method to prevent the control from repainting the list_box each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the list_box to repaint. This way of adding items can prevent flickered drawing of the list_box when a large number of items are being added to the list.
       void end_update();
