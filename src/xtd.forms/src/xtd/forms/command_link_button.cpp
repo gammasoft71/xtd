@@ -29,6 +29,44 @@ control& command_link_button::texts(const xtd::ustring& text, const xtd::ustring
   return this->text(ustring::format("{}{}{}", text, environment::new_line(), supplementary_text));
 }
 
+command_link_button command_link_button::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  command_link_button item;
+  item.text(text);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+command_link_button command_link_button::create(const xtd::ustring& text, const xtd::ustring& supplementary_text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  command_link_button item;
+  item.texts(text, supplementary_text);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+command_link_button command_link_button::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  command_link_button item;
+  item.parent(parent);
+  item.text(text);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+command_link_button command_link_button::create(const control& parent, const xtd::ustring& text, const xtd::ustring& supplementary_text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  command_link_button item;
+  item.parent(parent);
+  item.texts(text, supplementary_text);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 forms::create_params command_link_button::create_params() const noexcept {
   forms::create_params create_params = button_base::create_params();
   
