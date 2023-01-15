@@ -28,7 +28,7 @@ date_time_picker_format date_time_picker::format() const noexcept {
   return data_->format;
 }
 
-control& date_time_picker::format(date_time_picker_format format) {
+date_time_picker& date_time_picker::format(date_time_picker_format format) {
   if (data_->format != format) {
     data_->format = format;
     post_recreate_handle();
@@ -40,7 +40,7 @@ date_time date_time_picker::max_date() const noexcept {
   return data_->max_date;
 }
 
-control& date_time_picker::max_date(date_time value) {
+date_time_picker& date_time_picker::max_date(date_time value) {
   if (data_->max_date != value) {
     data_->max_date = value;
     if (data_->max_date < data_->min_date) data_->min_date = data_->max_date;
@@ -54,7 +54,7 @@ date_time date_time_picker::min_date() const noexcept {
   return data_->min_date;
 }
 
-control& date_time_picker::min_date(date_time value) {
+date_time_picker& date_time_picker::min_date(date_time value) {
   if (data_->min_date != value) {
     data_->min_date = value;
     if (data_->max_date < data_->min_date) data_->max_date = data_->min_date;
@@ -68,7 +68,7 @@ date_time date_time_picker::value() const noexcept {
   return data_->value;
 }
 
-control& date_time_picker::value(date_time value) {
+date_time_picker& date_time_picker::value(date_time value) {
   if (value < data_->min_date) value = data_->min_date;
   if (value > data_->max_date) value = data_->max_date;
   if (data_->value != value) {
@@ -77,6 +77,29 @@ control& date_time_picker::value(date_time value) {
     on_value_changed(event_args::empty);
   }
   return *this;
+}
+
+date_time_picker date_time_picker::create(const xtd::date_time& value, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  date_time_picker item;
+  item.min_date(min_date);
+  item.max_date(max_date);
+  item.value(value);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+date_time_picker date_time_picker::create(const control& parent, const xtd::date_time& value, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  date_time_picker item;
+  item.parent(parent);
+  item.min_date(min_date);
+  item.max_date(max_date);
+  item.value(value);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
 }
 
 drawing::color date_time_picker::default_back_color() const noexcept {

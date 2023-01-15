@@ -64,7 +64,7 @@ namespace xtd {
       /// @param format One of the date_time_picker_format values. The default is long_format.
       /// @return Current date_time_picker.
       /// @remarks This property determines the date/time format the date is displayed in. The date/time format is based on the user's regional settings in their operating system.
-      virtual control& format(date_time_picker_format format);
+      virtual date_time_picker& format(date_time_picker_format format);
       
       /// @brief Gets the maximum date and time that can be selected in the control.
       /// @return The maximum date and time that can be selected in the control.
@@ -72,7 +72,7 @@ namespace xtd {
       /// @brief Sets the maximum date and time that can be selected in the control.
       /// @param value The maximum date and time that can be selected in the control.
       /// @return Current date_time_picker.
-      virtual control& max_date(date_time value);
+      virtual date_time_picker& max_date(date_time value);
       
       /// @brief Gets the minimum date and time that can be selected in the control.
       /// @return The minimum date and time that can be selected in the control.
@@ -80,14 +80,35 @@ namespace xtd {
       /// @brief Sets the minimum date and time that can be selected in the control.
       /// @param value The minimum date and time that can be selected in the control.
       /// @return Current date_time_picker.
-      virtual control& min_date(date_time value);
+      virtual date_time_picker& min_date(date_time value);
       
       /// @brief Gets the date/time value assigned to the control.
       /// @return The date and time value assign to the control.
       virtual date_time value() const noexcept;
       /// @brief Sets the date/time value assigned to the control.
       /// @param value The date and time value assign to the control.
-      virtual control& value(date_time value);
+      virtual date_time_picker& value(date_time value);
+      /// @}
+      
+      /// @name Methods
+      
+      /// @{
+      using control::create;
+      /// @brief A factory to create an xtd::forms::color_picker with specified color, location, size, and name.
+      /// @param color The color selected by the user. If a color is not selected.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::color_picker.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::color_picker.
+      /// @param name The name of the xtd::forms::color_picker.
+      /// @return New xtd::forms::color_picker created.
+      static date_time_picker create(const xtd::date_time& value, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @brief A factory to create an xtd::forms::color_picker with specified parent, color, location ,size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::color_picker.
+      /// @param color The color selected by the user. If a color is not selected.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::color_picker.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::color_picker.
+      /// @param name The name of the xtd::forms::color_picker.
+      /// @return New xtd::forms::color_picker created.
+      static date_time_picker create(const control& parent, const xtd::date_time& value, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @}
       
       /// @name Events
