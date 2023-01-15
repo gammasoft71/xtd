@@ -3,7 +3,6 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-
 fixed_layout_panel fixed_layout_panel::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   fixed_layout_panel item;
   if (location != drawing::point {-1, -1}) item.location(location);
