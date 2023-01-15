@@ -835,6 +835,23 @@ int32 control::compare_to(const control& value) const noexcept {
   return this < &value ? -1 : (this > &value ? 1 : 0);
 }
 
+control control::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  control item;
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+control control::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  control item;
+  item.parent(parent);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 void control::create_control() {
   if (!get_state(state::destroying) && !get_state(state::creating) && !get_state(state::created)) {
     set_state(state::destroyed, false);
