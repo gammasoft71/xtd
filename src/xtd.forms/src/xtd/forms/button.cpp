@@ -78,6 +78,25 @@ control& button::dialog_result(forms::dialog_result dialog_result) {
   return *this;
 }
 
+button button::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  button item;
+  item.text(text);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+button button::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  button item;
+  item.parent(parent);
+  item.text(text);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 void button::notify_default(bool value) {
   is_default(value);
   if (enabled()) data_->state = is_default() ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal;
