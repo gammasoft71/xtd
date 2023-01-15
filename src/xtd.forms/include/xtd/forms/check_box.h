@@ -160,6 +160,7 @@ namespace xtd {
       using button_base::create;
       /// @brief A factory to create an xtd::forms::check_box with specified text, location ,size back_color and fore_color.
       /// @param text A string that represent text of the xtd::forms::check_box.
+      /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the check_state enumeration values.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::check_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::check_box.
@@ -169,6 +170,7 @@ namespace xtd {
       /// @brief A factory to create a xtd::forms::check_box with specified parent, text, location ,size back_color and fore_color.
       /// @param parent The parent that contains the new created xtd::forms::check_box.
       /// @param text A string that represent text of the xtd::forms::check_box.
+      /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the check_state enumeration values.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::check_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::check_box.
