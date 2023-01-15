@@ -45,6 +45,25 @@ void color_picker::color(const drawing::color& value) {
   }
 }
 
+color_picker color_picker::create(const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  color_picker item;
+  item.color(color);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+color_picker color_picker::create(const control& parent, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  color_picker item;
+  item.parent(parent);
+  item.color(color);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 forms::create_params color_picker::create_params() const noexcept {
   forms::create_params create_params = control::create_params();
   create_params.class_name("colorpicker");
