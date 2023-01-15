@@ -148,6 +148,27 @@ void combo_box::begin_update() {
   if (is_handle_created()) native::combo_box::begin_update(handle());
 }
 
+combo_box combo_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  combo_box item;
+  item.items(items);
+  item.selected_index(selected_index);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+combo_box combo_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  combo_box item;
+  item.parent(parent);
+  item.items(items);
+  item.selected_index(selected_index);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 void combo_box::end_update() {
   if (is_handle_created()) native::combo_box::end_update(handle());
 }
