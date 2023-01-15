@@ -136,7 +136,7 @@ namespace set_path {
       auto status = RegGetValue(system_path ? HKEY_LOCAL_MACHINE : HKEY_CURRENT_USER, system_path ? L"SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment" : L"Environment", L"Path", RRF_RT_REG_SZ, nullptr, reinterpret_cast<PVOID>(current_directory), &size);
       if (status != ERROR_SUCCESS) {
         console::write_line("An error 0x{:X8} occured when reading path in registry", status);
-        return ustring::empty_string();
+        return ustring::empty_string;
       }
       current_directory[size] = 0;
       #endif

@@ -18,7 +18,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 struct text_box::data {
-  xtd::ustring placeholder_text = xtd::ustring::empty_string();
+  xtd::ustring placeholder_text = xtd::ustring::empty_string;
   bool accepts_return = false;
   xtd::forms::character_casing character_casing = xtd::forms::character_casing::normal;
   char32 password_char = 0;

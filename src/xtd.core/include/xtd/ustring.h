@@ -52,7 +52,7 @@ namespace xtd {
     /// @{
     /// @brief Represents the empty string.
     /// @remarks The value of this method is the zero-length string, "".
-    static ustring empty_string() noexcept;
+    static const ustring empty_string;
     /// @}
     
     /// @name Constructors
