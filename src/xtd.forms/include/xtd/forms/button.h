@@ -111,6 +111,25 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      using button_base::create;
+      /// @brief A factory to create a specified control with specified text, location ,size back_color and fore_color.
+      /// @param text A string that represent text of the control.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @param size A xtd::drawing::size that represent size of the control.
+      /// @param back_color A xtd::drawing::color that represent background color of the control.
+      /// @param fore_color A xtd::drawing::color that represent foreground color of the control.
+      /// @return New control created.
+      static button create(const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @brief A factory to create a specified control with specified parent, text, location ,size back_color and fore_color.
+      /// @param parent The parent that contains the new created control.
+      /// @param text A string that represent text of the control.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @param size A xtd::drawing::size that represent size of the control.
+      /// @param back_color A xtd::drawing::color that represent background color of the control.
+      /// @param fore_color A xtd::drawing::color that represent foreground color of the control.
+      /// @return New control created.
+      static button create(const control& parent, const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+
       void notify_default(bool value) override;
       
       void perform_click() override;
