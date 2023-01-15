@@ -120,21 +120,23 @@ check_box& check_box::three_state(bool three_state) {
   return *this;
 }
 
-check_box check_box::create(const xtd::ustring& text, xtd::forms::check_state state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+check_box check_box::create(const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   check_box item;
   item.text(text);
-  item.check_state(state);
+  item.three_state(three_state);
+  item.check_state(check_state);
   if (location != drawing::point {-1, -1}) item.location(location);
   if (size != drawing::size {-1, -1}) item.size(size);
   item.name(name);
   return item;
 }
 
-check_box check_box::create(const control& parent, const xtd::ustring& text, xtd::forms::check_state state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+check_box check_box::create(const control& parent, const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   check_box item;
   item.parent(parent);
   item.text(text);
-  item.check_state(state);
+  item.three_state(three_state);
+  item.check_state(check_state);
   if (location != drawing::point {-1, -1}) item.location(location);
   if (size != drawing::size {-1, -1}) item.size(size);
   item.name(name);
