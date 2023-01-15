@@ -58,7 +58,7 @@ namespace xtd {
       /// @return The number if frame per seconds. The default is 10.
       virtual uint32 frames_per_second() const noexcept;
       /// @brief Sets the number of frame per second.
-      /// @para value The number if frame per seconds. The default is 10.
+      /// @param value The number if frame per seconds. The default is 10.
       virtual animation& frames_per_second(uint32 value);
       
       
@@ -75,20 +75,20 @@ namespace xtd {
       
       /// @{
       using control::create;
-      /// @brief A factory to create an animation with specified text, location, size, and name.
-      /// @param text A string that represent text of the button.
-      /// @param location A xtd::drawing::point that represent location of the button.
-      /// @param size A xtd::drawing::size that represent size of the button.
-      /// @param name The name of the button.
-      /// @return New button created.
+      /// @brief A factory to create an xtd::forms::animation with specified text, location, size, and name.
+      /// @param frames_per_second The number if frame per seconds of the xtd::forms::animation.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::animation.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::animation.
+      /// @param name The name of the xtd::forms::animation.
+      /// @return New xtd::forms::animation created.
       static animation create(uint32 frames_per_second, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      /// @brief A factory to create an animation with specified parent, text, location ,size, and name.
-      /// @param parent The parent that contains the new created animation.
-      /// @param text A string that represent text of the animation.
-      /// @param location A xtd::drawing::point that represent location of the animation.
-      /// @param size A xtd::drawing::size that represent size of the animation.
-      /// @param name The name of the animation.
-      /// @return New animation created.
+      /// @brief A factory to create an xtd::forms::animation with specified parent, text, location ,size, and name.
+      /// @param parent The number if frame per seconds of the xtd::forms::animation.
+      /// @param frames_per_second The number if frame per seconds of the xtd::forms::animation.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::animation.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::animation.
+      /// @param name The name of the xtd::forms::animation.
+      /// @return New xtd::forms::animation created.
       static animation create(const control& parent, uint32 frames_per_second, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       
       /// @brief Starts animation of the animation control.
