@@ -125,10 +125,10 @@ namespace xtd {
       virtual void matrix_size(const drawing::size& value);
       
       /// @brief Gets a value indicate if background dots are shown.
-      /// @return true if background dots are shown; otherwise false
+      /// @return true if background dots are shown; otherwise false.
       virtual bool show_back_dot() const noexcept;
       /// @brief Sets a value indicate if background dots are shown.
-      /// @param value true if background dots are shown; otherwise false
+      /// @param value true if background dots are shown; otherwise false.
       /// @return Current dot_matrix_display.
       virtual dot_matrix_display& show_back_dot(bool value);
       
@@ -144,6 +144,25 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      using control::create;
+      /// @brief A factory to create an xtd::forms::dot_matrix_display with specified color, location, size, and name.
+      /// @param dots A dots_collection that represent all dots status.
+      /// @param show_back_dot true if background dots are shown; otherwise false.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::dot_matrix_display.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::dot_matrix_display.
+      /// @param name The name of the xtd::forms::dot_matrix_display.
+      /// @return New xtd::forms::dot_matrix_display created.
+      static dot_matrix_display create(const dots_collection& dots, bool show_back_dot, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @brief A factory to create an xtd::forms::dot_matrix_display with specified parent, color, location ,size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::dot_matrix_display.
+      /// @param dots A dots_collection that represent all dots status.
+      /// @param show_back_dot true if background dots are shown; otherwise false.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::dot_matrix_display.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::dot_matrix_display.
+      /// @param name The name of the xtd::forms::dot_matrix_display.
+      /// @return New xtd::forms::dot_matrix_display created.
+      static dot_matrix_display create(const control& parent, const dots_collection& dots, bool show_back_dot, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+
       /// @brief Gets specified dot point status.
       /// @param point dot point location in the matrix.
       /// @return true if specified dot point is on; otherwise false.

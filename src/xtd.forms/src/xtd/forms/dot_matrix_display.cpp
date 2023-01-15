@@ -122,6 +122,27 @@ dot_matrix_display& dot_matrix_display::thickness(int32 value) {
   return *this;
 }
 
+dot_matrix_display dot_matrix_display::create(const dots_collection& dots, bool show_back_dot, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  dot_matrix_display item;
+  item.dots(dots);
+  item.show_back_dot(show_back_dot);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+dot_matrix_display dot_matrix_display::create(const control& parent, const dots_collection& dots, bool show_back_dot, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  dot_matrix_display item;
+  item.parent(parent);
+  item.dots(dots);
+  item.show_back_dot(show_back_dot);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 bool dot_matrix_display::get_dot(const drawing::point& point) const noexcept {
   return data_->dots[point.y()][point.x()];
 }
