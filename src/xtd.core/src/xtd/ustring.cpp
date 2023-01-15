@@ -25,6 +25,8 @@ void __throw_ustring_format_exception_start_colon() {
   throw format_exception("Invalid format expression : format argument must be start by ':'"_t, csf_);
 }
 
+const ustring ustring::empty_string;
+
 ustring::ustring() noexcept {
 }
 
@@ -637,10 +639,6 @@ bool ustring::contains(const ustring& value) const noexcept {
 
 bool ustring::equals(const ustring& other) const noexcept {
   return compare_to(other) == 0;
-}
-
-ustring ustring::empty_string() noexcept {
-  return {};
 }
 
 bool ustring::ends_with(value_type value) const noexcept {

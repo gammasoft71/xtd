@@ -198,7 +198,7 @@ ustring uri::escape_data_string(const ustring& value) {
     escape_needed = !is_hex_encoding(value, index) && need_to_escape_data_char(value[index]);
     
   if (escape_needed) {
-    auto ret_value = ustring::empty_string();
+    auto ret_value = ustring::empty_string;
     for (size_t index = 0; index < value.size(); ++index) {
       if (!is_hex_encoding(value, index) && need_to_escape_data_char(value[index])) ret_value += hex_escape(value[index]);
       else ret_value += value[index];
@@ -238,7 +238,7 @@ int32 uri::from_hex(char digit) {
 ustring uri::get_components(uri_components components, uri_format format) const {
   if (kind_ != uri_kind::absolute) throw invalid_operation_exception(csf_);
   
-  auto str = ustring::empty_string();
+  auto str = ustring::empty_string;
   if ((components & uri_components::scheme) == uri_components::scheme) str += format_componant(scheme_, format);
   if ((components & uri_components::scheme) == uri_components::scheme && (components & ~uri_components::scheme) != uri_components::none) str += format_componant(scheme_delimiter_, format);
   if ((components & uri_components::user_info) == uri_components::user_info) str += format_componant(user_info_, format);
@@ -336,7 +336,7 @@ ustring uri::unescape_data_string(const ustring& value) {
     
   if (!unescape_needed) return value;
   
-  auto ret_value = ustring::empty_string();
+  auto ret_value = ustring::empty_string;
   size_t index = 0;
   while (index < value.size()) {
     if (is_hex_encoding(value, index))
@@ -420,7 +420,7 @@ void uri::set_path(ustring& escape_uri) {
   }
   
   path_ = escape_uri.empty() ? "/" : escape_uri;
-  escape_uri = ustring::empty_string();
+  escape_uri = ustring::empty_string;
 }
 
 void uri::set_port(ustring& escape_uri) {
