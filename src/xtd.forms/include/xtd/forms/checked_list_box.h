@@ -167,7 +167,7 @@ namespace xtd {
       
       using list_box::selected_index;
       /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
-      /// @param selected_index A zero-based index of the currently selected item. The xtd::checked_list_box::object_collection::npos is returned if no item is selected.
+      /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::checked_list_box::object_collection::npos is returned if no item is selected.
       /// @return Current list_control.
       list_control& selected_index(size_t selected_index) override;
       
@@ -206,7 +206,7 @@ namespace xtd {
       using list_box::create;
       /// @brief A factory to create an xtd::forms::checked_list_box with specified items, selected_index, location ,size, and name.
       /// @param items A string that represent text of the control.
-      /// @param selected_index A zero-based index of the currently selected item. The xtd::checked_list_box::object_collection::npos is returned if no item is selected.
+      /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::checked_list_box::object_collection::npos is returned if no item is selected.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::checked_list_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::checked_list_box.
       /// @return New xtd::forms::checked_list_box created.
@@ -214,7 +214,7 @@ namespace xtd {
       /// @brief A factory to create a specified control with specified parent, items, selected_index, location ,size, and name.
       /// @param parent The parent that contains the new created xtd::forms::checked_list_box.
       /// @param items A string that represent text of the control.
-      /// @param selected_index A zero-based index of the currently selected item. The xtd::checked_list_box::object_collection::npos is returned if no item is selected.
+      /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::checked_list_box::object_collection::npos is returned if no item is selected.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::checked_list_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::checked_list_box.
       /// @return New xtd::forms::checked_list_box created.
