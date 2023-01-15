@@ -77,6 +77,27 @@ void collapsible_panel::collapse() {
   expanded(false);
 }
 
+collapsible_panel collapsible_panel::create(const xtd::ustring& text, bool expanded, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  collapsible_panel item;
+  item.text(text);
+  item.expanded(expanded);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+collapsible_panel collapsible_panel::create(const control& parent, const xtd::ustring& text, bool expanded, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  collapsible_panel item;
+  item.parent(parent);
+  item.text(text);
+  item.expanded(expanded);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 void collapsible_panel::expand() {
   expanded(true);
 }
