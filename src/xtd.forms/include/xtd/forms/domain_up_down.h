@@ -154,6 +154,28 @@ namespace xtd {
       virtual domain_up_down& wrap(bool value);
       /// @}
       
+      
+      /// @name Methods
+      
+      /// @{
+      using up_down_base::create;
+      /// @brief A factory to create an xtd::forms::domain_up_down with specified items, selected_index, location ,size, and name.
+      /// @param items A choice::object_collection representing the items in the domain_up_down.
+      /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::domain_up_down::object_collection::npos is returned if no item is selected.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::domain_up_down.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::domain_up_down.
+      /// @return New xtd::forms::domain_up_down created.
+      static domain_up_down create(const object_collection& items, size_t selected_index, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @brief A factory to create an xtd::forms::domain_up_down with specified parent, items, selected_index, location ,size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::domain_up_down.
+      /// @param items A choice::object_collection representing the items in the domain_up_down.
+      /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::domain_up_down::object_collection::npos is returned if no item is selected.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::domain_up_down.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::domain_up_down.
+      /// @return New xtd::forms::domain_up_down created.
+      static domain_up_down create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @}
+
       /// @name Events
       
       /// @{

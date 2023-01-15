@@ -121,6 +121,27 @@ domain_up_down& domain_up_down::wrap(bool value) {
   return *this;
 }
 
+domain_up_down domain_up_down::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  domain_up_down item;
+  item.items(items);
+  item.selected_index(selected_index);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+domain_up_down domain_up_down::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  domain_up_down item;
+  item.parent(parent);
+  item.items(items);
+  item.selected_index(selected_index);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 forms::create_params domain_up_down::create_params() const noexcept {
   forms::create_params create_params = up_down_base::create_params();
   
