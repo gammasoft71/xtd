@@ -53,7 +53,6 @@ struct form::data {
   form_window_state window_state = form_window_state::normal;
 };
 
-
 std::optional<form_ref> form::active_form_;
 
 form::form() : data_(std::make_shared<data>()) {
@@ -424,6 +423,43 @@ void form::center_to_screen() {
 
 void form::close() {
   if (is_handle_created() && data_->previous_screen) native::form::close(handle());
+}
+
+form form::create(const xtd::ustring& text, const drawing::size& size, const xtd::ustring& name) {
+  form item;
+  item.text(text);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+form form::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  form item;
+  item.text(text);
+  item.start_position(form_start_position::manual);
+  item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+form form::create(const xtd::ustring& text, form_start_position start_position, const drawing::size& size, const xtd::ustring& name) {
+  form item;
+  item.text(text);
+  item.start_position(start_position);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+form form::create(const xtd::ustring& text, form_start_position start_position, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  form item;
+  item.text(text);
+  item.start_position(start_position);
+  item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
 }
 
 bool form::pre_process_message(xtd::forms::message& message) {
