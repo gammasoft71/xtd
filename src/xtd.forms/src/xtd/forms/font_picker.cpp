@@ -23,7 +23,7 @@ const drawing::color& font_picker::color() const noexcept {
   return data_->color;
 }
 
-control& font_picker::color(const drawing::color& value) {
+font_picker& font_picker::color(const drawing::color& value) {
   if (data_->color != value) {
     data_->color = value;
     if (is_handle_created()) native::font_picker::color(handle(), data_->color);
@@ -43,6 +43,27 @@ control& font_picker::font(const drawing::font& value) {
     on_font_picker_changed(font_picker_event_args(data_->font, data_->color));
   }
   return *this;
+}
+
+font_picker font_picker::create(const drawing::font& font, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  font_picker item;
+  item.color(color);
+  item.font(font);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+font_picker font_picker::create(const control& parent, const drawing::font& font, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  font_picker item;
+  item.parent(parent);
+  item.color(color);
+  item.font(font);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
 }
 
 forms::create_params font_picker::create_params() const noexcept {
