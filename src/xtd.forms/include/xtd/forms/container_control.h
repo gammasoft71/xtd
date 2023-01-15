@@ -38,7 +38,7 @@ namespace xtd {
       /// @name Protected constructors
       
       /// @{
-      /// @brief Initializes a new instance of the ContainerControl class.
+      /// @brief Initializes a new instance of the container_control class.
       container_control();
       /// @}
       
