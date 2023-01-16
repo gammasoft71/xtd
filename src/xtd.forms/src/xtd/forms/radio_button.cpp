@@ -96,12 +96,33 @@ radio_button& radio_button::check_align(content_alignment check_align) {
   return *this;
 }
 
-xtd::ustring radio_button::to_string() const noexcept {
-  return ustring::format("{}, checked: {}", ustring::full_class_name(*this), data_->checked);
+radio_button radio_button::create(const xtd::ustring& text, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  radio_button item;
+  item.text(text);
+  item.checked(checked);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+radio_button radio_button::create(const control& parent, const xtd::ustring& text, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  radio_button item;
+  item.parent(parent);
+  item.text(text);
+  item.checked(checked);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
 }
 
 void radio_button::perform_click() {
   on_click(event_args::empty);
+}
+
+xtd::ustring radio_button::to_string() const noexcept {
+  return ustring::format("{}, checked: {}", ustring::full_class_name(*this), data_->checked);
 }
 
 forms::create_params radio_button::create_params() const noexcept {
