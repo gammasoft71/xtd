@@ -178,7 +178,6 @@ namespace xtd {
       /// @return New xtd::forms::check_box created.
       static check_box create(const control& parent, const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @}
-
       
       /// @name Events
       
