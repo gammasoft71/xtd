@@ -69,7 +69,7 @@ namespace __enumeration_introspection {
     bool is_set = false;
     enumeration_maker() = default;
     enumeration_maker(enumeration_maker const&) = default;
-    constexpr explicit enumeration_maker(base_t) : enumeration_maker() {}
+    constexpr enumeration_maker(base_t) : enumeration_maker() {} // Can't be explicit by design.
     enumeration_maker& operator =(enumeration_maker const&) = default;
     
     template <class type_t>
