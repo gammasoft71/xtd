@@ -786,7 +786,7 @@ namespace xtd {
       virtual void bring_to_front();
       
       int32 compare_to(const control& value) const noexcept override;
-
+      
       /// @brief A factory to create a specified control with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @param size A xtd::drawing::size that represent size of the control.

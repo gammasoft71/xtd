@@ -175,7 +175,7 @@ namespace xtd {
       /// @return New xtd::forms::domain_up_down created.
       static domain_up_down create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @}
-
+      
       /// @name Events
       
       /// @{

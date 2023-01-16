@@ -45,7 +45,7 @@ namespace xtd::tests {
     static void class_cleanup_(class_cleanup) {
       std::locale::global(previous_locale);
     }
-
+    
     void test_method_(parse_styles_number) {
       assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("42", number_styles::number), csf_);
     }

@@ -111,7 +111,7 @@ namespace xtd {
       /// @return New xtd::forms::command_link_button created.
       static command_link_button create(const control& parent, const xtd::ustring& text, const xtd::ustring& supplementary_text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @}
-
+      
     protected:
       /// @name Protected properties
       
