@@ -162,6 +162,29 @@ light_button& light_button::light_on_color(std::nullptr_t) {
   return *this;
 }
 
+light_button light_button::create(const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  light_button item;
+  item.text(text);
+  item.three_state(three_state);
+  item.check_state(check_state);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+light_button light_button::create(const control& parent, const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  light_button item;
+  item.parent(parent);
+  item.text(text);
+  item.three_state(three_state);
+  item.check_state(check_state);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 forms::create_params light_button::create_params() const noexcept {
   forms::create_params create_params = button_base::create_params();
   
