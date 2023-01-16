@@ -69,48 +69,56 @@ namespace example {
 
       button_normal.text("Show normal");
       button_normal.click += [&] {
-        auto dialog = control::create<form>("dialog show normal", {}, {250, 100});
+        auto dialog = make_unique<form>();
+        dialog->text("dialog show normal");
+        dialog->size({250, 100});
         dialog->show();
-        dialogs.push_back(move(dialog));
+        dialogs.push_back(std::move(dialog));
       };
       
       button_modeless.text("Show modeless");
       button_modeless.click += [&] {
-        auto dialog = control::create<form>("dialog show modeless", {}, {250, 100});
+        auto dialog = make_unique<form>();
+        dialog->text("dialog show modeless");
+        dialog->size({250, 100});
         dialog->owner(*this).show();
-        dialogs.push_back(move(dialog));
+        dialogs.push_back(std::move(dialog));
       };
       
       button_top_most.text("Show top most");
       button_top_most.click += [&] {
-        auto dialog = control::create<form>("dialog top most", {}, {250, 100});
+        auto dialog = make_unique<form>();
+        dialog->text("dialog top most");
+        dialog->size({250, 100});
         dialog->top_most(true).show();
-        dialogs.push_back(move(dialog));
+        dialogs.push_back(std::move(dialog));
       };
-
+      
       button_modal.text("Show modal");
       button_modal.click += [&] {
         auto dialog = control::create<form>("dialog show modal", {}, {250, 100});
-        dialog->show_dialog(*this);
+        dialog.show_dialog(*this);
       };
-
+      
       button_sheet.text("Show sheet");
       button_sheet.click += [&] {
-        auto dialog = control::create<form>("dialog show sheet", {}, {250, 100});
-        dialog->key_up += [&](object& control, key_event_args& e) {
+        auto dialog = make_unique<form>();
+        dialog->text("dialog show sheet");
+        dialog->size({250, 100});
+        dialog->key_up += [&](object & control, key_event_args & e) {
           if (e.key_code() == keys::escape) as<form&>(control).close();
         };
         dialog->show_sheet(*this);
-        dialogs.push_back(move(dialog));
+        dialogs.push_back(std::move(dialog));
       };
-
+      
       button_sheet_modal.text("Show sheet modal");
       button_sheet_modal.click += [&] {
         auto dialog = control::create<form>("dialog show sheet modal", {}, {250, 100});
-        dialog->key_up += [&](object& control, key_event_args& e) {
+        dialog.key_up += [&](object & control, key_event_args & e) {
           if (e.key_code() == keys::escape) as<form&>(control).close();
         };
-        dialog->show_sheet_dialog(*this);
+        dialog.show_sheet_dialog(*this);
       };
     }
     
