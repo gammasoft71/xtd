@@ -9,13 +9,13 @@ using namespace xtd::tunit;
 namespace xtd::io::tests {
   class test_class_(directory_info_tests) {
     inline static const ustring test_path = path::combine(path::get_temp_path(), "test_directory");
-    void test_initialize_(test_initialize) {
+    static void test_initialize_(test_initialize) {
       if (directory::exists(test_path)) directory::remove(test_path, true);
       directory::create_directory(test_path);
       directory_assume::exists(test_path, csf_);
     }
     
-    void test_cleanup_(test_cleanup) {
+    static void test_cleanup_(test_cleanup) {
       directory::remove(test_path, true);
       directory_assume::does_not_exist(test_path, csf_);
     }
