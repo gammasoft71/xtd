@@ -36,9 +36,14 @@ namespace xtd::tests {
   
   template<typename Value>
   class wstring_numeric_format_tests : public test_class {
+    inline static std::locale previous_locale;
   public:
     static void class_initialize_(class_initialize) {
-      std::locale::global(std::locale("en_US.UTF-8"));
+      previous_locale = std::locale::global(std::locale("en_US.UTF-8"));
+    }
+    
+    static void class_cleanup_(class_cleanup) {
+      std::locale::global(previous_locale);
     }
     
     void test_method_(format_with_default_argument) {
