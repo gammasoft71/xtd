@@ -26,7 +26,7 @@ namespace xtd {
       /// @brief Initialises a new instance of fixed layout panel class.
       fixed_layout_panel() = default;
       /// @}
-
+      
       /// @name Methods
       
       /// @{
@@ -45,7 +45,7 @@ namespace xtd {
       /// @return New xtd::forms::fixed_layout_panel created.
       static fixed_layout_panel create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @}
-
+      
     protected:
       /// @name Protected methods
       

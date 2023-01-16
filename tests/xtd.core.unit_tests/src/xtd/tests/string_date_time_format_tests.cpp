@@ -96,7 +96,7 @@ namespace xtd::tests {
     static void class_cleanup_(class_cleanup) {
       std::locale::global(previous_locale);
     }
-
+    
     void test_method_(format_date_time_local_with_std_tm_with_default_argument) {
       #if defined(__APPLE__)
       assert::are_equal("Wed Jan  2 03:04:05 2019", ustring::format("{0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)), csf_);

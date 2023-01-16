@@ -94,7 +94,7 @@ namespace xtd {
       /// @return New xtd::forms::font_picker created.
       static font_picker create(const control& parent, const drawing::font& font, const xtd::drawing::color& color, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @}
-
+      
       /// @name Events
       
       /// @{
