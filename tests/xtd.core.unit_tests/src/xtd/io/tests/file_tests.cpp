@@ -12,12 +12,12 @@ namespace xtd::io::tests {
   public:
     static constexpr auto test_file_name = "file.txt";
     
-    void test_initialize_(test_initialize) {
+    static void test_initialize_(test_initialize) {
       if (ifstream(test_file_name).good())
         ::remove(test_file_name);
     }
     
-    void test_cleanup_(test_clean_up) {
+    static void test_cleanup_(test_clean_up) {
       if (ifstream(test_file_name).good())
         ::remove(test_file_name);
     }
