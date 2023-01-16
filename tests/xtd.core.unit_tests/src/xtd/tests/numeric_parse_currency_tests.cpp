@@ -42,7 +42,7 @@ namespace xtd::tests {
       previous_locale = std::locale::global(std::locale("en_US.UTF-8"));
     }
     
-    static void test_cleanup_(test_cleanup) {
+    static void class_cleanup_(class_cleanup) {
       std::locale::global(previous_locale);
     }
     
