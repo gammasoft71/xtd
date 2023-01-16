@@ -36,11 +36,16 @@ namespace xtd::tests {
   
   template <typename Value>
   class numeric_parse_string_none_tests : public test_class {
+    inline static std::locale previous_locale;
   public:
     static void class_initialize_(class_initialize) {
-      std::locale::global(std::locale("en_US.UTF-8"));
+      previous_locale = std::locale::global(std::locale("en_US.UTF-8"));
     }
     
+    static void test_cleanup_(test_cleanup) {
+      std::locale::global(previous_locale);
+    }
+
     void test_method_(parse_styles_none) {
       assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("42", number_styles::none), csf_);
     }
