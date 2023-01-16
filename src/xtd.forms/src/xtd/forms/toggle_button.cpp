@@ -85,6 +85,29 @@ toggle_button& toggle_button::three_state(bool three_state) {
   return *this;
 }
 
+toggle_button toggle_button::create(const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  toggle_button item;
+  item.text(text);
+  item.three_state(three_state);
+  item.check_state(check_state);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+toggle_button toggle_button::create(const control& parent, const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  toggle_button item;
+  item.parent(parent);
+  item.text(text);
+  item.three_state(three_state);
+  item.check_state(check_state);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 forms::create_params toggle_button::create_params() const noexcept {
   forms::create_params create_params = button_base::create_params();
   
