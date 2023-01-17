@@ -24,3 +24,20 @@ forms::create_params h_scroll_bar::create_params() const noexcept {
 xtd::drawing::size h_scroll_bar::default_size() const noexcept {
   return {80, control::default_size().height()};
 }
+
+h_scroll_bar h_scroll_bar::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  h_scroll_bar item;
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+h_scroll_bar h_scroll_bar::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  h_scroll_bar item;
+  item.parent(parent);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
