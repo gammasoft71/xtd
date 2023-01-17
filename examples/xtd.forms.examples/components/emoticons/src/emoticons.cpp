@@ -8,7 +8,7 @@ int main() {
   auto main_form = form::create("Emoticons example");
   main_form.client_size({500, 400}).padding(10);
   
-  auto emoticon_label = control::create<label>(main_form);
+  auto emoticon_label = label::create(main_form);
   emoticon_label.text_align(xtd::forms::content_alignment::middle_center).dock(dock_style::fill).font({main_form.font(), 192});
   
   auto emoticons_list_box = control::create<list_box>(main_form);

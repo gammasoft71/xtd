@@ -9,7 +9,7 @@ int main() {
   main_tab_control.dock(dock_style::fill);
   
   auto information_tab_page = control::create<tab_page>(main_tab_control, "Information");
-  auto information_label = control::create<label>(information_tab_page, resources_command::properties::resources::information());
+  auto information_label = label::create(information_tab_page, resources_command::properties::resources::information());
   information_label.dock(dock_style::fill).font({xtd::drawing::font_family::generic_monospace(), 11});
   
   auto gammasoft_tab_page = control::create<tab_page>(main_tab_control, "Gammasoft");
@@ -17,7 +17,7 @@ int main() {
   gammasoft_picture_box.image(resources_command::properties::resources::gammasoft()).size_mode(picture_box_size_mode::center_image).dock(dock_style::fill);
   
   auto readme_tab_page = control::create<tab_page>(main_tab_control, "Read me");
-  auto readme_label = control::create<label>(readme_tab_page, resources_command::properties::resources::readme());
+  auto readme_label = label::create(readme_tab_page, resources_command::properties::resources::readme());
   readme_label.dock(dock_style::fill);
   
   auto xtd_tab_page = control::create<tab_page>(main_tab_control, "xtd");
