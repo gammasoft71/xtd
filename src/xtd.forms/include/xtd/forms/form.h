@@ -356,14 +356,14 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::form.
       /// @param name The name of the xtd::forms::form.
       /// @return New xtd::forms::form created.
-      static form create(const xtd::ustring& text = "", const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static form create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @brief A factory to create an xtd::forms::form with specified text, form start position, size, and name.
       /// @param text A string that represent text of the xtd::forms::form.
       /// @param start_position A form_start_position that represents the starting position of the form.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::form.
       /// @param name The name of the xtd::forms::form.
       /// @return New xtd::forms::form created.
-      static form create(const xtd::ustring& text = "", form_start_position start_position = form_start_position::windows_default_location, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static form create(const xtd::ustring& text, form_start_position start_position, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @brief A factory to create an xtd::forms::form with specified text, form start position, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::form.
       /// @param start_position A form_start_position that represents the starting position of the form.
@@ -371,7 +371,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::form.
       /// @param name The name of the xtd::forms::form.
       /// @return New xtd::forms::form created.
-      static form create(const xtd::ustring& text = "", form_start_position start_position = form_start_position::windows_default_location, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static form create(const xtd::ustring& text, form_start_position start_position, const drawing::point& location, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       
       bool pre_process_message(xtd::forms::message& message) override;
       
