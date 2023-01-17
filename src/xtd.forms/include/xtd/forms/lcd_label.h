@@ -150,6 +150,26 @@ namespace xtd {
       std::vector<char32> valid_characters();
       /// @}
       
+      /// @name Methods
+      
+      /// @{
+      /// @brief A factory to create an xtd::forms::lcd_label with specified text, location, size, and name.
+      /// @param text A string that represent text of the xtd::forms::lcd_label.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::lcd_label.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::lcd_label.
+      /// @param name The name of the xtd::forms::lcd_label.
+      /// @return New xtd::forms::lcd_label created.
+      static lcd_label create(const xtd::ustring& text = "", const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @brief A factory to create an xtd::forms::lcd_label with specified parent, text, location ,size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::lcd_label.
+      /// @param text A string that represent text of the xtd::forms::lcd_label.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::lcd_label.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::lcd_label.
+      /// @param name The name of the xtd::forms::lcd_label.
+      /// @return New xtd::forms::lcd_label created.
+      static lcd_label create(const control& parent, const xtd::ustring& text = "", const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @}
+
     protected:
       /// @name Protected properties
       
