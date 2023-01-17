@@ -111,7 +111,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::choice.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::choice.
       /// @return New xtd::forms::choice created.
-      static choice create(const object_collection& items, size_t selected_index, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static choice create(const object_collection& items = object_collection {}, size_t selected_index = object_collection::npos, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @brief A factory to create an xtd::forms::choice with specified parent, items, selected_index, location ,size, and name.
       /// @param parent The parent that contains the new created xtd::forms::choice.
       /// @param items A choice::object_collection representing the items in the choice.
