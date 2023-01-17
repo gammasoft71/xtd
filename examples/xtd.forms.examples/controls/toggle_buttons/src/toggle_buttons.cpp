@@ -4,7 +4,7 @@ using namespace xtd::forms;
 
 int main() {
   auto form_main = form::create("toggle buttons example");
-  auto group_box_alignment = control::create<group_box>(form_main, system_texts::alignment(), {10, 10}, {150, 240});
+  auto group_box_alignment = group_box::create(form_main, system_texts::alignment(), {10, 10}, {150, 240});
   auto toggle_button_align_left = toggle_buttons::align_left(group_box_alignment, false, check_state::unchecked, {20, 20});
   auto toggle_button_align_right = toggle_buttons::align_right(group_box_alignment, false, check_state::unchecked, {20, 70});
   auto toggle_button_centered = toggle_buttons::centered(group_box_alignment, false, check_state::unchecked, {20, 120});
