@@ -159,6 +159,25 @@ link_label& link_label::visited_link_color(const xtd::drawing::color& color) {
   return *this;
 }
 
+link_label link_label::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  link_label item;
+  item.text(text);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+link_label link_label::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  link_label item;
+  item.parent(parent);
+  item.text(text);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 drawing::size link_label::measure_control() const noexcept {
   rectangle bounds;
   for (auto [rect, is_link] : generate_text_rects())
