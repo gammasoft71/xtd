@@ -15,7 +15,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 struct loading_indicator::data {
-  bool is_running = false;
+  bool running = false;
   xtd::forms::loading_indicator_style loading_indicator_style = xtd::forms::loading_indicator_style::standard;
   xtd::forms::timer timer;
   int32 intervals = 8;
@@ -53,8 +53,20 @@ loading_indicator& loading_indicator::loading_indicator_style(xtd::forms::loadin
   return *this;
 }
 
-bool loading_indicator::is_running() const noexcept {
-  return data_->is_running;
+bool loading_indicator::running() const noexcept {
+  return data_->running;
+}
+
+loading_indicator& loading_indicator::running(bool value) {
+  if (data_->running == value) return *this;
+  data_->running = value;
+  if (data_->loading_indicator_style != xtd::forms::loading_indicator_style::system)
+    data_->timer.enabled(data_->running);
+  else if (is_handle_created()) {
+    if (data_->running) native::loading_indicator::start(handle());
+    else native::loading_indicator::stop(handle());
+  }
+  return *this;
 }
 
 forms::create_params loading_indicator::create_params() const noexcept {
@@ -70,7 +82,7 @@ drawing::size loading_indicator::measure_control() const noexcept {
 
 void loading_indicator::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
-  if (data_->is_running) start();
+  if (data_->running) start();
 }
 
 void loading_indicator::on_paint(paint_event_args& e) {
@@ -113,17 +125,9 @@ loading_indicator loading_indicator::create(const control& parent, const drawing
 }
 
 void loading_indicator::start() {
-  data_->is_running = true;
-  if (data_->loading_indicator_style != xtd::forms::loading_indicator_style::system)
-    data_->timer.start();
-  else if (is_handle_created())
-    native::loading_indicator::start(handle());
+  running(true);
 }
 
 void loading_indicator::stop() {
-  data_->is_running = false;
-  if (data_->loading_indicator_style != xtd::forms::loading_indicator_style::system)
-    data_->timer.stop();
-  else if (is_handle_created())
-    native::loading_indicator::stop(handle());
+  running(false);
 }
