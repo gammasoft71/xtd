@@ -95,6 +95,23 @@ void loading_indicator::on_timer_tick(object& timer, const xtd::event_args& e) {
   if (control_appearance() == forms::control_appearance::standard) invalidate();
 }
 
+loading_indicator loading_indicator::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  loading_indicator item;
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+loading_indicator loading_indicator::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  loading_indicator item;
+  item.parent(parent);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 void loading_indicator::start() {
   data_->is_running = true;
   if (data_->loading_indicator_style != xtd::forms::loading_indicator_style::system)
