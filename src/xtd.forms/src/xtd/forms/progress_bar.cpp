@@ -113,6 +113,29 @@ progress_bar& progress_bar::value(int32 value) {
   return *this;
 }
 
+progress_bar progress_bar::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  progress_bar item;
+  item.minimum(minimum);
+  item.maximum(maximum);
+  item.value(value);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+progress_bar progress_bar::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  progress_bar item;
+  item.parent(parent);
+  item.minimum(minimum);
+  item.maximum(maximum);
+  item.value(value);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 void progress_bar::increment(int32 value) {
   this->value(data_->value + value);
 }

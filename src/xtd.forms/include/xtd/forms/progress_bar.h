@@ -139,6 +139,26 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief A factory to create an xtd::forms::progress_bar with specified location, size, and name.
+      /// @param value The position within the range of the progress bar.
+      /// @param minimum The minimum value of the range.
+      /// @param maximum The maximum value of the range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::progress_bar.
+      /// @param name The name of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(int32 value = 0, int32 minimum = 0, int32 maximum = 100, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified parent, location ,size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::progress_bar.
+      /// @param value The position within the range of the progress bar.
+      /// @param minimum The minimum value of the range.
+      /// @param maximum The maximum value of the range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::progress_bar.
+      /// @param name The name of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(const control& parent, int32 value = 0, int32 minimum = 0, int32 maximum = 100, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+
       /// @brief Advances the current position of the progress bar by the specified amount.
       /// @param value The amount by which to increment the progress bar's current position.
       /// @remarks The increment method enables you to increment the value of the progress bar by a specific amount. This method of incrementing the progress bar is similar to using the step property with the perform_step method. The value property specifies the current position of the progress_bar. If, after calling the increment method, the value property is greater than the value of the maximum property, the value property remains at the value of the maximum property. If, after calling the increment method with a negative value specified in the value parameter, the Value property is less than the value of the minimum property, the value property remains at the value of the minimum property.
