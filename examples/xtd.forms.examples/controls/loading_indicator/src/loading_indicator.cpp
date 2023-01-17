@@ -11,7 +11,7 @@ namespace examples {
       loading_indicator1.parent(*this);
       loading_indicator1.location({10, 10});
       loading_indicator1.fore_color(xtd::drawing::system_colors::accent());
-      loading_indicator1.start();
+      loading_indicator1.running(true);
     }
     
   private:
