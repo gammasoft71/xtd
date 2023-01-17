@@ -3,5 +3,5 @@
 using namespace xtd::forms;
 
 int main() {
-  application::run(control::create<form>("Application registered"));
+  application::run(form::create("Application registered"));
 }

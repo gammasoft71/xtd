@@ -5,7 +5,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 int main() {
-  auto main_form = control::create<form>("Emoticons example");
+  auto main_form = form::create("Emoticons example");
   main_form.client_size({500, 400}).padding(10);
   
   auto emoticon_label = control::create<label>(main_form);

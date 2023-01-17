@@ -6,8 +6,8 @@ using namespace xtd::forms;
 
 int main() {
   auto restart_count = environment::get_environment_variable("applicatioon_restart_count").empty() ? 0 : parse<int>(environment::get_environment_variable("applicatioon_restart_count"));
-  auto main_form = control::create<form>(ustring::format("Restart {} times", restart_count));
-  auto restart_button = control::create<button>(main_form, "Restart", {10, 10});
+  auto main_form = form::create(ustring::format("Restart {} times", restart_count));
+  auto restart_button = button::create(main_form, "Restart", {10, 10});
   restart_button.click += application::restart;
   
   environment::set_environment_variable("applicatioon_restart_count", to_string(restart_count + 1));

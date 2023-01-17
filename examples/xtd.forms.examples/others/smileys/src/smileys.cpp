@@ -4,7 +4,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 int main() {
-  auto main_form = control::create<form>("Smileys example");
+  auto main_form = form::create("Smileys example");
   main_form.auto_size_mode(auto_size_mode::grow_and_shrink).auto_size(true).font({main_form.font(), 48});
   auto emoticons_label = control::create<label>(main_form,
       u8"\U0001F600 \U0001F601 \U0001F602 \U0001F603 \U0001F604 \U0001F605 \U0001F606 \U0001F607 \U0001F608 \U0001F609 \U0001F60A \U0001F60B \U0001F60C \U0001F60D \U0001F60E \U0001F60F\n"
