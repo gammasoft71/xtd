@@ -57,6 +57,25 @@ group_box& group_box::flat_style(xtd::forms::flat_style flat_style) {
   return *this;
 }
 
+group_box group_box::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  group_box item;
+  item.text(text);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+group_box group_box::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  group_box item;
+  item.parent(parent);
+  item.text(text);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 forms::create_params group_box::create_params() const noexcept {
   forms::create_params create_params = control::create_params();
   
