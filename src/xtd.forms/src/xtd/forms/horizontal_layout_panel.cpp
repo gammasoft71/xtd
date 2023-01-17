@@ -25,6 +25,23 @@ horizontal_layout_panel& horizontal_layout_panel::control_layout_style(const con
   return *this;
 }
 
+horizontal_layout_panel horizontal_layout_panel::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  horizontal_layout_panel item;
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+horizontal_layout_panel horizontal_layout_panel::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  horizontal_layout_panel item;
+  item.parent(parent);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 void horizontal_layout_panel::on_control_added(const xtd::forms::control_event_args& e) {
   panel::on_control_added(e);
   control_layout_styles_.emplace_back(control_ref(const_cast<xtd::forms::control&>(e.control())), horizontal_control_layout_style());
