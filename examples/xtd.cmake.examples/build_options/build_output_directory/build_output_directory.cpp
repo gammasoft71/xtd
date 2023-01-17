@@ -3,5 +3,5 @@
 using namespace xtd::forms;
 
 int main() {
-  application::run(control::create<form>("Build output directory"));
+  application::run(form::create("Build output directory"));
 }
