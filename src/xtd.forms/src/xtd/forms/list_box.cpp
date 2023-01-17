@@ -154,6 +154,27 @@ void list_box::begin_update() {
   if (is_handle_created()) native::list_box::begin_update(handle());
 }
 
+list_box list_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  list_box item;
+  item.items(items);
+  item.selected_index(selected_index);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+list_box list_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  list_box item;
+  item.parent(parent);
+  item.items(items);
+  item.selected_index(selected_index);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 void list_box::end_update() {
   if (is_handle_created()) native::list_box::end_update(handle());
 }
