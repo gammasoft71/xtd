@@ -86,6 +86,25 @@ namespace xtd {
       virtual panel& border_style(std::nullptr_t border_style);
       /// @}
       
+      /// @name Methods
+      
+      /// @{
+      using scrollable_control::create;
+      /// @brief A factory to create an xtd::forms::panel with specified location, size, and name.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::panel.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::panel.
+      /// @param name The name of the xtd::forms::panel.
+      /// @return New xtd::forms::panel created.
+      static panel create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @brief A factory to create an xtd::forms::panel with specified parent, location ,size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::panel.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::panel.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::panel.
+      /// @param name The name of the xtd::forms::panel.
+      /// @return New xtd::forms::panel created.
+      static panel create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @}
+
     protected:
       /// @name Protetced properties
       
