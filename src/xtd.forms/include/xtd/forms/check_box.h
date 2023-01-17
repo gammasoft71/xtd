@@ -157,7 +157,6 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      using button_base::create;
       /// @brief A factory to create an xtd::forms::check_box with specified text, three_state, check_state, location ,size, and name.
       /// @param text A string that represent text of the xtd::forms::check_box.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -166,7 +165,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::check_box.
       /// @param name The name of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static check_box create(const xtd::ustring& text = "", bool three_state = false, xtd::forms::check_state check_state = xtd::forms::check_state::unchecked, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @brief A factory to create a xtd::forms::check_box with specified parent, text, three_state, check_state, location ,size, and name.
       /// @param parent The parent that contains the new created xtd::forms::check_box.
       /// @param text A string that represent text of the xtd::forms::check_box.
@@ -176,7 +175,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::check_box.
       /// @param name The name of the xtd::forms::check_box.
       /// @return New xtd::forms::check_box created.
-      static check_box create(const control& parent, const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static check_box create(const control& parent, const xtd::ustring& text = "", bool three_state = false, xtd::forms::check_state check_state = xtd::forms::check_state::unchecked, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @}
       
       /// @name Events

@@ -344,27 +344,26 @@ namespace xtd {
       /// @remarks When a form is closed, all resources created within the object are closed and the form is disposed. You can prevent the closing of a form at run time by handling the closing event and setting the cancel property of the cancel_event_args passed as a parameter to your event handler. If the form you are closing is the startup form of your application, your application ends.
       void close();
       
-      using container_control::create;
       /// @brief A factory to create an xtd::forms::form with specified text, size, and name.
       /// @param text A string that represent text of the xtd::forms::form.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::form.
       /// @param name The name of the xtd::forms::form.
       /// @return New xtd::forms::form created.
-      static form create(const xtd::ustring& text, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static form create(const xtd::ustring& text = "", const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @brief A factory to create an xtd::forms::form with specified text, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::form.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::form.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::form.
       /// @param name The name of the xtd::forms::form.
       /// @return New xtd::forms::form created.
-      static form create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static form create(const xtd::ustring& text = "", const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @brief A factory to create an xtd::forms::form with specified text, form start position, size, and name.
       /// @param text A string that represent text of the xtd::forms::form.
       /// @param start_position A form_start_position that represents the starting position of the form.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::form.
       /// @param name The name of the xtd::forms::form.
       /// @return New xtd::forms::form created.
-      static form create(const xtd::ustring& text, form_start_position start_position, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static form create(const xtd::ustring& text = "", form_start_position start_position = form_start_position::windows_default_location, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @brief A factory to create an xtd::forms::form with specified text, form start position, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::form.
       /// @param start_position A form_start_position that represents the starting position of the form.
@@ -372,7 +371,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::form.
       /// @param name The name of the xtd::forms::form.
       /// @return New xtd::forms::form created.
-      static form create(const xtd::ustring& text, form_start_position start_position, const drawing::point& location, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static form create(const xtd::ustring& text = "", form_start_position start_position = form_start_position::windows_default_location, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       
       bool pre_process_message(xtd::forms::message& message) override;
       
