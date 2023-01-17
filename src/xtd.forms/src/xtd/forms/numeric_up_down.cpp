@@ -103,6 +103,29 @@ numeric_up_down& numeric_up_down::wrapped(bool value) {
   return *this;
 }
 
+numeric_up_down numeric_up_down::create(double value, double minimum, double maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  numeric_up_down item;
+  item.minimum(minimum);
+  item.maximum(maximum);
+  item.value(value);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+numeric_up_down numeric_up_down::create(const control& parent, double value, double minimum, double maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  numeric_up_down item;
+  item.parent(parent);
+  item.minimum(minimum);
+  item.maximum(maximum);
+  item.value(value);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 void numeric_up_down::set_range(double min_value, double max_value) {
   minimum(min_value);
   maximum(min_value > max_value ? min_value : max_value);
