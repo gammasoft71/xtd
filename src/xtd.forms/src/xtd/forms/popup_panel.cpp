@@ -31,6 +31,23 @@ popup_panel& popup_panel::ignore_mouse_messages(bool value) {
   return *this;
 }
 
+popup_panel popup_panel::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  popup_panel item;
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+popup_panel popup_panel::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  popup_panel item;
+  item.parent(parent);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 forms::create_params popup_panel::create_params() const noexcept {
   forms::create_params create_params = panel::create_params();
   
