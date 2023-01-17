@@ -69,6 +69,23 @@ panel& panel::border_style(std::nullptr_t) {
   return *this;
 }
 
+panel panel::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  panel item;
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+panel panel::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  panel item;
+  item.parent(parent);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 forms::create_params panel::create_params() const noexcept {
   forms::create_params create_params = scrollable_control::create_params();
   
