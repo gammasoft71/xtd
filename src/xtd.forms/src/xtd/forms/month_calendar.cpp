@@ -306,6 +306,46 @@ void month_calendar::add_monthly_bolded_date(const xtd::date_time& date) {
   data_->monthly_bolded_dates.push_back(date);
 }
 
+month_calendar month_calendar::create(const forms::selection_range& selection_range, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  month_calendar item;
+  item.selection_range(selection_range);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+month_calendar month_calendar::create(const date_time& selection_start, const date_time& selection_end, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  month_calendar item;
+  item.selection_start(selection_start);
+  item.selection_end(selection_end);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+month_calendar month_calendar::create(const control& parent, const forms::selection_range& selection_range, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  month_calendar item;
+  item.parent(parent);
+  item.selection_range(selection_range);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+month_calendar month_calendar::create(const control& parent, const date_time& selection_start, const date_time& selection_end, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  month_calendar item;
+  item.parent(parent);
+  item.selection_start(selection_start);
+  item.selection_end(selection_end);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 month_calendar::hit_test_info month_calendar::hit_test(int32 x, int32 y) const {
   return hit_test({x, y});
 }
