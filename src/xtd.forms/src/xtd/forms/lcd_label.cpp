@@ -893,6 +893,25 @@ std::vector<char32> lcd_label::valid_characters() {
   return {vc.begin(), vc.end()};
 }
 
+lcd_label lcd_label::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  lcd_label item;
+  item.text(text);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+lcd_label lcd_label::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  lcd_label item;
+  item.parent(parent);
+  item.text(text);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 drawing::size lcd_label::default_size() const noexcept {
   return {100, 25};
 }
