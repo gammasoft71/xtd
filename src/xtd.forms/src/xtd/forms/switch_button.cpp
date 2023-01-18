@@ -104,6 +104,25 @@ switch_button& switch_button::show_text(bool value) {
   return *this;
 }
 
+switch_button switch_button::create(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  switch_button item;
+  item.checked(checked);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+switch_button switch_button::create(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  switch_button item;
+  item.parent(parent);
+  item.checked(checked);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 drawing::size switch_button::default_size() const noexcept {
   return {50, 25};
 }
