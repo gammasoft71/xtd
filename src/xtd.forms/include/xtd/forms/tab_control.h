@@ -199,6 +199,26 @@ namespace xtd {
       virtual const tab_page_collection& tab_pages() const noexcept;
       /// @}
       
+      /// @name Methods
+      
+      /// @{
+      /// @brief A factory to create an xtd::forms::tab_control with specified text, location, size, and name.
+      /// @param text A string that represent text of the xtd::forms::tab_control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::tab_control.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::tab_control.
+      /// @param name The name of the xtd::forms::tab_control.
+      /// @return New xtd::forms::tab_control created.
+      static tab_control create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @brief A factory to create an xtd::forms::tab_control with specified parent, text, location ,size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::tab_control.
+      /// @param text A string that represent text of the xtd::forms::tab_control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::tab_control.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::tab_control.
+      /// @param name The name of the xtd::forms::tab_control.
+      /// @return New xtd::forms::tab_control created.
+      static tab_control create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @}
+
       /// @name Events
       
       /// @{
