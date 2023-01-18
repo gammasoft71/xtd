@@ -137,6 +137,23 @@ const tab_control::tab_page_collection& tab_control::tab_pages() const noexcept 
   return data_->tab_pages;
 }
 
+tab_control tab_control::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  tab_control item;
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+tab_control tab_control::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  tab_control item;
+  item.parent(parent);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 forms::create_params tab_control::create_params() const noexcept {
   forms::create_params create_params = control::create_params();
   
