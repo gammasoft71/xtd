@@ -110,6 +110,24 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief A factory to create an xtd::forms::seven_segment_display with specified color, location, size, and name.
+      /// @param segments A dots_collection that represent all dots status.
+      /// @param show_back_segment true if background segments are shown; otherwise false
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::seven_segment_display.
+      /// @param name The name of the xtd::forms::seven_segment_display.
+      /// @return New xtd::forms::seven_segment_display created.
+      static seven_segment_display create(xtd::forms::segments segments = xtd::forms::segments::none, bool show_back_segment = true, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @brief A factory to create an xtd::forms::seven_segment_display with specified parent, color, location ,size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::seven_segment_display.
+      /// @param segments A xtd::forms::segments combination that represent seven_segment_display.
+      /// @param show_back_segment true if background segments are shown; otherwise false
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::seven_segment_display.
+      /// @param name The name of the xtd::forms::seven_segment_display.
+      /// @return New xtd::forms::seven_segment_display created.
+      static seven_segment_display create(const control& parent, xtd::forms::segments segments = xtd::forms::segments::none, bool show_back_segment = true, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+
       /// @brief Gets if specified xtd::forms::segments combination is on.
       /// @return true if xtd::forms::segments combination is on; otherwise false.
       virtual bool get_segments(forms::segments segment) const noexcept;
