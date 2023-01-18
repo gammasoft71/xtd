@@ -5,7 +5,7 @@ using namespace xtd::forms;
 
 int main() {
   auto main_form = form::create("Resources example", xtd::drawing::size {800, 450});
-  auto main_tab_control = control::create<tab_control>(main_form);
+  auto main_tab_control = tab_control::create(main_form);
   main_tab_control.dock(dock_style::fill);
   
   auto information_tab_page = control::create<tab_page>(main_tab_control, "Information");
