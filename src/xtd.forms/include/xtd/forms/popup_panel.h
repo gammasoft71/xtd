@@ -78,7 +78,7 @@ namespace xtd {
       /// @return New xtd::forms::popup_panel created.
       static popup_panel create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @}
-
+      
     protected:
       /// @name Protected properties
       

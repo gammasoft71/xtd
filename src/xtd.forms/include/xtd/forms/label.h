@@ -185,7 +185,7 @@ namespace xtd {
       /// @return New xtd::forms::label created.
       static label create(const control& parent, const xtd::ustring& text = "", const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @}
-
+      
       /// @name Events
       
       /// @{

@@ -81,7 +81,7 @@ namespace xtd {
       /// @return New xtd::forms::nine_segment_display created.
       static nine_segment_display create(const control& parent, xtd::forms::segments segments = xtd::forms::segments::none, bool show_back_segment = true, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @}
-
+      
     protected:
       /// @name Protected methods
       

@@ -138,7 +138,7 @@ namespace xtd {
       /// @param name The name of the xtd::forms::numeric_up_down.
       /// @return New xtd::forms::numeric_up_down created.
       static numeric_up_down create(const control& parent, double value = 0, double minimum = 0, double maximum = 100, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-
+      
       /// @brief Sets the minimum and maximum values for a track_bar.
       /// @param min_value The lower limit of the range of the track bar.
       /// @param max_value The upper limit of the range of the track bar.

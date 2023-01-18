@@ -100,7 +100,7 @@ namespace xtd {
       /// @return New xtd::forms::split_container created.
       static split_container create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @}
-
+      
     protected:
       /// @name Protected methods
       

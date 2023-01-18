@@ -70,7 +70,7 @@ namespace xtd {
       /// @return New xtd::forms::h_scroll_bar created.
       static h_scroll_bar create(const control& parent, int32 value = 0, int32 minimum = 0, int32 maximum = 100, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @}
-
+      
     protected:
       /// @name Protected properties
       

@@ -218,7 +218,7 @@ namespace xtd {
       /// @return New xtd::forms::tab_control created.
       static tab_control create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @}
-
+      
       /// @name Events
       
       /// @{

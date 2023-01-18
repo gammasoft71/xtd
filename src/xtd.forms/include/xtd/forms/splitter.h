@@ -79,7 +79,7 @@ namespace xtd {
       /// @return New xtd::forms::splitter created.
       static splitter create(const control& parent, dock_style dock = dock_style::left, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @}
-
+      
     protected:
       /// @name Protected properties
       

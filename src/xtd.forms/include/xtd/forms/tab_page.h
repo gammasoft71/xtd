@@ -103,7 +103,7 @@ namespace xtd {
       /// @param name The name of the xtd::forms::tab_page.
       /// @return New xtd::forms::tab_page created.
       static tab_page create(const control& parent, const xtd::ustring& text = "", const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-
+      
       void destroy_handle() override;
       /// @}
       

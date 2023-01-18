@@ -127,7 +127,7 @@ namespace xtd {
       /// @param name The name of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
       static seven_segment_display create(const control& parent, xtd::forms::segments segments = xtd::forms::segments::none, bool show_back_segment = true, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-
+      
       /// @brief Gets if specified xtd::forms::segments combination is on.
       /// @return true if xtd::forms::segments combination is on; otherwise false.
       virtual bool get_segments(forms::segments segment) const noexcept;
