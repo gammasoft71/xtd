@@ -110,6 +110,28 @@ namespace xtd {
       virtual switch_button& show_text(bool value);
       /// @}
       
+      /// @name Methods
+      
+      /// @{
+      /// @brief A factory to create an xtd::forms::switch_button with specified text, three_state, check_state, location ,size, and name.
+      /// @param text A string that represent text of the xtd::forms::switch_button.
+      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::switch_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::switch_button.
+      /// @param name The name of the xtd::forms::switch_button.
+      /// @return New xtd::forms::switch_button created.
+      static switch_button create(bool checked = false, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @brief A factory to create a xtd::forms::switch_button with specified parent, text, three_state, check_state, location ,size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::switch_button.
+      /// @param text A string that represent text of the xtd::forms::switch_button.
+      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::switch_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::switch_button.
+      /// @param name The name of the xtd::forms::switch_button.
+      /// @return New xtd::forms::switch_button created.
+      static switch_button create(const control& parent, bool checked = false, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @}
+
       /// @name Events
       
       /// @{
