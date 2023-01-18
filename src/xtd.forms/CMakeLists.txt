@@ -458,6 +458,7 @@ add_sources(
   src/xtd/forms/sizing_grip_control.h
   src/xtd/forms/split_container.cpp
   src/xtd/forms/splitter.cpp
+  src/xtd/forms/splitter_panel.cpp
   src/xtd/forms/status_bar.cpp
   src/xtd/forms/status_bar_panel.cpp
   src/xtd/forms/status_bar_panel_control.h
