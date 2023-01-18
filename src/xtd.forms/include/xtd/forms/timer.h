@@ -76,7 +76,7 @@ namespace xtd {
       virtual void interval_milliseconds(int32 interval);
       /// @}
       
-      /// @name Metthods
+      /// @name Methods
       
       /// @{
       /// @brief Stops the timer.

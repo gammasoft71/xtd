@@ -46,7 +46,7 @@ namespace xtd {
     static xtd::ustring system_language();
     /// @}
     
-    /// @name Metthods
+    /// @name Methods
     
     /// @{
     /// @brief Manually adds a translation for a specified key and language.
