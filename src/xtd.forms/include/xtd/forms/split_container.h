@@ -83,6 +83,24 @@ namespace xtd {
       virtual split_container& splitter_width(int32 splitter_width);
       /// @}
       
+      /// @name Methods
+      
+      /// @{
+      /// @brief A factory to create an xtd::forms::split_container with specified location, size, and name.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::split_container.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::split_container.
+      /// @param name The name of the xtd::forms::split_container.
+      /// @return New xtd::forms::split_container created.
+      static split_container create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @brief A factory to create an xtd::forms::split_container with specified parent, location ,size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::split_container.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::split_container.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::split_container.
+      /// @param name The name of the xtd::forms::split_container.
+      /// @return New xtd::forms::split_container created.
+      static split_container create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @}
+
     protected:
       /// @name Protected methods
       

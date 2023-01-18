@@ -84,6 +84,23 @@ split_container& split_container::splitter_width(int32 splitter_width) {
   return *this;
 }
 
+split_container split_container::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  split_container item;
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+split_container split_container::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  split_container item;
+  item.parent(parent);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 drawing::size split_container::default_size() const noexcept {
   return {150, 100};
 }
