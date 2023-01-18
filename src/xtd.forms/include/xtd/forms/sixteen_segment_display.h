@@ -42,7 +42,7 @@ namespace xtd {
       /// @name Constructors
       
       /// @{
-      /// @brief Initialize a new instance of nine_segment_display class.
+      /// @brief Initialize a new instance of sixteen_segment_display class.
       sixteen_segment_display();
       /// @}
       
@@ -59,6 +59,28 @@ namespace xtd {
       seven_segment_display& thickness(int32 value) override;
       /// @}
       
+      /// @name Methods
+      
+      /// @{
+      /// @brief A factory to create an xtd::forms::sixteen_segment_display with specified color, location, size, and name.
+      /// @param segments A dots_collection that represent all dots status.
+      /// @param show_back_segment true if background segments are shown; otherwise false
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::sixteen_segment_display.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::sixteen_segment_display.
+      /// @param name The name of the xtd::forms::sixteen_segment_display.
+      /// @return New xtd::forms::sixteen_segment_display created.
+      static sixteen_segment_display create(xtd::forms::segments segments = xtd::forms::segments::none, bool show_back_segment = true, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @brief A factory to create an xtd::forms::sixteen_segment_display with specified parent, color, location ,size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::sixteen_segment_display.
+      /// @param segments A xtd::forms::segments combination that represent sixteen_segment_display.
+      /// @param show_back_segment true if background segments are shown; otherwise false
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::sixteen_segment_display.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::sixteen_segment_display.
+      /// @param name The name of the xtd::forms::sixteen_segment_display.
+      /// @return New xtd::forms::sixteen_segment_display created.
+      static sixteen_segment_display create(const control& parent, xtd::forms::segments segments = xtd::forms::segments::none, bool show_back_segment = true, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @}
+
     protected:
       /// @name Protected methods
       

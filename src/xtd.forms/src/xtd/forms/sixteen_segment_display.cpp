@@ -22,6 +22,27 @@ seven_segment_display& sixteen_segment_display::thickness(int32 value) {
   return *this;
 }
 
+sixteen_segment_display sixteen_segment_display::create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  sixteen_segment_display item;
+  item.value(segments);
+  item.show_back_segment(show_back_segment);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+sixteen_segment_display sixteen_segment_display::create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  sixteen_segment_display item;
+  item.parent(parent);
+  item.value(segments);
+  item.show_back_segment(show_back_segment);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 void sixteen_segment_display::draw_back_digit(drawing::graphics& graphics) {
   fourteen_segment_display::draw_back_digit(graphics);
   draw_segment_a1(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
