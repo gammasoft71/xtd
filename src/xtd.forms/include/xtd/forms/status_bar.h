@@ -128,9 +128,26 @@ namespace xtd {
       /// @return Current status_bar instance.
       /// @remarks You can use this property to display a sizing grip to provide an indication to the user when a form is resizable. If the xtd::forms::form_border_style property of your xtd::forms::form is set to a border style that is not resizable, such as xtd::forms::form_border_style::fixed_3d or xtd::forms::form_border_style::fixed_dialog, you should set the xtd::forms::status_bar::sizing_grip property to false to prevent the user from thinking that the form can be resized.
       virtual status_bar& sizing_grip(bool value);
-      
       /// @}
       
+      /// @name Methods
+      
+      /// @{
+      /// @brief A factory to create an xtd::forms::status_bar with specified location, size, and name.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::status_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::status_bar.
+      /// @param name The name of the xtd::forms::status_bar.
+      /// @return New xtd::forms::status_bar created.
+      static status_bar create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @brief A factory to create an xtd::forms::status_bar with specified parent, location ,size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::status_bar.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::status_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::status_bar.
+      /// @param name The name of the xtd::forms::status_bar.
+      /// @return New xtd::forms::status_bar created.
+      static status_bar create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @}
+
       /// @name Events
       
       /// @{

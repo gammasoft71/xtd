@@ -135,6 +135,23 @@ status_bar& status_bar::sizing_grip(bool value) {
   return *this;
 }
 
+status_bar status_bar::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  status_bar item;
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+status_bar status_bar::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  status_bar item;
+  item.parent(parent);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 forms::create_params status_bar::create_params() const noexcept {
   forms::create_params create_params = control::create_params();
   
