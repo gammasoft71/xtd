@@ -92,7 +92,7 @@ namespace xtd {
       /// @param name The name of the xtd::forms::loading_indicator.
       /// @return New xtd::forms::loading_indicator created.
       static loading_indicator create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-
+      
       /// @brief Starts animation of the loading indicator.
       void start();
       /// @brief Stops animation of the loading indicator.
