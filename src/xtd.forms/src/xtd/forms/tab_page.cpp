@@ -63,6 +63,25 @@ control& tab_page::text(const ustring& text) {
   return *this;
 }
 
+tab_page tab_page::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  tab_page item;
+  item.text(text);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+tab_page tab_page::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  tab_page item;
+  item.parent(parent);
+  item.text(text);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 void tab_page::destroy_handle() {
   if (parent().has_value()) native::tab_control::delete_page(parent().value().get().handle(), handle());
   panel::destroy_handle();
