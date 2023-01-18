@@ -90,6 +90,27 @@ seven_segment_display& seven_segment_display::value(forms::segments value) {
   return *this;
 }
 
+seven_segment_display seven_segment_display::create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  seven_segment_display item;
+  item.value(segments);
+  item.show_back_segment(show_back_segment);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+seven_segment_display seven_segment_display::create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  seven_segment_display item;
+  item.parent(parent);
+  item.value(segments);
+  item.show_back_segment(show_back_segment);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 bool seven_segment_display::get_segments(forms::segments segment) const noexcept {
   return (data_->value & segment) == segment;
 }
