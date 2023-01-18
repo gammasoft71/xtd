@@ -62,6 +62,24 @@ namespace xtd {
       virtual splitter& splitter_style(xtd::forms::splitter_style splitter_style);
       /// @}
       
+      /// @name Methods
+      
+      /// @{
+      /// @brief A factory to create an xtd::forms::splitter with specified location, size, and name.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::splitter.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::splitter.
+      /// @param name The name of the xtd::forms::splitter.
+      /// @return New xtd::forms::splitter created.
+      static splitter create(dock_style dock = dock_style::left, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @brief A factory to create an xtd::forms::splitter with specified parent, location ,size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::splitter.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::splitter.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::splitter.
+      /// @param name The name of the xtd::forms::splitter.
+      /// @return New xtd::forms::splitter created.
+      static splitter create(const control& parent, dock_style dock = dock_style::left, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      /// @}
+
     protected:
       /// @name Protected properties
       

@@ -54,6 +54,25 @@ forms::cursor splitter::default_cursor() const noexcept {
   return dock() == dock_style::left || dock() == dock_style::right ? xtd::forms::cursors::vsplit() : xtd::forms::cursors::hsplit();
 }
 
+splitter splitter::create(dock_style dock, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  splitter item;
+  item.dock(dock);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
+splitter splitter::create(const control& parent, dock_style dock, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  splitter item;
+  item.parent(parent);
+  item.dock(dock);
+  if (location != drawing::point {-1, -1}) item.location(location);
+  if (size != drawing::size {-1, -1}) item.size(size);
+  item.name(name);
+  return item;
+}
+
 drawing::size splitter::default_size() const noexcept {
   return {3, 3};
 }
