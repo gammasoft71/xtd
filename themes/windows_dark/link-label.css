@@ -7,6 +7,22 @@ link-label {
   text-align: top left;
 }
 
+link-label::link {
+  color: system-color(link-text);
+}
+
+link-label::visited {
+  color: system-color(visited-text);
+}
+
+link-label::hover {
+  color: system-color(control-text);
+}
+
+link-label::active {
+  color: system-color(active-text);
+}
+
 link-label:disabled {  
   color: system-color(gray-text);
 }
