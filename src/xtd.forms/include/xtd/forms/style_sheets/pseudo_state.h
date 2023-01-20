@@ -35,6 +35,15 @@ namespace xtd {
         checked = 0b100000,
         /// @brief The item is mixed. For the three-state ittem.
         mixed = 0b1000000,
+        /// @brief The item is link text.
+        /// @remarks The link text color is the text color of an html link text.
+        link = 0b10000000,
+        /// @brief The item is visited text.
+        /// @remarks The visited text color is the text color of an html visited link text.
+        visited = 0b100000000,
+        /// @brief The item is ative text.
+        /// @remarks The active text color is the text color of an html link text when mouse down.
+        active = 0b1000000000,
       };
     }
   }
