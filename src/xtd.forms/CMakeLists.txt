@@ -321,6 +321,7 @@ add_sources(
   include/xtd/forms/style_sheets/length.h
   include/xtd/forms/style_sheets/lengths.h
   include/xtd/forms/style_sheets/length_unit.h
+  include/xtd/forms/style_sheets/link_label.h
   include/xtd/forms/style_sheets/margin.h
   include/xtd/forms/style_sheets/outline_color.h
   include/xtd/forms/style_sheets/outline_offset.h

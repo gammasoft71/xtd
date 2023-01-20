@@ -36,6 +36,7 @@ struct style_sheet::data {
   toggle_buttons_t flat_toggle_buttons;
   forms_t forms;
   labels_t labels;
+  link_labels_t link_labels;
   panels_t panels;
   buttons_t popup_buttons;
   status_bars_t status_bars;
@@ -115,6 +116,7 @@ style_sheet::style_sheet(const xtd::ustring& css_text, bool init_system) : data_
   flat_toggle_button_reader(reader);
   form_reader(reader);
   label_reader(reader);
+  link_label_reader(reader);
   panel_reader(reader);
   popup_button_reader(reader);
   popup_toggle_button_reader(reader);
@@ -231,6 +233,18 @@ xtd::forms::style_sheets::label style_sheet::label(pseudo_state state) const noe
 
 const style_sheet::labels_t& style_sheet::labels() const noexcept {
   return data_->labels;
+}
+
+xtd::forms::style_sheets::link_label style_sheet::link_label() const noexcept {
+  return link_label(pseudo_state::standard);
+}
+
+xtd::forms::style_sheets::link_label style_sheet::link_label(pseudo_state state) const noexcept {
+  return get_state_control<xtd::forms::style_sheets::label>(data_->link_labels, state);
+}
+
+const style_sheet::link_labels_t& style_sheet::link_labels() const noexcept {
+  return data_->link_labels;
 }
 
 xtd::forms::style_sheets::panel style_sheet::panel() const noexcept {
@@ -897,6 +911,17 @@ void style_sheet::label_reader(xtd::web::css::css_reader& reader) noexcept {
     if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->labels[pseudo_state::standard] = xtd::forms::style_sheets::label();
     if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) data_->labels[pseudo_state::standard | state.second] = data_->labels[pseudo_state::standard];
     if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, data_->labels[pseudo_state::standard | state.second]);
+  }
+}
+
+void style_sheet::link_label_reader(xtd::web::css::css_reader& reader) noexcept {
+  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  for (auto state : states) {
+    selector_map::const_iterator selectors_iterator = reader.selectors().find("link-label" + state.first);
+    if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
+    if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->link_labels[pseudo_state::standard] = xtd::forms::style_sheets::link_label();
+    if (selectors_iterator == reader.selectors().end() || state.second != pseudo_state::standard) data_->link_labels[pseudo_state::standard | state.second] = data_->link_labels[pseudo_state::standard];
+    if (selectors_iterator != reader.selectors().end()) fill_control(selectors_iterator, data_->link_labels[pseudo_state::standard | state.second]);
   }
 }
 
