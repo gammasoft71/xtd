@@ -7,6 +7,7 @@ system-colors {
   active-border: #2C2C2C;
   active-caption: black;
   active-caption-text: white;
+  active-text: #D03E3D;
   app-workspace: #191919;
   button-face: #353535;
   button-highlight: #00A0FA;
@@ -29,6 +30,7 @@ system-colors {
   inactive-caption-text: #494949;
   info: #2B2B2B;
   info-text: white;
+  link-text: #1E90FF;
   menu: #2B2B2B;
   menu-bar: black;
   menu-highlight: #3399FF;
@@ -36,6 +38,7 @@ system-colors {
   scroll-bar: #171717;
   text-box: #121212;
   text-box-text: white;
+  visited-text: #87CEEB;
   window: #202020;
   window-frame: #333333;
   window-text: white;

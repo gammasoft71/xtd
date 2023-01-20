@@ -7,6 +7,7 @@ system-colors {
   active-border: white;
   active-caption: #9A9A9A;
   active-caption-text: rgba(0, 0, 0, 0.847);
+  active-text: red;
   app-workspace: #E7E7E7;
   button-face: rgba(255, 255, 255, 0.706);
   button-highlight: white;
@@ -29,6 +30,7 @@ system-colors {
   inactive-caption-text: rgba(0, 0, 0, 0.847);
   info: #E7E7E7;
   info-text: rgba(0, 0, 0, 0.847);
+  link-text: blue;
   menu: #9A9A9A;
   menu-bar: #9A9A9A;
   menu-highlight: #345DF1;
@@ -36,6 +38,7 @@ system-colors {
   scroll-bar: #9A9A9A;
   text-box: white;
   text-box-text: black;
+  visited-text: purple;
   window: white;
   window-frame: #9A9A9A;
   window-text: rgba(0, 0, 0, 0.847);

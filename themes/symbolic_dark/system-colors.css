@@ -7,6 +7,7 @@ system-colors {
   active-border: #31363B;
   active-caption: #31363B;
   active-caption-text: #EFF0F1;
+  active-text: #D03E3D;
   app-workspace: #232629;
   button-face: #31363B;
   button-highlight: #31363B;
@@ -29,6 +30,7 @@ system-colors {
   inactive-caption-text: #7F8C8D;
   info: #31363B;
   info-text: #EFF0F1;
+  link-text: #1E90FF;
   menu: #31363B;
   menu-bar: #31363B;
   menu-highlight: #3DAEE9;
@@ -36,6 +38,7 @@ system-colors {
   scroll-bar: #31363B;
   text-box: #232629;
   text-box-text: #EFF0F1;
+  visited-text: #87CEEB;
   window: #232629;
   window-frame: #31363B;
   window-text: #EFF0F1;
