@@ -75,10 +75,9 @@ xtd::drawing::color link_label::active_link_color() const noexcept {
 }
 
 link_label& link_label::active_link_color(const xtd::drawing::color& color) {
-  if (data_->active_link_color != color) {
-    data_->active_link_color = color;
-    invalidate();
-  }
+  if (data_->active_link_color == color) return *this;
+  data_->active_link_color = color;
+  invalidate();
   return *this;
 }
 
@@ -87,10 +86,9 @@ xtd::drawing::color link_label::disabled_link_color() const noexcept {
 }
 
 link_label& link_label::disabled_link_color(const xtd::drawing::color& color) {
-  if (data_->active_link_color != color) {
-    data_->disabled_link_color = color;
-    invalidate();
-  }
+  if (data_->active_link_color == color) return *this;
+  data_->disabled_link_color = color;
+  invalidate();
   return *this;
 }
 
@@ -99,10 +97,9 @@ xtd::forms::link_area link_label::link_area() const noexcept {
 }
 
 link_label& link_label::link_area(xtd::forms::link_area value) {
-  if (data_->link_area != value) {
-    data_->link_area = value;
-    invalidate();
-  }
+  if (data_->link_area == value) return *this;
+  data_->link_area = value;
+  invalidate();
   return *this;
 }
 
@@ -111,10 +108,9 @@ xtd::forms::link_behavior link_label::link_behavior() const noexcept {
 }
 
 link_label& link_label::link_behavior(xtd::forms::link_behavior value) {
-  if (data_->link_behavior != value) {
-    data_->link_behavior = value;
-    invalidate();
-  }
+  if (data_->link_behavior == value) return *this;
+  data_->link_behavior = value;
+  invalidate();
   return *this;
 }
 
@@ -123,10 +119,9 @@ xtd::drawing::color link_label::link_color() const noexcept {
 }
 
 link_label& link_label::link_color(const xtd::drawing::color& color) {
-  if (data_->link_color != color) {
-    data_->link_color = color;
-    invalidate();
-  }
+  if (data_->link_color == color) return *this;
+  data_->link_color = color;
+  invalidate();
   return *this;
 }
 
@@ -152,10 +147,9 @@ xtd::drawing::color link_label::visited_link_color() const noexcept {
 }
 
 link_label& link_label::visited_link_color(const xtd::drawing::color& color) {
-  if (data_->visited_link_color != color) {
-    data_->visited_link_color = color;
-    invalidate();
-  }
+  if (data_->visited_link_color == color) return *this;
+  data_->visited_link_color = color;
+  invalidate();
   return *this;
 }
 
