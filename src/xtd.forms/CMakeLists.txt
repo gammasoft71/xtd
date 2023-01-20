@@ -347,6 +347,7 @@ add_sources(
   include/xtd/forms/visual_styles/control_state.h
   include/xtd/forms/visual_styles/form_state.h
   include/xtd/forms/visual_styles/label_state.h
+  include/xtd/forms/visual_styles/link_label_state.h
   include/xtd/forms/visual_styles/push_button_state.h
   include/xtd/forms/visual_styles/radio_button_state.h
   include/xtd/forms/visual_styles/toggle_button_state.h
