@@ -15,6 +15,7 @@
 #include "control.h"
 #include "form.h"
 #include "label.h"
+#include "link_label.h"
 #include "panel.h"
 #include "pseudo_state.h"
 #include "status_bar.h"
@@ -71,6 +72,8 @@ namespace xtd {
         using forms_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::form>;
         /// @brief Represents a style sheet labels collection.
         using labels_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::label>;
+        /// @brief Represents a style sheet link_label collection.
+        using link_labels_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::link_label>;
         /// @brief Represents a style sheet panels collection.
         using panels_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::panel>;
         /// @brief Represents a style_sheets collection.
@@ -196,6 +199,17 @@ namespace xtd {
         /// @return The style sheet labels collection.
         const labels_t& labels() const noexcept;
         
+        /// @brief Gets the style sheet link_label for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        /// @return A style_sheet link_label for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
+        xtd::forms::style_sheets::link_label link_label() const noexcept;
+        /// @brief Gets the style sheet link_label for specified pseudo state.
+        /// @return A style_sheet link_label.
+        /// @remarks if the pseudo state does not exists, the value for xtd::forms::style_sheets::pseudo_state::standard pseudo state is getted.
+        xtd::forms::style_sheets::link_label link_label(xtd::forms::style_sheets::pseudo_state state) const noexcept;
+        /// @brief Gets the style sheet link_label collection of this instance.
+        /// @return The style sheet link_label collection.
+        const link_labels_t& link_labels() const noexcept;
+
         /// @brief Gets the style sheet panel for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         /// @return A style_sheet panel for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         xtd::forms::style_sheets::panel panel() const noexcept;
@@ -443,6 +457,7 @@ namespace xtd {
         void flat_toggle_button_reader(xtd::web::css::css_reader& reader) noexcept;
         void form_reader(xtd::web::css::css_reader& reader) noexcept;
         void label_reader(xtd::web::css::css_reader& reader) noexcept;
+        void link_label_reader(xtd::web::css::css_reader& reader) noexcept;
         void panel_reader(xtd::web::css::css_reader& reader) noexcept;
         void popup_button_reader(xtd::web::css::css_reader& reader) noexcept;
         void popup_toggle_button_reader(xtd::web::css::css_reader& reader) noexcept;
