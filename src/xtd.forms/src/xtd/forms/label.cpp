@@ -47,11 +47,10 @@ bool label::auto_ellipsis() const noexcept {
 }
 
 label& label::auto_ellipsis(bool value) {
-  if (data_->auto_ellipsis != value) {
-    data_->auto_ellipsis = value;
-    if (flat_style() == forms::flat_style::system) post_recreate_handle();
-    else invalidate();
-  }
+  if (data_->auto_ellipsis == value) return *this;
+  data_->auto_ellipsis = value;
+  if (flat_style() == forms::flat_style::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
@@ -60,10 +59,9 @@ forms::border_sides label::border_sides() const noexcept {
 }
 
 label& label::border_sides(forms::border_sides border_sides) {
-  if (data_->border_sides != border_sides) {
-    data_->border_sides = border_sides;
-    if (control_appearance() == forms::control_appearance::standard) invalidate();
-  }
+  if (data_->border_sides == border_sides) return *this;
+  data_->border_sides = border_sides;
+  if (control_appearance() == forms::control_appearance::standard) invalidate();
   return *this;
 }
 
@@ -72,29 +70,24 @@ xtd::forms::border_style label::border_style() const noexcept {
 }
 
 label& label::border_style(xtd::forms::border_style border_style) {
-  if (data_->border_style != border_style) {
-    data_->border_style = border_style;
-    if (flat_style() == forms::flat_style::system) post_recreate_handle();
-    else invalidate();
-  }
+  if (data_->border_style == border_style) return *this;
+  data_->border_style = border_style;
+  if (flat_style() == forms::flat_style::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
 label& label::border_style(std::nullptr_t) {
-  if (data_->border_style) {
-    data_->border_style.reset();
-    if (flat_style() == forms::flat_style::system) post_recreate_handle();
-    else invalidate();
-  }
+  if (!data_->border_style) return *this;
+  data_->border_style.reset();
+  if (flat_style() == forms::flat_style::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
 control& label::control_appearance(forms::control_appearance value) {
   control::control_appearance(value);
-  if (value == forms::control_appearance::system && data_->flat_style != xtd::forms::flat_style::system)
-    flat_style(xtd::forms::flat_style::system);
-  else if (value == forms::control_appearance::standard && data_->flat_style == xtd::forms::flat_style::system)
-    flat_style(xtd::forms::flat_style::standard);
+  flat_style(value == forms::control_appearance::system ? xtd::forms::flat_style::system : xtd::forms::flat_style::standard);
   return *this;
 }
 
@@ -103,11 +96,10 @@ xtd::forms::flat_style label::flat_style() const noexcept {
 }
 
 label& label::flat_style(xtd::forms::flat_style flat_style) {
-  if (data_->flat_style != flat_style) {
-    data_->flat_style = flat_style;
-    control_appearance(data_->flat_style == xtd::forms::flat_style::system ? forms::control_appearance::system : forms::control_appearance::standard);
-    recreate_handle();
-  }
+  if (data_->flat_style == flat_style) return *this;
+  data_->flat_style = flat_style;
+  control_appearance(data_->flat_style == xtd::forms::flat_style::system ? forms::control_appearance::system : forms::control_appearance::standard);
+  recreate_handle();
   return *this;
 }
 
@@ -116,13 +108,12 @@ const drawing::image& label::image() const noexcept {
 }
 
 label& label::image(const drawing::image& value) {
-  if (data_->image != value) {
-    data_->image = value;
-    data_->image_list = forms::image_list();
-    data_->image_index = -1;
-    if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
-    on_image_changed(xtd::event_args::empty);
-  }
+  if (data_->image == value) return *this;
+  data_->image = value;
+  data_->image_list = forms::image_list();
+  data_->image_index = -1;
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
+  on_image_changed(xtd::event_args::empty);
   return *this;
 }
 
@@ -131,10 +122,9 @@ xtd::forms::content_alignment label::image_align() const noexcept {
 }
 
 label& label::image_align(content_alignment value) {
-  if (data_->image_align != value) {
-    data_->image_align = value;
-    if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
-  }
+  if (data_->image_align == value) return *this;
+  data_->image_align = value;
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
   return *this;
 }
 
@@ -143,12 +133,11 @@ int32 label::image_index() const noexcept {
 }
 
 label& label::image_index(int32 value) {
-  if (data_->image_index != value) {
-    if (value < -1 || static_cast<size_t>(value) >= data_->image_list.images().size()) throw argument_out_of_range_exception(csf_);
-    data_->image_index = value;
-    if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
-    if (value != -1) data_->image = xtd::drawing::image::empty;
-  }
+  if (data_->image_index == value) return *this;
+  if (value < -1 || static_cast<size_t>(value) >= data_->image_list.images().size()) throw argument_out_of_range_exception(csf_);
+  data_->image_index = value;
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
+  if (value != -1) data_->image = xtd::drawing::image::empty;
   return *this;
 }
 
@@ -161,11 +150,10 @@ forms::image_list& label::image_list() noexcept {
 }
 
 label& label::image_list(const forms::image_list& value) {
-  if (data_->image_list != value) {
-    data_->image_list = value;
-    data_->image = drawing::image::empty;
-    post_recreate_handle();
-  }
+  if (data_->image_list == value) return *this;
+  data_->image_list = value;
+  data_->image = drawing::image::empty;
+  post_recreate_handle();
   return *this;
 }
 
@@ -174,10 +162,9 @@ bool label::shadow() const noexcept {
 }
 
 label& label::shadow(bool value) {
-  if (data_->shadow != value) {
-    data_->shadow = value;
-    if (control_appearance() == forms::control_appearance::standard) invalidate();
-  }
+  if (data_->shadow == value) return *this;
+  data_->shadow = value;
+  if (control_appearance() == forms::control_appearance::standard) invalidate();
   return *this;
 }
 
@@ -186,11 +173,10 @@ xtd::forms::content_alignment label::text_align() const noexcept {
 }
 
 label& label::text_align(content_alignment text_align) {
-  if (data_->text_align != text_align) {
-    data_->text_align = text_align;
-    post_recreate_handle();
-    on_text_align_changed(event_args::empty);
-  }
+  if (data_->text_align == text_align) return *this;
+  data_->text_align = text_align;
+  post_recreate_handle();
+  on_text_align_changed(event_args::empty);
   return *this;
 }
 
@@ -258,10 +244,9 @@ void label::on_image_changed(const xtd::event_args& e) {
 
 void label::on_paint(paint_event_args& e) {
   control::on_paint(e);
-  if (data_->flat_style != xtd::forms::flat_style::system) {
-    auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-    label_renderer::draw_label(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align(), data_->border_style, data_->border_sides, shadow(), auto_ellipsis());
-  }
+  if (data_->flat_style == xtd::forms::flat_style::system) return;
+  auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
+  label_renderer::draw_label(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align(), data_->border_style, data_->border_sides, shadow(), auto_ellipsis());
 }
 
 void label::on_text_align_changed(const xtd::event_args& e) {
