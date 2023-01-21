@@ -43,21 +43,21 @@ public:
   }
   
 private:
-  auto generate_assert()->void {
+  void generate_assert() {
     auto index = 0;
     assert_(index > 0, "Index must be greather than 0");
   }
   
-  auto generate_debug_cassert()->void {
+  void generate_debug_cassert() {
     auto index = 0;
     debug::cassert_(index > 0, "Index must be greather than 0");
   }
   
-  auto generate_debug_break()->void {
+  void generate_debug_break() {
     debug_break_();
   }
   
-  auto generate_debugger_debug_break()->void {
+  void generate_debugger_debug_break() {
     debugger::debug_break();
   }
   
