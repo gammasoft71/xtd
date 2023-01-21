@@ -16,7 +16,7 @@ public:
     };
   }
   
-  static void main() {
+  static auto main() {
     debug_form debug_form;
     xtd::forms::application::run(form_main());
   }

@@ -5,7 +5,7 @@ using namespace xtd;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     auto dat = date_time(2015, 12, 31);
     for (int ctr = 0; ctr <= 15; ctr++)
       console::write_line(dat.add_months(ctr).to_string("d"));

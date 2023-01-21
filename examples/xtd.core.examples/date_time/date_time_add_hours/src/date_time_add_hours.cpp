@@ -5,7 +5,7 @@ using namespace xtd;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     vector<double> hours = {.08333, .16667, .25, .33333, .5, .66667, 1, 2, 29, 30, 31, 90, 365};
     date_time date_value(2009, 3, 1, 12, 0, 0);
     

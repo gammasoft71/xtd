@@ -57,7 +57,7 @@ namespace tutorial {
       text("communicate");
     }
     
-    static void main() {
+    static auto main() {
       xtd::forms::application::run(communicate());
     }
     

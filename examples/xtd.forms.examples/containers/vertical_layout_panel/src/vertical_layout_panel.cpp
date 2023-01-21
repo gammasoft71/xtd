@@ -24,7 +24,7 @@ public:
     light_yellow_panel.back_color(colors::light_yellow());
   }
   
-  static void main() {
+  static auto main() {
     xtd::forms::application::run(form_main());
   }
   

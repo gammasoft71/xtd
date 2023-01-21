@@ -6,7 +6,7 @@ namespace examples {
   class program {
   public:
     // The main entry point for the application.
-    static void main() {
+    static auto main() {
       ustring str;
       ustring nl = environment::new_line();
       //

@@ -5,7 +5,7 @@ using namespace xtd::io;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     ustring path = path::get_temp_file_name();
     file_info fi1(path);
     

@@ -22,7 +22,7 @@ namespace examples {
     
   public:
     // The main entry point for the application.
-    static void main() {
+    static auto main() {
       vector<my_thread> my_threads(num_threads);
       xtd::random rnd;
       

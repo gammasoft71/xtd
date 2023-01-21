@@ -7,7 +7,7 @@ namespace examples {
   class program {
   public:
     // The main entry point for the application.
-    static void main(const vector<ustring>& args) {
+    static auto main(const vector<ustring>& args) {
       // Save colors so they can be restored when use finishes input.
       console_color dft_fore_color = console::foreground_color();
       console_color dft_back_color = console::background_color();

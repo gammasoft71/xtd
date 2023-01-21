@@ -5,7 +5,7 @@ using namespace xtd;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     vector<date_time> dates = {date_time::now(), date_time(2013, 9, 14, 9, 28, 0), date_time(2011, 5, 28, 10, 35, 0), date_time(1979, 12, 25, 14, 30, 0)};
     for (auto date : dates) {
       console::write_line("Day: {0:d} Time: {1:g}", date.date(), date.time_of_day());

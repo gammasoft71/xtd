@@ -5,7 +5,7 @@ using namespace xtd;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     ustring date_format = "{0:d}/{0:t}.{0:c}";
     date_time date1(2010, 9, 8, 16, 0, 0);
     console::write_line("Original date: {0} ({1:N0} ticks)\n", ustring::format(date_format, date1), date1.ticks().count());

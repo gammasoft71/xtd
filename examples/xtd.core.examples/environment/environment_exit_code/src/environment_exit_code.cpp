@@ -7,7 +7,7 @@ namespace examples {
   class program {
   public:
     // The main entry point for the application.
-    static void main() {
+    static auto main() {
       vector<ustring> args = environment::get_command_line_args();
       if (args.size() == 1)
         environment::exit_code(ECANCELED);

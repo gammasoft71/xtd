@@ -6,7 +6,7 @@ namespace examples {
   class program {
   public:
     // The main entry point for the application.
-    static void main() {
+    static auto main() {
       // Get the operating system version.
       operating_system os = environment::os_version();
       version ver = os.version();

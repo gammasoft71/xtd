@@ -13,7 +13,7 @@ public:
   //
   // The main entry point for the application.
   //
-  static void main() {
+  static auto main() {
     // Change Console properties to make it obvious that
     // the application is starting.
     console::clear();

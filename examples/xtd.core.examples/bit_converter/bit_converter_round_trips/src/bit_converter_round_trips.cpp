@@ -7,7 +7,7 @@ namespace examples {
   class program {
   public:
     // The main entry point for the application.
-    static void main() {
+    static auto main() {
       int value = -16;
       vector<unsigned char> bytes = bit_converter::get_bytes(value);
       

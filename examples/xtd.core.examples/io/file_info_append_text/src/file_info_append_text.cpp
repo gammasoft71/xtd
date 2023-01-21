@@ -6,7 +6,7 @@ using namespace xtd::io;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     file_info fi(path::combine(path::get_temp_path(), "MyTest.txt"));
     
     // This text is added only once to the file.

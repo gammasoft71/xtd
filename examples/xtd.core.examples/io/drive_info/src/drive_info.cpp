@@ -6,7 +6,7 @@ using namespace xtd::io;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     vector<drive_info> all_drives = drive_info::get_drives();
     
     for (drive_info d : all_drives) {

@@ -5,7 +5,7 @@ using namespace xtd;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     date_time local_date = date_time::now();
     vector<ustring> locale_names = {"en_US", "en_GB", "fr_FR", "de_DE", "ru_RU"};
     

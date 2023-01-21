@@ -6,7 +6,7 @@ namespace examples {
   class program {
   public:
     // The main entry point for the application.
-    static void main() {
+    static auto main() {
       console::write_line(
         "This example of the bit_converter::endianness field "
         "generates \nthe following output when run on "

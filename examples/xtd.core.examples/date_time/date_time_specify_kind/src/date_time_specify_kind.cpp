@@ -4,7 +4,7 @@ using namespace xtd;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     // Get the date and time for the current moment, adjusted
     // to the local time zone.
     

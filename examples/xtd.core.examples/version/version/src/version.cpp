@@ -6,7 +6,7 @@ namespace examples {
   class program {
   public:
     // The main entry point for the application.
-    static void main() {
+    static auto main() {
       ustring fmt_std = "Standard version:\n"
         "  major.minor.build.revision = {0}.{1}.{2}.{3}";
       ustring fmt_int = "Interim version:\n"

@@ -9,7 +9,7 @@ namespace game_of_life {
   class form_game_of_life : public xtd::forms::form {
     using figure_delegate = xtd::delegate<void()>;
   public:
-    static void main() {
+    static auto main() {
       xtd::forms::application::run(game_of_life::form_game_of_life());
     }
     

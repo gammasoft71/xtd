@@ -106,7 +106,7 @@ using namespace xtd::windows::forms;
 
 class form_main : public form {
 public:
-  static void main() {
+  static auto main() {
     application::run(form_main());
   }
   

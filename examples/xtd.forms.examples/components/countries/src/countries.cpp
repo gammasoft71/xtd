@@ -8,7 +8,7 @@ using namespace xtd::forms;
 namespace examples {
   class main_form : public form {
   public:
-    static void main() {
+    static auto main() {
       //locale::global(locale("fr_FR.utf-8"));
       application::run(main_form());
     }

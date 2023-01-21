@@ -5,7 +5,7 @@ using namespace xtd;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     int window = 10;
     int freq = 60 * 60 * 2; // 2 hours;
     

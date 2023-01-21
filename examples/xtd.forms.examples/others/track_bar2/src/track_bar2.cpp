@@ -31,7 +31,7 @@ public:
     };
   }
   
-  static void main() {
+  static auto main() {
     application::run(form1 {});
   }
   

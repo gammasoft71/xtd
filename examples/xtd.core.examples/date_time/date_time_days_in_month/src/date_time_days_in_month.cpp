@@ -2,7 +2,7 @@
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     unsigned int days_in_july = xtd::date_time::days_in_month(2001, xtd::month_of_year::july);
     xtd::console::write_line(days_in_july);
     

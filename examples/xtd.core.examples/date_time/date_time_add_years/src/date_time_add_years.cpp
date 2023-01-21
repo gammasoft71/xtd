@@ -4,7 +4,7 @@ using namespace xtd;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     date_time base_date(2000, 2, 29);
     console::write_line("     Base Date:        {0:d}\n", base_date);
     

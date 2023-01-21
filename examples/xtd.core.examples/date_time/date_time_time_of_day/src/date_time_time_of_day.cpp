@@ -5,7 +5,7 @@ using namespace xtd;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     // Get the current date.
     date_time this_day = date_time::today();
     // Display the date in the default (general) format.
