@@ -29,7 +29,7 @@ key "(Unknown exception){0}"
 value "(Exception inconnue){0}"
 
 key "{0} Libraries {0}{1}"
-value "{0} LLibrairies {0}{1}"
+value "{0} Librairies {0}{1}"
 
 key "    Name: {}.{}{}"
 value "    Nom: {}.{}{}"
