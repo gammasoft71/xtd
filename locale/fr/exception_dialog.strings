@@ -62,7 +62,7 @@ key "    64 bits : {}{}"
 value "    64 bits : {}{}"
 
 key "{0} Language {0}{1}"
-value "{0} Language {0}{1}"
+value "{0} Langage {0}{1}"
 
 key "    Version : {}{}"
 value "    Version : {}{}"
