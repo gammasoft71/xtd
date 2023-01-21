@@ -23,7 +23,7 @@ private:
   inline static const ustring FILE_NAME = "test.data";
   
 public:
-  static void main() {
+  static auto main() {
     if (file::exists(FILE_NAME)) {
       console::write_line("{} already exists!", FILE_NAME);
       return;

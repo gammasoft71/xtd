@@ -198,7 +198,7 @@ using del = delegate<void(int i, double j)>;
 
 class math_class {
 public:
-  static void main() {
+  static auto main() {
     math_class m;
     
     // Delegate instantiation using "MultiplyNumbers"
@@ -250,7 +250,7 @@ public:
 
 class test_sample_class {
 public:
-  static void main() {
+  static auto main() {
     sample_class sc;
     
     // Map the delegate to the instance method:

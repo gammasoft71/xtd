@@ -21,7 +21,7 @@ using namespace xtd::io;
 class program {
 private:
 public:
-  static void main() {
+  static auto main() {
     using_ (std::ofstream os = file::append_text("log.txt")) {
       using_ (stream_writer w(os)) {
         log("Test1", w);

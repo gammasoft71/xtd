@@ -117,7 +117,7 @@ The method subscribes to the ```threshold_reached``` event.
 
 ```c++
 class program {
-  static void main() {
+  static auto main() {
     counter c;
     c.threshold_reached += c_threshold_reached;
 

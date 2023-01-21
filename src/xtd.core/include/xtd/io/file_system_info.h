@@ -43,7 +43,7 @@ namespace xtd {
     ///
     /// class program {
     /// public:
-    ///   static void main() {
+    ///   static auto main() {
     ///     //  Loop through all the immediate subdirectories of C.
     ///     for (ustring entry : directory::get_directories("C:\\")) {
     ///       display_file_system_info_attributes(directory_info(entry));
@@ -299,7 +299,7 @@ namespace xtd {
       ///
       /// class touch {
       /// public:
-      ///   static void main(const std::vector<ustring>& args) {
+      ///   static auto main(const std::vector<ustring>& args) {
       ///     // Make sure a filename was provided.
       ///     if (args.size() > 0) {
       ///       // Verify that the provided filename exists.
@@ -354,7 +354,7 @@ namespace xtd {
       ///
       /// class touch {
       /// public:
-      ///   static void main(const std::vector<ustring>& args) {
+      ///   static auto main(const std::vector<ustring>& args) {
       ///     // Make sure a filename was provided.
       ///     if (args.size() > 0) {
       ///       // Verify that the provided filename exists.
@@ -441,7 +441,7 @@ namespace xtd {
       ///
       /// class touch {
       /// public:
-      ///   static void main(const std::vector<ustring>& args) {
+      ///   static auto main(const std::vector<ustring>& args) {
       ///     // Make sure a filename was provided.
       ///     if (args.size() > 0) {
       ///       // Verify that the provided filename exists.
@@ -496,7 +496,7 @@ namespace xtd {
       ///
       /// class touch {
       /// public:
-      ///   static void main(const std::vector<ustring>& args) {
+      ///   static auto main(const std::vector<ustring>& args) {
       ///     // Make sure a filename was provided.
       ///     if (args.size() > 0) {
       ///       // Verify that the provided filename exists.

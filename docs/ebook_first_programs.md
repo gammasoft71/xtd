@@ -19,7 +19,7 @@ namespace tutorial {
       start_position(xtd::forms::form_start_position::center_screen);
     }
 
-    static void main() {
+    static auto main() {
       xtd::forms::application::run(simple());
     }
   };
@@ -82,7 +82,7 @@ namespace tutorial {
       icon(xtd::drawing::system_icons::gammasoft());
     }
 
-    static void main() {
+    static auto main() {
       xtd::forms::application::run(form_icon());
     }
   };
@@ -126,7 +126,7 @@ namespace tutorial {
       button_quit.click += xtd::event_handler<xtd::forms::control&>(*this, &form_button::on_quit);
     }
 
-    static void main() {
+    static auto main() {
       xtd::forms::application::run(form_button());
     }
     
@@ -243,7 +243,7 @@ namespace tutorial {
       text("communicate");
     }
 
-    static void main() {
+    static auto main() {
       xtd::forms::application::run(communicate());
     }
     

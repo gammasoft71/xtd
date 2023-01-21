@@ -13,7 +13,7 @@ using namespace xtd::io;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     ustring file_name = "textfile.txt";
     
     stream_writer sw(file_name);

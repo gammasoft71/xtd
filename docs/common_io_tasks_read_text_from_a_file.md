@@ -20,7 +20,7 @@ using namespace xtd::io;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     try {
       // Open the text file using a stream reader.
       using_ (stream_reader sr("test_file.txt")) {

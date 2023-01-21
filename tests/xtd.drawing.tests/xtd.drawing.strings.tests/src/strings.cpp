@@ -8,7 +8,7 @@ using namespace xtd::forms;
 
 class strings_form : public form {
 public:
-  static void main() {
+  static auto main() {
     application::run(strings_form());
   }
   

@@ -227,7 +227,7 @@ private:
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     publisher pub;
     subscriber sub1("sub1", pub);
     subscriber sub2("sub2", pub);

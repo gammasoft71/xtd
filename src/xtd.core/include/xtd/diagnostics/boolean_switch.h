@@ -29,7 +29,7 @@ namespace xtd {
     ///   inline static xtd::diagnostics::boolean_switch boolean_switch("my_switch", "This is my switch");
     ///
     /// public:
-    ///   static void main() {
+    ///   static auto main() {
     ///     //...
     ///     console.write_line("Boolean switch {0} configured as {1}", boolean_switch.display_name(), boolean_switch.enabled());
     ///     if (boolean_switch.enabled()) {
@@ -66,7 +66,7 @@ namespace xtd {
       ///       console::write_line("Error happened at {}", location);
       ///   }
       ///
-      ///   static void main(const std::vector<xtd::ustring>& args) {
+      ///   static auto main(const std::vector<xtd::ustring>& args) {
       ///     //Run the method which writes an error message specifying the location of the error.
       ///     my_method("in Main");
       ///   }

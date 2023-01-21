@@ -145,7 +145,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     ustring file_name = R"(c:\test.xml)";
       ///
       ///     // Get the read-only value for a file.
@@ -214,7 +214,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     ustring file_name = R"(c:\test.xml)";
       ///
       ///     // Get the read-only value for a file.
@@ -379,7 +379,7 @@ namespace xtd {
       ///
       /// class program {
       /// /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     file_info fi("temp.txt");
       ///      // Create a writer, ready to add entries to the file.
       ///     stream_writer sw = fi.append_text();
@@ -426,7 +426,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     ustring path = R"(c:\SoureFile.txt)";
       ///     ustring path2 = R"(c:\NewFile.txt)";
       ///     file_info fi1(path);
@@ -468,7 +468,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     try {
       ///       // Create a reference to a file, which might or might not exist.
       ///       // If it does not exist, it is not yet created.
@@ -538,7 +538,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     ustring path = R"(c:\SoureFile.txt)";
       ///     ustring path2 = R"(c:\NewFile.txt)";
       ///     file_info fi1(path);
@@ -580,7 +580,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     // Create a reference to a file, which might or might not exist.
       ///     // If it does not exist, it is not yet created.
       ///     file_info fi("temp.txt");
@@ -642,7 +642,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     // Create a reference to a file.
       ///     file_info fi("temp.txt");
       ///     // Actually create the file.
@@ -767,7 +767,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     ustring path = R"(c:\MyTest.txt)";
       ///     file_info fi1(path);
       ///
@@ -810,7 +810,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     // Create a reference to a file.
       ///     file_info fi("temp.txt");
       ///     // Actually create the file.

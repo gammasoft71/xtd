@@ -73,7 +73,7 @@ namespace xtd {
   ///
   /// class example {
   /// public:
-  ///   static void main() {
+  ///   static auto main() {
   ///     version v1(1, 1);
   ///     version v1a("1.1.0");
   ///     show_relationship(v1, v1a);

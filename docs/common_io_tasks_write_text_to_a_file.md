@@ -26,7 +26,7 @@ using namespace xtd::io;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     // Create a string array with the lines of text
     std::vector<ustring> lines = { "First line", "Second line", "Third line" };
     
@@ -61,7 +61,7 @@ using namespace xtd::io;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     // Set a variable to the Documents path.
     ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
     
@@ -90,7 +90,7 @@ using namespace xtd::io;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     // Create a string with a line of text.
     ustring text = "First line" + environment::new_line();
     

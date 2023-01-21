@@ -11,7 +11,7 @@ using namespace xtd;
 namespace set_path {
   class program final static_ {
   public:
-    static int main(const vector<ustring>& args) {
+    static auto main(const vector<ustring>& args) {
       ustring folder;
       bool show_version = false;
       bool show_help = false;

@@ -38,7 +38,7 @@ namespace xtd {
     ///
     /// class program {
     /// public:
-    ///   static void main() {
+    ///   static auto main() {
     ///     // Specify the directories you want to manipulate.
     ///     directory_info di("c:\\MyDir");
     ///     try {
@@ -98,7 +98,7 @@ namespace xtd {
     ///     }
     ///   }
     ///
-    ///   static void main() {
+    ///   static auto main() {
     ///     ustring source_directory = "c:\\source_directory";
     ///     ustring target_directory = "c:\\target_directory";
     ///
@@ -255,7 +255,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     // Specify the directories you want to manipulate.
       ///     directory_info di1(R"(c:\MyDir)");
       ///     directory_info di2(R"(c:\MyDir\temp)");
@@ -320,7 +320,7 @@ namespace xtd {
       ///       copy_directory(source_directories[j].full_name(), target.full_name() + "\\" + source_directories[j].name());
       ///   }
       ///
-      ///   static void main() {
+      ///   static auto main() {
       ///     // Specify the directories you want to manipulate.
       ///     copy_directory("D:\\Tools","D:\\NewTools");
       ///   }
@@ -343,7 +343,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     directory_info dir(".");
       ///     ustring dir_name = dir.name();
       ///     console::write_line("directory_info name is {0}.", dir_name);
@@ -370,7 +370,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     // Make a reference to a directory.
       ///     directory_info di("TempDir");
       ///
@@ -411,7 +411,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     directory_info di1(R"(\\tempshare\tempdir)");
       ///     directory_info di2("tempdir");
       ///     directory_info di3(R"(x:\tempdir)");
@@ -453,7 +453,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     // Specify the directories you want to manipulate.
       ///     directory_info di("c:\\MyDir");
       ///     try {
@@ -504,7 +504,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     // Create a reference to a directory.
       ///     directory_info di("TempDir");
       ///
@@ -546,7 +546,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     // Set a variable to the Documents path.
       ///     ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
       ///
@@ -608,7 +608,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     // Create a directory_info of the directory of the files to enumerate.
       ///     directory_info dir_info(R"(\\archives1\library\)");
       ///
@@ -634,7 +634,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     directory_info di(R"(C:\ExampleDir)");
       ///     console::write_line("No search pattern returns:");
       ///     for (auto fi : di.enumerate_files()) {
@@ -705,7 +705,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     directory_info di(R"(C:\ExampleDir)");
       ///     console::write_line("No search pattern returns:");
       ///     for (auto fi : di.enumerate_files()) {
@@ -821,7 +821,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     // Make a reference to a directory.
       ///     directory_info di("c:\\");
       ///
@@ -860,7 +860,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     try {
       ///       directory_info di(R"(c:\)");
       ///
@@ -907,7 +907,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     directory_info di(R"(C:\ExampleDir)");
       ///     console::write_line("No search pattern returns:");
       ///     for (auto fi : di.get_files()) {
@@ -978,7 +978,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     directory_info di(R"(C:\ExampleDir)");
       ///     console::write_line("No search pattern returns:");
       ///     for (auto fi : di.get_files()) {
@@ -1055,7 +1055,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     try {
       ///       console::write_line("Enter the path to a directory:");
       ///
@@ -1140,7 +1140,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     try {
       ///       console::write_line("Enter the path to a directory:");
       ///
@@ -1236,7 +1236,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     // Make a reference to a directory.
       ///     directory_info di("TempDir");
       ///
@@ -1290,7 +1290,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     // Specify the directories you want to manipulate.
       ///     directory_info di1(R"(c:\MyDir)");
       ///
@@ -1330,7 +1330,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     // Make a reference to a directory.
       ///     directory_info di("TempDir");
       ///

@@ -11,7 +11,7 @@ class toggle_buttons_form : public form {
   using buttons_t = vector<toggle_button_ptr_t>;
   
 public:
-  static void main() {
+  static auto main() {
     application::run(toggle_buttons_form());
   }
   

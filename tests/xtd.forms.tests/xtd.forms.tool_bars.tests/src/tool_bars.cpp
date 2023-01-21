@@ -13,7 +13,7 @@ class tool_bars_form : public form {
   using tool_bar_items_t = vector<tool_bar_button_ptr_t>;
   
 public:
-  static void main() {
+  static auto main() {
     application::run(tool_bars_form());
   }
   

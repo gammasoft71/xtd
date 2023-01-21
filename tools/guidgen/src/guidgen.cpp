@@ -7,7 +7,7 @@ using namespace xtd;
 namespace guidgen {
   class program final static_ {
   public:
-    static int main(const vector<ustring>& args) {
+    static auto main(const vector<ustring>& args) {
       string format = "";
       int count = 1;
       bool show_help = false;
