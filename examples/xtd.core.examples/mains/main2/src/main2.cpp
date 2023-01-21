@@ -5,7 +5,7 @@ using namespace xtd;
 namespace examples {
   class program {
   public:
-    static auto main() {
+    static int main() {
       // Write arguments to the console output
       for (ustring arg : environment::get_command_line_args())
         console::write_line(arg);
