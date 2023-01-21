@@ -42,16 +42,16 @@ public:
   }
   
 private:
-  void generate_handled_exception() {
+  auto generate_handled_exception()->void {
     try {
       throw operation_canceled_exception(current_stack_frame_);
     } catch (const xtd::system_exception& e) {
       message_box::show(*this, e.message(), ustring::format("Exception {} handled", e.name()));
     }
   }
-  void generate_exception() {throw invalid_argument("Invalid argument");}
-  void generate_system_exception() {throw argument_out_of_range_exception(current_stack_frame_);}
-  void generate_unknown_exception() {throw "Unknown exception occured";}
+  auto generate_exception()->void {throw invalid_argument("Invalid argument");}
+  auto generate_system_exception()->void {throw argument_out_of_range_exception(current_stack_frame_);}
+  auto generate_unknown_exception()->void {throw "Unknown exception occured";}
   
   button generate_handled_exception_button;
   button generate_exception_button;
