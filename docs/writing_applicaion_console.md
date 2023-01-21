@@ -44,7 +44,7 @@ You will add more code to the constructor in a subsequent procedure.
 Create an instance of the **console1**.
 
 ```c++
-int main() {
+auto main()->int {
   console1 {};
 }
 ```
@@ -139,7 +139,7 @@ public:
   }
 };
 
-int main() {
+auto main()->int {
   console1 {};
 }
 ```
