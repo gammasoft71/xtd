@@ -17,7 +17,7 @@ namespace calculator {
     };
     
   public:
-    static void main() {
+    static auto main() {
       application::run(form_main());
     }
     

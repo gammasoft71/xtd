@@ -4,7 +4,7 @@ using namespace xtd;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     // Instead of using the implicit, default "G" date and time format string, we
     // use a custom format string that aligns the results and inserts leading zeroes.
     ustring format = "{0}) The {1} date and time is {2:k}/{2:i}/{2:L} {2:t}";

@@ -5,7 +5,7 @@ using namespace xtd;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     date_time century_begin(2001, 1, 1);
     date_time current_date = date_time::now();
     

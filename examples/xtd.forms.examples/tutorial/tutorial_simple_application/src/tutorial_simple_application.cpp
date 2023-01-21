@@ -8,7 +8,7 @@ namespace tutorial {
       start_position(xtd::forms::form_start_position::center_screen);
     }
     
-    static void main() {
+    static auto main() {
       xtd::forms::application::run(simple());
     }
   };

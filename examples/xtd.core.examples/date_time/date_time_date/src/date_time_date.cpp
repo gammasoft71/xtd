@@ -4,7 +4,7 @@ using namespace xtd;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     date_time date1(2008, 6, 1, 7, 47, 0);
     console::write_line(date1.to_string());
     

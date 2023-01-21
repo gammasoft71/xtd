@@ -6,7 +6,7 @@ using namespace xtd::io;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     try {
       // original_file and file_to_replace must contain the path to files that already exist in the
       // file system. backup_of_file_to_replace is created during the execution of the Replace method.

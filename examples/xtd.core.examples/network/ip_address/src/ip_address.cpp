@@ -8,7 +8,7 @@ using namespace xtd::net::sockets;
 
 class test_ip_address {
 public:
-  static void main(const vector<ustring>& args) {
+  static auto main(const vector<ustring>& args) {
     ustring server;
     
     // Define a regular expression to parse user's input.

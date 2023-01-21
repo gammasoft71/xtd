@@ -5,7 +5,7 @@ using namespace xtd;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     // Attempt to assign an out-of-range value to a date_time constructor.
     ticks number_of_ticks = ticks::max();
     date_time valid_date;

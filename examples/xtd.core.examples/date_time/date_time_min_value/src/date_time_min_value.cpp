@@ -5,7 +5,7 @@ using namespace xtd;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     // Define an uninitialized date.
     date_time date1;
     console::write("{:u}", date1);

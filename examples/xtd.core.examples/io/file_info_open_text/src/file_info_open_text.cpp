@@ -6,7 +6,7 @@ using namespace xtd::io;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     ustring path = xtd::io::path::combine(xtd::io::path::get_temp_path(), "MyTest.txt");
     file_info fi(path);
     

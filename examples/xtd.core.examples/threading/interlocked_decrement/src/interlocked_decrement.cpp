@@ -26,7 +26,7 @@ namespace examples {
     };
     
   public:
-    static void main() {
+    static auto main() {
       thread thread1(thread_method);
       thread thread2(thread_method);
       thread1.join();

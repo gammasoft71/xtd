@@ -5,7 +5,7 @@ using namespace xtd::forms;
 namespace other_namespace {
   class program : public form {
   public:
-    static void main() {
+    static auto main() {
       application::run(program {});
     }
     

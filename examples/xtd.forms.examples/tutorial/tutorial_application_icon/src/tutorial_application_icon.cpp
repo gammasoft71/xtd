@@ -9,7 +9,7 @@ namespace tutorial {
       icon(xtd::drawing::system_icons::gammasoft());
     }
     
-    static void main() {
+    static auto main() {
       xtd::forms::application::run(form_icon());
     }
   };

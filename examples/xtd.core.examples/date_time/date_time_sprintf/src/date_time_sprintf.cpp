@@ -4,7 +4,7 @@ using namespace xtd;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     date_time date1(2008, 4, 1, 18, 7, 5, 16);
     console::write_line(date1.sprintf("%a"));  // Tue
     console::write_line(date1.sprintf("%A"));  // Tuesday

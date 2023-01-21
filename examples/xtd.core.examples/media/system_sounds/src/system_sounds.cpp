@@ -7,7 +7,7 @@ namespace examples {
   class program {
   public:
     // The main entry point for the application.
-    static void main() {
+    static auto main() {
       console::write_line("Type corresponding key to play sound :");
       console::write_line();
       console::write_line("  a   : asterisk");

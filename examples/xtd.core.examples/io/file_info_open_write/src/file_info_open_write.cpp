@@ -6,7 +6,7 @@ using namespace xtd::io;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     ustring path = "MyTest.txt";
     file_info fi(path);
     

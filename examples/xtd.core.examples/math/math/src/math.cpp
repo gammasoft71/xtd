@@ -7,7 +7,7 @@ namespace examples {
   class math_trapezoid_sample {
   public:
     // The main entry point for the application.
-    static void main() {
+    static auto main() {
       math_trapezoid_sample trpz(20.0, 10.0, 8.0, 6.0);
       console::write_line("The trapezoid's bases are 20.0 and 10.0, the trapezoid's legs are 8.0 and 6.0");
       double h = trpz.get_height();

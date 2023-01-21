@@ -4,7 +4,7 @@ using namespace xtd;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     date_time dec31(2010, 12, 31);
     for (unsigned int ctr = 0U; ctr <= 10U; ctr++) {
       date_time date_to_display = dec31.add_years(ctr);

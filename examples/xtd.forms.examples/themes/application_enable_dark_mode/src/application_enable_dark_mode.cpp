@@ -6,7 +6,7 @@ using namespace xtd::forms;
 
 class form1 : public form {
 public:
-  static void main() {
+  static auto main() {
     application::enable_dark_mode();
     application::run(form1 {});
   }

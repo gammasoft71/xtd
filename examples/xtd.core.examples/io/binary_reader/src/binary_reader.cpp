@@ -7,7 +7,7 @@ using namespace xtd::io;
 class program {
   inline static const ustring file_name = "app_settings.dat";
 public:
-  static void main() {
+  static auto main() {
     write_default_values();
     display_values();
   }

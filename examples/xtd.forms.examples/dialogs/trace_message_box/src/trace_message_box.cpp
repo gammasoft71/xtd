@@ -17,7 +17,7 @@ public:
     };
   }
   
-  static void main() {
+  static auto main() {
     trace_form trace_form;
     xtd::forms::application::run(form_main());
   }

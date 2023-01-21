@@ -2,7 +2,7 @@
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     // Calculate what day of the week is 36 days from this instant.
     xtd::date_time today = xtd::date_time::now();
     xtd::date_time answer = today.add_days(36);

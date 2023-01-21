@@ -2,7 +2,7 @@
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     xtd::date_time date1(1996, 6, 3, 22, 15, 0);
     xtd::console::write_line("date1 = {:u}", date1);
     xtd::date_time date2(1996, 12, 6, 13, 2, 0);
