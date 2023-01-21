@@ -28,7 +28,7 @@ private:
   label text_label;
 };
 
-int main() {
+auto main()->int {
   try {
     locale::global(locale("ru_RU.utf-8"));
   } catch (const std::exception& e) {

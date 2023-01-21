@@ -13,7 +13,7 @@ void write_line(const ustring& message) {
   console::write_line(message);
 }
 
-int main() {
+auto main()->int {
   display_message message_target;
   
   if (environment::get_command_line_args().size() > 1)

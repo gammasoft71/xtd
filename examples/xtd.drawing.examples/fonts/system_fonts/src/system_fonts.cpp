@@ -5,7 +5,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
-int main() {
+auto main()->int {
   cout << ustring::format("caption_font       : {}", system_fonts::caption_font()) << endl;
   cout << ustring::format("default_font       : {}", system_fonts::default_font()) << endl;
   cout << ustring::format("dialog_font        : {}", system_fonts::dialog_font()) << endl;

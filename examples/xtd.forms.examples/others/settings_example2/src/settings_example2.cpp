@@ -3,7 +3,7 @@
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-int main() {
+auto main()->int {
   settings settings;
   auto main_form = form::create("Settings example", form_start_position::manual);
   

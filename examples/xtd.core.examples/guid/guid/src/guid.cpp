@@ -2,7 +2,7 @@
 
 using namespace xtd;
 
-int main() {
+auto main()->int {
   for (auto counter = 0; counter < 10; ++counter)
     console::write_line("{:X}", guid::new_guid());
 }

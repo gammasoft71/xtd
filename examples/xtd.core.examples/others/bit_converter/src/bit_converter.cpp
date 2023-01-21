@@ -2,7 +2,7 @@
 
 using namespace xtd;
 
-int main() {
+auto main()->int {
   const ustring formatter = "{0,25}{1,30}";
   
   double a_double = 0.1111111111111111111;

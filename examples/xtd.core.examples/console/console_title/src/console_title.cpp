@@ -2,7 +2,7 @@
 
 using namespace xtd;
 
-int main() {
+auto main()->int {
   console::write_line("The current console title is: \"{0}\"", console::title());
   console::write_line("  (Press any key to change the console title.)");
   console::read_key(true);

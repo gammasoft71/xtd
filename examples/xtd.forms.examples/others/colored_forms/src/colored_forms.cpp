@@ -6,7 +6,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-int main() {
+auto main()->int {
   auto form_main = form::create("Main Form", point {screen::primary_screen().working_area().width() - 340, 40});
   form_main.start_position(form_start_position::manual);
   

@@ -6,7 +6,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
-int main() {
+auto main()->int {
   bitmap img = bitmap(logo_xpm);
   
   cout << ustring::format("handle = 0x{:X}", img.handle()) << endl;

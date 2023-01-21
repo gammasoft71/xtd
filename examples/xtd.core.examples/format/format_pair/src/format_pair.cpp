@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   cout << ustring::format("{}", make_pair(1, "one")) << endl;
 }
 

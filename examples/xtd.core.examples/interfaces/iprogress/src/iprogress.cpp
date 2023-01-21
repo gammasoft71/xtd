@@ -75,7 +75,7 @@ public:
   }
 };
 
-int main() {
+auto main()->int {
   console::write_line("Started");
   
   print_generic_progress print_progress;

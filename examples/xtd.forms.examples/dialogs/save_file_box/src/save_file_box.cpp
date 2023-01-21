@@ -26,6 +26,6 @@ private:
   button button_save_file;
 };
 
-int main() {
+auto main()->int {
   application::run(form1 {});
 }

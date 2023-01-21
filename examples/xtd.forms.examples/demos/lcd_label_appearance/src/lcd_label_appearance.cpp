@@ -119,6 +119,6 @@ namespace examples {
   };
 }
 
-int main() {
+auto main()->int {
   application::run(examples::form_lcd_label());
 }

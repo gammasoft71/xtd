@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   istream& is = console::in;
   ostream& os = console::out;
   

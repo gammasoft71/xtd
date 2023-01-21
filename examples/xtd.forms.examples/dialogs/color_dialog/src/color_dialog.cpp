@@ -28,6 +28,6 @@ private:
   vector<color> custom_colors = {color::red, color::green, color::blue, color::yellow, system_colors::control()};
 };
 
-int main() {
+auto main()->int {
   application::run(form1 {});
 }

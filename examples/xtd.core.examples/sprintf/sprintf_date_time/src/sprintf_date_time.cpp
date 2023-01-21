@@ -35,7 +35,7 @@ ustring date_time_to_string(const chrono::system_clock::time_point& tp) {
   return date_time_to_string(time);
 }
 
-int main() {
+auto main()->int {
   auto date_time = std::chrono::system_clock::now();
   // Instead previous line you can use following line :
   // auto date_time = std::time(nullptr);

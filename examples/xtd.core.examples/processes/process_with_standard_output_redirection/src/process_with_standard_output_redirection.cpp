@@ -4,7 +4,7 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::io;
 
-int main() {
+auto main()->int {
   process_start_info start_info("xtdc", "--help");
   start_info.use_shell_execute(false);
   start_info.redirect_standard_output(true);

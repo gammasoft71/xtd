@@ -4,7 +4,7 @@ using namespace std;
 using namespace std::literals;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   auto duration = 26h + 3min + 32s + 24ms + 500ns;
   cout << ustring::format("{}", duration) << endl;
   cout << ustring::format("{:c}", duration) << endl;

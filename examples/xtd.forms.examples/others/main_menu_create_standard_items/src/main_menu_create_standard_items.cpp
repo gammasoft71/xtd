@@ -28,7 +28,7 @@ namespace examples {
   };
 }
 
-int main() {
+auto main()->int {
   application::enable_menu_images();
   application::run(examples::form1 {});
 }

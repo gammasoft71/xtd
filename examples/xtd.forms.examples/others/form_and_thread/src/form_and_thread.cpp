@@ -41,6 +41,6 @@ private:
   vector<thread> threads {environment::processor_count() - 1};
 };
 
-int main() {
+auto main()->int {
   application::run(form_thread());
 }

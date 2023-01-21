@@ -4,7 +4,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
-int main() {
+auto main()->int {
   auto main_form = form::create("Emoticons example");
   main_form.client_size({500, 400}).padding(10);
   

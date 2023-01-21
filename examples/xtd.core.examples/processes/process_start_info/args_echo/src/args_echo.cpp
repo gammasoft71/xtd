@@ -2,7 +2,7 @@
 
 using namespace xtd;
 
-int main() {
+auto main()->int {
   console::write_line("Received the following arguments:\n");
   
   auto args = environment::get_command_line_args();

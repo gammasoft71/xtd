@@ -28,6 +28,6 @@ private:
   xtd::forms::find_dialog find_dialog;
 };
 
-int main() {
+auto main()->int {
   application::run(form1 {});
 }

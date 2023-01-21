@@ -10,7 +10,7 @@ namespace examples {
   };
 }
 
-int main() {
+auto main()->int {
   // uncomment next line cause build error with call implicitly-deleted default constructor.
   //examples::program program;
   

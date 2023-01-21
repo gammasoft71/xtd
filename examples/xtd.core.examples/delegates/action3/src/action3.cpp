@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-int main() {
+auto main()->int {
   action<const ustring&> message_target;
   
   if (environment::get_command_line_args().size() > 1)

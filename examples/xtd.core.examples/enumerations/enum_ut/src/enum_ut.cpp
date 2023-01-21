@@ -9,7 +9,7 @@ enum_ut_(, enum_test, byte,
   value_four
 );
 
-int main() {
+auto main()->int {
   console::write_line("name = {}", enum_test::value_four);
   console::write_line("value = {}", enum_object(enum_test::value_four).to_byte());
   console::write_line("as<byte> = {}", as<byte>(enum_test::value_four));

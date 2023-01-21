@@ -29,7 +29,7 @@ namespace examples {
   };
 }
 
-int main() {
+auto main()->int {
   debug_form df;
   application::run(examples::form1 {});
 }

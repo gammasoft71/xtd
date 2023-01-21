@@ -20,7 +20,7 @@ public:
   button ok_button;
 };
 
-int main() {
+auto main()->int {
   form form;
   form.text("Dialog example");
   

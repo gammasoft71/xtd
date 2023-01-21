@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   auto date_time = std::chrono::system_clock::now();
   // Instead previous line you can use following lines :
   // auto t = std::time(nullptr);

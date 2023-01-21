@@ -3,7 +3,7 @@
 
 using namespace xtd;
 
-int main() {
+auto main()->int {
   console::write("Hello ");
   console::write_line("World!");
   console::write("Enter your name: ");

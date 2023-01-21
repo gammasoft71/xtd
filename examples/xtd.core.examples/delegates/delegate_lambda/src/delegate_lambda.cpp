@@ -5,7 +5,7 @@
 using namespace std;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   // use delegate as std::function
   delegate<void(const ustring& str)> writer([](const ustring & str)  {
     cout << str << endl;

@@ -6,7 +6,7 @@ using namespace std::this_thread;
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-int main() {
+auto main()->int {
   stopwatch stopwatch;
   stopwatch.start();
   sleep_for(10000ms);

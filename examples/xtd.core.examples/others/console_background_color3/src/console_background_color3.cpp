@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   cout << background_color(console_color::dark_blue) << "                    " << reset_color() << endl;
   cout << background_color(console_color::blue) << "                    " << reset_color() << endl;
   cout << endl;

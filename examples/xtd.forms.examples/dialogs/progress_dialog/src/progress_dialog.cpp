@@ -51,6 +51,6 @@ private:
   button button_indeterminate_process;
 };
 
-int main() {
+auto main()->int {
   application::run(form1 {});
 }

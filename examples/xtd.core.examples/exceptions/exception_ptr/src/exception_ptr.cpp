@@ -5,7 +5,7 @@
 using namespace std;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   exception_ptr exception_pointer;
   
   thread thread1([&] {

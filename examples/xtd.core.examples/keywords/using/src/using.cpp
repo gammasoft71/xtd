@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   using_(auto values = {1, 2, 3, 4, 5})
     cout << ustring::join(", ", values) << endl;
   

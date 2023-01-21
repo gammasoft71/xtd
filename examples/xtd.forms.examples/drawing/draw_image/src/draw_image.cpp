@@ -22,6 +22,6 @@ private:
   xtd::drawing::image image = images::from_name("system-file-manager", xtd::drawing::size {1024, 1024});
 };
 
-int main() {
+auto main()->int {
   application::run(form_main());
 }

@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   cout << ustring::format("{}", true) << endl;
   cout << ustring::format("{:b}", true) << endl;
   cout << ustring::format("{:B}", true) << endl;

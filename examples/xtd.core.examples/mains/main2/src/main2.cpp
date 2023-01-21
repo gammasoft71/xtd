@@ -5,7 +5,7 @@ using namespace xtd;
 namespace examples {
   class program {
   public:
-    static int main() {
+    static auto main()->int {
       // Write arguments to the console output
       for (ustring arg : environment::get_command_line_args())
         console::write_line(arg);
@@ -18,7 +18,7 @@ namespace examples {
 startup_(examples::program);
 // startup_(examples::program); is same as :
 //
-// int main(int argc, char* argv[]) {
+// auto main(int argc, char* argv[])->int {
 //   return examples::program::main();
 // }
 

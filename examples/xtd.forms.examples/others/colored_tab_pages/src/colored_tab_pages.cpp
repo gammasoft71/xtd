@@ -40,6 +40,6 @@ private:
   vector<shared_ptr<tab_page>> tab_pages;
 };
 
-int main() {
+auto main()->int {
   application::run(form1 {});
 }

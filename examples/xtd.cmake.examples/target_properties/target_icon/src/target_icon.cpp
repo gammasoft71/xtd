@@ -2,6 +2,6 @@
 
 using namespace xtd::forms;
 
-int main() {
+auto main()->int {
   application::run(form::create("Application icon"));
 }

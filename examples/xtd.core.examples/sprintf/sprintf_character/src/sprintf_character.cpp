@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   cout << ustring::sprintf("%c", 'a') << endl;
   //cout << ustring::sprintf("%c", L'\u4eb0') << endl; // Does not work
   cout << ustring::sprintf("%c", u8'a') << endl;

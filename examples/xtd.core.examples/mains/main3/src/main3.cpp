@@ -20,7 +20,7 @@ namespace examples {
 startup_(examples::program);
 // startup_(examples::program); is same as :
 //
-// int main(int argc, char* argv[]) {
+// auto main(int argc, char* argv[])->int {
 //   examples::program::main({argv + 1, argv + argc});
 //   return environment::exit_code();
 // }

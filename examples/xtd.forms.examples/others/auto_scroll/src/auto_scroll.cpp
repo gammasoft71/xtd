@@ -4,7 +4,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-int main() {
+auto main()->int {
   form form_main;
   form_main.text("Auto scroll example");
   form_main.size({400, 250});

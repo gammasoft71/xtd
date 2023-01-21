@@ -2,7 +2,7 @@
 
 using namespace xtd;
 
-int main() {
+auto main()->int {
   console::write_line("background_color = {}", console::background_color());
   console::write_line("foreground_color = {}", console::foreground_color());
   console::write_line("buffer_height = {}", console::buffer_height());

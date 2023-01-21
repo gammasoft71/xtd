@@ -30,6 +30,6 @@ namespace examples {
   };
 }
 
-int main() {
+auto main()->int {
   xtd::forms::application::run(examples::main_form {});
 }

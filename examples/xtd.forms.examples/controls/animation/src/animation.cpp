@@ -51,7 +51,7 @@ namespace examples {
   };
 }
 
-int main() {
+auto main()->int {
   debug_form df;
   df.back_color(drawing::basic_colors::black());
   df.fore_color(drawing::basic_colors::lime());

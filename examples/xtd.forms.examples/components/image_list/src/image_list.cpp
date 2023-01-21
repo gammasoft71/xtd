@@ -70,6 +70,6 @@ namespace example {
   };
 }
 
-int main() {
+auto main()->int {
   application::run(example::form1 {});
 }

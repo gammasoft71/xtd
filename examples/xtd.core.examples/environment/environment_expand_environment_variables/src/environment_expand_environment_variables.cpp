@@ -2,7 +2,7 @@
 
 using namespace xtd;
 
-int main() {
+auto main()->int {
   ustring str;
   ustring nl = environment::new_line();
   

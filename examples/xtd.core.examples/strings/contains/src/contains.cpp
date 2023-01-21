@@ -5,7 +5,7 @@ using namespace std;
 using namespace string_literals;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   auto s = "This is a literal string";
   cout << "The string: \"" << s << "\"" << (ustring(s).contains("is") ? " contains " : " does not contain ") << "\"is\" substring." << endl;
   cout << "The string: \"" << s << "\"" << (ustring(s).contains("z") ? " contains " : " does not contain ") << "\"z\" character." << endl;

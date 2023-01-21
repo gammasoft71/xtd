@@ -29,7 +29,7 @@ string xtd::to_string(const character& value, const string& fmt, const locale& l
 
 using characters = vector<character>;
 
-int main() {
+auto main()->int {
   character c("Jean-Luc Picard", "Captain");
   cout << ustring::sprintf("%s", c.to_string()) << endl;
   cout << ustring::sprintf("%s", c.to_string("F")) << endl;

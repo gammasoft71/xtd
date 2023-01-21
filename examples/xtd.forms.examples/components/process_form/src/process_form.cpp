@@ -79,6 +79,6 @@ private:
   button open_calculator_button;
 };
 
-int main() {
+auto main()->int {
   xtd::forms::application::run(main_form());
 }

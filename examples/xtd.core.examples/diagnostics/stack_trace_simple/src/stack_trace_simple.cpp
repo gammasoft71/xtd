@@ -40,7 +40,7 @@ private:
   };
 };
 
-int main() {
+auto main()->int {
   stack_trace_sample sample;
   try {
     sample.my_public_method();

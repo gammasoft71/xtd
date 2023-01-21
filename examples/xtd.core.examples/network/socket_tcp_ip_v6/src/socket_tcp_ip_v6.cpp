@@ -6,7 +6,7 @@ using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
-int main() {
+auto main()->int {
   auto terminate_app = false;
   
   thread server([&] {

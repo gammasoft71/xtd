@@ -7,7 +7,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-int main() {
+auto main()->int {
   trace::listeners().push_back(make_shared<ostream_trace_listener>(console::out));
   trace::auto_flush(true);
   trace::indent();

@@ -54,6 +54,6 @@ private:
   timer timer1;
 };
 
-int main() {
+auto main()->int {
   application::run(form1 {});
 }

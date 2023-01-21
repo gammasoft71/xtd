@@ -39,6 +39,6 @@ private:
   button button_font_and_color;
 };
 
-int main() {
+auto main()->int {
   application::run(form1 {});
 }

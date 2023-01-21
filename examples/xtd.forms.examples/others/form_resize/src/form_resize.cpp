@@ -65,6 +65,6 @@ private:
   button shrink_button;
 };
 
-int main() {
+auto main()->int {
   application::run(form1 {});
 }

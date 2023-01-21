@@ -4,7 +4,7 @@
 using namespace std;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   vector<ustring> names {"Bruce", "Alfred", "Tim", "Richard"};
   
   action<const ustring&> print([](const ustring & value) {

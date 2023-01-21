@@ -5,7 +5,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
-int main() {
+auto main()->int {
   cout << ustring::format("color::black = {0}", color::black) << endl;
   cout << ustring::format("color::withe = {0}", color::white) << endl;
   cout << ustring::format("color::blue = {0}", color::blue) << endl;
