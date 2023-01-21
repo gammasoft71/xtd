@@ -221,7 +221,7 @@ private:
   button button_minimize;
 };
 
-int main() {
+auto main()->int {
   application::run(form1());
 }
 ```
@@ -321,7 +321,7 @@ private:
   label input_text;
 };
 
-int main() {
+auto main()->int {
   application::run(form1());
 }
 ```

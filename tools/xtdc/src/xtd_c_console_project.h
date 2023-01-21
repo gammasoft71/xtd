@@ -64,7 +64,7 @@ namespace xtdc_command {
       std::vector<xtd::ustring> lines {
         "#include <xtd_c/console.h>",
         "",
-        "int main() {",
+        "auto main()->int {",
         "  xtd_console_write_line(\"Hello, World!\");",
         "  return EXIT_SUCCESS;",
         "}",

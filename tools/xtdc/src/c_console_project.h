@@ -71,7 +71,7 @@ namespace xtdc_command {
         "#include <stdio.h>",
         "",
         "/* The main entry point for the application. */",
-        "int main(int argc, char* argv[]) {",
+        "auto main(int argc, char* argv[])->int {",
         "  printf(\"Hello, World!\\n\");",
         "}",
       };

@@ -43,7 +43,7 @@ app.cpp file:
 ```c++
 #include <xtd/xtd>
 
-int main() {
+auto main()->int {
   xtd::console::write_line("Hello, World!");
 }
 ```

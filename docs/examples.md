@@ -13,7 +13,7 @@ The classic first applications 'Hello World'.
 
 using namespace xtd;
 
-int main() {
+auto main()->int {
   console::background_color(console_color::blue);
   console::foreground_color(console_color::white);
   console::write_line("Hello, World!");
@@ -71,7 +71,7 @@ private:
   button button1;
 };
 
-int main() {
+auto main()->int {
   application::run(main_form());
 }
 ```
@@ -144,7 +144,7 @@ namespace unit_tests {
   };
 }
 
-int main() {
+auto main()->int {
   return console_unit_test().run();
 }
 ```

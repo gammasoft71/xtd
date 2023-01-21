@@ -386,7 +386,7 @@ namespace examples {
 }
 
 
-int main() {
+auto main()->int {
   application::run(examples::form7());
 }
 

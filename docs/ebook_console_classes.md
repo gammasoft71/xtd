@@ -15,7 +15,7 @@ This is a simple console application. The application puts some text into the co
 ```c++
 #include <xtd/xtd.console>
 
-int main(int argc, char* argv[]) {
+auto main(int argc, char* argv[])->int {
   xtd::console::write_line("A xtd_console console application");
 }
 ```
@@ -33,7 +33,7 @@ The application puts some formatted texts into the console window.
 ```c++
 #include <xtd/xtd.console>
 
-int main(int argc, char* argv[]) {
+auto main(int argc, char* argv[])->int {
   auto number = 1024;
   
   xtd::console::write_line("number '{}' :", number);
@@ -62,7 +62,7 @@ This is the output
 
 using namespace std::literals;
 
-int main(int argc, char* argv[]) {
+auto main(int argc, char* argv[])->int {
   auto str1 = xtd::environment::os_version().desktop_environment();
   auto str2 = "desktop"s;
   auto str3 = "environment"s;
@@ -79,7 +79,7 @@ int main(int argc, char* argv[]) {
 
 using namespace std::literals;
 
-int main(int argc, char* argv[]) {
+auto main(int argc, char* argv[])->int {
   auto str1 = xtd::environment::os_version().desktop_environment();
   auto str2 = "desktop"s;
   auto str3 = "environment"s;

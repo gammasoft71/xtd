@@ -419,7 +419,7 @@ namespace xtd {
       /// using namespace xtd;
       /// using namespace xtd::io;
       ///
-      /// int main() {
+      /// auto main()->int {
       ///   for (int ctr = 0; ctr < 500; ctr++)
       ///     console::write_line("Line {} of 500 written: {:P2}", ctr + 1, (ctr + 1)/500.0);
       ///
@@ -442,7 +442,7 @@ namespace xtd {
       /// using namespace xtd::diagnostics;
       /// using namespace xtd::io;
       ///
-      /// int main() {
+      /// auto main()->int {
       ///   auto p = process();
       ///   p.start_info().use_shell_execute(false);
       ///   p.start_info().redirect_standard_error(true);
@@ -467,7 +467,7 @@ namespace xtd {
       /// using namespace xtd::diagnostics;
       /// using namespace xtd::io;
       ///
-      /// int main() {
+      /// auto main()->int {
       ///   auto p = process();
       ///   p.start_info().use_shell_execute(false);
       ///   p.start_info().redirect_standard_output(true);
@@ -511,7 +511,7 @@ namespace xtd {
       /// using namespace xtd::diagnostics;
       /// using namespace xtd::io;
       ///
-      /// int main() {
+      /// auto main()->int {
       ///   console::write_line("Ready to sort one or more text lines...");
       ///
       ///   // Start the sort process with redirected input.
@@ -576,7 +576,7 @@ namespace xtd {
       /// using namespace xtd::diagnostics;
       /// using namespace xtd::io;
       ///
-      /// int main() {
+      /// auto main()->int {
       ///   using_(process process) {
       ///     process.start_info().file_name("ipconfig");
       ///     process.start_info().use_shell_execute(false);
@@ -609,7 +609,7 @@ namespace xtd {
       /// using namespace xtd;
       /// using namespace xtd::io;
       ///
-      /// int main() {
+      /// auto main()->int {
       ///   for (int ctr = 0; ctr < 500; ctr++)
       ///     console::write_line("Line {} of 500 written: {:P2}", ctr + 1, (ctr + 1)/500.0);
       ///
@@ -632,7 +632,7 @@ namespace xtd {
       /// using namespace xtd::diagnostics;
       /// using namespace xtd::io;
       ///
-      /// int main() {
+      /// auto main()->int {
       ///   auto p = process();
       ///   p.start_info().use_shell_execute(false);
       ///   p.start_info().redirect_standard_error(true);
@@ -657,7 +657,7 @@ namespace xtd {
       /// using namespace xtd::diagnostics;
       /// using namespace xtd::io;
       ///
-      /// int main() {
+      /// auto main()->int {
       ///   auto p = process();
       ///   p.start_info().use_shell_execute(false);
       ///   p.start_info().redirect_standard_output(true);
