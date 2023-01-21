@@ -17,8 +17,8 @@ public:
     timer1.interval(300ms);
     timer1.enabled(true);
     timer1.tick += [&] {
-      fourteen_segment_display1.segment_style(segment_styles[(counter / chaser.size()) % segment_styles.size()]);
-      fourteen_segment_display1.value(chaser[counter++ % chaser.size()]);
+      fourteen_segment_display1.segment_style(segment_styles[(counter / chase.size()) % segment_styles.size()]);
+      fourteen_segment_display1.value(chase[counter++ % chase.size()]);
     };
     
     back_color(color::average(color::black, fourteen_segment_display1.fore_color(), 0.20));
@@ -30,7 +30,7 @@ public:
   
 private:
   int counter = 0;
-  std::vector<segments> chaser = {
+  std::vector<segments> chase = {
     segments::none,
     segments::a,
     segments::a | segments::b,
