@@ -85,7 +85,7 @@ namespace guidgen_gui {
       result_text_box_.word_wrap(false);
     }
     
-    static void main() {
+    static auto main() {
       xtd::forms::application::run(main_form());
     }
     

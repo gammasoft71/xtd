@@ -46,7 +46,7 @@ public:
     }
   }
   
-  static void main() {
+  static auto main() {
     copy_directory(".",  path::combine(".", "copytest"), true);
   }
 };

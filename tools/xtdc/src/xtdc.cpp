@@ -10,7 +10,7 @@ using namespace xtd::diagnostics;
 namespace xtdc_command {
   class xtdc final static_ {
   public:
-    static int main(const vector<ustring>& args) {
+    static auto main(const vector<ustring>& args) {
       if (args.size() == 0) {
         console::write_line(ustring::join("\n", get_help()));
         return -1;

@@ -425,7 +425,7 @@ using namespace xtd::forms;
 
 class form1 : public form {
 public:
-  static void main() {
+  static auto main() {
     debug_form dbg_fmt;
     application::run(form1());
   }

@@ -12,7 +12,7 @@ namespace sleepfor {
     enum class period_type {nanoseconds, microseconds, milliseconds, seconds, minutes};
     
   public:
-    static int main(const vector<ustring>& args) {
+    static auto main(const vector<ustring>& args) {
       int duration = 0;
       period_type type = period_type::milliseconds;
       bool indefinitely = false;

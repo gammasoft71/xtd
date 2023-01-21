@@ -11,7 +11,7 @@ class labels_form : public form {
   using labels_t = vector<label_ptr_t>;
   
 public:
-  static void main() {
+  static auto main() {
     application::run(labels_form());
   }
   

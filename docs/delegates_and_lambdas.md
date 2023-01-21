@@ -25,7 +25,7 @@ class program {
 public:
   using reverse = delegate<ustring(const ustring& s)>;
   
-  static void main(const std::vector<ustring>& args) {
+  static auto main(const std::vector<ustring>& args) {
     stringer s;
     reverse rev(s, &stringer::reverse_string);
     
@@ -56,7 +56,7 @@ class program {
 public:
   using reverse = delegate<ustring(const ustring& s)>;
   
-  static void main(const std::vector<ustring>& args) {
+  static auto main(const std::vector<ustring>& args) {
     string_reverser sr;
     reverse rev(sr);
     
@@ -85,7 +85,7 @@ public:
     return result;
   }
   
-  static void main(const std::vector<ustring>& args) {
+  static auto main(const std::vector<ustring>& args) {
     reverse rev(reverse_string);
     
     console::write_line(rev("a string"));
@@ -124,7 +124,7 @@ public:
     return result;
   }
   
-  static void main(const std::vector<ustring>& args) {
+  static auto main(const std::vector<ustring>& args) {
     func<ustring, const ustring&> rev(reverse_string);
     
     console::write_line(rev("a string"));
@@ -146,7 +146,7 @@ using namespace xtd;
 
 class program {
 public:
-  static void main(const std::vector<ustring>& args) {
+  static auto main(const std::vector<ustring>& args) {
     func<ustring, const ustring&> rev([](auto s) {
       ustring result = s;
       std::reverse(result.begin(), result.end());

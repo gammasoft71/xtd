@@ -11,7 +11,7 @@ class buttons_form : public form {
   using buttons_t = vector<button_ptr_t>;
   
 public:
-  static void main() {
+  static auto main() {
     application::run(buttons_form());
   }
   

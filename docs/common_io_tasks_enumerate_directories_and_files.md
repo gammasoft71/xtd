@@ -33,7 +33,7 @@ using namespace xtd::io;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     try {
       // Set a variable to the My Documents path.
       ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
@@ -69,7 +69,7 @@ using namespace xtd::io;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     // Set a variable to the Documents path.
     ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
     
@@ -103,7 +103,7 @@ using namespace xtd::io;
 
 class program {
 public:
-  static void main() {
+  static auto main() {
     // Set a variable to the Documents path.
     ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
     

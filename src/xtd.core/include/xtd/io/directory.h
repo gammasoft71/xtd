@@ -34,7 +34,7 @@ namespace xtd {
     ///
     /// class program {
     /// public:
-    ///   static void main() {
+    ///   static auto main() {
     ///     ustring source_directory = R"(C:\current)";
     ///     ustring archive_directory = R"(C:\archive)";
     ///
@@ -63,7 +63,7 @@ namespace xtd {
     ///
     /// class program {
     /// public:
-    ///   static void main() {
+    ///   static auto main() {
     ///     ustring source_directory = R"(C:\source)";
     ///     ustring destination_directory = R"(C:\destination)";
     ///
@@ -210,7 +210,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     // Specify the directories you want to manipulate.
       ///     directory_info di("c:\\MyDir");
       ///     try {
@@ -270,7 +270,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     try {
       ///       // Set a variable to the My Documents path.
       ///       ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
@@ -314,7 +314,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     try {
       ///       ustring dir_path = R"(\\archives\2009\reports)";
       ///
@@ -366,7 +366,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     ustring source_directory = R"(C:\current)";
       ///     ustring archive_directory = R"(C:\archive)";
       ///
@@ -407,7 +407,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     ustring source_directory = R"(C:\current)";
       ///     ustring archive_directory = R"(C:\archive)";
       ///
@@ -482,7 +482,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main(const vector<ustring>& args) {
+      ///   static auto main(const vector<ustring>& args) {
       ///     for (ustring path : args) {
       ///       if (file::exists(path)) {
       ///         // This path is a file
@@ -545,7 +545,7 @@ namespace xtd {
       /// The following example gets the creation time of the specified directory.
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     try {
       ///       // Get the creation time of a well-known directory.
       ///       date_time dt = directory::get_creation_time(environment::current_directory());
@@ -584,7 +584,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     try {
       ///       // Get the current directory.
       ///       ustring path = directory::get_current_directory();
@@ -632,7 +632,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main(const vector<ustring>& args) {
+      ///   static auto main(const vector<ustring>& args) {
       ///     for (ustring path : args) {
       ///       if (file::exists(path)) {
       ///         // This path is a file
@@ -695,7 +695,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     try {
       ///       // Only get subdirectories that begin with the letter "p."
       ///       vector<ustring> dirs = directory::get_directories(R"(c:\)", "p*");
@@ -742,7 +742,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     // Create string for a directory. This value should be an existing directory
       ///     // or the sample will throw a DirectoryNotFoundException.
       ///     ustring dir = R"(C:\test)";
@@ -785,7 +785,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main(const vector<ustring>& args) {
+      ///   static auto main(const vector<ustring>& args) {
       ///     for (ustring path : args) {
       ///       if (file::exists(path)) {
       ///         // This path is a file
@@ -849,7 +849,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     try {
       ///       // Only get files that begin with the letter "c".
       ///       vector<ustring> dirs = directory::get_files(R"(c:\", "c*)");
@@ -902,7 +902,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     program snippets;
       ///
       ///     ustring path = io::directory::get_current_directory();
@@ -1016,7 +1016,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     program snippets;
       ///
       ///     ustring path = io::directory::get_current_directory();
@@ -1143,7 +1143,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     try {
       ///       ustring path = R"(c:\MyDir)";
       ///       if (!directory::exists(path)) {
@@ -1196,7 +1196,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     try {
       ///       ustring path = R"(c:\MyDir)";
       ///       if (!directory::exists(path)) {
@@ -1243,7 +1243,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     program snippets;
       ///
       ///     ustring path = io::directory::get_current_directory();
@@ -1353,7 +1353,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     program snippets;
       ///
       ///     ustring path = io::directory::get_current_directory();
@@ -1471,7 +1471,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     ustring source_directory = R"(C:\source)";
       ///     ustring destination_directory = R"(C:\destination)";
       ///
@@ -1508,7 +1508,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     ustring sub_path = R"(C:\NewDirectory\NewSubDirectory)";
       ///
       ///     try {
@@ -1554,7 +1554,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     ustring top_path = R"(C:\NewDirectory)";
       ///     ustring sub_path = R"(C:\NewDirectory\NewSubDirectory)";
       ///
@@ -1604,7 +1604,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     // Set the directory.
       ///     ustring n = R"(C:\test\newdir)";
       ///
@@ -1660,7 +1660,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     // Set the directory.
       ///     ustring n = R"(C:\test\newdir)";
       ///
@@ -1715,7 +1715,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     // Create string for a directory. This value should be an existing directory
       ///     // or the sample will throw a DirectoryNotFoundException.
       ///     ustring dir = R"(C:\test)";
@@ -1762,7 +1762,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     try {
       ///       ustring path = R"(c:\MyDir)";
       ///       if (!directory::exists(path)) {
@@ -1811,7 +1811,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static void main() {
+      ///   static auto main() {
       ///     try {
       ///       ustring path = R"(c:\MyDir)";
       ///       if (!directory::exists(path)) {
