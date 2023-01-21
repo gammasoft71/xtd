@@ -16,7 +16,7 @@ void method1() {
   method2();
 }
 
-int main() {
+auto main()->int {
   method1();
 }
 

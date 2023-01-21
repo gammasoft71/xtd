@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   cout << ustring::sprintf("%d", true) << endl;
   cout << ustring::sprintf("%o", true) << endl;
   cout << ustring::sprintf("%x", true) << endl;

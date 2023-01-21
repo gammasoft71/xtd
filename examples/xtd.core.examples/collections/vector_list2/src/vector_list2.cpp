@@ -12,7 +12,7 @@ using namespace std::literals;
 using namespace xtd;
 using namespace xtd::collections;
 
-int main() {
+auto main()->int {
   register_any_stringer<platform_id>([](auto value) {return ustring::format("{}", value);});
   register_any_stringer<seconds>([](auto value) {return ustring::format("{}", value);});
   

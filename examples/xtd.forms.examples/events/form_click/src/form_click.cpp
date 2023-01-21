@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-int main() {
+auto main()->int {
   form form;
   form.text("Click anywhere on the form");
   form.mouse_click += [&](object& sender, const mouse_event_args& e) {

@@ -5,7 +5,7 @@ using namespace std;
 using namespace string_literals;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   cout << ustring::concat("Hello", ", ", "World", "!") << endl;
 }
 

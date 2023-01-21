@@ -23,7 +23,7 @@ private:
   button button1;
 };
 
-int main() {
+auto main()->int {
   debug_form debug_form;
   debug_form.back_color(xtd::drawing::color::black);
   debug_form.fore_color(xtd::drawing::color::lime);

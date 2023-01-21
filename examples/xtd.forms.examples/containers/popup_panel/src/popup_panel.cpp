@@ -41,7 +41,7 @@ private:
   popup_panel popup_panel1;
 };
 
-int main() {
+auto main()->int {
   application::run(form1 {});
 }
 

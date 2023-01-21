@@ -23,7 +23,7 @@ private:
   button button1;
 };
 
-int main() {
+auto main()->int {
   trace_form trace_form;
   trace_form.back_color(xtd::drawing::color::navy);
   trace_form.fore_color(xtd::drawing::color::white);

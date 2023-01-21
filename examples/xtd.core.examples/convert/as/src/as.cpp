@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   double d = 41.6;
   int i1 = convert::to_int32(d);
   int i2 = as<int>(d);

@@ -65,6 +65,6 @@ private:
   list<shared_ptr<control>> control_items;
 };
 
-int main() {
+auto main()->int {
   application::run(form1 {});
 }

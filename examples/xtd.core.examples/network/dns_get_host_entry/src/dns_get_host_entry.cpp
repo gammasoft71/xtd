@@ -4,7 +4,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::net;
 
-int main() {
+auto main()->int {
   ip_host_entry host_entry = dns::get_host_entry("www.github.com");
   console::write_line("ip host entry for : www.github.com");
   console::write_line("  - host_name : {}", host_entry.host_name());

@@ -56,6 +56,6 @@ private:
   check_box check_box6;
 };
 
-int main() {
+auto main()->int {
   application::run(form1 {});
 }

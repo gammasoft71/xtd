@@ -5,7 +5,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::web::css;
 
-int main() {
+auto main()->int {
   stringstream string_stream;
   css_writer writer(string_stream);
   

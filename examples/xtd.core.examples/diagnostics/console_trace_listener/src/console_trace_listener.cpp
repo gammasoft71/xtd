@@ -8,7 +8,7 @@ using namespace std::literals;
 using namespace std::this_thread;
 using namespace xtd::diagnostics;
 
-int main() {
+auto main()->int {
   debug::listeners({make_shared<console_trace_listener>()});
   debug::write_line("Begin");
   debug::indent();

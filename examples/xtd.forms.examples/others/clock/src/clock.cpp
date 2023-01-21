@@ -7,7 +7,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-int main() {
+auto main()->int {
   auto show_seconds = true;
   auto center_to_screen_next_time = false;
   

@@ -22,6 +22,6 @@ private:
   speech_synthesizer speech_synthesizer1;
 };
 
-int main() {
+auto main()->int {
   application::run(form1 {});
 }

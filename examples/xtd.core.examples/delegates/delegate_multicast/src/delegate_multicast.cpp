@@ -21,7 +21,7 @@ public:
   }
 };
 
-int main() {
+auto main()->int {
   writer write;
   
   write += [](const ustring & str)  {

@@ -1,5 +1,5 @@
 #include <xtd/xtd>
 
-int main() {
+auto main()->int {
   xtd::forms::message_box::show("Hello, World!");
 }

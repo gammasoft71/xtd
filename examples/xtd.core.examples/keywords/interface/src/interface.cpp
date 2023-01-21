@@ -16,7 +16,7 @@ namespace examples {
   };
 }
 
-int main() {
+auto main()->int {
   std::shared_ptr<examples::istringable> stringable = std::make_shared<examples::program>();
   cout << stringable->to_string() << endl;
 }

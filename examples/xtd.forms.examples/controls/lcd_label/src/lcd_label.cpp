@@ -31,6 +31,6 @@ private:
   lcd_label lcd_label1;
 };
 
-int main() {
+auto main()->int {
   application::run(form1 {});
 }

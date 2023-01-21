@@ -14,7 +14,7 @@ vector<int> fibonacci_series(int n) noexcept {
   return numbers;
 }
 
-int main() {
+auto main()->int {
   console::write_line(ustring::join(", ", fibonacci_series(1000)));
 }
 

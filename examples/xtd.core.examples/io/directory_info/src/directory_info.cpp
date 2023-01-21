@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::io;
 
-int main() {
+auto main()->int {
   directory_info di(".");
   console::write_line("full_name = {}", di.full_name());
   console::write_line("  attributes = {}", di.attributes());

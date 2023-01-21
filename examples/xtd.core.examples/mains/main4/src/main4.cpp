@@ -6,7 +6,7 @@ using namespace xtd;
 namespace examples {
   class program {
   public:
-    static int main(const vector<ustring>& args) {
+    static auto main(const vector<ustring>& args)->int {
       // Write arguments to the console output
       for (ustring arg : args)
         console::write_line(arg);
@@ -19,7 +19,7 @@ namespace examples {
 startup_(examples::program);
 // startup_(examples::program); is same as :
 //
-// int main(int argc, char* argv[]) {
+// auto main(int argc, char* argv[])->int {
 //   return examples::program::main({argv + 1, argv + argc});
 // }
 

@@ -7,7 +7,7 @@ using namespace xtd::drawing;
 using namespace xtd::drawing::drawing2d;
 using namespace xtd::io;
 
-int main() {
+auto main()->int {
   bitmap bitmap(640, 480);
   auto graphics = graphics::from_image(bitmap);
   graphics.clear(color::cyan);

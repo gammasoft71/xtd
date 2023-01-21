@@ -5,7 +5,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
-int main() {
+auto main()->int {
   point location = {10, 235};
   cout << ustring::format("location = {}", location) << endl;
   

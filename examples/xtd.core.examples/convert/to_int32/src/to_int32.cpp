@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   console::write_line("Convert unsigned int to int :");
   console::write_line("-----------------------------");
   auto value = 42u;

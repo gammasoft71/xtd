@@ -2,7 +2,7 @@
 
 using namespace xtd;
 
-int main() {
+auto main()->int {
   auto time_since_boot = environment::tick_count();
   console::write_line("Time since boot : {0:d} days {0:h}:{0:M}", time_since_boot);
 }

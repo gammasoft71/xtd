@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   locale::global(locale("en_US.UTF-8")); // change to us for currency
   double d1 = xtd::parse<double>("12.345");
   console::write_line(d1);

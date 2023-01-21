@@ -4,7 +4,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-int main() {
+auto main()->int {
   auto main_form = form::create("Move form");
   auto mouse_location = point::empty;
   main_form.mouse_down += [&](object & sender, const mouse_event_args & e) {

@@ -59,6 +59,6 @@ private:
   panel panel_color;
 };
 
-int main() {
+auto main()->int {
   application::run(form1 {});
 }

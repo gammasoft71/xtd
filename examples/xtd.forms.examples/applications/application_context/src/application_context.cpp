@@ -2,7 +2,7 @@
 
 using namespace xtd::forms;
 
-int main() {
+auto main()->int {
   application_context context;
   
   form form1;

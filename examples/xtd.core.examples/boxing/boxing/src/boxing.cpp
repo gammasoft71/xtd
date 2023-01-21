@@ -39,7 +39,7 @@ struct setup {
   xtd::version version;
 };
 
-int main() {
+auto main()->int {
   setup my_application_setup {10, 10, 300, 300, "My application", {1, 2, 3}};
   
   setup_serializer serializer;

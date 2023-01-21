@@ -49,7 +49,7 @@ public:
   }
 };
 
-int main() {
+auto main()->int {
   return xtd::tunit::console_unit_test().run();
 }
 

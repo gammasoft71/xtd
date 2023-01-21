@@ -41,6 +41,6 @@ private:
   forms::button button_exit_thread;
 };
 
-int main() {
+auto main()->int {
   application::run(form1 {});
 }

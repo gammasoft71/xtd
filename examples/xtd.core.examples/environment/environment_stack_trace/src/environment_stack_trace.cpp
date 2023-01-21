@@ -16,7 +16,7 @@ void test1() {
 }
 
 
-int main() {
+auto main()->int {
   test1();
 }
 

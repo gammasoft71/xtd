@@ -5,7 +5,7 @@ using namespace std::chrono;
 using namespace std::this_thread;
 using namespace xtd;
 
-int main(int argc, char* argv[]) {
+auto main(int argc, char* argv[])->int {
   int x = 0;
   //
   if ((argc == 2) && (int32_object::try_parse(argv[1], x) == true) && ((x >= 1) && (x <= 9))) {

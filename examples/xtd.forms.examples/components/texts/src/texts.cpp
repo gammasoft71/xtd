@@ -17,6 +17,6 @@ private:
   list_box list_box_texts;
 };
 
-int main() {
+auto main()->int {
   application::run(form1 {});
 }

@@ -17,7 +17,7 @@ private:
   ustring rank_;
 };
 
-int main() {
+auto main()->int {
   any value = make_any<int>(42);
   cout << ustring::format("{}", value) << endl;
   

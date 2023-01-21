@@ -5,7 +5,7 @@ using namespace std;
 using namespace string_literals;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   vector items = {"One ", "Two ", "Three ", "Four "};
   cout << ustring::concat(items) << endl;
 }

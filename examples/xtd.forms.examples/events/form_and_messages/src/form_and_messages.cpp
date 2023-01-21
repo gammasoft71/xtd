@@ -59,7 +59,7 @@ protected:
   }
 };
 
-int main() {
+auto main()->int {
   trace_form trace_form;
   application::run(form1 {});
 }

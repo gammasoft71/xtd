@@ -4,7 +4,7 @@
 using namespace std;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   console::out << L"Hello ";
   console::out << L"World!" << endl;
   console::out << L"Enter your name: ";

@@ -4,7 +4,7 @@ using namespace std;
 using namespace std::literals;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   cout << ustring::format("{0} {1} {2:D} {3} {0}", "string", "literal"s, 42, 'a') << endl;
 }
 

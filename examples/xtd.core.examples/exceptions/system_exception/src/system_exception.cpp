@@ -11,7 +11,7 @@ void destroy_handle(long handle) {
   delete reinterpret_cast<object*>(handle);
 }
 
-int main() {
+auto main()->int {
   try {
     long handle = 0;
     // The following line is commented out so that the exception is generated.

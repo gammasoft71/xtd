@@ -42,7 +42,7 @@ namespace examples {
   };
 }
 
-int main() {
+auto main()->int {
   application::enable_visual_styles();
   application::run(examples::form1 {});
 }

@@ -4,7 +4,7 @@
 using namespace std;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   ustring strings = ustring::join(", ", {"One", "Two", "Three", "Four", "Five"});
   cout << strings << endl;
 }

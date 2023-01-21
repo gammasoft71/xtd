@@ -5,7 +5,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
-int main() {
+auto main()->int {
   font font1(font_family::generic_monospace(), 42.0f, font_style::bold);
   console::write_line("font1 = {0}", font1);
   

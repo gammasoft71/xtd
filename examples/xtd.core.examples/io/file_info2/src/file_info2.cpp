@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::io;
 
-int main() {
+auto main()->int {
   auto test_file = path::combine(path::get_temp_path(), "test_file.txt");
   file::write_all_text(test_file, "Hello, World!");
   file_info fi(test_file);

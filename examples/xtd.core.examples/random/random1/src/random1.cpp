@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   vector<unsigned char> bytes1(100);
   vector<unsigned char> bytes2(100);
   xtd::random rnd1;

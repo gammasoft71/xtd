@@ -33,6 +33,6 @@ private:
   panel test_zone;
 };
 
-int main() {
+auto main()->int {
   application::run(form1 {});
 }

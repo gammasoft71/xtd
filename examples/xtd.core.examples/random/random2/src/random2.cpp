@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   // Instantiate random number generator using system-supplied value as seed.
   xtd::random rand;
   

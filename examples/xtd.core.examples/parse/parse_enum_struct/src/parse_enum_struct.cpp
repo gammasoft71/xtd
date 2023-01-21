@@ -13,7 +13,7 @@ enum_struct_(, week_day,
   sunday
 );
 
-int main() {
+auto main()->int {
   week_day wd1 = parse<week_day>("wednesday");
   console::write_line(wd1);
   week_day wd2 = enum_object<>::parse<week_day>("WEDNESDAY", true);

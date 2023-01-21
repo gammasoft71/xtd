@@ -33,7 +33,7 @@ namespace examples {
   };
 }
 
-int main() {
+auto main()->int {
   application::enable_button_images();
   application::run(examples::form1 {});
 }

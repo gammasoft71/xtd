@@ -48,6 +48,6 @@ private:
   label label2;
 };
 
-int main() {
+auto main()->int {
   application::run(form1 {});
 }

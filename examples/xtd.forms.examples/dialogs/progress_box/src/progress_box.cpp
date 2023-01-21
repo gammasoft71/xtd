@@ -31,6 +31,6 @@ private:
   button download_button;
 };
 
-int main() {
+auto main()->int {
   application::run(form1 {});
 }

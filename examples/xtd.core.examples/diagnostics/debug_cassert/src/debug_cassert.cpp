@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-int main() {
+auto main()->int {
   // Uncomment following line to remove assert dialog
   //diagnostics::debug::show_assert_dialog(false);
   

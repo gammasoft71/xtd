@@ -89,7 +89,7 @@ private:
   iobservable<location>* provider_ = nullptr;
 };
 
-int main() {
+auto main()->int {
   // Define a provider and two observers.
   location_tracker provider;
   location_reporter reporter1 {"Fixed GPS"};

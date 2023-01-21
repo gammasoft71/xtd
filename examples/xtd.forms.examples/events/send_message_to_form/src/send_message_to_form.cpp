@@ -62,6 +62,6 @@ protected:
   something_ready_notifier notifier;
 };
 
-int main() {
+auto main()->int {
   application::run(form1 {});
 }

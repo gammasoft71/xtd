@@ -5,7 +5,7 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::forms;
 
-int main() {
+auto main()->int {
   debug_form df;
   
   form form1;

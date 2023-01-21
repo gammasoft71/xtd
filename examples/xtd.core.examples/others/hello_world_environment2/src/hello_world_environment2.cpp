@@ -2,7 +2,7 @@
 
 using namespace xtd;
 
-int main() {
+auto main()->int {
   console::out << "Hello, " << environment::user_name() << "!" << environment::new_line;
 }
 

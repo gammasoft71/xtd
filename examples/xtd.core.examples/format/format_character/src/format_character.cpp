@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-int main() {
+auto main()->int {
   cout << ustring::format("{}", 'a') << endl;
   cout << ustring::format("{}", L'\u4eb0') << endl;
   cout << ustring::format("{}", u8'a') << endl;

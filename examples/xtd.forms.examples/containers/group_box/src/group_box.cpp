@@ -27,6 +27,6 @@ private:
   group_box group_box2;
 };
 
-int main() {
+auto main()->int {
   application::run(form1 {});
 }

@@ -26,7 +26,7 @@ private:
   button find_button;
 };
 
-int main() {
+auto main()->int {
   debug_form df;
   application::run(form1 {});
 }

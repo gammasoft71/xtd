@@ -20,7 +20,7 @@ namespace unit_tests {
   };
 }
 
-int main() {
+auto main()->int {
   return console_unit_test().run();
 }
 
