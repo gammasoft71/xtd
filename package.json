@@ -2,12 +2,13 @@
   "name": "xtd",
   "version": "0.0.1",
   "private": true,
+  "homepage": "xtd",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "yarn build && scripts/deploy.bat",
+    "deploy": "node scripts/gh-pages-deploy.js",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
@@ -23,7 +24,8 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.2.0"
+    "@docusaurus/module-type-aliases": "2.2.0",
+    "execa": "^6.1.0"
   },
   "browserslist": {
     "production": [
