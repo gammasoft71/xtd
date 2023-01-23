@@ -7,7 +7,7 @@
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "yarn build && node scripts/gh-pages-deploy.js",
+    "deploy": "yarn build && scripts/deploy.bat",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
