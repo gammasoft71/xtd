@@ -6,8 +6,10 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'xtd',
-  tagline: 'Modern C++17/20 framework to create console, GUI (forms like WinForms) and unit test applications on Microsoft Windows, Apple macOS, Linux, iOS and android (*).',
+  //title: 'xtd',
+  //tagline: 'xtd (pronounced "extend") is a modern C++17/20 framework to create console, GUI and unit test applications on Microsoft Windows, macOS, Linux, iOS and android (*).',
+  title: ' ',
+  tagline: ' ',
   url: 'https://gammasoft71.github.io',
   baseUrl: '/xtd/',
   onBrokenLinks: 'throw',
@@ -60,14 +62,48 @@ const config = {
         items: [
           {
             type: 'doc',
+            docId: 'news',
+            position: 'left',
+            label: 'News',
+          },
+          {
+            type: 'doc',
+            docId: 'gallery',
+            position: 'left',
+            label: 'Gallery',
+          },
+          {
+            type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Docs',
+            label: 'Examples',
+          },
+          {
+            type: 'doc',
+            docId: 'intro',
+            position: 'left',
+            label: 'Downloads',
+          },
+          {
+            type: 'doc',
+            docId: 'intro',
+            position: 'left',
+            label: 'Documentation',
           },
           {
             href: 'https://github.com/gammasoft71/xtd',
-            label: 'GitHub',
-            position: 'right',
+            label: 'Sources',
+            position: 'left',
+          },
+          {
+            href: 'https://sourceforge.net/projects/xtdpro/',
+            label: 'Project',
+            position: 'left',
+          },
+          {
+            href: 'https://gammasoft71.wixsite.com/gammasoft/',
+            label: 'Gammasoft',
+            position: 'left',
           },
         ],
       },
