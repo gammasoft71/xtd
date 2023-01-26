@@ -3,6 +3,7 @@
 
 # Production
 /build
+/.yarn
 
 # Generated files
 .docusaurus
