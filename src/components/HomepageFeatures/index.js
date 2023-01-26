@@ -4,8 +4,16 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
+    title: 'Latest news',
+    description: (
+      <>
+      • <a href="https://github.com/gammasoft71/xtd/blob/master/docs/news.md#xtdtunit-is-compatible-with-test-explorer-window-of-visual-studio-2019-or-later-november-18-2022">xtd.tunit is compatible with Test Explorer window of Visual Studio 2019 or later - November 18, 2022</a>
+      <br/>• <a href="https://github.com/gammasoft71/xtd/blob/master/docs/news.md#release-xtd-010-beta-october-10-2021">Release xtd 0.1.0 (beta) - October 10, 2021</a>
+      </>
+    ),
+  },
+  {
     title: 'Feature',
-    Svg: require('@site/static/img/undraw_in_sync_re_jlqd.svg').default,
     description: (
       <>
       • Free and open-source (MIT License). A collection of native C++ classes libraries, to complete std.
@@ -18,7 +26,6 @@ const FeatureList = [
   },
   {
     title: 'Objectives and Mission',
-    Svg: require('@site/static/img/undraw_next_tasks_re_5eyy.svg').default,
     description: (
       <>
       • xtd is a powerful, yet easy to use platform to build your applications upon. 
@@ -32,7 +39,6 @@ const FeatureList = [
   },
   {
     title: 'Getting started',
-    Svg: require('@site/static/img/undraw_programming_re_kg9v.svg').default,
     description: (
       <>
       • Installation provides download and install documentation.
@@ -43,7 +49,7 @@ const FeatureList = [
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({title, description}) {
   return (
     <div className={clsx('row row--4')}>
       <div className="text--center">
