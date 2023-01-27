@@ -14,7 +14,7 @@ const config = {
   baseUrl: '/xtd/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'pictures/favicon.ico',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -39,8 +39,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/gammasoft71/xtd/tree/docs',
+          editUrl: 'https://github.com/gammasoft71/xtd/tree/docs',
         },
         blog: false,
         theme: {
@@ -74,21 +73,27 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'examples',
             position: 'left',
             label: 'Examples',
           },
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'downloads',
             position: 'left',
             label: 'Downloads',
           },
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'documentation/documentation',
             position: 'left',
             label: 'Documentation',
+          },
+          {
+            type: 'doc',
+            docId: 'support',
+            position: 'left',
+            label: 'Support',
           },
           {
             href: 'https://github.com/gammasoft71/xtd',
@@ -111,71 +116,22 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Learn',
-            items: [
-              {
-                label: 'Introduction',
-                to: '/docs/intro',
-              },
-              {
-                label: 'Installation',
-                href: '/docs/downloads',
-              },
-              {
-                label: 'Documentation',
-                href: '/docs/documentation',
-              },
-            ]
+            html: '<a href="https://github.com/gammasoft71/xtd"><img src=pictures/github32.png></a>',
           },
           {
-            title: 'Social',
-            items: [
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/users/gammasoft#9288',
-              },
-              {
-                label: 'Facebook',
-                href: 'https://www.facebook.com/gammasoft71',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/gammasoft71',
-              },
-            ]
+            html: '<a href="https://sourceforge.net/u/gammasoft71"><img src=pictures/sourceforge32.png></a>',
           },
           {
-            title: 'Support',
-            items: [
-              {
-                label: 'Issues tracker',
-                href: 'https://github.com/gammasoft71/xtd/issues',
-              },
-              {
-                label: 'Github',
-                href: 'https://github.com/gammasoft71',
-              },
-            ]
+            html: '<a href="https://www.facebook.com/gammasoft71"><img src=pictures/facebook32.png></a>',
           },
           {
-            title: 'More',
-            items: [
-/*               {
-                label: 'Design Guidelines',
-                to: '/docs/documentation/design_guidelines',
-              }, */
-              {
-                label: 'License',
-                to: '/docs/documentation/license',
-              },
-              {
-                label: 'Roadmap',
-                to: '/docs/documentation/roadmap',
-              },
-            ]
-          }
+            html: '<a href="hhttps://twitter.com/gammasoft71"><img src=pictures/twitter32.png></a>',
+          },
+          {
+            html: '<a href="https://discordapp.com/users/gammasoft#9288"><img src=pictures/discord32.png></a>',
+          },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Gammasoft, Inc. Built with Docusaurus.`,
+        copyright: `© ${new Date().getFullYear()} Gammasoft. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
