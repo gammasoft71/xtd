@@ -33,14 +33,14 @@ In the future xtd.forms will use [xtd.forms.native.win32](https://github.com/gam
 ### Windows 10 or later
 
 1. Install Microsoft Visual Studio 2019 Community or later
-
+  
    In order to build xtd, you first need download and install Microsoft Visual Studio 2019 community from [https://www.visualstudio.com](https://www.visualstudio.com).
 
 2. Install CMake 3.3 or later
-
+  
    After Microsoft Visual Studio, you need to install the latest version cmake from [https://cmake.org/download/](https://cmake.org/download/)
-
-   _Remarks: Verify if you can execute 'cmake --version' in "Command Prompt", if it's no, add cmake install directory to your path._
+   
+   *Remarks: Verify if you can execute 'cmake --version' in "Command Prompt", if it's no, add cmake install directory to your path.*
 
 3. After installing Microsoft Visual Studio and CMake, do the following in "Command Prompt" to build and install xtd :
 
@@ -54,15 +54,15 @@ install
 ### macOS 10.15 or later
 
 1. Install Xcode 11.6 or later
-
+  
    In order to build xtd, you first need download and install Xcode from App Store and install "Commands line tools".
 
-   _Remarks: Verify if you can execute 'clang --version' in "Terminal"._
+   *Remarks: Verify if you can execute 'clang --version' in "Terminal".*
 
 2. Install Homebrew
-
+  
    After Xcode, to build xtd, you need to install package manager [Homebrew](https://brew.sh).
-
+   
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
@@ -76,7 +76,18 @@ cd xtd_path_name
 
 4. Create as many applications as you want with xtd.
 
-### CentOS 7, Debian 9.7, Elementary OS 5.0, Fedora 29, LinuxMint 19.1, openSUSE Tumbleweed, RedHat 7.5 and Ubuntu 19.04 or later
+### Linux distribution fully supported by xtd install 
+
+The following list contains the Linux distributions fully supported by the xtd installation:
+* [CentOS 7 or later](https://www.centos.org/);
+* [Debian 9.7 or later](https://www.debian.org/);
+* [Elementary OS 5.0 or later](https://elementary.io/);
+* [Fedora 29 or later](https://getfedora.org/);
+* [LinuxMint 19.1 or later](https://www.linuxmint.com/);
+* [openSUSE Tumbleweed](https://get.opensuse.org/tumbleweed/);
+* [RedHat 7.5 or later](https://www.redhat.com/);
+* [Rocky 9 or later](https://rockylinux.org/);
+* [Ubuntu 19.04 or later](https://ubuntu.com/);
 
 1. Do the following in "Terminal" to Build and install xtd :
 
@@ -85,31 +96,31 @@ cd xtd_path_name
 ./install
 ```
 
-_Remarks : Do not launch ./install with sudo or as su._
+*Remarks : Do not launch ./install with sudo or as su.* 
 
 2. Create as many applications as you want with xtd.
 
-### Other linux Distribution
+### Other linux distribution
 
 1. Install g++ 9 or later
-
+  
    In order to build , you first need download and install g++ 9 or later.
 
-   _Remarks: Verify if you can execute 'g++ --version' in "Terminal"._
+   *Remarks: Verify if you can execute 'g++ --version' in "Terminal".*
 
 2. Install gsound
-
+  
    After g++, you need to install the [gsound](https://wiki.gnome.org/Projects/GSound).
 
 3. Install gtk3
-
+  
    After gsound, you need to install the [gtk3](https://www.gtk.org).
 
 4. Install CMake 3.3 or later
-
+  
    After g++, gsound and gtk3, you need to install the latest version cmake from [https://cmake.org/download/](https://cmake.org/download/).
 
-   _Remarks: Verify if you can execute 'cmake --version' in "Terminal", if it's no, add cmake install directory to your path._
+   *Remarks: Verify if you can execute 'cmake --version' in "Terminal", if it's no, add cmake install directory to your path.*
 
 5. After installing g++, gsound, gtk3 and CMake, do the following in "Terminal" to Build and install xtd :
 
@@ -118,7 +129,7 @@ cd xtd_path_name
 ./install
 ```
 
-_Remarks : Do not launch ./install with sudo or as su._
+*Remarks : Do not launch ./install with sudo or as su.* 
 
 4. Create as many applications as you want with xtd.
 
@@ -130,9 +141,9 @@ Use internal tools installed with xtd.
 
 Let the gui tool drive you for create your new project.
 
-- First step choose "Create a new project" button.
-- Choose your project template then click to "Next" button
-- Choose the name for your new project and the path where the project will be create, and finally click "Create button" to create it.
+* First step choose "Create a new project" button.
+* Choose your project template then click to "Next" button
+* Choose the name for your new project and the path where the project will be create, and finally click "Create button" to create it.
 
 ![xtdc-gui](/pictures/xtdc-gui.gif)
 
@@ -147,14 +158,13 @@ xtdc new gui hello_world
 cd hello_world
 xtdc open
 ```
-
 "xtdc" command line tool for creating hello_world gui application, generate Visual Studio solution if you running it on Windows, Xcode project if you are on macOS or Code::Blocks project if you are on Linux. If you are on Windows, Visual Studio will be running with your new project. If you are on macOS, Xcode will be running with your new project. If you are on Linux, Code::Blocks will be running with your project.
 
 ### Remarks
 
-See [xtdc-gui](#) for more info.
+See [xtdc-gui](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc-gui/README.md) for more info.
 
-See [xtdc](#) for more info.
+See [xtdc](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc/README.md) for more info.
 
 ## Uninstall
 
@@ -162,7 +172,7 @@ Since the version 0.2.0 you can easily uninstall xtd with one command.
 
 ### Windows
 
-- Do the following in "Command Prompt" to uninstall xtd :
+* Do the following in "Command Prompt" to uninstall xtd :
 
 ```shell
 cd xtd_path_name
@@ -171,7 +181,7 @@ uninstall
 
 ### macOS or linux
 
-- Do the following in "Terminal" to uninstall xtd :
+* Do the following in "Terminal" to uninstall xtd :
 
 ```shell
 cd xtd_path_name
