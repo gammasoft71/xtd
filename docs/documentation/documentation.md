@@ -1,3 +1,7 @@
+---
+sidebar_position: 5
+---
+
 # Documentation
 
 This section contains the xtd documentation. ​
@@ -5,7 +9,7 @@ This section contains the xtd documentation. ​
 ## In this section
 
 - [Getting started](getting_started.md) provides getting started documentation.
-- [Guides](#) provides xtd guides and tutorials.
+- [Guides](guides/guides.md) provides xtd guides and tutorials.
 - [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html) provides online user reference guide.
 - [Design Guidelines](#) provides guidelines for designing libraries that extend and interact with the xtd.
 - [Release notes](release_notes.md) provides release notes information.
