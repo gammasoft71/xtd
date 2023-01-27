@@ -7,8 +7,8 @@ const FeatureList = [
     title: 'Latest news',
     description: (
       <>
-      • <a href="https://github.com/gammasoft71/xtd/blob/master/docs/news.md#xtdtunit-is-compatible-with-test-explorer-window-of-visual-studio-2019-or-later-november-18-2022">xtd.tunit is compatible with Test Explorer window of Visual Studio 2019 or later - November 18, 2022</a>
-      <br/>• <a href="https://github.com/gammasoft71/xtd/blob/master/docs/news.md#release-xtd-010-beta-october-10-2021">Release xtd 0.1.0 (beta) - October 10, 2021</a>
+      • <a href="docs/news#xtdtunit-is-compatible-with-test-explorer-window-of-visual-studio-2019-or-later-november-18-2022">xtd.tunit is compatible with Test Explorer window of Visual Studio 2019 or later - November 18, 2022</a>
+      <br/>• <a href="docs/news#release-xtd-010-beta-october-10-2021">Release xtd 0.1.0 (beta) - October 10, 2021</a>
       </>
     ),
   },
@@ -16,11 +16,29 @@ const FeatureList = [
     title: 'Feature',
     description: (
       <>
-      • Free and open-source (MIT License). A collection of native C++ classes libraries, to complete std.
+      • Free and open-source (<a href="docs/documentation/license">MIT License</a>). A collection of native C++ classes libraries, to complete std.
       <br/>• API close to the .net API with modern C++ approach and full integration with the std standard.
-      <br/>• xtd is designed to manage GUI controls and dialogs in pure native mode or with CSS styles.
-      <br/>• Written in efficient, modern c++17/20 with RAII programming idiom.
-      <br/>• And highly portable and available on many different platforms.
+      <br/>• xtd is designed to manage GUI controls and dialogs in pure <a href="">native mode</a> or with <a href="">CSS styles</a>.
+      <br/>• Written in efficient, modern c++17/20 with <a href="https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization">RAII</a> programming idiom.
+      <br/>• And <a href="">highly portable</a> and available on <a href="">many different platforms</a>.
+      </>
+    ),
+  },
+  {
+    title: 'xtd libraries architecture',
+    description: (
+      <>
+      <img src="pictures/block_diagram_onion.png"/>
+      <br/>xtd is composed of several libraries.
+      <br/><br/><font size="+2">xtd.core</font>
+      <br/><img src="pictures/xtd.core.png"/> The <a href="https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html">xtd.core</a> library is modern c++17/20 library of classes, interfaces, and value types that provide access to system functionality. It is the foundation on which c++ applications, components, and controls are built.
+      <br/><br/><font size="+2">xtd.drawing</font>
+      <br/><img src="pictures/xtd.drawing.png"/> The <a href="https://codedocs.xyz/gammasoft71/xtd/group__xtd__drawing.html">xtd.drawing</a> library contains types that support basic GDI+ graphics functionality. Child namespaces support advanced two-dimensional and vector graphics functionality, advanced imaging functionality, and print-related and typographical services. A child namespace also contains types that extend design-time user-interface logic and drawing.
+      <br/><br/><font size="+2">xtd.forms</font>
+      <br/><img src="pictures/xtd.forms.png"/> The <a href="https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html">xtd.forms</a> library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows, Apple macOS and linux operating system.
+      <br/><br/><font size="+2">xtd.tunit</font>
+      <br/><img src="pictures/xtd.tunit.png"/> The <a href="">xtd.tunit</a> library is a unit-testing framework for modern C++17/20 inspired by <a href="">Microsoft.VisualStudio.TestTools.Cpp</a>.
+      <br/><br/>See <a href="">xtd libraries hierarchy</a>.
       </>
     ),
   },
@@ -32,8 +50,12 @@ const FeatureList = [
       <br/>• xtd is modular and scalable from embedded applications.
       <br/>• xtd provides consistent, comprehensive and comprehensible programming interfaces. 
       <br/>• xtd favors simplicity over complexity ("as simple as possible, but not simpler").
-      <br/>• xtd aims for consistency in design, coding style and documentation. 
+      <br/>• xtd aims for consistency in <a href="">design</a>, <a href="">coding style</a> and <a href="">documentation</a>.
       <br/>• xtd emphasizes source code quality, in terms of readability, comprehensiveness, consistency, style and testability.
+      <br/>• xtd aims to make C++ programming fun again Guiding Principles
+      <br/>• Strong focus on code quality, style, consistency and code readability – all code must satisfy our <a href="">coding style guide</a>.
+      <br/>• Strong focus on tests (automated <a href="">unit tests</a> with high coverage).
+      <br/>• Build on top of solid foundations – use existing proven C, C++ or Objective-C libraries (e.g. Win32 APi, Gtk4, AppKit,...) where it makes sense.
       </>
     ),
   },
@@ -41,9 +63,9 @@ const FeatureList = [
     title: 'Getting started',
     description: (
       <>
-      • Installation provides download and install documentation.
-      <br/>• Guides provides xtd guides and tutorials.
-      <br/>• Examples provides over 500 examples to help you use xtd, grouped by libraries and topics.
+      • <a href="docs/downloads">Installation</a> provides download and install documentation.
+      <br/>• <a href="docs/documentation/guides">Guides</a> provides xtd guides and tutorials.
+      <br/>• <a href="https://github.com/gammasoft71/xtd/blob/master/examples/README.md">Examples</a> provides over 500 examples to help you use xtd, grouped by libraries and topics.
       </>
     ),
   },
