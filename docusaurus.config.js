@@ -91,7 +91,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'support',
+            docId: 'support/support',
             position: 'left',
             label: 'Support',
           },
