@@ -120,6 +120,7 @@ const config = {
         ],
       },
       footer: {
+        /*
         style: 'dark',
         links: [
           {
@@ -144,6 +145,7 @@ const config = {
             html: '<a href="mailto:gammasoft71@gmail.com"><img src="pictures/mail32.png"></a>',
           },
         ],
+        */
         copyright: `© ${new Date().getFullYear()} Gammasoft. Built with Docusaurus.`,
       },
       prism: {
