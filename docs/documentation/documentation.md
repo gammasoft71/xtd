@@ -10,7 +10,7 @@ This section contains the xtd documentation. ​
 
 - [Getting started](getting_started.md) provides getting started documentation.
 - [Guides](guides/guides.md) provides xtd guides and tutorials.
-- [Reference Guide](https://gammasoft71.github.io/xtd/reference_guide/latest/index.html) provides online user reference guide.
+- [Reference Guides](reference_guides.md) provide online user reference guides for all versions of xtd.
 - [Design Guidelines](#) provides guidelines for designing libraries that extend and interact with the xtd.
 - [Release notes](release_notes.md) provides release notes information.
 - [Roadmap](roadmap.md) provides xtd roadmap.
