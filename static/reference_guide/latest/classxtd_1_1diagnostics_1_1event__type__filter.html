@@ -83,6 +83,16 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="event__type__filter_8h_source.html">event_type_filter.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for xtd::diagnostics::event_type_filter:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classxtd_1_1diagnostics_1_1event__type__filter.png" usemap="#xtd::diagnostics::event_5Ftype_5Ffilter_map" alt=""/>
+  <map id="xtd::diagnostics::event_5Ftype_5Ffilter_map" name="xtd::diagnostics::event_5Ftype_5Ffilter_map">
+<area href="classxtd_1_1diagnostics_1_1trace__filter.html" title="Provides the base class for trace filter implementations." alt="xtd::diagnostics::trace_filter" shape="rect" coords="0,56,197,80"/>
+<area href="classxtd_1_1static__object.html" title="Represent a static object. A static class can&#39;t be instantiated (constructors are deleted)." alt="xtd::static_object" shape="rect" coords="0,0,197,24"/>
+  </map>
+</div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>Indicates whether a listener should trace based on the event type. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code" href="classxtd_1_1diagnostics_1_1event__type__filter.html#af72666f4d50da0df8e440228d6727894">event_type_filter</a> : <span class="keyword">public</span> <a class="code" href="classxtd_1_1diagnostics_1_1trace__filter.html">xtd::diagnostics::trace_filter</a></div>
@@ -95,17 +105,7 @@ $(function() {
 <dl class="section remark"><dt>Remarks</dt><dd>One of several different types of filters can be assigned to a trace listener through the xtd::diagnostics::trace_listener::filter property to provide a layer of screening beyond that provided by the <a class="el" href="classxtd_1_1diagnostics_1_1trace__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">xtd::diagnostics::trace_switch</a>. The filter can be used to control the event types that are produced by the listener. </dd>
 <dd>
 This class filters events based on the value of the <a class="el" href="classxtd_1_1diagnostics_1_1event__type__filter.html#ae12253c975908009a185257d1c95c8b7" title="Gets the event type of the messages to trace.">xtd::diagnostics::event_type_filter::event_type</a> property. This property can be set by code to specify the event type of messages that should be traced by the listener. The value of the property indicates the threshold at which to begin tracing. Event types at and above the specified level are traced. The <a class="el" href="classxtd_1_1diagnostics_1_1event__type__filter.html#a2a91035900797a81d3efad4f8cc103cb" title="Determines whether the trace listener should trace the event.">xtd::diagnostics::event_type_filter::should_trace</a> method, called by listeners to determine if an event should be traced, uses the value of the <a class="el" href="classxtd_1_1diagnostics_1_1event__type__filter.html#ae12253c975908009a185257d1c95c8b7" title="Gets the event type of the messages to trace.">xtd::diagnostics::event_type_filter::event_type</a> property. </dd></dl>
-</div><div class="dynheader">
-Inheritance diagram for xtd::diagnostics::event_type_filter:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="classxtd_1_1diagnostics_1_1event__type__filter.png" usemap="#xtd::diagnostics::event_5Ftype_5Ffilter_map" alt=""/>
-  <map id="xtd::diagnostics::event_5Ftype_5Ffilter_map" name="xtd::diagnostics::event_5Ftype_5Ffilter_map">
-<area href="classxtd_1_1diagnostics_1_1trace__filter.html" title="Provides the base class for trace filter implementations." alt="xtd::diagnostics::trace_filter" shape="rect" coords="0,56,197,80"/>
-<area href="classxtd_1_1static__object.html" title="Represent a static object. A static class can&#39;t be instantiated (constructors are deleted)." alt="xtd::static_object" shape="rect" coords="0,0,197,24"/>
-  </map>
-</div></div>
-<table class="memberdecls">
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
 <tr class="memitem:af72666f4d50da0df8e440228d6727894"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1event__type__filter.html#af72666f4d50da0df8e440228d6727894">event_type_filter</a> (<a class="el" href="group__xtd__core.html#gaa67a4b789cb787af85a8a1337af56f99">xtd::diagnostics::source_levels</a> level)</td></tr>
 <tr class="memdesc:af72666f4d50da0df8e440228d6727894"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1event__type__filter.html" title="Indicates whether a listener should trace based on the event type.">event_type_filter</a> class.  <a href="classxtd_1_1diagnostics_1_1event__type__filter.html#af72666f4d50da0df8e440228d6727894">More...</a><br /></td></tr>
@@ -328,7 +328,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 27 2023 14:27:16 for xtd - Reference Guide by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 28 2023 17:43:15 for xtd - Reference Guide by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

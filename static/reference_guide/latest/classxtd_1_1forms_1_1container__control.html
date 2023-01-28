@@ -83,16 +83,7 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="container__control_8h_source.html">container_control.h</a>&gt;</code></p>
-<a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><p>Provides focus-management functionality for controls that can function as a container for other controls. </p>
-<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd::forms</a> </dd></dl>
-<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a></dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>A <a class="el" href="classxtd_1_1forms_1_1container__control.html" title="Provides focus-management functionality for controls that can function as a container for other contr...">container_control</a> represents a control that can function as a container for other controls and provides focus management. Controls that inherit from this class can track the active control they contain, even when the focus moves somewhere within a different container. </dd>
-<dd>
-<a class="el" href="classxtd_1_1forms_1_1container__control.html" title="Provides focus-management functionality for controls that can function as a container for other contr...">container_control</a> objects provide a logical boundary for contained controls. The container control can capture the TAB key press and move focus to the next control in the collection. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The container control does not receive focus; the focus is always set to the first child control in the collection of contained controls. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>You do not typically inherit directly from the <a class="el" href="classxtd_1_1forms_1_1container__control.html" title="Provides focus-management functionality for controls that can function as a container for other contr...">container_control</a> class. form, <a class="el" href="classxtd_1_1forms_1_1user__control.html" title="Represents a standard Windows user control.">user_control</a>, and <a class="el" href="classxtd_1_1forms_1_1up__down__base.html" title="Implements the basic functionality required by a spin box (also known as an up-down control).">up_down_base</a> classes inherit from <a class="el" href="classxtd_1_1forms_1_1container__control.html" title="Provides focus-management functionality for controls that can function as a container for other contr...">container_control</a>. </dd></dl>
-</div><div class="dynheader">
+<div class="dynheader">
 Inheritance diagram for xtd::forms::container_control:</div>
 <div class="dyncontent">
  <div class="center">
@@ -118,7 +109,16 @@ Inheritance diagram for xtd::forms::container_control:</div>
 <area href="classxtd_1_1forms_1_1trace__form.html" title="Represents a form that displays trace form. This class cannot be inherited." alt="xtd::forms::trace_form" shape="rect" coords="184,392,358,416"/>
   </map>
 </div></div>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
+<div class="textblock"><p>Provides focus-management functionality for controls that can function as a container for other controls. </p>
+<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd::forms</a> </dd></dl>
+<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>A <a class="el" href="classxtd_1_1forms_1_1container__control.html" title="Provides focus-management functionality for controls that can function as a container for other contr...">container_control</a> represents a control that can function as a container for other controls and provides focus management. Controls that inherit from this class can track the active control they contain, even when the focus moves somewhere within a different container. </dd>
+<dd>
+<a class="el" href="classxtd_1_1forms_1_1container__control.html" title="Provides focus-management functionality for controls that can function as a container for other contr...">container_control</a> objects provide a logical boundary for contained controls. The container control can capture the TAB key press and move focus to the next control in the collection. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The container control does not receive focus; the focus is always set to the first child control in the collection of contained controls. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>You do not typically inherit directly from the <a class="el" href="classxtd_1_1forms_1_1container__control.html" title="Provides focus-management functionality for controls that can function as a container for other contr...">container_control</a> class. form, <a class="el" href="classxtd_1_1forms_1_1user__control.html" title="Represents a standard Windows user control.">user_control</a>, and <a class="el" href="classxtd_1_1forms_1_1up__down__base.html" title="Implements the basic functionality required by a spin box (also known as an up-down control).">up_down_base</a> classes inherit from <a class="el" href="classxtd_1_1forms_1_1container__control.html" title="Provides focus-management functionality for controls that can function as a container for other contr...">container_control</a>. </dd></dl>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Properties</h2></td></tr>
 <tr class="memitem:a35fb9ea75749375e595bb7e5b8c7de40"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="group__xtd__forms.html#gafdd40a9deb594b248dfd59d2df804b2c">control_ref</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1container__control.html#a35fb9ea75749375e595bb7e5b8c7de40">active_control</a> () const noexcept</td></tr>
 <tr class="memdesc:a35fb9ea75749375e595bb7e5b8c7de40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the active control on the container control.  <a href="classxtd_1_1forms_1_1container__control.html#a35fb9ea75749375e595bb7e5b8c7de40">More...</a><br /></td></tr>
@@ -1181,7 +1181,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 27 2023 14:27:18 for xtd - Reference Guide by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 28 2023 17:43:17 for xtd - Reference Guide by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

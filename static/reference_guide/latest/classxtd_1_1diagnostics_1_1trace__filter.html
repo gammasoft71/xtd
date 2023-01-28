@@ -83,6 +83,17 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="trace__filter_8h_source.html">trace_filter.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for xtd::diagnostics::trace_filter:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classxtd_1_1diagnostics_1_1trace__filter.png" usemap="#xtd::diagnostics::trace_5Ffilter_map" alt=""/>
+  <map id="xtd::diagnostics::trace_5Ffilter_map" name="xtd::diagnostics::trace_5Ffilter_map">
+<area href="classxtd_1_1static__object.html" title="Represent a static object. A static class can&#39;t be instantiated (constructors are deleted)." alt="xtd::static_object" shape="rect" coords="103,0,300,24"/>
+<area href="classxtd_1_1diagnostics_1_1event__type__filter.html" title="Indicates whether a listener should trace based on the event type." alt="xtd::diagnostics::event_type_filter" shape="rect" coords="0,112,197,136"/>
+<area href="classxtd_1_1diagnostics_1_1source__filter.html" title="Indicates whether a listener should trace a message based on the source of a trace." alt="xtd::diagnostics::source_filter" shape="rect" coords="207,112,404,136"/>
+  </map>
+</div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>Provides the base class for trace filter implementations. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code" href="classxtd_1_1diagnostics_1_1trace__filter.html#a8616ee0f4a2070b88a52f22d651ebced">trace_filter</a> <a class="code" href="group__keywords.html#ga8bad3fd3f3b8afda1d635fa70ebaaa8e">abstract_</a></div>
@@ -95,18 +106,7 @@ $(function() {
 <dl class="section remark"><dt>Remarks</dt><dd>Trace filters can be used by trace listeners to provide an extra layer of filtering beyond that provided by trace switches. The trace filter for a trace listener can be found in the listener's filter property. Trace switches determine if a trace is to be sent to the trace listeners. Trace filters allow the individual trace listeners to determine whether or not the trace is to be written to the associated output medium. For example, as determined by each trace filter, a trace may be written to the console by a <a class="el" href="classxtd_1_1diagnostics_1_1console__trace__listener.html" title="Directs tracing or debugging output to either the standard output or the standard error stream.">console_trace_listener</a>, but not to the event log by a event_log_trace_listener. </dd>
 <dd>
 Filters that inherit from the <a class="el" href="classxtd_1_1diagnostics_1_1trace__filter.html" title="Provides the base class for trace filter implementations.">trace_filter</a> class can be used by trace listeners that inherit from the <a class="el" href="classxtd_1_1diagnostics_1_1trace__listener.html" title="Provides the abstract base class for the listeners who monitor trace and debug output.">trace_listener</a> class to perform filtering of events being traced. <a class="el" href="classxtd_1_1diagnostics_1_1trace__filter.html" title="Provides the base class for trace filter implementations.">trace_filter</a> contains a single method, should_trace, which takes event data and returns a flag indicating whether the event should be traced. </dd></dl>
-</div><div class="dynheader">
-Inheritance diagram for xtd::diagnostics::trace_filter:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="classxtd_1_1diagnostics_1_1trace__filter.png" usemap="#xtd::diagnostics::trace_5Ffilter_map" alt=""/>
-  <map id="xtd::diagnostics::trace_5Ffilter_map" name="xtd::diagnostics::trace_5Ffilter_map">
-<area href="classxtd_1_1static__object.html" title="Represent a static object. A static class can&#39;t be instantiated (constructors are deleted)." alt="xtd::static_object" shape="rect" coords="103,0,300,24"/>
-<area href="classxtd_1_1diagnostics_1_1event__type__filter.html" title="Indicates whether a listener should trace based on the event type." alt="xtd::diagnostics::event_type_filter" shape="rect" coords="0,112,197,136"/>
-<area href="classxtd_1_1diagnostics_1_1source__filter.html" title="Indicates whether a listener should trace a message based on the source of a trace." alt="xtd::diagnostics::source_filter" shape="rect" coords="207,112,404,136"/>
-  </map>
-</div></div>
-<table class="memberdecls">
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
 <tr class="memitem:a9eff01a35ecf308bdcc4d34784df3067"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1trace__filter.html#a9eff01a35ecf308bdcc4d34784df3067">should_trace</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1trace__event__cache.html">xtd::diagnostics::trace_event_cache</a> &amp;cache, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;source, <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> event_type, <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> id, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;message, std::any data1, const std::vector&lt; std::any &gt; &amp;data_array) noexcept=0</td></tr>
 <tr class="memdesc:a9eff01a35ecf308bdcc4d34784df3067"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, determines whether the trace listener should trace the event.  <a href="classxtd_1_1diagnostics_1_1trace__filter.html#a9eff01a35ecf308bdcc4d34784df3067">More...</a><br /></td></tr>
@@ -382,7 +382,7 @@ Inheritance diagram for xtd::diagnostics::trace_filter:</div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 27 2023 14:27:16 for xtd - Reference Guide by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 28 2023 17:43:15 for xtd - Reference Guide by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

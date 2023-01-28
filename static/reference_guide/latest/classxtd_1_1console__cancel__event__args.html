@@ -83,16 +83,7 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="console__cancel__event__args_8h_source.html">console_cancel_event_args.h</a>&gt;</code></p>
-<a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><p>Provides data for the <a class="el" href="classxtd_1_1console.html#a02258c1b2d77b3ca79f144db690d4c20" title="Occurs when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break ...">console::cancel_key_press</a> event. This class cannot be inherited. </p>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>A user can interrupt a console application process by simultaneously pressing the Control modifier key and the C console key (Ctrl+C), or the Control modifier key and the Break console key (Ctrl+Break). The console consequently provides a <a class="el" href="classxtd_1_1console__cancel__event__args.html" title="Provides data for the console::cancel_key_press event. This class cannot be inherited.">console_cancel_event_args</a> object to the event handler for the <a class="el" href="classxtd_1_1console.html#a02258c1b2d77b3ca79f144db690d4c20" title="Occurs when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break ...">console::cancel_key_press</a> event to specify whether the process should be cancelled. </dd>
-<dd>
-If the cancel property is set to true in the event handler, the process is resumed; otherwise, the process is terminated. By default, the value of the <a class="el" href="classxtd_1_1console__cancel__event__args.html" title="Provides data for the console::cancel_key_press event. This class cannot be inherited.">console_cancel_event_args</a> property is false, and the process terminates. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="console_read_key_8cpp-example.html#_a1">console_read_key.cpp</a>.</dd>
-</dl>
-</div><div class="dynheader">
+<div class="dynheader">
 Inheritance diagram for xtd::console_cancel_event_args:</div>
 <div class="dyncontent">
  <div class="center">
@@ -102,7 +93,16 @@ Inheritance diagram for xtd::console_cancel_event_args:</div>
 <area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,0,193,24"/>
   </map>
 </div></div>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
+<div class="textblock"><p>Provides data for the <a class="el" href="classxtd_1_1console.html#a02258c1b2d77b3ca79f144db690d4c20" title="Occurs when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break ...">console::cancel_key_press</a> event. This class cannot be inherited. </p>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>A user can interrupt a console application process by simultaneously pressing the Control modifier key and the C console key (Ctrl+C), or the Control modifier key and the Break console key (Ctrl+Break). The console consequently provides a <a class="el" href="classxtd_1_1console__cancel__event__args.html" title="Provides data for the console::cancel_key_press event. This class cannot be inherited.">console_cancel_event_args</a> object to the event handler for the <a class="el" href="classxtd_1_1console.html#a02258c1b2d77b3ca79f144db690d4c20" title="Occurs when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break ...">console::cancel_key_press</a> event to specify whether the process should be cancelled. </dd>
+<dd>
+If the cancel property is set to true in the event handler, the process is resumed; otherwise, the process is terminated. By default, the value of the <a class="el" href="classxtd_1_1console__cancel__event__args.html" title="Provides data for the console::cancel_key_press event. This class cannot be inherited.">console_cancel_event_args</a> property is false, and the process terminates. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="console_read_key_8cpp-example.html#_a1">console_read_key.cpp</a>.</dd>
+</dl>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
 <tr class="memitem:a08bf329e030811ce372a31e52d50f355"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1console__cancel__event__args.html#a08bf329e030811ce372a31e52d50f355">console_cancel_event_args</a> ()=default</td></tr>
 <tr class="memdesc:a08bf329e030811ce372a31e52d50f355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1console__cancel__event__args.html" title="Provides data for the console::cancel_key_press event. This class cannot be inherited.">console_cancel_event_args</a> class.  <a href="classxtd_1_1console__cancel__event__args.html#a08bf329e030811ce372a31e52d50f355">More...</a><br /></td></tr>
@@ -312,7 +312,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 27 2023 14:27:15 for xtd - Reference Guide by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 28 2023 17:43:14 for xtd - Reference Guide by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

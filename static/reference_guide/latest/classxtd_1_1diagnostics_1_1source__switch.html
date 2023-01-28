@@ -84,6 +84,18 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="source__switch_8h_source.html">source_switch.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for xtd::diagnostics::source_switch:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classxtd_1_1diagnostics_1_1source__switch.png" usemap="#xtd::diagnostics::source_5Fswitch_map" alt=""/>
+  <map id="xtd::diagnostics::source_5Fswitch_map" name="xtd::diagnostics::source_5Fswitch_map">
+<area href="classxtd_1_1diagnostics_1_1switch__base.html" title="Provides an abstract base class to create new debugging and tracing switches." alt="xtd::diagnostics::switch_base" shape="rect" coords="97,112,281,136"/>
+<area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,56,184,80"/>
+<area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; switch_base &gt;" shape="rect" coords="194,56,378,80"/>
+<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="194,0,378,24"/>
+  </map>
+</div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>Provides a multilevel switch to control tracing and debug output without recompiling your code. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code" href="classxtd_1_1diagnostics_1_1source__switch.html#a90bf16968773bd6d3f5b70b33d73947f">source_switch</a> : <span class="keyword">public</span> <a class="code" href="classxtd_1_1diagnostics_1_1switch__base.html">xtd::diagnostics::switch_base</a></div>
@@ -96,19 +108,7 @@ $(function() {
 <dl class="section remark"><dt>Remarks</dt><dd>The switch property of the <a class="el" href="classxtd_1_1diagnostics_1_1trace__source.html" title="Provides a set of methods and properties that enable applications to trace the execution of code and ...">trace_source</a> class is a <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> object. The <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> class provides a level property to test the event level of the switch. The level property gets or sets the switch's trace_level value. </dd>
 <dd>
 The switch is used to check whether a trace should be propagated or ignored. Each <a class="el" href="classxtd_1_1diagnostics_1_1trace__source.html" title="Provides a set of methods and properties that enable applications to trace the execution of code and ...">trace_source</a> trace method calls the should_trace method before calling the listeners. If the should_trace method returns false, the trace is ignored and the trace method exits. If the should_trace method returns true, the trace is passed to the listeners. </dd></dl>
-</div><div class="dynheader">
-Inheritance diagram for xtd::diagnostics::source_switch:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="classxtd_1_1diagnostics_1_1source__switch.png" usemap="#xtd::diagnostics::source_5Fswitch_map" alt=""/>
-  <map id="xtd::diagnostics::source_5Fswitch_map" name="xtd::diagnostics::source_5Fswitch_map">
-<area href="classxtd_1_1diagnostics_1_1switch__base.html" title="Provides an abstract base class to create new debugging and tracing switches." alt="xtd::diagnostics::switch_base" shape="rect" coords="97,112,281,136"/>
-<area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,56,184,80"/>
-<area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; switch_base &gt;" shape="rect" coords="194,56,378,80"/>
-<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="194,0,378,24"/>
-  </map>
-</div></div>
-<table class="memberdecls">
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ab5abe19c4d132fc0c6c68ea2c32ba7ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html#ab5abe19c4d132fc0c6c68ea2c32ba7ab">on_value_changed</a> () override</td></tr>
@@ -416,7 +416,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 27 2023 14:27:16 for xtd - Reference Guide by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 28 2023 17:43:15 for xtd - Reference Guide by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

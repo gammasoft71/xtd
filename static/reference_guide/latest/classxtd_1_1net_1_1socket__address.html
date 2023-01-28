@@ -83,12 +83,7 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="socket__address_8h_source.html">socket_address.h</a>&gt;</code></p>
-<a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><p>Stores serialized information from <a class="el" href="classxtd_1_1net_1_1end__point.html" title="Identifies a network address. This is an abstract class.">end_point</a> derived classes. </p>
-<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1net.html" title="The xtd::net namespace provides a simple programming interface for many of the protocols used on netw...">xtd::net</a> </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The first 2 bytes of the underlying buffer are reserved for the <a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3" title="Specifies the addressing scheme that an instance of the xtd::net::sockets::socket class can use.">xtd::net::sockets::address_family</a> enumerated value. When the <a class="el" href="classxtd_1_1net_1_1socket__address.html" title="Stores serialized information from end_point derived classes.">xtd::net::socket_address</a> is used to store a serialized xtd::net::ipend_point, the third and fourth bytes are used to store port number information. The next bytes are used to store the IP address. You can access any information within this underlying byte buffer by referring to its index position; the byte buffer uses zero-based indexing. You can also use the xtd::net::socket_address::family and <a class="el" href="classxtd_1_1net_1_1socket__address.html#ad3584178b7a64c84783853a124ab03b2" title="Gets the underlying buffer size of the xtd::net::socket_address.">xtd::net::socket_address::size</a> properties to get the <a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3" title="Specifies the addressing scheme that an instance of the xtd::net::sockets::socket class can use.">xtd::net::sockets::address_family</a> value and the buffer size, respectively. To view any of this information as a string, use the <a class="el" href="classxtd_1_1net_1_1socket__address.html#afee4426f1d082620c75f7861fcd1e88a" title="Returns information about the socket address.">xtd::net::socket_address::to_string</a> method. </dd></dl>
-</div><div class="dynheader">
+<div class="dynheader">
 Inheritance diagram for xtd::net::socket_address:</div>
 <div class="dyncontent">
  <div class="center">
@@ -97,7 +92,12 @@ Inheritance diagram for xtd::net::socket_address:</div>
 <area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,0,145,24"/>
   </map>
 </div></div>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
+<div class="textblock"><p>Stores serialized information from <a class="el" href="classxtd_1_1net_1_1end__point.html" title="Identifies a network address. This is an abstract class.">end_point</a> derived classes. </p>
+<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1net.html" title="The xtd::net namespace provides a simple programming interface for many of the protocols used on netw...">xtd::net</a> </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The first 2 bytes of the underlying buffer are reserved for the <a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3" title="Specifies the addressing scheme that an instance of the xtd::net::sockets::socket class can use.">xtd::net::sockets::address_family</a> enumerated value. When the <a class="el" href="classxtd_1_1net_1_1socket__address.html" title="Stores serialized information from end_point derived classes.">xtd::net::socket_address</a> is used to store a serialized xtd::net::ipend_point, the third and fourth bytes are used to store port number information. The next bytes are used to store the IP address. You can access any information within this underlying byte buffer by referring to its index position; the byte buffer uses zero-based indexing. You can also use the xtd::net::socket_address::family and <a class="el" href="classxtd_1_1net_1_1socket__address.html#ad3584178b7a64c84783853a124ab03b2" title="Gets the underlying buffer size of the xtd::net::socket_address.">xtd::net::socket_address::size</a> properties to get the <a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3" title="Specifies the addressing scheme that an instance of the xtd::net::sockets::socket class can use.">xtd::net::sockets::address_family</a> value and the buffer size, respectively. To view any of this information as a string, use the <a class="el" href="classxtd_1_1net_1_1socket__address.html#afee4426f1d082620c75f7861fcd1e88a" title="Returns information about the socket address.">xtd::net::socket_address::to_string</a> method. </dd></dl>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
 <tr class="memitem:a6f1f2b3d35bbc2210ea81b363210826d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1socket__address.html#a6f1f2b3d35bbc2210ea81b363210826d">socket_address</a> (<a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">sockets::address_family</a> <a class="el" href="classxtd_1_1net_1_1socket__address.html#ae2ee8c0e19c6313e09ab31ef50c6c819">address_family</a>)</td></tr>
 <tr class="memdesc:a6f1f2b3d35bbc2210ea81b363210826d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <a class="el" href="classxtd_1_1net_1_1socket__address.html" title="Stores serialized information from end_point derived classes.">xtd::net::socket_address</a> class for the given address family.  <a href="classxtd_1_1net_1_1socket__address.html#a6f1f2b3d35bbc2210ea81b363210826d">More...</a><br /></td></tr>
@@ -390,7 +390,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 27 2023 14:27:22 for xtd - Reference Guide by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 28 2023 17:43:21 for xtd - Reference Guide by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
