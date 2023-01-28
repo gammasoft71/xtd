@@ -9,6 +9,7 @@
 .docusaurus
 .cache-loader
 .yarnrc.yml
+yarn.lock
 
 # Misc
 .DS_Store
