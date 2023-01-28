@@ -129,7 +129,7 @@ const config = {
             html: '<a href="https://github.com/gammasoft71/xtd"><img src="pictures/github32.png"></a>',
           },
           {
-            html: '<a href="https://sourceforge.net/u/gammasoft71"><img src="pictures/sourceforge32.png"></a>',
+            html: '<a href="https://sourceforge.net/projects/xtdpro"><img src="pictures/sourceforge32.png"></a>',
           },
           {
             html: '<a href="https://www.facebook.com/gammasoft71"><img src="pictures/facebook32.png"></a>',
