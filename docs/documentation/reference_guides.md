@@ -2,11 +2,23 @@
 sidebar_position: 3
 ---
 
-# Reference guides
+# Reference Guides
 
-All manuals are available online, including older versions. 
+All Reference Guides are available online, including older versions. 
 The latest development version of the manual is also available.
 
-* [Latest Manual](https://gammasoft71.github.io/xtd/reference_guide/latest/index.html)
-* [v0.1.0 Manual](https://gammasoft71.github.io/xtd/reference_guide/v0.1.0/index.html)
+## Current stable version
 
+* There is no stable version of xtd yet.
+
+## Current development version
+
+* [Latest Reference Guide](https://gammasoft71.github.io/xtd/reference_guide/latest/index.html)
+
+## Latest beta version
+
+* [v0.1.0 Reference Guide](https://gammasoft71.github.io/xtd/reference_guide/v0.1.0/index.html)
+
+## Older versions
+
+* There are no older versions of xtd yet.
