@@ -1,22 +1,31 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+const lightCodeTheme = require('prism-react-renderer/themes/github');
+//const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const darkCodeTheme = require('prism-react-renderer/themes/palenight');
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   //title: 'xtd',
-  //tagline: 'xtd (pronounced "extend") is a modern C++17/20 framework to create console, GUI and unit test applications on Microsoft Windows, macOS, Linux, iOS and android (*).',
   title: ' ',
+  //tagline: 'xtd (pronounced "extend") is a modern C++17/20 framework to create console, GUI and unit test applications on Microsoft Windows, macOS, Linux, iOS and android (*).',
+  favicon: 'pictures/xtd.ico',
+
+  // Set the production url of your site here
   url: 'https://gammasoft71.github.io',
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/xtd/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'pictures/favicon.ico',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'gammasoft71', // Usually your GitHub org/user name.
   projectName: 'xtd', // Usually your repo name.
   trailingSlash: false,
+
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -48,6 +57,8 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // Replace with your project's social card
+      //image: 'picture/xtd.jpg',
       navbar: {
         title: 'xtd',
         logo: {
@@ -136,8 +147,8 @@ const config = {
         copyright: `© ${new Date().getFullYear()} Gammasoft. Built with Docusaurus.`,
       },
       prism: {
-        theme: require('prism-react-renderer/themes/github'),
-        darkTheme: require('prism-react-renderer/themes/palenight'),
+        theme: lightCodeTheme,
+        darkTheme: darkCodeTheme,
       },
     }),
 };
