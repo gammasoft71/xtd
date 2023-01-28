@@ -20,7 +20,7 @@ xtd.tunit has a unique namespace : ***xtd::tunit***.
 
 This example show how to use xtd.tunit with using namespace:
 
-```c++
+```cpp
 #include <xtd/tunit>
 
 using namespace xtd::tunit;
@@ -44,7 +44,7 @@ auto main()->int {
 
 This example show how to use xtd.tunit without using namespace:
 
-```c++
+```cpp
 #include <xtd/tunit>
 
 namespace unit_tests {
@@ -82,7 +82,7 @@ xtd.tunit uses custom helpers to identify test fixtures and test methods. It's t
 
 The following example shows how to create and register fixture and test cases with helpers :
 
-```c++
+```cpp
 #include <xtd/tunit>
 
 using namespace xtd::tunit;
@@ -128,7 +128,7 @@ auto main(int argc, char* argv[])->int {
 
 The following example shows how to create and register same fixture and same test cases without helpers :
 
-```c++
+```cpp
 #include <xtd/tunit>
 
 using namespace xtd::tunit;
@@ -198,7 +198,7 @@ auto main(int argc, char* argv[])->int {
 
 The following example shows how to get current informations with helper :
 
-```c++
+```cpp
 #include <xtd/tunit>
 #include <iostream>
 
@@ -219,7 +219,7 @@ auto main()->int {
 
 The following example shows how to get same current informations without helper :
 
-```c++
+```cpp
 #include <xtd/tunit>
 #include <iostream>
 
@@ -244,20 +244,20 @@ For each assertion, validation or assumption test method, the last parameter is 
 To add automatically xtd::diagnostics::stack_frame, helpers are create. Add '_' at the end of test method member to used helper.
 
 example without helper :
-```c++
+```cpp
 assert::contains('a', str, csf_);
 string_valid::are_equal_ignoring_case("value", str, csf_);
 ```
 
 example with helper :
-```c++
+```cpp
 assert::contains_('a', str);
 string_valid::are_equal_ignoring_case_("value", str);
 ```
 
 The following example shows hot to call are_equal assertion tests with helper :
 
-```c++
+```cpp
 #include <xtd/tunit>
 
 using namespace xtd::tunit;
@@ -280,7 +280,7 @@ auto main(int argc, char* argv[])->int {
 
 The following example shows hot to call the same are_equal assertion tests without helper :
 
-```c++
+```cpp
 #include <xtd/tunit>
 
 using namespace xtd::tunit;
@@ -307,13 +307,13 @@ Some functions are template, in this case the template parameter becomes the fir
 
 example without helper : 
 
-```c++
+```cpp
 assert::is_instance_of<std::ios_base>(stream, csf_);
 ```
 
 example with helper :
 
-```c++
+```cpp
 assert::is_instance_of_(std::ios_base, stream);
 ```
 
@@ -335,7 +335,7 @@ Assertions make use with the following static classes :
 
 ### Example
 
-```c++
+```cpp
 void test_method_(test_case_1) {
   assert::are_equal(4, 2 + 2, csf_);
   string_Assert::start_width("Hello", "Hello, World!", csf_)
@@ -358,7 +358,7 @@ Validations make use with the following static classes :
 
 ### Example
 
-```c++
+```cpp
 void test_method_(test_case_1) {
   valid::are_equal(4, 2 + 2, csf_);
   string_valid::start_width("Hello", "Hello, World!", csf_)
@@ -379,7 +379,7 @@ Assumptions make use with the following static classes :
 
 ### Example
 
-```c++
+```cpp
 void test_method_(test_case_1) {
   assume::are_equal(4, 2 + 2, csf_);
   string_assume::start_width("Hello", "Hello, World!", csf_)

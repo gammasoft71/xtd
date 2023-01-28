@@ -46,7 +46,7 @@ The [fixed_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_
 
 The following example demonstrates the use of [fixed_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1fixed__layout__panel.html) container.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd::forms;
@@ -93,7 +93,7 @@ auto main()->int {
 
 The following example demonstrates the use of [group_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1group__box.html) container.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd::forms;
@@ -138,7 +138,7 @@ auto main()->int {
 
 The following example demonstrates the use of [panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1panel.html) container.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd::forms;
@@ -185,7 +185,7 @@ auto main()->int {
 
 The following example demonstrates the use of [popup_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1popup__panel.html) container.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -248,7 +248,7 @@ auto main()->int {
 
 The following example demonstrates the use of [tab_page](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__page.html) container.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd::forms;
@@ -365,7 +365,7 @@ But not the width.
 
 The following example shows how to create a [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) with children that have a default style.
 
-```c++
+```cpp
 #include <xtd/xtd.forms.h>
 
 using namespace xtd;
@@ -400,7 +400,7 @@ auto main()->int {
 
 The following example shows how to create a [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) whose children must have a size corresponding to a percentage of the parent container.
 
-```c++
+```cpp
 #include <xtd/xtd.forms.h>
 
 using namespace xtd;
@@ -440,7 +440,7 @@ auto main()->int {
 
 The following example shows how to create a [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) whose children must have a size corresponding to a abosulte value in pixels and set expand to true.
 
-```c++
+```cpp
 #include <xtd/xtd.forms.h>
 
 using namespace xtd;
@@ -522,7 +522,7 @@ But not the height.
 
 The following example shows how to create a [vertical_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html) with children that have a default style.
 
-```c++
+```cpp
 #include <xtd/xtd.forms.h>
 
 using namespace xtd;
@@ -557,7 +557,7 @@ auto main()->int {
 
 The following example shows how to create a [vertical_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html) whose children must have a size corresponding to a percentage of the parent container.
 
-```c++
+```cpp
 #include <xtd/xtd.forms.h>
 
 using namespace xtd;
@@ -597,7 +597,7 @@ auto main()->int {
 
 The following example shows how to create a [vertical_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html) whose children must have a size corresponding to a abosulte value in pixels and set expand to true.
 
-```c++
+```cpp
 #include <xtd/xtd.forms.h>
 
 using namespace xtd;
@@ -665,7 +665,7 @@ The child controls for the [tab_control](https://codedocs.xyz/gammasoft71/xtd/cl
 
 The following example demonstrates the use of [tab_control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__control.html) container.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd::forms;
@@ -730,7 +730,7 @@ xtd is flexible and complete enough to create your own container without much ef
 
 The following example show how to make your own horizontal stack panel esasily with overloading [on_layout](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga277d5f851e0d49163d9fdecaace4d7bd) method.
 
-```c++
+```cpp
 #include <xtd/xtd.forms.h>
 
 using namespace xtd;
@@ -779,7 +779,7 @@ auto main()->int {
 
 The following example show how to make your own vertical stack panel esasily with [dock](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#adb3febb83c715c2f7e014b47c9cb1df7) and overloading [on_control_added](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga76d3b55915e43555fe652aa4d71ae2f0) method.
 
-```c++
+```cpp
 #include <xtd/xtd.forms.h>
 
 using namespace xtd;

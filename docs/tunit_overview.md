@@ -10,7 +10,7 @@ For this we will use a simple test.
 
 * src/unit_test1.cpp :
 
-```c++
+```cpp
 #include <xtd/xtd.tunit>
 
 using namespace xtd::tunit;

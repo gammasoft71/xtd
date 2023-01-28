@@ -42,7 +42,7 @@ Sheet is a special dialog mode on macOS :
 
 The following example demonstates the different ways to display a [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h).
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace std;
@@ -162,7 +162,7 @@ A form can be shown with different states:
 
 The folloing example demonstates the different ways to display a [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h).
 
-```c++
+```cpp
 #define TRACE
 #include <xtd/xtd>
 
@@ -246,7 +246,7 @@ If any of the above elements are accidentally present, an [xtd::invalid_operatio
 
 The following example demontrates how to create your own dialog :
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace std;

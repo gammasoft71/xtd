@@ -12,7 +12,7 @@ The following example shows a read operation within a console app. This example 
 
 The example assume that a file named test_file.txt already exists in the same folder as the app.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;

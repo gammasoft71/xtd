@@ -62,7 +62,7 @@ The docking mode can be any side of the control's container, or set to fill the 
 
 The following example shows the use of [dock](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#aa42e38a902457e5f548091a379d2f693) property :
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd::forms;
@@ -118,7 +118,7 @@ The control also positions itself vertically so that its location is always the 
 
 The following example shows the use of [anchor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#aaf1b4489cf4ad56cfcba4e619c95f56c) property :
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd::forms;
@@ -209,7 +209,7 @@ By default controls have [auto_size_mode::auto_size_mode::grow_and_shrink](https
 
 For example if a form contains three controls and we set the [auto_size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a571575a959ffc0ee42fd8d5426bcbd9f) property of the form to true, then the size of the form will adapt to encompass the three controls.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd::forms;

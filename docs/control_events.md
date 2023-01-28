@@ -29,7 +29,7 @@ In the example below, we will just create a window with two buttons and two stat
 We will associate a WndProc only to the window because pressing the button results in a WM_COMMAND event that is sent to the parent control (in this case the window).
 At the end of the main function we will execute the event loop until the window is closed by the user.
 
-```c++
+```cpp
 #pragma comment(linker,"\"/manifestdependency:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\"")
 
 #include <string>
@@ -103,7 +103,7 @@ auto main()->int {
 
 The following code show the same example with xtd
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -166,7 +166,7 @@ Let's take a simple example of a [click](https://codedocs.xyz/gammasoft71/xtd/gr
 
 The following code shows how to associate an [event_handler](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) to the [control::click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd::forms;
@@ -195,7 +195,7 @@ In this example we use a lambda function, but we could as well have associated a
 
 The following example uses the `form1::on_button_click` member function with event [click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga651752ad0a3ec381983aa0b367291a68) arguments. Even if we don't need the arguments it's just for the example.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -229,7 +229,7 @@ See [delegates](https://github.com/gammasoft71/xtd/blob/master/docs/delegates.md
 
 Let's take the previous example but overload the [on_click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga0127de8590b04dd14561ba777bd8a615) method associated to the [click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event. To do this we need to create a class derived from the [button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) class.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;

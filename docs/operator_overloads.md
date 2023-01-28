@@ -37,7 +37,7 @@ You must just overload this method for used your own implementation.
 
 The Point class show how to used Equals method :
 
-```c++
+```cpp
 class point : public xtd::object, public xtd::iequatable<point> {
   //...
   
@@ -68,7 +68,7 @@ You must just overload this method for used your own implementation.
 
 The time_span class show how to used compare_to method:
 
-```c++
+```cpp
 class time_span : public xtd::object, public xtd::icomparable<time_span> {
   //...
   

@@ -10,7 +10,7 @@ Because methods are the means of taking action, the design guidelines require th
 
 **✔️ DO** give methods names that are verbs or verb phrases.
 
-```c++
+```cpp
 ​class ustring : public object {
 public:
   int compare_to(...);
@@ -27,7 +27,7 @@ Unlike other members, properties should be given noun phrase or adjective names.
 
 **❌ DO NOT** have properties that match the name of "get_" or "set_" methods as in the following example:
 
-```c++
+```cpp
 ustring text_writer() const { ... }
 void textt_writer(const ustring& value) { ... }
 ustring get_text_writer(int value) { ... }
@@ -43,7 +43,7 @@ This pattern typically indicates that the property should really be a method.
 
 For example, the following property correctly gets and sets an enum value named color, so the property is named color:
 
-```c++
+```cpp
 namespace forms {
   enum class color {
     ...
@@ -73,7 +73,7 @@ For example, a close event that is raised before a window is closed would be cal
 
 **✔️ DO** name event handlers (delegates used as types of events) with the "_event_handler" suffix, as shown in the following example:
 
-```c++
+```cpp
 using clicked_event_handler = delegate<void(object&, const event_args&)>;
 ```
 **✔️ DO** use two parameters named *sender* and *e* in event handlers.

@@ -8,7 +8,7 @@ The classic first applications 'Hello World'.
 
 ### hello_world_console.cpp:
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -49,7 +49,7 @@ Hello, World!
 
 ### hello_world_form.cpp
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd::forms;
@@ -119,7 +119,7 @@ xtdc run
 
 ### hello_world_test.cpp:
 
-```c++
+```cpp
 #include <xtd/xtd>
 #include <string>
 

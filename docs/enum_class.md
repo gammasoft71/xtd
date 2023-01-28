@@ -44,7 +44,7 @@ This does not prevent you, of course, from using them in your own projects. As x
 
 The following code shows how to use `enum class` with magic_enum and xtd:
 
-```c++
+```cpp
 #include <magic_enum/magic_enum.hpp>
 #include <xtd/xtd>
 
@@ -88,7 +88,7 @@ entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]
 
 The following code shows how to use `enum class` with nav and xtd:
 
-```c++
+```cpp
 #include <nav/nav_core.hpp>
 #include <xtd/xtd>
 
@@ -138,7 +138,7 @@ The advantage is that it has no limitation and the disadvantage is that it is mo
 
 The following code shows how to use `enum class` with [xtd::enum_register](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__register.html):
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -193,7 +193,7 @@ The class [xtd::enum_set_attribute](https://codedocs.xyz/gammasoft71/xtd/structx
 
 Write the following code to set the attribute of an enum class :
 
-```c++
+```cpp
 enum class enum_flags { /*...*/; }
 
 template<> struct xtd::enum_set_attribute<enum_flags> {
@@ -205,7 +205,7 @@ This does not dispense with writing the operators necessary to perform bitwise o
 
 Let's take the following example and see what happens with and without setting the attribute flag to [xtd::enum_attribute::flags](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga21077f4832fc4718f7095d1a560a89cd) :
 
-```c++
+```cpp
 enum class test_enum {
   value_one = 0,
   value_two = 1,
@@ -218,7 +218,7 @@ test_enum operator|(test_enum lhs, test_enum rhs) {return static_cast<test_enum>
 
 * With setting the attribute flag to [xtd::enum_attribute::flags](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga21077f4832fc4718f7095d1a560a89cd) :
 
-```c++
+```cpp
 #include <xtd/xtd.core.h>
 
 using namespace xtd;
@@ -256,7 +256,7 @@ Ok, this is the expected value.
 
 * Without setting the attribute flag to [xtd::enum_attribute::flags](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga21077f4832fc4718f7095d1a560a89cd) :
 
-```c++
+```cpp
 #include <xtd/xtd.core.h>
 
 using namespace xtd;
@@ -314,7 +314,7 @@ See [operators](https://en.cppreference.com/w/cpp/language/operators) for more i
 
 The following code shows how to use [flags_attribute_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gaea49fae71107df8769685efb159c181a) helper.
 
-```c++
+```cpp
 #include <xtd/xtd.core.h>
 
 using namespace xtd;
@@ -358,7 +358,7 @@ See [Enumeraton format strings](https://github.com/gammasoft71/xtd/blob/master/d
 
 The following code shows how to use `enum class` with format.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -417,7 +417,7 @@ To parse an `enum class` with xtd, the enum class must be registered.
 
 The folowwing example shows how to parse an `enum class` with [xtd::enum_object::parse](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object_3_01std_1_1nullptr__t_01_4.html#a159422352085070f5d77c6f814e68693) method.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -486,7 +486,7 @@ This helper provides the registration struct for `enum`.
 
 Thr following example shows how to use [enum_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga6c6a896cbec833fa1fac13b700cf8691) helper.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -523,7 +523,7 @@ This helper provides the registration struct for `enum` with specified underlyin
 
 Thr following example shows how to use [enum_ut_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gabe13d52c924723772f27878f606210cd) helper.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -560,7 +560,7 @@ This helper provides the registration struct for `enum class`.
 
 Thr following example shows how to use [enum_class_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gade4794e2743558ee1eb5bbad10c7f6d4) helper.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -597,7 +597,7 @@ This helper provides the registration struct for `enum class` with specified und
 
 Thr following example shows how to use [enum_class_ut_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga6918e267c2970d28460e6c42a3b03f4a) helper.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -634,7 +634,7 @@ This helper provides the registration struct for `enum struct`.
 
 Thr following example shows how to use [enum_struct_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga85a4f5366ae461ca1e20872d39a0b440) helper.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -671,7 +671,7 @@ This helper provides the registration struct for `enum struct` with specified un
 
 Thr following example shows how to use [enum_struct_ut_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga341342381ae697a142233d256948df84) helper.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;

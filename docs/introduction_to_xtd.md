@@ -40,7 +40,7 @@ target_type(CONSOLE_APPLICATION)
 
 app.cpp file:
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 auto main()->int {

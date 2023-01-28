@@ -16,7 +16,7 @@ Static classes should be used only as supporting classes for the object-oriented
 
 **✔️ DO** declare static classes as abstract, and add a private instance constructor or add xtd keyword static_ because C++ language does not have built-in support for static classes.
 
-```c++
+```cpp
 namespace xtd {
   class environment static_ {
   public:

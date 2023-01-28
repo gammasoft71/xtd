@@ -26,7 +26,7 @@ Because of the [events](https://github.com/gammasoft71/xtd/blob/master/docs/even
 
 Imagine a control that responds to a [click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event like this:
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 class my_control : public xtd::forms::control {
@@ -54,7 +54,7 @@ int main () {
 
 If you could copy my_control1 to my_control2 like this:
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 class my_control : public xtd::forms::control {
@@ -91,7 +91,7 @@ Yes, but if you delete my_control1 after making the assignment to my_control2. N
 
 So in this case it would be enough to say that in the copy constructor, the [click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event should also be implemented like this:
 
-```c++
+```cpp
   my_control(const my_control& other) {
     *this = other;
     click += {*this, &my_control::on_control_click};    
@@ -120,7 +120,7 @@ If you want to have a share (not a copy) of a control, then use [std::shared_ptr
 
 When you create a label and add it to the main window as in the example below :
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 auto main()->int {
@@ -140,7 +140,7 @@ Indeed, my_label will be destroyed after main_form when the main function is fin
 
 ## The following code is wrong :
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 void add_label(xtd::forms::form& f) {
@@ -162,7 +162,7 @@ Indeed, you create my_label in the add_label method and when the method ends, my
 
 ## You should have written this instead:
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 auto add_label(xtd::forms::form& f) {
@@ -190,7 +190,7 @@ This way as soon as the class is destroyed, its child controls will be destroyed
 
 Like in the following example:
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 class main_form : public xtd::forms::form {
@@ -219,7 +219,7 @@ So a closed form can be renewed at any time. There is no risk of memory leak or 
 
 The following example illustrates how closing the form works:
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;

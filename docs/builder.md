@@ -17,7 +17,7 @@ A visualization of the classes and objects participating in this pattern.
 
 This structural code demonstrates the Builder pattern in which complex objects are created in a step-by-step fashion. The construction process can create different object representations and provides a high level of control over the assembly of the objects.
 
-```c++
+```cpp
 
 ```
 

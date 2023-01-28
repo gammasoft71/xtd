@@ -24,7 +24,7 @@ A derived class must always call the ```on_```event_name method of the base clas
 
 The following example shows how to declare an event named ```threshold_reached```. The event is associated with the [xtd::event_handler](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate and triggered by a method called ```on_threshold_reached```.
 
-```c++
+```cpp
 class counter {
 public: 
   xtd::event<counter, xtd::event_handler> threshold_reached;
@@ -65,7 +65,7 @@ For scenarios where the xtd::event_handler and [xtd::generic_event_handler<event
 You mark a delegate with the [xtd::delegate](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) [xtd::delegate](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) class in the declaration. 
 The following example shows how to declare a delegate named ```threshold_reached_event_handler```.
 
-```c++
+```cpp
 public:
   using threshold_reached_event_handler = xtd::delegate<void(object& sender, const threshold_reached_event_args& e);
 ```
@@ -90,7 +90,7 @@ In general, you should use the same naming scheme as xtd and end the name of you
 The following example shows an event data class named ```threshold_reached_event_args```*.
 It contains properties specific to the triggered event.
 
-```c++
+```cpp
 class threshold_reached_event_args : public xtd::event_args {
 public: 
   int threshold() const {return threshold_;}
@@ -115,7 +115,7 @@ To receive notifications when the event occurs, your event handler method must s
 The following example shows an event handling method named ```c_threshold_reached``` that matches the signature of the [xtd::event_handler](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate.
 The method subscribes to the ```threshold_reached``` event.
 
-```c++
+```cpp
 class program {
   static auto main() {
     counter c;

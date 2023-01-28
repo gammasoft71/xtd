@@ -42,7 +42,7 @@ The content of the string must be encoded in UTF-8 (65001) format. Make sure it 
 
 The following code shows how to convert [xtd::ustring](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html) to [std::u32string](https://en.cppreference.com/w/cpp/string/basic_string) and writes the converted string to the console output.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace std;
@@ -72,7 +72,7 @@ The content of the string must be encoded in UTF-8 (65001) format. Make sure it 
 
 The following code shows how to convert [std::u16string](https://en.cppreference.com/w/cpp/string/basic_string) to [xtd::ustring](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html) and writes the converted string to the console output.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace std;
@@ -96,7 +96,7 @@ There are some literals operators for xtd::ustring:
 
 * [_s](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3159a02c625a6b416d84cc09109fa1bb) literal operator is used to convert specified value into xtd::ustring.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -110,7 +110,7 @@ auto main()->int {
 
 * [_sb](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga43c09451f4b809ab7efd4fc5bdaeda84) literal operator is used to convert the specified value to xtd::ustring with a binary format.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -124,7 +124,7 @@ auto main()->int {
 
 * [_sb2](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga7eaf7f69ff2304bf1bab94827e109610) literal operator is used to convert the specified value to xtd::ustring with a binary format with two digits.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -138,7 +138,7 @@ auto main()->int {
 
 * [_sb4](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga856739797e253190afd27ba2dadcd713) literal operator is used to convert the specified value to xtd::ustring with a binary format with four digits.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -152,7 +152,7 @@ auto main()->int {
 
 * [_sb8](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga27bc00f6bf6ca69c610a2dab13115a82) literal operator is used to convert the specified value to xtd::ustring with a binary format with eight digits.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -166,7 +166,7 @@ auto main()->int {
 
 * [_sb16](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gaf72922be81431716b63f621451dca9fc) literal operator is used to convert the specified value to xtd::ustring with a binary format with sixteen digits.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -180,7 +180,7 @@ auto main()->int {
 
 * [_sb32](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga2722ffae5eaa8668ce66ae53309d7cf9) literal operator is used to convert the specified value to xtd::ustring with a binary format with thirty two digits.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -194,7 +194,7 @@ auto main()->int {
 
 * [_sb64](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga3d69af37baeea27aba64561e5aa7411a) literal operator is used to convert the specified value to xtd::ustring with a binary format with sixty four digits.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -208,7 +208,7 @@ auto main()->int {
 
 * [_sd](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gac756c19a09319ef9a70df4405f70fcd8) literal operator is used to convert specified value into xtd::ustring with a decimal format.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -222,7 +222,7 @@ auto main()->int {
 
 * [_sd](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga599899d6e78170e7a369e83378d14a1a) literal operator is used to convert specified value into xtd::ustring with a decimal format.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -236,7 +236,7 @@ auto main()->int {
 
 * [_sx](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gae46364777b448e80daadf66ae77f1fbf) literal operator is used to convert the specified value to xtd::ustring with a hexa format.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -250,7 +250,7 @@ auto main()->int {
 
 * [_sx2](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gae9616d36a82e9e5b5600328ca76a5471) literal operator is used to convert the specified value to xtd::ustring with a hexa format with two digits.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -264,7 +264,7 @@ auto main()->int {
 
 * [_sx4](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gaf288cd786089a9f4ec3d02466707e3c5) literal operator is used to convert the specified value to xtd::ustring with a hexa format with four digits.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -278,7 +278,7 @@ auto main()->int {
 
 * [_sx8](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gaa4acf7c9bbc764e2254c67196630c434) literal operator is used to convert the specified value to xtd::ustring with a hexa format with eight digits.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -292,7 +292,7 @@ auto main()->int {
 
 * [_sX](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga47c03a571d078d7dfeed1af05baa0fe2) literal operator is used to convert the specified value to xtd::ustring with a hexa format.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -306,7 +306,7 @@ auto main()->int {
 
 * [_sX2](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga246c6f5fcf4b5f23fd4f54512d1e25dd) literal operator is used to convert the specified value to xtd::ustring with a hexa format with two digits.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -320,7 +320,7 @@ auto main()->int {
 
 * [_sX4](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga7f98753adb927ff671f9b7c0f505ce95) literal operator is used to convert the specified value to xtd::ustring with a hexa format with four digits.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -334,7 +334,7 @@ auto main()->int {
 
 * [_sX8](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gaca78174d0fd95202301f20582ab3c19a) literal operator is used to convert the specified value to xtd::ustring with a hexa format with eight digits.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;

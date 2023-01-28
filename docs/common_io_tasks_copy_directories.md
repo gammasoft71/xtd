@@ -8,7 +8,7 @@ This example copies subdirectories by setting the recursive parameter of the cop
 
 ## Examples
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace std;

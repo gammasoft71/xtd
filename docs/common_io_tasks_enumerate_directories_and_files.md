@@ -24,7 +24,7 @@ The following table summarizes the methods that return enumerable collections of
 
 The following example uses the [directory::enumerate_directories(const ustring&)](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1directory.html#a18b4ef2bf2e42182dfd412ffacba57b1) method to get a list of the top-level directory names in a specified path.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace std;
@@ -60,7 +60,7 @@ startup_(program);
 
 The following example uses the [directory_info::enumerate_directories](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1directory__info.html#ad0818557e5fbc58db748458c7e907c4b) method to list a collection of top-level directories whose [creation_time](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1file__system__info.html#a970dfefd830a4edfdc36f72153c9d811) is not earlier than a certain [date_time](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html) value.
  
- ```c++
+ ```cpp
  #include <xtd/xtd>
 
 using namespace std;
@@ -94,7 +94,7 @@ startup_(program);
 The following example uses the [directory_info::enumerate_files](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a) method to list all files whose [length](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1file__info.html#a7bbc1abbd603c19f70d687770961d195) exceeds 10MB. 
 This example first enumerates the top-level directories, to catch possible unauthorized access exceptions, and then enumerates the files. 
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace std;

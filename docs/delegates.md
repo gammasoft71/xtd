@@ -17,7 +17,7 @@ A [xtd::delegate](../src/xtd.core/include/xtd/delegate.h) is a type that represe
 
 Delegates are used to pass methods as arguments to other methods. Event handlers are nothing more than methods that are invoked through delegates. You create a custom method, and a class such as a windows control can call your method when a certain event occurs. The following example shows a delegate declaration:
 
-```c++
+```cpp
 using perform_calculation = xtd::delegate<int(int x, int y)>;
 ```
 
@@ -47,20 +47,20 @@ Delegates have the following properties:
 
 A [xtd::delegate](../src/xtd.core/include/xtd/delegate.h) is a type that safely encapsulates a method, similar to a function pointer in C and C++. Unlike C function pointers, delegates are object-oriented, type safe, and secure. The type of a delegate is defined by the name of the delegate. The following example declares a delegate named **del** that can encapsulate a method that takes a [xtd::ustring](../src/xtd.core/include/xtd/ustring.h) as an argument and returns void:
 
-```c++
+```cpp
 using del = xtd::delegate<void(const xtd::ustring& message)>;
 ```
 
 A delegate object is normally constructed by providing the name of the method the delegate will wrap, or with a lambda expression. Once a delegate is instantiated, a method call made to the delegate will be passed by the delegate to that method. The parameters passed to the delegate by the caller are passed to the method, and the return value, if any, from the method is returned to the caller by the delegate. This is known as invoking the delegate. An instantiated delegate can be invoked as if it were the wrapped method itself. For example:
 
-```c++
+```cpp
 // Create a method for a delegate.
 void delegate_method(const xtd::ustring& message) {
   console::write_line(message);
 }
 ```
 
-```c++
+```cpp
 // Instantiate the delegate.
 del handler = {delegate_method};
 
@@ -70,7 +70,7 @@ handler("Hello World");
 
 or
 
-```c++
+```cpp
 // Instantiate the delegate.
 del handler = del(delegate_method);
 
@@ -82,7 +82,7 @@ Because the instantiated [xtd::delegate](../src/xtd.core/include/xtd/delegate.h)
 
 Another common use of callbacks is defining a custom comparison method and passing that delegate to a sort method. It allows the caller's code to become part of the sort algorithm. The following example method uses the **del** type as a parameter:
 
-```c++
+```cpp
 void method_with_callback(int param1, int param2, del callback) {
   callback("The number is: " +  to_string(param1 + param2));
 }
@@ -90,7 +90,7 @@ void method_with_callback(int param1, int param2, del callback) {
 
 You can then pass the delegate created above to that method:
 
-```c++
+```cpp
 method_with_callback(1, 2, handler);
 ```
 
@@ -103,7 +103,7 @@ The number is: 3
 Using the delegate as an abstraction, **method_with_callback** does not need to call the console directly—it does not have to be designed with a console in mind. What **method_with_callback** does is simply prepare a string and pass the string to another method. This is especially powerful since a delegated method can use any number of parameters.
 When a [xtd::delegate](../src/xtd.core/include/xtd/delegate.h) is constructed to wrap an instance method, the delegate references both the instance and the method. A delegate has no knowledge of the instance type aside from the method it wraps, so a delegate can refer to any type of object as long as there is a method on that object that matches the delegate signature. When a delegate is constructed to wrap a static method, it only references the method. Consider the following declarations:
 
-```c++
+```cpp
 class method_class {
 public:
     void method1(const xtd::ustring& message) { }
@@ -115,7 +115,7 @@ Along with the static **delegate_method** shown previously, we now have three me
 
 A delegate can call more than one method when invoked. This is referred to as multicasting. To add an extra method to the delegate's list of methods—the invocation list—simply requires adding two delegates using the addition or addition assignment operators ('+' or '+='). For example:
 
-```c++
+```cpp
 method_class obj;
 del d1 = {obj, &method_class::method1};
 del d2 = {obj, &method_class::method2};
@@ -130,7 +130,7 @@ At this point **all_methods_delegate** contains three methods in its invocation 
 The original three delegates, **d1**, **d2**, and **d3**, remain unchanged. When **all_methods_delegate** is invoked, all three methods are called in order. If the delegate uses reference parameters, the reference is passed sequentially to each of the three methods in turn, and any changes by one method are visible to the next method. When any of the methods throws an exception that is not caught within the method, that exception is passed to the caller of the delegate and no subsequent methods in the invocation list are called. If the delegate has a return value and/or out parameters, it returns the return value and parameters of the last method invoked. 
 To remove a method from the invocation list, use the subtraction or subtraction assignment operators (- or -=). For example:
 
-```c++
+```cpp
 //remove Method1
 all_methods_delegate -= d1;
 
@@ -141,7 +141,7 @@ del one_method_delegate = all_methods_delegate - d2;
 Because [xtd::delegate](../src/xtd.core/include/xtd/delegate.h) types is a class, the methods and properties defined by that class can be called on the delegate. 
 For example, to find the number of methods in a delegate's invocation list, you may write:
 
-```c++
+```cpp
 size_t invocation_count = d1.size();
 ```
 
@@ -149,7 +149,7 @@ Multicast delegates are used extensively in event handling. [xtd::event](../src/
 
 Comparing delegates of two different types assigned at compile-time will result in a compilation error. If the delegate instances are statically of the type [xtd::delegate](../src/xtd.core/include/xtd/delegate.h), then the comparison is allowed, but will return false at run time. For example:
 
-```c++
+```cpp
 template<typename result_t, typename... arguments_t>
 void method(delegate1 d, delegate2 e, xtd::delegate<result_t(arguments_t...)> f) {
   // Compile-time error.
@@ -165,7 +165,7 @@ void method(delegate1 d, delegate2 e, xtd::delegate<result_t(arguments_t...)> f)
 
 A [xtd::delegate](../src/xtd.core/include/xtd/delegate.h) can be associated with a named method. When you instantiate a delegate by using a named method, the method is passed as a parameter, for example:
 
-```c++
+```cpp
 // Declare a delegate.
 using del = xtd::delegate<void(int x)>;
 
@@ -188,7 +188,7 @@ This is called using a named method. Delegates constructed with a named method c
 
 TThe following is a simple example of declaring and using a delegate. Notice that both the delegate, **del**, and the associated method, **multiply_numbers**, have the same signature
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -230,7 +230,7 @@ startup_(math_class);
 
 In the following example, one delegate is mapped to both static and instance methods and returns specific information from each.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -275,14 +275,14 @@ startup_(test_sample_class);
 
 The **\[]\()** operator creates a [lambda expression](https://en.cppreference.com/w/cpp/language/lambda) that can be converted to a [xtd::delegate](../src/xtd.core/include/xtd/delegate.h) type:
 
-```c++
+```cpp
 xtd::func<int, int, int> sum([] (int a, int b) { return a + b; });
 xtd::console::write_line(sum(3, 4));  // output: 7
 ```
 
 When you use the **\[]\()** operator, you might omit the parameter list. If you do that, the created anonymous method can be converted to a delegate type with any list of parameters, as the following example shows:
 
-```c++
+```cpp
 xtd::action<> greet([] { xtd::console::write_line("Hello!"); });
 greet();
 

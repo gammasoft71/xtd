@@ -19,7 +19,7 @@ It is advisable that the constructor not have any side effects, since NUnit may 
 
 The following examples shows how to register a test class with test_class_ helper:
 
-```c++
+```cpp
 #include <xtd/tunit>
 
 using namespace xtd::tunit;
@@ -41,7 +41,7 @@ For generic test_class actually no helper is provided.
 
 The following example show how to register a generic test class without helper:
 
-```c++
+```cpp
 #include <xtd/tunit>
 
 using namespace xtd::tunit;
@@ -76,7 +76,7 @@ The test_class may be applied to a base class and is inherited by any derived cl
 
 The following code show how to register a derived class with helper :
 
-```c++
+```cpp
 #include <xtd/tunit>
 
 using namespace xtd::tunit;

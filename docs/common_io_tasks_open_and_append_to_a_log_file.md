@@ -10,7 +10,7 @@ As an alternative to this example, you could store the information as a single s
  
 ## Example
 
-```c++
+```cpp
 #include <fstream>
 #include <xtd/xtd>
 

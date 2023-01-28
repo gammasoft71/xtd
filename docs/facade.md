@@ -16,7 +16,7 @@ A visualization of the classes and objects participating in this pattern.
 
 This structural code demonstrates the Facade pattern which provides a simplified and uniform interface to a large subsystem of classes.
 
-```c++
+```cpp
 
 ```
 
