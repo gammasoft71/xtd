@@ -5,13 +5,16 @@
 
 .heroBanner {
   padding: 4rem 0;
-  text-align: center;
-  background-image: url("../../static/pictures/background.png");
-  font-weight: bold;
-  min-height: 100px;
-  text-shadow: rgb(37, 44, 56) 2px 0 10px;
-  background-size: cover;
+  background: #338AFC;
+  background-image: url("../../static/pictures/xtd_background.png");
+  background-size: 980px 244px;
   background-position: center;
+  background-repeat: no-repeat;
+  font-weight: bold;
+  min-height: 244px;
+  text-shadow: rgb(37, 44, 56) 2px 0 10px;
+  text-align: center;
+  vertical-align: text-top;
 }
 
 @media screen and (max-width: 996px) {
