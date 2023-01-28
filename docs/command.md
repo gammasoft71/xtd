@@ -16,7 +16,7 @@ A visualization of the classes and objects participating in this pattern.
 
 This structural code demonstrates the Command pattern which stores requests as objects allowing clients to execute or playback the requests.
 
-```c++
+```cpp
 
 ```
 

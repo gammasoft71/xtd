@@ -27,7 +27,7 @@ List of ambient properties :
 
 The following example shows the back_color and fore_color ambient properties in action :
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;

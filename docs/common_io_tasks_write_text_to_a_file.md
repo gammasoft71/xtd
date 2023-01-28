@@ -18,7 +18,7 @@ The following examples show only the minimum amount of code needed. A real-world
 
 The following example shows how to use the xtd::io::stream_writer class to write text to a new file one line at a time. Because the xtd::io::stream_writer object is declared and instantiated in a using statement, the destructor automatically flushes and closes the stream.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -53,7 +53,7 @@ startup_(program);
  
 The following example shows how to use the xtd::io::stream_writer class to append text to the text file created in the first example.
  
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -82,7 +82,7 @@ startup_(program);
 
 The following example shows how to write text to a new file and append new lines of text to the same file using the xtd::io::file class. The xtd::io::file::write_all_text and xtd::io::file::append_all_lines methods open and close the file automatically. If the path you provide to the xtd::io::file::write_all_text method already exists, the file is overwritten.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;

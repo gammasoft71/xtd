@@ -22,7 +22,7 @@ The [xtd::environment](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environm
 
 ### xtd::environment::command_line and xtd::environment::get_command_line_args usage
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -49,7 +49,7 @@ Behind this keyword there is a `main` global function that call `main` static me
 
 ## startup_ definition
 
-```c++
+```cpp
 #define startup_(main_class) \
   auto main(int argc, char* argv[])->int {\
     try {\
@@ -69,7 +69,7 @@ Even if [startup_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gac
 
 Your code should look like this :
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -96,7 +96,7 @@ See [try-block](https://en.cppreference.com/w/cpp/language/try_catch) for more i
 
 * Static `main` member function without argument and without return value.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -120,7 +120,7 @@ startup_(examples::program);
 
 * Static `main` member function without argument and with int return value.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -143,7 +143,7 @@ startup_(examples::program);
 
 * Static `main` member function with string array argument and without return value.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace std;
@@ -168,7 +168,7 @@ startup_(examples::program);
 
 * Static `main` member function with string array argument and with int return value.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace std;
@@ -189,7 +189,7 @@ namespace examples {
 
 * Static `main` member function with int and char*[] arguments and without return value.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace std;
@@ -214,7 +214,7 @@ startup_(examples::program);
 
 * Static `main` member function with int and char*[] arguments and with int return value.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace std;

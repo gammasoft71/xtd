@@ -16,7 +16,7 @@ A visualization of the classes and objects participating in this pattern.
 
 This structural code demonstrates the Memento pattern which temporary saves and restores another object's internal state.
 
-```c++
+```cpp
 
 ```
 

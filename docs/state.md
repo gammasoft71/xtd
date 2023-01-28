@@ -16,7 +16,7 @@ A visualization of the classes and objects participating in this pattern.
 
 This structural code demonstrates the State pattern which allows an Account to behave differently depending on its balance. The difference in behavior is delegated to State objects called RedState, SilverState and GoldState. These states represent overdrawn accounts, starter accounts, and accounts in good standing.
 
-```c++
+```cpp
 
 ```
 

@@ -16,7 +16,7 @@ A visualization of the classes and objects participating in this pattern.
 
 This structural code demonstrates the Proxy pattern which provides a representative object (proxy) that controls access to another similar object.
 
-```c++
+```cpp
 
 ```
 

@@ -16,7 +16,7 @@ A visualization of the classes and objects participating in this pattern.
 
 This structural code demonstrates the Chain of Responsibility pattern in which several linked objects (the Chain) are offered the opportunity to respond to a request or hand it off to the object next in line.
 
-```c++
+```cpp
 
 ```
 

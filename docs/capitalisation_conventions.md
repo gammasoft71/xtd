@@ -8,7 +8,7 @@ The guidelines in this chapter lay out a simple method for using case that, when
 
 [snake_casing](https://en.wikipedia.org/wiki/Snake_case)
 
-```c++
+```cpp
 ​​property_descriptor
 html_tag
 ```
@@ -16,7 +16,7 @@ html_tag
 **✔️ DO** To differentiate members form accessors or methods, end members by _.
 
 
-```c++
+```cpp
 namespace xtd {
   class my_class {
   public:
@@ -30,13 +30,13 @@ namespace xtd {
 
 A special case is made for two-letter acronyms in which both letters are not separed, as shown in the following identifier:
 
-```c++
+```cpp
 io_stream
 ```
 
 * **Naming** :
 
-```c++
+```cpp
 namespace xtd {
   class thread {
     ...
@@ -46,7 +46,7 @@ namespace xtd {
 
 * **Type** :
 
-```c++
+```cpp
 namespace xtd {
   class thread {
     ...
@@ -56,7 +56,7 @@ namespace xtd {
 
 * **Interface** :
 
-```c++
+```cpp
 class ienumerable interface_ {
   ...
 };
@@ -64,7 +64,7 @@ class ienumerable interface_ {
 
 * **Method** :
 
-```c++
+```cpp
 class control {
 public:
   virtual std::string to_string() const;
@@ -73,7 +73,7 @@ public:
 
 * **Event** :
 
-```c++
+```cpp
 class list_control : control {
 public:
   event<list_control, event_handler> selected_index_changed;
@@ -82,7 +82,7 @@ public:
 
 * **Field** :
 
-```c++
+```cpp
 struct unsigned_integer {
   static constexpr unsigned int min = 0;
 };
@@ -90,7 +90,7 @@ struct unsigned_integer {
 
 * **Enum Value** :
 
-```c++
+```cpp
 enum class values {
   append,
   ...
@@ -99,7 +99,7 @@ enum class values {
 
 * **Parameters** :
 
-```c++
+```cpp
 class convert {
 public:
   static int to_int32(const std::string& value);
@@ -108,7 +108,7 @@ public:
 
 * **Members** : end by _
 
-```c++
+```cpp
 struct unsigned_integer {
   ...
 private:

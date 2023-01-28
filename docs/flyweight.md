@@ -16,7 +16,7 @@ A visualization of the classes and objects participating in this pattern.
 
 This structural code demonstrates the Flyweight pattern in which a relatively small number of objects is shared many times by different clients.
 
-```c++
+```cpp
 
 ```
 

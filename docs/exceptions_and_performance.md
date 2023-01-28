@@ -12,14 +12,14 @@ To improve performance, it is possible to use either the *Tester-Doer* Pattern o
 
 Sometimes performance of an exception-throwing member can be improved by breaking the member into two. Let’s look at the at method of the std::vector<type_t> interface.
 
-```c++
+```cpp
 std::vector<int> numbers = ...
 auto val = numbers.at(9);
 ```
 
 The method at throws if the collection is size < 10. This can be a performance problem in scenarios where the method call is expected to fail often. One of the ways to mitigate the problem is to test whether the vector size is >= 10 before trying to get a value.
 
-```c++
+```cpp
 std::vector<int> numbers = ...
 ...
 if (numbers.size() >= 10) {
@@ -35,7 +35,7 @@ The member used to test a condition, which in our example is the property size, 
 
 For extremely performance-sensitive APIs, an even faster pattern than the *Tester-Doer* Pattern described in the previous section should be used. The pattern calls for adjusting the member name to make a well-defined test case a part of the member semantics. For example, xtd::date_time defines a parse method that throws an exception if parsing of a string fails. It also defines a corresponding try_parse method that attempts to parse, but returns false if parsing is unsuccessful and returns the result of a successful parsing using an ref parameter.
 
-```c++
+```cpp
 struct date_time : public object {
   public:
   static date_time parse(const string& date_time) {

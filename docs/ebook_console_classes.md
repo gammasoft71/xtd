@@ -12,7 +12,7 @@ This is a simple console application. The application puts some text into the co
 
 ## console.cpp
 
-```c++
+```cpp
 #include <xtd/xtd.console>
 
 auto main(int argc, char* argv[])->int {
@@ -30,7 +30,7 @@ This is the output.
 
 The application puts some formatted texts into the console window.
 
-```c++
+```cpp
 #include <xtd/xtd.console>
 
 auto main(int argc, char* argv[])->int {
@@ -56,7 +56,7 @@ This is the output
 
 # xtd::environment
 
-```c++
+```cpp
 #include <xtd/xtd.core>
 #include <xtd/xtd.console>
 
@@ -73,7 +73,7 @@ auto main(int argc, char* argv[])->int {
 
 # xtd::strings
 
-```c++
+```cpp
 #include <xtd/xtd.core>
 #include <xtd/xtd.console>
 

@@ -25,7 +25,7 @@ It's unsafe to call a control directly from a thread that didn't create it.
 The following code snippet illustrates an unsafe call to the [xtd::forms::text_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1text__box.html) control.
 The `button1_Click` event handler creates a new `write_text_unsafe` thread, which sets the main thread's [xtd::forms::text_box::text](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1text__box.html#a2d900fe81bd0963d26d36a3a20e1d03e) property directly.
 
-```c++
+```cpp
 void button1_click(object& sender, const event_args& e) {
   thread thread1(delegate<void()>(*this, &main_form::write_text_unsafe));
   thread1.detach();
@@ -59,7 +59,7 @@ The following example demonstrates a pattern for ensuring thread-safe calls to a
 
 The *write_text_safe* enables setting the [xtd::forms::text_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1text__box.html) control's [xtd::forms::control::text](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a4c3b78843745277a88831bd0500ccb2b) property to a new value. The method queries [xtd::forms::control::invoke_required](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a7aa968c54c4a100d35f0dd2d0b9c5bc8). If [xtd::forms::control::invoke_required](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a7aa968c54c4a100d35f0dd2d0b9c5bc8) returns true, `write_text_safe` recursively calls itself, passing the method as a delegate to the [xtd::forms::control::invoke](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a17ec51282322d8387937dc8dad438e32) method. If [xtd::forms::control::invoke_required](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a7aa968c54c4a100d35f0dd2d0b9c5bc8) returns false, `write_text_safe` sets the [xtd::forms::text_box::text](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1text__box.html#a2d900fe81bd0963d26d36a3a20e1d03e) directly. The `button1_click` event handler creates the new thread and runs the `write_text_safe` method.
 
-```c++
+```cpp
 void button1_click(object& sender, const event_args& e) {
   thread thread1(delegate<void()>(*this, &main_form::write_text_safe));
   thread1.detach();
@@ -81,7 +81,7 @@ To make a thread-safe call by using [xtd::forms::background_worker](https://code
 
 The example counts from 0 to 10 in the [xtd::forms::background_worker::do_work](https://codedocs.xyz/gammasoft71/xtd/group__events.html#gaa4047b732cf383aa932c806080d03216) event, pausing for one second between counts. It uses the [xtd::forms::background_worker::progress_changed](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga01b056bb600ffc6552edff4830361bf4) event handler to report the number back to the main thread and set the [xtd::forms::text_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1text__box.html) control's [xtd::forms::text_box::text](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1text__box.html#a2d900fe81bd0963d26d36a3a20e1d03e) property. For the [xtd::forms::background_worker::progress_changed](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga01b056bb600ffc6552edff4830361bf4) event to work, the [xtd::forms::background_worker::worker_reports_progress](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1background__worker.html#afcf2c17c7516752565718de4098b366a) property must be set to true.
 
-```c++
+```cpp
 void button1_click(object& sender, const event_args& e) {
   if (!background_worker1.is_busy())
     background_worker1.run_worker_async();

@@ -33,7 +33,7 @@ Events have the following properties:
 
 1. Define an event handler method whose signature matches the delegate signature for the event. For example, if the event is based on the [xtd::event_handler](../src/xtd.core/include/xtd/event_handler.h) delegate type, the following code represents the method stub:
 
-```c++
+```cpp
 void handle_custom_event(object& sender, custom_event_args& e) {  
    // Do something useful here.  
 }  
@@ -41,13 +41,13 @@ void handle_custom_event(object& sender, custom_event_args& e) {
 
 2. Use the addition assignment operator *+=* to attach an event handler to the event. In the following example, assume that an object named *publisher* has an event named *raise_custom_event*. Note that the *subscriber* class needs a reference to the *publisher* class in order to subscribe to its events
 
-```c++
+```cpp
 publisher.raise_custom_event += {*this, &subscriber::handle_custom_event};
 ```
 
 or 
 
-```c++
+```cpp
 publisher.raise_custom_event += custom_event_handler(*this, &my_class::handle_custom_event);
 ```
 
@@ -55,7 +55,7 @@ publisher.raise_custom_event += custom_event_handler(*this, &my_class::handle_cu
 
 If you don't have to unsubscribe from an event later, you can use the addition assignment operator *+=* to attach a [lambda expression](#lambda-expression) as an event handler. In the following example, assume that an object named *publisher* has an event named *raise_custom_event and that a *custom_event_args* class has also been defined to carry some kind of specialized event information. Note that the *subscriber* class needs a reference to *publisher* in order to subscribe to its events.
 
-```c++
+```cpp
 publisher.raise_custom_event += [](object& sender, custom_event_args& e) {  
   xtd::ustring s = sender.to_string() + " " + e.to_string();  
   console::write_line(s);  
@@ -72,13 +72,13 @@ To prevent your event handler from being invoked when the event is raised, unsub
 
 Use the subtraction assignment operator *-=* to unsubscribe from an event:
 
-```c++
+```cpp
 publisher.raise_custom_event -= {*this, &subscriber::handle_custom_event};
 ```
 
 or
 
-```c++
+```cpp
 publisher.raise_custom_event -= custom_event_handler(*this, &subscriber::handle_custom_event);
 ```
 
@@ -88,14 +88,14 @@ When all subscribers have unsubscribed from an event, the event instance in the 
 
 The following procedure demonstrates how to add events that follow the standard xtd pattern to your classes and structs. All events in the xtd framework are based on the [xtd::event_handler](../src/xtd.core/include/xtd/event_handler.h) delegate, which is defined as follows:
 
-```c++
+```cpp
 template<typename event_args_t = const xtd::event_args&>
 using generic_event_handler = xtd::delegate<void(xtd::object& sender, event_args_t e)>;
 ```
 
 and
 
-```c++
+```cpp
 using event_handler = xtd::generic_event_handler<>;
 ```
 
@@ -106,7 +106,7 @@ The name event_handler can lead to a bit of confusion as it doesn't actually han
 
 1. (Skip this step and go to Step 3a if you do not have to send custom data with your event.) Declare the class for your custom data at a scope that is visible to both your publisher and subscriber classes. Then add the required members to hold your custom event data. In this example, a simple string is returned.
 
-```c++
+```cpp
 class custom_event_args : xtd::event_args {
 public:
   custom_event_args() = default;
@@ -122,7 +122,7 @@ private:
 
 2. (Skip this step if you are using the generic version generic_event_handler<event_args_t>.) Declare a delegate in your publishing class. Give it a name that ends with event_handler. The second parameter specifies your custom event_args type.
 
-```c++
+```cpp
 using custom_event_handler = xtd::delegate<void(xtd::object& sender, custom_event_args& args)>;
 ```
 
@@ -130,7 +130,7 @@ using custom_event_handler = xtd::delegate<void(xtd::object& sender, custom_even
 
   a. If you have no custom event_args class, your event type will be the non-generic event_handler delegate. You do not have to declare the delegate because it is already declared in the xtd namespace that is included when you create your xtd project. Add the following code to your publisher class.
 
-  ```c++
+  ```cpp
   xtd::event<publisher, xtd::event_handler> raise_custom_event;
   ```
   
@@ -138,7 +138,7 @@ using custom_event_handler = xtd::delegate<void(xtd::object& sender, custom_even
 
   b. If you are using the non-generic version of event_handler and you have a custom class derived from event_args, declare your event inside your publishing class and use your delegate from step 2 as the type.
 
-  ```c++
+  ```cpp
   xtd::event<publisher, custom_event_handler> raise_custom_event;
   ```
   
@@ -146,7 +146,7 @@ using custom_event_handler = xtd::delegate<void(xtd::object& sender, custom_even
 
   c. If you are using the generic version, you do not need a custom delegate. Instead, in your publishing class, you specify your event type as generic_event_handler<custom_event_args>, substituting the name of your own class between the angle brackets.
 
-  ```c++
+  ```cpp
   xtd::event<publisher, generic_event_handler<custom_event_args&>> raise_custom_event;
   ```
   
@@ -156,7 +156,7 @@ using custom_event_handler = xtd::delegate<void(xtd::object& sender, custom_even
 
 The following example demonstrates the previous steps by using a custom event_args class and genric_event_handler<event_args_t> as the event type.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;

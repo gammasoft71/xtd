@@ -7,7 +7,7 @@ An xtd GUI application must use the [xtd::forms::application](https://codedocs.x
 The following code shows the minimum required to run a GUI application.
 The application will exit automatically when the form is closed.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 auto main()->int {
@@ -31,7 +31,7 @@ The following code shows the use of the [application::run()](https://codedocs.xy
 Unlike the method with the specified form parameter, the message loop application will not stop when you close the window.
 You have to call the method [applicati::exit](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#a1f7d29b0aeda0c96f5acc4e38ad5902a) or [application::exit_thread](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#a7cd6fe69c23173cb2dabae8f6c7a1690) explicitly.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd::forms;
@@ -76,7 +76,7 @@ The [xtd::forms::application_context](https://codedocs.xyz/gammasoft71/xtd/class
 
 The following code shows how to create an [application_context](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application__context.html#ac5474112ff9d1805a8eff90a069c2ca1), set a form as [main_form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application__context.html#a0c2eeef4bb20a6c077a925896a9024e4) and call [appplication::run](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#ab79aa8eba69cde497bae6657cb11eab8) with it.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd::forms;

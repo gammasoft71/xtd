@@ -18,7 +18,7 @@ These include the following:
 * Overriding the [xtd::object::to_string](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1object.html#a5682215ee76ab97c48580ab162c49507) method to define a custom string representation of an object's value. For more information, see the [Override the to_string Method](override-the-to-string-method) section later in this topic.
 * Defining format specifiers that enable the string representation of an object's value to take multiple forms. For example, the "X" format specifier in the following statement converts an integer to the string representation of a hexadecimal value.
 
-```c++
+```cpp
 int integer_value = 60312;
 xtd::console::write_line(xtd::to_string(integer_value, "X"));   // Displays EB98.
 ```
@@ -27,7 +27,7 @@ For more information about format specifiers, see the [to_string Method and Form
 
 * Using format providers to implement the formatting conventions of a specific culture. For example, the following statement displays a currency value by using the formatting conventions of the en-US culture.
 
-```c++
+```cpp
 double cost = 1632.54;
 xtd::console::write_line(xtd::to_string(cost, "C", std::locale("en_US.UTF-8")));
 // The example displays the following output:

@@ -18,7 +18,7 @@ The following procedures describe the basic steps that you must complete to crea
 
 1. Create form1.cpp file in your project folder and type the following include file and using statements:
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -27,7 +27,7 @@ using namespace xtd::forms;
 
 2. Declare a class named **form1** that inherits from the [form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) class.
 
-```c++
+```cpp
 class form1 : public form
 ```
 
@@ -35,7 +35,7 @@ class form1 : public form
 
 You will add more code to the constructor in a subsequent procedure.
 
-```c++
+```cpp
   public:
     form1() {}
 ```
@@ -44,7 +44,7 @@ You will add more code to the constructor in a subsequent procedure.
 
 Create an instance of the **form1** and run it.
 
-```c++
+```cpp
 auto main()->int {
   application::run(form1 {});
 }
@@ -103,7 +103,7 @@ In addition to understanding how to create GUI applications, you should understa
 
 The following code example demonstrates how to declare the [button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control.
 
-```c++
+```cpp
   private:
     button button1;
 
@@ -122,7 +122,7 @@ The following code example demonstrates how to declare the [button](https://code
 
 The following code example demonstrates how to handle the [button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control's click event.
 
-```c++
+```cpp
   private:
     void button1_click(object& sender, const event_args& e) {
       message_box::show("Hello World");
@@ -133,7 +133,7 @@ The following code example demonstrates how to handle the [button](https://coded
 
 The following code example demonstrates how to associate the event with the method.
 
-```c++
+```cpp
 button1.click += event_handler {*this, &form1::button1_click};
 ```
 
@@ -149,7 +149,7 @@ Following code example is the complete example from the previous tutorial.
 
 form1.cpp:
 
-```c++
+```cpp
 #include <xtd/xtd.forms>
 
 using namespace xtd;

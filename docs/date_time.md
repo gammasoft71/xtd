@@ -81,7 +81,7 @@ The following code snippets show examples of each:
 You call any of the overloads of the [date_time](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html) constructor that specify elements of the date and time value (such as the year, month, and day, or the number of ticks). 
 The following code creates a specific date using the DateTime constructor specifying the year, month, day, hour, minute, and second.
 
-```c++
+```cpp
 auto date1 = date_time(2008, 5, 1, 8, 30, 52);
 console::write_line(date1);
 ```
@@ -89,7 +89,7 @@ console::write_line(date1);
 You invoke the `date_time` structure's implicit parameterless constructor when you want a `date_time` initialized to its default value.
 The following example illustrates the [date_time](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html) implicit parameterless constructor.
 
-```c++
+```cpp
 auto dat1 = date_time();
 // The following method call displays 1/1/0001 12:00:00 AM.
 console::write_line(dat1.to_string());
@@ -102,7 +102,7 @@ console::write_line(dat1 == date_time::min_value);
 You can assign the [date_time](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html) object a date and time value returned by a property or method. 
 The following example assigns the current date and time, the current Coordinated Universal Time (UTC) date and time, and the current date to three new [date_time](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html) variables.
 
-```c++
+```cpp
 date_time date1 = date_time::now();
 date_time date2 = date_time::utc_now();
 date_time date3 = date_time.today();
@@ -113,7 +113,7 @@ The [xtd::parse<xtd::data_time>](), [xtd::date_time::parse](), [xtd::date_time::
 The following examples use the [xtd::date_time::parse]() and [xtd::date_time::parse_exact]() methods to parse a string and convert it to a [date_time](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html) value. 
 The second format uses a form supported by the ISO 8601 standard for a representing date and time in string format. This standard representation is often used to transfer date information in web services.
 
-```c++
+```cpp
 auto date_string = "5/1/2008 8:30:52 AM";
 date_time date1 = date_time::parse(date_string, std::locale());
 auto iso8601_string = "20080501T08:30:52Z";

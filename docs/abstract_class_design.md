@@ -16,7 +16,7 @@ An internal constructor can be used to limit concrete implementations of the abs
 
 Doing this helps to validate the design of the abstract class. For example, xtd::io::stream_reader is an implementation of the xtd::IO::text_reader abstract class.
 
-```c++
+```cpp
 namespace xtd {
   namespace io {
     class text_reader {

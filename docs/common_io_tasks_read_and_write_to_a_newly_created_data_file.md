@@ -10,7 +10,7 @@ The [binary_reader](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1binar
 
 ## Example
 
-```c++
+```cpp
 #include <fstream>
 #include <xtd/xtd>
 

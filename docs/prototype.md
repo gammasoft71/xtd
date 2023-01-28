@@ -17,7 +17,7 @@ A visualization of the classes and objects participating in this pattern.
 This structural code demonstrates the Prototype pattern in which new objects are created by copying pre-existing objects (prototypes) of the same class.
 
 
-```c++
+```cpp
 
 ```
 

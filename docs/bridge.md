@@ -14,7 +14,7 @@ Usage     ![Usage](pictures/usage2.png)     Medium-low
 
 This structural code demonstrates the Bridge pattern which separates (decouples) the interface from its implementation. The implementation can evolve without changing clients which use the abstraction of the object.
 
-```c++
+```cpp
 
 ```
 

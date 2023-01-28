@@ -7,7 +7,7 @@ A method (instance, functor, static) that satisfies this signature can be assign
 
 The following example demonstrates the use of delegates with instance method.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -39,7 +39,7 @@ startup_(program);
 
 The following example demonstrates the use of delegates with functor.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -70,7 +70,7 @@ startup_(program);
 The following example demonstrates the use of delegates with static method.
 
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -111,7 +111,7 @@ There are some differences between the three types that have to do with the way 
 We can now take our example above and rewrite it using the ```xtd::func<>``` delegate instead of a custom type.
 The program will continue running exactly the same.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -139,7 +139,7 @@ For this simple example, having a method defined outside of the ```main``` metho
 We can now take our example above and rewrite it using a lambda expression.
 The program will continue running exactly the same.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;

@@ -18,7 +18,7 @@ The following procedures describe the basic steps that you must complete to crea
 
 1. Create console1.cpp file in your project folder and type the following include file and using statements:
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -26,7 +26,7 @@ using namespace xtd;
 
 2. Declare a class named **console1**.
 
-```c++
+```cpp
 class console1
 ```
 
@@ -34,7 +34,7 @@ class console1
 
 You will add more code to the constructor in a subsequent procedure.
 
-```c++
+```cpp
   public:
     console1() {}
 ```
@@ -43,7 +43,7 @@ You will add more code to the constructor in a subsequent procedure.
 
 Create an instance of the **console1**.
 
-```c++
+```cpp
 auto main()->int {
   console1 {};
 }
@@ -101,7 +101,7 @@ The previous procedure steps demonstrated how to just create a basic console tha
 
 The following code example demonstrates how to write and read with the [console](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html).
 
-```c++
+```cpp
   console1() {
     console::background_color(console_color::blue);
     console::foreground_color(console_color::white);
@@ -123,7 +123,7 @@ Following code example is the complete example from the previous tutorial.
 
 console1.cpp:
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;

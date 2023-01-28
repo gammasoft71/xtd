@@ -8,7 +8,7 @@ In this chapter, we will cover the basics needed to create xtd.forms application
 
 First we create the very basic xtd.forms program.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 namespace tutorial {
@@ -30,19 +30,19 @@ startup_(tutorial::simple);
 
 This very basic example shows a small window on the screen. The window is centered.
 
-```c++
+```cpp
 start_position(xtd::forms::form_start_position::center_screen);
 ```
 
 This method centers the form on the screen, both horizontally and vertically.
 
-```c++
+```cpp
 startup_(tutorial::simple);
 ```
 
 The code behind ***startup_*** macro can be replaced by :
 
-```c++
+```cpp
 auto main(int argc, char* argv[])->int {
   tutorial::simple::main();
   return xtd::environment::exit_code();
@@ -70,7 +70,7 @@ See [cmake](htps:\\cmake.org) for more information.
 
 In this example, we provide an icon for our application. It became a standard to display a small icon in the upper left corner of the window. The icon is a graphical identity of the program.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 namespace tutorial {
@@ -93,7 +93,7 @@ startup_(tutorial::form_icon);
 
 In our example we show a small gammasoft icon.
 
-```c++
+```cpp
 icon(xtd::drawing::system_icons::gammasoft());
 ```
 
@@ -107,7 +107,7 @@ To display an application icon is a matter of one code line.
 
 In the following example, we create a button on the form control. We will show, how to create a simple event handler.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 namespace tutorial {
@@ -142,13 +142,13 @@ namespace tutorial {
 startup_(tutorial::form_button);
 ```
 
-```c++
+```cpp
 xtd::forms::button button_quit;
 ```
 
 First we create a button control. 
 
-```c++
+```cpp
 button_quit.parent(*this);
 button_quit.image(xtd::forms::images::from_name("application-exit", xtd::drawing::size(16, 16)));
 button_quit.image_align(xtd::forms::content_alignment::middle_left);
@@ -158,19 +158,19 @@ button_quit.location(xtd::drawing::point(20, 20));
 
 It will be placed inside a form control. It will cause to display a small operating system dependent exit icon on the button. The label of the button is "Quit". The button is positioned manually at x=20, y=20 coordinates. The beginning of the coordinate system is at the upper left hand corner.
 
-```c++
+```cpp
 button_quit.click += xtd::event_handler<xtd::forms::control&>(*this, &form_button::on_quit);
 ```
 
 If we click on the button, a ***click*** event is generated. We connect the event to the ***on_quit()*** method of the button class. So when we click on the button, the ***on_quit()*** method is called.
 
-```c++
+```cpp
 active_control(button_quit);
 ```
 
 We set the keyboard focus to the button. So if we press the Enter key, the button is being clicked.
 
-```c++
+```cpp
 close();
 ```
 
@@ -184,7 +184,7 @@ Inside the ***on_quit()*** method, we call the ***close()*** method. This will c
 
 It is important to know, how controls can communicate in application. Follow the next example.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 namespace tutorial {
@@ -256,7 +256,7 @@ startup_(tutorial::communicate);
 ```
 In our example we have two panels. A left and right panel. The left panel has two buttons. The right panel has one label. The buttons change the number displayed in the label. The question is, how do we grab the pointer to the label?
 
-```c++
+```cpp
 control& form = parent().value().get();
 static_cast<panel_right&>(form.controls()[0].get()).label.text(xtd::strings::format("{}", count));
 ```

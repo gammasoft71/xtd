@@ -45,7 +45,7 @@ The basic mechanism for formatting is the default implementation of the operator
 * Overriding the operator `<<` object method to define a custom string representation of an object’s value. For more information, see the [Overriding Shift Left Operator Method](overriding-shift-left-operator-method]) section later in this topic.
 * Defining format specifiers that enable the string representation of an object’s value to take multiple forms. For example, the "X" format specifier in the following statement converts an integer to the string representation of a hexadecimal value.
 
-```c++
+```cpp
 int integer_value = 60312;
 xtd::console::write_line(xtd::to_string(integer_value, "X"));   // Displays EB98.
 ```
@@ -54,7 +54,7 @@ For more information about format specifiers, see the [to_string Method And Form
 
 * Using format providers to take advantage of the formatting conventions of a specific culture. For example, the following statement displays a currency value by using the formatting conventions of the en-US culture.
 
-```c++
+```cpp
 double cost = 1632.54;
 xtd::console::write_line(xtd::to_string(cost, "C", std::locale("en_US.UTF-8")));
 // The example displays the following output:
@@ -85,7 +85,7 @@ A composite format string and object list are used as arguments of methods that 
 
 Consider the following [xtd::ustring::format](https://codedocs.xyz/gammasoft71/xtd/group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd) code fragment.
 
-```c++
+```cpp
 string name = "Fred";
 xtd::ustring::format("Name = {0}, age = {1:D3}", name, 42);
 ```

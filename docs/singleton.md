@@ -17,7 +17,7 @@ A visualization of the classes and objects participating in this pattern.
 This structural code demonstrates the Singleton pattern which assures only a single instance (the singleton) of the class can be created.
 
 
-```c++
+```cpp
 
 ```
 
