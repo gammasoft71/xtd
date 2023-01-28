@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-#
-# Deploy website.
-
-git branch -D gh-pages         
-git push origin --delete gh-pages
-yarn deploy
