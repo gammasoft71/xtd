@@ -1,15 +1,11 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   //title: 'xtd',
   //tagline: 'xtd (pronounced "extend") is a modern C++17/20 framework to create console, GUI and unit test applications on Microsoft Windows, macOS, Linux, iOS and android (*).',
   title: ' ',
-  tagline: ' ',
   url: 'https://gammasoft71.github.io',
   baseUrl: '/xtd/',
   onBrokenLinks: 'throw',
@@ -116,26 +112,32 @@ const config = {
         style: 'dark',
         links: [
           {
-            html: '<a href="https://github.com/gammasoft71/xtd"><img src=pictures/github32.png></a>',
+            html: '<a href="https://gammasoft71.github.io/xtd"><img src="pictures/xtd32.png"></a>',
           },
           {
-            html: '<a href="https://sourceforge.net/u/gammasoft71"><img src=pictures/sourceforge32.png></a>',
+            html: '<a href="https://github.com/gammasoft71/xtd"><img src="pictures/github32.png"></a>',
           },
           {
-            html: '<a href="https://www.facebook.com/gammasoft71"><img src=pictures/facebook32.png></a>',
+            html: '<a href="https://sourceforge.net/u/gammasoft71"><img src="pictures/sourceforge32.png"></a>',
+          },
+          {
+            html: '<a href="https://www.facebook.com/gammasoft71"><img src="pictures/facebook32.png"></a>',
           },
           {
             html: '<a href="hhttps://twitter.com/gammasoft71"><img src=pictures/twitter32.png></a>',
           },
           {
-            html: '<a href="https://discordapp.com/users/gammasoft#9288"><img src=pictures/discord32.png></a>',
+            html: '<a href="https://discordapp.com/users/gammasoft#9288"><img src="pictures/discord32.png"></a>',
+          },
+          {
+            html: '<a href="mailto:gammasoft71@gmail.com"><img src="pictures/mail32.png"></a>',
           },
         ],
         copyright: `© ${new Date().getFullYear()} Gammasoft. Built with Docusaurus.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: require('prism-react-renderer/themes/github'),
+        darkTheme: require('prism-react-renderer/themes/palenight'),
       },
     }),
 };
