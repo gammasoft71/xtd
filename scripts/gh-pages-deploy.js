@@ -3,8 +3,6 @@
     const { execa } = await import('execa');
     const fs = await import('fs');
 
-    console.log('Init...');
-    await execa('git', ['branch', '-D', 'gh-pages']);
     await execa('git', ['checkout', '--orphan', 'gh-pages']);
     console.log('Building...');
     await execa('yarn', ['build']);
@@ -15,11 +13,8 @@
     
     console.log('Pushing to gh-pages...');
     await execa('git', ['push', 'origin', 'HEAD:gh-pages', '--force']);
-    console.log('Sync...');
     fs.rmSync(folderName, { recursive: true, force: true });
-    console.log('Checkout...');
     await execa('git', ['checkout', '-f', 'docs']);
-    console.log('Branch...');
     await execa('git', ['branch', '-D', 'gh-pages']);
 
     console.log('Successfully deployed');
