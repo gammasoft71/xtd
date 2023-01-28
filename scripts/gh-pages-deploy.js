@@ -3,6 +3,8 @@
     const { execa } = await import('execa');
     const fs = await import('fs');
 
+    console.log('Init...');
+    await execa('git', ['branch', '-D', 'gh-pages']);
     await execa('git', ['checkout', '--orphan', 'gh-pages']);
     console.log('Building...');
     await execa('yarn', ['build']);
