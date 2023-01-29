@@ -916,7 +916,7 @@ void main_form::update_open_xtd_examples_description(const xtd::ustring& descrip
       // Todo: if it's not a link, maybe a file e.g ../../CMakeLists.txt
       // open a google search in xtd documentation for now...
       if (not link.starts_with("http"))
-        link = xtd::ustring::format("https://www.google.com/search?q={}+site:https://codedocs.xyz/gammasoft71/xtd", title);
+        link = xtd::ustring::format("https://www.google.com/search?q={}+site:https://gammasoft71.github.io/xtd/reference_guides/latest", title);
       // Replace all markdown links [title](url) with title
       text = text.replace(whole, title);
       open_xtd_examples_information_link_label_.links().push_back(xtd::forms::link(it->position(), title.length(), link));
