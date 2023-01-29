@@ -109,4 +109,4 @@ ________________________________________________________________________________
 
 © 2023 Gammasoft.
 
-[comment]: <> (https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet)
+[//]: # (https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet)

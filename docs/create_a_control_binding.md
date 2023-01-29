@@ -13,4 +13,4 @@ ________________________________________________________________________________
 
 © 2023 Gammasoft.
 
-[comment]: <> (https://learn.microsoft.com/en-us/dotnet/desktop/winforms/data/how-to-create-control-binding?view=netdesktop-6.0)
+[//]: # (https://learn.microsoft.com/en-us/dotnet/desktop/winforms/data/how-to-create-control-binding?view=netdesktop-6.0)

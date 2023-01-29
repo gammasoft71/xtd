@@ -13,4 +13,4 @@ ________________________________________________________________________________
 
 © 2023 Gammasoft.
 
-[comment]: <> (https://learn.microsoft.com/en-us/dotnet/standard/base-types/composite-formatting)
+[//]: # (https://learn.microsoft.com/en-us/dotnet/standard/base-types/composite-formatting)

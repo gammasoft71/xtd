@@ -13,4 +13,4 @@ ________________________________________________________________________________
 
 © 2023 Gammasoft.
 
-[comment]: <> (https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/network-info)
+[//]: # (https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/network-info)

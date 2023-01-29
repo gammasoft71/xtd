@@ -13,4 +13,4 @@ ________________________________________________________________________________
 
 © 2023 Gammasoft.
 
-[comment]: <> (https://learn.microsoft.com/en-us/dotnet/standard/base-types/how-to-round-trip-date-and-time-values)
+[//]: # (https://learn.microsoft.com/en-us/dotnet/standard/base-types/how-to-round-trip-date-and-time-values)

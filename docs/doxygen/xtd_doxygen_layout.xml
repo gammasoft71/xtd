@@ -20,9 +20,9 @@
   <class>
     <briefdescription visible="no"/>
     <includes visible="$SHOW_INCLUDE_FILES"/>
-    <detaileddescription title="Definition"/>
-    <inheritancegraph visible="$CLASS_GRAPH"/>
     <collaborationgraph visible="$COLLABORATION_GRAPH"/>
+    <inheritancegraph visible="$CLASS_GRAPH"/>
+    <detaileddescription title="Definition"/>
     <memberdecl>
       <nestedclasses visible="yes" title=""/>
       <publictypes title=""/>

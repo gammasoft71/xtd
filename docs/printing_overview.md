@@ -13,4 +13,4 @@ ________________________________________________________________________________
 
 © 2023 Gammasoft.
 
-[comment]: <> (https://learn.microsoft.com/en-us/dotnet/desktop/winforms/printing/overview?view=netdesktop-6.0)
+[//]: # (https://learn.microsoft.com/en-us/dotnet/desktop/winforms/printing/overview?view=netdesktop-6.0)
