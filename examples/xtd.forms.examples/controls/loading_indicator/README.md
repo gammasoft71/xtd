@@ -1,6 +1,6 @@
 # loading_indicator
 
-[xtd::forms::loading_indicator](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1loading__indicator.html) represents a Windows control to display a loading indicator animation.
+[xtd::forms::loading_indicator](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1loading__indicator.html) represents a Windows control to display a loading indicator animation.
 
 # Sources
 

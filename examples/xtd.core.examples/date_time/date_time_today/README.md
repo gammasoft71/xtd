@@ -1,6 +1,6 @@
 # date_time_today
 
-Shows how to use [xtd::date_time::today](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a59f1715a20ea00fdd56aabe19b704f70) property.
+Shows how to use [xtd::date_time::today](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a59f1715a20ea00fdd56aabe19b704f70) property.
 
 # Sources
 

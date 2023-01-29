@@ -1,6 +1,6 @@
 # static_object2
 
-Shows how to use [xtd::static](https://codedocs.xyz/gammasoft71/xtd/static_8h.html) class.
+Shows how to use [xtd::static](https://gammasoft71.github.io/xtd/reference_guides/latest/static_8h.html) class.
 
 ## Sources
 

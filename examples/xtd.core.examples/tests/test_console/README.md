@@ -1,6 +1,6 @@
 # test_console
 
-Shows how to set target startup with cmake [xtd::console](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html).
+Shows how to set target startup with cmake [xtd::console](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html).
 
 # Sources
 

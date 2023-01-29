@@ -4,7 +4,7 @@
 
 In xtd, the term "box model" is used when talking about design and layout.
 
-The xtd box model is essentially a box that wraps around every [xtd::forms::control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html) item.
+The xtd box model is essentially a box that wraps around every [xtd::forms::control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html) item.
 It consists of: margins, borders, padding, and the actual content. The image below illustrates the box model:
 
 ![box_model](pictures/box_model.png)
@@ -33,7 +33,7 @@ control {
 
 ## Width and Height of an Element
 
-In order to set the width and height of an [xtd::forms::control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html) correctly, you need to know how the box model works.
+In order to set the width and height of an [xtd::forms::control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html) correctly, you need to know how the box model works.
 
 ## Important
 
@@ -42,7 +42,7 @@ To calculate the full size of an element, you must also add padding, borders and
 
 # Exmple
 
-This [xtd::forms::control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html) will have a total width of 350px: 
+This [xtd::forms::control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html) will have a total width of 350px: 
 
 ```css
 control {

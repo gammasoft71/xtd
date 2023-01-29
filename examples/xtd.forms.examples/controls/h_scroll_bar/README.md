@@ -1,6 +1,6 @@
 # h_scroll_bar
 
-demonstrates the use of [xtd::forms::h_scroll_bar](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1h__scroll__bar.html) control.
+demonstrates the use of [xtd::forms::h_scroll_bar](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1h__scroll__bar.html) control.
 
 # Sources
 

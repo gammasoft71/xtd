@@ -1,6 +1,6 @@
 # file_info_open_write
 
-Show how to use [xtd::io::file_info::open_write](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1file__info.html#a0646c288e2969e622568e9b517fcbad9) method.
+Show how to use [xtd::io::file_info::open_write](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1file__info.html#a0646c288e2969e622568e9b517fcbad9) method.
 
 ## Sources
 

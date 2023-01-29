@@ -1,6 +1,6 @@
 # debug_form
 
-demonstrates the use of [xtd::debug_forms::debug_form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1debug__form.html) container.
+demonstrates the use of [xtd::debug_forms::debug_form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1debug__form.html) container.
 
 # Sources
 

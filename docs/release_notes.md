@@ -117,7 +117,7 @@
 
 ## Incompatibility list
 
-* xtd::forms::menu and xtd::forms::menu_item are reimplemented as of version 0.2.0 and are not compatible with the previous version. See [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html) and [example](https://github.com/gammasoft71/xtd/tree/master/examples/xtd.forms.examples/menus_and_toolbars/main_menu) for more information.
+* xtd::forms::menu and xtd::forms::menu_item are reimplemented as of version 0.2.0 and are not compatible with the previous version. See [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/index.html) and [example](https://github.com/gammasoft71/xtd/tree/master/examples/xtd.forms.examples/menus_and_toolbars/main_menu) for more information.
 * Linux and macOS users : if you have cloned and instlled a version 0.2.0 from git before the commit [98d65c9](https://github.com/gammasoft71/xtd/commit/98d65c9810ede427b9f203c20ddc255b45731c77). Delete the "/usr/local/share/xtd/themes" directory before the new installation.
 * Windows users : if you have cloned and instlled a version 0.2.0 from git before the commit [98d65c9](https://github.com/gammasoft71/xtd/commit/98d65c9810ede427b9f203c20ddc255b45731c77). Delete the "C:\Program Files\xtd\share\xtd\themes" directory before the new installation.
 
@@ -439,7 +439,7 @@ ________________________________________________________________________________
 ## Remarks
 
 * After 3 years of development, we are happy to release the first beta version of xtd. This version contains a lot of functionalities. It is the first of a long serie.
-* The essentials are listed above. For more information about all functionalities read the [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html).
+* The essentials are listed above. For more information about all functionalities read the [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/index.html).
 
 ______________________________________________________________________________________________
 

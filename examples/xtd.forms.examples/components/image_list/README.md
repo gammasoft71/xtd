@@ -1,6 +1,6 @@
 # image_list
 
-demonstrates the use of [xtd::forms::image_list](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1image__list.html) component.
+demonstrates the use of [xtd::forms::image_list](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1image__list.html) component.
 
 # Sources
 

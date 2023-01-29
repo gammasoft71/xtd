@@ -1,6 +1,6 @@
 # ostream_unit_test
 
-Shows how to use generic [xtd::tunit::ostream_unit_test](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1ostream__unit__test.html) class.
+Shows how to use generic [xtd::tunit::ostream_unit_test](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1ostream__unit__test.html) class.
 
 ## Sources
 

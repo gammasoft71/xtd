@@ -1,6 +1,6 @@
 # vertical_layout_panel
 
-demonstrates the use of [xtd::forms::vertical_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html) container.
+demonstrates the use of [xtd::forms::vertical_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1vertical__layout__panel.html) container.
 
 # Sources
 

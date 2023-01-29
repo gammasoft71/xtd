@@ -1,6 +1,6 @@
 # format_enum_class_flags_without_helper
 
-Show how to use format [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) class with enum classes flags without helper.
+Show how to use format [xtd::format](https://gammasoft71.github.io/xtd/reference_guides/latest/_format_page.html) class with enum classes flags without helper.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # sixteen_segment_display
 
-demonstrates how to use [xtd::forms::sixteen_segment_display](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1sixteen__segment__display.html) control.
+demonstrates how to use [xtd::forms::sixteen_segment_display](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1sixteen__segment__display.html) control.
 
 # Sources
 

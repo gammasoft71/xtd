@@ -1,6 +1,6 @@
 # stack_trace
 
-Shows how to use [xtd::diagnostics::stack_trace](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1stack__trace.html) class.
+Shows how to use [xtd::diagnostics::stack_trace](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1stack__trace.html) class.
 
 ## Sources
 

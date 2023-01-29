@@ -1,6 +1,6 @@
 # string_assert_contains
 
-Shows how to use [xtd::tunit::string_assert::contains](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1string__assert.html#a25d4619feaad1202475dd8600bb177c5) method.
+Shows how to use [xtd::tunit::string_assert::contains](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assert.html#a25d4619feaad1202475dd8600bb177c5) method.
 
 ## Sources
 

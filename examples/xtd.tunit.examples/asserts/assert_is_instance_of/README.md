@@ -1,6 +1,6 @@
 # assert_is_instance_of
 
-Shows how to use [xtd::tunit::assert::is_instance_of](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1assert.html#a674b044e8ffeb4b07f76bf2f24fd70f0) method.
+Shows how to use [xtd::tunit::assert::is_instance_of](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html#a674b044e8ffeb4b07f76bf2f24fd70f0) method.
 
 ## Sources
 

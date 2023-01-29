@@ -1,6 +1,6 @@
 # text_box_password
 
-demonstrates the use of [xtd::forms::text_box_password](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1text__box.html#aae0d3ea61c5f5e178d7e8b55b9832139) control.
+demonstrates the use of [xtd::forms::text_box_password](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1text__box.html#aae0d3ea61c5f5e178d7e8b55b9832139) control.
 
 # Sources
 

@@ -1,6 +1,6 @@
 # random2
 
-Shows how to use [xtd::random](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1random.html) class.
+Shows how to use [xtd::random](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1random.html) class.
 
 ## Sources
 

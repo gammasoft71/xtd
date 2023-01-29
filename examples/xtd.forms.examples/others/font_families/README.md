@@ -1,6 +1,6 @@
 # font_families
 
-demonstrates the use of [xtd::drawing::font_families](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1font__family.html#a9ad7cafdc9e9966d8222c7dcedeab43a) method, which returns an array of [xtd::drawing::font_family](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1font__family.html) objects associated with the current graphics context.
+demonstrates the use of [xtd::drawing::font_families](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1font__family.html#a9ad7cafdc9e9966d8222c7dcedeab43a) method, which returns an array of [xtd::drawing::font_family](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1font__family.html) objects associated with the current graphics context.
 
 # Sources
 

@@ -1,6 +1,6 @@
 # console_background_color2
 
-Shows how to use [xtd::console::background_color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1background__color.html) method.
+Shows how to use [xtd::console::background_color](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1background__color.html) method.
 
 ## Sources
 

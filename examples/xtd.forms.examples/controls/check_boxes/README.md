@@ -1,6 +1,6 @@
 # check_boxes
 
-demonstrates the use of [xtd::forms::check_boxes](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1check__boxes.html) check_box object collection.
+demonstrates the use of [xtd::forms::check_boxes](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1check__boxes.html) check_box object collection.
 
 # Sources
 

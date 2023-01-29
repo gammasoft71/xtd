@@ -1,6 +1,6 @@
 # assert_with_message
 
-Shows how to use [assert_](https://codedocs.xyz/gammasoft71/xtd/group__debug.html#gad1e9d87aeb065b1eec47e92a49fd01e9) macro.
+Shows how to use [assert_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__debug.html#gad1e9d87aeb065b1eec47e92a49fd01e9) macro.
 
 ## Sources
 

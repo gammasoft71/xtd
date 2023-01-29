@@ -1,6 +1,6 @@
 # css_writer
 
-Shows how to use [xtd::web::css:css_writer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1web_1_1css_1_1css__writer.html) class.
+Shows how to use [xtd::web::css:css_writer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1web_1_1css_1_1css__writer.html) class.
 
 ## Sources
 

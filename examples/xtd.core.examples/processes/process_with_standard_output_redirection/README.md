@@ -1,6 +1,6 @@
 # process_with_standard_output_redirection
 
-Shows how to use [xtd::process](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1process.html) class with standard output redirection.
+Shows how to use [xtd::process](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1process.html) class with standard output redirection.
 
 ## Sources
 

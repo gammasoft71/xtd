@@ -1,6 +1,6 @@
 ## A simple application
 
-First we create the very basic [xtd::forms](https://codedocs.xyz/gammasoft71/xtd/group__gui.html) program.
+First we create the very basic [xtd::forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__gui.html) program.
 
 ```c++
 #include <xtd/xtd.forms>

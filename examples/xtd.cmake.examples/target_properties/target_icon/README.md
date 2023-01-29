@@ -1,6 +1,6 @@
 # target_icon
 
-Shows how to set target icon with cmake [target_icon()](https://codedocs.xyz/gammasoft71/xtd/_c_make_commands.html#TargetIconSubSection).
+Shows how to set target icon with cmake [target_icon()](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#TargetIconSubSection).
 
 # Sources
 

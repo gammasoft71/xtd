@@ -1,6 +1,6 @@
 # tab_control
 
-demonstrates the use of [xtd::forms::tab_control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__control.html) container.
+demonstrates the use of [xtd::forms::tab_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tab__control.html) container.
 
 # Sources
 

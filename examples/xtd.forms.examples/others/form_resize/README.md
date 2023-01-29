@@ -1,6 +1,6 @@
 # form_resize
 
-Shows how to set [minimum size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a2eac1038d9dfe8bdb20948f63fc8afba), set [maximum size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a36d6a1129cb15c8ff356c84ec4879b81), [move](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga1af17ff50d65f2513fe9df98dcb1ce80) and [resize](https://codedocs.xyz/gammasoft71/xtd/group__events.html#gaea1a435b7c3963a9e39af7aa218778a6) a [form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html).
+Shows how to set [minimum size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a2eac1038d9dfe8bdb20948f63fc8afba), set [maximum size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a36d6a1129cb15c8ff356c84ec4879b81), [move](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga1af17ff50d65f2513fe9df98dcb1ce80) and [resize](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#gaea1a435b7c3963a9e39af7aa218778a6) a [form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html).
 
 # Sources
 

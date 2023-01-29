@@ -1,6 +1,6 @@
 # circular_form
 
-demonstrates the use of [xtd::forms::control::region](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#ad87086e004f60985be7fa8d6eb1f8527) property for create a circular form.
+demonstrates the use of [xtd::forms::control::region](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#ad87086e004f60985be7fa8d6eb1f8527) property for create a circular form.
 
 # Sources
 

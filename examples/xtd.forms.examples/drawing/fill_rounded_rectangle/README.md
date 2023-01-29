@@ -1,6 +1,6 @@
 # fill_rounded_rectangle
 
-shows how to fill rounded rectangle in paint event using [xtd::drawing::graphics::fill_rounded_rectangle](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1graphics.html#ad64ecf09d3c43f1ea5b327f136b7c0f6).
+shows how to fill rounded rectangle in paint event using [xtd::drawing::graphics::fill_rounded_rectangle](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1graphics.html#ad64ecf09d3c43f1ea5b327f136b7c0f6).
 
 # Sources
 

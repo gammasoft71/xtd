@@ -1,6 +1,6 @@
 # class_with_insert_stream_operator
 
-Shows how to use [xtd::tunit::assert](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1assert.html) class with a class to test that contains insert stream operator.
+Shows how to use [xtd::tunit::assert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html) class with a class to test that contains insert stream operator.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # assert_is_less
 
-Shows how to use [xtd::tunit::assert::is_less](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1assert.html#a48bce2c24a1a823d452e049fdc9647d0) method.
+Shows how to use [xtd::tunit::assert::is_less](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html#a48bce2c24a1a823d452e049fdc9647d0) method.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # date_time_picker
 
-demonstrates the use of [xtd::forms::date_time_picker](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1date__time__picker.html) dialog.
+demonstrates the use of [xtd::forms::date_time_picker](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1date__time__picker.html) dialog.
 
 # Sources
 

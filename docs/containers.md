@@ -34,17 +34,17 @@ While this is possible, we generally prefer to use defined containers that have 
 
 ## Standard containers
 
-These containers use [location](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a704049ab20aa16e25dca51911b0ba13b), [size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a2a9c3b512b6748c8330fe2231839c4cb), [auto_size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#ad6dfcca7a2ecd41e2679d6b3085103fe), [anchor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a3908bffd315d0bfc8b2656f89e2dc42c) and [dock](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#adb3febb83c715c2f7e014b47c9cb1df7) for children controls.
+These containers use [location](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a704049ab20aa16e25dca51911b0ba13b), [size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a2a9c3b512b6748c8330fe2231839c4cb), [auto_size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#ad6dfcca7a2ecd41e2679d6b3085103fe), [anchor](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a3908bffd315d0bfc8b2656f89e2dc42c) and [dock](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#adb3febb83c715c2f7e014b47c9cb1df7) for children controls.
 
 For more information, see [Size and location properties](https://github.com/gammasoft71/xtd/blob/master/docs/size_and_location_properties.md) and [Position and layout of controls](https://github.com/gammasoft71/xtd/blob/master/docs/position_and_layout_of_controls.md).
 
 ### Fixed layout panel
 
-The [fixed_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1fixed__layout__panel.html) is used to group collections of fixed aligned controls.
+The [fixed_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1fixed__layout__panel.html) is used to group collections of fixed aligned controls.
 
 #### Example
 
-The following example demonstrates the use of [fixed_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1fixed__layout__panel.html) container.
+The following example demonstrates the use of [fixed_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1fixed__layout__panel.html) container.
 
 ```cpp
 #include <xtd/xtd>
@@ -87,11 +87,11 @@ auto main()->int {
 
 ### Group box
 
-[group_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1group__box.html) represents a Windows control that displays a frame around a group of controls with an optional caption.
+[group_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1group__box.html) represents a Windows control that displays a frame around a group of controls with an optional caption.
 
 #### Example
 
-The following example demonstrates the use of [group_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1group__box.html) container.
+The following example demonstrates the use of [group_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1group__box.html) container.
 
 ```cpp
 #include <xtd/xtd>
@@ -134,9 +134,9 @@ auto main()->int {
 
 ### Panel
 
-[panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1panel.html) is used to group collections of controls.
+[panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1panel.html) is used to group collections of controls.
 
-The following example demonstrates the use of [panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1panel.html) container.
+The following example demonstrates the use of [panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1panel.html) container.
 
 ```cpp
 #include <xtd/xtd>
@@ -179,11 +179,11 @@ auto main()->int {
 
 ### Popup panel
 
-[popup_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1popup__panel.html) represents a special type of panel container that can be used for [context_menu](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1context__menu.html), [combo_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1combo__box.html) popups and more.
+[popup_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1popup__panel.html) represents a special type of panel container that can be used for [context_menu](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1context__menu.html), [combo_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1combo__box.html) popups and more.
 
 #### Example
 
-The following example demonstrates the use of [popup_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1popup__panel.html) container.
+The following example demonstrates the use of [popup_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1popup__panel.html) container.
 
 ```cpp
 #include <xtd/xtd>
@@ -236,17 +236,17 @@ auto main()->int {
 
 ### Splitter panel
 
-[splitter_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1splitter__panel.html) represents a panel that is associated with a split_container.
+[splitter_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1splitter__panel.html) represents a panel that is associated with a split_container.
 
 *Coming soon...*
 
 ### Tab page
 
-[tab_page](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__page.html) represents a single tab page in a tab_control.
+[tab_page](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tab__page.html) represents a single tab page in a tab_control.
 
 #### Example
 
-The following example demonstrates the use of [tab_page](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__page.html) container.
+The following example demonstrates the use of [tab_page](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tab__page.html) container.
 
 ```cpp
 #include <xtd/xtd>
@@ -307,9 +307,9 @@ auto main()->int {
 
 ### Remarks
 
-* [fixed_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1fixed__layout__panel.html) is the same as [panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1panel.html).
-* [splitter_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1splitter__panel.html) is used with [splitt_container](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1split__container.html) and is the same as [panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1panel.html).
-* [tab_page](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__page.html) is used with [tab_control]([tab_page](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__page.html)) and is the same as [panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1panel.html).
+* [fixed_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1fixed__layout__panel.html) is the same as [panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1panel.html).
+* [splitter_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1splitter__panel.html) is used with [splitt_container](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1split__container.html) and is the same as [panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1panel.html).
+* [tab_page](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tab__page.html) is used with [tab_control]([tab_page](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tab__page.html)) and is the same as [panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1panel.html).
 
 ## Layout containers
 
@@ -324,46 +324,46 @@ On the other hand, child controls of layout panel cannot use the dock or anchor 
 
 ### Flow layout panel
 
-[flow_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1flow__layout__panel.html) is used to group collections of fixed aligned controls.
+[flow_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1flow__layout__panel.html) is used to group collections of fixed aligned controls.
 
 *Coming soon...*
 
 ### Horizontal layout panel
 
-[horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) is used to group collections of horizontally aligned controls.
+[horizontal_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1horizontal__layout__panel.html) is used to group collections of horizontally aligned controls.
 
 ### Horizontal layout panel styles
 
-For each child control of [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) an [horizontal_layout_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__control__layout__style.html) style is associate.
-You can specify for each chid control the layout style to the layout container by the method [control_layout_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html#a6e1ad8fe72ee251ca0c35e7316cc29fa).
+For each child control of [horizontal_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1horizontal__layout__panel.html) an [horizontal_layout_style](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1horizontal__control__layout__style.html) style is associate.
+You can specify for each chid control the layout style to the layout container by the method [control_layout_style](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1horizontal__layout__panel.html#a6e1ad8fe72ee251ca0c35e7316cc29fa).
 If you don't specify the layout style, it use the style by default.
 
-An [horizontal_layout_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__control__layout__style.html) is composed of :
-* content_alignment :	One of the [content_alignment](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) values. The default is middle_center.
-  * [top_left](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the top, and horizontally aligned on the left.
-  * [top_center](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the top, and horizontally aligned at the center.
-  * [top_right](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the top, and horizontally aligned on the right.
-  * [middle_left](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned in the middle, and horizontally aligned on the left.
-  * [middle_center](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the middle, and horizontally aligned at the center.
-  * [middle_right](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the middle, and horizontally aligned on the right.
-  * [bottom_left](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned in the bottom, and horizontally aligned on the left.
-  * [bottom_center](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the bottom, and horizontally aligned at the center.
-  * [bottom_right](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the bottom, and horizontally aligned on the right.
+An [horizontal_layout_style](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1horizontal__control__layout__style.html) is composed of :
+* content_alignment :	One of the [content_alignment](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) values. The default is middle_center.
+  * [top_left](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the top, and horizontally aligned on the left.
+  * [top_center](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the top, and horizontally aligned at the center.
+  * [top_right](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the top, and horizontally aligned on the right.
+  * [middle_left](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned in the middle, and horizontally aligned on the left.
+  * [middle_center](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the middle, and horizontally aligned at the center.
+  * [middle_right](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the middle, and horizontally aligned on the right.
+  * [bottom_left](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned in the bottom, and horizontally aligned on the left.
+  * [bottom_center](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the bottom, and horizontally aligned at the center.
+  * [bottom_right](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the bottom, and horizontally aligned on the right.
 * exapend : A flag indicating if control is expanded to its containing layout container. The default is false.
-* size_type : One of the [size_type](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is auto_size.
-  * [auto_size](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be automatically sized to share space with its peers.
-  * [absolute](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be sized to an exact number of pixels. (Style by default)
-  * [percent](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be sized as a percentage of the parent container.
+* size_type : One of the [size_type](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is auto_size.
+  * [auto_size](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be automatically sized to share space with its peers.
+  * [absolute](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be sized to an exact number of pixels. (Style by default)
+  * [percent](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be sized as a percentage of the parent container.
 * width : The prefered width in pixel or percent depending the size_type. The default is std::nullopt.
 
 #### Remarks
 
-If you don't set expand to true and you set the height of the control. the [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) will take this into account.
+If you don't set expand to true and you set the height of the control. the [horizontal_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1horizontal__layout__panel.html) will take this into account.
 But not the width.
 
 #### Examples
 
-The following example shows how to create a [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) with children that have a default style.
+The following example shows how to create a [horizontal_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1horizontal__layout__panel.html) with children that have a default style.
 
 ```cpp
 #include <xtd/xtd.forms.h>
@@ -398,7 +398,7 @@ auto main()->int {
 }
 ```
 
-The following example shows how to create a [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) whose children must have a size corresponding to a percentage of the parent container.
+The following example shows how to create a [horizontal_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1horizontal__layout__panel.html) whose children must have a size corresponding to a percentage of the parent container.
 
 ```cpp
 #include <xtd/xtd.forms.h>
@@ -438,7 +438,7 @@ auto main()->int {
 }
 ```
 
-The following example shows how to create a [horizontal_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1horizontal__layout__panel.html) whose children must have a size corresponding to a abosulte value in pixels and set expand to true.
+The following example shows how to create a [horizontal_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1horizontal__layout__panel.html) whose children must have a size corresponding to a abosulte value in pixels and set expand to true.
 
 ```cpp
 #include <xtd/xtd.forms.h>
@@ -480,47 +480,47 @@ auto main()->int {
 
 ### Table layout panel
 
-[table_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1table__layout__panel.html) is used to group collections of fixed aligned controls.
+[table_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1table__layout__panel.html) is used to group collections of fixed aligned controls.
 
 *Coming soon...*
 
 ### Vertical layout panel
 
-[vertical_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html) is used to group collections of verticaly aligned controls.
+[vertical_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1vertical__layout__panel.html) is used to group collections of verticaly aligned controls.
 
 ### Vertical layout panel styles
 
-For each child control of [vertical_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html) an [vertical_layout_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__control__layout__style.html) style is associate.
-You can specify for each chid control the layout style to the layout container by the method [control_layout_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html#a059dccea939682c556eac63a4288b0ca).
+For each child control of [vertical_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1vertical__layout__panel.html) an [vertical_layout_style](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1vertical__control__layout__style.html) style is associate.
+You can specify for each chid control the layout style to the layout container by the method [control_layout_style](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1vertical__layout__panel.html#a059dccea939682c556eac63a4288b0ca).
 If you don't specify the layout style, it use the style by default.
 
-An [vertical_layout_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__control__layout__style.html) is composed of :
-* content_alignment :	One of the [content_alignment](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) values. The default is middle_center.
-  * [top_left](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the top, and horizontally aligned on the left.
-  * [top_center](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the top, and horizontally aligned at the center.
-  * [top_right](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the top, and horizontally aligned on the right.
-  * [middle_left](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned in the middle, and horizontally aligned on the left.
-  * [middle_center](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the middle, and horizontally aligned at the center.
-  * [middle_right](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the middle, and horizontally aligned on the right.
-  * [bottom_left](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned in the bottom, and horizontally aligned on the left.
-  * [bottom_center](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the bottom, and horizontally aligned at the center.
-  * [bottom_right](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the bottom, and horizontally aligned on the right.
+An [vertical_layout_style](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1vertical__control__layout__style.html) is composed of :
+* content_alignment :	One of the [content_alignment](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) values. The default is middle_center.
+  * [top_left](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the top, and horizontally aligned on the left.
+  * [top_center](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the top, and horizontally aligned at the center.
+  * [top_right](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the top, and horizontally aligned on the right.
+  * [middle_left](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned in the middle, and horizontally aligned on the left.
+  * [middle_center](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the middle, and horizontally aligned at the center.
+  * [middle_right](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the middle, and horizontally aligned on the right.
+  * [bottom_left](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned in the bottom, and horizontally aligned on the left.
+  * [bottom_center](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the bottom, and horizontally aligned at the center.
+  * [bottom_right](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the bottom, and horizontally aligned on the right.
 * exapend : A flag indicating if control is expanded to its containing layout container. The default is false.
-* size_type : One of the [size_type](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is auto_size.
-  * [auto_size](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be automatically sized to share space with its peers.
-  * [absolute](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be sized to an exact number of pixels. (Style by default)
-  * [percent](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be sized as a percentage of the parent container.
+* size_type : One of the [size_type](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is auto_size.
+  * [auto_size](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be automatically sized to share space with its peers.
+  * [absolute](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be sized to an exact number of pixels. (Style by default)
+  * [percent](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be sized as a percentage of the parent container.
 * width : The prefered width in pixel or percent depending the size_type. The default is std::nullopt.
 
 #### Remarks
 
-If you don't set expand to true and you set the width of the control. the [vertical_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html) will take this into account.
+If you don't set expand to true and you set the width of the control. the [vertical_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1vertical__layout__panel.html) will take this into account.
 But not the height.
 
 
 #### Examples
 
-The following example shows how to create a [vertical_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html) with children that have a default style.
+The following example shows how to create a [vertical_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1vertical__layout__panel.html) with children that have a default style.
 
 ```cpp
 #include <xtd/xtd.forms.h>
@@ -555,7 +555,7 @@ auto main()->int {
 }
 ```
 
-The following example shows how to create a [vertical_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html) whose children must have a size corresponding to a percentage of the parent container.
+The following example shows how to create a [vertical_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1vertical__layout__panel.html) whose children must have a size corresponding to a percentage of the parent container.
 
 ```cpp
 #include <xtd/xtd.forms.h>
@@ -595,7 +595,7 @@ auto main()->int {
 }
 ```
 
-The following example shows how to create a [vertical_layout_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1vertical__layout__panel.html) whose children must have a size corresponding to a abosulte value in pixels and set expand to true.
+The following example shows how to create a [vertical_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1vertical__layout__panel.html) whose children must have a size corresponding to a abosulte value in pixels and set expand to true.
 
 ```cpp
 #include <xtd/xtd.forms.h>
@@ -639,31 +639,31 @@ auto main()->int {
 
 ### Collapsible panel
 
-[collapsible_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1collapsible__panel.html) is used to group collections of controls in a collapsible panel.
+[collapsible_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1collapsible__panel.html) is used to group collections of controls in a collapsible panel.
 
 *coming soon...*
 
 ### Split container
 
-[split_container](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1split__container.html) represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
+[split_container](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1split__container.html) represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
 
 #### Remarks
 
-The child control for the [split_container](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1split__container.html) are [splitter_panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1splitter__panel.html).
+The child control for the [split_container](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1split__container.html) are [splitter_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1splitter__panel.html).
 
 *coming soon...*
  
 ### Tab control
  
-[tab_control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__control.html) manages a related set of tab pages.
+[tab_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tab__control.html) manages a related set of tab pages.
 
 #### Remarks
 
-The child controls for the [tab_control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__control.html) are [tab_page](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__page.html).
+The child controls for the [tab_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tab__control.html) are [tab_page](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tab__page.html).
 
 #### Example
 
-The following example demonstrates the use of [tab_control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__control.html) container.
+The following example demonstrates the use of [tab_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tab__control.html) container.
 
 ```cpp
 #include <xtd/xtd>
@@ -728,7 +728,7 @@ xtd is flexible and complete enough to create your own container without much ef
 
 ### Own horizontal stack panel
 
-The following example show how to make your own horizontal stack panel esasily with overloading [on_layout](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga277d5f851e0d49163d9fdecaace4d7bd) method.
+The following example show how to make your own horizontal stack panel esasily with overloading [on_layout](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga277d5f851e0d49163d9fdecaace4d7bd) method.
 
 ```cpp
 #include <xtd/xtd.forms.h>
@@ -777,7 +777,7 @@ auto main()->int {
 
 ### Own vertical stack panel
 
-The following example show how to make your own vertical stack panel esasily with [dock](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#adb3febb83c715c2f7e014b47c9cb1df7) and overloading [on_control_added](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga76d3b55915e43555fe652aa4d71ae2f0) method.
+The following example show how to make your own vertical stack panel esasily with [dock](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#adb3febb83c715c2f7e014b47c9cb1df7) and overloading [on_control_added](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga76d3b55915e43555fe652aa4d71ae2f0) method.
 
 ```cpp
 #include <xtd/xtd.forms.h>

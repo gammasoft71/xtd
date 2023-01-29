@@ -1,6 +1,6 @@
 # target_display
 
-Shows how to set target display with cmake [target_display()](https://codedocs.xyz/gammasoft71/xtd/_c_make_commands.html#TargetDisplaySubSection).
+Shows how to set target display with cmake [target_display()](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#TargetDisplaySubSection).
 
 # Sources
 

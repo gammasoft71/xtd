@@ -1,6 +1,6 @@
 # bit_converter_is_little_endian
 
-Shows how to use [bit_converter::is_little_endian](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1bit__converter.html#a163edd918104e0923f51d774809313b9) method.
+Shows how to use [bit_converter::is_little_endian](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html#a163edd918104e0923f51d774809313b9) method.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # network_stream
 
-Shows how to use [xtd::net::sockets::network_stream](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1net_1_1sockets_1_1network__stream.html) class.
+Shows how to use [xtd::net::sockets::network_stream](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1net_1_1sockets_1_1network__stream.html) class.
 
 ## Sources
 

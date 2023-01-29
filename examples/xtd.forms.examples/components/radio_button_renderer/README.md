@@ -1,6 +1,6 @@
 # radio_button_renderer
 
-demonstrates the use of [xtd::forms::radio_button_renderer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1radio__button__renderer.html) control.
+demonstrates the use of [xtd::forms::radio_button_renderer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1radio__button__renderer.html) control.
 
 # Sources
 

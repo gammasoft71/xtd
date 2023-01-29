@@ -1,6 +1,6 @@
 # form_and_main
 
-demonstrates how to use [startup_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c) keyword.
+demonstrates how to use [startup_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c) keyword.
 
 # Sources
 

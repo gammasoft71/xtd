@@ -1,6 +1,6 @@
 # tunit_config_main
 
-Shows how to use [TUNIT_CONFIG_MAIN](https://codedocs.xyz/gammasoft71/xtd/default__main_8h.html) define to generate automatically entry point.
+Shows how to use [TUNIT_CONFIG_MAIN](https://gammasoft71.github.io/xtd/reference_guides/latest/default__main_8h.html) define to generate automatically entry point.
 
 ## Sources
 

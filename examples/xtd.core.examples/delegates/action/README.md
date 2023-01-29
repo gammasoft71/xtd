@@ -1,6 +1,6 @@
 # action
 
-Shows how to use [xtd::action](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31) alias.
+Shows how to use [xtd::action](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31) alias.
 
 ## Sources
 

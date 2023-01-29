@@ -20,7 +20,7 @@ namespace examples {
       link_label1.text("xtd Reference Guide");
       link_label1.link_clicked += [](object & sender, link_label_clicked_event_args & e) {
         e.visited(true);
-        process::start("https://codedocs.xyz/gammasoft71/xtd/index.html");
+        process::start("https://gammasoft71.github.io/xtd/reference_guides/latest/index.html");
       };
       
       link_label2.location({10, 40});

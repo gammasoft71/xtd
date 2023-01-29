@@ -1,6 +1,6 @@
 # using
 
-Shows how to use [xtd::using](https://codedocs.xyz/gammasoft71/xtd/using_8h.html) class.
+Shows how to use [xtd::using](https://gammasoft71.github.io/xtd/reference_guides/latest/using_8h.html) class.
 
 ## Sources
 

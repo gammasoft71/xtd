@@ -6,9 +6,9 @@ This topic shows different ways to write text to a file for a xtd app.
 
 The following classes and methods are typically used to write text to a file:
 
-* [xtd::io::stream_writer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1stream__writer.html) contains methods to write to a file ([write and write_line).
-* [xtd::io::file](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1file.html) provides static methods to write text to a file, such as write_all_lines and write_all_text, or to append text to a file, such as append_all_jines, append_all_text, and append_text.
-* [xtd::io::path](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1path.html) is for strings that have file or directory path information. It contains the combine method and, the join and try_join methods, which allow concatenation of strings to build a file or directory path.
+* [xtd::io::stream_writer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1stream__writer.html) contains methods to write to a file ([write and write_line).
+* [xtd::io::file](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1file.html) provides static methods to write text to a file, such as write_all_lines and write_all_text, or to append text to a file, such as append_all_jines, append_all_text, and append_text.
+* [xtd::io::path](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1path.html) is for strings that have file or directory path information. It contains the combine method and, the join and try_join methods, which allow concatenation of strings to build a file or directory path.
 
 ## Notes
 

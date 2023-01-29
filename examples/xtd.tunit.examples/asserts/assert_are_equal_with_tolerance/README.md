@@ -1,6 +1,6 @@
 # assert_are_equal_with_tolerance
 
-Shows how to use [xtd::tunit::assert::are_equal_with_tolerance](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1assert.html#a026c2256bbe03ed84b6c118e0184a419) method.
+Shows how to use [xtd::tunit::assert::are_equal_with_tolerance](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html#a026c2256bbe03ed84b6c118e0184a419) method.
 
 ## Sources
 

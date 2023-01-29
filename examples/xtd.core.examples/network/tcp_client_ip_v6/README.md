@@ -1,6 +1,6 @@
 # tcp_client_ip_v6
 
-Shows how to use [xtd::net::sockets::tcp_client](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1net_1_1sockets_1_1tcp__client.html) class.
+Shows how to use [xtd::net::sockets::tcp_client](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1net_1_1sockets_1_1tcp__client.html) class.
 
 ## Sources
 

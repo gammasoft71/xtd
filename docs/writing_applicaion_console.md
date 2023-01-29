@@ -99,7 +99,7 @@ The previous procedure steps demonstrated how to just create a basic console tha
 4. Ask user and write result in **name**.
 5. Write formatted result to the console.
 
-The following code example demonstrates how to write and read with the [console](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html).
+The following code example demonstrates how to write and read with the [console](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html).
 
 ```cpp
   console1() {

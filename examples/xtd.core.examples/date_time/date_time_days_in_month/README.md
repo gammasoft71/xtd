@@ -1,6 +1,6 @@
 # date_time_days_in_month
 
-Shows how to use [xtd::date_time::days_in_month](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#acf06b7e2c3c396c332d86e03c87f1d23) method.
+Shows how to use [xtd::date_time::days_in_month](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#acf06b7e2c3c396c332d86e03c87f1d23) method.
 
 # Sources
 

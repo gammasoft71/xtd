@@ -1,6 +1,6 @@
 # split
 
-Shows how to use [xtd::ustring::split](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html#a96a729c2b591760cb0971d43418b3804) method.
+Shows how to use [xtd::ustring::split](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html#a96a729c2b591760cb0971d43418b3804) method.
 
 ## Sources
 

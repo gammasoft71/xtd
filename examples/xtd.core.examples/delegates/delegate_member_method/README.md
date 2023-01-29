@@ -1,6 +1,6 @@
 # delegate_member_method
 
-Shows how to use [xtd::delegate](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1delegate_3_01result__t_07_08_4.html) class.
+Shows how to use [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07_08_4.html) class.
 
 ## Sources
 

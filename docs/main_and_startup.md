@@ -16,9 +16,9 @@ See [Main function](https://en.cppreference.com/w/cpp/language/main_function) fo
 
 You can get command line arguments event if you use `main`function without argument. 
 
-The [xtd::environment](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html) class grabs and keeps for you the command line arguments :
-* [xtd::environment::command_line](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#ad79abc5dbbaf65805f8a84c33a622fbd) property gets the command line for this process.
-* [xtd::environment::get_command_line_args](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#a67b0e929793847d994dce7b741dc2ad3) method returns a string array containing the command-line arguments for the current process.
+The [xtd::environment](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html) class grabs and keeps for you the command line arguments :
+* [xtd::environment::command_line](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#ad79abc5dbbaf65805f8a84c33a622fbd) property gets the command line for this process.
+* [xtd::environment::get_command_line_args](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#a67b0e929793847d994dce7b741dc2ad3) method returns a string array containing the command-line arguments for the current process.
 
 ### xtd::environment::command_line and xtd::environment::get_command_line_args usage
 
@@ -43,7 +43,7 @@ As you can see, even if the `main` function is called without arguments and if `
 
 ## startup_ keyword
 
-xtd introduces the keyword [startup_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c) which allows to have a main static method in any class with different parameters with or without return value.
+xtd introduces the keyword [startup_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c) which allows to have a main static method in any class with different parameters with or without return value.
 
 Behind this keyword there is a `main` global function that call `main` static method in the specified class parameter with `try` and `catch`.
 
@@ -65,7 +65,7 @@ Behind this keyword there is a `main` global function that call `main` static me
 
 ### startup_ and exceptions
 
-Even if [startup_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c) keyword catch exceptions, it's preferable that you catch yourself exception. Indeed [startup_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c) generate a generic fallback message to the output console for a console application and a generic falbback [xtd::forms::dialog_exception](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1exception__dialog.html) for a GUI application.
+Even if [startup_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c) keyword catch exceptions, it's preferable that you catch yourself exception. Indeed [startup_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c) generate a generic fallback message to the output console for a console application and a generic falbback [xtd::forms::dialog_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1exception__dialog.html) for a GUI application.
 
 Your code should look like this :
 

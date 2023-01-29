@@ -1,6 +1,6 @@
 # radio_buttons
 
-demonstrates the use of [xtd::forms::radio_buttons](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1radio__buttons.html) radio_button object collection.
+demonstrates the use of [xtd::forms::radio_buttons](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1radio__buttons.html) radio_button object collection.
 
 # Sources
 

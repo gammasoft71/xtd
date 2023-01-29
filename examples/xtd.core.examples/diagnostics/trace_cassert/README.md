@@ -1,6 +1,6 @@
 # trace_cassert_message
 
-Shows how to use [trace::cassert_](https://codedocs.xyz/gammasoft71/xtd/group__debug.html#gab8e6aea91a39c5e05d514044aa2b2ddf) method.
+Shows how to use [trace::cassert_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__debug.html#gab8e6aea91a39c5e05d514044aa2b2ddf) method.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # bit_converter_endianness
 
-Shows how to use [bit_converter::endianness](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1bit__converter.html#a74775c90de1b900dda7995b804274b1b) method.
+Shows how to use [bit_converter::endianness](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html#a74775c90de1b900dda7995b804274b1b) method.
 
 ## Sources
 

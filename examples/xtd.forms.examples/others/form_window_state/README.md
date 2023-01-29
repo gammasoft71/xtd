@@ -1,6 +1,6 @@
 # form_window_state
 
-demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) window state.
+demonstrates the use of [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) window state.
 
 # Sources
 

@@ -55,15 +55,15 @@ This section contains topics for many common uses of the DateTime struct:
 * [Comparing for equality within tolerance](#)
 * [COM interop considerations](#)
 
-The [xtd::date_time](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html) value type represents dates and times with values ranging from 00:00:00 (midnight), January 1, 0001 Anno Domini (Common Era) through 11:59:59 P.M., December 31, 9999 A.D. (C.E.) in the Gregorian calendar.
+The [xtd::date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) value type represents dates and times with values ranging from 00:00:00 (midnight), January 1, 0001 Anno Domini (Common Era) through 11:59:59 P.M., December 31, 9999 A.D. (C.E.) in the Gregorian calendar.
 
-Time values are measured in 100-nanosecond units called [ticks](https://codedocs.xyz/gammasoft71/xtd/group__types.html#ga8fd3ccd5f25e401dc28a28ba352aa966). A particular date is the number of ticks since 12:00 midnight, January 1, 0001 A.D. (C.E.) in the GregorianCalendar calendar. 
-The number excludes ticks that would be added by leap seconds. For example, a ticks value of 31241376000000000L represents the date Friday, January 01, 0100 12:00:00 midnight. A [xtd::date_time](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html) value is always expressed in the context of an explicit or default calendar.
+Time values are measured in 100-nanosecond units called [ticks](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga8fd3ccd5f25e401dc28a28ba352aa966). A particular date is the number of ticks since 12:00 midnight, January 1, 0001 A.D. (C.E.) in the GregorianCalendar calendar. 
+The number excludes ticks that would be added by leap seconds. For example, a ticks value of 31241376000000000L represents the date Friday, January 01, 0100 12:00:00 midnight. A [xtd::date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) value is always expressed in the context of an explicit or default calendar.
 
 ## Note
 
   If you are working with a ticks value that you want to convert to some other time interval, such as minutes or seconds, you should use the [std::chono::duretion_cast<>](https://en.cppreference.com/w/cpp/chrono/duration/duration_cast) converter to perform the conversion or use [std::chrono::nanoseconds](https://en.cppreference.com/w/cpp/chrono/duration), [std::chrono::microseconds](https://en.cppreference.com/w/cpp/chrono/duration), [std::chrono::milliseonds](https://en.cppreference.com/w/cpp/chrono/duration), [std::chrono::seconds](https://en.cppreference.com/w/cpp/chrono/duration), [std::chrono::minutes](https://en.cppreference.com/w/cpp/chrono/duration) and [std::chrono::hours](https://en.cppreference.com/w/cpp/chrono/duration) durations. 
-  For example, to add the number of seconds represented by a specified number of ticks to the [second](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#ae084c4d68a46500b8e64f4aec4869a15) component of a [xtd::date_time](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html) value, you can use the expression 'dateValue.second() + std::duration_cast<std::chrono::second>(n_ticks).count()'.
+  For example, to add the number of seconds represented by a specified number of ticks to the [second](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#ae084c4d68a46500b8e64f4aec4869a15) component of a [xtd::date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) value, you can use the expression 'dateValue.second() + std::duration_cast<std::chrono::second>(n_ticks).count()'.
 
 You can view the source for the entire set of examples from this article from the [examples](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.core.examples/date_time/README.md) repository on GitHub.
 
@@ -78,7 +78,7 @@ The following code snippets show examples of each:
 
 ### Invoke Constructors
 
-You call any of the overloads of the [date_time](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html) constructor that specify elements of the date and time value (such as the year, month, and day, or the number of ticks). 
+You call any of the overloads of the [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) constructor that specify elements of the date and time value (such as the year, month, and day, or the number of ticks). 
 The following code creates a specific date using the DateTime constructor specifying the year, month, day, hour, minute, and second.
 
 ```cpp
@@ -87,7 +87,7 @@ console::write_line(date1);
 ```
 
 You invoke the `date_time` structure's implicit parameterless constructor when you want a `date_time` initialized to its default value.
-The following example illustrates the [date_time](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html) implicit parameterless constructor.
+The following example illustrates the [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) implicit parameterless constructor.
 
 ```cpp
 auto dat1 = date_time();
@@ -99,8 +99,8 @@ console::write_line(dat1 == date_time::min_value);
 
 ### Assigning a computed value
 
-You can assign the [date_time](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html) object a date and time value returned by a property or method. 
-The following example assigns the current date and time, the current Coordinated Universal Time (UTC) date and time, and the current date to three new [date_time](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html) variables.
+You can assign the [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) object a date and time value returned by a property or method. 
+The following example assigns the current date and time, the current Coordinated Universal Time (UTC) date and time, and the current date to three new [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) variables.
 
 ```cpp
 date_time date1 = date_time::now();
@@ -110,7 +110,7 @@ date_time date3 = date_time.today();
 ### Parsing a string that represents a DateTime
 
 The [xtd::parse<xtd::data_time>](), [xtd::date_time::parse](), [xtd::date_time::parse_exact](), [xtd::try_parse<xtd::date_time>](), [xtd::date_time::try_parse](), and [xtd::date_time::try_parse_exact]() methods all convert a string to its equivalent date and time value.
-The following examples use the [xtd::date_time::parse]() and [xtd::date_time::parse_exact]() methods to parse a string and convert it to a [date_time](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html) value. 
+The following examples use the [xtd::date_time::parse]() and [xtd::date_time::parse_exact]() methods to parse a string and convert it to a [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) value. 
 The second format uses a form supported by the ISO 8601 standard for a representing date and time in string format. This standard representation is often used to transfer date information in web services.
 
 ```cpp

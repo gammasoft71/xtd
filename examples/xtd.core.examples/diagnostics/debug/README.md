@@ -1,6 +1,6 @@
 # debug
 
-Shows how to use [debug](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1debug.html) class.
+Shows how to use [debug](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1debug.html) class.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # target_registered
 
-Shows how to set target registered with cmake [target_registered()](https://codedocs.xyz/gammasoft71/xtd/_c_make_commands.html#TargetRegisteredSubSection).
+Shows how to set target registered with cmake [target_registered()](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#TargetRegisteredSubSection).
 
 # Sources
 

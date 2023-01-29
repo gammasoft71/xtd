@@ -143,28 +143,28 @@ auto main()->int {
 What can we see apart from the verbosity and the c++ lambda functions?
 
 The code is based on the same model. 
-Indeed, even if you can't see it when reading the code, the [application::run(const form& main_form)](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#ad9f33fc4a9bfe8735d80ebabdeb7f3f2) method actually hides the Windows message loop and the display of the form passed to it as a parameter.
+Indeed, even if you can't see it when reading the code, the [application::run(const form& main_form)](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#ad9f33fc4a9bfe8735d80ebabdeb7f3f2) method actually hides the Windows message loop and the display of the form passed to it as a parameter.
 
-The [control::click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga651752ad0a3ec381983aa0b367291a68) events of xtd are also based on the [control::wnd_proc](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#ac75d78bfc73154decabddc734cd28096) and [control::def_wnd_proc](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a186a0852ce6b39c2b741c1690ecf2f4d)] functions which are protected member functions of the [control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html) class.
+The [control::click](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga651752ad0a3ec381983aa0b367291a68) events of xtd are also based on the [control::wnd_proc](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#ac75d78bfc73154decabddc734cd28096) and [control::def_wnd_proc](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a186a0852ce6b39c2b741c1690ecf2f4d)] functions which are protected member functions of the [control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html) class.
 
-The [form::form_closed](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga67bf4e48a317782b99524b8e25bce608) event automatically closes the application because it is considered to be the main window when passed as a parameter to the [application::run(const form& main_form)](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#ad9f33fc4a9bfe8735d80ebabdeb7f3f2) method. 
+The [form::form_closed](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga67bf4e48a317782b99524b8e25bce608) event automatically closes the application because it is considered to be the main window when passed as a parameter to the [application::run(const form& main_form)](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#ad9f33fc4a9bfe8735d80ebabdeb7f3f2) method. 
 
 ### Remarks
 
-* This behavior can be changed by using the [application_context](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application__context.html) class and  the [application::run(application_context& context](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#ab79aa8eba69cde497bae6657cb11eab8) method.
+* This behavior can be changed by using the [application_context](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application__context.html) class and  the [application::run(application_context& context](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#ab79aa8eba69cde497bae6657cb11eab8) method.
 * Although the event model is based on the Windows model, xtd works on Windows, macOS and Linux operating systems. Indeed the role of the native abstraction library allows to convert the toolkit event model into the Windows event model.
 
 ## How to respond to an event
 
 Two possible methods:
-* Respond to an event by associating an [event_handler](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b). This method is the most ripid and usually the default choice.
+* Respond to an event by associating an [event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b). This method is the most ripid and usually the default choice.
 * By overriding the protected method associated with the event in a derived class. This method is recommended when creating a custom control.
 
 ### event_handler
 
-Let's take a simple example of a [click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga651752ad0a3ec381983aa0b367291a68) on a [button]().
+Let's take a simple example of a [click](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga651752ad0a3ec381983aa0b367291a68) on a [button]().
 
-The following code shows how to associate an [event_handler](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) to the [control::click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event.
+The following code shows how to associate an [event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) to the [control::click](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event.
 
 ```cpp
 #include <xtd/xtd>
@@ -191,9 +191,9 @@ auto main()->int {
 }
 ```
 
-In this example we use a lambda function, but we could as well have associated an external function to the class `form1` or an internal method. We could also have specified the arguments of the [click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event if we needed them.
+In this example we use a lambda function, but we could as well have associated an external function to the class `form1` or an internal method. We could also have specified the arguments of the [click](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event if we needed them.
 
-The following example uses the `form1::on_button_click` member function with event [click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga651752ad0a3ec381983aa0b367291a68) arguments. Even if we don't need the arguments it's just for the example.
+The following example uses the `form1::on_button_click` member function with event [click](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga651752ad0a3ec381983aa0b367291a68) arguments. Even if we don't need the arguments it's just for the example.
 
 ```cpp
 #include <xtd/xtd>
@@ -227,7 +227,7 @@ See [delegates](https://github.com/gammasoft71/xtd/blob/master/docs/delegates.md
 
 ### Overriding the protected method associated with the event
 
-Let's take the previous example but overload the [on_click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga0127de8590b04dd14561ba777bd8a615) method associated to the [click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event. To do this we need to create a class derived from the [button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) class.
+Let's take the previous example but overload the [on_click](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0127de8590b04dd14561ba777bd8a615) method associated to the [click](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event. To do this we need to create a class derived from the [button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) class.
 
 ```cpp
 #include <xtd/xtd>

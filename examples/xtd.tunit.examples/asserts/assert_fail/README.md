@@ -1,6 +1,6 @@
 # assert_fail
 
-Shows how to use [xtd::tunit::assert::fail](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1base__assert.html#ae46df4f9f34fc04ba8aa1447dd023dd1) method.
+Shows how to use [xtd::tunit::assert::fail](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1base__assert.html#ae46df4f9f34fc04ba8aa1447dd023dd1) method.
 
 ## Sources
 

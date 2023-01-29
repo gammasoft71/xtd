@@ -1,6 +1,6 @@
 # parse_enum_class
 
-Shows how to use format [xtd::parse<num class>](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4) method with enum class values.
+Shows how to use format [xtd::parse<num class>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4) method with enum class values.
 
 ## Sources
 

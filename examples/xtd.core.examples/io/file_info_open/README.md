@@ -1,6 +1,6 @@
 # file_info_open
 
-Show how to use [xtd::io::file_info::open](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1file__info.html#a2b99a2ebcd022156a02e101a905c0cd6) method.
+Show how to use [xtd::io::file_info::open](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1file__info.html#a2b99a2ebcd022156a02e101a905c0cd6) method.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # system_sounds
 
-Shows how tto use [xtd::media::system_sounds](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1media_1_1system__sounds.html) and [xtd::media::system_sounds](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1media_1_1system__sounds.html) classes.
+Shows how tto use [xtd::media::system_sounds](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1media_1_1system__sounds.html) and [xtd::media::system_sounds](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1media_1_1system__sounds.html) classes.
 
 # Sources
 

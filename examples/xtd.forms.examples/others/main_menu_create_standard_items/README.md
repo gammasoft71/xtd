@@ -1,6 +1,6 @@
 # main_menu_create_standard_items
 
-demonstrates the use of [xtd::forms::main_menu::create_standard_items](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1main__menu.html#a6bbc2f6a58ca79e0329f882c3cef77e1) method.
+demonstrates the use of [xtd::forms::main_menu::create_standard_items](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1main__menu.html#a6bbc2f6a58ca79e0329f882c3cef77e1) method.
 
 # Sources
 

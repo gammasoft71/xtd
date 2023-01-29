@@ -1,6 +1,6 @@
 # console_title
 
-Shows how to use [xtd::console::title](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#a717eaf6693dab615adf8f6b8b1763586) method.
+Shows how to use [xtd::console::title](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#a717eaf6693dab615adf8f6b8b1763586) method.
 
 # Sources
 

@@ -25,7 +25,7 @@ using namespace xtd;
 using namespace xtd::forms;
 ```
 
-2. Declare a class named **form1** that inherits from the [form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) class.
+2. Declare a class named **form1** that inherits from the [form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) class.
 
 ```cpp
 class form1 : public form
@@ -91,17 +91,17 @@ xtdc run
 ## Adding a Control and Handling an Event
 
 The previous procedure steps demonstrated how to just create a basic GUI that compiles and runs. 
-The next procedure will show you how to create and add a [control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html) to the [form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html), and handle an event for the [control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html).
+The next procedure will show you how to create and add a [control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html) to the [form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html), and handle an event for the [control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html).
 
 In addition to understanding how to create GUI applications, you should understand event-based programming and how to handle user input.
 
 ### To declare a button control and handle its click event
 
-1. Declare a [button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control named button1.
-2. In the constructor, create the [button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) and set its [size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a2a9c3b512b6748c8330fe2231839c4cb), [location](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a704049ab20aa16e25dca51911b0ba13b) and [text](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a3f3bc021d22dff6f3a32a8dae0e7bbe9) properties.
-3. Add the [button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) to the [form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html).
+1. Declare a [button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) control named button1.
+2. In the constructor, create the [button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) and set its [size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a2a9c3b512b6748c8330fe2231839c4cb), [location](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a704049ab20aa16e25dca51911b0ba13b) and [text](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a3f3bc021d22dff6f3a32a8dae0e7bbe9) properties.
+3. Add the [button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) to the [form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html).
 
-The following code example demonstrates how to declare the [button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control.
+The following code example demonstrates how to declare the [button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) control.
 
 ```cpp
   private:
@@ -117,10 +117,10 @@ The following code example demonstrates how to declare the [button](https://code
     }
 ```
 
-4. Create a method to handle the [click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event for the [button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html).
-5. In the [click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event handler, display a [message_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1message__box.html) with the message, "Hello World".
+4. Create a method to handle the [click](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event for the [button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html).
+5. In the [click](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event handler, display a [message_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1message__box.html) with the message, "Hello World".
 
-The following code example demonstrates how to handle the [button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control's click event.
+The following code example demonstrates how to handle the [button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) control's click event.
 
 ```cpp
   private:
@@ -129,7 +129,7 @@ The following code example demonstrates how to handle the [button](https://coded
     }
 ```
 
-6. Associate the [click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event with the method you created.
+6. Associate the [click](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event with the method you created.
 
 The following code example demonstrates how to associate the event with the method.
 

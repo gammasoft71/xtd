@@ -2,13 +2,13 @@
 
 # Controls management
 
-* Objects that inherit [xtd::forms::control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html) are not copyable.
-* No object of the [xtd.forms](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html) library manages controls for you. 
+* Objects that inherit [xtd::forms::control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html) are not copyable.
+* No object of the [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) library manages controls for you. 
   
   You are responsible for their creation and destruction. 
-  The objects of the [xtd.forms](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html) library only contain references to controls.
+  The objects of the [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) library only contain references to controls.
 
-* The [xtd.forms](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html) library does not manage memory for you.
+* The [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) library does not manage memory for you.
   
   Each control manages its own resources on the [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom. And it does not manage your objects.
 
@@ -18,13 +18,13 @@
 
 For example a form that contains a reference to a label, the label will never be destroyed when the form is destroyed.
 The form will only delete the reference on the label and it also remove the resource handle. 
-So it is you who will have to delete the label instance. The [xtd.forms](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html) library will never assume what you would like to do next with your control.
+So it is you who will have to delete the label instance. The [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) library will never assume what you would like to do next with your control.
 
 # Copy of control
 
 Because of the [events](https://github.com/gammasoft71/xtd/blob/master/docs/events.md), the controls cannot be copied.
 
-Imagine a control that responds to a [click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event like this:
+Imagine a control that responds to a [click](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event like this:
 
 ```cpp
 #include <xtd/xtd>
@@ -84,12 +84,12 @@ int main () {
 }
 ```
 
-What would happen when you go to [click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga651752ad0a3ec381983aa0b367291a68) on the control?
+What would happen when you go to [click](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga651752ad0a3ec381983aa0b367291a68) on the control?
 
 my_control1::on_control_click would be called and my_control2::on_control_click would not be called. It seems to work.
 Yes, but if you delete my_control1 after making the assignment to my_control2. No object will be called when you click.
 
-So in this case it would be enough to say that in the copy constructor, the [click](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event should also be implemented like this:
+So in this case it would be enough to say that in the copy constructor, the [click](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga651752ad0a3ec381983aa0b367291a68) event should also be implemented like this:
 
 ```cpp
   my_control(const my_control& other) {
