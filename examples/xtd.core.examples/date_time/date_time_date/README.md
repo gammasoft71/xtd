@@ -1,6 +1,6 @@
 # date_time_date
 
-Shows how to use [xtd::date_time::date](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a2b6f82824acbcb499acc6c6b62959644) property.
+Shows how to use [xtd::date_time::date](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a2b6f82824acbcb499acc6c6b62959644) property.
 
 # Sources
 

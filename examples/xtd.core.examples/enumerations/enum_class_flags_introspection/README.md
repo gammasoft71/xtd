@@ -1,6 +1,6 @@
 # enum_class_flags_introspection
 
-* Shows how the introspection works with [enum_class_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gade4794e2743558ee1eb5bbad10c7f6d4) helper.
+* Shows how the introspection works with [enum_class_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gade4794e2743558ee1eb5bbad10c7f6d4) helper.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # file_info_move_to
 
-Show how to use [xtd::io::file_info::move_to](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1file__info.html#a518d205507601c6de179fab492750dbc) method.
+Show how to use [xtd::io::file_info::move_to](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1file__info.html#a518d205507601c6de179fab492750dbc) method.
 
 ## Sources
 

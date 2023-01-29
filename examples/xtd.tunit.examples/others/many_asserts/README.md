@@ -1,6 +1,6 @@
 # many_asserts
 
-Shows how to use [xtd::tunit::assert](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1assert.html) class with many asserts.
+Shows how to use [xtd::tunit::assert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html) class with many asserts.
 
 ## Sources
 

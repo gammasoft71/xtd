@@ -1,6 +1,6 @@
 # drive_info
 
-Show how to use [xtd::io::drive_info](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1drive__info.html) class.
+Show how to use [xtd::io::drive_info](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1drive__info.html) class.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # assert_does_not_throw
 
-Shows how to use [xtd::tunit::assert::does_not_throw](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1assert.html#a9b66f87af33815b7d0c96a57a59e3e8f) method.
+Shows how to use [xtd::tunit::assert::does_not_throw](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html#a9b66f87af33815b7d0c96a57a59e3e8f) method.
 
 ## Sources
 

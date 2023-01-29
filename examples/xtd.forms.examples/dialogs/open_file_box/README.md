@@ -1,6 +1,6 @@
 # open_file_box
 
-demonstrates the use of [xtd::forms::open_file_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1open__file__box.html) file dialog.
+demonstrates the use of [xtd::forms::open_file_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1open__file__box.html) file dialog.
 
 # Sources
 

@@ -2,7 +2,7 @@
 
 # How to: Read Text from a File
 
-The following example shows how to read text from a text file using xtd for desktop apps. In example, when you create the instance of the [xtd::io::stream_reader](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1stream__reader.html) class, you provide the relative or absolute path to the file.
+The following example shows how to read text from a text file using xtd for desktop apps. In example, when you create the instance of the [xtd::io::stream_reader](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1stream__reader.html) class, you provide the relative or absolute path to the file.
 
 ## Example: Read in a console app
 

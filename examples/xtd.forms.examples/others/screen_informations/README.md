@@ -1,6 +1,6 @@
 # screen_informations
 
-shows how to get screen informations of [xtd::forms::screen](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1screen.html) component.
+shows how to get screen informations of [xtd::forms::screen](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1screen.html) component.
 
 # Sources
 

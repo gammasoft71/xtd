@@ -1,6 +1,6 @@
 # dns_get_host_entry
 
-Shows how to use [xtd::net::dns](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1net_1_1dns.html) class.
+Shows how to use [xtd::net::dns](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1net_1_1dns.html) class.
 
 ## Sources
 

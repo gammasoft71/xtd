@@ -1,6 +1,6 @@
 # format_unordered_associative_containers
 
-Show how to use format [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) class with [unordered associative containers](https://en.cppreference.com/w/cpp/named_req/UnorderedAssociativeContainer).
+Show how to use format [xtd::format](https://gammasoft71.github.io/xtd/reference_guides/latest/_format_page.html) class with [unordered associative containers](https://en.cppreference.com/w/cpp/named_req/UnorderedAssociativeContainer).
 
 ## Sources
 

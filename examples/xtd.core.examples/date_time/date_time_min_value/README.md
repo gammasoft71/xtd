@@ -1,6 +1,6 @@
 # date_time_min_value
 
-Shows how to use [xtd::date_time::min_value](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a2052693f474e549778be006a9bf9ffcd) field.
+Shows how to use [xtd::date_time::min_value](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a2052693f474e549778be006a9bf9ffcd) field.
 
 # Sources
 

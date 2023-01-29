@@ -12,10 +12,10 @@ This article introduces the formatting mechanisms that xtd provides.
   A parsing operation creates an instance of a data type from its string representation. 
   For more information, see [Parsing Strings](parse_overview.md). 
 
-The basic mechanism for formatting is the default implementation of the [xtd::object::to_string](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1object.html#a5682215ee76ab97c48580ab162c49507) method, which is discussed in the [Default Formatting Using the to_string Method](default-formatting-using-the-to-strin-method) section later in this topic. 
+The basic mechanism for formatting is the default implementation of the [xtd::object::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1object.html#a5682215ee76ab97c48580ab162c49507) method, which is discussed in the [Default Formatting Using the to_string Method](default-formatting-using-the-to-strin-method) section later in this topic. 
 However, xtd provides several ways to modify and extend its default formatting support. 
 These include the following:
-* Overriding the [xtd::object::to_string](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1object.html#a5682215ee76ab97c48580ab162c49507) method to define a custom string representation of an object's value. For more information, see the [Override the to_string Method](override-the-to-string-method) section later in this topic.
+* Overriding the [xtd::object::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1object.html#a5682215ee76ab97c48580ab162c49507) method to define a custom string representation of an object's value. For more information, see the [Override the to_string Method](override-the-to-string-method) section later in this topic.
 * Defining format specifiers that enable the string representation of an object's value to take multiple forms. For example, the "X" format specifier in the following statement converts an integer to the string representation of a hexadecimal value.
 
 ```cpp

@@ -1,6 +1,6 @@
 # application_idle
 
-demonstrates the use of [idle](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga936f2c887b42e06ecb7e81d4d1bc33ba) event.
+demonstrates the use of [idle](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga936f2c887b42e06ecb7e81d4d1bc33ba) event.
 
 # Sources
 

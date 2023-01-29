@@ -1,6 +1,6 @@
 # draw_rounded_rectangle
 
-shows how to draw rounded rectangle in paint event using [xtd::drawing::graphics::draw_rounded_rectangle](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1graphics.html#a41e7035946a1e3b647e48626841729a5).
+shows how to draw rounded rectangle in paint event using [xtd::drawing::graphics::draw_rounded_rectangle](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1graphics.html#a41e7035946a1e3b647e48626841729a5).
 
 # Sources
 

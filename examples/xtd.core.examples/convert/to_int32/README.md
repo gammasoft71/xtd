@@ -1,6 +1,6 @@
 # to_int32
 
-Shows how to use [xtd::convert::to_int32](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1convert.html#a4d52bf96c567e100f5aba3eca94abe2b) method.
+Shows how to use [xtd::convert::to_int32](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html#a4d52bf96c567e100f5aba3eca94abe2b) method.
 
 # Sources
 

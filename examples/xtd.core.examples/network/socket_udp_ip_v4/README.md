@@ -1,6 +1,6 @@
 # socket_udp_ip_v4
 
-Shows how to use [xtd::net::sockets::socket](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1net_1_1sockets_1_1socket.html) class.
+Shows how to use [xtd::net::sockets::socket](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1net_1_1sockets_1_1socket.html) class.
 
 ## Sources
 

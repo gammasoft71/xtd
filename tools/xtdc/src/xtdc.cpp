@@ -685,7 +685,7 @@ namespace xtdc_command {
     }
     
     static int guide(const vector<ustring>& args) {
-      process::start("https://codedocs.xyz/gammasoft71/xtd/index.html").wait_for_exit();
+      process::start("https://gammasoft71.github.io/xtd/reference_guides/latest/index.html").wait_for_exit();
       return 0;
     }
     

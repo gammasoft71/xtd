@@ -1,6 +1,6 @@
 # stopwatch
 
-Shows how to use [xtd::diagnostics::stopwatch](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1stopwatch.html) class.
+Shows how to use [xtd::diagnostics::stopwatch](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1stopwatch.html) class.
 
 ## Sources
 

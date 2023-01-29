@@ -1,6 +1,6 @@
 # environment_expand_environment_variables
 
-Shows how to use [xtd::environment::expand_environment_variables](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#aafe787566bc6c20c39491e295c2b48a7) method.
+Shows how to use [xtd::environment::expand_environment_variables](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#aafe787566bc6c20c39491e295c2b48a7) method.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # console_buffer
 
-Shows how to use [xtd::console::buffer_height](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#a4088b3aa84f6a10b4e2c8c72db095eaa) and [xtd::console::buffer_width](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#ad055fc0fad3ebe72948916a088cd8790) methods.
+Shows how to use [xtd::console::buffer_height](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#a4088b3aa84f6a10b4e2c8c72db095eaa) and [xtd::console::buffer_width](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#ad055fc0fad3ebe72948916a088cd8790) methods.
 
 # Sources
 

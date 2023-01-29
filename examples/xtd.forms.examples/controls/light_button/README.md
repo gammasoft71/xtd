@@ -1,6 +1,6 @@
 # light_button
 
-demonstrates the use of [xtd::forms::light_button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1light__button.html) control.
+demonstrates the use of [xtd::forms::light_button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1light__button.html) control.
 
 # Sources
 

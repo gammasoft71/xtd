@@ -1,6 +1,6 @@
 # version
 
-Demonstrates the [xtd::version](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1version.html) constructor, and major, minor, build, revision, major_revision, and minor_revision properties.
+Demonstrates the [xtd::version](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1version.html) constructor, and major, minor, build, revision, major_revision, and minor_revision properties.
 
 # Sources
 

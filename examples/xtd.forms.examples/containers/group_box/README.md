@@ -1,6 +1,6 @@
 # group_box
 
-demonstrates the use of [xtd::forms::group_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1group__box.html) container.
+demonstrates the use of [xtd::forms::group_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1group__box.html) container.
 
 # Sources
 

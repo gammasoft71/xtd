@@ -1,6 +1,6 @@
 # debug_cassert
 
-Shows how to use [debug::cassert](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1debug.html#acdb0d00e4b12fccc037cf3f965110d72) method.
+Shows how to use [debug::cassert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1debug.html#acdb0d00e4b12fccc037cf3f965110d72) method.
 
 ## Sources
 

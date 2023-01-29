@@ -411,7 +411,7 @@ Or enable options in CMake-gui.
 * Most of the documentation is based on [MSDN](https://docs.microsoft.com/en-us/dotnet/api/?view=windowsdesktop-5.0) and adapted to xtd and C++.
 
 There are two guides:
-* Reference Guide : [On line](https://codedocs.xyz/gammasoft71/xtd/index.html) and offline [documentation](https://github.com/gammasoft71/xtd/blob/master/docs/doxygen/doxygen.txt). This guide contains high level documentation.
+* Reference Guide : [On line](https://gammasoft71.github.io/xtd/reference_guides/latest/index.html) and offline [documentation](https://github.com/gammasoft71/xtd/blob/master/docs/doxygen/doxygen.txt). This guide contains high level documentation.
 * Developer Guide : Only offline [documentation](https://github.com/gammasoft71/xtd/blob/master/docs/doxygen/doxygen_developer.txt). This guide contains high and low level documentation.
 
 ### Notes

@@ -74,16 +74,16 @@ The composite formatting feature takes a list of objects and a composite format 
 
 The composite formatting feature is supported by methods such as the following:
 
-* [xtd::ustring::format](https://codedocs.xyz/gammasoft71/xtd/group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd), which returns a formatted result string (xtd library).
-* Some overloads of the [xtd::console::write_line](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#aa9fbf20d808213c547163d5e7101bcda) method, which display a formatted result string to the console ([xtd.core](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html) library).
-* [xtd::diagnostics::debug::write_line](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1debug.html#a2656cc128804128258ecad60ecf1cbd1) method, which outputs a formatted message to trace listeners ([xtd.core](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html) library).
-* The [xtd::diagnostics::trace::trace_error](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1trace.html#a961460d0f10e5a3a36cfa2ecc222687a), [xtd::diagnostics::trace::trace_information](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1trace.html#ae6444d92dadb5325844ed01313384335), and [xtd::diagnostics::trace::trace_warning](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1trace.html#a8500d77e87bea7e8b021d1530e403850) methods, which output formatted messages to trace listeners (xtd.core library).
+* [xtd::ustring::format](https://gammasoft71.github.io/xtd/reference_guides/latest/group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd), which returns a formatted result string (xtd library).
+* Some overloads of the [xtd::console::write_line](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#aa9fbf20d808213c547163d5e7101bcda) method, which display a formatted result string to the console ([xtd.core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html) library).
+* [xtd::diagnostics::debug::write_line](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1debug.html#a2656cc128804128258ecad60ecf1cbd1) method, which outputs a formatted message to trace listeners ([xtd.core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html) library).
+* The [xtd::diagnostics::trace::trace_error](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1trace.html#a961460d0f10e5a3a36cfa2ecc222687a), [xtd::diagnostics::trace::trace_information](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1trace.html#ae6444d92dadb5325844ed01313384335), and [xtd::diagnostics::trace::trace_warning](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1trace.html#a8500d77e87bea7e8b021d1530e403850) methods, which output formatted messages to trace listeners (xtd.core library).
 
 ## Composite Format String
 
 A composite format string and object list are used as arguments of methods that support the composite formatting feature. A composite format string consists of zero or more runs of fixed text intermixed with one or more format items. The fixed text is any string that you choose, and each format item corresponds to an object or boxed structure in the list. The composite formatting feature returns a new result string where each format item is replaced by the string representation of the corresponding object in the list.
 
-Consider the following [xtd::ustring::format](https://codedocs.xyz/gammasoft71/xtd/group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd) code fragment.
+Consider the following [xtd::ustring::format](https://gammasoft71.github.io/xtd/reference_guides/latest/group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd) code fragment.
 
 ```cpp
 string name = "Fred";

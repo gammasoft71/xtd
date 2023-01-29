@@ -1,6 +1,6 @@
 # move_form
 
-demonstrates the use of [form](https://codedocs.xyz/gammasoft71/xtd/group__events.html#gafbf4f123f0b8b904992f3476a1b12b3d) event.
+demonstrates the use of [form](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#gafbf4f123f0b8b904992f3476a1b12b3d) event.
 
 # Sources
 

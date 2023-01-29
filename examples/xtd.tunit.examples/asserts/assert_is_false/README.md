@@ -1,6 +1,6 @@
 # assert_is_false
 
-Shows how to use [xtd::tunit::assert::is_false](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1assert.html#a45420cdb8f73b166887c47233ff630bb) method.
+Shows how to use [xtd::tunit::assert::is_false](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html#a45420cdb8f73b166887c47233ff630bb) method.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # console_clear
 
-Shows how to use [xtd::console::clear](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#a8aa7128ca9254b18afa2e2155413a22a) method.
+Shows how to use [xtd::console::clear](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#a8aa7128ca9254b18afa2e2155413a22a) method.
 
 # Sources
 

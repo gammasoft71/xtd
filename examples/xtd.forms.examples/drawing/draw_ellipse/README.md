@@ -1,6 +1,6 @@
 # draw_ellipse
 
-shows how to draw ellipse in paint event using [xtd::drawing::graphics::draw_ellipse](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1graphics.html#aa7094aba7779155c8ff3094d4a1e1f61).
+shows how to draw ellipse in paint event using [xtd::drawing::graphics::draw_ellipse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1graphics.html#aa7094aba7779155c8ff3094d4a1e1f61).
 
 # Sources
 

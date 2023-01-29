@@ -1,6 +1,6 @@
 # assert_is_less_or_equal
 
-Shows how to use [xtd::tunit::assert::is_less_or_equal](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1assert.html#a542f581b00cd70e620841c44d97f1406) method.
+Shows how to use [xtd::tunit::assert::is_less_or_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html#a542f581b00cd70e620841c44d97f1406) method.
 
 ## Sources
 

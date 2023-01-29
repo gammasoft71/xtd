@@ -1,6 +1,6 @@
 # fill_rectangle
 
-shows how to fill rectangle in paint event using [xtd::drawing::graphics::fill_rectangle](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1graphics.html#a95cbb9db2b86bf32b92d30c1a8021c7c).
+shows how to fill rectangle in paint event using [xtd::drawing::graphics::fill_rectangle](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1graphics.html#a95cbb9db2b86bf32b92d30c1a8021c7c).
 
 # Sources
 

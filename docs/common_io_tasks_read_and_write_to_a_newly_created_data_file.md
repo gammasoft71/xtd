@@ -2,11 +2,11 @@
 
 # How to: Read and Write to a Newly Created Data File
 
-The [xtd::io::binary_writer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1binary__writer.html) and [xtd::io::binary_reader](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1binary__reader.html) classes are used for writing and reading data other than character strings. 
+The [xtd::io::binary_writer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1binary__writer.html) and [xtd::io::binary_reader](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1binary__reader.html) classes are used for writing and reading data other than character strings. 
 The following example shows how to create an empty file stream, write data to it, and read data from it.
 
-The example creates a data file called *test.data* in the current directory, creates the associated [binary_writer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1binary__writer.html) and [binary_reader](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1binary__reader.html) objects, and uses the [binary_writer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1binary__writer.html) object to write the integers 0 through 10 to *test.data*, which leaves the file pointer at the end of the file. 
-The [binary_reader](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1io_1_1binary__reader.html) object then sets the file pointer back to the origin and reads out the specified content.
+The example creates a data file called *test.data* in the current directory, creates the associated [binary_writer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1binary__writer.html) and [binary_reader](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1binary__reader.html) objects, and uses the [binary_writer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1binary__writer.html) object to write the integers 0 through 10 to *test.data*, which leaves the file pointer at the end of the file. 
+The [binary_reader](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1binary__reader.html) object then sets the file pointer back to the origin and reads out the specified content.
 
 ## Example
 

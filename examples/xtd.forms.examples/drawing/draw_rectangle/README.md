@@ -1,6 +1,6 @@
 # draw_rectangle
 
-shows how to draw rectangle in paint event using [xtd::drawing::graphics::draw_rectangle](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1graphics.html#a25edc7b5e0d49ab6398459e9291e340f).
+shows how to draw rectangle in paint event using [xtd::drawing::graphics::draw_rectangle](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1graphics.html#a25edc7b5e0d49ab6398459e9291e340f).
 
 # Sources
 

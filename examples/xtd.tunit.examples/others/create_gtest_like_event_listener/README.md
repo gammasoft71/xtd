@@ -1,6 +1,6 @@
 # create_gtest_like_event_listener
 
-Shows how to create your own [xtd::tunit::event_listener](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1event__listener.html) class.
+Shows how to create your own [xtd::tunit::event_listener](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1event__listener.html) class.
 
 ## Sources
 

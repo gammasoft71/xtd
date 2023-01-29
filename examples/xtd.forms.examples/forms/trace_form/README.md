@@ -1,6 +1,6 @@
 # trace_form
 
-demonstrates the use of [xtd::trace_forms::trace_form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1trace__form.html) container.
+demonstrates the use of [xtd::trace_forms::trace_form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1trace__form.html) container.
 
 # Sources
 

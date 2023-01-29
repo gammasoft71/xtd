@@ -1,6 +1,6 @@
 # assert_is_NaN
 
-Shows how to use [xtd::tunit::assert::is_NaN](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1assert.html#a6f2b639e6b6f3cc89c6d928c05e704f6) method.
+Shows how to use [xtd::tunit::assert::is_NaN](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html#a6f2b639e6b6f3cc89c6d928c05e704f6) method.
 
 ## Sources
 

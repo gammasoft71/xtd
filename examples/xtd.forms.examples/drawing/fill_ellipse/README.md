@@ -1,6 +1,6 @@
 # fill_ellipse
 
-shows how to fill ellipse in paint event using [xtd::drawing::graphics::fill_ellipse](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1graphics.html#a8e7ed9a42291043b1a1a28e7605377d3).
+shows how to fill ellipse in paint event using [xtd::drawing::graphics::fill_ellipse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1graphics.html#a8e7ed9a42291043b1a1a28e7605377d3).
 
 # Sources
 

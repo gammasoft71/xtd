@@ -1,6 +1,6 @@
 # compare_ignore_case
 
-Shows how to use [xtd::ustring::compare](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html#a1e328e81c381bd2cef918f91fd107933) method.
+Shows how to use [xtd::ustring::compare](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html#a1e328e81c381bd2cef918f91fd107933) method.
 
 ## Sources
 

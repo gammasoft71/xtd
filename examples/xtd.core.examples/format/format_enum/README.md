@@ -1,6 +1,6 @@
 # format_enum
 
-Show how to use format [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) class with enums.
+Show how to use format [xtd::format](https://gammasoft71.github.io/xtd/reference_guides/latest/_format_page.html) class with enums.
 
 ## Sources
 

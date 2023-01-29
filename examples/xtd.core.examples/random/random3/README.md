@@ -1,6 +1,6 @@
 # random3
 
-Shows how to use [xtd::random::next](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1random.html#aea69230c5fe2a5ecc5026aa568dc349c) method.
+Shows how to use [xtd::random::next](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1random.html#aea69230c5fe2a5ecc5026aa568dc349c) method.
 
 ## Sources
 

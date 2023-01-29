@@ -1,6 +1,6 @@
 # environment_exit_code
 
-Shows how to use [xtd::environment::exit_code](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#a592bc11cb5dce688a9e40aa6f866d496) method.
+Shows how to use [xtd::environment::exit_code](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#a592bc11cb5dce688a9e40aa6f866d496) method.
 
 ## Sources
 

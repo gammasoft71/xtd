@@ -1,6 +1,6 @@
 # string_format
 
-Shows how to use [xtd::ustring::format](https://codedocs.xyz/gammasoft71/xtd/group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd) method.
+Shows how to use [xtd::ustring::format](https://gammasoft71.github.io/xtd/reference_guides/latest/group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd) method.
 
 ## Sources
 

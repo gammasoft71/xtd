@@ -1,6 +1,6 @@
 # application_events
 
-demonstrates the use of [application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) events.
+demonstrates the use of [application](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html) events.
 
 # Sources
 

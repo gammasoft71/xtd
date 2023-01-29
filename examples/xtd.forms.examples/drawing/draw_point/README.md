@@ -1,6 +1,6 @@
 # draw_point
 
-shows how to draw point in paint event using [xtd::drawing::graphics::draw_point](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1graphics.html#a89b2411a61773d5144e2f6c833694a17).
+shows how to draw point in paint event using [xtd::drawing::graphics::draw_point](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1graphics.html#a89b2411a61773d5144e2f6c833694a17).
 
 # Sources
 

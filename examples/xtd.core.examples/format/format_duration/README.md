@@ -1,6 +1,6 @@
 # format_duration
 
-Show how to use format [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) class with [std::chrono](https://en.cppreference.com/w/cpp/chrono) duration.
+Show how to use format [xtd::format](https://gammasoft71.github.io/xtd/reference_guides/latest/_format_page.html) class with [std::chrono](https://en.cppreference.com/w/cpp/chrono) duration.
 
 ## Sources
 

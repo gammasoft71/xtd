@@ -1,6 +1,6 @@
 # wnd_proc
 
-demonstrates the use of [wnd_proc](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#ac75d78bfc73154decabddc734cd28096) method.
+demonstrates the use of [wnd_proc](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#ac75d78bfc73154decabddc734cd28096) method.
 
 # Sources
 

@@ -1,6 +1,6 @@
 # console_read_key
 
-Shows how to use [xtd::console::read_key](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#ac0ebb643e4d3b01faa8380bd90d22aa0) and [xtd::console::key_available](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html#ade7353994e38d4645a831a12caab9427) methods.
+Shows how to use [xtd::console::read_key](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#ac0ebb643e4d3b01faa8380bd90d22aa0) and [xtd::console::key_available](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#ade7353994e38d4645a831a12caab9427) methods.
 
 # Sources
 

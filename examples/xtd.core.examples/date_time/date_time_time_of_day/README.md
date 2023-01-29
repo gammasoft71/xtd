@@ -1,6 +1,6 @@
 # date_time_time_of_day
 
-Shows how to use [xtd::date_time::time_of_day](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#ab19867a4850ebd33ba52908050eb3df7) property.
+Shows how to use [xtd::date_time::time_of_day](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#ab19867a4850ebd33ba52908050eb3df7) property.
 
 # Sources
 

@@ -1,6 +1,6 @@
 # trace_message_box
 
-demonstrates the use of [xtd::forms::trace_message_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1trace__message__box.html) dialog.
+demonstrates the use of [xtd::forms::trace_message_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1trace__message__box.html) dialog.
 
 # Sources
 

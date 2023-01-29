@@ -1,6 +1,6 @@
 # toggle_buttons
 
-demonstrates the use of [xtd::forms::toggle_buttons](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1toggle__buttons.html) toggle_button object collection.
+demonstrates the use of [xtd::forms::toggle_buttons](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1toggle__buttons.html) toggle_button object collection.
 
 # Sources
 

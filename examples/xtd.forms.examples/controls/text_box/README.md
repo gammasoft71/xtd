@@ -1,6 +1,6 @@
 # text_box
 
-demonstrates the use of [xtd::forms::text_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1text__box.html) control.
+demonstrates the use of [xtd::forms::text_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1text__box.html) control.
 
 # Sources
 

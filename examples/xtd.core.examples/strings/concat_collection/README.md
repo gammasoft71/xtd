@@ -1,6 +1,6 @@
 # concat_collection
 
-Shows how to use [xtd::ustring::concat](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html#a9d492d6b9ce2f2e38661a5062009a32f) method.
+Shows how to use [xtd::ustring::concat](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html#a9d492d6b9ce2f2e38661a5062009a32f) method.
 
 ## Sources
 

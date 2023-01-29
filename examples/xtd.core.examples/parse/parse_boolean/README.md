@@ -1,6 +1,6 @@
 # parse_boolean
 
-Shows how to use format [xtd::parse<bool>](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4) method with boolean values.
+Shows how to use format [xtd::parse<bool>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4) method with boolean values.
 
 ## Sources
 

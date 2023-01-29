@@ -1,6 +1,6 @@
 # date_time_now
 
-Shows how to use [xtd::date_time::now](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#ad94505e74efe9f353836901eda9230ed) property.
+Shows how to use [xtd::date_time::now](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#ad94505e74efe9f353836901eda9230ed) property.
 
 # Sources
 

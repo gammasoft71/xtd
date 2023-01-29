@@ -1,6 +1,6 @@
 # date_time_sprintf
 
-Shows how to use [xtd::date_time::sprintf](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#aa21e25167da0cf2593175b48cf1a82d0) method.
+Shows how to use [xtd::date_time::sprintf](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aa21e25167da0cf2593175b48cf1a82d0) method.
 
 # Sources
 

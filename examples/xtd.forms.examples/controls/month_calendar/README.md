@@ -1,6 +1,6 @@
 # month_calendar
 
-demonstrates the use of [xtd::forms::month_calendar](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1month__calendar.html) control.
+demonstrates the use of [xtd::forms::month_calendar](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1month__calendar.html) control.
 
 # Sources
 

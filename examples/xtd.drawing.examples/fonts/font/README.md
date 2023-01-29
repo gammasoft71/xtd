@@ -1,6 +1,6 @@
 # font
 
-Shows how to use [xtd::drawing::font](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1font.html) class.
+Shows how to use [xtd::drawing::font](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1font.html) class.
 
 # Sources
 

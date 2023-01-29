@@ -1,6 +1,6 @@
 # form2
 
-represents a window or dialog box that makes up an [application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html)'s user interface.
+represents a window or dialog box that makes up an [application](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html)'s user interface.
 
 # Sources
 

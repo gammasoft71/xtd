@@ -1,6 +1,6 @@
 # iprogress
 
-Shows how to use how to use [xtd::iprogress](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1iprogress.html) interface.
+Shows how to use how to use [xtd::iprogress](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iprogress.html) interface.
 
 # Sources
 

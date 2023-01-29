@@ -1,6 +1,6 @@
 # stack_frame
 
-Shows how to use [xtd::diagnostics::stack_frame](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1stack__frame.html) class.
+Shows how to use [xtd::diagnostics::stack_frame](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1stack__frame.html) class.
 
 ## Sources
 

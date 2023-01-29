@@ -1,6 +1,6 @@
 # bit_converter_round_trips
 
-Shows how to use [bit_converter](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1bit__converter.html) class.
+Shows how to use [bit_converter](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html) class.
 
 ## Sources
 

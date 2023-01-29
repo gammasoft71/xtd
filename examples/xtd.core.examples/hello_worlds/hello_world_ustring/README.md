@@ -1,6 +1,6 @@
 # hello_world_ustring
 
-The classic first application "Hello, World!" with [xtd::ustring](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1ustring.html) class.
+The classic first application "Hello, World!" with [xtd::ustring](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html) class.
 
 ## Sources
 

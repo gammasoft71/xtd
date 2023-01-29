@@ -1,6 +1,6 @@
 # hello_world_console3
 
-The classic first application "Hello, World!" with [xtd::console](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1console.html) class.
+The classic first application "Hello, World!" with [xtd::console](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html) class.
 
 ## Sources
 

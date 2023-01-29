@@ -1,6 +1,6 @@
 # format_tuple
 
-Show how to use format [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) class with [std::tuple](https://en.cppreference.com/w/cpp/utility/tuple).
+Show how to use format [xtd::format](https://gammasoft71.github.io/xtd/reference_guides/latest/_format_page.html) class with [std::tuple](https://en.cppreference.com/w/cpp/utility/tuple).
 
 ## Sources
 

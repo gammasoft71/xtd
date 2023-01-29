@@ -1,6 +1,6 @@
 # date_time_to_string_format
 
-Shows how to use [xtd::date_time::to_string](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a58e9d766b5af37b77d5d8239a8320ab7) with format method.
+Shows how to use [xtd::date_time::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a58e9d766b5af37b77d5d8239a8320ab7) with format method.
 
 # Sources
 

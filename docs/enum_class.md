@@ -18,7 +18,7 @@ An enumeration is a distinct type whose value is restricted to a range of values
 For more information about c++ enumeration see [Enumeration declaration](https://en.cppreference.com/w/cpp/language/enum).
 
 `enum`, `enum class` and `enum struct` in c++11 have two problems:
-* Displaying in a string the name of the enum value either for debugging or simply to qualify some values as for example in [xtd::drawing::color::name](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1color.html#a0b74e93ea5582716bde7104b84177a77).
+* Displaying in a string the name of the enum value either for debugging or simply to qualify some values as for example in [xtd::drawing::color::name](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1color.html#a0b74e93ea5582716bde7104b84177a77).
 * There is no flags attribute. You have to add the bitwise operators for each `enum`, `enum class` or `enum struct`. Enum flags pose an additional problem for displaying the value names in a string due to bitwise flags.
 
 ## External libraries
@@ -126,7 +126,7 @@ entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]
 
 ## xtd::enum_register
 
-xtd can introspect `enum`, `enum class` and `enum struct` with [introspection helper macros](#introspection) or simply register the `enum` class with the [xtd::enum_register](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__register.html) class. 
+xtd can introspect `enum`, `enum class` and `enum struct` with [introspection helper macros](#introspection) or simply register the `enum` class with the [xtd::enum_register](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1enum__register.html) class. 
 The advantage is that it has no limitation and the disadvantage is that it is more verbose.
 
 ### Note
@@ -136,7 +136,7 @@ The advantage is that it has no limitation and the disadvantage is that it is mo
 
 ### Examples
 
-The following code shows how to use `enum class` with [xtd::enum_register](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__register.html):
+The following code shows how to use `enum class` with [xtd::enum_register](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1enum__register.html):
 
 ```cpp
 #include <xtd/xtd>
@@ -182,14 +182,14 @@ entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]
 
 ## xtd::enum_set_attribute
 
-The [xtd::enum_set_attribute](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__set__attribute.html) class is used to qualify an enum class attribute. 
+The [xtd::enum_set_attribute](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1enum__set__attribute.html) class is used to qualify an enum class attribute. 
 
 There are two types of attributes:
 
-* [xtd::enum_attribute::standard](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga21077f4832fc4718f7095d1a560a89cd) : Enum standard attribute. The default value.
-* [xtd::enum_attribute::fmagts](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf) : Enum flags attribute.
+* [xtd::enum_attribute::standard](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga21077f4832fc4718f7095d1a560a89cd) : Enum standard attribute. The default value.
+* [xtd::enum_attribute::fmagts](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf) : Enum flags attribute.
 
-The class [xtd::enum_set_attribute](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__set__attribute.html) is only used when we want to qualify the enumeration with the attribute flags.
+The class [xtd::enum_set_attribute](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1enum__set__attribute.html) is only used when we want to qualify the enumeration with the attribute flags.
 
 Write the following code to set the attribute of an enum class :
 
@@ -203,7 +203,7 @@ template<> struct xtd::enum_set_attribute<enum_flags> {
 
 This does not dispense with writing the operators necessary to perform bitwise operations, but is necessary to display the values of the enum class correctly.
 
-Let's take the following example and see what happens with and without setting the attribute flag to [xtd::enum_attribute::flags](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga21077f4832fc4718f7095d1a560a89cd) :
+Let's take the following example and see what happens with and without setting the attribute flag to [xtd::enum_attribute::flags](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga21077f4832fc4718f7095d1a560a89cd) :
 
 ```cpp
 enum class test_enum {
@@ -216,7 +216,7 @@ enum class test_enum {
 test_enum operator|(test_enum lhs, test_enum rhs) {return static_cast<test_enum>(static_cast<std::underlying_type<test_enum>::type>(lhs) | static_cast<std::underlying_type<test_enum>::type>(rhs));}
 ```
 
-* With setting the attribute flag to [xtd::enum_attribute::flags](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga21077f4832fc4718f7095d1a560a89cd) :
+* With setting the attribute flag to [xtd::enum_attribute::flags](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga21077f4832fc4718f7095d1a560a89cd) :
 
 ```cpp
 #include <xtd/xtd.core.h>
@@ -254,7 +254,7 @@ value = value_two, value_three
 
 Ok, this is the expected value.
 
-* Without setting the attribute flag to [xtd::enum_attribute::flags](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga21077f4832fc4718f7095d1a560a89cd) :
+* Without setting the attribute flag to [xtd::enum_attribute::flags](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga21077f4832fc4718f7095d1a560a89cd) :
 
 ```cpp
 #include <xtd/xtd.core.h>
@@ -292,9 +292,9 @@ Indeed, when the `value` is displayed, there is no member variable in `enum_test
 
 ### flags_attribute_
 
-To facilitate the writing of the flags attribute, there is the [flags_attribute helper](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gaea49fae71107df8769685efb159c181a).
+To facilitate the writing of the flags attribute, there is the [flags_attribute helper](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gaea49fae71107df8769685efb159c181a).
 
-The [flags_attribute helper](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gaea49fae71107df8769685efb159c181a) helper sets the [xtd::enum_set_attribute](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__set__attribute.html) with the [xtd::enum_attribute::flags](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf) atribute and implements the following operators for enum flags:
+The [flags_attribute helper](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gaea49fae71107df8769685efb159c181a) helper sets the [xtd::enum_set_attribute](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1enum__set__attribute.html) with the [xtd::enum_attribute::flags](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf) atribute and implements the following operators for enum flags:
 
 | Operator | Name                   |
 |----------|------------------------|
@@ -312,7 +312,7 @@ The [flags_attribute helper](https://codedocs.xyz/gammasoft71/xtd/group__keyword
 
 See [operators](https://en.cppreference.com/w/cpp/language/operators) for more information about operators.
 
-The following code shows how to use [flags_attribute_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gaea49fae71107df8769685efb159c181a) helper.
+The following code shows how to use [flags_attribute_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gaea49fae71107df8769685efb159c181a) helper.
 
 ```cpp
 #include <xtd/xtd.core.h>
@@ -346,13 +346,13 @@ value = value_two, value_three
 
 #### Warning
 
-The [flags_attribute_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gaea49fae71107df8769685efb159c181a) helper has one limitiation :
+The [flags_attribute_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gaea49fae71107df8769685efb159c181a) helper has one limitiation :
 
-* The enum's flags cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enum flags is in a class or struct, add operators manually and use [xtd::enum_set_attribute](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#ga21077f4832fc4718f7095d1a560a89cd) to register the [xtd::enum_attribute::flags](https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf) attribute.
+* The enum's flags cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enum flags is in a class or struct, add operators manually and use [xtd::enum_set_attribute](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga21077f4832fc4718f7095d1a560a89cd) to register the [xtd::enum_attribute::flags](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf) attribute.
 
 ## Format
 
-You can use the [xtd::enum_object::to_string](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object.html#a7e0bc388bc8f4ec019e586fb2e5ad998) method to create a new string object that represents the numeric, hexadecimal, or string value of an enumeration member. This method takes one of the enumeration formatting strings to specify the value that you want returned.
+You can use the [xtd::enum_object::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1enum__object.html#a7e0bc388bc8f4ec019e586fb2e5ad998) method to create a new string object that represents the numeric, hexadecimal, or string value of an enumeration member. This method takes one of the enumeration formatting strings to specify the value that you want returned.
 
 See [Enumeraton format strings](https://github.com/gammasoft71/xtd/blob/master/docs/format_enumeration_format_strings.md) for more information about enum class format.
 
@@ -415,7 +415,7 @@ saturday
 
 To parse an `enum class` with xtd, the enum class must be registered.
 
-The folowwing example shows how to parse an `enum class` with [xtd::enum_object::parse](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object_3_01std_1_1nullptr__t_01_4.html#a159422352085070f5d77c6f814e68693) method.
+The folowwing example shows how to parse an `enum class` with [xtd::enum_object::parse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1enum__object_3_01std_1_1nullptr__t_01_4.html#a159422352085070f5d77c6f814e68693) method.
 
 ```cpp
 #include <xtd/xtd>
@@ -467,24 +467,24 @@ Registering an `enum`, `enum class` or an `enum struct` is unfortunately verbose
 
 There are some introspection helpers in xtd to facilitate the work:
 
-* [enum_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga6c6a896cbec833fa1fac13b700cf8691)
-* [enum_ut_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gabe13d52c924723772f27878f606210cd)
-* [enum_class_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gade4794e2743558ee1eb5bbad10c7f6d4)
-* [enum_class_ut_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga6918e267c2970d28460e6c42a3b03f4a)
-* [enum_struct_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga85a4f5366ae461ca1e20872d39a0b440)
-* [enum_struct_ut_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga341342381ae697a142233d256948df84)
+* [enum_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga6c6a896cbec833fa1fac13b700cf8691)
+* [enum_ut_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gabe13d52c924723772f27878f606210cd)
+* [enum_class_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gade4794e2743558ee1eb5bbad10c7f6d4)
+* [enum_class_ut_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga6918e267c2970d28460e6c42a3b03f4a)
+* [enum_struct_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga85a4f5366ae461ca1e20872d39a0b440)
+* [enum_struct_ut_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga341342381ae697a142233d256948df84)
 
 ### Warning
 
 The introspection helpers have one limitiation :
 
-* The enumeration cannot be in a class or struct. The enumeration must be in the global namespace or in a namespace hierarchy. If the enumumeration is in a class or struct, add operators manually and use [xtd::enum_register](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__register.html) to register the enumeration.
+* The enumeration cannot be in a class or struct. The enumeration must be in the global namespace or in a namespace hierarchy. If the enumumeration is in a class or struct, add operators manually and use [xtd::enum_register](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1enum__register.html) to register the enumeration.
 
 ### enum_
 
 This helper provides the registration struct for `enum`.
 
-Thr following example shows how to use [enum_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga6c6a896cbec833fa1fac13b700cf8691) helper.
+Thr following example shows how to use [enum_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga6c6a896cbec833fa1fac13b700cf8691) helper.
 
 ```cpp
 #include <xtd/xtd>
@@ -521,7 +521,7 @@ auto main()->int {
 
 This helper provides the registration struct for `enum` with specified underlying type.
 
-Thr following example shows how to use [enum_ut_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gabe13d52c924723772f27878f606210cd) helper.
+Thr following example shows how to use [enum_ut_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gabe13d52c924723772f27878f606210cd) helper.
 
 ```cpp
 #include <xtd/xtd>
@@ -558,7 +558,7 @@ auto main()->int {
 
 This helper provides the registration struct for `enum class`.
 
-Thr following example shows how to use [enum_class_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gade4794e2743558ee1eb5bbad10c7f6d4) helper.
+Thr following example shows how to use [enum_class_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gade4794e2743558ee1eb5bbad10c7f6d4) helper.
 
 ```cpp
 #include <xtd/xtd>
@@ -595,7 +595,7 @@ auto main()->int {
 
 This helper provides the registration struct for `enum class` with specified underlying type.
 
-Thr following example shows how to use [enum_class_ut_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga6918e267c2970d28460e6c42a3b03f4a) helper.
+Thr following example shows how to use [enum_class_ut_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga6918e267c2970d28460e6c42a3b03f4a) helper.
 
 ```cpp
 #include <xtd/xtd>
@@ -632,7 +632,7 @@ auto main()->int {
 
 This helper provides the registration struct for `enum struct`.
 
-Thr following example shows how to use [enum_struct_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga85a4f5366ae461ca1e20872d39a0b440) helper.
+Thr following example shows how to use [enum_struct_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga85a4f5366ae461ca1e20872d39a0b440) helper.
 
 ```cpp
 #include <xtd/xtd>
@@ -669,7 +669,7 @@ auto main()->int {
 
 This helper provides the registration struct for `enum struct` with specified underlying type.
 
-Thr following example shows how to use [enum_struct_ut_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#ga341342381ae697a142233d256948df84) helper.
+Thr following example shows how to use [enum_struct_ut_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga341342381ae697a142233d256948df84) helper.
 
 ```cpp
 #include <xtd/xtd>

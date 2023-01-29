@@ -1,6 +1,6 @@
 # stopwatch_constructor
 
-Initializes a [xtd::diagnostics::stopwatch](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1stopwatch.html) instance by using a simple class constructor.
+Initializes a [xtd::diagnostics::stopwatch](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1stopwatch.html) instance by using a simple class constructor.
 
 ## Sources
 

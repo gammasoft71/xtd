@@ -1,6 +1,6 @@
 # date_time_add_minutes
 
-Shows how to use [xtd::date_time::add_minutes](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1date__time.html#a707bef059e2d5161b8545cedc58983b2) method.
+Shows how to use [xtd::date_time::add_minutes](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a707bef059e2d5161b8545cedc58983b2) method.
 
 # Sources
 

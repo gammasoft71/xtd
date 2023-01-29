@@ -16,51 +16,51 @@
 
 xtd.forms has in addition to layout containers three ways to manage the size and position of a control automatically:
 
-* [xtd::forms::control::auto_size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a571575a959ffc0ee42fd8d5426bcbd9f)
-* [xtd::forms::control::dock](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#aa42e38a902457e5f548091a379d2f693)
-* [xtd::forms::control::anchor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#aaf1b4489cf4ad56cfcba4e619c95f56c)
+* [xtd::forms::control::auto_size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a571575a959ffc0ee42fd8d5426bcbd9f)
+* [xtd::forms::control::dock](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#aa42e38a902457e5f548091a379d2f693)
+* [xtd::forms::control::anchor](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#aaf1b4489cf4ad56cfcba4e619c95f56c)
 
 Control placement in xtd.forms is determined not only by the control, but also by the parent of the control. This chapter describes the different settings provided by controls and the different types of parent containers that affect layout.
 
 ## Fixed position and size
 
-The position a control appears on a parent is determined by the value of the [xtd::forms::control::location](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#ac38df6b02cbd4bceead6d934c511f61b) property relative to the top-left of the parent surface. The top-left position coordinate in the parent is (x0,y0). The size of the control is determined by the [xtd::forms::control::size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#ac004473e1cac8074e4ce22f1dbfc4251) property and represents the width and height of the control.
+The position a control appears on a parent is determined by the value of the [xtd::forms::control::location](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#ac38df6b02cbd4bceead6d934c511f61b) property relative to the top-left of the parent surface. The top-left position coordinate in the parent is (x0,y0). The size of the control is determined by the [xtd::forms::control::size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#ac004473e1cac8074e4ce22f1dbfc4251) property and represents the width and height of the control.
 
 ![image](pictures/location_container.png)
 
 When a control is added to a parent that enforces automatic placement, the position and size of the control is changed. In this case, the position and size of the control may not be manually adjusted, depending on the type of parent.
 
-The [xtd::forms::control::maximum_size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a41e039d0f3a5d333f6f4c4b32f6c3112) and [xtd::forms::control::minimum_size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#ae91bd094cccd5608b42636cc836674a8) properties help set the minimum and maximum space a control can use.
+The [xtd::forms::control::maximum_size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a41e039d0f3a5d333f6f4c4b32f6c3112) and [xtd::forms::control::minimum_size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#ae91bd094cccd5608b42636cc836674a8) properties help set the minimum and maximum space a control can use.
 
 ## Margin and Padding
 
-There are two control properties that help with precise placement of controls: [xtd::forms::control::margin](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a178aa02994f470f50d00f5b4101bdf73) and [xtd::forms::control::padding](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a226a8127281598cd16fb3e96e225bbfd).
+There are two control properties that help with precise placement of controls: [xtd::forms::control::margin](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a178aa02994f470f50d00f5b4101bdf73) and [xtd::forms::control::padding](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a226a8127281598cd16fb3e96e225bbfd).
 
-The [xtd::forms::control::margin](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a178aa02994f470f50d00f5b4101bdf73) property defines the space around the control that keeps other controls a specified distance from the control's borders.
+The [xtd::forms::control::margin](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a178aa02994f470f50d00f5b4101bdf73) property defines the space around the control that keeps other controls a specified distance from the control's borders.
 
-The [xtd::forms::control::padding](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a226a8127281598cd16fb3e96e225bbfd) property defines the space in the interior of a control that keeps the control's content (for example, the value of its [xtd::forms::control::text](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a4c3b78843745277a88831bd0500ccb2b) property) a specified distance from the control's borders.
+The [xtd::forms::control::padding](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a226a8127281598cd16fb3e96e225bbfd) property defines the space in the interior of a control that keeps the control's content (for example, the value of its [xtd::forms::control::text](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a4c3b78843745277a88831bd0500ccb2b) property) a specified distance from the control's borders.
 
-The following figure shows the [xtd::forms::control::margin](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a178aa02994f470f50d00f5b4101bdf73) and [xtd::forms::control::padding](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a226a8127281598cd16fb3e96e225bbfd) properties on a control.
+The following figure shows the [xtd::forms::control::margin](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a178aa02994f470f50d00f5b4101bdf73) and [xtd::forms::control::padding](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a226a8127281598cd16fb3e96e225bbfd) properties on a control.
 
 ![image](pictures/margin_padding.png)
 
 ## Automatic placement and size
 
-Controls can be automatically placed within their parent. Some parent containers force placement while others respect control settings that guide placement. There are two properties on a control that help automatic placement and size within a parent: [xtd::forms::control::dock](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#aa42e38a902457e5f548091a379d2f693) and [xtd::forms::control::anchor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#aaf1b4489cf4ad56cfcba4e619c95f56c).
+Controls can be automatically placed within their parent. Some parent containers force placement while others respect control settings that guide placement. There are two properties on a control that help automatic placement and size within a parent: [xtd::forms::control::dock](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#aa42e38a902457e5f548091a379d2f693) and [xtd::forms::control::anchor](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#aaf1b4489cf4ad56cfcba4e619c95f56c).
 
 Drawing order can affect automatic placement. The order in which a control is drawn determined by the control's index in the parent's Controls collection. This index is known as the Z-order. Each control is drawn in the reverse order they appear in the collection. Meaning, the collection is a first-in-last-drawn and last-in-first-drawn collection.
 
-The [xtd::forms::control::minimum_size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#ae91bd094cccd5608b42636cc836674a8) and [xtd::forms::control::maximum_size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a41e039d0f3a5d333f6f4c4b32f6c3112) properties help set the minimum and maximum space a control can use.
+The [xtd::forms::control::minimum_size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#ae91bd094cccd5608b42636cc836674a8) and [xtd::forms::control::maximum_size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a41e039d0f3a5d333f6f4c4b32f6c3112) properties help set the minimum and maximum space a control can use.
 
 ### Dock
 
 Controls that are docked fill the edges of the control's container, either the form or a container control.
-For example, Windows Explorer docks its [tree_view](https://codedocs.xyz/gammasoft71/xtd/group__controls.html) control to the left side of the window and its [list_view](https://codedocs.xyz/gammasoft71/xtd/group__controls.html) control to the right side of the window.
+For example, Windows Explorer docks its [tree_view](https://gammasoft71.github.io/xtd/reference_guides/latest/group__controls.html) control to the left side of the window and its [list_view](https://gammasoft71.github.io/xtd/reference_guides/latest/group__controls.html) control to the right side of the window.
 The docking mode can be any side of the control's container, or set to fill the remaining space of the container.
 
 #### Examples
 
-The following example shows the use of [dock](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#aa42e38a902457e5f548091a379d2f693) property :
+The following example shows the use of [dock](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#aa42e38a902457e5f548091a379d2f693) property :
 
 ```cpp
 #include <xtd/xtd>
@@ -106,7 +106,7 @@ auto main()->int {
 }
 ```
 
-Controls are docked in reverse z-order and the Dock property interacts with the  [auto_size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a571575a959ffc0ee42fd8d5426bcbd9f) property. For more information, see [Automatic sizing](#automatic-sizing).
+Controls are docked in reverse z-order and the Dock property interacts with the  [auto_size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a571575a959ffc0ee42fd8d5426bcbd9f) property. For more information, see [Automatic sizing](#automatic-sizing).
 
 ### Anchor
 
@@ -116,7 +116,7 @@ The control also positions itself vertically so that its location is always the 
 
 #### Example
 
-The following example shows the use of [anchor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#aaf1b4489cf4ad56cfcba4e619c95f56c) property :
+The following example shows the use of [anchor](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#aaf1b4489cf4ad56cfcba4e619c95f56c) property :
 
 ```cpp
 #include <xtd/xtd>
@@ -195,19 +195,19 @@ auto main()->int {
 
 ### Automatic sizing
 
-[xtd::forms::control::auto_size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a571575a959ffc0ee42fd8d5426bcbd9f) property defines a value that indicates whether the control resizes based on its contents.
+[xtd::forms::control::auto_size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a571575a959ffc0ee42fd8d5426bcbd9f) property defines a value that indicates whether the control resizes based on its contents.
 
-The [auto_size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a571575a959ffc0ee42fd8d5426bcbd9f) property is combined with the [auto_size_mode](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a5f12ce386b6ef680d2ec89f199ef1c67) property.
+The [auto_size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a571575a959ffc0ee42fd8d5426bcbd9f) property is combined with the [auto_size_mode](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a5f12ce386b6ef680d2ec89f199ef1c67) property.
 
-Possible values for [auto_size_mode](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#ga988a6abd919c15254f45a0bf9c2dcb17) :
-* [xtd::forms::auto_size_mode::grow_and_shrink](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#ga988a6abd919c15254f45a0bf9c2dcb17) : The control grows or shrinks to fit its contents. The control cannot be resized manually.
-* [xtd::forms::auto_size_mode::grow_only](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#ga988a6abd919c15254f45a0bf9c2dcb17) : The control grows as much as necessary to fit its contents but does not shrink smaller than the value of its size property. The form can be resized, but cannot be made so small that any of its contained controls are hidden.
+Possible values for [auto_size_mode](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#ga988a6abd919c15254f45a0bf9c2dcb17) :
+* [xtd::forms::auto_size_mode::grow_and_shrink](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#ga988a6abd919c15254f45a0bf9c2dcb17) : The control grows or shrinks to fit its contents. The control cannot be resized manually.
+* [xtd::forms::auto_size_mode::grow_only](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#ga988a6abd919c15254f45a0bf9c2dcb17) : The control grows as much as necessary to fit its contents but does not shrink smaller than the value of its size property. The form can be resized, but cannot be made so small that any of its contained controls are hidden.
 
-By default controls have [auto_size_mode::auto_size_mode::grow_and_shrink](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#ga988a6abd919c15254f45a0bf9c2dcb17) except all button types, form, group_box, panel and user_control which are set to [xtd::forms::auto_size_mode::growing_only](https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html#ga988a6abd919c15254f45a0bf9c2dcb17).
+By default controls have [auto_size_mode::auto_size_mode::grow_and_shrink](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#ga988a6abd919c15254f45a0bf9c2dcb17) except all button types, form, group_box, panel and user_control which are set to [xtd::forms::auto_size_mode::growing_only](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#ga988a6abd919c15254f45a0bf9c2dcb17).
 
 #### Example
 
-For example if a form contains three controls and we set the [auto_size](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a571575a959ffc0ee42fd8d5426bcbd9f) property of the form to true, then the size of the form will adapt to encompass the three controls.
+For example if a form contains three controls and we set the [auto_size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a571575a959ffc0ee42fd8d5426bcbd9f) property of the form to true, then the size of the form will adapt to encompass the three controls.
 
 ```cpp
 #include <xtd/xtd>

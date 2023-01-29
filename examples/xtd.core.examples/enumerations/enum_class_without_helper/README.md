@@ -1,6 +1,6 @@
 # enum_class_without_helper
 
-* Shows how to use [xtd::enum_object](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1enum__object.html) and [enum_register](https://codedocs.xyz/gammasoft71/xtd/structxtd_1_1enum__register.html) classes.
+* Shows how to use [xtd::enum_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1enum__object.html) and [enum_register](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1enum__register.html) classes.
 
 
 ## Sources

@@ -1,6 +1,6 @@
 # vector_list2
 
-Shows how to use [xtd::collections::vector_list](https://codedocs.xyz/gammasoft71/xtd/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) class.
+Shows how to use [xtd::collections::vector_list](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) class.
 
 ## Sources
 

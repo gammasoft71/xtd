@@ -1,6 +1,6 @@
 # images
 
-demonstrates the use of [xtd::forms::images](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1images.html) component.
+demonstrates the use of [xtd::forms::images](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1images.html) component.
 
 # Sources
 

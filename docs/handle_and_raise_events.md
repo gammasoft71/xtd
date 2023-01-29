@@ -13,16 +13,16 @@ An event is a message sent by an object to signal the occurrence of an action.
 The action may be caused by user interaction, such as clicking a button, or may result from other program logic, such as changing the value of a property.
 The object that triggers the event is called the event sender. 
 The event sender does not know which object or method will receive (process) the events it raises. 
-The event is usually a member of the event sender; for example, the [click](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html) event is a member of the [xtd::forms::control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html) class, and the [progress_changed event](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1background__worker.html) is a member of the class that implements the [xtd::forms::background_worker](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1background__worker.html) class.
+The event is usually a member of the event sender; for example, the [click](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html) event is a member of the [xtd::forms::control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html) class, and the [progress_changed event](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1background__worker.html) is a member of the class that implements the [xtd::forms::background_worker](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1background__worker.html) class.
 
 To define an event, you use the [xtd::event](events.md) class in your [event](events.md) class signature, and you specify the delegate type for the event. 
 Delegates are described in the next section.
 
 In general, to trigger an event, you add a method marked as ```protected``` and ```virtual```. Name this method ```on_```event_name; for example, ```on_data_received```. 
-The method must take a parameter that specifies an event data object, which is an object of type [xtd::event_ags](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1event__args.html) or a derived type. You provide this method to allow derived classes to override the event trigger logic. 
+The method must take a parameter that specifies an event data object, which is an object of type [xtd::event_ags](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event__args.html) or a derived type. You provide this method to allow derived classes to override the event trigger logic. 
 A derived class must always call the ```on_```event_name method of the base class to ensure that the registered delegates receive the event.
 
-The following example shows how to declare an event named ```threshold_reached```. The event is associated with the [xtd::event_handler](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate and triggered by a method called ```on_threshold_reached```.
+The following example shows how to declare an event named ```threshold_reached```. The event is associated with the [xtd::event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate and triggered by a method called ```on_threshold_reached```.
 
 ```cpp
 class counter {
@@ -49,20 +49,20 @@ A delegate declaration is sufficient to define a class of delegates.
 Delegates have many uses in the xtd Framework. 
 In the context of events, a delegate is an intermediary (or pointer-like mechanism) between the event source and the code that handles the event. 
 You associate a delegate with an event by including the delegate type in the event declaration, as shown in the example in the previous section. 
-For more information on delegates, see the [xtd::delegate](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) class.
+For more information on delegates, see the [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) class.
 
-xtd provides the [xtd::event_handler](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) and [xtd::generic_event_handler<event_args_t>](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) delegates to support most event scenarios. 
+xtd provides the [xtd::event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) and [xtd::generic_event_handler<event_args_t>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) delegates to support most event scenarios. 
 Use the xtd::event_handler delegate for all events that do not contain event data. 
-Use the [xtd::generic_event_handler<event_args_t>](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) delegate for events that contain event data. 
+Use the [xtd::generic_event_handler<event_args_t>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) delegate for events that contain event data. 
 These delegates have no return type value and take two parameters (one xtd::object for the event source, and one object for the event data).
 
 Delegates are multicast, which means that they can contain references to more than one event handling method. 
-For more details, see the [xtd::delegate](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) reference page. 
+For more details, see the [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) reference page. 
 Delegates provide flexibility and fine-grained control in event processing. 
 A delegate acts as an event dispatcher for the class that raises the event by maintaining a list of registered event handlers for the event.
 
-For scenarios where the xtd::event_handler and [xtd::generic_event_handler<event_args_t>](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) delegates do not work, you can define a delegate. Scenarios that require a delegate to be defined are very rare, such as when you have to work with code that does not recognize generics. 
-You mark a delegate with the [xtd::delegate](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) [xtd::delegate](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) class in the declaration. 
+For scenarios where the xtd::event_handler and [xtd::generic_event_handler<event_args_t>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) delegates do not work, you can define a delegate. Scenarios that require a delegate to be defined are very rare, such as when you have to work with code that does not recognize generics. 
+You mark a delegate with the [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) class in the declaration. 
 The following example shows how to declare a delegate named ```threshold_reached_event_handler```.
 
 ```cpp
@@ -74,17 +74,17 @@ public:
 
 The data associated with an event can be provided by an event data class. 
 xtd provides many event data classes that you can use in your applications. 
-For example, the [xtd::forms::dialog_closed_event_args](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1common__dialog.html) class is the event data class for the [xtd::forms::common_dialog.dialog_closed](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga58c4d7337fff19cd20dabbd50c24298c) event. xtd follows a naming pattern of ending all event data classes with _event_args. 
+For example, the [xtd::forms::dialog_closed_event_args](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1common__dialog.html) class is the event data class for the [xtd::forms::common_dialog.dialog_closed](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga58c4d7337fff19cd20dabbd50c24298c) event. xtd follows a naming pattern of ending all event data classes with _event_args. 
 You determine the event data class associated with an event by examining the event's delegate. 
-For example, the [dialog_closed_event_handler](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga93712f46c124e6ca40b40a2d9e14fc60) delegate includes the [dialog_closed_event_args](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1dialog__closed__event__args.html) class as one of its parameters.
+For example, the [dialog_closed_event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga93712f46c124e6ca40b40a2d9e14fc60) delegate includes the [dialog_closed_event_args](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1dialog__closed__event__args.html) class as one of its parameters.
 
-The [xtd::event_args](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1event__args.htmlhttps://codedocs.xyz/gammasoft71/xtd/classxtd_1_1event__args.html) class is the base type for all event data classes. 
-[xtd:event_args](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1event__args.html) is also the class you use when an event is not associated with any data.
+The [xtd::event_args](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event__args.htmlhttps://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event__args.html) class is the base type for all event data classes. 
+[xtd:event_args](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event__args.html) is also the class you use when an event is not associated with any data.
 When you create an event that is only intended to inform other classes that something has happened and does not need to pass any data, include the xtd:event_args class as the second parameter in the delegate. 
-You can pass the value [xtd::event_args::empty](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1event__args.html) when no data is provided. 
-The [xtd::event_handler](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate includes the [xtd:event_args](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1event__args.html) class as a parameter.
+You can pass the value [xtd::event_args::empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event__args.html) when no data is provided. 
+The [xtd::event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate includes the [xtd:event_args](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event__args.html) class as a parameter.
 
-When you want to create a custom event data class, create a class that derives from [xtd:event_args](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1event__args.html), and then provide all the members needed to pass the event-related data.
+When you want to create a custom event data class, create a class that derives from [xtd:event_args](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event__args.html), and then provide all the members needed to pass the event-related data.
 In general, you should use the same naming scheme as xtd and end the name of your event data class with ```_event_args```.
 
 The following example shows an event data class named ```threshold_reached_event_args```*.
@@ -112,7 +112,7 @@ This method must match the delegate signature of the event you are handling.
 In the event handler, you perform the required actions when the event is triggered, such as collecting user input after the user clicks a button. 
 To receive notifications when the event occurs, your event handler method must subscribe to the event.
 
-The following example shows an event handling method named ```c_threshold_reached``` that matches the signature of the [xtd::event_handler](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate.
+The following example shows an event handling method named ```c_threshold_reached``` that matches the signature of the [xtd::event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate.
 The method subscribes to the ```threshold_reached``` event.
 
 ```cpp

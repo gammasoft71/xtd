@@ -1,6 +1,6 @@
 # generic_test_class
 
-Shows how to use generic [xtd::tunit::test_class](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1test__class.html) class.
+Shows how to use generic [xtd::tunit::test_class](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1test__class.html) class.
 
 ## Sources
 

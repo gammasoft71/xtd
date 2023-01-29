@@ -1,6 +1,6 @@
 # smileys
 
-demonstrates the use of [xtd::forms::label](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1label.html) control.
+demonstrates the use of [xtd::forms::label](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1label.html) control.
 
 # Sources
 

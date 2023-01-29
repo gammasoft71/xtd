@@ -1,6 +1,6 @@
 # static_object
 
-Shows how to use [static_object_](https://codedocs.xyz/gammasoft71/xtd/group__keywords.html#gadf2fc01c525cce1b8255c8308b2fb004) keyword.
+Shows how to use [static_object_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gadf2fc01c525cce1b8255c8308b2fb004) keyword.
 
 ## Sources
 

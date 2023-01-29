@@ -1,6 +1,6 @@
 # assert_is_not_null
 
-Shows how to use [xtd::tunit::assert::is_not_null](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1tunit_1_1assert.html#ab75c42c523609e6036cd25cedbb690dd) method.
+Shows how to use [xtd::tunit::assert::is_not_null](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html#ab75c42c523609e6036cd25cedbb690dd) method.
 
 ## Sources
 

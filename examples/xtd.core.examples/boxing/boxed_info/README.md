@@ -1,6 +1,6 @@
 # boxed_info
 
-Shows how to use how to use [xtd::boxing](https://codedocs.xyz/gammasoft71/xtd/group__system.html#gac451ec4dea542f67e4fa51551fd2cef9) methods.
+Shows how to use how to use [xtd::boxing](https://gammasoft71.github.io/xtd/reference_guides/latest/group__system.html#gac451ec4dea542f67e4fa51551fd2cef9) methods.
 
 # Sources
 

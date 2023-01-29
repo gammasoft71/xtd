@@ -1,6 +1,6 @@
 # draw_image
 
-shows how to draw image in paint event using [xtd::drawing::graphics::draw_image](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1graphics.html#aca14d418dfc8999e4a59092bcc902637).
+shows how to draw image in paint event using [xtd::drawing::graphics::draw_image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1graphics.html#aca14d418dfc8999e4a59092bcc902637).
 
 # Sources
 

@@ -1,6 +1,6 @@
 # target_type
 
-Shows how to set target startup with cmake [target_type()](https://codedocs.xyz/gammasoft71/xtd/_c_make_commands.html#TargetTypeSubSection).
+Shows how to set target startup with cmake [target_type()](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#TargetTypeSubSection).
 
 # Sources
 
