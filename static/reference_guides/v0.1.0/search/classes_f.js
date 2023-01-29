@@ -1,20 +1,14 @@
 var searchData=
 [
-  ['radial_5fgradient_5fbrush_7543',['radial_gradient_brush',['../classxtd_1_1drawing_1_1drawing2d_1_1radial__gradient__brush.html',1,'xtd::drawing::drawing2d']]],
-  ['radio_5fbutton_7544',['radio_button',['../classxtd_1_1forms_1_1radio__button.html',1,'xtd::forms']]],
-  ['radio_5fbutton_5frenderer_7545',['radio_button_renderer',['../classxtd_1_1forms_1_1radio__button__renderer.html',1,'xtd::forms']]],
-  ['radio_5fbuttons_7546',['radio_buttons',['../classxtd_1_1forms_1_1radio__buttons.html',1,'xtd::forms']]],
-  ['random_7547',['random',['../classxtd_1_1random.html',1,'xtd']]],
-  ['rectangle_7548',['rectangle',['../classxtd_1_1drawing_1_1rectangle.html',1,'xtd::drawing']]],
-  ['rectangle_5ff_7549',['rectangle_f',['../classxtd_1_1drawing_1_1rectangle__f.html',1,'xtd::drawing']]],
-  ['red_5fcolors_7550',['red_colors',['../classxtd_1_1drawing_1_1red__colors.html',1,'xtd::drawing']]],
-  ['region_7551',['region',['../classxtd_1_1drawing_1_1region.html',1,'xtd::drawing']]],
-  ['registered_5ftest_5fclass_7552',['registered_test_class',['../classxtd_1_1tunit_1_1registered__test__class.html',1,'xtd::tunit']]],
-  ['renderer_7553',['renderer',['../classxtd_1_1forms_1_1renderer.html',1,'xtd::forms']]],
-  ['replace_5fbox_7554',['replace_box',['../classxtd_1_1forms_1_1replace__box.html',1,'xtd::forms']]],
-  ['replace_5fdialog_7555',['replace_dialog',['../classxtd_1_1forms_1_1replace__dialog.html',1,'xtd::forms']]],
-  ['replace_5fevent_5fargs_7556',['replace_event_args',['../classxtd_1_1forms_1_1replace__event__args.html',1,'xtd::forms']]],
-  ['reset_5fcolor_7557',['reset_color',['../classxtd_1_1reset__color.html',1,'xtd']]],
-  ['resources_7558',['resources',['../classxtd_1_1forms_1_1properties_1_1resources.html',1,'xtd::forms::properties']]],
-  ['run_5fworker_5fcompleted_5fevent_5fargs_7559',['run_worker_completed_event_args',['../classxtd_1_1forms_1_1run__worker__completed__event__args.html',1,'xtd::forms']]]
+  ['radio_5fbutton_0',['radio_button',['../classxtd_1_1forms_1_1radio__button.html',1,'xtd::forms']]],
+  ['radio_5fbutton_5frenderer_1',['radio_button_renderer',['../classxtd_1_1forms_1_1radio__button__renderer.html',1,'xtd::forms']]],
+  ['radio_5fbuttons_2',['radio_buttons',['../classxtd_1_1forms_1_1radio__buttons.html',1,'xtd::forms']]],
+  ['random_3',['random',['../classxtd_1_1random.html',1,'xtd']]],
+  ['rectangle_4',['rectangle',['../classxtd_1_1drawing_1_1rectangle.html',1,'xtd::drawing']]],
+  ['rectangle_5ff_5',['rectangle_f',['../classxtd_1_1drawing_1_1rectangle__f.html',1,'xtd::drawing']]],
+  ['registered_5ftest_5fclass_6',['registered_test_class',['../classxtd_1_1tunit_1_1registered__test__class.html',1,'xtd::tunit']]],
+  ['renderer_7',['renderer',['../classxtd_1_1forms_1_1renderer.html',1,'xtd::forms']]],
+  ['reset_5fcolor_8',['reset_color',['../classxtd_1_1reset__color.html',1,'xtd']]],
+  ['resources_9',['resources',['../classxtd_1_1forms_1_1properties_1_1resources.html',1,'xtd::forms::properties']]],
+  ['run_5fworker_5fcompleted_5fevent_5fargs_10',['run_worker_completed_event_args',['../classxtd_1_1forms_1_1run__worker__completed__event__args.html',1,'xtd::forms']]]
 ];
