@@ -17,3 +17,11 @@ void text_renderer::draw_shadow_text(xtd::drawing::graphics& g, const xtd::drawi
 void text_renderer::draw_text(xtd::drawing::graphics& g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const itext_model& text_model) {
   g.draw_string(text, text_model.font(), solid_brush(text_model.color()), bounds, text_model.make_string_format());
 }
+
+void text_renderer::draw_shadow_text_and_links(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::forms::style_sheets::itext_model& data, const xtd::forms::style_sheets::ibox_model& box) {
+  
+}
+
+void text_renderer::draw_text_and_links(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::forms::style_sheets::itext_model& data) {
+  
+}
