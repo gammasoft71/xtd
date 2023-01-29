@@ -31,11 +31,11 @@ const FeatureList = [
       <img src="pictures/block_diagram_onion.png"/>
       <br/>xtd is composed of several libraries.
       <br/><br/><font size="+2">xtd.core</font>
-      <br/><img src="pictures/xtd.core.png"/> The <a href="https://codedocs.xyz/gammasoft71/xtd/group__xtd__core.html">xtd.core</a> library is modern c++17/20 library of classes, interfaces, and value types that provide access to system functionality. It is the foundation on which c++ applications, components, and controls are built.
+      <br/><img src="pictures/xtd.core.png"/> The <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html">xtd.core</a> library is modern c++17/20 library of classes, interfaces, and value types that provide access to system functionality. It is the foundation on which c++ applications, components, and controls are built.
       <br/><br/><font size="+2">xtd.drawing</font>
-      <br/><img src="pictures/xtd.drawing.png"/> The <a href="https://codedocs.xyz/gammasoft71/xtd/group__xtd__drawing.html">xtd.drawing</a> library contains types that support basic GDI+ graphics functionality. Child namespaces support advanced two-dimensional and vector graphics functionality, advanced imaging functionality, and print-related and typographical services. A child namespace also contains types that extend design-time user-interface logic and drawing.
+      <br/><img src="pictures/xtd.drawing.png"/> The <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__drawing.html">xtd.drawing</a> library contains types that support basic GDI+ graphics functionality. Child namespaces support advanced two-dimensional and vector graphics functionality, advanced imaging functionality, and print-related and typographical services. A child namespace also contains types that extend design-time user-interface logic and drawing.
       <br/><br/><font size="+2">xtd.forms</font>
-      <br/><img src="pictures/xtd.forms.png"/> The <a href="https://codedocs.xyz/gammasoft71/xtd/group__xtd__forms.html">xtd.forms</a> library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows, Apple macOS and linux operating system.
+      <br/><img src="pictures/xtd.forms.png"/> The <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html">xtd.forms</a> library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows, Apple macOS and linux operating system.
       <br/><br/><font size="+2">xtd.tunit</font>
       <br/><img src="pictures/xtd.tunit.png"/> The <a href="">xtd.tunit</a> library is a unit-testing framework for modern C++17/20 inspired by <a href="">Microsoft.VisualStudio.TestTools.Cpp</a>.
       <br/><br/>See <a href="">xtd libraries hierarchy</a>.
