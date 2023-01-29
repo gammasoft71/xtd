@@ -13,4 +13,4 @@ ________________________________________________________________________________
 
 © 2023 Gammasoft.
 
-[comment]: <> (https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/ipv6-overview)
+[//]: # (https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/ipv6-overview)
