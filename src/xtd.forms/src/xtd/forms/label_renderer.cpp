@@ -48,13 +48,9 @@ void label_renderer::draw_label(const xtd::forms::style_sheets::style_sheet& sty
 void label_renderer::draw_link_label(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::link_label_state link_label_state, const std::optional<xtd::drawing::color>& back_color, const xtd::ustring& text, const std::vector<xtd::forms::link>& links, const std::optional<xtd::forms::content_alignment>& text_align, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::color>& link_color, const std::optional<xtd::drawing::color>& visited_link_color, const std::optional<xtd::drawing::font>& font, xtd::forms::link_behavior link_behavior, const xtd::drawing::image& image, const std::optional<xtd::forms::content_alignment>& image_align, const std::optional<xtd::forms::border_style>& border, xtd::forms::border_sides sides, bool shadow, bool auto_ellipsis) {
   auto pseudo_state_base = pseudo_state::standard;
   
-  style_sheets::link_label current_style_sheet;
-  switch (link_label_state) {
-    case link_label_state::normal: current_style_sheet = style_sheet.link_label(pseudo_state_base); break;
-    case link_label_state::hot: current_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::hover); break;
-    case link_label_state::pressed: current_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::active); break;
-    case link_label_state::disabled: current_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::disabled); break;
-  }
+  style_sheets::link_label current_style_sheet = style_sheet.link_label(pseudo_state_base), hot_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::hover), pressed_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::active);
+  if (link_label_state == link_label_state::disabled) current_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::disabled);
+
   if (back_color.has_value()) current_style_sheet.background_color(back_color.value());
   if (text_align.has_value()) current_style_sheet.text_alignment(text_align.value());
   if (fore_color.has_value() && link_label_state != link_label_state::disabled) current_style_sheet.color(fore_color.value());
@@ -73,6 +69,6 @@ void label_renderer::draw_link_label(const xtd::forms::style_sheets::style_sheet
   box_renderer::draw_box(graphics, bounds, current_style_sheet);
   auto content_rectangle = current_style_sheet.get_content_rectangle(bounds);
   image_renderer::draw_image(graphics, content_rectangle, image, link_label_state != link_label_state::disabled, current_style_sheet.get_solid_background_color(), current_style_sheet);
-  if (shadow) text_renderer::draw_shadow_text(graphics, content_rectangle, text, current_style_sheet, current_style_sheet);
-  else text_renderer::draw_text(graphics, content_rectangle, text, current_style_sheet);
+  if (shadow) text_renderer::draw_shadow_text_and_links(graphics, content_rectangle, text, current_style_sheet, current_style_sheet);
+  else text_renderer::draw_text_and_links(graphics, content_rectangle, text, current_style_sheet);
 }
