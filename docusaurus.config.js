@@ -136,7 +136,7 @@ const config = {
             html: '<a href="https://www.facebook.com/gammasoft71"><img src="https://gammasoft71.github.io/xtd/pictures/facebook32.png"></a>',
           },
           {
-            html: '<a href="hhttps://twitter.com/gammasoft71"><img src=https://gammasoft71.github.io/xtd/pictures/twitter32.png></a>',
+            html: '<a href="https://twitter.com/gammasoft71"><img src=https://gammasoft71.github.io/xtd/pictures/twitter32.png></a>',
           },
           {
             html: '<a href="https://discordapp.com/users/gammasoft#9288"><img src="https://gammasoft71.github.io/xtd/pictures/discord32.png"></a>',
