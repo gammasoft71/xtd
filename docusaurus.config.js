@@ -121,32 +121,30 @@ const config = {
         ],
       },
       footer: {
-        /*
         style: 'dark',
         links: [
           {
-            html: '<a href="https://gammasoft71.github.io/xtd"><img src="pictures/xtd32.png"></a>',
+            html: '<a href="https://gammasoft71.github.io/xtd"><img src="https://gammasoft71.github.io/xtd/pictures/xtd32.png"></a>',
           },
           {
-            html: '<a href="https://github.com/gammasoft71/xtd"><img src="pictures/github32.png"></a>',
+            html: '<a href="https://github.com/gammasoft71/xtd"><img src="https://gammasoft71.github.io/xtd/pictures/github32.png"></a>',
           },
           {
-            html: '<a href="https://sourceforge.net/projects/xtdpro"><img src="pictures/sourceforge32.png"></a>',
+            html: '<a href="https://sourceforge.net/projects/xtdpro"><img src="https://gammasoft71.github.io/xtd/pictures/sourceforge32.png"></a>',
           },
           {
-            html: '<a href="https://www.facebook.com/gammasoft71"><img src="pictures/facebook32.png"></a>',
+            html: '<a href="https://www.facebook.com/gammasoft71"><img src="https://gammasoft71.github.io/xtd/pictures/facebook32.png"></a>',
           },
           {
-            html: '<a href="hhttps://twitter.com/gammasoft71"><img src=pictures/twitter32.png></a>',
+            html: '<a href="hhttps://twitter.com/gammasoft71"><img src=https://gammasoft71.github.io/xtd/pictures/twitter32.png></a>',
           },
           {
-            html: '<a href="https://discordapp.com/users/gammasoft#9288"><img src="pictures/discord32.png"></a>',
+            html: '<a href="https://discordapp.com/users/gammasoft#9288"><img src="https://gammasoft71.github.io/xtd/pictures/discord32.png"></a>',
           },
           {
-            html: '<a href="mailto:gammasoft71@gmail.com"><img src="pictures/mail32.png"></a>',
+            html: '<a href="mailto:gammasoft71@gmail.com"><img src="https://gammasoft71.github.io/xtd/pictures/mail32.png"></a>',
           },
         ],
-        */
         copyright: `© ${new Date().getFullYear()} Gammasoft. Built with Docusaurus.`,
       },
       prism: {
