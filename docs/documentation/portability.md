@@ -80,10 +80,10 @@ Actually xtd run on Windows, macOS, Linux, iOS and Android Operating System.
 
 | Library                                                                                           | Windows | macOS | Linux | iOS | Android |
 | ------------------------------------------------------------------------------------------------- | ------- | ----- | ----- | --- | ------- |
-| [xtd.core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)       | ✔️      | ✔️    | ✔️    | ✔️  | ✔️      |
-| [xtd.drawing](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__drawing.html) | ✔️      | ✔️    | ✔️    | ❌  | ❌      |
-| [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html)     | ✔️      | ✔️    | ✔️    | ❌  | ❌      |
-| [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html)     | ✔️      | ✔️    | ✔️    | ✔️  | ✔️      |
+| [xtd.core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)       | ✔️       | ✔️     | ✔️     | ✔️   | ✔️       |
+| [xtd.drawing](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__drawing.html) | ✔️       | ✔️     | ✔️     | ❌  | ❌       |
+| [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html)     | ✔️       | ✔️     | ✔️     | ❌  | ❌       |
+| [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html)     | ✔️       | ✔️     | ✔️     | ✔️   | ✔️       |
 
 ## Tests and coverage
 
@@ -177,4 +177,4 @@ For add a new Operating System, you juste have to implement native api for the n
 
 ## See also
 
-- [Documentation](documentation.md)
+- [Documentation](/docs/documentation)
