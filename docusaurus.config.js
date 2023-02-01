@@ -99,7 +99,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'support/README',
+            docId: 'Support/README',
             position: 'left',
             label: 'Support',
           },
