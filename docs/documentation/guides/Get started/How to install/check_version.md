@@ -5,7 +5,7 @@ sidebar_position: 5
 # How to check that xtd is already installed
 
 This article teaches you how to check which version of the xtd Framework is installed on your computer.
-If any command in this article fails, you don't have the xtd Framework installed. For more information, see the [install](downloads.md) article.
+If any command in this article fails, you don't have the xtd Framework installed. For more information, see the [install](/docs/downloads) article.
 
 # Check xtd versions
 You can see which versions of the xtd Framework is currently installed with a terminal. Open a terminal and run the following command.
@@ -29,9 +29,5 @@ You'll also get other environmental related information, such as the operating s
 
 # See also
 ​
-* [Guides](guides.md)
-* [Documentation](documentation.md)
-
-______________________________________________________________________________________________
-
-© 2023 Gammasoft.
+* [Guides](/docs/documentation/Guides)
+* [Documentation](/docs/documentation)
