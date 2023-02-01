@@ -189,4 +189,4 @@ End 2 tests from 1 test case ran. (0 ms total)
 
 # Support
 
-If you face any problems feel free to open an issue at the [issues tracker](https://github.com/gammasoft71/xtd/issues), If you feel like there is a missing feature, please raise a ticket on Github. Pull request are also welcome.
+If you face any problems feel free to open an issue at the [issues tracker](https://github.com/gammasoft71/xtd/issues), If you feel like there is a missing feature, please raise a ticket on Github. Pull request are also welcome. See [Support](/docs/Support) for more options.
