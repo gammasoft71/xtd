@@ -8,14 +8,14 @@ The xtd tutorials provide an overview of the important features of the xtd Frame
 
 ## xtd.core
 
-* [Writing console application](writing_applicaion_console.md) describes the basic steps that you must complete to create and run a console application from the command line.
+* [Writing console application](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_console) describes the basic steps that you must complete to create and run a console application from the command line.
 * [Common I/O Tasks](common_io_tasks.md) provides several classes that allow for various actions, such as reading and writing, to be performed on files, directories, and streams
 * [Delegates](delegates.md) provides a tutorial to cover all needed to using xtd::delegate.
 * [Events](events.md) provides a tutorial to cover all needed to using xtd::event.
 
 ## xtd.forms
 
-* [Writing GUI application](writing_applicaion_gui.md) describes the basic steps that you must complete to create and run a xtd.forms application from the command line.
+* [Writing GUI application](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_gui) describes the basic steps that you must complete to create and run a xtd.forms application from the command line.
 * [Control appearance](control_appearance.md) describes the standard and system appearance of controls.
 * [Size and location properties](size_and_location_properties.md) provides a tutorial on the size and location properties of the controls.
 * [Ambient properties](ambient_properties.md) provides a tutorial on the ambient properties of the controls.
@@ -27,7 +27,7 @@ The xtd tutorials provide an overview of the important features of the xtd Frame
 
 ## xtd.tunit
 
-* [Writing test application](writing_applicaion_test.md) describes the basic steps that you must complete to create and run a xtd.tunit unitests application from the command line.
+* [Writing test application](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_test.md) describes the basic steps that you must complete to create and run a xtd.tunit unitests application from the command line.
 * [Running test](writing_applicaion_running_test.md) provides running xtd.tunit test documentation.
 * [Extending test](writing_applicaion_extending_test.md) provides extending xtd.tunit test documentation.
 
@@ -37,4 +37,4 @@ The xtd tutorials provide an overview of the important features of the xtd Frame
 
 ## See also
 
-* [Documentation](../documentation.md)
+* [Documentation](/docs/documentation)
