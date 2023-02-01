@@ -178,7 +178,3 @@ For add a new Operating System, you juste have to implement native api for the n
 ## See also
 
 - [Documentation](documentation.md)
-
----
-
-© 2022 Gammasoft.
