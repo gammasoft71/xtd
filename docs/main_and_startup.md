@@ -186,6 +186,7 @@ namespace examples {
     }
   };
 }
+```
 
 * Static `main` member function with int and char*[] arguments and without return value.
 
