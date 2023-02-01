@@ -154,7 +154,7 @@ Create your new project with a simple command line tools.
 
 For example, you can type :
 
-```bash
+```shell
 xtdc new gui hello_world
 cd hello_world
 xtdc open
