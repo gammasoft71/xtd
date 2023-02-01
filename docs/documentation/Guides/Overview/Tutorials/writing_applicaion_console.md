@@ -159,5 +159,5 @@ target_type(CONSOLE_APPLICATION)
 
 ## See also
 
-* [tutorials](tutorials.md)
-* [Documentation](../../../documentation.md)
+* [tutorials](/docs/documentation/Guides/Overview/Tutorials)
+* [Documentation](/docs/documentation)
