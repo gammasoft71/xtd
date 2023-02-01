@@ -115,7 +115,7 @@ sidebar_position: 5
 
 ## Remarks
 
-- This version is currently in development. See [roadmap](https://github.com/gammasoft71/xtd/blob/master/docs/roadmap.md) to know the list of features and their progress
+- This version is currently in development. See [roadmap](/docs/documentation/roadmap) to know the list of features and their progress
 
 ## Incompatibility list
 
@@ -441,4 +441,8 @@ sidebar_position: 5
 ## Remarks
 
 - After 3 years of development, we are happy to release the first beta version of xtd. This version contains a lot of functionalities. It is the first of a long serie.
-- The essentials are listed above. For more information about all functionalities read the [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/index.html).
+- The essentials are listed above. For more information about all functionalities read the [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/v0.1.0/index.html).
+
+## See also
+
+- [Documentation](/docs/documentation)
