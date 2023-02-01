@@ -93,13 +93,13 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'documentation/documentation',
+            docId: 'documentation/README',
             position: 'left',
             label: 'Documentation',
           },
           {
             type: 'doc',
-            docId: 'support/support',
+            docId: 'support/README',
             position: 'left',
             label: 'Support',
           },

@@ -8,8 +8,8 @@ This Section provides a getting started documentation.
 
 ## In this section
 
-- [Installation](../downloads.md) provides download, install and uninstall documentation.
-- [Guides](guides/guides.md) provides xtd guides and tutorials.
+- [Installation](../downloads) provides download, install and uninstall documentation.
+- [Guides](documentation/Guides) provides xtd guides and tutorials.
 - [Examples](https://github.com/gammasoft71/xtd/blob/master/examples/README.md) provides over 500 examples to help you use xtd, grouped by libraries and topics.
 
 ## See also
