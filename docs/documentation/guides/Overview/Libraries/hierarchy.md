@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # xtd libraries hierarchy
 
-[![libraries_img](/pictures/hierarchy.png)](architecture.md)
+[![libraries_img](/pictures/hierarchy.png)](/docs/documentation/Guides/Overview/Libraries/architecture)
 
 xtd is composed of several libraries.
 
@@ -30,8 +30,8 @@ The [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group_
 
 ## See also
 
-* [xtd libraries architecture](architecture.md).
-* [Documentation](../../../documentation.md)
+* [xtd libraries architecture](/docs/documentation/Guides/Overview/Libraries/architecture)
+* [Documentation](/docs/documentation)
 
 ______________________________________________________________________________________________
 
