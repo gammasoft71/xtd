@@ -2,7 +2,7 @@
 
 First we create the very basic [xtd::forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__gui.html) program.
 
-```c++
+```cpp
 #include <xtd/xtd.forms>
 
 using namespace xtd::forms;
@@ -26,19 +26,19 @@ startup_(tutorial::simple);
 
 This very basic example shows a small window on the screen. The window is centered.
 
-```c++
+```cpp
 start_position(form_start_position::center_screen);
 ```
 
 This method centers the form on the screen, both horizontally and vertically.
 
-```c++
+```cpp
 startup_(tutorial::simple);
 ```
 
 The code behind startup_ macro can be replaced by :
 
-```c++
+```cpp
 auto main(int argc, char* argv[])->int {
   tutorial::simple::main();
   return xtd::environment::exit_code();
