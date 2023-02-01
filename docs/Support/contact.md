@@ -8,3 +8,7 @@ sidebar_position: 1
 
 To contact Gammasoft please send a mail to [gammasoft71@gmail.com](mailto:gammasoft71@gmail.com)
 
+
+## See also
+
+- [Support](/docs/Support)
