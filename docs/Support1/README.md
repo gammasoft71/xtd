@@ -9,7 +9,7 @@ First of all, thank you for your attention to xtd.​ This project is an open so
 
 * [Issues traker](https://github.com/gammasoft71/xtd/issues) provides the best way to get help on xtd.
 * [Discord](https://discordapp.com/users/gammasoft#9288) provides a discussion channel.
-* [Contact](contact.md) provides email address to contact us. 
+* [Contact](/docs/Support/contact) provides email address to contact us. 
 
 Your contributions are welcome.
 
