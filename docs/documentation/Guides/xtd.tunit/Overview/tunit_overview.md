@@ -81,7 +81,7 @@ Run "Terminal", go to the buid directory of the project (`unit_test_project2/bui
 
 ### Output
 
-[tunit_command_line](/pictures/unit_test_tools/tunit_command_line.png)
+![tunit_command_line](/pictures/unit_test_tools/tunit_command_line.png)
 
 ### Options
 
@@ -89,7 +89,7 @@ You can use the following command line flags to control its behavior. Type `unit
 
 ### Output
 
-[tunit_command_line](/pictures/unit_test_tools/tunit_command_line_help.png)
+![tunit_command_line](/pictures/unit_test_tools/tunit_command_line_help.png)
 
 ## Visual Studio Explorer
 
@@ -97,7 +97,7 @@ You can run your [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/
 
 For more information about using Test Explorer, see [Run unit tests with Test Explorer](https://learn.microsoft.com/en-us/visualstudio/test/run-unit-tests-with-test-explorer?view=vs-2022).
 
-[tunit_visual_studio_test_explorer](/pictures/unit_test_tools/tunit_visual_studio_test_explorer_w.png)
+![tunit_visual_studio_test_explorer](/pictures/unit_test_tools/tunit_visual_studio_test_explorer_w.png)
 
 ### Remarks
 
@@ -107,7 +107,7 @@ For more information about using Test Explorer, see [Run unit tests with Test Ex
 
 The tunit-gui tool (not ready yet, only a [c# prototype](https://github.com/gammasoft71/tunit_gui_win_forms) exists for the moment), can run [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html) project.
 
-[tunit_gui_forms](/pictures/unit_test_tools/tunit_gui_forms_w.png)
+![tunit_gui_forms](/pictures/unit_test_tools/tunit_gui_forms_w.png)
 
 ## Other unit tests GUI tools
 
@@ -115,7 +115,7 @@ The tunit-gui tool (not ready yet, only a [c# prototype](https://github.com/gamm
 
 For example the [gtest-runner](https://github.com/nholthaus/gtest-runner) tool can run your [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html) project.
 
-[tunit_gtest_runner](/pictures/unit_test_tools/tunit_gtest_runner_md.png)
+![tunit_gtest_runner](/pictures/unit_test_tools/tunit_gtest_runner_md.png)
 
 ## List of known IDE/tools compatible with xtd.tunit
 
@@ -131,7 +131,7 @@ For example the [gtest-runner](https://github.com/nholthaus/gtest-runner) tool c
 
 * Other third party IDE / tools could also run [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html) projects but have not been tested.
 * If you have a working IDE/tool, feel free to make a [pull request](https://github.com/gammasoft71/xtd) to update the list of compatible tools.
-* If you have an IDE/tool that doesn't seem to be working, don't hesitate to ask for [support](https://gammasoft71.wixsite.com/xtdpro/support).
+* If you have an IDE/tool that doesn't seem to be working, don't hesitate to ask for [support](/docs/Support).
 
 ## Next step
 
