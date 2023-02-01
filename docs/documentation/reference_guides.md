@@ -22,3 +22,7 @@ The latest development version of the manual is also available.
 ## Older versions
 
 * There are no older versions of xtd yet.
+
+## See also
+
+- [Documentation](/docs/documentation)

@@ -7,33 +7,33 @@ sidebar_position: 2
 
 The xtd guides provide an explanation on how to use the important features of the xtd Framework. 
 
-* [xtd documentation](xtd_documentation.md)
+* [xtd documentation](/docs/documentation/Guides/xtd_documentation)
 * Get started
-  * [Hello World](Get%20started/hello_world.md)
-  * [Get started tutorials](Overview/Tutorials/tutorials.md)
+  * [Hello World](/docs/documentation/Guides/Get%20started/hello_world)
+  * [Get started tutorials](/docs/documentation/Guides/Overview/Tutorials)
   * [Follow by looking at examples of xtd](https://github.com/gammasoft71/xtd/blob/master/examples/README.md)
   * How to install
-    * [Read download, install and uninstall](../../downloads.md)
-    * [How to check xtd version](Get%20started/How%20to%20install/check_version.md)
+    * [Read download, install and uninstall](/docs/downloads)
+    * [How to check xtd version](/docs/documentation/Guides/Get%20started/How%20to%20install/check_version)
 * Overview
-  * [Introduction to xtd](Overview/introduction_to_xtd.md)
-  * [About xtd](Overview/xtd_explanations.md)
+  * [Introduction to xtd](/docs/documentation/Guides/Overview/introduction_to_xtd)
+  * [About xtd](/docs/documentation/Guides/Overview/xtd_explanations)
   * Libraries
-    * [Architecture](Overview/Libraries/architecture.md)
-    * [Hierarchy](Overview/Libraries/hierarchy.md)
-  * [Releases, patches, and support](Overview/release_patches_and_support.md)
+    * [Architecture](/docs/documentation/Guides/Overview/Libraries/architecture)
+    * [Hierarchy](/docs/documentation/Guides/Overview/Libraries/hierarchy)
+  * [Releases, patches, and support](/docs/documentation/Guides/Overview/release_patches_and_support)
   * Tutorials
-    * [Writing console application](Overview/Tutorials/writing_applicaion_console.md)
-    * [Writing GUI application](Overview/Tutorials/writing_applicaion_gui.md)
-    * [Writing test application](Overview/Tutorials/writing_applicaion_test.md)
-    * [Some useful git commands](Overview/Tutorials/git.md)
-    * [More tutorials](Overview/Tutorials/tutorials.md)
-* [What's new in xtd](../../news.md)
+    * [Writing console application](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_console)
+    * [Writing GUI application](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_gui)
+    * [Writing test application](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_test)
+    * [Some useful git commands](/docs/documentation/Guides/Overview/Tutorials/git)
+    * [More tutorials](/docs/documentation/Guides/Overview/Tutorials)
+* [What's new in xtd](/docs/news)
 * Tools
-  * [Overview](Tools/tools.md)
+  * [Overview](/docs/documentation/Guides/Tools)
 * xtd.core
   * Entry point
-    * [main and startup_](main_and_startup.md)
+    * [main and startup_](/docs/documentation/Guides/xtd.core/Entry%20point/main_and_startup)
   * Types overview
     * [Preprocessor symbols](preprocessor_symbols.md)
     * [Native types, boxing and unboxing](types.md)
@@ -217,5 +217,5 @@ The xtd guides provide an explanation on how to use the important features of th
 
 ## See also
 
-* [Getting started](getting_started.md)
-* [Documentation](documentation.md)
+* [Getting started](/docs/documentation/getting_started)
+* [Documentation](/docs/documentation)
