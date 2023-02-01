@@ -406,5 +406,5 @@ Coming soon...
 
 ## See also
 
-* [tutorials](tutorials.md)
-* [Documentation](../../../documentation.md)
+* [tutorials](/docs/documentation/Guides/Overview/Tutorials)
+* [Documentation](/docs/documentation)
