@@ -193,5 +193,5 @@ target_type(GUI_APPLICATION)
 
 ## See also
 
-* [tutorials](tutorials.md)
-* [Documentation](../../../documentation.md)
+* [tutorials](/docs/documentation/Guides/Overview/Tutorials)
+* [Documentation](/docs/documentation)
