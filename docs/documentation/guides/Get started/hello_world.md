@@ -4,9 +4,9 @@ sidebar_position: 1
 
 # Hello World
 
-First, [download and install](/docs/downloads.md) the [xtd](/index.html) on your computer.
+First, [download and install](/docs/downloads) the [xtd](/) on your computer.
 
-Next, open a terminal, Command Prompt, or bash. Enter the following [xtdc](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc/README.md) commands to create and run an [xtd](/index.html) application:
+Next, open a terminal, Command Prompt, or bash. Enter the following [xtdc](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc/README.md) commands to create and run an [xtd](/) application:
 
 ```shell
 xtdc new console sample1
