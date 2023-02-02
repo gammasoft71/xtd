@@ -1,12 +1,28 @@
-# Website
+<h1 align="center">
+    <p align="center">
+        Xtd website
+    </p>
+</h1>
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-### Installation
+
+## Introduction
+
+This project is a documentation site for **[xtd](https://github.com/gammasoft71/xtd)**.
+
+Website : https://gammasoft71.github.io/xtd/
+
+## Installation
+
+### Requirements
+
+- [Node.js](https://nodejs.org/en/) >= 16.14
 
 ```
 $ yarn
 ```
+
+This commands install all needed packages.
 
 ### Local Development
 
@@ -24,18 +40,30 @@ $ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
+```
+$ yarn serve
+```
+
+This command starts a local server from `build` directory and opens up a browser window.
+
 ### Deployment
 
-Using SSH:
-
 ```
-$ USE_SSH=true yarn deploy
+$ yarn deploy
 ```
 
-Not using SSH:
+This command use `yarn build` and deploy the `build` directory into the `gh-pages` branch.
 
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
+> **Warning**
+>
+> An error may occur when the `gh-pages` **local** branch already exists. Delete it with :
+>
+> ```
+> $ git branch -D gh-pages
+> ```
+>
+> And then use the *deploy* command.
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## Special thanks
+
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
