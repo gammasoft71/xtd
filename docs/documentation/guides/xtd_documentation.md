@@ -17,22 +17,22 @@ sidebar_position: 1
 
 | Get started                                                                                               |
 | --------------------------------------------------------------------------------------------------------- |
-| [Hello World](hello_world.md)                                                                             |
-| [Get started tutorials](tutorials.md)                                                                     |
+| [Hello World](/docs/documentation/Guides/Get%20started/hello_world)                                       |
+| [Get started tutorials](/docs/documentation/Guides/Overview/Tutorials)                                    |
 | [Follow by looking at examples of xtd](https://github.com/gammasoft71/xtd/blob/master/examples/README.md) |
 
 | What's new?                                                |
 | ---------------------------------------------------------- |
 | [News on xtd](/docs/news) |
 
-| Basics                                   |
-| ---------------------------------------- |
-| [Types specifications](types.md)         |
-| [Enumerations management](enum_class.md) |
-| [String manipulations](ustring.md)       |
-| [Date and time usages](date_time.md)     |
-| [What is a delegate?](delegates.md)      |
-| [What is an event?](events.md)           |
+| Basics                                                                                     |
+| ------------------------------------------------------------------------------------------ |
+| [Types specifications](/docs/documentation/Guides/xtd.core/Types%20overview/types)         |
+| [Enumerations management](/docs/documentation/Guides/xtd.core/Types%20overview/enum_class) |
+| [String manipulations](/docs/documentation/Guides/xtd.core/Types%20overview/ustring)       |
+| [Date and time usages](/docs/documentation/Guides/xtd.core/Types%20overview/date_time)     |
+| [What is a delegate?](/docs/documentation/Guides/xtd.core/Types%20overview/delegates)      |
+| [What is an event?](/docs/documentation/Guides/xtd.core/Types%20overview/events)           |
 
 | Drawing something                                                   |
 | ------------------------------------------------------------------- |
@@ -55,11 +55,11 @@ sidebar_position: 1
 | [Resources](resources.md)                    |
 | [Settings](settings.md)                      |
 
-| Unit tests applications                                |
-| ------------------------------------------------------ |
-| [Overview](tunit_overview.md)                          |
-| [Running test](writing_applicaion_running_test.md)     |
-| [Extending test](writing_applicaion_extending_test.md) |
+| Unit tests applications                                                  |
+| ------------------------------------------------------------------------ |
+| [Overview](/docs/documentation/Guides/xtd.tunit/Overview/tunit_overview) |
+| [Running test](writing_applicaion_running_test.md)                       |
+| [Extending test](writing_applicaion_extending_test.md)                   |
 
 ## Next step
 
