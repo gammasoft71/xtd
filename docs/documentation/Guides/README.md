@@ -35,7 +35,7 @@ The xtd guides provide an explanation on how to use the important features of th
   * Entry point
     * [main and startup_](/docs/documentation/Guides/xtd.core/Entry%20point/main_and_startup)
   * Types overview
-    * [Preprocessor symbols](preprocessor_symbols.md)
+    * [Preprocessor symbols](/docs/documentation/Guides/xtd.core/Types%20overview/preprocessor_symbols)
     * [Native types, boxing and unboxing](types.md)
     * [enum, enum class and enum struct](enum_class.md)
     * [ustring](ustring.md)
@@ -194,12 +194,12 @@ The xtd guides provide an explanation on how to use the important features of th
       * [Add style sheets to a control](add_style_sheets_to_a_control.md)
 * xtd.tunit
   * Overview
-    * [Overview](tunit_overview.md)
+    * [Overview](/docs/documentation/Guides/xtd.cmake/Overview)
     * [Running test](writing_applicaion_running_test.md)
     * [Extending test](writing_applicaion_extending_test.md)
 * xtd.cmake
   * Overview
-    * [Overview](cmake_overview.md)
+    * [Overview](/docs/documentation/Guides/xtd.cmake/Overview)
     * [Files](cmake_files.md)      
   * Commands
     * [Generic](cmake_generic_commands.md)
