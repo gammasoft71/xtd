@@ -6,9 +6,9 @@ sidebar_position: 1
 
 ## Learn about xtd
 
-| Download                     |
-| ---------------------------- |
-| [Download xtd](downloads.md) |
+| Download                        |
+| ------------------------------- |
+| [Download xtd](/docs/downloads) |
 
 | Overview                                      |
 | --------------------------------------------- |
