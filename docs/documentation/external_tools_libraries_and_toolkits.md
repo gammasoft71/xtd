@@ -4,7 +4,7 @@ sidebar_position: 13
 
 # External tools libraries and toolkits
 
-# External tools used:
+## External tools used
 
 | Product                                                            | Copyright           | Description                                             | Release |
 | ------------------------------------------------------------------ | ------------------- | ------------------------------------------------------- | ------- |
@@ -13,14 +13,14 @@ sidebar_position: 13
 | [Doxygen](http://www.doxygen.org)                                  | Dimitri van Heesch  | Documentation generator                                 | 1.8.20  |
 | [Doxygen Awesome](https://jothepro.github.io/doxygen-awesome-css/) | jothepro            | Modern Doxygen theme                                    | 2.0.3   |
 
-# External libraries used:
+## External libraries used
 
 | Product                                                                         | Copyright       | Description                               | Release |
 | ------------------------------------------------------------------------------- | --------------- | ----------------------------------------- | ------- |
 | [StackWalker](https://www.codeproject.com/Articles/11132/Walking-the-callstack) | Jochen Kalmbach | Walking the callstack                     | v5      |
 | [StackTrace](http://stacktrace.sourceforge.net/)                                | Fredrik Orderud | Provides information about the call stack | 2009    |
 
-# External toolkits used:
+## External toolkits used
 
 At this time only wxWidgets toolkit is supported.
 
@@ -28,7 +28,7 @@ At this time only wxWidgets toolkit is supported.
 | ------------------------------------------------------------ | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- |
 | [wxWidgets](https://wxwidgets.org)                           | The wxWidgets team | wxWidgets is a C++ library that lets developers create applications for Windows, macOS, Linux and other platforms with a single code base. It has popular language bindings for Python, Perl, Ruby and many other languages, and unlike other cross-platform toolkits, wxWidgets gives applications a truly native look and feel because it uses the platform's native API rather than emulating the GUI. It's also extensive, free, open-source and mature. | 3.2.0   |
 
-# External toolkits will be used in the future:
+## External toolkits will be used in the future
 
 | Product                                                      | Copyright          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Release |
 | ------------------------------------------------------------ | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- |
