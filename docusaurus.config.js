@@ -145,7 +145,7 @@ const config = {
             html: '<a href="mailto:gammasoft71@gmail.com"><img src="https://gammasoft71.github.io/xtd/pictures/mail32.png"></a>',
           },
         ],
-        copyright: `© ${new Date().getFullYear()} Gammasoft. Built with Docusaurus.`,
+        copyright: `© ${new Date().getFullYear()} Gammasoft.`,
       },
       prism: {
         theme: lightCodeTheme,
