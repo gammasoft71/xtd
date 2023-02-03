@@ -1,10 +1,14 @@
 <h1 align="center">
     <p align="center">
-        Xtd website
+        xtd website
     </p>
 </h1>
 
+xtd (pronounced "extend") is a modern C++17/20 framework to create console, GUI (forms like WinForms) and unit test applications on Microsoft Windows, Apple macOS, Linux, iOS and android (*).
 
+[![logo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/logo.png)](https://gammasoft71.github.io/xtd)
+
+(*) See [portability](/docs/documentation/portability.md#the-xtd-libraries-portability-list) for more information.
 
 ## Introduction
 
