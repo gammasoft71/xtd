@@ -9,7 +9,7 @@ sidebar_position: 13
 | Product                                                            | Copyright           | Description                                             | Release |
 | ------------------------------------------------------------------ | ------------------- | ------------------------------------------------------- | ------- |
 | [cmake](https://www.cmake.org)                                     | Kitware             | Cross Platform Makefile Generator                       | 3.19    |
-| [Docusaurus 2](https://docusaurus.io/)                             | Meta Platforms, Inc | Build optimized websites quickly, focus on your content | 2.0     |
+| [Docusaurus](https://docusaurus.io/)                               | Meta Platforms, Inc | Build optimized websites quickly, focus on your content | 2.0     |
 | [Doxygen](http://www.doxygen.org)                                  | Dimitri van Heesch  | Documentation generator                                 | 1.8.20  |
 | [Doxygen Awesome](https://jothepro.github.io/doxygen-awesome-css/) | jothepro            | Modern Doxygen theme                                    | 2.0.3   |
 
