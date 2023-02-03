@@ -43,11 +43,7 @@ The following sections examine these methods for converting an object to its str
 
 # See also
 ​
-* [Guides](guides.md)
-* [Documentation](documentation.md)
-
-______________________________________________________________________________________________
-
-© 2023 Gammasoft.
+* [Guides](/docs/documentation/Guides)
+* [Documentation](/docs/documentation)
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/standard/base-types/formatting-types)
