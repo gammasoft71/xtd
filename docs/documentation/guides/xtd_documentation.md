@@ -23,7 +23,7 @@ sidebar_position: 1
 
 | What's new?                                                |
 | ---------------------------------------------------------- |
-| [News on xtd](../../news.md) |
+| [News on xtd](/docs/news) |
 
 | Basics                                   |
 | ---------------------------------------- |
@@ -63,11 +63,11 @@ sidebar_position: 1
 
 ## Next step
 
-* [Read xtd guides](guides.md)
+* [Read xtd guides](/docs/documentation/Guides)
 
 # See also
 ​
-* [Guides](guides.md)
-* [Documentation](../documentation.md)
+* [Guides](/docs/documentation/Guides)
+* [Documentation](/docs/documentation)
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/desktop/winforms/data/how-to-synchronize-multiple-controls?view=netdesktop-6.0)

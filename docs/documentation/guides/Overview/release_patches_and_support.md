@@ -18,5 +18,5 @@ Coming soon...
 
 # See also
 ​
-* [Guides](../guides.md)
-* [Documentation](../../documentation.md)
+* [Guides](/docs/documentation/Guides)
+* [Documentation](/docs/documentation)

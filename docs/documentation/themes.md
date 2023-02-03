@@ -6,10 +6,10 @@ sidebar_position: 11
 
 
 A control can have several style modes ([xtd::forms::flat_style](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms/include/xtd/forms/flat_style.h)):
-  * [xtd::forms::flat_style::system](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms/include/xtd/forms/flat_style.h) : The control is native and therefore cannot adapt to the theme defined in the application ([xtd::forms::application::theme](../src/xtd.forms/include/xtd/forms/application.h)).
-  * [xtd::forms::flat_style::standard](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms/include/xtd/forms/flat_style.h) : The control will adapt to the theme defined in the application ([xtd::forms::application::theme](../src/xtd.forms/include/xtd/forms/application.h)) with the standard style.
-  * [xtd::forms::flat_style::flat](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms/include/xtd/forms/flat_style.h) : The control will adapt to the theme defined in the application ([xtd::forms::application::theme](../src/xtd.forms/include/xtd/forms/application.h)) but with the flat style.
-  * [xtd::forms::flat_style::popup](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms/include/xtd/forms/flat_style.h) : The control will adapt to the theme defined in the application ([xtd::forms::application::theme](../src/xtd.forms/include/xtd/forms/application.h)) but with the popup style.
+  * [xtd::forms::flat_style::system](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms/include/xtd/forms/flat_style.h) : The control is native and therefore cannot adapt to the theme defined in the application ([xtd::forms::application::theme]https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms/include/xtd/forms/application.h)).
+  * [xtd::forms::flat_style::standard](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms/include/xtd/forms/flat_style.h) : The control will adapt to the theme defined in the application ([xtd::forms::application::theme](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms/include/xtd/forms/application.h)) with the standard style.
+  * [xtd::forms::flat_style::flat](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms/include/xtd/forms/flat_style.h) : The control will adapt to the theme defined in the application ([xtd::forms::application::theme](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms/include/xtd/forms/application.h)) but with the flat style.
+  * [xtd::forms::flat_style::popup](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms/include/xtd/forms/flat_style.h) : The control will adapt to the theme defined in the application ([xtd::forms::application::theme](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms/include/xtd/forms/application.h)) but with the popup style.
   
 ## Current Operating System / Desktop Environment
 

@@ -263,5 +263,5 @@ If you are not using CMake for your project creation, it is advisable to add thi
 
 # See also
 ​
-* [Guides](../..)
-* [Documentation](../../..)
+* [Guides](/docs/documentation/Guides)
+* [Documentation](/docs/documentation)
