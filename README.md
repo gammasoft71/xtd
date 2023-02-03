@@ -8,7 +8,7 @@ xtd (pronounced "extend") is a modern C++17/20 framework to create console, GUI 
 
 [![logo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/logo.png)](https://gammasoft71.github.io/xtd)
 
-(*) See [portability](/docs/documentation/portability.md#the-xtd-libraries-portability-list) for more information.
+(*) See [portability](https://gammasoft71.github.io/xtd/docs/documentation/portability#the-xtd-libraries-portability-list) for more information.
 
 ## Introduction
 
