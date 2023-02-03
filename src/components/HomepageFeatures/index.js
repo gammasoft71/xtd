@@ -4,6 +4,13 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
+    description: (
+      <>
+      (*) See <a href="docs/documentation/portability#the-xtd-libraries-portability-list">portability</a> for more information.                                                                        <br/> 
+      </>
+    ),
+  },
+  {
     title: 'Latest news',
     description: (
       <>
@@ -73,7 +80,7 @@ const FeatureList = [
 
 function Feature({title, description}) {
   return (
-    <div className={clsx('row row--4')}>
+    <div className={clsx('row')}>
       <div className="text--center">
       </div>
       <div className="text--left padding-horiz--md">
