@@ -50,7 +50,7 @@ void label_renderer::draw_link_label(const xtd::forms::style_sheets::style_sheet
   
   style_sheets::link_label current_style_sheet = style_sheet.link_label(pseudo_state_base), hot_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::hover), pressed_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::active);
   if (link_label_state == link_label_state::disabled) current_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::disabled);
-
+  
   if (back_color.has_value()) current_style_sheet.background_color(back_color.value());
   if (text_align.has_value()) current_style_sheet.text_alignment(text_align.value());
   if (fore_color.has_value() && link_label_state != link_label_state::disabled) current_style_sheet.color(fore_color.value());

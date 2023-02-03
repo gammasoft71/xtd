@@ -209,7 +209,7 @@ namespace xtd {
         /// @brief Gets the style sheet link_label collection of this instance.
         /// @return The style sheet link_label collection.
         const link_labels_t& link_labels() const noexcept;
-
+        
         /// @brief Gets the style sheet panel for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         /// @return A style_sheet panel for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
         xtd::forms::style_sheets::panel panel() const noexcept;
