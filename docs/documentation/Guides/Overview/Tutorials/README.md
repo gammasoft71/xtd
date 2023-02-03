@@ -9,7 +9,7 @@ The xtd tutorials provide an overview of the important features of the xtd Frame
 ## xtd.core
 
 * [Writing console application](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_console) describes the basic steps that you must complete to create and run a console application from the command line.
-* [Common I/O Tasks](common_io_tasks.md) provides several classes that allow for various actions, such as reading and writing, to be performed on files, directories, and streams
+* [Common I/O Tasks](/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks) provides several classes that allow for various actions, such as reading and writing, to be performed on files, directories, and streams
 * [Delegates](delegates.md) provides a tutorial to cover all needed to using xtd::delegate.
 * [Events](events.md) provides a tutorial to cover all needed to using xtd::event.
 

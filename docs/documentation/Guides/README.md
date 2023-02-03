@@ -85,14 +85,14 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Parse date and time strings](parse_date_and_time_strings.md)
     * [Parse other strings](parse_other_strings.md)
   * Common I/O tasks
-    * [Common I/O tasks​](common_io_tasks.md)
+    * [Common I/O tasks​](/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks)
     * How-tos
-      * [Copy Directories](common_io_tasks_copy_directories.md)
-      * [Enumerate Directories and Files](common_io_tasks_enumerate_directories_and_files.md)
-      * [Read and Write to a Newly Created Data File](common_io_tasks_read_and_write_to_a_newly_created_data_file.md)
-      * [Open and Append to a Log File](common_io_tasks_open_and_append_to_a_log_file.md)
-      * [Write Text to a File](common_io_tasks_write_text_to_a_file.md)
-      * [Read Text from a File](common_io_tasks_read_text_from_a_file.md)
+      * [Copy Directories](/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks/How-tos/copy_directories)
+      * [Enumerate Directories and Files](/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks/How-tos/enumerate_directories_and_files)
+      * [Read and Write to a Newly Created Data File](/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks/How-tos/read_and_write_to_a_newly_created_data_file)
+      * [Open and Append to a Log File](/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks/How-tos/open_and_append_to_a_log_file)
+      * [Write Text to a File](/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks/How-tos/write_text_to_a_file)
+      * [Read Text from a File](/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks/How-tos/read_text_from_a_file)
   * [console class](console_class.md)
   * Networking
     * [Network programming](network_programming.md)

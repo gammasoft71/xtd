@@ -16,7 +16,7 @@ sidebar_position: 6
 
 ## Features
 
-* Free and open-source ([MIT License](../../license));
+* Free and open-source ([MIT License](/docs/documentation/license));
 * a collection of native C++ classes libraries, to **extend** std;
 * API close to the .net API with a modern C++ approach and full integration with the std standard;
 * `xtd` is designed to manage GUI controls and dialogs in pure [native mode](https://github.com/gammasoft71/xtd/blob/master/docs/control_appearance.md) or with [CSS styles](https://github.com/gammasoft71/xtd/blob/master/docs/style_sheets_overview.md).
