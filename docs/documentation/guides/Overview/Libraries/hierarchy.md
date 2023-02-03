@@ -32,7 +32,3 @@ The [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group_
 
 * [xtd libraries architecture](/docs/documentation/Guides/Overview/Libraries/architecture)
 * [Documentation](/docs/documentation)
-
-______________________________________________________________________________________________
-
-© 2023 Gammasoft.
