@@ -5,6 +5,7 @@
 #include "../../../include/xtd/forms/style_sheets/link_label.h"
 #include "../../../include/xtd/forms/style_sheets/pseudo_state.h"
 #include "../../../include/xtd/forms/style_sheets/style_sheet.h"
+#include <xtd/unused.h>
 
 using namespace std;
 using namespace xtd;
@@ -49,6 +50,9 @@ void label_renderer::draw_link_label(const xtd::forms::style_sheets::style_sheet
   auto pseudo_state_base = pseudo_state::standard;
   
   style_sheets::link_label current_style_sheet = style_sheet.link_label(pseudo_state_base), hot_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::hover), pressed_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::active);
+  unused_(hot_style_sheet); /// @todo Remove when used...
+  unused_(pressed_style_sheet); /// @todo Remove when used...
+
   if (link_label_state == link_label_state::disabled) current_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::disabled);
   
   if (back_color.has_value()) current_style_sheet.background_color(back_color.value());
