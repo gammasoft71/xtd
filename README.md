@@ -1,8 +1,4 @@
-<h1 align="center">
-    <p align="center">
-        xtd website
-    </p>
-</h1>
+# xtd website sources
 
 xtd (pronounced "extend") is a modern C++17/20 framework to create console, GUI (forms like WinForms) and unit test applications on Microsoft Windows, Apple macOS, Linux, iOS and android (*).
 
