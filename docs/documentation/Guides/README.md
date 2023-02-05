@@ -46,14 +46,14 @@ The xtd guides provide an explanation on how to use the important features of th
       * [Overview](/docs/documentation/Guides/xtd.core/Types%20overview/Type%20conversion/overview)
       * [Type conversion tables](/docs/documentation/Guides/xtd.core/Types%20overview/Type%20conversion/type_conversion_tables)
   * Collections
-    * [Overview](collections.md)
-  * [Interfaces](interfaces.md)
+    * [Overview](/docs/documentation/Guides/xtd.core/Collections/overview)
+  * [Interfaces](/docs/documentation/Guides/xtd.core/interfaces)
   * [Literal operators](/docs/documentation/Guides/xtd.core/literal_operators)
-  * [Delegates and lambdas](delegates_and_lambdas.md)
+  * [Delegates and lambdas](/docs/documentation/Guides/xtd.core/delegates_and_lambdas)
   * Event
-    * [Overview](handle_and_raise_events.md)
-    * [Raise and consume events](raise_and_consume_events.md)
-    * [Observer Design Pattern](observer_design_pattern.md)
+    * [Overview](/docs/documentation/Guides/xtd.core/Events/handle_and_raise_events)
+    * [Raise and consume events](/docs/documentation/Guides/xtd.core/Events/raise_and_consume_events)
+    * [Observer Design Pattern](/docs/documentation/Guides/xtd.core/Events/observer_design_pattern)
   * Exceptions
     * [Overview](exceptions.md)
     * [system_exception class and properties](system_exception_class_and_properties.md)
