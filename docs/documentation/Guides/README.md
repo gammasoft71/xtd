@@ -51,18 +51,18 @@ The xtd guides provide an explanation on how to use the important features of th
   * [Literal operators](/docs/documentation/Guides/xtd.core/literal_operators)
   * [Delegates and lambdas](/docs/documentation/Guides/xtd.core/delegates_and_lambdas)
   * Event
-    * [Overview](/docs/documentation/Guides/xtd.core/Events/handle_and_raise_events)
+    * [Overview](/docs/documentation/Guides/xtd.core/Events/overview)
     * [Raise and consume events](/docs/documentation/Guides/xtd.core/Events/raise_and_consume_events)
     * [Observer Design Pattern](/docs/documentation/Guides/xtd.core/Events/observer_design_pattern)
   * Exceptions
-    * [Overview](exceptions.md)
-    * [system_exception class and properties](system_exception_class_and_properties.md)
+    * [Overview](/docs/documentation/Guides/xtd.core/Exceptions/overview)
+    * [system_exception class and properties](/docs/documentation/Guides/xtd.core/Exceptions/system_exception_class_and_propertiesw)
     * How-tos
-      * [Use the try-catch block to catch exceptions](exceptions_try_catch.md)
-      * [Use specific exceptions in a catch block](exceptions_use_specific_exceptions.md)
-      * [Explicitly throw exceptions](explicitly_throw_exception.md)
-      * [Create user-defined exceptions](create_user_dined_exceptions.md)
-    * [Best practices](exceptions_best_practices.md)
+      * [Use the try-catch block to catch exceptions](/docs/documentation/Guides/xtd.core/Exceptions/How-tos/exceptions_try_catch)
+      * [Use specific exceptions in a catch block](/docs/documentation/Guides/xtd.core/Exceptions/How-tos/exceptions_use_specific_exceptions)
+      * [Explicitly throw exceptions](/docs/documentation/Guides/xtd.core/Exceptions/How-tos/explicitly_throw_exception)
+      * [Create user-defined exceptions](/docs/documentation/Guides/xtd.core/Exceptions/How-tos/create_user_defined_exceptions)
+    * [Best practices](/docs/documentation/Guides/xtd.core/Exceptions/exceptions_best_practices)
   * Format number, dates other types
     * [Overview](/docs/documentation/Guides/xtd.core/Format%20number%20dates%20other%20types/overview)
     * [Standard numeric format strings](format_standard_numeric_format_strings.md)
