@@ -93,18 +93,18 @@ The xtd guides provide an explanation on how to use the important features of th
       * [Open and Append to a Log File](/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks/How-tos/open_and_append_to_a_log_file)
       * [Write Text to a File](/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks/How-tos/write_text_to_a_file)
       * [Read Text from a File](/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks/How-tos/read_text_from_a_file)
-  * [console class](console_class.md)
+  * [console class](/docs/documentation/Guides/xtd.core/console_class)
   * Networking
     * [Network programming](/docs/documentation/Guides/xtd.core/Networking/network_programming)
     * [Network availability](/docs/documentation/Guides/xtd.core/Networking/network_pavailability)
     * [IPv6 overview](/docs/documentation/Guides/xtd.core/Networking/ipv6_overview)
     * Sockets
-      * [Sockets support](/docs/documentation/Guides/xtd.core/Networking/Sockets/sockets_support.md)
+      * [Sockets support](/docs/documentation/Guides/xtd.core/Networking/Sockets/sockets_support)
       * [Use sockets to send and receive data over TCP](/docs/documentation/Guides/xtd.core/Networking/Sockets/sockets_tcp)
       * [Use tcp_client_and_tcp_listener](/docs/documentation/Guides/xtd.core/Networking/Sockets/tcp_client_and_tcp_listener)
-  * [Internationalization](internationalization.md)
-  * [Resources](resources.md)
-  * [Settings](settings.md)
+  * [Internationalization](/docs/documentation/Guides/xtd.core/internationalization)
+  * [Resources](/docs/documentation/Guides/xtd.core/resources)
+  * [Settings](/docs/documentation/Guides/xtd.core/settings)
 * xtd.drawing
   * [Overview](drawing.md)
   * [Points, sizes and rectangles](points_sizes_and_rectangles.md)
