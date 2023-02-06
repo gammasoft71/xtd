@@ -2,8 +2,7 @@ name: Deploy to github pages
 
 on:
   push:
-    branches:
-      - docs
+    branches: [ docs ]
 
 jobs:
   gh-pages-deploy:
