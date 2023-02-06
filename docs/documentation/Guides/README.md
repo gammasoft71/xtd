@@ -80,10 +80,10 @@ The xtd guides provide an explanation on how to use the important features of th
       * [Round-trip date and time values](/docs/documentation/Guides/xtd.core/Format%20number%20dates%20other%20types/How-tos/round_trip_date_and_time_values)
       * [Display milliseconds in date and time values](/docs/documentation/Guides/xtd.core/Format%20number%20dates%20other%20types/How-tos/display_milliseconds_in_date_and_time_values)
   * Parse (convert) strings
-    * [Overview](parse_overview.md)
-    * [Parse numeric strings](parse_numeric_strings.md)
-    * [Parse date and time strings](parse_date_and_time_strings.md)
-    * [Parse other strings](parse_other_strings.md)
+    * [Overview](/docs/documentation/Guides/xtd.core/Parse/overview)
+    * [Parse numeric strings](/docs/documentation/Guides/xtd.core/Parse/numeric_strings)
+    * [Parse date and time strings](/docs/documentation/Guides/xtd.core/Parse/date_and_time_strings)
+    * [Parse other strings](/docs/documentation/Guides/xtd.core/Parse/other_strings)
   * Common I/O tasks
     * [Common I/O tasks​](/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks)
     * How-tos
