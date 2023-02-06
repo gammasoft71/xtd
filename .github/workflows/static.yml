@@ -1,8 +1,8 @@
- name: Deploy to github pages
-  on:
-    push:
-      branches:
-        - docs
+name: Deploy to github pages
+on:
+  push:
+    branches:
+      - docs
   jobs:
     gh-pages-deploy:
       name: Deploying to gh-pages
