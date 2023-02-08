@@ -10,10 +10,10 @@ sidebar_position: 1
 | ------------------------------- |
 | [Download xtd](/docs/downloads) |
 
-| Overview                                      |
-| --------------------------------------------- |
-| [What is xtd?](what_is_xtd.md)                |
-| [Introduction to xtd](introduction_to_xtd.md) |
+| Overview                                                                       |
+| ------------------------------------------------------------------------------ |
+| [What is xtd?](/docs/documentation/Guides/Overview/what_is_xtd)                |
+| [Introduction to xtd](/docs/documentation/Guides/Overview/introduction_to_xtd) |
 
 | Get started                                                                                               |
 | --------------------------------------------------------------------------------------------------------- |
@@ -36,30 +36,30 @@ sidebar_position: 1
 
 | Drawing something                                                   |
 | ------------------------------------------------------------------- |
-| [Basic types like point, size, ...](points_sizes_and_rectangles.md) |
-| [Need colors ?](colors.md)                                          |
-| [Painting with brushes](brushes.md)                                 |
-| [Drawing with pens](pens.md)                                        |
-| [What is fonts?](fonts.md)                                          |
-| [Images, bitmaps and icons](images.md)                              |
+| [Basic types like point, size, ...](/docs/documentation/Guides/xtd.drawing/points_sizes_and_rectangles) |
+| [Need colors ?](/docs/documentation/Guides/xtd.drawing/colors)                                          |
+| [Painting with brushes](/docs/documentation/Guides/xtd.drawing/brushes)                                 |
+| [Drawing with pens](/docs/documentation/Guides/xtd.drawing/pens)                                        |
+| [What is fonts?](/docs/documentation/Guides/xtd.drawing/fonts)                                          |
+| [Images, bitmaps and icons](/docs/documentation/Guides/xtd.drawing/images)                              |
 
 | Desktop applications                         |
 | -------------------------------------------- |
-| [Application](application_overview.md)       |
-| [Dialogs](dialogs.md)                        |
-| [Forms](forms.md)                            |
-| [Menus and toolbars](menus_and_toolbars.md)  |
-| [Containers](containers.md)                  |
-| [Controls](controls.md)                      |
-| [Components](components.md)                  |
-| [Resources](resources.md)                    |
-| [Settings](settings.md)                      |
+| [Application](/docs/documentation/Guides/xtd.forms/Overview/application_overview)       |
+| [Dialogs](/docs/documentation/Guides/xtd.forms/Overview/dialogs)                        |
+| [Forms](/docs/documentation/Guides/xtd.forms/Overview/forms)                            |
+| [Menus and toolbars](/docs/documentation/Guides/xtd.forms/Overview/menus_and_toolbars)  |
+| [Containers](/docs/documentation/Guides/xtd.forms/Overview/containers)                  |
+| [Controls](/docs/documentation/Guides/xtd.forms/Overview/controls)                      |
+| [Components](/docs/documentation/Guides/xtd.forms/Overview/components)                  |
+| [Resources](/docs/documentation/Guides/xtd.core/resources)                              |
+| [Settings](/docs/documentation/Guides/xtd.core/settings)                                |
 
-| Unit tests applications                                                  |
-| ------------------------------------------------------------------------ |
-| [Overview](/docs/documentation/Guides/xtd.tunit/Overview/tunit_overview) |
-| [Running test](writing_applicaion_running_test.md)                       |
-| [Extending test](writing_applicaion_extending_test.md)                   |
+| Unit tests applications                                                                           |
+| ------------------------------------------------------------------------------------------------- |
+| [Overview](/docs/documentation/Guides/xtd.tunit/Overview/tunit_overview)                          |
+| [Running test](/docs/documentation/Guides/xtd.tunit/Overview/writing_applicaion_running_test)     |
+| [Extending test](/docs/documentation/Guides/xtd.tunit/Overview/writing_applicaion_extending_test) |
 
 ## Next step
 
