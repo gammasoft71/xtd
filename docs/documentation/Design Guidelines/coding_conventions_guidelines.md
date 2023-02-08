@@ -277,7 +277,7 @@ math() = delete;
 
 **❌ DO NOT** Use global variables. All variables are in class. If necessary a global or static variable can create in a source files (.cpp) but it can't visible in the header file (.h).
 
-**✔️ DO** Uses [factory_method](factory_method.md), [builder](builder.md) or [singleton](singleton.md) patterns to create unique object.
+**✔️ DO** Uses [factory_method](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/factory_method), [builder](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/builder) or [singleton](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/singleton) patterns to create unique object.
 
 ## Comments
 

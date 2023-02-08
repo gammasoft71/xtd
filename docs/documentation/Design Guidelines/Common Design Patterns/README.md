@@ -14,35 +14,35 @@ You can see the original source : [C# Design Patterns](https://www.dofactory.com
 
 # Creational Patterns
 
-* [Abstract Factory](abstract_factory.md) Creates an instance of several families of classes
-* [Builder](builder.md) Separates object construction from its representation
-* [Factory Method](factory_method.md) Creates an instance of several derived classes
-* [Prototype](prototype.md) A fully initialized instance to be copied or cloned
-* [Singleton](singleton.md) A class of which only a single instance can exist
+* [Abstract Factory](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/abstract_factory) Creates an instance of several families of classes
+* [Builder](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/builder) Separates object construction from its representation
+* [Factory Method](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/factory_method) Creates an instance of several derived classes
+* [Prototype](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/prototype) A fully initialized instance to be copied or cloned
+* [Singleton](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/singleton) A class of which only a single instance can exist
 
 # Structural Patterns
 
-* [Adapter](adapter.md) Match interfaces of different classes
-* [Bridge](bridge.md) Separates an object’s interface from its implementation
-* [Composite](composite.md) A tree structure of simple and composite objects
-* [Decorator](decorator.md) Add responsibilities to objects dynamically
-* [Facade](facade.md) A single class that represents an entire subsystem
-* [Flyweight](flyweight.md) A fine-grained instance used for efficient sharing
-* [Proxy](proxy.md) An object representing another object
+* [Adapter](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/adapter) Match interfaces of different classes
+* [Bridge](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/bridge) Separates an object’s interface from its implementation
+* [Composite](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/composite) A tree structure of simple and composite objects
+* [Decorator](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/decorator) Add responsibilities to objects dynamically
+* [Facade](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/facade) A single class that represents an entire subsystem
+* [Flyweight](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/flyweight) A fine-grained instance used for efficient sharing
+* [Proxy](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/proxy) An object representing another object
 
 # Behavioral Patterns
 
-* [Chain of Responsibility](chain_of_responsibility.md) A way of passing a request between a chain of objects
-* [Command](command.md) Encapsulate a command request as an object
-* [Interpreter](interpreter.md) A way to include language elements in a program
-* [Iterator](iterator.md) Sequentially access the elements of a collection
-* [Mediator](mediator.md) Defines simplified communication between classes
-* [Memento](memento.md) Capture and restore an object's internal state
-* [Observer](observer.md) A way of notifying change to a number of classes
-* [State](state.md) Alter an object's behavior when its state changes
-* [Strategy](strategy.md) Encapsulates an algorithm inside a class
-* [Template Method](template_method.md) Defer the exact steps of an algorithm to a subclass
-* [Visitor](visitor.md) Defines a new operation to a class without change
+* [Chain of Responsibility](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/chain_of_responsibility) A way of passing a request between a chain of objects
+* [Command](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/command) Encapsulate a command request as an object
+* [Interpreter](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/interpreter) A way to include language elements in a program
+* [Iterator](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/iterator) Sequentially access the elements of a collection
+* [Mediator](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/mediator) Defines simplified communication between classes
+* [Memento](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/memento) Capture and restore an object's internal state
+* [Observer](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/observer) A way of notifying change to a number of classes
+* [State](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/state) Alter an object's behavior when its state changes
+* [Strategy](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/strategy) Encapsulates an algorithm inside a class
+* [Template Method](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/template_method) Defer the exact steps of an algorithm to a subclass
+* [Visitor](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns/visitor) Defines a new operation to a class without change
 
 # See also
 
