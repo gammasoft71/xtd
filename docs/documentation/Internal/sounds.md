@@ -7,7 +7,7 @@ sidebar_position: 9
 ## System Sounds
 
 | alert       | Windows            | macOS    | linux              |
-|-------------|--------------------|----------|--------------------|
+| ----------- | ------------------ | -------- | ------------------ |
 | beep        | MB_BEEP            | (NSBeep) | bell               |
 | hand        | MB_ICONHAND        | Funk     | dialog-error       |
 | question    | MB_ICONQUESTION    | Purr     | dialog-question    |

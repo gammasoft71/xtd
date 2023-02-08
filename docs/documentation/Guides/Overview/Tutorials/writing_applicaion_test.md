@@ -70,7 +70,7 @@ auto main()->int {
 xtd.tunit uses custom helpers to identify test fixtures and test methods. It's the easy way to create tests.
 
 | helpers                                                   | Usage                                                                                                                                    |
-|-----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | [test_class_(class_name)](test_class.md)                  | Is used to define the class (test fixture) with class_name name.                                                                         |
 | [class_initialize_(initialize_name)](class_initialize.md) | Is used to define class initialize method with initialize_name name.                                                                     |
 | [class_cleanup_(cleanup_name)](class_cleanup.md)          | Is used to define class cleanup method with cleanup_name name.                                                                           |

@@ -15,7 +15,7 @@
 The following table represents the different preprocessor symbols for the operating systems supported by xtd:
 
 | Symbols          | OS                                                                      |
-|------------------|-------------------------------------------------------------------------|
+| ---------------- | ----------------------------------------------------------------------- |
 | `__ANDROID__`    | [Android](https://en.wikipedia.org/wiki/Android_%28operating_system%29) |
 | `__APPLE__`      | [macOS](https://en.wikipedia.org/wiki/Mac_OS)                           |
 | `__linux__`      | [Linux](https://en.wikipedia.org/wiki/Linux_kernel)                     |
@@ -115,7 +115,7 @@ But it can be useful for your own developments.
 The following table represents the different preprocessor symbols for the architectures supported by xtd:
 
 | Symbols       | Architectures                                                  |
-|---------------|----------------------------------------------------------------|
+| ------------- | -------------------------------------------------------------- |
 | `__amd64__`   | [AMD64](https://en.wikipedia.org/wiki/Amd64)                   |
 | `__arm__`     | [ARM](https://en.wikipedia.org/wiki/ARM_architecture)          |
 | `__aarch64__` | [ARM64](https://en.wikipedia.org/wiki/ARM64)                   |
@@ -171,7 +171,7 @@ But it can be useful for your own developments.
 The following table represents the different preprocessor symbols for the compilers supported by xtd:
 
 | Symbols     | Compiler                                                            |
-|-------------|---------------------------------------------------------------------|
+| ----------- | ------------------------------------------------------------------- |
 | `__clang__` | [Clang](https://en.wikipedia.org/wiki/Clang)                        |
 | `__GNUC__`  | [GCC C/C++](https://en.wikipedia.org/wiki/GNU_Compiler_Collection)  |
 | `_MSC_VER`  | [Microsoft Visual C++](https://en.wikipedia.org/wiki/Visual_studio) |
@@ -221,7 +221,7 @@ But it can be useful for your own developments.
 The following table represents the different preprocessor symbols for the C++ standard supported by xtd:
 
 | Symbols                | Standard                                                          |
-|------------------------|-------------------------------------------------------------------|
+| ---------------------- | ----------------------------------------------------------------- |
 | `__cplusplus = 199711L`| [C++98](https://www.open-std.org/jtc1/sc22/wg21/) (not supported) |
 | `__cplusplus = 201103L`| [C++11](https://en.wikipedia.org/wiki/C%2B%2B11) (not supported)  |
 | `__cplusplus = 201402L`| [C++14](https://en.wikipedia.org/wiki/C%2B%2B14) (not supported)  |
@@ -281,7 +281,7 @@ But it can be useful for your own developments.
 The following table represents the different preprocessor symbols for the build type by xtd:
 
 | Symbols  | Build type                |
-|----------|---------------------------|
+| -------- | ------------------------- |
 | `NDBUG`  | The build type is release |
 
 `NDEBUG` is the only definition in the C++ standard for whether the build type is debug or release.
@@ -325,7 +325,7 @@ But it can be useful for your own developments.
 The following table represents the different preprocessor symbols for the xtd targets:
 
 | Symbols                                 | Target                            | Value   |
-|-----------------------------------------|-----------------------------------|---------|
+| --------------------------------------- | --------------------------------- | ------- |
 | `__XTD_CURRENT_TARGET_ID__`             | The current target id             | [0...8] |
 | `__XTD_TARGET_ID_UNKNOWN__`             | The target is unknown             | 0       |
 | `__XTD_TARGET_ID_CONSOLE_APPLICATION__` | The target is console application | 1       |
@@ -396,7 +396,7 @@ It is better to use [xtd::environment::target_type](https://codedocs.xyz/gammaso
 The following table represents the different preprocessor symbols for the xtd paths:
 
 | Symbols                          | Path                               | Value                                            |
-|----------------------------------|------------------------------------|--------------------------------------------------|
+| -------------------------------- | ---------------------------------- | ------------------------------------------------ |
 | `__XTD_INSTALL_PATH__`           | The installation folder of xtd     | ${XTD_INSTALL_PATH}/include"                     |
 | `__XTD_LOCALE_PATH__`            | The xtd locale folder              | ${XTD_INSTALL_PATH}/include"                     |
 | `__XTD_REFERENCE_GUIDE_PATH__`   | The xtd reference guide folder     | ${XTD_INSTALL_PATH}/include"                     |

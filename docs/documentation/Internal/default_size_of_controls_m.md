@@ -5,7 +5,7 @@ sidebar_position: 4
 # Default size of controls on Macintosh (**Internal use only**)
 
 | Control                     | width  | height |
-|-----------------------------|--------|--------|
+| --------------------------- | ------ | ------ |
 | animation(*)                |    200 |    100 |
 | button                      |     84 |     21 |
 | check_box                   |     18 |     18 |

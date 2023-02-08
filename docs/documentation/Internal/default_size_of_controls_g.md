@@ -5,7 +5,7 @@ sidebar_position: 3
 # Default size of controls on Unix (**Internal use only**)
 
 | Control                     | width  | height |
-|-----------------------------|--------|--------|
+| --------------------------- | ------ | ------ |
 | animation(*)                |    200 |    100 |
 | button                      |     85 |     34 |
 | check_box                   |     16 |     20 |

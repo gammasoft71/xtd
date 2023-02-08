@@ -28,8 +28,8 @@ note left of concrete_creator::factory_method
   return new concrete_product
 end note
 
-product <|-- concrete_product
+product <| - concrete_product
 concrete_creator ..> concrete_product
-concrete_creator --|> creator
+concrete_creator - |> creator
 
 @enduml

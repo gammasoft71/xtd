@@ -38,10 +38,10 @@ note left of concrete_decorator_b::operation
   added_behavior();
 end note
 
-component <|-- concrete_component
-component <|-- decorator
-decorator <|-- concrete_decorator_a
-decorator <|-- concrete_decorator_b
+component <| - concrete_component
+component <| - decorator
+decorator <| - concrete_decorator_a
+decorator <| - concrete_decorator_b
 component <--o decorator : component
 
 @enduml

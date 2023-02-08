@@ -7,33 +7,33 @@ skinparam classArrowColor #60A5FF
 skinparam noteBackgroundColor white
 skinparam noteBorderColor #60A5FF
 
-xtd::forms::v_scroll_bar <|-- xtd::forms::scroll_bar
-xtd::forms::h_scroll_bar <|-- xtd::forms::scroll_bar
-xtd::forms::scroll_bar <|-- xtd::forms::control
-xtd::forms::progress_bar <|-- xtd::forms::control
-xtd::forms::picture_box <|-- xtd::forms::control
-xtd::forms::loading_indicator <|-- xtd::forms::control
-xtd::forms::list_view <|-- xtd::forms::control
-xtd::forms::list_control <|-- xtd::forms::control
-xtd::forms::lcd_label <|-- xtd::forms::control
-xtd::forms::link_label <|-- xtd::forms::label
-xtd::forms::label <|-- xtd::forms::control
-xtd::forms::group_box <|-- xtd::forms::control
-xtd::forms::font_picker <|-- xtd::forms::control
-xtd::forms::dot_matrix_display <|-- xtd::forms::control
-xtd::forms::date_time <|-- xtd::forms::control
-xtd::forms::color_picker <|-- xtd::forms::control
-xtd::forms::collapsible_panel <|-- xtd::forms::control
-xtd::forms::up_down_button <|-- xtd::forms::button_base
-xtd::forms::toggle_button <|-- xtd::forms::button_base
-xtd::forms::switch_button <|-- xtd::forms::button_base
-xtd::forms::radio_button <|-- xtd::forms::button_base
-xtd::forms::light_button <|-- xtd::forms::button_base
-xtd::forms::command_link_button <|-- xtd::forms::button_base
-xtd::forms::check_box <|-- xtd::forms::button_base
-xtd::forms::button <|-- xtd::forms::button_base
-xtd::forms::button_base <|-- xtd::forms::control
-xtd::forms::control <|-- xtd::forms::component
-xtd::forms::component <|-- xtd::object
+xtd::forms::v_scroll_bar <| - xtd::forms::scroll_bar
+xtd::forms::h_scroll_bar <| - xtd::forms::scroll_bar
+xtd::forms::scroll_bar <| - xtd::forms::control
+xtd::forms::progress_bar <| - xtd::forms::control
+xtd::forms::picture_box <| - xtd::forms::control
+xtd::forms::loading_indicator <| - xtd::forms::control
+xtd::forms::list_view <| - xtd::forms::control
+xtd::forms::list_control <| - xtd::forms::control
+xtd::forms::lcd_label <| - xtd::forms::control
+xtd::forms::link_label <| - xtd::forms::label
+xtd::forms::label <| - xtd::forms::control
+xtd::forms::group_box <| - xtd::forms::control
+xtd::forms::font_picker <| - xtd::forms::control
+xtd::forms::dot_matrix_display <| - xtd::forms::control
+xtd::forms::date_time <| - xtd::forms::control
+xtd::forms::color_picker <| - xtd::forms::control
+xtd::forms::collapsible_panel <| - xtd::forms::control
+xtd::forms::up_down_button <| - xtd::forms::button_base
+xtd::forms::toggle_button <| - xtd::forms::button_base
+xtd::forms::switch_button <| - xtd::forms::button_base
+xtd::forms::radio_button <| - xtd::forms::button_base
+xtd::forms::light_button <| - xtd::forms::button_base
+xtd::forms::command_link_button <| - xtd::forms::button_base
+xtd::forms::check_box <| - xtd::forms::button_base
+xtd::forms::button <| - xtd::forms::button_base
+xtd::forms::button_base <| - xtd::forms::control
+xtd::forms::control <| - xtd::forms::component
+xtd::forms::component <| - xtd::object
 
 @enduml

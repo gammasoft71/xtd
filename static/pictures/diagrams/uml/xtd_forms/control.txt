@@ -7,7 +7,7 @@ skinparam classArrowColor #60A5FF
 skinparam noteBackgroundColor white
 skinparam noteBorderColor #60A5FF
 
-xtd::forms::control <|-- xtd::forms::component
-xtd::forms::component <|-- xtd::object
+xtd::forms::control <| - xtd::forms::component
+xtd::forms::component <| - xtd::object
 
 @enduml

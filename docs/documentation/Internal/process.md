@@ -7,7 +7,7 @@ sidebar_position: 7
 ## verbs
 
 | Verb      | Windows    | macOS       | linux      | Remarks                                          |
-|-----------|------------|-------------|------------|--------------------------------------------------|
+| --------- | ---------- | ----------- | ---------- | ------------------------------------------------ |
 | ""        | "open"     | "open"      | "xdg-open" |                                                  |
 | "edit"    | "edit"     | "TextEdit"  | "gedit"    |                                                  | 
 | "explore" | "explore"  | "open"      | "xdg-open" | for macOS and linux check arguments is directory |

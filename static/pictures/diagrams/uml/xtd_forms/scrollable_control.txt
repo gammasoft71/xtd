@@ -26,8 +26,8 @@ class xtd::forms::control {
 class xtd::forms::scrollable_control {
 }
 
-xtd::forms::scrollable_control <|-- xtd::forms::control
-xtd::forms::control <|-- xtd::forms::component
-xtd::forms::component <|-- xtd::object
+xtd::forms::scrollable_control <| - xtd::forms::control
+xtd::forms::control <| - xtd::forms::component
+xtd::forms::component <| - xtd::object
 
 @enduml

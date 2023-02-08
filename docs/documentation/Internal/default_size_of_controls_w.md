@@ -5,7 +5,7 @@ sidebar_position: 5
 # Default size of controls on Windows (**Internal use only**)
 
 | Control                     | width  | height |
-|-----------------------------|--------|--------|
+| --------------------------- | ------ | ------ |
 | animation(*)                |    200 |    100 |
 | button                      |     75 |     23 |
 | check_box                   |     15 |     15 |

@@ -37,14 +37,14 @@ class concrete_factory2 {
 }
 
 client --> abstract_product_a
-abstract_product_a <|-- product_a1
-abstract_product_a <|-- product_a2
+abstract_product_a <| - product_a1
+abstract_product_a <| - product_a2
 client --> abstract_product_b
-abstract_product_b <|-- product_b1
-abstract_product_b <|-- product_b2
+abstract_product_b <| - product_b1
+abstract_product_b <| - product_b2
 client --> abstract_factory
-abstract_factory <|-- concrete_factory1
-abstract_factory <|-- concrete_factory2
+abstract_factory <| - concrete_factory1
+abstract_factory <| - concrete_factory2
 concrete_factory1 ..> product_a1
 concrete_factory1 ..> product_b1
 concrete_factory2 ..> product_a2
