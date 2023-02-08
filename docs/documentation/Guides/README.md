@@ -56,7 +56,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Observer Design Pattern](/docs/documentation/Guides/xtd.core/Events/observer_design_pattern)
   * Exceptions
     * [Overview](/docs/documentation/Guides/xtd.core/Exceptions/overview)
-    * [system_exception class and properties](/docs/documentation/Guides/xtd.core/Exceptions/system_exception_class_and_propertiesw)
+    * [system_exception class and properties](/docs/documentation/Guides/xtd.core/Exceptions/system_exception_class_and_properties)
     * How-tos
       * [Use the try-catch block to catch exceptions](/docs/documentation/Guides/xtd.core/Exceptions/How-tos/exceptions_try_catch)
       * [Use specific exceptions in a catch block](/docs/documentation/Guides/xtd.core/Exceptions/How-tos/exceptions_use_specific_exceptions)
@@ -96,7 +96,7 @@ The xtd guides provide an explanation on how to use the important features of th
   * [console class](/docs/documentation/Guides/xtd.core/console_class)
   * Networking
     * [Network programming](/docs/documentation/Guides/xtd.core/Networking/network_programming)
-    * [Network availability](/docs/documentation/Guides/xtd.core/Networking/network_pavailability)
+    * [Network availability](/docs/documentation/Guides/xtd.core/Networking/network_availability)
     * [IPv6 overview](/docs/documentation/Guides/xtd.core/Networking/ipv6_overview)
     * Sockets
       * [Sockets support](/docs/documentation/Guides/xtd.core/Networking/Sockets/sockets_support)
@@ -195,7 +195,7 @@ The xtd guides provide an explanation on how to use the important features of th
       * [Add style sheets to a control](/docs/documentation/Guides/xtd.forms/Style%20sheets/Common%20tasks/add_style_sheets_to_a_control)
 * xtd.tunit
   * Overview
-    * [Overview](/docs/documentation/Guides/xtd.tunit/Overview)
+    * [Overview](/docs/documentation/Guides/xtd.tunit/Overview/tunit_overview)
     * [Running test](/docs/documentation/Guides/xtd.tunit/Overview/writing_applicaion_running_test)
     * [Extending test](/docs/documentation/Guides/xtd.tunit/Overview/writing_applicaion_extending_test)
 * xtd.cmake

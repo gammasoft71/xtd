@@ -71,6 +71,6 @@ Now you are ready to make your first contribution to xtd.
 
 * [xtd - kanban board](https://github.com/users/gammasoft71/projects/3)
 * [Roadmap](https://github.com/gammasoft71/xtd/blob/master/docs/roadmap.md)
-* [Release notes](/docs/documents/release_notes)
-* [Translation status](/docs/documents/translations_status)
+* [Release notes](/docs/documentation/release_notes)
+* [Translation status](/docs/documentation/translation_status)
 * [Documentation](/docs/documentation)
