@@ -13,15 +13,15 @@ This is a simple console application. The application puts some text into the co
 ## console.cpp
 
 ```cpp
-#include <xtd/xtd.console>
+#include <xtd/xtd.core>
 
 auto main(int argc, char* argv[])->int {
-  xtd::console::write_line("A xtd_console console application");
+  xtd::console::write_line("A xtd console application");
 }
 ```
 
 ```
-A xtd_console console application
+A xtd console application
 ```
 
 This is the output.
@@ -31,7 +31,7 @@ This is the output.
 The application puts some formatted texts into the console window.
 
 ```cpp
-#include <xtd/xtd.console>
+#include <xtd/xtd.core>
 
 auto main(int argc, char* argv[])->int {
   auto number = 1024;
@@ -58,7 +58,6 @@ This is the output
 
 ```cpp
 #include <xtd/xtd.core>
-#include <xtd/xtd.console>
 
 using namespace std::literals;
 
@@ -75,7 +74,6 @@ auto main(int argc, char* argv[])->int {
 
 ```cpp
 #include <xtd/xtd.core>
-#include <xtd/xtd.console>
 
 using namespace std::literals;
 

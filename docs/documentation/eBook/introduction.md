@@ -48,7 +48,7 @@ Python is the most widely used scripting language.
 
 # Multiplatform programming
 
-Today, multiplatform programming is a buzzword. Most languages and libraries want to be multiplatform. xtd_forms was created as a multiplatform tool from the beginning. Most developers choose among these options. If it is possible, they go to the web. Or they can use Qt, wxWidgets, [xtd](https://github.com/gammasoft71/xtd), Swing, or SWT. The Qt library and wxWidgets are the closest competitors to [xtd](https://github.com/gammasoft71/xtd).
+Today, multiplatform programming is a buzzword. Most languages and libraries want to be multiplatform. xtd.forms was created as a multiplatform tool from the beginning. Most developers choose among these options. If it is possible, they go to the web. Or they can use Qt, wxWidgets, [xtd](https://github.com/gammasoft71/xtd), Swing, or SWT. The Qt library and wxWidgets are the closest competitors to [xtd](https://github.com/gammasoft71/xtd).
 
 # Install
 

@@ -261,7 +261,7 @@ static_cast<panel_right&>(form.controls()[0].get()).label.text(xtd::strings::for
 
 These two lines are the most important lines of the example. It is shown, how we get access to the label control, which is placed on a different panel. First we get the parent of the both left and right panels. This parent control has a reference to the right panel. And the right panel has a reference to the static text.
 
-In this part of the xtd_forms tutorial, we have created some simple programs.
+In this part of the xtd.forms tutorial, we have created some simple programs.
 
 # See also
 ​
