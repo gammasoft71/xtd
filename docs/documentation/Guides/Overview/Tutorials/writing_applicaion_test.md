@@ -69,16 +69,16 @@ auto main()->int {
 
 xtd.tunit uses custom helpers to identify test fixtures and test methods. It's the easy way to create tests.
 
-| helpers                                                   | Usage                                                                                                                                    |
-| --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [test_class_(class_name)](test_class.md)                  | Is used to define the class (test fixture) with class_name name.                                                                         |
-| [class_initialize_(initialize_name)](class_initialize.md) | Is used to define class initialize method with initialize_name name.                                                                     |
-| [class_cleanup_(cleanup_name)](class_cleanup.md)          | Is used to define class cleanup method with cleanup_name name.                                                                           |
-| [test_initialize_(initialize_name)](test_initialize.md)   | Is used to define test initialize method with initialize_name name.                                                                      |
-| [test_cleanup_(cleanup_name)](test_cleanup.md)            | Is used to define test cleanup method with cleanup_name name.                                                                            |
-| [test_method_(method_name)](test_method.md)               | Is used to define test method (test case) with method_name name.                                                                         |
-| [ignore_test_method_(method_name)](ingore_test_method.md) | Is used to define ignored test method (test case) with method_name name.                                                                 |
-| [csf_](csf.md)                                            | Is used to create a xtd::diagnostics::stack_frame class initialized with current method name, current file name and current line number. |
+| helpers                                                                                              | Usage                                                                                                                                    |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| [test_class_(class_name)](/docs/documentation/Guides/Overview/Tutorials/test_class)                  | Is used to define the class (test fixture) with class_name name.                                                                         |
+| [class_initialize_(initialize_name)](/docs/documentation/Guides/Overview/Tutorials/class_initialize) | Is used to define class initialize method with initialize_name name.                                                                     |
+| [class_cleanup_(cleanup_name)](/docs/documentation/Guides/Overview/Tutorials/class_cleanup)          | Is used to define class cleanup method with cleanup_name name.                                                                           |
+| [test_initialize_(initialize_name)](/docs/documentation/Guides/Overview/Tutorials/test_initialize)   | Is used to define test initialize method with initialize_name name.                                                                      |
+| [test_cleanup_(cleanup_name)](/docs/documentation/Guides/Overview/Tutorials/test_cleanup)            | Is used to define test cleanup method with cleanup_name name.                                                                            |
+| [test_method_(method_name)](/docs/documentation/Guides/Overview/Tutorials/test_method)               | Is used to define test method (test case) with method_name name.                                                                         |
+| [ignore_test_method_(method_name)](/docs/documentation/Guides/Overview/Tutorials/ingore_test_method) | Is used to define ignored test method (test case) with method_name name.                                                                 |
+| [csf_](/docs/documentation/Guides/Overview/Tutorials/csf)                                            | Is used to create a xtd::diagnostics::stack_frame class initialized with current method name, current file name and current line number. |
 
 ### Examples
 
