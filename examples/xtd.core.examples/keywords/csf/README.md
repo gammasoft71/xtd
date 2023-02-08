@@ -4,7 +4,7 @@ Shows how to use [xtd::diagnostics::stack_frame](https://gammasoft71.github.io/x
 
 ## Sources
 
-[src/current_stack_frame.cpp](src/csf.cpp)
+[src/csf.cpp](src/csf.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
