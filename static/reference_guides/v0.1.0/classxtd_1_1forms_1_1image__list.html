@@ -126,7 +126,7 @@ $(function() {
 <div class="line">      button_previous.location({75, 200});</div>
 <div class="line">      button_previous.enabled(<span class="keyword">false</span>);</div>
 <div class="line">      button_previous.click += [&amp;] {</div>
-<div class="line">        <span class="keywordflow">if</span> (current_image_index &gt; 0) picture.image(pictures.images()[--current_image_index]);</div>
+<div class="line">        <span class="keywordflow">if</span> (current_image_index &gt; 0) picture.image(/pictures.images()[--current_image_index]);</div>
 <div class="line">        button_previous.enabled(current_image_index &gt; 0);</div>
 <div class="line">        button_next.enabled(current_image_index &lt; pictures.images().size() - 1);</div>
 <div class="line">      };</div>
@@ -136,7 +136,7 @@ $(function() {
 <div class="line">      button_next.location({150, 200});</div>
 <div class="line">      button_next.enabled(<span class="keyword">false</span>);</div>
 <div class="line">      button_next.click += [&amp;] {</div>
-<div class="line">        <span class="keywordflow">if</span> (current_image_index &lt; pictures.images().size()) picture.image(pictures.images()[++current_image_index]);</div>
+<div class="line">        <span class="keywordflow">if</span> (current_image_index &lt; pictures.images().size()) picture.image(/pictures.images()[++current_image_index]);</div>
 <div class="line">        button_previous.enabled(current_image_index &gt; 0);</div>
 <div class="line">        button_next.enabled(current_image_index &lt; pictures.images().size() - 1);</div>
 <div class="line">      };</div>
@@ -155,7 +155,7 @@ $(function() {
 <div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span> file : ofd.<a class="code hl_function" href="classxtd_1_1forms_1_1file__dialog.html#ac8144af583051cda8b35bbd5810c1e56">file_names</a>())</div>
 <div class="line">          pictures.images().push_back(drawing::image::from_file(file));</div>
 <div class="line">        current_image_index = 0;</div>
-<div class="line">        picture.image(pictures.images()[current_image_index]);</div>
+<div class="line">        picture.image(/pictures.images()[current_image_index]);</div>
 <div class="line">        button_previous.enabled(current_image_index &gt; 0);</div>
 <div class="line">        button_next.enabled(current_image_index &lt; pictures.images().size() - 1);</div>
 <div class="line">      }</div>

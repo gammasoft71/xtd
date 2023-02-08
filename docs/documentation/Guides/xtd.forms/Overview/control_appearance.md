@@ -31,7 +31,7 @@ For any control or dialog box, you can decide to use the native version in the f
 
 ## Remarks
 
-* You can create your own [CSS styles](https://github.com/gammasoft71/xtd/blob/master/docs/style_sheets_overview.md) for the whole application or for one or more specific controls according to your wishes.
+* You can create your own [CSS styles](/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview) for the whole application or for one or more specific controls according to your wishes.
 * Unlike standard controls, system controls have some limitations such as: 
   * text alignment
   * background color
