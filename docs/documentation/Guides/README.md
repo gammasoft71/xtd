@@ -201,20 +201,20 @@ The xtd guides provide an explanation on how to use the important features of th
 * xtd.cmake
   * Overview
     * [Overview](/docs/documentation/Guides/xtd.cmake/Overview)
-    * [Files](cmake_files.md)      
+    * [Files](/docs/documentation/Guides/xtd.cmake/Overview/cmake_files)
   * Commands
-    * [Generic](cmake_generic_commands.md)
-    * [Target properties](cmake_target_properties_commands.md)
-    * [Assembly informations](cmake_assembly_informations_commands.md)
-    * [Build options](cmake_build_options_commands.md)
-    * [Install](cmake_install_commands.md)
-    * [Packages](cmake_packages_commands.md)
-    * [Project](cmake_project_commands.md)
+    * [Generic](/docs/documentation/Guides/xtd.cmake/Commands/cmake_generic_commands)
+    * [Target properties](/docs/documentation/Guides/xtd.cmake/Commands/cmake_target_properties_commands)
+    * [Assembly informations](/docs/documentation/Guides/xtd.cmake/Commands/cmake_assembly_informations_commands)
+    * [Build options](/docs/documentation/Guides/xtd.cmake/Commands/cmake_build_options_commands)
+    * [Install](/docs/documentation/Guides/xtd.cmake/Commands/cmake_install_commands)
+    * [Packages](/docs/documentation/Guides/xtd.cmake/Commands/cmake_packages_commands)
+    * [Project](/docs/documentation/Guides/xtd.cmake/Commands/cmake_project_commands)
     * Common tasks
-      * [Create a project](cmake_create_project.md)
-      * [Add resources](cmake_add_resources.md)
-      * [Add settings](cmake_add_settings.md)
-      * [Add assembly informations](cmake_add_assembly_information.md)
+      * [Create a project](/docs/documentation/Guides/xtd.cmake/Commands/Common%20tasks/cmake_create_project)
+      * [Add resources](/docs/documentation/Guides/xtd.cmake/Commands/Common%20tasks/cmake_add_resources)
+      * [Add settings](/docs/documentation/Guides/xtd.cmake/Commands/Common%20tasks/cmake_add_settings)
+      * [Add assembly informations](/docs/documentation/Guides/xtd.cmake/Commands/Common%20tasks/cmake_add_assembly_information)
 
 ## See also
 
