@@ -195,9 +195,9 @@ The xtd guides provide an explanation on how to use the important features of th
       * [Add style sheets to a control](/docs/documentation/Guides/xtd.forms/Style%20sheets/Common%20tasks/add_style_sheets_to_a_control)
 * xtd.tunit
   * Overview
-    * [Overview](/docs/documentation/Guides/xtd.cmake/Overview)
-    * [Running test](writing_applicaion_running_test.md)
-    * [Extending test](writing_applicaion_extending_test.md)
+    * [Overview](/docs/documentation/Guides/xtd.tunit/Overview)
+    * [Running test](/docs/documentation/Guides/xtd.tunit/Overview/writing_applicaion_running_test)
+    * [Extending test](/docs/documentation/Guides/xtd.tunit/Overview/writing_applicaion_extending_test)
 * xtd.cmake
   * Overview
     * [Overview](/docs/documentation/Guides/xtd.cmake/Overview)
