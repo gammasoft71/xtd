@@ -137,7 +137,7 @@ Static event handlers are in effect for the lifetime of the class whose events t
 Dynamic event handlers are explicitly turned on and off during program execution, usually in response to conditional program logic. 
 For example, they can be used if event notifications are only needed under certain conditions or if an application provides multiple event handlers and the runtime conditions define which one to use. 
 The example in the previous section shows how to dynamically add an event handler. 
-For more information, see [Events](events.md).
+For more information, see [Events](/docs/documentation/Guides/xtd.core/Types%20overview/events).
 
 # See also
 ​

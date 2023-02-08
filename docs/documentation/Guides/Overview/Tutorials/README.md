@@ -19,7 +19,7 @@ The xtd tutorials provide an overview of the important features of the xtd Frame
 * [Control appearance](/docs/documentation/Guides/xtd.forms/Overview/control_appearance control_appearance) describes the standard and system appearance of controls.
 * [Size and location properties](/docs/documentation/Guides/xtd.forms/Overview/size_and_location_properties) provides a tutorial on the size and location properties of the controls.
 * [Ambient properties](/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) provides a tutorial on the ambient properties of the controls.
-* [Position and layout of controls](/docs/documentation/Guides/xtd.forms/Overview/position_and_layout_of_controls.md) provides a tutorial on the position and layout of the controls.
+* [Position and layout of controls](/docs/documentation/Guides/xtd.forms/Overview/position_and_layout_of_controls) provides a tutorial on the position and layout of the controls.
 * [Form](/docs/documentation/Guides/Overview/Tutorials/form) provides a tutorial for using xtd::forms::form.
 * [How to make thread-safe calls](/docs/documentation/Guides/xtd.forms/Controls/Common%20tasks/thread_safe_control_call) provides a tutorial to show how to make thread-safe calls to controls.
 * [Controls management](/docs/documentation/Guides/xtd.forms/Overview/controls_management) describes how to manage the controls.
@@ -33,7 +33,7 @@ The xtd tutorials provide an overview of the important features of the xtd Frame
 
 ## Other
 
-* [eBook](ebook.md) provides a tutorial to program non trivial xtd applications.
+* [eBook](/docs/documentation/eBook) provides a tutorial to program non trivial xtd applications.
 
 ## See also
 
