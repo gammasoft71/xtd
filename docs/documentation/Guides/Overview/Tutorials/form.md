@@ -326,8 +326,8 @@ auto main()->int {
 
 ## See also
 
-* [Tutorials](tutorials.md)
-* [Documentation](documentation.md)
+* [Tutorials](/docs/documentation/Guides/Overview/Tutorials)
+* [Documentation](/docs/documentation)
 
 ______________________________________________________________________________________________
 
