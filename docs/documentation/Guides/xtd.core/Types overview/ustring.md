@@ -60,7 +60,7 @@ See [type convertion](/docs/documentation/Guides/xtd.core/Types%20overview/Type%
 
 ### as operator
 
-The [xtd::as<...>](ahtml#ga19379a1158ccd320e208b362f11295b7) operators cast a type into another type.
+The [xtd::as<...>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga09e01287b655c20807cdb73d993ba13d) operators cast a type into another type.
 
 #### Remarks 
 

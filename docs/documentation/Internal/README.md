@@ -39,7 +39,3 @@ sidebar_position: 16
 ## Proposals
 
 * [Class organization](/docs/documentation/Internal/class_organization) provides a proposal for class organization.
-
-## Code review
-
-* [Code review](/docs/documentation/Internal/code_review) provides xtd code review.

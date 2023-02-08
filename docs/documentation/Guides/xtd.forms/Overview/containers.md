@@ -307,7 +307,7 @@ auto main()->int {
 
 * [fixed_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1fixed__layout__panel.html) is the same as [panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1panel.html).
 * [splitter_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1splitter__panel.html) is used with [splitt_container](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1split__container.html) and is the same as [panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1panel.html).
-* [tab_page](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tab__page.html) is used with [tab_control]([tab_page](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tab__page.html)) and is the same as [panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1panel.html).
+* [tab_page](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tab__page.html) is used with [tab_page](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tab__page.html) and is the same as [panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1panel.html).
 
 ## Layout containers
 

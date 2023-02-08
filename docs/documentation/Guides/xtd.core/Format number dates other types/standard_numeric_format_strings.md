@@ -6,10 +6,10 @@ Contains formatting converting documentation.
 
 Formatting is the process of converting an instance of a class, structure, or enumeration value to its string representation, often so that the resulting string can be displayed to users or deserialized to restore the original data type. This conversion can pose a number of challenges:
 
-* The way that values are stored internally does not necessarily reflect the way that users want to view them. For example, a telephone number might be stored in the form 8009999999, which is not user-friendly. It should instead be displayed as 800-999-9999. See the [Custom Format Strings](Custom-format-strings) section for an example that formats a number in this way.
+* The way that values are stored internally does not necessarily reflect the way that users want to view them. For example, a telephone number might be stored in the form 8009999999, which is not user-friendly. It should instead be displayed as 800-999-9999. See the [Custom Format Strings](#custom-format-strings) section for an example that formats a number in this way.
 * Sometimes the conversion of an object to its string representation is not intuitive. For example, it is not clear how the string representation of a Temperature object or a Person object should appear. For an example that formats a Temperature object in a variety of ways, see the [Standard Format Strings(standard-format-strings)] section.
 * Values often require culture-sensitive formatting. For example, in an application that uses numbers to reflect monetary values, numeric strings should include the current culture’s currency symbol, group separator (which, in most cultures, is the thousands separator), and decimal symbol.
-* An application may have to display the same value in different ways. For example, an application may represent an enumeration member by displaying a string representation of its name or by displaying its underlying value. For an example that formats a member of the day_of_week enumeration in different ways, see the [Standard Format Strings](standard-format-strings) section.
+* An application may have to display the same value in different ways. For example, an application may represent an enumeration member by displaying a string representation of its name or by displaying its underlying value. For an example that formats a member of the day_of_week enumeration in different ways, see the [Standard Format Strings](#standard-format-strings) section.
 
 ### Notes
 
@@ -20,27 +20,27 @@ xtd provides rich formatting support that enables developers to address these re
 
 This overview contains the following sections:
 
-* [Formatting](formatting)
-* [Default Formatting Using Operator Shift Left](defaultf-formatting-using-operator-shift-left)
-* [Overriding Shift Left operator Method](overriding-shift-left-operator-method)
-* [to_string Method And Format Strings](to_string-method-and-format-strings)
-  * [Standard Format Strings](standard-format-strings)
-  * [Custom Format Strings](custom-format-strings)
-  * [Format Strings And Types](format-strings-and-types)
-* [Culture Sensitive Formatting](culture-sensitive-formatting)
-  * [Culture Sensitive Formatting Of Numeric Values](culture-sensitive-formatting-of-numeric-values)
-  * [Culture Sensitive Formatting Of Date And Time Values](culture-sensitive-formatting-of-date-and-time-values)
-* [Culture Sensitive Formatting](culture-sensitive-formatting)
-* [Composite Formatting](composite-formatting)
-* [Custom Formatting](custom-formatting)
-* [Related Topics](related-topics)
-* [Reference](reference)
+* [Formatting](#formatting)
+* [Default Formatting Using Operator Shift Left](#defaultf-formatting-using-operator-shift-left)
+* [Overriding Shift Left operator Method](#overriding-shift-left-operator-method)
+* [to_string Method And Format Strings](#to_string-method-and-format-strings)
+  * [Standard Format Strings](#standard-format-strings)
+  * [Custom Format Strings](#custom-format-strings)
+  * [Format Strings And Types](#format-strings-and-types)
+* [Culture Sensitive Formatting](#culture-sensitive-formatting)
+  * [Culture Sensitive Formatting Of Numeric Values](#culture-sensitive-formatting-of-numeric-values)
+  * [Culture Sensitive Formatting Of Date And Time Values](#culture-sensitive-formatting-of-date-and-time-values)
+* [Culture Sensitive Formatting](#culture-sensitive-formatting)
+* [Composite Formatting](#composite-formatting)
+* [Custom Formatting](#custom-formatting)
+* [Related Topics](#related-topics)
+* [Reference](#reference)
 
 ## Formating
 
-The basic mechanism for formatting is the default implementation of the operator `<<` object method, which is discussed in the [Default Formatting Using Operator Shift Left](default-formatting-using-operator-shift-left) section later in this topic. xtd.Strings provides several ways to modify and extend its default formatting support. These include the following:
+The basic mechanism for formatting is the default implementation of the operator `<<` object method, which is discussed in the [Default Formatting Using Operator Shift Left](#default-formatting-using-operator-shift-left) section later in this topic. xtd.Strings provides several ways to modify and extend its default formatting support. These include the following:
 
-* Overriding the operator `<<` object method to define a custom string representation of an object’s value. For more information, see the [Overriding Shift Left Operator Method](overriding-shift-left-operator-method]) section later in this topic.
+* Overriding the operator `<<` object method to define a custom string representation of an object’s value. For more information, see the [Overriding Shift Left Operator Method](#overriding-shift-left-operator-method]) section later in this topic.
 * Defining format specifiers that enable the string representation of an object’s value to take multiple forms. For example, the "X" format specifier in the following statement converts an integer to the string representation of a hexadecimal value.
 
 ```cpp
@@ -48,7 +48,7 @@ int integer_value = 60312;
 xtd::console::write_line(xtd::to_string(integer_value, "X"));   // Displays EB98.
 ```
 
-For more information about format specifiers, see the [to_string Method And Format Strings](to_string-method-and-format-strings) section.
+For more information about format specifiers, see the [to_string Method And Format Strings](#to_string-method-and-format-strings) section.
 
 * Using format providers to take advantage of the formatting conventions of a specific culture. For example, the following statement displays a currency value by using the formatting conventions of the en-US culture.
 
@@ -60,9 +60,9 @@ xtd::console::write_line(xtd::to_string(cost, "C", std::locale("en_US.UTF-8")));
 // $1,632.54
 ```
 
-For more information about formatting with format providers, see the [Culture Sensitive Formatting](culture-sensitive-formatting) section.
+For more information about formatting with format providers, see the [Culture Sensitive Formatting](#culture-sensitive-formatting) section.
 
-Using composite formatting to embed the string representation of a value in a larger string. For more information, see the [Composite Formatting](composite-formatting) section.
+Using composite formatting to embed the string representation of a value in a larger string. For more information, see the [Composite Formatting](#composite-formatting) section.
 
 The following sections examine these methods for converting an object to its string representation.
 

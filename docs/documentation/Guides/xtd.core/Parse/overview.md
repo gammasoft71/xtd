@@ -13,7 +13,7 @@ For more information, see [Format types](/docs/documentation/Guides/xtd.core/For
 
 [Parsing Date and Time Strings](/docs/documentation/Guides/xtd.core/Parse/date_and_time_strings) Describes how to convert strings into .NET DateTime types.
 
-[Parsing Other Strings](/docs/documentation/Guides/xtd.core/Parse/other_type_strings) Describes how to convert strings into Char, Boolean, and Enum types.
+[Parsing Other Strings](/docs/documentation/Guides/xtd.core/Parse/other_strings) Describes how to convert strings into Char, Boolean, and Enum types.
 
 ## Related Sections
 
