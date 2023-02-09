@@ -1,6 +1,6 @@
 # process_start_info
 
-Shows how to use [xtd::diagnostics::process_start_info](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1diagnostics_1_1process__start__info.html) class.
+Shows how to use [xtd::diagnostics::process_start_info](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1process__start__info.html) class.
 
 # Subprojects
 

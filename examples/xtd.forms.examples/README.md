@@ -2,7 +2,7 @@
 
 [This folder](.) contains xtd.forms examples used by [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/) and more.
 
-[![xtd_forms](../../docs/pictures/xtd_forms_header.png)](https://gammasoft71.wixsite.com/xtdpro)
+[![xtd_forms](../../docs/pictures/xtd_forms_header.png)](https://gammasoft71.github.io/xtd)
 
 ## [Hello Worlds](hello_worlds/README.md)
 

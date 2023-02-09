@@ -2,7 +2,7 @@
 
 [This folder](.) contains xtd.cmake examples used by [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/) and more.
 
-[![xtd_cmake](../../docs/pictures/xtd_cmake_header.png)](https://gammasoft71.wixsite.com/xtdpro)
+[![xtd_cmake](../../docs/pictures/xtd_cmake_header.png)](https://gammasoft71.github.io/xtd)
 
 ## [Hello Worlds](hello_worlds/README.md)
 
