@@ -40,13 +40,13 @@ You can build different types of applications and libraries with `xtd`:
 
 `xtd` is open source and under the MIT license.
 
-Get quick [answer and support](https://gammasoft71.wixsite.com/xtdpro/support).
+Get quick [answer and support](https://gammasoft71.github.io/xtd/docs/Support).
 
 ## Tools
 
 The `xtd` product family provides a great `xtd` development experience on **macOS**, **Windows**, and **Linux**.
 
-With CMake, `xtd` support many [Development Environment Tools](https://gammasoft71.wixsite.com/xtdpro/portability).
+With CMake, `xtd` support many [Development Environment Tools](https://gammasoft71.github.io/xtd/docs/documentation/portability).
 
 `xtd` has some [tools](https://github.com/gammasoft71/xtd/blob/master/docs/tools.md) to help you in your development.
 
