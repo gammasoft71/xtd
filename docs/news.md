@@ -4,6 +4,12 @@ sidebar_position: 1
 
 # News
 
+## The new xtd website is online - February 9, 2023
+
+* The xtd website is online here : [https://gammasoft71.github.io/xtd](https://gammasoft71.github.io/xtd).
+* The xtd website is hoted on Github.
+* The xtd website is built with [Docusaurus 2](https://docusaurus.io).
+
 ## xtd.tunit is compatible with Test Explorer window of Visual Studio 2019 or later - November 18, 2022
 
 * You can run your [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html) project by using the Test Explorer window of Visual Studio 2019 or later.
