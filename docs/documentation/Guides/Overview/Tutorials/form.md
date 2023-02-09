@@ -328,7 +328,3 @@ auto main()->int {
 
 * [Tutorials](/docs/documentation/Guides/Overview/Tutorials)
 * [Documentation](/docs/documentation)
-
-______________________________________________________________________________________________
-
-© 2023 Gammasoft.
