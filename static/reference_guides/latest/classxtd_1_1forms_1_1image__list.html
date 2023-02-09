@@ -131,7 +131,7 @@ Inheritance diagram for xtd::forms::image_list:</div>
 <div class="line">      button_previous.location({75, 200});</div>
 <div class="line">      button_previous.enabled(<span class="keyword">false</span>);</div>
 <div class="line">      button_previous.click += [&amp;] {</div>
-<div class="line">        <span class="keywordflow">if</span> (current_image_index &gt; 0) picture.image(/pictures.images()[--current_image_index]);</div>
+<div class="line">        <span class="keywordflow">if</span> (current_image_index &gt; 0) picture.image(pictures.images()[--current_image_index]);</div>
 <div class="line">        button_previous.enabled(current_image_index &gt; 0);</div>
 <div class="line">        button_next.enabled(current_image_index &lt; pictures.images().size() - 1);</div>
 <div class="line">      };</div>
@@ -141,7 +141,7 @@ Inheritance diagram for xtd::forms::image_list:</div>
 <div class="line">      button_next.location({150, 200});</div>
 <div class="line">      button_next.enabled(<span class="keyword">false</span>);</div>
 <div class="line">      button_next.click += [&amp;] {</div>
-<div class="line">        <span class="keywordflow">if</span> (current_image_index &lt; pictures.images().size()) picture.image(/pictures.images()[++current_image_index]);</div>
+<div class="line">        <span class="keywordflow">if</span> (current_image_index &lt; pictures.images().size()) picture.image(pictures.images()[++current_image_index]);</div>
 <div class="line">        button_previous.enabled(current_image_index &gt; 0);</div>
 <div class="line">        button_next.enabled(current_image_index &lt; pictures.images().size() - 1);</div>
 <div class="line">      };</div>
@@ -160,7 +160,7 @@ Inheritance diagram for xtd::forms::image_list:</div>
 <div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span> file : ofd.file_names())</div>
 <div class="line">          pictures.images().push_back(<a class="code" href="group__drawing.html#ga4f08b7764c620cf3886894ea26a23543">drawing::image::from_file</a>(file));</div>
 <div class="line">        current_image_index = 0;</div>
-<div class="line">        picture.image(/pictures.images()[current_image_index]);</div>
+<div class="line">        picture.image(pictures.images()[current_image_index]);</div>
 <div class="line">        button_previous.enabled(current_image_index &gt; 0);</div>
 <div class="line">        button_next.enabled(current_image_index &lt; pictures.images().size() - 1);</div>
 <div class="line">      }</div>
@@ -573,7 +573,7 @@ Because setting the image_size property causes the handle to be recreated, you s
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 1 2023 20:19:50 for xtd - Reference Guide by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Feb 9 2023 18:04:05 for xtd - Reference Guide by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
