@@ -24,8 +24,7 @@ const config = {
   projectName: 'xtd', // Usually your repo name.
   trailingSlash: false,
 
-  /// @todo Reset the onBrokenLinks setting to 'throw' when the migration is done.
-  onBrokenLinks: 'warn', // 'throw',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internalization, you can use this field to set useful
