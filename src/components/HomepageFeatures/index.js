@@ -26,9 +26,9 @@ const FeatureList = [
       <>
       • Free and open-source (<a href="docs/documentation/license">MIT License</a>). A collection of native C++ classes libraries, to complete std.
       <br/>• API close to the .net API with modern C++ approach and full integration with the std standard.
-      <br/>• xtd is designed to manage GUI controls and dialogs in pure <a href="">native mode</a> or with <a href="">CSS styles</a>.
+      <br/>• xtd is designed to manage GUI controls and dialogs in pure <a href="docs/documentation/Guides/xtd.forms/Overview/control_appearance">native mode</a> or with <a href="docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview">CSS styles</a>.
       <br/>• Written in efficient, modern c++17/20 with <a href="https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization">RAII</a> programming idiom.
-      <br/>• And <a href="">highly portable</a> and available on <a href="">many different platforms</a>.
+      <br/>• And <a href="docs/documentation/portability">highly portable</a> and available on <a href="docs/documentation/portability">many different platforms</a>.
       </>
     ),
   },
@@ -58,11 +58,11 @@ const FeatureList = [
       <br/>• xtd is modular and scalable from embedded applications.
       <br/>• xtd provides consistent, comprehensive and comprehensible programming interfaces. 
       <br/>• xtd favors simplicity over complexity ("as simple as possible, but not simpler").
-      <br/>• xtd aims for consistency in <a href="">design</a>, <a href="">coding style</a> and <a href="">documentation</a>.
+      <br/>• xtd aims for consistency in <a href="docs/documentation">design</a>, <a href="docs/documentation/Design%20Guidelines/coding_conventions_guidelines">coding style</a> and <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/index.html">documentation</a>.
       <br/>• xtd emphasizes source code quality, in terms of readability, comprehensiveness, consistency, style and testability.
       <br/>• xtd aims to make C++ programming fun again Guiding Principles
-      <br/>• Strong focus on code quality, style, consistency and code readability – all code must satisfy our <a href="">coding style guide</a>.
-      <br/>• Strong focus on tests (automated <a href="">unit tests</a> with high coverage).
+      <br/>• Strong focus on code quality, style, consistency and code readability – all code must satisfy our <a href="docs/documentation/Design%20Guidelines">coding style guide</a>.
+      <br/>• Strong focus on tests (automated <a href="https://github.com/gammasoft71/xtd/tree/master/tests">unit tests</a> with high coverage).
       <br/>• Build on top of solid foundations – use existing proven C, C++ or Objective-C libraries (e.g. Win32 APi, Gtk4, AppKit,...) where it makes sense.
       </>
     ),
