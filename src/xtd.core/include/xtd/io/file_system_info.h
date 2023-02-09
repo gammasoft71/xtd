@@ -32,7 +32,7 @@ namespace xtd {
     /// * "c:\\MyDir"
     /// * "MyDir\\MySubdir"
     /// * "\\\\MyServer\\MyShare"
-    /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
+    /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
     /// @par Examples
     /// The following example shows how to loop through all the files and directories, querying some information about each entry.
     /// @code
@@ -240,7 +240,7 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the file or directory exists.
       /// @return true if the file or directory exists; otherwise, false.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
       virtual bool exists() const = 0;
       
       /// @brief Gets the extension part of the file name, including the leading dot . even if it is the entire file name, or an empty string if no extension is present.
@@ -281,7 +281,7 @@ namespace xtd {
       ///   }
       /// @endcode
       /// @remarks For example, for a file c:\new_file.txt, this property returns "c:\new_file.txt".
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
       xtd::ustring full_name() const;
       
       /// @brief Gets the time the current file or directory was last accessed.
@@ -407,7 +407,7 @@ namespace xtd {
       /// * xtd::io::directory_info::enumerate_file_system_infos
       /// * To get the latest value, call the xtd::io::file_system_info::refresh method.
       /// * If the file described in the xtd::io::file_system_info object does not exist, this property returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC).
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
       xtd::date_time last_access_time_utc() const;
       /// @brief Sets the time, in coordinated universal time (UTC), that the current file or directory was last accessed.
       /// @param vvalue The UTC time that the current file or directory was last accessed.
@@ -422,7 +422,7 @@ namespace xtd {
       /// * xtd::io::directory_info::enumerate_file_system_infos
       /// * To get the latest value, call the xtd::io::file_system_info::refresh method.
       /// * If the file described in the xtd::io::file_system_info object does not exist, this property returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC).
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.wixsite.com/xtdpro/common-i-o-tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
       /// @note This method may set an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system.
       xtd::io::file_system_info& last_access_time_utc(const xtd::date_time& value);
       

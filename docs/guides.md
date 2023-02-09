@@ -25,7 +25,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Writing test application](writing_applicaion_test.md)
     * [Some useful git commands](git.md)
     * [More tutorials](tutorials.md)
-* [What's new in xtd](https://gammasoft71.wixsite.com/xtdpro/news)
+* [What's new in xtd](https://gammasoft71.github.io/xtd/docs/news)
 * Tools
   * [Overview](tools.md)
 * xtd.core

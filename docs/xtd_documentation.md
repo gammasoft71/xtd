@@ -21,7 +21,7 @@
 
 | What's new?                                                |
 |------------------------------------------------------------|
-| [News on xtd](https://gammasoft71.wixsite.com/xtdpro/news) |
+| [News on xtd](https://gammasoft71.github.io/xtd/docs/news) |
 
 | Basics                                   |
 |------------------------------------------|

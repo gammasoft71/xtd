@@ -675,7 +675,7 @@ namespace xtdc_command {
     }
     
     static int documentation(const vector<ustring>& args) {
-      process::start("https://gammasoft71.wixsite.com/xtdpro/documentation").wait_for_exit();
+      process::start("https://gammasoft71.github.io/xtd/docs/documentation").wait_for_exit();
       return 0;
     }
     

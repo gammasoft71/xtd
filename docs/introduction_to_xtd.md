@@ -14,12 +14,12 @@
 
 ## Features
 
-* Free and open-source ([MIT License](https://gammasoft71.wixsite.com/xtdpro/license));
+* Free and open-source ([MIT License](https://gammasoft71.github.io/xtd/docs/documentation/license));
 * a collection of native C++ classes libraries, to **extend** std;
 * API close to the .net API with a modern C++ approach and full integration with the std standard;
 * `xtd` is designed to manage GUI controls and dialogs in pure [native mode](https://github.com/gammasoft71/xtd/blob/master/docs/control_appearance.md) or with [CSS styles](https://github.com/gammasoft71/xtd/blob/master/docs/style_sheets_overview.md).
 * written in efficient, modern C++17 / C++20 with [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom;
-* and [highly portable](https://gammasoft71.wixsite.com/xtdpro/portability) and available on [many different platforms](https://gammasoft71.wixsite.com/xtdpro/portability);
+* and [highly portable](https://gammasoft71.github.io/xtd/docs/documentation/portability) and available on [many different platforms](https://gammasoft71.github.io/xtd/docs/documentation/portability);
 
 ## Using xtd
 
@@ -66,7 +66,7 @@ Hello, World!
 ## Free and open source
 
 * `xtd` is free, [open source](https://github.com/gammasoft71/xtd).
-* `xtd` sources and binaries are licensed under the [MIT license](https://gammasoft71.wixsite.com/xtdpro/license).
+* `xtd` sources and binaries are licensed under the [MIT license](https://gammasoft71.github.io/xtd/docs/documentation/license).
 
 ## Languages
 
@@ -89,7 +89,7 @@ Other compilers can probably be used, but they have not been tested yet.
 
 The `xtd` product family provides a great `xtd` development experience on **macOS**, **Windows**, and **Linux**.
 
-With CMake, `xtd` support many [Development Environment Tools](https://gammasoft71.wixsite.com/xtdpro/portability).
+With CMake, `xtd` support many [Development Environment Tools](https://gammasoft71.github.io/xtd/docs/documentation/portability).
 
 `xtd` has some [tools](https://github.com/gammasoft71/xtd/blob/master/docs/tools.md) to help you in your development.
 
