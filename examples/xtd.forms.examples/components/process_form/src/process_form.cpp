@@ -25,7 +25,7 @@ public:
     xtd_web_button.image_align(content_alignment::middle_left);
     xtd_web_button.text("Open xtd website...");
     xtd_web_button.click += [] {
-      process::start("https://gammasoft71.wixsite.com/xtdpro");
+      process::start("https://gammasoft71.github.io/xtd");
     };
     
     write_mail_button.image(button_images::from_name("document-send", drawing::size(64, 64)));

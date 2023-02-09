@@ -1,4 +1,4 @@
-| [Home](home.md) | [News](news.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Support](support.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md) | [Website](https://gammasoft71.wixsite.com/xtdpro) |
+| [Home](home.md) | [News](news.md) | [Gallery](gallery.md) | [Examples](examples.md) | [Downloads](downloads.md) | [Documentation](documentation.md) | [Support](support.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Gammasoft](gammasoft.md) | [Website](https://gammasoft71.github.io/xtd) |
 
 # docs
 
@@ -14,7 +14,7 @@ q
 * [Sources](https://github.com/gammasoft71/xtd) is a link to Github sources.
 * [Project](https://sourceforge.net/projects/xtdpro/) is a link to SourceForge project.
 * [Gammasoft](gammasoft.md) contains informations about Gammasoft.
-* [Website](https://gammasoft71.wixsite.com/xtdpro) is a link to xtd website.
+* [Website](https://gammasoft71.github.io/xtd) is a link to xtd website.
 
 ______________________________________________________________________________________________
 

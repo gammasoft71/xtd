@@ -240,13 +240,13 @@ namespace xtd::forms::style_sheets::tests {
     void test_method_(uri_from_css) {
       auto styles = style_sheet::style_sheets();
       auto style = styles.find("macOS (dark)")->second;
-      assert::are_equal("https://gammasoft71.wixsite.com/xtdpro", __test_style_sheet__::uri_from_css(style, "url(https://gammasoft71.wixsite.com/xtdpro)", uri("https://gammasoft71.wixsite.com/gammasoft")).to_string(), csf_);
+      assert::are_equal("https://gammasoft71.github.io/xtd", __test_style_sheet__::uri_from_css(style, "url(https://gammasoft71.github.io/xtd)", uri("https://gammasoft71.wixsite.com/gammasoft")).to_string(), csf_);
     }
     
     void test_method_(uri_from_css_with_bad_format) {
       auto styles = style_sheet::style_sheets();
       auto style = styles.find("macOS (dark)")->second;
-      assert::are_equal("https://gammasoft71.wixsite.com/gammasoft", __test_style_sheet__::string_from_css(style, "https://gammasoft71.wixsite.com/xtdpro", "https://gammasoft71.wixsite.com/gammasoft"), csf_);
+      assert::are_equal("https://gammasoft71.wixsite.com/gammasoft", __test_style_sheet__::string_from_css(style, "https://gammasoft71.github.io/xtd", "https://gammasoft71.wixsite.com/gammasoft"), csf_);
     }
     
     void test_method_(linear_gradient_from_css_with_named_colors) {
