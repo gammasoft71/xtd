@@ -28,7 +28,7 @@ namespace examples {
       link_label2.parent(*this);
       link_label2.text("Gammasoft presents xtd framework");
       link_label2.links().push_back({0, 9, "https://gammasoft71.wixsite.com/gammasoft"});
-      link_label2.links().push_back({19, 3, "https://gammasoft71.wixsite.com/xtdpro"});
+      link_label2.links().push_back({19, 3, "https://gammasoft71.github.io/xtd"});
       link_label2.link_clicked += [](object & sender, link_label_clicked_event_args & e) {
         e.visited(true);
         process::start(as<ustring>(e.link().link_data()));

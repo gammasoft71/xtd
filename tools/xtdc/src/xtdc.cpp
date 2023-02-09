@@ -690,7 +690,7 @@ namespace xtdc_command {
     }
     
     static int web(const vector<ustring>& args) {
-      process::start("https://gammasoft71.wixsite.com/xtdpro").wait_for_exit();
+      process::start("https://gammasoft71.github.io/xtd").wait_for_exit();
       return 0;
     }
     
