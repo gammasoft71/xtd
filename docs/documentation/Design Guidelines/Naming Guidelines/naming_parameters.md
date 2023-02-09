@@ -8,7 +8,7 @@ Beyond the obvious reason of readability, it is important to follow the guidelin
 
 **✔️ CONSIDER** using names based on a parameter’s meaning rather than the parameter’s type.
 
-# Naming Operator Overload Parameters
+## Naming Operator Overload Parameters
 
 **✔️ DO** use left and right for binary operator overload parameter names if there is no meaning to the parameters.
 
@@ -18,7 +18,7 @@ Beyond the obvious reason of readability, it is important to follow the guidelin
 
 **❌ DO NOT** use abbreviations or numeric indices for operator overload parameter names.
 
-# See also
+## See also
 ​
 * [Naming Guidelines](/docs/documentation/Design%20Guidelines/Naming%20Guidelines)
 * [Design Guidelines](/docs/documentation/Design%20Guidelines)

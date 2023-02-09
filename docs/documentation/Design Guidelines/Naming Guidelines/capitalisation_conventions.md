@@ -1,6 +1,8 @@
+# Capitalisation Conventions 
+
 The guidelines in this chapter lay out a simple method for using case that, when applied consistently, make identifiers for types, members, and parameters easy to read.
  
-# Capitalisation Rules for Identifiers
+## Capitalisation Rules for Identifiers
 ​
 ​As required by the ISO standard, use only lower case letters and numbers, separating words with underscores. Do not use capital letters to differentiate words, nor anywhere in identifiers. There is only one appropriate way to name identifiers:
 
@@ -122,7 +124,7 @@ private:
 };
 ```
 
-# Compound Words and Common Terms
+## Compound Words and Common Terms
 ​
 Most compound terms are treated as single words .
  
@@ -158,11 +160,11 @@ These are compound words written as a single word, such as endpoint. For the pur
 | white_space   | whitespace   |
 | writable      | writeable    |
 
-# Case Sensitivity
+## Case Sensitivity
 ​
 C++ are case-sensitivity.
  
-# See also
+## See also
 ​
 * [Naming Guidelines](/docs/documentation/Design%20Guidelines/Naming%20Guidelines)
 * [Design Guidelines](/docs/documentation/Design%20Guidelines)

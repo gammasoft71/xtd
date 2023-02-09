@@ -1,3 +1,5 @@
+# Names of Namespace
+
 As with other naming guidelines, the goal when naming namespaces is creating sufficient clarity for the programmer using the framework to immediately know what the content of the namespace is likely to be. The following template specifies the general rule for naming namespaces:
  
 **`<company>::(<product>|<technology>)[::<feature>][::<subnamespace>]`**
@@ -24,7 +26,7 @@ For example, use xtd::collections instead of xtd::collection. Brand names and ac
  
 For example, do not use debug as a namespace name and then also provide a class named debug in the same namespace. Several compilers require such types to be fully qualified.
  
-# Namespaces and Type Name Conflicts
+## Namespaces and Type Name Conflicts
  
 **❌ DO NOT** introduce generic type names such as element, node, log, and message.
  
@@ -34,7 +36,7 @@ There are specific guidelines for avoiding type name conflicts for different cat
 
 * **Application model namespaces**
  
-# See also
+## See also
 ​
 * [Naming Guidelines](/docs/documentation/Design%20Guidelines/Naming%20Guidelines)
 * [Design Guidelines](/docs/documentation/Design%20Guidelines)

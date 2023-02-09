@@ -22,7 +22,7 @@ For example, icomponent (descriptive noun), icustom_attribute_provider (noun phr
 
 **✔️ DO** ensure that the names differ only by the "i" prefix on the interface name when you are defining a class–interface pair where the class is a standard implementation of the interface.
 
-# Names of Generic Type Parameters
+## Names of Generic Type Parameters
 
 Generics (template) has identifier called type parameter.
 
@@ -57,7 +57,7 @@ class isession_channel interface_ {
 
 For example, a parameter constrained to isession might be called session_t.
 
-# Names of Common Types
+## Names of Common Types
 
 **✔️ DO** follow the guidelines described in the following table when naming types derived from or implementing certain xtd Framework types.
 
@@ -88,7 +88,7 @@ For example, a parameter constrained to isession might be called session_t.
 | std::ostream            | **✔️ DO** add the suffix "_stream".                                                                 |
 | std::iostream           | **✔️ DO** add the suffix "_stream".                                                                 |
 
-# Naming Enumerations
+## Naming Enumerations
 
 Names of enumeration types (also called enums) in general should follow the standard type-naming rules (snake_casing, etc.). However, there are additional guidelines that apply specifically to enums.
 

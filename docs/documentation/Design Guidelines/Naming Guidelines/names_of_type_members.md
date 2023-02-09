@@ -2,7 +2,7 @@
 
 Types are made of members: methods, properties, events, constructors, and fields. The following sections describe guidelines for naming type members.
 
-# Names of Methods
+## Names of Methods
 
 Because methods are the means of taking action, the design guidelines require that method names be verbs or verb phrases. Following this guideline also serves to distinguish method names from property and type names, which are noun or adjective phrases.
 
@@ -17,7 +17,7 @@ public:
 };
 ```
 
-# Names of Properties
+## Names of Properties
 
 Unlike other members, properties should be given noun phrase or adjective names. That is because a property refers to data, and the name of the property reflects that. snake_casing is always used for property names.
 
@@ -55,7 +55,7 @@ namespace forms {
 }
 ```
 
-# Names of Events
+## Names of Events
 
 Events always refer to some action, either one that is happening or one that has occurred. Therefore, as with methods, events are named with verbs, and verb tense is used to indicate the time when the event is raised.
 
@@ -80,7 +80,7 @@ The *sender* parameter represents the object that raised the event. The *sender*
 
 **✔️ DO** name event argument classes with the "_event_args" suffix.
 
-# Names of Fields
+## Names of Fields
 
 The field-naming guidelines apply to static public and protected fields. Internal and private fields are not covered by guidelines, and public or protected instance fields are not allowed by the Member Design Guidelines.
 
@@ -92,7 +92,7 @@ The field-naming guidelines apply to static public and protected fields. Interna
 
 For example, do not use "g_" or "s_" to indicate static fields.
 
-# See also
+## See also
 ​
 * [Naming Guidelines](/docs/documentation/Design%20Guidelines/Naming%20Guidelines)
 * [Design Guidelines](/docs/documentation/Design%20Guidelines)

@@ -1,6 +1,8 @@
+# General Naming Conventions
+
 This section describes general naming conventions that relate to word choice, guidelines on using abbreviations and acronyms, and recommendations on how to avoid using c++ names.
  
-# Word Choice
+## Word Choice
  
 **✔️ DO** choose easily readable identifier names.
  
@@ -16,7 +18,7 @@ The property name can_scroll_horizontally is better than scrollable_x (an obscur
  
 **❌ AVOID** using identifiers that conflict with keywords of widely used programming languages.
  
-# Using Abbreviations and Acronyms
+## Using Abbreviations and Acronyms
  
 **❌ DO NOT** use abbreviations or contractions as part of identifier names.
  
@@ -24,7 +26,7 @@ For example, use get_window rather than get_win.
  
 **❌ DO NOT** use any acronyms that are not widely accepted, and even if they are, only when necessary.
  
-# Avoiding C++ Names
+## Avoiding C++ Names
  
 **✔️ DO** use semantically interesting names rather than language-specific keywords for type names.
  
@@ -55,7 +57,7 @@ The following table presents several base data types using the **cstdint** type 
 
 **✔️ DO** use a common name, such as value or item, rather than repeating the type name, in the rare cases when an identifier has no semantic meaning and the type of the parameter is not important.
 
-# Naming New Versions of Existing APIs
+## Naming New Versions of Existing APIs
 
 **✔️ DO** use a name similar to the old API when creating new versions of an existing API.
 
@@ -73,7 +75,7 @@ This will assist discovery when browsing documentation, or using Intellisense. T
 
 **✔️ DO** use the "64" suffix when introducing versions of APIs that operate on a 64-bit integer (a long integer) instead of a 32-bit integer. You only need to take this approach when the existing 32-bit API exists; don’t do it for brand new APIs with only a 64-bit version.
 
-# See also
+## See also
 
 * [Naming Guidelines](/docs/documentation/Design%20Guidelines/Naming%20Guidelines)
 * [Design Guidelines](/docs/documentation/Design%20Guidelines)

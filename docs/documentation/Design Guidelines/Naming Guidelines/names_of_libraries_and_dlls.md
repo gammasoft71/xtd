@@ -1,3 +1,5 @@
+# Names of Libraries and DLLs
+
 A library represent a unit for code programs. You can used a static link library (.lib) or dynamic link (.dll or .so). This section describes only LIB naming conventions, which then can be mapped to DLL naming conventions.
 
 **✔️ DO** choose names for your libraries that suggest large chunks of functionality, such as xtd.drawing.
@@ -12,7 +14,7 @@ where \<component\> contains one or more underscore-separated clauses. For examp
 
 `xtd_drawing.lib`
 ​
-# See also
+## See also
 ​
 * [Naming Guidelines](/docs/documentation/Design%20Guidelines/Naming%20Guidelines)
 * [Design Guidelines](/docs/documentation/Design%20Guidelines)
