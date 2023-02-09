@@ -1,8 +1,8 @@
 # xtd.drawing examples
 
-[This folder](.) contains xtd.drawing examples used by [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/) and more.
+[This folder](.) contains xtd.drawing examples used by [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/) and more.
 
-[![xtd_drawing](../../docs/pictures/xtd_drawing_header.png)](https://gammasoft71.wixsite.com/xtdpro)
+[![xtd_drawing](../../docs/pictures/xtd_drawing_header.png)](https://gammasoft71.github.io/xtd)
 
 ## [Hello Worlds](hello_worlds/README.md)
 
@@ -10,21 +10,21 @@
 
 ## [Colors](colors/README.md)
 
-* [color](colors/color/README.md) Shows how to use [xtd::drawing::color](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1color.html) class.
+* [color](colors/color/README.md) Shows how to use [xtd::drawing::color](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1color.html) class.
 
 ## [Fonts](fonts/README.md)
 
-* [font](fonts/font/README.md) Shows how to use [xtd::drawing::font](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1font.html) class.
-* [system_fonts](fonts/system_fonts/README.md) Shows how to use [xtd::drawing::font](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1system__fonts.html) class.
+* [font](fonts/font/README.md) Shows how to use [xtd::drawing::font](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1font.html) class.
+* [system_fonts](fonts/system_fonts/README.md) Shows how to use [xtd::drawing::font](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1system__fonts.html) class.
 
 ## [Graphics](graphics/README.md)
 
-* [graphics](graphics/graphics/README.md) shows how to use [xtd::drawing::graphics](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1graphics.html) class.
+* [graphics](graphics/graphics/README.md) shows how to use [xtd::drawing::graphics](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1graphics.html) class.
 
 ## [Images](images/README.md)
 
-* [image](images/image/README.md) Shows how to use [xtd::drawing::image](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1font.html) class.
+* [image](images/image/README.md) Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1font.html) class.
 
 ## [Points](points/README.md)
 
-* [point](points/point/README.md) Shows how to use [xtd::drawing::point](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1point.html) class.
+* [point](points/point/README.md) Shows how to use [xtd::drawing::point](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1point.html) class.

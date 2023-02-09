@@ -108,7 +108,7 @@ int main() {
 
 When using xtd, you do not need to use these preprocessor symbols.
 
-It is better to use [xtd::environment::os_version](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#a7eb460253deb58efb3bfdfbb71904119).
+It is better to use [xtd::environment::os_version](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#a7eb460253deb58efb3bfdfbb71904119).
 
 But it can be useful for your own developments.
 
@@ -164,7 +164,7 @@ int main() {
 
 When using xtd, you do not need to use these preprocessor symbols.
 
-It is better to use [xtd::environment::processor_information](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#aece4cd0bcb92930816937b8c7b45a7a1).
+It is better to use [xtd::environment::processor_information](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#aece4cd0bcb92930816937b8c7b45a7a1).
 
 But it can be useful for your own developments.
 
@@ -214,7 +214,7 @@ int main() {
 
 When using xtd, you do not need to use these preprocessor symbols.
 
-It is better to use [xtd::environment::compiler_version](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#a86156ba949fd043f918a879faed73d86).
+It is better to use [xtd::environment::compiler_version](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#a86156ba949fd043f918a879faed73d86).
 
 But it can be useful for your own developments.
 
@@ -274,7 +274,7 @@ int main() {
 
 When using xtd, you do not need to use these preprocessor symbols.
 
-It is better to use [xtd::environment::cpp_version](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#a605f670a384617410e0e52765765b167).
+It is better to use [xtd::environment::cpp_version](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#a605f670a384617410e0e52765765b167).
 
 But it can be useful for your own developments.
 
@@ -318,7 +318,7 @@ int main() {
 
 When using xtd, you do not need to use these preprocessor symbols.
 
-It is better to use [xtd::environment::compiler_version().build_type](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1compiler.html#a26e8527d072bb9417298a60a27046ad5).
+It is better to use [xtd::environment::compiler_version().build_type](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1compiler.html#a26e8527d072bb9417298a60a27046ad5).
 
 But it can be useful for your own developments.
 
@@ -391,7 +391,7 @@ int main() {
 
 When using xtd, you do not need to use these preprocessor symbols.
 
-It is better to use [xtd::environment::target_type](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#a48fc0632092489172357d69eb5bbccd4).
+It is better to use [xtd::environment::target_type](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#a48fc0632092489172357d69eb5bbccd4).
 
 ## xtd paths
 
@@ -443,7 +443,7 @@ int main() {
 
 When using xtd, you do not need to use these preprocessor symbols.
 
-It is better to use [xtd::environment::get_folder_path](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1environment.html#a0bcc0c727357a767874cfc4970df1414).
+It is better to use [xtd::environment::get_folder_path](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#a0bcc0c727357a767874cfc4970df1414).
 
 # See also
 ​
