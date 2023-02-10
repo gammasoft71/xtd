@@ -67,8 +67,7 @@ namespace stacktrace {
         break; // skip last entries below main
       }
       
-      if (demangled)
-        free(demangled);
+      free(demangled);
     }
   }
   

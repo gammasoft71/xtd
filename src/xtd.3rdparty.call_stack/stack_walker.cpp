@@ -566,9 +566,9 @@ private:
     
 cleanup:
     if (hPsapi != NULL) FreeLibrary(hPsapi);
-    if (tt2 != NULL) free(tt2);
-    if (tt != NULL) free(tt);
-    if (hMods != NULL) free(hMods);
+    free(tt2);
+    free(tt);
+    free(hMods);
     
     return cnt != 0;
   }  // GetModuleListPSAPI
@@ -642,8 +642,8 @@ cleanup:
       }
       m_parent->OnLoadModule(img, mod, baseAddr, size, result, szSymType, Module.LoadedImageName, fileVersion);
     }
-    if (szImg != NULL) free(szImg);
-    if (szMod != NULL) free(szMod);
+    free(szImg);
+    free(szMod);
     return result;
   }
 public:
@@ -796,7 +796,8 @@ BOOL StackWalker::LoadModules() {
   
   // First Init the whole stuff...
   BOOL bRet = m_sw->Init(szSymPath);
-  if (szSymPath != NULL) free(szSymPath); szSymPath = NULL;
+  free(szSymPath);
+  szSymPath = NULL;
   if (bRet == FALSE) {
     OnDbgHelpErr("Error while initializing dbghelp.dll", 0, 0);
     SetLastError(ERROR_DLL_INIT_FAILED);
@@ -1009,7 +1010,7 @@ BOOL StackWalker::ShowCallstack(HANDLE hThread, const CONTEXT* context, PReadPro
   } // for ( frameNum )
   
 cleanup:
-  if (pSym) free(pSym);
+  free(pSym);
   
   if (context == NULL)
     ResumeThread(hThread);
