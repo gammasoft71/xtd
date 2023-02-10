@@ -19,10 +19,10 @@ namespace xtd {
       public:
         hdc_wrapper() = default;
         ~hdc_wrapper() {
-          if (graphics_) delete graphics_;
-          if (bitmap_) delete bitmap_;
-          if (hdc_) delete hdc_;
-          if (hdc_base_) delete hdc_base_;
+          delete graphics_;
+          delete bitmap_;
+          delete hdc_;
+          delete hdc_base_;
         }
         
         wxGraphicsContext* graphics() {

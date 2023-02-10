@@ -39,7 +39,7 @@ optional<reference_wrapper<ostream>> binary_writer::base_stream() const {
 void binary_writer::close() {
   flush();
   if (stream_ && dynamic_cast<ofstream*>(stream_)) static_cast<ofstream*>(stream_)->close();
-  if (delete_when_destroy_ && stream_) delete stream_;
+  if (delete_when_destroy_) delete stream_;
   stream_ = nullptr;
 }
 

@@ -37,7 +37,6 @@ void cursor::current(intptr cursor) {
 }
 
 void cursor::destroy(intptr cursor) {
-  if (cursor == 0) return;
   delete reinterpret_cast<wxCursor*>(cursor);
 }
 
