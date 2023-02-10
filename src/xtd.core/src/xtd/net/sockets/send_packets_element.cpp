@@ -29,7 +29,7 @@ send_packets_element::send_packets_element(std::ifstream& file_stream) : file_st
 }
 
 send_packets_element::~send_packets_element() {
-  if (delete_file_stream_when_destroy_ && file_stream_) delete file_stream_;
+  if (delete_file_stream_when_destroy_) delete file_stream_;
 }
 
 vector<xtd::byte> send_packets_element::buffer() const noexcept {

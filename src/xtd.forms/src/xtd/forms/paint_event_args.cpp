@@ -15,7 +15,7 @@ paint_event_args::paint_event_args(xtd::drawing::graphics& graphics, const drawi
 }
 
 paint_event_args::~paint_event_args() {
-  if (control_ && graphics_) delete graphics_;
+  if (control_) delete graphics_;
 }
 
 const drawing::rectangle& paint_event_args::clip_rectangle() const noexcept {

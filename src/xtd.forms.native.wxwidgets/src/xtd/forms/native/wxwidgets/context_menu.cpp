@@ -14,7 +14,6 @@ intptr context_menu::create() {
 }
 
 void context_menu::destroy(intptr context_menu) {
-  if (!context_menu) return;
   delete reinterpret_cast<wxMenu*>(context_menu);
 }
 

@@ -709,7 +709,6 @@ StackWalker::~StackWalker() {
   if (m_szSymPath != NULL)
     free(m_szSymPath);
   m_szSymPath = NULL;
-  if (m_sw != NULL)
     delete m_sw;
   m_sw = NULL;
 }

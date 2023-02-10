@@ -33,7 +33,7 @@ bool stream_reader::end_of_stream() const {
 
 void stream_reader::close() {
   if (stream_ && dynamic_cast<ifstream*>(stream_)) static_cast<ifstream*>(stream_)->close();
-  if (delete_when_destroy_ && stream_) delete stream_;
+  if (delete_when_destroy_) delete stream_;
   stream_ = nullptr;
 }
 
