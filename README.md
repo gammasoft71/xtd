@@ -4,9 +4,9 @@
 
 [![logo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/logo.png)](https://gammasoft71.github.io/xtd)
 
-(*) See [portability](https://github.com/gammasoft71/xtd/blob/master/docs/portability.md#the-xtd-libraries-portability-list) for more information.
+(*) See [portability](https://gammasoft71.github.io/xtd/docs/documentation/portability#the-xtd-libraries-portability-list) for more information.
 
-[![License](https://img.shields.io/github/license/gammasoft71/xtd)](https://gammasoft71.github.io/xtd/docs/documentation/license) [![Language](https://img.shields.io/badge/language-C++17/20-004080.svg)](https://gammasoft71.github.io/xtd/docs/documentation/portability) [![web](https://img.shields.io/badge/website-xtd-004080.svg)](https://gammasoft71.github.io/xtd) [![Reference Guide](https://img.shields.io/badge/code-reference%20guide-004080.svg)](https://gammasoft71.github.io/xtd/reference_guides/latest/index.html) [![wiki](https://img.shields.io/badge/wiki-documentation-004080.svg)](https://github.com/gammasoft71/xtd/blob/master/docs/home.md) [![discord](https://img.shields.io/badge/discord-gammasoft-7289DA.svg)](https://discordapp.com/users/gammasoft#9288) [![Download xtd](https://img.shields.io/sourceforge/dt/xtdpro.svg)](https://sourceforge.net/projects/xtdpro/files/latest/download)
+[![License](https://img.shields.io/github/license/gammasoft71/xtd)](https://gammasoft71.github.io/xtd/docs/documentation/license) [![Language](https://img.shields.io/badge/language-C++17/20-004080.svg)](https://gammasoft71.github.io/xtd/docs/documentation/portability) [![web](https://img.shields.io/badge/website-xtd-004080.svg)](https://gammasoft71.github.io/xtd) [![Reference Guide](https://img.shields.io/badge/code-reference%20guide-004080.svg)](https://gammasoft71.github.io/xtd/reference_guides/latest/index.html) [![wiki](https://img.shields.io/badge/wiki-documentation-004080.svg)](https://github.com/gammasoft71/xtd/wiki) [![discord](https://img.shields.io/badge/discord-gammasoft-7289DA.svg)](https://discordapp.com/users/gammasoft#9288) [![Download xtd](https://img.shields.io/sourceforge/dt/xtdpro.svg)](https://sourceforge.net/projects/xtdpro/files/latest/download)
  
 # Latest news
 
@@ -19,7 +19,7 @@
 * Free and open-source ([MIT License](https://gammasoft71.github.io/xtd/docs/documentation/license));
 * a collection of native C++ classes libraries, to **extend** std;
 * API close to the .net API with a modern C++ approach and full integration with the std standard;
-* xtd is designed to manage GUI controls and dialogs in pure [native mode](https://github.com/gammasoft71/xtd/blob/master/docs/control_appearance.md) or with [CSS styles](https://github.com/gammasoft71/xtd/blob/master/docs/style_sheets_overview.md).
+* xtd is designed to manage GUI controls and dialogs in pure [native mode](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/control_appearance) or with [CSS styles](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
 * written in efficient, modern C++17 / C++20 with [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom;
 * and [highly portable](https://gammasoft71.github.io/xtd/docs/documentation/portability) and available on [many different platforms](https://gammasoft71.github.io/xtd/docs/documentation/portability);
 
@@ -57,11 +57,11 @@ The [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group_
 
 ## Development status
 
-* [Release notes](https://github.com/gammasoft71/xtd/blob/master/docs/release_notes.md) provides release notes information.
-* [Roadmap](https://github.com/gammasoft71/xtd/blob/master/docs/roadmap.md) provides a view of the xtd roadmap.
+* [Release notes](https://gammasoft71.github.io/xtd/docs/documentation/release_notes) provides release notes information.
+* [Roadmap](https://gammasoft71.github.io/xtd/docs/documentation/roadmap) provides a view of the xtd roadmap.
 * [Kanban board](https://github.com/users/gammasoft71/projects/3) provides a Kanban view for all tasks (enhancements, pull requests, bugs, questions,...).
-* [Development status](https://github.com/gammasoft71/xtd/blob/master/docs/development_status.md) provides information about classes and libraries development status.
-* [Translation status](https://github.com/gammasoft71/xtd/blob/master/docs/translations_status.md) provides information about translations status.
+* [Development status](https://gammasoft71.github.io/xtd/docs/documentation/Development%20status) provides information about classes and libraries development status.
+* [Translation status](https://gammasoft71.github.io/xtd/docs/documentation/translation_status) provides information about translations status.
 
 ## Current release status
 
@@ -340,7 +340,7 @@ Now you are ready to make your first contribution to xtd.
 ## See also
 
 * [website](https://gammasoft71.github.io/xtd)
-* [wiki](https://github.com/gammasoft71/xtd/blob/master/docs/home.md)
+* [wiki](https://github.com/gammasoft71/xtd/wiki)
 * [github](https://github.com/gammasoft71/xtd) 
 * [project](https://sourceforge.net/projects/xtdpro/) 
 * [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/index.html)
