@@ -208,8 +208,7 @@ public:
       FreeLibrary(m_hDbhHelp);
     m_hDbhHelp = NULL;
     m_parent = NULL;
-    if (m_szSymPath != NULL)
-      free(m_szSymPath);
+    free(m_szSymPath);
     m_szSymPath = NULL;
   }
   BOOL Init(LPCSTR szSymPath) {
