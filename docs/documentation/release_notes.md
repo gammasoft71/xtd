@@ -6,6 +6,8 @@ sidebar_position: 5
 
 ![0.2.0](/pictures/releases/version_0_2_0.png) (beta) Not yet planned
 
+* ![todo](/pictures/releases/status/todo.png) [ENHANCEMENT] xtd - Creation of the website - [#212](https://github.com/gammasoft71/xtd/issues/212)
+* ![todo](/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - link_label enhancements - [#211](https://github.com/gammasoft71/xtd/issues/211)
 - ![todo](/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - xtd::forms::message_notifier - [#180](https://github.com/gammasoft71/xtd/issues/180)
 - ![todo](/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - themes - [#97](https://github.com/gammasoft71/xtd/issues/97)
 - ![todo](/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - switch_button_renderer - [#95](https://github.com/gammasoft71/xtd/issues/95)
@@ -31,6 +33,15 @@ sidebar_position: 5
 - ![todo](/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.core - time_zone_info - [#50](https://github.com/gammasoft71/xtd/issues/50)
 - ![todo](/pictures/releases/status/todo.png) [ENHANCEMENT] File drop feature request - [#5](https://github.com/gammasoft71/xtd/issues/5)
 
+* ![fixed](/pictures/releases/status/fixed.png) [BUG] Do not use “localhost” in public links - [#215](https://github.com/gammasoft71/xtd/issues/215)
+* ![added](/pictures/releases/status/added.png) [ENHANCEMENT] Remove unnecessary null pointer checks - [#214](https://github.com/gammasoft71/xtd/issues/214)
+* ![fixed](/pictures/releases/status/fixed.png) Tabs control - [#213](https://github.com/gammasoft71/xtd/issues/213)
+* ![fixed](/pictures/releases/status/fixed.png) [BUG] xtd.tools - xtdc fails to generate new project by path only - [#209](https://github.com/gammasoft71/xtd/issues/209)
+* ![fixed](/pictures/releases/status/fixed.png) [BUG] xtd.forms - assertion failed on debug mode - [#207](https://github.com/gammasoft71/xtd/issues/207)
+* ![added](/pictures/releases/status/added.png) [ENHANCEMENT] xtd.forms - text_box::placeholder_text() - [#206](https://github.com/gammasoft71/xtd/issues/206)
+* ![fixed](/pictures/releases/status/fixed.png) [BUG] xtd.forms - combo_box::drop_down raised twice when combo_box inside a layout_panel which is inside another layout_panel - [#202](https://github.com/gammasoft71/xtd/issues/202)
+* ![added](/pictures/releases/status/added.png) [ENHANCEMENT] Add the ability to close a dropdown combo_box programmatically - [#201](https://github.com/gammasoft71/xtd/issues/201)
+* ![fixed](/pictures/releases/status/fixed.png) [BUG] xtd.forms - combo_box::selected_index(index) and selected::item(item) only work once - [#200](https://github.com/gammasoft71/xtd/issues/200)
 - ![fixed](/pictures/releases/status/fixed.png) [BUG] Installing xtd in Arch Linux - [#199](https://github.com/gammasoft71/xtd/issues/199)
 - ![fixed](/pictures/releases/status/fixed.png) [BUG] ‘xtd::forms::button’ anchor style, anchor_styles::top, is ignored when contained in a xtd::forms::group_box. - [#198](https://github.com/gammasoft71/xtd/issues/198)
 - ![fixed](/pictures/releases/status/fixed.png) [QUESTION] xtd.forms - Should anchor(), dock(), and control_layout_style() all give very different results? - [#197](https://github.com/gammasoft71/xtd/issues/197)
