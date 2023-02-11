@@ -131,7 +131,7 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the value of the accepts_return property has changed.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       event<text_box, event_handler> accepts_return_changed;
       /// @}
       

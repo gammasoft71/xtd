@@ -157,11 +157,11 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when either a mouse or keyboard action moves the scroll box.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       event<track_bar, event_handler> scroll;
       
       /// @brief Occurs when the value property of a track bar changes, either by movement of the scroll box or by manipulation in code.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       event<track_bar, event_handler> value_changed;
       /// @}
       

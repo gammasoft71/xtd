@@ -24,7 +24,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @remarks For more info about delegates see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/delegates.md">Delegates</a> guide.
+  /// @remarks For more info about delegates see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/delegates">Delegates</a> guide.
   /// @par Examples
   /// The following example shows how to define a delegate named my Method delegate. Instances of this delegate are created for an instance method && a static method of the nested mySampleClass class. The delegate for the instance method requires an instance of mySampleClass. The mySampleClass instance is saved in a variable named mySC.
   /// @include delegate.cpp
@@ -267,7 +267,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  /// @remarks For more info about delegates see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/delegates.md">Delegates</a> guide.
+  /// @remarks For more info about delegates see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/delegates">Delegates</a> guide.
   /// @par Examples
   /// The following example shows how to define a delegate named my Method delegate. Instances of this delegate are created for an instance method && a static method of the nested mySampleClass class. The delegate for the instance method requires an instance of mySampleClass. The mySampleClass instance is saved in a variable named mySC.
   /// @include delegate.cpp

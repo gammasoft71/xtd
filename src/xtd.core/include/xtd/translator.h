@@ -17,7 +17,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   /// @remarks This class is used to translate an application into different languages.
-  /// @remarks For more information about internationalization, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/internationalization.md">Internationalizations</a>.
+  /// @remarks For more information about internationalization, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/internationalization">Internationalizations</a>.
   /// @par Examples
   /// The following shows how to use translator with std::locale method, litteral operator @c _t and translation files.
   /// @include translator.cpp

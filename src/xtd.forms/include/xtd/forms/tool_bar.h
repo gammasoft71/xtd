@@ -236,11 +236,11 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when a xtd::forms::tool_bar_button on the xtd::forms::tool_bar is clicked.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       xtd::event<tool_bar, xtd::forms::tool_bar_button_click_event_handler> button_click;
       
       /// @brief Occurs when a drop-down style xtd::forms::tool_bar_button or its down arrow is clicked.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       xtd::event<tool_bar, xtd::forms::tool_bar_button_click_event_handler> button_drop_down;
       /// @}
       
@@ -261,7 +261,7 @@ namespace xtd {
       /// @{
       /// @brief Raises the xtd::forms::tool_bar::button_click event.
       /// @param e A xtd::forms::tool_bar_button_click_event_args that contains the event data.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       /// @remarks The xtd::forms::tool_bar::on_button_click method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
       /// @par Notes to Inheritors
       /// When overriding xtd::forms::tool_bar::on_button_click in a derived class, be sure to call the base class's xtd::forms::tool_bar::on_button_click method so that registered delegates receive the event.
@@ -269,7 +269,7 @@ namespace xtd {
       
       /// @brief Raises the xtd::forms::tool_bar::button_drop_down event.
       /// @param e A xtd::forms::tool_bar_button_click_event_args that contains the event data.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       /// @remarks The xtd::forms::tool_bar::on_button_click method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
       /// @par Notes to Inheritors
       /// When overriding xtd::forms::tool_bar::on_button_drop_down in a derived class, be sure to call the base class's xtd::forms::tool_bar::on_button_drop_down method so that registered delegates receive the event.

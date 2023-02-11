@@ -19,7 +19,7 @@
 // | __XTD_TARGET_ID_STATIC_LIBRARY__      | 7     |
 // | __XTD_TARGET_ID_CUSTOM_TARGET__       | 8     |
 #if !defined(__XTD_CURRENT_TARGET_ID__) || !defined(__XTD_TARGET_ID_UNKNOWN__) || !defined(__XTD_TARGET_ID_CONSOLE_APPLICATION__) || !defined(__XTD_TARGET_ID_GUI_APPLICATION__) || !defined(__XTD_TARGET_ID_TEST_APPLICATION__) || !defined(__XTD_TARGET_ID_INTERFACE_LIBRARY__) || !defined(__XTD_TARGET_ID_MODULE_LIBRARY__) || !defined(__XTD_TARGET_ID_SHARED_LIBRARY__) || !defined(__XTD_TARGET_ID_STATIC_LIBRARY__) || !defined(__XTD_TARGET_ID_CUSTOM_TARGET__)
-#error "Some variables (like __XTD_TARGET_ID__) are not defined. This is probably because you are not using CMake to generate your project. See the following link for more information: https://github.com/gammasoft71/xtd/blob/master/docs/cmake_overview.md..."
+#error "Some variables (like __XTD_TARGET_ID__) are not defined. This is probably because you are not using CMake to generate your project. See the following link for more information: https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.cmake/Overview..."
 #endif
 /// @endcond
 
