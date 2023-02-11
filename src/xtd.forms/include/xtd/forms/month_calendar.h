@@ -333,12 +333,12 @@ namespace xtd {
       /// @{
       /// @brief Occurs when the date selected in the xtd::forms::month_calendar changes.
       /// @remarks The xtd::forms::month_calendar::date_changed event occurs during any date selection, whether by mouse, keyboard, or code. The xtd::forms::month_calendar::date_selected event is similar, but it occurs only at the end of a date selection made using the mouse.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       event<month_calendar, xtd::forms::date_range_event_handler> date_changed;
       
       /// @brief Occurs when the user makes an explicit date selection using the mouse.
       /// @remarks This event is similar to the xtd::forms::month_calendar::date_changed event, but it occurs at the end of a date selection made using the mouse. The xtd::forms::month_calendar::date_changed event occurs during any date selection, whether by mouse, keyboard, or code.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       event<month_calendar, xtd::forms::date_range_event_handler> date_selected;
       /// @}
       
@@ -475,7 +475,7 @@ namespace xtd {
       /// @{
       /// @brief Raises the xtd::forms::month_calendar::date_changed event.
       /// @param e A xtd::forms::date_range_event_args that contains the event data.
-      /// @remarks Raising an event invokes the event handler through a delegate. For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks Raising an event invokes the event handler through a delegate. For more information, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       /// @remarks The xtd::forms::month_calendar::on_date_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
       /// @par Notes to Inherotors
       /// When overriding xtd::forms::month_calendar::on_date_changed in a derived class, be sure to call the base class' xtd::forms::month_calendar::on_date_changed method so that registered delegates receive the event.
@@ -483,7 +483,7 @@ namespace xtd {
       
       /// @brief Raises the xtd::forms::month_calendar::date_selected event.
       /// @param e A xtd::forms::date_range_event_args that contains the event data.
-      /// @remarks Raising an event invokes the event handler through a delegate. For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks Raising an event invokes the event handler through a delegate. For more information, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       /// @remarks The xtd::forms::month_calendar::on_date_selected method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
       /// @par Notes to Inherotors
       /// When overriding xtd::forms::month_calendar::on_date_selected in a derived class, be sure to call the base class' xtd::forms::month_calendar::on_date_selected method so that registered delegates receive the event.

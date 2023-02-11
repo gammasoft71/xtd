@@ -98,7 +98,7 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the value of the font property changes.
-      /// @remarks For more information about handling events, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/handle_and_raise_events.md">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       event<font_picker, font_picker_event_handler> font_picker_changed;
       /// @}
       

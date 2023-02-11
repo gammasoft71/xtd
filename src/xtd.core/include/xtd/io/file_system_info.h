@@ -254,9 +254,9 @@ namespace xtd {
       /// @remarks
       /// | To do this...                                 | See the example in this topic...                                                                                                               |
       /// |-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-      /// | Create a text file.                           | <a ref="https://github.com/gammasoft71/xtd/blob/master/docs/common_io_tasks_write_text_to_a_file.md">How to: Write Text to a File</a> |
-      /// | Write to a text file.                         | <a ref="https://github.com/gammasoft71/xtd/blob/master/docs/common_io_tasks_write_text_to_a_file.md">How to: Write Text to a File</a> |
-      /// | Read from a text file.                        | <a ref="https://github.com/gammasoft71/xtd/blob/master/docs/common_io_tasks_read_text_from_a_file.md">How to: Read Text to a File</a> |
+      /// | Create a text file.                           | <a ref="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks/How-tos/write_text_to_a_file">How to: Write Text to a File</a> |
+      /// | Write to a text file.                         | <a ref="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks/How-tos/write_text_to_a_file">How to: Write Text to a File</a> |
+      /// | Read from a text file.                        | <a ref="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks/How-tos/read_text_from_a_file">How to: Read Text to a File</a> |
       /// | Retrieve the fully qualified path of a file.  | xtd::io::path::get_full_path                                                                                                                   |
       /// | Retrieve only the file name a path.           | xtd::io::path::get_file_name_without_extension                                                                                                 |
       /// | Retrieve only the directory name from a path. | xtd::io::path::get_directory_name                                                                                                              |
@@ -600,7 +600,7 @@ namespace xtd {
       
       /// @brief Deletes a file or directory.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid; for example, it is on an unmapped drive.
-      /// @exception xtd::io::io_exception There is an open handle on the file or directory, and the operating system is Windows XP or earlier. This open handle can result from enumerating directories and files. For more information, see <a ref="https://github.com/gammasoft71/xtd/blob/master/docs/common_io_tasks_enumerate_directories_and_files.mdd">How to: Enumerate Directories and Files</a>.
+      /// @exception xtd::io::io_exception There is an open handle on the file or directory, and the operating system is Windows XP or earlier. This open handle can result from enumerating directories and files. For more information, see <a ref="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I:O%20tasks/How-tos/enumerate_directories_and_files">How to: Enumerate Directories and Files</a>.
       virtual void remove() const = 0;
       
       /// @brief Returns the original path. Use the xtd::io::file_system_info::full_name or xtd::io::file_system_info::name properties for the full path or file/directory name.

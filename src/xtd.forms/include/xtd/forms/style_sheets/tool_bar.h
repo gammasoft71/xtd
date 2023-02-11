@@ -17,7 +17,7 @@ namespace xtd {
       /// xtd.forms
       /// @ingroup xtd_forms style_sheets
       /// @remarks You need to know how the box model works.
-      /// @remarks For more information, see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/style_sheets_box_model.md">Box Model</a>.
+      /// @remarks For more information, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_box_model">Box Model</a>.
       using tool_bar = xtd::forms::style_sheets::control;
     }
   }
