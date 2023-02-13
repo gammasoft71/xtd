@@ -18,10 +18,9 @@ using namespace std;
 
 namespace stacktrace {
   static std::string ToString(const wchar_t* str) {
-    char* newStr = new char[2 * wcslen(str) + 1];
-    WideCharToMultiByte(CP_ACP, 0, str, -1, newStr, 2 * wcslen(str) + 1, 0, NULL);
-    std::string output(newStr);
-    delete[] newStr;
+    std::string output(2 * wcslen(str) + 1, 0);
+    WideCharToMultiByte(CP_ACP, 0, str, -1, output.data(), output.size(), 0, nullptr);
+    output.shrink_to_fit();
     return output;
   }
   
