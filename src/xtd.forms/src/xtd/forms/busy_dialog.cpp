@@ -4,7 +4,6 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/drawing/system_icons.h>
 #include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/busy_box.h"
 #include "../../../include/xtd/forms/busy_dialog.h"
 
 using namespace std;
@@ -25,8 +24,6 @@ struct busy_dialog::data {
 
 busy_dialog::busy_dialog() : data_(std::make_shared<data>()) {
 }
-
-busy_dialog* busy_box::dialog_ = nullptr;
 
 busy_dialog::~busy_dialog() {hide();}
 

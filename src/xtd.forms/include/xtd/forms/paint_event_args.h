@@ -39,10 +39,6 @@ namespace xtd {
       paint_event_args(xtd::drawing::graphics& graphics, const drawing::rectangle& clip_rectangle);
       /// @}
       
-      /// @cond
-      ~paint_event_args();
-      /// @endcond
-      
       /// @name Properties
       
       /// @{
@@ -58,7 +54,7 @@ namespace xtd {
     private:
       friend class xtd::forms::control;
       xtd::forms::control* control_ = nullptr;
-      mutable xtd::drawing::graphics* graphics_ = nullptr;
+      mutable std::unique_ptr<xtd::drawing::graphics> graphics_;
       xtd::drawing::rectangle clip_rectangle_;
       xtd::forms::message message_; // need for xtd::forms::control::on_paint_ xtd::forms::control::on_paint_background to call def_wnd_proc method.
     };

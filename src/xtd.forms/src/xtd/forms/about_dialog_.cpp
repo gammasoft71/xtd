@@ -135,100 +135,100 @@ namespace {
     }
     
     static void show(intptr hwnd, const xtd::drawing::image& icon, const xtd::ustring& name, const xtd::ustring& description, const xtd::ustring& version, const xtd::ustring& long_version, const xtd::ustring& copyright, const xtd::ustring& website, const xtd::ustring& website_label, const std::vector<ustring>& authors, const std::vector<ustring>& artists, const std::vector<ustring>& documenters, const std::vector<ustring>& translators, const xtd::ustring& license) {
-      if (about_dialog != nullptr) {
-        about_dialog->activate();
+      if (about_dialog_) {
+        about_dialog_->activate();
         return;
       }
-      about_dialog = new about_dialog_standard();
+      about_dialog_ = std::make_unique<about_dialog_standard>();
       auto has_credit = !(authors.empty() && documenters.empty() && translators.empty() && artists.empty());
       auto has_license = !license.empty();
       if (icon != xtd::drawing::bitmap::empty)
-        about_dialog->picture_box_icon_.image(xtd::drawing::bitmap(icon, {64, 64}));
+        about_dialog_->picture_box_icon_.image(xtd::drawing::bitmap(icon, {64, 64}));
       else
-        about_dialog->picture_box_icon_.image(xtd::drawing::system_images::from_name("xtd-forms", xtd::drawing::size(64, 64)));
-      about_dialog->label_name_.height(static_cast<int32>(30 * name.split({'\n'}).size()));
-      about_dialog->label_name_.text(name);
+        about_dialog_->picture_box_icon_.image(xtd::drawing::system_images::from_name("xtd-forms", xtd::drawing::size(64, 64)));
+      about_dialog_->label_name_.height(static_cast<int32>(30 * name.split({'\n'}).size()));
+      about_dialog_->label_name_.text(name);
       if (has_credit || has_license) {
-        about_dialog->controls().push_back_range({about_dialog->tab_control_about_, about_dialog->label_name_, about_dialog->picture_box_icon_});
-        about_dialog->tab_control_about_.tab_pages().push_back(about_dialog->tab_page_about_);
-        about_dialog->tab_page_about_.controls().push_back(about_dialog->panel_about_);
+        about_dialog_->controls().push_back_range({about_dialog_->tab_control_about_, about_dialog_->label_name_, about_dialog_->picture_box_icon_});
+        about_dialog_->tab_control_about_.tab_pages().push_back(about_dialog_->tab_page_about_);
+        about_dialog_->tab_page_about_.controls().push_back(about_dialog_->panel_about_);
       } else {
-        about_dialog->maximum_size({0, 0});
-        about_dialog->minimum_size({0, 0});
-        about_dialog->client_size({476, 250});
-        about_dialog->maximum_size(about_dialog->size());
-        about_dialog->minimum_size(about_dialog->size());
-        about_dialog->controls().push_back_range({about_dialog->panel_about_, about_dialog->label_name_, about_dialog->picture_box_icon_});
+        about_dialog_->maximum_size({0, 0});
+        about_dialog_->minimum_size({0, 0});
+        about_dialog_->client_size({476, 250});
+        about_dialog_->maximum_size(about_dialog_->size());
+        about_dialog_->minimum_size(about_dialog_->size());
+        about_dialog_->controls().push_back_range({about_dialog_->panel_about_, about_dialog_->label_name_, about_dialog_->picture_box_icon_});
       }
       
       if (!version.empty() && !long_version.empty())
-        about_dialog->label_version_.text(xtd::ustring::format("{} ({})", long_version, version));
+        about_dialog_->label_version_.text(xtd::ustring::format("{} ({})", long_version, version));
       else if (!long_version.empty())
-        about_dialog->label_version_.text(xtd::ustring::format("{}", long_version));
+        about_dialog_->label_version_.text(xtd::ustring::format("{}", long_version));
       else if (!version.empty())
-        about_dialog->label_version_.text(xtd::ustring::format("({})", version));
+        about_dialog_->label_version_.text(xtd::ustring::format("({})", version));
         
-      about_dialog->label_description_.height(static_cast<int32>(23 * description.split({'\n'}).size()));
-      about_dialog->label_description_.text(xtd::ustring::format("{}", description));
+      about_dialog_->label_description_.height(static_cast<int32>(23 * description.split({'\n'}).size()));
+      about_dialog_->label_description_.text(xtd::ustring::format("{}", description));
       
-      about_dialog->link_label_website_.height(static_cast<int32>(23 * (!website_label.empty() ? website_label : website).split({'\n'}).size()));
-      about_dialog->link_label_website_.text(!website_label.empty() ? website_label : website);
-      about_dialog->link_label_website_.link_clicked += [website](object & sender, link_label_clicked_event_args & e) {
+      about_dialog_->link_label_website_.height(static_cast<int32>(23 * (!website_label.empty() ? website_label : website).split({'\n'}).size()));
+      about_dialog_->link_label_website_.text(!website_label.empty() ? website_label : website);
+      about_dialog_->link_label_website_.link_clicked += [website](object & sender, link_label_clicked_event_args & e) {
         e.visited(true);
         diagnostics::process::start(website);
       };
       
-      about_dialog->label_copyright_.height(static_cast<int32>(23 * copyright.split({'\n'}).size()));
-      about_dialog->label_copyright_.text(xtd::ustring::format("{}", ustring(copyright).replace(u8"(c)"_s, u8"\u00A9"_s)));
+      about_dialog_->label_copyright_.height(static_cast<int32>(23 * copyright.split({'\n'}).size()));
+      about_dialog_->label_copyright_.text(xtd::ustring::format("{}", ustring(copyright).replace(u8"(c)"_s, u8"\u00A9"_s)));
       
       if (has_credit) {
-        about_dialog->tab_control_about_.tab_pages().push_back(about_dialog->tab_page_credits_);
-        about_dialog->tab_page_credits_.auto_scroll(true);
+        about_dialog_->tab_control_about_.tab_pages().push_back(about_dialog_->tab_page_credits_);
+        about_dialog_->tab_page_credits_.auto_scroll(true);
         
         if (!artists.empty()) {
-          about_dialog->artists_.parent(about_dialog->tab_page_credits_);
-          about_dialog->artists_.dock(dock_style::top);
-          about_dialog->artists_.title("Artwork by");
-          about_dialog->artists_.names(artists);
+          about_dialog_->artists_.parent(about_dialog_->tab_page_credits_);
+          about_dialog_->artists_.dock(dock_style::top);
+          about_dialog_->artists_.title("Artwork by");
+          about_dialog_->artists_.names(artists);
         }
         
         if (!translators.empty()) {
-          about_dialog->translators_.parent(about_dialog->tab_page_credits_);
-          about_dialog->translators_.dock(dock_style::top);
-          about_dialog->translators_.title("Translated by");
-          about_dialog->translators_.names(translators);
+          about_dialog_->translators_.parent(about_dialog_->tab_page_credits_);
+          about_dialog_->translators_.dock(dock_style::top);
+          about_dialog_->translators_.title("Translated by");
+          about_dialog_->translators_.names(translators);
         }
         
         if (!documenters.empty()) {
-          about_dialog->documenters_.parent(about_dialog->tab_page_credits_);
-          about_dialog->documenters_.dock(dock_style::top);
-          about_dialog->documenters_.title("Documented by");
-          about_dialog->documenters_.names(documenters);
+          about_dialog_->documenters_.parent(about_dialog_->tab_page_credits_);
+          about_dialog_->documenters_.dock(dock_style::top);
+          about_dialog_->documenters_.title("Documented by");
+          about_dialog_->documenters_.names(documenters);
         }
         
         if (!authors.empty()) {
-          about_dialog->authors_.parent(about_dialog->tab_page_credits_);
-          about_dialog->authors_.dock(dock_style::top);
-          about_dialog->authors_.title("Created by");
-          about_dialog->authors_.names(authors);
+          about_dialog_->authors_.parent(about_dialog_->tab_page_credits_);
+          about_dialog_->authors_.dock(dock_style::top);
+          about_dialog_->authors_.title("Created by");
+          about_dialog_->authors_.names(authors);
         }
       }
       
       if (has_license) {
-        about_dialog->tab_control_about_.tab_pages().push_back(about_dialog->tab_page_license_);
-        about_dialog->text_box_license_.text(license);
+        about_dialog_->tab_control_about_.tab_pages().push_back(about_dialog_->tab_page_license_);
+        about_dialog_->text_box_license_.text(license);
       }
       
-      about_dialog->visible(true);
+      about_dialog_->visible(true);
     }
     
   private:
     void on_form_closed(const form_closed_event_args& e) override {
       form::on_form_closed(e);
-      delete about_dialog;
-      about_dialog = nullptr;
+      about_dialog_.reset();
     }
-    inline static about_dialog_standard* about_dialog = nullptr;
+    
+    inline static std::unique_ptr<about_dialog_standard> about_dialog_;
     picture_box picture_box_icon_;
     label label_name_;
     tab_page tab_page_about_;
