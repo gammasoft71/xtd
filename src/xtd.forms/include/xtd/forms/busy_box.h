@@ -46,10 +46,7 @@ namespace xtd {
       
       /// @{
       /// @brief Hides a busy box in front.
-      static void hide() {
-        delete dialog_;
-        dialog_ = nullptr;
-      }
+      static void hide() {dialog_.reset();}
       
       /// @brief Displays a busy box in front of the specified window. The busy box displays a message, title bar caption, button, and icon.
       /// @param owner A iwin32_window that represents the owner window of the busy box.
@@ -132,10 +129,10 @@ namespace xtd {
       /// @}
       
     private:
-      static busy_dialog* dialog_;
+      inline static std::unique_ptr<busy_dialog> dialog_;
       static void show_busy_dialog(const iwin32_window* owner, const xtd::ustring& text = "Please wait..."_t, const xtd::ustring& caption = "", const xtd::drawing::icon& icon = xtd::drawing::icon::empty, const xtd::drawing::color& back_color = application::style_sheet().system_colors().control(), const xtd::drawing::color& fore_color = application::style_sheet().system_colors().control_text(), float opacity = 0.0) {
         if (dialog_) return;
-        dialog_ = new busy_dialog();
+        dialog_ = std::make_unique<busy_dialog>();
         dialog_->description(text);
         dialog_->text(caption);
         dialog_->icon(icon);

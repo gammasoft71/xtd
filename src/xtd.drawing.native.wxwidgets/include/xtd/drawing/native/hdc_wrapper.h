@@ -18,59 +18,53 @@ namespace xtd {
       class hdc_wrapper {
       public:
         hdc_wrapper() = default;
-        ~hdc_wrapper() {
-          delete graphics_;
-          delete bitmap_;
-          delete hdc_;
-          delete hdc_base_;
-        }
         
         wxGraphicsContext* graphics() {
           /// @Workaround : With wxWidgets on Gtk, we need recreate graphics context otherwise only the first operation is taken into account.
           #if defined(__WXGTK__)
-          if (bitmap_ && image_) return wxGraphicsContext::Create(wxMemoryDC(*bitmap_));
+          if (bitmap_ && image_) create_memory_hdc(image_);
           #endif
-          return graphics_;
+          return graphics_.get();
         }
         
         wxDC& hdc() {return *hdc_;}
         
         template<typename hdc_t, typename ...args_type>
         void create(args_type&& ...args) {
-          hdc_t* handle = new hdc_t(args...);
-          hdc_ = handle;
-          if (graphics_) delete graphics_;
+          auto handle = std::make_unique<hdc_t>(args...);
+          graphics_.reset();
           graphics_ = create_graphics(*handle);
+          hdc_ = std::move(handle);
         }
         
-        void create_buffered_hdc(wxDC* hdc_base) {
-          auto handle = new wxBufferedDC(hdc_base);
-          hdc_ = handle;
-          hdc_base_ = hdc_base;
+        void create_buffered_hdc(std::unique_ptr<wxDC>&& hdc_base) {
+          hdc_base_ = std::move(hdc_base);
+          auto handle = std::make_unique<wxBufferedDC>(hdc_base_.get());
           graphics_ = create_graphics(*handle);
+          hdc_ = std::move(handle);
         }
         
-        void create_memory_hdc(wxBitmap* bitmap, wxImage* image) {
-          auto handle = new wxMemoryDC(*bitmap);
-          hdc_ = handle;
-          bitmap_ = bitmap;
+        void create_memory_hdc(intptr image) {
           image_ = image;
+          bitmap_ = std::make_unique<wxBitmap>(*reinterpret_cast<wxImage*>(image_));
+          auto handle = std::make_unique<wxMemoryDC>(*bitmap_);
           graphics_ = create_graphics(*handle);
+          hdc_ = std::move(handle);
         }
         
         void apply_update() {
-          if (bitmap_ && image_) *image_ = bitmap_->ConvertToImage();
+          if (bitmap_ && image_) *reinterpret_cast<wxImage*>(image_) = bitmap_->ConvertToImage();
         }
         
       private:
         template<typename hdc_t>
-        wxGraphicsContext* create_graphics(const hdc_t& hdc) {return wxGraphicsContext::Create(hdc);}
-        wxGraphicsContext* create_graphics(const wxScreenDC& hdc) {return wxGraphicsContext::Create();}
-        wxDC* hdc_ = nullptr;
-        wxBitmap* bitmap_ = nullptr;
-        wxImage* image_ = nullptr;
-        wxGraphicsContext* graphics_ = nullptr;
-        wxDC* hdc_base_ = nullptr;
+        std::unique_ptr<wxGraphicsContext> create_graphics(const hdc_t& hdc) {return std::unique_ptr<wxGraphicsContext>(wxGraphicsContext::Create(hdc));}
+        std::unique_ptr<wxGraphicsContext> create_graphics(const wxScreenDC& hdc) {return std::unique_ptr<wxGraphicsContext>(wxGraphicsContext::Create());}
+        std::unique_ptr<wxBitmap> bitmap_;
+        std::unique_ptr<wxGraphicsContext> graphics_;
+        std::unique_ptr<wxDC> hdc_;
+        std::unique_ptr<wxDC> hdc_base_;
+        intptr image_ = 0;
       };
     }
   }

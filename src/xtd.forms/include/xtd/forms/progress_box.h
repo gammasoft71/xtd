@@ -64,7 +64,7 @@ namespace xtd {
       
       /// @{
       /// @brief Hides a progress box in front.
-      static void hide() { delete dialog_; dialog_ = nullptr; }
+      static void hide() {dialog_.reset();}
       
       /// @brief Displays a progress box.
       /// @param title An xtd::ustring that specifies the title of the progress dialog.
@@ -339,10 +339,10 @@ namespace xtd {
       /// @}
       
     private:
-      inline static progress_dialog* dialog_;
+      inline static std::unique_ptr<progress_dialog> dialog_;
       static void show_progress_box(const iwin32_window* owner = nullptr, const progress_box_options options = progress_box_options::none, const xtd::ustring& title = "Please wait..."_t, const xtd::ustring& message = ""_t, int32 initial_value = 0, int32 minimum = 0, int32 maximum = 100, const bool marquee = false, size_t marquee_animation_speed = 100, const std::vector<xtd::ustring>& informations = std::vector<xtd::ustring>()) {
         if (dialog_) return;
-        dialog_ = new progress_dialog();
+        dialog_ = std::make_unique<progress_dialog>();
         dialog_->text(title)
         .value(initial_value)
         .message(message)

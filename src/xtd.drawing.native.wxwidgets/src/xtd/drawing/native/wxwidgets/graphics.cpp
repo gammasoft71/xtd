@@ -560,7 +560,7 @@ intptr graphics::from_hwnd(intptr hwnd) {
 intptr graphics::from_image(intptr image) {
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper;
   if (image == 0) hdc_wrapper->create<wxScreenDC>();
-  else hdc_wrapper->create_memory_hdc(new wxBitmap(*reinterpret_cast<wxImage*>(image)), reinterpret_cast<wxImage*>(image));
+  else hdc_wrapper->create_memory_hdc(image);
   return reinterpret_cast<intptr>(hdc_wrapper);
 }
 
