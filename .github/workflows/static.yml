@@ -1,26 +1,41 @@
-name: Deploy to github pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ docs ]
+    branches:
+      - docs
 
 jobs:
-  gh-pages-deploy:
-    name: Deploying to gh-pages
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Node.js for use with actions
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
         with:
-          version:  12.x
-      - name: Checkout branch
-        uses: actions/checkout@v2
+          node-version: 18
+          cache: npm
 
-      - name: Clean install dependencies
+      - name: Install dependencies
         run: npm ci
+      - name: Build website
+        run: npm run build
 
-      - name: Run deploy script
-        run: |
-          git config user.name "gammasoft71" && git config user.email "gammasoft71@gmail.com"
-          # npm run gh-pages-deploy
-          yarn deploy
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: build
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
