@@ -6,6 +6,7 @@
 /// @endcond
 
 #include <cstdint>
+#include <memory>
 #include <wx/dc.h>
 #include <wx/dcbuffer.h>
 #include <wx/dcmemory.h>
