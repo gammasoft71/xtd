@@ -93,17 +93,8 @@ namespace xtd {
       /// @}
       
     private:
-      inline static std::unique_ptr<xtd::forms::find_dialog> dialog_;
-      static void show_find_box(const iwin32_window& owner, xtd::forms::find_event_handler find_next, const xtd::ustring& find_string = "", const xtd::ustring& title = "", bool match_case = false, xtd::forms::search_direction search_direction = xtd::forms::search_direction::down, bool whole_word = false) {
-        if (dialog_) return;
-        dialog_ = std::make_unique<xtd::forms::find_dialog>();
-        dialog_->title(title).find_string(find_string).match_case(match_case).search_direction(search_direction).whole_word(whole_word);
-        dialog_->show(owner);
-        dialog_->find_next += find_next;
-        dialog_->dialog_closed += [] {
-          dialog_.reset();
-        };
-      }
+      static std::unique_ptr<xtd::forms::find_dialog> dialog_;
+      static void show_find_box(const iwin32_window& owner, xtd::forms::find_event_handler find_next, const xtd::ustring& find_string = "", const xtd::ustring& title = "", bool match_case = false, xtd::forms::search_direction search_direction = xtd::forms::search_direction::down, bool whole_word = false);
     };
   }
 }
