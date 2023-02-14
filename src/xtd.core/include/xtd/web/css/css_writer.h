@@ -22,7 +22,7 @@ namespace xtd {
         css_writer(const xtd::ustring& path) : text_writer_(new xtd::io::stream_writer(path)) {}
         /// @}
         /// @cond
-        ~css_writer() {if (delete_when_destroy_ && text_writer_) delete text_writer_;}
+        ~css_writer() {if (delete_when_destroy_) delete text_writer_;}
         /// @endcond
         
         /// @name Properties
