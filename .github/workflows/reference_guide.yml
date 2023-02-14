@@ -23,4 +23,4 @@ jobs:
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
-        FOLDER: static/reference_guides/latest2
+        FOLDER: static/reference_guides/latest
