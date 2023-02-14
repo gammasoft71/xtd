@@ -125,13 +125,13 @@ namespace xtd {
       /// @param icon An icon value that specifies the icon to display.
       /// @param back_color A color that represents the background color of the busy box.
       /// @param fore_color A color that represents the background color of the busy box.
-      /// @param opacity A float that represents the opacity of the busy box. (0: full opacity and 1.0 no opacity)
+      /// @param opacity A float that represents the opacity of the busy box. (0: full opacity and 1.0 no opacity). The lower the value, the more transparent.
       static void show(const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, float opacity);
       /// @}
       
     private:
       static std::unique_ptr<busy_dialog> dialog_;
-      static void show_busy_dialog(const iwin32_window* owner, const xtd::ustring& text = "Please wait..."_t, const xtd::ustring& caption = "", const xtd::drawing::icon& icon = xtd::drawing::icon::empty, const xtd::drawing::color& back_color = application::style_sheet().system_colors().control(), const xtd::drawing::color& fore_color = application::style_sheet().system_colors().control_text(), float opacity = 0.0);
+      static void show_busy_dialog(const iwin32_window* owner, const xtd::ustring& text = "Please wait..."_t, const xtd::ustring& caption = "", const xtd::drawing::icon& icon = xtd::drawing::icon::empty, const xtd::drawing::color& back_color = application::style_sheet().system_colors().control(), const xtd::drawing::color& fore_color = application::style_sheet().system_colors().control_text(), float opacity = 1.0f);
     };
   }
 }
