@@ -83,6 +83,7 @@ add_sources(
   include/xtd/forms/day.h
   include/xtd/forms/debug_form.h
   include/xtd/forms/debug_message_box.h
+  include/xtd/forms/debug_message_dialog.h
   include/xtd/forms/dialog_closed_event_args.h
   include/xtd/forms/dialog_closed_event_handler.h
   include/xtd/forms/dialog_result.h
