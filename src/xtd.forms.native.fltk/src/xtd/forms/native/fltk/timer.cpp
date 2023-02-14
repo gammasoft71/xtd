@@ -12,7 +12,6 @@ intptr_t timer::create(int32_t interval, const delegate<void(const event_args&)>
 }
 
 void timer::destroy(intptr_t handle) {
-  fl_timer* timer = reinterpret_cast<class fl_timer*>(handle);
-  timer->Stop();
-  delete timer;
+  reinterpret_cast<class fl_timer*>(handle)->Stop();
+  delete reinterpret_cast<class fl_timer*>(handle);
 }
