@@ -352,6 +352,7 @@ add_sources(
   include/xtd/forms/visual_styles/radio_button_state.h
   include/xtd/forms/visual_styles/toggle_button_state.h
   include/xtd/forms/visual_styles/user_control_state.h
+  src/xtd/forms/about_box.cpp
   src/xtd/forms/about_dialog.cpp
   src/xtd/forms/animation.cpp
   src/xtd/forms/application.cpp
