@@ -16,10 +16,10 @@ jobs:
           node-version: 18
           cache: npm
 
-      #- name: Install dependencies
-      #  run: npm ci
+      - name: Install dependencies
+        run: npm ci
       - name: Build website
-        run: yarn deploy
+        run: npm run build
 
       - uses: actions/upload-pages-artifact@v1
         with:
