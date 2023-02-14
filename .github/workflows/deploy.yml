@@ -27,15 +27,6 @@ jobs:
 
   deploy:
     name: Deploy to GitHub Pages
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+      run: |
+        git config user.name "gammasoft71" && git config user.email "gammasoft71@gmail.com"
+        npm run gh-pages-deploy
