@@ -450,6 +450,7 @@ add_sources(
   src/xtd/forms/radio_button.cpp
   src/xtd/forms/radio_button_renderer.cpp
   src/xtd/forms/renderer.cpp
+  src/xtd/forms/replace_box.cpp
   src/xtd/forms/replace_dialog.cpp
   src/xtd/forms/save_file_dialog.cpp
   src/xtd/forms/screen.cpp
