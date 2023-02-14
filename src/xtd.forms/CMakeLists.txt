@@ -369,6 +369,7 @@ add_sources(
   src/xtd/forms/checked_list_box.cpp
   src/xtd/forms/choice.cpp
   src/xtd/forms/collapsible_panel.cpp
+  src/xtd/forms/color_box.cpp
   src/xtd/forms/color_dialog.cpp
   src/xtd/forms/color_picker.cpp
   src/xtd/forms/combo_box.cpp
