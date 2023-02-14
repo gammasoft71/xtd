@@ -113,12 +113,12 @@ namespace xtd {
       
       /// @brief Gets the dialog opacity.
       /// @return The dialog opacity.
-      /// @remarks 0 full opacity; 1.0 full opacity.
+      /// @remarks 0 full opacity; 1.0 no opacity. The lower the value, the more transparent.
       double opacity() const noexcept;
       /// @brief Gets the dialog opacity.
       /// @param opacity The dialog opacity.
       /// @return Current busy_dialog instance.
-      /// @remarks 0 full opacity; 1.0 full opacity.
+      /// @remarks 0 full opacity; 1.0 no opacity. The lower the value, the more transparent.
       busy_dialog& opacity(double opacity);
       
       /// @brief Gets the dialog title.
