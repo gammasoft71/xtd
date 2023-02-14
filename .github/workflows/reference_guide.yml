@@ -2,16 +2,25 @@ name: Doxygen GitHub Pages Deploy Action
 
 on:
   push:
-    branches:
-      - main
-  workflow_dispatch:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: DenverCoder1/doxygen-github-pages-action@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: static/reference_guides/latest2
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+    
+    - name: Doxygen Action
+      uses: mattnotmitt/doxygen-action@v1.1.0
+    
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@3.5.2
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: static/reference_guides/latest2

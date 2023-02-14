@@ -1,0 +1,35 @@
+# Doxyfile 1.8.14
+
+#---------------------------------------------------------------------------
+# Remarks
+#---------------------------------------------------------------------------
+
+# This file is use by Github Action to generate latest reference guide.
+
+#---------------------------------------------------------------------------
+# Common guide configuration options
+#---------------------------------------------------------------------------
+
+@INCLUDE = ./docs/doxygen/doxygen.txt
+
+#---------------------------------------------------------------------------
+# Specific guide configuration options (for root location)
+#---------------------------------------------------------------------------
+
+EXAMPLE_PATH          = ./examples
+HTML_EXTRA_FILES      = ./docs/doxygen/doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js ./docs/doxygen/favicon.png
+HTML_EXTRA_STYLESHEET = ./docs/doxygen/doxygen-awesome-css/doxygen-awesome.css ./docs/doxygen/custom_images.css
+HTML_FOOTER           = ./docs/doxygen/html_footer.html
+HTML_HEADER           = ./docs/doxygen/html_header.html
+IMAGE_PATH            = ./docs/pictures
+INPUT                 = ./src/xtd/include/doxygen \
+                        ./src/xtd/include/xtd \
+                        ./src/xtd.core/include \
+                        ./src/xtd.drawing/include \
+                        ./src/xtd.forms/include \
+                        ./src/xtd.tunit/include
+LAYOUT_FILE           = ./docs/doxygen/xtd_doxygen_layout.xml
+OUTPUT_DIRECTORY      = 
+PROJECT_LOGO          = ./docs/pictures/xtd_doxygen.png
+STRIP_FROM_PATH       = ./src
+WARN_LOGFILE          = ./doxygen_warnings.txt
