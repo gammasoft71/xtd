@@ -446,6 +446,7 @@ add_sources(
   src/xtd/forms/picture_box.cpp
   src/xtd/forms/popup_panel.cpp
   src/xtd/forms/progress_bar.cpp
+  src/xtd/forms/progress_box.cpp
   src/xtd/forms/progress_dialog.cpp
   src/xtd/forms/radio_button.cpp
   src/xtd/forms/radio_button_renderer.cpp
