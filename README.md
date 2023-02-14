@@ -88,7 +88,7 @@ At each commit, a build and unit tests are performed for the following configura
 
 | Deploy to GitHub Pages                   | status                                                                                                                                                                                               |
 | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Deployment of the website                | [![Ubuntu Debug](https://img.shields.io/github/actions/workflow/status/gammasoft71/xtd/deploy.yml?branch=master)](https://github.com/gammasoft71/xtd/actions/workflows/deploy.yml)                   |
+| Deployment of the website                | [![Ubuntu Debug](https://img.shields.io/github/actions/workflow/status/gammasoft71/xtd/deploy.yml?branch=docs)](https://github.com/gammasoft71/xtd/actions/workflows/deploy.yml)                     |
 | Deployment of the latest reference guide | [![Ubuntu Debug](https://img.shields.io/github/actions/workflow/status/gammasoft71/xtd/reference_guide.yml?branch=master)](https://github.com/gammasoft71/xtd/actions/workflows/reference_guide.yml) |
 
 ## Issues status
