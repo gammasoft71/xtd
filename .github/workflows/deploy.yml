@@ -28,5 +28,5 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
       run: |
-        git config user.name "gammasoft71" && git config user.email "gammasoft71@gmail.com"
+        git config user.name "gammasoft71" && git config user.email "gammasoft71@gmail.com" && |
         npm run gh-pages-deploy
