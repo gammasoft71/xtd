@@ -193,7 +193,7 @@ intptr control::create_double_buffered_paint_graphics(intptr control) {
   reinterpret_cast<control_handler*>(control)->main_control()->SetBackgroundStyle(wxBackgroundStyle::wxBG_STYLE_PAINT);
   //reinterpret_cast<control_handler*>(control)->graphic_control()->SetBackgroundColour(back_color);
   #if defined(__WXGTK__)
-  hdc_wrapper->create_buffered_hdc(std::make_shared<wxClientDC>(reinterpret_cast<control_handler*>(control)->main_control()));
+  hdc_wrapper->create_buffered_hdc(std::make_unique<wxClientDC>(reinterpret_cast<control_handler*>(control)->main_control()));
   #else
   hdc_wrapper->create<wxAutoBufferedPaintDC>(reinterpret_cast<control_handler*>(control)->main_control());
   #endif

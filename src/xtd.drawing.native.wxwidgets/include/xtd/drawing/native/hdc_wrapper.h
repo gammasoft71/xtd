@@ -7,6 +7,7 @@
 
 #include <cstdint>
 #include <memory>
+#include <xtd/types.h>
 #include <wx/dc.h>
 #include <wx/dcbuffer.h>
 #include <wx/dcmemory.h>
