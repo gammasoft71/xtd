@@ -358,6 +358,7 @@ add_sources(
   src/xtd/forms/application_context.cpp
   src/xtd/forms/background_worker.cpp
   src/xtd/forms/box_renderer.cpp
+  src/xtd/forms/busy_box.cpp
   src/xtd/forms/busy_dialog.cpp
   src/xtd/forms/button.cpp
   src/xtd/forms/button_base.cpp
