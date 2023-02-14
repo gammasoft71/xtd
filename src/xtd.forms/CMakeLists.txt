@@ -396,6 +396,7 @@ add_sources(
   src/xtd/forms/flat_button_appearance.cpp
   src/xtd/forms/file_dialog.cpp
   src/xtd/forms/file_dialog_data.h
+  src/xtd/forms/find_box.cpp
   src/xtd/forms/find_dialog.cpp
   src/xtd/forms/find_event_args.cpp
   src/xtd/forms/fixed_layout_panel.cpp
