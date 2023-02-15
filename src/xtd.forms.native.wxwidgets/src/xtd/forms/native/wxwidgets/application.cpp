@@ -110,8 +110,10 @@ void application::disable_font_size_correction() {
 
 void application::do_events() {
   initialize(); // Must be first
-  if (wxTheApp && wxTheApp->GetMainLoop())
-    wxTheApp->GetMainLoop()->Dispatch();
+  //if (!wxTheApp || !wxTheApp->GetMainLoop()) return;
+  //wxTheApp->GetMainLoop()->Dispatch();
+  if (!wxTheApp) return;
+  wxTheApp->Yield();
 }
 
 void application::do_idle() {
