@@ -11,6 +11,7 @@ add_projects(
   color_box
   color_dialog
   debug_message_box
+  debug_message_dialog
   exception_box
   exception_dialog
   find_box

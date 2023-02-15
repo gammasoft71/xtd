@@ -34,6 +34,7 @@
 * [color_box](dialogs/color_box/README.md) represents a dialog box that displays available colors along with controls that enable the user to define custom colors.
 * [color_dialog](dialogs/color_dialog/README.md) represents a dialog box that displays available colors along with controls that enable the user to define custom colors.
 * [debug_message_box](dialogs/debug_message_box/README.md) represents a debug message box that displays debug message box and write debug message.
+* [debug_message_dialog](dialogs/debug_message_dialog/README.md) represents a debug message dialog that displays debug message dialog and write debug message.
 * [exception_box](dialogs/exception_box/README.md) represents a exception box that displays exception box.
 * [exception_dialog](dialogs/exception_dialog/README.md) represents a exception box that displays exception box.
 * [find_box](dialogs/find_box/README.md) represents a find dialog box.
