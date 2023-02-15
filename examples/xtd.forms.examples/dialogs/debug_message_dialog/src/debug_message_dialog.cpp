@@ -1,3 +1,4 @@
+#define DEBUG
 #include <xtd/xtd>
 
 using namespace xtd::forms;
@@ -8,7 +9,7 @@ public:
     button_show_debug_message.location({10, 10});
     button_show_debug_message.parent(*this);
     button_show_debug_message.text("Error...");
-    button_show_debug_message.width(100);
+    button_show_debug_message.auto_size(true);
     button_show_debug_message.click += [&] {
       debug_message_dialog dialog;
       dialog.message("An unknown process error occured.");
