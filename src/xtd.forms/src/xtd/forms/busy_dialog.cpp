@@ -17,7 +17,7 @@ struct busy_dialog::data {
   xtd::drawing::image icon;
   xtd::ustring text;
   xtd::ustring description;
-  double opacity = 0.;
+  double opacity = 1.0;
   bool native = false;
   intptr handle = 0;
 };
