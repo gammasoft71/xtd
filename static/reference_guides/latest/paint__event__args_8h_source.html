@@ -98,22 +98,20 @@ $(function() {
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1paint__event__args.html#acf637f93c3504b2907e76b2816d77398">   35</a></span>&#160;      <a class="code" href="classxtd_1_1forms_1_1paint__event__args.html#acf637f93c3504b2907e76b2816d77398">paint_event_args</a>(<a class="code" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a>&amp; <a class="code" href="classxtd_1_1forms_1_1control.html">control</a>, <span class="keyword">const</span> <a class="code" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&amp; clip_rectangle);</div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1paint__event__args.html#acc91382bcbd820890540da28e34f6bd7">   39</a></span>&#160;      <a class="code" href="classxtd_1_1forms_1_1paint__event__args.html#acc91382bcbd820890540da28e34f6bd7">paint_event_args</a>(<a class="code" href="classxtd_1_1drawing_1_1graphics.html">xtd::drawing::graphics</a>&amp; graphics, <span class="keyword">const</span> <a class="code" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&amp; clip_rectangle);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      ~<a class="code" href="classxtd_1_1forms_1_1paint__event__args.html">paint_event_args</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1paint__event__args.html#a941003224ff6036af19b3e196f5a176d">   51</a></span>&#160;      <span class="keyword">const</span> <a class="code" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&amp; <a class="code" href="classxtd_1_1forms_1_1paint__event__args.html#a941003224ff6036af19b3e196f5a176d">clip_rectangle</a>() const noexcept;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      </div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1paint__event__args.html#aeddc0061f4d3e27f3c5220716e8873df">   55</a></span>&#160;      drawing::graphics&amp; graphics();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    private:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      friend class <a class="code" href="namespacextd.html">xtd</a>::<a class="code" href="namespacextd_1_1forms.html">forms</a>::<a class="code" href="classxtd_1_1forms_1_1control.html">control</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <a class="code" href="namespacextd.html">xtd</a>::<a class="code" href="namespacextd_1_1forms.html">forms</a>::<a class="code" href="classxtd_1_1forms_1_1control.html">control</a>* control_ = <span class="keywordtype">nullptr</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      mutable <a class="code" href="namespacextd.html">xtd</a>::drawing::graphics* graphics_ = <span class="keywordtype">nullptr</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <a class="code" href="namespacextd.html">xtd</a>::drawing::rectangle clip_rectangle_;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <a class="code" href="namespacextd.html">xtd</a>::<a class="code" href="namespacextd_1_1forms.html">forms</a>::<a class="code" href="classxtd_1_1forms_1_1message.html">message</a> message_; <span class="comment">// need for xtd::forms::control::on_paint_ xtd::forms::control::on_paint_background to call def_wnd_proc method.</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    };</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1paint__event__args.html#a941003224ff6036af19b3e196f5a176d">   47</a></span>&#160;      <span class="keyword">const</span> <a class="code" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&amp; <a class="code" href="classxtd_1_1forms_1_1paint__event__args.html#a941003224ff6036af19b3e196f5a176d">clip_rectangle</a>() const noexcept;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1paint__event__args.html#aeddc0061f4d3e27f3c5220716e8873df">   51</a></span>&#160;      drawing::graphics&amp; graphics();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    private:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      friend class <a class="code" href="namespacextd.html">xtd</a>::<a class="code" href="namespacextd_1_1forms.html">forms</a>::<a class="code" href="classxtd_1_1forms_1_1control.html">control</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <a class="code" href="namespacextd.html">xtd</a>::<a class="code" href="namespacextd_1_1forms.html">forms</a>::<a class="code" href="classxtd_1_1forms_1_1control.html">control</a>* control_ = <span class="keywordtype">nullptr</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      mutable std::unique_ptr&lt;<a class="code" href="namespacextd.html">xtd</a>::drawing::graphics&gt; graphics_;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <a class="code" href="namespacextd.html">xtd</a>::drawing::rectangle clip_rectangle_;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <a class="code" href="namespacextd.html">xtd</a>::<a class="code" href="namespacextd_1_1forms.html">forms</a>::<a class="code" href="classxtd_1_1forms_1_1message.html">message</a> message_; <span class="comment">// need for xtd::forms::control::on_paint_ xtd::forms::control::on_paint_background to call def_wnd_proc method.</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    };</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1graphics_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1graphics.html">xtd::drawing::graphics</a></div><div class="ttdoc">Defines an object used to draw lines and curves. This class cannot be inherited.</div><div class="ttdef"><b>Definition:</b> graphics.h:70</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1rectangle_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></div><div class="ttdoc">Stores a set of four integers that represent the location and size of a rectangle.</div><div class="ttdef"><b>Definition:</b> rectangle.h:45</div></div>
 <div class="ttc" id="aclassxtd_1_1event__args_html"><div class="ttname"><a href="classxtd_1_1event__args.html">xtd::event_args</a></div><div class="ttdoc">Represents the base class for classes that contain event data, and provides a value to use for events...</div><div class="ttdef"><b>Definition:</b> event_args.h:18</div></div>
@@ -135,7 +133,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 9 2023 20:39:30 for xtd - Reference Guide by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 18 2023 20:39:27 for xtd - Reference Guide by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
