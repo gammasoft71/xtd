@@ -406,6 +406,7 @@ add_sources(
   src/xtd/forms/find_event_args.cpp
   src/xtd/forms/fixed_layout_panel.cpp
   src/xtd/forms/flow_layout_panel.cpp
+  src/xtd/forms/folder_browser_box.cpp
   src/xtd/forms/folder_browser_dialog.cpp
   src/xtd/forms/font_dialog.cpp
   src/xtd/forms/font_picker.cpp
