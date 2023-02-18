@@ -292,6 +292,7 @@ add_sources(
   include/xtd/forms/trace_form.h
   include/xtd/forms/trace_form_base.h
   include/xtd/forms/trace_message_box.h
+  include/xtd/forms/trace_message_dialog.h
   include/xtd/forms/track_bar.h
   include/xtd/forms/up_down_base.h
   include/xtd/forms/up_down_button.h
