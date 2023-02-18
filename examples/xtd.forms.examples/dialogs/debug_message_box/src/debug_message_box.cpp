@@ -1,3 +1,4 @@
+#define DEBUG
 #include <xtd/xtd>
 
 using namespace xtd;
