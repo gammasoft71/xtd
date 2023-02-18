@@ -34,7 +34,7 @@ stream_writer::stream_writer(ostream& stream, bool append) : stream_(&stream) {
 stream_writer::~stream_writer() {
   if (delete_when_destroy_ && stream_) {
     flush();
-    if (stream_ && dynamic_cast<ofstream*>(stream_)) static_cast<ofstream*>(stream_)->close();
+    if (dynamic_cast<ofstream*>(stream_)) static_cast<ofstream*>(stream_)->close();
     delete stream_;
   }
 }
