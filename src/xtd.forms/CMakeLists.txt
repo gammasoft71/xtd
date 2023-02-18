@@ -396,6 +396,7 @@ add_sources(
   src/xtd/forms/emoticon.cpp
   src/xtd/forms/emoticons.cpp
   src/xtd/forms/enable_debug.cpp
+  src/xtd/forms/exception_box.cpp
   src/xtd/forms/exception_dialog.cpp
   src/xtd/forms/flat_button_appearance.cpp
   src/xtd/forms/file_dialog.cpp
