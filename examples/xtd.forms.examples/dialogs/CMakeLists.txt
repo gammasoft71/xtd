@@ -33,4 +33,5 @@ add_projects(
   save_file_box
   save_file_dialog
   trace_message_box
+  trace_message_dialog
 )
