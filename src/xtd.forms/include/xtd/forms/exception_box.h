@@ -2,9 +2,12 @@
 /// @brief Contains xtd::forms::exception_box dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "exception_dialog.h"
-#include "iwin32_window.h"
+#include <exception>
 #include <xtd/static.h>
+#include <xtd/ustring.h>
+#include "dialog_result.h"
+#include "iwin32_window.h"
+#include "../forms_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -44,7 +47,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of exception_box dialog.
     /// @include exception_box.cpp
-    class exception_box final static_ {
+    class forms_export_ exception_box final static_ {
     public:
       /// @name Methods
       
