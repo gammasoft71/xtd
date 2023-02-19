@@ -465,6 +465,7 @@ add_sources(
   src/xtd/forms/renderer.cpp
   src/xtd/forms/replace_box.cpp
   src/xtd/forms/replace_dialog.cpp
+  src/xtd/forms/save_file_box.cpp
   src/xtd/forms/save_file_dialog.cpp
   src/xtd/forms/screen.cpp
   src/xtd/forms/scroll_bar.cpp
