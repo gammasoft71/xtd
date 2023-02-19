@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::debug_message_dialog dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "application.h"
 #include "message_dialog.h"
+#include <xtd/diagnostics/debug.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -47,10 +47,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the debug_message_dialog class.
-      debug_message_dialog() {
-        dialog_.dialog_closed += [&](object& sender, const dialog_closed_event_args& e) {on_dialog_closed(e);};
-        reset();
-      }
+      debug_message_dialog();
       /// @}
       
       /// @name Properties
@@ -58,11 +55,11 @@ namespace xtd {
       /// @{
       /// @brief Gets async dialog_result result after dialog box is closing.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
-      xtd::forms::dialog_result dialog_result() const noexcept {return dialog_.dialog_result();}
+      xtd::forms::dialog_result dialog_result() const noexcept;
       
       /// @brief Gets the text message.
       /// @return The text message.
-      xtd::ustring message() const noexcept {return dialog_.message();}
+      xtd::ustring message() const noexcept;
       /// @brief Sets the text message.
       /// @param message The text message.
       /// @return Current debug_message_dialog instance.
@@ -78,12 +75,7 @@ namespace xtd {
       
       /// @{
       /// @brief Resets all properties to empty string.
-      void reset() {
-        dialog_.reset();
-        dialog_.buttons(xtd::forms::message_dialog_buttons::ok);
-        dialog_.icon(xtd::forms::message_dialog_icon::exclamation);
-        dialog_.text(xtd::forms::application::product_name());
-      }
+      void reset();
       
       /// @brief Runs message dialog box.
       xtd::forms::dialog_result show_dialog() {
@@ -133,10 +125,7 @@ namespace xtd {
       /// @brief Raises the debug_message_dialog::dialog_close event.
       /// @param e An message_dialog_close_event_args that provides the event data.
       /// @remarks This method is invoked when the message dialog box is closed.
-      virtual void on_dialog_closed(const dialog_closed_event_args& e) {
-        auto raise_event = dialog_closed;
-        if (!raise_event.is_empty()) raise_event(*this, e);
-      }
+      virtual void on_dialog_closed(const dialog_closed_event_args& e);
       
       message_dialog dialog_;
     };
