@@ -442,6 +442,7 @@ add_sources(
   src/xtd/forms/menu_data.h
   src/xtd/forms/menu_item.cpp
   src/xtd/forms/message.cpp
+  src/xtd/forms/message_box.cpp
   src/xtd/forms/message_dialog.cpp
   src/xtd/forms/message_notifier.cpp
   src/xtd/forms/month_calendar.cpp
