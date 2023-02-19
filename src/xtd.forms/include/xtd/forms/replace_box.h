@@ -40,7 +40,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of xtd::forms::replace_box dialog.
     /// @include replace_box.cpp
-    class replace_box final static_ {
+    class forms_export_ replace_box final static_ {
     public:
       /// @name Methods
       
@@ -110,8 +110,9 @@ namespace xtd {
       /// @}
       
     private:
-      static std::unique_ptr<xtd::forms::replace_dialog> dialog_;
       static void show_replace_box(const iwin32_window& owner, xtd::forms::find_event_handler find_next, xtd::forms::replace_event_handler replace, xtd::forms::replace_event_handler replace_all, const xtd::ustring& find_string = "", const xtd::ustring& replace_string = "", const xtd::ustring& title = "", bool match_case = false, bool whole_word = false);
+
+      static std::unique_ptr<xtd::forms::replace_dialog> dialog_;
     };
   }
 }
