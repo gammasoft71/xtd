@@ -2,8 +2,10 @@
 /// @brief Contains xtd::forms::folder_browser_box control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/static.h>
-#include "folder_browser_dialog.h"
+#include <xtd/environment.h>
+#include "../forms_export.h"
+#include "dialog_result.h"
+#include "iwin32_window.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -39,7 +41,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of xtd::forms::folder_browser_box dialog.
     /// @include folder_browser_box.cpp
-    class folder_browser_box final static_ {
+    class forms_export_ folder_browser_box final static_ {
     public:
       /// @name Methods
       
