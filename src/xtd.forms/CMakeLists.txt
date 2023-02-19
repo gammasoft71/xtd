@@ -422,6 +422,7 @@ add_sources(
   src/xtd/forms/image_list.cpp
   src/xtd/forms/image_renderer.cpp
   src/xtd/forms/images.cpp
+  src/xtd/forms/input_box.cpp
   src/xtd/forms/input_dialog.cpp
   src/xtd/forms/label.cpp
   src/xtd/forms/label_renderer.cpp
