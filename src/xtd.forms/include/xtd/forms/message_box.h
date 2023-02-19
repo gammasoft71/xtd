@@ -2,7 +2,8 @@
 /// @brief Contains xtd::forms::message_box dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "message_dialog.h"
+#include "../forms_export.h"
+#include "dialog_result.h"
 #include "iwin32_window.h"
 #include "message_box_buttons.h"
 #include "message_box_default_button.h"
@@ -48,7 +49,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of message_box dialog.
     /// @include message_box.cpp
-    class message_box final static_ {
+    class forms_export_ message_box final static_ {
     public:
       /// @name Methods
       
@@ -56,25 +57,25 @@ namespace xtd {
       /// @brief Displays a message box in front of the specified window.
       /// @param owner An implementation of iwin32_window that will own the modal dialog box.
       /// @return One of the xtd::forms::dialog_result values.
-      static dialog_result show(const iwin32_window& owner) {return show_message_dialog(&owner);}
+      static dialog_result show(const iwin32_window& owner);
       /// @brief Displays a message box in front of the specified window with specified text.
       /// @param owner An implementation of iwin32_window that will own the modal dialog box.
       /// @param text The text to display in the message box.
       /// @return One of the xtd::forms::dialog_result values.
-      static dialog_result show(const iwin32_window& owner, const xtd::ustring& text) {return show_message_dialog(&owner, text);}
+      static dialog_result show(const iwin32_window& owner, const xtd::ustring& text);
       /// @brief Displays a message box in front of the specified window with specified text and caption.
       /// @param owner An implementation of iwin32_window that will own the modal dialog box.
       /// @param text The text to display in the message box.
       /// @param caption The text to display in the title bar of the message box.
       /// @return One of the xtd::forms::dialog_result values.
-      static dialog_result show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption) {return show_message_dialog(&owner, text, caption);}
+      static dialog_result show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption);
       /// @brief Displays a message box in front of the specified window with the specified text, caption, and buttons.
       /// @param owner An implementation of iwin32_window that will own the modal dialog box.
       /// @param text The text to display in the message box.
       /// @param caption The text to display in the title bar of the message box.
       /// @param buttons One of the message_box_buttons values that specifies which buttons to display in the message box.
       /// @return One of the xtd::forms::dialog_result values.
-      static dialog_result show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, message_box_buttons buttons) {return show_message_dialog(&owner, text, caption, buttons);}
+      static dialog_result show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, message_box_buttons buttons);
       /// @brief Displays a message box in front of the specified window with the specified text, caption, buttons, and icon.
       /// @param owner An implementation of iwin32_window that will own the modal dialog box.
       /// @param text The text to display in the message box.
@@ -82,7 +83,7 @@ namespace xtd {
       /// @param buttons One of the message_box_buttons values that specifies which buttons to display in the message box.
       /// @param icon One of the message_box_icon values that specifies which icon to display in the message box.
       /// @return One of the xtd::forms::dialog_result values.
-      static dialog_result show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, message_box_buttons buttons, message_box_icon icon) {return show_message_dialog(&owner, text, caption, buttons, icon);}
+      static dialog_result show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, message_box_buttons buttons, message_box_icon icon);
       /// @brief Displays a message box in front of the specified window with the specified text, caption, buttons, icon, and default button.
       /// @param owner An implementation of iwin32_window that will own the modal dialog box.
       /// @param text The text to display in the message box.
@@ -91,7 +92,7 @@ namespace xtd {
       /// @param icon One of the message_box_icon values that specifies which icon to display in the message box.
       /// @param default_button One of the message_box_default_button values that specifies the default button for the message box.
       /// @return One of the xtd::forms::dialog_result values.
-      static dialog_result show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button) {return show_message_dialog(&owner, text, caption, buttons, icon, default_button);}
+      static dialog_result show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button);
       /// @brief Displays a message box in front of the specified window with the specified text, caption, buttons, icon, default button, and options.
       /// @param owner An implementation of iwin32_window that will own the modal dialog box.
       /// @param text The text to display in the message box.
@@ -101,7 +102,7 @@ namespace xtd {
       /// @param default_button One of the message_box_default_button values that specifies the default button for the message box.
       /// @param options One of the message_box_options values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults.
       /// @return One of the xtd::forms::dialog_result values.
-      static dialog_result show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options) {return show_message_dialog(&owner, text, caption, buttons, icon, default_button, options);}
+      static dialog_result show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options);
       /// @brief Displays a message box in front of the specified window with the specified text, caption, buttons, icon, default button, options, and Help button.
       /// @param owner An implementation of iwin32_window that will own the modal dialog box.
       /// @param text The text to display in the message box.
@@ -112,33 +113,33 @@ namespace xtd {
       /// @param options One of the message_box_options values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults.
       /// @param display_help_button true to show the Help button; otherwise, false. The default is false.
       /// @return One of the xtd::forms::dialog_result values.
-      static dialog_result show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button) {return show_message_dialog(&owner, text, caption, buttons, icon, default_button, options, display_help_button);}
+      static dialog_result show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button);
       
       /// @brief Displays a message box.
       /// @return One of the xtd::forms::dialog_result values.
-      static dialog_result show() {return show_message_dialog(nullptr);}
+      static dialog_result show();
       /// @brief Displays a message box with specified text.
       /// @param text The text to display in the message box.
       /// @return One of the xtd::forms::dialog_result values.
-      static dialog_result show(const xtd::ustring& text) {return show_message_dialog(nullptr, text);}
+      static dialog_result show(const xtd::ustring& text);
       /// @brief Displays a message box with specified text and caption.
       /// @param text The text to display in the message box.
       /// @param caption The text to display in the title bar of the message box.
       /// @return One of the xtd::forms::dialog_result values.
-      static dialog_result show(const xtd::ustring& text, const xtd::ustring& caption) {return show_message_dialog(nullptr, text, caption);}
+      static dialog_result show(const xtd::ustring& text, const xtd::ustring& caption);
       /// @brief Displays a message box with the specified text, caption, and buttons.
       /// @param text The text to display in the message box.
       /// @param caption The text to display in the title bar of the message box.
       /// @param buttons One of the message_box_buttons values that specifies which buttons to display in the message box.
       /// @return One of the xtd::forms::dialog_result values.
-      static dialog_result show(const xtd::ustring& text, const xtd::ustring& caption, message_box_buttons buttons) {return show_message_dialog(nullptr, text, caption, buttons);}
+      static dialog_result show(const xtd::ustring& text, const xtd::ustring& caption, message_box_buttons buttons);
       /// @brief Displays a message box with the specified text, caption, buttons, and icon.
       /// @param text The text to display in the message box.
       /// @param caption The text to display in the title bar of the message box.
       /// @param buttons One of the message_box_buttons values that specifies which buttons to display in the message box.
       /// @param icon One of the message_box_icon values that specifies which icon to display in the message box.
       /// @return One of the xtd::forms::dialog_result values.
-      static dialog_result show(const xtd::ustring& text, const xtd::ustring& caption, message_box_buttons buttons, message_box_icon icon) {return show_message_dialog(nullptr, text, caption, buttons, icon);}
+      static dialog_result show(const xtd::ustring& text, const xtd::ustring& caption, message_box_buttons buttons, message_box_icon icon);
       /// @brief Displays a message box with the specified text, caption, buttons, icon, and default button.
       /// @param text The text to display in the message box.
       /// @param caption The text to display in the title bar of the message box.
@@ -146,7 +147,7 @@ namespace xtd {
       /// @param icon One of the message_box_icon values that specifies which icon to display in the message box.
       /// @param default_button One of the message_box_default_button values that specifies the default button for the message box.
       /// @return One of the xtd::forms::dialog_result values.
-      static dialog_result show(const xtd::ustring& text, const xtd::ustring& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button) {return show_message_dialog(nullptr, text, caption, buttons, icon, default_button);}
+      static dialog_result show(const xtd::ustring& text, const xtd::ustring& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button);
       /// @brief Displays a message box with the specified text, caption, buttons, icon, default button, and options.
       /// @param text The text to display in the message box.
       /// @param caption The text to display in the title bar of the message box.
@@ -155,7 +156,7 @@ namespace xtd {
       /// @param default_button One of the message_box_default_button values that specifies the default button for the message box.
       /// @param options One of the message_box_options values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults.
       /// @return One of the xtd::forms::dialog_result values.
-      static dialog_result show(const xtd::ustring& text, const xtd::ustring& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options) {return show_message_dialog(nullptr, text, caption, buttons, icon, default_button, options);}
+      static dialog_result show(const xtd::ustring& text, const xtd::ustring& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options);
       /// @brief Displays a message box with the specified text, caption, buttons, icon, default button, options, and Help button.
       /// @param text The text to display in the message box.
       /// @param caption The text to display in the title bar of the message box.
@@ -165,21 +166,11 @@ namespace xtd {
       /// @param options One of the message_box_options values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults.
       /// @param display_help_button true to show the Help button; otherwise, false. The default is false.
       /// @return One of the xtd::forms::dialog_result values.
-      static dialog_result show(const xtd::ustring& text, const xtd::ustring& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button) {return show_message_dialog(nullptr, text, caption, buttons, icon, default_button, options, display_help_button);}
+      static dialog_result show(const xtd::ustring& text, const xtd::ustring& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button);
       /// @}
       
     private:
-      static dialog_result show_message_dialog(const iwin32_window* owner, const xtd::ustring& text = "", const xtd::ustring& caption = "", message_box_buttons buttons = message_box_buttons::ok, message_box_icon icon = message_box_icon::none, message_box_default_button default_button = message_box_default_button::button1, message_box_options options = static_cast<message_box_options>(0), bool display_help_button = false) {
-        message_dialog dialog;
-        dialog.buttons(buttons);
-        dialog.default_button(default_button);
-        dialog.display_help_button(display_help_button);
-        dialog.icon(icon);
-        dialog.message(text);
-        dialog.options(options);
-        dialog.text(caption);
-        return owner ? dialog.show_sheet_dialog(*owner) : dialog.show_dialog();
-      }
+      static dialog_result show_message_dialog(const iwin32_window* owner, const xtd::ustring& text = "", const xtd::ustring& caption = "", message_box_buttons buttons = message_box_buttons::ok, message_box_icon icon = message_box_icon::none, message_box_default_button default_button = message_box_default_button::button1, message_box_options options = static_cast<message_box_options>(0), bool display_help_button = false);
     };
   }
 }
