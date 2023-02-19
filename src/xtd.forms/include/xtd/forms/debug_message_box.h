@@ -4,6 +4,7 @@
 #pragma once
 #include "application.h"
 #include "message_box.h"
+#include <xtd/diagnostics/debug.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -39,19 +40,19 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of debug_message_box dialog.
     /// @include debug_message_box.cpp
-    class debug_message_box static_ {
+    class forms_export_ debug_message_box static_ {
     public:
       /// @name Methods
       
       /// @{
       /// @brief Displays a message box and write debug with specified text.
       /// @param text The text to display in the message box.
-      static xtd::forms::dialog_result show(const xtd::ustring& text) {return show_message_dialog(nullptr, text, xtd::forms::application::product_name(), xtd::forms::message_box_buttons::ok, xtd::forms::message_box_icon::error);}
+      static xtd::forms::dialog_result show(const xtd::ustring& text);
       
       /// @brief Displays a message box in front of the specified window and write debug with specified text.
       /// @param owner An implementation of iwin32_window that will own the modal dialog box.
       /// @param text The text to display in the message box.
-      static dialog_result show(const iwin32_window& owner, const xtd::ustring& text) {return show_message_dialog(&owner, text, xtd::forms::application::product_name(), xtd::forms::message_box_buttons::ok, xtd::forms::message_box_icon::error);}
+      static xtd::forms::dialog_result show(const iwin32_window& owner, const xtd::ustring& text);
       /// @}
       
     private:
