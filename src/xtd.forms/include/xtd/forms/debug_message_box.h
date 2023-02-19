@@ -3,7 +3,11 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "application.h"
-#include "message_box.h"
+#include "message_box_buttons.h"
+#include "message_box_icon.h"
+#include "message_box_options.h"
+#include "message_box_default_button.h"
+#include "message_dialog.h"
 #include <xtd/diagnostics/debug.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
