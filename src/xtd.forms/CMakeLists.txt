@@ -449,6 +449,7 @@ add_sources(
   src/xtd/forms/mouse_event_args.cpp
   src/xtd/forms/nine_segment_display.cpp
   src/xtd/forms/numeric_up_down.cpp
+  src/xtd/forms/open_file_box.cpp
   src/xtd/forms/open_file_dialog.cpp
   src/xtd/forms/padding.cpp
   src/xtd/forms/panel.cpp
