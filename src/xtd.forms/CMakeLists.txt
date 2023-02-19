@@ -408,6 +408,7 @@ add_sources(
   src/xtd/forms/flow_layout_panel.cpp
   src/xtd/forms/folder_browser_box.cpp
   src/xtd/forms/folder_browser_dialog.cpp
+  src/xtd/forms/font_box.cpp
   src/xtd/forms/font_dialog.cpp
   src/xtd/forms/font_picker.cpp
   src/xtd/forms/form.cpp
