@@ -52,7 +52,7 @@ namespace xtd {
       /// @brief Displays a message box in front of the specified window and write trace with specified text.
       /// @param owner An implementation of iwin32_window that will own the modal dialog box.
       /// @param text The text to display in the message box.
-      static dialog_result show(const iwin32_window& owner, const xtd::ustring& text) {return show_message_dialog(&owner, text, xtd::forms::application::product_name(), xtd::forms::message_box_buttons::ok, xtd::forms::message_box_icon::error);}
+      static xtd::forms::dialog_result show(const iwin32_window& owner, const xtd::ustring& text) {return show_message_dialog(&owner, text, xtd::forms::application::product_name(), xtd::forms::message_box_buttons::ok, xtd::forms::message_box_icon::error);}
       /// @}
       
     private:
