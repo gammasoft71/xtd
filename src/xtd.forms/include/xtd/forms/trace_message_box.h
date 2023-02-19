@@ -2,6 +2,7 @@
 /// @brief Contains xtd::forms::trace_message_box dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/diagnostics/trace.h>
 #include "application.h"
 #include "message_box.h"
 
@@ -52,13 +53,13 @@ namespace xtd {
       /// @brief Displays a message box in front of the specified window and write trace with specified text.
       /// @param owner An implementation of iwin32_window that will own the modal dialog box.
       /// @param text The text to display in the message box.
-      static xtd::forms::dialog_result show(const iwin32_window& owner, const xtd::ustring& text) {return show_message_dialog(&owner, text, xtd::forms::application::product_name(), xtd::forms::message_box_buttons::ok, xtd::forms::message_box_icon::error);}
+      static xtd::forms::dialog_result show(const xtd::forms::iwin32_window& owner, const xtd::ustring& text) {return show_message_dialog(&owner, text, xtd::forms::application::product_name(), xtd::forms::message_box_buttons::ok, xtd::forms::message_box_icon::error);}
       /// @}
       
     private:
       static xtd::forms::dialog_result show_message_dialog(const xtd::forms::iwin32_window* owner, const xtd::ustring& text = "", const xtd::ustring& caption = "", xtd::forms::message_box_buttons buttons = xtd::forms::message_box_buttons::ok, xtd::forms::message_box_icon icon = xtd::forms::message_box_icon::none, xtd::forms::message_box_default_button default_button = xtd::forms::message_box_default_button::button1, xtd::forms::message_box_options options = static_cast<xtd::forms::message_box_options>(0), bool display_help_button = false) {
         #if defined(TRACE)
-        xtd::diagnostics::debug::write_line(text);
+        xtd::diagnostics::trace::write_line(text);
         message_dialog dialog;
         dialog.buttons(buttons);
         dialog.default_button(default_button);
