@@ -2,13 +2,13 @@
 /// @brief Contains xtd::forms::debug_message_box dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/diagnostics/debug.h>
 #include "application.h"
-#include "message_box_buttons.h"
+#include "message_dialog.h"
 #include "message_box_icon.h"
 #include "message_box_options.h"
+#include "message_box_buttons.h"
 #include "message_box_default_button.h"
-#include "message_dialog.h"
-#include <xtd/diagnostics/debug.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -44,19 +44,19 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of debug_message_box dialog.
     /// @include debug_message_box.cpp
-    class forms_export_ debug_message_box static_ {
+    class debug_message_box static_ {
     public:
       /// @name Methods
       
       /// @{
       /// @brief Displays a message box and write debug with specified text.
       /// @param text The text to display in the message box.
-      static xtd::forms::dialog_result show(const xtd::ustring& text);
+      static xtd::forms::dialog_result show(const xtd::ustring& text) {return show_message_dialog(nullptr, text, xtd::forms::application::product_name(), xtd::forms::message_box_buttons::ok, xtd::forms::message_box_icon::error);}
       
       /// @brief Displays a message box in front of the specified window and write debug with specified text.
       /// @param owner An implementation of iwin32_window that will own the modal dialog box.
       /// @param text The text to display in the message box.
-      static xtd::forms::dialog_result show(const iwin32_window& owner, const xtd::ustring& text);
+      static xtd::forms::dialog_result show(const xtd::forms::iwin32_window& owner, const xtd::ustring& text) {return show_message_dialog(&owner, text, xtd::forms::application::product_name(), xtd::forms::message_box_buttons::ok, xtd::forms::message_box_icon::error);}
       /// @}
       
     private:
