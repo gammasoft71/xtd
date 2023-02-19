@@ -40,7 +40,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of xtd::forms::find_box dialog.
     /// @include find_box.cpp
-    class find_box final static_ {
+    class forms_export_ find_box final static_ {
     public:
       /// @name Methods
       
