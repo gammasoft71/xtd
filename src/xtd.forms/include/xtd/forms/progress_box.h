@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/static.h>
-#include <functional>
 #include "progress_dialog.h"
 #include "progress_box_options.h"
 
@@ -41,7 +40,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of xtd::forms::progress_box dialog.
     /// @include progress_box.cpp
-    class progress_box final static_ {
+    class forms_export_ progress_box final static_ {
     public:
       /// @name Properties
       
@@ -338,8 +337,9 @@ namespace xtd {
       /// @}
       
     private:
-      static std::unique_ptr<progress_dialog> dialog_;
       static void show_progress_box(const iwin32_window* owner = nullptr, const progress_box_options options = progress_box_options::none, const xtd::ustring& title = "Please wait..."_t, const xtd::ustring& message = ""_t, int32 initial_value = 0, int32 minimum = 0, int32 maximum = 100, const bool marquee = false, size_t marquee_animation_speed = 100, const std::vector<xtd::ustring>& informations = std::vector<xtd::ustring>());
+
+      static std::unique_ptr<progress_dialog> dialog_;
     };
   }
 }
