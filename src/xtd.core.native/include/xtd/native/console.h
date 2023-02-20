@@ -132,12 +132,6 @@ namespace xtd {
       /// @param code_page The code page used to write console output.
       /// @warning Internal use only
       static void output_code_page(int_least32_t codePage);
-      /// @brief Register the user cancel callback.
-      /// @param user_cancel_callback The user cancel callback method to register.
-      /// @remarks This callback is call when when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break key are pressed simultaneously (Ctrl+C or Ctrl+Break).
-      /// @remarks By default, the return of callback is false, which causes program execution to terminate when the event handler exits. Changing its return to true specifies that the application should continue to execute.
-      /// @warning Internal use only
-      static void register_user_cancel_callback(std::function<bool(int_least32_t)> user_cancel_callback);
       /// @brief Obtains the next character or function key pressed by the user.
       /// @param key_char A bitwise combination of the enumeration values. There is no default value.
       /// @param key_code A value that identifies the console key that was pressed.
@@ -172,9 +166,6 @@ namespace xtd {
       /// @param treat_control_c_as_input true if Ctrl+C is treated as ordinary input; otherwise, false.
       /// @warning Internal use only
       static void treat_control_c_as_input(bool treat_control_c_as_input);
-      /// @brief Unregister the user cancel callback previously registered with xtd::native::console::register_user_cancel_callback method.
-      /// @warning Internal use only
-      static void unregister_user_cancel_callback();
       /// @brief Gets the height of the console window area.
       /// @return The height of the console window measured in rows.
       /// @warning Internal use only

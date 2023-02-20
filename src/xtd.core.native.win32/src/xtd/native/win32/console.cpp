@@ -16,8 +16,6 @@ bool __xtd_internal_cancel_key_press__(bool cancel, int_least32_t special_key);
 using namespace xtd::native;
 
 namespace {
-  std::function<bool(int_least32_t)> user_cancel_callback;
-  
   int_least32_t __background_color() {
     CONSOLE_SCREEN_BUFFER_INFO csbi;
     GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
@@ -233,10 +231,6 @@ void console::read_key(char32_t& key_char, char32_t& key_code, bool& alt, bool& 
   ctrl = (input_record.Event.KeyEvent.dwControlKeyState & LEFT_CTRL_PRESSED) == LEFT_CTRL_PRESSED || (input_record.Event.KeyEvent.dwControlKeyState & RIGHT_CTRL_PRESSED) == RIGHT_CTRL_PRESSED;
 }
 
-void console::register_user_cancel_callback(std::function<bool(int_least32_t)> user_cancel_callback) {
-  ::user_cancel_callback = user_cancel_callback;
-}
-
 void console::reset_color() {
   console::background_color(backColor);
   console::foreground_color(foreColor);
@@ -274,10 +268,6 @@ void console::treat_control_c_as_input(bool treat_control_c_as_input) {
   else
     mode |= ENABLE_PROCESSED_INPUT;
   SetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), mode);
-}
-
-void console::unregister_user_cancel_callback() {
-  ::user_cancel_callback = nullptr;
 }
 
 int_least32_t console::window_height() {

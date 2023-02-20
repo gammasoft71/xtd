@@ -28,13 +28,6 @@ using namespace xtd::native;
 bool __xtd_internal_cancel_key_press__(bool cancel, int_least32_t special_key);
 
 namespace {
-  std::function<bool(int_least32_t)> user_cancel_callback;
-  auto back_color = CONSOLE_COLOR_BLACK;
-  auto fore_color = CONSOLE_COLOR_WHITE;
-  auto cursor_visible = true;
-  auto treat_control_c_as_input = false;
-  std::string title;
-  
   struct console_intercept_signals {
   private:
     console_intercept_signals() {
@@ -49,8 +42,8 @@ namespace {
     
     static void signal_handler(int_least32_t signal) {
       ::signal(signal, console_intercept_signals::signal_handler);
-      if (__xtd_internal_cancel_key_press__(false, signal_keys_[signal]) == false) exit(EXIT_FAILURE);
-      if (user_cancel_callback && user_cancel_callback(signal_keys_[signal]) == false) exit(EXIT_FAILURE);
+      if (__xtd_internal_cancel_key_press__(false, signal_keys_[signal]) == false)
+        exit(EXIT_FAILURE);
     }
     
     inline static std::map<int_least32_t, int_least32_t> signal_keys_  {{SIGQUIT, CONSOLE_SPECIAL_KEY_CTRL_BS}, {SIGTSTP, CONSOLE_SPECIAL_KEY_CTRL_Z}, {SIGINT, CONSOLE_SPECIAL_KEY_CTRL_C}};
@@ -101,7 +94,7 @@ namespace {
     bool key_available() {
       if (peek_character != -1)
         return true;
-        
+      
       termios termioAttributes;
       tcgetattr(0, &termioAttributes);
       termios backupedTermioAttributes = termioAttributes;
@@ -269,11 +262,11 @@ namespace {
       // Ctrl + Space
       if (key == 0)
         return key_info(' ', ' ', false, true, false);
-        
+      
       // Ctrl + [a; z]
       if ((key >= 1 && key <= 7) || (key >= 10 && key <= 11) || (key >= 14 && key <= 18) || (key >= 20 && key <= 26))
         return key_info(key + 'A' - 1, key, false, true, false);
-        
+      
       switch (key) {
         case 50086 : return key_info(0, U'æ', alt, false, false);
         case 50054 : return key_info(0, U'Æ', alt, false, false);
@@ -371,7 +364,7 @@ namespace {
       
       if (key_info::keys.find(std::string(1, toupper((char)key))) != key_info::keys.end())
         return key_info(toupper(key), key, alt, false, key >= 'A' && key <= 'Z');
-        
+      
       return key_info(0, key, alt, false, key >= 'A' && key <= 'Z');
     }
     
@@ -538,6 +531,12 @@ namespace {
     {"y", {89, U'y', false, false, false}}, // y
     {"z", {90, U'z', false, false, false}}, // z
   };
+  
+  auto back_color = CONSOLE_COLOR_BLACK;
+  auto fore_color = CONSOLE_COLOR_WHITE;
+  auto cursor_visible = true;
+  auto treat_control_c_as_input = false;
+  std::string title;
 }
 
 int_least32_t console::background_color() {
@@ -697,10 +696,6 @@ void console::read_key(char32_t& key_char, char32_t& key_code, bool& alt, bool& 
   shift = key_info.has_shift_modifier();
 }
 
-void console::register_user_cancel_callback(std::function<bool(int_least32_t)> user_cancel_callback) {
-  ::user_cancel_callback = user_cancel_callback;
-}
-
 void console::reset_color() {
   if (!terminal::is_ansi_supported()) return;
   std::cout << "\033[49m\033[39m" << std::flush;
@@ -740,10 +735,6 @@ bool console::treat_control_c_as_input() {
 
 void console::treat_control_c_as_input(bool treat_control_c_as_input) {
   ::treat_control_c_as_input = treat_control_c_as_input;
-}
-
-void console::unregister_user_cancel_callback() {
-  ::user_cancel_callback = nullptr;
 }
 
 int_least32_t console::window_left() {
