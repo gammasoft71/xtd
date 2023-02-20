@@ -12,6 +12,8 @@
 #undef max
 #undef min
 
+bool __xtd_internal_cancel_key_press__(bool cancel, int_least32_t special_key);
+
 namespace {
   xtd::console_color __background_color() {
     CONSOLE_SCREEN_BUFFER_INFO csbi;
@@ -26,11 +28,8 @@ namespace {
   }
   
   BOOL WINAPI __handler_routine(DWORD ctrl_type) {
-    if (ctrl_type == CTRL_C_EVENT || ctrl_type == CTRL_BREAK_EVENT) {
-      xtd::console_cancel_event_args console_cancel(false, ctrl_type == CTRL_C_EVENT ? xtd::console_special_key::control_c : xtd::console_special_key::control_break);
-      xtd::console::__internal_cancel_key_press__(console_cancel);
-      return console_cancel.cancel() == TRUE;
-    }
+    if (ctrl_type == CTRL_C_EVENT || ctrl_type == CTRL_BREAK_EVENT)
+      return __xtd_internal_cancel_key_press__(false, ctrl_type == CTRL_C_EVENT ? static_cast<int_least32_t>(xtd::console_special_key::control_c) : static_cast<int_least32_t>(xtd::console_special_key::control_break)) == TRUE;
     return FALSE;
   }
   

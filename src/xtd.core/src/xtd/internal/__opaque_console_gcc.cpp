@@ -25,6 +25,8 @@
 #include <linux/kd.h>
 #endif
 
+bool __xtd_internal_cancel_key_press__(bool cancel, int_least32_t special_key);
+
 namespace {
   /// @cond
   struct console_intercept_signals {
@@ -44,17 +46,15 @@ namespace {
       #if _WIN32
       if (signal == SIGINT && xtd::console::treat_control_c_as_input()) return;
       #endif
-      xtd::console_cancel_event_args console_cancel(false, signal_keys_[signal]);
-      xtd::console::__internal_cancel_key_press__(console_cancel);
-      if (console_cancel.cancel() == false)
+      if (__xtd_internal_cancel_key_press__(false, signal_keys_[signal]) == false)
         exit(EXIT_FAILURE);
     }
     
-    static std::map<xtd::int32, xtd::console_special_key> signal_keys_;
+    static std::map<xtd::int32, int_least32_t> signal_keys_;
     static console_intercept_signals console_intercept_signals_;
   };
   
-  std::map<xtd::int32, xtd::console_special_key> console_intercept_signals::signal_keys_ {{SIGQUIT, xtd::console_special_key::control_backslash}, {SIGTSTP, xtd::console_special_key::control_z}, {SIGINT, xtd::console_special_key::control_c}};
+  std::map<xtd::int32, int_least32_t> console_intercept_signals::signal_keys_ {{SIGQUIT, static_cast<int_least32_t>(xtd::console_special_key::control_backslash)}, {SIGTSTP, static_cast<int_least32_t>(xtd::console_special_key::control_z)}, {SIGINT, static_cast<int_least32_t>(xtd::console_special_key::control_c)}};
   console_intercept_signals console_intercept_signals::console_intercept_signals_;
   
   class terminal final {
