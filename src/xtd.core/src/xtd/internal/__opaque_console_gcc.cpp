@@ -43,9 +43,6 @@ namespace {
     
     static void signal_handler(xtd::int32 signal) {
       ::signal(signal, console_intercept_signals::signal_handler);
-      #if _WIN32
-      if (signal == SIGINT && xtd::console::treat_control_c_as_input()) return;
-      #endif
       if (__xtd_internal_cancel_key_press__(false, signal_keys_[signal]) == false)
         exit(EXIT_FAILURE);
     }
