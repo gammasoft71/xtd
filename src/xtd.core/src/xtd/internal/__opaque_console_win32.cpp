@@ -219,14 +219,14 @@ bool __opaque_console::output_code_page(xtd::int32 codePage) {
   return SetConsoleOutputCP(codePage) == TRUE;
 }
 
-void __opaque_console::read_key(xtd::int32& key_char, xtd::int32& key_code, bool& alt, bool& shift, bool& ctrl) {
+void __opaque_console::read_key(xtd::char32& key_char, xtd::char32& key_code, bool& alt, bool& shift, bool& ctrl) {
   INPUT_RECORD input_record;
   do {
     DWORD nb_events_read = 0;
     ReadConsoleInput(GetStdHandle(STD_INPUT_HANDLE), &input_record, 1, &nb_events_read);
   } while (!(input_record.EventType == KEY_EVENT && (input_record.Event.KeyEvent.bKeyDown == 1 && input_record.Event.KeyEvent.wVirtualKeyCode != 0x10 && input_record.Event.KeyEvent.wVirtualKeyCode != 0x11 && input_record.Event.KeyEvent.wVirtualKeyCode != 0x12)));
   
-  key_char = input_record.Event.KeyEvent.uChar.AsciiChar;
+  key_char = input_record.Event.KeyEvent.uChar.UnicodeChar;
   key_code = input_record.Event.KeyEvent.wVirtualKeyCode;
   alt = (input_record.Event.KeyEvent.dwControlKeyState & LEFT_ALT_PRESSED) == LEFT_ALT_PRESSED || (input_record.Event.KeyEvent.dwControlKeyState & RIGHT_ALT_PRESSED) == RIGHT_ALT_PRESSED;
   shift = (input_record.Event.KeyEvent.dwControlKeyState & SHIFT_PRESSED) == SHIFT_PRESSED;

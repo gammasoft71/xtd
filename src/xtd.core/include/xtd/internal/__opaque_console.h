@@ -53,7 +53,7 @@ class core_export_ __opaque_console final {
   static bool number_lock();
   static xtd::int32 output_code_page();
   static bool output_code_page(xtd::int32 codePage);
-  static void read_key(xtd::int32& key_char, xtd::int32& key_code, bool& alt, bool& shift, bool& ctrl);
+  static void read_key(xtd::char32& key_char, xtd::char32& key_code, bool& alt, bool& shift, bool& ctrl);
   static bool reset_color();
   static bool set_cursor_position(xtd::int32 left, xtd::int32 top);
   static std::string title();

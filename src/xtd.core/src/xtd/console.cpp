@@ -233,15 +233,12 @@ console_key_info console::read_key() {
 }
 
 console_key_info console::read_key(bool intercept) {
-  auto key_char = 0;
-  auto key_code = 0;
-  auto alt = false;
-  auto shift = false;
-  auto ctrl = false;
-  
   out.flush();
+
+  auto key_char = U'0', key_code = U'0';
+  auto alt = false, shift = false, ctrl = false;
   __opaque_console::read_key(key_char, key_code, alt, shift, ctrl);
-  console_key_info key_info = console_key_info(key_char, static_cast<console_key>(key_code), shift, alt, ctrl);
+  auto key_info = console_key_info(key_char, static_cast<console_key>(key_code), shift, alt, ctrl);
   
   if (intercept == false)
     write(key_info.key_char());
