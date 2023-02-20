@@ -2,6 +2,7 @@
 #include <iostream>
 #include <mutex>
 #include "../../include/xtd/console.h"
+#include "../../include/xtd/io/stream_reader.h"
 #define __XTD_CORE_INTERNAL__
 #include "../../include/xtd/internal/__generic_stream_output.h"
 #include "../../include/xtd/internal/__opaque_console.h"
@@ -9,6 +10,7 @@
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::io;
 
 namespace {
   std::mutex console_mutex;
@@ -222,9 +224,8 @@ std::ostream console::open_standard_output() {
 }
 
 ustring console::read_line() {
-  ustring result;
-  in >> result;
-  return result;
+  out.flush();
+  return stream_reader {in}.read_line();
 }
 
 console_key_info console::read_key() {
@@ -232,11 +233,11 @@ console_key_info console::read_key() {
 }
 
 console_key_info console::read_key(bool intercept) {
-  int32 key_char = 0;
-  int32 key_code = 0;
-  bool alt = false;
-  bool shift = false;
-  bool ctrl = false;
+  auto key_char = 0;
+  auto key_code = 0;
+  auto alt = false;
+  auto shift = false;
+  auto ctrl = false;
   
   out.flush();
   __opaque_console::read_key(key_char, key_code, alt, shift, ctrl);
