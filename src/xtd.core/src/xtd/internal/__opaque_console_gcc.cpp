@@ -784,10 +784,10 @@ bool __opaque_console::output_code_page(xtd::int32 codePage) {
   return true;
 }
 
-void __opaque_console::read_key(xtd::int32& key_char, xtd::int32& key_code, bool& alt, bool& shift, bool& ctrl) {
+void __opaque_console::read_key(xtd::char32& key_char, xtd::char32& key_code, bool& alt, bool& shift, bool& ctrl) {
   key_info key_info = key_info::read();
-  key_char = static_cast<xtd::int32>(key_info.key_char());
-  key_code = static_cast<xtd::int32>(key_info.key());
+  key_char = static_cast<xtd::char32>(key_info.key_char());
+  key_code = static_cast<xtd::char32>(key_info.key());
   alt = key_info.has_alt_modifier();
   ctrl = key_info.has_control_modifier();
   shift = key_info.has_shift_modifier();

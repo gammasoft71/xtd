@@ -680,10 +680,10 @@ void console::output_code_page(int_least32_t codePage) {
   /// @todo set console output code page on linux and macOS
 }
 
-void console::read_key(int_least32_t& key_char, int_least32_t& key_code, bool& alt, bool& shift, bool& ctrl) {
+void console::read_key(char32_t& key_char, char32_t& key_code, bool& alt, bool& shift, bool& ctrl) {
   auto key_info = key_info::read();
-  key_char = static_cast<int_least32_t>(key_info.key_char());
-  key_code = static_cast<int_least32_t>(key_info.key());
+  key_char = static_cast<char32_t>(key_info.key_char());
+  key_code = static_cast<char32_t>(key_info.key());
   alt = key_info.has_alt_modifier();
   ctrl = key_info.has_control_modifier();
   shift = key_info.has_shift_modifier();

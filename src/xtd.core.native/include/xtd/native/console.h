@@ -146,7 +146,7 @@ namespace xtd {
       /// @param ctrl true if control key modifier is pressed; otherwise false.
       /// @remarks The five parameters will contains informations on key pressed.
       /// @warning Internal use only
-      static void read_key(int_least32_t& key_char, int_least32_t& key_code, bool& alt, bool& shift, bool& ctrl);
+      static void read_key(char32_t& key_char, char32_t& key_code, bool& alt, bool& shift, bool& ctrl);
       /// @brief Sets the foreground and background console colors to their defaults.
       /// @remarks The foreground and background colors are restored to the colors that existed when the current process began. For more information, see the foreground_color and background_color properties.
       /// @warning Internal use only
