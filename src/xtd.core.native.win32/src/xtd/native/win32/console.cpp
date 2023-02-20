@@ -1,6 +1,7 @@
 #define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/console.h>
+#include <xtd/native/console_special_key.h>
 #include "../../../../include/xtd/native/win32/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
@@ -9,6 +10,8 @@
 #include <Windows.h>
 #undef max
 #undef min
+
+bool __xtd_internal_cancel_key_press__(bool cancel, int_least32_t special_key);
 
 using namespace xtd::native;
 
@@ -28,12 +31,8 @@ namespace {
   }
   
   BOOL WINAPI __handler_routine(DWORD ctrl_type) {
-    if (ctrl_type == CTRL_C_EVENT || ctrl_type == CTRL_BREAK_EVENT) {
-      //xtd::console_cancel_event_args console_cancel(false, ctrl_type == CTRL_C_EVENT ? xtd::console_special_key::control_c : xtd::console_special_key::control_break);
-      //xtd::console::__internal_cancel_key_press__(console_cancel);
-      //return console_cancel.cancel() == TRUE;
-      return user_cancel_callback && user_cancel_callback(ctrl_type == CTRL_C_EVENT ? CONSOLE_SPECIAL_KEY_CTRL_C : CONSOLE_SPECIAL_KEY_CTRL_BREAK) == true;
-    }
+    if (ctrl_type == CTRL_C_EVENT || ctrl_type == CTRL_BREAK_EVENT)
+      return __xtd_internal_cancel_key_press__(false, ctrl_type == CTRL_C_EVENT ? CONSOLE_SPECIAL_KEY_CTRL_C : CONSOLE_SPECIAL_KEY_CTRL_BREAK) == TRUE;
     return FALSE;
   }
   

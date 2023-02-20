@@ -12,6 +12,12 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::io;
 
+bool __xtd_internal_cancel_key_press__(bool cancel, int_least32_t special_key) {
+  auto e = console_cancel_event_args(cancel, static_cast<console_special_key>(special_key));
+  console::__internal_cancel_key_press__(e);
+  return e.cancel();
+}
+
 namespace {
   std::mutex console_mutex;
   std::streambuf* __get_err_rdbuf() {
