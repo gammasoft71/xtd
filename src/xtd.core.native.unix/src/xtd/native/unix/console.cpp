@@ -61,8 +61,15 @@ namespace {
   
   class terminal final {
   private:
-    terminal() = default;
+    terminal() {
+      termios termioAttributes;
+      tcgetattr(0, &termioAttributes);
+      backupedTermioAttributes = termioAttributes;
+      termioAttributes.c_lflag &= ~ECHO;
+      tcsetattr(0, TCSANOW, &termioAttributes);
+    }
     ~terminal() {
+      tcsetattr(0, TCSANOW, &backupedTermioAttributes);
       if (is_ansi_supported())
         std::cout << "\x1b]0;\x7" << std::flush;
     }
@@ -121,6 +128,7 @@ namespace {
     
   private:
     int_least8_t peek_character = -1;
+    termios backupedTermioAttributes;
   };
   
   terminal terminal::terminal_;
@@ -225,20 +233,20 @@ namespace {
       return to_key_info(inputs.pop(), true);
     }
     
-    int_least32_t key() const {return key_;}
-    int_least32_t key_char() const {return key_char_;}
+    char32_t key() const {return key_;}
+    char32_t key_char() const {return key_char_;}
     bool has_alt_modifier() const {return has_alt_modifier_;}
     bool has_control_modifier() const {return has_control_modifier_;}
     bool has_shift_modifier() const {return has_shift_modifier_;}
     
     std::string to_string() const {
       std::stringstream result;
-      result << "{key=" << std::hex << key_ << ", key_char=" << std::dec << static_cast<char>(key_char_) << ", has_alt_modifier=" << to_string(has_alt_modifier_) << ", has_control_modifier=" << to_string(has_control_modifier_) << ", has_shift_modifier=" << to_string(has_shift_modifier_) << "}";
+      result << "{key=" << std::hex << static_cast<int_least32_t>(key_) << ", key_char=" << std::dec << static_cast<char>(key_char_) << ", has_alt_modifier=" << to_string(has_alt_modifier_) << ", has_control_modifier=" << to_string(has_control_modifier_) << ", has_shift_modifier=" << to_string(has_shift_modifier_) << "}";
       return result.str();
     }
     
   private:
-    key_info() : key_(0), key_char_(0), has_alt_modifier_(false), has_control_modifier_(false), has_shift_modifier_(false) {}
+    key_info() : key_(U'0'), key_char_(U'0'), has_alt_modifier_(false), has_control_modifier_(false), has_shift_modifier_(false) {}
     key_info(int_least32_t key, int_least32_t key_char) : key_(key), key_char_(key_char), has_alt_modifier_(false), has_control_modifier_(false), has_shift_modifier_(false) {}
     key_info(int_least32_t key, int_least32_t key_char, bool has_alt_modifier, bool has_control_modifier, bool has_shift_modifier) : key_(key), key_char_(key_char), has_alt_modifier_(has_alt_modifier), has_control_modifier_(has_control_modifier), has_shift_modifier_(has_shift_modifier) {}
     
@@ -367,14 +375,14 @@ namespace {
       return key_info(0, key, alt, false, key >= 'A' && key <= 'Z');
     }
     
-    int_least32_t key_;
-    int_least32_t key_char_;
+    char32_t key_;
+    char32_t key_char_;
     bool has_alt_modifier_;
     bool has_control_modifier_;
     bool has_shift_modifier_;
     struct key_key_char {
-      [[maybe_unused]] int_least32_t key;
-      [[maybe_unused]] int_least32_t key_char;
+      [[maybe_unused]] char32_t key;
+      [[maybe_unused]] char32_t key_char;
       [[maybe_unused]] bool alt;
       [[maybe_unused]] bool control;
       [[maybe_unused]] bool shift;
@@ -682,8 +690,8 @@ void console::output_code_page(int_least32_t codePage) {
 
 void console::read_key(char32_t& key_char, char32_t& key_code, bool& alt, bool& shift, bool& ctrl) {
   auto key_info = key_info::read();
-  key_char = static_cast<char32_t>(key_info.key_char());
-  key_code = static_cast<char32_t>(key_info.key());
+  key_char = key_info.key_char();
+  key_code = key_info.key();
   alt = key_info.has_alt_modifier();
   ctrl = key_info.has_control_modifier();
   shift = key_info.has_shift_modifier();
