@@ -214,8 +214,8 @@ namespace {
         auto k = signal_couter_[0];
         signal_couter_.erase(signal_couter_.begin());
         switch (k) {
-          case CONSOLE_SPECIAL_KEY_CTRL_C: return key_info('C', '\x3', false, true, false);
-          case CONSOLE_SPECIAL_KEY_CTRL_BS: return key_info('\\', '\\', false, true, false);
+          case CONSOLE_SPECIAL_KEY_CTRL_C: return key_info('C', '\x03', false, true, false);
+          case CONSOLE_SPECIAL_KEY_CTRL_BS: return key_info('\\', '\x1C', false, true, false);
           case CONSOLE_SPECIAL_KEY_CTRL_Z: return key_info('Z', '\x1A', false, true, false);
         }
       }
