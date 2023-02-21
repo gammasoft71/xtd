@@ -79,7 +79,7 @@ namespace xtd {
       /// @brief Sets the height of the cursor within a character cell.
       /// @param size The size of the cursor expressed as a percentage of the height of a character cell. The property value ranges from 1 to 100.
       /// @warning Internal use only
-      static void cursor_size(int_least32_t size);
+      static bool cursor_size(int_least32_t size);
       /// @brief Gets the row position of the cursor within the buffer area.
       /// @return The current position, in rows, of the cursor.
       /// @warning Internal use only
@@ -91,7 +91,7 @@ namespace xtd {
       /// @brief Sets a value indicating whether the cursor is visible.
       /// @param visible true if the cursor is visible; otherwise, false.
       /// @warning Internal use only
-      static void cursor_visible(bool visible);
+      static bool cursor_visible(bool visible);
       /// @brief Gets the foreground color of the console.
       /// @return the foreground console color.
       /// @warning Internal use only
@@ -171,7 +171,7 @@ namespace xtd {
       /// @brief Sets a value indicating whether the combination of the Control modifier key and C console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system.
       /// @param treat_control_c_as_input true if Ctrl+C is treated as ordinary input; otherwise, false.
       /// @warning Internal use only
-      static void treat_control_c_as_input(bool treat_control_c_as_input);
+      static bool treat_control_c_as_input(bool treat_control_c_as_input);
       /// @brief Gets the height of the console window area.
       /// @return The height of the console window measured in rows.
       /// @warning Internal use only
@@ -179,7 +179,7 @@ namespace xtd {
       /// @brief Sets the height of the console window area.
       /// @param height The height of the console window measured in rows.
       /// @warning Internal use only
-      static void window_height(int_least32_t height);
+      static bool window_height(int_least32_t height);
       /// @brief Gets the left of the console window area.
       /// @return The left of the console window measured in columns.
       /// @warning Internal use only
@@ -187,7 +187,7 @@ namespace xtd {
       /// @brief Sets the left of the console window area.
       /// @param left The left of the console window measured in columns.
       /// @warning Internal use only
-      static void window_left(int_least32_t left);
+      static bool window_left(int_least32_t left);
       /// @brief Gets the top of the console window area.
       /// @return The top of the console window measured in rows.
       /// @warning Internal use only
@@ -195,7 +195,7 @@ namespace xtd {
       /// @brief Sets the top of the console window area.
       /// @param top The top of the console window measured in rows.
       /// @warning Internal use only
-      static void window_top(int_least32_t top);
+      static bool window_top(int_least32_t top);
       /// @brief Gets the width of the console window area.
       /// @return The width of the console window measured in columns.
       /// @warning Internal use only
@@ -203,7 +203,7 @@ namespace xtd {
       /// @brief Sets the width of the console window area.
       /// @param width The width of the console window measured in columns.
       /// @warning Internal use only
-      static void window_width(int_least32_t width);
+      static bool window_width(int_least32_t width);
       /// @}
     };
   }

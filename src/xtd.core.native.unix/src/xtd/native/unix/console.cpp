@@ -695,10 +695,11 @@ int_least32_t console::cursor_size() {
   return 100;
 }
 
-void console::cursor_size(int_least32_t size) {
-  if (!terminal::is_ansi_supported()) return;
+bool console::cursor_size(int_least32_t size) {
+  if (!terminal::is_ansi_supported()) return false;
   if (size < 50) std::cout << "\x1b[4 q" << std::flush;
   else std::cout << "\x1b[2 q" << std::flush;
+  return true;
 }
 
 int_least32_t console::cursor_top() {
@@ -717,10 +718,11 @@ bool console::cursor_visible() {
   return ::cursor_visible;
 }
 
-void console::cursor_visible(bool visible) {
-  if (!terminal::is_ansi_supported()) return;
+bool console::cursor_visible(bool visible) {
+  if (!terminal::is_ansi_supported()) return false;
   ::cursor_visible = visible;
   std::cout << (::cursor_visible ? "\x1b[?25h" : "\x1b[?25l") << std::flush;
+  return true;
 }
 
 int_least32_t console::foreground_color() {
@@ -825,8 +827,9 @@ bool console::treat_control_c_as_input() {
   return ::treat_control_c_as_input;
 }
 
-void console::treat_control_c_as_input(bool treat_control_c_as_input) {
+bool console::treat_control_c_as_input(bool treat_control_c_as_input) {
   ::treat_control_c_as_input = treat_control_c_as_input;
+  return true;
 }
 
 int_least32_t console::window_height() {
@@ -838,8 +841,9 @@ int_least32_t console::window_height() {
   return height;
 }
 
-void console::window_height(int_least32_t height) {
+bool console::window_height(int_least32_t height) {
   /// @todo set console window height on linux and macOS
+  return true;
 }
 
 int_least32_t console::window_left() {
@@ -847,8 +851,9 @@ int_least32_t console::window_left() {
   return 0;
 }
 
-void console::window_left(int_least32_t left) {
+bool console::window_left(int_least32_t left) {
   /// @todo set console window left on linux and macOS
+  return true;
 }
 
 int_least32_t console::window_top() {
@@ -856,8 +861,9 @@ int_least32_t console::window_top() {
   return 0;
 }
 
-void console::window_top(int_least32_t top) {
+bool console::window_top(int_least32_t top) {
   /// @todo set console window top on linux and macOS
+  return true;
 }
 
 int_least32_t console::window_width() {
@@ -869,6 +875,7 @@ int_least32_t console::window_width() {
   return width;
 }
 
-void console::window_width(int_least32_t width) {
+bool console::window_width(int_least32_t width) {
   /// @todo set console window width on linux and macOS
+  return true;
 }
