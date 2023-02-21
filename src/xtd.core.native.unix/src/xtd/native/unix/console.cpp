@@ -9,6 +9,7 @@
 #include <list>
 #include <map>
 #include <sstream>
+#include <vector>
 
 #include <fcntl.h>
 #include <termios.h>
@@ -26,6 +27,8 @@
 using namespace xtd::native;
 
 namespace {
+  auto treat_control_c_as_input = false;
+  std::vector<int_least32_t> signal_couter_;
   std::function<bool(int32_t)> user_cancel_callback;
 
   struct console_intercept_signals {
@@ -42,7 +45,8 @@ namespace {
     
     static void signal_handler(int_least32_t signal) {
       ::signal(signal, console_intercept_signals::signal_handler);
-      if (user_cancel_callback && user_cancel_callback(signal_keys_[signal]) == false) exit(EXIT_FAILURE);
+      if (treat_control_c_as_input) signal_couter_.push_back(signal_keys_[signal]);
+      else if (user_cancel_callback && user_cancel_callback(signal_keys_[signal]) == false) exit(EXIT_FAILURE);
     }
     
     inline static std::map<int_least32_t, int_least32_t> signal_keys_  {{SIGQUIT, CONSOLE_SPECIAL_KEY_CTRL_BS}, {SIGTSTP, CONSOLE_SPECIAL_KEY_CTRL_Z}, {SIGINT, CONSOLE_SPECIAL_KEY_CTRL_C}};
@@ -203,9 +207,18 @@ namespace {
       return *this;
     }
     
-    static bool key_available() {return !inputs.is_empty() || terminal::terminal_.key_available();}
+    static bool key_available() {return !signal_couter_.empty() || !inputs.is_empty() || terminal::terminal_.key_available();}
     
     static key_info read() {
+      if (!signal_couter_.empty()) {
+        auto k = signal_couter_[0];
+        signal_couter_.erase(signal_couter_.begin());
+        switch (k) {
+          case CONSOLE_SPECIAL_KEY_CTRL_C: return key_info('C', '\x3', false, true, false);
+          case CONSOLE_SPECIAL_KEY_CTRL_BS: return key_info('\\', '\\', false, true, false);
+          case CONSOLE_SPECIAL_KEY_CTRL_Z: return key_info('Z', '\x1A', false, true, false);
+        }
+      }
       if (!inputs.is_empty()) return to_key_info(inputs.pop());
       
       do
@@ -534,7 +547,6 @@ namespace {
   auto back_color = CONSOLE_COLOR_BLACK;
   auto fore_color = CONSOLE_COLOR_WHITE;
   auto cursor_visible = true;
-  auto treat_control_c_as_input = false;
   std::string title;
 }
 
