@@ -195,7 +195,6 @@ add_sources(
   include/xtd/internal/__math.h
   include/xtd/internal/__natural_formatter.h
   include/xtd/internal/__numeric_formatter.h
-  include/xtd/internal/__opaque_console.h
   include/xtd/internal/__parse.h
   include/xtd/internal/__sprintf.h
   include/xtd/internal/__string_formatter.h
@@ -361,8 +360,6 @@ add_sources(
   src/xtd/diagnostics/trace_switch.cpp 
   src/xtd/internal/__format_exception.cpp
   src/xtd/internal/__format_stringer.cpp
-  src/xtd/internal/__opaque_console_gcc.cpp
-  src/xtd/internal/__opaque_console_win32.cpp
   src/xtd/internal/__parse.cpp
   src/xtd/io/binary_reader.cpp
   src/xtd/io/binary_writer.cpp
