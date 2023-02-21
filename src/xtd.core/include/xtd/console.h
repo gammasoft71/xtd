@@ -399,10 +399,10 @@ namespace xtd {
     static void write_line(const xtd::ustring& fmt, args_t&& ... values) {write_line_(xtd::ustring::format(fmt, std::forward<args_t>(values)...));}
     /// @}
     
-    /// @cond
-    static void __internal_cancel_key_press__(xtd::console_cancel_event_args& e);
-    /// @endcond
   private:
+    static bool on_cancel_key_press(int32 special_key);
+    static void register_cancel_key_press();
+
     static void write_(const ustring& value);
     static void write_line_(const ustring& value);
   };

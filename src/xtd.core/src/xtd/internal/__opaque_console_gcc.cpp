@@ -25,10 +25,9 @@
 #include <linux/kd.h>
 #endif
 
-bool __xtd_internal_cancel_key_press__(bool cancel, int_least32_t special_key);
-
 namespace {
-  /// @cond
+  std::function<bool(int32_t)> user_cancel_callback;
+
   struct console_intercept_signals {
   private:
     console_intercept_signals() {
@@ -43,7 +42,7 @@ namespace {
     
     static void signal_handler(xtd::int32 signal) {
       ::signal(signal, console_intercept_signals::signal_handler);
-      if (__xtd_internal_cancel_key_press__(false, signal_keys_[signal]) == false)
+      if (user_cancel_callback && user_cancel_callback(signal_keys_[signal]) == false)
         exit(EXIT_FAILURE);
     }
     
@@ -796,6 +795,10 @@ void __opaque_console::read_key(xtd::char32& key_char, xtd::char32& key_code, bo
   alt = key_info.has_alt_modifier();
   ctrl = key_info.has_control_modifier();
   shift = key_info.has_shift_modifier();
+}
+
+void __opaque_console::register_user_cancel_callback(std::function<bool(int32_t)> user_cancel_callback) {
+  ::user_cancel_callback = user_cancel_callback;
 }
 
 bool __opaque_console::reset_color() {

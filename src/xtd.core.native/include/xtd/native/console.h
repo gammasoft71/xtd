@@ -141,6 +141,12 @@ namespace xtd {
       /// @remarks The five parameters will contains informations on key pressed.
       /// @warning Internal use only
       static void read_key(char32_t& key_char, char32_t& key_code, bool& alt, bool& shift, bool& ctrl);
+      /// @brief Register the user cancel callback.
+      /// @param user_cancel_callback The user cancel callback method to register.
+      /// @remarks This callback is call when when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break key are pressed simultaneously (Ctrl+C or Ctrl+Break).
+      /// @remarks By default, the return of callback is false, which causes program execution to terminate when the event handler exits. Changing its return to true specifies that the application should continue to execute.
+      /// @warning Internal use only
+      static void register_user_cancel_callback(std::function<bool(int_least32_t)> user_cancel_callback);
       /// @brief Sets the foreground and background console colors to their defaults.
       /// @remarks The foreground and background colors are restored to the colors that existed when the current process began. For more information, see the foreground_color and background_color properties.
       /// @warning Internal use only
