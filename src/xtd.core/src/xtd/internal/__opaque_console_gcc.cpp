@@ -383,8 +383,8 @@ namespace {
     bool has_control_modifier_;
     bool has_shift_modifier_;
     struct key_key_char {
-      [[maybe_unused]] xtd::int32 key;
-      [[maybe_unused]] xtd::int32 key_char;
+      [[maybe_unused]] char32_t key;
+      [[maybe_unused]] char32_t key_char;
       [[maybe_unused]] bool alt;
       [[maybe_unused]] bool control;
       [[maybe_unused]] bool shift;
@@ -456,7 +456,7 @@ namespace {
     {"Y", {89, 89, false, false, true}}, // Y
     {"Z", {90, 90, false, false, true}}, // Z
     //{"", {91, 0, false, false, false}}, // LeftWindows
-    //{"", {92, 0, false, false, false}}, // RighttWindows
+    //{"", {92, 0, false, false, false}}, // RightWindows
     //{"", {93, 0, false, false, false}}, // Applications
     //{"", {95, 0, false, false, false}}, // Sleep
     //{"", {96, 0, false, false, false}}, // NumPad0

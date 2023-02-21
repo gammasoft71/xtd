@@ -39,12 +39,12 @@ namespace xtd {
       /// @brief Sets the background color of the console.
       /// @param color the background console color.
       /// @warning Internal use only
-      static void background_color(int_least32_t color);
+      static bool background_color(int_least32_t color);
       /// @brief Plays the sound of a beep of a specified frequency and duration through the console speaker.
       /// @param frequency The frequency of the beep, ranging from 37 to 32767 hertz
       /// @param duration The duration of the beep measured in milliseconds
       /// @warning Internal use only
-      static void beep(uint_least32_t frequency, uint_least32_t duration);
+      static bool beep(uint_least32_t frequency, uint_least32_t duration);
       /// @brief Gets the height of the buffer area.
       /// @return The current height, in rows, of the buffer area.
       /// @warning Internal use only
@@ -52,7 +52,7 @@ namespace xtd {
       /// @brief Sets or sets the height of the buffer area.
       /// @param height The current height, in rows, of the buffer area.
       /// @warning Internal use only
-      static void buffer_height(int_least32_t height);
+      static bool buffer_height(int_least32_t height);
       /// @brief Gets the width of the buffer area.
       /// @return The current width, in columns, of the buffer area.
       /// @warning Internal use only
@@ -60,14 +60,14 @@ namespace xtd {
       /// @brief Sets the width of the buffer area.
       /// @param width The current width, in columns, of the buffer area.
       /// @warning Internal use only
-      static void buffer_width(int_least32_t width);
+      static bool buffer_width(int_least32_t width);
       /// @brief Gets a value indicating whether the CAPS LOCK keyboard toggle is turned on or turned off.
       /// @return true if CAPS LOCK is turned on; false if CAPS LOCK is turned off.
       /// @warning Internal use only
       static bool caps_lock();
       /// @brief Clears the console buffer and corresponding console window of display information.
       /// @warning Internal use only
-      static void clear();
+      static bool clear();
       /// @brief Gets the column position of the cursor within the buffer area.
       /// @return The current position, in columns, of the cursor.
       /// @warning Internal use only
@@ -99,7 +99,7 @@ namespace xtd {
       /// @brief Sets the foreground color of the console.
       /// @param color the foreground console color.
       /// @warning Internal use only
-      static void foreground_color(int_least32_t color);
+      static bool foreground_color(int_least32_t color);
       /// @brief Gets the code page the console uses to read input.
       /// @return The code page used to read console input.
       /// @warning Internal use only
@@ -107,7 +107,7 @@ namespace xtd {
       /// @brief Sets the code page the console uses to read input.
       /// @param code_page The code page used to read console input.
       /// @warning Internal use only
-      static void input_code_page(int_least32_t codePage);
+      static bool input_code_page(int_least32_t codePage);
       /// @brief Gets a value indicating whether a key press is available in the input stream.
       /// @param true if a key press is available; otherwise, false
       /// @warning Internal use only
@@ -131,7 +131,7 @@ namespace xtd {
       /// @brief Sets the code page the console uses to write output.
       /// @param code_page The code page used to write console output.
       /// @warning Internal use only
-      static void output_code_page(int_least32_t codePage);
+      static bool output_code_page(int_least32_t codePage);
       /// @brief Obtains the next character or function key pressed by the user.
       /// @param key_char A bitwise combination of the enumeration values. There is no default value.
       /// @param key_code A value that identifies the console key that was pressed.
@@ -150,12 +150,12 @@ namespace xtd {
       /// @brief Sets the foreground and background console colors to their defaults.
       /// @remarks The foreground and background colors are restored to the colors that existed when the current process began. For more information, see the foreground_color and background_color properties.
       /// @warning Internal use only
-      static void reset_color();
+      static bool reset_color();
       /// @brief Sets the position of the cursor.
       /// @param left The column position of the cursor. Columns are numbered from left to right starting at 0.
       /// @param top The row position of the cursor. Rows are numbered from top to bottom starting at 0.
       /// @warning Internal use only
-      static void set_cursor_position(int_least32_t left, int_least32_t top);
+      static bool set_cursor_position(int_least32_t left, int_least32_t top);
       /// @brief Gets the title to display in the console title bar.
       /// @return The string to be displayed in the title bar of the console. The maximum length of the title string is 24500 characters.
       /// @warning Internal use only
@@ -163,7 +163,7 @@ namespace xtd {
       /// @brief Sets the title to display in the console title bar.
       /// @param title The string to be displayed in the title bar of the console. The maximum length of the title string is 24500 characters.
       /// @warning Internal use only
-      static void title(const std::string& title);
+      static bool title(const std::string& title);
       /// @brief Gets a value indicating whether the combination of the Control modifier key and C console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system.
       /// @return true if Ctrl+C is treated as ordinary input; otherwise, false.
       /// @warning Internal use only
