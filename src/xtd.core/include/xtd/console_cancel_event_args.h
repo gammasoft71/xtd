@@ -24,9 +24,8 @@ namespace xtd {
     console_cancel_event_args() = default;
     
     /// @brief Initializes a new instance of the console_cancel_event_args class.
-    /// @param cancel true if the current process should resume when the event handler concludes; false if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If true, the current process continues..
     /// @param special_key One of the enumeration values that specifies the key combination that interrupted the current process. There is no default value..
-    console_cancel_event_args(bool cancel, console_special_key special_key);
+    console_cancel_event_args(console_special_key special_key);
     /// @}
     
     /// @cond

@@ -25,9 +25,9 @@ const int_least32_t KIOCSOUND = 0x4B2F;
 
 using namespace xtd::native;
 
-bool __xtd_internal_cancel_key_press__(bool cancel, int_least32_t special_key);
-
 namespace {
+  std::function<bool(int32_t)> user_cancel_callback;
+
   struct console_intercept_signals {
   private:
     console_intercept_signals() {
@@ -42,8 +42,7 @@ namespace {
     
     static void signal_handler(int_least32_t signal) {
       ::signal(signal, console_intercept_signals::signal_handler);
-      if (__xtd_internal_cancel_key_press__(false, signal_keys_[signal]) == false)
-        exit(EXIT_FAILURE);
+      if (user_cancel_callback && user_cancel_callback(signal_keys_[signal]) == false) exit(EXIT_FAILURE);
     }
     
     inline static std::map<int_least32_t, int_least32_t> signal_keys_  {{SIGQUIT, CONSOLE_SPECIAL_KEY_CTRL_BS}, {SIGTSTP, CONSOLE_SPECIAL_KEY_CTRL_Z}, {SIGINT, CONSOLE_SPECIAL_KEY_CTRL_C}};
@@ -694,6 +693,10 @@ void console::read_key(char32_t& key_char, char32_t& key_code, bool& alt, bool& 
   alt = key_info.has_alt_modifier();
   ctrl = key_info.has_control_modifier();
   shift = key_info.has_shift_modifier();
+}
+
+void console::register_user_cancel_callback(std::function<bool(int32_t)> user_cancel_callback) {
+  ::user_cancel_callback = user_cancel_callback;
 }
 
 void console::reset_color() {

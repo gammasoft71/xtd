@@ -11,11 +11,11 @@
 #undef max
 #undef min
 
-bool __xtd_internal_cancel_key_press__(bool cancel, int_least32_t special_key);
-
 using namespace xtd::native;
 
 namespace {
+  std::function<bool(int32_t)> user_cancel_callback;
+
   int_least32_t __background_color() {
     CONSOLE_SCREEN_BUFFER_INFO csbi;
     GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
@@ -29,8 +29,8 @@ namespace {
   }
   
   BOOL WINAPI __handler_routine(DWORD ctrl_type) {
-    if (ctrl_type == CTRL_C_EVENT || ctrl_type == CTRL_BREAK_EVENT)
-      return __xtd_internal_cancel_key_press__(false, ctrl_type == CTRL_C_EVENT ? CONSOLE_SPECIAL_KEY_CTRL_C : CONSOLE_SPECIAL_KEY_CTRL_BREAK) == TRUE;
+    if (user_cancel_callback && (ctrl_type == CTRL_C_EVENT || ctrl_type == CTRL_BREAK_EVENT))
+      return user_cancel_callback(ctrl_type == CTRL_C_EVENT ? CONSOLE_SPECIAL_KEY_CTRL_C : CONSOLE_SPECIAL_KEY_CTRL_BREAK) == TRUE;
     return FALSE;
   }
   
@@ -229,6 +229,10 @@ void console::read_key(char32_t& key_char, char32_t& key_code, bool& alt, bool& 
   alt = (input_record.Event.KeyEvent.dwControlKeyState & LEFT_ALT_PRESSED) == LEFT_ALT_PRESSED || (input_record.Event.KeyEvent.dwControlKeyState & RIGHT_ALT_PRESSED) == RIGHT_ALT_PRESSED;
   shift = (input_record.Event.KeyEvent.dwControlKeyState & SHIFT_PRESSED) == SHIFT_PRESSED;
   ctrl = (input_record.Event.KeyEvent.dwControlKeyState & LEFT_CTRL_PRESSED) == LEFT_CTRL_PRESSED || (input_record.Event.KeyEvent.dwControlKeyState & RIGHT_CTRL_PRESSED) == RIGHT_CTRL_PRESSED;
+}
+
+void console::register_user_cancel_callback(std::function<bool(int32_t)> user_cancel_callback) {
+  ::user_cancel_callback = user_cancel_callback;
 }
 
 void console::reset_color() {
