@@ -16,10 +16,10 @@
 #include <sys/ioctl.h>
 
 #if __APPLE__
-#if !defined(KIOCSOUND)
-const int_least32_t KIOCSOUND = 0x4B2F;
-#endif
+#include <AudioUnit/AudioUnit.h>
 #else
+#define ALSA_PCM_NEW_HW_PARAMS_API
+#include <alsa/asoundlib.h>
 #include <linux/kd.h>
 #endif
 
@@ -119,7 +119,7 @@ namespace {
     static terminal terminal_;
     
   private:
-    int_least8_t peek_character = -1;
+    int_least8_t peek_character {-1};
     termios backupedTermioAttributes;
   };
   
@@ -139,8 +139,8 @@ namespace {
         return *this;
       }
       
-      bool operator ==(const input_list& il) const {return chars == il.chars;}
-      bool operator !=(const input_list& il) const {return chars != il.chars;}
+      bool operator ==(const input_list& il) const noexcept {return chars == il.chars;}
+      bool operator !=(const input_list& il) const noexcept {return chars != il.chars;}
       
       using const_iterator = std::list<int_least32_t>::const_iterator;
       using iterator = std::list<int_least32_t>::iterator;
@@ -178,7 +178,7 @@ namespace {
         input_list result;
         std::string::const_iterator iterator = value.begin();
         while (iterator != value.end()) {
-          if (*iterator == '^' && (iterator + 1) != value.end() &&  *(iterator + 1) == '[') {
+          if (*iterator == '^' && (iterator + 1) != value.end() && *(iterator + 1) == '[') {
             result.chars.push_back(27);
             ++iterator;
           } else
@@ -542,37 +542,120 @@ int_least32_t console::background_color() {
   return back_color;
 }
 
-void console::background_color(int_least32_t color) {
-  if (!terminal::is_ansi_supported()) return;
+bool console::background_color(int_least32_t color) {
+  if (!terminal::is_ansi_supported()) return false;
   static std::map<int_least32_t, const char*> colors {{CONSOLE_COLOR_BLACK, "\033[40m"}, {CONSOLE_COLOR_DARK_BLUE, "\033[44m"}, {CONSOLE_COLOR_DARK_GREEN, "\033[42m"}, {CONSOLE_COLOR_DARK_CYAN, "\033[46m"}, {CONSOLE_COLOR_DARK_RED, "\033[41m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\033[45m"}, {CONSOLE_COLOR_DARK_YELLOW, "\033[43m"}, {CONSOLE_COLOR_GRAY, "\033[47m"}, {CONSOLE_COLOR_DARK_GRAY, "\033[100m"}, {CONSOLE_COLOR_BLUE, "\033[104m"}, {CONSOLE_COLOR_GREEN, "\033[102m"}, {CONSOLE_COLOR_CYAN, "\033[106m"}, {CONSOLE_COLOR_RED, "\033[101m"}, {CONSOLE_COLOR_MAGENTA, "\033[105m"}, {CONSOLE_COLOR_YELLOW, "\033[103m"}, {CONSOLE_COLOR_WHITE, "\033[107m"}};
   auto it = colors.find(color);
-  if (it == colors.end()) return;
+  if (it == colors.end()) return false;
   std::cout << it->second << std::flush;
   back_color = color;
+  return true;
 }
 
-void console::beep(uint_least32_t frequency, uint_least32_t duration) {
-  if (frequency < 37 || frequency > 32767) return;
-  
-  int_least32_t fd = open("/dev/console", O_WRONLY);
-  if (fd == -1) std::cout << "\a" << std::flush;
-  else {
-    if (ioctl(fd, KIOCSOUND, (int_least32_t)(1193180 / frequency)) < 0) std::cout << "\a" << std::flush;
-    else {
-      usleep(1000 * duration);
-      ioctl(fd, KIOCSOUND, 0);
+#if __APPLE__
+namespace {
+  class audio {
+  public:
+    static bool beep(uint_least32_t frequency, uint_least32_t duration) {
+      if (frequency < 37 || frequency > 32767) return false;
+      
+      dispatch_semaphore_wait(idle_semaphore, DISPATCH_TIME_FOREVER);
+      
+      static bool initialized = false;
+      if (!initialized) {
+        AudioComponentDescription audio_component_description {kAudioUnitType_Output, kAudioUnitSubType_DefaultOutput, kAudioUnitManufacturer_Apple, 0, 0};
+        AudioComponentInstanceNew(AudioComponentFindNext(nullptr, &audio_component_description), &audio_unit);
+        
+        AURenderCallbackStruct au_render_callback_struct {&audio::au_renderer_proc, nullptr};
+        AudioUnitSetProperty(audio_unit, kAudioUnitProperty_SetRenderCallback, kAudioUnitScope_Input, 0, &au_render_callback_struct, sizeof(au_render_callback_struct));
+        
+        AudioStreamBasicDescription audio_stream_basic_description {simple_rate, kAudioFormatLinearPCM, 0, 1, 1, 1, 1, bits_per_channel, 0};
+        AudioUnitSetProperty(audio_unit, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &audio_stream_basic_description, sizeof(audio_stream_basic_description));
+        
+        AudioUnitInitialize(audio_unit);
+        AudioOutputUnitStart(audio_unit);
+      }
+      initialized = true;
+      
+      beep_freq = frequency;
+      beep_samples = duration * bits_per_channel;
+      
+      dispatch_semaphore_signal(start_playing_semaphore);
+      
+      dispatch_semaphore_wait(end_playing_semaphore, DISPATCH_TIME_FOREVER);
+      
+      //AudioOutputUnitStop(audio_unit);
+      //AudioUnitUninitialize(audio_unit);
+      dispatch_semaphore_signal(idle_semaphore);
+      return true;
     }
-    close(fd);
-  }
+    
+  private:
+    static OSStatus au_renderer_proc(void* in_ref_con, AudioUnitRenderActionFlags* io_action_flags, const AudioTimeStamp* in_time_stamp, uint_least32_t in_bus_number, uint_least32_t in_number_frames, AudioBufferList* io_data) {
+      static int_least32_t counter = 0;
+      while (counter == 0) {
+        dispatch_semaphore_wait(start_playing_semaphore, DISPATCH_TIME_FOREVER);
+        counter = beep_samples;
+      }
+      
+      for (uint_least32_t frames_index = 0; frames_index < in_number_frames; ++frames_index) {
+        static unsigned char theta = 0;
+        reinterpret_cast<unsigned char*>(io_data->mBuffers[0].mData)[frames_index] = (beep_freq * 255 * theta++ / simple_rate);
+        if (--counter == 0) {
+          theta = 0;
+          counter = 0;
+          dispatch_semaphore_signal(end_playing_semaphore);
+          break;
+        }
+      }
+      return 0;
+    }
+    
+    inline static constexpr const int_least32_t simple_rate = 8000;
+    inline static constexpr const int_least32_t bits_per_channel = 8;
+    inline static dispatch_semaphore_t idle_semaphore = dispatch_semaphore_create(1);
+    inline static dispatch_semaphore_t start_playing_semaphore = dispatch_semaphore_create(0);
+    inline static dispatch_semaphore_t end_playing_semaphore = dispatch_semaphore_create(0);
+    inline static AudioUnit audio_unit;
+    inline static unsigned int beep_freq = 0;
+    inline static int_least32_t beep_samples = 0;
+  };
 }
+
+bool console::beep(uint_least32_t frequency, uint_least32_t duration) {
+  return audio::beep(frequency, duration);
+}
+#else
+bool console::beep(uint_least32_t frequency, uint_least32_t duration) {
+  if (frequency < 37 || frequency > 32767) return false;
+  
+  static constexpr const uint_least32_t simple_rate = 8000;
+  static snd_pcm_t* pcm_handle = nullptr;
+  if (pcm_handle == nullptr) {
+    if (snd_pcm_open(&pcm_handle, "default", SND_PCM_STREAM_PLAYBACK, 0)) return false;
+    snd_pcm_set_params(pcm_handle, SND_PCM_FORMAT_U8, SND_PCM_ACCESS_RW_INTERLEAVED, 1, simple_rate, 1, 20000);
+  }
+  
+  unsigned char buffer[2400];
+  for (uint_least32_t duration_index = 0; duration_index < duration / 200; ++duration_index) {
+    snd_pcm_prepare(pcm_handle);
+    for (uint_least32_t buffer_index = 0; buffer_index < sizeof(buffer); ++buffer_index)
+      buffer[buffer_index] = frequency > 0 ? (255 * buffer_index * frequency / simple_rate) : 0;
+    snd_pcm_sframes_t written_frames = snd_pcm_writei(pcm_handle, buffer, sizeof(buffer));
+    if (written_frames < 0) snd_pcm_recover(pcm_handle, written_frames, 0);
+  }
+  return true;
+}
+#endif
 
 int_least32_t console::buffer_height() {
   /// @todo console buffer Height on linux and macOS
   return console::window_height();
 }
 
-void console::buffer_height(int_least32_t height) {
+bool console::buffer_height(int_least32_t height) {
   /// @todo set console buffer height on linux and macOS
+  return true;
 }
 
 int_least32_t console::buffer_width() {
@@ -580,8 +663,9 @@ int_least32_t console::buffer_width() {
   return console::window_width();
 }
 
-void console::buffer_width(int_least32_t width) {
+bool console::buffer_width(int_least32_t width) {
   /// @todo set console buffer width on linux and macOS
+  return true;
 }
 
 bool console::caps_lock() {
@@ -589,9 +673,10 @@ bool console::caps_lock() {
   return false;
 }
 
-void console::clear() {
-  if (!terminal::is_ansi_supported()) return;
+bool console::clear() {
+  if (!terminal::is_ansi_supported()) return false;
   std::cout << "\x1b[H\x1b[2J" << std::flush;
+  return true;
 }
 
 int_least32_t console::cursor_left() {
@@ -642,13 +727,14 @@ int_least32_t console::foreground_color() {
   return fore_color;
 }
 
-void console::foreground_color(int_least32_t color) {
-  if (!terminal::is_ansi_supported()) return;
+bool console::foreground_color(int_least32_t color) {
+  if (!terminal::is_ansi_supported()) return false;
   static std::map<int_least32_t, const char*> colors {{CONSOLE_COLOR_BLACK, "\033[30m"}, {CONSOLE_COLOR_DARK_BLUE, "\033[34m"}, {CONSOLE_COLOR_DARK_GREEN, "\033[32m"}, {CONSOLE_COLOR_DARK_CYAN, "\033[36m"}, {CONSOLE_COLOR_DARK_RED, "\033[31m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\033[35m"}, {CONSOLE_COLOR_DARK_YELLOW, "\033[33m"}, {CONSOLE_COLOR_GRAY, "\033[37m"}, {CONSOLE_COLOR_DARK_GRAY, "\033[90m"}, {CONSOLE_COLOR_BLUE, "\033[94m"}, {CONSOLE_COLOR_GREEN, "\033[92m"}, {CONSOLE_COLOR_CYAN, "\033[96m"}, {CONSOLE_COLOR_RED, "\033[91m"}, {CONSOLE_COLOR_MAGENTA, "\033[95m"}, {CONSOLE_COLOR_YELLOW, "\033[93m"}, {CONSOLE_COLOR_WHITE, "\033[97m"}};
   auto it = colors.find(color);
-  if (it == colors.end()) return;
+  if (it == colors.end()) return false;
   std::cout << it->second << std::flush;
   fore_color = color;
+  return true;
 }
 
 int_least32_t console::input_code_page() {
@@ -656,8 +742,9 @@ int_least32_t console::input_code_page() {
   return 65001;
 }
 
-void console::input_code_page(int_least32_t codePage) {
+bool console::input_code_page(int_least32_t codePage) {
   /// @todo set console input code page on linux and macOS
+  return true;
 }
 
 bool console::key_available() {
@@ -682,12 +769,13 @@ int_least32_t console::output_code_page() {
   return 65001;
 }
 
-void console::output_code_page(int_least32_t codePage) {
+bool console::output_code_page(int_least32_t codePage) {
   /// @todo set console output code page on linux and macOS
+  return true;
 }
 
 void console::read_key(char32_t& key_char, char32_t& key_code, bool& alt, bool& shift, bool& ctrl) {
-  auto key_info = key_info::read();
+  key_info key_info = key_info::read();
   key_char = key_info.key_char();
   key_code = key_info.key();
   alt = key_info.has_alt_modifier();
@@ -699,37 +787,38 @@ void console::register_user_cancel_callback(std::function<bool(int32_t)> user_ca
   ::user_cancel_callback = user_cancel_callback;
 }
 
-void console::reset_color() {
-  if (!terminal::is_ansi_supported()) return;
+bool console::reset_color() {
+  if (!terminal::is_ansi_supported()) return false;
   std::cout << "\033[49m\033[39m" << std::flush;
+  return true;
 }
 
-void console::set_cursor_position(int_least32_t left, int_least32_t top) {
-  if (!terminal::is_ansi_supported()) return;
+bool console::set_cursor_position(int_least32_t left, int_least32_t top) {
+  if (!terminal::is_ansi_supported()) return false;
   std::cout << "\x1b[" << top + 1 << ";" << left + 1 << "f" << std::flush;
+  return true;
 }
 
 std::string console::title() {
-  if (!terminal::is_ansi_supported()) return ::title;
   /// @todo get console get title on linux and macOS
-  /*
-   * Didn't work correctly!
-  std::cout << "\x1b[21t" << std::endl;
-  
-  if (!terminal.key_available()) return ::title;
-  
-  std::string title;
-  for (auto c = terminal.getch(); terminal::terminal_.key_available(); c = terminal::terminal_.getch())
-    title.push_back(static_cast<char>(c));
-  return title;
+  /** Didn't work correctly!
+   std::cout << "\x1b[21t" << std::endl;
+   
+   if (!terminal.key_available()) return ::title;
+   
+   std::string title;
+   for (auto c = terminal.getch(); terminal::terminal_.key_available(); c = terminal::terminal_.getch())
+     title.push_back(static_cast<char>(c));
+   return title;
    */
   return ::title;
 }
 
-void console::title(const std::string& title) {
-  if (!terminal::is_ansi_supported()) return;
+bool console::title(const std::string& title) {
+  if (!terminal::is_ansi_supported()) return false;
   ::title = title;
   std::cout << "\x1b]0;" << title.c_str() << "\x7" << std::flush;
+  return true;
 }
 
 bool console::treat_control_c_as_input() {
@@ -738,11 +827,6 @@ bool console::treat_control_c_as_input() {
 
 void console::treat_control_c_as_input(bool treat_control_c_as_input) {
   ::treat_control_c_as_input = treat_control_c_as_input;
-}
-
-int_least32_t console::window_left() {
-  /// @todo get console window left on linux and macOS
-  return 0;
 }
 
 int_least32_t console::window_height() {
@@ -754,9 +838,26 @@ int_least32_t console::window_height() {
   return height;
 }
 
+void console::window_height(int_least32_t height) {
+  /// @todo set console window height on linux and macOS
+}
+
+int_least32_t console::window_left() {
+  /// @todo get console window left on linux and macOS
+  return 0;
+}
+
+void console::window_left(int_least32_t left) {
+  /// @todo set console window left on linux and macOS
+}
+
 int_least32_t console::window_top() {
   /// @todo get console window top on linux and macOS
   return 0;
+}
+
+void console::window_top(int_least32_t top) {
+  /// @todo set console window top on linux and macOS
 }
 
 int_least32_t console::window_width() {
@@ -766,4 +867,8 @@ int_least32_t console::window_width() {
   auto width = console::cursor_left() + 1;
   console::set_cursor_position(left, console::cursor_top());
   return width;
+}
+
+void console::window_width(int_least32_t width) {
+  /// @todo set console window width on linux and macOS
 }
