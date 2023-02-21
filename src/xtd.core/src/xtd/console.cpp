@@ -1,11 +1,13 @@
 #include <cstring>
 #include <iostream>
 #include <mutex>
+#define __XTD_CORE_NATIVE_LIBRARY__
+#include <xtd/native/console.h>
+#undef __XTD_CORE_NATIVE_LIBRARY__
 #include "../../include/xtd/console.h"
 #include "../../include/xtd/io/stream_reader.h"
 #define __XTD_CORE_INTERNAL__
 #include "../../include/xtd/internal/__generic_stream_output.h"
-#include "../../include/xtd/internal/__opaque_console.h"
 #undef __XTD_CORE_INTERNAL__
 
 using namespace std;
@@ -37,42 +39,42 @@ event<console, console_cancel_event_handler> console::cancel_key_press;
 
 console_color console::background_color() {
   register_cancel_key_press(); // Must be first...
-  return  __opaque_console::background_color();
+  return static_cast<console_color>(native::console::background_color());
 }
 
 void console::background_color(console_color color) {
   register_cancel_key_press(); // Must be first...
-  __opaque_console::background_color(color);
+  native::console::background_color(static_cast<int32>(color));
 }
 
 int32 console::buffer_height() {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::buffer_height();
+  return native::console::buffer_height();
 }
 
 void console::buffer_height(int32 height) {
   register_cancel_key_press(); // Must be first...
-  __opaque_console::buffer_height(height);
+  native::console::buffer_height(height);
 }
 
 int32 console::buffer_width() {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::buffer_width();
+  return native::console::buffer_width();
 }
 
 void console::buffer_width(int32 width) {
   register_cancel_key_press(); // Must be first...
-  __opaque_console::buffer_width(width);
+  native::console::buffer_width(width);
 }
 
 bool console::caps_lock() {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::caps_lock();
+  return native::console::caps_lock();
 }
 
 int32 console::cursor_left() {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::cursor_left();
+  return native::console::cursor_left();
 }
 
 void console::cursor_left(int32 left) {
@@ -82,17 +84,17 @@ void console::cursor_left(int32 left) {
 
 int32 console::cursor_size() {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::cursor_size();
+  return native::console::cursor_size();
 }
 
 void console::cursor_size(int32 size) {
   register_cancel_key_press(); // Must be first...
-  __opaque_console::cursor_size(size);
+  native::console::cursor_size(size);
 }
 
 int32 console::cursor_top() {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::cursor_top();
+  return native::console::cursor_top();
 }
 
 void console::cursor_top(int32 top) {
@@ -102,32 +104,32 @@ void console::cursor_top(int32 top) {
 
 bool console::cursor_visible() {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::cursor_visible();
+  return native::console::cursor_visible();
 }
 
 void console::cursor_visible(bool visible) {
   register_cancel_key_press(); // Must be first...
-  __opaque_console::cursor_visible(visible);
+  native::console::cursor_visible(visible);
 }
 
 console_color console::foreground_color() {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::foreground_color();
+  return static_cast<console_color>(native::console::foreground_color());
 }
 
 bool console::foreground_color(console_color color) {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::foreground_color(color);
+  return native::console::foreground_color(static_cast<int32>(color));
 }
 
 int32 console::input_code_page() {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::input_code_page();
+  return native::console::input_code_page();
 }
 
 bool console::input_code_page(int32 code_page) {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::input_code_page(code_page);
+  return native::console::input_code_page(code_page);
 }
 
 bool console::is_error_redirected() {
@@ -147,92 +149,92 @@ bool console::is_output_redirected() {
 
 bool console::key_available() {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::key_available();
+  return native::console::key_available();
 }
 
 int32 console::largest_window_height() {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::largest_window_height();
+  return native::console::largest_window_height();
 }
 
 int32 console::largest_window_width() {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::largest_window_width();
+  return native::console::largest_window_width();
 }
 
 bool console::number_lock() {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::number_lock();
+  return native::console::number_lock();
 }
 
 int32 console::output_code_page() {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::output_code_page();
+  return native::console::output_code_page();
 }
 
 bool console::output_code_page(int32 code_page) {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::output_code_page(code_page);
+  return native::console::output_code_page(code_page);
 }
 
 ustring console::title() {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::title();
+  return native::console::title();
 }
 
 void console::title(const ustring& title) {
   register_cancel_key_press(); // Must be first...
-  __opaque_console::title(title);
+  native::console::title(title);
 }
 
 bool console::treat_control_c_as_input() {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::treat_control_c_as_input();
+  return native::console::treat_control_c_as_input();
 }
 
 void console::treat_control_c_as_input(bool treat_control_c_as_input) {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::treat_control_c_as_input(treat_control_c_as_input);
+  native::console::treat_control_c_as_input(treat_control_c_as_input);
 }
 
 int32 console::window_height() {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::window_height();
+  return native::console::window_height();
 }
 
 void console::window_height(int32 height) {
   register_cancel_key_press(); // Must be first...
-  __opaque_console::window_height(height);
+  native::console::window_height(height);
 }
 
 int32 console::window_left() {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::window_left();
+  return native::console::window_left();
 }
 
 void console::window_left(int32 left) {
   register_cancel_key_press(); // Must be first...
-  __opaque_console::window_left(left);
+  native::console::window_left(left);
 }
 
 int32 console::window_top() {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::window_top();
+  return native::console::window_top();
 }
 
 void console::window_top(int32 top) {
   register_cancel_key_press(); // Must be first...
-  __opaque_console::window_top(top);
+  native::console::window_top(top);
 }
 
 int32 console::window_width() {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::window_width();
+  return native::console::window_width();
 }
 
 void console::window_width(int32 width) {
   register_cancel_key_press(); // Must be first...
-  __opaque_console::window_width(width);
+  native::console::window_width(width);
 }
 
 void console::beep() {
@@ -242,12 +244,12 @@ void console::beep() {
 
 void console::beep(uint32 frequency, uint32 duration) {
   register_cancel_key_press(); // Must be first...
-  __opaque_console::beep(frequency, duration);
+  native::console::beep(frequency, duration);
 }
 
 void console::clear() {
   register_cancel_key_press(); // Must be first...
-  __opaque_console::clear();
+  native::console::clear();
 }
 
 std::pair<int32, int32> console::get_cursor_position() {
@@ -287,7 +289,7 @@ console_key_info console::read_key(bool intercept) {
 
   auto key_char = U'0', key_code = U'0';
   auto alt = false, shift = false, ctrl = false;
-  __opaque_console::read_key(key_char, key_code, alt, shift, ctrl);
+  native::console::read_key(key_char, key_code, alt, shift, ctrl);
   auto key_info = console_key_info(key_char, static_cast<console_key>(key_code), shift, alt, ctrl);
   
   if (intercept == false)
@@ -297,12 +299,12 @@ console_key_info console::read_key(bool intercept) {
 
 bool console::reset_color() {
   register_cancel_key_press(); // Must be first...
-  return __opaque_console::reset_color();
+  return native::console::reset_color();
 }
 
 void console::set_cursor_position(int32 left, int32 top) {
   register_cancel_key_press(); // Must be first...
-  __opaque_console::set_cursor_position(left, top);
+  native::console::set_cursor_position(left, top);
 }
 
 void console::set_error(const std::ostream& os) {
@@ -345,7 +347,7 @@ bool console::on_cancel_key_press(int32 special_key) {
 
 void console::register_cancel_key_press() {
   static bool initialized = false;
-  if (!initialized) __opaque_console::register_user_cancel_callback(console::on_cancel_key_press);
+  if (!initialized) native::console::register_user_cancel_callback(console::on_cancel_key_press);
   initialized = true;
 }
 

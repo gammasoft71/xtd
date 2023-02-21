@@ -16,6 +16,10 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
+  class console;
+  /// @endcond
+  
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
@@ -28,6 +32,7 @@ namespace xtd {
     /// @warning Internal use only
     class core_native_export_ console final {
       console() = delete;
+      friend xtd::console;
     protected:
       /// @name Protected methods
       
