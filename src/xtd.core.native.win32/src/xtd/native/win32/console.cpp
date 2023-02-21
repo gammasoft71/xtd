@@ -277,7 +277,7 @@ int_least32_t console::window_height() {
   return csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
 }
 
-void console::window_height(xtd::int32 height) {
+void console::window_height(int_least32_t height) {
   /// @todo set console window height on windows
 }
 
@@ -287,7 +287,7 @@ int_least32_t console::window_left() {
   return csbi.srWindow.Left;
 }
 
-void console::window_left(xtd::int32 left) {
+void console::window_left(int_least32_t left) {
   /// @todo set console window left on windows
 }
 
@@ -297,7 +297,7 @@ int_least32_t console::window_top() {
   return csbi.srWindow.Top;
 }
 
-void console::window_top(xtd::int32 top) {
+void console::window_top(int_least32_t top) {
   /// @todo set console window top on windows
 }
 
@@ -307,6 +307,6 @@ int_least32_t console::window_width() {
   return csbi.srWindow.Right - csbi.srWindow.Left + 1;
 }
 
-void console::window_width(xtd::int32 width) {
+void console::window_width(int_least32_t width) {
   /// @todo set console window width on windows
 }
