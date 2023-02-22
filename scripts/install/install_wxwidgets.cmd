@@ -1,6 +1,6 @@
 @echo off
 
-set wxwidgets_version=v3.2.0
+set wxwidgets_version=v3.2.2.1
 
 echo Install wxWidgets version %wxwidgets_version%...
 echo.
