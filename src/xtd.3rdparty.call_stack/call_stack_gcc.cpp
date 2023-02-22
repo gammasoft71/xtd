@@ -5,7 +5,7 @@
 /* Linux/gcc implementation of the call_stack class. */
 #if defined(__GNUC__)
 
-#if __ANDROID__ | __CYGWIN__
+#if __ANDROID__ | __CYGWIN__ | __MINGW32__
 
 #include "call_stack.h"
 
