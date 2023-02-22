@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-wxwidgets_version=v3.2.0
+wxwidgets_version=v3.2.2.1
 
 echo "Install wxWidgets $wxwidgets_version..."
 echo ""
