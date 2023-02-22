@@ -211,13 +211,14 @@ $(function() {
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> ... args_t&gt;</div>
 <div class="line"><a name="l00399"></a><span class="lineno"><a class="line" href="classxtd_1_1console.html#aa9fbf20d808213c547163d5e7101bcda">  399</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classxtd_1_1console.html#aa9fbf20d808213c547163d5e7101bcda">write_line</a>(<span class="keyword">const</span> <a class="code" href="classxtd_1_1ustring.html">xtd::ustring</a>&amp; fmt, args_t&amp;&amp; ... values) {write_line_(<a class="code" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a>(fmt, std::forward&lt;args_t&gt;(values)...));}</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    </div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> __internal_cancel_key_press__(<a class="code" href="classxtd_1_1console__cancel__event__args.html">xtd::console_cancel_event_args</a>&amp; e);</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> on_cancel_key_press(<a class="code" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> special_key);</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> register_cancel_key_press();</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> write_(<span class="keyword">const</span> <a class="code" href="classxtd_1_1ustring.html">ustring</a>&amp; value);</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> write_line_(<span class="keyword">const</span> <a class="code" href="classxtd_1_1ustring.html">ustring</a>&amp; value);</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;  };</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;}</div>
-<div class="ttc" id="aclassxtd_1_1console__cancel__event__args_html"><div class="ttname"><a href="classxtd_1_1console__cancel__event__args.html">xtd::console_cancel_event_args</a></div><div class="ttdoc">Provides data for the console::cancel_key_press event. This class cannot be inherited.</div><div class="ttdef"><b>Definition:</b> console_cancel_event_args.h:18</div></div>
 <div class="ttc" id="aclassxtd_1_1console__key__info_html"><div class="ttname"><a href="classxtd_1_1console__key__info.html">xtd::console_key_info</a></div><div class="ttdoc">Specifies the standard keys on a console.</div><div class="ttdef"><b>Definition:</b> console_key_info.h:21</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html"><div class="ttname"><a href="classxtd_1_1console.html">xtd::console</a></div><div class="ttdoc">Represents the standard input, output, and error streams for console applications.</div><div class="ttdef"><b>Definition:</b> console.h:26</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a02258c1b2d77b3ca79f144db690d4c20"><div class="ttname"><a href="classxtd_1_1console.html#a02258c1b2d77b3ca79f144db690d4c20">xtd::console::cancel_key_press</a></div><div class="ttdeci">static event&lt; console, console_cancel_event_handler &gt; cancel_key_press</div><div class="ttdoc">Occurs when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break ...</div><div class="ttdef"><b>Definition:</b> console.h:259</div></div>
@@ -308,7 +309,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 18 2023 20:39:26 for xtd - Reference Guide by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Feb 22 2023 13:51:21 for xtd - Reference Guide by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
