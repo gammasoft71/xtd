@@ -19,7 +19,7 @@ namespace xtd {
     /// xtd::forms
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms_native
+    /// @ingroup xtd_forms
     /// @remarks The information in a create_params can be used to pass information about the initial state and appearance of a control. Most control derived controls override the create_params property to pass in the appropriate values or include additional information in the create_params.
     /// @note The constants used to set the style, ex_style, and class_style properties are defined in the xtd.forms.native library as constants.
     class create_params : public object {
