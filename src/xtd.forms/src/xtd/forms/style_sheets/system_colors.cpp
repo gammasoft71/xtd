@@ -278,6 +278,14 @@ void system_colors::scroll_bar(const color& value) noexcept {
   scroll_bar_ = value;
 }
 
+const color& system_colors::shadow_text() const noexcept {
+  return shadow_text_;
+}
+
+void system_colors::shadow_text(const color& value) noexcept {
+  shadow_text_ = value;
+}
+
 const color& system_colors::text_box() const noexcept {
   return text_box_;
 }
