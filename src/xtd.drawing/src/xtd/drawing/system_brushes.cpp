@@ -140,6 +140,10 @@ solid_brush system_brushes::scroll_bar() {
   return solid_brush(color::from_known_color(known_color::scroll_bar));
 }
 
+solid_brush system_brushes::shadow_text() {
+  return solid_brush(color::from_known_color(known_color::shadow_text));
+}
+
 solid_brush system_brushes::text_box() {
   return solid_brush(color::from_known_color(known_color::text_box));
 }
