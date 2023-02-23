@@ -373,6 +373,8 @@ namespace xtd {
       menu_text,
       /// @brief The system-defined color of the background of a scroll bar.
       scroll_bar,
+      /// @brief The system-defined color of the shadow text.
+      shadow_text,
       /// @brief The system-defined color of the accent color (macos specific. On other platform is same as window).
       text_box,
       /// @brief The system-defined color of the accent text color (macos specific. On other platform is same as window_text).

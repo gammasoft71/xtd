@@ -176,6 +176,10 @@ namespace xtd {
       /// @return A xtd::drawing::color that is the color of the background of a scroll bar.
       static xtd::drawing::color scroll_bar();
       
+      /// @brief Gets a xtd::drawing::color structure that is the color of the shadow text.
+      /// @return A xtd::drawing::color that is the color of the shadow text.
+      static xtd::drawing::color shadow_text();
+
       /// @brief Gets a xtd::drawing::color structure that is the color of the background of a text box.
       /// @return A xtd::drawing::color that is the color of the background of a textt box.
       static xtd::drawing::color text_box();
