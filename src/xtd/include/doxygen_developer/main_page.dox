@@ -1,7 +1,7 @@
 /// @file
 /// @brief Contains main page.
 
-/// @mainpage xtd - Developer Reference Guide - Internal use only
+/// @mainpage xtd - Developer's Reference Guide - Internal use only
 ///
 /// <b>xtd (pronounced "extend") is a modern c++17/20 framework to create console, forms (GUI like WinForms) and unit test applications on Windows, macOS, Linux, iOS and android.</b>
 ///
