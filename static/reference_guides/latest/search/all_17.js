@@ -39,7 +39,7 @@ var searchData=
   ['xml_5fsyntax_5fexception_5f_6971',['xml_syntax_exception_',['../group__exceptions.html#gaa3dcab114f653d1058d059727a99a2ce',1,'xml_syntax_exception.h']]],
   ['xpm_6972',['xpm',['../classxtd_1_1drawing_1_1imaging_1_1image__format.html#a5c2aa722f409961550064e846fbf0b6e',1,'xtd::drawing::imaging::image_format']]],
   ['xtd_6973',['xtd',['../classxtd_1_1forms_1_1properties_1_1resources.html#a692ff15e7a22b184b884ce7250df088c',1,'xtd::forms::properties::resources::xtd()'],['../namespacextd.html',1,'xtd']]],
-  ['xtd_20_2d_20reference_20guide_20documentation_6974',['xtd - Reference Guide Documentation',['../index.html',1,'']]],
+  ['xtd_20_2d_20reference_20guide_6974',['xtd - Reference Guide',['../index.html',1,'']]],
   ['xtd_2ecore_6975',['xtd.core',['../group__xtd__core.html',1,'']]],
   ['xtd_2ecore_2eh_6976',['xtd.core.h',['../xtd_8core_8h.html',1,'']]],
   ['xtd_2edrawing_6977',['xtd.drawing',['../group__xtd__drawing.html',1,'']]],
