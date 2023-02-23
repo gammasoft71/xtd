@@ -358,6 +358,16 @@
 ///     <td>@image html system_colors_scroll_bar_gd.png</td>
 ///   </tr>
 ///   <tr>
+///     <td>shadow text</td>
+///     <td>xtd::drawing::system_colors::shadow_text</td>
+///     <td>@image html system_colors_shadow_text_w.png</td>
+///     <td>@image html system_colors_shadow_text_wd.png</td>
+///     <td>@image html system_colors_shadow_text_m.png</td>
+///     <td>@image html system_colors_shadow_text_md.png</td>
+///     <td>@image html system_colors_shadow_text_g.png</td>
+///     <td>@image html system_colors_shadow_text_gd.png</td>
+///   </tr>
+///   <tr>
 ///     <td>text box</td>
 ///     <td>xtd::drawing::system_colors::text_box</td>
 ///     <td>@image html system_colors_text_box_w.png</td>

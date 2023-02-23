@@ -284,6 +284,12 @@ intptr system_colors::scroll_bar() {
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_SCROLLBAR));
 }
 
+intptr system_colors::shadow_text() {
+  toolkit::initialize(); // Must be first
+  if (wxSystemSettings::GetAppearance().IsDark() || is_windows_dark_mode())  return 0xFF808080;
+  return 0xFFC0C0C0;
+}
+
 intptr system_colors::text_box() {
   toolkit::initialize(); // Must be first
   #if defined(__WXOSX__)
@@ -297,7 +303,6 @@ intptr system_colors::text_box() {
 intptr system_colors::text_box_text() {
   toolkit::initialize(); // Must be first
   #if defined(__WXOSX__)
-  
   return __xtd__macos_system_colors_text_box_text__();
   #else
   if (is_windows_dark_mode()) return 0xFFFFFFFF;

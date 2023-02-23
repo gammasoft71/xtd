@@ -140,6 +140,10 @@ color xtd::drawing::system_colors::scroll_bar() {
   return color::from_known_color(xtd::drawing::known_color::scroll_bar);
 }
 
+color xtd::drawing::system_colors::shadow_text() {
+  return color::from_known_color(xtd::drawing::known_color::shadow_text);
+}
+
 color xtd::drawing::system_colors::text_box() {
   return color::from_known_color(xtd::drawing::known_color::text_box);
 }

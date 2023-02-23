@@ -211,6 +211,11 @@ namespace xtd {
         /// @warning Internal use only
         static xtd::intptr scroll_bar();
         
+        /// @brief Gets a color that is the color of the shadow text.
+        /// @return A color handle that is the color of the shadow text.
+        /// @warning Internal use only
+        static xtd::intptr shadow_text();
+        
         /// @brief Gets a color that is the color of the background of a text box.
         /// @return A color handle that is the color of the background of a textt box.
         /// @warning Internal use only

@@ -313,6 +313,7 @@ color color::from_known_color(known_color color) {
     case known_color::menu: return drawing::color(color::from_handle(native::system_colors::menu()), color);
     case known_color::menu_text: return drawing::color(color::from_handle(native::system_colors::menu_text()), color);
     case known_color::scroll_bar: return drawing::color(color::from_handle(native::system_colors::scroll_bar()), color);
+    case known_color::shadow_text: return drawing::color(color::from_handle(native::system_colors::shadow_text()), color);
     case known_color::window: return drawing::color(color::from_handle(native::system_colors::window()), color);
     case known_color::window_frame: return drawing::color(color::from_handle(native::system_colors::window_frame()), color);
     case known_color::window_text: return drawing::color(color::from_handle(native::system_colors::window_text()), color);
