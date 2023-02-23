@@ -111,11 +111,6 @@
 /// @warning Internal use only
 /// @ingroup native
 
-/// @defgroup fd frame dimension
-/// @brief frame dimension definitions.
-/// @warning Internal use only
-/// @ingroup native
-
 /// @defgroup fdi frame dimension
 /// @brief frame dimension definitions.
 /// @warning Internal use only
