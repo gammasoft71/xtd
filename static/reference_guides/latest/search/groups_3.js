@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['events_14842',['events',['../group__events.html',1,'']]],
-  ['exceptions_14843',['exceptions',['../group__exceptions.html',1,'']]]
+  ['events_14845',['events',['../group__events.html',1,'']]],
+  ['exceptions_14846',['exceptions',['../group__exceptions.html',1,'']]]
 ];
