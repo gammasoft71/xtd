@@ -5,9 +5,9 @@
 #---------------------------------------------------------------------------
 
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = "xtd - Reference Guide"
+PROJECT_NAME           = "xtd"
 PROJECT_NUMBER         = 0.2.0
-PROJECT_BRIEF          = "Modern c++17/20 framework to create console, GUI and unit test applications on Windows, macOS, Linux, iOS and android."
+PROJECT_BRIEF          = "xtd (pronounced "extend") is a modern c++17/20 framework to create console, forms (GUI like WinForms) and unit test applications on Windows, macOS, Linux, iOS and android."
 PROJECT_LOGO           = ../pictures/xtd_doxygen.png
 OUTPUT_DIRECTORY       = ../../build
 CREATE_SUBDIRS         = NO

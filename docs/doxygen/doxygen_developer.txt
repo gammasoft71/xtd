@@ -10,8 +10,6 @@
 # Specific developer guide configuration options
 #---------------------------------------------------------------------------
 
-PROJECT_NAME  = "xtd - Developer Guide - Internal use only"
-PROJECT_BRIEF = "Modern c++17/20 framework to create console, GUI and unit test applications on Windows, macOS, Linux, iOS and android."
 INPUT         = ../../src/xtd/include/doxygen_developer \
                 ../../src/xtd/include \
                 ../../src/xtd.core.native/include \
