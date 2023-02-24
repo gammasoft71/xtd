@@ -14,7 +14,8 @@ struct region::data {
   intptr handle = 0;
 };
 
-region::region() : region(rectangle_f(single_object::min_value, single_object::min_value, single_object::max_value, single_object::max_value)) {
+region::region() : data_(std::make_shared<data>()) {
+  data_->handle = native::region::create();
 }
 
 region::region(const graphics_path& path) : data_(std::make_shared<data>()) {
