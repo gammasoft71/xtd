@@ -159,7 +159,7 @@ Inheritance diagram for xtd::forms::image_list:</div>
 <div class="line">      <span class="keywordflow">if</span> (ofd.show_dialog() == <a class="code" href="group__xtd__forms.html#gga4f0cffaa8fcb3708782f28d60386c525a444bcb3a3fcf8389296c49467f27e1d6">dialog_result::ok</a>) {</div>
 <div class="line">        pictures.images().clear();</div>
 <div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span> file : ofd.file_names())</div>
-<div class="line">          pictures.images().push_back(<a class="code" href="group__drawing.html#ga4f08b7764c620cf3886894ea26a23543">drawing::image::from_file</a>(file));</div>
+<div class="line">          pictures.images().push_back(<a class="code" href="classxtd_1_1drawing_1_1image.html#a4f08b7764c620cf3886894ea26a23543">drawing::image::from_file</a>(file));</div>
 <div class="line">        current_image_index = 0;</div>
 <div class="line">        picture.image(pictures.images()[current_image_index]);</div>
 <div class="line">        button_previous.enabled(current_image_index &gt; 0);</div>
@@ -178,11 +178,11 @@ Inheritance diagram for xtd::forms::image_list:</div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <a class="code" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(example::form1 {});</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_a4f08b7764c620cf3886894ea26a23543"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#a4f08b7764c620cf3886894ea26a23543">xtd::drawing::image::from_file</a></div><div class="ttdeci">static image from_file(const xtd::ustring &amp;filename)</div><div class="ttdoc">Creates an image from the specified file.</div><div class="ttdef"><b>Definition:</b> image.h:181</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button__images_html_a245af2bbb53f70d6540000ce450a4a7e"><div class="ttname"><a href="classxtd_1_1forms_1_1button__images.html#a245af2bbb53f70d6540000ce450a4a7e">xtd::forms::button_images::next</a></div><div class="ttdeci">static xtd::drawing::image next()</div><div class="ttdoc">Next image object.</div><div class="ttdef"><b>Definition:</b> button_images.h:94</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button__images_html_a535b9e2a94da8b86a540690a0b6c88ce"><div class="ttname"><a href="classxtd_1_1forms_1_1button__images.html#a535b9e2a94da8b86a540690a0b6c88ce">xtd::forms::button_images::previous</a></div><div class="ttdeci">static xtd::drawing::image previous()</div><div class="ttdoc">Previous image object.</div><div class="ttdef"><b>Definition:</b> button_images.h:128</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1image__list_html_a83bdda0350112d2ffc2586590659a977"><div class="ttname"><a href="classxtd_1_1forms_1_1image__list.html#a83bdda0350112d2ffc2586590659a977">xtd::forms::image_list::image_list</a></div><div class="ttdeci">image_list()</div><div class="ttdoc">Initialize a new instance ao image_list class.</div></div>
-<div class="ttc" id="agroup__drawing_html_ga4f08b7764c620cf3886894ea26a23543"><div class="ttname"><a href="group__drawing.html#ga4f08b7764c620cf3886894ea26a23543">xtd::drawing::image::from_file</a></div><div class="ttdeci">static image from_file(const xtd::ustring &amp;filename)</div><div class="ttdoc">Creates an image from the specified file.</div><div class="ttdef"><b>Definition:</b> image.h:175</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga20f9c51904cab0da365efa6c57b84908"><div class="ttname"><a href="group__style__sheets.html#ga20f9c51904cab0da365efa6c57b84908">xtd::forms::style_sheets::button</a></div><div class="ttdeci">xtd::forms::style_sheets::control button</div><div class="ttdoc">The buttton data allows you to specify the box of a button control.</div><div class="ttdef"><b>Definition:</b> button.h:21</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga305ec1c107ffe3a4a89f839499c2ae7c"><div class="ttname"><a href="group__style__sheets.html#ga305ec1c107ffe3a4a89f839499c2ae7c">xtd::forms::style_sheets::form</a></div><div class="ttdeci">xtd::forms::style_sheets::control form</div><div class="ttdoc">The form data allows you to specify the box of a form control.</div><div class="ttdef"><b>Definition:</b> form.h:19</div></div>
 <div class="ttc" id="agroup__xtd__drawing_html_gga9eee82940e5b13decf9dca44676861a7aa7dd12b1dab17d25467b0b0a4c8d4a92"><div class="ttname"><a href="group__xtd__drawing.html#gga9eee82940e5b13decf9dca44676861a7aa7dd12b1dab17d25467b0b0a4c8d4a92">xtd::drawing::text::hotkey_prefix::show</a></div><div class="ttdeci">@ show</div><div class="ttdoc">Display the hot-key prefix.</div></div>
@@ -574,7 +574,7 @@ Because setting the image_size property causes the handle to be recreated, you s
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 23 2023 23:09:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Feb 24 2023 22:36:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
