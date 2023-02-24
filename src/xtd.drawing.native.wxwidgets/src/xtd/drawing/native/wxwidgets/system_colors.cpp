@@ -287,7 +287,7 @@ intptr system_colors::scroll_bar() {
 intptr system_colors::shadow_text() {
   toolkit::initialize(); // Must be first
   if (wxSystemSettings::GetAppearance().IsDark() || is_windows_dark_mode())  return 0xFF000000;
-  return 0xFF979797;
+  return 0xFF696969;
 }
 
 intptr system_colors::text_box() {
