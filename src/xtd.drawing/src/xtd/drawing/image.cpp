@@ -179,6 +179,14 @@ int32 image::width() const noexcept {
   return data_->size_.width();
 }
 
+image image::blur(int32 radius) const {
+  return image(native::image::blur(handle(), radius));
+}
+
+graphics image::create_graphics() {
+  return graphics::from_image(*this);
+}
+
 bool image::equals(const image& image) const noexcept {
   return data_->handle_ == image.data_->handle_;
 }

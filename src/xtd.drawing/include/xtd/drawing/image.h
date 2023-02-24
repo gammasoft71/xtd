@@ -162,10 +162,16 @@ namespace xtd {
       
       /// @{
       
+      /// @brief Blurs the image whith the specified radius.
+      /// @param radius The radius of the blur, specified as a <length>
+      /// @note No blur effect, if the radius is 0.
+      /// @return The new blurred image.
+      image blur(int32 radius) const;
+      
       /// @brief Creates the xtd::drawing::graphics for the image.
       /// @return A xtd::drawing::graphics for the image.
       /// @ingroup drawing
-      graphics create_graphics() {return graphics::from_image(*this);}
+      graphics create_graphics();
       
       bool equals(const image& image) const noexcept override;
       
