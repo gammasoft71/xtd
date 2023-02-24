@@ -34,6 +34,11 @@ namespace xtd {
         /// @name Protected methods
         
         /// @{
+        /// @brief Creates a region with an infinite interior.
+        /// @return The created region handle.
+        /// @warning Internal use only
+        static intptr create();
+        
         /// @brief Creates a region from the specified rectangle.
         /// @param x A x-coordinate of rectangle that defines the interior of the region.
         /// @param y A y-coordinate of rectangle that defines the interior of the region.
