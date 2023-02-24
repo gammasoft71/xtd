@@ -486,6 +486,7 @@ void graphics::fill_region(intptr handle, intptr brush, intptr region) {
     graphics.SetBrush(wx_brush::to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
     graphics.DrawRectangle(static_cast<double>(x), static_cast<double>(y), static_cast<double>(width), static_cast<double>(height));
   }
+  graphics.ResetClip();
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
