@@ -167,7 +167,18 @@ bool label::shadow() const noexcept {
 label& label::shadow(bool value) {
   if (shadow() == value) return *this;
   if (!value) data_->shadows.clear();
-  else data_->shadows.emplace_back(xtd::forms::shadow());
+  else data_->shadows = {xtd::forms::shadow()};
+  if (control_appearance() == forms::control_appearance::standard) invalidate();
+  return *this;
+}
+
+const std::vector<xtd::forms::shadow>& label::shadows() const noexcept {
+  return data_->shadows;
+}
+
+xtd::forms::label& label::shadows(const std::vector<xtd::forms::shadow>& value) {
+  if (data_->shadows == value) return *this;
+  data_->shadows = value;
   if (control_appearance() == forms::control_appearance::standard) invalidate();
   return *this;
 }
