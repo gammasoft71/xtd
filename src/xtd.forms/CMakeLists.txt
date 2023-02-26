@@ -242,6 +242,7 @@ add_sources(
   include/xtd/forms/segments.h
   include/xtd/forms/settings.h
   include/xtd/forms/seven_segment_display.h
+  include/xtd/forms/shadow.h
   include/xtd/forms/shortcut.h
   include/xtd/forms/sixteen_segment_display.h
   include/xtd/forms/size_type.h
@@ -472,6 +473,7 @@ add_sources(
   src/xtd/forms/selection_range.cpp
   src/xtd/forms/settings.cpp
   src/xtd/forms/seven_segment_display.cpp
+  src/xtd/forms/shadow.cpp
   src/xtd/forms/sixteen_segment_display.cpp
   src/xtd/forms/sizing_grip_control.h
   src/xtd/forms/split_container.cpp
