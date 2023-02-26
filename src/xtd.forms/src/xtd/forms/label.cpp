@@ -1,3 +1,4 @@
+#include <vector>
 #include <xtd/drawing/pens.h>
 #include <xtd/drawing/solid_brush.h>
 #include <xtd/drawing/system_colors.h>
@@ -16,6 +17,7 @@
 #include "../../../include/xtd/forms/label_renderer.h"
 #include "../../../include/xtd/forms/screen.h"
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -23,13 +25,14 @@ using namespace xtd::forms;
 struct label::data {
   bool auto_ellipsis = false;
   xtd::forms::border_sides border_sides = xtd::forms::border_sides::all;
-  std::optional<xtd::forms::border_style> border_style;
+  optional<xtd::forms::border_style> border_style;
   xtd::drawing::image image = xtd::drawing::image::empty;
   xtd::forms::image_list image_list = xtd::forms::image_list::empty;
   int32 image_index = -1;
   content_alignment image_align = content_alignment::middle_center;
   xtd::forms::flat_style flat_style = xtd::forms::flat_style::standard;
-  bool shadow = false;
+  vector<xtd::forms::shadow> shadows;
+  xtd::drawing::point shadow_offset;
   xtd::forms::content_alignment text_align = xtd::forms::content_alignment::top_left;
 };
 
@@ -158,12 +161,13 @@ label& label::image_list(const forms::image_list& value) {
 }
 
 bool label::shadow() const noexcept {
-  return data_->shadow;
+  return data_->shadows.empty();
 }
 
 label& label::shadow(bool value) {
-  if (data_->shadow == value) return *this;
-  data_->shadow = value;
+  if (shadow() == value) return *this;
+  if (!value) data_->shadows.clear();
+  else data_->shadows.emplace_back(xtd::forms::shadow());
   if (control_appearance() == forms::control_appearance::standard) invalidate();
   return *this;
 }
