@@ -78,6 +78,7 @@ namespace xtd {
       virtual forms::border_sides border_sides() const noexcept;
       /// @brief Sets the border sides for the control.
       /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
+      /// @return Current label instance.
       virtual label& border_sides(forms::border_sides border_sides);
       
       /// @brief Gets the border style for the control.
@@ -115,6 +116,7 @@ namespace xtd {
       virtual const drawing::image& image() const noexcept;
       /// @brief Sets the image that is displayed on a label control.
       /// @param value The Image displayed on the label control. The default value is xtd::drawing::image::empty.
+      /// @return Current label instance.
       /// @remarks When the image property is set, the image_list property will be set to xtd::forms::image_list::empty, and the image_index property will be set to its default, -1.
       /// @note If the flat_style property is set to xtd::forms::flat_style::system, any images assigned to the image property are not displayed.
       virtual xtd::forms::label& image(const drawing::image& value);
@@ -124,6 +126,7 @@ namespace xtd {
       virtual xtd::forms::content_alignment image_align() const noexcept;
       /// @brief Gets the alignment of the image on the label control.
       /// @param value One of the content_alignment values. The default is xtd::forms::content_alignment::middle_center.
+      /// @return Current label instance.
       virtual xtd::forms::label& image_align(content_alignment value);
       
       /// @brief Gets the image list index value of the image displayed on the label control.
@@ -133,7 +136,8 @@ namespace xtd {
       /// @remarks If the image_list property value is changed to xtd::forms::image_list::empty, the image_index property returns its default value, -1. However, the assigned image_index value is retained internally and used when another image_list object is assigned to the image_list property. If the new image_list assigned to the image_list property has an imageList::_image_collection::size property value that is less than or equal to the value assigned to the image_index property minus one (to account for the collection being a zero-based index), the image_index property value is adjusted to one less than the size property value. For example, consider a button control whose image_list has three images and whose image_index property is set to 2. If a new image_list that has only two images is assigned to the button, the image_index value changes to 1.
       virtual int32 image_index() const noexcept;
       /// @brief Sets the image list index value of the image displayed on the label control.
-      /// @return A zero-based index, which represents the image position in an image_list. The default is -1.
+      /// @param value A zero-based index, which represents the image position in an image_list. The default is -1.
+      /// @return Current label instance.
       /// @remarks When the image_index or image_list properties are set, the Image property is set to its default value, xtd::drawing::image::empty.
       /// @remarks image_key and image_index are mutually exclusive, meaning if one is set, the other is set to an invalid value and ignored. If you set the image_key property, the image_index property is automatically set to -1. Alternatively, if you set the image_index property, the image_key is automatically set to an empty string ("").
       /// @remarks If the image_list property value is changed to xtd::forms::image_list::empty, the image_index property returns its default value, -1. However, the assigned image_index value is retained internally and used when another image_list object is assigned to the image_list property. If the new image_list assigned to the image_list property has an imageList::_image_collection::size property value that is less than or equal to the value assigned to the image_index property minus one (to account for the collection being a zero-based index), the image_index property value is adjusted to one less than the size property value. For example, consider a button control whose image_list has three images and whose image_index property is set to 2. If a new image_list that has only two images is assigned to the button, the image_index value changes to 1.
@@ -146,7 +150,8 @@ namespace xtd {
       /// @return An xtd::drawing::image_list. The default value is xtd::drawing::image_list::empty.
       virtual forms::image_list& image_list() noexcept;
       /// @brief Sets the image_list that contains the image displayed on a label control.
-      /// @return An xtd::drawing::image_list. The default value is xtd::drawing::image_list::empty.
+      /// @param value An xtd::drawing::image_list. The default value is xtd::drawing::image_list::empty.
+      /// @return Current label instance.
       virtual xtd::forms::label& image_list(const forms::image_list& value);
       
       /// @brief Gets a value that allows to draw a drop shadow under the text.
@@ -154,8 +159,17 @@ namespace xtd {
       virtual bool shadow() const noexcept;
       /// @brief Sets a value that allows to draw a drop shadow under the text.
       /// @param value true allows to draw a drop shadow under the text; otherwise false. The default is false.
+      /// @return Current label instance.
       virtual xtd::forms::label& shadow(bool value);
-      
+
+      /// @brief Gets an xtd::forms::shadow array used to draw shadows under the text.
+      /// @return An xtd::forms::shadow array used to draw shadows under the text.
+      virtual const std::vector<xtd::forms::shadow>& shadows() const noexcept;
+      /// @brief Sets an xtd::forms::shadow array used to draw shadows under the text.
+      /// @param value An xtd::forms::shadow array used to draw shadows under the text.
+      /// @return Current label instance.
+      virtual xtd::forms::label& shadows(const std::vector<xtd::forms::shadow>& value);
+
       /// @brief Gets the alignment of the text on the button control.
       /// @return One of the content_alignment values. The default is middle_center.
       /// @remarks You can use this property to align the text within a label to match the layout of controls on your form. For example, if your controls are located to the right edge of the labels, you can set the text_align property to one of the right-aligned horizontal alignments (top_right, middle_right, bottom_right) and the text will be aligned with the right edge of the labels to align with your controls.
