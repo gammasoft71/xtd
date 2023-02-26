@@ -325,7 +325,7 @@ add_sources(
   src/xtd/operating_system.cpp
   src/xtd/processor.cpp
   src/xtd/random.cpp
-# src/xtd/signal_catcher.cpp
+  src/xtd/signal_catcher.cpp
   src/xtd/system_exception.cpp
   src/xtd/target_type.cpp
   src/xtd/time_zone_info.cpp

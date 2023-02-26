@@ -1,11 +1,20 @@
+#include <csignal>
 #include <xtd/xtd.core>
 #include <xtd/xtd.drawing>
 
 using namespace xtd;
 
 auto main()->int {
-  int min = as<int>(single_object::min_value);
-  int max = as<int>(single_object::max_value);
-  console::write_line("main = {}; max= {}", min, max);
-  console::write_line("main = {}; max= {}", int32_object::min_value, int32_object::max_value);
+  char* ptr = nullptr;
+  *ptr = 'a';
+
+  /*
+  try {
+    //raise(SIGSEGV);
+    char* ptr = nullptr;
+    *ptr = 'a';
+  } catch(const system_exception& e) {
+    console::write_line(e);
+  }
+   */
 }
