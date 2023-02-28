@@ -48,7 +48,7 @@ namespace {
       ::signal(signal, signal_catcher::signal_abort_exception_handler);
       // Do not uncomment the next line, otherwise the exception is triggered forever.
       //throw xtd::threading::thread_abort_exception(csf_);
-       exit(EXIT_FAILURE);
+      exit(EXIT_FAILURE);
     }
     
     static void signal_floating_point_exception_handler(int32 signal) {
