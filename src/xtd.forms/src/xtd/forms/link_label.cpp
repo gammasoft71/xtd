@@ -231,7 +231,7 @@ void link_label::on_paint(paint_event_args& e) {
   control::on_paint(e);
   if (control_appearance() == forms::control_appearance::system) return;
   auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-  label_renderer::draw_link_label(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, text(), data_->links.to_array(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, data_->link_color, data_->visited_link_color, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, data_->link_behavior, image(), image_align(), border_style(), border_sides(), shadow(), auto_ellipsis());
+  label_renderer::draw_link_label(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, text(), data_->links.to_array(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, data_->link_color, data_->visited_link_color, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, data_->link_behavior, image(), image_align(), border_style(), border_sides(), shadows(), auto_ellipsis());
   
   if (native::toolkit::is_operating_system_double_buffered() || double_buffered())
     e.graphics().clear(back_color());

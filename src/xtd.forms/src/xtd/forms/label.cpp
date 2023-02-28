@@ -261,7 +261,7 @@ void label::on_paint(paint_event_args& e) {
   control::on_paint(e);
   if (data_->flat_style == xtd::forms::flat_style::system) return;
   auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-  label_renderer::draw_label(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align(), data_->border_style, data_->border_sides, shadow(), auto_ellipsis());
+  label_renderer::draw_label(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font() != default_font() ? std::optional<drawing::font> {font()} : std::nullopt, image(), image_align(), data_->border_style, data_->border_sides, data_->shadows, auto_ellipsis());
 }
 
 void label::on_text_align_changed(const xtd::event_args& e) {
