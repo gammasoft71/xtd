@@ -440,11 +440,23 @@ namespace xtd {
     /// @}
     
     /// @name Events
+    /// @brief Occurs when the abort signal is sent to the current process.
+    /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
     static event<environment, signal_cancel_event_handler> signal_abort_occured;
+    /// @brief Occurs when the floating point excerption signal is sent to the current process.
+    /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
     static event<environment, signal_cancel_event_handler> signal_floating_point_exception_occured;
+    /// @brief Occurs when the illegal instruction signal is sent to the current process.
+    /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
     static event<environment, signal_cancel_event_handler> signal_illegal_instruction_occured;
+    /// @brief Occurs when the interrupt signal is sent to the current process.
+    /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
     static event<environment, signal_cancel_event_handler> signal_interrupt_occured;
+    /// @brief Occurs when the segmentation violation signal is sent to the current process.
+    /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
     static event<environment, signal_cancel_event_handler> signal_segmentation_violation_occured;
+    /// @brief Occurs when the software termination signal is sent to the current process.
+    /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
     static event<environment, signal_cancel_event_handler> signal_software_termination_occured;
     /// @}
 
