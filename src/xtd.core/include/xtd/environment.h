@@ -14,10 +14,12 @@
 #include "cpp_language.h"
 #include "enum.h"
 #include "environment_variable_target.h"
+#include "event.h"
 #include "guid.h"
 #include "operating_system.h"
 #include "platform_id.h"
 #include "processor.h"
+#include "signal_cancel_event_handler.h"
 #include "static.h"
 #include "target_type.h"
 #include "ustring.h"
@@ -60,6 +62,7 @@ namespace xtd {
   /// The following example demonstrates displays a list of information about the current environment.
   /// @include examples/xtd.core.examples/environment/environment/src/environment.cpp
   class core_export_ environment final static_ {
+    class signal_catcher;
   public:
     /// @enum xtd::environment::special_folder
     /// @brief Specifies enumerated constants used to retrieve directory paths to system special folders.
@@ -436,6 +439,15 @@ namespace xtd {
     static int64 working_set();
     /// @}
     
+    /// @name Events
+    static event<environment, signal_cancel_event_handler> signal_abort_occured;
+    static event<environment, signal_cancel_event_handler> signal_floating_point_exception_occured;
+    static event<environment, signal_cancel_event_handler> signal_illegal_instruction_occured;
+    static event<environment, signal_cancel_event_handler> signal_interrupt_occured;
+    static event<environment, signal_cancel_event_handler> signal_segmentation_violation_occured;
+    static event<environment, signal_cancel_event_handler> signal_software_termination_occured;
+    /// @}
+
     /// @name Methods
     
     /// @{
@@ -532,8 +544,19 @@ namespace xtd {
     /// @remarks If value is empty and the environment variable named by variable exists, the environment variable is deleted. If variable does not exist, no error occurs even though the operation cannot be performed.
     /// @todo Add xtd::registry and uncomment lines.
     static void set_environment_variable(const xtd::ustring& variable, const xtd::ustring& value, environment_variable_target target);
-    
+
+    /// @cond
+    static void __signal_catcher_check__();
+    /// @endcond
+
   private:
+    static void on_signal_abort_occured(signal_cancel_event_args& e);
+    static void on_signal_floating_point_exception_occured(signal_cancel_event_args& e);
+    static void on_signal_illegal_instruction_occured(signal_cancel_event_args& e);
+    static void on_signal_interrupt_occured(signal_cancel_event_args& e);
+    static void on_signal_segmentation_violation_occured(signal_cancel_event_args& e);
+    static void on_signal_software_termination_occured(signal_cancel_event_args& e);
+
     inline static constexpr const char* xtd_include_path = __XTD_INCLUDE_PATH__;
     inline static constexpr const char* xtd_libraries_path = __XTD_LIB_PATH__;
     inline static constexpr const char* xtd_resources_path = __XTD_RESOURCES_PATH__;
@@ -547,6 +570,7 @@ namespace xtd {
     inline static constexpr const char* xtd_forms_resources_path = __XTD_FORMS_RESOURCES_PATH__;
     inline static constexpr const char* xtd_tunit_include_path = __XTD_TUNIT_INCLUDE_PATH__;
     inline static constexpr const char* xtd_tunit_libraries_path = __XTD_TUNIT_LIB_PATH__;
+    static signal_catcher signal_catcher_;
   };
   /// @}
 }
