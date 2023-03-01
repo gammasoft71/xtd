@@ -103,6 +103,9 @@ add_sources(
   include/xtd/processor.h
   include/xtd/random.h
   include/xtd/reset_color.h
+  include/xtd/signal.h
+  include/xtd/signal_cancel_event_args.h
+  include/xtd/signal_cancel_event_handler.h
   include/xtd/startup.h
   include/xtd/static.h
   include/xtd/string_comparison.h
@@ -325,7 +328,7 @@ add_sources(
   src/xtd/operating_system.cpp
   src/xtd/processor.cpp
   src/xtd/random.cpp
-  src/xtd/signal_catcher.cpp
+  src/xtd/signal_cancel_event_args.cpp
   src/xtd/system_exception.cpp
   src/xtd/target_type.cpp
   src/xtd/time_zone_info.cpp

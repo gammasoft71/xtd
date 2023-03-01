@@ -3,7 +3,7 @@
 #include "../../include/xtd/system_exception.h"
 #include "../../include/xtd/diagnostics/stack_trace.h"
 
-void __xtd__signal_catcher_check__();
+//void __xtd__signal_catcher_check__();
 
 using namespace xtd;
 
@@ -47,7 +47,8 @@ const xtd::ustring& system_exception::message() const noexcept {
 
 const xtd::ustring& system_exception::name() const noexcept {
   static bool init = false;
-  if (!init) __xtd__signal_catcher_check__();
+  //if (!init) __xtd__signal_catcher_check__();
+  if (!init) environment::__signal_catcher_check__();
   init = true;
   return (name_ = xtd::ustring::full_class_name(*this));
 }
