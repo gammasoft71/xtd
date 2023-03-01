@@ -69,8 +69,7 @@ public:
     std::signal(signal, signal_catcher::on_signal_abort_handler);
     signal_cancel_event_args e {xtd::signal::abort};
     environment::on_signal_abort_occured(e);
-    if (e.cancel()) std::signal(signal, SIG_DFL);
-    //if (!e.cancel()) exit(EXIT_FAILURE);
+    if (!e.cancel()) exit(EXIT_FAILURE);
     // Do not uncomment the next line, otherwise the exception is triggered forever.
     //throw xtd::threading::thread_abort_exception(csf_);
   }
