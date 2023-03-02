@@ -144,6 +144,8 @@ The <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides
 If you have a path variable declared in your system using quotes, you must fully qualify that path when starting any process found in that location. Otherwise, the system will not find the path. For example, if c:\mypath is not in your path, and you add it using quotation marks: path = path%;"c:\mypath", you must fully qualify any process in c:\mypath when starting it. </dd>
 <dd>
 A system process is uniquely identified on the system by its process identifier. Like many Windows resources, a process is also identified by its handle, which might not be unique on the computer. A handle is the generic term for an identifier of a resource. The operating system persists the process handle, which is accessed through the Handle property of the Process component, even when the process has exited. Thus, you can get the process's administrative information, such as the <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a724005eb604d992d3002818e3b028603" title="Gets the value that the associated process specified when it terminated.">xtd::diagnostics::process::exit_code</a> (usually either zero for success or a nonzero error code) and the <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a02c7e79e541ad66132bcfe432c1a8a73" title="Gets the time that the associated process exited.">xtd::diagnostics::process::exit_time</a>. xtd::diagnostics::process::handles are an extremely valuable resource, so leaking handles is more virulent than leaking memory. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="test_forms_8cpp-example.html#_a40">test_forms.cpp</a>.</dd>
+</dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -919,7 +921,7 @@ The last two examples in this section use the xtd::diagnostics:process::start me
 <div class="line"><span class="comment">//      &#39;</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//      Successfully wrote 500 lines.</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a07c2c9e615422f0ab7321b3331e83c73"><div class="ttname"><a href="classxtd_1_1console.html#a07c2c9e615422f0ab7321b3331e83c73">xtd::console::error</a></div><div class="ttdeci">static std::ostream error</div><div class="ttdoc">Gets the error output stream. A std::basic_ostream&lt;char_t&gt; that represents the error output stream.</div><div class="ttdef"><b>Definition:</b> console.h:32</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_a07c2c9e615422f0ab7321b3331e83c73"><div class="ttname"><a href="classxtd_1_1console.html#a07c2c9e615422f0ab7321b3331e83c73">xtd::console::error</a></div><div class="ttdeci">static std::ostream error</div><div class="ttdoc">Gets the error output stream. A std::basic_ostream&lt;char_t&gt; that represents the error output stream.</div><div class="ttdef"><b>Definition:</b> console.h:36</div></div>
 <div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition:</b> binary_reader.h:15</div></div>
 </div><!-- fragment --> </dd>
 <dd>
@@ -1875,7 +1877,7 @@ The event is enabled during asynchronous read operations on <a class="el" href="
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 24 2023 22:36:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 2 2023 17:29:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

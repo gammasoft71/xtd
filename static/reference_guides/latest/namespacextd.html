@@ -337,6 +337,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1reset__color.html">reset_color</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent reset color output manipulator class.  <a href="classxtd_1_1reset__color.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1signal__cancel__event__args.html">signal_cancel_event_args</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides data for the environment signal event. This class cannot be inherited.  <a href="classxtd_1_1signal__cancel__event__args.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1static__object.html">static_object</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent a static object. A static class can't be instantiated (constructors are deleted).  <a href="classxtd_1_1static__object.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -489,6 +492,9 @@ Alias</h2></td></tr>
 <tr class="memitem:ga9378017a0327f88fd3ddd2209a206c16"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system.html#ga9378017a0327f88fd3ddd2209a206c16">sbyte_object</a> = <a class="el" href="classxtd_1_1box__integer.html">box_integer</a>&lt; <a class="el" href="group__types.html#ga3d6cac730aeed730136cd058c136edee">sbyte</a> &gt;</td></tr>
 <tr class="memdesc:ga9378017a0327f88fd3ddd2209a206c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent a boxed sbyte.  <a href="group__system.html#ga9378017a0327f88fd3ddd2209a206c16">More...</a><br /></td></tr>
 <tr class="separator:ga9378017a0327f88fd3ddd2209a206c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabcbd275ea4718769d31cf61042c0bd77"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__events.html#gabcbd275ea4718769d31cf61042c0bd77">signal_cancel_event_handler</a> = xtd::delegate&lt; void(<a class="el" href="classxtd_1_1signal__cancel__event__args.html">signal_cancel_event_args</a> &amp;)&gt;</td></tr>
+<tr class="memdesc:gabcbd275ea4718769d31cf61042c0bd77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the method that will handle the signal events of a <a class="el" href="classxtd_1_1environment.html" title="The environment class.">xtd::environment</a>.  <a href="group__events.html#gabcbd275ea4718769d31cf61042c0bd77">More...</a><br /></td></tr>
+<tr class="separator:gabcbd275ea4718769d31cf61042c0bd77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga84ac56442074e9ba86390626d8f83b7b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system.html#ga84ac56442074e9ba86390626d8f83b7b">single_object</a> = <a class="el" href="classxtd_1_1box__floating__point.html">box_floating_point</a>&lt; float &gt;</td></tr>
 <tr class="memdesc:ga84ac56442074e9ba86390626d8f83b7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent a boxed single.  <a href="group__system.html#ga84ac56442074e9ba86390626d8f83b7b">More...</a><br /></td></tr>
 <tr class="separator:ga84ac56442074e9ba86390626d8f83b7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1103,6 +1109,22 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:gac34b9e6b6738a27b73c2f5ffeaa2ecf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifies the operating system, or platform, supported by an assembly.  <a href="group__xtd__core.html#gac34b9e6b6738a27b73c2f5ffeaa2ecf2">More...</a><br /></td></tr>
 <tr class="separator:gac34b9e6b6738a27b73c2f5ffeaa2ecf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga437764d898631d282f7d95b573328c72"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga437764d898631d282f7d95b573328c72">signal</a> { <br />
+&#160;&#160;<a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c72a47374a9bd9a4035c62a754edd6a1f81b">abnormal_termination</a>
+, <br />
+&#160;&#160;<a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c72a145ba60316e166b3a87cf201f513bfb5">floating_point_exception</a>
+, <br />
+&#160;&#160;<a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c72af02b25bbe33547687680941a577b46da">illegal_instruction</a>
+, <br />
+&#160;&#160;<a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c72a2414c252176310b2c04547257948c7b7">interrupt</a>
+, <br />
+&#160;&#160;<a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c72a1531ca328b0eb5be4863963f2b5d68c7">segmentation_violation</a>
+, <br />
+&#160;&#160;<a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c72aec4ef6a1b4817233e10ecebf3c7b70a3">software_termination</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ga437764d898631d282f7d95b573328c72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies signals that can interrupt the current process.  <a href="group__xtd__core.html#ga437764d898631d282f7d95b573328c72">More...</a><br /></td></tr>
+<tr class="separator:ga437764d898631d282f7d95b573328c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga04dd6c532656e286dfbf2f9aea3d8ccd"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga04dd6c532656e286dfbf2f9aea3d8ccd">string_comparison</a> { <br />
 &#160;&#160;<a class="el" href="group__xtd__core.html#gga04dd6c532656e286dfbf2f9aea3d8ccda281858037f7dcf7ed49271bb92c60526">ordinal</a>
 , <br />
@@ -6094,7 +6116,7 @@ template&lt;typename type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 24 2023 22:36:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 2 2023 17:29:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

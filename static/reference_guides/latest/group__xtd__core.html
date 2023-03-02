@@ -571,6 +571,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1security_1_1security__exception.html">xtd::security::security_exception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when an I/O error occurs.  <a href="classxtd_1_1security_1_1security__exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1signal__cancel__event__args.html">xtd::signal_cancel_event_args</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides data for the environment signal event. This class cannot be inherited.  <a href="classxtd_1_1signal__cancel__event__args.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1speech_1_1synthesis_1_1prompt.html">xtd::speech::synthesis::prompt</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents information about what can be rendered, either text or an audio file, by the <a class="el" href="classxtd_1_1speech_1_1synthesis_1_1speech__synthesizer.html" title="Provides access to the functionality of an installed speech synthesis engine.">xtd::speech::synthesis::speech_synthesizer</a>.  <a href="classxtd_1_1speech_1_1synthesis_1_1prompt.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1631,6 +1634,22 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:gadbac77f7a831c2f1443f4d65108f210c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the polling modes for the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#a3bd4934b6efccfd5165df6a0abc8a2d6" title="Determines the status of the xtd::net::sockets::socket.">xtd::net::sockets::socket::poll</a> method.  <a href="group__xtd__core.html#gadbac77f7a831c2f1443f4d65108f210c">More...</a><br /></td></tr>
 <tr class="separator:gadbac77f7a831c2f1443f4d65108f210c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga437764d898631d282f7d95b573328c72"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga437764d898631d282f7d95b573328c72">xtd::signal</a> { <br />
+&#160;&#160;<a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c72a47374a9bd9a4035c62a754edd6a1f81b">xtd::abnormal_termination</a>
+, <br />
+&#160;&#160;<a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c72a145ba60316e166b3a87cf201f513bfb5">xtd::floating_point_exception</a>
+, <br />
+&#160;&#160;<a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c72af02b25bbe33547687680941a577b46da">xtd::illegal_instruction</a>
+, <br />
+&#160;&#160;<a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c72a2414c252176310b2c04547257948c7b7">xtd::interrupt</a>
+, <br />
+&#160;&#160;<a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c72a1531ca328b0eb5be4863963f2b5d68c7">xtd::segmentation_violation</a>
+, <br />
+&#160;&#160;<a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c72aec4ef6a1b4817233e10ecebf3c7b70a3">xtd::software_termination</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ga437764d898631d282f7d95b573328c72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies signals that can interrupt the current process.  <a href="group__xtd__core.html#ga437764d898631d282f7d95b573328c72">More...</a><br /></td></tr>
+<tr class="separator:ga437764d898631d282f7d95b573328c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9aa34e8670a0bb6c5cb5d2a3813cfe95"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga9aa34e8670a0bb6c5cb5d2a3813cfe95">xtd::net::sockets::socket_async_operation</a> { <br />
 &#160;&#160;<a class="el" href="group__xtd__core.html#gga9aa34e8670a0bb6c5cb5d2a3813cfe95a334c4a4c42fdb79d7ebc3e73b517e6f8">xtd::net::sockets::none</a>
 , <br />
@@ -8697,6 +8716,51 @@ Win32 uses four priority classes with seven base priority levels per class. Base
 <tr><td class="fieldname"><a id="ggadbac77f7a831c2f1443f4d65108f210cae6b9357d4ec9e512f3379b869dac7e0d"></a>select_write&#160;</td><td class="fielddoc"><p>Write status mode. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ggadbac77f7a831c2f1443f4d65108f210cafbdde393d34e94377dafd1172d278422"></a>select_error&#160;</td><td class="fielddoc"><p>Error status mode. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ga437764d898631d282f7d95b573328c72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga437764d898631d282f7d95b573328c72">&#9670;&nbsp;</a></span>signal</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__xtd__core.html#ga437764d898631d282f7d95b573328c72">xtd::signal</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="signal_8h.html">xtd.core/include/xtd/signal.h</a>&gt;</code></p>
+
+<p>Specifies signals that can interrupt the current process. </p>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Each of the above values represents a constant, which represent different signals sent to the program. </dd>
+<dd>
+For more information about signal, see <a href="https://en.cppreference.com/w/cpp/utility/program/signal">std::signal</a>. </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga437764d898631d282f7d95b573328c72a47374a9bd9a4035c62a754edd6a1f81b"></a>abnormal_termination&#160;</td><td class="fielddoc"><p>Abnormal termination triggered by abort call. Is equal to SIGABRT. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga437764d898631d282f7d95b573328c72a145ba60316e166b3a87cf201f513bfb5"></a>floating_point_exception&#160;</td><td class="fielddoc"><p>Erroneous arithmetic operation such as divide by zero. Is equal to SIGFPE. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga437764d898631d282f7d95b573328c72af02b25bbe33547687680941a577b46da"></a>illegal_instruction&#160;</td><td class="fielddoc"><p>Invalid program image, such as invalid instruction. Is equal to SIGILL. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga437764d898631d282f7d95b573328c72a2414c252176310b2c04547257948c7b7"></a>interrupt&#160;</td><td class="fielddoc"><p>external interrupt, usually initiated by the user. Is equal to SIGINT. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga437764d898631d282f7d95b573328c72a1531ca328b0eb5be4863963f2b5d68c7"></a>segmentation_violation&#160;</td><td class="fielddoc"><p>Invalid memory access (segmentation fault). Is equal to SIGSEGV. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga437764d898631d282f7d95b573328c72aec4ef6a1b4817233e10ecebf3c7b70a3"></a>software_termination&#160;</td><td class="fielddoc"><p>Termination request, sent to the program. Is equal to SIGTERM. </p>
 </td></tr>
 </table>
 
@@ -61697,7 +61761,7 @@ template&lt;typename ... args_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 24 2023 22:36:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 2 2023 17:29:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

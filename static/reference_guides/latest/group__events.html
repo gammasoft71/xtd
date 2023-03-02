@@ -177,6 +177,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1tool__bar__button__click__event__args.html">xtd::forms::tool_bar_button_click_event_args</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides data for the <a class="el" href="classxtd_1_1forms_1_1tool__bar.html#a3de173d95bd9e75f08febe9f98c180fd" title="Occurs when a xtd::forms::tool_bar_button on the xtd::forms::tool_bar is clicked.">xtd::forms::tool_bar::button_click</a> event.  <a href="classxtd_1_1forms_1_1tool__bar__button__click__event__args.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1signal__cancel__event__args.html">xtd::signal_cancel_event_args</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides data for the environment signal event. This class cannot be inherited.  <a href="classxtd_1_1signal__cancel__event__args.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides data for the xtd::tunit::class_test events.  <a href="classxtd_1_1tunit_1_1class__event__args.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -271,6 +274,9 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga415f76a09816da51d4b05fd2717477bc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__events.html#ga415f76a09816da51d4b05fd2717477bc">xtd::forms::run_worker_completed_event_handler</a> = delegate&lt; void(<a class="el" href="classxtd_1_1object.html">object</a> &amp;sender, const <a class="el" href="classxtd_1_1forms_1_1run__worker__completed__event__args.html">run_worker_completed_event_args</a> &amp;e)&gt;</td></tr>
 <tr class="memdesc:ga415f76a09816da51d4b05fd2717477bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the method that will handle the do_work event. This class cannot be inherited.  <a href="group__events.html#ga415f76a09816da51d4b05fd2717477bc">More...</a><br /></td></tr>
 <tr class="separator:ga415f76a09816da51d4b05fd2717477bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabcbd275ea4718769d31cf61042c0bd77"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__events.html#gabcbd275ea4718769d31cf61042c0bd77">xtd::signal_cancel_event_handler</a> = xtd::delegate&lt; void(<a class="el" href="classxtd_1_1signal__cancel__event__args.html">signal_cancel_event_args</a> &amp;)&gt;</td></tr>
+<tr class="memdesc:gabcbd275ea4718769d31cf61042c0bd77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the method that will handle the signal events of a <a class="el" href="classxtd_1_1environment.html" title="The environment class.">xtd::environment</a>.  <a href="group__events.html#gabcbd275ea4718769d31cf61042c0bd77">More...</a><br /></td></tr>
+<tr class="separator:gabcbd275ea4718769d31cf61042c0bd77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0bb009bf9754901cb50017cbca2f9038"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__events.html#ga0bb009bf9754901cb50017cbca2f9038">xtd::forms::status_bar_draw_item_event_handler</a> = delegate&lt; void(<a class="el" href="classxtd_1_1object.html">object</a> &amp;sender, const <a class="el" href="classxtd_1_1forms_1_1status__bar__draw__item__event__args.html">status_bar_draw_item_event_args</a> &amp;e)&gt;</td></tr>
 <tr class="memdesc:ga0bb009bf9754901cb50017cbca2f9038"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the method that will handle the <a class="el" href="classxtd_1_1forms_1_1status__bar.html#a0f5250091b2ce6a8ee785ec6ec2db569" title="Occurs when a visual aspect of an owner-drawn status bar control changes.">xtd::forms::status_bar::draw_item</a> event of a <a class="el" href="classxtd_1_1forms_1_1status__bar.html" title="Represents a Windows status bar control.">xtd::forms::status_bar</a>.  <a href="group__events.html#ga0bb009bf9754901cb50017cbca2f9038">More...</a><br /></td></tr>
 <tr class="separator:ga0bb009bf9754901cb50017cbca2f9038"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1042,6 +1048,32 @@ template&lt;typename event_args_t  = const xtd::event_args&amp;&gt; </div>
 
 </div>
 </div>
+<a id="gabcbd275ea4718769d31cf61042c0bd77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabcbd275ea4718769d31cf61042c0bd77">&#9670;&nbsp;</a></span>signal_cancel_event_handler</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__events.html#gabcbd275ea4718769d31cf61042c0bd77">xtd::signal_cancel_event_handler</a> = typedef xtd::delegate&lt;void(<a class="el" href="classxtd_1_1signal__cancel__event__args.html">signal_cancel_event_args</a>&amp;)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="signal__cancel__event__handler_8h.html">xtd.core/include/xtd/signal_cancel_event_handler.h</a>&gt;</code></p>
+
+<p>Represents the method that will handle the signal events of a <a class="el" href="classxtd_1_1environment.html" title="The environment class.">xtd::environment</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>A <a class="el" href="classxtd_1_1signal__cancel__event__args.html" title="Provides data for the environment signal event. This class cannot be inherited.">xtd::signal_cancel_event_args</a> object that contains the event data. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+
+</div>
+</div>
 <a id="ga0bb009bf9754901cb50017cbca2f9038"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga0bb009bf9754901cb50017cbca2f9038">&#9670;&nbsp;</a></span>status_bar_draw_item_event_handler</h2>
 
@@ -1136,7 +1168,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 24 2023 22:36:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 2 2023 17:29:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
