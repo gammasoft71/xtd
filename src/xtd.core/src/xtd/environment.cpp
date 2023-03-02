@@ -93,7 +93,6 @@ public:
     std::signal(signal, signal_catcher::on_interrupt_occured);
     signal_cancel_event_args se {xtd::signal::interrupt};
     environment::on_cancel_signal(se);
-    //if (!se.cancel()) throw xtd::interrupt_exception(csf_);
     console_cancel_event_args ce {console_special_key::control_c};
     ce.cancel(console::on_cancel_key_press(static_cast<int32>(console_special_key::control_c)));
     if (!se.cancel() && !ce.cancel()) throw xtd::interrupt_exception(csf_);
