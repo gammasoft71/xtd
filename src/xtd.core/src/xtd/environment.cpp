@@ -3,6 +3,7 @@
 #include "../../include/xtd/environment.h"
 #include "../../include/xtd/argument_exception.h"
 #include "../../include/xtd/arithmetic_exception.h"
+#include "../../include/xtd/console.h"
 #include "../../include/xtd/convert_string.h"
 #include "../../include/xtd/invalid_operation_exception.h"
 #include "../../include/xtd/unused.h"
@@ -50,7 +51,6 @@ public:
     std::signal(SIGABRT, signal_catcher::on_abnormal_termination_occured);
     std::signal(SIGFPE, signal_catcher::on_floating_point_exception_occured);
     std::signal(SIGILL, signal_catcher::on_illegal_instruction_occured);
-    /// @todo The SIGINT signal catcher conflicts with with xtd::core::narive::unix::console for CTRL-C interception...
     std::signal(SIGINT, signal_catcher::on_interrupt_occured);
     std::signal(SIGSEGV, signal_catcher::on_segmentation_violation_occured);
     std::signal(SIGTERM, signal_catcher::on_software_termination_occured);
@@ -89,10 +89,14 @@ public:
   }
   
   static void on_interrupt_occured(int32 signal) {
+    // The SIGINT signal catcher conflicts with with xtd::core::narive::unix::console for CTRL-C interception...
     std::signal(signal, signal_catcher::on_interrupt_occured);
-    signal_cancel_event_args e {xtd::signal::interrupt};
-    environment::on_cancel_interrupt(e);
-    if (!e.cancel()) throw xtd::interrupt_exception(csf_);
+    signal_cancel_event_args se {xtd::signal::interrupt};
+    environment::on_cancel_interrupt(se);
+    //if (!se.cancel()) throw xtd::interrupt_exception(csf_);
+    console_cancel_event_args ce {console_special_key::control_c};
+    ce.cancel(console::on_cancel_key_press(static_cast<int32>(console_special_key::control_c)));
+    if (!se.cancel() && !ce.cancel()) throw xtd::interrupt_exception(csf_);
   }
   
   static void on_segmentation_violation_occured(int32 signal) {

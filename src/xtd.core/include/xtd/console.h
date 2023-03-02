@@ -13,6 +13,10 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
+  class environment;
+  /// @endcond
+  
   /// @brief Represents the standard input, output, and error streams for console applications.
   /// @par Namespace
   /// xtd
@@ -400,6 +404,7 @@ namespace xtd {
     /// @}
     
   private:
+    friend class xtd::environment;
     static bool on_cancel_key_press(int32 special_key);
     static void register_cancel_key_press();
 
