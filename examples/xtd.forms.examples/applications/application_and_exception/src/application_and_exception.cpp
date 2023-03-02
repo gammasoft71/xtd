@@ -39,12 +39,6 @@ public:
     generate_unknown_exception_button.parent(*this);
     generate_unknown_exception_button.text("Generate unknown exception");
     generate_unknown_exception_button.click += event_handler(*this, &main_form::generate_unknown_exception);
-    
-    generate_nullptr_exception_button.auto_size(true);
-    generate_nullptr_exception_button.location({10, 170});
-    generate_nullptr_exception_button.parent(*this);
-    generate_nullptr_exception_button.text("Generate nullptr exception");
-    generate_nullptr_exception_button.click += event_handler(*this, &main_form::generate_nullptr_exception);
   }
   
 private:
@@ -58,16 +52,11 @@ private:
   void generate_exception() {throw invalid_argument("Invalid argument");}
   void generate_system_exception() {throw argument_out_of_range_exception(current_stack_frame_);}
   void generate_unknown_exception() {throw "Unknown exception occured";}
-  void generate_nullptr_exception() {
-    char* ptr = nullptr;
-    *ptr = 'a';
-  }
 
   button generate_handled_exception_button;
   button generate_exception_button;
   button generate_system_exception_button;
   button generate_unknown_exception_button;
-  button generate_nullptr_exception_button;
 };
 
 startup_(main_form);
