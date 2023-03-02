@@ -68,7 +68,7 @@ public:
   static void on_abnormal_termination_occured(int32 signal) {
     std::signal(signal, signal_catcher::on_abnormal_termination_occured);
     signal_cancel_event_args e {xtd::signal::abnormal_termination};
-    environment::on_cancel_abnormal_termination(e);
+    environment::on_cancel_signal(e);
     if (!e.cancel()) exit(EXIT_FAILURE);
     // Do not uncomment the next line, otherwise the exception is triggered forever.
     //throw xtd::threading::thread_abort_exception(csf_);
@@ -77,14 +77,14 @@ public:
   static void on_floating_point_exception_occured(int32 signal) {
     std::signal(signal, signal_catcher::on_floating_point_exception_occured);
     signal_cancel_event_args e {xtd::signal::floating_point_exception};
-    environment::on_cancel_floating_point_exception(e);
+    environment::on_cancel_signal(e);
     if (!e.cancel()) throw xtd::arithmetic_exception(csf_);
   }
   
   static void on_illegal_instruction_occured(int32 signal) {
     std::signal(signal, signal_catcher::on_illegal_instruction_occured);
     signal_cancel_event_args e {xtd::signal::illegal_instruction};
-    environment::on_cancel_illegal_instruction(e);
+    environment::on_cancel_signal(e);
     if (!e.cancel()) throw xtd::invalid_operation_exception(csf_);
   }
   
@@ -92,7 +92,7 @@ public:
     // The SIGINT signal catcher conflicts with with xtd::core::narive::unix::console for CTRL-C interception...
     std::signal(signal, signal_catcher::on_interrupt_occured);
     signal_cancel_event_args se {xtd::signal::interrupt};
-    environment::on_cancel_interrupt(se);
+    environment::on_cancel_signal(se);
     //if (!se.cancel()) throw xtd::interrupt_exception(csf_);
     console_cancel_event_args ce {console_special_key::control_c};
     ce.cancel(console::on_cancel_key_press(static_cast<int32>(console_special_key::control_c)));
@@ -102,24 +102,19 @@ public:
   static void on_segmentation_violation_occured(int32 signal) {
     std::signal(signal, signal_catcher::on_segmentation_violation_occured);
     signal_cancel_event_args e {xtd::signal::segmentation_violation};
-    environment::on_cancel_segmentation_violation(e);
+    environment::on_cancel_signal(e);
     if (!e.cancel()) throw xtd::access_violation_exception(csf_);
   }
 
   static void on_software_termination_occured(int32 signal) {
     std::signal(signal, signal_catcher::on_software_termination_occured);
     signal_cancel_event_args e {xtd::signal::software_termination};
-    environment::on_cancel_software_termination(e);
+    environment::on_cancel_signal(e);
     if (!e.cancel()) throw xtd::software_termination_exception(csf_);
   }
 };
 
-event<environment, signal_cancel_event_handler> environment::cancel_software_termination;
-event<environment, signal_cancel_event_handler> environment::cancel_segmentation_violation;
-event<environment, signal_cancel_event_handler> environment::cancel_interrupt;
-event<environment, signal_cancel_event_handler> environment::cancel_illegal_instruction;
-event<environment, signal_cancel_event_handler> environment::cancel_abnormal_termination;
-event<environment, signal_cancel_event_handler> environment::cancel_floating_point_exception;
+event<environment, signal_cancel_event_handler> environment::cancel_signal;
 
 environment::signal_catcher environment::signal_catcher_;
 
@@ -328,33 +323,8 @@ void environment::set_environment_variable(const xtd::ustring& variable, const x
   set_environment_variable(variable, value, environment_variable_target::process);
 }
 
-void environment::on_cancel_abnormal_termination(signal_cancel_event_args& e) {
-  auto signal = cancel_abnormal_termination;
-  if (!signal.is_empty()) signal(e);
-}
-
-void environment::on_cancel_floating_point_exception(signal_cancel_event_args& e) {
-  auto signal = cancel_floating_point_exception;
-  if (!signal.is_empty()) signal(e);
-}
-
-void environment::on_cancel_illegal_instruction(signal_cancel_event_args& e) {
-  auto signal = cancel_illegal_instruction;
-  if (!signal.is_empty()) signal(e);
-}
-
-void environment::on_cancel_interrupt(signal_cancel_event_args& e) {
-  auto signal = cancel_interrupt;
-  if (!signal.is_empty()) signal(e);
-}
-
-void environment::on_cancel_segmentation_violation(signal_cancel_event_args& e) {
-  auto signal = cancel_segmentation_violation;
-  if (!signal.is_empty()) signal(e);
-}
-
-void environment::on_cancel_software_termination(signal_cancel_event_args& e) {
-  auto signal = cancel_software_termination;
+void environment::on_cancel_signal(signal_cancel_event_args& e) {
+  auto signal = cancel_signal;
   if (!signal.is_empty()) signal(e);
 }
 
