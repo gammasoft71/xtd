@@ -440,9 +440,13 @@ namespace xtd {
     /// @}
     
     /// @name Events
+    
+    /// @{
     /// @brief Occurs when a signal is sent to the current process.
     /// @remarks This event is used in conjunction with xtd::signal_cancel_event_handler and xtd::signal_cancel_event_args. The xtd::environment::cancel_signal event enables a xtd::signal so the event handler can decide whether to continue executing or terminate.
     /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+    /// @warning The xtd::signal::interrupt and xtd::console_special_key::control_c use the same signal (<a href="https://en.cppreference.com/w/cpp/utility/program/signal">SIGINT</a>).
+    /// @warning The xtd::signal::interrupt and xtd::console_special_key::control_c can be cancelled with xtd::environment::cancel_signal event or xtd::console::cancel_key_press event. Both of these events are called when <a href="https://en.cppreference.com/w/cpp/utility/program/signal">SIGINT</a> is raised.
     static event<environment, signal_cancel_event_handler> cancel_signal;
     /// @}
 
