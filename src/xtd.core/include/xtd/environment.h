@@ -441,23 +441,29 @@ namespace xtd {
     
     /// @name Events
     /// @brief Occurs when the abort signal is sent to the current process.
+    /// @remarks This event is used in conjunction with xtd::signal_cancel_event_handler and xtd::signal_cancel_event_args. The xtd::environment::cancel_abnormal_termination event enables a abnormal termination signal so the event handler can decide whether to continue executing or terminate.
     /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
-    static event<environment, signal_cancel_event_handler> signal_abort_occured;
+    static event<environment, signal_cancel_event_handler> cancel_abnormal_termination;
     /// @brief Occurs when the floating point excerption signal is sent to the current process.
+    /// @remarks This event is used in conjunction with xtd::signal_cancel_event_handler and xtd::signal_cancel_event_args. The xtd::environment::cancel_floating_point_exception event enables a floating point exception signal so the event handler can decide whether to continue executing or terminate.
     /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
-    static event<environment, signal_cancel_event_handler> signal_floating_point_exception_occured;
+    static event<environment, signal_cancel_event_handler> cancel_floating_point_exception;
     /// @brief Occurs when the illegal instruction signal is sent to the current process.
+    /// @remarks This event is used in conjunction with xtd::signal_cancel_event_handler and xtd::signal_cancel_event_args. The xtd::environment::cancel_illegal_instruction event enables an illegal instruction signal so the event handler can decide whether to continue executing or terminate.
     /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
-    static event<environment, signal_cancel_event_handler> signal_illegal_instruction_occured;
+    static event<environment, signal_cancel_event_handler> cancel_illegal_instruction;
     /// @brief Occurs when the interrupt signal is sent to the current process.
+    /// @remarks This event is used in conjunction with xtd::signal_cancel_event_handler and xtd::signal_cancel_event_args. The xtd::environment::cancel_interrupt event enables an interrupt signal so the event handler can decide whether to continue executing or terminate.
     /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
-    static event<environment, signal_cancel_event_handler> signal_interrupt_occured;
+    static event<environment, signal_cancel_event_handler> cancel_interrupt;
     /// @brief Occurs when the segmentation violation signal is sent to the current process.
+    /// @remarks This event is used in conjunction with xtd::signal_cancel_event_handler and xtd::signal_cancel_event_args. The xtd::environment::cancel_segmentation_violation event enables a segmentation violation signal so the event handler can decide whether to continue executing or terminate.
     /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
-    static event<environment, signal_cancel_event_handler> signal_segmentation_violation_occured;
+    static event<environment, signal_cancel_event_handler> cancel_segmentation_violation;
     /// @brief Occurs when the software termination signal is sent to the current process.
+    /// @remarks This event is used in conjunction with xtd::signal_cancel_event_handler and xtd::signal_cancel_event_args. The xtd::environment::cancel_software_termination event enables a software termination signal so the event handler can decide whether to continue executing or terminate.
     /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
-    static event<environment, signal_cancel_event_handler> signal_software_termination_occured;
+    static event<environment, signal_cancel_event_handler> cancel_software_termination;
     /// @}
 
     /// @name Methods
@@ -562,12 +568,12 @@ namespace xtd {
     /// @endcond
 
   private:
-    static void on_signal_abort_occured(signal_cancel_event_args& e);
-    static void on_signal_floating_point_exception_occured(signal_cancel_event_args& e);
-    static void on_signal_illegal_instruction_occured(signal_cancel_event_args& e);
-    static void on_signal_interrupt_occured(signal_cancel_event_args& e);
-    static void on_signal_segmentation_violation_occured(signal_cancel_event_args& e);
-    static void on_signal_software_termination_occured(signal_cancel_event_args& e);
+    static void on_cancel_abnormal_termination(signal_cancel_event_args& e);
+    static void on_cancel_floating_point_exception(signal_cancel_event_args& e);
+    static void on_cancel_illegal_instruction(signal_cancel_event_args& e);
+    static void on_cancel_interrupt(signal_cancel_event_args& e);
+    static void on_cancel_segmentation_violation(signal_cancel_event_args& e);
+    static void on_cancel_software_termination(signal_cancel_event_args& e);
 
     inline static constexpr const char* xtd_include_path = __XTD_INCLUDE_PATH__;
     inline static constexpr const char* xtd_libraries_path = __XTD_LIB_PATH__;
