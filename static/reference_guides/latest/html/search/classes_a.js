@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['label_7486',['label',['../classxtd_1_1forms_1_1label.html',1,'xtd::forms']]],
+  ['label_5frenderer_7487',['label_renderer',['../classxtd_1_1forms_1_1label__renderer.html',1,'xtd::forms']]],
+  ['lcd_5flabel_7488',['lcd_label',['../classxtd_1_1forms_1_1lcd__label.html',1,'xtd::forms']]],
+  ['length_7489',['length',['../classxtd_1_1forms_1_1style__sheets_1_1length.html',1,'xtd::forms::style_sheets']]],
+  ['length_5fexception_7490',['length_exception',['../classxtd_1_1length__exception.html',1,'xtd']]],
+  ['lengths_7491',['lengths',['../classxtd_1_1forms_1_1style__sheets_1_1lengths.html',1,'xtd::forms::style_sheets']]],
+  ['light_5fbutton_7492',['light_button',['../classxtd_1_1forms_1_1light__button.html',1,'xtd::forms']]],
+  ['light_5fbuttons_7493',['light_buttons',['../classxtd_1_1forms_1_1light__buttons.html',1,'xtd::forms']]],
+  ['linear_5fgradient_5fbrush_7494',['linear_gradient_brush',['../classxtd_1_1drawing_1_1drawing2d_1_1linear__gradient__brush.html',1,'xtd::drawing::drawing2d']]],
+  ['linger_5foption_7495',['linger_option',['../classxtd_1_1net_1_1sockets_1_1linger__option.html',1,'xtd::net::sockets']]],
+  ['link_7496',['link',['../classxtd_1_1forms_1_1link.html',1,'xtd::forms']]],
+  ['link_5farea_7497',['link_area',['../structxtd_1_1forms_1_1link__area.html',1,'xtd::forms']]],
+  ['link_5fcollection_7498',['link_collection',['../classxtd_1_1forms_1_1link__label_1_1link__collection.html',1,'xtd::forms::link_label']]],
+  ['link_5flabel_7499',['link_label',['../classxtd_1_1forms_1_1link__label.html',1,'xtd::forms']]],
+  ['link_5flabel_5fclicked_5fevent_5fargs_7500',['link_label_clicked_event_args',['../classxtd_1_1forms_1_1link__label__clicked__event__args.html',1,'xtd::forms']]],
+  ['list_5fbox_7501',['list_box',['../classxtd_1_1forms_1_1list__box.html',1,'xtd::forms']]],
+  ['list_5fcontrol_7502',['list_control',['../classxtd_1_1forms_1_1list__control.html',1,'xtd::forms']]],
+  ['loading_5findicator_7503',['loading_indicator',['../classxtd_1_1forms_1_1loading__indicator.html',1,'xtd::forms']]]
+];
