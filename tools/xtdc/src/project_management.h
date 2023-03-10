@@ -388,12 +388,9 @@ namespace xtdc_command {
       xtd::io::directory::create_directory(build_path());
       change_current_directory current_directory {build_path()};
       if (!first_generation && name.empty()) name = get_name();
-      if (xtd::environment::os_version().is_windows_platform() && (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), xtd::ustring::format("{}.sln", name))))) {
-        // patch for arch ARM64 and cmake version 3.24 or later.
-        // Build c++ on ARM is not supported now. We need to build for x64.
-        xtd::ustring architecture_parameter = xtd::environment::get_environment_variable("PROCESSOR_ARCHITECTURE").contains("64") ? "-A \"x64\"" : "";
-        launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} {}", path_, build_path(), architecture_parameter));
-      } else if (xtd::environment::os_version().is_macos_platform() && (first_generation || !xtd::io::directory::exists(xtd::io::path::combine(build_path(), xtd::ustring::format("{}.xcodeproj", name)))))
+      if (xtd::environment::os_version().is_windows_platform() && (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), xtd::ustring::format("{}.sln", name)))))
+        launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {}", path_, build_path()));
+      else if (xtd::environment::os_version().is_macos_platform() && (first_generation || !xtd::io::directory::exists(xtd::io::path::combine(build_path(), xtd::ustring::format("{}.xcodeproj", name)))))
         launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"Xcode\"", path_, build_path()), true);
       else if (xtd::environment::os_version().is_unix_platform()) {
         if (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), "Debug", xtd::ustring::format("{}.cbp", name)))) {
