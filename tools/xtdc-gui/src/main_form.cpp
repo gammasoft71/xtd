@@ -53,7 +53,8 @@ main_form::main_form() {
   icon(system_icons::from_name("xtd"));
   minimize_box(false);
   start_position(form_start_position::center_screen);
-  
+  text("xtdc-gui");
+
   busy_box::show("Initializing...", "xtdc-gui");
   
   startup_panel_.auto_scroll(true);
@@ -64,7 +65,7 @@ main_form::main_form() {
   startup_title_label_.parent(startup_panel_);
   startup_title_label_.location({50, 50});
   startup_title_label_.auto_size(true);
-  startup_title_label_.text("xtdc-gui");
+  startup_title_label_.text("Start");
   startup_title_label_.font({startup_title_label_.font(), 24.0});
   
   startup_open_recent_project_title_label_.parent(startup_panel_);
