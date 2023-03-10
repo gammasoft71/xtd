@@ -887,15 +887,13 @@ BOOL StackWalker::ShowCallstack(HANDLE hThread, const CONTEXT* context, PReadPro
   s.AddrStack.Mode = AddrModeFlat;
 #elif _M_ARM64
   imageType = IMAGE_FILE_MACHINE_ARM64;
-  s.AddrPC.Offset = c.Cpsr;
+  s.AddrPC.Offset = c.Pc;
   s.AddrPC.Mode = AddrModeFlat;
-  s.AddrFrame.Offset = c.Sp;
+  s.AddrFrame.Offset = c.Fp;
   s.AddrFrame.Mode = AddrModeFlat;
-  s.AddrBStore.Offset = c.Fpcr;
-  s.AddrBStore.Mode = AddrModeFlat;
   s.AddrStack.Offset = c.Sp;
   s.AddrStack.Mode = AddrModeFlat;
-  #else
+#else
 #error "Platform not supported!"
   #endif
   
