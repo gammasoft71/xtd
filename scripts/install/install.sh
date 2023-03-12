@@ -49,6 +49,8 @@ case "$OSTYPE" in
   *"openSUSE"*) sudo zypper update; sudo zypper install -y -t pattern devel_basis; sudo zypper install -y alsa-devel doxygen gsound-devel gtk3-devel cmake;;
   *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum install alsa-lib-devel cmake gtk3-devel gsound-devel gtk3-devel -y;;
   *"Rocky"*) sudo yum update; sudo yum groupinstall 'Development Tools' -y; sudo yum install alsa-lib-devel cmake libuiid-devel gsound gtk3-devel -y;;
+  *"MINGW64"*) pacman -S cmake doxygen gcc git make -yy --noconfirm;;
+  *"MSYS"*) pacman -S cmake doxygen gcc git make -yy --noconfirm;;
 esac
 
 #_______________________________________________________________________________
@@ -98,12 +100,20 @@ mkdir Release && mkdir Debug
 pushd Release
 cmake ../..  -DCMAKE_BUILD_TYPE=Release "$@"
 cmake --build . -- -j$build_cores
-sudo cmake --build . --target install
+if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
+  cmake --build . --target install
+else
+  sudo cmake --build . --target install
+fi
 popd
 pushd Debug
 cmake ../.. -DCMAKE_BUILD_TYPE=Debug "$@"
 cmake --build . -- -j$build_cores
-sudo cmake --build . --target install
+if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
+  cmake --build . --target install
+else
+  sudo cmake --build . --target install
+fi
 popd
 popd
 
@@ -126,10 +136,17 @@ fi
 
 #_______________________________________________________________________________
 #                             Copy install manifest files to xtd share directory
-sudo cp build/3rdparty/wxwidgets/build_cmake/Release/install_manifest.txt $cmake_install_prefix/share/xtd/wxwidgets_release_install_manifest.txt
-sudo cp build/3rdparty/wxwidgets/build_cmake/Debug/install_manifest.txt $cmake_install_prefix/share/xtd/wxwidgets_debug_install_manifest.txt
-sudo cp build/Release/install_manifest.txt $cmake_install_prefix/share/xtd/xtd_release_install_manifest.txt
-sudo cp build/Debug/install_manifest.txt $cmake_install_prefix/share/xtd/xtd_debug_install_manifest.txt
+if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
+  cp build/3rdparty/wxwidgets/build_cmake/Release/install_manifest.txt $cmake_install_prefix/share/xtd/wxwidgets_release_install_manifest.txt
+  cp build/3rdparty/wxwidgets/build_cmake/Debug/install_manifest.txt $cmake_install_prefix/share/xtd/wxwidgets_debug_install_manifest.txt
+  cp build/Release/install_manifest.txt $cmake_install_prefix/share/xtd/xtd_release_install_manifest.txt
+  cp build/Debug/install_manifest.txt $cmake_install_prefix/share/xtd/xtd_debug_install_manifest.txt
+else
+  sudo cp build/3rdparty/wxwidgets/build_cmake/Release/install_manifest.txt $cmake_install_prefix/share/xtd/wxwidgets_release_install_manifest.txt
+  sudo cp build/3rdparty/wxwidgets/build_cmake/Debug/install_manifest.txt $cmake_install_prefix/share/xtd/wxwidgets_debug_install_manifest.txt
+  sudo cp build/Release/install_manifest.txt $cmake_install_prefix/share/xtd/xtd_release_install_manifest.txt
+  sudo cp build/Debug/install_manifest.txt $cmake_install_prefix/share/xtd/xtd_debug_install_manifest.txt
+fi
 
 #_______________________________________________________________________________
 #                                                                 Launch xtd-gui
