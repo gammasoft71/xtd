@@ -268,7 +268,7 @@ namespace xtd {
       /// @brief The shortcut keys CMD+Z.
       cmd_z,
       /// @brief The shortcut keys DELETE.
-      del = 0x0000002D,
+      del = 0x0000002E,
       /// @brief The shortcut keys F1.
       f1 = 0x00000070,
       /// @brief The shortcut keys F10.
