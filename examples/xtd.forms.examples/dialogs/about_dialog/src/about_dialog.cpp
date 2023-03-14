@@ -15,9 +15,9 @@ public:
     about_dialog1.version("1.0");
     about_dialog1.long_version("1.0.0");
     about_dialog1.description("About dialog description.");
-    about_dialog1.copyright("Copyright (c) 2023 Gammasoft.\nAll rights reserved.");
     about_dialog1.website("https://gammasoft71.wixsite.com/gammasoft");
     about_dialog1.website_label("gammasoft website");
+    about_dialog1.copyright("Copyright (c) 2023 Gammasoft.\nAll rights reserved.");
     about_dialog1.authors({"Gammasoft", "Contributors"});
     about_dialog1.documenters({"Gammasoft"});
     about_dialog1.translators({"Gammasoft", "Contributors"});
