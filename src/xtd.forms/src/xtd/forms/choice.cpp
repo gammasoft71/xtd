@@ -178,11 +178,8 @@ void choice::on_items_item_added(size_t pos, const item& item) {
 }
 
 void choice::on_items_item_removed(size_t pos, const item& item)  {
-  if (is_handle_created()) native::choice::delete_item(handle(), pos);
-  
-  size_t selected = npos;
-  if (this->selected_index() != npos && this->selected_index() < data_->items.size()) selected = this->selected_index();
-  this->selected_index(npos);
+  if (is_handle_created()) native::choice::delete_item(handle(), pos);  
+  if (selected_index() == pos) selected_index(npos);
 }
 
 void choice::on_items_item_updated(size_t pos, const item& item) {

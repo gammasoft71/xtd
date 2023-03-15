@@ -249,10 +249,7 @@ void list_box::on_items_item_added(size_t pos, const item& item) {
 
 void list_box::on_items_item_removed(size_t pos, const item& item)   {
   if (is_handle_created()) native::list_box::delete_item(handle(), pos);
-  this->selected_index(npos);
-  
-  if (this->items().size() == 1) // not 0! --> the item_remove occure before erase!
-    this->selected_index(npos);
+  if (selected_index() == pos) selected_index(npos);
 }
 
 void list_box::on_items_item_updated(size_t pos, const item& item)   {

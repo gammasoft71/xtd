@@ -267,10 +267,7 @@ void checked_list_box::on_items_item_added(size_t pos, const item& item) {
 
 void checked_list_box::on_items_item_removed(size_t pos, const item& item)  {
   if (is_handle_created()) native::checked_list_box::delete_item(handle(), pos);
-  
-  checked_list_box::item selected;
-  if (selected_index() != npos && selected_index() < data_->items.size()) selected = data_->items[selected_index()];
-  this->selected_index(npos);
+  if (selected_index() == pos) selected_index(npos);
 }
 
 void checked_list_box::on_items_item_updated(size_t pos, const item& item) {
