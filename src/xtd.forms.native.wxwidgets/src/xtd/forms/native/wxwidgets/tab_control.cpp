@@ -10,7 +10,8 @@ using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 void tab_control::delete_page(intptr control, intptr page) {
-  if (!control || !page || !wxTheApp) throw argument_exception(csf_);
+  if (!wxTheApp) return;
+  if (!control || !page) throw argument_exception(csf_);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;

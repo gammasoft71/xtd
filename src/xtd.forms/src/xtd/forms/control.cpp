@@ -864,7 +864,6 @@ void control::create_control() {
 }
 
 void control::destroy_control() {
-  if (!application::message_loop()) return;
   if (!get_state(state::created)) return;
   if (!is_handle_created()) return;
   set_state(state::created, false);
