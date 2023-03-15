@@ -270,10 +270,7 @@ void checked_list_box::on_items_item_removed(size_t pos, const item& item)  {
   
   checked_list_box::item selected;
   if (selected_index() != npos && selected_index() < data_->items.size()) selected = data_->items[selected_index()];
-  this->selected_item(selected);
-  
-  if (this->items().size() == 1) // not 0! --> the item_remove occure before erase!
-    this->selected_index(npos);
+  this->selected_index(npos);
 }
 
 void checked_list_box::on_items_item_updated(size_t pos, const item& item) {

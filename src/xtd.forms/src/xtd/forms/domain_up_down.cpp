@@ -218,10 +218,7 @@ void domain_up_down::on_items_item_added(size_t pos, const item& item) {
 
 void domain_up_down::on_items_item_removed(size_t pos, const item& item) {
   if (is_handle_created()) native::domain_up_down::delete_item(handle(), pos);
-  
-  domain_up_down::item selected;
-  if (data_->selected_index != npos && data_->selected_index < data_->items.size()) selected = data_->items[data_->selected_index];
-  this->selected_item(selected);
+  this->selected_index(npos);
 }
 
 void domain_up_down::on_items_item_updated(size_t pos, const item& item) {

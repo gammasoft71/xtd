@@ -182,10 +182,7 @@ void choice::on_items_item_removed(size_t pos, const item& item)  {
   
   size_t selected = npos;
   if (this->selected_index() != npos && this->selected_index() < data_->items.size()) selected = this->selected_index();
-  this->selected_index(selected);
-  
-  if (this->items().size() == 1) // not 0! --> the item_remove occure before erase!
-    this->selected_index(npos);
+  this->selected_index(npos);
 }
 
 void choice::on_items_item_updated(size_t pos, const item& item) {
