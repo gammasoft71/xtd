@@ -333,6 +333,8 @@ void application::run(application_context& context) {
   if (context.main_form().has_value()) context.main_form().value().get().show();
   native::application::run();
   context.thread_exit -= application::on_app_thread_exit;
+  for (auto open_form : application::open_forms())
+    open_form.get().destroy_control();
   application::message_loop_ = false;
 }
 
