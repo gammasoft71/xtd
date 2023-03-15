@@ -40,10 +40,7 @@ combo_box::combo_box() : data_(std::make_shared<data>()) {
     
     combo_box::item selected_item;
     if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
-    this->selected_item(selected_item);
-    
-    if (this->items().size() == 1) // not 0! --> the item_remove occure before erase!
-      this->selected_index(npos);
+    this->selected_index(npos);
   };
   
   data_->items.item_updated += [&](size_t pos, const item & item) {

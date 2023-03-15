@@ -166,7 +166,7 @@ control::control() : data_(std::make_shared<data>()) {
   set_style(control_styles::all_painting_in_wm_paint | control_styles::user_paint | control_styles::standard_click | control_styles::standard_double_click | control_styles::use_text_for_accessibility | control_styles::selectable, true);
   
   data_->controls.item_added += {*this, &control::on_controls_item_added};
-  data_->controls.item_removed +=  {*this, &control::on_controls_item_removed};
+  data_->controls.item_removed += {*this, &control::on_controls_item_removed};
 }
 
 control::control(const xtd::ustring& text) : control() {
