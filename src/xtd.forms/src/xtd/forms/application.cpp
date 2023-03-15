@@ -334,8 +334,10 @@ void application::run(application_context& context) {
   native::application::run();
   context.thread_exit -= application::on_app_thread_exit;
   try {
-    for (auto open_form : application::open_forms())
+    for (auto open_form : application::open_forms()) {
+      open_form.get().on_form_closed(form_closed_event_args());
       open_form.get().destroy_control();
+    }
   } catch (const exception&) {
     // Do nothing in case of exception because with some toolkits when the message loop is stopped, the destruction of a control can fail....
   }
