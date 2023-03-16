@@ -1,6 +1,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/types.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include <iomanip>
 #include "../../include/xtd/ustring.h"
 #include "../../include/xtd/convert_string.h"
 #include "../../include/xtd/format_exception.h"
@@ -799,12 +800,22 @@ ustring ustring::pad_left(size_t total_width, value_type padding_char) const noe
   return ustring(total_width - size(), padding_char).append(*this);
 }
 
-ustring ustring::pad_right(size_t total_width) const noexcept {return pad_right(total_width, static_cast<value_type>(0x20));}
+ustring ustring::pad_right(size_t total_width) const noexcept {
+  return pad_right(total_width, static_cast<value_type>(0x20));
+}
 
 ustring ustring::pad_right(size_t total_width, value_type padding_char) const noexcept {
   if (total_width < size()) return *this;
   ustring result(*this);
   return result.append(total_width - size(), padding_char);
+}
+
+ustring ustring::quoted() const noexcept {
+  return quoted('"', '\\');
+}
+
+ustring ustring::quoted(value_type delimiter, value_type escape) const noexcept {
+  return ustring::format("{}", std::quoted(*this, delimiter, escape));
 }
 
 ustring ustring::remove(size_t start_index) const noexcept {
