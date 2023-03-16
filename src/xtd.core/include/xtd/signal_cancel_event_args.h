@@ -25,7 +25,7 @@ namespace xtd {
     
     /// @brief Initializes a new instance of the signal_cancel_event_args class.
     /// @param signal One of the enumeration values that specifies the key combination that interrupted the current process. There is no default value..
-    signal_cancel_event_args(xtd::signal signal);
+    explicit signal_cancel_event_args(xtd::signal signal);
     /// @}
     
     /// @cond
