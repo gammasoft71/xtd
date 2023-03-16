@@ -10,12 +10,12 @@ public:
     //raise(SIGSEGV);
     //char* ptr = nullptr;
     //*ptr = 'a';
-
-    environment::cancel_signal += [](signal_cancel_event_args& e) {
+    
+    environment::cancel_signal += [](signal_cancel_event_args & e) {
       console::write_line("{} signal canceled", e.signal());
       e.cancel(true);
     };
-
+    
     console::write_line("Raise SIGABRT");
     raise(SIGABRT);
     console::write_line("After SIGABRT");
@@ -49,7 +49,7 @@ auto main()->int {
   //raise(SIGSEGV);
   char* ptr = nullptr;
   *ptr = 'a';
-  
+
    try {
    //raise(SIGSEGV);
    // char* ptr = nullptr;

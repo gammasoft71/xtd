@@ -44,16 +44,16 @@ dialog_result font_box::show_font_box(font& font, color* color, const iwin32_win
     dialog.color(*color);
   }
   dialog.allow_simulation((options & font_box_options::allow_simulations) == font_box_options::allow_simulations)
-    .allow_vector_fonts((options & font_box_options::allow_vector_fonts) == font_box_options::allow_vector_fonts)
-    .allow_vertical_fonts((options & font_box_options::allow_vertical_fonts) == font_box_options::allow_vertical_fonts)
-    .allow_script_change((options & font_box_options::allow_script_change) == font_box_options::allow_script_change)
-    .fixed_pitch_only((options & font_box_options::fixed_pitch_only) == font_box_options::fixed_pitch_only)
-    .font(font)
-    .script_only((options & font_box_options::scripts_only) == font_box_options::scripts_only)
-    .show_apply((options & font_box_options::show_apply) == font_box_options::show_apply)
-    .show_color((options & font_box_options::show_color) == font_box_options::show_color)
-    .show_effect((options & font_box_options::show_effects) == font_box_options::show_effects)
-    .show_help((options & font_box_options::show_help) == font_box_options::show_help);
+  .allow_vector_fonts((options & font_box_options::allow_vector_fonts) == font_box_options::allow_vector_fonts)
+  .allow_vertical_fonts((options & font_box_options::allow_vertical_fonts) == font_box_options::allow_vertical_fonts)
+  .allow_script_change((options & font_box_options::allow_script_change) == font_box_options::allow_script_change)
+  .fixed_pitch_only((options & font_box_options::fixed_pitch_only) == font_box_options::fixed_pitch_only)
+  .font(font)
+  .script_only((options & font_box_options::scripts_only) == font_box_options::scripts_only)
+  .show_apply((options & font_box_options::show_apply) == font_box_options::show_apply)
+  .show_color((options & font_box_options::show_color) == font_box_options::show_color)
+  .show_effect((options & font_box_options::show_effects) == font_box_options::show_effects)
+  .show_help((options & font_box_options::show_help) == font_box_options::show_help);
   auto res = owner ? dialog.show_sheet_dialog(*owner) : dialog.show_dialog();
   if (res == dialog_result::ok) {
     font = dialog.font();

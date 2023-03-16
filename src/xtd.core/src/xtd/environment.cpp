@@ -104,7 +104,7 @@ public:
     environment::on_cancel_signal(e);
     if (!e.cancel()) throw xtd::access_violation_exception(csf_);
   }
-
+  
   static void on_software_termination_occured(int32 signal) {
     std::signal(signal, signal_catcher::on_software_termination_occured);
     signal_cancel_event_args e {xtd::signal::software_termination};

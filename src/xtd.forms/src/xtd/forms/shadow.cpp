@@ -94,5 +94,5 @@ shadow& shadow::y(int32 value) {
 }
 
 bool shadow::equals(const shadow& other) const noexcept {
-  return data_->color == other.data_->color && data_->offset == other.data_->offset && data_->radius== other.data_->radius;
+  return data_->color == other.data_->color && data_->offset == other.data_->offset && data_->radius == other.data_->radius;
 }

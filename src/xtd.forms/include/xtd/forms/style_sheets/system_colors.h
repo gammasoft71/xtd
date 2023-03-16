@@ -282,14 +282,14 @@ namespace xtd {
         /// @brief Sets the scroll bar system color;
         /// @param value The scroll bar system color.
         void scroll_bar(const xtd::drawing::color& value) noexcept;
-
+        
         /// @brief Gets the shadow text system color;
         /// @return The shadow text system color.
         const xtd::drawing::color& shadow_text() const noexcept;
         /// @brief Sets the shadow text system color;
         /// @param value The shadow text system color.
         void shadow_text(const xtd::drawing::color& value) noexcept;
-
+        
         /// @brief Gets the text box system color;
         /// @return The text box system color.
         const xtd::drawing::color& text_box() const noexcept;

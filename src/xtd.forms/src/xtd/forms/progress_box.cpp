@@ -177,17 +177,17 @@ void progress_box::show_progress_box(const iwin32_window* owner, const progress_
   if (dialog_) return;
   dialog_ = std::make_unique<progress_dialog>();
   dialog_->text(title)
-    .value(initial_value)
-    .message(message)
-    .maximum(maximum)
-    .minimum(minimum)
-    .marquee(marquee)
-    .marquee_animation_speed(marquee_animation_speed)
-    .informations(informations)
-    .show_cancel_button((options & progress_box_options::show_cancel_button) == progress_box_options::show_cancel_button)
-    .show_skip_button((options & progress_box_options::show_skip_button) == progress_box_options::show_skip_button)
-    .show_elapsed_time((options & progress_box_options::show_elapsed_time) == progress_box_options::show_elapsed_time)
-    .show_estimated_time((options & progress_box_options::show_estimated_time) == progress_box_options::show_estimated_time)
-    .show_remaining_time((options & progress_box_options::show_remaining_time) == progress_box_options::show_remaining_time);
+  .value(initial_value)
+  .message(message)
+  .maximum(maximum)
+  .minimum(minimum)
+  .marquee(marquee)
+  .marquee_animation_speed(marquee_animation_speed)
+  .informations(informations)
+  .show_cancel_button((options & progress_box_options::show_cancel_button) == progress_box_options::show_cancel_button)
+  .show_skip_button((options & progress_box_options::show_skip_button) == progress_box_options::show_skip_button)
+  .show_elapsed_time((options & progress_box_options::show_elapsed_time) == progress_box_options::show_elapsed_time)
+  .show_estimated_time((options & progress_box_options::show_estimated_time) == progress_box_options::show_estimated_time)
+  .show_remaining_time((options & progress_box_options::show_remaining_time) == progress_box_options::show_remaining_time);
   owner ? dialog_->show(*owner) : dialog_->show();
 }

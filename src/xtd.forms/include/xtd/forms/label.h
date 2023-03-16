@@ -161,7 +161,7 @@ namespace xtd {
       /// @param value true allows to draw a drop shadow under the text; otherwise false. The default is false.
       /// @return Current label instance.
       virtual xtd::forms::label& shadow(bool value);
-
+      
       /// @brief Gets an xtd::forms::shadow array used to draw shadows under the text.
       /// @return An xtd::forms::shadow array used to draw shadows under the text.
       virtual const std::vector<xtd::forms::shadow>& shadows() const noexcept;
@@ -169,7 +169,7 @@ namespace xtd {
       /// @param value An xtd::forms::shadow array used to draw shadows under the text.
       /// @return Current label instance.
       virtual xtd::forms::label& shadows(const std::vector<xtd::forms::shadow>& value);
-
+      
       /// @brief Gets the alignment of the text on the button control.
       /// @return One of the content_alignment values. The default is middle_center.
       /// @remarks You can use this property to align the text within a label to match the layout of controls on your form. For example, if your controls are located to the right edge of the labels, you can set the text_align property to one of the right-aligned horizontal alignments (top_right, middle_right, bottom_right) and the text will be aligned with the right edge of the labels to align with your controls.

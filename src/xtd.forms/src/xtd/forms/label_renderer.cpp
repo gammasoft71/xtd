@@ -43,7 +43,7 @@ void label_renderer::draw_label(const xtd::forms::style_sheets::style_sheet& sty
   auto content_rectangle = current_style_sheet.get_content_rectangle(bounds);
   image_renderer::draw_image(graphics, content_rectangle, image, label_state != label_state::disabled, current_style_sheet.get_solid_background_color(), current_style_sheet);
   //text_renderer::draw_shadow_text(graphics, content_rectangle, text, current_style_sheet, current_style_sheet);
-  if (shadows.empty())  text_renderer::draw_text(graphics, content_rectangle, text, current_style_sheet); 
+  if (shadows.empty())  text_renderer::draw_text(graphics, content_rectangle, text, current_style_sheet);
   else text_renderer::draw_shadow_text(graphics, content_rectangle, text, current_style_sheet, current_style_sheet);
 }
 
@@ -53,7 +53,7 @@ void label_renderer::draw_link_label(const xtd::forms::style_sheets::style_sheet
   style_sheets::link_label current_style_sheet = style_sheet.link_label(pseudo_state_base), hot_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::hover), pressed_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::active);
   unused_(hot_style_sheet); /// @todo Remove when used...
   unused_(pressed_style_sheet); /// @todo Remove when used...
-
+  
   if (link_label_state == link_label_state::disabled) current_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::disabled);
   
   if (back_color.has_value()) current_style_sheet.background_color(back_color.value());

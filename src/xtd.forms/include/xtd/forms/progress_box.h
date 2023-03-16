@@ -164,7 +164,7 @@ namespace xtd {
       /// @param informations An std::vector of xtd::ustring that specifies the information texts of the progress dialog.
       /// @param options A bitwise combination of enum xtd::forms::progress_box_options to specify additional options to the progress dialog box.
       static void show(const xtd::ustring& title, const xtd::ustring& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const size_t marquee_animation_speed, const std::vector<xtd::ustring>& informations, const progress_box_options options);
-            
+      
       /// @brief Displays a progress dialog box in front of a specified window.
       /// @param owner An If xtd::forms::iwin32_window that represents the owner window of the progress dialog box.
       /// @param title An xtd::ustring that specifies the title of the progress dialog.
@@ -338,7 +338,7 @@ namespace xtd {
       
     private:
       static void show_progress_box(const iwin32_window* owner = nullptr, const progress_box_options options = progress_box_options::none, const xtd::ustring& title = "Please wait..."_t, const xtd::ustring& message = ""_t, int32 initial_value = 0, int32 minimum = 0, int32 maximum = 100, const bool marquee = false, size_t marquee_animation_speed = 100, const std::vector<xtd::ustring>& informations = std::vector<xtd::ustring>());
-
+      
       static std::unique_ptr<progress_dialog> dialog_;
     };
   }

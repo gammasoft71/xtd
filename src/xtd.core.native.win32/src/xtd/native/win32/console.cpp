@@ -15,7 +15,7 @@ using namespace xtd::native;
 
 namespace {
   std::function<bool(int32_t)> user_cancel_callback;
-
+  
   int_least32_t __background_color() {
     CONSOLE_SCREEN_BUFFER_INFO csbi;
     GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);

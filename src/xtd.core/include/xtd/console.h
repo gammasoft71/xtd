@@ -409,7 +409,7 @@ namespace xtd {
     friend class xtd::environment;
     static bool on_cancel_key_press(int32 special_key);
     static void register_cancel_key_press();
-
+    
     static void write_(const ustring& value);
     static void write_line_(const ustring& value);
   };

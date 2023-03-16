@@ -286,7 +286,7 @@ console_key_info console::read_key() {
 console_key_info console::read_key(bool intercept) {
   register_cancel_key_press(); // Must be first...
   out.flush();
-
+  
   auto key_char = U'0', key_code = U'0';
   auto alt = false, shift = false, ctrl = false;
   native::console::read_key(key_char, key_code, alt, shift, ctrl);

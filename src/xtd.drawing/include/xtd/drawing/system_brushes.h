@@ -130,7 +130,7 @@ namespace xtd {
       
       /// @brief Gets a solid_brush that is the color of the shadow text.
       static xtd::drawing::solid_brush shadow_text();
-
+      
       /// @brief Gets a solid_brush that is the color of the text box.
       static xtd::drawing::solid_brush text_box();
       

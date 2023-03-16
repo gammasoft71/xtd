@@ -708,7 +708,7 @@ StackWalker::~StackWalker() {
   if (m_szSymPath != NULL)
     free(m_szSymPath);
   m_szSymPath = NULL;
-    delete m_sw;
+  delete m_sw;
   m_sw = NULL;
 }
 
@@ -894,7 +894,7 @@ BOOL StackWalker::ShowCallstack(HANDLE hThread, const CONTEXT* context, PReadPro
   s.AddrStack.Offset = c.Sp;
   s.AddrStack.Mode = AddrModeFlat;
   #else
-  #error "Platform not supported!"
+#error "Platform not supported!"
   #endif
   
   pSym = (IMAGEHLP_SYMBOL64*) malloc(sizeof(IMAGEHLP_SYMBOL64) + STACKWALK_MAX_NAMELEN);
