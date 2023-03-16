@@ -30,7 +30,7 @@ namespace {
   auto treat_control_c_as_input = false;
   std::vector<int_least32_t> signal_couter_;
   std::function<bool(int32_t)> user_cancel_callback;
-
+  
   struct console_intercept_signals {
   private:
     console_intercept_signals() {
@@ -48,7 +48,7 @@ namespace {
       if (treat_control_c_as_input) signal_couter_.push_back(signal_keys_[signal]);
       else if (user_cancel_callback && user_cancel_callback(signal_keys_[signal]) == false) exit(EXIT_FAILURE);
     }
-
+    
     // The SIGINT signal catcher conflicts with with xtd::environment::cancel_interrupt signal...
     inline static std::map<int_least32_t, int_least32_t> signal_keys_  {{SIGQUIT, CONSOLE_SPECIAL_KEY_CTRL_BS}, {SIGTSTP, CONSOLE_SPECIAL_KEY_CTRL_Z}/*, {SIGINT, CONSOLE_SPECIAL_KEY_CTRL_C}*/};
     static console_intercept_signals console_intercept_signals_;
@@ -98,7 +98,7 @@ namespace {
     bool key_available() {
       if (peek_character != -1)
         return true;
-      
+        
       termios termioAttributes;
       tcgetattr(0, &termioAttributes);
       termios localeBackupedTermioAttributes = termioAttributes;
@@ -275,11 +275,11 @@ namespace {
       // Ctrl + Space
       if (key == 0)
         return key_info(' ', ' ', false, true, false);
-      
+        
       // Ctrl + [a; z]
       if ((key >= 1 && key <= 7) || (key >= 10 && key <= 11) || (key >= 14 && key <= 18) || (key >= 20 && key <= 26))
         return key_info(key + 'A' - 1, key, false, true, false);
-      
+        
       switch (key) {
         case 50086 : return key_info(0, U'æ', alt, false, false);
         case 50054 : return key_info(0, U'Æ', alt, false, false);
@@ -377,7 +377,7 @@ namespace {
       
       if (key_info::keys.find(std::string(1, toupper((char)key))) != key_info::keys.end())
         return key_info(toupper(key), key, alt, false, key >= 'A' && key <= 'Z');
-      
+        
       return key_info(0, key, alt, false, key >= 'A' && key <= 'Z');
     }
     
@@ -818,9 +818,9 @@ std::string console::title() {
   /// @todo get console get title on linux and macOS
   /** Didn't work correctly!
    std::cout << "\x1b[21t" << std::endl;
-   
+  
    if (!terminal.key_available()) return ::title;
-   
+  
    std::string title;
    for (auto c = terminal.getch(); terminal::terminal_.key_available(); c = terminal::terminal_.getch())
      title.push_back(static_cast<char>(c));

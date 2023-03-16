@@ -178,7 +178,7 @@ void choice::on_items_item_added(size_t pos, const item& item) {
 }
 
 void choice::on_items_item_removed(size_t pos, const item& item)  {
-  if (is_handle_created()) native::choice::delete_item(handle(), pos);  
+  if (is_handle_created()) native::choice::delete_item(handle(), pos);
   if (selected_index() == pos) selected_index(npos);
 }
 

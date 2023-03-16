@@ -63,9 +63,9 @@ namespace xtd {
       /// @param message The text message.
       /// @return Current trace_message_dialog instance.
       trace_message_dialog& message(const xtd::ustring& message) {
-#if defined(TRACE)
+        #if defined(TRACE)
         dialog_.message(message);
-#endif
+        #endif
         return *this;
       }
       /// @}
@@ -78,37 +78,37 @@ namespace xtd {
       
       /// @brief Runs message dialog box.
       xtd::forms::dialog_result show_dialog() {
-#if defined(TRACE)
+        #if defined(TRACE)
         xtd::diagnostics::trace::write_line(dialog_.message());
         return dialog_.show_dialog();
-#else
+        #else
         return xtd::forms::dialog_result::none;
-#endif
+        #endif
       }
       /// @brief Runs message dialog box.
       xtd::forms::dialog_result show_dialog(const iwin32_window& owner) {
-#if defined(TRACE)
+        #if defined(TRACE)
         xtd::diagnostics::trace::write_line(dialog_.message());
         return dialog_.show_dialog(owner);
-#else
+        #else
         return xtd::forms::dialog_result::none;
-#endif
+        #endif
       }
       /// @brief Runs message dialog box.
       void show_sheet(const iwin32_window& owner) {
-#if defined(TRACE)
+        #if defined(TRACE)
         xtd::diagnostics::trace::write_line(dialog_.message());
         dialog_.show_sheet(owner);
-#endif
+        #endif
       }
       /// @brief Runs message dialog box.
       xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner) {
-#if defined(TRACE)
+        #if defined(TRACE)
         xtd::diagnostics::trace::write_line(dialog_.message());
         return dialog_.show_sheet_dialog(owner);
-#else
+        #else
         return xtd::forms::dialog_result::none;
-#endif
+        #endif
       }
       /// @}
       

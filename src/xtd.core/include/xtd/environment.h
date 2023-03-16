@@ -449,7 +449,7 @@ namespace xtd {
     /// @warning The xtd::signal::interrupt and xtd::console_special_key::control_c can be cancelled with xtd::environment::cancel_signal event or xtd::console::cancel_key_press event. Both of these events are called when <a href="https://en.cppreference.com/w/cpp/utility/program/signal">SIGINT</a> is raised.
     static event<environment, signal_cancel_event_handler> cancel_signal;
     /// @}
-
+    
     /// @name Methods
     
     /// @{
@@ -546,14 +546,14 @@ namespace xtd {
     /// @remarks If value is empty and the environment variable named by variable exists, the environment variable is deleted. If variable does not exist, no error occurs even though the operation cannot be performed.
     /// @todo Add xtd::registry and uncomment lines.
     static void set_environment_variable(const xtd::ustring& variable, const xtd::ustring& value, environment_variable_target target);
-
+    
     /// @cond
     static void __signal_catcher_check__();
     /// @endcond
-
+    
   private:
     static void on_cancel_signal(signal_cancel_event_args& e);
-
+    
     inline static constexpr const char* xtd_include_path = __XTD_INCLUDE_PATH__;
     inline static constexpr const char* xtd_libraries_path = __XTD_LIB_PATH__;
     inline static constexpr const char* xtd_resources_path = __XTD_RESOURCES_PATH__;

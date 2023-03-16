@@ -54,7 +54,7 @@ main_form::main_form() {
   minimize_box(false);
   start_position(form_start_position::center_screen);
   text("xtdc-gui");
-
+  
   busy_box::show("Initializing...", "xtdc-gui");
   
   startup_panel_.auto_scroll(true);

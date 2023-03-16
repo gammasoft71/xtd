@@ -1025,7 +1025,7 @@ namespace xtd {
     /// @return A new quoted string.
     /// @remarks for more information see <a href=https://en.cppreference.com/w/cpp/io/manip/quoted>std::quoted</a>.
     ustring quoted(value_type delimiter, value_type escape) const;
-
+    
     /// @brief Converts a string into a value_t type.
     /// @param str Ax xtd::ustring to convert to value_t
     /// @return The value_t object parsed.

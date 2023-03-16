@@ -5,7 +5,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 debug_message_dialog::debug_message_dialog() {
-  dialog_.dialog_closed += [&](object& sender, const dialog_closed_event_args& e) {on_dialog_closed(e);};
+  dialog_.dialog_closed += [&](object & sender, const dialog_closed_event_args & e) {on_dialog_closed(e);};
   reset();
 }
 
