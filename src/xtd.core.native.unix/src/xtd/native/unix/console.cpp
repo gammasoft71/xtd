@@ -81,7 +81,7 @@ namespace {
       
       termios termioAttributes;
       tcgetattr(0, &termioAttributes);
-      termios backupedTermioAttributes = termioAttributes;
+      termios localeBackupedTermioAttributes = termioAttributes;
       termioAttributes.c_lflag &= ~(ICANON | ECHO);
       termioAttributes.c_cc[VTIME] = 0;
       termioAttributes.c_cc[VMIN] = 1;
@@ -90,7 +90,7 @@ namespace {
       int_least8_t character = 0;
       while (read(0, &character, 1) != 1);
       
-      tcsetattr(0, TCSANOW, &backupedTermioAttributes);
+      tcsetattr(0, TCSANOW, &localeBackupedTermioAttributes);
       
       return character;
     }
@@ -101,18 +101,18 @@ namespace {
       
       termios termioAttributes;
       tcgetattr(0, &termioAttributes);
-      termios backupedTermioAttributes = termioAttributes;
+      termios localeBackupedTermioAttributes = termioAttributes;
       termioAttributes.c_lflag &= ~(ICANON | ECHO);
       termioAttributes.c_cc[VTIME] = 0;
       termioAttributes.c_cc[VMIN] = 0;
       tcsetattr(0, TCSANOW, &termioAttributes);
       
       if (read(0, &peek_character, 1) == -1) {
-        tcsetattr(0, TCSANOW, &backupedTermioAttributes);
+        tcsetattr(0, TCSANOW, &localeBackupedTermioAttributes);
         return false;
       }
       
-      tcsetattr(0, TCSANOW, &backupedTermioAttributes);
+      tcsetattr(0, TCSANOW, &localeBackupedTermioAttributes);
       return peek_character != -1;
     }
     
