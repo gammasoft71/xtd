@@ -1018,13 +1018,13 @@ namespace xtd {
     /// @return A new quoted string.
     /// @remarks the delimiter is set to @verbatim " @endverbatim by default and the escape is set to @verbatim \ @endverbatim by  default.
     /// @remarks for more information see <a href=https://en.cppreference.com/w/cpp/io/manip/quoted>std::quoted</a>.
-    ustring quoted() const noexcept;
+    ustring quoted() const;
     /// @brief Allows insertion and extraction of quoted strings, such as the ones found in <a href=https://en.wikipedia.org/wiki/Comma-separated_values>CSV</a> or <a href=https://en.wikipedia.org/wiki/XML>XML</a> ith specified delimiter and escape.
     /// @param delimiter The character to use as the delimiter, defaults to @verbatim " @endverbatim.
     /// @param escape The character to use as the escape character, defaults to @verbatim \ @endverbatim.
     /// @return A new quoted string.
     /// @remarks for more information see <a href=https://en.cppreference.com/w/cpp/io/manip/quoted>std::quoted</a>.
-    ustring quoted(value_type delimiter, value_type escape) const noexcept;
+    ustring quoted(value_type delimiter, value_type escape) const;
 
     /// @brief Converts a string into a value_t type.
     /// @param str Ax xtd::ustring to convert to value_t
