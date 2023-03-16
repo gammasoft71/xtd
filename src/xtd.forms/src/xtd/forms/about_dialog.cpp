@@ -134,10 +134,10 @@ namespace {
       text_box_license_.dock(dock_style::fill);
     }
     
-    static void show(const iwin32_window* owner, const xtd::drawing::image& icon, const xtd::ustring& name, const xtd::ustring& description, const xtd::ustring& version, const xtd::ustring& long_version, const xtd::ustring& copyright, const xtd::ustring& website, const xtd::ustring& website_label, const std::vector<ustring>& authors, const std::vector<ustring>& artists, const std::vector<ustring>& documenters, const std::vector<ustring>& translators, const xtd::ustring& license) {
+    static intptr show(const iwin32_window* owner, const xtd::drawing::image& icon, const xtd::ustring& name, const xtd::ustring& description, const xtd::ustring& version, const xtd::ustring& long_version, const xtd::ustring& copyright, const xtd::ustring& website, const xtd::ustring& website_label, const std::vector<ustring>& authors, const std::vector<ustring>& artists, const std::vector<ustring>& documenters, const std::vector<ustring>& translators, const xtd::ustring& license) {
       if (about_dialog_) {
         about_dialog_->activate();
-        return;
+        return about_dialog_->handle();
       }
       about_dialog_ = std::make_unique<about_dialog_standard>();
       auto has_credit = !(authors.empty() && documenters.empty() && translators.empty() && artists.empty());
@@ -225,6 +225,7 @@ namespace {
         if (o) about_dialog_->show_dialog(*o);
         else  about_dialog_->show_dialog();
       } else about_dialog_->visible(true);
+      return about_dialog_->handle();
     }
     
   private:
@@ -268,9 +269,14 @@ struct about_dialog::data {
   translator_collection translators;
   artist_collection artists;
   xtd::ustring license;
+  intptr handle = 0;
 };
 
 about_dialog::about_dialog() : data_(std::make_shared<data>()) {
+}
+
+about_dialog::~about_dialog() {
+  if (data_->handle) control::from_handle(data_->handle).value().get().destroy_control();
 }
 
 const about_dialog::artist_collection& about_dialog::artists() const noexcept {
@@ -444,10 +450,10 @@ void about_dialog::reset() noexcept {
 
 void about_dialog::show() {
   if (data_->dialog_style == xtd::forms::dialog_style::system) native::about_dialog::show(0, xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon)), data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
-  else about_dialog_standard::show(nullptr, data_->icon, data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
+  else data_->handle = about_dialog_standard::show(nullptr, data_->icon, data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
 }
 
 void about_dialog::show(const iwin32_window& owner) {
   if (data_->dialog_style == xtd::forms::dialog_style::system) native::about_dialog::show(owner.handle(), xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon)), data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
-  else about_dialog_standard::show(&owner, data_->icon, data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
+  else data_->handle = about_dialog_standard::show(&owner, data_->icon, data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
 }
