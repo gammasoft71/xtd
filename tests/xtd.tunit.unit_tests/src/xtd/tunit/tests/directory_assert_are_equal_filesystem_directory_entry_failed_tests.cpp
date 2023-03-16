@@ -20,9 +20,9 @@ void test_(directory_assert_are_equal_filesystem_directory_entry_failed_tests, t
   xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
   assert_value_(xtd::ustring::format("Start 1 test from 1 test case\n"
       "  FAILED  directory_assert_are_equal_filesystem_directory_entry_failed_tests.test_case_failed\n"
-      "    Expected: \"{0}\"\n"
-      "    But was:  \"{1}\"\n"
-      "End 1 test from 1 test case ran.\n", xtd::environment::get_folder_path(xtd::environment::special_folder::common_application_data), xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::common_application_data), "subdir")), ss.str());
+      "    Expected: {0}\n"
+      "    But was:  {1}\n"
+      "End 1 test from 1 test case ran.\n", xtd::environment::get_folder_path(xtd::environment::special_folder::common_application_data).quoted(), xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::common_application_data), "subdir").quoted()), ss.str());
 }
 
 void test_(directory_assert_are_equal_filesystem_directory_entry_failed_tests, test_result) {
