@@ -335,7 +335,7 @@ void application::run(application_context& context) {
   context.thread_exit -= application::on_app_thread_exit;
   try {
     for (auto open_form : application::open_forms()) {
-      open_form.get().on_form_closed(form_closed_event_args());
+      open_form.get().close();
       open_form.get().destroy_control();
     }
   } catch (const exception&) {
