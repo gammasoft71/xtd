@@ -130,14 +130,14 @@ struct __tunit_value_printer<char_t, char_traits_t, std::optional<value_t>> {
 template <typename char_t, typename char_traits_t>
 struct __tunit_value_printer<char_t, char_traits_t, std::string> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const std::string& value) {
-    os << "\"" << value << "\"";
+    os << std::quoted(value);
   }
 };
 
 template <typename char_t, typename char_traits_t>
 struct __tunit_value_printer<char_t, char_traits_t, xtd::ustring> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const std::string& value) {
-    os << "\"" << value << "\"";
+    os << std::quoted(value);
   }
 };
 
@@ -172,11 +172,11 @@ struct __tunit_value_printer<char_t, char_traits_t, std::wstring> {
 template <typename char_t, typename char_traits_t>
 struct __tunit_value_printer<char_t, char_traits_t, const char*> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const char* const& value) {
-    os << "\"" << value << "\"";
+    os << std::quoted(value);
   }
   
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const char*& value) {
-    os << "\"" << value << "\"";
+    os << std::quoted(value);
   }
   
   static void print(std::basic_ostream<char_t, char_traits_t>& os, char value) {
@@ -187,11 +187,11 @@ struct __tunit_value_printer<char_t, char_traits_t, const char*> {
 template <typename char_t, typename char_traits_t>
 struct __tunit_value_printer<char_t, char_traits_t, char> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const char* const& value) {
-    os << "\"" << value << "\"";
+    os << std::quoted(value);
   }
   
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const char*& value) {
-    os << "\"" << value << "\"";
+    os << std::quoted(value);
   }
   
   static void print(std::basic_ostream<char_t, char_traits_t>& os, char value) {
@@ -595,43 +595,43 @@ inline std::string __tunit_codepoint_to_string(xtd::char32 codepoint) {
 
 inline std::string __tunit_to_string(const xtd::char8& value) {
   std::stringstream ss;
-  ss << "\"" << __tunit_codepoint_to_string(value) << "\"";
+  ss << std::quoted(__tunit_codepoint_to_string(value));
   return ss.str();
 }
 
 inline std::string __tunit_to_string(const xtd::char16& value) {
   std::stringstream ss;
-  ss << "\"" << __tunit_codepoint_to_string(value) << "\"";
+  ss << std::quoted(__tunit_codepoint_to_string(value));
   return ss.str();
 }
 
 inline std::string __tunit_to_string(const xtd::char32& value) {
   std::stringstream ss;
-  ss << "\"" << __tunit_codepoint_to_string(value) << "\"";
+  ss << std::quoted(__tunit_codepoint_to_string(value));
   return ss.str();
 }
 
 inline std::string __tunit_to_string(const wchar_t& value) {
   std::stringstream ss;
-  ss << "\"" << __tunit_codepoint_to_string(value) << "\"";
+  ss << std::quoted(__tunit_codepoint_to_string(value));
   return ss.str();
 }
 
 inline std::string __tunit_to_string(const std::string& value) {
   std::stringstream ss;
-  ss << "\"" << value << "\"";
+  ss << std::quoted(value);
   return ss.str();
 }
 
 inline std::string __tunit_to_string(const xtd::ustring& value) {
   std::stringstream ss;
-  ss << "\"" << value << "\"";
+  ss << std::quoted(value);
   return ss.str();
 }
 
 inline std::string __tunit_to_string(const std::u8string& value) {
   std::stringstream ss;
-  ss << "\"" << value << "\"";
+  ss << std::quoted(value);
   return ss.str();
 }
 
@@ -676,7 +676,7 @@ inline std::string __tunit_to_string(void* value) {
 
 inline std::string __tunit_to_string(const char* value) {
   std::stringstream ss;
-  ss << "\"" << value << "\"";
+  ss << std::quoted(value);
   return ss.str();
 }
 
