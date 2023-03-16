@@ -810,11 +810,11 @@ ustring ustring::pad_right(size_t total_width, value_type padding_char) const no
   return result.append(total_width - size(), padding_char);
 }
 
-ustring ustring::quoted() const noexcept {
+ustring ustring::quoted() const {
   return quoted('"', '\\');
 }
 
-ustring ustring::quoted(value_type delimiter, value_type escape) const noexcept {
+ustring ustring::quoted(value_type delimiter, value_type escape) const {
   return ustring::format("{}", std::quoted(*this, delimiter, escape));
 }
 
