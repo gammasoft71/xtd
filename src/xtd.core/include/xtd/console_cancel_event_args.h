@@ -25,7 +25,7 @@ namespace xtd {
     
     /// @brief Initializes a new instance of the console_cancel_event_args class.
     /// @param special_key One of the enumeration values that specifies the key combination that interrupted the current process. There is no default value..
-    console_cancel_event_args(console_special_key special_key);
+    explicit console_cancel_event_args(console_special_key special_key);
     /// @}
     
     /// @cond
