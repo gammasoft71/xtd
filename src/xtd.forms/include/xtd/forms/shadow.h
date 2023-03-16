@@ -58,7 +58,7 @@ namespace xtd {
       shadow(int32 x, int32 y, int32 radius, const xtd::drawing::color& color);
       /// @brief Initializes a new instance of the xtd::forms::shadow class with the specified offset x, and offset y.
       /// @param offset The shadow offset point in pixels.
-      shadow(const xtd::drawing::point& offset);
+      explicit shadow(const xtd::drawing::point& offset);
       /// @brief Initializes a new instance of the xtd::forms::shadow class with the specified offset x, and offset y.
       /// @param offset The shadow offset point in pixels.
       /// @param radius The shadow blurring radius.
