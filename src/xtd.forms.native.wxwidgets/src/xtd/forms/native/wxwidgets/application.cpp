@@ -218,14 +218,9 @@ void application::register_wnd_proc(const delegate<intptr(intptr, int32, intptr,
 }
 
 void application::restart(bool exit_after_restart) {
-  ustring command_line_args;
-  bool first = true;
-  for (auto arg : environment::get_command_line_args()) {
-    if (!first) command_line_args += " ";
-    if (arg.find(" ")) command_line_args += ustring::format("\"{}\"", arg);
-    else command_line_args += arg;
-    first = false;
-  }
+  auto command_line_args = environment::get_command_line_args().size() ? environment::get_command_line_args()[0] : "";
+  for (auto index = 1U; index < environment::get_command_line_args().size(); ++index)
+    command_line_args += ustring::format(" {}", (environment::get_command_line_args()[index].find(" ") ? environment::get_command_line_args()[index].quoted() : environment::get_command_line_args()[index]));
   wxExecute(command_line_args);
   if (exit_after_restart) environment::exit(0);
 }
