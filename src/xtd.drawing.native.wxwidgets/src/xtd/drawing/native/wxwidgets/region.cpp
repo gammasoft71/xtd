@@ -32,7 +32,10 @@ namespace {
 
 intptr region::create() {
   toolkit::initialize(); // Must be first
-  return reinterpret_cast<intptr>(new wxRegion(int32_object::min_value / 2, int32_object::min_value / 2, int32_object::max_value, int32_object::max_value));
+  // Workaround the following line does not work on linux :
+  // return reinterpret_cast<intptr>(new wxRegion(int32_object::min_value / 2, int32_object::min_value / 2, int32_object::max_value, int32_object::max_value));
+  const auto max_value = 0xFFFFF;
+  return reinterpret_cast<intptr>(new wxRegion(-max_value / 2, -max_value / 2, max_value, max_value));
 }
 
 intptr region::create_from_rect(float x, float y, float width, float height) {
