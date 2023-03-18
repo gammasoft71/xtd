@@ -84,7 +84,7 @@ namespace {
       show_in_taskbar(false);
       client_size({476, 300});
       form_border_style(forms::form_border_style::fixed_dialog);
-      start_position(environment::os_version().is_windows() ? form_start_position::center_parent : form_start_position::center_screen);
+      start_position(show_modal_ ? form_start_position::center_parent : form_start_position::center_screen);
       
       picture_box_icon_.height(74);
       picture_box_icon_.size_mode(picture_box_size_mode::center_image);
@@ -219,7 +219,7 @@ namespace {
         about_dialog_->text_box_license_.text(license);
       }
       
-      if (environment::os_version().is_windows()) {
+      if (show_modal_) {
         auto o = owner;
         if (!o && application::open_forms().size()) o = &application::open_forms()[0].get();
         if (o) about_dialog_->show_dialog(*o);
@@ -230,6 +230,8 @@ namespace {
     
   private:
     inline static std::unique_ptr<about_dialog_standard> about_dialog_;
+    // Activate the following commient if about dialog must be modal on Windows.
+    inline static bool show_modal_ = false; // environment::os_version().is_windows();
     picture_box picture_box_icon_;
     label label_name_;
     panel panel_about_;
