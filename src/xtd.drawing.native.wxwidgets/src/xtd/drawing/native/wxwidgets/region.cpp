@@ -32,9 +32,12 @@ namespace {
 
 intptr region::create() {
   toolkit::initialize(); // Must be first
-  // Workaround the following line does not work on linux :
-  // return reinterpret_cast<intptr>(new wxRegion(int32_object::min_value / 2, int32_object::min_value / 2, int32_object::max_value, int32_object::max_value));
+  // Workaround for infinite region on linux
+#if defined(__WXGTK__)
   const auto max_value = 0xFFFFF;
+#else
+  const auto max_value = int32_object::max_value;
+#endif
   return reinterpret_cast<intptr>(new wxRegion(-max_value / 2, -max_value / 2, max_value, max_value));
 }
 
