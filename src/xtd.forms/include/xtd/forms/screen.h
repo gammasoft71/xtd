@@ -84,16 +84,16 @@ namespace xtd {
       /// @remarks The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.
       /// @remarks working_area will return the entire area of the screen if the Windows Taskbar is set to Auto-Hide, no matter whether the Taskbar is currently displayed or not.
       const drawing::rectangle& working_area() const noexcept;
-      
-      /// @brief Creates the xtd::drawing::graphics for the screen.
-      /// @return A xtd::drawing::graphics for the screen.
-      /// @ingroup drawing
-      static drawing::graphics create_graphics();
       /// @}
       
       /// @name Methods
       
       /// @{
+      /// @brief Creates the xtd::drawing::graphics for the screen.
+      /// @return A xtd::drawing::graphics for the screen.
+      /// @ingroup drawing
+      static drawing::graphics create_graphics();
+
       /// @brief Retrieves a screen for the display that contains the largest portion of the specified control.
       /// @param control A xtd::forms::control for which to retrieve a Screen.
       /// @return A screen for the display that contains the largest region of the specified control. In multiple display environments where no display contains the control, the display closest to the specified control is returned.
