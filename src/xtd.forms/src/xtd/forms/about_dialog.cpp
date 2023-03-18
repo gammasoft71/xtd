@@ -135,7 +135,7 @@ namespace {
     }
     
     static form* show(const iwin32_window* owner, const xtd::drawing::image& icon, const xtd::ustring& name, const xtd::ustring& description, const xtd::ustring& version, const xtd::ustring& long_version, const xtd::ustring& copyright, const xtd::ustring& website, const xtd::ustring& website_label, const std::vector<ustring>& authors, const std::vector<ustring>& artists, const std::vector<ustring>& documenters, const std::vector<ustring>& translators, const xtd::ustring& license) {
-      if (about_dialog_) {
+      if (about_dialog_ && about_dialog_->visible()) {
         about_dialog_->activate();
         return about_dialog_.get();
       }
