@@ -866,7 +866,7 @@ void main_form::set_auto_close() {
 }
 
 void main_form::show_about_dialog() {
-  about_dialog dialog;
+  static about_dialog dialog;
   dialog.icon(system_icons::xtd_logo());
   dialog.name("xtdc-gui");
   dialog.version(environment::version().to_string(2));
