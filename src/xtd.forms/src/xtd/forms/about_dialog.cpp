@@ -40,24 +40,20 @@ namespace {
     
     const string title() const {return title_;}
     credits_item_panel& title(const xtd::ustring& title) {
-      if (title_ != title) {
-        title_ = title;
-        title_label_.text(title);
-      }
+      if (title_ == title) return *this;
+      title_ = title;
+      title_label_.text(title);
       return *this;
     }
     
     const vector<ustring>& names() const {return names_;}
     credits_item_panel& names(const vector<ustring>& names) {
-      if (names_ != names) {
-        bool first = true;
-        names_ = names;
-        names_label_.text("");
-        for (auto name : names_) {
-          names_label_.text(ustring::format("{}{}{}", names_label_.text(), first ? "" : "\n", name));
-          first = false;
-        }
-      }
+      if (names_ == names) return *this;
+      names_ = names;
+      names_label_.text(names_.size() ? names_[0] : "");
+      for (auto index  = 1U; index < names_.size(); ++index)
+        names_label_.text(ustring::format("{}{}{}", names_label_.text(), environment::new_line(), names_[index]));
+      height(names_label_.height());
       return *this;
     }
     
