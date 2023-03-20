@@ -280,7 +280,7 @@ void minesweeper_form::mark_cell(int x, int y) {
 }
 
 void minesweeper_form::on_about_menu_click(object& sender, const xtd::event_args& e) {
-  about_dialog about_dialog;
+  static about_dialog about_dialog;
   about_dialog.icon(properties::resources::minesweeper_png());
   about_dialog.name("Minesweeper"_t);
   about_dialog.version("1.0");

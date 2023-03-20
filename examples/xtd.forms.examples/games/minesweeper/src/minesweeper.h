@@ -21,7 +21,7 @@ namespace minesweeper {
     
   public:
     /// @brief The main entry point for the game.
-    static auto main();
+    static void main();
     
     /// @brief Initialize a new instance of minesweeper::form_minesweeper form.
     minesweeper_form();
