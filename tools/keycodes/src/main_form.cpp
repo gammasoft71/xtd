@@ -143,7 +143,7 @@ void main_form::on_show_key_press_check_box_click(xtd::object& sender, const xtd
 }
 
 void main_form::show_about_dialog() {
-  about_dialog dialog;
+  static about_dialog dialog;
   dialog.icon(properties::resources::key_codes());
   dialog.name("key-codes");
   dialog.version(environment::version().to_string(2));
