@@ -13,7 +13,7 @@ public:
     button1.location({10, 10});
     button1.text("About...");
     button1.click += [&] {
-      about_dialog about_dialog;
+      static about_dialog about_dialog;
       about_dialog.dialog_style(xtd::forms::dialog_style::system);
       about_dialog.icon(xtd::drawing::bitmap(gammasoft_64x64_xpm));
       about_dialog.name("About dialog system");
