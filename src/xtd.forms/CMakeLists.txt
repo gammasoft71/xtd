@@ -335,6 +335,8 @@ add_sources(
   include/xtd/forms/style_sheets/padding.h
   include/xtd/forms/style_sheets/panel.h
   include/xtd/forms/style_sheets/pseudo_state.h
+  include/xtd/forms/style_sheets/shadow.h
+  include/xtd/forms/style_sheets/shadows.h
   include/xtd/forms/style_sheets/status_bar.h
   include/xtd/forms/style_sheets/status_bar_panel.h
   include/xtd/forms/style_sheets/style_sheet.h
@@ -528,6 +530,7 @@ add_sources(
   src/xtd/forms/style_sheets/background_image.cpp
   src/xtd/forms/style_sheets/length.cpp
   src/xtd/forms/style_sheets/lengths.cpp
+  src/xtd/forms/style_sheets/shadow.cpp
   src/xtd/forms/style_sheets/style_sheet.cpp
   src/xtd/forms/style_sheets/system_colors.cpp
   src/xtd/forms/style_sheets/system_style_sheet_gnome_dark.cpp

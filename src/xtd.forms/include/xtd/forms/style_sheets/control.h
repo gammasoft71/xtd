@@ -179,6 +179,14 @@ namespace xtd {
         /// @remarks For more information, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_box_model">Box Model</a>.
         control& padding(const xtd::forms::style_sheets::padding& value) noexcept;
         
+        /// @brief Gets an xtd::forms::style_sheets::shadow array used to draw shadows under the text.
+        /// @return The xtd::forms::style_sheets::shadow array used to draw shadows under the text.
+        xtd::forms::style_sheets::shadows shadows() const noexcept override;
+        /// @brief Sets an xtd::forms::style_sheets::shadow array used to draw shadows under the text.
+        /// @param value The xtd::forms::style_sheets::shadow array used to draw shadows under the text.
+        /// @return This current instance.
+        control& shadows(const xtd::forms::style_sheets::shadows& value) noexcept;
+
         xtd::forms::content_alignment text_alignment() const noexcept override;
         /// @brief Sets the alignment of the text.
         /// @param value A combination of xtd::forms::content_alignment values.
@@ -242,6 +250,7 @@ namespace xtd {
         xtd::forms::content_alignment text_alignment_ = xtd::forms::content_alignment::middle_center;
         xtd::drawing::font font_ = xtd::drawing::system_fonts::default_font();
         xtd::forms::style_sheets::text_decoration decoration_ = xtd::forms::style_sheets::text_decoration::none;
+        xtd::forms::style_sheets::shadows shadows_;
         xtd::forms::style_sheets::text_transformation transformation_ = xtd::forms::style_sheets::text_transformation::none;
         xtd::forms::content_alignment image_alignment_ = xtd::forms::content_alignment::middle_center;
         xtd::forms::style_sheets::white_space white_space_ = xtd::forms::style_sheets::white_space::normal;

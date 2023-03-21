@@ -52,7 +52,7 @@ const xtd::drawing::color& shadow::color() const noexcept {
   return data_->color;
 }
 
-shadow& shadow::color(const xtd::drawing::color& value) {
+shadow& shadow::color(const xtd::drawing::color& value) noexcept {
   data_->color = value;
   return *this;;
 }
@@ -61,7 +61,7 @@ const xtd::drawing::point& shadow::offset() const noexcept {
   return data_->offset;
 }
 
-shadow& shadow::offset(const xtd::drawing::point& value) {
+shadow& shadow::offset(const xtd::drawing::point& value) noexcept {
   data_->offset = value;
   return *this;;
 }
@@ -70,7 +70,7 @@ int32 shadow::radius() const noexcept {
   return data_->radius;
 }
 
-shadow& shadow::radius(int32 value) {
+shadow& shadow::radius(int32 value) noexcept {
   data_->radius = value;
   return *this;;
 }
@@ -79,7 +79,7 @@ int32 shadow::x() const noexcept {
   return data_->offset.x();
 }
 
-shadow& shadow::x(int32 value) {
+shadow& shadow::x(int32 value) noexcept {
   data_->offset.x(value);
   return *this;;
 }
@@ -88,7 +88,7 @@ int32 shadow::y() const noexcept {
   return data_->offset.y();
 }
 
-shadow& shadow::y(int32 value) {
+shadow& shadow::y(int32 value) noexcept {
   data_->offset.y(value);
   return *this;;
 }

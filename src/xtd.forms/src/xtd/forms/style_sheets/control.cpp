@@ -151,6 +151,15 @@ style_sheets::control& style_sheets::control::padding(const style_sheets::paddin
   return *this;
 }
 
+xtd::forms::style_sheets::shadows style_sheets::control::shadows() const noexcept {
+  return shadows_;
+}
+
+style_sheets::control& style_sheets::control::shadows(const xtd::forms::style_sheets::shadows& value) noexcept {
+  shadows_ = value;
+  return *this;
+}
+
 content_alignment style_sheets::control::text_alignment() const noexcept {
   return text_alignment_;
 }

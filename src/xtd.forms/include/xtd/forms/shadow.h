@@ -42,7 +42,7 @@ namespace xtd {
       /// @param x The shadow offset x in pixels.
       /// @param y The shadow offset y in pixels.
       shadow(int32 x, int32 y);
-      /// @brief Initializes a new instance of the xtd::forms::shadow class with the specified offset x, and offset y.
+      /// @brief Initializes a new instance of the xtd::forms::shadow class with the specified offset x, offset y, and radius.
       /// @param x The shadow offset x in pixels.
       /// @param y The shadow offset y in pixels.
       /// @param radius The shadow blurring radius.
@@ -51,23 +51,23 @@ namespace xtd {
       /// @param x The shadow offset x in pixels.
       /// @param y The shadow offset y in pixels.
       shadow(int32 x, int32 y, const xtd::drawing::color& color);
-      /// @brief Initializes a new instance of the xtd::forms::shadow class with the specified offset x, offset y and color.
+      /// @brief Initializes a new instance of the xtd::forms::shadow class with the specified offset x, offset y, and color.
       /// @param x The shadow offset x in pixels.
       /// @param y The shadow offset y in pixels.
       /// @param radius The shadow blurring radius.
       shadow(int32 x, int32 y, int32 radius, const xtd::drawing::color& color);
-      /// @brief Initializes a new instance of the xtd::forms::shadow class with the specified offset x, and offset y.
+      /// @brief Initializes a new instance of the xtd::forms::shadow class with the specified offset point.
       /// @param offset The shadow offset point in pixels.
       explicit shadow(const xtd::drawing::point& offset);
-      /// @brief Initializes a new instance of the xtd::forms::shadow class with the specified offset x, and offset y.
+      /// @brief Initializes a new instance of the xtd::forms::shadow class with the specified offset point, and radius.
       /// @param offset The shadow offset point in pixels.
       /// @param radius The shadow blurring radius.
       shadow(const xtd::drawing::point& offset, int32 radius);
-      /// @brief Initializes a new instance of the xtd::forms::shadow class with the specified offset x, offset y and color.
+      /// @brief Initializes a new instance of the xtd::forms::shadow class with the specified offset point, and color.
       /// @param offset The shadow offset point in pixels.
       /// @param color The shadow color.
       shadow(const xtd::drawing::point& offset, const xtd::drawing::color& color);
-      /// @brief Initializes a new instance of the xtd::forms::shadow class with the specified offset x, offset y and color.
+      /// @brief Initializes a new instance of the xtd::forms::shadow class with the specified offset point, radius, and color.
       /// @param offset The shadow offset point in pixels.
       /// @param radius The shadow blurring radius.
       /// @param color The shadow color.
@@ -88,31 +88,36 @@ namespace xtd {
       const xtd::drawing::color& color() const noexcept;
       /// @brief Sets the shadow color.
       /// @param value The shadow color.
-      shadow& color(const xtd::drawing::color& value);
+      /// @return This current instance.
+      shadow& color(const xtd::drawing::color& value) noexcept;
       /// @brief Gets the shadow offset in pixels.
       /// @return The shadow offset.
       const xtd::drawing::point& offset() const noexcept;
       /// @brief Sets the shadow offset point in pixels.
       /// @param value The shadow offset point.
-      shadow& offset(const xtd::drawing::point& value);
+      /// @return This current instance.
+      shadow& offset(const xtd::drawing::point& value) noexcept;
       /// @brief Gets the shadow blurring radius in pixels.
       /// @return The shadow blurring radius.
       int32 radius() const noexcept;
       /// @brief Sets the shadow blurring radius in pixels.
       /// @param value The shadow blurring radius.
-      shadow& radius(int32 value);
+      /// @return This current instance.
+      shadow& radius(int32 value) noexcept;
       /// @brief Gets the shadow offset x in pixels.
       /// @return The shadow offset x.
       int32 x() const noexcept;
       /// @brief Sets the shadow offset x in pixels.
       /// @param value The shadow offset x.
-      shadow& x(int32 value);
+      /// @return This current instance.
+      shadow& x(int32 value) noexcept;
       /// @brief Gets the shadow offset y in pixels.
       /// @return The shadow offset y.
       int32 y() const noexcept;
       /// @brief Sets the shadow offset y in pixels.
       /// @param value The shadow offset y.
-      shadow& y(int32 value);
+      /// @return This current instance.
+      shadow& y(int32 value) noexcept;
       /// @}
       
       /// @name Methods
