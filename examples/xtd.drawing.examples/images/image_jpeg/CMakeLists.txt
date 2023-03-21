@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.3)
+
+project(image_jpeg)
+find_package(xtd REQUIRED)
+add_references(xtd.drawing)
+add_sources(README.md src/image_jpeg.cpp)
+resource(gammasoft_jpeg resources/gammasoft.jpeg)
+target_type(CONSOLE_APPLICATION)
