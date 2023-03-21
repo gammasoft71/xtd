@@ -13,21 +13,21 @@ public:
     button1.location({10, 10});
     button1.text("About...");
     button1.click += [&] {
-      static about_dialog about_dialog;
-      about_dialog.dialog_style(xtd::forms::dialog_style::system);
-      about_dialog.icon(xtd::drawing::bitmap(gammasoft_64x64_xpm));
-      about_dialog.name("About dialog system");
-      about_dialog.version("1.0");
-      about_dialog.long_version("1.0.0");
-      about_dialog.description("About dialog description.");
-      about_dialog.copyright("Copyright (c) 2023 Gammasoft.\nAll rights reserved.");
-      about_dialog.website("https://gammasoft71.wixsite.com/gammasoft");
-      about_dialog.website_label("gammasoft website");
-      about_dialog.authors({"Gammasoft", "Contributors"});
-      about_dialog.documenters({"Gammasoft"});
-      about_dialog.translators({"Gammasoft", "Contributors"});
-      about_dialog.artists({"Gammasoft"});
-      about_dialog.license("MIT License\n"
+      static about_dialog dialog;
+      dialog.dialog_style(xtd::forms::dialog_style::system);
+      dialog.icon(xtd::drawing::bitmap(gammasoft_64x64_xpm));
+      dialog.name("About dialog system");
+      dialog.version("1.0");
+      dialog.long_version("1.0.0");
+      dialog.description("About dialog description.");
+      dialog.copyright("Copyright (c) 2023 Gammasoft.\nAll rights reserved.");
+      dialog.website("https://gammasoft71.wixsite.com/gammasoft");
+      dialog.website_label("gammasoft website");
+      dialog.authors({"Gammasoft", "Contributors"});
+      dialog.documenters({"Gammasoft"});
+      dialog.translators({"Gammasoft", "Contributors"});
+      dialog.artists({"Gammasoft"});
+      dialog.license("MIT License\n"
         "\n"
         "Copyright (c) 2023 Gammasoft.\n"
         "\n"
@@ -51,7 +51,7 @@ public:
         "ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n"
         "OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE\n"
         "OR OTHER DEALINGS IN THE SOFTWARE.\n");
-      about_dialog.show(*this);
+      dialog.show(*this);
     };
   }
   
