@@ -13,20 +13,20 @@ public:
     button1.location({10, 10});
     button1.text("About...");
     button1.click += [&] {
-      static about_dialog about_dialog1;
-      about_dialog1.icon(xtd::drawing::bitmap(gammasoft_64x64_xpm));
-      about_dialog1.name("About dialog");
-      about_dialog1.version("1.0");
-      about_dialog1.long_version("1.0.0");
-      about_dialog1.description("About dialog description.");
-      about_dialog1.website("https://gammasoft71.wixsite.com/gammasoft");
-      about_dialog1.website_label("gammasoft website");
-      about_dialog1.copyright("Copyright (c) 2023 Gammasoft.\nAll rights reserved.");
-      about_dialog1.authors({"Gammasoft", "Contributors"});
-      about_dialog1.documenters({"Gammasoft"});
-      about_dialog1.translators({"Gammasoft", "Contributors"});
-      about_dialog1.artists({"Gammasoft"});
-      about_dialog1.license("MIT License\n"
+      static about_dialog dialog;
+      dialog.icon(xtd::drawing::bitmap(gammasoft_64x64_xpm));
+      dialog.name("About dialog");
+      dialog.version("1.0");
+      dialog.long_version("1.0.0");
+      dialog.description("About dialog description.");
+      dialog.website("https://gammasoft71.wixsite.com/gammasoft");
+      dialog.website_label("gammasoft website");
+      dialog.copyright("Copyright (c) 2023 Gammasoft.\nAll rights reserved.");
+      dialog.authors({"Gammasoft", "Contributors"});
+      dialog.documenters({"Gammasoft"});
+      dialog.translators({"Gammasoft", "Contributors"});
+      dialog.artists({"Gammasoft"});
+      dialog.license("MIT License\n"
         "\n"
         "Copyright (c) 2023 Gammasoft.\n"
         "\n"
@@ -35,7 +35,7 @@ public:
         "The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n"
         "\n"
         "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n");
-      about_dialog1.show();
+      dialog.show();
     };
   }
   
