@@ -9,6 +9,6 @@ using namespace xtd::io;
 
 auto main()->int {
   bitmap img = bitmap(image_jpeg::properties::resources::gammasoft_jpeg());
-  img.save(path::combine(path::get_temp_path(), "gammasoft_jpeg.png"));
-  process::start(path::combine(path::get_temp_path(), "gammasoft_jpeg.png"));
+  img.save(path::combine(path::get_temp_path(), "image_jpeg.png"));
+  process::start(path::combine(path::get_temp_path(), "image_jpeg.png"));
 }
