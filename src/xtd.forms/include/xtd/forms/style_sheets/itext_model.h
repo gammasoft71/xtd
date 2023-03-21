@@ -10,6 +10,7 @@
 #include <xtd/drawing/string_format.h>
 #include <xtd/drawing/system_fonts.h>
 #include <xtd/forms/content_alignment.h>
+#include "shadows.h"
 #include "text_decoration.h"
 #include "text_transformation.h"
 #include "white_space.h"
@@ -56,6 +57,10 @@ namespace xtd {
         /// @brief Gets the font of the text.
         /// @return The font of the text.
         virtual const xtd::drawing::font& font() const noexcept = 0;
+        
+        /// @brief Gets an xtd::forms::style_sheets::shadow array used to draw shadows under the text.
+        /// @return The xtd::forms::style_sheets::shadow array used to draw shadows under the text.
+        virtual xtd::forms::style_sheets::shadows shadows() const noexcept = 0;
         
         /// @brief Gets the transformation of the text.
         /// @return One of xtd::forms::style_sheets::text_transformation values.
