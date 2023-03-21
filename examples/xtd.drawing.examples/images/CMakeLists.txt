@@ -5,6 +5,7 @@ find_package(xtd REQUIRED)
 
 add_projects(
   image
+  image_ani
   image_bmp
   image_cur
   image_jpeg
