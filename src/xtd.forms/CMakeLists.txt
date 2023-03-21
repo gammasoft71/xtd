@@ -243,6 +243,7 @@ add_sources(
   include/xtd/forms/settings.h
   include/xtd/forms/seven_segment_display.h
   include/xtd/forms/shadow.h
+  include/xtd/forms/shadows.h
   include/xtd/forms/shortcut.h
   include/xtd/forms/sixteen_segment_display.h
   include/xtd/forms/size_type.h

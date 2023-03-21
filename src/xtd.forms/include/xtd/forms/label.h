@@ -8,7 +8,7 @@
 #include "content_alignment.h"
 #include "flat_style.h"
 #include "image_list.h"
-#include "shadow.h"
+#include "shadows.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -164,11 +164,11 @@ namespace xtd {
       
       /// @brief Gets an xtd::forms::shadow array used to draw shadows under the text.
       /// @return An xtd::forms::shadow array used to draw shadows under the text.
-      virtual const std::vector<xtd::forms::shadow>& shadows() const noexcept;
+      virtual const xtd::forms::shadows& shadows() const noexcept;
       /// @brief Sets an xtd::forms::shadow array used to draw shadows under the text.
       /// @param value An xtd::forms::shadow array used to draw shadows under the text.
       /// @return Current label instance.
-      virtual xtd::forms::label& shadows(const std::vector<xtd::forms::shadow>& value);
+      virtual xtd::forms::label& shadows(const xtd::forms::shadows& value);
       
       /// @brief Gets the alignment of the text on the button control.
       /// @return One of the content_alignment values. The default is middle_center.

@@ -31,7 +31,7 @@ struct label::data {
   int32 image_index = -1;
   content_alignment image_align = content_alignment::middle_center;
   xtd::forms::flat_style flat_style = xtd::forms::flat_style::standard;
-  vector<xtd::forms::shadow> shadows;
+  xtd::forms::shadows shadows;
   xtd::drawing::point shadow_offset;
   xtd::forms::content_alignment text_align = xtd::forms::content_alignment::top_left;
 };
@@ -172,11 +172,11 @@ label& label::shadow(bool value) {
   return *this;
 }
 
-const std::vector<xtd::forms::shadow>& label::shadows() const noexcept {
+const xtd::forms::shadows& label::shadows() const noexcept {
   return data_->shadows;
 }
 
-xtd::forms::label& label::shadows(const std::vector<xtd::forms::shadow>& value) {
+xtd::forms::label& label::shadows(const xtd::forms::shadows& value) {
   if (data_->shadows == value) return *this;
   data_->shadows = value;
   if (control_appearance() == forms::control_appearance::standard) invalidate();
