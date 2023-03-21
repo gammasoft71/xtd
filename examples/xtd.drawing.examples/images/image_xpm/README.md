@@ -20,3 +20,4 @@ xtdc run
 
 # Output
 
+![Screenshot](../../../../docs/pictures/examples/image_xpm.png)
