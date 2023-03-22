@@ -4,7 +4,7 @@ Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/referen
 
 # Sources
 
-[src/image_iif.cpp](src/image_icns.cpp)
+[src/image_icns.cpp](src/image_icns.cpp)
 
 [resources/gammasoft.icns](resources/gammasoft.icns)
 
