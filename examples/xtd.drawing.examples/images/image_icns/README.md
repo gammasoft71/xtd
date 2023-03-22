@@ -6,7 +6,7 @@ Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/referen
 
 [src/image_iif.cpp](src/image_icns.cpp)
 
-[resources/gammasoft.gif](resources/gammasoft.icns)
+[resources/gammasoft.icns](resources/gammasoft.icns)
 
 [CMakeLists.txt](CMakeLists.txt)
 
