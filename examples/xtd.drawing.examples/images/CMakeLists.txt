@@ -10,6 +10,7 @@ add_projects(
   image_cur
   image_emf
   image_gif
+  image_icns
   image_iif
   image_jpeg
   image_png

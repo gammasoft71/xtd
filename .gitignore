@@ -42,8 +42,9 @@ examples/xtd.drawing.examples/images/image_ani/properties/resources.h
 examples/xtd.drawing.examples/images/image_bmp/properties/resources.h
 examples/xtd.drawing.examples/images/image_cur/properties/resources.h
 examples/xtd.drawing.examples/images/image_emf/properties/resources.h
-examples/xtd.drawing.examples/images/image_gifproperties/resources.h
-examples/xtd.drawing.examples/images/image_iifproperties/resources.h
+examples/xtd.drawing.examples/images/image_gif/properties/resources.h
+examples/xtd.drawing.examples/images/image_icns/properties/resources.h
+examples/xtd.drawing.examples/images/image_iif/properties/resources.h
 examples/xtd.drawing.examples/images/image_jpeg/properties/resources.h
 examples/xtd.drawing.examples/images/image_png/properties/resources.h
 examples/xtd.drawing.examples/images/image_xpn/properties/resources.h
