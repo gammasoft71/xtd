@@ -14,6 +14,7 @@ add_projects(
   image_ico
   image_iif
   image_jpeg
+  image_pcx
   image_png
   image_xpm
 )
