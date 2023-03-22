@@ -9,6 +9,7 @@ add_projects(
   image_bmp
   image_cur
   image_emf
+  image_iif
   image_jpeg
   image_png
   image_xpm

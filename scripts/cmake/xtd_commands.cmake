@@ -1729,7 +1729,7 @@ macro(write_resources_file_header)
     get_filename_component(EXTENSION ${FILE} EXT)
 
     string(TOLOWER ${EXTENSION} EXTENSION)
-    if ("${EXTENSION}" STREQUAL ".ani" OR "${EXTENSION}" STREQUAL ".bmp" OR "${EXTENSION}" STREQUAL ".cur" OR "${EXTENSION}" STREQUAL ".emf" OR "${EXTENSION}" STREQUAL ".exif" OR "${EXTENSION}" STREQUAL ".gif" OR "${EXTENSION}" STREQUAL ".iif" OR "${EXTENSION}" STREQUAL ".jpeg" OR "${EXTENSION}" STREQUAL ".jpg" OR "${EXTENSION}" STREQUAL ".pcx" OR "${EXTENSION}" STREQUAL ".pict" OR "${EXTENSION}" STREQUAL ".png" OR "${EXTENSION}" STREQUAL ".pnm" OR "${EXTENSION}" STREQUAL ".tga" OR "${EXTENSION}" STREQUAL ".tif" OR "${EXTENSION}" STREQUAL ".tiff" OR "${EXTENSION}" STREQUAL ".wmf" OR "${EXTENSION}" STREQUAL ".xbm" OR "${EXTENSION}" STREQUAL ".xpm")
+    if ("${EXTENSION}" STREQUAL ".ani" OR "${EXTENSION}" STREQUAL ".bmp" OR "${EXTENSION}" STREQUAL ".cur" OR "${EXTENSION}" STREQUAL ".emf" OR "${EXTENSION}" STREQUAL ".gif" OR "${EXTENSION}" STREQUAL ".iif" OR "${EXTENSION}" STREQUAL ".jpeg" OR "${EXTENSION}" STREQUAL ".jpg" OR "${EXTENSION}" STREQUAL ".pcx" OR "${EXTENSION}" STREQUAL ".pict" OR "${EXTENSION}" STREQUAL ".png" OR "${EXTENSION}" STREQUAL ".pnm" OR "${EXTENSION}" STREQUAL ".tga" OR "${EXTENSION}" STREQUAL ".tif" OR "${EXTENSION}" STREQUAL ".tiff" OR "${EXTENSION}" STREQUAL ".wmf" OR "${EXTENSION}" STREQUAL ".xbm" OR "${EXTENSION}" STREQUAL ".xpm")
        file(APPEND ${RESOURCES_FILE_HEADER}
         "    /// @brief Looks up a localized resource of type xtd::drawing::bitmap.\n"
         "    static const xtd::drawing::bitmap& ${NAME}() {\n"
