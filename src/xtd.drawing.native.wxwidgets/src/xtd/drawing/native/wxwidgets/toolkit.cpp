@@ -10,6 +10,7 @@
 #include <wx/image.h>
 #include <wx/memory.h>
 #include <wx/sysopt.h>
+#include <wx/version.h>
 
 using namespace xtd;
 using namespace xtd::diagnostics;
@@ -70,4 +71,12 @@ void toolkit::shutdown(intptr handle) {
   wxTheApp->OnExit();
   wxApp::SetInstance(nullptr);
   delete wxTheApp;
+}
+
+ustring toolkit::name() {
+  return "wxWidgets";
+}
+
+xtd::version toolkit::version() {
+  return xtd::version(wxMAJOR_VERSION, wxMINOR_VERSION, wxRELEASE_NUMBER, wxSUBRELEASE_NUMBER);
 }
