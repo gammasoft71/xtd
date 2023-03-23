@@ -7,6 +7,8 @@
 
 #include <cstdint>
 #include <xtd/static.h>
+#include <xtd/ustring.h>
+#include <xtd/version.h>
 #include <xtd/drawing_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -62,15 +64,25 @@ namespace xtd {
         /// @name Protected methods
         
         /// @{
-        /// @brief Initiazes toolkit
+        /// @brief Initiazes toolkit.
         /// @return The toolkit handle.
         /// @warning Internal use only
         static intptr initialize();
         
-        /// @brief Shutdowns toolkit
+        /// @brief Shutdowns toolkit.
         /// @param handle The toolkit handle.
         /// @warning Internal use only
         static void shutdown(intptr handle);
+        
+        /// @brief Gets the toolkit name.
+        /// @return The toolkit name.
+        /// @warning Internal use only
+        static xtd::ustring name();
+
+        /// @brief Gets the toolkit version.
+        /// @return The toolkit version.
+        /// @warning Internal use only
+        static xtd::version version();
         /// @}
       };
     }
