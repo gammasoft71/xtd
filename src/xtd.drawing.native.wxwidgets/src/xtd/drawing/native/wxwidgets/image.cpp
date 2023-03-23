@@ -9,6 +9,7 @@
 #include <xtd/drawing/native/toolkit.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/convert_string.h>
+#include <xtd/io/path.h>
 #include <atomic>
 #include <wx/display.h>
 #include <wx/image.h>
@@ -28,16 +29,16 @@ namespace {
     
     size_t OnSysRead(void* buffer, size_t size) override {
       stream_.peek();
-      if (stream_.fail() || stream_.bad()) m_lasterror = wxSTREAM_READ_ERROR;
-      else if (stream_.eof()) m_lasterror = wxSTREAM_EOF;
+      if (stream_.fail() || stream_.bad()) m_lasterror = wxStreamError::wxSTREAM_READ_ERROR;
+      else if (stream_.eof()) m_lasterror = wxStreamError::wxSTREAM_EOF;
       return stream_.readsome(static_cast<std::istream::char_type*>(buffer), size);
     }
     
     wxFileOffset OnSysSeek(wxFileOffset pos, wxSeekMode mode) override {
       switch (mode) {
-        case wxFromStart: stream_.seekg(pos, std::ios::beg); break;
-        case wxFromEnd: stream_.seekg(pos, std::ios::end); break;
-        case wxFromCurrent: stream_.seekg(pos, std::ios::cur); break;
+        case wxSeekMode::wxFromStart: stream_.seekg(pos, std::ios::beg); break;
+        case wxSeekMode::wxFromEnd: stream_.seekg(pos, std::ios::end); break;
+        case wxSeekMode::wxFromCurrent: stream_.seekg(pos, std::ios::cur); break;
       }
       return stream_.tellg();
     }
@@ -56,7 +57,7 @@ namespace {
     bool IsSeekable()  const override {return false;}
     
     size_t OnSysWrite(const void* buffer, size_t size) override {
-      if (stream_.fail() || stream_.bad()) m_lasterror = wxSTREAM_WRITE_ERROR;
+      if (stream_.fail() || stream_.bad()) m_lasterror = wxStreamError::wxSTREAM_WRITE_ERROR;
       stream_.write(static_cast<const std::ostream::char_type*>(buffer), size);
       return size;
     }
@@ -66,50 +67,112 @@ namespace {
   };
   
   wxBitmapType to_bitmap_type(size_t raw_format) {
-    static std::map<size_t, wxBitmapType> raw_formats {{IFM_BMP, wxBITMAP_TYPE_BMP}, {IFM_MEMORY_BMP, wxBITMAP_TYPE_BMP_RESOURCE}, {IFM_ICO, wxBITMAP_TYPE_ICO}, {IFM_MEMORY_ICO, wxBITMAP_TYPE_ICO_RESOURCE}, {IFM_CUR, wxBITMAP_TYPE_CUR}, {IFM_MEMORY_CUR, wxBITMAP_TYPE_CUR_RESOURCE}, {IFM_XBM, wxBITMAP_TYPE_XBM}, {IFM_MEMORY_XBM, wxBITMAP_TYPE_XBM_DATA}, {IFM_XPM, wxBITMAP_TYPE_XPM}, {IFM_MEMORY_XPM, wxBITMAP_TYPE_XPM_DATA}, {IFM_TIFF, wxBITMAP_TYPE_TIFF}, {IFM_MEMORY_TIFF, wxBITMAP_TYPE_TIFF_RESOURCE}, {IFM_GIF, wxBITMAP_TYPE_GIF}, {IFM_MEMORY_GIF, wxBITMAP_TYPE_GIF_RESOURCE}, {IFM_PNG, wxBITMAP_TYPE_PNG}, {IFM_MEMORY_PNG, wxBITMAP_TYPE_PNG_RESOURCE}, {IFM_JPEG, wxBITMAP_TYPE_JPEG}, {IFM_MEMORY_JPEG, wxBITMAP_TYPE_JPEG_RESOURCE}, {IFM_PNM, wxBITMAP_TYPE_PNM}, {IFM_MEMORY_PNM, wxBITMAP_TYPE_PNM_RESOURCE}, {IFM_PCX, wxBITMAP_TYPE_PCX}, {IFM_MEMORY_PCX, wxBITMAP_TYPE_PCX_RESOURCE}, {IFM_PICT, wxBITMAP_TYPE_PICT}, {IFM_MEMORY_PICT, wxBITMAP_TYPE_PICT_RESOURCE}, {IFM_ICON, wxBITMAP_TYPE_ICON}, {IFM_MEMORY_ICON, wxBITMAP_TYPE_ICON_RESOURCE}, {IFM_ANI, wxBITMAP_TYPE_ANI}, {IFM_IIF, wxBITMAP_TYPE_IFF}, {IFM_TGA, wxBITMAP_TYPE_TGA}, {IFM_MACCUR, wxBITMAP_TYPE_MACCURSOR}, {IFM_MEMORY_MACCUR, wxBITMAP_TYPE_MACCURSOR_RESOURCE}};
-    auto it = raw_formats.find(raw_format);
-    return it == raw_formats.end() ? wxBitmapType::wxBITMAP_TYPE_ANY : it->second;
+    switch (raw_format) {
+      case IFM_BMP: return wxBitmapType::wxBITMAP_TYPE_BMP;
+      case IFM_MEMORY_BMP: return wxBitmapType::wxBITMAP_TYPE_BMP_RESOURCE;
+      case IFM_ICO: return wxBitmapType::wxBITMAP_TYPE_ICO;
+      case IFM_MEMORY_ICO: return wxBitmapType::wxBITMAP_TYPE_ICO_RESOURCE;
+      case IFM_CUR: return wxBitmapType::wxBITMAP_TYPE_CUR;
+      case IFM_MEMORY_CUR: return wxBitmapType::wxBITMAP_TYPE_CUR_RESOURCE;
+      case IFM_XBM: return wxBitmapType::wxBITMAP_TYPE_XBM;
+      case IFM_MEMORY_XBM: return wxBitmapType::wxBITMAP_TYPE_XBM_DATA;
+      case IFM_XPM: return wxBitmapType::wxBITMAP_TYPE_XPM;
+      case IFM_MEMORY_XPM: return wxBitmapType::wxBITMAP_TYPE_XPM_DATA;
+      case IFM_TIFF: return wxBitmapType::wxBITMAP_TYPE_TIFF;
+      case IFM_MEMORY_TIFF: return wxBitmapType::wxBITMAP_TYPE_TIFF_RESOURCE;
+      case IFM_GIF: return wxBitmapType::wxBITMAP_TYPE_GIF;
+      case IFM_MEMORY_GIF: return wxBitmapType::wxBITMAP_TYPE_GIF_RESOURCE;
+      case IFM_PNG: return wxBitmapType::wxBITMAP_TYPE_PNG;
+      case IFM_MEMORY_PNG: return wxBitmapType::wxBITMAP_TYPE_PNG_RESOURCE;
+      case IFM_JPEG: return wxBitmapType::wxBITMAP_TYPE_JPEG;
+      case IFM_MEMORY_JPEG: return wxBitmapType::wxBITMAP_TYPE_JPEG_RESOURCE;
+      case IFM_PNM: return wxBitmapType::wxBITMAP_TYPE_PNM;
+      case IFM_MEMORY_PNM: return wxBitmapType::wxBITMAP_TYPE_PNM_RESOURCE;
+      case IFM_PCX: return wxBitmapType::wxBITMAP_TYPE_PCX;
+      case IFM_MEMORY_PCX: return wxBitmapType::wxBITMAP_TYPE_PCX_RESOURCE;
+      case IFM_PICT: return wxBitmapType::wxBITMAP_TYPE_PICT;
+      case IFM_MEMORY_PICT: return wxBitmapType::wxBITMAP_TYPE_PICT_RESOURCE;
+      case IFM_ICON: return wxBitmapType::wxBITMAP_TYPE_ICON;
+      case IFM_MEMORY_ICON: return wxBitmapType::wxBITMAP_TYPE_ICON_RESOURCE;
+      case IFM_ANI: return wxBitmapType::wxBITMAP_TYPE_ANI;
+      case IFM_IIF: return wxBitmapType::wxBITMAP_TYPE_IFF;
+      case IFM_TGA: return wxBitmapType::wxBITMAP_TYPE_TGA;
+      case IFM_MACCUR: return wxBitmapType::wxBITMAP_TYPE_MACCURSOR;
+      case IFM_MEMORY_MACCUR: return wxBitmapType::wxBITMAP_TYPE_MACCURSOR_RESOURCE;
+      default: return wxBitmapType::wxBITMAP_TYPE_ANY;
+    }
   }
   
   size_t to_raw_format(wxBitmapType bitmap_type) {
-    static std::map<wxBitmapType, size_t> bitmap_types {{wxBITMAP_TYPE_BMP, IFM_BMP}, {wxBITMAP_TYPE_BMP_RESOURCE, IFM_MEMORY_BMP}, {wxBITMAP_TYPE_ICO, IFM_ICO}, {wxBITMAP_TYPE_ICO_RESOURCE, IFM_MEMORY_ICO}, {wxBITMAP_TYPE_CUR, IFM_CUR}, {wxBITMAP_TYPE_CUR_RESOURCE, IFM_MEMORY_CUR}, {wxBITMAP_TYPE_XBM, IFM_XBM}, {wxBITMAP_TYPE_XBM_DATA, IFM_MEMORY_XBM}, {wxBITMAP_TYPE_XPM, IFM_XPM}, {wxBITMAP_TYPE_XPM_DATA, IFM_MEMORY_XPM}, {wxBITMAP_TYPE_TIFF, IFM_TIFF}, {wxBITMAP_TYPE_TIFF_RESOURCE, IFM_MEMORY_TIFF}, {wxBITMAP_TYPE_GIF, IFM_GIF}, {wxBITMAP_TYPE_GIF_RESOURCE, IFM_MEMORY_GIF}, {wxBITMAP_TYPE_PNG, IFM_PNG}, {wxBITMAP_TYPE_PNG_RESOURCE, IFM_MEMORY_PNG}, {wxBITMAP_TYPE_JPEG, IFM_JPEG}, {wxBITMAP_TYPE_JPEG_RESOURCE, IFM_MEMORY_JPEG}, {wxBITMAP_TYPE_PNM, IFM_PNM}, {wxBITMAP_TYPE_PNM_RESOURCE, IFM_MEMORY_PNM}, {wxBITMAP_TYPE_PCX, IFM_PCX}, {wxBITMAP_TYPE_PCX_RESOURCE, IFM_MEMORY_PCX}, {wxBITMAP_TYPE_PICT, IFM_PICT}, {wxBITMAP_TYPE_PICT_RESOURCE, IFM_MEMORY_PICT}, {wxBITMAP_TYPE_ICON, IFM_ICON}, {wxBITMAP_TYPE_ICON_RESOURCE, IFM_MEMORY_ICON}, {wxBITMAP_TYPE_ANI, IFM_ANI}, {wxBITMAP_TYPE_IFF, IFM_IIF}, {wxBITMAP_TYPE_TGA, IFM_TGA}, {wxBITMAP_TYPE_MACCURSOR, IFM_MACCUR}, {wxBITMAP_TYPE_MACCURSOR_RESOURCE, IFM_MEMORY_MACCUR}};
-    auto it = bitmap_types.find(bitmap_type);
-    return it == bitmap_types.end() ? IFM_UNKNOWN : it->second;
+    switch (bitmap_type) {
+      case wxBITMAP_TYPE_BMP: return IFM_BMP;
+      case wxBITMAP_TYPE_BMP_RESOURCE: return IFM_MEMORY_BMP;
+      case wxBITMAP_TYPE_ICO: return IFM_ICO;
+      case wxBITMAP_TYPE_ICO_RESOURCE: return IFM_MEMORY_ICO;
+      case wxBITMAP_TYPE_CUR: return IFM_CUR;
+      case wxBITMAP_TYPE_CUR_RESOURCE: return IFM_MEMORY_CUR;
+      case wxBITMAP_TYPE_XBM: return IFM_XBM;
+      case wxBITMAP_TYPE_XBM_DATA: return IFM_MEMORY_XBM;
+      case wxBITMAP_TYPE_XPM: return IFM_XPM;
+      case wxBITMAP_TYPE_XPM_DATA: return IFM_MEMORY_XPM;
+      case wxBITMAP_TYPE_TIFF: return IFM_TIFF;
+      case wxBITMAP_TYPE_TIFF_RESOURCE: return IFM_MEMORY_TIFF;
+      case wxBITMAP_TYPE_GIF: return IFM_GIF;
+      case wxBITMAP_TYPE_GIF_RESOURCE: return IFM_MEMORY_GIF;
+      case wxBITMAP_TYPE_PNG: return IFM_PNG;
+      case wxBITMAP_TYPE_PNG_RESOURCE: return IFM_MEMORY_PNG;
+      case wxBITMAP_TYPE_JPEG: return IFM_JPEG;
+      case wxBITMAP_TYPE_JPEG_RESOURCE: return IFM_MEMORY_JPEG;
+      case wxBITMAP_TYPE_PNM: return IFM_PNM;
+      case wxBITMAP_TYPE_PNM_RESOURCE: return IFM_MEMORY_PNM;
+      case wxBITMAP_TYPE_PCX: return IFM_PCX;
+      case wxBITMAP_TYPE_PCX_RESOURCE: return IFM_MEMORY_PCX;
+      case wxBITMAP_TYPE_PICT: return IFM_PICT;
+      case wxBITMAP_TYPE_PICT_RESOURCE: return IFM_MEMORY_PICT;
+      case wxBITMAP_TYPE_ICON: return IFM_ICON;
+      case wxBITMAP_TYPE_ICON_RESOURCE: return IFM_MEMORY_ICON;
+      case wxBITMAP_TYPE_ANI: return IFM_ANI;
+      case wxBITMAP_TYPE_IFF: return IFM_IIF;
+      case wxBITMAP_TYPE_TGA: return IFM_TGA;
+      case wxBITMAP_TYPE_MACCURSOR: return IFM_MACCUR;
+      case wxBITMAP_TYPE_MACCURSOR_RESOURCE: return IFM_MEMORY_MACCUR;
+      default: return IFM_UNKNOWN;
+    }
   }
   
   size_t get_frame_resolution(const wxImage& image) {
     switch (image.GetType()) {
-      case wxBITMAP_TYPE_BMP: return FD_PAGE;
-      case wxBITMAP_TYPE_BMP_RESOURCE: return FD_PAGE;
-      case wxBITMAP_TYPE_ICO: return FD_RESOLUTION;
-      case wxBITMAP_TYPE_ICO_RESOURCE: return FD_RESOLUTION;
-      case wxBITMAP_TYPE_CUR: return FD_TIME;
-      case wxBITMAP_TYPE_CUR_RESOURCE: return FD_TIME;
-      case wxBITMAP_TYPE_XBM: return FD_PAGE;
-      case wxBITMAP_TYPE_XBM_DATA: return FD_PAGE;
-      case wxBITMAP_TYPE_XPM: return FD_PAGE;
-      case wxBITMAP_TYPE_XPM_DATA: return FD_PAGE;
-      case wxBITMAP_TYPE_TIFF: return FD_PAGE;
-      case wxBITMAP_TYPE_TIFF_RESOURCE: return FD_PAGE;
-      case wxBITMAP_TYPE_GIF: return FD_TIME;
-      case wxBITMAP_TYPE_GIF_RESOURCE: return FD_TIME;
-      case wxBITMAP_TYPE_PNG: return FD_PAGE;
-      case wxBITMAP_TYPE_PNG_RESOURCE: return FD_PAGE;
-      case wxBITMAP_TYPE_JPEG: return FD_PAGE;
-      case wxBITMAP_TYPE_JPEG_RESOURCE: return FD_PAGE;
-      case wxBITMAP_TYPE_PNM: return FD_PAGE;
-      case wxBITMAP_TYPE_PNM_RESOURCE: return FD_PAGE;
-      case wxBITMAP_TYPE_PCX: return FD_PAGE;
-      case wxBITMAP_TYPE_PCX_RESOURCE: return FD_PAGE;
-      case wxBITMAP_TYPE_PICT: return FD_PAGE;
-      case wxBITMAP_TYPE_PICT_RESOURCE: return FD_PAGE;
-      case wxBITMAP_TYPE_ICON: return FD_RESOLUTION;
-      case wxBITMAP_TYPE_ICON_RESOURCE: return FD_RESOLUTION;
-      case wxBITMAP_TYPE_ANI: return FD_TIME;
-      case wxBITMAP_TYPE_IFF: return FD_PAGE;
-      case wxBITMAP_TYPE_TGA: return FD_PAGE;
-      case wxBITMAP_TYPE_MACCURSOR: return FD_TIME;
-      case wxBITMAP_TYPE_MACCURSOR_RESOURCE: return FD_TIME;
+      case wxBitmapType::wxBITMAP_TYPE_BMP: return FD_PAGE;
+      case wxBitmapType::wxBITMAP_TYPE_BMP_RESOURCE: return FD_PAGE;
+      case wxBitmapType::wxBITMAP_TYPE_ICO: return FD_RESOLUTION;
+      case wxBitmapType::wxBITMAP_TYPE_ICO_RESOURCE: return FD_RESOLUTION;
+      case wxBitmapType::wxBITMAP_TYPE_CUR: return FD_TIME;
+      case wxBitmapType::wxBITMAP_TYPE_CUR_RESOURCE: return FD_TIME;
+      case wxBitmapType::wxBITMAP_TYPE_XBM: return FD_PAGE;
+      case wxBitmapType::wxBITMAP_TYPE_XBM_DATA: return FD_PAGE;
+      case wxBitmapType::wxBITMAP_TYPE_XPM: return FD_PAGE;
+      case wxBitmapType::wxBITMAP_TYPE_XPM_DATA: return FD_PAGE;
+      case wxBitmapType::wxBITMAP_TYPE_TIFF: return FD_PAGE;
+      case wxBitmapType::wxBITMAP_TYPE_TIFF_RESOURCE: return FD_PAGE;
+      case wxBitmapType::wxBITMAP_TYPE_GIF: return FD_TIME;
+      case wxBitmapType::wxBITMAP_TYPE_GIF_RESOURCE: return FD_TIME;
+      case wxBitmapType::wxBITMAP_TYPE_PNG: return FD_PAGE;
+      case wxBitmapType::wxBITMAP_TYPE_PNG_RESOURCE: return FD_PAGE;
+      case wxBitmapType::wxBITMAP_TYPE_JPEG: return FD_PAGE;
+      case wxBitmapType::wxBITMAP_TYPE_JPEG_RESOURCE: return FD_PAGE;
+      case wxBitmapType::wxBITMAP_TYPE_PNM: return FD_PAGE;
+      case wxBitmapType::wxBITMAP_TYPE_PNM_RESOURCE: return FD_PAGE;
+      case wxBitmapType::wxBITMAP_TYPE_PCX: return FD_PAGE;
+      case wxBitmapType::wxBITMAP_TYPE_PCX_RESOURCE: return FD_PAGE;
+      case wxBitmapType::wxBITMAP_TYPE_PICT: return FD_PAGE;
+      case wxBitmapType::wxBITMAP_TYPE_PICT_RESOURCE: return FD_PAGE;
+      case wxBitmapType::wxBITMAP_TYPE_ICON: return FD_RESOLUTION;
+      case wxBitmapType::wxBITMAP_TYPE_ICON_RESOURCE: return FD_RESOLUTION;
+      case wxBitmapType::wxBITMAP_TYPE_ANI: return FD_TIME;
+      case wxBitmapType::wxBITMAP_TYPE_IFF: return FD_PAGE;
+      case wxBitmapType::wxBITMAP_TYPE_TGA: return FD_PAGE;
+      case wxBitmapType::wxBITMAP_TYPE_MACCURSOR: return FD_TIME;
+      case wxBitmapType::wxBITMAP_TYPE_MACCURSOR_RESOURCE: return FD_TIME;
       default: return FD_PAGE;
     }
   }
@@ -135,7 +198,29 @@ void image::color_palette(intptr image, std::vector<std::tuple<xtd::byte, xtd::b
 
 intptr image::create(const ustring& filename, std::map<size_t, size_t>& frame_resolutions) {
   toolkit::initialize(); // Must be first
-  auto img = new wxImage(wxString(convert_string::to_wstring(filename)));
+  auto extension = xtd::io::path::get_extension(filename).to_lower();
+  auto bitmap_type = wxBitmapType::wxBITMAP_TYPE_ANY;
+  if (extension == ".ani") bitmap_type = wxBitmapType::wxBITMAP_TYPE_ANI;
+  else if (extension == ".bmp") bitmap_type = wxBitmapType::wxBITMAP_TYPE_BMP;
+  else if (extension == ".cur") bitmap_type = wxBitmapType::wxBITMAP_TYPE_CUR;
+  else if (extension == ".icns") bitmap_type = wxBitmapType::wxBITMAP_TYPE_ICON;
+  else if (extension == ".ico") bitmap_type = wxBitmapType::wxBITMAP_TYPE_ICO;
+  else if (extension == ".iff") bitmap_type = wxBitmapType::wxBITMAP_TYPE_IFF;
+  else if (extension == ".jpeg") bitmap_type = wxBitmapType::wxBITMAP_TYPE_JPEG;
+  else if (extension == ".jpg") bitmap_type = wxBitmapType::wxBITMAP_TYPE_JPEG;
+  else if (extension == ".gif") bitmap_type = wxBitmapType::wxBITMAP_TYPE_GIF;
+  else if (extension == ".pcx") bitmap_type = wxBitmapType::wxBITMAP_TYPE_PCX;
+  else if (extension == ".pct") bitmap_type = wxBitmapType::wxBITMAP_TYPE_PICT;
+  else if (extension == ".pic") bitmap_type = wxBitmapType::wxBITMAP_TYPE_PICT;
+  else if (extension == ".pict") bitmap_type = wxBitmapType::wxBITMAP_TYPE_PICT;
+  else if (extension == ".png") bitmap_type = wxBitmapType::wxBITMAP_TYPE_PNG;
+  else if (extension == ".pnm") bitmap_type = wxBitmapType::wxBITMAP_TYPE_PNM;
+  else if (extension == ".tga") bitmap_type = wxBitmapType::wxBITMAP_TYPE_TGA;
+  else if (extension == ".tif") bitmap_type = wxBitmapType::wxBITMAP_TYPE_TIFF;
+  else if (extension == ".tiff") bitmap_type = wxBitmapType::wxBITMAP_TYPE_TIFF;
+  else if (extension == ".xbm") bitmap_type = wxBitmapType::wxBITMAP_TYPE_XBM;
+  else if (extension == ".xpm") bitmap_type = wxBitmapType::wxBITMAP_TYPE_XPM;
+  auto img = new wxImage(wxString(convert_string::to_wstring(filename)), bitmap_type);
   frame_resolutions[get_frame_resolution(*img)] = img->GetImageCount(filename);
   return reinterpret_cast<intptr>(img);
 }
