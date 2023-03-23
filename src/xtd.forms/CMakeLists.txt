@@ -291,6 +291,7 @@ add_sources(
   include/xtd/forms/tool_bar_images.h
   include/xtd/forms/tool_bar_renderer.h
   include/xtd/forms/tool_bar_text_align.h
+  include/xtd/forms/toolkit.h
   include/xtd/forms/trace_form.h
   include/xtd/forms/trace_form_base.h
   include/xtd/forms/trace_message_box.h
@@ -509,6 +510,7 @@ add_sources(
   src/xtd/forms/tool_bar_button_renderer.cpp
   src/xtd/forms/tool_bar_images.cpp
   src/xtd/forms/tool_bar_renderer.cpp
+  src/xtd/forms/toolkit.cpp
   src/xtd/forms/trace_form_base.cpp
   src/xtd/forms/trace_message_dialog.cpp
   src/xtd/forms/track_bar.cpp

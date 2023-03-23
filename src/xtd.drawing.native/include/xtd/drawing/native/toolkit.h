@@ -15,6 +15,7 @@
 namespace xtd {
   /// @cond
   namespace forms {
+    class toolkit;
     namespace native {
       class application;
     }
@@ -60,6 +61,7 @@ namespace xtd {
         friend xtd::drawing::native::system_colors;
         friend xtd::drawing::native::system_fonts;
         friend xtd::forms::native::application;
+        friend xtd::forms::toolkit;
       protected:
         /// @name Protected methods
         
