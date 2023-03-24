@@ -22,6 +22,7 @@ add_sources(
   include/xtd/forms/arrange_starting_position.h
   include/xtd/forms/auto_size_mode.h
   include/xtd/forms/background_worker.h
+  include/xtd/forms/battery_charge_status.h
   include/xtd/forms/boot_mode.h
   include/xtd/forms/border_sides.h
   include/xtd/forms/border_style.h
@@ -162,6 +163,7 @@ add_sources(
   include/xtd/forms/label_renderer.h
   include/xtd/forms/lcd_label.h
   include/xtd/forms/lcd_style.h
+  include/xtd/forms/left_right_alignment.h
   include/xtd/forms/light_button.h
   include/xtd/forms/light_buttons.h
   include/xtd/forms/link_area.h
@@ -213,6 +215,9 @@ add_sources(
   include/xtd/forms/picture_box.h
   include/xtd/forms/picture_box_size_mode.h
   include/xtd/forms/popup_panel.h
+  include/xtd/forms/power_line_status.h
+  include/xtd/forms/power_state.h
+  include/xtd/forms/power_status.h
   include/xtd/forms/progress_bar.h
   include/xtd/forms/progress_bar_style.h
   include/xtd/forms/progress_box.h
@@ -233,6 +238,7 @@ add_sources(
   include/xtd/forms/save_file_dialog.h
   include/xtd/forms/save_file_box.h
   include/xtd/forms/save_file_box_options.h
+  include/xtd/forms/screen_orientation.h
   include/xtd/forms/scroll_bar.h
   include/xtd/forms/scrollable_control.h
   include/xtd/forms/screen.h
@@ -461,6 +467,7 @@ add_sources(
   src/xtd/forms/paint_event_args.cpp
   src/xtd/forms/picture_box.cpp
   src/xtd/forms/popup_panel.cpp
+  src/xtd/forms/power_status.cpp
   src/xtd/forms/progress_bar.cpp
   src/xtd/forms/progress_box.cpp
   src/xtd/forms/progress_dialog.cpp

@@ -4,11 +4,15 @@
 #pragma once
 #include <xtd/static.h>
 #include <xtd/drawing/font.h>
+#include <xtd/drawing/rectangle.h>
 #include <xtd/drawing/size.h>
 #include "../forms_export.h"
 #include "arrange_direction.h"
 #include "arrange_starting_position.h"
 #include "boot_mode.h"
+#include "left_right_alignment.h"
+#include "power_status.h"
+#include "screen_orientation.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -433,8 +437,138 @@ namespace xtd {
       /// @remarks The network property indicates whether the system has a currently established network connection.
       /// @note This property always returns true on all platforms.
       static bool network();
+
+      /// @brief Gets a value indicating whether the Microsoft Windows for Pen Computing extensions are installed.
+      /// @return true if the Windows for Pen Computing extensions are installed; false if Windows for Pen Computing extensions are not installed.
+      /// @remarks The xtd::forms::system_information::pen_windows property indicates whether the Microsoft Windows for Pen Computing extensions are installed.
+      static bool pen_windows();
+
+      /// @brief Gets the side of pop-up menus that are aligned to the corresponding menu-bar item.
+      /// @return A xtd::forms::left_right_alignment that indicates whether pop-up menus are left-aligned or right-aligned, relative to the corresponding menu-bar item.
+      static left_right_alignment popup_menu_alignment();
       
+      /// @brief Gets the current system power status.
+      /// @return A xtd::forms::power_status that indicates the current system power status.
+      static xtd::forms::power_status power_status();
+      
+      /// @brief Gets the default dimensions, in pixels, of a maximized window on the primary display.
+      /// @return A xtd::drawing::size that specifies the dimensions, in pixels, of a maximized window on the primary display.
+      static xtd::drawing::size primary_monitor_maximized_window_size();
+
+      /// @brief Gets the dimensions, in pixels, of the current video mode of the primary display.
+      /// @return A xtd::drawing::size that indicates the dimensions, in pixels, of the current video mode of the primary display.
+      /// @remarks The xtd::forms::system_information::primary_monitor_size property indicates the dimensions of the current video mode of the primary display adapter.
+      static xtd::drawing::size primary_monitor_size();
+
+      /// @brief Gets a value indicating whether drop-down menus are right-aligned with the corresponding menu-bar item.
+      /// @return true if drop-down menus are right-aligned with the corresponding menu-bar item; false if the menus are left-aligned.
+      static bool right_aligned_menus();
+      
+      /// @brief Gets the orientation of the screen.
+      /// @return The orientation of the screen, in degrees.
+      static xtd::forms::screen_orientation screen_orientation();
+      
+      /// @brief Gets a value indicating whether a Security Manager is present on this operating system.
+      /// @return true if a Security Manager is present; otherwise, false.
+      /// @remarks The xtd::forms::system_information::secure property indicates whether a Security Manager is available from the operating system. A Security Manager determines access to the registry and file system.
+      static bool secure();
+
+      /// @brief Gets a value indicating whether the user prefers that an application present information in visual form in situations when it would present the information in audible form.
+      /// @return true if the application should visually show information about audible output; false if the application does not need to provide extra visual cues for audio events.
+      /// @remarks The xtd::forms::system_information::show_sounds property indicates whether a user preference has been set that indicates the user prefers visual information displays for audio events.
+      /// @remarks You can use this property to provide accessibility mode features to an application.
+      static bool show_sounds();
+
+      /// @brief Gets the width, in pixels, of the sizing border drawn around the perimeter of a window being resized.
+      /// @return The width, in pixels, of the window sizing border drawn around the perimeter of a window being resized.
+      static int32 sizing_border_width();
+
+      /// @brief Gets the width, in pixels, of small caption buttons, and the height, in pixels, of small captions.
+      /// @return A xtd::drawing::size that indicates the width, in pixels, of small caption buttons, and the height, in pixels, of small captions.
+      /// @remarks The xtd::forms::system_information::small_caption_button_size property indicates the width, in pixels, of small caption buttons, and the height, in pixels, of small captions.
+      static xtd::drawing::size small_caption_button_size();
+
+      /// @brief Gets the dimensions, in pixels, of a small icon.
+      /// @return A xtd::drawing::size that specifies the dimensions, in pixels, of a small icon.
+      /// @remarks The xtd::forms::system_information::small_icon_size property indicates the size of small icons in Windows. Small icons typically appear in window captions and in the small icon view in Windows Explorer.
+      static xtd::drawing::size small_icon_size();
+
+      /// @brief Gets a value indicating whether the calling process is associated with a Terminal Services client session.
+      /// @return true if the calling process is associated with a Terminal Services client session; otherwise, false.
+      /// @remarks The xtd::forms::system_information::terminal_server_session property indicates whether the calling process is associated with a Terminal Services client session.
+      static bool terminal_server_session();
+
+      /// @brief Gets the dimensions, in pixels, of small caption buttons.
+      /// @return A xtd::drawing::size that indicates the dimensions, in pixels, of small caption buttons.
+      /// @remarks The xtd::forms::system_information::tool_window_caption_button_size property indicates the dimensions of the buttons placed in the caption of a tool window. You can use this property when adding your own custom buttons to the caption in a tool window.
+      static xtd::drawing::size tool_window_caption_button_size();
+
+      /// @brief Gets the height, in pixels, of a tool window caption.
+      /// @return The height, in pixels, of a tool window caption in pixels.
+      static int32 tool_window_caption_height();
+
+      /// @brief Gets a value indicating whether user interface (UI) effects are enabled or disabled.
+      /// @return true if UI effects are enabled; otherwise, false.
+      /// @remarks UI effects include animation, fading, hot tracking, and smooth scrolling of system controls, and drawing a shadow under the mouse cursor. When UI effects are disabled, these features are disabled. When UI effects are enabled, only the effects configured as active for the current user are enabled.
+      /// @remarks The following table lists properties that indicate whether particular UI effects are enabled, if the value of this property is true:
+      /// | Name                                                                 | Description                                                                                             |
+      /// | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+      /// | xtd::forms::system_information::is_combo_box_animation_enabled       | Indicates whether the slide-open effect for combo boxes is enabled.                                     |
+      /// | xtd::forms::system_information::is_title_bar_gradient_enabled        | Indicates whether the gradient effect for window title bars is enabled.                                 |
+      /// | xtd::forms::system_information::is_hot_tracking_enabled              | Indicates whether hot tracking of user-interface elements, such as menu names on menu bars, is enabled. |
+      /// | xtd::forms::system_information::is_list_box_smooth_scrolling_enabled | Indicates whether the smooth-scrolling effect for list boxes is enabled.                                |
+      /// | xtd::forms::system_information::is_menu_animation_enabled            | Indicates whether menu fade or slide animation features are enabled.                                    |
+      /// | xtd::forms::system_information::menu_access_keys_underlined          | Indicates whether menu access keys are always underlined.                                               |
+      /// | xtd::forms::system_information::is_selection_fade_enabled            | Indicates whether the selection fade effect is enabled.                                                 |
+      /// | xtd::forms::system_information::is_tool_tip_animation_enabled        | Indicates whether ToolTip animation is enabled.                                                         |
+      static bool ui_effect_enabled();
+      
+      /// @brief Gets the name of the domain the user belongs to.
+      /// @return The name of the user domain. If a local user account exists with the same name as the user name, this property gets the computer name.
+      /// @remarks If a local user account exists with the same name as the user name, this property gets the computer name.
+      static xtd::ustring user_domain_name();
+
+      /// @brief Gets a value indicating whether the current process is running in user-interactive mode.
+      /// @return true if the current process is running in user-interactive mode; otherwise, false.
+      /// @remarks When the xtd::forms::system_information::user_interactive property is false, do not display any modal dialogs or message boxes, as there is no graphical user interface for the user to interact with.
+      /// @remarks This property is false only when called from a service process or from a Web application.
+      static bool user_interactive();
+
+      /// @brief Gets the user name associated with the current thread.
+      /// @return The user name of the user associated with the current thread.
+      static xtd::ustring user_name();
+
+      /// @brief Gets the thickness, in pixels, of the top and bottom edges of the system focus rectangle.
+      /// @return The thickness, in pixels, of the top and bottom edges of the system focus rectangle.
+      /// @remarks The xtd::forms::system_information::vertical_focus_thickness property indicates the height, in pixels, of the top and bottom edges of the system focus rectangle. The system focus rectangle is used to draw user's attention to a window or area by displaying a rectangular highlighted outline.
+      static int32 vertical_focus_thickness();
+
+      /// @brief Gets the height, in pixels, of the arrow bitmap on the vertical scroll bar.
+      /// @return The height, in pixels, of the arrow bitmap on the vertical scroll bar.
+      /// @remarks The xtd::forms::system_information::vertical_scroll_bar_arrow_height property indicates the height of the arrow bitmap on the vertical scroll bar system control.
+      static int32 vertical_scroll_bar_arrow_height();
+
+      /// @brief Gets the height, in pixels, of the scroll box in a vertical scroll bar.
+      /// @return The height, in pixels, of the scroll box in a vertical scroll bar.
+      /// @remarks The xtd::forms::system_information::vertical_scroll_bar_thumb_height property indicates the height of the scroll box used to indicate scroll bar position and to drag the scroll bar to a new position. The scroll box is also called the thumb box.
+      static int32 vertical_scroll_bar_thumb_height();
+
+      /// @brief Gets the default width, in pixels, of the vertical scroll bar.
+      /// @return The default width, in pixels, of the vertical scroll bar.
       static int32 vertical_scroll_bar_width();
+      
+      /// @brief Gets the bounds of the virtual screen.
+      /// @return A xtd::drawing::rectangle that specifies the bounding rectangle of the entire virtual screen.
+      /// @remarks The xtd::forms::system_information::virtual_screen property indicates the bounds of the entire desktop on a multi-monitor system. You can use this property to determine the maximum visual space available on a system that has multiple monitors installed.
+      /// @remarks The position coordinates of the rectangle indicate the position offset, in pixels, of the upper left corner of the virtual screen area relative to the upper left corner of the onscreen area of the primary display. The size values of the rectangle indicate the size of the virtual screen area.
+      /// @note The xtd::drawing::rectangle::x position coordinate of the rectangle is negative when the virtual screen starts to the left of the left edge of the primary display. The xtd::drawing::rectangle::y coordinate of the rectangle is negative when the virtual screen starts above the top edge of the primary display.
+      static xtd::drawing::rectangle virtual_screen();
+
+      /// @brief Gets the size, in pixels, of the working area of the screen.
+      /// @return A xtd::drawing::rectangle that represents the size, in pixels, of the working area of the screen.
+      /// @remarks The xtd::forms::system_information::working_area property indicates the bounds of the screen that can be used by applications. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.
+      /// @remarks xtd::forms::system_information::working_area always returns the work area of the primary monitor. If you need the work area of a monitor in a multiple display environment, you can call one of the overloads of xtd::forms::screen::get_working_area.
+      static xtd::drawing::rectangle working_area();
       /// @}
     };
   }
