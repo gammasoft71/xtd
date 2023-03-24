@@ -24,7 +24,7 @@ namespace xtd {
     /// @remarks For more information about system-wide parameters, see "SystemParametersInfo" in the Platform SDK documentation at http://msdn.microsoft.com.
     class forms_export_ system_information final static_ {
     public:
-      /// @name Methods
+      /// @name Properties
       
       /// @{
       /// @brief Gets the active window tracking delay.
@@ -171,7 +171,7 @@ namespace xtd {
       
       /// @brief Gets the width, in pixels, of the scroll box in a horizontal scroll bar.
       /// @return The width, in pixels, of the scroll box in a horizontal scroll bar.
-      static int32 horizontal_scroll_bar_bhumb_width();
+      static int32 horizontal_scroll_bar_thumb_width();
       
       /// @brief Gets the width, in pixels, of an icon arrangement cell in large icon view.
       /// @return The width, in pixels, of an icon arrangement cell in large icon view.
