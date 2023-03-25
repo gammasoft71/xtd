@@ -87,6 +87,14 @@ namespace {
     return report + environment::new_line();
   }
   
+  string generate_toolkit_string_report(int32 indent) {
+    std::string report = ustring::format("{}Toolkit{}", indent_string(indent), environment::new_line());
+    auto toolkit = system_report::toolkit();
+    report += ustring::format("{}Name: {}{}", indent_string(indent + 1), toolkit.name(), environment::new_line());
+    report += ustring::format("{}Version: {}{}", indent_string(indent + 1), toolkit.version(), environment::new_line());
+    return report + environment::new_line();
+  }
+  
   string generate_environment_variables_string_report(int32 indent) {
     std::string report = ustring::format("{}Environment variables{}", indent_string(indent), environment::new_line());
     for (auto environment_variable : system_report::environment_variables())
@@ -216,6 +224,7 @@ string system_report::to_string() noexcept {
   report += generate_compiler_string_report(indent);
   report += generate_language_string_report(indent);
   report += generate_locale_string_report(indent);
+  report += generate_toolkit_string_report(indent);
   report += generate_environment_variables_string_report(indent);
   report += generate_special_folders_string_report(indent);
   report += generate_system_colors_string_report(indent);
