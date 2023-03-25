@@ -192,3 +192,11 @@ int32 system_information::font_smoothing_type() {
   return 2;
   #endif
 }
+
+xtd::drawing::size system_information::frame_border_size() {
+#if defined(__WXMSW__)
+  return { wxSystemSettings::GetMetric(wxSYS_EDGE_X), wxSystemSettings::GetMetric(wxSYS_EDGE_Y) };
+#else
+  return { 0, 0 };
+#endif
+}

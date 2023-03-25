@@ -126,6 +126,10 @@ namespace xtd {
         /// @return A value that indicates the current type of font smoothing.
         /// @warning Internal use only
         static int32 font_smoothing_type();
+        /// @brief Gets the thickness, in pixels, of the resizing border that is drawn around the perimeter of a window that is being drag resized.
+        /// @return A size that indicates the thickness, in pixels, of the width of a vertical resizing border and the height of a horizontal resizing border.
+        /// @warning Internal use only
+        static xtd::drawing::size frame_border_size();
         /// @}
       };
     }
