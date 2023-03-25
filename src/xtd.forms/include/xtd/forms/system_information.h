@@ -13,6 +13,7 @@
 #include "left_right_alignment.h"
 #include "power_status.h"
 #include "screen_orientation.h"
+#include "toolkit.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -506,6 +507,10 @@ namespace xtd {
       /// @brief Gets the height, in pixels, of a tool window caption.
       /// @return The height, in pixels, of a tool window caption in pixels.
       static int32 tool_window_caption_height();
+      
+      /// @brief Gets the current toolkit version.
+      /// @return The current toolkit version.
+      static toolkit toolkit_version();
 
       /// @brief Gets a value indicating whether user interface (UI) effects are enabled or disabled.
       /// @return true if UI effects are enabled; otherwise, false.

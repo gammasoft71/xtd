@@ -28,6 +28,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::toolkit class.
+      /// @remarks The xtd::forms::toolkit class is used by xtd::forms::system_information::toolkit_version method.
       toolkit() = default;
       /// @brief Initializes a new instance of the xtd::forms::toolkit class with the specified name and version.
       /// @param name The toolkit name.
@@ -51,10 +52,6 @@ namespace xtd {
       /// @param value The toolkit name.
       /// @return The current instance of xtd::forms::toolkit.
       toolkit& name(const xtd::ustring& value);
-
-      /// @brief Gets the current toolkit version.
-      /// @return The current toolkit version.
-      static toolkit toolkit_version();
 
       /// @brief Gets the toolkit version.
       /// @return The toolkit version.
