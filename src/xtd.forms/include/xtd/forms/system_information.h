@@ -518,7 +518,7 @@ namespace xtd {
       /// | xtd::forms::system_information::is_hot_tracking_enabled              | Indicates whether hot tracking of user-interface elements, such as menu names on menu bars, is enabled. |
       /// | xtd::forms::system_information::is_list_box_smooth_scrolling_enabled | Indicates whether the smooth-scrolling effect for list boxes is enabled.                                |
       /// | xtd::forms::system_information::is_menu_animation_enabled            | Indicates whether menu fade or slide animation features are enabled.                                    |
-      /// | xtd::forms::system_information::menu_access_keys_underlined          | Indicates whether menu access keys are always underlined.                                               |
+      /// | xtd::forms::system_information::menu_access_keys_underlined          | Indicates whether menu access keys are always underlined.                                               |
       /// | xtd::forms::system_information::is_selection_fade_enabled            | Indicates whether the selection fade effect is enabled.                                                 |
       /// | xtd::forms::system_information::is_tool_tip_animation_enabled        | Indicates whether ToolTip animation is enabled.                                                         |
       static bool ui_effect_enabled();
