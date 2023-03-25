@@ -14,4 +14,5 @@
 * [image_jpeg](image_jpeg/README.md) Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image.html) class with jpeg image.
 * [image_pcx](image_pcx/README.md) Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image.html) class with pcx image.
 * [image_png](image_png/README.md) Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image.html) class with png image.
+* [image_pnm](image_pnm/README.md) Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image.html) class with pnm image.
 * [image_xpm](image_xpm/README.md) Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image.html) class with xpm image.
