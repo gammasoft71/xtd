@@ -17,5 +17,6 @@ add_projects(
   image_pcx
   image_png
   image_pnm
+  image_tga
   image_xpm
 )
