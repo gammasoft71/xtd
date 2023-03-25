@@ -208,11 +208,12 @@ bool environment::has_shutdown_started() {
 }
 
 bool environment::is_processor_arm() {
-  return  unix::strings::contains(create_process("uname -m"), "arm");
+  auto uname_result = create_process("uname -m");
+  return unix::strings::contains(uname_result, "arm") || unix::strings::contains(uname_result, "aarch64");
 }
 
 bool environment::is_os_64_bit() {
-  return  unix::strings::contains(create_process("uname -m"), "64");
+  return unix::strings::contains(create_process("uname -m"), "64");
 }
 
 std::string environment::new_line() {
