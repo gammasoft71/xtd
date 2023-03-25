@@ -38,6 +38,7 @@
 * [image_pnm](images/image_pnm/README.md) Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image.html) class with pnm image.
 * [image_tga](images/image_tga/README.md) Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image.html) class with tga image.
 * [image_tiff](images/image_tiff/README.md) Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image.html) class with tiff image.
+* [image_wmf](images/image_wmf/README.md) Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image.html) class with wmf image.
 * [image_xpm](images/image_xpm/README.md) Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image.html) class with xpm image.
 
 ## [Points](points/README.md)
