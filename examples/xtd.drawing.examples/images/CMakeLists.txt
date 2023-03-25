@@ -19,5 +19,6 @@ add_projects(
   image_pnm
   image_tga
   image_tiff
+  image_wmf
   image_xpm
 )

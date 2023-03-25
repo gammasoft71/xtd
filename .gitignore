@@ -52,7 +52,8 @@ examples/xtd.drawing.examples/images/image_png/properties/resources.h
 examples/xtd.drawing.examples/images/image_pnm/properties/resources.h
 examples/xtd.drawing.examples/images/image_tga/properties/resources.h
 examples/xtd.drawing.examples/images/image_tiff/properties/resources.h
-examples/xtd.drawing.examples/images/image_xpn/properties/resources.h
+examples/xtd.drawing.examples/images/image_wmf/properties/resources.h
+examples/xtd.drawing.examples/images/image_xpm/properties/resources.h
 examples/xtd.forms.examples/applications/application_with_cmake_assembly_info/properties/assembly_info.cpp
 examples/xtd.forms.examples/common_controls/picture_box/properties/resources.h
 examples/xtd.forms.examples/components/settings_example/properties/settings.h
