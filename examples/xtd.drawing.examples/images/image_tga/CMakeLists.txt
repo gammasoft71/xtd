@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.3)
+
+project(image_tga)
+find_package(xtd REQUIRED)
+add_references(xtd.drawing)
+add_sources(README.md src/image_tga.cpp)
+resource(gammasoft_tga resources/gammasoft.tga)
+target_type(CONSOLE_APPLICATION)
