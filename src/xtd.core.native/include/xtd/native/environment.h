@@ -61,6 +61,16 @@ namespace xtd {
       /// @remarks Return "" if not found or defined.
       /// @warning Internal use only
       static std::string get_desktop_theme();
+      /// @brief Gets the distribution code name.
+      /// @return std::string A string containing distribution code name.
+      /// @remarks Return "" if not found or defined.
+      /// @warning Internal use only
+      static std::string get_distribution_code_name();
+      /// @brief Gets the distribution description.
+      /// @return std::string A string containing distribution description.
+      /// @remarks Return "" if not found or defined.
+      /// @warning Internal use only
+      static std::string get_distribution_description();
       /// @brief Gets the distribution name.
       /// @return std::string A string containing distribution name.
       /// @remarks Returns "Windows" on Windows, "macOS" on macOS, "Ubuntu", "Rocky Linux", ...

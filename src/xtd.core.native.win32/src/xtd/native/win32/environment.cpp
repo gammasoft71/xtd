@@ -46,6 +46,17 @@ std::string environment::get_desktop_theme() {
   return value == 0 ? "windows" : "windows dark";
 }
 
+std::string environment::get_distribution_code_name() {
+  return "";
+}
+
+std::string environment::get_distribution_description() {
+  //int_least32_t major = -1, int_least32_t minor = -1, int_least32_t build = -1, int_least32_t revision = -1;
+  //get_distribution_version(major, minor, build, revision);
+  //return "Microsoft " + get_distribution_name() + " [Version" +  + "]";
+  return "Microsoft " + get_distribution_name() + " [Version 10.0.22621.1413]";
+}
+
 std::string environment::get_distribution_name() {
   return "Windows";
 }
