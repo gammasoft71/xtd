@@ -22,6 +22,7 @@
 #include "signal_cancel_event_handler.h"
 #include "static.h"
 #include "target_type.h"
+#include "toolkit.h"
 #include "ustring.h"
 #include "version.h"
 #include "collections/specialized/string_vector.h"
@@ -407,6 +408,11 @@ namespace xtd {
     /// @return A 32-bit unsigned integer containing the amount of time in milliseconds that has passed since the last time the computer was started.
     static std::chrono::milliseconds tick_count();
     
+    /// @brief Gets the current toolkit version.
+    /// @return The current toolkit version.
+    static xtd::toolkit toolkit_version();
+    
+
     /// @brief Gets a value indicating whether the current user is an administrator.
     /// @return bool true if the current user is an administrator; otherwise, false.
     static bool user_administrator();

@@ -84,7 +84,7 @@ namespace xtd {
     
     static std::locale locale() noexcept {return std::locale();}
     
-    static xtd::forms::toolkit toolkit() noexcept {return xtd::forms::system_information::toolkit_version();}
+    static xtd::toolkit toolkit() noexcept {return xtd::environment::toolkit_version();}
     
     static environment_variable_collection environment_variables() noexcept;
     

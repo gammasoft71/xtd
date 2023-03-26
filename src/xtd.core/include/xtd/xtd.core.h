@@ -101,6 +101,7 @@
 #include "time_zone_info.h"
 #include "time_zone_not_found_exception.h"
 #include "to_string.h"
+#include "toolkit.h"
 #include "tracestreambuf.h"
 #include "translator.h"
 #include "typeof.h"

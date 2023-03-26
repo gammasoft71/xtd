@@ -1,6 +1,3 @@
-#define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/toolkit.h>
-#undef __XTD_DRAWING_NATIVE_LIBRARY__
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/system_information.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
@@ -99,9 +96,6 @@ int32 system_information::font_smoothing_type() {
 
 int32 system_information::horizontal_scroll_bar_height() {
   return 15;
-}
-toolkit system_information::toolkit_version() {
-  return toolkit {drawing::native::toolkit::name(), drawing::native::toolkit::version()};
 }
 
 int32 system_information::vertical_scroll_bar_width() {

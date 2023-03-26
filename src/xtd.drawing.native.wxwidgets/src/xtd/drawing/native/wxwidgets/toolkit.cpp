@@ -44,7 +44,7 @@ namespace {
   }
 }
 
-intptr toolkit::initialize() {
+intptr xtd::drawing::native::toolkit::initialize() {
   if (wxTheApp) return 0;
   #if defined(_MSC_VER)
   // Workaround : Dump memory leak : Remove temporary memory check...
@@ -64,7 +64,7 @@ intptr toolkit::initialize() {
   return 0;
 }
 
-void toolkit::shutdown(intptr handle) {
+void xtd::drawing::native::toolkit::shutdown(intptr handle) {
   if (!wxTheApp) return;
   
   wxImage::CleanUpHandlers();
@@ -73,10 +73,10 @@ void toolkit::shutdown(intptr handle) {
   delete wxTheApp;
 }
 
-ustring toolkit::name() {
+ustring xtd::drawing::native::toolkit::name() {
   return "wxWidgets";
 }
 
-xtd::version toolkit::version() {
+xtd::version xtd::drawing::native::toolkit::version() {
   return xtd::version(wxMAJOR_VERSION, wxMINOR_VERSION, wxRELEASE_NUMBER, wxSUBRELEASE_NUMBER);
 }

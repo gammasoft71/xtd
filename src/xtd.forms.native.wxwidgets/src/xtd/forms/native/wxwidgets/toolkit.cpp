@@ -1,24 +1,26 @@
+#define __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/drawing/native/toolkit.h>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/toolkit.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/environment.h>
 
 using namespace xtd;
-using namespace xtd::forms::native;
 
-ustring toolkit::name() {
-  return "wxwidgets";
+ustring xtd::forms::native::toolkit::name() {
+  return xtd::drawing::native::toolkit::name();
 }
 
-ustring toolkit::description() {
-  return "This library is based on wxWidgets 3.1.5 (https://www.wxwidgets.org) toolkit.";
+ustring xtd::forms::native::toolkit::description() {
+  return ustring::format("The underlying graphical toolkit is {} {}. See https://www.wxwidgets.org for more information.", xtd::drawing::native::toolkit::name(), xtd::drawing::native::toolkit::version());
 }
 
-xtd::version toolkit::version() {
-  return {0, 1, 0};
+xtd::version xtd::forms::native::toolkit::version() {
+  return xtd::drawing::native::toolkit::version();
 }
 
-bool toolkit::is_operating_system_double_buffered() {
+bool xtd::forms::native::toolkit::is_operating_system_double_buffered() {
   static auto is_operating_system_double_buffered = !xtd::environment::os_version().is_windows_platform();
   return is_operating_system_double_buffered;
 }

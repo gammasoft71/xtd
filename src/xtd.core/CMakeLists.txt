@@ -120,6 +120,7 @@ add_sources(
   include/xtd/time_zone_info.h
   include/xtd/time_zone_not_found_exception.h
   include/xtd/to_string.h
+  include/xtd/toolkit.h
   include/xtd/tracestreambuf.h
   include/xtd/translator.h
   include/xtd/typeof.h
@@ -333,6 +334,7 @@ add_sources(
   src/xtd/target_type.cpp
   src/xtd/time_zone_info.cpp
   src/xtd/to_string.cpp
+  src/xtd/toolkit.cpp
   src/xtd/translator.cpp
   src/xtd/types.cpp
   src/xtd/types.cpp

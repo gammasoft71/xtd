@@ -10,6 +10,7 @@
 #include <xtd/reflection/assembly.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application.h>
+#include <xtd/forms/native/toolkit.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/window_messages.h>
 #include "../../../include/xtd/forms/application.h"
@@ -22,6 +23,8 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::forms;
 using namespace xtd::reflection;
+
+extern std::optional<xtd::toolkit> __xtd_toolkit__;
 
 // Initialize xtd::diagnostics::process::message_box_message_ delegate th show message_box dialog.
 // This operation can be done only if xtd.forms lib is present.
@@ -39,6 +42,14 @@ struct __init_process_message_box_message__ {
 };
 
 __init_process_message_box_message__ __init_process_message_box_message_value__;
+
+struct __init_toolkit__ {
+  __init_toolkit__() {
+    __xtd_toolkit__ = toolkit {native::toolkit::name(), native::toolkit::version(), native::toolkit::description()};
+  }
+};
+
+__init_toolkit__ __init_toolkit_value__;
 
 namespace {
   using message_filter_ref = std::reference_wrapper<imessage_filter>;
