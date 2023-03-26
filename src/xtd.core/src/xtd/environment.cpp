@@ -210,11 +210,11 @@ ustring environment::new_line() noexcept {
 xtd::operating_system environment::os_version() noexcept {
   static xtd::operating_system os(xtd::platform_id::unknown, xtd::version());
   if (os.platform() == xtd::platform_id::unknown) {
-    int32 major, minor, build, revision;
+    auto major = 0, minor = 0, build = 0, revision = 0;
     native::environment::get_os_version(major, minor, build, revision);
-    xtd::version version;
-    version = xtd::version(major, minor, build, revision);
-    os = operating_system(static_cast<platform_id>(native::environment::get_os_platform_id()), version, native::environment::get_service_pack(), native::environment::get_desktop_environment(), native::environment::get_desktop_theme(), native::environment::is_os_64_bit());
+    auto distribution_major = 0, distribution_minor = 0, distribution_build = 0, distribution_revision = 0;
+    native::environment::get_distribution_version(distribution_major, distribution_minor, distribution_build, distribution_revision);
+    os = operating_system(static_cast<platform_id>(native::environment::get_os_platform_id()), xtd::version(major, minor, build, revision), native::environment::get_service_pack(), native::environment::get_desktop_environment(), native::environment::get_desktop_theme(), native::environment::is_os_64_bit(), native::environment::get_distribution_name(), xtd::version(distribution_major, distribution_minor, distribution_build, distribution_revision));
   }
   return os;
 }
