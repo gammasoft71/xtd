@@ -19,8 +19,3 @@ ustring xtd::forms::native::toolkit::description() {
 xtd::version xtd::forms::native::toolkit::version() {
   return xtd::drawing::native::toolkit::version();
 }
-
-bool xtd::forms::native::toolkit::is_operating_system_double_buffered() {
-  static auto is_operating_system_double_buffered = !xtd::environment::os_version().is_windows_platform();
-  return is_operating_system_double_buffered;
-}

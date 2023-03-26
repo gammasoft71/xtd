@@ -129,7 +129,11 @@ namespace xtd {
         /// @brief Gets the thickness, in pixels, of the resizing border that is drawn around the perimeter of a window that is being drag resized.
         /// @return A size that indicates the thickness, in pixels, of the width of a vertical resizing border and the height of a horizontal resizing border.
         /// @warning Internal use only
-        static xtd::drawing::size frame_border_size();
+        static xtd::drawing::size frame_border_size();        
+        /// @brief Gets the operating system is natively double buffered.
+        /// @return true is operating system is natively double buffered; otherwise false.
+        /// @warning Internal use only
+        static bool is_operating_system_double_buffered();
         /// @}
       };
     }

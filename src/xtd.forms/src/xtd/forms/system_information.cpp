@@ -98,6 +98,10 @@ int32 system_information::horizontal_scroll_bar_height() {
   return 15;
 }
 
+bool system_information::is_operating_system_double_buffered() {
+  return native::system_information::is_operating_system_double_buffered();
+}
+
 int32 system_information::vertical_scroll_bar_width() {
   return 15;
 }
