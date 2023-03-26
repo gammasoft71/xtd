@@ -44,6 +44,7 @@ namespace {
     __environment_argv = argv;
   }
 
+#if defined(__APPLE__)
   std::string macos_codename(const std::string& version) {
     static auto codename = std::string(""); //xtd::native::unix::strings::replace(create_process("awk '/SOFTWARE LICENSE AGREEMENT FOR macOS/' '/System/Library/CoreServices/Setup Assistant.app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf' | awk -F 'macOS ' '{print $NF}' | awk '{print substr($0, 0, length($0)-1)}'"), "\n", "");
     if (!codename.empty()) return codename;
@@ -72,6 +73,7 @@ namespace {
     else if (major == 13) codename = "Ventura";
  return codename;
   }
+#endif
   
   using distribution_dictionary = std::map<std::string, std::string>;
   
