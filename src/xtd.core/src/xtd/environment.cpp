@@ -208,14 +208,15 @@ ustring environment::new_line() noexcept {
 }
 
 xtd::operating_system environment::os_version() noexcept {
+  static auto to_version = [](std::function<void(int32&, int32&, int32&, int32&method)> method) {
+    auto major = 0, minor = 0, build = -1, revision = -1;
+    method(major, minor, build, revision);
+    return build == -1 && revision == -1 ? xtd::version {major, minor} : revision == -1 ? xtd::version {major, minor, build} : xtd::version {major, minor, build, revision};
+  };
+  
   static xtd::operating_system os(xtd::platform_id::unknown, xtd::version());
-  if (os.platform() == xtd::platform_id::unknown) {
-    auto major = 0, minor = 0, build = 0, revision = 0;
-    native::environment::get_os_version(major, minor, build, revision);
-    auto distribution_major = 0, distribution_minor = 0, distribution_build = 0, distribution_revision = 0;
-    native::environment::get_distribution_version(distribution_major, distribution_minor, distribution_build, distribution_revision);
-    os = operating_system(static_cast<platform_id>(native::environment::get_os_platform_id()), xtd::version(major, minor, build, revision), native::environment::get_service_pack(), native::environment::get_desktop_environment(), native::environment::get_desktop_theme(), native::environment::is_os_64_bit(), native::environment::get_distribution_name(), xtd::version(distribution_major, distribution_minor, distribution_build, distribution_revision));
-  }
+  if (os.platform() == xtd::platform_id::unknown)
+    os = operating_system(static_cast<platform_id>(native::environment::get_os_platform_id()), to_version(native::environment::get_os_version), native::environment::get_service_pack(), native::environment::get_desktop_environment(), native::environment::get_desktop_theme(), native::environment::is_os_64_bit(), xtd::distribution {native::environment::get_distribution_name(), to_version(native::environment::get_distribution_version), native::environment::get_distribution_code_name(), native::environment::get_distribution_description()});
   return os;
 }
 

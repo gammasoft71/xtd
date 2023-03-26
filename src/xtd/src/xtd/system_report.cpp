@@ -57,6 +57,11 @@ namespace {
     report += ustring::format("{}Service pack: {}{}", indent_string(indent + 1), operating_system.service_pack(), environment::new_line());
     report += ustring::format("{}Desktop environment: {}{}", indent_string(indent + 1), operating_system.desktop_environment(), environment::new_line());
     report += ustring::format("{}64 bit: {}{}", indent_string(indent + 1), operating_system.is_64_bit(), environment::new_line());
+    report += ustring::format("{}Distribution: {}", indent_string(indent + 1), environment::new_line());
+    report += ustring::format("{}Name: {}{}", indent_string(indent + 2), operating_system.distribution().name(), environment::new_line());
+    report += ustring::format("{}Version: {}{}", indent_string(indent + 2), operating_system.distribution().version(), environment::new_line());
+    report += ustring::format("{}Code name: {}{}", indent_string(indent + 2), operating_system.distribution().code_name(), environment::new_line());
+    report += ustring::format("{}Description: {}{}", indent_string(indent + 2), operating_system.distribution().description(), environment::new_line());
     return report + environment::new_line();
   }
   

@@ -51,6 +51,7 @@ add_sources(
   include/xtd/day_of_week.h
   include/xtd/debugstreambuf.h
   include/xtd/delegate.h
+  include/xtd/distribution.h
   include/xtd/divided_by_zero_exception.h
   include/xtd/domain_exception.h
   include/xtd/enum.h
@@ -320,6 +321,7 @@ add_sources(
   src/xtd/convert_string.cpp
   src/xtd/cpp_language.cpp
   src/xtd/date_time.cpp
+  src/xtd/distribution.cpp
   src/xtd/environment.cpp
   src/xtd/event_args.cpp
   src/xtd/guid.cpp

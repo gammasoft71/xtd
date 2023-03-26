@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <cstdlib>
+#include <map>
 #include <numeric>
 #include <thread>
 
@@ -42,6 +43,70 @@ namespace {
     __environment_argc = argc;
     __environment_argv = argv;
   }
+
+  std::string macos_codename(const std::string& version) {
+    static auto codename = std::string(""); //xtd::native::unix::strings::replace(create_process("awk '/SOFTWARE LICENSE AGREEMENT FOR macOS/' '/System/Library/CoreServices/Setup Assistant.app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf' | awk -F 'macOS ' '{print $NF}' | awk '{print substr($0, 0, length($0)-1)}'"), "\n", "");
+    if (!codename.empty()) return codename;
+    auto versions = xtd::native::unix::strings::split(version, {'.'});
+    if (versions.size() < 2) return "";
+    int_least32_t major = std::stoi(versions[0]);
+    int_least32_t minor = std::stoi(versions[1]);
+    if (major == 10 && minor == 0) codename = "Cheetah";
+    else if (major == 10 && minor == 1) codename = "Puma";
+    else if (major == 10 && minor == 2) codename = "Jaguar";
+    else if (major == 10 && minor == 3) codename = "Panther";
+    else if (major == 10 && minor == 4) codename = "Tiger";
+    else if (major == 10 && minor == 5) codename = "Leopard";
+    else if (major == 10 && minor == 6) codename = "Snow Leopard";
+    else if (major == 10 && minor == 7) codename = "Lion";
+    else if (major == 10 && minor == 8) codename = "Montain Lion";
+    else if (major == 10 && minor == 9) codename = "Mavericks";
+    else if (major == 10 && minor == 10) codename = "Yosemite";
+    else if (major == 10 && minor == 11) codename = "El Capitan";
+    else if (major == 10 && minor == 12) codename = "Sierra";
+    else if (major == 10 && minor == 13) codename = "High Sierra";
+    else if (major == 10 && minor == 14) codename = "Mojave";
+    else if (major == 10 && minor == 15) codename = "Catalina";
+    else if (major == 11) codename = "Big Sur";
+    else if (major == 12) codename = "Monterey";
+    else if (major == 13) codename = "Ventura";
+ return codename;
+  }
+  
+  using distribution_dictionary = std::map<std::string, std::string>;
+  
+  const distribution_dictionary& get_distribution_key_values() {
+    static distribution_dictionary distribution_key_values;
+    if (!distribution_key_values.empty()) return distribution_key_values;
+#if defined(__APPLE__)
+    auto distribution_string = create_process("sw_vers");
+    if (distribution_string.empty()) return distribution_key_values;
+    distribution_string = xtd::native::unix::strings::replace(distribution_string, "ProductName:\t\t", "NAME=\"");
+    distribution_string = xtd::native::unix::strings::replace(distribution_string, "ProductVersion:\t\t", "VERSION_ID=\"");
+    distribution_string = xtd::native::unix::strings::replace(distribution_string, "BuildVersion:\t\t", "VERSION_BUILD=\"");
+    distribution_string = xtd::native::unix::strings::replace(distribution_string, "\n", "\"\n");
+#else
+    auto distribution_string = create_process("cat cat /etc/os-release");
+#endif
+    auto distribution_lines = xtd::native::unix::strings::split(distribution_string, {'\n'});
+    for (auto distribution_line : distribution_lines) {
+      auto key_value =xtd::native::unix::strings::split(distribution_line, {'='});
+      if (key_value.size() != 2) continue;
+      distribution_key_values.insert({key_value[0], xtd::native::unix::strings::replace(key_value[1], "\"", "")});
+    }
+#if defined(__APPLE__)
+    auto codename = macos_codename(distribution_key_values["VERSION_ID"]);
+    distribution_key_values.insert({"BUG_REPORT_URL", "https://support.apple.com/macos"});
+    distribution_key_values.insert({"HOME_URL", "https://www.apple.com/macos"});
+    distribution_key_values.insert({"ID", xtd::native::unix::strings::to_lower(distribution_key_values["NAME"])});
+    distribution_key_values.insert({"ID_LIKE", distribution_key_values["ID"]});
+    distribution_key_values.insert({"PRETTY_NAME", "Apple " + distribution_key_values["NAME"] + " " + distribution_key_values["VERSION_ID"] + " (" + codename + ")"});
+    distribution_key_values.insert({"VERSION", distribution_key_values["VERSION_ID"] + " (" + codename + ")"});
+    distribution_key_values.insert({"VERSION_CODENAME", codename});
+#endif
+
+    return distribution_key_values;
+  }
 }
 
 std::vector<std::string> environment::get_command_line_args() {
@@ -74,21 +139,30 @@ std::string environment::get_desktop_theme() {
   #endif
 }
 
-std::string environment::get_distribution_name() {
-#if defined(__APPLE__)
-  return "macOS";
-#else
-  return "";
-#endif
+std::string environment::get_distribution_code_name() {
+  auto name_it = get_distribution_key_values().find("VERSION_CODENAME");
+  if (name_it == get_distribution_key_values().end()) return "";
+  return name_it->second;
 }
 
+std::string environment::get_distribution_description() {
+  auto name_it = get_distribution_key_values().find("PRETTY_NAME");
+  if (name_it == get_distribution_key_values().end()) return "";
+  return name_it->second;
+}
+
+std::string environment::get_distribution_name() {
+  auto name_it = get_distribution_key_values().find("NAME");
+  if (name_it == get_distribution_key_values().end()) return "Unknown";
+  return name_it->second;
+}
 
 void environment::get_distribution_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
-#if defined(__APPLE__)
-  get_os_version(major, minor, build, revision);
-#else
-  get_os_version(major, minor, build, revision);
-#endif
+  auto name_it = get_distribution_key_values().find("VERSION_ID");
+  if (name_it == get_distribution_key_values().end()) return;
+  auto versions = xtd::native::unix::strings::split(name_it->second, {'.'});
+  if (versions.size() >= 1) major = std::stoi(versions[0]);
+  if (versions.size() >= 2) minor = std::stoi(versions[1]);
 }
 
 std::string environment::get_environment_variable(const std::string& variable, int_least32_t target) {
