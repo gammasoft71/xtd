@@ -51,10 +51,9 @@ std::string environment::get_distribution_code_name() {
 }
 
 std::string environment::get_distribution_description() {
-  //int_least32_t major = -1, int_least32_t minor = -1, int_least32_t build = -1, int_least32_t revision = -1;
-  //get_distribution_version(major, minor, build, revision);
-  //return "Microsoft " + get_distribution_name() + " [Version" +  + "]";
-  return "Microsoft " + get_distribution_name() + " [Version 10.0.22621.1413]";
+  int_least32_t major = -1, minor = -1, build = -1, revision = -1;
+  get_os_version(major, minor, build, revision);
+  return "Microsoft " + get_distribution_name() + " [Version" + std::to_string(major) + "." + std::to_string(minor) + "." + std::to_string(build) + "." + std::to_string(revision) + "]";
 }
 
 std::string environment::get_distribution_name() {
@@ -62,7 +61,8 @@ std::string environment::get_distribution_name() {
 }
 
 void environment::get_distribution_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
-  get_os_version(major, minor, build, revision);
+  auto dummy = -1;
+  get_os_version(major, minor, dummy, dummy);
 }
 
 std::string environment::get_environment_variable(const std::string& variable, int_least32_t target) {
