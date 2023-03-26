@@ -277,7 +277,6 @@
 #include "xtd/forms/tool_bar_images.h"
 #include "xtd/forms/tool_bar_renderer.h"
 #include "xtd/forms/tool_bar_text_align.h"
-#include "xtd/forms/toolkit.h"
 #include "xtd/forms/trace_form_base.h"
 #include "xtd/forms/trace_form.h"
 #include "xtd/forms/trace_message_box.h"

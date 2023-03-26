@@ -92,6 +92,7 @@ namespace {
     auto toolkit = system_report::toolkit();
     report += ustring::format("{}Name: {}{}", indent_string(indent + 1), toolkit.name(), environment::new_line());
     report += ustring::format("{}Version: {}{}", indent_string(indent + 1), toolkit.version(), environment::new_line());
+    report += ustring::format("{}Description: {}{}", indent_string(indent + 1), toolkit.description(), environment::new_line());
     return report + environment::new_line();
   }
   

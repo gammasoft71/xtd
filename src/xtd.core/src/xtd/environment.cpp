@@ -13,6 +13,8 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <vector>
 
+std::optional<xtd::toolkit> __xtd_toolkit__;
+
 // Workaround : Add "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin" to PATH if needed on macOS when debugging on Xcode...
 struct __update__macos_path__ {
   __update__macos_path__() {
@@ -256,6 +258,11 @@ size_t environment::system_page_size() {
 
 std::chrono::milliseconds environment::tick_count() {
   return std::chrono::milliseconds(native::environment::get_tick_count());
+}
+
+toolkit environment::toolkit_version() {
+  //return toolkit {drawing::native::toolkit::name(), drawing::native::toolkit::version()};
+  return __xtd_toolkit__.value_or(toolkit {});
 }
 
 bool environment::user_administrator() {

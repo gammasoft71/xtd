@@ -13,7 +13,6 @@
 #include "left_right_alignment.h"
 #include "power_status.h"
 #include "screen_orientation.h"
-#include "toolkit.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -508,10 +507,6 @@ namespace xtd {
       /// @return The height, in pixels, of a tool window caption in pixels.
       static int32 tool_window_caption_height();
       
-      /// @brief Gets the current toolkit version.
-      /// @return The current toolkit version.
-      static toolkit toolkit_version();
-
       /// @brief Gets a value indicating whether user interface (UI) effects are enabled or disabled.
       /// @return true if UI effects are enabled; otherwise, false.
       /// @remarks UI effects include animation, fading, hot tracking, and smooth scrolling of system controls, and drawing a shadow under the mouse cursor. When UI effects are disabled, these features are disabled. When UI effects are enabled, only the effects configured as active for the current user are enabled.

@@ -13,12 +13,17 @@
 #include <xtd/version.h>
 #include <xtd/forms_native_export.h>
 
+/// @cond
+struct __init_toolkit__;
+/// @endcond
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @cond
-    class label;
+    class link_label;
+    class paint_event_args;
     /// @endcond
     
     /// @brief The xtd::forms::native namespace contains internal native API definitions to access underlying toolkits used by xtd.forms library.
@@ -33,7 +38,10 @@ namespace xtd {
       /// @remarks No member for the moment.
       /// @warning Internal use only
       class forms_native_export_ toolkit final static_ {
-      public:
+        friend struct ::__init_toolkit__;
+        friend class xtd::forms::link_label;
+        friend class xtd::forms::paint_event_args;
+      protected:
         /// @name Protected methods
         
         /// @{
