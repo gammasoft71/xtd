@@ -141,16 +141,40 @@ std::string environment::get_desktop_theme() {
   #endif
 }
 
-std::string environment::get_distribution_code_name() {
-  auto name_it = get_distribution_key_values().find("VERSION_CODENAME");
+std::string environment::get_distribution_bug_report() {
+  auto name_it = get_distribution_key_values().find("BUG_REPORT_URL");
   if (name_it == get_distribution_key_values().end()) return "";
   return name_it->second;
 }
 
+std::string environment::get_distribution_code_name() {
+  auto iterator = get_distribution_key_values().find("VERSION_CODENAME");
+  if (iterator == get_distribution_key_values().end()) return "";
+  return iterator->second;
+}
+
 std::string environment::get_distribution_description() {
-  auto name_it = get_distribution_key_values().find("PRETTY_NAME");
+  auto iterator = get_distribution_key_values().find("PRETTY_NAME");
+  if (iterator == get_distribution_key_values().end()) return "";
+  return iterator->second;
+}
+
+std::string environment::get_distribution_home() {
+  auto name_it = get_distribution_key_values().find("HOME_URL");
   if (name_it == get_distribution_key_values().end()) return "";
   return name_it->second;
+}
+
+std::string environment::get_distribution_id() {
+  auto iterator = get_distribution_key_values().find("ID");
+  if (iterator == get_distribution_key_values().end()) return "";
+  return iterator->second;
+}
+
+std::vector<std::string> environment::get_distribution_like_ids() {
+  auto iterator = get_distribution_key_values().find("ID_LIKE");
+  if (iterator == get_distribution_key_values().end()) return {};
+  return unix::strings::split(iterator->second, {' '});
 }
 
 std::string environment::get_distribution_name() {
@@ -165,6 +189,12 @@ void environment::get_distribution_version(int_least32_t& major, int_least32_t& 
   auto versions = xtd::native::unix::strings::split(name_it->second, {'.'});
   if (versions.size() >= 1) major = std::stoi(versions[0]);
   if (versions.size() >= 2) minor = std::stoi(versions[1]);
+}
+
+std::string environment::get_distribution_version_string() {
+  auto iterator = get_distribution_key_values().find("VERSION");
+  if (iterator == get_distribution_key_values().end()) return "";
+  return iterator->second;
 }
 
 std::string environment::get_environment_variable(const std::string& variable, int_least32_t target) {

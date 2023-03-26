@@ -215,8 +215,10 @@ xtd::operating_system environment::os_version() noexcept {
   };
   
   static xtd::operating_system os(xtd::platform_id::unknown, xtd::version());
-  if (os.platform() == xtd::platform_id::unknown)
-    os = operating_system(static_cast<platform_id>(native::environment::get_os_platform_id()), to_version(native::environment::get_os_version), native::environment::get_service_pack(), native::environment::get_desktop_environment(), native::environment::get_desktop_theme(), native::environment::is_os_64_bit(), xtd::distribution {native::environment::get_distribution_name(), to_version(native::environment::get_distribution_version), native::environment::get_distribution_code_name(), native::environment::get_distribution_description()});
+  if (os.platform() == xtd::platform_id::unknown) {
+    auto like_ids = native::environment::get_distribution_like_ids();
+    os = operating_system(static_cast<platform_id>(native::environment::get_os_platform_id()), to_version(native::environment::get_os_version), native::environment::get_service_pack(), native::environment::get_desktop_environment(), native::environment::get_desktop_theme(), native::environment::is_os_64_bit(), xtd::distribution {native::environment::get_distribution_name(), to_version(native::environment::get_distribution_version), native::environment::get_distribution_code_name(), native::environment::get_distribution_description(), native::environment::get_distribution_id(), {like_ids.begin(), like_ids.end()}, native::environment::get_distribution_version_string(), xtd::uri {native::environment::get_distribution_home()}, xtd::uri {native::environment::get_distribution_bug_report()}});
+  }
   return os;
 }
 

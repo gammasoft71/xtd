@@ -46,6 +46,10 @@ std::string environment::get_desktop_theme() {
   return value == 0 ? "windows" : "windows dark";
 }
 
+std::string environment::get_distribution_bug_report() {
+  return "https://support.microsoft.com/windows";
+}
+
 std::string environment::get_distribution_code_name() {
   return "";
 }
@@ -56,6 +60,18 @@ std::string environment::get_distribution_description() {
   return "Microsoft " + get_distribution_name() + " [Version" + std::to_string(major) + "." + std::to_string(minor) + "." + std::to_string(build) + "." + std::to_string(revision) + "]";
 }
 
+std::string environment::get_distribution_home() {
+  return "https://www.microsoft.com/windows";
+}
+
+std::string environment::get_distribution_id() {
+  return "windows";
+}
+
+std::vector<std::string> environment::get_distribution_like_ids() {
+  return {"windows"};
+}
+
 std::string environment::get_distribution_name() {
   return "Windows";
 }
@@ -63,6 +79,12 @@ std::string environment::get_distribution_name() {
 void environment::get_distribution_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
   auto dummy = -1;
   get_os_version(major, minor, dummy, dummy);
+}
+
+std::string environment::get_distribution_version_string() {
+  int_least32_t major = -1, minor = -1, build = -1, revision = -1;
+  get_os_version(major, minor, build, revision);
+  return "[Version" + std::to_string(major) + "." + std::to_string(minor) + "." + std::to_string(build) + "." + std::to_string(revision) + "]";
 }
 
 std::string environment::get_environment_variable(const std::string& variable, int_least32_t target) {
