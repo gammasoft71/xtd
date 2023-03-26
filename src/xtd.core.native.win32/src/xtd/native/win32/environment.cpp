@@ -46,6 +46,14 @@ std::string environment::get_desktop_theme() {
   return value == 0 ? "windows" : "windows dark";
 }
 
+std::string environment::get_distribution_name() {
+  return "Windows";
+}
+
+void environment::get_distribution_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
+  get_os_version(major, minor, build, revision);
+}
+
 std::string environment::get_environment_variable(const std::string& variable, int_least32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
     DWORD environent_variable_size = 65535;

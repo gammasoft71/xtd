@@ -49,16 +49,16 @@ std::vector<std::string> environment::get_command_line_args() {
 }
 
 std::string environment::get_desktop_environment() {
-  #if defined(__APPLE__)
+#if defined(__APPLE__)
   return "macos";
-  #else
+#else
   auto current_desktop = get_environment_variable("XDG_CURRENT_DESKTOP", ENVIRONMENT_VARIABLE_TARGET_PROCESS);
   if (current_desktop == "") current_desktop = get_environment_variable("XDG_DATA_DIRS", ENVIRONMENT_VARIABLE_TARGET_PROCESS);
   for (auto environment_desktop : {"budgie", "cinnamon", "deepin", "Enlightenment", "étoilé", "gnome", "kde", "lxqt", "mate", "pantheon", "razor", "unity", "xfce"}) {
     if (unix::strings::contains(unix::strings::to_lower(current_desktop), environment_desktop)) return environment_desktop;
   }
   return "";
-  #endif
+#endif
 }
 
 std::string environment::get_desktop_theme() {
@@ -72,6 +72,23 @@ std::string environment::get_desktop_theme() {
     current_theme = unix::strings::substring(current_theme, 1, current_theme.size() - 3);
   return current_theme;
   #endif
+}
+
+std::string environment::get_distribution_name() {
+#if defined(__APPLE__)
+  return "macOS";
+#else
+  return "";
+#endif
+}
+
+
+void environment::get_distribution_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
+#if defined(__APPLE__)
+  get_os_version(major, minor, build, revision);
+#else
+  get_os_version(major, minor, build, revision);
+#endif
 }
 
 std::string environment::get_environment_variable(const std::string& variable, int_least32_t target) {

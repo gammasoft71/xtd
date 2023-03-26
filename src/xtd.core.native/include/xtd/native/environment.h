@@ -61,6 +61,19 @@ namespace xtd {
       /// @remarks Return "" if not found or defined.
       /// @warning Internal use only
       static std::string get_desktop_theme();
+      /// @brief Gets the distribution name.
+      /// @return std::string A string containing distribution name.
+      /// @remarks Returns "Windows" on Windows, "macOS" on macOS, "Ubuntu", "Rocky Linux", ...
+      /// @remarks Return "" if not found or defined.
+      /// @warning Internal use only
+      static std::string get_distribution_name();
+      /// @brief Gets a xtd::version object that identifies the distribution.
+      /// @param major return the major version.
+      /// @param minor return the minor version, build, and revision numbers for the distribution.
+      /// @param build return the build.
+      /// @param revision return the revision numbers for the distribution.
+      /// @warning Internal use only
+      static void get_distribution_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision);
       /// @brief Retrieves all environment variable names and their values from the current process, or from the Windows operating system registry key for the current user or local machine.
       /// @param target The environment variable target (see environment_variable_target.h file).
       /// @return std::map A dictionary that contains all environment variable names and their values from the source specified by the target parameter; otherwise, an empty dictionary if no environment variables are found.

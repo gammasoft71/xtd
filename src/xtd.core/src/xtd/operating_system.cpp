@@ -17,12 +17,26 @@ operating_system::operating_system(xtd::platform_id platform, const xtd::version
 operating_system::operating_system(xtd::platform_id platform, const xtd::version& version, const xtd::ustring& service_pack, const xtd::ustring& desktop_environment, const xtd::ustring& desktop_theme, bool is_64_bit) : platform_(platform), version_(version), service_pack_(service_pack), desktop_environment_(desktop_environment), desktop_theme_(desktop_theme), is_64_bit_(is_64_bit) {
 }
 
+operating_system::operating_system(xtd::platform_id platform, const xtd::version& version, const xtd::ustring& service_pack, const xtd::ustring& desktop_environment, const xtd::ustring& desktop_theme, bool is_64_bit, const xtd::ustring& distribution_name) : platform_(platform), version_(version), service_pack_(service_pack), desktop_environment_(desktop_environment), desktop_theme_(desktop_theme), distribution_name_(distribution_name), is_64_bit_(is_64_bit) {
+}
+
+operating_system::operating_system(xtd::platform_id platform, const xtd::version& version, const xtd::ustring& service_pack, const xtd::ustring& desktop_environment, const xtd::ustring& desktop_theme, bool is_64_bit, const xtd::ustring& distribution_name, const xtd::version& distribution_version) : platform_(platform), version_(version), service_pack_(service_pack), desktop_environment_(desktop_environment), desktop_theme_(desktop_theme), distribution_name_(distribution_name), distribution_version_(distribution_version), is_64_bit_(is_64_bit) {
+}
+
 xtd::ustring operating_system::desktop_environment() const noexcept {
   return desktop_environment_;
 }
 
 xtd::ustring operating_system::desktop_theme() const noexcept {
   return desktop_theme_;
+}
+
+xtd::ustring operating_system::distribution_name() const noexcept {
+  return distribution_name_;
+}
+
+xtd::version operating_system::distribution_version() const noexcept {
+  return distribution_version_.value_or(version_);
 }
 
 xtd::ustring operating_system::name() const noexcept {
