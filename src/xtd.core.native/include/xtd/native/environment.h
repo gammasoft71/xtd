@@ -61,6 +61,11 @@ namespace xtd {
       /// @remarks Return "" if not found or defined.
       /// @warning Internal use only
       static std::string get_desktop_theme();
+      /// @brief Gets the distribution bug report url.
+      /// @return std::string A string containing distribution bug report url.
+      /// @remarks Return "" if not found or defined.
+      /// @warning Internal use only
+      static std::string get_distribution_bug_report();
       /// @brief Gets the distribution code name.
       /// @return std::string A string containing distribution code name.
       /// @remarks Return "" if not found or defined.
@@ -71,6 +76,22 @@ namespace xtd {
       /// @remarks Return "" if not found or defined.
       /// @warning Internal use only
       static std::string get_distribution_description();
+      /// @brief Gets the distribution home url.
+      /// @return std::string A string containing distribution home url.
+      /// @remarks Returns "Windows" on Windows, "macOS" on macOS, "Ubuntu", "Rocky Linux", ...
+      /// @remarks Return "" if not found or defined.
+      /// @warning Internal use only
+      static std::string get_distribution_home();
+      /// @brief Gets the distribution identifier.
+      /// @return std::string A string containing distribution identifier.
+      /// @remarks Return "" if not found or defined.
+      /// @warning Internal use only
+      static std::string get_distribution_id();
+      /// @brief Gets the distribution like identifiers array.
+      /// @return std::string A string containing distribution like identifiers array.
+      /// @remarks Return {} if not found or defined.
+      /// @warning Internal use only
+      static std::vector<std::string> get_distribution_like_ids();
       /// @brief Gets the distribution name.
       /// @return std::string A string containing distribution name.
       /// @remarks Returns "Windows" on Windows, "macOS" on macOS, "Ubuntu", "Rocky Linux", ...
@@ -84,6 +105,11 @@ namespace xtd {
       /// @param revision return the revision numbers for the distribution.
       /// @warning Internal use only
       static void get_distribution_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision);
+      /// @brief Gets the distribution version string.
+      /// @return std::string A string containing distribution version string.
+      /// @remarks Return "" if not found or defined.
+      /// @warning Internal use only
+      static std::string get_distribution_version_string();
       /// @brief Retrieves all environment variable names and their values from the current process, or from the Windows operating system registry key for the current user or local machine.
       /// @param target The environment variable target (see environment_variable_target.h file).
       /// @return std::map A dictionary that contains all environment variable names and their values from the source specified by the target parameter; otherwise, an empty dictionary if no environment variables are found.
