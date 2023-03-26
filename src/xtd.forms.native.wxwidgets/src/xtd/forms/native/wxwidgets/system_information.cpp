@@ -200,3 +200,11 @@ xtd::drawing::size system_information::frame_border_size() {
   return { 0, 0 };
 #endif
 }
+
+bool system_information::is_operating_system_double_buffered() {
+#if defined(__WXMSW__)
+  return false;
+#else
+  return true;
+#endif
+}

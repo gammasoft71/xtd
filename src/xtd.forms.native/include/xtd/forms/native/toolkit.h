@@ -22,8 +22,7 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @cond
-    class link_label;
-    class paint_event_args;
+    class system_information;
     /// @endcond
     
     /// @brief The xtd::forms::native namespace contains internal native API definitions to access underlying toolkits used by xtd.forms library.
@@ -39,8 +38,6 @@ namespace xtd {
       /// @warning Internal use only
       class forms_native_export_ toolkit final static_ {
         friend struct ::__init_toolkit__;
-        friend class xtd::forms::link_label;
-        friend class xtd::forms::paint_event_args;
       protected:
         /// @name Protected methods
         
@@ -59,11 +56,6 @@ namespace xtd {
         /// @return The version of the toolkit.
         /// @warning Internal use only
         static xtd::version version();
-        
-        /// @brief Gets the operating system is natively double buffered.
-        /// @return true is operating system is natively double buffered; otherwise false.
-        /// @warning Internal use only
-        static bool is_operating_system_double_buffered();
         /// @}
       };
     }

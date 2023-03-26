@@ -242,7 +242,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether menu fade or slide animation features are enabled.
       /// @return true if menu fade or slide animation is enabled; otherwise, false.
       /// @remarks The is_menu_animation_enabled property indicates whether either of the fade or slide animation features of system control menus is enabled.
-      /// @remarks If the value of this property is true, the IsMenuFadeEnabled property indicates whether menus use fade or slide animation.
+      /// @remarks If the value of this property is true, the xtd::forms::system_information::is_menu_fade_enabled property indicates whether menus use fade or slide animation.
       static bool is_menu_animation_enabled();
       
       /// @brief Gets a value indicating whether menu fade animation is enabled.
@@ -255,7 +255,12 @@ namespace xtd {
       /// @return true if window minimize and restore animation is enabled; otherwise, false.
       /// @remarks The is_minimize_restore_animation_enabled property indicates whether the window minimize and restore sequence is animated.
       static bool is_minimize_restore_animation_enabled();
-      
+
+      /// @brief Gets the operating system is natively double buffered.
+      /// @return true is operating system is natively double buffered; otherwise false.
+      /// @remarks The xtd::drawing::graphics is double_buffered.
+      static bool is_operating_system_double_buffered();
+
       /// @brief Gets a value indicating whether the selection fade effect is enabled.
       /// @return true if the selection fade effect is enabled; otherwise, false.
       /// @remarks The is_selection_fade_enabled property indicates whether the selection fade effect is enabled. The selection fade effect causes a menu item selected by the user to remain on the screen briefly while fading out after the menu is dismissed.
