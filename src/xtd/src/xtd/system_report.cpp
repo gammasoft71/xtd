@@ -50,6 +50,12 @@ namespace {
   }
   
   string generate_operating_system_string_report(int32 indent) {
+    auto to_time_since_boot_string = [](auto time_since_boot) {
+      auto days = std::chrono::duration_cast<std::chrono::days>(time_since_boot);
+      auto hours = std::chrono::duration_cast<std::chrono::hours>(time_since_boot);
+      auto minutes = std::chrono::duration_cast<std::chrono::minutes>(time_since_boot);
+      return ustring::format("{}{}{}", days.count() ? ustring::format("{} days, ", days.count()) : "", days.count() || hours.count()  % 24 ? ustring::format("{} hours, ", hours.count() % 24) : "", ustring::format("{} minutes", minutes.count() % 60));
+    };
     std::string report = ustring::format("{}Operating System{}", indent_string(indent), environment::new_line());
     auto operating_system = system_report::operating_system();
     report += ustring::format("{}Name: {}{}", indent_string(indent + 1), operating_system.name(), environment::new_line());
@@ -57,11 +63,16 @@ namespace {
     report += ustring::format("{}Service pack: {}{}", indent_string(indent + 1), operating_system.service_pack(), environment::new_line());
     report += ustring::format("{}Desktop environment: {}{}", indent_string(indent + 1), operating_system.desktop_environment(), environment::new_line());
     report += ustring::format("{}64 bit: {}{}", indent_string(indent + 1), operating_system.is_64_bit(), environment::new_line());
+    report += ustring::format("{}Time since boot: {}{}", indent_string(indent + 1), to_time_since_boot_string(environment::tick_count()), environment::new_line());
     report += ustring::format("{}Distribution: {}", indent_string(indent + 1), environment::new_line());
     report += ustring::format("{}Name: {}{}", indent_string(indent + 2), operating_system.distribution().name(), environment::new_line());
     report += ustring::format("{}Version: {}{}", indent_string(indent + 2), operating_system.distribution().version(), environment::new_line());
     report += ustring::format("{}Code name: {}{}", indent_string(indent + 2), operating_system.distribution().code_name(), environment::new_line());
     report += ustring::format("{}Description: {}{}", indent_string(indent + 2), operating_system.distribution().description(), environment::new_line());
+    report += ustring::format("{}Id: {}{}", indent_string(indent + 2), operating_system.distribution().id(), environment::new_line());
+    report += ustring::format("{}Like ids: {{{}}}{}", indent_string(indent + 2), ustring::join(", ", operating_system.distribution().like_ids()), environment::new_line());
+    report += ustring::format("{}Home: {}{}", indent_string(indent + 2), operating_system.distribution().home(), environment::new_line());
+    report += ustring::format("{}Bug repport: {}{}", indent_string(indent + 2), operating_system.distribution().bug_repport(), environment::new_line());
     return report + environment::new_line();
   }
   
