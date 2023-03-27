@@ -312,7 +312,7 @@ namespace xtd {
   /// @endcond
 }
 
-#include "box_char.h"
-#include "box_floating_point.h"
-#include "box_integer.h"
+//#include "box_integer.h"
+//#include "box_floating_point.h"
+//#include "box_char.h"
 

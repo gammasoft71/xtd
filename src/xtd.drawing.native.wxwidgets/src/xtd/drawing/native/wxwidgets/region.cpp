@@ -8,7 +8,7 @@
 #include <wx/colour.h>
 #include <wx/region.h>
 #include <xtd/as.h>
-#include <xtd/box.h>
+#include <xtd/box_floating_point.h>
 
 using namespace std;
 using namespace xtd;

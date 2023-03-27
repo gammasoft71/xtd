@@ -30,11 +30,11 @@ namespace xtd {
   /// console::write_line("result = {}", result); // Display: result = 3.14;
   /// @endcode
   template<typename type_t>
-  class box_floating_point : public box_integer<type_t> {
+  class box_floating_point : public xtd::box_integer<type_t> {
   public:
     /// @cond
     box_floating_point() = default;
-    box_floating_point(const type_t& value) : box_integer<type_t>(value) {}
+    box_floating_point(const type_t& value) : xtd::box_integer<type_t>(value) {}
     box_floating_point(const box_floating_point&) = default;
     box_floating_point(box_floating_point&&) = default;
     box_floating_point& operator =(const box_floating_point&) = default;
