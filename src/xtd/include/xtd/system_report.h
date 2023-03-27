@@ -72,7 +72,7 @@ namespace xtd {
     
     static xtd::diagnostics::stack_trace stack_trace(size_t skip_frames) noexcept {return xtd::diagnostics::stack_trace(skip_frames, true);}
     
-    static xtd_library_collection xtd_libraries() noexcept;
+    static const xtd_library_collection& xtd_libraries() noexcept;
     
     static xtd::operating_system operating_system() noexcept {return xtd::environment::os_version();}
     
@@ -88,13 +88,13 @@ namespace xtd {
     
     static environment_variable_collection environment_variables() noexcept;
     
-    static special_folder_collection special_folders() noexcept;
+    static const special_folder_collection& special_folders() noexcept;
     
-    static system_color_collection system_colors() noexcept;
+    static const system_color_collection& system_colors() noexcept;
     
-    static system_font_family_collection generic_font_families() noexcept;
+    static const system_font_family_collection& generic_font_families() noexcept;
     
-    static system_font_collection system_fonts() noexcept;
+    static const system_font_collection& system_fonts() noexcept;
     
     static std::vector<xtd::forms::screen> screens() noexcept {return xtd::forms::screen::all_screens();}
     
