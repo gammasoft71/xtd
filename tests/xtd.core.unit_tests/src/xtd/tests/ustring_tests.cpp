@@ -448,6 +448,10 @@ namespace xtd::tests {
       assert::are_equal("abcdef", ustring("ABCDEF").to_lower(), csf_);
     }
     
+    void test_method_(to_title_case) {
+      assert::are_equal("Abc DEF Ghi Jkl Mno", ustring("abc DEF gHi JKl mnO").to_title_case(), csf_);
+    }
+    
     void test_method_(to_upper) {
       assert::are_equal("ABCDEF", ustring("abcdef").to_upper(), csf_);
     }

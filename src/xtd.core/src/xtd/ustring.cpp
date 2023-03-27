@@ -937,6 +937,13 @@ ustring ustring::to_lower() const noexcept {
   return result;
 }
 
+ustring ustring::to_title_case() const noexcept {
+  auto words = split({' '});
+  for (auto& word : words)
+    if (word.size() && word != word.to_upper()) word = static_cast<char>(std::toupper(word[0])) + word.substring(1).to_lower();
+  return ustring::join(" ", words);
+}
+
 ustring ustring::to_string() const noexcept {
   return *this;
 }
