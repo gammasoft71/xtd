@@ -168,8 +168,9 @@ namespace {
   }
 }
 
-xtd::system_report::xtd_library_collection system_report::xtd_libraries() noexcept {
-  return {{"xtd.core", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.drawing", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.forms", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.tunit", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)},};
+const xtd::system_report::xtd_library_collection& system_report::xtd_libraries() noexcept {
+  static xtd_library_collection libraries {{"xtd.core", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.drawing", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.forms", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.tunit", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)},};
+  return libraries;
 }
 
 system_report::environment_variable_collection system_report::environment_variables() noexcept {
@@ -179,7 +180,7 @@ system_report::environment_variable_collection system_report::environment_variab
   return environment_variables;
 }
 
-system_report::special_folder_collection system_report::special_folders() noexcept {
+const system_report::special_folder_collection& system_report::special_folders() noexcept {
   static auto special_folders = enum_object<>::get_values<environment::special_folder>();
   static special_folder_collection folders;
   if (!folders.empty()) return folders;
@@ -187,19 +188,21 @@ system_report::special_folder_collection system_report::special_folders() noexce
   return folders;
 }
 
-system_report::system_color_collection system_report::system_colors() noexcept {
+const system_report::system_color_collection& system_report::system_colors() noexcept {
   static system_color_collection colors;
   if (!colors.empty()) return colors;
   for_each(system_colors::get_colors().begin(), system_colors::get_colors().end(), [&](auto color) {colors.emplace_back(color.name().replace("_", " ").to_title_case(), drawing::color::from_argb(color.to_argb()));});
   return colors;
 }
 
-system_report::system_font_family_collection system_report::generic_font_families() noexcept {
-  return {{"Monospace", font_family::generic_monospace()}, {"Sans Serif", font_family::generic_sans_serif()}, {"Serif", font_family::generic_serif()},};
+const system_report::system_font_family_collection& system_report::generic_font_families() noexcept {
+  static system_font_family_collection families {{"Monospace", font_family::generic_monospace()}, {"Sans Serif", font_family::generic_sans_serif()}, {"Serif", font_family::generic_serif()},};
+  return families;
 }
 
-system_report::system_font_collection system_report::system_fonts() noexcept {
-  return {{"Caption", drawing::system_fonts::caption_font()}, {"Default", drawing::system_fonts::default_font()}, {"Dialog", drawing::system_fonts::dialog_font()}, {"Icon title", drawing::system_fonts::icon_title_font()}, {"Menu", drawing::system_fonts::menu_font()}, {"Message box", drawing::system_fonts::message_box_font()}, {"Small caption", drawing::system_fonts::small_caption_font()}, {"Status", drawing::system_fonts::status_font()}, {"Tool", drawing::system_fonts::tool_font()},};
+const system_report::system_font_collection& system_report::system_fonts() noexcept {
+  static system_font_collection fonts {{"Caption", drawing::system_fonts::caption_font()}, {"Default", drawing::system_fonts::default_font()}, {"Dialog", drawing::system_fonts::dialog_font()}, {"Icon title", drawing::system_fonts::icon_title_font()}, {"Menu", drawing::system_fonts::menu_font()}, {"Message box", drawing::system_fonts::message_box_font()}, {"Small caption", drawing::system_fonts::small_caption_font()}, {"Status", drawing::system_fonts::status_font()}, {"Tool", drawing::system_fonts::tool_font()},};
+  return fonts;
 }
 
 system_report::system_information_collection system_report::system_informations() noexcept {
