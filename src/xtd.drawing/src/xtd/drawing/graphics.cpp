@@ -5,7 +5,7 @@
 #include "../../../include/xtd/drawing/solid_brush.h"
 #include <xtd/argument_exception.h>
 #include <xtd/as.h>
-#include <xtd/box.h>
+#include <xtd/box_floating_point.h>
 #include <xtd/math.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/graphics.h>

@@ -33,7 +33,7 @@ namespace xtd {
   public:
     /// @cond
     box_integer() = default;
-    box_integer(const type_t& value) : box<type_t>(value) {}
+    box_integer(const type_t& value) : xtd::box<type_t>(value) {}
     box_integer(const box_integer&) = default;
     box_integer(box_integer&&) = default;
     box_integer& operator =(const box_integer&) = default;
