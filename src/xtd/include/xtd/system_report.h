@@ -31,42 +31,42 @@ namespace xtd {
       xtd_library& operator =(const xtd_library&) = default;
       /// @endcond
       
-      const std::string& name() const {return name_;}
+      const xtd::ustring& name() const {return name_;}
       
       const xtd::version& version() const {return version_;}
       
-      const std::string& include_path() const {return include_path_;}
+      const xtd::ustring& include_path() const {return include_path_;}
       
-      const std::string& library_path() const {return library_path_;}
+      const xtd::ustring& library_path() const {return library_path_;}
       
-      const std::string& resources_path() const {return resources_path_;}
+      const xtd::ustring& resources_path() const {return resources_path_;}
       
-      std::string to_string() const {return xtd::ustring::format("{} (version {})", name_, version_);}
+      xtd::ustring to_string() const {return xtd::ustring::format("{} (version {})", name_, version_);}
       
     private:
       friend class system_report;
-      xtd_library(const std::string& name, const xtd::version& version, const std::string& include_path, const std::string& library_path, const std::string& resources_path) : name_(name), version_(version), include_path_(include_path), library_path_(library_path), resources_path_(resources_path) {}
-      std::string name_;
+      xtd_library(const xtd::ustring& name, const xtd::version& version, const xtd::ustring& include_path, const xtd::ustring& library_path, const xtd::ustring& resources_path) : name_(name), version_(version), include_path_(include_path), library_path_(library_path), resources_path_(resources_path) {}
+      xtd::ustring name_;
       xtd::version version_;
-      std::string include_path_;
-      std::string library_path_;
-      std::string resources_path_;
+      xtd::ustring include_path_;
+      xtd::ustring library_path_;
+      xtd::ustring resources_path_;
     };
     
     /// @brief Represents a xtd libraries collection.
     using xtd_library_collection = std::vector<xtd_library>;
     /// @brief Represents an environment variables collection.
-    using environment_variable_collection = std::vector<std::pair<std::string, std::string>>;
+    using environment_variable_collection = std::vector<std::pair<xtd::ustring, xtd::ustring>>;
     /// @brief Represents a folders collection.
-    using special_folder_collection = std::vector<std::pair<std::string, std::string>>;
+    using special_folder_collection = std::vector<std::pair<xtd::ustring, xtd::ustring>>;
     /// @brief Represents a colors collection.
-    using system_color_collection = std::vector<std::pair<std::string, xtd::drawing::color>>;
+    using system_color_collection = std::vector<std::pair<xtd::ustring, xtd::drawing::color>>;
     /// @brief Represents a font families collection.
-    using system_font_family_collection = std::vector<std::pair<std::string, xtd::drawing::font_family>>;
+    using system_font_family_collection = std::vector<std::pair<xtd::ustring, xtd::drawing::font_family>>;
     /// @brief Represents a fonts collection.
-    using system_font_collection = std::vector<std::pair<std::string, xtd::drawing::font>>;
+    using system_font_collection = std::vector<std::pair<xtd::ustring, xtd::drawing::font>>;
     /// @brief Represents a system informations collection.
-    using system_information_collection = std::vector<std::pair<std::string, std::string>>;
+    using system_information_collection = std::vector<std::pair<xtd::ustring, xtd::ustring>>;
     
     static xtd::diagnostics::stack_trace stack_trace() noexcept {return stack_trace(0);}
     
@@ -102,10 +102,10 @@ namespace xtd {
     
     /// @brief Generates string report.
     /// @return A string report.
-    static std::string to_string() noexcept;
+    static xtd::ustring to_string() noexcept;
     /// @brief Generates xml format string report.
     /// @return An xml format string report.
     /// @todo Implement xml report
-    static std::string to_xml() noexcept;
+    static xtd::ustring to_xml() noexcept;
   };
 }
