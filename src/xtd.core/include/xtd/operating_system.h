@@ -107,11 +107,6 @@ namespace xtd {
     /// @return An xtd::distribution that contains the operating system distribution informations.
     xtd::distribution distribution() const noexcept;
     
-    /// @brief Gets a xtd::version object that identifies the distribution.
-    /// @return Version A Version object that describes the major version, minor version, build, and revision numbers for the distribution.
-    /// @remarks For Windows and macOS, the distribution version is the same version as xtd::operating_system::version. This property is specific to the Linux operating system.
-    xtd::version distribution_version() const noexcept;
-
     /// @brief Gets the concatenated string representation of the platform identifier.
     /// @return The string representation of the values returned by the platform.
     xtd::ustring name() const noexcept;
@@ -203,7 +198,6 @@ namespace xtd {
     xtd::ustring service_pack_;
     xtd::ustring desktop_environment_;
     xtd::ustring desktop_theme_;
-    std::optional<xtd::version> distribution_version_;
     bool is_64_bit_ = false;
     xtd::distribution distribution_;
     mutable xtd::ustring version_string_;
