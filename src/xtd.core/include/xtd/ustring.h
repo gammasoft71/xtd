@@ -1234,6 +1234,10 @@ namespace xtd {
     //ustring to_string() const noexcept override;
     ustring to_string() const noexcept override;
     
+    /// @brief Converts the current string to title case (except for words that are entirely in uppercase, which are considered to be acronyms).
+    /// @return A new string in title case.
+    ustring to_title_case() const noexcept;
+    
     /// @brief Returns a copy of the current string converted to uppercase.
     /// @return A new string in uppercase.
     ustring to_upper() const noexcept;
