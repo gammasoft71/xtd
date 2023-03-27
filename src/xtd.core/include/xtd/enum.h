@@ -413,7 +413,7 @@ namespace xtd {
     template<typename enum_t>
     static std::vector<enum_t> get_values() noexcept {
       std::vector<enum_t> values;
-      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.push_back(entry);});
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.push_back(entry.first);});
       return values;
     }
     
