@@ -1,7 +1,6 @@
 #include <xtd/xtd>
 
 using namespace std;
-using namespace std::literals;
 using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
@@ -27,7 +26,7 @@ auto main()->int {
     while (!terminate_app) {
       auto str = ustring::format("counter={}", counter++);
       udp.send(vector<unsigned char>(str.begin(), str.end()), str.size(), ip_end_point(ip_address::loopback, 9400));
-      this_thread::sleep_for(50ms);
+      this_thread::sleep_for(50_ms);
     }
     
     udp.send(vector<unsigned char> {0xFF}, 1, ip_end_point(ip_address::loopback, 9400));

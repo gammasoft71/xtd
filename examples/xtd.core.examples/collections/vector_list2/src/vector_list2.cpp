@@ -8,7 +8,6 @@
 
 using namespace std;
 using namespace std::chrono;
-using namespace std::literals;
 using namespace xtd;
 using namespace xtd::collections;
 

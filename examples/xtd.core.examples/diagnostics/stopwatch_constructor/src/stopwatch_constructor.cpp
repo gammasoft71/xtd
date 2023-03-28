@@ -1,7 +1,6 @@
 #include <xtd/xtd>
 
 using namespace std::chrono;
-using namespace std::literals;
 using namespace std::this_thread;
 using namespace xtd;
 using namespace xtd::diagnostics;
@@ -9,7 +8,7 @@ using namespace xtd::diagnostics;
 auto main()->int {
   stopwatch stopwatch;
   stopwatch.start();
-  sleep_for(10000ms);
+  sleep_for(10000_ms);
   stopwatch.stop();
   // Get the elapsed time as a duration value.
   nanoseconds ns = stopwatch.elapsed();
