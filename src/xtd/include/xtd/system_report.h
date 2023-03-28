@@ -74,20 +74,20 @@ namespace xtd {
     /// @name Alias
     
     /// @{
-    /// @brief Represents a xtd libraries collection.
-    using xtd_library_collection = std::vector<xtd_library>;
     /// @brief Represents an environment variables collection.
     using environment_variable_collection = std::vector<std::pair<xtd::ustring, xtd::ustring>>;
     /// @brief Represents a folders collection.
     using special_folder_collection = std::vector<std::pair<xtd::ustring, xtd::ustring>>;
     /// @brief Represents a colors collection.
     using system_color_collection = std::vector<std::pair<xtd::ustring, xtd::drawing::color>>;
-    /// @brief Represents a font families collection.
-    using system_font_family_collection = std::vector<std::pair<xtd::ustring, xtd::drawing::font_family>>;
     /// @brief Represents a fonts collection.
     using system_font_collection = std::vector<std::pair<xtd::ustring, xtd::drawing::font>>;
+    /// @brief Represents a font families collection.
+    using system_font_family_collection = std::vector<std::pair<xtd::ustring, xtd::drawing::font_family>>;
     /// @brief Represents a system informations collection.
     using system_information_collection = std::vector<std::pair<xtd::ustring, xtd::ustring>>;
+    /// @brief Represents a xtd libraries collection.
+    using xtd_library_collection = std::vector<xtd_library>;
     /// @}
     
     /// @name Properties
@@ -114,10 +114,16 @@ namespace xtd {
     /// @remarks See <a href=https://en.cppreference.com/w/cpp/locale/locale/locale>std::locale</a> for more information.
     static std::locale locale() noexcept;
     
+    /// @brief Gets an xtd::operating_system object that contains the current platform identifier and version number.
+    /// @return An object that contains the platform identifier and version number.
     static xtd::operating_system operating_system() noexcept;
     
+    /// @brief Gets an xtd::processor object that contains the processor identifier.
+    /// @return An object that contains the procesor identifier.
     static xtd::processor processor() noexcept;
-    
+
+    /// @brief Gets an array of all displays on the system.
+    /// @return An array of type screen, containing all displays on the system.
     static std::vector<xtd::forms::screen> screens() noexcept;
 
     static const special_folder_collection& special_folders() noexcept;
