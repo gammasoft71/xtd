@@ -93,14 +93,25 @@ namespace xtd {
     /// @name Properties
     
     /// @{
+    /// @brief Gets an xtd::compiler object that contains the current compiler identifier and version number.
+    /// @return An object that contains the compiler identifier and version number.
     static xtd::compiler compiler() noexcept;
     
+    /// @brief Retrieves all environment variable names and their values from the current process.
+    /// @return std::map A dictionary that contains all environment variable names and their values; otherwise, an empty dictionary if no environment variables are found.
     static environment_variable_collection environment_variables() noexcept;
     
+    /// @brief Gets a generic font_families.
+    /// @return Generic font families collection.
     static const system_font_family_collection& generic_font_families() noexcept;
 
+    /// @brief Gets an xtd::cpp_language object that contains the current c++ standard identifier and version number.
+    /// @return An object that contains the c++ standard identifier and version number.
     static xtd::cpp_language language() noexcept;
     
+    /// @brief Gets a copy of the global C++ locale, which is the locale most recently used as the argument to See <a href=https://en.cppreference.com/w/cpp/locale/locale/locale>std::locale::global</a> or a copy of See <a href=https://en.cppreference.com/w/cpp/locale/locale/locale>std::locale::classic()</a> if no call to See <a href=https://en.cppreference.com/w/cpp/locale/locale/locale>std::locale::global</a> has been made.
+    /// @return A copy of the global C++ locale.
+    /// @remarks See <a href=https://en.cppreference.com/w/cpp/locale/locale/locale>std::locale</a> for more information.
     static std::locale locale() noexcept;
     
     static xtd::operating_system operating_system() noexcept;

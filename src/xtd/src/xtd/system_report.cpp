@@ -216,7 +216,7 @@ xtd::cpp_language system_report::language() noexcept {
 }
 
 std::locale system_report::locale() noexcept {
-  return std::locale();
+  return environment::locale();
 }
 
 xtd::operating_system system_report::operating_system() noexcept {
