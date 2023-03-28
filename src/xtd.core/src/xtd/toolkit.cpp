@@ -10,27 +10,12 @@ const xtd::ustring& xtd::toolkit::description() const noexcept {
   return description_;
 }
 
-xtd::toolkit& xtd::toolkit::description(const xtd::ustring& value) {
-  description_ = value;
-  return *this;
-}
-
 const xtd::ustring& xtd::toolkit::name() const noexcept {
   return name_;
 }
 
-xtd::toolkit& xtd::toolkit::name(const xtd::ustring& value) {
-  name_ = value;
-  return *this;
-}
-
 const xtd::version& xtd::toolkit::version() const noexcept {
   return version_;
-}
-
-xtd::toolkit& xtd::toolkit::version(const xtd::version& value) {
-  version_ = value;
-  return *this;
 }
 
 bool xtd::toolkit::equals(const xtd::toolkit& other) const noexcept {

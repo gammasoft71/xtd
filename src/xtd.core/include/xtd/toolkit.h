@@ -45,27 +45,14 @@ namespace xtd {
     /// @brief Gets the toolkit description.
     /// @return The toolkit description.
     const xtd::ustring& description() const noexcept;
-    /// @brief Sets the toolkit description.
-    /// @param value The toolkit description.
-    /// @return The current instance of xtd::toolkit.
-    toolkit& description(const xtd::ustring& value);
 
     /// @brief Gets the toolkit name.
     /// @return The toolkit name.
     const xtd::ustring& name() const noexcept;
-    /// @brief Sets the toolkit name.
-    /// @param value The toolkit name.
-    /// @return The current instance of xtd::toolkit.
-    toolkit& name(const xtd::ustring& value);
 
     /// @brief Gets the toolkit version.
     /// @return The toolkit version.
     const xtd::version& version() const noexcept;
-    
-    /// @brief Sets the toolkit version.
-    /// @param value The toolkit version.
-    /// @return The current instance of xtd::toolkit.
-    toolkit& version(const xtd::version& value);
     /// @}
     
     /// @name Methods
