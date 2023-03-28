@@ -139,6 +139,7 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      using control::create;
       /// @brief A factory to create an xtd::forms::progress_bar with specified location, size, and name.
       /// @param value The position within the range of the progress bar.
       /// @param minimum The minimum value of the range.

@@ -113,6 +113,7 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      using control::create;
       /// @brief A factory to create an xtd::forms::switch_button with specified text, three_state, check_state, location ,size, and name.
       /// @param text A string that represent text of the xtd::forms::switch_button.
       /// @param checked true if the check box is checked; otherwise, false.
