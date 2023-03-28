@@ -1572,6 +1572,7 @@ namespace xtd {
     static auto convert_param(arg_t&& arg) noexcept {
       if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::string>::value) return std::forward<arg_t>(arg).c_str();
       else if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::wstring>::value) return std::forward<arg_t>(arg).c_str();
+      else if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, xtd::ustring>::value) return std::forward<arg_t>(arg).c_str();
       else return std::forward<arg_t>(arg);
     }
     
