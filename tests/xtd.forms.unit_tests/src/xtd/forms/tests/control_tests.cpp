@@ -33,6 +33,7 @@ namespace xtd::forms::tests {
       
       using control::create_params;
       
+      using control::create;
       static control_for_test create(const xtd::ustring& text = "", const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string) {
         control_for_test item;
         item.text(text);

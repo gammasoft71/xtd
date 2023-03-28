@@ -82,6 +82,7 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      using control::create;
       /// @brief A factory to create an xtd::forms::group_box with specified text, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::group_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::group_box.
