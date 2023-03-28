@@ -168,9 +168,35 @@ namespace {
   }
 }
 
-const xtd::system_report::xtd_library_collection& system_report::xtd_libraries() noexcept {
-  static xtd_library_collection libraries {{"xtd.core", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.drawing", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.forms", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.tunit", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)},};
-  return libraries;
+const ustring& system_report::xtd_library::include_path() const noexcept {
+  return include_path_;
+}
+
+const ustring& system_report::xtd_library::library_path() const noexcept {
+  return library_path_;
+}
+
+const ustring& system_report::xtd_library::name() const noexcept {
+  return name_;
+}
+
+const ustring& system_report::xtd_library::resources_path() const noexcept {
+  return resources_path_;
+}
+
+const xtd::version& system_report::xtd_library::version() const noexcept {
+  return version_;
+}
+
+ustring system_report::xtd_library::to_string() const noexcept {
+  return xtd::ustring::format("{} (version {})", name_, version_);
+}
+
+system_report::xtd_library::xtd_library(const ustring& name, const xtd::version& version, const ustring& include_path, const ustring& library_path, const ustring& resources_path) : name_(name), version_(version), include_path_(include_path), library_path_(library_path), resources_path_(resources_path) {
+}
+
+xtd::compiler system_report::compiler() noexcept {
+  return xtd::environment::compiler_version();
 }
 
 system_report::environment_variable_collection system_report::environment_variables() noexcept {
@@ -178,6 +204,31 @@ system_report::environment_variable_collection system_report::environment_variab
   auto envs = xtd::environment::get_environment_variables();
   for_each(envs.begin(), envs.end(), [&](auto environment_variable) {environment_variables.push_back(environment_variable);});
   return environment_variables;
+}
+
+const system_report::system_font_family_collection& system_report::generic_font_families() noexcept {
+  static system_font_family_collection families {{"Monospace", font_family::generic_monospace()}, {"Sans Serif", font_family::generic_sans_serif()}, {"Serif", font_family::generic_serif()},};
+  return families;
+}
+
+xtd::cpp_language system_report::language() noexcept {
+  return xtd::environment::cpp_version();
+}
+
+std::locale system_report::locale() noexcept {
+  return std::locale();
+}
+
+xtd::operating_system system_report::operating_system() noexcept {
+  return xtd::environment::os_version();
+}
+
+xtd::processor system_report::processor() noexcept {
+  return xtd::environment::processor_information();
+}
+
+std::vector<xtd::forms::screen> system_report::screens() noexcept {
+  return xtd::forms::screen::all_screens();
 }
 
 const system_report::special_folder_collection& system_report::special_folders() noexcept {
@@ -188,16 +239,19 @@ const system_report::special_folder_collection& system_report::special_folders()
   return folders;
 }
 
+xtd::diagnostics::stack_trace system_report::stack_trace() noexcept {
+  return stack_trace(0);
+}
+
+xtd::diagnostics::stack_trace system_report::stack_trace(size_t skip_frames) noexcept {
+  return xtd::diagnostics::stack_trace(skip_frames, true);
+}
+
 const system_report::system_color_collection& system_report::system_colors() noexcept {
   static system_color_collection colors;
   if (!colors.empty()) return colors;
   for_each(system_colors::get_colors().begin(), system_colors::get_colors().end(), [&](auto color) {colors.emplace_back(color.name().replace("_", " ").to_title_case(), drawing::color::from_argb(color.to_argb()));});
   return colors;
-}
-
-const system_report::system_font_family_collection& system_report::generic_font_families() noexcept {
-  static system_font_family_collection families {{"Monospace", font_family::generic_monospace()}, {"Sans Serif", font_family::generic_sans_serif()}, {"Serif", font_family::generic_serif()},};
-  return families;
 }
 
 const system_report::system_font_collection& system_report::system_fonts() noexcept {
@@ -240,6 +294,15 @@ system_report::system_information_collection system_report::system_informations(
     //{"icon_horizontal_spacing", ustring::format("{}", forms::system_information::icon_horizontal_spacing())},
     //{"Active", ustring::format("{}", forms::system_information::active_window_tracking_delay())},
   };
+}
+
+xtd::toolkit system_report::toolkit() noexcept {
+  return xtd::environment::toolkit_version();
+}
+
+const xtd::system_report::xtd_library_collection& system_report::xtd_libraries() noexcept {
+  static xtd_library_collection libraries {{"xtd.core", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.drawing", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.forms", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.tunit", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)},};
+  return libraries;
 }
 
 ustring system_report::to_string() noexcept {

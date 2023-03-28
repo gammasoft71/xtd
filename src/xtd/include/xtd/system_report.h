@@ -23,7 +23,7 @@ namespace xtd {
   class export_ system_report final static_ {
   public:
     /// @brief Represents a xtd library that contains name, version and paths.
-    class xtd_library final {
+    class xtd_library final : public xtd::object {
     public:
       /// @cond
       xtd_library() = default;
@@ -31,21 +31,39 @@ namespace xtd {
       xtd_library& operator =(const xtd_library&) = default;
       /// @endcond
       
-      const xtd::ustring& name() const {return name_;}
+      /// @name Properties
       
-      const xtd::version& version() const {return version_;}
+      /// @{
+      /// @brief Gets The inlcude path of the library.
+      /// @return A string that represents the include path of the library.
+      const xtd::ustring& include_path() const noexcept;
       
-      const xtd::ustring& include_path() const {return include_path_;}
+      /// @brief Gets The library path of the library.
+      /// @return A string that represents the library path of the library.
+      const xtd::ustring& library_path() const noexcept;
       
-      const xtd::ustring& library_path() const {return library_path_;}
+      /// @brief Gets The name of the library.
+      /// @return A string that represents the name of the library.
+      const xtd::ustring& name() const noexcept;
       
-      const xtd::ustring& resources_path() const {return resources_path_;}
+      /// @brief Gets The resource path of the library.
+      /// @return A string that represents the resource path of the library.
+      const xtd::ustring& resources_path() const noexcept;
+
+      /// @brief Gets The version of the library.
+      /// @return An xtd::version object that represents the version of the library.
+      const xtd::version& version() const noexcept;
+      /// @}
       
-      xtd::ustring to_string() const {return xtd::ustring::format("{} (version {})", name_, version_);}
+      /// @name Methods
+      
+      /// @{
+      xtd::ustring to_string() const noexcept override;
+      /// @}
       
     private:
       friend class system_report;
-      xtd_library(const xtd::ustring& name, const xtd::version& version, const xtd::ustring& include_path, const xtd::ustring& library_path, const xtd::ustring& resources_path) : name_(name), version_(version), include_path_(include_path), library_path_(library_path), resources_path_(resources_path) {}
+      xtd_library(const xtd::ustring& name, const xtd::version& version, const xtd::ustring& include_path, const xtd::ustring& library_path, const xtd::ustring& resources_path);
       xtd::ustring name_;
       xtd::version version_;
       xtd::ustring include_path_;
@@ -53,6 +71,9 @@ namespace xtd {
       xtd::ustring resources_path_;
     };
     
+    /// @name Alias
+    
+    /// @{
     /// @brief Represents a xtd libraries collection.
     using xtd_library_collection = std::vector<xtd_library>;
     /// @brief Represents an environment variables collection.
@@ -67,39 +88,52 @@ namespace xtd {
     using system_font_collection = std::vector<std::pair<xtd::ustring, xtd::drawing::font>>;
     /// @brief Represents a system informations collection.
     using system_information_collection = std::vector<std::pair<xtd::ustring, xtd::ustring>>;
+    /// @}
     
-    static xtd::diagnostics::stack_trace stack_trace() noexcept {return stack_trace(0);}
+    /// @name Properties
     
-    static xtd::diagnostics::stack_trace stack_trace(size_t skip_frames) noexcept {return xtd::diagnostics::stack_trace(skip_frames, true);}
-    
-    static const xtd_library_collection& xtd_libraries() noexcept;
-    
-    static xtd::operating_system operating_system() noexcept {return xtd::environment::os_version();}
-    
-    static xtd::processor processor() noexcept {return xtd::environment::processor_information();}
-    
-    static xtd::compiler compiler() noexcept {return xtd::environment::compiler_version();}
-    
-    static xtd::cpp_language language() noexcept {return xtd::environment::cpp_version();}
-    
-    static std::locale locale() noexcept {return std::locale();}
-    
-    static xtd::toolkit toolkit() noexcept {return xtd::environment::toolkit_version();}
+    /// @{
+    static xtd::compiler compiler() noexcept;
     
     static environment_variable_collection environment_variables() noexcept;
     
+    static const system_font_family_collection& generic_font_families() noexcept;
+
+    static xtd::cpp_language language() noexcept;
+    
+    static std::locale locale() noexcept;
+    
+    static xtd::operating_system operating_system() noexcept;
+    
+    static xtd::processor processor() noexcept;
+    
+    static std::vector<xtd::forms::screen> screens() noexcept;
+
     static const special_folder_collection& special_folders() noexcept;
+    
+    /// @brief Gets current stack trace information.
+    /// @return A string containing stack trace information. This value can be empty "".
+    static xtd::diagnostics::stack_trace stack_trace() noexcept;
+    
+    /// @brief Gets current stack trace information with specified number of frames to skip.
+    /// @param skip_frames The number of frames to skip.
+    /// @return A string containing stack trace information. This value can be empty "".
+    static xtd::diagnostics::stack_trace stack_trace(size_t skip_frames) noexcept;
     
     static const system_color_collection& system_colors() noexcept;
     
-    static const system_font_family_collection& generic_font_families() noexcept;
-    
     static const system_font_collection& system_fonts() noexcept;
     
-    static std::vector<xtd::forms::screen> screens() noexcept {return xtd::forms::screen::all_screens();}
-    
     static system_information_collection system_informations() noexcept;
+
+    static xtd::toolkit toolkit() noexcept;
+
+    static const xtd_library_collection& xtd_libraries() noexcept;
+    /// @}
     
+    /// @name Methods
+    
+    /// @{
     /// @brief Generates string report.
     /// @return A string report.
     static xtd::ustring to_string() noexcept;
@@ -107,5 +141,6 @@ namespace xtd {
     /// @return An xml format string report.
     /// @todo Implement xml report
     static xtd::ustring to_xml() noexcept;
+    /// @}
   };
 }
