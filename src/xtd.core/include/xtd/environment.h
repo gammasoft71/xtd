@@ -353,6 +353,11 @@ namespace xtd {
     /// @return true if the process is 64-bit; otherwise, false.
     static bool is_64_bit_process() noexcept;
     
+    /// @brief Gets a copy of the global C++ locale, which is the locale most recently used as the argument to See <a href=https://en.cppreference.com/w/cpp/locale/locale/locale>std::locale::global</a> or a copy of See <a href=https://en.cppreference.com/w/cpp/locale/locale/locale>std::locale::classic()</a> if no call to See <a href=https://en.cppreference.com/w/cpp/locale/locale/locale>std::locale::global</a> has been made.
+    /// @return A copy of the global C++ locale.
+    /// @remarks See <a href=https://en.cppreference.com/w/cpp/locale/locale/locale>std::locale</a> for more information.
+    static std::locale locale() noexcept;
+
     /// @brief Gets the NetBIOS name of this local computer.
     /// @return A string containing the name of this computer.
     /// @remarks The name of this computer is established at system startup when the name is read from the registry. If this computer is a node in a cluster, the name of the node is returned.
