@@ -1,7 +1,6 @@
 #include <xtd/xtd>
 #include "../properties/resources.h"
 
-using namespace std::literals;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::forms;
@@ -43,7 +42,7 @@ public:
     reset.enabled(false);
     reset.click += event_handler(*this, &main_form::on_reset_click);
     
-    timer_chrono.interval(11ms);
+    timer_chrono.interval(11_ms);
     timer_chrono.tick += event_handler(*this, &main_form::on_timer_tick);
   }
   

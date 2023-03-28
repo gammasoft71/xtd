@@ -2,7 +2,6 @@
 #include <xtd/xtd>
 
 using namespace std;
-using namespace std::literals;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -46,7 +45,7 @@ public:
     button_send.text("Send async notify something ready");
     button_send.click += [&] {
       thread async_thread([&] {
-        this_thread::sleep_for(2s);
+        this_thread::sleep_for(2_s);
         notifier.notify_something_ready();
       });
       async_thread.detach();

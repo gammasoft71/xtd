@@ -1,7 +1,6 @@
 #define DEBUG
 #include <xtd/xtd>
 
-using namespace std::literals;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::drawing;
@@ -9,7 +8,7 @@ using namespace xtd::forms;
 
 auto main()->int {
   timer timer;
-  timer.interval(100ms);
+  timer.interval(100_ms);
   stopwatch chrono;
   
   form form_main;

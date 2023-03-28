@@ -3,7 +3,6 @@
 #include <xtd/xtd>
 
 using namespace std;
-using namespace std::literals;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -65,7 +64,7 @@ namespace examples {
       worker.do_work += [&] {
         for (auto step = 1; step <= progress.maximum(); ++step) {
           if (worker.cancellation_pending()) break; // stop work...
-          this_thread::sleep_for(100ms); // simulate work...
+          this_thread::sleep_for(100_ms); // simulate work...
           worker.report_progress(step, ustring::format("step {} / {}", step, progress.maximum()));
         }
       };
